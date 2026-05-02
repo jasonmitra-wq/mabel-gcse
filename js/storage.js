@@ -1,0 +1,173 @@
+/* ============================================================
+   STORAGE.JS — All persistence via localStorage with fallback
+   ============================================================ */
+
+const Store = (() => {
+  const PREFIX = 'mabel_';
+
+  function get(key) {
+    try {
+      const v = localStorage.getItem(PREFIX + key);
+      return v ? JSON.parse(v) : null;
+    } catch(e) { return null; }
+  }
+
+  function set(key, value) {
+    try {
+      localStorage.setItem(PREFIX + key, JSON.stringify(value));
+      return true;
+    } catch(e) { return false; }
+  }
+
+  function remove(key) {
+    try { localStorage.removeItem(PREFIX + key); return true; }
+    catch(e) { return false; }
+  }
+
+  // ── Progress ──────────────────────────────────────────────
+  function getProgress() {
+    return get('progress') || {
+      covered: {},       // { topicId: true }
+      testScores: [],    // { topic, score, total, pct, date }
+      learnerProfile: { liked: [], disliked: [], summary: '' },
+      lastPosition: null,
+      savedAt: null,
+    };
+  }
+
+  function saveProgress(data) {
+    data.savedAt = new Date().toISOString();
+    set('progress', data);
+  }
+
+  function markCovered(subtopicId) {
+    const p = getProgress();
+    p.covered[subtopicId] = true;
+    saveProgress(p);
+  }
+
+  function addScore(topicName, score, total) {
+    const p = getProgress();
+    const pct = Math.round((score / total) * 100);
+    p.testScores.push({ topic: topicName, score, total, pct, date: new Date().toISOString() });
+    // Keep last 50
+    if (p.testScores.length > 50) p.testScores = p.testScores.slice(-50);
+    saveProgress(p);
+  }
+
+  function setLastPosition(pos) {
+    const p = getProgress();
+    p.lastPosition = pos;
+    saveProgress(p);
+  }
+
+  function getLearnerProfile() {
+    return getProgress().learnerProfile;
+  }
+
+  function updateLearnerProfile(profile) {
+    const p = getProgress();
+    p.learnerProfile = profile;
+    saveProgress(p);
+  }
+
+  function clearAll() {
+    const keys = Object.keys(localStorage).filter(k => k.startsWith(PREFIX));
+    keys.forEach(k => localStorage.removeItem(k));
+  }
+
+  // ── Mabel's personal profile (Silver + skating) ──────────
+  function getMabelProfile() {
+    return get('mabel_profile') || {
+      silver: {
+        colour:    null,   // e.g. "grey"
+        breed:     null,
+        habits:    [],     // e.g. ["sits on homework", "knocks pens off desk"]
+        mood:      null,   // e.g. "grumpy", "affectionate"
+      },
+      skating: {
+        monthsIn:  6,      // confirmed from earlier session
+        hasLessons: true,  // confirmed
+        rink:      null,
+        currentMove: null, // e.g. "axel", "sit spin"
+        recentWin: null,
+        level:     null,   // e.g. "NISA level 3"
+        competes:  null,   // true / false
+      },
+      askedAbout: [],      // tracks what we've already asked so we don't repeat
+    };
+  }
+
+  function saveMabelProfile(profile) {
+    set('mabel_profile', profile);
+  }
+
+  function updateMabelProfile(updates) {
+    const p = getMabelProfile();
+    // Deep merge
+    if (updates.silver)  Object.assign(p.silver,  updates.silver);
+    if (updates.skating) Object.assign(p.skating, updates.skating);
+    if (updates.askedAbout) p.askedAbout = [...new Set([...p.askedAbout, ...updates.askedAbout])];
+    saveMabelProfile(p);
+    return p;
+  }
+
+  function hasAsked(topic) {
+    return getMabelProfile().askedAbout.includes(topic);
+  }
+
+  function markAsked(topic) {
+    const p = getMabelProfile();
+    if (!p.askedAbout.includes(topic)) {
+      p.askedAbout.push(topic);
+      saveMabelProfile(p);
+    }
+  }
+  function getDeck() {
+    return get('deck') || [];
+  }
+
+  function saveDeck(deck) {
+    set('deck', deck);
+  }
+
+  function addCards(newCards) {
+    const deck = getDeck();
+    let added = 0;
+    newCards.forEach(c => {
+      if (!deck.some(d => d.back === c.back)) {
+        deck.push(c);
+        added++;
+      }
+    });
+    saveDeck(deck);
+    return added;
+  }
+
+  function updateCardStatus(cardId, status) {
+    const deck = getDeck();
+    const i = deck.findIndex(c => c.id === cardId);
+    if (i >= 0) {
+      deck[i].status = status;
+      deck[i].lastReviewed = new Date().toISOString();
+      // Spaced repetition: set nextReview date
+      const days = status === 'known' ? 7 : status === 'learning' ? 2 : 0;
+      const next = new Date();
+      next.setDate(next.getDate() + days);
+      deck[i].nextReview = next.toISOString();
+      saveDeck(deck);
+    }
+  }
+
+  function clearDeck() {
+    set('deck', []);
+  }
+
+  return {
+    get, set, remove,
+    getProgress, saveProgress, markCovered, addScore,
+    setLastPosition, getLearnerProfile, updateLearnerProfile, clearAll,
+    getDeck, saveDeck, addCards, updateCardStatus, clearDeck,
+    getMabelProfile, saveMabelProfile, updateMabelProfile, hasAsked, markAsked,
+  };
+})();

@@ -1,0 +1,80 @@
+<svg viewBox="0 0 440 220" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans, sans-serif">
+  <defs>
+    <linearGradient id="enzGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4d96ff" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#6bcb77" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="subGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd93d" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#ff9f43" stop-opacity="0.65"/>
+    </linearGradient>
+    <linearGradient id="prodGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6bcb77" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#4ecdc4" stop-opacity="0.55"/>
+    </linearGradient>
+    <marker id="a" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0.5 L6,3.5 L0,6.5 Z" fill="#4d96ff" opacity="0.7"/>
+    </marker>
+    <filter id="ge"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <rect width="440" height="220" fill="none"/>
+
+  <!-- Stage labels -->
+  <text x="70"  y="18" text-anchor="middle" fill="#7777aa" font-size="9.5" font-weight="700">① Enzyme — free</text>
+  <text x="220" y="18" text-anchor="middle" fill="#7777aa" font-size="9.5" font-weight="700">② Substrate binds</text>
+  <text x="370" y="18" text-anchor="middle" fill="#7777aa" font-size="9.5" font-weight="700">③ Products released</text>
+
+  <!-- ─── STAGE 1: Enzyme alone ─── -->
+  <!-- Enzyme body -->
+  <path d="M22,32 Q22,24 34,24 L90,24 Q106,24 106,32 L106,90 Q106,98 98,98 L80,98 Q70,98 70,88 L70,76 Q70,64 58,64 Q46,64 46,76 L46,88 Q46,98 38,98 L24,98 Q22,96 22,90 Z"
+        fill="url(#enzGrad)" stroke="#4d96ff" stroke-width="1.6" filter="url(#ge)"/>
+  <text x="64" y="50" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">ENZYME</text>
+  <!-- Active site label -->
+  <text x="64" y="124" text-anchor="middle" fill="#ffd93d" font-size="8.5">active site</text>
+  <line x1="58" y1="89" x2="58" y2="118" stroke="#ffd93d" stroke-width="0.9" stroke-dasharray="2,1.5"/>
+  <!-- Enzyme reusable label -->
+  <text x="64" y="145" text-anchor="middle" fill="#7777aa" font-size="8">enzyme unchanged,</text>
+  <text x="64" y="155" text-anchor="middle" fill="#7777aa" font-size="8">can be reused</text>
+
+  <!-- ─── STAGE 2: Substrate + Enzyme ─── -->
+  <!-- Enzyme -->
+  <path d="M172,32 Q172,24 184,24 L240,24 Q256,24 256,32 L256,90 Q256,98 248,98 L230,98 Q220,98 220,88 L220,76 Q220,64 208,64 Q196,64 196,76 L196,88 Q196,98 188,98 L174,98 Q172,96 172,90 Z"
+        fill="url(#enzGrad)" stroke="#4d96ff" stroke-width="1.6"/>
+  <!-- Substrate fitting in to active site -->
+  <path d="M196,68 Q196,62 208,62 Q220,62 220,68 L220,98 L196,98 Z"
+        fill="url(#subGrad)" stroke="#ffd93d" stroke-width="1.5" filter="url(#ge)"/>
+  <text x="208" y="88" text-anchor="middle" fill="#333" font-size="8.5" font-weight="700">SUB</text>
+  <!-- Substrate coming down arrow -->
+  <line x1="208" y1="28" x2="208" y2="60" stroke="#ffd93d" stroke-width="1.3" stroke-dasharray="2.5,2" marker-end="url(#a)"/>
+  <rect x="195" y="18" width="26" height="14" rx="3" fill="rgba(255,217,61,0.65)" stroke="#ffd93d" stroke-width="1"/>
+  <text x="208" y="28" text-anchor="middle" fill="#333" font-size="8.5" font-weight="700">SUB</text>
+  <!-- Label -->
+  <text x="214" y="124" text-anchor="middle" fill="#7777aa" font-size="8">enzyme-substrate</text>
+  <text x="214" y="134" text-anchor="middle" fill="#7777aa" font-size="8">complex</text>
+  <text x="214" y="148" text-anchor="middle" fill="#ffd93d" font-size="8.5">'lock and key' fit</text>
+
+  <!-- ─── STAGE 3: Products released ─── -->
+  <!-- Enzyme (unchanged) -->
+  <path d="M322,32 Q322,24 334,24 L390,24 Q406,24 406,32 L406,90 Q406,98 398,98 L380,98 Q370,98 370,88 L370,76 Q370,64 358,64 Q346,64 346,76 L346,88 Q346,98 338,98 L324,98 Q322,96 322,90 Z"
+        fill="url(#enzGrad)" stroke="#4d96ff" stroke-width="1.6"/>
+  <!-- Two products floating away -->
+  <rect x="320" y="118" width="22" height="16" rx="4" fill="url(#prodGrad)" stroke="#6bcb77" stroke-width="1.3"/>
+  <text x="331" y="130" text-anchor="middle" fill="#fff" font-size="8" font-weight="600">P1</text>
+  <rect x="348" y="118" width="22" height="16" rx="4" fill="url(#prodGrad)" stroke="#6bcb77" stroke-width="1.3"/>
+  <text x="359" y="130" text-anchor="middle" fill="#fff" font-size="8" font-weight="600">P2</text>
+  <!-- Arrows: products leaving -->
+  <line x1="335" y1="100" x2="331" y2="117" stroke="#6bcb77" stroke-width="1.1" stroke-dasharray="2,1.5"/>
+  <line x1="358" y1="100" x2="359" y2="117" stroke="#6bcb77" stroke-width="1.1" stroke-dasharray="2,1.5"/>
+  <text x="364" y="147" text-anchor="middle" fill="#6bcb77" font-size="8.5">products</text>
+  <text x="364" y="158" text-anchor="middle" fill="#7777aa" font-size="8">enzyme unchanged</text>
+  <text x="364" y="168" text-anchor="middle" fill="#4d96ff" font-size="8">✓ free to catalyse again</text>
+
+  <!-- Arrows between stages -->
+  <line x1="114" y1="62" x2="162" y2="62" stroke="#4d96ff" stroke-width="1.3" stroke-dasharray="3,2" marker-end="url(#a)" opacity="0.65"/>
+  <line x1="264" y1="62" x2="312" y2="62" stroke="#4d96ff" stroke-width="1.3" stroke-dasharray="3,2" marker-end="url(#a)" opacity="0.65"/>
+
+  <!-- Bottom summary -->
+  <text x="220" y="195" text-anchor="middle" fill="#7777aa" font-size="9">Each enzyme has a specific active site shape — only the</text>
+  <text x="220" y="207" text-anchor="middle" fill="#7777aa" font-size="9">matching substrate can bind. This makes enzymes <tspan fill="#ffd93d" font-weight="600">specific</tspan>.</text>
+</svg>

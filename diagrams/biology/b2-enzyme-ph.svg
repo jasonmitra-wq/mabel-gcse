@@ -1,0 +1,73 @@
+<svg viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans, sans-serif">
+  <defs>
+    <marker id="ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0.5 L6,3.5 L0,6.5 Z" fill="#7777aa"/>
+    </marker>
+  </defs>
+
+  <rect width="380" height="240" fill="none"/>
+  <text x="190" y="18" text-anchor="middle" fill="#eeeeff" font-size="12.5" font-weight="700">Enzyme Activity and pH</text>
+
+  <!-- Axes -->
+  <line x1="52" y1="180" x2="355" y2="180" stroke="#444466" stroke-width="1.6" marker-end="url(#ax)"/>
+  <line x1="52" y1="180" x2="52"  y2="35"  stroke="#444466" stroke-width="1.6" marker-end="url(#ax)"/>
+
+  <!-- Axis labels -->
+  <text x="200" y="200" text-anchor="middle" fill="#7777aa" font-size="10">pH</text>
+  <text x="20"  y="110" fill="#7777aa" font-size="9.5" transform="rotate(-90,20,110)">Rate of reaction</text>
+
+  <!-- pH tick marks -->
+  <text x="72"  y="193" text-anchor="middle" fill="#7777aa" font-size="8.5">1</text>
+  <text x="98"  y="193" text-anchor="middle" fill="#7777aa" font-size="8.5">2</text>
+  <text x="124" y="193" text-anchor="middle" fill="#7777aa" font-size="8.5">3</text>
+  <text x="150" y="193" text-anchor="middle" fill="#7777aa" font-size="8.5">4</text>
+  <text x="176" y="193" text-anchor="middle" fill="#7777aa" font-size="8.5">5</text>
+  <text x="202" y="193" text-anchor="middle" fill="#7777aa" font-size="8.5">6</text>
+  <text x="228" y="193" text-anchor="middle" fill="#7777aa" font-size="8.5">7</text>
+  <text x="254" y="193" text-anchor="middle" fill="#7777aa" font-size="8.5">8</text>
+  <text x="280" y="193" text-anchor="middle" fill="#7777aa" font-size="8.5">9</text>
+  <text x="306" y="193" text-anchor="middle" fill="#7777aa" font-size="8.5">10</text>
+
+  <!-- Grid lines (faint) -->
+  <g stroke="#222238" stroke-width="0.7">
+    <line x1="98"  y1="40" x2="98"  y2="180"/>
+    <line x1="228" y1="40" x2="228" y2="180"/>
+    <line x1="254" y1="40" x2="254" y2="180"/>
+  </g>
+
+  <!-- PEPSIN (peaks pH 2 — stomach protease) -->
+  <path d="M52,178 Q68,176 82,170 Q94,150 98,42 Q102,150 108,170 Q120,178 150,179 Q220,180 350,180"
+        fill="none" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="98"  y="37"  text-anchor="middle" fill="#ff6b6b" font-size="9"   font-weight="700">Pepsin</text>
+  <text x="98"  y="48"  text-anchor="middle" fill="#ff6b6b" font-size="8.5">(pH 2)</text>
+  <circle cx="98" cy="42" r="4" fill="none" stroke="#ff6b6b" stroke-width="1.5"/>
+
+  <!-- AMYLASE (peaks pH 7) -->
+  <path d="M52,179 Q100,179 150,175 Q190,168 228,44 Q265,168 292,176 Q320,179 350,180"
+        fill="none" stroke="#4d96ff" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="228" y="37"  text-anchor="middle" fill="#4d96ff" font-size="9"   font-weight="700">Amylase</text>
+  <text x="228" y="48"  text-anchor="middle" fill="#4d96ff" font-size="8.5">(pH 7)</text>
+  <circle cx="228" cy="44" r="4" fill="none" stroke="#4d96ff" stroke-width="1.5"/>
+
+  <!-- LIPASE (peaks pH 8) -->
+  <path d="M52,180 Q120,180 175,177 Q220,172 254,48 Q285,172 310,177 Q335,180 350,180"
+        fill="none" stroke="#6bcb77" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5,2"/>
+  <text x="254" y="41"  text-anchor="middle" fill="#6bcb77" font-size="9"   font-weight="700">Lipase</text>
+  <text x="254" y="52"  text-anchor="middle" fill="#6bcb77" font-size="8.5">(pH 8)</text>
+  <circle cx="254" cy="48" r="4" fill="none" stroke="#6bcb77" stroke-width="1.5"/>
+
+  <!-- Denatured annotation -->
+  <text x="330" y="120" text-anchor="middle" fill="#ff6b6b" font-size="8.5">denatured</text>
+  <text x="330" y="130" text-anchor="middle" fill="#ff6b6b" font-size="8.5">at extremes</text>
+  <text x="330" y="140" text-anchor="middle" fill="#7777aa" font-size="8">(active site</text>
+  <text x="330" y="150" text-anchor="middle" fill="#7777aa" font-size="8">changes shape)</text>
+
+  <!-- Key -->
+  <rect x="54" y="205" width="280" height="28" rx="6" fill="rgba(255,255,255,0.02)" stroke="#222238" stroke-width="0.8"/>
+  <line x1="62" y1="220" x2="80" y2="220" stroke="#ff6b6b" stroke-width="2.2"/>
+  <text x="84" y="223" fill="#7777aa" font-size="8.5">Pepsin (stomach)</text>
+  <line x1="158" y1="220" x2="176" y2="220" stroke="#4d96ff" stroke-width="2.2"/>
+  <text x="180" y="223" fill="#7777aa" font-size="8.5">Amylase (mouth/pancreas)</text>
+  <line x1="286" y1="220" x2="304" y2="220" stroke="#6bcb77" stroke-width="2.2" stroke-dasharray="4,2"/>
+  <text x="308" y="223" fill="#7777aa" font-size="8.5">Lipase</text>
+</svg>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mabel's GCSE Biology Tutor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <div class="hdr-logo">🧬</div>
+  <div class="hdr-text">
+    <div class="hdr-title">Mabel's Biology Tutor</div>
+    <div class="hdr-sub">AQA GCSE Separate Science · 8461</div>
+  </div>
+  <div class="hdr-right">
+    <span class="chip chip-blue" id="hdrStage">Home</span>
+    <span class="chip chip-green" id="hdrTopic" style="display:none"></span>
+    <span class="chip chip-gold" id="hdrScore" style="display:none"></span>
+    <button class="hdr-btn" id="btnDashboard" title="Dashboard" onclick="showDashboard()">📊</button>
+    <button class="hdr-btn" id="btnCards"     title="Card deck"  onclick="showCardDeck()">🃏</button>
+    <button class="hdr-btn" id="btnHome"      title="Home"       onclick="showHome()">🏠</button>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="main" id="main"></main>
+
+<!-- LESSON PANEL (slides in from right) -->
+<div class="lesson-panel" id="lessonPanel">
+  <div class="lesson-inner" id="lessonInner"></div>
+</div>
+
+<!-- QUESTION PANEL -->
+<div class="q-panel" id="qPanel">
+  <div class="q-inner" id="qInner"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="js/storage.js"></script>
+<script src="js/personality.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/questions.js"></script>
+<script src="js/lessons.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -163,6 +163,8 @@ body::before {
   margin-bottom: 0.45rem;
 }
 .subtopic-card:hover { border-color: var(--green); background: rgba(107,203,119,0.04); transform: translateX(3px); }
+.subtopic-card.unavailable { opacity: 0.38; cursor: not-allowed; }
+.subtopic-card.unavailable:hover { transform: none; border-color: var(--border2); background: var(--s1); }
 .subtopic-card.done .st-name { color: var(--green); }
 .st-check { font-size: 0.85rem; flex-shrink: 0; color: var(--muted); width: 18px; }
 .st-name  { flex: 1; font-size: 0.87rem; font-weight: 500; }

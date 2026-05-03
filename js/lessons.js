@@ -244,6 +244,7 @@ const Lessons = (() => {
             <span>Done — I've written these into my notes</span>
           </label>
         </div>`;
+    }
 
     return html;
   }

@@ -102,8 +102,8 @@ function showHome(hasSaved) {
   const main = document.getElementById('main');
   main.innerHTML = `
     <div class="home-hero">
-      <h1>Mabel's Biology Tutor</h1>
-      <p>Everything you need to do well in your exam.</p>
+      <h1>Mabel's GCSE Tutor</h1>
+      <p>Everything you need to do well in your exams.</p>
     </div>
     <div class="mode-grid" id="modeGrid"></div>
     <div id="upcomingSection"></div>`;

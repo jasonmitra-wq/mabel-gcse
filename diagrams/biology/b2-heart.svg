@@ -1,0 +1,160 @@
+<svg viewBox="0 0 460 510" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans, sans-serif">
+  <defs>
+    <linearGradient id="heartGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6b6b" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#c77dff" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="raGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4d96ff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#4ecdc4" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="laGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6b6b" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffd93d" stop-opacity="0.25"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowBlue" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#4d96ff"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ff6b6b"/>
+    </marker>
+  </defs>
+
+  <rect width="460" height="510" fill="none"/>
+
+  <!-- Title -->
+  <text x="230" y="22" text-anchor="middle" fill="#eeeeff" font-size="13" font-weight="700">The Heart — Internal Structure</text>
+  <text x="230" y="37" text-anchor="middle" fill="#7777aa" font-size="9.5">(viewed from front — patient's left appears on the right)</text>
+
+  <!-- ══ TOP VESSELS ══ -->
+
+  <!-- Vena cava (top centre-left) -->
+  <rect x="202" y="48" width="20" height="38" rx="10" fill="rgba(77,150,255,0.25)" stroke="#4d96ff" stroke-width="1.8"/>
+  <line x1="201" y1="60" x2="88" y2="60" stroke="#555577" stroke-width="0.8"/>
+  <text x="85" y="55" text-anchor="end" fill="#4d96ff" font-size="9.5" font-weight="600">vena cava</text>
+  <text x="85" y="66" text-anchor="end" fill="#7777aa" font-size="9">deoxygenated blood in</text>
+  <text x="85" y="76" text-anchor="end" fill="#7777aa" font-size="9">from body → right atrium</text>
+
+  <!-- Aorta (top right) -->
+  <path d="M252,50 Q270,43 276,56 Q281,68 268,76 L252,80" fill="rgba(255,107,107,0.25)" stroke="#ff6b6b" stroke-width="1.8"/>
+  <line x1="277" y1="62" x2="370" y2="57" stroke="#555577" stroke-width="0.8"/>
+  <text x="373" y="53" fill="#ff6b6b" font-size="9.5" font-weight="600">aorta</text>
+  <text x="373" y="63" fill="#7777aa" font-size="9">oxygenated blood out</text>
+  <text x="373" y="73" fill="#7777aa" font-size="9">left ventricle → body</text>
+
+  <!-- Pulmonary artery (curves left from right ventricle top) -->
+  <path d="M218,60 Q208,44 198,52 L200,60" fill="none" stroke="#4d96ff" stroke-width="1.6" stroke-dasharray="3,2"/>
+  <line x1="202" y1="46" x2="140" y2="30" stroke="#555577" stroke-width="0.8"/>
+  <text x="137" y="27" text-anchor="end" fill="#4d96ff" font-size="9.5" font-weight="600">pulmonary artery</text>
+  <text x="137" y="37" text-anchor="end" fill="#7777aa" font-size="9">right ventricle → lungs</text>
+
+  <!-- Pulmonary vein (enters left atrium) -->
+  <path d="M260,72 Q274,56 267,48" fill="none" stroke="#ff6b6b" stroke-width="1.6" stroke-dasharray="3,2"/>
+  <line x1="268" y1="48" x2="350" y2="30" stroke="#555577" stroke-width="0.8"/>
+  <text x="353" y="27" fill="#ff6b6b" font-size="9.5" font-weight="600">pulmonary vein</text>
+  <text x="353" y="37" fill="#7777aa" font-size="9">lungs → left atrium</text>
+
+  <!-- ══ OUTER HEART SHAPE ══ -->
+  <path d="M152,90 Q130,90 120,108 Q107,128 118,152 Q123,166 138,179 L228,272 L318,179 Q333,164 336,148 Q344,123 330,106 Q317,90 298,90 Q278,90 266,103 Q253,116 228,134 Q203,116 190,103 Q177,90 152,90 Z"
+        fill="url(#heartGrad)" stroke="#ff6b6b" stroke-width="2" filter="url(#glow)" opacity="0.9"/>
+
+  <!-- ══ SEPTUM ══ -->
+  <line x1="228" y1="102" x2="228" y2="245" stroke="#884466" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="228" y="294" text-anchor="middle" fill="#7777aa" font-size="9" font-style="italic">septum</text>
+
+  <!-- ══ RIGHT ATRIUM (viewer's left) ══ -->
+  <path d="M138,108 Q118,115 121,143 Q123,161 143,171 L220,171 L220,108 Q180,103 158,103 Z"
+        fill="url(#raGrad)" stroke="#4d96ff" stroke-width="1.5" opacity="0.85"/>
+  <text x="170" y="147" text-anchor="middle" fill="#eeeeff" font-size="10" font-weight="700">Right</text>
+  <text x="170" y="161" text-anchor="middle" fill="#eeeeff" font-size="10" font-weight="700">Atrium</text>
+
+  <!-- ══ LEFT ATRIUM (viewer's right) ══ -->
+  <path d="M318,108 Q338,115 335,143 Q333,161 313,171 L236,171 L236,108 Q276,103 296,103 Z"
+        fill="url(#laGrad)" stroke="#ff6b6b" stroke-width="1.5" opacity="0.85"/>
+  <text x="286" y="147" text-anchor="middle" fill="#eeeeff" font-size="10" font-weight="700">Left</text>
+  <text x="286" y="161" text-anchor="middle" fill="#eeeeff" font-size="10" font-weight="700">Atrium</text>
+
+  <!-- ══ AV VALVES ══ -->
+  <!-- Tricuspid (right) -->
+  <path d="M158,171 Q167,181 176,171" fill="none" stroke="#ffd93d" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M172,171 Q181,181 190,171" fill="none" stroke="#ffd93d" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Bicuspid/Mitral (left) -->
+  <path d="M266,171 Q275,181 284,171" fill="none" stroke="#ffd93d" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M280,171 Q289,181 298,171" fill="none" stroke="#ffd93d" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- ══ RIGHT VENTRICLE ══ -->
+  <path d="M132,175 Q114,192 120,225 Q127,252 158,265 L220,272 L220,175 Z"
+        fill="rgba(77,150,255,0.35)" stroke="#4d96ff" stroke-width="1.5"/>
+  <text x="170" y="232" text-anchor="middle" fill="#eeeeff" font-size="10" font-weight="700">Right</text>
+  <text x="170" y="246" text-anchor="middle" fill="#eeeeff" font-size="10" font-weight="700">Ventricle</text>
+
+  <!-- ══ LEFT VENTRICLE ══ -->
+  <path d="M322,175 Q342,192 335,225 Q328,252 297,265 L236,272 L236,175 Z"
+        fill="rgba(255,107,107,0.35)" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="286" y="232" text-anchor="middle" fill="#eeeeff" font-size="10" font-weight="700">Left</text>
+  <text x="286" y="246" text-anchor="middle" fill="#eeeeff" font-size="10" font-weight="700">Ventricle</text>
+
+  <!-- ══ SEMILUNAR VALVES ══ -->
+  <path d="M210,175 Q216,163 222,175" fill="none" stroke="#6bcb77" stroke-width="2" stroke-linecap="round"/>
+  <path d="M234,175 Q240,163 246,175" fill="none" stroke="#6bcb77" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- ══ LEFT SIDE LABELS ══ -->
+
+  <!-- Tricuspid valve label -->
+  <line x1="180" y1="175" x2="88" y2="198" stroke="#555577" stroke-width="0.8"/>
+  <text x="85" y="195" text-anchor="end" fill="#ffd93d" font-size="9.5" font-weight="600">tricuspid valve</text>
+  <text x="85" y="206" text-anchor="end" fill="#7777aa" font-size="9">right AV valve</text>
+
+  <!-- ══ RIGHT SIDE LABELS ══ -->
+
+  <!-- Bicuspid valve label -->
+  <line x1="278" y1="175" x2="372" y2="198" stroke="#555577" stroke-width="0.8"/>
+  <text x="375" y="195" fill="#ffd93d" font-size="9.5" font-weight="600">bicuspid valve</text>
+  <text x="375" y="206" fill="#7777aa" font-size="9">left AV valve (mitral)</text>
+
+  <!-- Left ventricle wall thickness -->
+  <line x1="336" y1="218" x2="372" y2="218" stroke="#555577" stroke-width="0.8"/>
+  <text x="375" y="215" fill="#ffd93d" font-size="9.5" font-weight="600">thicker wall</text>
+  <text x="375" y="226" fill="#7777aa" font-size="9">pumps to whole body</text>
+
+  <!-- Coronary artery -->
+  <path d="M244,110 Q268,117 275,138 Q280,158 264,168" fill="none" stroke="#6bcb77" stroke-width="1.4" stroke-dasharray="3,2"/>
+  <line x1="275" y1="138" x2="372" y2="148" stroke="#555577" stroke-width="0.8"/>
+  <text x="375" y="145" fill="#6bcb77" font-size="9.5" font-weight="600">coronary artery</text>
+  <text x="375" y="156" fill="#7777aa" font-size="9">supplies heart muscle</text>
+
+  <!-- Semilunar valves label -->
+  <line x1="228" y1="166" x2="228" y2="148" stroke="#555577" stroke-width="0.8"/>
+  <text x="228" y="145" text-anchor="middle" fill="#6bcb77" font-size="9.5" font-weight="600">semilunar valves</text>
+
+  <!-- ══ LEGEND ══ -->
+  <rect x="28" y="314" width="404" height="62" rx="6" fill="rgba(255,255,255,0.03)" stroke="#333355" stroke-width="1"/>
+  <text x="230" y="331" text-anchor="middle" fill="#aaaacc" font-size="10" font-weight="600">Key</text>
+  <!-- Blue = deoxy -->
+  <rect x="44" y="340" width="12" height="12" rx="2" fill="rgba(77,150,255,0.5)" stroke="#4d96ff" stroke-width="1.2"/>
+  <text x="61" y="350" fill="#eeeeff" font-size="9.5">Blue = deoxygenated blood (right side)</text>
+  <!-- Red = oxy -->
+  <rect x="44" y="356" width="12" height="12" rx="2" fill="rgba(255,107,107,0.5)" stroke="#ff6b6b" stroke-width="1.2"/>
+  <text x="61" y="366" fill="#eeeeff" font-size="9.5">Red = oxygenated blood (left side)</text>
+  <!-- Yellow = AV valves -->
+  <line x1="240" y1="346" x2="256" y2="346" stroke="#ffd93d" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="260" y="350" fill="#eeeeff" font-size="9.5">Yellow = AV valves</text>
+  <!-- Green = semilunar + coronary -->
+  <line x1="240" y1="362" x2="256" y2="362" stroke="#6bcb77" stroke-width="2"/>
+  <text x="260" y="366" fill="#eeeeff" font-size="9.5">Green = semilunar valves / coronary</text>
+
+  <!-- ══ DOUBLE CIRCULATION SUMMARY ══ -->
+  <rect x="28" y="392" width="404" height="52" rx="6" fill="rgba(255,255,255,0.03)" stroke="#333355" stroke-width="1"/>
+  <text x="230" y="409" text-anchor="middle" fill="#aaaacc" font-size="10" font-weight="600">Double circulation</text>
+  <text x="230" y="424" text-anchor="middle" fill="#4d96ff" font-size="9.5">Pulmonary: right side → lungs → left side</text>
+  <text x="230" y="436" text-anchor="middle" fill="#ff6b6b" font-size="9.5">Systemic: left side → body → right side</text>
+
+  <!-- ══ EXAM NOTE ══ -->
+  <rect x="28" y="458" width="404" height="40" rx="5" fill="rgba(255,217,61,0.07)" stroke="#ffd93d" stroke-width="0.8"/>
+  <text x="230" y="474" text-anchor="middle" fill="#ffd93d" font-size="9.5" font-weight="600">Exam points</text>
+  <text x="230" y="487" text-anchor="middle" fill="#7777aa" font-size="9">Left ventricle wall is thicker · pulmonary artery carries deoxygenated blood</text>
+</svg>

@@ -95,8 +95,11 @@ function showHome(hasSaved) {
   document.getElementById('hdrTopic').style.display = 'none';
   document.getElementById('hdrScore').style.display = 'none';
 
-  // Close panels
-  document.getElementById('lessonPanel').classList.remove('open');
+  // Close panels (inline override ensures stale cached CSS can't leave panel visible)
+  const _lp = document.getElementById('lessonPanel');
+  _lp.style.transition = 'transform 0.32s cubic-bezier(0.4,0,0.2,1)';
+  _lp.style.transform = 'translateX(100vw)';
+  setTimeout(() => { _lp.style.cssText = ''; _lp.classList.remove('open'); }, 340);
   document.getElementById('qPanel').classList.remove('open');
 
   const main = document.getElementById('main');
@@ -533,7 +536,10 @@ function _confirmReset() {
 // ── CARD DECK WRAPPER ──────────────────────────────────────────
 function showCardDeck() {
   App.setStage('Cards');
-  document.getElementById('lessonPanel').classList.remove('open');
+  const _lp2 = document.getElementById('lessonPanel');
+  _lp2.style.transition = 'transform 0.32s cubic-bezier(0.4,0,0.2,1)';
+  _lp2.style.transform = 'translateX(100vw)';
+  setTimeout(() => { _lp2.style.cssText = ''; _lp2.classList.remove('open'); }, 340);
   document.getElementById('qPanel').classList.remove('open');
   Cards.showDeck();
 }

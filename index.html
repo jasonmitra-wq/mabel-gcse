@@ -6,7 +6,7 @@
 <title>Mabel's GCSE Tutor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 
@@ -58,12 +58,23 @@
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
+<!-- GLOSSARY BOTTOM SHEET -->
+<div class="glossary-backdrop" id="glossaryBackdrop" onclick="Glossary.hide()"></div>
+<div class="glossary-sheet" id="glossarySheet">
+  <div class="glossary-sheet-header">
+    <h3 id="glossaryTerm"></h3>
+    <button class="glossary-close" onclick="Glossary.hide()" aria-label="Close">✕</button>
+  </div>
+  <div id="glossaryBody"></div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="js/icons.js"></script>
 <script src="js/storage.js"></script>
 <script src="js/personality.js"></script>
 <script src="js/cards.js"></script>
 <script src="js/questions.js"></script>
+<script src="js/glossary.js"></script>
 <script src="js/lessons.js"></script>
 <script src="js/app.js"></script>
 </body>

@@ -1,0 +1,96 @@
+<svg viewBox="0 0 460 440" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans, sans-serif">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="plasmaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd93d" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffd93d" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="460" height="440" fill="none"/>
+
+  <!-- Title -->
+  <text x="230" y="22" text-anchor="middle" fill="#eeeeff" font-size="13" font-weight="700">What's in Blood?</text>
+
+  <!-- ── CENTRIFUGE TUBE (left) ── -->
+  <!-- Tube outline -->
+  <rect x="50" y="40" width="80" height="280" rx="8" fill="none" stroke="#444466" stroke-width="1.5"/>
+  <path d="M50,308 Q50,328 90,328 Q130,328 130,308" fill="none" stroke="#444466" stroke-width="1.5"/>
+
+  <!-- Plasma layer (top ~55%) -->
+  <rect x="52" y="42" width="76" height="154" rx="6" fill="url(#plasmaGrad)" stroke="none"/>
+  <text x="90" y="115" text-anchor="middle" fill="#ffd93d" font-size="10" font-weight="700">PLASMA</text>
+  <text x="90" y="128" text-anchor="middle" fill="#ffd93d" font-size="8.5">~55%</text>
+
+  <!-- White cell + platelet layer (thin middle) -->
+  <rect x="52" y="196" width="76" height="14" fill="rgba(200,200,220,0.55)" stroke="none"/>
+  <text x="90" y="207" text-anchor="middle" fill="#eeeeff" font-size="7.5" font-weight="600">buffy coat</text>
+
+  <!-- Red blood cell layer (bottom ~45%) -->
+  <rect x="52" y="210" width="76" height="96" fill="rgba(255,107,107,0.55)" stroke="none"/>
+  <path d="M52,306 Q52,320 90,320 Q128,320 128,306 L128,210 L52,210 Z" fill="rgba(255,107,107,0.55)" stroke="none"/>
+  <text x="90" y="262" text-anchor="middle" fill="#ff6b6b" font-size="10" font-weight="700">RED BLOOD</text>
+  <text x="90" y="275" text-anchor="middle" fill="#ff6b6b" font-size="10" font-weight="700">CELLS</text>
+  <text x="90" y="288" text-anchor="middle" fill="#ff6b6b" font-size="8.5">~45%</text>
+
+  <!-- Tube label -->
+  <text x="90" y="346" text-anchor="middle" fill="#7777aa" font-size="9" font-style="italic">centrifuged blood</text>
+  <text x="90" y="358" text-anchor="middle" fill="#7777aa" font-size="9" font-style="italic">spun to separate</text>
+
+  <!-- ── COMPONENT PANELS (right) ── -->
+
+  <!-- PLASMA box -->
+  <rect x="160" y="38" width="280" height="88" rx="8" fill="rgba(255,217,61,0.07)" stroke="#ffd93d" stroke-width="1.2"/>
+  <text x="175" y="58" fill="#ffd93d" font-size="11" font-weight="700">Plasma</text>
+  <text x="435" y="58" text-anchor="end" fill="#7777aa" font-size="9">~55% of blood</text>
+  <text x="175" y="74" fill="#aaaacc" font-size="9">Straw-coloured liquid. Carries everything dissolved in it:</text>
+  <text x="175" y="87" fill="#aaaacc" font-size="9">• Digested food (glucose, amino acids, fatty acids)</text>
+  <text x="175" y="100" fill="#aaaacc" font-size="9">• Hormones (e.g. insulin) · CO₂ · urea · antibodies</text>
+  <text x="175" y="113" fill="#aaaacc" font-size="9">• Heat (distributes warmth round the body)</text>
+
+  <!-- RED BLOOD CELLS box -->
+  <rect x="160" y="138" width="280" height="96" rx="8" fill="rgba(255,107,107,0.07)" stroke="#ff6b6b" stroke-width="1.2"/>
+  <!-- RBC icon: biconcave disc from side -->
+  <ellipse cx="188" cy="178" rx="18" ry="9" fill="rgba(255,107,107,0.45)" stroke="#ff6b6b" stroke-width="1.5" filter="url(#glow)"/>
+  <path d="M170,178 Q188,172 206,178" fill="none" stroke="#ff6b6b" stroke-width="1.2" opacity="0.7"/>
+  <text x="215" y="152" fill="#ff6b6b" font-size="11" font-weight="700">Red Blood Cells</text>
+  <text x="435" y="152" text-anchor="end" fill="#7777aa" font-size="9">most numerous</text>
+  <text x="215" y="167" fill="#aaaacc" font-size="9">• No nucleus — makes room for more haemoglobin</text>
+  <text x="215" y="180" fill="#aaaacc" font-size="9">• Biconcave disc shape — large surface area for diffusion</text>
+  <text x="215" y="193" fill="#aaaacc" font-size="9">• Haemoglobin binds O₂ in lungs → releases it in tissues</text>
+  <text x="215" y="206" fill="#aaaacc" font-size="9">• Made in red bone marrow · live ~120 days</text>
+  <text x="215" y="220" fill="#aaaacc" font-size="9">• Oxyhaemoglobin (with O₂) → deoxyhaemoglobin (without)</text>
+
+  <!-- WHITE BLOOD CELLS box -->
+  <rect x="160" y="246" width="280" height="88" rx="8" fill="rgba(199,125,255,0.07)" stroke="#c77dff" stroke-width="1.2"/>
+  <!-- WBC icon: irregular shape with nucleus -->
+  <circle cx="188" cy="286" r="16" fill="rgba(199,125,255,0.25)" stroke="#c77dff" stroke-width="1.5" filter="url(#glow)"/>
+  <circle cx="184" cy="284" r="6" fill="rgba(199,125,255,0.55)" stroke="#c77dff" stroke-width="1"/>
+  <text x="215" y="260" fill="#c77dff" font-size="11" font-weight="700">White Blood Cells</text>
+  <text x="435" y="260" text-anchor="end" fill="#7777aa" font-size="9">immune system</text>
+  <text x="215" y="275" fill="#aaaacc" font-size="9">• Have a nucleus (unlike RBCs)</text>
+  <text x="215" y="288" fill="#aaaacc" font-size="9">• Phagocytes: engulf and destroy pathogens</text>
+  <text x="215" y="301" fill="#aaaacc" font-size="9">• Lymphocytes: produce antibodies specific to each pathogen</text>
+  <text x="215" y="314" fill="#aaaacc" font-size="9">• Far fewer than RBCs — but essential for immunity</text>
+
+  <!-- PLATELETS box -->
+  <rect x="160" y="346" width="280" height="72" rx="8" fill="rgba(78,205,196,0.07)" stroke="#4ecdc4" stroke-width="1.2"/>
+  <!-- Platelet icons: tiny fragments -->
+  <ellipse cx="178" cy="380" rx="6" ry="4" fill="rgba(78,205,196,0.5)" stroke="#4ecdc4" stroke-width="1.2"/>
+  <ellipse cx="192" cy="374" rx="5" ry="3" fill="rgba(78,205,196,0.5)" stroke="#4ecdc4" stroke-width="1.2"/>
+  <ellipse cx="184" cy="390" rx="4" ry="3" fill="rgba(78,205,196,0.5)" stroke="#4ecdc4" stroke-width="1.2"/>
+  <text x="215" y="362" fill="#4ecdc4" font-size="11" font-weight="700">Platelets</text>
+  <text x="435" y="362" text-anchor="end" fill="#7777aa" font-size="9">clotting</text>
+  <text x="215" y="377" fill="#aaaacc" font-size="9">• Tiny cell fragments — no nucleus</text>
+  <text x="215" y="390" fill="#aaaacc" font-size="9">• Form clots to seal wounds and prevent blood loss</text>
+  <text x="215" y="403" fill="#aaaacc" font-size="9">• Also prevent pathogens entering through wounds</text>
+
+  <!-- Connector lines from tube to boxes -->
+  <line x1="130" y1="115" x2="158" y2="82" stroke="#ffd93d" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="130" y1="258" x2="158" y2="186" stroke="#ff6b6b" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="130" y1="200" x2="158" y2="290" stroke="#c77dff" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="130" y1="300" x2="158" y2="382" stroke="#4ecdc4" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+</svg>

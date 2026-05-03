@@ -183,6 +183,60 @@ const Glossary = (() => {
       examRequired: true,
       syllabusTopic: 'b2-enzymes',
       syllabusName: 'Digestive enzymes — the chemical scissors'
+    },
+    'artery': {
+      def: 'A blood vessel that carries blood AWAY from the heart. Arteries have thick, elastic, muscular walls to withstand high pressure. They have a narrow lumen. Remember: A = Away.',
+      examRequired: true,
+      syllabusTopic: 'b2-heart',
+      syllabusName: 'The heart & blood vessels'
+    },
+    'vein': {
+      def: 'A blood vessel that carries blood TOWARDS the heart under low pressure. Veins have thin walls, a wide lumen, and valves to prevent backflow.',
+      examRequired: true,
+      syllabusTopic: 'b2-heart',
+      syllabusName: 'The heart & blood vessels'
+    },
+    'capillary': {
+      def: 'The smallest blood vessel — walls just one cell thick. This allows rapid diffusion of oxygen, glucose, CO₂ and urea between the blood and surrounding cells. Capillaries connect arteries to veins.',
+      examRequired: true,
+      syllabusTopic: 'b2-heart',
+      syllabusName: 'The heart & blood vessels'
+    },
+    'valve': {
+      def: 'A flap of tissue in the heart or a vein that prevents blood flowing backwards. Heart valves include the tricuspid (right AV), bicuspid (left AV), and semilunar valves. Faulty valves cause heart murmurs.',
+      examRequired: true,
+      syllabusTopic: 'b2-heart',
+      syllabusName: 'The heart & blood vessels'
+    },
+    'ventricle': {
+      def: 'The lower pumping chambers of the heart. The right ventricle pumps deoxygenated blood to the lungs. The left ventricle pumps oxygenated blood to the body — it has a thicker wall because it pumps further.',
+      examRequired: true,
+      syllabusTopic: 'b2-heart',
+      syllabusName: 'The heart & blood vessels'
+    },
+    'atrium': {
+      def: 'An upper receiving chamber of the heart. The right atrium receives deoxygenated blood from the body (via the vena cava). The left atrium receives oxygenated blood from the lungs (via the pulmonary vein).',
+      examRequired: true,
+      syllabusTopic: 'b2-heart',
+      syllabusName: 'The heart & blood vessels'
+    },
+    'peristalsis': {
+      def: 'Wave-like contractions of circular muscles in the walls of the oesophagus (and digestive tract) that push food along. No enzymes involved — this is a physical, mechanical process.',
+      examRequired: true,
+      syllabusTopic: 'b2-digestive-system',
+      syllabusName: 'The digestive system — breaking food down'
+    },
+    'emulsification': {
+      def: 'The process by which bile breaks large fat droplets into smaller ones — increasing the surface area for lipase to work on. This is a physical change, not a chemical reaction, which is why bile is NOT classified as an enzyme.',
+      examRequired: true,
+      syllabusTopic: 'b2-digestive-system',
+      syllabusName: 'The digestive system — breaking food down'
+    },
+    'absorption': {
+      def: 'The movement of digested food molecules from the small intestine into the bloodstream or lymph. Glucose and amino acids pass into blood capillaries; fatty acids and glycerol pass into lacteals.',
+      examRequired: true,
+      syllabusTopic: 'b2-digestive-system',
+      syllabusName: 'The digestive system — breaking food down'
     }
   };
 

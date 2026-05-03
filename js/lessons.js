@@ -111,7 +111,7 @@ const Lessons = (() => {
     const examBanner = (_stepIdx === 0 && _current.examTip) ? `
       <div class="tips-box" style="margin-bottom:1rem">
         <h4>Here's what actually matters for your exam:</h4>
-        <p style="font-size:0.85rem;line-height:1.6">${_current.examTip}</p>
+        <p style="font-size:0.95rem;line-height:1.7">${_current.examTip}</p>
       </div>` : '';
 
     let body = '';
@@ -187,7 +187,7 @@ const Lessons = (() => {
       <div style="text-align:center;padding:1rem 0 0.5rem">
         <div style="font-size:2rem;margin-bottom:0.5rem">🧠</div>
         <h2 style="font-size:1.3rem;margin-bottom:0.25rem">${_current.title || _subtopicName}</h2>
-        <p style="font-size:0.88rem;color:var(--muted);line-height:1.65;margin-bottom:1.25rem">${_current.intro}</p>
+        <p style="font-size:1rem;color:var(--text);line-height:1.8;margin-bottom:1.25rem">${_current.intro}</p>
       </div>
       <div class="predict-box">
         <p>Before we start — what do you already know about this?</p>

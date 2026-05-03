@@ -220,10 +220,10 @@ body::before {
 }
 .kp-header { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
 .kp h3 {
-  font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 700;
+  font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 700;
   color: var(--blue); flex: 1;
 }
-.kp p  { font-size: 0.88rem; line-height: 1.72; color: var(--text); }
+.kp p  { font-size: 1rem; line-height: 1.8; color: var(--text); }
 .kp strong { color: var(--yellow); font-weight: 600; }
 .kp em     { color: #b0c8ff; }
 
@@ -243,13 +243,13 @@ body::before {
   background: rgba(107,203,119,0.06); border: 1.5px solid rgba(107,203,119,0.25);
   border-radius: var(--r); padding: 1.1rem 1.2rem; margin: 1.25rem 0;
 }
-.checkpoint-q { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.85rem; }
-.checkpoint-q span { color: var(--green); font-size: 0.75rem; font-weight: 700; margin-right: 0.4rem; }
+.checkpoint-q { font-size: 1rem; font-weight: 600; margin-bottom: 0.85rem; }
+.checkpoint-q span { color: var(--green); font-size: 0.78rem; font-weight: 700; margin-right: 0.4rem; }
 .cp-opts { display: flex; flex-wrap: wrap; gap: 0.45rem; }
 .cp-btn {
   background: var(--s2); border: 1.5px solid var(--border2);
   color: var(--text); font-family: 'DM Sans', sans-serif;
-  font-size: 0.83rem; font-weight: 500; padding: 0.5rem 0.9rem;
+  font-size: 0.95rem; font-weight: 500; padding: 0.55rem 0.95rem;
   border-radius: var(--r-sm); cursor: pointer; transition: all 0.18s;
 }
 .cp-btn:hover   { border-color: var(--green); background: rgba(107,203,119,0.08); }
@@ -257,7 +257,7 @@ body::before {
 .cp-btn.wrong   { border-color: var(--red);   background: rgba(255,107,107,0.12); color: var(--red); }
 .cp-btn:disabled { cursor: not-allowed; }
 .cp-feedback {
-  margin-top: 0.75rem; font-size: 0.84rem; line-height: 1.65;
+  margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.65;
   padding: 0.6rem 0.85rem; border-radius: var(--r-sm);
   display: none;
 }
@@ -268,7 +268,7 @@ body::before {
 /* Tables */
 .lesson-table-wrap { overflow-x: auto; margin: 0.75rem 0 0.5rem; }
 .lesson-table {
-  width: 100%; border-collapse: collapse; font-size: 0.82rem;
+  width: 100%; border-collapse: collapse; font-size: 0.93rem;
 }
 .lesson-table th {
   background: rgba(77,150,255,0.1); padding: 0.55rem 0.75rem;
@@ -326,20 +326,20 @@ body::before {
   background: rgba(255,107,107,0.06); border: 1px solid rgba(255,107,107,0.2);
   border-radius: var(--r); padding: 1rem 1.1rem; margin: 0.75rem 0;
 }
-.mistakes-box h4 { color: var(--red); font-size: 0.82rem; font-weight: 700; margin-bottom: 0.6rem; }
-.mistakes-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-.mistakes-box li { font-size: 0.83rem; padding-left: 1.2rem; position: relative; line-height: 1.55; }
-.mistakes-box li::before { content: '⚠'; position: absolute; left: 0; font-size: 0.75rem; }
+.mistakes-box h4 { color: var(--red); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; }
+.mistakes-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.mistakes-box li { font-size: 0.95rem; padding-left: 1.4rem; position: relative; line-height: 1.65; }
+.mistakes-box li::before { content: '⚠'; position: absolute; left: 0; font-size: 0.8rem; }
 
 /* Exam tips */
 .tips-box {
   background: rgba(255,217,61,0.05); border: 1px solid rgba(255,217,61,0.2);
   border-radius: var(--r); padding: 1rem 1.1rem; margin: 0.75rem 0;
 }
-.tips-box h4 { color: var(--yellow); font-size: 0.82rem; font-weight: 700; margin-bottom: 0.6rem; }
-.tips-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-.tips-box li { font-size: 0.83rem; padding-left: 1.2rem; position: relative; line-height: 1.55; }
-.tips-box li::before { content: '🎯'; position: absolute; left: 0; font-size: 0.75rem; }
+.tips-box h4 { color: var(--yellow); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; }
+.tips-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.tips-box li { font-size: 0.95rem; padding-left: 1.4rem; position: relative; line-height: 1.65; }
+.tips-box li::before { content: '🎯'; position: absolute; left: 0; font-size: 0.8rem; }
 
 /* Write note */
 .write-note {

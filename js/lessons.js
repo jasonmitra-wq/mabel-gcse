@@ -1,19 +1,22 @@
 /* ============================================================
-   LESSONS.JS — Lesson renderer, checkpoints, diagrams, feedback
+   LESSONS.JS — Step-by-step lesson renderer
+   One sub-topic at a time. Predict → learn → question → notes → next.
    ============================================================ */
 
 const Lessons = (() => {
-  let _current = null;  // current lesson data
-  let _cpScores = {};   // checkpoint scores { cpId: true/false }
-  let _usedJokeIds = []; // track which jokes have been shown this lesson
-  let _pendingProfileQ = null; // profile question waiting for answer
+  let _current       = null;
+  let _subtopicName  = '';
+  let _cpScores      = {};
+  let _usedJokeIds   = [];
+  let _steps         = [];
+  let _stepIdx       = 0;
+  let _stepCpDone    = false; // checkpoint answered this step
 
   // ── Open a lesson ─────────────────────────────────────────
   async function open(subtopicId, subtopicName, topicCode) {
     const panel = document.getElementById('lessonPanel');
     const inner = document.getElementById('lessonInner');
 
-    // Show loading state
     inner.innerHTML = `
       <div style="text-align:center;padding:4rem 1rem">
         <div style="font-size:2.5rem;margin-bottom:1rem">📖</div>
@@ -21,16 +24,14 @@ const Lessons = (() => {
       </div>`;
     panel.classList.add('open');
 
-    // Save last position
     Store.setLastPosition({ subtopicId, subtopicName, topicCode });
 
-    // Fetch lesson JSON
-    let lessonData;
+    let data;
     try {
       const res = await fetch(`lessons/biology/${subtopicId}.json`);
       if (!res.ok) throw new Error(res.status);
-      lessonData = await res.json();
-    } catch(e) {
+      data = await res.json();
+    } catch {
       inner.innerHTML = `
         <div style="text-align:center;padding:4rem 1rem">
           <p style="color:var(--muted)">This lesson is being prepared — check back soon.</p>
@@ -39,13 +40,16 @@ const Lessons = (() => {
       return;
     }
 
-    _current   = lessonData;
-    _cpScores  = {};
-    _usedJokeIds = [];
-    _pendingProfileQ = null;
+    _current      = data;
+    _subtopicName = subtopicName;
+    _cpScores     = {};
+    _usedJokeIds  = [];
     Personality.incrementLessonCount();
-    _render(lessonData, subtopicName, topicCode);
     Store.markCovered(subtopicId);
+
+    _steps   = _buildSteps(data);
+    _stepIdx = 0;
+    _renderStep();
   }
 
   function close() {
@@ -53,169 +57,333 @@ const Lessons = (() => {
     _current = null;
   }
 
-  // ── Render lesson ─────────────────────────────────────────
-  function _render(data, subtopicName, topicCode) {
+  // ── Build step list ────────────────────────────────────────
+  function _buildSteps(data) {
+    const steps = [];
+    steps.push({ type: 'predict' });
+    (data.keyPoints || []).forEach((kp, i) => {
+      steps.push({ type: 'keypoint', kp, i, checkpoint: data.checkpoints?.[i] || null });
+    });
+    (data.tables || []).forEach(t => steps.push({ type: 'table', table: t }));
+    if (data.diagrams?.length) {
+      const standalone = data.diagrams.filter(d =>
+        !(data.keyPoints || []).some(kp => kp.diagram === d.id)
+      );
+      standalone.forEach(d => steps.push({ type: 'diagram', diag: d }));
+    }
+    if (data.commonMistakes?.length) steps.push({ type: 'mistakes' });
+    if (data.examTips?.length)       steps.push({ type: 'examtips' });
+    if (data.revisionCardBullets?.length) steps.push({ type: 'cards' });
+    return steps;
+  }
+
+  // ── Render current step ────────────────────────────────────
+  function _renderStep() {
     const inner = document.getElementById('lessonInner');
+    const step  = _steps[_stepIdx];
+    _stepCpDone = false;
 
-    // Build HTML
-    let html = `
-      <!-- Top bar -->
-      <div class="lesson-top-bar">
-        <button class="back-btn" onclick="Lessons.close()">← Topics</button>
-        <h1>${data.title || subtopicName}</h1>
-      </div>
+    const pct      = Math.round((_stepIdx / (_steps.length - 1)) * 100);
+    const isLast   = _stepIdx === _steps.length - 1;
+    const nextStep = _steps[_stepIdx + 1];
+    const nextLabel = nextStep ? _stepLabel(nextStep) : '';
 
-      <!-- Exam tip banner -->
-      ${data.examTip ? `<div class="tips-box" style="margin-bottom:1.25rem">
+    // Progress bar + back button header
+    const header = `
+      <div style="position:sticky;top:0;z-index:10;background:var(--bg);padding:0.75rem 0 0.5rem">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+          <button class="back-btn" onclick="Lessons.close()" style="flex-shrink:0">← Topics</button>
+          <div style="flex:1">
+            <div style="font-size:0.7rem;color:var(--muted);margin-bottom:3px">
+              ${_current.title || _subtopicName}
+            </div>
+            <div class="q-progress-track">
+              <div class="q-progress-fill" style="width:${pct}%"></div>
+            </div>
+          </div>
+          <span style="font-size:0.72rem;color:var(--muted);white-space:nowrap;flex-shrink:0">
+            ${_stepIdx + 1} / ${_steps.length}
+          </span>
+        </div>
+      </div>`;
+
+    // Exam tip banner — only on predict step
+    const examBanner = (_stepIdx === 0 && _current.examTip) ? `
+      <div class="tips-box" style="margin-bottom:1rem">
         <h4>Here's what actually matters for your exam:</h4>
-        <p style="font-size:0.85rem;line-height:1.6">${data.examTip}</p>
-      </div>` : ''}
+        <p style="font-size:0.85rem;line-height:1.6">${_current.examTip}</p>
+      </div>` : '';
 
-      <!-- Intro -->
-      <div class="lesson-intro">${data.intro}</div>`;
+    let body = '';
 
-    // Key points — each as its own micro-section with optional diagram
-    if (data.keyPoints?.length) {
-      html += `<div class="section-divider"><span>Key concepts</span></div>`;
-      html += `<div class="predict-box" id="predictBox">
+    switch (step.type) {
+      case 'predict':   body = _renderPredictStep(); break;
+      case 'keypoint':  body = _renderKeyPointStep(step); break;
+      case 'table':     body = _renderTableStep(step); break;
+      case 'diagram':   body = _renderDiagramStep(step); break;
+      case 'mistakes':  body = _renderMistakesStep(); break;
+      case 'examtips':  body = _renderExamTipsStep(); break;
+      case 'cards':     body = _renderCardsStep(); break;
+    }
+
+    // Nav footer
+    const needsCp    = step.type === 'keypoint' && step.checkpoint !== null;
+    const needsNotes = step.type === 'keypoint';
+    const nextDisabled = needsCp || needsNotes ? 'disabled' : '';
+    const nextBtnId  = 'stepNextBtn';
+
+    const nav = isLast ? `
+      <div class="step-nav">
+        ${_stepIdx > 0 ? `<button class="btn" onclick="Lessons._prevStep()">← Back</button>` : ''}
+        <button class="btn pri" onclick="Lessons._startPractice()">✏️ Practice questions</button>
+        <button class="btn" onclick="showHome()">🏠 Home</button>
+      </div>` : `
+      <div class="step-nav">
+        ${_stepIdx > 0 ? `<button class="btn" onclick="Lessons._prevStep()">← Back</button>` : '<div></div>'}
+        <button class="btn pri" id="${nextBtnId}" ${nextDisabled} onclick="Lessons._nextStep()">
+          ${nextLabel ? `Next: ${nextLabel} →` : 'Next →'}
+        </button>
+      </div>`;
+
+    inner.innerHTML = header + examBanner + body + nav;
+
+    // Post-render hooks
+    if (step.type === 'keypoint' && step.checkpoint) {
+      // checkpoint buttons already in body — wait for interaction
+    }
+    if (step.type === 'cards' && _current.revisionCardBullets?.length) {
+      _buildCardList(_current.revisionCardBullets);
+    }
+    if (step.type === 'predict') {
+      document.getElementById('predictInput')?.focus();
+    }
+
+    // Notes input listener
+    const notesEl = document.getElementById('stepNotes');
+    if (notesEl) {
+      notesEl.addEventListener('input', _tryUnlockNext);
+    }
+
+    // Scroll to top of panel
+    document.getElementById('lessonInner').scrollTop = 0;
+    document.getElementById('lessonPanel').scrollTop = 0;
+  }
+
+  function _stepLabel(step) {
+    if (!step) return '';
+    if (step.type === 'keypoint')  return step.kp.heading;
+    if (step.type === 'table')     return 'Summary table';
+    if (step.type === 'diagram')   return step.diag.title || 'Diagram';
+    if (step.type === 'mistakes')  return 'Common mistakes';
+    if (step.type === 'examtips')  return 'Exam technique';
+    if (step.type === 'cards')     return 'Your cards';
+    return '';
+  }
+
+  // ── Step renderers ─────────────────────────────────────────
+
+  function _renderPredictStep() {
+    return `
+      <div style="text-align:center;padding:1rem 0 0.5rem">
+        <div style="font-size:2rem;margin-bottom:0.5rem">🧠</div>
+        <h2 style="font-size:1.3rem;margin-bottom:0.25rem">${_current.title || _subtopicName}</h2>
+        <p style="font-size:0.88rem;color:var(--muted);line-height:1.65;margin-bottom:1.25rem">${_current.intro}</p>
+      </div>
+      <div class="predict-box">
         <p>Before we start — what do you already know about this?</p>
         <textarea id="predictInput" rows="3" placeholder="Even a rough idea counts. Just write what comes to mind."></textarea>
         <div style="display:flex;gap:0.5rem;margin-top:0.6rem">
-          <button class="btn pri" onclick="Lessons._submitPredict()">Submit</button>
-          <button class="btn" onclick="Lessons._skipPredict()">Skip</button>
+          <button class="btn pri" onclick="Lessons._nextStep()">Let's go →</button>
+          <button class="btn" onclick="Lessons._nextStep()">Start fresh</button>
         </div>
       </div>`;
-      data.keyPoints.forEach((kp, i) => {
-        if (i === 0) html += `<div id="predictReveal" style="display:none">`;
-        html += _renderKeyPoint(kp, i, data);
-        if (i === 0) html += `</div>`;
-
-        // Checkpoint after every 2 key points
-        if (data.checkpoints && data.checkpoints[i]) {
-          html += _renderCheckpoint(data.checkpoints[i], `cp_${i}`);
-        }
-
-        // Silver or skating moment after key points 1 and 3
-        if (i === 1) {
-          const moment = Personality.renderMoment('silver', _usedJokeIds);
-          _usedJokeIds.push(moment.id);
-          html += moment.html;
-          // Also inject a profile question if we have one
-          const pq = Personality.renderQuestion(Personality.getLessonCount());
-          if (pq) { html += pq.html; _pendingProfileQ = pq.id; }
-        }
-        if (i === 3) {
-          const moment = Personality.renderMoment('skating', _usedJokeIds);
-          _usedJokeIds.push(moment.id);
-          html += moment.html;
-        }
-      });
-    }
-
-    // Tables
-    if (data.tables?.length) {
-      html += `<div class="section-divider"><span>Key tables</span></div>`;
-      data.tables.forEach(t => { html += _renderTable(t); });
-    }
-
-    // Diagrams that aren't attached to key points
-    if (data.diagrams?.length) {
-      html += `<div class="section-divider"><span>Diagrams to know</span></div>`;
-      data.diagrams.forEach(d => { html += _renderDiagramBlock(d, data); });
-    }
-
-    // Common mistakes
-    if (data.commonMistakes?.length) {
-      html += `<div class="section-divider"><span>Common mistakes</span></div>
-        <div class="mistakes-box">
-          <h4>Here's where people drop marks — don't let this be you.</h4>
-          <ul>${data.commonMistakes.map(m => `<li>${m}</li>`).join('')}</ul>
-        </div>`;
-    }
-
-    // Exam tips
-    if (data.examTips?.length) {
-      html += `<div class="section-divider"><span>Exam tips</span></div>
-        <div class="tips-box">
-          <h4>How to actually answer this in the exam.</h4>
-          <ul>${data.examTips.map(t => `<li>${t}</li>`).join('')}</ul>
-        </div>`;
-    }
-
-    // Video links
-    if (data.videoLinks?.length) {
-      html += `<div class="section-divider"><span>Helpful videos</span></div>
-        <div class="video-links">
-          ${data.videoLinks.map(v => `<a class="video-link" href="${v.url}" target="_blank" rel="noopener">🎥 ${v.label}</a>`).join('')}
-        </div>`;
-    }
-
-    // Revision cards section
-    if (data.revisionCardBullets?.length) {
-      html += `<div class="section-divider"><span>Things worth putting on a card</span></div>
-        <div style="background:var(--s2);border:1px solid var(--border2);border-radius:14px;padding:1.1rem 1.2rem">
-          <p style="font-size:0.85rem;margin-bottom:0.75rem">These are the bits that keep coming up. Save them, and write them out too.</p>
-          <div id="cardList"></div>
-          <p class="write-note" style="margin-top:0.65rem">Write them out — your brain remembers things you write far better than things you read.</p>
-          <button class="btn grn full" style="margin-top:0.75rem" onclick="Lessons.saveAllCards()">💾 Save all cards to my deck</button>
-        </div>`;
-    }
-
-    // Feedback bar
-    html += `
-      <div class="section-divider"><span>How was this lesson?</span></div>
-      <div class="feedback-bar" id="feedbackBar">
-        <span>Tell me how this worked for you:</span>
-        <div id="fbBtns" style="display:flex;gap:0.4rem;flex-wrap:wrap"></div>
-      </div>
-
-      <!-- Spacer for footer -->
-      <div style="height:80px"></div>`;
-
-    inner.innerHTML = html;
-
-    // Inject card list as DOM (not HTML string to avoid escaping issues)
-    if (data.revisionCardBullets?.length) {
-      _buildCardList(data.revisionCardBullets);
-    }
-
-    // Build label exercises
-    if (data.labelExercises) {
-      data.labelExercises.forEach(ex => LabelEx.build(ex));
-    }
-
-    // Build feedback buttons
-    _buildFeedbackBtns(data.title || subtopicName, data);
-
-    // Sticky footer
-    _buildFooter(data, subtopicName);
   }
 
-  function _renderKeyPoint(kp, i, data) {
-    let html = `<div class="kp">
-      <div class="kp-header">
-        <h3>${kp.heading}</h3>
-        ${kp.examFlag ? `<span class="flag flag-exam">this gets asked</span>` : ''}
-        ${kp.cardFlag ? `<span class="flag flag-card">worth writing down</span>` : ''}
-      </div>
-      <p>${kp.content}</p>`;
+  function _renderKeyPointStep(step) {
+    const { kp, i, checkpoint } = step;
+    let html = `
+      <div class="kp" style="margin-bottom:1rem">
+        <div class="kp-header">
+          <h3>${kp.heading}</h3>
+          ${kp.examFlag ? `<span class="flag flag-exam">this gets asked</span>` : ''}
+          ${kp.cardFlag ? `<span class="flag flag-card">worth writing down</span>` : ''}
+        </div>
+        <p>${kp.content}</p>`;
 
-    // Inline diagram if referenced
-    if (kp.diagram) {
-      html += _renderInlineDiagram(kp.diagram, data);
+    if (kp.diagram) html += _renderInlineDiagram(kp.diagram, _current);
+    html += `</div>`;
+
+    // Personality moment at key points 1 and 3
+    if (i === 1) {
+      const moment = Personality.renderMoment('silver', _usedJokeIds);
+      _usedJokeIds.push(moment.id);
+      html += moment.html;
+      const pq = Personality.renderQuestion(Personality.getLessonCount());
+      if (pq) html += pq.html;
+    }
+    if (i === 3) {
+      const moment = Personality.renderMoment('skating', _usedJokeIds);
+      _usedJokeIds.push(moment.id);
+      html += moment.html;
     }
 
-    html += `</div>`;
+    // Checkpoint (if exists)
+    if (checkpoint) {
+      html += `<div style="border-top:1px solid var(--border);margin-top:1rem;padding-top:1rem">`;
+      html += _renderCheckpoint(checkpoint, `cp_${i}`);
+      html += `</div>`;
+    }
+
+    // Notes area — always shown
+    const notesPrompt = checkpoint
+      ? 'Then write the key idea in your own words:'
+      : 'Write the key idea in your own words — then you can move on:';
+    html += `
+      <div style="border-top:1px solid var(--border);margin-top:1rem;padding-top:1rem">
+        <p style="font-size:0.82rem;font-weight:600;color:var(--muted);margin-bottom:0.5rem">📝 ${notesPrompt}</p>
+        <textarea id="stepNotes" rows="2"
+          placeholder="e.g. A tissue is a group of similar cells doing the same job…"
+          style="width:100%;background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none;resize:vertical;box-sizing:border-box"
+          oninput="Lessons._tryUnlockNext()"></textarea>
+        <p style="font-size:0.74rem;color:var(--muted);margin-top:0.3rem">
+          ${checkpoint ? 'Answer the question above and write something here to continue.' : 'Write something here to continue.'}
+        </p>
+      </div>`;
+
     return html;
   }
 
+  function _renderTableStep(step) {
+    const t = step.table;
+    return `
+      <h3 style="margin-bottom:0.75rem">${t.title}</h3>
+      ${t.examFlag ? `<span class="flag flag-exam" style="margin-bottom:0.75rem;display:inline-flex">worth knowing</span><br>` : ''}
+      <div class="lesson-table-wrap" style="margin-bottom:0.75rem">
+        <table class="lesson-table">
+          <thead><tr>${t.headers.map(h => `<th>${h}</th>`).join('')}</tr></thead>
+          <tbody>${t.rows.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody>
+        </table>
+      </div>
+      <p class="write-note">Write this down — seriously.</p>`;
+  }
+
+  function _renderDiagramStep(step) {
+    return _renderInlineDiagram(step.diag.id, _current);
+  }
+
+  function _renderMistakesStep() {
+    return `
+      <div class="mistakes-box">
+        <h4>Here's where people drop marks — don't let this be you.</h4>
+        <ul>${_current.commonMistakes.map(m => `<li>${m}</li>`).join('')}</ul>
+      </div>`;
+  }
+
+  function _renderExamTipsStep() {
+    return `
+      <div class="tips-box">
+        <h4>How to actually answer this in the exam.</h4>
+        <ul>${_current.examTips.map(t => `<li>${t}</li>`).join('')}</ul>
+      </div>
+      ${_current.videoLinks?.length ? `
+        <div style="margin-top:1rem">
+          ${_current.videoLinks.map(v => `<a class="video-link" href="${v.url}" target="_blank" rel="noopener">🎥 ${v.label}</a>`).join('')}
+        </div>` : ''}`;
+  }
+
+  function _renderCardsStep() {
+    return `
+      <div class="section-divider"><span>Things worth putting on a card</span></div>
+      <div style="background:var(--s2);border:1px solid var(--border2);border-radius:14px;padding:1.1rem 1.2rem">
+        <p style="font-size:0.85rem;margin-bottom:0.75rem">These are the bits that keep coming up. Save them, and write them out too.</p>
+        <div id="cardList"></div>
+        <p class="write-note" style="margin-top:0.65rem">Write them out — your brain remembers things you write far better than things you read.</p>
+        <button class="btn grn full" style="margin-top:0.75rem" onclick="Lessons.saveAllCards()">💾 Save all cards to my deck</button>
+      </div>
+      <div style="margin-top:1rem">
+        <div class="section-divider"><span>How was this lesson?</span></div>
+        <div class="feedback-bar" id="feedbackBar">
+          <span>Tell me how this worked for you:</span>
+          <div id="fbBtns" style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.4rem"></div>
+        </div>
+      </div>`;
+  }
+
+  // ── Navigation ─────────────────────────────────────────────
+  function _nextStep() {
+    if (_stepIdx < _steps.length - 1) {
+      _stepIdx++;
+      _renderStep();
+      // Build feedback buttons on cards step
+      const step = _steps[_stepIdx];
+      if (step.type === 'cards') {
+        requestAnimationFrame(() => _buildFeedbackBtns(_subtopicName, _current));
+      }
+    }
+  }
+
+  function _prevStep() {
+    if (_stepIdx > 0) {
+      _stepIdx--;
+      _renderStep();
+    }
+  }
+
+  function _tryUnlockNext() {
+    const btn   = document.getElementById('stepNextBtn');
+    if (!btn) return;
+    const step  = _steps[_stepIdx];
+    if (step.type !== 'keypoint') { btn.disabled = false; return; }
+
+    const notesEl  = document.getElementById('stepNotes');
+    const hasNotes = notesEl && notesEl.value.trim().length >= 3;
+    const needsCp  = step.checkpoint !== null;
+    const cpOk     = !needsCp || _stepCpDone;
+
+    btn.disabled = !(hasNotes && cpOk);
+  }
+
+  // ── Checkpoint interaction ─────────────────────────────────
+  function checkpointClick(btn, cpId, isCorrect) {
+    const cp = btn.closest('.checkpoint');
+    cp.querySelectorAll('.cp-btn').forEach(b => {
+      b.disabled = true;
+      if (b.dataset.correct === 'true') b.classList.add('correct');
+    });
+    if (!isCorrect) btn.classList.add('wrong');
+
+    const fb    = document.getElementById(`${cpId}_fb`);
+    const cpDef = _steps[_stepIdx]?.checkpoint;
+    if (fb && cpDef) {
+      fb.innerHTML  = isCorrect
+        ? `✅ ${cpDef.correctFeedback || 'Correct!'}`
+        : `❌ ${cpDef.wrongFeedback   || `The answer is: ${cpDef.options[cpDef.correct]}`}`;
+      fb.className  = `cp-feedback show ${isCorrect ? 'correct' : 'wrong'}`;
+    }
+    _cpScores[cpId] = isCorrect;
+    _stepCpDone = true;
+    _tryUnlockNext();
+  }
+
+  function _renderCheckpoint(cp, id) {
+    const opts = cp.options.map((opt, i) => {
+      const isCorrect = i === cp.correct;
+      return `<button class="cp-btn" data-correct="${isCorrect}" data-cpid="${id}" data-idx="${i}"
+        onclick="Lessons.checkpointClick(this,'${id}',${isCorrect})">${opt}</button>`;
+    }).join('');
+    return `<div class="checkpoint" id="${id}">
+      <div class="checkpoint-q"><span>CHECK</span>${cp.question}</div>
+      <div class="cp-opts">${opts}</div>
+      <div class="cp-feedback" id="${id}_fb"></div>
+    </div>`;
+  }
+
+  // ── Diagram renderer ───────────────────────────────────────
   function _renderInlineDiagram(diagramId, data) {
-    // Find diagram definition
     const diagDef = data.diagrams?.find(d => d.id === diagramId) ||
                     data.allDiagrams?.find(d => d.id === diagramId);
     const title   = diagDef?.title || diagramId;
     const isExam  = diagDef?.examFlag;
-
     return `<div class="diagram-wrap" id="diag_${diagramId}">
       <div class="diagram-title">📊 ${title}${isExam ? ' <span class="flag flag-exam" style="margin-left:auto">worth knowing</span>' : ''}</div>
       <div id="diagContent_${diagramId}">
@@ -230,68 +398,7 @@ const Lessons = (() => {
     </div>`;
   }
 
-  function _renderDiagramBlock(d, data) {
-    return _renderInlineDiagram(d.id, data);
-  }
-
-  function _renderTable(t) {
-    let html = `
-      <div style="margin-bottom:1rem">
-        ${t.examFlag ? `<span class="flag flag-exam" style="margin-bottom:0.5rem;display:inline-flex">worth knowing</span><br>` : ''}
-        <p style="font-weight:600;font-size:0.88rem;margin-bottom:0.5rem">${t.title}</p>
-        <div class="lesson-table-wrap">
-          <table class="lesson-table">
-            <thead><tr>${t.headers.map(h => `<th>${h}</th>`).join('')}</tr></thead>
-            <tbody>${t.rows.map(row =>
-              `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`
-            ).join('')}</tbody>
-          </table>
-        </div>
-        <p class="write-note">Write this down — seriously.</p>
-      </div>`;
-    return html;
-  }
-
-  function _renderCheckpoint(cp, id) {
-    const opts = cp.options.map((opt, i) => {
-      const isCorrect = i === cp.correct;
-      return `<button class="cp-btn" data-correct="${isCorrect}" data-cpid="${id}" data-idx="${i}"
-        onclick="Lessons.checkpointClick(this,'${id}',${isCorrect})">${opt}</button>`;
-    }).join('');
-
-    return `<div class="checkpoint" id="${id}">
-      <div class="checkpoint-q"><span>CHECK</span>${cp.question}</div>
-      <div class="cp-opts">${opts}</div>
-      <div class="cp-feedback" id="${id}_fb"></div>
-    </div>`;
-  }
-
-  // ── Checkpoint interaction ────────────────────────────────
-  function checkpointClick(btn, cpId, isCorrect) {
-    const cp = btn.closest('.checkpoint');
-    cp.querySelectorAll('.cp-btn').forEach(b => {
-      b.disabled = true;
-      if (b.dataset.correct === 'true') b.classList.add('correct');
-    });
-    if (!isCorrect) btn.classList.add('wrong');
-
-    const fb = document.getElementById(`${cpId}_fb`);
-    const cpDef = _findCheckpoint(cpId);
-    if (fb && cpDef) {
-      fb.innerHTML = isCorrect
-        ? `✅ ${cpDef.correctFeedback || 'Correct!'}`
-        : `❌ ${cpDef.wrongFeedback || `The answer is: ${cpDef.options[cpDef.correct]}`}`;
-      fb.className = `cp-feedback show ${isCorrect ? 'correct' : 'wrong'}`;
-    }
-    _cpScores[cpId] = isCorrect;
-  }
-
-  function _findCheckpoint(cpId) {
-    if (!_current?.checkpoints) return null;
-    return Object.values(_current.checkpoints).find(cp => cp && true);
-  }
-
-  // ── Card list (built as DOM, not HTML string) ─────────────
+  // ── Card list ──────────────────────────────────────────────
   function _buildCardList(bullets) {
     const list = document.getElementById('cardList');
     if (!list) return;
@@ -300,24 +407,18 @@ const Lessons = (() => {
       const row = document.createElement('div');
       row.style.cssText = 'display:flex;align-items:flex-start;gap:0.6rem;padding:0.5rem 0;border-bottom:1px solid var(--border)';
       if (i === bullets.length - 1) row.style.borderBottom = 'none';
-
       const num = document.createElement('span');
       num.style.cssText = 'color:var(--muted);font-size:0.7rem;font-weight:700;margin-top:0.15rem;min-width:18px';
       num.textContent = (i + 1) + '.';
-
       const text = document.createElement('div');
       text.style.cssText = 'flex:1;font-size:0.84rem;line-height:1.6';
       text.textContent = b;
-
       const btn = document.createElement('button');
       btn.id = `csave_${i}`;
       btn.textContent = '+ Save';
       btn.style.cssText = 'flex-shrink:0;background:rgba(107,203,119,0.1);border:1.5px solid rgba(107,203,119,0.3);color:var(--green);font-family:"DM Sans",sans-serif;font-size:0.73rem;font-weight:600;padding:0.25rem 0.6rem;border-radius:6px;cursor:pointer;transition:all 0.18s';
       btn.onclick = () => _saveOneCard(i, btn, row);
-
-      row.appendChild(num);
-      row.appendChild(text);
-      row.appendChild(btn);
+      row.appendChild(num); row.appendChild(text); row.appendChild(btn);
       list.appendChild(row);
     });
   }
@@ -336,8 +437,7 @@ const Lessons = (() => {
     };
     const added = Store.addCards([card]);
     btn.textContent = added ? '✓ Saved' : '✓ Already';
-    btn.disabled = true;
-    btn.style.opacity = '0.55';
+    btn.disabled = true; btn.style.opacity = '0.55';
     if (added) row.style.borderColor = 'rgba(107,203,119,0.3)';
     App.toast(added ? '1 card saved to deck' : 'Already in deck');
   }
@@ -345,11 +445,10 @@ const Lessons = (() => {
   function saveAllCards() {
     if (!_current?.revisionCardBullets) return;
     const added = Cards.saveFromLesson(_current.revisionCardBullets, _current.title, _current.id);
-    // Update all save buttons
-    document.querySelectorAll('[id^="csave_"]').forEach((btn, i) => {
+    document.querySelectorAll('[id^="csave_"]').forEach(btn => {
       btn.textContent = '✓ Saved'; btn.disabled = true; btn.style.opacity = '0.55';
     });
-    App.toast(`${added} card${added!==1?'s':''} saved to deck`);
+    App.toast(`${added} card${added !== 1 ? 's' : ''} saved to deck`);
   }
 
   function _inferFront(back) {
@@ -359,45 +458,16 @@ const Lessons = (() => {
     return 'What do you know about: ' + clean.split(' ').slice(0, 7).join(' ') + '…?';
   }
 
-  // ── Predict before you read ──────────────────────────────
-  function _submitPredict() {
-    const text = (document.getElementById('predictInput')?.value || '').trim();
-    const box  = document.getElementById('predictBox');
-    const rev  = document.getElementById('predictReveal');
-    if (!box || !rev) return;
-
-    if (text) {
-      box.innerHTML = `<div style="font-size:0.84rem;line-height:1.6">
-        <p style="font-weight:600;margin-bottom:0.35rem">Your prediction:</p>
-        <p style="color:var(--muted);margin-bottom:0.6rem">${text}</p>
-        <p style="color:var(--green)">Good. Now let's see how close you were.</p>
-      </div>`;
-    } else {
-      box.style.display = 'none';
-    }
-    rev.style.display = 'block';
-    rev.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  function _skipPredict() {
-    const box = document.getElementById('predictBox');
-    const rev = document.getElementById('predictReveal');
-    if (box) box.style.display = 'none';
-    if (rev) { rev.style.display = 'block'; rev.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  }
-
-  // ── Feedback buttons ──────────────────────────────────────
+  // ── Feedback buttons ───────────────────────────────────────
   function _buildFeedbackBtns(subtopicName, lessonData) {
     const wrap = document.getElementById('fbBtns');
     if (!wrap) return;
-
     const opts = [
-      { val: 'liked',        label: '👍 Worked well' },
-      { val: 'more-examples',label: '🔁 More examples' },
-      { val: 'simpler',      label: '✂️ Simpler' },
-      { val: 'more-detail',  label: '🔍 More detail' },
+      { val: 'liked',         label: '👍 Worked well' },
+      { val: 'more-examples', label: '🔁 More examples' },
+      { val: 'simpler',       label: '✂️ Simpler' },
+      { val: 'more-detail',   label: '🔍 More detail' },
     ];
-
     opts.forEach(opt => {
       const btn = document.createElement('button');
       btn.className = 'fb-btn';
@@ -416,14 +486,10 @@ const Lessons = (() => {
     const profile = Store.getLearnerProfile();
     const format  = _describeFormat(lessonData);
     const entry   = { subtopic: subtopicName, format, val, date: new Date().toISOString() };
-
     if (val === 'liked') profile.liked.push(entry);
     else profile.disliked.push({ ...entry, preference: val });
-
     if (profile.liked.length   > 30) profile.liked   = profile.liked.slice(-30);
     if (profile.disliked.length > 30) profile.disliked = profile.disliked.slice(-30);
-
-    // Quick summary without API call
     _buildProfileSummary(profile);
     Store.updateLearnerProfile(profile);
   }
@@ -433,13 +499,11 @@ const Lessons = (() => {
     const wantsMore     = profile.disliked.filter(d => d.preference === 'more-detail').length;
     const wantsExamples = profile.disliked.filter(d => d.preference === 'more-examples').length;
     const liked         = profile.liked.length;
-
     const parts = [];
     if (wantsSimpler > wantsMore) parts.push('prefers concise explanations');
     if (wantsMore > wantsSimpler) parts.push('appreciates detailed explanations');
     if (wantsExamples > 1)        parts.push('responds well to worked examples');
     if (liked > 2)                parts.push('engages well with the current lesson format');
-
     profile.summary = parts.length ? `Mabel ${parts.join('; ')}.` : '';
   }
 
@@ -451,38 +515,15 @@ const Lessons = (() => {
     return parts.join(', ') || 'standard format';
   }
 
-  // ── Sticky lesson footer ──────────────────────────────────
-  function _buildFooter(data, subtopicName) {
-    const footer = document.createElement('div');
-    footer.className = 'lesson-footer';
-
-    const qBtn = document.createElement('button');
-    qBtn.className = 'btn pri';
-    qBtn.innerHTML = '✏️ Practice questions';
-    qBtn.onclick = () => Questions.start(data, subtopicName, data.id);
-
-    const cardBtn = document.createElement('button');
-    cardBtn.className = 'btn grn';
-    cardBtn.innerHTML = '🃏 View card deck';
-    cardBtn.onclick = () => showCardDeck();
-
-    const closeBtn = document.createElement('button');
-    closeBtn.className = 'btn';
-    closeBtn.innerHTML = '← Topics';
-    closeBtn.onclick = () => Lessons.close();
-
-    footer.appendChild(closeBtn);
-    footer.appendChild(qBtn);
-    footer.appendChild(cardBtn);
-
-    document.getElementById('lessonPanel').appendChild(footer);
+  function _startPractice() {
+    if (_current) Questions.start(_current, _subtopicName, _current.id);
   }
 
-  return { open, close, checkpointClick, saveAllCards, _submitPredict, _skipPredict };
+  return { open, close, checkpointClick, saveAllCards, _nextStep, _prevStep, _tryUnlockNext, _startPractice };
 })();
 
 /* ============================================================
-   LABEL EXERCISE — interactive diagram labelling
+   LABEL EXERCISE
    ============================================================ */
 const LabelEx = (() => {
   let _selected = null;
@@ -490,7 +531,6 @@ const LabelEx = (() => {
   function build(ex) {
     const container = document.getElementById(`labelEx_${ex.id}`);
     if (!container) return;
-
     container.innerHTML = `
       <div class="label-exercise">
         <h4>🎯 ${ex.title || 'Label the diagram'}</h4>
@@ -501,10 +541,6 @@ const LabelEx = (() => {
         <div class="word-bank" id="wordBank_${ex.id}">
           ${ex.labels.map(l => `<div class="word-chip" id="chip_${ex.id}_${l.id}" onclick="LabelEx.selectChip('${ex.id}','${l.id}')">${l.text}</div>`).join('')}
         </div>
-        <div class="prog-bar" style="margin-top:0.75rem;height:6px">
-          <div class="prog-fill" id="labelProg_${ex.id}" style="width:0%"></div>
-        </div>
-        <p style="font-size:0.75rem;color:var(--muted);margin-top:0.3rem" id="labelStatus_${ex.id}">0 / ${ex.labels.length} labelled</p>
       </div>`;
   }
 

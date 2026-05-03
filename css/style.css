@@ -676,3 +676,18 @@ body::before {
   40%,80% { transform: translateX(5px); }
 }
 .match-card.shake { animation: shake 0.45s ease; border-color: var(--red); }
+
+/* Step navigation */
+.step-nav {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.step-nav .btn[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}

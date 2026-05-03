@@ -63,12 +63,11 @@ const Lessons = (() => {
       <div class="lesson-top-bar">
         <button class="back-btn" onclick="Lessons.close()">← Topics</button>
         <h1>${data.title || subtopicName}</h1>
-        <span class="chip chip-blue">${topicCode}</span>
       </div>
 
       <!-- Exam tip banner -->
       ${data.examTip ? `<div class="tips-box" style="margin-bottom:1.25rem">
-        <h4>🎯 Exam focus</h4>
+        <h4>Here's what actually matters for your exam:</h4>
         <p style="font-size:0.85rem;line-height:1.6">${data.examTip}</p>
       </div>` : ''}
 
@@ -78,8 +77,18 @@ const Lessons = (() => {
     // Key points — each as its own micro-section with optional diagram
     if (data.keyPoints?.length) {
       html += `<div class="section-divider"><span>Key concepts</span></div>`;
+      html += `<div class="predict-box" id="predictBox">
+        <p>Before we start — what do you already know about this?</p>
+        <textarea id="predictInput" rows="3" placeholder="Even a rough idea counts. Just write what comes to mind."></textarea>
+        <div style="display:flex;gap:0.5rem;margin-top:0.6rem">
+          <button class="btn pri" onclick="Lessons._submitPredict()">Submit</button>
+          <button class="btn" onclick="Lessons._skipPredict()">Skip</button>
+        </div>
+      </div>`;
       data.keyPoints.forEach((kp, i) => {
+        if (i === 0) html += `<div id="predictReveal" style="display:none">`;
         html += _renderKeyPoint(kp, i, data);
+        if (i === 0) html += `</div>`;
 
         // Checkpoint after every 2 key points
         if (data.checkpoints && data.checkpoints[i]) {
@@ -119,7 +128,7 @@ const Lessons = (() => {
     if (data.commonMistakes?.length) {
       html += `<div class="section-divider"><span>Common mistakes</span></div>
         <div class="mistakes-box">
-          <h4>⚠️ Students lose marks on these every year</h4>
+          <h4>Here's where people drop marks — don't let this be you.</h4>
           <ul>${data.commonMistakes.map(m => `<li>${m}</li>`).join('')}</ul>
         </div>`;
     }
@@ -128,7 +137,7 @@ const Lessons = (() => {
     if (data.examTips?.length) {
       html += `<div class="section-divider"><span>Exam tips</span></div>
         <div class="tips-box">
-          <h4>🎯 How to pick up marks</h4>
+          <h4>How to actually answer this in the exam.</h4>
           <ul>${data.examTips.map(t => `<li>${t}</li>`).join('')}</ul>
         </div>`;
     }
@@ -143,11 +152,11 @@ const Lessons = (() => {
 
     // Revision cards section
     if (data.revisionCardBullets?.length) {
-      html += `<div class="section-divider"><span>Revision cards</span></div>
+      html += `<div class="section-divider"><span>Things worth putting on a card</span></div>
         <div style="background:var(--s2);border:1px solid var(--border2);border-radius:14px;padding:1.1rem 1.2rem">
-          <p style="font-size:0.85rem;margin-bottom:0.75rem">These are the key facts for this topic. Save them to your deck.</p>
+          <p style="font-size:0.85rem;margin-bottom:0.75rem">These are the bits that keep coming up. Save them, and write them out too.</p>
           <div id="cardList"></div>
-          <p class="write-note" style="margin-top:0.65rem">✍️ Write these out by hand too — the act of writing helps them stick.</p>
+          <p class="write-note" style="margin-top:0.65rem">Write them out — your brain remembers things you write far better than things you read.</p>
           <button class="btn grn full" style="margin-top:0.75rem" onclick="Lessons.saveAllCards()">💾 Save all cards to my deck</button>
         </div>`;
     }
@@ -186,8 +195,8 @@ const Lessons = (() => {
     let html = `<div class="kp">
       <div class="kp-header">
         <h3>${kp.heading}</h3>
-        ${kp.examFlag ? `<span class="flag flag-exam">🚨 Exam</span>` : ''}
-        ${kp.cardFlag ? `<span class="flag flag-card">📋 Card</span>` : ''}
+        ${kp.examFlag ? `<span class="flag flag-exam">this gets asked</span>` : ''}
+        ${kp.cardFlag ? `<span class="flag flag-card">worth writing down</span>` : ''}
       </div>
       <p>${kp.content}</p>`;
 
@@ -208,7 +217,7 @@ const Lessons = (() => {
     const isExam  = diagDef?.examFlag;
 
     return `<div class="diagram-wrap" id="diag_${diagramId}">
-      <div class="diagram-title">📊 ${title}${isExam ? ' <span class="flag flag-exam" style="margin-left:auto">🚨 Exam diagram</span>' : ''}</div>
+      <div class="diagram-title">📊 ${title}${isExam ? ' <span class="flag flag-exam" style="margin-left:auto">worth knowing</span>' : ''}</div>
       <div id="diagContent_${diagramId}">
         <img src="diagrams/biology/${diagramId}.svg" alt="${title}"
           onerror="this.style.display='none';document.getElementById('diagFallback_${diagramId}').style.display='block'"
@@ -217,7 +226,7 @@ const Lessons = (() => {
           Diagram: ${title}
         </div>
       </div>
-      ${isExam ? `<p class="write-note" style="margin-top:0.5rem">✍️ Sketch this diagram with labels — it's been tested on past papers.</p>` : ''}
+      ${isExam ? `<p class="write-note" style="margin-top:0.5rem">Sketch this one and label it — they've asked this before.</p>` : ''}
     </div>`;
   }
 
@@ -228,7 +237,7 @@ const Lessons = (() => {
   function _renderTable(t) {
     let html = `
       <div style="margin-bottom:1rem">
-        ${t.examFlag ? `<span class="flag flag-exam" style="margin-bottom:0.5rem;display:inline-flex">🚨 Learn this table</span><br>` : ''}
+        ${t.examFlag ? `<span class="flag flag-exam" style="margin-bottom:0.5rem;display:inline-flex">worth knowing</span><br>` : ''}
         <p style="font-weight:600;font-size:0.88rem;margin-bottom:0.5rem">${t.title}</p>
         <div class="lesson-table-wrap">
           <table class="lesson-table">
@@ -238,7 +247,7 @@ const Lessons = (() => {
             ).join('')}</tbody>
           </table>
         </div>
-        <p class="write-note">✍️ Copy this table onto a revision card.</p>
+        <p class="write-note">Write this down — seriously.</p>
       </div>`;
     return html;
   }
@@ -350,6 +359,33 @@ const Lessons = (() => {
     return 'What do you know about: ' + clean.split(' ').slice(0, 7).join(' ') + '…?';
   }
 
+  // ── Predict before you read ──────────────────────────────
+  function _submitPredict() {
+    const text = (document.getElementById('predictInput')?.value || '').trim();
+    const box  = document.getElementById('predictBox');
+    const rev  = document.getElementById('predictReveal');
+    if (!box || !rev) return;
+
+    if (text) {
+      box.innerHTML = `<div style="font-size:0.84rem;line-height:1.6">
+        <p style="font-weight:600;margin-bottom:0.35rem">Your prediction:</p>
+        <p style="color:var(--muted);margin-bottom:0.6rem">${text}</p>
+        <p style="color:var(--green)">Good. Now let's see how close you were.</p>
+      </div>`;
+    } else {
+      box.style.display = 'none';
+    }
+    rev.style.display = 'block';
+    rev.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function _skipPredict() {
+    const box = document.getElementById('predictBox');
+    const rev = document.getElementById('predictReveal');
+    if (box) box.style.display = 'none';
+    if (rev) { rev.style.display = 'block'; rev.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  }
+
   // ── Feedback buttons ──────────────────────────────────────
   function _buildFeedbackBtns(subtopicName, lessonData) {
     const wrap = document.getElementById('fbBtns');
@@ -442,7 +478,7 @@ const Lessons = (() => {
     document.getElementById('lessonPanel').appendChild(footer);
   }
 
-  return { open, close, checkpointClick, saveAllCards };
+  return { open, close, checkpointClick, saveAllCards, _submitPredict, _skipPredict };
 })();
 
 /* ============================================================

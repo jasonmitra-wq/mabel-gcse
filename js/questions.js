@@ -220,6 +220,26 @@ Return ONLY valid JSON array, no markdown:
         <div style="margin-top:0.75rem">
           <p style="font-size:0.78rem;font-weight:700;color:var(--blue);margin-bottom:0.35rem">MODEL ANSWER (${q.marks} mark${q.marks>1?'s':''}):</p>
           <div class="model-ans">${q.modelAnswer}</div>
+          ${userAnswer ? (() => {
+            const markPoints = q.modelAnswer.split(/\s*\[\d+\]\s*/).map(s => s.trim()).filter(Boolean);
+            if (markPoints.length < 2) return '';
+            const uLower = userAnswer.toLowerCase();
+            const results = markPoints.map(pt => {
+              const words = pt.toLowerCase().split(/\W+/).filter(w => w.length > 3);
+              const got = words.length > 0 && words.filter(w => uLower.includes(w)).length / words.length >= 0.4;
+              return { pt, got };
+            });
+            const allGot = results.every(r => r.got);
+            return `<div style="margin-top:0.6rem;border-top:1px solid var(--border);padding-top:0.55rem">
+              <p style="font-size:0.78rem;font-weight:700;color:${allGot ? 'var(--green)' : 'var(--muted)'};margin-bottom:0.35rem">
+                ${allGot ? 'You hit every point.' : 'Where you could pick up more marks:'}
+              </p>
+              ${results.map(r => `<div style="display:flex;gap:0.45rem;font-size:0.81rem;padding:0.2rem 0;line-height:1.5">
+                <span style="flex-shrink:0">${r.got ? '✅' : '❌'}</span>
+                <span style="color:${r.got ? 'var(--green)' : 'var(--text)'}">${r.pt}</span>
+              </div>`).join('')}
+            </div>`;
+          })() : ''}
           <p style="font-size:0.78rem;color:var(--muted);font-style:italic;margin-top:0.4rem">💡 ${q.examTip}</p>
         </div>
         <div class="q-btns" style="margin-top:1rem">
@@ -347,6 +367,7 @@ Return ONLY valid JSON array, no markdown:
     }
     html += `<button class="btn pri" onclick="Questions.close()">📖 Back to lesson</button>`;
     html += `<button class="btn" onclick="showHome()">🏠 Home</button>`;
+    html += `<button class="btn" id="emailReportBtn" onclick="Questions._sendSessionReport()">📧 Email this report</button>`;
     html += `</div>`;
 
     document.getElementById('qInner').innerHTML = html;
@@ -377,5 +398,49 @@ Return ONLY valid JSON array, no markdown:
     document.getElementById('hdrScore').style.display = 'none';
   }
 
-  return { start, close, _load, _submit, _skip, _hint, _retry, _next, _showResults: _showResults, _retryErrors };
+  // ── Session report email ──────────────────────────────────
+  async function _sendSessionReport() {
+    // EMAILJS_PUBLIC_KEY — get this from emailjs.com after creating a free account
+    const EMAILJS_PUBLIC_KEY  = '3UxpA4dBrUbXlNHs3';
+    const EMAILJS_SERVICE_ID  = 'service_mabel';
+    const EMAILJS_TEMPLATE_ID = 'template_session';
+
+    const btn = document.getElementById('emailReportBtn');
+    if (btn) { btn.disabled = true; btn.textContent = '⏳ Sending…'; }
+
+    const full    = _results.filter(r => r.mastery === 'full').length;
+    const partial = _results.filter(r => r.mastery === 'partial').length;
+    const missed  = _results.filter(r => r.mastery === 'missed').length;
+    const pct     = _total > 0 ? Math.round((_score / _total) * 100) : 0;
+    const errors  = _results.filter(r => r.mastery !== 'full' && r.mastery !== 'skipped');
+
+    const errorLog = errors.length
+      ? errors.map(r => `Q: ${r.question}\nYour answer: ${r.userAnswer || '(skipped)'}\nModel answer: ${r.modelAnswer}`).join('\n\n---\n\n')
+      : 'No errors — all questions answered correctly.';
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          student:  'Mabel',
+          date:     new Date().toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' }),
+          topic:    _topicName,
+          score:    _score,
+          total:    _total,
+          pct:      pct + '%',
+          mastery:  `Mastered: ${full} · Partial: ${partial} · Missed: ${missed}`,
+          errorLog,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      App.toast('📧 Report sent!', 3000);
+      if (btn) { btn.textContent = '✅ Sent'; }
+    } catch {
+      App.toast('Couldn\'t send — check EmailJS setup in questions.js');
+      if (btn) { btn.disabled = false; btn.textContent = '📧 Try again'; }
+    }
+  }
+
+  return { start, close, _load, _submit, _skip, _hint, _retry, _next, _showResults: _showResults, _retryErrors, _sendSessionReport };
 })();

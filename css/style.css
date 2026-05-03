@@ -577,6 +577,102 @@ body::before {
   transition: opacity 0.4s;
 }
 
+/* ── SCHEDULE UPLOAD ── */
+.upload-zone {
+  display: block;
+  border: 2px dashed var(--border2);
+  border-radius: var(--r);
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.22s;
+  background: var(--s2);
+  user-select: none;
+}
+.upload-zone:hover, .upload-zone.drag-over {
+  border-color: var(--yellow);
+  background: rgba(255,217,61,0.05);
+}
+.uz-icon  { font-size: 1.75rem; margin-bottom: 0.4rem; }
+.uz-label { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.2rem; color: var(--yellow); }
+.uz-sub   { font-size: 0.75rem; color: var(--muted); }
+
+.or-divider {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+.or-divider span { color: var(--muted); font-size: 0.75rem; white-space: nowrap; }
+.or-divider::before, .or-divider::after { content: ''; flex: 1; height: 1px; background: var(--border2); }
+
+/* Test event cards (schedule view) */
+.test-event-card {
+  background: var(--s1); border: 1.5px solid var(--border2);
+  border-radius: var(--r); padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem; cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; gap: 0.85rem;
+}
+.test-event-card:hover         { transform: translateX(3px); }
+.test-event-card.urgent        { border-color: rgba(255,107,107,0.35); }
+.test-event-card.soon          { border-color: rgba(255,217,61,0.35); }
+.test-event-card.ready         { border-color: rgba(107,203,119,0.3); }
+.test-event-card.urgent:hover  { border-color: var(--red);    background: rgba(255,107,107,0.05); }
+.test-event-card.soon:hover    { border-color: var(--yellow); background: rgba(255,217,61,0.04); }
+.test-event-card.ready:hover   { border-color: var(--green);  background: rgba(107,203,119,0.04); }
+
+.tec-badge {
+  width: 46px; height: 46px; border-radius: 10px; flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.tec-badge.urgent { background: rgba(255,107,107,0.12); color: var(--red); }
+.tec-badge.soon   { background: rgba(255,217,61,0.1);  color: var(--yellow); }
+.tec-badge.ready  { background: rgba(107,203,119,0.1); color: var(--green); }
+.tec-days { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 800; line-height: 1; }
+
+.tec-body    { flex: 1; min-width: 0; }
+.tec-subject { font-weight: 600; font-size: 0.9rem; }
+.tec-topic   { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+.tec-date    { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+.tec-arrow   { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; }
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-thumb { background: var(--s4); border-radius: 2px; }
+
+/* Predict box (F11) */
+.predict-box {
+  background: rgba(199,125,255,0.06);
+  border: 1.5px solid rgba(199,125,255,0.25);
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 1.25rem;
+}
+.predict-box p { font-size: 0.9rem; margin-bottom: 0.6rem; font-weight: 500; }
+.predict-box textarea {
+  width: 100%; background: var(--s2); border: 1.5px solid var(--border2);
+  color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+  padding: 0.6rem 0.85rem; border-radius: 8px; outline: none;
+  resize: vertical; min-height: 78px; box-sizing: border-box;
+}
+.predict-box textarea:focus { border-color: var(--purple); }
+
+/* Matching game (F9) */
+.match-card {
+  background: var(--s1); border: 1.5px solid var(--border2); border-radius: 10px;
+  padding: 0.65rem 0.55rem; font-size: 0.79rem; line-height: 1.5;
+  cursor: pointer; transition: border-color 0.15s, background 0.15s;
+  min-height: 72px; display: flex; align-items: center; justify-content: center;
+  text-align: center;
+}
+.match-card:hover  { border-color: var(--blue); }
+.match-card.back   { border-style: dashed; }
+.match-card.sel    { border-color: var(--blue); background: rgba(77,150,255,0.1); }
+.match-card.matched {
+  border-color: var(--green); background: rgba(107,203,119,0.12);
+  color: var(--green); pointer-events: none; border-style: solid;
+}
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%,60% { transform: translateX(-5px); }
+  40%,80% { transform: translateX(5px); }
+}
+.match-card.shake { animation: shake 0.45s ease; border-color: var(--red); }

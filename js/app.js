@@ -43,12 +43,19 @@ const AI = (() => {
     return _queue;
   }
 
-  return { call };
+  // Like call() but accepts an array of content blocks (for vision / document inputs)
+  function callMultimodal(sys, contentBlocks, tokens) {
+    _queue = _queue.then(() => _call(sys, contentBlocks, tokens));
+    return _queue;
+  }
+
+  return { call, callMultimodal };
 })();
 
 // ── State ──────────────────────────────────────────────────────
-let _syllabus = null;
-let _progress = null;
+let _syllabus       = null;
+let _progress       = null;
+let _activeSubject  = 'biology';
 
 // ── Boot ───────────────────────────────────────────────────────
 async function boot() {
@@ -96,15 +103,16 @@ function showHome(hasSaved) {
   main.innerHTML = `
     <div class="home-hero">
       <h1>Mabel's Biology Tutor</h1>
-      <p>AQA GCSE Separate Science · Paper 1 — B1 to B4 fully covered</p>
+      <p>Everything you need to do well in your exam.</p>
     </div>
-    <div class="mode-grid" id="modeGrid"></div>`;
+    <div class="mode-grid" id="modeGrid"></div>
+    <div id="upcomingSection"></div>`;
 
   const grid = document.getElementById('modeGrid');
 
   // Continue card (if last position saved)
   if (last?.subtopicId && last?.subtopicName) {
-    const cont = _modeCard('▶️', 'Continue', last.subtopicName, 'continue', () => {
+    const cont = _modeCard('▶️', last.subtopicName, 'Pick up where you left off.', 'continue', () => {
       Lessons.open(last.subtopicId, last.subtopicName, last.topicCode);
     });
     cont.className = 'mode-card continue';
@@ -112,7 +120,7 @@ function showHome(hasSaved) {
   }
 
   const modes = [
-    { icon: '🧠', title: 'Revise',    sub: 'Pick a topic',                  fn: showTopics },
+    { icon: '🧠', title: 'Revise',    sub: 'Pick a subject & topic',        fn: showSubjectPicker },
     { icon: '🎯', title: 'Test prep', sub: 'Focused countdown revision',     fn: showTestPrep },
     { icon: '📊', title: `Dashboard${coveredCount > 0 ? ' · '+coveredCount+' done' : ''}`, sub: 'Progress & scores', fn: showDashboard },
     { icon: '🃏', title: `Card deck${deckSize > 0 ? ' · '+deckSize : ''}`,   sub: 'Drill your saved cards',        fn: showCardDeck },
@@ -121,6 +129,68 @@ function showHome(hasSaved) {
   modes.forEach(m => {
     grid.appendChild(_modeCard(m.icon, m.title, m.sub, '', m.fn));
   });
+
+  _renderUpcomingTests();
+}
+
+function _renderUpcomingTests() {
+  const section = document.getElementById('upcomingSection');
+  if (!section) return;
+
+  try {
+    const raw = Store.get('schedule');
+    if (!raw) return;
+    const parsed  = typeof raw === 'string' ? JSON.parse(raw) : raw;
+    const tests   = Array.isArray(parsed) ? parsed : (parsed.tests || []);
+    const today   = new Date(); today.setHours(0, 0, 0, 0);
+
+    const upcoming = tests
+      .filter(t => t.date)
+      .map(t => ({ ...t, days: Math.ceil((new Date(t.date) - today) / 86400000) }))
+      .filter(t => t.days >= 0 && t.days <= 30)
+      .sort((a, b) => a.days - b.days)
+      .slice(0, 3);
+
+    if (!upcoming.length) return;
+
+    let html = `<div style="margin-top:0.5rem">
+      <div class="section-label">Coming up</div>`;
+
+    upcoming.forEach((t, i) => {
+      const isUrgent = t.days < 7;
+      const urgBg    = isUrgent ? 'rgba(255,107,107,0.06)' : t.days < 21 ? 'rgba(255,217,61,0.05)' : 'rgba(107,203,119,0.05)';
+      const urgBdr   = isUrgent ? 'rgba(255,107,107,0.25)' : t.days < 21 ? 'rgba(255,217,61,0.25)' : 'rgba(107,203,119,0.2)';
+      const dayStr   = t.days === 0 ? 'today' : t.days === 1 ? 'tomorrow' : `${t.days} days away`;
+      const topicStr = t.topic ? ` — ${t.topic}` : '';
+      const chip     = isUrgent
+        ? `<span class="chip chip-red">Soon!</span>`
+        : t.days < 21
+          ? `<span class="chip chip-gold">Coming up</span>`
+          : `<span class="chip chip-green">Plenty of time</span>`;
+      html += `<div onclick="_buildTestPlan(_scheduleTests[${i}] || {subject:'${(t.subject||'').replace(/'/g,"\\'")}',topic:'${(t.topic||'').replace(/'/g,"\\'")}',days:${t.days}})"
+        style="background:${urgBg};border:1.5px solid ${urgBdr};border-radius:12px;padding:0.65rem 0.9rem;margin-bottom:0.4rem;cursor:pointer;display:flex;align-items:center;gap:0.75rem;transition:all 0.18s"
+        onmouseover="this.style.transform='translateX(3px)'" onmouseout="this.style.transform=''">
+        <div style="flex:1;min-width:0;font-weight:600;font-size:0.85rem">${t.subject}${topicStr} — ${dayStr}</div>
+        ${chip}
+      </div>`;
+    });
+
+    html += `</div>`;
+    section.innerHTML = html;
+
+    // Sync _scheduleTests so onclick refs work
+    const today2 = new Date(); today2.setHours(0, 0, 0, 0);
+    _scheduleTests = tests
+      .filter(t => t.date)
+      .map(t => {
+        const d = new Date(t.date);
+        const days = Math.ceil((d - today2) / 86400000);
+        return { ...t, days, urgency: days < 7 ? 'urgent' : days < 21 ? 'soon' : 'ready', dateObj: d };
+      })
+      .filter(t => t.days >= 0)
+      .sort((a, b) => a.days - b.days);
+
+  } catch { /* silently ignore corrupt schedule data */ }
 }
 
 function _modeCard(icon, title, sub, extraClass, fn) {
@@ -129,6 +199,67 @@ function _modeCard(icon, title, sub, extraClass, fn) {
   card.innerHTML = `<span class="mc-icon">${icon}</span><div class="mc-title">${title}</div><div class="mc-sub">${sub}</div>`;
   card.onclick = fn;
   return card;
+}
+
+// ── SUBJECT PICKER ─────────────────────────────────────────────
+function showSubjectPicker() {
+  App.setStage('Subjects');
+
+  const subjects = [
+    { id: 'biology',  label: 'Biology',     icon: '🧬', sub: 'Ready to revise',    available: true  },
+    { id: 'chemistry',label: 'Chemistry',   icon: '⚗️', sub: 'Being built',         available: false },
+    { id: 'physics',  label: 'Physics',     icon: '⚡', sub: 'Being built',         available: false },
+    { id: 'maths',    label: 'Maths',       icon: '📐', sub: 'Being built',         available: false },
+    { id: 'english',  label: 'English Lit', icon: '📚', sub: 'Being built',         available: false },
+    { id: 'history',  label: 'History',     icon: '🏛️', sub: 'Being built',         available: false },
+  ];
+
+  let html = `
+    <div class="topic-header">
+      <button class="back-btn" onclick="showHome()">← Home</button>
+      <h2>What are you revising?</h2>
+    </div>
+    <div class="mode-grid">`;
+
+  subjects.forEach(s => {
+    if (s.available) {
+      html += `<div class="mode-card" onclick="_selectSubject('${s.id}')">
+        <span class="mc-icon">${s.icon}</span>
+        <div class="mc-title">${s.label}</div>
+        <div class="mc-sub">${s.sub}</div>
+      </div>`;
+    } else {
+      html += `<div class="mode-card" style="opacity:0.45" onclick="_comingSoonSubject('${s.label}')">
+        <span class="mc-icon">${s.icon}</span>
+        <div class="mc-title">${s.label}</div>
+        <div class="mc-sub">${s.sub}</div>
+      </div>`;
+    }
+  });
+
+  html += `</div>`;
+  document.getElementById('main').innerHTML = html;
+}
+
+function _selectSubject(subjectId) {
+  _activeSubject = subjectId;
+  showTopics();
+}
+
+function _comingSoonSubject(subjectName) {
+  App.setStage('Coming soon');
+  document.getElementById('main').innerHTML = `
+    <div style="max-width:500px">
+      <div class="topic-header">
+        <button class="back-btn" onclick="showSubjectPicker()">← Subjects</button>
+        <h2>Coming soon</h2>
+      </div>
+      <div style="background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:1.5rem;text-align:center">
+        <div style="font-size:2.5rem;margin-bottom:0.75rem">🚧</div>
+        <p style="font-size:0.9rem;line-height:1.65;margin-bottom:1.25rem">${subjectName} is on its way — Biology first, then we'll add it.</p>
+        <button class="btn pri full" onclick="_selectSubject('biology')">→ Go to Biology</button>
+      </div>
+    </div>`;
 }
 
 // ── TOPIC BROWSER ──────────────────────────────────────────────
@@ -140,7 +271,7 @@ function showTopics() {
   main.innerHTML = `
     <div class="topic-header">
       <button class="back-btn" onclick="showHome()">← Home</button>
-      <h2>🧬 AQA Biology</h2>
+      <h2>🧬 Biology</h2>
     </div>
     <div id="topicList"></div>`;
 
@@ -160,7 +291,7 @@ function showTopics() {
       <div class="tc-icon">${t.icon}</div>
       <div class="tc-body">
         <div class="tc-name">${t.name}</div>
-        <div class="tc-code">${code} · AQA Paper ${t.paper}</div>
+        <div class="tc-code">${t.name}</div>
       </div>
       <div class="tc-right">
         ${avail ? `
@@ -280,13 +411,88 @@ function showDashboard() {
   }
 
   // Learner profile
-  if (profile.summary || profile.liked?.length > 0) {
-    html += `<div class="dash-section"><h3>Your learning profile</h3>
-      <div style="background:rgba(77,150,255,0.06);border:1px solid rgba(77,150,255,0.2);border-radius:12px;padding:0.85rem 1rem;font-size:0.84rem;line-height:1.6">
-        ${profile.summary || `${profile.liked?.length || 0} lessons rated. Keep going — your profile builds up over time.`}
-        <p style="font-size:0.75rem;color:var(--muted);margin-top:0.4rem">This adapts how your questions are generated.</p>
-      </div>
-    </div>`;
+  {
+    const liked         = profile.liked    || [];
+    const disliked      = profile.disliked || [];
+    const wantsSimpler  = disliked.filter(d => d.preference === 'simpler').length;
+    const wantsMore     = disliked.filter(d => d.preference === 'more-detail').length;
+    const wantsExamples = disliked.filter(d => d.preference === 'more-examples').length;
+    const totalRated    = liked.length + disliked.length;
+    const mabelProfile  = Store.getMabelProfile();
+    const silver        = mabelProfile.silver  || {};
+    const skating       = mabelProfile.skating || {};
+
+    html += `<div class="dash-section"><h3>How you learn</h3>`;
+
+    if (totalRated === 0) {
+      html += `<div style="background:rgba(77,150,255,0.06);border:1px solid rgba(77,150,255,0.2);border-radius:12px;padding:0.85rem 1rem;font-size:0.84rem;color:var(--muted)">
+        Rate a few lessons and I'll start building your learning profile. The more you rate, the better your practice questions get.
+      </div>`;
+    } else {
+      html += `<div style="background:rgba(77,150,255,0.06);border:1px solid rgba(77,150,255,0.2);border-radius:12px;padding:0.85rem 1rem;font-size:0.84rem;line-height:1.7">
+        ${profile.summary ? `<p style="margin-bottom:0.65rem">${profile.summary}</p>` : ''}
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-bottom:0.65rem">
+          <div style="background:rgba(107,203,119,0.08);border:1px solid rgba(107,203,119,0.2);border-radius:8px;padding:0.45rem 0.65rem;text-align:center">
+            <div style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;color:var(--green)">${liked.length}</div>
+            <div style="font-size:0.7rem;color:var(--muted)">👍 Worked well</div>
+          </div>
+          <div style="background:rgba(255,217,61,0.06);border:1px solid rgba(255,217,61,0.2);border-radius:8px;padding:0.45rem 0.65rem;text-align:center">
+            <div style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;color:var(--yellow)">${wantsExamples}</div>
+            <div style="font-size:0.7rem;color:var(--muted)">🔁 Wants examples</div>
+          </div>
+          <div style="background:rgba(78,205,196,0.06);border:1px solid rgba(78,205,196,0.2);border-radius:8px;padding:0.45rem 0.65rem;text-align:center">
+            <div style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;color:var(--teal)">${wantsMore}</div>
+            <div style="font-size:0.7rem;color:var(--muted)">🔍 Wants more detail</div>
+          </div>
+          <div style="background:rgba(199,125,255,0.06);border:1px solid rgba(199,125,255,0.2);border-radius:8px;padding:0.45rem 0.65rem;text-align:center">
+            <div style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;color:var(--purple)">${wantsSimpler}</div>
+            <div style="font-size:0.7rem;color:var(--muted)">✂️ Wants simpler</div>
+          </div>
+        </div>
+        <p style="font-size:0.75rem;color:var(--muted)">This adapts how your practice questions are generated.</p>
+      </div>`;
+    }
+
+    // Silver & skating details gathered so far
+    const silverFacts  = [silver.colour, silver.breed, silver.mood].filter(Boolean);
+    const skatingFacts = [
+      skating.monthsIn  ? `${skating.monthsIn} months in` : null,
+      skating.currentMove ? `working on ${skating.currentMove}` : null,
+      skating.level ? skating.level : null,
+    ].filter(Boolean);
+
+    if (silverFacts.length || skatingFacts.length) {
+      let silverLine = '';
+      if (silver.colour && silver.breed && silver.mood) {
+        silverLine = `I know Silver is ${silver.colour}, ${silver.breed}, and ${silver.mood}.`;
+      } else if (silver.colour && silver.breed) {
+        silverLine = `I know Silver is ${silver.colour} and a ${silver.breed}.`;
+      } else if (silver.colour && silver.mood) {
+        silverLine = `I know Silver is ${silver.colour} and ${silver.mood}.`;
+      } else if (silverFacts.length) {
+        silverLine = `I know Silver is ${silverFacts[0]}.`;
+      }
+
+      let skatingLine = '';
+      if (skating.monthsIn && skating.currentMove) {
+        skatingLine = `You've been skating for ${skating.monthsIn} months and you're working on ${skating.currentMove}.`;
+      } else if (skating.monthsIn && skating.level) {
+        skatingLine = `You've been skating for ${skating.monthsIn} months at ${skating.level} level.`;
+      } else if (skating.monthsIn) {
+        skatingLine = `You've been skating for ${skating.monthsIn} months.`;
+      } else if (skating.currentMove) {
+        skatingLine = `You're working on ${skating.currentMove}.`;
+      } else if (skating.level) {
+        skatingLine = `You're at ${skating.level} level.`;
+      }
+
+      html += `<div style="background:rgba(199,125,255,0.05);border:1px solid rgba(199,125,255,0.15);border-radius:12px;padding:0.75rem 1rem;margin-top:0.5rem;font-size:0.82rem;line-height:1.85">`;
+      if (silverLine)  html += `<div>🐱 ${silverLine}</div>`;
+      if (skatingLine) html += `<div>⛸️ ${skatingLine}</div>`;
+      html += `</div>`;
+    }
+
+    html += `</div>`;
   }
 
   // Recent scores
@@ -341,12 +547,26 @@ function showTestPrep() {
         <button class="back-btn" onclick="showHome()">← Home</button>
         <h2>🎯 Test prep</h2>
       </div>
+
+      <div style="background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:1.25rem 1.3rem;margin-bottom:1rem">
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:0.85rem">Upload a photo or PDF of your school timetable — I'll find your upcoming tests and build a revision plan for each one.</p>
+        <label class="upload-zone" id="uploadZone">
+          <input type="file" id="scheduleFile" accept=".pdf,image/*" style="display:none">
+          <div class="uz-icon">📅</div>
+          <div class="uz-label">Upload your timetable</div>
+          <div class="uz-sub">PDF or photo · drag and drop or click</div>
+        </label>
+        <div id="uploadStatus" style="margin-top:0.65rem"></div>
+      </div>
+
+      <div class="or-divider"><span>or enter one test manually</span></div>
+
       <div style="background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:1.25rem 1.3rem">
-        <p style="font-size:0.9rem;margin-bottom:1rem">Tell me about your upcoming test and I'll build you a focused revision plan.</p>
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:0.85rem">Tell me about one test and I'll build you a focused day-by-day revision plan.</p>
         <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem">
           <input id="testSubject" type="text" placeholder="Subject (e.g. Biology)" value="Biology"
             style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none">
-          <input id="testTopic" type="text" placeholder="Topic (e.g. B2 Organisation)"
+          <input id="testTopic" type="text" placeholder="Topic (e.g. Digestive system)"
             style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none">
           <input id="testDate" type="date"
             style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none">
@@ -354,19 +574,167 @@ function showTestPrep() {
         <button class="btn pri full" onclick="_buildTestPlan()">📋 Build revision plan</button>
       </div>
     </div>`;
+
+  _setupUploadZone();
 }
 
-async function _buildTestPlan() {
-  const subject = document.getElementById('testSubject')?.value || 'Biology';
-  const topic   = document.getElementById('testTopic')?.value || 'General';
-  const dateVal = document.getElementById('testDate')?.value;
+// ── SCHEDULE UPLOAD ────────────────────────────────────────────
+let _scheduleTests = [];
 
-  let daysUntil = null;
-  if (dateVal) {
-    const testDate = new Date(dateVal);
-    const today    = new Date(); today.setHours(0,0,0,0);
-    daysUntil = Math.ceil((testDate - today) / (1000 * 60 * 60 * 24));
+function _setupUploadZone() {
+  const zone  = document.getElementById('uploadZone');
+  const input = document.getElementById('scheduleFile');
+  if (!zone || !input) return;
+
+  zone.addEventListener('dragover', e => {
+    e.preventDefault();
+    zone.classList.add('drag-over');
+  });
+  zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+  zone.addEventListener('drop', e => {
+    e.preventDefault();
+    zone.classList.remove('drag-over');
+    const file = e.dataTransfer?.files[0];
+    if (file) _handleScheduleUpload(file);
+  });
+  input.addEventListener('change', () => {
+    if (input.files[0]) _handleScheduleUpload(input.files[0]);
+  });
+}
+
+async function _handleScheduleUpload(file) {
+  const status = document.getElementById('uploadStatus');
+  if (status) {
+    status.innerHTML = `<p style="font-size:0.82rem;color:var(--muted);text-align:center">⏳ Reading <strong style="color:var(--text)">${file.name}</strong>…</p>`;
   }
+
+  const mediaType = file.type ||
+    (file.name.toLowerCase().endsWith('.pdf') ? 'application/pdf' : 'image/jpeg');
+
+  let base64;
+  try {
+    base64 = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload  = e => resolve(e.target.result.split(',')[1]);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  } catch {
+    if (status) status.innerHTML = `<p style="font-size:0.82rem;color:var(--red)">Couldn't read that file — try again.</p>`;
+    return;
+  }
+
+  if (status) {
+    status.innerHTML = `<p style="font-size:0.82rem;color:var(--muted);text-align:center">🧠 Scanning for test dates…</p>`;
+  }
+
+  try {
+    const tests = await _parseSchedule(base64, mediaType);
+    if (!Array.isArray(tests) || !tests.length) throw new Error('empty');
+    _renderSchedule(tests);
+  } catch {
+    if (status) {
+      status.innerHTML = `<p style="font-size:0.82rem;color:var(--red)">Couldn't find any tests in that file. Try a clearer photo, or enter your test details manually below.</p>`;
+    }
+  }
+}
+
+async function _parseSchedule(base64, mediaType) {
+  const isImage   = mediaType.startsWith('image/');
+  const fileBlock = isImage
+    ? { type: 'image',    source: { type: 'base64', media_type: mediaType,         data: base64 } }
+    : { type: 'document', source: { type: 'base64', media_type: 'application/pdf', data: base64 } };
+
+  const raw = await AI.callMultimodal(
+    `You are reading a school schedule or timetable. Extract all upcoming tests, assessments or exams. Return ONLY valid JSON: {"tests":[{"subject":"","topic":"","date":"YYYY-MM-DD or null","dateRaw":"as written on timetable","notes":""}]}`,
+    [
+      fileBlock,
+      { type: 'text', text: 'Extract all tests and exams from this timetable. Return only the JSON object.' }
+    ],
+    900
+  );
+
+  const clean  = raw.trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
+  const parsed = JSON.parse(clean);
+  Store.set('schedule', JSON.stringify(parsed));        // persist for home screen widget
+  return Array.isArray(parsed) ? parsed : (parsed.tests || []);
+}
+
+function _renderSchedule(tests) {
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+
+  _scheduleTests = tests
+    .map(t => {
+      const d       = new Date(t.date);
+      const days    = Math.ceil((d - today) / 86400000);
+      const urgency = days < 7 ? 'urgent' : days < 21 ? 'soon' : 'ready';
+      return { ...t, days, urgency, dateObj: d };
+    })
+    .filter(t => t.days >= 0)
+    .sort((a, b) => a.days - b.days);
+
+  let html = `
+    <div style="max-width:600px">
+      <div class="topic-header">
+        <button class="back-btn" onclick="showTestPrep()">← Back</button>
+        <h2>📅 What's coming up</h2>
+      </div>`;
+
+  if (!_scheduleTests.length) {
+    html += `<div class="empty-state">
+      <div class="es-icon">📭</div>
+      <p>No upcoming tests found in that timetable.</p>
+      <button class="btn" style="margin-top:0.75rem" onclick="showTestPrep()">Try again</button>
+    </div>`;
+  } else {
+    const urgentCount = _scheduleTests.filter(t => t.urgency === 'urgent').length;
+    if (urgentCount) {
+      html += `<div style="background:rgba(255,107,107,0.06);border:1px solid rgba(255,107,107,0.2);border-radius:12px;padding:0.7rem 1rem;margin-bottom:1rem;font-size:0.84rem;color:var(--red)">
+        🚨 ${urgentCount} test${urgentCount !== 1 ? 's' : ''} in the next 7 days — click one to build a plan now.
+      </div>`;
+    }
+
+    _scheduleTests.forEach((t, i) => {
+      const dateStr    = t.dateObj.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+      const daysLabel  = t.days === 0 ? 'Today' : t.days === 1 ? 'Tmrw' : t.days + 'd';
+      const urgLabel   = t.urgency === 'urgent' ? 'Soon!' : t.urgency === 'soon' ? 'Coming up' : 'Plenty of time';
+      html += `<div class="test-event-card ${t.urgency}" onclick="_buildTestPlan(_scheduleTests[${i}])">
+        <div class="tec-badge ${t.urgency}">
+          <div class="tec-days">${daysLabel}</div>
+          <div style="font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;opacity:0.85;margin-top:1px">${urgLabel}</div>
+        </div>
+        <div class="tec-body">
+          <div class="tec-subject">${t.subject}</div>
+          ${t.topic ? `<div class="tec-topic">${t.topic}</div>` : ''}
+          <div class="tec-date">${dateStr}</div>
+        </div>
+        <div class="tec-arrow">→</div>
+      </div>`;
+    });
+  }
+
+  if (_scheduleTests.length > 1) {
+    html += `<button class="btn pri full" style="margin-top:0.75rem" onclick="showFullTimetable()">📅 See your full revision plan</button>`;
+  }
+  html += `<button class="btn full" style="margin-top:0.5rem" onclick="showTestPrep()">↩ Upload different timetable</button>
+    </div>`;
+
+  document.getElementById('main').innerHTML = html;
+}
+
+function _daysFromInput() {
+  const dateVal = document.getElementById('testDate')?.value;
+  if (!dateVal) return null;
+  const testDate = new Date(dateVal);
+  const today    = new Date(); today.setHours(0, 0, 0, 0);
+  return Math.ceil((testDate - today) / 86400000);
+}
+
+// prefill is optional — passed when clicking a test from the schedule view
+async function _buildTestPlan(prefill) {
+  const subject   = (prefill && prefill.subject) || document.getElementById('testSubject')?.value || 'Biology';
+  const topic     = (prefill && prefill.topic)   || document.getElementById('testTopic')?.value  || 'General';
+  const daysUntil = (prefill && prefill.days != null) ? prefill.days : _daysFromInput();
 
   document.getElementById('main').innerHTML = `
     <div style="text-align:center;padding:3rem 1rem">
@@ -436,6 +804,84 @@ function _renderTestPlan(plan, topic, daysUntil) {
       <h4>⚡ Quick wins — do these first</h4>
       <ul>${plan.quickWins.map(q => `<li>${q}</li>`).join('')}</ul>
     </div>`;
+  }
+
+  html += `<div style="display:flex;gap:0.55rem;flex-wrap:wrap;margin-top:1rem">
+    <button class="btn pri" onclick="showTopics()">🧠 Start revising</button>
+    <button class="btn" onclick="showHome()">🏠 Home</button>
+  </div></div>`;
+
+  document.getElementById('main').innerHTML = html;
+}
+
+// ── FULL COMBINED TIMETABLE ────────────────────────────────────
+function showFullTimetable() {
+  if (!_scheduleTests.length) { App.toast('No tests loaded yet'); return; }
+
+  document.getElementById('main').innerHTML = `
+    <div style="text-align:center;padding:3rem 1rem">
+      <div style="font-size:2rem;margin-bottom:0.75rem">📅</div>
+      <p style="color:var(--muted)">Building your combined revision plan…</p>
+    </div>`;
+
+  const testList = _scheduleTests
+    .map(t => `${t.subject}${t.topic ? ' — ' + t.topic : ''} in ${t.days} day${t.days !== 1 ? 's' : ''}`)
+    .join('; ');
+
+  AI.call(
+    `You are a GCSE revision tutor. Create a combined day-by-day revision plan covering multiple upcoming tests. Return ONLY valid JSON, no markdown:
+{"intro":"2 sentence encouraging overview","days":[{"day":1,"label":"e.g. Mon 13 Jan","subjects":["Biology"],"focus":"what to cover today","tasks":["task","task","task"],"mins":45}],"tests":[{"name":"Biology — digestion","daysAway":3,"nightBefore":{"tasks":["task","task"]}}]}`,
+    `Tests coming up: ${testList}. Student is 15. Create a realistic combined study plan spreading subjects across days. Max 3 tasks per day.`,
+    2000
+  ).then(raw => {
+    try {
+      const clean = raw.trim().replace(/^```(?:json)?\s*/i,'').replace(/\s*```\s*$/i,'').trim();
+      _renderFullTimetable(JSON.parse(clean));
+    } catch {
+      document.getElementById('main').innerHTML = `
+        <div class="empty-state">
+          <p>Couldn't build the combined plan. <button class="btn" onclick="showTestPrep()">Back</button></p>
+        </div>`;
+    }
+  }).catch(() => {
+    document.getElementById('main').innerHTML = `
+      <div class="empty-state">
+        <p>Something went wrong. <button class="btn" onclick="showTestPrep()">Back</button></p>
+      </div>`;
+  });
+}
+
+function _renderFullTimetable(plan) {
+  let html = `
+    <div style="max-width:680px">
+      <div class="topic-header">
+        <button class="back-btn" onclick="showTestPrep()">← Test prep</button>
+        <h2>📅 Your revision plan</h2>
+      </div>
+      <p style="font-size:0.88rem;line-height:1.65;margin-bottom:1rem;color:var(--muted)">${plan.intro}</p>`;
+
+  (plan.days || []).forEach(d => {
+    const chips = (d.subjects || []).map(s => `<span class="chip chip-blue" style="font-size:0.7rem">${s}</span>`).join('');
+    html += `<div style="background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:0.85rem 1rem;margin-bottom:0.5rem">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.35rem">
+        <div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--green));display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;color:#fff;flex-shrink:0">${d.day}</div>
+        <strong style="font-size:0.88rem">${d.label || 'Day ' + d.day}</strong>
+        <span style="font-size:0.72rem;color:var(--muted);margin-left:auto">⏱ ${d.mins || 45} mins</span>
+      </div>
+      ${chips ? `<div style="padding-left:2rem;margin-bottom:0.3rem;display:flex;gap:0.3rem;flex-wrap:wrap">${chips}</div>` : ''}
+      <div style="font-size:0.83rem;color:var(--blue);font-weight:600;margin-bottom:0.3rem;padding-left:2rem">${d.focus}</div>
+      <div style="font-size:0.8rem;color:var(--muted);padding-left:2rem;line-height:1.65">${(d.tasks||[]).map(t => '• ' + t).join('<br>')}</div>
+    </div>`;
+  });
+
+  if (plan.tests?.length) {
+    html += `<div class="section-label" style="margin-top:1rem">Night-before plans</div>`;
+    plan.tests.forEach(t => {
+      html += `<div style="background:rgba(255,217,61,0.06);border:1px solid rgba(255,217,61,0.25);border-radius:12px;padding:0.85rem 1rem;margin-bottom:0.5rem">
+        <div style="font-weight:700;color:var(--yellow);margin-bottom:0.35rem">🌙 Night before: ${t.name}</div>
+        <div style="font-size:0.83rem;color:var(--muted)">${(t.nightBefore?.tasks||[]).map(task => '• ' + task).join('<br>')}</div>
+      </div>`;
+    });
   }
 
   html += `<div style="display:flex;gap:0.55rem;flex-wrap:wrap;margin-top:1rem">

@@ -9,6 +9,13 @@ const Cards = (() => {
   let _flipped = false;
   let _onComplete = null;
 
+  // Matching game state
+  let _matchSets = [];
+  let _matchSetIdx = 0;
+  let _matchBacks = [];
+  let _matchMatched = new Set();
+  let _matchSelectedFront = null;
+
   // ── Show card deck overview ───────────────────────────────
   function showDeck() {
     _deck = Store.getDeck();
@@ -82,6 +89,14 @@ const Cards = (() => {
       btn.onclick = () => startDrill(b.filter);
       wrap.appendChild(btn);
     });
+
+    if (_deck.length >= 4) {
+      const matchBtn = document.createElement('button');
+      matchBtn.className = 'btn';
+      matchBtn.textContent = '🎯 Matching game';
+      matchBtn.onclick = () => startMatchingGame();
+      wrap.appendChild(matchBtn);
+    }
   }
 
   function _buildByTopic() {
@@ -223,6 +238,94 @@ const Cards = (() => {
       </div>`;
   }
 
+  // ── Matching game ─────────────────────────────────────────
+  function startMatchingGame() {
+    _deck = Store.getDeck();
+    if (_deck.length < 4) { App.toast('Need at least 4 cards to play'); return; }
+    const shuffled = [..._deck].sort(() => Math.random() - 0.5);
+    _matchSets = [];
+    for (let i = 0; i < shuffled.length; i += 4) {
+      _matchSets.push(shuffled.slice(i, i + 4));
+    }
+    _matchSetIdx = 0;
+    _renderMatchSet();
+  }
+
+  function _renderMatchSet() {
+    if (_matchSetIdx >= _matchSets.length) { _finishMatch(); return; }
+    const set = _matchSets[_matchSetIdx];
+    _matchBacks = [...set].sort(() => Math.random() - 0.5);
+    _matchMatched = new Set();
+    _matchSelectedFront = null;
+
+    let html = `
+      <div class="card-deck">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">
+          <button class="back-btn" onclick="Cards.showDeck()">← Deck</button>
+          <span style="font-size:0.78rem;color:var(--muted)">Set ${_matchSetIdx + 1} of ${_matchSets.length}</span>
+        </div>
+        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.75rem">Tap a question, then tap its answer.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem" id="matchGrid">`;
+
+    set.forEach((card, i) => {
+      html += `<div class="match-card" id="mf_${i}" onclick="Cards._matchFront(${i})">${card.front}</div>`;
+    });
+    _matchBacks.forEach((card, i) => {
+      html += `<div class="match-card back" id="mb_${i}" onclick="Cards._matchBack(${i})">${card.back}</div>`;
+    });
+
+    html += `</div></div>`;
+    document.getElementById('main').innerHTML = html;
+  }
+
+  function _matchFront(i) {
+    if (_matchMatched.has('f' + i)) return;
+    document.querySelectorAll('.match-card').forEach(c => c.classList.remove('sel'));
+    _matchSelectedFront = i;
+    document.getElementById(`mf_${i}`)?.classList.add('sel');
+  }
+
+  function _matchBack(backIdx) {
+    if (_matchSelectedFront === null) { App.toast('Tap a question first'); return; }
+    if (_matchMatched.has('b' + backIdx)) return;
+
+    const set = _matchSets[_matchSetIdx];
+    const frontCard = set[_matchSelectedFront];
+    const backCard  = _matchBacks[backIdx];
+
+    if (frontCard.id === backCard.id) {
+      _matchMatched.add('f' + _matchSelectedFront);
+      _matchMatched.add('b' + backIdx);
+      const fEl = document.getElementById(`mf_${_matchSelectedFront}`);
+      const bEl = document.getElementById(`mb_${backIdx}`);
+      if (fEl) { fEl.classList.remove('sel'); fEl.classList.add('matched'); fEl.onclick = null; }
+      if (bEl) { bEl.classList.add('matched'); bEl.onclick = null; }
+      _matchSelectedFront = null;
+      if (_matchMatched.size === set.length * 2) {
+        setTimeout(() => { _matchSetIdx++; _renderMatchSet(); }, 700);
+      }
+    } else {
+      const fEl = document.getElementById(`mf_${_matchSelectedFront}`);
+      const bEl = document.getElementById(`mb_${backIdx}`);
+      if (bEl) { bEl.classList.add('shake'); setTimeout(() => bEl.classList.remove('shake'), 450); }
+      if (fEl) { fEl.classList.add('shake'); setTimeout(() => { fEl.classList.remove('shake', 'sel'); _matchSelectedFront = null; }, 450); }
+    }
+  }
+
+  function _finishMatch() {
+    document.getElementById('main').innerHTML = `
+      <div class="card-deck">
+        <div class="results-header">
+          <h2>🎯 Well done!</h2>
+          <p>You matched all the cards.</p>
+        </div>
+        <div style="display:flex;gap:0.55rem;flex-wrap:wrap;margin-top:1rem">
+          <button class="btn pri" onclick="Cards.startMatchingGame()">🔁 Play again</button>
+          <button class="btn" onclick="Cards.showDeck()">🃏 Back to deck</button>
+        </div>
+      </div>`;
+  }
+
   function clearDeck() {
     if (!confirm('Clear your entire card deck? This cannot be undone.')) return;
     Store.clearDeck();
@@ -253,5 +356,5 @@ const Cards = (() => {
     return 'What do you know about: ' + words + '…?';
   }
 
-  return { showDeck, startDrill, flip, rate, skip, clearDeck, saveFromLesson };
+  return { showDeck, startDrill, flip, rate, skip, clearDeck, saveFromLesson, startMatchingGame, _matchFront, _matchBack };
 })();

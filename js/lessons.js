@@ -60,7 +60,7 @@ const Lessons = (() => {
   // ── Build step list ────────────────────────────────────────
   function _buildSteps(data) {
     const steps = [];
-    steps.push({ type: 'predict' });
+    steps.push({ type: 'intro' });
     (data.keyPoints || []).forEach((kp, i) => {
       steps.push({ type: 'keypoint', kp, i, checkpoint: data.checkpoints?.[i] || null });
     });
@@ -88,36 +88,30 @@ const Lessons = (() => {
     const nextStep = _steps[_stepIdx + 1];
     const nextLabel = nextStep ? _stepLabel(nextStep) : '';
 
-    // Progress bar + back button header
+    // Sticky header: back + progress + step count + home
     const header = `
       <div style="position:sticky;top:0;z-index:10;background:var(--bg);padding:0.75rem 0 0.5rem">
         <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
           <button class="back-btn" onclick="Lessons.close()" style="flex-shrink:0">← Topics</button>
           <div style="flex:1">
-            <div style="font-size:0.7rem;color:var(--muted);margin-bottom:3px">
+            <div style="font-size:0.8rem;color:var(--muted);margin-bottom:4px;font-weight:500">
               ${_current.title || _subtopicName}
             </div>
             <div class="q-progress-track">
               <div class="q-progress-fill" style="width:${pct}%"></div>
             </div>
           </div>
-          <span style="font-size:0.72rem;color:var(--muted);white-space:nowrap;flex-shrink:0">
-            ${_stepIdx + 1} / ${_steps.length}
+          <span style="font-size:0.8rem;color:var(--muted);white-space:nowrap;flex-shrink:0">
+            ${_stepIdx + 1}/${_steps.length}
           </span>
+          <button class="back-btn" onclick="showHome()" style="flex-shrink:0;padding:0.3rem 0.6rem;font-size:1rem" title="Home">🏠</button>
         </div>
       </div>`;
-
-    // Exam tip banner — only on predict step
-    const examBanner = (_stepIdx === 0 && _current.examTip) ? `
-      <div class="tips-box" style="margin-bottom:1rem">
-        <h4>Here's what actually matters for your exam:</h4>
-        <p style="font-size:0.95rem;line-height:1.7">${_current.examTip}</p>
-      </div>` : '';
 
     let body = '';
 
     switch (step.type) {
-      case 'predict':   body = _renderPredictStep(); break;
+      case 'intro':     body = _renderIntroStep(); break;
       case 'keypoint':  body = _renderKeyPointStep(step); break;
       case 'table':     body = _renderTableStep(step); break;
       case 'diagram':   body = _renderDiagramStep(step); break;
@@ -144,17 +138,11 @@ const Lessons = (() => {
         </button>
       </div>`;
 
-    inner.innerHTML = header + examBanner + body + nav;
+    inner.innerHTML = header + body + nav;
 
     // Post-render hooks
-    if (step.type === 'keypoint' && step.checkpoint) {
-      // checkpoint buttons already in body — wait for interaction
-    }
     if (step.type === 'cards' && _current.revisionCardBullets?.length) {
       _buildCardList(_current.revisionCardBullets);
-    }
-    if (step.type === 'predict') {
-      document.getElementById('predictInput')?.focus();
     }
 
     // Scroll to top of panel
@@ -175,19 +163,22 @@ const Lessons = (() => {
 
   // ── Step renderers ─────────────────────────────────────────
 
-  function _renderPredictStep() {
+  function _renderIntroStep() {
+    // Split examTip into punchy sentence-bullets
+    const raw     = (_current.examTip || '').trim();
+    const bullets = raw.split(/\.\s+/).filter(Boolean)
+                       .map(s => s.replace(/\.$/, '').trim());
     return `
-      <div style="text-align:center;padding:1rem 0 0.5rem">
-        <div style="font-size:2rem;margin-bottom:0.5rem">🧠</div>
-        <h2 style="font-size:1.3rem;margin-bottom:0.25rem">${_current.title || _subtopicName}</h2>
-        <p style="font-size:1rem;color:var(--text);line-height:1.8;margin-bottom:1.25rem">${_current.intro}</p>
-      </div>
-      <div class="predict-box">
-        <p>Before we start — what do you already know about this?</p>
-        <textarea id="predictInput" rows="3" placeholder="Even a rough idea counts. Just write what comes to mind."></textarea>
-        <div style="display:flex;gap:0.5rem;margin-top:0.6rem">
-          <button class="btn pri" onclick="Lessons._nextStep()">Let's go →</button>
-          <button class="btn" onclick="Lessons._nextStep()">Start fresh</button>
+      <div style="padding:1.25rem 0 0.75rem">
+        <h2 style="font-family:'Fraunces',serif;font-size:1.7rem;font-weight:800;line-height:1.2;margin-bottom:0.75rem">
+          ${_current.title || _subtopicName}
+        </h2>
+        <p style="font-size:1.1rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem">
+          ${_current.intro}
+        </p>
+        <div class="tips-box">
+          <h4>⚡ What matters for your exam:</h4>
+          <ul>${bullets.map(b => `<li>${b}</li>`).join('')}</ul>
         </div>
       </div>`;
   }
@@ -233,16 +224,16 @@ const Lessons = (() => {
     if (hasBullets || hasTerms) {
       html += `
         <div style="border-top:1px solid var(--border);margin-top:1.25rem;padding-top:1.1rem">
-          <p style="font-size:0.82rem;font-weight:700;color:var(--yellow);margin-bottom:0.65rem;letter-spacing:0.03em">📋 WRITE THESE INTO YOUR NOTES NOW:</p>
-          ${hasBullets ? `<ul style="list-style:none;padding:0;margin:0 0 0.75rem;display:flex;flex-direction:column;gap:0.4rem">
-            ${kp.writeBullets.map(b => `<li style="font-size:0.95rem;line-height:1.65;padding-left:1.3rem;position:relative">
+          <p style="font-size:0.9rem;font-weight:700;color:var(--yellow);margin-bottom:0.75rem;letter-spacing:0.03em">📋 WRITE THESE INTO YOUR NOTES NOW:</p>
+          ${hasBullets ? `<ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+            ${kp.writeBullets.map(b => `<li style="font-size:1.05rem;line-height:1.7;padding-left:1.4rem;position:relative">
               <span style="position:absolute;left:0;color:var(--yellow);font-weight:700">•</span>${b}
             </li>`).join('')}
           </ul>` : ''}
           ${hasTerms ? `
-            <p style="font-size:0.78rem;font-weight:700;color:var(--teal);margin-bottom:0.4rem;letter-spacing:0.03em">🔑 KEY TERMS:</p>
-            <ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.4rem">
-              ${kp.keyTerms.map(t => `<li style="font-size:0.93rem;line-height:1.65;padding-left:1.3rem;position:relative">
+            <p style="font-size:0.88rem;font-weight:700;color:var(--teal);margin-bottom:0.5rem;letter-spacing:0.03em">🔑 KEY TERMS:</p>
+            <ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+              ${kp.keyTerms.map(t => `<li style="font-size:1.05rem;line-height:1.7;padding-left:1.4rem;position:relative">
                 <span style="position:absolute;left:0;color:var(--teal);font-weight:700">→</span><strong>${t.term}</strong> — ${t.def}
               </li>`).join('')}
             </ul>` : ''}
@@ -266,7 +257,7 @@ const Lessons = (() => {
           <tbody>${t.rows.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody>
         </table>
       </div>
-      <p style="font-size:0.82rem;font-weight:700;color:var(--yellow);margin-bottom:0.65rem;letter-spacing:0.03em">📋 COPY THIS TABLE INTO YOUR NOTES — every column, every row.</p>
+      <p style="font-size:0.95rem;font-weight:700;color:var(--yellow);margin-bottom:0.75rem;letter-spacing:0.03em">📋 COPY THIS TABLE INTO YOUR NOTES — every column, every row.</p>
       <label class="done-check-label">
         <input type="checkbox" id="stepDoneCheck" onchange="Lessons._tryUnlockNext()">
         <span>Done — I've copied the table</span>

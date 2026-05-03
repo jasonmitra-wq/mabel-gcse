@@ -112,7 +112,7 @@ function showHome(hasSaved) {
 
   // Continue card (if last position saved)
   if (last?.subtopicId && last?.subtopicName) {
-    const cont = _modeCard('▶️', last.subtopicName, 'Pick up where you left off.', 'continue', () => {
+    const cont = _modeCard(Icons.get('continue', 48), last.subtopicName, 'Pick up where you left off.', 'continue', () => {
       Lessons.open(last.subtopicId, last.subtopicName, last.topicCode);
     });
     cont.className = 'mode-card continue';
@@ -120,10 +120,10 @@ function showHome(hasSaved) {
   }
 
   const modes = [
-    { icon: '🧠', title: 'Revise',    sub: 'Pick a subject & topic',        fn: showSubjectPicker },
-    { icon: '🎯', title: 'Test prep', sub: 'Focused countdown revision',     fn: showTestPrep },
-    { icon: '📊', title: `Dashboard${coveredCount > 0 ? ' · '+coveredCount+' done' : ''}`, sub: 'Progress & scores', fn: showDashboard },
-    { icon: '🃏', title: `Card deck${deckSize > 0 ? ' · '+deckSize : ''}`,   sub: 'Drill your saved cards',        fn: showCardDeck },
+    { icon: Icons.get('revise', 48),    title: 'Revise',    sub: 'Pick a subject & topic',        fn: showSubjectPicker },
+    { icon: Icons.get('test', 48),      title: 'Test prep', sub: 'Focused countdown revision',     fn: showTestPrep },
+    { icon: Icons.get('dashboard', 48), title: `Dashboard${coveredCount > 0 ? ' · '+coveredCount+' done' : ''}`, sub: 'Progress & scores', fn: showDashboard },
+    { icon: Icons.get('cards', 48),     title: `Card deck${deckSize > 0 ? ' · '+deckSize : ''}`,   sub: 'Drill your saved cards',        fn: showCardDeck },
   ];
 
   modes.forEach(m => {

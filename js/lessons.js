@@ -104,7 +104,7 @@ const Lessons = (() => {
           <span style="font-size:0.8rem;color:var(--muted);white-space:nowrap;flex-shrink:0">
             ${_stepIdx + 1}/${_steps.length}
           </span>
-          <button class="back-btn" onclick="showHome()" style="flex-shrink:0;padding:0.3rem 0.6rem;font-size:1rem" title="Home">🏠</button>
+          <button class="back-btn" onclick="showHome()" style="flex-shrink:0;padding:0.25rem 0.45rem;line-height:0" title="Home">${Icons.inline('home', 22)}</button>
         </div>
       </div>`;
 
@@ -164,12 +164,12 @@ const Lessons = (() => {
   // ── Step renderers ─────────────────────────────────────────
 
   function _renderIntroStep() {
-    // Split examTip into punchy sentence-bullets
     const raw     = (_current.examTip || '').trim();
     const bullets = raw.split(/\.\s+/).filter(Boolean)
                        .map(s => s.replace(/\.$/, '').trim());
     return `
       <div style="padding:1.25rem 0 0.75rem">
+        <div style="margin-bottom:1rem">${Icons.get('intro', 56)}</div>
         <h2 style="font-family:'Fraunces',serif;font-size:1.7rem;font-weight:800;line-height:1.2;margin-bottom:0.75rem">
           ${_current.title || _subtopicName}
         </h2>
@@ -177,7 +177,9 @@ const Lessons = (() => {
           ${_current.intro}
         </p>
         <div class="tips-box">
-          <h4>⚡ What matters for your exam:</h4>
+          <h4 style="display:flex;align-items:center;gap:0.55rem">
+            ${Icons.inline('exam', 22)} What matters for your exam:
+          </h4>
           <ul>${bullets.map(b => `<li>${b}</li>`).join('')}</ul>
         </div>
       </div>`;
@@ -224,14 +226,14 @@ const Lessons = (() => {
     if (hasBullets || hasTerms) {
       html += `
         <div style="border-top:1px solid var(--border);margin-top:1.25rem;padding-top:1.1rem">
-          <p style="font-size:0.9rem;font-weight:700;color:var(--yellow);margin-bottom:0.75rem;letter-spacing:0.03em">📋 WRITE THESE INTO YOUR NOTES NOW:</p>
+          <p style="font-size:0.9rem;font-weight:700;color:var(--yellow);margin-bottom:0.75rem;letter-spacing:0.03em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('notes', 20)} WRITE THESE INTO YOUR NOTES NOW:</p>
           ${hasBullets ? `<ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.5rem">
             ${kp.writeBullets.map(b => `<li style="font-size:1.05rem;line-height:1.7;padding-left:1.4rem;position:relative">
               <span style="position:absolute;left:0;color:var(--yellow);font-weight:700">•</span>${b}
             </li>`).join('')}
           </ul>` : ''}
           ${hasTerms ? `
-            <p style="font-size:0.88rem;font-weight:700;color:var(--teal);margin-bottom:0.5rem;letter-spacing:0.03em">🔑 KEY TERMS:</p>
+            <p style="font-size:0.88rem;font-weight:700;color:var(--teal);margin-bottom:0.5rem;letter-spacing:0.03em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('key', 20)} KEY TERMS:</p>
             <ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.5rem">
               ${kp.keyTerms.map(t => `<li style="font-size:1.05rem;line-height:1.7;padding-left:1.4rem;position:relative">
                 <span style="position:absolute;left:0;color:var(--teal);font-weight:700">→</span><strong>${t.term}</strong> — ${t.def}
@@ -353,8 +355,8 @@ const Lessons = (() => {
     const cpDef = _steps[_stepIdx]?.checkpoint;
     if (fb && cpDef) {
       fb.innerHTML  = isCorrect
-        ? `✅ ${cpDef.correctFeedback || 'Correct!'}`
-        : `❌ ${cpDef.wrongFeedback   || `The answer is: ${cpDef.options[cpDef.correct]}`}`;
+        ? `<span style="display:flex;align-items:flex-start;gap:0.5rem">${Icons.inline('check', 22)} <span>${cpDef.correctFeedback || 'Correct!'}</span></span>`
+        : `<span style="display:flex;align-items:flex-start;gap:0.5rem">${Icons.inline('cross', 22)} <span>${cpDef.wrongFeedback || `The answer is: ${cpDef.options[cpDef.correct]}`}</span></span>`;
       fb.className  = `cp-feedback show ${isCorrect ? 'correct' : 'wrong'}`;
     }
     _cpScores[cpId] = isCorrect;

@@ -127,9 +127,8 @@ const Lessons = (() => {
     }
 
     // Nav footer
-    const needsCp    = step.type === 'keypoint' && step.checkpoint !== null;
-    const needsNotes = step.type === 'keypoint';
-    const nextDisabled = needsCp || needsNotes ? 'disabled' : '';
+    const needsGate  = step.type === 'keypoint' || step.type === 'table';
+    const nextDisabled = needsGate ? 'disabled' : '';
     const nextBtnId  = 'stepNextBtn';
 
     const nav = isLast ? `
@@ -156,12 +155,6 @@ const Lessons = (() => {
     }
     if (step.type === 'predict') {
       document.getElementById('predictInput')?.focus();
-    }
-
-    // Notes input listener
-    const notesEl = document.getElementById('stepNotes');
-    if (notesEl) {
-      notesEl.addEventListener('input', _tryUnlockNext);
     }
 
     // Scroll to top of panel
@@ -234,21 +227,30 @@ const Lessons = (() => {
       html += `</div>`;
     }
 
-    // Notes area — always shown
-    const notesPrompt = checkpoint
-      ? 'Then write the key idea in your own words:'
-      : 'Write the key idea in your own words — then you can move on:';
-    html += `
-      <div style="border-top:1px solid var(--border);margin-top:1rem;padding-top:1rem">
-        <p style="font-size:0.82rem;font-weight:600;color:var(--muted);margin-bottom:0.5rem">📝 ${notesPrompt}</p>
-        <textarea id="stepNotes" rows="2"
-          placeholder="e.g. A tissue is a group of similar cells doing the same job…"
-          style="width:100%;background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none;resize:vertical;box-sizing:border-box"
-          oninput="Lessons._tryUnlockNext()"></textarea>
-        <p style="font-size:0.74rem;color:var(--muted);margin-top:0.3rem">
-          ${checkpoint ? 'Answer the question above and write something here to continue.' : 'Write something here to continue.'}
-        </p>
-      </div>`;
+    // Write-it-down section — dictated bullets + key terms + checkbox
+    const hasBullets = kp.writeBullets?.length;
+    const hasTerms   = kp.keyTerms?.length;
+    if (hasBullets || hasTerms) {
+      html += `
+        <div style="border-top:1px solid var(--border);margin-top:1.25rem;padding-top:1.1rem">
+          <p style="font-size:0.82rem;font-weight:700;color:var(--yellow);margin-bottom:0.65rem;letter-spacing:0.03em">📋 WRITE THESE INTO YOUR NOTES NOW:</p>
+          ${hasBullets ? `<ul style="list-style:none;padding:0;margin:0 0 0.75rem;display:flex;flex-direction:column;gap:0.4rem">
+            ${kp.writeBullets.map(b => `<li style="font-size:0.95rem;line-height:1.65;padding-left:1.3rem;position:relative">
+              <span style="position:absolute;left:0;color:var(--yellow);font-weight:700">•</span>${b}
+            </li>`).join('')}
+          </ul>` : ''}
+          ${hasTerms ? `
+            <p style="font-size:0.78rem;font-weight:700;color:var(--teal);margin-bottom:0.4rem;letter-spacing:0.03em">🔑 KEY TERMS:</p>
+            <ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.4rem">
+              ${kp.keyTerms.map(t => `<li style="font-size:0.93rem;line-height:1.65;padding-left:1.3rem;position:relative">
+                <span style="position:absolute;left:0;color:var(--teal);font-weight:700">→</span><strong>${t.term}</strong> — ${t.def}
+              </li>`).join('')}
+            </ul>` : ''}
+          <label class="done-check-label">
+            <input type="checkbox" id="stepDoneCheck" onchange="Lessons._tryUnlockNext()">
+            <span>Done — I've written these into my notes</span>
+          </label>
+        </div>`;
 
     return html;
   }
@@ -264,7 +266,11 @@ const Lessons = (() => {
           <tbody>${t.rows.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody>
         </table>
       </div>
-      <p class="write-note">Write this down — seriously.</p>`;
+      <p style="font-size:0.82rem;font-weight:700;color:var(--yellow);margin-bottom:0.65rem;letter-spacing:0.03em">📋 COPY THIS TABLE INTO YOUR NOTES — every column, every row.</p>
+      <label class="done-check-label">
+        <input type="checkbox" id="stepDoneCheck" onchange="Lessons._tryUnlockNext()">
+        <span>Done — I've copied the table</span>
+      </label>`;
   }
 
   function _renderDiagramStep(step) {
@@ -330,17 +336,17 @@ const Lessons = (() => {
   }
 
   function _tryUnlockNext() {
-    const btn   = document.getElementById('stepNextBtn');
+    const btn     = document.getElementById('stepNextBtn');
     if (!btn) return;
-    const step  = _steps[_stepIdx];
-    if (step.type !== 'keypoint') { btn.disabled = false; return; }
+    const step    = _steps[_stepIdx];
+    const checkEl = document.getElementById('stepDoneCheck');
+    if (!checkEl) { btn.disabled = false; return; }
 
-    const notesEl  = document.getElementById('stepNotes');
-    const hasNotes = notesEl && notesEl.value.trim().length >= 3;
-    const needsCp  = step.checkpoint !== null;
-    const cpOk     = !needsCp || _stepCpDone;
+    const hasDone = checkEl.checked;
+    const needsCp = step.type === 'keypoint' && step.checkpoint !== null;
+    const cpOk    = !needsCp || _stepCpDone;
 
-    btn.disabled = !(hasNotes && cpOk);
+    btn.disabled = !(hasDone && cpOk);
   }
 
   // ── Checkpoint interaction ─────────────────────────────────

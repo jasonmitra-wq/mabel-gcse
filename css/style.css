@@ -691,3 +691,16 @@ body::before {
   cursor: not-allowed;
   pointer-events: none;
 }
+
+/* Done checkbox */
+.done-check-label {
+  display: flex; align-items: center; gap: 0.7rem; cursor: pointer;
+  background: rgba(107,203,119,0.06); border: 1.5px solid rgba(107,203,119,0.22);
+  border-radius: 10px; padding: 0.7rem 0.9rem;
+  font-size: 0.95rem; font-weight: 500; transition: all 0.18s;
+  margin-top: 0.5rem;
+}
+.done-check-label:hover { border-color: rgba(107,203,119,0.45); }
+.done-check-label input[type="checkbox"] {
+  width: 18px; height: 18px; accent-color: var(--green); cursor: pointer; flex-shrink: 0;
+}

@@ -206,7 +206,7 @@ const Lessons = (() => {
       </div>`;
   }
 
-  // ── kp-read: content + diagram + personality ──────────────
+  // ── kp-read: content + diagram + video strip + personality ──
   function _renderKpReadStep(step) {
     const { kp, i } = step;
     let html = `
@@ -218,6 +218,13 @@ const Lessons = (() => {
         </div>
         <p style="font-size:1.05rem;line-height:1.75">${kp.content}</p>`;
     if (kp.diagram) html += _renderInlineDiagram(kp.diagram, _current);
+    const vids = _current.videoLinks;
+    if (vids?.length) {
+      html += `<div class="kp-video-strip">
+        <span class="kp-video-strip-label">Watch to reinforce:</span>
+        ${vids.map(v => `<a class="kp-video-chip" href="${v.url}" target="_blank" rel="noopener">▶ ${v.source || v.label}</a>`).join('')}
+      </div>`;
+    }
     html += `</div>`;
     if (i === 1) {
       const moment = Personality.renderMoment('silver', _usedJokeIds);
@@ -266,6 +273,7 @@ const Lessons = (() => {
               <span style="position:absolute;left:0;color:var(--teal);font-weight:700">→</span><strong>${t.term}</strong> — ${t.def}
             </li>`).join('')}
           </ul>` : ''}
+        ${kp.memTip ? `<div class="mem-tip-box">💡 <strong>Memory tip:</strong> ${kp.memTip}</div>` : ''}
         <label class="done-check-label">
           <input type="checkbox" id="stepDoneCheck" onchange="Lessons._tryUnlockNext()">
           <span>Done — I've written these into my notes</span>

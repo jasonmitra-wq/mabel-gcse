@@ -5,15 +5,28 @@
 // ── AI API ────────────────────────────────────────────────────
 const AI = (() => {
   let _queue = Promise.resolve();
+  const _KEY_STORE = 'mabel_api_key';
+
+  function getKey()   { return localStorage.getItem(_KEY_STORE) || ''; }
+  function saveKey(k) { localStorage.setItem(_KEY_STORE, k.trim()); }
+  function clearKey() { localStorage.removeItem(_KEY_STORE); }
+  function hasKey()   { return !!getKey(); }
 
   async function _call(sys, user, tokens, attempt = 0) {
+    const key = getKey();
+    if (!key) throw new Error('NO_KEY');
     const MAX = 4;
     try {
       const resp = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': key,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-6',
+          model: 'claude-haiku-4-5-20251001',
           max_tokens: tokens || 2000,
           system: sys,
           messages: [{ role: 'user', content: user }]
@@ -24,12 +37,14 @@ const AI = (() => {
         await new Promise(r => setTimeout(r, 4000 * Math.pow(2, attempt)));
         return _call(sys, user, tokens, attempt + 1);
       }
+      if (resp.status === 401) throw new Error('BAD_KEY');
       if (!resp.ok) throw new Error(resp.status);
 
       const data = await resp.json();
-      await new Promise(r => setTimeout(r, 600)); // breathing room between calls
+      await new Promise(r => setTimeout(r, 600));
       return data.content.filter(b => b.type === 'text').map(b => b.text).join('');
     } catch(e) {
+      if (e.message === 'NO_KEY' || e.message === 'BAD_KEY') throw e;
       if (attempt < MAX && !String(e.message).match(/^[45]\d\d$/)) {
         await new Promise(r => setTimeout(r, 3000));
         return _call(sys, user, tokens, attempt + 1);
@@ -43,13 +58,12 @@ const AI = (() => {
     return _queue;
   }
 
-  // Like call() but accepts an array of content blocks (for vision / document inputs)
   function callMultimodal(sys, contentBlocks, tokens) {
     _queue = _queue.then(() => _call(sys, contentBlocks, tokens));
     return _queue;
   }
 
-  return { call, callMultimodal };
+  return { call, callMultimodal, hasKey, saveKey, clearKey, getKey };
 })();
 
 // ── State ──────────────────────────────────────────────────────
@@ -63,7 +77,7 @@ async function boot() {
 
   // Load syllabus
   try {
-    const res  = await fetch('data/syllabus.json');
+    const res  = await fetch('data/biology-syllabus.json');
     _syllabus  = await res.json();
   } catch(e) {
     document.getElementById('main').innerHTML = `
@@ -75,13 +89,8 @@ async function boot() {
     return;
   }
 
-  // Check for last position
   const last = _progress.lastPosition;
-  if (last?.subtopicId) {
-    showHome(true);
-  } else {
-    showHome(false);
-  }
+  showHome(!!last?.subtopicId);
 }
 
 // ── HOME ───────────────────────────────────────────────────────
@@ -95,8 +104,11 @@ function showHome(hasSaved) {
   document.getElementById('hdrTopic').style.display = 'none';
   document.getElementById('hdrScore').style.display = 'none';
 
-  // Close panels
-  document.getElementById('lessonPanel').classList.remove('open');
+  // Close panels (inline override ensures stale cached CSS can't leave panel visible)
+  const _lp = document.getElementById('lessonPanel');
+  _lp.style.transition = 'transform 0.32s cubic-bezier(0.4,0,0.2,1)';
+  _lp.style.transform = 'translateX(100vw)';
+  setTimeout(() => { _lp.style.cssText = ''; _lp.classList.remove('open'); }, 340);
   document.getElementById('qPanel').classList.remove('open');
 
   const main = document.getElementById('main');
@@ -113,7 +125,7 @@ function showHome(hasSaved) {
   // Continue card (if last position saved)
   if (last?.subtopicId && last?.subtopicName) {
     const cont = _modeCard(Icons.get('continue', 48), last.subtopicName, 'Pick up where you left off.', 'continue', () => {
-      Lessons.open(last.subtopicId, last.subtopicName, last.topicCode);
+      Lessons.open(last.subtopicId, last.subtopicName, last.topicCode, last.subject || 'biology');
     });
     cont.className = 'mode-card continue';
     grid.appendChild(cont);
@@ -206,12 +218,12 @@ function showSubjectPicker() {
   App.setStage('Subjects');
 
   const subjects = [
-    { id: 'biology',  label: 'Biology',     icon: '🧬', sub: 'Ready to revise',    available: true  },
-    { id: 'chemistry',label: 'Chemistry',   icon: '⚗️', sub: 'Being built',         available: false },
-    { id: 'physics',  label: 'Physics',     icon: '⚡', sub: 'Being built',         available: false },
-    { id: 'maths',    label: 'Maths',       icon: '📐', sub: 'Being built',         available: false },
-    { id: 'english',  label: 'English Lit', icon: '📚', sub: 'Being built',         available: false },
-    { id: 'history',  label: 'History',     icon: '🏛️', sub: 'Being built',         available: false },
+    { id: 'biology',  label: 'Biology',     icon: '🧬', sub: 'AQA 8461',  available: true  },
+    { id: 'chemistry',label: 'Chemistry',   icon: '⚗️', sub: 'AQA 8462',  available: true  },
+    { id: 'physics',  label: 'Physics',     icon: '⚡', sub: 'AQA 8463',  available: true  },
+    { id: 'maths',    label: 'Maths',       icon: '📐', sub: 'Coming soon', available: false },
+    { id: 'english',  label: 'English Lit', icon: '📚', sub: 'Coming soon', available: false },
+    { id: 'history',  label: 'History',     icon: '🏛️', sub: 'Coming soon', available: false },
   ];
 
   let html = `
@@ -241,8 +253,15 @@ function showSubjectPicker() {
   document.getElementById('main').innerHTML = html;
 }
 
-function _selectSubject(subjectId) {
+async function _selectSubject(subjectId) {
   _activeSubject = subjectId;
+  try {
+    const res = await fetch(`data/${subjectId}-syllabus.json`);
+    if (!res.ok) throw new Error(res.status);
+    _syllabus = await res.json();
+  } catch {
+    _syllabus = { topics: {} };
+  }
   showTopics();
 }
 
@@ -267,11 +286,14 @@ function showTopics() {
   App.setStage('Topics');
   _progress = Store.getProgress();
 
+  const _subjectMeta = { biology:'🧬 Biology', chemistry:'⚗️ Chemistry', physics:'⚡ Physics', maths:'📐 Maths', english:'📚 English', history:'🏛️ History' };
+  const subjectLabel = _subjectMeta[_activeSubject] || _activeSubject;
+
   const main = document.getElementById('main');
   main.innerHTML = `
     <div class="topic-header">
-      <button class="back-btn" onclick="showHome()">← Home</button>
-      <h2>🧬 Biology</h2>
+      <button class="back-btn" onclick="showSubjectPicker()">← Subjects</button>
+      <h2>${subjectLabel}</h2>
     </div>
     <div id="topicList"></div>`;
 
@@ -341,7 +363,7 @@ function showSubtopics(topicCode, topicData) {
     if (avail) {
       card.onclick = () => {
         App.setTopicChip(`${topicCode}: ${topicData.name}`);
-        Lessons.open(st.id, st.name, topicCode);
+        Lessons.open(st.id, st.name, topicCode, _activeSubject);
       };
     }
     list.appendChild(card);
@@ -533,7 +555,10 @@ function _confirmReset() {
 // ── CARD DECK WRAPPER ──────────────────────────────────────────
 function showCardDeck() {
   App.setStage('Cards');
-  document.getElementById('lessonPanel').classList.remove('open');
+  const _lp2 = document.getElementById('lessonPanel');
+  _lp2.style.transition = 'transform 0.32s cubic-bezier(0.4,0,0.2,1)';
+  _lp2.style.transform = 'translateX(100vw)';
+  setTimeout(() => { _lp2.style.cssText = ''; _lp2.classList.remove('open'); }, 340);
   document.getElementById('qPanel').classList.remove('open');
   Cards.showDeck();
 }

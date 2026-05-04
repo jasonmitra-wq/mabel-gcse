@@ -12,6 +12,7 @@ const Questions = (() => {
   let _topicName  = '';
   let _topicId    = '';
   let _hintShown  = false;
+  let _pendingLoad = null; // saved while waiting for API key entry
 
   // ── Load questions via AI ─────────────────────────────────
   async function start(lessonData, topicName, topicId) {
@@ -47,6 +48,12 @@ const Questions = (() => {
   }
 
   async function _load(lessonData, topicName, topicId, count) {
+    if (!AI.hasKey()) {
+      _pendingLoad = { lessonData, topicName, topicId, count };
+      _showKeySetup(false);
+      return;
+    }
+
     document.getElementById('qInner').innerHTML = `
       <div style="text-align:center;padding:3rem 1rem">
         <div style="font-size:2rem;margin-bottom:0.75rem">🧠</div>
@@ -88,6 +95,12 @@ Return ONLY valid JSON array, no markdown:
       }
       _questions = JSON.parse(clean);
     } catch(e) {
+      if (e.message === 'BAD_KEY') {
+        AI.clearKey();
+        _pendingLoad = { lessonData, topicName, topicId, count };
+        _showKeySetup(true);
+        return;
+      }
       document.getElementById('qInner').innerHTML = `
         <div style="text-align:center;padding:3rem 1rem">
           <p style="color:var(--red);margin-bottom:1rem">⚠️ Couldn't generate questions right now.</p>
@@ -393,6 +406,52 @@ Return ONLY valid JSON array, no markdown:
     _renderQuestion();
   }
 
+  function _showKeySetup(isBadKey) {
+    document.getElementById('qInner').innerHTML = `
+      <div style="max-width:480px;margin:2.5rem auto;padding:0 1.25rem">
+        <div style="font-size:2rem;margin-bottom:0.75rem">🔑</div>
+        <h2 style="font-family:'Fraunces',serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem">
+          ${isBadKey ? 'API key rejected — try again' : 'One-time setup needed'}
+        </h2>
+        <p style="color:var(--muted);font-size:0.9rem;line-height:1.6;margin-bottom:0.5rem">
+          ${isBadKey
+            ? 'The saved key was rejected by the API. Enter a valid Anthropic API key below.'
+            : 'The practice questions and Ask Me features use Claude AI. Enter your Anthropic API key — it\'s saved in your browser only and never sent anywhere else.'}
+        </p>
+        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem">
+          Get a free key at <strong style="color:var(--text)">console.anthropic.com</strong> → API Keys
+        </p>
+        <input type="password" id="apiKeyInput" placeholder="sk-ant-api03-…"
+          style="width:100%;padding:0.7rem 0.9rem;background:var(--s2);border:1.5px solid var(--border2);border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;margin-bottom:0.75rem;outline:none"
+          onkeydown="if(event.key==='Enter')Questions._confirmKey()">
+        <button class="btn pri full" onclick="Questions._confirmKey()">Save key & generate questions</button>
+        <button class="btn full" style="margin-top:0.4rem" onclick="Questions.close()">Cancel</button>
+      </div>`;
+    setTimeout(() => document.getElementById('apiKeyInput')?.focus(), 50);
+  }
+
+  function _confirmKey() {
+    const key = (document.getElementById('apiKeyInput')?.value || '').trim();
+    if (!key.startsWith('sk-')) {
+      App.toast('Enter a valid Anthropic key — it starts with sk-');
+      return;
+    }
+    AI.saveKey(key);
+    const p = _pendingLoad;
+    _pendingLoad = null;
+    if (p) {
+      _load(p.lessonData, p.topicName, p.topicId, p.count);
+    } else {
+      App.toast('API key saved ✓');
+      close();
+    }
+  }
+
+  function setupKey() {
+    document.getElementById('qPanel').classList.add('open');
+    _showKeySetup(false);
+  }
+
   function close() {
     document.getElementById('qPanel').classList.remove('open');
     document.getElementById('hdrScore').style.display = 'none';
@@ -442,5 +501,5 @@ Return ONLY valid JSON array, no markdown:
     }
   }
 
-  return { start, close, _load, _submit, _skip, _hint, _retry, _next, _showResults: _showResults, _retryErrors, _sendSessionReport };
+  return { start, close, setupKey, _load, _submit, _skip, _hint, _retry, _next, _showResults: _showResults, _retryErrors, _sendSessionReport, _confirmKey, _showKeySetup };
 })();

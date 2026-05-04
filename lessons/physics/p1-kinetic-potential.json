@@ -1,0 +1,161 @@
+{
+  "id": "p1-kinetic-potential",
+  "title": "Kinetic and potential energy — the energy stores",
+  "topic": "P1",
+  "subject": "Physics",
+  "examTip": "Energy store equations appear on every AQA Physics paper. Know each equation, its units, and what happens when energy transfers between stores. The v² in the kinetic energy equation is the most common source of lost marks.",
+  "introTips": [
+    "You'll learn three energy equations today — kinetic, gravitational potential, and elastic potential. Each one links a store to the situation that creates it.",
+    "The key skill AQA tests most is rearranging these equations and picking the right one. You'll also practise equating GPE and KE to find the speed of a falling object.",
+    "Specific heat capacity sits in this topic too — it tells you how much energy is needed to heat something up. It looks intimidating but it's just one equation used in a very predictable way."
+  ],
+  "intro": "Every time you kick a ball, stretch a spring, or drop your phone, energy is moving between stores. Understanding those stores — and being able to calculate exactly how much energy is in them — is what this topic is about. AQA will ask you to use these equations in almost every Physics paper, so the time you spend on them now pays back repeatedly. The maths isn't hard once you know which equation to reach for.",
+  "diagrams": [],
+  "keyPoints": [
+    {
+      "heading": "Kinetic energy — the energy of movement",
+      "content": "Anything that moves has <strong>kinetic energy (KE)</strong>. The equation is: <strong>Ek = ½mv²</strong> — where m is mass in kg and v is speed in m/s. The answer comes out in joules (J). The crucial thing to notice is that v is <em>squared</em>. That means if you double the speed, you quadruple the kinetic energy. A car doing 60 mph doesn't have twice the KE of a car doing 30 mph — it has four times as much. AQA loves testing whether you understand this, and it's also why motorway crashes are so much more dangerous than town crashes.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Kinetic energy equation: Ek = ½mv²",
+        "m = mass in kg; v = speed in m/s; Ek in joules (J)",
+        "v is squared — doubling speed quadruples kinetic energy",
+        "To find v from Ek: rearrange to v = √(2Ek ÷ m)"
+      ],
+      "keyTerms": [
+        {"term": "Kinetic energy (Ek)", "def": "The energy an object has because it is moving — Ek = ½mv²"},
+        {"term": "Joule (J)", "def": "The unit of energy"}
+      ],
+      "memTip": "Say it as a phrase: 'half em vee squared'. Write it three times, cover it, write it again. Then test yourself: if speed doubles, what happens to KE? (Answer: ×4, because 2² = 4.) If speed triples? (Answer: ×9, because 3² = 9.) Run through these multipliers until it's automatic."
+    },
+    {
+      "heading": "Gravitational potential energy — the energy of height",
+      "content": "When you lift something up, you give it <strong>gravitational potential energy (GPE)</strong>. The equation is: <strong>Ep = mgh</strong> — where m is mass in kg, g is gravitational field strength (9.8 N/kg on Earth — use 10 in non-calculator questions unless told otherwise), and h is height in metres. The answer is in joules. Notice that GPE depends on height and mass linearly — double the height, double the GPE. That's simpler than kinetic energy because nothing is squared.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "GPE equation: Ep = mgh",
+        "m = mass (kg), g = 9.8 N/kg (use 10 in non-calculator), h = height (m)",
+        "GPE in joules (J)",
+        "Double the height → double the GPE (linear relationship)"
+      ],
+      "keyTerms": [
+        {"term": "Gravitational potential energy (Ep)", "def": "Energy stored in an object because of its height — Ep = mgh"},
+        {"term": "Gravitational field strength (g)", "def": "The force per unit mass due to gravity — 9.8 N/kg on Earth (use 10 in non-calculator papers)"}
+      ],
+      "memTip": "The letters give it away: m = mass, g = gravity, h = height. 'My Gran's High' — mgh. Say it as you write each letter. Then notice: no squaring here, it's all × — much friendlier than the KE equation."
+    },
+    {
+      "heading": "Conservation of energy — GPE becomes KE",
+      "content": "Energy can't be created or destroyed — only transferred between stores. When an object falls (ignoring air resistance), <strong>all the GPE at the top converts to KE at the bottom</strong>. Halfway down, half of the original GPE has become KE. This means you can equate the two equations to find the speed at the bottom of a fall: <strong>mgh = ½mv²</strong>. The mass cancels from both sides, leaving <strong>gh = ½v²</strong>, so <strong>v = √(2gh)</strong>. This is one of AQA's favourite calculation routes — it looks scary but it's just substituting then rearranging.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Conservation of energy: energy is never created or destroyed, only transferred",
+        "Falling object (no air resistance): GPE at top converts to KE at bottom",
+        "At the top: all GPE. At the bottom: all KE",
+        "Equate: mgh = ½mv² → mass cancels → v = √(2gh)"
+      ],
+      "keyTerms": [
+        {"term": "Conservation of energy", "def": "Energy cannot be created or destroyed — it is only transferred between stores"},
+        {"term": "Energy transfer", "def": "Energy moving from one store (e.g. GPE) to another (e.g. KE)"}
+      ],
+      "memTip": "Sketch a ball at the top of a ramp labelled 'All GPE' and at the bottom labelled 'All KE'. Draw an arrow between them. Now write the derivation: mgh = ½mv², cancel m, get v = √(2gh). Doing this derivation yourself, from scratch, is the best way to make it stick — try it three times without looking."
+    },
+    {
+      "heading": "Elastic potential energy — energy stored in a stretched spring",
+      "content": "When you stretch or compress a spring (or a rubber band, or anything elastic), energy is stored in it as <strong>elastic potential energy</strong>. The equation is: <strong>Ee = ½ke²</strong> — where k is the spring constant in N/m (a measure of how stiff the spring is) and e is the extension in metres. Note that e is the extension — how much the spring has been stretched beyond its natural length — not the total length. Like kinetic energy, e is squared, so doubling the extension quadruples the elastic PE.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Elastic PE equation: Ee = ½ke²",
+        "k = spring constant (N/m); e = extension in metres (not total length)",
+        "e is squared — double the extension → four times the elastic PE",
+        "Elastic PE is in joules (J)"
+      ],
+      "keyTerms": [
+        {"term": "Elastic potential energy (Ee)", "def": "Energy stored in a stretched or compressed spring — Ee = ½ke²"},
+        {"term": "Spring constant (k)", "def": "A measure of the stiffness of a spring — units N/m. Higher k = stiffer spring."},
+        {"term": "Extension (e)", "def": "How far the spring has been stretched beyond its natural (unstretched) length, in metres"}
+      ],
+      "memTip": "Notice that Ek = ½mv² and Ee = ½ke² are the same shape — both have ½ × something × (something)². If you know the KE equation, the elastic PE equation is easy to remember by analogy. The trick is remembering that e is the extension only, not the total length — AQA will try to catch you with this."
+    },
+    {
+      "heading": "Specific heat capacity — how much energy to heat something",
+      "content": "Different materials need different amounts of energy to warm up. The <strong>specific heat capacity (c)</strong> of a material is the energy needed to raise 1 kg of it by 1°C. The equation is: <strong>Q = mcΔT</strong> — where Q is energy in joules, m is mass in kg, c is specific heat capacity in J/kg°C, and ΔT is the temperature change in °C. Water's specific heat capacity is 4200 J/kg°C — very high, which is why water is used as a coolant in car engines and why the sea takes a long time to warm up in summer.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Specific heat capacity equation: Q = mcΔT",
+        "Q = energy (J), m = mass (kg), c = specific heat capacity (J/kg°C), ΔT = temperature change (°C)",
+        "High c means the material needs more energy per kg per °C to heat up",
+        "Water: c = 4200 J/kg°C — very high, useful as a coolant"
+      ],
+      "keyTerms": [
+        {"term": "Specific heat capacity (c)", "def": "The energy needed to raise the temperature of 1 kg of a substance by 1°C — units J/kg°C"},
+        {"term": "ΔT", "def": "The change in temperature (final temperature minus initial temperature) in °C"}
+      ],
+      "memTip": "The equation Q = mcΔT is a favourite rearrangement question. Cover each letter in turn and practice writing the rearrangement: c = Q ÷ (mΔT), m = Q ÷ (cΔT), ΔT = Q ÷ (mc). Write all four versions of the equation on one flashcard — AQA will give you any three values and ask for the fourth."
+    }
+  ],
+  "tables": [],
+  "checkpoints": {
+    "1": {
+      "question": "A 2 kg ball is moving at 3 m/s. What is its kinetic energy?",
+      "options": [
+        "6 J",
+        "9 J",
+        "18 J",
+        "3 J"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct — Ek = ½ × 2 × 3² = ½ × 2 × 9 = 9 J. Remember to square v before multiplying.",
+      "wrongFeedback": "Use Ek = ½mv². Here: ½ × 2 × 3² = ½ × 2 × 9 = 9 J. The most common mistake is forgetting to square v first — always deal with v² before multiplying by m."
+    },
+    "3": {
+      "question": "A ball is dropped from a height of 5 m. Assuming no air resistance, what is its speed just before it hits the ground? (g = 10 N/kg)",
+      "options": [
+        "5 m/s",
+        "50 m/s",
+        "10 m/s",
+        "100 m/s"
+      ],
+      "correct": 2,
+      "correctFeedback": "Correct — v = √(2gh) = √(2 × 10 × 5) = √100 = 10 m/s. GPE fully converts to KE, masses cancel, leaving v = √(2gh).",
+      "wrongFeedback": "Equate GPE and KE: mgh = ½mv². Masses cancel: gh = ½v². So v² = 2gh = 2 × 10 × 5 = 100. Therefore v = √100 = 10 m/s."
+    }
+  },
+  "commonMistakes": [
+    "In Ek = ½mv², you must square v before multiplying by anything else. For a 2 kg object at 4 m/s: Ek = ½ × 2 × 16 = 16 J (not ½ × 2 × 4 = 4 J).",
+    "g = 9.8 N/kg is the standard value. Use g = 10 N/kg only when the question says 'non-calculator' or explicitly says to use 10.",
+    "In the elastic PE equation Ee = ½ke², e is the extension — how far the spring has stretched beyond its natural length. If a spring is 0.3 m long naturally and stretched to 0.5 m, e = 0.2 m, not 0.5 m.",
+    "When a falling object hits the ground, all GPE has become KE only if air resistance is ignored. If the question mentions air resistance, some energy has been transferred to thermal stores and you cannot simply equate mgh = ½mv².",
+    "In Q = mcΔT, ΔT is the change in temperature, not the final temperature. If an object heats from 20°C to 80°C, ΔT = 60°C."
+  ],
+  "examTips": [
+    "Always show the equation, substitution, and answer on separate lines — AQA mark schemes award method marks at each stage.",
+    "If a question says 'ignoring air resistance' or 'no energy lost to the surroundings', use GPE = KE at the bottom: mgh = ½mv², which simplifies to v = √(2gh).",
+    "For specific heat capacity calculations, check whether you need Q (energy), m (mass), c, or ΔT — then rearrange before substituting. Don't try to rearrange after substituting numbers."
+  ],
+  "videoLinks": [
+    {"label": "Kinetic and Potential Energy", "source": "Free Science Lessons", "icon": "▶", "url": "https://www.youtube.com/watch?v=3mSMjhiDqzU"},
+    {"label": "Energy stores and transfers", "source": "BBC Bitesize", "icon": "▶", "url": "https://www.bbc.co.uk/bitesize/topics/zh2xsbk/articles/zdssgwx"},
+    {"label": "Energy — Kinetic and Gravitational Potential", "source": "Cognito", "icon": "▶", "url": "https://www.youtube.com/watch?v=Z0GEHKGOc3o"}
+  ],
+  "revisionCardBullets": [
+    "Kinetic energy: Ek = ½mv² — m in kg, v in m/s, Ek in J",
+    "Double the speed → quadruple the KE (because v is squared)",
+    "Gravitational PE: Ep = mgh — g = 9.8 N/kg (use 10 for non-calculator)",
+    "Falling object (no air resistance): all GPE → all KE at the bottom",
+    "Equate GPE and KE: mgh = ½mv² → mass cancels → v = √(2gh)",
+    "Elastic PE: Ee = ½ke² — k = spring constant (N/m), e = extension in metres (not total length)",
+    "Specific heat capacity: Q = mcΔT — Q in J, m in kg, c in J/kg°C, ΔT = temperature change in °C",
+    "Water's specific heat capacity = 4200 J/kg°C — very high, used as a coolant"
+  ]
+}

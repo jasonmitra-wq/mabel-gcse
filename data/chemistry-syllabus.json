@@ -1,0 +1,133 @@
+{
+  "subject": "chemistry",
+  "label": "Chemistry",
+  "code": "8462",
+  "topics": {
+    "C1": {
+      "name": "Atomic structure & the periodic table",
+      "code": "C1",
+      "icon": "⚛️",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "c1-atomic-structure",  "name": "Atomic structure — protons, neutrons and electrons",       "available": true  },
+        { "id": "c1-periodic-table",    "name": "The periodic table — how it's organised and why",          "available": true  },
+        { "id": "c1-elements-compounds","name": "Elements, compounds and mixtures",                         "available": false },
+        { "id": "c1-isotopes",          "name": "Isotopes and relative atomic mass",                        "available": false },
+        { "id": "c1-electron-config",   "name": "Electron configuration and the periodic table",            "available": false }
+      ]
+    },
+    "C2": {
+      "name": "Bonding, structure & properties",
+      "code": "C2",
+      "icon": "🔗",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "c2-ionic-bonding",     "name": "Ionic bonding — how ions form and hold together",          "available": true  },
+        { "id": "c2-covalent-bonding",  "name": "Covalent bonding — sharing electrons",                    "available": true  },
+        { "id": "c2-metallic-bonding",  "name": "Metallic bonding — why metals conduct",                   "available": false },
+        { "id": "c2-giant-structures",  "name": "Giant structures — diamond, graphite, metals",             "available": false },
+        { "id": "c2-nanoparticles",     "name": "Nanoparticles and their uses",                             "available": false }
+      ]
+    },
+    "C3": {
+      "name": "Quantitative chemistry",
+      "code": "C3",
+      "icon": "⚖️",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "c3-moles",             "name": "The mole — counting particles in chemistry",               "available": false },
+        { "id": "c3-conservation",      "name": "Conservation of mass and balanced equations",              "available": false },
+        { "id": "c3-concentration",     "name": "Concentration of solutions",                               "available": false }
+      ]
+    },
+    "C4": {
+      "name": "Chemical changes",
+      "code": "C4",
+      "icon": "⚗️",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "c4-reactivity-series", "name": "The reactivity series — who beats who?",                   "available": true  },
+        { "id": "c4-acids-bases",       "name": "Acids, bases and neutralisation",                          "available": true  },
+        { "id": "c4-electrolysis",      "name": "Electrolysis — splitting compounds with electricity",      "available": true  },
+        { "id": "c4-redox",             "name": "Oxidation and reduction (redox)",                          "available": false }
+      ]
+    },
+    "C5": {
+      "name": "Energy changes",
+      "code": "C5",
+      "icon": "🔥",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "c5-exo-endo",          "name": "Exothermic and endothermic reactions",                     "available": false },
+        { "id": "c5-bond-energies",     "name": "Bond energies — why reactions release or absorb heat",    "available": false },
+        { "id": "c5-cells-batteries",   "name": "Cells and batteries — chemical energy to electrical",     "available": false }
+      ]
+    },
+    "C6": {
+      "name": "Rate & extent of chemical change",
+      "code": "C6",
+      "icon": "📈",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "c6-rate-factors",      "name": "What affects the rate of a reaction?",                    "available": false },
+        { "id": "c6-collision-theory",  "name": "Collision theory — why faster means more",                "available": false },
+        { "id": "c6-equilibrium",       "name": "Reversible reactions and equilibrium",                     "available": false }
+      ]
+    },
+    "C7": {
+      "name": "Organic chemistry",
+      "code": "C7",
+      "icon": "🛢️",
+      "paper": 2,
+      "available": true,
+      "subtopics": [
+        { "id": "c7-crude-oil",         "name": "Crude oil — fractional distillation and fractions",       "available": false },
+        { "id": "c7-alkanes",           "name": "Alkanes — structure, naming and combustion",               "available": false },
+        { "id": "c7-alkenes",           "name": "Alkenes — double bonds, addition reactions, polymers",    "available": false },
+        { "id": "c7-polymers",          "name": "Polymers — addition and condensation",                    "available": false }
+      ]
+    },
+    "C8": {
+      "name": "Chemical analysis",
+      "code": "C8",
+      "icon": "🔬",
+      "paper": 2,
+      "available": true,
+      "subtopics": [
+        { "id": "c8-purity",            "name": "Purity, formulations and chromatography",                 "available": false },
+        { "id": "c8-gas-tests",         "name": "Testing for gases — hydrogen, oxygen, CO₂, chlorine",    "available": false },
+        { "id": "c8-flame-tests",       "name": "Flame tests and identifying ions",                        "available": false }
+      ]
+    },
+    "C9": {
+      "name": "Chemistry of the atmosphere",
+      "code": "C9",
+      "icon": "🌍",
+      "paper": 2,
+      "available": true,
+      "subtopics": [
+        { "id": "c9-atmosphere",        "name": "Earth's atmosphere — where it came from",                 "available": false },
+        { "id": "c9-greenhouse",        "name": "Greenhouse gases and climate change",                     "available": false },
+        { "id": "c9-air-pollution",     "name": "Air pollution — causes and effects",                      "available": false }
+      ]
+    },
+    "C10": {
+      "name": "Using resources",
+      "code": "C10",
+      "icon": "♻️",
+      "paper": 2,
+      "available": true,
+      "subtopics": [
+        { "id": "c10-finite-resources", "name": "Finite and renewable resources",                          "available": false },
+        { "id": "c10-water",            "name": "Water treatment and potable water",                       "available": false },
+        { "id": "c10-life-cycle",       "name": "Life cycle assessments",                                  "available": false }
+      ]
+    }
+  }
+}

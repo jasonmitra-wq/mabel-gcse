@@ -13,7 +13,7 @@ const Lessons = (() => {
   let _stepCpDone    = false; // checkpoint answered this step
 
   // ── Open a lesson ─────────────────────────────────────────
-  async function open(subtopicId, subtopicName, topicCode) {
+  async function open(subtopicId, subtopicName, topicCode, subject = 'biology') {
     const panel = document.getElementById('lessonPanel');
     const inner = document.getElementById('lessonInner');
 
@@ -22,13 +22,15 @@ const Lessons = (() => {
         <div style="font-size:2.5rem;margin-bottom:1rem">📖</div>
         <p style="color:var(--muted)">Loading <strong style="color:var(--text)">${subtopicName}</strong>…</p>
       </div>`;
+    // Force full-screen geometry inline so stale cached CSS can't override
+    panel.style.cssText = 'position:fixed;top:56px;left:0;right:0;bottom:0;width:auto;max-width:none;z-index:100;background:var(--bg);overflow-y:auto;overflow-x:hidden;transform:translateX(0)';
     panel.classList.add('open');
 
-    Store.setLastPosition({ subtopicId, subtopicName, topicCode });
+    Store.setLastPosition({ subtopicId, subtopicName, topicCode, subject });
 
     let data;
     try {
-      const res = await fetch(`lessons/biology/${subtopicId}.json`);
+      const res = await fetch(`lessons/${subject}/${subtopicId}.json`);
       if (!res.ok) throw new Error(res.status);
       data = await res.json();
     } catch {
@@ -53,7 +55,10 @@ const Lessons = (() => {
   }
 
   function close() {
-    document.getElementById('lessonPanel').classList.remove('open');
+    const panel = document.getElementById('lessonPanel');
+    panel.style.transition = 'transform 0.32s cubic-bezier(0.4,0,0.2,1)';
+    panel.style.transform = 'translateX(100vw)';
+    setTimeout(() => { panel.style.cssText = ''; panel.classList.remove('open'); }, 340);
     _current = null;
   }
 
@@ -62,7 +67,9 @@ const Lessons = (() => {
     const steps = [];
     steps.push({ type: 'intro' });
     (data.keyPoints || []).forEach((kp, i) => {
-      steps.push({ type: 'keypoint', kp, i, checkpoint: data.checkpoints?.[i] || null });
+      steps.push({ type: 'kp-read', kp, i });
+      if (data.checkpoints?.[i]) steps.push({ type: 'kp-check', kp, i, checkpoint: data.checkpoints[i] });
+      if (kp.writeBullets?.length || kp.keyTerms?.length) steps.push({ type: 'kp-notes', kp, i });
     });
     (data.tables || []).forEach(t => steps.push({ type: 'table', table: t }));
     if (data.diagrams?.length) {
@@ -74,6 +81,8 @@ const Lessons = (() => {
     if (data.commonMistakes?.length) steps.push({ type: 'mistakes' });
     if (data.examTips?.length)       steps.push({ type: 'examtips' });
     if (data.revisionCardBullets?.length) steps.push({ type: 'cards' });
+    if (data.videoLinks?.length)     steps.push({ type: 'videos' });
+    steps.push({ type: 'askme' });
     return steps;
   }
 
@@ -112,16 +121,20 @@ const Lessons = (() => {
 
     switch (step.type) {
       case 'intro':     body = _renderIntroStep(); break;
-      case 'keypoint':  body = _renderKeyPointStep(step); break;
+      case 'kp-read':   body = _renderKpReadStep(step); break;
+      case 'kp-check':  body = _renderKpCheckStep(step); break;
+      case 'kp-notes':  body = _renderKpNotesStep(step); break;
       case 'table':     body = _renderTableStep(step); break;
       case 'diagram':   body = _renderDiagramStep(step); break;
       case 'mistakes':  body = _renderMistakesStep(); break;
       case 'examtips':  body = _renderExamTipsStep(); break;
       case 'cards':     body = _renderCardsStep(); break;
+      case 'videos':    body = _renderVideosStep(); break;
+      case 'askme':     body = _renderAskMeStep(); break;
     }
 
     // Nav footer
-    const needsGate  = step.type === 'keypoint' || step.type === 'table';
+    const needsGate  = (step.type === 'kp-check' || step.type === 'kp-notes' || step.type === 'table') && !isLast;
     const nextDisabled = needsGate ? 'disabled' : '';
     const nextBtnId  = 'stepNextBtn';
 
@@ -140,6 +153,9 @@ const Lessons = (() => {
 
     inner.innerHTML = header + body + nav;
 
+    // Wrap first occurrence of each glossary term in this step
+    if (typeof Glossary !== 'undefined') Glossary.markupContainer(inner);
+
     // Post-render hooks
     if (step.type === 'cards' && _current.revisionCardBullets?.length) {
       _buildCardList(_current.revisionCardBullets);
@@ -152,21 +168,26 @@ const Lessons = (() => {
 
   function _stepLabel(step) {
     if (!step) return '';
-    if (step.type === 'keypoint')  return step.kp.heading;
+    if (step.type === 'kp-read')   return step.kp.heading;
+    if (step.type === 'kp-check')  return 'Quick check';
+    if (step.type === 'kp-notes')  return 'Write it down';
     if (step.type === 'table')     return 'Summary table';
     if (step.type === 'diagram')   return step.diag.title || 'Diagram';
     if (step.type === 'mistakes')  return 'Common mistakes';
     if (step.type === 'examtips')  return 'Exam technique';
     if (step.type === 'cards')     return 'Your cards';
+    if (step.type === 'videos')    return 'Further watching';
+    if (step.type === 'askme')     return 'Ask a question';
     return '';
   }
 
   // ── Step renderers ─────────────────────────────────────────
 
   function _renderIntroStep() {
-    const raw     = (_current.examTip || '').trim();
-    const bullets = raw.split(/\.\s+/).filter(Boolean)
-                       .map(s => s.replace(/\.$/, '').trim());
+    const bullets = _current.introTips?.length
+      ? _current.introTips
+      : (_current.examTip || '').trim().split(/\.\s+/).filter(Boolean)
+          .map(s => s.replace(/\.$/, '').trim());
     return `
       <div style="padding:1.25rem 0 0.75rem">
         <div style="margin-bottom:1rem">${Icons.get('intro', 56)}</div>
@@ -185,68 +206,79 @@ const Lessons = (() => {
       </div>`;
   }
 
-  function _renderKeyPointStep(step) {
-    const { kp, i, checkpoint } = step;
+  // ── kp-read: content + diagram + video strip + personality ──
+  function _renderKpReadStep(step) {
+    const { kp, i } = step;
     let html = `
-      <div class="kp" style="margin-bottom:1rem">
+      <div class="kp">
         <div class="kp-header">
           <h3>${kp.heading}</h3>
           ${kp.examFlag ? `<span class="flag flag-exam">this gets asked</span>` : ''}
           ${kp.cardFlag ? `<span class="flag flag-card">worth writing down</span>` : ''}
         </div>
-        <p>${kp.content}</p>`;
-
+        <p style="font-size:1.05rem;line-height:1.75">${kp.content}</p>`;
     if (kp.diagram) html += _renderInlineDiagram(kp.diagram, _current);
+    const vids = _current.videoLinks;
+    if (vids?.length) {
+      html += `<div class="kp-video-strip">
+        <span class="kp-video-strip-label">Watch to reinforce — search on YouTube or BBC Bitesize:</span>
+        <div class="kp-video-search-hint">🔍 <strong>${vids[0]?.searchQuery || ''}</strong></div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem">
+          ${vids.map(v => `<a class="kp-video-chip" href="${v.url}" target="_blank" rel="noopener">▶ ${v.source || v.label}</a>`).join('')}
+        </div>
+      </div>`;
+    }
     html += `</div>`;
-
-    // Personality moment at key points 1 and 3
     if (i === 1) {
       const moment = Personality.renderMoment('silver', _usedJokeIds);
       _usedJokeIds.push(moment.id);
-      html += moment.html;
-      const pq = Personality.renderQuestion(Personality.getLessonCount());
-      if (pq) html += pq.html;
+      Personality.renderQuestion(Personality.getLessonCount());
     }
     if (i === 3) {
       const moment = Personality.renderMoment('skating', _usedJokeIds);
       _usedJokeIds.push(moment.id);
-      html += moment.html;
     }
+    return html;
+  }
 
-    // Checkpoint (if exists)
-    if (checkpoint) {
-      html += `<div style="border-top:1px solid var(--border);margin-top:1rem;padding-top:1rem">`;
-      html += _renderCheckpoint(checkpoint, `cp_${i}`);
-      html += `</div>`;
-    }
+  // ── kp-check: checkpoint MCQ only ─────────────────────────
+  function _renderKpCheckStep(step) {
+    const { kp, i, checkpoint } = step;
+    return `
+      <div>
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1.1rem">
+          Quick check — <strong style="color:var(--text)">${kp.heading}</strong>
+        </p>
+        ${_renderCheckpoint(checkpoint, `cp_${i}`)}
+      </div>`;
+  }
 
-    // Write-it-down section — dictated bullets + key terms + checkbox
+  // ── kp-notes: write bullets + key terms + checkbox gate ───
+  function _renderKpNotesStep(step) {
+    const { kp } = step;
     const hasBullets = kp.writeBullets?.length;
     const hasTerms   = kp.keyTerms?.length;
-    if (hasBullets || hasTerms) {
-      html += `
-        <div style="border-top:1px solid var(--border);margin-top:1.25rem;padding-top:1.1rem">
-          <p style="font-size:0.9rem;font-weight:700;color:var(--yellow);margin-bottom:0.75rem;letter-spacing:0.03em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('notes', 20)} WRITE THESE INTO YOUR NOTES NOW:</p>
-          ${hasBullets ? `<ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.5rem">
-            ${kp.writeBullets.map(b => `<li style="font-size:1.05rem;line-height:1.7;padding-left:1.4rem;position:relative">
-              <span style="position:absolute;left:0;color:var(--yellow);font-weight:700">•</span>${b}
+    return `
+      <div>
+        <p style="font-size:0.9rem;font-weight:700;color:var(--yellow);margin-bottom:0.75rem;letter-spacing:0.03em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('notes', 20)} WRITE THESE INTO YOUR NOTES NOW:</p>
+        ${hasBullets ? `<ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          ${kp.writeBullets.map(b => `<li style="font-size:1.05rem;line-height:1.7;padding-left:1.4rem;position:relative">
+            <span style="position:absolute;left:0;color:var(--yellow);font-weight:700">•</span>${b}
+          </li>`).join('')}
+        </ul>` : ''}
+        ${hasTerms ? `
+          <p style="font-size:0.88rem;font-weight:700;color:var(--teal);margin-bottom:0.5rem;letter-spacing:0.03em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('key', 20)} KEY TERMS:</p>
+          <ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+            ${kp.keyTerms.map(t => `<li style="font-size:1.05rem;line-height:1.7;padding-left:1.4rem;position:relative">
+              <span style="position:absolute;left:0;color:var(--teal);font-weight:700">→</span><strong>${t.term}</strong> — ${t.def}
             </li>`).join('')}
           </ul>` : ''}
-          ${hasTerms ? `
-            <p style="font-size:0.88rem;font-weight:700;color:var(--teal);margin-bottom:0.5rem;letter-spacing:0.03em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('key', 20)} KEY TERMS:</p>
-            <ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.5rem">
-              ${kp.keyTerms.map(t => `<li style="font-size:1.05rem;line-height:1.7;padding-left:1.4rem;position:relative">
-                <span style="position:absolute;left:0;color:var(--teal);font-weight:700">→</span><strong>${t.term}</strong> — ${t.def}
-              </li>`).join('')}
-            </ul>` : ''}
-          <label class="done-check-label">
-            <input type="checkbox" id="stepDoneCheck" onchange="Lessons._tryUnlockNext()">
-            <span>Done — I've written these into my notes</span>
-          </label>
-        </div>`;
-    }
-
-    return html;
+        ${kp.memTip ? `<div class="mem-tip-box">💡 <strong>Memory tip:</strong> ${kp.memTip}</div>` : ''}
+        <label class="done-check-label">
+          <input type="checkbox" id="stepDoneCheck" onchange="Lessons._tryUnlockNext()">
+          <span>Done — I've written these into my notes</span>
+        </label>
+      </div>`;
   }
 
   function _renderTableStep(step) {
@@ -284,11 +316,104 @@ const Lessons = (() => {
       <div class="tips-box">
         <h4>How to actually answer this in the exam.</h4>
         <ul>${_current.examTips.map(t => `<li>${t}</li>`).join('')}</ul>
-      </div>
-      ${_current.videoLinks?.length ? `
-        <div style="margin-top:1rem">
-          ${_current.videoLinks.map(v => `<a class="video-link" href="${v.url}" target="_blank" rel="noopener">🎥 ${v.label}</a>`).join('')}
-        </div>` : ''}`;
+      </div>`;
+  }
+
+  function _ytId(url) {
+    return url?.match(/(?:youtu\.be\/|[?&]v=)([^&\n?#]+)/)?.[1] || null;
+  }
+
+  function _renderVideosStep() {
+    const links = _current.videoLinks || [];
+    const cards = links.map(v => {
+      const vid = _ytId(v.url);
+      if (vid) {
+        return `
+          <div style="margin-bottom:1.25rem">
+            <div style="font-size:0.8rem;color:var(--muted);font-weight:600;margin-bottom:0.4rem;display:flex;align-items:center;gap:0.4rem">
+              <span>${v.icon || '▶'}</span>${v.source || v.label}
+            </div>
+            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:var(--s2)">
+              <iframe src="https://www.youtube-nocookie.com/embed/${vid}"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:10px"
+                allowfullscreen loading="lazy" title="${v.label}"></iframe>
+            </div>
+            <p style="font-size:0.8rem;color:var(--muted);margin-top:0.35rem">${v.label}</p>
+          </div>`;
+      }
+      return `
+        <a class="video-link" href="${v.url}" target="_blank" rel="noopener" style="margin-bottom:0.5rem">
+          <span style="font-size:1.1rem">${v.icon || '🔗'}</span>
+          <span style="flex:1">${v.label}</span>
+          ${v.source ? `<span class="video-link-source">${v.source}</span>` : ''}
+        </a>`;
+    }).join('');
+    return `
+      <div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;margin-bottom:0.35rem">Further watching</h3>
+        <p style="font-size:0.92rem;color:var(--muted);margin-bottom:1rem">Watch these to see it explained a different way — pause, rewind, come back.</p>
+        ${cards}
+      </div>`;
+  }
+
+  function _renderAskMeStep() {
+    return `
+      <div class="askme-wrap">
+        <h3 style="font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;margin-bottom:0.3rem">Anything you're not sure about?</h3>
+        <p style="font-size:0.92rem;color:var(--muted);margin-bottom:0.75rem">Ask me anything from this lesson and I'll explain it a different way. There are no silly questions.</p>
+        <div class="askme-thread" id="askmeThread"></div>
+        <div class="askme-input-row">
+          <textarea id="askmeInput" placeholder="e.g. Why does the left ventricle have a thicker wall?" rows="2"
+            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();Lessons.sendAskMe();}"></textarea>
+          <button class="btn pri" id="askmeSendBtn" onclick="Lessons.sendAskMe()">Ask</button>
+        </div>
+        <p style="font-size:0.78rem;color:var(--muted);margin-top:0.4rem">Press Enter to send · Shift+Enter for a new line</p>
+      </div>`;
+  }
+
+  async function _sendAskMe() {
+    const input  = document.getElementById('askmeInput');
+    const thread = document.getElementById('askmeThread');
+    const btn    = document.getElementById('askmeSendBtn');
+    if (!input || !thread) return;
+    const q = input.value.trim();
+    if (!q) return;
+
+    input.value = '';
+    btn.disabled = true;
+
+    const qEl = document.createElement('div');
+    qEl.className = 'askme-q-bubble';
+    qEl.textContent = q;
+    thread.appendChild(qEl);
+
+    const aEl = document.createElement('div');
+    aEl.className = 'askme-a-bubble loading';
+    aEl.textContent = 'Thinking…';
+    thread.appendChild(aEl);
+    aEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    try {
+      if (!AI.hasKey()) throw new Error('NO_KEY');
+      const context = (_current.keyPoints || []).map(kp => `${kp.heading}: ${kp.content.replace(/<[^>]+>/g,'')}`).join('\n');
+      const answer = await AI.call(
+        `You are a warm, encouraging GCSE Biology tutor talking to Mabel, who is 15 years old and studying AQA Separate Biology (8461). She has just finished the lesson "${_current.title}". Answer her question clearly in 3–5 sentences. Use plain, friendly language. Don't start with a definition. If relevant, connect to something she already covered in the lesson.`,
+        `Lesson: ${_current.title}\n\nKey content:\n${context}\n\nMabel's question: ${q}`,
+        600
+      );
+      aEl.textContent = answer;
+      aEl.classList.remove('loading');
+    } catch(e) {
+      if (e.message === 'NO_KEY' || e.message === 'BAD_KEY') {
+        aEl.innerHTML = 'To use Ask Me, enter your Anthropic API key first. <button class="btn" style="font-size:0.8rem;padding:0.2rem 0.6rem;margin-left:0.4rem" onclick="Questions.setupKey()">Set up key →</button>';
+      } else {
+        aEl.textContent = 'Sorry, I couldn\'t get an answer right now — try again in a moment.';
+      }
+      aEl.classList.remove('loading');
+    }
+
+    btn.disabled = false;
+    aEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   function _renderCardsStep() {
@@ -336,11 +461,7 @@ const Lessons = (() => {
     const checkEl = document.getElementById('stepDoneCheck');
     if (!checkEl) { btn.disabled = false; return; }
 
-    const hasDone = checkEl.checked;
-    const needsCp = step.type === 'keypoint' && step.checkpoint !== null;
-    const cpOk    = !needsCp || _stepCpDone;
-
-    btn.disabled = !(hasDone && cpOk);
+    btn.disabled = !checkEl.checked;
   }
 
   // ── Checkpoint interaction ─────────────────────────────────
@@ -519,7 +640,7 @@ const Lessons = (() => {
     if (_current) Questions.start(_current, _subtopicName, _current.id);
   }
 
-  return { open, close, checkpointClick, saveAllCards, _nextStep, _prevStep, _tryUnlockNext, _startPractice };
+  return { open, close, checkpointClick, saveAllCards, _nextStep, _prevStep, _tryUnlockNext, _startPractice, sendAskMe: _sendAskMe };
 })();
 
 /* ============================================================

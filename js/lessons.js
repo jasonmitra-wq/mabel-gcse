@@ -13,7 +13,7 @@ const Lessons = (() => {
   let _stepCpDone    = false; // checkpoint answered this step
 
   // ── Open a lesson ─────────────────────────────────────────
-  async function open(subtopicId, subtopicName, topicCode) {
+  async function open(subtopicId, subtopicName, topicCode, subject = 'biology') {
     const panel = document.getElementById('lessonPanel');
     const inner = document.getElementById('lessonInner');
 
@@ -26,11 +26,11 @@ const Lessons = (() => {
     panel.style.cssText = 'position:fixed;top:56px;left:0;right:0;bottom:0;width:auto;max-width:none;z-index:100;background:var(--bg);overflow-y:auto;overflow-x:hidden;transform:translateX(0)';
     panel.classList.add('open');
 
-    Store.setLastPosition({ subtopicId, subtopicName, topicCode });
+    Store.setLastPosition({ subtopicId, subtopicName, topicCode, subject });
 
     let data;
     try {
-      const res = await fetch(`lessons/biology/${subtopicId}.json`);
+      const res = await fetch(`lessons/${subject}/${subtopicId}.json`);
       if (!res.ok) throw new Error(res.status);
       data = await res.json();
     } catch {
@@ -221,22 +221,22 @@ const Lessons = (() => {
     const vids = _current.videoLinks;
     if (vids?.length) {
       html += `<div class="kp-video-strip">
-        <span class="kp-video-strip-label">Watch to reinforce:</span>
-        ${vids.map(v => `<a class="kp-video-chip" href="${v.url}" target="_blank" rel="noopener">▶ ${v.source || v.label}</a>`).join('')}
+        <span class="kp-video-strip-label">Watch to reinforce — search on YouTube or BBC Bitesize:</span>
+        <div class="kp-video-search-hint">🔍 <strong>${vids[0]?.searchQuery || ''}</strong></div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem">
+          ${vids.map(v => `<a class="kp-video-chip" href="${v.url}" target="_blank" rel="noopener">▶ ${v.source || v.label}</a>`).join('')}
+        </div>
       </div>`;
     }
     html += `</div>`;
     if (i === 1) {
       const moment = Personality.renderMoment('silver', _usedJokeIds);
       _usedJokeIds.push(moment.id);
-      html += moment.html;
-      const pq = Personality.renderQuestion(Personality.getLessonCount());
-      if (pq) html += pq.html;
+      Personality.renderQuestion(Personality.getLessonCount());
     }
     if (i === 3) {
       const moment = Personality.renderMoment('skating', _usedJokeIds);
       _usedJokeIds.push(moment.id);
-      html += moment.html;
     }
     return html;
   }
@@ -319,20 +319,40 @@ const Lessons = (() => {
       </div>`;
   }
 
+  function _ytId(url) {
+    return url?.match(/(?:youtu\.be\/|[?&]v=)([^&\n?#]+)/)?.[1] || null;
+  }
+
   function _renderVideosStep() {
     const links = _current.videoLinks || [];
+    const cards = links.map(v => {
+      const vid = _ytId(v.url);
+      if (vid) {
+        return `
+          <div style="margin-bottom:1.25rem">
+            <div style="font-size:0.8rem;color:var(--muted);font-weight:600;margin-bottom:0.4rem;display:flex;align-items:center;gap:0.4rem">
+              <span>${v.icon || '▶'}</span>${v.source || v.label}
+            </div>
+            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:var(--s2)">
+              <iframe src="https://www.youtube-nocookie.com/embed/${vid}"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:10px"
+                allowfullscreen loading="lazy" title="${v.label}"></iframe>
+            </div>
+            <p style="font-size:0.8rem;color:var(--muted);margin-top:0.35rem">${v.label}</p>
+          </div>`;
+      }
+      return `
+        <a class="video-link" href="${v.url}" target="_blank" rel="noopener" style="margin-bottom:0.5rem">
+          <span style="font-size:1.1rem">${v.icon || '🔗'}</span>
+          <span style="flex:1">${v.label}</span>
+          ${v.source ? `<span class="video-link-source">${v.source}</span>` : ''}
+        </a>`;
+    }).join('');
     return `
       <div>
-        <h3 style="font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;margin-bottom:0.4rem">Further watching</h3>
-        <p style="font-size:0.92rem;color:var(--muted);margin-bottom:1rem">Good explanations of this topic from around the web. Open in a new tab, watch, then come back.</p>
-        <div class="video-links">
-          ${links.map(v => `
-            <a class="video-link" href="${v.url}" target="_blank" rel="noopener">
-              <span style="font-size:1.1rem">${v.icon || '▶'}</span>
-              <span style="flex:1">${v.label}</span>
-              ${v.source ? `<span class="video-link-source">${v.source}</span>` : ''}
-            </a>`).join('')}
-        </div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;margin-bottom:0.35rem">Further watching</h3>
+        <p style="font-size:0.92rem;color:var(--muted);margin-bottom:1rem">Watch these to see it explained a different way — pause, rewind, come back.</p>
+        ${cards}
       </div>`;
   }
 

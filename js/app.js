@@ -77,7 +77,7 @@ async function boot() {
 
   // Load syllabus
   try {
-    const res  = await fetch('data/syllabus.json');
+    const res  = await fetch('data/biology-syllabus.json');
     _syllabus  = await res.json();
   } catch(e) {
     document.getElementById('main').innerHTML = `
@@ -89,13 +89,8 @@ async function boot() {
     return;
   }
 
-  // Check for last position
   const last = _progress.lastPosition;
-  if (last?.subtopicId) {
-    showHome(true);
-  } else {
-    showHome(false);
-  }
+  showHome(!!last?.subtopicId);
 }
 
 // ── HOME ───────────────────────────────────────────────────────
@@ -130,7 +125,7 @@ function showHome(hasSaved) {
   // Continue card (if last position saved)
   if (last?.subtopicId && last?.subtopicName) {
     const cont = _modeCard(Icons.get('continue', 48), last.subtopicName, 'Pick up where you left off.', 'continue', () => {
-      Lessons.open(last.subtopicId, last.subtopicName, last.topicCode);
+      Lessons.open(last.subtopicId, last.subtopicName, last.topicCode, last.subject || 'biology');
     });
     cont.className = 'mode-card continue';
     grid.appendChild(cont);
@@ -223,12 +218,12 @@ function showSubjectPicker() {
   App.setStage('Subjects');
 
   const subjects = [
-    { id: 'biology',  label: 'Biology',     icon: '🧬', sub: 'Ready to revise',    available: true  },
-    { id: 'chemistry',label: 'Chemistry',   icon: '⚗️', sub: 'Being built',         available: false },
-    { id: 'physics',  label: 'Physics',     icon: '⚡', sub: 'Being built',         available: false },
-    { id: 'maths',    label: 'Maths',       icon: '📐', sub: 'Being built',         available: false },
-    { id: 'english',  label: 'English Lit', icon: '📚', sub: 'Being built',         available: false },
-    { id: 'history',  label: 'History',     icon: '🏛️', sub: 'Being built',         available: false },
+    { id: 'biology',  label: 'Biology',     icon: '🧬', sub: 'AQA 8461',  available: true  },
+    { id: 'chemistry',label: 'Chemistry',   icon: '⚗️', sub: 'AQA 8462',  available: true  },
+    { id: 'physics',  label: 'Physics',     icon: '⚡', sub: 'AQA 8463',  available: true  },
+    { id: 'maths',    label: 'Maths',       icon: '📐', sub: 'Coming soon', available: false },
+    { id: 'english',  label: 'English Lit', icon: '📚', sub: 'Coming soon', available: false },
+    { id: 'history',  label: 'History',     icon: '🏛️', sub: 'Coming soon', available: false },
   ];
 
   let html = `
@@ -258,8 +253,15 @@ function showSubjectPicker() {
   document.getElementById('main').innerHTML = html;
 }
 
-function _selectSubject(subjectId) {
+async function _selectSubject(subjectId) {
   _activeSubject = subjectId;
+  try {
+    const res = await fetch(`data/${subjectId}-syllabus.json`);
+    if (!res.ok) throw new Error(res.status);
+    _syllabus = await res.json();
+  } catch {
+    _syllabus = { topics: {} };
+  }
   showTopics();
 }
 
@@ -284,11 +286,14 @@ function showTopics() {
   App.setStage('Topics');
   _progress = Store.getProgress();
 
+  const _subjectMeta = { biology:'🧬 Biology', chemistry:'⚗️ Chemistry', physics:'⚡ Physics', maths:'📐 Maths', english:'📚 English', history:'🏛️ History' };
+  const subjectLabel = _subjectMeta[_activeSubject] || _activeSubject;
+
   const main = document.getElementById('main');
   main.innerHTML = `
     <div class="topic-header">
-      <button class="back-btn" onclick="showHome()">← Home</button>
-      <h2>🧬 Biology</h2>
+      <button class="back-btn" onclick="showSubjectPicker()">← Subjects</button>
+      <h2>${subjectLabel}</h2>
     </div>
     <div id="topicList"></div>`;
 
@@ -358,7 +363,7 @@ function showSubtopics(topicCode, topicData) {
     if (avail) {
       card.onclick = () => {
         App.setTopicChip(`${topicCode}: ${topicData.name}`);
-        Lessons.open(st.id, st.name, topicCode);
+        Lessons.open(st.id, st.name, topicCode, _activeSubject);
       };
     }
     list.appendChild(card);

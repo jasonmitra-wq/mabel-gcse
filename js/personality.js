@@ -264,37 +264,87 @@ const Personality = (() => {
     Store.set('last_q_type', q.type);
   }
 
+  // ── FLOATING TOAST ───────────────────────────────────────
+  // Shows a non-intrusive pop-up over the lesson panel.
+  // Auto-dismisses; does not interrupt the lesson flow.
+
+  function _showToast(html, id = 'personalityToast') {
+    const existing = document.getElementById(id);
+    if (existing) existing.remove();
+
+    const el = document.createElement('div');
+    el.id = id;
+    el.style.cssText = [
+      'position:fixed',
+      'bottom:72px',
+      'left:50%',
+      'transform:translateX(-50%) translateY(16px)',
+      'z-index:500',
+      'max-width:min(500px,92vw)',
+      'width:100%',
+      'background:var(--s2)',
+      'border:1.5px solid var(--border2)',
+      'border-radius:16px',
+      'padding:1rem 1.1rem',
+      'box-shadow:0 8px 32px rgba(0,0,0,0.45)',
+      'opacity:0',
+      'transition:opacity 0.28s ease,transform 0.28s ease',
+    ].join(';');
+    el.innerHTML = html;
+    document.body.appendChild(el);
+
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateX(-50%) translateY(0)';
+    }));
+
+    return el;
+  }
+
+  function _dismissToast(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.style.opacity = '0';
+    el.style.transform = 'translateX(-50%) translateY(16px)';
+    setTimeout(() => el.remove(), 300);
+  }
+
   // ── RENDER MOMENT ────────────────────────────────────────
-  // Called by lessons.js at the right moment in the lesson.
-  // Returns an HTML string to inject.
+  // Shows a floating toast; lessons.js no longer needs to inject HTML.
 
   function renderMoment(type, usedIds = []) {
     const joke = getJoke(type, usedIds);
-    return {
-      id:   joke.id,
-      html: `<div class="joke-box">${joke.text}</div>`,
-    };
+    setTimeout(() => {
+      const el = _showToast(`
+        <div style="display:flex;align-items:flex-start;gap:0.75rem">
+          <div style="flex:1;font-size:0.95rem;line-height:1.65;color:var(--text)">${joke.text}</div>
+          <button onclick="document.getElementById('personalityToast')?.remove()"
+            style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.1rem;padding:0;flex-shrink:0;line-height:1">✕</button>
+        </div>`, 'personalityToast');
+      setTimeout(() => _dismissToast('personalityToast'), 18000);
+    }, 900);
+    return { id: joke.id };
   }
 
-  // Build a follow-up question block if we have one ready
+  // Build a follow-up question popup if we have one ready
   function renderQuestion(lessonCount) {
     const q = getNextQuestion(lessonCount);
     if (!q) return null;
 
-    return {
-      id:   q.id,
-      html: `<div class="profile-q-box" id="pq_${q.id}">
-        <div class="joke-box" style="margin-bottom:0.6rem">${q.prompt}</div>
+    setTimeout(() => {
+      _showToast(`
+        <div style="font-size:0.95rem;line-height:1.65;color:var(--text);margin-bottom:0.75rem">${q.prompt}</div>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">
           <input type="text" id="pqInput_${q.id}" placeholder="Type your answer…"
-            style="flex:1;min-width:180px;background:var(--s2);border:1.5px solid var(--border2);
-            color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;
+            style="flex:1;min-width:160px;background:var(--s1);border:1.5px solid var(--border2);
+            color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;
             padding:0.5rem 0.75rem;border-radius:8px;outline:none">
           <button class="btn grn" onclick="Personality.answerQuestion('${q.id}')">Save</button>
           <button class="btn" style="opacity:0.55" onclick="Personality.skipQuestion('${q.id}')">Skip</button>
-        </div>
-      </div>`,
-    };
+        </div>`, 'personalityModal');
+    }, 1400);
+
+    return { id: q.id };
   }
 
   // Mabel submits an answer to a profile question
@@ -302,21 +352,17 @@ const Personality = (() => {
     const input = document.getElementById(`pqInput_${qId}`);
     const answer = input?.value?.trim();
     if (!answer) return;
-
     recordAnswer(qId, answer);
-
-    // Replace the question box with a friendly acknowledgement
-    const box = document.getElementById(`pq_${qId}`);
-    if (box) {
-      box.innerHTML = `<div class="joke-box" style="color:var(--green)">✅ Got it — noted. Now back to work.</div>`;
-      setTimeout(() => { box.style.opacity = '0'; setTimeout(() => box.remove(), 400); }, 2000);
+    const el = document.getElementById('personalityModal');
+    if (el) {
+      el.innerHTML = `<div style="font-size:0.95rem;color:var(--green);text-align:center">✅ Got it — noted. Back to work!</div>`;
+      setTimeout(() => _dismissToast('personalityModal'), 1800);
     }
   }
 
   function skipQuestion(qId) {
-    Store.markAsked(qId); // Don't ask again this session
-    const box = document.getElementById(`pq_${qId}`);
-    if (box) { box.style.opacity = '0'; setTimeout(() => box.remove(), 300); }
+    Store.markAsked(qId);
+    _dismissToast('personalityModal');
   }
 
   // ── LESSON COUNT ─────────────────────────────────────────

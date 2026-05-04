@@ -1,0 +1,104 @@
+{
+  "subject": "physics",
+  "label": "Physics",
+  "code": "8463",
+  "topics": {
+    "P1": {
+      "name": "Energy",
+      "code": "P1",
+      "icon": "⚡",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "p1-energy-stores",     "name": "Energy stores and transfers — what energy actually is",   "available": true  },
+        { "id": "p1-kinetic-potential", "name": "Kinetic and potential energy — the equations",            "available": true  },
+        { "id": "p1-conservation",      "name": "Conservation of energy and energy dissipation",           "available": false },
+        { "id": "p1-efficiency",        "name": "Efficiency — useful vs wasted energy",                    "available": false },
+        { "id": "p1-power",             "name": "Power — how fast energy is transferred",                  "available": false },
+        { "id": "p1-heating",           "name": "Heating and cooling — specific heat capacity",            "available": false },
+        { "id": "p1-national-grid",     "name": "The national grid and electricity generation",            "available": false }
+      ]
+    },
+    "P2": {
+      "name": "Electricity",
+      "code": "P2",
+      "icon": "🔌",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "p2-current-voltage",   "name": "Current, voltage and resistance — the basics",            "available": true  },
+        { "id": "p2-series-parallel",   "name": "Series and parallel circuits",                            "available": true  },
+        { "id": "p2-components",        "name": "Circuit components — diodes, LDRs, thermistors",         "available": false },
+        { "id": "p2-domestic",          "name": "Mains electricity — AC, DC and household circuits",      "available": false },
+        { "id": "p2-power-energy",      "name": "Electrical power and energy — cost of electricity",      "available": false },
+        { "id": "p2-static",            "name": "Static electricity",                                      "available": false }
+      ]
+    },
+    "P3": {
+      "name": "Particle model of matter",
+      "code": "P3",
+      "icon": "💧",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "p3-particle-model",    "name": "States of matter and the particle model",                 "available": false },
+        { "id": "p3-density",           "name": "Density — mass per unit volume",                          "available": false },
+        { "id": "p3-changes-of-state",  "name": "Changes of state and latent heat",                       "available": false },
+        { "id": "p3-pressure",          "name": "Pressure in gases",                                       "available": false }
+      ]
+    },
+    "P4": {
+      "name": "Atomic structure",
+      "code": "P4",
+      "icon": "⚛️",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "p4-nuclear-model",     "name": "The nuclear model of the atom",                           "available": false },
+        { "id": "p4-radioactivity",     "name": "Radioactivity — alpha, beta and gamma",                  "available": false },
+        { "id": "p4-half-life",         "name": "Half-life and uses of radiation",                         "available": false },
+        { "id": "p4-nuclear-fission",   "name": "Nuclear fission and fusion",                              "available": false }
+      ]
+    },
+    "P5": {
+      "name": "Forces",
+      "code": "P5",
+      "icon": "🏋️",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "p5-forces-motion",     "name": "Forces and motion — speed, velocity, acceleration",      "available": false },
+        { "id": "p5-newtons-laws",      "name": "Newton's laws of motion",                                 "available": false },
+        { "id": "p5-stopping-distance", "name": "Stopping distance — thinking and braking",               "available": false },
+        { "id": "p5-momentum",          "name": "Momentum and collisions",                                 "available": false },
+        { "id": "p5-gravity",           "name": "Gravity, weight and free-fall",                           "available": false }
+      ]
+    },
+    "P6": {
+      "name": "Waves",
+      "code": "P6",
+      "icon": "〰️",
+      "paper": 2,
+      "available": true,
+      "subtopics": [
+        { "id": "p6-wave-properties",   "name": "Wave properties — frequency, wavelength, amplitude",     "available": false },
+        { "id": "p6-em-spectrum",       "name": "The electromagnetic spectrum",                            "available": false },
+        { "id": "p6-light",             "name": "Reflection, refraction and lenses",                       "available": false },
+        { "id": "p6-sound",             "name": "Sound waves and hearing",                                 "available": false }
+      ]
+    },
+    "P7": {
+      "name": "Magnetism & electromagnetism",
+      "code": "P7",
+      "icon": "🧲",
+      "paper": 2,
+      "available": true,
+      "subtopics": [
+        { "id": "p7-magnets",           "name": "Magnets and magnetic fields",                             "available": false },
+        { "id": "p7-motor-effect",      "name": "The motor effect — force on a current-carrying wire",   "available": false },
+        { "id": "p7-induction",         "name": "Electromagnetic induction — generators",                  "available": false },
+        { "id": "p7-transformers",      "name": "Transformers and the national grid",                      "available": false }
+      ]
+    }
+  }
+}

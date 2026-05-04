@@ -5,15 +5,28 @@
 // ── AI API ────────────────────────────────────────────────────
 const AI = (() => {
   let _queue = Promise.resolve();
+  const _KEY_STORE = 'mabel_api_key';
+
+  function getKey()   { return localStorage.getItem(_KEY_STORE) || ''; }
+  function saveKey(k) { localStorage.setItem(_KEY_STORE, k.trim()); }
+  function clearKey() { localStorage.removeItem(_KEY_STORE); }
+  function hasKey()   { return !!getKey(); }
 
   async function _call(sys, user, tokens, attempt = 0) {
+    const key = getKey();
+    if (!key) throw new Error('NO_KEY');
     const MAX = 4;
     try {
       const resp = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': key,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-6',
+          model: 'claude-haiku-4-5-20251001',
           max_tokens: tokens || 2000,
           system: sys,
           messages: [{ role: 'user', content: user }]
@@ -24,12 +37,14 @@ const AI = (() => {
         await new Promise(r => setTimeout(r, 4000 * Math.pow(2, attempt)));
         return _call(sys, user, tokens, attempt + 1);
       }
+      if (resp.status === 401) throw new Error('BAD_KEY');
       if (!resp.ok) throw new Error(resp.status);
 
       const data = await resp.json();
-      await new Promise(r => setTimeout(r, 600)); // breathing room between calls
+      await new Promise(r => setTimeout(r, 600));
       return data.content.filter(b => b.type === 'text').map(b => b.text).join('');
     } catch(e) {
+      if (e.message === 'NO_KEY' || e.message === 'BAD_KEY') throw e;
       if (attempt < MAX && !String(e.message).match(/^[45]\d\d$/)) {
         await new Promise(r => setTimeout(r, 3000));
         return _call(sys, user, tokens, attempt + 1);
@@ -43,13 +58,12 @@ const AI = (() => {
     return _queue;
   }
 
-  // Like call() but accepts an array of content blocks (for vision / document inputs)
   function callMultimodal(sys, contentBlocks, tokens) {
     _queue = _queue.then(() => _call(sys, contentBlocks, tokens));
     return _queue;
   }
 
-  return { call, callMultimodal };
+  return { call, callMultimodal, hasKey, saveKey, clearKey, getKey };
 })();
 
 // ── State ──────────────────────────────────────────────────────

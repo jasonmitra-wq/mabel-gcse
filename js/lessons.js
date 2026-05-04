@@ -374,6 +374,7 @@ const Lessons = (() => {
     aEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
     try {
+      if (!AI.hasKey()) throw new Error('NO_KEY');
       const context = (_current.keyPoints || []).map(kp => `${kp.heading}: ${kp.content.replace(/<[^>]+>/g,'')}`).join('\n');
       const answer = await AI.call(
         `You are a warm, encouraging GCSE Biology tutor talking to Mabel, who is 15 years old and studying AQA Separate Biology (8461). She has just finished the lesson "${_current.title}". Answer her question clearly in 3–5 sentences. Use plain, friendly language. Don't start with a definition. If relevant, connect to something she already covered in the lesson.`,
@@ -382,8 +383,12 @@ const Lessons = (() => {
       );
       aEl.textContent = answer;
       aEl.classList.remove('loading');
-    } catch {
-      aEl.textContent = 'Sorry, I couldn\'t get an answer right now — try again in a moment.';
+    } catch(e) {
+      if (e.message === 'NO_KEY' || e.message === 'BAD_KEY') {
+        aEl.innerHTML = 'To use Ask Me, enter your Anthropic API key first. <button class="btn" style="font-size:0.8rem;padding:0.2rem 0.6rem;margin-left:0.4rem" onclick="Questions.setupKey()">Set up key →</button>';
+      } else {
+        aEl.textContent = 'Sorry, I couldn\'t get an answer right now — try again in a moment.';
+      }
       aEl.classList.remove('loading');
     }
 

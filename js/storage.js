@@ -144,19 +144,25 @@ const Store = (() => {
     return added;
   }
 
-  function updateCardStatus(cardId, status) {
+  function updateCardStatus(cardId, difficulty) {
     const deck = getDeck();
     const i = deck.findIndex(c => c.id === cardId);
-    if (i >= 0) {
-      deck[i].status = status;
-      deck[i].lastReviewed = new Date().toISOString();
-      // Spaced repetition: set nextReview date
-      const days = status === 'known' ? 7 : status === 'learning' ? 2 : 0;
-      const next = new Date();
-      next.setDate(next.getDate() + days);
-      deck[i].nextReview = next.toISOString();
-      saveDeck(deck);
-    }
+    if (i < 0) return;
+
+    const intervals = { again: 0, hard: 1, good: 3, easy: 7 };
+    const statusMap = { again: 'unseen', hard: 'learning', good: 'learning', easy: 'known' };
+    const days = intervals[difficulty] ?? 0;
+
+    deck[i].difficulty   = difficulty;
+    deck[i].status       = statusMap[difficulty] || 'unseen';
+    deck[i].interval     = days;
+    deck[i].lastReviewed = new Date().toISOString();
+
+    const next = new Date();
+    next.setHours(0, 0, 0, 0);
+    next.setDate(next.getDate() + days);
+    deck[i].nextReview = next.toISOString();
+    saveDeck(deck);
   }
 
   function clearDeck() {

@@ -98,7 +98,10 @@ function showHome(hasSaved) {
   _progress = Store.getProgress();
   const last = _progress.lastPosition;
   const coveredCount = Object.keys(_progress.covered || {}).length;
-  const deckSize = Store.getDeck().length;
+  const _homeDeck  = Store.getDeck();
+  const deckSize   = _homeDeck.length;
+  const _homeToday = new Date().toISOString();
+  const dueCount   = _homeDeck.filter(c => !c.nextReview || c.nextReview <= _homeToday).length;
 
   App.setStage('Home');
   document.getElementById('hdrTopic').style.display = 'none';
@@ -135,7 +138,7 @@ function showHome(hasSaved) {
     { icon: Icons.get('revise', 48),    title: 'Revise',    sub: 'Pick a subject & topic',        fn: showSubjectPicker },
     { icon: Icons.get('test', 48),      title: 'Test prep', sub: 'Focused countdown revision',     fn: showTestPrep },
     { icon: Icons.get('dashboard', 48), title: `Dashboard${coveredCount > 0 ? ' · '+coveredCount+' done' : ''}`, sub: 'Progress & scores', fn: showDashboard },
-    { icon: Icons.get('cards', 48),     title: `Card deck${deckSize > 0 ? ' · '+deckSize : ''}`,   sub: 'Drill your saved cards',        fn: showCardDeck },
+    { icon: Icons.get('cards', 48),     title: `Card deck${deckSize > 0 ? ' · '+deckSize : ''}`,   sub: dueCount > 0 ? `⏰ ${dueCount} due today` : 'Drill your saved cards',   fn: showCardDeck },
   ];
 
   modes.forEach(m => {

@@ -8,6 +8,9 @@ const Cards = (() => {
   let _drillIdx = 0;
   let _flipped = false;
   let _onComplete = null;
+  let _againQueue = [];
+  let _againPass = 0;
+  let _sessionStats = {};
 
   // Matching game state
   let _matchSets = [];
@@ -107,13 +110,18 @@ const Cards = (() => {
       if (!byTopic[k]) byTopic[k] = [];
       byTopic[k].push(c);
     });
+    const now = new Date().toISOString();
     Object.entries(byTopic).forEach(([topic, cards]) => {
-      const kn = cards.filter(c => c.status === 'known').length;
+      const kn  = cards.filter(c => c.status === 'known').length;
+      const due = cards.filter(c => !c.nextReview || c.nextReview <= now).length;
       const pct = Math.round((kn / cards.length) * 100);
+      const dueBadge = due > 0
+        ? `<span style="font-size:0.72rem;color:var(--yellow);margin-left:0.3rem">⏰ ${due} due</span>`
+        : '';
       wrap.insertAdjacentHTML('beforeend', `
         <div style="background:var(--s1);border:1px solid var(--border2);border-radius:12px;
           padding:0.65rem 0.9rem;margin-bottom:0.4rem;display:flex;align-items:center;gap:0.6rem">
-          <div style="flex:1;font-size:0.85rem;font-weight:500">${topic}</div>
+          <div style="flex:1;font-size:0.85rem;font-weight:500">${topic}${dueBadge}</div>
           <div style="font-size:0.75rem;color:var(--muted)">${cards.length} cards</div>
           <div style="width:60px">
             <div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div>
@@ -130,15 +138,29 @@ const Cards = (() => {
     _deck = Store.getDeck();
     const today = new Date().toISOString();
 
-    if (filter === 'unseen')   _drillQueue = _deck.filter(c => c.status === 'unseen' || !c.status);
-    else if (filter === 'learning') _drillQueue = _deck.filter(c => c.status === 'learning');
-    else if (filter === 'due') _drillQueue = _deck.filter(c => !c.nextReview || c.nextReview <= today);
-    else _drillQueue = [..._deck];
+    if (filter === 'unseen')
+      _drillQueue = _deck.filter(c => !c.difficulty && (!c.status || c.status === 'unseen'));
+    else if (filter === 'learning')
+      _drillQueue = _deck.filter(c => c.difficulty === 'hard' || c.difficulty === 'good' || (!c.difficulty && c.status === 'learning'));
+    else if (filter === 'due')
+      _drillQueue = _deck.filter(c => !c.nextReview || c.nextReview <= today);
+    else
+      _drillQueue = [..._deck];
 
-    // Shuffle
-    _drillQueue = _drillQueue.sort(() => Math.random() - 0.5);
+    // Overdue cards first (sorted by nextReview ascending), then unseen at end
+    _drillQueue.sort((a, b) => {
+      const aOver = !a.nextReview || a.nextReview <= today;
+      const bOver = !b.nextReview || b.nextReview <= today;
+      if (aOver && !bOver) return -1;
+      if (!aOver && bOver) return  1;
+      return (a.nextReview || '') < (b.nextReview || '') ? -1 : 1;
+    });
+
     _drillIdx = 0;
     _flipped = false;
+    _againQueue = [];
+    _againPass = 0;
+    _sessionStats = {};
 
     if (!_drillQueue.length) {
       App.toast('No cards in that category');
@@ -148,15 +170,30 @@ const Cards = (() => {
   }
 
   function _showCard() {
-    if (_drillIdx >= _drillQueue.length) { _finishDrill(); return; }
+    if (_drillIdx >= _drillQueue.length) {
+      if (_againQueue.length > 0 && _againPass === 0) { _showAgainInterstitial(); return; }
+      _finishDrill();
+      return;
+    }
     const card = _drillQueue[_drillIdx];
     _flipped = false;
 
     const el = document.getElementById('main');
-    const pNum = _drillIdx + 1;
+    const pNum   = _drillIdx + 1;
     const pTotal = _drillQueue.length;
-    const statusLabel = card.status === 'known' ? '✅ Known' : card.status === 'learning' ? '🔁 Learning' : '👀 New';
-    const statusColor = card.status === 'known' ? 'var(--green)' : card.status === 'learning' ? 'var(--yellow)' : 'var(--muted)';
+
+    const diff = card.difficulty;
+    const statusLabel = diff === 'easy'  ? '✅ Mastered'
+                      : diff === 'good'  ? '👍 Good'
+                      : diff === 'hard'  ? '😬 Hard'
+                      : diff === 'again' ? '❌ Again'
+                      : card.status === 'known'    ? '✅ Known'
+                      : card.status === 'learning' ? '🔁 Learning'
+                      : '👀 New';
+    const statusColor = (diff === 'easy' || card.status === 'known')    ? 'var(--green)'
+                      : (diff === 'good' || diff === 'hard' || card.status === 'learning') ? 'var(--yellow)'
+                      : diff === 'again' ? '#ff6b6b'
+                      : 'var(--muted)';
 
     el.innerHTML = `
       <div class="card-deck">
@@ -179,15 +216,39 @@ const Cards = (() => {
             <div class="fc-side">ANSWER</div>
             <div class="fc-text">${card.back}</div>
           </div>
-          <div class="drill-btns" style="margin-top:0.75rem">
-            <button class="btn grn" onclick="Cards.rate('known')">✅ Got it</button>
-            <button class="btn yel" onclick="Cards.rate('learning')">🔁 Nearly</button>
-            <button class="btn red" onclick="Cards.rate('unseen')">❌ Missed</button>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-top:0.75rem">
+            <button class="btn red"  onclick="Cards.rate('again')" style="line-height:1.3">❌ Again<br><small style="opacity:0.7;font-size:0.72rem">show again now</small></button>
+            <button class="btn yel"  onclick="Cards.rate('hard')"  style="line-height:1.3">😬 Hard<br><small style="opacity:0.7;font-size:0.72rem">1 day</small></button>
+            <button class="btn grn"  onclick="Cards.rate('good')"  style="line-height:1.3">👍 Good<br><small style="opacity:0.7;font-size:0.72rem">3 days</small></button>
+            <button class="btn"      onclick="Cards.rate('easy')"  style="line-height:1.3;background:var(--green,#3dba7a);color:#fff">⭐ Easy<br><small style="opacity:0.7;font-size:0.72rem">7 days</small></button>
           </div>
         </div>
 
         <button class="btn full" style="margin-top:0.6rem" onclick="Cards.skip()">⏭ Skip</button>
       </div>`;
+  }
+
+  function _showAgainInterstitial() {
+    const n = _againQueue.length;
+    document.getElementById('main').innerHTML = `
+      <div class="card-deck">
+        <div class="results-header">
+          <h2>🔄 ${n} card${n !== 1 ? 's' : ''} to go over again</h2>
+          <p>These didn't stick yet — one more pass.</p>
+        </div>
+        <div style="display:flex;gap:0.55rem;flex-wrap:wrap">
+          <button class="btn pri" onclick="Cards.startAgainPass()">▶ Go again</button>
+          <button class="btn"     onclick="Cards.finishDrill()">✓ Finish drill</button>
+        </div>
+      </div>`;
+  }
+
+  function startAgainPass() {
+    _drillQueue = [..._againQueue];
+    _againQueue = [];
+    _againPass  = 1;
+    _drillIdx   = 0;
+    _showCard();
   }
 
   function flip() {
@@ -199,10 +260,16 @@ const Cards = (() => {
     if (cb) cb.style.display = 'block';
   }
 
-  function rate(status) {
+  function rate(difficulty) {
     const card = _drillQueue[_drillIdx];
-    Store.updateCardStatus(card.id, status);
-    _drillQueue[_drillIdx].status = status;
+    Store.updateCardStatus(card.id, difficulty);
+    _drillQueue[_drillIdx].difficulty = difficulty;
+    _sessionStats[difficulty] = (_sessionStats[difficulty] || 0) + 1;
+
+    if (difficulty === 'again' && _againPass === 0) {
+      _againQueue.push({ ...card, difficulty: 'again' });
+    }
+
     _drillIdx++;
     _showCard();
   }
@@ -213,25 +280,34 @@ const Cards = (() => {
   }
 
   function _finishDrill() {
-    const known    = _drillQueue.filter(c => c.status === 'known').length;
-    const learning = _drillQueue.filter(c => c.status === 'learning').length;
-    const missed   = _drillQueue.filter(c => c.status === 'unseen' || !c.status).length;
-    const total    = _drillQueue.length;
+    const nEasy  = _sessionStats.easy  || 0;
+    const nGood  = _sessionStats.good  || 0;
+    const nHard  = _sessionStats.hard  || 0;
+    const nAgain = _sessionStats.again || 0;
+    const total  = nEasy + nGood + nHard + nAgain;
+
+    const remembered = nEasy + nGood;
+    const isClean    = nAgain === 0;
+    const summary    = isClean && nHard === 0
+      ? 'Perfect run — every card nailed.'
+      : isClean
+        ? `${nHard} tricky one${nHard !== 1 ? 's' : ''} — you know your stuff.`
+        : `${nAgain} card${nAgain !== 1 ? 's' : ''} still need work — they\'re due again today.`;
 
     document.getElementById('main').innerHTML = `
       <div class="card-deck">
         <div class="results-header">
           <h2>🃏 Drill complete!</h2>
-          <p>${known === total ? 'Perfect run — every card nailed.' : `${learning + missed} card${learning+missed!==1?'s':''} still to work on.`}</p>
+          <p>${summary}</p>
         </div>
         <div class="stat-grid" style="margin-bottom:1rem">
-          ${statCell('✅', known,    'Got it')}
-          ${statCell('🔁', learning, 'Nearly')}
-          ${statCell('❌', missed,   'Missed')}
+          ${statCell('✅', remembered, 'Remembered')}
+          ${statCell('😬', nHard,      'Hard')}
+          ${statCell('❌', nAgain,     'Again')}
         </div>
         <div style="display:flex;gap:0.55rem;flex-wrap:wrap">
           <button class="btn pri" onclick="Cards.startDrill('all')">🔁 Drill again</button>
-          ${missed + learning > 0 ? `<button class="btn yel" onclick="Cards.startDrill('learning')">📋 Drill missed only</button>` : ''}
+          ${nAgain > 0 ? `<button class="btn yel" onclick="Cards.startDrill('due')">📋 Drill missed only</button>` : ''}
           <button class="btn" onclick="Cards.showDeck()">🃏 Back to deck</button>
           <button class="btn" onclick="showHome()">🏠 Home</button>
         </div>
@@ -356,5 +432,5 @@ const Cards = (() => {
     return 'What do you know about: ' + words + '…?';
   }
 
-  return { showDeck, startDrill, flip, rate, skip, clearDeck, saveFromLesson, startMatchingGame, _matchFront, _matchBack };
+  return { showDeck, startDrill, flip, rate, skip, clearDeck, saveFromLesson, startMatchingGame, _matchFront, _matchBack, startAgainPass, finishDrill: _finishDrill };
 })();

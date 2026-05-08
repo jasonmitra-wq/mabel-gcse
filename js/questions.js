@@ -215,6 +215,19 @@ Return ONLY valid JSON array, no markdown:
     _results.push({ question: q.question, marks: q.marks, earned: marksEarned, mastery, userAnswer, modelAnswer: q.modelAnswer, examTip: q.examTip });
     App.setScoreChip(`${_score}/${_total}`);
 
+    if (mastery !== 'full') {
+      Store.logError(`q_${_topicId}_${_idx}`, {
+        type: 'question',
+        subtopicId: _topicId,
+        topic: _topicName,
+        question: q.question,
+        mastery,
+        modelAnswer: q.modelAnswer,
+        hintsUsed: _hintShown,
+        date: new Date().toISOString(),
+      });
+    }
+
     // Render grade + model answer + next buttons
     const canRetry = mastery === 'missed' || mastery === 'partial';
     document.getElementById('qInner').innerHTML = `

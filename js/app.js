@@ -134,11 +134,15 @@ function showHome(hasSaved) {
     grid.appendChild(cont);
   }
 
+  const errorLog   = Store.getErrorLog();
+  const errorCount = Object.keys(errorLog).length;
+
   const modes = [
     { icon: Icons.get('revise', 48),    title: 'Revise',    sub: 'Pick a subject & topic',        fn: showSubjectPicker },
     { icon: Icons.get('test', 48),      title: 'Test prep', sub: 'Focused countdown revision',     fn: showTestPrep },
     { icon: Icons.get('dashboard', 48), title: `Dashboard${coveredCount > 0 ? ' · '+coveredCount+' done' : ''}`, sub: 'Progress & scores', fn: showDashboard },
     { icon: Icons.get('cards', 48),     title: `Card deck${deckSize > 0 ? ' · '+deckSize : ''}`,   sub: dueCount > 0 ? `⏰ ${dueCount} due today` : 'Drill your saved cards',   fn: showCardDeck },
+    { icon: '❌',                        title: `Error log${errorCount > 0 ? ' · ' + errorCount : ''}`, sub: errorCount > 0 ? 'Review your missed questions' : 'No errors yet — keep going!', fn: showErrorLog },
   ];
 
   modes.forEach(m => {
@@ -553,6 +557,75 @@ function _confirmReset() {
   Store.clearAll();
   showHome();
   App.toast('All progress cleared');
+}
+
+// ── ERROR LOG VIEW ─────────────────────────────────────────────
+function showErrorLog() {
+  App.setStage('Error log');
+  const log = Store.getErrorLog();
+  const entries = Object.values(log).sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+  let html = `
+    <div style="max-width:680px">
+      <div class="topic-header">
+        <button class="back-btn" onclick="showHome()">← Home</button>
+        <h2>❌ Error log</h2>
+      </div>`;
+
+  if (entries.length === 0) {
+    html += `
+      <div style="text-align:center;padding:3rem 1rem">
+        <div style="font-size:3rem;margin-bottom:1rem">🎉</div>
+        <p style="color:var(--muted)">No errors logged yet — keep working through topics!</p>
+      </div>`;
+  } else {
+    html += `<p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem">${entries.length} question${entries.length !== 1 ? 's' : ''} to revisit. Write these out by hand — that's your revision list.</p>`;
+
+    const checkpoints = entries.filter(e => e.type === 'checkpoint');
+    const questions   = entries.filter(e => e.type === 'question');
+
+    if (checkpoints.length > 0) {
+      html += `<div class="section-label" style="margin-bottom:0.6rem">Lesson checkpoints</div>`;
+      checkpoints.forEach(e => {
+        const badge = e.gotRight
+          ? `<span style="color:var(--yellow);font-size:0.75rem;font-weight:700">✓ Got it (with ${e.hintsUsed} hint${e.hintsUsed !== 1 ? 's' : ''})</span>`
+          : `<span style="color:var(--red);font-size:0.75rem;font-weight:700">✗ Wrong</span>`;
+        html += `<div class="error-log-item" style="margin-bottom:0.65rem;padding:0.75rem 0.9rem;background:var(--s2);border:1px solid var(--border2);border-radius:10px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.35rem">
+            <span style="font-size:0.78rem;color:var(--muted)">${e.subtopicName || e.subtopicId}</span>
+            ${badge}
+          </div>
+          <div style="font-size:0.9rem;font-weight:600;margin-bottom:0.35rem">${e.question}</div>
+          <div style="font-size:0.85rem;color:var(--green)">✓ ${e.correct}</div>
+        </div>`;
+      });
+    }
+
+    if (questions.length > 0) {
+      html += `<div class="section-label" style="margin-top:1rem;margin-bottom:0.6rem">Practice questions</div>`;
+      questions.forEach(e => {
+        const masteryLabel = e.mastery === 'skipped'
+          ? `<span style="color:var(--muted);font-size:0.75rem;font-weight:700">Skipped</span>`
+          : e.mastery === 'partial'
+            ? `<span style="color:var(--yellow);font-size:0.75rem;font-weight:700">📋 Partial</span>`
+            : `<span style="color:var(--red);font-size:0.75rem;font-weight:700">❌ Missed</span>`;
+        html += `<div class="error-log-item" style="margin-bottom:0.65rem;padding:0.75rem 0.9rem;background:var(--s2);border:1px solid var(--border2);border-radius:10px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.35rem">
+            <span style="font-size:0.78rem;color:var(--muted)">${e.topic || e.subtopicId}</span>
+            ${masteryLabel}
+          </div>
+          <div style="font-size:0.9rem;font-weight:600;margin-bottom:0.35rem">${e.question}</div>
+          <div style="font-size:0.8rem;color:var(--blue);font-weight:700;margin-bottom:0.2rem">Model answer:</div>
+          <div style="font-size:0.82rem;color:var(--muted);line-height:1.5">${e.modelAnswer}</div>
+        </div>`;
+      });
+    }
+
+    html += `<button class="btn" style="margin-top:1rem" onclick="if(confirm('Clear all logged errors?')){Store.clearErrorLog();showHome();}">🗑 Clear error log</button>`;
+  }
+
+  html += `</div>`;
+  document.getElementById('main').innerHTML = html;
 }
 
 // ── CARD DECK WRAPPER ──────────────────────────────────────────

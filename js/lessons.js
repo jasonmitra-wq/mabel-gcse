@@ -7,6 +7,7 @@ const Lessons = (() => {
   let _current       = null;
   let _subtopicName  = '';
   let _cpScores      = {};
+  let _cpHintLevels  = {};
   let _usedJokeIds   = [];
   let _steps         = [];
   let _stepIdx       = 0;
@@ -45,6 +46,7 @@ const Lessons = (() => {
     _current      = data;
     _subtopicName = subtopicName;
     _cpScores     = {};
+    _cpHintLevels = {};
     _usedJokeIds  = [];
     Personality.incrementLessonCount();
     Store.markCovered(subtopicId);
@@ -473,6 +475,9 @@ const Lessons = (() => {
     });
     if (!isCorrect) btn.classList.add('wrong');
 
+    const hintBtn = document.getElementById(`${cpId}_hintBtn`);
+    if (hintBtn) hintBtn.style.display = 'none';
+
     const fb    = document.getElementById(`${cpId}_fb`);
     const cpDef = _steps[_stepIdx]?.checkpoint;
     if (fb && cpDef) {
@@ -481,6 +486,21 @@ const Lessons = (() => {
         : `<span style="display:flex;align-items:flex-start;gap:0.5rem">${Icons.inline('cross', 22)} <span>${cpDef.wrongFeedback || `The answer is: ${cpDef.options[cpDef.correct]}`}</span></span>`;
       fb.className  = `cp-feedback show ${isCorrect ? 'correct' : 'wrong'}`;
     }
+
+    const hintsUsed = _cpHintLevels[cpId] || 0;
+    if ((!isCorrect || hintsUsed > 0) && _current && cpDef) {
+      Store.logError(`cp_${_current.id}_${cpId}`, {
+        type: 'checkpoint',
+        subtopicId: _current.id,
+        subtopicName: _subtopicName,
+        question: cpDef.question,
+        correct: cpDef.options[cpDef.correct],
+        gotRight: isCorrect,
+        hintsUsed,
+        date: new Date().toISOString(),
+      });
+    }
+
     _cpScores[cpId] = isCorrect;
     _stepCpDone = true;
     _tryUnlockNext();
@@ -489,14 +509,52 @@ const Lessons = (() => {
   function _renderCheckpoint(cp, id) {
     const opts = cp.options.map((opt, i) => {
       const isCorrect = i === cp.correct;
-      return `<button class="cp-btn" data-correct="${isCorrect}" data-cpid="${id}" data-idx="${i}"
+      return `<button class="cp-btn" id="${id}_opt_${i}" data-correct="${isCorrect}" data-cpid="${id}" data-idx="${i}"
         onclick="Lessons.checkpointClick(this,'${id}',${isCorrect})">${opt}</button>`;
     }).join('');
     return `<div class="checkpoint" id="${id}">
       <div class="checkpoint-q"><span>CHECK</span>${cp.question}</div>
       <div class="cp-opts">${opts}</div>
+      <div class="cp-hint-box" id="${id}_hint" style="display:none;margin-top:0.55rem;padding:0.55rem 0.75rem;background:rgba(255,214,0,0.1);border:1px solid rgba(255,214,0,0.3);border-radius:8px;font-size:0.85rem;line-height:1.55"></div>
+      <button class="btn" id="${id}_hintBtn" style="margin-top:0.5rem;font-size:0.8rem;padding:0.3rem 0.75rem" onclick="Lessons._cpHint('${id}')">💡 Hint</button>
       <div class="cp-feedback" id="${id}_fb"></div>
     </div>`;
+  }
+
+  function _cpHint(cpId) {
+    const level = (_cpHintLevels[cpId] || 0) + 1;
+    _cpHintLevels[cpId] = level;
+
+    const step = _steps.find(s => s.type === 'kp-check' && `cp_${s.i}` === cpId);
+    const cpDef = step?.checkpoint;
+    if (!cpDef) return;
+
+    const hintBox = document.getElementById(`${cpId}_hint`);
+    if (!hintBox) return;
+    hintBox.style.display = 'block';
+
+    if (level === 1) {
+      const nudge = (cpDef.wrongFeedback || `Think about ${cpDef.options[cpDef.correct]}`).split('.')[0];
+      hintBox.innerHTML = `💡 <strong>Hint:</strong> ${nudge}.`;
+    } else if (level === 2) {
+      const wrongIdxs = cpDef.options.map((_, i) => i).filter(i => i !== cpDef.correct);
+      const btn = document.getElementById(`${cpId}_opt_${wrongIdxs[0]}`);
+      if (btn && !btn.disabled) {
+        btn.style.opacity = '0.3';
+        btn.style.textDecoration = 'line-through';
+        btn.disabled = true;
+      }
+      hintBox.innerHTML = `💡💡 <strong>Stronger hint:</strong> One wrong answer removed — think it through.`;
+    } else {
+      const wrongIdxs = cpDef.options.map((_, i) => i).filter(i => i !== cpDef.correct);
+      const btn = document.getElementById(`${cpId}_opt_${wrongIdxs[1] ?? wrongIdxs[0]}`);
+      if (btn && !btn.disabled) {
+        btn.style.opacity = '0.3';
+        btn.style.textDecoration = 'line-through';
+        btn.disabled = true;
+      }
+      hintBox.innerHTML = `💡💡💡 <strong>Last hint:</strong> Two wrong answers removed — go with what you know.`;
+    }
   }
 
   // ── Diagram renderer ───────────────────────────────────────
@@ -640,7 +698,7 @@ const Lessons = (() => {
     if (_current) Questions.start(_current, _subtopicName, _current.id);
   }
 
-  return { open, close, checkpointClick, saveAllCards, _nextStep, _prevStep, _tryUnlockNext, _startPractice, sendAskMe: _sendAskMe };
+  return { open, close, checkpointClick, saveAllCards, _nextStep, _prevStep, _tryUnlockNext, _startPractice, sendAskMe: _sendAskMe, _cpHint };
 })();
 
 /* ============================================================

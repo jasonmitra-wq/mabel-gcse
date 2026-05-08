@@ -169,11 +169,27 @@ const Store = (() => {
     set('deck', []);
   }
 
+  // ── Error log ─────────────────────────────────────────────
+  function getErrorLog() {
+    return get('errors') || {};
+  }
+
+  function logError(key, data) {
+    const log = getErrorLog();
+    log[key] = data;
+    set('errors', log);
+  }
+
+  function clearErrorLog() {
+    set('errors', {});
+  }
+
   return {
     get, set, remove,
     getProgress, saveProgress, markCovered, addScore,
     setLastPosition, getLearnerProfile, updateLearnerProfile, clearAll,
     getDeck, saveDeck, addCards, updateCardStatus, clearDeck,
     getMabelProfile, saveMabelProfile, updateMabelProfile, hasAsked, markAsked,
+    getErrorLog, logError, clearErrorLog,
   };
 })();

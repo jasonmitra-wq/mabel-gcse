@@ -1,198 +1,182 @@
 {
   "id": "b2-transpiration",
-  "title": "Transpiration & translocation — how plants move water and food",
+  "title": "Transpiration — how water moves through plants",
   "topic": "B2",
-  "examTip": "AQA loves graph questions on transpiration rate. Know exactly what each factor does and why. Distinguish transpiration (water, xylem) from translocation (sugars, phloem) — mixing them up is the most common dropped mark.",
+  "examTip": "Transpiration questions come in two types: describe the process (know the pull, the xylem, the stomata) and explain how changing a factor affects the rate (always link back to the concentration gradient of water vapour). Both types are very common.",
   "introTips": [
-    "This lesson explains how a plant pulls water up from its roots to its leaves — no heart, no pump, just physics and clever leaf design.",
-    "You'll learn the four factors that speed up or slow down water loss, and be able to read or sketch graphs for each one.",
-    "You'll also nail the difference between transpiration and translocation — two words that look similar but describe completely different things."
+    "Transpiration sounds like a dry topic, but it's actually quite elegant — the plant uses physics to pull water upwards without a pump.",
+    "Guard cells and stomata are key: you need to explain not just what they do but how their structure lets them do it.",
+    "The factors section is very likely to appear in 'describe and explain' questions — learn all four factors and their reasons, not just their effects."
   ],
-  "intro": "Plants have a problem: they need water at the top (for photosynthesis in the leaves) but water is at the bottom (in the soil). They can't pump it like your heart pumps blood. Instead, they use a trick: water evaporates out of the leaves, and that loss pulls more water up from the roots. It's called the transpiration stream — and understanding it will get you marks on almost every AQA Biology paper.",
-  "diagrams": [
-    {
-      "id": "b2-transpiration",
-      "title": "The Transpiration Stream — root to leaf",
-      "examFlag": true
-    },
-    {
-      "id": "b2-xylem-phloem",
-      "title": "Xylem and Phloem — structure and direction",
-      "examFlag": true
-    }
-  ],
+  "intro": "How does a tree get water 20 metres up to its leaves — against gravity, with no heart or pump? The answer is transpiration. Water evaporates from the leaves, and that evaporation creates a pull that drags a continuous column of water all the way up from the roots. It's simple physics, and once you see it, it's hard to forget.",
+  "diagrams": [],
   "keyPoints": [
     {
-      "heading": "The transpiration stream — how water gets from root to leaf",
-      "content": "Water enters the plant through <strong>root hair cells</strong> by osmosis. It then moves up through the <strong>xylem</strong> — long hollow tubes that run the full height of the plant. What pulls it up? Water evaporates from the leaves through tiny pores called <strong>stomata</strong>. As water leaves at the top, it pulls more water up behind it — like a chain. This continuous movement of water from roots up through the xylem and out of the leaves is called the <strong>transpiration stream</strong>. The xylem is made of dead cells: no living contents, just hollow tubes — perfectly designed to carry water.",
-      "examFlag": true,
-      "cardFlag": true,
-      "diagram": "b2-transpiration",
-      "writeBullets": [
-        "Water enters root hair cells by osmosis",
-        "Water moves up the plant through the xylem (hollow dead cells)",
-        "Water evaporates from leaves through stomata",
-        "Water loss at the top pulls water up from the roots — this is the transpiration stream",
-        "Xylem carries water and dissolved mineral ions upward only"
-      ],
-      "keyTerms": [
-        {"term": "Transpiration", "def": "The evaporation of water from a plant's leaves through the stomata"},
-        {"term": "Transpiration stream", "def": "The continuous movement of water from roots, up through the xylem, and out of the leaves"},
-        {"term": "Xylem", "def": "Tissue made of dead hollow cells that carries water and mineral ions up a plant"},
-        {"term": "Stomata", "def": "Tiny pores (mainly on the underside of leaves) through which gas exchange and water loss occur"}
-      ],
-      "memTip": "Picture pulling a string of beads upward: as the top bead (water molecule) leaves through the stomata, it drags the next bead up. That chain is the transpiration stream. Sketch root → xylem → leaf → stomata with an arrow going up, and label it. The act of drawing it fixes the direction."
-    },
-    {
-      "heading": "Four factors that affect transpiration rate",
-      "content": "Four things change how fast water evaporates from leaves — and AQA will show you graphs of them. <strong>Light intensity</strong>: in light, stomata open to allow CO₂ in for photosynthesis, which also lets water out — so more light = more transpiration. <strong>Temperature</strong>: warmer air means water molecules have more energy and evaporate faster. <strong>Humidity</strong>: if the air is already full of water vapour, the concentration gradient between inside the leaf and outside is smaller — so water diffuses out more slowly. <strong>Wind speed</strong>: wind carries water vapour away from the leaf surface, steepening the concentration gradient and speeding evaporation up.",
+      "heading": "What transpiration is",
+      "content": "Water is absorbed by root hair cells, travels up through <strong>xylem</strong> vessels, and eventually evaporates from the leaves through tiny pores called <strong>stomata</strong>. This evaporation is <strong>transpiration</strong>. As water leaves the leaf, it pulls the water behind it upward — creating a continuous <strong>transpiration stream</strong> that moves water from roots all the way to the top of the plant. The driving force is a <strong>concentration gradient</strong>: the air outside the leaf has a lower water vapour concentration than the air spaces inside, so water diffuses out.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Light intensity ↑ → stomata open → transpiration rate ↑",
+        "Transpiration = evaporation of water from leaves through stomata",
+        "Water travels: root hair cells → xylem → leaf cells → stomata → air",
+        "Evaporation creates a 'pull' — the transpiration stream",
+        "Driven by a concentration gradient: less water vapour outside leaf than inside",
+        "Xylem carries water upwards as the stream pulls it"
+      ],
+      "keyTerms": [
+        {"term": "Transpiration", "def": "The evaporation of water from the surface of leaves, mainly through stomata"},
+        {"term": "Transpiration stream", "def": "The continuous flow of water from roots to leaves through xylem, driven by evaporation at the leaf surface"},
+        {"term": "Concentration gradient", "def": "A difference in concentration between two areas; substances diffuse from high to low concentration"}
+      ],
+      "memTip": "Think of a drinking straw — when you sip (evaporation), the liquid below gets pulled upward. That's exactly what transpiration does. The straw is the xylem. Your mouth is the stomata. The drink is the water in the soil. Draw and label this image once and it will stick."
+    },
+    {
+      "heading": "Guard cells and stomata",
+      "content": "Each <strong>stoma</strong> (plural: <strong>stomata</strong>) is a pore in the lower epidermis surrounded by two <strong>guard cells</strong>. Guard cells control whether the stoma is open or closed. In <strong>bright light</strong>, guard cells absorb water by osmosis, <strong>swell</strong>, and because their inner walls are <strong>thicker and less elastic</strong> than the outer walls, they curve outward — pulling the pore open. This allows CO₂ in for photosynthesis. In <strong>darkness</strong> or when the plant is short of water, guard cells lose water, become flaccid, and the stoma closes — reducing water loss.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Stomata are pores in the lower epidermis; each controlled by two guard cells",
+        "Open in light: guard cells absorb water, swell, curve open — lets CO₂ in",
+        "Closed in dark/water shortage: guard cells lose water, become flaccid, pore closes",
+        "Guard cell inner wall is thicker — causes the curved opening shape",
+        "Stomata opening allows both gas exchange AND water loss"
+      ],
+      "keyTerms": [
+        {"term": "Stoma (stomata)", "def": "A pore in the leaf surface (mainly lower epidermis) through which gas exchange and water vapour loss occur"},
+        {"term": "Guard cells", "def": "Pairs of cells flanking each stoma; control its opening and closing by changing shape as they gain or lose water"},
+        {"term": "Flaccid", "def": "Limp and lacking turgor — a cell that has lost water and lost its firm shape"}
+      ],
+      "memTip": "Guard cells work like a banana — when they're full of water they curve outward and open up; when they're deflated they go limp and close. The thick inner wall is the key structural detail: it stops the inner side stretching, so only the outer side expands, bending the cell open. That's the one structural fact AQA expects you to know."
+    },
+    {
+      "heading": "Factors that affect the rate of transpiration",
+      "content": "Four factors change how fast water evaporates from a leaf. <strong>Light intensity</strong>: more light → stomata open more → faster transpiration. <strong>Temperature</strong>: higher temperature → water molecules have more energy → evaporate faster. <strong>Air movement (wind)</strong>: wind blows away water vapour at the leaf surface → steeper concentration gradient → faster diffusion out. <strong>Humidity</strong>: high humidity means more water vapour already in the air → shallower concentration gradient → slower transpiration. All four factors work by changing the <strong>concentration gradient</strong> of water vapour between the inside of the leaf and the surrounding air.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Light intensity ↑ → stomata open more → transpiration rate ↑",
         "Temperature ↑ → faster evaporation → transpiration rate ↑",
-        "Humidity ↑ → smaller water vapour gradient → transpiration rate ↓",
-        "Wind speed ↑ → water vapour removed faster → transpiration rate ↑"
+        "Wind / air movement ↑ → removes water vapour → steeper gradient → rate ↑",
+        "Humidity ↑ → more water vapour in air → shallower gradient → rate ↓",
+        "All effects are explained by the concentration gradient of water vapour"
       ],
       "keyTerms": [
-        {"term": "Concentration gradient", "def": "The difference in concentration of a substance between two areas — the steeper the gradient, the faster diffusion"},
-        {"term": "Humidity", "def": "The amount of water vapour in the air"}
+        {"term": "Humidity", "def": "The amount of water vapour in the air; high humidity reduces the concentration gradient and slows transpiration"},
+        {"term": "Diffusion gradient", "def": "The difference in concentration that drives net movement of particles from high to low concentration"}
       ],
-      "memTip": "Three factors INCREASE transpiration (Light, Temperature, Wind) and one DECREASES it (Humidity — the odd one out). Acronym: LTW-H. Practise sketching all four graphs: three go up in a straight line, and humidity goes down. AQA will give you one and ask you to explain it."
+      "memTip": "Use the phrase 'concentration gradient' in your answer every time — it's the underlying reason for all four factors. LTWH = Light, Temperature, Wind, Humidity. Three of the four make transpiration FASTER when increased; only Humidity makes it SLOWER. Know that exception."
     },
     {
-      "heading": "Leaf adaptations that reduce water loss",
-      "content": "Plants in dry environments can't afford to lose water through the transpiration stream as quickly. Several adaptations help. The <strong>waxy cuticle</strong> on the upper surface of the leaf is waterproof — water cannot evaporate through it. The <strong>stomata are mainly on the underside</strong> of the leaf, away from direct sunlight (which would speed evaporation). At night, when there's no light for photosynthesis, the stomata <strong>close</strong> — cutting off water loss entirely. <strong>Guard cells</strong> control whether stomata are open or closed: they become turgid (fill with water) to open the stoma, and flaccid (lose water) to close it.",
-      "examFlag": true,
-      "cardFlag": true,
-      "diagram": null,
-      "writeBullets": [
-        "Waxy cuticle on upper leaf surface — waterproof layer, prevents evaporation",
-        "Stomata are mainly on the underside of the leaf — less exposed to direct sunlight",
-        "Stomata close in the dark — no photosynthesis, so no CO₂ needed, water loss is minimised",
-        "Guard cells control stomata: turgid (swollen with water) = open; flaccid (water lost) = closed"
-      ],
-      "keyTerms": [
-        {"term": "Waxy cuticle", "def": "A waterproof layer on the outer surface of leaves that reduces water loss by evaporation"},
-        {"term": "Guard cells", "def": "Cells that surround each stoma and control whether it is open or closed"},
-        {"term": "Turgid", "def": "A cell swollen with water — when guard cells are turgid, the stomata open"},
-        {"term": "Flaccid", "def": "A cell that has lost water and is limp — when guard cells are flaccid, the stomata close"}
-      ],
-      "memTip": "Guard cell memory trick: Turgid = open (T for Two guard cells bow outward like a smile, opening the gap). Flaccid = closed (F for shut Flat). AQA can ask you to describe how stomata open and close — make sure you mention both the guard cell shape change AND whether they're turgid or flaccid."
-    },
-    {
-      "heading": "Transpiration vs translocation — never mix these up",
-      "content": "These two words look similar but describe completely different processes, and AQA markers see them confused constantly. <strong>Transpiration</strong> is the movement of <strong>water</strong> up through the <strong>xylem</strong> — always upward, always water. <strong>Translocation</strong> is the movement of <strong>dissolved sugars</strong> (and other solutes) through the <strong>phloem</strong> — and crucially it can go <strong>both up and down</strong>, wherever the plant needs food. Sugar made in the leaves might go down to the roots for storage, or up to growing shoot tips. Both xylem and phloem run alongside each other in vascular bundles.",
-      "examFlag": true,
-      "cardFlag": true,
-      "diagram": "b2-xylem-phloem",
-      "writeBullets": [
-        "Transpiration: water moves UP through xylem (one direction only)",
-        "Translocation: dissolved sugars move through phloem (both directions — up and down)",
-        "Xylem: dead hollow cells; carries water and mineral ions",
-        "Phloem: living cells; carries sugars (mainly sucrose) made by photosynthesis"
-      ],
-      "keyTerms": [
-        {"term": "Translocation", "def": "The movement of dissolved sugars through the phloem, from where they are made to where they are needed — in both directions"},
-        {"term": "Phloem", "def": "Living tissue that transports dissolved sugars up and down the plant"}
-      ],
-      "memTip": "X for xylem, X for water (neither has an E in the key part — both are 'dry' sounding). Ph for phloem, Ph for phood (food — sugars). Or use a table: draw two columns, label one Xylem and one Phloem, and fill in: substance carried, direction, cell type (dead vs living). That table takes 60 seconds to draw and gets you the marks."
-    },
-    {
-      "heading": "Graph questions — what AQA actually shows you",
-      "content": "In the exam, you'll often be given a graph showing how one of the four factors affects transpiration rate and asked to describe or explain it. The key pattern: <strong>temperature, light and wind</strong> all give a graph that rises steadily (linear increase) — as each increases, transpiration speeds up. <strong>Humidity</strong> is the opposite: as humidity increases, the transpiration rate falls. When explaining any graph, always link to the <strong>concentration gradient</strong>: a steeper gradient means faster diffusion of water vapour out of the leaf.",
+      "heading": "Measuring transpiration — the potometer",
+      "content": "A <strong>potometer</strong> is a piece of apparatus used to measure the <strong>rate of water uptake</strong> by a plant shoot — which is used as an estimate of the transpiration rate. A cut shoot is placed in water-filled tubing. As the shoot transpires, it pulls water up — and this draws an air bubble along a capillary tube. You measure how far the bubble moves in a set time. Important: the potometer measures <strong>water uptake</strong>, not water loss — but because most water taken up is lost by transpiration, they are very close. To get valid results, control variables such as temperature, light intensity, humidity and air movement.",
       "examFlag": true,
       "cardFlag": false,
       "diagram": null,
       "writeBullets": [
-        "Temperature ↑: transpiration rate increases linearly — molecules have more energy, evaporate faster",
-        "Light ↑: transpiration rate increases — stomata open wider, more water can escape",
-        "Wind speed ↑: transpiration rate increases — water vapour swept away, gradient steepened",
-        "Humidity ↑: transpiration rate decreases — smaller water vapour gradient between leaf and air"
+        "Potometer measures rate of water uptake (not transpiration directly)",
+        "Air bubble moves along capillary tube as plant draws water up",
+        "Faster bubble movement = greater water uptake = higher transpiration rate",
+        "Control variables: temperature, light, humidity, air movement, leaf area",
+        "Assumption: most water taken up is lost by transpiration (close but not exact)"
       ],
-      "keyTerms": [],
-      "memTip": "Sketch all four graphs from memory right now on a scrap of paper — x-axis = factor, y-axis = transpiration rate. Temperature, light, wind: lines go up. Humidity: line goes down. Once you've drawn them four times, the shapes stick. The exam gives you the axes; you add the line and the explanation."
+      "keyTerms": [
+        {"term": "Potometer", "def": "Apparatus that measures the rate of water uptake by a plant shoot, used to estimate transpiration rate"},
+        {"term": "Capillary tube", "def": "A very narrow tube in a potometer; the air bubble moves through it as water is taken up by the plant"}
+      ],
+      "memTip": "Potometer = 'measures the pot of water going in'. The bubble moves because water is pulled out of the tube by the transpiring shoot. The key exam trap: it measures water UPTAKE, not water LOSS — be precise. If the question asks 'what does a potometer measure?', say 'the rate of water uptake'."
     }
   ],
   "tables": [
     {
-      "title": "Transpiration vs translocation",
+      "title": "Factors affecting transpiration rate",
       "examFlag": true,
-      "headers": ["Feature", "Transpiration", "Translocation"],
+      "headers": ["Factor", "Change", "Effect on rate", "Reason"],
       "rows": [
-        ["Substance moved", "Water (+ mineral ions)", "Dissolved sugars (sucrose)"],
-        ["Tissue used", "Xylem", "Phloem"],
-        ["Cell type", "Dead hollow cells", "Living cells"],
-        ["Direction", "Upward only", "Both directions (up and down)"],
-        ["Driving force", "Evaporation from leaves", "Active loading of sugar into phloem"]
-      ]
-    },
-    {
-      "title": "The four factors and their effect on transpiration rate",
-      "examFlag": true,
-      "headers": ["Factor", "Effect on transpiration rate", "Reason"],
-      "rows": [
-        ["Light intensity ↑", "Increases", "Stomata open (needed for photosynthesis)"],
-        ["Temperature ↑", "Increases", "Molecules have more energy; evaporation faster"],
-        ["Humidity ↑", "Decreases", "Water vapour gradient between leaf and air is smaller"],
-        ["Wind speed ↑", "Increases", "Water vapour removed from leaf surface; gradient steepened"]
+        ["Light intensity",   "Increases",   "Rate increases",   "Stomata open wider — more water vapour can escape"],
+        ["Light intensity",   "Decreases",   "Rate decreases",   "Stomata close — less water vapour escapes"],
+        ["Temperature",       "Increases",   "Rate increases",   "Water molecules have more kinetic energy — evaporate faster"],
+        ["Temperature",       "Decreases",   "Rate decreases",   "Less kinetic energy — slower evaporation"],
+        ["Wind/air movement", "Increases",   "Rate increases",   "Water vapour blown away — steeper concentration gradient maintained"],
+        ["Humidity",          "Increases",   "Rate decreases",   "More water vapour in air already — shallower concentration gradient"],
+        ["Humidity",          "Decreases",   "Rate increases",   "Less water vapour in air — steeper concentration gradient"]
       ]
     }
   ],
   "checkpoints": {
     "1": {
-      "question": "What pulls water up through the xylem in the transpiration stream?",
+      "question": "What is the main driving force behind the transpiration stream?",
       "options": [
-        "The heart pumping blood around the plant",
-        "Active transport by living xylem cells",
-        "Evaporation of water from leaves through stomata, which pulls more water up",
-        "Root pressure pushing water up from below"
+        "The pumping action of the roots",
+        "Active transport by xylem cells",
+        "Evaporation of water from leaf cells creating a pull upwards",
+        "Osmosis from the soil into root hair cells"
       ],
       "correct": 2,
-      "correctFeedback": "Exactly right. Water evaporates out of the stomata and that loss pulls more water up through the xylem from the roots. No pump needed — just physics.",
-      "wrongFeedback": "The pull comes from evaporation at the top. As water leaves through the stomata, it drags the water molecules below it upward through the xylem. Xylem cells are dead and hollow — they don't actively pump anything."
+      "correctFeedback": "Exactly — evaporation at the leaf surface creates a pull that draws water up through the xylem. No pump needed.",
+      "wrongFeedback": "The transpiration stream is driven by evaporation from the leaf. Roots don't pump — they absorb. Xylem cells are dead, so no active transport. Osmosis gets water into the roots, but it's the evaporation at the top that pulls the whole column upward."
     },
     "3": {
-      "question": "A student increases the humidity around a plant. What happens to the transpiration rate, and why?",
+      "question": "A plant is moved from a humid room into a dry, windy environment. What happens to its transpiration rate and why?",
       "options": [
-        "Transpiration rate increases — more water vapour in the air speeds up evaporation",
-        "Transpiration rate decreases — the water vapour concentration gradient between the leaf and the air becomes smaller",
-        "Transpiration rate stays the same — humidity has no effect on stomata",
-        "Transpiration rate increases — stomata open wider in high humidity"
+        "Rate decreases — stomata close in wind",
+        "Rate increases — lower humidity and more air movement both steepen the concentration gradient",
+        "Rate stays the same — the two factors cancel out",
+        "Rate increases — higher temperature in dry environments"
       ],
       "correct": 1,
-      "correctFeedback": "Correct. High humidity means the air is already full of water vapour, so the gradient between inside the leaf and outside is smaller — water diffuses out more slowly.",
-      "wrongFeedback": "Humidity is the odd one out among the four factors — it's the only one that decreases transpiration rate. When humidity is high, the concentration gradient between the humid air inside the leaf and the air outside is small, so water diffuses out more slowly."
+      "correctFeedback": "Right — lower humidity means less water vapour in the air already, and wind removes water vapour from around the leaf. Both effects make the concentration gradient steeper, so water diffuses out faster.",
+      "wrongFeedback": "Both lower humidity and increased air movement steepen the concentration gradient between the inside of the leaf and the outside air. That means water diffuses out faster — transpiration rate increases."
     }
   },
   "commonMistakes": [
-    "Xylem carries water upward only. Phloem carries sugars in both directions. Mixing these up loses marks on almost every transpiration question.",
-    "Stomata close in the dark — not because the plant 'rests', but because there is no light for photosynthesis and therefore no need to take in CO₂. Water loss is the cost of having stomata open; the plant avoids that cost when there's nothing to gain.",
-    "Humidity is the only factor that decreases transpiration rate. The other three (light, temperature, wind) all increase it. If you write 'humidity increases transpiration', you will lose the mark.",
-    "Xylem cells are dead — they are hollow tubes with no living contents, which is exactly what makes them good at carrying water. If a question asks why xylem is suited to its function, 'dead hollow cells' is the answer.",
-    "The transpiration stream moves water and mineral ions, not sugars. Sugars are moved by translocation through the phloem."
+    "Saying water is 'pumped' up through xylem — there is no pump. Transpiration creates a pull (tension) as water evaporates from leaves; the cohesion of water molecules means the whole column moves up.",
+    "Confusing transpiration with translocation — transpiration is water moving through xylem; translocation is sugars moving through phloem.",
+    "Saying high humidity increases transpiration rate — it's the opposite. High humidity means more water vapour already in the air, so the concentration gradient is shallower and water leaves the leaf more slowly.",
+    "Describing the potometer as measuring transpiration — it measures water uptake. Most of this water is lost by transpiration, so it's a good estimate, but technically the measurement is uptake.",
+    "Forgetting to link factor changes to the concentration gradient — AQA mark schemes usually require you to say why the factor changes the rate, not just that it does."
   ],
   "examTips": [
-    "For any graph question on transpiration: describe the trend first ('as X increases, transpiration rate increases'), then explain WHY using concentration gradient and stomata.",
-    "If asked to compare xylem and phloem: four things — substance carried, direction, cell type (dead vs living), and process name (transpiration vs translocation).",
-    "Guard cell questions always need two things: the shape change (turgid vs flaccid) AND the outcome (stomata open vs closed)."
+    "Whenever you explain how a factor affects transpiration rate, use the phrase 'concentration gradient'. It tells the examiner you understand the mechanism, not just the effect — and it's almost always worth a mark.",
+    "Guard cells: two details AQA often want are (1) they open in light to allow CO₂ for photosynthesis and (2) the inner wall is thicker, which causes the curved opening shape. Mention both in a 'describe guard cell action' question.",
+    "For potometer questions, always state what the independent variable is and name at least two control variables. Common control variables: temperature, light intensity, humidity, leaf area, air movement."
   ],
   "videoLinks": [
-    {"searchQuery": "AQA GCSE biology transpiration", "label": "Transpiration", "source": "Free Science Lessons", "icon": "▶", "url": "https://www.youtube.com/results?search_query=transpiration+GCSE+biology+Free+Science+Lessons"},
-    {"searchQuery": "AQA GCSE biology transpiration", "label": "Transpiration — GCSE Biology", "source": "BBC Bitesize", "icon": "▶", "url": "https://www.bbc.co.uk/bitesize/search?q=transpiration+biology"},
-    {"searchQuery": "AQA GCSE biology transpiration", "label": "Transpiration & Translocation", "source": "Cognito", "icon": "▶", "url": "https://www.youtube.com/results?search_query=transpiration+translocation+GCSE+biology+Cognito"}
+    {
+      "searchQuery": "AQA GCSE biology transpiration",
+      "label": "Transpiration — Water Transport in Plants",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=AQA+GCSE+biology+transpiration+Free+Science+Lessons"
+    },
+    {
+      "searchQuery": "AQA GCSE biology transpiration stomata guard cells",
+      "label": "Transpiration and Stomata",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=AQA+GCSE+biology+transpiration+stomata+guard+cells+BBC+Bitesize"
+    },
+    {
+      "searchQuery": "AQA GCSE biology transpiration potometer",
+      "label": "Transpiration and the Potometer",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=AQA+GCSE+biology+transpiration+potometer+Cognito"
+    }
   ],
   "revisionCardBullets": [
-    "Transpiration stream: water enters roots by osmosis → moves up xylem → evaporates out of stomata",
-    "Xylem = dead hollow cells; carries water + mineral ions; upward only",
-    "Phloem = living cells; carries dissolved sugars; both directions (translocation)",
-    "Light ↑: transpiration ↑ (stomata open) | Temperature ↑: transpiration ↑ (faster evaporation)",
-    "Humidity ↑: transpiration ↓ (smaller gradient) | Wind ↑: transpiration ↑ (removes water vapour)",
-    "Waxy cuticle = waterproof layer on upper leaf surface — reduces water loss",
-    "Stomata mainly on underside of leaf — less direct sunlight, reduces water loss",
-    "Stomata close in the dark — no photosynthesis needed, water loss minimised",
-    "Guard cells: turgid = stomata open | flaccid = stomata closed",
-    "Transpiration = water, xylem, up | Translocation = sugars, phloem, both directions"
+    "Transpiration = evaporation of water from leaves through stomata",
+    "Creates a transpiration stream — pulls water up through xylem from roots",
+    "Driven by concentration gradient: less water vapour outside leaf than inside",
+    "Guard cells open stomata in light (need CO₂ for photosynthesis); close in dark/water shortage",
+    "Guard cell structure: thicker inner wall causes curved opening when turgid",
+    "Light ↑ → transpiration ↑ (stomata open more)",
+    "Temperature ↑ → transpiration ↑ (faster evaporation)",
+    "Wind ↑ → transpiration ↑ (removes water vapour, steepens gradient)",
+    "Humidity ↑ → transpiration ↓ (shallower concentration gradient)",
+    "Potometer measures water UPTAKE (not loss) — used to estimate transpiration rate"
   ]
 }

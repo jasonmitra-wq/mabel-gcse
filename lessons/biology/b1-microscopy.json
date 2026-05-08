@@ -1,0 +1,180 @@
+{
+  "id": "b1-microscopy",
+  "title": "Microscopes — how do we see cells?",
+  "topic": "B1",
+  "examTip": "AQA will ask you to calculate magnification, or work backwards to find actual size. Always show your formula and your working. The units question (µm vs nm) also comes up — know your conversions cold.",
+  "introTips": [
+    "This lesson covers two types of microscope, how to calculate magnification, and how to prepare a slide — including a required practical you need to know.",
+    "The magnification formula has three versions (rearranged): you'll practise all three.",
+    "AQA often gives you an image with a scale bar and asks you to find the actual size of something — we'll work through exactly how to do that."
+  ],
+  "intro": "Cells are invisible to the naked eye. The only reason we know what they look like is because people figured out how to build instruments that make tiny things appear large. This lesson is about those instruments — and the maths that goes with them.",
+  "diagrams": [],
+  "keyPoints": [
+    {
+      "heading": "Light microscope vs electron microscope",
+      "content": "A <strong>light microscope</strong> uses <strong>visible light</strong> and glass lenses to magnify specimens. You can use it on living or dead samples, it's cheap, and it produces colour images — but its <strong>resolution</strong> (the ability to distinguish two separate points) is limited. Resolution depends on wavelength: light has a relatively long wavelength, so features smaller than about 200 nm blur together. An <strong>electron microscope</strong> uses a beam of <strong>electrons</strong> (much shorter wavelength) so it has far higher resolution — you can see individual organelles, membranes, and even large molecules. The trade-off: it's expensive, requires specialist training, can only work with dead specimens in a vacuum, and produces black-and-white images. <strong>Magnification</strong> is how many times bigger the image is than the actual object. <strong>Resolution</strong> is how much detail you can see — two points can be distinguished as separate. You can have high magnification with low resolution (just a blurry blob, bigger). Electron microscopes improved biology because they gave us both.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Light microscope: uses light, cheap, colour image, can view living specimens — limited resolution (~200 nm)",
+        "Electron microscope: uses electrons, expensive, black-and-white, dead specimens only — very high resolution",
+        "Magnification = how many times bigger the image is than the real object",
+        "Resolution = ability to distinguish two separate points as distinct — NOT the same as magnification",
+        "Electron microscopes allowed us to see organelles (e.g. mitochondria, ribosomes) for the first time"
+      ],
+      "keyTerms": [
+        {"term": "Magnification", "def": "How many times larger the image appears compared with the actual object"},
+        {"term": "Resolution", "def": "The ability to distinguish two separate points as distinct from each other; determines the level of detail visible"},
+        {"term": "Light microscope", "def": "A microscope that uses visible light and glass lenses to magnify specimens"},
+        {"term": "Electron microscope", "def": "A microscope that uses a beam of electrons to achieve much higher resolution than a light microscope"}
+      ],
+      "memTip": "Resolution ≠ magnification. Magnification = how big. Resolution = how sharp (how much detail). A bad camera at maximum zoom is high magnification, low resolution. Repeat this to yourself: 'EM = better resolution, not just bigger.' That distinction is exam-favourite territory."
+    },
+    {
+      "heading": "The magnification formula",
+      "content": "The formula is: <strong>Magnification = Image size ÷ Actual size</strong>. Written as a triangle: I on top, M × A on the bottom. Cover what you want to find: cover M → I ÷ A. Cover I → M × A. Cover A → I ÷ M. <strong>Units matter.</strong> Image size is usually in mm (measured with a ruler on paper). Actual size is usually in µm or nm. You must convert to the <strong>same unit</strong> before dividing. Key conversions: <strong>1 mm = 1000 µm</strong>. <strong>1 µm = 1000 nm</strong>. So 1 mm = 1,000,000 nm. Worked example: image size = 30 mm, actual size = 0.05 mm. Magnification = 30 ÷ 0.05 = ×600. Or: image = 30 mm = 30,000 µm, actual = 50 µm. Magnification = 30,000 ÷ 50 = ×600. Same answer either way — as long as the units match.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Formula: Magnification = Image size ÷ Actual size (M = I ÷ A)",
+        "Rearranged: Image size = M × A | Actual size = I ÷ M",
+        "1 mm = 1000 µm (micrometres) | 1 µm = 1000 nm (nanometres) | 1 mm = 1,000,000 nm",
+        "Always convert both measurements to the SAME unit before calculating",
+        "Magnification has no units — it is just a ratio (×600, ×1000, etc.)"
+      ],
+      "keyTerms": [
+        {"term": "Micrometre (µm)", "def": "Unit of length equal to one millionth of a metre (10⁻⁶ m); 1 mm = 1000 µm"},
+        {"term": "Nanometre (nm)", "def": "Unit of length equal to one billionth of a metre (10⁻⁹ m); 1 µm = 1000 nm"}
+      ],
+      "memTip": "Memorise the triangle: I over M × A. Cover the one you want. Also drill the conversions until they're automatic: mm → µm multiply by 1000; µm → nm multiply by 1000. Going the other way, divide by 1000. Write these three conversions on a flashcard and quiz yourself before every practice calc."
+    },
+    {
+      "heading": "Scale bars — finding actual size from a diagram",
+      "content": "Exam questions often give you a diagram with a <strong>scale bar</strong> — a line marked with a real-world length (e.g. '= 10 µm'). You measure the scale bar with a ruler to find out how many mm on paper = how many µm in reality. Then measure the feature you want. Then use the ratio to find the actual size. <strong>Step-by-step method:</strong> (1) Measure the scale bar in mm. (2) Note what length it represents (e.g. 10 µm). (3) Calculate: 1 mm on paper = ? µm in reality. (4) Measure your feature in mm. (5) Multiply: feature in mm × (scale bar real size ÷ scale bar measured mm). Worked example: scale bar = 20 mm on paper = 5 µm real. So 1 mm on paper = 0.25 µm. Cell measures 60 mm on paper → actual size = 60 × 0.25 = 15 µm.",
+      "examFlag": true,
+      "cardFlag": false,
+      "diagram": null,
+      "writeBullets": [
+        "Scale bar = a line on a diagram representing a known real-world length",
+        "Method: measure scale bar (mm) → find ratio (real µm per mm) → measure feature (mm) → multiply by ratio",
+        "Always show your working in exam answers",
+        "Check your answer makes biological sense — a cell should be 10–100 µm, not 10 m"
+      ],
+      "keyTerms": [
+        {"term": "Scale bar", "def": "A line on a diagram that represents a known length in reality, used to calculate actual sizes"}
+      ],
+      "memTip": "Scale bar questions look scary but they're just ratios. Step 1: measure the bar with your ruler. Step 2: set up the ratio (bar mm : real µm). Step 3: scale it up to your feature. Practise on at least three diagrams before the exam — the method becomes mechanical very quickly."
+    },
+    {
+      "heading": "Preparing a slide — the required practical",
+      "content": "AQA requires you to know how to prepare a microscope slide. The method: (1) Cut a <strong>thin section</strong> of the specimen (thin = light can pass through). (2) Place on a <strong>glass slide</strong>. (3) Add a drop of <strong>water</strong> (or a stain — see below). (4) Lower a <strong>coverslip</strong> at an angle to avoid trapping air bubbles. (5) Blot any excess liquid. <strong>Staining:</strong> cells are often colourless, so staining helps you see structures. <strong>Iodine solution</strong> stains starch blue-black and cell walls yellow/brown — useful for plant cells. <strong>Methylene blue</strong> stains animal cell nuclei blue. <strong>Why thin sections?</strong> If the slice is too thick, light can't pass through and the image is dark. The section must be thin enough to be translucent.",
+      "examFlag": false,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Cut a thin section → place on slide → add water/stain → add coverslip at an angle (avoid bubbles) → blot excess",
+        "Iodine: stains starch blue-black; useful for plant cell slides",
+        "Methylene blue: stains animal cell nuclei blue",
+        "Thin section needed so light can pass through the specimen",
+        "Coverslip added at an angle to prevent air bubbles (which create dark circles in the image)"
+      ],
+      "keyTerms": [
+        {"term": "Coverslip", "def": "A thin piece of glass placed over a specimen on a microscope slide to protect it and create a flat surface for viewing"},
+        {"term": "Iodine solution", "def": "A stain used in microscopy; turns starch blue-black and helps highlight cell structures in plant specimens"}
+      ],
+      "memTip": "Practise writing the slide prep steps from memory in order. The examiner wants: thin section, place on slide, add water or stain, coverslip at an angle. The most commonly asked part is WHY the section must be thin (light must pass through) and WHY the coverslip goes on at an angle (prevent air bubbles). Know both reasons."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Light microscope vs electron microscope",
+      "examFlag": true,
+      "headers": ["Feature", "Light microscope", "Electron microscope"],
+      "rows": [
+        ["What it uses",        "Visible light",                     "Beam of electrons"],
+        ["Magnification",       "Up to ×2000",                       "Up to ×500,000+"],
+        ["Resolution",          "Lower (~200 nm)",                   "Much higher (~0.1 nm)"],
+        ["Type of specimen",    "Living or dead",                    "Dead only (must be in vacuum)"],
+        ["Image colour",        "Colour (natural or stained)",       "Black and white"],
+        ["Cost",                "Low — widely available",            "High — specialist equipment"],
+        ["Training needed",     "Minimal",                           "Specialist training required"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "1": {
+      "question": "A student says: 'The electron microscope is useful because it has much higher magnification than a light microscope.' What is wrong or incomplete about this statement?",
+      "options": [
+        "Nothing — higher magnification is exactly why electron microscopes are better",
+        "The key advantage is higher resolution, not just higher magnification — resolution means more detail can be seen",
+        "Electron microscopes actually have lower magnification than light microscopes",
+        "Electron microscopes are useful because they can view living specimens"
+      ],
+      "correct": 1,
+      "correctFeedback": "Exactly — the critical word is resolution. Higher resolution means you can distinguish more detail. Electron microscopes do have higher magnification too, but resolution is the key scientific advance.",
+      "wrongFeedback": "The student's statement is incomplete. The main advantage of electron microscopes is their far higher resolution — the ability to see fine detail (separate structures close together). Magnification alone without resolution just gives you a bigger blur. Electron microscopes also cannot be used on living specimens."
+    },
+    "3": {
+      "question": "A cell has an image size of 45 mm under a microscope. The actual size of the cell is 30 µm. What is the magnification? (1 mm = 1000 µm)",
+      "options": [
+        "×1.5",
+        "×150",
+        "×1500",
+        "×15,000"
+      ],
+      "correct": 2,
+      "correctFeedback": "Correct. Convert: 45 mm = 45,000 µm. Magnification = 45,000 ÷ 30 = ×1500.",
+      "wrongFeedback": "Convert the image size to µm first: 45 mm × 1000 = 45,000 µm. Then: Magnification = Image ÷ Actual = 45,000 ÷ 30 = ×1500. The most common error is forgetting to convert mm to µm before dividing."
+    }
+  },
+  "commonMistakes": [
+    "Confusing magnification with resolution — magnification makes things look bigger; resolution determines how much detail is visible. You can magnify a blurry image, but you can't recover lost resolution.",
+    "Forgetting to convert units before calculating magnification — if image size is in mm and actual size is in µm, you must convert to the same unit first. 1 mm = 1000 µm.",
+    "Writing that magnification has units — it doesn't. It's a ratio (×500, ×1500, etc.), not a length measurement.",
+    "Saying electron microscopes can view living specimens — they can't. The specimen must be dead and placed in a vacuum.",
+    "Leaving out the reason for cutting thin sections in practical questions — the answer is that light must be able to pass through the specimen for you to see it."
+  ],
+  "examTips": [
+    "In magnification calculations, always write the formula first (M = I ÷ A), show the conversion, then calculate. Examiners award marks for method even if your arithmetic slips.",
+    "If a question says 'give one advantage of an electron microscope over a light microscope', say 'higher resolution, so individual organelles can be distinguished'. Don't just say 'it's more powerful'.",
+    "For scale bar questions, measure carefully with your ruler — every mm counts. If the answer seems unreasonably large or small, recheck your measurement before moving on."
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "AQA GCSE biology microscopy light electron microscope",
+      "label": "Microscopes — Light vs Electron",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=AQA+GCSE+biology+microscopy+light+electron+microscope+Free+Science+Lessons"
+    },
+    {
+      "searchQuery": "AQA GCSE biology microscopes magnification",
+      "label": "Microscopes & Magnification",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=AQA+GCSE+biology+microscopes+magnification+BBC+Bitesize"
+    },
+    {
+      "searchQuery": "AQA GCSE biology microscopy magnification calculation",
+      "label": "Magnification Calculations",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=AQA+GCSE+biology+microscopy+magnification+calculation+Cognito"
+    }
+  ],
+  "revisionCardBullets": [
+    "Light microscope: uses light, colour image, can view living specimens, lower resolution (~200 nm), cheaper",
+    "Electron microscope: uses electrons, black-and-white, dead specimens only, much higher resolution, expensive",
+    "Magnification ≠ resolution: magnification = how many times bigger; resolution = how much detail (ability to separate two points)",
+    "Formula: Magnification = Image size ÷ Actual size (M = I ÷ A)",
+    "Rearranged: Actual size = I ÷ M | Image size = M × A",
+    "Unit conversions: 1 mm = 1000 µm | 1 µm = 1000 nm | 1 mm = 1,000,000 nm",
+    "Always convert to the same unit before calculating — show all working",
+    "Scale bar method: measure bar (mm) → find real-size ratio → measure feature → multiply",
+    "Slide prep: thin section → slide → water or stain → coverslip at angle (no bubbles) → blot",
+    "Stains: iodine = starch blue-black (plant cells); methylene blue = nuclei (animal cells)"
+  ]
+}

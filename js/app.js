@@ -212,6 +212,14 @@ function _renderUpcomingTests() {
   } catch { /* silently ignore corrupt schedule data */ }
 }
 
+function _masteryBar(pct) {
+  if (pct === null) return '';
+  const col = pct >= 71 ? 'var(--green)' : pct >= 41 ? '#f59e0b' : 'var(--red)';
+  return `<div style="height:4px;background:var(--border2);border-radius:2px;margin-top:5px;overflow:hidden">
+    <div style="height:100%;width:${pct}%;background:${col};border-radius:2px;transition:width 0.5s ease"></div>
+  </div>`;
+}
+
 function _modeCard(icon, title, sub, extraClass, fn) {
   const card = document.createElement('div');
   card.className = `mode-card ${extraClass}`;
@@ -307,12 +315,18 @@ function showTopics() {
   const list = document.getElementById('topicList');
   const topics = _syllabus?.topics || {};
 
+  const _deck = Store.getDeck();
+
   Object.entries(topics).forEach(([code, t]) => {
-    const subtopics = t.subtopics || [];
-    const total     = subtopics.length;
-    const done      = subtopics.filter(st => _progress.covered[st.id]).length;
-    const pct       = total ? Math.round((done / total) * 100) : 0;
-    const avail     = t.available !== false;
+    const subtopics  = t.subtopics || [];
+    const total      = subtopics.length;
+    const done       = subtopics.filter(st => _progress.covered[st.id]).length;
+    const avail      = t.available !== false;
+    const mastery    = avail ? Store.getTopicMastery(subtopics.map(st => st.id), _deck) : null;
+    const complete   = subtopics.filter(st => {
+      const m = Store.getSubtopicMastery(st.id, _deck);
+      return m !== null && m >= 80;
+    }).length;
 
     const card = document.createElement('div');
     card.className = `topic-card ${avail ? '' : 'unavailable'}`;
@@ -320,13 +334,11 @@ function showTopics() {
       <div class="tc-icon">${t.icon}</div>
       <div class="tc-body">
         <div class="tc-name">${t.name}</div>
-        <div class="tc-code">${t.name}</div>
+        <div class="tc-code" style="font-size:0.75rem;color:var(--muted)">${done}/${total} started${complete > 0 ? ` · ${complete} complete` : ''}</div>
+        ${mastery !== null ? _masteryBar(mastery) : ''}
       </div>
       <div class="tc-right">
-        ${avail ? `
-          <div class="tc-prog">${done}/${total}</div>
-          <div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div>
-        ` : `<span class="chip chip-gold">Coming soon</span>`}
+        ${!avail ? `<span class="chip chip-gold">Coming soon</span>` : ''}
       </div>`;
 
     if (avail) {
@@ -348,23 +360,36 @@ function showSubtopics(topicCode, topicData) {
     </div>
     <div id="subtopicList"></div>`;
 
-  const list = document.getElementById('subtopicList');
+  const list     = document.getElementById('subtopicList');
   const subtopics = topicData.subtopics || [];
+  const _deck    = Store.getDeck();
 
   subtopics.forEach(st => {
-    const done  = !!_progress.covered[st.id];
-    const avail = st.available !== false;
+    const started  = !!_progress.covered[st.id];
+    const avail    = st.available !== false;
+    const mastery  = avail ? Store.getSubtopicMastery(st.id, _deck) : null;
+    const complete = mastery !== null && mastery >= 80;
 
     const card = document.createElement('div');
-    card.className = `subtopic-card ${done ? 'done' : ''} ${avail ? '' : 'unavailable'}`;
+    card.className = `subtopic-card ${complete ? 'done' : ''} ${avail ? '' : 'unavailable'}`;
 
     let chipHtml = '';
-    if (!avail)  chipHtml = `<span class="st-chip" style="background:rgba(255,217,61,0.1);color:var(--yellow);border:1px solid rgba(255,217,61,0.3)">Soon</span>`;
-    else if (done) chipHtml = `<span class="st-chip" style="background:rgba(107,203,119,0.1);color:var(--green);border:1px solid rgba(107,203,119,0.3)">✓ Done</span>`;
+    if (!avail) {
+      chipHtml = `<span class="st-chip" style="background:rgba(255,217,61,0.1);color:var(--yellow);border:1px solid rgba(255,217,61,0.3)">Soon</span>`;
+    } else if (complete) {
+      chipHtml = `<span class="st-chip" style="background:rgba(107,203,119,0.1);color:var(--green);border:1px solid rgba(107,203,119,0.3)">✓ Complete</span>`;
+    } else if (!started) {
+      chipHtml = `<span class="st-chip" style="background:rgba(160,160,180,0.1);color:var(--muted);border:1px solid var(--border2)">Not started</span>`;
+    }
+
+    const barHtml = started && mastery !== null ? _masteryBar(mastery) : '';
 
     card.innerHTML = `
-      <div class="st-check">${done ? '✅' : '○'}</div>
-      <div class="st-name">${st.name}</div>
+      <div class="st-check">${complete ? '✅' : started ? '◑' : '○'}</div>
+      <div class="st-name" style="flex:1">
+        ${st.name}
+        ${barHtml}
+      </div>
       ${chipHtml}`;
 
     if (avail) {

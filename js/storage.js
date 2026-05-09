@@ -184,6 +184,32 @@ const Store = (() => {
     set('errors', {});
   }
 
+  // ── Mastery ───────────────────────────────────────────────────
+  // Returns 0–100 (% of cards rated good/easy), or null if no cards saved yet.
+  function getSubtopicMastery(subtopicId, deck) {
+    const d = deck || getDeck();
+    const cards = d.filter(c => c.id && c.id.startsWith(`card_${subtopicId}_`));
+    if (!cards.length) return null;
+    const good = cards.filter(c =>
+      c.difficulty === 'good' || c.difficulty === 'easy' || c.status === 'known'
+    ).length;
+    return Math.round((good / cards.length) * 100);
+  }
+
+  // Weighted average mastery across a list of subtopicIds.
+  function getTopicMastery(subtopicIds, deck) {
+    const d = deck || getDeck();
+    let total = 0, good = 0;
+    subtopicIds.forEach(id => {
+      const cards = d.filter(c => c.id && c.id.startsWith(`card_${id}_`));
+      total += cards.length;
+      good  += cards.filter(c =>
+        c.difficulty === 'good' || c.difficulty === 'easy' || c.status === 'known'
+      ).length;
+    });
+    return total ? Math.round((good / total) * 100) : null;
+  }
+
   return {
     get, set, remove,
     getProgress, saveProgress, markCovered, addScore,
@@ -191,5 +217,6 @@ const Store = (() => {
     getDeck, saveDeck, addCards, updateCardStatus, clearDeck,
     getMabelProfile, saveMabelProfile, updateMabelProfile, hasAsked, markAsked,
     getErrorLog, logError, clearErrorLog,
+    getSubtopicMastery, getTopicMastery,
   };
 })();

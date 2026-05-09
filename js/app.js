@@ -285,9 +285,9 @@ function showSubjectPicker() {
   App.setStage('Subjects');
 
   const subjects = [
-    { id: 'biology',  label: 'Biology',     icon: '🧬', sub: 'AQA 8461',  available: true  },
-    { id: 'chemistry',label: 'Chemistry',   icon: '⚗️', sub: 'AQA 8462',  available: true  },
-    { id: 'physics',  label: 'Physics',     icon: '⚡', sub: 'AQA 8463',  available: true  },
+    { id: 'biology',  label: 'Biology',   sub: 'Separate Science · Paper 1 & 2', available: true  },
+    { id: 'chemistry',label: 'Chemistry', sub: 'Separate Science · Paper 1 & 2', available: true  },
+    { id: 'physics',  label: 'Physics',   sub: 'Separate Science · Paper 1 & 2', available: true  },
     { id: 'maths',    label: 'Maths',       icon: '📐', sub: 'Coming soon', available: false },
     { id: 'english',  label: 'English Lit', icon: '📚', sub: 'Coming soon', available: false },
     { id: 'history',  label: 'History',     icon: '🏛️', sub: 'Coming soon', available: false },

@@ -366,6 +366,32 @@ const Personality = (() => {
     _dismissToast('personalityModal');
   }
 
+  // ── MILESTONE TOAST ──────────────────────────────────────
+  const _MILESTONE_MSGS = [
+    n => `That's ${n} done properly. One less thing to worry about come May.`,
+    n => `${n} — you've actually got that now. Not just covered. Understood.`,
+    n => `Solid work on ${n}. I'd put that in front of an examiner right now.`,
+    n => `${n} is secure. That's the word — secure. Keep going.`,
+    n => `You know ${n} well enough that I'm not worried about it anymore. That's the goal.`,
+  ];
+
+  function showMilestone(subtopicName) {
+    const msg = _MILESTONE_MSGS[Math.floor(Math.random() * _MILESTONE_MSGS.length)](subtopicName);
+    setTimeout(() => {
+      const el = _showToast(`
+        <div style="display:flex;align-items:flex-start;gap:0.75rem">
+          <div style="font-size:1.3rem">✅</div>
+          <div style="flex:1">
+            <div style="font-size:0.7rem;font-weight:700;color:var(--green);letter-spacing:0.07em;margin-bottom:0.3rem">SECURE</div>
+            <div style="font-size:0.95rem;line-height:1.65;color:var(--text)">${msg}</div>
+          </div>
+          <button onclick="document.getElementById('milestoneToast')?.remove()"
+            style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.1rem;padding:0;flex-shrink:0;line-height:1">✕</button>
+        </div>`, 'milestoneToast');
+      setTimeout(() => _dismissToast('milestoneToast'), 14000);
+    }, 600);
+  }
+
   // ── LESSON COUNT ─────────────────────────────────────────
   function getLessonCount() {
     const n = Store.get('lesson_count') || 0;
@@ -384,6 +410,7 @@ const Personality = (() => {
     skipQuestion,
     getLessonCount,
     incrementLessonCount,
+    showMilestone,
     getMabelProfile: () => Store.getMabelProfile(),
   };
 

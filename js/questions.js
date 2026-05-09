@@ -320,8 +320,9 @@ Return ONLY valid JSON array, no markdown:
     const pct     = _total > 0 ? Math.round((_score / _total) * 100) : 0;
     const pctCol  = pct >= 70 ? 'var(--green)' : pct >= 50 ? 'var(--yellow)' : 'var(--red)';
 
-    // Save score + session
+    // Save score + session + streak
     Store.addScore(_topicName, _score, _total);
+    Store.updateStreak();
     const noHintCorrect = _results.filter(r => r.mastery === 'full' && r.hintsUsed === 0).length;
     Store.saveSession({
       id:           _sessionStart || new Date().toISOString(),

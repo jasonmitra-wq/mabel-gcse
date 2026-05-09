@@ -184,6 +184,39 @@ const Store = (() => {
     set('errors', {});
   }
 
+  // ── Streak ────────────────────────────────────────────────────
+  function _localDateStr() {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  }
+
+  function getStreak() {
+    return get('streak') || { lastActive: null, currentStreak: 0 };
+  }
+
+  function updateStreak() {
+    const today = _localDateStr();
+    const s = getStreak();
+    if (s.lastActive === today) return s;
+    const prev = new Date(); prev.setDate(prev.getDate() - 1);
+    const yesterday = `${prev.getFullYear()}-${String(prev.getMonth()+1).padStart(2,'0')}-${String(prev.getDate()).padStart(2,'0')}`;
+    s.currentStreak = s.lastActive === yesterday ? s.currentStreak + 1 : 1;
+    s.lastActive = today;
+    set('streak', s);
+    return s;
+  }
+
+  // ── Milestones ────────────────────────────────────────────────
+  function hasMilestone(subtopicId) {
+    return !!(get('milestones') || {})[subtopicId];
+  }
+
+  function markMilestone(subtopicId) {
+    const m = get('milestones') || {};
+    m[subtopicId] = true;
+    set('milestones', m);
+  }
+
   // ── Sessions ──────────────────────────────────────────────────
   function saveSession(data) {
     const sessions = getSessions();
@@ -228,6 +261,8 @@ const Store = (() => {
     setLastPosition, getLearnerProfile, updateLearnerProfile, clearAll,
     getDeck, saveDeck, addCards, updateCardStatus, clearDeck,
     getMabelProfile, saveMabelProfile, updateMabelProfile, hasAsked, markAsked,
+    getStreak, updateStreak,
+    hasMilestone, markMilestone,
     getErrorLog, logError, clearErrorLog,
     getSubtopicMastery, getTopicMastery,
     saveSession, getSessions,

@@ -270,6 +270,19 @@ const Cards = (() => {
       _againQueue.push({ ...card, difficulty: 'again' });
     }
 
+    // Milestone check — fires once when a subtopic first crosses 80% mastery
+    if (difficulty === 'good' || difficulty === 'easy') {
+      const match = card.id.match(/^card_([a-z0-9-]+)_\d+/);
+      const subtopicId = match?.[1];
+      if (subtopicId && !Store.hasMilestone(subtopicId)) {
+        const mastery = Store.getSubtopicMastery(subtopicId);
+        if (mastery !== null && mastery >= 80) {
+          Store.markMilestone(subtopicId);
+          Personality.showMilestone(card.topic || subtopicId);
+        }
+      }
+    }
+
     _drillIdx++;
     _showCard();
   }

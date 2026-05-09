@@ -114,11 +114,17 @@ function showHome(hasSaved) {
   setTimeout(() => { _lp.style.cssText = ''; _lp.classList.remove('open'); }, 340);
   document.getElementById('qPanel').classList.remove('open');
 
+  const streak = Store.getStreak();
+  const streakHtml = streak.currentStreak >= 2
+    ? `<div style="font-size:0.85rem;color:var(--yellow);margin-top:0.5rem;font-weight:600">${streak.currentStreak} day streak 🔥</div>`
+    : '';
+
   const main = document.getElementById('main');
   main.innerHTML = `
     <div class="home-hero">
       <h1>Mabel's GCSE Tutor</h1>
       <p>Everything you need to do well in your exams.</p>
+      ${streakHtml}
     </div>
     <div class="mode-grid" id="modeGrid"></div>
     <div id="upcomingSection"></div>`;

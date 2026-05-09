@@ -338,7 +338,8 @@ const Personality = (() => {
           <input type="text" id="pqInput_${q.id}" placeholder="Type your answer…"
             style="flex:1;min-width:160px;background:var(--s1);border:1.5px solid var(--border2);
             color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;
-            padding:0.5rem 0.75rem;border-radius:8px;outline:none">
+            padding:0.5rem 0.75rem;border-radius:8px;outline:none"
+            onkeydown="if(event.key==='Enter')Personality.answerQuestion('${q.id}')">
           <button class="btn grn" onclick="Personality.answerQuestion('${q.id}')">Save</button>
           <button class="btn" style="opacity:0.55" onclick="Personality.skipQuestion('${q.id}')">Skip</button>
         </div>`, 'personalityModal');

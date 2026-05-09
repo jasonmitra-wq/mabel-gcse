@@ -4,14 +4,15 @@
    ============================================================ */
 
 const Lessons = (() => {
-  let _current       = null;
-  let _subtopicName  = '';
-  let _cpScores      = {};
-  let _cpHintLevels  = {};
-  let _usedJokeIds   = [];
-  let _steps         = [];
-  let _stepIdx       = 0;
-  let _stepCpDone    = false; // checkpoint answered this step
+  let _current            = null;
+  let _subtopicName       = '';
+  let _cpScores           = {};
+  let _cpHintLevels       = {};
+  let _usedJokeIds        = [];
+  let _profileQuestionShown = false;
+  let _steps              = [];
+  let _stepIdx            = 0;
+  let _stepCpDone         = false; // checkpoint answered this step
 
   // ── Open a lesson ─────────────────────────────────────────
   async function open(subtopicId, subtopicName, topicCode, subject = 'biology') {
@@ -43,11 +44,12 @@ const Lessons = (() => {
       return;
     }
 
-    _current      = data;
-    _subtopicName = subtopicName;
-    _cpScores     = {};
-    _cpHintLevels = {};
-    _usedJokeIds  = [];
+    _current              = data;
+    _subtopicName         = subtopicName;
+    _cpScores             = {};
+    _cpHintLevels         = {};
+    _usedJokeIds          = [];
+    _profileQuestionShown = false;
     Personality.incrementLessonCount();
     Store.markCovered(subtopicId);
 
@@ -232,9 +234,18 @@ const Lessons = (() => {
     }
     html += `</div>`;
     if (i === 1) {
-      const moment = Personality.renderMoment('silver', _usedJokeIds);
-      _usedJokeIds.push(moment.id);
-      Personality.renderQuestion(Personality.getLessonCount());
+      if (!_profileQuestionShown) {
+        const asked = Personality.renderQuestion(Personality.getLessonCount());
+        if (asked) {
+          _profileQuestionShown = true;
+        } else {
+          const moment = Personality.renderMoment('silver', _usedJokeIds);
+          _usedJokeIds.push(moment.id);
+        }
+      } else {
+        const moment = Personality.renderMoment('silver', _usedJokeIds);
+        _usedJokeIds.push(moment.id);
+      }
     }
     if (i === 3) {
       const moment = Personality.renderMoment('skating', _usedJokeIds);

@@ -93,6 +93,34 @@ async function boot() {
   showHome(!!last?.subtopicId);
 }
 
+// ── TUTOR GREETING ────────────────────────────────────────────
+const _GREETINGS = [
+  { text: "Right. Let's get something done today.",                                          silver: false },
+  { text: "Good to see you. Silver better not be sitting on your notes again.",              silver: true  },
+  { text: "Pick up where you left off — you were doing well.",                               silver: false },
+  { text: "Small sessions add up. Let's do one now.",                                        silver: false },
+  { text: "Every topic you cover today is one less thing to worry about in June.",           silver: false },
+  { text: "Back again. Good. Consistency beats cramming every time.",                        silver: false },
+  { text: "You're building something here. Keep going.",                                     silver: false },
+  { text: "Even 20 minutes today makes a difference. Let's start.",                         silver: false },
+  { text: "The exam doesn't know you revised last week. It only knows today.",               silver: false },
+  { text: "Come on then. Pick a topic.",                                                     silver: false },
+];
+
+function _pickGreeting() {
+  const sp = Store.getMabelProfile()?.silver || {};
+  const silverKnown = !!(sp.colour || sp.mood || sp.habits?.length);
+  const lastIdx = Store.get('ui_lastGreeting') ?? -1;
+  const pool = _GREETINGS
+    .map((g, i) => ({ ...g, i }))
+    .filter(g => g.i !== lastIdx && (!g.silver || silverKnown));
+  // fallback: if pool empty (e.g. only 1 eligible message), allow repeat
+  const eligible = pool.length ? pool : _GREETINGS.map((g, i) => ({ ...g, i })).filter(g => !g.silver || silverKnown);
+  const pick = eligible[Math.floor(Math.random() * eligible.length)];
+  Store.set('ui_lastGreeting', pick.i);
+  return pick.text;
+}
+
 // ── HOME ───────────────────────────────────────────────────────
 function showHome(hasSaved) {
   _progress = Store.getProgress();
@@ -119,6 +147,8 @@ function showHome(hasSaved) {
     ? `<div style="font-size:0.85rem;color:var(--yellow);margin-top:0.5rem;font-weight:600">${streak.currentStreak} day streak 🔥</div>`
     : '';
 
+  const greeting = _pickGreeting();
+
   const main = document.getElementById('main');
   main.innerHTML = `
     <div class="home-hero">
@@ -126,6 +156,7 @@ function showHome(hasSaved) {
       <p>Everything you need to do well in your exams.</p>
       ${streakHtml}
     </div>
+    <p style="font-size:0.92rem;color:#C8A8E8;margin:0.1rem 0 1.1rem;line-height:1.5">${greeting}</p>
     <div class="mode-grid" id="modeGrid"></div>
     <div id="upcomingSection"></div>`;
 

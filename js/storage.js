@@ -184,6 +184,18 @@ const Store = (() => {
     set('errors', {});
   }
 
+  // ── Sessions ──────────────────────────────────────────────────
+  function saveSession(data) {
+    const sessions = getSessions();
+    sessions.unshift(data);
+    if (sessions.length > 10) sessions.length = 10;
+    set('sessions', sessions);
+  }
+
+  function getSessions() {
+    return get('sessions') || [];
+  }
+
   // ── Mastery ───────────────────────────────────────────────────
   // Returns 0–100 (% of cards rated good/easy), or null if no cards saved yet.
   function getSubtopicMastery(subtopicId, deck) {
@@ -218,5 +230,6 @@ const Store = (() => {
     getMabelProfile, saveMabelProfile, updateMabelProfile, hasAsked, markAsked,
     getErrorLog, logError, clearErrorLog,
     getSubtopicMastery, getTopicMastery,
+    saveSession, getSessions,
   };
 })();

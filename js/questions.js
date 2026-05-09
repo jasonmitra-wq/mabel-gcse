@@ -11,7 +11,8 @@ const Questions = (() => {
   let _total      = 0;
   let _topicName  = '';
   let _topicId    = '';
-  let _hintShown  = false;
+  let _hintShown   = 0;
+  let _sessionStart = null;
   let _pendingLoad = null; // saved while waiting for API key entry
 
   // ── Load questions via AI ─────────────────────────────────
@@ -110,10 +111,11 @@ Return ONLY valid JSON array, no markdown:
       return;
     }
 
-    _idx    = 0;
-    _results = [];
-    _score  = 0;
-    _total  = _questions.reduce((s, q) => s + (q.marks || 2), 0);
+    _idx          = 0;
+    _results      = [];
+    _score        = 0;
+    _sessionStart = new Date().toISOString();
+    _total        = _questions.reduce((s, q) => s + (q.marks || 2), 0);
     App.setScoreChip(`0/${_total}`);
     document.getElementById('hdrScore').style.display = '';
     _renderQuestion();
@@ -212,7 +214,7 @@ Return ONLY valid JSON array, no markdown:
       _score += marksEarned;
     }
 
-    _results.push({ question: q.question, marks: q.marks, earned: marksEarned, mastery, userAnswer, modelAnswer: q.modelAnswer, examTip: q.examTip });
+    _results.push({ question: q.question, marks: q.marks, earned: marksEarned, mastery, userAnswer, modelAnswer: q.modelAnswer, examTip: q.examTip, hintsUsed: _hintShown });
     App.setScoreChip(`${_score}/${_total}`);
 
     if (mastery !== 'full') {
@@ -318,8 +320,22 @@ Return ONLY valid JSON array, no markdown:
     const pct     = _total > 0 ? Math.round((_score / _total) * 100) : 0;
     const pctCol  = pct >= 70 ? 'var(--green)' : pct >= 50 ? 'var(--yellow)' : 'var(--red)';
 
-    // Save to store
+    // Save score + session
     Store.addScore(_topicName, _score, _total);
+    const noHintCorrect = _results.filter(r => r.mastery === 'full' && r.hintsUsed === 0).length;
+    Store.saveSession({
+      id:           _sessionStart || new Date().toISOString(),
+      topic:        _topicName,
+      subtopicId:   _topicId,
+      startedAt:    _sessionStart,
+      finishedAt:   new Date().toISOString(),
+      attempted:    total,
+      noHintCorrect,
+      hintsUsed:    _results.filter(r => r.hintsUsed > 0).length,
+      skipped,
+      score:        total > 0 ? Math.round((noHintCorrect / total) * 100) : 0,
+      marksPct:     pct,
+    });
 
     // Mastery bar widths
     const mFull    = Math.round((full/total)*100);

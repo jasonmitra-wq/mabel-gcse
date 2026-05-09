@@ -143,6 +143,7 @@ function showHome(hasSaved) {
     { icon: Icons.get('dashboard', 48), title: `Dashboard${coveredCount > 0 ? ' · '+coveredCount+' done' : ''}`, sub: 'Progress & scores', fn: showDashboard },
     { icon: Icons.get('cards', 48),     title: `Card deck${deckSize > 0 ? ' · '+deckSize : ''}`,   sub: dueCount > 0 ? `⏰ ${dueCount} due today` : 'Drill your saved cards',   fn: showCardDeck },
     { icon: '❌',                        title: `Error log${errorCount > 0 ? ' · ' + errorCount : ''}`, sub: errorCount > 0 ? 'Review your missed questions' : 'No errors yet — keep going!', fn: showErrorLog },
+    { icon: '📋',                        title: 'Session history', sub: 'Your recent practice sessions', fn: showSessionHistory },
   ];
 
   modes.forEach(m => {
@@ -647,6 +648,67 @@ function showErrorLog() {
     }
 
     html += `<button class="btn" style="margin-top:1rem" onclick="if(confirm('Clear all logged errors?')){Store.clearErrorLog();showHome();}">🗑 Clear error log</button>`;
+  }
+
+  html += `</div>`;
+  document.getElementById('main').innerHTML = html;
+}
+
+// ── SESSION HISTORY ────────────────────────────────────────────
+function showSessionHistory() {
+  App.setStage('Session history');
+  const sessions = Store.getSessions();
+
+  const _fmtDate = iso => {
+    if (!iso) return '—';
+    const d = new Date(iso);
+    return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' })
+      + ' · ' + d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+  };
+
+  const _duration = (start, end) => {
+    if (!start || !end) return null;
+    const mins = Math.round((new Date(end) - new Date(start)) / 60000);
+    if (mins < 1) return 'under a minute';
+    return `${mins} min${mins !== 1 ? 's' : ''}`;
+  };
+
+  const _scoreCol = pct => pct >= 70 ? 'var(--green)' : pct >= 40 ? '#f59e0b' : 'var(--red)';
+
+  let html = `
+    <div style="max-width:680px">
+      <div class="topic-header">
+        <button class="back-btn" onclick="showHome()">← Home</button>
+        <h2>📋 Session history</h2>
+      </div>`;
+
+  if (sessions.length === 0) {
+    html += `
+      <div style="text-align:center;padding:3rem 1rem">
+        <div style="font-size:3rem;margin-bottom:1rem">📖</div>
+        <p style="color:var(--muted)">No sessions yet — finish a practice session and it'll appear here.</p>
+      </div>`;
+  } else {
+    sessions.forEach((s, i) => {
+      const dur     = _duration(s.startedAt, s.finishedAt);
+      const scoreCol = _scoreCol(s.score);
+      const statParts = [];
+      if (s.attempted)      statParts.push(`${s.attempted} question${s.attempted !== 1 ? 's' : ''}`);
+      if (s.noHintCorrect != null) statParts.push(`${s.noHintCorrect} without hints`);
+      if (s.hintsUsed)      statParts.push(`${s.hintsUsed} needed hints`);
+      if (s.skipped)        statParts.push(`${s.skipped} skipped`);
+      if (dur)              statParts.push(dur);
+
+      html += `
+        <div style="background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:0.85rem 1rem;margin-bottom:0.65rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.3rem">
+            <div style="font-size:0.95rem;font-weight:600;line-height:1.3">${s.topic || '—'}</div>
+            <div style="font-size:1.1rem;font-weight:800;color:${scoreCol};white-space:nowrap">${s.score ?? '—'}%</div>
+          </div>
+          <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.4rem">${_fmtDate(s.startedAt)}</div>
+          <div style="font-size:0.8rem;color:var(--muted)">${statParts.join(' · ')}</div>
+        </div>`;
+    });
   }
 
   html += `</div>`;

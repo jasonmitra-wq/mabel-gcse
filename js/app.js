@@ -143,17 +143,21 @@ function showHome(hasSaved) {
   const errorLog   = Store.getErrorLog();
   const errorCount = Object.keys(errorLog).length;
 
+  // Global mastery: % of saved cards rated good or easy
+  const _deckGood  = _homeDeck.filter(c => c.difficulty === 'good' || c.difficulty === 'easy' || c.status === 'known').length;
+  const globalMastery = _homeDeck.length > 0 ? Math.round((_deckGood / _homeDeck.length) * 100) : null;
+
   const modes = [
-    { icon: Icons.get('revise', 48),    title: 'Revise',    sub: 'Pick a subject & topic',        fn: showSubjectPicker },
-    { icon: Icons.get('test', 48),      title: 'Test prep', sub: 'Focused countdown revision',     fn: showTestPrep },
-    { icon: Icons.get('dashboard', 48), title: `Dashboard${coveredCount > 0 ? ' · '+coveredCount+' done' : ''}`, sub: 'Progress & scores', fn: showDashboard },
-    { icon: Icons.get('cards', 48),     title: `Card deck${deckSize > 0 ? ' · '+deckSize : ''}`,   sub: dueCount > 0 ? `⏰ ${dueCount} due today` : 'Drill your saved cards',   fn: showCardDeck },
-    { icon: '❌',                        title: `Error log${errorCount > 0 ? ' · ' + errorCount : ''}`, sub: errorCount > 0 ? 'Review your missed questions' : 'No errors yet — keep going!', fn: showErrorLog },
-    { icon: '📋',                        title: 'Session history', sub: 'Your recent practice sessions', fn: showSessionHistory },
+    { title: 'Revise',    sub: 'Pick a subject & topic',        fn: showSubjectPicker,  pct: globalMastery },
+    { title: 'Test prep', sub: 'Focused countdown revision',     fn: showTestPrep,       pct: globalMastery },
+    { title: `Dashboard${coveredCount > 0 ? ' · '+coveredCount+' done' : ''}`, sub: 'Progress & scores', fn: showDashboard, pct: globalMastery },
+    { title: `Card deck${deckSize > 0 ? ' · '+deckSize : ''}`,  sub: dueCount > 0 ? `⏰ ${dueCount} due today` : 'Drill your saved cards', fn: showCardDeck, pct: globalMastery },
+    { icon: '❌', title: `Error log${errorCount > 0 ? ' · ' + errorCount : ''}`, sub: errorCount > 0 ? 'Review your missed questions' : 'No errors yet — keep going!', fn: showErrorLog },
+    { icon: '📋', title: 'Session history', sub: 'Your recent practice sessions', fn: showSessionHistory },
   ];
 
   modes.forEach(m => {
-    grid.appendChild(_modeCard(m.icon, m.title, m.sub, '', m.fn));
+    grid.appendChild(_modeCard(m.icon || null, m.title, m.sub, '', m.fn, m.pct));
   });
 
   _renderUpcomingTests();
@@ -227,10 +231,42 @@ function _masteryBar(pct) {
   </div>`;
 }
 
-function _modeCard(icon, title, sub, extraClass, fn) {
+// SVG circular progress arc — 40px, stroke-width 4, top-right of tile
+function _masteryArc(pct) {
+  const r = 18, circ = +(2 * Math.PI * r).toFixed(1);
+  const filled = pct != null && pct > 0;
+  const offset = filled ? +(circ * (1 - pct / 100)).toFixed(1) : circ;
+  const stroke = pct == null ? 'none'
+    : pct >= 71 ? 'var(--green)' : pct >= 41 ? '#f59e0b' : 'var(--red)';
+  return `<svg width="40" height="40" viewBox="0 0 40 40"
+      style="position:absolute;top:12px;right:12px;flex-shrink:0;pointer-events:none">
+    <circle cx="20" cy="20" r="${r}" fill="none" stroke="var(--border2)" stroke-width="4"/>
+    ${filled ? `<circle cx="20" cy="20" r="${r}" fill="none"
+      stroke="${stroke}" stroke-width="4"
+      stroke-dasharray="${circ}" stroke-dashoffset="${offset}"
+      stroke-linecap="round" transform="rotate(-90 20 20)"/>` : ''}
+  </svg>`;
+}
+
+// Padlock SVG for coming-soon tiles
+function _lockIcon() {
+  return `<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+      stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      style="position:absolute;top:14px;right:14px;pointer-events:none;opacity:0.5">
+    <rect x="3" y="11" width="18" height="11" rx="2"/>
+    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+  </svg>`;
+}
+
+function _modeCard(icon, title, sub, extraClass, fn, pct) {
   const card = document.createElement('div');
   card.className = `mode-card ${extraClass}`;
-  card.innerHTML = `<span class="mc-icon">${icon}</span><div class="mc-title">${title}</div><div class="mc-sub">${sub}</div>`;
+  card.style.position = 'relative';
+  // pct provided → arc replaces icon; otherwise fall back to icon
+  const topEl = pct !== undefined
+    ? _masteryArc(pct)
+    : (icon ? `<span class="mc-icon">${icon}</span>` : '');
+  card.innerHTML = `${topEl}<div class="mc-title">${title}</div><div class="mc-sub">${sub}</div>`;
   card.onclick = fn;
   return card;
 }
@@ -255,18 +291,24 @@ function showSubjectPicker() {
     </div>
     <div class="mode-grid">`;
 
+  // Compute global mastery for the Biology arc
+  const _spDeck = Store.getDeck();
+  const _spGood = _spDeck.filter(c => c.difficulty === 'good' || c.difficulty === 'easy' || c.status === 'known').length;
+  const _spMastery = _spDeck.length > 0 ? Math.round((_spGood / _spDeck.length) * 100) : null;
+
   subjects.forEach(s => {
     if (s.available) {
-      html += `<div class="mode-card" onclick="_selectSubject('${s.id}')">
-        <span class="mc-icon">${s.icon}</span>
+      const arc = s.id === 'biology' ? _masteryArc(_spMastery) : _masteryArc(null);
+      html += `<div class="mode-card" style="position:relative" onclick="_selectSubject('${s.id}')">
+        ${arc}
         <div class="mc-title">${s.label}</div>
         <div class="mc-sub">${s.sub}</div>
       </div>`;
     } else {
-      html += `<div class="mode-card" style="opacity:0.45" onclick="_comingSoonSubject('${s.label}')">
-        <span class="mc-icon">${s.icon}</span>
+      html += `<div class="mode-card" style="position:relative;opacity:0.45" onclick="_comingSoonSubject('${s.label}')">
+        ${_lockIcon()}
         <div class="mc-title">${s.label}</div>
-        <div class="mc-sub">${s.sub}</div>
+        <div class="mc-sub">Coming soon</div>
       </div>`;
     }
   });

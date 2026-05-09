@@ -101,23 +101,22 @@ const Lessons = (() => {
     const nextStep = _steps[_stepIdx + 1];
     const nextLabel = nextStep ? _stepLabel(nextStep) : '';
 
-    // Sticky header: back + progress + step count + home
+    // Sticky header: text row above, full-width bar below
+    const _barCol = pct >= 80 ? '#52C97A' : pct >= 71 ? '#6BBDE3' : pct >= 41 ? '#E8A838' : '#E05252';
     const header = `
-      <div style="position:sticky;top:0;z-index:10;background:var(--bg);padding:0.75rem 0 0.5rem">
-        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+      <div style="position:sticky;top:0;z-index:10;background:var(--bg);padding:0.75rem 0 0">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.4rem">
           <button class="back-btn" onclick="Lessons.close()" style="flex-shrink:0">← Topics</button>
-          <div style="flex:1">
-            <div style="font-size:0.8rem;color:var(--muted);margin-bottom:4px;font-weight:500">
-              ${_current.title || _subtopicName}
-            </div>
-            <div class="q-progress-track">
-              <div class="q-progress-fill" style="width:${pct}%"></div>
-            </div>
+          <div style="flex:1;font-size:0.8rem;color:var(--muted);font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
+            ${_current.title || _subtopicName}
           </div>
           <span style="font-size:0.8rem;color:var(--muted);white-space:nowrap;flex-shrink:0">
             ${_stepIdx + 1}/${_steps.length}
           </span>
           <button class="back-btn" onclick="showHome()" style="flex-shrink:0;padding:0.25rem 0.45rem;line-height:0" title="Home">${Icons.inline('home', 22)}</button>
+        </div>
+        <div style="height:6px;background:rgba(255,255,255,0.12);border-radius:4px;overflow:hidden;margin-bottom:0.5rem">
+          <div style="height:100%;width:${pct}%;background:${_barCol};border-radius:4px;transition:width 0.4s ease"></div>
         </div>
       </div>`;
 

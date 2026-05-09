@@ -223,11 +223,20 @@ function _renderUpcomingTests() {
   } catch { /* silently ignore corrupt schedule data */ }
 }
 
-function _masteryBar(pct) {
-  if (pct === null) return '';
-  const col = pct >= 71 ? 'var(--green)' : pct >= 41 ? '#f59e0b' : 'var(--red)';
-  return `<div style="height:4px;background:var(--border2);border-radius:2px;margin-top:5px;overflow:hidden">
-    <div style="height:100%;width:${pct}%;background:${col};border-radius:2px;transition:width 0.5s ease"></div>
+// pct: 0-100 or null. done/total optional — renders "3/8" fraction label when supplied.
+function _masteryBar(pct, done, total) {
+  if (pct === null || pct === undefined) return '';
+  const fillCol  = pct >= 80 ? '#52C97A' : pct >= 71 ? '#6BBDE3' : pct >= 41 ? '#E8A838' : '#E05252';
+  const labelCol = pct >= 80 ? '#52C97A' : pct >= 71 ? '#6BBDE3' : pct >= 41 ? '#E8A838' : 'var(--muted)';
+  const fill     = pct > 0
+    ? `<div style="height:100%;width:${pct}%;background:${fillCol};border-radius:4px;transition:width 0.5s ease"></div>`
+    : '';
+  const label    = (done != null && total != null)
+    ? `<span style="font-size:12px;color:${labelCol};font-weight:600;white-space:nowrap;flex-shrink:0">${done}/${total}</span>`
+    : '';
+  return `<div style="display:flex;align-items:center;gap:0.5rem;margin-top:4px">
+    <div style="flex:1;height:8px;background:rgba(255,255,255,0.12);border-radius:4px;overflow:hidden">${fill}</div>
+    ${label}
   </div>`;
 }
 
@@ -377,14 +386,16 @@ function showTopics() {
       return m !== null && m >= 80;
     }).length;
 
+    const covPct = total ? Math.round((done / total) * 100) : 0;
+
     const card = document.createElement('div');
     card.className = `topic-card ${avail ? '' : 'unavailable'}`;
     card.innerHTML = `
       <div class="tc-icon">${t.icon}</div>
       <div class="tc-body">
         <div class="tc-name">${t.name}</div>
-        <div class="tc-code" style="font-size:0.75rem;color:var(--muted)">${done}/${total} started${complete > 0 ? ` · ${complete} complete` : ''}</div>
-        ${mastery !== null ? _masteryBar(mastery) : ''}
+        ${complete > 0 ? `<div style="font-size:0.72rem;color:#52C97A;margin-bottom:2px">${complete} secure</div>` : ''}
+        ${avail ? _masteryBar(covPct, done, total) : ''}
       </div>
       <div class="tc-right">
         ${!avail ? `<span class="chip chip-gold">Coming soon</span>` : ''}

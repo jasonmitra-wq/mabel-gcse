@@ -406,6 +406,46 @@ function showTopics() {
 
   const _deck = Store.getDeck();
 
+  // ── Badge pre-pass ─────────────────────────────────────────
+  // Compute coverage for every available topic so we can pick
+  // the single most logical "next" topic to highlight.
+  const _availTopics = Object.entries(topics)
+    .filter(([, t]) => t.available !== false)
+    .map(([code, t]) => {
+      const subs   = t.subtopics || [];
+      const done   = subs.filter(st => _progress.covered[st.id]).length;
+      const covPct = subs.length ? Math.round((done / subs.length) * 100) : 0;
+      return { code, done, covPct };
+    });
+
+  let _badgeCode = null, _badgeText = null;
+
+  // "Start here" — first unstarted topic whose immediate predecessor
+  // is either complete (≥80%) or also unstarted (handles fresh start).
+  let _prevCovPct = -1; // -1 = before first topic; treat as "ok to begin"
+  for (const s of _availTopics) {
+    if (s.done === 0 && (_prevCovPct < 0 || _prevCovPct === 0 || _prevCovPct >= 80)) {
+      _badgeCode = s.code;
+      _badgeText = 'Start here →';
+      break;
+    }
+    _prevCovPct = s.covPct;
+  }
+
+  // "Continue" — all topics started but not all complete: pick lowest-covPct
+  if (!_badgeCode) {
+    const _allStarted  = _availTopics.every(s => s.done > 0);
+    const _allComplete = _availTopics.every(s => s.covPct >= 80);
+    if (_allStarted && !_allComplete) {
+      const _pick = _availTopics
+        .filter(s => s.covPct < 80)
+        .sort((a, b) => a.covPct - b.covPct)[0];
+      if (_pick) { _badgeCode = _pick.code; _badgeText = 'Continue →'; }
+    }
+  }
+  // (If all topics are ≥80% — no badge. _badgeCode stays null.)
+
+  // ── Render cards ───────────────────────────────────────────
   Object.entries(topics).forEach(([code, t]) => {
     const subtopics  = t.subtopics || [];
     const total      = subtopics.length;
@@ -419,6 +459,10 @@ function showTopics() {
 
     const covPct = total ? Math.round((done / total) * 100) : 0;
 
+    const badgeHtml = (avail && code === _badgeCode)
+      ? `<span style="font-size:11px;font-weight:600;background:var(--blue);color:#fff;padding:3px 8px;border-radius:999px;white-space:nowrap;line-height:1">${_badgeText}</span>`
+      : (!avail ? `<span class="chip chip-gold">Coming soon</span>` : '');
+
     const card = document.createElement('div');
     card.className = `topic-card ${avail ? '' : 'unavailable'}`;
     card.innerHTML = `
@@ -429,9 +473,7 @@ function showTopics() {
         ${complete > 0 ? `<div style="font-size:0.72rem;color:#52C97A;margin-top:3px">${complete} secure</div>` : ''}
         ${avail ? _masteryBar(covPct, done, total) : ''}
       </div>
-      <div class="tc-right">
-        ${!avail ? `<span class="chip chip-gold">Coming soon</span>` : ''}
-      </div>`;
+      <div class="tc-right">${badgeHtml}</div>`;
 
     if (avail) {
       card.onclick = () => showSubtopics(code, t);

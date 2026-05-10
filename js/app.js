@@ -127,18 +127,32 @@ function _pickGreeting() {
 // ── HOME ───────────────────────────────────────────────────────
 function showHome(hasSaved) {
   _progress = Store.getProgress();
-  const last = _progress.lastPosition;
+  const last        = _progress.lastPosition;
   const coveredCount = Object.keys(_progress.covered || {}).length;
-  const _homeDeck  = Store.getDeck();
-  const deckSize   = _homeDeck.length;
-  const _homeToday = new Date().toISOString();
-  const dueCount   = _homeDeck.filter(c => !c.nextReview || c.nextReview <= _homeToday).length;
+  const _homeDeck   = Store.getDeck();
+  const deckSize    = _homeDeck.length;
+  const _homeToday  = new Date().toISOString();
+  const dueCount    = _homeDeck.filter(c => !c.nextReview || c.nextReview <= _homeToday).length;
+  const errorLog    = Store.getErrorLog();
+  const errorCount  = Object.keys(errorLog).length;
+  const sessions    = Store.getSessions();
+  const lastSession = sessions[0];
+
+  // Global mastery
+  const _deckGood    = _homeDeck.filter(c => c.difficulty === 'good' || c.difficulty === 'easy' || c.status === 'known').length;
+  const globalMastery = _homeDeck.length > 0 ? Math.round((_deckGood / _homeDeck.length) * 100) : null;
+  const _dbPct    = globalMastery ?? 0;
+  const _dbPhase  = coveredCount === 0 ? "Nothing secured yet — let's start"
+    : _dbPct <= 30 ? 'Building foundations'
+    : _dbPct <= 60 ? 'Getting there'
+    : _dbPct <= 80 ? 'Most of it covered'
+    : 'Nearly exam-ready';
+  const _dbBarCol = _dbPct >= 80 ? '#52C97A' : _dbPct >= 71 ? '#4ecfaa' : _dbPct >= 41 ? '#e8a040' : '#E05252';
 
   App.setStage('Home');
   document.getElementById('hdrTopic').style.display = 'none';
   document.getElementById('hdrScore').style.display = 'none';
 
-  // Close panels (inline override ensures stale cached CSS can't leave panel visible)
   const _lp = document.getElementById('lessonPanel');
   _lp.style.transition = 'transform 0.32s cubic-bezier(0.4,0,0.2,1)';
   _lp.style.transform = 'translateX(100vw)';
@@ -152,60 +166,103 @@ function showHome(hasSaved) {
 
   const greeting = _pickGreeting();
 
-  const main = document.getElementById('main');
-  main.innerHTML = `
+  // ── Continue card ───────────────────────────────────────────
+  let continueHtml = '';
+  if (last?.subtopicId && last?.subtopicName) {
+    const subj = last.subject ? (last.subject.charAt(0).toUpperCase() + last.subject.slice(1)) : 'Biology';
+    const code = last.topicCode ? ` · ${last.topicCode}` : '';
+    const safeName = last.subtopicName.replace(/'/g, "\\'");
+    const safeCode = (last.topicCode || '').replace(/'/g, "\\'");
+    const safeSubj = (last.subject || 'biology').replace(/'/g, "\\'");
+    continueHtml = `
+      <div class="home-continue" onclick="Lessons.open('${last.subtopicId}','${safeName}','${safeCode}','${safeSubj}')">
+        <div class="home-continue-play">▶</div>
+        <div class="home-continue-body">
+          <div class="home-continue-label">Pick up where you left off</div>
+          <div class="home-continue-title">${last.subtopicName}</div>
+          <div class="home-continue-meta">${subj}${code}</div>
+        </div>
+        <button class="btn pri" style="flex-shrink:0;white-space:nowrap" onclick="event.stopPropagation();Lessons.open('${last.subtopicId}','${safeName}','${safeCode}','${safeSubj}')">Resume →</button>
+      </div>`;
+  }
+
+  // ── Last session label ──────────────────────────────────────
+  let lastLabel = 'No sessions yet';
+  if (lastSession?.startedAt) {
+    const d = new Date(lastSession.startedAt);
+    const diff = Math.floor((Date.now() - d) / 86400000);
+    lastLabel = diff === 0 ? 'Last: today' : diff === 1 ? 'Last: yesterday' : `Last: ${diff} days ago`;
+  }
+
+  // ── Render ──────────────────────────────────────────────────
+  document.getElementById('main').innerHTML = `
     <div class="home-hero">
       <h1>${Store.getChildName()}'s GCSE Tutor</h1>
       <p>Everything you need to do well in your exams.</p>
       ${streakHtml}
     </div>
-    <p style="font-size:16px;color:rgba(245,240,232,0.7);margin:0.1rem 0 1.1rem;line-height:1.6">${greeting}</p>
-    <div class="mode-grid" id="modeGrid"></div>
+    <p style="font-size:16px;color:rgba(245,240,232,0.7);margin:0.1rem 0 1.1rem;line-height:1.6;font-style:italic">${greeting}</p>
+
+    ${continueHtml}
+
+    <div class="home-main-grid">
+      <div class="home-main-tile" onclick="showSubjectPicker()">
+        <div style="width:30px;height:30px;display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:0.5rem">
+          <div style="background:#4ecfaa;border-radius:3px"></div>
+          <div style="background:#e8a040;border-radius:3px"></div>
+          <div style="background:#c77dff;border-radius:3px"></div>
+          <div style="background:#6bcb77;border-radius:3px"></div>
+        </div>
+        <div style="font-size:17px;font-weight:700;margin-bottom:0.3rem">Revise a topic</div>
+        <div style="font-size:14px;color:var(--muted);line-height:1.5">Pick a subject & topic. Read, learn, write it down.</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:auto;padding-top:0.85rem">Biology · Chemistry · Physics · Maths &nbsp;→</div>
+      </div>
+      <div class="home-main-tile" onclick="showTestPrep()">
+        <div style="font-size:1.6rem;margin-bottom:0.5rem">🎯</div>
+        <div style="font-size:17px;font-weight:700;margin-bottom:0.3rem">Getting ready for a test?</div>
+        <div style="font-size:14px;color:var(--muted);line-height:1.5">Tell me what's coming up and I'll help you focus.</div>
+        <div style="font-size:13px;color:var(--amber);font-weight:600;margin-top:auto;padding-top:0.85rem">Plan a session →</div>
+      </div>
+    </div>
+
+    <div class="home-stat-row">
+      <div class="home-stat-tile" onclick="showDashboard()">
+        <div style="font-size:1.1rem;margin-bottom:0.25rem">📊</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:0.2rem">Dashboard</div>
+        <div style="font-size:12px;color:var(--amber);font-weight:600">${_dbPhase}</div>
+        <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;margin-top:0.4rem">
+          ${_dbPct > 0 ? `<div style="height:100%;width:${_dbPct}%;background:${_dbBarCol};border-radius:2px"></div>` : ''}
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:0.3rem">${_dbPct}% across all subjects</div>
+      </div>
+
+      <div class="home-stat-tile" onclick="showCardDeck()">
+        ${dueCount > 0 ? `<div style="font-size:0.58rem;font-weight:700;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;margin-bottom:0.3rem">Spaced repetition</div>` : ''}
+        <div style="font-size:1.1rem;margin-bottom:0.25rem">🃏</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:0.2rem">Card deck</div>
+        <div style="font-size:12px;color:var(--muted)">${dueCount > 0 ? `${dueCount} cards due — five minutes will do.` : deckSize > 0 ? `${deckSize} cards saved` : 'No cards yet'}</div>
+        ${dueCount > 0 ? `<div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.5rem">
+          <span style="background:rgba(232,160,64,0.15);border:1px solid rgba(232,160,64,0.35);color:var(--amber);border-radius:20px;padding:0.15rem 0.5rem;font-size:11px;font-weight:700">⏰ ${dueCount} due today</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:800">${dueCount}</span>
+        </div>` : ''}
+      </div>
+
+      <div class="home-stat-tile" onclick="showErrorLog()">
+        <div style="font-size:1.1rem;margin-bottom:0.25rem">${errorCount > 0 ? '❌' : '✅'}</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:0.2rem">Error log</div>
+        <div style="font-size:12px;color:var(--muted)">Review missed questions</div>
+        <div style="font-size:12px;font-weight:600;margin-top:0.35rem;color:${errorCount > 0 ? 'var(--amber)' : 'var(--green)'}">${errorCount > 0 ? errorCount + ' to review' : 'All clear'}</div>
+      </div>
+
+      <div class="home-stat-tile" onclick="showSessionHistory()">
+        <div style="font-size:1.1rem;margin-bottom:0.25rem">📋</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:0.2rem">History</div>
+        <div style="font-size:12px;color:var(--muted)">Past sessions</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:0.35rem">${lastLabel}</div>
+      </div>
+    </div>
+
     <div id="upcomingSection"></div>`;
-
-  const grid = document.getElementById('modeGrid');
-
-  // Continue card (if last position saved)
-  if (last?.subtopicId && last?.subtopicName) {
-    const cont = _modeCard(Icons.get('continue', 48), last.subtopicName, 'Pick up where you left off.', 'continue', () => {
-      Lessons.open(last.subtopicId, last.subtopicName, last.topicCode, last.subject || 'biology');
-    });
-    cont.className = 'mode-card continue';
-    grid.appendChild(cont);
-  }
-
-  const errorLog   = Store.getErrorLog();
-  const errorCount = Object.keys(errorLog).length;
-
-  // Global mastery: % of saved cards rated good or easy
-  const _deckGood  = _homeDeck.filter(c => c.difficulty === 'good' || c.difficulty === 'easy' || c.status === 'known').length;
-  const globalMastery = _homeDeck.length > 0 ? Math.round((_deckGood / _homeDeck.length) * 100) : null;
-
-  // ── Dashboard tile: overall progress bar ───────────────────
-  const _dbPct   = globalMastery ?? 0;
-  const _dbPhase = coveredCount === 0
-    ? "Nothing secured yet — let's start"
-    : _dbPct <= 30 ? 'Building foundations'
-    : _dbPct <= 60 ? 'Getting there'
-    : _dbPct <= 80 ? 'Most of it covered'
-    : 'Nearly exam-ready';
-  const _dbBarCol = _dbPct >= 80 ? '#52C97A' : _dbPct >= 71 ? '#6BBDE3' : _dbPct >= 41 ? '#E8A838' : '#E05252';
-  const _dbSub = `<div style="height:6px;background:rgba(255,255,255,0.12);border-radius:3px;overflow:hidden;margin-top:6px">${
-    _dbPct > 0 ? `<div style="height:100%;width:${_dbPct}%;background:${_dbBarCol};border-radius:3px;transition:width 0.5s ease"></div>` : ''
-  }</div><div style="font-size:12px;color:var(--muted);margin-top:5px">${_dbPhase}</div>`;
-
-  const modes = [
-    { title: 'Revise',    sub: 'Pick a subject & topic',        fn: showSubjectPicker,  pct: globalMastery },
-    { title: 'Getting ready for a test?', sub: "Tell me what's coming up and I'll help you focus", fn: showTestPrep, pct: globalMastery },
-    { title: 'Dashboard', sub: _dbSub,                           fn: showDashboard,      pct: globalMastery },
-    { title: `Card deck${deckSize > 0 ? ' · '+deckSize : ''}`,  sub: dueCount > 0 ? `⏰ ${dueCount} due today` : 'Drill your saved cards', fn: showCardDeck, pct: globalMastery },
-    { icon: '❌', title: `Error log${errorCount > 0 ? ' · ' + errorCount : ''}`, sub: errorCount > 0 ? 'Review your missed questions' : 'No errors yet — keep going!', fn: showErrorLog },
-    { icon: '📋', title: 'Session history', sub: 'Your recent practice sessions', fn: showSessionHistory },
-  ];
-
-  modes.forEach(m => {
-    grid.appendChild(_modeCard(m.icon || null, m.title, m.sub, '', m.fn, m.pct));
-  });
 
   _renderUpcomingTests();
 }

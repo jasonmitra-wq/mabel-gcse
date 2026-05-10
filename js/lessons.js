@@ -45,6 +45,7 @@ const Lessons = (() => {
     }
 
     _current              = data;
+    _current.subject      = subject;
     _subtopicName         = subtopicName;
     _cpScores             = {};
     _cpHintLevels         = {};
@@ -220,7 +221,7 @@ const Lessons = (() => {
           ${kp.cardFlag ? `<span class="flag flag-card">worth writing down</span>` : ''}
         </div>
         <p style="font-size:1.05rem;line-height:1.75">${kp.content}</p>`;
-    if (kp.diagram) html += _renderInlineDiagram(kp.diagram, _current);
+    if (kp.diagram) html += _renderInlineDiagram(kp.diagram, _current, kp.diagramCaption);
     const vids = _current.videoLinks;
     if (vids?.length) {
       html += `<div class="kp-video-strip">
@@ -568,22 +569,21 @@ const Lessons = (() => {
   }
 
   // ── Diagram renderer ───────────────────────────────────────
-  function _renderInlineDiagram(diagramId, data) {
+  function _renderInlineDiagram(diagramId, data, caption) {
     const diagDef = data.diagrams?.find(d => d.id === diagramId) ||
                     data.allDiagrams?.find(d => d.id === diagramId);
     const title   = diagDef?.title || diagramId;
-    const isExam  = diagDef?.examFlag;
-    return `<div class="diagram-wrap" id="diag_${diagramId}">
-      <div class="diagram-title">📊 ${title}${isExam ? ' <span class="flag flag-exam" style="margin-left:auto">worth knowing</span>' : ''}</div>
-      <div id="diagContent_${diagramId}">
-        <img src="diagrams/biology/${diagramId}.svg" alt="${title}"
-          onerror="this.style.display='none';document.getElementById('diagFallback_${diagramId}').style.display='block'"
-          style="width:100%;height:auto">
-        <div id="diagFallback_${diagramId}" style="display:none;color:var(--muted);font-size:0.83rem;font-style:italic;padding:0.5rem">
-          Diagram: ${title}
-        </div>
+    const subject = data.subject || 'biology';
+    const cap     = caption || diagDef?.caption || '';
+    return `<div id="diag_${diagramId}" style="max-width:480px;margin:24px auto;background:#1A1A2E;border-radius:8px;padding:16px;border:1px solid var(--border2)">
+      <img src="diagrams/${subject}/${diagramId}.svg" alt="${title}"
+        onerror="this.style.display='none';document.getElementById('diagFallback_${diagramId}').style.display='block'"
+        style="width:100%;height:auto;display:block;border-radius:4px">
+      <div id="diagFallback_${diagramId}" style="display:none;color:var(--muted);font-size:0.83rem;font-style:italic;padding:0.5rem;text-align:center">
+        Diagram: ${title}
       </div>
-      ${isExam ? `<p class="write-note" style="margin-top:0.5rem">Sketch this one and label it — they've asked this before.</p>` : ''}
+      ${cap ? `<p style="margin:10px 0 0;font-size:13px;font-style:italic;color:var(--muted);line-height:1.5">${cap}</p>` : ''}
+      <p style="margin:10px 0 0;font-size:0.82rem;color:#E8A838;line-height:1.5">⚠️ Exam tip: diagrams like this come up in questions. Make a quick sketch of this in your notes.</p>
     </div>`;
   }
 

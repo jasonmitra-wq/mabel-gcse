@@ -280,18 +280,18 @@ const Lessons = (() => {
             if (dash !== -1) {
               const term = b.slice(0, dash);
               const def  = b.slice(dash + 3);
-              return `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--yellow);font-weight:700;font-size:14px">•</span><span style="font-weight:700;font-size:16px;color:#fff">${term}</span><span style="color:var(--muted);font-weight:400"> — </span><span style="font-weight:400;font-size:15px;color:rgba(255,255,255,0.85)">${def}</span></li>`;
+              return `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--yellow);font-weight:700;font-size:14px">•</span><span style="font-weight:700;font-size:18px;color:#fff">${term}</span><span style="color:var(--muted);font-weight:400"> — </span><span style="font-weight:400;font-size:17px;color:rgba(255,255,255,0.85)">${def}</span></li>`;
             }
-            return `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--yellow);font-weight:700;font-size:14px">•</span><span style="font-weight:400;font-size:15px;color:rgba(255,255,255,0.85)">${b}</span></li>`;
+            return `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--yellow);font-weight:700;font-size:14px">•</span><span style="font-weight:400;font-size:17px;color:rgba(255,255,255,0.85)">${b}</span></li>`;
           }).join('')}
         </ul>` : ''}
         ${hasTerms ? `
           <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:0.5rem;letter-spacing:0.08em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('key', 18)} Key terms</p>
           <ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.55rem">
-            ${kp.keyTerms.map(t => `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--muted);font-weight:300;font-size:15px">→</span><span style="font-weight:700;font-size:15px;color:var(--teal)">${t.term}</span><span style="color:var(--muted);font-weight:400"> — </span><span style="font-weight:400;font-size:14px;color:rgba(255,255,255,0.80)">${t.def}</span></li>`).join('')}
+            ${kp.keyTerms.map(t => `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--muted);font-weight:300;font-size:15px">→</span><span style="font-weight:700;font-size:16px;color:var(--teal)">${t.term}</span><span style="color:var(--muted);font-weight:400"> — </span><span style="font-weight:400;font-size:15px;color:rgba(255,255,255,0.80)">${t.def}</span></li>`).join('')}
           </ul>` : ''}
         ${kp.memTip ? `<div class="mem-tip-box">💡 <strong>Memory tip:</strong> ${kp.memTip}</div>` : ''}
-        ${kp.tutor_note ? `<div style="border-left:3px solid var(--purple);background:rgba(199,125,255,0.08);border-radius:0 6px 6px 0;padding:12px 16px;margin-bottom:1rem;font-size:14px;color:#F0EAD6;line-height:1.7">${kp.tutor_note}</div>` : ''}
+        ${kp.tutor_note ? `<div style="border-left:3px solid var(--purple);background:rgba(199,125,255,0.08);border-radius:0 6px 6px 0;padding:12px 16px;margin-bottom:1rem;font-size:16px;color:#F0EAD6;line-height:1.7">${kp.tutor_note}</div>` : ''}
         <label class="done-check-label">
           <input type="checkbox" id="stepDoneCheck" onchange="Lessons._tryUnlockNext()">
           <span>Done — I've written these into my notes</span>

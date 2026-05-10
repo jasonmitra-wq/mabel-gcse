@@ -156,7 +156,7 @@ function showHome(hasSaved) {
       <p>Everything you need to do well in your exams.</p>
       ${streakHtml}
     </div>
-    <p style="font-size:0.92rem;color:#C8A8E8;margin:0.1rem 0 1.1rem;line-height:1.5">${greeting}</p>
+    <p style="font-size:16px;color:#C8A8E8;margin:0.1rem 0 1.1rem;line-height:1.6">${greeting}</p>
     <div class="mode-grid" id="modeGrid"></div>
     <div id="upcomingSection"></div>`;
 
@@ -482,7 +482,7 @@ function showTopics() {
       <div class="tc-icon">${t.icon}</div>
       <div class="tc-body">
         <div class="tc-name">${t.name}</div>
-        ${t.description ? `<div style="font-size:0.73rem;color:var(--muted);margin-top:2px;line-height:1.4">${t.description}</div>` : ''}
+        ${t.description ? `<div style="font-size:14px;color:var(--muted);margin-top:2px;line-height:1.6">${t.description}</div>` : ''}
         ${complete > 0 ? `<div style="font-size:0.72rem;color:#52C97A;margin-top:3px">${complete} secure</div>` : ''}
         ${avail ? _masteryBar(covPct, done, total) : ''}
       </div>

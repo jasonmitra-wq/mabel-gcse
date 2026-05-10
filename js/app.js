@@ -193,7 +193,7 @@ function showHome(hasSaved) {
 
   const modes = [
     { title: 'Revise',    sub: 'Pick a subject & topic',        fn: showSubjectPicker,  pct: globalMastery },
-    { title: 'Test prep', sub: 'Focused countdown revision',     fn: showTestPrep,       pct: globalMastery },
+    { title: 'Getting ready for a test?', sub: "Tell me what's coming up and I'll help you focus", fn: showTestPrep, pct: globalMastery },
     { title: 'Dashboard', sub: _dbSub,                           fn: showDashboard,      pct: globalMastery },
     { title: `Card deck${deckSize > 0 ? ' · '+deckSize : ''}`,  sub: dueCount > 0 ? `⏰ ${dueCount} due today` : 'Drill your saved cards', fn: showCardDeck, pct: globalMastery },
     { icon: '❌', title: `Error log${errorCount > 0 ? ' · ' + errorCount : ''}`, sub: errorCount > 0 ? 'Review your missed questions' : 'No errors yet — keep going!', fn: showErrorLog },
@@ -873,13 +873,17 @@ function showCardDeck() {
 }
 
 // ── TEST PREP ──────────────────────────────────────────────────
+// Language note: avoid countdown/deadline/time-pressure framing throughout
+// this flow. Anxiety-inducing time pressure language reduces engagement in
+// adolescent learners — use agency-and-preparation framing instead.
+// "X days left" → "X days to prepare", "running out of time" → remove.
 function showTestPrep() {
   App.setStage('Test prep');
   document.getElementById('main').innerHTML = `
     <div style="max-width:600px">
       <div class="topic-header">
         <button class="back-btn" onclick="showHome()">← Home</button>
-        <h2>🎯 Test prep</h2>
+        <h2>🎯 Getting ready for a test?</h2>
       </div>
 
       <div style="background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:1.25rem 1.3rem;margin-bottom:1rem">
@@ -1104,10 +1108,12 @@ function _renderTestPlan(plan, topic, daysUntil) {
 
   if (daysUntil !== null) {
     const urgency = daysUntil <= 3 ? 'var(--red)' : daysUntil <= 7 ? 'var(--yellow)' : 'var(--green)';
+    // Forward-looking framing — "days to prepare" not "days left/until"
+    const prepLabel = daysUntil <= 3 ? '🎯 Make it count' : daysUntil <= 7 ? '⚡ Good time to focus' : '✅ Good time to prepare';
     html += `<div style="background:rgba(255,107,107,0.06);border:1px solid rgba(255,107,107,0.2);border-radius:12px;padding:0.85rem 1rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem">
       <div style="font-family:'Fraunces',serif;font-size:2rem;font-weight:800;color:${urgency}">${daysUntil}</div>
-      <div><div style="font-weight:600">day${daysUntil!==1?'s':''} until your test</div>
-      <div style="font-size:0.78rem;color:var(--muted)">${daysUntil <= 3 ? '🚨 Crunch time' : daysUntil <= 7 ? '⚡ Coming up fast' : '✅ Good time to prepare'}</div></div>
+      <div><div style="font-weight:600">day${daysUntil!==1?'s':''} to prepare</div>
+      <div style="font-size:0.78rem;color:var(--muted)">${prepLabel}</div></div>
     </div>`;
   }
 

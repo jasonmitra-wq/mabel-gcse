@@ -287,6 +287,7 @@ const Lessons = (() => {
             </li>`).join('')}
           </ul>` : ''}
         ${kp.memTip ? `<div class="mem-tip-box">💡 <strong>Memory tip:</strong> ${kp.memTip}</div>` : ''}
+        ${kp.tutor_note ? `<div style="border-left:3px solid var(--purple);background:rgba(199,125,255,0.08);border-radius:0 6px 6px 0;padding:12px 16px;margin-bottom:1rem;font-size:14px;color:#F0EAD6;line-height:1.7">${kp.tutor_note}</div>` : ''}
         <label class="done-check-label">
           <input type="checkbox" id="stepDoneCheck" onchange="Lessons._tryUnlockNext()">
           <span>Done — I've written these into my notes</span>

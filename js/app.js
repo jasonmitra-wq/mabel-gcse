@@ -425,7 +425,8 @@ function showTopics() {
       <div class="tc-icon">${t.icon}</div>
       <div class="tc-body">
         <div class="tc-name">${t.name}</div>
-        ${complete > 0 ? `<div style="font-size:0.72rem;color:#52C97A;margin-bottom:2px">${complete} secure</div>` : ''}
+        ${t.description ? `<div style="font-size:0.73rem;color:var(--muted);margin-top:2px;line-height:1.4">${t.description}</div>` : ''}
+        ${complete > 0 ? `<div style="font-size:0.72rem;color:#52C97A;margin-top:3px">${complete} secure</div>` : ''}
         ${avail ? _masteryBar(covPct, done, total) : ''}
       </div>
       <div class="tc-right">

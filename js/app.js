@@ -279,7 +279,7 @@ function _masteryBar(pct, done, total) {
     ? `<span style="font-size:12px;color:${labelCol};font-weight:600;white-space:nowrap;flex-shrink:0">${done}/${total}</span>`
     : '';
   return `<div style="display:flex;align-items:center;gap:0.5rem;margin-top:4px">
-    <div style="flex:1;height:8px;background:rgba(255,255,255,0.12);border-radius:4px;overflow:hidden">${fill}</div>
+    <div style="flex:1;height:8px;background:rgba(255,255,255,0.10);border-radius:4px;overflow:hidden">${fill}</div>
     ${label}
   </div>`;
 }
@@ -587,13 +587,16 @@ function showDashboard() {
       const subs = t.subtopics || [];
       const done = subs.filter(st => _progress.covered[st.id]).length;
       if (!done) return;
-      const pct = Math.round((done / subs.length) * 100);
+      const pct    = Math.round((done / subs.length) * 100);
+      const barCol = pct >= 80 ? '#52C97A' : pct >= 71 ? '#6BBDE3' : pct >= 41 ? '#E8A838' : '#E05252';
       html += `<div style="margin-bottom:0.6rem">
         <div style="display:flex;justify-content:space-between;font-size:0.82rem;margin-bottom:0.25rem">
           <span>${t.icon} ${t.name}</span>
           <span style="color:var(--muted)">${done}/${subs.length} · ${pct}%</span>
         </div>
-        <div class="prog-bar" style="height:6px"><div class="prog-fill" style="width:${pct}%"></div></div>
+        <div style="height:8px;background:rgba(255,255,255,0.10);border-radius:4px;overflow:hidden">
+          ${pct > 0 ? `<div style="height:100%;width:${pct}%;background:${barCol};border-radius:4px;transition:width 0.5s ease"></div>` : ''}
+        </div>
       </div>`;
     });
     html += `</div>`;

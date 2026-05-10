@@ -103,7 +103,11 @@ const Lessons = (() => {
     const nextLabel = nextStep ? _stepLabel(nextStep) : '';
 
     // Sticky header: text row above, full-width bar below
-    const _barCol = pct >= 80 ? '#52C97A' : pct >= 71 ? '#6BBDE3' : pct >= 41 ? '#E8A838' : '#E05252';
+    // Bar colour rewards progress by slide count, not percentage:
+    //   slides 1–5  → red (you're just getting started)
+    //   slides 6–11 → amber (halfway through)
+    //   slides 12+  → green (deep into the lesson)
+    const _barCol = _stepIdx >= 11 ? '#52C97A' : _stepIdx >= 5 ? '#E8A838' : '#E05252';
     const header = `
       <div style="position:sticky;top:0;z-index:10;background:var(--bg);padding:0.75rem 0 0">
         <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.4rem">
@@ -116,7 +120,7 @@ const Lessons = (() => {
           </span>
           <button class="back-btn" onclick="showHome()" style="flex-shrink:0;padding:0.25rem 0.45rem;line-height:0" title="Home">${Icons.inline('home', 22)}</button>
         </div>
-        <div style="height:6px;background:rgba(255,255,255,0.12);border-radius:4px;overflow:hidden;margin-bottom:0.5rem">
+        <div style="height:8px;background:rgba(255,255,255,0.10);border-radius:4px;overflow:hidden;margin-bottom:0.5rem">
           <div style="height:100%;width:${pct}%;background:${_barCol};border-radius:4px;transition:width 0.4s ease"></div>
         </div>
       </div>`;

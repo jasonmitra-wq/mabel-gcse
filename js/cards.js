@@ -114,7 +114,8 @@ const Cards = (() => {
     Object.entries(byTopic).forEach(([topic, cards]) => {
       const kn  = cards.filter(c => c.status === 'known').length;
       const due = cards.filter(c => !c.nextReview || c.nextReview <= now).length;
-      const pct = Math.round((kn / cards.length) * 100);
+      const pct    = Math.round((kn / cards.length) * 100);
+      const barCol = pct >= 80 ? '#52C97A' : pct >= 71 ? '#6BBDE3' : pct >= 41 ? '#E8A838' : '#E05252';
       const dueBadge = due > 0
         ? `<span style="font-size:0.72rem;color:var(--yellow);margin-left:0.3rem">⏰ ${due} due</span>`
         : '';
@@ -123,8 +124,8 @@ const Cards = (() => {
           padding:0.65rem 0.9rem;margin-bottom:0.4rem;display:flex;align-items:center;gap:0.6rem">
           <div style="flex:1;font-size:0.85rem;font-weight:500">${topic}${dueBadge}</div>
           <div style="font-size:0.75rem;color:var(--muted)">${cards.length} cards</div>
-          <div style="width:60px">
-            <div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div>
+          <div style="width:64px;height:8px;background:rgba(255,255,255,0.10);border-radius:4px;overflow:hidden;flex-shrink:0">
+            ${pct > 0 ? `<div style="height:100%;width:${pct}%;background:${barCol};border-radius:4px;transition:width 0.5s ease"></div>` : ''}
           </div>
           <div style="font-size:0.72rem;color:${pct===100?'var(--green)':'var(--muted)'};min-width:28px">${pct}%</div>
         </div>`);
@@ -181,6 +182,8 @@ const Cards = (() => {
     const el = document.getElementById('main');
     const pNum   = _drillIdx + 1;
     const pTotal = _drillQueue.length;
+    const _drillPct    = Math.round(((pNum - 1) / pTotal) * 100);
+    const _drillBarCol = _drillPct >= 80 ? '#52C97A' : _drillPct >= 71 ? '#6BBDE3' : _drillPct >= 41 ? '#E8A838' : '#E05252';
 
     const diff = card.difficulty;
     const statusLabel = diff === 'easy'  ? '✅ Mastered'
@@ -202,7 +205,7 @@ const Cards = (() => {
           <span style="font-size:0.78rem;color:var(--muted)">${pNum} / ${pTotal}</span>
         </div>
         <div class="q-progress-track" style="margin-bottom:1rem">
-          <div class="q-progress-fill" style="width:${((pNum-1)/pTotal)*100}%"></div>
+          <div class="q-progress-fill" style="width:${_drillPct}%;background:${_drillBarCol}"></div>
         </div>
 
         <div class="flashcard" id="flashcard" onclick="Cards.flip()">

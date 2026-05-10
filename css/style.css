@@ -154,8 +154,9 @@ body::before {
 .tc-code  { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
 .tc-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
 .tc-prog  { font-size: 0.72rem; color: var(--muted); }
-.prog-bar { width: 70px; height: 4px; background: var(--s4); border-radius: 2px; overflow: hidden; }
-.prog-fill { height: 100%; background: linear-gradient(90deg, var(--blue), var(--green)); border-radius: 2px; transition: width 0.5s; }
+.prog-bar { width: 70px; height: 8px; background: rgba(255,255,255,0.10); border-radius: 4px; overflow: hidden; }
+/* background set inline per-bar so fill colour reflects completion level */
+.prog-fill { height: 100%; background: var(--green); border-radius: 4px; transition: width 0.5s; }
 
 .subtopic-card {
   background: var(--s1); border: 1.5px solid var(--border2);
@@ -443,8 +444,8 @@ body::before {
 .q-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
 .q-num  { font-size: 0.75rem; color: var(--muted); font-weight: 600; }
 .q-marks { font-size: 0.75rem; color: var(--blue); font-weight: 600; }
-.q-progress-track { height: 3px; background: var(--s4); border-radius: 2px; overflow: hidden; margin-bottom: 1rem; }
-.q-progress-fill  { height: 100%; background: linear-gradient(90deg, var(--blue), var(--green)); transition: width 0.4s; }
+.q-progress-track { height: 8px; background: rgba(255,255,255,0.10); border-radius: 4px; overflow: hidden; margin-bottom: 1rem; }
+.q-progress-fill  { height: 100%; background: var(--blue); border-radius: 4px; transition: width 0.4s; }
 .q-text { font-size: 0.93rem; font-weight: 600; line-height: 1.6; }
 .q-text strong { color: var(--yellow); }
 

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 310" font-family="system-ui, -apple-system, sans-serif">
+
+  <!-- ── CELL WALL — rigid outer box ── -->
+  <rect x="12" y="8" width="362" height="280" rx="14"
+    fill="none" stroke="rgba(220,220,220,0.60)" stroke-width="3"/>
+
+  <!-- ── CELL MEMBRANE — oval just inside wall ── -->
+  <ellipse cx="193" cy="148" rx="156" ry="116"
+    fill="none" stroke="rgba(160,200,240,0.72)" stroke-width="1.8"/>
+
+  <!-- ── PERMANENT VACUOLE — large central space ── -->
+  <ellipse cx="193" cy="152" rx="78" ry="66"
+    fill="rgba(50,90,180,0.07)" stroke="rgba(107,189,227,0.72)" stroke-width="1.8" stroke-dasharray="5,3"/>
+
+  <!-- ── NUCLEUS (upper left cytoplasm, displaced by vacuole) ── -->
+  <ellipse cx="96" cy="90" rx="42" ry="33"
+    fill="rgba(80,40,160,0.14)" stroke="rgba(200,160,255,0.88)" stroke-width="1.8"/>
+  <circle cx="99" cy="86" r="12"
+    fill="rgba(200,160,255,0.40)" stroke="rgba(200,160,255,0.65)" stroke-width="1"/>
+
+  <!-- ── CHLOROPLASTS — oval with internal thylakoid ridge ── -->
+  <!-- chloroplast 1 — upper right -->
+  <ellipse cx="304" cy="82" rx="23" ry="10"
+    fill="rgba(82,201,122,0.12)" stroke="rgba(82,201,122,0.88)" stroke-width="1.8"/>
+  <line x1="284" y1="82" x2="324" y2="82"
+    stroke="rgba(82,201,122,0.45)" stroke-width="1.2"/>
+
+  <!-- chloroplast 2 — lower right -->
+  <ellipse cx="302" cy="220" rx="23" ry="10"
+    fill="rgba(82,201,122,0.12)" stroke="rgba(82,201,122,0.88)" stroke-width="1.8"/>
+  <line x1="282" y1="220" x2="322" y2="220"
+    stroke="rgba(82,201,122,0.45)" stroke-width="1.2"/>
+
+  <!-- chloroplast 3 — lower left -->
+  <ellipse cx="96" cy="220" rx="21" ry="9"
+    fill="rgba(82,201,122,0.12)" stroke="rgba(82,201,122,0.88)" stroke-width="1.8"/>
+  <line x1="78" y1="220" x2="114" y2="220"
+    stroke="rgba(82,201,122,0.45)" stroke-width="1.2"/>
+
+  <!-- ── RIBOSOMES in cytoplasm ── -->
+  <circle cx="165" cy="82" r="3" fill="rgba(232,168,56,0.90)"/>
+  <circle cx="248" cy="92" r="3" fill="rgba(232,168,56,0.90)"/>
+  <circle cx="155" cy="220" r="3" fill="rgba(232,168,56,0.90)"/>
+
+  <!-- ══════════════════════════════════════
+       LEADER LINES + LABELS (right side)
+       ══════════════════════════════════════ -->
+
+  <!-- Cell wall — from top-right corner area of rect -->
+  <line x1="370" y1="38" x2="395" y2="48"
+    stroke="rgba(220,220,220,0.35)" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="370" cy="38" r="2.5" fill="rgba(220,220,220,0.65)"/>
+  <text x="400" y="46" font-size="13" fill="rgba(220,220,220,0.92)" font-weight="600">Cell wall</text>
+  <text x="400" y="62" font-size="11" fill="rgba(255,255,255,0.45)">cellulose; rigid support</text>
+
+  <!-- Cell membrane — from right edge of ellipse -->
+  <line x1="349" y1="100" x2="395" y2="100"
+    stroke="rgba(160,200,240,0.35)" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="349" cy="100" r="2.5" fill="rgba(160,200,240,0.70)"/>
+  <text x="400" y="98" font-size="13" fill="rgba(160,200,240,0.92)" font-weight="600">Cell membrane</text>
+  <text x="400" y="114" font-size="11" fill="rgba(255,255,255,0.45)">controls entry &amp; exit</text>
+
+  <!-- Chloroplast — from chloroplast 1 (upper right) -->
+  <line x1="327" y1="82" x2="395" y2="150"
+    stroke="rgba(82,201,122,0.35)" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="327" cy="82" r="2.5" fill="rgba(82,201,122,0.70)"/>
+  <text x="400" y="148" font-size="13" fill="rgba(82,201,122,0.92)" font-weight="600">Chloroplasts</text>
+  <text x="400" y="164" font-size="11" fill="rgba(255,255,255,0.45)">contain chlorophyll; photosynthesis</text>
+
+  <!-- Permanent vacuole — from right edge of vacuole ellipse -->
+  <line x1="271" y1="152" x2="395" y2="200"
+    stroke="rgba(107,189,227,0.35)" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="271" cy="152" r="2.5" fill="rgba(107,189,227,0.70)"/>
+  <text x="400" y="198" font-size="13" fill="rgba(107,189,227,0.92)" font-weight="600">Permanent vacuole</text>
+  <text x="400" y="214" font-size="11" fill="rgba(255,255,255,0.45)">maintains turgidity</text>
+
+  <!-- Nucleus — label on left (nucleus is upper-left) -->
+  <line x1="54" y1="90" x2="25" y2="118"
+    stroke="rgba(200,160,255,0.35)" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="54" cy="90" r="2.5" fill="rgba(200,160,255,0.70)"/>
+  <text x="2" y="132" font-size="13" fill="rgba(200,160,255,0.92)" font-weight="600">Nucleus</text>
+  <text x="2" y="148" font-size="11" fill="rgba(255,255,255,0.45)">contains DNA</text>
+
+</svg>

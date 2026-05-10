@@ -225,7 +225,7 @@ const Lessons = (() => {
           ${kp.cardFlag ? `<span class="flag flag-card">worth writing down</span>` : ''}
         </div>
         <p style="font-size:1.05rem;line-height:1.75">${kp.content}</p>`;
-    if (kp.diagram) html += _renderInlineDiagram(kp.diagram, _current, kp.diagramCaption);
+    if (kp.diagram) html += _renderInlineDiagram(kp.diagram, _current, kp.diagramCaption, kp.diagramExamTip);
     const vids = _current.videoLinks;
     if (vids?.length) {
       html += `<div class="kp-video-strip">
@@ -583,21 +583,22 @@ const Lessons = (() => {
   }
 
   // ── Diagram renderer ───────────────────────────────────────
-  function _renderInlineDiagram(diagramId, data, caption) {
+  // caption and showExamTip come from the kp JSON fields diagramCaption / diagramExamTip
+  function _renderInlineDiagram(diagramId, data, caption, showExamTip) {
     const diagDef = data.diagrams?.find(d => d.id === diagramId) ||
                     data.allDiagrams?.find(d => d.id === diagramId);
     const title   = diagDef?.title || diagramId;
     const subject = data.subject || 'biology';
     const cap     = caption || diagDef?.caption || '';
-    return `<div id="diag_${diagramId}" style="max-width:480px;margin:24px auto;background:#1A1A2E;border-radius:8px;padding:16px;border:1px solid var(--border2)">
+    return `<div id="diag_${diagramId}" style="max-width:520px;margin:28px auto;background:#1E1E2E;border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.10)">
       <img src="diagrams/${subject}/${diagramId}.svg" alt="${title}"
         onerror="this.style.display='none';document.getElementById('diagFallback_${diagramId}').style.display='block'"
-        style="width:100%;height:auto;display:block;border-radius:4px">
+        style="width:100%;height:auto;display:block;border-radius:6px">
       <div id="diagFallback_${diagramId}" style="display:none;color:var(--muted);font-size:0.83rem;font-style:italic;padding:0.5rem;text-align:center">
         Diagram: ${title}
       </div>
-      ${cap ? `<p style="margin:10px 0 0;font-size:13px;font-style:italic;color:var(--muted);line-height:1.5">${cap}</p>` : ''}
-      <p style="margin:10px 0 0;font-size:0.82rem;color:#E8A838;line-height:1.5">⚠️ Exam tip: diagrams like this come up in questions. Make a quick sketch of this in your notes.</p>
+      ${cap ? `<p style="margin:12px 0 0;font-size:13px;font-style:italic;color:var(--muted);line-height:1.5">${cap}</p>` : ''}
+      ${showExamTip ? `<p style="margin:8px 0 0;font-size:14px;color:#E8A838;line-height:1.5">⚠️ Diagrams like this come up in questions — sketch this in your notes.</p>` : ''}
     </div>`;
   }
 

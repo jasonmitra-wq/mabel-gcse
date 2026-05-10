@@ -215,7 +215,7 @@ function showHome(hasSaved) {
         </div>
         <div style="font-size:17px;font-weight:700;margin-bottom:0.3rem">Revise a topic</div>
         <div style="font-size:14px;color:var(--muted);line-height:1.5">Pick a subject & topic. Read, learn, write it down.</div>
-        <div style="font-size:13px;color:var(--muted);margin-top:auto;padding-top:0.85rem">Biology · Chemistry · Physics · Maths &nbsp;→</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:auto;padding-top:0.85rem">Biology · Chemistry · Physics · Geography · Sociology &nbsp;→</div>
       </div>
       <div class="home-main-tile" onclick="showTestPrep()">
         <div style="font-size:1.6rem;margin-bottom:0.5rem">🎯</div>
@@ -389,12 +389,13 @@ function showSubjectPicker() {
   App.setStage('Subjects');
 
   const subjects = [
-    { id: 'biology',  label: 'Biology',   sub: 'Separate Science · Paper 1 & 2', available: true  },
-    { id: 'chemistry',label: 'Chemistry', sub: 'Separate Science · Paper 1 & 2', available: true  },
-    { id: 'physics',  label: 'Physics',   sub: 'Separate Science · Paper 1 & 2', available: true  },
-    { id: 'maths',    label: 'Maths',       icon: '📐', sub: 'Coming soon', available: false },
-    { id: 'english',  label: 'English Lit', icon: '📚', sub: 'Coming soon', available: false },
-    { id: 'history',  label: 'History',     icon: '🏛️', sub: 'Coming soon', available: false },
+    { id: 'biology',   label: 'Biology',     icon: '🧬', sub: 'AQA Separate Science · Papers 1 & 2', available: true  },
+    { id: 'chemistry', label: 'Chemistry',   icon: '⚗️', sub: 'AQA Separate Science · Papers 1 & 2', available: true  },
+    { id: 'physics',   label: 'Physics',     icon: '⚡', sub: 'AQA Separate Science · Papers 1 & 2', available: true  },
+    { id: 'geography', label: 'Geography',   icon: '🌍', sub: 'AQA · Papers 1, 2 & 3',               available: true  },
+    { id: 'sociology', label: 'Sociology',   icon: '👥', sub: 'AQA · Papers 1 & 2',                  available: true  },
+    { id: 'maths',     label: 'Maths',       icon: '📐', sub: 'Coming soon',                          available: false },
+    { id: 'english',   label: 'English Lit', icon: '📚', sub: 'Coming soon',                          available: false },
   ];
 
   let html = `
@@ -404,22 +405,26 @@ function showSubjectPicker() {
     </div>
     <div class="mode-grid">`;
 
-  // Compute global mastery for the Biology arc
   const _spDeck = Store.getDeck();
-  const _spGood = _spDeck.filter(c => c.difficulty === 'good' || c.difficulty === 'easy' || c.status === 'known').length;
-  const _spMastery = _spDeck.length > 0 ? Math.round((_spGood / _spDeck.length) * 100) : null;
 
   subjects.forEach(s => {
     if (s.available) {
-      const arc = s.id === 'biology' ? _masteryArc(_spMastery) : _masteryArc(null);
+      // Mastery arc: only meaningful for subjects where cards have been saved.
+      // Card IDs are prefixed with the first letter of the subject, so filter accordingly.
+      const prefix = s.id.charAt(0).toLowerCase(); // 'b', 'c', 'p', 'g', 's'…
+      const subCards = _spDeck.filter(c => c.id && c.id.startsWith(`card_${prefix}`));
+      const subGood  = subCards.filter(c => c.difficulty === 'good' || c.difficulty === 'easy' || c.status === 'known').length;
+      const subMastery = subCards.length > 0 ? Math.round((subGood / subCards.length) * 100) : null;
       html += `<div class="mode-card" style="position:relative" onclick="_selectSubject('${s.id}')">
-        ${arc}
+        ${_masteryArc(subMastery)}
+        <span class="mc-icon" style="font-size:2rem">${s.icon}</span>
         <div class="mc-title">${s.label}</div>
         <div class="mc-sub">${s.sub}</div>
       </div>`;
     } else {
       html += `<div class="mode-card" style="position:relative;opacity:0.45" onclick="_comingSoonSubject('${s.label}')">
         ${_lockIcon()}
+        <span class="mc-icon" style="font-size:2rem">${s.icon}</span>
         <div class="mc-title">${s.label}</div>
         <div class="mc-sub">Coming soon</div>
       </div>`;

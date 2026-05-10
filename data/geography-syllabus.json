@@ -1,0 +1,99 @@
+{
+  "subject": "geography",
+  "label": "Geography",
+  "code": "8035",
+  "topics": {
+    "G1": {
+      "name": "The Challenge of Natural Hazards",
+      "description": "Tectonic hazards, weather hazards and climate change",
+      "code": "G1",
+      "icon": "🌋",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "g1-tectonic-hazards",   "name": "Tectonic hazards — earthquakes and volcanoes",               "available": false },
+        { "id": "g1-weather-hazards",    "name": "Weather hazards — tropical storms and extreme weather",       "available": false },
+        { "id": "g1-climate-change",     "name": "Climate change — causes, effects and responses",              "available": false }
+      ]
+    },
+    "G2": {
+      "name": "The Living World",
+      "description": "Ecosystems, tropical rainforests and hot deserts",
+      "code": "G2",
+      "icon": "🌿",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "g2-ecosystems",         "name": "Ecosystems — small scale and global",                         "available": false },
+        { "id": "g2-rainforests",        "name": "Tropical rainforests — characteristics, threats, management", "available": false },
+        { "id": "g2-hot-deserts",        "name": "Hot deserts — characteristics and development challenges",     "available": false }
+      ]
+    },
+    "G3": {
+      "name": "Physical Landscapes in the UK",
+      "description": "Coastal, river and glacial landscapes",
+      "code": "G3",
+      "icon": "🏔️",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "g3-coastal-landscapes", "name": "Coastal landscapes — processes and landforms",                "available": false },
+        { "id": "g3-river-landscapes",   "name": "River landscapes — processes and landforms",                  "available": false },
+        { "id": "g3-glacial-landscapes", "name": "Glacial landscapes — processes and landforms",                "available": false }
+      ]
+    },
+    "G4": {
+      "name": "Urban Issues and Challenges",
+      "description": "Urban growth, inequality and regeneration",
+      "code": "G4",
+      "icon": "🏙️",
+      "paper": 2,
+      "available": true,
+      "subtopics": [
+        { "id": "g4-urban-growth",       "name": "Urban growth — global patterns and urbanisation",             "available": false },
+        { "id": "g4-uk-city",            "name": "A UK city — challenges and urban change",                     "available": false },
+        { "id": "g4-lic-city",           "name": "A rapidly growing LIC city — challenges and solutions",       "available": false }
+      ]
+    },
+    "G5": {
+      "name": "The Changing Economic World",
+      "description": "Development gap, Nigeria, and the UK economy",
+      "code": "G5",
+      "icon": "🌍",
+      "paper": 2,
+      "available": true,
+      "subtopics": [
+        { "id": "g5-development",        "name": "Development — measuring and explaining the gap",              "available": false },
+        { "id": "g5-nigeria",            "name": "Nigeria — changing economy and global links",                  "available": false },
+        { "id": "g5-uk-economy",         "name": "The UK economy — change, north-south divide, development",    "available": false }
+      ]
+    },
+    "G6": {
+      "name": "The Challenge of Resource Management",
+      "description": "Food, water and energy security",
+      "code": "G6",
+      "icon": "💧",
+      "paper": 2,
+      "available": true,
+      "subtopics": [
+        { "id": "g6-resource-overview",  "name": "Resource management — food, water and energy globally",       "available": false },
+        { "id": "g6-food",               "name": "Food — demand, supply and sustainability",                    "available": false },
+        { "id": "g6-water",              "name": "Water — demand, supply and management",                       "available": false },
+        { "id": "g6-energy",             "name": "Energy — demand, supply and the future",                      "available": false }
+      ]
+    },
+    "G7": {
+      "name": "Geographical Skills & Fieldwork",
+      "description": "Map skills, data handling and fieldwork techniques",
+      "code": "G7",
+      "icon": "🗺️",
+      "paper": 3,
+      "available": true,
+      "subtopics": [
+        { "id": "g7-map-skills",         "name": "Map skills — OS maps, grid references and relief",            "available": false },
+        { "id": "g7-data-skills",        "name": "Data skills — graphs, statistics and GIS",                    "available": false },
+        { "id": "g7-fieldwork",          "name": "Fieldwork — planning, collecting and evaluating",              "available": false }
+      ]
+    }
+  }
+}

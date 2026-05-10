@@ -1,0 +1,81 @@
+{
+  "subject": "sociology",
+  "label": "Sociology",
+  "code": "8192",
+  "topics": {
+    "S1": {
+      "name": "Families",
+      "description": "Types of family, changing patterns, gender roles and childhood",
+      "code": "S1",
+      "icon": "👨‍👩‍👧",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "s1-family-types",       "name": "Types of family — nuclear, extended, lone-parent and more",  "available": false },
+        { "id": "s1-family-change",      "name": "Changing family patterns — divorce, cohabitation, birth rate","available": false },
+        { "id": "s1-gender-roles",       "name": "Gender roles in the family — domestic labour and power",      "available": false },
+        { "id": "s1-childhood",          "name": "Childhood — social construction and changing status",          "available": false },
+        { "id": "s1-family-theory",      "name": "Sociological perspectives on the family",                     "available": false }
+      ]
+    },
+    "S2": {
+      "name": "Education",
+      "description": "Role of education, inequality in achievement and school experience",
+      "code": "S2",
+      "icon": "🏫",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "s2-role-education",     "name": "Role of education — functions and perspectives",              "available": false },
+        { "id": "s2-class-achievement",  "name": "Social class and educational achievement",                    "available": false },
+        { "id": "s2-gender-achievement", "name": "Gender and educational achievement",                          "available": false },
+        { "id": "s2-ethnicity-achievement","name": "Ethnicity and educational achievement",                     "available": false },
+        { "id": "s2-school-experience",  "name": "School experience — labelling, subcultures and the curriculum","available": false }
+      ]
+    },
+    "S3": {
+      "name": "Research Methods",
+      "description": "Primary and secondary data, research design and ethics",
+      "code": "S3",
+      "icon": "🔬",
+      "paper": 1,
+      "available": true,
+      "subtopics": [
+        { "id": "s3-types-data",         "name": "Types of data — primary, secondary, quantitative, qualitative","available": false },
+        { "id": "s3-questionnaires",     "name": "Questionnaires and structured interviews",                    "available": false },
+        { "id": "s3-unstructured",       "name": "Unstructured interviews and observation",                     "available": false },
+        { "id": "s3-sampling",           "name": "Sampling — methods and representativeness",                   "available": false },
+        { "id": "s3-ethics",             "name": "Ethics in sociological research",                             "available": false }
+      ]
+    },
+    "S4": {
+      "name": "Crime and Deviance",
+      "description": "Measuring crime, explanations and social group patterns",
+      "code": "S4",
+      "icon": "⚖️",
+      "paper": 2,
+      "available": true,
+      "subtopics": [
+        { "id": "s4-measuring-crime",    "name": "Measuring crime — official statistics and limitations",       "available": false },
+        { "id": "s4-explanations-crime", "name": "Sociological explanations of crime and deviance",             "available": false },
+        { "id": "s4-social-groups",      "name": "Social groups and crime — class, gender and ethnicity",       "available": false },
+        { "id": "s4-social-control",     "name": "Social control — formal and informal",                        "available": false }
+      ]
+    },
+    "S5": {
+      "name": "Social Stratification",
+      "description": "Class, gender, ethnicity and age as dimensions of inequality",
+      "code": "S5",
+      "icon": "📊",
+      "paper": 2,
+      "available": true,
+      "subtopics": [
+        { "id": "s5-social-class",       "name": "Social class — measuring, changing and life chances",         "available": false },
+        { "id": "s5-gender",             "name": "Gender inequality — work, pay and power",                     "available": false },
+        { "id": "s5-ethnicity",          "name": "Ethnicity — inequality and identity",                         "available": false },
+        { "id": "s5-age",                "name": "Age — ageism, youth and the elderly",                         "available": false },
+        { "id": "s5-theory",             "name": "Sociological perspectives on stratification",                  "available": false }
+      ]
+    }
+  }
+}

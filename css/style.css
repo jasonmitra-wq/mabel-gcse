@@ -275,37 +275,25 @@ body::before {
 .cp-feedback.correct { background: rgba(107,203,119,0.1); color: var(--green); }
 .cp-feedback.wrong   { background: rgba(255,107,107,0.08); color: #ffaaaa; }
 
-/* Tables */
-.lesson-table-wrap { overflow-x: auto; margin: 0.75rem 0 0.5rem; }
-.lesson-table {
-  width: 100%; border-collapse: collapse; font-size: 1rem;
-}
-.lesson-table th {
-  background: rgba(232,160,64,0.10); padding: 0.55rem 0.75rem;
-  text-align: left; border-bottom: 1px solid var(--border2);
-  font-weight: 600; color: var(--amber);
-  font-size: 0.73rem; letter-spacing: 0.05em; text-transform: uppercase;
-}
-.lesson-table td {
-  padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top;
-}
-.lesson-table tr:last-child td { border-bottom: none; }
-.lesson-table tr:nth-child(even) td { background: rgba(255,255,255,0.015); }
+/* Tables — see .lesson-table-wrap/.lesson-table below (retro scientific print section) */
 
-/* Diagrams */
+/* Diagrams (legacy .diagram-wrap — matches .diag-plate aesthetic) */
 .diagram-wrap {
-  background: var(--s2); border: 1px solid var(--border2);
-  border-radius: var(--r); padding: 1rem; margin: 0.75rem 0;
+  background: #181510;
+  border: 1px solid rgba(232,160,64,0.18);
+  border-radius: 14px; padding: 1.25rem 1.35rem 1rem;
+  margin: 1.75rem auto; max-width: 540px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 8px 32px rgba(0,0,0,0.45);
   overflow: hidden;
 }
 .diagram-title {
-  font-size: 0.7rem; font-weight: 700; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.08em;
-  margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.65rem; font-weight: 700; color: rgba(232,160,64,0.65);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.5rem;
 }
-.diagram-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.diagram-title::after { content: ''; flex: 1; height: 1px; background: rgba(232,160,64,0.2); }
 .diagram-wrap svg { width: 100%; height: auto; display: block; }
-.diagram-wrap img { width: 100%; height: auto; display: block; border-radius: var(--r-sm); }
+.diagram-wrap img { width: 100%; height: auto; display: block; border-radius: 6px; }
 
 /* Label exercise */
 .label-exercise {
@@ -885,6 +873,95 @@ body::before {
   background: rgba(78,207,170,0.12);
   border-color: rgba(78,207,170,0.35);
 }
+
+/* ── DIAGRAM PLATE — retro scientific illustration frame ── */
+/*
+   All diagrams sit inside a .diag-plate — a warm dark panel that
+   evokes 1960s/70s scientific publication plates. The background is
+   a deep warm near-black (not the cold blue of the old design),
+   the border reads like a printed page edge, and the caption is
+   set in italic to match the period.
+*/
+.diag-plate {
+  max-width: 540px;
+  margin: 1.75rem auto;
+  background: #181510;          /* warmer than --s1, hints at aged paper */
+  border: 1px solid rgba(232,160,64,0.18);  /* amber hairline — like a printed plate border */
+  border-radius: 14px;
+  padding: 1.25rem 1.35rem 1rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.04),  /* subtle inner highlight */
+    0 8px 32px rgba(0,0,0,0.45);
+  position: relative;
+}
+/* Thin amber rule above the plate — like a page header rule */
+.diag-plate::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 1.35rem; right: 1.35rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(232,160,64,0.4), transparent);
+  border-radius: 1px;
+}
+.diag-plate-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(232,160,64,0.65);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+.diag-plate img {
+  width: 100%; height: auto; display: block; border-radius: 6px;
+}
+.diag-plate-caption {
+  margin: 0.85rem 0 0;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+.diag-plate-examtip {
+  margin: 0.6rem 0 0;
+  font-size: 14px;
+  color: var(--amber);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* ── LESSON TABLES — warm retro scientific print ── */
+.lesson-table-wrap {
+  overflow-x: auto;
+  margin: 0.75rem 0 0.5rem;
+  border: 1px solid rgba(232,160,64,0.15);
+  border-radius: 12px;
+  overflow: hidden;  /* keeps rounded corners on the table */
+}
+.lesson-table {
+  width: 100%; border-collapse: collapse; font-size: 1rem;
+  background: #181510;
+}
+.lesson-table th {
+  background: rgba(232,160,64,0.12);
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(232,160,64,0.2);
+  font-weight: 700;
+  color: var(--amber);
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.lesson-table td {
+  padding: 0.55rem 0.85rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  vertical-align: top;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.lesson-table tr:last-child td { border-bottom: none; }
+.lesson-table tr:nth-child(even) td { background: rgba(232,160,64,0.03); }
 
 /* ── HOME v2 LAYOUT ── */
 .home-continue {

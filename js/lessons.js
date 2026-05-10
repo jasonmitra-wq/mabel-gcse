@@ -625,15 +625,16 @@ const Lessons = (() => {
     const title   = diagDef?.title || diagramId;
     const subject = data.subject || 'biology';
     const cap     = caption || diagDef?.caption || '';
-    return `<div id="diag_${diagramId}" style="max-width:520px;margin:28px auto;background:#1E1E2E;border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.10)">
+    return `<div id="diag_${diagramId}" class="diag-plate">
+      <div class="diag-plate-title">${title}</div>
       <img src="diagrams/${subject}/${diagramId}.svg" alt="${title}"
         onerror="this.style.display='none';document.getElementById('diagFallback_${diagramId}').style.display='block'"
         style="width:100%;height:auto;display:block;border-radius:6px">
       <div id="diagFallback_${diagramId}" style="display:none;color:var(--muted);font-size:0.83rem;font-style:italic;padding:0.5rem;text-align:center">
-        Diagram: ${title}
+        Diagram not yet available
       </div>
-      ${cap ? `<p style="margin:12px 0 0;font-size:13px;font-style:italic;color:var(--muted);line-height:1.5">${cap}</p>` : ''}
-      ${showExamTip ? `<p style="margin:8px 0 0;font-size:14px;color:#E8A838;line-height:1.5">⚠️ Diagrams like this come up in questions — sketch this in your notes.</p>` : ''}
+      ${cap ? `<p class="diag-plate-caption">${cap}</p>` : ''}
+      ${showExamTip ? `<p class="diag-plate-examtip">⚠️ Diagrams like this come up in questions — sketch this in your notes.</p>` : ''}
     </div>`;
   }
 

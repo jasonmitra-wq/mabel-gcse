@@ -94,31 +94,34 @@ async function boot() {
 }
 
 // ── TUTOR GREETING ────────────────────────────────────────────
+// pet: first interest (shown only if interest[0] is set).
+// text can be a string or a function; functions receive (petName, hobby).
 const _GREETINGS = [
-  { text: "Right. Let's get something done today.",                                          silver: false },
-  { text: "Good to see you. Silver better not be sitting on your notes again.",              silver: true  },
-  { text: "Pick up where you left off — you were doing well.",                               silver: false },
-  { text: "Small sessions add up. Let's do one now.",                                        silver: false },
-  { text: "Every topic you cover today is one less thing to worry about in June.",           silver: false },
-  { text: "Back again. Good. Consistency beats cramming every time.",                        silver: false },
-  { text: "You're building something here. Keep going.",                                     silver: false },
-  { text: "Even 20 minutes today makes a difference. Let's start.",                         silver: false },
-  { text: "The exam doesn't know you revised last week. It only knows today.",               silver: false },
-  { text: "Come on then. Pick a topic.",                                                     silver: false },
+  { text: "Right. Let's get something done today.",                                          pet: false },
+  { text: (pet) => `Good to see you. ${pet} better not be sitting on your notes again.`,    pet: true  },
+  { text: "Pick up where you left off — you were doing well.",                               pet: false },
+  { text: "Small sessions add up. Let's do one now.",                                        pet: false },
+  { text: "Every topic you cover today is one less thing to worry about in June.",           pet: false },
+  { text: "Back again. Good. Consistency beats cramming every time.",                        pet: false },
+  { text: "You're building something here. Keep going.",                                     pet: false },
+  { text: "Even 20 minutes today makes a difference. Let's start.",                         pet: false },
+  { text: "The exam doesn't know you revised last week. It only knows today.",               pet: false },
+  { text: "Come on then. Pick a topic.",                                                     pet: false },
 ];
 
 function _pickGreeting() {
-  const sp = Store.getMabelProfile()?.silver || {};
-  const silverKnown = !!(sp.colour || sp.mood || sp.habits?.length);
-  const lastIdx = Store.get('ui_lastGreeting') ?? -1;
+  const interests  = Store.getInterests();
+  const petName    = interests[0] || null;
+  const petKnown   = !!petName;
+  const lastIdx    = Store.get('ui_lastGreeting') ?? -1;
   const pool = _GREETINGS
     .map((g, i) => ({ ...g, i }))
-    .filter(g => g.i !== lastIdx && (!g.silver || silverKnown));
-  // fallback: if pool empty (e.g. only 1 eligible message), allow repeat
-  const eligible = pool.length ? pool : _GREETINGS.map((g, i) => ({ ...g, i })).filter(g => !g.silver || silverKnown);
+    .filter(g => g.i !== lastIdx && (!g.pet || petKnown));
+  const eligible = pool.length ? pool : _GREETINGS.map((g, i) => ({ ...g, i })).filter(g => !g.pet || petKnown);
   const pick = eligible[Math.floor(Math.random() * eligible.length)];
   Store.set('ui_lastGreeting', pick.i);
-  return pick.text;
+  const text = typeof pick.text === 'function' ? pick.text(petName) : pick.text;
+  return text;
 }
 
 // ── HOME ───────────────────────────────────────────────────────
@@ -144,7 +147,7 @@ function showHome(hasSaved) {
 
   const streak = Store.getStreak();
   const streakHtml = streak.currentStreak >= 2
-    ? `<div style="font-size:0.85rem;color:var(--yellow);margin-top:0.5rem;font-weight:600">${streak.currentStreak} day streak 🔥</div>`
+    ? `<div style="font-size:0.85rem;color:var(--amber);margin-top:0.5rem;font-weight:600">${streak.currentStreak} day streak 🔥</div>`
     : '';
 
   const greeting = _pickGreeting();
@@ -152,11 +155,11 @@ function showHome(hasSaved) {
   const main = document.getElementById('main');
   main.innerHTML = `
     <div class="home-hero">
-      <h1>Mabel's GCSE Tutor</h1>
+      <h1>${Store.getChildName()}'s GCSE Tutor</h1>
       <p>Everything you need to do well in your exams.</p>
       ${streakHtml}
     </div>
-    <p style="font-size:16px;color:#C8A8E8;margin:0.1rem 0 1.1rem;line-height:1.6">${greeting}</p>
+    <p style="font-size:16px;color:rgba(245,240,232,0.7);margin:0.1rem 0 1.1rem;line-height:1.6">${greeting}</p>
     <div class="mode-grid" id="modeGrid"></div>
     <div id="upcomingSection"></div>`;
 
@@ -522,7 +525,7 @@ function showSubtopics(topicCode, topicData) {
 
     let chipHtml = '';
     if (!avail) {
-      chipHtml = `<span class="st-chip" style="background:rgba(255,217,61,0.1);color:var(--yellow);border:1px solid rgba(255,217,61,0.3)">Soon</span>`;
+      chipHtml = `<span class="st-chip" style="background:rgba(232,160,64,0.1);color:var(--amber);border:1px solid rgba(232,160,64,0.3)">Soon</span>`;
     } else if (complete) {
       chipHtml = `<span class="st-chip" style="background:rgba(107,203,119,0.1);color:var(--green);border:1px solid rgba(107,203,119,0.3)">✓ Complete</span>`;
     } else if (!started) {
@@ -676,19 +679,19 @@ function showDashboard() {
         ${profile.summary ? `<p style="margin-bottom:0.65rem">${profile.summary}</p>` : ''}
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-bottom:0.65rem">
           <div style="background:rgba(107,203,119,0.08);border:1px solid rgba(107,203,119,0.2);border-radius:8px;padding:0.45rem 0.65rem;text-align:center">
-            <div style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;color:var(--green)">${liked.length}</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:800;color:var(--green)">${liked.length}</div>
             <div style="font-size:0.7rem;color:var(--muted)">👍 Worked well</div>
           </div>
           <div style="background:rgba(255,217,61,0.06);border:1px solid rgba(255,217,61,0.2);border-radius:8px;padding:0.45rem 0.65rem;text-align:center">
-            <div style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;color:var(--yellow)">${wantsExamples}</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:800;color:var(--amber)">${wantsExamples}</div>
             <div style="font-size:0.7rem;color:var(--muted)">🔁 Wants examples</div>
           </div>
           <div style="background:rgba(78,205,196,0.06);border:1px solid rgba(78,205,196,0.2);border-radius:8px;padding:0.45rem 0.65rem;text-align:center">
-            <div style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;color:var(--teal)">${wantsMore}</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:800;color:var(--teal)">${wantsMore}</div>
             <div style="font-size:0.7rem;color:var(--muted)">🔍 Wants more detail</div>
           </div>
           <div style="background:rgba(199,125,255,0.06);border:1px solid rgba(199,125,255,0.2);border-radius:8px;padding:0.45rem 0.65rem;text-align:center">
-            <div style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;color:var(--purple)">${wantsSimpler}</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:800;color:var(--purple)">${wantsSimpler}</div>
             <div style="font-size:0.7rem;color:var(--muted)">✂️ Wants simpler</div>
           </div>
         </div>
@@ -697,41 +700,31 @@ function showDashboard() {
     }
 
     // Silver & skating details gathered so far
-    const silverFacts  = [silver.colour, silver.breed, silver.mood].filter(Boolean);
+    const silverFacts  = [silver.colour, silver.personality, silver.habit].filter(Boolean);
     const skatingFacts = [
-      skating.monthsIn  ? `${skating.monthsIn} months in` : null,
+      skating.monthsIn    ? `${skating.monthsIn} months in` : null,
       skating.currentMove ? `working on ${skating.currentMove}` : null,
-      skating.level ? skating.level : null,
     ].filter(Boolean);
 
     if (silverFacts.length || skatingFacts.length) {
+      // Build a Silver summary line from known fields
       let silverLine = '';
-      if (silver.colour && silver.breed && silver.mood) {
-        silverLine = `I know Silver is ${silver.colour}, ${silver.breed}, and ${silver.mood}.`;
-      } else if (silver.colour && silver.breed) {
-        silverLine = `I know Silver is ${silver.colour} and a ${silver.breed}.`;
-      } else if (silver.colour && silver.mood) {
-        silverLine = `I know Silver is ${silver.colour} and ${silver.mood}.`;
+      if (silver.colour && silver.personality && silver.habit) {
+        silverLine = `I know Silver is ${silver.colour}, ${silver.personality}, and her signature move is "${silver.habit}".`;
+      } else if (silver.colour && silver.personality) {
+        silverLine = `I know Silver is ${silver.colour} and ${silver.personality}.`;
+      } else if (silver.colour && silver.habit) {
+        silverLine = `I know Silver is ${silver.colour} and likes to ${silver.habit}.`;
       } else if (silverFacts.length) {
         silverLine = `I know Silver is ${silverFacts[0]}.`;
       }
 
-      let skatingLine = '';
-      if (skating.monthsIn && skating.currentMove) {
-        skatingLine = `You've been skating for ${skating.monthsIn} months and you're working on ${skating.currentMove}.`;
-      } else if (skating.monthsIn && skating.level) {
-        skatingLine = `You've been skating for ${skating.monthsIn} months at ${skating.level} level.`;
-      } else if (skating.monthsIn) {
-        skatingLine = `You've been skating for ${skating.monthsIn} months.`;
-      } else if (skating.currentMove) {
-        skatingLine = `You're working on ${skating.currentMove}.`;
-      } else if (skating.level) {
-        skatingLine = `You're at ${skating.level} level.`;
-      }
+      // Skating: prefer contextual line from personality layer
+      const skatingLine = Personality.getDashboardLine();
 
       html += `<div style="background:rgba(199,125,255,0.05);border:1px solid rgba(199,125,255,0.15);border-radius:12px;padding:0.75rem 1rem;margin-top:0.5rem;font-size:0.82rem;line-height:1.85">`;
       if (silverLine)  html += `<div>🐱 ${silverLine}</div>`;
-      if (skatingLine) html += `<div>⛸️ ${skatingLine}</div>`;
+      if (skatingLine) html += `<div style="margin-top:${silverLine ? '0.4rem' : '0'}">${skatingLine}</div>`;
       html += `</div>`;
     }
 
@@ -754,7 +747,11 @@ function showDashboard() {
   html += `<div style="display:flex;gap:0.55rem;flex-wrap:wrap;margin-top:1rem">
     <button class="btn pri" onclick="showTopics()">🧠 Keep revising</button>
     <button class="btn" onclick="showCardDeck()">🃏 Card deck</button>
-    <button class="btn red" onclick="_confirmReset()">🗑 Reset progress</button>
+  </div>
+  <div style="text-align:center;margin-top:1.5rem">
+    <span id="resetProgressWrap">
+      <button onclick="_showResetConfirm()" style="background:none;border:none;color:rgba(224,82,82,0.70);font-size:13px;cursor:pointer;padding:0.25rem 0.5rem;font-family:inherit">🗑️ Reset progress</button>
+    </span>
   </div></div>`;
 
   document.getElementById('main').innerHTML = html;
@@ -766,11 +763,28 @@ function _statCell(icon, val, label) {
     <div class="stat-label">${label}</div></div>`;
 }
 
-function _confirmReset() {
-  if (!confirm('Reset all progress, scores and card deck? This cannot be undone.')) return;
+function _showResetConfirm() {
+  const wrap = document.getElementById('resetProgressWrap');
+  if (!wrap) return;
+  wrap.innerHTML = `
+    <span style="font-size:13px;color:var(--muted)">Are you sure? This can't be undone.</span>
+    <span style="display:inline-flex;gap:0.5rem;align-items:center;margin-left:0.6rem">
+      <button onclick="_resetCancel()" style="background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;padding:0.2rem 0.4rem;font-family:inherit">Cancel</button>
+      <button onclick="_resetConfirm()" style="background:#E05252;border:none;color:#fff;font-size:13px;font-weight:600;border-radius:6px;padding:0.25rem 0.7rem;cursor:pointer;font-family:inherit">Yes, reset</button>
+    </span>`;
+}
+
+function _resetCancel() {
+  const wrap = document.getElementById('resetProgressWrap');
+  if (!wrap) return;
+  wrap.innerHTML = `<button onclick="_showResetConfirm()" style="background:none;border:none;color:rgba(224,82,82,0.70);font-size:13px;cursor:pointer;padding:0.25rem 0.5rem;font-family:inherit">🗑️ Reset progress</button>`;
+}
+
+function _resetConfirm() {
+  const wrap = document.getElementById('resetProgressWrap');
+  if (wrap) wrap.innerHTML = `<span style="font-size:13px;color:var(--muted)">Done — progress cleared</span>`;
   Store.clearAll();
-  showHome();
-  App.toast('All progress cleared');
+  setTimeout(() => showHome(), 1100);
 }
 
 // ── ERROR LOG VIEW ─────────────────────────────────────────────
@@ -945,11 +959,11 @@ function showTestPrep() {
         <p style="font-size:0.88rem;color:var(--muted);margin-bottom:0.85rem">Tell me about one test and I'll build you a focused day-by-day revision plan.</p>
         <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem">
           <input id="testSubject" type="text" placeholder="Subject (e.g. Biology)" value="Biology"
-            style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none">
+            style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none">
           <input id="testTopic" type="text" placeholder="Topic (e.g. Digestive system)"
-            style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none">
+            style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none">
           <input id="testDate" type="date"
-            style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none">
+            style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none">
         </div>
         <button class="btn pri full" onclick="_buildTestPlan()">📋 Build revision plan</button>
       </div>
@@ -1153,7 +1167,7 @@ function _renderTestPlan(plan, topic, daysUntil) {
     // Forward-looking framing — "days to prepare" not "days left/until"
     const prepLabel = daysUntil <= 3 ? '🎯 Make it count' : daysUntil <= 7 ? '⚡ Good time to focus' : '✅ Good time to prepare';
     html += `<div style="background:rgba(255,107,107,0.06);border:1px solid rgba(255,107,107,0.2);border-radius:12px;padding:0.85rem 1rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem">
-      <div style="font-family:'Fraunces',serif;font-size:2rem;font-weight:800;color:${urgency}">${daysUntil}</div>
+      <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:${urgency}">${daysUntil}</div>
       <div><div style="font-weight:600">day${daysUntil!==1?'s':''} to prepare</div>
       <div style="font-size:0.78rem;color:var(--muted)">${prepLabel}</div></div>
     </div>`;
@@ -1176,7 +1190,7 @@ function _renderTestPlan(plan, topic, daysUntil) {
 
   if (plan.dayBefore) {
     html += `<div style="background:rgba(255,217,61,0.06);border:1px solid rgba(255,217,61,0.25);border-radius:12px;padding:0.85rem 1rem;margin-bottom:0.5rem">
-      <div style="font-weight:700;color:var(--yellow);margin-bottom:0.35rem">🌙 Night before</div>
+      <div style="font-weight:700;color:var(--amber);margin-bottom:0.35rem">🌙 Night before</div>
       <div style="font-size:0.83rem;color:var(--muted)">${(plan.dayBefore.tasks||[]).map(t => '• ' + t).join('<br>')}</div>
     </div>`;
   }
@@ -1260,7 +1274,7 @@ function _renderFullTimetable(plan) {
     html += `<div class="section-label" style="margin-top:1rem">Night-before plans</div>`;
     plan.tests.forEach(t => {
       html += `<div style="background:rgba(255,217,61,0.06);border:1px solid rgba(255,217,61,0.25);border-radius:12px;padding:0.85rem 1rem;margin-bottom:0.5rem">
-        <div style="font-weight:700;color:var(--yellow);margin-bottom:0.35rem">🌙 Night before: ${t.name}</div>
+        <div style="font-weight:700;color:var(--amber);margin-bottom:0.35rem">🌙 Night before: ${t.name}</div>
         <div style="font-size:0.83rem;color:var(--muted)">${(t.nightBefore?.tasks||[]).map(task => '• ' + task).join('<br>')}</div>
       </div>`;
     });

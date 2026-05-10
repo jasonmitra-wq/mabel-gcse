@@ -53,8 +53,8 @@ const Cards = (() => {
             ${statCell('✅', known,    'Known')}
           </div>
 
-          ${due > 0 ? `<div style="background:rgba(255,217,61,0.08);border:1px solid rgba(255,217,61,0.25);border-radius:12px;padding:0.7rem 1rem;margin:0.5rem 0;font-size:0.85rem">
-            ⏰ <strong style="color:var(--yellow)">${due} card${due!==1?'s':''} due for review today</strong>
+          ${due > 0 ? `<div style="background:rgba(232,160,64,0.08);border:1px solid rgba(232,160,64,0.25);border-radius:12px;padding:0.7rem 1rem;margin:0.5rem 0;font-size:0.85rem">
+            ⏰ <strong style="color:var(--amber)">${due} card${due!==1?'s':''} due for review today</strong>
           </div>` : ''}
 
           <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin:0.85rem 0" id="drillBtns"></div>
@@ -117,7 +117,7 @@ const Cards = (() => {
       const pct    = Math.round((kn / cards.length) * 100);
       const barCol = pct >= 80 ? '#52C97A' : pct >= 71 ? '#6BBDE3' : pct >= 41 ? '#E8A838' : '#E05252';
       const dueBadge = due > 0
-        ? `<span style="font-size:0.72rem;color:var(--yellow);margin-left:0.3rem">⏰ ${due} due</span>`
+        ? `<span style="font-size:0.72rem;color:var(--amber);margin-left:0.3rem">⏰ ${due} due</span>`
         : '';
       wrap.insertAdjacentHTML('beforeend', `
         <div style="background:var(--s1);border:1px solid var(--border2);border-radius:12px;
@@ -131,7 +131,9 @@ const Cards = (() => {
         </div>`);
     });
     wrap.insertAdjacentHTML('beforeend', `
-      <button class="btn red full" style="margin-top:1rem" onclick="Cards.clearDeck()">🗑 Clear entire deck</button>`);
+      <div id="clearDeckWrap" style="text-align:center;margin-top:1.5rem">
+        <button onclick="Cards.showClearDeckConfirm()" style="background:none;border:none;color:rgba(224,82,82,0.70);font-size:13px;cursor:pointer;padding:0.25rem 0.5rem;font-family:inherit">🗑️ Clear entire deck</button>
+      </div>`);
   }
 
   // ── Start drill session ───────────────────────────────────
@@ -194,7 +196,7 @@ const Cards = (() => {
                       : card.status === 'learning' ? '🔁 Learning'
                       : '👀 New';
     const statusColor = (diff === 'easy' || card.status === 'known')    ? 'var(--green)'
-                      : (diff === 'good' || diff === 'hard' || card.status === 'learning') ? 'var(--yellow)'
+                      : (diff === 'good' || diff === 'hard' || card.status === 'learning') ? 'var(--amber)'
                       : diff === 'again' ? '#ff6b6b'
                       : 'var(--muted)';
 
@@ -418,11 +420,34 @@ const Cards = (() => {
       </div>`;
   }
 
+  function showClearDeckConfirm() {
+    const wrap = document.getElementById('clearDeckWrap');
+    if (!wrap) return;
+    wrap.innerHTML = `
+      <span style="font-size:13px;color:var(--muted)">Are you sure? This can't be undone.</span>
+      <span style="display:inline-flex;gap:0.5rem;align-items:center;margin-left:0.6rem">
+        <button onclick="Cards.cancelClearDeck()" style="background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;padding:0.2rem 0.4rem;font-family:inherit">Cancel</button>
+        <button onclick="Cards.confirmClearDeck()" style="background:#E05252;border:none;color:#fff;font-size:13px;font-weight:600;border-radius:6px;padding:0.25rem 0.7rem;cursor:pointer;font-family:inherit">Yes, clear</button>
+      </span>`;
+  }
+
+  function cancelClearDeck() {
+    const wrap = document.getElementById('clearDeckWrap');
+    if (!wrap) return;
+    wrap.innerHTML = `<button onclick="Cards.showClearDeckConfirm()" style="background:none;border:none;color:rgba(224,82,82,0.70);font-size:13px;cursor:pointer;padding:0.25rem 0.5rem;font-family:inherit">🗑️ Clear entire deck</button>`;
+  }
+
+  function confirmClearDeck() {
+    const wrap = document.getElementById('clearDeckWrap');
+    if (wrap) wrap.innerHTML = `<span style="font-size:13px;color:var(--muted)">Done — deck cleared</span>`;
+    Store.clearDeck();
+    setTimeout(() => showDeck(), 1100);
+  }
+
   function clearDeck() {
-    if (!confirm('Clear your entire card deck? This cannot be undone.')) return;
+    // kept for internal/legacy use — UI now routes through showClearDeckConfirm
     Store.clearDeck();
     showDeck();
-    App.toast('Deck cleared');
   }
 
   // ── Save cards from lesson ────────────────────────────────
@@ -448,5 +473,5 @@ const Cards = (() => {
     return 'What do you know about: ' + words + '…?';
   }
 
-  return { showDeck, startDrill, flip, rate, skip, clearDeck, saveFromLesson, startMatchingGame, _matchFront, _matchBack, startAgainPass, finishDrill: _finishDrill };
+  return { showDeck, startDrill, flip, rate, skip, clearDeck, showClearDeckConfirm, cancelClearDeck, confirmClearDeck, saveFromLesson, startMatchingGame, _matchFront, _matchBack, startAgainPass, finishDrill: _finishDrill };
 })();

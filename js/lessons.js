@@ -9,7 +9,6 @@ const Lessons = (() => {
   let _cpScores           = {};
   let _cpHintLevels       = {};
   let _usedJokeIds        = [];
-  let _profileQuestionShown = false;
   let _steps              = [];
   let _stepIdx            = 0;
   let _stepCpDone         = false; // checkpoint answered this step
@@ -44,19 +43,22 @@ const Lessons = (() => {
       return;
     }
 
-    _current              = data;
-    _current.subject      = subject;
-    _subtopicName         = subtopicName;
-    _cpScores             = {};
-    _cpHintLevels         = {};
-    _usedJokeIds          = [];
-    _profileQuestionShown = false;
+    _current          = data;
+    _current.subject  = subject;
+    _subtopicName     = subtopicName;
+    _cpScores         = {};
+    _cpHintLevels     = {};
+    _usedJokeIds      = [];
     Personality.incrementLessonCount();
     Store.markCovered(subtopicId);
 
     _steps   = _buildSteps(data);
     _stepIdx = 0;
     _renderStep();
+
+    // Natural break point 1: lesson start — offer a profile question
+    // after a short delay so the intro content is visible first.
+    setTimeout(() => Personality.tryAskQuestion(), 3500);
   }
 
   function close() {
@@ -199,7 +201,7 @@ const Lessons = (() => {
     return `
       <div style="padding:1.25rem 0 0.75rem">
         <div style="margin-bottom:1rem">${Icons.get('intro', 56)}</div>
-        <h2 style="font-family:'Fraunces',serif;font-size:1.7rem;font-weight:800;line-height:1.2;margin-bottom:0.75rem">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:800;line-height:1.2;margin-bottom:0.75rem">
           ${_current.title || _subtopicName}
         </h2>
         <p style="font-size:1.1rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem">
@@ -238,18 +240,8 @@ const Lessons = (() => {
     }
     html += `</div>`;
     if (i === 1) {
-      if (!_profileQuestionShown) {
-        const asked = Personality.renderQuestion(Personality.getLessonCount());
-        if (asked) {
-          _profileQuestionShown = true;
-        } else {
-          const moment = Personality.renderMoment('silver', _usedJokeIds);
-          _usedJokeIds.push(moment.id);
-        }
-      } else {
-        const moment = Personality.renderMoment('silver', _usedJokeIds);
-        _usedJokeIds.push(moment.id);
-      }
+      const moment = Personality.renderMoment('silver', _usedJokeIds);
+      _usedJokeIds.push(moment.id);
     }
     if (i === 3) {
       const moment = Personality.renderMoment('skating', _usedJokeIds);
@@ -277,16 +269,16 @@ const Lessons = (() => {
     const hasTerms   = kp.keyTerms?.length;
     return `
       <div>
-        <p style="font-size:13px;font-weight:600;color:var(--yellow);margin-bottom:0.75rem;letter-spacing:0.08em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('notes', 18)} Write these into your notes</p>
+        <p style="font-size:13px;font-weight:600;color:var(--amber);margin-bottom:0.75rem;letter-spacing:0.08em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('notes', 18)} Write these into your notes</p>
         ${hasBullets ? `<ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.6rem">
           ${kp.writeBullets.map(b => {
             const dash = b.indexOf(' — ');
             if (dash !== -1) {
               const term = b.slice(0, dash);
               const def  = b.slice(dash + 3);
-              return `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--yellow);font-weight:700;font-size:14px">•</span><span style="font-weight:700;font-size:18px;color:#fff">${term}</span><span style="color:var(--muted);font-weight:400"> — </span><span style="font-weight:400;font-size:17px;color:rgba(255,255,255,0.85)">${def}</span></li>`;
+              return `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--amber);font-weight:700;font-size:14px">•</span><span style="font-weight:700;font-size:18px;color:#fff">${term}</span><span style="color:var(--muted);font-weight:400"> — </span><span style="font-weight:400;font-size:17px;color:rgba(255,255,255,0.85)">${def}</span></li>`;
             }
-            return `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--yellow);font-weight:700;font-size:14px">•</span><span style="font-weight:400;font-size:17px;color:rgba(255,255,255,0.85)">${b}</span></li>`;
+            return `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--amber);font-weight:700;font-size:14px">•</span><span style="font-weight:400;font-size:17px;color:rgba(255,255,255,0.85)">${b}</span></li>`;
           }).join('')}
         </ul>` : ''}
         ${hasTerms ? `
@@ -314,7 +306,7 @@ const Lessons = (() => {
           <tbody>${t.rows.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody>
         </table>
       </div>
-      <p style="font-size:0.95rem;font-weight:700;color:var(--yellow);margin-bottom:0.75rem;letter-spacing:0.03em">📋 COPY THIS TABLE INTO YOUR NOTES — every column, every row.</p>
+      <p style="font-size:0.95rem;font-weight:700;color:var(--amber);margin-bottom:0.75rem;letter-spacing:0.03em">📋 COPY THIS TABLE INTO YOUR NOTES — every column, every row.</p>
       <label class="done-check-label">
         <input type="checkbox" id="stepDoneCheck" onchange="Lessons._tryUnlockNext()">
         <span>Done — I've copied the table</span>
@@ -372,7 +364,7 @@ const Lessons = (() => {
     }).join('');
     return `
       <div>
-        <h3 style="font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;margin-bottom:0.35rem">Further watching</h3>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin-bottom:0.35rem">Further watching</h3>
         <p style="font-size:0.92rem;color:var(--muted);margin-bottom:1rem">Watch these to see it explained a different way — pause, rewind, come back.</p>
         ${cards}
       </div>`;
@@ -381,7 +373,7 @@ const Lessons = (() => {
   function _renderAskMeStep() {
     return `
       <div class="askme-wrap">
-        <h3 style="font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;margin-bottom:0.3rem">Anything you're not sure about?</h3>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin-bottom:0.3rem">Anything you're not sure about?</h3>
         <p style="font-size:0.92rem;color:var(--muted);margin-bottom:0.75rem">Ask me anything from this lesson and I'll explain it a different way. There are no silly questions.</p>
         <div class="askme-thread" id="askmeThread"></div>
         <div class="askme-input-row">
@@ -439,7 +431,46 @@ const Lessons = (() => {
   }
 
   function _renderCardsStep() {
+    // ── Curated video thumbnail cards ──
+    const _videos = _current.videos || [];
+    let _videoHtml = '';
+    if (_videos.length) {
+      const _thumbCards = _videos.map(v => {
+        const vid = _ytId(v.url);
+        const thumb = vid
+          ? `<img src="https://img.youtube.com/vi/${vid}/mqdefault.jpg" alt="${v.title}"
+               style="width:120px;height:68px;object-fit:cover;border-radius:7px;flex-shrink:0;background:var(--s2)"
+               onerror="this.style.visibility='hidden'">`
+          : `<div style="width:120px;height:68px;border-radius:7px;background:var(--s2);flex-shrink:0"></div>`;
+        return `
+          <a href="${v.url}" target="_blank" rel="noopener"
+            style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;
+                   background:var(--s2);border:1px solid var(--border2);border-radius:10px;
+                   padding:0.6rem;transition:border-color 0.18s"
+            onmouseover="this.style.borderColor='rgba(107,189,227,0.45)'"
+            onmouseout="this.style.borderColor='var(--border2)'">
+            ${thumb}
+            <div style="flex:1;min-width:0">
+              <p style="font-size:15px;color:var(--fg);font-weight:600;margin:0 0 0.25rem;line-height:1.35;
+                        white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${v.title}</p>
+              <p style="font-size:13px;color:var(--muted);margin:0;line-height:1.4">
+                ${v.source || ''}${v.duration ? ' · ' + v.duration : ''}
+              </p>
+            </div>
+            <span style="font-size:18px;flex-shrink:0;opacity:0.6">▶</span>
+          </a>`;
+      }).join('');
+      _videoHtml = `
+        <div style="margin-bottom:1.25rem">
+          <p style="font-size:14px;color:#6BBDE3;font-weight:600;margin:0 0 0.65rem;letter-spacing:0.02em">Watch to go deeper</p>
+          <div style="display:flex;flex-direction:column;gap:0.55rem">
+            ${_thumbCards}
+          </div>
+        </div>`;
+    }
+
     return `
+      ${_videoHtml}
       <div class="section-divider"><span>Things worth putting on a card</span></div>
       <div style="background:var(--s2);border:1px solid var(--border2);border-radius:14px;padding:1.1rem 1.2rem">
         <p style="font-size:0.85rem;margin-bottom:0.75rem">These are the bits that keep coming up. Save them, and write them out too.</p>
@@ -529,6 +560,10 @@ const Lessons = (() => {
     _cpScores[cpId] = isCorrect;
     _stepCpDone = true;
     _tryUnlockNext();
+
+    // Natural break point 2: after a quick check — offer a profile
+    // question if one hasn't been shown yet this session.
+    setTimeout(() => Personality.tryAskQuestion(), 2200);
   }
 
   function _renderCheckpoint(cp, id) {
@@ -620,7 +655,7 @@ const Lessons = (() => {
       const btn = document.createElement('button');
       btn.id = `csave_${i}`;
       btn.textContent = '+ Save';
-      btn.style.cssText = 'flex-shrink:0;background:rgba(107,203,119,0.1);border:1.5px solid rgba(107,203,119,0.3);color:var(--green);font-family:"DM Sans",sans-serif;font-size:0.73rem;font-weight:600;padding:0.25rem 0.6rem;border-radius:6px;cursor:pointer;transition:all 0.18s';
+      btn.style.cssText = 'flex-shrink:0;background:rgba(107,203,119,0.1);border:1.5px solid rgba(107,203,119,0.3);color:var(--green);font-family:"Inter",sans-serif;font-size:0.73rem;font-weight:600;padding:0.25rem 0.6rem;border-radius:6px;cursor:pointer;transition:all 0.18s';
       btn.onclick = () => _saveOneCard(i, btn, row);
       row.appendChild(num); row.appendChild(text); row.appendChild(btn);
       list.appendChild(row);

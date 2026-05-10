@@ -108,7 +108,8 @@ Only `lessons/biology/` exists. All other subjects are "Coming soon" placeholder
 - Topic codes: never use B1/B2 alone — plain English first, code in brackets after if needed
 - Intro: 2–3 sentences, engaging, slightly surprising
 - Key points: 4–6 max, each readable in 90 seconds
-- Checkpoints: one after every 2 key points (keyed by index in `checkpoints` object)
+- Checkpoints: one after every 2 key points (keyed by **0-based index** in `checkpoints` object — key `"0"` appears after keyPoints[0], key `"2"` after keyPoints[2], etc.)
+  ⚠️ CRITICAL: the checkpoint key determines which keyPoint heading appears in the breadcrumb ("Quick check — {keyPoints[key].heading}"). The question content MUST match the topic of that keyPoint. A mismatch — e.g. an animal-cell question filed under key "1" (plant cells) — shows the wrong breadcrumb and confuses the student. Always verify: does this question belong to the section whose heading will appear above it?
 - Tables: only where genuinely useful, `examFlag: true` if AQA tests it
 - Common mistakes: 3–4 specific mark-losers
 - Exam tips: 2–3 mark-gaining techniques

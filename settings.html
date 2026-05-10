@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings — GCSE Tutor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=4">
+<style>
+  /* ── Settings-specific layout ── */
+  .s-page  { max-width: 560px; margin: 0 auto; }
+  .s-page h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem; font-weight: 800; letter-spacing: -0.03em;
+    margin-bottom: 0.25rem;
+  }
+  .s-page .s-subtitle {
+    font-size: 13px; color: var(--muted); margin-bottom: 1.5rem;
+  }
+
+  /* ── Section cards ── */
+  .s-section {
+    background: var(--s2);
+    border: 1px solid var(--border2);
+    border-radius: 14px;
+    padding: 1.2rem 1.35rem;
+    margin-bottom: 1.1rem;
+  }
+  .s-section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 1rem; display: block;
+  }
+
+  /* ── Preview card (Section 1) ── */
+  .preview-card {
+    background: linear-gradient(135deg, rgba(77,150,255,0.07) 0%, rgba(107,203,119,0.04) 100%);
+    border: 1px solid rgba(77,150,255,0.2);
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1.1rem;
+    transition: border-color 0.25s;
+  }
+  .preview-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em;
+    color: var(--text); margin-bottom: 0.25rem;
+    min-height: 2rem;
+  }
+  .preview-interests {
+    font-size: 13px; color: var(--muted);
+    margin-bottom: 0.9rem; min-height: 1.2em;
+    line-height: 1.5;
+  }
+  .preview-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  .preview-stat {
+    background: var(--s2); border: 1px solid var(--border2);
+    border-radius: 8px; padding: 0.55rem 0.5rem; text-align: center;
+  }
+  .preview-stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem; font-weight: 800; color: var(--text);
+    line-height: 1;
+  }
+  .preview-stat-label {
+    font-size: 10px; color: var(--muted);
+    line-height: 1.35; margin-top: 0.25rem;
+  }
+
+  /* ── Form controls ── */
+  .s-field { margin-bottom: 1.1rem; }
+  .s-field:last-child { margin-bottom: 0; }
+  .s-label {
+    display: block; font-size: 13px; font-weight: 600;
+    color: var(--muted); margin-bottom: 0.4rem;
+  }
+  .s-input {
+    width: 100%;
+    background: var(--s1); border: 1.5px solid var(--border2);
+    border-radius: 8px; color: var(--text);
+    font-family: 'Inter', sans-serif; font-size: 15px;
+    padding: 0.55rem 0.8rem; outline: none;
+    transition: border-color 0.18s;
+  }
+  .s-input:focus { border-color: var(--blue); }
+  .s-input::placeholder { color: var(--muted); opacity: 0.7; }
+
+  /* ── Interest grid ── */
+  .interest-grid { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 0.55rem; }
+  .interest-row  { position: relative; }
+  .interest-row .s-input { padding-right: 2.4rem; }
+  .interest-remove {
+    position: absolute; right: 0.55rem; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: var(--muted); cursor: pointer;
+    font-size: 15px; padding: 0.15rem 0.25rem; border-radius: 4px;
+    opacity: 0; transition: opacity 0.15s, color 0.15s; line-height: 1;
+  }
+  .interest-row:hover .interest-remove { opacity: 1; }
+  .interest-remove:hover { color: var(--red); }
+  .add-interest-btn {
+    background: none; border: 1.5px dashed var(--border2);
+    border-radius: 8px; color: var(--muted);
+    font-family: 'Inter', sans-serif; font-size: 13px;
+    padding: 0.45rem 0.9rem; cursor: pointer;
+    transition: border-color 0.18s, color 0.18s;
+    width: 100%; text-align: left;
+  }
+  .add-interest-btn:hover { border-color: var(--blue); color: var(--blue); }
+
+  /* ── Checkbox row ── */
+  .s-checkbox-row {
+    display: flex; align-items: flex-start; gap: 0.7rem;
+    padding: 0.8rem 0.9rem;
+    background: rgba(255,107,107,0.04);
+    border: 1px solid rgba(255,107,107,0.14);
+    border-radius: 8px; margin-top: 1.1rem; cursor: pointer;
+  }
+  .s-checkbox-row input[type="checkbox"] {
+    margin-top: 2px; flex-shrink: 0; accent-color: var(--red); cursor: pointer;
+    width: 15px; height: 15px;
+  }
+  .s-checkbox-row .s-cb-label {
+    font-size: 13px; color: rgba(255,107,107,0.82); line-height: 1.55; cursor: pointer;
+  }
+
+  /* ── Toast ── */
+  .s-toast {
+    position: fixed; bottom: 1.5rem; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--s2); border: 1.5px solid var(--green);
+    border-radius: 12px; padding: 0.7rem 1.25rem;
+    color: var(--green); font-size: 14px; font-weight: 600;
+    white-space: nowrap; box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    opacity: 0; transition: opacity 0.25s, transform 0.25s;
+    z-index: 500; pointer-events: none;
+  }
+  .s-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ── Danger zone ── */
+  .danger-section {
+    background: rgba(255,107,107,0.03);
+    border: 1px solid rgba(255,107,107,0.18);
+    border-radius: 14px; padding: 1.2rem 1.35rem;
+    margin-bottom: 1.1rem;
+  }
+  .danger-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,107,107,0.65);
+    margin-bottom: 0.75rem; display: block;
+  }
+  .danger-row {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .danger-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .danger-row-top {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+  }
+  .danger-row-info { flex: 1; }
+  .danger-row-title { font-size: 14px; font-weight: 600; color: var(--text); }
+  .danger-row-desc  { font-size: 12px; color: var(--muted); margin-top: 0.2rem; line-height: 1.45; }
+  .danger-btn-wrap  { flex-shrink: 0; }
+
+  /* Ghost-style destructive trigger buttons — transparent, red border + text */
+  .danger-ghost {
+    background: transparent;
+    border: 1px solid rgba(224,82,82,0.45);
+    color: rgba(224,82,82,0.80);
+    font-size: 12px; font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    padding: 0.3rem 0.75rem; border-radius: 6px;
+    cursor: pointer; white-space: nowrap;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+  }
+  .danger-ghost:hover {
+    border-color: rgba(224,82,82,0.75);
+    color: var(--red);
+    background: rgba(224,82,82,0.06);
+  }
+  /* "Reset everything" — visually more severe */
+  .danger-ghost.severe {
+    border-color: rgba(255,50,50,0.55);
+    color: rgba(255,70,70,0.90);
+  }
+  .danger-ghost.severe:hover {
+    border-color: #ff4646;
+    color: #ff4646;
+    background: rgba(255,70,70,0.08);
+  }
+
+  /* Inline confirmation panel */
+  .danger-confirm {
+    display: none;
+    margin-top: 0.65rem;
+    padding: 0.65rem 0.8rem;
+    background: rgba(224,82,82,0.05);
+    border: 1px solid rgba(224,82,82,0.18);
+    border-radius: 8px;
+  }
+  .danger-confirm.show { display: block; }
+  .danger-confirm p {
+    font-size: 12px; color: var(--muted); margin-bottom: 0.55rem; line-height: 1.5;
+  }
+  .danger-confirm-btns { display: flex; gap: 0.5rem; align-items: center; }
+  .dc-cancel {
+    background: none; border: none; color: var(--muted); font-size: 12px;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    padding: 0.25rem 0.5rem; border-radius: 4px;
+    transition: color 0.15s;
+  }
+  .dc-cancel:hover { color: var(--text); }
+  /* Ghost confirm button — still red ghost, not filled */
+  .dc-confirm {
+    background: transparent;
+    border: 1px solid rgba(224,82,82,0.5);
+    color: rgba(224,82,82,0.9);
+    font-size: 12px; font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    padding: 0.25rem 0.75rem; border-radius: 6px;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .dc-confirm:hover { border-color: var(--red); color: var(--red); background: rgba(224,82,82,0.08); }
+  .dc-confirm.severe { border-color: rgba(255,50,50,0.6); color: rgba(255,70,70,0.95); }
+  .dc-confirm.severe:hover { border-color: #ff4646; color: #ff4646; }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .interest-grid { grid-template-columns: 1fr; }
+    .danger-row-top { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-logo">
+    <svg viewBox="0 0 40 40" fill="none" width="22" height="22">
+      <line x1="8" y1="35" x2="32" y2="35" stroke="#6bcb77" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="20" y1="35" x2="20" y2="10" stroke="#6bcb77" stroke-width="2" stroke-linecap="round"/>
+      <line x1="12" y1="24" x2="28" y2="24" stroke="#6bcb77" stroke-width="1.5"/>
+      <rect x="14" y="24" width="12" height="5" rx="1.5" stroke="#6bcb77" stroke-width="1.5" fill="rgba(107,203,119,0.2)"/>
+      <ellipse cx="20" cy="10" rx="7" ry="4.5" stroke="#6bcb77" stroke-width="1.8" fill="rgba(107,203,119,0.15)"/>
+      <circle cx="29" cy="18" r="5" stroke="#f5c842" stroke-width="4.5" stroke-dasharray="2.6 2.64" fill="rgba(245,200,66,0.25)" stroke-linecap="butt" transform="rotate(-15 29 18)"/>
+      <circle cx="29" cy="18" r="2" fill="#f5c842"/>
+    </svg>
+  </div>
+  <div class="hdr-text">
+    <div class="hdr-title">Mabel's GCSE Tutor</div>
+  </div>
+  <div class="hdr-right">
+    <span class="chip chip-blue">Settings</span>
+    <a href="index.html" class="hdr-btn" style="text-decoration:none;display:flex;align-items:center;gap:0.3rem;font-size:13px;color:var(--muted)">
+      ← Back to app
+    </a>
+  </div>
+</header>
+
+<main class="main">
+  <div class="s-page">
+    <h1>Settings</h1>
+    <p class="s-subtitle">Manage the learner profile and app data.</p>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 1 — CURRENT LEARNER
+         ═══════════════════════════════════════════ -->
+    <span class="s-section-label" style="padding-left:0.1rem">Current learner</span>
+
+    <div class="preview-card" id="previewCard">
+      <div class="preview-name" id="previewName">—</div>
+      <div class="preview-interests" id="previewInterests">Loading…</div>
+      <div class="preview-stats">
+        <div class="preview-stat">
+          <div class="preview-stat-val" id="statMastered">—</div>
+          <div class="preview-stat-label">Subtopics<br>mastered</div>
+        </div>
+        <div class="preview-stat">
+          <div class="preview-stat-val" id="statCards">—</div>
+          <div class="preview-stat-label">Cards<br>learned</div>
+        </div>
+        <div class="preview-stat">
+          <div class="preview-stat-val" id="statSessions">—</div>
+          <div class="preview-stat-label">Sessions<br>completed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 2 — REASSIGN TO A NEW CHILD
+         ═══════════════════════════════════════════ -->
+    <div class="s-section">
+      <span class="s-section-label">Reassign to a new child</span>
+
+      <!-- Field 1: Child's name -->
+      <div class="s-field">
+        <label class="s-label" for="inputName">Child's name</label>
+        <input
+          class="s-input" id="inputName" type="text"
+          placeholder="e.g. Mabel" maxlength="30"
+          oninput="_liveUpdatePreview()">
+      </div>
+
+      <!-- Field 2: Personal interests grid -->
+      <div class="s-field">
+        <label class="s-label">Personal interests</label>
+        <div class="interest-grid" id="interestGrid"></div>
+        <button class="add-interest-btn" id="addInterestBtn" onclick="_addInterest()">
+          + Add another interest
+        </button>
+      </div>
+
+      <!-- Field 3: Clear personality checkbox -->
+      <div class="s-checkbox-row" onclick="_toggleCb()">
+        <input type="checkbox" id="cbClearPersonality" checked>
+        <span class="s-cb-label">
+          Clear all stored personality details for the previous child — Silver, skating info, and all gathered preferences will be reset so the app learns about the new learner fresh.
+        </span>
+      </div>
+
+      <!-- Save button -->
+      <button class="btn grn full" style="margin-top:1.1rem;font-size:14px;padding:0.7rem 1rem"
+        onclick="_saveProfile()">
+        Save learner profile
+      </button>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 3 — DANGER ZONE
+         ═══════════════════════════════════════════ -->
+    <div class="danger-section">
+      <span class="danger-label">⚠ Danger zone</span>
+
+      <!-- Option 1: Reset progress & completions -->
+      <div class="danger-row">
+        <div class="danger-row-top">
+          <div class="danger-row-info">
+            <div class="danger-row-title">Reset progress &amp; completions</div>
+            <div class="danger-row-desc">Clears all topic progress, test scores, streaks and session history. Card deck and learner profile are kept.</div>
+          </div>
+          <div class="danger-btn-wrap">
+            <button class="danger-ghost" onclick="_dzShow('dz1')">Reset progress</button>
+          </div>
+        </div>
+        <div class="danger-confirm" id="dz1Confirm">
+          <p>Are you sure? This can't be undone. Your card deck and learner profile will be preserved.</p>
+          <div class="danger-confirm-btns">
+            <button class="dc-cancel" onclick="_dzCancel('dz1')">Cancel</button>
+            <button class="dc-confirm" onclick="_dzExec('dz1')">Yes, reset progress</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 2: Clear card deck -->
+      <div class="danger-row">
+        <div class="danger-row-top">
+          <div class="danger-row-info">
+            <div class="danger-row-title">Clear card deck</div>
+            <div class="danger-row-desc">Removes all saved revision cards and spaced-repetition data. Everything else is kept.</div>
+          </div>
+          <div class="danger-btn-wrap">
+            <button class="danger-ghost" onclick="_dzShow('dz2')">Clear deck</button>
+          </div>
+        </div>
+        <div class="danger-confirm" id="dz2Confirm">
+          <p>Are you sure? All cards and review progress will be deleted. This can't be undone.</p>
+          <div class="danger-confirm-btns">
+            <button class="dc-cancel" onclick="_dzCancel('dz2')">Cancel</button>
+            <button class="dc-confirm" onclick="_dzExec('dz2')">Yes, clear deck</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 3: Reset everything — visually more severe -->
+      <div class="danger-row">
+        <div class="danger-row-top">
+          <div class="danger-row-info">
+            <div class="danger-row-title" style="color:rgba(255,70,70,0.92)">Reset everything</div>
+            <div class="danger-row-desc">Wipes <strong style="color:var(--text)">all</strong> stored data — progress, cards, profile, personality and settings. The app returns to day one. This cannot be recovered.</div>
+          </div>
+          <div class="danger-btn-wrap">
+            <button class="danger-ghost severe" onclick="_dzShow('dz3')">Reset everything</button>
+          </div>
+        </div>
+        <div class="danger-confirm" id="dz3Confirm">
+          <p><strong style="color:rgba(255,70,70,0.92)">This deletes everything.</strong> All progress, all cards, all settings — gone permanently. The app will reload from scratch.</p>
+          <div class="danger-confirm-btns">
+            <button class="dc-cancel" onclick="_dzCancel('dz3')">Cancel</button>
+            <button class="dc-confirm severe" onclick="_dzExec('dz3')">Yes, wipe everything</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /danger-section -->
+
+  </div><!-- /s-page -->
+</main>
+
+<div class="s-toast" id="sToast"></div>
+
+<script src="js/storage.js?v=2"></script>
+<script>
+/* ─────────────────────────────────────────────────────────
+   SETTINGS PAGE LOGIC
+   All reads/writes go through Store (storage.js).
+   Child profile stored under key 'child_profile'.
+   Personality data stored under key 'profile' (mabel_profile).
+───────────────────────────────────────────────────────── */
+
+const INTEREST_PLACEHOLDERS = [
+  'e.g. Silver the tabby cat',
+  'e.g. Ice skating',
+  'e.g. Drawing or painting',
+  'e.g. Reading',
+];
+
+// In-memory interest list
+let _interests = [];
+
+// ── Bootstrap ────────────────────────────────────────────
+(function init() {
+  const profile = Store.getChildProfile();
+  const name    = profile.name || 'Mabel';
+  const ints    = profile.interests?.length ? profile.interests : [
+    { value: 'Silver the cat' },
+    { value: 'Ice skating' },
+  ];
+
+  document.getElementById('inputName').value = name;
+  _interests = ints.map(i => ({ value: i.value || '' }));
+
+  _renderInterestGrid();
+  _updatePreviewCard(name, _interests);
+  _loadStats();
+})();
+
+// ── Stats ────────────────────────────────────────────────
+function _loadStats() {
+  const deck = Store.getDeck();
+
+  // Mastered subtopics: extract subtopic IDs from card IDs,
+  // compute good/easy ratio per subtopic, count those >= 80%.
+  const groups = {};
+  deck.forEach(c => {
+    const m = c.id?.match(/^card_(.+)_\d+_\d+$/);
+    if (!m) return;
+    const sid = m[1];
+    if (!groups[sid]) groups[sid] = { total: 0, good: 0 };
+    groups[sid].total++;
+    if (c.difficulty === 'good' || c.difficulty === 'easy' || c.status === 'known') {
+      groups[sid].good++;
+    }
+  });
+  const mastered = Object.values(groups)
+    .filter(g => g.total > 0 && g.good / g.total >= 0.8).length;
+
+  const goodCards  = deck.filter(c =>
+    c.difficulty === 'good' || c.difficulty === 'easy'
+  ).length;
+
+  const sessions   = Store.getSessions().length;
+
+  document.getElementById('statMastered').textContent  = mastered;
+  document.getElementById('statCards').textContent     = goodCards;
+  document.getElementById('statSessions').textContent  = sessions;
+}
+
+// ── Interest grid ────────────────────────────────────────
+function _renderInterestGrid() {
+  const grid = document.getElementById('interestGrid');
+  grid.innerHTML = _interests.map((item, idx) => `
+    <div class="interest-row">
+      <input class="s-input" type="text" value="${_esc(item.value)}"
+        placeholder="${INTEREST_PLACEHOLDERS[idx] || 'e.g. Another interest'}"
+        maxlength="60"
+        oninput="_onInterestInput(${idx}, this.value)"
+        onblur="_onInterestInput(${idx}, this.value)">
+      <button class="interest-remove" title="Remove"
+        onclick="_removeInterest(${idx})">×</button>
+    </div>`).join('');
+
+  // Show/hide "Add" button
+  const addBtn = document.getElementById('addInterestBtn');
+  addBtn.style.display = _interests.length >= 4 ? 'none' : '';
+}
+
+function _onInterestInput(idx, val) {
+  _interests[idx].value = val;
+  _liveUpdatePreview();
+}
+
+function _addInterest() {
+  if (_interests.length >= 4) return;
+  _interests.push({ value: '' });
+  _renderInterestGrid();
+  // Focus the new input
+  const inputs = document.querySelectorAll('#interestGrid .s-input');
+  inputs[inputs.length - 1]?.focus();
+}
+
+function _removeInterest(idx) {
+  _interests.splice(idx, 1);
+  _renderInterestGrid();
+  _liveUpdatePreview();
+}
+
+// ── Live preview ─────────────────────────────────────────
+function _liveUpdatePreview() {
+  const name = document.getElementById('inputName').value.trim() || '—';
+  _updatePreviewCard(name, _interests);
+}
+
+function _updatePreviewCard(name, interests) {
+  document.getElementById('previewName').textContent = name || '—';
+
+  const filled = interests.map(i => i.value.trim()).filter(Boolean);
+  document.getElementById('previewInterests').textContent =
+    filled.length ? filled.join(' · ') : 'No interests added yet';
+}
+
+// ── Checkbox toggle ──────────────────────────────────────
+function _toggleCb() {
+  const cb = document.getElementById('cbClearPersonality');
+  cb.checked = !cb.checked;
+}
+
+// ── Save handler ─────────────────────────────────────────
+function _saveProfile() {
+  const name = document.getElementById('inputName').value.trim();
+  if (!name) {
+    _shakeInput('inputName');
+    _showToast("Please enter the child's name first.", 'error');
+    return;
+  }
+
+  const interests = _interests
+    .map(i => ({ value: i.value.trim() }))
+    .filter(i => i.value);
+
+  // 1. Save child profile
+  Store.set('child_profile', { name, interests });
+
+  // 2. Optionally wipe personality data
+  if (document.getElementById('cbClearPersonality').checked) {
+    // Clear Silver/skating personality data
+    Store.remove('profile');               // mabel_profile
+    Store.remove('lesson_count');          // profile question gate
+    Store.remove('last_q_type');           // question alternation
+    // Write fresh blank personality profile
+    Store.saveMabelProfile({
+      silver:  { colour: null, markings: null, personality: null, habit: null },
+      skating: { monthsIn: 6, hasLessons: true, lessonDay: null,
+                 currentMove: null, hasCompeted: null },
+      askedAbout: [],
+    });
+  }
+
+  // 3. Reset greeting rotation so it re-draws for the new name
+  Store.remove('ui_lastGreeting');
+
+  // 4. Update preview stats (card deck may have changed if deck was cleared)
+  _updatePreviewCard(name, interests);
+  _loadStats();
+
+  _showToast(`✓ Profile saved for ${name}`);
+}
+
+// ── Danger zone ──────────────────────────────────────────
+function _dzShow(id) {
+  ['dz1','dz2','dz3'].forEach(x => {
+    document.getElementById(x + 'Confirm').classList.remove('show');
+  });
+  document.getElementById(id + 'Confirm').classList.add('show');
+}
+function _dzCancel(id) {
+  document.getElementById(id + 'Confirm').classList.remove('show');
+}
+function _dzExec(id) {
+  if (id === 'dz1') {
+    // Reset progress & completions — keep deck and learner profile
+    Store.saveProgress({
+      covered: {}, testScores: [],
+      learnerProfile: { liked: [], disliked: [], summary: '' },
+      lastPosition: null, savedAt: new Date().toISOString(),
+    });
+    Store.remove('sessions');
+    Store.remove('streak');
+    Store.remove('milestones');
+    Store.remove('errors');
+    Store.remove('lesson_count');
+    _loadStats();
+    _dzCancel('dz1');
+    _showToast('✓ Progress reset. Starting fresh.');
+
+  } else if (id === 'dz2') {
+    // Clear card deck only
+    Store.clearDeck();
+    _loadStats();
+    _dzCancel('dz2');
+    _showToast('✓ Card deck cleared.');
+
+  } else if (id === 'dz3') {
+    // Reset everything — wipe all mabel_* data, then reload
+    _showToast('✓ Everything cleared. App reset to day one.');
+    setTimeout(() => {
+      Store.clearAll();
+      window.location.href = 'index.html';
+    }, 1800);
+  }
+}
+
+// ── Helpers ──────────────────────────────────────────────
+function _showToast(msg, type) {
+  const el = document.getElementById('sToast');
+  if (type === 'error') {
+    el.style.borderColor = 'var(--red)';
+    el.style.color       = 'var(--red)';
+  } else {
+    el.style.borderColor = 'var(--green)';
+    el.style.color       = 'var(--green)';
+  }
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+function _shakeInput(id) {
+  const el = document.getElementById(id);
+  el.style.borderColor = 'var(--red)';
+  el.style.animation   = 'none';
+  setTimeout(() => { el.style.borderColor = ''; }, 1400);
+}
+
+function _esc(str) {
+  return (str || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+}
+</script>
+</body>
+</html>

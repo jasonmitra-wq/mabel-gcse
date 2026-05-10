@@ -37,7 +37,7 @@ const Questions = (() => {
     document.getElementById('qInner').innerHTML = `
       <div style="max-width:500px;margin:2rem auto;text-align:center">
         <div style="font-size:2rem;margin-bottom:0.75rem">✏️</div>
-        <h2 style="font-family:'Fraunces',serif;font-size:1.2rem;margin-bottom:0.4rem">Practice questions</h2>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.4rem">Practice questions</h2>
         <p style="color:var(--muted);font-size:0.88rem;margin-bottom:1.5rem">${topicName}</p>
         <div style="display:flex;flex-direction:column;gap:0.55rem;max-width:280px;margin:0 auto">
           <button class="btn pri full" onclick="Questions._load(${JSON.stringify(lessonData).replace(/"/g,'&quot;')},'${topicName}','${topicId}',3)">3 questions — quick</button>
@@ -440,7 +440,7 @@ Return ONLY valid JSON array, no markdown:
     document.getElementById('qInner').innerHTML = `
       <div style="max-width:480px;margin:2.5rem auto;padding:0 1.25rem">
         <div style="font-size:2rem;margin-bottom:0.75rem">🔑</div>
-        <h2 style="font-family:'Fraunces',serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem">
           ${isBadKey ? 'API key rejected — try again' : 'One-time setup needed'}
         </h2>
         <p style="color:var(--muted);font-size:0.9rem;line-height:1.6;margin-bottom:0.5rem">
@@ -452,7 +452,7 @@ Return ONLY valid JSON array, no markdown:
           Get a free key at <strong style="color:var(--text)">console.anthropic.com</strong> → API Keys
         </p>
         <input type="password" id="apiKeyInput" placeholder="sk-ant-api03-…"
-          style="width:100%;padding:0.7rem 0.9rem;background:var(--s2);border:1.5px solid var(--border2);border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;margin-bottom:0.75rem;outline:none"
+          style="width:100%;padding:0.7rem 0.9rem;background:var(--s2);border:1.5px solid var(--border2);border-radius:10px;color:var(--text);font-family:'Inter',sans-serif;font-size:0.9rem;margin-bottom:0.75rem;outline:none"
           onkeydown="if(event.key==='Enter')Questions._confirmKey()">
         <button class="btn pri full" onclick="Questions._confirmKey()">Save key & generate questions</button>
         <button class="btn full" style="margin-top:0.4rem" onclick="Questions.close()">Cancel</button>
@@ -512,7 +512,7 @@ Return ONLY valid JSON array, no markdown:
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          student:  'Mabel',
+          student:  Store.getChildName(),
           date:     new Date().toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' }),
           topic:    _topicName,
           score:    _score,

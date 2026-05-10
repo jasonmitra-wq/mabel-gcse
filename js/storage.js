@@ -77,24 +77,41 @@ const Store = (() => {
   }
 
   // ── Mabel's personal profile (Silver + skating) ──────────
+  // ── Child profile (name + interests set by parent in Settings) ──
+  function getChildProfile() {
+    return get('child_profile') || {
+      name:      'Mabel',
+      interests: [{ value: 'Silver the cat' }, { value: 'Ice skating' }],
+    };
+  }
+
+  function getChildName() {
+    return getChildProfile().name || 'Mabel';
+  }
+
+  // Returns an array of non-empty interest strings.
+  // interest[0] = pet/first interest, interest[1] = hobby/second interest.
+  function getInterests() {
+    const ints = getChildProfile().interests || [];
+    return ints.map(i => i.value).filter(Boolean);
+  }
+
   function getMabelProfile() {
     return get('mabel_profile') || {
       silver: {
-        colour:    null,   // e.g. "grey"
-        breed:     null,
-        habits:    [],     // e.g. ["sits on homework", "knocks pens off desk"]
-        mood:      null,   // e.g. "grumpy", "affectionate"
+        colour:      null,   // e.g. "black and white"
+        markings:    null,   // e.g. "tabby stripes", "white paws"
+        personality: null,   // e.g. "grumpy", "affectionate"
+        habit:       null,   // e.g. "knocks things off tables"
       },
       skating: {
-        monthsIn:  6,      // confirmed from earlier session
-        hasLessons: true,  // confirmed
-        rink:      null,
-        currentMove: null, // e.g. "axel", "sit spin"
-        recentWin: null,
-        level:     null,   // e.g. "NISA level 3"
-        competes:  null,   // true / false
+        monthsIn:    6,      // confirmed from earlier session
+        hasLessons:  true,   // confirmed
+        lessonDay:   null,   // e.g. "Saturdays"
+        currentMove: null,   // e.g. "backwards crossovers"
+        hasCompeted: null,   // true / false
       },
-      askedAbout: [],      // tracks what we've already asked so we don't repeat
+      askedAbout: [],        // tracks which profile questions have been asked
     };
   }
 
@@ -260,6 +277,7 @@ const Store = (() => {
     getProgress, saveProgress, markCovered, addScore,
     setLastPosition, getLearnerProfile, updateLearnerProfile, clearAll,
     getDeck, saveDeck, addCards, updateCardStatus, clearDeck,
+    getChildProfile, getChildName, getInterests,
     getMabelProfile, saveMabelProfile, updateMabelProfile, hasAsked, markAsked,
     getStreak, updateStreak,
     hasMilestone, markMilestone,

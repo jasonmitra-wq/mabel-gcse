@@ -273,18 +273,22 @@ const Lessons = (() => {
     const hasTerms   = kp.keyTerms?.length;
     return `
       <div>
-        <p style="font-size:0.9rem;font-weight:700;color:var(--yellow);margin-bottom:0.75rem;letter-spacing:0.03em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('notes', 20)} WRITE THESE INTO YOUR NOTES NOW:</p>
-        ${hasBullets ? `<ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.5rem">
-          ${kp.writeBullets.map(b => `<li style="font-size:1.05rem;line-height:1.7;padding-left:1.4rem;position:relative">
-            <span style="position:absolute;left:0;color:var(--yellow);font-weight:700">•</span>${b}
-          </li>`).join('')}
+        <p style="font-size:13px;font-weight:600;color:var(--yellow);margin-bottom:0.75rem;letter-spacing:0.08em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('notes', 18)} Write these into your notes</p>
+        ${hasBullets ? `<ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.6rem">
+          ${kp.writeBullets.map(b => {
+            const dash = b.indexOf(' — ');
+            if (dash !== -1) {
+              const term = b.slice(0, dash);
+              const def  = b.slice(dash + 3);
+              return `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--yellow);font-weight:700;font-size:14px">•</span><span style="font-weight:700;font-size:16px;color:#fff">${term}</span><span style="color:var(--muted);font-weight:400"> — </span><span style="font-weight:400;font-size:15px;color:rgba(255,255,255,0.85)">${def}</span></li>`;
+            }
+            return `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--yellow);font-weight:700;font-size:14px">•</span><span style="font-weight:400;font-size:15px;color:rgba(255,255,255,0.85)">${b}</span></li>`;
+          }).join('')}
         </ul>` : ''}
         ${hasTerms ? `
-          <p style="font-size:0.88rem;font-weight:700;color:var(--teal);margin-bottom:0.5rem;letter-spacing:0.03em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('key', 20)} KEY TERMS:</p>
-          <ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.5rem">
-            ${kp.keyTerms.map(t => `<li style="font-size:1.05rem;line-height:1.7;padding-left:1.4rem;position:relative">
-              <span style="position:absolute;left:0;color:var(--teal);font-weight:700">→</span><strong>${t.term}</strong> — ${t.def}
-            </li>`).join('')}
+          <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:0.5rem;letter-spacing:0.08em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('key', 18)} Key terms</p>
+          <ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.55rem">
+            ${kp.keyTerms.map(t => `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--muted);font-weight:300;font-size:15px">→</span><span style="font-weight:700;font-size:15px;color:var(--teal)">${t.term}</span><span style="color:var(--muted);font-weight:400"> — </span><span style="font-weight:400;font-size:14px;color:rgba(255,255,255,0.80)">${t.def}</span></li>`).join('')}
           </ul>` : ''}
         ${kp.memTip ? `<div class="mem-tip-box">💡 <strong>Memory tip:</strong> ${kp.memTip}</div>` : ''}
         ${kp.tutor_note ? `<div style="border-left:3px solid var(--purple);background:rgba(199,125,255,0.08);border-radius:0 6px 6px 0;padding:12px 16px;margin-bottom:1rem;font-size:14px;color:#F0EAD6;line-height:1.7">${kp.tutor_note}</div>` : ''}

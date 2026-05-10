@@ -178,10 +178,23 @@ function showHome(hasSaved) {
   const _deckGood  = _homeDeck.filter(c => c.difficulty === 'good' || c.difficulty === 'easy' || c.status === 'known').length;
   const globalMastery = _homeDeck.length > 0 ? Math.round((_deckGood / _homeDeck.length) * 100) : null;
 
+  // ── Dashboard tile: overall progress bar ───────────────────
+  const _dbPct   = globalMastery ?? 0;
+  const _dbPhase = coveredCount === 0
+    ? "Nothing secured yet — let's start"
+    : _dbPct <= 30 ? 'Building foundations'
+    : _dbPct <= 60 ? 'Getting there'
+    : _dbPct <= 80 ? 'Most of it covered'
+    : 'Nearly exam-ready';
+  const _dbBarCol = _dbPct >= 80 ? '#52C97A' : _dbPct >= 71 ? '#6BBDE3' : _dbPct >= 41 ? '#E8A838' : '#E05252';
+  const _dbSub = `<div style="height:6px;background:rgba(255,255,255,0.12);border-radius:3px;overflow:hidden;margin-top:6px">${
+    _dbPct > 0 ? `<div style="height:100%;width:${_dbPct}%;background:${_dbBarCol};border-radius:3px;transition:width 0.5s ease"></div>` : ''
+  }</div><div style="font-size:12px;color:var(--muted);margin-top:5px">${_dbPhase}</div>`;
+
   const modes = [
     { title: 'Revise',    sub: 'Pick a subject & topic',        fn: showSubjectPicker,  pct: globalMastery },
     { title: 'Test prep', sub: 'Focused countdown revision',     fn: showTestPrep,       pct: globalMastery },
-    { title: `Dashboard${coveredCount > 0 ? ' · '+coveredCount+' done' : ''}`, sub: 'Progress & scores', fn: showDashboard, pct: globalMastery },
+    { title: 'Dashboard', sub: _dbSub,                           fn: showDashboard,      pct: globalMastery },
     { title: `Card deck${deckSize > 0 ? ' · '+deckSize : ''}`,  sub: dueCount > 0 ? `⏰ ${dueCount} due today` : 'Drill your saved cards', fn: showCardDeck, pct: globalMastery },
     { icon: '❌', title: `Error log${errorCount > 0 ? ' · ' + errorCount : ''}`, sub: errorCount > 0 ? 'Review your missed questions' : 'No errors yet — keep going!', fn: showErrorLog },
     { icon: '📋', title: 'Session history', sub: 'Your recent practice sessions', fn: showSessionHistory },

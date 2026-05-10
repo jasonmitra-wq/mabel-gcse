@@ -138,9 +138,9 @@ const Lessons = (() => {
     }
 
     // Nav footer
-    const needsGate  = (step.type === 'kp-check' || step.type === 'kp-notes' || step.type === 'table') && !isLast;
-    const nextDisabled = needsGate ? 'disabled' : '';
-    const nextBtnId  = 'stepNextBtn';
+    const needsGate = (step.type === 'kp-check' || step.type === 'kp-notes' || step.type === 'table') && !isLast;
+    const nextBtnId = 'stepNextBtn';
+    const gatedAttrs = needsGate ? 'data-gated="true" title="Tick the box above first"' : '';
 
     const nav = isLast ? `
       <div class="step-nav">
@@ -150,7 +150,7 @@ const Lessons = (() => {
       </div>` : `
       <div class="step-nav">
         ${_stepIdx > 0 ? `<button class="btn" onclick="Lessons._prevStep()">← Back</button>` : '<div></div>'}
-        <button class="btn pri" id="${nextBtnId}" ${nextDisabled} onclick="Lessons._nextStep()">
+        <button class="btn pri" id="${nextBtnId}" ${gatedAttrs} onclick="Lessons._nextStep()">
           ${nextLabel ? `Next: ${nextLabel} →` : 'Next →'}
         </button>
       </div>`;
@@ -449,6 +449,7 @@ const Lessons = (() => {
 
   // ── Navigation ─────────────────────────────────────────────
   function _nextStep() {
+    if (document.getElementById('stepNextBtn')?.dataset?.gated) return;
     if (_stepIdx < _steps.length - 1) {
       _stepIdx++;
       _renderStep();
@@ -470,11 +471,15 @@ const Lessons = (() => {
   function _tryUnlockNext() {
     const btn     = document.getElementById('stepNextBtn');
     if (!btn) return;
-    const step    = _steps[_stepIdx];
     const checkEl = document.getElementById('stepDoneCheck');
-    if (!checkEl) { btn.disabled = false; return; }
-
-    btn.disabled = !checkEl.checked;
+    const locked  = checkEl ? !checkEl.checked : false;
+    if (locked) {
+      btn.dataset.gated = 'true';
+      btn.title = 'Tick the box above first';
+    } else {
+      delete btn.dataset.gated;
+      btn.removeAttribute('title');
+    }
   }
 
   // ── Checkpoint interaction ─────────────────────────────────

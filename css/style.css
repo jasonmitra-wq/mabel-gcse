@@ -783,10 +783,17 @@ body::before {
   padding-top: 1rem;
   border-top: 1px solid var(--border);
 }
-.step-nav .btn[disabled] {
-  opacity: 0.35;
-  cursor: not-allowed;
-  pointer-events: none;
+/* Gated nav button — chrome dims, text stays fully legible */
+.btn[data-gated] {
+  background: rgba(255,255,255,0.05) !important;
+  border-color: rgba(255,255,255,0.13) !important;
+  color: var(--text) !important;
+  cursor: default;
+  position: relative;
+}
+.btn[data-gated]:hover {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.18) !important;
 }
 
 /* Done checkbox */

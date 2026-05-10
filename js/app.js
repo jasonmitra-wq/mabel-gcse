@@ -547,6 +547,45 @@ function showSubtopics(topicCode, topicData) {
     }
     list.appendChild(card);
   });
+
+  // ── Past paper links ───────────────────────────────────────
+  // Only shown once at least one subtopic has been started.
+  // "Coming soon" topics never reach this view, so no guard needed.
+  const _anyStarted = subtopics.some(st => !!_progress.covered[st.id]);
+  if (_anyStarted) {
+    const _subjectPMT = {
+      biology:   'https://www.physicsandmathstutor.com/biology-revision/gcse-aqa/',
+      chemistry: 'https://www.physicsandmathstutor.com/chemistry-revision/gcse-aqa/',
+      physics:   'https://www.physicsandmathstutor.com/physics-revision/gcse-aqa/',
+    };
+    const _subjectSME = {
+      biology:   'https://www.savemyexams.com/gcse/biology/aqa/',
+      chemistry: 'https://www.savemyexams.com/gcse/chemistry/aqa/',
+      physics:   'https://www.savemyexams.com/gcse/physics/aqa/',
+    };
+    const _pmtUrl = _subjectPMT[_activeSubject] || _subjectPMT.biology;
+    const _smeUrl = _subjectSME[_activeSubject] || _subjectSME.biology;
+    const _tName  = topicData.name;
+
+    const _ppSection = document.createElement('div');
+    _ppSection.style.cssText = 'margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid var(--border2)';
+    _ppSection.innerHTML = `
+      <p style="font-size:13px;color:var(--muted);font-weight:600;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:0.8rem">Practice with real exam questions</p>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:0.85rem">
+        <a href="${_pmtUrl}" target="_blank" rel="noopener"
+          class="btn" style="text-decoration:none;justify-content:flex-start;gap:0.55rem">
+          📋 AQA past paper questions — ${_tName}
+        </a>
+        <a href="${_smeUrl}" target="_blank" rel="noopener"
+          class="btn" style="text-decoration:none;justify-content:flex-start;gap:0.55rem">
+          📝 Save My Exams — ${_tName} questions
+        </a>
+      </div>
+      <p style="font-size:13px;color:var(--muted);font-style:italic;line-height:1.65">
+        These are real AQA questions. They're harder than the in-app checks — that's the point.
+      </p>`;
+    list.appendChild(_ppSection);
+  }
 }
 
 // ── DASHBOARD ──────────────────────────────────────────────────

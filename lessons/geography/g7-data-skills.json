@@ -1,0 +1,194 @@
+{
+  "id": "g7-data-skills",
+  "title": "Geographical Skills: Data, Graphs and Statistics",
+  "topic": "G7",
+  "examTip": "Data skills appear throughout all three papers, not just Paper 3. Always quote data when describing patterns, identify anomalies, and explain why they occur. Calculating mean, median, percentage change and IQR are all fair game.",
+  "introTips": [
+    "When describing graphs: trend first, then specific data, then anomalies, then explanation.",
+    "Know when to use mean vs median — median is better when there are outliers (e.g., house prices).",
+    "GIS: know what it does (overlays geographic data layers) and why it's useful — you don't need to operate it."
+  ],
+  "intro": "Data is only useful if you can read it, describe it accurately and explain what it means. In geography, this means knowing which graph to use and when, being able to calculate statistics like mean and median, and being able to look at a map or chart and say something genuinely meaningful about the pattern. These skills run through all three geography papers — not just Paper 3 — and they're often where marks are left on the table.",
+  "keyPoints": [
+    {
+      "heading": "Graphs and when to use each type",
+      "content": "Choosing the right graph is a skill in itself. <strong>Bar charts</strong> compare discrete categories (countries, years, types) — good for nominal data, easy to read. <strong>Line graphs</strong> show change over time for continuous data (temperature, population, GDP over decades). <strong>Pie charts</strong> show proportions or percentages of a whole (e.g., energy mix by source, land use in a city). <strong>Scatter graphs</strong> investigate correlation between two variables (e.g., GDP vs life expectancy — positive correlation; birth rate vs income — negative correlation); a best-fit line is drawn, and anomalies (points far from the line) are identified and explained. <strong>Histograms</strong> show frequency distribution of continuous data (bars touch, no gaps). <strong>Divided (compound) bar charts</strong> compare proportions within multiple bars. <strong>Population pyramids</strong> are back-to-back bar charts showing age-sex structure (males left, females right; wide base = high birth rate; narrow top = low life expectancy). <strong>Choropleth maps</strong> use shading to show data by area (e.g., population density by country — darker = higher).",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Bar charts — compare discrete categories; easy to read",
+        "Line graphs — continuous data over time; shows trends",
+        "Pie charts — proportions or percentages of a whole",
+        "Scatter graphs — correlation between two variables; draw best-fit line; identify anomalies",
+        "Population pyramids — age-sex structure; males left, females right",
+        "Choropleth maps — shading by data value; darker = higher (usually)",
+        "Histograms — frequency distribution; bars touch (continuous data)"
+      ],
+      "keyTerms": ["scatter graph", "correlation", "anomaly", "choropleth", "population pyramid"],
+      "memTip": "Bar = categories; Line = time; Pie = proportions; Scatter = relationships. Match the graph to the data type.",
+      "tutor_note": "Students often use bar charts for everything — push them to think about what the data IS before deciding on the graph type."
+    },
+    {
+      "heading": "Statistical calculations",
+      "content": "<strong>Mean</strong> (average): add all values and divide by the number of values. Best for normally distributed data, but can be distorted by <strong>outliers</strong> (extreme values). For example, one billionaire in a room raises the mean income of everyone there dramatically. <strong>Median</strong>: the middle value when all data is sorted in order. More representative than the mean when there are outliers — this is why median house prices are quoted rather than mean. <strong>Mode</strong>: the most frequently occurring value — most useful for categorical data. <strong>Range</strong>: highest value minus lowest value — simple measure of spread, but heavily affected by outliers. <strong>Interquartile range (IQR)</strong>: measures the spread of the middle 50% of data. Find <strong>Q1</strong> (median of the lower half) and <strong>Q3</strong> (median of the upper half); IQR = Q3 − Q1. Better than range because it ignores extreme values. <strong>Percentage change</strong>: ((new value − old value) ÷ old value) × 100. These calculations appear in Paper 3 but also in data response sections across all papers.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Mean — sum ÷ count; useful but sensitive to outliers",
+        "Median — middle value (sorted data); better when outliers present (e.g., house prices)",
+        "Mode — most frequent value; best for categorical data",
+        "Range — highest minus lowest; simple but affected by outliers",
+        "IQR — Q3 minus Q1 (middle 50% range); ignores extremes; better measure of spread",
+        "Percentage change — ((new − old) ÷ old) × 100",
+        "Know when to use which measure — this is itself a testable skill"
+      ],
+      "keyTerms": ["mean", "median", "IQR", "range", "percentage change", "outlier"],
+      "memTip": "Mean for normal data; Median for skewed data (houses, incomes); IQR for spread ignoring extremes.",
+      "tutor_note": "Calculating IQR is often asked in Paper 3. Students need to know: sort data → find Q1 and Q3 → subtract. Practice with real datasets."
+    },
+    {
+      "heading": "Describing and interpreting data",
+      "content": "Describing data effectively is a skill that runs through every paper. Use this structure: (1) <strong>General trend or pattern</strong> — start with the overall picture ('Overall, as GDP increases, life expectancy also increases'); (2) <strong>Specific data</strong> — quote actual values ('For example, the UK has a GDP of approximately $47,000 and a life expectancy of 81 years'); (3) <strong>Anomalies</strong> — identify points that don't fit the pattern ('However, Cuba has a relatively low GDP of $8,000 but a high life expectancy of 78 years, suggesting that life expectancy is also affected by healthcare quality rather than income alone'); (4) <strong>Explanation</strong> — why does the pattern exist? On <strong>maps</strong>: describe the spatial pattern using compass directions and specific locations ('The highest values are concentrated in the south-east, particularly around London, while the lowest values are found in north-east England and Wales'); quote specific data values; note any clustering or exceptions.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Step 1: State the general trend or pattern first",
+        "Step 2: Quote specific data values with country/location names",
+        "Step 3: Identify anomalies — points that don't fit the pattern",
+        "Step 4: Attempt to explain why the pattern or anomaly exists",
+        "On maps: use compass directions; note clustering; quote specific areas and values",
+        "Never describe data without quoting figures — 'some countries have high life expectancy' is not enough"
+      ],
+      "keyTerms": ["trend", "anomaly", "correlation", "spatial pattern", "data interpretation"],
+      "memTip": "TSAE — Trend, Specific data, Anomaly, Explanation. Four steps, every time.",
+      "tutor_note": "The most common exam mistake is describing data without quoting figures. Drilling TSAE into students makes a measurable difference to marks."
+    },
+    {
+      "heading": "GIS — Geographic Information Systems",
+      "content": "<strong>GIS</strong> (Geographic Information Systems) are computer systems that store, analyse and display geographic data as <strong>layers</strong> that can be combined and overlaid on a map. Each layer contains a different type of data: for example, one layer might show population density, another flood risk, another road network, another hospital locations. Overlaying these layers allows patterns and relationships to be identified that would be impossible to see from individual datasets alone. <strong>Applications of GIS</strong>: emergency planning (identify which populations are most vulnerable during a flood by overlaying flood zones with population and hospital data); retail site selection (overlay population data, competitor locations and transport links to find the optimal shop location); environmental monitoring (track deforestation using satellite imagery over time, monitor sea level changes); traffic management (real-time GPS data identifies congestion). <strong>Google Maps</strong> and <strong>Google Earth</strong> are forms of GIS that you will already be familiar with. AQA expects you to understand <strong>what GIS does and why it's useful</strong> — you do not need to know how to operate GIS software.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "GIS — computer systems storing and displaying geographic data as overlaid layers",
+        "Each layer = different dataset (population density, flood risk, roads, hospitals)",
+        "Overlaying layers reveals patterns and relationships invisible in individual datasets",
+        "Emergency planning — identify vulnerable populations using flood + population + hospital layers",
+        "Retail site selection — overlay population, competitors, transport links",
+        "Environmental monitoring — track deforestation; monitor sea level change with satellite data",
+        "Google Maps and Google Earth are familiar forms of GIS"
+      ],
+      "keyTerms": ["GIS", "layers", "spatial analysis", "overlay"],
+      "memTip": "GIS stacks layers like a sandwich — each layer adds information; together they reveal patterns.",
+      "tutor_note": "GIS questions ask for understanding of the concept and uses, not technical operation. Two or three clear applications with explanation is what's needed."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Graph types — when to use, advantages and disadvantages",
+      "examFlag": true,
+      "headers": ["Graph type", "When to use", "Advantage", "Disadvantage"],
+      "rows": [
+        ["Bar chart", "Comparing discrete categories (countries, land uses)", "Easy to read; categories clearly separated", "Not suitable for continuous data; hard to show many categories"],
+        ["Line graph", "Showing change over time (temperature, GDP, population)", "Shows trends and rate of change clearly", "Not suitable for categories; can be misleading if scale manipulated"],
+        ["Pie chart", "Showing proportions of a whole (energy mix, land use)", "Visually clear for proportions", "Hard to read if many small segments; can't show change over time"],
+        ["Scatter graph", "Showing correlation between two variables", "Reveals positive, negative or no correlation; anomalies visible", "Can't show causation, only correlation; harder to draw accurately"],
+        ["Population pyramid", "Showing age-sex structure of a population", "Instantly shows birth rates, life expectancy, demographic stage", "Needs accurate data; hard to compare multiple countries"],
+        ["Choropleth map", "Showing data values by geographic area", "Spatially intuitive; shows regional patterns", "Boundaries can be misleading; shading hard to read for mid-range values"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "1": {
+      "question": "You have data on house prices in 12 UK cities, including London which is an extreme outlier. Which measure of average should you use, and why?",
+      "options": [
+        "Median — because it is not distorted by outliers; London's extreme value would massively inflate the mean",
+        "Mean — because you have 12 values and the mean is always the best measure for any dataset",
+        "Mode — because you want to find the most common house price across the cities",
+        "Range — because you want to show the spread of prices rather than the average"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! When outliers are present (like London house prices), the median is more representative. The mean would be pulled upward by London's extreme value, giving a misleading picture of the 'average' UK city house price.",
+      "wrongFeedback": "Not quite. With an outlier like London's house prices, you should use the median — it's the middle value when sorted, and it's not affected by extreme values the way the mean is."
+    },
+    "2": {
+      "question": "When describing a scatter graph showing GDP and life expectancy for 20 countries, what is the correct structure for your description?",
+      "options": [
+        "State the general trend, then quote specific data values, then identify any anomalies, then attempt to explain them",
+        "List every data point from the graph without commenting on the pattern",
+        "Describe only the anomalies, as the overall pattern is obvious and doesn't need stating",
+        "Draw a conclusion first, then work backwards to find evidence that supports it"
+      ],
+      "correct": 0,
+      "correctFeedback": "Exactly right. TSAE: Trend → Specific data → Anomaly → Explanation. This structure ensures you cover the overall pattern, back it up with data, and show you can think critically about exceptions.",
+      "wrongFeedback": "Not quite. Use the TSAE structure: (1) overall Trend, (2) Specific data values as evidence, (3) Anomalies — points that don't fit the pattern, (4) Explanation of why. This structure earns full marks."
+    }
+  ],
+  "commonMistakes": [
+    "Describing data without quoting actual figures — 'Some countries have high life expectancy' earns no marks; always say which country and what the value is.",
+    "Using mean when outliers make it misleading — for house prices, income, or any skewed data, use the median; the exam specifically tests whether you know when to use which measure.",
+    "Not identifying anomalies on scatter graphs — anomalies (countries that don't fit the trend) show critical thinking and can open up high-value explanatory points.",
+    "Confusing correlation with causation on scatter graphs — two variables being correlated doesn't prove one causes the other; always say 'there is a positive correlation between X and Y' not 'X causes Y'.",
+    "Describing choropleth maps without compass directions — always say 'values are highest in the south-east' not just 'values are high in some areas'; spatial language is key."
+  ],
+  "examTips": [
+    "Data description questions across all papers reward TSAE: Trend, Specific data, Anomaly, Explanation. Treat this as a formula to apply every time.",
+    "When asked to 'suggest a reason' for a pattern or anomaly, connect it to geographical knowledge — don't just describe the graph again; explain the geography behind it.",
+    "GIS questions typically ask 'suggest one way GIS could be used to...' — name the layers you'd overlay and explain what that reveals. Emergency planning and retail site selection are the safest examples.",
+    "For percentage change: write out the formula first '((new − old) ÷ old) × 100', substitute in the numbers, then calculate. Show all working for full marks even if you get the arithmetic slightly wrong."
+  ],
+  "revisionCardBullets": [
+    "Bar = discrete categories; Line = change over time; Pie = proportions; Scatter = correlation",
+    "Population pyramid — age-sex structure; males left, females right",
+    "Choropleth — shading by data value; use compass directions when describing",
+    "Mean — sum ÷ count; distorted by outliers",
+    "Median — middle value when sorted; better with outliers (e.g., house prices)",
+    "IQR — Q3 minus Q1; spread of middle 50%; ignores extreme values",
+    "Percentage change = ((new − old) ÷ old) × 100",
+    "TSAE — Trend, Specific data, Anomaly, Explanation — use every time for data description",
+    "Always quote specific figures when describing data — name the country and the value",
+    "Anomalies — identify and explain points that don't fit the trend",
+    "GIS — geographic data as overlaid layers; used for emergency planning, retail, environment",
+    "Correlation ≠ causation — scatter graphs show relationships, not proof of cause"
+  ],
+  "videos": [
+    {
+      "title": "GCSE Geography Data Skills — Graphs, Statistics and Interpretation",
+      "url": "https://www.youtube.com/results?search_query=AQA+GCSE+Geography+data+skills+graphs+statistics+interpretation",
+      "source": "YouTube",
+      "duration": "~9 min"
+    },
+    {
+      "title": "GIS and Geographical Skills — Paper 3 Revision",
+      "url": "https://www.youtube.com/results?search_query=AQA+GCSE+Geography+GIS+geographical+skills+Paper+3",
+      "source": "YouTube",
+      "duration": "~7 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "AQA GCSE Geography data skills graphs statistics GIS",
+      "label": "Data and Graph Skills",
+      "source": "MrEvansGeography",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=MrEvansGeography+GCSE+Geography+data+skills+graphs+statistics"
+    },
+    {
+      "searchQuery": "GCSE Geography geographical skills data graphs statistics",
+      "label": "Geographical Skills — BBC Bitesize",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=geographical+skills+data+graphs+statistics+GCSE"
+    },
+    {
+      "searchQuery": "Cognito GCSE Geography data skills graphs GIS fieldwork",
+      "label": "Data Skills and GIS",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=Cognito+GCSE+Geography+data+skills+GIS"
+    }
+  ]
+}

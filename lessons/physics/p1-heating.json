@@ -1,0 +1,214 @@
+{
+  "id": "p1-heating",
+  "title": "Heating and cooling — specific heat capacity explained",
+  "topic": "P1",
+  "examTip": "ΔE = mcΔθ. Remember: Δ means 'change in'. Δθ is the temperature CHANGE (final − initial), not the final temperature.",
+  "introTips": [
+    "Water takes a long time to heat up and cool down — this is specific heat capacity in action.",
+    "Δθ means change in temperature — if water goes from 20°C to 100°C, Δθ = 80°C.",
+    "Different materials need very different amounts of energy to change temperature by the same amount."
+  ],
+  "intro": "Why does a metal spoon left in soup get scorching hot while the soup itself stays drinkable? Why does the sea stay warm long after summer ends, keeping coastal towns milder than inland cities? The answer is specific heat capacity — the property that determines how much energy a material needs to change temperature. It's why water is used in car radiators and central heating systems, why coastal climates are gentler, and why you can burn your mouth on a pie filling while the pastry feels fine. This is one of the most important (and most examined) equations in physics.",
+  "keyPoints": [
+    {
+      "heading": "Specific heat capacity",
+      "content": "Different materials need different amounts of energy to change their temperature by the same amount. <strong>Specific heat capacity (SHC)</strong>, symbol <strong>c</strong>, is the energy required to raise the temperature of <strong>1 kg</strong> of a substance by <strong>1°C</strong> (or 1 K — the same size change). Units: <strong>J/kg°C</strong>. The equation is: <strong>ΔE = mcΔθ</strong> — change in thermal energy (J) = mass (kg) × specific heat capacity (J/kg°C) × change in temperature (°C). <strong>Water</strong> has an unusually high SHC = <strong>4200 J/kg°C</strong>, meaning it takes a lot of energy to heat it up, and it releases a lot of energy as it cools down. This is why water is used as a <strong>coolant</strong> in car radiators and as a <strong>heat store</strong> in central heating systems — it absorbs and releases large amounts of energy without dramatic temperature swings.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Specific heat capacity (c) — energy needed to raise 1 kg of a substance by 1°C; unit: J/kg°C",
+        "ΔE = mcΔθ — change in energy (J) = mass (kg) × SHC (J/kg°C) × temperature change (°C)",
+        "Δθ — change in temperature = final temperature − initial temperature",
+        "Water SHC = 4200 J/kg°C — very high; takes a lot of energy to heat up and cools slowly",
+        "High SHC = good heat store; used in central heating, car cooling systems, coastal climate buffering"
+      ],
+      "keyTerms": [
+        { "term": "specific heat capacity (c)", "def": "The energy required to raise the temperature of 1 kg of a substance by 1°C; unit: J/kg°C" },
+        { "term": "ΔE = mcΔθ", "def": "Change in thermal energy = mass × specific heat capacity × temperature change" },
+        { "term": "Δθ", "def": "Change in temperature (°C or K) = final temperature − initial temperature" }
+      ],
+      "memTip": "ΔE = mcΔθ. Say it as 'em-see-delta-theta'. m = mass, c = SHC, Δθ = temp change.",
+      "tutor_note": "Students often use the final temperature instead of the temperature change — stress that Δθ = T_final − T_initial every time."
+    },
+    {
+      "heading": "Using ΔE = mcΔθ",
+      "content": "The equation <strong>ΔE = mcΔθ</strong> can be rearranged to find any variable. Rearrangements: <strong>m = ΔE / (cΔθ)</strong>, <strong>c = ΔE / (mΔθ)</strong>, <strong>Δθ = ΔE / (mc)</strong>. Worked example 1: How much energy is needed to heat 2 kg of water from 20°C to 100°C? Δθ = 80°C. ΔE = 2 × 4200 × 80 = <strong>672,000 J = 672 kJ</strong>. Worked example 2: A 1.5 kg block of aluminium (c = 900 J/kg°C) cools from 80°C to 20°C. Energy released = 1.5 × 900 × 60 = <strong>81,000 J = 81 kJ</strong>. Worked example 3: What is the SHC of a material if 5 kg absorbs 15,000 J and its temperature rises by 10°C? c = ΔE / (mΔθ) = 15,000 / (5 × 10) = <strong>300 J/kg°C</strong> (close to the value for brass or copper).",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "ΔE = mcΔθ — standard form; calculate energy transferred",
+        "c = ΔE / (mΔθ) — rearranged to find specific heat capacity",
+        "m = ΔE / (cΔθ) — rearranged to find mass",
+        "Δθ = ΔE / (mc) — rearranged to find temperature change",
+        "Example: 2 kg water, 20°C to 100°C → ΔE = 2 × 4200 × 80 = 672,000 J"
+      ],
+      "keyTerms": [
+        { "term": "ΔE = mcΔθ rearrangements", "def": "c = ΔE/(mΔθ); m = ΔE/(cΔθ); Δθ = ΔE/(mc)" }
+      ],
+      "memTip": "To find c: c = ΔE divided by (m times Δθ). Write the rearrangement before substituting numbers.",
+      "tutor_note": "Worked examples 2 and 3 are great exam question styles — cooling (energy released) and finding an unknown SHC. Practise all three types."
+    },
+    {
+      "heading": "Required practical — measuring specific heat capacity",
+      "content": "This is an AQA required practical — expect questions about the method, sources of error, and how to improve accuracy. <strong>Method</strong>: heat a known mass (m) of substance (water or metal block) using an electrical heater. Measure energy supplied using <strong>E = IVt</strong> (current × voltage × time) or read directly from a joulemeter. Measure temperature change (Δθ) with a thermometer. Calculate c = E / (mΔθ). For a <strong>metal block</strong>: the heater fits into a hole in the block; a thermometer sits in a second hole. For <strong>water</strong>: heat in a polystyrene cup, stir constantly for even temperature. <strong>Sources of error</strong>: heat loss to surroundings (underestimates how much energy went into the substance), not all electrical energy heats the substance (some heats the heater element itself), thermometer not in thermal equilibrium with the sample. <strong>Improvements</strong>: insulate the block/container with lagging to reduce heat loss, stir water to ensure even temperature distribution, wait for temperature to stabilise before recording.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Method: heat known mass with electrical heater; measure E = IVt and Δθ; calculate c = E/(mΔθ)",
+        "Joulemeter — device that measures electrical energy directly in joules",
+        "E = IVt — electrical energy (J) = current (A) × voltage (V) × time (s)",
+        "Error: heat loss to surroundings makes measured c too high (need more energy than calculated)",
+        "Error: heater also heats itself, not just the sample — overestimates energy input",
+        "Improvement: insulate the sample well; stir water; wait for thermal equilibrium before reading"
+      ],
+      "keyTerms": [
+        { "term": "E = IVt", "def": "Electrical energy (J) = current (A) × voltage (V) × time (s); used to calculate energy supplied in the SHC practical" },
+        { "term": "joulemeter", "def": "An instrument that directly measures electrical energy in joules" },
+        { "term": "thermal equilibrium", "def": "When two objects are at the same temperature and no net heat transfer occurs between them" }
+      ],
+      "memTip": "For the practical: E = IVt to find energy in, then c = E/(mΔθ). Remember to insulate to reduce heat loss error.",
+      "tutor_note": "This practical almost always appears in Paper 1. Students should be able to describe the method, identify two sources of error, and suggest improvements with scientific reasoning."
+    },
+    {
+      "heading": "Thermal stores and temperature",
+      "content": "<strong>Thermal energy</strong> is stored in the <strong>internal energy</strong> of a substance — the kinetic and potential energy of all its particles. <strong>Temperature</strong> is a measure of the average kinetic energy of the particles: the hotter the substance, the faster the particles move on average. This is important: temperature measures average KE per particle, while internal energy (thermal store) depends on both temperature AND the number of particles AND the spacing between them. <strong>Heat always flows from hot to cold</strong> — never the other way spontaneously. <strong>Thermal equilibrium</strong>: when two objects in contact reach the same temperature, heat transfer stops. Applications of high SHC: water in <strong>central heating</strong> (carries a lot of energy per kg), <strong>coastal climates</strong> are milder than inland areas (the sea's high SHC buffers temperature changes — warms up and cools down slowly), <strong>solar thermal panels</strong> use water to store heat energy collected from sunlight.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Internal energy — the total kinetic and potential energy of all particles in a substance",
+        "Temperature — a measure of average kinetic energy of particles; higher temp = faster particles",
+        "Heat flows from hot to cold — never spontaneously from cold to hot",
+        "Thermal equilibrium — reached when two objects have the same temperature; heat transfer stops",
+        "High SHC applications: central heating water, coastal climate buffering, solar thermal panels"
+      ],
+      "keyTerms": [
+        { "term": "internal energy", "def": "The sum of the kinetic and potential energies of all particles in a substance — the thermal store" },
+        { "term": "temperature", "def": "A measure of the average kinetic energy of the particles in a substance; unit: °C or K" },
+        { "term": "thermal equilibrium", "def": "When two objects are at the same temperature and no net heat transfer occurs between them" }
+      ],
+      "memTip": "Temperature = average KE per particle. Internal energy = total energy of ALL particles. Don't confuse them.",
+      "tutor_note": "The distinction between temperature and internal energy trips up many students — a large cold lake has more internal energy than a tiny hot spark, even though the spark is at a higher temperature."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Specific heat capacities of common materials",
+      "examFlag": true,
+      "headers": ["Material", "Specific heat capacity (J/kg°C)", "Comparative note"],
+      "rows": [
+        ["Water", "4200", "Highest of common substances — excellent heat store and coolant"],
+        ["Aluminium", "900", "Low SHC — heats and cools quickly; used in engine parts and cookware"],
+        ["Iron / steel", "450", "Moderate — used in radiators and structural applications"],
+        ["Copper", "390", "Low SHC — heats quickly; used in electrical wiring and heat exchangers"],
+        ["Concrete", "880", "Useful thermal mass in buildings — stores heat from sunlight during the day"],
+        ["Air (at const. pressure)", "1000", "Relatively low — air heats and cools quickly compared to water"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "0": {
+      "question": "How much energy is needed to heat 3 kg of water (c = 4200 J/kg°C) from 15°C to 65°C?",
+      "options": [
+        "630,000 J (630 kJ)",
+        "63,000 J (63 kJ)",
+        "819,000 J (819 kJ)",
+        "210,000 J (210 kJ)"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! ΔE = mcΔθ = 3 × 4200 × (65 − 15) = 3 × 4200 × 50 = 630,000 J = 630 kJ.",
+      "wrongFeedback": "Use ΔE = mcΔθ. First find Δθ = 65 − 15 = 50°C. Then ΔE = 3 × 4200 × 50 = 630,000 J. Remember: Δθ is the CHANGE in temperature, not the final temperature."
+    },
+    "2": {
+      "question": "In the specific heat capacity required practical, why is insulation placed around the metal block?",
+      "options": [
+        "To reduce heat loss to the surroundings, making the measurement of energy more accurate",
+        "To speed up the rate at which the block heats up",
+        "To prevent the thermometer from touching the block directly",
+        "To increase the specific heat capacity of the block"
+      ],
+      "correct": 0,
+      "correctFeedback": "Exactly right! Insulation reduces heat loss, so more of the measured electrical energy (IVt) actually goes into heating the block — improving accuracy.",
+      "wrongFeedback": "Insulation reduces heat loss to the surroundings. Without it, some of the electrical energy heats the air around the block instead of the block itself, making the calculated SHC larger than the true value."
+    },
+    "3": {
+      "question": "Why does coastal weather tend to be milder (less extreme temperatures) than inland areas far from the sea?",
+      "options": [
+        "Water has a high specific heat capacity, so the sea warms up and cools down slowly, buffering temperature changes",
+        "Coastal areas get more rainfall, which reduces temperature",
+        "The sea reflects sunlight and prevents heating of the land",
+        "Wind from the sea carries cold air that keeps temperatures stable"
+      ],
+      "correct": 0,
+      "correctFeedback": "Exactly! Water's high SHC (4200 J/kg°C) means the sea stores and releases heat slowly, acting as a thermal buffer that prevents extreme temperature swings near the coast.",
+      "wrongFeedback": "The answer is about specific heat capacity — water (SHC = 4200 J/kg°C) requires a lot of energy to change temperature. The sea heats up slowly in summer and cools slowly in winter, keeping coastal temperatures more moderate than inland areas."
+    }
+  ],
+  "commonMistakes": [
+    "Using final temperature instead of temperature change in ΔE = mcΔθ — always calculate Δθ = T_final − T_initial first.",
+    "Forgetting to convert mass to kg — if mass is given in grams, divide by 1000 before substituting.",
+    "Confusing temperature (average KE of particles) with internal energy (total energy of all particles) — they are different quantities.",
+    "In the required practical, describing heat loss as an error without explaining its effect — say it causes the measured SHC to be higher than the true value.",
+    "Thinking a higher temperature always means more internal energy — a large cold object can have more internal energy than a small hot one."
+  ],
+  "examTips": [
+    "ΔE = mcΔθ. Always find Δθ (the change in temperature) first — write it out before substituting. If an object cools, Δθ is still positive (it's the magnitude of change).",
+    "In the required practical, the two main sources of error are: (1) heat loss to surroundings; (2) heater also heats itself. Both make the calculated SHC too high.",
+    "Applications of high SHC are common 2–3 mark questions — link water's high SHC to central heating, coastal climates, or solar thermal systems explicitly.",
+    "If asked to calculate SHC from experimental data, use c = ΔE/(mΔθ) and discuss why your answer may differ from the true value (systematic errors)."
+  ],
+  "revisionCardBullets": [
+    "Specific heat capacity (c) — energy to raise 1 kg of substance by 1°C; unit: J/kg°C",
+    "ΔE = mcΔθ — change in energy (J) = mass (kg) × c (J/kg°C) × temp change (°C)",
+    "Rearrangements: c = ΔE/(mΔθ); m = ΔE/(cΔθ); Δθ = ΔE/(mc)",
+    "Water SHC = 4200 J/kg°C — highest of common substances; excellent heat store",
+    "Aluminium = 900; iron/steel = 450; copper = 390 J/kg°C",
+    "Required practical: use heater + joulemeter; E = IVt; calculate c = E/(mΔθ)",
+    "Error: heat loss to surroundings makes calculated c too high — insulate to reduce",
+    "Temperature = average kinetic energy of particles",
+    "Internal energy = total KE + PE of all particles in the substance",
+    "Heat flows from hot to cold; thermal equilibrium = same temperature, no net transfer",
+    "High SHC applications: central heating, coastal climate buffering, solar thermal panels",
+    "Example: 2 kg water, 20→100°C: ΔE = 2 × 4200 × 80 = 672,000 J"
+  ],
+  "videos": [
+    {
+      "title": "Specific Heat Capacity — Free Science Lessons",
+      "url": "https://www.youtube.com/results?search_query=specific+heat+capacity+AQA+GCSE+physics+free+science+lessons",
+      "source": "Free Science Lessons",
+      "duration": "~10 min"
+    },
+    {
+      "title": "Specific Heat Capacity — Cognito",
+      "url": "https://www.youtube.com/results?search_query=specific+heat+capacity+AQA+GCSE+physics+cognito",
+      "source": "Cognito",
+      "duration": "~7 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "specific heat capacity AQA GCSE physics free science lessons",
+      "label": "Specific Heat Capacity",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=specific+heat+capacity+AQA+GCSE+physics+free+science+lessons"
+    },
+    {
+      "searchQuery": "specific heat capacity GCSE physics bitesize",
+      "label": "Specific Heat Capacity",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=specific+heat+capacity+physics+gcse"
+    },
+    {
+      "searchQuery": "specific heat capacity AQA GCSE physics cognito",
+      "label": "Specific Heat Capacity",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=specific+heat+capacity+AQA+GCSE+physics+cognito"
+    }
+  ]
+}

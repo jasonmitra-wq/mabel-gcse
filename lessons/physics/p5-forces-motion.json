@@ -1,0 +1,227 @@
+{
+  "id": "p5-forces-motion",
+  "title": "Forces and motion — speed, velocity and acceleration",
+  "topic": "P5",
+  "examTip": "Always check whether a question asks for speed (scalar) or velocity (vector) — they're different quantities and mixing them up costs marks.",
+  "introTips": [
+    "Speed and velocity look almost the same — the difference is direction, and that one detail matters enormously in physics.",
+    "Graphs are worth a lot of marks — know what gradient and area mean on both distance-time and velocity-time graphs.",
+    "Equations of motion questions nearly always give you three values and ask for a fourth — identify your u, v, a, s and t before writing anything."
+  ],
+  "intro": "Every road sign, speed camera and sat-nav relies on the physics in this topic. Understanding speed, velocity and acceleration is how we describe motion precisely — and precisely is how you pick up every available mark in the exam.",
+  "keyPoints": [
+    {
+      "heading": "Scalar and vector quantities",
+      "content": "Physics quantities are divided into two types. <strong>Scalar quantities</strong> have magnitude (size) only — there is no direction attached. Examples include distance, speed, mass, energy and temperature. <strong>Vector quantities</strong> have both magnitude AND direction — you must state both to fully describe them. Examples include displacement, velocity, acceleration, force and weight.\n\n<strong>Distance</strong> (m) is how far an object has moved along its path — it is scalar. <strong>Displacement</strong> (m) is how far an object is from its starting point and in which direction — it is vector. Example: you walk 300m east then 400m north. Distance = 700m. Displacement = 500m at an angle north-east (because you can calculate the straight-line distance from start to finish using Pythagoras).\n\n<strong>Speed</strong> (m/s) = distance ÷ time — scalar. <strong>Velocity</strong> (m/s) = displacement ÷ time — vector. The numerical value of speed and velocity can be the same, but velocity must always include a direction. 'A car drives at 20 m/s' gives speed. 'A car drives at 20 m/s due north' gives velocity.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Scalar — magnitude only: distance, speed, mass, energy, temperature",
+        "Vector — magnitude AND direction: displacement, velocity, acceleration, force, weight",
+        "Distance (m) — how far moved along the path (scalar)",
+        "Displacement (m) — straight-line distance from start with direction (vector)",
+        "Speed (m/s) — distance ÷ time, no direction needed",
+        "Velocity (m/s) — displacement ÷ time, direction must be stated"
+      ],
+      "keyTerms": [
+        { "term": "Scalar", "def": "A quantity with magnitude only, no direction (e.g. speed, mass, distance)" },
+        { "term": "Vector", "def": "A quantity with both magnitude and direction (e.g. velocity, force, displacement)" },
+        { "term": "Displacement", "def": "Straight-line distance from start to current position, including direction" }
+      ],
+      "memTip": "SVD — Scalars: Speed, Volume, Distance. Vectors: Velocity, Weight, Displacement.",
+      "tutor_note": "Students often write 'velocity = 20 m/s' without a direction and lose the mark — emphasise this every time."
+    },
+    {
+      "heading": "Speed, velocity and distance-time graphs",
+      "content": "<strong>Average speed</strong> = total distance ÷ total time. Equation: <strong>v = d/t</strong>. Rearrangements: d = vt, t = d/v.\n\nWorked example: a cyclist travels 450m in 30s. Speed = 450 ÷ 30 = <strong>15 m/s</strong>.\n\nTypical speeds to remember: walking ≈ 1.5 m/s, cycling ≈ 6 m/s, car on motorway ≈ 30 m/s, speed of sound in air ≈ 340 m/s, speed of light ≈ 3 × 10⁸ m/s.\n\n<strong>Distance-time (d-t) graphs</strong>: the gradient (slope) of a d-t graph equals the speed. A <strong>horizontal line</strong> means the object is stationary (distance not changing). A <strong>straight diagonal line</strong> means constant speed (distance increasing at a steady rate). A <strong>curved line</strong> means the speed is changing — if the curve is getting steeper, the object is speeding up; if it is flattening, it is slowing down. A steeper gradient on a d-t graph always means a faster speed.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Average speed (m/s) = total distance (m) ÷ total time (s), equation: v = d/t",
+        "d-t graph gradient = speed — steeper means faster",
+        "Horizontal line on d-t graph — object is stationary",
+        "Straight diagonal line — constant (steady) speed",
+        "Curved line on d-t graph — changing speed (acceleration or deceleration)",
+        "Typical speeds: walking 1.5 m/s, cycling 6 m/s, motorway car 30 m/s, sound 340 m/s"
+      ],
+      "keyTerms": [
+        { "term": "Average speed", "def": "Total distance divided by total time for a journey" },
+        { "term": "Gradient", "def": "Slope of a graph — on a d-t graph, gradient equals speed" }
+      ],
+      "memTip": "Speed = Distance over Time. Triangle: put D on top, v and t on the bottom.",
+      "tutor_note": "Gradient calculations on d-t graphs come up almost every year — ensure Mabel can pick two points and calculate rise/run."
+    },
+    {
+      "heading": "Acceleration and velocity-time graphs",
+      "content": "<strong>Acceleration</strong> is the rate of change of velocity. Equation: <strong>a = (v − u) / t</strong>, where v = final velocity, u = initial velocity, t = time. Unit: m/s².\n\nWorked example: a car accelerates from 0 to 30 m/s in 10s. a = (30 − 0) ÷ 10 = <strong>3 m/s²</strong>.\n\n<strong>Deceleration</strong> is negative acceleration — velocity is decreasing. If u = 20 m/s, v = 0, t = 4s: a = (0 − 20) ÷ 4 = −5 m/s² (negative sign means decelerating).\n\n<strong>Velocity-time (v-t) graphs</strong>: the gradient of a v-t graph equals acceleration. The area under a v-t graph equals the distance travelled. A <strong>horizontal line</strong> on a v-t graph means constant velocity (zero acceleration). An <strong>upward slope</strong> means the object is accelerating. A <strong>downward slope</strong> means it is decelerating. A <strong>curved line</strong> on a v-t graph means the acceleration itself is changing (non-uniform acceleration).\n\nFor a triangle on a v-t graph: area = ½ × base × height. For a trapezium: area = ½ × (sum of parallel sides) × height.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Acceleration (m/s²) = change in velocity ÷ time: a = (v − u) / t",
+        "Deceleration — negative acceleration, velocity is decreasing",
+        "v-t graph gradient = acceleration — upward slope means speeding up",
+        "Horizontal line on v-t graph — constant velocity, zero acceleration",
+        "Area under v-t graph = distance (displacement) travelled",
+        "Curved v-t line — non-uniform (changing) acceleration"
+      ],
+      "keyTerms": [
+        { "term": "Acceleration", "def": "Rate of change of velocity, measured in m/s²; can be positive (speeding up) or negative (slowing down)" },
+        { "term": "Deceleration", "def": "Negative acceleration — the object is slowing down" }
+      ],
+      "memTip": "v-t graph: Gradient = Acceleration, Area = Distance. GA-D: 'Gonna Ace D-grade no more!'",
+      "tutor_note": "Area under v-t graph calculations appear as 6-mark questions — practise splitting shapes into rectangles and triangles."
+    },
+    {
+      "heading": "Equations of motion (SUVAT)",
+      "content": "These equations link the five motion quantities: s (displacement, m), u (initial velocity, m/s), v (final velocity, m/s), a (acceleration, m/s²), t (time, s). You are given three values and asked to find a fourth.\n\n<strong>Equations</strong>:\n• v = u + at\n• s = ½(u + v)t\n• v² = u² + 2as (no time needed)\n\nWorked example 1: a ball rolls from rest (u = 0) with acceleration 2 m/s² for 5s. Find displacement.\ns = ½(u + v)t — but we need v first. v = 0 + 2 × 5 = 10 m/s. s = ½ × (0 + 10) × 5 = <strong>25m</strong>.\n\nOr using v² = u² + 2as: 10² = 0 + 2 × 2 × s → 100 = 4s → s = 25m. ✓\n\nWorked example 2: a car brakes from 20 m/s to rest over 40m. Find deceleration.\nv² = u² + 2as → 0 = 400 + 2a × 40 → 80a = −400 → a = <strong>−5 m/s²</strong> (decelerating at 5 m/s²).",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "s = displacement (m), u = initial velocity (m/s), v = final velocity (m/s), a = acceleration (m/s²), t = time (s)",
+        "v = u + at — use when you have u, a, t and want v",
+        "s = ½(u + v)t — use when you have u, v, t and want s",
+        "v² = u² + 2as — use when there is no time given",
+        "List known values before choosing which equation to use",
+        "Watch signs: deceleration gives a negative value for a"
+      ],
+      "keyTerms": [
+        { "term": "SUVAT", "def": "The five motion quantities: displacement, initial velocity, final velocity, acceleration, time" }
+      ],
+      "memTip": "Write out s, u, v, a, t — tick off the three you know, circle the one you want, then pick the equation that contains all four.",
+      "tutor_note": "v² = u² + 2as is the most tested because it hides time — make sure Mabel recognises when to use it."
+    },
+    {
+      "heading": "Terminal velocity and non-uniform acceleration",
+      "content": "<strong>Uniform acceleration</strong>: the acceleration is constant — velocity changes by the same amount each second. Gives a straight line on a v-t graph.\n\n<strong>Non-uniform acceleration</strong>: the rate of change of velocity is itself changing — gives a curved line on a v-t graph.\n\n<strong>Free fall</strong>: ignoring air resistance, all objects near Earth's surface fall with the same acceleration g ≈ 9.8 m/s² downward. Mass does not affect the rate of free fall.\n\n<strong>Terminal velocity</strong>: as an object falls, air resistance increases with speed. At some point, air resistance equals weight — resultant force = 0 → no further acceleration → the object falls at a constant (terminal) velocity.\n\nSkydiver story: (1) jumps — accelerates downward, air resistance small; (2) as speed increases, air resistance increases, net force decreases, acceleration decreases; (3) terminal velocity reached (~55 m/s) — constant speed; (4) parachute opens — drag increases massively, net force now upward, decelerates rapidly; (5) new lower terminal velocity (~5 m/s) reached — lands safely.\n\nOn a v-t graph the skydiver's fall shows a curve that levels off at terminal velocity, then a sharp drop when the parachute opens, then levels off again at the lower terminal velocity.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Uniform acceleration — constant a, straight line on v-t graph",
+        "Non-uniform acceleration — changing a, curved line on v-t graph",
+        "Free fall — all objects accelerate at g ≈ 9.8 m/s² regardless of mass (ignoring air resistance)",
+        "Terminal velocity — air resistance equals weight, resultant force = 0, constant velocity",
+        "Skydiver accelerates → air resistance grows → acceleration decreases → terminal velocity",
+        "Parachute opens → massive drag → decelerates to new lower terminal velocity"
+      ],
+      "keyTerms": [
+        { "term": "Terminal velocity", "def": "Constant falling speed reached when air resistance exactly balances weight, giving zero resultant force" },
+        { "term": "Free fall", "def": "Falling under gravity alone with no air resistance; acceleration = g ≈ 9.8 m/s²" }
+      ],
+      "memTip": "Terminal velocity: T for Terminal, T for Two forces balanced (weight = drag). No net force → no acceleration.",
+      "tutor_note": "Describing the skydiver's v-t graph in words is a very common 4-mark question — practise the five stages."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Distance-time vs velocity-time graphs — what each feature tells you",
+      "examFlag": true,
+      "headers": ["Feature", "Distance-time (d-t) graph", "Velocity-time (v-t) graph"],
+      "rows": [
+        ["Gradient", "Speed (m/s)", "Acceleration (m/s²)"],
+        ["Area under graph", "Not meaningful", "Distance (displacement) travelled (m)"],
+        ["Horizontal line", "Stationary (speed = 0)", "Constant velocity (acceleration = 0)"],
+        ["Straight diagonal line", "Constant speed", "Constant acceleration"],
+        ["Curved line", "Changing speed", "Changing acceleration (non-uniform)"],
+        ["Steeper slope", "Faster speed", "Greater acceleration"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "1": {
+      "question": "A car travels 240m in 8s at constant speed. What is its speed?",
+      "options": ["30 m/s", "248 m/s", "232 m/s", "3 m/s"],
+      "correct": 0,
+      "correctFeedback": "Correct! v = d/t = 240 ÷ 8 = 30 m/s.",
+      "wrongFeedback": "Use v = d/t. Speed = 240 ÷ 8 = 30 m/s. Don't add or subtract — it's a division."
+    },
+    "2": {
+      "question": "On a velocity-time graph, what does the gradient of the line represent?",
+      "options": ["Acceleration", "Distance", "Speed", "Displacement"],
+      "correct": 0,
+      "correctFeedback": "Correct! Gradient on a v-t graph = acceleration (m/s²).",
+      "wrongFeedback": "On a v-t graph, the gradient = acceleration. It's on a d-t graph that gradient = speed."
+    },
+    "3": {
+      "question": "A motorcycle accelerates from 5 m/s to 25 m/s in 4s. What is its acceleration?",
+      "options": ["5 m/s²", "6.25 m/s²", "20 m/s²", "0.2 m/s²"],
+      "correct": 0,
+      "correctFeedback": "Correct! a = (v − u) / t = (25 − 5) / 4 = 20/4 = 5 m/s².",
+      "wrongFeedback": "Use a = (v − u) / t = (25 − 5) / 4 = 5 m/s². Remember to subtract initial from final velocity first."
+    },
+    "4": {
+      "question": "A ball is dropped from rest and falls freely under gravity (g = 9.8 m/s²) for 3s. How far does it fall?",
+      "options": ["44.1 m", "29.4 m", "88.2 m", "9.8 m"],
+      "correct": 0,
+      "correctFeedback": "Correct! s = ½at² = ½ × 9.8 × 9 = 44.1m (using u = 0, so s = ½(u+v)t or v = at = 29.4, s = ½ × 29.4 × 3 = 44.1m).",
+      "wrongFeedback": "Use v = u + at first: v = 0 + 9.8 × 3 = 29.4 m/s. Then s = ½(u+v)t = ½ × 29.4 × 3 = 44.1m."
+    }
+  },
+  "commonMistakes": [
+    "Writing velocity without a direction — always state the direction (e.g. '20 m/s northward') or you lose the mark.",
+    "Confusing gradient and area on v-t graphs — gradient = acceleration, area = distance. These are not interchangeable.",
+    "Using the wrong SUVAT equation — always list s, u, v, a, t and tick off the known values before choosing.",
+    "Thinking deceleration is a different thing from acceleration — it is just negative acceleration; use a negative sign in calculations.",
+    "Saying all falling objects fall at different rates — ignoring air resistance, all objects fall at the same g ≈ 9.8 m/s² regardless of mass."
+  ],
+  "examTips": [
+    "In graph questions, always draw a large, accurate triangle when calculating gradient — use the full line, not just a small section.",
+    "For SUVAT questions, write the five letters s u v a t and tick what you know — it instantly shows which equation to use.",
+    "Terminal velocity questions ask for the shape of the v-t graph AND an explanation — describe the forces, not just the shape."
+  ],
+  "revisionCardBullets": [
+    "Scalar — magnitude only (speed, distance, mass, energy)",
+    "Vector — magnitude + direction (velocity, displacement, acceleration, force, weight)",
+    "Speed v = d/t (m/s); velocity = speed with direction",
+    "d-t graph: gradient = speed; horizontal = stationary; curve = changing speed",
+    "Acceleration a = (v − u)/t, unit m/s²; deceleration is negative a",
+    "v-t graph: gradient = acceleration; area = distance; horizontal = constant velocity",
+    "SUVAT: v = u + at; s = ½(u+v)t; v² = u² + 2as",
+    "List s, u, v, a, t and tick known values before choosing equation",
+    "Free fall: all objects fall at g ≈ 9.8 m/s² ignoring air resistance",
+    "Terminal velocity: air resistance = weight → zero net force → constant velocity",
+    "Skydiver: accelerates → terminal velocity → parachute → decelerates → new terminal velocity",
+    "Typical speeds: walking 1.5, cycling 6, motorway car 30, sound 340 m/s, light 3×10⁸ m/s"
+  ],
+  "videos": [
+    {
+      "title": "Speed, velocity and acceleration — AQA GCSE Physics",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+physics+speed+velocity+acceleration+free+science+lessons",
+      "source": "Free Science Lessons",
+      "duration": "~10 min"
+    },
+    {
+      "title": "Distance-time and velocity-time graphs explained",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+physics+distance+time+velocity+time+graphs+cognito",
+      "source": "Cognito",
+      "duration": "~8 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "aqa gcse physics speed velocity acceleration free science lessons",
+      "label": "Speed, velocity & acceleration",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+physics+speed+velocity+acceleration+free+science+lessons"
+    },
+    {
+      "searchQuery": "aqa gcse physics forces motion bitesize",
+      "label": "Forces and motion",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=forces+motion+gcse+physics"
+    },
+    {
+      "searchQuery": "aqa gcse physics distance time velocity time graphs cognito",
+      "label": "Motion graphs explained",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+physics+distance+time+velocity+time+graphs+cognito"
+    }
+  ]
+}

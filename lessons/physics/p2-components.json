@@ -1,0 +1,222 @@
+{
+  "id": "p2-components",
+  "title": "Circuit components — diodes, LDRs and thermistors",
+  "topic": "P2",
+  "examTip": "I-V graphs are favourite exam targets — know the shape for a fixed resistor, diode and filament bulb, and be ready to explain the shape in terms of resistance.",
+  "introTips": [
+    "Sketch the I-V graph for a fixed resistor vs a diode before you read — then check if you were right.",
+    "Make flashcards for LDR and thermistor: what happens to resistance when the physical quantity increases?",
+    "Circuit symbols come up in every paper — practise drawing them from memory."
+  ],
+  "intro": "Why does your phone charger get warm but barely flicker the lights? Why do street lamps switch on automatically at dusk? The answer is all about how different components respond to the conditions around them — some change their resistance with light, some with heat, and some only let current through in one direction. Understanding these components is the foundation of every electronic device you have ever used.",
+  "keyPoints": [
+    {
+      "heading": "Fixed resistors and variable resistors",
+      "content": "A <strong>fixed resistor</strong> has a constant resistance regardless of temperature, light or any other condition — it follows <strong>Ohm's Law</strong>: V = IR, where V is voltage (volts, V), I is current (amps, A) and R is resistance (ohms, Ω). A <strong>variable resistor</strong> (also called a <strong>rheostat</strong>) allows you to manually change the resistance by sliding a contact along a resistive wire or track. They are used in dimmer switches, volume controls and lab experiments to control current. On an <strong>I-V graph</strong> for an ohmic conductor (fixed resistor at constant temperature), you get a straight line through the origin — current is directly proportional to voltage. The steeper the line, the lower the resistance. Doubling the resistance halves the gradient. Worked example: R = 10 Ω, V = 5 V → I = V ÷ R = 5 ÷ 10 = 0.5 A.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Fixed resistor — resistance stays constant at all voltages and temperatures",
+        "Variable resistor (rheostat) — resistance can be adjusted manually by the user",
+        "Ohm's Law — V = IR; current proportional to voltage for ohmic conductors",
+        "I-V graph: straight line through origin — constant gradient = constant resistance",
+        "Steeper gradient on I-V graph → lower resistance (more current per volt)",
+        "Units: V in volts, I in amps, R in ohms"
+      ],
+      "keyTerms": [
+        {"term": "Ohmic conductor", "def": "A component whose resistance stays constant as voltage changes — produces a straight-line I-V graph through the origin."},
+        {"term": "Variable resistor", "def": "A resistor whose resistance can be changed manually, used to control current in a circuit."},
+        {"term": "Resistance", "def": "The opposition to current flow; measured in ohms (Ω). R = V ÷ I."}
+      ],
+      "memTip": "Straight line = straight behaviour = fixed resistor. If the graph curves, something is changing.",
+      "tutor_note": "Students often confuse gradient with resistance — remind them that a steeper gradient means MORE current for the same voltage, so LOWER resistance."
+    },
+    {
+      "heading": "Diodes",
+      "content": "A <strong>diode</strong> is a component that only allows current to flow in <strong>one direction</strong> — the forward direction. In <strong>reverse bias</strong> (wrong direction), resistance is extremely high and virtually no current flows. On an <strong>I-V graph</strong> the diode shows a flat line near zero for negative voltages, then a sudden steep rise once the <strong>forward threshold voltage</strong> (~0.7 V for silicon diodes) is exceeded. The circuit symbol is a triangle pointing in the direction of conventional current flow, with a vertical bar blocking reverse flow. An <strong>LED (light-emitting diode)</strong> is a diode that emits light when current flows in the forward direction — it also has a threshold voltage but emits photons as electrons lose energy crossing the junction. LEDs are used in TVs, phone screens, traffic lights and energy-efficient lighting. Diodes are used in <strong>rectification</strong> — converting alternating current (AC) to direct current (DC), for example in phone chargers.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Diode — allows current in forward direction only; reverse bias gives near-zero current",
+        "Forward threshold voltage — ~0.7 V for silicon; diode won't conduct below this",
+        "I-V graph — flat for negative V, sudden steep rise above threshold voltage",
+        "LED — emits light when forward current flows; used in energy-efficient lighting",
+        "Rectification — using diodes to convert AC → DC in power supplies",
+        "Circuit symbol — triangle + bar; triangle points in direction of conventional current"
+      ],
+      "keyTerms": [
+        {"term": "Diode", "def": "A component that allows current to flow in one direction only, with very high resistance in reverse bias."},
+        {"term": "LED", "def": "Light-emitting diode — a diode that releases light energy when current flows through it in the forward direction."},
+        {"term": "Forward threshold voltage", "def": "The minimum voltage needed for a diode to conduct; approximately 0.7 V for silicon diodes."},
+        {"term": "Rectification", "def": "Converting AC to DC using one or more diodes, as in phone chargers and power adapters."}
+      ],
+      "memTip": "The triangle in the symbol points the way current can go — like an arrow saying 'this way only'.",
+      "tutor_note": "The flat part of the diode I-V graph confuses many students — emphasise that it is not zero resistance, just extremely high resistance meaning negligible current."
+    },
+    {
+      "heading": "Light-Dependent Resistors (LDRs)",
+      "content": "An <strong>LDR (light-dependent resistor)</strong> is a component whose resistance <strong>decreases as light intensity increases</strong>. In bright light, more photons hit the semiconductor material (commonly cadmium sulphide), releasing more charge carriers — so current flows more easily and resistance falls. In the dark, very few charge carriers are available, so resistance is very high (can be hundreds of kΩ). In bright light, resistance can drop to just a few hundred ohms. Uses: <strong>automatic street lights</strong> (dark → high resistance → triggers circuit to switch light on), <strong>burglar alarms</strong> (breaking a light beam changes LDR resistance, triggering alarm), <strong>camera exposure meters</strong> and garden solar lights. In a <strong>potential divider</strong> circuit with a fixed resistor, the LDR's changing resistance shifts the voltage across each component — this voltage change can trigger a transistor switch. Graph shape: resistance on y-axis, light intensity on x-axis → downward curve (not linear).",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "LDR — resistance decreases as light intensity increases",
+        "Dark conditions — very high resistance (hundreds of kΩ); bright light — low resistance (hundreds of Ω)",
+        "Semiconductor material releases more charge carriers in brighter light",
+        "Used in automatic street lights, burglar alarms, camera exposure meters",
+        "Paired with fixed resistor in potential divider to create a light-sensitive voltage signal",
+        "Graph: resistance vs light intensity — downward curve (inverse relationship)"
+      ],
+      "keyTerms": [
+        {"term": "LDR", "def": "Light-dependent resistor — a semiconductor component whose resistance decreases as light intensity increases."},
+        {"term": "Charge carrier", "def": "A free electron or hole that can carry electric charge through a semiconductor material."},
+        {"term": "Potential divider", "def": "A circuit with two resistors in series; the output voltage depends on the ratio of the resistances."}
+      ],
+      "memTip": "More light → more carriers → more current → less resistance. Think of a crowd opening doors — more light means more people, easier to get through.",
+      "tutor_note": "Students mix up LDR and thermistor. Both are inverse (more → less resistance), but the trigger is different: LDR responds to light, thermistor responds to temperature."
+    },
+    {
+      "heading": "Thermistors",
+      "content": "A <strong>thermistor</strong> is a component whose resistance <strong>decreases as temperature increases</strong>. The most common type is an <strong>NTC thermistor</strong> (negative temperature coefficient) — the hotter it gets, the lower its resistance. At high temperatures, more electrons have enough thermal energy to break free from atoms and act as charge carriers — resistance falls significantly. At low temperatures, few carriers are available and resistance is high. Worked example: at 20°C a thermistor might have R = 5000 Ω; at 100°C it might fall to 200 Ω. Uses: <strong>thermostats</strong> (central heating systems), <strong>fire alarms</strong>, temperature sensors in <strong>car engines</strong> and medical devices, smart home temperature controls. Key rule to remember: both the <strong>LDR and the thermistor are inverse components</strong> — more of the physical quantity (light or heat) → less resistance. In a potential divider, a thermistor's resistance change can trigger a switching circuit when temperature crosses a threshold.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Thermistor — resistance decreases as temperature increases (NTC type)",
+        "More heat → more thermal energy → more free charge carriers → lower resistance",
+        "At low temperatures: high resistance; at high temperatures: low resistance",
+        "Used in thermostats, fire alarms, engine temperature sensors",
+        "Both LDR and thermistor: more of the physical quantity → less resistance",
+        "Graph: resistance vs temperature — downward curve (not linear)"
+      ],
+      "keyTerms": [
+        {"term": "Thermistor", "def": "A temperature-sensitive resistor whose resistance decreases as temperature increases (NTC type)."},
+        {"term": "NTC", "def": "Negative temperature coefficient — resistance decreases as temperature rises."},
+        {"term": "Thermal energy", "def": "Energy associated with the temperature of a material; at higher temperatures, more electrons gain enough energy to become free charge carriers."}
+      ],
+      "memTip": "NTC = 'Nothing To Conduct when cold'. Heat it up and it conducts more easily — resistance goes down.",
+      "tutor_note": "Common exam question: describe and explain the shape of the resistance-temperature graph for a thermistor. Students must say resistance decreases AND explain why (more carriers at higher temperature)."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Circuit components — summary",
+      "examFlag": true,
+      "headers": ["Component", "Circuit symbol (description)", "What it does", "How resistance changes", "Real-world use"],
+      "rows": [
+        ["Fixed resistor", "Rectangle (or zigzag)", "Opposes current flow by a fixed amount", "Constant — does not change", "Current limiting in LED circuits"],
+        ["Variable resistor", "Rectangle with arrow through it", "Allows manual adjustment of resistance", "Changes when slider is moved", "Dimmer switches, volume controls"],
+        ["Diode", "Triangle + vertical bar", "Allows current in one direction only", "Very low (forward) / very high (reverse)", "Rectification in power supplies"],
+        ["LED", "Triangle + bar + two arrows (light)", "Emits light when forward current flows", "Very low (forward) / very high (reverse)", "Indicator lights, screens, street lighting"],
+        ["LDR", "Rectangle with circle and arrows in", "Resistance changes with light intensity", "Decreases as light increases", "Automatic street lights, burglar alarms"],
+        ["Thermistor", "Rectangle with diagonal line", "Resistance changes with temperature", "Decreases as temperature increases", "Thermostats, fire alarms, engine sensors"]
+      ]
+    },
+    {
+      "title": "I-V graph shapes for key components",
+      "examFlag": true,
+      "headers": ["Component", "I-V graph shape", "What the shape tells you"],
+      "rows": [
+        ["Fixed resistor (ohmic)", "Straight line through origin", "Constant resistance — I directly proportional to V"],
+        ["Filament lamp", "Curve — gets less steep at higher current", "Resistance increases as it gets hotter"],
+        ["Diode", "Flat near zero for negative V; steep rise above ~0.7 V", "Only conducts in forward direction above threshold"],
+        ["LDR", "Different straight lines for different light levels", "Each light level gives different (constant) resistance"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "0": {
+      "question": "A fixed resistor has V = 12 V and I = 0.4 A. What is its resistance?",
+      "options": ["30 Ω", "4.8 Ω", "0.033 Ω", "12.4 Ω"],
+      "correct": 0,
+      "correctFeedback": "Correct! R = V ÷ I = 12 ÷ 0.4 = 30 Ω. Always check your units — volts and amps give ohms.",
+      "wrongFeedback": "Use R = V ÷ I. Divide 12 V by 0.4 A to get 30 Ω. Don't multiply or add — Ohm's Law is a division here."
+    },
+    "1": {
+      "question": "What happens to the resistance of an LDR when it is moved from a bright room into a dark cupboard?",
+      "options": ["Resistance increases significantly", "Resistance decreases", "Resistance stays the same", "Resistance becomes zero"],
+      "correct": 0,
+      "correctFeedback": "Exactly right. In the dark, fewer charge carriers are available so current is harder to push through — resistance increases significantly.",
+      "wrongFeedback": "Remember: LDR is an inverse component — MORE light = LESS resistance. So less light (dark cupboard) means HIGHER resistance."
+    },
+    "2": {
+      "question": "On an I-V graph for a diode, what does the flat line at negative voltages represent?",
+      "options": ["The diode has very high resistance and almost no current flows in reverse bias", "The diode has zero resistance", "The diode allows equal current in both directions", "The diode has broken"],
+      "correct": 0,
+      "correctFeedback": "Spot on. In reverse bias the diode has extremely high resistance — the flat line shows that virtually no current flows, even as voltage increases in the negative direction.",
+      "wrongFeedback": "The flat line does NOT mean zero resistance — it means very high resistance, so the tiny amount of current that does flow is negligible. The diode is blocking current in the reverse direction."
+    },
+    "3": {
+      "question": "Both LDRs and thermistors are described as 'inverse' components. What does this mean?",
+      "options": ["As the physical quantity (light or heat) increases, resistance decreases", "As resistance increases, current decreases", "They only work when connected in reverse", "Their I-V graphs are mirror images of each other"],
+      "correct": 0,
+      "correctFeedback": "Perfect. 'Inverse' means the relationship is opposite — more light or more heat leads to less resistance in both components.",
+      "wrongFeedback": "Think about what the LDR does: bright light → low resistance. And the thermistor: hot → low resistance. Both respond to more of something by giving less resistance — that's what 'inverse' means here."
+    }
+  },
+  "commonMistakes": [
+    "Saying that protons move during friction charging — only electrons transfer. Protons are fixed in the nucleus.",
+    "Confusing the gradient of an I-V graph with resistance — a steeper line means lower resistance (more current per volt), not higher.",
+    "Thinking a diode has zero resistance in reverse bias — it has very HIGH resistance, so negligible current flows rather than truly zero.",
+    "Mixing up LDR and thermistor: LDR responds to light, thermistor responds to temperature — both decrease in resistance as their respective quantity increases.",
+    "Forgetting that the LED is a type of diode and therefore only conducts in the forward direction — it will not light up if connected the wrong way round."
+  ],
+  "examTips": [
+    "When describing an LDR or thermistor, always give both parts: state what happens to resistance AND explain why in terms of charge carriers.",
+    "For I-V graph questions, describe the shape precisely — 'straight line through the origin', 'curve that gets less steep', 'flat then sudden steep rise'. Vague answers lose marks.",
+    "If a question asks you to select the correct fuse or explain a circuit's behaviour, write down V = IR first and use it as your starting point — most electricity questions link back to it."
+  ],
+  "revisionCardBullets": [
+    "Fixed resistor: constant resistance; I-V graph is straight line through origin",
+    "Variable resistor (rheostat): resistance adjusted manually; used in dimmer switches",
+    "Ohm's Law: V = IR (volts = amps × ohms)",
+    "Diode: current in one direction only; threshold voltage ~0.7 V for silicon",
+    "LED: diode that emits light; used in screens, traffic lights, energy-efficient bulbs",
+    "I-V graph for diode: flat for negative V, steep rise above threshold",
+    "LDR: more light → more charge carriers → less resistance",
+    "Thermistor (NTC): more heat → more charge carriers → less resistance",
+    "Both LDR and thermistor: inverse relationship between physical quantity and resistance",
+    "LDR uses: automatic street lights, burglar alarms, camera meters",
+    "Thermistor uses: thermostats, fire alarms, engine and medical temperature sensors",
+    "Potential divider: pair LDR or thermistor with fixed resistor to create light/heat-sensitive voltage signal"
+  ],
+  "videos": [
+    {
+      "title": "LDRs and Thermistors — AQA GCSE Physics",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+physics+LDR+thermistor+free+science+lessons",
+      "source": "Free Science Lessons",
+      "duration": "~8 min"
+    },
+    {
+      "title": "I-V Characteristics — Diodes, Resistors, Filament Bulbs",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+physics+IV+characteristics+diode+cognito",
+      "source": "Cognito",
+      "duration": "~7 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "aqa gcse physics circuit components LDR thermistor diode",
+      "label": "Circuit components — LDRs, thermistors, diodes",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+physics+circuit+components+LDR+thermistor+diode+free+science+lessons"
+    },
+    {
+      "searchQuery": "gcse physics circuit components electricity bitesize",
+      "label": "Circuit components — BBC Bitesize",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=circuit+components+electricity+physics+gcse"
+    },
+    {
+      "searchQuery": "aqa gcse physics IV characteristics components cognito",
+      "label": "I-V graphs and components — Cognito",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+physics+IV+characteristics+circuit+components+cognito"
+    }
+  ]
+}

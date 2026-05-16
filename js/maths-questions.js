@@ -1653,7 +1653,2275 @@ const MathsQuestions = (() => {
         ],
       },
     },
+
+    // ══════════════════════════════════════════════════════════
+    // INTEGERS, DECIMALS & ROUNDING (num-integers)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'int-A01', subtopic: 'num-integers', band: 'A', marks: 2,
+      question: 'Round 47,382 to the nearest thousand.',
+      steps: [
+        {
+          prompt: 'Look at the hundreds digit. Is it 5 or more?',
+          hint1: 'The hundreds digit is 3 (in 47,382).',
+          hint2: '3 is less than 5, so round down.',
+          hint3: 'Round down: the thousands digit stays as 7.',
+          answer: 47000, tolerance: 0, unit: '',
+          explanation: 'Hundreds digit = 3 < 5, so the thousands digit stays at 7. Answer: 47,000.',
+        },
+      ],
+      workedExample: {
+        question: 'Round 63,750 to the nearest thousand.',
+        steps: ['Hundreds digit = 7 ≥ 5, so round up. 63,750 → <strong>64,000</strong>'],
+      },
+    },
+    {
+      id: 'int-A02', subtopic: 'num-integers', band: 'A', marks: 2,
+      question: 'Round 0.04763 to 2 significant figures.',
+      steps: [
+        {
+          prompt: 'Identify the first significant figure (first non-zero digit).',
+          hint1: 'Leading zeros are not significant.',
+          hint2: 'The first significant figure is 4.',
+          hint3: 'First sig fig = 4 (the 4 in the hundredths place).',
+          answer: 4, tolerance: 0, unit: '',
+          explanation: 'Leading zeros don\'t count. First sig fig is 4, second is 7.',
+          checkType: 'skip',
+        },
+        {
+          prompt: 'Round to 2 sig figs. The third sig fig is 6 — what does 0.04763 round to?',
+          hint1: 'Third sig fig is 6 ≥ 5, so round up the second sig fig.',
+          hint2: '7 rounds up to 8.',
+          hint3: '0.048.',
+          answer: 0.048, tolerance: 0.00001, unit: '',
+          explanation: '0.04763: 1st sf = 4, 2nd sf = 7. Third sf = 6 ≥ 5, round 7 up to 8. Answer: 0.048.',
+        },
+      ],
+      workedExample: {
+        question: 'Round 0.003829 to 2 significant figures.',
+        steps: ['1st sf = 3, 2nd sf = 8. Third sf = 2 < 5 → round down.', 'Answer: <strong>0.0038</strong>'],
+      },
+    },
+    {
+      id: 'int-A03', subtopic: 'num-integers', band: 'A', marks: 2,
+      question: 'Write these numbers in order, smallest first: 0.34, 0.304, 0.043, 0.43',
+      steps: [
+        {
+          prompt: 'Compare the digits column by column. Which is smallest?',
+          hint1: '0.043 has 0 in the tenths place — smaller than all others.',
+          hint2: 'Next: 0.304 has 3 tenths but 0 hundredths. Then 0.34. Largest is 0.43.',
+          hint3: '0.043, 0.304, 0.34, 0.43',
+          answer: 43, tolerance: 0, unit: '',
+          explanation: 'Tenths digits: 0.043=0, 0.304=3, 0.34=3, 0.43=4. Order: 0.043, 0.304, 0.34, 0.43.',
+          checkType: 'skip',
+          displayAnswer: '0.043, 0.304, 0.34, 0.43',
+        },
+      ],
+      workedExample: {
+        question: 'Order smallest first: 0.6, 0.06, 0.606, 0.066',
+        steps: ['Tenths: 0.06=0, 0.066=0, 0.6=6, 0.606=6. Then hundredths for ties.', 'Order: <strong>0.06, 0.066, 0.6, 0.606</strong>'],
+      },
+    },
+    {
+      id: 'int-B01', subtopic: 'num-integers', band: 'B', marks: 3,
+      question: 'A = 3.7 (1 d.p.), B = 12 (2 s.f.). Find the maximum possible value of A × B.',
+      steps: [
+        {
+          prompt: 'Find the upper bound of A (3.7 to 1 d.p.).',
+          hint1: 'A is between 3.65 and 3.75.',
+          hint2: 'Upper bound of A = 3.75.',
+          hint3: 'Upper bound of A = 3.75.',
+          answer: 3.75, tolerance: 0.001, unit: '',
+          explanation: '3.7 rounded to 1 d.p. means 3.65 ≤ A < 3.75. Upper bound = 3.75.',
+        },
+        {
+          prompt: 'Find the upper bound of B (12 to 2 s.f.).',
+          hint1: 'B is between 11.5 and 12.5.',
+          hint2: 'Upper bound of B = 12.5.',
+          hint3: 'Upper bound of B = 12.5.',
+          answer: 12.5, tolerance: 0.001, unit: '',
+          explanation: '12 to 2 s.f. means 11.5 ≤ B < 12.5. Upper bound = 12.5.',
+        },
+        {
+          prompt: 'Calculate the maximum value of A × B.',
+          hint1: 'Maximum product uses both upper bounds.',
+          hint2: '3.75 × 12.5 = ?',
+          hint3: '3.75 × 12.5 = 46.875.',
+          answer: 46.875, tolerance: 0.001, unit: '',
+          explanation: 'Max A × B = 3.75 × 12.5 = 46.875.',
+        },
+      ],
+      workedExample: {
+        question: 'P = 4.2 (1 d.p.), Q = 8 (1 s.f.). Find max P × Q.',
+        steps: ['Upper bound P = 4.25, upper bound Q = 8.5', 'Max = 4.25 × 8.5 = <strong>36.125</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // POWERS, ROOTS & INDICES (num-powers-roots)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'pow-A01', subtopic: 'num-powers-roots', band: 'A', marks: 2,
+      question: 'Work out 2⁵ × 2³, giving your answer as a power of 2.',
+      steps: [
+        {
+          prompt: 'Use the multiplication law: aᵐ × aⁿ = aᵐ⁺ⁿ. Add the powers.',
+          hint1: '5 + 3 = ?',
+          hint2: '5 + 3 = 8.',
+          hint3: '2⁸.',
+          answer: 8, tolerance: 0, unit: '',
+          explanation: '2⁵ × 2³ = 2^(5+3) = 2⁸. (= 256)',
+          displayAnswer: '2⁸',
+        },
+      ],
+      workedExample: {
+        question: 'Work out 3⁴ × 3² as a power of 3.',
+        steps: ['Multiplication law: 3⁴ × 3² = 3^(4+2) = <strong>3⁶</strong>'],
+      },
+    },
+    {
+      id: 'pow-A02', subtopic: 'num-powers-roots', band: 'A', marks: 2,
+      question: 'Evaluate √144 + ∛27.',
+      steps: [
+        {
+          prompt: 'Find √144.',
+          hint1: '12 × 12 = 144.',
+          hint2: '√144 = 12.',
+          hint3: '√144 = 12.',
+          answer: 12, tolerance: 0, unit: '',
+          explanation: '12² = 144, so √144 = 12.',
+        },
+        {
+          prompt: 'Find ∛27, then add.',
+          hint1: '3 × 3 × 3 = 27, so ∛27 = 3.',
+          hint2: '12 + 3 = 15.',
+          hint3: '15.',
+          answer: 15, tolerance: 0, unit: '',
+          explanation: '∛27 = 3. Total: 12 + 3 = 15.',
+        },
+      ],
+      workedExample: {
+        question: 'Evaluate √81 + ∛8.',
+        steps: ['√81 = 9, ∛8 = 2', '9 + 2 = <strong>11</strong>'],
+      },
+    },
+    {
+      id: 'pow-A03', subtopic: 'num-powers-roots', band: 'A', marks: 2,
+      question: 'Simplify (3²)⁴.',
+      steps: [
+        {
+          prompt: 'Use the power law: (aᵐ)ⁿ = aᵐⁿ. Multiply the indices.',
+          hint1: '2 × 4 = ?',
+          hint2: '2 × 4 = 8.',
+          hint3: '3⁸.',
+          answer: 8, tolerance: 0, unit: '',
+          explanation: '(3²)⁴ = 3^(2×4) = 3⁸.',
+          displayAnswer: '3⁸',
+        },
+      ],
+      workedExample: {
+        question: 'Simplify (5³)².',
+        steps: ['Power law: (5³)² = 5^(3×2) = <strong>5⁶</strong>'],
+      },
+    },
+    {
+      id: 'pow-B01', subtopic: 'num-powers-roots', band: 'B', marks: 3,
+      question: 'Write 16^(3/4) as an integer.',
+      steps: [
+        {
+          prompt: 'A fractional index: 16^(3/4) means (⁴√16)³. Find the fourth root of 16 first.',
+          hint1: '2⁴ = 16, so ⁴√16 = 2.',
+          hint2: '⁴√16 = 2.',
+          hint3: '⁴√16 = 2.',
+          answer: 2, tolerance: 0, unit: '',
+          explanation: 'The denominator of the fraction is the root. ⁴√16 = 2.',
+        },
+        {
+          prompt: 'Now raise your answer to the power 3.',
+          hint1: '2³ = ?',
+          hint2: '2 × 2 × 2 = 8.',
+          hint3: '8.',
+          answer: 8, tolerance: 0, unit: '',
+          explanation: '(⁴√16)³ = 2³ = 8.',
+        },
+      ],
+      workedExample: {
+        question: 'Write 8^(2/3) as an integer.',
+        steps: ['Denominator = cube root: ∛8 = 2', 'Raise to power 2: 2² = <strong>4</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // BOUNDS (num-bounds) — Higher tier
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'bnd-A01', subtopic: 'num-bounds', band: 'A', marks: 2,
+      question: 'A length is measured as 8.4 cm to 1 decimal place. Write the error interval.',
+      steps: [
+        {
+          prompt: 'Find the lower bound. Half of 0.1 cm below 8.4.',
+          hint1: 'Half the precision = 0.05 cm.',
+          hint2: '8.4 − 0.05 = 8.35.',
+          hint3: 'Lower bound = 8.35 cm.',
+          answer: 8.35, tolerance: 0.001, unit: 'cm',
+          explanation: 'Rounded to 1 d.p. (precision 0.1 cm). Lower bound = 8.4 − 0.05 = 8.35 cm.',
+        },
+        {
+          prompt: 'State the error interval using inequality notation.',
+          hint1: 'Upper bound = 8.4 + 0.05 = 8.45 cm.',
+          hint2: '8.35 ≤ length < 8.45.',
+          hint3: '8.35 ≤ l < 8.45.',
+          answer: 8.45, tolerance: 0.001, unit: 'cm',
+          explanation: 'Error interval: 8.35 ≤ l < 8.45 cm. Upper bound is strict (<).',
+          displayAnswer: '8.35 ≤ l < 8.45',
+        },
+      ],
+      workedExample: {
+        question: 'A mass is 5.2 kg to 1 d.p. Write the error interval.',
+        steps: ['Half precision = 0.05. Lower = 5.15, Upper = 5.25', '<strong>5.15 ≤ m < 5.25</strong>'],
+      },
+    },
+    {
+      id: 'bnd-B01', subtopic: 'num-bounds', band: 'B', marks: 3,
+      question: 'p = 7.3 (1 d.p.), q = 2.1 (1 d.p.). Find the lower bound of p − q.',
+      steps: [
+        {
+          prompt: 'For the minimum of p − q, you need minimum p and maximum q. Find the lower bound of p.',
+          hint1: 'Lower bound of p = 7.3 − 0.05 = 7.25.',
+          hint2: '7.25.',
+          hint3: '7.25.',
+          answer: 7.25, tolerance: 0.001, unit: '',
+          explanation: 'Lower bound of p = 7.25.',
+        },
+        {
+          prompt: 'Find the upper bound of q.',
+          hint1: 'Upper bound of q = 2.1 + 0.05 = 2.15.',
+          hint2: '2.15.',
+          hint3: '2.15.',
+          answer: 2.15, tolerance: 0.001, unit: '',
+          explanation: 'Upper bound of q = 2.15.',
+        },
+        {
+          prompt: 'Calculate the lower bound of p − q.',
+          hint1: 'Lower bound of difference = lower bound of p minus upper bound of q.',
+          hint2: '7.25 − 2.15 = ?',
+          hint3: '5.10.',
+          answer: 5.10, tolerance: 0.001, unit: '',
+          explanation: 'Lower bound of p − q = 7.25 − 2.15 = 5.10.',
+        },
+      ],
+      workedExample: {
+        question: 'x = 9.4 (1 d.p.), y = 3.2 (1 d.p.). Find lower bound of x − y.',
+        steps: ['Min x = 9.35, Max y = 3.25', 'Lower bound = 9.35 − 3.25 = <strong>6.10</strong>'],
+      },
+    },
+    {
+      id: 'bnd-C01', subtopic: 'num-bounds', band: 'C', marks: 4,
+      question: 'd = 240 m (3 s.f.), t = 12.4 s (3 s.f.). Find the upper bound of speed = d/t.',
+      steps: [
+        {
+          prompt: 'For maximum speed, use maximum d and minimum t. Upper bound of d = ?',
+          hint1: 'd = 240 m to 3 s.f. Half precision = 0.5.',
+          hint2: 'Upper bound of d = 240.5 m.',
+          hint3: '240.5 m.',
+          answer: 240.5, tolerance: 0.01, unit: 'm',
+          explanation: 'Upper bound d = 240.5 m.',
+        },
+        {
+          prompt: 'Lower bound of t = ?',
+          hint1: 't = 12.4 s to 3 s.f. Half precision = 0.05.',
+          hint2: 'Lower bound of t = 12.35 s.',
+          hint3: '12.35 s.',
+          answer: 12.35, tolerance: 0.001, unit: 's',
+          explanation: 'Lower bound t = 12.35 s.',
+        },
+        {
+          prompt: 'Calculate the upper bound of speed = d/t.',
+          hint1: '240.5 ÷ 12.35 = ?',
+          hint2: 'Use a calculator: ≈ 19.47...',
+          hint3: '≈ 19.47 m/s.',
+          answer: 19.47, tolerance: 0.05, unit: 'm/s',
+          explanation: 'Upper bound = 240.5 ÷ 12.35 ≈ 19.47 m/s.',
+        },
+      ],
+      workedExample: {
+        question: 'd = 150 m (3 s.f.), t = 8.5 s (2 s.f.). Upper bound of speed?',
+        steps: ['Max d = 150.5, Min t = 8.45', 'Upper bound = 150.5 ÷ 8.45 ≈ <strong>17.81 m/s</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // RATIO (num-ratio)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'nrt-A01', subtopic: 'num-ratio', band: 'A', marks: 2,
+      question: 'In a bag there are red and blue counters in the ratio 3 : 5. There are 24 red counters. How many blue counters are there?',
+      steps: [
+        {
+          prompt: 'Find the value of one part. 3 parts = 24 red counters.',
+          hint1: '24 ÷ 3 = ?',
+          hint2: 'One part = 8.',
+          hint3: 'One part = 8 counters.',
+          answer: 8, tolerance: 0, unit: '',
+          explanation: '3 parts = 24, so 1 part = 24 ÷ 3 = 8.',
+        },
+        {
+          prompt: 'Calculate the number of blue counters (5 parts).',
+          hint1: '5 × 8 = ?',
+          hint2: '5 × 8 = 40.',
+          hint3: '40 blue counters.',
+          answer: 40, tolerance: 0, unit: '',
+          explanation: 'Blue = 5 parts = 5 × 8 = 40.',
+        },
+      ],
+      workedExample: {
+        question: 'Red : blue = 2 : 7. There are 18 red. How many blue?',
+        steps: ['1 part = 18 ÷ 2 = 9', 'Blue = 7 × 9 = <strong>63</strong>'],
+      },
+    },
+    {
+      id: 'nrt-A02', subtopic: 'num-ratio', band: 'A', marks: 2,
+      question: 'Write the ratio 45 : 60 in its simplest form.',
+      steps: [
+        {
+          prompt: 'Find the HCF of 45 and 60.',
+          hint1: 'Factors of 45: 1, 3, 5, 9, 15, 45. Factors of 60: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60.',
+          hint2: 'Highest common factor = 15.',
+          hint3: 'HCF = 15.',
+          answer: 15, tolerance: 0, unit: '',
+          explanation: 'HCF(45, 60) = 15.',
+        },
+        {
+          prompt: 'Divide both parts by 15.',
+          hint1: '45 ÷ 15 = 3, 60 ÷ 15 = 4.',
+          hint2: 'Ratio = 3 : 4.',
+          hint3: '3 : 4.',
+          answer: 4, tolerance: 0, unit: '',
+          explanation: '45 ÷ 15 = 3, 60 ÷ 15 = 4. Simplest form: 3 : 4.',
+          displayAnswer: '3 : 4',
+        },
+      ],
+      workedExample: {
+        question: 'Simplify 20 : 35.',
+        steps: ['HCF(20, 35) = 5', '20÷5 : 35÷5 = <strong>4 : 7</strong>'],
+      },
+    },
+    {
+      id: 'nrt-B01', subtopic: 'num-ratio', band: 'B', marks: 3,
+      question: 'A recipe uses flour and sugar in the ratio 5 : 2. Helen uses 350 g of flour. How much sugar does she need, and what is the total mass of the mixture?',
+      steps: [
+        {
+          prompt: 'Find one part. 5 parts = 350 g.',
+          hint1: '350 ÷ 5 = ?',
+          hint2: '70 g per part.',
+          hint3: '1 part = 70 g.',
+          answer: 70, tolerance: 0, unit: 'g',
+          explanation: '1 part = 350 ÷ 5 = 70 g.',
+        },
+        {
+          prompt: 'Calculate the sugar (2 parts).',
+          hint1: '2 × 70 = ?',
+          hint2: '140 g.',
+          hint3: '140 g of sugar.',
+          answer: 140, tolerance: 0, unit: 'g',
+          explanation: 'Sugar = 2 parts = 2 × 70 = 140 g.',
+        },
+        {
+          prompt: 'Find the total mass.',
+          hint1: '350 + 140 = ?',
+          hint2: '490 g.',
+          hint3: '490 g.',
+          answer: 490, tolerance: 0, unit: 'g',
+          explanation: 'Total = 350 + 140 = 490 g.',
+        },
+      ],
+      workedExample: {
+        question: 'Sand : cement = 3 : 1. 240 kg of sand. Find cement and total.',
+        steps: ['1 part = 240 ÷ 3 = 80 kg', 'Cement = 80 kg. Total = 240 + 80 = <strong>320 kg</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // INEQUALITIES (alg-inequalities)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'ineq-A01', subtopic: 'alg-inequalities', band: 'A', marks: 2,
+      question: 'Solve 3x + 5 > 14.',
+      steps: [
+        {
+          prompt: 'Subtract 5 from both sides.',
+          hint1: '3x + 5 − 5 > 14 − 5.',
+          hint2: '3x > 9.',
+          hint3: '3x > 9.',
+          answer: 9, tolerance: 0, unit: '',
+          explanation: '3x > 9.',
+          checkType: 'skip',
+          displayAnswer: '3x > 9',
+        },
+        {
+          prompt: 'Divide both sides by 3.',
+          hint1: '9 ÷ 3 = 3.',
+          hint2: 'x > 3.',
+          hint3: 'x > 3.',
+          answer: 3, tolerance: 0, unit: '',
+          explanation: 'x > 3.',
+          displayAnswer: 'x > 3',
+        },
+      ],
+      workedExample: {
+        question: 'Solve 4x − 3 > 13.',
+        steps: ['Add 3: 4x > 16', 'Divide by 4: <strong>x > 4</strong>'],
+      },
+    },
+    {
+      id: 'ineq-A02', subtopic: 'alg-inequalities', band: 'A', marks: 2,
+      question: 'Write down all the integers that satisfy −3 < x ≤ 2.',
+      steps: [
+        {
+          prompt: 'The inequality says x is greater than −3 (not equal) and less than or equal to 2.',
+          hint1: '−3 is NOT included (strict inequality). 2 IS included.',
+          hint2: 'Integers greater than −3: −2, −1, 0, 1, 2, ...',
+          hint3: 'Integers: −2, −1, 0, 1, 2.',
+          answer: 5, tolerance: 0, unit: '',
+          explanation: 'x > −3 and x ≤ 2. Integers: −2, −1, 0, 1, 2 (five values).',
+          checkType: 'skip',
+          displayAnswer: '−2, −1, 0, 1, 2',
+        },
+      ],
+      workedExample: {
+        question: 'List integers satisfying −1 ≤ x < 3.',
+        steps: ['−1 is included, 3 is not.', 'Integers: <strong>−1, 0, 1, 2</strong>'],
+      },
+    },
+    {
+      id: 'ineq-B01', subtopic: 'alg-inequalities', band: 'B', marks: 3,
+      question: 'Solve 2(3x − 1) ≤ 4x + 6.',
+      steps: [
+        {
+          prompt: 'Expand the bracket.',
+          hint1: '2 × 3x = 6x, 2 × (−1) = −2.',
+          hint2: '6x − 2 ≤ 4x + 6.',
+          hint3: '6x − 2 ≤ 4x + 6.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: '6x − 2 ≤ 4x + 6.',
+          checkType: 'skip',
+          displayAnswer: '6x − 2 ≤ 4x + 6',
+        },
+        {
+          prompt: 'Collect x terms: subtract 4x from both sides.',
+          hint1: '6x − 4x − 2 ≤ 6.',
+          hint2: '2x − 2 ≤ 6.',
+          hint3: '2x − 2 ≤ 6.',
+          answer: 6, tolerance: 0, unit: '',
+          explanation: '2x − 2 ≤ 6.',
+          checkType: 'skip',
+          displayAnswer: '2x − 2 ≤ 6',
+        },
+        {
+          prompt: 'Add 2, then divide by 2.',
+          hint1: '2x ≤ 8, so x ≤ 4.',
+          hint2: 'x ≤ 4.',
+          hint3: 'x ≤ 4.',
+          answer: 4, tolerance: 0, unit: '',
+          explanation: '2x ≤ 8 → x ≤ 4.',
+          displayAnswer: 'x ≤ 4',
+        },
+      ],
+      workedExample: {
+        question: 'Solve 3(2x + 1) ≤ 5x + 9.',
+        steps: ['Expand: 6x + 3 ≤ 5x + 9', 'Subtract 5x: x + 3 ≤ 9', 'Subtract 3: <strong>x ≤ 6</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // SEQUENCES (alg-sequences)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'seq-A01', subtopic: 'alg-sequences', band: 'A', marks: 2,
+      question: 'Find the nth term of the sequence: 5, 8, 11, 14, ...',
+      steps: [
+        {
+          prompt: 'Find the common difference.',
+          hint1: '8 − 5 = 3. The sequence increases by 3 each time.',
+          hint2: 'Common difference = 3.',
+          hint3: 'd = 3.',
+          answer: 3, tolerance: 0, unit: '',
+          explanation: 'Each term increases by 3, so the nth term contains 3n.',
+        },
+        {
+          prompt: 'Find the nth term formula: 3n + ?. When n = 1, term = 5.',
+          hint1: '3 × 1 = 3. We need 5, so add 2.',
+          hint2: 'nth term = 3n + 2.',
+          hint3: '3n + 2.',
+          answer: 2, tolerance: 0, unit: '',
+          explanation: '3n + 2: when n=1, 3+2=5 ✓. When n=2, 6+2=8 ✓.',
+          displayAnswer: '3n + 2',
+        },
+      ],
+      workedExample: {
+        question: 'Find nth term of 7, 11, 15, 19, ...',
+        steps: ['Difference = 4, so 4n. When n=1: 4+?=7, so +3.', 'nth term = <strong>4n + 3</strong>'],
+      },
+    },
+    {
+      id: 'seq-A02', subtopic: 'alg-sequences', band: 'A', marks: 2,
+      question: 'The nth term of a sequence is 5n − 2. Find the 10th term and check if 73 is in the sequence.',
+      steps: [
+        {
+          prompt: 'Find the 10th term: substitute n = 10.',
+          hint1: '5 × 10 − 2 = ?',
+          hint2: '50 − 2 = 48.',
+          hint3: '10th term = 48.',
+          answer: 48, tolerance: 0, unit: '',
+          explanation: 'n=10: 5(10)−2 = 48.',
+        },
+        {
+          prompt: 'Is 73 in the sequence? Set 5n − 2 = 73 and solve.',
+          hint1: '5n = 75.',
+          hint2: 'n = 15. Since 15 is a positive integer, 73 IS in the sequence.',
+          hint3: 'n = 15 — yes, 73 is in the sequence.',
+          answer: 15, tolerance: 0, unit: '',
+          explanation: '5n − 2 = 73 → 5n = 75 → n = 15. Integer, so yes.',
+          displayAnswer: 'n = 15, so 73 is in the sequence',
+        },
+      ],
+      workedExample: {
+        question: 'nth term = 4n + 1. Find 8th term. Is 37 in the sequence?',
+        steps: ['8th term: 4(8)+1 = 33', '4n+1=37 → n=9 (integer) → <strong>yes, 37 is in the sequence</strong>'],
+      },
+    },
+    {
+      id: 'seq-B01', subtopic: 'alg-sequences', band: 'B', marks: 3,
+      question: 'A geometric sequence starts 3, 6, 12, 24, ... Find the 8th term.',
+      steps: [
+        {
+          prompt: 'Find the common ratio r.',
+          hint1: '6 ÷ 3 = 2. Each term is multiplied by 2.',
+          hint2: 'r = 2.',
+          hint3: 'r = 2.',
+          answer: 2, tolerance: 0, unit: '',
+          explanation: 'Geometric sequence: each term × 2.',
+        },
+        {
+          prompt: 'Use the formula: nth term = a × rⁿ⁻¹ where a = 3. Find the 8th term.',
+          hint1: '3 × 2^(8−1) = 3 × 2⁷.',
+          hint2: '2⁷ = 128. 3 × 128 = ?',
+          hint3: '384.',
+          answer: 384, tolerance: 0, unit: '',
+          explanation: '3 × 2⁷ = 3 × 128 = 384.',
+        },
+      ],
+      workedExample: {
+        question: 'Geometric sequence: 5, 15, 45, ... Find the 6th term.',
+        steps: ['r = 3. a = 5', '5th term: 5 × 3⁵ = 5 × 243 = <strong>1215</strong> — wait, 6th: 5 × 3⁵ = <strong>1215</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // GRAPHS (alg-graphs)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'gph-A01', subtopic: 'alg-graphs', band: 'A', marks: 3,
+      question: 'A straight line has equation y = 3x − 2. State the gradient and y-intercept.',
+      steps: [
+        {
+          prompt: 'The equation is in the form y = mx + c. What is the gradient m?',
+          hint1: 'Gradient m is the coefficient of x.',
+          hint2: 'm = 3.',
+          hint3: 'Gradient = 3.',
+          answer: 3, tolerance: 0, unit: '',
+          explanation: 'In y = mx + c, m = 3 is the gradient.',
+        },
+        {
+          prompt: 'What is the y-intercept c?',
+          hint1: 'c is the constant term.',
+          hint2: 'c = −2.',
+          hint3: 'y-intercept = −2.',
+          answer: -2, tolerance: 0, unit: '',
+          explanation: 'y-intercept = −2. The line crosses the y-axis at (0, −2).',
+        },
+      ],
+      workedExample: {
+        question: 'State gradient and y-intercept of y = −4x + 7.',
+        steps: ['Gradient m = <strong>−4</strong>', 'y-intercept c = <strong>7</strong>'],
+      },
+    },
+    {
+      id: 'gph-A02', subtopic: 'alg-graphs', band: 'A', marks: 3,
+      question: 'Find the equation of the line through (0, 3) with gradient 2.',
+      steps: [
+        {
+          prompt: 'The line passes through the y-axis at y = 3, so c = ?',
+          hint1: 'Passes through (0, 3) → y-intercept = 3.',
+          hint2: 'c = 3.',
+          hint3: 'c = 3.',
+          answer: 3, tolerance: 0, unit: '',
+          explanation: 'y-intercept = 3 since the line passes through (0, 3).',
+        },
+        {
+          prompt: 'Write the full equation: y = mx + c with m = 2 and c = 3.',
+          hint1: 'y = 2x + 3.',
+          hint2: 'y = 2x + 3.',
+          hint3: 'y = 2x + 3.',
+          answer: 3, tolerance: 0, unit: '',
+          explanation: 'y = 2x + 3.',
+          checkType: 'skip',
+          displayAnswer: 'y = 2x + 3',
+        },
+      ],
+      workedExample: {
+        question: 'Equation of line through (0, −1) with gradient 5.',
+        steps: ['c = −1, m = 5', 'Equation: <strong>y = 5x − 1</strong>'],
+      },
+    },
+    {
+      id: 'gph-B01', subtopic: 'alg-graphs', band: 'B', marks: 4,
+      question: 'Find the equation of the line passing through (2, 7) and (5, 13).',
+      steps: [
+        {
+          prompt: 'Find the gradient: m = (y₂ − y₁)/(x₂ − x₁).',
+          hint1: '(13 − 7)/(5 − 2) = 6/3.',
+          hint2: 'm = 2.',
+          hint3: 'm = 2.',
+          answer: 2, tolerance: 0, unit: '',
+          explanation: 'm = (13−7)/(5−2) = 6/3 = 2.',
+        },
+        {
+          prompt: 'Substitute (2, 7) and m = 2 into y = mx + c to find c.',
+          hint1: '7 = 2 × 2 + c.',
+          hint2: '7 = 4 + c → c = 3.',
+          hint3: 'c = 3.',
+          answer: 3, tolerance: 0, unit: '',
+          explanation: '7 = 2(2) + c → c = 3.',
+          displayAnswer: 'y = 2x + 3',
+        },
+      ],
+      workedExample: {
+        question: 'Find equation through (1, 5) and (3, 11).',
+        steps: ['m = (11−5)/(3−1) = 3', 'y = 3x + c: 5 = 3+c → c = 2. Equation: <strong>y = 3x + 2</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // SIMULTANEOUS EQUATIONS (alg-simultaneous)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'sim-A01', subtopic: 'alg-simultaneous', band: 'A', marks: 4,
+      question: 'Solve: 2x + y = 7 and x + y = 4.',
+      steps: [
+        {
+          prompt: 'Subtract equation 2 from equation 1 to eliminate y.',
+          hint1: '(2x + y) − (x + y) = 7 − 4.',
+          hint2: '2x − x + y − y = 3.',
+          hint3: 'x = 3.',
+          answer: 3, tolerance: 0, unit: '',
+          explanation: 'Subtracting: x = 3.',
+        },
+        {
+          prompt: 'Substitute x = 3 into x + y = 4.',
+          hint1: '3 + y = 4.',
+          hint2: 'y = 1.',
+          hint3: 'y = 1.',
+          answer: 1, tolerance: 0, unit: '',
+          explanation: '3 + y = 4 → y = 1.',
+        },
+      ],
+      workedExample: {
+        question: 'Solve: 3x + y = 10, x + y = 6.',
+        steps: ['Subtract: 3x − x = 10 − 6 → 2x = 4 → x = 2', 'Sub in: 2 + y = 6 → <strong>y = 4</strong>'],
+      },
+    },
+    {
+      id: 'sim-A02', subtopic: 'alg-simultaneous', band: 'A', marks: 4,
+      question: 'Solve: 3x + 2y = 16 and 3x − y = 7.',
+      steps: [
+        {
+          prompt: 'Subtract equation 2 from equation 1.',
+          hint1: '(3x + 2y) − (3x − y) = 16 − 7.',
+          hint2: '3y = 9.',
+          hint3: 'y = 3.',
+          answer: 3, tolerance: 0, unit: '',
+          explanation: '2y − (−y) = 3y. 3y = 9 → y = 3.',
+        },
+        {
+          prompt: 'Substitute y = 3 into 3x − y = 7.',
+          hint1: '3x − 3 = 7.',
+          hint2: '3x = 10, so x = 10/3.',
+          hint3: 'x = 10/3.',
+          answer: 10, tolerance: 0.1, unit: '',
+          explanation: '3x = 10 → x = 10/3.',
+          displayAnswer: 'x = 10/3, y = 3',
+        },
+      ],
+      workedExample: {
+        question: 'Solve: 2x + 3y = 12, 2x − y = 4.',
+        steps: ['Subtract: 4y = 8 → y = 2', 'Sub in: 2x − 2 = 4 → 2x = 6 → <strong>x = 3</strong>'],
+      },
+    },
+    {
+      id: 'sim-B01', subtopic: 'alg-simultaneous', band: 'B', marks: 4,
+      question: 'Solve: 4x + 3y = 25 and 2x − y = 5.',
+      steps: [
+        {
+          prompt: 'Multiply equation 2 by 3 to make the y-coefficients equal.',
+          hint1: '3 × (2x − y) = 3 × 5.',
+          hint2: '6x − 3y = 15.',
+          hint3: '6x − 3y = 15.',
+          answer: 15, tolerance: 0, unit: '',
+          explanation: 'Multiply equation 2 by 3: 6x − 3y = 15.',
+          checkType: 'skip',
+          displayAnswer: '6x − 3y = 15',
+        },
+        {
+          prompt: 'Add the two equations to eliminate y.',
+          hint1: '(4x + 3y) + (6x − 3y) = 25 + 15.',
+          hint2: '10x = 40 → x = 4.',
+          hint3: 'x = 4.',
+          answer: 4, tolerance: 0, unit: '',
+          explanation: '10x = 40 → x = 4.',
+        },
+        {
+          prompt: 'Substitute x = 4 into 2x − y = 5.',
+          hint1: '8 − y = 5.',
+          hint2: 'y = 3.',
+          hint3: 'y = 3.',
+          answer: 3, tolerance: 0, unit: '',
+          explanation: '8 − y = 5 → y = 3.',
+        },
+      ],
+      workedExample: {
+        question: 'Solve: 3x + 2y = 13, x − y = 1.',
+        steps: ['Multiply eq 2 by 2: 2x − 2y = 2', 'Add: 5x = 15 → x = 3', 'Sub in: 3 − y = 1 → <strong>y = 2</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // FUNCTIONS (alg-functions) — Higher tier
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'fn-A01', subtopic: 'alg-functions', band: 'A', marks: 2,
+      question: 'f(x) = 3x − 4. Find f(5) and f(−2).',
+      steps: [
+        {
+          prompt: 'Find f(5): substitute x = 5.',
+          hint1: 'f(5) = 3(5) − 4.',
+          hint2: '15 − 4 = 11.',
+          hint3: 'f(5) = 11.',
+          answer: 11, tolerance: 0, unit: '',
+          explanation: 'f(5) = 3×5 − 4 = 11.',
+        },
+        {
+          prompt: 'Find f(−2): substitute x = −2.',
+          hint1: 'f(−2) = 3(−2) − 4.',
+          hint2: '−6 − 4 = −10.',
+          hint3: 'f(−2) = −10.',
+          answer: -10, tolerance: 0, unit: '',
+          explanation: 'f(−2) = 3×(−2) − 4 = −10.',
+        },
+      ],
+      workedExample: {
+        question: 'g(x) = 2x + 7. Find g(3) and g(−4).',
+        steps: ['g(3) = 6+7 = 13', 'g(−4) = −8+7 = <strong>−1</strong>'],
+      },
+    },
+    {
+      id: 'fn-B01', subtopic: 'alg-functions', band: 'B', marks: 3,
+      question: 'f(x) = 2x + 1 and g(x) = x². Find fg(3) and gf(3).',
+      steps: [
+        {
+          prompt: 'Find fg(3): apply g first, then f. Work out g(3).',
+          hint1: 'g(3) = 3² = 9.',
+          hint2: 'g(3) = 9.',
+          hint3: '9.',
+          answer: 9, tolerance: 0, unit: '',
+          explanation: 'g(3) = 9.',
+        },
+        {
+          prompt: 'Now apply f to g(3) = 9.',
+          hint1: 'f(9) = 2(9) + 1 = 19.',
+          hint2: 'fg(3) = 19.',
+          hint3: '19.',
+          answer: 19, tolerance: 0, unit: '',
+          explanation: 'fg(3) = f(g(3)) = f(9) = 19.',
+        },
+        {
+          prompt: 'Find gf(3): apply f first. f(3) = 2(3)+1 = 7. Then g(7) = ?',
+          hint1: 'g(7) = 7² = 49.',
+          hint2: 'gf(3) = 49.',
+          hint3: '49.',
+          answer: 49, tolerance: 0, unit: '',
+          explanation: 'gf(3) = g(f(3)) = g(7) = 49. Note fg ≠ gf.',
+        },
+      ],
+      workedExample: {
+        question: 'f(x) = x+3, g(x) = 2x. Find fg(4) and gf(4).',
+        steps: ['fg(4): g(4)=8, f(8)=11', 'gf(4): f(4)=7, g(7)=<strong>14</strong>'],
+      },
+    },
+    {
+      id: 'fn-C01', subtopic: 'alg-functions', band: 'C', marks: 3,
+      question: 'f(x) = (x + 3)/2. Find f⁻¹(x).',
+      steps: [
+        {
+          prompt: 'Write y = (x + 3)/2, then swap x and y.',
+          hint1: 'x = (y + 3)/2.',
+          hint2: 'x = (y + 3)/2.',
+          hint3: 'x = (y + 3)/2.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Swap: x = (y+3)/2.',
+          checkType: 'skip',
+          displayAnswer: 'x = (y+3)/2',
+        },
+        {
+          prompt: 'Make y the subject.',
+          hint1: '2x = y + 3.',
+          hint2: 'y = 2x − 3.',
+          hint3: 'y = 2x − 3.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: '2x = y + 3 → y = 2x − 3.',
+          checkType: 'skip',
+          displayAnswer: 'f⁻¹(x) = 2x − 3',
+        },
+      ],
+      workedExample: {
+        question: 'Find f⁻¹(x) when f(x) = (x − 1)/3.',
+        steps: ['Swap: x = (y−1)/3', '3x = y−1 → y = 3x+1', '<strong>f⁻¹(x) = 3x + 1</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // DIRECT & INVERSE PROPORTION (rpr-proportion)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'pro-A01', subtopic: 'rpr-proportion', band: 'A', marks: 3,
+      question: 'y is directly proportional to x. When x = 4, y = 20. Find y when x = 7.',
+      steps: [
+        {
+          prompt: 'Write the equation: y = kx. Find the constant k using x = 4, y = 20.',
+          hint1: '20 = k × 4.',
+          hint2: 'k = 20 ÷ 4 = 5.',
+          hint3: 'k = 5.',
+          answer: 5, tolerance: 0, unit: '',
+          explanation: 'y = kx → 20 = 4k → k = 5. So y = 5x.',
+        },
+        {
+          prompt: 'Find y when x = 7.',
+          hint1: 'y = 5 × 7.',
+          hint2: 'y = 35.',
+          hint3: '35.',
+          answer: 35, tolerance: 0, unit: '',
+          explanation: 'y = 5 × 7 = 35.',
+        },
+      ],
+      workedExample: {
+        question: 'y ∝ x. When x = 3, y = 12. Find y when x = 8.',
+        steps: ['k = 12/3 = 4. y = 4x', 'y = 4 × 8 = <strong>32</strong>'],
+      },
+    },
+    {
+      id: 'pro-A02', subtopic: 'rpr-proportion', band: 'A', marks: 3,
+      question: 'y is inversely proportional to x. When x = 5, y = 8. Find y when x = 10.',
+      steps: [
+        {
+          prompt: 'Write: y = k/x. Find k using x = 5, y = 8.',
+          hint1: '8 = k/5.',
+          hint2: 'k = 8 × 5 = 40.',
+          hint3: 'k = 40.',
+          answer: 40, tolerance: 0, unit: '',
+          explanation: 'y = k/x → 8 = k/5 → k = 40.',
+        },
+        {
+          prompt: 'Find y when x = 10.',
+          hint1: 'y = 40/10.',
+          hint2: 'y = 4.',
+          hint3: '4.',
+          answer: 4, tolerance: 0, unit: '',
+          explanation: 'y = 40/10 = 4.',
+        },
+      ],
+      workedExample: {
+        question: 'y ∝ 1/x. When x = 4, y = 6. Find y when x = 8.',
+        steps: ['k = 6 × 4 = 24. y = 24/x', 'y = 24/8 = <strong>3</strong>'],
+      },
+    },
+    {
+      id: 'pro-B01', subtopic: 'rpr-proportion', band: 'B', marks: 3,
+      question: 'y is proportional to x². When x = 3, y = 36. Find y when x = 5.',
+      steps: [
+        {
+          prompt: 'Write: y = kx². Find k.',
+          hint1: '36 = k × 3² = 9k.',
+          hint2: 'k = 36 ÷ 9 = 4.',
+          hint3: 'k = 4.',
+          answer: 4, tolerance: 0, unit: '',
+          explanation: '36 = 9k → k = 4. So y = 4x².',
+        },
+        {
+          prompt: 'Find y when x = 5.',
+          hint1: 'y = 4 × 5² = 4 × 25.',
+          hint2: 'y = 100.',
+          hint3: '100.',
+          answer: 100, tolerance: 0, unit: '',
+          explanation: 'y = 4 × 25 = 100.',
+        },
+      ],
+      workedExample: {
+        question: 'y ∝ x². When x = 2, y = 20. Find y when x = 4.',
+        steps: ['k = 20/4 = 5. y = 5x²', 'y = 5 × 16 = <strong>80</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // SPEED, DISTANCE, TIME (rpr-speed)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'spd-A01', subtopic: 'rpr-speed', band: 'A', marks: 2,
+      question: 'A car travels 180 km in 2.5 hours. Calculate the average speed.',
+      steps: [
+        {
+          prompt: 'Use the formula: speed = distance ÷ time.',
+          hint1: 'speed = 180 ÷ 2.5.',
+          hint2: '180 ÷ 2.5 = 72.',
+          hint3: '72 km/h.',
+          answer: 72, tolerance: 0, unit: 'km/h',
+          explanation: 'speed = 180 ÷ 2.5 = 72 km/h.',
+        },
+      ],
+      workedExample: {
+        question: 'Distance = 240 km, time = 3 hours. Find speed.',
+        steps: ['speed = 240 ÷ 3 = <strong>80 km/h</strong>'],
+      },
+    },
+    {
+      id: 'spd-A02', subtopic: 'rpr-speed', band: 'A', marks: 2,
+      question: 'A train travels at 90 km/h for 1 hour 20 minutes. How far does it travel?',
+      steps: [
+        {
+          prompt: 'Convert 1 hour 20 minutes to hours.',
+          hint1: '20 minutes = 20/60 hours.',
+          hint2: '20/60 = 1/3. Total = 1⅓ hours = 4/3 hours.',
+          hint3: '1.333... hours.',
+          answer: 1.333, tolerance: 0.01, unit: 'hours',
+          explanation: '1 h 20 min = 1 + 20/60 = 4/3 hours.',
+        },
+        {
+          prompt: 'Calculate distance = speed × time.',
+          hint1: '90 × 4/3 = ?',
+          hint2: '90 × 4/3 = 120.',
+          hint3: '120 km.',
+          answer: 120, tolerance: 0, unit: 'km',
+          explanation: 'distance = 90 × 4/3 = 120 km.',
+        },
+      ],
+      workedExample: {
+        question: 'Speed = 60 km/h for 2h 30 min. Find distance.',
+        steps: ['Time = 2.5 h', 'distance = 60 × 2.5 = <strong>150 km</strong>'],
+      },
+    },
+    {
+      id: 'spd-B01', subtopic: 'rpr-speed', band: 'B', marks: 4,
+      question: 'Jay drives 60 km at 40 km/h, then 90 km at 60 km/h. Find his average speed for the whole journey.',
+      steps: [
+        {
+          prompt: 'Find time for first part: time = distance ÷ speed.',
+          hint1: '60 ÷ 40 = 1.5 hours.',
+          hint2: '1.5 hours.',
+          hint3: '1.5 hours.',
+          answer: 1.5, tolerance: 0.01, unit: 'hours',
+          explanation: 'Time₁ = 60/40 = 1.5 h.',
+        },
+        {
+          prompt: 'Find time for second part.',
+          hint1: '90 ÷ 60 = 1.5 hours.',
+          hint2: '1.5 hours.',
+          hint3: '1.5 hours.',
+          answer: 1.5, tolerance: 0.01, unit: 'hours',
+          explanation: 'Time₂ = 90/60 = 1.5 h.',
+        },
+        {
+          prompt: 'Average speed = total distance ÷ total time.',
+          hint1: 'Total distance = 60 + 90 = 150 km. Total time = 1.5 + 1.5 = 3 h.',
+          hint2: '150 ÷ 3 = 50 km/h.',
+          hint3: '50 km/h.',
+          answer: 50, tolerance: 0, unit: 'km/h',
+          explanation: 'Average speed = 150/3 = 50 km/h. Note: average speed ≠ average of the two speeds.',
+        },
+      ],
+      workedExample: {
+        question: '40 km at 20 km/h, then 60 km at 30 km/h. Average speed?',
+        steps: ['t₁ = 2 h, t₂ = 2 h. Total dist = 100 km, total time = 4 h', 'Average speed = 100/4 = <strong>25 km/h</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // PERCENTAGE CHANGE (rpr-percentage-change)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'pch-A01', subtopic: 'rpr-percentage-change', band: 'A', marks: 2,
+      question: 'A house was worth £180,000. It increased in value by 15%. Find its new value.',
+      steps: [
+        {
+          prompt: 'Find the multiplier for a 15% increase.',
+          hint1: '100% + 15% = 115% = 1.15.',
+          hint2: 'Multiplier = 1.15.',
+          hint3: '1.15.',
+          answer: 1.15, tolerance: 0.001, unit: '',
+          explanation: 'Increase of 15% → multiply by 1.15.',
+        },
+        {
+          prompt: 'Calculate the new value.',
+          hint1: '£180,000 × 1.15 = ?',
+          hint2: '£207,000.',
+          hint3: '£207,000.',
+          answer: 207000, tolerance: 0, unit: '£',
+          explanation: '180,000 × 1.15 = £207,000.',
+        },
+      ],
+      workedExample: {
+        question: 'Price = £240. Increases by 20%. New price?',
+        steps: ['Multiplier = 1.20', '£240 × 1.20 = <strong>£288</strong>'],
+      },
+    },
+    {
+      id: 'pch-A02', subtopic: 'rpr-percentage-change', band: 'A', marks: 2,
+      question: 'A TV costs £350 after a 30% reduction. What was the original price?',
+      steps: [
+        {
+          prompt: '£350 is what percentage of the original price?',
+          hint1: 'After 30% reduction, the price is 70% of original.',
+          hint2: '100% − 30% = 70%.',
+          hint3: '£350 = 70% of original.',
+          answer: 70, tolerance: 0, unit: '%',
+          explanation: '100% − 30% = 70%. So £350 = 70% of original.',
+          checkType: 'skip',
+          displayAnswer: '£350 = 70% of original',
+        },
+        {
+          prompt: 'Find 100% (the original price).',
+          hint1: '1% = £350 ÷ 70.',
+          hint2: '1% = £5. 100% = £500.',
+          hint3: '£500.',
+          answer: 500, tolerance: 0, unit: '£',
+          explanation: '£350 ÷ 0.70 = £500. Or: 350/70 × 100 = £500.',
+        },
+      ],
+      workedExample: {
+        question: 'After 25% discount, a coat costs £90. Original price?',
+        steps: ['£90 = 75% of original', 'Original = 90/0.75 = <strong>£120</strong>'],
+      },
+    },
+    {
+      id: 'pch-B01', subtopic: 'rpr-percentage-change', band: 'B', marks: 3,
+      question: '£2,000 is invested at 4% compound interest per year. Find the value after 3 years.',
+      steps: [
+        {
+          prompt: 'Write the multiplier for 4% increase.',
+          hint1: '1 + 0.04 = 1.04.',
+          hint2: 'Multiplier per year = 1.04.',
+          hint3: '1.04.',
+          answer: 1.04, tolerance: 0.001, unit: '',
+          explanation: 'Each year, multiply by 1.04.',
+        },
+        {
+          prompt: 'Apply for 3 years: £2000 × 1.04³.',
+          hint1: '1.04³ = 1.04 × 1.04 × 1.04.',
+          hint2: '1.04² = 1.0816. 1.0816 × 1.04 = 1.124864.',
+          hint3: '£2000 × 1.124864.',
+          answer: 1.124864, tolerance: 0.0001, unit: '',
+          explanation: '1.04³ = 1.124864.',
+          checkType: 'skip',
+          displayAnswer: '£2000 × 1.04³',
+        },
+        {
+          prompt: 'Calculate the final value.',
+          hint1: '2000 × 1.124864 = ?',
+          hint2: '£2249.73 (to the nearest penny).',
+          hint3: '£2249.73.',
+          answer: 2249.73, tolerance: 0.05, unit: '£',
+          explanation: '£2000 × 1.04³ = £2,249.73.',
+        },
+      ],
+      workedExample: {
+        question: '£1,500 at 5% compound interest for 2 years.',
+        steps: ['Multiplier = 1.05. After 2 years: 1500 × 1.05²', '= 1500 × 1.1025 = <strong>£1,653.75</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // COMPOUND MEASURES — DENSITY & PRESSURE (rpr-compound-measures)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'cmp-A01', subtopic: 'rpr-compound-measures', band: 'A', marks: 2,
+      question: 'A block of metal has mass 540 g and volume 60 cm³. Calculate its density.',
+      steps: [
+        {
+          prompt: 'Use: density = mass ÷ volume.',
+          hint1: 'density = 540 ÷ 60.',
+          hint2: '540 ÷ 60 = 9.',
+          hint3: '9 g/cm³.',
+          answer: 9, tolerance: 0, unit: 'g/cm³',
+          explanation: 'density = 540/60 = 9 g/cm³.',
+        },
+      ],
+      workedExample: {
+        question: 'Mass = 320 g, volume = 40 cm³. Find density.',
+        steps: ['density = 320/40 = <strong>8 g/cm³</strong>'],
+      },
+    },
+    {
+      id: 'cmp-A02', subtopic: 'rpr-compound-measures', band: 'A', marks: 2,
+      question: 'A force of 150 N acts on an area of 25 cm². Calculate the pressure in N/cm².',
+      steps: [
+        {
+          prompt: 'Use: pressure = force ÷ area.',
+          hint1: 'pressure = 150 ÷ 25.',
+          hint2: '150 ÷ 25 = 6.',
+          hint3: '6 N/cm².',
+          answer: 6, tolerance: 0, unit: 'N/cm²',
+          explanation: 'pressure = 150/25 = 6 N/cm².',
+        },
+      ],
+      workedExample: {
+        question: 'Force = 200 N, area = 40 cm². Pressure?',
+        steps: ['pressure = 200/40 = <strong>5 N/cm²</strong>'],
+      },
+    },
+    {
+      id: 'cmp-B01', subtopic: 'rpr-compound-measures', band: 'B', marks: 3,
+      question: 'An object has density 8.5 g/cm³ and mass 340 g. Find its volume. Then find the new density if the volume doubles but mass stays the same.',
+      steps: [
+        {
+          prompt: 'Rearrange density formula to find volume: volume = mass ÷ density.',
+          hint1: 'volume = 340 ÷ 8.5.',
+          hint2: '340 ÷ 8.5 = 40.',
+          hint3: 'volume = 40 cm³.',
+          answer: 40, tolerance: 0, unit: 'cm³',
+          explanation: 'volume = 340/8.5 = 40 cm³.',
+        },
+        {
+          prompt: 'If volume doubles (80 cm³), find the new density.',
+          hint1: 'density = 340 ÷ 80.',
+          hint2: '340 ÷ 80 = 4.25.',
+          hint3: '4.25 g/cm³.',
+          answer: 4.25, tolerance: 0.01, unit: 'g/cm³',
+          explanation: 'density = 340/80 = 4.25 g/cm³. Density halves when volume doubles.',
+        },
+      ],
+      workedExample: {
+        question: 'Density = 6 g/cm³, mass = 180 g. Find volume.',
+        steps: ['volume = 180/6 = <strong>30 cm³</strong>'],
+      },
+    },
+
   ];
+
+  // ─────────────────────────────────────────────────────────────
+  // GEOMETRY & MEASURES + PROBABILITY + STATISTICS
+  // ─────────────────────────────────────────────────────────────
+
+  const _bank2 = [
+
+    // ══════════════════════════════════════════════════════════
+    // ANGLES (geo-angles)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'ang-A01', subtopic: 'geo-angles', band: 'A', marks: 2,
+      question: 'Two parallel lines are cut by a transversal. One angle is 65°. Find the alternate angle and co-interior angle.',
+      steps: [
+        {
+          prompt: 'Alternate angles (Z-angles) are equal. What is the alternate angle?',
+          hint1: 'Alternate angles are on opposite sides of the transversal, between the parallel lines.',
+          hint2: 'They are equal.',
+          hint3: '65°.',
+          answer: 65, tolerance: 0, unit: '°',
+          explanation: 'Alternate angles are equal: 65°.',
+        },
+        {
+          prompt: 'Co-interior angles (C-angles) add up to 180°. Find the co-interior angle.',
+          hint1: '180° − 65° = ?',
+          hint2: '115°.',
+          hint3: '115°.',
+          answer: 115, tolerance: 0, unit: '°',
+          explanation: 'Co-interior angles sum to 180°: 180 − 65 = 115°.',
+        },
+      ],
+      workedExample: {
+        question: 'Transversal cuts parallel lines. One angle = 48°. Find alternate and co-interior angles.',
+        steps: ['Alternate = <strong>48°</strong> (equal)', 'Co-interior = 180 − 48 = <strong>132°</strong>'],
+      },
+    },
+    {
+      id: 'ang-A02', subtopic: 'geo-angles', band: 'A', marks: 3,
+      question: 'Find the interior angle of a regular hexagon.',
+      steps: [
+        {
+          prompt: 'Find the sum of interior angles of a hexagon using (n − 2) × 180°.',
+          hint1: 'A hexagon has 6 sides, so n = 6.',
+          hint2: '(6 − 2) × 180 = 4 × 180.',
+          hint3: '720°.',
+          answer: 720, tolerance: 0, unit: '°',
+          explanation: 'Sum of interior angles = (6−2) × 180 = 720°.',
+        },
+        {
+          prompt: 'Divide by the number of sides to get one interior angle.',
+          hint1: '720 ÷ 6 = ?',
+          hint2: '120°.',
+          hint3: '120°.',
+          answer: 120, tolerance: 0, unit: '°',
+          explanation: 'Each interior angle = 720 ÷ 6 = 120°.',
+        },
+      ],
+      workedExample: {
+        question: 'Find the interior angle of a regular pentagon.',
+        steps: ['Sum = (5−2) × 180 = 540°', 'Each angle = 540 ÷ 5 = <strong>108°</strong>'],
+      },
+    },
+    {
+      id: 'ang-B01', subtopic: 'geo-angles', band: 'B', marks: 3,
+      question: 'A polygon has interior angles summing to 1260°. How many sides does it have?',
+      steps: [
+        {
+          prompt: 'Use the formula: sum = (n − 2) × 180. Set equal to 1260.',
+          hint1: '(n − 2) × 180 = 1260.',
+          hint2: 'n − 2 = 1260 ÷ 180.',
+          hint3: 'n − 2 = 7.',
+          answer: 7, tolerance: 0, unit: '',
+          explanation: 'n − 2 = 1260/180 = 7.',
+          checkType: 'skip',
+          displayAnswer: 'n − 2 = 7',
+        },
+        {
+          prompt: 'Solve for n.',
+          hint1: 'n = 7 + 2.',
+          hint2: 'n = 9.',
+          hint3: '9 sides.',
+          answer: 9, tolerance: 0, unit: 'sides',
+          explanation: 'n = 9. A nonagon.',
+        },
+      ],
+      workedExample: {
+        question: 'Sum of interior angles = 900°. How many sides?',
+        steps: ['n−2 = 900/180 = 5', 'n = <strong>7</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // PROPERTIES OF SHAPES (geo-shapes)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'shp-A01', subtopic: 'geo-shapes', band: 'A', marks: 3,
+      question: 'Two triangles are similar. The smaller has sides 3 cm, 4 cm, 5 cm. The longer side of the larger is 15 cm. Find the scale factor and the other two sides.',
+      steps: [
+        {
+          prompt: 'Find the scale factor: longer side of large ÷ corresponding side of small.',
+          hint1: '15 ÷ 5 = ?',
+          hint2: 'Scale factor = 3.',
+          hint3: '3.',
+          answer: 3, tolerance: 0, unit: '',
+          explanation: 'Scale factor = 15/5 = 3.',
+        },
+        {
+          prompt: 'Find the other sides of the larger triangle.',
+          hint1: '3 × 3 = 9 and 4 × 3 = 12.',
+          hint2: '9 cm and 12 cm.',
+          hint3: '9 cm and 12 cm.',
+          answer: 12, tolerance: 0, unit: 'cm',
+          explanation: 'Other sides: 3×3=9 cm and 4×3=12 cm.',
+          displayAnswer: '9 cm and 12 cm',
+        },
+      ],
+      workedExample: {
+        question: 'Similar triangles: small sides 5, 6, 8 cm. Longest side of large = 24 cm. Find scale factor.',
+        steps: ['Scale factor = 24/8 = 3', 'Other sides: 5×3=15 cm, 6×3=18 cm'],
+      },
+    },
+    {
+      id: 'shp-A02', subtopic: 'geo-shapes', band: 'A', marks: 2,
+      question: 'Explain why these two triangles are congruent: Triangle 1 has sides 5 cm, 7 cm, 9 cm. Triangle 2 has sides 9 cm, 5 cm, 7 cm.',
+      steps: [
+        {
+          prompt: 'Which congruence condition applies when all three sides are equal?',
+          hint1: 'Three sides: Side, Side, Side.',
+          hint2: 'SSS condition.',
+          hint3: 'SSS (Side-Side-Side).',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'All three sides are equal (SSS), so the triangles are congruent.',
+          checkType: 'skip',
+          displayAnswer: 'SSS — all three sides are equal',
+        },
+      ],
+      workedExample: {
+        question: 'Two triangles share: two equal sides and the included angle. Which condition?',
+        steps: ['Two sides and the angle between them = <strong>SAS (Side-Angle-Side)</strong>'],
+      },
+    },
+    {
+      id: 'shp-B01', subtopic: 'geo-shapes', band: 'B', marks: 3,
+      question: 'Two similar shapes have area ratio 9 : 25. The smaller shape has perimeter 24 cm. Find the perimeter of the larger shape.',
+      steps: [
+        {
+          prompt: 'Find the length ratio from the area ratio. Area ratio = (length ratio)².',
+          hint1: '√(9 : 25) = √9 : √25.',
+          hint2: 'Length ratio = 3 : 5.',
+          hint3: '3 : 5.',
+          answer: 5, tolerance: 0, unit: '',
+          explanation: 'Length ratio = √9 : √25 = 3 : 5.',
+          checkType: 'skip',
+          displayAnswer: 'Length ratio = 3 : 5',
+        },
+        {
+          prompt: 'Use the length ratio to find the larger perimeter.',
+          hint1: 'Larger perimeter = 24 × (5/3).',
+          hint2: '24 × 5/3 = 40.',
+          hint3: '40 cm.',
+          answer: 40, tolerance: 0, unit: 'cm',
+          explanation: 'Perimeter scales by length ratio: 24 × 5/3 = 40 cm.',
+        },
+      ],
+      workedExample: {
+        question: 'Area ratio = 4 : 9. Smaller perimeter = 16 cm. Find larger perimeter.',
+        steps: ['Length ratio = √4:√9 = 2:3', 'Larger = 16 × 3/2 = <strong>24 cm</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // AREA & VOLUME (geo-area-volume)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'av-A01', subtopic: 'geo-area-volume', band: 'A', marks: 2,
+      question: 'Find the area of a circle with radius 6 cm. Give your answer in terms of π.',
+      steps: [
+        {
+          prompt: 'Use the formula: A = πr².',
+          hint1: 'r = 6, so r² = 36.',
+          hint2: 'A = π × 36.',
+          hint3: '36π cm².',
+          answer: 36, tolerance: 0, unit: '',
+          explanation: 'A = π × 6² = 36π cm².',
+          displayAnswer: '36π cm²',
+        },
+      ],
+      workedExample: {
+        question: 'Area of circle with radius 5 cm (in terms of π).',
+        steps: ['A = π × 5² = <strong>25π cm²</strong>'],
+      },
+    },
+    {
+      id: 'av-A02', subtopic: 'geo-area-volume', band: 'A', marks: 3,
+      question: 'Find the volume of a cylinder with radius 4 cm and height 10 cm. Use π = 3.14.',
+      steps: [
+        {
+          prompt: 'Area of the circular cross-section: A = πr².',
+          hint1: 'A = 3.14 × 4² = 3.14 × 16.',
+          hint2: '3.14 × 16 = 50.24.',
+          hint3: '50.24 cm².',
+          answer: 50.24, tolerance: 0.01, unit: 'cm²',
+          explanation: 'Cross-section area = 3.14 × 16 = 50.24 cm².',
+        },
+        {
+          prompt: 'Volume = area × height.',
+          hint1: '50.24 × 10 = ?',
+          hint2: '502.4.',
+          hint3: '502.4 cm³.',
+          answer: 502.4, tolerance: 0.1, unit: 'cm³',
+          explanation: 'Volume = 50.24 × 10 = 502.4 cm³.',
+        },
+      ],
+      workedExample: {
+        question: 'Cylinder: radius 3 cm, height 8 cm. Volume (π=3.14)?',
+        steps: ['Area = 3.14 × 9 = 28.26 cm²', 'Volume = 28.26 × 8 = <strong>226.08 cm³</strong>'],
+      },
+    },
+    {
+      id: 'av-B01', subtopic: 'geo-area-volume', band: 'B', marks: 4,
+      question: 'A cone has radius 5 cm and slant height 13 cm. Find the total surface area (curved + base). Use π = 3.14.',
+      steps: [
+        {
+          prompt: 'Curved surface area = πrl. Find l (slant height) and calculate.',
+          hint1: 'l = 13 cm (given). Curved SA = 3.14 × 5 × 13.',
+          hint2: '3.14 × 5 × 13 = 204.1.',
+          hint3: '204.1 cm².',
+          answer: 204.1, tolerance: 0.5, unit: 'cm²',
+          explanation: 'Curved SA = πrl = 3.14 × 5 × 13 = 204.1 cm².',
+        },
+        {
+          prompt: 'Base area = πr².',
+          hint1: '3.14 × 5² = 3.14 × 25.',
+          hint2: '78.5 cm².',
+          hint3: '78.5 cm².',
+          answer: 78.5, tolerance: 0.1, unit: 'cm²',
+          explanation: 'Base = πr² = 3.14 × 25 = 78.5 cm².',
+        },
+        {
+          prompt: 'Total surface area = curved + base.',
+          hint1: '204.1 + 78.5 = ?',
+          hint2: '282.6 cm².',
+          hint3: '282.6 cm².',
+          answer: 282.6, tolerance: 0.5, unit: 'cm²',
+          explanation: 'Total SA = 204.1 + 78.5 = 282.6 cm².',
+        },
+      ],
+      workedExample: {
+        question: 'Cone: r = 3 cm, slant height = 5 cm. Total SA (π=3.14)?',
+        steps: ['Curved: 3.14×3×5 = 47.1 cm²', 'Base: 3.14×9 = 28.26 cm²', 'Total: <strong>75.36 cm²</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // TRANSFORMATIONS (geo-transformations)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'tr-A01', subtopic: 'geo-transformations', band: 'A', marks: 3,
+      question: 'Describe fully the single transformation that maps triangle A to triangle B, where A has vertices (1,1), (3,1), (2,3) and B has vertices (1,−1), (3,−1), (2,−3).',
+      steps: [
+        {
+          prompt: 'Compare coordinates. The x-coordinates are the same; the y-coordinates are negated. What transformation does this?',
+          hint1: '(x, y) → (x, −y) is a reflection.',
+          hint2: 'The y-coordinates are reflected.',
+          hint3: 'Reflection in the x-axis.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: '(x,y)→(x,−y): reflection in the x-axis.',
+          checkType: 'skip',
+          displayAnswer: 'Reflection in the x-axis',
+        },
+      ],
+      workedExample: {
+        question: '(x,y) → (−x, y). What transformation?',
+        steps: ['x-coordinates change sign, y stays. This is a <strong>reflection in the y-axis</strong>.'],
+      },
+    },
+    {
+      id: 'tr-A02', subtopic: 'geo-transformations', band: 'A', marks: 3,
+      question: 'Shape A has vertices (1,2), (3,2), (3,4). It is enlarged by scale factor 2 from centre (0,0). Find the image coordinates.',
+      steps: [
+        {
+          prompt: 'Multiply each coordinate by the scale factor 2.',
+          hint1: '(1,2) → (2,4). (3,2) → (6,4). (3,4) → (6,8).',
+          hint2: '(2,4), (6,4), (6,8).',
+          hint3: '(2,4), (6,4), (6,8).',
+          answer: 8, tolerance: 0, unit: '',
+          explanation: 'Enlargement from origin: multiply all coordinates by 2.',
+          checkType: 'skip',
+          displayAnswer: '(2,4), (6,4), (6,8)',
+        },
+      ],
+      workedExample: {
+        question: 'Vertices (2,1),(4,1),(4,3) enlarged by SF 3 from (0,0).',
+        steps: ['Multiply by 3: (6,3), (12,3), (12,9)'],
+      },
+    },
+    {
+      id: 'tr-B01', subtopic: 'geo-transformations', band: 'B', marks: 4,
+      question: 'Describe fully the transformation that maps point (3, 1) to (−1, 3).',
+      steps: [
+        {
+          prompt: 'Check if it could be a rotation. Does the distance from the origin stay the same?',
+          hint1: 'Distance of (3,1) from origin = √(9+1) = √10.',
+          hint2: 'Distance of (−1,3) from origin = √(1+9) = √10. Same — could be a rotation.',
+          hint3: 'Distances equal → rotation is possible.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Equal distances suggest rotation.',
+          checkType: 'skip',
+        },
+        {
+          prompt: '(x, y) → (−y, x) corresponds to which rotation about the origin?',
+          hint1: '(3,1) → (−1, 3). Check: (−y, x) = (−1, 3). ✓',
+          hint2: 'This is 90° anticlockwise about the origin.',
+          hint3: '90° anticlockwise about (0,0).',
+          answer: 90, tolerance: 0, unit: '°',
+          explanation: '(x,y)→(−y,x) is a 90° anticlockwise rotation about the origin.',
+          displayAnswer: '90° anticlockwise rotation about (0,0)',
+        },
+      ],
+      workedExample: {
+        question: '(x,y) → (y,−x). What rotation?',
+        steps: ['Check with (1,0)→(0,−1). That is 90° clockwise.', 'Answer: <strong>90° clockwise about the origin</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // PYTHAGORAS (geo-pythagoras)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'pyth-A01', subtopic: 'geo-pythagoras', band: 'A', marks: 3,
+      question: 'Find the hypotenuse of a right-angled triangle with legs 5 cm and 12 cm.',
+      steps: [
+        {
+          prompt: 'Use Pythagoras: a² + b² = c². Calculate a² + b².',
+          hint1: '5² + 12² = 25 + 144.',
+          hint2: '25 + 144 = 169.',
+          hint3: '169.',
+          answer: 169, tolerance: 0, unit: '',
+          explanation: '5² + 12² = 25 + 144 = 169.',
+        },
+        {
+          prompt: 'Find c = √169.',
+          hint1: '√169 = ?',
+          hint2: '13.',
+          hint3: '13 cm.',
+          answer: 13, tolerance: 0, unit: 'cm',
+          explanation: 'c = √169 = 13 cm.',
+        },
+      ],
+      workedExample: {
+        question: 'Legs 6 cm and 8 cm. Find hypotenuse.',
+        steps: ['6² + 8² = 36 + 64 = 100', 'c = √100 = <strong>10 cm</strong>'],
+      },
+    },
+    {
+      id: 'pyth-A02', subtopic: 'geo-pythagoras', band: 'A', marks: 3,
+      question: 'A right-angled triangle has hypotenuse 17 cm and one leg 8 cm. Find the other leg.',
+      steps: [
+        {
+          prompt: 'Use a² = c² − b². Calculate 17² − 8².',
+          hint1: '17² = 289, 8² = 64.',
+          hint2: '289 − 64 = 225.',
+          hint3: '225.',
+          answer: 225, tolerance: 0, unit: '',
+          explanation: 'a² = 289 − 64 = 225.',
+        },
+        {
+          prompt: 'Find a = √225.',
+          hint1: '√225 = ?',
+          hint2: '15.',
+          hint3: '15 cm.',
+          answer: 15, tolerance: 0, unit: 'cm',
+          explanation: 'a = √225 = 15 cm.',
+        },
+      ],
+      workedExample: {
+        question: 'Hypotenuse 13 cm, one leg 5 cm. Find the other.',
+        steps: ['a² = 13² − 5² = 169 − 25 = 144', 'a = √144 = <strong>12 cm</strong>'],
+      },
+    },
+    {
+      id: 'pyth-B01', subtopic: 'geo-pythagoras', band: 'B', marks: 4,
+      question: 'A cuboid is 8 cm × 6 cm × 3 cm. Find the length of the space diagonal (longest diagonal inside).',
+      steps: [
+        {
+          prompt: 'Find the diagonal of the base (8 × 6 rectangle) using Pythagoras.',
+          hint1: '8² + 6² = 64 + 36 = 100.',
+          hint2: 'Base diagonal = √100 = 10 cm.',
+          hint3: '10 cm.',
+          answer: 10, tolerance: 0, unit: 'cm',
+          explanation: 'Base diagonal = √(64+36) = 10 cm.',
+        },
+        {
+          prompt: 'Now use Pythagoras again with the base diagonal and height: √(10² + 3²).',
+          hint1: '10² + 3² = 100 + 9 = 109.',
+          hint2: 'Space diagonal = √109.',
+          hint3: '√109 ≈ 10.44 cm.',
+          answer: 10.44, tolerance: 0.05, unit: 'cm',
+          explanation: 'Space diagonal = √(10² + 3²) = √109 ≈ 10.44 cm.',
+        },
+      ],
+      workedExample: {
+        question: 'Cuboid 3×4×12 cm. Space diagonal?',
+        steps: ['Base diagonal: √(9+16) = 5 cm', 'Space diagonal: √(25+144) = √169 = <strong>13 cm</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // TRIGONOMETRY (geo-trigonometry)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'trig-A01', subtopic: 'geo-trigonometry', band: 'A', marks: 3,
+      question: 'In a right-angled triangle, the opposite side is 7 cm and the hypotenuse is 10 cm. Find the angle θ opposite the 7 cm side.',
+      steps: [
+        {
+          prompt: 'Write the correct trig ratio: which one uses opposite and hypotenuse?',
+          hint1: 'sin θ = opposite/hypotenuse.',
+          hint2: 'sin θ = 7/10 = 0.7.',
+          hint3: 'sin θ = 0.7.',
+          answer: 0.7, tolerance: 0.001, unit: '',
+          explanation: 'sin θ = opp/hyp = 7/10 = 0.7.',
+        },
+        {
+          prompt: 'Find θ using the inverse sine: θ = sin⁻¹(0.7).',
+          hint1: 'Use your calculator: sin⁻¹(0.7).',
+          hint2: '≈ 44.4°.',
+          hint3: '44.4°.',
+          answer: 44.4, tolerance: 0.2, unit: '°',
+          explanation: 'θ = sin⁻¹(0.7) ≈ 44.4°.',
+        },
+      ],
+      workedExample: {
+        question: 'opposite = 5 cm, hypotenuse = 8 cm. Find θ.',
+        steps: ['sin θ = 5/8 = 0.625', 'θ = sin⁻¹(0.625) ≈ <strong>38.7°</strong>'],
+      },
+    },
+    {
+      id: 'trig-A02', subtopic: 'geo-trigonometry', band: 'A', marks: 3,
+      question: 'In a right-angled triangle, angle θ = 35° and the adjacent side is 12 cm. Find the opposite side.',
+      steps: [
+        {
+          prompt: 'Which trig ratio uses opposite and adjacent?',
+          hint1: 'tan θ = opposite/adjacent.',
+          hint2: 'tan 35° = opposite/12.',
+          hint3: 'opposite = 12 × tan 35°.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'tan θ = opp/adj → opp = adj × tan θ.',
+          checkType: 'skip',
+          displayAnswer: 'opp = 12 × tan 35°',
+        },
+        {
+          prompt: 'Calculate: 12 × tan 35°.',
+          hint1: 'tan 35° ≈ 0.700.',
+          hint2: '12 × 0.700 = 8.40.',
+          hint3: '8.40 cm.',
+          answer: 8.40, tolerance: 0.1, unit: 'cm',
+          explanation: '12 × tan 35° ≈ 8.40 cm.',
+        },
+      ],
+      workedExample: {
+        question: 'θ = 50°, adjacent = 9 cm. Find opposite.',
+        steps: ['tan 50° ≈ 1.192', 'opposite = 9 × 1.192 ≈ <strong>10.73 cm</strong>'],
+      },
+    },
+    {
+      id: 'trig-B01', subtopic: 'geo-trigonometry', band: 'B', marks: 4,
+      question: 'A ladder 6 m long leans against a wall. The base is 2.5 m from the wall. Find the angle the ladder makes with the ground.',
+      steps: [
+        {
+          prompt: 'Identify: hypotenuse = 6 m, adjacent = 2.5 m. Which ratio?',
+          hint1: 'cos θ = adjacent/hypotenuse.',
+          hint2: 'cos θ = 2.5/6.',
+          hint3: 'cos θ ≈ 0.417.',
+          answer: 0.417, tolerance: 0.005, unit: '',
+          explanation: 'cos θ = 2.5/6 ≈ 0.417.',
+        },
+        {
+          prompt: 'Find θ = cos⁻¹(2.5/6).',
+          hint1: 'cos⁻¹(0.417) ≈ ?',
+          hint2: '≈ 65.4°.',
+          hint3: '65.4°.',
+          answer: 65.4, tolerance: 0.3, unit: '°',
+          explanation: 'θ = cos⁻¹(0.417) ≈ 65.4°.',
+        },
+      ],
+      workedExample: {
+        question: 'Ladder 5 m, base 2 m from wall. Angle with ground?',
+        steps: ['cos θ = 2/5 = 0.4', 'θ = cos⁻¹(0.4) ≈ <strong>66.4°</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // CIRCLE THEOREMS (geo-circle-theorems) — Higher
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'cth-A01', subtopic: 'geo-circle-theorems', band: 'A', marks: 2,
+      question: 'An inscribed angle is 38°. What is the central angle subtended by the same arc?',
+      steps: [
+        {
+          prompt: 'The central angle theorem: central angle = 2 × inscribed angle.',
+          hint1: '2 × 38° = ?',
+          hint2: '76°.',
+          hint3: '76°.',
+          answer: 76, tolerance: 0, unit: '°',
+          explanation: 'Central angle = 2 × inscribed angle = 76°.',
+        },
+      ],
+      workedExample: {
+        question: 'Inscribed angle = 52°. Find the central angle.',
+        steps: ['Central angle = 2 × 52 = <strong>104°</strong>'],
+      },
+    },
+    {
+      id: 'cth-B01', subtopic: 'geo-circle-theorems', band: 'B', marks: 3,
+      question: 'ABCD is a cyclic quadrilateral. Angle A = 75°. Find angle C.',
+      steps: [
+        {
+          prompt: 'Which theorem applies to opposite angles in a cyclic quadrilateral?',
+          hint1: 'Opposite angles in a cyclic quadrilateral add up to 180°.',
+          hint2: '∠A + ∠C = 180°.',
+          hint3: '75 + ∠C = 180.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Opposite angles in a cyclic quadrilateral sum to 180°.',
+          checkType: 'skip',
+          displayAnswer: '∠A + ∠C = 180°',
+        },
+        {
+          prompt: 'Find angle C.',
+          hint1: '∠C = 180 − 75.',
+          hint2: '105°.',
+          hint3: '105°.',
+          answer: 105, tolerance: 0, unit: '°',
+          explanation: '∠C = 180 − 75 = 105°.',
+        },
+      ],
+      workedExample: {
+        question: 'Cyclic quad: angle A = 68°. Find angle C.',
+        steps: ['Opposite angles sum to 180°', '∠C = 180 − 68 = <strong>112°</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // VECTORS (geo-vectors) — Higher
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'vec-A01', subtopic: 'geo-vectors', band: 'A', marks: 2,
+      question: 'Vector a = (3, 2) and vector b = (−1, 4). Find a + b.',
+      steps: [
+        {
+          prompt: 'Add the x-components and y-components separately.',
+          hint1: 'x: 3 + (−1) = 2. y: 2 + 4 = 6.',
+          hint2: 'a + b = (2, 6).',
+          hint3: '(2, 6).',
+          answer: 6, tolerance: 0, unit: '',
+          explanation: 'a + b = (3+(−1), 2+4) = (2, 6).',
+          displayAnswer: '(2, 6)',
+        },
+      ],
+      workedExample: {
+        question: 'a = (4, −1), b = (2, 3). Find a + b.',
+        steps: ['x: 4+2=6, y: −1+3=2', 'a + b = <strong>(6, 2)</strong>'],
+      },
+    },
+    {
+      id: 'vec-B01', subtopic: 'geo-vectors', band: 'B', marks: 4,
+      question: 'OA = a, OB = b. M is the midpoint of AB. Find the vector OM.',
+      steps: [
+        {
+          prompt: 'Find the vector AB in terms of a and b.',
+          hint1: 'AB = AO + OB = −a + b.',
+          hint2: 'AB = b − a.',
+          hint3: 'AB = b − a.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'AB = −OA + OB = b − a.',
+          checkType: 'skip',
+          displayAnswer: 'AB = b − a',
+        },
+        {
+          prompt: 'AM = ½AB. Find OM = OA + AM.',
+          hint1: 'AM = ½(b − a). OM = a + ½(b − a).',
+          hint2: 'OM = a + ½b − ½a = ½a + ½b.',
+          hint3: 'OM = ½(a + b).',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'OM = OA + AM = a + ½(b−a) = ½a + ½b = ½(a+b).',
+          checkType: 'skip',
+          displayAnswer: 'OM = ½(a + b)',
+        },
+      ],
+      workedExample: {
+        question: 'OA = a, OB = b. Find midpoint of OA in terms of a.',
+        steps: ['Midpoint of OA = ½ × OA = <strong>½a</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // BASIC PROBABILITY (prob-basic)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'prb-A01', subtopic: 'prob-basic', band: 'A', marks: 2,
+      question: 'A bag contains 5 red, 3 blue, and 2 green counters. A counter is picked at random. Find P(red) and P(not red).',
+      steps: [
+        {
+          prompt: 'Find P(red) = number of red ÷ total.',
+          hint1: 'Total = 5 + 3 + 2 = 10.',
+          hint2: 'P(red) = 5/10 = 1/2.',
+          hint3: '1/2.',
+          answer: 0.5, tolerance: 0.01, unit: '',
+          explanation: 'P(red) = 5/10 = 1/2.',
+          displayAnswer: '1/2',
+        },
+        {
+          prompt: 'Find P(not red) = 1 − P(red).',
+          hint1: '1 − 1/2 = 1/2.',
+          hint2: '1/2.',
+          hint3: '5/10 = 1/2.',
+          answer: 0.5, tolerance: 0.01, unit: '',
+          explanation: 'P(not red) = 1 − 1/2 = 1/2.',
+          displayAnswer: '1/2',
+        },
+      ],
+      workedExample: {
+        question: 'Bag: 3 red, 2 blue, 5 green. P(blue)?',
+        steps: ['Total = 10', 'P(blue) = 2/10 = <strong>1/5</strong>'],
+      },
+    },
+    {
+      id: 'prb-A02', subtopic: 'prob-basic', band: 'A', marks: 3,
+      question: 'A fair die is thrown once. Find: P(even number) and P(prime number).',
+      steps: [
+        {
+          prompt: 'List the even numbers on a die (1–6). Find P(even).',
+          hint1: 'Even numbers: 2, 4, 6 → 3 outcomes.',
+          hint2: 'P(even) = 3/6 = 1/2.',
+          hint3: '1/2.',
+          answer: 0.5, tolerance: 0.01, unit: '',
+          explanation: 'P(even) = 3/6 = 1/2.',
+          displayAnswer: '1/2',
+        },
+        {
+          prompt: 'List the prime numbers on a die. Find P(prime).',
+          hint1: 'Prime numbers 1–6: 2, 3, 5 → 3 outcomes.',
+          hint2: 'P(prime) = 3/6 = 1/2.',
+          hint3: '1/2.',
+          answer: 0.5, tolerance: 0.01, unit: '',
+          explanation: 'Primes: 2, 3, 5. P(prime) = 3/6 = 1/2.',
+          displayAnswer: '1/2',
+        },
+      ],
+      workedExample: {
+        question: 'Fair die: P(square number)?',
+        steps: ['Square numbers 1–6: 1, 4 → 2 outcomes', 'P(square) = 2/6 = <strong>1/3</strong>'],
+      },
+    },
+    {
+      id: 'prb-B01', subtopic: 'prob-basic', band: 'B', marks: 3,
+      question: 'In a class of 30, 18 study French, 12 study Spanish, and 5 study both. How many study neither? Find P(studies neither).',
+      steps: [
+        {
+          prompt: 'Use the addition rule: n(F ∪ S) = n(F) + n(S) − n(F ∩ S).',
+          hint1: '18 + 12 − 5 = 25.',
+          hint2: '25 study French or Spanish (or both).',
+          hint3: '25.',
+          answer: 25, tolerance: 0, unit: '',
+          explanation: '18 + 12 − 5 = 25 study at least one language.',
+        },
+        {
+          prompt: 'Find the number who study neither.',
+          hint1: '30 − 25 = 5.',
+          hint2: '5 students study neither.',
+          hint3: '5.',
+          answer: 5, tolerance: 0, unit: '',
+          explanation: '30 − 25 = 5 study neither.',
+        },
+        {
+          prompt: 'P(studies neither) = 5/30.',
+          hint1: '5/30 = 1/6.',
+          hint2: '1/6.',
+          hint3: '1/6.',
+          answer: 0.1667, tolerance: 0.01, unit: '',
+          explanation: 'P(neither) = 5/30 = 1/6.',
+          displayAnswer: '1/6',
+        },
+      ],
+      workedExample: {
+        question: '25 students: 15 like football, 12 like tennis, 7 like both. P(likes neither)?',
+        steps: ['n(F∪T) = 15+12−7 = 20. Neither = 25−20 = 5', 'P(neither) = 5/25 = <strong>1/5</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // COMBINED EVENTS (prob-combined)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'comb-A01', subtopic: 'prob-combined', band: 'A', marks: 3,
+      question: 'A coin is flipped and a die is thrown. List the sample space and find P(heads and 4).',
+      steps: [
+        {
+          prompt: 'How many outcomes are there in total?',
+          hint1: 'Coin: 2 outcomes. Die: 6 outcomes. Total = 2 × 6.',
+          hint2: '12 equally likely outcomes.',
+          hint3: '12.',
+          answer: 12, tolerance: 0, unit: '',
+          explanation: '2 × 6 = 12 outcomes.',
+        },
+        {
+          prompt: 'Find P(heads AND 4).',
+          hint1: 'Only one outcome gives heads AND 4.',
+          hint2: 'P = 1/12.',
+          hint3: '1/12.',
+          answer: 0.0833, tolerance: 0.005, unit: '',
+          explanation: 'P(H and 4) = 1/12.',
+          displayAnswer: '1/12',
+        },
+      ],
+      workedExample: {
+        question: 'Two fair dice thrown. Find P(both show 6).',
+        steps: ['Total outcomes = 36', 'P(6,6) = 1/36'],
+      },
+    },
+    {
+      id: 'comb-B01', subtopic: 'prob-combined', band: 'B', marks: 4,
+      question: 'P(A) = 0.4, P(B) = 0.3, A and B are independent. Find P(A and B) and P(A or B).',
+      steps: [
+        {
+          prompt: 'For independent events, P(A and B) = P(A) × P(B).',
+          hint1: '0.4 × 0.3 = ?',
+          hint2: '0.12.',
+          hint3: '0.12.',
+          answer: 0.12, tolerance: 0.001, unit: '',
+          explanation: 'P(A and B) = 0.4 × 0.3 = 0.12.',
+        },
+        {
+          prompt: 'P(A or B) = P(A) + P(B) − P(A and B).',
+          hint1: '0.4 + 0.3 − 0.12.',
+          hint2: '0.58.',
+          hint3: '0.58.',
+          answer: 0.58, tolerance: 0.001, unit: '',
+          explanation: 'P(A or B) = 0.4 + 0.3 − 0.12 = 0.58.',
+        },
+      ],
+      workedExample: {
+        question: 'P(A)=0.5, P(B)=0.6, independent. Find P(A and B) and P(A or B).',
+        steps: ['P(A∩B) = 0.5×0.6 = 0.3', 'P(A∪B) = 0.5+0.6−0.3 = <strong>0.8</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // TREE DIAGRAMS (prob-tree-diagrams)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'tree-A01', subtopic: 'prob-tree-diagrams', band: 'A', marks: 4,
+      question: 'A bag has 4 red and 6 blue balls. One ball is drawn, replaced, and a second is drawn. Find P(two red).',
+      steps: [
+        {
+          prompt: 'P(red on first draw).',
+          hint1: '4 red out of 10 total.',
+          hint2: 'P(R) = 4/10 = 2/5.',
+          hint3: '2/5.',
+          answer: 0.4, tolerance: 0.01, unit: '',
+          explanation: 'P(red) = 4/10 = 2/5 = 0.4. Replaced, so probabilities don\'t change.',
+        },
+        {
+          prompt: 'P(two red) = P(R) × P(R) — because the ball is replaced.',
+          hint1: '0.4 × 0.4 = ?',
+          hint2: '0.16.',
+          hint3: '0.16.',
+          answer: 0.16, tolerance: 0.005, unit: '',
+          explanation: 'P(RR) = 0.4 × 0.4 = 0.16.',
+          displayAnswer: '4/25 or 0.16',
+        },
+      ],
+      workedExample: {
+        question: 'P(head) = 1/2. Two coins flipped. P(two heads)?',
+        steps: ['P(HH) = 1/2 × 1/2 = <strong>1/4</strong>'],
+      },
+    },
+    {
+      id: 'tree-B01', subtopic: 'prob-tree-diagrams', band: 'B', marks: 5,
+      question: 'A bag has 3 red and 5 blue balls. Two are drawn WITHOUT replacement. Find P(one red, one blue).',
+      steps: [
+        {
+          prompt: 'P(red first, then blue) = P(R) × P(B|R).',
+          hint1: 'P(R) = 3/8. After removing a red, 7 balls remain with 5 blue.',
+          hint2: 'P(B|R) = 5/7.',
+          hint3: '(3/8) × (5/7) = 15/56.',
+          answer: 0.268, tolerance: 0.01, unit: '',
+          explanation: 'P(R then B) = (3/8) × (5/7) = 15/56.',
+          displayAnswer: '15/56',
+        },
+        {
+          prompt: 'P(blue first, then red) = P(B) × P(R|B).',
+          hint1: 'P(B) = 5/8. After removing a blue, 7 balls remain with 3 red.',
+          hint2: 'P(R|B) = 3/7.',
+          hint3: '(5/8) × (3/7) = 15/56.',
+          answer: 0.268, tolerance: 0.01, unit: '',
+          explanation: 'P(B then R) = (5/8) × (3/7) = 15/56.',
+          displayAnswer: '15/56',
+        },
+        {
+          prompt: 'P(one red, one blue) = add both routes.',
+          hint1: '15/56 + 15/56 = 30/56.',
+          hint2: '30/56 = 15/28.',
+          hint3: '15/28.',
+          answer: 0.536, tolerance: 0.01, unit: '',
+          explanation: 'P(one red, one blue) = 30/56 = 15/28 ≈ 0.536.',
+          displayAnswer: '15/28',
+        },
+      ],
+      workedExample: {
+        question: 'Bag: 2 red, 4 blue. Two drawn without replacement. P(both blue)?',
+        steps: ['P(B₁) = 4/6 = 2/3. P(B₂|B₁) = 3/5', 'P(BB) = 2/3 × 3/5 = 6/15 = <strong>2/5</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // VENN DIAGRAMS (prob-venn) — Higher
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'venn-A01', subtopic: 'prob-venn', band: 'A', marks: 3,
+      question: 'From a Venn diagram: 8 in A only, 5 in A∩B, 7 in B only, 10 outside both. Find P(A∪B) and P(A|B).',
+      steps: [
+        {
+          prompt: 'Total number of elements. n(total) = 8 + 5 + 7 + 10 = 30. Find P(A∪B).',
+          hint1: 'n(A∪B) = 8 + 5 + 7 = 20.',
+          hint2: 'P(A∪B) = 20/30 = 2/3.',
+          hint3: '2/3.',
+          answer: 0.667, tolerance: 0.01, unit: '',
+          explanation: 'P(A∪B) = 20/30 = 2/3.',
+          displayAnswer: '2/3',
+        },
+        {
+          prompt: 'P(A|B) = P(A∩B)/P(B). Find P(B) and then P(A|B).',
+          hint1: 'n(B) = 5 + 7 = 12. P(B) = 12/30.',
+          hint2: 'P(A|B) = (5/30)/(12/30) = 5/12.',
+          hint3: '5/12.',
+          answer: 0.417, tolerance: 0.01, unit: '',
+          explanation: 'P(A|B) = P(A∩B)/P(B) = (5/30)/(12/30) = 5/12.',
+          displayAnswer: '5/12',
+        },
+      ],
+      workedExample: {
+        question: 'A only=6, A∩B=4, B only=8, neither=2. Total=20. Find P(A|B).',
+        steps: ['P(A∩B) = 4/20, P(B) = 12/20', 'P(A|B) = (4/20)/(12/20) = 4/12 = <strong>1/3</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // AVERAGES & RANGE (stat-averages)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'avg-A01', subtopic: 'stat-averages', band: 'A', marks: 3,
+      question: 'Find the mean, median and range of: 4, 7, 2, 9, 3, 7, 5.',
+      steps: [
+        {
+          prompt: 'Find the mean: add all values and divide by 7.',
+          hint1: '4+7+2+9+3+7+5 = 37.',
+          hint2: '37 ÷ 7 = 5.29 (to 2 d.p.).',
+          hint3: '5.29.',
+          answer: 5.29, tolerance: 0.05, unit: '',
+          explanation: 'Mean = 37/7 ≈ 5.29.',
+        },
+        {
+          prompt: 'Find the median: order the data and find the middle value.',
+          hint1: 'Ordered: 2, 3, 4, 5, 7, 7, 9.',
+          hint2: '7 values — middle is the 4th.',
+          hint3: 'Median = 5.',
+          answer: 5, tolerance: 0, unit: '',
+          explanation: 'Ordered: 2,3,4,5,7,7,9. Median = 4th value = 5.',
+        },
+        {
+          prompt: 'Find the range: maximum − minimum.',
+          hint1: '9 − 2 = ?',
+          hint2: '7.',
+          hint3: 'Range = 7.',
+          answer: 7, tolerance: 0, unit: '',
+          explanation: 'Range = 9 − 2 = 7.',
+        },
+      ],
+      workedExample: {
+        question: 'Find mean and median of: 6, 2, 8, 4, 10.',
+        steps: ['Mean: (6+2+8+4+10)/5 = 30/5 = 6', 'Ordered: 2,4,6,8,10. Median = <strong>6</strong>'],
+      },
+    },
+    {
+      id: 'avg-B01', subtopic: 'stat-averages', band: 'B', marks: 4,
+      question: 'From a frequency table: x=1,f=3; x=2,f=5; x=3,f=4; x=4,f=8. Calculate the mean.',
+      steps: [
+        {
+          prompt: 'Find the total frequency (n).',
+          hint1: '3 + 5 + 4 + 8 = 20.',
+          hint2: 'n = 20.',
+          hint3: '20.',
+          answer: 20, tolerance: 0, unit: '',
+          explanation: 'Total frequency = 3+5+4+8 = 20.',
+        },
+        {
+          prompt: 'Find Σ(fx): multiply each x by its frequency and sum.',
+          hint1: '1×3=3, 2×5=10, 3×4=12, 4×8=32.',
+          hint2: '3+10+12+32 = 57.',
+          hint3: 'Σfx = 57.',
+          answer: 57, tolerance: 0, unit: '',
+          explanation: 'Σfx = 3+10+12+32 = 57.',
+        },
+        {
+          prompt: 'Mean = Σfx ÷ n.',
+          hint1: '57 ÷ 20 = ?',
+          hint2: '2.85.',
+          hint3: '2.85.',
+          answer: 2.85, tolerance: 0.01, unit: '',
+          explanation: 'Mean = 57/20 = 2.85.',
+        },
+      ],
+      workedExample: {
+        question: 'x=2,f=4; x=3,f=6; x=4,f=2. Find mean.',
+        steps: ['n=12. Σfx = 8+18+8=34', 'Mean = 34/12 ≈ <strong>2.83</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // CHARTS & DIAGRAMS (stat-charts)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'chr-A01', subtopic: 'stat-charts', band: 'A', marks: 3,
+      question: '360 students were surveyed. 90 prefer History, 120 prefer Maths, 150 prefer Science. Calculate the angle for each subject in a pie chart.',
+      steps: [
+        {
+          prompt: 'Angle for History: (90/360) × 360°.',
+          hint1: 'Fraction = 90/360 = 1/4.',
+          hint2: '1/4 × 360° = 90°.',
+          hint3: '90°.',
+          answer: 90, tolerance: 0, unit: '°',
+          explanation: 'History: (90/360) × 360 = 90°.',
+        },
+        {
+          prompt: 'Angle for Maths: (120/360) × 360°.',
+          hint1: 'Fraction = 120/360 = 1/3.',
+          hint2: '1/3 × 360° = 120°.',
+          hint3: '120°.',
+          answer: 120, tolerance: 0, unit: '°',
+          explanation: 'Maths: (120/360) × 360 = 120°.',
+        },
+        {
+          prompt: 'Angle for Science: (150/360) × 360°.',
+          hint1: 'Fraction = 150/360 = 5/12.',
+          hint2: '5/12 × 360° = 150°.',
+          hint3: '150°.',
+          answer: 150, tolerance: 0, unit: '°',
+          explanation: 'Science: (150/360) × 360 = 150°. Check: 90+120+150 = 360 ✓',
+        },
+      ],
+      workedExample: {
+        question: '200 people: 50 chose A, 100 chose B, 50 chose C. Find angles.',
+        steps: ['A: 50/200×360=90°, B: 100/200×360=180°, C: 50/200×360=90°'],
+      },
+    },
+    {
+      id: 'chr-B01', subtopic: 'stat-charts', band: 'B', marks: 3,
+      question: 'A histogram has class 10≤x<20 with frequency density 3.5, class width 10. What is the frequency for this class?',
+      steps: [
+        {
+          prompt: 'In a histogram: frequency = frequency density × class width.',
+          hint1: 'Frequency = 3.5 × 10.',
+          hint2: '35.',
+          hint3: '35.',
+          answer: 35, tolerance: 0, unit: '',
+          explanation: 'Frequency = frequency density × class width = 3.5 × 10 = 35.',
+        },
+      ],
+      workedExample: {
+        question: 'Class 20≤x<30, frequency density = 4.2. Find frequency.',
+        steps: ['Frequency = 4.2 × 10 = <strong>42</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // SCATTER GRAPHS (stat-scatter)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'sct-A01', subtopic: 'stat-scatter', band: 'A', marks: 3,
+      question: 'A scatter graph shows hours of revision vs exam score. The points show that as revision hours increase, scores increase. What type of correlation is this, and what does it tell us?',
+      steps: [
+        {
+          prompt: 'What type of correlation is shown?',
+          hint1: 'Both variables increase together.',
+          hint2: 'This is positive correlation.',
+          hint3: 'Positive correlation.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'As one variable increases the other increases = positive correlation.',
+          checkType: 'skip',
+          displayAnswer: 'Positive correlation',
+        },
+        {
+          prompt: 'Does correlation prove that revision CAUSES higher scores?',
+          hint1: 'Correlation shows a relationship, not cause and effect.',
+          hint2: 'Correlation does not imply causation.',
+          hint3: 'No — correlation does not prove causation.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Correlation shows a statistical relationship but doesn\'t prove causation.',
+          checkType: 'skip',
+          displayAnswer: 'Correlation does not prove causation',
+        },
+      ],
+      workedExample: {
+        question: 'As temperature increases, ice cream sales increase. What type of correlation?',
+        steps: ['Both increase together = <strong>positive correlation</strong>'],
+      },
+    },
+    {
+      id: 'sct-B01', subtopic: 'stat-scatter', band: 'B', marks: 4,
+      question: 'A line of best fit passes through (2, 14) and (8, 26). Use it to estimate the y-value when x = 5, and state any limitations.',
+      steps: [
+        {
+          prompt: 'Find the gradient of the line of best fit.',
+          hint1: 'm = (26 − 14)/(8 − 2) = 12/6.',
+          hint2: 'm = 2.',
+          hint3: 'm = 2.',
+          answer: 2, tolerance: 0, unit: '',
+          explanation: 'Gradient = 12/6 = 2.',
+        },
+        {
+          prompt: 'Find the equation: y = 2x + c. Use (2, 14) to find c.',
+          hint1: '14 = 2(2) + c → c = 10.',
+          hint2: 'y = 2x + 10.',
+          hint3: 'y = 2x + 10.',
+          answer: 10, tolerance: 0, unit: '',
+          explanation: 'c = 14 − 4 = 10. Equation: y = 2x + 10.',
+          checkType: 'skip',
+          displayAnswer: 'y = 2x + 10',
+        },
+        {
+          prompt: 'Estimate y when x = 5.',
+          hint1: 'y = 2(5) + 10 = 20.',
+          hint2: '20.',
+          hint3: '20.',
+          answer: 20, tolerance: 0, unit: '',
+          explanation: 'y = 2(5)+10 = 20. This is interpolation (x=5 is within the data range — more reliable).',
+        },
+      ],
+      workedExample: {
+        question: 'Line of best fit through (1,5) and (5,13). Estimate y when x=3.',
+        steps: ['m = (13−5)/(5−1) = 2. y = 2x+3', 'x=3: y = 6+3 = <strong>9</strong>'],
+      },
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // CUMULATIVE FREQUENCY & BOX PLOTS (stat-cumulative) — Higher
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'cum-A01', subtopic: 'stat-cumulative', band: 'A', marks: 4,
+      question: 'From a cumulative frequency graph for 80 students: LQ at 34, median at 47, UQ at 63. Calculate the IQR and the percentage of students scoring above 63.',
+      steps: [
+        {
+          prompt: 'IQR = Upper Quartile − Lower Quartile.',
+          hint1: '63 − 34 = ?',
+          hint2: '29.',
+          hint3: 'IQR = 29.',
+          answer: 29, tolerance: 0, unit: '',
+          explanation: 'IQR = UQ − LQ = 63 − 34 = 29.',
+        },
+        {
+          prompt: 'The UQ represents the 75th percentile — 75% of students scored at or below 63. What % scored above?',
+          hint1: '100% − 75% = 25%.',
+          hint2: '25%.',
+          hint3: '25% scored above 63.',
+          answer: 25, tolerance: 0, unit: '%',
+          explanation: '25% of students scored above the upper quartile.',
+        },
+      ],
+      workedExample: {
+        question: 'LQ = 30, UQ = 50. Find IQR.',
+        steps: ['IQR = 50 − 30 = <strong>20</strong>'],
+      },
+    },
+    {
+      id: 'cum-B01', subtopic: 'stat-cumulative', band: 'B', marks: 4,
+      question: 'Group A: median 55, IQR 20. Group B: median 62, IQR 35. Compare the distributions.',
+      steps: [
+        {
+          prompt: 'Compare the medians. What does this tell us?',
+          hint1: 'Group B has a higher median (62 > 55).',
+          hint2: 'Group B tends to score higher on average.',
+          hint3: 'Group B has higher typical scores.',
+          answer: 62, tolerance: 0, unit: '',
+          explanation: 'Group B has higher median → typically higher scores.',
+          checkType: 'skip',
+          displayAnswer: 'Group B has a higher median (62 vs 55)',
+        },
+        {
+          prompt: 'Compare the IQRs. What does the larger IQR tell us about Group B?',
+          hint1: 'IQR measures spread of the middle 50%.',
+          hint2: 'Group B has larger IQR (35 vs 20) → more spread out.',
+          hint3: 'Group B scores are more varied/less consistent.',
+          answer: 35, tolerance: 0, unit: '',
+          explanation: 'Group B has larger IQR → greater spread/variability in middle 50%.',
+          checkType: 'skip',
+          displayAnswer: 'Group B is more spread out (IQR 35 vs 20)',
+        },
+      ],
+      workedExample: {
+        question: 'How do you compare two box plots?',
+        steps: ['Compare medians (typical value)', 'Compare IQR or range (consistency/spread)'],
+      },
+    },
+
+  ];
+
+  // Merge both banks
+  const _allBank = _bank.concat(_bank2);
 
   // ─────────────────────────────────────────────────────────────
   // TOPIC → SUBTOPIC MAP
@@ -1677,14 +3945,14 @@ const MathsQuestions = (() => {
    * Excludes already-used question ids to avoid repeats in a session.
    */
   function getQuestion(subtopicId, band, excludeIds = []) {
-    let pool = _bank.filter(q =>
+    let pool = _allBank.filter(q =>
       q.subtopic === subtopicId && !excludeIds.includes(q.id)
     );
     if (band) pool = pool.filter(q => q.band === band);
 
     // Fallback: any band if filtered pool is empty
     if (!pool.length) {
-      pool = _bank.filter(q =>
+      pool = _allBank.filter(q =>
         q.subtopic === subtopicId && !excludeIds.includes(q.id)
       );
     }
@@ -1703,7 +3971,7 @@ const MathsQuestions = (() => {
     const result = [];
 
     const pick = (band) => {
-      const pool = _bank.filter(q =>
+      const pool = _allBank.filter(q =>
         subs.includes(q.subtopic) && q.band === band && !used.has(q.id)
       );
       if (!pool.length) return null;
@@ -1724,7 +3992,7 @@ const MathsQuestions = (() => {
    * Check if any questions exist for a given subtopic.
    */
   function hasQuestions(subtopicId) {
-    return _bank.some(q => q.subtopic === subtopicId);
+    return _allBank.some(q => q.subtopic === subtopicId);
   }
 
   return { getQuestion, getTestQuestions, hasQuestions };

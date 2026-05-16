@@ -1,0 +1,232 @@
+{
+  "id": "c3-moles",
+  "title": "The mole — the chemist's way of counting atoms",
+  "topic": "C3",
+  "examTip": "Always convert cm³ to dm³ (÷ 1000) before using c = n/V. In mole calculations, write out each step — examiners award marks for working even if your final answer is wrong.",
+  "introTips": [
+    "Have a periodic table handy — you'll need relative atomic masses to work out Mr.",
+    "Practise the mole triangle: cover n, m, or Mr to see which formula to use.",
+    "Percentage yield and atom economy questions often appear together on a 6-mark question."
+  ],
+  "intro": "Imagine trying to count the atoms in a grain of sand — it would take longer than the age of the universe. Chemists face this problem every day when they need to know exactly how much of a substance is reacting. That's why the mole was invented: it's a counting unit that makes the impossibly small manageable. Once you understand moles, you can predict exactly how much product a reaction will make — which is worth billions of pounds to the chemical industry.",
+  "keyPoints": [
+    {
+      "heading": "Why we need moles — and what Avogadro's number means",
+      "content": "Atoms are unimaginably small — a single carbon atom has a diameter of about 0.00000015 mm. You can't weigh out individual atoms, so chemists use the <strong>mole</strong> as a counting unit. One mole (1 mol) contains exactly <strong>6.02 × 10²³ particles</strong> — this is <strong>Avogadro's constant</strong> (Nₐ). Think of it like a 'chemist's dozen': just as a dozen always means 12, a mole always means 6.02 × 10²³ — whether those are atoms, molecules, ions, or formula units. The clever part: 1 mole of any element weighs its <strong>relative atomic mass in grams</strong>. So 1 mol of carbon-12 weighs 12 g. 1 mol of sodium weighs 23 g. 1 mol of water (H₂O) weighs 18 g. This number — the mass of one mole — is called the <strong>molar mass</strong>, in g/mol, and it equals the relative formula mass (Mr) numerically.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Mole — a counting unit: 1 mol = 6.02 × 10²³ particles (atoms, molecules, ions, or formula units)",
+        "Avogadro's constant (Nₐ) — 6.02 × 10²³ mol⁻¹, the number of particles in one mole",
+        "Molar mass — the mass of one mole of a substance in g/mol; numerically equals the Mr",
+        "1 mol of carbon = 12 g; 1 mol of water = 18 g; 1 mol of NaCl = 58.5 g",
+        "Mr is calculated by adding up the relative atomic masses of all atoms in the formula"
+      ],
+      "keyTerms": [
+        { "term": "Mole", "def": "The unit chemists use for amount of substance; 1 mol = 6.02 × 10²³ particles" },
+        { "term": "Avogadro's constant", "def": "6.02 × 10²³ mol⁻¹ — the number of particles in exactly one mole" },
+        { "term": "Molar mass", "def": "The mass of one mole of a substance, in g/mol; numerically equal to its Mr" },
+        { "term": "Relative formula mass (Mr)", "def": "The sum of all relative atomic masses in one formula unit of a substance" }
+      ],
+      "memTip": "A mole is like a 'dozen' for atoms — but instead of 12, it's 602,000,000,000,000,000,000,000.",
+      "tutor_note": "Students often confuse molar mass (g/mol) with Mr (no units) — clarify they are numerically identical but Mr is technically dimensionless."
+    },
+    {
+      "heading": "The mole equation: n = m ÷ Mr",
+      "content": "The key equation linking moles, mass, and molar mass is: <strong>n = m ÷ Mr</strong> where n = moles (mol), m = mass (g), and Mr = molar mass (g/mol). Rearranging: <strong>m = n × Mr</strong> and <strong>Mr = m ÷ n</strong>. Use a formula triangle to help — put n at the bottom left, m at the top, Mr at the bottom right. <br><br><strong>Worked example 1:</strong> How many moles in 44 g of CO₂? Mr of CO₂ = 12 + (2 × 16) = 44 g/mol. n = 44 ÷ 44 = <strong>1 mol</strong>.<br><br><strong>Worked example 2:</strong> What is the mass of 0.5 mol of NaCl? Mr of NaCl = 23 + 35.5 = 58.5 g/mol. m = 0.5 × 58.5 = <strong>29.25 g</strong>.<br><br><strong>Worked example 3:</strong> What is the Mr of a substance if 3 g = 0.1 mol? Mr = 3 ÷ 0.1 = <strong>30 g/mol</strong>.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "n = m ÷ Mr — moles equals mass in grams divided by molar mass in g/mol",
+        "m = n × Mr — rearrange to find mass when you know moles and molar mass",
+        "Mr = m ÷ n — rearrange to find molar mass when you know mass and moles",
+        "Always calculate Mr first by adding up relative atomic masses from the periodic table",
+        "Units: n in mol, m in g, Mr in g/mol — keep units consistent throughout"
+      ],
+      "keyTerms": [
+        { "term": "n", "def": "Symbol for amount in moles (mol)" },
+        { "term": "m", "def": "Symbol for mass in grams (g)" },
+        { "term": "Mr", "def": "Relative formula mass — the sum of atomic masses in one formula unit (g/mol numerically)" }
+      ],
+      "memTip": "Moles triangle: write m on top, n and Mr on the bottom. Cover what you want to find.",
+      "tutor_note": "Insist students write the formula first, substitute values, then calculate — examiners give method marks even for wrong answers."
+    },
+    {
+      "heading": "Moles and balanced equations — predicting masses in reactions",
+      "content": "A balanced chemical equation tells you the exact <strong>mole ratio</strong> of all substances reacting. The numbers in front of formulae (coefficients) tell you how many moles of each substance react. For example: <strong>Fe₂O₃ + 3CO → 2Fe + 3CO₂</strong> means 1 mol of iron oxide reacts with 3 mol of CO to produce 2 mol of iron and 3 mol of CO₂.<br><br><strong>The mole ratio method (4 steps):</strong><br>1. Write the balanced equation.<br>2. Find moles of the substance you know (n = m ÷ Mr).<br>3. Use the ratio from the equation to find moles of the unknown substance.<br>4. Convert moles to mass if needed (m = n × Mr).<br><br><strong>Worked example:</strong> What mass of iron is produced from 80 g of Fe₂O₃?<br>Mr of Fe₂O₃ = (2 × 56) + (3 × 16) = 112 + 48 = 160 g/mol.<br>n(Fe₂O₃) = 80 ÷ 160 = 0.5 mol.<br>Ratio Fe₂O₃ : Fe = 1 : 2, so n(Fe) = 0.5 × 2 = 1 mol.<br>m(Fe) = 1 × 56 = <strong>56 g</strong>.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Coefficients in balanced equations give the mole ratio of all reactants and products",
+        "Step 1: balance the equation; Step 2: find moles of known; Step 3: apply ratio; Step 4: find mass",
+        "Fe₂O₃ + 3CO → 2Fe + 3CO₂: ratio is 1 mol Fe₂O₃ : 2 mol Fe",
+        "The limiting reactant is the one that runs out first and determines the amount of product",
+        "Mass calculations from equations assume 100% yield — real reactions rarely achieve this"
+      ],
+      "keyTerms": [
+        { "term": "Mole ratio", "def": "The ratio of moles of substances in a reaction, given by the coefficients in the balanced equation" },
+        { "term": "Limiting reactant", "def": "The reactant that is completely used up first; it limits the amount of product formed" },
+        { "term": "Coefficient", "def": "The number in front of a formula in a balanced equation, showing the number of moles" }
+      ],
+      "memTip": "Balanced equation → moles → ratio → moles → mass. Write it as a chain each time.",
+      "tutor_note": "Common error: students use mass ratios instead of mole ratios. Emphasise that the numbers in equations are MOLE numbers, not mass numbers."
+    },
+    {
+      "heading": "Percentage yield and atom economy",
+      "content": "In real reactions, you rarely get as much product as calculations predict. <strong>Percentage yield</strong> tells you how efficient the reaction was:<br><br><strong>% yield = (actual yield ÷ theoretical yield) × 100%</strong><br><br>Actual yield is always less than theoretical yield because: reversible reactions don't go to completion; side reactions produce unwanted products; some product is lost during collection or transfer. <br><br><strong>Worked example:</strong> Theoretical yield = 56 g, actual yield = 42 g. % yield = (42 ÷ 56) × 100 = <strong>75%</strong>.<br><br><strong>Atom economy</strong> measures how much of the reactant mass ends up as the desired product:<br><br><strong>Atom economy = (Mr of desired product ÷ total Mr of all products) × 100%</strong><br><br>High atom economy = less waste = more sustainable chemistry. <strong>Addition reactions</strong> have 100% atom economy because all reactant atoms end up in the single product. Substitution or decomposition reactions have lower atom economy because other products are also formed.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "% yield = (actual yield ÷ theoretical yield) × 100% — always less than 100% in real reactions",
+        "Yield is reduced by: incomplete reactions, side reactions, product loss during transfer",
+        "Atom economy = (Mr of desired product ÷ total Mr of all products) × 100%",
+        "Addition reactions have 100% atom economy — only one product, so no waste",
+        "High atom economy = more sustainable, less raw material needed, less waste produced",
+        "Theoretical yield is calculated from the balanced equation assuming 100% conversion"
+      ],
+      "keyTerms": [
+        { "term": "Percentage yield", "def": "The actual mass of product obtained expressed as a percentage of the theoretical maximum" },
+        { "term": "Theoretical yield", "def": "The maximum mass of product calculated from the balanced equation, assuming 100% conversion" },
+        { "term": "Atom economy", "def": "The percentage of reactant atoms that end up in the desired product" }
+      ],
+      "memTip": "Yield = did we get enough? Atom economy = did we waste anything? Two different efficiency questions.",
+      "tutor_note": "AQA often combines both calculations in the same question. Make sure students read carefully which one is being asked for."
+    },
+    {
+      "heading": "Avogadro's Law and molar volume of gases",
+      "content": "<strong>Avogadro's Law:</strong> equal volumes of gases at the same temperature and pressure contain the same number of moles — regardless of which gas. This means we can use volume to measure moles of gas instead of mass. At <strong>room temperature and pressure (RTP: 25°C, 1 atm)</strong>, 1 mole of any gas occupies <strong>24 dm³</strong> (24,000 cm³). This is the <strong>molar volume</strong> of a gas at RTP.<br><br><strong>Volume of gas (dm³) = moles × 24</strong><br><strong>Moles = volume (dm³) ÷ 24</strong><br><br><strong>Worked example 1:</strong> What volume does 0.25 mol of CO₂ occupy at RTP? Volume = 0.25 × 24 = <strong>6 dm³</strong>.<br><br><strong>Worked example 2:</strong> A gas occupies 120 cm³ at RTP. How many moles? Convert: 120 cm³ ÷ 1000 = 0.12 dm³. Moles = 0.12 ÷ 24 = <strong>0.005 mol</strong>.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Avogadro's Law: equal volumes of gases at same temperature and pressure contain equal moles",
+        "At RTP (25°C, 1 atm): 1 mole of any gas = 24 dm³ (24,000 cm³)",
+        "Volume (dm³) = moles × 24; Moles = volume (dm³) ÷ 24",
+        "Convert cm³ to dm³ by dividing by 1000 before using the molar volume equation",
+        "Molar volume applies to all gases — O₂, CO₂, H₂, N₂ — all occupy 24 dm³ per mole at RTP"
+      ],
+      "keyTerms": [
+        { "term": "Avogadro's Law", "def": "Equal volumes of gases at the same temperature and pressure contain equal numbers of moles" },
+        { "term": "Molar volume", "def": "The volume occupied by one mole of a gas; 24 dm³ at RTP" },
+        { "term": "RTP", "def": "Room temperature and pressure: 25°C and 1 atmosphere (101 kPa)" }
+      ],
+      "memTip": "1 mole of gas = 24 dm³ at RTP. '24' is the magic number for gases.",
+      "tutor_note": "Students must remember to convert cm³ → dm³. Losing this step is the single most common error in gas volume questions."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Mole calculation reference — formulae and worked examples",
+      "examFlag": true,
+      "headers": ["Calculation type", "Formula", "Example", "Answer"],
+      "rows": [
+        ["Moles from mass", "n = m ÷ Mr", "44 g of CO₂ (Mr = 44)", "n = 44 ÷ 44 = 1 mol"],
+        ["Mass from moles", "m = n × Mr", "0.5 mol of NaCl (Mr = 58.5)", "m = 0.5 × 58.5 = 29.25 g"],
+        ["Mr from mass and moles", "Mr = m ÷ n", "3 g substance, 0.1 mol", "Mr = 3 ÷ 0.1 = 30 g/mol"],
+        ["Gas volume at RTP", "V = n × 24 dm³", "0.25 mol CO₂", "V = 0.25 × 24 = 6 dm³"],
+        ["Moles of gas from volume", "n = V(dm³) ÷ 24", "120 cm³ of gas at RTP", "n = 0.12 ÷ 24 = 0.005 mol"],
+        ["Percentage yield", "(actual ÷ theoretical) × 100%", "Actual 42 g, theoretical 56 g", "% yield = 75%"],
+        ["Atom economy", "(Mr desired product ÷ total Mr products) × 100%", "One product, Mr = 100, total Mr = 100", "Atom economy = 100%"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "1": {
+      "question": "What is the mass of 2 mol of water (H₂O)? (Mr of H₂O = 18)",
+      "options": ["36 g", "18 g", "9 g", "72 g"],
+      "correct": 0,
+      "correctFeedback": "Correct! m = n × Mr = 2 × 18 = 36 g. Always multiply moles by molar mass to get mass.",
+      "wrongFeedback": "Not quite. Use m = n × Mr. Here, m = 2 × 18 = 36 g. Remember: moles × molar mass = mass."
+    },
+    "2": {
+      "question": "In the reaction Fe₂O₃ + 3CO → 2Fe + 3CO₂, how many moles of iron are produced from 0.25 mol of Fe₂O₃?",
+      "options": ["0.5 mol", "0.25 mol", "1 mol", "0.75 mol"],
+      "correct": 0,
+      "correctFeedback": "Spot on! The mole ratio Fe₂O₃ : Fe = 1 : 2, so 0.25 mol Fe₂O₃ gives 0.25 × 2 = 0.5 mol Fe.",
+      "wrongFeedback": "Check the mole ratio. The equation shows 1 mol Fe₂O₃ produces 2 mol Fe, so 0.25 mol Fe₂O₃ → 0.5 mol Fe."
+    },
+    "3": {
+      "question": "The theoretical yield of a reaction is 80 g but only 60 g is collected. What is the percentage yield?",
+      "options": ["75%", "60%", "80%", "25%"],
+      "correct": 0,
+      "correctFeedback": "Exactly right! % yield = (60 ÷ 80) × 100 = 75%.",
+      "wrongFeedback": "Use: % yield = (actual ÷ theoretical) × 100 = (60 ÷ 80) × 100 = 75%."
+    },
+    "4": {
+      "question": "What volume does 0.5 mol of hydrogen gas occupy at RTP?",
+      "options": ["12 dm³", "24 dm³", "0.5 dm³", "48 dm³"],
+      "correct": 0,
+      "correctFeedback": "Correct! V = n × 24 = 0.5 × 24 = 12 dm³. At RTP, 1 mol of any gas = 24 dm³.",
+      "wrongFeedback": "Remember: at RTP, 1 mol of any gas = 24 dm³. So V = 0.5 × 24 = 12 dm³."
+    }
+  },
+  "commonMistakes": [
+    "Using mass ratio instead of mole ratio from a balanced equation — always use the coefficients as mole numbers, not mass numbers.",
+    "Forgetting to convert cm³ to dm³ (divide by 1000) before using molar volume or concentration equations.",
+    "Not calculating Mr correctly — remember to multiply the atomic mass by the number of each atom in the formula (e.g., Fe₂O₃: 2×56 + 3×16).",
+    "Confusing percentage yield (how much product you collected) with atom economy (what fraction of reactant atoms end up in the product).",
+    "Forgetting to balance the equation first before attempting any mole ratio calculation — unbalanced equations give wrong ratios."
+  ],
+  "examTips": [
+    "Always show your working step by step: write the formula, substitute values, then calculate. You get marks for each correct step even if the final answer is wrong.",
+    "If a question involves gases, check whether you need to use molar volume (24 dm³/mol at RTP) — look for volumes given in cm³ or dm³.",
+    "For percentage yield and atom economy questions, re-read the question carefully — they are different calculations and AQA often asks for both in the same question.",
+    "When calculating Mr, use the periodic table provided in the exam — you don't need to memorise atomic masses.",
+    "Check your answer is sensible: if you calculate 1000 moles of a gas from a 1 g sample, something has gone wrong with unit conversion."
+  ],
+  "revisionCardBullets": [
+    "1 mole = 6.02 × 10²³ particles (Avogadro's constant, Nₐ)",
+    "Molar mass (g/mol) = Mr numerically — the mass of 1 mole",
+    "n = m ÷ Mr (moles = mass ÷ molar mass)",
+    "m = n × Mr (mass = moles × molar mass)",
+    "Balanced equations give mole ratios — coefficients = moles",
+    "Mole ratio method: balance → find moles → apply ratio → find mass",
+    "% yield = (actual yield ÷ theoretical yield) × 100%",
+    "Atom economy = (Mr desired product ÷ total Mr products) × 100%",
+    "Addition reactions: 100% atom economy (only one product)",
+    "Molar volume at RTP: 1 mol of any gas = 24 dm³",
+    "V(dm³) = moles × 24; convert cm³ ÷ 1000 = dm³",
+    "Avogadro's Law: equal volumes of gas at same T and P contain equal moles"
+  ],
+  "videos": [
+    {
+      "title": "The Mole — AQA GCSE Chemistry",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+moles+free+science+lessons",
+      "source": "Free Science Lessons",
+      "duration": "~12 min"
+    },
+    {
+      "title": "Moles, Mass and Mr Calculations — GCSE Chemistry",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+moles+calculations+cognito",
+      "source": "Cognito",
+      "duration": "~10 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "aqa gcse chemistry moles free science lessons",
+      "label": "The mole — full lesson",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+moles+free+science+lessons"
+    },
+    {
+      "searchQuery": "moles chemistry gcse bitesize",
+      "label": "Moles and equations",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=moles+chemistry+gcse"
+    },
+    {
+      "searchQuery": "aqa gcse chemistry moles calculations cognito",
+      "label": "Moles and calculations",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+moles+calculations+cognito"
+    }
+  ]
+}

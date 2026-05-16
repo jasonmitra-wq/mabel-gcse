@@ -394,7 +394,7 @@ function showSubjectPicker() {
     { id: 'physics',   label: 'Physics',     icon: '⚡', sub: 'AQA Separate Science · Papers 1 & 2', available: true  },
     { id: 'geography', label: 'Geography',   icon: '🌍', sub: 'AQA · Papers 1, 2 & 3',               available: true  },
     { id: 'sociology', label: 'Sociology',   icon: '👥', sub: 'AQA · Papers 1 & 2',                  available: true  },
-    { id: 'maths',     label: 'Maths',       icon: '📐', sub: 'Coming soon',                          available: false },
+    { id: 'maths',     label: 'Maths',       icon: '📐', sub: 'AQA · GCSE Maths',                    available: true  },
     { id: 'english',   label: 'English Lit', icon: '📚', sub: 'Coming soon',                          available: false },
   ];
 
@@ -436,6 +436,11 @@ function showSubjectPicker() {
 }
 
 async function _selectSubject(subjectId) {
+  // Maths has its own module with a different interface
+  if (subjectId === 'maths') {
+    Maths.open();
+    return;
+  }
   _activeSubject = subjectId;
   try {
     const res = await fetch(`data/${subjectId}-syllabus.json`);

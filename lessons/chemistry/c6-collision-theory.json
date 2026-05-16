@@ -1,0 +1,213 @@
+{
+  "id": "c6-collision-theory",
+  "title": "Collision theory — why particles must meet with enough energy",
+  "topic": "C6",
+  "examTip": "For a reaction to occur, particles must collide AND have energy ≥ activation energy. Most collisions do NOT result in a reaction.",
+  "introTips": [
+    "Collision theory explains WHY all the rate factors work — everything links back to this.",
+    "The Maxwell-Boltzmann distribution is a key AQA Higher diagram — practise describing it.",
+    "Catalysts shift the Ea line LEFT on the M-B diagram — they don't change the curve itself."
+  ],
+  "intro": "Have you ever wondered why some reactions happen in a fraction of a second while others take years? The answer is in the particles themselves. Collision theory tells us that reactions only happen when particles crash into each other with enough force — and most of the time they simply bounce off. Understanding this gives you the tools to explain every single rate factor in chemistry, and it's the backbone of some really satisfying exam answers.",
+  "keyPoints": [
+    {
+      "heading": "What collision theory says",
+      "content": "<strong>Collision theory</strong> states that for a chemical reaction to occur, reactant particles must: (1) <strong>collide with each other</strong>, AND (2) <strong>collide with sufficient energy</strong> — at least equal to the <strong>activation energy (Ea)</strong>. Most collisions do NOT result in a reaction — particles simply bounce off each other if they don't have enough energy. A collision that does lead to a reaction is called an <strong>effective collision</strong>. The activation energy is the minimum energy needed for bonds to break so that new bonds can form. You can increase the rate by either increasing the frequency of collisions (more temperature, concentration, surface area, pressure) OR increasing the proportion of collisions that have enough energy (temperature, catalyst).",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Collision theory — reactions only occur when particles collide with sufficient energy",
+        "Two conditions needed: particles must collide AND have energy ≥ activation energy",
+        "Most collisions are NOT effective — particles bounce off without reacting",
+        "Effective collision — one that results in a chemical reaction",
+        "Activation energy (Ea) — minimum energy needed for bonds to break and reaction to occur",
+        "Rate increases if: collision frequency increases OR proportion exceeding Ea increases"
+      ],
+      "keyTerms": [
+        {"term": "Collision theory", "def": "The theory that reactions occur only when particles collide with energy equal to or greater than the activation energy."},
+        {"term": "Effective collision", "def": "A collision that results in a chemical reaction because the particles have sufficient energy and correct orientation."},
+        {"term": "Activation energy (Ea)", "def": "The minimum energy that colliding particles must possess for a reaction to occur."}
+      ],
+      "memTip": "Think of it like throwing a ball at a door: most throws aren't hard enough to open it. Only throws above a threshold force (Ea) get the reaction.",
+      "tutor_note": "Students often say 'particles collide more' as a full explanation. Push them to add 'with sufficient energy to react' — this is what Ea is about."
+    },
+    {
+      "heading": "The Maxwell-Boltzmann distribution",
+      "content": "At any temperature, particles in a gas or solution have a <strong>range of energies</strong> — not all the same. This is shown by the <strong>Maxwell-Boltzmann distribution curve</strong>: the x-axis shows energy and the y-axis shows the number of particles with that energy. The curve starts at zero (no particles have zero energy), rises to a peak, then tails off to the right (a few particles have very high energies — the tail never actually touches the x-axis). The most probable energy is at the peak. The <strong>activation energy (Ea)</strong> is marked on the x-axis — only particles with energy ≥ Ea can react. The <strong>area under the curve to the right of Ea</strong> represents the proportion of particles that have enough energy to react. The total area under the whole curve represents the total number of particles.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Maxwell-Boltzmann curve — shows the distribution of particle energies at a given temperature",
+        "X-axis: energy; Y-axis: number of particles with that energy",
+        "Curve starts at zero, peaks at the most probable energy, tails right (never touches x-axis)",
+        "Activation energy (Ea) marked on x-axis — particles to the RIGHT of Ea can react",
+        "Area under curve right of Ea = proportion of particles able to react",
+        "Total area under entire curve = total number of particles (stays constant)"
+      ],
+      "keyTerms": [
+        {"term": "Maxwell-Boltzmann distribution", "def": "A graph showing the distribution of kinetic energies of particles in a gas or solution at a given temperature."},
+        {"term": "Most probable energy", "def": "The energy at the peak of the Maxwell-Boltzmann curve — the energy shared by the greatest number of particles."}
+      ],
+      "memTip": "The M-B curve is like a ski slope — zero at the bottom left, peaks in the middle, long tail going right. Ea is a gate on the slope: only the fast skiers get past.",
+      "tutor_note": "A very common mark-scheme requirement: state that the area under the curve to the right of Ea represents the proportion of particles that can react. Practise drawing the curve with the Ea line."
+    },
+    {
+      "heading": "Effect of temperature on the Maxwell-Boltzmann distribution",
+      "content": "When temperature increases, particles have more kinetic energy on average. On the Maxwell-Boltzmann diagram: the <strong>curve flattens and shifts to the right</strong> — the peak moves to a higher energy value. The <strong>total area under the curve stays the same</strong> (the same number of particles). The <strong>activation energy line (Ea) stays in the same position</strong> — it is a fixed property of the reaction. The crucial effect: the <strong>area under the curve to the right of Ea increases</strong> — a greater proportion of particles now have enough energy to react → more effective collisions → faster rate. Even a small increase in temperature significantly increases this area, which explains the rule of thumb that a 10°C rise approximately doubles the rate.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Higher temperature → M-B curve flattens and shifts RIGHT (peak moves to higher energy)",
+        "Total area under curve stays the same — same number of particles",
+        "Ea line stays in the same position on the x-axis",
+        "Area to the right of Ea INCREASES — more particles have energy ≥ Ea",
+        "More effective collisions per second → significantly faster rate",
+        "Small temperature rise has a large effect because of the shape of the tail of the curve"
+      ],
+      "keyTerms": [
+        {"term": "Shift right", "def": "When the M-B curve moves to higher energies due to increased temperature; the curve also flattens (peak is lower) but area is unchanged."}
+      ],
+      "memTip": "Hot curve = flatter and shifted right. Ea stays put. The tail past Ea gets much bigger — that's why rate doubles for a small temperature rise.",
+      "tutor_note": "A classic 6-mark exam question: describe and explain the Maxwell-Boltzmann distribution and how temperature affects it. Students must mention: Ea stays the same, curve shifts right, area past Ea increases."
+    },
+    {
+      "heading": "Effect of catalysts on the Maxwell-Boltzmann distribution",
+      "content": "A <strong>catalyst does NOT change the Maxwell-Boltzmann distribution</strong> — the particles' energies are unaffected. Instead, a catalyst provides an alternative reaction pathway with a <strong>lower activation energy</strong>. On the Maxwell-Boltzmann diagram: the <strong>Ea line shifts to the LEFT</strong> to a lower energy value. Because the Ea is lower, the <strong>area under the curve to the right of the new Ea is much larger</strong> — a greater proportion of particles now have enough energy to react → more effective collisions → faster rate. The catalyst achieves this without changing the temperature or energy of the particles. After the reaction, the catalyst is <strong>regenerated</strong> — it is not consumed. This is why catalysts are so valuable industrially: faster rate at lower temperatures = lower energy costs.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Catalyst does NOT change the M-B curve — particle energies are unchanged",
+        "Catalyst provides an alternative reaction pathway with LOWER activation energy",
+        "On M-B diagram: Ea line shifts LEFT to a lower energy value",
+        "Area under curve past the new (lower) Ea is much larger — more particles can react",
+        "More effective collisions → faster rate, with no change in temperature",
+        "Catalyst is regenerated after the reaction — not used up"
+      ],
+      "keyTerms": [
+        {"term": "Alternative pathway", "def": "The mechanism by which a catalyst speeds up a reaction — by providing a different route with lower activation energy, without changing the energy of the reactants or products."},
+        {"term": "Regenerated", "def": "A catalyst is regenerated at the end of a reaction — it returns to its original form and can be reused."}
+      ],
+      "memTip": "Catalyst = moving the hurdle closer (lower Ea), not making athletes faster (same M-B curve). More athletes clear the lower hurdle.",
+      "tutor_note": "Exam trap: students sometimes say catalysts shift the curve to the right — WRONG. The curve stays the same; only the Ea line moves left."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Maxwell-Boltzmann distribution — key features and changes",
+      "examFlag": true,
+      "headers": ["Feature", "What it represents", "Effect of increased temperature", "Effect of a catalyst"],
+      "rows": [
+        ["Shape of curve", "Distribution of particle energies", "Flattens and shifts right; peak at higher energy", "No change — curve stays the same"],
+        ["Area under whole curve", "Total number of particles", "Stays the same (same number of particles)", "Stays the same"],
+        ["Peak of curve", "Most probable energy", "Moves to higher energy value", "No change"],
+        ["Ea line position", "Minimum energy needed to react", "Stays in the same position", "Shifts LEFT to a lower energy value"],
+        ["Area under curve past Ea", "Proportion of particles that can react", "Increases — more particles exceed Ea", "Increases — more particles exceed the lower Ea"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "0": {
+      "question": "What TWO conditions must be met for a collision between reactant particles to result in a reaction?",
+      "options": [
+        "Particles must collide AND the collision must have energy ≥ the activation energy",
+        "Particles must collide AND one must be a solid",
+        "Particles must collide AND the temperature must be above 100°C",
+        "Particles must collide AND a catalyst must be present"
+      ],
+      "correct": 0,
+      "correctFeedback": "Exactly right — collision theory in a nutshell. Both conditions are needed: a collision happens AND it has at least the activation energy.",
+      "wrongFeedback": "Collision theory has two conditions: the particles must collide, and the collision must have energy equal to or greater than the activation energy. Temperature and catalysts just change how often these conditions are met."
+    },
+    "2": {
+      "question": "On a Maxwell-Boltzmann diagram, when temperature increases, what happens to the curve?",
+      "options": [
+        "The curve flattens and shifts right; the total area stays the same",
+        "The curve shifts right and the total area increases",
+        "The curve becomes taller and narrower; the Ea line shifts right",
+        "The curve stays the same but the Ea line shifts left"
+      ],
+      "correct": 0,
+      "correctFeedback": "Perfect. The curve flattens and shifts right (same total area = same number of particles). The Ea line doesn't move — more particles are simply to the right of it.",
+      "wrongFeedback": "The total area under the curve always stays the same (same number of particles). The curve flattens and shifts right at higher temperatures. The Ea line stays in the same position."
+    },
+    "3": {
+      "question": "How does a catalyst appear on a Maxwell-Boltzmann energy distribution diagram?",
+      "options": [
+        "The Ea line shifts to the left; the M-B curve stays the same",
+        "The Ea line shifts to the right; the M-B curve stays the same",
+        "The M-B curve shifts to the right; the Ea line stays the same",
+        "Both the M-B curve and the Ea line shift to the left"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct. A catalyst lowers the activation energy (Ea line moves left) but does not change the particle energy distribution (curve is unchanged).",
+      "wrongFeedback": "A catalyst only affects the activation energy — the Ea line moves LEFT to show the lower energy pathway. The M-B curve is unchanged because the particles have exactly the same energies."
+    }
+  },
+  "commonMistakes": [
+    "Saying that a catalyst shifts the Maxwell-Boltzmann curve to the right — it doesn't. The curve stays the same; only the Ea line moves left.",
+    "Forgetting that the total area under the M-B curve stays the same when temperature increases — same number of particles, just redistributed.",
+    "Stating that the Ea line moves when temperature changes — the Ea line stays fixed; it is the curve that shifts.",
+    "Saying 'more collisions' as the full explanation — you must add that more collisions have sufficient energy (≥ Ea).",
+    "Confusing the most probable energy (peak of curve) with the average energy — they are not the same, and the peak shifts right at higher temperatures."
+  ],
+  "examTips": [
+    "For 6-mark questions on Maxwell-Boltzmann, cover: shape of curve, position of Ea, area past Ea, what changes with temperature or catalyst.",
+    "Always distinguish between temperature effects (curve shifts, Ea stays) and catalyst effects (curve stays, Ea shifts left).",
+    "State explicitly that the area under the curve to the right of Ea represents the fraction of particles that can react — this phrase scores marks."
+  ],
+  "revisionCardBullets": [
+    "Collision theory: reaction occurs only when particles collide AND have energy ≥ Ea",
+    "Effective collision = one that results in a reaction",
+    "Activation energy (Ea) = minimum energy needed for reaction to occur",
+    "Maxwell-Boltzmann curve: x = energy, y = number of particles with that energy",
+    "Curve starts at 0, peaks, then tails right (never touches x-axis)",
+    "Area under whole curve = total number of particles (constant)",
+    "Area under curve to RIGHT of Ea = proportion of particles that can react",
+    "Higher temperature: curve flattens and shifts right; total area same; Ea line stays put",
+    "Higher temperature → more particles past Ea → more effective collisions → faster rate",
+    "Catalyst: M-B curve UNCHANGED; Ea line shifts LEFT (lower activation energy)",
+    "Catalyst → more particles past lower Ea → faster rate without higher temperature",
+    "Catalyst is regenerated — not used up in the reaction"
+  ],
+  "videos": [
+    {
+      "title": "Collision Theory and Maxwell-Boltzmann Distribution",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+collision+theory+maxwell+boltzmann+free+science+lessons",
+      "source": "Free Science Lessons",
+      "duration": "~12 min"
+    },
+    {
+      "title": "Collision Theory — AQA GCSE Chemistry",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+collision+theory+cognito",
+      "source": "Cognito",
+      "duration": "~8 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "aqa gcse chemistry collision theory maxwell boltzmann free science lessons",
+      "label": "Collision Theory & Maxwell-Boltzmann",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+collision+theory+maxwell+boltzmann+free+science+lessons"
+    },
+    {
+      "searchQuery": "collision theory chemistry gcse bitesize",
+      "label": "Collision Theory",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=collision+theory+chemistry+gcse"
+    },
+    {
+      "searchQuery": "aqa gcse chemistry collision theory cognito",
+      "label": "Collision Theory",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+collision+theory+cognito"
+    }
+  ]
+}

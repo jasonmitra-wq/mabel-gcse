@@ -1,0 +1,97 @@
+{
+  "subject": "maths",
+  "label": "Maths",
+  "code": "8300",
+  "topics": {
+    "M1": {
+      "name": "Number",
+      "description": "Integers, fractions, percentages, standard form, bounds and ratio",
+      "code": "M1",
+      "icon": "🔢",
+      "available": true,
+      "subtopics": [
+        { "id": "num-integers",      "name": "Integers, decimals and rounding",                     "tier": "both",       "status": "not_started" },
+        { "id": "num-fractions",     "name": "Fractions — add, subtract, multiply, divide",          "tier": "both",       "status": "not_started" },
+        { "id": "num-percentages",   "name": "Percentages — find, change, reverse",                  "tier": "both",       "status": "not_started" },
+        { "id": "num-powers-roots",  "name": "Powers, roots and indices",                            "tier": "both",       "status": "not_started" },
+        { "id": "num-standard-form", "name": "Standard form",                                        "tier": "both",       "status": "not_started" },
+        { "id": "num-bounds",        "name": "Bounds and error intervals",                           "tier": "higher",     "status": "not_started" },
+        { "id": "num-ratio",         "name": "Ratio and proportion",                                 "tier": "both",       "status": "not_started" }
+      ]
+    },
+    "M2": {
+      "name": "Algebra",
+      "description": "Expressions, equations, inequalities, sequences, graphs and functions",
+      "code": "M2",
+      "icon": "📊",
+      "available": true,
+      "subtopics": [
+        { "id": "alg-expressions",   "name": "Expressions — expand, factorise and simplify",        "tier": "both",       "status": "not_started" },
+        { "id": "alg-equations",     "name": "Solving linear equations",                            "tier": "both",       "status": "not_started" },
+        { "id": "alg-inequalities",  "name": "Inequalities",                                        "tier": "both",       "status": "not_started" },
+        { "id": "alg-sequences",     "name": "Sequences — nth term and rules",                      "tier": "both",       "status": "not_started" },
+        { "id": "alg-graphs",        "name": "Graphs — straight lines and curves",                  "tier": "both",       "status": "not_started" },
+        { "id": "alg-quadratics",    "name": "Quadratics — solving and factorising",                "tier": "both",       "status": "not_started" },
+        { "id": "alg-simultaneous",  "name": "Simultaneous equations",                              "tier": "both",       "status": "not_started" },
+        { "id": "alg-functions",     "name": "Functions and iteration",                             "tier": "higher",     "status": "not_started" }
+      ]
+    },
+    "M3": {
+      "name": "Ratio, Proportion & Rates of Change",
+      "description": "Ratio, proportion, speed, percentage change and compound measures",
+      "code": "M3",
+      "icon": "⚖️",
+      "available": true,
+      "subtopics": [
+        { "id": "rpr-ratio",              "name": "Ratio — simplify and share",                     "tier": "both",       "status": "not_started" },
+        { "id": "rpr-proportion",         "name": "Direct and inverse proportion",                  "tier": "both",       "status": "not_started" },
+        { "id": "rpr-speed",              "name": "Speed, distance and time",                       "tier": "both",       "status": "not_started" },
+        { "id": "rpr-percentage-change",  "name": "Percentage change and compound interest",        "tier": "both",       "status": "not_started" },
+        { "id": "rpr-compound-measures",  "name": "Compound measures — density and pressure",       "tier": "both",       "status": "not_started" }
+      ]
+    },
+    "M4": {
+      "name": "Geometry & Measures",
+      "description": "Angles, shapes, area, volume, transformations, Pythagoras, trig and vectors",
+      "code": "M4",
+      "icon": "📐",
+      "available": true,
+      "subtopics": [
+        { "id": "geo-angles",          "name": "Angles — rules and proofs",                         "tier": "both",       "status": "not_started" },
+        { "id": "geo-shapes",          "name": "Properties of 2D and 3D shapes",                   "tier": "both",       "status": "not_started" },
+        { "id": "geo-area-volume",     "name": "Perimeter, area and volume",                        "tier": "both",       "status": "not_started" },
+        { "id": "geo-transformations", "name": "Transformations — rotation, reflection, translation, enlargement", "tier": "both", "status": "not_started" },
+        { "id": "geo-pythagoras",      "name": "Pythagoras' theorem",                               "tier": "both",       "status": "not_started" },
+        { "id": "geo-trigonometry",    "name": "Trigonometry — sin, cos, tan",                      "tier": "both",       "status": "not_started" },
+        { "id": "geo-circle-theorems", "name": "Circle theorems",                                   "tier": "higher",     "status": "not_started" },
+        { "id": "geo-vectors",         "name": "Vectors",                                           "tier": "higher",     "status": "not_started" }
+      ]
+    },
+    "M5": {
+      "name": "Probability",
+      "description": "Basic probability, combined events, tree diagrams and Venn diagrams",
+      "code": "M5",
+      "icon": "🎲",
+      "available": true,
+      "subtopics": [
+        { "id": "prob-basic",         "name": "Basic probability — scale and simple events",        "tier": "both",       "status": "not_started" },
+        { "id": "prob-combined",      "name": "Combined events and sample space diagrams",          "tier": "both",       "status": "not_started" },
+        { "id": "prob-tree-diagrams", "name": "Tree diagrams — with and without replacement",       "tier": "both",       "status": "not_started" },
+        { "id": "prob-venn",          "name": "Venn diagrams and set notation",                     "tier": "higher",     "status": "not_started" }
+      ]
+    },
+    "M6": {
+      "name": "Statistics",
+      "description": "Averages, charts, scatter graphs, cumulative frequency and box plots",
+      "code": "M6",
+      "icon": "📈",
+      "available": true,
+      "subtopics": [
+        { "id": "stat-averages",    "name": "Averages and range — mean, median, mode",              "tier": "both",       "status": "not_started" },
+        { "id": "stat-charts",      "name": "Charts and diagrams — bar, pie, frequency",            "tier": "both",       "status": "not_started" },
+        { "id": "stat-scatter",     "name": "Scatter graphs and correlation",                       "tier": "both",       "status": "not_started" },
+        { "id": "stat-cumulative",  "name": "Cumulative frequency and box plots",                   "tier": "higher",     "status": "not_started" }
+      ]
+    }
+  }
+}

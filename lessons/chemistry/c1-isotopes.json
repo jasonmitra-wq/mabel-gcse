@@ -1,0 +1,219 @@
+{
+  "id": "c1-isotopes",
+  "title": "Isotopes and relative atomic mass — why not all atoms of an element are identical",
+  "topic": "C1",
+  "examTip": "Ar calculation is a near-certain exam question. Set out your working clearly: Ar = Σ(mass × abundance) ÷ 100. The answer is usually not a whole number — that's the point.",
+  "introTips": [
+    "The periodic table shows chlorine as 35.5 — but you can't have half a neutron. So what's going on?",
+    "Most elements are actually a blend of slightly different atoms — all with the same atomic number but different mass numbers.",
+    "Understanding this unlocks Ar calculations, mass spectra, and why mole calculations work the way they do."
+  ],
+  "intro": "Look at the periodic table and you'll notice something odd: chlorine has a relative atomic mass of 35.5. But atoms can't have half a neutron — so where does that 0.5 come from? The answer is that chlorine in nature is actually a mixture of two different types of chlorine atom. Most are chlorine-35, but about a quarter are chlorine-37. The 35.5 is a weighted average of the two. These different versions of the same element are called <strong>isotopes</strong>, and understanding them is essential for calculating relative atomic masses, interpreting mass spectra, and doing accurate mole calculations throughout the rest of the course.",
+  "keyPoints": [
+    {
+      "heading": "What isotopes are",
+      "content": "<strong>Isotopes</strong> are atoms of the same element that have the same number of protons but different numbers of neutrons. Because they have the same number of protons, they have the same <strong>atomic number</strong> and sit in the same position in the periodic table. Because they have different numbers of neutrons, they have different <strong>mass numbers</strong>. Isotopes have the same chemical properties — their electron configuration is identical, so they react in exactly the same way. But they have slightly different physical properties (different mass → slightly different density, melting point). Notation: write the element symbol with mass number on top and atomic number below, e.g. ¹²₆C and ¹⁴₆C. Examples: <strong>carbon</strong> — C-12 (6p, 6n), C-13 (6p, 7n), C-14 (6p, 8n — radioactive, used in carbon dating). <strong>Chlorine</strong> — Cl-35 (17p, 18n, ~75% of all Cl atoms) and Cl-37 (17p, 20n, ~25%). <strong>Hydrogen</strong> — protium (H-1, 1p, 0n), deuterium (H-2, 1p, 1n), tritium (H-3, 1p, 2n, radioactive).",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Isotopes — same element, same proton number, different neutron number",
+        "Same atomic number → same position in periodic table → same electron configuration",
+        "Same chemical properties (reactions depend on electrons, not neutrons)",
+        "Different mass numbers → slightly different physical properties (mass, density)",
+        "Carbon: C-12 (6p,6n), C-13 (6p,7n), C-14 (6p,8n — radioactive)",
+        "Chlorine: Cl-35 (~75%) and Cl-37 (~25%); Hydrogen: protium, deuterium, tritium"
+      ],
+      "keyTerms": [
+        {"term": "Isotope", "def": "Atoms of the same element with the same number of protons but different numbers of neutrons"},
+        {"term": "Mass number", "def": "The total number of protons and neutrons in the nucleus of an atom"},
+        {"term": "Atomic number", "def": "The number of protons in the nucleus; defines the element"}
+      ],
+      "memTip": "Same element = same PROTONS. Different isotope = different NEUTRONS. Think of twins who look identical (same electrons/reactions) but one weighs slightly more (different mass).",
+      "tutor_note": "Stress that isotopes have identical chemical properties. This is why the periodic table works — Cl-35 and Cl-37 both react the same way, they're both chlorine."
+    },
+    {
+      "heading": "Relative atomic mass (Ar)",
+      "content": "The <strong>relative atomic mass (Ar)</strong> is the weighted mean mass of an atom of an element relative to 1/12th the mass of a carbon-12 atom. It is called 'weighted mean' because it takes into account the different abundances of each isotope — a more abundant isotope contributes more to the average. <strong>Formula:</strong> Ar = Σ(isotope mass × % abundance) ÷ 100. <strong>Worked example — chlorine:</strong> Cl-35 has 75% abundance; Cl-37 has 25% abundance. Ar = (35 × 75 + 37 × 25) ÷ 100 = (2625 + 925) ÷ 100 = 3550 ÷ 100 = <strong>35.5</strong>. This is exactly why the periodic table shows 35.5 for chlorine — it's the average mass accounting for the natural mixture of isotopes. Ar has <strong>no units</strong> (it's a ratio). It is rarely a whole number for elements with multiple isotopes. AQA will either give you the abundances as percentages or as relative amounts from a mass spectrum.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Ar = weighted mean mass relative to 1/12th the mass of carbon-12",
+        "Weighted mean = accounts for different abundances of isotopes",
+        "Formula: Ar = Σ(isotope mass × % abundance) ÷ 100",
+        "Chlorine worked example: (35×75 + 37×25) ÷ 100 = 35.5",
+        "Ar has no units (it's a relative mass, a ratio)",
+        "Not always a whole number — the Ar is a WEIGHTED AVERAGE"
+      ],
+      "keyTerms": [
+        {"term": "Relative atomic mass (Ar)", "def": "The weighted mean mass of an atom of an element relative to 1/12th the mass of a carbon-12 atom; has no units"},
+        {"term": "Weighted mean", "def": "An average that accounts for the different proportions (abundances) of each isotope"}
+      ],
+      "memTip": "Remember the formula: Ar = Σ(mass × %) ÷ 100. Think of it like calculating a weighted average mark — common isotopes count more towards the final answer.",
+      "tutor_note": "The chlorine worked example is the standard AQA one. Make sure Mabel can reproduce it confidently, and also work backwards from an Ar to find an unknown abundance."
+    },
+    {
+      "heading": "Relative formula mass (Mr)",
+      "content": "<strong>Relative formula mass (Mr)</strong> is the sum of all the relative atomic masses in a chemical formula. To calculate it: identify each element in the formula, multiply each element's Ar by the number of atoms of that element in the formula, then add them all up. <strong>Worked examples:</strong> H₂O: (2 × 1) + (1 × 16) = 2 + 16 = <strong>18</strong>. NaCl: 23 + 35.5 = <strong>58.5</strong>. H₂SO₄: (2 × 1) + 32 + (4 × 16) = 2 + 32 + 64 = <strong>98</strong>. CaCO₃: 40 + 12 + (3 × 16) = 40 + 12 + 48 = <strong>100</strong>. Fe₂O₃: (2 × 56) + (3 × 16) = 112 + 48 = <strong>160</strong>. Mr also has <strong>no units</strong>. Mr is essential for mole calculations — the molar mass of a substance in g/mol is numerically equal to its Mr. AQA provides a periodic table in the exam, so you don't need to memorise Ar values.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Mr = sum of all Ar values in the formula (multiply by number of each atom)",
+        "H₂O: (2×1) + 16 = 18",
+        "H₂SO₄: (2×1) + 32 + (4×16) = 98",
+        "CaCO₃: 40 + 12 + (3×16) = 100",
+        "Mr has no units; numerically equal to molar mass in g/mol",
+        "AQA provides a periodic table in the exam — no Ar values to memorise"
+      ],
+      "keyTerms": [
+        {"term": "Relative formula mass (Mr)", "def": "The sum of all relative atomic masses in a chemical formula; has no units"},
+        {"term": "Molar mass", "def": "The mass of one mole of a substance in g/mol; numerically equal to Mr"}
+      ],
+      "memTip": "Mr is just adding up the masses. Take it atom by atom: how many of each element? Multiply each by its Ar. Add them up. Done.",
+      "tutor_note": "CaCO₃ = 100 is worth memorising as a quick check. It's also used a lot in limestone/neutralisation questions."
+    },
+    {
+      "heading": "How we know about isotopes — mass spectrometry",
+      "content": "A <strong>mass spectrometer</strong> is the instrument scientists use to detect and measure isotopes. It works by ionising atoms, accelerating them through a magnetic field, and separating them by their <strong>mass-to-charge ratio</strong>. The output is a <strong>mass spectrum</strong>: a chart showing mass number on the x-axis and relative abundance (%) on the y-axis. Each peak represents one isotope. The height of each peak shows its relative abundance. <strong>Reading a mass spectrum to calculate Ar:</strong> read the mass number and height of each peak, then apply the Ar formula: Ar = Σ(mass × relative abundance) ÷ total abundance. Example: a mass spectrum for boron shows two peaks — mass 10 at height 23.1 and mass 11 at height 76.9: Ar = (10 × 23.1 + 11 × 76.9) ÷ 100 = (231 + 845.9) ÷ 100 = 1076.9 ÷ 100 ≈ <strong>10.8</strong>. This matches the periodic table value for boron. Mass spectrometry was developed in the early 20th century and is what first proved that isotopes exist. Today it is also used in medicine, forensics, and environmental monitoring.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Mass spectrometer — separates atoms by mass-to-charge ratio",
+        "Mass spectrum: x-axis = mass number; y-axis = relative abundance (%)",
+        "Each peak = one isotope; height = its abundance",
+        "Read peaks → apply Ar = Σ(mass × abundance) ÷ 100",
+        "Boron example: (10×23.1 + 11×76.9) ÷ 100 = 10.8",
+        "Mass spectrometry proved isotopes exist in early 20th century"
+      ],
+      "keyTerms": [
+        {"term": "Mass spectrometer", "def": "An instrument that separates atoms by their mass-to-charge ratio and measures the abundance of each isotope"},
+        {"term": "Mass spectrum", "def": "A chart showing the relative abundance of each isotope plotted against mass number"},
+        {"term": "Mass-to-charge ratio", "def": "The ratio of an ion's mass to its electric charge; used to separate ions in a mass spectrometer"}
+      ],
+      "memTip": "In a mass spectrum: TALL peak = MORE abundant isotope. The Ar will be closer to the mass of the tallest peak. Use this to check your calculation makes sense.",
+      "tutor_note": "AQA commonly provides a mass spectrum and asks students to calculate Ar from it. Practise reading peak heights accurately — the question often uses relative heights rather than true percentages."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Key isotopes — mass number, proton number, neutron number, and natural abundance",
+      "examFlag": true,
+      "headers": ["Element", "Isotope", "Mass number", "Protons", "Neutrons", "Natural abundance"],
+      "rows": [
+        ["Hydrogen", "Protium (H-1)", "1", "1", "0", "99.98%"],
+        ["Hydrogen", "Deuterium (H-2)", "2", "1", "1", "0.02%"],
+        ["Hydrogen", "Tritium (H-3)", "3", "1", "2", "Trace (radioactive)"],
+        ["Carbon", "C-12", "12", "6", "6", "98.9%"],
+        ["Carbon", "C-13", "13", "6", "7", "1.1%"],
+        ["Carbon", "C-14", "14", "6", "8", "Trace (radioactive)"],
+        ["Chlorine", "Cl-35", "35", "17", "18", "75%"],
+        ["Chlorine", "Cl-37", "37", "17", "20", "25%"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "0": {
+      "question": "Chlorine-35 and chlorine-37 are isotopes. Which statement correctly explains why they are isotopes of the same element?",
+      "options": [
+        "They both have 17 protons but different numbers of neutrons",
+        "They both have 17 neutrons but different numbers of protons",
+        "They have the same mass number but different atomic numbers",
+        "They have different electron configurations"
+      ],
+      "correct": 0,
+      "correctFeedback": "Spot on! Isotopes of the same element always have the same number of protons (same atomic number = same element) but different numbers of neutrons (different mass numbers). Cl-35 has 17p + 18n; Cl-37 has 17p + 20n.",
+      "wrongFeedback": "Remember: what defines an element is its number of PROTONS (atomic number). Isotopes of the same element always have the same number of protons. It's the neutron number that differs between isotopes. Both chlorine isotopes have 17 protons."
+    },
+    "1": {
+      "question": "Copper has two isotopes: Cu-63 (69% abundance) and Cu-65 (31% abundance). Calculate the relative atomic mass of copper.",
+      "options": [
+        "63.62",
+        "64.00",
+        "63.00",
+        "64.38"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! Ar = (63 × 69 + 65 × 31) ÷ 100 = (4347 + 2015) ÷ 100 = 6362 ÷ 100 = 63.62. Because Cu-63 is more abundant, the Ar is much closer to 63 than to 65.",
+      "wrongFeedback": "Use the formula: Ar = Σ(mass × % abundance) ÷ 100 = (63 × 69 + 65 × 31) ÷ 100 = (4347 + 2015) ÷ 100 = 6362 ÷ 100 = 63.62. Because Cu-63 is the more abundant isotope (69%), the answer is closer to 63 than to 65."
+    },
+    "2": {
+      "question": "What is the relative formula mass (Mr) of sulfuric acid, H₂SO₄? (H = 1, S = 32, O = 16)",
+      "options": [
+        "98",
+        "49",
+        "80",
+        "96"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! Mr = (2 × 1) + 32 + (4 × 16) = 2 + 32 + 64 = 98. Remember to multiply each Ar by the number of atoms of that element in the formula.",
+      "wrongFeedback": "Work through it step by step: H₂SO₄ contains 2 H atoms, 1 S atom, and 4 O atoms. Mr = (2 × 1) + (1 × 32) + (4 × 16) = 2 + 32 + 64 = 98. A common mistake is forgetting to multiply O by 4."
+    }
+  },
+  "commonMistakes": [
+    "Confusing mass number and atomic number — mass number = protons + neutrons; atomic number = protons only. Isotopes have the same atomic number but different mass numbers.",
+    "Thinking isotopes have different chemical properties — they don't. Chemical behaviour depends on electron configuration, which is determined by proton number (the same for all isotopes of an element).",
+    "Forgetting to divide by 100 in the Ar formula — if you use percentages, divide by 100. If you use decimal fractions (e.g. 0.75 and 0.25), you don't divide.",
+    "Getting Mr wrong by not multiplying each element's Ar by the number of atoms in the formula — in H₂SO₄, the oxygen Ar (16) must be multiplied by 4, not just added once.",
+    "Saying Ar or Mr have units — they don't. They are dimensionless ratios (relative to 1/12th the mass of C-12)."
+  ],
+  "examTips": [
+    "In a mass spectrum question, always check your Ar answer makes sense: it should be between the lightest and heaviest isotope, and closer to the most abundant one.",
+    "For Ar calculations, set out your working in full: write the formula, substitute the numbers, calculate step by step. Examiners award marks for method even if your arithmetic slips.",
+    "If a question asks 'why does chlorine have an Ar of 35.5?', your answer must mention: two isotopes (Cl-35 and Cl-37), different abundances, and that 35.5 is the weighted mean — all three ideas for full marks.",
+    "Mr calculations appear in many different question contexts (stoichiometry, yield, concentration). Get them fast and accurate — it's often the first step in a longer calculation."
+  ],
+  "revisionCardBullets": [
+    "Isotopes — same element (same protons), different neutron number, different mass number",
+    "Same chemical properties (same electrons); slightly different physical properties (different mass)",
+    "Carbon isotopes: C-12 (6p,6n), C-13 (6p,7n), C-14 (6p,8n — radioactive)",
+    "Chlorine: 75% Cl-35, 25% Cl-37 → Ar = 35.5",
+    "Ar = relative atomic mass; weighted mean relative to 1/12th mass of C-12; no units",
+    "Ar formula: Σ(isotope mass × % abundance) ÷ 100",
+    "Chlorine Ar worked example: (35×75 + 37×25) ÷ 100 = 35.5",
+    "Mr = sum of all Ar values in the formula (multiply each by number of atoms)",
+    "H₂O = 18, NaCl = 58.5, H₂SO₄ = 98, CaCO₃ = 100",
+    "Mass spectrometer separates atoms by mass-to-charge ratio",
+    "Mass spectrum: x-axis = mass number; y-axis = relative abundance",
+    "Tall peak = more abundant isotope; Ar is closest to the tallest peak's mass"
+  ],
+  "videos": [
+    {
+      "title": "Isotopes and relative atomic mass — AQA GCSE Chemistry",
+      "url": "https://www.youtube.com/results?search_query=isotopes+relative+atomic+mass+aqa+gcse+chemistry+free+science+lessons",
+      "source": "Free Science Lessons",
+      "duration": "~9 min"
+    },
+    {
+      "title": "Isotopes and mass spectrometry — GCSE Chemistry",
+      "url": "https://www.youtube.com/results?search_query=isotopes+mass+spectrometry+gcse+chemistry+cognito",
+      "source": "Cognito",
+      "duration": "~7 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "aqa gcse chemistry isotopes relative atomic mass free science lessons",
+      "label": "Isotopes & relative atomic mass",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+isotopes+relative+atomic+mass+free+science+lessons"
+    },
+    {
+      "searchQuery": "isotopes relative atomic mass gcse chemistry bitesize",
+      "label": "Isotopes & relative atomic mass",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=isotopes+relative+atomic+mass+chemistry+gcse"
+    },
+    {
+      "searchQuery": "aqa gcse chemistry isotopes relative atomic mass cognito",
+      "label": "Isotopes & relative atomic mass",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+isotopes+relative+atomic+mass+cognito"
+    }
+  ]
+}

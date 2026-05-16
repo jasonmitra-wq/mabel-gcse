@@ -1,0 +1,206 @@
+{
+  "id": "p6-light",
+  "title": "Reflection, refraction and lenses",
+  "topic": "P6",
+  "examTip": "Always measure angles of incidence and reflection from the normal (the dashed line perpendicular to the surface), NOT from the surface itself. This is the most common source of lost marks in ray diagram questions.",
+  "introTips": [
+    "The normal is your reference line for all angle measurements — draw it first before adding any rays.",
+    "Refraction is about speed change at a boundary — if light slows down, it bends toward the normal.",
+    "Total internal reflection only happens when light travels from a denser medium to a less dense one at a large angle.",
+    "A converging lens is thicker in the middle and bends parallel rays inward to a focal point.",
+    "Real images can be projected onto a screen; virtual images cannot — this distinction comes up in exam questions."
+  ],
+  "intro": "Glasses, contact lenses, cameras, telescopes, microscopes, endoscopes, and even the lenses in your own eyes — they all work using the same physics: light bending as it crosses boundaries between materials. The reason you can see yourself in a mirror, the reason a straw looks bent in a glass of water, the reason optical fibres can carry data around the world — it's all reflection and refraction. Getting confident with ray diagrams and the rules behind them gives you a really solid foundation for questions on optics, and it's a topic that shows up across multiple exam papers.",
+  "keyPoints": [
+    {
+      "heading": "Reflection and the law of reflection",
+      "content": "<strong>Reflection</strong> occurs when a wave (including light) bounces off a surface. The key rule — the <strong>law of reflection</strong> — is: <strong>angle of incidence = angle of reflection</strong>. Both angles are always measured from the <strong>normal</strong> — an imaginary line drawn perpendicular to the reflecting surface at the point of incidence. On a ray diagram: draw the normal first (as a dashed line), then the incoming ray (incident ray) hitting the surface, and the reflected ray leaving at the same angle on the other side of the normal. During reflection, the wave speed, frequency, and wavelength do not change. <strong>Specular reflection</strong>: smooth surface (mirror) reflects rays in a single direction → clear image. <strong>Diffuse reflection</strong>: rough surface scatters reflected rays in many directions → no clear image (matte finish).",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Law of reflection: angle of incidence = angle of reflection (both from the normal)",
+        "Normal — dashed line perpendicular to the surface at the point where light hits",
+        "Draw the normal first in any reflection/refraction diagram",
+        "Specular reflection — smooth surface → all rays reflect at same angle → clear image (mirror)",
+        "Diffuse reflection — rough surface → rays scatter in all directions → no clear image"
+      ],
+      "keyTerms": [
+        { "term": "law of reflection", "def": "Angle of incidence = angle of reflection; both measured from the normal to the surface" },
+        { "term": "normal", "def": "An imaginary line perpendicular to a surface at the point of incidence; used as reference for angle measurements" },
+        { "term": "specular reflection", "def": "Reflection from a smooth surface where all parallel rays reflect at the same angle, forming a clear image" },
+        { "term": "diffuse reflection", "def": "Reflection from a rough surface where rays scatter in many directions, producing no clear image" }
+      ],
+      "memTip": "In = Out. Angle IN (incidence) = angle OUT (reflection). Both from the normal. Draw the normal first.",
+      "tutor_note": "The most common mistake in ray diagrams is measuring angles from the surface rather than the normal — practise this repeatedly with worked examples."
+    },
+    {
+      "heading": "Refraction — light bending at a boundary",
+      "content": "<strong>Refraction</strong> is the change in direction of a wave when it crosses a boundary between two media with different densities (and therefore different wave speeds). When light enters a <strong>denser medium</strong> (e.g. glass or water), it <strong>slows down</strong> and bends <strong>toward the normal</strong> (angle of refraction < angle of incidence). When it enters a <strong>less dense medium</strong> (e.g. air from glass), it <strong>speeds up</strong> and bends <strong>away from the normal</strong>. If light hits the boundary <strong>along the normal</strong> (0° incidence), it does not change direction — only speed changes. Frequency does <strong>not</strong> change during refraction, but wavelength does (since v = fλ and speed changes). This is qualitative Snell's law — you do not need to calculate the exact angle for GCSE, but you need to draw and explain the direction of bending.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Refraction — wave changes speed (and direction if not hitting along the normal) at a boundary",
+        "Enters denser medium (e.g. air → glass) → slows down → bends toward normal",
+        "Enters less dense medium (e.g. glass → air) → speeds up → bends away from normal",
+        "Hits boundary at 90° (along normal) → no change in direction, only speed changes",
+        "Frequency unchanged; wavelength changes (v = fλ — speed changes, f stays same)"
+      ],
+      "keyTerms": [
+        { "term": "refraction", "def": "The change in speed (and direction) of a wave as it crosses a boundary between two media; frequency unchanged" },
+        { "term": "angle of refraction", "def": "The angle between the refracted ray and the normal inside the new medium" }
+      ],
+      "memTip": "Slower = toward normal. Faster = away from normal. Think of a car wheel catching mud on one side — the muddy wheel slows, the car turns toward it.",
+      "tutor_note": "Students often say the wave 'bends toward the surface' rather than 'toward the normal' — emphasise the normal as the reference line for both refraction and reflection."
+    },
+    {
+      "heading": "Total internal reflection",
+      "content": "<strong>Total internal reflection (TIR)</strong> occurs when light travelling through a denser medium hits the boundary with a less dense medium at an angle <strong>greater than the critical angle</strong>. Instead of refracting out, all the light reflects back inside the denser medium. At exactly the <strong>critical angle</strong>, the refracted ray travels along the boundary (90° from the normal). Below the critical angle: most light refracts out (some reflects). Above the critical angle: all light reflects internally — no refraction. TIR is the basis of <strong>optical fibres</strong>: light pulses bounce along a glass fibre by TIR, allowing data to travel long distances with minimal energy loss. Used for broadband internet and medical endoscopes. TIR is also used in reflective road signs and bicycle reflectors.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Total internal reflection — all light reflects inside a denser medium when angle > critical angle",
+        "Critical angle — angle at which refracted ray travels along the boundary (90° to normal)",
+        "Below critical angle: refraction (mostly) occurs; above: total internal reflection",
+        "TIR requires light to travel from denser to less dense medium (e.g. glass → air)",
+        "Optical fibre — uses TIR to carry light pulses along a glass or plastic fibre; used in broadband and endoscopes"
+      ],
+      "keyTerms": [
+        { "term": "total internal reflection (TIR)", "def": "Complete reflection of light back into a denser medium when the angle of incidence exceeds the critical angle" },
+        { "term": "critical angle", "def": "The angle of incidence at which the refracted ray travels along the boundary; above this, TIR occurs" },
+        { "term": "optical fibre", "def": "A thin glass or plastic fibre that uses total internal reflection to transmit light signals along its length" }
+      ],
+      "memTip": "TIR = Total Internal Reflection. Needs two things: denser-to-less-dense boundary AND angle > critical angle. Optical fibres use TIR.",
+      "tutor_note": "Students often mix up which direction TIR can happen — emphasise it only occurs going from denser to less dense (e.g. glass to air), not the other way round."
+    },
+    {
+      "heading": "Lenses and ray diagrams",
+      "content": "A <strong>converging (convex) lens</strong> is thicker in the middle and refracts parallel rays so they meet at the <strong>focal point</strong> (F) on the other side. The distance from the lens to the focal point is the <strong>focal length</strong>. Ray diagrams for a converging lens use three standard rays: (1) ray parallel to the principal axis → refracts through the focal point; (2) ray through the centre of the lens → passes straight through undeviated; (3) ray through the focal point on the near side → refracts parallel to the axis. Where these rays meet, an image forms. <strong>Real image</strong>: rays actually converge; can be projected onto a screen; is inverted (upside-down). Formed when the object is beyond F. <strong>Virtual image</strong>: rays appear to diverge from a point; cannot be projected; is upright. Formed when the object is between the lens and F (e.g. magnifying glass). Uses: <strong>magnifying glass</strong> (virtual, magnified), <strong>camera</strong> (real, diminished), <strong>projector</strong> (real, magnified), <strong>glasses for long-sight</strong> (converging lens bends rays to focus them on the retina).",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Converging (convex) lens — thicker in middle; parallel rays refract through the focal point",
+        "Focal point (F) — where parallel rays meet after passing through a converging lens",
+        "Real image — rays actually converge; projected on screen; inverted; object beyond F",
+        "Virtual image — rays appear to diverge; not projectable; upright; object between lens and F",
+        "Three standard rays: parallel→through F; through centre→straight; through near F→parallel"
+      ],
+      "keyTerms": [
+        { "term": "converging lens", "def": "A convex lens, thicker in the middle, that refracts parallel rays to meet at the focal point" },
+        { "term": "focal point (F)", "def": "The point where parallel rays converge after passing through a converging lens" },
+        { "term": "focal length", "def": "Distance from the lens centre to the focal point" },
+        { "term": "real image", "def": "An image formed where light rays actually cross; can be projected on a screen; always inverted" },
+        { "term": "virtual image", "def": "An image from which rays appear to diverge; cannot be projected; always upright" }
+      ],
+      "memTip": "Real image = rays REALLY meet — projectable, inverted. Virtual = rays only VIRTUALLY meet — upright, not projectable. Magnifying glass makes a virtual image.",
+      "tutor_note": "Ray diagrams are frequently examined — practise drawing all three standard rays and predicting image properties (real/virtual, magnified/diminished, upright/inverted) for different object distances."
+    }
+  ],
+  "tables": [],
+  "checkpoints": {
+    "0": {
+      "question": "A ray of light hits a mirror at an angle of incidence of 35°. What is the angle of reflection?",
+      "options": [
+        "35°",
+        "55°",
+        "70°",
+        "90°"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! The law of reflection: angle of incidence = angle of reflection. Both are 35°, measured from the normal.",
+      "wrongFeedback": "The law of reflection states: angle of incidence = angle of reflection = 35°. Remember — both angles are measured from the normal, not from the surface."
+    },
+    "1": {
+      "question": "Light travelling through glass hits the glass-air boundary at an angle greater than the critical angle. What happens?",
+      "options": [
+        "Total internal reflection — all light reflects back into the glass",
+        "All the light refracts out into the air",
+        "The light speeds up and continues straight",
+        "The light is absorbed by the glass"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! When the angle of incidence exceeds the critical angle at a denser-to-less-dense boundary, total internal reflection occurs — all light bounces back inside the glass.",
+      "wrongFeedback": "Beyond the critical angle, total internal reflection occurs — no light refracts out; it all reflects back inside the glass. This is the principle behind optical fibres."
+    },
+    "3": {
+      "question": "A converging lens is used as a magnifying glass (object placed between the lens and the focal point). What kind of image does it produce?",
+      "options": [
+        "Virtual, upright, and magnified",
+        "Real, inverted, and diminished",
+        "Real, upright, and magnified",
+        "Virtual, inverted, and diminished"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! When the object is between the lens and F, a magnifying glass produces a virtual (not projectable), upright, magnified image.",
+      "wrongFeedback": "A magnifying glass (object between lens and F) produces a virtual image — the rays don't actually cross, they only appear to. It is upright and magnified."
+    }
+  },
+  "commonMistakes": [
+    "Measuring angles of incidence and reflection from the surface rather than the normal — always use the normal (the perpendicular dashed line) as your reference.",
+    "Saying light bends away from the normal when it slows down — it bends toward the normal when it slows (entering a denser medium), and away from the normal when it speeds up.",
+    "Thinking total internal reflection can occur from a less dense to a denser medium — TIR only occurs when going from denser to less dense (e.g. glass to air), not the other way.",
+    "Confusing real and virtual images — real images can be projected onto a screen (rays actually converge); virtual images cannot (rays only appear to converge when extended backwards).",
+    "Forgetting that frequency is unchanged during refraction — the wavelength changes because the speed changes, but frequency stays constant."
+  ],
+  "examTips": [
+    "On ray diagrams, always draw the normal first as a dashed line before adding rays — it's easy to mark angles incorrectly without it.",
+    "For refraction questions: state whether the medium is denser or less dense, state whether speed increases or decreases, then state the direction of bending (toward or away from normal).",
+    "TIR questions: always specify two conditions — the boundary must go from denser to less dense, AND the angle must exceed the critical angle.",
+    "For lens questions: if asked to describe an image, give all three properties — real or virtual, magnified or diminished, upright or inverted.",
+    "Optical fibre questions often ask why TIR is useful — state that light stays inside the fibre (no energy loss through the sides) so data travels long distances efficiently."
+  ],
+  "revisionCardBullets": [
+    "Law of reflection: angle of incidence = angle of reflection (both from normal)",
+    "Normal — perpendicular line to the surface at point of incidence; drawn as dashed line",
+    "Refraction — wave changes speed at a boundary; direction changes if not hitting along normal",
+    "Denser medium → slower → bends toward normal",
+    "Less dense medium → faster → bends away from normal",
+    "Frequency unchanged in refraction; wavelength changes",
+    "Total internal reflection — angle > critical angle at denser-to-less-dense boundary",
+    "Critical angle — refracted ray travels along the boundary at exactly this angle",
+    "Optical fibre — uses TIR to carry light data; used in broadband and endoscopes",
+    "Converging (convex) lens — parallel rays refract through focal point",
+    "Real image — rays actually converge; projectable; inverted (object beyond F)",
+    "Virtual image — rays appear to diverge; not projectable; upright (object between lens and F)"
+  ],
+  "videos": [
+    {
+      "title": "Reflection and Refraction — Free Science Lessons",
+      "url": "https://www.youtube.com/results?search_query=reflection+refraction+lenses+AQA+GCSE+physics+free+science+lessons",
+      "source": "Free Science Lessons",
+      "duration": "~12 min"
+    },
+    {
+      "title": "Lenses and Ray Diagrams — BBC Bitesize",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=lenses+ray+diagrams+gcse+physics",
+      "source": "BBC Bitesize",
+      "duration": "~8 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "reflection refraction lenses AQA GCSE physics free science lessons",
+      "label": "Reflection & Refraction",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=reflection+refraction+lenses+AQA+GCSE+physics+free+science+lessons"
+    },
+    {
+      "searchQuery": "total internal reflection optical fibres GCSE physics bitesize",
+      "label": "Total Internal Reflection",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=total+internal+reflection+gcse+physics"
+    },
+    {
+      "searchQuery": "lenses ray diagrams AQA GCSE physics cognito",
+      "label": "Lenses & Ray Diagrams",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=lenses+ray+diagrams+AQA+GCSE+physics+cognito"
+    }
+  ]
+}

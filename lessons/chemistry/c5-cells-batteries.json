@@ -1,0 +1,209 @@
+{
+  "id": "c5-cells-batteries",
+  "title": "Cells and batteries — chemical energy to electrical",
+  "topic": "C5",
+  "examTip": "A simple cell needs two DIFFERENT metals in an electrolyte. The bigger the difference in reactivity, the bigger the voltage. Fuel cells produce electricity from hydrogen and oxygen with only water as a by-product.",
+  "introTips": [
+    "A cell converts chemical energy into electrical energy via a redox reaction — it is not a physical process, it is chemistry.",
+    "Two identical metals in a cell produce zero voltage — you need a difference in reactivity to drive electron flow.",
+    "Fuel cells are popular in exam questions — know the reactants (hydrogen and oxygen), the product (water) and why they are considered 'clean'.",
+    "Rechargeable cells can be reversed by passing current through them; non-rechargeable cells cannot.",
+    "Electrolytes can be solutions or molten salts — they allow ions to move and complete the circuit inside the cell."
+  ],
+  "intro": "Every time you use a wireless speaker, a remote control, or an electric car, you are relying on the same fundamental idea: a chemical reaction that pushes electrons around a circuit. Cells and batteries convert the energy stored in chemical bonds directly into electrical energy — no burning, no turbines. Understanding how they work connects what you know about redox chemistry directly to some of the most important technologies being developed right now, from grid-scale energy storage to hydrogen-powered vehicles.",
+  "keyPoints": [
+    {
+      "heading": "How a simple cell works",
+      "content": "A <strong>cell</strong> produces a voltage by using a spontaneous redox reaction to push electrons through an external circuit.<br><br><strong>Basic setup:</strong><br>• Two different metals (electrodes) dipped into an electrolyte solution (or ionic solution)<br>• The more reactive metal acts as the negative electrode — it loses electrons (is oxidised)<br>• The less reactive metal acts as the positive electrode — the metal ions in solution gain electrons there (reduction)<br>• Electrons flow through the external wire from negative to positive; ions carry charge through the electrolyte<br><br><strong>Key rule:</strong> The greater the difference in reactivity between the two metals, the greater the voltage produced.<br>Example: zinc and copper in sulfuric acid — zinc is more reactive, so Zn → Zn²⁺ + 2e⁻ at the negative electrode; Cu²⁺ + 2e⁻ → Cu at the positive electrode.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Cell: two different metals in an electrolyte produce a voltage via redox",
+        "More reactive metal = negative electrode (oxidised — loses electrons)",
+        "Less reactive metal = positive electrode (reduction occurs here)",
+        "Electrons flow through the wire; ions move through the electrolyte",
+        "Bigger reactivity gap between metals = higher voltage"
+      ],
+      "keyTerms": [
+        { "term": "Cell", "def": "A device that converts chemical energy into electrical energy using a redox reaction between two different electrodes in an electrolyte" },
+        { "term": "Electrolyte", "def": "A solution or molten ionic compound that conducts electricity by allowing ions to move" },
+        { "term": "Electrode", "def": "A conductor (usually a metal or graphite) at which oxidation or reduction occurs in a cell or during electrolysis" }
+      ],
+      "memTip": "More reactive = negative electrode. Think of the reactive metal as 'eager to give up electrons' — it pushes them out (negative charge flows out = negative electrode).",
+      "tutor_note": "Students often confuse cells with electrolysis. In a cell, the redox reaction drives the current spontaneously. In electrolysis, an external current drives a non-spontaneous reaction. Contrast them directly."
+    },
+    {
+      "heading": "Batteries and what affects voltage and duration",
+      "content": "A <strong>battery</strong> is simply a collection of cells connected in series to produce a higher voltage.<br><br><strong>Factors affecting the voltage of a cell:</strong><br>• The two metals chosen (difference in reactivity) — bigger difference = higher voltage<br>• The electrolyte used — different solutions give different voltages<br><br><strong>Factors affecting how long a cell lasts:</strong><br>• The amount of reactants present — more chemicals = longer duration<br>• Whether the cell is rechargeable or non-rechargeable<br><br><strong>Non-rechargeable cells:</strong> The reactants are used up and the cell goes flat. Cannot be reversed.<br><strong>Rechargeable cells:</strong> Passing an electrical current through them in the opposite direction regenerates the reactants (reverses the redox reaction). Can be used many times.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Battery: two or more cells connected in series",
+        "Voltage affected by: which metals are used and which electrolyte",
+        "Duration affected by: amount of reactants and whether rechargeable",
+        "Non-rechargeable: reactants used up, cannot be reversed",
+        "Rechargeable: current reverses the reaction, regenerates reactants"
+      ],
+      "keyTerms": [
+        { "term": "Battery", "def": "Two or more cells connected in series; produces a higher combined voltage than a single cell" },
+        { "term": "Rechargeable cell", "def": "A cell in which the redox reaction can be reversed by applying an external current, regenerating the original reactants" }
+      ],
+      "memTip": "Non-rechargeable = one-way trip for the chemicals. Rechargeable = a reversible reaction you can reset by plugging it in.",
+      "tutor_note": "Exam questions sometimes ask students to explain in terms of chemistry why a rechargeable cell can be used again — the answer must reference the redox reaction being reversed."
+    },
+    {
+      "heading": "Fuel cells — hydrogen and oxygen",
+      "content": "A <strong>fuel cell</strong> generates electricity from a continuous supply of fuel (usually hydrogen) and an oxidant (usually oxygen from air). Unlike a battery, it does not run flat as long as fuel is supplied.<br><br><strong>Hydrogen fuel cell — overall reaction:</strong><br>2H₂ + O₂ → 2H₂O (water is the only by-product)<br><br><strong>How it works:</strong><br>• At the negative electrode (anode): H₂ → 2H⁺ + 2e⁻ (hydrogen oxidised)<br>• At the positive electrode (cathode): O₂ + 4H⁺ + 4e⁻ → 2H₂O (oxygen reduced)<br>• Electrons flow through the external circuit, producing electricity<br><br><strong>Advantages:</strong> No CO₂ emissions at point of use; only by-product is water; efficient.<br><strong>Disadvantages:</strong> Hydrogen is difficult to store and transport; most hydrogen is currently produced from fossil fuels (not truly green); fuel cells are expensive to manufacture.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Fuel cell: continuous supply of fuel (H₂) and oxidant (O₂) produces electricity",
+        "Overall reaction: 2H₂ + O₂ → 2H₂O — only water produced",
+        "Negative electrode: H₂ oxidised (loses electrons)",
+        "Positive electrode: O₂ reduced (gains electrons)",
+        "Advantages: no CO₂ at point of use, efficient, only water by-product",
+        "Disadvantages: H₂ storage problems, most H₂ from fossil fuels, expensive"
+      ],
+      "keyTerms": [
+        { "term": "Fuel cell", "def": "A device that generates electricity from a continuous supply of fuel and an oxidant; the hydrogen-oxygen fuel cell produces only water as a by-product" },
+        { "term": "Hydrogen fuel cell", "def": "A specific type of fuel cell using hydrogen as the fuel and oxygen as the oxidant; overall reaction: 2H₂ + O₂ → 2H₂O" }
+      ],
+      "memTip": "Fuel cells: hydrogen IN, water OUT, electricity produced the whole time. Think of it as a very clean, controlled version of burning hydrogen.",
+      "tutor_note": "Evaluate questions on fuel cells are very common. Students must be able to give both advantages and disadvantages and consider the full hydrogen supply chain (not just the fuel cell itself)."
+    },
+    {
+      "heading": "Evaluating different types of cells",
+      "content": "The exam often asks you to <strong>evaluate</strong> which type of cell or power source is best for a given situation. Consider:<br><br><strong>Simple (non-rechargeable) cells:</strong> Cheap upfront, convenient for low-drain devices (remote controls, clocks). Generate waste as they must be disposed of. Cannot be reused.<br><br><strong>Rechargeable cells:</strong> Higher upfront cost, but reused many times = less waste and lower long-term cost. Best for high-drain devices (phones, laptops).<br><br><strong>Fuel cells:</strong> Ideal for vehicles and large-scale applications where refuelling is practical. Zero local emissions. Infrastructure (hydrogen filling stations) still limited.",
+      "examFlag": true,
+      "cardFlag": false,
+      "diagram": null,
+      "writeBullets": [
+        "Non-rechargeable: cheap upfront, creates waste, not reusable",
+        "Rechargeable: higher cost but reusable, less waste overall",
+        "Fuel cells: ideal for vehicles, zero local CO₂ but infrastructure limited",
+        "Evaluation questions: consider cost, waste, emissions, and practicality"
+      ],
+      "keyTerms": [
+        { "term": "Evaluate", "def": "To consider advantages and disadvantages and reach a supported conclusion — common command word in exam questions about fuel cells" }
+      ],
+      "memTip": "For evaluate questions: give both sides. Fuel cells look perfect until you ask 'where does the hydrogen come from?'",
+      "tutor_note": "Remind students that 'evaluate' questions require a balanced answer with a justified conclusion — listing only advantages will not score full marks."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Comparison of cell types",
+      "examFlag": true,
+      "headers": ["Type", "Rechargeable?", "By-products", "Best use", "Limitation"],
+      "rows": [
+        ["Simple cell (e.g. Zn/Cu)", "No", "Depleted metals/solution", "Low-drain devices", "Goes flat, creates waste"],
+        ["Non-rechargeable battery", "No", "Waste materials on disposal", "Remote controls, clocks", "Cannot be reused"],
+        ["Rechargeable battery", "Yes", "Minimal (reused many times)", "Phones, laptops, EVs", "Higher upfront cost"],
+        ["Hydrogen fuel cell", "No (refuelled)", "Water only", "Vehicles, large-scale", "H₂ storage; infrastructure gaps"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "0": {
+      "question": "In a simple cell using zinc and copper, which metal acts as the negative electrode?",
+      "options": [
+        "Zinc, because it is more reactive and loses electrons",
+        "Copper, because it is more reactive and loses electrons",
+        "Zinc, because it is less reactive and gains electrons",
+        "Copper, because it is less reactive and gains electrons"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! Zinc is more reactive and is oxidised (loses electrons: Zn → Zn²⁺ + 2e⁻) — it is the negative electrode.",
+      "wrongFeedback": "Zinc is the negative electrode because it is more reactive — it loses electrons (is oxidised). The more reactive metal is always the negative electrode."
+    },
+    "1": {
+      "question": "What is the only by-product of a hydrogen-oxygen fuel cell?",
+      "options": [
+        "Water",
+        "Carbon dioxide",
+        "Hydrogen peroxide",
+        "Oxygen"
+      ],
+      "correct": 0,
+      "correctFeedback": "Exactly right! 2H₂ + O₂ → 2H₂O — water is the only product, making hydrogen fuel cells very clean at the point of use.",
+      "wrongFeedback": "The only by-product is water. The overall reaction is 2H₂ + O₂ → 2H₂O. No carbon dioxide is produced because no carbon-containing fuel is used."
+    },
+    "3": {
+      "question": "Why are rechargeable cells better for the environment than non-rechargeable cells?",
+      "options": [
+        "They can be reused many times, reducing the amount of waste produced",
+        "They produce electricity more efficiently in a single use",
+        "They do not require any chemical reactions to produce electricity",
+        "They cost less to manufacture"
+      ],
+      "correct": 0,
+      "correctFeedback": "Spot on! Rechargeable cells last through many charge cycles, so fewer are thrown away — reducing waste and the resources needed to make new cells.",
+      "wrongFeedback": "The key environmental advantage is that rechargeable cells can be used many times, so fewer end up as waste compared to non-rechargeable cells that are discarded after one use."
+    }
+  ],
+  "commonMistakes": [
+    "Thinking identical metals in a cell produce a voltage — you need two DIFFERENT metals with different reactivities to create a potential difference.",
+    "Confusing fuel cells with batteries — fuel cells use a continuous supply of fuel and do not run flat; batteries have a fixed amount of reactants.",
+    "Stating that fuel cells are completely 'green' without mentioning that most hydrogen is currently produced from fossil fuels.",
+    "Confusing which electrode is positive and which is negative — the more reactive metal is the negative electrode (it is oxidised, pushing electrons out).",
+    "In evaluate questions, only giving advantages of fuel cells without any disadvantages — always give a balanced answer."
+  ],
+  "examTips": [
+    "When asked to describe how a simple cell works, always mention: two different metals, an electrolyte, electron flow from more reactive to less reactive metal through the wire.",
+    "For fuel cell questions, always state the overall equation: 2H₂ + O₂ → 2H₂O, and identify both electrodes (hydrogen oxidised at negative; oxygen reduced at positive).",
+    "Evaluate questions need both sides — for fuel cells, mention both advantages (clean, water only by-product) and disadvantages (H₂ storage, current H₂ production from fossil fuels).",
+    "If asked what affects the voltage of a cell, focus on the two metals chosen and the electrolyte — the bigger the reactivity gap, the higher the voltage."
+  ],
+  "revisionCardBullets": [
+    "Cell: two different metals + electrolyte → voltage via redox",
+    "More reactive metal: negative electrode (oxidised, loses electrons)",
+    "Less reactive metal: positive electrode (reduction occurs)",
+    "Bigger reactivity difference = higher voltage",
+    "Battery: two or more cells in series",
+    "Non-rechargeable: reactants used up permanently",
+    "Rechargeable: current reverses the reaction, regenerates reactants",
+    "Fuel cell: H₂ + O₂ → H₂O — only water produced",
+    "Fuel cell advantages: no CO₂ at point of use, efficient",
+    "Fuel cell disadvantages: H₂ storage, infrastructure, H₂ production from fossil fuels"
+  ],
+  "videos": [
+    {
+      "title": "Cells, Batteries and Fuel Cells — AQA GCSE Chemistry",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+cells+batteries+fuel+cells+free+science+lessons",
+      "source": "Free Science Lessons",
+      "duration": "~11 min"
+    },
+    {
+      "title": "Fuel Cells and Batteries — GCSE Chemistry",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+fuel+cells+batteries+cognito",
+      "source": "Cognito",
+      "duration": "~8 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "aqa gcse chemistry cells batteries fuel cells free science lessons",
+      "label": "Cells, batteries and fuel cells — full lesson",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+cells+batteries+fuel+cells+free+science+lessons"
+    },
+    {
+      "searchQuery": "gcse chemistry fuel cells batteries bitesize",
+      "label": "Cells and batteries overview",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=gcse+chemistry+fuel+cells+batteries+bitesize"
+    },
+    {
+      "searchQuery": "aqa gcse chemistry fuel cells batteries cognito",
+      "label": "Fuel cells — exam technique",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=aqa+gcse+chemistry+fuel+cells+batteries+cognito"
+    }
+  ]
+}

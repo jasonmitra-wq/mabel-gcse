@@ -1,0 +1,200 @@
+{
+  "id": "p7-motor-effect",
+  "title": "The motor effect — force on a current-carrying wire",
+  "topic": "P7",
+  "examTip": "Fleming's left-hand rule is for the motor effect (current-carrying conductor in a magnetic field). Thumb = thrust (force), index finger = field, middle finger = current. All three must be at right angles to each other.",
+  "introTips": [
+    "A current-carrying conductor in a magnetic field experiences a force — this is the motor effect.",
+    "Fleming's left-hand rule tells you the direction of the force: thumb = force, index = field, middle = current.",
+    "The force is greatest when the current and magnetic field are perpendicular; zero when they are parallel.",
+    "Increasing current, field strength, or conductor length all increase the force.",
+    "The electric motor uses the motor effect — the split-ring commutator keeps it spinning continuously."
+  ],
+  "intro": "Every electric motor in the world — from the tiny one spinning your phone's vibration alert to the massive ones driving electric trains — works because of something discovered in the early 1800s: a wire carrying a current in a magnetic field feels a force. This is the motor effect. It's the bridge between electricity and motion, and once you understand it, you'll see it everywhere: in electric vehicles, in loudspeakers, in industrial machinery. The force involved is small for a single wire, but stack hundreds of turns of wire in a strong magnetic field and you get enough torque to accelerate a car from 0 to 60 mph in under three seconds.",
+  "keyPoints": [
+    {
+      "heading": "The motor effect — force on a current-carrying conductor",
+      "content": "When an electric current flows through a conductor that is placed inside a <strong>magnetic field</strong>, the conductor experiences a <strong>force</strong>. This is called the <strong>motor effect</strong>. The force acts perpendicular to both the current direction and the magnetic field direction. The force is <strong>zero</strong> if the current flows parallel to the magnetic field — the conductor must have a component perpendicular to the field to feel a force. The direction of the force reverses if: (a) the direction of the current is reversed, or (b) the direction of the magnetic field is reversed. Reversing both simultaneously keeps the force in the same direction. This effect is the operating principle behind electric motors, loudspeakers, and galvanometers.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Motor effect — a current-carrying conductor in a magnetic field experiences a force",
+        "Force is perpendicular to both the current direction and the magnetic field",
+        "No force if current is parallel to field — must have a perpendicular component",
+        "Reversing current OR field reverses force direction; reversing both leaves force unchanged",
+        "Basis of electric motors, loudspeakers, and galvanometers"
+      ],
+      "keyTerms": [
+        { "term": "motor effect", "def": "The force experienced by a current-carrying conductor placed in a magnetic field; force is perpendicular to both current and field" },
+        { "term": "magnetic field", "def": "A region of space where a magnetic force acts on moving charged particles or current-carrying conductors" }
+      ],
+      "memTip": "Motor effect = current + magnetic field → force. The three quantities (force, current, field) are always mutually perpendicular.",
+      "tutor_note": "Students often think the force acts in the direction of current or field — stress that it is always perpendicular to both, which is why a wire moves sideways out of a magnetic field."
+    },
+    {
+      "heading": "Fleming's left-hand rule",
+      "content": "<strong>Fleming's left-hand rule</strong> gives the direction of the force (motion) on a current-carrying conductor in a magnetic field. Using your <strong>left hand</strong>: point your <strong>index finger</strong> in the direction of the magnetic <strong>Field</strong> (from N to S pole), point your <strong>middle finger</strong> in the direction of conventional <strong>Current</strong> (from + to −, the direction positive charges would flow), then your <strong>thumb</strong> points in the direction of the <strong>Thrust</strong> (force on the conductor). All three fingers must be held at right angles to each other. Memory aid: <strong>FBI</strong> — Force (thumb), B-field (index), Current (middle, but think 'I' for current). Always use conventional current (from + to −), not electron flow.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Fleming's left-hand rule — left hand for the motor effect",
+        "Index finger → magnetic Field direction (N to S)",
+        "Middle finger → Current direction (conventional, + to −)",
+        "Thumb → Thrust (force/motion direction)",
+        "All three fingers must be at 90° to each other"
+      ],
+      "keyTerms": [
+        { "term": "Fleming's left-hand rule", "def": "A mnemonic using the left hand to determine the direction of force on a current-carrying conductor: thumb=force, index=field, middle=current" },
+        { "term": "conventional current", "def": "Current defined as flowing from positive to negative terminal — the direction positive charges would flow; opposite to electron flow" }
+      ],
+      "memTip": "FBI left hand: Force (thumb), B-field (index finger), I-current (middle finger). Left hand = motor effect.",
+      "tutor_note": "Insist students actually hold up their left hand and orient fingers — spatial reasoning is harder than the rule itself and most errors come from not using the correct hand or not holding fingers at 90°."
+    },
+    {
+      "heading": "Factors affecting the size of the force: F = BIL",
+      "content": "The size of the force on a current-carrying conductor is given by: <strong>F = BIL</strong>. Where: <strong>F</strong> = force (N), <strong>B</strong> = magnetic flux density (tesla, T) — how strong the magnetic field is, <strong>I</strong> = current (A), <strong>L</strong> = length of conductor in the field (m). The force increases if you: increase the current (I), use a stronger magnet (higher B), or use a longer conductor in the field (L). Worked example: a wire of length 0.5 m carries a current of 3 A in a field of B = 0.2 T. Force = 0.2 × 3 × 0.5 = <strong>0.3 N</strong>. Rearrangements: <strong>B = F ÷ (IL)</strong>, <strong>I = F ÷ (BL)</strong>, <strong>L = F ÷ (BI)</strong>.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "F = BIL: Force (N) = magnetic flux density (T) × current (A) × length (m)",
+        "Larger B (stronger magnet) → larger force",
+        "Larger I (more current) → larger force",
+        "Larger L (longer conductor in field) → larger force",
+        "Rearrangements: B = F/(IL); I = F/(BL); L = F/(BI)"
+      ],
+      "keyTerms": [
+        { "term": "F = BIL", "def": "The equation for force on a current-carrying conductor: F = magnetic flux density × current × length in the field" },
+        { "term": "magnetic flux density (B)", "def": "A measure of the strength of a magnetic field; unit: tesla (T)" }
+      ],
+      "memTip": "F = BIL — 'Bill the force'. Force equals B times I times L. Units: N = T × A × m.",
+      "tutor_note": "Ensure students can rearrange F = BIL for all three variables — it's a required calculation and rearrangement is often tested."
+    },
+    {
+      "heading": "The electric motor and the loudspeaker",
+      "content": "An <strong>electric motor</strong> uses the motor effect to convert electrical energy into rotational kinetic energy. A coil of wire (the armature) sits in a magnetic field. When current flows, the two sides of the coil experience forces in <strong>opposite directions</strong> (Fleming's left-hand rule applied to each side), causing the coil to rotate. The problem: if the current direction stays the same, the forces reverse after half a turn and the motor stops. The <strong>split-ring commutator</strong> solves this — it reverses the current direction in the coil every half turn, so the forces always act in the same rotational direction, keeping the motor spinning continuously. To increase motor speed or torque: increase current, increase field strength, add more turns of wire, or use an iron core. A <strong>loudspeaker</strong> also uses the motor effect: alternating current through a coil in a magnetic field makes the coil oscillate back and forth, pushing a cone that creates sound waves.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Electric motor — coil in magnetic field; opposite sides experience opposite forces → rotation",
+        "Split-ring commutator — reverses current every half turn; keeps motor spinning continuously",
+        "To increase speed/torque: more current, stronger field, more coil turns, iron core",
+        "Loudspeaker — AC through coil in magnetic field → coil oscillates → cone vibrates → sound",
+        "Motor converts electrical energy → rotational kinetic energy"
+      ],
+      "keyTerms": [
+        { "term": "electric motor", "def": "A device that uses the motor effect to convert electrical energy into rotational kinetic energy" },
+        { "term": "split-ring commutator", "def": "A device in a DC electric motor that reverses the current in the coil every half turn, maintaining continuous rotation" },
+        { "term": "armature", "def": "The rotating coil in an electric motor" }
+      ],
+      "memTip": "Commutator = 'commutes' the current (reverses it) every half turn, so the motor keeps going the same way. Without it, the motor would rock back and forth.",
+      "tutor_note": "Students often describe the commutator as 'making more electricity' — clarify that it reverses the direction of existing current, which is what keeps the rotation continuous rather than oscillating."
+    }
+  ],
+  "tables": [],
+  "checkpoints": {
+    "0": {
+      "question": "A current-carrying wire is placed in a magnetic field. Using Fleming's left-hand rule, which finger represents the direction of the magnetic field?",
+      "options": [
+        "The index finger",
+        "The thumb",
+        "The middle finger",
+        "The ring finger"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! Index finger = Field (B). Thumb = Force (thrust). Middle finger = Current (I). Remember: FBI.",
+      "wrongFeedback": "In Fleming's left-hand rule: Index finger = Field, Middle finger = Current, Thumb = Force (thrust). FBI — Force, B-field, I-current."
+    },
+    "1": {
+      "question": "A wire of length 0.4 m carries a current of 5 A in a magnetic field of flux density 0.3 T. What is the force on the wire?",
+      "options": [
+        "0.6 N",
+        "0.3 N",
+        "6.0 N",
+        "0.06 N"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! F = BIL = 0.3 × 5 × 0.4 = 0.6 N.",
+      "wrongFeedback": "Use F = BIL: Force = 0.3 (T) × 5 (A) × 0.4 (m) = 0.6 N. Write the formula first, substitute, then calculate."
+    },
+    "3": {
+      "question": "Why does an electric motor have a split-ring commutator?",
+      "options": [
+        "To reverse the current direction every half turn, keeping the motor spinning continuously",
+        "To increase the voltage supplied to the motor",
+        "To prevent the coil from overheating",
+        "To convert alternating current to direct current"
+      ],
+      "correct": 0,
+      "correctFeedback": "Exactly right! Without the commutator, the forces would reverse after half a turn and the coil would rock back and forth. The commutator reverses the current to maintain continuous rotation.",
+      "wrongFeedback": "The split-ring commutator reverses the current direction in the coil every half turn. This keeps the motor force in the same rotational direction, so the coil keeps spinning continuously."
+    }
+  },
+  "commonMistakes": [
+    "Using the right hand instead of the left for the motor effect — Fleming's left-hand rule is for the motor effect; the right hand is for the generator effect (induction).",
+    "Using electron flow direction instead of conventional current in Fleming's rule — conventional current flows from + to −; always use this when applying the rule.",
+    "Saying the force acts in the direction of current or field — the force is always perpendicular to both current and field; it acts in the third perpendicular direction.",
+    "Forgetting to include units in F = BIL calculations — force in newtons, flux density in tesla, current in amps, length in metres.",
+    "Describing the commutator as 'increasing speed' — the commutator maintains continuous rotation; it does not increase speed (that requires more current or a stronger field)."
+  ],
+  "examTips": [
+    "Always hold up your actual left hand when applying Fleming's left-hand rule — it is very easy to confuse directions without doing it physically.",
+    "For F = BIL questions, write the formula first, then substitute values with units, then calculate — method marks are available.",
+    "In motor questions, always explain what the split-ring commutator does: it reverses the current every half turn to maintain continuous rotation.",
+    "If the current direction or field direction reverses, state clearly how this affects the direction of force.",
+    "For loudspeaker questions, explain the link: AC current → alternating force → oscillating coil → vibrating cone → sound wave."
+  ],
+  "revisionCardBullets": [
+    "Motor effect — current-carrying conductor in magnetic field experiences a force",
+    "Force perpendicular to both current and field; zero if current parallel to field",
+    "Fleming's left-hand rule: index = Field, middle = Current, thumb = Force (FBI)",
+    "Always use conventional current (+ to −) in Fleming's rule",
+    "F = BIL: Force (N) = flux density (T) × current (A) × length (m)",
+    "More current, stronger field, longer wire → greater force",
+    "Reversing current or field reverses force; reversing both leaves force unchanged",
+    "Electric motor — coil in field; opposite sides experience opposite forces → rotation",
+    "Split-ring commutator — reverses current each half turn; maintains continuous rotation",
+    "Loudspeaker — AC in coil → oscillating force → cone vibrates → sound",
+    "Motor converts electrical energy to rotational kinetic energy"
+  ],
+  "videos": [
+    {
+      "title": "The Motor Effect — Free Science Lessons",
+      "url": "https://www.youtube.com/results?search_query=motor+effect+AQA+GCSE+physics+free+science+lessons",
+      "source": "Free Science Lessons",
+      "duration": "~10 min"
+    },
+    {
+      "title": "Fleming's Left-Hand Rule and Electric Motors — BBC Bitesize",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=motor+effect+flemings+left+hand+rule+gcse+physics",
+      "source": "BBC Bitesize",
+      "duration": "~7 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "motor effect AQA GCSE physics free science lessons",
+      "label": "Motor Effect",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=motor+effect+AQA+GCSE+physics+free+science+lessons"
+    },
+    {
+      "searchQuery": "Flemings left hand rule electric motor GCSE physics bitesize",
+      "label": "Fleming's Left-Hand Rule",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=motor+effect+gcse+physics"
+    },
+    {
+      "searchQuery": "motor effect BIL equation AQA GCSE physics cognito",
+      "label": "F = BIL Calculations",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=motor+effect+BIL+AQA+GCSE+physics+cognito"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "id": "p5-momentum",
+  "title": "Momentum — mass in motion",
+  "topic": "P5",
+  "examTip": "Momentum calculations are a reliable exam question — p = mv is straightforward but AQA also tests conservation of momentum (total momentum before = total momentum after in a closed system) and the impulse-momentum relationship (F = Δp/t or FΔt = Δp). Always include units: kg m/s.",
+  "introTips": [
+    "Momentum has direction as well as magnitude — it's a vector quantity. When things collide, momentum can be transferred from one object to another.",
+    "Conservation of momentum is the key principle: in any collision or explosion, total momentum before = total momentum after (provided no external forces).",
+    "Impulse = force × time = change in momentum. Larger force for shorter time, or smaller force for longer time, gives the same change in momentum."
+  ],
+  "intro": "Momentum is the physics quantity that captures how hard it is to stop something that's moving. A lorry moving slowly can have the same momentum as a car moving fast — and stopping either requires the same effort. Momentum is always conserved in collisions and explosions, which makes it one of the most powerful tools in mechanics.",
+  "keyPoints": [
+    {
+      "heading": "Calculating momentum",
+      "content": "<strong>Momentum</strong> is defined as the product of an object's mass and its velocity. The equation is: <strong>p = mv</strong>, where p is momentum (kg m/s), m is mass (kg), and v is velocity (m/s). Momentum is a <strong>vector quantity</strong> — it has both magnitude and direction. This means when two objects move in opposite directions, their momenta have opposite signs. Momentum is measured in <strong>kg m/s</strong> (or N s — these are equivalent units). Example: a 1,500 kg car travelling at 20 m/s has momentum = 1,500 × 20 = 30,000 kg m/s.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Momentum: p = mv (mass × velocity)",
+        "Units: kg m/s (or N s — equivalent)",
+        "Momentum is a vector — has direction as well as magnitude",
+        "Objects moving in opposite directions have opposite signs of momentum",
+        "Example: 1,500 kg car at 20 m/s → p = 1,500 × 20 = 30,000 kg m/s"
+      ],
+      "keyTerms": [
+        {"term": "Momentum (p)", "def": "The product of an object's mass and velocity: p = mv; measured in kg m/s; a vector quantity with direction"},
+        {"term": "Vector quantity", "def": "A quantity that has both magnitude (size) and direction — e.g. momentum, velocity, force"}
+      ],
+      "memTip": "p = mv. The unit is kg m/s — same as mass × velocity units. Momentum is a vector — if you see two objects moving in opposite directions, one has positive momentum and the other negative. Keep track of direction in any conservation problem."
+    },
+    {
+      "heading": "Conservation of momentum",
+      "content": "The <strong>law of conservation of momentum</strong> states that in a closed system (no external forces), the total momentum before an event equals the total momentum after. This applies to collisions and explosions. For a collision: <strong>m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂</strong>, where u is initial velocity and v is final velocity. For an explosion (e.g. a gun firing): before the event, total momentum = 0 (everything stationary). After the event, the bullet and gun move in opposite directions — their momenta are equal in magnitude and opposite in sign, so they still sum to zero. This is why a gun recoils when fired.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Conservation of momentum: total momentum before = total momentum after (closed system)",
+        "Applies to: collisions and explosions",
+        "Collision equation: m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂",
+        "Explosion: before = 0; after = equal and opposite momenta (sum still = 0)",
+        "Gun recoil: bullet goes forward (+), gun recoils backward (−), total = 0"
+      ],
+      "keyTerms": [
+        {"term": "Conservation of momentum", "def": "In a closed system (no external forces), the total momentum before an event equals the total momentum after"},
+        {"term": "Closed system", "def": "A system in which no external forces act, so momentum is conserved"}
+      ],
+      "memTip": "Total momentum before = total momentum after. Always. Calculate total momentum on the left side (before), set it equal to the right side (after), and solve for the unknown. For explosions: before = 0, so after the two momenta must be equal and opposite."
+    },
+    {
+      "heading": "Force, impulse and change in momentum",
+      "content": "A <strong>resultant force</strong> acting on an object changes its momentum. The relationship is: <strong>F = Δp / Δt</strong>, or rearranged: <strong>FΔt = Δp</strong>. This means force × time = change in momentum. The quantity FΔt is called the <strong>impulse</strong>. A large force for a short time produces the same change in momentum as a small force for a long time. This principle explains safety features: crumple zones and airbags extend the time of a collision, reducing the force experienced (same Δp, larger Δt → smaller F). Wearing a helmet in cycling or motorcycling works the same way.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "F = Δp / Δt (force = change in momentum ÷ time)",
+        "FΔt = Δp (impulse = change in momentum)",
+        "Larger time → smaller force for same change in momentum",
+        "Crumple zones, airbags: increase collision time → reduce force on passengers",
+        "Helmets, padded flooring: same principle — extend time of impact"
+      ],
+      "keyTerms": [
+        {"term": "Impulse", "def": "Force multiplied by time (FΔt) — equal to the change in momentum; measured in N s (equivalent to kg m/s)"},
+        {"term": "Change in momentum (Δp)", "def": "The difference between final and initial momentum: Δp = mv − mu; caused by a resultant force acting over time"}
+      ],
+      "memTip": "FΔt = Δp. Force × time = change in momentum. More time → less force for the same Δp. Safety devices: crumple zones, airbags, helmets all increase the TIME of impact → reduce the FORCE → less injury. AQA loves this application — always link the equation to a real example."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Momentum equations summary",
+      "examFlag": true,
+      "headers": ["Equation", "What it means", "When to use"],
+      "rows": [
+        ["p = mv", "Momentum = mass × velocity", "Calculating momentum of a single object"],
+        ["m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂", "Total momentum before = total momentum after", "Collision or explosion problems"],
+        ["F = Δp / Δt", "Force = rate of change of momentum", "When force and time given; find change in momentum"],
+        ["FΔt = Δp", "Impulse = change in momentum", "Safety device questions; comparing force and time"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "0": {
+      "question": "A 2 kg ball travelling at 5 m/s collides with a stationary 3 kg ball. They stick together. What is their combined velocity after the collision?",
+      "options": [
+        "5 m/s",
+        "2 m/s",
+        "3 m/s",
+        "10 m/s"
+      ],
+      "correct": 1,
+      "correctFeedback": "✅ Correct — total momentum before = 2 × 5 + 3 × 0 = 10 kg m/s. After: (2 + 3) × v = 10, so v = 10/5 = 2 m/s.",
+      "wrongFeedback": "Use conservation of momentum: total before = total after. Before: p = 2 × 5 + 3 × 0 = 10 kg m/s. After: the combined mass is 2 + 3 = 5 kg, and momentum is still 10 kg m/s. So v = 10 ÷ 5 = 2 m/s. The velocity is less because the total mass increased."
+    },
+    "2": {
+      "question": "Why do crumple zones in cars reduce injury in a crash?",
+      "options": [
+        "They reduce the total change in momentum during the collision",
+        "They increase the time of the collision, which reduces the force experienced by passengers",
+        "They absorb kinetic energy and convert it to electrical energy",
+        "They increase the mass of the car, reducing deceleration"
+      ],
+      "correct": 1,
+      "correctFeedback": "✅ Right — F = Δp/Δt. The change in momentum is fixed (same speed change). By increasing the time (Δt), the force (F) is reduced. Less force = less injury.",
+      "wrongFeedback": "The change in momentum (Δp) in a crash is fixed — the car stops from a given speed. Crumple zones increase the TIME (Δt) over which the car decelerates. Using F = Δp/Δt: same Δp, larger Δt → smaller F. Smaller force on passengers → less injury. The total momentum change isn't reduced — it's the force that's reduced."
+    }
+  ],
+  "commonMistakes": [
+    "Forgetting momentum is a vector — in conservation problems where objects move in opposite directions, one must be assigned a negative velocity. Getting this wrong gives the wrong answer.",
+    "Confusing impulse (FΔt) with work (Fd) — impulse involves time, work involves distance. Different concepts, don't mix them.",
+    "In conservation of momentum calculations, adding masses instead of using them separately — for a collision where objects stick together, add the masses AFTER the collision, not before.",
+    "Saying crumple zones 'reduce momentum' — they don't. They increase the time of impact to reduce the force. The momentum change is the same."
+  ],
+  "examTips": [
+    "For momentum calculation questions: (1) state p = mv, (2) calculate momentum before the event, (3) apply conservation, (4) solve for unknown. Show all steps.",
+    "For 'explain why crumple zones reduce injury': quote F = Δp/Δt, state that Δp is fixed, explain that crumple zones increase Δt, conclude that F decreases. This is the full mark scheme answer.",
+    "When objects move in opposite directions, assign one velocity as negative. This is critical for explosion questions where initial momentum = 0.",
+    "Units check: momentum is kg m/s or N s (equivalent). Impulse is also N s. Force is N, time is s — so N × s = N s = kg m/s. All consistent."
+  ],
+  "revisionCardBullets": [
+    "Momentum: p = mv (mass × velocity); units = kg m/s",
+    "Momentum is a vector — has direction; opposite directions = opposite signs",
+    "Conservation of momentum: total before = total after (closed system)",
+    "Applies to collisions AND explosions",
+    "Explosion: before p = 0; after: two objects move in opposite directions with equal magnitude momenta",
+    "Force-momentum: F = Δp / Δt (force = change in momentum ÷ time)",
+    "Impulse: FΔt = Δp (force × time = change in momentum)",
+    "Safety devices (crumple zones, airbags, helmets): increase collision time → reduce force",
+    "Same Δp, larger Δt → smaller F → less injury"
+  ],
+  "videos": [
+    {
+      "title": "Momentum and Conservation — AQA GCSE Physics",
+      "url": "https://www.youtube.com/results?search_query=momentum+conservation+impulse+AQA+GCSE+physics",
+      "source": "Free Science Lessons",
+      "duration": "~10 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "momentum conservation collision explosion AQA GCSE physics",
+      "label": "Momentum and Conservation",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=momentum+conservation+collision+AQA+GCSE+physics"
+    }
+  ]
+}

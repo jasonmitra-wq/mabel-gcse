@@ -1,0 +1,172 @@
+{
+  "id": "b7-sampling",
+  "title": "Sampling techniques — how we study ecosystems",
+  "topic": "B7",
+  "examTip": "Sampling questions are practical-focused. AQA will ask you to choose a method and justify it, describe how to use a quadrat or transect, or calculate population size using the mark-recapture formula. Know when to use each technique and what makes sampling reliable (random, large sample size).",
+  "introTips": [
+    "You can't count every organism in an ecosystem — so you sample. The key is making the sample representative and unbiased.",
+    "Random sampling removes human bias — use random numbers to place quadrats, not your own choice.",
+    "Mark-recapture calculations appear in exams — know the formula and the assumptions behind it."
+  ],
+  "intro": "To study an ecosystem scientifically, we need to measure what lives there and in what numbers. We can't count every organism, so we use sampling techniques — methods that estimate population size or species distribution from a manageable subset of the area. The reliability of sampling depends on how it's done: random placement, adequate sample size, and appropriate technique for the organism.",
+  "keyPoints": [
+    {
+      "heading": "Quadrats — sampling plants and slow-moving animals",
+      "content": "A <strong>quadrat</strong> is a square frame (usually 0.5 m × 0.5 m or 1 m × 1 m) placed on the ground to define a sample area. Within each quadrat, scientists count the number of individuals of each species, or estimate <strong>percentage cover</strong> (what proportion of the quadrat's area each species covers). Quadrats are used for plants, fungi, and slow-moving animals. To avoid bias, quadrats must be placed <strong>randomly</strong> — typically using random number coordinates to determine placement. <strong>Population size estimation</strong>: count the mean number per quadrat, then multiply by the total number of quadrat-sized areas in the habitat.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Quadrat = square frame placed on ground to define a sample area",
+        "Used for: plants, fungi, slow-moving animals",
+        "Data recorded: number of individuals OR percentage cover per quadrat",
+        "Must be placed RANDOMLY to avoid bias — use random number coordinates",
+        "Estimate population: mean per quadrat × number of quadrat-areas in total habitat",
+        "Larger sample size = more reliable estimate"
+      ],
+      "keyTerms": [
+        {"term": "Quadrat", "def": "A square frame used to define a sample area for counting organisms or estimating percentage cover"},
+        {"term": "Percentage cover", "def": "An estimate of the proportion of a quadrat's area that is covered by a particular species — useful for plants that are hard to count individually"},
+        {"term": "Random sampling", "def": "Placing sample areas (quadrats) at randomly chosen coordinates to avoid human bias in data collection"}
+      ],
+      "memTip": "Quadrats = fixed area, count what's in it, MUST be random. Estimate population = mean per quadrat × how many quadrats fit in the total area. Don't choose where to put them yourself — use random numbers."
+    },
+    {
+      "heading": "Transects — studying how species distribution changes",
+      "content": "A <strong>transect</strong> is a line (using a measuring tape) laid across an area of habitat. It's used to study how species distribution changes across an environmental gradient — for example, from a wall to open ground, or from the sea shore to inland. <strong>Belt transect</strong>: quadrats are placed at regular intervals along the transect line (e.g. every 2 metres) and the species in each quadrat are recorded. <strong>Line transect</strong>: simpler — only organisms touching the line are recorded. Transects are not random — they are deliberately placed across a gradient of environmental change, which is their purpose.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Transect = measuring tape laid across a habitat to study species distribution along a gradient",
+        "Used when studying how species change across an environmental gradient",
+        "Belt transect: quadrats placed at regular intervals along the line",
+        "Line transect: only organisms touching the line recorded (simpler)",
+        "Transects are NOT random — deliberately placed across a gradient"
+      ],
+      "keyTerms": [
+        {"term": "Transect", "def": "A line across a habitat along which organisms are sampled, used to study how species distribution changes across an environmental gradient"},
+        {"term": "Belt transect", "def": "A transect where quadrats are placed at regular intervals along a line to record all species within each quadrat"},
+        {"term": "Environmental gradient", "def": "A gradual change in an abiotic factor (e.g. light, water depth, distance from sea) across an area of habitat"}
+      ],
+      "memTip": "Transect = line across a gradient. You want to see HOW things change. Belt transect = quadrats along the line. Line transect = just what touches the tape. Use a transect when you expect species to change along a gradient (shore to inland, open to shaded)."
+    },
+    {
+      "heading": "Mark-recapture — estimating mobile animal populations",
+      "content": "Quadrats can't be used for mobile animals (birds, mice, insects). Instead, the <strong>mark-recapture</strong> (or capture-recapture) technique is used. Method: (1) capture a sample of animals, <strong>mark</strong> them (e.g. small paint spot, leg ring), then release them; (2) allow time for marked animals to mix back into the population; (3) capture a second sample; (4) count how many in the second sample are marked. Formula: <strong>Population estimate = (first capture × second capture) ÷ number of marked individuals in second capture</strong>. Assumptions: marking doesn't affect survival or behaviour; marks don't fall off; the population is closed (no births/deaths/immigration/emigration between captures; animals mix randomly.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Mark-recapture: used for mobile animals",
+        "Step 1: capture sample → mark → release",
+        "Step 2: capture second sample → count how many are marked",
+        "Formula: N = (n₁ × n₂) ÷ m, where n₁ = first capture, n₂ = second capture, m = marked in second sample",
+        "Assumptions: marking doesn't harm animals; marks don't fade; no births/deaths/migration between captures"
+      ],
+      "keyTerms": [
+        {"term": "Mark-recapture", "def": "A technique for estimating mobile animal population size by capturing, marking, releasing, and then recapturing a second sample"},
+        {"term": "Population estimate formula", "def": "N = (n₁ × n₂) ÷ m — where n₁ is first sample size, n₂ is second sample size, and m is the number of marked individuals in the second sample"}
+      ],
+      "memTip": "Mark-recapture formula: Population = (First catch × Second catch) ÷ Marked in second. Think: the more marked animals you find in the second catch, the smaller the total population must be. If you catch 100 again and all 50 are marked, the population is about 100. If only 5 are marked, the population is much larger."
+    },
+    {
+      "heading": "Reliability in sampling — what makes good data",
+      "content": "For sampling data to be reliable: (1) <strong>Random placement</strong> of quadrats removes human bias — use random number coordinates, not convenient or attractive-looking areas; (2) <strong>Large sample size</strong> — more quadrats = more representative estimate, reduces the effect of unusual patches; (3) <strong>Appropriate technique</strong> — quadrats for slow-moving/sessile organisms, transects for gradients, mark-recapture for mobile animals; (4) <strong>Repeated sampling</strong> — sampling at different times reduces the effect of seasonal or daily variation. AQA may ask you to evaluate a sampling method and suggest improvements — larger sample size and random placement are the two most common improvements.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Random placement removes bias — use random number coordinates",
+        "Large sample size = more reliable estimate",
+        "Appropriate technique: quadrats (sessile/slow), transects (gradients), mark-recapture (mobile)",
+        "Repeat sampling at different times reduces seasonal bias",
+        "Most common improvement: increase sample size OR ensure random placement"
+      ],
+      "keyTerms": [
+        {"term": "Bias", "def": "A systematic error in sampling caused by non-random selection — e.g. always choosing areas with the most organisms"},
+        {"term": "Reliability", "def": "The consistency and trustworthiness of data — increased by random placement, large sample size, and appropriate technique"}
+      ],
+      "memTip": "Two golden rules for reliable sampling: Random (no bias) + Large sample size (more representative). These are almost always the answer to 'how could you improve this sampling method?'"
+    }
+  ],
+  "tables": [
+    {
+      "title": "Sampling techniques compared",
+      "examFlag": true,
+      "headers": ["Technique", "Best used for", "Key feature"],
+      "rows": [
+        ["Quadrat (random)", "Plants, fungi, slow-moving animals — estimating population or coverage", "Placed randomly using coordinates"],
+        ["Transect (belt/line)", "Studying how species distribution changes across a gradient", "Quadrats/recordings at regular intervals along a line"],
+        ["Mark-recapture", "Mobile animals — estimating total population size", "Capture, mark, release; recapture and count marked individuals"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "0": {
+      "question": "Why must quadrats be placed randomly when sampling a habitat?",
+      "options": [
+        "To ensure all parts of the habitat are sampled equally",
+        "To avoid human bias — random placement ensures the sample is representative of the whole habitat",
+        "To make it easier to calculate percentage cover",
+        "Because randomly placed quadrats always contain more species"
+      ],
+      "correct": 1,
+      "correctFeedback": "✅ Correct — random placement ensures the sample isn't biased by human choices (like choosing areas that look most interesting or most dense).",
+      "wrongFeedback": "Random placement removes human bias. If a researcher chooses where to put quadrats, they might (consciously or not) pick areas with more organisms, or more interesting species. Random number coordinates ensure every part of the habitat has an equal chance of being sampled."
+    },
+    "2": {
+      "question": "50 woodlice were caught, marked, and released. A second sample of 40 woodlice was caught, of which 10 were marked. What is the estimated population?",
+      "options": [
+        "200",
+        "20",
+        "100",
+        "400"
+      ],
+      "correct": 0,
+      "correctFeedback": "✅ Right — N = (50 × 40) ÷ 10 = 2000 ÷ 10 = 200. Good application of the formula.",
+      "wrongFeedback": "Use the mark-recapture formula: N = (n₁ × n₂) ÷ m = (50 × 40) ÷ 10 = 2000 ÷ 10 = 200. First capture (n₁) = 50, second capture (n₂) = 40, marked in second catch (m) = 10."
+    }
+  ],
+  "commonMistakes": [
+    "Choosing where to put quadrats based on what looks interesting — this introduces bias and makes the sample unrepresentative. Always use random number coordinates.",
+    "Getting the mark-recapture formula wrong — it's (first catch × second catch) ÷ marked in second catch. Make sure you're dividing by the NUMBER MARKED IN THE SECOND CATCH, not the total first catch.",
+    "Using quadrats for mobile animals — quadrats work for plants and slow/sessile organisms. Mobile animals need mark-recapture or other techniques.",
+    "Forgetting the assumptions of mark-recapture — if asked to evaluate the technique, mention: marking must not affect survival, marks must be detectable, no immigration/emigration/births/deaths between samples."
+  ],
+  "examTips": [
+    "When asked to describe how to use a quadrat: state (1) use random coordinates, (2) place quadrat at those coordinates, (3) count/record species within quadrat, (4) repeat with many quadrats, (5) calculate mean.",
+    "For mark-recapture calculations: write the formula first, then substitute values clearly. Show all working.",
+    "When evaluating a sampling method, the two most reliable improvements are: increase sample size (larger n), and ensure random placement (removes bias).",
+    "Transect questions often ask why a transect was used instead of random quadrats — the answer is always because you're studying how species change along a gradient (e.g. from one habitat type to another)."
+  ],
+  "revisionCardBullets": [
+    "Quadrat = square frame to sample plants, fungi, slow animals",
+    "Random placement (using random number coordinates) removes human bias",
+    "Population estimate = mean per quadrat × number of quadrats that fit in total area",
+    "Larger sample size = more reliable estimate",
+    "Transect = line across a habitat to study how species change along a gradient",
+    "Belt transect: quadrats at intervals; line transect: organisms touching the line",
+    "Mark-recapture: for mobile animals — capture, mark, release, recapture",
+    "Formula: N = (n₁ × n₂) ÷ m (n₁ = first catch, n₂ = second catch, m = marked in second)",
+    "Assumptions: marks don't affect behaviour/survival; no births/deaths/migration between catches",
+    "Two ways to improve sampling: random placement + increase sample size"
+  ],
+  "videos": [
+    {
+      "title": "Sampling Techniques — AQA GCSE Biology",
+      "url": "https://www.youtube.com/results?search_query=sampling+techniques+quadrats+transects+mark+recapture+AQA+GCSE+biology",
+      "source": "Free Science Lessons",
+      "duration": "~9 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "quadrats transects mark recapture sampling AQA GCSE biology",
+      "label": "Sampling Techniques — Quadrats and Mark-Recapture",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=quadrats+transects+mark+recapture+sampling+AQA+GCSE+biology"
+    }
+  ]
+}

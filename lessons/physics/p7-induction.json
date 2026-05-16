@@ -1,0 +1,199 @@
+{
+  "id": "p7-induction",
+  "title": "Electromagnetic induction — generators",
+  "topic": "P7",
+  "examTip": "Electromagnetic induction is the reverse of the motor effect. To induce an EMF: move a conductor through a magnetic field, OR change the magnetic field through a coil. No movement (or no change) = no induced EMF.",
+  "introTips": [
+    "Electromagnetic induction is how virtually all the electricity in the national grid is generated.",
+    "You need relative movement between the conductor and the magnetic field to induce an EMF.",
+    "Faster movement, stronger magnets, and more coil turns all increase the induced EMF.",
+    "An AC generator produces a sinusoidal (wave-shaped) output — the voltage reverses every half turn.",
+    "Fleming's right-hand rule is used for generators; left-hand rule is for motors — they are different."
+  ],
+  "intro": "Every time you switch on a light, the electricity powering it was almost certainly created by electromagnetic induction — in a power station turbine spinning inside magnetic coils. Michael Faraday discovered in 1831 that moving a magnet through a coil of wire generates an electric current. That discovery changed everything. From the generators in power stations to the microphone you speak into on a phone call, from the dynamo on a bicycle to regenerative braking on an electric car, electromagnetic induction is the engine behind modern electrical civilisation. Understanding it means understanding how the world gets its power.",
+  "keyPoints": [
+    {
+      "heading": "What is electromagnetic induction?",
+      "content": "<strong>Electromagnetic induction</strong> is the production of an <strong>electromotive force (EMF)</strong> — and therefore a current if the circuit is complete — when there is a <strong>changing magnetic field</strong> through a conductor (or coil). This happens in two ways: (1) <strong>Moving a conductor through a magnetic field</strong> — e.g. moving a wire between two magnets. The wire 'cuts' through magnetic field lines. (2) <strong>Changing the magnetic field through a stationary coil</strong> — e.g. moving a magnet in and out of a coil, or changing the current in a nearby coil (as in a transformer). Key point: if there is <strong>no relative motion</strong> and <strong>no change in magnetic field</strong>, there is <strong>no induced EMF</strong>. A stationary conductor in a constant magnetic field feels nothing. The induced EMF drives a current in the conductor — this is how generators produce electricity.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "EMF induced when conductor moves through a magnetic field (cutting field lines)",
+        "EMF also induced when the magnetic field through a coil changes",
+        "No movement AND no field change = no induced EMF",
+        "If circuit is complete, the induced EMF drives an induced current",
+        "This is the reverse of the motor effect — generator converts kinetic energy to electrical"
+      ],
+      "keyTerms": [
+        { "term": "electromagnetic induction", "def": "The production of an EMF (and current if circuit is complete) when a conductor moves through a magnetic field or experiences a changing magnetic field" },
+        { "term": "induced EMF", "def": "An electromotive force produced by electromagnetic induction; drives a current around a circuit if the circuit is complete" }
+      ],
+      "memTip": "Motor: electricity in → movement out. Generator: movement in → electricity out. Both use magnetic fields. Induction needs CHANGE — no change, no EMF.",
+      "tutor_note": "Students often say 'the magnet creates electricity' — redirect to: the relative movement between the conductor and the field is what causes induction; a stationary magnet next to a stationary wire produces nothing."
+    },
+    {
+      "heading": "Factors that increase the induced EMF",
+      "content": "The size of the induced EMF (and therefore the current if resistance is constant) depends on: (1) <strong>Speed of movement</strong> — move the conductor or magnet faster → larger EMF. (2) <strong>Strength of the magnetic field</strong> — stronger magnet → larger EMF. (3) <strong>Number of turns in the coil</strong> — more turns → larger EMF (more conductor is cutting through field lines). The <strong>direction of the induced EMF</strong> (and current) can be reversed by: reversing the direction of movement, or reversing the direction of the magnetic field (flipping the magnet). <strong>Lenz's law</strong> describes the direction: the induced current always flows in a direction that <strong>opposes the change</strong> that caused it (like magnetic braking — the induced current creates its own magnetic field that resists the motion of the magnet). This is a consequence of conservation of energy.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Faster movement → larger induced EMF",
+        "Stronger magnetic field → larger induced EMF",
+        "More turns on the coil → larger induced EMF",
+        "Reverse direction of movement OR flip magnet → reverses direction of induced current",
+        "Lenz's law — induced current opposes the change that caused it (energy conservation)"
+      ],
+      "keyTerms": [
+        { "term": "Lenz's law", "def": "The induced current always flows in a direction that opposes the change producing it; a consequence of conservation of energy" }
+      ],
+      "memTip": "To increase induced EMF: go Faster, use a Stronger field, use More turns. F-S-M. Lenz's law = the induced effect always fights back.",
+      "tutor_note": "Lenz's law is often tested in 'explain why it's hard to push the magnet into the coil' style questions — emphasise that the induced current creates a magnetic field that repels the approaching magnet."
+    },
+    {
+      "heading": "The AC generator",
+      "content": "An <strong>AC generator</strong> (alternator) converts <strong>kinetic energy</strong> into <strong>electrical energy</strong> using electromagnetic induction. A coil of wire is rotated inside a magnetic field (or a magnet is rotated inside a fixed coil — same principle). As the coil rotates, it continuously cuts through magnetic field lines, inducing an EMF. The EMF is connected to the external circuit via <strong>slip rings</strong> and <strong>brushes</strong> — unlike the split-ring commutator in a DC motor, slip rings allow the coil to rotate freely in one direction while maintaining electrical contact. Because the rate at which the coil cuts field lines varies sinusoidally (maximum when coil is parallel to field, zero when perpendicular), the output is a <strong>sinusoidal alternating current (AC)</strong>. The voltage reverses direction every half turn. To increase the output voltage: spin faster, use a stronger magnet, or add more turns.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "AC generator — rotating coil in magnetic field; continuous induction → alternating EMF",
+        "Slip rings and brushes — allow continuous rotation while maintaining electrical contact",
+        "Output is sinusoidal AC — voltage reverses every half turn",
+        "Maximum EMF when coil is parallel to field (maximum rate of cutting field lines)",
+        "Zero EMF when coil is perpendicular to field (momentarily not cutting field lines)"
+      ],
+      "keyTerms": [
+        { "term": "AC generator (alternator)", "def": "A device that converts kinetic energy to electrical energy by rotating a coil in a magnetic field, producing alternating current" },
+        { "term": "slip rings", "def": "Continuous rings in an AC generator that allow the coil to rotate freely while maintaining electrical contact, producing AC output" },
+        { "term": "alternating current (AC)", "def": "Current that repeatedly reverses direction; the output of a generator; represented as a sinusoidal wave" }
+      ],
+      "memTip": "Generator = slip rings (free to spin) → AC output. Motor = split-ring commutator (reverses current) → DC input. Different rings for different jobs.",
+      "tutor_note": "Students confuse slip rings (generators, AC) with split-ring commutators (motors, DC) — make sure they can explain the difference in function, not just the name."
+    },
+    {
+      "heading": "The microphone and Fleming's right-hand rule",
+      "content": "A <strong>microphone</strong> works by electromagnetic induction — the reverse process to a loudspeaker. Sound waves make a diaphragm vibrate, which moves a coil of wire within a magnetic field. As the coil moves back and forth, it induces an alternating EMF that mirrors the sound wave pattern — producing an electrical signal that represents the original sound. <strong>Fleming's right-hand rule</strong> gives the direction of the induced current in a conductor moving through a magnetic field: using the <strong>right hand</strong>, the index finger points in the direction of the magnetic <strong>Field</strong>, the thumb points in the direction of <strong>Motion</strong>, and the middle finger points in the direction of the induced <strong>Current</strong>. Note: right hand = generator/induction; left hand = motor effect. The distinction is often tested directly.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Microphone — sound waves move a coil in a magnetic field → induced AC electrical signal",
+        "Induced signal mirrors the sound wave pattern",
+        "Fleming's right-hand rule — for induction/generators (right hand = generator)",
+        "Right hand: index = Field, thumb = Motion, middle = induced Current",
+        "Left hand = motor effect; right hand = generator/induction — do not mix them up"
+      ],
+      "keyTerms": [
+        { "term": "microphone", "def": "A device using electromagnetic induction to convert sound waves into electrical signals; the reverse of a loudspeaker" },
+        { "term": "Fleming's right-hand rule", "def": "Used to find the direction of induced current when a conductor moves through a magnetic field: index=field, thumb=motion, middle=current" }
+      ],
+      "memTip": "Right hand = generator (makes electricity). Left hand = motor (uses electricity). Microphone = tiny generator for sound.",
+      "tutor_note": "Ask students to contrast the microphone and loudspeaker explicitly — both have a coil and magnet, but one converts sound to electricity and the other electricity to sound."
+    }
+  ],
+  "tables": [],
+  "checkpoints": {
+    "0": {
+      "question": "A bar magnet is held stationary next to a coil of wire connected to a galvanometer (current meter). What does the galvanometer read?",
+      "options": [
+        "Zero — no EMF is induced because there is no relative movement",
+        "A steady DC current proportional to the field strength",
+        "An alternating current because the magnet is magnetic",
+        "A current only if the coil has many turns"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! Electromagnetic induction requires relative movement or a changing field. A stationary magnet in a stationary coil produces no change, so no EMF is induced.",
+      "wrongFeedback": "A stationary magnet next to a stationary coil induces no EMF — there is no relative motion and no change in the magnetic field through the coil. You must have movement or a changing field to induce an EMF."
+    },
+    "1": {
+      "question": "Which of the following changes would increase the EMF induced in a generator?",
+      "options": [
+        "Spinning the coil faster",
+        "Using a longer connecting wire",
+        "Reducing the number of turns on the coil",
+        "Using a weaker magnet"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! Faster spinning → field lines are cut more rapidly → larger induced EMF. The other options would all reduce or have no effect on the EMF.",
+      "wrongFeedback": "To increase induced EMF: spin faster, use a stronger magnet, or add more coil turns. Reducing turns or using a weaker magnet would decrease the EMF."
+    },
+    "3": {
+      "question": "What is the key difference between the slip rings in an AC generator and the split-ring commutator in a DC motor?",
+      "options": [
+        "Slip rings allow free continuous rotation producing AC; the commutator reverses current every half turn to maintain DC rotation",
+        "Slip rings increase voltage; the commutator increases current",
+        "Slip rings are used in motors; the commutator is used in generators",
+        "There is no difference — they are different names for the same component"
+      ],
+      "correct": 0,
+      "correctFeedback": "Exactly right! Slip rings let the coil rotate freely and deliver AC output. The commutator reverses current direction every half turn to keep a DC motor spinning in one direction.",
+      "wrongFeedback": "Slip rings (generator) allow free continuous rotation → AC output. The split-ring commutator (DC motor) reverses the current every half turn to maintain continuous rotation. They are fundamentally different in design and purpose."
+    }
+  },
+  "commonMistakes": [
+    "Saying a stationary magnet near a coil induces a current — induction requires relative movement or a changing magnetic field; no movement = no EMF.",
+    "Using the left-hand rule instead of the right-hand rule for induction/generators — left hand = motor effect; right hand = generator/induction.",
+    "Confusing slip rings (AC generators) with split-ring commutators (DC motors) — they are different components with different functions.",
+    "Stating that increasing the number of coil turns increases the current directly — more turns increases the induced EMF; the resulting current also depends on the resistance of the circuit.",
+    "Describing Lenz's law incorrectly — the induced current opposes the change (the motion of the magnet), not the magnetic field itself."
+  ],
+  "examTips": [
+    "When asked how to increase the induced EMF from a generator, give three distinct answers: faster rotation, stronger magnet, more turns of wire.",
+    "Distinguish generators and motors in answers: generator = kinetic → electrical; motor = electrical → kinetic. Both use a magnetic field.",
+    "For Lenz's law questions: state that the induced current creates a magnetic field that opposes the motion of the magnet — this is why it takes force to push the magnet in.",
+    "Sketch the AC generator output: a sine wave shape, showing voltage switching positive and negative every half turn of the coil.",
+    "Microphone questions often appear alongside loudspeaker questions — be clear about which direction the energy conversion goes in each device."
+  ],
+  "revisionCardBullets": [
+    "Electromagnetic induction — EMF induced when conductor moves through field, OR magnetic field through coil changes",
+    "No movement, no change → no induced EMF",
+    "Larger EMF: faster movement, stronger field, more coil turns",
+    "Lenz's law — induced current opposes the change producing it (energy conservation)",
+    "AC generator — rotating coil in field; slip rings; sinusoidal AC output",
+    "Slip rings — allow free rotation; give AC output",
+    "Split-ring commutator (motor) — reverses current; gives continuous rotation",
+    "Maximum EMF when coil parallel to field; zero EMF when coil perpendicular to field",
+    "Fleming's right-hand rule — for induction/generators: index=field, thumb=motion, middle=current",
+    "Microphone — induction device; sound → coil moves in field → electrical signal",
+    "Motor (left hand) = electricity in; Generator (right hand) = electricity out"
+  ],
+  "videos": [
+    {
+      "title": "Electromagnetic Induction and Generators — Free Science Lessons",
+      "url": "https://www.youtube.com/results?search_query=electromagnetic+induction+generators+AQA+GCSE+physics+free+science+lessons",
+      "source": "Free Science Lessons",
+      "duration": "~11 min"
+    },
+    {
+      "title": "Generators and Induction — BBC Bitesize",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=electromagnetic+induction+generators+gcse+physics",
+      "source": "BBC Bitesize",
+      "duration": "~7 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "electromagnetic induction generators AQA GCSE physics free science lessons",
+      "label": "Induction & Generators",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=electromagnetic+induction+generators+AQA+GCSE+physics+free+science+lessons"
+    },
+    {
+      "searchQuery": "electromagnetic induction GCSE physics bitesize",
+      "label": "Induction",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=electromagnetic+induction+gcse+physics"
+    },
+    {
+      "searchQuery": "electromagnetic induction AC generator AQA GCSE physics cognito",
+      "label": "AC Generator",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=electromagnetic+induction+AC+generator+AQA+GCSE+physics+cognito"
+    }
+  ]
+}

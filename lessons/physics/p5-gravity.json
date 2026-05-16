@@ -1,0 +1,154 @@
+{
+  "id": "p5-gravity",
+  "title": "Gravity — weight, orbits and space",
+  "topic": "P5",
+  "examTip": "AQA tests the difference between mass and weight, the equation W = mg, gravitational field strength, and how gravity determines orbits. Also know why objects in orbit are in free fall, and how the speed of an orbit relates to its radius. Gravitational field strength on Earth = 9.8 N/kg (sometimes rounded to 10 N/kg in calculations).",
+  "introTips": [
+    "Mass and weight are not the same thing. Mass is the amount of matter (kg), always the same wherever you are. Weight is a force (N), and changes depending on gravity.",
+    "W = mg is the key equation. On Earth, g = 9.8 N/kg. On the Moon, g = 1.6 N/kg — so you weigh about 6 times less.",
+    "Orbits work because gravity provides the centripetal force — the object is always falling towards the Earth, but moving sideways fast enough that it keeps missing."
+  ],
+  "intro": "Gravity is the force that holds the universe together — keeping planets in orbit around stars, moons in orbit around planets, and keeping you on the ground. It's also what gives you weight. Understanding how gravity works, how to calculate weight, and how gravity determines the behaviour of orbits is essential P5 physics.",
+  "keyPoints": [
+    {
+      "heading": "Mass vs weight — a crucial distinction",
+      "content": "<strong>Mass</strong> is a measure of the amount of matter in an object. It is measured in kilograms (kg) and is the same everywhere in the universe — mass does not change whether you are on Earth, the Moon, or deep space. <strong>Weight</strong> is a force — the force exerted on an object due to gravity. It is measured in newtons (N). Weight depends on the gravitational field strength of the location. The relationship is: <strong>W = mg</strong>, where W is weight (N), m is mass (kg), and g is gravitational field strength (N/kg). On Earth, g = 9.8 N/kg. On the Moon, g ≈ 1.6 N/kg. In deep space, g ≈ 0, so an object is effectively weightless.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Mass: amount of matter; measured in kg; same everywhere",
+        "Weight: gravitational force on an object; measured in N; varies with location",
+        "W = mg (weight = mass × gravitational field strength)",
+        "On Earth: g = 9.8 N/kg",
+        "On Moon: g ≈ 1.6 N/kg → weight about 6× less than on Earth",
+        "In deep space: g ≈ 0 → effectively weightless (but mass unchanged)"
+      ],
+      "keyTerms": [
+        {"term": "Mass", "def": "The amount of matter in an object, measured in kg — constant regardless of location"},
+        {"term": "Weight", "def": "The gravitational force acting on an object, measured in N — varies with the local gravitational field strength"},
+        {"term": "Gravitational field strength (g)", "def": "The force per unit mass acting on an object in a gravitational field, measured in N/kg — on Earth, g = 9.8 N/kg"},
+        {"term": "W = mg", "def": "The equation for weight: weight (N) = mass (kg) × gravitational field strength (N/kg)"}
+      ],
+      "memTip": "Mass = matter, measured in kg, never changes. Weight = force, measured in N, changes with gravity. W = mg. On Earth g = 9.8 N/kg. A 70 kg person: weight on Earth = 70 × 9.8 = 686 N; on Moon = 70 × 1.6 = 112 N. Same mass, very different weight."
+    },
+    {
+      "heading": "Gravitational fields",
+      "content": "A <strong>gravitational field</strong> is a region of space where a mass experiences a gravitational force. All objects with mass create a gravitational field around them. The field strength decreases with distance from the centre of the mass. Near Earth's surface, the field is approximately uniform (same in all directions near the surface) — g = 9.8 N/kg. As you move further from Earth (e.g. into orbit), the field strength decreases. The gravitational field is represented by field lines pointing towards the centre of the mass (showing direction of force on a small test mass). Gravitational fields act over large distances and explain why planets orbit stars — the Sun's gravitational field extends billions of kilometres.",
+      "examFlag": false,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Gravitational field: region where a mass experiences a gravitational force",
+        "All objects with mass create a gravitational field — strength decreases with distance",
+        "Near Earth's surface: approximately uniform field, g = 9.8 N/kg",
+        "As distance increases (into orbit), field strength decreases",
+        "Field lines point towards centre of mass (direction of force on a small test mass)"
+      ],
+      "keyTerms": [
+        {"term": "Gravitational field", "def": "A region of space around a mass where other masses experience a gravitational force — field strength decreases with distance from the mass"}
+      ],
+      "memTip": "Gravitational field = region where gravity acts. Field lines point IN (towards the mass). Stronger near the surface, weaker further away. Earth's field extends far into space — that's why the Moon and satellites orbit Earth."
+    },
+    {
+      "heading": "Orbits — free fall and centripetal force",
+      "content": "An object in orbit around a planet is actually in a state of continuous <strong>free fall</strong> — it is always falling towards the planet due to gravity. But because it also has a high tangential velocity (sideways speed), it keeps 'missing' the planet and falls in a curve. The result is a circular (or elliptical) orbit. <strong>Gravity provides the centripetal force</strong> that keeps the object in its curved path. For a circular orbit at a fixed height, the speed must be exactly right — too fast and the object escapes; too slow and it falls back to Earth. <strong>Higher orbits</strong>: the gravitational field is weaker, so less centripetal force is needed, and the orbital speed is lower. But a higher orbit has a longer circumference, so the orbital period (time for one orbit) is longer.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Orbiting object is in continuous free fall — gravity pulls it towards Earth",
+        "High tangential velocity means it keeps missing Earth → circular orbit",
+        "Gravity provides the centripetal force for circular orbital motion",
+        "Higher orbit: weaker gravity → lower orbital speed → longer orbital period",
+        "Satellites in lower orbits move faster and orbit more quickly"
+      ],
+      "keyTerms": [
+        {"term": "Free fall", "def": "Motion under gravity alone — an object in orbit is continuously falling towards Earth but moving sideways fast enough to orbit"},
+        {"term": "Centripetal force", "def": "The resultant force directed towards the centre of a circle, keeping an object in circular motion — for orbits, this force is provided by gravity"},
+        {"term": "Orbital period", "def": "The time taken for one complete orbit — longer for higher orbits"}
+      ],
+      "memTip": "Orbit = continuous free fall that keeps missing. Gravity is always pulling in, sideways velocity keeps it going around. Higher orbit → weaker gravity → slower speed AND longer period. Geostationary satellites are at a specific height where the period = 24 hours, so they stay above the same point on Earth."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Gravitational field strength on different bodies",
+      "examFlag": true,
+      "headers": ["Location", "g (N/kg)", "Weight of 70 kg person (N)"],
+      "rows": [
+        ["Earth's surface", "9.8", "686"],
+        ["Moon's surface", "1.6", "112"],
+        ["Mars surface", "3.7", "259"],
+        ["Deep space (far from any mass)", "≈ 0", "≈ 0 (weightless)"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "0": {
+      "question": "A student has a mass of 60 kg. What is their weight on Earth (g = 9.8 N/kg)?",
+      "options": [
+        "60 N",
+        "588 N",
+        "6.1 N",
+        "9.8 N"
+      ],
+      "correct": 1,
+      "correctFeedback": "✅ Correct — W = mg = 60 × 9.8 = 588 N. The student's mass stays 60 kg everywhere, but their weight changes with gravitational field strength.",
+      "wrongFeedback": "Use W = mg. W = 60 × 9.8 = 588 N. The mass is 60 kg (unchanged). Weight is a force in newtons. A common mistake is thinking weight = mass — it doesn't. Weight is mass × gravitational field strength."
+    },
+    "1": {
+      "question": "Why does a satellite in a higher orbit travel more slowly than one in a lower orbit?",
+      "options": [
+        "Higher orbits are further from the Sun, so solar wind slows the satellite",
+        "At greater distances from Earth, the gravitational field strength is weaker, so less centripetal force (and therefore less speed) is needed to maintain orbit",
+        "Higher orbits have more atmospheric drag, slowing the satellite down",
+        "Satellites at higher orbits have greater mass, which reduces their speed"
+      ],
+      "correct": 1,
+      "correctFeedback": "✅ Right — at greater orbital radius, Earth's gravitational field is weaker. Less centripetal force is needed, which corresponds to a lower orbital speed.",
+      "wrongFeedback": "At a greater distance from Earth, the gravitational field strength is weaker (gravity decreases with distance). This means less centripetal force is needed to maintain circular orbit. Less centripetal force corresponds to lower orbital speed. Higher orbits = weaker gravity = slower orbital speed = longer orbital period."
+    }
+  ],
+  "commonMistakes": [
+    "Confusing mass and weight — mass is in kg and never changes. Weight is in N and depends on gravity. A very common exam error is to use kg for weight or N for mass.",
+    "Saying 'astronauts in orbit have no gravity' — they do. The gravitational field extends far into space. They feel weightless because they are in continuous free fall (everything around them is falling at the same rate).",
+    "Thinking higher orbit = faster speed — the opposite is true. Higher orbit = weaker gravity = slower orbital speed = longer period.",
+    "Not using g = 9.8 N/kg in calculations — the gravitational field strength on Earth is 9.8 N/kg (or 10 N/kg if told to round). Always check which value the exam question specifies."
+  ],
+  "examTips": [
+    "For W = mg calculations: state the formula, substitute values clearly, include units in your answer (N for weight). Show all working.",
+    "When asked about orbits: explain that gravity provides the centripetal force. Don't just say 'gravity keeps it going round' — say 'gravity provides the centripetal force needed for circular motion'.",
+    "For 'why does orbital speed change with height?' questions: link gravitational field strength → centripetal force → orbital speed. More explicit the link, more marks.",
+    "The difference between mass and weight is one of the most commonly tested misconceptions. AQA uses it in every set of papers. Make sure you can define both precisely."
+  ],
+  "revisionCardBullets": [
+    "Mass: amount of matter; kg; constant everywhere",
+    "Weight: gravitational force; N; varies with location",
+    "W = mg (weight = mass × gravitational field strength)",
+    "Earth: g = 9.8 N/kg; Moon: g ≈ 1.6 N/kg",
+    "Gravitational field: region where a mass experiences gravity; strength decreases with distance",
+    "Orbiting object in continuous free fall — sideways velocity keeps it missing Earth",
+    "Gravity provides centripetal force for circular orbital motion",
+    "Higher orbit: weaker gravity → slower orbital speed → longer orbital period",
+    "Geostationary satellites: 24-hour period, same position above Earth",
+    "Astronauts feel weightless in orbit because they are in continuous free fall"
+  ],
+  "videos": [
+    {
+      "title": "Gravity, Weight and Orbits — AQA GCSE Physics",
+      "url": "https://www.youtube.com/results?search_query=gravity+weight+orbits+AQA+GCSE+physics",
+      "source": "Free Science Lessons",
+      "duration": "~9 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "gravity weight orbits centripetal force AQA GCSE physics",
+      "label": "Gravity, Weight and Orbits",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=gravity+weight+orbits+AQA+GCSE+physics"
+    }
+  ]
+}

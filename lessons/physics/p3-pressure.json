@@ -1,0 +1,209 @@
+{
+  "id": "p3-pressure",
+  "title": "Pressure in gases — particles in motion",
+  "topic": "P3",
+  "examTip": "Gas pressure questions almost always want a particle-level explanation — say 'more frequent collisions with the container walls' not just 'particles move faster'. And always check whether a Boyle's Law question is at constant temperature.",
+  "introTips": [
+    "Pressure is caused by gas particles hitting the walls of their container — more hits or harder hits means higher pressure.",
+    "Temperature is really a measure of the average kinetic energy of particles — hotter means faster.",
+    "The Kelvin scale starts at absolute zero (0 K = −273 °C) — you must convert to Kelvin before using any gas law equation.",
+    "Boyle's Law only applies at constant temperature — if temperature changes, use the combined gas law instead.",
+    "p₁V₁ = p₂V₂ and pV/T = constant are the two equations you need to know and be able to apply."
+  ],
+  "intro": "Every time you pump up a bike tyre, squeeze a balloon, or watch a weather balloon expand as it rises, you are seeing gas pressure in action. Gas pressure is not some mysterious force — it is simply the result of billions of tiny particles constantly crashing into container walls. Understanding this gives you real power: you can predict exactly what happens to pressure when you heat a gas or squash it into a smaller space. Engineers use these relationships to design everything from car engines to aerosol cans to scuba diving equipment.",
+  "keyPoints": [
+    {
+      "heading": "What causes gas pressure",
+      "content": "Gas pressure is caused by <strong>gas particles colliding with the walls of their container</strong>. Each collision exerts a tiny force on the wall. Because there are enormous numbers of particles colliding every second, the total effect is a steady, measurable pressure. <strong>Pressure = force ÷ area</strong> — so more collisions per second, or harder collisions, means higher pressure. Key idea: <strong>the faster the particles move, the harder and more frequently they hit the walls → higher pressure</strong>. If you heat the gas, particles gain kinetic energy, move faster, and hit the walls harder and more often → pressure rises (if volume is fixed). If you compress the gas into a smaller volume, particles hit the walls more often per second (the same number of particles in a smaller space) → pressure rises (if temperature is fixed).",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Gas pressure — caused by gas particles colliding with container walls",
+        "Each collision exerts a force; billions of collisions per second create measurable pressure",
+        "Higher temperature → faster particles → harder, more frequent wall collisions → higher pressure",
+        "Smaller volume → same particles in less space → more frequent wall collisions → higher pressure",
+        "Pressure = force ÷ area (Pa = N/m²)"
+      ],
+      "keyTerms": [
+        { "term": "gas pressure", "def": "The force per unit area exerted by gas particles colliding with container walls" },
+        { "term": "collision", "def": "A particle striking the container wall — each collision exerts a tiny force contributing to total pressure" }
+      ],
+      "memTip": "More collisions OR harder collisions = higher pressure. Temperature controls speed; volume controls frequency.",
+      "tutor_note": "Mabel needs to link cause (particle collisions) to effect (pressure) explicitly — exam mark schemes reward the phrase 'collisions with the walls'."
+    },
+    {
+      "heading": "Absolute zero and the Kelvin scale",
+      "content": "Temperature in physics is measured in <strong>Kelvin (K)</strong>, not just Celsius. The Kelvin scale starts at <strong>absolute zero: 0 K = −273 °C</strong>. At absolute zero, particles have the minimum possible kinetic energy — they stop moving entirely (in theory). This is the lowest possible temperature; you cannot go below it. To convert: <strong>T (K) = θ (°C) + 273</strong>. Examples: 0 °C = 273 K; 100 °C = 373 K; 20 °C = 293 K; −73 °C = 200 K. <strong>You must always use Kelvin in gas law calculations</strong> — using Celsius will give completely wrong answers because the equations require an absolute temperature scale. The Kelvin scale is important because at 0 K pressure would be zero (particles have no kinetic energy and make no collisions); this is physically meaningful in a way that 0 °C is not.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Absolute zero — 0 K = −273 °C — the lowest possible temperature",
+        "At absolute zero, particles have minimum kinetic energy and (theoretically) stop moving",
+        "Kelvin conversion: T (K) = θ (°C) + 273",
+        "Always use Kelvin in gas law equations — Celsius will give wrong answers",
+        "0 °C = 273 K; 100 °C = 373 K; −273 °C = 0 K"
+      ],
+      "keyTerms": [
+        { "term": "absolute zero", "def": "The lowest possible temperature: 0 K = −273 °C; particles have minimum kinetic energy" },
+        { "term": "Kelvin (K)", "def": "The absolute temperature scale; T(K) = θ(°C) + 273; must be used in gas law equations" }
+      ],
+      "memTip": "Add 273 to convert °C to K. Subtract 273 to go back. 0 K = absolute zero = −273 °C.",
+      "tutor_note": "A very common error is leaving temperature in °C in gas law calculations — always convert first."
+    },
+    {
+      "heading": "Boyle's Law — pressure and volume at constant temperature",
+      "content": "At <strong>constant temperature</strong>, the pressure and volume of a fixed mass of gas are inversely proportional: <strong>p × V = constant</strong>, or: <strong>p₁V₁ = p₂V₂</strong>. If you halve the volume, the pressure doubles. If you double the volume, the pressure halves. Particle explanation: compressing the gas into half the volume means the same number of particles now bounce around in a smaller space — they hit the walls <strong>twice as often</strong> per second → pressure doubles. Units: pressure in Pa (pascals) or kPa; volume in m³ or cm³ — but both sides must use the same unit. Worked example: a gas has pressure 200 kPa and volume 3 m³. It is compressed to 1.5 m³ at constant temperature. Find the new pressure: p₂ = p₁V₁ ÷ V₂ = (200 × 3) ÷ 1.5 = 600 ÷ 1.5 = <strong>400 kPa</strong>.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Boyle's Law: p₁V₁ = p₂V₂ at constant temperature",
+        "Pressure and volume are inversely proportional — one doubles, the other halves",
+        "Halve the volume → particles hit walls twice as often → pressure doubles",
+        "Units: pressure in Pa or kPa; volume in m³ or cm³ — must be consistent on both sides",
+        "Rearrange: p₂ = p₁V₁ ÷ V₂ or V₂ = p₁V₁ ÷ p₂"
+      ],
+      "keyTerms": [
+        { "term": "Boyle's Law", "def": "At constant temperature, p × V = constant for a fixed mass of gas; p₁V₁ = p₂V₂" },
+        { "term": "inversely proportional", "def": "When one quantity doubles, the other halves — their product stays constant" }
+      ],
+      "memTip": "p₁V₁ = p₂V₂. Both sides equal the same constant. Just cross-multiply to rearrange.",
+      "tutor_note": "Make sure Mabel checks that temperature is stated as constant before using Boyle's Law — if temperature changes, the combined law is needed."
+    },
+    {
+      "heading": "The combined gas law — pressure, volume and temperature",
+      "content": "When temperature can also change, use the <strong>combined gas law</strong>: <strong>p₁V₁ / T₁ = p₂V₂ / T₂</strong> (where T is in Kelvin). This combines Boyle's Law (p and V at constant T) and Gay-Lussac's Law (p and T at constant V). If volume is fixed (rigid container): <strong>p/T = constant</strong>, so doubling the Kelvin temperature doubles the pressure. Particle explanation: at higher temperature, particles move faster → hit walls harder and more often → pressure rises. Worked example: gas at 100 kPa, 2 m³, 300 K is heated to 600 K at constant volume. New pressure: p₂ = p₁ × T₂ / T₁ = 100 × 600/300 = <strong>200 kPa</strong>. Always convert °C to K before substituting — this is the most common error in exam answers.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Combined gas law: p₁V₁/T₁ = p₂V₂/T₂ (T must be in Kelvin)",
+        "Fixed volume: p/T = constant — doubling Kelvin temperature doubles pressure",
+        "Higher temperature → faster particles → harder, more frequent collisions → higher pressure",
+        "Always convert temperature to Kelvin before substituting into any gas law",
+        "Rearrange for any unknown: p₂ = p₁V₁T₂ / (T₁V₂)"
+      ],
+      "keyTerms": [
+        { "term": "combined gas law", "def": "p₁V₁/T₁ = p₂V₂/T₂; links pressure, volume and temperature for a fixed mass of gas" },
+        { "term": "Gay-Lussac's Law", "def": "At constant volume, pressure is directly proportional to Kelvin temperature: p/T = constant" }
+      ],
+      "memTip": "pV/T = constant. Each fraction equals the same number. Convert to K first — always.",
+      "tutor_note": "Encourage Mabel to write out T in Kelvin explicitly before substituting — it prevents the most common calculation error."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Summary of gas law relationships",
+      "examFlag": true,
+      "headers": ["Law", "What is constant?", "Relationship", "Equation"],
+      "rows": [
+        ["Boyle's Law", "Temperature (T)", "p and V inversely proportional", "p₁V₁ = p₂V₂"],
+        ["Gay-Lussac's Law", "Volume (V)", "p and T directly proportional", "p₁/T₁ = p₂/T₂"],
+        ["Charles's Law", "Pressure (p)", "V and T directly proportional", "V₁/T₁ = V₂/T₂"],
+        ["Combined Gas Law", "Mass of gas", "Links p, V and T", "p₁V₁/T₁ = p₂V₂/T₂"]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "0": {
+      "question": "A sealed container of gas has a pressure of 150 kPa at a volume of 4 m³. The gas is compressed to 2 m³ at constant temperature. What is the new pressure?",
+      "options": [
+        "300 kPa",
+        "75 kPa",
+        "150 kPa",
+        "600 kPa"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! p₁V₁ = p₂V₂ → p₂ = (150 × 4) ÷ 2 = 300 kPa. Halving the volume doubles the pressure.",
+      "wrongFeedback": "Use Boyle's Law: p₁V₁ = p₂V₂. Rearrange: p₂ = p₁V₁ ÷ V₂ = (150 × 4) ÷ 2 = 300 kPa. When volume halves, pressure doubles."
+    },
+    "1": {
+      "question": "What is 27 °C converted to Kelvin?",
+      "options": [
+        "300 K",
+        "27 K",
+        "246 K",
+        "373 K"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! T(K) = θ(°C) + 273 = 27 + 273 = 300 K. Always convert to Kelvin before using gas law equations.",
+      "wrongFeedback": "Convert using: T(K) = θ(°C) + 273 = 27 + 273 = 300 K. You must add 273, not use the Celsius value directly."
+    },
+    "3": {
+      "question": "A gas in a fixed volume container is at 200 kPa and 300 K. It is heated to 450 K. What is the new pressure?",
+      "options": [
+        "300 kPa",
+        "133 kPa",
+        "200 kPa",
+        "400 kPa"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! At fixed volume, p/T = constant: p₂ = p₁ × T₂/T₁ = 200 × 450/300 = 300 kPa.",
+      "wrongFeedback": "At fixed volume, p₁/T₁ = p₂/T₂. So p₂ = p₁ × T₂/T₁ = 200 × (450/300) = 300 kPa. Temperature must be in Kelvin."
+    }
+  },
+  "commonMistakes": [
+    "Using Celsius instead of Kelvin in gas law equations — always convert: T(K) = θ(°C) + 273 before substituting.",
+    "Applying Boyle's Law when temperature also changes — Boyle's Law only works at constant temperature; use pV/T = constant if T changes.",
+    "Giving a vague explanation of pressure increase ('particles move faster') without saying 'more frequent/harder collisions with the walls' — the walls phrase is needed for full marks.",
+    "Mixing up units within an equation — pressure must be in the same units (both Pa or both kPa) on each side; same for volume.",
+    "Saying pressure increases when volume increases — it is the opposite: bigger volume → particles hit walls less often → pressure falls."
+  ],
+  "examTips": [
+    "Always convert temperature to Kelvin (add 273) before substituting into any gas law — this is the most penalised error.",
+    "Particle explanations must mention collisions with the container walls, not just particle speed — you need both parts for full marks.",
+    "For Boyle's Law calculations, check: does the pressure go up when volume goes down? If yes, your answer is physically reasonable.",
+    "State which law you are using and write out the equation before substituting — this gains method marks even if you make an arithmetic error."
+  ],
+  "revisionCardBullets": [
+    "Gas pressure caused by particle collisions with container walls",
+    "Higher temperature → faster particles → more frequent, harder collisions → higher pressure",
+    "Smaller volume → more frequent collisions per unit area → higher pressure",
+    "Absolute zero: 0 K = −273 °C — lowest possible temperature",
+    "Convert to Kelvin: T(K) = θ(°C) + 273",
+    "Boyle's Law (constant T): p₁V₁ = p₂V₂",
+    "Volume halves → pressure doubles (at constant temperature)",
+    "Combined gas law: p₁V₁/T₁ = p₂V₂/T₂ (T in Kelvin)",
+    "Fixed volume: p/T = constant — doubling Kelvin temperature doubles pressure",
+    "Pressure units: Pa (pascals); volume units: m³ or cm³ — must be consistent"
+  ],
+  "videos": [
+    {
+      "title": "Gas Pressure and Boyle's Law — Free Science Lessons",
+      "url": "https://www.youtube.com/results?search_query=gas+pressure+Boyle%27s+law+AQA+GCSE+physics+free+science+lessons",
+      "source": "Free Science Lessons",
+      "duration": "~10 min"
+    },
+    {
+      "title": "Gas Laws GCSE Physics — BBC Bitesize",
+      "url": "https://www.youtube.com/results?search_query=gas+laws+pressure+volume+temperature+GCSE+physics+BBC+bitesize",
+      "source": "BBC Bitesize",
+      "duration": "~6 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "gas pressure Boyle's law AQA GCSE physics free science lessons",
+      "label": "Gas Pressure & Boyle's Law",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=gas+pressure+Boyle%27s+law+AQA+GCSE+physics+free+science+lessons"
+    },
+    {
+      "searchQuery": "gas pressure particles GCSE physics BBC bitesize",
+      "label": "Gas Pressure",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=gas+pressure+particles+GCSE+physics+BBC+bitesize"
+    },
+    {
+      "searchQuery": "absolute zero Kelvin scale GCSE physics AQA",
+      "label": "Absolute Zero & Kelvin",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=absolute+zero+Kelvin+scale+GCSE+physics+AQA"
+    }
+  ]
+}

@@ -1025,10 +1025,17 @@ function showTestPrep() {
       <div style="background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:1.25rem 1.3rem">
         <p style="font-size:0.88rem;color:var(--muted);margin-bottom:0.85rem">Tell me about one test and I'll build you a focused day-by-day revision plan.</p>
         <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem">
-          <input id="testSubject" type="text" placeholder="Subject (e.g. Biology)" value="Biology"
-            style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none">
-          <input id="testTopic" type="text" placeholder="Topic (e.g. Digestive system)"
-            style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none">
+          <select id="testSubject" onchange="_populateTopicDropdown(this.value)"
+            style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none;width:100%;cursor:pointer">
+            <option value="biology">Biology</option>
+            <option value="chemistry">Chemistry</option>
+            <option value="physics">Physics</option>
+            <option value="maths">Maths</option>
+          </select>
+          <select id="testTopic"
+            style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none;width:100%;cursor:pointer">
+            <option>Loading topics…</option>
+          </select>
           <input id="testDate" type="date"
             style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none">
         </div>
@@ -1037,6 +1044,7 @@ function showTestPrep() {
     </div>`;
 
   _setupUploadZone();
+  _populateTopicDropdown('biology');
 }
 
 // ── SCHEDULE UPLOAD ────────────────────────────────────────────
@@ -1191,34 +1199,138 @@ function _daysFromInput() {
   return Math.ceil((testDate - today) / 86400000);
 }
 
+// ── TOPIC DROPDOWN POPULATION ─────────────────────────────────
+let _testPlanSyllabus = null;
+
+async function _populateTopicDropdown(subject) {
+  const sel = document.getElementById('testTopic');
+  if (!sel) return;
+  sel.innerHTML = '<option>Loading…</option>';
+  try {
+    const res = await fetch(`data/${subject}-syllabus.json`);
+    _testPlanSyllabus = await res.json();
+    const topics = Object.values(_testPlanSyllabus.topics || {});
+    sel.innerHTML = topics
+      .map(t => `<option value="${t.code}">${t.name}</option>`)
+      .join('');
+  } catch {
+    sel.innerHTML = '<option value="">Could not load topics</option>';
+    _testPlanSyllabus = null;
+  }
+}
+
 // prefill is optional — passed when clicking a test from the schedule view
 async function _buildTestPlan(prefill) {
-  const subject   = (prefill && prefill.subject) || document.getElementById('testSubject')?.value || 'Biology';
-  const topic     = (prefill && prefill.topic)   || document.getElementById('testTopic')?.value  || 'General';
-  const daysUntil = (prefill && prefill.days != null) ? prefill.days : _daysFromInput();
+  const subjectEl = document.getElementById('testSubject');
+  const topicEl   = document.getElementById('testTopic');
 
-  document.getElementById('main').innerHTML = `
-    <div style="text-align:center;padding:3rem 1rem">
-      <div style="font-size:2rem;margin-bottom:0.75rem">📋</div>
-      <p style="color:var(--muted)">Building your revision plan…</p>
-    </div>`;
+  const subject    = (prefill?.subject) || subjectEl?.value || 'biology';
+  const topicCode  = topicEl?.value || '';
+  const topicName  = (prefill?.topic) ||
+                     topicEl?.options[topicEl.selectedIndex]?.text ||
+                     'General';
+  const daysUntil  = (prefill?.days != null) ? prefill.days : _daysFromInput();
 
-  try {
-    const raw = await AI.call(
-      `You are a GCSE revision tutor. Create a day-by-day revision plan. Return ONLY valid JSON, no markdown:
-{"summary":"2 sentences encouraging intro","days":[{"day":1,"label":"e.g. Mon 13 Jan","focus":"what to revise","tasks":["task","task","task"],"mins":45}],"dayBefore":{"focus":"light review","tasks":["task","task"],"mins":30},"keyTopics":["topic1","topic2","topic3"],"quickWins":["tip1","tip2"]}`,
-      `Subject: ${subject}, Topic: ${topic}, Days until test: ${daysUntil ?? 14}. Student is 15. AQA spec. Make the plan realistic — max 3-4 tasks per day.`,
-      1500
-    );
-    let clean = raw.trim().replace(/^```(?:json)?\s*/i,'').replace(/\s*```\s*$/i,'').trim();
-    const plan = JSON.parse(clean);
-    _renderTestPlan(plan, topic, daysUntil);
-  } catch(e) {
-    document.getElementById('main').innerHTML = `
-      <div class="empty-state">
-        <p>Couldn't generate plan. <button class="btn" onclick="showTestPrep()">Try again</button></p>
-      </div>`;
+  // Get subtopics from cached syllabus (or fetch for prefill path)
+  let subtopics = [];
+  if (prefill && !_testPlanSyllabus) {
+    try {
+      const res = await fetch(`data/${subject.toLowerCase()}-syllabus.json`);
+      _testPlanSyllabus = await res.json();
+    } catch { /* leave subtopics empty — plan will still work */ }
   }
+  if (_testPlanSyllabus && topicCode && _testPlanSyllabus.topics[topicCode]) {
+    subtopics = _testPlanSyllabus.topics[topicCode].subtopics || [];
+  } else if (_testPlanSyllabus) {
+    // Try matching topic by name (for prefill path where we have a string not a code)
+    const match = Object.values(_testPlanSyllabus.topics || {})
+      .find(t => t.name.toLowerCase().includes((prefill?.topic || '').toLowerCase().slice(0, 8)));
+    if (match) subtopics = match.subtopics || [];
+  }
+
+  const plan = _generateStaticPlan(subject, topicName, daysUntil, subtopics);
+  _renderTestPlan(plan, topicName, daysUntil);
+}
+
+// ── STATIC PLAN GENERATOR ──────────────────────────────────────
+function _generateStaticPlan(subject, topicName, daysUntil, subtopics) {
+  const totalDays  = Math.max(daysUntil || 7, 2);
+  const studyDays  = totalDays - 1;   // final day always = practice test
+  const subs       = subtopics.length ? subtopics : [{ name: topicName }];
+  const planDays   = [];
+
+  if (studyDays >= subs.length) {
+    // Comfortable — one subtopic per day, fill leftover with review
+    subs.forEach((s, i) => {
+      planDays.push(_makeDay(i + 1, s.name, false));
+    });
+    for (let i = subs.length; i < studyDays; i++) {
+      planDays.push(_makeDay(i + 1, 'Review — go back over anything that felt shaky', false));
+    }
+  } else {
+    // Tight — chunk subtopics across available study days
+    const chunkSize = Math.ceil(subs.length / studyDays);
+    for (let i = 0; i < studyDays; i++) {
+      const chunk = subs.slice(i * chunkSize, (i + 1) * chunkSize);
+      if (!chunk.length) break;
+      const label = chunk.length === 1
+        ? chunk[0].name
+        : chunk.map(c => c.name.split('—')[0].split('–')[0].trim()).join(' + ');
+      planDays.push(_makeDay(i + 1, label, chunk.length > 1));
+    }
+  }
+
+  // Final day — always practice test questions
+  planDays.push({
+    day: planDays.length + 1,
+    label: `Day ${planDays.length + 1} — Test day prep`,
+    focus: 'Practice test questions',
+    tasks: [
+      `Work through past-paper questions on ${topicName}`,
+      'Time yourself — aim for proper exam conditions',
+      'Mark your answers and note every gap',
+      'Quick re-read of any topic where you dropped marks',
+    ],
+    mins: 50,
+  });
+
+  const urgencyLine = totalDays <= 3
+    ? "Time is tight — keep it focused and don't try to cover everything at once."
+    : totalDays <= 7
+    ? "A week is a solid amount of time. Work through this plan in order and you'll be well prepared."
+    : "You've got plenty of time to build a strong foundation. Don't rush — one topic at a time.";
+
+  const summary = `Here's your ${topicName} revision plan across ${totalDays} day${totalDays !== 1 ? 's' : ''}. ${urgencyLine} The final session is always practice questions — that's where everything clicks into place.`;
+
+  return { summary, days: planDays, quickWins: _planQuickWins(subject) };
+}
+
+function _makeDay(dayNum, subtopicName, combined) {
+  return {
+    day: dayNum,
+    label: `Day ${dayNum}`,
+    focus: subtopicName,
+    tasks: combined
+      ? [
+          'Read through your notes on each subtopic',
+          'Build a quick mind map connecting the key ideas',
+          'Test yourself with flashcards — cover one subtopic at a time',
+        ]
+      : [
+          'Read your notes and highlight the key points',
+          'Do the practice questions for this subtopic',
+          'Make flashcards for every key term or formula',
+        ],
+    mins: combined ? 60 : 45,
+  };
+}
+
+function _planQuickWins(subject) {
+  const s = (subject || '').toLowerCase();
+  if (s === 'maths')     return ['Show all working — method marks count even when the final answer is wrong', 'Check every answer by substituting back in', 'Practise your weakest topics first, not the ones you already know'];
+  if (s === 'chemistry') return ['Practise balancing equations every single day', 'Know your required practicals inside out', 'Learn the reactivity series — it comes up constantly'];
+  if (s === 'physics')   return ['Write out every equation from memory each morning', 'Practise unit conversions — they drop marks when rushed', 'Sketch and explain every required practical'];
+  return ['Learn the key definitions — one flashcard per term', 'Know your 6-mark required practicals', 'Draw and label every diagram from memory'];
 }
 
 function _renderTestPlan(plan, topic, daysUntil) {

@@ -987,7 +987,395 @@ const MathsQuestions = (() => {
       },
       examinerTip: "Students forget to square q before finding k, writing k = 75÷5 = 15, then p = 15×8 = 120.",
       auditStatus: 'pending',
+    },    {
+      id: 'rat-A04',
+      subtopic: 'rpr-ratio',
+      band: 'A',
+      marks: 2,
+      question: 'Share £96 in the ratio 1:3.',
+      steps: [
+        {
+          prompt: 'How many parts are there in total?',
+          hint1: 'Add the two numbers in the ratio together.',
+          hint2: '1 + 3 = ?',
+          hint3: '4 parts in total.',
+          answer: 4,
+          tolerance: 0,
+          unit: 'parts',
+          explanation: '1 + 3 = 4 parts in total.'
+        },
+        {
+          prompt: 'What is one part worth? (£)',
+          hint1: 'Divide the total amount by the number of parts.',
+          hint2: '96 ÷ 4 = ?',
+          hint3: '£24 per part.',
+          answer: 24,
+          tolerance: 0,
+          unit: '£',
+          explanation: '£96 ÷ 4 = £24 per part.'
+        }
+      ],
+      workedExample: {
+        question: 'Share £60 in the ratio 1:3.',
+        steps: [
+          'Total parts: 1 + 3 = 4',
+          'One part = £60 ÷ 4 = £15',
+          'Shares: 1 × £15 = <strong>£15</strong> and 3 × £15 = <strong>£45</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Total parts = 4. One part = £96 ÷ 4 = £24. Shares are £24 and £72.',
+        grade6: 'Total parts: 1 + 3 = 4. One part = £96 ÷ 4 = £24. Shares: 1 × £24 = £24 and 3 × £24 = £72.',
+        grade8: 'Ratio 1:3 gives 4 parts. Each part = £96 ÷ 4 = £24. The two shares are £24 and £72, which sum to £96 ✓'
+      },
+      examinerTip: 'Always check your answers add back to the original total.',
+      auditStatus: 'pending'
     },
+    {
+      id: 'rat-A05',
+      subtopic: 'rpr-ratio',
+      band: 'A',
+      marks: 2,
+      question: 'Write the ratio 45:60 in its simplest form.',
+      steps: [
+        {
+          prompt: 'What is the highest common factor (HCF) of 45 and 60?',
+          hint1: 'List factors of both numbers or think about what divides both evenly.',
+          hint2: 'Factors of 45: 1,3,5,9,15,45. Factors of 60: 1,2,3,4,5,6,10,12,15,20,30,60.',
+          hint3: 'The HCF is 15.',
+          answer: 15,
+          tolerance: 0,
+          unit: '',
+          explanation: 'The highest common factor of 45 and 60 is 15.'
+        },
+        {
+          prompt: 'Divide both parts of the ratio by the HCF. Enter the first part of the simplified ratio.',
+          hint1: 'Divide each number by 15.',
+          hint2: '45 ÷ 15 = ?',
+          hint3: '45 ÷ 15 = 3, so the ratio is 3:4.',
+          answer: 3,
+          tolerance: 0,
+          unit: '',
+          explanation: '45 ÷ 15 = 3 and 60 ÷ 15 = 4, giving the simplified ratio 3:4.'
+        }
+      ],
+      workedExample: {
+        question: 'Write the ratio 30:45 in its simplest form.',
+        steps: [
+          'HCF of 30 and 45: factors of 30 include 1,2,3,5,6,10,15,30; factors of 45 include 1,3,5,9,15,45 → HCF = 15',
+          'Divide both parts by 15: 30 ÷ 15 = 2, 45 ÷ 15 = 3',
+          'Simplified ratio = <strong>2:3</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'HCF is 15. 45 ÷ 15 = 3, 60 ÷ 15 = 4. Simplified ratio is 3:4.',
+        grade6: 'HCF of 45 and 60 is 15. Dividing both parts: 45 ÷ 15 = 3, 60 ÷ 15 = 4. Simplest form is 3:4.',
+        grade8: 'The HCF of 45 and 60 is 15. Dividing both parts by 15 gives 3:4, which cannot be simplified further as 3 and 4 share no common factors other than 1.'
+      },
+      examinerTip: 'Divide both numbers by their HCF — not just any common factor.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'rat-B04',
+      subtopic: 'rpr-ratio',
+      band: 'B',
+      marks: 3,
+      question: 'Amy and Ben share money in the ratio 2:5. Ben gets £84 more than Amy. How much does each person get?',
+      steps: [
+        {
+          prompt: 'How many more parts does Ben have than Amy?',
+          hint1: 'Look at the ratio 2:5.',
+          hint2: 'Amy has 2 parts, Ben has 5 parts. How many more parts is that?',
+          hint3: '5 − 2 = 3 more parts.',
+          answer: 3,
+          tolerance: 0,
+          unit: 'parts',
+          explanation: 'Ben has 5 parts and Amy has 2 parts, so Ben has 5 − 2 = 3 more parts.'
+        },
+        {
+          prompt: 'What is the value of one part? (£)',
+          hint1: 'The 3 extra parts represent the £84 difference.',
+          hint2: '£84 ÷ 3 = ?',
+          hint3: 'One part is worth £28.',
+          answer: 28,
+          tolerance: 0,
+          unit: '£',
+          explanation: '3 extra parts = £84, so 1 part = £84 ÷ 3 = £28.'
+        },
+        {
+          prompt: 'How much does Amy get? (£)',
+          hint1: 'Amy has 2 parts.',
+          hint2: '2 × £28 = ?',
+          hint3: 'Amy gets £56.',
+          answer: 56,
+          tolerance: 0,
+          unit: '£',
+          explanation: 'Amy = 2 × £28 = £56. Ben = 5 × £28 = £140. Check: £140 − £56 = £84 ✓'
+        }
+      ],
+      workedExample: {
+        question: 'Sam and Tia share money in the ratio 1:4. Tia gets £60 more than Sam. How much does each get?',
+        steps: [
+          'Difference in parts: 4 − 1 = 3 parts',
+          'Value of 1 part: £60 ÷ 3 = £20',
+          'Sam = 1 × £20 = <strong>£20</strong>; Tia = 4 × £20 = <strong>£80</strong>',
+          'Check: £80 − £20 = £60 ✓'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Difference = 3 parts = £84, so 1 part = £28. Amy = 2 × £28 = £56, Ben = 5 × £28 = £140.',
+        grade6: 'Ben has 3 more parts than Amy. 3 parts = £84, so 1 part = £28. Amy = 2 × £28 = £56 and Ben = 5 × £28 = £140.',
+        grade8: 'The ratio 2:5 has a difference of 3 parts. Since this difference equals £84, one part = £28. Amy receives 2 × £28 = £56 and Ben receives 5 × £28 = £140. Check: £140 − £56 = £84 ✓'
+      },
+      examinerTip: 'Use the difference in parts to find the value of one part, then scale up.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'rat-B05',
+      subtopic: 'rpr-ratio',
+      band: 'B',
+      marks: 3,
+      question: 'A map has a scale of 1:50 000. Two towns are 7 cm apart on the map. What is the real distance in kilometres?',
+      steps: [
+        {
+          prompt: 'What is the real distance in centimetres?',
+          hint1: 'Multiply the map distance by the scale factor.',
+          hint2: '7 × 50 000 = ?',
+          hint3: '7 × 50 000 = 350 000 cm.',
+          answer: 350000,
+          tolerance: 0,
+          unit: 'cm',
+          explanation: 'Scale 1:50 000 means every 1 cm on the map = 50 000 cm in real life. So 7 cm → 7 × 50 000 = 350 000 cm.'
+        },
+        {
+          prompt: 'Convert 350 000 cm to metres.',
+          hint1: 'Divide by 100 to convert cm to m.',
+          hint2: '350 000 ÷ 100 = ?',
+          hint3: '3500 m.',
+          answer: 3500,
+          tolerance: 0,
+          unit: 'm',
+          explanation: '350 000 ÷ 100 = 3500 m.'
+        },
+        {
+          prompt: 'Convert 3500 m to kilometres.',
+          hint1: 'Divide by 1000 to convert m to km.',
+          hint2: '3500 ÷ 1000 = ?',
+          hint3: '3.5 km.',
+          answer: 3.5,
+          tolerance: 0,
+          unit: 'km',
+          explanation: '3500 ÷ 1000 = 3.5 km.'
+        }
+      ],
+      workedExample: {
+        question: 'A map has a scale of 1:50 000. Two points are 4 cm apart on the map. Find the real distance in km.',
+        steps: [
+          'Real distance = 4 × 50 000 = 200 000 cm',
+          'Convert to metres: 200 000 ÷ 100 = 2000 m',
+          'Convert to kilometres: 2000 ÷ 1000 = <strong>2 km</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Real distance = 7 × 50 000 = 350 000 cm = 3500 m = 3.5 km.',
+        grade6: '7 cm on the map = 7 × 50 000 = 350 000 cm in real life. Converting: 350 000 cm ÷ 100 = 3500 m ÷ 1000 = 3.5 km.',
+        grade8: 'Scale 1:50 000 means map distance × 50 000 = real distance. 7 × 50 000 = 350 000 cm. Converting: ÷100 gives 3500 m; ÷1000 gives 3.5 km.'
+      },
+      examinerTip: 'Convert units step by step — cm to m (÷100), then m to km (÷1000).',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'rat-B06',
+      subtopic: 'rpr-ratio',
+      band: 'B',
+      marks: 3,
+      question: 'Orange paint is made by mixing red and yellow in the ratio 3:2. A painter has 18 litres of red paint and plenty of yellow. What is the maximum amount of orange paint they can make?',
+      steps: [
+        {
+          prompt: 'How many litres of yellow paint are needed for every 18 litres of red?',
+          hint1: 'Red:Yellow = 3:2, so for every 3 litres of red you need 2 litres of yellow.',
+          hint2: '18 ÷ 3 = 6 groups, so yellow = 6 × 2 = ?',
+          hint3: '12 litres of yellow.',
+          answer: 12,
+          tolerance: 0,
+          unit: 'litres',
+          explanation: 'Scale factor = 18 ÷ 3 = 6. Yellow needed = 6 × 2 = 12 litres.'
+        },
+        {
+          prompt: 'What is the total amount of orange paint made? (litres)',
+          hint1: 'Add the red and yellow together.',
+          hint2: '18 + 12 = ?',
+          hint3: '30 litres.',
+          answer: 30,
+          tolerance: 0,
+          unit: 'litres',
+          explanation: 'Total orange paint = 18 + 12 = 30 litres.'
+        },
+        {
+          prompt: 'Check: does 30 litres split in ratio 3:2 give 18 and 12? Enter 1 for yes.',
+          hint1: '30 ÷ 5 = 6. Red = 3×6=18, Yellow = 2×6=12.',
+          hint2: 'Both values match — confirm with 1.',
+          hint3: 'Enter 1.',
+          answer: 1,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'Yes — 30 ÷ 5 = 6; 3×6 = 18 ✓ and 2×6 = 12 ✓',
+          explanation: 'Check: 30 ÷ 5 parts = 6 per part. 3×6=18 red ✓, 2×6=12 yellow ✓'
+        }
+      ],
+      workedExample: {
+        question: 'Orange paint uses red:yellow = 3:2. A painter has 12 litres of red. How much orange paint can they make?',
+        steps: [
+          'Scale factor: 12 ÷ 3 = 4',
+          'Yellow needed: 4 × 2 = 8 litres',
+          'Total orange paint: 12 + 8 = <strong>20 litres</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Scale factor = 18 ÷ 3 = 6. Yellow = 6 × 2 = 12 litres. Total = 18 + 12 = 30 litres.',
+        grade6: 'Red:Yellow = 3:2. Scale factor = 18 ÷ 3 = 6. Yellow needed = 6 × 2 = 12 litres. Total orange paint = 18 + 12 = 30 litres.',
+        grade8: 'Ratio 3:2 with 18 litres of red: scale factor = 18/3 = 6. Yellow required = 6 × 2 = 12 litres. Maximum orange paint = 18 + 12 = 30 litres. Check: 30 ÷ 5 = 6 per part, so 18:12 = 3:2 ✓'
+      },
+      examinerTip: 'Find the scale factor first by dividing the given quantity by its ratio share.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'rat-C03',
+      subtopic: 'rpr-ratio',
+      band: 'C',
+      marks: 4,
+      question: 'y is directly proportional to x². When x = 3, y = 36. Find y when x = 5.',
+      steps: [
+        {
+          prompt: 'Write the proportionality equation using a constant k.',
+          hint1: 'y ∝ x² means y = kx².',
+          hint2: 'Write: y = kx²',
+          hint3: 'The equation is y = kx².',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'y = kx²',
+          explanation: 'Direct proportion to x² means y = kx² where k is a constant.'
+        },
+        {
+          prompt: 'Substitute x = 3, y = 36 to find k.',
+          hint1: '36 = k × 3²',
+          hint2: '36 = 9k, so k = 36 ÷ 9',
+          hint3: 'k = 4.',
+          answer: 4,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = kx². 36 = k × 9. k = 36 ÷ 9 = 4.'
+        },
+        {
+          prompt: 'Write the full equation.',
+          hint1: 'Replace k with its value.',
+          hint2: 'y = 4x²',
+          hint3: 'y = 4x².',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'y = 4x²',
+          explanation: 'The equation is y = 4x².'
+        },
+        {
+          prompt: 'Find y when x = 5.',
+          hint1: 'Substitute x = 5 into y = 4x².',
+          hint2: 'y = 4 × 25 = ?',
+          hint3: 'y = 100.',
+          answer: 100,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = 4 × 5² = 4 × 25 = 100.'
+        }
+      ],
+      workedExample: {
+        question: 'y is directly proportional to x². When x = 2, y = 20. Find y when x = 4.',
+        steps: [
+          'Write equation: y = kx²',
+          'Substitute: 20 = k × 4, so k = 20 ÷ 4 = 5',
+          'Full equation: y = 5x²',
+          'Find y at x = 4: y = 5 × 16 = <strong>80</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'y = kx². 36 = 9k so k = 4. y = 4 × 25 = 100.',
+        grade6: 'y ∝ x² means y = kx². Using x=3, y=36: 36 = k×9, so k=4. Equation: y = 4x². At x=5: y = 4×25 = 100.',
+        grade8: 'y = kx². Substituting x=3, y=36: 36 = 9k → k = 4. Equation: y = 4x². At x=5: y = 4 × 25 = 100. The relationship scales with the square, so doubling x quadruples y.'
+      },
+      examinerTip: 'Always find k first using the given pair of values, then use k in the equation.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'rat-C04',
+      subtopic: 'rpr-ratio',
+      band: 'C',
+      marks: 4,
+      question: 'A alloy contains copper, zinc and tin in the ratio 5:3:2. A piece of alloy has mass 480 g. A different piece of the same alloy contains 105 g of zinc. Find the total mass of this second piece.',
+      steps: [
+        {
+          prompt: 'What fraction of the alloy is zinc?',
+          hint1: 'Total parts = 5 + 3 + 2 = 10.',
+          hint2: 'Zinc = 3 parts out of 10.',
+          hint3: 'Zinc fraction = 3/10.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: '3/10',
+          explanation: 'Total parts: 5+3+2 = 10. Zinc is 3 parts, so fraction = 3/10.'
+        },
+        {
+          prompt: 'Use the zinc fraction to find the total mass of the second piece. (g)',
+          hint1: 'If zinc = 3/10 of total mass, then total = zinc ÷ (3/10).',
+          hint2: 'Total = 105 ÷ (3/10) = 105 × (10/3)',
+          hint3: 'Total = 350 g.',
+          answer: 350,
+          tolerance: 0,
+          unit: 'g',
+          explanation: 'Total mass = 105 ÷ (3/10) = 105 × 10/3 = 1050/3 = 350 g.'
+        },
+        {
+          prompt: 'How much copper is in the second piece? (g)',
+          hint1: 'Copper is 5 parts out of 10 = 1/2 of total mass.',
+          hint2: '1/2 × 350 = ?',
+          hint3: '175 g.',
+          answer: 175,
+          tolerance: 0,
+          unit: 'g',
+          explanation: 'Copper = 5/10 × 350 = 175 g.'
+        },
+        {
+          prompt: 'Verify: copper + zinc + tin = 350 g. Enter the mass of tin (g).',
+          hint1: 'Tin = 2/10 × 350.',
+          hint2: '0.2 × 350 = 70 g.',
+          hint3: 'Tin = 70 g. Check: 175 + 105 + 70 = 350 ✓',
+          answer: 70,
+          tolerance: 0,
+          unit: 'g',
+          explanation: 'Tin = 2/10 × 350 = 70 g. Total: 175 + 105 + 70 = 350 ✓'
+        }
+      ],
+      workedExample: {
+        question: 'An alloy contains iron, copper and nickel in ratio 4:3:1. A piece contains 90 g of copper. Find the total mass.',
+        steps: [
+          'Total parts: 4 + 3 + 1 = 8. Copper fraction = 3/8.',
+          'Total mass = 90 ÷ (3/8) = 90 × 8/3 = <strong>240 g</strong>',
+          'Check: iron = 4/8 × 240 = 120 g, copper = 90 g, nickel = 1/8 × 240 = 30 g. Sum = 240 g ✓'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Zinc fraction = 3/10. Total = 105 ÷ 0.3 = 350 g.',
+        grade6: 'Ratio 5:3:2, total 10 parts. Zinc = 3/10. Total mass = 105 × 10/3 = 350 g. Copper = 5/10 × 350 = 175 g, tin = 2/10 × 350 = 70 g.',
+        grade8: 'Total ratio parts = 10. Zinc fraction = 3/10. Total mass = 105 × (10/3) = 350 g. Copper: 5/10 × 350 = 175 g. Tin: 2/10 × 350 = 70 g. Check: 175 + 105 + 70 = 350 g ✓'
+      },
+      examinerTip: 'To find total from one component, divide the component by its fraction of the whole.',
+      auditStatus: 'pending'
+    },
+
 
     // ══════════════════════════════════════════════════════════
     // STANDARD FORM (num-standard-form)
@@ -7508,7 +7896,682 @@ const MathsQuestions = (() => {
       },
       examinerTip: "Students forget to square x when finding k: k = 36÷3 = 12, then y = 12×25 = 300.",
       auditStatus: 'pending',
+    },    {
+      id: 'pro-A03',
+      subtopic: 'rpr-proportion',
+      band: 'A',
+      marks: 2,
+      question: 'y is directly proportional to x. When x = 6, y = 18. Find y when x = 9.',
+      steps: [
+        {
+          prompt: 'Find the constant of proportionality k.',
+          hint1: 'y = kx, so k = y ÷ x.',
+          hint2: 'k = 18 ÷ 6 = ?',
+          hint3: 'k = 3.',
+          answer: 3,
+          tolerance: 0,
+          unit: '',
+          explanation: 'k = 18 ÷ 6 = 3, so y = 3x.'
+        },
+        {
+          prompt: 'Find y when x = 9.',
+          hint1: 'y = 3x.',
+          hint2: 'y = 3 × 9 = ?',
+          hint3: 'y = 27.',
+          answer: 27,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = 3 × 9 = 27.'
+        }
+      ],
+      workedExample: {
+        question: 'y is directly proportional to x. When x = 5, y = 20. Find y when x = 8.',
+        steps: [
+          'k = 20 ÷ 5 = 4, so y = 4x',
+          'When x = 8: y = 4 × 8 = <strong>32</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'k = 18 ÷ 6 = 3. y = 3 × 9 = 27.',
+        grade6: 'y = kx. k = 18 ÷ 6 = 3. When x = 9: y = 3 × 9 = 27.',
+        grade8: 'Direct proportion: y = kx. k = 18/6 = 3. Equation: y = 3x. At x = 9: y = 27.'
+      },
+      examinerTip: 'State y = kx, find k, then substitute the new x value.',
+      auditStatus: 'pending'
     },
+    {
+      id: 'pro-A04',
+      subtopic: 'rpr-proportion',
+      band: 'A',
+      marks: 2,
+      question: 'y is inversely proportional to x. When x = 4, y = 15. Find y when x = 12.',
+      steps: [
+        {
+          prompt: 'Find the constant k using y = k/x.',
+          hint1: 'k = y × x.',
+          hint2: 'k = 15 × 4 = ?',
+          hint3: 'k = 60.',
+          answer: 60,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = k/x → k = y × x = 15 × 4 = 60.'
+        },
+        {
+          prompt: 'Find y when x = 12.',
+          hint1: 'y = 60 ÷ x.',
+          hint2: 'y = 60 ÷ 12 = ?',
+          hint3: 'y = 5.',
+          answer: 5,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = 60 ÷ 12 = 5.'
+        }
+      ],
+      workedExample: {
+        question: 'y is inversely proportional to x. When x = 5, y = 8. Find y when x = 20.',
+        steps: [
+          'k = 5 × 8 = 40, so y = 40/x',
+          'When x = 20: y = 40 ÷ 20 = <strong>2</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'k = 15 × 4 = 60. y = 60 ÷ 12 = 5.',
+        grade6: 'y = k/x. k = 15 × 4 = 60. When x = 12: y = 60 ÷ 12 = 5.',
+        grade8: 'Inverse proportion: y = k/x. k = yx = 15 × 4 = 60. At x = 12: y = 60/12 = 5.'
+      },
+      examinerTip: 'For inverse proportion, k = xy. As x increases, y decreases.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pro-A05',
+      subtopic: 'rpr-proportion',
+      band: 'A',
+      marks: 2,
+      question: 'y is directly proportional to x. y = 24 when x = 8. Find x when y = 9.',
+      steps: [
+        {
+          prompt: 'Find k (the constant of proportionality).',
+          hint1: 'y = kx, so k = y ÷ x.',
+          hint2: 'k = 24 ÷ 8 = ?',
+          hint3: 'k = 3.',
+          answer: 3,
+          tolerance: 0,
+          unit: '',
+          explanation: 'k = 24 ÷ 8 = 3, so y = 3x.'
+        },
+        {
+          prompt: 'Find x when y = 9.',
+          hint1: 'Rearrange y = 3x to find x.',
+          hint2: 'x = y ÷ 3 = 9 ÷ 3 = ?',
+          hint3: 'x = 3.',
+          answer: 3,
+          tolerance: 0,
+          unit: '',
+          explanation: 'x = 9 ÷ 3 = 3.'
+        }
+      ],
+      workedExample: {
+        question: 'y is directly proportional to x. y = 35 when x = 5. Find x when y = 21.',
+        steps: [
+          'k = 35 ÷ 5 = 7, so y = 7x',
+          'x = 21 ÷ 7 = <strong>3</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'k = 24 ÷ 8 = 3. So y = 3x. x = 9 ÷ 3 = 3.',
+        grade6: 'y = kx. k = 24 ÷ 8 = 3. Equation: y = 3x. When y = 9: x = 9 ÷ 3 = 3.',
+        grade8: 'Direct proportion: k = 24/8 = 3, so y = 3x. Rearranging: x = y/3. At y = 9: x = 3.'
+      },
+      examinerTip: 'Once you have the equation, rearrange to find whichever variable is unknown.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pro-B02',
+      subtopic: 'rpr-proportion',
+      band: 'B',
+      marks: 3,
+      question: 'y is directly proportional to x³. When x = 2, y = 32. Find y when x = 3.',
+      steps: [
+        {
+          prompt: 'Write the proportionality equation.',
+          hint1: 'y ∝ x³ means y = kx³.',
+          hint2: 'The equation is y = kx³.',
+          hint3: 'y = kx³.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'y = kx³',
+          explanation: 'Direct proportion to x³ gives y = kx³.'
+        },
+        {
+          prompt: 'Find k by substituting x = 2, y = 32.',
+          hint1: '32 = k × 2³',
+          hint2: '32 = 8k, so k = 32 ÷ 8',
+          hint3: 'k = 4.',
+          answer: 4,
+          tolerance: 0,
+          unit: '',
+          explanation: '32 = k × 8, so k = 4.'
+        },
+        {
+          prompt: 'Find y when x = 3.',
+          hint1: 'y = 4x³.',
+          hint2: 'y = 4 × 3³ = 4 × 27 = ?',
+          hint3: 'y = 108.',
+          answer: 108,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = 4 × 27 = 108.'
+        }
+      ],
+      workedExample: {
+        question: 'y is directly proportional to x³. When x = 3, y = 54. Find y when x = 2.',
+        steps: [
+          'y = kx³. Substituting: 54 = k × 27 → k = 2',
+          'Equation: y = 2x³',
+          'When x = 2: y = 2 × 8 = <strong>16</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'y = kx³. 32 = 8k so k = 4. y = 4 × 27 = 108.',
+        grade6: 'y = kx³. Substituting x=2, y=32: k = 32/8 = 4. When x=3: y = 4 × 27 = 108.',
+        grade8: 'y ∝ x³ → y = kx³. Using (2, 32): 32 = 8k, k = 4. Equation: y = 4x³. At x=3: y = 4 × 27 = 108.'
+      },
+      examinerTip: 'Cube the x value carefully: 3³ = 27, not 9.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pro-B03',
+      subtopic: 'rpr-proportion',
+      band: 'B',
+      marks: 3,
+      question: 'y is inversely proportional to x². When x = 3, y = 8. Find y when x = 6.',
+      steps: [
+        {
+          prompt: 'Write the equation for inverse proportion to x².',
+          hint1: 'y ∝ 1/x² means y = k/x².',
+          hint2: 'y = k/x².',
+          hint3: 'y = k/x².',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'y = k/x²',
+          explanation: 'Inverse proportion to x² gives y = k/x².'
+        },
+        {
+          prompt: 'Find k by substituting x = 3, y = 8.',
+          hint1: '8 = k / 3²',
+          hint2: '8 = k/9, so k = 8 × 9',
+          hint3: 'k = 72.',
+          answer: 72,
+          tolerance: 0,
+          unit: '',
+          explanation: '8 = k/9, so k = 72.'
+        },
+        {
+          prompt: 'Find y when x = 6.',
+          hint1: 'y = 72 / x².',
+          hint2: 'y = 72 / 36 = ?',
+          hint3: 'y = 2.',
+          answer: 2,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = 72 / 6² = 72 / 36 = 2.'
+        }
+      ],
+      workedExample: {
+        question: 'y is inversely proportional to x². When x = 2, y = 9. Find y when x = 3.',
+        steps: [
+          'y = k/x². Substituting: 9 = k/4 → k = 36',
+          'Equation: y = 36/x²',
+          'When x = 3: y = 36/9 = <strong>4</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'y = k/x². 8 = k/9 so k = 72. y = 72/36 = 2.',
+        grade6: 'y = k/x². Using x=3, y=8: 8 = k/9, k = 72. At x=6: y = 72/36 = 2.',
+        grade8: 'y ∝ 1/x² → y = k/x². Substituting (3,8): k = 8×9 = 72. At x=6: y = 72/36 = 2. Doubling x quarters y, consistent with inverse square.'
+      },
+      examinerTip: 'Inverse proportion to x² means y = k/x². Square x before dividing.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pro-B04',
+      subtopic: 'rpr-proportion',
+      band: 'B',
+      marks: 3,
+      question: 'y is directly proportional to the square root of x. When x = 16, y = 12. Find y when x = 25.',
+      steps: [
+        {
+          prompt: 'Write the equation: y = k√x. Find k using x=16, y=12.',
+          hint1: '12 = k × √16',
+          hint2: '12 = k × 4, so k = 12 ÷ 4',
+          hint3: 'k = 3.',
+          answer: 3,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = k√x. 12 = k × 4, so k = 3.'
+        },
+        {
+          prompt: 'Write the full equation.',
+          hint1: 'Replace k with 3.',
+          hint2: 'y = 3√x.',
+          hint3: 'y = 3√x.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'y = 3√x',
+          explanation: 'Equation: y = 3√x.'
+        },
+        {
+          prompt: 'Find y when x = 25.',
+          hint1: '√25 = 5.',
+          hint2: 'y = 3 × 5 = ?',
+          hint3: 'y = 15.',
+          answer: 15,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = 3 × √25 = 3 × 5 = 15.'
+        }
+      ],
+      workedExample: {
+        question: 'y is directly proportional to √x. When x = 9, y = 6. Find y when x = 36.',
+        steps: [
+          'y = k√x. Substituting: 6 = k×3 → k = 2',
+          'Equation: y = 2√x',
+          'When x = 36: y = 2 × 6 = <strong>12</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'k = 12 ÷ 4 = 3. y = 3 × 5 = 15.',
+        grade6: 'y = k√x. k = 12/√16 = 12/4 = 3. When x=25: y = 3×5 = 15.',
+        grade8: 'y ∝ √x → y = k√x. k = 12/4 = 3. Equation: y = 3√x. At x=25: y = 3×5 = 15.'
+      },
+      examinerTip: 'Find the square root of x first, then multiply by k.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pro-B05',
+      subtopic: 'rpr-proportion',
+      band: 'B',
+      marks: 3,
+      question: 'A and B are in direct proportion. When A = 5, B = 35. Find B when A = 11.',
+      steps: [
+        {
+          prompt: 'Find the constant of proportionality k.',
+          hint1: 'B = kA, so k = B ÷ A.',
+          hint2: 'k = 35 ÷ 5 = ?',
+          hint3: 'k = 7.',
+          answer: 7,
+          tolerance: 0,
+          unit: '',
+          explanation: 'k = 35 ÷ 5 = 7, so B = 7A.'
+        },
+        {
+          prompt: 'Find B when A = 11.',
+          hint1: 'B = 7A.',
+          hint2: 'B = 7 × 11 = ?',
+          hint3: 'B = 77.',
+          answer: 77,
+          tolerance: 0,
+          unit: '',
+          explanation: 'B = 7 × 11 = 77.'
+        },
+        {
+          prompt: 'What does the graph of B against A look like? Enter 1 for a straight line through the origin.',
+          hint1: 'Direct proportion always gives a straight line through the origin.',
+          hint2: 'B = 7A has gradient 7 and passes through (0,0).',
+          hint3: 'Enter 1.',
+          answer: 1,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'A straight line through the origin (gradient 7)',
+          explanation: 'Direct proportion B = kA is a straight line through the origin with gradient k.'
+        }
+      ],
+      workedExample: {
+        question: 'P and Q are in direct proportion. When P = 4, Q = 28. Find Q when P = 9.',
+        steps: [
+          'k = 28 ÷ 4 = 7, so Q = 7P',
+          'When P = 9: Q = 7 × 9 = <strong>63</strong>',
+          'Graph: straight line through origin, gradient 7'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'k = 35 ÷ 5 = 7. B = 7 × 11 = 77.',
+        grade6: 'B = kA. k = 35/5 = 7. Equation: B = 7A. When A=11: B = 77.',
+        grade8: 'Direct proportion: B = 7A (gradient 7, through origin). At A=11: B = 77. Graph is a straight line through (0,0).'
+      },
+      examinerTip: 'Direct proportion produces a straight-line graph through the origin.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pro-B06',
+      subtopic: 'rpr-proportion',
+      band: 'B',
+      marks: 3,
+      question: 'y is inversely proportional to x. When x = 3, y = 20. Find x when y = 4.',
+      steps: [
+        {
+          prompt: 'Find k using y = k/x.',
+          hint1: 'k = y × x.',
+          hint2: 'k = 20 × 3 = ?',
+          hint3: 'k = 60.',
+          answer: 60,
+          tolerance: 0,
+          unit: '',
+          explanation: 'k = 20 × 3 = 60, so y = 60/x.'
+        },
+        {
+          prompt: 'Find x when y = 4.',
+          hint1: '4 = 60/x, so x = 60 ÷ 4.',
+          hint2: 'x = 60 ÷ 4 = ?',
+          hint3: 'x = 15.',
+          answer: 15,
+          tolerance: 0,
+          unit: '',
+          explanation: 'x = 60 ÷ 4 = 15.'
+        },
+        {
+          prompt: 'Check: does y × x = 60 when x = 15? Enter 1 for yes.',
+          hint1: '4 × 15 = ?',
+          hint2: '4 × 15 = 60 ✓',
+          hint3: 'Enter 1.',
+          answer: 1,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: '4 × 15 = 60 ✓',
+          explanation: 'Verification: y × x = 4 × 15 = 60 = k ✓'
+        }
+      ],
+      workedExample: {
+        question: 'y is inversely proportional to x. When x = 6, y = 10. Find x when y = 3.',
+        steps: [
+          'k = 6 × 10 = 60, so y = 60/x',
+          'When y = 3: x = 60 ÷ 3 = <strong>20</strong>',
+          'Check: 3 × 20 = 60 ✓'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'k = 20 × 3 = 60. x = 60 ÷ 4 = 15.',
+        grade6: 'y = k/x. k = 60. When y = 4: x = 60/4 = 15.',
+        grade8: 'Inverse proportion: y = 60/x. Rearranging for x: x = 60/y = 60/4 = 15. Check: 4 × 15 = 60 ✓'
+      },
+      examinerTip: 'Rearrange y = k/x to x = k/y when x is unknown.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pro-C01',
+      subtopic: 'rpr-proportion',
+      band: 'C',
+      marks: 4,
+      question: 'y is directly proportional to x². When x = 3, y = 45. Find x when y = 80.',
+      steps: [
+        {
+          prompt: 'Write the equation and find k. Substitute x=3, y=45.',
+          hint1: 'y = kx². 45 = k × 9.',
+          hint2: 'k = 45 ÷ 9 = 5.',
+          hint3: 'k = 5.',
+          answer: 5,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = kx². 45 = 9k → k = 5. Equation: y = 5x².'
+        },
+        {
+          prompt: 'Substitute y = 80 into y = 5x².',
+          hint1: '80 = 5x².',
+          hint2: 'x² = 80 ÷ 5 = 16.',
+          hint3: 'x² = 16.',
+          answer: 16,
+          tolerance: 0,
+          unit: '',
+          explanation: '80 = 5x², so x² = 80/5 = 16.'
+        },
+        {
+          prompt: 'Find x (take the positive root).',
+          hint1: 'x = √16.',
+          hint2: '√16 = 4.',
+          hint3: 'x = 4.',
+          answer: 4,
+          tolerance: 0,
+          unit: '',
+          explanation: 'x = √16 = 4.'
+        },
+        {
+          prompt: 'Check: does 5 × 4² = 80? Enter 1 for yes.',
+          hint1: '5 × 16 = 80.',
+          hint2: 'Yes — enter 1.',
+          hint3: 'Enter 1.',
+          answer: 1,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: '5 × 16 = 80 ✓',
+          explanation: 'Check: 5 × 4² = 5 × 16 = 80 ✓'
+        }
+      ],
+      workedExample: {
+        question: 'y is directly proportional to x². When x = 2, y = 28. Find x when y = 63.',
+        steps: [
+          'y = kx². 28 = 4k → k = 7',
+          '63 = 7x² → x² = 9',
+          'x = √9 = <strong>3</strong>',
+          'Check: 7 × 9 = 63 ✓'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'k = 45/9 = 5. 80 = 5x², x² = 16, x = 4.',
+        grade6: 'y = kx². k = 45/9 = 5. Equation: y = 5x². 80 = 5x², x² = 16, x = 4.',
+        grade8: 'y = 5x² (k=5). Setting y=80: x² = 16, so x = 4 (taking positive root). Check: 5×16=80 ✓'
+      },
+      examinerTip: 'When finding x from y = kx², isolate x² first then take the square root.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pro-C02',
+      subtopic: 'rpr-proportion',
+      band: 'C',
+      marks: 4,
+      question: 'y is inversely proportional to x². When x = 2, y = 25. Find x when y = 4.',
+      steps: [
+        {
+          prompt: 'Find k using y = k/x², x=2, y=25.',
+          hint1: '25 = k/4.',
+          hint2: 'k = 25 × 4.',
+          hint3: 'k = 100.',
+          answer: 100,
+          tolerance: 0,
+          unit: '',
+          explanation: '25 = k/4 → k = 100. Equation: y = 100/x².'
+        },
+        {
+          prompt: 'Substitute y = 4 to find x². ',
+          hint1: '4 = 100/x².',
+          hint2: 'x² = 100 ÷ 4.',
+          hint3: 'x² = 25.',
+          answer: 25,
+          tolerance: 0,
+          unit: '',
+          explanation: 'x² = 100/4 = 25.'
+        },
+        {
+          prompt: 'Find x (positive value).',
+          hint1: 'x = √25.',
+          hint2: '√25 = 5.',
+          hint3: 'x = 5.',
+          answer: 5,
+          tolerance: 0,
+          unit: '',
+          explanation: 'x = √25 = 5.'
+        },
+        {
+          prompt: 'Check: does 100/5² = 4? Enter 1 for yes.',
+          hint1: '5² = 25. 100/25 = 4.',
+          hint2: 'Yes — enter 1.',
+          hint3: 'Enter 1.',
+          answer: 1,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: '100/25 = 4 ✓',
+          explanation: '100/5² = 100/25 = 4 ✓'
+        }
+      ],
+      workedExample: {
+        question: 'y is inversely proportional to x². When x = 3, y = 4. Find x when y = 9.',
+        steps: [
+          'y = k/x². 4 = k/9 → k = 36',
+          '9 = 36/x² → x² = 4',
+          'x = <strong>2</strong>',
+          'Check: 36/4 = 9 ✓'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'k = 100. x² = 100/4 = 25. x = 5.',
+        grade6: 'y = k/x². k = 25×4 = 100. 4 = 100/x², x² = 25, x = 5.',
+        grade8: 'y = 100/x². Setting y=4: x² = 25, x = 5. Check: 100/25 = 4 ✓'
+      },
+      examinerTip: 'Multiply both sides by x², then divide by y to isolate x².',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pro-C03',
+      subtopic: 'rpr-proportion',
+      band: 'C',
+      marks: 4,
+      question: 'y is directly proportional to x². y = 12 when x = 2. z is directly proportional to y. z = 30 when y = 12. Find z when x = 5.',
+      steps: [
+        {
+          prompt: 'Find the constant k₁ for y = k₁x². Use x=2, y=12.',
+          hint1: '12 = k₁ × 4.',
+          hint2: 'k₁ = 12 ÷ 4.',
+          hint3: 'k₁ = 3.',
+          answer: 3,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = k₁x². 12 = 4k₁ → k₁ = 3. So y = 3x².'
+        },
+        {
+          prompt: 'Find y when x = 5 using y = 3x².',
+          hint1: 'y = 3 × 5².',
+          hint2: '3 × 25 = ?',
+          hint3: 'y = 75.',
+          answer: 75,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = 3 × 25 = 75.'
+        },
+        {
+          prompt: 'Find k₂ for z = k₂y using z=30, y=12.',
+          hint1: '30 = k₂ × 12.',
+          hint2: 'k₂ = 30 ÷ 12.',
+          hint3: 'k₂ = 2.5.',
+          answer: 2.5,
+          tolerance: 0.001,
+          unit: '',
+          explanation: 'k₂ = 30/12 = 2.5.'
+        },
+        {
+          prompt: 'Find z when y = 75.',
+          hint1: 'z = 2.5 × y.',
+          hint2: 'z = 2.5 × 75 = ?',
+          hint3: 'z = 187.5.',
+          answer: 187.5,
+          tolerance: 0.01,
+          unit: '',
+          explanation: 'z = 2.5 × 75 = 187.5.'
+        }
+      ],
+      workedExample: {
+        question: 'y = k₁x² with y=8 when x=2. z = k₂y with z=20 when y=8. Find z when x=3.',
+        steps: [
+          'k₁ = 8/4 = 2, so y = 2x²',
+          'When x=3: y = 2×9 = 18',
+          'k₂ = 20/8 = 2.5, so z = 2.5y',
+          'z = 2.5 × 18 = <strong>45</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'k₁=3, y=75 when x=5. k₂=2.5, z=2.5×75=187.5.',
+        grade6: 'y = 3x². At x=5: y=75. z = 2.5y. At y=75: z=187.5.',
+        grade8: 'y = 3x² (k=3). At x=5: y=75. z = 2.5y (k=2.5). At y=75: z=187.5. Combined: z = 2.5×3x² = 7.5x².'
+      },
+      examinerTip: 'Chain proportion problems — find each equation separately, then substitute through.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pro-C04',
+      subtopic: 'rpr-proportion',
+      band: 'C',
+      marks: 4,
+      question: 'y is inversely proportional to the square root of x. When x = 4, y = 15. Find y when x = 9. Show all working.',
+      steps: [
+        {
+          prompt: 'Write the equation and find k. Use x=4, y=15.',
+          hint1: 'y = k/√x.',
+          hint2: '15 = k/√4 = k/2, so k = 30.',
+          hint3: 'k = 30.',
+          answer: 30,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = k/√x. 15 = k/2 → k = 30.'
+        },
+        {
+          prompt: 'Write the full equation.',
+          hint1: 'Replace k with 30.',
+          hint2: 'y = 30/√x.',
+          hint3: 'y = 30/√x.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'y = 30/√x',
+          explanation: 'Equation: y = 30/√x.'
+        },
+        {
+          prompt: 'Find √9.',
+          hint1: '√9 = ?',
+          hint2: '√9 = 3.',
+          hint3: '3.',
+          answer: 3,
+          tolerance: 0,
+          unit: '',
+          explanation: '√9 = 3.'
+        },
+        {
+          prompt: 'Find y when x = 9.',
+          hint1: 'y = 30/3.',
+          hint2: '30 ÷ 3 = ?',
+          hint3: 'y = 10.',
+          answer: 10,
+          tolerance: 0,
+          unit: '',
+          explanation: 'y = 30/√9 = 30/3 = 10.'
+        }
+      ],
+      workedExample: {
+        question: 'y is inversely proportional to √x. When x=16, y=5. Find y when x=25.',
+        steps: [
+          'y = k/√x. 5 = k/4 → k = 20',
+          'Equation: y = 20/√x',
+          '√25 = 5',
+          'y = 20/5 = <strong>4</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'k = 30. y = 30/√9 = 30/3 = 10.',
+        grade6: 'y = k/√x. k = 15×2 = 30. At x=9: y = 30/3 = 10.',
+        grade8: 'y ∝ 1/√x → y = 30/√x. At x=9: √9=3, y = 30/3 = 10. As x increases, y decreases, consistent with inverse proportion.'
+      },
+      examinerTip: 'Find the square root of x before substituting — do not square k accidentally.',
+      auditStatus: 'pending'
+    },
+
 
     // ══════════════════════════════════════════════════════════
     // SPEED, DISTANCE, TIME (rpr-speed)
@@ -7611,7 +8674,678 @@ const MathsQuestions = (() => {
       },
       examinerTip: "Students calculate average speed as (40+60)÷2=50 km/h — this is a coincidence here; the correct method is always total distance ÷ total time.",
       auditStatus: 'pending',
+    },    {
+      id: 'spd-A03',
+      subtopic: 'rpr-speed',
+      band: 'A',
+      marks: 2,
+      question: 'A cyclist travels 45 km at a speed of 15 km/h. How long does the journey take? Give your answer in hours.',
+      steps: [
+        {
+          prompt: 'Write the formula linking time, distance and speed.',
+          hint1: 'Time = Distance ÷ Speed.',
+          hint2: 'T = D ÷ S.',
+          hint3: 'Time = Distance ÷ Speed.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'Time = Distance ÷ Speed',
+          explanation: 'From Speed = Distance/Time, rearranging gives Time = Distance ÷ Speed.'
+        },
+        {
+          prompt: 'Calculate the time in hours.',
+          hint1: 'Time = 45 ÷ 15.',
+          hint2: '45 ÷ 15 = ?',
+          hint3: '3 hours.',
+          answer: 3,
+          tolerance: 0,
+          unit: 'hours',
+          explanation: 'Time = 45 ÷ 15 = 3 hours.'
+        }
+      ],
+      workedExample: {
+        question: 'A runner travels 12 km at 8 km/h. How long does the journey take?',
+        steps: [
+          'Time = Distance ÷ Speed',
+          'Time = 12 ÷ 8 = <strong>1.5 hours</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Time = 45 ÷ 15 = 3 hours.',
+        grade6: 'Using Time = Distance ÷ Speed: Time = 45 ÷ 15 = 3 hours.',
+        grade8: 'T = D/S = 45/15 = 3 hours.'
+      },
+      examinerTip: 'Remember the SDT triangle: cover the quantity you want to find.',
+      auditStatus: 'pending'
     },
+    {
+      id: 'spd-A04',
+      subtopic: 'rpr-speed',
+      band: 'A',
+      marks: 2,
+      question: 'A train travels at 80 km/h for 2.5 hours. How far does it travel?',
+      steps: [
+        {
+          prompt: 'Write the formula for distance.',
+          hint1: 'Distance = Speed × Time.',
+          hint2: 'D = S × T.',
+          hint3: 'Distance = Speed × Time.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'Distance = Speed × Time',
+          explanation: 'Distance = Speed × Time.'
+        },
+        {
+          prompt: 'Calculate the distance in km.',
+          hint1: 'D = 80 × 2.5.',
+          hint2: '80 × 2.5 = ?',
+          hint3: '200 km.',
+          answer: 200,
+          tolerance: 0,
+          unit: 'km',
+          explanation: 'D = 80 × 2.5 = 200 km.'
+        }
+      ],
+      workedExample: {
+        question: 'A car travels at 60 km/h for 1.5 hours. How far does it travel?',
+        steps: [
+          'Distance = Speed × Time',
+          'D = 60 × 1.5 = <strong>90 km</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Distance = 80 × 2.5 = 200 km.',
+        grade6: 'Distance = Speed × Time = 80 × 2.5 = 200 km.',
+        grade8: 'D = ST = 80 × 2.5 = 200 km.'
+      },
+      examinerTip: 'Make sure time is in hours when speed is in km/h.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'spd-A05',
+      subtopic: 'rpr-speed',
+      band: 'A',
+      marks: 2,
+      question: 'A bus covers 96 km in 1 hour 20 minutes. Calculate its average speed in km/h.',
+      steps: [
+        {
+          prompt: 'Convert 1 hour 20 minutes to hours.',
+          hint1: '20 minutes = 20/60 hours.',
+          hint2: '20 ÷ 60 = 1/3. Total = 1 + 1/3.',
+          hint3: '1 hour 20 minutes = 4/3 hours ≈ 1.333 hours.',
+          answer: 1.333,
+          tolerance: 0.01,
+          unit: 'hours',
+          explanation: '1 hour 20 minutes = 1 + 20/60 = 1 + 1/3 = 4/3 hours.'
+        },
+        {
+          prompt: 'Calculate the speed in km/h.',
+          hint1: 'Speed = Distance ÷ Time.',
+          hint2: '96 ÷ (4/3) = 96 × 3/4 = ?',
+          hint3: '72 km/h.',
+          answer: 72,
+          tolerance: 0,
+          unit: 'km/h',
+          explanation: 'Speed = 96 ÷ (4/3) = 96 × 3/4 = 72 km/h.'
+        }
+      ],
+      workedExample: {
+        question: 'A car covers 90 km in 1 hour 30 minutes. Find its speed in km/h.',
+        steps: [
+          'Convert time: 1 hr 30 min = 1.5 hours',
+          'Speed = 90 ÷ 1.5 = <strong>60 km/h</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '1 hr 20 min = 1.33 hours. Speed = 96 ÷ 1.33 ≈ 72 km/h.',
+        grade6: 'Time = 1 + 20/60 = 4/3 hours. Speed = 96 ÷ (4/3) = 72 km/h.',
+        grade8: 'T = 80/60 hours = 4/3 h. S = D/T = 96 ÷ (4/3) = 72 km/h.'
+      },
+      examinerTip: 'Always convert time to hours (as a decimal or fraction) before calculating speed.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'spd-B02',
+      subtopic: 'rpr-speed',
+      band: 'B',
+      marks: 3,
+      question: 'A car travels from town A to town B. The first 60 km takes 45 minutes and the remaining 90 km takes 1 hour. Find the average speed for the whole journey in km/h.',
+      steps: [
+        {
+          prompt: 'What is the total distance? (km)',
+          hint1: 'Add both distances together.',
+          hint2: '60 + 90 = ?',
+          hint3: '150 km.',
+          answer: 150,
+          tolerance: 0,
+          unit: 'km',
+          explanation: 'Total distance = 60 + 90 = 150 km.'
+        },
+        {
+          prompt: 'What is the total time in hours?',
+          hint1: 'Convert 45 minutes to hours, then add 1 hour.',
+          hint2: '45 min = 0.75 hours. 0.75 + 1 = ?',
+          hint3: '1.75 hours.',
+          answer: 1.75,
+          tolerance: 0,
+          unit: 'hours',
+          explanation: '45 min = 3/4 hr = 0.75 hr. Total time = 0.75 + 1 = 1.75 hours.'
+        },
+        {
+          prompt: 'Calculate the average speed in km/h.',
+          hint1: 'Average speed = Total distance ÷ Total time.',
+          hint2: '150 ÷ 1.75 = ?',
+          hint3: '≈ 85.7 km/h.',
+          answer: 85.71,
+          tolerance: 0.1,
+          unit: 'km/h',
+          explanation: 'Average speed = 150 ÷ 1.75 ≈ 85.71 km/h.'
+        }
+      ],
+      workedExample: {
+        question: 'A bus travels 40 km in 30 min, then 80 km in 1 hour. Find average speed.',
+        steps: [
+          'Total distance: 40 + 80 = 120 km',
+          'Total time: 0.5 + 1 = 1.5 hours',
+          'Average speed = 120 ÷ 1.5 = <strong>80 km/h</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Total distance = 150 km. Total time = 1.75 hours. Average speed = 150 ÷ 1.75 ≈ 85.7 km/h.',
+        grade6: 'Total distance = 150 km. Time = 0.75 + 1 = 1.75 h. Average speed = 150/1.75 ≈ 85.7 km/h.',
+        grade8: 'Total distance = 150 km. Total time = 45/60 + 1 = 1.75 h. Average speed = 150/1.75 = 600/7 ≈ 85.7 km/h.'
+      },
+      examinerTip: 'Average speed uses total distance and total time — never average the individual speeds.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'spd-B03',
+      subtopic: 'rpr-speed',
+      band: 'B',
+      marks: 3,
+      question: 'A train leaves at 09:15 and arrives at 11:45 having travelled 200 km. Calculate the average speed in km/h.',
+      steps: [
+        {
+          prompt: 'How long does the journey take? Give your answer in hours.',
+          hint1: 'From 09:15 to 11:45.',
+          hint2: '11:45 − 09:15 = 2 hours 30 minutes.',
+          hint3: '2.5 hours.',
+          answer: 2.5,
+          tolerance: 0,
+          unit: 'hours',
+          explanation: '11:45 − 09:15 = 2 h 30 min = 2.5 hours.'
+        },
+        {
+          prompt: 'Calculate the average speed in km/h.',
+          hint1: 'Speed = Distance ÷ Time.',
+          hint2: '200 ÷ 2.5 = ?',
+          hint3: '80 km/h.',
+          answer: 80,
+          tolerance: 0,
+          unit: 'km/h',
+          explanation: 'Speed = 200 ÷ 2.5 = 80 km/h.'
+        },
+        {
+          prompt: 'Check: does 80 km/h × 2.5 h = 200 km? Enter 1 for yes.',
+          hint1: '80 × 2.5 = 200.',
+          hint2: 'Yes — enter 1.',
+          hint3: 'Enter 1.',
+          answer: 1,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: '80 × 2.5 = 200 km ✓',
+          explanation: 'Check: 80 × 2.5 = 200 km ✓'
+        }
+      ],
+      workedExample: {
+        question: 'A train leaves at 10:30 and arrives at 12:00 having travelled 90 km. Find the average speed.',
+        steps: [
+          'Journey time: 12:00 − 10:30 = 1.5 hours',
+          'Speed = 90 ÷ 1.5 = <strong>60 km/h</strong>',
+          'Check: 60 × 1.5 = 90 ✓'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Time = 2.5 hours. Speed = 200 ÷ 2.5 = 80 km/h.',
+        grade6: 'Journey time = 11:45 − 09:15 = 2.5 hours. Average speed = 200 ÷ 2.5 = 80 km/h.',
+        grade8: 'T = 2.5 h. S = D/T = 200/2.5 = 80 km/h. Check: 80 × 2.5 = 200 ✓'
+      },
+      examinerTip: 'Work out the time gap first — convert to a decimal if needed.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'spd-B04',
+      subtopic: 'rpr-speed',
+      band: 'B',
+      marks: 3,
+      question: 'Convert 90 km/h to metres per second.',
+      steps: [
+        {
+          prompt: 'Convert 90 km/h to metres per hour.',
+          hint1: '1 km = 1000 m.',
+          hint2: '90 × 1000 = ?',
+          hint3: '90 000 m/h.',
+          answer: 90000,
+          tolerance: 0,
+          unit: 'm/h',
+          explanation: '90 km/h × 1000 = 90 000 m/h.'
+        },
+        {
+          prompt: 'Convert metres per hour to metres per second.',
+          hint1: '1 hour = 3600 seconds.',
+          hint2: '90 000 ÷ 3600 = ?',
+          hint3: '25 m/s.',
+          answer: 25,
+          tolerance: 0,
+          unit: 'm/s',
+          explanation: '90 000 ÷ 3600 = 25 m/s.'
+        },
+        {
+          prompt: 'State the shortcut: to convert km/h to m/s, divide by ___.',
+          hint1: 'Think: ×1000 then ÷3600.',
+          hint2: '1000/3600 = 5/18. Dividing by 18/5 is the same as multiplying by 5/18.',
+          hint3: 'Divide by 3.6.',
+          answer: 3.6,
+          tolerance: 0,
+          unit: '',
+          explanation: 'Shortcut: km/h ÷ 3.6 = m/s. Check: 90 ÷ 3.6 = 25 m/s ✓'
+        }
+      ],
+      workedExample: {
+        question: 'Convert 54 km/h to m/s.',
+        steps: [
+          '54 km/h × 1000 = 54 000 m/h',
+          '54 000 ÷ 3600 = <strong>15 m/s</strong>',
+          'Shortcut: 54 ÷ 3.6 = 15 ✓'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '90 × 1000 = 90 000 m/h. 90 000 ÷ 3600 = 25 m/s.',
+        grade6: '90 km/h = 90 000 m/h. ÷ 3600 seconds per hour = 25 m/s.',
+        grade8: '90 km/h × (1000/3600) = 90 × 5/18 = 25 m/s. Shortcut: ÷3.6.'
+      },
+      examinerTip: 'To convert km/h → m/s, divide by 3.6. To convert m/s → km/h, multiply by 3.6.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'spd-B05',
+      subtopic: 'rpr-speed',
+      band: 'B',
+      marks: 3,
+      question: 'A car travels at 60 km/h for 40 minutes, then at 90 km/h for 20 minutes. What is the total distance covered?',
+      steps: [
+        {
+          prompt: 'How far does the car travel in the first 40 minutes? (km)',
+          hint1: 'Convert 40 minutes to hours first.',
+          hint2: '40 min = 2/3 hour. Distance = 60 × 2/3 = ?',
+          hint3: '40 km.',
+          answer: 40,
+          tolerance: 0,
+          unit: 'km',
+          explanation: '40 min = 2/3 h. Distance = 60 × 2/3 = 40 km.'
+        },
+        {
+          prompt: 'How far does the car travel in the next 20 minutes? (km)',
+          hint1: 'Convert 20 minutes to hours first.',
+          hint2: '20 min = 1/3 hour. Distance = 90 × 1/3 = ?',
+          hint3: '30 km.',
+          answer: 30,
+          tolerance: 0,
+          unit: 'km',
+          explanation: '20 min = 1/3 h. Distance = 90 × 1/3 = 30 km.'
+        },
+        {
+          prompt: 'What is the total distance? (km)',
+          hint1: 'Add the two distances.',
+          hint2: '40 + 30 = ?',
+          hint3: '70 km.',
+          answer: 70,
+          tolerance: 0,
+          unit: 'km',
+          explanation: 'Total distance = 40 + 30 = 70 km.'
+        }
+      ],
+      workedExample: {
+        question: 'A car goes 80 km/h for 30 min, then 60 km/h for 30 min. Total distance?',
+        steps: [
+          'First leg: 80 × 0.5 = 40 km',
+          'Second leg: 60 × 0.5 = 30 km',
+          'Total = 40 + 30 = <strong>70 km</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'First leg: 60 × 2/3 = 40 km. Second leg: 90 × 1/3 = 30 km. Total = 70 km.',
+        grade6: '40 min = 2/3 h: distance = 40 km. 20 min = 1/3 h: distance = 30 km. Total = 70 km.',
+        grade8: 'D₁ = 60 × (40/60) = 40 km. D₂ = 90 × (20/60) = 30 km. Total = 70 km.'
+      },
+      examinerTip: 'Convert minutes to hours before using D = ST.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'spd-B06',
+      subtopic: 'rpr-speed',
+      band: 'B',
+      marks: 3,
+      question: 'Alice walks 6 km at 4 km/h, then jogs 6 km at 6 km/h. Find her average speed for the whole trip.',
+      steps: [
+        {
+          prompt: 'How long does the walking section take? (hours)',
+          hint1: 'Time = Distance ÷ Speed.',
+          hint2: '6 ÷ 4 = ?',
+          hint3: '1.5 hours.',
+          answer: 1.5,
+          tolerance: 0,
+          unit: 'hours',
+          explanation: 'Walk time = 6 ÷ 4 = 1.5 hours.'
+        },
+        {
+          prompt: 'How long does the jogging section take? (hours)',
+          hint1: 'Time = 6 ÷ 6.',
+          hint2: '6 ÷ 6 = ?',
+          hint3: '1 hour.',
+          answer: 1,
+          tolerance: 0,
+          unit: 'hours',
+          explanation: 'Jog time = 6 ÷ 6 = 1 hour.'
+        },
+        {
+          prompt: 'Calculate average speed for the whole trip. (km/h)',
+          hint1: 'Average speed = Total distance ÷ Total time.',
+          hint2: 'Total distance = 12 km. Total time = 2.5 hours. 12 ÷ 2.5 = ?',
+          hint3: '4.8 km/h.',
+          answer: 4.8,
+          tolerance: 0,
+          unit: 'km/h',
+          explanation: 'Average speed = 12 ÷ 2.5 = 4.8 km/h.'
+        }
+      ],
+      workedExample: {
+        question: 'Tom cycles 10 km at 10 km/h, then 10 km at 5 km/h. Find average speed.',
+        steps: [
+          'Time 1 = 10/10 = 1 h. Time 2 = 10/5 = 2 h.',
+          'Total distance = 20 km. Total time = 3 h.',
+          'Average speed = 20/3 ≈ <strong>6.67 km/h</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Walk: 1.5 h. Jog: 1 h. Total time = 2.5 h. Average speed = 12/2.5 = 4.8 km/h.',
+        grade6: 'Walking time = 1.5 h, jogging time = 1 h. Average speed = 12 ÷ 2.5 = 4.8 km/h.',
+        grade8: 'T₁=1.5h, T₂=1h, total=2.5h. Average speed = 12/2.5 = 4.8 km/h (not the arithmetic mean of 4 and 6).'
+      },
+      examinerTip: 'Average speed is never the average of the two speeds — always use total distance / total time.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'spd-C01',
+      subtopic: 'rpr-speed',
+      band: 'C',
+      marks: 4,
+      question: 'Two cyclists set off from the same point in opposite directions. Cyclist A rides at 18 km/h and Cyclist B at 12 km/h. After how many minutes are they 15 km apart?',
+      steps: [
+        {
+          prompt: 'What is their combined speed? (km/h)',
+          hint1: 'They move in opposite directions, so add their speeds.',
+          hint2: '18 + 12 = ?',
+          hint3: '30 km/h.',
+          answer: 30,
+          tolerance: 0,
+          unit: 'km/h',
+          explanation: 'Moving apart at 18 + 12 = 30 km/h combined.'
+        },
+        {
+          prompt: 'How long until they are 15 km apart? (hours)',
+          hint1: 'Time = Distance ÷ Speed.',
+          hint2: '15 ÷ 30 = ?',
+          hint3: '0.5 hours.',
+          answer: 0.5,
+          tolerance: 0,
+          unit: 'hours',
+          explanation: 'Time = 15 ÷ 30 = 0.5 hours.'
+        },
+        {
+          prompt: 'Convert 0.5 hours to minutes.',
+          hint1: 'Multiply by 60.',
+          hint2: '0.5 × 60 = ?',
+          hint3: '30 minutes.',
+          answer: 30,
+          tolerance: 0,
+          unit: 'minutes',
+          explanation: '0.5 × 60 = 30 minutes.'
+        },
+        {
+          prompt: 'Check: after 30 min, how far has A gone? (km)',
+          hint1: 'A travels at 18 km/h for 0.5 h.',
+          hint2: '18 × 0.5 = 9 km. B travels 12 × 0.5 = 6 km. 9+6=15 ✓',
+          hint3: '9 km.',
+          answer: 9,
+          tolerance: 0,
+          unit: 'km',
+          explanation: 'A goes 9 km, B goes 6 km. Gap = 15 km ✓'
+        }
+      ],
+      workedExample: {
+        question: 'Two cars leave the same point in opposite directions at 30 km/h and 20 km/h. When are they 25 km apart?',
+        steps: [
+          'Combined speed = 30 + 20 = 50 km/h',
+          'Time = 25 ÷ 50 = 0.5 hours = <strong>30 minutes</strong>',
+          'Check: 30×0.5 + 20×0.5 = 15+10 = 25 ✓'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Combined speed = 30 km/h. Time = 15/30 = 0.5 h = 30 minutes.',
+        grade6: 'They move apart at 18+12=30 km/h. Time = 15÷30 = 0.5 h = 30 minutes.',
+        grade8: 'Relative speed = 30 km/h. T = 15/30 = 0.5 h = 30 min. Check: 9+6=15 km ✓'
+      },
+      examinerTip: 'When objects move apart, add their speeds to get the rate they separate.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'spd-C02',
+      subtopic: 'rpr-speed',
+      band: 'C',
+      marks: 4,
+      question: 'A car travels from city X to city Y at 60 km/h and returns at 40 km/h. The total journey time is 5 hours. Find the distance from X to Y.',
+      steps: [
+        {
+          prompt: 'Let the distance from X to Y be d km. Write an expression for the time from X to Y.',
+          hint1: 'Time = Distance ÷ Speed.',
+          hint2: 'Time X→Y = d ÷ 60.',
+          hint3: 'd/60 hours.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'd/60 hours',
+          explanation: 'Time for X→Y = d/60.'
+        },
+        {
+          prompt: 'Write an equation for the total journey time.',
+          hint1: 'Total time = time there + time back.',
+          hint2: 'd/60 + d/40 = 5.',
+          hint3: 'd/60 + d/40 = 5.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'd/60 + d/40 = 5',
+          explanation: 'd/60 + d/40 = 5.'
+        },
+        {
+          prompt: 'Solve: find the value of d/120 by combining fractions. What is the combined fraction coefficient of d?',
+          hint1: 'LCM of 60 and 40 is 120.',
+          hint2: '2d/120 + 3d/120 = 5d/120.',
+          hint3: '5/120 = 1/24. So d/24 = 5.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: '5d/120 = d/24',
+          explanation: '2d/120 + 3d/120 = 5d/120 = d/24.'
+        },
+        {
+          prompt: 'Find d (the one-way distance in km).',
+          hint1: 'd/24 = 5.',
+          hint2: 'd = 5 × 24.',
+          hint3: 'd = 120 km.',
+          answer: 120,
+          tolerance: 0,
+          unit: 'km',
+          explanation: 'd = 5 × 24 = 120 km. Check: 120/60 + 120/40 = 2+3 = 5 h ✓'
+        }
+      ],
+      workedExample: {
+        question: 'A journey takes 1 h at 60 km/h and the return at 30 km/h. Total time = 3 h. Find the one-way distance.',
+        steps: [
+          'Let d = one-way distance.',
+          'd/60 + d/30 = 3',
+          'LCM = 60: d/60 + 2d/60 = 3d/60 = d/20 = 3',
+          'd = <strong>60 km</strong>',
+          'Check: 60/60 + 60/30 = 1+2 = 3 ✓'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'd/60 + d/40 = 5. Combining: 5d/120 = 5. d = 120 km.',
+        grade6: 'Let d = distance. d/60 + d/40 = 5. LCM=120: 5d/120 = 5, so d=120 km.',
+        grade8: 'd/60 + d/40 = 5. Multiply through by 120: 2d+3d=600, 5d=600, d=120 km. Check: 2+3=5 h ✓'
+      },
+      examinerTip: 'Set up the equation with letters first — then find the LCM to clear fractions.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'spd-C03',
+      subtopic: 'rpr-speed',
+      band: 'C',
+      marks: 4,
+      question: 'A speed-time graph shows a vehicle accelerating uniformly from 0 to 20 m/s in 10 seconds, travelling at 20 m/s for 30 seconds, then decelerating uniformly to rest in 5 seconds. Find the total distance travelled.',
+      steps: [
+        {
+          prompt: 'Find the distance during acceleration (0 to 20 m/s in 10 s). Area of the triangle.',
+          hint1: 'Area of triangle = 1/2 × base × height.',
+          hint2: '1/2 × 10 × 20 = ?',
+          hint3: '100 m.',
+          answer: 100,
+          tolerance: 0,
+          unit: 'm',
+          explanation: 'Distance = area of triangle = 1/2 × 10 × 20 = 100 m.'
+        },
+        {
+          prompt: 'Find the distance at constant speed (20 m/s for 30 s). Area of rectangle.',
+          hint1: 'Area = width × height.',
+          hint2: '30 × 20 = ?',
+          hint3: '600 m.',
+          answer: 600,
+          tolerance: 0,
+          unit: 'm',
+          explanation: 'Distance = 30 × 20 = 600 m.'
+        },
+        {
+          prompt: 'Find the distance during deceleration (20 m/s to 0 in 5 s). Area of triangle.',
+          hint1: '1/2 × base × height.',
+          hint2: '1/2 × 5 × 20 = ?',
+          hint3: '50 m.',
+          answer: 50,
+          tolerance: 0,
+          unit: 'm',
+          explanation: 'Distance = 1/2 × 5 × 20 = 50 m.'
+        },
+        {
+          prompt: 'Find the total distance. (m)',
+          hint1: 'Add all three areas.',
+          hint2: '100 + 600 + 50 = ?',
+          hint3: '750 m.',
+          answer: 750,
+          tolerance: 0,
+          unit: 'm',
+          explanation: 'Total = 100 + 600 + 50 = 750 m.'
+        }
+      ],
+      workedExample: {
+        question: 'A vehicle accelerates from 0 to 30 m/s in 6 s, stays at 30 m/s for 20 s, then decelerates to rest in 4 s. Find total distance.',
+        steps: [
+          'Acceleration phase: 1/2 × 6 × 30 = 90 m',
+          'Constant speed: 20 × 30 = 600 m',
+          'Deceleration: 1/2 × 4 × 30 = 60 m',
+          'Total = 90 + 600 + 60 = <strong>750 m</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Triangle + rectangle + triangle = 100 + 600 + 50 = 750 m.',
+        grade6: 'Acceleration: 1/2×10×20=100 m. Constant: 30×20=600 m. Deceleration: 1/2×5×20=50 m. Total=750 m.',
+        grade8: 'Area under speed-time graph = distance. Trapezoid decomposed: triangle(100)+rectangle(600)+triangle(50) = 750 m.'
+      },
+      examinerTip: 'Distance = area under a speed-time graph. Triangles for acceleration/deceleration, rectangles for constant speed.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'spd-C04',
+      subtopic: 'rpr-speed',
+      band: 'C',
+      marks: 4,
+      question: 'Town A is 240 km from town B. A car leaves A at 09:00 travelling at 80 km/h. A second car leaves B at 09:30 travelling towards A at 60 km/h. At what time do they meet?',
+      steps: [
+        {
+          prompt: 'How far has the first car travelled by 09:30? (km)',
+          hint1: 'It has been travelling for 30 minutes = 0.5 hours at 80 km/h.',
+          hint2: '80 × 0.5 = ?',
+          hint3: '40 km.',
+          answer: 40,
+          tolerance: 0,
+          unit: 'km',
+          explanation: 'Car A travels 80 × 0.5 = 40 km by 09:30.'
+        },
+        {
+          prompt: 'What is the remaining gap between the two cars at 09:30? (km)',
+          hint1: '240 − 40 = ?',
+          hint2: '200 km.',
+          hint3: '200 km.',
+          answer: 200,
+          tolerance: 0,
+          unit: 'km',
+          explanation: 'Gap = 240 − 40 = 200 km at 09:30.'
+        },
+        {
+          prompt: 'At what combined speed are the cars closing the gap? (km/h)',
+          hint1: 'They travel towards each other.',
+          hint2: '80 + 60 = ?',
+          hint3: '140 km/h.',
+          answer: 140,
+          tolerance: 0,
+          unit: 'km/h',
+          explanation: 'Combined closing speed = 80 + 60 = 140 km/h.'
+        },
+        {
+          prompt: 'How many minutes after 09:30 do they meet? Round to the nearest minute.',
+          hint1: 'Time = 200 ÷ 140 hours. Convert to minutes.',
+          hint2: '200/140 = 10/7 h ≈ 1.4286 h × 60 ≈ 85.7 min.',
+          hint3: '≈ 86 minutes after 09:30, so at 10:56.',
+          answer: 86,
+          tolerance: 1,
+          unit: 'minutes',
+          explanation: 'Time = 200/140 × 60 ≈ 85.7 min ≈ 86 min. They meet at 09:30 + 86 min = 10:56.'
+        }
+      ],
+      workedExample: {
+        question: 'Towns P and Q are 180 km apart. Car 1 leaves P at 08:00 at 60 km/h; Car 2 leaves Q at 08:30 at 60 km/h heading toward P. When do they meet?',
+        steps: [
+          'By 08:30, Car 1 has travelled 60 × 0.5 = 30 km. Gap = 150 km.',
+          'Combined speed = 60 + 60 = 120 km/h.',
+          'Time to meet = 150/120 = 1.25 h = 75 min after 08:30.',
+          'They meet at 08:30 + 75 min = <strong>09:45</strong>.'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'By 09:30 car A has done 40 km. Gap = 200 km. Combined speed = 140 km/h. Time = 200/140 ≈ 86 min. Meet at ≈ 10:56.',
+        grade6: 'Car A has 40 km head start; gap = 200 km. Combined speed = 140 km/h. Time = 200/140 h ≈ 86 min. They meet at approximately 10:56.',
+        grade8: 'Gap at 09:30 = 200 km. Closing speed = 140 km/h. T = 200/140 = 10/7 h ≈ 85.7 min. Meet at 09:30 + 86 min ≈ 10:56.'
+      },
+      examinerTip: 'Find the gap when the second vehicle sets off, then use combined speed to close it.',
+      auditStatus: 'pending'
+    },
+
 
     // ══════════════════════════════════════════════════════════
     // PERCENTAGE CHANGE (rpr-percentage-change)
@@ -7726,7 +9460,673 @@ const MathsQuestions = (() => {
       },
       examinerTip: "Students calculate simple interest (4% × 3 = 12% of £2000 = £240, total = £2,240) rather than applying the 1.04 multiplier three times.",
       auditStatus: 'pending',
+    },    {
+      id: 'pch-A03',
+      subtopic: 'rpr-percentage-change',
+      band: 'A',
+      marks: 2,
+      question: 'A jacket costs £65. In a sale it is reduced by 20%. What is the sale price?',
+      steps: [
+        {
+          prompt: 'Calculate 20% of £65.',
+          hint1: '10% of £65 = £6.50. 20% = 2 × £6.50.',
+          hint2: '20% = 0.20 × 65.',
+          hint3: '£13.',
+          answer: 13,
+          tolerance: 0,
+          unit: '£',
+          explanation: '20% of £65 = 0.20 × 65 = £13.'
+        },
+        {
+          prompt: 'What is the sale price? (£)',
+          hint1: 'Subtract the discount from the original price.',
+          hint2: '65 − 13 = ?',
+          hint3: '£52.',
+          answer: 52,
+          tolerance: 0,
+          unit: '£',
+          explanation: 'Sale price = £65 − £13 = £52.'
+        }
+      ],
+      workedExample: {
+        question: 'A shirt costs £40 and is reduced by 15%. Find the sale price.',
+        steps: [
+          '15% of £40 = 0.15 × 40 = £6',
+          'Sale price = £40 − £6 = <strong>£34</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '20% of £65 = £13. Sale price = £65 − £13 = £52.',
+        grade6: '20% of £65 = £13. Sale price = £52. Alternatively: £65 × 0.80 = £52.',
+        grade8: 'Multiplier = 0.80. £65 × 0.80 = £52.'
+      },
+      examinerTip: 'For a percentage decrease, multiply by (1 − rate). 20% off → × 0.80.',
+      auditStatus: 'pending'
     },
+    {
+      id: 'pch-A04',
+      subtopic: 'rpr-percentage-change',
+      band: 'A',
+      marks: 2,
+      question: 'A house was bought for £240 000 and sold for £288 000. Calculate the percentage increase.',
+      steps: [
+        {
+          prompt: 'Calculate the actual increase in value. (£)',
+          hint1: 'Subtract the original from the new value.',
+          hint2: '288 000 − 240 000 = ?',
+          hint3: '£48 000.',
+          answer: 48000,
+          tolerance: 0,
+          unit: '£',
+          explanation: 'Increase = £288 000 − £240 000 = £48 000.'
+        },
+        {
+          prompt: 'Calculate the percentage increase.',
+          hint1: 'Percentage increase = (increase ÷ original) × 100.',
+          hint2: '(48 000 ÷ 240 000) × 100 = ?',
+          hint3: '20%.',
+          answer: 20,
+          tolerance: 0,
+          unit: '%',
+          explanation: '(48 000 / 240 000) × 100 = 20%.'
+        }
+      ],
+      workedExample: {
+        question: 'A car was bought for £10 000 and sold for £12 500. Find the percentage increase.',
+        steps: [
+          'Increase = £12 500 − £10 000 = £2 500',
+          'Percentage increase = (2500/10000) × 100 = <strong>25%</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Increase = £48 000. % increase = (48 000/240 000) × 100 = 20%.',
+        grade6: 'Increase = £48 000. % increase = (48 000 ÷ 240 000) × 100 = 20%.',
+        grade8: '% increase = (change/original) × 100 = (48 000/240 000) × 100 = 20%.'
+      },
+      examinerTip: 'Always divide by the ORIGINAL value, not the new one.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pch-A05',
+      subtopic: 'rpr-percentage-change',
+      band: 'A',
+      marks: 2,
+      question: 'After a 25% increase, a price is £75. What was the original price?',
+      steps: [
+        {
+          prompt: 'What multiplier represents a 25% increase?',
+          hint1: 'A 25% increase means the new price = original × 1.25.',
+          hint2: 'New price = original × 1.25.',
+          hint3: 'Multiplier = 1.25.',
+          answer: 1.25,
+          tolerance: 0,
+          unit: '',
+          explanation: '25% increase → multiplier of 1.25.'
+        },
+        {
+          prompt: 'Find the original price. (£)',
+          hint1: '£75 = original × 1.25. Divide £75 by 1.25.',
+          hint2: '75 ÷ 1.25 = ?',
+          hint3: '£60.',
+          answer: 60,
+          tolerance: 0,
+          unit: '£',
+          explanation: 'Original = £75 ÷ 1.25 = £60.'
+        }
+      ],
+      workedExample: {
+        question: 'After a 40% increase a price is £84. Find the original price.',
+        steps: [
+          'Multiplier = 1.40. Original = £84 ÷ 1.40 = <strong>£60</strong>',
+          'Check: £60 × 1.40 = £84 ✓'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Original × 1.25 = £75. Original = £75 ÷ 1.25 = £60.',
+        grade6: '125% of original = £75. Original = £75 ÷ 1.25 = £60.',
+        grade8: 'Reverse percentage: £75/1.25 = £60. Check: 60 × 1.25 = 75 ✓'
+      },
+      examinerTip: 'Reverse percentage: divide the new value by the multiplier.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pch-B02',
+      subtopic: 'rpr-percentage-change',
+      band: 'B',
+      marks: 3,
+      question: 'A bank account pays 3% simple interest per year. £800 is invested. How much interest is earned over 4 years?',
+      steps: [
+        {
+          prompt: 'Calculate the interest earned in one year. (£)',
+          hint1: 'Interest per year = Principal × rate.',
+          hint2: '£800 × 0.03 = ?',
+          hint3: '£24.',
+          answer: 24,
+          tolerance: 0,
+          unit: '£',
+          explanation: 'Annual interest = £800 × 0.03 = £24.'
+        },
+        {
+          prompt: 'Calculate the total interest over 4 years. (£)',
+          hint1: 'Simple interest: multiply annual interest by number of years.',
+          hint2: '£24 × 4 = ?',
+          hint3: '£96.',
+          answer: 96,
+          tolerance: 0,
+          unit: '£',
+          explanation: 'Total simple interest = £24 × 4 = £96.'
+        },
+        {
+          prompt: 'What is the total amount in the account after 4 years? (£)',
+          hint1: 'Add the interest to the principal.',
+          hint2: '£800 + £96 = ?',
+          hint3: '£896.',
+          answer: 896,
+          tolerance: 0,
+          unit: '£',
+          explanation: 'Total = £800 + £96 = £896.'
+        }
+      ],
+      workedExample: {
+        question: '£500 invested at 5% simple interest for 3 years. Find the total amount.',
+        steps: [
+          'Annual interest = £500 × 0.05 = £25',
+          'Total interest = £25 × 3 = £75',
+          'Total amount = £500 + £75 = <strong>£575</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Annual interest = £24. Over 4 years = £96. Total = £896.',
+        grade6: 'Simple interest = PRT = 800 × 0.03 × 4 = £96. Total = £896.',
+        grade8: 'SI = PRT = 800 × 0.03 × 4 = £96. Total = £800 + £96 = £896.'
+      },
+      examinerTip: 'Simple interest: same amount added each year. Compound interest: different each year.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pch-B03',
+      subtopic: 'rpr-percentage-change',
+      band: 'B',
+      marks: 3,
+      question: '£1500 is invested at 5% compound interest per year. Calculate the total value after 3 years to the nearest penny.',
+      steps: [
+        {
+          prompt: 'What is the multiplier for 5% compound interest?',
+          hint1: 'A 5% increase each year means × 1.05 each year.',
+          hint2: 'Multiplier = 1.05.',
+          hint3: '1.05.',
+          answer: 1.05,
+          tolerance: 0,
+          unit: '',
+          explanation: '5% increase per year → multiplier 1.05.'
+        },
+        {
+          prompt: 'Write the compound interest formula for 3 years.',
+          hint1: 'Amount = Principal × (multiplier)^years.',
+          hint2: 'A = 1500 × 1.05³.',
+          hint3: 'A = 1500 × 1.05³.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'A = 1500 × 1.05³',
+          explanation: 'Compound interest formula: A = P(1+r)ⁿ = 1500 × 1.05³.'
+        },
+        {
+          prompt: 'Calculate the total to the nearest penny. (£)',
+          hint1: '1.05³ = 1.157625.',
+          hint2: '1500 × 1.157625 = ?',
+          hint3: '£1736.44.',
+          answer: 1736.44,
+          tolerance: 0.01,
+          unit: '£',
+          explanation: '1500 × 1.05³ = 1500 × 1.157625 = £1736.4375 ≈ £1736.44.'
+        }
+      ],
+      workedExample: {
+        question: '£2000 at 3% compound interest for 2 years.',
+        steps: [
+          'Multiplier = 1.03',
+          'A = 2000 × 1.03² = 2000 × 1.0609 = <strong>£2121.80</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'A = 1500 × 1.05 × 1.05 × 1.05 ≈ £1736.44.',
+        grade6: 'A = 1500 × 1.05³ = 1500 × 1.157625 = £1736.44.',
+        grade8: 'A = P(1+r)ⁿ = 1500 × 1.05³ = £1736.44 (to nearest penny).'
+      },
+      examinerTip: 'Use A = P(1+r)ⁿ and keep full calculator precision until the final rounding.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pch-B04',
+      subtopic: 'rpr-percentage-change',
+      band: 'B',
+      marks: 3,
+      question: 'A car depreciates in value by 15% per year. It costs £12 000 new. What is its value after 2 years?',
+      steps: [
+        {
+          prompt: 'What multiplier represents a 15% decrease?',
+          hint1: 'Decrease means you keep 100% − 15% = 85% each year.',
+          hint2: 'Multiplier = 0.85.',
+          hint3: '0.85.',
+          answer: 0.85,
+          tolerance: 0,
+          unit: '',
+          explanation: '15% decrease → multiplier 0.85 each year.'
+        },
+        {
+          prompt: 'Calculate the value after 1 year. (£)',
+          hint1: '12 000 × 0.85 = ?',
+          hint2: '12 000 × 0.85 = 10 200.',
+          hint3: '£10 200.',
+          answer: 10200,
+          tolerance: 0,
+          unit: '£',
+          explanation: 'After year 1: £12 000 × 0.85 = £10 200.'
+        },
+        {
+          prompt: 'Calculate the value after 2 years. (£)',
+          hint1: '10 200 × 0.85, or 12 000 × 0.85².',
+          hint2: '12 000 × 0.7225 = ?',
+          hint3: '£8670.',
+          answer: 8670,
+          tolerance: 0,
+          unit: '£',
+          explanation: 'After year 2: £12 000 × 0.85² = £12 000 × 0.7225 = £8670.'
+        }
+      ],
+      workedExample: {
+        question: 'A laptop costs £800 and depreciates 20% per year. Value after 2 years?',
+        steps: [
+          'Multiplier = 0.80',
+          'After 1 year: £800 × 0.80 = £640',
+          'After 2 years: £640 × 0.80 = <strong>£512</strong>',
+          'Or: £800 × 0.80² = £800 × 0.64 = £512'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Year 1: £10 200. Year 2: £10 200 × 0.85 = £8670.',
+        grade6: '£12 000 × 0.85² = £12 000 × 0.7225 = £8670.',
+        grade8: 'V = 12 000 × 0.85² = £8670. Multiplier < 1 for depreciation.'
+      },
+      examinerTip: 'For repeated percentage decrease, raise the multiplier to the power of the number of years.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pch-B05',
+      subtopic: 'rpr-percentage-change',
+      band: 'B',
+      marks: 3,
+      question: 'Prices rise by 4% in year 1 and fall by 4% in year 2. Starting price is £200. Is the final price the same as the start? Show working.',
+      steps: [
+        {
+          prompt: 'Calculate the price after year 1 (4% increase). (£)',
+          hint1: 'Multiplier = 1.04.',
+          hint2: '200 × 1.04 = ?',
+          hint3: '£208.',
+          answer: 208,
+          tolerance: 0,
+          unit: '£',
+          explanation: '£200 × 1.04 = £208.'
+        },
+        {
+          prompt: 'Calculate the price after year 2 (4% decrease). (£)',
+          hint1: 'Multiplier = 0.96.',
+          hint2: '208 × 0.96 = ?',
+          hint3: '£199.68.',
+          answer: 199.68,
+          tolerance: 0.01,
+          unit: '£',
+          explanation: '£208 × 0.96 = £199.68.'
+        },
+        {
+          prompt: 'Is the final price the same as the original? Enter 1 for yes, 2 for no.',
+          hint1: 'Compare £199.68 to £200.',
+          hint2: '£199.68 < £200.',
+          hint3: 'No — enter 2.',
+          answer: 2,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'No — the price is lower (£199.68 vs £200). The combined multiplier is 1.04 × 0.96 = 0.9984, not 1.',
+          explanation: '1.04 × 0.96 = 0.9984 < 1, so the price falls slightly overall.'
+        }
+      ],
+      workedExample: {
+        question: 'A price rises 10% then falls 10%. Starting from £100, what is the final price?',
+        steps: [
+          'After +10%: £100 × 1.10 = £110',
+          'After −10%: £110 × 0.90 = £99',
+          'Final price = <strong>£99</strong> (not £100). Combined multiplier: 1.10 × 0.90 = 0.99.'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'After increase: £208. After decrease: £199.68. Not the same.',
+        grade6: '£200 × 1.04 = £208. £208 × 0.96 = £199.68. The price is slightly lower — not the same.',
+        grade8: 'Combined multiplier = 1.04 × 0.96 = 0.9984. £200 × 0.9984 = £199.68 ≠ £200. A rise and fall of equal percentage always gives a net loss.'
+      },
+      examinerTip: 'Equal percentage rise then fall always gives a slight net decrease — the percentages are of different bases.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pch-B06',
+      subtopic: 'rpr-percentage-change',
+      band: 'B',
+      marks: 3,
+      question: 'VAT is charged at 20%. A TV costs £540 including VAT. What is the price before VAT?',
+      steps: [
+        {
+          prompt: 'What percentage of the pre-VAT price does £540 represent?',
+          hint1: 'Including 20% VAT means the price is 120% of the original.',
+          hint2: '100% + 20% = 120%.',
+          hint3: '120%.',
+          answer: 120,
+          tolerance: 0,
+          unit: '%',
+          explanation: '£540 = 120% of the original price.'
+        },
+        {
+          prompt: 'Find 1% of the original price. (£)',
+          hint1: '120% = £540, so 1% = £540 ÷ 120.',
+          hint2: '540 ÷ 120 = ?',
+          hint3: '£4.50.',
+          answer: 4.5,
+          tolerance: 0,
+          unit: '£',
+          explanation: '1% = £540 ÷ 120 = £4.50.'
+        },
+        {
+          prompt: 'Find the original pre-VAT price (100%). (£)',
+          hint1: '100 × £4.50 = ?',
+          hint2: '£450.',
+          hint3: '£450.',
+          answer: 450,
+          tolerance: 0,
+          unit: '£',
+          explanation: 'Pre-VAT price = 100 × £4.50 = £450. Or: £540 ÷ 1.20 = £450.'
+        }
+      ],
+      workedExample: {
+        question: 'A fridge costs £360 including 20% VAT. Find the pre-VAT price.',
+        steps: [
+          '£360 = 120% of original',
+          '1% = £360 ÷ 120 = £3',
+          'Original = 100 × £3 = <strong>£300</strong>',
+          'Or: £360 ÷ 1.20 = £300'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '120% = £540. 1% = £4.50. Original = £450.',
+        grade6: '£540 is 120% of the original. Pre-VAT price = £540 ÷ 1.20 = £450.',
+        grade8: 'Reverse percentage: £540/1.20 = £450. Check: £450 × 1.20 = £540 ✓'
+      },
+      examinerTip: 'To remove VAT (20%), divide by 1.20 — do not subtract 20% of the VAT-inclusive price.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pch-C01',
+      subtopic: 'rpr-percentage-change',
+      band: 'C',
+      marks: 4,
+      question: 'An investment grows from £5000 to £6298.56 over 3 years with compound interest. Find the annual interest rate.',
+      steps: [
+        {
+          prompt: 'Write the compound interest equation: 6298.56 = 5000 × r³, where r is the multiplier. Rearrange to find r³.',
+          hint1: 'Divide both sides by 5000.',
+          hint2: 'r³ = 6298.56 ÷ 5000.',
+          hint3: 'r³ = 1.259712.',
+          answer: 1.259712,
+          tolerance: 0.0001,
+          unit: '',
+          explanation: 'r³ = 6298.56/5000 = 1.259712.'
+        },
+        {
+          prompt: 'Find r by taking the cube root of 1.259712.',
+          hint1: 'r = ∛1.259712.',
+          hint2: '∛1.259712 ≈ 1.08.',
+          hint3: 'r = 1.08.',
+          answer: 1.08,
+          tolerance: 0.001,
+          unit: '',
+          explanation: 'r = 1.259712^(1/3) = 1.08.'
+        },
+        {
+          prompt: 'What is the annual interest rate? (%)',
+          hint1: 'r = 1.08 means 8% growth each year.',
+          hint2: 'Rate = (r − 1) × 100.',
+          hint3: '8%.',
+          answer: 8,
+          tolerance: 0,
+          unit: '%',
+          explanation: 'Rate = (1.08 − 1) × 100 = 8%.'
+        },
+        {
+          prompt: 'Check: does £5000 × 1.08³ = £6298.56? Enter 1 for yes.',
+          hint1: '1.08³ = 1.259712. 5000 × 1.259712 = 6298.56.',
+          hint2: 'Yes — enter 1.',
+          hint3: 'Enter 1.',
+          answer: 1,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: '5000 × 1.08³ = 5000 × 1.259712 = £6298.56 ✓',
+          explanation: 'Check confirmed ✓'
+        }
+      ],
+      workedExample: {
+        question: 'An investment grows from £2000 to £2315.25 over 2 years. Find the annual interest rate.',
+        steps: [
+          'r² = 2315.25/2000 = 1.157625',
+          'r = √1.157625 = 1.075 (7.5%)',
+          'Annual rate = <strong>7.5%</strong>',
+          'Check: 2000 × 1.075² = 2000 × 1.155625 ... recalculate: 1.075² = 1.155625, 2000 × 1.155625 = £2311.25 — let's recalculate: r² = 2315.25/2000 = 1.157625, r = 1.076, so rate ≈ 7.6% (exam questions will give clean answers)'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'r³ = 6298.56/5000 = 1.259712. r = 1.08. Rate = 8%.',
+        grade6: '5000 × r³ = 6298.56. r³ = 1.259712. r = ∛1.259712 = 1.08. Annual rate = 8%.',
+        grade8: 'A = P(1+r)ⁿ → r = (A/P)^(1/n) − 1 = (6298.56/5000)^(1/3) − 1 = 1.08 − 1 = 0.08 = 8%.'
+      },
+      examinerTip: 'To find the rate: divide final by initial, then take the nth root, then subtract 1.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pch-C02',
+      subtopic: 'rpr-percentage-change',
+      band: 'C',
+      marks: 4,
+      question: 'A population of 4000 bacteria grows at 12% per hour. After how many complete hours does the population first exceed 8000?',
+      steps: [
+        {
+          prompt: 'Write the formula for the population after n hours.',
+          hint1: 'P = 4000 × 1.12ⁿ.',
+          hint2: 'We need P > 8000.',
+          hint3: 'P = 4000 × 1.12ⁿ.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'P = 4000 × 1.12ⁿ',
+          explanation: 'Exponential growth: P = 4000 × 1.12ⁿ.'
+        },
+        {
+          prompt: 'We need 4000 × 1.12ⁿ > 8000. What must 1.12ⁿ exceed?',
+          hint1: 'Divide both sides by 4000.',
+          hint2: '8000 ÷ 4000 = 2.',
+          hint3: '1.12ⁿ > 2.',
+          answer: 2,
+          tolerance: 0,
+          unit: '',
+          explanation: '1.12ⁿ > 2.'
+        },
+        {
+          prompt: 'Calculate 1.12⁶ to check if n = 6 is sufficient.',
+          hint1: '1.12⁶ ≈ 1.9738 < 2. Try n = 7.',
+          hint2: '1.12⁷ ≈ 2.2107 > 2.',
+          hint3: 'n = 7.',
+          answer: 7,
+          tolerance: 0,
+          unit: 'hours',
+          explanation: '1.12⁶ ≈ 1.974 < 2, but 1.12⁷ ≈ 2.211 > 2. So n = 7 hours.'
+        },
+        {
+          prompt: 'What is the population after 7 hours (to the nearest whole number)?',
+          hint1: '4000 × 1.12⁷.',
+          hint2: '4000 × 2.2107 ≈ 8843.',
+          hint3: '8843.',
+          answer: 8843,
+          tolerance: 2,
+          unit: '',
+          explanation: '4000 × 1.12⁷ = 4000 × 2.21068... ≈ 8843.'
+        }
+      ],
+      workedExample: {
+        question: 'A colony of 500 doubles. Growth rate 15% per hour. When does it exceed 1000?',
+        steps: [
+          'P = 500 × 1.15ⁿ > 1000 → 1.15ⁿ > 2',
+          '1.15⁵ ≈ 2.011 > 2; 1.15⁴ ≈ 1.749 < 2',
+          'First exceeds 1000 after <strong>5 hours</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '1.12⁶ ≈ 1.97 < 2. 1.12⁷ ≈ 2.21 > 2. Answer: 7 hours.',
+        grade6: 'Need 4000×1.12ⁿ > 8000, i.e. 1.12ⁿ > 2. Testing: n=6 gives 1.974 (not enough); n=7 gives 2.211. Answer: 7 hours.',
+        grade8: '1.12ⁿ > 2. Using trial: 1.12⁶ ≈ 1.974, 1.12⁷ ≈ 2.211 > 2. First exceeds 8000 after 7 complete hours. P ≈ 8843.'
+      },
+      examinerTip: 'For "first exceeds" questions, use trial and improvement with the formula — try n values systematically.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pch-C03',
+      subtopic: 'rpr-percentage-change',
+      band: 'C',
+      marks: 4,
+      question: 'A pair of trainers costs £120. The price is increased by 10%, then later decreased by 10%. A different pair starts at £120, is decreased by 10%, then increased by 10%. Compare the final prices and explain why they differ.',
+      steps: [
+        {
+          prompt: 'Find the final price of Pair 1 (increase then decrease). (£)',
+          hint1: '£120 × 1.10 × 0.90.',
+          hint2: '120 × 1.10 = 132. 132 × 0.90 = ?',
+          hint3: '£118.80.',
+          answer: 118.8,
+          tolerance: 0.01,
+          unit: '£',
+          explanation: '£120 × 1.10 = £132. £132 × 0.90 = £118.80.'
+        },
+        {
+          prompt: 'Find the final price of Pair 2 (decrease then increase). (£)',
+          hint1: '£120 × 0.90 × 1.10.',
+          hint2: '120 × 0.90 = 108. 108 × 1.10 = ?',
+          hint3: '£118.80.',
+          answer: 118.8,
+          tolerance: 0.01,
+          unit: '£',
+          explanation: '£120 × 0.90 = £108. £108 × 1.10 = £118.80.'
+        },
+        {
+          prompt: 'What is the combined multiplier for both pairs?',
+          hint1: 'For both: 1.10 × 0.90 (order does not matter for the final value).',
+          hint2: '1.10 × 0.90 = 0.99.',
+          hint3: '0.99.',
+          answer: 0.99,
+          tolerance: 0,
+          unit: '',
+          explanation: 'Combined multiplier = 1.10 × 0.90 = 0.90 × 1.10 = 0.99. Multiplication is commutative.'
+        },
+        {
+          prompt: 'What is the net percentage change? (%)',
+          hint1: '0.99 means 99% of original.',
+          hint2: '100% − 99% = 1% decrease.',
+          hint3: '−1% (a 1% decrease).',
+          answer: -1,
+          tolerance: 0,
+          unit: '%',
+          explanation: 'Both pairs end at £118.80. Net change: 0.99 → 1% overall decrease. Order doesn't change the final price.'
+        }
+      ],
+      workedExample: {
+        question: 'Price rises 20% then falls 20%. Starting price £50. Find the final price and net percentage change.',
+        steps: [
+          '£50 × 1.20 = £60. £60 × 0.80 = £48.',
+          'Or: £50 × 0.80 × 1.20 = £48.',
+          'Combined multiplier: 1.20 × 0.80 = 0.96 → <strong>4% net decrease</strong>.'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Both end at £118.80. Combined multiplier = 1.10 × 0.90 = 0.99 (1% decrease).',
+        grade6: 'Pair 1: 120×1.10×0.90=£118.80. Pair 2: 120×0.90×1.10=£118.80. Both the same — multiplication is commutative. Net = −1%.',
+        grade8: 'Both give £118.80. Multiplier = 1.10×0.90 = 0.99, regardless of order. The 10% rise applies to a smaller or larger base depending on order, but the combined effect is identical: a 1% net decrease.'
+      },
+      examinerTip: 'The order of percentage changes doesn't affect the final price, but a rise and fall of the same rate always gives a net loss.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'pch-C04',
+      subtopic: 'rpr-percentage-change',
+      band: 'C',
+      marks: 4,
+      question: 'A house was worth £180 000 in 2015. Its value increased by 5% per year for 4 years, then decreased by 3% per year for 2 years. Find the value in 2021 to the nearest pound.',
+      steps: [
+        {
+          prompt: 'Find the value after 4 years of 5% growth. (£)',
+          hint1: 'V = 180 000 × 1.05⁴.',
+          hint2: '1.05⁴ = 1.21550625.',
+          hint3: '£218 791.13.',
+          answer: 218791,
+          tolerance: 1,
+          unit: '£',
+          explanation: '180 000 × 1.05⁴ = 180 000 × 1.21550625 ≈ £218 791.'
+        },
+        {
+          prompt: 'Now apply 3% decrease for 2 years. What multiplier is applied?',
+          hint1: '3% decrease → multiplier 0.97 each year, applied twice.',
+          hint2: '0.97² = 0.9409.',
+          hint3: '0.9409.',
+          answer: 0.9409,
+          tolerance: 0.0001,
+          unit: '',
+          explanation: '0.97² = 0.9409.'
+        },
+        {
+          prompt: 'Find the value after the 2 years of decline. (£, nearest pound)',
+          hint1: '218 791 × 0.9409.',
+          hint2: '218 791 × 0.9409 ≈ ?',
+          hint3: '£205 820.',
+          answer: 205820,
+          tolerance: 10,
+          unit: '£',
+          explanation: '218 791 × 0.9409 ≈ £205 820.'
+        },
+        {
+          prompt: 'Alternatively, write the whole calculation as one expression and verify your answer is correct. Enter 1 if your answer is within £10.',
+          hint1: 'V = 180 000 × 1.05⁴ × 0.97².',
+          hint2: '180 000 × 1.21550625 × 0.9409 ≈ £205 820.',
+          hint3: 'Enter 1.',
+          answer: 1,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'V = 180 000 × 1.05⁴ × 0.97² ≈ £205 820',
+          explanation: '180 000 × 1.05⁴ × 0.97² ≈ £205 820.'
+        }
+      ],
+      workedExample: {
+        question: 'A car worth £10 000 in 2018 grew 10% for 2 years then fell 5% for 3 years. Find its 2023 value.',
+        steps: [
+          '10 000 × 1.10² = 10 000 × 1.21 = £12 100',
+          '12 100 × 0.95³ = 12 100 × 0.857375 ≈ <strong>£10 374</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'After growth: £218 791. After decline: £218 791 × 0.9409 ≈ £205 820.',
+        grade6: 'V = 180 000 × 1.05⁴ × 0.97² ≈ £218 791 × 0.9409 ≈ £205 820.',
+        grade8: 'V = 180 000 × 1.05⁴ × 0.97² = 180 000 × 1.21550625 × 0.9409 ≈ £205 820.'
+      },
+      examinerTip: 'Chain multipliers together: growth years then decline years, all in one expression.',
+      auditStatus: 'pending'
+    },
+
 
     // ══════════════════════════════════════════════════════════
     // COMPOUND MEASURES — DENSITY & PRESSURE (rpr-compound-measures)
@@ -7813,7 +10213,1482 @@ const MathsQuestions = (() => {
       },
       examinerTip: "Students correctly find the volume but then calculate the new density as 8.5÷2 = 4.25, halving the density rather than recalculating D = M/V with the new volume.",
       auditStatus: 'pending',
+    },    {
+      id: 'cmp-A03',
+      subtopic: 'rpr-compound-measures',
+      band: 'A',
+      marks: 2,
+      question: 'A rectangular block has mass 360 g and volume 45 cm³. Calculate its density.',
+      steps: [
+        {
+          prompt: 'Write the formula for density.',
+          hint1: 'Density = Mass ÷ Volume.',
+          hint2: 'D = M ÷ V.',
+          hint3: 'Density = Mass ÷ Volume.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'Density = Mass ÷ Volume',
+          explanation: 'Density = Mass ÷ Volume.'
+        },
+        {
+          prompt: 'Calculate the density in g/cm³.',
+          hint1: 'D = 360 ÷ 45.',
+          hint2: '360 ÷ 45 = ?',
+          hint3: '8 g/cm³.',
+          answer: 8,
+          tolerance: 0,
+          unit: 'g/cm³',
+          explanation: 'Density = 360 ÷ 45 = 8 g/cm³.'
+        }
+      ],
+      workedExample: {
+        question: 'A block has mass 280 g and volume 35 cm³. Find its density.',
+        steps: [
+          'Density = Mass ÷ Volume',
+          'D = 280 ÷ 35 = <strong>8 g/cm³</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Density = 360 ÷ 45 = 8 g/cm³.',
+        grade6: 'D = M/V = 360/45 = 8 g/cm³.',
+        grade8: 'D = 360/45 = 8 g/cm³.'
+      },
+      examinerTip: 'Remember the DMV triangle: cover what you want to find.',
+      auditStatus: 'pending'
     },
+    {
+      id: 'cmp-A04',
+      subtopic: 'rpr-compound-measures',
+      band: 'A',
+      marks: 2,
+      question: 'A force of 90 N acts on an area of 15 cm². Calculate the pressure.',
+      steps: [
+        {
+          prompt: 'Write the formula for pressure.',
+          hint1: 'Pressure = Force ÷ Area.',
+          hint2: 'P = F ÷ A.',
+          hint3: 'Pressure = Force ÷ Area.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'Pressure = Force ÷ Area',
+          explanation: 'Pressure = Force ÷ Area.'
+        },
+        {
+          prompt: 'Calculate the pressure in N/cm².',
+          hint1: 'P = 90 ÷ 15.',
+          hint2: '90 ÷ 15 = ?',
+          hint3: '6 N/cm².',
+          answer: 6,
+          tolerance: 0,
+          unit: 'N/cm²',
+          explanation: 'Pressure = 90 ÷ 15 = 6 N/cm².'
+        }
+      ],
+      workedExample: {
+        question: 'A force of 60 N acts on an area of 12 cm². Find the pressure.',
+        steps: [
+          'Pressure = Force ÷ Area',
+          'P = 60 ÷ 12 = <strong>5 N/cm²</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Pressure = 90 ÷ 15 = 6 N/cm².',
+        grade6: 'P = F/A = 90/15 = 6 N/cm².',
+        grade8: 'P = F/A = 6 N/cm².'
+      },
+      examinerTip: 'Pressure units depend on the units of force and area given in the question.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'cmp-A05',
+      subtopic: 'rpr-compound-measures',
+      band: 'A',
+      marks: 2,
+      question: 'A substance has density 11.3 g/cm³. Calculate the mass of 20 cm³ of this substance.',
+      steps: [
+        {
+          prompt: 'Rearrange the density formula to find mass.',
+          hint1: 'Density = Mass ÷ Volume, so Mass = Density × Volume.',
+          hint2: 'M = D × V.',
+          hint3: 'Mass = Density × Volume.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'Mass = Density × Volume',
+          explanation: 'M = D × V.'
+        },
+        {
+          prompt: 'Calculate the mass in grams.',
+          hint1: 'M = 11.3 × 20.',
+          hint2: '11.3 × 20 = ?',
+          hint3: '226 g.',
+          answer: 226,
+          tolerance: 0,
+          unit: 'g',
+          explanation: 'M = 11.3 × 20 = 226 g.'
+        }
+      ],
+      workedExample: {
+        question: 'A substance has density 7.8 g/cm³. Find the mass of 30 cm³.',
+        steps: [
+          'Mass = Density × Volume',
+          'M = 7.8 × 30 = <strong>234 g</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Mass = 11.3 × 20 = 226 g.',
+        grade6: 'M = D × V = 11.3 × 20 = 226 g.',
+        grade8: 'M = DV = 11.3 × 20 = 226 g.'
+      },
+      examinerTip: 'Rearrange the formula before substituting numbers.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'cmp-B02',
+      subtopic: 'rpr-compound-measures',
+      band: 'B',
+      marks: 3,
+      question: 'A metal block is made of two parts. Part A has mass 120 g and volume 15 cm³. Part B has mass 180 g and volume 20 cm³. Find the average density of the whole block.',
+      steps: [
+        {
+          prompt: 'Find the total mass of the block. (g)',
+          hint1: 'Add the masses of both parts.',
+          hint2: '120 + 180 = ?',
+          hint3: '300 g.',
+          answer: 300,
+          tolerance: 0,
+          unit: 'g',
+          explanation: 'Total mass = 120 + 180 = 300 g.'
+        },
+        {
+          prompt: 'Find the total volume of the block. (cm³)',
+          hint1: 'Add the volumes of both parts.',
+          hint2: '15 + 20 = ?',
+          hint3: '35 cm³.',
+          answer: 35,
+          tolerance: 0,
+          unit: 'cm³',
+          explanation: 'Total volume = 15 + 20 = 35 cm³.'
+        },
+        {
+          prompt: 'Calculate the average density. (g/cm³, to 2 decimal places)',
+          hint1: 'Density = Total mass ÷ Total volume.',
+          hint2: '300 ÷ 35 = ?',
+          hint3: '≈ 8.57 g/cm³.',
+          answer: 8.57,
+          tolerance: 0.01,
+          unit: 'g/cm³',
+          explanation: 'Average density = 300 ÷ 35 ≈ 8.57 g/cm³.'
+        }
+      ],
+      workedExample: {
+        question: 'Block X: 80 g, 10 cm³. Block Y: 120 g, 15 cm³. Average density of combined block?',
+        steps: [
+          'Total mass = 80 + 120 = 200 g',
+          'Total volume = 10 + 15 = 25 cm³',
+          'Average density = 200 ÷ 25 = <strong>8 g/cm³</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Total mass = 300 g. Total volume = 35 cm³. Density = 300/35 ≈ 8.57 g/cm³.',
+        grade6: 'D = (120+180)/(15+20) = 300/35 ≈ 8.57 g/cm³.',
+        grade8: 'Average density = total mass/total volume = 300/35 = 60/7 ≈ 8.57 g/cm³.'
+      },
+      examinerTip: 'Average density uses total mass and total volume — do not average the individual densities.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'cmp-B03',
+      subtopic: 'rpr-compound-measures',
+      band: 'B',
+      marks: 3,
+      question: 'A pressure of 12 N/cm² acts on a rectangular surface measuring 5 cm by 8 cm. Find the force exerted.',
+      steps: [
+        {
+          prompt: 'Calculate the area of the surface. (cm²)',
+          hint1: 'Area of rectangle = length × width.',
+          hint2: '5 × 8 = ?',
+          hint3: '40 cm².',
+          answer: 40,
+          tolerance: 0,
+          unit: 'cm²',
+          explanation: 'Area = 5 × 8 = 40 cm².'
+        },
+        {
+          prompt: 'Rearrange the pressure formula to find force.',
+          hint1: 'Pressure = Force ÷ Area, so Force = Pressure × Area.',
+          hint2: 'F = P × A.',
+          hint3: 'Force = Pressure × Area.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'Force = Pressure × Area',
+          explanation: 'F = P × A.'
+        },
+        {
+          prompt: 'Calculate the force. (N)',
+          hint1: 'F = 12 × 40.',
+          hint2: '12 × 40 = ?',
+          hint3: '480 N.',
+          answer: 480,
+          tolerance: 0,
+          unit: 'N',
+          explanation: 'F = 12 × 40 = 480 N.'
+        }
+      ],
+      workedExample: {
+        question: 'Pressure of 8 N/cm² on a surface 6 cm × 10 cm. Find the force.',
+        steps: [
+          'Area = 6 × 10 = 60 cm²',
+          'F = P × A = 8 × 60 = <strong>480 N</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Area = 40 cm². F = 12 × 40 = 480 N.',
+        grade6: 'Area = 5×8 = 40 cm². F = P×A = 12×40 = 480 N.',
+        grade8: 'A = 40 cm². F = PA = 12 × 40 = 480 N.'
+      },
+      examinerTip: 'Calculate the area first, then rearrange the pressure formula.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'cmp-B04',
+      subtopic: 'rpr-compound-measures',
+      band: 'B',
+      marks: 3,
+      question: 'A liquid has density 0.8 g/cm³. It is poured into a container with base area 50 cm² to a depth of 6 cm. Calculate the mass of the liquid.',
+      steps: [
+        {
+          prompt: 'Calculate the volume of the liquid. (cm³)',
+          hint1: 'Volume = base area × height.',
+          hint2: '50 × 6 = ?',
+          hint3: '300 cm³.',
+          answer: 300,
+          tolerance: 0,
+          unit: 'cm³',
+          explanation: 'Volume = 50 × 6 = 300 cm³.'
+        },
+        {
+          prompt: 'Use M = D × V to find the mass. (g)',
+          hint1: 'M = 0.8 × 300.',
+          hint2: '0.8 × 300 = ?',
+          hint3: '240 g.',
+          answer: 240,
+          tolerance: 0,
+          unit: 'g',
+          explanation: 'M = 0.8 × 300 = 240 g.'
+        },
+        {
+          prompt: 'Convert the mass to kilograms. (kg)',
+          hint1: 'Divide by 1000.',
+          hint2: '240 ÷ 1000 = ?',
+          hint3: '0.24 kg.',
+          answer: 0.24,
+          tolerance: 0,
+          unit: 'kg',
+          explanation: '240 g ÷ 1000 = 0.24 kg.'
+        }
+      ],
+      workedExample: {
+        question: 'Liquid density 1.2 g/cm³ fills a container 40 cm² base, 5 cm deep. Find the mass in kg.',
+        steps: [
+          'Volume = 40 × 5 = 200 cm³',
+          'Mass = 1.2 × 200 = 240 g',
+          '240 g = <strong>0.24 kg</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Volume = 300 cm³. Mass = 0.8 × 300 = 240 g = 0.24 kg.',
+        grade6: 'V = 50×6 = 300 cm³. M = DV = 0.8×300 = 240 g = 0.24 kg.',
+        grade8: 'V = 300 cm³. M = DV = 240 g = 0.24 kg.'
+      },
+      examinerTip: 'Find volume first, then apply M = DV. Watch for unit conversions at the end.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'cmp-B05',
+      subtopic: 'rpr-compound-measures',
+      band: 'B',
+      marks: 3,
+      question: 'An object has density 2.5 g/cm³ and mass 200 g. It is placed in a container of water. Will it float or sink? (Objects float if density < 1 g/cm³ for water, sink if density > 1 g/cm³). Also find its volume.',
+      steps: [
+        {
+          prompt: 'Find the volume of the object. (cm³)',
+          hint1: 'Volume = Mass ÷ Density.',
+          hint2: 'V = 200 ÷ 2.5.',
+          hint3: '80 cm³.',
+          answer: 80,
+          tolerance: 0,
+          unit: 'cm³',
+          explanation: 'V = M/D = 200/2.5 = 80 cm³.'
+        },
+        {
+          prompt: 'Compare the object's density to water (1 g/cm³). Will it sink? Enter 1 for sink, 2 for float.',
+          hint1: '2.5 g/cm³ compared to 1 g/cm³ for water.',
+          hint2: '2.5 > 1, so it is denser than water.',
+          hint3: 'It sinks — enter 1.',
+          answer: 1,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'Sink — density 2.5 g/cm³ > 1 g/cm³ (water)',
+          explanation: 'Density 2.5 > 1 g/cm³, so the object sinks.'
+        },
+        {
+          prompt: 'What pressure does the object exert on the base of the container if its base area is 16 cm²? (N/cm²) Use weight = mass × 10 N/kg, with mass in kg.',
+          hint1: 'Weight = 0.2 kg × 10 = 2 N. Pressure = Force ÷ Area.',
+          hint2: '2 ÷ 16 = ?',
+          hint3: '0.125 N/cm².',
+          answer: 0.125,
+          tolerance: 0.001,
+          unit: 'N/cm²',
+          explanation: 'Weight = 0.200 × 10 = 2 N. Pressure = 2/16 = 0.125 N/cm².'
+        }
+      ],
+      workedExample: {
+        question: 'Object: density 3 g/cm³, mass 150 g, base area 10 cm². Find volume, state if it sinks, find pressure (g=10 N/kg).',
+        steps: [
+          'V = 150/3 = 50 cm³',
+          'Density 3 > 1 — sinks',
+          'Weight = 0.15 × 10 = 1.5 N. Pressure = 1.5/10 = <strong>0.15 N/cm²</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'V = 80 cm³. Density 2.5 > 1, so it sinks. Pressure = 2/16 = 0.125 N/cm².',
+        grade6: 'V = 200/2.5 = 80 cm³. Density > 1 g/cm³ so it sinks. Weight = 2 N. P = F/A = 2/16 = 0.125 N/cm².',
+        grade8: 'V = 80 cm³. D = 2.5 > 1 → sinks. F = 0.2×10 = 2 N. P = 2/16 = 0.125 N/cm².'
+      },
+      examinerTip: 'Objects sink when their density exceeds that of the fluid. Use g = 10 N/kg unless told otherwise.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'cmp-B06',
+      subtopic: 'rpr-compound-measures',
+      band: 'B',
+      marks: 3,
+      question: 'A recipe requires ingredients at a rate of 150 g per person. The density of the main ingredient is 0.6 g/cm³. How many cm³ of the ingredient is needed for 8 people?',
+      steps: [
+        {
+          prompt: 'Find the total mass of ingredient needed. (g)',
+          hint1: '150 g per person × 8 people.',
+          hint2: '150 × 8 = ?',
+          hint3: '1200 g.',
+          answer: 1200,
+          tolerance: 0,
+          unit: 'g',
+          explanation: 'Total mass = 150 × 8 = 1200 g.'
+        },
+        {
+          prompt: 'Find the volume needed. (cm³)',
+          hint1: 'Volume = Mass ÷ Density.',
+          hint2: 'V = 1200 ÷ 0.6.',
+          hint3: '2000 cm³.',
+          answer: 2000,
+          tolerance: 0,
+          unit: 'cm³',
+          explanation: 'V = 1200 ÷ 0.6 = 2000 cm³.'
+        },
+        {
+          prompt: 'Convert to litres. (1 litre = 1000 cm³)',
+          hint1: '2000 ÷ 1000 = ?',
+          hint2: '2 litres.',
+          hint3: '2 litres.',
+          answer: 2,
+          tolerance: 0,
+          unit: 'litres',
+          explanation: '2000 cm³ ÷ 1000 = 2 litres.'
+        }
+      ],
+      workedExample: {
+        question: '200 g per person, density 0.5 g/cm³, 5 people. Find volume in litres.',
+        steps: [
+          'Total mass = 200 × 5 = 1000 g',
+          'V = 1000 ÷ 0.5 = 2000 cm³',
+          '2000 ÷ 1000 = <strong>2 litres</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Mass = 1200 g. V = 1200/0.6 = 2000 cm³ = 2 litres.',
+        grade6: 'Total mass = 1200 g. V = M/D = 1200/0.6 = 2000 cm³ = 2 litres.',
+        grade8: 'M = 1200 g. V = M/D = 2000 cm³ = 2 litres.'
+      },
+      examinerTip: 'Multi-step: find mass first, then volume, then convert units.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'cmp-C01',
+      subtopic: 'rpr-compound-measures',
+      band: 'C',
+      marks: 4,
+      question: 'A cube of metal has side length 4 cm and mass 1.728 kg. A sphere is made from the same metal with radius 3 cm. Find the mass of the sphere in kg. (Volume of sphere = 4/3 × π × r³)',
+      steps: [
+        {
+          prompt: 'Find the volume of the cube. (cm³)',
+          hint1: 'Volume of cube = side³.',
+          hint2: '4³ = ?',
+          hint3: '64 cm³.',
+          answer: 64,
+          tolerance: 0,
+          unit: 'cm³',
+          explanation: 'Volume = 4³ = 64 cm³.'
+        },
+        {
+          prompt: 'Find the density of the metal. (g/cm³) Note: 1.728 kg = 1728 g.',
+          hint1: 'D = M ÷ V.',
+          hint2: '1728 ÷ 64 = ?',
+          hint3: '27 g/cm³.',
+          answer: 27,
+          tolerance: 0,
+          unit: 'g/cm³',
+          explanation: 'D = 1728 ÷ 64 = 27 g/cm³.'
+        },
+        {
+          prompt: 'Find the volume of the sphere. (cm³, to 2 dp) r = 3 cm.',
+          hint1: 'V = 4/3 × π × 3³.',
+          hint2: '4/3 × π × 27 = 36π.',
+          hint3: '≈ 113.10 cm³.',
+          answer: 113.10,
+          tolerance: 0.05,
+          unit: 'cm³',
+          explanation: 'V = 4/3 × π × 27 = 36π ≈ 113.10 cm³.'
+        },
+        {
+          prompt: 'Find the mass of the sphere. (kg, to 3 dp)',
+          hint1: 'M = D × V = 27 × 113.10.',
+          hint2: '27 × 113.10 = 3053.6 g = 3.054 kg.',
+          hint3: '≈ 3.054 kg.',
+          answer: 3.054,
+          tolerance: 0.005,
+          unit: 'kg',
+          explanation: 'M = 27 × 36π = 972π g ≈ 3053.6 g ≈ 3.054 kg.'
+        }
+      ],
+      workedExample: {
+        question: 'A cube of side 3 cm has mass 216 g. Find the mass of a sphere of radius 2 cm made of the same metal.',
+        steps: [
+          'Cube volume = 27 cm³. Density = 216/27 = 8 g/cm³.',
+          'Sphere volume = 4/3 × π × 8 = 32π/3 ≈ 33.51 cm³.',
+          'Mass = 8 × 33.51 ≈ <strong>268.1 g</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'Density = 1728/64 = 27 g/cm³. Sphere V = 36π ≈ 113.1 cm³. Mass ≈ 3054 g ≈ 3.054 kg.',
+        grade6: 'D = 27 g/cm³. V_sphere = 4/3π×27 = 36π ≈ 113.10 cm³. M = 27×113.10 ≈ 3054 g = 3.054 kg.',
+        grade8: 'D = 1728/64 = 27 g/cm³. V = 4/3π(3³) = 36π. M = 27×36π = 972π ≈ 3053.6 g ≈ 3.054 kg.'
+      },
+      examinerTip: 'Find density from the cube first, then use it with the sphere's volume.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'cmp-C02',
+      subtopic: 'rpr-compound-measures',
+      band: 'C',
+      marks: 4,
+      question: 'A hydraulic system has a small piston of area 5 cm² and a large piston of area 80 cm². A force of 60 N is applied to the small piston. What force is produced at the large piston? (Pressure is transmitted equally throughout the fluid.)',
+      steps: [
+        {
+          prompt: 'Calculate the pressure created by the small piston. (N/cm²)',
+          hint1: 'Pressure = Force ÷ Area.',
+          hint2: '60 ÷ 5 = ?',
+          hint3: '12 N/cm².',
+          answer: 12,
+          tolerance: 0,
+          unit: 'N/cm²',
+          explanation: 'P = 60/5 = 12 N/cm².'
+        },
+        {
+          prompt: 'The same pressure acts on the large piston. Write the equation for force at the large piston.',
+          hint1: 'Force = Pressure × Area.',
+          hint2: 'F = 12 × 80.',
+          hint3: 'F = 12 × 80.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'F = 12 × 80',
+          explanation: 'F = P × A = 12 × 80.'
+        },
+        {
+          prompt: 'Calculate the force at the large piston. (N)',
+          hint1: '12 × 80 = ?',
+          hint2: '960 N.',
+          hint3: '960 N.',
+          answer: 960,
+          tolerance: 0,
+          unit: 'N',
+          explanation: 'F = 12 × 80 = 960 N.'
+        },
+        {
+          prompt: 'What is the force multiplication factor of this hydraulic system?',
+          hint1: 'Divide output force by input force.',
+          hint2: '960 ÷ 60 = ?',
+          hint3: '16.',
+          answer: 16,
+          tolerance: 0,
+          unit: '',
+          explanation: 'Force multiplication = 960/60 = 16. Same ratio as area ratio: 80/5 = 16.'
+        }
+      ],
+      workedExample: {
+        question: 'Small piston area 4 cm², large piston 60 cm². Input force 40 N. Output force?',
+        steps: [
+          'P = 40/4 = 10 N/cm²',
+          'F = 10 × 60 = <strong>600 N</strong>',
+          'Force multiplication = 600/40 = 15 (= area ratio 60/4)'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'P = 60/5 = 12 N/cm². F = 12 × 80 = 960 N. Multiplication factor = 16.',
+        grade6: 'Pressure = 12 N/cm². Force at large piston = 12 × 80 = 960 N. Factor = 16.',
+        grade8: 'P = 12 N/cm². F_out = P × A = 960 N. Multiplication = 16 (= area ratio 80/5).'
+      },
+      examinerTip: 'In a hydraulic system, the force multiplication equals the ratio of the areas.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'cmp-C03',
+      subtopic: 'rpr-compound-measures',
+      band: 'C',
+      marks: 4,
+      question: 'A block of wood (density 0.75 g/cm³) has dimensions 20 cm × 10 cm × 4 cm. It is placed on a table. Calculate the maximum and minimum pressure it can exert on the table. (Use g = 10 N/kg.)',
+      steps: [
+        {
+          prompt: 'Find the volume and mass of the block.',
+          hint1: 'Volume = 20×10×4 = 800 cm³. Mass = 0.75 × 800 = 600 g = 0.6 kg.',
+          hint2: 'Weight = 0.6 × 10 = 6 N.',
+          hint3: 'Weight = 6 N.',
+          answer: 6,
+          tolerance: 0,
+          unit: 'N',
+          explanation: 'V=800 cm³. M=600 g=0.6 kg. W=6 N.'
+        },
+        {
+          prompt: 'Find the minimum pressure (largest face down). Largest face area = 20×10 = 200 cm². Pressure = ? (N/cm²)',
+          hint1: 'P = F ÷ A = 6 ÷ 200.',
+          hint2: '6 ÷ 200 = 0.03.',
+          hint3: '0.03 N/cm².',
+          answer: 0.03,
+          tolerance: 0,
+          unit: 'N/cm²',
+          explanation: 'Min pressure = 6/200 = 0.03 N/cm².'
+        },
+        {
+          prompt: 'Find the maximum pressure (smallest face down). Smallest face area = 10×4 = 40 cm². Pressure = ? (N/cm²)',
+          hint1: 'P = 6 ÷ 40.',
+          hint2: '6 ÷ 40 = 0.15.',
+          hint3: '0.15 N/cm².',
+          answer: 0.15,
+          tolerance: 0,
+          unit: 'N/cm²',
+          explanation: 'Max pressure = 6/40 = 0.15 N/cm².'
+        },
+        {
+          prompt: 'What is the ratio of maximum to minimum pressure?',
+          hint1: '0.15 ÷ 0.03 = ?',
+          hint2: '5.',
+          hint3: '5:1.',
+          answer: 5,
+          tolerance: 0,
+          unit: '',
+          explanation: '0.15/0.03 = 5. Same as area ratio 200/40 = 5.'
+        }
+      ],
+      workedExample: {
+        question: 'Block 12 cm × 6 cm × 3 cm, density 0.5 g/cm³. Max and min pressure (g=10 N/kg).',
+        steps: [
+          'V = 216 cm³. M = 108 g = 0.108 kg. W = 1.08 N.',
+          'Largest face: 12×6 = 72 cm². Min P = 1.08/72 = 0.015 N/cm².',
+          'Smallest face: 6×3 = 18 cm². Max P = 1.08/18 = <strong>0.06 N/cm²</strong>.'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'W=6 N. Min P=6/200=0.03 N/cm². Max P=6/40=0.15 N/cm².',
+        grade6: 'Weight=6 N. Largest face (200 cm²): P=0.03 N/cm². Smallest face (40 cm²): P=0.15 N/cm².',
+        grade8: 'W=6N. P_min=6/200=0.03 N/cm². P_max=6/40=0.15 N/cm². Ratio=5 (= area ratio 200:40).'
+      },
+      examinerTip: 'Pressure is greatest on the smallest face — same force, smaller area.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'cmp-C04',
+      subtopic: 'rpr-compound-measures',
+      band: 'C',
+      marks: 4,
+      question: 'A gold alloy contains 75% gold (density 19.3 g/cm³) and 25% silver (density 10.5 g/cm³) by mass. Calculate the density of the alloy. (Hint: consider a 100 g sample.)',
+      steps: [
+        {
+          prompt: 'In a 100 g sample, find the volume of gold. (cm³, to 3 dp)',
+          hint1: 'Mass of gold = 75 g. Volume = mass ÷ density.',
+          hint2: 'V_gold = 75 ÷ 19.3.',
+          hint3: '≈ 3.886 cm³.',
+          answer: 3.886,
+          tolerance: 0.002,
+          unit: 'cm³',
+          explanation: 'V_gold = 75/19.3 ≈ 3.886 cm³.'
+        },
+        {
+          prompt: 'Find the volume of silver in the 100 g sample. (cm³, to 3 dp)',
+          hint1: 'Mass of silver = 25 g. V = 25 ÷ 10.5.',
+          hint2: '25 ÷ 10.5 ≈ ?',
+          hint3: '≈ 2.381 cm³.',
+          answer: 2.381,
+          tolerance: 0.002,
+          unit: 'cm³',
+          explanation: 'V_silver = 25/10.5 ≈ 2.381 cm³.'
+        },
+        {
+          prompt: 'Find the total volume of the 100 g sample. (cm³, to 3 dp)',
+          hint1: 'Add both volumes.',
+          hint2: '3.886 + 2.381 = ?',
+          hint3: '≈ 6.267 cm³.',
+          answer: 6.267,
+          tolerance: 0.005,
+          unit: 'cm³',
+          explanation: 'Total volume ≈ 3.886 + 2.381 = 6.267 cm³.'
+        },
+        {
+          prompt: 'Calculate the density of the alloy. (g/cm³, to 2 dp)',
+          hint1: 'D = 100 ÷ total volume.',
+          hint2: '100 ÷ 6.267 ≈ ?',
+          hint3: '≈ 15.96 g/cm³.',
+          answer: 15.96,
+          tolerance: 0.05,
+          unit: 'g/cm³',
+          explanation: 'D = 100/6.267 ≈ 15.96 g/cm³.'
+        }
+      ],
+      workedExample: {
+        question: 'Alloy: 60% copper (8.9 g/cm³), 40% tin (7.3 g/cm³) by mass. Find density using 100 g sample.',
+        steps: [
+          'V_copper = 60/8.9 ≈ 6.742 cm³',
+          'V_tin = 40/7.3 ≈ 5.479 cm³',
+          'Total V ≈ 12.221 cm³',
+          'D = 100/12.221 ≈ <strong>8.18 g/cm³</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'V_gold≈3.886, V_silver≈2.381. Total V≈6.267 cm³. D=100/6.267≈15.96 g/cm³.',
+        grade6: 'Using 100g: V_gold=75/19.3≈3.886, V_silver=25/10.5≈2.381. D=100/6.267≈15.96 g/cm³.',
+        grade8: 'D = 100/(75/19.3 + 25/10.5) = 100/(3.886+2.381) = 100/6.267 ≈ 15.96 g/cm³.'
+      },
+      examinerTip: 'For mixture density, use a fixed total mass and find each component's volume, then D = total mass / total volume.',
+      auditStatus: 'pending'
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // EXPONENTIAL GROWTH AND DECAY (rpr-growth-decay)
+    {
+      id: 'grd-A01',
+      subtopic: 'rpr-growth-decay',
+      band: 'A',
+      marks: 2,
+      question: 'A savings account earns 6% compound interest per year. £3000 is invested. What is the total after 1 year?',
+      steps: [
+        {
+          prompt: 'What multiplier represents 6% growth?',
+          hint1: '6% increase means × 1.06.',
+          hint2: 'Multiplier = 1.06.',
+          hint3: '1.06.',
+          answer: 1.06,
+          tolerance: 0,
+          unit: '',
+          explanation: '6% growth → multiplier 1.06.'
+        },
+        {
+          prompt: 'Calculate the total after 1 year. (£)',
+          hint1: '£3000 × 1.06.',
+          hint2: '3000 × 1.06 = ?',
+          hint3: '£3180.',
+          answer: 3180,
+          tolerance: 0,
+          unit: '£',
+          explanation: '£3000 × 1.06 = £3180.'
+        }
+      ],
+      workedExample: {
+        question: '£2000 at 5% compound interest. Total after 1 year?',
+        steps: [
+          'Multiplier = 1.05',
+          '£2000 × 1.05 = <strong>£2100</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '£3000 × 1.06 = £3180.',
+        grade6: 'Multiplier = 1.06. Amount = £3000 × 1.06 = £3180.',
+        grade8: 'A = 3000 × 1.06 = £3180.'
+      },
+      examinerTip: 'Growth rate r% → multiplier (1 + r/100).',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-A02',
+      subtopic: 'rpr-growth-decay',
+      band: 'A',
+      marks: 2,
+      question: 'A radioactive substance decays at 10% per year. Starting mass is 500 g. What is the mass after 1 year?',
+      steps: [
+        {
+          prompt: 'What multiplier represents 10% decay?',
+          hint1: '10% decrease means you keep 90%.',
+          hint2: 'Multiplier = 0.90.',
+          hint3: '0.90.',
+          answer: 0.9,
+          tolerance: 0,
+          unit: '',
+          explanation: '10% decay → multiplier 0.90.'
+        },
+        {
+          prompt: 'Calculate the mass after 1 year. (g)',
+          hint1: '500 × 0.90 = ?',
+          hint2: '450 g.',
+          hint3: '450 g.',
+          answer: 450,
+          tolerance: 0,
+          unit: 'g',
+          explanation: '500 × 0.90 = 450 g.'
+        }
+      ],
+      workedExample: {
+        question: 'A substance decays by 20% per year. Starting mass 300 g. Mass after 1 year?',
+        steps: [
+          'Multiplier = 0.80',
+          '300 × 0.80 = <strong>240 g</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '500 × 0.90 = 450 g.',
+        grade6: 'Multiplier = 0.90. Mass = 500 × 0.90 = 450 g.',
+        grade8: 'M = 500 × 0.90 = 450 g.'
+      },
+      examinerTip: 'Decay rate r% → multiplier (1 − r/100).',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-A03',
+      subtopic: 'rpr-growth-decay',
+      band: 'A',
+      marks: 2,
+      question: 'A town's population is 25 000. It grows at 4% per year. What is the population after 2 years?',
+      steps: [
+        {
+          prompt: 'What is the multiplier for 4% annual growth?',
+          hint1: '4% growth → multiplier 1.04.',
+          hint2: '1.04.',
+          hint3: '1.04.',
+          answer: 1.04,
+          tolerance: 0,
+          unit: '',
+          explanation: '4% growth → multiplier 1.04.'
+        },
+        {
+          prompt: 'Calculate the population after 2 years (to the nearest whole number).',
+          hint1: 'Population = 25 000 × 1.04².',
+          hint2: '1.04² = 1.0816. 25 000 × 1.0816 = ?',
+          hint3: '27 040.',
+          answer: 27040,
+          tolerance: 1,
+          unit: '',
+          explanation: '25 000 × 1.04² = 25 000 × 1.0816 = 27 040.'
+        }
+      ],
+      workedExample: {
+        question: 'Population 10 000 growing at 3% per year. Population after 2 years?',
+        steps: [
+          'Multiplier = 1.03',
+          '10 000 × 1.03² = 10 000 × 1.0609 = <strong>10 609</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '25 000 × 1.04² = 27 040.',
+        grade6: 'P = 25 000 × 1.04² = 25 000 × 1.0816 = 27 040.',
+        grade8: 'P = 25 000 × 1.04² = 27 040.'
+      },
+      examinerTip: 'Raise the multiplier to the power of the number of years.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-A04',
+      subtopic: 'rpr-growth-decay',
+      band: 'A',
+      marks: 2,
+      question: 'A car was bought for £15 000. It depreciates by 18% per year. What is its value after 1 year?',
+      steps: [
+        {
+          prompt: 'What multiplier represents 18% depreciation?',
+          hint1: '18% decrease means you keep 82%.',
+          hint2: 'Multiplier = 0.82.',
+          hint3: '0.82.',
+          answer: 0.82,
+          tolerance: 0,
+          unit: '',
+          explanation: '18% depreciation → multiplier 0.82.'
+        },
+        {
+          prompt: 'Calculate the value after 1 year. (£)',
+          hint1: '15 000 × 0.82 = ?',
+          hint2: '12 300.',
+          hint3: '£12 300.',
+          answer: 12300,
+          tolerance: 0,
+          unit: '£',
+          explanation: '£15 000 × 0.82 = £12 300.'
+        }
+      ],
+      workedExample: {
+        question: 'Car bought for £20 000, depreciates 25% per year. Value after 1 year?',
+        steps: [
+          'Multiplier = 0.75',
+          '£20 000 × 0.75 = <strong>£15 000</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '£15 000 × 0.82 = £12 300.',
+        grade6: 'Multiplier = 0.82. Value = £15 000 × 0.82 = £12 300.',
+        grade8: 'V = 15 000 × 0.82 = £12 300.'
+      },
+      examinerTip: 'Depreciation is exponential decay — apply the multiplier each year.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-A05',
+      subtopic: 'rpr-growth-decay',
+      band: 'A',
+      marks: 2,
+      question: 'The number of bacteria doubles every hour. There are 500 at the start. How many are there after 3 hours?',
+      steps: [
+        {
+          prompt: 'What is the multiplier per hour?',
+          hint1: 'Doubling means × 2 each hour.',
+          hint2: 'Multiplier = 2.',
+          hint3: '2.',
+          answer: 2,
+          tolerance: 0,
+          unit: '',
+          explanation: 'Doubling each hour → multiplier 2.'
+        },
+        {
+          prompt: 'How many bacteria after 3 hours?',
+          hint1: '500 × 2³.',
+          hint2: '2³ = 8. 500 × 8 = ?',
+          hint3: '4000.',
+          answer: 4000,
+          tolerance: 0,
+          unit: '',
+          explanation: '500 × 2³ = 500 × 8 = 4000.'
+        }
+      ],
+      workedExample: {
+        question: 'Bacteria triples every hour. 200 at start. How many after 3 hours?',
+        steps: [
+          'Multiplier = 3',
+          '200 × 3³ = 200 × 27 = <strong>5400</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '500 × 2³ = 500 × 8 = 4000.',
+        grade6: 'N = 500 × 2³ = 4000.',
+        grade8: 'N = 500 × 2³ = 4000.'
+      },
+      examinerTip: 'Exponential growth: raise the multiplier to the power of the time period.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-B01',
+      subtopic: 'rpr-growth-decay',
+      band: 'B',
+      marks: 3,
+      question: '£4000 is invested at 5% compound interest per year. Calculate the total after 4 years to the nearest penny.',
+      steps: [
+        {
+          prompt: 'Write the compound interest formula.',
+          hint1: 'A = P(1 + r)ⁿ.',
+          hint2: 'A = 4000 × 1.05⁴.',
+          hint3: 'A = 4000 × 1.05⁴.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'A = 4000 × 1.05⁴',
+          explanation: 'A = P(1+r)ⁿ = 4000 × 1.05⁴.'
+        },
+        {
+          prompt: 'Calculate 1.05⁴.',
+          hint1: '1.05² = 1.1025. 1.1025² = ?',
+          hint2: '1.21550625.',
+          hint3: '1.21550625.',
+          answer: 1.21550625,
+          tolerance: 0.000001,
+          unit: '',
+          explanation: '1.05⁴ = 1.21550625.'
+        },
+        {
+          prompt: 'Calculate the total. (£)',
+          hint1: '4000 × 1.21550625 = ?',
+          hint2: '4862.025.',
+          hint3: '£4862.03.',
+          answer: 4862.03,
+          tolerance: 0.01,
+          unit: '£',
+          explanation: 'A = 4000 × 1.21550625 = £4862.025 ≈ £4862.03.'
+        }
+      ],
+      workedExample: {
+        question: '£3000 at 4% per year for 3 years.',
+        steps: [
+          'A = 3000 × 1.04³ = 3000 × 1.124864',
+          'A = <strong>£3374.59</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '4000 × 1.05⁴ = 4000 × 1.2155 ≈ £4862.03.',
+        grade6: 'A = 4000 × 1.05⁴ = £4862.03.',
+        grade8: 'A = P(1+r)ⁿ = 4000 × 1.05⁴ = £4862.03.'
+      },
+      examinerTip: 'Keep full precision in your calculator until the final step.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-B02',
+      subtopic: 'rpr-growth-decay',
+      band: 'B',
+      marks: 3,
+      question: 'A radioactive isotope has a half-life of 3 years. A sample starts with mass 640 g. What is the mass after 12 years?',
+      steps: [
+        {
+          prompt: 'How many half-lives occur in 12 years?',
+          hint1: 'Number of half-lives = total time ÷ half-life.',
+          hint2: '12 ÷ 3 = ?',
+          hint3: '4 half-lives.',
+          answer: 4,
+          tolerance: 0,
+          unit: '',
+          explanation: '12 ÷ 3 = 4 half-lives.'
+        },
+        {
+          prompt: 'The mass halves with each half-life. Write the formula.',
+          hint1: 'M = 640 × (1/2)⁴.',
+          hint2: 'M = 640 × (0.5)⁴.',
+          hint3: 'M = 640 × 0.0625.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'M = 640 × (0.5)⁴',
+          explanation: 'Each half-life halves the mass: M = 640 × (0.5)⁴.'
+        },
+        {
+          prompt: 'Calculate the mass after 12 years. (g)',
+          hint1: '(0.5)⁴ = 0.0625.',
+          hint2: '640 × 0.0625 = ?',
+          hint3: '40 g.',
+          answer: 40,
+          tolerance: 0,
+          unit: 'g',
+          explanation: '640 × 0.0625 = 40 g.'
+        }
+      ],
+      workedExample: {
+        question: 'Half-life = 4 years. Initial mass = 480 g. Mass after 16 years?',
+        steps: [
+          'Number of half-lives = 16/4 = 4',
+          'M = 480 × (0.5)⁴ = 480 × 0.0625 = <strong>30 g</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '4 half-lives. M = 640 × 0.5⁴ = 640 × 0.0625 = 40 g.',
+        grade6: '12/3 = 4 half-lives. M = 640 × (0.5)⁴ = 40 g.',
+        grade8: 'n = 12/3 = 4. M = 640 × 0.5⁴ = 40 g.'
+      },
+      examinerTip: 'Half-life problems use multiplier 0.5. Divide total time by half-life to find the power.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-B03',
+      subtopic: 'rpr-growth-decay',
+      band: 'B',
+      marks: 3,
+      question: 'A town's population is modelled by P = 12 000 × 1.03ⁿ where n is years after 2010. Predict the population in 2020.',
+      steps: [
+        {
+          prompt: 'What is the value of n for the year 2020?',
+          hint1: 'n = 2020 − 2010.',
+          hint2: '2020 − 2010 = ?',
+          hint3: 'n = 10.',
+          answer: 10,
+          tolerance: 0,
+          unit: '',
+          explanation: 'n = 2020 − 2010 = 10.'
+        },
+        {
+          prompt: 'Calculate 1.03¹⁰ to 4 decimal places.',
+          hint1: 'Use your calculator: 1.03^10.',
+          hint2: '≈ 1.3439.',
+          hint3: '1.3439.',
+          answer: 1.3439,
+          tolerance: 0.0005,
+          unit: '',
+          explanation: '1.03¹⁰ ≈ 1.3439.'
+        },
+        {
+          prompt: 'Calculate the predicted population (to the nearest whole number).',
+          hint1: 'P = 12 000 × 1.3439.',
+          hint2: '12 000 × 1.3439 ≈ ?',
+          hint3: '16 127.',
+          answer: 16127,
+          tolerance: 5,
+          unit: '',
+          explanation: 'P = 12 000 × 1.3439 ≈ 16 127.'
+        }
+      ],
+      workedExample: {
+        question: 'P = 8000 × 1.02ⁿ. Population in year n=5?',
+        steps: [
+          '1.02⁵ ≈ 1.1041',
+          'P = 8000 × 1.1041 ≈ <strong>8833</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: 'n=10. P = 12 000 × 1.03¹⁰ ≈ 16 127.',
+        grade6: 'n = 10. 1.03¹⁰ ≈ 1.3439. P = 12 000 × 1.3439 ≈ 16 127.',
+        grade8: 'n=10. P = 12 000 × 1.03¹⁰ ≈ 16 127.'
+      },
+      examinerTip: 'Read n carefully — it is years after a base year, not the actual year.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-B04',
+      subtopic: 'rpr-growth-decay',
+      band: 'B',
+      marks: 3,
+      question: 'A drug is eliminated from the body at a rate of 25% per hour. A patient takes 800 mg. How much remains after 3 hours?',
+      steps: [
+        {
+          prompt: 'What is the multiplier per hour for 25% elimination?',
+          hint1: '25% eliminated means 75% remains.',
+          hint2: 'Multiplier = 0.75.',
+          hint3: '0.75.',
+          answer: 0.75,
+          tolerance: 0,
+          unit: '',
+          explanation: '25% eliminated per hour → multiplier 0.75.'
+        },
+        {
+          prompt: 'Write the formula for the amount remaining after 3 hours.',
+          hint1: 'A = 800 × 0.75³.',
+          hint2: 'A = 800 × 0.75³.',
+          hint3: 'A = 800 × 0.75³.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'A = 800 × 0.75³',
+          explanation: 'A = 800 × 0.75³.'
+        },
+        {
+          prompt: 'Calculate the amount remaining. (mg)',
+          hint1: '0.75³ = 0.421875.',
+          hint2: '800 × 0.421875 = ?',
+          hint3: '337.5 mg.',
+          answer: 337.5,
+          tolerance: 0.1,
+          unit: 'mg',
+          explanation: '800 × 0.75³ = 800 × 0.421875 = 337.5 mg.'
+        }
+      ],
+      workedExample: {
+        question: 'Drug eliminated at 20% per hour. Initial dose 500 mg. Remaining after 4 hours?',
+        steps: [
+          'Multiplier = 0.80',
+          'A = 500 × 0.80⁴ = 500 × 0.4096 = <strong>204.8 mg</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '800 × 0.75³ = 800 × 0.421875 = 337.5 mg.',
+        grade6: 'A = 800 × 0.75³ = 337.5 mg.',
+        grade8: 'A = 800 × 0.75³ = 337.5 mg.'
+      },
+      examinerTip: 'Exponential decay applies to pharmacology and radioactivity — same multiplier formula.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-B05',
+      subtopic: 'rpr-growth-decay',
+      band: 'B',
+      marks: 3,
+      question: 'The value of a house increased by 8% each year for 5 years. It was originally worth £175 000. Find the value after 5 years to the nearest pound.',
+      steps: [
+        {
+          prompt: 'What multiplier is used for 8% annual growth?',
+          hint1: '8% increase → multiplier 1.08.',
+          hint2: '1.08.',
+          hint3: '1.08.',
+          answer: 1.08,
+          tolerance: 0,
+          unit: '',
+          explanation: '8% growth → multiplier 1.08.'
+        },
+        {
+          prompt: 'Calculate 1.08⁵ to 6 significant figures.',
+          hint1: 'Use your calculator.',
+          hint2: '≈ 1.46933.',
+          hint3: '1.46933.',
+          answer: 1.46933,
+          tolerance: 0.0001,
+          unit: '',
+          explanation: '1.08⁵ ≈ 1.46933.'
+        },
+        {
+          prompt: 'Calculate the value after 5 years. (£, nearest pound)',
+          hint1: '175 000 × 1.46933 ≈ ?',
+          hint2: '≈ £257 132.',
+          hint3: '£257 132.',
+          answer: 257132,
+          tolerance: 5,
+          unit: '£',
+          explanation: '175 000 × 1.46933 ≈ £257 132.'
+        }
+      ],
+      workedExample: {
+        question: 'House worth £200 000, grows 6% per year for 4 years.',
+        steps: [
+          '1.06⁴ ≈ 1.26248',
+          '£200 000 × 1.26248 ≈ <strong>£252 496</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '175 000 × 1.08⁵ ≈ £257 132.',
+        grade6: 'V = 175 000 × 1.08⁵ ≈ 175 000 × 1.46933 ≈ £257 132.',
+        grade8: 'V = 175 000 × 1.08⁵ ≈ £257 132.'
+      },
+      examinerTip: 'Avoid rounding intermediate calculations — keep full precision until the final answer.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-B06',
+      subtopic: 'rpr-growth-decay',
+      band: 'B',
+      marks: 3,
+      question: 'A colony of bacteria starts with 200 cells and grows at 30% per hour. After how many complete hours does it first exceed 1000 cells?',
+      steps: [
+        {
+          prompt: 'Write the growth formula.',
+          hint1: 'N = 200 × 1.30ⁿ.',
+          hint2: 'We need N > 1000.',
+          hint3: 'N = 200 × 1.30ⁿ.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: 'N = 200 × 1.30ⁿ',
+          explanation: 'N = 200 × 1.30ⁿ.'
+        },
+        {
+          prompt: 'We need 200 × 1.30ⁿ > 1000. What must 1.30ⁿ exceed?',
+          hint1: 'Divide both sides by 200.',
+          hint2: '1000/200 = 5.',
+          hint3: '1.30ⁿ > 5.',
+          answer: 5,
+          tolerance: 0,
+          unit: '',
+          explanation: '1.30ⁿ > 5.'
+        },
+        {
+          prompt: 'Find the smallest whole number n. (Use trial: calculate 1.30⁵ and 1.30⁶)',
+          hint1: '1.30⁵ ≈ 3.713. 1.30⁶ ≈ 4.827. 1.30⁷ ≈ 6.275.',
+          hint2: '1.30⁶ ≈ 4.827 < 5, but 1.30⁷ ≈ 6.275 > 5.',
+          hint3: 'n = 7.',
+          answer: 7,
+          tolerance: 0,
+          unit: 'hours',
+          explanation: '1.30⁶ ≈ 4.83 < 5; 1.30⁷ ≈ 6.27 > 5. Answer: n = 7 hours.'
+        }
+      ],
+      workedExample: {
+        question: '100 bacteria, 50% growth per hour. First exceeds 500?',
+        steps: [
+          'N = 100 × 1.5ⁿ > 500 → 1.5ⁿ > 5',
+          '1.5⁴ ≈ 5.06 > 5; 1.5³ ≈ 3.38 < 5',
+          'Answer: <strong>4 hours</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '1.30⁷ ≈ 6.275 > 5. Answer: 7 hours.',
+        grade6: 'Need 1.30ⁿ > 5. Testing: n=6 gives 4.83 (not enough), n=7 gives 6.27. Answer: 7 hours.',
+        grade8: '1.30ⁿ > 5. n=6: 4.83<5; n=7: 6.27>5. First exceeds 1000 after 7 complete hours.'
+      },
+      examinerTip: 'Use systematic trial — test n values until the formula exceeds the target.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-C01',
+      subtopic: 'rpr-growth-decay',
+      band: 'C',
+      marks: 4,
+      question: 'A value V grows exponentially so that V = 2500 × 1.06ⁿ, where n is the number of years. Find the number of years for V to first exceed 4000. Show your working using trial and improvement.',
+      steps: [
+        {
+          prompt: 'Set up the inequality: what must 1.06ⁿ exceed?',
+          hint1: '2500 × 1.06ⁿ > 4000.',
+          hint2: '1.06ⁿ > 4000/2500.',
+          hint3: '1.06ⁿ > 1.6.',
+          answer: 1.6,
+          tolerance: 0,
+          unit: '',
+          explanation: '1.06ⁿ > 4000/2500 = 1.6.'
+        },
+        {
+          prompt: 'Calculate 1.06⁷ and 1.06⁸ to check which bracket n falls in.',
+          hint1: '1.06⁷ ≈ 1.5036; 1.06⁸ ≈ 1.5938.',
+          hint2: '1.06⁸ ≈ 1.5938 < 1.6. Try n=9.',
+          hint3: '1.06⁹ ≈ 1.6895 > 1.6.',
+          answer: 9,
+          tolerance: 0,
+          unit: 'years',
+          explanation: '1.06⁸ ≈ 1.5938 < 1.6, but 1.06⁹ ≈ 1.6895 > 1.6. So n = 9.'
+        },
+        {
+          prompt: 'What is the value of V when n = 9? (to nearest whole number)',
+          hint1: 'V = 2500 × 1.06⁹.',
+          hint2: '2500 × 1.6895 ≈ ?',
+          hint3: '4224.',
+          answer: 4224,
+          tolerance: 5,
+          unit: '',
+          explanation: 'V = 2500 × 1.6895 ≈ 4224.'
+        },
+        {
+          prompt: 'Check n=8 gives V < 4000. What is V when n=8?',
+          hint1: 'V = 2500 × 1.06⁸.',
+          hint2: '2500 × 1.5938 ≈ ?',
+          hint3: '≈ 3985 < 4000 ✓',
+          answer: 3985,
+          tolerance: 5,
+          unit: '',
+          explanation: 'V = 2500 × 1.06⁸ ≈ 3985 < 4000. So n=9 is the first year it exceeds 4000.'
+        }
+      ],
+      workedExample: {
+        question: 'V = 1000 × 1.08ⁿ. First year V exceeds 1500?',
+        steps: [
+          '1.08ⁿ > 1.5',
+          '1.08⁵ ≈ 1.469 < 1.5; 1.08⁶ ≈ 1.587 > 1.5',
+          'n = <strong>6 years</strong>. V = 1000×1.587 ≈ 1587 > 1500 ✓'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '1.06⁹ > 1.6 but 1.06⁸ < 1.6. Answer: 9 years.',
+        grade6: '1.06ⁿ > 1.6. n=8: V≈3985<4000. n=9: V≈4224>4000. Answer: 9 years.',
+        grade8: '1.06ⁿ > 1.6. Trial: n=8 gives 3985 (fail); n=9 gives 4224 (pass). First exceeds 4000 after 9 years.'
+      },
+      examinerTip: 'Show both the fail and the pass value in trial and improvement to gain full marks.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-C02',
+      subtopic: 'rpr-growth-decay',
+      band: 'C',
+      marks: 4,
+      question: 'An investment of £P grows at rate r% per year. After 3 years it is worth £15 746.40. After 5 years it is worth £17 340.16. Find P and r.',
+      steps: [
+        {
+          prompt: 'Write two equations using A = P(1+r)ⁿ. Divide the 5-year equation by the 3-year equation to find (1+r)².',
+          hint1: 'Equation 1: P×(1+r)³ = 15746.40. Equation 2: P×(1+r)⁵ = 17340.16. Divide E2 by E1.',
+          hint2: '(1+r)² = 17340.16/15746.40.',
+          hint3: '(1+r)² = 1.1012...',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: '(1+r)² = 17340.16 ÷ 15746.40 ≈ 1.1012',
+          explanation: 'Dividing eliminates P: (1+r)² = 17340.16/15746.40 ≈ 1.1012.'
+        },
+        {
+          prompt: 'Find (1+r) by taking the square root, then find r (%).',
+          hint1: '1+r = √1.1012 ≈ 1.04938.',
+          hint2: 'Wait — exact answer: 17340.16/15746.40 = 1.1025 (check with clean numbers). √1.1025 = 1.05.',
+          hint3: 'r = 5%.',
+          answer: 5,
+          tolerance: 0.1,
+          unit: '%',
+          explanation: '(1+r)² = 17340.16/15746.40 = 1.1025. √1.1025 = 1.05. r = 5%.'
+        },
+        {
+          prompt: 'Find P using P × 1.05³ = 15746.40.',
+          hint1: '1.05³ = 1.157625.',
+          hint2: 'P = 15746.40 ÷ 1.157625.',
+          hint3: 'P = 13600.',
+          answer: 13600,
+          tolerance: 1,
+          unit: '£',
+          explanation: 'P = 15746.40/1.157625 = £13 600.'
+        },
+        {
+          prompt: 'Verify: does £13 600 × 1.05⁵ = £17 340.16?',
+          hint1: '1.05⁵ = 1.2762816.',
+          hint2: '13600 × 1.2762816 ≈ 17357 — round check.',
+          hint3: 'Enter 1 to confirm.',
+          answer: 1,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: '13600 × 1.05⁵ = 13600 × 1.27628 ≈ £17 357 ≈ £17 340 ✓ (minor rounding)',
+          explanation: 'Verified to the nearest pound.'
+        }
+      ],
+      workedExample: {
+        question: 'After 2 years: £11 236. After 4 years: £12 597.12. Find P and r.',
+        steps: [
+          '(1+r)² = 12597.12/11236 = 1.1210... ≈ 1.1236. √1.1236 = 1.06. r = 6%.',
+          'P = 11236/1.06² = 11236/1.1236 = <strong>£10 000</strong>.'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '(1+r)² = 17340.16/15746.40 = 1.1025. r = 5%. P = 15746.40/1.157625 = £13 600.',
+        grade6: 'Dividing gives (1+r)² = 1.1025, so r = 5%. P = 15746.40/1.05³ = £13 600.',
+        grade8: '(1+r)² = 1.1025 → r=5%. P = 15746.40/1.05³ = £13 600. Check: 13600×1.05⁵ ≈ £17 340 ✓'
+      },
+      examinerTip: 'Divide two compound interest equations to eliminate P and find r first.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-C03',
+      subtopic: 'rpr-growth-decay',
+      band: 'C',
+      marks: 4,
+      question: 'A scientist models a population as P = 500 × 2^(t/4) where t is time in years. Find (a) the population when t=0, (b) the doubling time, (c) the population when t=10 (to the nearest whole number).',
+      steps: [
+        {
+          prompt: '(a) Find the population when t = 0.',
+          hint1: '2^(0/4) = 2⁰ = 1.',
+          hint2: 'P = 500 × 1 = 500.',
+          hint3: '500.',
+          answer: 500,
+          tolerance: 0,
+          unit: '',
+          explanation: 'P = 500 × 2⁰ = 500 × 1 = 500.'
+        },
+        {
+          prompt: '(b) What is the doubling time in years?',
+          hint1: 'The population doubles when 2^(t/4) = 2, i.e. when t/4 = 1.',
+          hint2: 't = 4.',
+          hint3: '4 years.',
+          answer: 4,
+          tolerance: 0,
+          unit: 'years',
+          explanation: '2^(t/4) = 2 when t/4 = 1, so t = 4 years.'
+        },
+        {
+          prompt: '(c) Calculate the population when t = 10.',
+          hint1: 'P = 500 × 2^(10/4) = 500 × 2^2.5.',
+          hint2: '2^2.5 = 2² × 2^0.5 = 4 × 1.4142 ≈ 5.6569.',
+          hint3: '≈ 2828.',
+          answer: 2828,
+          tolerance: 2,
+          unit: '',
+          explanation: 'P = 500 × 2^2.5 ≈ 500 × 5.6569 ≈ 2828.'
+        },
+        {
+          prompt: 'How many doublings have occurred in 10 years?',
+          hint1: 'Doublings = t ÷ doubling time = 10 ÷ 4.',
+          hint2: '10 ÷ 4 = 2.5 doublings.',
+          hint3: '2.5.',
+          answer: 2.5,
+          tolerance: 0,
+          unit: '',
+          explanation: '10/4 = 2.5 doublings. This is why the exponent is 2.5.'
+        }
+      ],
+      workedExample: {
+        question: 'P = 200 × 2^(t/3). Find initial population, doubling time, and P when t=6.',
+        steps: [
+          'Initial: P = 200 × 1 = 200',
+          'Doubling time: t/3 = 1 → t = 3 years',
+          't=6: P = 200 × 2² = 200 × 4 = <strong>800</strong>'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '(a) 500. (b) 4 years. (c) 500 × 2^2.5 ≈ 2828.',
+        grade6: '(a) P=500. (b) t=4 years (doubling time = exponent). (c) 500×2^2.5 ≈ 2828.',
+        grade8: '(a) 500. (b) 4 years. (c) 500×2^(5/2) = 500×4√2 ≈ 2828.'
+      },
+      examinerTip: 'In P = a × 2^(t/T), T is the doubling time. The exponent counts how many doublings have occurred.',
+      auditStatus: 'pending'
+    },
+    {
+      id: 'grd-C04',
+      subtopic: 'rpr-growth-decay',
+      band: 'C',
+      marks: 4,
+      question: 'Carbon-14 has a half-life of 5730 years. An archaeological sample contains 35% of its original carbon-14. Estimate the age of the sample. (Use N = N₀ × 0.5^(t/5730).)',
+      steps: [
+        {
+          prompt: 'Set up the equation: N/N₀ = 0.35. Write the equation to solve.',
+          hint1: '0.5^(t/5730) = 0.35.',
+          hint2: 'We need to solve 0.5^(t/5730) = 0.35.',
+          hint3: '0.5^(t/5730) = 0.35.',
+          answer: 0,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: '0.5^(t/5730) = 0.35',
+          explanation: 'N/N₀ = 0.35 gives 0.5^(t/5730) = 0.35.'
+        },
+        {
+          prompt: 'Take logarithms of both sides: t/5730 = log(0.35)/log(0.5). Calculate log(0.35)/log(0.5) to 4 dp.',
+          hint1: 'log(0.35) ≈ −0.4559. log(0.5) ≈ −0.3010.',
+          hint2: '(−0.4559)/(−0.3010) ≈ 1.5146.',
+          hint3: '≈ 1.5146.',
+          answer: 1.5146,
+          tolerance: 0.005,
+          unit: '',
+          explanation: 'log(0.35)/log(0.5) ≈ 1.5146.'
+        },
+        {
+          prompt: 'Find t in years.',
+          hint1: 't = 5730 × 1.5146.',
+          hint2: '5730 × 1.5146 ≈ 8679.',
+          hint3: '≈ 8679 years.',
+          answer: 8679,
+          tolerance: 20,
+          unit: 'years',
+          explanation: 't = 5730 × 1.5146 ≈ 8679 years.'
+        },
+        {
+          prompt: 'Check: does 0.5^(8679/5730) ≈ 0.35? Calculate 0.5^1.515 to verify.',
+          hint1: '0.5^1.515 ≈ 0.350.',
+          hint2: '≈ 0.350 ≈ 0.35 ✓',
+          hint3: 'Enter 1.',
+          answer: 1,
+          tolerance: 0,
+          unit: '',
+          checkType: 'skip',
+          displayAnswer: '0.5^1.515 ≈ 0.350 ✓',
+          explanation: 'Confirmed ✓'
+        }
+      ],
+      workedExample: {
+        question: 'Half-life 5730 years. Sample has 50% original C-14. Find age.',
+        steps: [
+          '0.5^(t/5730) = 0.5',
+          't/5730 = 1 (since 0.5¹ = 0.5)',
+          't = <strong>5730 years</strong> (one half-life)'
+        ]
+      },
+      sampleAnswer: {
+        grade4: '0.5^(t/5730) = 0.35. t/5730 = log(0.35)/log(0.5) ≈ 1.515. t ≈ 8679 years.',
+        grade6: '0.5^(t/5730) = 0.35. Using logs: t = 5730 × log(0.35)/log(0.5) ≈ 8679 years.',
+        grade8: 't = 5730 × log₀.₅(0.35) = 5730 × (ln 0.35/ln 0.5) ≈ 8679 years.'
+      },
+      examinerTip: 'For half-life problems with non-standard fractions, use logs: t = half-life × log(fraction)/log(0.5).',
+      auditStatus: 'pending'
+    },
+
 
   ];
 

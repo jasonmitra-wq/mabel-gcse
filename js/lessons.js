@@ -313,6 +313,9 @@ const Lessons = (() => {
   // Process a single prose chunk: sentence-split → group → annotate
   function _fmtChunk(html) {
     if (!html.trim()) return '';
+    // If this chunk is a prose list (3+ "Term: definition" pairs), render as visual list
+    const listHtml = _tryRenderAsList(html);
+    if (listHtml !== null) return listHtml;
     const sents = _splitHtmlSentences(html);
     if (!sents.length) return '';
     const out = [];
@@ -326,6 +329,68 @@ const Lessons = (() => {
       );
     }
     return out.join('');
+  }
+
+  // Detect 3+ <strong>Term</strong>: definition patterns and render as a visual list.
+  // Returns null if the pattern isn't found (fall through to prose rendering).
+  function _tryRenderAsList(html) {
+    if ((html.match(/<strong>[^<]+<\/strong>\s*:/g) || []).length < 3) return null;
+
+    // Split on <strong>Term</strong>: boundaries (capturing group keeps the tag in result)
+    const parts = html.split(/(<strong>[^<]+<\/strong>)\s*:/);
+    // parts[0]              = preamble text
+    // parts[1,3,5,…]        = <strong>Term</strong>
+    // parts[2,4,6,…]        = definition text (includes trailing ". " before next term)
+
+    // Process preamble: strip exam-language sentences, keep ≤ 1 plain sentence
+    const rawPreamble = parts[0].replace(/<[^>]+>/g, '').trim();
+    let preambleHtml = '';
+    if (rawPreamble) {
+      const clean = _splitPlainSentences(rawPreamble).filter(s => !_EXAM_RE.test(s));
+      if (clean.length > 0) {
+        preambleHtml = `<p class="kp-para">${_shortenSentence(clean[0])}</p>`;
+      }
+      // If all sentences were exam-language, omit preamble — list is self-explanatory
+    }
+
+    // Build item list
+    const items = [];
+    for (let i = 1; i + 1 < parts.length; i += 2) {
+      const termHtml = parts[i];                                // <strong>…</strong>
+      const def      = parts[i + 1].trim().replace(/\.\s*$/, ''); // strip trailing period
+      if (termHtml && def) items.push({ termHtml, def });
+    }
+    if (items.length < 3) return null;
+
+    const listItems = items.map(({ termHtml, def }) =>
+      `<li><span class="kp-list-bullet">•</span>${termHtml}<span class="kp-list-sep"> — </span><span class="kp-list-def">${def}</span></li>`
+    ).join('');
+
+    return preambleHtml + `<ul class="kp-def-list">${listItems}</ul>`;
+  }
+
+  // Strip the term name from the start of its own definition (avoids "X — X is the thing")
+  function _cleanKeyTermDef(term, def) {
+    if (!def || !term) return def;
+    const STOPS = new Set(['a','an','the','of','in','at','to','for','with','by','on','is','are','was','were','be','been','and','or','that','it','its','where','which','when','as','from']);
+    const termSig = term.toLowerCase().split(/\s+/).filter(w => w.length > 2 && !STOPS.has(w));
+    if (!termSig.length) return def;
+    let d = def.trim();
+    // Strip leading article to check what follows
+    const artMatch = d.match(/^(A|An|The)\s+/i);
+    const dNoArt   = artMatch ? d.slice(artMatch[0].length) : d;
+    // 1. Full term match: "Diffusion is the movement…" → "the movement…"
+    if (dNoArt.toLowerCase().startsWith(term.toLowerCase())) {
+      const rest = dNoArt.slice(term.length).trimStart().replace(/^(is|are|refers\s+to|:)\s*/i, '');
+      if (rest) return rest.charAt(0).toLowerCase() + rest.slice(1);
+    }
+    // 2. First content word matches a significant term word: "Energy stored…" → "stored…"
+    const fw = (dNoArt.match(/^([A-Za-zÀ-ÿ]+)/) || [])[1]?.toLowerCase();
+    if (fw && termSig.some(tw => tw === fw || tw.startsWith(fw) || fw.startsWith(tw))) {
+      const rest = dNoArt.slice(fw.length).trimStart();
+      if (rest) return rest.charAt(0).toLowerCase() + rest.slice(1);
+    }
+    return def;
   }
 
   // Tokenise HTML into text+tag segments and split on sentence boundaries
@@ -463,7 +528,7 @@ const Lessons = (() => {
         ${hasTerms ? `
           <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:0.5rem;letter-spacing:0.08em;display:flex;align-items:center;gap:0.45rem">${Icons.inline('key', 18)} Key terms</p>
           <ul style="list-style:none;padding:0;margin:0 0 0.85rem;display:flex;flex-direction:column;gap:0.55rem">
-            ${kp.keyTerms.map(t => `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--muted);font-weight:300;font-size:15px">→</span><span style="font-weight:700;font-size:16px;color:var(--teal)">${t.term}</span><span style="color:var(--muted);font-weight:400"> — </span><span style="font-weight:400;font-size:15px;color:rgba(255,255,255,0.80)">${t.def}</span></li>`).join('')}
+            ${kp.keyTerms.map(t => `<li style="line-height:1.65;padding-left:1.1rem;position:relative"><span style="position:absolute;left:0;color:var(--muted);font-weight:300;font-size:15px">→</span><span style="font-weight:700;font-size:16px;color:var(--teal)">${t.term}</span><span style="color:var(--muted);font-weight:400"> — </span><span style="font-weight:400;font-size:15px;color:rgba(255,255,255,0.80)">${_cleanKeyTermDef(t.term, t.def)}</span></li>`).join('')}
           </ul>` : ''}
         ${kp.memTip ? `<div class="mem-tip-box">💡 <strong>Memory tip:</strong> ${kp.memTip}</div>` : ''}
         ${kp.tutor_note ? `<div style="border-left:3px solid var(--purple);background:rgba(199,125,255,0.08);border-radius:0 6px 6px 0;padding:12px 16px;margin-bottom:1rem;font-size:16px;color:#F0EAD6;line-height:1.7">${kp.tutor_note}</div>` : ''}

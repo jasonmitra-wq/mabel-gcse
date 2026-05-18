@@ -1029,6 +1029,32 @@ body::before {
   color: var(--text);
 }
 
+/* ── Inline definition list (auto-rendered from Term: definition prose) ── */
+.kp-def-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.35rem 0 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.kp-def-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+.kp-list-bullet {
+  position: absolute;
+  left: 0;
+  color: var(--amber);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.kp-list-sep  { color: var(--muted); }
+.kp-list-def  { font-weight: 400; color: var(--text); }
+
 /* ── Lesson content — reformatted paragraphs, equation blocks, callout boxes ── */
 .kp-para { font-size: 1.05rem; line-height: 1.75; color: var(--text); margin-bottom: 0.85rem; }
 .kp-para:last-of-type { margin-bottom: 0; }

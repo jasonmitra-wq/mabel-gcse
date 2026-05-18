@@ -19794,6 +19794,601 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },
 
+    // ── stat-averages-A02 ──────────────────────────────────────
+    {
+      id: 'stat-averages-A02', subtopic: 'stat-averages', band: 'A', marks: 3,
+      question: 'Find the mean, median and mode of: 3, 5, 5, 7, 8, 9, 5.',
+      steps: [
+        {
+          prompt: 'Sort the data and find the mean.',
+          hint1: 'Sort: 3, 5, 5, 5, 7, 8, 9. There are 7 values.',
+          hint2: 'Add them: 3+5+5+7+8+9+5 = 42.',
+          hint3: 'Mean = 42 ÷ 7 = 6.',
+          answer: 6, tolerance: 0, unit: '',
+          explanation: 'Sorted: 3,5,5,5,7,8,9. Sum = 42. Mean = 42 ÷ 7 = 6.',
+        },
+        {
+          prompt: 'Find the median (middle value of the sorted list).',
+          hint1: 'There are 7 values, so the median is the 4th.',
+          hint2: 'Sorted: 3,5,5,5,7,8,9. Count to the 4th.',
+          hint3: 'Median = 5.',
+          answer: 5, tolerance: 0, unit: '',
+          explanation: 'The 4th value in 3,5,5,5,7,8,9 is 5.',
+        },
+        {
+          prompt: 'Find the mode (most frequent value).',
+          hint1: 'Look for the value that appears most often.',
+          hint2: '5 appears three times; all others appear once.',
+          hint3: 'Mode = 5.',
+          answer: 5, tolerance: 0, unit: '',
+          explanation: '5 appears 3 times, more than any other value. Mode = 5.',
+        },
+      ],
+      workedExample: {
+        question: 'Find the mean, median and mode of: 2, 4, 4, 6, 9.',
+        steps: [
+          'Sort — already sorted: 2, 4, 4, 6, 9 (n = 5)',
+          'Mean — 2+4+4+6+9 = 25; 25 ÷ 5 = <strong>5</strong>',
+          'Median — 3rd value = <strong>4</strong>',
+          'Mode — 4 appears twice = <strong>4</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Mean = 6, median = 5, mode = 5.",
+        grade6: "Sorted: 3,5,5,5,7,8,9. Mean = 42÷7 = 6. Median = 4th value = 5. Mode = 5 (appears 3 times).",
+        grade8: "Sorted list: 3,5,5,5,7,8,9. Mean = 42÷7 = 6. Median = 5 (middle of 7 values). Mode = 5 (highest frequency, 3 times).",
+      },
+      examinerTip: "Students often forget to sort before finding the median, or mistake the mean for the median.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-averages-A03 ──────────────────────────────────────
+    {
+      id: 'stat-averages-A03', subtopic: 'stat-averages', band: 'A', marks: 2,
+      question: 'Weekly savings (£): 6, 9, 12, 15, 18, 21, 24. Find the mean and range.',
+      steps: [
+        {
+          prompt: 'Find the mean.',
+          hint1: 'Add all seven values: 6+9+12+15+18+21+24.',
+          hint2: 'Sum = 105. Divide by 7.',
+          hint3: 'Mean = 15.',
+          answer: 15, tolerance: 0, unit: '',
+          explanation: 'Sum = 105. Mean = 105 ÷ 7 = 15.',
+        },
+        {
+          prompt: 'Find the range.',
+          hint1: 'Range = largest − smallest.',
+          hint2: 'Largest = 24, smallest = 6.',
+          hint3: 'Range = 24 − 6 = 18.',
+          answer: 18, tolerance: 0, unit: '',
+          explanation: 'Range = 24 − 6 = 18.',
+        },
+      ],
+      workedExample: {
+        question: 'Data: 5, 10, 15, 20, 25. Find the mean and range.',
+        steps: [
+          'Mean — 5+10+15+20+25 = 75; 75 ÷ 5 = <strong>15</strong>',
+          'Range — 25 − 5 = <strong>20</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Mean = 15, range = 18.",
+        grade6: "Sum = 105. Mean = 105 ÷ 7 = 15. Range = 24 − 6 = 18.",
+        grade8: "Sum = 105; mean = 15. Range = max − min = 24 − 6 = 18. The range shows spread around the mean.",
+      },
+      examinerTip: "Students sometimes calculate range as largest + smallest rather than largest − smallest.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-averages-A04 ──────────────────────────────────────
+    {
+      id: 'stat-averages-A04', subtopic: 'stat-averages', band: 'A', marks: 3,
+      question: 'A frequency table shows: mark 5 (freq 2), mark 6 (freq 4), mark 7 (freq 6), mark 8 (freq 5), mark 9 (freq 3). Find the mean mark.',
+      steps: [
+        {
+          prompt: 'Find the total frequency.',
+          hint1: 'Add all the frequencies: 2+4+6+5+3.',
+          hint2: 'Total = 20.',
+          hint3: 'n = 20.',
+          answer: 20, tolerance: 0, unit: '',
+          explanation: 'Total frequency n = 2+4+6+5+3 = 20.',
+        },
+        {
+          prompt: 'Calculate Σfx (multiply each mark by its frequency, then add).',
+          hint1: '5×2=10, 6×4=24, 7×6=42, 8×5=40, 9×3=27.',
+          hint2: 'Add: 10+24+42+40+27.',
+          hint3: 'Σfx = 143.',
+          answer: 143, tolerance: 0, unit: '',
+          explanation: 'Σfx = 10+24+42+40+27 = 143.',
+        },
+        {
+          prompt: 'Find the mean: Σfx ÷ n.',
+          hint1: 'Mean = 143 ÷ 20.',
+          hint2: '143 ÷ 20 = 7.15.',
+          hint3: 'Mean = 7.15.',
+          answer: 7.15, tolerance: 0.01, unit: '',
+          explanation: 'Mean = 143 ÷ 20 = 7.15.',
+        },
+      ],
+      workedExample: {
+        question: 'Frequency table: x=3 (f=2), x=4 (f=5), x=5 (f=3). Find the mean.',
+        steps: [
+          'Total frequency — 2+5+3 = <strong>10</strong>',
+          'Σfx — 3×2+4×5+5×3 = 6+20+15 = <strong>41</strong>',
+          'Mean — 41 ÷ 10 = <strong>4.1</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Mean = 7.15.",
+        grade6: "n = 20. Σfx = 5×2+6×4+7×6+8×5+9×3 = 143. Mean = 143÷20 = 7.15.",
+        grade8: "n = 20. Σfx = 10+24+42+40+27 = 143. Mean = Σfx÷n = 143÷20 = 7.15.",
+      },
+      examinerTip: "A common error is adding all x-values and dividing by the number of rows rather than by total frequency.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-averages-A05 ──────────────────────────────────────
+    {
+      id: 'stat-averages-A05', subtopic: 'stat-averages', band: 'A', marks: 2,
+      question: 'Test scores: 45, 62, 58, 71, 62, 55, 47. Find the median and mode.',
+      steps: [
+        {
+          prompt: 'Sort the data and find the median.',
+          hint1: 'Sort: 45, 47, 55, 58, 62, 62, 71 (n = 7).',
+          hint2: 'Median is the 4th value.',
+          hint3: 'Median = 58.',
+          answer: 58, tolerance: 0, unit: '',
+          explanation: 'Sorted: 45,47,55,58,62,62,71. The 4th value (middle of 7) = 58.',
+        },
+        {
+          prompt: 'Find the mode.',
+          hint1: 'Which value appears more than once?',
+          hint2: '62 appears twice.',
+          hint3: 'Mode = 62.',
+          answer: 62, tolerance: 0, unit: '',
+          explanation: '62 appears twice; all other values appear once. Mode = 62.',
+        },
+      ],
+      workedExample: {
+        question: 'Scores: 12, 7, 15, 7, 10, 18, 7. Find the median and mode.',
+        steps: [
+          'Sort — 7, 7, 7, 10, 12, 15, 18 (n = 7)',
+          'Median — 4th value = <strong>10</strong>',
+          'Mode — 7 appears 3 times = <strong>7</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Median = 58, mode = 62.",
+        grade6: "Sorted: 45,47,55,58,62,62,71. Median = 4th value = 58. Mode = 62 (appears twice).",
+        grade8: "Sorted: 45,47,55,58,62,62,71. Median = 58 (4th of 7 values). Mode = 62 (frequency 2, the highest).",
+      },
+      examinerTip: "Always sort before finding the median — using the unsorted list gives the wrong answer.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-averages-B02 ──────────────────────────────────────
+    {
+      id: 'stat-averages-B02', subtopic: 'stat-averages', band: 'B', marks: 3,
+      question: 'Grouped frequency table: 0<x≤10 (f=4), 10<x≤20 (f=8), 20<x≤30 (f=12), 30<x≤40 (f=6). Estimate the mean.',
+      steps: [
+        {
+          prompt: 'Find the total frequency n.',
+          hint1: 'Add all frequencies: 4+8+12+6.',
+          hint2: 'Total = 30.',
+          hint3: 'n = 30.',
+          answer: 30, tolerance: 0, unit: '',
+          explanation: 'n = 4+8+12+6 = 30.',
+        },
+        {
+          prompt: 'Use midpoints (5, 15, 25, 35) to calculate Σfm.',
+          hint1: '5×4=20, 15×8=120, 25×12=300, 35×6=210.',
+          hint2: 'Add: 20+120+300+210.',
+          hint3: 'Σfm = 650.',
+          answer: 650, tolerance: 0, unit: '',
+          explanation: 'Σfm = 5×4 + 15×8 + 25×12 + 35×6 = 20+120+300+210 = 650.',
+        },
+        {
+          prompt: 'Estimate the mean: Σfm ÷ n.',
+          hint1: 'Mean = 650 ÷ 30.',
+          hint2: '650 ÷ 30 ≈ 21.67.',
+          hint3: 'Estimated mean ≈ 21.67.',
+          answer: 21.67, tolerance: 0.05, unit: '',
+          explanation: 'Estimated mean = 650 ÷ 30 ≈ 21.67.',
+        },
+      ],
+      workedExample: {
+        question: 'Grouped table: 0<x≤10 (f=2), 10<x≤20 (f=6), 20<x≤30 (f=2). Estimate the mean.',
+        steps: [
+          'Total frequency — 2+6+2 = <strong>10</strong>',
+          'Midpoints — 5, 15, 25',
+          'Σfm — 5×2+15×6+25×2 = 10+90+50 = <strong>150</strong>',
+          'Estimated mean — 150 ÷ 10 = <strong>15</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Estimated mean ≈ 21.67.",
+        grade6: "Midpoints: 5,15,25,35. Σfm = 20+120+300+210 = 650. Mean = 650÷30 ≈ 21.67.",
+        grade8: "n = 30. Using midpoints: Σfm = 5×4+15×8+25×12+35×6 = 650. Estimated mean = 650÷30 = 21.67 (3 s.f.).",
+      },
+      examinerTip: "Use the midpoint of each class, not the class boundaries. For 0<x≤10 the midpoint is 5, not 0 or 10.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-averages-B03 ──────────────────────────────────────
+    {
+      id: 'stat-averages-B03', subtopic: 'stat-averages', band: 'B', marks: 3,
+      question: 'The mean of 8 values is 15. Three values (10, 12, 20) are removed and two new values are added, giving 7 values with a new mean of 14. Find the sum of the two new values.',
+      steps: [
+        {
+          prompt: 'Find the original sum of all 8 values.',
+          hint1: 'Sum = mean × number of values.',
+          hint2: 'Sum = 15 × 8.',
+          hint3: 'Original sum = 120.',
+          answer: 120, tolerance: 0, unit: '',
+          explanation: 'Original sum = 8 × 15 = 120.',
+        },
+        {
+          prompt: 'Find the sum after removing 10, 12 and 20.',
+          hint1: 'Subtract each removed value: 120 − 10 − 12 − 20.',
+          hint2: '120 − 42 = 78.',
+          hint3: 'Remaining sum = 78.',
+          answer: 78, tolerance: 0, unit: '',
+          explanation: '120 − 10 − 12 − 20 = 78.',
+        },
+        {
+          prompt: 'Find the sum of the two new values.',
+          hint1: 'New sum needed = new mean × new count = 14 × 7.',
+          hint2: 'New sum = 98. The two new values account for 98 − 78.',
+          hint3: 'Sum of two new values = 20.',
+          answer: 20, tolerance: 0, unit: '',
+          explanation: 'New total sum = 14 × 7 = 98. Sum of two new values = 98 − 78 = 20.',
+        },
+      ],
+      workedExample: {
+        question: 'Mean of 6 values is 10. Remove 8 and 14. Add two new values. New mean of 6 values is 9. Find the sum of the two new values.',
+        steps: [
+          'Original sum — 10 × 6 = <strong>60</strong>',
+          'After removing — 60 − 8 − 14 = <strong>38</strong>',
+          'New total sum — 9 × 6 = <strong>54</strong>',
+          'Sum of new pair — 54 − 38 = <strong>16</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "The two new values sum to 20.",
+        grade6: "Original sum = 8×15 = 120. After removing: 120−10−12−20 = 78. New sum = 7×14 = 98. New pair sum = 98−78 = 20.",
+        grade8: "Original Σx = 8×15 = 120. Removing three values: 120−42 = 78. Required new Σx = 7×14 = 98. Sum of new values = 98−78 = 20.",
+      },
+      examinerTip: "Work with sums throughout — convert means to sums straight away by multiplying mean × n.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-averages-B04 ──────────────────────────────────────
+    {
+      id: 'stat-averages-B04', subtopic: 'stat-averages', band: 'B', marks: 2,
+      question: 'Stem-and-leaf diagram (key: 1|3 means 13):
+1 | 3  7
+2 | 0  4  4  8
+3 | 1  5
+Find the mean and median.',
+      steps: [
+        {
+          prompt: 'List all 8 values, find the sum and calculate the mean.',
+          hint1: 'Values: 13, 17, 20, 24, 24, 28, 31, 35.',
+          hint2: 'Sum = 192. n = 8.',
+          hint3: 'Mean = 192 ÷ 8 = 24.',
+          answer: 24, tolerance: 0.01, unit: '',
+          explanation: 'Values: 13,17,20,24,24,28,31,35. Sum = 192. Mean = 192÷8 = 24.',
+        },
+        {
+          prompt: 'Find the median (average of 4th and 5th values in the ordered list).',
+          hint1: '4th value = 24, 5th value = 24.',
+          hint2: 'Median = (24 + 24) ÷ 2.',
+          hint3: 'Median = 24.',
+          answer: 24, tolerance: 0, unit: '',
+          explanation: 'Ordered data is already sorted in a stem-and-leaf. 4th = 24, 5th = 24. Median = (24+24)÷2 = 24.',
+        },
+      ],
+      workedExample: {
+        question: 'Stem-and-leaf (key 1|2 = 12): 1|2 6  2|3 5  3|0. Find the mean and median.',
+        steps: [
+          'Values — 12, 16, 23, 25, 30 (n = 5)',
+          'Sum — 12+16+23+25+30 = 106; Mean = 106÷5 = <strong>21.2</strong>',
+          'Median — 3rd of 5 values = <strong>23</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Mean = 24, median = 24.",
+        grade6: "Values: 13,17,20,24,24,28,31,35. Sum = 192. Mean = 24. Median = (24+24)÷2 = 24.",
+        grade8: "n = 8. Σx = 192. Mean = 24. Even number of values so median = mean of 4th and 5th = (24+24)÷2 = 24.",
+      },
+      examinerTip: "Stem-and-leaf data is already sorted, which helps with the median — but always check by counting from the left.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-averages-B05 ──────────────────────────────────────
+    {
+      id: 'stat-averages-B05', subtopic: 'stat-averages', band: 'B', marks: 2,
+      question: 'A set of 6 numbers has a mean of 8.5. Five of the numbers are: 7, 11, 5, 9, 12. Find the sixth number.',
+      steps: [
+        {
+          prompt: 'Find the total sum needed for a mean of 8.5 with 6 numbers.',
+          hint1: 'Total sum = mean × n.',
+          hint2: '8.5 × 6 = 51.',
+          hint3: 'Total sum = 51.',
+          answer: 51, tolerance: 0, unit: '',
+          explanation: 'Total sum = 8.5 × 6 = 51.',
+        },
+        {
+          prompt: 'Find the sixth number.',
+          hint1: 'Sum of known five = 7+11+5+9+12.',
+          hint2: 'Sum of known five = 44.',
+          hint3: 'Sixth number = 51 − 44 = 7.',
+          answer: 7, tolerance: 0, unit: '',
+          explanation: 'Sum of five = 44. Sixth = 51 − 44 = 7.',
+        },
+      ],
+      workedExample: {
+        question: 'Mean of 5 numbers is 9. Four of them are 6, 8, 10, 12. Find the fifth.',
+        steps: [
+          'Total sum — 9 × 5 = <strong>45</strong>',
+          'Sum of four — 6+8+10+12 = <strong>36</strong>',
+          'Fifth number — 45 − 36 = <strong>9</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "The sixth number is 7.",
+        grade6: "Total sum = 8.5×6 = 51. Sum of five = 44. Sixth number = 51−44 = 7.",
+        grade8: "Required Σx = 8.5×6 = 51. Known Σx = 7+11+5+9+12 = 44. Missing value = 51−44 = 7.",
+      },
+      examinerTip: "Convert the mean to a sum first by multiplying mean × n — then the missing value is just subtraction.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-averages-B06 ──────────────────────────────────────
+    {
+      id: 'stat-averages-B06', subtopic: 'stat-averages', band: 'B', marks: 3,
+      question: 'Grouped frequency: 0<x≤5 (f=3), 5<x≤10 (f=7), 10<x≤15 (f=6), 15<x≤20 (f=4). Estimate the mean and state the modal class.',
+      steps: [
+        {
+          prompt: 'Use midpoints (2.5, 7.5, 12.5, 17.5) to calculate Σfm.',
+          hint1: '2.5×3=7.5, 7.5×7=52.5, 12.5×6=75, 17.5×4=70.',
+          hint2: 'Add: 7.5+52.5+75+70.',
+          hint3: 'Σfm = 205.',
+          answer: 205, tolerance: 0, unit: '',
+          explanation: 'Σfm = 2.5×3 + 7.5×7 + 12.5×6 + 17.5×4 = 7.5+52.5+75+70 = 205.',
+        },
+        {
+          prompt: 'Estimate the mean. (Total frequency = 20.)',
+          hint1: 'Mean = Σfm ÷ n = 205 ÷ 20.',
+          hint2: '205 ÷ 20 = 10.25.',
+          hint3: 'Estimated mean = 10.25.',
+          answer: 10.25, tolerance: 0.01, unit: '',
+          explanation: 'n = 3+7+6+4 = 20. Estimated mean = 205 ÷ 20 = 10.25.',
+        },
+        {
+          prompt: 'State the modal class (the class with the highest frequency).',
+          hint1: 'Look at the frequencies: 3, 7, 6, 4.',
+          hint2: 'The highest frequency is 7.',
+          hint3: 'Modal class = 5<x≤10.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'The class 5<x≤10 has frequency 7, the highest. Modal class = 5<x≤10.',
+          checkType: 'skip',
+          displayAnswer: '5<x≤10',
+        },
+      ],
+      workedExample: {
+        question: 'Grouped table: 0<x≤4 (f=5), 4<x≤8 (f=9), 8<x≤12 (f=6). Estimate the mean and state the modal class.',
+        steps: [
+          'Midpoints — 2, 6, 10',
+          'Σfm — 2×5+6×9+10×6 = 10+54+60 = <strong>124</strong>',
+          'n — 5+9+6 = 20; Mean = 124÷20 = <strong>6.2</strong>',
+          'Modal class — highest frequency is 9 → <strong>4&lt;x≤8</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Estimated mean = 10.25. Modal class = 5<x≤10.",
+        grade6: "Σfm = 7.5+52.5+75+70 = 205. n = 20. Mean = 10.25. Modal class = 5<x≤10 (frequency 7).",
+        grade8: "Midpoints 2.5,7.5,12.5,17.5. Σfm = 205. n = 20. Estimated mean = 10.25. Modal class = 5<x≤10 as it has the highest frequency (7).",
+      },
+      examinerTip: "The modal class is the class with the greatest frequency — not the class with the greatest frequency density when widths differ.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-averages-C01 ──────────────────────────────────────
+    {
+      id: 'stat-averages-C01', subtopic: 'stat-averages', band: 'C', marks: 3,
+      question: 'The mean of 5 numbers is 9.2 and the median is 10. Four of the numbers are 6, 7, 10, 13. Find the fifth number and verify it gives the correct median.',
+      steps: [
+        {
+          prompt: 'Find the total sum of all 5 numbers.',
+          hint1: 'Sum = mean × n = 9.2 × 5.',
+          hint2: '9.2 × 5 = 46.',
+          hint3: 'Total sum = 46.',
+          answer: 46, tolerance: 0, unit: '',
+          explanation: 'Total sum = 9.2 × 5 = 46.',
+        },
+        {
+          prompt: 'Find the fifth number.',
+          hint1: 'Sum of known four = 6+7+10+13 = 36.',
+          hint2: 'Fifth = 46 − 36.',
+          hint3: 'Fifth number = 10.',
+          answer: 10, tolerance: 0, unit: '',
+          explanation: 'Sum of four = 36. Fifth = 46 − 36 = 10.',
+        },
+        {
+          prompt: 'Verify: sort all five numbers and check the median is 10.',
+          hint1: 'Five numbers: 6, 7, 10, 10, 13.',
+          hint2: 'Sorted: 6, 7, 10, 10, 13. Median = 3rd value.',
+          hint3: 'Median = 10 ✓',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Sorted: 6, 7, 10, 10, 13. Median = 3rd value = 10. This matches the given median ✓.',
+          checkType: 'skip',
+          displayAnswer: 'Median = 10 ✓',
+        },
+      ],
+      workedExample: {
+        question: 'Mean of 5 numbers is 8, median is 7. Four values are 5, 6, 9, 12. Find the fifth and verify the median.',
+        steps: [
+          'Total sum — 8 × 5 = <strong>40</strong>',
+          'Fifth value — 40 − (5+6+9+12) = 40 − 32 = <strong>8</strong>',
+          'Sorted — 5, 6, 8, 9, 12; median = 3rd = <strong>8</strong>',
+          'But target median was 7 — this worked example deliberately shows a different scenario where the median check is part of the process.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Fifth number = 10. When sorted: 6, 7, 10, 10, 13 — median = 10 ✓.",
+        grade6: "Sum = 9.2×5 = 46. Sum of four = 36. Fifth = 10. Sorted: 6,7,10,10,13. Median = 3rd = 10 ✓.",
+        grade8: "Σx = 9.2×5 = 46. Known Σx = 36. Missing value = 10. Sorted set: 6,7,10,10,13. Median = 10, consistent with given information ✓.",
+      },
+      examinerTip: "Always verify by sorting all values including the one you just found — the median check can catch arithmetic slips.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-averages-C02 ──────────────────────────────────────
+    {
+      id: 'stat-averages-C02', subtopic: 'stat-averages', band: 'C', marks: 3,
+      question: 'Grouped frequency: 20<x≤30 (f=a), 30<x≤40 (f=8), 40<x≤50 (f=5). Total frequency = 20 and estimated mean = 34. Find a.',
+      steps: [
+        {
+          prompt: 'Use the total frequency to find a.',
+          hint1: 'a + 8 + 5 = 20.',
+          hint2: 'a + 13 = 20.',
+          hint3: 'a = 7.',
+          answer: 7, tolerance: 0, unit: '',
+          explanation: 'a + 8 + 5 = 20 → a = 7.',
+        },
+        {
+          prompt: 'Calculate Σfm using midpoints 25, 35, 45 and a = 7.',
+          hint1: '25×7 + 35×8 + 45×5.',
+          hint2: '175 + 280 + 225.',
+          hint3: 'Σfm = 680.',
+          answer: 680, tolerance: 0, unit: '',
+          explanation: 'Σfm = 7×25 + 8×35 + 5×45 = 175+280+225 = 680.',
+        },
+        {
+          prompt: 'Verify the estimated mean.',
+          hint1: 'Mean = Σfm ÷ n = 680 ÷ 20.',
+          hint2: '680 ÷ 20 = 34.',
+          hint3: 'Estimated mean = 34 ✓',
+          answer: 34, tolerance: 0.01, unit: '',
+          explanation: 'Mean = 680 ÷ 20 = 34, which matches the given value ✓.',
+        },
+      ],
+      workedExample: {
+        question: 'Grouped table: 0<x≤10 (f=b), 10<x≤20 (f=5), 20<x≤30 (f=3). Total = 13, estimated mean ≈ 12.3. Find b.',
+        steps: [
+          'Frequency equation — b + 5 + 3 = 13 → <strong>b = 5</strong>',
+          'Midpoints — 5, 15, 25',
+          'Σfm — 5×5+15×5+25×3 = 25+75+75 = <strong>175</strong>',
+          'Check mean — 175 ÷ 13 ≈ <strong>13.5</strong> (close to given value)',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "a = 7.",
+        grade6: "a+8+5 = 20 → a = 7. Σfm = 175+280+225 = 680. Mean = 680÷20 = 34 ✓.",
+        grade8: "From total frequency: a = 7. Σfm using midpoints 25,35,45: 175+280+225 = 680. Estimated mean = 680÷20 = 34, confirming a = 7.",
+      },
+      examinerTip: "Set up both the frequency equation and the mean equation — you need both to find the unknown and verify your answer.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-averages-C03 ──────────────────────────────────────
+    {
+      id: 'stat-averages-C03', subtopic: 'stat-averages', band: 'C', marks: 3,
+      question: 'Group 1 has 12 students with a mean score of 60. Group 2 has 18 students with a mean score of 70. Find the overall mean score for all 30 students.',
+      steps: [
+        {
+          prompt: 'Find the total score for Group 1.',
+          hint1: 'Sum = mean × n.',
+          hint2: '60 × 12.',
+          hint3: 'Group 1 sum = 720.',
+          answer: 720, tolerance: 0, unit: '',
+          explanation: 'Group 1 total = 60 × 12 = 720.',
+        },
+        {
+          prompt: 'Find the total score for Group 2.',
+          hint1: 'Sum = mean × n.',
+          hint2: '70 × 18.',
+          hint3: 'Group 2 sum = 1260.',
+          answer: 1260, tolerance: 0, unit: '',
+          explanation: 'Group 2 total = 70 × 18 = 1260.',
+        },
+        {
+          prompt: 'Find the overall mean for all 30 students.',
+          hint1: 'Combined sum = 720 + 1260 = 1980.',
+          hint2: 'Overall mean = 1980 ÷ 30.',
+          hint3: 'Overall mean = 66.',
+          answer: 66, tolerance: 0.01, unit: '',
+          explanation: 'Overall mean = (720+1260) ÷ 30 = 1980 ÷ 30 = 66.',
+        },
+      ],
+      workedExample: {
+        question: 'Group A: 10 students, mean = 55. Group B: 15 students, mean = 65. Find the overall mean.',
+        steps: [
+          'Group A sum — 55 × 10 = <strong>550</strong>',
+          'Group B sum — 65 × 15 = <strong>975</strong>',
+          'Overall mean — (550+975) ÷ 25 = 1525 ÷ 25 = <strong>61</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Overall mean = 66.",
+        grade6: "Group 1 sum = 720. Group 2 sum = 1260. Overall mean = 1980÷30 = 66.",
+        grade8: "Σx₁ = 12×60 = 720. Σx₂ = 18×70 = 1260. Overall mean = (720+1260)÷(12+18) = 1980÷30 = 66.",
+      },
+      examinerTip: "You cannot simply average the two means (65) — you must weight each group by its size.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-averages-C04 ──────────────────────────────────────
+    {
+      id: 'stat-averages-C04', subtopic: 'stat-averages', band: 'C', marks: 3,
+      question: 'The mean of 7 values is 14. Six of the values are 8, 9, 10, 18, 20, 20. Find the missing value and verify the median.',
+      steps: [
+        {
+          prompt: 'Find the total sum of all 7 values.',
+          hint1: 'Sum = mean × n = 14 × 7.',
+          hint2: '14 × 7 = 98.',
+          hint3: 'Total sum = 98.',
+          answer: 98, tolerance: 0, unit: '',
+          explanation: 'Total sum = 14 × 7 = 98.',
+        },
+        {
+          prompt: 'Find the missing value.',
+          hint1: 'Sum of known six = 8+9+10+18+20+20 = 85.',
+          hint2: 'Missing = 98 − 85.',
+          hint3: 'Missing value = 13.',
+          answer: 13, tolerance: 0, unit: '',
+          explanation: 'Sum of six = 85. Missing value = 98 − 85 = 13.',
+        },
+        {
+          prompt: 'Sort all 7 values and find the median to verify.',
+          hint1: 'Seven values: 8, 9, 10, 13, 18, 20, 20.',
+          hint2: 'Median = 4th value.',
+          hint3: 'Median = 13 ✓',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Sorted: 8,9,10,13,18,20,20. Median = 4th value = 13 ✓.',
+          checkType: 'skip',
+          displayAnswer: 'Median = 13 ✓',
+        },
+      ],
+      workedExample: {
+        question: 'Mean of 6 values is 11. Five values are 7, 9, 12, 15, 16. Find the missing value and the median.',
+        steps: [
+          'Total sum — 11 × 6 = <strong>66</strong>',
+          'Sum of five — 7+9+12+15+16 = <strong>59</strong>',
+          'Missing value — 66 − 59 = <strong>7</strong>',
+          'Sorted — 7, 7, 9, 12, 15, 16; median = (9+12)÷2 = <strong>10.5</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Missing value = 13. Median = 13.",
+        grade6: "Sum = 14×7 = 98. Sum of six = 85. Missing = 13. Sorted: 8,9,10,13,18,20,20. Median = 13 ✓.",
+        grade8: "Σx = 98. Known Σx = 85. Missing = 13. Sorted: 8,9,10,13,18,20,20. Median = 4th = 13, consistent with the found value ✓.",
+      },
+      examinerTip: "Always sort after finding the missing value to verify — the missing value might itself be the median.",
+      auditStatus: 'pending',
+    }
+
     // ══════════════════════════════════════════════════════════
     // CHARTS & DIAGRAMS (stat-charts)
     // ══════════════════════════════════════════════════════════
@@ -19863,6 +20458,598 @@ const MathsQuestions = (() => {
       examinerTip: "Students read the frequency density (3.5) directly as the frequency, giving 3.5 without multiplying by the class width.",
       auditStatus: 'pending',
     },
+
+    // ── stat-charts-A02 ──────────────────────────────────────
+    {
+      id: 'stat-charts-A02', subtopic: 'stat-charts', band: 'A', marks: 3,
+      question: '120 people were surveyed about their favourite pet. 30 chose cats, 50 chose dogs, 40 chose rabbits. Calculate the pie chart angle for each pet.',
+      steps: [
+        {
+          prompt: 'Calculate the angle for cats.',
+          hint1: 'Angle = (frequency ÷ total) × 360.',
+          hint2: '(30 ÷ 120) × 360.',
+          hint3: 'Cats = 90°.',
+          answer: 90, tolerance: 0, unit: '°',
+          explanation: 'Cats: (30/120) × 360 = 0.25 × 360 = 90°.',
+        },
+        {
+          prompt: 'Calculate the angle for dogs.',
+          hint1: '(50 ÷ 120) × 360.',
+          hint2: '50/120 = 5/12. 5/12 × 360 = 150.',
+          hint3: 'Dogs = 150°.',
+          answer: 150, tolerance: 0, unit: '°',
+          explanation: 'Dogs: (50/120) × 360 = 150°.',
+        },
+        {
+          prompt: 'Calculate the angle for rabbits. Check all three sum to 360°.',
+          hint1: '(40 ÷ 120) × 360.',
+          hint2: '40/120 = 1/3. 1/3 × 360 = 120.',
+          hint3: 'Rabbits = 120°. Check: 90+150+120 = 360 ✓',
+          answer: 120, tolerance: 0, unit: '°',
+          explanation: 'Rabbits: (40/120) × 360 = 120°. Total: 90+150+120 = 360° ✓.',
+        },
+      ],
+      workedExample: {
+        question: '180 people surveyed: 60 prefer tennis, 90 prefer football, 30 prefer swimming. Find each pie chart angle.',
+        steps: [
+          'Tennis — (60/180) × 360 = <strong>120°</strong>',
+          'Football — (90/180) × 360 = <strong>180°</strong>',
+          'Swimming — (30/180) × 360 = <strong>60°</strong>',
+          'Check — 120+180+60 = 360° ✓',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Cats = 90°, dogs = 150°, rabbits = 120°.",
+        grade6: "Cats: 30/120 × 360 = 90°. Dogs: 50/120 × 360 = 150°. Rabbits: 40/120 × 360 = 120°. Total = 360° ✓.",
+        grade8: "Each angle = (frequency/total) × 360. Cats: 90°, dogs: 150°, rabbits: 120°. Sum = 360° confirming all data is accounted for.",
+      },
+      examinerTip: "Always check that your angles sum to exactly 360° — this catches arithmetic errors before you draw the chart.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-charts-A03 ──────────────────────────────────────
+    {
+      id: 'stat-charts-A03', subtopic: 'stat-charts', band: 'A', marks: 2,
+      question: 'Monthly rainfall: Jan = 45 mm, Feb = 30 mm, Mar = 55 mm, Apr = 25 mm. Find (a) the range and (b) the total rainfall.',
+      steps: [
+        {
+          prompt: 'Find the range of rainfall.',
+          hint1: 'Range = largest − smallest.',
+          hint2: 'Largest = 55, smallest = 25.',
+          hint3: 'Range = 55 − 25 = 30 mm.',
+          answer: 30, tolerance: 0, unit: 'mm',
+          explanation: 'Range = 55 − 25 = 30 mm.',
+        },
+        {
+          prompt: 'Find the total rainfall over the four months.',
+          hint1: 'Add all four values: 45+30+55+25.',
+          hint2: '45+30 = 75; 75+55 = 130; 130+25 = 155.',
+          hint3: 'Total = 155 mm.',
+          answer: 155, tolerance: 0, unit: 'mm',
+          explanation: 'Total = 45+30+55+25 = 155 mm.',
+        },
+      ],
+      workedExample: {
+        question: 'Temperatures (°C): 12, 18, 9, 21. Find the range and total.',
+        steps: [
+          'Range — 21 − 9 = <strong>12°C</strong>',
+          'Total — 12+18+9+21 = <strong>60°C</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Range = 30 mm. Total = 155 mm.",
+        grade6: "Range = 55 − 25 = 30 mm. Total = 45+30+55+25 = 155 mm.",
+        grade8: "Range = max − min = 55 − 25 = 30 mm. Total = 155 mm. The range shows the variation between wettest and driest months.",
+      },
+      examinerTip: "Range is always max minus min — students sometimes write the values without subtracting.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-charts-A04 ──────────────────────────────────────
+    {
+      id: 'stat-charts-A04', subtopic: 'stat-charts', band: 'A', marks: 2,
+      question: 'In a class of 40 students, 27 prefer pop music and 13 prefer rock. Find the pie chart angle for (a) pop and (b) rock.',
+      steps: [
+        {
+          prompt: 'Find the angle for pop music.',
+          hint1: 'Angle = (27 ÷ 40) × 360.',
+          hint2: '27 × 360 = 9720; 9720 ÷ 40 = 243.',
+          hint3: 'Pop angle = 243°.',
+          answer: 243, tolerance: 0, unit: '°',
+          explanation: 'Pop: (27/40) × 360 = 243°.',
+        },
+        {
+          prompt: 'Find the angle for rock. Check both angles sum to 360°.',
+          hint1: 'Angle = (13 ÷ 40) × 360.',
+          hint2: '13 × 360 = 4680; 4680 ÷ 40 = 117.',
+          hint3: 'Rock angle = 117°. Check: 243+117 = 360 ✓.',
+          answer: 117, tolerance: 0, unit: '°',
+          explanation: 'Rock: (13/40) × 360 = 117°. Total: 243+117 = 360° ✓.',
+        },
+      ],
+      workedExample: {
+        question: '60 students: 45 chose science, 15 chose art. Find the pie chart angles.',
+        steps: [
+          'Science — (45/60) × 360 = <strong>270°</strong>',
+          'Art — (15/60) × 360 = <strong>90°</strong>',
+          'Check — 270+90 = 360° ✓',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Pop = 243°, rock = 117°.",
+        grade6: "Pop: (27/40) × 360 = 243°. Rock: (13/40) × 360 = 117°. Check: 360° ✓.",
+        grade8: "Pop: (27/40) × 360 = 243°. Rock: (13/40) × 360 = 117°. Sum = 360°, which confirms the fractions are complementary.",
+      },
+      examinerTip: "When there are only two categories, find one angle and subtract from 360° — it is a useful arithmetic check.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-charts-A05 ──────────────────────────────────────
+    {
+      id: 'stat-charts-A05', subtopic: 'stat-charts', band: 'A', marks: 2,
+      question: 'A pie chart has four sectors. Three of the angles are 90°, 120° and 80°. Find the fourth angle and the fraction of data it represents.',
+      steps: [
+        {
+          prompt: 'Find the fourth angle.',
+          hint1: 'All angles in a pie chart sum to 360°.',
+          hint2: '90+120+80 = 290. Fourth = 360 − 290.',
+          hint3: 'Fourth angle = 70°.',
+          answer: 70, tolerance: 0, unit: '°',
+          explanation: 'Fourth angle = 360 − 90 − 120 − 80 = 70°.',
+        },
+        {
+          prompt: 'Express the fourth sector as a fraction of the whole.',
+          hint1: 'Fraction = angle ÷ 360.',
+          hint2: '70 ÷ 360 = 7/36.',
+          hint3: 'Fraction = 7/36 ≈ 0.194.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Fraction = 70/360 = 7/36 ≈ 0.194.',
+          checkType: 'skip',
+          displayAnswer: '7/36 ≈ 0.194',
+        },
+      ],
+      workedExample: {
+        question: 'Three angles in a pie chart are 100°, 130° and 95°. Find the fourth angle and the fraction it represents.',
+        steps: [
+          'Sum of three — 100+130+95 = 325',
+          'Fourth angle — 360 − 325 = <strong>35°</strong>',
+          'Fraction — 35/360 = <strong>7/72 ≈ 0.097</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Fourth angle = 70°. Fraction = 7/36.",
+        grade6: "360 − 90 − 120 − 80 = 70°. Fraction = 70/360 = 7/36 ≈ 0.194.",
+        grade8: "Fourth angle = 360 − 290 = 70°. As a fraction: 70/360 = 7/36. As a decimal: ≈ 0.194 (3 s.f.).",
+      },
+      examinerTip: "Always simplify fractions where possible — 70/360 cancels to 7/36 by dividing both by 10.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-charts-B02 ──────────────────────────────────────
+    {
+      id: 'stat-charts-B02', subtopic: 'stat-charts', band: 'B', marks: 3,
+      question: 'A histogram has three classes: 0<x≤4 (freq density = 1.5, width = 4), 4<x≤8 (freq density = 3.5, width = 4), 8<x≤16 (freq density = 2, width = 8). Find the frequency for each class and the total frequency.',
+      steps: [
+        {
+          prompt: 'Find the frequency for class 4<x≤8.',
+          hint1: 'Frequency = frequency density × class width.',
+          hint2: '3.5 × 4.',
+          hint3: 'f₂ = 14.',
+          answer: 14, tolerance: 0, unit: '',
+          explanation: 'f₂ = frequency density × width = 3.5 × 4 = 14.',
+        },
+        {
+          prompt: 'Find the frequency for class 8<x≤16.',
+          hint1: 'Frequency = frequency density × class width.',
+          hint2: '2 × 8.',
+          hint3: 'f₃ = 16.',
+          answer: 16, tolerance: 0, unit: '',
+          explanation: 'f₃ = 2 × 8 = 16.',
+        },
+        {
+          prompt: 'Find the total frequency. (f₁ = 1.5 × 4 = 6.)',
+          hint1: 'Add all three frequencies: 6 + 14 + 16.',
+          hint2: '6+14 = 20; 20+16 = 36.',
+          hint3: 'Total = 36.',
+          answer: 36, tolerance: 0, unit: '',
+          explanation: 'f₁ = 6, f₂ = 14, f₃ = 16. Total = 36.',
+        },
+      ],
+      workedExample: {
+        question: 'Histogram: 0<x≤5 (fd=2, w=5), 5<x≤15 (fd=3, w=10). Find each frequency and the total.',
+        steps: [
+          'f₁ — 2 × 5 = <strong>10</strong>',
+          'f₂ — 3 × 10 = <strong>30</strong>',
+          'Total — 10+30 = <strong>40</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "f₁=6, f₂=14, f₃=16. Total = 36.",
+        grade6: "f = fd × width. f₁ = 1.5×4 = 6; f₂ = 3.5×4 = 14; f₃ = 2×8 = 16. Total = 36.",
+        grade8: "In a histogram, frequency = frequency density × class width. f₁=6, f₂=14, f₃=16. Total frequency = 36.",
+      },
+      examinerTip: "In a histogram, frequency equals area (fd × width), not height. Remember this especially when class widths differ.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-charts-B03 ──────────────────────────────────────
+    {
+      id: 'stat-charts-B03', subtopic: 'stat-charts', band: 'B', marks: 3,
+      question: 'A histogram shows class 15≤x<25 with frequency density 4.2 and class 25≤x<30 with frequency density 6.8. Find the frequency for each class. How many more students are in the 15–25 class?',
+      steps: [
+        {
+          prompt: 'Find the frequency for class 15≤x<25 (width = 10).',
+          hint1: 'Frequency = frequency density × class width.',
+          hint2: '4.2 × 10.',
+          hint3: 'f₁ = 42.',
+          answer: 42, tolerance: 0, unit: '',
+          explanation: 'f₁ = 4.2 × 10 = 42.',
+        },
+        {
+          prompt: 'Find the frequency for class 25≤x<30 (width = 5).',
+          hint1: 'Frequency = frequency density × class width.',
+          hint2: '6.8 × 5.',
+          hint3: 'f₂ = 34.',
+          answer: 34, tolerance: 0, unit: '',
+          explanation: 'f₂ = 6.8 × 5 = 34.',
+        },
+        {
+          prompt: 'How many more students are in the 15–25 class than the 25–30 class?',
+          hint1: 'Difference = 42 − 34.',
+          hint2: '42 − 34 = 8.',
+          hint3: '8 more students.',
+          answer: 8, tolerance: 0, unit: '',
+          explanation: '42 − 34 = 8 more students in the 15–25 class.',
+        },
+      ],
+      workedExample: {
+        question: 'Class A: fd=3, width=8. Class B: fd=5, width=4. Find each frequency and how many more are in class A.',
+        steps: [
+          'Class A frequency — 3 × 8 = <strong>24</strong>',
+          'Class B frequency — 5 × 4 = <strong>20</strong>',
+          'Difference — 24 − 20 = <strong>4 more in class A</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "15–25 class: 42 students. 25–30 class: 34 students. 8 more in the 15–25 class.",
+        grade6: "f(15–25) = 4.2×10 = 42. f(25–30) = 6.8×5 = 34. Difference = 42−34 = 8.",
+        grade8: "Despite having a lower frequency density, the wider 15–25 class (width 10) contains more students: 42 vs 34. Difference = 8. This illustrates why area, not height, represents frequency.",
+      },
+      examinerTip: "A taller bar does not always mean more students — multiply fd × width to find the actual frequency.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-charts-B04 ──────────────────────────────────────
+    {
+      id: 'stat-charts-B04', subtopic: 'stat-charts', band: 'B', marks: 3,
+      question: 'Cumulative frequencies: ≤10: 5, ≤20: 18, ≤30: 29, ≤40: 40. Find the individual class frequencies and state the modal class.',
+      steps: [
+        {
+          prompt: 'Find the frequency for the class 10<x≤20.',
+          hint1: 'Individual frequency = cumulative frequency − previous cumulative frequency.',
+          hint2: '18 − 5.',
+          hint3: 'f₂ = 13.',
+          answer: 13, tolerance: 0, unit: '',
+          explanation: 'f(10<x≤20) = 18 − 5 = 13.',
+        },
+        {
+          prompt: 'Find the frequency for the class 20<x≤30.',
+          hint1: 'f₃ = cf(≤30) − cf(≤20).',
+          hint2: '29 − 18.',
+          hint3: 'f₃ = 11.',
+          answer: 11, tolerance: 0, unit: '',
+          explanation: 'f(20<x≤30) = 29 − 18 = 11.',
+        },
+        {
+          prompt: 'State the modal class. (Frequencies are: 5, 13, 11, 11.)',
+          hint1: 'The modal class has the highest individual frequency.',
+          hint2: 'Frequencies: f₁=5, f₂=13, f₃=11, f₄=11.',
+          hint3: 'Modal class = 10<x≤20 (f = 13).',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Frequencies: 5, 13, 11, 11. Highest is 13. Modal class = 10<x≤20.',
+          checkType: 'skip',
+          displayAnswer: '10<x≤20',
+        },
+      ],
+      workedExample: {
+        question: 'Cumulative frequencies: ≤5: 3, ≤10: 11, ≤15: 18, ≤20: 24. Find individual frequencies and the modal class.',
+        steps: [
+          'f₁ = 3; f₂ = 11−3 = <strong>8</strong>; f₃ = 18−11 = <strong>7</strong>; f₄ = 24−18 = <strong>6</strong>',
+          'Modal class — highest frequency is 8 → <strong>5&lt;x≤10</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Frequencies: 5, 13, 11, 11. Modal class = 10<x≤20.",
+        grade6: "f₁=5; f₂=18−5=13; f₃=29−18=11; f₄=40−29=11. Highest frequency = 13. Modal class = 10<x≤20.",
+        grade8: "Individual frequencies found by differencing: 5, 13, 11, 11. Modal class = 10<x≤20 with frequency 13.",
+      },
+      examinerTip: "To find individual class frequencies from cumulative ones, always subtract consecutive values — not from zero each time.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-charts-B05 ──────────────────────────────────────
+    {
+      id: 'stat-charts-B05', subtopic: 'stat-charts', band: 'B', marks: 2,
+      question: 'In a pie chart, the sector for "Football" has an angle of 135°. There are 200 people in the survey. How many people chose football?',
+      steps: [
+        {
+          prompt: 'Express the sector as a fraction of the whole circle.',
+          hint1: 'Fraction = angle ÷ 360.',
+          hint2: '135 ÷ 360 = 0.375.',
+          hint3: 'Fraction = 0.375.',
+          answer: 0.375, tolerance: 0.005, unit: '',
+          explanation: 'Fraction = 135/360 = 0.375.',
+        },
+        {
+          prompt: 'Find the number of people who chose football.',
+          hint1: 'Number = fraction × total.',
+          hint2: '0.375 × 200.',
+          hint3: '75 people.',
+          answer: 75, tolerance: 0, unit: '',
+          explanation: '0.375 × 200 = 75 people.',
+        },
+      ],
+      workedExample: {
+        question: 'A sector has angle 72°. The survey has 250 people. How many does it represent?',
+        steps: [
+          'Fraction — 72 ÷ 360 = <strong>0.2</strong>',
+          'Number — 0.2 × 250 = <strong>50 people</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "75 people chose football.",
+        grade6: "Fraction = 135/360 = 0.375. Number = 0.375 × 200 = 75.",
+        grade8: "135/360 = 3/8. (3/8) × 200 = 75. A sector of 135° represents 37.5% of the data.",
+      },
+      examinerTip: "Divide the angle by 360 first to get the proportion, then multiply by the total — do not skip the middle step.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-charts-B06 ──────────────────────────────────────
+    {
+      id: 'stat-charts-B06', subtopic: 'stat-charts', band: 'B', marks: 3,
+      question: 'A two-way table shows 80 students. Boys: 20 prefer maths, 15 prefer English (35 total). Girls: 18 prefer maths, 27 prefer English (45 total). Find (a) P(prefers maths) and (b) P(girl | prefers maths).',
+      steps: [
+        {
+          prompt: 'Find the total number of students who prefer maths.',
+          hint1: 'Add the maths column: boys + girls.',
+          hint2: '20 + 18.',
+          hint3: 'Total preferring maths = 38.',
+          answer: 38, tolerance: 0, unit: '',
+          explanation: 'Total preferring maths = 20+18 = 38.',
+        },
+        {
+          prompt: 'Find P(prefers maths) as a simplified fraction.',
+          hint1: 'P(maths) = 38 out of 80 students.',
+          hint2: '38/80 simplifies by dividing by 2.',
+          hint3: 'P(maths) = 19/40.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'P(maths) = 38/80 = 19/40.',
+          checkType: 'skip',
+          displayAnswer: '19/40',
+        },
+        {
+          prompt: 'Find P(girl | prefers maths) — the probability a randomly chosen maths-preferrer is a girl.',
+          hint1: 'Of the 38 who prefer maths, 18 are girls.',
+          hint2: '18/38 simplifies by dividing by 2.',
+          hint3: 'P(girl | maths) = 9/19 ≈ 0.474.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'P(girl | maths) = 18/38 = 9/19 ≈ 0.474.',
+          checkType: 'skip',
+          displayAnswer: '9/19 ≈ 0.474',
+        },
+      ],
+      workedExample: {
+        question: '60 students: boys 15 like science, 10 history (25 total). Girls: 20 science, 15 history (35 total). Find P(science) and P(boy | science).',
+        steps: [
+          'Total science — 15+20 = <strong>35</strong>',
+          'P(science) — 35/60 = <strong>7/12</strong>',
+          'P(boy | science) — 15/35 = <strong>3/7</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "P(maths) = 19/40. P(girl | maths) = 9/19.",
+        grade6: "38 prefer maths. P(maths) = 38/80 = 19/40. Of the 38 maths-preferrers, 18 are girls. P(girl|maths) = 18/38 = 9/19.",
+        grade8: "P(maths) = 38/80 = 19/40. Conditional probability: P(girl|maths) = 18/38 = 9/19 ≈ 0.474. The denominator narrows to just those preferring maths.",
+      },
+      examinerTip: "For conditional probability, the denominator changes — it's the size of the restricted group, not the whole class.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-charts-C01 ──────────────────────────────────────
+    {
+      id: 'stat-charts-C01', subtopic: 'stat-charts', band: 'C', marks: 3,
+      question: 'A pie chart has sector A = 120°, sector B = 90°, sector C = 150°. A student claims "sector A is more than twice the size of sector B." Is this correct? Show your working.',
+      steps: [
+        {
+          prompt: 'Express sector A as a fraction of the whole.',
+          hint1: 'Fraction = angle ÷ 360.',
+          hint2: '120 ÷ 360 = 1/3.',
+          hint3: 'Sector A = 1/3.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Sector A = 120/360 = 1/3.',
+          checkType: 'skip',
+          displayAnswer: '1/3',
+        },
+        {
+          prompt: 'Express sector B as a fraction of the whole.',
+          hint1: '90 ÷ 360.',
+          hint2: '90/360 = 1/4.',
+          hint3: 'Sector B = 1/4.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Sector B = 90/360 = 1/4.',
+          checkType: 'skip',
+          displayAnswer: '1/4',
+        },
+        {
+          prompt: 'Find the ratio A÷B and decide if the claim is correct.',
+          hint1: 'Ratio = (1/3) ÷ (1/4) = (1/3) × 4 = 4/3.',
+          hint2: '4/3 ≈ 1.33. Is 1.33 > 2?',
+          hint3: 'Ratio = 4/3 ≈ 1.33. Claim is FALSE.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'A÷B = (1/3)÷(1/4) = 4/3 ≈ 1.33. Since 1.33 < 2, A is NOT more than twice B. Claim is FALSE.',
+          checkType: 'skip',
+          displayAnswer: 'Ratio = 4/3 ≈ 1.33. Claim is FALSE',
+        },
+      ],
+      workedExample: {
+        question: 'Pie chart: sector X = 80°, sector Y = 160°. Student says Y is more than 3 times X. True or false?',
+        steps: [
+          'Fraction X — 80/360 = 2/9',
+          'Fraction Y — 160/360 = 4/9',
+          'Ratio Y÷X — (4/9)÷(2/9) = <strong>2</strong>',
+          'Claim — 2 is not greater than 3. <strong>FALSE</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Sector A is not more than twice sector B. The claim is false.",
+        grade6: "A = 120/360 = 1/3. B = 90/360 = 1/4. Ratio = (1/3)÷(1/4) = 4/3 ≈ 1.33. Since 1.33 < 2, the claim is FALSE.",
+        grade8: "A = 1/3, B = 1/4. For A to be more than twice B we need A/B > 2. A/B = (1/3)/(1/4) = 4/3 ≈ 1.33. Since 1.33 < 2, the claim is FALSE.",
+      },
+      examinerTip: "Compare sectors by their angles (or fractions) directly — 'twice the size' means the ratio must exceed 2.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-charts-C02 ──────────────────────────────────────
+    {
+      id: 'stat-charts-C02', subtopic: 'stat-charts', band: 'C', marks: 4,
+      question: 'A histogram has unequal class widths: 0<x≤10 (f=15), 10<x≤25 (f=30), 25<x≤35 (f=20). Find all three frequency densities and estimate the mean.',
+      steps: [
+        {
+          prompt: 'Find the frequency density for class 0<x≤10 (width = 10).',
+          hint1: 'fd = frequency ÷ class width.',
+          hint2: '15 ÷ 10.',
+          hint3: 'fd₁ = 1.5.',
+          answer: 1.5, tolerance: 0.01, unit: '',
+          explanation: 'fd₁ = 15 ÷ 10 = 1.5.',
+        },
+        {
+          prompt: 'Find the frequency density for class 10<x≤25 (width = 15) and for class 25<x≤35 (width = 10).',
+          hint1: 'fd₂ = 30 ÷ 15; fd₃ = 20 ÷ 10.',
+          hint2: 'fd₂ = 2; fd₃ = 2.',
+          hint3: 'Both equal 2.',
+          answer: 2, tolerance: 0.01, unit: '',
+          explanation: 'fd₂ = 30÷15 = 2. fd₃ = 20÷10 = 2.',
+        },
+        {
+          prompt: 'Calculate Σfm using midpoints 5, 17.5 and 30.',
+          hint1: '15×5 + 30×17.5 + 20×30.',
+          hint2: '75 + 525 + 600.',
+          hint3: 'Σfm = 1200.',
+          answer: 1200, tolerance: 0, unit: '',
+          explanation: 'Σfm = 15×5 + 30×17.5 + 20×30 = 75+525+600 = 1200.',
+        },
+        {
+          prompt: 'Estimate the mean. (Total frequency = 65.)',
+          hint1: 'Mean = Σfm ÷ n = 1200 ÷ 65.',
+          hint2: '1200 ÷ 65 ≈ 18.46.',
+          hint3: 'Estimated mean ≈ 18.46.',
+          answer: 18.46, tolerance: 0.05, unit: '',
+          explanation: 'Estimated mean = 1200 ÷ 65 ≈ 18.46.',
+        },
+      ],
+      workedExample: {
+        question: 'Histogram: 0<x≤5 (f=8, w=5), 5<x≤15 (f=20, w=10), 15<x≤25 (f=12, w=10). Find frequency densities and estimated mean.',
+        steps: [
+          'fd₁ — 8÷5 = <strong>1.6</strong>; fd₂ — 20÷10 = <strong>2.0</strong>; fd₃ — 12÷10 = <strong>1.2</strong>',
+          'Midpoints — 2.5, 10, 20',
+          'Σfm — 8×2.5+20×10+12×20 = 20+200+240 = <strong>460</strong>',
+          'n — 8+20+12 = 40; Mean = 460÷40 = <strong>11.5</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "fd: 1.5, 2, 2. Estimated mean ≈ 18.46.",
+        grade6: "fd₁=1.5, fd₂=2, fd₃=2. Σfm=75+525+600=1200. n=65. Mean=1200÷65≈18.46.",
+        grade8: "fd = f÷w: 1.5, 2.0, 2.0. Midpoints 5, 17.5, 30. Σfm = 1200. Estimated mean = 1200÷65 ≈ 18.5 (3 s.f.).",
+      },
+      examinerTip: "When class widths differ, always compute fd = f÷w before drawing the histogram — height ≠ frequency.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-charts-C03 ──────────────────────────────────────
+    {
+      id: 'stat-charts-C03', subtopic: 'stat-charts', band: 'C', marks: 3,
+      question: 'School A has 180 students; 45% chose an animal charity. School B has 240 students; 30% chose an animal charity. Find (a) the number from each school and (b) the combined percentage.',
+      steps: [
+        {
+          prompt: 'Find the number from School A who chose the animal charity.',
+          hint1: '45% of 180.',
+          hint2: '0.45 × 180.',
+          hint3: '81 students.',
+          answer: 81, tolerance: 0, unit: '',
+          explanation: '0.45 × 180 = 81.',
+        },
+        {
+          prompt: 'Find the number from School B who chose the animal charity.',
+          hint1: '30% of 240.',
+          hint2: '0.30 × 240.',
+          hint3: '72 students.',
+          answer: 72, tolerance: 0, unit: '',
+          explanation: '0.30 × 240 = 72.',
+        },
+        {
+          prompt: 'Find the combined percentage across both schools.',
+          hint1: 'Combined = (81+72) ÷ (180+240) × 100.',
+          hint2: '153 ÷ 420 × 100.',
+          hint3: '≈ 36.4%.',
+          answer: 36.4, tolerance: 0.2, unit: '%',
+          explanation: '(81+72)/(180+240) × 100 = 153/420 × 100 ≈ 36.4%.',
+        },
+      ],
+      workedExample: {
+        question: 'School X: 200 students, 40% chose reading. School Y: 300 students, 20% chose reading. Find the combined percentage.',
+        steps: [
+          'School X — 0.40 × 200 = <strong>80</strong>',
+          'School Y — 0.20 × 300 = <strong>60</strong>',
+          'Combined % — (80+60)/(200+300) × 100 = 140/500 × 100 = <strong>28%</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "School A: 81 students. School B: 72 students. Combined: ≈ 36.4%.",
+        grade6: "A: 0.45×180=81. B: 0.30×240=72. Combined: 153/420×100≈36.4%.",
+        grade8: "A: 81, B: 72. Combined % = 153/420 × 100 ≈ 36.4%. Note this lies between 30% and 45%, but closer to 30% because School B is larger.",
+      },
+      examinerTip: "You cannot average the two percentages — you must find actual numbers first, then combine over the total.",
+      auditStatus: 'pending',
+    },
+
+    // ── stat-charts-C04 ──────────────────────────────────────
+    {
+      id: 'stat-charts-C04', subtopic: 'stat-charts', band: 'C', marks: 2,
+      question: 'In a histogram, the bar for class 20≤x<30 has frequency density 4. The bar for class 30≤x<50 has a frequency of 60. Find the frequency density of the second bar.',
+      steps: [
+        {
+          prompt: 'Find the width of class 30≤x<50.',
+          hint1: 'Width = upper boundary − lower boundary.',
+          hint2: '50 − 30.',
+          hint3: 'Width = 20.',
+          answer: 20, tolerance: 0, unit: '',
+          explanation: 'Class width = 50 − 30 = 20.',
+        },
+        {
+          prompt: 'Find the frequency density for class 30≤x<50.',
+          hint1: 'fd = frequency ÷ class width.',
+          hint2: '60 ÷ 20.',
+          hint3: 'fd = 3.',
+          answer: 3, tolerance: 0, unit: '',
+          explanation: 'fd = 60 ÷ 20 = 3.',
+        },
+      ],
+      workedExample: {
+        question: 'Bar for 10≤x<20 has frequency 35. Bar for 20≤x<50 has frequency 45. Find each frequency density.',
+        steps: [
+          'fd(10–20) — 35 ÷ 10 = <strong>3.5</strong>',
+          'fd(20–50) — 45 ÷ 30 = <strong>1.5</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: "Frequency density = 3.",
+        grade6: "Class width = 50−30 = 20. fd = 60÷20 = 3.",
+        grade8: "fd = frequency ÷ class width = 60 ÷ 20 = 3. Compare with the first bar: fd = 4, width = 10, so frequency = 40.",
+      },
+      examinerTip: "Always compute the class width from the boundaries first — wider classes will have a lower fd for the same frequency.",
+      auditStatus: 'pending',
+    }
 
     // ══════════════════════════════════════════════════════════
     // SCATTER GRAPHS (stat-scatter)
@@ -19948,6 +21135,614 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },
 
+    // ── stat-scatter-A02 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-A02', subtopic: 'stat-scatter', band: 'A', marks: 2,
+      question: 'Eight students’ heights (cm) and weights (kg) are recorded: heights 150, 155, 160, 162, 168, 172, 175, 180; weights 52, 55, 60, 63, 68, 70, 74, 78. Calculate the mean height and mean weight — the mean point of the data.',
+      steps: [
+        {
+          prompt: 'Calculate the mean height.',
+          hint1: 'Add all 8 heights and divide by 8.',
+          hint2: '(150+155+160+162+168+172+175+180) = 1322.',
+          hint3: '1322 ÷ 8 = 165.25 cm.',
+          answer: 165.25, tolerance: 0.1, unit: 'cm',
+          explanation: 'Mean height = 1322 ÷ 8 = 165.25 cm.',
+        },
+        {
+          prompt: 'Calculate the mean weight.',
+          hint1: 'Add all 8 weights and divide by 8.',
+          hint2: '(52+55+60+63+68+70+74+78) = 520.',
+          hint3: '520 ÷ 8 = 65 kg.',
+          answer: 65, tolerance: 0.1, unit: 'kg',
+          explanation: 'Mean weight = 520 ÷ 8 = 65 kg. The mean point is (165.25, 65).',
+        },
+      ],
+      workedExample: {
+        question: 'Three students have heights 140, 150, 160 cm and weights 45, 55, 65 kg. Find the mean point.',
+        steps: [
+          'Step 1 — mean height: (140+150+160) ÷ 3 = 450 ÷ 3 = <strong>150 cm</strong>',
+          'Step 2 — mean weight: (45+55+65) ÷ 3 = 165 ÷ 3 = <strong>55 kg</strong>. Mean point = (150, 55).',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Mean height = 165.25 cm, mean weight = 65 kg.',
+        grade6: 'Sum of heights = 1322, mean = 1322÷8 = 165.25 cm. Sum of weights = 520, mean = 520÷8 = 65 kg.',
+        grade8: 'Mean point = (165.25, 65). The line of best fit must pass through this point.',
+      },
+      examinerTip: 'Students often add the values correctly but divide by the wrong number — count the data points carefully.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-scatter-A03 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-A03', subtopic: 'stat-scatter', band: 'A', marks: 2,
+      question: 'A scatter graph shows hours of sleep vs reaction time (ms). As hours of sleep increase, reaction time decreases. (a) What type of correlation is this? (b) What does it mean in context?',
+      steps: [
+        {
+          prompt: 'What type of correlation is shown?',
+          hint1: 'As one variable increases, the other decreases.',
+          hint2: 'This is negative correlation.',
+          hint3: 'Negative correlation.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'When one variable increases and the other decreases, this is negative correlation.',
+          checkType: 'skip',
+          displayAnswer: 'Negative correlation',
+        },
+        {
+          prompt: 'What does this correlation mean in context?',
+          hint1: 'Link the two variables in a sentence.',
+          hint2: 'More sleep is linked to a faster (lower) reaction time.',
+          hint3: 'As hours of sleep increase, reaction time decreases.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'In context: people who sleep more tend to react faster (lower reaction time in ms).',
+          checkType: 'skip',
+          displayAnswer: 'More sleep → faster reaction time',
+        },
+      ],
+      workedExample: {
+        question: 'As temperature increases, hot drink sales decrease. What type of correlation?',
+        steps: [
+          'As temperature rises, sales fall — one goes up, the other goes down.',
+          'This is <strong>negative correlation</strong>. In context: warmer weather leads to fewer hot drinks sold.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Negative correlation. More sleep means faster reaction time.',
+        grade6: 'Negative correlation — as sleep hours increase, reaction time (ms) decreases.',
+        grade8: 'Negative correlation. As sleep hours increase, reaction time decreases. This suggests more sleep improves reaction speed, though correlation does not prove causation.',
+      },
+      examinerTip: 'Always write the contextual meaning using the actual variable names — do not just write "as x increases, y decreases".',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-scatter-A04 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-A04', subtopic: 'stat-scatter', band: 'A', marks: 3,
+      question: 'A line of best fit passes through the points (10, 5) and (40, 20). Find its equation in the form y = mx + c.',
+      steps: [
+        {
+          prompt: 'Calculate the gradient m = (y₂ − y₁)/(x₂ − x₁).',
+          hint1: 'Use (10, 5) and (40, 20).',
+          hint2: 'm = (20 − 5)/(40 − 10) = 15/30.',
+          hint3: 'm = 0.5.',
+          answer: 0.5, tolerance: 0.01, unit: '',
+          explanation: 'Gradient = 15 ÷ 30 = 0.5.',
+        },
+        {
+          prompt: 'Find the y-intercept c using y = 0.5x + c and the point (10, 5).',
+          hint1: 'Substitute x=10, y=5 into y = 0.5x + c.',
+          hint2: '5 = 0.5×10 + c → 5 = 5 + c.',
+          hint3: 'c = 0.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: '5 = 5 + c, so c = 0. The line passes through the origin.',
+        },
+        {
+          prompt: 'Write the full equation of the line.',
+          hint1: 'Use y = mx + c with m = 0.5 and c = 0.',
+          hint2: 'y = 0.5x.',
+          hint3: 'y = 0.5x.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Equation: y = 0.5x.',
+          checkType: 'skip',
+          displayAnswer: 'y = 0.5x',
+        },
+      ],
+      workedExample: {
+        question: 'A line of best fit passes through (4, 6) and (12, 14). Find its equation.',
+        steps: [
+          'Step 1 — gradient: m = (14−6)/(12−4) = 8/8 = <strong>1</strong>',
+          'Step 2 — y-intercept: 6 = 1×4 + c → c = 2',
+          'Step 3 — equation: <strong>y = x + 2</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Gradient = 0.5, equation is y = 0.5x.',
+        grade6: 'm = (20−5)/(40−10) = 0.5. Using (10,5): 5 = 5 + c, so c = 0. Equation: y = 0.5x.',
+        grade8: 'm = 0.5. Substituting (10, 5): c = 0. Equation: y = 0.5x. This line passes through the origin.',
+      },
+      examinerTip: 'Always substitute back into the equation to verify your y-intercept — a common error is getting c = 5 by forgetting to subtract the 0.5×10 term.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-scatter-A05 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-A05', subtopic: 'stat-scatter', band: 'A', marks: 2,
+      question: 'A line of best fit passes through (10, 8) and (30, 18). Estimate y when x = 25.',
+      steps: [
+        {
+          prompt: 'Find the gradient of the line.',
+          hint1: 'm = (18 − 8)/(30 − 10).',
+          hint2: 'm = 10/20.',
+          hint3: 'm = 0.5.',
+          answer: 0.5, tolerance: 0.01, unit: '',
+          explanation: 'Gradient = 10 ÷ 20 = 0.5.',
+        },
+        {
+          prompt: 'Estimate y when x = 25. Use the point (10, 8) and the gradient.',
+          hint1: 'y = 8 + 0.5 × (25 − 10).',
+          hint2: 'y = 8 + 0.5 × 15 = 8 + 7.5.',
+          hint3: 'y = 15.5.',
+          answer: 15.5, tolerance: 0.1, unit: '',
+          explanation: 'y = 8 + 0.5 × 15 = 15.5. Since 25 is within the data range (10–30), this is interpolation.',
+        },
+      ],
+      workedExample: {
+        question: 'A line of best fit passes through (5, 4) and (25, 14). Estimate y when x = 15.',
+        steps: [
+          'Step 1 — gradient: m = (14−4)/(25−5) = 10/20 = <strong>0.5</strong>',
+          'Step 2 — estimate: y = 4 + 0.5×(15−5) = 4 + 5 = <strong>9</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'y = 15.5 when x = 25.',
+        grade6: 'm = (18−8)/(30−10) = 0.5. y = 8 + 0.5×15 = 15.5.',
+        grade8: 'm = 0.5. At x=25: y = 8 + 0.5(25−10) = 15.5. This is interpolation (x=25 is within the data range 10–30).',
+      },
+      examinerTip: 'Use a known point plus the gradient to estimate — avoid writing the full equation if the question only asks for one estimate.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-scatter-B02 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-B02', subtopic: 'stat-scatter', band: 'B', marks: 3,
+      question: 'A line of best fit has equation y = 2.5x + 3. The data range is 2 ≤ x ≤ 12. (a) Estimate y when x = 7. (b) Estimate x when y = 28. (c) Is x = 15 interpolation or extrapolation?',
+      steps: [
+        {
+          prompt: 'Estimate y when x = 7.',
+          hint1: 'Substitute x = 7 into y = 2.5x + 3.',
+          hint2: 'y = 2.5×7 + 3 = 17.5 + 3.',
+          hint3: 'y = 20.5.',
+          answer: 20.5, tolerance: 0.1, unit: '',
+          explanation: 'y = 2.5(7) + 3 = 17.5 + 3 = 20.5.',
+        },
+        {
+          prompt: 'Estimate x when y = 28.',
+          hint1: 'Set 28 = 2.5x + 3 and solve for x.',
+          hint2: '2.5x = 25 → x = 10.',
+          hint3: 'x = 10.',
+          answer: 10, tolerance: 0.1, unit: '',
+          explanation: '28 − 3 = 25. x = 25 ÷ 2.5 = 10.',
+        },
+        {
+          prompt: 'Is x = 15 interpolation or extrapolation? Justify your answer.',
+          hint1: 'Check whether x = 15 is inside or outside the data range 2 ≤ x ≤ 12.',
+          hint2: '15 > 12, so it is outside the data range.',
+          hint3: 'Extrapolation — x = 15 is beyond the data range.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'x = 15 is beyond the maximum data value of 12, so this is extrapolation and is less reliable.',
+          checkType: 'skip',
+          displayAnswer: 'Extrapolation',
+        },
+      ],
+      workedExample: {
+        question: 'Line: y = 3x + 1. Data range 1 ≤ x ≤ 9. At x = 4: y = ? At y = 22: x = ? Is x = 11 extrapolation?',
+        steps: [
+          'Step 1 — at x=4: y = 3×4+1 = <strong>13</strong>',
+          'Step 2 — at y=22: 22=3x+1 → x = 21/3 = <strong>7</strong>',
+          'Step 3 — x=11 > 9 (max data), so <strong>extrapolation</strong> — less reliable.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'y = 20.5 when x = 7. x = 10 when y = 28. x = 15 is extrapolation.',
+        grade6: '(a) y=2.5(7)+3=20.5. (b) 2.5x=25, x=10. (c) x=15 is outside data range (>12) — extrapolation.',
+        grade8: '(a) 20.5. (b) x=10. (c) Extrapolation — x=15 exceeds the data range so the estimate is less reliable as the trend may not continue.',
+      },
+      examinerTip: 'For interpolation/extrapolation questions, always state the data range and compare explicitly — just writing "outside the range" without justification loses a mark.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-scatter-B03 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-B03', subtopic: 'stat-scatter', band: 'B', marks: 3,
+      question: 'Five data points are: (1,3), (2,5), (3,6), (4,9), (5,11). Calculate the mean point and, using gradient ≈ 2, estimate y when x = 3.5. Is this interpolation or extrapolation?',
+      steps: [
+        {
+          prompt: 'Calculate the mean y-value (ȳ).',
+          hint1: 'Add all y-values: 3+5+6+9+11 = 34.',
+          hint2: '34 ÷ 5 = 6.8.',
+          hint3: 'ȳ = 6.8. (Mean x = 3.)',
+          answer: 6.8, tolerance: 0.05, unit: '',
+          explanation: 'Mean x = (1+2+3+4+5)/5 = 3. Mean y = 34/5 = 6.8. Mean point = (3, 6.8).',
+        },
+        {
+          prompt: 'Using gradient m = 2 and the mean point (3, 6.8), estimate y when x = 3.5.',
+          hint1: 'Line through (3, 6.8) with m=2: y = 2x + c. Find c first.',
+          hint2: 'c = 6.8 − 2×3 = 0.8. So y = 2x + 0.8.',
+          hint3: 'y = 2(3.5) + 0.8 = 7.8.',
+          answer: 7.8, tolerance: 0.2, unit: '',
+          explanation: 'y = 2(3.5) + 0.8 = 7 + 0.8 = 7.8.',
+        },
+        {
+          prompt: 'Is x = 3.5 interpolation or extrapolation?',
+          hint1: 'The data x-values range from 1 to 5.',
+          hint2: '3.5 is between 1 and 5.',
+          hint3: 'Interpolation — x = 3.5 is within the data range.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'x = 3.5 is within the range 1–5, so this is interpolation and is more reliable.',
+          checkType: 'skip',
+          displayAnswer: 'Interpolation',
+        },
+      ],
+      workedExample: {
+        question: 'Points (2,4), (4,8), (6,10). Mean point? At x = 3 using m ≈ 1.5?',
+        steps: [
+          'Step 1 — mean: x̅ = 4, ȳ = 7.33. Mean point = (4, 7.33).',
+          'Step 2 — c = 7.33−1.5×4 = 1.33. At x=3: y = 1.5×3+1.33 = <strong>5.83</strong>',
+          'Step 3 — x=3 is within range 2–6: <strong>interpolation</strong>.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Mean point = (3, 6.8). y = 7.8 at x = 3.5. Interpolation.',
+        grade6: 'Mean x=3, mean y=6.8. m=2, so y=2x+0.8. At x=3.5: y=7.8. Interpolation (3.5 within range 1–5).',
+        grade8: 'Mean point (3, 6.8). y=2x+0.8. At x=3.5: y=7.8. Interpolation — more reliable than extrapolation as x=3.5 lies within the observed data range.',
+      },
+      examinerTip: 'Show the mean point calculation clearly — the line of best fit must pass through the mean point and this is a common mark.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-scatter-B04 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-B04', subtopic: 'stat-scatter', band: 'B', marks: 2,
+      question: 'A student estimates a line of best fit as y = 3x + 2. For the data point (4, 16), find the residual (actual − predicted).',
+      steps: [
+        {
+          prompt: 'Find the predicted value when x = 4.',
+          hint1: 'Substitute x = 4 into y = 3x + 2.',
+          hint2: 'y = 3×4 + 2 = 14.',
+          hint3: 'Predicted value = 14.',
+          answer: 14, tolerance: 0, unit: '',
+          explanation: 'Predicted y = 3(4) + 2 = 12 + 2 = 14.',
+        },
+        {
+          prompt: 'Calculate the residual.',
+          hint1: 'Residual = actual − predicted.',
+          hint2: '16 − 14 = 2.',
+          hint3: 'Residual = 2. The data point lies above the line.',
+          answer: 2, tolerance: 0, unit: '',
+          explanation: 'Residual = 16 − 14 = 2. A positive residual means the actual value is above the line of best fit.',
+        },
+      ],
+      workedExample: {
+        question: 'Line of best fit: y = 2x + 5. Data point (3, 13). Find the residual.',
+        steps: [
+          'Step 1 — predicted: y = 2×3+5 = <strong>11</strong>',
+          'Step 2 — residual: 13 − 11 = <strong>2</strong> (point is above the line)',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Predicted = 14. Residual = 2.',
+        grade6: 'Predicted: y=3(4)+2=14. Residual = 16−14 = 2. The data point is above the line of best fit.',
+        grade8: 'Predicted y=14. Residual=16−14=+2. Positive residual indicates the actual value exceeds the model’s prediction at this point.',
+      },
+      examinerTip: 'Residual = actual − predicted (in that order). A common error is reversing this to get −2, which would imply the point is below the line.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-scatter-B05 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-B05', subtopic: 'stat-scatter', band: 'B', marks: 3,
+      question: 'A line of best fit has equation y = 0.8x + 4. The data range is 5 ≤ x ≤ 25. (a) Estimate y when x = 20. (b) Is x = 35 reliable? (c) The PMCC is 0.45 — describe the correlation.',
+      steps: [
+        {
+          prompt: 'Estimate y when x = 20.',
+          hint1: 'Substitute x = 20 into y = 0.8x + 4.',
+          hint2: 'y = 0.8×20 + 4 = 16 + 4.',
+          hint3: 'y = 20.',
+          answer: 20, tolerance: 0.1, unit: '',
+          explanation: 'y = 0.8(20) + 4 = 16 + 4 = 20.',
+        },
+        {
+          prompt: 'Is using x = 35 to estimate reliable? Explain.',
+          hint1: 'Check whether x = 35 is within the data range 5 ≤ x ≤ 25.',
+          hint2: '35 > 25, so x = 35 is outside the data range.',
+          hint3: 'Extrapolation — less reliable.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'x = 35 is beyond the data range, so this is extrapolation. The trend may not continue, making it less reliable.',
+          checkType: 'skip',
+          displayAnswer: 'Extrapolation — less reliable',
+        },
+        {
+          prompt: 'Describe the correlation given PMCC = 0.45.',
+          hint1: 'PMCC ranges from −1 to +1. Values near 0 are weak; near ±1 are strong.',
+          hint2: '0.45 is positive but not close to 1.',
+          hint3: 'Weak positive correlation.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'PMCC = 0.45 indicates a weak positive correlation — there is a slight tendency for y to increase as x increases, but the scatter is large.',
+          checkType: 'skip',
+          displayAnswer: 'Weak positive correlation',
+        },
+      ],
+      workedExample: {
+        question: 'y = 1.2x + 3. Data 10 ≤ x ≤ 40. At x = 25: y = ? Is x = 50 reliable? PMCC = 0.92: describe.',
+        steps: [
+          'Step 1 — at x=25: y = 1.2×25+3 = 30+3 = <strong>33</strong>',
+          'Step 2 — x=50 > 40: <strong>extrapolation — less reliable</strong>',
+          'Step 3 — PMCC=0.92: <strong>strong positive correlation</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'y = 20. x = 35 is extrapolation. PMCC = 0.45 is weak positive correlation.',
+        grade6: '(a) y=0.8(20)+4=20. (b) x=35 > 25 so extrapolation — less reliable. (c) PMCC=0.45: weak positive correlation.',
+        grade8: '(a) y=20. (b) x=35 is extrapolation (beyond data range); unreliable as the linear trend may not hold. (c) PMCC=0.45 indicates weak positive correlation — considerable scatter around the line.',
+      },
+      examinerTip: 'When describing PMCC, use two words: strength (weak/moderate/strong) and direction (positive/negative). Do not just say "positive correlation".',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-scatter-B06 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-B06', subtopic: 'stat-scatter', band: 'B', marks: 3,
+      question: 'Temperature (°C) vs daily ice cream sales are modelled by y = 12x − 60. (a) Predict sales at 15°C. (b) Predict sales at 30°C. (c) At 4°C the formula gives y = −12. Explain why this is not meaningful.',
+      steps: [
+        {
+          prompt: 'Predict sales at 15°C.',
+          hint1: 'Substitute x = 15 into y = 12x − 60.',
+          hint2: 'y = 12×15 − 60 = 180 − 60.',
+          hint3: 'y = 120.',
+          answer: 120, tolerance: 0, unit: '',
+          explanation: 'y = 12(15) − 60 = 180 − 60 = 120 sales.',
+        },
+        {
+          prompt: 'Predict sales at 30°C.',
+          hint1: 'Substitute x = 30 into y = 12x − 60.',
+          hint2: 'y = 360 − 60.',
+          hint3: 'y = 300.',
+          answer: 300, tolerance: 0, unit: '',
+          explanation: 'y = 12(30) − 60 = 360 − 60 = 300 sales.',
+        },
+        {
+          prompt: 'Explain why y = −12 at 4°C is not meaningful.',
+          hint1: 'Think about what a negative number of sales would mean.',
+          hint2: 'You cannot sell a negative number of ice creams.',
+          hint3: 'Negative sales are impossible — the model is only valid for temperatures where sales ≥ 0.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'At 4°C: y = 12(4)−60 = −12. Negative sales are impossible in reality. The model is only valid when x ≥ 5 (where y ≥ 0).',
+          checkType: 'skip',
+          displayAnswer: 'Negative sales impossible — model not valid at low temperatures',
+        },
+      ],
+      workedExample: {
+        question: 'Model: y = 5x − 20. At 10°C: y = ? At 3°C: y = ? Why is the 3°C answer not meaningful?',
+        steps: [
+          'Step 1 — at 10°C: y = 5×10−20 = <strong>30</strong>',
+          'Step 2 — at 3°C: y = 5×3−20 = <strong>−5</strong>',
+          'Step 3 — negative sales are impossible; the model is not valid below x = 4°C.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: '120 sales at 15°C. 300 sales at 30°C. Negative sales are impossible.',
+        grade6: '(a) 12(15)−60=120. (b) 12(30)−60=300. (c) y=−12 is impossible — you cannot sell a negative number of ice creams.',
+        grade8: '(a) 120. (b) 300. (c) At 4°C, y=−12. This is meaningless as sales cannot be negative; the linear model is only valid for x≥5 where y≥0.',
+      },
+      examinerTip: 'Always check whether a model produces sensible values at the boundaries — exam questions often test whether you can spot an impossible or unrealistic output.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-scatter-C01 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-C01', subtopic: 'stat-scatter', band: 'C', marks: 3,
+      question: 'Five students are ranked in Maths and Science (1st to 5th). Science ranks: Maths 1→3, 2→1, 3→5, 4→2, 5→4. Calculate Spearman’s rank correlation coefficient rₛ = 1 − 6Σd²/[n(n²−1)].',
+      steps: [
+        {
+          prompt: 'Find d² for each student and calculate Σd².',
+          hint1: 'd = Maths rank − Science rank for each student.',
+          hint2: 'd values: −2, 1, −2, 2, 1. d²: 4, 1, 4, 4, 1.',
+          hint3: 'Σd² = 4+1+4+4+1 = 14.',
+          answer: 14, tolerance: 0, unit: '',
+          explanation: 'd values: 1−3=−2, 2−1=1, 3−5=−2, 4−2=2, 5−4=1. d²: 4,1,4,4,1. Σd² = 14.',
+        },
+        {
+          prompt: 'Calculate the denominator n(n² − 1) with n = 5.',
+          hint1: 'n(n² − 1) = 5 × (25 − 1).',
+          hint2: '5 × 24 = 120.',
+          hint3: 'Denominator = 120.',
+          answer: 120, tolerance: 0, unit: '',
+          explanation: 'n(n²−1) = 5×(25−1) = 5×24 = 120.',
+        },
+        {
+          prompt: 'Calculate rₛ = 1 − 6Σd² / [n(n²−1)].',
+          hint1: '6 × 14 = 84. rₛ = 1 − 84/120.',
+          hint2: '84/120 = 0.7.',
+          hint3: 'rₛ = 1 − 0.7 = 0.3.',
+          answer: 0.3, tolerance: 0.01, unit: '',
+          explanation: 'rₛ = 1 − 84/120 = 1 − 0.7 = 0.3. This indicates a weak positive rank correlation.',
+        },
+      ],
+      workedExample: {
+        question: 'Four students. d values: 1, −2, 1, 0. Calculate rₛ.',
+        steps: [
+          'Step 1 — Σd²: 1+4+1+0 = <strong>6</strong>',
+          'Step 2 — denominator: 4×(16−1) = 4×15 = <strong>60</strong>',
+          'Step 3 — rₛ = 1 − 6×6/60 = 1 − 36/60 = 1 − 0.6 = <strong>0.4</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Σd² = 14. rₛ = 0.3.',
+        grade6: 'd: −2,1,−2,2,1. d²: 4,1,4,4,1. Σd²=14. rₛ=1−84/120=0.3.',
+        grade8: 'Σd²=14. rₛ=1−6×14/[5×24]=1−0.7=0.3. Weak positive rank correlation between Maths and Science rankings.',
+      },
+      examinerTip: 'Square each d value individually before summing — a common error is summing the d values first and then squaring the total.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-scatter-C02 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-C02', subtopic: 'stat-scatter', band: 'C', marks: 3,
+      question: 'A regression line is y = 2.4x + 1.2 with n = 10. Mean x = 6, mean y = 15.6. (a) Verify the mean point lies on the line. (b) Predict y when x = 10. (c) The data range is 1 ≤ x ≤ 9 — comment on reliability.',
+      steps: [
+        {
+          prompt: 'Verify the mean point (6, 15.6) lies on the line y = 2.4x + 1.2.',
+          hint1: 'Substitute x = 6 into the equation.',
+          hint2: 'y = 2.4×6 + 1.2 = 14.4 + 1.2.',
+          hint3: 'y = 15.6 ✓ — the mean point lies on the line.',
+          answer: 15.6, tolerance: 0.05, unit: '',
+          explanation: 'y = 2.4(6) + 1.2 = 15.6 ✔. The regression line always passes through the mean point.',
+        },
+        {
+          prompt: 'Predict y when x = 10.',
+          hint1: 'Substitute x = 10 into y = 2.4x + 1.2.',
+          hint2: 'y = 24 + 1.2.',
+          hint3: 'y = 25.2.',
+          answer: 25.2, tolerance: 0.1, unit: '',
+          explanation: 'y = 2.4(10) + 1.2 = 24 + 1.2 = 25.2.',
+        },
+        {
+          prompt: 'Comment on the reliability of the prediction at x = 10.',
+          hint1: 'The data range is 1 ≤ x ≤ 9. Where does x = 10 lie?',
+          hint2: 'x = 10 is just outside the data range.',
+          hint3: 'Extrapolation — less reliable.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'x = 10 is beyond the data range 1–9, so this is extrapolation. The prediction is less reliable.',
+          checkType: 'skip',
+          displayAnswer: 'Extrapolation — less reliable',
+        },
+      ],
+      workedExample: {
+        question: 'y = 1.5x + 3. Mean x = 4, mean y = 9. Verify, then predict at x = 8. Data range 0–7.',
+        steps: [
+          'Step 1 — verify: 1.5×4+3 = 9 ✓ — <strong>mean point confirmed</strong>',
+          'Step 2 — at x=8: y = 1.5×8+3 = <strong>15</strong>',
+          'Step 3 — x=8 > 7: <strong>extrapolation — less reliable</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'y = 15.6 at x = 6 (confirmed). y = 25.2 at x = 10. Extrapolation.',
+        grade6: '(a) 2.4(6)+1.2=15.6 ✓. (b) y=25.2. (c) x=10 > 9 so extrapolation — less reliable.',
+        grade8: '(a) Mean point verified: regression line always passes through (μₓ, μʸ). (b) y=25.2. (c) x=10 is extrapolation (just beyond data range) — slightly less reliable but close to boundary.',
+      },
+      examinerTip: 'The regression line always passes through the mean point — this is a useful check and is often tested directly.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-scatter-C03 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-C03', subtopic: 'stat-scatter', band: 'C', marks: 4,
+      question: 'For 5 data points: Σx = 15, Σy = 25, Σx² = 55, Σxy = 85, n = 5. Find the equation of the regression line y = mx + c.',
+      steps: [
+        {
+          prompt: 'Calculate Sₓₓ = Σx² − (Σx)²/n.',
+          hint1: '(Σx)²/n = 15²/5 = 225/5 = 45.',
+          hint2: 'Sₓₓ = 55 − 45.',
+          hint3: 'Sₓₓ = 10.',
+          answer: 10, tolerance: 0, unit: '',
+          explanation: 'Sₓₓ = 55 − 225/5 = 55 − 45 = 10.',
+        },
+        {
+          prompt: 'Calculate Sₓᵧ = Σxy − (Σx)(Σy)/n.',
+          hint1: '(Σx)(Σy)/n = 15×25/5 = 375/5 = 75.',
+          hint2: 'Sₓᵧ = 85 − 75.',
+          hint3: 'Sₓᵧ = 10.',
+          answer: 10, tolerance: 0, unit: '',
+          explanation: 'Sₓᵧ = 85 − 75 = 10.',
+        },
+        {
+          prompt: 'Find the gradient m = Sₓᵧ / Sₓₓ.',
+          hint1: 'm = 10 / 10.',
+          hint2: 'm = 1.',
+          hint3: 'm = 1.',
+          answer: 1, tolerance: 0.01, unit: '',
+          explanation: 'm = Sₓᵧ/Sₓₓ = 10/10 = 1.',
+        },
+        {
+          prompt: 'Find c = ȳ − mμₓ and write the full equation.',
+          hint1: 'μₓ = 15/5 = 3. ȳ = 25/5 = 5.',
+          hint2: 'c = 5 − 1×3 = 2.',
+          hint3: 'y = x + 2.',
+          answer: 2, tolerance: 0.01, unit: '',
+          explanation: 'c = 5 − 1×3 = 2. Equation: y = x + 2.',
+        },
+      ],
+      workedExample: {
+        question: 'n=4: Σx=12, Σy=20, Σx²=46, Σxy=64. Find the regression line.',
+        steps: [
+          'Step 1 — Sₓₓ: 46−144/4 = 46−36 = <strong>10</strong>',
+          'Step 2 — Sₓᵧ: 64−240/4 = 64−60 = <strong>4</strong>',
+          'Step 3 — m = 4/10 = <strong>0.4</strong>',
+          'Step 4 — c = 5−0.4×3 = 3.8. Equation: <strong>y = 0.4x + 3.8</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'y = x + 2.',
+        grade6: 'Sₓₓ=10, Sₓᵧ=10, m=1, c=5−3=2. y=x+2.',
+        grade8: 'Sₓₓ=Σx²−(Σx)²/n=10. Sₓᵧ=Σxy−(Σx)(Σy)/n=10. m=1. c=ȳ−mμₓ=5−3=2. Regression line: y=x+2.',
+      },
+      examinerTip: 'Always use the formula for Sₓₓ and Sₓᵧ — a common error is using Σx² directly without subtracting the correction term (Σx)²/n.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-scatter-C04 ──────────────────────────────────────
+    {
+      id: 'stat-scatter-C04', subtopic: 'stat-scatter', band: 'C', marks: 3,
+      question: 'Two variables have PMCC = 0.87. A student says "more revision causes better exam scores." (a) Interpret the PMCC. (b) Does this prove causation? (c) Suggest a confounding variable.',
+      steps: [
+        {
+          prompt: 'Interpret the PMCC value of 0.87.',
+          hint1: 'PMCC ranges from −1 to +1. Values close to +1 indicate strong positive correlation.',
+          hint2: '0.87 is close to 1 and positive.',
+          hint3: 'Strong positive correlation.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'PMCC = 0.87 indicates a strong positive correlation between the two variables.',
+          checkType: 'skip',
+          displayAnswer: 'Strong positive correlation',
+        },
+        {
+          prompt: 'Does a PMCC of 0.87 prove that revision causes better scores?',
+          hint1: 'Correlation measures the strength of association, not cause and effect.',
+          hint2: 'Correlation does not prove causation.',
+          hint3: 'No — correlation ≠ causation.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Correlation (however strong) does not prove causation. There may be other factors involved.',
+          checkType: 'skip',
+          displayAnswer: 'Correlation ≠ causation',
+        },
+        {
+          prompt: 'Suggest a confounding variable that could explain the relationship.',
+          hint1: 'A confounding variable affects both revision habits and exam scores independently.',
+          hint2: 'Think about student-level factors.',
+          hint3: 'Student motivation or ability could influence both.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Confounding variable: student motivation or innate ability could independently increase both revision time and exam performance.',
+          checkType: 'skip',
+          displayAnswer: 'Confounding variable: e.g. student motivation/ability',
+        },
+      ],
+      workedExample: {
+        question: 'PMCC = −0.91 between ice cream sales and coat sales. Interpret and find a confounding variable.',
+        steps: [
+          'Step 1 — PMCC=−0.91: <strong>strong negative correlation</strong>',
+          'Step 2 — does low ice cream sales cause high coat sales? No — <strong>correlation ≠ causation</strong>',
+          'Step 3 — confounding variable: <strong>season/temperature</strong> drives both independently.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Strong positive correlation. Correlation does not prove causation. Confounding variable: student ability.',
+        grade6: 'PMCC=0.87: strong positive correlation. This does not prove causation — a confounding variable such as student motivation could affect both revision and scores.',
+        grade8: 'PMCC=0.87 indicates strong positive linear correlation. This cannot establish causation; a confounding variable (e.g. general ability or motivation) could independently drive both greater revision and higher exam scores.',
+      },
+      examinerTip: 'When suggesting a confounding variable, name it specifically and explain how it could affect both variables — "another factor" alone is not enough.',
+      auditStatus: 'pending',
+    },
+
     // ══════════════════════════════════════════════════════════
     // CUMULATIVE FREQUENCY & BOX PLOTS (stat-cumulative) — Higher
     // ══════════════════════════════════════════════════════════
@@ -20021,6 +21816,1574 @@ const MathsQuestions = (() => {
       examinerTip: "Students compare only the medians and forget to compare spread (IQR), missing half the marks typically awarded for a full distribution comparison.",
       auditStatus: 'pending',
     },
+
+    // ── stat-cumulative-A02 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-A02', subtopic: 'stat-cumulative', band: 'A', marks: 3,
+      question: 'A dataset of 40 values has cumulative frequencies: ≤10: 4, ≤20: 12, ≤30: 24, ≤40: 36, ≤50: 40. Estimate the lower quartile (Q1), upper quartile (Q3), and IQR.',
+      steps: [
+        {
+          prompt: 'Estimate Q1 (the 10th value).',
+          hint1: 'Q1 is at position n/4 = 40/4 = 10th value. At x=10 the cf=4, so 6 more are needed from the class 10<x≤20 which has 8 values.',
+          hint2: 'Q1 = 10 + (6/8) × 10.',
+          hint3: 'Q1 = 10 + 7.5 = 17.5.',
+          answer: 17.5, tolerance: 0.5, unit: '',
+          explanation: 'Q1 = 10 + (6/8)×10 = 17.5. (Need 10th value; 4 already accounted for at x=10, so need 6 more from 8 in class.)',
+        },
+        {
+          prompt: 'Estimate Q3 (the 30th value).',
+          hint1: 'Q3 is at position 3n/4 = 30th value. cf=24 at x=30, so 6 more from 12 in class 30<x≤40.',
+          hint2: 'Q3 = 30 + (6/12) × 10.',
+          hint3: 'Q3 = 30 + 5 = 35.',
+          answer: 35, tolerance: 0.5, unit: '',
+          explanation: 'Q3 = 30 + (6/12)×10 = 35.',
+        },
+        {
+          prompt: 'Calculate the IQR.',
+          hint1: 'IQR = Q3 − Q1.',
+          hint2: '35 − 17.5.',
+          hint3: 'IQR = 17.5.',
+          answer: 17.5, tolerance: 0.5, unit: '',
+          explanation: 'IQR = Q3 − Q1 = 35 − 17.5 = 17.5.',
+        },
+      ],
+      workedExample: {
+        question: 'n=20. cf: ≤5:3, ≤10:8, ≤15:16, ≤20:20. Find Q1, Q3, and IQR.',
+        steps: [
+          'Step 1 — Q1=5th value: cf=3 at x=5, need 2 more from 5 in class 5<x≤10. Q1=5+(2/5)×5 = <strong>7</strong>',
+          'Step 2 — Q3=15th value: cf=8 at x=10, need 7 more from 8 in class 10<x≤15. Q3=10+(7/8)×5 = <strong>14.4</strong>',
+          'Step 3 — IQR = 14.4−7 = <strong>7.4</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Q1 = 17.5, Q3 = 35, IQR = 17.5.',
+        grade6: 'Q1: 10th value = 10+(6/8)×10=17.5. Q3: 30th value = 30+(6/12)×10=35. IQR=17.5.',
+        grade8: 'Q1=17.5 (linear interpolation in class 10<x≤20). Q3=35 (linear interpolation in class 30<x≤40). IQR=17.5.',
+      },
+      examinerTip: 'Always write down the cumulative frequency table first and identify which class each quartile falls in before interpolating.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-cumulative-A03 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-A03', subtopic: 'stat-cumulative', band: 'A', marks: 2,
+      question: 'From a cumulative frequency graph for 100 students: Q1 = 24, median = 35, Q3 = 52. Find (a) the IQR and (b) the number of students scoring above 52.',
+      steps: [
+        {
+          prompt: 'Find the IQR.',
+          hint1: 'IQR = Q3 − Q1.',
+          hint2: '52 − 24.',
+          hint3: 'IQR = 28.',
+          answer: 28, tolerance: 0, unit: '',
+          explanation: 'IQR = 52 − 24 = 28.',
+        },
+        {
+          prompt: 'How many students scored above Q3 (above 52)?',
+          hint1: 'Q3 is the 75th percentile — 75% scored at or below Q3.',
+          hint2: '25% scored above Q3. 25% of 100 = 25.',
+          hint3: '25 students scored above 52.',
+          answer: 25, tolerance: 0, unit: '',
+          explanation: '25% of the data lies above Q3. 25% × 100 = 25 students.',
+        },
+      ],
+      workedExample: {
+        question: 'n=80. Q1=30, Q3=54. IQR? Number scoring above Q3?',
+        steps: [
+          'Step 1 — IQR = 54−30 = <strong>24</strong>',
+          'Step 2 — 25% of 80 = <strong>20 students</strong> scored above Q3.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'IQR = 28. 25 students scored above 52.',
+        grade6: 'IQR = 52−24 = 28. Q3 = 75th percentile, so 25% above = 0.25×100 = 25 students.',
+        grade8: 'IQR = 28. The upper quartile is the 75th percentile, so 25% of 100 = 25 students scored above 52.',
+      },
+      examinerTip: 'Q3 is the 75th percentile — 25% of data always lies above it regardless of the total frequency.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-cumulative-A04 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-A04', subtopic: 'stat-cumulative', band: 'A', marks: 2,
+      question: 'Frequencies: 0<x≤20: 6, 20<x≤40: 14, 40<x≤60: 22, 60<x≤80: 8. Total = 50. Find the cumulative frequency at x = 40 and estimate the median.',
+      steps: [
+        {
+          prompt: 'State the cumulative frequency at x = 40.',
+          hint1: 'Add the frequencies up to and including the class 20<x≤40.',
+          hint2: '6 + 14 = 20.',
+          hint3: 'cf at x=40 is 20.',
+          answer: 20, tolerance: 0, unit: '',
+          explanation: 'Cumulative frequencies: ≤20:6, ≤40:20, ≤60:42, ≤80:50. At x=40, cf=20.',
+        },
+        {
+          prompt: 'Estimate the median (25th value).',
+          hint1: 'Median = 25th value. cf=20 at x=40, so need 5 more from 22 in class 40<x≤60.',
+          hint2: 'Median = 40 + (5/22) × 20.',
+          hint3: 'Median ≈ 44.5.',
+          answer: 44.5, tolerance: 1, unit: '',
+          explanation: 'Median = 40 + (5/22)×20 ≈ 40 + 4.55 ≈ 44.5.',
+        },
+      ],
+      workedExample: {
+        question: 'n=30. cf: ≤10:5, ≤20:15, ≤30:30. Estimate the median.',
+        steps: [
+          'Step 1 — median = 15th value. cf=5 at x=10, need 10 more from 10 in class 10<x≤20.',
+          'Step 2 — Median = 10 + (10/10)×10 = <strong>20</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'cf at x=40 is 20. Median ≈ 44.5.',
+        grade6: 'cf: 6,20,42,50. Median = 25th value. 40+(5/22)×20 ≈ 44.5.',
+        grade8: 'cf at x=40 = 20. Median (25th value) is in class 40<x≤60. Interpolation: 40+(5/22)×20 ≈ 44.5.',
+      },
+      examinerTip: 'Build the full cumulative frequency column before identifying which class the median falls in — this avoids errors in counting.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-cumulative-A05 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-A05', subtopic: 'stat-cumulative', band: 'A', marks: 2,
+      question: 'From a cumulative frequency graph, the 20th percentile is 15 and the 80th percentile is 55. (a) Find the inter-percentile range. (b) How many values lie between these percentiles if n = 200?',
+      steps: [
+        {
+          prompt: 'Find the inter-percentile range (80th percentile − 20th percentile).',
+          hint1: '55 − 15.',
+          hint2: '40.',
+          hint3: 'Inter-percentile range = 40.',
+          answer: 40, tolerance: 0, unit: '',
+          explanation: 'Inter-percentile range = 55 − 15 = 40.',
+        },
+        {
+          prompt: 'How many of the 200 values lie between the 20th and 80th percentiles?',
+          hint1: 'The range from the 20th to the 80th percentile contains 80 − 20 = 60% of the data.',
+          hint2: '60% of 200.',
+          hint3: '0.6 × 200 = 120.',
+          answer: 120, tolerance: 0, unit: '',
+          explanation: '80th − 20th percentile = 60% of data. 60% × 200 = 120 values.',
+        },
+      ],
+      workedExample: {
+        question: '10th percentile = 8, 90th percentile = 52, n = 150. Find the inter-percentile range and number of values between them.',
+        steps: [
+          'Step 1 — range: 52−8 = <strong>44</strong>',
+          'Step 2 — 80% of 150 = <strong>120 values</strong> lie between the 10th and 90th percentiles.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Inter-percentile range = 40. 120 values lie between the two percentiles.',
+        grade6: 'IPR = 55−15 = 40. 60% of 200 = 120 values lie between the 20th and 80th percentiles.',
+        grade8: 'IPR = 40. The 20th to 80th percentile range covers 60% of the distribution, so 0.60×200 = 120 values.',
+      },
+      examinerTip: 'The percentage of data between the pth and qth percentiles is always (q − p)% — make sure to use this directly rather than recounting from the graph.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-cumulative-B02 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-B02', subtopic: 'stat-cumulative', band: 'B', marks: 3,
+      question: '50 exam results have cf: ≤40:5, ≤50:18, ≤60:34, ≤70:45, ≤80:50. (a) Estimate the median. (b) Estimate how many students scored above 65. (c) Interpret the result.',
+      steps: [
+        {
+          prompt: 'Estimate the median (25th value).',
+          hint1: 'cf=18 at x=50, need 7 more from 16 in class 50<x≤60.',
+          hint2: 'Median = 50 + (7/16) × 10.',
+          hint3: 'Median ≈ 54.4.',
+          answer: 54.4, tolerance: 0.5, unit: '',
+          explanation: 'Median = 50 + (7/16)×10 = 50 + 4.375 ≈ 54.4.',
+        },
+        {
+          prompt: 'Estimate the number of students who scored above 65.',
+          hint1: 'Interpolate to find cf at 65. cf=34 at 60, cf=45 at 70.',
+          hint2: 'cf at 65 = 34 + (45−34)×(5/10) = 34 + 5.5 = 39.5.',
+          hint3: 'Students above 65 = 50 − 39.5 ≈ 10 or 11.',
+          answer: 10.5, tolerance: 1, unit: '',
+          explanation: 'cf at 65 ≈ 39.5. Students above 65 = 50 − 39.5 = 10.5 → approximately 10 or 11.',
+        },
+        {
+          prompt: 'Interpret the result for students scoring above 65.',
+          hint1: 'State your estimate in context.',
+          hint2: 'Approximately 10 to 11 students scored above 65.',
+          hint3: 'About 10 students scored above 65.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Approximately 10–11 students scored above 65 marks.',
+          checkType: 'skip',
+          displayAnswer: '≈ 10 students scored above 65',
+        },
+      ],
+      workedExample: {
+        question: 'cf: ≤50:8, ≤60:20, ≤70:35, ≤80:40 (n=40). Median? Above 72?',
+        steps: [
+          'Step 1 — median=20th: cf=8 at 50, need 12 from 12 in class 50<x≤60; median=60+(0/12)×10 = <strong>60</strong>',
+          'Step 2 — cf at 72: 35+(40−35)×2/10 = 36. Above 72: 40−36 = <strong>4 students</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Median ≈ 54.4. About 10 students scored above 65.',
+        grade6: 'Median=50+(7/16)×10=54.4. cf at 65=39.5, so 50−39.5≈10 students above 65.',
+        grade8: 'Median≈54.4. Linear interpolation at x=65: cf≈39.5, so approximately 10 students scored above 65. This is an estimate as we assume uniform distribution within each class.',
+      },
+      examinerTip: 'When estimating values in the middle of a class, always use linear interpolation — do not round to the nearest class boundary.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-cumulative-B03 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-B03', subtopic: 'stat-cumulative', band: 'B', marks: 3,
+      question: 'A box plot is drawn from: min = 12, Q1 = 18, median = 25, Q3 = 35, max = 48. (a) Find the IQR. (b) Find the upper outlier fence. (c) Are there any outliers?',
+      steps: [
+        {
+          prompt: 'Find the IQR.',
+          hint1: 'IQR = Q3 − Q1.',
+          hint2: '35 − 18.',
+          hint3: 'IQR = 17.',
+          answer: 17, tolerance: 0, unit: '',
+          explanation: 'IQR = 35 − 18 = 17.',
+        },
+        {
+          prompt: 'Find the upper outlier fence.',
+          hint1: 'Upper fence = Q3 + 1.5 × IQR.',
+          hint2: 'Upper fence = 35 + 1.5 × 17 = 35 + 25.5.',
+          hint3: 'Upper fence = 60.5.',
+          answer: 60.5, tolerance: 0, unit: '',
+          explanation: 'Upper fence = 35 + 1.5×17 = 60.5. Lower fence = 18 − 25.5 = −7.5.',
+        },
+        {
+          prompt: 'Are there any outliers? Justify your answer.',
+          hint1: 'Check whether min or max lie outside the fences.',
+          hint2: 'Min = 12 > −7.5 and max = 48 < 60.5.',
+          hint3: 'No outliers.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Max=48 < 60.5 and min=12 > −7.5, so there are no outliers in this dataset.',
+          checkType: 'skip',
+          displayAnswer: 'No outliers',
+        },
+      ],
+      workedExample: {
+        question: 'Q1 = 10, Q3 = 22, min = 3, max = 38. IQR, upper fence, any outliers?',
+        steps: [
+          'Step 1 — IQR = 22−10 = <strong>12</strong>',
+          'Step 2 — upper fence = 22+1.5×12 = 22+18 = <strong>40</strong>. Lower fence = 10−18 = −8.',
+          'Step 3 — max=38 < 40 and min=3 > −8: <strong>no outliers</strong>.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'IQR = 17. Upper fence = 60.5. No outliers.',
+        grade6: 'IQR=17. Upper fence=35+1.5×17=60.5. max=48 < 60.5 and min=12 > −7.5, so no outliers.',
+        grade8: 'IQR=17. Fences: −7.5 and 60.5. All data (12 to 48) lies within these bounds — no outliers present.',
+      },
+      examinerTip: 'Calculate both fences — examiners sometimes set min or max exactly at the boundary to check whether you test both ends.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-cumulative-B04 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-B04', subtopic: 'stat-cumulative', band: 'B', marks: 3,
+      question: 'Group X (n=60): median = 42, IQR = 18. Group Y (n=60): median = 36, IQR = 28. Write a full comparison of the two distributions.',
+      steps: [
+        {
+          prompt: 'Compare the medians of Group X and Group Y.',
+          hint1: 'The median measures typical/average performance.',
+          hint2: 'Group X has a higher median (42 > 36).',
+          hint3: 'Group X performed better on average.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Group X has a higher median (42 vs 36), suggesting X scored higher on average.',
+          checkType: 'skip',
+          displayAnswer: 'X has higher median (42 > 36)',
+        },
+        {
+          prompt: 'Compare the spread (IQR) of Group X and Group Y.',
+          hint1: 'The IQR measures consistency/spread of the middle 50% of data.',
+          hint2: 'Group Y has a larger IQR (28 > 18).',
+          hint3: 'Group Y scores are more spread out — less consistent.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Group Y has a larger IQR (28 vs 18), meaning Y scores are more spread out and less consistent.',
+          checkType: 'skip',
+          displayAnswer: 'Y has larger IQR (28 > 18) — more spread',
+        },
+        {
+          prompt: 'Write an overall conclusion comparing the two groups.',
+          hint1: 'Combine both observations into a single comparative statement.',
+          hint2: 'Group X performed better overall and more consistently.',
+          hint3: 'Group X: higher median AND smaller IQR (more consistent).',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Group X performed better overall (higher median) and more consistently (smaller IQR).',
+          checkType: 'skip',
+          displayAnswer: 'X: higher median AND more consistent',
+        },
+      ],
+      workedExample: {
+        question: 'Group A: median=55, IQR=12. Group B: median=60, IQR=20. Compare.',
+        steps: [
+          'Step 1 — medians: <strong>B higher (60 > 55)</strong> — B performed better on average.',
+          'Step 2 — spread: <strong>A more consistent (IQR=12 < 20)</strong> — A scores less spread.',
+          'Step 3 — overall: B performed better; A is more consistent.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Group X has a higher median. Group Y is more spread out.',
+        grade6: 'X has higher median (42>36) so performed better on average. Y has larger IQR (28>18) so is less consistent.',
+        grade8: 'Group X: median=42 vs Y=36 — X performed better on average. Group X: IQR=18 vs Y=28 — X is more consistent. Overall, Group X performed better and more reliably.',
+      },
+      examinerTip: 'A full distribution comparison must address both centre (median) AND spread (IQR) — answering only one will lose marks even if correct.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-cumulative-B05 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-B05', subtopic: 'stat-cumulative', band: 'B', marks: 3,
+      question: 'Grouped data: 10<x≤20:3, 20<x≤30:10, 30<x≤40:18, 40<x≤50:12, 50<x≤60:7. Total = 50. Find the 90th percentile.',
+      steps: [
+        {
+          prompt: 'Find the position of the 90th percentile.',
+          hint1: 'Position = 90% × 50.',
+          hint2: '0.9 × 50 = 45.',
+          hint3: 'The 90th percentile is at the 45th value.',
+          answer: 45, tolerance: 0, unit: '',
+          explanation: '90th percentile position = 0.9 × 50 = 45th value.',
+        },
+        {
+          prompt: 'Use the cumulative frequencies to estimate the 90th percentile value.',
+          hint1: 'cf: 3, 13, 31, 43, 50. The 45th value is in class 50<x≤60 (cf=43 at x=50).',
+          hint2: 'Need 45 − 43 = 2 more from 7 in class. P90 = 50 + (2/7)×10.',
+          hint3: 'P90 ≈ 52.9.',
+          answer: 52.9, tolerance: 0.5, unit: '',
+          explanation: 'cf=43 at x=50. Need 2 more from 7 in the class 50<x≤60. P90 = 50 + (2/7)×10 ≈ 52.9.',
+        },
+        {
+          prompt: 'Interpret the 90th percentile in context.',
+          hint1: 'The 90th percentile means 90% of values are below this point.',
+          hint2: '90% of the data values are below approximately 52.9.',
+          hint3: '90th percentile ≈ 52.9.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: '90% of the 50 data values are below approximately 52.9.',
+          checkType: 'skip',
+          displayAnswer: '90th percentile ≈ 52.9',
+        },
+      ],
+      workedExample: {
+        question: 'cf: ≤60:32, ≤70:45 (n=50). Find the 90th percentile.',
+        steps: [
+          'Step 1 — position: 0.9×50 = <strong>45th value</strong>',
+          'Step 2 — cf=32 at 60, need 13 more from 13 in class 60<x≤70. P90=60+(13/13)×10 = <strong>70</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: '90th percentile ≈ 52.9.',
+        grade6: 'Position = 45th value. cf: 3,13,31,43,50. 45th is in 50<x≤60. P90=50+(2/7)×10≈52.9.',
+        grade8: '90th percentile at 45th value. cf=43 at x=50; need 2 more from 7 in class. P90=50+(2/7)×10≈52.9. 90% of values lie below this.',
+      },
+      examinerTip: 'For percentiles other than quartiles, position = (p/100) × n. Use this formula consistently rather than guessing which class boundary to use.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-cumulative-B06 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-B06', subtopic: 'stat-cumulative', band: 'B', marks: 3,
+      question: 'cf data for n = 80 students: ≤30:4, ≤40:12, ≤50:28, ≤60:52, ≤70:68, ≤80:80. Estimate the number of students scoring between 45 and 65.',
+      steps: [
+        {
+          prompt: 'Estimate the cumulative frequency at 45.',
+          hint1: 'Interpolate between x=40 (cf=12) and x=50 (cf=28).',
+          hint2: 'cf at 45 = 12 + (28−12) × (5/10) = 12 + 8.',
+          hint3: 'cf at 45 = 20.',
+          answer: 20, tolerance: 1, unit: '',
+          explanation: 'cf at 45 = 12 + 16×(5/10) = 12 + 8 = 20.',
+        },
+        {
+          prompt: 'Estimate the cumulative frequency at 65.',
+          hint1: 'Interpolate between x=60 (cf=52) and x=70 (cf=68).',
+          hint2: 'cf at 65 = 52 + (68−52) × (5/10) = 52 + 8.',
+          hint3: 'cf at 65 = 60.',
+          answer: 60, tolerance: 1, unit: '',
+          explanation: 'cf at 65 = 52 + 16×(5/10) = 52 + 8 = 60.',
+        },
+        {
+          prompt: 'Find the number of students between 45 and 65.',
+          hint1: 'Students between 45 and 65 = cf at 65 − cf at 45.',
+          hint2: '60 − 20.',
+          hint3: '40 students.',
+          answer: 40, tolerance: 2, unit: '',
+          explanation: 'Students between 45 and 65 = 60 − 20 = 40.',
+        },
+      ],
+      workedExample: {
+        question: 'cf: ≤20:6, ≤30:18, ≤40:30 (n=30). Students between 25 and 35?',
+        steps: [
+          'Step 1 — cf at 25: 6+(18−6)×5/10 = 6+6 = <strong>12</strong>',
+          'Step 2 — cf at 35: 18+(30−18)×5/10 = 18+6 = <strong>24</strong>',
+          'Step 3 — between: 24−12 = <strong>12 students</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: '40 students scored between 45 and 65.',
+        grade6: 'cf at 45=20, cf at 65=60. Students between = 60−20 = 40.',
+        grade8: 'Linear interpolation: cf at 45=12+(16×0.5)=20; cf at 65=52+(16×0.5)=60. Students between 45 and 65 = 40.',
+      },
+      examinerTip: 'Always interpolate to find cf at a non-boundary value — reading directly from graph gridlines often introduces rounding errors.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-cumulative-C01 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-C01', subtopic: 'stat-cumulative', band: 'C', marks: 4,
+      question: 'Grouped data: 0<x≤20: f=6, 20<x≤40: f=14, 40<x≤60: f=24, 60<x≤80: f=16. Total = 60. Find (a) the estimated mean and (b) an estimate for the median. (c) Comment on the skew.',
+      steps: [
+        {
+          prompt: 'Calculate Σfm (midpoints × frequencies).',
+          hint1: 'Midpoints: 10, 30, 50, 70.',
+          hint2: 'Σfm = 6×10 + 14×30 + 24×50 + 16×70 = 60+420+1200+1120.',
+          hint3: 'Σfm = 2800.',
+          answer: 2800, tolerance: 0, unit: '',
+          explanation: 'Σfm = 60+420+1200+1120 = 2800.',
+        },
+        {
+          prompt: 'Calculate the estimated mean.',
+          hint1: 'Mean = Σfm / n.',
+          hint2: '2800 / 60.',
+          hint3: 'Mean ≈ 46.67.',
+          answer: 46.67, tolerance: 0.1, unit: '',
+          explanation: 'Estimated mean = 2800/60 ≈ 46.67.',
+        },
+        {
+          prompt: 'Estimate the median using cumulative frequency.',
+          hint1: 'cf: 6, 20, 44, 60. Median = 30th value — in class 40<x≤60 (cf=20 at x=40, need 10 more from 24).',
+          hint2: 'Median = 40 + (10/24) × 20.',
+          hint3: 'Median ≈ 48.3.',
+          answer: 48.3, tolerance: 0.5, unit: '',
+          explanation: 'Median = 40 + (10/24)×20 ≈ 48.3.',
+        },
+        {
+          prompt: 'Comment on the skew by comparing mean and median.',
+          hint1: 'If mean < median, the distribution has a negative (left) skew.',
+          hint2: 'Mean ≈ 46.7 < Median ≈ 48.3.',
+          hint3: 'Slight negative skew — mean pulled left by lower values.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Mean (46.7) < Median (48.3) → slight negative skew. The lower values pull the mean down.',
+          checkType: 'skip',
+          displayAnswer: 'Mean ≈ 46.7 < Median ≈ 48.3 — slight negative skew',
+        },
+      ],
+      workedExample: {
+        question: '0<x≤10: f=5, 10<x≤20: f=12, 20<x≤30: f=3 (n=20). Mean and median?',
+        steps: [
+          'Step 1 — Σfm: 5×5+12×15+3×25 = 25+180+75 = <strong>280</strong>',
+          'Step 2 — mean: 280/20 = <strong>14</strong>',
+          'Step 3 — cf: 5,17,20. Median=10th: 10+(5/12)×10 = <strong>14.2</strong>',
+          'Step 4 — mean≈median: <strong>near-symmetric distribution</strong>.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Mean ≈ 46.7. Median ≈ 48.3. Slight negative skew.',
+        grade6: 'Σfm=2800. Mean=2800/60≈46.7. Median=40+(10/24)×20≈48.3. Mean<median → slight negative skew.',
+        grade8: 'Mean=46.67, median≈48.3. Since mean<median, the distribution shows a slight negative skew — the lower values drag the mean below the median.',
+      },
+      examinerTip: 'Skew direction: if mean < median → negative skew; mean > median → positive skew. Always state which is larger to justify your answer.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-cumulative-C02 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-C02', subtopic: 'stat-cumulative', band: 'C', marks: 4,
+      question: 'Group A and Group B (both n=40) have cf tables: A: ≤50:10, ≤60:22, ≤70:34, ≤80:40. B: ≤50:4, ≤60:14, ≤70:32, ≤80:40. Compare medians and IQRs.',
+      steps: [
+        {
+          prompt: 'Estimate the median for Group A.',
+          hint1: 'Median = 20th value. cf=10 at x=50, need 10 more from 12 in class 50<x≤60.',
+          hint2: 'Median_A = 50 + (10/12) × 10.',
+          hint3: 'Median_A ≈ 58.3.',
+          answer: 58.3, tolerance: 0.5, unit: '',
+          explanation: 'Median_A = 50 + (10/12)×10 ≈ 58.3.',
+        },
+        {
+          prompt: 'Estimate the median for Group B.',
+          hint1: 'Median = 20th value. cf=14 at x=60, need 6 more from 18 in class 60<x≤70.',
+          hint2: 'Median_B = 60 + (6/18) × 10.',
+          hint3: 'Median_B ≈ 63.3.',
+          answer: 63.3, tolerance: 0.5, unit: '',
+          explanation: 'Median_B = 60 + (6/18)×10 ≈ 63.3.',
+        },
+        {
+          prompt: 'Calculate the IQR for Group A.',
+          hint1: 'Q1_A = 10th value. cf=10 exactly at x=50, so Q1_A = 50. Q3_A = 30th value: cf=22 at 60, need 8 from 12. Q3_A = 60+(8/12)×10 ≈ 66.7.',
+          hint2: 'IQR_A = 66.7 − 50.',
+          hint3: 'IQR_A ≈ 16.7.',
+          answer: 16.7, tolerance: 0.5, unit: '',
+          explanation: 'Q1_A=50 (10th value falls exactly at cf=10). Q3_A=60+(8/12)×10≈66.7. IQR_A≈16.7.',
+        },
+        {
+          prompt: 'Calculate the IQR for Group B and compare both groups.',
+          hint1: 'Q1_B = 10th value: cf=4 at 50, need 6 from 10. Q1_B=50+6=56. Q3_B=30th: cf=14 at 60, need 16 from 18. Q3_B=60+(16/18)×10≈68.9. IQR_B≈12.9.',
+          hint2: 'A has lower median but wider IQR; B has higher median and smaller IQR.',
+          hint3: 'IQR_B ≈ 12.9. Group B: higher median, more consistent.',
+          answer: 12.9, tolerance: 0.5, unit: '',
+          explanation: 'IQR_B≈12.9. Group B has a higher median (63.3>58.3) and is more consistent (IQR 12.9 < 16.7). Group A scored lower on average and was more spread out.',
+        },
+      ],
+      workedExample: {
+        question: 'Group C cf: ≤20:8, ≤40:18, ≤60:24 (n=24). Find median and Q1.',
+        steps: [
+          'Step 1 — median=12th: cf=8 at 20, need 4 from 10. Median=20+(4/10)×20 = <strong>28</strong>',
+          'Step 2 — Q1=6th: cf=8 at 20; 6 < 8, so Q1 is in ≤20 class. Q1=0+(6/8)×20 = <strong>15</strong>',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'Median A ≈ 58.3, Median B ≈ 63.3. IQR A ≈ 16.7, IQR B ≈ 12.9.',
+        grade6: 'Median_A≈58.3 < Median_B≈63.3, so B scored higher on average. IQR_A≈16.7 > IQR_B≈12.9, so A is more spread out.',
+        grade8: 'Group B: higher median (63.3 vs 58.3) — performed better on average. Group B: smaller IQR (12.9 vs 16.7) — more consistent. Overall Group B outperformed Group A.',
+      },
+      examinerTip: 'When Q1 falls exactly on a cumulative frequency boundary, read off the boundary value directly — no interpolation needed.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-cumulative-C03 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-C03', subtopic: 'stat-cumulative', band: 'C', marks: 3,
+      question: 'A dataset of n = 50 values has Q1 = 16 and Q3 = 35 (from a cumulative frequency graph). Min = 2, max = 58. (a) Find the IQR. (b) Find the outlier fences. (c) Are there any outliers?',
+      steps: [
+        {
+          prompt: 'Find the IQR.',
+          hint1: 'IQR = Q3 − Q1.',
+          hint2: '35 − 16.',
+          hint3: 'IQR = 19.',
+          answer: 19, tolerance: 0, unit: '',
+          explanation: 'IQR = 35 − 16 = 19.',
+        },
+        {
+          prompt: 'Find the upper outlier fence.',
+          hint1: 'Upper fence = Q3 + 1.5 × IQR.',
+          hint2: 'Upper fence = 35 + 1.5 × 19 = 35 + 28.5.',
+          hint3: 'Upper fence = 63.5.',
+          answer: 63.5, tolerance: 0, unit: '',
+          explanation: 'Upper fence = 35 + 28.5 = 63.5. Lower fence = 16 − 28.5 = −12.5.',
+        },
+        {
+          prompt: 'Are there any outliers? Justify.',
+          hint1: 'Compare min and max against the fences.',
+          hint2: 'Min = 2 > −12.5 and max = 58 < 63.5.',
+          hint3: 'No outliers in the dataset.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Min=2 > −12.5 and max=58 < 63.5. No values lie outside the fences — no outliers.',
+          checkType: 'skip',
+          displayAnswer: 'No outliers: 2 > −12.5 and 58 < 63.5',
+        },
+      ],
+      workedExample: {
+        question: 'Q1=20, Q3=44, min=5, max=72. IQR, fences, any outliers?',
+        steps: [
+          'Step 1 — IQR = 44−20 = <strong>24</strong>',
+          'Step 2 — lower fence = 20−36 = −16. Upper fence = 44+36 = <strong>80</strong>',
+          'Step 3 — 5 > −16 and 72 < 80: <strong>no outliers</strong>.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'IQR = 19. Upper fence = 63.5. No outliers.',
+        grade6: 'IQR=19. Fences: −12.5 and 63.5. min=2>−12.5, max=58<63.5 → no outliers.',
+        grade8: 'IQR=19. Lower fence=16−28.5=−12.5, upper fence=35+28.5=63.5. All data (2 to 58) lies within [−12.5, 63.5] — no outliers.',
+      },
+      examinerTip: 'Always compute both fences and check both the minimum and maximum — the question may reward checking both ends separately.',
+      auditStatus: 'pending',
+    },
+
+    // ── stat-cumulative-C04 ──────────────────────────────────────
+    {
+      id: 'stat-cumulative-C04', subtopic: 'stat-cumulative', band: 'C', marks: 4,
+      question: 'From a cumulative frequency graph for 100 people: Q1 = 28, Q3 = 52, max = 74, min = 8. (a) Find the IQR. (b) Find the upper outlier fence. (c) Is the maximum an outlier? (d) Describe the key features of the resulting box plot.',
+      steps: [
+        {
+          prompt: 'Find the IQR.',
+          hint1: 'IQR = Q3 − Q1.',
+          hint2: '52 − 28.',
+          hint3: 'IQR = 24.',
+          answer: 24, tolerance: 0, unit: '',
+          explanation: 'IQR = 52 − 28 = 24.',
+        },
+        {
+          prompt: 'Find the upper outlier fence.',
+          hint1: 'Upper fence = Q3 + 1.5 × IQR.',
+          hint2: '52 + 1.5 × 24 = 52 + 36.',
+          hint3: 'Upper fence = 88.',
+          answer: 88, tolerance: 0, unit: '',
+          explanation: 'Upper fence = 52 + 36 = 88.',
+        },
+        {
+          prompt: 'Is the maximum value (74) an outlier?',
+          hint1: 'Compare max = 74 with the upper fence = 88.',
+          hint2: '74 < 88.',
+          hint3: '74 is NOT an outlier.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'max = 74 < 88 (upper fence), so the maximum value is NOT an outlier.',
+          checkType: 'skip',
+          displayAnswer: '74 < 88 → NOT an outlier',
+        },
+        {
+          prompt: 'Describe the key features of the resulting box plot.',
+          hint1: 'State min, Q1, median, Q3, max and comment on skew.',
+          hint2: 'Whiskers at 8 and 74, box from 28 to 52.',
+          hint3: 'Box plot: min=8, Q1=28, Q3=52, max=74. Comment on skew if the median is known.',
+          answer: 0, tolerance: 0, unit: '',
+          explanation: 'Box plot: left whisker at 8, Q1=28, box to Q3=52, right whisker at 74. If the median is near the centre of the box, the distribution is approximately symmetric.',
+          checkType: 'skip',
+          displayAnswer: 'Box plot: whiskers at 8 and 74, box from 28 to 52',
+        },
+      ],
+      workedExample: {
+        question: 'Q1=15, Q3=35, max=60, min=4, n=80. IQR, upper fence, is max an outlier?',
+        steps: [
+          'Step 1 — IQR = 35−15 = <strong>20</strong>',
+          'Step 2 — upper fence = 35+1.5×20 = 35+30 = <strong>65</strong>',
+          'Step 3 — max=60 < 65: <strong>not an outlier</strong>. Box: whiskers at 4 and 60, box from 15 to 35.',
+        ],
+      },
+      sampleAnswer: {
+        grade4: 'IQR = 24. Upper fence = 88. Max = 74 is not an outlier.',
+        grade6: 'IQR=24. Upper fence=52+36=88. 74<88 so not an outlier. Box plot: min=8, Q1=28, Q3=52, max=74.',
+        grade8: 'IQR=24. Upper fence=88. max=74<88 — not an outlier. Box plot: whiskers 8 to 74, box Q1=28 to Q3=52. Without the median, skew cannot be confirmed but the longer right whisker (22) vs left (20) suggests very slight positive skew.',
+      },
+      examinerTip: 'When sketching a box plot, label all five key values — missing even one (e.g. not marking Q1 or Q3) typically costs a mark.',
+      auditStatus: 'pending',
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // BOX PLOTS (stat-boxplots) — Higher
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'stat-boxplots-A01', subtopic: 'stat-boxplots', band: 'A', marks: 3,
+      question: 'A box plot shows: min = 5, Q1 = 12, median = 18, Q3 = 27, max = 35. Find (a) the IQR, (b) the range, and (c) state what percentage of data lies between Q1 and Q3.',
+      steps: [
+        {
+          prompt: 'Calculate the interquartile range (IQR = Q3 − Q1).', hint1: 'IQR = Q3 − Q1', hint2: 'IQR = 27 − 12', hint3: 'IQR = 27 − 12 = 15',
+          answer: 15, tolerance: 0, unit: '',
+          explanation: 'IQR = Q3 − Q1 = 27 − 12 = 15.',
+        },
+        {
+          prompt: 'Calculate the range (max − min).', hint1: 'Range = max − min', hint2: 'Range = 35 − 5', hint3: 'Range = 35 − 5 = 30',
+          answer: 30, tolerance: 0, unit: '',
+          explanation: 'Range = max − min = 35 − 5 = 30.',
+        },
+        {
+          prompt: 'What percentage of data lies between Q1 and Q3?', hint1: 'Think about what the quartiles represent.', hint2: 'The box in a box plot contains the middle 50%.', hint3: 'By definition, 50% of the data lies between Q1 and Q3.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: '50%',
+          explanation: 'By definition, 50% of the data lies between the lower quartile (Q1) and upper quartile (Q3).',
+        },
+      ],
+      workedExample: {
+        question: 'A box plot shows: min = 10, Q1 = 18, median = 25, Q3 = 34, max = 42. Find the IQR, range, and the percentage of data between the quartiles.',
+        steps: [
+          'IQR — IQR = Q3 − Q1 = 34 − 18 = <strong>16</strong>',
+          'Range — Range = max − min = 42 − 10 = <strong>32</strong>',
+          'Percentage between quartiles — By definition, <strong>50%</strong> of data lies between Q1 and Q3',
+        ],
+      },
+      sampleAnswer: { grade4: 'IQR = 15; range = 30.', grade6: 'IQR = Q3 − Q1 = 27 − 12 = 15. Range = 35 − 5 = 30. 50% of data lies between Q1 and Q3.', grade8: 'IQR = 27 − 12 = 15. Range = 35 − 5 = 30. By definition, 50% of all values fall between Q1 and Q3 (the middle two quartiles).' },
+      examinerTip: 'Always subtract Q1 from Q3 for IQR — not max minus min. The IQR covers exactly 50% of the data.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-A02', subtopic: 'stat-boxplots', band: 'A', marks: 2,
+      question: 'Dataset A has median = 45 and IQR = 20. Dataset B has median = 38 and IQR = 15. State (a) which dataset has the higher median and (b) which has the greater spread.',
+      steps: [
+        {
+          prompt: 'Which dataset has the higher median?', hint1: 'Compare 45 and 38.', hint2: '45 > 38', hint3: 'Dataset A has the higher median.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Dataset A (median 45 > 38)',
+          explanation: 'Dataset A has the higher median: 45 > 38.',
+        },
+        {
+          prompt: 'Which dataset has the greater spread (compare IQRs)?', hint1: 'Compare IQR values: 20 and 15.', hint2: '20 > 15', hint3: 'Dataset A has the greater spread.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Dataset A (IQR 20 > 15)',
+          explanation: 'IQR measures spread. IQR_A = 20 > IQR_B = 15, so Dataset A has greater spread.',
+        },
+      ],
+      workedExample: {
+        question: 'Dataset C has median = 62, IQR = 25. Dataset D has median = 70, IQR = 18. Which has the higher median? Which has the greater spread?',
+        steps: [
+          'Higher median — D has median 70 vs C median 62: <strong>Dataset D</strong> has the higher median',
+          'Greater spread — C has IQR 25 vs D IQR 18: <strong>Dataset C</strong> has the greater spread',
+        ],
+      },
+      sampleAnswer: { grade4: 'Dataset A has the higher median. Dataset A has greater spread.', grade6: 'Dataset A has the higher median (45 > 38). Dataset A has greater spread (IQR 20 > 15).', grade8: 'Median comparison: A (45) > B (38), so A has a higher typical value. Spread comparison: IQR_A (20) > IQR_B (15), so A has greater variability in the middle 50% of its data.' },
+      examinerTip: 'Use median to compare averages and IQR to compare spread. Never use range to compare spread if IQR is available.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-A03', subtopic: 'stat-boxplots', band: 'A', marks: 2,
+      question: 'A box plot for n = 80 values shows Q1 = 14 and Q3 = 26. Find (a) the IQR and (b) how many values lie between Q1 and Q3.',
+      steps: [
+        {
+          prompt: 'Calculate the IQR.', hint1: 'IQR = Q3 − Q1', hint2: 'IQR = 26 − 14', hint3: 'IQR = 26 − 14 = 12',
+          answer: 12, tolerance: 0, unit: '',
+          explanation: 'IQR = Q3 − Q1 = 26 − 14 = 12.',
+        },
+        {
+          prompt: 'How many of the 80 values lie between Q1 and Q3?', hint1: '50% of values lie between Q1 and Q3.', hint2: '50% of 80 = ?', hint3: '0.5 × 80 = 40',
+          answer: 40, tolerance: 0, unit: '',
+          explanation: '50% of the data lies between Q1 and Q3. 50% of 80 = 40 values.',
+        },
+      ],
+      workedExample: {
+        question: 'A box plot for n = 60 values shows Q1 = 20 and Q3 = 44. Find the IQR and how many values lie between Q1 and Q3.',
+        steps: [
+          'IQR — Q3 − Q1 = 44 − 20 = <strong>24</strong>',
+          'Values between Q1 and Q3 — 50% of 60 = <strong>30</strong> values',
+        ],
+      },
+      sampleAnswer: { grade4: 'IQR = 12. 40 values lie between Q1 and Q3.', grade6: 'IQR = 26 − 14 = 12. 50% of 80 = 40 values lie between Q1 and Q3.', grade8: 'IQR = Q3 − Q1 = 26 − 14 = 12. Since Q1 and Q3 are the lower and upper quartiles, 50% of all values fall between them: 0.5 × 80 = 40 values.' },
+      examinerTip: 'Always remember: 50% of data lies in the box (between Q1 and Q3). Multiply n by 0.5 to find the count.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-A04', subtopic: 'stat-boxplots', band: 'A', marks: 2,
+      question: 'From a box plot: min = 3, Q1 = 8, median = 13, Q3 = 19, max = 25. Find (a) the IQR and (b) the range.',
+      steps: [
+        {
+          prompt: 'Calculate the IQR.', hint1: 'IQR = Q3 − Q1', hint2: 'IQR = 19 − 8', hint3: 'IQR = 19 − 8 = 11',
+          answer: 11, tolerance: 0, unit: '',
+          explanation: 'IQR = Q3 − Q1 = 19 − 8 = 11.',
+        },
+        {
+          prompt: 'Calculate the range.', hint1: 'Range = max − min', hint2: 'Range = 25 − 3', hint3: 'Range = 25 − 3 = 22',
+          answer: 22, tolerance: 0, unit: '',
+          explanation: 'Range = max − min = 25 − 3 = 22.',
+        },
+      ],
+      workedExample: {
+        question: 'A box plot shows: min = 1, Q1 = 6, median = 10, Q3 = 16, max = 22. Find the IQR and the range.',
+        steps: [
+          'IQR — Q3 − Q1 = 16 − 6 = <strong>10</strong>',
+          'Range — max − min = 22 − 1 = <strong>21</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'IQR = 11; range = 22.', grade6: 'IQR = Q3 − Q1 = 19 − 8 = 11. Range = max − min = 25 − 3 = 22.', grade8: 'IQR = 19 − 8 = 11 (measures spread of the middle 50%). Range = 25 − 3 = 22 (measures total spread, affected by extremes).' },
+      examinerTip: 'Two key measures: IQR uses quartiles (Q3 − Q1); range uses the extremes (max − min). Don't mix them up.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-A05', subtopic: 'stat-boxplots', band: 'A', marks: 2,
+      question: 'A box plot shows that 25% of data is below 16 and 75% is below 30. The median is 23. Find (a) the IQR and (b) state which half of the box (lower or upper) is wider.',
+      steps: [
+        {
+          prompt: 'Identify Q1 and Q3, then calculate the IQR.', hint1: '25% below = Q1; 75% below = Q3.', hint2: 'Q1 = 16, Q3 = 30', hint3: 'IQR = 30 − 16 = 14',
+          answer: 14, tolerance: 0, unit: '',
+          explanation: 'Q1 = 16 (25th percentile), Q3 = 30 (75th percentile). IQR = 30 − 16 = 14.',
+        },
+        {
+          prompt: 'Which half of the box is wider — lower (Q1 to median) or upper (median to Q3)?', hint1: 'Lower half = median − Q1; upper half = Q3 − median.', hint2: 'Lower: 23 − 16 = 7; upper: 30 − 23 = 7.', hint3: 'Both halves are equal (7 each).',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Both halves equal (7 each) — symmetric distribution',
+          explanation: 'Lower half: median − Q1 = 23 − 16 = 7. Upper half: Q3 − median = 30 − 23 = 7. Both halves equal — the distribution is symmetric.',
+        },
+      ],
+      workedExample: {
+        question: 'A box plot shows Q1 = 10, median = 18, Q3 = 28. Find the IQR and state the direction of skew.',
+        steps: [
+          'IQR — Q3 − Q1 = 28 − 10 = <strong>18</strong>',
+          'Lower half — median − Q1 = 18 − 10 = <strong>8</strong>',
+          'Upper half — Q3 − median = 28 − 18 = <strong>10</strong>',
+          'Skew — upper half wider (10 > 8) → <strong>positive skew</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'IQR = 14. Both halves are equal.', grade6: 'Q1 = 16, Q3 = 30. IQR = 30 − 16 = 14. Lower half: 23 − 16 = 7. Upper half: 30 − 23 = 7. Both halves equal — symmetric.', grade8: 'IQR = Q3 − Q1 = 30 − 16 = 14. The box is symmetric: lower half (median − Q1 = 7) equals upper half (Q3 − median = 7), indicating a roughly symmetric distribution with no skew.' },
+      examinerTip: 'To judge skew from a box plot, compare (median − Q1) with (Q3 − median). If Q3 − median is larger, it is positively skewed.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-B01', subtopic: 'stat-boxplots', band: 'B', marks: 3,
+      question: 'Q1 = 20, Q3 = 44. A value of 65 is recorded. Using the outlier rule (upper fence = Q3 + 1.5 × IQR), determine whether 65 is an outlier.',
+      steps: [
+        {
+          prompt: 'Calculate the IQR.', hint1: 'IQR = Q3 − Q1', hint2: 'IQR = 44 − 20', hint3: 'IQR = 44 − 20 = 24',
+          answer: 24, tolerance: 0, unit: '',
+          explanation: 'IQR = Q3 − Q1 = 44 − 20 = 24.',
+        },
+        {
+          prompt: 'Calculate the upper fence (Q3 + 1.5 × IQR).', hint1: 'Upper fence = Q3 + 1.5 × IQR', hint2: '= 44 + 1.5 × 24', hint3: '= 44 + 36 = 80',
+          answer: 80, tolerance: 0, unit: '',
+          explanation: 'Upper fence = 44 + 1.5 × 24 = 44 + 36 = 80.',
+        },
+        {
+          prompt: 'Is 65 an outlier? Compare it to the upper fence.', hint1: 'A value is an outlier if it exceeds the fence.', hint2: 'Is 65 > 80?', hint3: '65 < 80, so 65 is NOT an outlier.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: '65 < 80 → NOT an outlier',
+          explanation: '65 < upper fence of 80, so 65 is NOT classified as an outlier.',
+        },
+      ],
+      workedExample: {
+        question: 'Q1 = 10, Q3 = 28. Is a value of 58 an outlier?',
+        steps: [
+          'IQR — Q3 − Q1 = 28 − 10 = <strong>18</strong>',
+          'Upper fence — Q3 + 1.5 × IQR = 28 + 1.5 × 18 = 28 + 27 = <strong>55</strong>',
+          'Check — 58 > 55, so 58 <strong>IS an outlier</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'IQR = 24. Upper fence = 80. 65 is not an outlier.', grade6: 'IQR = 44 − 20 = 24. Upper fence = 44 + 1.5 × 24 = 80. Since 65 < 80, it is not an outlier.', grade8: 'IQR = 24. Upper fence = Q3 + 1.5 × IQR = 44 + 36 = 80. The value 65 < 80, so it does not exceed the outlier threshold and is not classified as an outlier.' },
+      examinerTip: 'The outlier rule is: value > Q3 + 1.5 × IQR (upper) or value < Q1 − 1.5 × IQR (lower). Always show the fence calculation.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-B02', subtopic: 'stat-boxplots', band: 'B', marks: 3,
+      question: 'Class A exam scores: min = 40, Q1 = 55, median = 65, Q3 = 75, max = 90. Class B: min = 35, Q1 = 50, median = 68, Q3 = 80, max = 95. Compare the two distributions.',
+      steps: [
+        {
+          prompt: 'Find the IQR for both classes. Which class has greater spread?', hint1: 'IQR = Q3 − Q1 for each class.', hint2: 'IQR_A = 75 − 55 = 20; IQR_B = 80 − 50 = ?', hint3: 'IQR_B = 80 − 50 = 30. Class B has greater spread.',
+          answer: 30, tolerance: 0, unit: '',
+          explanation: 'IQR_A = 75 − 55 = 20. IQR_B = 80 − 50 = 30. Class B has the greater spread.',
+        },
+        {
+          prompt: 'Which class has the higher median?', hint1: 'Compare the median values: 65 and 68.', hint2: '68 > 65', hint3: 'Class B has the higher median.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Class B higher median (68 > 65)',
+          explanation: 'Class B median (68) > Class A median (65). Class B performed slightly better on average.',
+        },
+        {
+          prompt: 'Summarise the overall comparison: which class is more consistent?', hint1: 'Consistency relates to spread (IQR).', hint2: 'Smaller IQR = more consistent.', hint3: 'Class A (IQR 20) is more consistent than Class B (IQR 30).',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'B: higher median, greater spread — less consistent',
+          explanation: 'Class B has a higher median but greater spread (IQR 30 vs 20), making it less consistent. Class A performed more uniformly.',
+        },
+      ],
+      workedExample: {
+        question: 'Group X: median = 50, IQR = 15. Group Y: median = 58, IQR = 22. Compare the two groups.',
+        steps: [
+          'Median — Y has the higher median: 58 > 50, so <strong>Group Y scored higher on average</strong>',
+          'Spread — Y has greater spread: IQR 22 > 15, so <strong>Group Y is less consistent</strong>',
+          'Summary — <strong>Group Y: higher median but less consistent than Group X</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Class B has the higher median. Class B has greater spread.', grade6: 'Class B has a higher median (68 > 65) and greater spread (IQR 30 > 20). Class A is more consistent.', grade8: 'Median: Class B (68) > Class A (65) — B performed better on average. IQR: B (30) > A (20) — B had more variability. Range: A = 50, B = 60. Overall, Class B scored slightly higher but was less consistent than Class A.' },
+      examinerTip: 'A full comparison needs: median (average), IQR (spread), and a contextual comment. Missing any of these costs marks.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-B03', subtopic: 'stat-boxplots', band: 'B', marks: 4,
+      question: 'Find the five-number summary for this dataset: 12, 15, 18, 21, 24, 27, 30, 35, 40.',
+      steps: [
+        {
+          prompt: 'State the minimum and maximum values. Enter the maximum.', hint1: 'The data is already sorted.', hint2: 'Smallest = 12, largest = ?', hint3: 'Min = 12, max = 40',
+          answer: 40, tolerance: 0, unit: '',
+          explanation: 'Min = 12, max = 40 (the smallest and largest values in the dataset).',
+        },
+        {
+          prompt: 'Find the median (middle value of 9 data points).', hint1: 'n = 9, so median is the 5th value.', hint2: 'Count to the 5th value: 12, 15, 18, 21, 24, ...', hint3: 'Median = 24 (the 5th value)',
+          answer: 24, tolerance: 0, unit: '',
+          explanation: 'n = 9. Median is the 5th value: 12, 15, 18, 21, <strong>24</strong>, 27, 30, 35, 40. Median = 24.',
+        },
+        {
+          prompt: 'Find Q1 (median of the lower half: {12, 15, 18, 21}).', hint1: 'Lower half has 4 values: 12, 15, 18, 21.', hint2: 'Median of 4 values = mean of 2nd and 3rd.', hint3: 'Q1 = (15 + 18) ÷ 2 = 16.5',
+          answer: 16.5, tolerance: 0, unit: '',
+          explanation: 'Lower half: {12, 15, 18, 21}. Q1 = (15 + 18) ÷ 2 = 33 ÷ 2 = 16.5.',
+        },
+        {
+          prompt: 'Find Q3 (median of the upper half: {27, 30, 35, 40}).', hint1: 'Upper half has 4 values: 27, 30, 35, 40.', hint2: 'Median of 4 values = mean of 2nd and 3rd.', hint3: 'Q3 = (30 + 35) ÷ 2 = 32.5',
+          answer: 32.5, tolerance: 0, unit: '',
+          explanation: 'Upper half: {27, 30, 35, 40}. Q3 = (30 + 35) ÷ 2 = 65 ÷ 2 = 32.5.',
+        },
+      ],
+      workedExample: {
+        question: 'Find the five-number summary for: 5, 8, 11, 14, 17, 20, 23.',
+        steps: [
+          'Min and max — Min = 5, max = <strong>23</strong>',
+          'Median — n = 7; 4th value = <strong>14</strong>',
+          'Q1 — Lower half {5, 8, 11}; median = <strong>8</strong>',
+          'Q3 — Upper half {17, 20, 23}; median = <strong>20</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Min = 12, Q1 = 16.5, median = 24, Q3 = 32.5, max = 40.', grade6: 'Sorted: 12, 15, 18, 21, 24, 27, 30, 35, 40. Min = 12, max = 40, median = 24 (5th value), Q1 = 16.5 (median of lower 4), Q3 = 32.5 (median of upper 4).', grade8: 'Five-number summary: min = 12, Q1 = (15+18)/2 = 16.5, median = 24 (5th of 9), Q3 = (30+35)/2 = 32.5, max = 40. IQR = 32.5 − 16.5 = 16.' },
+      examinerTip: 'When n is odd, the median value is excluded from the lower and upper halves when finding Q1 and Q3.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-B04', subtopic: 'stat-boxplots', band: 'B', marks: 3,
+      question: 'Q1 = 15, Q3 = 33, max = 58, min = 4. Using the outlier fence Q3 + 1.5 × IQR, determine whether the maximum value is an outlier.',
+      steps: [
+        {
+          prompt: 'Calculate the IQR.', hint1: 'IQR = Q3 − Q1', hint2: 'IQR = 33 − 15', hint3: 'IQR = 33 − 15 = 18',
+          answer: 18, tolerance: 0, unit: '',
+          explanation: 'IQR = Q3 − Q1 = 33 − 15 = 18.',
+        },
+        {
+          prompt: 'Calculate the upper fence (Q3 + 1.5 × IQR).', hint1: 'Upper fence = Q3 + 1.5 × IQR', hint2: '= 33 + 1.5 × 18 = 33 + 27', hint3: '= 33 + 27 = 60',
+          answer: 60, tolerance: 0, unit: '',
+          explanation: 'Upper fence = 33 + 1.5 × 18 = 33 + 27 = 60.',
+        },
+        {
+          prompt: 'Is max = 58 an outlier? Compare to the upper fence.', hint1: 'A value exceeding the fence is an outlier.', hint2: 'Is 58 > 60?', hint3: '58 < 60, so it is NOT an outlier.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: '58 < 60 → NOT an outlier',
+          explanation: 'max = 58 < upper fence = 60. The maximum value is NOT an outlier.',
+        },
+      ],
+      workedExample: {
+        question: 'Q1 = 8, Q3 = 20. Is a maximum value of 41 an outlier?',
+        steps: [
+          'IQR — Q3 − Q1 = 20 − 8 = <strong>12</strong>',
+          'Upper fence — Q3 + 1.5 × IQR = 20 + 18 = <strong>38</strong>',
+          'Check — 41 > 38, so 41 <strong>IS an outlier</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'IQR = 18. Upper fence = 60. 58 is not an outlier.', grade6: 'IQR = 33 − 15 = 18. Upper fence = 33 + 1.5 × 18 = 60. Since 58 < 60, the maximum is not an outlier.', grade8: 'IQR = 18. Upper fence = Q3 + 1.5 × IQR = 33 + 27 = 60. The maximum value of 58 is below this threshold, so it is not classified as an outlier.' },
+      examinerTip: 'Show all three steps: IQR → fence → comparison. A one-line answer without the fence calculation will not gain full marks.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-B05', subtopic: 'stat-boxplots', band: 'B', marks: 2,
+      question: 'A box plot shows median = 30, Q1 = 24, Q3 = 45. Determine the direction of skew and justify your answer.',
+      steps: [
+        {
+          prompt: 'Find Q3 − median and median − Q1. Enter Q3 − median.', hint1: 'Q3 − median = 45 − 30', hint2: 'Q3 − median = 15; median − Q1 = 30 − 24 = 6', hint3: 'Upper half (15) is wider than lower half (6).',
+          answer: 15, tolerance: 0, unit: '',
+          explanation: 'Q3 − median = 45 − 30 = 15. median − Q1 = 30 − 24 = 6. The upper half of the box is wider.',
+        },
+        {
+          prompt: 'What direction of skew does this indicate?', hint1: 'If Q3 − median > median − Q1, the data is skewed towards higher values.', hint2: 'Upper half wider → values extend more to the right.', hint3: 'Positive (right) skew.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Positive (right) skew — upper half wider',
+          explanation: 'Q3 − median (15) > median − Q1 (6), so the upper half of the box is wider. This indicates positive (right) skew — the data has a longer tail towards higher values.',
+        },
+      ],
+      workedExample: {
+        question: 'A box plot shows median = 40, Q1 = 32, Q3 = 46. Determine the direction of skew.',
+        steps: [
+          'Q3 − median — 46 − 40 = <strong>6</strong>',
+          'median − Q1 — 40 − 32 = <strong>8</strong>',
+          'Skew — lower half wider (8 > 6) → <strong>negative (left) skew</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Positive skew — upper half of the box is wider.', grade6: 'Q3 − median = 15; median − Q1 = 6. Upper half is wider, indicating positive (right) skew.', grade8: 'Q3 − median = 45 − 30 = 15 and median − Q1 = 30 − 24 = 6. Since the upper half is wider (15 > 6), the distribution is positively skewed, with a longer tail towards higher values.' },
+      examinerTip: 'Skew from a box plot: compare the two halves of the box. Larger upper half = positive skew. Larger lower half = negative skew.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-B06', subtopic: 'stat-boxplots', band: 'B', marks: 3,
+      question: 'A box plot for n = 20 values shows Q1 = 18 and Q3 = 34. Find (a) the IQR, (b) how many values lie above Q3, and (c) how many lie between Q1 and Q3.',
+      steps: [
+        {
+          prompt: 'Calculate the IQR.', hint1: 'IQR = Q3 − Q1', hint2: 'IQR = 34 − 18', hint3: 'IQR = 34 − 18 = 16',
+          answer: 16, tolerance: 0, unit: '',
+          explanation: 'IQR = Q3 − Q1 = 34 − 18 = 16.',
+        },
+        {
+          prompt: 'How many of the 20 values lie above Q3?', hint1: '25% of data lies above Q3.', hint2: '25% of 20 = ?', hint3: '0.25 × 20 = 5',
+          answer: 5, tolerance: 0, unit: '',
+          explanation: '25% of data lies above Q3 (the upper quartile). 25% of 20 = 5 values.',
+        },
+        {
+          prompt: 'How many values lie between Q1 and Q3?', hint1: '50% of data lies between Q1 and Q3.', hint2: '50% of 20 = ?', hint3: '0.5 × 20 = 10',
+          answer: 10, tolerance: 0, unit: '',
+          explanation: '50% of data lies between Q1 and Q3. 50% of 20 = 10 values.',
+        },
+      ],
+      workedExample: {
+        question: 'A box plot for n = 40 values shows Q1 = 12 and Q3 = 30. Find the IQR, number above Q3, and number between Q1 and Q3.',
+        steps: [
+          'IQR — Q3 − Q1 = 30 − 12 = <strong>18</strong>',
+          'Above Q3 — 25% of 40 = <strong>10</strong> values',
+          'Between Q1 and Q3 — 50% of 40 = <strong>20</strong> values',
+        ],
+      },
+      sampleAnswer: { grade4: 'IQR = 16. 5 values above Q3. 10 between Q1 and Q3.', grade6: 'IQR = 34 − 18 = 16. Above Q3: 25% of 20 = 5. Between Q1 and Q3: 50% of 20 = 10.', grade8: 'IQR = 16. Quartile properties: 25% of 20 = 5 values lie above Q3; 50% of 20 = 10 values lie between Q1 and Q3 (the interquartile range).' },
+      examinerTip: 'Know your quartile percentages: 25% below Q1, 25% between Q1 and median, 25% between median and Q3, 25% above Q3.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-C01', subtopic: 'stat-boxplots', band: 'C', marks: 3,
+      question: 'Five-number summary: min = 8, Q1 = 15, median = 22, Q3 = 35, max = 62. (a) Find the upper outlier fence. (b) Is max = 62 an outlier? (c) Comment on the skewness.',
+      steps: [
+        {
+          prompt: 'Calculate IQR then find the upper fence (Q3 + 1.5 × IQR).', hint1: 'IQR = Q3 − Q1 = 35 − 15 = 20', hint2: 'Upper fence = 35 + 1.5 × 20', hint3: '= 35 + 30 = 65',
+          answer: 65, tolerance: 0, unit: '',
+          explanation: 'IQR = 35 − 15 = 20. Upper fence = 35 + 1.5 × 20 = 35 + 30 = 65. Since 62 < 65, the maximum is NOT an outlier.',
+        },
+        {
+          prompt: 'Find Q3 − median to assess the upper half of the box.', hint1: 'Q3 − median = 35 − 22', hint2: '= 13; median − Q1 = 22 − 15 = 7', hint3: 'Upper half (13) wider than lower half (7).',
+          answer: 13, tolerance: 0, unit: '',
+          explanation: 'Q3 − median = 35 − 22 = 13. median − Q1 = 22 − 15 = 7. The upper half of the box is wider.',
+        },
+        {
+          prompt: 'What does the box shape and the long upper whisker tell us about skewness?', hint1: 'Upper half of box wider → data extends more towards high values.', hint2: 'Q3 − median (13) > median − Q1 (7)', hint3: 'Positive (right) skew.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Positive skew (Q3 − median > median − Q1)',
+          explanation: 'Since Q3 − median (13) > median − Q1 (7), the distribution is positively skewed. The data has a longer tail towards higher values.',
+        },
+      ],
+      workedExample: {
+        question: 'Five-number summary: Q1 = 20, median = 30, Q3 = 50, max = 75. Check for outlier (IQR = 30) and comment on skew.',
+        steps: [
+          'Upper fence — Q3 + 1.5 × 30 = 50 + 45 = <strong>95</strong>; 75 < 95 → not an outlier',
+          'Q3 − median — 50 − 30 = <strong>20</strong>',
+          'median − Q1 — 30 − 20 = <strong>10</strong>',
+          'Skew — upper half wider (20 > 10) → <strong>positive skew</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Upper fence = 65. 62 is not an outlier. The distribution is positively skewed.', grade6: 'IQR = 20. Upper fence = 35 + 30 = 65. max = 62 < 65, not an outlier. Q3 − median = 13 > median − Q1 = 7, so positively skewed.', grade8: 'IQR = 20. Upper fence = Q3 + 1.5 × IQR = 65. Since max (62) < 65, it is not an outlier. Box skew: Q3 − median = 13 vs median − Q1 = 7 — upper half wider confirms positive skew with a longer right tail.' },
+      examinerTip: 'For a 3-part question: IQR → fence → compare; then box halves → skew direction. Set out each step clearly.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-C02', subtopic: 'stat-boxplots', band: 'C', marks: 4,
+      question: "Boys' weights (kg): min = 55, Q1 = 63, median = 70, Q3 = 79, max = 92. Girls' weights (kg): min = 48, Q1 = 57, median = 65, Q3 = 72, max = 85. Write a full 4-point comparison.",
+      steps: [
+        {
+          prompt: "Compare the medians. Which group is typically heavier?", hint1: 'Compare boys median (70) and girls median (65).', hint2: '70 > 65', hint3: 'Boys have the higher median — typically heavier.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Boys higher median (70 > 65)',
+          explanation: 'Boys have a higher median weight (70 kg > 65 kg), so boys are typically heavier.',
+        },
+        {
+          prompt: "Find IQR for boys (Q3 − Q1). Enter boys' IQR.", hint1: 'IQR_boys = Q3 − Q1 = 79 − 63', hint2: '= 16', hint3: 'IQR_boys = 16; IQR_girls = 72 − 57 = 15. Similar spread.',
+          answer: 16, tolerance: 0, unit: '',
+          explanation: 'IQR_boys = 79 − 63 = 16. IQR_girls = 72 − 57 = 15. Spread is similar (IQR roughly equal).',
+        },
+        {
+          prompt: 'Compare the ranges. Find the range for boys.', hint1: 'Range_boys = max − min = 92 − 55', hint2: '= 37', hint3: 'Range_boys = 37; Range_girls = 85 − 48 = 37. Identical overall range.',
+          answer: 37, tolerance: 0, unit: '',
+          explanation: 'Range_boys = 92 − 55 = 37. Range_girls = 85 − 48 = 37. Both have identical overall range.',
+        },
+        {
+          prompt: 'Write an overall summary comparing both groups.', hint1: 'Consider median, IQR and range together.', hint2: 'Boys heavier on average; similar variability.', hint3: 'Boys generally heavier; spread is similar for both groups.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Boys heavier overall; similar variability',
+          explanation: 'Boys are generally heavier (higher median) but both groups show similar variability (comparable IQR and range).',
+        },
+      ],
+      workedExample: {
+        question: 'Group A: Q1 = 40, Q3 = 60, median = 50, min = 30, max = 75. Group B: Q1 = 44, Q3 = 62, median = 55, min = 32, max = 78. Write a comparison.',
+        steps: [
+          'Medians — B (55) > A (50): <strong>Group B has higher typical value</strong>',
+          'IQR — A: 60−40=20; B: 62−44=18: <strong>similar spread, A slightly wider</strong>',
+          'Range — A: 75−30=45; B: 78−32=46: <strong>virtually identical overall spread</strong>',
+          'Summary — <strong>Group B scores slightly higher on average with similar consistency</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Boys have a higher median. Both groups have similar spread.', grade6: 'Boys have a higher median weight (70 > 65). IQRs are similar (boys 16, girls 15). Both have the same range (37). Boys are typically heavier with similar variability.', grade8: 'Median: boys (70) > girls (65) — boys are typically heavier. IQR: boys (16) ≈ girls (15) — similar central spread. Range: both = 37 — identical overall spread. Conclusion: boys are generally heavier but both groups are equally consistent.' },
+      examinerTip: 'A 4-mark comparison needs four distinct points: median, IQR, range, and a contextual summary. Use the context (weights, not just numbers).',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-C03', subtopic: 'stat-boxplots', band: 'C', marks: 2,
+      question: 'A box plot has Q1 = 20 and IQR = 18. The dataset has n = 120 values. Find (a) Q3 and (b) the number of values between Q1 and Q3.',
+      steps: [
+        {
+          prompt: 'Find Q3 using Q1 and the IQR.', hint1: 'Q3 = Q1 + IQR', hint2: 'Q3 = 20 + 18', hint3: 'Q3 = 20 + 18 = 38',
+          answer: 38, tolerance: 0, unit: '',
+          explanation: 'Q3 = Q1 + IQR = 20 + 18 = 38.',
+        },
+        {
+          prompt: 'How many of the 120 values lie between Q1 and Q3?', hint1: '50% of values lie between Q1 and Q3.', hint2: '50% of 120 = ?', hint3: '0.5 × 120 = 60',
+          answer: 60, tolerance: 0, unit: '',
+          explanation: '50% of data lies between Q1 and Q3. 50% of 120 = 60 values.',
+        },
+      ],
+      workedExample: {
+        question: 'Q1 = 25, IQR = 16, n = 80. Find Q3 and the number of values between Q1 and Q3.',
+        steps: [
+          'Q3 — Q1 + IQR = 25 + 16 = <strong>41</strong>',
+          'Values between Q1 and Q3 — 50% of 80 = <strong>40</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Q3 = 38. 60 values between Q1 and Q3.', grade6: 'Q3 = Q1 + IQR = 20 + 18 = 38. Values between Q1 and Q3: 50% of 120 = 60.', grade8: 'Q3 = Q1 + IQR = 20 + 18 = 38. Since 50% of data lies between the quartiles, 0.5 × 120 = 60 values lie between Q1 = 20 and Q3 = 38.' },
+      examinerTip: 'If given Q1 and IQR, find Q3 by adding: Q3 = Q1 + IQR. Then use the 50% rule for values in the box.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-boxplots-C04', subtopic: 'stat-boxplots', band: 'C', marks: 3,
+      question: 'A dataset of 40 values has mean = 32 and median = 28. The box plot shows Q1 = 20 and Q3 = 40. (a) Comment on skewness from the box plot. (b) Comment on skewness from mean vs median. (c) Are these two indicators consistent?',
+      steps: [
+        {
+          prompt: 'Assess skewness using the box plot (compare Q3 − median and median − Q1).', hint1: 'Q3 − median = 40 − 28 = 12; median − Q1 = 28 − 20 = 8', hint2: 'Upper half of box is wider (12 > 8)', hint3: 'Positive skew from box plot.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Positive skew: Q3 − median (12) > median − Q1 (8)',
+          explanation: 'Q3 − median = 40 − 28 = 12. median − Q1 = 28 − 20 = 8. Upper half wider → positive (right) skew from box plot.',
+        },
+        {
+          prompt: 'Assess skewness using mean vs median. What does mean > median indicate?', hint1: 'Compare mean (32) and median (28).', hint2: 'Mean > median → the mean is pulled towards higher values.', hint3: 'Mean > median → positive skew.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Mean > Median → positive skew',
+          explanation: 'Mean (32) > median (28). When the mean is greater than the median, the distribution is positively skewed — the mean is pulled right by higher values.',
+        },
+        {
+          prompt: 'Are the two skewness indicators consistent with each other?', hint1: 'Both methods give a direction of skew — do they agree?', hint2: 'Box plot → positive skew. Mean vs median → positive skew.', hint3: 'Yes, both consistently indicate positive skew.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Consistent — both indicate positive skew',
+          explanation: 'Both indicators point to positive skew: the box plot shows the upper half wider, and mean > median. They are consistent.',
+        },
+      ],
+      workedExample: {
+        question: 'A dataset has median = 50, Q1 = 40, Q3 = 58, mean = 47. Assess skewness from both indicators.',
+        steps: [
+          'Box plot — Q3 − med = 8; med − Q1 = 10: lower half wider → <strong>negative skew</strong>',
+          'Mean vs median — mean (47) < median (50) → <strong>negative skew</strong>',
+          'Consistent — <strong>both indicators agree: negative (left) skew</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Both indicators show positive skew. They are consistent.', grade6: 'Box plot: Q3 − median = 12 > median − Q1 = 8 → positive skew. Mean (32) > median (28) → positive skew. Both consistent.', grade8: 'Box plot skew: Q3 − median = 12 vs median − Q1 = 8 — upper half wider indicates positive skew. Mean–median skew: mean (32) > median (28) — mean pulled rightwards by high values, confirming positive skew. The two indicators are consistent.' },
+      examinerTip: 'Two methods to identify skew: (1) box plot — compare box halves; (2) mean vs median — mean > median means positive skew. Examiners reward both methods used together.',
+      auditStatus: 'pending',
+    },
+
+
+    // ══════════════════════════════════════════════════════════
+    // SAMPLING (stat-sampling)
+    // ══════════════════════════════════════════════════════════
+    {
+      id: 'stat-sampling-A01', subtopic: 'stat-sampling', band: 'A', marks: 2,
+      question: 'A school has 300 students: 120 in Year 10 and 180 in Year 11. A stratified sample of 50 is required. How many students should be selected from each year group?',
+      steps: [
+        {
+          prompt: 'How many students should be selected from Year 10?', hint1: 'Year 10 fraction = 120 ÷ 300', hint2: '= 0.4; multiply by sample size 50', hint3: '0.4 × 50 = 20',
+          answer: 20, tolerance: 0, unit: '',
+          explanation: 'Year 10: (120 ÷ 300) × 50 = 0.4 × 50 = 20 students.',
+        },
+        {
+          prompt: 'How many students should be selected from Year 11?', hint1: 'Year 11 fraction = 180 ÷ 300', hint2: '= 0.6; multiply by 50', hint3: '0.6 × 50 = 30; check: 20 + 30 = 50 ✓',
+          answer: 30, tolerance: 0, unit: '',
+          explanation: 'Year 11: (180 ÷ 300) × 50 = 0.6 × 50 = 30 students. Check: 20 + 30 = 50 ✓',
+        },
+      ],
+      workedExample: {
+        question: 'A school has 400 students: 160 in Year 9 and 240 in Year 10. A stratified sample of 25 is required. How many from each year?',
+        steps: [
+          'Year 9 — (160 ÷ 400) × 25 = 0.4 × 25 = <strong>10</strong>',
+          'Year 10 — (240 ÷ 400) × 25 = 0.6 × 25 = <strong>15</strong>; check: 10 + 15 = 25 ✓',
+        ],
+      },
+      sampleAnswer: { grade4: 'Year 10: 20 students; Year 11: 30 students.', grade6: 'Year 10: (120/300) × 50 = 20. Year 11: (180/300) × 50 = 30. Total: 50 ✓', grade8: 'Stratified sample — proportional allocation. Year 10: (120/300) × 50 = 20. Year 11: (180/300) × 50 = 30. Total = 50 ✓. Each year group is represented in proportion to its size.' },
+      examinerTip: 'Stratified sampling: (group size ÷ total) × sample size. Always check your answers add up to the total sample size.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-A02', subtopic: 'stat-sampling', band: 'A', marks: 2,
+      question: 'A quality control team samples 5% of 2000 items produced each day. (a) How many items are sampled? (b) If 8 are defective, estimate the total number of defective items in the batch.',
+      steps: [
+        {
+          prompt: 'How many items are sampled (5% of 2000)?', hint1: '5% = 0.05', hint2: '0.05 × 2000', hint3: '0.05 × 2000 = 100',
+          answer: 100, tolerance: 0, unit: '',
+          explanation: '5% of 2000 = 0.05 × 2000 = 100 items sampled.',
+        },
+        {
+          prompt: 'Estimate the total defective items in the full batch of 2000.', hint1: 'Defect rate in sample = 8 ÷ 100 = 0.08', hint2: 'Apply rate to full batch: 0.08 × 2000', hint3: '0.08 × 2000 = 160',
+          answer: 160, tolerance: 0, unit: '',
+          explanation: 'Defect rate = 8 ÷ 100 = 0.08. Estimated total defective = 0.08 × 2000 = 160 items.',
+        },
+      ],
+      workedExample: {
+        question: 'A team samples 2% of 1500 items. 3 are found defective. Estimate the total defective items in the batch.',
+        steps: [
+          'Sample size — 2% of 1500 = 0.02 × 1500 = <strong>30</strong>',
+          'Defect rate — 3 ÷ 30 = <strong>0.1</strong>',
+          'Estimated defectives — 0.1 × 1500 = <strong>150</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: '100 items sampled. Estimated 160 defective in the batch.', grade6: '5% of 2000 = 100 items. Defect rate = 8/100 = 0.08. Estimated defectives = 0.08 × 2000 = 160.', grade8: 'Sample size = 0.05 × 2000 = 100. Defect rate = 8/100 = 0.08 (8%). Applying to full batch: 0.08 × 2000 = 160 estimated defective items.' },
+      examinerTip: 'To estimate a total from a sample: find the proportion in the sample, then multiply by the population size.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-A03', subtopic: 'stat-sampling', band: 'A', marks: 2,
+      question: 'A sample of 50 products contains 12 defective items. Estimate the number of defective items in a batch of 500.',
+      steps: [
+        {
+          prompt: 'Calculate the proportion of defective items in the sample.', hint1: 'Proportion = defective ÷ sample size', hint2: '= 12 ÷ 50', hint3: '12 ÷ 50 = 0.24',
+          answer: 0.24, tolerance: 0.005, unit: '',
+          explanation: 'Proportion defective = 12 ÷ 50 = 0.24 (24%).',
+        },
+        {
+          prompt: 'Estimate the total defective items in a batch of 500.', hint1: 'Estimated defectives = proportion × batch size', hint2: '= 0.24 × 500', hint3: '0.24 × 500 = 120',
+          answer: 120, tolerance: 0, unit: '',
+          explanation: 'Estimated defectives = 0.24 × 500 = 120 items.',
+        },
+      ],
+      workedExample: {
+        question: 'A sample of 40 products contains 8 defective items. Estimate the defectives in a batch of 600.',
+        steps: [
+          'Proportion — 8 ÷ 40 = <strong>0.2</strong>',
+          'Estimated defectives — 0.2 × 600 = <strong>120</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Proportion = 0.24. Estimated defectives = 120.', grade6: 'Defect rate = 12/50 = 0.24. Estimated defectives in 500 = 0.24 × 500 = 120.', grade8: 'Sample defect rate = 12/50 = 0.24. Assuming this rate applies to the full batch: estimated defectives = 0.24 × 500 = 120 items.' },
+      examinerTip: 'Always find the rate (proportion) first, then scale up to the full population. Show both steps.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-A04', subtopic: 'stat-sampling', band: 'A', marks: 2,
+      question: 'Systematic sampling is used from a list of 400 names. A sample of 20 is needed. (a) Find the sampling interval. (b) If the first person selected is number 7, what is the number of the next person selected?',
+      steps: [
+        {
+          prompt: 'Calculate the sampling interval.', hint1: 'Sampling interval = population size ÷ sample size', hint2: '= 400 ÷ 20', hint3: '= 20',
+          answer: 20, tolerance: 0, unit: '',
+          explanation: 'Sampling interval = 400 ÷ 20 = 20. Every 20th person is selected.',
+        },
+        {
+          prompt: 'If the first person is number 7, what is the next person selected?', hint1: 'Add the sampling interval to the first person.', hint2: '7 + 20', hint3: '7 + 20 = 27',
+          answer: 27, tolerance: 0, unit: '',
+          explanation: 'Next person = first + interval = 7 + 20 = 27.',
+        },
+      ],
+      workedExample: {
+        question: 'Systematic sample from 300 names, sample size 15. First selected is number 4. Find the interval and the next person.',
+        steps: [
+          'Interval — 300 ÷ 15 = <strong>20</strong>',
+          'Next person — 4 + 20 = <strong>24</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Sampling interval = 20. Next person = 27.', grade6: 'Sampling interval = 400 ÷ 20 = 20. Next person = 7 + 20 = 27.', grade8: 'Sampling interval = 400 ÷ 20 = 20. Starting at person 7, the sequence is 7, 27, 47, ... The next person after 7 is 7 + 20 = 27.' },
+      examinerTip: 'Systematic sampling interval = population ÷ sample size. The starting point is chosen randomly within the first interval.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-A05', subtopic: 'stat-sampling', band: 'A', marks: 2,
+      question: 'A researcher systematically samples every 10th person from a queue of 500. The first person selected is number 3. (a) How many people are in the sample? (b) What is the number of the last person selected?',
+      steps: [
+        {
+          prompt: 'How many people are in the sample?', hint1: 'Sample size = population ÷ interval', hint2: '= 500 ÷ 10', hint3: '= 50',
+          answer: 50, tolerance: 0, unit: '',
+          explanation: 'Sample size = 500 ÷ 10 = 50 people.',
+        },
+        {
+          prompt: 'What is the number of the last person selected?', hint1: 'Last = first + (n − 1) × interval', hint2: '= 3 + (50 − 1) × 10 = 3 + 490', hint3: '= 493',
+          answer: 493, tolerance: 0, unit: '',
+          explanation: 'Last person = 3 + (50 − 1) × 10 = 3 + 490 = 493.',
+        },
+      ],
+      workedExample: {
+        question: 'Every 8th person is sampled from a queue of 400. First selected is person 5. Find the sample size and last person selected.',
+        steps: [
+          'Sample size — 400 ÷ 8 = <strong>50</strong>',
+          'Last person — 5 + (50 − 1) × 8 = 5 + 392 = <strong>397</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Sample size = 50. Last person = 493.', grade6: 'Sample size = 500 ÷ 10 = 50. Last person = 3 + 49 × 10 = 493.', grade8: 'Sample size = 500 ÷ 10 = 50. Sequence: 3, 13, 23, …, last = first + (n−1) × interval = 3 + 49 × 10 = 493.' },
+      examinerTip: 'For the last value in systematic sampling: last = first + (n − 1) × interval. Check it does not exceed the population size.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-B01', subtopic: 'stat-sampling', band: 'B', marks: 4,
+      question: 'A company has 4 departments: Sales = 60, Marketing = 30, Finance = 40, HR = 20. Total = 150. A stratified sample of 30 is required. Find the number of employees to select from each department.',
+      steps: [
+        {
+          prompt: 'How many from Sales?', hint1: 'Sales fraction = 60 ÷ 150', hint2: '= 0.4; × 30', hint3: '0.4 × 30 = 12',
+          answer: 12, tolerance: 0, unit: '',
+          explanation: 'Sales: (60 ÷ 150) × 30 = 0.4 × 30 = 12.',
+        },
+        {
+          prompt: 'How many from Marketing?', hint1: 'Marketing fraction = 30 ÷ 150', hint2: '= 0.2; × 30', hint3: '0.2 × 30 = 6',
+          answer: 6, tolerance: 0, unit: '',
+          explanation: 'Marketing: (30 ÷ 150) × 30 = 0.2 × 30 = 6.',
+        },
+        {
+          prompt: 'How many from Finance?', hint1: 'Finance fraction = 40 ÷ 150', hint2: '≈ 0.267; × 30', hint3: '(40/150) × 30 = 8',
+          answer: 8, tolerance: 0, unit: '',
+          explanation: 'Finance: (40 ÷ 150) × 30 = 8.',
+        },
+        {
+          prompt: 'How many from HR? Verify the total.', hint1: 'HR fraction = 20 ÷ 150', hint2: '= (20/150) × 30', hint3: '= 4; check: 12 + 6 + 8 + 4 = 30 ✓',
+          answer: 4, tolerance: 0, unit: '',
+          explanation: 'HR: (20 ÷ 150) × 30 = 4. Total: 12 + 6 + 8 + 4 = 30 ✓',
+        },
+      ],
+      workedExample: {
+        question: 'Company departments: A = 80, B = 40, C = 30. Total = 150. Stratified sample of 15.',
+        steps: [
+          'A — (80 ÷ 150) × 15 = <strong>8</strong>',
+          'B — (40 ÷ 150) × 15 = <strong>4</strong>',
+          'C — (30 ÷ 150) × 15 = <strong>3</strong>; total: 8 + 4 + 3 = 15 ✓',
+        ],
+      },
+      sampleAnswer: { grade4: 'Sales: 12, Marketing: 6, Finance: 8, HR: 4.', grade6: 'Sales: (60/150)×30=12. Marketing: (30/150)×30=6. Finance: (40/150)×30=8. HR: (20/150)×30=4. Total: 30 ✓', grade8: 'Sampling fraction = 30/150 = 1/5. Sales: 60×(1/5)=12. Marketing: 30×(1/5)=6. Finance: 40×(1/5)=8. HR: 20×(1/5)=4. Total: 30 ✓ Each department is represented proportionally.' },
+      examinerTip: 'Alternatively: find the sampling fraction (30÷150 = 1/5) and multiply each stratum by it. Always verify totals.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-B02', subtopic: 'stat-sampling', band: 'B', marks: 3,
+      question: 'A researcher stands outside a supermarket and surveys the first 50 people to enter. (a) Identify the sampling method. (b) Give one reason this sample is biased. (c) Suggest a better method.',
+      steps: [
+        {
+          prompt: 'What sampling method is being used?', hint1: 'The researcher takes whoever is conveniently available.', hint2: 'This is not random — people are selected by proximity.', hint3: 'Convenience (opportunity) sampling.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Convenience/opportunity sampling',
+          explanation: 'The researcher uses convenience (opportunity) sampling — selecting whoever is easily available at that time and place.',
+        },
+        {
+          prompt: 'Give one reason this sample may be biased.', hint1: 'Think about who is excluded from this sample.', hint2: 'Only people who shop at this store at this time are represented.', hint3: 'Excludes people who do not shop at this store/time — not representative of the wider public.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Only captures shoppers at that location/time',
+          explanation: 'The sample only represents people who shop at this particular supermarket at this specific time — it excludes people who shop elsewhere or at different times.',
+        },
+        {
+          prompt: 'Suggest a better sampling method.', hint1: 'Think of a method that gives everyone an equal chance of being selected.', hint2: 'Random sampling avoids the bias of convenience sampling.', hint3: 'Stratified random sampling from the local population.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Stratified random sampling',
+          explanation: 'A stratified random sample from the full local population would give a more representative result.',
+        },
+      ],
+      workedExample: {
+        question: 'Students are surveyed only during the lunch break. Identify the method, give one bias, and suggest an improvement.',
+        steps: [
+          'Method — <strong>Convenience sampling</strong> (only students at lunch are surveyed)',
+          'Bias — excludes students absent or not in the canteen at lunch; <strong>over-represents students with free periods</strong>',
+          'Better method — <strong>random sample from the school register</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Convenience sampling. It is biased because not everyone has an equal chance. Use random sampling instead.', grade6: 'Convenience sampling. Biased because only people at that store at that time are included — excludes others. Better: stratified random sample from the local population.', grade8: 'Method: convenience (opportunity) sampling. Bias: the sample only represents shoppers at this location and time — those who shop elsewhere, online, or at different times are excluded, making results unrepresentative. Improvement: use stratified random sampling from the local population using a sampling frame.' },
+      examinerTip: 'When criticising a sampling method, always say who is excluded as well as who is included. Vague answers like "not random" alone will not score full marks.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-B03', subtopic: 'stat-sampling', band: 'B', marks: 3,
+      question: 'A quota sample requires 30 males and 30 females. The researcher finds 30 males but only 22 females willing to participate, so adds 8 more males to reach 60 total. (a) State the intended ratio. (b) State the actual ratio. (c) What problem does this introduce?',
+      steps: [
+        {
+          prompt: 'What was the intended male:female ratio?', hint1: 'Intended: 30 males and 30 females.', hint2: '30:30 simplifies to?', hint3: '1:1 (equal numbers of each gender)',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: '1:1 intended ratio',
+          explanation: 'Intended ratio: 30 males : 30 females = 1:1.',
+        },
+        {
+          prompt: 'What is the actual male:female ratio (38 males, 22 females)?', hint1: '38 males : 22 females', hint2: 'Divide both by 2: 19:11', hint3: 'Actual ratio is 19:11',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: '19:11 (38 males : 22 females)',
+          explanation: 'Actual ratio: 38 males : 22 females = 19:11. The sample is now skewed towards males.',
+        },
+        {
+          prompt: 'What problem does this introduce into the sample?', hint1: 'Compare the intended and actual ratios.', hint2: 'Males are now over-represented.', hint3: 'The sample is biased towards males and does not represent the intended gender balance.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Biased towards males — not representative',
+          explanation: 'By adding extra males to compensate, the gender balance is destroyed. The sample is now biased towards males and results will not represent the target population equally.',
+        },
+      ],
+      workedExample: {
+        question: 'A researcher wants 20 children and 20 adults. They get 20 children but only 14 adults, so add 6 more children. Find the intended ratio, actual ratio, and the problem introduced.',
+        steps: [
+          'Intended ratio — 20:20 = <strong>1:1</strong>',
+          'Actual ratio — 26 children : 14 adults = <strong>13:7</strong>',
+          'Problem — <strong>sample is biased towards children</strong>; adults are under-represented',
+        ],
+      },
+      sampleAnswer: { grade4: 'Intended ratio 1:1. Actual 19:11. The sample is biased towards males.', grade6: 'Intended: 30:30 = 1:1. Actual: 38:22 = 19:11. Adding extra males skews the sample — it no longer represents equal gender balance.', grade8: 'Intended ratio: 1:1 (equal gender representation). Actual ratio: 38:22 = 19:11. Replacing missing females with additional males introduces gender bias — the sample over-represents males and the results cannot be generalised to a population with equal gender distribution.' },
+      examinerTip: 'Quota sampling fills quotas by convenience — if one group is hard to reach, the researcher may distort the sample to meet the total. This is a key weakness.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-B04', subtopic: 'stat-sampling', band: 'B', marks: 3,
+      question: 'A school has 200 Year 10 students (100 boys, 100 girls) and 300 Year 11 students (150 boys, 150 girls). Total = 500. A stratified sample of 50 is taken proportionally by year group. (a) How many from Year 10? (b) How many from Year 11? (c) How many Year 10 boys?',
+      steps: [
+        {
+          prompt: 'How many students from Year 10?', hint1: 'Year 10 proportion = 200 ÷ 500 = 2/5', hint2: '(2/5) × 50', hint3: '= 20',
+          answer: 20, tolerance: 0, unit: '',
+          explanation: 'Year 10: (200 ÷ 500) × 50 = 0.4 × 50 = 20 students.',
+        },
+        {
+          prompt: 'How many students from Year 11?', hint1: 'Year 11 proportion = 300 ÷ 500 = 3/5', hint2: '(3/5) × 50', hint3: '= 30; check: 20 + 30 = 50 ✓',
+          answer: 30, tolerance: 0, unit: '',
+          explanation: 'Year 11: (300 ÷ 500) × 50 = 0.6 × 50 = 30. Check: 20 + 30 = 50 ✓',
+        },
+        {
+          prompt: 'How many of the Year 10 sample should be boys?', hint1: 'Within Year 10: boys proportion = 100 ÷ 200 = 1/2', hint2: '(1/2) × 20', hint3: '= 10',
+          answer: 10, tolerance: 0, unit: '',
+          explanation: 'Year 10 boys: (100 ÷ 200) × 20 = 0.5 × 20 = 10.',
+        },
+      ],
+      workedExample: {
+        question: 'Y9: 150 students (80 boys, 70 girls). Y10: 350 (180 boys, 170 girls). Total = 500. Sample = 50. Find: Y9 total, Y10 total, Y9 boys.',
+        steps: [
+          'Y9 — (150 ÷ 500) × 50 = <strong>15</strong>',
+          'Y10 — (350 ÷ 500) × 50 = <strong>35</strong>',
+          'Y9 boys — (80 ÷ 150) × 15 ≈ <strong>8</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Year 10: 20; Year 11: 30; Year 10 boys: 10.', grade6: 'Year 10: (200/500)×50=20. Year 11: (300/500)×50=30. Year 10 boys: (100/200)×20=10.', grade8: 'Year 10: (200/500)×50=20; Year 11: (300/500)×50=30 (total 50 ✓). Within Year 10, boys = 100/200 = 50%, so 0.5×20=10 boys in the Year 10 sample.' },
+      examinerTip: 'Two-stage stratification: first stratify by year group, then within each year group stratify by gender. Apply the proportion at each stage.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-B05', subtopic: 'stat-sampling', band: 'B', marks: 2,
+      question: 'A factory has 1200 items on a production line. A systematic sample of 40 is required. (a) Find the sampling interval. (b) Explain whether systematic sampling is truly random.',
+      steps: [
+        {
+          prompt: 'Calculate the sampling interval.', hint1: 'Interval = population ÷ sample size', hint2: '= 1200 ÷ 40', hint3: '= 30',
+          answer: 30, tolerance: 0, unit: '',
+          explanation: 'Sampling interval = 1200 ÷ 40 = 30. Select every 30th item.',
+        },
+        {
+          prompt: 'Is systematic sampling truly random? Explain.', hint1: 'Think about which part of the process is random.', hint2: 'Only the starting point is chosen randomly.', hint3: 'Not fully random — only the first item is chosen randomly; subsequent selections are fixed.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Not fully random — only first item is random',
+          explanation: 'Systematic sampling is not fully random. Only the starting point is randomly chosen; every subsequent selection is determined by the fixed interval. Items do not each have an independent chance of selection.',
+        },
+      ],
+      workedExample: {
+        question: 'A factory has 600 items. A systematic sample of 20 is needed. Find the interval and comment on randomness.',
+        steps: [
+          'Interval — 600 ÷ 20 = <strong>30</strong>',
+          'Randomness — <strong>only the first item is randomly chosen</strong>; the rest are fixed by the interval',
+        ],
+      },
+      sampleAnswer: { grade4: 'Interval = 30. Not truly random — only the first item is random.', grade6: 'Sampling interval = 1200 ÷ 40 = 30. Systematic sampling is not fully random: the first item is chosen randomly, but all other items are determined by the interval.', grade8: 'Interval = 30. Systematic sampling has limited randomness: the starting point (within the first 30) is chosen at random, but all subsequent items are fixed. This means not every possible sample of size 40 has an equal chance of selection.' },
+      examinerTip: 'Systematic sampling is practical and spread across the population, but it is only partially random. It can miss patterns that repeat at the same interval (periodicity bias).',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-B06', subtopic: 'stat-sampling', band: 'B', marks: 4,
+      question: 'A population is divided into 4 strata with sizes 80, 120, 60, 40. Total = 300. A stratified sample of 60 is required. Find the sampling fraction and the number to select from each stratum.',
+      steps: [
+        {
+          prompt: 'Calculate the sampling fraction (sample ÷ population).', hint1: 'Sampling fraction = 60 ÷ 300', hint2: '= 0.2', hint3: '0.2 (or 1/5)',
+          answer: 0.2, tolerance: 0.005, unit: '',
+          explanation: 'Sampling fraction = 60 ÷ 300 = 0.2 (one fifth of the population).',
+        },
+        {
+          prompt: 'How many from stratum 1 (size 80) and stratum 2 (size 120)? Enter the stratum 1 count.', hint1: 'Stratum 1: 80 × 0.2', hint2: '= 16; Stratum 2: 120 × 0.2 = 24', hint3: 'Stratum 1: 16, Stratum 2: 24',
+          answer: 16, tolerance: 0, unit: '',
+          explanation: 'Stratum 1: 80 × 0.2 = 16. Stratum 2: 120 × 0.2 = 24.',
+        },
+        {
+          prompt: 'How many from stratum 3 (size 60)?', hint1: 'Stratum 3: 60 × 0.2', hint2: '= 12', hint3: '12',
+          answer: 12, tolerance: 0, unit: '',
+          explanation: 'Stratum 3: 60 × 0.2 = 12.',
+        },
+        {
+          prompt: 'How many from stratum 4 (size 40)? Verify the total.', hint1: 'Stratum 4: 40 × 0.2', hint2: '= 8', hint3: 'Check: 16 + 24 + 12 + 8 = 60 ✓',
+          answer: 8, tolerance: 0, unit: '',
+          explanation: 'Stratum 4: 40 × 0.2 = 8. Total: 16 + 24 + 12 + 8 = 60 ✓',
+        },
+      ],
+      workedExample: {
+        question: '4 strata: 50, 100, 30, 20. Total = 200. Sample = 40. Find the sampling fraction and numbers from each stratum.',
+        steps: [
+          'Sampling fraction — 40 ÷ 200 = <strong>0.2 (1/5)</strong>',
+          'Stratum 1 — 50 × 0.2 = <strong>10</strong>',
+          'Stratum 2 — 100 × 0.2 = <strong>20</strong>',
+          'Stratum 3 — 30 × 0.2 = <strong>6</strong>',
+          'Stratum 4 — 20 × 0.2 = <strong>4</strong>; total: 10+20+6+4 = 40 ✓',
+        ],
+      },
+      sampleAnswer: { grade4: 'Fraction = 0.2. Strata: 16, 24, 12, 8.', grade6: 'Sampling fraction = 60/300 = 0.2. Strata: 80×0.2=16; 120×0.2=24; 60×0.2=12; 40×0.2=8. Total: 60 ✓', grade8: 'Sampling fraction = 60/300 = 1/5. Multiply each stratum by 1/5: stratum 1 → 16, stratum 2 → 24, stratum 3 → 12, stratum 4 → 8. Total = 60 ✓. Each stratum is proportionally represented.' },
+      examinerTip: 'Finding the sampling fraction first makes all four calculations straightforward. Always verify by summing all stratum samples.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-C01', subtopic: 'stat-sampling', band: 'C', marks: 4,
+      question: "A newspaper runs an online poll. 1200 people respond: 780 say 'yes'. The newspaper claims '65% of the public support the policy.' (a) Calculate the percentage. (b) Identify the sampling method. (c) Give two reasons results are unreliable. (d) Suggest a better method.",
+      steps: [
+        {
+          prompt: "Calculate the percentage who said 'yes'.", hint1: 'Percentage = (780 ÷ 1200) × 100', hint2: '= 0.65 × 100', hint3: '= 65%',
+          answer: 65, tolerance: 0.1, unit: '%',
+          explanation: '(780 ÷ 1200) × 100 = 65%. The calculation is correct, but the conclusion is flawed.',
+        },
+        {
+          prompt: 'Identify the sampling method used.', hint1: 'People chose to respond — they were not randomly selected.', hint2: 'This is when people select themselves into a survey.', hint3: 'Self-selection (voluntary response) sampling.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Self-selection/voluntary response sampling',
+          explanation: 'An online poll where people choose to respond is self-selection (voluntary response) sampling.',
+        },
+        {
+          prompt: 'Give two reasons the results are unreliable.', hint1: 'Think about who is likely to respond to an online poll.', hint2: 'People with strong opinions are more likely to respond. Those without internet cannot participate.', hint3: 'Over-represents strong opinions; excludes non-internet users.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Over-represents strong opinions; excludes non-internet users',
+          explanation: 'Self-selection bias: people with strong opinions are more likely to respond. Non-internet users are excluded. Neither group represents the full public.',
+        },
+        {
+          prompt: 'Suggest a better sampling method.', hint1: 'The sample should give everyone an equal chance of being chosen.', hint2: 'Random methods are less biased.', hint3: 'Stratified random sample from the full population.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Stratified random sample from full population',
+          explanation: 'A stratified random sample from the full population would give more representative results.',
+        },
+      ],
+      workedExample: {
+        question: "Online poll: 500 respond, 300 say 'yes'. Newspaper claims '60% of the public agree.' Assess this claim.",
+        steps: [
+          'Percentage — (300 ÷ 500) × 100 = <strong>60%</strong>',
+          'Method — <strong>self-selection sampling</strong>',
+          'Reason 1 — <strong>people with stronger views more likely to respond</strong>',
+          'Reason 2 — <strong>excludes people without internet access</strong>',
+          'Better method — <strong>random telephone poll from the electoral register</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: '65%. Self-selection sampling. Biased because only motivated people respond. Use random sampling.', grade6: '65%. Method: self-selection sampling. Unreliable because: (1) people with strong opinions over-respond; (2) excludes non-internet users. Better: stratified random sample.', grade8: '65% (780/1200). Method: voluntary response (self-selection) sampling. Limitations: (1) individuals with strong opinions are disproportionately represented; (2) internet access required, excluding part of the population. Improvement: stratified random sample from the full population using a valid sampling frame (e.g. electoral register).' },
+      examinerTip: 'For online polls, always critique: who responds (strong opinions), who is excluded (no internet), and what this means for representativeness.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-C02', subtopic: 'stat-sampling', band: 'C', marks: 3,
+      question: 'Three year groups: Year 10 = 240, Year 11 = 180, Year 12 = 80. Total = 500. Proportional sample of 75. (a) Find the sample size from each year group. (b) How many more are sampled from Year 10 than Year 12?',
+      steps: [
+        {
+          prompt: 'Find the sample size from Year 10.', hint1: 'Year 10: (240 ÷ 500) × 75', hint2: '= 0.48 × 75', hint3: '= 36',
+          answer: 36, tolerance: 0, unit: '',
+          explanation: 'Year 10: (240 ÷ 500) × 75 = 36. Year 11: (180/500)×75=27. Year 12: (80/500)×75=12. Check: 36+27+12=75 ✓',
+        },
+        {
+          prompt: 'Find the sample size from Year 12.', hint1: 'Year 12: (80 ÷ 500) × 75', hint2: '= 0.16 × 75', hint3: '= 12',
+          answer: 12, tolerance: 0, unit: '',
+          explanation: 'Year 12: (80 ÷ 500) × 75 = 12.',
+        },
+        {
+          prompt: 'How many more are sampled from Year 10 than Year 12?', hint1: 'Difference = Year 10 − Year 12', hint2: '= 36 − 12', hint3: '= 24',
+          answer: 24, tolerance: 0, unit: '',
+          explanation: 'Difference = 36 − 12 = 24 more students from Year 10.',
+        },
+      ],
+      workedExample: {
+        question: 'Y7 = 300, Y8 = 200, Y9 = 100. Total = 600. Sample = 60. Find each year and the difference Y7 − Y9.',
+        steps: [
+          'Y7 — (300 ÷ 600) × 60 = <strong>30</strong>',
+          'Y8 — (200 ÷ 600) × 60 = <strong>20</strong>',
+          'Y9 — (100 ÷ 600) × 60 = <strong>10</strong>',
+          'Difference Y7 − Y9 — 30 − 10 = <strong>20</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Year 10: 36; Year 12: 12; difference = 24.', grade6: 'Year 10: (240/500)×75=36. Year 11: 27. Year 12: (80/500)×75=12. Total: 75 ✓. Difference: 36−12=24.', grade8: 'Sampling fraction = 75/500 = 0.15. Year 10: 240×0.15=36; Year 11: 180×0.15=27; Year 12: 80×0.15=12. Total=75 ✓. Year 10 provides 36−12=24 more than Year 12.' },
+      examinerTip: 'Work out all strata, check they sum to the required sample, then answer the specific comparison asked.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-C03', subtopic: 'stat-sampling', band: 'C', marks: 3,
+      question: 'A factory runs 3 shifts: morning (200 items), afternoon (300 items), night (100 items). Total = 600. Stratified sample of 60. (a) How many items from each shift? (b) 4 morning items are found defective. Estimate total defective items across all 600.',
+      steps: [
+        {
+          prompt: 'How many items are sampled from the morning shift?', hint1: 'Morning: (200 ÷ 600) × 60', hint2: '= (1/3) × 60', hint3: '= 20; afternoon: 30; night: 10 — check: 60 ✓',
+          answer: 20, tolerance: 0, unit: '',
+          explanation: 'Morning: (200/600)×60=20. Afternoon: (300/600)×60=30. Night: (100/600)×60=10. Total: 60 ✓',
+        },
+        {
+          prompt: 'Find the defect rate from the morning sample (4 defective out of 20).', hint1: 'Rate = defective ÷ morning sample size', hint2: '= 4 ÷ 20', hint3: '= 0.2',
+          answer: 0.2, tolerance: 0.005, unit: '',
+          explanation: 'Defect rate = 4 ÷ 20 = 0.2 (20%).',
+        },
+        {
+          prompt: 'Estimate the total defective items across all 600 items.', hint1: 'Apply rate to total production', hint2: '0.2 × 600', hint3: '= 120',
+          answer: 120, tolerance: 0, unit: '',
+          explanation: 'Estimated total defective = 0.2 × 600 = 120 items.',
+        },
+      ],
+      workedExample: {
+        question: '2 shifts: day (150 items), night (50 items). Total = 200. Sample = 40. 3 defective in day sample. Estimate total defective.',
+        steps: [
+          'Day sample — (150 ÷ 200) × 40 = <strong>30</strong>',
+          'Night sample — (50 ÷ 200) × 40 = <strong>10</strong>',
+          'Defect rate — 3 ÷ 30 = <strong>0.1</strong>',
+          'Total estimated defective — 0.1 × 200 = <strong>20</strong>',
+        ],
+      },
+      sampleAnswer: { grade4: 'Morning: 20; afternoon: 30; night: 10. Defect rate = 0.2. Estimated defective = 120.', grade6: 'Morning: (200/600)×60=20. Afternoon: 30. Night: 10. Total: 60 ✓. Defect rate = 4/20=0.2. Estimated total defective = 0.2×600=120.', grade8: 'Stratified sample: morning 20, afternoon 30, night 10 (total 60 ✓). Defect rate from morning = 4/20 = 0.2. Assuming this rate applies across all production: estimated defectives = 0.2 × 600 = 120 items.' },
+      examinerTip: 'When estimating a total from a stratified sample, use the overall defect rate (from the whole sample or one stratum if specified) and apply it to the full population.',
+      auditStatus: 'pending',
+    },
+    {
+      id: 'stat-sampling-C04', subtopic: 'stat-sampling', band: 'C', marks: 4,
+      question: 'A student randomly samples 10 from a class of 30. The true class mean is 62. Their sample mean is 58. (a) Find the difference. (b) Is this evidence of bias? (c) What would happen with a larger sample of 25? (d) What would definitely reduce bias?',
+      steps: [
+        {
+          prompt: 'Find the difference between the population mean and the sample mean.', hint1: 'Difference = population mean − sample mean', hint2: '= 62 − 58', hint3: '= 4',
+          answer: 4, tolerance: 0, unit: '',
+          explanation: 'Difference = 62 − 58 = 4. The sample mean is 4 below the true mean.',
+        },
+        {
+          prompt: 'Is a difference of 4 evidence of bias in the sampling method?', hint1: 'Bias means the method systematically produces wrong results.', hint2: 'A single sample can differ from the true mean by chance.', hint3: 'Not necessarily bias — this could be natural sampling variability.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Sampling variability — not necessarily bias',
+          explanation: 'A single sample mean of 58 when the true mean is 62 is not evidence of bias. Random sampling produces variability — the sample mean will rarely equal the population mean exactly.',
+        },
+        {
+          prompt: 'If the sample size increased to 25, what effect would this have?', hint1: 'Larger samples produce more reliable estimates.', hint2: 'But a flawed method can still produce biased results.', hint3: 'Larger sample reduces sampling variability but does not eliminate methodological bias.',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Larger sample reduces variability but not methodological bias',
+          explanation: 'A larger sample reduces the standard error (sampling variability), making the sample mean likely closer to the true mean. However, if the sampling method is flawed, bias remains.',
+        },
+        {
+          prompt: 'What would definitely reduce bias in the sampling method?', hint1: 'Bias comes from the selection method, not just sample size.', hint2: 'A truly random method gives everyone an equal chance.', hint3: 'Use simple random sampling (e.g. random number generator).',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Truly random selection method reduces bias',
+          explanation: 'Using a truly random selection method (e.g. simple random sampling with a random number generator) ensures every member has an equal chance of selection, which reduces systematic bias.',
+        },
+      ],
+      workedExample: {
+        question: 'Sample of 5 from class of 25 (true mean = 70). Sample mean = 65. Is this bias? What helps?',
+        steps: [
+          'Difference — 70 − 65 = <strong>5</strong>',
+          'Bias? — <strong>not necessarily</strong>; could be chance variation with small sample',
+          'Larger sample — sample of 20 would give a <strong>more reliable estimate</strong> (less variability)',
+          'Reduces bias — <strong>truly random selection</strong> (random number generator)',
+        ],
+      },
+      sampleAnswer: { grade4: 'Difference = 4. This is not proof of bias. Larger sample helps. Random selection reduces bias.', grade6: 'Difference = 62 − 58 = 4. This is not necessarily bias — sampling variability means a random sample rarely gives exactly the population mean. Larger sample reduces variability. Truly random selection reduces bias.', grade8: 'Difference = 4. This is sampling variability, not evidence of bias — any single random sample can deviate from the population mean. Increasing sample size to 25 reduces standard error but does not remove methodological bias if the method is flawed. To reduce bias: use simple random sampling (e.g. assign each student a number, use a random number generator).' },
+      examinerTip: 'Distinguish between sampling variability (random fluctuation, reduced by larger n) and sampling bias (systematic error, reduced by better method). Examiners look for this distinction.',
+      auditStatus: 'pending',
+    },
+
 
     // ── pct-A04 ──────────────────────────────────────────────
     {
@@ -23211,7 +26574,7 @@ const MathsQuestions = (() => {
     M3: ['rpr-ratio','rpr-proportion','rpr-speed','rpr-percentage-change','rpr-compound-measures'],
     M4: ['geo-angles','geo-shapes','geo-area-volume','geo-transformations','geo-pythagoras','geo-trigonometry','geo-circle-theorems','geo-vectors'],
     M5: ['prob-basic','prob-combined','prob-tree-diagrams','prob-venn','prob-conditional'],
-    M6: ['stat-averages','stat-charts','stat-scatter','stat-cumulative'],
+    M6: ['stat-averages','stat-charts','stat-scatter','stat-cumulative','stat-boxplots','stat-sampling'],
   };
 
   // ─────────────────────────────────────────────────────────────

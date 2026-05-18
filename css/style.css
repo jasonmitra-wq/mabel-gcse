@@ -1028,3 +1028,22 @@ body::before {
   margin-bottom: 0.75rem;
   color: var(--text);
 }
+
+/* ── Lesson content — reformatted paragraphs, equation blocks, callout boxes ── */
+.kp-para { font-size: 1.05rem; line-height: 1.75; color: var(--text); margin-bottom: 0.85rem; }
+.kp-para:last-of-type { margin-bottom: 0; }
+
+.kp-eq-block {
+  display: block; text-align: center; font-size: 1.25em; font-weight: 700;
+  color: var(--blue); background: rgba(107,189,227,0.08);
+  border: 1px solid rgba(107,189,227,0.2); border-radius: 8px;
+  padding: 0.45rem 1rem; margin: 0.65rem auto; max-width: 240px;
+  letter-spacing: 0.04em; font-family: 'Courier New', monospace;
+}
+
+.kp-callout {
+  border-left: 3.5px solid rgba(107,189,227,0.55);
+  background: rgba(107,189,227,0.05); border-radius: 0 8px 8px 0;
+  padding: 0.65rem 0.9rem; margin-bottom: 0.85rem;
+  font-size: 1.05rem; line-height: 1.75; color: var(--text);
+}

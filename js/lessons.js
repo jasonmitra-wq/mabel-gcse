@@ -216,6 +216,109 @@ const Lessons = (() => {
       </div>`;
   }
 
+  // ── Content formatter ──────────────────────────────────────────
+  // Splits kp.content into max-2-sentence paragraphs, lifts equations
+  // into display blocks, and wraps counterintuitive sentences in callouts.
+  function _formatKpContent(html) {
+    if (!html) return '';
+
+    // Normalise <br> variants to newline markers
+    let text = html
+      .replace(/<br\s*\/?>\s*<br\s*\/?>/gi, '\n\n')
+      .replace(/<br\s*\/?>/gi, '\n');
+
+    // Split on blank lines (already-structured blocks, e.g. worked examples)
+    const sections = text.split(/\n\n+/);
+    return sections
+      .map(sec => sec.split(/\n/).filter(s => s.trim()).map(_fmtChunk).join(''))
+      .join('');
+  }
+
+  // Process a single prose chunk: sentence-split → group → annotate
+  function _fmtChunk(html) {
+    if (!html.trim()) return '';
+    const sents = _splitHtmlSentences(html);
+    if (!sents.length) return '';
+    const out = [];
+    for (let i = 0; i < sents.length; i += 2) {
+      const pair   = sents.slice(i, i + 2);
+      const body   = _applyEquationStyles(pair.join(' '));
+      const isCall = _isCalloutText(pair.join(' '));
+      out.push(isCall
+        ? `<div class="kp-callout">${body}</div>`
+        : `<p class="kp-para">${body}</p>`
+      );
+    }
+    return out.join('');
+  }
+
+  // Tokenise HTML into text+tag segments and split on sentence boundaries
+  function _splitHtmlSentences(html) {
+    // Build token list: alternating {t:'text'} and {t:'tag'}
+    const tokens = [];
+    const tagRe  = /<[^>]+>/g;
+    let last = 0, m;
+    while ((m = tagRe.exec(html)) !== null) {
+      if (m.index > last) tokens.push({ t: 'text', v: html.slice(last, m.index) });
+      tokens.push({ t: 'tag', v: m[0] });
+      last = m.index + m[0].length;
+    }
+    if (last < html.length) tokens.push({ t: 'text', v: html.slice(last) });
+
+    // Known abbreviations that end with '.' but aren't sentence ends
+    const ABBREVS = /(?:e\.g|i\.e|p\.d|e\.m\.f|v\.s|vs|etc|approx|vol|fig|dr|mr|mrs|ms|prof|no|pp|viz|cf|ca)\.\s*$/i;
+    const SENT_END = /(?<=[.!?])\s+(?=[A-Z])/;
+
+    const sentences = [];
+    let current = [];
+
+    for (const tok of tokens) {
+      if (tok.t === 'tag') { current.push(tok.v); continue; }
+      const parts = tok.v.split(SENT_END);
+      for (let pi = 0; pi < parts.length; pi++) {
+        current.push(parts[pi]);
+        if (pi < parts.length - 1) {
+          const soFar = current.join('');
+          const plain = soFar.replace(/<[^>]+>/g, '').trimEnd();
+          if (!ABBREVS.test(plain)) {
+            sentences.push(soFar.trim());
+            current = [];
+          } else {
+            current.push(' '); // re-add the space that split consumed
+          }
+        }
+      }
+    }
+    const tail = current.join('').trim();
+    if (tail) sentences.push(tail);
+    return sentences.filter(Boolean);
+  }
+
+  // Detect sentences that contain easily-confused or counterintuitive facts
+  function _isCalloutText(html) {
+    const t = html.replace(/<[^>]+>/g, '');
+    return (
+      /conventional current/i.test(t) ||
+      /\bopposite (direction|way|to electron|to conventional)\b/i.test(t) ||
+      /historical(ly)? convention/i.test(t) ||
+      /got the direction wrong/i.test(t) ||
+      /electrons? (move|flow|travel|travel) from (the )?negative/i.test(t) ||
+      /don'?t confuse\b/i.test(t) ||
+      /\bnot to be confused\b/i.test(t) ||
+      /unlike .{0,30}(which|who|they|it)\b/i.test(t)
+    );
+  }
+
+  // Wrap <strong>X = Y</strong> equation patterns in a display-block span
+  function _applyEquationStyles(html) {
+    // Left side: 1–3 word chars. Right side: up to 35 chars of equation characters.
+    // Only matches when inside <strong> — keeps term highlights untouched.
+    return html.replace(
+      /<strong>(\w{1,4}\s*=\s*[\w\s÷×/|.+\-()^²³⁻¹·°ΔλσρμεΩ]{1,35})<\/strong>/g,
+      (_, eq) => `<span class="kp-eq-block">${eq}</span>`
+    );
+  }
+
   // ── kp-read: content + diagram + video strip + personality ──
   function _renderKpReadStep(step) {
     const { kp, i } = step;
@@ -226,7 +329,7 @@ const Lessons = (() => {
           ${kp.examFlag ? `<span class="flag flag-exam">this gets asked</span>` : ''}
           ${kp.cardFlag ? `<span class="flag flag-card">worth writing down</span>` : ''}
         </div>
-        <p style="font-size:1.05rem;line-height:1.75">${kp.content}</p>`;
+        ${_formatKpContent(kp.content)}`;
     if (kp.diagram) html += _renderInlineDiagram(kp.diagram, _current, kp.diagramCaption, kp.diagramExamTip);
     const vids = _current.videoLinks;
     if (vids?.length) {

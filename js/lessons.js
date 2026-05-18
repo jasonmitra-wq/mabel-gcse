@@ -193,11 +193,87 @@ const Lessons = (() => {
 
   // ── Step renderers ─────────────────────────────────────────
 
+  // ── Intro processor ─────────────────────────────────────────
+  // Rules: max 3 sentences, max 15 words/sentence, strip exam-strategy language.
+
+  // Matches phrases that mark exam-strategy content — filtered out of intro & tips
+  const _EXAM_RE = /\bAQA\b|\bexaminers?\b|\bexam\s+(?:paper|target)\b|\bPaper\s+[12]\b|\bmark\s+question\b|\b(?:six|four|eight)[\s–\-]+mark\b|\b\d[–\-]\d\s+mark\b|\bevery\s+\w+\s+paper\b/i;
+
+  // Split plain (non-HTML) text into sentences, guarding against abbreviations
+  function _splitPlainSentences(text) {
+    if (!text) return [];
+    const ABBREVS = /\b(?:e\.g|i\.e|vs?|etc|approx|vol|fig|dr|mr|mrs|ms|prof|pp)\.\s*$/i;
+    const raw = text.split(/(?<=[.!?])\s+(?=[A-Z"'])/);
+    const result = [];
+    for (const part of raw) {
+      if (result.length && ABBREVS.test(result[result.length - 1])) {
+        result[result.length - 1] += ' ' + part;
+      } else {
+        result.push(part.trim());
+      }
+    }
+    return result.filter(Boolean);
+  }
+
+  // Recursively split a sentence until each part is ≤ 15 words.
+  // Prefers em-dash > semicolon > comma+conjunction > comma > word-12 fallback.
+  function _shortenSentence(s) {
+    s = (s || '').trim();
+    const words = s.split(/\s+/);
+    if (words.length <= 15) return s;
+    // Build char offset for each word start
+    const offsets = [];
+    let pos = 0;
+    for (const w of words) { offsets.push(pos); pos += w.length + 1; }
+    const cap = Math.min(Math.floor(words.length * 0.65), words.length - 2);
+    let splitAt = -1;
+    // P1: em-dash or semicolon — strongest natural break
+    for (let i = 8; i <= cap && splitAt === -1; i++) {
+      if (words[i] === '—' || words[i - 1].endsWith('—') || words[i - 1].endsWith(';')) splitAt = i;
+    }
+    // P2: comma + subordinating conjunction
+    for (let i = 8; i <= cap && splitAt === -1; i++) {
+      if (words[i - 1].endsWith(',') && /^(and|but|or|so|because|although|while|when|as|which|where)$/i.test(words[i])) splitAt = i;
+    }
+    // P3: any comma at word 10+
+    for (let i = 10; i <= cap && splitAt === -1; i++) {
+      if (words[i - 1].endsWith(',')) splitAt = i;
+    }
+    // Fallback: word 12
+    if (splitAt === -1) splitAt = Math.min(12, words.length - 2);
+    let first = s.slice(0, offsets[splitAt]).trimEnd();
+    let rest  = s.slice(offsets[splitAt]).trim();
+    // Clean up split point
+    rest  = rest.replace(/^(—\s*|,\s*(?:and|but|or|so)\s+)/i, '');
+    rest  = rest.charAt(0).toUpperCase() + rest.slice(1);
+    first = first.replace(/[—,;]\s*$/, '').trimEnd();
+    if (!/[.!?]$/.test(first)) first += '.';
+    return first + ' ' + _shortenSentence(rest);
+  }
+
+  // Filter exam-strategy sentences, keep ≤ 3, shorten each to ≤ 15 words
+  function _processIntro(text) {
+    if (!text) return '';
+    const sents    = _splitPlainSentences(text);
+    const filtered = sents.filter(s => !_EXAM_RE.test(s));
+    const pool     = filtered.length ? filtered : sents;
+    // _shortenSentence may produce multiple sentences; flatten, take first 3
+    const expanded = pool.flatMap(s => _splitPlainSentences(_shortenSentence(s)));
+    return expanded.slice(0, 3).join(' ');
+  }
+
+  // Filter exam-strategy bullets and shorten each to ≤ 15 words
+  function _processIntroTips(tips, examTip) {
+    const arr = tips?.length
+      ? tips
+      : (examTip || '').trim().split(/\.\s+/).filter(Boolean).map(s => s.replace(/\.$/, '').trim());
+    const filtered = arr.filter(t => !_EXAM_RE.test(t));
+    return (filtered.length ? filtered : arr).map(t => _shortenSentence(t));
+  }
+
   function _renderIntroStep() {
-    const bullets = _current.introTips?.length
-      ? _current.introTips
-      : (_current.examTip || '').trim().split(/\.\s+/).filter(Boolean)
-          .map(s => s.replace(/\.$/, '').trim());
+    const intro   = _processIntro(_current.intro);
+    const bullets = _processIntroTips(_current.introTips, _current.examTip);
     return `
       <div style="padding:1.25rem 0 0.75rem">
         <div style="margin-bottom:1rem">${Icons.get('intro', 56)}</div>
@@ -205,11 +281,11 @@ const Lessons = (() => {
           ${_current.title || _subtopicName}
         </h2>
         <p style="font-size:1.1rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem">
-          ${_current.intro}
+          ${intro}
         </p>
         <div class="tips-box">
           <h4 style="display:flex;align-items:center;gap:0.55rem">
-            ${Icons.inline('exam', 22)} What matters for your exam:
+            ${Icons.inline('exam', 22)} What matters:
           </h4>
           <ul>${bullets.map(b => `<li>${b}</li>`).join('')}</ul>
         </div>

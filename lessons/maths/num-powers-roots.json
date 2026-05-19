@@ -1,0 +1,89 @@
+{
+  "id": "num-powers-roots",
+  "subject": "maths",
+  "topic": "M1",
+  "subtopic": "num-powers-roots",
+  "title": "Powers, roots and indices",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Powers and roots — shortcuts for repeated multiplication",
+      "body": "A power (or index) tells you how many times to multiply a number by itself: 3⁴ means 3 × 3 × 3 × 3 = 81. A root undoes a power: √81 = 9 because 9² = 81. These ideas appear throughout GCSE — in standard form, area, volume, and algebra — so the index laws are worth knowing cold.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "The index laws",
+      "formula": "aᵐ × aⁿ = aᵐ⁺ⁿ | aᵐ ÷ aⁿ = aᵐ⁻ⁿ | (aᵐ)ⁿ = aᵐⁿ | a⁰ = 1 | a⁻ⁿ = 1/aⁿ",
+      "formulaExplained": "When multiplying powers of the same base, add the indices. When dividing, subtract the indices. When raising a power to another power, multiply the indices. Any base to the power zero equals 1. A negative index means take the reciprocal: a⁻ⁿ = 1/aⁿ.",
+      "whenToUse": "Whenever you multiply, divide or raise expressions that share the same base — the base must be identical before you apply any of these rules.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Simplify 5³ × 5² ÷ 5⁴, leaving your answer as a power of 5.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Multiply the first two terms — same base (5), so add the indices.",
+          "working": "5³ × 5² = 5^(3+2) = 5⁵",
+          "result": "5⁵"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Divide by 5⁴ — same base, so subtract the index.",
+          "working": "5⁵ ÷ 5⁴ = 5^(5−4) = 5¹",
+          "result": "5¹ = 5"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Verify by expanding: 5³=125, 5²=25, 125×25=3125; 5⁴=625; 3125÷625=5. ✓",
+          "working": "5³ × 5² = 3125 and 3125 ÷ 625 = 5",
+          "result": "5 ✓"
+        }
+      ],
+      "conclusion": "5³ × 5² ÷ 5⁴ = 5.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Multiplying the bases as well as adding the indices — e.g. writing 3² × 3³ = 9⁵ instead of 3⁵.",
+          "correction": "When multiplying powers with the same base, keep the base and only add the indices: 3² × 3³ = 3⁵ = 243, not 9⁵."
+        },
+        {
+          "mistake": "Multiplying indices when multiplying powers — e.g. writing 4² × 4³ = 4⁶ instead of 4⁵.",
+          "correction": "Multiply → add indices. The multiply-indices rule only applies when raising a power to a power: (4²)³ = 4⁶."
+        },
+        {
+          "mistake": "Thinking that a⁰ = 0 — e.g. writing 7⁰ = 0 instead of 1.",
+          "correction": "Any non-zero base raised to the power 0 equals 1. This follows from the division law: aⁿ ÷ aⁿ = a⁰ = 1."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "aᵐ × aⁿ = aᵐ⁺ⁿ — multiply powers of the same base by adding the indices.",
+      "examTip": "The base must be identical. You cannot combine 3² × 5³ using this law."
+    },
+    {
+      "fact": "aᵐ ÷ aⁿ = aᵐ⁻ⁿ — divide powers of the same base by subtracting the indices.",
+      "examTip": "If the result is a negative index, e.g. 2³ ÷ 2⁵ = 2⁻² = 1/4 — do not write 0 or a negative number."
+    },
+    {
+      "fact": "(aᵐ)ⁿ = aᵐⁿ — raise a power to another power by multiplying the indices.",
+      "examTip": "Distinguish carefully: 3² × 3³ = 3⁵ (add) but (3²)³ = 3⁶ (multiply). A common exam trap."
+    },
+    {
+      "fact": "a⁰ = 1 for any non-zero value of a. a⁻ⁿ = 1/aⁿ — a negative index means 'take the reciprocal'.",
+      "examTip": "2⁻³ = 1/2³ = 1/8. Write it as a fraction — never as a negative number."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

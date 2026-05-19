@@ -1,0 +1,95 @@
+{
+  "id": "num-standard-form",
+  "subject": "maths",
+  "topic": "M1",
+  "subtopic": "num-standard-form",
+  "title": "Standard form",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Standard form — writing very big or very small numbers efficiently",
+      "body": "Standard form expresses any number as a × 10ⁿ, where 1 ≤ a < 10 and n is an integer. It is the notation scientists use for distances between stars (enormous) and sizes of atoms (tiny), because it makes multiplication and division of such numbers manageable. The key discipline is always keeping the coefficient strictly between 1 and 10.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Standard form: a × 10ⁿ",
+      "formula": "a × 10ⁿ where 1 ≤ a < 10 and n is an integer",
+      "formulaExplained": "a is the coefficient — a number from 1 up to (but not including) 10. n is the power of 10 — positive for large numbers, negative for small ones. To convert: move the decimal point until one non-zero digit sits to its left; count the moves (left = positive n, right = negative n). To multiply in standard form: multiply the coefficients and add the powers. To divide: divide the coefficients and subtract the powers.",
+      "whenToUse": "Whenever a number is extremely large or extremely small — and whenever a question says 'give your answer in standard form'.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Write 6,350,000 in standard form. Then divide it by 2.5 × 10³ and give your answer in standard form.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Convert 6,350,000 to standard form.",
+          "working": "Move the decimal point left until one digit remains before it: 6.35. Count moves: 6 places left → power = +6.",
+          "result": "6.35 × 10⁶"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Divide the coefficients.",
+          "working": "6.35 ÷ 2.5 = 2.54",
+          "result": "2.54"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Subtract the powers of 10.",
+          "working": "10⁶ ÷ 10³ = 10^(6−3) = 10³",
+          "result": "10³"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Combine and check the coefficient is between 1 and 10.",
+          "working": "2.54 × 10³. The coefficient 2.54 satisfies 1 ≤ 2.54 < 10 ✓. As an ordinary number: 2.54 × 1000 = 2540. Check: 6,350,000 ÷ 2500 = 2540 ✓",
+          "result": "2.54 × 10³"
+        }
+      ],
+      "conclusion": "6,350,000 = 6.35 × 10⁶ and 6.35 × 10⁶ ÷ 2.5 × 10³ = 2.54 × 10³.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Leaving the coefficient outside the range 1 ≤ a < 10 — e.g. writing 35.6 × 10⁴ instead of 3.56 × 10⁵.",
+          "correction": "After any calculation, always check the coefficient. If it is 10 or more (or less than 1), adjust it by shifting the decimal point and changing the power accordingly."
+        },
+        {
+          "mistake": "Using a positive power for a small number — e.g. writing 0.000034 as 3.4 × 10⁴ instead of 3.4 × 10⁻⁵.",
+          "correction": "Numbers less than 1 require a negative power. Moving the decimal right = negative n. Count the places carefully: 0.000034 → decimal moves 5 places right → 3.4 × 10⁻⁵."
+        },
+        {
+          "mistake": "Adding powers when dividing — e.g. (8 × 10⁵) ÷ (2 × 10²) giving 4 × 10⁷ instead of 4 × 10³.",
+          "correction": "Multiply → add powers. Divide → subtract powers. (10⁵ ÷ 10² = 10^(5−2) = 10³)."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Standard form is a × 10ⁿ where 1 ≤ a < 10. The coefficient must be at least 1 and strictly less than 10.",
+      "examTip": "After every calculation in standard form, check the coefficient — it is the most common reason answers lose the final mark."
+    },
+    {
+      "fact": "Large numbers have positive powers of 10 (decimal moved left). Small numbers have negative powers (decimal moved right).",
+      "examTip": "0.00049 → decimal moves 4 places right → 4.9 × 10⁻⁴. The negative sign is on the power, not the coefficient."
+    },
+    {
+      "fact": "Multiplying in standard form: multiply coefficients, add powers. Dividing: divide coefficients, subtract powers.",
+      "examTip": "Handle coefficients and powers separately — deal with each part on its own line to avoid errors."
+    },
+    {
+      "fact": "For addition or subtraction in standard form, convert both numbers to ordinary numbers first, calculate, then convert back.",
+      "examTip": "You cannot add coefficients directly when the powers differ. 3 × 10⁴ + 5 × 10³ ≠ 8 × 10⁴."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

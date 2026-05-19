@@ -1,0 +1,87 @@
+{
+  "id": "num-integers",
+  "subject": "maths",
+  "topic": "M1",
+  "subtopic": "num-integers",
+  "title": "Integers, decimals and rounding",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "What are integers — and why does rounding matter?",
+      "body": "Integers are all whole numbers: ..., −3, −2, −1, 0, 1, 2, 3, ... — no decimals, no fractions. Every real measurement is rounded, because no ruler or stopwatch is perfectly precise. Knowing how to round correctly means your answers match what the question actually asks for.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "concept",
+      "heading": "The rounding rule — decimal places and significant figures",
+      "body": "Find the digit immediately to the right of where you are rounding. If that digit is 5 or more, round the target digit up by 1; if it is 4 or less, leave it unchanged and drop everything after. This same rule applies whether you are rounding to decimal places (d.p.) or significant figures (s.f.).",
+      "note": "Second concept slide used here because rounding has no single algebraic formula — it is a decision rule."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Round 5.3864 to (a) 2 decimal places and (b) 2 significant figures.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Identify the 2nd decimal place digit.",
+          "working": "5.3|8|64 — the 2nd d.p. digit is 8.",
+          "result": "Target digit: 8"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Look at the 3rd decimal place (the deciding digit) to round to 2 d.p.",
+          "working": "The 3rd d.p. digit is 6. Since 6 ≥ 5, round up: 8 becomes 9.",
+          "result": "5.39"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "For 2 significant figures, count from the first non-zero digit.",
+          "working": "5 is the 1st s.f., 3 is the 2nd s.f. The deciding digit is 8. Since 8 ≥ 5, round up: 3 becomes 4.",
+          "result": "5.4"
+        }
+      ],
+      "conclusion": "5.3864 rounded to 2 d.p. = 5.39; rounded to 2 s.f. = 5.4.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Looking at the digit in the rounding position rather than the one to its right — e.g. rounding 3.8512 to 2 d.p., the student sees 5 in the 2nd d.p. position and rounds up the 8, giving 3.86, when the deciding digit is actually 1 (the 3rd d.p.) and the answer is 3.85.",
+          "correction": "Always look one place to the right of where you are rounding — that is the deciding digit."
+        },
+        {
+          "mistake": "Confusing decimal places and significant figures — writing 5.39 when asked for 2 s.f. (answer should be 5.4) or writing 5.4 when asked for 2 d.p. (answer should be 5.39).",
+          "correction": "Decimal places count digits after the decimal point. Significant figures count digits from the first non-zero digit, including those before the decimal point."
+        },
+        {
+          "mistake": "Not carrying a round-up through all digits — e.g. rounding 6.96 to 1 d.p. and writing 6.9 because the student does not recognise that 9 rounds up to 10, which changes the units digit.",
+          "correction": "Carry the round-up as far as it goes: 6.96 → 7.0 to 1 d.p."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Integers are whole numbers: ..., −2, −1, 0, 1, 2, ... Decimals and fractions are not integers.",
+      "examTip": "If a question asks for an integer solution, check your answer is a whole number — not a decimal."
+    },
+    {
+      "fact": "To round to n decimal places, look at the (n+1)th decimal digit. If it is 5 or more, round up; if 4 or less, round down.",
+      "examTip": "Circle the deciding digit in your working to avoid using the wrong one."
+    },
+    {
+      "fact": "Significant figures are counted from the first non-zero digit. Leading zeros (e.g. in 0.0047) are not significant.",
+      "examTip": "0.0047 to 1 s.f. is 0.005, not 0.0 — the first significant figure is 4."
+    },
+    {
+      "fact": "6.96 rounded to 1 d.p. is 7.0 — write 7.0, not just 7, to show the answer is given to 1 decimal place.",
+      "examTip": "Trailing zeros after the decimal point are significant and must be included when rounding is specified."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

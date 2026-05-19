@@ -1,0 +1,91 @@
+{
+  "id": "num-bounds",
+  "subject": "maths",
+  "topic": "M1",
+  "subtopic": "num-bounds",
+  "title": "Bounds and error intervals",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Why measured values are never exact",
+      "body": "Every measurement is rounded to a given precision — a length of 8 cm to the nearest centimetre could actually be anywhere from 7.5 cm to just under 8.5 cm. Bounds define that range: the lower bound is the smallest value that rounds to the given measurement, and the upper bound is the smallest value that would round up to the next value. This matters in engineering and science where precision affects safety.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Upper and lower bounds",
+      "formula": "Lower bound = measured value − ½ × precision | Upper bound = measured value + ½ × precision",
+      "formulaExplained": "The precision is the smallest unit of measurement used (e.g. 0.1 for 1 d.p., 0.01 for 2 d.p., 1 for rounding to the nearest integer). Half the precision is added for the upper bound and subtracted for the lower bound. The error interval is written as: lower bound ≤ value < upper bound — note the strict inequality at the upper end, because the upper bound itself would round up.",
+      "whenToUse": "Whenever a value is described as measured or rounded to a given degree of accuracy and you are asked for bounds, error interval, or the greatest/least possible value of a calculation.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A shelf is measured as 94 cm to the nearest centimetre. Write the error interval for the length.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Identify the precision — it is rounded to the nearest centimetre, so precision = 1 cm.",
+          "working": "Half the precision = ½ × 1 = 0.5 cm",
+          "result": "± 0.5 cm"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Calculate the lower bound.",
+          "working": "Lower bound = 94 − 0.5 = 93.5 cm",
+          "result": "93.5 cm"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Calculate the upper bound.",
+          "working": "Upper bound = 94 + 0.5 = 94.5 cm",
+          "result": "94.5 cm"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Write the error interval using the correct inequality notation.",
+          "working": "93.5 ≤ l < 94.5 — the lower bound uses ≤ (the lower bound itself rounds to 94), the upper bound uses < (94.5 would round up to 95).",
+          "result": "93.5 ≤ l < 94.5"
+        }
+      ],
+      "conclusion": "The error interval is 93.5 cm ≤ l < 94.5 cm.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Using ≤ at both ends of the error interval — writing 93.5 ≤ l ≤ 94.5 instead of 93.5 ≤ l < 94.5.",
+          "correction": "The upper bound uses a strict inequality (<) because 94.5 itself would round up to 95, not down to 94. The lower bound uses ≤ because 93.5 rounds to 94."
+        },
+        {
+          "mistake": "Using half of the measured value instead of half of the precision — e.g. for a measurement of 94 cm, subtracting/adding 47 instead of 0.5.",
+          "correction": "Half the precision: if rounded to the nearest cm (precision = 1), bounds are ± 0.5. The measured value itself does not determine the bounds — the rounding unit does."
+        },
+        {
+          "mistake": "Confusing the precision when the measurement is given to decimal places — e.g. a length of 3.7 cm to 1 d.p. has precision 0.1, so bounds are ±0.05, not ±0.5.",
+          "correction": "Precision = the unit in the last stated decimal place. For 3.7 cm (1 d.p.), precision = 0.1 cm and half-precision = 0.05 cm. Bounds: 3.65 ≤ l < 3.75."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Lower bound = measured value − ½ × precision. Upper bound = measured value + ½ × precision.",
+      "examTip": "Identify the precision (the rounding unit) first — it determines the ±0.5 unit adjustment."
+    },
+    {
+      "fact": "The error interval is written as: lower bound ≤ x < upper bound. The upper bound always uses a strict inequality (<).",
+      "examTip": "The upper bound is the value that would round UP to the next level — it is not included in the range."
+    },
+    {
+      "fact": "For a value rounded to 1 d.p., precision = 0.1 and bounds are ± 0.05. For the nearest integer, precision = 1 and bounds are ± 0.5.",
+      "examTip": "Always halve the precision unit, not the measured value itself."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

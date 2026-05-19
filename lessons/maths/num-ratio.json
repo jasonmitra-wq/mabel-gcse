@@ -1,0 +1,91 @@
+{
+  "id": "num-ratio",
+  "subject": "maths",
+  "topic": "M1",
+  "subtopic": "num-ratio",
+  "title": "Ratio and proportion",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Ratio — comparing quantities in the same units",
+      "body": "A ratio compares two or more quantities and shows how they relate to each other in size. The ratio 3:2 means for every 3 parts of the first quantity there are 2 of the second — the total is 5 parts. Ratios are used in recipes, maps, mixing materials, and sharing money, so the method of finding the value of one part is one of the most useful tools in maths.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "The unitary method — find one part first",
+      "formula": "One part = Total ÷ (sum of ratio numbers)",
+      "formulaExplained": "Add all the numbers in the ratio to find the total number of parts. Divide the total quantity by this number to find the value of one part. Then multiply one part by each ratio number to find each share. This works for any ratio with any number of parts. For proportion questions (scaling up or down), find a scale factor by dividing the new quantity by the original.",
+      "whenToUse": "Any time you are sharing a total in a given ratio, or scaling a recipe or quantity up or down using proportion.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Share £270 in the ratio 5:4.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Find the total number of parts.",
+          "working": "5 + 4 = 9 parts in total",
+          "result": "9 parts"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Find the value of one part.",
+          "working": "£270 ÷ 9 = £30 per part",
+          "result": "£30 per part"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Multiply one part by each ratio number to find the two shares.",
+          "working": "First share: 5 × £30 = £150. Second share: 4 × £30 = £120.",
+          "result": "£150 and £120"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Check the two shares add back to the original total.",
+          "working": "£150 + £120 = £270 ✓",
+          "result": "£270 ✓"
+        }
+      ],
+      "conclusion": "The two shares are £150 and £120.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Dividing the total by the largest ratio number instead of the sum — e.g. for £270 in ratio 5:4, dividing by 5 to get £54 per part instead of dividing by 9 to get £30.",
+          "correction": "Always divide by the sum of all ratio parts. For 5:4 the total is 5+4=9 parts, so one part = £270 ÷ 9 = £30."
+        },
+        {
+          "mistake": "When the difference between shares is given, dividing by the total parts rather than the difference in parts — e.g. if person A gets £70 more than B in ratio 5:3, dividing £70 by 8 instead of by 2 (the difference 5−3=2).",
+          "correction": "If the difference between shares is given, find the difference in ratio parts first (5−3=2), then 1 part = difference ÷ 2, then scale up."
+        },
+        {
+          "mistake": "Using an additive approach to scale a recipe instead of multiplicative — e.g. a recipe for 4 serves uses 160 g of rice; to scale to 6 serves, adding 2 × 40 g = 80 g to get 240 g, instead of multiplying 160 g × (6/4) = 240 g (same answer here, but fails for non-integer scaling).",
+          "correction": "Scaling is always multiplicative. Find the scale factor = new quantity ÷ original quantity, then multiply every ingredient by the scale factor."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "To share in ratio a:b — find the total parts (a+b), divide the total quantity by this to get one part, then multiply by a and b separately.",
+      "examTip": "Always check: do your shares add back to the original total? If not, you divided by the wrong number."
+    },
+    {
+      "fact": "To simplify a ratio, divide all parts by their highest common factor (HCF). The ratio 24:36 simplifies to 2:3 (HCF = 12).",
+      "examTip": "Divide by the HCF in one step — dividing by a smaller common factor just means you need to simplify again."
+    },
+    {
+      "fact": "To scale a quantity up or down using proportion, find the scale factor = (new amount) ÷ (original amount), then multiply.",
+      "examTip": "Scale factors are multiplicative, not additive. A recipe for 4 scaled to 10 uses scale factor 10÷4 = 2.5, not 10−4 = 6."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

@@ -1,0 +1,89 @@
+{
+  "id": "num-percentages",
+  "subject": "maths",
+  "topic": "M1",
+  "subtopic": "num-percentages",
+  "title": "Percentages — find, change, reverse",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Percentages are everywhere — here is why they work",
+      "body": "A percentage is a fraction with denominator 100 — 'per cent' literally means 'per hundred'. Expressing things as percentages makes it easy to compare quantities with different sizes: a 30% discount on a £50 shirt and a 30% discount on a £200 coat are calculated the same way, just on different starting values.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "The multiplier method — one number does it all",
+      "formula": "New value = Original × Multiplier",
+      "formulaExplained": "Convert the percentage to a decimal multiplier: for an increase of p%, the multiplier is 1 + p/100; for a decrease of p%, it is 1 − p/100. Applying the multiplier in one step is faster and less error-prone than finding the percentage amount separately and then adding or subtracting. To reverse a percentage change, divide by the multiplier instead of multiplying.",
+      "whenToUse": "For any percentage increase, decrease, or reverse percentage question — whenever a starting or ending value and a percentage are involved.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A laptop costs £750. It is reduced by 40% in a sale. Find the sale price.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Find the multiplier for a 40% reduction.",
+          "working": "A reduction means we keep (100% − 40%) = 60% of the original. 60 ÷ 100 = 0.60.",
+          "result": "Multiplier = 0.60"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Multiply the original price by the multiplier.",
+          "working": "£750 × 0.60 = £450",
+          "result": "£450"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Check: find 40% of £750 separately and subtract.",
+          "working": "40% of £750 = £750 × 0.40 = £300. Sale price = £750 − £300 = £450. ✓",
+          "result": "£450 confirmed"
+        }
+      ],
+      "conclusion": "The sale price is £450.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Using 0.40 as the multiplier for a 40% reduction instead of 0.60 — multiplying by 0.40 gives the discount amount (£300), not the sale price.",
+          "correction": "A reduction multiplier = 1 − (percentage ÷ 100). For 40%: 1 − 0.40 = 0.60. Multiply by 0.60 to get the new price directly."
+        },
+        {
+          "mistake": "Reversing a percentage change by subtracting the percentage from the new value — e.g. after a 20% rise the price is £96; student calculates £96 × 0.80 = £76.80 instead of £96 ÷ 1.20 = £80.",
+          "correction": "To reverse a percentage increase, divide the new value by the multiplier: original = new value ÷ (1 + p/100). Subtracting a percentage from the new value gives the wrong answer because the percentage is of the original, not the new value."
+        },
+        {
+          "mistake": "Dividing by the new value instead of the original when calculating percentage change — e.g. a rise from £50 to £60: student computes (60−50)/60 × 100 = 16.7% instead of (60−50)/50 × 100 = 20%.",
+          "correction": "Percentage change = (change ÷ original) × 100. Always divide by the starting value."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "To find p% of a quantity: convert p% to a decimal (p ÷ 100) and multiply by the quantity.",
+      "examTip": "15% of £240: 0.15 × 240 = £36. Convert first, then multiply — do not try to do it in your head as a fraction."
+    },
+    {
+      "fact": "Multiplier for a p% increase = 1 + p/100. Multiplier for a p% decrease = 1 − p/100.",
+      "examTip": "A 30% increase → multiplier 1.30. A 30% decrease → multiplier 0.70. Write the multiplier before doing any calculation."
+    },
+    {
+      "fact": "To reverse a percentage change (find the original value): divide the new value by the multiplier. Never subtract the percentage from the new value.",
+      "examTip": "If something costs £92.40 after a 10% discount, the original = £92.40 ÷ 0.90 = £102.67, not £92.40 − 9.24."
+    },
+    {
+      "fact": "Percentage change = (change ÷ original value) × 100. Always divide by the original (starting) value, not the new one.",
+      "examTip": "The single most common mark lost in percentage change questions: dividing by the wrong value."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

@@ -144,7 +144,7 @@ const Maths = (() => {
       const hasQ = MathsQuestions.hasQuestions(st.id);
       return `
         <div class="maths-subtopic-card ${att ? 'attempted' : ''}"
-             onclick="Maths._selectSubtopic('${st.id}', '${st.name.replace(/'/g, "\\'")}', '${topicCode}')">
+             onclick="Maths._selectSubtopic('${st.id}', '${st.name.replace(/'/g, "\\'")}', '${topicCode}', ${!!st.hasLesson})">
           <div class="msc-check">${att ? '◑' : '○'}</div>
           <div class="msc-name">
             ${st.name}
@@ -185,20 +185,22 @@ const Maths = (() => {
   }
 
   // ── LESSON ROUTING ────────────────────────────────────────────
-  async function _selectSubtopic(subtopicId, subtopicName, topicCode) {
-    try {
-      const res = await fetch(`lessons/maths/${subtopicId}.json`);
-      if (res.ok) {
-        const data = await res.json();
-        if (data.hasLesson === true) {
+  async function _selectSubtopic(subtopicId, subtopicName, topicCode, hasLesson) {
+    if (hasLesson) {
+      try {
+        const res = await fetch(`lessons/maths/${subtopicId}.json`);
+        if (res.ok) {
+          const data = await res.json();
           _showLesson(data, subtopicName, topicCode);
           return;
         }
+      } catch(e) {
+        // lesson file missing — fall through to questions
       }
-    } catch(e) {
-      // no lesson file — fall through to questions
     }
-    _startQuestion(subtopicId, subtopicName, topicCode);
+    // No lesson: go straight to questions with a tutor message
+    const noLessonMsg = "No notes for this topic yet — let’s go straight to questions and I’ll explain anything you get wrong.";
+    _startQuestion(subtopicId, subtopicName, topicCode, noLessonMsg);
   }
 
   function _showLesson(lessonData, subtopicName, topicCode) {
@@ -322,7 +324,7 @@ const Maths = (() => {
   }
 
   // ── QUESTION INTERFACE ────────────────────────────────────────
-  function _startQuestion(subtopicId, subtopicName, topicCode) {
+  function _startQuestion(subtopicId, subtopicName, topicCode, tutorMsg) {
     const q = MathsQuestions.getQuestion(subtopicId, null, _sessionUsedQids);
     if (!q) {
       _noQuestionsScreen(subtopicName, topicCode);
@@ -335,7 +337,7 @@ const Maths = (() => {
     _currentStep     = 0;
     _hintLevel       = {};
     _stepResults     = new Array(q.steps.length).fill(null);
-    _renderQuestion(q, subtopicName, topicCode);
+    _renderQuestion(q, subtopicName, topicCode, tutorMsg);
   }
 
   function _noQuestionsScreen(subtopicName, topicCode) {
@@ -347,16 +349,16 @@ const Maths = (() => {
         </div>
         <div style="background:var(--s1);border:1.5px solid var(--border2);border-radius:14px;
              padding:1.75rem;text-align:center">
-          <div style="font-size:2rem;margin-bottom:0.5rem">📝</div>
+          <div style="font-size:2rem;margin-bottom:0.5rem">🔜</div>
           <p style="font-size:0.9rem;line-height:1.65;color:var(--muted)">
-            Questions for this subtopic are being prepared. Come back soon.
+            This topic is coming soon. Check back after your next update.
           </p>
-          <button class="btn" style="margin-top:1rem" onclick="Maths._showTopic('${topicCode}')">← Back to topic</button>
+          <button class="btn" style="margin-top:1rem" onclick="Maths._showTopic('${topicCode}')">← Back</button>
         </div>
       </div>`;
   }
 
-  function _renderQuestion(q, subtopicName, topicCode) {
+  function _renderQuestion(q, subtopicName, topicCode, tutorMsg) {
     App.setStage('Maths');
     App.setTopicChip(subtopicName);
 
@@ -366,7 +368,7 @@ const Maths = (() => {
       'If you get stuck, the hints are there for a reason.',
       'Same method as the worked example — different numbers, same idea.',
     ];
-    const opener  = openers[Math.floor(Math.random() * openers.length)];
+    const opener = tutorMsg || openers[Math.floor(Math.random() * openers.length)];
     const stepsHtml = q.steps.map((s, i) => _buildStepHtml(s, i, i === 0)).join('');
     const egSteps   = (q.workedExample?.steps || [])
       .map(s => `<div class="maths-eg-step">${s}</div>`).join('');

@@ -1,0 +1,91 @@
+{
+  "id": "rpr-ratio",
+  "subject": "maths",
+  "topic": "M3",
+  "subtopic": "rpr-ratio",
+  "title": "Ratio — simplify and share",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Ratio — comparing quantities as parts",
+      "body": "A ratio compares two or more quantities by describing how many parts each has. The ratio 5:3 means for every 5 parts of the first quantity there are 3 of the second. Ratios can be simplified by dividing all parts by their highest common factor (HCF), and used to share a total — by finding the value of one part first, then multiplying.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Simplifying and sharing in ratio",
+      "formula": "Simplify: divide all parts by HCF | Share: one part = total ÷ (sum of ratio parts)",
+      "formulaExplained": "To simplify a ratio, find the highest common factor of all the numbers and divide every part by it — the ratio 30 : 18 simplifies to 5 : 3 (HCF = 6). To share a total in a given ratio: add all the ratio numbers to find the total number of parts; divide the total quantity by this to find one part; then multiply one part by each ratio number to find each share. Always check: the shares must add back to the original total.",
+      "whenToUse": "Any time you need to write a ratio in its simplest form, or share a quantity (money, ingredients, length) between people or groups in a given ratio.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Share £108 in the ratio 5 : 4.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Find the total number of parts by adding the ratio numbers.",
+          "working": "5 + 4 = 9 parts in total.",
+          "result": "9 parts"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Find the value of one part.",
+          "working": "£108 ÷ 9 = £12 per part.",
+          "result": "£12 per part"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Multiply one part by each ratio number to find both shares.",
+          "working": "First share: 5 × £12 = £60. Second share: 4 × £12 = £48.",
+          "result": "£60 and £48"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Check the shares add back to the original total.",
+          "working": "£60 + £48 = £108 ✓",
+          "result": "£108 ✓"
+        }
+      ],
+      "conclusion": "The two shares are £60 and £48.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Dividing the total by the largest ratio number instead of the sum — e.g. for £108 in ratio 5:4, dividing by 5 to get £21.60 per part instead of dividing by 9 to get £12.",
+          "correction": "Always divide by the sum of all ratio parts, not just one of them. For 5:4, the total is 5+4=9 parts."
+        },
+        {
+          "mistake": "Dividing by a common factor that is not the HCF when simplifying, then stopping — e.g. simplifying 30:18 by dividing by 3 to get 10:6, then treating 10:6 as fully simplified.",
+          "correction": "Keep simplifying until no common factor remains. 10:6 still has HCF 2 → 5:3. Or find the HCF (6) at the start and divide in one step: 30÷6 : 18÷6 = 5:3."
+        },
+        {
+          "mistake": "When the difference between shares is given, dividing by the total parts instead of the difference in parts — e.g. if one person gets £56 more than another in ratio 5:3, dividing £56 by 8 (total parts) instead of by 2 (the difference 5−3).",
+          "correction": "If a difference between shares is given: find the difference in ratio parts (5−3=2), then 1 part = difference in value ÷ 2, then scale up for each share."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "To simplify a ratio, divide all parts by their HCF in one step. The ratio 30:18 has HCF 6, giving 5:3.",
+      "examTip": "If your simplified ratio still has a common factor, you haven't found the true HCF. Check by trying 2, 3, 5 as factors."
+    },
+    {
+      "fact": "To share in ratio: find total parts (add all ratio numbers), then 1 part = total quantity ÷ total parts, then multiply each ratio number by 1 part.",
+      "examTip": "Check: all the shares must add back to the original total. If they don't, you divided by the wrong number."
+    },
+    {
+      "fact": "If the difference between two shares is known, the difference in ratio parts is the key: 1 part = difference in value ÷ difference in ratio parts.",
+      "examTip": "For ratio a:b with difference d: 1 part = d ÷ (a−b). This is a different method from the standard sharing approach."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

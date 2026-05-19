@@ -1,0 +1,85 @@
+{
+  "id": "rpr-proportion",
+  "subject": "maths",
+  "topic": "M3",
+  "subtopic": "rpr-proportion",
+  "title": "Direct and inverse proportion",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Proportion — when two quantities are linked by a rule",
+      "body": "Two quantities are in direct proportion when they increase and decrease together at the same rate — doubling one doubles the other. They are in inverse proportion when one increases as the other decreases in exactly the opposite way — doubling one halves the other. Proportion appears in scaling recipes, currency exchange, speed problems, and any situation where a constant relationship holds between two variables.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Direct and inverse proportion formulas",
+      "formula": "Direct: y = kx (or y ∝ x) | Inverse: y = k/x (or y ∝ 1/x) | Other: y = kxⁿ or y = k/xⁿ",
+      "formulaExplained": "k is the constant of proportionality — it stays the same for all pairs of x and y values in the relationship. To find k: substitute a given pair of values into the equation and solve. For direct proportion (y = kx), k = y ÷ x. For inverse proportion (y = k/x), k = y × x. Once k is known, the equation gives any other value. For proportion involving powers (e.g. y ∝ x²), write y = kx² and find k the same way.",
+      "whenToUse": "Whenever a question says 'y is directly/inversely proportional to x', or 'y is proportional to x²' — find k from the given pair, then use the equation to find the unknown value.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "y is directly proportional to x. When x = 5, y = 15. Find y when x = 8.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Write the equation for direct proportion and find k.",
+          "working": "y = kx. Substitute x = 5, y = 15: 15 = k × 5. So k = 15 ÷ 5 = 3.",
+          "result": "k = 3, so y = 3x"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Substitute x = 8 to find y.",
+          "working": "y = 3 × 8 = 24.",
+          "result": "y = 24"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Check: verify the ratio y/x is constant for both pairs.",
+          "working": "15 ÷ 5 = 3 and 24 ÷ 8 = 3. Both equal k ✓.",
+          "result": "y = 24 ✓"
+        }
+      ],
+      "conclusion": "When x = 8, y = 24.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Confusing direct and inverse proportion — e.g. for y ∝ 1/x, writing y = kx (direct) instead of y = k/x, then getting k = y/x instead of k = yx.",
+          "correction": "Direct proportion: as x increases, y increases (y = kx). Inverse proportion: as x increases, y decreases (y = k/x). For inverse, k = y × x (the product is constant)."
+        },
+        {
+          "mistake": "Forgetting to square x before finding k in y ∝ x² — e.g. for y = kx² with x = 3 and y = 36, writing k = 36 ÷ 3 = 12 instead of k = 36 ÷ 9 = 4.",
+          "correction": "Square x first: y = kx² → k = y ÷ x² = 36 ÷ 3² = 36 ÷ 9 = 4. Then y = 4x²."
+        },
+        {
+          "mistake": "Using an additive method rather than finding k — e.g. for y = kx with x going from 4 to 7 (an increase of 3), adding 3 × (some value) to y instead of finding k = y/x and calculating y = k × 7.",
+          "correction": "Proportion is always multiplicative. Find k first, then use the equation. The ratio y:x is constant for all pairs in direct proportion."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Direct proportion: y = kx. k = y ÷ x. The ratio y/x is the same for every pair of values.",
+      "examTip": "A quick check: if y doubles when x doubles, it's direct. If y halves when x doubles, it's inverse."
+    },
+    {
+      "fact": "Inverse proportion: y = k/x. k = y × x. The product y × x is constant for every pair.",
+      "examTip": "For inverse, k = y × x (multiply, not divide). A common error is using k = y/x (the direct proportion formula) for an inverse question."
+    },
+    {
+      "fact": "For y ∝ xⁿ: write y = kxⁿ, substitute the given pair to find k (remember to calculate xⁿ first), then use y = kxⁿ for the unknown.",
+      "examTip": "In y = kx², square x before dividing: k = y ÷ x². Missing the square is the most common error in proportion questions."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

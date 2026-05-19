@@ -1,0 +1,95 @@
+{
+  "id": "rpr-percentage-change",
+  "subject": "maths",
+  "topic": "M3",
+  "subtopic": "rpr-percentage-change",
+  "title": "Percentage change and compound interest",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Percentage change — measuring how much things grow or shrink",
+      "body": "Percentage change expresses an increase or decrease as a proportion of the original value, making it possible to compare changes of different sizes fairly. The multiplier method is the most powerful tool: a 20% increase means multiply by 1.20; a 20% decrease means multiply by 0.80. Compound interest applies the multiplier repeatedly — each year's interest is calculated on the new total, not just the original, so the amount grows faster than simple interest.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Percentage change and multipliers",
+      "formula": "% change = (change ÷ original) × 100 | Increase multiplier = 1 + (r/100) | Decrease multiplier = 1 − (r/100) | Compound: A = P × mⁿ",
+      "formulaExplained": "To find percentage change: subtract original from new to get the change, divide by the original, then multiply by 100. If positive it is an increase; if negative it is a decrease. For applying a % increase or decrease: multiply by 1 + r/100 (increase) or 1 − r/100 (decrease), where r is the percentage. For compound interest or depreciation: A = P × mⁿ, where P is the starting amount, m is the multiplier, and n is the number of periods. For reverse percentage (finding the original): divide the known value by the multiplier.",
+      "whenToUse": "Calculating % change between two values; applying a % increase or decrease to find a new value; finding the original value after a known % change (reverse percentage); and compound interest or depreciation over multiple periods.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A coat was originally priced at £160. In a sale it costs £120. Calculate the percentage decrease.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Find the amount of change (decrease).",
+          "working": "Change = original − new = £160 − £120 = £40.",
+          "result": "£40 decrease"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Divide the change by the original value.",
+          "working": "£40 ÷ £160 = 0.25",
+          "result": "0.25"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Multiply by 100 to convert to a percentage.",
+          "working": "0.25 × 100 = 25%.",
+          "result": "25%"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Check using the multiplier: a 25% decrease means multiplying by 0.75. £160 × 0.75 = £120 ✓.",
+          "working": "160 × 0.75 = 120 ✓",
+          "result": "25% decrease ✓"
+        }
+      ],
+      "conclusion": "The percentage decrease is 25%.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Dividing the change by the new value instead of the original — e.g. for a price rising from £40 to £50, calculating 10 ÷ 50 = 20% instead of 10 ÷ 40 = 25%.",
+          "correction": "Percentage change = (change ÷ original) × 100. Always divide by the original (starting) value, not the new one."
+        },
+        {
+          "mistake": "Reversing a percentage change by adding or subtracting the percentage directly — e.g. a TV costs £350 after a 30% reduction, so finding the original by adding 30% to £350 (£350 × 1.30 = £455) instead of dividing by 0.70.",
+          "correction": "After a 30% reduction, £350 = 70% of original. Reverse it by dividing by the multiplier: £350 ÷ 0.70 = £500. Adding the same percentage back undoes a percentage of the wrong base."
+        },
+        {
+          "mistake": "Using simple interest instead of compound — e.g. for £2,000 at 4% for 3 years, calculating 4% × 3 = 12% total, giving £2,240 instead of applying the multiplier 1.04 three times to get £2,249.73.",
+          "correction": "Compound interest: multiply by the multiplier for each period separately — A = P × mⁿ. Simple interest adds the same fixed amount each time; compound always gives a higher result."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "% change = (change ÷ original) × 100. Change = new − original (positive = increase, negative = decrease). Always divide by the original.",
+      "examTip": "The original is the starting value before the change — never the new value. This is the most common error in percentage change questions."
+    },
+    {
+      "fact": "Multiplier for r% increase: 1 + r/100. Multiplier for r% decrease: 1 − r/100. Reverse percentage: divide by the multiplier.",
+      "examTip": "A 30% reduction gives multiplier 0.70. To reverse: ÷ 0.70 (not + 30%). Adding 30% back gives 30% of the reduced price, not the original."
+    },
+    {
+      "fact": "Compound growth/decay: A = P × mⁿ, where P = principal, m = multiplier, n = number of periods.",
+      "examTip": "Write A = P × mⁿ and substitute before calculating. Use a calculator for mⁿ — do not round intermediate answers or compound errors build up."
+    },
+    {
+      "fact": "Simple interest gives the same fixed amount each period (I = PRT/100). Compound interest gives a larger total because each period's interest is added to the running total before the next calculation.",
+      "examTip": "If a question says 'compound', use the multiplier method (× mⁿ). If it says 'simple', use I = PRT/100 and add the interest once at the end."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

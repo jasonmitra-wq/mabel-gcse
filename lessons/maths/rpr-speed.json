@@ -1,0 +1,85 @@
+{
+  "id": "rpr-speed",
+  "subject": "maths",
+  "topic": "M3",
+  "subtopic": "rpr-speed",
+  "title": "Speed, distance and time",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Speed, distance and time — the most used rate of change",
+      "body": "Speed measures how quickly distance is covered — it is distance divided by time. All three quantities are linked: know any two and you can find the third. The units must be consistent: if speed is in km/h, distance must be in km and time must be in hours — convert minutes to hours before substituting. Average speed over a whole journey is always total distance ÷ total time, not the average of the individual speeds.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "The speed–distance–time triangle",
+      "formula": "Distance = Speed × Time | Speed = Distance ÷ Time | Time = Distance ÷ Speed",
+      "formulaExplained": "Distance = Speed × Time. Cover the one you want to find to see the formula: cover D to get S × T; cover S to get D ÷ T; cover T to get D ÷ S. Time must be in the same unit throughout — convert minutes to hours by dividing by 60 (e.g. 45 min = 0.75 h, not 0.45 h). For a journey in two parts, average speed = total distance ÷ total time — calculate each journey time separately, then add.",
+      "whenToUse": "Any question involving speed, distance and time — finding one given the other two, converting between units of time, or calculating average speed over a multi-stage journey.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A bus travels 126 km in 1 hour 30 minutes. Calculate the average speed in km/h.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Convert the time to hours. 1 hour 30 minutes = 1 + 30/60 hours.",
+          "working": "30 ÷ 60 = 0.5. Time = 1.5 hours.",
+          "result": "1.5 hours"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Use speed = distance ÷ time.",
+          "working": "Speed = 126 ÷ 1.5 = 84 km/h.",
+          "result": "84 km/h"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Check with distance = speed × time.",
+          "working": "84 × 1.5 = 126 km ✓",
+          "result": "126 km ✓"
+        }
+      ],
+      "conclusion": "The average speed is 84 km/h.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Converting minutes to hours incorrectly — e.g. treating 1 hour 20 minutes as 1.2 hours instead of 1.333... hours (1 + 20/60).",
+          "correction": "Divide minutes by 60 to convert to hours: 20 min = 20/60 = 1/3 h ≈ 0.333 h. Never just place the minutes after a decimal point — that only works for exact half-hours."
+        },
+        {
+          "mistake": "Calculating average speed as the mean of two speeds — e.g. for a journey of 40 km at 20 km/h then 60 km at 30 km/h, writing (20 + 30) ÷ 2 = 25 km/h.",
+          "correction": "Average speed = total distance ÷ total time. Find each leg's time separately (t₁ = 40/20 = 2 h, t₂ = 60/30 = 2 h), then: 100 ÷ 4 = 25 km/h. The shortcut of averaging speeds only gives the right answer by coincidence in specific cases."
+        },
+        {
+          "mistake": "Inverting the formula — calculating time ÷ distance instead of distance ÷ time for speed, giving an answer in hours/km instead of km/h.",
+          "correction": "Use the triangle: cover Speed, and what remains is D on top and T on the bottom — S = D ÷ T. Check the units: speed should be in km/h or m/s, not h/km."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Distance = Speed × Time. Cover the quantity you want: D = S × T, S = D ÷ T, T = D ÷ S.",
+      "examTip": "Write the triangle at the top of your working for every question. It takes 2 seconds and prevents formula errors."
+    },
+    {
+      "fact": "Always convert time to hours before substituting. Minutes ÷ 60 = hours. 45 min = 0.75 h. 1h 20min = 1.333... h.",
+      "examTip": "Never write 1h 20min as 1.20 h — that treats 20 minutes as 20 hundredths of an hour, which is wrong."
+    },
+    {
+      "fact": "Average speed = total distance ÷ total time. Calculate each part's time separately, then add all times and all distances.",
+      "examTip": "The average of two speeds is not the average speed. Always use total distance ÷ total time."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

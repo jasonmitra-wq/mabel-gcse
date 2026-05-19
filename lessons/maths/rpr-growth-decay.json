@@ -1,0 +1,91 @@
+{
+  "id": "rpr-growth-decay",
+  "subject": "maths",
+  "topic": "M3",
+  "subtopic": "rpr-growth-decay",
+  "title": "Exponential growth and decay",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Simple vs compound growth — two very different things",
+      "body": "Simple growth adds the same fixed amount each period — 5% of the original value, every year, forever. Compound growth applies the percentage to whatever the current total is, so the amount added gets bigger each period as the total grows. Over time the difference is enormous: a £1,000 investment at 5% simple interest gains exactly £50 every year; at 5% compound it gains £50 in year one, £52.50 in year two, £55.13 in year three, and so on. Compound growth (and compound decay) is used for investment accounts, population growth, drug concentration in the body, and radioactive decay.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "The multiplier method for compound growth and decay",
+      "formula": "A = P × mⁿ",
+      "formulaExplained": "A is the final amount after n periods. P is the starting (principal) amount. m is the multiplier — for r% growth, m = 1 + r/100; for r% decay, m = 1 − r/100. n is the number of periods (years, months, etc.). Apply the multiplier once per period by raising it to the power n. The key distinction: growth gives m > 1 (the total increases each period); decay gives 0 < m < 1 (the total decreases each period, but never reaches zero).",
+      "whenToUse": "Any question involving repeated percentage change over multiple periods — compound interest, population growth, radioactive decay, depreciation of vehicles, and drug dosage reduction. If the percentage is applied to the original amount only (not the running total), it is simple interest and you use I = PRT/100 instead.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A motorbike is bought for £8,000. It depreciates (loses value) at 15% per year. Find its value after 2 years.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Find the decay multiplier for 15% depreciation.",
+          "working": "m = 1 − 15/100 = 1 − 0.15 = 0.85.",
+          "result": "m = 0.85"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Apply the formula A = P × mⁿ with P = 8000, m = 0.85 and n = 2.",
+          "working": "A = 8000 × 0.85²",
+          "result": "A = 8000 × 0.85²"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Calculate 0.85² first, then multiply.",
+          "working": "0.85² = 0.7225. A = 8000 × 0.7225 = £5,780.",
+          "result": "A = £5,780"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Check: year 1 value = 8000 × 0.85 = £6,800. Year 2 = 6,800 × 0.85 = £5,780 ✓.",
+          "working": "8000 × 0.85 = 6800. 6800 × 0.85 = 5780 ✓",
+          "result": "£5,780 ✓"
+        }
+      ],
+      "conclusion": "The motorbike is worth £5,780 after 2 years.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Using simple decay instead of compound — e.g. for a 15% annual depreciation over 2 years, subtracting 15% twice from the original: 8000 − 2×(15%×8000) = 8000 − 2400 = £5,600 instead of £5,780.",
+          "correction": "Compound decay applies the multiplier to the current value each period: year 1 → 8000 × 0.85 = £6,800; year 2 → 6,800 × 0.85 = £5,780. The deduction gets smaller each year because the base shrinks."
+        },
+        {
+          "mistake": "Using a growth multiplier for a decay question — e.g. for 15% depreciation, multiplying by 1.15 instead of 0.85.",
+          "correction": "Growth: m = 1 + r/100 (value increases, m > 1). Decay: m = 1 − r/100 (value decreases, 0 < m < 1). Check: for 15% loss, you keep 85% of the value → m = 0.85."
+        },
+        {
+          "mistake": "Rounding the multiplier mⁿ to 2 decimal places before multiplying — e.g. rounding 1.06³ = 1.191016 to 1.19 and getting £2,380 instead of £2,382.03 for £2,000 at 6%.",
+          "correction": "Keep full calculator precision throughout. Only round the final answer to 2 decimal places (or as the question specifies). Every intermediate rounding compounds the error."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Compound growth/decay: A = P × mⁿ. Growth multiplier m = 1 + r/100 (m > 1). Decay multiplier m = 1 − r/100 (0 < m < 1).",
+      "examTip": "Write A = P × mⁿ and clearly state P, m and n before calculating. It takes 5 seconds and prevents most errors."
+    },
+    {
+      "fact": "Simple interest: the interest is always calculated on the original principal. Compound interest: the interest is calculated on the growing total. Compound always gives a larger result over time.",
+      "examTip": "If the question says 'compound', use A = P × mⁿ. If it says 'simple', use I = PRT/100 (where T is time in years) and add once."
+    },
+    {
+      "fact": "For compound decay, the quantity never reaches zero — each period removes a percentage of what remains, so the amount decreases more slowly over time.",
+      "examTip": "This is exponential decay: the graph curves and flattens. A 50% decay rate does NOT reduce the amount to zero in 2 periods — after 2 periods, 25% remains."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

@@ -1,0 +1,91 @@
+{
+  "id": "rpr-compound-measures",
+  "subject": "maths",
+  "topic": "M3",
+  "subtopic": "rpr-compound-measures",
+  "title": "Compound measures — density and pressure",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Compound measures — one quantity built from two others",
+      "body": "A compound measure is formed by combining two different quantities using multiplication or division. Density measures how much mass is packed into a given volume — a denser material feels heavier for the same size. Pressure measures how much force acts on a given area — a stiletto heel exerts much higher pressure than a flat shoe of the same weight because the force is concentrated on a tiny area. Both follow the same pattern: divide one quantity by another to get the compound measure.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Density and pressure formulas",
+      "formula": "Density = Mass ÷ Volume (D = M/V) | Pressure = Force ÷ Area (P = F/A)",
+      "formulaExplained": "For density: D = M ÷ V (g/cm³ or kg/m³). Rearrange to find mass (M = D × V) or volume (V = M ÷ D). For pressure: P = F ÷ A (N/m² or N/cm²). Rearrange to find force (F = P × A) or area (A = F ÷ P). Both formulas follow the same triangle structure: the compound measure (D or P) is at the top — divide by it to isolate mass/volume or force/area. Units must be consistent throughout each calculation.",
+      "whenToUse": "Any question giving two of the three quantities (mass/volume/density or force/area/pressure) and asking for the third — including questions where you must rearrange to find mass, volume, force or area.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A piece of aluminium has a mass of 135 g and a volume of 50 cm³. Calculate its density.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Write the formula for density.",
+          "working": "Density = Mass ÷ Volume.",
+          "result": "D = M ÷ V"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Substitute the values.",
+          "working": "D = 135 ÷ 50.",
+          "result": "D = 135 ÷ 50"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Calculate and state the units.",
+          "working": "135 ÷ 50 = 2.7 g/cm³.",
+          "result": "2.7 g/cm³"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Check by reversing: mass = density × volume = 2.7 × 50 = 135 g ✓.",
+          "working": "2.7 × 50 = 135 g ✓",
+          "result": "Density = 2.7 g/cm³ ✓"
+        }
+      ],
+      "conclusion": "The density of the aluminium is 2.7 g/cm³.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Dividing volume by mass instead of mass by volume — e.g. density = 50 ÷ 135 ≈ 0.37 g/cm³ instead of 135 ÷ 50 = 2.7 g/cm³.",
+          "correction": "Density = Mass ÷ Volume. Mass is on top: D = M/V. If in doubt, think: a denser object has more mass in the same volume — the mass goes on top."
+        },
+        {
+          "mistake": "Omitting or mixing up units — e.g. giving density as just '2.7' without g/cm³, or calculating in grams but stating units as kg/m³.",
+          "correction": "Always write units in the answer. Density units match the units used: mass in g and volume in cm³ gives g/cm³. Mass in kg and volume in m³ gives kg/m³."
+        },
+        {
+          "mistake": "Rearranging the formula incorrectly when finding mass or volume — e.g. to find mass, writing M = D ÷ V instead of M = D × V.",
+          "correction": "Use the triangle: cover what you want. Cover M → D × V. Cover V → M ÷ D. Cover D → M ÷ V. Alternatively, write D = M/V and multiply both sides by V to get M = D × V."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Density = Mass ÷ Volume. Rearranged: Mass = Density × Volume, Volume = Mass ÷ Density.",
+      "examTip": "Draw the D|MV triangle: D on top, M and V on the bottom. Cover the unknown to read off the formula."
+    },
+    {
+      "fact": "Pressure = Force ÷ Area. Rearranged: Force = Pressure × Area, Area = Force ÷ Pressure.",
+      "examTip": "Same triangle pattern as density: P on top, F and A on the bottom. Pressure increases when the same force acts on a smaller area."
+    },
+    {
+      "fact": "Units must match throughout: density in g/cm³ requires mass in g and volume in cm³. If units are mixed, convert first.",
+      "examTip": "Always state units in the final answer. An answer of '9' in a density question is incomplete — it must be '9 g/cm³'."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

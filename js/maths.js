@@ -23,6 +23,12 @@ const Maths = (() => {
   let _testQIdx        = 0;
   let _testResults     = [];      // { stepsTotal, stepsCorrect } per question
 
+  // Lesson mode state
+  let _lessonData         = null;
+  let _lessonSlideIdx     = 0;
+  let _lessonSubtopicName = '';
+  let _lessonTopicCode    = '';
+
   // ── Storage keys ─────────────────────────────────────────────
   const K = {
     badges:    'maths_badges',        // { M1: { earned, date }, ... }
@@ -138,7 +144,7 @@ const Maths = (() => {
       const hasQ = MathsQuestions.hasQuestions(st.id);
       return `
         <div class="maths-subtopic-card ${att ? 'attempted' : ''}"
-             onclick="Maths._startQuestion('${st.id}', '${st.name.replace(/'/g, "\\'")}', '${topicCode}')">
+             onclick="Maths._selectSubtopic('${st.id}', '${st.name.replace(/'/g, "\\'")}', '${topicCode}')">
           <div class="msc-check">${att ? '◑' : '○'}</div>
           <div class="msc-name">
             ${st.name}
@@ -176,6 +182,143 @@ const Maths = (() => {
           ${testSection}
         </div>
       </div>`;
+  }
+
+  // ── LESSON ROUTING ────────────────────────────────────────────
+  async function _selectSubtopic(subtopicId, subtopicName, topicCode) {
+    try {
+      const res = await fetch(`lessons/maths/${subtopicId}.json`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.hasLesson === true) {
+          _showLesson(data, subtopicName, topicCode);
+          return;
+        }
+      }
+    } catch(e) {
+      // no lesson file — fall through to questions
+    }
+    _startQuestion(subtopicId, subtopicName, topicCode);
+  }
+
+  function _showLesson(lessonData, subtopicName, topicCode) {
+    _lessonData         = lessonData;
+    _lessonSlideIdx     = 0;
+    _lessonSubtopicName = subtopicName;
+    _lessonTopicCode    = topicCode;
+    _renderLessonSlide(0);
+  }
+
+  function _renderLessonSlide(idx) {
+    const slides = _lessonData?.slides || [];
+    const slide  = slides[idx];
+    if (!slide) return;
+    _lessonSlideIdx = idx;
+    App.setStage('Maths');
+
+    const isFirst = idx === 0;
+    const isLast  = idx === slides.length - 1;
+
+    // Key facts panel — shown on last slide
+    const keyFacts = _lessonData?.keyFacts || [];
+    const keyFactsHtml = isLast && keyFacts.length ? `
+      <div style="margin-top:1.25rem;padding:0.85rem 1rem;background:rgba(58,143,196,0.07);
+        border:1px solid rgba(58,143,196,0.2);border-radius:12px">
+        <div style="font-size:0.72rem;font-weight:700;color:var(--blue);letter-spacing:0.06em;margin-bottom:0.55rem">KEY FACTS</div>
+        ${keyFacts.map(kf => `
+          <div style="margin-bottom:0.55rem">
+            <div style="font-size:0.87rem;line-height:1.55;color:var(--text)">${kf.fact}</div>
+            ${kf.examTip ? `<div style="font-size:0.78rem;color:var(--muted);margin-top:0.15rem">💡 ${kf.examTip}</div>` : ''}
+          </div>`).join('')}
+      </div>` : '';
+
+    let slideHtml = '';
+
+    if (slide.type === 'concept') {
+      slideHtml = `
+        <h3 style="font-size:1.05rem;font-weight:700;margin:0 0 0.75rem">${slide.heading || ''}</h3>
+        <p style="font-size:0.92rem;line-height:1.7;color:var(--text);margin:0">${slide.body || ''}</p>`;
+
+    } else if (slide.type === 'formula') {
+      slideHtml = `
+        <h3 style="font-size:1.05rem;font-weight:700;margin:0 0 0.75rem">${slide.heading || ''}</h3>
+        ${slide.formula ? `<div style="text-align:center;font-size:1.35rem;font-weight:700;
+          background:var(--s2);padding:0.75rem 1rem;border-radius:10px;margin-bottom:0.85rem;
+          letter-spacing:0.02em">${slide.formula}</div>` : ''}
+        ${slide.formulaExplained ? `<p style="font-size:0.88rem;line-height:1.65;color:var(--text);margin:0 0 0.55rem">${slide.formulaExplained}</p>` : ''}
+        ${slide.whenToUse ? `<div style="font-size:0.83rem;color:var(--muted);border-left:3px solid var(--blue);
+          padding:0.35rem 0.65rem;margin-top:0.45rem">Use this when: ${slide.whenToUse}</div>` : ''}`;
+
+    } else if (slide.type === 'workedExample') {
+      const egSteps = (slide.steps || []).map((s, i) => `
+        <div style="display:flex;gap:0.65rem;margin-bottom:0.6rem;align-items:flex-start">
+          <div style="min-width:22px;width:22px;height:22px;border-radius:50%;background:var(--blue);
+            color:#fff;font-size:0.72rem;font-weight:700;display:flex;align-items:center;
+            justify-content:center;flex-shrink:0;margin-top:0.1rem">${s.stepNumber || i+1}</div>
+          <div>
+            <div style="font-size:0.86rem;font-weight:600;color:var(--text)">${s.instruction || ''}</div>
+            ${s.working ? `<div style="font-size:0.83rem;color:var(--muted);margin-top:0.1rem;font-family:monospace">${s.working}</div>` : ''}
+            ${s.result ? `<div style="font-size:0.84rem;color:var(--green);margin-top:0.1rem;font-weight:600">= ${s.result}</div>` : ''}
+          </div>
+        </div>`).join('');
+      slideHtml = `
+        <h3 style="font-size:1.05rem;font-weight:700;margin:0 0 0.75rem">${slide.heading || "Let's work through one"}</h3>
+        ${slide.question ? `<div style="font-size:0.9rem;background:var(--s2);padding:0.65rem 0.85rem;
+          border-radius:10px;margin-bottom:0.85rem;line-height:1.6">${slide.question}</div>` : ''}
+        <div>${egSteps}</div>
+        ${slide.conclusion ? `<div style="font-size:0.88rem;font-weight:600;color:var(--green);
+          padding-top:0.55rem;border-top:1px solid var(--border2);margin-top:0.55rem">
+          ✓ ${slide.conclusion}</div>` : ''}`;
+
+    } else if (slide.type === 'commonMistakes') {
+      const mistakesHtml = (slide.mistakes || []).map(m => `
+        <div style="margin-bottom:0.75rem;padding:0.65rem 0.85rem;background:rgba(220,53,69,0.05);
+          border-left:3px solid rgba(220,53,69,0.35);border-radius:0 8px 8px 0">
+          <div style="font-size:0.85rem;color:#c0392b;font-weight:600;margin-bottom:0.2rem">✗ ${m.mistake}</div>
+          <div style="font-size:0.83rem;color:var(--muted)">✓ ${m.correction}</div>
+        </div>`).join('');
+      slideHtml = `
+        <h3 style="font-size:1.05rem;font-weight:700;margin:0 0 0.75rem">${slide.heading || 'Watch out for this'}</h3>
+        ${mistakesHtml}`;
+    }
+
+    const escapedName = (_lessonSubtopicName || '').replace(/'/g, "\\'");
+    const navHtml = `
+      <div style="display:flex;gap:0.6rem;margin-top:1.25rem;flex-wrap:wrap;align-items:center">
+        ${!isFirst ? `<button class="btn" onclick="Maths._lessonPrev()">← Previous</button>` : ''}
+        ${isLast
+          ? `<button class="btn pri" onclick="Maths._startQuestion('${_lessonData.id}','${escapedName}','${_lessonTopicCode}')">Start practising →</button>`
+          : `<button class="btn pri" onclick="Maths._lessonNext()">Next →</button>`}
+      </div>`;
+
+    document.getElementById('main').innerHTML = `
+      <div style="max-width:640px">
+        <div class="topic-header" style="margin-bottom:0.85rem">
+          <button class="back-btn" onclick="Maths._showTopic('${_lessonTopicCode}')">← Back</button>
+          <h2>${_lessonSubtopicName || ''}</h2>
+        </div>
+        <div style="font-size:0.78rem;color:var(--muted);margin-bottom:1rem">
+          Slide ${idx + 1} of ${slides.length}
+        </div>
+        <div style="background:var(--s1);border:1.5px solid var(--border2);border-radius:14px;padding:1.5rem">
+          ${slideHtml}
+          ${keyFactsHtml}
+        </div>
+        ${navHtml}
+      </div>`;
+  }
+
+  function _lessonNext() {
+    const slides = _lessonData?.slides || [];
+    if (_lessonSlideIdx < slides.length - 1) {
+      _renderLessonSlide(_lessonSlideIdx + 1);
+    }
+  }
+
+  function _lessonPrev() {
+    if (_lessonSlideIdx > 0) {
+      _renderLessonSlide(_lessonSlideIdx - 1);
+    }
   }
 
   // ── QUESTION INTERFACE ────────────────────────────────────────
@@ -230,6 +373,9 @@ const Maths = (() => {
 
     document.getElementById('main').innerHTML = `
       <div class="maths-q-page" id="mathsQPage">
+        <div style="padding:0.1rem 0 0.4rem">
+          <button class="back-btn" onclick="Maths._showTopic('${topicCode}')">← Back to topic</button>
+        </div>
         <div class="maths-tabs">
           <div class="maths-tab active" id="tabQ"  onclick="Maths._switchTab('question')">Question</div>
           <div class="maths-tab"        id="tabEg" onclick="Maths._switchTab('example')">Worked example</div>
@@ -825,7 +971,12 @@ const Maths = (() => {
     open,
     _showHome,
     _showTopic,
+    _selectSubtopic,
     _startQuestion,
+    _showLesson,
+    _renderLessonSlide,
+    _lessonNext,
+    _lessonPrev,
     _checkStep,
     _skipStep,
     _showHint,

@@ -389,11 +389,11 @@ function showSubjectPicker() {
   App.setStage('Subjects');
 
   const subjects = [
-    { id: 'biology',   label: 'Biology',     icon: '🧬', sub: 'AQA Separate Science · Papers 1 & 2', available: true  },
-    { id: 'chemistry', label: 'Chemistry',   icon: '⚗️', sub: 'AQA Separate Science · Papers 1 & 2', available: true  },
-    { id: 'physics',   label: 'Physics',     icon: '⚡', sub: 'AQA Separate Science · Papers 1 & 2', available: true  },
-    { id: 'geography', label: 'Geography',   icon: '🌍', sub: 'AQA · Papers 1, 2 & 3',               available: true  },
-    { id: 'sociology', label: 'Sociology',   icon: '👥', sub: 'AQA · Papers 1 & 2',                  available: true  },
+    { id: 'biology',   label: 'Biology',     icon: '🧬', sub: 'AQA Separate Science', available: true  },
+    { id: 'chemistry', label: 'Chemistry',   icon: '⚗️', sub: 'AQA Separate Science', available: true  },
+    { id: 'physics',   label: 'Physics',     icon: '⚡', sub: 'AQA Separate Science', available: true  },
+    { id: 'geography', label: 'Geography',   icon: '🌍', sub: 'AQA',                  available: true  },
+    { id: 'sociology', label: 'Sociology',   icon: '👥', sub: 'AQA',                  available: true  },
     { id: 'maths',     label: 'Maths',       icon: '📐', sub: 'AQA · GCSE Maths',                    available: true  },
     { id: 'english',   label: 'English Lit', icon: '📚', sub: 'Coming soon',                          available: false },
   ];
@@ -457,7 +457,7 @@ function _comingSoonSubject(subjectName) {
   document.getElementById('main').innerHTML = `
     <div style="max-width:500px">
       <div class="topic-header">
-        <button class="back-btn" onclick="showSubjectPicker()">← Subjects</button>
+        <button class="back-btn" onclick="showSubjectPicker()">← Back</button>
         <h2>Coming soon</h2>
       </div>
       <div style="background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:1.5rem;text-align:center">
@@ -1002,6 +1002,7 @@ function showCardDeck() {
 // "X days left" → "X days to prepare", "running out of time" → remove.
 function showTestPrep() {
   App.setStage('Test prep');
+  const canUpload = AI.hasKey();
   document.getElementById('main').innerHTML = `
     <div style="max-width:600px">
       <div class="topic-header">
@@ -1009,7 +1010,8 @@ function showTestPrep() {
         <h2>🎯 Getting ready for a test?</h2>
       </div>
 
-      <div style="background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:1.25rem 1.3rem;margin-bottom:1rem">
+      ${canUpload ? `
+      <div id="tpUploadSection" style="background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:1.25rem 1.3rem;margin-bottom:1rem">
         <p style="font-size:0.88rem;color:var(--muted);margin-bottom:0.85rem">Upload a photo or PDF of your school timetable — I'll find your upcoming tests and build a revision plan for each one.</p>
         <label class="upload-zone" id="uploadZone">
           <input type="file" id="scheduleFile" accept=".pdf,image/*" style="display:none">
@@ -1019,11 +1021,14 @@ function showTestPrep() {
         </label>
         <div id="uploadStatus" style="margin-top:0.65rem"></div>
       </div>
-
       <div class="or-divider"><span>or enter one test manually</span></div>
+      ` : ''}
 
       <div style="background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:1.25rem 1.3rem">
-        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:0.85rem">Tell me about one test and I'll build you a focused day-by-day revision plan.</p>
+        <p id="tpManualMsg" style="font-size:0.88rem;color:var(--muted);margin-bottom:0.85rem">${canUpload
+          ? 'Tell me about one test and I\'ll build you a focused day-by-day revision plan.'
+          : 'Photo upload isn\'t available right now. No problem — just enter your test details below.'
+        }</p>
         <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem">
           <select id="testSubject" onchange="_populateTopicDropdown(this.value)"
             style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none;width:100%;cursor:pointer">
@@ -1043,7 +1048,7 @@ function showTestPrep() {
       </div>
     </div>`;
 
-  _setupUploadZone();
+  if (canUpload) _setupUploadZone();
   _populateTopicDropdown('biology');
 }
 
@@ -1071,7 +1076,21 @@ function _setupUploadZone() {
   });
 }
 
+function _hideUploadShowManualMsg() {
+  const s = document.getElementById('tpUploadSection');
+  if (s) s.style.display = 'none';
+  const orDiv = document.querySelector('.or-divider');
+  if (orDiv) orDiv.style.display = 'none';
+  const msg = document.getElementById('tpManualMsg');
+  if (msg) msg.textContent = "Photo upload isn't available right now. No problem — just enter your test details below.";
+}
+
 async function _handleScheduleUpload(file) {
+  if (!AI.hasKey()) {
+    _hideUploadShowManualMsg();
+    return;
+  }
+
   const status = document.getElementById('uploadStatus');
   if (status) {
     status.innerHTML = `<p style="font-size:0.82rem;color:var(--muted);text-align:center">⏳ Reading <strong style="color:var(--text)">${file.name}</strong>…</p>`;
@@ -1102,9 +1121,7 @@ async function _handleScheduleUpload(file) {
     if (!Array.isArray(tests) || !tests.length) throw new Error('empty');
     _renderSchedule(tests);
   } catch {
-    if (status) {
-      status.innerHTML = `<p style="font-size:0.82rem;color:var(--red)">Couldn't find any tests in that file. Try a clearer photo, or enter your test details manually below.</p>`;
-    }
+    _hideUploadShowManualMsg();
   }
 }
 

@@ -237,12 +237,21 @@ const MathsWarmup = (() => {
     return "Tricky one today. Don't worry — this is exactly what we're here for. Lesson coming up.";
   }
 
+  // ── Subtitles shown at session start ──────────────────────────
+  const _SUBTITLES = [
+    'Five quick ones — no calculator, just to get your brain moving.',
+    'Quick arithmetic warm-up before we start. No calculator.',
+    "Let's wake your brain up first. Five questions, no calculator.",
+    'Warm-up time. Five questions, no calculator needed.',
+  ];
+
   // ── Module state ──────────────────────────────────────────────
 
   let _questions = [];
   let _current   = 0;
   let _score     = 0;
   let _callback  = null;
+  let _subtitle  = '';
 
   // ── Public API ────────────────────────────────────────────────
 
@@ -255,6 +264,7 @@ const MathsWarmup = (() => {
     _questions = _generateSet(getLevel());
     _current   = 0;
     _score     = 0;
+    _subtitle  = _SUBTITLES[Math.floor(Math.random() * _SUBTITLES.length)];
     _renderOverlay();
   }
 
@@ -285,6 +295,12 @@ const MathsWarmup = (() => {
     setTimeout(() => { el.remove(); if (_callback) _callback(); }, 320);
   }
 
+  // Skip: marks today as done so warmup doesn't re-appear, no score stored.
+  function skipWarmup() {
+    Store.set(DATE_KEY, _localDate());
+    dismiss();
+  }
+
   // ── Private rendering ─────────────────────────────────────────
 
   function _renderOverlay() {
@@ -312,7 +328,8 @@ const MathsWarmup = (() => {
         <div style="text-align:center;margin-bottom:1.25rem">
           <div style="font-size:2rem;margin-bottom:0.4rem">🧮</div>
           <h2 style="font-family:'Playfair Display',serif;font-size:1.35rem;margin-bottom:0.25rem;letter-spacing:-0.02em">Quick warm-up</h2>
-          <p style="font-size:0.82rem;color:var(--muted)">5 questions · no calculator · question ${_current + 1} of 5</p>
+          <p style="font-size:0.87rem;color:var(--muted);margin-bottom:0.3rem">${_subtitle}</p>
+          ${_current === 0 ? `<a onclick="MathsWarmup.skipWarmup()" style="font-size:0.76rem;color:var(--muted);text-decoration:underline;cursor:pointer;opacity:0.7">Skip today</a>` : `<p style="font-size:0.78rem;color:var(--muted);opacity:0.6">question ${_current + 1} of 5</p>`}
         </div>
         <div style="display:flex;gap:5px;justify-content:center;margin-bottom:1.5rem">${pips}</div>
         <div id="wu-card" style="background:var(--s1);border:1.5px solid var(--border2);border-radius:16px;padding:1.75rem">
@@ -421,6 +438,6 @@ const MathsWarmup = (() => {
     return Math.abs(num - q.answer) <= tol;
   }
 
-  return { start, submit, dismiss, needsWarmup, getLevel };
+  return { start, submit, dismiss, skipWarmup, needsWarmup, getLevel };
 
 })();

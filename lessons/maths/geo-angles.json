@@ -1,0 +1,85 @@
+{
+  "id": "geo-angles",
+  "subject": "maths",
+  "topic": "M4",
+  "subtopic": "geo-angles",
+  "title": "Angles — rules and proofs",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Angles — the rules that hold everything together",
+      "body": "Angles describe how much something turns, measured in degrees. A handful of rules govern almost every angle problem you'll meet: angles on a straight line always add to 180°, angles around a point always add to 360°, and the three angles inside any triangle always add to 180°. When a line crosses two parallel lines it creates pairs of angles with special relationships — knowing those relationships lets you find any missing angle in a diagram without measuring.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Core angle rules",
+      "formula": "Angles on a straight line = 180° | Angles around a point = 360° | Angles in a triangle = 180° | Angles in a quadrilateral = 360° | Corresponding angles (F-shape) are equal | Alternate angles (Z-shape) are equal | Co-interior angles (C-shape) add to 180°",
+      "formulaExplained": "Angles on a straight line sum to 180° — they form a half-turn. Angles around a full point sum to 360° — a complete turn. The interior angles of any triangle sum to 180°; for a quadrilateral, 360°. Parallel-line rules: corresponding angles (same position at each crossing, making an F-shape) are equal; alternate angles (opposite sides of the transversal, making a Z-shape) are equal; co-interior angles (same side of the transversal, making a C-shape) add to 180°.",
+      "whenToUse": "Any problem with intersecting lines, triangles, quadrilaterals, or parallel lines crossed by a transversal. Always state the rule you're using as part of your working.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Two parallel lines are cut by a transversal. One angle formed is 68°. Find the co-interior angle on the same side of the transversal.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Identify the angle relationship. The two angles are on the same side of the transversal between the parallel lines — that makes them co-interior angles.",
+          "working": "Co-interior angles add to 180°.",
+          "result": "Rule identified: co-interior"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Subtract the known angle from 180°.",
+          "working": "180° − 68° = 112°",
+          "result": "112°"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "State the answer with the reason.",
+          "working": "The co-interior angle is 112° (co-interior angles between parallel lines sum to 180°).",
+          "result": "112°"
+        }
+      ],
+      "conclusion": "The co-interior angle is 112°.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Confusing alternate and co-interior angles — saying Z-shape angles add to 180° instead of being equal.",
+          "correction": "Alternate angles (Z-shape) are equal. Co-interior angles (C-shape, also called allied or same-side interior) add to 180°. Draw the letter in the diagram to remind yourself which rule to use."
+        },
+        {
+          "mistake": "Not writing a reason — just writing the number without stating the angle rule used.",
+          "correction": "Exam mark schemes award a mark for the correct reason as well as the value. Always write e.g. 'alternate angles are equal' or 'angles on a straight line sum to 180°'."
+        },
+        {
+          "mistake": "Applying parallel-line rules to lines that are not stated as parallel.",
+          "correction": "The F, Z and C rules only apply when the lines are explicitly parallel (shown by arrows or stated in the question). If the lines aren't parallel, you cannot use those rules."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Angles on a straight line = 180°. Angles around a point = 360°. Angles in a triangle = 180°.",
+      "examTip": "Write the rule in words next to every angle you calculate — examiners reward the reasoning, not just the number."
+    },
+    {
+      "fact": "Alternate angles (Z-shape) are equal. Co-interior angles (C-shape) add to 180°. Corresponding angles (F-shape) are equal.",
+      "examTip": "Sketch the letter shape (Z, C or F) on the diagram to identify the rule quickly under pressure."
+    },
+    {
+      "fact": "The exterior angle of a triangle equals the sum of the two opposite interior angles.",
+      "examTip": "This shortcut avoids a two-step calculation: you don't need to find the third interior angle first."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

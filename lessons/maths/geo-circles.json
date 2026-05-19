@@ -1,0 +1,85 @@
+{
+  "id": "geo-circles",
+  "subject": "maths",
+  "topic": "M4",
+  "subtopic": "geo-circles",
+  "title": "Circle theorems",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Circle theorems — angle rules that come from the circle's symmetry",
+      "body": "A set of angle rules governs triangles and quadrilaterals drawn inside or on circles — these are circle theorems, and they all follow from the symmetry of the circle. You need to recognise the geometric setup in a diagram (e.g. two radii forming a triangle, an angle at the centre vs the circumference) before you can apply the correct rule. Being able to state the theorem you used — not just give the angle — is essential for full marks.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Circle measurements and key theorems",
+      "formula": "Circumference = πd  or  2πr  |  Area = πr²  |  Angle at centre = 2 × angle at circumference (same arc)  |  Angle in a semicircle = 90°  |  Angles in the same segment are equal  |  Opposite angles of a cyclic quadrilateral add to 180°  |  Tangent is perpendicular to radius at the point of contact",
+      "formulaExplained": "For a circle of radius r (or diameter d = 2r): circumference is the distance all the way round (πd or equivalently 2πr); area is the flat space inside (πr²). For angle theorems: an angle at the centre is exactly double the angle at the circumference when both are subtended by the same arc. An angle inscribed in a semicircle is always 90°. Two angles in the same segment (same side of a chord) are equal. In a cyclic quadrilateral (all four vertices on the circle), opposite angles add to 180°. A tangent meets the radius at exactly 90°.",
+      "whenToUse": "Any question involving a circle diagram with points on the circumference, angles at the centre, chords, tangents, or a cyclic quadrilateral. State the theorem by name in your working.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "O is the centre of a circle. Points A and B are on the circumference. The angle AOB at the centre is 112°. Find the angle ACB at the circumference, where C is another point on the major arc.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Identify the theorem. Angle AOB is at the centre; angle ACB is at the circumference — both are subtended by arc AB. This is the angle at the centre theorem.",
+          "working": "Angle at centre = 2 × angle at circumference",
+          "result": "Theorem identified"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Rearrange to find the circumference angle.",
+          "working": "Angle ACB = 112° ÷ 2 = 56°",
+          "result": "56°"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "State the answer with the reason.",
+          "working": "Angle ACB = 56° (angle at the centre is twice the angle at the circumference, subtended by the same arc).",
+          "result": "56°"
+        }
+      ],
+      "conclusion": "Angle ACB = 56°.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Doubling the circumference angle to get the centre angle instead of halving the centre angle — getting 224° instead of 56°.",
+          "correction": "The centre angle is the larger one: centre = 2 × circumference. If you're finding the circumference angle, divide the centre angle by 2, not multiply."
+        },
+        {
+          "mistake": "Using the circumference formula (2πr) for area, or the area formula (πr²) for circumference — mixing up the two.",
+          "correction": "Circumference = distance around the edge → 2πr or πd (one factor of r). Area = space inside → πr² (r squared). The squared symbol in πr² is the trigger: that formula gives area."
+        },
+        {
+          "mistake": "Not stating the theorem used — just writing the angle without justification.",
+          "correction": "In circle theorem questions, the reason is worth marks. Write the full theorem name: e.g. 'angle in a semicircle = 90°' or 'opposite angles of a cyclic quadrilateral sum to 180°'."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Circumference = πd = 2πr. Area = πr². These are two different quantities — circumference is the perimeter (linear), area is the space inside (squared units).",
+      "examTip": "If a question gives a diameter, halve it to get r before using A = πr². Using d instead of r in the area formula gives an answer four times too large."
+    },
+    {
+      "fact": "Angle at the centre = 2 × angle at the circumference (same arc). Angle in a semicircle = 90°.",
+      "examTip": "The semicircle rule is a special case of the centre theorem: the angle at the centre is 180° (a diameter), so the circumference angle is 90°."
+    },
+    {
+      "fact": "Opposite angles in a cyclic quadrilateral add to 180°. Angles in the same segment are equal.",
+      "examTip": "Draw the chord that creates the segment — angles in the same segment are on the same side of that chord. If they're on opposite sides, they are supplementary (add to 180°), not equal."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

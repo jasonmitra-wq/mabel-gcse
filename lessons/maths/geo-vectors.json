@@ -1,0 +1,85 @@
+{
+  "id": "geo-vectors",
+  "subject": "maths",
+  "topic": "M4",
+  "subtopic": "geo-vectors",
+  "title": "Vectors",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Vectors — direction and distance written as a single object",
+      "body": "A vector describes a movement that has both a size (magnitude) and a direction — unlike an ordinary number, which only has size. A column vector is written as two numbers stacked vertically in a bracket: the top number is the horizontal component (positive = right, negative = left) and the bottom number is the vertical component (positive = up, negative = down). Vectors are usually labelled with a bold letter (a) or an underlined letter (a), and the vector from point A to point B is written as AB with an arrow over it. The same column vector applied to different starting points creates parallel, equal-length movements — so two vectors are equal if and only if they have the same column vector, regardless of where they start.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Vector operations",
+      "formula": "Column vector: (x over y) where x = horizontal shift (+ right, − left), y = vertical shift (+ up, − down)  |  Addition: a + b = (a₁ + b₁) over (a₂ + b₂)  |  Subtraction: a − b = (a₁ − b₁) over (a₂ − b₂)  |  Scalar multiplication: k·a = (ka₁) over (ka₂)  |  Magnitude: |a| = √(x² + y²)",
+      "formulaExplained": "To add two column vectors, add the top numbers together and the bottom numbers together separately — never mix the rows. To subtract, subtract each component. Multiplying by a scalar k scales both components by k — this changes the magnitude but keeps the direction (or reverses it if k is negative). The magnitude (length) of vector (x, y) is found using Pythagoras: √(x² + y²). The negative of a vector reverses its direction: −a has the same length as a but points the opposite way.",
+      "whenToUse": "Any question involving vector paths across a diagram, proving lines are parallel, finding midpoints using vectors, or showing points are collinear. For path questions, break the journey into known vectors and combine using addition/subtraction.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Vector a = (3 over 1) and vector b = (−1 over 4). Find: (a) a + b, (b) 2a − b.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Add the vectors: add the top components and the bottom components separately.",
+          "working": "a + b = (3 + (−1)) over (1 + 4) = (2) over (5)",
+          "result": "(2 over 5)"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Calculate 2a by multiplying each component of a by 2.",
+          "working": "2a = (2×3) over (2×1) = (6) over (2)",
+          "result": "(6 over 2)"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Subtract b from 2a: subtract each component.",
+          "working": "2a − b = (6 − (−1)) over (2 − 4) = (7) over (−2)",
+          "result": "(7 over −2)"
+        }
+      ],
+      "conclusion": "a + b = (2 over 5);  2a − b = (7 over −2).",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Adding the x-component to the y-component — writing a + b = (3 + 4) or combining the rows instead of keeping them separate.",
+          "correction": "Vectors add component by component: top with top, bottom with bottom. Never add across rows. Think of the top and bottom as completely separate calculations."
+        },
+        {
+          "mistake": "Reversing the sign when finding −a or when subtracting — forgetting that −(−1) = +1 when subtracting a negative component.",
+          "correction": "When you subtract vector b, you are adding −b. Reverse the sign of every component of b, then add. −(−1 over 4) = (1 over −4). Take care with double negatives."
+        },
+        {
+          "mistake": "Confusing the direction of vector AB with BA — writing the vector from A to B as the negative of what it should be.",
+          "correction": "AB means 'start at A, travel to B'. BA means the reverse — exactly −AB. If AB = (4 over −2), then BA = (−4 over 2). The arrow over the letters tells you the direction."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "A column vector (x over y) means move x units horizontally (+ = right) and y units vertically (+ = up). Top row is always horizontal; bottom row is always vertical.",
+      "examTip": "Label the components before calculating: 'x-component = ..., y-component = ...' — this prevents mixing up rows in multi-step questions."
+    },
+    {
+      "fact": "To add vectors: add each component separately. To subtract: subtract each component. To scale: multiply each component by the scalar.",
+      "examTip": "Never add a top component to a bottom component. Each row is an independent calculation."
+    },
+    {
+      "fact": "Two vectors are parallel if one is a scalar multiple of the other. Three points are collinear if the vector between any two of them is a scalar multiple of the vector between another two.",
+      "examTip": "To prove collinearity in an exam: show one vector is a multiple of another and they share a common point — state both conditions explicitly."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

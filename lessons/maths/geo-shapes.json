@@ -1,0 +1,85 @@
+{
+  "id": "geo-shapes",
+  "subject": "maths",
+  "topic": "M4",
+  "subtopic": "geo-shapes",
+  "title": "Properties of 2D and 3D shapes",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Shapes — knowing what you're looking at before you calculate",
+      "body": "Every 2D polygon has a fixed angle sum that depends only on how many sides it has — not its size or whether it's regular. For 3D shapes, you need to know the faces, edges and vertices because exam questions use them to set up surface area and volume problems. Learning the key properties of quadrilaterals (which sides are equal, which angles are equal, which diagonals bisect) saves time because you can read off information directly rather than calculating it.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Polygon angle sums",
+      "formula": "Sum of interior angles = (n − 2) × 180°  |  Each interior angle of a regular polygon = (n − 2) × 180° ÷ n  |  Each exterior angle of a regular polygon = 360° ÷ n",
+      "formulaExplained": "n is the number of sides. Any polygon can be split into (n − 2) triangles, each contributing 180°, giving the total interior angle sum. For a regular polygon all interior angles are equal, so divide the total by n. The exterior angles of any polygon always add to 360°, so each exterior angle of a regular polygon is 360° ÷ n. Interior angle + exterior angle = 180° (they form a straight line).",
+      "whenToUse": "Finding a missing angle in any polygon, or checking whether a shape is regular. Also used when a question names a polygon and asks for an angle without giving a diagram.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A regular octagon has 8 sides. Find (a) the sum of its interior angles, and (b) each interior angle.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Use the interior angle sum formula with n = 8.",
+          "working": "(8 − 2) × 180° = 6 × 180° = 1080°",
+          "result": "1080°"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Divide by the number of sides to find each interior angle (regular octagon, so all angles are equal).",
+          "working": "1080° ÷ 8 = 135°",
+          "result": "135°"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Check using the exterior angle: 360° ÷ 8 = 45°. Interior + exterior should = 180°.",
+          "working": "135° + 45° = 180° ✓",
+          "result": "Check passed ✓"
+        }
+      ],
+      "conclusion": "The sum of interior angles is 1080°; each interior angle is 135°.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Using (n − 2) × 180 without subtracting 2 — writing n × 180 instead.",
+          "correction": "The formula is (n − 2) × 180°. A triangle has 3 sides: (3 − 2) × 180 = 180°. That's the check — if n = 3 gives 180°, your formula is right."
+        },
+        {
+          "mistake": "Confusing interior and exterior angles — using the exterior angle where the interior is needed, or vice versa.",
+          "correction": "Interior angle is inside the polygon. Exterior angle is formed by extending one side. They always add to 180° for any polygon. Write the labels on the diagram before answering."
+        },
+        {
+          "mistake": "Applying the regular-polygon formula to an irregular polygon — dividing the angle sum by n even when the angles aren't all equal.",
+          "correction": "The formula each angle = (n − 2) × 180° ÷ n only works for regular polygons. For irregular polygons, you need the individual angle values to find a missing one."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Sum of interior angles of any polygon = (n − 2) × 180°, where n is the number of sides.",
+      "examTip": "Memorise the common values: triangle 180°, quadrilateral 360°, pentagon 540°, hexagon 720°, octagon 1080°."
+    },
+    {
+      "fact": "Exterior angles of any polygon always add to 360°, whether regular or irregular.",
+      "examTip": "For a regular polygon, each exterior angle = 360° ÷ n. This is often faster than the interior angle formula."
+    },
+    {
+      "fact": "A square has 4 equal sides and 4 right angles. A rhombus has 4 equal sides but angles are not 90°. A rectangle has equal diagonals; a rhombus has diagonals that bisect at right angles.",
+      "examTip": "Exam questions often rely on knowing which quadrilateral has which diagonal properties — don't confuse rhombus with square."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

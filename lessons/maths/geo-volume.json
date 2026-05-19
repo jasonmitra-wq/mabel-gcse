@@ -1,0 +1,85 @@
+{
+  "id": "geo-volume",
+  "subject": "maths",
+  "topic": "M4",
+  "subtopic": "geo-volume",
+  "title": "Volume of 3D shapes",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Volume — how much space a 3D shape fills",
+      "body": "Volume measures the three-dimensional space inside a solid shape, so it's always given in cubic units (cm³, m³, mm³). The general rule for any prism is the same: find the area of the cross-section and multiply by the length (or height). A cylinder is a circular prism, so its volume follows exactly the same logic — you just need the area of the circular face first.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Volume formulae",
+      "formula": "Cuboid: V = l × w × h  |  Any prism: V = area of cross-section × length  |  Cylinder: V = πr²h  |  Cone: V = ⅓πr²h  |  Sphere: V = (4/3)πr³  |  Pyramid: V = ⅓ × base area × height",
+      "formulaExplained": "A cuboid has length l, width w and height h — multiply all three. Any prism (triangular, hexagonal, etc.) has a constant cross-section shape; find that area and multiply by the length the prism extends. A cylinder is a circular prism: the cross-section is a circle with area πr² (r is the radius), and h is the perpendicular height. Cone and pyramid volumes are one-third of the corresponding prism or cylinder with the same base.",
+      "whenToUse": "Any question about the space inside a 3D solid. Check units — if measurements are in cm, volume is in cm³. Surface area is a different calculation (sum of all face areas).",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A cylinder has a radius of 4 cm and a height of 11 cm. Calculate its volume. Give your answer in terms of π.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Write the cylinder volume formula and identify r and h.",
+          "working": "V = πr²h. Here r = 4 cm, h = 11 cm.",
+          "result": "Formula and values identified"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Calculate r² first.",
+          "working": "r² = 4² = 16",
+          "result": "16"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Multiply π × r² × h.",
+          "working": "V = π × 16 × 11 = 176π",
+          "result": "176π cm³"
+        }
+      ],
+      "conclusion": "The volume of the cylinder is 176π cm³ (≈ 552.9 cm³).",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Using the diameter instead of the radius in V = πr²h — substituting d = 8 when the question gives a diameter of 8 cm.",
+          "correction": "r is always the radius — half the diameter. If the question gives a diameter, halve it before substituting. Double-check by re-reading the question after writing r = ..."
+        },
+        {
+          "mistake": "Confusing volume (cm³) with surface area (cm²) — calculating the wrong quantity.",
+          "correction": "Volume is how much fits inside — cubic units. Surface area is the total area of all faces — square units. Read the question carefully for the word 'volume' or 'surface area'."
+        },
+        {
+          "mistake": "Forgetting the ⅓ for cones and pyramids — using V = πr²h instead of V = ⅓πr²h.",
+          "correction": "A cone holds exactly one-third the volume of a cylinder with the same base and height. Always include ⅓ for cones and pyramids. These formulae are given on the formula sheet — use it."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Volume of a cylinder = πr²h. The cross-section is a circle (area = πr²), multiplied by the height h.",
+      "examTip": "Square the radius before multiplying by π and h — a common error is to write π × r × h, forgetting to square r."
+    },
+    {
+      "fact": "Any prism: V = cross-sectional area × length. Identify the cross-section first, then apply the correct area formula.",
+      "examTip": "For a triangular prism, find the triangle area (½ × base × height) first, then multiply by the prism's length — don't try to do it in one step."
+    },
+    {
+      "fact": "Cone: V = ⅓πr²h. Sphere: V = (4/3)πr³. Pyramid: V = ⅓ × base area × height. All three are given on the formula sheet.",
+      "examTip": "Don't memorise cone and sphere formulae under pressure — turn to the formula sheet. But do understand which variable is the radius and which is the height."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

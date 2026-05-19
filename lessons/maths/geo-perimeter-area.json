@@ -1,0 +1,85 @@
+{
+  "id": "geo-perimeter-area",
+  "subject": "maths",
+  "topic": "M4",
+  "subtopic": "geo-perimeter-area",
+  "title": "Perimeter and area",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Perimeter and area — two different things that easy to mix up",
+      "body": "Perimeter is the total distance around the outside of a shape — you add up every side length. Area is the amount of flat space inside a shape — it's always measured in square units (cm², m², etc.). The two are completely different measurements, but exam questions often give you one and ask for the other, so make sure you read what's actually being asked.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Area formulae for 2D shapes",
+      "formula": "Rectangle: A = l × w  |  Triangle: A = ½ × b × h  |  Parallelogram: A = b × h  |  Trapezium: A = ½(a + b) × h  |  Circle: A = πr²",
+      "formulaExplained": "For a rectangle, multiply length by width. For a triangle, the height must be perpendicular to the base (the vertical height, not the slant side). A parallelogram uses the same formula as a rectangle — base × perpendicular height, not the slant side. For a trapezium, a and b are the two parallel sides and h is the perpendicular distance between them; halve the sum of the parallel sides and multiply by height. Circle area uses the radius squared multiplied by π.",
+      "whenToUse": "Any question asking for the area of a 2D shape. Always check units — if lengths are in cm, area is in cm². Compound shapes: split into simpler shapes, find each area separately, then add (or subtract for cut-outs).",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A trapezium has parallel sides of 9 cm and 5 cm, and a perpendicular height of 6 cm. Find its area.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Write the trapezium area formula. Identify a, b and h.",
+          "working": "A = ½(a + b) × h. Here a = 9, b = 5, h = 6.",
+          "result": "Formula and values identified"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Add the parallel sides.",
+          "working": "9 + 5 = 14",
+          "result": "14"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Multiply by ½ and then by h.",
+          "working": "½ × 14 × 6 = 7 × 6 = 42",
+          "result": "42 cm²"
+        }
+      ],
+      "conclusion": "The area of the trapezium is 42 cm².",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Using the slant height instead of the perpendicular height in the triangle or trapezium formula.",
+          "correction": "The height h must be at right angles to the base. If the diagram shows a slant side but not a vertical height, look for a small right-angle symbol or use Pythagoras to find the perpendicular height."
+        },
+        {
+          "mistake": "Forgetting to halve in the triangle formula — writing A = b × h instead of A = ½ × b × h.",
+          "correction": "A triangle is exactly half a parallelogram with the same base and height. Always include the ½. Writing ½bh and then dividing by 2 again is a common double-error — do one or the other."
+        },
+        {
+          "mistake": "Giving area in linear units (e.g. cm) instead of square units (cm²).",
+          "correction": "Area is always in square units. Write cm², m² or mm² — never just cm. If the question uses mixed units (some sides in cm, some in mm), convert everything to the same unit first."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Area of a trapezium = ½(a + b) × h, where a and b are the parallel sides and h is the perpendicular height.",
+      "examTip": "This formula is given on the formula sheet — but you must correctly identify which sides are parallel and which measurement is the perpendicular height."
+    },
+    {
+      "fact": "Area of a triangle = ½ × base × perpendicular height. The height must be at 90° to the base.",
+      "examTip": "In a non-right-angled triangle the height may be shown as a dashed line inside or outside the triangle — always measure to that dashed line, not to a slant edge."
+    },
+    {
+      "fact": "For compound shapes, split into rectangles and triangles, calculate each area separately, then add or subtract.",
+      "examTip": "Draw the split lines clearly on the diagram and label each part with its dimensions — this avoids using the wrong measurements in each sub-calculation."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

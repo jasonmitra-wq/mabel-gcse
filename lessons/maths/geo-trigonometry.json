@@ -1,0 +1,85 @@
+{
+  "id": "geo-trigonometry",
+  "subject": "maths",
+  "topic": "M4",
+  "subtopic": "geo-trigonometry",
+  "title": "Trigonometry — sin, cos, tan",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Trigonometry — linking angles to side lengths in right-angled triangles",
+      "body": "Trigonometry lets you find a missing side or angle in a right-angled triangle using the ratios between the sides. The three ratios — sine, cosine and tangent — each relate the reference angle (the one you're working from, not the right angle) to a specific pair of sides. To use them you need to correctly label which side is opposite the angle, which is adjacent to it, and which is the hypotenuse.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "SOH CAH TOA",
+      "formula": "sin θ = Opposite ÷ Hypotenuse  (SOH)  |  cos θ = Adjacent ÷ Hypotenuse  (CAH)  |  tan θ = Opposite ÷ Adjacent  (TOA)",
+      "formulaExplained": "Label the triangle from the reference angle θ (not the right angle): the Opposite side is directly across from θ; the Hypotenuse is the longest side, always opposite the right angle; the Adjacent side is next to θ but isn't the hypotenuse. SOH: sine equals Opposite over Hypotenuse. CAH: cosine equals Adjacent over Hypotenuse. TOA: tangent equals Opposite over Adjacent. To find a missing side: rearrange the ratio (e.g. Opposite = sin θ × Hypotenuse). To find a missing angle: use the inverse function (e.g. θ = sin⁻¹(Opposite ÷ Hypotenuse)).",
+      "whenToUse": "Any right-angled triangle where one angle (not the right angle) and one side are known. Choose the trig ratio that links the two sides involved in the question — one known and one unknown.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "In a right-angled triangle, the angle at A is 38° and the hypotenuse is 15 cm. Find the length of the side opposite angle A.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Label the sides relative to the 38° angle. The unknown side is Opposite (O); the known side is the Hypotenuse (H = 15 cm).",
+          "working": "O = ?, H = 15, angle = 38°. We have O and H, so use SOH: sin θ = O ÷ H.",
+          "result": "Ratio: sin θ = O/H"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Rearrange to make O the subject.",
+          "working": "O = H × sin θ = 15 × sin 38°",
+          "result": "O = 15 × sin 38°"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Calculate using a calculator. Make sure the calculator is in degree mode.",
+          "working": "sin 38° ≈ 0.6157. O = 15 × 0.6157 ≈ 9.24",
+          "result": "9.24 cm (3 s.f.)"
+        }
+      ],
+      "conclusion": "The side opposite the 38° angle is approximately 9.24 cm.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Mislabelling adjacent and opposite — labelling the side next to the right angle (not the reference angle) as 'opposite'.",
+          "correction": "Always label from the reference angle θ, not from the right angle. Opposite is directly across from θ. Adjacent is the other short side — it's next to θ and also next to the right angle."
+        },
+        {
+          "mistake": "Using the wrong ratio — e.g. using cos when sin is needed because both involve the hypotenuse.",
+          "correction": "Check which two sides appear in your question (known and unknown). SOH links O and H; CAH links A and H; TOA links O and A. Only one ratio contains both of your sides."
+        },
+        {
+          "mistake": "Forgetting to switch to degree mode on the calculator — getting an answer in radians.",
+          "correction": "Before any trig calculation, check the calculator shows 'D' or 'DEG' for degree mode. In radians, sin 38 gives approximately 0.2955 (not 0.6157). The two values look plausible but are very different."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "SOH CAH TOA: sin = O/H, cos = A/H, tan = O/A. Label sides from the reference angle θ: Opposite (across from θ), Adjacent (next to θ), Hypotenuse (opposite the right angle).",
+      "examTip": "Write O, A, H next to each side on the diagram before choosing a ratio — this one step prevents the most common errors."
+    },
+    {
+      "fact": "To find a missing side: rearrange the trig ratio. To find a missing angle: use the inverse (sin⁻¹, cos⁻¹ or tan⁻¹).",
+      "examTip": "To find a side, multiply: O = H × sin θ. Don't divide H by sin θ — that's the inverse formula for finding H, not O."
+    },
+    {
+      "fact": "Always check your calculator is in degree mode (DEG) before calculating. Radian mode gives completely different — and wrong — results.",
+      "examTip": "If your trig answer looks unreasonably large or small, the first thing to check is whether your calculator is in degrees."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

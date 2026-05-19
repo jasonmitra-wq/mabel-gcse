@@ -1,0 +1,85 @@
+{
+  "id": "geo-transformations",
+  "subject": "maths",
+  "topic": "M4",
+  "subtopic": "geo-transformations",
+  "title": "Transformations — rotation, reflection, translation, enlargement",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Transformations — four ways to move or resize a shape",
+      "body": "A transformation moves or changes a shape in a precise, rule-based way. There are four types: translation (sliding without turning), reflection (flipping in a mirror line), rotation (turning around a fixed point), and enlargement (scaling up or down from a centre point). The original shape is called the object and the result is called the image. Describing a transformation fully means stating the type and every piece of information needed to reproduce it exactly — marks are lost for partial descriptions.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "What to state for each transformation",
+      "formula": "Translation: vector (x over y) where x is right (+) or left (−) and y is up (+) or down (−)  |  Reflection: the equation of the mirror line  |  Rotation: angle, direction (clockwise/anticlockwise), centre of rotation  |  Enlargement: scale factor, centre of enlargement",
+      "formulaExplained": "Translation uses a column vector — top number is the horizontal shift (positive = right), bottom number is the vertical shift (positive = up). Reflection needs the mirror line written as an equation (e.g. y = x, x = 3). Rotation needs an angle (e.g. 90°), a direction, and the coordinates of the fixed point it rotates around. Enlargement needs the scale factor (if it's between 0 and 1, the image is smaller) and the centre point. For enlargement, image distance from centre = scale factor × object distance from centre.",
+      "whenToUse": "Any question asking you to perform or describe a transformation. Always name the type first, then provide all required information in a logical order.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Triangle A has vertices at (1, 1), (3, 1) and (3, 4). Translate it by the vector (−4 over 2). Write the coordinates of the image.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Add the column vector to each vertex. The top number (−4) is added to each x-coordinate; the bottom number (+2) is added to each y-coordinate.",
+          "working": "(1, 1) → (1 − 4, 1 + 2) = (−3, 3)",
+          "result": "(−3, 3)"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Apply the same vector to the second vertex.",
+          "working": "(3, 1) → (3 − 4, 1 + 2) = (−1, 3)",
+          "result": "(−1, 3)"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Apply the same vector to the third vertex.",
+          "working": "(3, 4) → (3 − 4, 4 + 2) = (−1, 6)",
+          "result": "(−1, 6)"
+        }
+      ],
+      "conclusion": "The image triangle has vertices at (−3, 3), (−1, 3) and (−1, 6).",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Describing a rotation without stating the centre — writing '90° clockwise' with no coordinates.",
+          "correction": "A rotation is not fully described without all three elements: angle, direction, and centre. Write e.g. 'Rotation, 90° clockwise, about the point (0, 0)'."
+        },
+        {
+          "mistake": "Confusing the direction of a translation vector — adding the y-value to x or treating a negative as going up.",
+          "correction": "In a column vector, the top number always acts on x (left–right) and the bottom always acts on y (up–down). Negative top = move left; negative bottom = move down."
+        },
+        {
+          "mistake": "Using a scale factor for enlargement without locating the centre — drawing the enlarged shape in the wrong position on the grid.",
+          "correction": "For each vertex of the object, draw a ray from the centre of enlargement through the vertex and extend it. The image vertex sits on that ray at a distance equal to scale factor × original distance from the centre."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "To fully describe a rotation: state angle, direction (clockwise or anticlockwise), and the coordinates of the centre of rotation.",
+      "examTip": "Losing one of these three elements loses a mark. Write all three even if the question seems to imply one of them."
+    },
+    {
+      "fact": "A translation is described by a column vector, not words like 'move 3 right and 2 down'. The top is horizontal movement (+ = right), the bottom is vertical (+ = up).",
+      "examTip": "Write the column vector with a proper bracket, not as a fraction — examiners distinguish the two."
+    },
+    {
+      "fact": "For an enlargement, scale factor = image length ÷ object length. If the scale factor is between 0 and 1, the image is smaller than the object.",
+      "examTip": "A negative scale factor places the image on the opposite side of the centre — the shape is both scaled and flipped through the centre."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

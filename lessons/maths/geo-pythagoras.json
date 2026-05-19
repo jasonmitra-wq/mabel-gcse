@@ -1,0 +1,85 @@
+{
+  "id": "geo-pythagoras",
+  "subject": "maths",
+  "topic": "M4",
+  "subtopic": "geo-pythagoras",
+  "title": "Pythagoras' theorem",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Pythagoras' theorem — the rule of right-angled triangles",
+      "body": "Pythagoras' theorem says that in any right-angled triangle, the square of the longest side equals the sum of the squares of the other two sides. The longest side — always opposite the right angle — is called the hypotenuse. The theorem lets you find any missing side as long as you know the other two, and it works in both directions: finding the hypotenuse (add the squares) or finding a shorter side (subtract one square from the other).",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Pythagoras' theorem",
+      "formula": "a² + b² = c²   where c is the hypotenuse (the side opposite the right angle — the longest side)",
+      "formulaExplained": "a and b are the two shorter sides (the legs) and c is the hypotenuse — the side directly across from the right-angle symbol. To find c: c = √(a² + b²). To find a missing shorter side: a = √(c² − b²). Always identify c first by locating the right angle; the hypotenuse is the side that doesn't touch the right angle. The theorem only works in right-angled triangles.",
+      "whenToUse": "Any question involving a right-angled triangle where two sides are known and the third is missing. Also used in coordinate geometry to find the distance between two points, and in 3D problems where you apply the theorem twice.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A right-angled triangle has legs of length 5 cm and 12 cm. Find the length of the hypotenuse.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Identify the hypotenuse. The right angle is between the two legs (5 cm and 12 cm), so the hypotenuse c is the unknown side opposite the right angle.",
+          "working": "a = 5, b = 12, c = ?",
+          "result": "c is the hypotenuse"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Apply Pythagoras' theorem: c² = a² + b².",
+          "working": "c² = 5² + 12² = 25 + 144 = 169",
+          "result": "c² = 169"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Take the square root to find c.",
+          "working": "c = √169 = 13",
+          "result": "13 cm"
+        }
+      ],
+      "conclusion": "The hypotenuse is 13 cm.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Squaring the hypotenuse instead of finding its square root — writing c = 169 instead of c = √169 = 13.",
+          "correction": "After calculating c² = 169, you must take the square root: c = √169 = 13. The theorem gives you c², not c. Always finish with a square root step when finding a side length."
+        },
+        {
+          "mistake": "Adding both squared values when finding a shorter side — using a² = b² + c² instead of a² = c² − b².",
+          "correction": "When finding a shorter side (a or b), rearrange to subtract: a² = c² − b². The hypotenuse squared is always the largest value; subtract the smaller square from it."
+        },
+        {
+          "mistake": "Not identifying which side is the hypotenuse before substituting — labelling a slant side as c when it isn't opposite the right angle.",
+          "correction": "Find the right-angle symbol first. The hypotenuse is always the side that sits directly opposite it — the side that doesn't touch the right angle. Mark it as c before writing the formula."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "a² + b² = c², where c is the hypotenuse — the side opposite the right angle. To find c, take the square root: c = √(a² + b²).",
+      "examTip": "Always label the hypotenuse c before writing the formula — it's the side you don't touch when identifying the right angle."
+    },
+    {
+      "fact": "To find a shorter side, subtract: a = √(c² − b²). The hypotenuse must go in as c (the larger value).",
+      "examTip": "If your answer for a shorter side comes out larger than the hypotenuse, you've added instead of subtracted — check your working."
+    },
+    {
+      "fact": "Common Pythagorean triples: (3, 4, 5), (5, 12, 13), (8, 15, 17). Multiples of these also work (e.g. 6, 8, 10).",
+      "examTip": "Recognising a Pythagorean triple in the question saves calculation time and gives an exact integer answer."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

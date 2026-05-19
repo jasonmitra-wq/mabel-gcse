@@ -1,0 +1,85 @@
+{
+  "id": "stat-averages",
+  "subject": "maths",
+  "topic": "M6",
+  "subtopic": "stat-averages",
+  "title": "Averages and range — mean, median, mode",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Averages — three ways to describe the middle of a data set",
+      "body": "An average is a single value that represents a whole data set, but there are three different averages and they don't always give the same answer. The mean uses every value in the data so it's the best measure when the data is fairly even — but one very large or very small value (an outlier) can pull it away from the centre and make it misleading. The median is the middle value when the data is sorted, so it ignores outliers and gives a more honest picture of what's 'typical'; the mode is simply the most common value and is most useful for categorical data like shoe sizes or colours.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Mean, median, mode and range",
+      "formula": "Mean = sum of all values ÷ number of values  |  Median = middle value when data is sorted in order (average of the two middle values if there is an even number)  |  Mode = the value that appears most often  |  Range = largest value − smallest value",
+      "formulaExplained": "Mean: add up every data value and divide by how many there are. Best when data has no outliers and you want a measure that uses all values. Median: sort the data smallest to largest, then find the middle. For n values, the median is the ((n+1)/2)th value. For an even number, average the two middle values. Best when data has outliers (e.g. salaries, house prices) — the median is unaffected by extreme values. Mode: count frequency of each value; the mode is the most frequent. Best for non-numerical or discrete data. Range: subtract the smallest value from the largest — this measures spread, not average, but is often asked alongside averages.",
+      "whenToUse": "Any question asking for an average or measure of spread. Use mean for uniform numerical data; use median when outliers are present or suspected; use mode for categorical data or when the most common value is what matters. Range measures how spread out the data is.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Seven students scored these marks in a test: 12, 15, 11, 18, 14, 11, 20. Find the mean, median, mode and range.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Find the mean: sum all values then divide by 7.",
+          "working": "12 + 15 + 11 + 18 + 14 + 11 + 20 = 101. Mean = 101 ÷ 7 ≈ 14.4 (1 d.p.)",
+          "result": "Mean ≈ 14.4"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Find the median: sort the data and find the middle value (4th out of 7).",
+          "working": "Sorted: 11, 11, 12, 14, 15, 18, 20. Middle value (position 4) = 14.",
+          "result": "Median = 14"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Find the mode (most frequent) and range (largest − smallest).",
+          "working": "Mode = 11 (appears twice). Range = 20 − 11 = 9.",
+          "result": "Mode = 11, Range = 9"
+        }
+      ],
+      "conclusion": "Mean ≈ 14.4, Median = 14, Mode = 11, Range = 9.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Finding the median without sorting the data first — picking the middle position from the unsorted list.",
+          "correction": "Always sort the data from smallest to largest before finding the median. The position of the middle value in the original list is irrelevant."
+        },
+        {
+          "mistake": "Dividing by the number of distinct values for the mean instead of the total count — e.g. dividing by 6 instead of 7 when one value appears twice.",
+          "correction": "Count every data value including repeats. If 11 appears twice, it contributes twice to the sum and the total count is still 7, not 6."
+        },
+        {
+          "mistake": "Confusing median position with the median value — stating 'the median is position 4' instead of 'the median is 14'.",
+          "correction": "The median position tells you where to look (the (n+1)/2 th value). The median is the actual data value at that position. State the value, not the position."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Mean = sum ÷ count. Use when data has no outliers. Median = middle value of sorted data. Use when outliers are present. Mode = most frequent value. Range = max − min.",
+      "examTip": "If a question asks which average best represents data that includes a very high or low value, the answer is almost always the median — explain why in one sentence."
+    },
+    {
+      "fact": "For n data values, the median is the ((n+1)/2)th value when sorted. If n is even, average the two middle values.",
+      "examTip": "With 10 values: median = average of 5th and 6th. With 9 values: median = 5th. Write out the position formula before hunting for the value."
+    },
+    {
+      "fact": "Range measures spread, not average. A large range means the data is more variable; a small range means the values are close together.",
+      "examTip": "Comparing two data sets: if the means are similar but one has a larger range, the data in that set is less consistent — state this when comparing in context."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

@@ -1,0 +1,85 @@
+{
+  "id": "stat-scatter",
+  "subject": "maths",
+  "topic": "M6",
+  "subtopic": "stat-scatter",
+  "title": "Scatter graphs and correlation",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Scatter graphs — does one variable go up when the other does?",
+      "body": "A scatter graph plots two variables against each other as a cloud of points, and the pattern of those points tells you whether the variables are related. Positive correlation means that as one variable increases, the other tends to increase too — the points slope upward from left to right (e.g. the taller someone is, the longer their arm span tends to be). Negative correlation means that as one variable increases, the other tends to decrease — the points slope downward from left to right (e.g. the more hours spent watching TV, the lower the test score tends to be). No correlation means there is no consistent pattern — the points are scattered randomly with no clear direction (e.g. shoe size and IQ).",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Lines of best fit and using them",
+      "formula": "Line of best fit: drawn through the middle of the data cloud with roughly equal numbers of points above and below  |  Interpolation: reading a value from inside the range of the data — reliable  |  Extrapolation: reading a value from outside the range of the data — unreliable",
+      "formulaExplained": "A line of best fit is a straight line drawn by eye that passes through the mean point (mean of x, mean of y) and balances the scatter of points above and below it. It summarises the trend. Interpolation uses the line to predict a value within the range of the original data — this is reasonably reliable. Extrapolation extends the line beyond the data range to predict a value — this is less reliable because the trend may not continue. Strong correlation means the points cluster tightly around the line; weak correlation means they are more spread out.",
+      "whenToUse": "Any question asking you to describe the relationship between two variables, draw a line of best fit, or use the line to estimate a value. Always describe correlation in context (e.g. 'students who spent more time revising tended to score higher'), not just 'positive correlation'.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A scatter graph shows the number of hours of sunshine and ice cream sales (£) for 8 days. The data shows positive correlation and a line of best fit is drawn. On a day with 6 hours of sunshine, the line gives sales of £140. Describe the correlation and comment on the reliability of using the line to predict sales on a day with 6 hours of sunshine, given the data ranged from 2 to 9 hours.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Describe the correlation in context.",
+          "working": "The scatter graph shows positive correlation — days with more sunshine tend to have higher ice cream sales.",
+          "result": "Positive correlation stated in context"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Decide whether this is interpolation or extrapolation.",
+          "working": "The data ranges from 2 to 9 hours. 6 hours is within this range, so this is interpolation.",
+          "result": "Interpolation"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Comment on reliability.",
+          "working": "Because 6 hours is within the data range, the estimate of £140 is reasonably reliable.",
+          "result": "Reliable — within data range"
+        }
+      ],
+      "conclusion": "Positive correlation; interpolation at 6 hours gives a reliable estimate of £140.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Confusing correlation with causation — saying that sunshine causes ice cream sales to rise because the scatter graph shows positive correlation.",
+          "correction": "Correlation shows that two variables tend to move together — it does not mean one causes the other. Both could be caused by a third variable (e.g. hot weather), or the relationship could be coincidence. Always say 'tend to' or 'associated with', not 'causes'."
+        },
+        {
+          "mistake": "Drawing the line of best fit through the origin (0, 0) because it 'looks right', rather than through the middle of the data cloud.",
+          "correction": "The line of best fit must pass through the mean point (x̄, ȳ) and balance points above and below. Unless the data genuinely passes through the origin, forcing the line through it gives inaccurate predictions."
+        },
+        {
+          "mistake": "Describing correlation without context — writing 'positive correlation' without saying what the two variables are.",
+          "correction": "Always describe correlation in context: e.g. 'as the number of revision hours increases, the test score tends to increase'. The examiner wants to see that you understand what the graph is showing."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Positive correlation: both variables increase together. Negative correlation: one increases as the other decreases. No correlation: no consistent pattern.",
+      "examTip": "Describe correlation in context every time — name the two variables and use language like 'tends to increase' rather than just saying 'positive'."
+    },
+    {
+      "fact": "Correlation does not imply causation. Two variables can be correlated without one causing the other.",
+      "examTip": "If an exam question asks whether a conclusion is valid, and the conclusion says one thing 'causes' another based on a scatter graph, the answer is no — correlation is not causation."
+    },
+    {
+      "fact": "Interpolation (predicting within the data range) is more reliable than extrapolation (predicting outside the data range).",
+      "examTip": "State whether a prediction is interpolation or extrapolation and explain why this affects reliability — examiners expect both the classification and the reasoning."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

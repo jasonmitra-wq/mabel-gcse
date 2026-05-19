@@ -1,0 +1,85 @@
+{
+  "id": "stat-boxplots",
+  "subject": "maths",
+  "topic": "M6",
+  "subtopic": "stat-boxplots",
+  "title": "Box plots",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Box plots — a five-number summary of a data set",
+      "body": "A box plot (also called a box-and-whisker diagram) displays five key values from a data set in a single diagram: the minimum value, the lower quartile (Q1, which is the median of the lower half of the data), the median (the middle value of the whole data set), the upper quartile (Q3, which is the median of the upper half), and the maximum value. The box spans from Q1 to Q3 and contains the middle 50% of the data; the whiskers extend from the box to the minimum and maximum. The width of the box shows the interquartile range (IQR = Q3 − Q1) at a glance — a narrow box means the data is tightly clustered around the median.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "The five values and interquartile range",
+      "formula": "Five-number summary: Minimum | Q1 (Lower Quartile) | Median (Q2) | Q3 (Upper Quartile) | Maximum  |  IQR = Q3 − Q1  |  Lower quartile = median of lower half  |  Upper quartile = median of upper half",
+      "formulaExplained": "To find the five values from a sorted data set of n values: minimum is the first value; maximum is the last. Median is the middle value at position (n+1)/2. For the lower quartile, take the lower half of the data (all values below the median position) and find their median. For the upper quartile, take the upper half (all values above the median position) and find their median. The IQR = Q3 − Q1 gives the spread of the central 50% of data. On a box plot, the vertical line inside the box marks the median; the left and right edges of the box are Q1 and Q3.",
+      "whenToUse": "Comparing two or more data sets — place box plots on the same scale to compare medians (typical value) and IQRs (spread/consistency) side by side. Also used to describe the distribution of a data set and identify skew.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "The times (minutes) for 9 runners to finish a race, sorted in order: 22, 25, 28, 31, 33, 36, 38, 42, 47. Find the five-number summary and state the IQR.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Identify minimum, maximum and median. With 9 values, the median is the 5th value.",
+          "working": "Minimum = 22. Maximum = 47. Median (5th value) = 33.",
+          "result": "Min = 22, Median = 33, Max = 47"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Find Q1: the median of the lower half (values below the median position — values 1 to 4). With 4 values, Q1 = average of 2nd and 3rd.",
+          "working": "Lower half: 22, 25, 28, 31. Q1 = (25 + 28) ÷ 2 = 26.5",
+          "result": "Q1 = 26.5"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Find Q3: the median of the upper half (values 6 to 9). With 4 values, Q3 = average of 2nd and 3rd.",
+          "working": "Upper half: 36, 38, 42, 47. Q3 = (38 + 42) ÷ 2 = 40. IQR = 40 − 26.5 = 13.5.",
+          "result": "Q3 = 40, IQR = 13.5"
+        }
+      ],
+      "conclusion": "Five-number summary: 22, 26.5, 33, 40, 47. IQR = 13.5 minutes.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Including the median value in both halves when finding Q1 and Q3 — using all 9 values for the lower half instead of just the 4 below the median.",
+          "correction": "For an odd number of values, exclude the median itself when splitting into halves. The lower half contains only the values below the median position; the upper half contains only those above it."
+        },
+        {
+          "mistake": "Drawing the whisker to the wrong point — stretching it to an outlier far from the rest of the data, which makes the box plot misleading.",
+          "correction": "In a standard box plot, whiskers go to the minimum and maximum values. In some versions, outliers are shown as separate crosses and the whisker goes only to the last non-outlier value. Read the question to see which format is expected."
+        },
+        {
+          "mistake": "Comparing two box plots using only the median and ignoring the IQR (or vice versa).",
+          "correction": "A complete comparison needs at least two statements: compare the medians (which group has the higher typical value) AND compare the IQRs (which group is more consistent). Both must be in context."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "A box plot shows five values: minimum, Q1, median, Q3, maximum. The box spans Q1 to Q3 and contains the middle 50% of the data. IQR = Q3 − Q1.",
+      "examTip": "When drawing a box plot, use a ruler and mark all five points on a number line before drawing the box and whiskers. Don't guess the positions."
+    },
+    {
+      "fact": "To compare two box plots: compare medians (typical value) and IQRs (spread). A smaller IQR means data is more consistent.",
+      "examTip": "State which group has the higher median AND which has the smaller IQR, then explain what this means in context — e.g. 'Group A has a higher median score (56 vs 48) and a smaller IQR (12 vs 20), suggesting Group A performed better and more consistently'."
+    },
+    {
+      "fact": "For n data values sorted in order: Q1 = median of the lower half; Q3 = median of the upper half. Exclude the median itself when n is odd.",
+      "examTip": "Write out the split explicitly: 'Lower half: values 1 to 4' before finding Q1. This prevents the common error of including the median in the quartile calculation."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

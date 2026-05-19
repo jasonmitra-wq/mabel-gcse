@@ -1,0 +1,85 @@
+{
+  "id": "stat-cumulative",
+  "subject": "maths",
+  "topic": "M6",
+  "subtopic": "stat-cumulative",
+  "title": "Cumulative frequency",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Cumulative frequency — building a running total to find the median",
+      "body": "Cumulative frequency is a running total of frequencies — you add each frequency to all the ones before it, so the final value equals the total number of data points. Plotting cumulative frequency against the upper class boundary of each interval gives an S-shaped curve (the ogive). Once drawn, you can read off the median, lower quartile and upper quartile directly from the graph by going across from the relevant cumulative frequency value and down to the data axis.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Reading quartiles from a cumulative frequency graph",
+      "formula": "Median position = n/2  |  Lower quartile (Q1) position = n/4  |  Upper quartile (Q3) position = 3n/4  |  Interquartile range (IQR) = Q3 − Q1",
+      "formulaExplained": "For a data set of n values: read across from n/2 on the cumulative frequency axis to find the median; from n/4 to find the lower quartile; from 3n/4 to find the upper quartile. Plot points at the upper class boundary of each interval — never the midpoint. The IQR = Q3 − Q1 measures the spread of the middle 50% of the data and is less affected by outliers than the full range.",
+      "whenToUse": "Any question involving a grouped frequency table where you need the median, quartiles or IQR. Also used when comparing two data sets — compare the medians for 'typical' value and the IQRs for consistency.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "The table shows the time (minutes) taken by 40 students to complete a puzzle. Times: 0–10 (freq 4), 10–20 (freq 10), 20–30 (freq 14), 30–40 (freq 9), 40–50 (freq 3). Build the cumulative frequency table and find the median.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Build the cumulative frequency table by adding a running total. Plot points at the upper class boundary of each interval: (10, 4), (20, 14), (30, 28), (40, 37), (50, 40).",
+          "working": "CF: up to 10 = 4; up to 20 = 4+10 = 14; up to 30 = 14+14 = 28; up to 40 = 28+9 = 37; up to 50 = 37+3 = 40.",
+          "result": "Final cumulative frequency = 40 ✓"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Find the median position: n/2 = 40/2 = 20. Read across from 20 on the CF axis to the curve, then down to the time axis.",
+          "working": "CF = 20 falls between the points (20, 14) and (30, 28). Reading down from the curve at CF = 20 gives approximately 26 minutes.",
+          "result": "Median ≈ 26 minutes"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Check: 20 is between CF values of 14 and 28, so the median should lie between 20 and 30 minutes — 26 is consistent.",
+          "working": "26 is within the 20–30 class interval. ✓",
+          "result": "Median ≈ 26 minutes ✓"
+        }
+      ],
+      "conclusion": "The median time is approximately 26 minutes.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Plotting cumulative frequency points at the midpoint of each class interval instead of the upper class boundary.",
+          "correction": "Points go at the upper boundary: for the class 10–20, plot at x = 20, not x = 15. This is because the cumulative frequency up to that point represents all values up to and including the upper boundary."
+        },
+        {
+          "mistake": "Using n/2 as the median when working with a cumulative frequency graph, but reading the x-value directly from the table row where CF first exceeds n/2.",
+          "correction": "Read the median from the graph by going across from n/2 on the CF axis to the curve, then reading straight down to the horizontal axis. The table gives a running total, not exact values — the graph interpolates between class boundaries."
+        },
+        {
+          "mistake": "Confusing the interquartile range with the full range — subtracting minimum from maximum instead of Q3 from Q1.",
+          "correction": "IQR = Q3 − Q1. The full range = maximum − minimum. The IQR covers the middle 50% of data; the full range covers 100%. The IQR is more useful for comparing spread because it excludes extreme values."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Cumulative frequency is a running total. Plot points at upper class boundaries. The final point must equal the total number of data values.",
+      "examTip": "If your final cumulative frequency doesn't equal n, you've made an addition error. Check by adding all the original frequencies — that sum must match the last CF value."
+    },
+    {
+      "fact": "Median from CF graph: read across from n/2. Lower quartile: n/4. Upper quartile: 3n/4. IQR = Q3 − Q1.",
+      "examTip": "Draw dotted lines on the CF graph for each quartile reading — examiners can see your method and may award marks for correct lines even if the final reading is slightly off."
+    },
+    {
+      "fact": "The IQR measures the spread of the middle 50% of the data. A smaller IQR means the data is more consistent.",
+      "examTip": "When comparing two groups, compare medians (typical value) AND IQRs (consistency) — and relate both back to the context of the question."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

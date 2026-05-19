@@ -1,0 +1,85 @@
+{
+  "id": "stat-sampling",
+  "subject": "maths",
+  "topic": "M6",
+  "subtopic": "stat-sampling",
+  "title": "Sampling and expected frequency",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Sampling — collecting data from part of a group to say something about the whole",
+      "body": "A population is every member of the group you're interested in — every student in a school, every fish in a lake, every component made by a factory. A sample is a smaller group chosen from the population to collect data from, because surveying the entire population is often impractical or impossible. For a sample to be useful, it must be representative — it should reflect the makeup of the whole population — and ideally it should be chosen randomly so that every member of the population has an equal chance of being included; a biased sample (where some groups are more likely to be chosen) leads to conclusions that don't reflect the population.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Expected frequency",
+      "formula": "Expected frequency = probability × number of trials  |  Relative frequency (estimated probability) = number of times event occurred ÷ total number of trials",
+      "formulaExplained": "Expected frequency tells you how many times you'd expect an event to occur if a trial is repeated many times. Multiply the probability of the event by the total number of trials: if P(event) = 0.3 and you repeat the trial 200 times, the expected frequency is 0.3 × 200 = 60. Relative frequency is the experimental probability estimated from data: divide the number of times the event happened by the total number of trials. As the number of trials increases, relative frequency tends towards the true theoretical probability.",
+      "whenToUse": "Expected frequency: any question asking how many times you'd expect an outcome in a given number of trials. Relative frequency: any question where you estimate a probability from experimental results or a frequency table.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A biased spinner has four sections: A, B, C, D. It is spun 200 times and lands on A a total of 50 times. (a) Estimate the probability of landing on A. (b) If the spinner is spun 350 times, how many times would you expect it to land on A?",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Estimate P(A) using relative frequency.",
+          "working": "P(A) = 50 ÷ 200 = 0.25",
+          "result": "P(A) = 0.25"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Calculate the expected frequency for 350 spins.",
+          "working": "Expected frequency = P(A) × number of trials = 0.25 × 350 = 87.5",
+          "result": "87.5"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Interpret the answer. Expected frequency can be a decimal — it represents the average result over many repetitions, not an exact count for one set of 350 spins.",
+          "working": "In practice, the spinner would land on A approximately 87 or 88 times.",
+          "result": "≈ 87 or 88 times"
+        }
+      ],
+      "conclusion": "P(A) = 0.25; expected frequency = 87.5 (approximately 87–88 times).",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Confusing expected frequency with probability — writing 87.5 as the probability instead of the expected frequency.",
+          "correction": "Probability is always between 0 and 1. Expected frequency is a count (number of times), not a proportion. Keep them clearly separate: P(A) = 0.25 is the probability; 87.5 is how many times you'd expect A in 350 trials."
+        },
+        {
+          "mistake": "Using a small sample size to draw conclusions about a population and treating the result as definitive.",
+          "correction": "A small sample gives a less reliable estimate. If a sample of 10 shows 3 left-handed people, you shouldn't conclude that 30% of the whole population is left-handed — the sample is too small to be representative. Larger samples give more reliable relative frequencies."
+        },
+        {
+          "mistake": "Assuming a sample is representative just because it was chosen from the right group — ignoring how the sample was selected.",
+          "correction": "The method of selection matters as much as the group. Asking only volunteers introduces bias (those with strong opinions are more likely to respond). A truly representative sample requires a random selection method where every member of the population has an equal chance of being chosen."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "A population is the entire group of interest. A sample is a smaller group selected from the population. A representative sample reflects the makeup of the population.",
+      "examTip": "When asked to criticise a sampling method, look for: is the sample too small? Is it randomly selected? Could any group be over- or under-represented?"
+    },
+    {
+      "fact": "Expected frequency = probability × number of trials. The result can be a decimal — it represents the average over many repetitions.",
+      "examTip": "Expected frequency is not guaranteed — it's what you'd expect on average. The question may ask you to 'predict' or 'estimate how many times', not to give an exact count."
+    },
+    {
+      "fact": "Relative frequency = number of successes ÷ total trials. As the number of trials increases, relative frequency converges on the true probability.",
+      "examTip": "If the question gives experimental data and asks for a probability, use relative frequency. If it gives a theoretical probability and asks for a count, use expected frequency."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

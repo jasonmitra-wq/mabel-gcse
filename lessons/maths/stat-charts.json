@@ -1,0 +1,85 @@
+{
+  "id": "stat-charts",
+  "subject": "maths",
+  "topic": "M6",
+  "subtopic": "stat-charts",
+  "title": "Charts and diagrams — bar, pie, frequency",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Statistical charts — the right diagram for the right data",
+      "body": "Charts turn raw data into a visual form, but different charts suit different types of data. Bar charts and pie charts work well for categorical or discrete data (things you count), where each category is separate. Frequency polygons and histograms are for continuous data (things you measure, like height or time), where values fall in ranges called class intervals. The key difference with histograms is that the area of each bar represents the frequency, not the height — so if class intervals are unequal, you must use frequency density rather than frequency on the vertical axis.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Pie chart angles and frequency density",
+      "formula": "Pie chart sector angle = (frequency ÷ total frequency) × 360°  |  Frequency density = frequency ÷ class width  |  Frequency = frequency density × class width",
+      "formulaExplained": "For a pie chart, each category's sector angle is its proportion of the total multiplied by 360°. Always divide by the total before multiplying by 360°. For a histogram with unequal class widths, the vertical axis is frequency density, not frequency. Frequency density = frequency ÷ class width. The area of each bar (height × width = frequency density × class width) gives the frequency. To find the frequency from a histogram bar, multiply the height (frequency density) by the class width.",
+      "whenToUse": "Pie chart formula: any question asking you to draw or interpret a pie chart. Frequency density: any histogram question — especially when class widths are unequal. Always check whether class widths are equal before deciding which axis label to use.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "30 students were asked their favourite subject. 12 chose Maths, 8 chose Science and 10 chose English. Calculate the sector angle for Science in a pie chart.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Confirm the total frequency.",
+          "working": "12 + 8 + 10 = 30 students.",
+          "result": "Total = 30"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Use the pie chart formula for Science: (frequency ÷ total) × 360°.",
+          "working": "(8 ÷ 30) × 360° = 0.2667 × 360° = 96°",
+          "result": "96°"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Check: all three sector angles should sum to 360°. Maths: (12/30)×360 = 144°. English: (10/30)×360 = 120°.",
+          "working": "144° + 96° + 120° = 360° ✓",
+          "result": "360° ✓"
+        }
+      ],
+      "conclusion": "The Science sector angle is 96°.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Dividing 360° by the frequency directly — writing (360 ÷ 8) = 45° for Science, ignoring the total.",
+          "correction": "The formula is (frequency ÷ total) × 360°. You must divide by the total first to find the proportion, then multiply by 360°. Dividing 360 by the frequency only gives the right answer if the total happens to be 360."
+        },
+        {
+          "mistake": "Drawing a histogram with frequency on the y-axis when the class widths are unequal.",
+          "correction": "When class widths differ, the y-axis must show frequency density (= frequency ÷ class width). Using frequency instead makes narrow bars look proportionally smaller than they should."
+        },
+        {
+          "mistake": "Reading the frequency directly from a histogram bar's height instead of calculating area.",
+          "correction": "Frequency = frequency density × class width. Read the height of the bar and multiply it by the class width. The height alone is only the frequency if all class widths are equal (and equal to 1)."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Pie chart sector angle = (frequency ÷ total) × 360°. The angles of all sectors must sum to 360°.",
+      "examTip": "After calculating all sector angles, add them up as a check. If they don't sum to 360° (allowing for rounding), go back and find the error before drawing."
+    },
+    {
+      "fact": "Histogram y-axis = frequency density = frequency ÷ class width. Frequency = frequency density × class width (area of bar).",
+      "examTip": "If class widths are all equal, histograms look like bar charts — but the y-axis is still technically frequency density. Check the axis label before reading any values."
+    },
+    {
+      "fact": "Bar charts are for discrete/categorical data (gaps between bars). Histograms are for continuous data (no gaps). Frequency polygons join the midpoints of histogram bars.",
+      "examTip": "Drawing a bar chart for continuous data (e.g. height in cm ranges) is a common error — use a histogram instead and check whether class widths are equal."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

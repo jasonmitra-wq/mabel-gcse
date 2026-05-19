@@ -1,0 +1,95 @@
+{
+  "id": "alg-expressions",
+  "subject": "maths",
+  "topic": "M2",
+  "subtopic": "alg-expressions",
+  "title": "Expressions — expand, factorise and simplify",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Expressions — the building blocks of algebra",
+      "body": "An algebraic expression combines numbers and letters using operations, but has no equals sign. Expanding removes brackets by multiplying out; factorising reverses this by taking out a common factor; simplifying collects like terms into the shortest form. These three skills sit underneath almost every algebra topic — equations, quadratics, and rearranging formulae all rely on them.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Expanding and factorising rules",
+      "formula": "a(b + c) = ab + ac | (a + b)(c + d) = ac + ad + bc + bd | Factorising: find the HCF of all terms and take it outside the bracket",
+      "formulaExplained": "For a single bracket, multiply the term outside by every term inside: a(b + c) = ab + ac. For double brackets, multiply each term in the first bracket by each term in the second — four multiplications in total. Factorising is the reverse: find the largest factor every term shares (the HCF), write it outside a bracket, and divide each term by it to fill the inside.",
+      "whenToUse": "Expanding: whenever an expression contains brackets that need to be removed before simplifying or solving. Factorising: whenever you need to reverse an expanded expression or simplify a fraction involving algebra.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Expand and simplify (x + 3)(x − 4).",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Multiply the first term in the first bracket (x) by each term in the second bracket.",
+          "working": "x × x = x². x × (−4) = −4x.",
+          "result": "x² − 4x"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Multiply the second term in the first bracket (+3) by each term in the second bracket.",
+          "working": "3 × x = 3x. 3 × (−4) = −12.",
+          "result": "3x − 12"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Collect all four terms and simplify like terms.",
+          "working": "x² − 4x + 3x − 12 = x² − x − 12.",
+          "result": "x² − x − 12"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Check by factorising the result back — two numbers that multiply to −12 and add to −1 are −4 and +3.",
+          "working": "(x − 4)(x + 3) — the original brackets in the other order. ✓",
+          "result": "(x + 3)(x − 4) = x² − x − 12 ✓"
+        }
+      ],
+      "conclusion": "(x + 3)(x − 4) = x² − x − 12.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Expanding a double bracket with only two multiplications instead of four — e.g. writing (x + 3)(x − 4) = x² − 12, missing the −4x and +3x cross-terms entirely.",
+          "correction": "Every term in the first bracket must multiply every term in the second: four products total. Use a grid to keep track: x×x, x×(−4), 3×x, 3×(−4)."
+        },
+        {
+          "mistake": "Sign error when multiplying two negatives — e.g. expanding (x − 5)(x − 3) and writing −5 × −3 = −15 instead of +15, giving x² − 8x − 15 instead of x² − 8x + 15.",
+          "correction": "Negative × negative = positive. When both terms are negative, the constant at the end is always positive: (x − 5)(x − 3) = x² − 8x + 15."
+        },
+        {
+          "mistake": "Expanding a single bracket by only multiplying the first term — e.g. writing 4(3x − 2) = 12x − 2 instead of 12x − 8.",
+          "correction": "The factor outside multiplies every term inside the bracket without exception: 4(3x − 2) = 4 × 3x + 4 × (−2) = 12x − 8."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Single bracket: a(b + c) = ab + ac — multiply every term inside by the term outside.",
+      "examTip": "There are no exceptions — every term inside the bracket gets multiplied, including constants with signs."
+    },
+    {
+      "fact": "Double brackets: (a + b)(c + d) = ac + ad + bc + bd — four multiplications, every term in the first bracket with every term in the second.",
+      "examTip": "Use a 2×2 grid to avoid missing a product: x and +3 across the top, x and −4 down the side."
+    },
+    {
+      "fact": "To factorise, find the HCF of all terms and write it outside the bracket: 6x² + 9x = 3x(2x + 3).",
+      "examTip": "Check by re-expanding: 3x(2x + 3) = 6x² + 9x. If you get back to the start, the factorisation is correct."
+    },
+    {
+      "fact": "Like terms share the same letter(s) raised to the same power. Only like terms can be collected: 3x² + 5x² = 8x², but 3x² + 5x cannot be simplified further.",
+      "examTip": "3x and 3x² are NOT like terms — the power of x is different. Do not add them."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

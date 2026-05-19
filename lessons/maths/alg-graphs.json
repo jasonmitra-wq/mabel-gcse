@@ -1,0 +1,95 @@
+{
+  "id": "alg-graphs",
+  "subject": "maths",
+  "topic": "M2",
+  "subtopic": "alg-graphs",
+  "title": "Graphs — straight lines and curves",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Graphs — making equations visible",
+      "body": "Every straight-line graph has an equation of the form y = mx + c, where every point on the line satisfies the equation. Drawing an equation as a graph turns algebra into a picture — you can see gradients, intercepts, and intersections at a glance. Understanding straight-line graphs is the foundation for simultaneous equations, speed-distance-time graphs, and interpreting real-world data.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "y = mx + c",
+      "formula": "y = mx + c",
+      "formulaExplained": "m is the gradient — how steep the line is, and which direction it slopes. m = (change in y) ÷ (change in x) between any two points on the line. A positive m means the line goes up left to right; negative m means it goes down. c is the y-intercept — the value of y where the line crosses the y-axis (i.e. when x = 0). To find the equation through two points: calculate m first using m = (y₂ − y₁) / (x₂ − x₁), then substitute one point and m into y = mx + c to find c.",
+      "whenToUse": "Reading the gradient and y-intercept from a given equation, writing the equation of a line from a graph or from two given points, and sketching a line when m and c are known.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Find the equation of the straight line through (0, 4) with gradient −3.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Identify the gradient m from the information given.",
+          "working": "Gradient m = −3 (given directly).",
+          "result": "m = −3"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Identify the y-intercept c. The line passes through (0, 4), so when x = 0, y = 4.",
+          "working": "The point (0, 4) is on the y-axis, so c = 4.",
+          "result": "c = 4"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Write the equation in the form y = mx + c.",
+          "working": "y = −3x + 4.",
+          "result": "y = −3x + 4"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Check: substitute another x value to verify. At x = 2: y = −3(2) + 4 = −6 + 4 = −2. The line falls by 3 for every 1 across — gradient = −3 ✓.",
+          "working": "At x = 1: y = −3 + 4 = 1. At x = 2: y = −6 + 4 = −2. Change = −2 − 1 = −3 for Δx = 1 ✓.",
+          "result": "Gradient checks out ✓"
+        }
+      ],
+      "conclusion": "The equation is y = −3x + 4.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Swapping gradient and y-intercept when reading from y = mx + c — e.g. reading y = 5x − 2 as gradient = −2 and y-intercept = 5.",
+          "correction": "m is always the coefficient of x (the number multiplying x). c is the standalone constant. In y = 5x − 2: gradient m = 5, y-intercept c = −2."
+        },
+        {
+          "mistake": "Calculating gradient upside down — using (x₂ − x₁) / (y₂ − y₁) instead of (y₂ − y₁) / (x₂ − x₁).",
+          "correction": "Gradient = rise ÷ run = (change in y) ÷ (change in x). y goes on top, x goes on the bottom: m = (y₂ − y₁) / (x₂ − x₁)."
+        },
+        {
+          "mistake": "Writing the equation as x = my + c (mixing up x and y roles) — especially when a question asks for the equation of a vertical or near-vertical line.",
+          "correction": "y = mx + c is the standard form for non-vertical lines. A vertical line cannot be written this way — it is always of the form x = k. A horizontal line has m = 0 and equation y = c."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "y = mx + c: m is the gradient (coefficient of x), c is the y-intercept (constant). Read them directly from the equation without rearranging.",
+      "examTip": "If the equation is not in y = mx + c form, rearrange it first. For 3y = 6x + 9, divide everything by 3: y = 2x + 3, so m = 2, c = 3."
+    },
+    {
+      "fact": "Gradient between two points: m = (y₂ − y₁) / (x₂ − x₁). The order of the coordinates must be consistent — both must be point 1 or both point 2 in their respective fractions.",
+      "examTip": "A positive gradient slopes upward (left to right). Negative gradient slopes downward. A horizontal line has m = 0. A vertical line has an undefined gradient."
+    },
+    {
+      "fact": "Parallel lines have equal gradients. Perpendicular lines have gradients that multiply to −1: m₁ × m₂ = −1, so m₂ = −1/m₁.",
+      "examTip": "To find the perpendicular gradient, flip the fraction and change the sign: gradient 2/3 → perpendicular gradient −3/2."
+    },
+    {
+      "fact": "To sketch a straight line: plot the y-intercept (0, c), then move right 1 unit and up m units to plot a second point, then draw through both.",
+      "examTip": "For a negative gradient, moving right 1 means moving DOWN by |m|. Plot at least two points before drawing the line."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

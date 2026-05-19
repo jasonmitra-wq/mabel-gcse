@@ -1,0 +1,87 @@
+{
+  "id": "alg-functions",
+  "subject": "maths",
+  "topic": "M2",
+  "subtopic": "alg-functions",
+  "title": "Functions and iteration",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "f(x) — a name for a rule",
+      "body": "f(x) is function notation — it is simply a label for the rule that turns an input x into an output. If f(x) = 2x + 5, then f(3) means 'put 3 in for x and work out the result': 2(3) + 5 = 11. The brackets after f do not mean multiplication — they hold the input value. Different letters (g, h) are used when more than one function is involved in the same question, and the order you apply them matters enormously.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "concept",
+      "heading": "Composite and inverse functions",
+      "body": "A composite function fg(x) means apply g first, then apply f to the result: fg(x) = f(g(x)). Order matters — fg and gf usually give different answers. The inverse function f⁻¹(x) undoes f: if f turns 3 into 11, then f⁻¹ turns 11 back into 3. To find f⁻¹(x): write y = f(x), swap x and y, then rearrange to make y the subject.",
+      "note": "Second concept slide — covers the three function operations before the worked example."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "h(x) = 4x − 1. Find h(2) and h(−3).",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Find h(2): substitute x = 2 into the function rule.",
+          "working": "h(2) = 4(2) − 1 = 8 − 1 = 7.",
+          "result": "h(2) = 7"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Find h(−3): substitute x = −3 into the function rule.",
+          "working": "h(−3) = 4(−3) − 1 = −12 − 1 = −13.",
+          "result": "h(−3) = −13"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Check h(−3) by verifying the arithmetic: 4 × (−3) = −12, then −12 − 1 = −13.",
+          "working": "4 × −3 = −12. −12 − 1 = −13. ✓",
+          "result": "h(−3) = −13 ✓"
+        }
+      ],
+      "conclusion": "h(2) = 7 and h(−3) = −13.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Treating f(x) as f multiplied by x — e.g. seeing f(5) and trying to 'multiply f and 5' rather than substituting 5 in for x in the rule.",
+          "correction": "f(x) is a name for the function, not a multiplication. f(5) means 'apply the function rule with input 5'. If f(x) = 2x + 5, then f(5) = 2(5) + 5 = 15."
+        },
+        {
+          "mistake": "Applying composite functions in the wrong order — e.g. for fg(3), applying f first then g, instead of g first then f.",
+          "correction": "fg(3) means f(g(3)): work right to left, or read it as 'g then f'. Calculate the inner function first: g(3), then apply f to that result."
+        },
+        {
+          "mistake": "When finding an inverse, rearranging f(x) for x without swapping x and y first — leaving the answer as a rearranged version of the original function rather than f⁻¹(x).",
+          "correction": "Step 1: write y = f(x). Step 2: swap x and y. Step 3: make y the subject. The result is f⁻¹(x). Skipping the swap gives you f(x) back, not its inverse."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "f(x) notation: the brackets hold the input, not a multiplication. f(3) means substitute x = 3 into the rule and evaluate.",
+      "examTip": "Write out the rule with x replaced: if f(x) = 4x − 1, write f(−3) = 4(−3) − 1 step by step to avoid sign errors."
+    },
+    {
+      "fact": "Composite function fg(x) = f(g(x)): apply g first, then apply f to the result. Order matters — fg ≠ gf in general.",
+      "examTip": "Read fg from right to left: g first, f second. A mnemonic: 'the right one goes first'."
+    },
+    {
+      "fact": "To find the inverse function f⁻¹(x): write y = f(x), swap x and y, then make y the subject. The result is f⁻¹(x).",
+      "examTip": "Check by verifying f(f⁻¹(x)) = x — applying a function then its inverse should return the original input."
+    },
+    {
+      "fact": "Iteration uses a recurrence relation of the form xₙ₊₁ = f(xₙ) to repeatedly apply a function, each output becoming the next input, in order to home in on a root of an equation.",
+      "examTip": "Start with the given x₀ value, substitute to get x₁, then substitute x₁ to get x₂, and so on. Keep enough decimal places at each step to avoid rounding errors accumulating."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

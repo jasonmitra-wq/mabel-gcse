@@ -1,0 +1,85 @@
+{
+  "id": "alg-sequences",
+  "subject": "maths",
+  "topic": "M2",
+  "subtopic": "alg-sequences",
+  "title": "Sequences — nth term and rules",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Sequences — finding the rule behind the pattern",
+      "body": "A sequence is a list of numbers in a fixed order following a rule. An arithmetic sequence goes up (or down) by the same amount each time — called the common difference. A geometric sequence multiplies by the same number each time — called the common ratio. Finding the nth term formula lets you calculate any term in the sequence without listing them all.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "nth term of an arithmetic sequence",
+      "formula": "nth term = dn + (a − d)",
+      "formulaExplained": "d is the common difference (how much the sequence goes up or down each term). a is the first term. The formula can also be written as a + (n − 1)d — start at the first term and add d a total of (n − 1) times. To find the constant: substitute n = 1 and set the result equal to the first term to solve for (a − d). For geometric sequences, the nth term = a × rⁿ⁻¹ where r is the common ratio.",
+      "whenToUse": "Finding a specific term without listing the whole sequence, checking whether a given value is a term (set nth term = value and solve for n — if n is a positive integer, it is a term), or generating a sequence from its rule.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Find the nth term of the sequence 2, 7, 12, 17, ...",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Find the common difference d.",
+          "working": "7 − 2 = 5. Each term increases by 5, so d = 5.",
+          "result": "d = 5"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "The nth term has the form 5n + c. Substitute n = 1 and set it equal to the first term (2) to find c.",
+          "working": "5(1) + c = 2. So 5 + c = 2, giving c = −3.",
+          "result": "c = −3"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Write the nth term formula and verify with a second term.",
+          "working": "nth term = 5n − 3. Check n = 2: 5(2) − 3 = 10 − 3 = 7 ✓. Check n = 3: 15 − 3 = 12 ✓.",
+          "result": "5n − 3"
+        }
+      ],
+      "conclusion": "The nth term is 5n − 3.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Using the first term as the constant instead of calculating it — e.g. for 2, 7, 12, 17, writing nth term = 5n + 2 (using first term 2 as the constant) instead of 5n − 3.",
+          "correction": "The constant is found by substituting n = 1 into dn + c = first term: 5(1) + c = 2 → c = −3. Do not use the first term directly as c — it only works when d = 0."
+        },
+        {
+          "mistake": "Finding the correct d but writing the coefficient wrong — e.g. for a sequence with d = 5, writing the nth term as n + 5 or 5 + n instead of 5n + c.",
+          "correction": "The common difference is the coefficient of n, not a constant to add. For d = 5, the nth term starts 5n + c — then find c separately."
+        },
+        {
+          "mistake": "To check if 48 is in the sequence 5n − 3, listing terms until reaching 48 rather than solving 5n − 3 = 48 algebraically.",
+          "correction": "Set nth term = value: 5n − 3 = 48 → 5n = 51 → n = 10.2. Since 10.2 is not an integer, 48 is NOT a term. Algebraic checking is faster and never misses a term."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "nth term of an arithmetic sequence = dn + c, where d is the common difference. Find c by substituting n = 1: d(1) + c = first term.",
+      "examTip": "The common difference is always the coefficient of n. Constant c = first term − d (not the first term itself)."
+    },
+    {
+      "fact": "To check if a value is in the sequence, set the nth term equal to that value and solve for n. If n is a positive integer, the value is in the sequence; if n is fractional or negative, it is not.",
+      "examTip": "5n − 3 = 47 → n = 10. Integer → yes. 5n − 3 = 49 → n = 10.4. Not integer → no."
+    },
+    {
+      "fact": "For a geometric sequence with first term a and common ratio r, the nth term = a × rⁿ⁻¹. The exponent is n − 1, not n.",
+      "examTip": "The 1st term uses r⁰ = 1 (not r¹). A common error is using rⁿ and getting every term a factor of r too large."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

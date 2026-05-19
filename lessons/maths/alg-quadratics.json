@@ -1,0 +1,95 @@
+{
+  "id": "alg-quadratics",
+  "subject": "maths",
+  "topic": "M2",
+  "subtopic": "alg-quadratics",
+  "title": "Quadratics — solving and factorising",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Quadratics — equations with an x² term",
+      "body": "A quadratic equation is one where the highest power of x is 2, written in the form ax² + bx + c = 0. Unlike linear equations, a quadratic can have two solutions, one repeated solution, or no real solutions at all. They appear in geometry (area equations), physics (projectile motion), and many Higher-tier problems — learning to factorise and apply the quadratic formula covers the vast majority of exam questions.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "The quadratic formula",
+      "formula": "x = (−b ± √(b² − 4ac)) / (2a)",
+      "formulaExplained": "a, b and c come from ax² + bx + c = 0 — match each coefficient carefully, including the sign. b² − 4ac is called the discriminant: if it is positive there are two solutions, zero gives one repeated solution, and negative means no real solutions. The ± means you calculate two values: one using + and one using −. Use the formula when the quadratic does not factorise neatly. When it does factorise, find two numbers that multiply to ac and add to b, then write the two brackets.",
+      "whenToUse": "Any quadratic equation ax² + bx + c = 0 that cannot be factorised into integer brackets, or whenever the question says 'give your answer to a given number of decimal places'. For simple integer roots, factorising is faster.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Solve x² + 5x + 6 = 0 by factorising.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Find two numbers that multiply to +6 (the constant) and add to +5 (the coefficient of x).",
+          "working": "Factor pairs of 6: (1, 6) → sum 7; (2, 3) → sum 5 ✓. Numbers are 2 and 3.",
+          "result": "2 and 3"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Write the factorised form using these numbers.",
+          "working": "(x + 2)(x + 3) = 0.",
+          "result": "(x + 2)(x + 3) = 0"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Set each bracket equal to zero and solve.",
+          "working": "x + 2 = 0 → x = −2. x + 3 = 0 → x = −3.",
+          "result": "x = −2 or x = −3"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Check both solutions in the original equation.",
+          "working": "(−2)² + 5(−2) + 6 = 4 − 10 + 6 = 0 ✓. (−3)² + 5(−3) + 6 = 9 − 15 + 6 = 0 ✓.",
+          "result": "Both solutions verified ✓"
+        }
+      ],
+      "conclusion": "x = −2 or x = −3.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Finding the correct pair of numbers but putting them in the brackets with the wrong signs — e.g. for x² + 5x + 6 = 0, writing (x − 2)(x − 3) = 0 and giving solutions x = 2 or x = 3 instead of x = −2 or x = −3.",
+          "correction": "If both numbers are positive, both signs in the brackets are positive: (x + 2)(x + 3). The solutions are always the negatives of the numbers in the brackets."
+        },
+        {
+          "mistake": "Substituting into the quadratic formula with the wrong sign for b — e.g. for x² + 5x + 6 = 0, using b = +5 in the −b term of the formula to get (5 ± √1)/2 instead of using −b = −5 to get (−5 ± 1)/2.",
+          "correction": "Write the formula as (−b ± √...) and substitute carefully. Here b = +5, so −b = −5. Check: x = (−5 + 1)/2 = −2 and x = (−5 − 1)/2 = −3 ✓."
+        },
+        {
+          "mistake": "Stopping after factorising — writing (x + 2)(x + 3) = 0 as the final answer without solving each bracket for x.",
+          "correction": "Factorising is the method, not the answer. Set each bracket equal to zero and solve: x + 2 = 0 → x = −2, and x + 3 = 0 → x = −3. State both solutions."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "To factorise x² + bx + c: find two integers that multiply to c and add to b. Write them as (x + p)(x + q) = 0, then solve x = −p and x = −q.",
+      "examTip": "List factor pairs of c systematically and check which pair sums to b. Don't guess — be methodical."
+    },
+    {
+      "fact": "Quadratic formula: x = (−b ± √(b² − 4ac)) / (2a). Identify a, b and c from ax² + bx + c = 0 before substituting.",
+      "examTip": "Write a =, b =, c = on a separate line before using the formula. Negative values of b or c are very common sources of error."
+    },
+    {
+      "fact": "The discriminant b² − 4ac tells you the number of solutions: positive → 2 solutions; zero → 1 repeated solution; negative → no real solutions.",
+      "examTip": "Calculate the discriminant first. If it's negative, stop — the equation has no real solutions and you cannot take a square root of a negative number."
+    },
+    {
+      "fact": "Always check solutions by substituting back into the original equation. Both values must make the equation equal zero.",
+      "examTip": "With two solutions from the formula, check both — it takes 30 seconds and guards against sign errors in the formula."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

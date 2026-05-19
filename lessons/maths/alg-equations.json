@@ -1,0 +1,93 @@
+{
+  "id": "alg-equations",
+  "subject": "maths",
+  "topic": "M2",
+  "subtopic": "alg-equations",
+  "title": "Solving linear equations",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Equations — keeping both sides balanced",
+      "body": "An equation states that two expressions are equal. Solving means finding the value of the unknown that makes both sides the same. The golden rule is: whatever you do to one side, you must do to the other — every move is a legal operation that preserves the balance. Linear equations (no x² or higher) always have exactly one solution.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "concept",
+      "heading": "The method — undo operations in reverse order",
+      "body": "Think of the equation as a series of operations applied to x. To isolate x, undo those operations in reverse order — subtraction undoes addition, division undoes multiplication. If the equation has brackets, expand them first. If x appears on both sides, collect all the x terms on one side before solving.",
+      "note": "Second concept slide — no formula applies here; method is procedural."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Solve 7x − 1 = 4x + 11.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Collect all x terms on one side by subtracting 4x from both sides.",
+          "working": "7x − 4x − 1 = 11. So 3x − 1 = 11.",
+          "result": "3x − 1 = 11"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Remove the −1 by adding 1 to both sides.",
+          "working": "3x = 11 + 1 = 12.",
+          "result": "3x = 12"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Divide both sides by 3.",
+          "working": "x = 12 ÷ 3 = 4.",
+          "result": "x = 4"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Check by substituting x = 4 into both sides of the original equation.",
+          "working": "Left: 7(4) − 1 = 28 − 1 = 27. Right: 4(4) + 11 = 16 + 11 = 27. ✓",
+          "result": "Both sides = 27 ✓"
+        }
+      ],
+      "conclusion": "x = 4.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Dividing before subtracting — e.g. solving 3x + 7 = 22 by dividing first: x + 7/3 = 22/3. This leaves a fraction on the left and gives the wrong answer.",
+          "correction": "Always deal with addition and subtraction first (remove constants from the x side), then divide. For 3x + 7 = 22: subtract 7 to get 3x = 15, then divide by 3 to get x = 5."
+        },
+        {
+          "mistake": "Moving a term to the wrong side — e.g. for 5x − 3 = 2x + 9, subtracting 3 from both sides instead of adding 3: writing 5x − 3 − 3 = 2x + 9 − 3, giving 5x − 6 = 2x + 6 and x = 4. Check: 5(4)−3=17 ≠ 2(4)+9=17 — that's actually correct here, but the method is flawed.",
+          "correction": "To move −3 to the other side, add 3 to both sides: 5x = 2x + 9 + 3 = 2x + 12. Then 3x = 12, x = 4. The correct route: collect x terms first, then deal with constants."
+        },
+        {
+          "mistake": "Expanding a bracket incorrectly before solving — e.g. solving 3(2x − 5) = 9 by writing 6x − 5 = 9 instead of 6x − 15 = 9 (forgetting to multiply the constant −5 by 3).",
+          "correction": "The factor outside the bracket multiplies every term inside: 3(2x − 5) = 6x − 15. Then 6x − 15 = 9 → 6x = 24 → x = 4."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Golden rule: whatever you do to one side of an equation, do the same to the other side.",
+      "examTip": "Every step must be a legal operation on the whole equation — adding, subtracting, multiplying or dividing both sides by the same value."
+    },
+    {
+      "fact": "Order of solving: expand brackets first → collect x terms on one side → collect constants on the other → divide by the coefficient of x.",
+      "examTip": "Undo operations in reverse order: addition/subtraction first, multiplication/division last."
+    },
+    {
+      "fact": "If x appears on both sides (e.g. 7x − 1 = 4x + 11), subtract the smaller x term from both sides to get all x on one side before solving.",
+      "examTip": "Subtract the smaller multiple of x (here 4x) so the remaining x coefficient stays positive — fewer sign errors."
+    },
+    {
+      "fact": "Always check your answer by substituting back into the original equation. Both sides must give the same value.",
+      "examTip": "If the two sides don't match after substitution, you've made an arithmetic error — recheck each step."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

@@ -1,0 +1,89 @@
+{
+  "id": "alg-inequalities",
+  "subject": "maths",
+  "topic": "M2",
+  "subtopic": "alg-inequalities",
+  "title": "Inequalities",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Inequalities — a range of solutions, not just one",
+      "body": "An inequality says one expression is greater than or less than another, so the solution is a whole range of values rather than a single number. You solve an inequality using the same inverse operations as an equation — with one critical exception: if you multiply or divide both sides by a negative number, the inequality sign must flip direction. The solution is shown on a number line, with open circles for strict inequalities (< or >) and closed circles for ≤ or ≥.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "concept",
+      "heading": "Inequality symbols and number line notation",
+      "body": "x > 3 means x is strictly greater than 3 (open circle at 3, arrow pointing right). x ≥ 3 means x is 3 or greater (closed circle at 3, arrow right). x < 3 means x is strictly less than 3 (open circle at 3, arrow left). A double inequality such as −2 < x ≤ 5 means x is between −2 and 5, not including −2 but including 5.",
+      "note": "Second concept slide — symbols table replaces formula slide."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Solve 4x − 1 ≥ 2x + 5 and represent the solution on a number line.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Collect x terms on one side — subtract 2x from both sides.",
+          "working": "4x − 2x − 1 ≥ 5. So 2x − 1 ≥ 5.",
+          "result": "2x − 1 ≥ 5"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Remove the −1 by adding 1 to both sides.",
+          "working": "2x ≥ 5 + 1 = 6.",
+          "result": "2x ≥ 6"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Divide both sides by 2. The sign stays the same (dividing by a positive).",
+          "working": "x ≥ 6 ÷ 2 = 3.",
+          "result": "x ≥ 3"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Show on a number line: closed circle at x = 3 (because ≥ includes 3), arrow pointing right.",
+          "working": "●─────→ at x = 3",
+          "result": "x ≥ 3, closed circle at 3"
+        }
+      ],
+      "conclusion": "x ≥ 3.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Solving correctly but writing the answer as an equation — e.g. getting x ≥ 3 but writing x = 3 as the final answer.",
+          "correction": "The solution to an inequality is always an inequality. Keep the inequality sign in your answer: x ≥ 3, not x = 3."
+        },
+        {
+          "mistake": "Forgetting to flip the inequality sign when dividing by a negative number — e.g. solving −2x > 8 and writing x > −4 instead of x < −4.",
+          "correction": "Dividing (or multiplying) by a negative number reverses the inequality: −2x > 8 → x < −4. If you prefer, keep x positive throughout by rearranging first."
+        },
+        {
+          "mistake": "Confusing open and closed circles on the number line — e.g. drawing a closed circle for x > 5 (which excludes 5) instead of an open circle.",
+          "correction": "Open circle: the value is NOT included (< or >). Closed circle: the value IS included (≤ or ≥)."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Solve an inequality like an equation — but if you multiply or divide both sides by a negative, flip the inequality sign.",
+      "examTip": "To avoid the flip, rearrange so the x coefficient stays positive. −3x < 12 → add 3x to both sides: 0 < 12 + 3x → 3x > −12 → x > −4."
+    },
+    {
+      "fact": "Open circle on a number line means the value is excluded (strict inequality < or >). Closed circle means the value is included (≤ or ≥).",
+      "examTip": "Match the circle to the symbol: ≤ or ≥ → filled in; < or > → hollow."
+    },
+    {
+      "fact": "For a double inequality such as −3 < x ≤ 2, list the integers satisfying it — remembering to check each endpoint: −3 is excluded (strict <), 2 is included (≤).",
+      "examTip": "Always check the endpoint values — one is usually excluded and the other included. Listing one too many or one too few is a very common error."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

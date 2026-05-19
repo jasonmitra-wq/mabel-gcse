@@ -1,0 +1,89 @@
+{
+  "id": "alg-simultaneous",
+  "subject": "maths",
+  "topic": "M2",
+  "subtopic": "alg-simultaneous",
+  "title": "Simultaneous equations",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Simultaneous equations — two conditions at the same time",
+      "body": "Simultaneous equations are a pair of equations that must both be true together. The solution is the one pair of values (x and y) that satisfies both equations at once — geometrically, it is the point where two lines intersect on a graph. Solving them algebraically is far quicker than drawing graphs, especially when the answer involves non-integer values.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "concept",
+      "heading": "The elimination method — step by step",
+      "body": "Elimination removes one variable by making its coefficient equal in both equations, then adding or subtracting. If the matching coefficients have the same sign, subtract one equation from the other. If they have opposite signs, add the equations. Once one variable is found, substitute back into either original equation to find the other.",
+      "note": "Second concept slide — procedural method replaces formula slide."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Solve the simultaneous equations 4x + 3y = 23 and 4x + y = 13 using elimination.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "The coefficient of x is already 4 in both equations — no multiplication needed. Subtract equation 2 from equation 1 to eliminate x.",
+          "working": "(4x + 3y) − (4x + y) = 23 − 13. So 2y = 10.",
+          "result": "2y = 10"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Divide both sides by 2 to find y.",
+          "working": "y = 10 ÷ 2 = 5.",
+          "result": "y = 5"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Substitute y = 5 into equation 2 (the simpler one) to find x.",
+          "working": "4x + 5 = 13. 4x = 8. x = 2.",
+          "result": "x = 2"
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Check both values in equation 1.",
+          "working": "4(2) + 3(5) = 8 + 15 = 23 ✓.",
+          "result": "x = 2, y = 5 ✓"
+        }
+      ],
+      "conclusion": "x = 2 and y = 5.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Adding equations when you should subtract — e.g. if both equations have +3y and you add them, you get 6y rather than 0y, so the variable is not eliminated.",
+          "correction": "Same signs: subtract. Opposite signs: add. In equations 4x + 3y = 23 and 4x + y = 13, both x-coefficients are +4 (same sign), so subtract to get 0x."
+        },
+        {
+          "mistake": "When multiplying to match coefficients, forgetting to multiply the right-hand side too — e.g. to make 2x − y = 5 match 4x coefficients, multiplying left side by 2 to get 4x − 2y but leaving the right side as 5 instead of 10.",
+          "correction": "Multiply every term in the equation, including the constant on the right: 2(2x − y) = 2(5) gives 4x − 2y = 10."
+        },
+        {
+          "mistake": "Substituting the found value back into the modified (multiplied) equation rather than one of the originals, introducing a factor-of-2 error.",
+          "correction": "Always substitute back into one of the two original equations as written, before any multiplication was applied."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Elimination: make the coefficient of one variable equal in both equations (multiply if needed), then subtract (same signs) or add (opposite signs) to remove it.",
+      "examTip": "Choose to eliminate the variable whose coefficient is easiest to match — often the one that is already equal or needs only a single multiplication."
+    },
+    {
+      "fact": "When matching coefficients, multiply every term in the equation — including the constant on the right-hand side.",
+      "examTip": "Write the multiplied equation on a new line clearly labelled (e.g. '×3:') so you don't lose track of which version you are using."
+    },
+    {
+      "fact": "After finding one variable, always substitute back into an original equation (not a modified version) to find the second.",
+      "examTip": "Check your answer in both original equations — if one equation checks out but not the other, there is an error in your working."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

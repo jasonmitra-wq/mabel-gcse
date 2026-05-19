@@ -451,11 +451,19 @@ const Maths = (() => {
 
       const completeEl = document.getElementById('mathsQComplete');
       if (completeEl) {
+        const sa = _currentQ?.sampleAnswer;
         completeEl.style.display = 'block';
         completeEl.innerHTML = `
           <div class="maths-q-complete">
             <div class="mqc-icon">${isLast ? '🏁' : '✅'}</div>
             <div class="mqc-text">${isLast ? 'Last question done!' : `Question ${_testQIdx + 1} complete`}</div>
+            ${sa ? `
+            <div style="margin:0.65rem 0 0.1rem">
+              <button class="btn" style="font-size:0.8rem;padding:0.35rem 0.75rem"
+                onclick="Maths._toggleSampleAnswer(this)">📚 See sample answer</button>
+              <div id="mathsSampleBox" style="display:none;margin-top:0.5rem;padding:0.75rem;
+                background:var(--s2);border-radius:10px;border:1px solid var(--border2)"></div>
+            </div>` : ''}
             <div class="mqc-actions">
               <button class="btn pri"
                 onclick="Maths._nextTestQuestion('${topicCode}','${(t?.name || '').replace(/'/g,"\\'")}')">
@@ -482,11 +490,19 @@ const Maths = (() => {
 
       const completeEl = document.getElementById('mathsQComplete');
       if (completeEl) {
+        const sa = _currentQ?.sampleAnswer;
         completeEl.style.display = 'block';
         completeEl.innerHTML = `
           <div class="maths-q-complete">
             <div class="mqc-icon">✅</div>
             <div class="mqc-text">Question complete</div>
+            ${sa ? `
+            <div style="margin:0.65rem 0 0.1rem">
+              <button class="btn" style="font-size:0.8rem;padding:0.35rem 0.75rem"
+                onclick="Maths._toggleSampleAnswer(this)">📚 See sample answer</button>
+              <div id="mathsSampleBox" style="display:none;margin-top:0.5rem;padding:0.75rem;
+                background:var(--s2);border-radius:10px;border:1px solid var(--border2)"></div>
+            </div>` : ''}
             <div class="mqc-actions">
               <button class="btn pri"
                 onclick="Maths._startQuestion('${subtopicId}','','${topicCode}')">
@@ -497,6 +513,45 @@ const Maths = (() => {
             </div>
           </div>`;
       }
+    }
+  }
+
+  // ── Sample answer toggle ──────────────────────────────────────
+  function _toggleSampleAnswer(btn) {
+    const box = document.getElementById('mathsSampleBox');
+    if (!box) return;
+
+    if (box.style.display === 'none') {
+      box.style.display = '';
+      if (btn) btn.textContent = '📚 Hide sample answer';
+
+      const sa = _currentQ?.sampleAnswer;
+      if (!sa) {
+        box.innerHTML = '<p style="color:var(--muted);font-size:0.84rem">No sample answer available.</p>';
+        return;
+      }
+
+      const badge = (label, bg) =>
+        `<span style="display:inline-block;font-size:0.71rem;font-weight:700;padding:0.12rem 0.55rem;
+          border-radius:12px;background:${bg};color:#fff;margin-bottom:0.3rem">${label}</span>`;
+
+      box.innerHTML = `
+        <p style="font-size:0.76rem;font-weight:700;color:var(--blue);margin:0 0 0.6rem">SAMPLE ANSWERS</p>
+        ${sa.grade4 ? `<div style="margin-bottom:0.65rem">
+          ${badge('A basic answer (Grade 4)', '#888')}
+          <p style="font-size:0.83rem;margin:0;line-height:1.6;color:var(--text)">${sa.grade4}</p>
+        </div>` : ''}
+        ${sa.grade6 ? `<div style="margin-bottom:0.65rem">
+          ${badge('A good answer (Grade 6)', '#3a8fc4')}
+          <p style="font-size:0.83rem;margin:0;line-height:1.6;color:var(--text)">${sa.grade6}</p>
+        </div>` : ''}
+        ${sa.grade8 ? `<div>
+          ${badge('An excellent answer (Grade 8)', '#2a7a52')}
+          <p style="font-size:0.83rem;margin:0;line-height:1.6;color:var(--text)">${sa.grade8}</p>
+        </div>` : ''}`;
+    } else {
+      box.style.display = 'none';
+      if (btn) btn.textContent = '📚 See sample answer';
     }
   }
 
@@ -783,6 +838,7 @@ const Maths = (() => {
     _completeQuestion,
     _renderTestQuestion,
     _finishTest,
+    _toggleSampleAnswer,
   };
 
 })();

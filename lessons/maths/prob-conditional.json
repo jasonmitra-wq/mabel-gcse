@@ -1,0 +1,85 @@
+{
+  "id": "prob-conditional",
+  "subject": "maths",
+  "topic": "M5",
+  "subtopic": "prob-conditional",
+  "title": "Conditional probability",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Conditional probability — when knowing one thing changes the odds",
+      "body": "Conditional probability asks: given that one event has already happened (or is known to be true), what is the probability of another event? Knowing extra information restricts the sample space — you no longer consider all possible outcomes, only those consistent with what you've been told. For example, if you know a card drawn is red, you're no longer considering all 52 cards — only the 26 red ones, so every probability recalculated from that point must use 26 as the denominator, not 52.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "The conditional probability formula",
+      "formula": "P(A | B) = P(A and B) ÷ P(B)",
+      "formulaExplained": "P(A | B) is read as 'the probability of A given B' — given that B has already happened, what is the probability that A also happens? B is the condition that restricts your sample space, so you divide by P(B) to rescale. P(A and B) is the probability that both happen together. In plain English: 'given that' means you already know B is true, so you only look at the outcomes where B has occurred, and ask what fraction of those also include A. From a table or Venn diagram: P(A | B) = n(A and B) ÷ n(B), where n means the count of items in that region.",
+      "whenToUse": "Any question using the phrase 'given that', 'knowing that', 'if it is known that', or 'find the probability that A, given B'. Also used in two-stage questions without replacement, where the second pick is conditional on the first.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A group of 40 students each study one language. 24 study Spanish and 16 study Mandarin. Of the Spanish students, 9 also play a sport. Of the Mandarin students, 5 also play a sport. A student is chosen at random. Given that the student plays a sport, find the probability they study Spanish.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Find the total number of students who play a sport (this is our restricted sample space — the condition 'plays a sport').",
+          "working": "9 (Spanish + sport) + 5 (Mandarin + sport) = 14 students play a sport.",
+          "result": "14 students play a sport"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Of those 14, find how many study Spanish.",
+          "working": "9 students study Spanish and play a sport.",
+          "result": "9"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Apply the conditional probability formula: P(Spanish | plays sport) = n(Spanish and sport) ÷ n(plays sport).",
+          "working": "P(Spanish | plays sport) = 9 ÷ 14 = 9/14",
+          "result": "9/14"
+        }
+      ],
+      "conclusion": "P(Spanish | plays sport) = 9/14.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Using the whole group as the denominator instead of restricting to the condition — writing 9/40 instead of 9/14.",
+          "correction": "The condition 'given that' narrows the sample space. The denominator must be the size of the restricted group (those who satisfy the condition), not the total. Re-read the 'given that' clause and identify the new denominator."
+        },
+        {
+          "mistake": "Reversing the condition — finding P(plays sport | studies Spanish) = 9/24 when the question asks for P(studies Spanish | plays sport) = 9/14.",
+          "correction": "P(A | B) and P(B | A) are different and usually have different values. The condition comes after the vertical bar. Identify which event is the condition (after 'given that') and which is the event you're finding the probability of."
+        },
+        {
+          "mistake": "Forgetting to check whether events are independent — applying the simple multiplication rule P(A) × P(B) when the question involves 'without replacement' or a condition.",
+          "correction": "If the question says 'without replacement' or 'given that', the events are not independent. The second probability changes based on the first outcome — use conditional probability or update the tree diagram denominators."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "P(A | B) = P(A and B) ÷ P(B). Read as 'probability of A given B'. The condition B restricts the sample space to only outcomes where B is true.",
+      "examTip": "Identify the condition (what you already know) and use its count or probability as the denominator — not the total sample space."
+    },
+    {
+      "fact": "From a frequency table or Venn diagram: P(A | B) = n(A and B) ÷ n(B). Count only items in B; of those, count how many are also in A.",
+      "examTip": "Circle the row or column for the condition in a frequency table before calculating. That row/column total becomes your new denominator."
+    },
+    {
+      "fact": "P(A | B) ≠ P(B | A) in general. These are two different quantities — the order of the condition and the event matters.",
+      "examTip": "Re-read the question to confirm which event is the condition (after 'given that') and which is the one you're finding. Swapping them is one of the most penalised errors in higher probability questions."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

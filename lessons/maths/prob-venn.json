@@ -1,0 +1,85 @@
+{
+  "id": "prob-venn",
+  "subject": "maths",
+  "topic": "M5",
+  "subtopic": "prob-venn",
+  "title": "Venn diagrams and set notation",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Venn diagrams — where sets overlap tells you everything",
+      "body": "A Venn diagram uses overlapping circles inside a rectangle to show how items are shared between groups. Each region has a specific meaning you must understand before calculating anything: the left-only region contains items in set A but not B; the right-only region contains items in B but not A; the overlapping (intersection) region contains items in both A and B; and the outside region (inside the rectangle but outside both circles) contains items in neither set. Every item in the diagram belongs to exactly one of these four regions, and all the numbers must add up to the total.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Set notation and probability from a Venn diagram",
+      "formula": "A ∩ B (intersection) = items in both A and B  |  A ∪ B (union) = items in A or B or both  |  A' (complement) = items not in A  |  P(A ∩ B) = n(A ∩ B) ÷ total  |  P(A ∪ B) = P(A) + P(B) − P(A ∩ B)  |  P(A') = 1 − P(A)",
+      "formulaExplained": "The intersection symbol ∩ means 'and' — only items in both circles. The union symbol ∪ means 'or' — items in either circle or both. The complement A' (read 'A prime' or 'not A') means everything outside circle A, including the outside region and the B-only region. To find a probability from a Venn diagram, count the items in the relevant region and divide by the total number of items. P(A ∪ B) = P(A) + P(B) − P(A ∩ B) avoids double-counting the intersection.",
+      "whenToUse": "Any question with overlapping categories, 'both', 'neither', 'only one of' — especially when some items satisfy two conditions simultaneously. Also used to check totals: all regions must sum to the grand total.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "In a class of 30 students, 18 study French, 14 study German, and 7 study both. Find (a) how many study neither, and (b) P(French only).",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Fill the Venn diagram. The intersection (both) = 7. French only = 18 − 7 = 11. German only = 14 − 7 = 7.",
+          "working": "French only: 11, Both: 7, German only: 7.",
+          "result": "11 + 7 + 7 = 25 in circles"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Find 'neither': subtract the total in the circles from the class size.",
+          "working": "Neither = 30 − 25 = 5",
+          "result": "5 study neither"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Find P(French only): 11 students are in the French-only region, out of 30 total.",
+          "working": "P(French only) = 11/30",
+          "result": "11/30"
+        }
+      ],
+      "conclusion": "5 students study neither language; P(French only) = 11/30.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Writing the total for a circle (e.g. 18) in the intersection region instead of only the 'both' count (7), then double-counting items.",
+          "correction": "The number in the French circle is split between the French-only region (18 − 7 = 11) and the intersection (7). Place only 11 in the left-only part and 7 in the overlap. The circle total of 18 is the sum of these two regions."
+        },
+        {
+          "mistake": "Forgetting the 'outside' region — placing all items inside the circles and getting a total that's too high.",
+          "correction": "After filling the circles, sum all values inside the circles and subtract from the grand total to find the 'neither' count. Place this number outside both circles but inside the rectangle."
+        },
+        {
+          "mistake": "Confusing P(A ∩ B) with P(A ∪ B) — reading the intersection as all items in either circle.",
+          "correction": "∩ = only the overlap (and). ∪ = everything in either circle (or). Sketch the shaded region for each symbol: ∩ shades just the middle; ∪ shades both circles entirely."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Four regions in a two-circle Venn diagram: A only, B only, A ∩ B (both), and outside (neither). Every item belongs to exactly one region.",
+      "examTip": "Always fill the intersection first — then subtract from each circle total to find the 'only' values. Working from the inside out prevents double-counting."
+    },
+    {
+      "fact": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Subtract the intersection once to avoid counting it twice.",
+      "examTip": "A common exam trap is giving you P(A), P(B) and P(A ∩ B) and asking for P(A ∪ B) — this formula is the direct route."
+    },
+    {
+      "fact": "A' means 'not A' — everything outside circle A. P(A') = 1 − P(A).",
+      "examTip": "On a Venn diagram, A' includes the B-only region and the outside region — not just the outside. Shade it carefully before reading off the count."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

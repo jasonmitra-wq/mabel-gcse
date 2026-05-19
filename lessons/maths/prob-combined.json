@@ -1,0 +1,85 @@
+{
+  "id": "prob-combined",
+  "subject": "maths",
+  "topic": "M5",
+  "subtopic": "prob-combined",
+  "title": "Combined events and sample space diagrams",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Combined events — what happens when two things occur together",
+      "body": "Sometimes you need the probability of two events both happening, or one or the other happening. The rule you use depends on the relationship between the events: if two events cannot happen at the same time they are mutually exclusive (e.g. rolling a 3 and rolling a 5 on one die), and you add their probabilities. If two events don't affect each other they are independent (e.g. flipping a coin and rolling a die), and you multiply their probabilities. Confusing these two rules is the single most common error in probability.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "The AND rule and the OR rule",
+      "formula": "Independent events — AND rule: P(A and B) = P(A) × P(B)  |  Mutually exclusive events — OR rule: P(A or B) = P(A) + P(B)",
+      "formulaExplained": "AND rule (multiply): use this when you want both events to happen and the events are independent — one outcome does not change the probability of the other. Example: P(heads) × P(rolling a 4) = 1/2 × 1/6 = 1/12. OR rule (add): use this when you want either event to happen and the events are mutually exclusive — they cannot both happen at the same time. Example: P(rolling a 2 or a 5) = 1/6 + 1/6 = 2/6 = 1/3. Warning: the OR rule P(A or B) = P(A) + P(B) − P(A and B) is the general version; the simpler addition only works when A and B cannot both happen.",
+      "whenToUse": "Any question asking for the probability of two events both occurring (multiply if independent) or either occurring (add if mutually exclusive). A sample space diagram lists every possible combined outcome and is useful for finding probabilities by counting.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "Two fair spinners each have sections numbered 1, 2 and 3. Both are spun once. Using a sample space diagram, find the probability that the two numbers add to 4.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Draw the sample space: list all 3 × 3 = 9 equally likely outcomes as pairs (Spinner 1, Spinner 2).",
+          "working": "(1,1) (1,2) (1,3) | (2,1) (2,2) (2,3) | (3,1) (3,2) (3,3)",
+          "result": "9 outcomes total"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Identify which pairs sum to 4: 1+3=4, 2+2=4, 3+1=4.",
+          "working": "Favourable outcomes: (1,3), (2,2), (3,1) — three outcomes.",
+          "result": "3 favourable outcomes"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Calculate the probability.",
+          "working": "P(sum = 4) = 3 ÷ 9 = 1/3",
+          "result": "1/3"
+        }
+      ],
+      "conclusion": "P(sum of 4) = 1/3.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Adding probabilities for independent events instead of multiplying — writing P(A and B) = P(A) + P(B).",
+          "correction": "AND means multiply (for independent events). OR means add (for mutually exclusive events). 'Both happen' = multiply. 'Either happens' = add. The words tell you which rule to use."
+        },
+        {
+          "mistake": "Using the OR rule P(A or B) = P(A) + P(B) when the events are not mutually exclusive — double-counting outcomes that are in both events.",
+          "correction": "If A and B can both happen at the same time, use the general rule: P(A or B) = P(A) + P(B) − P(A and B). Only drop the subtraction when you are certain the events are mutually exclusive."
+        },
+        {
+          "mistake": "Missing outcomes in a sample space diagram — listing only some combinations and miscounting the total.",
+          "correction": "For two events with m and n outcomes, the sample space always has m × n entries. Draw a grid: one event along the top, one down the side. Fill every cell — don't try to list them in a column."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Independent events — AND rule: P(A and B) = P(A) × P(B). Use when both events must happen and one doesn't affect the other.",
+      "examTip": "If the question says 'both', 'and', or involves two separate trials (two coins, two dice), multiply the probabilities."
+    },
+    {
+      "fact": "Mutually exclusive events — OR rule: P(A or B) = P(A) + P(B). Use when the events cannot both happen at the same time.",
+      "examTip": "If the question says 'or' and the events are mutually exclusive (e.g. different faces of one die), add. Check they can't both happen before adding."
+    },
+    {
+      "fact": "A sample space diagram lists every possible combined outcome. The total number of outcomes = m × n (m outcomes for one event, n for the other).",
+      "examTip": "Draw a full grid — don't list outcomes in a column where it's easy to miss some. Count every cell as a check."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

@@ -1,0 +1,85 @@
+{
+  "id": "prob-basic",
+  "subject": "maths",
+  "topic": "M5",
+  "subtopic": "prob-basic",
+  "title": "Basic probability — scale and simple events",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Probability — measuring how likely something is",
+      "body": "Every probability is a number between 0 and 1 inclusive: 0 means impossible (it can never happen), 1 means certain (it always happens), and anything in between represents how likely the event is. When you list every possible outcome of a situation, their probabilities must add up to exactly 1 — because something has to happen. This means if you know the probability of an event, you can always find the probability of it not happening: P(not A) = 1 − P(A).",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Probability of a single event",
+      "formula": "P(event) = number of favourable outcomes ÷ total number of equally likely outcomes  |  P(not A) = 1 − P(A)  |  Sum of all outcome probabilities = 1",
+      "formulaExplained": "Count how many outcomes match the event you want (favourable outcomes) and divide by how many equally likely outcomes there are in total. This only works when all outcomes are equally likely — e.g. a fair die or a bag of identical objects except for colour. P(not A) = 1 − P(A) because A and not-A together cover every possibility, so their probabilities must add to 1. Probabilities can be written as fractions, decimals or percentages — fractions are usually most exact.",
+      "whenToUse": "Any simple probability question with equally likely outcomes. Also used whenever the question gives several probabilities and asks you to find the remaining one (use the fact that they must sum to 1).",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A bag contains 3 red counters, 5 blue counters and 2 green counters. A counter is picked at random. Find (a) P(blue), (b) P(not green).",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Find the total number of counters.",
+          "working": "3 + 5 + 2 = 10 counters in total.",
+          "result": "10"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Calculate P(blue): there are 5 blue counters.",
+          "working": "P(blue) = 5 ÷ 10 = 1/2",
+          "result": "1/2"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Calculate P(not green) using P(not A) = 1 − P(A). P(green) = 2/10 = 1/5.",
+          "working": "P(not green) = 1 − 1/5 = 4/5",
+          "result": "4/5"
+        }
+      ],
+      "conclusion": "P(blue) = 1/2 and P(not green) = 4/5.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Writing a probability greater than 1 — e.g. P(blue) = 5 when there are 10 counters.",
+          "correction": "Probability is always a number between 0 and 1. If your answer is greater than 1, you've written the count, not the probability. Divide the favourable outcomes by the total."
+        },
+        {
+          "mistake": "Using P(not A) = 1 + P(A) instead of 1 − P(A).",
+          "correction": "P(A) and P(not A) must add to 1, so P(not A) = 1 minus P(A). If P(A) = 0.3 then P(not A) = 0.7, not 1.3."
+        },
+        {
+          "mistake": "Not simplifying fractions — leaving P = 4/10 instead of 2/5.",
+          "correction": "Always simplify probability fractions to their lowest terms. Divide numerator and denominator by their highest common factor: 4/10 ÷ 2 = 2/5."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "All probabilities lie between 0 and 1. P = 0 means impossible; P = 1 means certain. The probabilities of all possible outcomes sum to exactly 1.",
+      "examTip": "If the probabilities in a question don't add to 1, use that to find a missing value before answering the main question."
+    },
+    {
+      "fact": "P(event) = favourable outcomes ÷ total outcomes. Only valid when all outcomes are equally likely.",
+      "examTip": "Check the question says 'at random' or 'fair' — if the outcomes aren't equally likely, this formula doesn't directly apply."
+    },
+    {
+      "fact": "P(not A) = 1 − P(A). This is the complement rule and works for any event.",
+      "examTip": "It's often faster to calculate P(not A) = 1 − P(A) than to count all the outcomes that aren't A, especially with large sample spaces."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

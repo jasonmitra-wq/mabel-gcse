@@ -1,0 +1,85 @@
+{
+  "id": "prob-tree",
+  "subject": "maths",
+  "topic": "M5",
+  "subtopic": "prob-tree",
+  "title": "Tree diagrams — with and without replacement",
+  "hasLesson": true,
+  "slides": [
+    {
+      "type": "concept",
+      "heading": "Tree diagrams — mapping out every possible sequence of events",
+      "body": "A tree diagram shows every possible sequence of outcomes for two or more events, laid out as branching paths. Each branch is labelled with its probability, and the probabilities on any set of branches coming from the same point must always add to 1. To find the probability of a particular sequence, multiply the probabilities along its path; to find the probability of an event that can happen in more than one way, add the probabilities of all the paths that lead to it. Whether an item is replaced before the next pick changes the probabilities on the second set of branches — always check.",
+      "note": "Maximum 3 sentences. Plain English. No AQA references. What is this and why does it matter."
+    },
+    {
+      "type": "formula",
+      "heading": "Tree diagram rules",
+      "formula": "Probability of a path = multiply the branch probabilities along that path  |  Probability of an event = add the probabilities of all paths that give that outcome  |  Branches from each node must sum to 1",
+      "formulaExplained": "For each complete path through the tree (one branch from each stage), multiply all the branch probabilities together — this gives the probability of that exact sequence occurring. If the event you want can be reached by more than one path, calculate each path probability separately and then add them — this uses the OR rule for mutually exclusive paths. Every time you leave a node, the branches represent all possibilities from that point, so they must sum to 1. Without replacement: after the first pick, one fewer item is in the bag, so the denominator decreases for the second set of branches.",
+      "whenToUse": "Any two-stage (or multi-stage) probability question, especially with and without replacement. Also useful when the question asks for 'at least one' of an event — it's often easier to find P(none) and subtract from 1.",
+      "note": "Show formula in standard notation. Explain each variable. State when this formula applies."
+    },
+    {
+      "type": "workedExample",
+      "heading": "Let's work through one",
+      "question": "A bag contains 4 red and 6 blue counters. Two counters are picked without replacement. Find the probability that both are red.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Set up the tree. First branch: Red (4/10) or Blue (6/10). Second branch from Red: Red (3/9) or Blue (6/9). Second branch from Blue: Red (4/9) or Blue (5/9).",
+          "working": "After picking red first: 3 red and 6 blue remain out of 9. After picking blue first: 4 red and 5 blue remain out of 9.",
+          "result": "Tree structure confirmed"
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Find the probability of the Red → Red path by multiplying along that branch.",
+          "working": "P(Red then Red) = 4/10 × 3/9 = 12/90",
+          "result": "12/90"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Simplify the fraction.",
+          "working": "12/90 = 2/15",
+          "result": "2/15"
+        }
+      ],
+      "conclusion": "P(both red) = 2/15.",
+      "note": "Numbers must differ from any question in the question bank for this subtopic."
+    },
+    {
+      "type": "commonMistakes",
+      "heading": "Watch out for this",
+      "mistakes": [
+        {
+          "mistake": "Adding along branches instead of multiplying — calculating P(Red then Red) = 4/10 + 3/9 instead of 4/10 × 3/9.",
+          "correction": "To find the probability of a sequence (this AND then that), multiply along the path. Adding is only used when combining separate path probabilities at the end."
+        },
+        {
+          "mistake": "Using the same denominator for both picks in a without-replacement question — writing 4/10 × 3/10 instead of 4/10 × 3/9.",
+          "correction": "Without replacement means the total decreases by 1 after each pick, and the count of the picked colour also decreases by 1. Always adjust both the numerator and denominator on the second set of branches."
+        },
+        {
+          "mistake": "Forgetting to add all paths when the event can happen in more than one way — only calculating one path for 'exactly one red' when there are two possible paths (Red then Blue, and Blue then Red).",
+          "correction": "List every path that leads to the outcome, calculate each path probability by multiplying, then add all of them. For 'exactly one red': P(R,B) + P(B,R) = both paths must be included."
+        }
+      ],
+      "note": "Minimum 2, maximum 3 mistakes. Specific not generic."
+    }
+  ],
+  "keyFacts": [
+    {
+      "fact": "Multiply along branches for the probability of a sequence. Add across paths for the probability of an event that can happen in more than one way.",
+      "examTip": "Write 'multiply' next to each path and 'add' where paths combine — this keeps your method clear under exam pressure."
+    },
+    {
+      "fact": "Without replacement: the denominator on the second set of branches is one less than the first, and the numerator for the picked colour is also one less.",
+      "examTip": "Draw the tree fully before calculating anything — label every branch with its fraction. Errors almost always come from not updating the second-branch probabilities."
+    },
+    {
+      "fact": "All branches from a single node must sum to 1. Use this to check your tree or to find a missing branch probability.",
+      "examTip": "After drawing the tree, add up the branches at each node as a quick check. If they don't sum to 1, you've made an error before calculating any final probabilities."
+    }
+  ],
+  "note": "keyFacts: 2-4 entries. Exam-precise language. These are what Mabel writes into her notes."
+}

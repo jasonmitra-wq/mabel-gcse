@@ -24,10 +24,22 @@
         "2Mg + O₂ → 2MgO: Mg oxidised (loses electrons), O₂ reduced (gains electrons)"
       ],
       "keyTerms": [
-        { "term": "Oxidation", "def": "Gain of oxygen, loss of hydrogen, or loss of electrons" },
-        { "term": "Reduction", "def": "Loss of oxygen, gain of hydrogen, or gain of electrons" },
-        { "term": "OIL RIG", "def": "Mnemonic: Oxidation Is Loss (of electrons), Reduction Is Gain (of electrons)" },
-        { "term": "Redox reaction", "def": "A reaction where both oxidation and reduction occur simultaneously" }
+        {
+          "term": "Oxidation",
+          "def": "Gain of oxygen, loss of hydrogen, or loss of electrons"
+        },
+        {
+          "term": "Reduction",
+          "def": "Loss of oxygen, gain of hydrogen, or gain of electrons"
+        },
+        {
+          "term": "OIL RIG",
+          "def": "Mnemonic: Oxidation Is Loss (of electrons), Reduction Is Gain (of electrons)"
+        },
+        {
+          "term": "Redox reaction",
+          "def": "A reaction where both oxidation and reduction occur simultaneously"
+        }
       ],
       "memTip": "OIL RIG: write it on your hand if you have to. Oxidation Is Loss — the thing being oxidised LOSES electrons.",
       "tutor_note": "Students often mix up which substance is oxidised and which is reduced. The key is: track the electrons — where do they come from, where do they go?"
@@ -47,8 +59,14 @@
         "In Fe₂O₃ + 3CO → 2Fe + 3CO₂: CO is reducing agent, Fe₂O₃ is oxidising agent"
       ],
       "keyTerms": [
-        { "term": "Oxidising agent", "def": "A substance that causes another to be oxidised — it gains electrons and is itself reduced" },
-        { "term": "Reducing agent", "def": "A substance that causes another to be reduced — it loses electrons and is itself oxidised" }
+        {
+          "term": "Oxidising agent",
+          "def": "A substance that causes another to be oxidised — it gains electrons and is itself reduced"
+        },
+        {
+          "term": "Reducing agent",
+          "def": "A substance that causes another to be reduced — it loses electrons and is itself oxidised"
+        }
       ],
       "memTip": "The oxidising agent gets reduced (it 'takes' the electrons from the other substance). The reducing agent gets oxidised (it 'gives' electrons away).",
       "tutor_note": "A good exam question to practise: 'Identify the oxidising and reducing agents in the following reactions.' Students must state which is oxidised and which is reduced."
@@ -68,10 +86,16 @@
         "Increase in oxidation state = oxidised; decrease = reduced"
       ],
       "keyTerms": [
-        { "term": "Oxidation state", "def": "A number assigned to an atom in a compound indicating its degree of oxidation; increases when oxidised, decreases when reduced" },
-        { "term": "Roman numerals in names", "def": "The Roman numeral in a compound name (e.g., iron(III)) gives the oxidation state of that element" }
+        {
+          "term": "Oxidation state",
+          "def": "A number assigned to an atom in a compound indicating its degree of oxidation; increases when oxidised, decreases when reduced"
+        },
+        {
+          "term": "Roman numerals in names",
+          "def": "The Roman numeral in a compound name (e.g., iron(III)) gives the oxidation state of that element"
+        }
       ],
-      "memTip": "Going up in oxidation state = oxidised. Going down = reduced. Think: up = losing electrons = oxidation.",
+      "memTip": "Going up in oxidation state = oxidised. Going down = reduced.",
       "tutor_note": "Oxidation states are more commonly tested at higher tier. Practise finding the oxidation state of the 'unusual' element in compounds like KMnO₄ and Cr₂O₇²⁻."
     },
     {
@@ -89,10 +113,22 @@
         "Half equations show electron transfer: Zn → Zn²⁺ + 2e⁻ (oxidation) and Cu²⁺ + 2e⁻ → Cu (reduction)"
       ],
       "keyTerms": [
-        { "term": "Displacement reaction", "def": "A reaction where a more reactive metal takes the place of a less reactive metal in a compound; always a redox reaction" },
-        { "term": "Half equation", "def": "An equation showing only one half of a redox reaction — either the oxidation or the reduction step" },
-        { "term": "Cathode", "def": "The negative electrode in electrolysis; reduction occurs here (positive ions gain electrons)" },
-        { "term": "Anode", "def": "The positive electrode in electrolysis; oxidation occurs here (negative ions lose electrons)" }
+        {
+          "term": "Displacement reaction",
+          "def": "A reaction where a more reactive metal takes the place of a less reactive metal in a compound; always a redox reaction"
+        },
+        {
+          "term": "Half equation",
+          "def": "An equation showing only one half of a redox reaction — either the oxidation or the reduction step"
+        },
+        {
+          "term": "Cathode",
+          "def": "The negative electrode in electrolysis; reduction occurs here (positive ions gain electrons)"
+        },
+        {
+          "term": "Anode",
+          "def": "The positive electrode in electrolysis; oxidation occurs here (negative ions lose electrons)"
+        }
       ],
       "memTip": "CROA: Cathode = Reduction, Oxidation = Anode. Or: 'CROC grows' — Cathode Reduction, Oxidation Cathode... wait, use CROA!",
       "tutor_note": "Displacement reactions often appear in the reactivity series topic — link redox terminology explicitly to those questions."
@@ -102,34 +138,85 @@
     {
       "title": "Redox reaction examples — identifying oxidised/reduced species",
       "examFlag": true,
-      "headers": ["Reaction", "What is oxidised", "What is reduced", "Oxidising agent", "Reducing agent"],
+      "headers": [
+        "Reaction",
+        "What is oxidised",
+        "What is reduced",
+        "Oxidising agent",
+        "Reducing agent"
+      ],
       "rows": [
-        ["2Mg + O₂ → 2MgO", "Mg (gains O, loses e⁻)", "O₂ (gains e⁻)", "O₂", "Mg"],
-        ["Zn + CuSO₄ → ZnSO₄ + Cu", "Zn (loses e⁻: Zn²⁺)", "Cu²⁺ (gains e⁻: Cu)", "CuSO₄ (Cu²⁺ ion)", "Zn"],
-        ["Fe₂O₃ + 3CO → 2Fe + 3CO₂", "CO (gains O → CO₂)", "Fe³⁺ (loses O → Fe)", "Fe₂O₃", "CO"],
-        ["2HCl electrolysis → H₂ + Cl₂", "Cl⁻ at anode (loses e⁻)", "H⁺ at cathode (gains e⁻)", "H⁺ ions", "Cl⁻ ions"],
-        ["CuSO₄ electrolysis (Cu electrodes)", "Cu anode dissolves (Cu → Cu²⁺ + 2e⁻)", "Cu²⁺ at cathode (gains e⁻ → Cu)", "Cu²⁺ ions", "Cu anode"]
+        [
+          "2Mg + O₂ → 2MgO",
+          "Mg (gains O, loses e⁻)",
+          "O₂ (gains e⁻)",
+          "O₂",
+          "Mg"
+        ],
+        [
+          "Zn + CuSO₄ → ZnSO₄ + Cu",
+          "Zn (loses e⁻: Zn²⁺)",
+          "Cu²⁺ (gains e⁻: Cu)",
+          "CuSO₄ (Cu²⁺ ion)",
+          "Zn"
+        ],
+        [
+          "Fe₂O₃ + 3CO → 2Fe + 3CO₂",
+          "CO (gains O → CO₂)",
+          "Fe³⁺ (loses O → Fe)",
+          "Fe₂O₃",
+          "CO"
+        ],
+        [
+          "2HCl electrolysis → H₂ + Cl₂",
+          "Cl⁻ at anode (loses e⁻)",
+          "H⁺ at cathode (gains e⁻)",
+          "H⁺ ions",
+          "Cl⁻ ions"
+        ],
+        [
+          "CuSO₄ electrolysis (Cu electrodes)",
+          "Cu anode dissolves (Cu → Cu²⁺ + 2e⁻)",
+          "Cu²⁺ at cathode (gains e⁻ → Cu)",
+          "Cu²⁺ ions",
+          "Cu anode"
+        ]
       ]
     }
   ],
   "checkpoints": {
     "0": {
       "question": "In the reaction Zn + CuSO₄ → ZnSO₄ + Cu, which species is oxidised?",
-      "options": ["Zinc (Zn)", "Copper ions (Cu²⁺)", "Sulfate ions (SO₄²⁻)", "Zinc ions (Zn²⁺)"],
+      "options": [
+        "Zinc (Zn)",
+        "Copper ions (Cu²⁺)",
+        "Sulfate ions (SO₄²⁻)",
+        "Zinc ions (Zn²⁺)"
+      ],
       "correct": 0,
       "correctFeedback": "Correct! Zinc loses electrons (Zn → Zn²⁺ + 2e⁻) — it is oxidised. OIL: Oxidation Is Loss of electrons.",
       "wrongFeedback": "Zinc is oxidised — it loses electrons: Zn → Zn²⁺ + 2e⁻. OIL RIG: Oxidation Is Loss of electrons."
     },
     "1": {
       "question": "What is the oxidation state of sulfur in H₂SO₄? (H = +1, O = −2)",
-      "options": ["+6", "+4", "−2", "+2"],
+      "options": [
+        "+6",
+        "+4",
+        "−2",
+        "+2"
+      ],
       "correct": 0,
       "correctFeedback": "Exactly right! 2(+1) + S + 4(−2) = 0 → +2 + S − 8 = 0 → S = +6.",
       "wrongFeedback": "Use: 2(+1) + S + 4(−2) = 0. So +2 + S − 8 = 0. S = +6."
     },
     "2": {
       "question": "In electrolysis, what happens at the cathode?",
-      "options": ["Reduction — positive ions gain electrons", "Oxidation — positive ions lose electrons", "Reduction — negative ions gain electrons", "Oxidation — negative ions lose electrons"],
+      "options": [
+        "Reduction — positive ions gain electrons",
+        "Oxidation — positive ions lose electrons",
+        "Reduction — negative ions gain electrons",
+        "Oxidation — negative ions lose electrons"
+      ],
       "correct": 0,
       "correctFeedback": "Spot on! Cathode = reduction. Positive ions gain electrons at the cathode. CROA: Cathode Reduction, Oxidation Anode.",
       "wrongFeedback": "Cathode = reduction. Positive ions move to the cathode and GAIN electrons (are reduced). Remember CROA: Cathode Reduction, Oxidation Anode."

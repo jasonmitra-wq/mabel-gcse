@@ -25,13 +25,34 @@
         "Homozygous = two same alleles (FF or ff); Heterozygous = two different alleles (Ff)"
       ],
       "keyTerms": [
-        {"term": "Allele", "def": "A version of a gene — e.g. the gene for flower colour may have a 'purple' allele and a 'white' allele"},
-        {"term": "Dominant", "def": "An allele that is expressed in the phenotype even when only one copy is present"},
-        {"term": "Recessive", "def": "An allele that is only expressed in the phenotype when two copies are present (homozygous recessive)"},
-        {"term": "Genotype", "def": "The combination of alleles an organism carries for a particular gene"},
-        {"term": "Phenotype", "def": "The observable characteristic produced by the genotype"},
-        {"term": "Homozygous", "def": "Having two identical alleles for a gene (e.g. FF or ff)"},
-        {"term": "Heterozygous", "def": "Having two different alleles for a gene (e.g. Ff)"}
+        {
+          "term": "Allele",
+          "def": "A version of a gene — e.g. the gene for flower colour may have a 'purple' allele and a 'white' allele"
+        },
+        {
+          "term": "Dominant",
+          "def": "An allele that is expressed in the phenotype even when only one copy is present"
+        },
+        {
+          "term": "Recessive",
+          "def": "An allele that is only expressed in the phenotype when two copies are present (homozygous recessive)"
+        },
+        {
+          "term": "Genotype",
+          "def": "The combination of alleles an organism carries for a particular gene"
+        },
+        {
+          "term": "Phenotype",
+          "def": "The observable characteristics of an organism resulting from its genotype and the environment. Examples: blood group, eye colour, height."
+        },
+        {
+          "term": "Homozygous",
+          "def": "Having two identical alleles for a gene (e.g. FF or ff)"
+        },
+        {
+          "term": "Heterozygous",
+          "def": "Having two different alleles for a gene (e.g. Ff)"
+        }
       ],
       "memTip": "Dominant = Decides (takes charge even alone). Recessive = Retiring (hides away unless it gets two copies). Genotype = the Genetic letters. Phenotype = what you actually see (Ph = Physical)."
     },
@@ -49,9 +70,18 @@
         "Express probability as a fraction (1/4), ratio (1:3), or percentage (25%)"
       ],
       "keyTerms": [
-        {"term": "Punnett square", "def": "A grid used to predict the genotype and phenotype ratios of offspring from a genetic cross"},
-        {"term": "3:1 ratio", "def": "The phenotype ratio expected from crossing two heterozygous parents (Ff × Ff) — three with dominant phenotype, one with recessive phenotype"},
-        {"term": "Carrier", "def": "An organism that is heterozygous for a recessive condition (Ff) — does not show the condition but can pass the recessive allele to offspring"}
+        {
+          "term": "Punnett square",
+          "def": "A grid used to predict the genotype and phenotype ratios of offspring from a genetic cross"
+        },
+        {
+          "term": "3:1 ratio",
+          "def": "The phenotype ratio expected from crossing two heterozygous parents (Ff × Ff) — three with dominant phenotype, one with recessive phenotype"
+        },
+        {
+          "term": "Carrier",
+          "def": "An organism that is heterozygous for a recessive condition (Ff) — does not show the condition but can pass the recessive allele to offspring"
+        }
       ],
       "memTip": "For Ff × Ff: think of a 2×2 grid. Top row: F and f. Left column: F and f. Fill in: FF, Ff, Ff, ff. Count the phenotypes: three show dominant (FF + Ff + Ff), one shows recessive (ff). 3:1. Commit that grid to muscle memory."
     },
@@ -69,9 +99,18 @@
         "Carriers only exist for recessive conditions, not dominant ones"
       ],
       "keyTerms": [
-        {"term": "Cystic fibrosis", "def": "A recessive genetic disorder (ff) causing thick mucus in the lungs and digestive system"},
-        {"term": "Polydactyly", "def": "A dominant genetic disorder (Dd or DD) causing extra fingers or toes"},
-        {"term": "Carrier", "def": "A heterozygous individual (Ff) who carries a recessive allele but does not show the condition"}
+        {
+          "term": "Cystic fibrosis",
+          "def": "A recessive genetic disorder (ff) causing thick mucus in the lungs and digestive system"
+        },
+        {
+          "term": "Polydactyly",
+          "def": "A dominant genetic disorder (Dd or DD) causing extra fingers or toes"
+        },
+        {
+          "term": "Carrier",
+          "def": "A heterozygous individual (Ff) who carries a recessive allele but does not show the condition"
+        }
       ],
       "memTip": "CF = Carefully hidden (recessive, needs two copies, can skip generations). Polydactyly = Proudly present (dominant, always shows if you have the allele). One capital letter D is enough to give you extra digits."
     }
@@ -80,10 +119,22 @@
     {
       "title": "Cystic fibrosis inheritance — Ff × Ff cross",
       "examFlag": true,
-      "headers": ["", "F (from parent 1)", "f (from parent 1)"],
+      "headers": [
+        "",
+        "F (from parent 1)",
+        "f (from parent 1)"
+      ],
       "rows": [
-        ["F (from parent 2)", "FF — unaffected", "Ff — carrier (unaffected)"],
-        ["f (from parent 2)", "Ff — carrier (unaffected)", "ff — AFFECTED with cystic fibrosis"]
+        [
+          "F (from parent 2)",
+          "FF — unaffected",
+          "Ff — carrier (unaffected)"
+        ],
+        [
+          "f (from parent 2)",
+          "Ff — carrier (unaffected)",
+          "ff — AFFECTED with cystic fibrosis"
+        ]
       ]
     }
   ],
@@ -124,7 +175,7 @@
       "correctFeedback": "✅ Exactly — carriers of cystic fibrosis (Ff) are phenotypically unaffected, so the condition can disappear from sight for a generation. Polydactyly is dominant, so you can never be a silent carrier — if you have the D allele, you show the condition.",
       "wrongFeedback": "The key is dominant vs recessive. Cystic fibrosis is recessive (ff) — carriers (Ff) show no symptoms but can pass the allele on silently. Polydactyly is dominant — a single D allele always shows in the phenotype, so at least one parent must be affected."
     }
-  ],
+  },
   "commonMistakes": [
     "Using the wrong case for alleles in Punnett squares — dominant is always upper case (F), recessive always lower case (f). Mixing cases confuses the examiner and loses marks.",
     "Saying the 3:1 ratio is guaranteed — it's a probability ratio, not a certainty. For any individual child, each outcome is independent.",

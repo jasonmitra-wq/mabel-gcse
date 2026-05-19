@@ -23,11 +23,20 @@
         "This is called the lock and key model"
       ],
       "keyTerms": [
-        {"term": "Enzyme", "def": "A biological catalyst — a protein that speeds up chemical reactions"},
-        {"term": "Active site", "def": "The specifically shaped region of an enzyme where the substrate binds"},
-        {"term": "Lock and key model", "def": "Only one substrate fits a given enzyme's active site, like a key in a lock"}
+        {
+          "term": "Enzyme",
+          "def": "A biological catalyst — a protein that speeds up chemical reactions"
+        },
+        {
+          "term": "Active site",
+          "def": "The specifically shaped region of an enzyme where the substrate binds"
+        },
+        {
+          "term": "Lock and key model",
+          "def": "Only one substrate fits a given enzyme's active site, like a key in a lock"
+        }
       ],
-      "memTip": "Lock = enzyme's active site. Key = substrate. Only ONE key fits ONE lock — that's why each enzyme is specific to one substrate. Sketch the lock-and-key diagram yourself and label: enzyme, active site, substrate, products."
+      "memTip": "Lock = enzyme's active site. Key = substrate."
     },
     {
       "heading": "The three enzymes you need to know",
@@ -41,11 +50,20 @@
         "Lipase: lipids (fats) → fatty acids + glycerol"
       ],
       "keyTerms": [
-        {"term": "Amylase", "def": "Enzyme that breaks down starch into glucose"},
-        {"term": "Protease", "def": "Enzyme that breaks down proteins into amino acids"},
-        {"term": "Lipase", "def": "Enzyme that breaks down lipids into fatty acids and glycerol"}
+        {
+          "term": "Amylase",
+          "def": "An enzyme that catalyses the hydrolysis of starch into maltose. Produced in the salivary glands and the pancreas."
+        },
+        {
+          "term": "Protease",
+          "def": "Enzyme that breaks down proteins into amino acids"
+        },
+        {
+          "term": "Lipase",
+          "def": "Enzyme that breaks down lipids into fatty acids and glycerol"
+        }
       ],
-      "memTip": "Draw a three-row table: Enzyme | Breaks down | Products. Fill it in from memory three times. APL — Amylase (starch → glucose), Protease (proteins → amino acids), Lipase (lipids → fatty acids + glycerol). Both products of lipase are needed for the mark."
+      "memTip": "Draw a three-row table: Enzyme | Breaks down | Products. Fill it in from memory three times."
     },
     {
       "heading": "Where each enzyme is made",
@@ -60,10 +78,16 @@
         "All three enzymes work in the small intestine"
       ],
       "keyTerms": [
-        {"term": "Pancreas", "def": "Organ that produces all three digestive enzymes (amylase, protease, lipase)"},
-        {"term": "Pepsin", "def": "The protease made in the stomach; works at pH 2"}
+        {
+          "term": "Pancreas",
+          "def": "Organ that produces all three digestive enzymes (amylase, protease, lipase)"
+        },
+        {
+          "term": "Pepsin",
+          "def": "The protease made in the stomach; works at pH 2"
+        }
       ],
-      "memTip": "The pancreas is the MVP — it's the ONLY organ that makes all three enzymes. Write 'Pancreas = A + P + L' in your notes right now. Salivary glands add amylase. Stomach adds protease (pepsin). Everything arrives in the small intestine to finish the job."
+      "memTip": "The pancreas is the MVP — it's the ONLY organ that makes all three enzymes. Write 'Pancreas = A + P + L' in your notes right now."
     },
     {
       "heading": "Temperature — why 37°C is no accident",
@@ -78,10 +102,16 @@
         "Denaturation is irreversible — cooling does NOT restore the enzyme"
       ],
       "keyTerms": [
-        {"term": "Optimum temperature", "def": "The temperature at which an enzyme works fastest"},
-        {"term": "Denaturation", "def": "Permanent change in the shape of an enzyme's active site — substrate can no longer fit"}
+        {
+          "term": "Optimum temperature",
+          "def": "The temperature at which an enzyme works fastest"
+        },
+        {
+          "term": "Denaturation",
+          "def": "Permanent change in the shape of an enzyme's active site — substrate can no longer fit"
+        }
       ],
-      "memTip": "The critical difference: below optimum = slow but recoverable. Above optimum = denatured, permanent, cannot be fixed. AQA often tests exactly this distinction. If you write 'slows down' for a denatured enzyme, you drop the mark. The word is DENATURES."
+      "memTip": "The critical difference: below optimum = slow but recoverable. Above optimum = denatured, permanent, cannot be fixed."
     },
     {
       "heading": "pH — why each enzyme has its own sweet spot",
@@ -96,8 +126,14 @@
         "Too far from optimum pH → active site changes shape → denaturation"
       ],
       "keyTerms": [
-        {"term": "Optimum pH", "def": "The pH at which an enzyme works fastest"},
-        {"term": "Bile", "def": "Substance made in the liver, stored in the gall bladder — neutralises stomach acid in the small intestine"}
+        {
+          "term": "Optimum pH",
+          "def": "The pH at which an enzyme works fastest"
+        },
+        {
+          "term": "Bile",
+          "def": "Substance made in the liver, stored in the gall bladder — neutralises stomach acid in the small intestine"
+        }
       ],
       "memTip": "Trace the pH journey food takes: mouth (pH 7, amylase works) → stomach (pH 2, pepsin works — very acidic!) → small intestine (pH 7–8, bile neutralises the acid so lipase can work). Tell this story aloud — the pH values stick better as a narrative than as a list."
     }
@@ -106,11 +142,31 @@
     {
       "title": "The three digestive enzymes",
       "examFlag": true,
-      "headers": ["Enzyme", "What it breaks down", "Products", "Where it's made"],
+      "headers": [
+        "Enzyme",
+        "What it breaks down",
+        "Products",
+        "Where it's made"
+      ],
       "rows": [
-        ["Amylase",  "Starch",           "Glucose",                   "Salivary glands, pancreas"],
-        ["Protease", "Proteins",         "Amino acids",               "Stomach (pepsin), pancreas"],
-        ["Lipase",   "Lipids (fats)",    "Fatty acids + glycerol",    "Pancreas"]
+        [
+          "Amylase",
+          "Starch",
+          "Glucose",
+          "Salivary glands, pancreas"
+        ],
+        [
+          "Protease",
+          "Proteins",
+          "Amino acids",
+          "Stomach (pepsin), pancreas"
+        ],
+        [
+          "Lipase",
+          "Lipids (fats)",
+          "Fatty acids + glycerol",
+          "Pancreas"
+        ]
       ]
     }
   ],
@@ -152,9 +208,27 @@
     "On graph questions: the rate rises to a peak (the optimum), then drops sharply as denaturation kicks in above it. The drop is sudden, not gradual."
   ],
   "videoLinks": [
-    { "searchQuery": "AQA GCSE biology digestive enzymes", "label": "Digestive Enzymes", "source": "Free Science Lessons", "icon": "▶", "url": "https://www.youtube.com/results?search_query=digestive+enzymes+GCSE+biology+Free+Science+Lessons" },
-    { "searchQuery": "AQA GCSE biology digestive enzymes", "label": "Enzymes — How They Work", "source": "BBC Bitesize", "icon": "▶", "url": "https://www.bbc.co.uk/bitesize/search?q=enzymes+biology" },
-    { "searchQuery": "AQA GCSE biology digestive enzymes", "label": "What are Enzymes?", "source": "Cognito", "icon": "▶", "url": "https://www.youtube.com/results?search_query=enzymes+GCSE+biology+Cognito" }
+    {
+      "searchQuery": "AQA GCSE biology digestive enzymes",
+      "label": "Digestive Enzymes",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=digestive+enzymes+GCSE+biology+Free+Science+Lessons"
+    },
+    {
+      "searchQuery": "AQA GCSE biology digestive enzymes",
+      "label": "Enzymes — How They Work",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=enzymes+biology"
+    },
+    {
+      "searchQuery": "AQA GCSE biology digestive enzymes",
+      "label": "What are Enzymes?",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=enzymes+GCSE+biology+Cognito"
+    }
   ],
   "revisionCardBullets": [
     "Enzyme = biological catalyst (a protein) — speeds up reactions without being used up",

@@ -25,12 +25,24 @@
         "Electron microscopes allowed us to see organelles (e.g. mitochondria, ribosomes) for the first time"
       ],
       "keyTerms": [
-        {"term": "Magnification", "def": "How many times larger the image appears compared with the actual object"},
-        {"term": "Resolution", "def": "The ability to distinguish two separate points as distinct from each other; determines the level of detail visible"},
-        {"term": "Light microscope", "def": "A microscope that uses visible light and glass lenses to magnify specimens"},
-        {"term": "Electron microscope", "def": "A microscope that uses a beam of electrons to achieve much higher resolution than a light microscope"}
+        {
+          "term": "Magnification",
+          "def": "How many times larger the image appears compared with the actual object"
+        },
+        {
+          "term": "Resolution",
+          "def": "The ability to distinguish two separate points as distinct from each other; determines the level of detail visible"
+        },
+        {
+          "term": "Light microscope",
+          "def": "A microscope that uses visible light and glass lenses to magnify specimens"
+        },
+        {
+          "term": "Electron microscope",
+          "def": "A microscope that uses a beam of electrons to achieve much higher resolution than a light microscope"
+        }
       ],
-      "memTip": "Resolution ≠ magnification. Magnification = how big. Resolution = how sharp (how much detail). A bad camera at maximum zoom is high magnification, low resolution. Repeat this to yourself: 'EM = better resolution, not just bigger.' That distinction is exam-favourite territory."
+      "memTip": "Resolution ≠ magnification. Magnification = how big."
     },
     {
       "heading": "The magnification formula",
@@ -46,10 +58,16 @@
         "Magnification has no units — it is just a ratio (×600, ×1000, etc.)"
       ],
       "keyTerms": [
-        {"term": "Micrometre (µm)", "def": "Unit of length equal to one millionth of a metre (10⁻⁶ m); 1 mm = 1000 µm"},
-        {"term": "Nanometre (nm)", "def": "Unit of length equal to one billionth of a metre (10⁻⁹ m); 1 µm = 1000 nm"}
+        {
+          "term": "Micrometre (µm)",
+          "def": "Unit of length equal to one millionth of a metre (10⁻⁶ m); 1 mm = 1000 µm"
+        },
+        {
+          "term": "Nanometre (nm)",
+          "def": "Unit of length equal to one billionth of a metre (10⁻⁹ m); 1 µm = 1000 nm"
+        }
       ],
-      "memTip": "Memorise the triangle: I over M × A. Cover the one you want. Also drill the conversions until they're automatic: mm → µm multiply by 1000; µm → nm multiply by 1000. Going the other way, divide by 1000. Write these three conversions on a flashcard and quiz yourself before every practice calc."
+      "memTip": "Memorise the triangle: I over M × A. Cover the one you want."
     },
     {
       "heading": "Scale bars — finding actual size from a diagram",
@@ -64,9 +82,12 @@
         "Check your answer makes biological sense — a cell should be 10–100 µm, not 10 m"
       ],
       "keyTerms": [
-        {"term": "Scale bar", "def": "A line on a diagram that represents a known length in reality, used to calculate actual sizes"}
+        {
+          "term": "Scale bar",
+          "def": "A line on a diagram that represents a known length in reality, used to calculate actual sizes"
+        }
       ],
-      "memTip": "Scale bar questions look scary but they're just ratios. Step 1: measure the bar with your ruler. Step 2: set up the ratio (bar mm : real µm). Step 3: scale it up to your feature. Practise on at least three diagrams before the exam — the method becomes mechanical very quickly."
+      "memTip": "Scale bar questions look scary but they're just ratios. Step 1: measure the bar with your ruler."
     },
     {
       "heading": "Preparing a slide — the required practical",
@@ -82,25 +103,63 @@
         "Coverslip added at an angle to prevent air bubbles (which create dark circles in the image)"
       ],
       "keyTerms": [
-        {"term": "Coverslip", "def": "A thin piece of glass placed over a specimen on a microscope slide to protect it and create a flat surface for viewing"},
-        {"term": "Iodine solution", "def": "A stain used in microscopy; turns starch blue-black and helps highlight cell structures in plant specimens"}
+        {
+          "term": "Coverslip",
+          "def": "A thin piece of glass placed over a specimen on a microscope slide to protect it and create a flat surface for viewing"
+        },
+        {
+          "term": "Iodine solution",
+          "def": "A stain used in microscopy; turns starch blue-black and helps highlight cell structures in plant specimens"
+        }
       ],
-      "memTip": "Practise writing the slide prep steps from memory in order. The examiner wants: thin section, place on slide, add water or stain, coverslip at an angle. The most commonly asked part is WHY the section must be thin (light must pass through) and WHY the coverslip goes on at an angle (prevent air bubbles). Know both reasons."
+      "memTip": "Practise writing the slide prep steps from memory in order. The examiner wants: thin section, place on slide, add water or stain, coverslip at an angle."
     }
   ],
   "tables": [
     {
       "title": "Light microscope vs electron microscope",
       "examFlag": true,
-      "headers": ["Feature", "Light microscope", "Electron microscope"],
+      "headers": [
+        "Feature",
+        "Light microscope",
+        "Electron microscope"
+      ],
       "rows": [
-        ["What it uses",        "Visible light",                     "Beam of electrons"],
-        ["Magnification",       "Up to ×2000",                       "Up to ×500,000+"],
-        ["Resolution",          "Lower (~200 nm)",                   "Much higher (~0.1 nm)"],
-        ["Type of specimen",    "Living or dead",                    "Dead only (must be in vacuum)"],
-        ["Image colour",        "Colour (natural or stained)",       "Black and white"],
-        ["Cost",                "Low — widely available",            "High — specialist equipment"],
-        ["Training needed",     "Minimal",                           "Specialist training required"]
+        [
+          "What it uses",
+          "Visible light",
+          "Beam of electrons"
+        ],
+        [
+          "Magnification",
+          "Up to ×2000",
+          "Up to ×500,000+"
+        ],
+        [
+          "Resolution",
+          "Lower (~200 nm)",
+          "Much higher (~0.1 nm)"
+        ],
+        [
+          "Type of specimen",
+          "Living or dead",
+          "Dead only (must be in vacuum)"
+        ],
+        [
+          "Image colour",
+          "Colour (natural or stained)",
+          "Black and white"
+        ],
+        [
+          "Cost",
+          "Low — widely available",
+          "High — specialist equipment"
+        ],
+        [
+          "Training needed",
+          "Minimal",
+          "Specialist training required"
+        ]
       ]
     }
   ],

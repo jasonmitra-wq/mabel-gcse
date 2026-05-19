@@ -26,10 +26,16 @@
         "Short range in air (~5 cm); most dangerous if ingested or inhaled"
       ],
       "keyTerms": [
-        { "term": "alpha particle (α)", "def": "A helium nucleus (2 protons + 2 neutrons); emitted during alpha decay; highly ionising, stopped by paper" },
-        { "term": "ionising radiation", "def": "Radiation that knocks electrons off atoms, creating ions — alpha is the most ionising of the three types" }
+        {
+          "term": "alpha particle (α)",
+          "def": "A helium nucleus (2 protons + 2 neutrons); emitted during alpha decay; highly ionising, stopped by paper"
+        },
+        {
+          "term": "ionising radiation",
+          "def": "Radiation that knocks electrons off atoms, creating ions — alpha is the most ionising of the three types"
+        }
       ],
-      "memTip": "Alpha = helium nucleus (⁴₂He). Loses 4 from mass, 2 from atomic number. Stopped by paper. Very ionising.",
+      "memTip": "Alpha = helium nucleus (⁴₂He). Loses 4 from mass, 2 from atomic number.",
       "tutor_note": "Mabel should practise writing out alpha decay equations from scratch — filling in the daughter nucleus numbers by subtraction."
     },
     {
@@ -46,10 +52,16 @@
         "Beta notation in equations: ⁰₋₁e"
       ],
       "keyTerms": [
-        { "term": "beta particle (β)", "def": "A fast electron emitted from the nucleus when a neutron converts to a proton; stopped by thin aluminium" },
-        { "term": "beta decay", "def": "A neutron in the nucleus converts to a proton, emitting a beta particle (electron) — atomic number increases by 1" }
+        {
+          "term": "beta particle (β)",
+          "def": "A fast electron emitted from the nucleus when a neutron converts to a proton; stopped by thin aluminium"
+        },
+        {
+          "term": "beta decay",
+          "def": "A neutron in the nucleus converts to a proton, emitting a beta particle (electron) — atomic number increases by 1"
+        }
       ],
-      "memTip": "Beta = fast electron from nucleus. Mass stays same, atomic number goes up by 1. Stopped by aluminium.",
+      "memTip": "Beta = fast electron from nucleus. Mass stays same, atomic number goes up by 1.",
       "tutor_note": "Common confusion: beta particles come FROM the nucleus — the nucleus does not already contain electrons, it creates them during the decay."
     },
     {
@@ -66,10 +78,16 @@
         "Often emitted alongside alpha or beta as the nucleus loses excess energy"
       ],
       "keyTerms": [
-        { "term": "gamma ray (γ)", "def": "High-energy electromagnetic radiation emitted from the nucleus; no mass or charge; weakly ionising but very penetrating" },
-        { "term": "electromagnetic radiation", "def": "Waves that travel at the speed of light; gamma rays are the highest energy part of the EM spectrum" }
+        {
+          "term": "gamma ray (γ)",
+          "def": "High-energy electromagnetic radiation emitted from the nucleus; no mass or charge; weakly ionising but very penetrating"
+        },
+        {
+          "term": "electromagnetic radiation",
+          "def": "Waves that travel at the speed of light; gamma rays are the highest energy part of the EM spectrum"
+        }
       ],
-      "memTip": "Gamma = EM wave. No mass, no charge. Weakly ionising. Penetrates everything — only reduced (not stopped) by lead.",
+      "memTip": "Gamma = EM wave. No mass, no charge.",
       "tutor_note": "Emphasise that 'stopped by lead' is not quite right — gamma is only significantly reduced, not completely blocked."
     },
     {
@@ -86,8 +104,14 @@
         "Gamma: no change to mass or atomic number — nucleus loses energy only"
       ],
       "keyTerms": [
-        { "term": "background radiation", "def": "Low-level radiation from natural and artificial sources always present in the environment" },
-        { "term": "nuclear equation", "def": "An equation showing radioactive decay with mass numbers and atomic numbers balanced on both sides" }
+        {
+          "term": "background radiation",
+          "def": "Low-level radiation from natural and artificial sources always present in the environment"
+        },
+        {
+          "term": "nuclear equation",
+          "def": "An equation showing radioactive decay with mass numbers and atomic numbers balanced on both sides"
+        }
       ],
       "memTip": "Balance top numbers, balance bottom numbers. Radon is the biggest source of background radiation in the UK.",
       "tutor_note": "Give Mabel practice completing nuclear equations where the daughter nucleus is unknown — this is the most common calculation in this topic."
@@ -97,16 +121,61 @@
     {
       "title": "Comparison of alpha, beta and gamma radiation",
       "examFlag": true,
-      "headers": ["Property", "Alpha (α)", "Beta (β)", "Gamma (γ)"],
+      "headers": [
+        "Property",
+        "Alpha (α)",
+        "Beta (β)",
+        "Gamma (γ)"
+      ],
       "rows": [
-        ["What it is", "Helium nucleus (2p + 2n)", "Fast electron from nucleus", "EM wave (high frequency)"],
-        ["Mass number", "4", "0", "0"],
-        ["Atomic number / charge", "+2", "−1", "0"],
-        ["Ionising power", "High (most ionising)", "Moderate", "Low (least ionising)"],
-        ["Penetrating power", "Low (least penetrating)", "Moderate", "High (most penetrating)"],
-        ["Stopped by", "Paper / few cm of air", "Few mm of aluminium", "Reduced by thick lead or concrete"],
-        ["Range in air", "~5 cm", "~1 m", "Effectively infinite"],
-        ["Effect on nucleus", "Z −2, A −4", "Z +1, A unchanged", "No change to Z or A"]
+        [
+          "What it is",
+          "Helium nucleus (2p + 2n)",
+          "Fast electron from nucleus",
+          "EM wave (high frequency)"
+        ],
+        [
+          "Mass number",
+          "4",
+          "0",
+          "0"
+        ],
+        [
+          "Atomic number / charge",
+          "+2",
+          "−1",
+          "0"
+        ],
+        [
+          "Ionising power",
+          "High (most ionising)",
+          "Moderate",
+          "Low (least ionising)"
+        ],
+        [
+          "Penetrating power",
+          "Low (least penetrating)",
+          "Moderate",
+          "High (most penetrating)"
+        ],
+        [
+          "Stopped by",
+          "Paper / few cm of air",
+          "Few mm of aluminium",
+          "Reduced by thick lead or concrete"
+        ],
+        [
+          "Range in air",
+          "~5 cm",
+          "~1 m",
+          "Effectively infinite"
+        ],
+        [
+          "Effect on nucleus",
+          "Z −2, A −4",
+          "Z +1, A unchanged",
+          "No change to Z or A"
+        ]
       ]
     }
   ],

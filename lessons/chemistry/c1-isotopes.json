@@ -25,11 +25,20 @@
         "Chlorine: Cl-35 (~75%) and Cl-37 (~25%); Hydrogen: protium, deuterium, tritium"
       ],
       "keyTerms": [
-        {"term": "Isotope", "def": "Atoms of the same element with the same number of protons but different numbers of neutrons"},
-        {"term": "Mass number", "def": "The total number of protons and neutrons in the nucleus of an atom"},
-        {"term": "Atomic number", "def": "The number of protons in the nucleus; defines the element"}
+        {
+          "term": "Isotope",
+          "def": "Atoms of the same element with the same number of protons but different numbers of neutrons"
+        },
+        {
+          "term": "Mass number",
+          "def": "The total number of protons and neutrons in the nucleus of an atom"
+        },
+        {
+          "term": "Atomic number",
+          "def": "The number of protons in the nucleus; defines the element"
+        }
       ],
-      "memTip": "Same element = same PROTONS. Different isotope = different NEUTRONS. Think of twins who look identical (same electrons/reactions) but one weighs slightly more (different mass).",
+      "memTip": "Same element = same PROTONS. Different isotope = different NEUTRONS.",
       "tutor_note": "Stress that isotopes have identical chemical properties. This is why the periodic table works — Cl-35 and Cl-37 both react the same way, they're both chlorine."
     },
     {
@@ -47,8 +56,14 @@
         "Not always a whole number — the Ar is a WEIGHTED AVERAGE"
       ],
       "keyTerms": [
-        {"term": "Relative atomic mass (Ar)", "def": "The weighted mean mass of an atom of an element relative to 1/12th the mass of a carbon-12 atom; has no units"},
-        {"term": "Weighted mean", "def": "An average that accounts for the different proportions (abundances) of each isotope"}
+        {
+          "term": "Relative atomic mass (Ar)",
+          "def": "The weighted mean mass of an atom of an element relative to 1/12th the mass of a carbon-12 atom; has no units"
+        },
+        {
+          "term": "Weighted mean",
+          "def": "An average that accounts for the different proportions (abundances) of each isotope"
+        }
       ],
       "memTip": "Remember the formula: Ar = Σ(mass × %) ÷ 100. Think of it like calculating a weighted average mark — common isotopes count more towards the final answer.",
       "tutor_note": "The chlorine worked example is the standard AQA one. Make sure Mabel can reproduce it confidently, and also work backwards from an Ar to find an unknown abundance."
@@ -68,10 +83,16 @@
         "AQA provides a periodic table in the exam — no Ar values to memorise"
       ],
       "keyTerms": [
-        {"term": "Relative formula mass (Mr)", "def": "The sum of all relative atomic masses in a chemical formula; has no units"},
-        {"term": "Molar mass", "def": "The mass of one mole of a substance in g/mol; numerically equal to Mr"}
+        {
+          "term": "Relative formula mass (Mr)",
+          "def": "The sum of all relative atomic masses in a chemical formula; has no units"
+        },
+        {
+          "term": "Molar mass",
+          "def": "The mass of one mole of a substance in g/mol; numerically equal to Mr"
+        }
       ],
-      "memTip": "Mr is just adding up the masses. Take it atom by atom: how many of each element? Multiply each by its Ar. Add them up. Done.",
+      "memTip": "Mr is just adding up the masses. Take it atom by atom: how many of each element?",
       "tutor_note": "CaCO₃ = 100 is worth memorising as a quick check. It's also used a lot in limestone/neutralisation questions."
     },
     {
@@ -89,11 +110,20 @@
         "Mass spectrometry proved isotopes exist in early 20th century"
       ],
       "keyTerms": [
-        {"term": "Mass spectrometer", "def": "An instrument that separates atoms by their mass-to-charge ratio and measures the abundance of each isotope"},
-        {"term": "Mass spectrum", "def": "A chart showing the relative abundance of each isotope plotted against mass number"},
-        {"term": "Mass-to-charge ratio", "def": "The ratio of an ion's mass to its electric charge; used to separate ions in a mass spectrometer"}
+        {
+          "term": "Mass spectrometer",
+          "def": "An instrument that separates atoms by their mass-to-charge ratio and measures the abundance of each isotope"
+        },
+        {
+          "term": "Mass spectrum",
+          "def": "A chart showing the relative abundance of each isotope plotted against mass number"
+        },
+        {
+          "term": "Mass-to-charge ratio",
+          "def": "The ratio of an ion's mass to its electric charge; used to separate ions in a mass spectrometer"
+        }
       ],
-      "memTip": "In a mass spectrum: TALL peak = MORE abundant isotope. The Ar will be closer to the mass of the tallest peak. Use this to check your calculation makes sense.",
+      "memTip": "In a mass spectrum: TALL peak = MORE abundant isotope. The Ar will be closer to the mass of the tallest peak.",
       "tutor_note": "AQA commonly provides a mass spectrum and asks students to calculate Ar from it. Practise reading peak heights accurately — the question often uses relative heights rather than true percentages."
     }
   ],
@@ -101,16 +131,79 @@
     {
       "title": "Key isotopes — mass number, proton number, neutron number, and natural abundance",
       "examFlag": true,
-      "headers": ["Element", "Isotope", "Mass number", "Protons", "Neutrons", "Natural abundance"],
+      "headers": [
+        "Element",
+        "Isotope",
+        "Mass number",
+        "Protons",
+        "Neutrons",
+        "Natural abundance"
+      ],
       "rows": [
-        ["Hydrogen", "Protium (H-1)", "1", "1", "0", "99.98%"],
-        ["Hydrogen", "Deuterium (H-2)", "2", "1", "1", "0.02%"],
-        ["Hydrogen", "Tritium (H-3)", "3", "1", "2", "Trace (radioactive)"],
-        ["Carbon", "C-12", "12", "6", "6", "98.9%"],
-        ["Carbon", "C-13", "13", "6", "7", "1.1%"],
-        ["Carbon", "C-14", "14", "6", "8", "Trace (radioactive)"],
-        ["Chlorine", "Cl-35", "35", "17", "18", "75%"],
-        ["Chlorine", "Cl-37", "37", "17", "20", "25%"]
+        [
+          "Hydrogen",
+          "Protium (H-1)",
+          "1",
+          "1",
+          "0",
+          "99.98%"
+        ],
+        [
+          "Hydrogen",
+          "Deuterium (H-2)",
+          "2",
+          "1",
+          "1",
+          "0.02%"
+        ],
+        [
+          "Hydrogen",
+          "Tritium (H-3)",
+          "3",
+          "1",
+          "2",
+          "Trace (radioactive)"
+        ],
+        [
+          "Carbon",
+          "C-12",
+          "12",
+          "6",
+          "6",
+          "98.9%"
+        ],
+        [
+          "Carbon",
+          "C-13",
+          "13",
+          "6",
+          "7",
+          "1.1%"
+        ],
+        [
+          "Carbon",
+          "C-14",
+          "14",
+          "6",
+          "8",
+          "Trace (radioactive)"
+        ],
+        [
+          "Chlorine",
+          "Cl-35",
+          "35",
+          "17",
+          "18",
+          "75%"
+        ],
+        [
+          "Chlorine",
+          "Cl-37",
+          "37",
+          "17",
+          "20",
+          "25%"
+        ]
       ]
     }
   ],

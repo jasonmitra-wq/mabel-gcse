@@ -25,10 +25,22 @@
         "Non-magnetic — aluminium, copper, wood, plastic — unaffected by magnetic fields"
       ],
       "keyTerms": [
-        { "term": "Permanent magnet", "def": "A material that is always magnetic without needing an external field" },
-        { "term": "Induced magnet", "def": "A magnetic material that becomes temporarily magnetised inside a magnetic field" },
-        { "term": "Ferromagnetic", "def": "Materials that can be strongly magnetised: iron, steel, cobalt, nickel" },
-        { "term": "Magnetically soft", "def": "Easy to magnetise and demagnetise — iron is the classic example" }
+        {
+          "term": "Permanent magnet",
+          "def": "A material that is always magnetic without needing an external field"
+        },
+        {
+          "term": "Induced magnet",
+          "def": "A magnetic material that becomes temporarily magnetised inside a magnetic field"
+        },
+        {
+          "term": "Ferromagnetic",
+          "def": "Materials that can be strongly magnetised: iron, steel, cobalt, nickel"
+        },
+        {
+          "term": "Magnetically soft",
+          "def": "Easy to magnetise and demagnetise — iron is the classic example"
+        }
       ],
       "memTip": "Iron is SOFT — easy in, easy out. Steel is HARD — once it's in, it stays.",
       "tutor_note": "Many students confuse 'magnetic' with 'ferromagnetic' — emphasise that only iron, cobalt, nickel, and steel are ferromagnetic. Aluminium is often wrongly thought to be magnetic because it is shiny and metal-coloured."
@@ -48,9 +60,18 @@
         "Earth's magnetic south pole is near its geographic north pole — that's why compasses point north"
       ],
       "keyTerms": [
-        { "term": "Magnetic field", "def": "A region where a force acts on a magnetic material or current-carrying wire" },
-        { "term": "Field lines", "def": "Lines showing the direction and strength of a magnetic field; run N to S outside the magnet" },
-        { "term": "Flux density", "def": "A measure of the strength of a magnetic field — stronger where field lines are closer" }
+        {
+          "term": "Magnetic field",
+          "def": "A region where a force acts on a magnetic material or current-carrying wire"
+        },
+        {
+          "term": "Field lines",
+          "def": "Lines showing the direction and strength of a magnetic field; run N to S outside the magnet"
+        },
+        {
+          "term": "Flux density",
+          "def": "A measure of the strength of a magnetic field — stronger where field lines are closer"
+        }
       ],
       "memTip": "Field lines: Never Cross, North to South (outside), Closer = Stronger.",
       "tutor_note": "Students often draw field lines crossing — stress that this is always wrong. Also clarify the Earth's poles: Earth's geographic north = Earth's magnetic south, which is why a compass north pole is attracted to it."
@@ -70,11 +91,20 @@
         "Reversing current direction reverses the field direction"
       ],
       "keyTerms": [
-        { "term": "Solenoid", "def": "A coil of wire that produces a bar-magnet-like field when current flows through it" },
-        { "term": "Right-hand grip rule", "def": "Thumb points in direction of current; fingers curl in direction of the magnetic field" },
-        { "term": "Electromagnet", "def": "A solenoid with an iron core — produces a strong magnetic field that can be switched on and off" }
+        {
+          "term": "Solenoid",
+          "def": "A coil of wire that produces a bar-magnet-like field when current flows through it"
+        },
+        {
+          "term": "Right-hand grip rule",
+          "def": "Thumb points in direction of current; fingers curl in direction of the magnetic field"
+        },
+        {
+          "term": "Electromagnet",
+          "def": "A solenoid with an iron core — produces a strong magnetic field that can be switched on and off"
+        }
       ],
-      "memTip": "Solenoid = bar magnet shape. Add iron core = electromagnet. Right hand: thumb = current, fingers = field.",
+      "memTip": "Solenoid = bar magnet shape. Add iron core = electromagnet.",
       "tutor_note": "Ensure students can apply the right-hand grip rule to both a straight wire (fingers curl around the wire) and a solenoid (fingers curl in the direction the current flows around the coil, thumb points to N pole)."
     },
     {
@@ -92,9 +122,18 @@
         "MRI scanners — superconducting electromagnets align hydrogen atoms in the body"
       ],
       "keyTerms": [
-        { "term": "Electromagnet", "def": "A solenoid with an iron core — switchable magnetic field controlled by current" },
-        { "term": "Relay", "def": "A switch controlled by an electromagnet — small current controls a large current circuit" },
-        { "term": "Superconducting", "def": "Zero electrical resistance at very low temperatures — used for very powerful electromagnets in MRI" }
+        {
+          "term": "Electromagnet",
+          "def": "A solenoid with an iron core — switchable magnetic field controlled by current"
+        },
+        {
+          "term": "Relay",
+          "def": "A switch controlled by an electromagnet — small current controls a large current circuit"
+        },
+        {
+          "term": "Superconducting",
+          "def": "Zero electrical resistance at very low temperatures — used for very powerful electromagnets in MRI"
+        }
       ],
       "memTip": "Electromagnets: Switch it on, switch it off. More turns + more current + iron core = stronger.",
       "tutor_note": "Students often forget that relays serve a safety purpose — the control circuit and the high-current circuit are electrically isolated. This is important in exam questions about car starter motors and similar contexts."
@@ -104,13 +143,43 @@
     {
       "title": "Permanent magnets vs induced magnets vs electromagnets",
       "examFlag": true,
-      "headers": ["Property", "Permanent magnet", "Induced magnet", "Electromagnet"],
+      "headers": [
+        "Property",
+        "Permanent magnet",
+        "Induced magnet",
+        "Electromagnet"
+      ],
       "rows": [
-        ["How produced", "Material naturally retains magnetism", "Placed in an external magnetic field", "Current through a solenoid with iron core"],
-        ["Can be switched off", "No", "Yes — remove from field", "Yes — switch off current"],
-        ["Field strength", "Fixed (depends on material)", "Weaker than the inducing magnet", "Adjustable — varies with current and turns"],
-        ["Materials", "Iron, cobalt, nickel, neodymium steel", "Soft iron (mainly)", "Soft iron core, copper coil"],
-        ["Examples", "Fridge magnet, compass needle", "Iron nail in a magnetic field", "Relay, circuit breaker, MRI, crane"]
+        [
+          "How produced",
+          "Material naturally retains magnetism",
+          "Placed in an external magnetic field",
+          "Current through a solenoid with iron core"
+        ],
+        [
+          "Can be switched off",
+          "No",
+          "Yes — remove from field",
+          "Yes — switch off current"
+        ],
+        [
+          "Field strength",
+          "Fixed (depends on material)",
+          "Weaker than the inducing magnet",
+          "Adjustable — varies with current and turns"
+        ],
+        [
+          "Materials",
+          "Iron, cobalt, nickel, neodymium steel",
+          "Soft iron (mainly)",
+          "Soft iron core, copper coil"
+        ],
+        [
+          "Examples",
+          "Fridge magnet, compass needle",
+          "Iron nail in a magnetic field",
+          "Relay, circuit breaker, MRI, crane"
+        ]
       ]
     }
   ],

@@ -24,10 +24,16 @@
         "If conditions drift outside normal range, enzymes are disrupted and cells malfunction"
       ],
       "keyTerms": [
-        {"term": "Homeostasis", "def": "The regulation of internal conditions of a cell or organism to maintain optimum conditions, despite changes inside and outside the body"},
-        {"term": "Internal environment", "def": "The conditions inside the body — temperature, pH, glucose concentration, water levels — that homeostasis maintains"}
+        {
+          "term": "Homeostasis",
+          "def": "The regulation of internal conditions of a cell or organism to maintain optimum conditions, despite changes inside and outside the body"
+        },
+        {
+          "term": "Internal environment",
+          "def": "The conditions inside the body — temperature, pH, glucose concentration, water levels — that homeostasis maintains"
+        }
       ],
-      "memTip": "Homeostasis = keeping it constant. The three things to keep constant for AQA: temperature (~37°C), blood glucose (narrow range), water/ion balance. Always link temperature to enzyme activity — that's why it matters."
+      "memTip": "Homeostasis = keeping it constant. The three things to keep constant for AQA: temperature (~37°C), blood glucose (narrow range), water/ion balance."
     },
     {
       "heading": "The control system: receptor, control centre, effector",
@@ -43,12 +49,24 @@
         "The system is automatic and continuous — always monitoring and adjusting"
       ],
       "keyTerms": [
-        {"term": "Receptor", "def": "A cell or organ that detects a change in the internal environment and sends information to the control centre"},
-        {"term": "Control centre", "def": "The part of the body (often the brain) that receives information from receptors, compares it to the set point, and coordinates the response"},
-        {"term": "Effector", "def": "A muscle or gland that carries out a response to bring conditions back to the set point"},
-        {"term": "Set point", "def": "The normal, optimum level of a variable (e.g. 37°C for body temperature) that homeostatic mechanisms work to maintain"}
+        {
+          "term": "Receptor",
+          "def": "A cell or organ that detects a change in the internal environment and sends information to the control centre"
+        },
+        {
+          "term": "Control centre",
+          "def": "The part of the body (often the brain) that receives information from receptors, compares it to the set point, and coordinates the response"
+        },
+        {
+          "term": "Effector",
+          "def": "A muscle or gland that carries out a response to bring conditions back to the set point"
+        },
+        {
+          "term": "Set point",
+          "def": "The normal, optimum level of a variable (e.g. 37°C for body temperature) that homeostatic mechanisms work to maintain"
+        }
       ],
-      "memTip": "Receptor → Control Centre → Effector. RCE. The control centre is always comparing 'what IS it?' to 'what SHOULD it be?' — that comparison is the heart of homeostasis."
+      "memTip": "Receptor → Control Centre → Effector. RCE."
     },
     {
       "heading": "Negative feedback — the correction mechanism",
@@ -64,11 +82,20 @@
         "Called 'negative' because the response negates (opposes) the original change"
       ],
       "keyTerms": [
-        {"term": "Negative feedback", "def": "A control mechanism where a change from the set point triggers a response that returns the variable back towards the set point, opposing the change"},
-        {"term": "Vasodilation", "def": "Widening of blood vessels near the skin surface — increases heat loss by radiation"},
-        {"term": "Vasoconstriction", "def": "Narrowing of blood vessels near the skin surface — reduces heat loss, conserving body heat"}
+        {
+          "term": "Negative feedback",
+          "def": "A control mechanism where a change from the set point triggers a response that returns the variable back towards the set point, opposing the change"
+        },
+        {
+          "term": "Vasodilation",
+          "def": "Widening of blood vessels near the skin surface — increases heat loss by radiation"
+        },
+        {
+          "term": "Vasoconstriction",
+          "def": "Narrowing of blood vessels near the skin surface — reduces heat loss, conserving body heat"
+        }
       ],
-      "memTip": "Negative feedback = opposite direction to the change. Draw a simple loop: too high → response to lower it → approaches normal → response reduced. Too low → response to raise it → approaches normal → response reduced. The key is that the correction always works against the change."
+      "memTip": "Negative feedback = opposite direction to the change. Draw a simple loop: too high → response to lower it → approaches normal → response reduced."
     },
     {
       "heading": "Temperature regulation — thermoregulation",
@@ -84,23 +111,52 @@
         "Vasodilation = more blood near skin surface → more heat radiated; vasoconstriction = opposite"
       ],
       "keyTerms": [
-        {"term": "Hypothalamus", "def": "Region of the brain that acts as the temperature control centre — detects blood temperature and coordinates thermoregulation responses"},
-        {"term": "Thermoregulation", "def": "The process of maintaining core body temperature at ~37°C through homeostatic mechanisms"},
-        {"term": "Shivering", "def": "Rapid, involuntary muscle contractions that generate heat through respiration, helping raise body temperature"}
+        {
+          "term": "Hypothalamus",
+          "def": "Region of the brain that acts as the temperature control centre — detects blood temperature and coordinates thermoregulation responses"
+        },
+        {
+          "term": "Thermoregulation",
+          "def": "The process of maintaining core body temperature at ~37°C through homeostatic mechanisms"
+        },
+        {
+          "term": "Shivering",
+          "def": "Rapid, involuntary muscle contractions that generate heat through respiration, helping raise body temperature"
+        }
       ],
-      "memTip": "Too hot = sweat, vasodilate, lie flat. Too cold = stop sweating, vasoconstrict, shiver, stand up. The direction of hair and blood vessels always makes logical sense — trap heat when cold, lose heat when hot. The hypothalamus controls all of it."
+      "memTip": "Too hot = sweat, vasodilate, lie flat. Too cold = stop sweating, vasoconstrict, shiver, stand up."
     }
   ],
   "tables": [
     {
       "title": "Thermoregulation responses compared",
       "examFlag": true,
-      "headers": ["Variable", "Response when too hot", "Response when too cold"],
+      "headers": [
+        "Variable",
+        "Response when too hot",
+        "Response when too cold"
+      ],
       "rows": [
-        ["Sweating", "Increases — evaporation cools skin", "Decreases — conserves water/heat"],
-        ["Blood vessels", "Vasodilate — more heat radiated", "Vasoconstrict — less heat lost"],
-        ["Hairs", "Lie flat — reduces insulating layer", "Stand up — traps warm air layer"],
-        ["Muscles", "Relax", "Shiver — generate heat by respiration"]
+        [
+          "Sweating",
+          "Increases — evaporation cools skin",
+          "Decreases — conserves water/heat"
+        ],
+        [
+          "Blood vessels",
+          "Vasodilate — more heat radiated",
+          "Vasoconstrict — less heat lost"
+        ],
+        [
+          "Hairs",
+          "Lie flat — reduces insulating layer",
+          "Stand up — traps warm air layer"
+        ],
+        [
+          "Muscles",
+          "Relax",
+          "Shiver — generate heat by respiration"
+        ]
       ]
     }
   ],

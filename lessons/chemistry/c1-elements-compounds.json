@@ -25,8 +25,14 @@
         "Some symbols come from Latin names (Fe = ferrum, Au = aurum)"
       ],
       "keyTerms": [
-        {"term": "Element", "def": "A pure substance made of only one type of atom; cannot be broken down by chemical means"},
-        {"term": "Atomic symbol", "def": "A 1- or 2-letter code representing an element, with the first letter always capitalised"}
+        {
+          "term": "Element",
+          "def": "A pure substance made up of only one type of atom. It cannot be broken down into simpler substances by chemical means."
+        },
+        {
+          "term": "Atomic symbol",
+          "def": "A 1- or 2-letter code used to represent an element, with the first letter always capitalised (e.g. Na for sodium, Fe for iron)."
+        }
       ],
       "memTip": "If a substance is just ONE type of atom repeated — it's an element. Think of iron (all Fe atoms) or oxygen gas (all O atoms).",
       "tutor_note": "Students often confuse elements with pure substances. Reinforce: all elements are pure, but not all pure substances are elements (a compound can also be pure)."
@@ -46,11 +52,20 @@
         "Name ending -ate or -ite = contains oxygen too (calcium carbonate, copper sulfate)"
       ],
       "keyTerms": [
-        {"term": "Compound", "def": "A substance formed when two or more elements are chemically bonded together in a fixed ratio"},
-        {"term": "-ide", "def": "Suffix indicating a compound made of only two elements (e.g. sodium chloride, magnesium oxide)"},
-        {"term": "-ate", "def": "Suffix indicating a compound that contains oxygen alongside other elements (e.g. calcium carbonate)"}
+        {
+          "term": "Compound",
+          "def": "A pure substance formed when two or more elements are chemically bonded together in a fixed ratio. Its properties are different from those of the elements it contains."
+        },
+        {
+          "term": "-ide",
+          "def": "Suffix indicating a compound made of only two elements (e.g. sodium chloride, magnesium oxide)"
+        },
+        {
+          "term": "-ate",
+          "def": "Suffix indicating a compound that contains oxygen alongside other elements (e.g. calcium carbonate)"
+        }
       ],
-      "memTip": "COMPOUND = atoms CHEMically bonded. You need CHEMistry to break them apart. If you can separate it by heating or filtering — it's probably a mixture.",
+      "memTip": "COMPOUND = atoms CHEMically bonded. You need CHEMistry to break them apart.",
       "tutor_note": "The sodium + chlorine → sodium chloride example is brilliant for showing how compounds differ from their constituent elements. Use it every time."
     },
     {
@@ -68,12 +83,24 @@
         "Chromatography separates dissolved substances by solubility and attraction to paper"
       ],
       "keyTerms": [
-        {"term": "Mixture", "def": "Two or more substances not chemically combined; variable composition; separated by physical means"},
-        {"term": "Filtration", "def": "Separates an insoluble solid from a liquid using a filter paper"},
-        {"term": "Distillation", "def": "Separates liquids with different boiling points by evaporation and condensation"},
-        {"term": "Chromatography", "def": "Separates dissolved substances based on their different solubilities and attractions to the stationary phase"}
+        {
+          "term": "Mixture",
+          "def": "Two or more substances that are not chemically combined. Each substance retains its individual properties, and the composition can vary. Mixtures can be separated by physical methods."
+        },
+        {
+          "term": "Filtration",
+          "def": "A physical separation technique that uses a filter to separate an insoluble solid (residue) from a liquid (filtrate)."
+        },
+        {
+          "term": "Distillation",
+          "def": "A separation technique that uses differences in boiling point to separate liquids; the liquid is evaporated and the vapour condensed back to liquid in a collecting flask."
+        },
+        {
+          "term": "Chromatography",
+          "def": "A separation technique in which substances in a mixture travel different distances through a stationary phase (e.g. paper) carried by a mobile phase (solvent), separating them based on their different solubilities and attractions to the stationary phase."
+        }
       ],
-      "memTip": "MIXTURE = substances just MIXED together. Think of a fruit salad — the apple is still apple, the banana is still banana. They haven't become 'applebanana'.",
+      "memTip": "MIXTURE = substances just MIXED together. Think of a fruit salad — the apple is still apple, the banana is still banana.",
       "tutor_note": "Students often say distillation 'purifies' water — remind them it separates, but the condensed water is pure only if you're separating it from a dissolved solid."
     },
     {
@@ -91,11 +118,26 @@
         "Chromatography Rf = distance moved by substance ÷ distance moved by solvent"
       ],
       "keyTerms": [
-        {"term": "Filtrate", "def": "The liquid that passes through the filter paper during filtration"},
-        {"term": "Residue", "def": "The insoluble solid left behind on the filter paper"},
-        {"term": "Crystallisation", "def": "Controlled cooling of a concentrated solution to produce pure crystals"},
-        {"term": "Fractional distillation", "def": "Separation of liquids with different boiling points using a fractionating column"},
-        {"term": "Rf value", "def": "Distance moved by substance ÷ distance moved by solvent front in chromatography"}
+        {
+          "term": "Filtrate",
+          "def": "The liquid that passes through the filter paper during filtration."
+        },
+        {
+          "term": "Residue",
+          "def": "The insoluble solid that remains on the filter paper after filtration."
+        },
+        {
+          "term": "Crystallisation",
+          "def": "A separation technique in which a solution is heated to concentrate it and then cooled slowly, causing a pure solid to crystallise out."
+        },
+        {
+          "term": "Fractional distillation",
+          "def": "A separation technique that uses a fractionating column to separate a mixture of liquids with different boiling points; liquids with lower boiling points distil off first."
+        },
+        {
+          "term": "Rf value",
+          "def": "A value used in chromatography to identify substances: Rf = distance moved by the substance ÷ distance moved by the solvent. It is always between 0 and 1, and is specific to a substance in a given solvent."
+        }
       ],
       "memTip": "For the exam: always link the technique to the PROPERTY being exploited — filtration uses particle size, distillation uses boiling point, chromatography uses solubility.",
       "tutor_note": "Rf value calculations are a common 2-mark question. Make sure Mabel can set up the ratio correctly and knows it's always less than 1."
@@ -105,13 +147,43 @@
     {
       "title": "Elements vs compounds vs mixtures",
       "examFlag": true,
-      "headers": ["Feature", "Element", "Compound", "Mixture"],
+      "headers": [
+        "Feature",
+        "Element",
+        "Compound",
+        "Mixture"
+      ],
       "rows": [
-        ["Definition", "One type of atom only", "Two or more elements chemically bonded", "Two or more substances not chemically combined"],
-        ["Composition", "Fixed (only one element)", "Fixed ratio of atoms", "Variable — any proportion"],
-        ["Properties", "Unique to that element", "Different from constituent elements", "Each substance keeps its own properties"],
-        ["How to separate", "Cannot be broken down by chemistry", "Chemical reaction only", "Physical methods (filtration, distillation etc.)"],
-        ["Example", "Iron (Fe), Oxygen (O)", "Water (H₂O), Salt (NaCl)", "Salt water, air, crude oil, brass"]
+        [
+          "Definition",
+          "One type of atom only",
+          "Two or more elements chemically bonded",
+          "Two or more substances not chemically combined"
+        ],
+        [
+          "Composition",
+          "Fixed (only one element)",
+          "Fixed ratio of atoms",
+          "Variable — any proportion"
+        ],
+        [
+          "Properties",
+          "Unique to that element",
+          "Different from constituent elements",
+          "Each substance keeps its own properties"
+        ],
+        [
+          "How to separate",
+          "Cannot be broken down by chemistry",
+          "Chemical reaction only",
+          "Physical methods (filtration, distillation etc.)"
+        ],
+        [
+          "Example",
+          "Iron (Fe), Oxygen (O)",
+          "Water (H₂O), Salt (NaCl)",
+          "Salt water, air, crude oil, brass"
+        ]
       ]
     }
   ],

@@ -26,10 +26,16 @@
         "This is the reverse of the motor effect — generator converts kinetic energy to electrical"
       ],
       "keyTerms": [
-        { "term": "electromagnetic induction", "def": "The production of an EMF (and current if circuit is complete) when a conductor moves through a magnetic field or experiences a changing magnetic field" },
-        { "term": "induced EMF", "def": "An electromotive force produced by electromagnetic induction; drives a current around a circuit if the circuit is complete" }
+        {
+          "term": "electromagnetic induction",
+          "def": "The production of an EMF (and current if circuit is complete) when a conductor moves through a magnetic field or experiences a changing magnetic field"
+        },
+        {
+          "term": "induced EMF",
+          "def": "An electromotive force produced by electromagnetic induction; drives a current around a circuit if the circuit is complete"
+        }
       ],
-      "memTip": "Motor: electricity in → movement out. Generator: movement in → electricity out. Both use magnetic fields. Induction needs CHANGE — no change, no EMF.",
+      "memTip": "Motor: electricity in → movement out. Generator: movement in → electricity out.",
       "tutor_note": "Students often say 'the magnet creates electricity' — redirect to: the relative movement between the conductor and the field is what causes induction; a stationary magnet next to a stationary wire produces nothing."
     },
     {
@@ -46,9 +52,12 @@
         "Lenz's law — induced current opposes the change that caused it (energy conservation)"
       ],
       "keyTerms": [
-        { "term": "Lenz's law", "def": "The induced current always flows in a direction that opposes the change producing it; a consequence of conservation of energy" }
+        {
+          "term": "Lenz's law",
+          "def": "The induced current always flows in a direction that opposes the change producing it; a consequence of conservation of energy"
+        }
       ],
-      "memTip": "To increase induced EMF: go Faster, use a Stronger field, use More turns. F-S-M. Lenz's law = the induced effect always fights back.",
+      "memTip": "To increase induced EMF: go Faster, use a Stronger field, use More turns. F-S-M.",
       "tutor_note": "Lenz's law is often tested in 'explain why it's hard to push the magnet into the coil' style questions — emphasise that the induced current creates a magnetic field that repels the approaching magnet."
     },
     {
@@ -65,11 +74,20 @@
         "Zero EMF when coil is perpendicular to field (momentarily not cutting field lines)"
       ],
       "keyTerms": [
-        { "term": "AC generator (alternator)", "def": "A device that converts kinetic energy to electrical energy by rotating a coil in a magnetic field, producing alternating current" },
-        { "term": "slip rings", "def": "Continuous rings in an AC generator that allow the coil to rotate freely while maintaining electrical contact, producing AC output" },
-        { "term": "alternating current (AC)", "def": "Current that repeatedly reverses direction; the output of a generator; represented as a sinusoidal wave" }
+        {
+          "term": "AC generator (alternator)",
+          "def": "A device that converts kinetic energy to electrical energy by rotating a coil in a magnetic field, producing alternating current"
+        },
+        {
+          "term": "slip rings",
+          "def": "Continuous rings in an AC generator that allow the coil to rotate freely while maintaining electrical contact, producing AC output"
+        },
+        {
+          "term": "alternating current (AC)",
+          "def": "Current that repeatedly reverses direction; the output of a generator; represented as a sinusoidal wave"
+        }
       ],
-      "memTip": "Generator = slip rings (free to spin) → AC output. Motor = split-ring commutator (reverses current) → DC input. Different rings for different jobs.",
+      "memTip": "Generator = slip rings (free to spin) → AC output. Motor = split-ring commutator (reverses current) → DC input.",
       "tutor_note": "Students confuse slip rings (generators, AC) with split-ring commutators (motors, DC) — make sure they can explain the difference in function, not just the name."
     },
     {
@@ -86,10 +104,16 @@
         "Left hand = motor effect; right hand = generator/induction — do not mix them up"
       ],
       "keyTerms": [
-        { "term": "microphone", "def": "A device using electromagnetic induction to convert sound waves into electrical signals; the reverse of a loudspeaker" },
-        { "term": "Fleming's right-hand rule", "def": "Used to find the direction of induced current when a conductor moves through a magnetic field: index=field, thumb=motion, middle=current" }
+        {
+          "term": "microphone",
+          "def": "A device using electromagnetic induction to convert sound waves into electrical signals; the reverse of a loudspeaker"
+        },
+        {
+          "term": "Fleming's right-hand rule",
+          "def": "Used to find the direction of induced current when a conductor moves through a magnetic field: index=field, thumb=motion, middle=current"
+        }
       ],
-      "memTip": "Right hand = generator (makes electricity). Left hand = motor (uses electricity). Microphone = tiny generator for sound.",
+      "memTip": "Right hand = generator (makes electricity). Left hand = motor (uses electricity).",
       "tutor_note": "Ask students to contrast the microphone and loudspeaker explicitly — both have a coil and magnet, but one converts sound to electricity and the other electricity to sound."
     }
   ],

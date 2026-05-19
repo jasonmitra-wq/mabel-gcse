@@ -24,8 +24,14 @@
         "Ice (917 kg/m³) is less dense than water (1000 kg/m³) — so ice floats"
       ],
       "keyTerms": [
-        {"term": "Density", "def": "Mass per unit volume — how much mass is packed into a given space. Symbol: ρ (rho). Unit: kg/m³"},
-        {"term": "ρ = m/V", "def": "The density equation: density equals mass divided by volume"}
+        {
+          "term": "Density",
+          "def": "Mass per unit volume — how much mass is packed into a given space. Symbol: ρ (rho). Unit: kg/m³"
+        },
+        {
+          "term": "ρ = m/V",
+          "def": "The density equation: density equals mass divided by volume"
+        }
       ],
       "memTip": "ρ = m/V — think 'rho equals mass over volume'. Rearrange using the triangle: cover what you want, the rest is the calculation.",
       "tutor_note": "Students often mix up mass and density. Reinforce: a large object can have low density (balloon) and a small object can have high density (lead weight)."
@@ -44,7 +50,10 @@
         "If density < fluid density → floats; if density > fluid density → sinks"
       ],
       "keyTerms": [
-        {"term": "Unit conversion", "def": "1 g/cm³ = 1000 kg/m³. Multiply by 1000 to convert g/cm³ to kg/m³"}
+        {
+          "term": "Unit conversion",
+          "def": "1 g/cm³ = 1000 kg/m³. Multiply by 1000 to convert g/cm³ to kg/m³"
+        }
       ],
       "memTip": "Use a formula triangle: put ρ at the top, m and V at the bottom. Cover what you want to find.",
       "tutor_note": "Unit conversion errors are the most common source of lost marks in density questions. Drill this explicitly."
@@ -64,10 +73,16 @@
         "Sources of error: parallax, incomplete submersion, worn equipment"
       ],
       "keyTerms": [
-        {"term": "Eureka can", "def": "A displacement can filled to the brim — used to measure the volume of an irregular object by collecting the water it displaces"},
-        {"term": "Displacement", "def": "The volume of liquid pushed aside when an object is submerged — equals the volume of the object"}
+        {
+          "term": "Eureka can",
+          "def": "A displacement can filled to the brim — used to measure the volume of an irregular object by collecting the water it displaces"
+        },
+        {
+          "term": "Displacement",
+          "def": "The volume of liquid pushed aside when an object is submerged — equals the volume of the object"
+        }
       ],
-      "memTip": "Regular → ruler and formula. Irregular → water displacement. Liquid → cylinder and balance. Three methods, three situations.",
+      "memTip": "Regular → ruler and formula. Irregular → water displacement.",
       "tutor_note": "Exam questions often ask you to describe the method for an irregular object — make sure you mention collecting the displaced water, not just 'put it in water'."
     },
     {
@@ -85,7 +100,10 @@
         "Ratio of liquid to gas density is typically ~1000:1 (e.g., water vs water vapour)"
       ],
       "keyTerms": [
-        {"term": "Hexagonal lattice", "def": "The open ring-shaped structure of ice — water molecules held in a wider arrangement than in liquid water, making ice less dense"}
+        {
+          "term": "Hexagonal lattice",
+          "def": "The open ring-shaped structure of ice — water molecules held in a wider arrangement than in liquid water, making ice less dense"
+        }
       ],
       "memTip": "Most solids > their liquid. But water is the exception: ice floats, proving solid water is LESS dense than liquid water.",
       "tutor_note": "The water/ice density exception is a favourite exam question — make sure you can explain it using particle arrangement, not just state the fact."
@@ -95,16 +113,70 @@
     {
       "title": "Densities of common materials",
       "examFlag": true,
-      "headers": ["Material", "State", "Density (kg/m³)", "Density (g/cm³)", "Floats on water?"],
+      "headers": [
+        "Material",
+        "State",
+        "Density (kg/m³)",
+        "Density (g/cm³)",
+        "Floats on water?"
+      ],
       "rows": [
-        ["Air", "Gas", "~1.2", "~0.0012", "Yes (rises)"],
-        ["Ice", "Solid", "917", "0.917", "Yes (just)"],
-        ["Water", "Liquid", "1000", "1.0", "Reference"],
-        ["Wood (pine)", "Solid", "~600", "~0.6", "Yes"],
-        ["Aluminium", "Solid", "2700", "2.7", "No"],
-        ["Iron/Steel", "Solid", "7900", "7.9", "No"],
-        ["Lead", "Solid", "11,300", "11.3", "No"],
-        ["Gold", "Solid", "19,300", "19.3", "No"]
+        [
+          "Air",
+          "Gas",
+          "~1.2",
+          "~0.0012",
+          "Yes (rises)"
+        ],
+        [
+          "Ice",
+          "Solid",
+          "917",
+          "0.917",
+          "Yes (just)"
+        ],
+        [
+          "Water",
+          "Liquid",
+          "1000",
+          "1.0",
+          "Reference"
+        ],
+        [
+          "Wood (pine)",
+          "Solid",
+          "~600",
+          "~0.6",
+          "Yes"
+        ],
+        [
+          "Aluminium",
+          "Solid",
+          "2700",
+          "2.7",
+          "No"
+        ],
+        [
+          "Iron/Steel",
+          "Solid",
+          "7900",
+          "7.9",
+          "No"
+        ],
+        [
+          "Lead",
+          "Solid",
+          "11,300",
+          "11.3",
+          "No"
+        ],
+        [
+          "Gold",
+          "Solid",
+          "19,300",
+          "19.3",
+          "No"
+        ]
       ]
     }
   ],

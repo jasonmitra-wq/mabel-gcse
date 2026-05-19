@@ -24,9 +24,18 @@
         "Thermal store — the internal energy held by the particles of a substance"
       ],
       "keyTerms": [
-        { "term": "conservation of energy", "def": "Energy cannot be created or destroyed — only transferred between stores" },
-        { "term": "closed system", "def": "A system where no energy enters or leaves; total energy stays constant" },
-        { "term": "dissipated", "def": "Energy spread out into the surroundings, usually as thermal energy, where it is difficult to use again" }
+        {
+          "term": "conservation of energy",
+          "def": "Energy cannot be created or destroyed — only transferred between stores"
+        },
+        {
+          "term": "closed system",
+          "def": "A system where no energy enters or leaves; total energy stays constant"
+        },
+        {
+          "term": "dissipated",
+          "def": "Energy spread out into the surroundings, usually as thermal energy, where it is difficult to use again"
+        }
       ],
       "memTip": "Think of energy like money — you can move it between accounts but you can never create it from nothing or make it vanish.",
       "tutor_note": "Students often say energy is 'used up' — gently correct this every time. Energy is transferred, never destroyed."
@@ -45,11 +54,20 @@
         "Streamlining — shaping an object to reduce air resistance and cut wasted kinetic energy"
       ],
       "keyTerms": [
-        { "term": "useful energy", "def": "Energy transferred to the intended output store" },
-        { "term": "wasted energy", "def": "Energy transferred to an unintended store, usually thermal or sound" },
-        { "term": "lubrication", "def": "Using oil or similar material between surfaces to reduce friction and heat loss" }
+        {
+          "term": "useful energy",
+          "def": "Energy transferred to the intended output store"
+        },
+        {
+          "term": "wasted energy",
+          "def": "Energy transferred to an unintended store, usually thermal or sound"
+        },
+        {
+          "term": "lubrication",
+          "def": "Using oil or similar material between surfaces to reduce friction and heat loss"
+        }
       ],
-      "memTip": "Useful = what you WANT. Wasted = what you DON'T want. Both together must equal the input.",
+      "memTip": "Useful = what you WANT. Wasted = what you DON'T want.",
       "tutor_note": "Sankey diagrams are a great way to visualise this — the width of the arrow represents the amount of energy."
     },
     {
@@ -66,9 +84,18 @@
         "Sound absorption — sound energy transferred to thermal energy as vibrations are damped by a material"
       ],
       "keyTerms": [
-        { "term": "dissipation", "def": "The spreading of energy into the surroundings as thermal energy, making it hard to use again" },
-        { "term": "perpetual motion", "def": "A hypothetical machine that runs forever — impossible because friction always dissipates energy" },
-        { "term": "friction", "def": "A contact force between surfaces that converts kinetic energy to thermal energy" }
+        {
+          "term": "dissipation",
+          "def": "The spreading of energy into the surroundings as thermal energy, making it hard to use again"
+        },
+        {
+          "term": "perpetual motion",
+          "def": "A hypothetical machine that runs forever — impossible because friction always dissipates energy"
+        },
+        {
+          "term": "friction",
+          "def": "A contact force between surfaces that converts kinetic energy to thermal energy"
+        }
       ],
       "memTip": "Dissipate = spread out and dilute. Like a drop of dye in a swimming pool — impossible to collect back.",
       "tutor_note": "Emphasise that dissipated energy obeys conservation — it still exists, just as low-grade heat in the surroundings."
@@ -88,9 +115,18 @@
         "Cavity wall insulation — foam or fibre in wall cavities slows thermal energy transfer to outside"
       ],
       "keyTerms": [
-        { "term": "thermal insulation", "def": "A material or design that slows the transfer of thermal energy to the surroundings" },
-        { "term": "regenerative braking", "def": "System in EVs that converts kinetic energy back to electrical energy during braking instead of wasting it as heat" },
-        { "term": "streamlining", "def": "Shaping an object to reduce air resistance and the kinetic energy lost to drag" }
+        {
+          "term": "thermal insulation",
+          "def": "A material or design that slows the transfer of thermal energy to the surroundings"
+        },
+        {
+          "term": "regenerative braking",
+          "def": "System in EVs that converts kinetic energy back to electrical energy during braking instead of wasting it as heat"
+        },
+        {
+          "term": "streamlining",
+          "def": "Shaping an object to reduce air resistance and the kinetic energy lost to drag"
+        }
       ],
       "memTip": "LSRI: Lubrication, Streamlining, Regenerative braking, Insulation — four ways to cut wasted energy.",
       "tutor_note": "Regenerative braking is a favourite exam topic because it combines energy stores, efficiency, and real-world application."
@@ -100,14 +136,56 @@
     {
       "title": "Energy transfer examples — useful output, wasted output, and how waste is reduced",
       "examFlag": true,
-      "headers": ["Device / process", "Input energy store", "Useful output", "Wasted output", "How to reduce waste"],
+      "headers": [
+        "Device / process",
+        "Input energy store",
+        "Useful output",
+        "Wasted output",
+        "How to reduce waste"
+      ],
       "rows": [
-        ["Incandescent light bulb", "Electrical", "Light (radiation)", "Thermal (heat)", "Switch to LED bulb"],
-        ["Car engine (petrol)", "Chemical (fuel)", "Kinetic", "Thermal + sound", "Streamlining, lubrication"],
-        ["Electric motor", "Electrical", "Kinetic (mechanical)", "Thermal (resistance heat)", "Better conductors, cooling"],
-        ["Bouncing ball", "Gravitational PE", "Kinetic", "Thermal + sound (each bounce)", "More elastic ball material"],
-        ["Electric kettle", "Electrical", "Thermal (hot water)", "Thermal lost to surroundings", "Insulate the kettle body"],
-        ["Electric car (braking)", "Kinetic", "Electrical (stored in battery)", "Small thermal loss", "Regenerative braking system"]
+        [
+          "Incandescent light bulb",
+          "Electrical",
+          "Light (radiation)",
+          "Thermal (heat)",
+          "Switch to LED bulb"
+        ],
+        [
+          "Car engine (petrol)",
+          "Chemical (fuel)",
+          "Kinetic",
+          "Thermal + sound",
+          "Streamlining, lubrication"
+        ],
+        [
+          "Electric motor",
+          "Electrical",
+          "Kinetic (mechanical)",
+          "Thermal (resistance heat)",
+          "Better conductors, cooling"
+        ],
+        [
+          "Bouncing ball",
+          "Gravitational PE",
+          "Kinetic",
+          "Thermal + sound (each bounce)",
+          "More elastic ball material"
+        ],
+        [
+          "Electric kettle",
+          "Electrical",
+          "Thermal (hot water)",
+          "Thermal lost to surroundings",
+          "Insulate the kettle body"
+        ],
+        [
+          "Electric car (braking)",
+          "Kinetic",
+          "Electrical (stored in battery)",
+          "Small thermal loss",
+          "Regenerative braking system"
+        ]
       ]
     }
   ],

@@ -26,10 +26,22 @@
         "More turns on secondary → higher voltage (step-up); fewer → lower voltage (step-down)"
       ],
       "keyTerms": [
-        { "term": "transformer", "def": "A device that uses electromagnetic induction to change the voltage of an AC supply; consists of primary and secondary coils on an iron core" },
-        { "term": "primary coil", "def": "The input coil of a transformer; carries the supply AC" },
-        { "term": "secondary coil", "def": "The output coil of a transformer; carries the induced AC at a different voltage" },
-        { "term": "iron core", "def": "The shared core of a transformer that channels the changing magnetic field between primary and secondary coils" }
+        {
+          "term": "transformer",
+          "def": "A device that uses electromagnetic induction to change the voltage of an AC supply; consists of primary and secondary coils on an iron core"
+        },
+        {
+          "term": "primary coil",
+          "def": "The input coil of a transformer; carries the supply AC"
+        },
+        {
+          "term": "secondary coil",
+          "def": "The output coil of a transformer; carries the induced AC at a different voltage"
+        },
+        {
+          "term": "iron core",
+          "def": "The shared core of a transformer that channels the changing magnetic field between primary and secondary coils"
+        }
       ],
       "memTip": "Transformer = Primary coil (AC in) → changing field in iron core → Secondary coil (AC out at new voltage). Must be AC — no change, no induction.",
       "tutor_note": "Students often say 'the transformer generates electricity' — clarify that it does not create electrical energy; it transfers it from primary to secondary at a different voltage, using induction."
@@ -48,11 +60,20 @@
         "Units: voltages in V; turns are dimensionless (just a ratio)"
       ],
       "keyTerms": [
-        { "term": "transformer equation", "def": "Vp/Vs = Np/Ns — the ratio of voltages equals the ratio of turns; used to calculate output voltage or turns ratio" },
-        { "term": "step-up transformer", "def": "A transformer where secondary turns > primary turns, giving a higher output voltage than input" },
-        { "term": "step-down transformer", "def": "A transformer where secondary turns < primary turns, giving a lower output voltage than input" }
+        {
+          "term": "transformer equation",
+          "def": "Vp/Vs = Np/Ns — the ratio of voltages equals the ratio of turns; used to calculate output voltage or turns ratio"
+        },
+        {
+          "term": "step-up transformer",
+          "def": "A transformer where secondary turns > primary turns, giving a higher output voltage than input"
+        },
+        {
+          "term": "step-down transformer",
+          "def": "A transformer where secondary turns < primary turns, giving a lower output voltage than input"
+        }
       ],
-      "memTip": "Vp/Vs = Np/Ns. Think of it as 'primary over secondary = primary turns over secondary turns'. More secondary turns = more voltage out.",
+      "memTip": "Vp/Vs = Np/Ns. Think of it as 'primary over secondary = primary turns over secondary turns'.",
       "tutor_note": "Students frequently invert the ratio — write it as Vp/Vs = Np/Ns and stress that the same side of the transformer always goes together: primary voltage with primary turns, secondary with secondary."
     },
     {
@@ -69,7 +90,10 @@
         "Real transformers lose some energy as heat (eddy currents in core); GCSE assumes 100% efficient"
       ],
       "keyTerms": [
-        { "term": "VpIp = VsIs", "def": "The power equation for an ideal transformer — input power equals output power; voltage and current change in opposite directions" }
+        {
+          "term": "VpIp = VsIs",
+          "def": "The power equation for an ideal transformer — input power equals output power; voltage and current change in opposite directions"
+        }
       ],
       "memTip": "VpIp = VsIs — both sides equal the same power (in watts). If voltage goes up 10×, current must go down 10× to keep power the same.",
       "tutor_note": "Students often try to use VpIp = VsIs and Vp/Vs = Np/Ns in the same calculation simultaneously — walk through each step separately: find the voltage change first, then use power conservation to find the current."
@@ -88,8 +112,14 @@
         "Step-down transformers at substations: ~400 kV → 230 V for homes"
       ],
       "keyTerms": [
-        { "term": "national grid", "def": "The network of cables and transformers that transmits electrical power from power stations to consumers across the country" },
-        { "term": "P = I²R", "def": "Power lost as heat in a conductor = current squared × resistance; explains why high voltage (low current) transmission wastes less energy" }
+        {
+          "term": "national grid",
+          "def": "The network of cables and transformers that transmits electrical power from power stations to consumers across the country"
+        },
+        {
+          "term": "P = I²R",
+          "def": "Power lost as heat in a conductor = current squared × resistance; explains why high voltage (low current) transmission wastes less energy"
+        }
       ],
       "memTip": "High voltage = low current = less power wasted (P = I²R). The grid uses high voltage because current is squared in the power loss equation — tiny current = tiny losses.",
       "tutor_note": "This is a very common 4–6 mark question. Students should state: step-up transformer → high voltage → lower current → P=I²R → less power wasted as heat in cables. Each step must be linked explicitly."

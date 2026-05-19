@@ -24,9 +24,18 @@
         "Fraction — a group of hydrocarbons with similar boiling points, collected together"
       ],
       "keyTerms": [
-        {"term": "Hydrocarbon", "def": "A compound containing only carbon and hydrogen atoms."},
-        {"term": "Fossil fuel", "def": "A fuel formed over millions of years from the compressed remains of living organisms; non-renewable."},
-        {"term": "Fraction", "def": "A group of hydrocarbons with similar boiling points collected together during fractional distillation."}
+        {
+          "term": "Hydrocarbon",
+          "def": "A compound containing only carbon and hydrogen atoms."
+        },
+        {
+          "term": "Fossil fuel",
+          "def": "A fuel formed over millions of years from the compressed remains of living organisms; non-renewable."
+        },
+        {
+          "term": "Fraction",
+          "def": "A group of hydrocarbons with similar boiling points collected together during fractional distillation."
+        }
       ],
       "memTip": "Crude oil = ancient sea life squeezed for millions of years into a useful (but messy) mix of hydrocarbons.",
       "tutor_note": "Students often say crude oil is made of 'oil' — make sure they know it is specifically a mixture of hydrocarbons, mostly alkanes."
@@ -46,8 +55,14 @@
         "Physical separation — no chemical bonds broken or formed"
       ],
       "keyTerms": [
-        {"term": "Fractional distillation", "def": "A physical process that separates a mixture of liquids with different boiling points by evaporation and condensation in a fractionating column."},
-        {"term": "Fractionating column", "def": "A tall tower used in the separation of crude oil; it has a temperature gradient — hotter at the bottom, cooler at the top."}
+        {
+          "term": "Fractional distillation",
+          "def": "A physical process that separates a mixture of liquids with different boiling points by evaporation and condensation in a fractionating column."
+        },
+        {
+          "term": "Fractionating column",
+          "def": "A tall tower used in the separation of crude oil; it has a temperature gradient — hotter at the bottom, cooler at the top."
+        }
       ],
       "memTip": "Hot at the bottom, cold at the top — short molecules float to the top, long ones sink. Like a bubble bath where the big bubbles stay low.",
       "tutor_note": "Students sometimes describe fractional distillation as a chemical process — emphasise it is physical. No new substances are formed."
@@ -67,11 +82,20 @@
         "Bitumen: solid, very viscous and high BP, road surfaces"
       ],
       "keyTerms": [
-        {"term": "Viscosity", "def": "A measure of how easily a liquid flows; high viscosity means it flows slowly (thick). Longer chains = higher viscosity."},
-        {"term": "Bitumen", "def": "The longest-chain fraction from crude oil; solid/semi-solid at room temperature, used for road surfacing."},
-        {"term": "Kerosene", "def": "A fraction of crude oil with carbon chains of approximately C10-C16; used as jet fuel."}
+        {
+          "term": "Viscosity",
+          "def": "A measure of how easily a liquid flows; high viscosity means it flows slowly (thick). Longer chains = higher viscosity."
+        },
+        {
+          "term": "Bitumen",
+          "def": "The longest-chain fraction from crude oil; solid/semi-solid at room temperature, used for road surfacing."
+        },
+        {
+          "term": "Kerosene",
+          "def": "A fraction of crude oil with carbon chains of approximately C10-C16; used as jet fuel."
+        }
       ],
-      "memTip": "Small = skimpy (low BP, low viscosity, very flammable). Big = bulky (high BP, high viscosity, less flammable). Think of cooking oil (thick, doesn't ignite easily) vs lighter fluid (thin, ignites immediately).",
+      "memTip": "Small = skimpy (low BP, low viscosity, very flammable). Big = bulky (high BP, high viscosity, less flammable).",
       "tutor_note": "Students often get viscosity and boiling point trends the wrong way round. Longer chains = MORE intermolecular forces = higher BP and higher viscosity."
     },
     {
@@ -89,10 +113,22 @@
         "Alkenes identified by C=C double bond; example: C₁₀H₂₂ → C₈H₁₈ + C₂H₄"
       ],
       "keyTerms": [
-        {"term": "Cracking", "def": "A process that breaks down long-chain hydrocarbon molecules into shorter, more useful ones, producing alkanes and alkenes."},
-        {"term": "Thermal cracking", "def": "Cracking using very high temperatures (~1000°C) and high pressure, without a catalyst."},
-        {"term": "Catalytic cracking", "def": "Cracking using a zeolite catalyst at a lower temperature (~500°C) — more energy-efficient than thermal cracking."},
-        {"term": "Zeolite", "def": "An aluminosilicate mineral used as a catalyst in catalytic cracking."}
+        {
+          "term": "Cracking",
+          "def": "A process that breaks down long-chain hydrocarbon molecules into shorter, more useful ones, producing alkanes and alkenes."
+        },
+        {
+          "term": "Thermal cracking",
+          "def": "Cracking using very high temperatures (~1000°C) and high pressure, without a catalyst."
+        },
+        {
+          "term": "Catalytic cracking",
+          "def": "Cracking using a zeolite catalyst at a lower temperature (~500°C) — more energy-efficient than thermal cracking."
+        },
+        {
+          "term": "Zeolite",
+          "def": "An aluminosilicate mineral used as a catalyst in catalytic cracking."
+        }
       ],
       "memTip": "Cracking = snapping a long spaghetti stick into shorter pieces. More useful, same atoms, just rearranged.",
       "tutor_note": "Students must know that cracking produces BOTH alkanes AND alkenes. They often forget alkenes — but these are crucial for making polymers."
@@ -102,14 +138,70 @@
     {
       "title": "Crude oil fractions — properties and uses",
       "examFlag": true,
-      "headers": ["Fraction", "Carbon chain length", "Boiling point", "State at room temp", "Viscosity", "Flammability", "Uses"],
+      "headers": [
+        "Fraction",
+        "Carbon chain length",
+        "Boiling point",
+        "State at room temp",
+        "Viscosity",
+        "Flammability",
+        "Uses"
+      ],
       "rows": [
-        ["Refinery gases", "C1-C4", "Below 25°C", "Gas", "Very low", "Very high", "LPG, camping gas, heating"],
-        ["Petrol (gasoline)", "C5-C10", "~25-75°C", "Liquid", "Low", "High", "Car fuel"],
-        ["Kerosene (paraffin)", "C10-C16", "~150-250°C", "Liquid", "Medium", "Medium", "Jet fuel"],
-        ["Diesel", "C16-C25", "~250-350°C", "Liquid", "Higher", "Lower", "Lorries, trains, buses"],
-        ["Heavy fuel oil", "C25+", "Above 350°C", "Thick liquid", "High", "Low", "Power stations, ships"],
-        ["Bitumen", "C70+", "Above 500°C", "Solid/semi-solid", "Very high", "Very low", "Road surfacing, roofing"]
+        [
+          "Refinery gases",
+          "C1-C4",
+          "Below 25°C",
+          "Gas",
+          "Very low",
+          "Very high",
+          "LPG, camping gas, heating"
+        ],
+        [
+          "Petrol (gasoline)",
+          "C5-C10",
+          "~25-75°C",
+          "Liquid",
+          "Low",
+          "High",
+          "Car fuel"
+        ],
+        [
+          "Kerosene (paraffin)",
+          "C10-C16",
+          "~150-250°C",
+          "Liquid",
+          "Medium",
+          "Medium",
+          "Jet fuel"
+        ],
+        [
+          "Diesel",
+          "C16-C25",
+          "~250-350°C",
+          "Liquid",
+          "Higher",
+          "Lower",
+          "Lorries, trains, buses"
+        ],
+        [
+          "Heavy fuel oil",
+          "C25+",
+          "Above 350°C",
+          "Thick liquid",
+          "High",
+          "Low",
+          "Power stations, ships"
+        ],
+        [
+          "Bitumen",
+          "C70+",
+          "Above 500°C",
+          "Solid/semi-solid",
+          "Very high",
+          "Very low",
+          "Road surfacing, roofing"
+        ]
       ]
     }
   ],

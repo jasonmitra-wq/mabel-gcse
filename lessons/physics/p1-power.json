@@ -24,11 +24,20 @@
         "More powerful = same energy transferred in less time, OR more energy in the same time"
       ],
       "keyTerms": [
-        { "term": "power", "def": "The rate of energy transfer; P = E/t; unit: watts (W)" },
-        { "term": "watt", "def": "The unit of power; 1 W = 1 joule per second (1 J/s)" },
-        { "term": "rate", "def": "How quickly something happens — here, how many joules transferred per second" }
+        {
+          "term": "power",
+          "def": "The rate of energy transfer; P = E/t; unit: watts (W)"
+        },
+        {
+          "term": "watt",
+          "def": "The unit of power; 1 W = 1 joule per second (1 J/s)"
+        },
+        {
+          "term": "rate",
+          "def": "How quickly something happens — here, how many joules transferred per second"
+        }
       ],
-      "memTip": "P = E/t. Power is 'energy per second'. Think of it as the speed of energy transfer.",
+      "memTip": "P = E/t. Power is 'energy per second'.",
       "tutor_note": "Students often confuse power with energy — emphasise that a 2 kW kettle and a 1 kW kettle both transfer the same energy to boil water, but the 2 kW one does it twice as fast."
     },
     {
@@ -45,9 +54,18 @@
         "1 MW = 1,000,000 W — used for large power stations and industrial equipment"
       ],
       "keyTerms": [
-        { "term": "P = E/t", "def": "Power equals energy divided by time; rearranges to E = Pt and t = E/P" },
-        { "term": "kilowatt (kW)", "def": "1000 watts — unit used for powerful appliances and small generators" },
-        { "term": "megawatt (MW)", "def": "1,000,000 watts — unit used for power stations and large industrial outputs" }
+        {
+          "term": "P = E/t",
+          "def": "Power equals energy divided by time; rearranges to E = Pt and t = E/P"
+        },
+        {
+          "term": "kilowatt (kW)",
+          "def": "1000 watts — unit used for powerful appliances and small generators"
+        },
+        {
+          "term": "megawatt (MW)",
+          "def": "1,000,000 watts — unit used for power stations and large industrial outputs"
+        }
       ],
       "memTip": "Triangle trick: put P at top, E and t at bottom. Cover what you want to find: P = E/t, E = Pt, t = E/P.",
       "tutor_note": "Students often forget to convert minutes to seconds or kW to W — build in a unit check step as a habit."
@@ -66,7 +84,10 @@
         "Power station — hundreds of MW to GW; gigawatts needed to power entire cities"
       ],
       "keyTerms": [
-        { "term": "gigawatt (GW)", "def": "1,000,000,000 watts — unit used for national power output and very large power stations" }
+        {
+          "term": "gigawatt (GW)",
+          "def": "1,000,000,000 watts — unit used for national power output and very large power stations"
+        }
       ],
       "memTip": "You at rest = 80 W, a hairdryer = 2000 W, an electric car = 100,000 W. Scale matters!",
       "tutor_note": "Contextual power values help students with 'estimate' questions — these appear in 6-mark or multi-step problems."
@@ -85,8 +106,14 @@
         "Example: 3000 N force at 20 m/s → P = 60,000 W = 60 kW"
       ],
       "keyTerms": [
-        { "term": "work done", "def": "W = Fd; energy transferred when a force moves an object through a distance; unit: joule (J)" },
-        { "term": "P = Fv", "def": "Power equals force multiplied by velocity; useful when force and speed are given instead of energy and time" }
+        {
+          "term": "work done",
+          "def": "W = Fd; energy transferred when a force moves an object through a distance; unit: joule (J)"
+        },
+        {
+          "term": "P = Fv",
+          "def": "Power equals force multiplied by velocity; useful when force and speed are given instead of energy and time"
+        }
       ],
       "memTip": "P = Fv. Force times velocity gives power. Remember: N × m/s = W (watts).",
       "tutor_note": "P = Fv questions often involve a vehicle at constant speed — remind students that at constant velocity, driving force = drag, so they can find the resistive force from engine power."
@@ -96,17 +123,57 @@
     {
       "title": "Examples of power values in context",
       "examFlag": true,
-      "headers": ["Source / device", "Approximate power", "What the energy is used for"],
+      "headers": [
+        "Source / device",
+        "Approximate power",
+        "What the energy is used for"
+      ],
       "rows": [
-        ["Human body at rest", "~80 W", "Maintaining body temperature, breathing, heartbeat"],
-        ["Walking", "~300 W", "Muscular work to move the body forward"],
-        ["Cycling (recreational)", "~150 W", "Propelling bicycle against friction and air resistance"],
-        ["Elite cyclist (1 hr effort)", "~400 W", "Maximum sustained muscular output"],
-        ["Hairdryer", "~2000 W (2 kW)", "Heating air and powering a fan motor"],
-        ["Electric kettle", "~2500 W (2.5 kW)", "Heating water using electrical resistance"],
-        ["Electric car motor", "~150 kW", "Propelling car, overcoming drag and friction"],
-        ["Small power station", "~500 MW", "Generating electricity for hundreds of thousands of homes"],
-        ["Large nuclear power station", "~1–2 GW", "Baseload electricity generation for a whole region"]
+        [
+          "Human body at rest",
+          "~80 W",
+          "Maintaining body temperature, breathing, heartbeat"
+        ],
+        [
+          "Walking",
+          "~300 W",
+          "Muscular work to move the body forward"
+        ],
+        [
+          "Cycling (recreational)",
+          "~150 W",
+          "Propelling bicycle against friction and air resistance"
+        ],
+        [
+          "Elite cyclist (1 hr effort)",
+          "~400 W",
+          "Maximum sustained muscular output"
+        ],
+        [
+          "Hairdryer",
+          "~2000 W (2 kW)",
+          "Heating air and powering a fan motor"
+        ],
+        [
+          "Electric kettle",
+          "~2500 W (2.5 kW)",
+          "Heating water using electrical resistance"
+        ],
+        [
+          "Electric car motor",
+          "~150 kW",
+          "Propelling car, overcoming drag and friction"
+        ],
+        [
+          "Small power station",
+          "~500 MW",
+          "Generating electricity for hundreds of thousands of homes"
+        ],
+        [
+          "Large nuclear power station",
+          "~1–2 GW",
+          "Baseload electricity generation for a whole region"
+        ]
       ]
     }
   ],

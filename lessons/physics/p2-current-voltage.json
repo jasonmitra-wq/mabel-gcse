@@ -25,11 +25,20 @@
         "Ammeter — measures current; always connected in series"
       ],
       "keyTerms": [
-        {"term": "Electric current", "def": "Rate of flow of electric charge, measured in amperes (A)"},
-        {"term": "Coulomb", "def": "The unit of electric charge (C); 1 coulomb = 1 ampere × 1 second"},
-        {"term": "Conventional current", "def": "The direction current is drawn in circuit diagrams — from + to −, opposite to electron flow"}
+        {
+          "term": "Electric current",
+          "def": "Rate of flow of electric charge, measured in amperes (A)"
+        },
+        {
+          "term": "Coulomb",
+          "def": "The unit of electric charge (C); 1 coulomb = 1 ampere × 1 second"
+        },
+        {
+          "term": "Conventional current",
+          "def": "The direction current is drawn in circuit diagrams — from + to −, opposite to electron flow"
+        }
       ],
-      "memTip": "Q = It: 'Quiet Is Time'. Charge = current × time. Cover your notes and write the equation, units, and both current directions from memory.",
+      "memTip": "Q = It: 'Quiet Is Time'. Charge = current × time.",
       "tutor_note": "The conventional vs electron flow distinction catches people out every year. In a metal, electrons move from − to +. Conventional current goes + to −. In circuit diagrams, always use conventional current direction."
     },
     {
@@ -47,11 +56,20 @@
         "Voltmeter — measures p.d.; always connected in parallel"
       ],
       "keyTerms": [
-        {"term": "Potential difference", "def": "Energy transferred per coulomb of charge between two points; measured in volts (V)"},
-        {"term": "EMF (electromotive force)", "def": "Energy given to each coulomb of charge by a source such as a battery; measured in volts"},
-        {"term": "Terminal p.d.", "def": "The p.d. measured across the battery terminals in a working circuit — always less than EMF"}
+        {
+          "term": "Potential difference",
+          "def": "Energy transferred per coulomb of charge between two points; measured in volts (V)"
+        },
+        {
+          "term": "EMF (electromotive force)",
+          "def": "Energy given to each coulomb of charge by a source such as a battery; measured in volts"
+        },
+        {
+          "term": "Terminal p.d.",
+          "def": "The p.d. measured across the battery terminals in a working circuit — always less than EMF"
+        }
       ],
-      "memTip": "V = W/Q: 'Voltage is Watts per Queue'. Energy ÷ charge. Cover your notes and write the equation and units from memory.",
+      "memTip": "V = W/Q: 'Voltage is Watts per Queue'. Energy ÷ charge.",
       "tutor_note": "Students often confuse EMF and voltage. EMF is what the battery provides per coulomb; terminal p.d. is what's actually available to the external circuit. They differ because of internal resistance."
     },
     {
@@ -69,11 +87,20 @@
         "Temperature — hotter metal → higher resistance (ions vibrate more, impede electrons)"
       ],
       "keyTerms": [
-        {"term": "Resistance", "def": "Opposition to the flow of electric current; measured in ohms (Ω)"},
-        {"term": "Ohm (Ω)", "def": "The unit of resistance; 1 Ω = 1 V A⁻¹"},
-        {"term": "Ohm's law", "def": "For an ohmic conductor at constant temperature, current is proportional to potential difference"}
+        {
+          "term": "Resistance",
+          "def": "Opposition to the flow of electric current; measured in ohms (Ω)"
+        },
+        {
+          "term": "Ohm (Ω)",
+          "def": "The unit of resistance; 1 Ω = 1 V A⁻¹"
+        },
+        {
+          "term": "Ohm's law",
+          "def": "For an ohmic conductor at constant temperature, current is proportional to potential difference"
+        }
       ],
-      "memTip": "R = V/I: use the triangle — put V on top, I and R on the bottom. Cover any one to get the formula. Cover your notes and write all three rearrangements plus a worked calculation from memory.",
+      "memTip": "R = V/I: use the triangle — put V on top, I and R on the bottom. Cover any one to get the formula.",
       "tutor_note": "In calculations, always write the formula first, then substitute values, then calculate. Showing your working gets method marks even if your arithmetic slips."
     },
     {
@@ -91,9 +118,18 @@
         "Resistance from I-V graph — find gradient (I/V) and take its reciprocal, OR read off V and I and use R = V/I"
       ],
       "keyTerms": [
-        {"term": "I-V characteristic", "def": "A graph of current against potential difference showing how a component behaves"},
-        {"term": "Ohmic conductor", "def": "A component whose resistance stays constant — gives a straight-line I-V graph"},
-        {"term": "Diode", "def": "A component that allows current in one direction only; very high resistance in reverse"}
+        {
+          "term": "I-V characteristic",
+          "def": "A graph of current against potential difference showing how a component behaves"
+        },
+        {
+          "term": "Ohmic conductor",
+          "def": "A component whose resistance stays constant — gives a straight-line I-V graph"
+        },
+        {
+          "term": "Diode",
+          "def": "A component that allows current in one direction only; very high resistance in reverse"
+        }
       ],
       "memTip": "Three shapes: Straight line = resistor; Bendy S = lamp (gets hot); One-sided hockey stick = diode (one direction only). Cover your notes and sketch all three graphs with labels from memory.",
       "tutor_note": "A very common mistake is drawing the filament lamp curve the wrong way — it should curve AWAY from the straight line (not towards the I-axis), because resistance increases and less current flows than you'd expect from a simple proportionality."
@@ -113,9 +149,18 @@
         "Repeats — take repeat readings and average to reduce random error"
       ],
       "keyTerms": [
-        {"term": "Variable resistor (rheostat)", "def": "A resistor whose resistance can be changed — used to vary the current in a circuit"},
-        {"term": "Ammeter", "def": "Instrument measuring current; connected in series; has very low resistance"},
-        {"term": "Voltmeter", "def": "Instrument measuring p.d.; connected in parallel; has very high resistance"}
+        {
+          "term": "Variable resistor (rheostat)",
+          "def": "A resistor whose resistance can be changed — used to vary the current in a circuit"
+        },
+        {
+          "term": "Ammeter",
+          "def": "Instrument measuring current; connected in series; has very low resistance"
+        },
+        {
+          "term": "Voltmeter",
+          "def": "Instrument measuring p.d.; connected in parallel; has very high resistance"
+        }
       ],
       "memTip": "Series A, Parallel V — Ammeter in Series, Voltmeter in Parallel. Cover your notes and describe the full circuit setup from memory, including the safety precaution.",
       "tutor_note": "Examiners often ask why the voltmeter is in parallel (it must measure the p.d. across the component) and why the ammeter is in series (to measure the same current that flows through the component). Know the reason, not just the rule."
@@ -125,25 +170,55 @@
     {
       "title": "I-V characteristics: comparing three components",
       "examFlag": true,
-      "headers": ["Component", "I-V graph shape", "Reason for shape", "Example use"],
+      "headers": [
+        "Component",
+        "I-V graph shape",
+        "Reason for shape",
+        "Example use"
+      ],
       "rows": [
-        ["Ohmic conductor (resistor)", "Straight line through origin", "Resistance is constant at constant temperature — V and I are proportional", "Fixed resistor in a potential divider"],
-        ["Filament lamp", "Curve that bends away from straight line (S-shape)", "Filament heats up as current increases → resistance increases → less current than expected", "Indicator lamp, light bulb"],
-        ["Diode", "Near-zero current until ~0.7 V forward bias, then steep rise; zero current in reverse bias", "Only conducts in one direction; very high reverse resistance", "Rectifier (converts AC to DC), LED lighting"]
+        [
+          "Ohmic conductor (resistor)",
+          "Straight line through origin",
+          "Resistance is constant at constant temperature — V and I are proportional",
+          "Fixed resistor in a potential divider"
+        ],
+        [
+          "Filament lamp",
+          "Curve that bends away from straight line (S-shape)",
+          "Filament heats up as current increases → resistance increases → less current than expected",
+          "Indicator lamp, light bulb"
+        ],
+        [
+          "Diode",
+          "Near-zero current until ~0.7 V forward bias, then steep rise; zero current in reverse bias",
+          "Only conducts in one direction; very high reverse resistance",
+          "Rectifier (converts AC to DC), LED lighting"
+        ]
       ]
     }
   ],
   "checkpoints": {
     "0": {
       "question": "A charge of 60 C passes through a component in 20 s. What is the current?",
-      "options": ["1200 A", "0.33 A", "3 A", "60 A"],
+      "options": [
+        "1200 A",
+        "0.33 A",
+        "3 A",
+        "60 A"
+      ],
       "correct": 2,
       "correctFeedback": "Correct — I = Q/t = 60/20 = 3 A. You rearranged Q = It perfectly.",
       "wrongFeedback": "Use Q = It rearranged to I = Q/t. Divide the charge (60 C) by the time (20 s): 60 ÷ 20 = 3 A. Watch out for multiplying instead of dividing, or mixing up which letter is which."
     },
     "2": {
       "question": "A lamp has a p.d. of 12 V across it and a current of 0.5 A through it. What is its resistance at this moment?",
-      "options": ["6 Ω", "0.04 Ω", "24 Ω", "6 V"],
+      "options": [
+        "6 Ω",
+        "0.04 Ω",
+        "24 Ω",
+        "6 V"
+      ],
       "correct": 2,
       "correctFeedback": "Correct — R = V/I = 12 ÷ 0.5 = 24 Ω. Well done for using R = V/I and handling the decimal divisor.",
       "wrongFeedback": "Use R = V/I. Substitute: R = 12 ÷ 0.5 = 24 Ω. Dividing by 0.5 is the same as multiplying by 2, so 12 × 2 = 24 Ω. If you selected 6 Ω, you likely divided by 2 instead of 0.5."

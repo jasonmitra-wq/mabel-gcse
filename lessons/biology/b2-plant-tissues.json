@@ -25,8 +25,14 @@
         "Root = anchorage + water and mineral absorption"
       ],
       "keyTerms": [
-        {"term": "Organ", "def": "A structure made of several different tissues working together to carry out a specific function"},
-        {"term": "Tissue", "def": "A group of similar cells performing the same function"}
+        {
+          "term": "Organ",
+          "def": "A structure made of several different tissues working together to carry out a specific function"
+        },
+        {
+          "term": "Tissue",
+          "def": "A group of similar cells performing the same function"
+        }
       ],
       "memTip": "Three organs, three jobs: Leaf = light (photosynthesis), Stem = support (and transport), Root = resources (water + minerals). L, S, R — three letters, three functions."
     },
@@ -44,13 +50,28 @@
         "Vascular bundles: contain xylem and phloem"
       ],
       "keyTerms": [
-        {"term": "Palisade mesophyll", "def": "Tightly packed cells below the upper epidermis, rich in chloroplasts; main site of photosynthesis"},
-        {"term": "Spongy mesophyll", "def": "Loosely packed cells with air spaces that allow gas diffusion across the leaf"},
-        {"term": "Stomata", "def": "Pores in the lower epidermis that allow gas exchange; opened and closed by guard cells"},
-        {"term": "Guard cells", "def": "Pairs of cells that surround each stoma and control its opening and closing"},
-        {"term": "Vascular bundle", "def": "A strand of xylem and phloem tissue running through plant organs"}
+        {
+          "term": "Palisade mesophyll",
+          "def": "Tightly packed cells below the upper epidermis, rich in chloroplasts; main site of photosynthesis"
+        },
+        {
+          "term": "Spongy mesophyll",
+          "def": "Loosely packed cells with air spaces that allow gas diffusion across the leaf"
+        },
+        {
+          "term": "Stomata",
+          "def": "Pores in the lower epidermis that allow gas exchange; opened and closed by guard cells"
+        },
+        {
+          "term": "Guard cells",
+          "def": "Pairs of cells that surround each stoma and control its opening and closing"
+        },
+        {
+          "term": "Vascular bundle",
+          "def": "A strand of xylem and phloem tissue running through plant organs"
+        }
       ],
-      "memTip": "From top to bottom in a leaf cross-section: Upper epidermis → Palisade → Spongy → Lower epidermis. Use UP → PS (Photosynthesis) → S (Spaces) → LE. Draw it once and label it — the visual sticks far better than reading a list."
+      "memTip": "From top to bottom in a leaf cross-section: Upper epidermis → Palisade → Spongy → Lower epidermis. Use UP → PS (Photosynthesis) → S (Spaces) → LE."
     },
     {
       "heading": "Xylem — carrying water upwards",
@@ -66,10 +87,16 @@
         "One-way transport: always upwards"
       ],
       "keyTerms": [
-        {"term": "Xylem", "def": "Plant tissue made of dead, hollow, lignified cells that transport water and minerals upwards from roots"},
-        {"term": "Lignin", "def": "A tough, waterproof substance deposited in the cell walls of xylem vessels, providing structural strength"}
+        {
+          "term": "Xylem",
+          "def": "Plant tissue made of dead, hollow, lignified cells that transport water and minerals upwards from roots"
+        },
+        {
+          "term": "Lignin",
+          "def": "A tough, waterproof substance deposited in the cell walls of xylem vessels, providing structural strength"
+        }
       ],
-      "memTip": "Xylem = X marks the spot — water goes UP (X for eXit, water eXits the roots). Dead cells = hollow tubes = like pipes in a wall. Lignified = like reinforced concrete. If you remember 'dead, hollow, lignified', you've got the three key xylem facts."
+      "memTip": "Xylem = X marks the spot — water goes UP (X for eXit, water eXits the roots). Dead cells = hollow tubes = like pipes in a wall."
     },
     {
       "heading": "Phloem — carrying sugars to where they're needed",
@@ -85,27 +112,71 @@
         "Can transport up OR down — wherever sugars are needed"
       ],
       "keyTerms": [
-        {"term": "Phloem", "def": "Living plant tissue that transports dissolved sugars (mainly sucrose) from leaves to the rest of the plant"},
-        {"term": "Translocation", "def": "The movement of dissolved sugars through phloem from where they are made to where they are used or stored"},
-        {"term": "Sieve tube cells", "def": "Living phloem cells with perforated end walls (sieve plates) that allow dissolved substances to flow through"},
-        {"term": "Companion cells", "def": "Cells alongside sieve tubes that provide energy and support for phloem transport"}
+        {
+          "term": "Phloem",
+          "def": "Living plant tissue that transports dissolved sugars (mainly sucrose) from leaves to the rest of the plant"
+        },
+        {
+          "term": "Translocation",
+          "def": "The movement of dissolved sugars through phloem from where they are made to where they are used or stored"
+        },
+        {
+          "term": "Sieve tube cells",
+          "def": "Living phloem cells with perforated end walls (sieve plates) that allow dissolved substances to flow through"
+        },
+        {
+          "term": "Companion cells",
+          "def": "Cells alongside sieve tubes that provide energy and support for phloem transport"
+        }
       ],
-      "memTip": "Phloem = Food on the move. Translocation = the word for how plants move food. Sieve tube = picture a kitchen sieve — holes at each end let things flow through. Living cells need energy to load sugars into phloem — that's what companion cells are for."
+      "memTip": "Phloem = Food on the move. Translocation = the word for how plants move food."
     }
   ],
   "tables": [
     {
       "title": "Xylem vs Phloem — key comparison",
       "examFlag": true,
-      "headers": ["Feature", "Xylem", "Phloem"],
+      "headers": [
+        "Feature",
+        "Xylem",
+        "Phloem"
+      ],
       "rows": [
-        ["What it transports",   "Water and dissolved minerals",         "Dissolved sugars (mainly sucrose)"],
-        ["Direction of flow",    "Upwards only (roots → leaves)",        "Up or down (wherever needed)"],
-        ["Cell condition",       "Dead cells",                           "Living cells"],
-        ["Cell structure",       "Hollow tubes, no end walls",           "Sieve tubes with perforated end walls"],
-        ["Support cells",        "None",                                 "Companion cells"],
-        ["Wall reinforcement",   "Lignified (waterproof, strong)",       "Not lignified"],
-        ["Process name",         "Transpiration stream",                 "Translocation"]
+        [
+          "What it transports",
+          "Water and dissolved minerals",
+          "Dissolved sugars (mainly sucrose)"
+        ],
+        [
+          "Direction of flow",
+          "Upwards only (roots → leaves)",
+          "Up or down (wherever needed)"
+        ],
+        [
+          "Cell condition",
+          "Dead cells",
+          "Living cells"
+        ],
+        [
+          "Cell structure",
+          "Hollow tubes, no end walls",
+          "Sieve tubes with perforated end walls"
+        ],
+        [
+          "Support cells",
+          "None",
+          "Companion cells"
+        ],
+        [
+          "Wall reinforcement",
+          "Lignified (waterproof, strong)",
+          "Not lignified"
+        ],
+        [
+          "Process name",
+          "Transpiration stream",
+          "Translocation"
+        ]
       ]
     }
   ],

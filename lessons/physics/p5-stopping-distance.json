@@ -26,11 +26,20 @@
         "Both thinking and braking distance increase with speed"
       ],
       "keyTerms": [
-        { "term": "stopping distance", "def": "Total distance from first noticing a hazard to coming to a complete stop; equals thinking distance + braking distance" },
-        { "term": "thinking distance", "def": "Distance travelled during the driver's reaction time before brakes are applied; = speed × reaction time" },
-        { "term": "braking distance", "def": "Distance travelled while the brakes are applied and the vehicle decelerates to rest" }
+        {
+          "term": "stopping distance",
+          "def": "Total distance from first noticing a hazard to coming to a complete stop; equals thinking distance + braking distance"
+        },
+        {
+          "term": "thinking distance",
+          "def": "Distance travelled during the driver's reaction time before brakes are applied; = speed × reaction time"
+        },
+        {
+          "term": "braking distance",
+          "def": "Distance travelled while the brakes are applied and the vehicle decelerates to rest"
+        }
       ],
-      "memTip": "Stop = Think + Brake. Both increase with speed. Thinking distance ∝ speed; braking distance ∝ speed².",
+      "memTip": "Stop = Think + Brake. Both increase with speed.",
       "tutor_note": "Mabel should be able to identify the two phases from a diagram showing a car journey from hazard to stop, and calculate thinking distance if given speed and reaction time."
     },
     {
@@ -47,7 +56,10 @@
         "Distractions (phone, music, conversation): attention split → slower hazard detection"
       ],
       "keyTerms": [
-        { "term": "reaction time", "def": "The time between detecting a hazard and pressing the brake — typically 0.2–0.9 seconds for an alert driver" }
+        {
+          "term": "reaction time",
+          "def": "The time between detecting a hazard and pressing the brake — typically 0.2–0.9 seconds for an alert driver"
+        }
       ],
       "memTip": "ATDS: Alcohol, Tiredness, Drugs, Distractions — all increase reaction time and therefore thinking distance.",
       "tutor_note": "Exam questions often ask 'why does alcohol increase stopping distance?' — answer must specifically say it increases reaction time and therefore thinking distance, not just 'slows you down'."
@@ -66,10 +78,16 @@
         "All factors reduce the friction/force available — the car needs more distance to lose the same kinetic energy"
       ],
       "keyTerms": [
-        { "term": "braking force", "def": "The force applied by the brakes to decelerate the vehicle; transferred from kinetic energy to thermal energy in the brakes" },
-        { "term": "friction", "def": "The force between tyre and road surface that allows braking — reduced by ice, water, or worn tyres" }
+        {
+          "term": "braking force",
+          "def": "The force applied by the brakes to decelerate the vehicle; transferred from kinetic energy to thermal energy in the brakes"
+        },
+        {
+          "term": "friction",
+          "def": "The force between tyre and road surface that allows braking — reduced by ice, water, or worn tyres"
+        }
       ],
-      "memTip": "Braking distance ∝ v². Double speed → 4× distance. Anything that reduces friction increases braking distance.",
+      "memTip": "Braking distance ∝ v². Double speed → 4× distance.",
       "tutor_note": "The quadratic relationship between speed and braking distance catches students out — they often say 'double the distance' for double the speed. It is quadruple."
     },
     {
@@ -86,10 +104,16 @@
         "F = ma: larger braking force → larger deceleration → shorter stopping distance"
       ],
       "keyTerms": [
-        { "term": "kinetic energy (KE)", "def": "Energy of a moving object; KE = ½mv²; transferred to thermal energy in brakes during stopping" },
-        { "term": "brake fade", "def": "Reduction in braking effectiveness caused by overheated brakes — a hazard during prolonged or repeated heavy braking" }
+        {
+          "term": "kinetic energy (KE)",
+          "def": "Energy of a moving object; KE = ½mv²; transferred to thermal energy in brakes during stopping"
+        },
+        {
+          "term": "brake fade",
+          "def": "Reduction in braking effectiveness caused by overheated brakes — a hazard during prolonged or repeated heavy braking"
+        }
       ],
-      "memTip": "KE = ½mv². Speed doubles → KE quadruples → braking distance quadruples. Always energy that must be transferred to heat.",
+      "memTip": "KE = ½mv². Speed doubles → KE quadruples → braking distance quadruples.",
       "tutor_note": "Link back to the work-energy principle: work done by brakes = KE lost. Braking distance = KE ÷ braking force. This gives the quadratic relationship."
     }
   ],
@@ -97,14 +121,49 @@
     {
       "title": "Stopping distances at different speeds (AQA guidance values)",
       "examFlag": true,
-      "headers": ["Speed", "Thinking distance", "Braking distance", "Total stopping distance"],
+      "headers": [
+        "Speed",
+        "Thinking distance",
+        "Braking distance",
+        "Total stopping distance"
+      ],
       "rows": [
-        ["20 mph (~9 m/s)", "6 m", "6 m", "12 m"],
-        ["30 mph (~13 m/s)", "9 m", "14 m", "23 m"],
-        ["40 mph (~18 m/s)", "12 m", "24 m", "36 m"],
-        ["50 mph (~22 m/s)", "15 m", "38 m", "53 m"],
-        ["60 mph (~27 m/s)", "18 m", "55 m", "73 m"],
-        ["70 mph (~31 m/s)", "21 m", "75 m", "96 m"]
+        [
+          "20 mph (~9 m/s)",
+          "6 m",
+          "6 m",
+          "12 m"
+        ],
+        [
+          "30 mph (~13 m/s)",
+          "9 m",
+          "14 m",
+          "23 m"
+        ],
+        [
+          "40 mph (~18 m/s)",
+          "12 m",
+          "24 m",
+          "36 m"
+        ],
+        [
+          "50 mph (~22 m/s)",
+          "15 m",
+          "38 m",
+          "53 m"
+        ],
+        [
+          "60 mph (~27 m/s)",
+          "18 m",
+          "55 m",
+          "73 m"
+        ],
+        [
+          "70 mph (~31 m/s)",
+          "21 m",
+          "75 m",
+          "96 m"
+        ]
       ]
     }
   ],

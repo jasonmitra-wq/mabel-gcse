@@ -25,8 +25,14 @@
         "Flat sections appear at melting point AND boiling point"
       ],
       "keyTerms": [
-        {"term": "Latent heat", "def": "Energy absorbed or released during a change of state — does not cause a temperature change"},
-        {"term": "Heating curve", "def": "A graph of temperature vs time (or energy) showing flat sections at melting and boiling points"}
+        {
+          "term": "Latent heat",
+          "def": "Energy absorbed or released during a change of state — does not cause a temperature change"
+        },
+        {
+          "term": "Heating curve",
+          "def": "A graph of temperature vs time (or energy) showing flat sections at melting and boiling points"
+        }
       ],
       "memTip": "Latent = hidden. The energy is there — you just can't see it on a thermometer because it's breaking bonds, not heating the particles.",
       "tutor_note": "Draw a full heating curve (ice → water → steam) and make students label all 5 sections: solid heating, melting, liquid heating, boiling, gas heating."
@@ -46,11 +52,20 @@
         "Rearrangements: L = E/m and m = E/L"
       ],
       "keyTerms": [
-        {"term": "Specific latent heat of fusion", "def": "Energy per kg needed to melt (or freeze) a substance at constant temperature. Unit: J/kg"},
-        {"term": "Specific latent heat of vaporisation", "def": "Energy per kg needed to boil (or condense) a substance at constant temperature. Unit: J/kg"},
-        {"term": "E = mL", "def": "Energy = mass × specific latent heat. The equation for calculating energy in a change of state"}
+        {
+          "term": "Specific latent heat of fusion",
+          "def": "Energy per kg needed to melt (or freeze) a substance at constant temperature. Unit: J/kg"
+        },
+        {
+          "term": "Specific latent heat of vaporisation",
+          "def": "Energy per kg needed to boil (or condense) a substance at constant temperature. Unit: J/kg"
+        },
+        {
+          "term": "E = mL",
+          "def": "Energy = mass × specific latent heat. The equation for calculating energy in a change of state"
+        }
       ],
-      "memTip": "Fusion = melting (think of fusing solid particles into liquid). Vaporisation = boiling (vapour = gas). Vaporisation is always the bigger value.",
+      "memTip": "Fusion = melting (think of fusing solid particles into liquid). Vaporisation = boiling (vapour = gas).",
       "tutor_note": "Students often confuse fusion (melting) with nuclear fusion — clarify immediately. Also note that L for water is given in exams, so students don't need to memorise the numbers."
     },
     {
@@ -68,11 +83,20 @@
         "State whether energy is absorbed (melting/boiling) or released (freezing/condensing)"
       ],
       "keyTerms": [
-        {"term": "SHC of water", "def": "Specific heat capacity of water = 4200 J/kg°C — used alongside latent heat in combined heating calculations"},
-        {"term": "Exothermic", "def": "Energy is released to surroundings — freezing and condensation release latent heat"},
-        {"term": "Endothermic", "def": "Energy is absorbed from surroundings — melting and boiling absorb latent heat"}
+        {
+          "term": "SHC of water",
+          "def": "Specific heat capacity of water = 4200 J/kg°C — used alongside latent heat in combined heating calculations"
+        },
+        {
+          "term": "Exothermic",
+          "def": "Energy is released to surroundings — freezing and condensation release latent heat"
+        },
+        {
+          "term": "Endothermic",
+          "def": "Energy is absorbed from surroundings — melting and boiling absorb latent heat"
+        }
       ],
-      "memTip": "E = mL for state changes. Q = mcΔT for temperature changes. Heating from ice to steam uses BOTH — four separate steps.",
+      "memTip": "E = mL for state changes. Q = mcΔT for temperature changes.",
       "tutor_note": "Remind students that 500 g must be converted to 0.5 kg before substituting. Unit errors are the main trap in E = mL calculations."
     },
     {
@@ -90,8 +114,14 @@
         "Freeze-drying — ice sublimes to vapour under low pressure, preserving food without high temperatures"
       ],
       "keyTerms": [
-        {"term": "Refrigerant", "def": "The working fluid in a refrigerator that evaporates and condenses as it cycles, transferring heat from inside to outside"},
-        {"term": "Freeze-drying", "def": "Removing water from food by sublimation under low pressure — preserves food without cooking it"}
+        {
+          "term": "Refrigerant",
+          "def": "The working fluid in a refrigerator that evaporates and condenses as it cycles, transferring heat from inside to outside"
+        },
+        {
+          "term": "Freeze-drying",
+          "def": "Removing water from food by sublimation under low pressure — preserves food without cooking it"
+        }
       ],
       "memTip": "Steam burns = DOUBLE the energy: you get L_v as it condenses, THEN Q = mcΔT as it cools. Always worse than the same mass of boiling water.",
       "tutor_note": "The refrigerator explanation is a classic 6-mark question. Practise writing it in full — evaporates inside absorbing latent heat, condenses outside releasing it."
@@ -101,12 +131,42 @@
     {
       "title": "Summary of latent heat types",
       "examFlag": true,
-      "headers": ["Type", "Process", "Particle change", "Energy", "L for water"],
+      "headers": [
+        "Type",
+        "Process",
+        "Particle change",
+        "Energy",
+        "L for water"
+      ],
       "rows": [
-        ["Latent heat of fusion", "Melting (solid → liquid)", "Bonds weaken; particles free to move past each other", "Absorbed (endothermic)", "334,000 J/kg (334 kJ/kg)"],
-        ["Latent heat of fusion", "Freezing (liquid → solid)", "Bonds reform; particles lock into lattice", "Released (exothermic)", "334,000 J/kg"],
-        ["Latent heat of vaporisation", "Boiling/evaporation (liquid → gas)", "Bonds completely broken; particles far apart", "Absorbed (endothermic)", "2,260,000 J/kg (2260 kJ/kg)"],
-        ["Latent heat of vaporisation", "Condensation (gas → liquid)", "Bonds reform; particles close together again", "Released (exothermic)", "2,260,000 J/kg"]
+        [
+          "Latent heat of fusion",
+          "Melting (solid → liquid)",
+          "Bonds weaken; particles free to move past each other",
+          "Absorbed (endothermic)",
+          "334,000 J/kg (334 kJ/kg)"
+        ],
+        [
+          "Latent heat of fusion",
+          "Freezing (liquid → solid)",
+          "Bonds reform; particles lock into lattice",
+          "Released (exothermic)",
+          "334,000 J/kg"
+        ],
+        [
+          "Latent heat of vaporisation",
+          "Boiling/evaporation (liquid → gas)",
+          "Bonds completely broken; particles far apart",
+          "Absorbed (endothermic)",
+          "2,260,000 J/kg (2260 kJ/kg)"
+        ],
+        [
+          "Latent heat of vaporisation",
+          "Condensation (gas → liquid)",
+          "Bonds reform; particles close together again",
+          "Released (exothermic)",
+          "2,260,000 J/kg"
+        ]
       ]
     }
   ],

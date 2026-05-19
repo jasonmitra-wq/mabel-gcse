@@ -25,11 +25,20 @@
         "Impurities lower the melting point and widen the melting range"
       ],
       "keyTerms": [
-        { "term": "Pure substance", "def": "Contains only one type of element or compound — not mixed with anything else" },
-        { "term": "Melting point", "def": "The single temperature at which a pure substance changes from solid to liquid" },
-        { "term": "Mixture", "def": "Two or more substances combined but not chemically joined; melts over a range" }
+        {
+          "term": "Pure substance",
+          "def": "Contains only one type of element or compound — not mixed with anything else"
+        },
+        {
+          "term": "Melting point",
+          "def": "The single temperature at which a pure substance changes from solid to liquid"
+        },
+        {
+          "term": "Mixture",
+          "def": "Two or more substances combined but not chemically joined; melts over a range"
+        }
       ],
-      "memTip": "Sharp = pure. Range = mixture. Simple as that.",
+      "memTip": "Sharp = pure. Range = mixture.",
       "tutor_note": "Students often confuse 'pure' in everyday language with the chemistry definition. Emphasise the melting point test as the reliable way to check."
     },
     {
@@ -47,8 +56,14 @@
         "Made to precise specifications — ensures consistent performance every time"
       ],
       "keyTerms": [
-        { "term": "Formulation", "def": "A mixture deliberately designed so each component has a specific function" },
-        { "term": "Active ingredient", "def": "The component in a medicine that produces the therapeutic effect" }
+        {
+          "term": "Formulation",
+          "def": "A mixture deliberately designed so each component has a specific function"
+        },
+        {
+          "term": "Active ingredient",
+          "def": "The component in a medicine that produces the therapeutic effect"
+        }
       ],
       "memTip": "Formulation = formula for a purpose. Every part earns its place.",
       "tutor_note": "Good real-world anchor: ask what each ingredient in bread does (flour = structure, yeast = CO₂ bubbles, water = hydration, salt = flavour + controls yeast)."
@@ -68,10 +83,22 @@
         "High Rf — substance prefers mobile phase; low Rf — prefers stationary phase"
       ],
       "keyTerms": [
-        { "term": "Stationary phase", "def": "The part of the chromatography system that does not move (e.g. paper)" },
-        { "term": "Mobile phase", "def": "The solvent that moves through the stationary phase, carrying the mixture" },
-        { "term": "Rf value", "def": "Retention factor = distance moved by substance ÷ distance moved by solvent front" },
-        { "term": "Capillary action", "def": "The ability of a liquid to rise up a narrow material without external force" }
+        {
+          "term": "Stationary phase",
+          "def": "The part of the chromatography system that does not move (e.g. paper)"
+        },
+        {
+          "term": "Mobile phase",
+          "def": "The solvent that moves through the stationary phase, carrying the mixture"
+        },
+        {
+          "term": "Rf value",
+          "def": "Retention factor = distance moved by substance ÷ distance moved by solvent front"
+        },
+        {
+          "term": "Capillary action",
+          "def": "The ability of a liquid to rise up a narrow material without external force"
+        }
       ],
       "memTip": "Rf = substance ÷ solvent. Think 'how far did it get compared to the solvent?'",
       "tutor_note": "Get students to practise calculating Rf from diagrams. The most common error is measuring from the wrong baseline."
@@ -91,12 +118,24 @@
         "GC-MS — combines chromatography separation with mass spectrometry identification; very sensitive"
       ],
       "keyTerms": [
-        { "term": "Reference substance", "def": "A known compound run alongside an unknown to compare Rf values" },
-        { "term": "Gas chromatography (GC)", "def": "Chromatography using a vaporised sample and an inert carrier gas through a column" },
-        { "term": "Retention time", "def": "The time taken for a substance to pass through a GC column; used to identify it" },
-        { "term": "GC-MS", "def": "Gas chromatography linked to mass spectrometry — highly accurate identification of substances" }
+        {
+          "term": "Reference substance",
+          "def": "A known compound run alongside an unknown to compare Rf values"
+        },
+        {
+          "term": "Gas chromatography (GC)",
+          "def": "Chromatography using a vaporised sample and an inert carrier gas through a column"
+        },
+        {
+          "term": "Retention time",
+          "def": "The time taken for a substance to pass through a GC column; used to identify it"
+        },
+        {
+          "term": "GC-MS",
+          "def": "Gas chromatography linked to mass spectrometry — highly accurate identification of substances"
+        }
       ],
-      "memTip": "One spot = pure. Many spots = mixture. GC adds heat and speed to paper chromatography.",
+      "memTip": "One spot = pure. Many spots = mixture.",
       "tutor_note": "Students often forget that Rf depends on the solvent — stress 'same solvent, same paper' when comparing."
     }
   ],
@@ -104,26 +143,73 @@
     {
       "title": "Paper chromatography vs gas chromatography",
       "examFlag": true,
-      "headers": ["Feature", "Paper chromatography", "Gas chromatography (GC)"],
+      "headers": [
+        "Feature",
+        "Paper chromatography",
+        "Gas chromatography (GC)"
+      ],
       "rows": [
-        ["Mobile phase", "Liquid solvent", "Inert gas (e.g. nitrogen, helium)"],
-        ["Stationary phase", "Cellulose paper", "Liquid or solid coating on column"],
-        ["Sample state", "Dissolved in solvent", "Vaporised"],
-        ["How identified", "Rf value (compare to reference)", "Retention time"],
-        ["Sensitivity", "Low — can see visible spots only", "High — detects trace amounts"],
-        ["Used for", "Simple mixtures (dyes, inks, food colours)", "Complex mixtures (drugs, environmental samples, forensics)"],
-        ["Can link to MS?", "No", "Yes (GC-MS for accurate identification)"]
+        [
+          "Mobile phase",
+          "Liquid solvent",
+          "Inert gas (e.g. nitrogen, helium)"
+        ],
+        [
+          "Stationary phase",
+          "Cellulose paper",
+          "Liquid or solid coating on column"
+        ],
+        [
+          "Sample state",
+          "Dissolved in solvent",
+          "Vaporised"
+        ],
+        [
+          "How identified",
+          "Rf value (compare to reference)",
+          "Retention time"
+        ],
+        [
+          "Sensitivity",
+          "Low — can see visible spots only",
+          "High — detects trace amounts"
+        ],
+        [
+          "Used for",
+          "Simple mixtures (dyes, inks, food colours)",
+          "Complex mixtures (drugs, environmental samples, forensics)"
+        ],
+        [
+          "Can link to MS?",
+          "No",
+          "Yes (GC-MS for accurate identification)"
+        ]
       ]
     },
     {
       "title": "Rf value worked example",
       "examFlag": true,
-      "headers": ["Measurement", "Value"],
+      "headers": [
+        "Measurement",
+        "Value"
+      ],
       "rows": [
-        ["Distance moved by solvent front", "8.0 cm"],
-        ["Distance moved by substance X", "6.0 cm"],
-        ["Rf = 6.0 ÷ 8.0", "0.75"],
-        ["Is this value possible?", "Yes — between 0 and 1 ✓"]
+        [
+          "Distance moved by solvent front",
+          "8.0 cm"
+        ],
+        [
+          "Distance moved by substance X",
+          "6.0 cm"
+        ],
+        [
+          "Rf = 6.0 ÷ 8.0",
+          "0.75"
+        ],
+        [
+          "Is this value possible?",
+          "Yes — between 0 and 1 ✓"
+        ]
       ]
     }
   ],

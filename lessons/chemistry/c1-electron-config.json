@@ -25,9 +25,18 @@
         "A full outer shell = stable (like noble gases)"
       ],
       "keyTerms": [
-        {"term": "Electron shell", "def": "An energy level occupied by electrons around the nucleus; shells fill from the inside outwards"},
-        {"term": "Electron configuration", "def": "The arrangement of electrons in shells, written as numbers separated by commas (e.g. 2,8,1 for sodium)"},
-        {"term": "Valence electrons", "def": "The electrons in the outermost shell; these are involved in bonding and determine chemical properties"}
+        {
+          "term": "Electron shell",
+          "def": "An energy level occupied by electrons around the nucleus; shells fill from the inside outwards"
+        },
+        {
+          "term": "Electron configuration",
+          "def": "The arrangement of electrons in shells, written as numbers separated by commas (e.g. 2,8,1 for sodium)"
+        },
+        {
+          "term": "Valence electrons",
+          "def": "The electrons in the outermost shell; these are involved in bonding and determine chemical properties"
+        }
       ],
       "memTip": "Fill shells like seats on a bus — front seats (inner shells) fill up first, then you go to the back. Shell 1 fits 2, shell 2 fits 8, shell 3 fits 8.",
       "tutor_note": "Make sure Mabel can write electron configurations for the first 20 elements fluently. This is foundational for every bonding topic that follows."
@@ -47,10 +56,16 @@
         "Period 2 = 2 shells; Period 3 = 3 shells; explains the table's row structure"
       ],
       "keyTerms": [
-        {"term": "Group", "def": "A vertical column in the periodic table; all elements in a group have the same number of outer-shell electrons"},
-        {"term": "Period", "def": "A horizontal row in the periodic table; the period number = number of occupied electron shells"}
+        {
+          "term": "Group",
+          "def": "A vertical column in the periodic table; all elements in a group have the same number of outer-shell electrons"
+        },
+        {
+          "term": "Period",
+          "def": "A horizontal row in the periodic table; the period number = number of occupied electron shells"
+        }
       ],
-      "memTip": "GROUP = outer electrons (group 1 → 1 outer e). PERIOD = number of shells (period 3 → 3 shells). Two simple rules to decode the whole table.",
+      "memTip": "GROUP = outer electrons (group 1 → 1 outer e). PERIOD = number of shells (period 3 → 3 shells).",
       "tutor_note": "This is the core idea students often learn as a fact without understanding WHY. Help Mabel see that the periodic table literally maps electron configurations — each new period starts a new shell."
     },
     {
@@ -68,11 +83,20 @@
         "Metallic: outer electrons released into delocalised sea; ions held by electrostatic attraction"
       ],
       "keyTerms": [
-        {"term": "Ionic bonding", "def": "Transfer of electrons from a metal to a non-metal; both ions achieve full outer shells"},
-        {"term": "Covalent bonding", "def": "Sharing of electron pairs between non-metal atoms; both atoms effectively fill their outer shells"},
-        {"term": "Metallic bonding", "def": "Attraction between positive metal ions and a sea of delocalised electrons released from the outer shells of metal atoms"}
+        {
+          "term": "Ionic bonding",
+          "def": "Transfer of electrons from a metal to a non-metal; both ions achieve full outer shells"
+        },
+        {
+          "term": "Covalent bonding",
+          "def": "Sharing of electron pairs between non-metal atoms; both atoms effectively fill their outer shells"
+        },
+        {
+          "term": "Metallic bonding",
+          "def": "Attraction between positive metal ions and a sea of delocalised electrons released from the outer shells of metal atoms"
+        }
       ],
-      "memTip": "IONIC = GIVE (metal gives to non-metal). COVALENT = SHARE (both non-metals share). METALLIC = RELEASE (metal releases electrons into a sea). The goal is always the same: full outer shell.",
+      "memTip": "IONIC = GIVE (metal gives to non-metal). COVALENT = SHARE (both non-metals share).",
       "tutor_note": "Emphasise that the 'full outer shell' drive is the reason for all three types of bonding. Understanding this deeply means the bonding topics in C2 will feel logical rather than arbitrary."
     },
     {
@@ -90,11 +114,20 @@
         "CH₄: 4 shared pairs; NH₃: 3 shared pairs + 1 lone pair; O₂: double bond (2 shared pairs)"
       ],
       "keyTerms": [
-        {"term": "Dot-and-cross diagram", "def": "A diagram showing electron arrangement using dots and crosses to distinguish electrons from different atoms"},
-        {"term": "Lone pair", "def": "A pair of electrons in the outer shell of an atom that is not involved in bonding"},
-        {"term": "Shared pair", "def": "A pair of electrons shared between two atoms in a covalent bond; each atom contributes one electron"}
+        {
+          "term": "Dot-and-cross diagram",
+          "def": "A diagram showing electron arrangement using dots and crosses to distinguish electrons from different atoms"
+        },
+        {
+          "term": "Lone pair",
+          "def": "A pair of electrons in the outer shell of an atom that is not involved in bonding"
+        },
+        {
+          "term": "Shared pair",
+          "def": "A pair of electrons shared between two atoms in a covalent bond; each atom contributes one electron"
+        }
       ],
-      "memTip": "For dot-and-cross: always count the total electrons first, then place them. Shared pairs go BETWEEN atoms in the overlap. Lone pairs stay on the one atom.",
+      "memTip": "For dot-and-cross: always count the total electrons first, then place them. Shared pairs go BETWEEN atoms in the overlap.",
       "tutor_note": "AQA often only asks for outer shell electrons in covalent molecules — students waste time drawing inner shells. Check the question wording carefully."
     }
   ],
@@ -102,28 +135,175 @@
     {
       "title": "Electron configurations of the first 20 elements",
       "examFlag": true,
-      "headers": ["Element", "Symbol", "Atomic number", "Electron configuration", "Group", "Period"],
+      "headers": [
+        "Element",
+        "Symbol",
+        "Atomic number",
+        "Electron configuration",
+        "Group",
+        "Period"
+      ],
       "rows": [
-        ["Hydrogen", "H", "1", "1", "1", "1"],
-        ["Helium", "He", "2", "2", "0", "1"],
-        ["Lithium", "Li", "3", "2,1", "1", "2"],
-        ["Beryllium", "Be", "4", "2,2", "2", "2"],
-        ["Boron", "B", "5", "2,3", "3", "2"],
-        ["Carbon", "C", "6", "2,4", "4", "2"],
-        ["Nitrogen", "N", "7", "2,5", "5", "2"],
-        ["Oxygen", "O", "8", "2,6", "6", "2"],
-        ["Fluorine", "F", "9", "2,7", "7", "2"],
-        ["Neon", "Ne", "10", "2,8", "0", "2"],
-        ["Sodium", "Na", "11", "2,8,1", "1", "3"],
-        ["Magnesium", "Mg", "12", "2,8,2", "2", "3"],
-        ["Aluminium", "Al", "13", "2,8,3", "3", "3"],
-        ["Silicon", "Si", "14", "2,8,4", "4", "3"],
-        ["Phosphorus", "P", "15", "2,8,5", "5", "3"],
-        ["Sulfur", "S", "16", "2,8,6", "6", "3"],
-        ["Chlorine", "Cl", "17", "2,8,7", "7", "3"],
-        ["Argon", "Ar", "18", "2,8,8", "0", "3"],
-        ["Potassium", "K", "19", "2,8,8,1", "1", "4"],
-        ["Calcium", "Ca", "20", "2,8,8,2", "2", "4"]
+        [
+          "Hydrogen",
+          "H",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "Helium",
+          "He",
+          "2",
+          "2",
+          "0",
+          "1"
+        ],
+        [
+          "Lithium",
+          "Li",
+          "3",
+          "2,1",
+          "1",
+          "2"
+        ],
+        [
+          "Beryllium",
+          "Be",
+          "4",
+          "2,2",
+          "2",
+          "2"
+        ],
+        [
+          "Boron",
+          "B",
+          "5",
+          "2,3",
+          "3",
+          "2"
+        ],
+        [
+          "Carbon",
+          "C",
+          "6",
+          "2,4",
+          "4",
+          "2"
+        ],
+        [
+          "Nitrogen",
+          "N",
+          "7",
+          "2,5",
+          "5",
+          "2"
+        ],
+        [
+          "Oxygen",
+          "O",
+          "8",
+          "2,6",
+          "6",
+          "2"
+        ],
+        [
+          "Fluorine",
+          "F",
+          "9",
+          "2,7",
+          "7",
+          "2"
+        ],
+        [
+          "Neon",
+          "Ne",
+          "10",
+          "2,8",
+          "0",
+          "2"
+        ],
+        [
+          "Sodium",
+          "Na",
+          "11",
+          "2,8,1",
+          "1",
+          "3"
+        ],
+        [
+          "Magnesium",
+          "Mg",
+          "12",
+          "2,8,2",
+          "2",
+          "3"
+        ],
+        [
+          "Aluminium",
+          "Al",
+          "13",
+          "2,8,3",
+          "3",
+          "3"
+        ],
+        [
+          "Silicon",
+          "Si",
+          "14",
+          "2,8,4",
+          "4",
+          "3"
+        ],
+        [
+          "Phosphorus",
+          "P",
+          "15",
+          "2,8,5",
+          "5",
+          "3"
+        ],
+        [
+          "Sulfur",
+          "S",
+          "16",
+          "2,8,6",
+          "6",
+          "3"
+        ],
+        [
+          "Chlorine",
+          "Cl",
+          "17",
+          "2,8,7",
+          "7",
+          "3"
+        ],
+        [
+          "Argon",
+          "Ar",
+          "18",
+          "2,8,8",
+          "0",
+          "3"
+        ],
+        [
+          "Potassium",
+          "K",
+          "19",
+          "2,8,8,1",
+          "1",
+          "4"
+        ],
+        [
+          "Calcium",
+          "Ca",
+          "20",
+          "2,8,8,2",
+          "2",
+          "4"
+        ]
       ]
     }
   ],

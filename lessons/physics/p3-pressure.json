@@ -26,8 +26,14 @@
         "Pressure = force ÷ area (Pa = N/m²)"
       ],
       "keyTerms": [
-        { "term": "gas pressure", "def": "The force per unit area exerted by gas particles colliding with container walls" },
-        { "term": "collision", "def": "A particle striking the container wall — each collision exerts a tiny force contributing to total pressure" }
+        {
+          "term": "gas pressure",
+          "def": "The force per unit area exerted by gas particles colliding with container walls"
+        },
+        {
+          "term": "collision",
+          "def": "A particle striking the container wall — each collision exerts a tiny force contributing to total pressure"
+        }
       ],
       "memTip": "More collisions OR harder collisions = higher pressure. Temperature controls speed; volume controls frequency.",
       "tutor_note": "Mabel needs to link cause (particle collisions) to effect (pressure) explicitly — exam mark schemes reward the phrase 'collisions with the walls'."
@@ -46,8 +52,14 @@
         "0 °C = 273 K; 100 °C = 373 K; −273 °C = 0 K"
       ],
       "keyTerms": [
-        { "term": "absolute zero", "def": "The lowest possible temperature: 0 K = −273 °C; particles have minimum kinetic energy" },
-        { "term": "Kelvin (K)", "def": "The absolute temperature scale; T(K) = θ(°C) + 273; must be used in gas law equations" }
+        {
+          "term": "absolute zero",
+          "def": "The lowest possible temperature: 0 K = −273 °C; particles have minimum kinetic energy"
+        },
+        {
+          "term": "Kelvin (K)",
+          "def": "The absolute temperature scale; T(K) = θ(°C) + 273; must be used in gas law equations"
+        }
       ],
       "memTip": "Add 273 to convert °C to K. Subtract 273 to go back. 0 K = absolute zero = −273 °C.",
       "tutor_note": "A very common error is leaving temperature in °C in gas law calculations — always convert first."
@@ -66,10 +78,16 @@
         "Rearrange: p₂ = p₁V₁ ÷ V₂ or V₂ = p₁V₁ ÷ p₂"
       ],
       "keyTerms": [
-        { "term": "Boyle's Law", "def": "At constant temperature, p × V = constant for a fixed mass of gas; p₁V₁ = p₂V₂" },
-        { "term": "inversely proportional", "def": "When one quantity doubles, the other halves — their product stays constant" }
+        {
+          "term": "Boyle's Law",
+          "def": "At constant temperature, p × V = constant for a fixed mass of gas; p₁V₁ = p₂V₂"
+        },
+        {
+          "term": "inversely proportional",
+          "def": "When one quantity doubles, the other halves — their product stays constant"
+        }
       ],
-      "memTip": "p₁V₁ = p₂V₂. Both sides equal the same constant. Just cross-multiply to rearrange.",
+      "memTip": "p₁V₁ = p₂V₂. Both sides equal the same constant.",
       "tutor_note": "Make sure Mabel checks that temperature is stated as constant before using Boyle's Law — if temperature changes, the combined law is needed."
     },
     {
@@ -86,10 +104,16 @@
         "Rearrange for any unknown: p₂ = p₁V₁T₂ / (T₁V₂)"
       ],
       "keyTerms": [
-        { "term": "combined gas law", "def": "p₁V₁/T₁ = p₂V₂/T₂; links pressure, volume and temperature for a fixed mass of gas" },
-        { "term": "Gay-Lussac's Law", "def": "At constant volume, pressure is directly proportional to Kelvin temperature: p/T = constant" }
+        {
+          "term": "combined gas law",
+          "def": "p₁V₁/T₁ = p₂V₂/T₂; links pressure, volume and temperature for a fixed mass of gas"
+        },
+        {
+          "term": "Gay-Lussac's Law",
+          "def": "At constant volume, pressure is directly proportional to Kelvin temperature: p/T = constant"
+        }
       ],
-      "memTip": "pV/T = constant. Each fraction equals the same number. Convert to K first — always.",
+      "memTip": "pV/T = constant. Each fraction equals the same number.",
       "tutor_note": "Encourage Mabel to write out T in Kelvin explicitly before substituting — it prevents the most common calculation error."
     }
   ],
@@ -97,12 +121,37 @@
     {
       "title": "Summary of gas law relationships",
       "examFlag": true,
-      "headers": ["Law", "What is constant?", "Relationship", "Equation"],
+      "headers": [
+        "Law",
+        "What is constant?",
+        "Relationship",
+        "Equation"
+      ],
       "rows": [
-        ["Boyle's Law", "Temperature (T)", "p and V inversely proportional", "p₁V₁ = p₂V₂"],
-        ["Gay-Lussac's Law", "Volume (V)", "p and T directly proportional", "p₁/T₁ = p₂/T₂"],
-        ["Charles's Law", "Pressure (p)", "V and T directly proportional", "V₁/T₁ = V₂/T₂"],
-        ["Combined Gas Law", "Mass of gas", "Links p, V and T", "p₁V₁/T₁ = p₂V₂/T₂"]
+        [
+          "Boyle's Law",
+          "Temperature (T)",
+          "p and V inversely proportional",
+          "p₁V₁ = p₂V₂"
+        ],
+        [
+          "Gay-Lussac's Law",
+          "Volume (V)",
+          "p and T directly proportional",
+          "p₁/T₁ = p₂/T₂"
+        ],
+        [
+          "Charles's Law",
+          "Pressure (p)",
+          "V and T directly proportional",
+          "V₁/T₁ = V₂/T₂"
+        ],
+        [
+          "Combined Gas Law",
+          "Mass of gas",
+          "Links p, V and T",
+          "p₁V₁/T₁ = p₂V₂/T₂"
+        ]
       ]
     }
   ],

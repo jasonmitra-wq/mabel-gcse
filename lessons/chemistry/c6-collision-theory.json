@@ -25,9 +25,18 @@
         "Rate increases if: collision frequency increases OR proportion exceeding Ea increases"
       ],
       "keyTerms": [
-        {"term": "Collision theory", "def": "The theory that reactions occur only when particles collide with energy equal to or greater than the activation energy."},
-        {"term": "Effective collision", "def": "A collision that results in a chemical reaction because the particles have sufficient energy and correct orientation."},
-        {"term": "Activation energy (Ea)", "def": "The minimum energy that colliding particles must possess for a reaction to occur."}
+        {
+          "term": "Collision theory",
+          "def": "The theory that reactions occur only when particles collide with energy equal to or greater than the activation energy."
+        },
+        {
+          "term": "Effective collision",
+          "def": "A collision that results in a chemical reaction because the particles have sufficient energy and correct orientation."
+        },
+        {
+          "term": "Activation energy (Ea)",
+          "def": "The minimum energy that colliding particles must possess for a reaction to occur."
+        }
       ],
       "memTip": "Think of it like throwing a ball at a door: most throws aren't hard enough to open it. Only throws above a threshold force (Ea) get the reaction.",
       "tutor_note": "Students often say 'particles collide more' as a full explanation. Push them to add 'with sufficient energy to react' — this is what Ea is about."
@@ -47,8 +56,14 @@
         "Total area under entire curve = total number of particles (stays constant)"
       ],
       "keyTerms": [
-        {"term": "Maxwell-Boltzmann distribution", "def": "A graph showing the distribution of kinetic energies of particles in a gas or solution at a given temperature."},
-        {"term": "Most probable energy", "def": "The energy at the peak of the Maxwell-Boltzmann curve — the energy shared by the greatest number of particles."}
+        {
+          "term": "Maxwell-Boltzmann distribution",
+          "def": "A graph showing the distribution of kinetic energies of particles in a gas or solution at a given temperature."
+        },
+        {
+          "term": "Most probable energy",
+          "def": "The energy at the peak of the Maxwell-Boltzmann curve — the energy shared by the greatest number of particles."
+        }
       ],
       "memTip": "The M-B curve is like a ski slope — zero at the bottom left, peaks in the middle, long tail going right. Ea is a gate on the slope: only the fast skiers get past.",
       "tutor_note": "A very common mark-scheme requirement: state that the area under the curve to the right of Ea represents the proportion of particles that can react. Practise drawing the curve with the Ea line."
@@ -68,9 +83,12 @@
         "Small temperature rise has a large effect because of the shape of the tail of the curve"
       ],
       "keyTerms": [
-        {"term": "Shift right", "def": "When the M-B curve moves to higher energies due to increased temperature; the curve also flattens (peak is lower) but area is unchanged."}
+        {
+          "term": "Shift right",
+          "def": "When the M-B curve moves to higher energies due to increased temperature; the curve also flattens (peak is lower) but area is unchanged."
+        }
       ],
-      "memTip": "Hot curve = flatter and shifted right. Ea stays put. The tail past Ea gets much bigger — that's why rate doubles for a small temperature rise.",
+      "memTip": "Hot curve = flatter and shifted right. Ea stays put.",
       "tutor_note": "A classic 6-mark exam question: describe and explain the Maxwell-Boltzmann distribution and how temperature affects it. Students must mention: Ea stays the same, curve shifts right, area past Ea increases."
     },
     {
@@ -88,8 +106,14 @@
         "Catalyst is regenerated after the reaction — not used up"
       ],
       "keyTerms": [
-        {"term": "Alternative pathway", "def": "The mechanism by which a catalyst speeds up a reaction — by providing a different route with lower activation energy, without changing the energy of the reactants or products."},
-        {"term": "Regenerated", "def": "A catalyst is regenerated at the end of a reaction — it returns to its original form and can be reused."}
+        {
+          "term": "Alternative pathway",
+          "def": "The mechanism by which a catalyst speeds up a reaction — by providing a different route with lower activation energy, without changing the energy of the reactants or products."
+        },
+        {
+          "term": "Regenerated",
+          "def": "A catalyst is regenerated at the end of a reaction — it returns to its original form and can be reused."
+        }
       ],
       "memTip": "Catalyst = moving the hurdle closer (lower Ea), not making athletes faster (same M-B curve). More athletes clear the lower hurdle.",
       "tutor_note": "Exam trap: students sometimes say catalysts shift the curve to the right — WRONG. The curve stays the same; only the Ea line moves left."
@@ -99,13 +123,43 @@
     {
       "title": "Maxwell-Boltzmann distribution — key features and changes",
       "examFlag": true,
-      "headers": ["Feature", "What it represents", "Effect of increased temperature", "Effect of a catalyst"],
+      "headers": [
+        "Feature",
+        "What it represents",
+        "Effect of increased temperature",
+        "Effect of a catalyst"
+      ],
       "rows": [
-        ["Shape of curve", "Distribution of particle energies", "Flattens and shifts right; peak at higher energy", "No change — curve stays the same"],
-        ["Area under whole curve", "Total number of particles", "Stays the same (same number of particles)", "Stays the same"],
-        ["Peak of curve", "Most probable energy", "Moves to higher energy value", "No change"],
-        ["Ea line position", "Minimum energy needed to react", "Stays in the same position", "Shifts LEFT to a lower energy value"],
-        ["Area under curve past Ea", "Proportion of particles that can react", "Increases — more particles exceed Ea", "Increases — more particles exceed the lower Ea"]
+        [
+          "Shape of curve",
+          "Distribution of particle energies",
+          "Flattens and shifts right; peak at higher energy",
+          "No change — curve stays the same"
+        ],
+        [
+          "Area under whole curve",
+          "Total number of particles",
+          "Stays the same (same number of particles)",
+          "Stays the same"
+        ],
+        [
+          "Peak of curve",
+          "Most probable energy",
+          "Moves to higher energy value",
+          "No change"
+        ],
+        [
+          "Ea line position",
+          "Minimum energy needed to react",
+          "Stays in the same position",
+          "Shifts LEFT to a lower energy value"
+        ],
+        [
+          "Area under curve past Ea",
+          "Proportion of particles that can react",
+          "Increases — more particles exceed Ea",
+          "Increases — more particles exceed the lower Ea"
+        ]
       ]
     }
   ],

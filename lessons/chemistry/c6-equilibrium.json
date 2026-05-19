@@ -25,11 +25,20 @@
         "Test for water: white anhydrous copper sulfate turns blue in the presence of water"
       ],
       "keyTerms": [
-        {"term": "Reversible reaction", "def": "A reaction that can proceed in both the forward and backward directions, shown by the ⇌ symbol."},
-        {"term": "Anhydrous", "def": "A substance that contains no water (e.g., anhydrous copper sulfate is the white form with no water of crystallisation)."},
-        {"term": "Hydrated", "def": "A substance that contains water of crystallisation within its crystal structure (e.g., hydrated copper sulfate is blue)."}
+        {
+          "term": "Reversible reaction",
+          "def": "A reaction that can proceed in both the forward and backward directions, shown by the ⇌ symbol."
+        },
+        {
+          "term": "Anhydrous",
+          "def": "A substance that contains no water (e.g., anhydrous copper sulfate is the white form with no water of crystallisation)."
+        },
+        {
+          "term": "Hydrated",
+          "def": "A substance that contains water of crystallisation within its crystal structure (e.g., hydrated copper sulfate is blue)."
+        }
       ],
-      "memTip": "Blue → white → blue. Heat to dehydrate (remove water), add water to rehydrate. The ⇌ arrow tells you it can go both ways.",
+      "memTip": "Blue → white → blue. Heat to dehydrate (remove water), add water to rehydrate.",
       "tutor_note": "The copper sulfate example is a required AQA practical link and frequently appears in exams. Students should know the colours, the conditions to drive each direction, and that it also serves as a water test."
     },
     {
@@ -47,10 +56,16 @@
         "Open system example: burning fuel — products (CO₂, H₂O) escape so no equilibrium"
       ],
       "keyTerms": [
-        {"term": "Dynamic equilibrium", "def": "The state in a closed system where the forward and reverse reaction rates are equal, so concentrations remain constant even though both reactions continue."},
-        {"term": "Closed system", "def": "A system in which no matter can enter or leave — a requirement for equilibrium to be established."}
+        {
+          "term": "Dynamic equilibrium",
+          "def": "The state in a closed system where the forward and reverse reaction rates are equal, so concentrations remain constant even though both reactions continue."
+        },
+        {
+          "term": "Closed system",
+          "def": "A system in which no matter can enter or leave — a requirement for equilibrium to be established."
+        }
       ],
-      "memTip": "Dynamic = still moving. Equilibrium = balanced. Think of an escalator with equal numbers going up and down — the crowd size on each floor stays the same even though people are still moving.",
+      "memTip": "Dynamic = still moving. Equilibrium = balanced.",
       "tutor_note": "The most common error: students say concentrations are 'equal' at equilibrium. They are constant, not equal. Push this distinction every time."
     },
     {
@@ -68,12 +83,24 @@
         "Concentration increase of reactant → shifts forward; removing product → also shifts forward"
       ],
       "keyTerms": [
-        {"term": "Le Chatelier's principle", "def": "If conditions are changed for a system at equilibrium, the equilibrium shifts in the direction that opposes the change."},
-        {"term": "Position of equilibrium", "def": "Whether the equilibrium favours the forward reaction (toward products) or the reverse reaction (toward reactants)."},
-        {"term": "Endothermic direction", "def": "The direction of reaction that absorbs energy from the surroundings."},
-        {"term": "Exothermic direction", "def": "The direction of reaction that releases energy to the surroundings."}
+        {
+          "term": "Le Chatelier's principle",
+          "def": "If conditions are changed for a system at equilibrium, the equilibrium shifts in the direction that opposes the change."
+        },
+        {
+          "term": "Position of equilibrium",
+          "def": "Whether the equilibrium favours the forward reaction (toward products) or the reverse reaction (toward reactants)."
+        },
+        {
+          "term": "Endothermic direction",
+          "def": "The direction of reaction that absorbs energy from the surroundings."
+        },
+        {
+          "term": "Exothermic direction",
+          "def": "The direction of reaction that releases energy to the surroundings."
+        }
       ],
-      "memTip": "Le Chatelier = the equilibrium FIGHTS BACK. Push it one way and it pushes back. Raise temperature → it cools down by going endothermic. Raise pressure → it shrinks by making fewer gas molecules.",
+      "memTip": "Le Chatelier = the equilibrium FIGHTS BACK. Push it one way and it pushes back.",
       "tutor_note": "Students often confuse 'shifts toward fewer moles of gas' when pressure increases. Make sure they count gas moles on each side — sometimes both sides have the same number, in which case pressure has no effect."
     },
     {
@@ -92,8 +119,14 @@
         "Unreacted N₂ and H₂ are recycled to minimise waste"
       ],
       "keyTerms": [
-        {"term": "Haber process", "def": "The industrial process for making ammonia from nitrogen and hydrogen: N₂ + 3H₂ ⇌ 2NH₃, using conditions of ~450°C, ~200 atm, and an iron catalyst."},
-        {"term": "Compromise conditions", "def": "Industrial conditions chosen to balance yield and rate of reaction — neither the best for yield alone nor the best for speed alone."}
+        {
+          "term": "Haber process",
+          "def": "The industrial process for making ammonia from nitrogen and hydrogen: N₂ + 3H₂ ⇌ 2NH₃, using conditions of ~450°C, ~200 atm, and an iron catalyst."
+        },
+        {
+          "term": "Compromise conditions",
+          "def": "Industrial conditions chosen to balance yield and rate of reaction — neither the best for yield alone nor the best for speed alone."
+        }
       ],
       "memTip": "HABER = Hot (450°C), Atmosphere (200 atm), Big iron catalyst, Exothermic, Recycled gases.",
       "tutor_note": "A very common 6-mark question: 'Explain why these conditions are used in the Haber process.' Students must address temperature, pressure, and catalyst with both 'why not more' and 'why not less' for the temperature and pressure choices."
@@ -103,14 +136,49 @@
     {
       "title": "Le Chatelier's principle — effect of changing conditions",
       "examFlag": true,
-      "headers": ["Condition change", "Direction of shift", "Explanation", "Haber process application"],
+      "headers": [
+        "Condition change",
+        "Direction of shift",
+        "Explanation",
+        "Haber process application"
+      ],
       "rows": [
-        ["Increase temperature", "Endothermic direction", "Equilibrium absorbs extra energy by shifting in the endothermic direction", "Forward reaction is exothermic → increasing T shifts equilibrium BACKWARD → less NH₃"],
-        ["Decrease temperature", "Exothermic direction", "Equilibrium releases energy to compensate", "Decreasing T shifts equilibrium FORWARD → more NH₃, but reaction is too slow"],
-        ["Increase pressure", "Side with fewer moles of gas", "Reduces the volume occupied by gas molecules, opposing the pressure increase", "4 mol gas → 2 mol gas; increasing P shifts forward → more NH₃"],
-        ["Decrease pressure", "Side with more moles of gas", "Increases volume, opposing the pressure decrease", "Decreasing P shifts backward → less NH₃"],
-        ["Increase concentration of reactant", "Forward (toward products)", "Uses up added reactant, opposing the change", "Adding more N₂ or H₂ shifts equilibrium forward → more NH₃"],
-        ["Remove product (e.g., ammonia)", "Forward (toward products)", "Equilibrium replaces the removed product", "In Haber process, NH₃ is removed by liquefaction → drives equilibrium forward"]
+        [
+          "Increase temperature",
+          "Endothermic direction",
+          "Equilibrium absorbs extra energy by shifting in the endothermic direction",
+          "Forward reaction is exothermic → increasing T shifts equilibrium BACKWARD → less NH₃"
+        ],
+        [
+          "Decrease temperature",
+          "Exothermic direction",
+          "Equilibrium releases energy to compensate",
+          "Decreasing T shifts equilibrium FORWARD → more NH₃, but reaction is too slow"
+        ],
+        [
+          "Increase pressure",
+          "Side with fewer moles of gas",
+          "Reduces the volume occupied by gas molecules, opposing the pressure increase",
+          "4 mol gas → 2 mol gas; increasing P shifts forward → more NH₃"
+        ],
+        [
+          "Decrease pressure",
+          "Side with more moles of gas",
+          "Increases volume, opposing the pressure decrease",
+          "Decreasing P shifts backward → less NH₃"
+        ],
+        [
+          "Increase concentration of reactant",
+          "Forward (toward products)",
+          "Uses up added reactant, opposing the change",
+          "Adding more N₂ or H₂ shifts equilibrium forward → more NH₃"
+        ],
+        [
+          "Remove product (e.g., ammonia)",
+          "Forward (toward products)",
+          "Equilibrium replaces the removed product",
+          "In Haber process, NH₃ is removed by liquefaction → drives equilibrium forward"
+        ]
       ]
     }
   ],

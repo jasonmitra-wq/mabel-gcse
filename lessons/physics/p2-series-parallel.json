@@ -25,8 +25,14 @@
         "Consequence — if one component breaks in series, the circuit is broken and all components stop"
       ],
       "keyTerms": [
-        {"term": "Series circuit", "def": "Components connected in a single loop with no branches; current has only one path"},
-        {"term": "Total resistance (series)", "def": "Sum of individual resistances: Rtotal = R1 + R2 + ..."}
+        {
+          "term": "Series circuit",
+          "def": "Components connected in a single loop with no branches; current has only one path"
+        },
+        {
+          "term": "Total resistance (series)",
+          "def": "Sum of individual resistances: Rtotal = R1 + R2 + ..."
+        }
       ],
       "memTip": "Series = Same current. 'S for Same, S for Series.' Voltages split, resistances add. Cover your notes and write all three series rules from memory.",
       "tutor_note": "Examiners love asking you to calculate the p.d. across one component when you're given the supply voltage and the p.d. across the other. Don't forget: the p.d.s must add to equal the supply."
@@ -46,10 +52,16 @@
         "Formula — 1/Rtotal = 1/R1 + 1/R2 (take the reciprocal of the answer to get Rtotal)"
       ],
       "keyTerms": [
-        {"term": "Parallel circuit", "def": "Components in separate branches between the same two points; voltage is equal across each branch"},
-        {"term": "Total resistance (parallel)", "def": "Found using 1/Rtotal = 1/R1 + 1/R2; always less than the smallest resistance"}
+        {
+          "term": "Parallel circuit",
+          "def": "Components in separate branches between the same two points; voltage is equal across each branch"
+        },
+        {
+          "term": "Total resistance (parallel)",
+          "def": "Found using 1/Rtotal = 1/R1 + 1/R2; always less than the smallest resistance"
+        }
       ],
-      "memTip": "Parallel = same Pressure (voltage). Current splits like traffic at a junction. 1/Rtotal = 1/R1 + 1/R2 — don't forget to flip the answer at the end. Cover your notes and write the formula and all three parallel rules from memory.",
+      "memTip": "Parallel = same Pressure (voltage). Current splits like traffic at a junction. 1/Rtotal = 1/R1 + 1/R2 — don't forget to flip the answer at the end.",
       "tutor_note": "The most common error with the parallel resistance formula is forgetting to take the reciprocal at the end. If you get 1/Rtotal = 0.5, then Rtotal = 1/0.5 = 2 Ω — not 0.5 Ω."
     },
     {
@@ -67,9 +79,12 @@
         "Fault isolation — a fault in one appliance doesn't cut power to the whole circuit"
       ],
       "keyTerms": [
-        {"term": "Parallel household wiring", "def": "Mains circuits wired so every appliance gets full supply voltage and can be switched independently"}
+        {
+          "term": "Parallel household wiring",
+          "def": "Mains circuits wired so every appliance gets full supply voltage and can be switched independently"
+        }
       ],
-      "memTip": "House = Parallel. Phone charger off, lights still on — that's parallel in action. Cover your notes and write two advantages of parallel household wiring from memory.",
+      "memTip": "House = Parallel. Phone charger off, lights still on — that's parallel in action.",
       "tutor_note": "In 'explain why' questions about household wiring, you need TWO distinct points: full voltage to each device AND independent switching. One alone is unlikely to earn full marks."
     },
     {
@@ -87,7 +102,10 @@
         "Parallel branch current — use I = V/R with the branch voltage (same for all branches) and branch resistance"
       ],
       "keyTerms": [
-        {"term": "Equivalent resistance", "def": "A single resistance value that has the same effect on the circuit as a combination of resistors"}
+        {
+          "term": "Equivalent resistance",
+          "def": "A single resistance value that has the same effect on the circuit as a combination of resistors"
+        }
       ],
       "memTip": "Mixed circuits: Parallel first, then series add, then I = V/R, then work back. Cover your notes and write the four steps from memory, then try the worked example without looking.",
       "tutor_note": "Always check your answer at the end: the p.d.s across each series section should add up to the supply voltage. This takes 10 seconds and will catch arithmetic errors before they cost you marks."
@@ -107,10 +125,16 @@
         "Wrong voltmeter position — in series: its high resistance blocks current and gives wrong reading"
       ],
       "keyTerms": [
-        {"term": "Ammeter", "def": "Measures current; connected in series; has very low resistance"},
-        {"term": "Voltmeter", "def": "Measures p.d.; connected in parallel; has very high resistance"}
+        {
+          "term": "Ammeter",
+          "def": "Measures current; connected in series; has very low resistance"
+        },
+        {
+          "term": "Voltmeter",
+          "def": "Measures p.d.; connected in parallel; has very high resistance"
+        }
       ],
-      "memTip": "A for Ammeter = A for Along (in series, along the wire). V for Voltmeter = V shape (in parallel, spanning across). Cover your notes and explain why each meter has the resistance it does.",
+      "memTip": "A for Ammeter = A for Along (in series, along the wire). V for Voltmeter = V shape (in parallel, spanning across).",
       "tutor_note": "Knowing WHY ammeter resistance is low and voltmeter resistance is high is a frequent exam question — it's not enough to just state where they go. Ammeter: low resistance so it doesn't reduce the circuit current. Voltmeter: high resistance so it doesn't divert current away."
     }
   ],
@@ -118,35 +142,78 @@
     {
       "title": "Series vs parallel circuits — key comparison",
       "examFlag": true,
-      "headers": ["Property", "Series circuit", "Parallel circuit"],
+      "headers": [
+        "Property",
+        "Series circuit",
+        "Parallel circuit"
+      ],
       "rows": [
-        ["Current", "Same at every point in the circuit", "Splits between branches; total = sum of branch currents"],
-        ["Potential difference (voltage)", "Shared — adds up to supply voltage across components", "Same across every branch — equals supply voltage"],
-        ["Total resistance", "Sum of all resistances: Rtotal = R1 + R2 + ...", "Less than smallest resistance: 1/Rtotal = 1/R1 + 1/R2"],
-        ["Effect of adding a component", "Total resistance increases; current decreases", "Total resistance decreases; current from supply increases"],
-        ["Effect of one component breaking", "Circuit breaks — all components stop working", "Other branches continue to work independently"],
-        ["Real-world use", "Simple torch circuits, some sensors", "Household mains wiring, modern Christmas lights"]
+        [
+          "Current",
+          "Same at every point in the circuit",
+          "Splits between branches; total = sum of branch currents"
+        ],
+        [
+          "Potential difference (voltage)",
+          "Shared — adds up to supply voltage across components",
+          "Same across every branch — equals supply voltage"
+        ],
+        [
+          "Total resistance",
+          "Sum of all resistances: Rtotal = R1 + R2 + ...",
+          "Less than smallest resistance: 1/Rtotal = 1/R1 + 1/R2"
+        ],
+        [
+          "Effect of adding a component",
+          "Total resistance increases; current decreases",
+          "Total resistance decreases; current from supply increases"
+        ],
+        [
+          "Effect of one component breaking",
+          "Circuit breaks — all components stop working",
+          "Other branches continue to work independently"
+        ],
+        [
+          "Real-world use",
+          "Simple torch circuits, some sensors",
+          "Household mains wiring, modern Christmas lights"
+        ]
       ]
     }
   ],
   "checkpoints": {
     "0": {
       "question": "Two resistors of 6 Ω and 10 Ω are connected in series with a 16 V supply. What is the current through the circuit?",
-      "options": ["2.67 A", "1 A", "0.5 A", "16 A"],
+      "options": [
+        "2.67 A",
+        "1 A",
+        "0.5 A",
+        "16 A"
+      ],
       "correct": 1,
       "correctFeedback": "Correct — Rtotal = 6 + 10 = 16 Ω; I = V/R = 16/16 = 1 A. Textbook series circuit calculation.",
       "wrongFeedback": "Step 1: add the resistances — Rtotal = 6 + 10 = 16 Ω. Step 2: use I = V/R = 16 ÷ 16 = 1 A. Remember, in series you always add resistances before using I = V/R."
     },
     "1": {
       "question": "Two resistors of 4 Ω and 12 Ω are connected in parallel. What is the total resistance of this combination?",
-      "options": ["16 Ω", "8 Ω", "3 Ω", "6 Ω"],
+      "options": [
+        "16 Ω",
+        "8 Ω",
+        "3 Ω",
+        "6 Ω"
+      ],
       "correct": 2,
       "correctFeedback": "Correct — 1/Rtotal = 1/4 + 1/12 = 3/12 + 1/12 = 4/12 = 1/3, so Rtotal = 3 Ω. Notice it's less than the smaller resistor (4 Ω) — as it should be in parallel.",
       "wrongFeedback": "Use 1/Rtotal = 1/R1 + 1/R2 = 1/4 + 1/12. Convert to a common denominator: 3/12 + 1/12 = 4/12. So 1/Rtotal = 4/12, meaning Rtotal = 12/4 = 3 Ω. The most common mistake is forgetting to flip at the end and leaving the answer as 4/12 instead of 3 Ω."
     },
     "3": {
       "question": "In a parallel circuit, the supply voltage is 9 V. What is the potential difference across each branch?",
-      "options": ["Depends on the number of branches", "3 V per branch if there are 3 branches", "9 V across each branch", "Less than 9 V because branches share the voltage"],
+      "options": [
+        "Depends on the number of branches",
+        "3 V per branch if there are 3 branches",
+        "9 V across each branch",
+        "Less than 9 V because branches share the voltage"
+      ],
       "correct": 2,
       "correctFeedback": "Exactly right. In a parallel circuit, every branch connects the same two points — so every branch has the full supply voltage across it. This is one of the fundamental parallel rules.",
       "wrongFeedback": "In a parallel circuit, voltage does NOT split between branches — that's what happens in series. Every branch in a parallel circuit connects directly between the same two points as the supply, so each branch has the full 9 V across it. Current splits; voltage doesn't."

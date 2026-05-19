@@ -26,9 +26,18 @@
         "Bond energies given in kJ mol⁻¹"
       ],
       "keyTerms": [
-        { "term": "Bond energy", "def": "The energy needed to break one mole of a particular type of bond in the gas phase, in kJ mol⁻¹" },
-        { "term": "Exothermic", "def": "A reaction where energy is released to the surroundings; the products have less energy than the reactants" },
-        { "term": "Endothermic", "def": "A reaction where energy is absorbed from the surroundings; the products have more energy than the reactants" }
+        {
+          "term": "Bond energy",
+          "def": "The energy needed to break one mole of a particular type of bond in the gas phase, in kJ mol⁻¹"
+        },
+        {
+          "term": "Exothermic",
+          "def": "A reaction where energy is released to the surroundings; the products have less energy than the reactants"
+        },
+        {
+          "term": "Endothermic",
+          "def": "A reaction where energy is absorbed from the surroundings; the products have more energy than the reactants"
+        }
       ],
       "memTip": "BREAK = take in energy (think: it takes effort to break something). MAKE = give out energy (making something stable releases energy).",
       "tutor_note": "Students often get confused and think breaking bonds releases energy — it does not. Emphasise: breaking always costs energy; making always pays energy back."
@@ -48,10 +57,16 @@
         "H₂ + ½O₂ → H₂O example: ΔH = 685 − 926 = −241 kJ mol⁻¹ (exothermic)"
       ],
       "keyTerms": [
-        { "term": "ΔH", "def": "The overall energy change of a reaction; negative = exothermic, positive = endothermic" },
-        { "term": "Σ (sigma)", "def": "Sum of — meaning you add up all the energy values for bonds broken or formed" }
+        {
+          "term": "ΔH",
+          "def": "The overall energy change of a reaction; negative = exothermic, positive = endothermic"
+        },
+        {
+          "term": "Σ (sigma)",
+          "def": "Sum of — meaning you add up all the energy values for bonds broken or formed"
+        }
       ],
-      "memTip": "Energy IN (breaking) first, energy OUT (forming) second. IN minus OUT = ΔH. If OUT is bigger than IN, ΔH is negative = exothermic.",
+      "memTip": "Energy IN (breaking) first, energy OUT (forming) second. IN minus OUT = ΔH.",
       "tutor_note": "The most common error is reversing the formula (putting formed first). Drill the order: broken − formed. Also remind students to count every bond, including double bonds counted twice."
     },
     {
@@ -67,9 +82,12 @@
         "Count every bond in the structural formula, including all C−H bonds"
       ],
       "keyTerms": [
-        { "term": "Bond energy table", "def": "A data table giving the energy (kJ mol⁻¹) needed to break one mole of each type of bond; provided in the exam" }
+        {
+          "term": "Bond energy table",
+          "def": "A data table giving the energy (kJ mol⁻¹) needed to break one mole of each type of bond; provided in the exam"
+        }
       ],
-      "memTip": "Draw the structural formula first. Then go through it bond by bond, listing each one. It is easy to miss C−H bonds — count them all.",
+      "memTip": "Draw the structural formula first. Then go through it bond by bond, listing each one.",
       "tutor_note": "Students frequently miss some C−H bonds when working with organic molecules. Encourage them to draw full displayed formulas and physically tick each bond as they count it."
     },
     {
@@ -84,7 +102,10 @@
         "Results are approximate but useful for comparing reactions"
       ],
       "keyTerms": [
-        { "term": "Average bond energy", "def": "The mean energy needed to break that bond type across a range of different molecules; used because the exact value varies" }
+        {
+          "term": "Average bond energy",
+          "def": "The mean energy needed to break that bond type across a range of different molecules; used because the exact value varies"
+        }
       ],
       "memTip": "Bond energies = averages. Like using average shoe size to fit everyone — useful but not perfect.",
       "tutor_note": "This point rarely appears as a major question but can appear in 'evaluate' style questions. Worth mentioning briefly."
@@ -94,16 +115,52 @@
     {
       "title": "Common bond energies for GCSE calculations",
       "examFlag": true,
-      "headers": ["Bond", "Energy (kJ mol⁻¹)", "Notes"],
+      "headers": [
+        "Bond",
+        "Energy (kJ mol⁻¹)",
+        "Notes"
+      ],
       "rows": [
-        ["H−H", "436", "In hydrogen gas (H₂)"],
-        ["O=O", "498", "In oxygen gas (O₂) — double bond"],
-        ["O−H", "463", "In water and alcohols"],
-        ["C−H", "412", "Average in organic molecules"],
-        ["C−C", "348", "Single bond between carbons"],
-        ["C=C", "612", "Double bond in alkenes"],
-        ["C=O", "743", "In CO₂ — count twice (two C=O per CO₂)"],
-        ["N≡N", "945", "In nitrogen gas (N₂) — triple bond, very strong"]
+        [
+          "H−H",
+          "436",
+          "In hydrogen gas (H₂)"
+        ],
+        [
+          "O=O",
+          "498",
+          "In oxygen gas (O₂) — double bond"
+        ],
+        [
+          "O−H",
+          "463",
+          "In water and alcohols"
+        ],
+        [
+          "C−H",
+          "412",
+          "Average in organic molecules"
+        ],
+        [
+          "C−C",
+          "348",
+          "Single bond between carbons"
+        ],
+        [
+          "C=C",
+          "612",
+          "Double bond in alkenes"
+        ],
+        [
+          "C=O",
+          "743",
+          "In CO₂ — count twice (two C=O per CO₂)"
+        ],
+        [
+          "N≡N",
+          "945",
+          "In nitrogen gas (N₂) — triple bond, very strong"
+        ]
       ]
     }
   ],

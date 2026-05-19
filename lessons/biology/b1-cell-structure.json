@@ -26,11 +26,20 @@
         "Ribosomes — site of protein synthesis"
       ],
       "keyTerms": [
-        {"term": "Eukaryotic", "def": "A cell with a membrane-bound nucleus — includes all animal and plant cells"},
-        {"term": "Mitochondria", "def": "Organelles where aerobic respiration occurs, releasing energy for the cell"},
-        {"term": "Ribosomes", "def": "Tiny organelles where proteins are made (synthesised) using instructions from DNA"}
+        {
+          "term": "Eukaryotic",
+          "def": "A cell with a membrane-bound nucleus — includes all animal and plant cells"
+        },
+        {
+          "term": "Mitochondria",
+          "def": "Organelles where aerobic respiration occurs, releasing energy for the cell"
+        },
+        {
+          "term": "Ribosomes",
+          "def": "Tiny organelles where proteins are made (synthesised) using instructions from DNA"
+        }
       ],
-      "memTip": "Five animal cell organelles: Nucleus (control), Cytoplasm (reactions), Cell membrane (boundary), Mitochondria (energy), Ribosomes (proteins). Use the sentence: 'No Cat Can Make Rabbits' — Nucleus, Cytoplasm, Cell membrane, Mitochondria, Ribosomes. Cover your notes and write all five with functions.",
+      "memTip": "Five animal cell organelles: Nucleus (control), Cytoplasm (reactions), Cell membrane (boundary), Mitochondria (energy), Ribosomes (proteins). Use the sentence: 'No Cat Can Make Rabbits' — Nucleus, Cytoplasm, Cell membrane, Mitochondria, Ribosomes.",
       "tutor_note": "This list comes up constantly — in multiple choice, in six-markers, everywhere. If you learn nothing else from this topic, learn these five with their functions."
     },
     {
@@ -48,11 +57,20 @@
         "Root cells have NO chloroplasts (no light underground)"
       ],
       "keyTerms": [
-        {"term": "Cell wall", "def": "Rigid outer layer of plant cells made of cellulose; gives support and shape"},
-        {"term": "Chloroplast", "def": "Organelle in plant cells containing chlorophyll; absorbs light for photosynthesis"},
-        {"term": "Permanent vacuole", "def": "Large fluid-filled space in plant cells; maintains the cell's firm shape"}
+        {
+          "term": "Cell wall",
+          "def": "Rigid outer layer of plant cells made of cellulose; gives support and shape"
+        },
+        {
+          "term": "Chloroplast",
+          "def": "Organelle in plant cells containing chlorophyll; absorbs light for photosynthesis"
+        },
+        {
+          "term": "Permanent vacuole",
+          "def": "Large fluid-filled space in plant cells; maintains the cell's firm shape"
+        }
       ],
-      "memTip": "Three plant extras: Wall (cellulose), Chloroplasts (photosynthesis), Vacuole (turgidity). If asked 'what do plant cells have that animal cells don't?' — those three. Never say all plant cells have chloroplasts — root cells don't. That one costs marks every year.",
+      "memTip": "Three plant extras: Wall (cellulose), Chloroplasts (photosynthesis), Vacuole (turgidity). If asked 'what do plant cells have that animal cells don't?' — those three.",
       "tutor_note": "The three things plant cells have that animal cells don't — cell wall, chloroplasts, permanent vacuole — that's a question that appears almost every year in some form. Make sure you know not just what they are, but why plants need them."
     },
     {
@@ -72,11 +90,20 @@
         "Much smaller than eukaryotic cells (~1–10 µm)"
       ],
       "keyTerms": [
-        {"term": "Prokaryotic", "def": "A cell without a membrane-bound nucleus — bacteria are the main example"},
-        {"term": "Plasmid", "def": "Small, circular loop of DNA found in bacteria, separate from the main chromosomal DNA"},
-        {"term": "Circular DNA", "def": "The single loop of genetic material in a bacterial cell, not enclosed in a nucleus"}
+        {
+          "term": "Prokaryotic",
+          "def": "A cell without a membrane-bound nucleus — bacteria are the main example"
+        },
+        {
+          "term": "Plasmid",
+          "def": "Small, circular loop of DNA found in bacteria, separate from the main chromosomal DNA"
+        },
+        {
+          "term": "Circular DNA",
+          "def": "The single loop of genetic material in a bacterial cell, not enclosed in a nucleus"
+        }
       ],
-      "memTip": "Prokaryote = no proper nucleus. Bacterial cell has: circular DNA + (maybe) plasmids + cell membrane + ribosomes + cell wall. It does NOT have: nucleus, mitochondria, chloroplasts. If an exam asks 'how does a bacterial cell differ from a plant cell?' — three things are missing (nucleus, mitochondria, chloroplasts) AND the cell wall is a different material.",
+      "memTip": "Prokaryote = no proper nucleus. Bacterial cell has: circular DNA + (maybe) plasmids + cell membrane + ribosomes + cell wall.",
       "tutor_note": "This is the one students most often lose marks on. The word 'prokaryotic' sounds harder than it is. It just means no membrane-bound nucleus. Bacteria are prokaryotic. Everything else you'll study is eukaryotic. That's the whole distinction."
     },
     {
@@ -92,27 +119,83 @@
         "Eukaryotes are generally larger than prokaryotes"
       ],
       "keyTerms": [
-        {"term": "Eukaryote", "def": "Organism whose cells have a membrane-bound nucleus — animals, plants, fungi"},
-        {"term": "Prokaryote", "def": "Organism whose cells lack a membrane-bound nucleus — bacteria"}
+        {
+          "term": "Eukaryote",
+          "def": "Organism whose cells have a membrane-bound nucleus — animals, plants, fungi"
+        },
+        {
+          "term": "Prokaryote",
+          "def": "Organism whose cells lack a membrane-bound nucleus — bacteria"
+        }
       ],
-      "memTip": "Pro = before, karyon = nucleus. Prokaryote = before nucleus (no proper nucleus). Eukaryote = true nucleus (has one). Animals, plants, fungi = eukaryotes. Bacteria = prokaryotes. That sentence is the most commonly tested fact in this topic."
+      "memTip": "Pro = before, karyon = nucleus. Prokaryote = before nucleus (no proper nucleus)."
     }
   ],
   "tables": [
     {
       "title": "Comparing animal, plant and bacterial cells",
       "examFlag": true,
-      "headers": ["Feature", "Animal cell", "Plant cell", "Bacterial cell"],
+      "headers": [
+        "Feature",
+        "Animal cell",
+        "Plant cell",
+        "Bacterial cell"
+      ],
       "rows": [
-        ["Nucleus (membrane-bound)", "✓", "✓", "✗ (circular DNA instead)"],
-        ["Cytoplasm",               "✓", "✓", "✓"],
-        ["Cell membrane",           "✓", "✓", "✓"],
-        ["Cell wall",               "✗", "✓ (cellulose)", "✓ (not cellulose)"],
-        ["Mitochondria",            "✓", "✓", "✗"],
-        ["Ribosomes",               "✓", "✓", "✓ (smaller)"],
-        ["Chloroplasts",            "✗", "✓ (not all)", "✗"],
-        ["Permanent vacuole",       "✗", "✓", "✗"],
-        ["Plasmids",                "✗", "✗", "Sometimes"]
+        [
+          "Nucleus (membrane-bound)",
+          "✓",
+          "✓",
+          "✗ (circular DNA instead)"
+        ],
+        [
+          "Cytoplasm",
+          "✓",
+          "✓",
+          "✓"
+        ],
+        [
+          "Cell membrane",
+          "✓",
+          "✓",
+          "✓"
+        ],
+        [
+          "Cell wall",
+          "✗",
+          "✓ (cellulose)",
+          "✓ (not cellulose)"
+        ],
+        [
+          "Mitochondria",
+          "✓",
+          "✓",
+          "✗"
+        ],
+        [
+          "Ribosomes",
+          "✓",
+          "✓",
+          "✓ (smaller)"
+        ],
+        [
+          "Chloroplasts",
+          "✗",
+          "✓ (not all)",
+          "✗"
+        ],
+        [
+          "Permanent vacuole",
+          "✗",
+          "✓",
+          "✗"
+        ],
+        [
+          "Plasmids",
+          "✗",
+          "✗",
+          "Sometimes"
+        ]
       ]
     }
   ],
@@ -180,8 +263,26 @@
     }
   ],
   "videoLinks": [
-    {"searchQuery": "AQA GCSE biology cell structure", "label": "Cell Structure", "source": "Free Science Lessons", "icon": "▶", "url": "https://www.youtube.com/results?search_query=cell+structure+GCSE+biology+Free+Science+Lessons"},
-    {"searchQuery": "AQA GCSE biology cell structure", "label": "Cell Structure", "source": "BBC Bitesize", "icon": "▶", "url": "https://www.bbc.co.uk/bitesize/search?q=cell+structure+biology"},
-    {"searchQuery": "AQA GCSE biology cell structure", "label": "Cell Structure", "source": "Cognito", "icon": "▶", "url": "https://www.youtube.com/results?search_query=cell+structure+GCSE+biology+Cognito"}
+    {
+      "searchQuery": "AQA GCSE biology cell structure",
+      "label": "Cell Structure",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=cell+structure+GCSE+biology+Free+Science+Lessons"
+    },
+    {
+      "searchQuery": "AQA GCSE biology cell structure",
+      "label": "Cell Structure",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=cell+structure+biology"
+    },
+    {
+      "searchQuery": "AQA GCSE biology cell structure",
+      "label": "Cell Structure",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=cell+structure+GCSE+biology+Cognito"
+    }
   ]
 }

@@ -24,12 +24,24 @@
         "This maintains the correct chromosome number across generations"
       ],
       "keyTerms": [
-        {"term": "Meiosis", "def": "Cell division that produces four genetically different haploid cells (gametes) — 23 chromosomes each"},
-        {"term": "Gamete", "def": "A sex cell — sperm or egg — produced by meiosis; contains 23 chromosomes (haploid)"},
-        {"term": "Haploid", "def": "A cell containing one set of chromosomes — 23 in humans"},
-        {"term": "Zygote", "def": "The fertilised egg cell, formed when sperm and egg fuse — diploid (46 chromosomes)"}
+        {
+          "term": "Meiosis",
+          "def": "Cell division that produces four genetically different haploid cells (gametes) — 23 chromosomes each"
+        },
+        {
+          "term": "Gamete",
+          "def": "A sex cell — sperm or egg — produced by meiosis; contains 23 chromosomes (haploid)"
+        },
+        {
+          "term": "Haploid",
+          "def": "A cell containing one set of chromosomes — 23 in humans"
+        },
+        {
+          "term": "Zygote",
+          "def": "The fertilised egg cell, formed when sperm and egg fuse — diploid (46 chromosomes)"
+        }
       ],
-      "memTip": "Haploid = HALF. Meiosis → gametes → 23. Mitosis → body cells → 46. Write this as a simple equation: sperm (23) + egg (23) = zygote (46). Cover it and redraw it from memory."
+      "memTip": "Haploid = HALF. Meiosis → gametes → 23."
     },
     {
       "heading": "What actually happens — two divisions",
@@ -44,10 +56,16 @@
         "Final result: 4 haploid daughter cells, all genetically DIFFERENT from each other"
       ],
       "keyTerms": [
-        {"term": "Homologous chromosomes", "def": "The matching pair of chromosomes — one from mum, one from dad — that carry genes for the same characteristics"},
-        {"term": "Chromatid", "def": "One of the two identical strands that make up a duplicated chromosome, joined at the centromere"}
+        {
+          "term": "Homologous chromosomes",
+          "def": "The matching pair of chromosomes — one from mum, one from dad — that carry genes for the same characteristics"
+        },
+        {
+          "term": "Chromatid",
+          "def": "One of the two identical strands that make up a duplicated chromosome, joined at the centromere"
+        }
       ],
-      "memTip": "Two divisions, four cells. Draw it: one cell → two cells (first division) → four cells (second division). Label the chromosome number at each stage: 46 → 23 → 23. Then write it as a flow without looking."
+      "memTip": "Two divisions, four cells. Draw it: one cell → two cells (first division) → four cells (second division)."
     },
     {
       "heading": "Mitosis vs meiosis — know every difference",
@@ -64,8 +82,14 @@
         "Mitosis: all body cells | Meiosis: testes and ovaries only"
       ],
       "keyTerms": [
-        {"term": "Diploid", "def": "A cell with the full set of chromosomes — 46 in humans (two copies of each)"},
-        {"term": "Haploid", "def": "A cell with half the chromosome number — 23 in humans (one copy of each)"}
+        {
+          "term": "Diploid",
+          "def": "A cell with the full set of chromosomes — 46 in humans (two copies of each)"
+        },
+        {
+          "term": "Haploid",
+          "def": "A cell with half the chromosome number — 23 in humans (one copy of each)"
+        }
       ],
       "memTip": "Cover the table below and recite the four differences out loud: divisions (1 vs 2), cells produced (2 vs 4), chromosome number (46 vs 23), variation (identical vs different). Do it twice."
     },
@@ -82,25 +106,62 @@
         "Result: offspring from the same parents are genetically different from each other"
       ],
       "keyTerms": [
-        {"term": "Crossing over", "def": "The exchange of DNA segments between homologous chromosomes during meiosis — mixes alleles"},
-        {"term": "Independent assortment", "def": "The random separation of homologous chromosome pairs during meiosis — each gamete gets a different random combination"},
-        {"term": "Allele", "def": "A version of a gene — for example, one allele for brown eyes, another for blue"}
+        {
+          "term": "Crossing over",
+          "def": "The exchange of DNA segments between homologous chromosomes during meiosis — mixes alleles"
+        },
+        {
+          "term": "Independent assortment",
+          "def": "The random separation of homologous chromosome pairs during meiosis — each gamete gets a different random combination"
+        },
+        {
+          "term": "Allele",
+          "def": "A version of a gene — for example, one allele for brown eyes, another for blue"
+        }
       ],
-      "memTip": "Two sources of variation in meiosis: Crossing Over (CO) and Independent Assortment (IA). Remember: CI — Crossing over shuffles within chromosomes; Independent assortment shuffles which chromosome goes where. Think: 'Meiosis deals a new hand of cards every time.'"
+      "memTip": "Two sources of variation in meiosis: Crossing Over (CO) and Independent Assortment (IA). Remember: CI — Crossing over shuffles within chromosomes; Independent assortment shuffles which chromosome goes where."
     }
   ],
   "tables": [
     {
       "title": "Mitosis vs Meiosis — comparison",
       "examFlag": true,
-      "headers": ["Feature", "Mitosis", "Meiosis"],
+      "headers": [
+        "Feature",
+        "Mitosis",
+        "Meiosis"
+      ],
       "rows": [
-        ["Number of divisions",         "1",                          "2"],
-        ["Daughter cells produced",     "2",                          "4"],
-        ["Chromosome number in cells",  "46 (diploid)",               "23 (haploid)"],
-        ["Genetic variation",           "Genetically identical",       "Genetically different"],
-        ["Purpose",                     "Growth, repair, replacement", "Gamete production (sex cells)"],
-        ["Where it happens",            "All dividing body cells",     "Testes and ovaries only"]
+        [
+          "Number of divisions",
+          "1",
+          "2"
+        ],
+        [
+          "Daughter cells produced",
+          "2",
+          "4"
+        ],
+        [
+          "Chromosome number in cells",
+          "46 (diploid)",
+          "23 (haploid)"
+        ],
+        [
+          "Genetic variation",
+          "Genetically identical",
+          "Genetically different"
+        ],
+        [
+          "Purpose",
+          "Growth, repair, replacement",
+          "Gamete production (sex cells)"
+        ],
+        [
+          "Where it happens",
+          "All dividing body cells",
+          "Testes and ovaries only"
+        ]
       ]
     }
   ],

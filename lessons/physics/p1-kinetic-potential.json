@@ -25,10 +25,16 @@
         "To find v from Ek: rearrange to v = √(2Ek ÷ m)"
       ],
       "keyTerms": [
-        {"term": "Kinetic energy (Ek)", "def": "The energy an object has because it is moving — Ek = ½mv²"},
-        {"term": "Joule (J)", "def": "The unit of energy"}
+        {
+          "term": "Kinetic energy (Ek)",
+          "def": "The energy an object has due to its motion; Ek = ½mv², where m is mass (kg) and v is speed (m/s); measured in joules (J)"
+        },
+        {
+          "term": "Joule (J)",
+          "def": "The SI unit of energy and work — 1 J = 1 N m = the energy transferred when a force of 1 N moves an object 1 m"
+        }
       ],
-      "memTip": "Say it as a phrase: 'half em vee squared'. Write it three times, cover it, write it again. Then test yourself: if speed doubles, what happens to KE? (Answer: ×4, because 2² = 4.) If speed triples? (Answer: ×9, because 3² = 9.) Run through these multipliers until it's automatic."
+      "memTip": "Ek = ½mv² — 'half em vee squared'. If speed doubles, KE quadruples (2² = 4); if speed triples, KE multiplies by 9 (3² = 9)."
     },
     {
       "heading": "Gravitational potential energy — the energy of height",
@@ -43,10 +49,16 @@
         "Double the height → double the GPE (linear relationship)"
       ],
       "keyTerms": [
-        {"term": "Gravitational potential energy (Ep)", "def": "Energy stored in an object because of its height — Ep = mgh"},
-        {"term": "Gravitational field strength (g)", "def": "The force per unit mass due to gravity — 9.8 N/kg on Earth (use 10 in non-calculator papers)"}
+        {
+          "term": "Gravitational potential energy (Ep)",
+          "def": "Energy stored in an object due to its height above a reference point; Ep = mgh, where m is mass (kg), g is gravitational field strength (N/kg), and h is height (m); measured in joules (J)"
+        },
+        {
+          "term": "Gravitational field strength (g)",
+          "def": "The gravitational force acting per unit mass; g = 9.8 N/kg on Earth's surface (use 10 N/kg in non-calculator questions unless told otherwise); unit: N/kg"
+        }
       ],
-      "memTip": "The letters give it away: m = mass, g = gravity, h = height. 'My Gran's High' — mgh. Say it as you write each letter. Then notice: no squaring here, it's all × — much friendlier than the KE equation."
+      "memTip": "Ep = mgh — 'My Gran's High'. Double the height → double the GPE (linear, no squaring)."
     },
     {
       "heading": "Conservation of energy — GPE becomes KE",
@@ -61,10 +73,16 @@
         "Equate: mgh = ½mv² → mass cancels → v = √(2gh)"
       ],
       "keyTerms": [
-        {"term": "Conservation of energy", "def": "Energy cannot be created or destroyed — it is only transferred between stores"},
-        {"term": "Energy transfer", "def": "Energy moving from one store (e.g. GPE) to another (e.g. KE)"}
+        {
+          "term": "Conservation of energy",
+          "def": "Energy cannot be created or destroyed — it can only be transferred between stores or dissipated; the total energy in a closed system remains constant"
+        },
+        {
+          "term": "Energy transfer",
+          "def": "The movement of energy from one store to another (e.g. gravitational potential → kinetic as an object falls), or the spreading of energy as dissipation"
+        }
       ],
-      "memTip": "Sketch a ball at the top of a ramp labelled 'All GPE' and at the bottom labelled 'All KE'. Draw an arrow between them. Now write the derivation: mgh = ½mv², cancel m, get v = √(2gh). Doing this derivation yourself, from scratch, is the best way to make it stick — try it three times without looking."
+      "memTip": "Falling object (no air resistance): all GPE at top → all KE at bottom. mgh = ½mv², cancel m, get v = √(2gh)."
     },
     {
       "heading": "Elastic potential energy — energy stored in a stretched spring",
@@ -79,11 +97,20 @@
         "Elastic PE is in joules (J)"
       ],
       "keyTerms": [
-        {"term": "Elastic potential energy (Ee)", "def": "Energy stored in a stretched or compressed spring — Ee = ½ke²"},
-        {"term": "Spring constant (k)", "def": "A measure of the stiffness of a spring — units N/m. Higher k = stiffer spring."},
-        {"term": "Extension (e)", "def": "How far the spring has been stretched beyond its natural (unstretched) length, in metres"}
+        {
+          "term": "Elastic potential energy (Ee)",
+          "def": "Energy stored in a stretched or compressed elastic object; Ee = ½ke², where k is the spring constant (N/m) and e is the extension (m); measured in joules (J)"
+        },
+        {
+          "term": "Spring constant (k)",
+          "def": "A measure of the stiffness of a spring; k = F ÷ e, where F is the force (N) and e is the extension (m); unit: N/m — higher k means a stiffer spring"
+        },
+        {
+          "term": "Extension (e)",
+          "def": "The increase in length of a spring beyond its natural (unstretched) length; e = stretched length − natural length; measured in metres (m)"
+        }
       ],
-      "memTip": "Notice that Ek = ½mv² and Ee = ½ke² are the same shape — both have ½ × something × (something)². If you know the KE equation, the elastic PE equation is easy to remember by analogy. The trick is remembering that e is the extension only, not the total length — AQA will try to catch you with this."
+      "memTip": "Ee = ½ke² has the same shape as Ek = ½mv² — both have ½ × something × (something)². e is extension only, not total length — AQA uses this to catch you out."
     },
     {
       "heading": "Specific heat capacity — how much energy to heat something",
@@ -98,10 +125,16 @@
         "Water: c = 4200 J/kg°C — very high, useful as a coolant"
       ],
       "keyTerms": [
-        {"term": "Specific heat capacity (c)", "def": "The energy needed to raise the temperature of 1 kg of a substance by 1°C — units J/kg°C"},
-        {"term": "ΔT", "def": "The change in temperature (final temperature minus initial temperature) in °C"}
+        {
+          "term": "Specific heat capacity (c)",
+          "def": "The energy needed to raise the temperature of 1 kg of a substance by 1°C — units J/kg°C"
+        },
+        {
+          "term": "ΔT",
+          "def": "The change in temperature (final temperature minus initial temperature) in °C"
+        }
       ],
-      "memTip": "The equation Q = mcΔT is a favourite rearrangement question. Cover each letter in turn and practice writing the rearrangement: c = Q ÷ (mΔT), m = Q ÷ (cΔT), ΔT = Q ÷ (mc). Write all four versions of the equation on one flashcard — AQA will give you any three values and ask for the fourth."
+      "memTip": "The equation Q = mcΔT is a favourite rearrangement question. Cover each letter in turn and practice writing the rearrangement: c = Q ÷ (mΔT), m = Q ÷ (cΔT), ΔT = Q ÷ (mc)."
     }
   ],
   "tables": [],
@@ -144,9 +177,24 @@
     "For specific heat capacity calculations, check whether you need Q (energy), m (mass), c, or ΔT — then rearrange before substituting. Don't try to rearrange after substituting numbers."
   ],
   "videoLinks": [
-    {"label": "Kinetic and Potential Energy", "source": "Free Science Lessons", "icon": "▶", "url": "https://www.youtube.com/watch?v=3mSMjhiDqzU"},
-    {"label": "Energy stores and transfers", "source": "BBC Bitesize", "icon": "▶", "url": "https://www.bbc.co.uk/bitesize/topics/zh2xsbk/articles/zdssgwx"},
-    {"label": "Energy — Kinetic and Gravitational Potential", "source": "Cognito", "icon": "▶", "url": "https://www.youtube.com/watch?v=Z0GEHKGOc3o"}
+    {
+      "label": "Kinetic and Potential Energy",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/watch?v=3mSMjhiDqzU"
+    },
+    {
+      "label": "Energy stores and transfers",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/topics/zh2xsbk/articles/zdssgwx"
+    },
+    {
+      "label": "Energy — Kinetic and Gravitational Potential",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/watch?v=Z0GEHKGOc3o"
+    }
   ],
   "revisionCardBullets": [
     "Kinetic energy: Ek = ½mv² — m in kg, v in m/s, Ek in J",

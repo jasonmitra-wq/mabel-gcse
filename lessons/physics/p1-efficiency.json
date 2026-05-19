@@ -24,11 +24,20 @@
         "Efficiency as percentage — (useful output ÷ total input) × 100% (e.g. 75%)"
       ],
       "keyTerms": [
-        { "term": "efficiency", "def": "The proportion of input energy that is usefully transferred; efficiency = useful output ÷ total input" },
-        { "term": "useful output energy", "def": "Energy transferred to the intended output store — the energy that does the job we want" },
-        { "term": "total input energy", "def": "All energy supplied to a device, including both useful and wasted portions" }
+        {
+          "term": "efficiency",
+          "def": "The proportion of input energy that is usefully transferred; efficiency = useful output ÷ total input"
+        },
+        {
+          "term": "useful output energy",
+          "def": "Energy transferred to the intended output store — the energy that does the job we want"
+        },
+        {
+          "term": "total input energy",
+          "def": "All energy supplied to a device, including both useful and wasted portions"
+        }
       ],
-      "memTip": "Efficiency = useful ÷ total. Think 'useful over all'. Multiply by 100 for the percentage.",
+      "memTip": "Efficiency = useful ÷ total. Think 'useful over all'.",
       "tutor_note": "Students often mix up useful output and total input — remind them the total input is always the bigger number."
     },
     {
@@ -45,8 +54,14 @@
         "Converting to %: multiply decimal efficiency by 100"
       ],
       "keyTerms": [
-        { "term": "efficiency equation", "def": "efficiency = useful output energy ÷ total input energy (or useful power ÷ total input power)" },
-        { "term": "wasted energy", "def": "Total input energy minus useful output energy — always positive in a real device" }
+        {
+          "term": "efficiency equation",
+          "def": "efficiency = useful output energy ÷ total input energy (or useful power ÷ total input power)"
+        },
+        {
+          "term": "wasted energy",
+          "def": "Total input energy minus useful output energy — always positive in a real device"
+        }
       ],
       "memTip": "Worked examples: motor 375/500=0.75; LED 9/10=0.9; car engine 25/100=0.25. Practice these numbers.",
       "tutor_note": "Encourage students to always write out the formula first, substitute, then calculate — picking up method marks even if the final answer is wrong."
@@ -66,8 +81,14 @@
         "Human body — ~25% efficient; chemical energy (food) → mechanical energy + lots of heat"
       ],
       "keyTerms": [
-        { "term": "incandescent bulb", "def": "Old-style filament light bulb — only ~5% efficient, wastes most energy as heat" },
-        { "term": "LED", "def": "Light Emitting Diode — ~90% efficient at converting electrical energy to light" }
+        {
+          "term": "incandescent bulb",
+          "def": "Old-style filament light bulb — only ~5% efficient, wastes most energy as heat"
+        },
+        {
+          "term": "LED",
+          "def": "Light Emitting Diode — ~90% efficient at converting electrical energy to light"
+        }
       ],
       "memTip": "Remember the big contrast: LED ≈ 90% efficient, old filament bulb ≈ 5% efficient. That's why the switch mattered!",
       "tutor_note": "Comparing devices is a common exam question — students should be able to recall rough efficiency values for LEDs vs filament bulbs, and electric vs petrol vehicles."
@@ -87,10 +108,16 @@
         "Payback time — extra cost ÷ annual saving; tells you how long before savings cover the higher purchase price"
       ],
       "keyTerms": [
-        { "term": "energy efficiency label", "def": "A–G rating on UK/EU appliances showing how efficiently they use energy" },
-        { "term": "payback time", "def": "Time for energy savings to cover the extra cost of a more efficient device; payback time = extra cost ÷ annual saving" }
+        {
+          "term": "energy efficiency label",
+          "def": "A–G rating on UK/EU appliances showing how efficiently they use energy"
+        },
+        {
+          "term": "payback time",
+          "def": "Time for energy savings to cover the extra cost of a more efficient device; payback time = extra cost ÷ annual saving"
+        }
       ],
-      "memTip": "Payback time = extra cost ÷ annual saving. Units: years. Don't forget to include the unit!",
+      "memTip": "Payback time = extra cost ÷ annual saving. Units: years.",
       "tutor_note": "Payback time calculations are common in 6-mark questions alongside efficiency — students should know both formulas and be able to evaluate whether an upgrade is worthwhile."
     }
   ],
@@ -98,16 +125,70 @@
     {
       "title": "Efficiency of common devices",
       "examFlag": true,
-      "headers": ["Device", "Input energy", "Useful output", "Wasted output", "Approximate efficiency"],
+      "headers": [
+        "Device",
+        "Input energy",
+        "Useful output",
+        "Wasted output",
+        "Approximate efficiency"
+      ],
       "rows": [
-        ["LED bulb", "Electrical", "Light (radiation)", "Thermal (small amount)", "~90% (0.90)"],
-        ["Fluorescent tube", "Electrical", "Light (radiation)", "Thermal", "~75% (0.75)"],
-        ["Incandescent bulb", "Electrical", "Light (radiation)", "Thermal (most)", "~5% (0.05)"],
-        ["Electric motor", "Electrical", "Kinetic (mechanical)", "Thermal", "~90% (0.90)"],
-        ["Petrol car engine", "Chemical (fuel)", "Kinetic", "Thermal + sound", "~25–30% (0.25–0.30)"],
-        ["Electric vehicle", "Electrical (battery)", "Kinetic", "Thermal (small)", "~85–90% (0.85–0.90)"],
-        ["Solar panel (PV)", "Light (radiation)", "Electrical", "Thermal (reflected/absorbed)", "~15–20% (0.15–0.20)"],
-        ["Human body (exercise)", "Chemical (food)", "Mechanical (kinetic)", "Thermal (body heat)", "~25% (0.25)"]
+        [
+          "LED bulb",
+          "Electrical",
+          "Light (radiation)",
+          "Thermal (small amount)",
+          "~90% (0.90)"
+        ],
+        [
+          "Fluorescent tube",
+          "Electrical",
+          "Light (radiation)",
+          "Thermal",
+          "~75% (0.75)"
+        ],
+        [
+          "Incandescent bulb",
+          "Electrical",
+          "Light (radiation)",
+          "Thermal (most)",
+          "~5% (0.05)"
+        ],
+        [
+          "Electric motor",
+          "Electrical",
+          "Kinetic (mechanical)",
+          "Thermal",
+          "~90% (0.90)"
+        ],
+        [
+          "Petrol car engine",
+          "Chemical (fuel)",
+          "Kinetic",
+          "Thermal + sound",
+          "~25–30% (0.25–0.30)"
+        ],
+        [
+          "Electric vehicle",
+          "Electrical (battery)",
+          "Kinetic",
+          "Thermal (small)",
+          "~85–90% (0.85–0.90)"
+        ],
+        [
+          "Solar panel (PV)",
+          "Light (radiation)",
+          "Electrical",
+          "Thermal (reflected/absorbed)",
+          "~15–20% (0.15–0.20)"
+        ],
+        [
+          "Human body (exercise)",
+          "Chemical (food)",
+          "Mechanical (kinetic)",
+          "Thermal (body heat)",
+          "~25% (0.25)"
+        ]
       ]
     }
   ],

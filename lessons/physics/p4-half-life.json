@@ -26,11 +26,20 @@
         "Decay graph: curved line falling steeply then flattening — never reaches zero"
       ],
       "keyTerms": [
-        { "term": "half-life", "def": "The time for the activity of a radioactive sample (or number of undecayed nuclei) to halve" },
-        { "term": "activity", "def": "The number of radioactive decays per second; measured in becquerels (Bq)" },
-        { "term": "becquerel (Bq)", "def": "The unit of radioactive activity; 1 Bq = 1 decay per second" }
+        {
+          "term": "half-life",
+          "def": "The time for the activity of a radioactive sample (or number of undecayed nuclei) to halve"
+        },
+        {
+          "term": "activity",
+          "def": "The number of radioactive decays per second; measured in becquerels (Bq)"
+        },
+        {
+          "term": "becquerel (Bq)",
+          "def": "The unit of radioactive activity; 1 Bq = 1 decay per second"
+        }
       ],
-      "memTip": "Each half-life: divide activity by 2. After 3 half-lives: divide by 8 (= 2 × 2 × 2). After n half-lives: multiply by (½)ⁿ.",
+      "memTip": "Each half-life: divide activity by 2. After 3 half-lives: divide by 8 (= 2 × 2 × 2).",
       "tutor_note": "Give Mabel practice reading half-life from a graph — find a point, find half that value, read the time difference from the x-axis."
     },
     {
@@ -47,8 +56,14 @@
         "Activity in Bq on y-axis; time (s, min, hours, or years) on x-axis"
       ],
       "keyTerms": [
-        { "term": "exponential decay", "def": "A curve where the quantity halves in equal time intervals — the shape of all radioactive decay graphs" },
-        { "term": "decay graph", "def": "A graph of activity vs time showing an exponential curve — used to determine half-life" }
+        {
+          "term": "exponential decay",
+          "def": "A curve where the quantity halves in equal time intervals — the shape of all radioactive decay graphs"
+        },
+        {
+          "term": "decay graph",
+          "def": "A graph of activity vs time showing an exponential curve — used to determine half-life"
+        }
       ],
       "memTip": "Pick any two points where activity halves — the time between them is the half-life. Check it is the same anywhere on the curve.",
       "tutor_note": "Mabel should practise both reading half-life from graphs AND drawing decay curves — both come up in exams."
@@ -67,11 +82,20 @@
         "Smoke detectors — americium-241, alpha emitter, half-life 430 years; ionises air; smoke breaks current → alarm"
       ],
       "keyTerms": [
-        { "term": "tracer", "def": "A radioactive isotope (gamma emitter, short half-life) used to track movement through the body and detected externally" },
-        { "term": "carbon-14 dating", "def": "Using the known half-life of C-14 (5,700 years) to determine the age of organic remains" },
-        { "term": "technetium-99m", "def": "A widely used medical gamma-emitting tracer with a half-life of ~6 hours" }
+        {
+          "term": "tracer",
+          "def": "A radioactive isotope (gamma emitter, short half-life) used to track movement through the body and detected externally"
+        },
+        {
+          "term": "carbon-14 dating",
+          "def": "Using the known half-life of C-14 (5,700 years) to determine the age of organic remains"
+        },
+        {
+          "term": "technetium-99m",
+          "def": "A widely used medical gamma-emitting tracer with a half-life of ~6 hours"
+        }
       ],
-      "memTip": "Tracer: gamma + short half-life. Smoke detector: alpha (Am-241). Carbon dating: beta, 5,700-year half-life.",
+      "memTip": "Tracer: gamma + short half-life. Smoke detector: alpha (Am-241).",
       "tutor_note": "Exam often asks 'why must the tracer have a short half-life?' — answer: to minimise the patient's total radiation dose."
     },
     {
@@ -88,10 +112,16 @@
         "Protection: increase distance, use lead/concrete shielding, minimise time of exposure"
       ],
       "keyTerms": [
-        { "term": "irradiation", "def": "Exposure to radiation from an external source — stops when the source is removed" },
-        { "term": "contamination", "def": "Radioactive material that enters or contacts the body — continues to cause exposure even when removed from the radiation area" }
+        {
+          "term": "irradiation",
+          "def": "Exposure to radiation from an external source — stops when the source is removed"
+        },
+        {
+          "term": "contamination",
+          "def": "Radioactive material that enters or contacts the body — continues to cause exposure even when removed from the radiation area"
+        }
       ],
-      "memTip": "Irradiation = from outside, stops with distance. Contamination = on/in the body, stays with you. Contamination is harder to control.",
+      "memTip": "Irradiation = from outside, stops with distance. Contamination = on/in the body, stays with you.",
       "tutor_note": "Contamination vs irradiation is a classic exam distinction — Mabel should give an example of each and explain why contamination is more serious."
     }
   ],
@@ -99,13 +129,49 @@
     {
       "title": "Uses of radioactive isotopes",
       "examFlag": true,
-      "headers": ["Use", "Isotope / type", "Radiation type", "Half-life", "Why this type?"],
+      "headers": [
+        "Use",
+        "Isotope / type",
+        "Radiation type",
+        "Half-life",
+        "Why this type?"
+      ],
       "rows": [
-        ["Carbon dating", "Carbon-14", "Beta", "5,700 years", "Long enough to date ancient remains; can be measured precisely"],
-        ["Medical tracer", "Technetium-99m", "Gamma", "~6 hours", "Gamma penetrates body to be detected; short half-life reduces dose"],
-        ["Radiotherapy", "Cobalt-60", "Gamma", "~5 years", "Gamma penetrates to reach deep tumours; kills cancer cells"],
-        ["Sterilisation", "Cobalt-60", "Gamma", "~5 years", "Gamma kills bacteria without making equipment radioactive"],
-        ["Smoke detector", "Americium-241", "Alpha", "~430 years", "Alpha ionises air in detector; long half-life keeps detector working"]
+        [
+          "Carbon dating",
+          "Carbon-14",
+          "Beta",
+          "5,700 years",
+          "Long enough to date ancient remains; can be measured precisely"
+        ],
+        [
+          "Medical tracer",
+          "Technetium-99m",
+          "Gamma",
+          "~6 hours",
+          "Gamma penetrates body to be detected; short half-life reduces dose"
+        ],
+        [
+          "Radiotherapy",
+          "Cobalt-60",
+          "Gamma",
+          "~5 years",
+          "Gamma penetrates to reach deep tumours; kills cancer cells"
+        ],
+        [
+          "Sterilisation",
+          "Cobalt-60",
+          "Gamma",
+          "~5 years",
+          "Gamma kills bacteria without making equipment radioactive"
+        ],
+        [
+          "Smoke detector",
+          "Americium-241",
+          "Alpha",
+          "~430 years",
+          "Alpha ionises air in detector; long half-life keeps detector working"
+        ]
       ]
     }
   ],

@@ -25,8 +25,14 @@
         "A spacecraft far from gravity: no net force → continues at constant velocity forever"
       ],
       "keyTerms": [
-        { "term": "Resultant force", "def": "The single force that has the same effect as all the individual forces acting on an object combined" },
-        { "term": "Inertia", "def": "The tendency of an object to resist changes in its state of motion; measured by its mass" }
+        {
+          "term": "Resultant force",
+          "def": "The single force that has the same effect as all the individual forces acting on an object combined"
+        },
+        {
+          "term": "Inertia",
+          "def": "The tendency of an object to resist changes in its state of motion; measured by its mass"
+        }
       ],
       "memTip": "Newton 1: No resultant force → no change in motion. Think 'coasting' — if nothing pushes or pulls you, you keep doing what you were doing.",
       "tutor_note": "The classic mistake is 'balanced forces mean the object is stationary' — remind Mabel that a car at constant speed on a motorway also has balanced forces."
@@ -46,8 +52,14 @@
         "Inertial mass — measured from F = ma; equals gravitational mass in all experiments"
       ],
       "keyTerms": [
-        { "term": "Newton (N)", "def": "Unit of force; 1N accelerates a 1kg mass at 1 m/s²" },
-        { "term": "Inertial mass", "def": "Mass measured by resistance to acceleration using F = ma; equal to gravitational mass" }
+        {
+          "term": "Newton (N)",
+          "def": "Unit of force; 1N accelerates a 1kg mass at 1 m/s²"
+        },
+        {
+          "term": "Inertial mass",
+          "def": "Mass measured by resistance to acceleration using F = ma; equal to gravitational mass"
+        }
       ],
       "memTip": "Force triangle: F on top, m and a below. Cover what you want to find: m×a = F, F÷m = a, F÷a = m.",
       "tutor_note": "Multi-step questions combine F = ma with kinematics (a = Δv/t) — practise linking the equations."
@@ -67,7 +79,10 @@
         "Earth pulls you down → you pull Earth up with equal force (but Earth barely moves)"
       ],
       "keyTerms": [
-        { "term": "Newton's Third Law pair", "def": "Two forces that are equal, opposite, same type, and act on two different interacting objects" }
+        {
+          "term": "Newton's Third Law pair",
+          "def": "Two forces that are equal, opposite, same type, and act on two different interacting objects"
+        }
       ],
       "memTip": "Third Law pairs always come in sentences with two subjects: 'The [A] pulls/pushes the [B]' and 'The [B] pulls/pushes the [A] back.'",
       "tutor_note": "The most common exam error is saying Third Law pairs cancel — emphasise DIFFERENT OBJECTS every single lesson."
@@ -87,11 +102,20 @@
         "Resultant force = sum of forces; if non-zero, object accelerates in that direction"
       ],
       "keyTerms": [
-        { "term": "Weight", "def": "The gravitational force on an object; W = mg, measured in newtons" },
-        { "term": "Gravitational field strength (g)", "def": "Force per unit mass at a location; on Earth g ≈ 9.8 N/kg" },
-        { "term": "Free body diagram", "def": "A diagram showing all forces acting on a single object as labelled arrows" }
+        {
+          "term": "Weight",
+          "def": "The gravitational force on an object; W = mg, measured in newtons"
+        },
+        {
+          "term": "Gravitational field strength (g)",
+          "def": "Force per unit mass at a location; on Earth g ≈ 9.8 N/kg"
+        },
+        {
+          "term": "Free body diagram",
+          "def": "A diagram showing all forces acting on a single object as labelled arrows"
+        }
       ],
-      "memTip": "Weight = mg. Mass stays, Weight wanders. Mass is constant, Weight changes with gravity.",
+      "memTip": "Weight = mg. Mass stays, Weight wanders.",
       "tutor_note": "Students often write weight in kg — it's always in newtons. Test this with quick unit-check questions."
     }
   ],
@@ -99,39 +123,79 @@
     {
       "title": "Newton's three laws — summary",
       "examFlag": true,
-      "headers": ["Law", "Statement", "Real-world example", "Common misconception"],
+      "headers": [
+        "Law",
+        "Statement",
+        "Real-world example",
+        "Common misconception"
+      ],
       "rows": [
-        ["First Law", "No resultant force → no change in motion (stays still or constant velocity)", "Car at constant speed on motorway: driving force = friction + air resistance", "Balanced forces means object is stationary — WRONG, it could be moving at constant velocity"],
-        ["Second Law", "F = ma: resultant force = mass × acceleration", "1200kg car, a = 3 m/s² → F = 3600N", "F = ma uses the RESULTANT force, not just the applied force"],
-        ["Third Law", "Equal and opposite forces act on TWO DIFFERENT objects", "Rocket pushes gas down; gas pushes rocket up", "Third Law pairs cancel — WRONG, they act on different objects so cannot cancel"]
+        [
+          "First Law",
+          "No resultant force → no change in motion (stays still or constant velocity)",
+          "Car at constant speed on motorway: driving force = friction + air resistance",
+          "Balanced forces means object is stationary — WRONG, it could be moving at constant velocity"
+        ],
+        [
+          "Second Law",
+          "F = ma: resultant force = mass × acceleration",
+          "1200kg car, a = 3 m/s² → F = 3600N",
+          "F = ma uses the RESULTANT force, not just the applied force"
+        ],
+        [
+          "Third Law",
+          "Equal and opposite forces act on TWO DIFFERENT objects",
+          "Rocket pushes gas down; gas pushes rocket up",
+          "Third Law pairs cancel — WRONG, they act on different objects so cannot cancel"
+        ]
       ]
     }
   ],
   "checkpoints": {
     "0": {
       "question": "A car travels at constant speed on a level road. What can you say about the forces acting on it?",
-      "options": ["The forces are balanced (resultant force = 0)", "There are no forces acting on the car", "The driving force is greater than friction", "The car has no weight"],
+      "options": [
+        "The forces are balanced (resultant force = 0)",
+        "There are no forces acting on the car",
+        "The driving force is greater than friction",
+        "The car has no weight"
+      ],
       "correct": 0,
       "correctFeedback": "Correct! Constant velocity means zero acceleration, which means zero resultant force — the forces are balanced.",
       "wrongFeedback": "Constant velocity means zero acceleration. By Newton's First Law, zero acceleration means zero resultant force — forces are balanced, not absent."
     },
     "1": {
       "question": "A resultant force of 600N acts on a 150kg object. What is its acceleration?",
-      "options": ["4 m/s²", "0.25 m/s²", "90,000 m/s²", "450 m/s²"],
+      "options": [
+        "4 m/s²",
+        "0.25 m/s²",
+        "90,000 m/s²",
+        "450 m/s²"
+      ],
       "correct": 0,
       "correctFeedback": "Correct! a = F/m = 600 ÷ 150 = 4 m/s².",
       "wrongFeedback": "Use a = F/m (rearranged from F = ma). a = 600 ÷ 150 = 4 m/s²."
     },
     "2": {
       "question": "You push a wall with a force of 50N. According to Newton's Third Law, what force does the wall exert on you?",
-      "options": ["50N pushing back on you", "50N in the same direction", "0N — the wall doesn't push back", "More than 50N because the wall is heavier"],
+      "options": [
+        "50N pushing back on you",
+        "50N in the same direction",
+        "0N — the wall doesn't push back",
+        "More than 50N because the wall is heavier"
+      ],
       "correct": 0,
       "correctFeedback": "Correct! Newton's Third Law: equal and opposite force, back on you — 50N pushing you away from the wall.",
       "wrongFeedback": "Newton's Third Law: the wall exerts an equal (50N) and opposite force back on you. The forces are equal regardless of mass."
     },
     "3": {
       "question": "A 60kg person stands on the Moon where g = 1.6 N/kg. What is their weight on the Moon?",
-      "options": ["96 N", "588 N", "60 N", "37.5 N"],
+      "options": [
+        "96 N",
+        "588 N",
+        "60 N",
+        "37.5 N"
+      ],
       "correct": 0,
       "correctFeedback": "Correct! W = mg = 60 × 1.6 = 96N. Mass stays at 60kg, weight changes with g.",
       "wrongFeedback": "Use W = mg. On the Moon: W = 60 × 1.6 = 96N. The person's mass (60kg) doesn't change, only their weight does."

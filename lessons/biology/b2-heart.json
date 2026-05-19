@@ -35,9 +35,12 @@
         "This keeps oxygenated and deoxygenated blood separate"
       ],
       "keyTerms": [
-        {"term": "Double circulation", "def": "A circulatory system where blood passes through the heart twice in one complete circuit of the body"}
+        {
+          "term": "Double circulation",
+          "def": "A circulatory system where blood passes through the heart twice in one complete circuit of the body"
+        }
       ],
-      "memTip": "Double = through the heart TWICE. Right side → lungs (pulmonary circuit). Left side → body (systemic circuit). Sketch a figure-8: heart in the middle, lungs on one loop, body on the other. That diagram is the whole concept."
+      "memTip": "Double = through the heart TWICE. Right side → lungs (pulmonary circuit)."
     },
     {
       "heading": "The four chambers",
@@ -53,10 +56,16 @@
         "Left ventricle wall is THICKER — it pumps to the whole body (higher pressure needed)"
       ],
       "keyTerms": [
-        {"term": "Atrium", "def": "Upper chamber of the heart; receives blood from veins"},
-        {"term": "Ventricle", "def": "Lower chamber of the heart; pumps blood into arteries"}
+        {
+          "term": "Atrium",
+          "def": "Upper chamber of the heart; receives blood from veins"
+        },
+        {
+          "term": "Ventricle",
+          "def": "Lower chamber of the heart; pumps blood into arteries"
+        }
       ],
-      "memTip": "Atria receive, Ventricles pump — A for Arrive, V for Vacate. The left ventricle thicker question is almost certain to come up: the answer is always 'it pumps to the whole body, needs higher pressure'. Say it out loud until it's automatic."
+      "memTip": "Atria receive, Ventricles pump — A for Arrive, V for Vacate. The left ventricle thicker question is almost certain to come up: the answer is always 'it pumps to the whole body, needs higher pressure'."
     },
     {
       "heading": "The valves — keeping blood flowing one way",
@@ -72,10 +81,16 @@
         "Faulty valves → heart murmur (blood leaks back)"
       ],
       "keyTerms": [
-        {"term": "Atrioventricular valve", "def": "Valve between an atrium and ventricle; prevents backflow when the ventricle contracts"},
-        {"term": "Semilunar valve", "def": "Valve at the base of the aorta or pulmonary artery; prevents backflow into the ventricles"}
+        {
+          "term": "Atrioventricular valve",
+          "def": "Valve between an atrium and ventricle; prevents backflow when the ventricle contracts"
+        },
+        {
+          "term": "Semilunar valve",
+          "def": "Valve at the base of the aorta or pulmonary artery; prevents backflow into the ventricles"
+        }
       ],
-      "memTip": "Two pairs: AV valves (between atrium and ventricle) — tricuspid on the right, bicuspid on the left. Semilunar valves at the exits (aorta and pulmonary artery). Tricuspid = 3 flaps, bicuspid = 2 flaps — the numbers match."
+      "memTip": "Two pairs: AV valves (between atrium and ventricle) — tricuspid on the right, bicuspid on the left. Semilunar valves at the exits (aorta and pulmonary artery)."
     },
     {
       "heading": "The major vessels",
@@ -91,11 +106,20 @@
         "Coronary arteries → heart muscle itself (block = heart attack)"
       ],
       "keyTerms": [
-        {"term": "Vena cava", "def": "Large vein returning deoxygenated blood from the body to the right atrium"},
-        {"term": "Aorta", "def": "The largest artery; carries oxygenated blood from the left ventricle to the body"},
-        {"term": "Coronary artery", "def": "Artery that supplies the heart muscle with oxygen and glucose"}
+        {
+          "term": "Vena cava",
+          "def": "Large vein returning deoxygenated blood from the body to the right atrium"
+        },
+        {
+          "term": "Aorta",
+          "def": "The largest artery; carries oxygenated blood from the left ventricle to the body"
+        },
+        {
+          "term": "Coronary artery",
+          "def": "Artery that supplies the heart muscle with oxygen and glucose"
+        }
       ],
-      "memTip": "Learn the route as a story: dirty blood arrives via Vena cava → right side → Pulmonary artery to lungs → gets cleaned → Pulmonary vein back → left side → Aorta out to body. Say that story from memory. The pulmonary artery is the one that trips people up — it's an artery carrying deoxygenated blood."
+      "memTip": "Learn the route as a story: dirty blood arrives via Vena cava → right side → Pulmonary artery to lungs → gets cleaned → Pulmonary vein back → left side → Aorta out to body. Say that story from memory."
     },
     {
       "heading": "The three types of blood vessel",
@@ -110,36 +134,105 @@
         "Remember: A = Away (arteries go away from heart)"
       ],
       "keyTerms": [
-        {"term": "Artery", "def": "Thick-walled vessel carrying blood away from the heart at high pressure"},
-        {"term": "Vein", "def": "Thin-walled vessel with valves, carrying blood to the heart at low pressure"},
-        {"term": "Capillary", "def": "Microscopic vessel with walls one cell thick; site of exchange between blood and tissues"}
+        {
+          "term": "Artery",
+          "def": "Thick-walled vessel carrying blood away from the heart at high pressure"
+        },
+        {
+          "term": "Vein",
+          "def": "Thin-walled vessel with valves, carrying blood to the heart at low pressure"
+        },
+        {
+          "term": "Capillary",
+          "def": "Microscopic vessel with walls one cell thick; site of exchange between blood and tissues"
+        }
       ],
-      "memTip": "A = Away (arteries go away from heart). Veins have Valves. Capillaries are one Cell thick. For the comparison table: arteries have thick walls + narrow lumen; veins have thin walls + wide lumen; capillaries are microscopic. Copy the table once from memory — that's worth more than reading it five times."
+      "memTip": "A = Away (arteries go away from heart). Veins have Valves."
     }
   ],
   "tables": [
     {
       "title": "Blood vessel comparison",
       "examFlag": true,
-      "headers": ["Feature", "Artery", "Vein", "Capillary"],
+      "headers": [
+        "Feature",
+        "Artery",
+        "Vein",
+        "Capillary"
+      ],
       "rows": [
-        ["Wall thickness", "Thick + elastic", "Thin", "One cell thick"],
-        ["Lumen size",     "Narrow",          "Wide", "Microscopic"],
-        ["Valves",         "No",              "Yes",  "No"],
-        ["Pressure",       "High",            "Low",  "Very low"],
-        ["Direction",      "Away from heart", "To heart", "Connects A & V"],
-        ["Function",       "Transport blood under pressure", "Return blood", "Exchange of substances"]
+        [
+          "Wall thickness",
+          "Thick + elastic",
+          "Thin",
+          "One cell thick"
+        ],
+        [
+          "Lumen size",
+          "Narrow",
+          "Wide",
+          "Microscopic"
+        ],
+        [
+          "Valves",
+          "No",
+          "Yes",
+          "No"
+        ],
+        [
+          "Pressure",
+          "High",
+          "Low",
+          "Very low"
+        ],
+        [
+          "Direction",
+          "Away from heart",
+          "To heart",
+          "Connects A & V"
+        ],
+        [
+          "Function",
+          "Transport blood under pressure",
+          "Return blood",
+          "Exchange of substances"
+        ]
       ]
     },
     {
       "title": "Major vessels entering and leaving the heart",
       "examFlag": true,
-      "headers": ["Vessel", "Type", "Connects to", "Blood carried"],
+      "headers": [
+        "Vessel",
+        "Type",
+        "Connects to",
+        "Blood carried"
+      ],
       "rows": [
-        ["Vena cava",        "Vein",   "Right atrium",    "Deoxygenated (from body)"],
-        ["Pulmonary artery", "Artery", "Right ventricle", "Deoxygenated (to lungs)"],
-        ["Pulmonary vein",   "Vein",   "Left atrium",     "Oxygenated (from lungs)"],
-        ["Aorta",            "Artery", "Left ventricle",  "Oxygenated (to body)"]
+        [
+          "Vena cava",
+          "Vein",
+          "Right atrium",
+          "Deoxygenated (from body)"
+        ],
+        [
+          "Pulmonary artery",
+          "Artery",
+          "Right ventricle",
+          "Deoxygenated (to lungs)"
+        ],
+        [
+          "Pulmonary vein",
+          "Vein",
+          "Left atrium",
+          "Oxygenated (from lungs)"
+        ],
+        [
+          "Aorta",
+          "Artery",
+          "Left ventricle",
+          "Oxygenated (to body)"
+        ]
       ]
     }
   ],
@@ -181,9 +274,27 @@
     "The word 'pulmonary' always means lungs. Pulmonary artery = to lungs. Pulmonary vein = from lungs."
   ],
   "videoLinks": [
-    { "searchQuery": "AQA GCSE biology heart and circulation", "label": "The Heart and Circulation", "source": "Free Science Lessons", "icon": "▶", "url": "https://www.youtube.com/results?search_query=heart+circulation+GCSE+biology+Free+Science+Lessons" },
-    { "searchQuery": "AQA GCSE biology heart and circulation", "label": "The Heart & Circulation", "source": "BBC Bitesize", "icon": "▶", "url": "https://www.bbc.co.uk/bitesize/search?q=heart+circulation+biology" },
-    { "searchQuery": "AQA GCSE biology heart and circulation", "label": "The Heart", "source": "Cognito", "icon": "▶", "url": "https://www.youtube.com/results?search_query=heart+GCSE+biology+Cognito" }
+    {
+      "searchQuery": "AQA GCSE biology heart and circulation",
+      "label": "The Heart and Circulation",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=heart+circulation+GCSE+biology+Free+Science+Lessons"
+    },
+    {
+      "searchQuery": "AQA GCSE biology heart and circulation",
+      "label": "The Heart & Circulation",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/search?q=heart+circulation+biology"
+    },
+    {
+      "searchQuery": "AQA GCSE biology heart and circulation",
+      "label": "The Heart",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=heart+GCSE+biology+Cognito"
+    }
   ],
   "revisionCardBullets": [
     "Double circulation: blood goes through the heart TWICE per circuit — once for lungs, once for body",

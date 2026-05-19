@@ -25,14 +25,32 @@
         "Protist examples: Plasmodium (malaria parasite)"
       ],
       "keyTerms": [
-        {"term": "Pathogen", "def": "A microorganism that causes infectious disease"},
-        {"term": "Infectious disease", "def": "A disease caused by a pathogen that can be transmitted from one person (or organism) to another"},
-        {"term": "Bacteria", "def": "Single-celled prokaryotic microorganisms — some cause disease by releasing toxins"},
-        {"term": "Virus", "def": "Non-cellular pathogens that replicate inside host cells, causing cell damage"},
-        {"term": "Fungi", "def": "Eukaryotic organisms — some are pathogens causing diseases like athlete's foot"},
-        {"term": "Protist", "def": "Single-celled eukaryotic microorganism — Plasmodium is a protist that causes malaria"}
+        {
+          "term": "Pathogen",
+          "def": "An agent that causes infectious disease. Pathogens include bacteria, viruses, fungi, and protists."
+        },
+        {
+          "term": "Infectious disease",
+          "def": "A disease caused by a pathogen that can be transmitted from one person (or organism) to another"
+        },
+        {
+          "term": "Bacteria",
+          "def": "Single-celled prokaryotic microorganisms — some cause disease by releasing toxins"
+        },
+        {
+          "term": "Virus",
+          "def": "Non-cellular pathogens that replicate inside host cells, causing cell damage"
+        },
+        {
+          "term": "Fungi",
+          "def": "Eukaryotic organisms — some are pathogens causing diseases like athlete's foot"
+        },
+        {
+          "term": "Protist",
+          "def": "Single-celled eukaryotic microorganism — Plasmodium is a protist that causes malaria"
+        }
       ],
-      "memTip": "BVFP — Bacteria, Viruses, Fungi, Protists. Make a quick table from memory: four rows, two columns (type + example disease). Do it three times. The examples will stick."
+      "memTip": "BVFP — Bacteria, Viruses, Fungi, Protists. Make a quick table from memory: four rows, two columns (type + example disease)."
     },
     {
       "heading": "How pathogens spread — the five routes",
@@ -48,10 +66,16 @@
         "Vectors — organism carries pathogen to new host (e.g. mosquito → malaria)"
       ],
       "keyTerms": [
-        {"term": "Transmission", "def": "The passing of a pathogen from one host to another"},
-        {"term": "Vector", "def": "An organism that carries and transmits a pathogen without being ill itself — e.g. mosquitoes carry malaria"}
+        {
+          "term": "Transmission",
+          "def": "The passing of a pathogen from one host to another"
+        },
+        {
+          "term": "Vector",
+          "def": "An organism that carries and transmits a pathogen without being ill itself — e.g. mosquitoes carry malaria"
+        }
       ],
-      "memTip": "DACFV — Direct contact, Airborne, Contaminated water, Food, Vectors. For each one, write one real example next to it. A disease name turns an abstract route into something memorable."
+      "memTip": "DACFV — Direct contact, Airborne, Contaminated water, Food, Vectors. For each one, write one real example next to it."
     },
     {
       "heading": "How bacteria cause disease",
@@ -66,10 +90,16 @@
         "Antibiotics can kill bacteria — they do NOT work on viruses"
       ],
       "keyTerms": [
-        {"term": "Toxin", "def": "A poison released by bacteria that damages cells and causes disease symptoms"},
-        {"term": "Antibiotic", "def": "A drug that kills bacteria or stops them reproducing — does not work on viruses"}
+        {
+          "term": "Toxin",
+          "def": "A poison released by bacteria that damages cells and causes disease symptoms"
+        },
+        {
+          "term": "Antibiotic",
+          "def": "A drug that kills bacteria or stops them reproducing — does not work on viruses"
+        }
       ],
-      "memTip": "Bacteria = reproduce fast + release TOXINS. The exam mark is nearly always on the toxin. Write this sentence: 'Bacteria reproduce rapidly and release toxins that damage cells and cause symptoms.' Cover it and write it from memory. That sentence is a mark-earner."
+      "memTip": "Bacteria = reproduce fast + release TOXINS. The exam mark is nearly always on the toxin."
     },
     {
       "heading": "How viruses cause disease",
@@ -85,22 +115,53 @@
         "Antibiotics do NOT work on viruses — viruses are not cells"
       ],
       "keyTerms": [
-        {"term": "Host cell", "def": "The cell a virus infects and uses to replicate itself"},
-        {"term": "Replication", "def": "The process by which viruses make copies of themselves inside a host cell"}
+        {
+          "term": "Host cell",
+          "def": "The cell a virus infects and uses to replicate itself"
+        },
+        {
+          "term": "Replication",
+          "def": "The process by which viruses make copies of themselves inside a host cell"
+        }
       ],
-      "memTip": "Virus = invade, copy, BURST. Three words, three steps. The burst = cell death = symptoms. Contrast this with bacteria: bacteria reproduce outside cells and poison you with toxins. Viruses destroy you from the inside. That contrast is exam gold."
+      "memTip": "Virus = invade, copy, BURST. Three words, three steps."
     }
   ],
   "tables": [
     {
       "title": "The four types of pathogen",
       "examFlag": true,
-      "headers": ["Type", "Example disease", "Example organism", "Treated by"],
+      "headers": [
+        "Type",
+        "Example disease",
+        "Example organism",
+        "Treated by"
+      ],
       "rows": [
-        ["Bacteria",  "Salmonella food poisoning, gonorrhoea", "Salmonella, Neisseria gonorrhoeae", "Antibiotics"],
-        ["Virus",     "Measles, HIV, influenza",               "Measles virus, HIV, influenza virus", "Antivirals (limited); vaccination prevents"],
-        ["Fungi",     "Athlete's foot, rose black spot",       "Tinea (athlete's foot fungus)",       "Antifungal drugs"],
-        ["Protist",   "Malaria",                               "Plasmodium",                          "Antimalarial drugs; mosquito control"]
+        [
+          "Bacteria",
+          "Salmonella food poisoning, gonorrhoea",
+          "Salmonella, Neisseria gonorrhoeae",
+          "Antibiotics"
+        ],
+        [
+          "Virus",
+          "Measles, HIV, influenza",
+          "Measles virus, HIV, influenza virus",
+          "Antivirals (limited); vaccination prevents"
+        ],
+        [
+          "Fungi",
+          "Athlete's foot, rose black spot",
+          "Tinea (athlete's foot fungus)",
+          "Antifungal drugs"
+        ],
+        [
+          "Protist",
+          "Malaria",
+          "Plasmodium",
+          "Antimalarial drugs; mosquito control"
+        ]
       ]
     }
   ],
@@ -143,9 +204,24 @@
     "If an exam question asks you to name the type of pathogen for a named disease, recall the table: Salmonella/gonorrhoea = bacteria; measles/HIV/TMV = virus; malaria = protist (via Plasmodium); athlete's foot = fungus."
   ],
   "videoLinks": [
-    { "label": "Communicable Disease — Pathogens", "source": "Free Science Lessons", "icon": "▶", "url": "https://www.youtube.com/watch?v=6R8JkAP7hWA" },
-    { "label": "Pathogens and Disease", "source": "BBC Bitesize", "icon": "▶", "url": "https://www.bbc.co.uk/bitesize/guides/zqfrd2p/revision/1" },
-    { "label": "Communicable Diseases", "source": "Cognito", "icon": "▶", "url": "https://www.youtube.com/watch?v=XFmBFEWKpnw" }
+    {
+      "label": "Communicable Disease — Pathogens",
+      "source": "Free Science Lessons",
+      "icon": "▶",
+      "url": "https://www.youtube.com/watch?v=6R8JkAP7hWA"
+    },
+    {
+      "label": "Pathogens and Disease",
+      "source": "BBC Bitesize",
+      "icon": "▶",
+      "url": "https://www.bbc.co.uk/bitesize/guides/zqfrd2p/revision/1"
+    },
+    {
+      "label": "Communicable Diseases",
+      "source": "Cognito",
+      "icon": "▶",
+      "url": "https://www.youtube.com/watch?v=XFmBFEWKpnw"
+    }
   ],
   "revisionCardBullets": [
     "Pathogen = microorganism that causes infectious disease",

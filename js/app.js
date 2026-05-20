@@ -392,8 +392,6 @@ function showSubjectPicker() {
     { id: 'biology',   label: 'Biology',     icon: '🧬', sub: 'AQA Separate Science', available: true  },
     { id: 'chemistry', label: 'Chemistry',   icon: '⚗️', sub: 'AQA Separate Science', available: true  },
     { id: 'physics',   label: 'Physics',     icon: '⚡', sub: 'AQA Separate Science', available: true  },
-    { id: 'geography', label: 'Geography',   icon: '🌍', sub: 'AQA',                  available: true  },
-    { id: 'sociology', label: 'Sociology',   icon: '👥', sub: 'AQA',                  available: true  },
     { id: 'maths',     label: 'Maths',       icon: '📐', sub: 'AQA · GCSE Maths',                    available: true  },
     { id: 'english',   label: 'English Lit', icon: '📚', sub: 'Coming soon',                          available: false },
   ];

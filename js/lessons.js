@@ -369,6 +369,21 @@ const Lessons = (() => {
     return preambleHtml + `<ul class="kp-def-list">${listItems}</ul>`;
   }
 
+  // Render a kp.list array — [{ term, definition }] — with optional preamble from kp.content.
+  function _renderKpList(preamble, items) {
+    let html = '';
+    if (preamble) {
+      const rawText = preamble.replace(/<[^>]+>/g, '').trim();
+      const clean = _splitPlainSentences(rawText).filter(s => !_EXAM_RE.test(s));
+      if (clean.length > 0) html += `<p class="kp-para">${clean.join(' ')}</p>`;
+    }
+    const listItems = items.map(({ term, definition }) =>
+      `<li><span class="kp-list-bullet">•</span><strong>${term}</strong><span class="kp-list-sep"> — </span><span class="kp-list-def">${definition}</span></li>`
+    ).join('');
+    html += `<ul class="kp-def-list">${listItems}</ul>`;
+    return html;
+  }
+
   // Strip the term name from the start of its own definition (avoids "X — X is the thing")
   function _cleanKeyTermDef(term, def) {
     if (!def || !term) return def;
@@ -470,7 +485,7 @@ const Lessons = (() => {
           ${kp.examFlag ? `<span class="flag flag-exam">this gets asked</span>` : ''}
           ${kp.cardFlag ? `<span class="flag flag-card">worth writing down</span>` : ''}
         </div>
-        ${_formatKpContent(kp.content)}`;
+        ${kp.list ? _renderKpList(kp.content, kp.list) : _formatKpContent(kp.content)}`;
     if (kp.diagram) html += _renderInlineDiagram(kp.diagram, _current, kp.diagramCaption, kp.diagramExamTip);
     const vids = _current.videoLinks;
     if (vids?.length) {

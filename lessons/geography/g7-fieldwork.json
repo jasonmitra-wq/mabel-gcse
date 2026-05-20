@@ -24,7 +24,14 @@
         "Systematic sampling — regular intervals (e.g., every 10m along a transect)",
         "Stratified sampling — proportional to subgroups (e.g., 50% male, 50% female)"
       ],
-      "keyTerms": ["enquiry question", "hypothesis", "risk assessment", "sampling strategy", "systematic", "stratified"],
+      "keyTerms": [
+        "enquiry question",
+        "hypothesis",
+        "risk assessment",
+        "sampling strategy",
+        "systematic",
+        "stratified"
+      ],
       "memTip": "QHRSS — Question, Hypothesis, Risk, Sampling Strategy. Four steps before you set foot outside.",
       "tutor_note": "Students often confuse random and systematic sampling. Random = truly random (number generator); systematic = regular intervals (every 10m, every 5th person)."
     },
@@ -42,7 +49,13 @@
         "Turbidity — water cloudiness; Secchi disk or turbidity tube",
         "Coastal: wave count, swash/backwash distances, pebble size, beach profile with clinometer"
       ],
-      "keyTerms": ["flowmeter", "Powers' roundness scale", "turbidity", "clinometer", "cross-sectional area"],
+      "keyTerms": [
+        "flowmeter",
+        "Powers' roundness scale",
+        "turbidity",
+        "clinometer",
+        "cross-sectional area"
+      ],
       "memTip": "River: Velocity, Width, Depth, Bedload, Turbidity — VWDBT. Five river measurements.",
       "tutor_note": "Students often forget the 0.8 correction factor for the float method — the float travels at surface speed, but average river velocity is about 80% of this."
     },
@@ -60,7 +73,13 @@
         "Pedestrian/traffic count — count at set intervals (5 min/hour) at multiple sites",
         "Bipolar analysis — rate criteria on −3 to +3 scale; allows objective comparison"
       ],
-      "keyTerms": ["questionnaire", "pilot survey", "bipolar analysis", "land use survey", "leading question"],
+      "keyTerms": [
+        "questionnaire",
+        "pilot survey",
+        "bipolar analysis",
+        "land use survey",
+        "leading question"
+      ],
       "memTip": "QLPB — Questionnaire, Land use, Pedestrian count, Bipolar. Four human geography fieldwork tools.",
       "tutor_note": "Bipolar analysis is the key environmental quality method — students need to understand it rates each criterion on a scale so locations can be compared objectively."
     },
@@ -78,7 +97,13 @@
         "Tables of raw data — clearly labelled with units; foundation for analysis",
         "Match presentation type to data type — choose carefully"
       ],
-      "keyTerms": ["choropleth", "isoline", "field sketch", "annotated photograph", "located graph"],
+      "keyTerms": [
+        "choropleth",
+        "isoline",
+        "field sketch",
+        "annotated photograph",
+        "located graph"
+      ],
       "memTip": "Quantitative → chart; Spatial → map; Landscape → sketch. Match method to data type.",
       "tutor_note": "Field sketches are underused — they allow annotation of process in a way photographs cannot. Encourage students to practise annotating landscape sketches."
     },
@@ -96,7 +121,13 @@
         "Validity — did methods measure what was intended?",
         "Improvements — larger sample, more sites, different season, peer checking"
       ],
-      "keyTerms": ["reliability", "validity", "evaluation", "conclusion", "hypothesis"],
+      "keyTerms": [
+        "reliability",
+        "validity",
+        "evaluation",
+        "conclusion",
+        "hypothesis"
+      ],
       "memTip": "ACE — Analysis (pattern + explanation), Conclusion (support hypothesis?), Evaluation (reliability + validity + improvements).",
       "tutor_note": "The evaluation section is where students most commonly lose marks — generic 'take more samples' is not enough; they need to explain what specific issue this would address."
     }
@@ -105,14 +136,49 @@
     {
       "title": "Primary data collection methods — advantages and disadvantages",
       "examFlag": true,
-      "headers": ["Method", "Data collected", "Advantage", "Disadvantage"],
+      "headers": [
+        "Method",
+        "Data collected",
+        "Advantage",
+        "Disadvantage"
+      ],
       "rows": [
-        ["Flowmeter (river)", "Velocity in m/s at different points across channel", "Accurate and objective; fast to use", "Expensive equipment; can be inaccurate in very shallow water"],
-        ["Float method (river)", "Surface velocity (time float over 10m)", "Cheap; requires only a stopwatch; easy to repeat", "Measures surface speed only; 0.8 correction factor must be applied"],
-        ["Pebble sampling (coastal/river)", "Size (longest axis in cm) and roundness (Powers' scale)", "Simple; cheap; directly measures process evidence", "Subjective element (roundness judgement); small sample may not be representative"],
-        ["Bipolar analysis (human)", "Environmental quality scores (−3 to +3) for multiple criteria", "Allows objective comparison of different sites; covers multiple factors", "Criteria choice is subjective; different surveyors may rate the same feature differently"],
-        ["Questionnaire (human)", "Attitudes, opinions, demographic data", "Gathers information impossible to observe directly; large sample possible", "Leading questions bias results; people may give untruthful answers; pilot survey needed"],
-        ["Land use survey (human)", "Type of use for each building along a transect", "Quick to do; generates large dataset; objective if categories defined clearly", "Categories can overlap; snap-shot in time only; buildings may have multiple uses"]
+        [
+          "Flowmeter (river)",
+          "Velocity in m/s at different points across channel",
+          "Accurate and objective; fast to use",
+          "Expensive equipment; can be inaccurate in very shallow water"
+        ],
+        [
+          "Float method (river)",
+          "Surface velocity (time float over 10m)",
+          "Cheap; requires only a stopwatch; easy to repeat",
+          "Measures surface speed only; 0.8 correction factor must be applied"
+        ],
+        [
+          "Pebble sampling (coastal/river)",
+          "Size (longest axis in cm) and roundness (Powers' scale)",
+          "Simple; cheap; directly measures process evidence",
+          "Subjective element (roundness judgement); small sample may not be representative"
+        ],
+        [
+          "Bipolar analysis (human)",
+          "Environmental quality scores (−3 to +3) for multiple criteria",
+          "Allows objective comparison of different sites; covers multiple factors",
+          "Criteria choice is subjective; different surveyors may rate the same feature differently"
+        ],
+        [
+          "Questionnaire (human)",
+          "Attitudes, opinions, demographic data",
+          "Gathers information impossible to observe directly; large sample possible",
+          "Leading questions bias results; people may give untruthful answers; pilot survey needed"
+        ],
+        [
+          "Land use survey (human)",
+          "Type of use for each building along a transect",
+          "Quick to do; generates large dataset; objective if categories defined clearly",
+          "Categories can overlap; snap-shot in time only; buildings may have multiple uses"
+        ]
       ]
     }
   ],
@@ -141,7 +207,7 @@
       "correctFeedback": "Correct! Validity asks: did your methods measure what you intended? For example, if you used a questionnaire to measure environmental quality, was it actually measuring quality of the environment, or just people's personal preferences? That's a validity question.",
       "wrongFeedback": "Not quite. Validity means: did your methods actually measure what you intended to measure? (The question of whether repeating would give the same results is reliability — a different concept.)"
     }
-  ],
+  },
   "commonMistakes": [
     "Confusing reliability and validity — reliability = would repeating give same results? Validity = did methods measure what you intended? They are different concepts that require different improvements.",
     "Generic evaluation answers like 'take more samples' — always explain what problem this addresses: 'Increasing the sample from 20 to 50 pebbles per site would make the mean more representative and reduce the impact of unusual individual pebbles.'",

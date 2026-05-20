@@ -24,11 +24,20 @@
         "CO₂: greenhouse gas — drives climate change"
       ],
       "keyTerms": [
-        {"term": "Complete combustion", "def": "Burning with sufficient oxygen — produces CO₂ and water only"},
-        {"term": "Incomplete combustion", "def": "Burning with insufficient oxygen — produces CO (carbon monoxide) and/or soot (carbon particles)"},
-        {"term": "Carbon monoxide (CO)", "def": "A toxic colourless gas produced by incomplete combustion; binds to haemoglobin and prevents oxygen transport in the blood"}
+        {
+          "term": "Complete combustion",
+          "def": "Burning with sufficient oxygen — produces CO₂ and water only"
+        },
+        {
+          "term": "Incomplete combustion",
+          "def": "Burning with insufficient oxygen — produces CO (carbon monoxide) and/or soot (carbon particles)"
+        },
+        {
+          "term": "Carbon monoxide (CO)",
+          "def": "A toxic colourless gas produced by incomplete combustion; binds to haemoglobin and prevents oxygen transport in the blood"
+        }
       ],
-      "memTip": "Complete = CO₂ + H₂O (clean, but contributes to greenhouse effect). Incomplete = CO + soot (toxic and smoggy). The difference is oxygen supply. A blocked flue or poorly maintained boiler → incomplete combustion → CO poisoning risk."
+      "memTip": "Complete = CO₂ + H₂O (clean, but contributes to greenhouse effect). Incomplete = CO + soot (toxic and smoggy)."
     },
     {
       "heading": "Sulfur dioxide — acid rain",
@@ -43,11 +52,20 @@
         "Solution: remove sulfur from fuel (desulfurisation), low-sulfur fuels, flue gas scrubbers"
       ],
       "keyTerms": [
-        {"term": "Sulfur dioxide (SO₂)", "def": "A gas produced when fuels containing sulfur impurities are burned — dissolves in rain to form acid rain"},
-        {"term": "Acid rain", "def": "Rain with a pH lower than normal (below 5.6) due to dissolved SO₂ and NOₓ — damages ecosystems, buildings, and metals"},
-        {"term": "Desulfurisation", "def": "The removal of sulfur from fossil fuels before they are burned, to reduce SO₂ emissions"}
+        {
+          "term": "Sulfur dioxide (SO₂)",
+          "def": "A gas produced when fuels containing sulfur impurities are burned — dissolves in rain to form acid rain"
+        },
+        {
+          "term": "Acid rain",
+          "def": "Rain with a pH lower than normal (below 5.6) due to dissolved SO₂ and NOₓ — damages ecosystems, buildings, and metals"
+        },
+        {
+          "term": "Desulfurisation",
+          "def": "The removal of sulfur from fossil fuels before they are burned, to reduce SO₂ emissions"
+        }
       ],
-      "memTip": "Sulfur in fuel → SO₂ → acid rain. It's a simple chain. The key distinction: SO₂ comes from sulfur impurities in fuel. NOₓ comes from nitrogen in the air reacting at high temperature. Different source, similar effect (both contribute to acid rain)."
+      "memTip": "Sulfur in fuel → SO₂ → acid rain. It's a simple chain."
     },
     {
       "heading": "Nitrogen oxides — another acid rain contributor",
@@ -63,24 +81,63 @@
         "Catalytic converters: convert CO and NOₓ → CO₂ + N₂"
       ],
       "keyTerms": [
-        {"term": "Nitrogen oxides (NOₓ)", "def": "Gases formed when atmospheric nitrogen and oxygen react at high temperatures in combustion engines — contribute to acid rain and smog"},
-        {"term": "Photochemical smog", "def": "A type of air pollution formed when NOₓ and unburned hydrocarbons react in sunlight, producing ozone and other irritants"},
-        {"term": "Catalytic converter", "def": "A device fitted to vehicle exhausts that uses a catalyst to convert harmful CO and NOₓ into less harmful CO₂ and N₂"}
+        {
+          "term": "Nitrogen oxides (NOₓ)",
+          "def": "Gases formed when atmospheric nitrogen and oxygen react at high temperatures in combustion engines — contribute to acid rain and smog"
+        },
+        {
+          "term": "Photochemical smog",
+          "def": "A type of air pollution formed when NOₓ and unburned hydrocarbons react in sunlight, producing ozone and other irritants"
+        },
+        {
+          "term": "Catalytic converter",
+          "def": "A device fitted to vehicle exhausts that uses a catalyst to convert harmful CO and NOₓ into less harmful CO₂ and N₂"
+        }
       ],
-      "memTip": "NOₓ = N from AIR (not fuel!) + O, at high temperature. Sulfur comes from FUEL. Both contribute to acid rain. Catalytic converter converts: CO → CO₂ and NOₓ → N₂. The converter is the vehicle solution; desulfurisation is the power station solution for SO₂."
+      "memTip": "NOₓ = N from AIR (not fuel!) + O, at high temperature. Sulfur comes from FUEL."
     }
   ],
   "tables": [
     {
       "title": "Air pollutants from burning fuels",
       "examFlag": true,
-      "headers": ["Pollutant", "Source", "Harmful effects", "Solution"],
+      "headers": [
+        "Pollutant",
+        "Source",
+        "Harmful effects",
+        "Solution"
+      ],
       "rows": [
-        ["CO₂", "Complete combustion of carbon-based fuels", "Greenhouse gas → climate change", "Use renewable energy; carbon capture"],
-        ["CO", "Incomplete combustion (insufficient O₂)", "Toxic — binds to haemoglobin, prevents O₂ transport", "Ensure adequate oxygen supply; catalytic converters"],
-        ["Soot/particulates", "Incomplete combustion", "Respiratory disease; smog", "Ensure complete combustion"],
-        ["SO₂", "Burning fuels with sulfur impurities", "Acid rain → harms trees, fish, buildings", "Desulfurisation; low-sulfur fuels; scrubbers"],
-        ["NOₓ", "High-temperature combustion (N₂ from air)", "Acid rain; photochemical smog", "Catalytic converters; lower combustion temperatures"]
+        [
+          "CO₂",
+          "Complete combustion of carbon-based fuels",
+          "Greenhouse gas → climate change",
+          "Use renewable energy; carbon capture"
+        ],
+        [
+          "CO",
+          "Incomplete combustion (insufficient O₂)",
+          "Toxic — binds to haemoglobin, prevents O₂ transport",
+          "Ensure adequate oxygen supply; catalytic converters"
+        ],
+        [
+          "Soot/particulates",
+          "Incomplete combustion",
+          "Respiratory disease; smog",
+          "Ensure complete combustion"
+        ],
+        [
+          "SO₂",
+          "Burning fuels with sulfur impurities",
+          "Acid rain → harms trees, fish, buildings",
+          "Desulfurisation; low-sulfur fuels; scrubbers"
+        ],
+        [
+          "NOₓ",
+          "High-temperature combustion (N₂ from air)",
+          "Acid rain; photochemical smog",
+          "Catalytic converters; lower combustion temperatures"
+        ]
       ]
     }
   ],

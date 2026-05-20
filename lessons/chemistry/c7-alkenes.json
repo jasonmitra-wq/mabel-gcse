@@ -26,9 +26,18 @@
         "Displayed formula of ethene: H₂C=CH₂"
       ],
       "keyTerms": [
-        { "term": "Unsaturated", "def": "Contains at least one C=C double bond; can undergo addition reactions" },
-        { "term": "Alkene", "def": "An unsaturated hydrocarbon with at least one C=C double bond; general formula CnH2n" },
-        { "term": "C=C double bond", "def": "A double bond between two carbon atoms, consisting of a sigma bond and a pi bond; the reactive site in alkenes" }
+        {
+          "term": "Unsaturated",
+          "def": "Contains at least one C=C double bond; can undergo addition reactions"
+        },
+        {
+          "term": "Alkene",
+          "def": "An unsaturated hydrocarbon with at least one C=C double bond; general formula CnH2n"
+        },
+        {
+          "term": "C=C double bond",
+          "def": "A double bond between two carbon atoms, consisting of a sigma bond and a pi bond; the reactive site in alkenes"
+        }
       ],
       "memTip": "Alkane = satisfied (saturated, no double bonds, all single). Alkene = excited (unsaturated, has a double bond, ready to react).",
       "tutor_note": "Students must be able to draw displayed formulas for ethene and propene and recognise the C=C bond. Emphasise that unsaturated means something is 'missing' and can react to add more atoms."
@@ -47,10 +56,16 @@
         "This is an addition reaction — Br₂ adds across the double bond"
       ],
       "keyTerms": [
-        { "term": "Bromine water test", "def": "Orange bromine water is decolourised by alkenes (addition reaction) but not by alkanes; used to test for unsaturation" },
-        { "term": "Dibromoalkane", "def": "The product of adding bromine across a C=C double bond; contains two C−Br bonds" }
+        {
+          "term": "Bromine water test",
+          "def": "Orange bromine water is decolourised by alkenes (addition reaction) but not by alkanes; used to test for unsaturation"
+        },
+        {
+          "term": "Dibromoalkane",
+          "def": "The product of adding bromine across a C=C double bond; contains two C−Br bonds"
+        }
       ],
-      "memTip": "Orange in, colourless out = alkene (it grabbed the bromine). Orange stays orange = alkane (not reactive enough). Think: alkene 'drinks' the bromine colour.",
+      "memTip": "Orange in, colourless out = alkene (it grabbed the bromine). Orange stays orange = alkane (not reactive enough).",
       "tutor_note": "Insist students describe the colour change fully in exams: 'orange/brown to colourless' — just 'it goes colourless' loses marks. They must also state what the colour change shows (unsaturation / C=C present)."
     },
     {
@@ -68,11 +83,20 @@
         "Addition reactions always give one product — no by-products"
       ],
       "keyTerms": [
-        { "term": "Addition reaction", "def": "A reaction where two molecules combine to form one product; the C=C double bond opens up and atoms are added across it" },
-        { "term": "Hydrogenation", "def": "Addition of H₂ across a C=C double bond; converts an alkene to an alkane; requires a nickel catalyst" },
-        { "term": "Hydration", "def": "Addition of water (H₂O) across a C=C double bond; converts an alkene to an alcohol; requires steam and a phosphoric acid catalyst" }
+        {
+          "term": "Addition reaction",
+          "def": "A reaction where two molecules combine to form one product; the C=C double bond opens up and atoms are added across it"
+        },
+        {
+          "term": "Hydrogenation",
+          "def": "Addition of H₂ across a C=C double bond; converts an alkene to an alkane; requires a nickel catalyst"
+        },
+        {
+          "term": "Hydration",
+          "def": "Addition of water (H₂O) across a C=C double bond; converts an alkene to an alcohol; requires steam and a phosphoric acid catalyst"
+        }
       ],
-      "memTip": "Addition = add something across the double bond, which becomes a single bond. One in, one out. No atoms left over — everything ends up in the product.",
+      "memTip": "Addition = add something across the double bond, which becomes a single bond. One in, one out.",
       "tutor_note": "Students confuse addition and substitution reactions. In addition, NOTHING is removed — two things join to make one. In substitution (typical of alkanes with halogens), one atom replaces another."
     },
     {
@@ -90,12 +114,24 @@
         "Monomer → repeat unit: replace C=C with −C−C−; add bonds either side"
       ],
       "keyTerms": [
-        { "term": "Monomer", "def": "Small molecule with a C=C double bond that can join together to form a polymer" },
-        { "term": "Polymer", "def": "A long-chain molecule formed when many monomers join together; no atoms are lost in addition polymerisation" },
-        { "term": "Repeat unit", "def": "The smallest section of a polymer chain that, when repeated, gives the whole polymer structure" },
-        { "term": "Addition polymerisation", "def": "Polymerisation where alkene monomers add together via opening of C=C double bonds; no by-products" }
+        {
+          "term": "Monomer",
+          "def": "Small molecule with a C=C double bond that can join together to form a polymer"
+        },
+        {
+          "term": "Polymer",
+          "def": "A long-chain molecule formed when many monomers join together; no atoms are lost in addition polymerisation"
+        },
+        {
+          "term": "Repeat unit",
+          "def": "The smallest section of a polymer chain that, when repeated, gives the whole polymer structure"
+        },
+        {
+          "term": "Addition polymerisation",
+          "def": "Polymerisation where alkene monomers add together via opening of C=C double bonds; no by-products"
+        }
       ],
-      "memTip": "Polymer = poly + mer = many + parts. The monomer is the part, the polymer is the chain. The double bond opens to let each part link to the next.",
+      "memTip": "Polymer = poly + mer = many + parts. The monomer is the part, the polymer is the chain.",
       "tutor_note": "Drawing repeat units is a regular exam question. Students often forget to draw the bonds extending from both ends of the bracket. Make sure the polymer chain shows bonds on both sides."
     }
   ],
@@ -103,12 +139,37 @@
     {
       "title": "Addition reactions of alkenes — summary",
       "examFlag": true,
-      "headers": ["Reagent added", "Conditions", "Product", "Example (with ethene)"],
+      "headers": [
+        "Reagent added",
+        "Conditions",
+        "Product",
+        "Example (with ethene)"
+      ],
       "rows": [
-        ["Bromine (Br₂)", "Room temperature", "Dibromoalkane", "CH₂=CH₂ + Br₂ → CH₂BrCH₂Br"],
-        ["Hydrogen (H₂)", "Ni catalyst, 150°C", "Alkane", "CH₂=CH₂ + H₂ → CH₃CH₃"],
-        ["Hydrogen bromide (HBr)", "Room temperature", "Bromoalkane", "CH₂=CH₂ + HBr → CH₃CH₂Br"],
-        ["Water / steam (H₂O)", "H₃PO₄ catalyst, 300°C, 60 atm", "Alcohol", "CH₂=CH₂ + H₂O → CH₃CH₂OH"]
+        [
+          "Bromine (Br₂)",
+          "Room temperature",
+          "Dibromoalkane",
+          "CH₂=CH₂ + Br₂ → CH₂BrCH₂Br"
+        ],
+        [
+          "Hydrogen (H₂)",
+          "Ni catalyst, 150°C",
+          "Alkane",
+          "CH₂=CH₂ + H₂ → CH₃CH₃"
+        ],
+        [
+          "Hydrogen bromide (HBr)",
+          "Room temperature",
+          "Bromoalkane",
+          "CH₂=CH₂ + HBr → CH₃CH₂Br"
+        ],
+        [
+          "Water / steam (H₂O)",
+          "H₃PO₄ catalyst, 300°C, 60 atm",
+          "Alcohol",
+          "CH₂=CH₂ + H₂O → CH₃CH₂OH"
+        ]
       ]
     }
   ],

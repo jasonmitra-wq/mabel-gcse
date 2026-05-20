@@ -25,7 +25,13 @@
         "Choropleth maps — shading by data value; darker = higher (usually)",
         "Histograms — frequency distribution; bars touch (continuous data)"
       ],
-      "keyTerms": ["scatter graph", "correlation", "anomaly", "choropleth", "population pyramid"],
+      "keyTerms": [
+        "scatter graph",
+        "correlation",
+        "anomaly",
+        "choropleth",
+        "population pyramid"
+      ],
       "memTip": "Bar = categories; Line = time; Pie = proportions; Scatter = relationships. Match the graph to the data type.",
       "tutor_note": "Students often use bar charts for everything — push them to think about what the data IS before deciding on the graph type."
     },
@@ -44,7 +50,14 @@
         "Percentage change — ((new − old) ÷ old) × 100",
         "Know when to use which measure — this is itself a testable skill"
       ],
-      "keyTerms": ["mean", "median", "IQR", "range", "percentage change", "outlier"],
+      "keyTerms": [
+        "mean",
+        "median",
+        "IQR",
+        "range",
+        "percentage change",
+        "outlier"
+      ],
       "memTip": "Mean for normal data; Median for skewed data (houses, incomes); IQR for spread ignoring extremes.",
       "tutor_note": "Calculating IQR is often asked in Paper 3. Students need to know: sort data → find Q1 and Q3 → subtract. Practice with real datasets."
     },
@@ -62,7 +75,13 @@
         "On maps: use compass directions; note clustering; quote specific areas and values",
         "Never describe data without quoting figures — 'some countries have high life expectancy' is not enough"
       ],
-      "keyTerms": ["trend", "anomaly", "correlation", "spatial pattern", "data interpretation"],
+      "keyTerms": [
+        "trend",
+        "anomaly",
+        "correlation",
+        "spatial pattern",
+        "data interpretation"
+      ],
       "memTip": "TSAE — Trend, Specific data, Anomaly, Explanation. Four steps, every time.",
       "tutor_note": "The most common exam mistake is describing data without quoting figures. Drilling TSAE into students makes a measurable difference to marks."
     },
@@ -81,7 +100,12 @@
         "Environmental monitoring — track deforestation; monitor sea level change with satellite data",
         "Google Maps and Google Earth are familiar forms of GIS"
       ],
-      "keyTerms": ["GIS", "layers", "spatial analysis", "overlay"],
+      "keyTerms": [
+        "GIS",
+        "layers",
+        "spatial analysis",
+        "overlay"
+      ],
       "memTip": "GIS stacks layers like a sandwich — each layer adds information; together they reveal patterns.",
       "tutor_note": "GIS questions ask for understanding of the concept and uses, not technical operation. Two or three clear applications with explanation is what's needed."
     }
@@ -90,14 +114,49 @@
     {
       "title": "Graph types — when to use, advantages and disadvantages",
       "examFlag": true,
-      "headers": ["Graph type", "When to use", "Advantage", "Disadvantage"],
+      "headers": [
+        "Graph type",
+        "When to use",
+        "Advantage",
+        "Disadvantage"
+      ],
       "rows": [
-        ["Bar chart", "Comparing discrete categories (countries, land uses)", "Easy to read; categories clearly separated", "Not suitable for continuous data; hard to show many categories"],
-        ["Line graph", "Showing change over time (temperature, GDP, population)", "Shows trends and rate of change clearly", "Not suitable for categories; can be misleading if scale manipulated"],
-        ["Pie chart", "Showing proportions of a whole (energy mix, land use)", "Visually clear for proportions", "Hard to read if many small segments; can't show change over time"],
-        ["Scatter graph", "Showing correlation between two variables", "Reveals positive, negative or no correlation; anomalies visible", "Can't show causation, only correlation; harder to draw accurately"],
-        ["Population pyramid", "Showing age-sex structure of a population", "Instantly shows birth rates, life expectancy, demographic stage", "Needs accurate data; hard to compare multiple countries"],
-        ["Choropleth map", "Showing data values by geographic area", "Spatially intuitive; shows regional patterns", "Boundaries can be misleading; shading hard to read for mid-range values"]
+        [
+          "Bar chart",
+          "Comparing discrete categories (countries, land uses)",
+          "Easy to read; categories clearly separated",
+          "Not suitable for continuous data; hard to show many categories"
+        ],
+        [
+          "Line graph",
+          "Showing change over time (temperature, GDP, population)",
+          "Shows trends and rate of change clearly",
+          "Not suitable for categories; can be misleading if scale manipulated"
+        ],
+        [
+          "Pie chart",
+          "Showing proportions of a whole (energy mix, land use)",
+          "Visually clear for proportions",
+          "Hard to read if many small segments; can't show change over time"
+        ],
+        [
+          "Scatter graph",
+          "Showing correlation between two variables",
+          "Reveals positive, negative or no correlation; anomalies visible",
+          "Can't show causation, only correlation; harder to draw accurately"
+        ],
+        [
+          "Population pyramid",
+          "Showing age-sex structure of a population",
+          "Instantly shows birth rates, life expectancy, demographic stage",
+          "Needs accurate data; hard to compare multiple countries"
+        ],
+        [
+          "Choropleth map",
+          "Showing data values by geographic area",
+          "Spatially intuitive; shows regional patterns",
+          "Boundaries can be misleading; shading hard to read for mid-range values"
+        ]
       ]
     }
   ],
@@ -126,7 +185,7 @@
       "correctFeedback": "Exactly right. TSAE: Trend → Specific data → Anomaly → Explanation. This structure ensures you cover the overall pattern, back it up with data, and show you can think critically about exceptions.",
       "wrongFeedback": "Not quite. Use the TSAE structure: (1) overall Trend, (2) Specific data values as evidence, (3) Anomalies — points that don't fit the pattern, (4) Explanation of why. This structure earns full marks."
     }
-  ],
+  },
   "commonMistakes": [
     "Describing data without quoting actual figures — 'Some countries have high life expectancy' earns no marks; always say which country and what the value is.",
     "Using mean when outliers make it misleading — for house prices, income, or any skewed data, use the median; the exam specifically tests whether you know when to use which measure.",

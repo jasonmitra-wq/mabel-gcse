@@ -24,13 +24,28 @@
         "All proteins (enzymes, antibodies, structural proteins) made this way"
       ],
       "keyTerms": [
-        {"term": "Transcription", "def": "The process of making an mRNA copy of a gene from the DNA template — occurs in the nucleus"},
-        {"term": "mRNA", "def": "Messenger RNA — a single-stranded molecule that carries the genetic code from nucleus to ribosome"},
-        {"term": "Translation", "def": "The process of reading the mRNA sequence at the ribosome to produce a chain of amino acids"},
-        {"term": "Ribosome", "def": "The cell organelle where translation occurs — proteins are assembled here"},
-        {"term": "Amino acid", "def": "The monomer of proteins — their sequence and bonding determines protein shape and function"}
+        {
+          "term": "Transcription",
+          "def": "The process of making an mRNA copy of a gene from the DNA template — occurs in the nucleus"
+        },
+        {
+          "term": "mRNA",
+          "def": "Messenger RNA — a single-stranded molecule that carries the genetic code from nucleus to ribosome"
+        },
+        {
+          "term": "Translation",
+          "def": "The process of reading the mRNA sequence at the ribosome to produce a chain of amino acids"
+        },
+        {
+          "term": "Ribosome",
+          "def": "The cell organelle where translation occurs — proteins are assembled here"
+        },
+        {
+          "term": "Amino acid",
+          "def": "The monomer of proteins — their sequence and bonding determines protein shape and function"
+        }
       ],
-      "memTip": "DNA → mRNA → Protein. Three arrows, three stages: Transcription (DNA to mRNA), Travel (mRNA to ribosome), Translation (mRNA to protein). The three Ts."
+      "memTip": "DNA → mRNA → Protein. Three arrows, three stages: Transcription (DNA to mRNA), Travel (mRNA to ribosome), Translation (mRNA to protein)."
     },
     {
       "heading": "The triplet code — how bases spell amino acids",
@@ -46,12 +61,24 @@
         "Codon sequence → amino acid sequence → protein"
       ],
       "keyTerms": [
-        {"term": "Triplet code", "def": "The genetic code in which every three bases (a codon) specify one amino acid"},
-        {"term": "Codon", "def": "A sequence of three bases on mRNA that codes for one amino acid"},
-        {"term": "Stop codon", "def": "A codon that signals the end of the protein chain — no amino acid is added"},
-        {"term": "Degenerate code", "def": "The property of the genetic code where more than one codon can code for the same amino acid"}
+        {
+          "term": "Triplet code",
+          "def": "The genetic code in which every three bases (a codon) specify one amino acid"
+        },
+        {
+          "term": "Codon",
+          "def": "A sequence of three bases on mRNA that codes for one amino acid"
+        },
+        {
+          "term": "Stop codon",
+          "def": "A codon that signals the end of the protein chain — no amino acid is added"
+        },
+        {
+          "term": "Degenerate code",
+          "def": "The property of the genetic code where more than one codon can code for the same amino acid"
+        }
       ],
-      "memTip": "Three bases, one amino acid. Picture a three-letter word in a foreign language: each word means one thing (one amino acid). A sentence of words (codons) builds a paragraph (protein). The stop codon is the full stop."
+      "memTip": "Three bases, one amino acid. Picture a three-letter word in a foreign language: each word means one thing (one amino acid)."
     },
     {
       "heading": "Mutations — changes to the base sequence",
@@ -67,24 +94,61 @@
         "Most mutations: no effect. Some: harmful. Rarely: beneficial."
       ],
       "keyTerms": [
-        {"term": "Mutation", "def": "A change in the DNA base sequence — can alter the protein coded for"},
-        {"term": "Mutagen", "def": "An agent that increases the rate of mutation — e.g. UV radiation, certain chemicals"},
-        {"term": "Silent mutation", "def": "A mutation that changes a base but does not change the amino acid or protein (due to the degenerate code)"},
-        {"term": "Beneficial mutation", "def": "A rare mutation that changes the protein in a way that improves the organism's survival or function"}
+        {
+          "term": "Mutation",
+          "def": "A change in the DNA base sequence — can alter the protein coded for"
+        },
+        {
+          "term": "Mutagen",
+          "def": "An agent that increases the rate of mutation — e.g. UV radiation, certain chemicals"
+        },
+        {
+          "term": "Silent mutation",
+          "def": "A mutation that changes a base but does not change the amino acid or protein (due to the degenerate code)"
+        },
+        {
+          "term": "Beneficial mutation",
+          "def": "A rare mutation that changes the protein in a way that improves the organism's survival or function"
+        }
       ],
-      "memTip": "Mutation chain: Base → Codon → Amino acid → Protein shape → Function. Five links. A mutation breaks the first link — but whether it breaks the rest depends on the degenerate code. Most of the time: no problem. That's the punchline."
+      "memTip": "Mutation chain: Base → Codon → Amino acid → Protein shape → Function. Five links."
     }
   ],
   "tables": [
     {
       "title": "What happens when a mutation occurs",
       "examFlag": true,
-      "headers": ["Scenario", "Effect on amino acid", "Effect on protein", "Overall effect"],
+      "headers": [
+        "Scenario",
+        "Effect on amino acid",
+        "Effect on protein",
+        "Overall effect"
+      ],
       "rows": [
-        ["Base changed to one with same codon meaning (degenerate code)", "Same amino acid", "Unchanged", "No effect (silent mutation)"],
-        ["Base changed → different amino acid in non-critical region", "Different amino acid", "Slightly altered shape", "Small or no effect"],
-        ["Base changed → different amino acid at active site", "Different amino acid", "Significantly altered shape", "Protein may not function"],
-        ["Mutation in regulatory region or non-coding DNA", "No amino acid change", "Unchanged", "Usually no effect"]
+        [
+          "Base changed to one with same codon meaning (degenerate code)",
+          "Same amino acid",
+          "Unchanged",
+          "No effect (silent mutation)"
+        ],
+        [
+          "Base changed → different amino acid in non-critical region",
+          "Different amino acid",
+          "Slightly altered shape",
+          "Small or no effect"
+        ],
+        [
+          "Base changed → different amino acid at active site",
+          "Different amino acid",
+          "Significantly altered shape",
+          "Protein may not function"
+        ],
+        [
+          "Mutation in regulatory region or non-coding DNA",
+          "No amino acid change",
+          "Unchanged",
+          "Usually no effect"
+        ]
       ]
     }
   ],

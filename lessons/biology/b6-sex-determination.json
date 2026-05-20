@@ -24,11 +24,20 @@
         "Probability of each sex = 50% — a Punnett square shows this"
       ],
       "keyTerms": [
-        {"term": "Sex chromosomes", "def": "The chromosomes that determine biological sex — XX in females, XY in males"},
-        {"term": "X chromosome", "def": "The larger sex chromosome, carried by both males and females — females have two copies"},
-        {"term": "Y chromosome", "def": "The smaller sex chromosome, present only in males — carries genes for male sex determination"}
+        {
+          "term": "Sex chromosomes",
+          "def": "The chromosomes that determine biological sex — XX in females, XY in males"
+        },
+        {
+          "term": "X chromosome",
+          "def": "The larger sex chromosome, carried by both males and females — females have two copies"
+        },
+        {
+          "term": "Y chromosome",
+          "def": "The smaller sex chromosome, present only in males — carries genes for male sex determination"
+        }
       ],
-      "memTip": "Female = XX (two kisses, like a letter sign-off). Male = XY (one X, then a Y — think of it as crossing into new territory). Eggs always give X; sperm are the variable — they decide the sex."
+      "memTip": "Female = XX (two kisses, like a letter sign-off). Male = XY (one X, then a Y — think of it as crossing into new territory)."
     },
     {
       "heading": "Sex-linked genes — why males are more vulnerable",
@@ -44,10 +53,16 @@
         "X-linked recessive conditions are much more common in males than females"
       ],
       "keyTerms": [
-        {"term": "Sex-linked gene", "def": "A gene located on the X chromosome that has no corresponding allele on the Y chromosome"},
-        {"term": "X-linked recessive", "def": "A recessive allele on the X chromosome — affects males who inherit one copy, but only females who inherit two copies"}
+        {
+          "term": "Sex-linked gene",
+          "def": "A gene located on the X chromosome that has no corresponding allele on the Y chromosome"
+        },
+        {
+          "term": "X-linked recessive",
+          "def": "A recessive allele on the X chromosome — affects males who inherit one copy, but only females who inherit two copies"
+        }
       ],
-      "memTip": "Males have one X — one shot. If the allele on that X is recessive, there's nothing to override it. Think of the Y chromosome as an empty backup drive — it doesn't have the gene, so males can't compensate."
+      "memTip": "Males have one X — one shot. If the allele on that X is recessive, there's nothing to override it."
     },
     {
       "heading": "Carrier females and Punnett squares for X-linked traits",
@@ -63,21 +78,42 @@
         "Affected male × unaffected female: all sons unaffected, all daughters are carriers"
       ],
       "keyTerms": [
-        {"term": "Carrier female", "def": "A female who is heterozygous for an X-linked recessive allele (X^B X^b) — unaffected but can pass the allele to children"},
-        {"term": "Colour blindness", "def": "An X-linked recessive condition affecting colour perception — far more common in males"},
-        {"term": "Haemophilia", "def": "An X-linked recessive condition in which blood does not clot properly — predominantly affects males"}
+        {
+          "term": "Carrier female",
+          "def": "A female who is heterozygous for an X-linked recessive allele (X^B X^b) — unaffected but can pass the allele to children"
+        },
+        {
+          "term": "Colour blindness",
+          "def": "An X-linked recessive condition affecting colour perception — far more common in males"
+        },
+        {
+          "term": "Haemophilia",
+          "def": "An X-linked recessive condition in which blood does not clot properly — predominantly affects males"
+        }
       ],
-      "memTip": "Carrier female: one good X, one dodgy X. She's fine, but watch out for her sons — each son has a 50:50 chance of getting the dodgy X and no backup. Her daughters can also pick up the carrier status silently."
+      "memTip": "Carrier female: one good X, one dodgy X. She's fine, but watch out for her sons — each son has a 50:50 chance of getting the dodgy X and no backup."
     }
   ],
   "tables": [
     {
       "title": "Carrier female × unaffected male — colour blindness cross",
       "examFlag": true,
-      "headers": ["", "X^B (sperm)", "Y (sperm)"],
+      "headers": [
+        "",
+        "X^B (sperm)",
+        "Y (sperm)"
+      ],
       "rows": [
-        ["X^B (egg)", "X^B X^B — female, unaffected", "X^B Y — male, unaffected"],
-        ["X^b (egg)", "X^B X^b — female, carrier", "X^b Y — male, colour blind"]
+        [
+          "X^B (egg)",
+          "X^B X^B — female, unaffected",
+          "X^B Y — male, unaffected"
+        ],
+        [
+          "X^b (egg)",
+          "X^B X^b — female, carrier",
+          "X^b Y — male, colour blind"
+        ]
       ]
     }
   ],

@@ -25,11 +25,20 @@
         "Feeding: transfers carbon through food chains"
       ],
       "keyTerms": [
-        {"term": "Carbon store", "def": "A place where carbon is held for a period of time — atmosphere, organisms, soil, fossil fuels"},
-        {"term": "Combustion", "def": "Burning — releases carbon stored in fossil fuels or organic matter as CO₂ into the atmosphere"},
-        {"term": "Decomposition", "def": "The breakdown of dead organic matter by decomposers (bacteria and fungi) — releases CO₂ and returns minerals to the soil"}
+        {
+          "term": "Carbon store",
+          "def": "A place where carbon is held for a period of time — atmosphere, organisms, soil, fossil fuels"
+        },
+        {
+          "term": "Combustion",
+          "def": "Burning — releases carbon stored in fossil fuels or organic matter as CO₂ into the atmosphere"
+        },
+        {
+          "term": "Decomposition",
+          "def": "The breakdown of dead organic matter by decomposers (bacteria and fungi) — releases CO₂ and returns minerals to the soil"
+        }
       ],
-      "memTip": "Carbon INTO atmosphere: respiration, combustion, decomposition. Carbon OUT OF atmosphere: photosynthesis. Three in, one out. The problem with fossil fuels is that we're adding carbon that was locked away for millions of years — photosynthesis can't balance it out fast enough."
+      "memTip": "Carbon INTO atmosphere: respiration, combustion, decomposition. Carbon OUT OF atmosphere: photosynthesis."
     },
     {
       "heading": "Human impact on the carbon cycle",
@@ -44,10 +53,16 @@
         "Result: increasing atmospheric CO₂ → enhanced greenhouse effect → climate change"
       ],
       "keyTerms": [
-        {"term": "Greenhouse effect", "def": "The trapping of heat in Earth's atmosphere by greenhouse gases (e.g. CO₂, methane) — essential for life, but enhanced by human activity leading to global warming"},
-        {"term": "Deforestation", "def": "The removal of trees on a large scale — reduces CO₂ absorption and often releases stored carbon"}
+        {
+          "term": "Greenhouse effect",
+          "def": "The trapping of heat in Earth's atmosphere by greenhouse gases (e.g. CO₂, methane) — essential for life, but enhanced by human activity leading to global warming"
+        },
+        {
+          "term": "Deforestation",
+          "def": "The removal of trees on a large scale — reduces CO₂ absorption and often releases stored carbon"
+        }
       ],
-      "memTip": "Balance disrupted by: Burning fossil fuels (adds ancient CO₂) + Deforestation (removes CO₂ absorbers + releases carbon). Both actions increase atmospheric CO₂. Link this to the greenhouse effect and climate change."
+      "memTip": "Balance disrupted by: Burning fossil fuels (adds ancient CO₂) + Deforestation (removes CO₂ absorbers + releases carbon). Both actions increase atmospheric CO₂."
     },
     {
       "heading": "The water cycle — evaporation, condensation and precipitation",
@@ -63,25 +78,61 @@
         "Surface runoff: water flows back to rivers → sea → cycle repeats"
       ],
       "keyTerms": [
-        {"term": "Evaporation", "def": "The conversion of liquid water to water vapour at the water's surface, driven by heat energy from the sun"},
-        {"term": "Transpiration", "def": "The evaporation of water from plant leaves through stomata — a major contributor to atmospheric water vapour"},
-        {"term": "Condensation", "def": "The conversion of water vapour back to liquid water as it cools — forms clouds"},
-        {"term": "Precipitation", "def": "Water falling from clouds as rain, sleet, or snow"}
+        {
+          "term": "Evaporation",
+          "def": "The conversion of liquid water to water vapour at the water's surface, driven by heat energy from the sun"
+        },
+        {
+          "term": "Transpiration",
+          "def": "The evaporation of water from plant leaves through stomata — a major contributor to atmospheric water vapour"
+        },
+        {
+          "term": "Condensation",
+          "def": "The conversion of water vapour back to liquid water as it cools — forms clouds"
+        },
+        {
+          "term": "Precipitation",
+          "def": "Water falling from clouds as rain, sleet, or snow"
+        }
       ],
-      "memTip": "Water cycle: Evaporate up → Condense into clouds → Precipitate back down → Run off to sea → Evaporate again. ECPR — round and round. Transpiration is plants' contribution to evaporation — it's the water-cycle link to your plant biology."
+      "memTip": "Water cycle: Evaporate up → Condense into clouds → Precipitate back down → Run off to sea → Evaporate again. ECPR — round and round."
     }
   ],
   "tables": [
     {
       "title": "Carbon cycle processes",
       "examFlag": true,
-      "headers": ["Process", "Direction of carbon movement", "Organisms involved"],
+      "headers": [
+        "Process",
+        "Direction of carbon movement",
+        "Organisms involved"
+      ],
       "rows": [
-        ["Photosynthesis", "Atmosphere → organisms (CO₂ removed)", "Plants, algae"],
-        ["Respiration", "Organisms → atmosphere (CO₂ released)", "All living organisms"],
-        ["Combustion", "Fossil fuels/organic matter → atmosphere", "Human activity (burning)"],
-        ["Decomposition", "Dead organic matter → atmosphere + soil", "Bacteria and fungi"],
-        ["Feeding", "Between organisms (through food chains)", "All consumers"]
+        [
+          "Photosynthesis",
+          "Atmosphere → organisms (CO₂ removed)",
+          "Plants, algae"
+        ],
+        [
+          "Respiration",
+          "Organisms → atmosphere (CO₂ released)",
+          "All living organisms"
+        ],
+        [
+          "Combustion",
+          "Fossil fuels/organic matter → atmosphere",
+          "Human activity (burning)"
+        ],
+        [
+          "Decomposition",
+          "Dead organic matter → atmosphere + soil",
+          "Bacteria and fungi"
+        ],
+        [
+          "Feeding",
+          "Between organisms (through food chains)",
+          "All consumers"
+        ]
       ]
     }
   ],

@@ -24,9 +24,18 @@
         "Low current → less power wasted as heat in cables: P_lost = I²R (power loss ∝ I²)"
       ],
       "keyTerms": [
-        { "term": "national grid", "def": "The network of cables and transformers that distributes electricity from power stations to consumers across the UK" },
-        { "term": "P = IV", "def": "Power (W) = current (A) × voltage (V); at constant power, higher V means lower I" },
-        { "term": "P_lost = I²R", "def": "Power wasted as heat in cables = current squared × resistance; lower current dramatically reduces heat loss" }
+        {
+          "term": "national grid",
+          "def": "The network of cables and transformers that distributes electricity from power stations to consumers across the UK"
+        },
+        {
+          "term": "P = IV",
+          "def": "Power (W) = current (A) × voltage (V); at constant power, higher V means lower I"
+        },
+        {
+          "term": "P_lost = I²R",
+          "def": "Power wasted as heat in cables = current squared × resistance; lower current dramatically reduces heat loss"
+        }
       ],
       "memTip": "High V → low I → low I²R loss. The grid uses high voltage because it squares the current reduction in cable losses.",
       "tutor_note": "The I²R equation is the key to explaining WHY high voltage — students must go beyond 'less energy is wasted' and show the physics of why lower current reduces heating losses."
@@ -45,10 +54,22 @@
         "Ideal transformer: V₁I₁ = V₂I₂ (power in = power out, assuming 100% efficiency)"
       ],
       "keyTerms": [
-        { "term": "step-up transformer", "def": "A transformer with more turns on the secondary coil than the primary — increases voltage, decreases current" },
-        { "term": "step-down transformer", "def": "A transformer with fewer turns on the secondary than the primary — decreases voltage, increases current" },
-        { "term": "V₁/V₂ = n₁/n₂", "def": "The transformer equation: ratio of voltages equals ratio of turns on each coil" },
-        { "term": "V₁I₁ = V₂I₂", "def": "For an ideal transformer, power input = power output (100% efficient)" }
+        {
+          "term": "step-up transformer",
+          "def": "A transformer with more turns on the secondary coil than the primary — increases voltage, decreases current"
+        },
+        {
+          "term": "step-down transformer",
+          "def": "A transformer with fewer turns on the secondary than the primary — decreases voltage, increases current"
+        },
+        {
+          "term": "V₁/V₂ = n₁/n₂",
+          "def": "The transformer equation: ratio of voltages equals ratio of turns on each coil"
+        },
+        {
+          "term": "V₁I₁ = V₂I₂",
+          "def": "For an ideal transformer, power input = power output (100% efficient)"
+        }
       ],
       "memTip": "Step UP = more turns on secondary → V goes up, I goes down. Step DOWN = fewer turns → V goes down, I goes up.",
       "tutor_note": "A common exam question is to calculate missing values using V₁/V₂ = n₁/n₂, then use V₁I₁ = V₂I₂ to find the secondary current. Practise both steps together."
@@ -68,9 +89,18 @@
         "Nuclear — same steam-turbine-generator chain as fossil fuels; no CO₂ but radioactive waste"
       ],
       "keyTerms": [
-        { "term": "electromagnetic induction", "def": "The process of generating a voltage (and current) by moving a conductor through a magnetic field — how generators work" },
-        { "term": "turbine", "def": "A device with blades that spin when hit by steam, water, or wind — drives a generator to produce electricity" },
-        { "term": "solar photovoltaic (PV)", "def": "Technology that directly converts light energy to electrical energy using semiconductor cells — no turbine needed" }
+        {
+          "term": "electromagnetic induction",
+          "def": "The process of generating a voltage (and current) by moving a conductor through a magnetic field — how generators work"
+        },
+        {
+          "term": "turbine",
+          "def": "A device with blades that spin when hit by steam, water, or wind — drives a generator to produce electricity"
+        },
+        {
+          "term": "solar photovoltaic (PV)",
+          "def": "Technology that directly converts light energy to electrical energy using semiconductor cells — no turbine needed"
+        }
       ],
       "memTip": "MOST energy sources: heat → steam → turbine → generator. Solar PV is the odd one out — straight to electricity.",
       "tutor_note": "Students often forget that nuclear power still uses turbines and steam — it's not fundamentally different from coal, just a different heat source."
@@ -92,12 +122,24 @@
         "Biomass — burns plant material; potentially carbon-neutral; debated sustainability"
       ],
       "keyTerms": [
-        { "term": "renewable energy", "def": "Energy source that is naturally replenished and will not run out — wind, solar, hydro, tidal, biomass" },
-        { "term": "non-renewable energy", "def": "Energy source that will run out — fossil fuels (coal, gas, oil) and nuclear (uranium)" },
-        { "term": "intermittent", "def": "Not always available — solar only works when sunny, wind only when it blows" },
-        { "term": "baseload", "def": "The constant minimum level of electricity demand — met by reliable sources like nuclear and hydroelectric" }
+        {
+          "term": "renewable energy",
+          "def": "Energy source that is naturally replenished and will not run out — wind, solar, hydro, tidal, biomass"
+        },
+        {
+          "term": "non-renewable energy",
+          "def": "Energy source that will run out — fossil fuels (coal, gas, oil) and nuclear (uranium)"
+        },
+        {
+          "term": "intermittent",
+          "def": "Not always available — solar only works when sunny, wind only when it blows"
+        },
+        {
+          "term": "baseload",
+          "def": "The constant minimum level of electricity demand — met by reliable sources like nuclear and hydroelectric"
+        }
       ],
-      "memTip": "Renewables are FREE to run but INTERMITTENT. Non-renewables are RELIABLE but produce CO₂ (or waste). The grid needs both.",
+      "memTip": "Renewables are FREE to run but INTERMITTENT. Non-renewables are RELIABLE but produce CO₂ (or waste).",
       "tutor_note": "6-mark questions often ask for an evaluation of energy sources — students must give both advantages AND disadvantages, and consider reliability, cost, and environmental impact."
     }
   ],
@@ -105,16 +147,79 @@
     {
       "title": "Energy sources — comparison for the national grid",
       "examFlag": true,
-      "headers": ["Energy source", "Renewable?", "CO₂ emissions", "Reliability", "Advantages", "Disadvantages"],
+      "headers": [
+        "Energy source",
+        "Renewable?",
+        "CO₂ emissions",
+        "Reliability",
+        "Advantages",
+        "Disadvantages"
+      ],
       "rows": [
-        ["Coal", "No", "Very high", "Reliable (on demand)", "Cheap fuel; existing infrastructure", "High CO₂; air pollution; being phased out"],
-        ["Natural gas", "No", "Moderate", "Flexible, on demand", "Lower CO₂ than coal; quick to start up", "Still emits CO₂; gas prices volatile"],
-        ["Nuclear", "No", "Near zero (generation)", "Very reliable (baseload)", "No CO₂ in generation; long lifespan", "Radioactive waste; high build cost; slow to start"],
-        ["Wind", "Yes", "Zero", "Intermittent", "Cheapest new electricity (UK); no fuel cost", "Only works when wind blows; visual impact"],
-        ["Solar PV", "Yes", "Zero", "Intermittent", "No moving parts; low maintenance; scalable", "Only works in daylight; efficiency ~15–20%"],
-        ["Hydroelectric", "Yes", "Zero", "Reliable and controllable", "Can store energy (pumped hydro); no fuel", "Needs suitable geography; dam affects ecosystems"],
-        ["Tidal", "Yes", "Zero", "Very predictable", "Tides are entirely predictable; long lifespan", "Very expensive to build; limited suitable sites"],
-        ["Biomass", "Potentially", "Low–moderate", "Reliable (on demand)", "Can use existing coal power stations", "Land use; CO₂ neutrality is debated"]
+        [
+          "Coal",
+          "No",
+          "Very high",
+          "Reliable (on demand)",
+          "Cheap fuel; existing infrastructure",
+          "High CO₂; air pollution; being phased out"
+        ],
+        [
+          "Natural gas",
+          "No",
+          "Moderate",
+          "Flexible, on demand",
+          "Lower CO₂ than coal; quick to start up",
+          "Still emits CO₂; gas prices volatile"
+        ],
+        [
+          "Nuclear",
+          "No",
+          "Near zero (generation)",
+          "Very reliable (baseload)",
+          "No CO₂ in generation; long lifespan",
+          "Radioactive waste; high build cost; slow to start"
+        ],
+        [
+          "Wind",
+          "Yes",
+          "Zero",
+          "Intermittent",
+          "Cheapest new electricity (UK); no fuel cost",
+          "Only works when wind blows; visual impact"
+        ],
+        [
+          "Solar PV",
+          "Yes",
+          "Zero",
+          "Intermittent",
+          "No moving parts; low maintenance; scalable",
+          "Only works in daylight; efficiency ~15–20%"
+        ],
+        [
+          "Hydroelectric",
+          "Yes",
+          "Zero",
+          "Reliable and controllable",
+          "Can store energy (pumped hydro); no fuel",
+          "Needs suitable geography; dam affects ecosystems"
+        ],
+        [
+          "Tidal",
+          "Yes",
+          "Zero",
+          "Very predictable",
+          "Tides are entirely predictable; long lifespan",
+          "Very expensive to build; limited suitable sites"
+        ],
+        [
+          "Biomass",
+          "Potentially",
+          "Low–moderate",
+          "Reliable (on demand)",
+          "Can use existing coal power stations",
+          "Land use; CO₂ neutrality is debated"
+        ]
       ]
     }
   ],

@@ -23,10 +23,16 @@
         "If two populations can no longer produce fertile offspring together → they are different species"
       ],
       "keyTerms": [
-        {"term": "Species", "def": "A group of organisms that can interbreed with each other to produce fertile offspring"},
-        {"term": "Fertile offspring", "def": "Offspring that are capable of reproducing themselves — key criterion for classifying organisms as the same species"}
+        {
+          "term": "Species",
+          "def": "A group of organisms that can interbreed with each other to produce fertile offspring"
+        },
+        {
+          "term": "Fertile offspring",
+          "def": "Offspring that are capable of reproducing themselves — key criterion for classifying organisms as the same species"
+        }
       ],
-      "memTip": "Species = can breed + fertile offspring. Two criteria, both needed. The 'fertile' part catches most people — a horse and donkey produce a mule, but it's sterile, so they're still two different species."
+      "memTip": "Species = can breed + fertile offspring. Two criteria, both needed."
     },
     {
       "heading": "Geographic isolation — the starting point of speciation",
@@ -42,11 +48,20 @@
         "Over generations, genetic differences accumulate in each group"
       ],
       "keyTerms": [
-        {"term": "Geographic isolation", "def": "The separation of a population by a physical barrier, preventing interbreeding and creating separate gene pools"},
-        {"term": "Gene pool", "def": "All the alleles of all the genes in a population at a given time"},
-        {"term": "Selection pressure", "def": "An environmental factor (predation, disease, food availability, climate) that determines which individuals survive and reproduce"}
+        {
+          "term": "Geographic isolation",
+          "def": "The separation of a population by a physical barrier, preventing interbreeding and creating separate gene pools"
+        },
+        {
+          "term": "Gene pool",
+          "def": "All the alleles of all the genes in a population at a given time"
+        },
+        {
+          "term": "Selection pressure",
+          "def": "An environmental factor (predation, disease, food availability, climate) that determines which individuals survive and reproduce"
+        }
       ],
-      "memTip": "Isolation → separate gene pools → different mutations → different selection pressures → different adaptations. Draw it as a timeline: one population → barrier appears → two groups → each evolves separately → can't breed = speciation. The barrier is always the trigger."
+      "memTip": "Isolation → separate gene pools → different mutations → different selection pressures → different adaptations. Draw it as a timeline: one population → barrier appears → two groups → each evolves separately → can't breed = speciation."
     },
     {
       "heading": "Reproductive isolation and the formation of a new species",
@@ -61,10 +76,16 @@
         "Key test: can they produce fertile offspring? No = different species"
       ],
       "keyTerms": [
-        {"term": "Reproductive isolation", "def": "When two populations can no longer interbreed to produce fertile offspring, even if they come into contact — the defining point of speciation"},
-        {"term": "Speciation", "def": "The formation of a new species, resulting from populations evolving in isolation until they become reproductively isolated from each other"}
+        {
+          "term": "Reproductive isolation",
+          "def": "When two populations can no longer interbreed to produce fertile offspring, even if they come into contact — the defining point of speciation"
+        },
+        {
+          "term": "Speciation",
+          "def": "The formation of a new species, resulting from populations evolving in isolation until they become reproductively isolated from each other"
+        }
       ],
-      "memTip": "The sequence: Geographic isolation → separate evolution → Reproductive isolation → New species. Geographic isolation is physical (mountain, sea). Reproductive isolation is biological (can't breed successfully). Reproductive isolation = the finish line of speciation."
+      "memTip": "The sequence: Geographic isolation → separate evolution → Reproductive isolation → New species. Geographic isolation is physical (mountain, sea)."
     },
     {
       "heading": "Evidence for evolution and speciation",
@@ -80,9 +101,18 @@
         "Darwin and Wallace both independently developed natural selection theory"
       ],
       "keyTerms": [
-        {"term": "Fossil record", "def": "The collection of preserved remains or traces of organisms from the past, showing how life has changed over time"},
-        {"term": "Common ancestor", "def": "A species from which two or more later species both descended"},
-        {"term": "Comparative anatomy", "def": "The comparison of body structures across different species to identify evolutionary relationships"}
+        {
+          "term": "Fossil record",
+          "def": "The collection of preserved remains or traces of organisms from the past, showing how life has changed over time"
+        },
+        {
+          "term": "Common ancestor",
+          "def": "A species from which two or more later species both descended"
+        },
+        {
+          "term": "Comparative anatomy",
+          "def": "The comparison of body structures across different species to identify evolutionary relationships"
+        }
       ],
       "memTip": "Three evidence types: Fossils (show change over time), DNA/proteins (show relatedness), Anatomy (similar structures = common ancestor). The closer the DNA match, the more recently two species diverged from a common ancestor."
     }
@@ -91,13 +121,37 @@
     {
       "title": "Steps in speciation",
       "examFlag": true,
-      "headers": ["Step", "What happens", "Key term"],
+      "headers": [
+        "Step",
+        "What happens",
+        "Key term"
+      ],
       "rows": [
-        ["1. Isolation", "Physical barrier splits one population into two", "Geographic isolation"],
-        ["2. Separate gene pools", "Each group has mutations independently; no gene flow between groups", "Gene pool"],
-        ["3. Different selection", "Different environments favour different alleles in each group", "Selection pressure"],
-        ["4. Genetic divergence", "Populations accumulate different genetic differences over generations", "Variation"],
-        ["5. Reproductive isolation", "Groups can no longer produce fertile offspring together", "Speciation"]
+        [
+          "1. Isolation",
+          "Physical barrier splits one population into two",
+          "Geographic isolation"
+        ],
+        [
+          "2. Separate gene pools",
+          "Each group has mutations independently; no gene flow between groups",
+          "Gene pool"
+        ],
+        [
+          "3. Different selection",
+          "Different environments favour different alleles in each group",
+          "Selection pressure"
+        ],
+        [
+          "4. Genetic divergence",
+          "Populations accumulate different genetic differences over generations",
+          "Variation"
+        ],
+        [
+          "5. Reproductive isolation",
+          "Groups can no longer produce fertile offspring together",
+          "Speciation"
+        ]
       ]
     }
   ],

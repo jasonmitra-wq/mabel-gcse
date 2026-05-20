@@ -26,9 +26,18 @@
         "Energy released as kinetic energy of fragments and gamma radiation"
       ],
       "keyTerms": [
-        { "term": "nuclear fission", "def": "A large nucleus absorbs a neutron and splits into two smaller nuclei, releasing 2–3 neutrons and a large amount of energy" },
-        { "term": "fission fragment", "def": "One of the two smaller nuclei produced when a large nucleus undergoes fission; typically radioactive" },
-        { "term": "uranium-235", "def": "A fissile isotope used as fuel in nuclear reactors; splits when it absorbs a slow neutron" }
+        {
+          "term": "nuclear fission",
+          "def": "A large nucleus absorbs a neutron and splits into two smaller nuclei, releasing 2–3 neutrons and a large amount of energy"
+        },
+        {
+          "term": "fission fragment",
+          "def": "One of the two smaller nuclei produced when a large nucleus undergoes fission; typically radioactive"
+        },
+        {
+          "term": "uranium-235",
+          "def": "A fissile isotope used as fuel in nuclear reactors; splits when it absorbs a slow neutron"
+        }
       ],
       "memTip": "Fission = split. Large nucleus + neutron → two smaller nuclei + 2–3 neutrons + enormous energy.",
       "tutor_note": "Mabel should be able to describe the process step by step: neutron absorbed → nucleus splits → new nuclei + more neutrons + energy — in that order."
@@ -47,9 +56,18 @@
         "Moderator: slows neutrons to speed absorbed by U-235 (usually water or graphite)"
       ],
       "keyTerms": [
-        { "term": "chain reaction", "def": "Each fission event releases neutrons that trigger further fissions — self-sustaining if controlled, explosive if uncontrolled" },
-        { "term": "control rods", "def": "Rods of boron or cadmium inserted into a reactor to absorb neutrons and control the rate of fission" },
-        { "term": "moderator", "def": "Material (water or graphite) that slows neutrons to the correct speed for absorption by U-235" }
+        {
+          "term": "chain reaction",
+          "def": "Each fission event releases neutrons that trigger further fissions — self-sustaining if controlled, explosive if uncontrolled"
+        },
+        {
+          "term": "control rods",
+          "def": "Rods of boron or cadmium inserted into a reactor to absorb neutrons and control the rate of fission"
+        },
+        {
+          "term": "moderator",
+          "def": "Material (water or graphite) that slows neutrons to the correct speed for absorption by U-235"
+        }
       ],
       "memTip": "Control rods in → fewer neutrons → reaction slows. Control rods out → more neutrons → reaction speeds up.",
       "tutor_note": "Mabel should be able to draw/describe the chain reaction diagram: one fission → 2–3 neutrons → more fissions — showing why it multiplies."
@@ -68,11 +86,20 @@
         "Not yet commercially viable — requires ~100 million °C to overcome electrostatic repulsion on Earth"
       ],
       "keyTerms": [
-        { "term": "nuclear fusion", "def": "Two small nuclei combine to form a larger nucleus, releasing energy — the process that powers stars" },
-        { "term": "deuterium and tritium", "def": "Hydrogen isotopes used as fuel in fusion reactions; abundant and available from seawater (deuterium)" },
-        { "term": "electrostatic repulsion", "def": "The force between two positively charged nuclei that must be overcome for fusion to occur — requires very high temperatures" }
+        {
+          "term": "nuclear fusion",
+          "def": "Two small nuclei combine to form a larger nucleus, releasing energy — the process that powers stars"
+        },
+        {
+          "term": "deuterium and tritium",
+          "def": "Hydrogen isotopes used as fuel in fusion reactions; abundant and available from seawater (deuterium)"
+        },
+        {
+          "term": "electrostatic repulsion",
+          "def": "The force between two positively charged nuclei that must be overcome for fusion to occur — requires very high temperatures"
+        }
       ],
-      "memTip": "Fusion = join. Small + small → bigger + energy. Powers the Sun. Needs extreme heat to overcome repulsion between positive nuclei.",
+      "memTip": "Fusion = join. Small + small → bigger + energy.",
       "tutor_note": "Mabel should be clear on WHY fusion needs such high temperatures: to give nuclei enough kinetic energy to overcome the electrostatic repulsion and get close enough to fuse."
     },
     {
@@ -89,10 +116,16 @@
         "Nuclear waste from fission must be stored safely for thousands of years — major political/engineering challenge"
       ],
       "keyTerms": [
-        { "term": "nuclear waste", "def": "Radioactive fission fragments and other materials from nuclear reactors — remain hazardous for thousands of years" },
-        { "term": "E = mc²", "def": "Einstein's equation showing the relationship between mass and energy — a tiny loss of mass produces enormous energy in nuclear reactions" }
+        {
+          "term": "nuclear waste",
+          "def": "Radioactive fission fragments and other materials from nuclear reactors — remain hazardous for thousands of years"
+        },
+        {
+          "term": "E = mc²",
+          "def": "Einstein's equation showing the relationship between mass and energy — a tiny loss of mass produces enormous energy in nuclear reactions"
+        }
       ],
-      "memTip": "Fission = proven but waste problem. Fusion = ideal but not yet working commercially. Both: no CO₂ during operation.",
+      "memTip": "Fission = proven but waste problem. Fusion = ideal but not yet working commercially.",
       "tutor_note": "Evaluation questions about nuclear power are common 6-mark questions — Mabel should practise writing a balanced argument covering advantages and disadvantages of fission, then comparing with fusion."
     }
   ],
@@ -100,16 +133,52 @@
     {
       "title": "Fission vs fusion comparison",
       "examFlag": true,
-      "headers": ["Feature", "Fission", "Fusion"],
+      "headers": [
+        "Feature",
+        "Fission",
+        "Fusion"
+      ],
       "rows": [
-        ["Process", "Large nucleus splits into two smaller ones", "Two small nuclei combine into a larger one"],
-        ["Fuel", "Uranium-235 or Plutonium-239", "Deuterium and tritium (hydrogen isotopes)"],
-        ["Neutrons", "Absorbs 1, releases 2–3", "Releases 1 (in D-T reaction)"],
-        ["Energy released", "~200 MeV per reaction", "~17.6 MeV per D-T reaction, but more per kg of fuel"],
-        ["Current status", "Commercial power stations in use globally", "Not yet commercially viable"],
-        ["Conditions needed", "Achievable in a reactor", "~100 million °C — extremely difficult to sustain"],
-        ["Radioactive waste", "Long-lived fission fragments — major problem", "Short-lived or none — much smaller problem"],
-        ["CO₂ emissions", "None during operation", "None during operation"]
+        [
+          "Process",
+          "Large nucleus splits into two smaller ones",
+          "Two small nuclei combine into a larger one"
+        ],
+        [
+          "Fuel",
+          "Uranium-235 or Plutonium-239",
+          "Deuterium and tritium (hydrogen isotopes)"
+        ],
+        [
+          "Neutrons",
+          "Absorbs 1, releases 2–3",
+          "Releases 1 (in D-T reaction)"
+        ],
+        [
+          "Energy released",
+          "~200 MeV per reaction",
+          "~17.6 MeV per D-T reaction, but more per kg of fuel"
+        ],
+        [
+          "Current status",
+          "Commercial power stations in use globally",
+          "Not yet commercially viable"
+        ],
+        [
+          "Conditions needed",
+          "Achievable in a reactor",
+          "~100 million °C — extremely difficult to sustain"
+        ],
+        [
+          "Radioactive waste",
+          "Long-lived fission fragments — major problem",
+          "Short-lived or none — much smaller problem"
+        ],
+        [
+          "CO₂ emissions",
+          "None during operation",
+          "None during operation"
+        ]
       ]
     }
   ],

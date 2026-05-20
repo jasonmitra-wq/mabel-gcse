@@ -24,9 +24,18 @@
         "High SHC = good heat store; used in central heating, car cooling systems, coastal climate buffering"
       ],
       "keyTerms": [
-        { "term": "specific heat capacity (c)", "def": "The energy required to raise the temperature of 1 kg of a substance by 1°C; unit: J/kg°C" },
-        { "term": "ΔE = mcΔθ", "def": "Change in thermal energy = mass × specific heat capacity × temperature change" },
-        { "term": "Δθ", "def": "Change in temperature (°C or K) = final temperature − initial temperature" }
+        {
+          "term": "specific heat capacity (c)",
+          "def": "The energy required to raise the temperature of 1 kg of a substance by 1°C; unit: J/kg°C"
+        },
+        {
+          "term": "ΔE = mcΔθ",
+          "def": "Change in thermal energy = mass × specific heat capacity × temperature change"
+        },
+        {
+          "term": "Δθ",
+          "def": "Change in temperature (°C or K) = final temperature − initial temperature"
+        }
       ],
       "memTip": "ΔE = mcΔθ. Say it as 'em-see-delta-theta'. m = mass, c = SHC, Δθ = temp change.",
       "tutor_note": "Students often use the final temperature instead of the temperature change — stress that Δθ = T_final − T_initial every time."
@@ -45,7 +54,10 @@
         "Example: 2 kg water, 20°C to 100°C → ΔE = 2 × 4200 × 80 = 672,000 J"
       ],
       "keyTerms": [
-        { "term": "ΔE = mcΔθ rearrangements", "def": "c = ΔE/(mΔθ); m = ΔE/(cΔθ); Δθ = ΔE/(mc)" }
+        {
+          "term": "ΔE = mcΔθ rearrangements",
+          "def": "c = ΔE/(mΔθ); m = ΔE/(cΔθ); Δθ = ΔE/(mc)"
+        }
       ],
       "memTip": "To find c: c = ΔE divided by (m times Δθ). Write the rearrangement before substituting numbers.",
       "tutor_note": "Worked examples 2 and 3 are great exam question styles — cooling (energy released) and finding an unknown SHC. Practise all three types."
@@ -65,9 +77,18 @@
         "Improvement: insulate the sample well; stir water; wait for thermal equilibrium before reading"
       ],
       "keyTerms": [
-        { "term": "E = IVt", "def": "Electrical energy (J) = current (A) × voltage (V) × time (s); used to calculate energy supplied in the SHC practical" },
-        { "term": "joulemeter", "def": "An instrument that directly measures electrical energy in joules" },
-        { "term": "thermal equilibrium", "def": "When two objects are at the same temperature and no net heat transfer occurs between them" }
+        {
+          "term": "E = IVt",
+          "def": "Electrical energy (J) = current (A) × voltage (V) × time (s); used to calculate energy supplied in the SHC practical"
+        },
+        {
+          "term": "joulemeter",
+          "def": "An instrument that directly measures electrical energy in joules"
+        },
+        {
+          "term": "thermal equilibrium",
+          "def": "When two objects are at the same temperature and no net heat transfer occurs between them"
+        }
       ],
       "memTip": "For the practical: E = IVt to find energy in, then c = E/(mΔθ). Remember to insulate to reduce heat loss error.",
       "tutor_note": "This practical almost always appears in Paper 1. Students should be able to describe the method, identify two sources of error, and suggest improvements with scientific reasoning."
@@ -86,11 +107,20 @@
         "High SHC applications: central heating water, coastal climate buffering, solar thermal panels"
       ],
       "keyTerms": [
-        { "term": "internal energy", "def": "The sum of the kinetic and potential energies of all particles in a substance — the thermal store" },
-        { "term": "temperature", "def": "A measure of the average kinetic energy of the particles in a substance; unit: °C or K" },
-        { "term": "thermal equilibrium", "def": "When two objects are at the same temperature and no net heat transfer occurs between them" }
+        {
+          "term": "internal energy",
+          "def": "The sum of the kinetic and potential energies of all particles in a substance — the thermal store"
+        },
+        {
+          "term": "temperature",
+          "def": "A measure of the average kinetic energy of the particles in a substance; unit: °C or K"
+        },
+        {
+          "term": "thermal equilibrium",
+          "def": "When two objects are at the same temperature and no net heat transfer occurs between them"
+        }
       ],
-      "memTip": "Temperature = average KE per particle. Internal energy = total energy of ALL particles. Don't confuse them.",
+      "memTip": "Temperature = average KE per particle. Internal energy = total energy of ALL particles.",
       "tutor_note": "The distinction between temperature and internal energy trips up many students — a large cold lake has more internal energy than a tiny hot spark, even though the spark is at a higher temperature."
     }
   ],
@@ -98,14 +128,42 @@
     {
       "title": "Specific heat capacities of common materials",
       "examFlag": true,
-      "headers": ["Material", "Specific heat capacity (J/kg°C)", "Comparative note"],
+      "headers": [
+        "Material",
+        "Specific heat capacity (J/kg°C)",
+        "Comparative note"
+      ],
       "rows": [
-        ["Water", "4200", "Highest of common substances — excellent heat store and coolant"],
-        ["Aluminium", "900", "Low SHC — heats and cools quickly; used in engine parts and cookware"],
-        ["Iron / steel", "450", "Moderate — used in radiators and structural applications"],
-        ["Copper", "390", "Low SHC — heats quickly; used in electrical wiring and heat exchangers"],
-        ["Concrete", "880", "Useful thermal mass in buildings — stores heat from sunlight during the day"],
-        ["Air (at const. pressure)", "1000", "Relatively low — air heats and cools quickly compared to water"]
+        [
+          "Water",
+          "4200",
+          "Highest of common substances — excellent heat store and coolant"
+        ],
+        [
+          "Aluminium",
+          "900",
+          "Low SHC — heats and cools quickly; used in engine parts and cookware"
+        ],
+        [
+          "Iron / steel",
+          "450",
+          "Moderate — used in radiators and structural applications"
+        ],
+        [
+          "Copper",
+          "390",
+          "Low SHC — heats quickly; used in electrical wiring and heat exchangers"
+        ],
+        [
+          "Concrete",
+          "880",
+          "Useful thermal mass in buildings — stores heat from sunlight during the day"
+        ],
+        [
+          "Air (at const. pressure)",
+          "1000",
+          "Relatively low — air heats and cools quickly compared to water"
+        ]
       ]
     }
   ],

@@ -25,12 +25,24 @@
         "Decomposers: bacteria/fungi break down dead matter → return minerals to soil"
       ],
       "keyTerms": [
-        {"term": "Producer", "def": "An organism that makes its own food using light energy (photosynthesis) — the first trophic level in any food chain"},
-        {"term": "Consumer", "def": "An organism that obtains energy by eating other organisms"},
-        {"term": "Trophic level", "def": "A feeding level in a food chain — producers are at trophic level 1, primary consumers at level 2, etc."},
-        {"term": "Decomposer", "def": "An organism (bacterium or fungus) that breaks down dead organic matter, releasing minerals back into the ecosystem"}
+        {
+          "term": "Producer",
+          "def": "An organism that makes its own food using light energy (photosynthesis) — the first trophic level in any food chain"
+        },
+        {
+          "term": "Consumer",
+          "def": "An organism that obtains energy by eating other organisms"
+        },
+        {
+          "term": "Trophic level",
+          "def": "A feeding level in a food chain — producers are at trophic level 1, primary consumers at level 2, etc."
+        },
+        {
+          "term": "Decomposer",
+          "def": "An organism (bacterium or fungus) that breaks down dead organic matter, releasing minerals back into the ecosystem"
+        }
       ],
-      "memTip": "Food chain = energy flowing from the sun through producers → consumers. Decomposers don't fit in a chain — they break down everything at every level. Producer → Primary → Secondary → Tertiary = levels 1 → 2 → 3 → 4."
+      "memTip": "Food chain = energy flowing from the sun through producers → consumers. Decomposers don't fit in a chain — they break down everything at every level."
     },
     {
       "heading": "Energy transfer and efficiency",
@@ -46,10 +58,16 @@
         "Low efficiency limits food chain length — usually max 4–5 trophic levels"
       ],
       "keyTerms": [
-        {"term": "Energy transfer efficiency", "def": "The percentage of energy from one trophic level that is passed on to the next — typically around 10%"},
-        {"term": "Biomass", "def": "The total mass of living material in organisms at a given trophic level — decreases at each level up the food chain"}
+        {
+          "term": "Energy transfer efficiency",
+          "def": "The percentage of energy from one trophic level that is passed on to the next — typically around 10%"
+        },
+        {
+          "term": "Biomass",
+          "def": "The total mass of living material in organisms at a given trophic level — decreases at each level up the food chain"
+        }
       ],
-      "memTip": "10% rule: each level passes on about 10% of its energy. So if producers have 10,000 J, primary consumers have ~1,000 J, secondary consumers ~100 J, tertiary ~10 J. By level 5 there's almost nothing left. That's why food chains stop at 4–5 links."
+      "memTip": "10% rule: each level passes on about 10% of its energy. So if producers have 10,000 J, primary consumers have ~1,000 J, secondary consumers ~100 J, tertiary ~10 J."
     },
     {
       "heading": "Pyramids of biomass and energy",
@@ -65,10 +83,16 @@
         "Draw with producers at the bottom — never at the top"
       ],
       "keyTerms": [
-        {"term": "Pyramid of biomass", "def": "A diagram showing the total mass of organisms at each trophic level — producers at the base, always pyramid-shaped"},
-        {"term": "Pyramid of numbers", "def": "A diagram showing the number of organisms at each trophic level — can be inverted if producers are very large organisms (e.g. a single tree)"}
+        {
+          "term": "Pyramid of biomass",
+          "def": "A diagram showing the total mass of organisms at each trophic level — producers at the base, always pyramid-shaped"
+        },
+        {
+          "term": "Pyramid of numbers",
+          "def": "A diagram showing the number of organisms at each trophic level — can be inverted if producers are very large organisms (e.g. a single tree)"
+        }
       ],
-      "memTip": "Biomass pyramid = almost always true pyramid shape. Numbers pyramid can be inverted. Energy pyramid = always pyramid. If the question says 'draw a pyramid', always put producers at the BOTTOM. Never invert a biomass or energy pyramid."
+      "memTip": "Biomass pyramid = almost always true pyramid shape. Numbers pyramid can be inverted."
     },
     {
       "heading": "Food webs and the consequences of change",
@@ -84,21 +108,49 @@
         "Must trace effects through all connected species — not just one step"
       ],
       "keyTerms": [
-        {"term": "Food web", "def": "A diagram showing the feeding relationships between many species in an ecosystem — a network of overlapping food chains"}
+        {
+          "term": "Food web",
+          "def": "A diagram showing the feeding relationships between many species in an ecosystem — a network of overlapping food chains"
+        }
       ],
-      "memTip": "Food web questions = follow the arrows. Arrow direction = energy flow = who eats who. If rabbits disappear: foxes have less food (↓), grass/plants have less herbivores eating them (↑). Always check both directions — what was eating the rabbit, and what was the rabbit eating?"
+      "memTip": "Food web questions = follow the arrows. Arrow direction = energy flow = who eats who."
     }
   ],
   "tables": [
     {
       "title": "Energy loss at each trophic level",
       "examFlag": true,
-      "headers": ["Trophic level", "Example", "Energy available (kJ)", "% lost to next level"],
+      "headers": [
+        "Trophic level",
+        "Example",
+        "Energy available (kJ)",
+        "% lost to next level"
+      ],
       "rows": [
-        ["Producer (level 1)", "Grass", "10,000", "~90% lost"],
-        ["Primary consumer (level 2)", "Rabbit", "1,000", "~90% lost"],
-        ["Secondary consumer (level 3)", "Fox", "100", "~90% lost"],
-        ["Tertiary consumer (level 4)", "Eagle", "10", "—"]
+        [
+          "Producer (level 1)",
+          "Grass",
+          "10,000",
+          "~90% lost"
+        ],
+        [
+          "Primary consumer (level 2)",
+          "Rabbit",
+          "1,000",
+          "~90% lost"
+        ],
+        [
+          "Secondary consumer (level 3)",
+          "Fox",
+          "100",
+          "~90% lost"
+        ],
+        [
+          "Tertiary consumer (level 4)",
+          "Eagle",
+          "10",
+          "—"
+        ]
       ]
     }
   ],

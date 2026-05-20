@@ -24,11 +24,20 @@
         "Fresh water is easier and cheaper to treat than sea water"
       ],
       "keyTerms": [
-        {"term": "Potable water", "def": "Water that is safe to drink — has low dissolved mineral levels and no harmful microorganisms; not necessarily chemically pure"},
-        {"term": "Pure water", "def": "Water containing only H₂O molecules — no dissolved substances; not the same as potable water"},
-        {"term": "Groundwater", "def": "Water that has collected in underground rock layers (aquifers), a source of potable water"}
+        {
+          "term": "Potable water",
+          "def": "Water that is safe to drink — has low dissolved mineral levels and no harmful microorganisms; not necessarily chemically pure"
+        },
+        {
+          "term": "Pure water",
+          "def": "Water containing only H₂O molecules — no dissolved substances; not the same as potable water"
+        },
+        {
+          "term": "Groundwater",
+          "def": "Water that has collected in underground rock layers (aquifers), a source of potable water"
+        }
       ],
-      "memTip": "Potable ≠ pure. Pure = H₂O only. Potable = safe to drink (has minerals dissolved in it, just no harmful ones). You drink potable water every day — it's not pure. The water from a chemistry lab tap would be pure, but that's not what you want to drink."
+      "memTip": "Potable ≠ pure. Pure = H₂O only."
     },
     {
       "heading": "Stages of water treatment",
@@ -44,11 +53,20 @@
         "Result: potable water (safe to drink)"
       ],
       "keyTerms": [
-        {"term": "Sedimentation", "def": "The process of allowing particles to settle out of water in large tanks — the first stage of water treatment"},
-        {"term": "Filtration", "def": "Passing water through sand and gravel layers to remove smaller suspended particles — the second stage of water treatment"},
-        {"term": "Chlorination", "def": "Adding controlled amounts of chlorine to water to kill harmful microorganisms — the final stage of water treatment"}
+        {
+          "term": "Sedimentation",
+          "def": "The process of allowing particles to settle out of water in large tanks — the first stage of water treatment"
+        },
+        {
+          "term": "Filtration",
+          "def": "Passing water through sand and gravel layers to remove smaller suspended particles — the second stage of water treatment"
+        },
+        {
+          "term": "Chlorination",
+          "def": "Adding controlled amounts of chlorine to water to kill harmful microorganisms — the final stage of water treatment"
+        }
       ],
-      "memTip": "Three stages in order: Sediment → Filter → Chlorinate. SFC. Sediment out big particles, filter out small ones, chlorine kills the microorganisms. Remember: chlorination is the biological safety step — the first two are physical."
+      "memTip": "Three stages in order: Sediment → Filter → Chlorinate. SFC."
     },
     {
       "heading": "Desalination — treating sea water",
@@ -65,23 +83,52 @@
         "Used in water-scarce regions where fresh water sources are unavailable"
       ],
       "keyTerms": [
-        {"term": "Desalination", "def": "The process of removing dissolved salts from sea water to produce potable water — by distillation or reverse osmosis"},
-        {"term": "Reverse osmosis", "def": "A desalination method that forces sea water through a semi-permeable membrane under high pressure, separating pure water from dissolved salts"},
-        {"term": "Distillation", "def": "Separation of a liquid mixture by evaporation and condensation — used in desalination to separate pure water from salt"}
+        {
+          "term": "Desalination",
+          "def": "The process of removing dissolved salts from sea water to produce potable water — by distillation or reverse osmosis"
+        },
+        {
+          "term": "Reverse osmosis",
+          "def": "A desalination method that forces sea water through a semi-permeable membrane under high pressure, separating pure water from dissolved salts"
+        },
+        {
+          "term": "Distillation",
+          "def": "Separation of a liquid mixture by evaporation and condensation — used in desalination to separate pure water from salt"
+        }
       ],
-      "memTip": "Desalination = de-salt-ination. Two methods: Distillation (boil, collect steam) or Reverse osmosis (pressure through membrane). Both = expensive + energy-intensive. Normal water treatment is cheap because fresh water doesn't have much salt to start with."
+      "memTip": "Desalination = de-salt-ination. Two methods: Distillation (boil, collect steam) or Reverse osmosis (pressure through membrane)."
     }
   ],
   "tables": [
     {
       "title": "Water treatment — fresh water vs sea water",
       "examFlag": true,
-      "headers": ["Feature", "Fresh water (rivers/groundwater)", "Sea water"],
+      "headers": [
+        "Feature",
+        "Fresh water (rivers/groundwater)",
+        "Sea water"
+      ],
       "rows": [
-        ["Treatment needed", "Sedimentation → filtration → chlorination", "Desalination (distillation or reverse osmosis)"],
-        ["Salt removal required?", "No (low dissolved salts)", "Yes (very high salt content)"],
-        ["Cost", "Relatively cheap", "Expensive and energy-intensive"],
-        ["Where used", "Most developed countries with rivers/lakes", "Water-scarce regions (e.g. Middle East)"]
+        [
+          "Treatment needed",
+          "Sedimentation → filtration → chlorination",
+          "Desalination (distillation or reverse osmosis)"
+        ],
+        [
+          "Salt removal required?",
+          "No (low dissolved salts)",
+          "Yes (very high salt content)"
+        ],
+        [
+          "Cost",
+          "Relatively cheap",
+          "Expensive and energy-intensive"
+        ],
+        [
+          "Where used",
+          "Most developed countries with rivers/lakes",
+          "Water-scarce regions (e.g. Middle East)"
+        ]
       ]
     }
   ],

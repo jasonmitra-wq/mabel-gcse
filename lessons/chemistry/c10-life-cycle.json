@@ -24,10 +24,16 @@
         "Stage 4 — Disposal: landfill, incineration, recycling, or biodegradation"
       ],
       "keyTerms": [
-        {"term": "Life cycle assessment (LCA)", "def": "A systematic method for evaluating the total environmental impact of a product across all four stages of its life: extraction, manufacture, use, and disposal"},
-        {"term": "Carbon footprint", "def": "The total amount of CO₂ (and equivalent greenhouse gases) produced through all stages of a product's or activity's life cycle"}
+        {
+          "term": "Life cycle assessment (LCA)",
+          "def": "A systematic method for evaluating the total environmental impact of a product across all four stages of its life: extraction, manufacture, use, and disposal"
+        },
+        {
+          "term": "Carbon footprint",
+          "def": "The total amount of CO₂ (and equivalent greenhouse gases) produced through all stages of a product's or activity's life cycle"
+        }
       ],
-      "memTip": "Four LCA stages: EMUD — Extraction, Manufacture, Use, Disposal. At each stage, think: What energy is used? What pollution is produced? What resources are consumed? What waste results?"
+      "memTip": "Four LCA stages: EMUD — Extraction, Manufacture, Use, Disposal. At each stage, think: What energy is used?"
     },
     {
       "heading": "Comparing products using LCA",
@@ -43,10 +49,16 @@
         "LCA is not perfectly objective — some impacts are hard to quantify; data can be selective"
       ],
       "keyTerms": [
-        {"term": "Biodegradable", "def": "A material that can be broken down by microorganisms into simpler substances — biodegradable waste causes less long-term environmental damage"},
-        {"term": "Non-biodegradable", "def": "A material that cannot be broken down by microorganisms — e.g. most plastics; accumulates in the environment"}
+        {
+          "term": "Biodegradable",
+          "def": "A material that can be broken down by microorganisms into simpler substances — biodegradable waste causes less long-term environmental damage"
+        },
+        {
+          "term": "Non-biodegradable",
+          "def": "A material that cannot be broken down by microorganisms — e.g. most plastics; accumulates in the environment"
+        }
       ],
-      "memTip": "When comparing with LCA: don't just look at one stage. A paper bag uses more energy to make, but biodegrades. A plastic bag uses less energy to make, but persists for centuries. Which is 'better' depends on how you weigh the stages — and AQA will ask you to evaluate both."
+      "memTip": "When comparing with LCA: don't just look at one stage. A paper bag uses more energy to make, but biodegrades."
     },
     {
       "heading": "Reduce, reuse, recycle — the waste hierarchy",
@@ -63,22 +75,48 @@
         "Recycling reduces landfill, pollution, and demand for finite resources"
       ],
       "keyTerms": [
-        {"term": "Waste hierarchy", "def": "The order of preference for dealing with waste: reduce → reuse → recycle → recovery → disposal (landfill being last resort)"},
-        {"term": "Recycling", "def": "Collecting and reprocessing used materials into new products, reducing the demand for raw material extraction"}
+        {
+          "term": "Waste hierarchy",
+          "def": "The order of preference for dealing with waste: reduce → reuse → recycle → recovery → disposal (landfill being last resort)"
+        },
+        {
+          "term": "Recycling",
+          "def": "Collecting and reprocessing used materials into new products, reducing the demand for raw material extraction"
+        }
       ],
-      "memTip": "Reduce > Reuse > Recycle — in that order. Reducing is best because you don't create waste in the first place. Recycling is good but uses energy. The key LCA benefit of recycling metals: it saves far more energy than mining new ore."
+      "memTip": "Reduce > Reuse > Recycle — in that order. Reducing is best because you don't create waste in the first place."
     }
   ],
   "tables": [
     {
       "title": "Life cycle assessment — four stages",
       "examFlag": true,
-      "headers": ["Stage", "What is assessed", "Environmental considerations"],
+      "headers": [
+        "Stage",
+        "What is assessed",
+        "Environmental considerations"
+      ],
       "rows": [
-        ["Extraction of raw materials", "Mining, quarrying, logging, oil extraction", "Energy use, habitat destruction, pollution from extraction"],
-        ["Manufacture and packaging", "Factory production, chemical processing", "Energy consumed, water use, emissions, waste from factories"],
-        ["Use", "How product is used over its lifetime", "Energy consumed in use, pollution produced, product durability (longer = better)"],
-        ["Disposal", "End of life treatment", "Landfill (land use, toxic leachate), incineration (CO₂), recycling (resource recovery)"]
+        [
+          "Extraction of raw materials",
+          "Mining, quarrying, logging, oil extraction",
+          "Energy use, habitat destruction, pollution from extraction"
+        ],
+        [
+          "Manufacture and packaging",
+          "Factory production, chemical processing",
+          "Energy consumed, water use, emissions, waste from factories"
+        ],
+        [
+          "Use",
+          "How product is used over its lifetime",
+          "Energy consumed in use, pollution produced, product durability (longer = better)"
+        ],
+        [
+          "Disposal",
+          "End of life treatment",
+          "Landfill (land use, toxic leachate), incineration (CO₂), recycling (resource recovery)"
+        ]
       ]
     }
   ],

@@ -24,7 +24,13 @@
         "Sampling frame — the list from which the sample is drawn (must be complete and current)",
         "Gaps in the sampling frame introduce bias before research begins"
       ],
-      "keyTerms": ["population", "sample", "representative sample", "generalisation", "sampling frame"],
+      "keyTerms": [
+        "population",
+        "sample",
+        "representative sample",
+        "generalisation",
+        "sampling frame"
+      ],
       "memTip": "POP-FRAME-SAMPLE: define your population → find a frame → select your sample.",
       "tutor_note": "Students often say 'population means all people' — correct this early. It means the group the researcher defines as relevant."
     },
@@ -42,7 +48,13 @@
         "Both require a complete and accurate sampling frame",
         "May not guarantee representation of small minority subgroups"
       ],
-      "keyTerms": ["random sampling", "systematic random sampling", "sampling frame", "bias", "representativeness"],
+      "keyTerms": [
+        "random sampling",
+        "systematic random sampling",
+        "sampling frame",
+        "bias",
+        "representativeness"
+      ],
       "memTip": "Random = equal chance for everyone. Systematic = count along the list at regular intervals.",
       "tutor_note": "Random ≠ haphazard. True random sampling is methodically unbiased — contrast with opportunity/volunteer sampling."
     },
@@ -60,7 +72,14 @@
         "Snowball disadvantage — non-representative; based on personal connections",
         "Volunteer/opportunity sampling — uses whoever is available; easy but rarely representative"
       ],
-      "keyTerms": ["stratified sampling", "strata", "snowball sampling", "purposive sampling", "opportunity sampling", "hard-to-reach groups"],
+      "keyTerms": [
+        "stratified sampling",
+        "strata",
+        "snowball sampling",
+        "purposive sampling",
+        "opportunity sampling",
+        "hard-to-reach groups"
+      ],
       "memTip": "SRSP — Stratified (best for representation), Random (equal chance), Snowball (hard-to-reach), Purposive (specific criteria).",
       "tutor_note": "Snowball is frequently tested because it applies to sensitive/hidden populations — link it to ethical research contexts."
     },
@@ -78,7 +97,13 @@
         "Self-selection bias — volunteers differ from non-volunteers",
         "Qualitative research may not claim generalisability but offers depth and insight instead"
       ],
-      "keyTerms": ["pilot study", "representativeness", "response rate", "self-selection bias", "generalisation"],
+      "keyTerms": [
+        "pilot study",
+        "representativeness",
+        "response rate",
+        "self-selection bias",
+        "generalisation"
+      ],
       "memTip": "Pilot = test flight before the real thing. Always do one — it saves disasters later.",
       "tutor_note": "Pilot studies are often overlooked in answers — reward students who include them as good research practice."
     }
@@ -87,14 +112,56 @@
     {
       "title": "Sampling Methods: Comparison",
       "examFlag": true,
-      "headers": ["Method", "How It Works", "Advantages", "Disadvantages", "Best Used When"],
+      "headers": [
+        "Method",
+        "How It Works",
+        "Advantages",
+        "Disadvantages",
+        "Best Used When"
+      ],
       "rows": [
-        ["Random", "Every member of sampling frame has equal chance (lottery/random number)", "Unbiased; objective; replicable", "May miss minority groups by chance; needs complete sampling frame", "Population is relatively homogeneous and a complete frame exists"],
-        ["Systematic random", "Select every nth name from the frame", "Practical for large frames; unbiased; easy to apply", "Needs complete frame; minority groups may be missed", "Large sampling frame exists; quick and objective selection needed"],
-        ["Stratified", "Divide into subgroups (strata) then randomly sample proportionally within each", "More representative for key variables; ensures minority groups included", "Requires knowledge of population characteristics; more complex to organise", "Researcher wants to ensure representation of specific subgroups"],
-        ["Snowball", "Start with one participant who recommends others from their network", "Accesses hard-to-reach, hidden, or stigmatised groups", "Non-representative; biased by personal networks; hard to generalise", "Studying hidden groups (drug users, undocumented migrants, gang members)"],
-        ["Purposive", "Researcher deliberately selects cases fitting specific criteria", "Gets exactly who the researcher needs for their question", "Not representative; researcher's judgement shapes who is included", "Qualitative research requiring specific types of participant"],
-        ["Volunteer/Opportunity", "Use whoever is available or willing to take part", "Cheap and quick; no sampling frame needed", "Very likely to be unrepresentative; volunteers differ from non-volunteers", "Preliminary studies; when access is severely limited (not ideal)"]
+        [
+          "Random",
+          "Every member of sampling frame has equal chance (lottery/random number)",
+          "Unbiased; objective; replicable",
+          "May miss minority groups by chance; needs complete sampling frame",
+          "Population is relatively homogeneous and a complete frame exists"
+        ],
+        [
+          "Systematic random",
+          "Select every nth name from the frame",
+          "Practical for large frames; unbiased; easy to apply",
+          "Needs complete frame; minority groups may be missed",
+          "Large sampling frame exists; quick and objective selection needed"
+        ],
+        [
+          "Stratified",
+          "Divide into subgroups (strata) then randomly sample proportionally within each",
+          "More representative for key variables; ensures minority groups included",
+          "Requires knowledge of population characteristics; more complex to organise",
+          "Researcher wants to ensure representation of specific subgroups"
+        ],
+        [
+          "Snowball",
+          "Start with one participant who recommends others from their network",
+          "Accesses hard-to-reach, hidden, or stigmatised groups",
+          "Non-representative; biased by personal networks; hard to generalise",
+          "Studying hidden groups (drug users, undocumented migrants, gang members)"
+        ],
+        [
+          "Purposive",
+          "Researcher deliberately selects cases fitting specific criteria",
+          "Gets exactly who the researcher needs for their question",
+          "Not representative; researcher's judgement shapes who is included",
+          "Qualitative research requiring specific types of participant"
+        ],
+        [
+          "Volunteer/Opportunity",
+          "Use whoever is available or willing to take part",
+          "Cheap and quick; no sampling frame needed",
+          "Very likely to be unrepresentative; volunteers differ from non-volunteers",
+          "Preliminary studies; when access is severely limited (not ideal)"
+        ]
       ]
     }
   ],
@@ -123,7 +190,7 @@
       "correctFeedback": "Correct. A pilot study is a test run — it reveals problems with wording, timing, access, and technique before the full study begins, allowing improvements that save time and money.",
       "wrongFeedback": "A pilot study is not the main study — it's a small-scale rehearsal. What would be the point of doing a small version before the big version?"
     }
-  ],
+  },
   "commonMistakes": [
     "Saying 'population means all the people' — in sociology 'population' means the specific group the researcher defines (could be all left-handed GCSE students, all care home workers, etc.).",
     "Thinking random sampling guarantees representativeness — it removes bias in the selection process, but a random sample can still be unrepresentative by chance.",

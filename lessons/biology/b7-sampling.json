@@ -25,11 +25,20 @@
         "Larger sample size = more reliable estimate"
       ],
       "keyTerms": [
-        {"term": "Quadrat", "def": "A square frame used to define a sample area for counting organisms or estimating percentage cover"},
-        {"term": "Percentage cover", "def": "An estimate of the proportion of a quadrat's area that is covered by a particular species — useful for plants that are hard to count individually"},
-        {"term": "Random sampling", "def": "Placing sample areas (quadrats) at randomly chosen coordinates to avoid human bias in data collection"}
+        {
+          "term": "Quadrat",
+          "def": "A square frame used to define a sample area for counting organisms or estimating percentage cover"
+        },
+        {
+          "term": "Percentage cover",
+          "def": "An estimate of the proportion of a quadrat's area that is covered by a particular species — useful for plants that are hard to count individually"
+        },
+        {
+          "term": "Random sampling",
+          "def": "Placing sample areas (quadrats) at randomly chosen coordinates to avoid human bias in data collection"
+        }
       ],
-      "memTip": "Quadrats = fixed area, count what's in it, MUST be random. Estimate population = mean per quadrat × how many quadrats fit in the total area. Don't choose where to put them yourself — use random numbers."
+      "memTip": "Quadrats = fixed area, count what's in it, MUST be random. Estimate population = mean per quadrat × how many quadrats fit in the total area."
     },
     {
       "heading": "Transects — studying how species distribution changes",
@@ -45,11 +54,20 @@
         "Transects are NOT random — deliberately placed across a gradient"
       ],
       "keyTerms": [
-        {"term": "Transect", "def": "A line across a habitat along which organisms are sampled, used to study how species distribution changes across an environmental gradient"},
-        {"term": "Belt transect", "def": "A transect where quadrats are placed at regular intervals along a line to record all species within each quadrat"},
-        {"term": "Environmental gradient", "def": "A gradual change in an abiotic factor (e.g. light, water depth, distance from sea) across an area of habitat"}
+        {
+          "term": "Transect",
+          "def": "A line across a habitat along which organisms are sampled, used to study how species distribution changes across an environmental gradient"
+        },
+        {
+          "term": "Belt transect",
+          "def": "A transect where quadrats are placed at regular intervals along a line to record all species within each quadrat"
+        },
+        {
+          "term": "Environmental gradient",
+          "def": "A gradual change in an abiotic factor (e.g. light, water depth, distance from sea) across an area of habitat"
+        }
       ],
-      "memTip": "Transect = line across a gradient. You want to see HOW things change. Belt transect = quadrats along the line. Line transect = just what touches the tape. Use a transect when you expect species to change along a gradient (shore to inland, open to shaded)."
+      "memTip": "Transect = line across a gradient. You want to see HOW things change."
     },
     {
       "heading": "Mark-recapture — estimating mobile animal populations",
@@ -65,10 +83,16 @@
         "Assumptions: marking doesn't harm animals; marks don't fade; no births/deaths/migration between captures"
       ],
       "keyTerms": [
-        {"term": "Mark-recapture", "def": "A technique for estimating mobile animal population size by capturing, marking, releasing, and then recapturing a second sample"},
-        {"term": "Population estimate formula", "def": "N = (n₁ × n₂) ÷ m — where n₁ is first sample size, n₂ is second sample size, and m is the number of marked individuals in the second sample"}
+        {
+          "term": "Mark-recapture",
+          "def": "A technique for estimating mobile animal population size by capturing, marking, releasing, and then recapturing a second sample"
+        },
+        {
+          "term": "Population estimate formula",
+          "def": "N = (n₁ × n₂) ÷ m — where n₁ is first sample size, n₂ is second sample size, and m is the number of marked individuals in the second sample"
+        }
       ],
-      "memTip": "Mark-recapture formula: Population = (First catch × Second catch) ÷ Marked in second. Think: the more marked animals you find in the second catch, the smaller the total population must be. If you catch 100 again and all 50 are marked, the population is about 100. If only 5 are marked, the population is much larger."
+      "memTip": "Mark-recapture formula: Population = (First catch × Second catch) ÷ Marked in second. Think: the more marked animals you find in the second catch, the smaller the total population must be."
     },
     {
       "heading": "Reliability in sampling — what makes good data",
@@ -84,8 +108,14 @@
         "Most common improvement: increase sample size OR ensure random placement"
       ],
       "keyTerms": [
-        {"term": "Bias", "def": "A systematic error in sampling caused by non-random selection — e.g. always choosing areas with the most organisms"},
-        {"term": "Reliability", "def": "The consistency and trustworthiness of data — increased by random placement, large sample size, and appropriate technique"}
+        {
+          "term": "Bias",
+          "def": "A systematic error in sampling caused by non-random selection — e.g. always choosing areas with the most organisms"
+        },
+        {
+          "term": "Reliability",
+          "def": "The consistency and trustworthiness of data — increased by random placement, large sample size, and appropriate technique"
+        }
       ],
       "memTip": "Two golden rules for reliable sampling: Random (no bias) + Large sample size (more representative). These are almost always the answer to 'how could you improve this sampling method?'"
     }
@@ -94,11 +124,27 @@
     {
       "title": "Sampling techniques compared",
       "examFlag": true,
-      "headers": ["Technique", "Best used for", "Key feature"],
+      "headers": [
+        "Technique",
+        "Best used for",
+        "Key feature"
+      ],
       "rows": [
-        ["Quadrat (random)", "Plants, fungi, slow-moving animals — estimating population or coverage", "Placed randomly using coordinates"],
-        ["Transect (belt/line)", "Studying how species distribution changes across a gradient", "Quadrats/recordings at regular intervals along a line"],
-        ["Mark-recapture", "Mobile animals — estimating total population size", "Capture, mark, release; recapture and count marked individuals"]
+        [
+          "Quadrat (random)",
+          "Plants, fungi, slow-moving animals — estimating population or coverage",
+          "Placed randomly using coordinates"
+        ],
+        [
+          "Transect (belt/line)",
+          "Studying how species distribution changes across a gradient",
+          "Quadrats/recordings at regular intervals along a line"
+        ],
+        [
+          "Mark-recapture",
+          "Mobile animals — estimating total population size",
+          "Capture, mark, release; recapture and count marked individuals"
+        ]
       ]
     }
   ],

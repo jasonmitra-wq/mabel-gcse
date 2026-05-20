@@ -24,10 +24,16 @@
         "Example: 1,500 kg car at 20 m/s → p = 1,500 × 20 = 30,000 kg m/s"
       ],
       "keyTerms": [
-        {"term": "Momentum (p)", "def": "The product of an object's mass and velocity: p = mv; measured in kg m/s; a vector quantity with direction"},
-        {"term": "Vector quantity", "def": "A quantity that has both magnitude (size) and direction — e.g. momentum, velocity, force"}
+        {
+          "term": "Momentum (p)",
+          "def": "The product of an object's mass and velocity: p = mv; measured in kg m/s; a vector quantity with direction"
+        },
+        {
+          "term": "Vector quantity",
+          "def": "A quantity that has both magnitude (size) and direction — e.g. momentum, velocity, force"
+        }
       ],
-      "memTip": "p = mv. The unit is kg m/s — same as mass × velocity units. Momentum is a vector — if you see two objects moving in opposite directions, one has positive momentum and the other negative. Keep track of direction in any conservation problem."
+      "memTip": "p = mv. The unit is kg m/s — same as mass × velocity units."
     },
     {
       "heading": "Conservation of momentum",
@@ -43,10 +49,16 @@
         "Gun recoil: bullet goes forward (+), gun recoils backward (−), total = 0"
       ],
       "keyTerms": [
-        {"term": "Conservation of momentum", "def": "In a closed system (no external forces), the total momentum before an event equals the total momentum after"},
-        {"term": "Closed system", "def": "A system in which no external forces act, so momentum is conserved"}
+        {
+          "term": "Conservation of momentum",
+          "def": "In a closed system (no external forces), the total momentum before an event equals the total momentum after"
+        },
+        {
+          "term": "Closed system",
+          "def": "A system in which no external forces act, so momentum is conserved"
+        }
       ],
-      "memTip": "Total momentum before = total momentum after. Always. Calculate total momentum on the left side (before), set it equal to the right side (after), and solve for the unknown. For explosions: before = 0, so after the two momenta must be equal and opposite."
+      "memTip": "Total momentum before = total momentum after. Always."
     },
     {
       "heading": "Force, impulse and change in momentum",
@@ -62,22 +74,48 @@
         "Helmets, padded flooring: same principle — extend time of impact"
       ],
       "keyTerms": [
-        {"term": "Impulse", "def": "Force multiplied by time (FΔt) — equal to the change in momentum; measured in N s (equivalent to kg m/s)"},
-        {"term": "Change in momentum (Δp)", "def": "The difference between final and initial momentum: Δp = mv − mu; caused by a resultant force acting over time"}
+        {
+          "term": "Impulse",
+          "def": "Force multiplied by time (FΔt) — equal to the change in momentum; measured in N s (equivalent to kg m/s)"
+        },
+        {
+          "term": "Change in momentum (Δp)",
+          "def": "The difference between final and initial momentum: Δp = mv − mu; caused by a resultant force acting over time"
+        }
       ],
-      "memTip": "FΔt = Δp. Force × time = change in momentum. More time → less force for the same Δp. Safety devices: crumple zones, airbags, helmets all increase the TIME of impact → reduce the FORCE → less injury. AQA loves this application — always link the equation to a real example."
+      "memTip": "FΔt = Δp. Force × time = change in momentum."
     }
   ],
   "tables": [
     {
       "title": "Momentum equations summary",
       "examFlag": true,
-      "headers": ["Equation", "What it means", "When to use"],
+      "headers": [
+        "Equation",
+        "What it means",
+        "When to use"
+      ],
       "rows": [
-        ["p = mv", "Momentum = mass × velocity", "Calculating momentum of a single object"],
-        ["m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂", "Total momentum before = total momentum after", "Collision or explosion problems"],
-        ["F = Δp / Δt", "Force = rate of change of momentum", "When force and time given; find change in momentum"],
-        ["FΔt = Δp", "Impulse = change in momentum", "Safety device questions; comparing force and time"]
+        [
+          "p = mv",
+          "Momentum = mass × velocity",
+          "Calculating momentum of a single object"
+        ],
+        [
+          "m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂",
+          "Total momentum before = total momentum after",
+          "Collision or explosion problems"
+        ],
+        [
+          "F = Δp / Δt",
+          "Force = rate of change of momentum",
+          "When force and time given; find change in momentum"
+        ],
+        [
+          "FΔt = Δp",
+          "Impulse = change in momentum",
+          "Safety device questions; comparing force and time"
+        ]
       ]
     }
   ],

@@ -24,10 +24,16 @@
         "Over generations: desired alleles become more common in the population"
       ],
       "keyTerms": [
-        {"term": "Selective breeding", "def": "The process in which humans choose organisms with desired characteristics to breed together, producing offspring with those characteristics over generations"},
-        {"term": "Artificial selection", "def": "Another name for selective breeding — humans acting as the selecting force instead of the natural environment"}
+        {
+          "term": "Selective breeding",
+          "def": "The process in which humans choose organisms with desired characteristics to breed together, producing offspring with those characteristics over generations"
+        },
+        {
+          "term": "Artificial selection",
+          "def": "Another name for selective breeding — humans acting as the selecting force instead of the natural environment"
+        }
       ],
-      "memTip": "Selective breeding = humans play nature. Instead of the environment choosing who survives, humans choose who breeds. The alleles for the desired trait increase in frequency generation by generation — the same mechanism as natural selection, but with humans deciding what's 'good'."
+      "memTip": "Selective breeding = humans play nature. Instead of the environment choosing who survives, humans choose who breeds."
     },
     {
       "heading": "Risks of selective breeding",
@@ -43,11 +49,20 @@
         "Seed banks help preserve genetic diversity of wild varieties"
       ],
       "keyTerms": [
-        {"term": "Genetic diversity", "def": "The range of different alleles within a population — essential for adaptability and long-term survival"},
-        {"term": "Inbreeding", "def": "Breeding between closely related individuals, increasing the risk of offspring inheriting two copies of harmful recessive alleles"},
-        {"term": "Seed bank", "def": "A facility that stores seeds from diverse plant varieties to preserve genetic diversity for future use"}
+        {
+          "term": "Genetic diversity",
+          "def": "The range of different alleles within a population — essential for adaptability and long-term survival"
+        },
+        {
+          "term": "Inbreeding",
+          "def": "Breeding between closely related individuals, increasing the risk of offspring inheriting two copies of harmful recessive alleles"
+        },
+        {
+          "term": "Seed bank",
+          "def": "A facility that stores seeds from diverse plant varieties to preserve genetic diversity for future use"
+        }
       ],
-      "memTip": "Selective breeding reduces variation — that's the core risk. Less variation = less resilience. Think: if all wheat is genetically identical, one fungal disease could destroy the entire harvest. That's why preserving wild varieties and seed banks matter."
+      "memTip": "Selective breeding reduces variation — that's the core risk. Less variation = less resilience."
     },
     {
       "heading": "Genetic engineering — inserting genes between species",
@@ -63,11 +78,26 @@
         "GM crops: resistant to herbicides, pests, or disease"
       ],
       "keyTerms": [
-        {"term": "Genetic engineering", "def": "The process of directly altering an organism's genome, typically by inserting a gene from another species"},
-        {"term": "Restriction enzymes", "def": "Enzymes that cut DNA at specific sequences, used to isolate a desired gene"},
-        {"term": "Ligase enzymes", "def": "Enzymes that join pieces of DNA together — used to insert a desired gene into a plasmid"},
-        {"term": "Plasmid", "def": "A small, circular piece of DNA found in bacteria, used as a vector to carry new genes into a host organism"},
-        {"term": "GM organism", "def": "Genetically modified organism — one that has had its genome altered by genetic engineering"}
+        {
+          "term": "Genetic engineering",
+          "def": "The process of directly altering an organism's genome, typically by inserting a gene from another species"
+        },
+        {
+          "term": "Restriction enzymes",
+          "def": "Enzymes that cut DNA at specific sequences, used to isolate a desired gene"
+        },
+        {
+          "term": "Ligase enzymes",
+          "def": "Enzymes that join pieces of DNA together — used to insert a desired gene into a plasmid"
+        },
+        {
+          "term": "Plasmid",
+          "def": "A small, circular piece of DNA found in bacteria, used as a vector to carry new genes into a host organism"
+        },
+        {
+          "term": "GM organism",
+          "def": "Genetically modified organism — one that has had its genome altered by genetic engineering"
+        }
       ],
       "memTip": "The four steps: Identify → Cut (restriction enzyme) → Insert into plasmid (ligase) → Introduce to host. For AQA, the two classic examples are: insulin (bacteria produce human insulin for diabetics) and golden rice (produces beta-carotene for Vitamin A deficiency)."
     },
@@ -85,23 +115,53 @@
         "Ethical: 'playing God'; unknown long-term ecosystem effects; consumer concerns about GM food"
       ],
       "keyTerms": [
-        {"term": "Gene therapy", "def": "A potential medical treatment that involves inserting correct copies of a gene into a patient's cells to treat a genetic disease"},
-        {"term": "GM crops", "def": "Genetically modified crops — plants engineered to have traits such as pest resistance, herbicide resistance, or improved nutritional content"}
+        {
+          "term": "Gene therapy",
+          "def": "A potential medical treatment that involves inserting correct copies of a gene into a patient's cells to treat a genetic disease"
+        },
+        {
+          "term": "GM crops",
+          "def": "Genetically modified crops — plants engineered to have traits such as pest resistance, herbicide resistance, or improved nutritional content"
+        }
       ],
-      "memTip": "For evaluation: benefits = solve real problems (insulin, vitamin A, less pesticide). Risks = ecological (gene escape, biodiversity loss) + ethical (interfering with nature, unknown effects). Always give both sides and a conclusion for 6-mark questions."
+      "memTip": "For evaluation: benefits = solve real problems (insulin, vitamin A, less pesticide). Risks = ecological (gene escape, biodiversity loss) + ethical (interfering with nature, unknown effects)."
     }
   ],
   "tables": [
     {
       "title": "Selective breeding vs genetic engineering",
       "examFlag": true,
-      "headers": ["Feature", "Selective breeding", "Genetic engineering"],
+      "headers": [
+        "Feature",
+        "Selective breeding",
+        "Genetic engineering"
+      ],
       "rows": [
-        ["Speed", "Slow — many generations needed", "Fast — changes made directly to genome"],
-        ["Precision", "Low — many genes affected at once", "High — specific gene targeted"],
-        ["Cross-species transfer", "No — genes stay within a species (or close relatives)", "Yes — genes transferred between any species"],
-        ["Examples", "High-yield cattle, dog breeds, disease-resistant wheat", "Insulin-producing bacteria, GM crops, golden rice"],
-        ["Key risk", "Reduced genetic diversity, inbreeding", "Gene escape, ethical concerns, unknown ecological effects"]
+        [
+          "Speed",
+          "Slow — many generations needed",
+          "Fast — changes made directly to genome"
+        ],
+        [
+          "Precision",
+          "Low — many genes affected at once",
+          "High — specific gene targeted"
+        ],
+        [
+          "Cross-species transfer",
+          "No — genes stay within a species (or close relatives)",
+          "Yes — genes transferred between any species"
+        ],
+        [
+          "Examples",
+          "High-yield cattle, dog breeds, disease-resistant wheat",
+          "Insulin-producing bacteria, GM crops, golden rice"
+        ],
+        [
+          "Key risk",
+          "Reduced genetic diversity, inbreeding",
+          "Gene escape, ethical concerns, unknown ecological effects"
+        ]
       ]
     }
   ],

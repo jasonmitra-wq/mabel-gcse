@@ -23,10 +23,16 @@
         "The pancreas monitors blood glucose and secretes corrective hormones"
       ],
       "keyTerms": [
-        {"term": "Blood glucose concentration", "def": "The amount of glucose dissolved in the blood — must be maintained within a narrow range for normal cell function"},
-        {"term": "Pancreas", "def": "The organ that monitors blood glucose levels and secretes insulin and glucagon to regulate them"}
+        {
+          "term": "Blood glucose concentration",
+          "def": "The amount of glucose dissolved in the blood — must be maintained within a narrow range for normal cell function"
+        },
+        {
+          "term": "Pancreas",
+          "def": "The organ that monitors blood glucose levels and secretes insulin and glucagon to regulate them"
+        }
       ],
-      "memTip": "The pancreas is the blood glucose monitor. Think of it as a thermostat for sugar — it detects the level and sends out insulin or glucagon to adjust it. Fix this image: pancreas = glucose controller."
+      "memTip": "The pancreas is the blood glucose monitor. Think of it as a thermostat for sugar — it detects the level and sends out insulin or glucagon to adjust it."
     },
     {
       "heading": "Insulin — lowering blood glucose",
@@ -42,13 +48,28 @@
         "This is negative feedback — the response counteracts the original change"
       ],
       "keyTerms": [
-        {"term": "Insulin", "def": "Hormone secreted by the pancreas when blood glucose is high; causes glucose to be converted to glycogen and stored"},
-        {"term": "Glycogen", "def": "The storage form of glucose in the liver and muscles"},
-        {"term": "Glycogenesis", "def": "The conversion of glucose to glycogen — happens in the liver and muscles when blood glucose is high"},
-        {"term": "Negative feedback", "def": "A control mechanism where a change triggers a response that reverses the change, maintaining a stable set point"},
-        {"term": "Beta cells", "def": "Cells in the pancreas that detect high blood glucose and secrete insulin"}
+        {
+          "term": "Insulin",
+          "def": "Hormone secreted by the pancreas when blood glucose is high; causes glucose to be converted to glycogen and stored"
+        },
+        {
+          "term": "Glycogen",
+          "def": "The storage form of glucose in the liver and muscles"
+        },
+        {
+          "term": "Glycogenesis",
+          "def": "The conversion of glucose to glycogen — happens in the liver and muscles when blood glucose is high"
+        },
+        {
+          "term": "Negative feedback",
+          "def": "A control mechanism where a change triggers a response that reverses the change, maintaining a stable set point"
+        },
+        {
+          "term": "Beta cells",
+          "def": "Cells in the pancreas that detect high blood glucose and secrete insulin"
+        }
       ],
-      "memTip": "Insulin = storage. High glucose → insulin → store it as glycogen. 'Insulin moves glucose IN to storage.' The 'IN' in insulin = INto storage. Glyco-GENESIS = creating glycogen. When blood glucose is high, the body is building (genesis) glycogen."
+      "memTip": "Insulin = storage. High glucose → insulin → store it as glycogen."
     },
     {
       "heading": "Glucagon — raising blood glucose",
@@ -64,12 +85,24 @@
         "Insulin and glucagon are an antagonistic pair — opposite effects, precise control"
       ],
       "keyTerms": [
-        {"term": "Glucagon", "def": "Hormone secreted by the pancreas when blood glucose is low; causes glycogen to be broken down to glucose"},
-        {"term": "Glycogenolysis", "def": "The breakdown of glycogen to glucose — happens in the liver when blood glucose is low"},
-        {"term": "Antagonistic pair", "def": "Two hormones with opposite effects working together to maintain a stable level — e.g. insulin and glucagon"},
-        {"term": "Alpha cells", "def": "Cells in the pancreas that detect low blood glucose and secrete glucagon"}
+        {
+          "term": "Glucagon",
+          "def": "Hormone secreted by the pancreas when blood glucose is low; causes glycogen to be broken down to glucose"
+        },
+        {
+          "term": "Glycogenolysis",
+          "def": "The breakdown of glycogen to glucose — happens in the liver when blood glucose is low"
+        },
+        {
+          "term": "Antagonistic pair",
+          "def": "Two hormones with opposite effects working together to maintain a stable level — e.g. insulin and glucagon"
+        },
+        {
+          "term": "Alpha cells",
+          "def": "Cells in the pancreas that detect low blood glucose and secrete glucagon"
+        }
       ],
-      "memTip": "Glucagon = release. Low glucose → glucagon → release glucose from glycogen. 'GlucaGON releases glucose — it's GONE from storage.' Glyco-LYSIS = breaking down (lysis = breaking). When blood glucose is low, the body is breaking (lysis) glycogen to release glucose."
+      "memTip": "Glucagon = release. Low glucose → glucagon → release glucose from glycogen."
     },
     {
       "heading": "Type 1 and Type 2 diabetes — causes and treatments",
@@ -86,25 +119,61 @@
         "Both types result in inability to control blood glucose, but for different reasons"
       ],
       "keyTerms": [
-        {"term": "Type 1 diabetes", "def": "An autoimmune condition where beta cells are destroyed, so no insulin is produced; treated with insulin injections"},
-        {"term": "Type 2 diabetes", "def": "A condition where body cells become resistant to insulin; linked to obesity and unhealthy diet; managed with diet, exercise, and medication"},
-        {"term": "Insulin injections", "def": "The treatment for Type 1 diabetes — replacing the insulin the pancreas cannot produce"},
-        {"term": "Insulin resistance", "def": "A condition where body cells fail to respond normally to insulin — the cause of Type 2 diabetes"}
+        {
+          "term": "Type 1 diabetes",
+          "def": "An autoimmune condition where beta cells are destroyed, so no insulin is produced; treated with insulin injections"
+        },
+        {
+          "term": "Type 2 diabetes",
+          "def": "A condition where body cells become resistant to insulin; linked to obesity and unhealthy diet; managed with diet, exercise, and medication"
+        },
+        {
+          "term": "Insulin injections",
+          "def": "The treatment for Type 1 diabetes — replacing the insulin the pancreas cannot produce"
+        },
+        {
+          "term": "Insulin resistance",
+          "def": "A condition where body cells fail to respond normally to insulin — the cause of Type 2 diabetes"
+        }
       ],
-      "memTip": "Type 1 = No insulin (pancreas broken). Type 2 = Ignores insulin (cells broken). Type 1 needs injections because the pancreas doesn't make any. Type 2 is managed by lifestyle because the pancreas still works — cells just don't listen. Keep the distinction: pancreas broken (1) vs cells broken (2)."
+      "memTip": "Type 1 = No insulin (pancreas broken). Type 2 = Ignores insulin (cells broken)."
     }
   ],
   "tables": [
     {
       "title": "Type 1 vs Type 2 diabetes",
       "examFlag": true,
-      "headers": ["Feature", "Type 1 diabetes", "Type 2 diabetes"],
+      "headers": [
+        "Feature",
+        "Type 1 diabetes",
+        "Type 2 diabetes"
+      ],
       "rows": [
-        ["Cause", "Immune system destroys beta cells — no insulin produced", "Body cells become resistant to insulin"],
-        ["Insulin production", "Little or none", "Often normal or elevated, but ineffective"],
-        ["Risk factors", "Genetic/autoimmune (not lifestyle-related)", "Obesity, unhealthy diet, lack of exercise"],
-        ["Treatment", "Insulin injections (essential)", "Diet, exercise, medication — not usually insulin"],
-        ["Age of onset", "Often in childhood/youth", "More common in adults (but increasing in younger people)"]
+        [
+          "Cause",
+          "Immune system destroys beta cells — no insulin produced",
+          "Body cells become resistant to insulin"
+        ],
+        [
+          "Insulin production",
+          "Little or none",
+          "Often normal or elevated, but ineffective"
+        ],
+        [
+          "Risk factors",
+          "Genetic/autoimmune (not lifestyle-related)",
+          "Obesity, unhealthy diet, lack of exercise"
+        ],
+        [
+          "Treatment",
+          "Insulin injections (essential)",
+          "Diet, exercise, medication — not usually insulin"
+        ],
+        [
+          "Age of onset",
+          "Often in childhood/youth",
+          "More common in adults (but increasing in younger people)"
+        ]
       ]
     }
   ],

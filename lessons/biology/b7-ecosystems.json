@@ -25,15 +25,36 @@
         "No two species can occupy exactly the same niche — competitive exclusion"
       ],
       "keyTerms": [
-        {"term": "Population", "def": "All the individuals of one species living in a given area at a given time"},
-        {"term": "Community", "def": "All the populations of different species living in the same area and interacting with each other"},
-        {"term": "Ecosystem", "def": "A community of organisms together with the non-living (abiotic) environment they interact with"},
-        {"term": "Habitat", "def": "The specific place where an organism lives within an ecosystem"},
-        {"term": "Niche", "def": "The role an organism plays in its ecosystem — including what it eats, when it is active, and how it interacts with other species"},
-        {"term": "Abiotic factors", "def": "Non-living factors in an environment (e.g. temperature, light intensity, water availability, soil pH)"},
-        {"term": "Biotic factors", "def": "Living factors in an environment (e.g. food availability, predators, competitors, pathogens)"}
+        {
+          "term": "Population",
+          "def": "All the individuals of one species living in a given area at a given time"
+        },
+        {
+          "term": "Community",
+          "def": "All the populations of different species living in the same area and interacting with each other"
+        },
+        {
+          "term": "Ecosystem",
+          "def": "A community of organisms together with the non-living (abiotic) environment they interact with"
+        },
+        {
+          "term": "Habitat",
+          "def": "The specific place where an organism lives within an ecosystem"
+        },
+        {
+          "term": "Niche",
+          "def": "The role an organism plays in its ecosystem — including what it eats, when it is active, and how it interacts with other species"
+        },
+        {
+          "term": "Abiotic factors",
+          "def": "Non-living factors in an environment (e.g. temperature, light intensity, water availability, soil pH)"
+        },
+        {
+          "term": "Biotic factors",
+          "def": "Living factors in an environment (e.g. food availability, predators, competitors, pathogens)"
+        }
       ],
-      "memTip": "Organism < Population < Community < Ecosystem. Think of it as zoom-out: one individual → all individuals of that species → all species in the area → everything including the non-living environment. Niche = role (not just place — a niche includes WHAT you eat, WHEN you feed, WHO eats you)."
+      "memTip": "Organism < Population < Community < Ecosystem. Think of it as zoom-out: one individual → all individuals of that species → all species in the area → everything including the non-living environment."
     },
     {
       "heading": "Competition — fighting for limited resources",
@@ -49,10 +70,16 @@
         "If resources scarce: population growth slows or species is displaced"
       ],
       "keyTerms": [
-        {"term": "Intraspecific competition", "def": "Competition between individuals of the same species for limited resources"},
-        {"term": "Interspecific competition", "def": "Competition between individuals of different species for similar resources"}
+        {
+          "term": "Intraspecific competition",
+          "def": "Competition between individuals of the same species for limited resources"
+        },
+        {
+          "term": "Interspecific competition",
+          "def": "Competition between individuals of different species for similar resources"
+        }
       ],
-      "memTip": "Intra = within (same species). Inter = between (different species). Animals compete for FWMT: Food, Water, Mates, Territory. Plants compete for LWMS: Light, Water, Mineral ions, Space."
+      "memTip": "Intra = within (same species). Inter = between (different species)."
     },
     {
       "heading": "Interdependence — species need each other",
@@ -68,21 +95,42 @@
         "Greater biodiversity = more stable and resilient ecosystem"
       ],
       "keyTerms": [
-        {"term": "Interdependence", "def": "The way in which organisms in a community depend on each other for resources, shelter, reproduction, and other needs"},
-        {"term": "Mutualism", "def": "A relationship where two species both benefit (e.g. bees pollinate flowers while gaining nectar)"},
-        {"term": "Biodiversity", "def": "The variety of different species living in an ecosystem — higher biodiversity = more stable ecosystem"}
+        {
+          "term": "Interdependence",
+          "def": "The way in which organisms in a community depend on each other for resources, shelter, reproduction, and other needs"
+        },
+        {
+          "term": "Mutualism",
+          "def": "A relationship where two species both benefit (e.g. bees pollinate flowers while gaining nectar)"
+        },
+        {
+          "term": "Biodiversity",
+          "def": "The variety of different species living in an ecosystem — higher biodiversity = more stable ecosystem"
+        }
       ],
-      "memTip": "Interdependence = species don't live in isolation — they need each other. Mutualism = both benefit (bees get food, flowers get pollinated). Predation = one benefits, one suffers. The key exam point is that when one species changes, others are affected — always explain the chain reaction."
+      "memTip": "Interdependence = species don't live in isolation — they need each other. Mutualism = both benefit (bees get food, flowers get pollinated)."
     }
   ],
   "tables": [
     {
       "title": "Abiotic vs biotic factors",
       "examFlag": true,
-      "headers": ["Type", "Definition", "Examples"],
+      "headers": [
+        "Type",
+        "Definition",
+        "Examples"
+      ],
       "rows": [
-        ["Abiotic (non-living)", "Physical and chemical factors in the environment", "Temperature, light intensity, water availability, soil pH, wind speed, salinity"],
-        ["Biotic (living)", "Factors from other organisms in the environment", "Food availability, predators, competitors, disease-causing pathogens, pollinators"]
+        [
+          "Abiotic (non-living)",
+          "Physical and chemical factors in the environment",
+          "Temperature, light intensity, water availability, soil pH, wind speed, salinity"
+        ],
+        [
+          "Biotic (living)",
+          "Factors from other organisms in the environment",
+          "Food availability, predators, competitors, disease-causing pathogens, pollinators"
+        ]
       ]
     }
   ],

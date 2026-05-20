@@ -25,11 +25,20 @@
         "Dissolve in water; MgO has higher mp than NaCl (higher charges = stronger forces)"
       ],
       "keyTerms": [
-        {"term": "Giant ionic lattice", "def": "A regular 3D arrangement of millions of oppositely charged ions held together by electrostatic forces"},
-        {"term": "Electrostatic force", "def": "The attractive force between oppositely charged particles (positive and negative ions in an ionic lattice)"},
-        {"term": "Brittle", "def": "Shatters when struck, because shifting layers bring like charges together, which repel and cause fracture"}
+        {
+          "term": "Giant ionic lattice",
+          "def": "A regular 3D arrangement of millions of oppositely charged ions held together by electrostatic forces"
+        },
+        {
+          "term": "Electrostatic force",
+          "def": "The attractive force between oppositely charged particles (positive and negative ions in an ionic lattice)"
+        },
+        {
+          "term": "Brittle",
+          "def": "Shatters when struck, because shifting layers bring like charges together, which repel and cause fracture"
+        }
       ],
-      "memTip": "Ionic compounds: SOLID = fixed ions = can't conduct. LIQUID/DISSOLVED = free ions = can conduct. Always link conductivity to whether the ions can MOVE.",
+      "memTip": "Ionic compounds: SOLID = fixed ions = can't conduct. LIQUID/DISSOLVED = free ions = can conduct.",
       "tutor_note": "The brittleness explanation (like charges align → repel → shatter) is a high-value answer that distinguishes between ionic and metallic structures. Contrast with metallic bonding where layers slide without the bonding breaking."
     },
     {
@@ -47,10 +56,16 @@
         "Uses: cutting tools, gemstones, abrasives"
       ],
       "keyTerms": [
-        {"term": "Giant covalent structure", "def": "A structure where atoms are held together by covalent bonds that extend throughout the whole material, with no separate molecules"},
-        {"term": "Tetrahedral", "def": "A 3D arrangement where each atom is bonded to 4 others at 109.5° — the geometry of diamond's carbon atoms"}
+        {
+          "term": "Giant covalent structure",
+          "def": "A structure where atoms are held together by covalent bonds that extend throughout the whole material, with no separate molecules"
+        },
+        {
+          "term": "Tetrahedral",
+          "def": "A 3D arrangement where each atom is bonded to 4 others at 109.5° — the geometry of diamond's carbon atoms"
+        }
       ],
-      "memTip": "Diamond: FOUR bonds, RIGID structure, NO conduction. Graphite: THREE bonds, LAYERS, CAN conduct. The bond count (3 vs 4) is the key to remembering the difference.",
+      "memTip": "Diamond: FOUR bonds, RIGID structure, NO conduction. Graphite: THREE bonds, LAYERS, CAN conduct.",
       "tutor_note": "Students often say 'diamond doesn't conduct because it has no ions' — technically true but incomplete. The AQA mark scheme wants: 'no free electrons' (all electrons are in covalent bonds). Make this distinction."
     },
     {
@@ -68,12 +83,24 @@
         "Fullerenes (C₆₀): hollow spheres; used in drug delivery and nanotechnology"
       ],
       "keyTerms": [
-        {"term": "Graphite", "def": "A giant covalent structure of carbon with flat hexagonal layers; conducts electricity via delocalised electrons"},
-        {"term": "Graphene", "def": "A single layer of graphite; extremely strong and an excellent electrical conductor"},
-        {"term": "Fullerene", "def": "A carbon molecule in the form of a hollow sphere or tube (e.g. C₆₀ buckminsterfullerene)"},
-        {"term": "Van der Waals forces", "def": "Weak intermolecular forces that hold the layers of graphite together"}
+        {
+          "term": "Graphite",
+          "def": "A giant covalent structure of carbon with flat hexagonal layers; conducts electricity via delocalised electrons"
+        },
+        {
+          "term": "Graphene",
+          "def": "A single layer of graphite; extremely strong and an excellent electrical conductor"
+        },
+        {
+          "term": "Fullerene",
+          "def": "A carbon molecule in the form of a hollow sphere or tube (e.g. C₆₀ buckminsterfullerene)"
+        },
+        {
+          "term": "Van der Waals forces",
+          "def": "Weak intermolecular forces that hold the layers of graphite together"
+        }
       ],
-      "memTip": "Graphite has LAYERS that SLIDE. Diamond has RIGID bonds in ALL directions. Both have high melting points (strong covalent bonds within the structure), but only graphite conducts (delocalised electrons).",
+      "memTip": "Graphite has LAYERS that SLIDE. Diamond has RIGID bonds in ALL directions.",
       "tutor_note": "Graphite conducting electricity is a classic AQA question. The answer must mention: 'each carbon atom has one delocalised electron that is free to move between the layers'. Just saying 'free electrons' won't score the mark without explaining where they come from."
     },
     {
@@ -91,10 +118,16 @@
         "Simple molecular compounds: weak intermolecular forces → low mp; no conductivity"
       ],
       "keyTerms": [
-        {"term": "Silicon dioxide (SiO₂)", "def": "A giant covalent structure; very hard, high melting point, doesn't conduct electricity; found as quartz"},
-        {"term": "Simple molecular compound", "def": "A compound made of individual molecules held together by weak intermolecular forces; low melting point"}
+        {
+          "term": "Silicon dioxide (SiO₂)",
+          "def": "A giant covalent structure; very hard, high melting point, doesn't conduct electricity; found as quartz"
+        },
+        {
+          "term": "Simple molecular compound",
+          "def": "A compound made of individual molecules held together by weak intermolecular forces; low melting point"
+        }
       ],
-      "memTip": "Conductivity quick guide: METAL always conducts. IONIC conducts when LIQUID or dissolved. DIAMOND/SiO₂ never conducts. GRAPHITE always conducts (exception to the 'covalent = no conduction' rule).",
+      "memTip": "Conductivity quick guide: METAL always conducts. IONIC conducts when LIQUID or dissolved.",
       "tutor_note": "The comparison table is worth spending time on. In higher-tier papers, students are often asked to explain anomalies — graphite conducting, or why MgO has a higher melting point than NaCl. Both need structural explanations."
     }
   ],
@@ -102,14 +135,56 @@
     {
       "title": "Comparing giant structures — ionic, covalent and metallic",
       "examFlag": true,
-      "headers": ["Property", "Giant ionic (NaCl, MgO)", "Diamond", "Graphite", "Giant metallic (Fe, Cu)"],
+      "headers": [
+        "Property",
+        "Giant ionic (NaCl, MgO)",
+        "Diamond",
+        "Graphite",
+        "Giant metallic (Fe, Cu)"
+      ],
       "rows": [
-        ["Bonding", "Electrostatic (ion to ion)", "Covalent (C to C, 4 bonds each)", "Covalent within layers (3 bonds); weak forces between layers", "Metallic (ions in electron sea)"],
-        ["Melting point", "High (801°C for NaCl)", "Very high (>3500°C)", "Very high (sublimes ~3642°C)", "Variable, usually high (iron: 1538°C)"],
-        ["Electrical conductivity", "Only when molten or dissolved", "Never", "Yes (delocalised electrons)", "Always"],
-        ["Hardness", "Hard but brittle", "Extremely hard (hardest natural substance)", "Soft and slippery (layers slide)", "Variable; usually malleable and ductile"],
-        ["Solubility in water", "Usually soluble", "Insoluble", "Insoluble", "Insoluble"],
-        ["Examples and uses", "NaCl (salt), MgO (refractory lining)", "Cutting tools, gemstones, abrasives", "Lubricant, pencils, electrodes, graphene", "Iron (steel), copper (wiring), aluminium (aircraft)"]
+        [
+          "Bonding",
+          "Electrostatic (ion to ion)",
+          "Covalent (C to C, 4 bonds each)",
+          "Covalent within layers (3 bonds); weak forces between layers",
+          "Metallic (ions in electron sea)"
+        ],
+        [
+          "Melting point",
+          "High (801°C for NaCl)",
+          "Very high (>3500°C)",
+          "Very high (sublimes ~3642°C)",
+          "Variable, usually high (iron: 1538°C)"
+        ],
+        [
+          "Electrical conductivity",
+          "Only when molten or dissolved",
+          "Never",
+          "Yes (delocalised electrons)",
+          "Always"
+        ],
+        [
+          "Hardness",
+          "Hard but brittle",
+          "Extremely hard (hardest natural substance)",
+          "Soft and slippery (layers slide)",
+          "Variable; usually malleable and ductile"
+        ],
+        [
+          "Solubility in water",
+          "Usually soluble",
+          "Insoluble",
+          "Insoluble",
+          "Insoluble"
+        ],
+        [
+          "Examples and uses",
+          "NaCl (salt), MgO (refractory lining)",
+          "Cutting tools, gemstones, abrasives",
+          "Lubricant, pencils, electrodes, graphene",
+          "Iron (steel), copper (wiring), aluminium (aircraft)"
+        ]
       ]
     }
   ],

@@ -25,7 +25,14 @@
         "Spot heights — dot + height in metres; trigonometric points — blue triangle + height",
         "Always check the map key — symbols can vary between map editions"
       ],
-      "keyTerms": ["Ordnance Survey", "1:50,000", "1:25,000", "scale", "contour line", "spot height"],
+      "keyTerms": [
+        "Ordnance Survey",
+        "1:50,000",
+        "1:25,000",
+        "scale",
+        "contour line",
+        "spot height"
+      ],
       "memTip": "Blue is broad (50,000 = overview); Orange is orange and detailed (25,000 = fieldwork).",
       "tutor_note": "Students often forget to check the key — in the exam, always note which scale of map is being used before answering."
     },
@@ -44,7 +51,13 @@
         "6-figure grid reference — 100m precision; divide each 1km square into tenths",
         "Example: 347506 — easting 34.7, northing 50.6"
       ],
-      "keyTerms": ["National Grid", "easting", "northing", "4-figure grid reference", "6-figure grid reference"],
+      "keyTerms": [
+        "National Grid",
+        "easting",
+        "northing",
+        "4-figure grid reference",
+        "6-figure grid reference"
+      ],
       "memTip": "Along the corridor, up the stairs — eastings then northings. Never backwards.",
       "tutor_note": "This is a guaranteed skill on Paper 3. Practise with real maps — giving students actual grid reference exercises is the only reliable way to secure this skill."
     },
@@ -63,7 +76,12 @@
         "Always state the scale used and give answer in km",
         "Practise until calculation is fast — Paper 3 is time-pressured"
       ],
-      "keyTerms": ["scale", "straight-line distance", "route distance", "scale ratio"],
+      "keyTerms": [
+        "scale",
+        "straight-line distance",
+        "route distance",
+        "scale ratio"
+      ],
       "memTip": "1:50,000 — think 50,000 centimetres = 500 metres = 0.5km per 1cm on map.",
       "tutor_note": "Students often forget to convert cm to km correctly — always work through the chain: cm on map → multiply by scale → cm on ground → divide by 100,000 → km."
     },
@@ -82,7 +100,15 @@
         "Cross-section — plot contour heights along a line; x-axis distance, y-axis height",
         "Vertical scale often exaggerated — always state this on the diagram"
       ],
-      "keyTerms": ["contour line", "cross-section", "steep", "gentle", "valley", "ridge", "spur"],
+      "keyTerms": [
+        "contour line",
+        "cross-section",
+        "steep",
+        "gentle",
+        "valley",
+        "ridge",
+        "spur"
+      ],
       "memTip": "V uphill = valley (water flows through it); V downhill = ridge (water flows away from it).",
       "tutor_note": "The V-shape rule is one of the most tested map skills — make sure it's clear: V pointing uphill = water/valley; V pointing downhill = ridge/spur sticking out."
     }
@@ -91,16 +117,52 @@
     {
       "title": "OS map symbols and distance calculation reference",
       "examFlag": true,
-      "headers": ["Symbol or concept", "What it looks like / means", "On the ground"],
+      "headers": [
+        "Symbol or concept",
+        "What it looks like / means",
+        "On the ground"
+      ],
       "rows": [
-        ["Church with tower", "Black square with tower outline", "Church building with a square tower visible on the skyline"],
-        ["Footpath", "Green dashed line", "Public right of way for walkers only — no vehicles or horses"],
-        ["A road", "Red line (thick)", "Main A-classified road — usually carriageway with road number"],
-        ["Woodland", "Green area with tree symbols", "Area of trees — could be managed forest or natural woodland"],
-        ["Contour line at 100m", "Orange/brown line labelled '100'", "The ground is at 100 metres above sea level along this line"],
-        ["Spot height", "Dot with number (e.g., •317)", "Precise surveyed height of 317 metres at that point"],
-        ["1cm on 1:50,000 map", "1cm measured with ruler", "= 500m (0.5km) on the ground"],
-        ["1cm on 1:25,000 map", "1cm measured with ruler", "= 250m (0.25km) on the ground"]
+        [
+          "Church with tower",
+          "Black square with tower outline",
+          "Church building with a square tower visible on the skyline"
+        ],
+        [
+          "Footpath",
+          "Green dashed line",
+          "Public right of way for walkers only — no vehicles or horses"
+        ],
+        [
+          "A road",
+          "Red line (thick)",
+          "Main A-classified road — usually carriageway with road number"
+        ],
+        [
+          "Woodland",
+          "Green area with tree symbols",
+          "Area of trees — could be managed forest or natural woodland"
+        ],
+        [
+          "Contour line at 100m",
+          "Orange/brown line labelled '100'",
+          "The ground is at 100 metres above sea level along this line"
+        ],
+        [
+          "Spot height",
+          "Dot with number (e.g., •317)",
+          "Precise surveyed height of 317 metres at that point"
+        ],
+        [
+          "1cm on 1:50,000 map",
+          "1cm measured with ruler",
+          "= 500m (0.5km) on the ground"
+        ],
+        [
+          "1cm on 1:25,000 map",
+          "1cm measured with ruler",
+          "= 250m (0.25km) on the ground"
+        ]
       ]
     }
   ],
@@ -129,7 +191,7 @@
       "correctFeedback": "Exactly right. At 1:50,000 scale, 1cm on the map = 50,000cm on the ground = 500m. So 6cm = 6 × 500m = 3,000m = 3km.",
       "wrongFeedback": "Not quite. At 1:50,000 scale: 1cm on map = 50,000cm on ground = 500m. So 6cm = 6 × 500m = 3,000m = 3km. Always multiply by 500m when using a 1:50,000 map."
     }
-  ],
+  },
   "commonMistakes": [
     "Giving northings before eastings in a grid reference — always eastings first: 'along the corridor, then up the stairs'. This mistake costs marks every year.",
     "Confusing 4-figure and 6-figure grid references — a 4-figure gives a 1km square; a 6-figure pinpoints a 100m area within that square by estimating tenths.",

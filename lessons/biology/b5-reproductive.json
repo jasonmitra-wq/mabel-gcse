@@ -24,14 +24,32 @@
         "No fertilisation → progesterone falls → lining breaks down → menstruation → cycle restarts"
       ],
       "keyTerms": [
-        {"term": "FSH (follicle-stimulating hormone)", "def": "Secreted by the pituitary gland; stimulates follicle development and oestrogen production"},
-        {"term": "Oestrogen", "def": "Secreted by the ovaries; thickens uterus lining, inhibits FSH, triggers LH surge"},
-        {"term": "LH (luteinising hormone)", "def": "Secreted by the pituitary gland; triggers ovulation"},
-        {"term": "Progesterone", "def": "Secreted by the corpus luteum; maintains uterus lining and inhibits FSH/LH"},
-        {"term": "Ovulation", "def": "The release of an egg from the ovary — triggered by the LH surge, approximately day 14"},
-        {"term": "Corpus luteum", "def": "The structure that remains after ovulation; secretes progesterone to maintain the uterus lining"}
+        {
+          "term": "FSH (follicle-stimulating hormone)",
+          "def": "Secreted by the pituitary gland; stimulates follicle development and oestrogen production"
+        },
+        {
+          "term": "Oestrogen",
+          "def": "Secreted by the ovaries; thickens uterus lining, inhibits FSH, triggers LH surge"
+        },
+        {
+          "term": "LH (luteinising hormone)",
+          "def": "Secreted by the pituitary gland; triggers ovulation"
+        },
+        {
+          "term": "Progesterone",
+          "def": "Secreted by the corpus luteum; maintains uterus lining and inhibits FSH/LH"
+        },
+        {
+          "term": "Ovulation",
+          "def": "The release of an egg from the ovary — triggered by the LH surge, approximately day 14"
+        },
+        {
+          "term": "Corpus luteum",
+          "def": "The structure that remains after ovulation; secretes progesterone to maintain the uterus lining"
+        }
       ],
-      "memTip": "FOLP — FSH, Oestrogen, LH, Progesterone. Think of the cycle as a relay race: FSH passes the baton to oestrogen; oestrogen passes it to LH; LH triggers ovulation; progesterone holds everything ready. If fertilisation doesn't happen, the relay resets."
+      "memTip": "FOLP — FSH, Oestrogen, LH, Progesterone. Think of the cycle as a relay race: FSH passes the baton to oestrogen; oestrogen passes it to LH; LH triggers ovulation; progesterone holds everything ready."
     },
     {
       "heading": "Negative feedback in the menstrual cycle",
@@ -47,9 +65,12 @@
         "Negative feedback maintains the 28-day rhythm"
       ],
       "keyTerms": [
-        {"term": "Negative feedback (menstrual cycle)", "def": "A mechanism where rising hormone levels inhibit their own production or their stimulating hormone, maintaining cycle timing"}
+        {
+          "term": "Negative feedback (menstrual cycle)",
+          "def": "A mechanism where rising hormone levels inhibit their own production or their stimulating hormone, maintaining cycle timing"
+        }
       ],
-      "memTip": "Oestrogen inhibits FSH (but at peak, triggers LH surge — this is the exception). Progesterone inhibits both FSH and LH. Write: 'Oestrogen suppresses FSH. Progesterone suppresses FSH and LH.' These two inhibition lines are the most commonly lost marks in menstrual cycle questions."
+      "memTip": "Oestrogen inhibits FSH (but at peak, triggers LH surge — this is the exception). Progesterone inhibits both FSH and LH."
     },
     {
       "heading": "Contraception — how the pill prevents pregnancy",
@@ -65,10 +86,16 @@
         "Pill does NOT protect against STIs"
       ],
       "keyTerms": [
-        {"term": "Oral contraceptive pill", "def": "A contraceptive containing synthetic oestrogen and/or progesterone that prevents ovulation by inhibiting FSH"},
-        {"term": "Synthetic hormones", "def": "Artificially produced hormones with the same chemical effect as natural hormones — used in contraception and fertility treatment"}
+        {
+          "term": "Oral contraceptive pill",
+          "def": "A contraceptive containing synthetic oestrogen and/or progesterone that prevents ovulation by inhibiting FSH"
+        },
+        {
+          "term": "Synthetic hormones",
+          "def": "Artificially produced hormones with the same chemical effect as natural hormones — used in contraception and fertility treatment"
+        }
       ],
-      "memTip": "The pill uses oestrogen to block FSH. No FSH = no egg. The mechanism is the same as the natural feedback loop — high oestrogen suppresses FSH. The pill just keeps oestrogen high artificially to switch FSH off permanently."
+      "memTip": "The pill uses oestrogen to block FSH. No FSH = no egg."
     },
     {
       "heading": "Fertility treatment — IVF and hormone stimulation",
@@ -85,23 +112,57 @@
         "IVF success is not guaranteed — multiple attempts often needed"
       ],
       "keyTerms": [
-        {"term": "IVF (in vitro fertilisation)", "def": "A fertility treatment where eggs are fertilised by sperm outside the body, then implanted into the uterus"},
-        {"term": "Superovulation", "def": "The stimulation of the ovaries to produce multiple eggs using FSH/LH injections — used in IVF"},
-        {"term": "Implantation", "def": "The attachment of a fertilised embryo to the uterus lining — the step after IVF embryo transfer"}
+        {
+          "term": "IVF (in vitro fertilisation)",
+          "def": "A fertility treatment where eggs are fertilised by sperm outside the body, then implanted into the uterus"
+        },
+        {
+          "term": "Superovulation",
+          "def": "The stimulation of the ovaries to produce multiple eggs using FSH/LH injections — used in IVF"
+        },
+        {
+          "term": "Implantation",
+          "def": "The attachment of a fertilised embryo to the uterus lining — the step after IVF embryo transfer"
+        }
       ],
-      "memTip": "IVF sequence: inject FSH/LH → collect eggs → fertilise in lab → grow embryos → implant. Five steps. Write them as a numbered list from memory. The exam often asks you to 'describe how IVF is carried out' — this list is the answer."
+      "memTip": "IVF sequence: inject FSH/LH → collect eggs → fertilise in lab → grow embryos → implant. Five steps."
     }
   ],
   "tables": [
     {
       "title": "The four hormones of the menstrual cycle",
       "examFlag": true,
-      "headers": ["Hormone", "Produced by", "Main actions", "Inhibits"],
+      "headers": [
+        "Hormone",
+        "Produced by",
+        "Main actions",
+        "Inhibits"
+      ],
       "rows": [
-        ["FSH", "Pituitary gland", "Stimulates follicle development; stimulates oestrogen production", "Inhibited by oestrogen and progesterone"],
-        ["Oestrogen", "Ovaries", "Thickens uterus lining; triggers LH surge at high levels", "Inhibits FSH"],
-        ["LH", "Pituitary gland", "Triggers ovulation (egg release)", "Inhibited by progesterone"],
-        ["Progesterone", "Corpus luteum", "Maintains uterus lining after ovulation", "Inhibits FSH and LH"]
+        [
+          "FSH",
+          "Pituitary gland",
+          "Stimulates follicle development; stimulates oestrogen production",
+          "Inhibited by oestrogen and progesterone"
+        ],
+        [
+          "Oestrogen",
+          "Ovaries",
+          "Thickens uterus lining; triggers LH surge at high levels",
+          "Inhibits FSH"
+        ],
+        [
+          "LH",
+          "Pituitary gland",
+          "Triggers ovulation (egg release)",
+          "Inhibited by progesterone"
+        ],
+        [
+          "Progesterone",
+          "Corpus luteum",
+          "Maintains uterus lining after ovulation",
+          "Inhibits FSH and LH"
+        ]
       ]
     }
   ],

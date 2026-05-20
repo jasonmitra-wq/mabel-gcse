@@ -24,12 +24,24 @@
         "Only genetic variation can be inherited and passed to the next generation"
       ],
       "keyTerms": [
-        {"term": "Variation", "def": "The differences in characteristics between individuals of the same species"},
-        {"term": "Genetic variation", "def": "Variation caused by differences in allele combinations — produced by mutation and meiosis"},
-        {"term": "Environmental variation", "def": "Variation caused by factors in the environment — diet, exercise, temperature, etc. — cannot be inherited"},
-        {"term": "Meiosis", "def": "The type of cell division that produces gametes (sex cells) — shuffles alleles to produce genetic variation"}
+        {
+          "term": "Variation",
+          "def": "The differences in characteristics between individuals of the same species"
+        },
+        {
+          "term": "Genetic variation",
+          "def": "Variation caused by differences in allele combinations — produced by mutation and meiosis"
+        },
+        {
+          "term": "Environmental variation",
+          "def": "Variation caused by factors in the environment — diet, exercise, temperature, etc. — cannot be inherited"
+        },
+        {
+          "term": "Meiosis",
+          "def": "The type of cell division that produces gametes (sex cells) — shuffles alleles to produce genetic variation"
+        }
       ],
-      "memTip": "GE variation: Genetic (from genes, can be inherited) and Environmental (from experience, cannot be inherited). The question is: could you pass it to your children? If yes → genetic. If no → environmental."
+      "memTip": "GE variation: Genetic (from genes, can be inherited) and Environmental (from experience, cannot be inherited). The question is: could you pass it to your children?"
     },
     {
       "heading": "Continuous variation — a spectrum of differences",
@@ -45,11 +57,20 @@
         "Height: genetic range + diet/health effects = continuous outcome"
       ],
       "keyTerms": [
-        {"term": "Continuous variation", "def": "Variation that shows a range of values with no distinct categories — e.g. height, mass"},
-        {"term": "Polygenic", "def": "Controlled by many genes acting together — typical of continuous characteristics"},
-        {"term": "Normal distribution", "def": "A bell-shaped curve — the typical pattern for continuous variation in a population"}
+        {
+          "term": "Continuous variation",
+          "def": "Variation that shows a range of values with no distinct categories — e.g. height, mass"
+        },
+        {
+          "term": "Polygenic",
+          "def": "Controlled by many genes acting together — typical of continuous characteristics"
+        },
+        {
+          "term": "Normal distribution",
+          "def": "A bell-shaped curve — the typical pattern for continuous variation in a population"
+        }
       ],
-      "memTip": "Continuous = can't put people in neat boxes. You measure it with a ruler or scales, not by placing people into groups. The histogram has no gaps — the data flows from one value to the next."
+      "memTip": "Continuous = can't put people in neat boxes. You measure it with a ruler or scales, not by placing people into groups."
     },
     {
       "heading": "Discontinuous variation — clear categories",
@@ -65,23 +86,53 @@
         "Blood group: entirely genetic, no environmental effect"
       ],
       "keyTerms": [
-        {"term": "Discontinuous variation", "def": "Variation with distinct, separate categories and no intermediates — e.g. blood group, tongue rolling"},
-        {"term": "Blood group", "def": "A classic example of discontinuous variation — determined by a single gene with multiple alleles (A, B, O)"}
+        {
+          "term": "Discontinuous variation",
+          "def": "Variation with distinct, separate categories and no intermediates — e.g. blood group, tongue rolling"
+        },
+        {
+          "term": "Blood group",
+          "def": "A classic example of discontinuous variation — determined by a single gene with multiple alleles (A, B, O)"
+        }
       ],
-      "memTip": "Discontinuous = you can Divide into boxes. Bar chart with gaps: each bar is one category, nothing in between. If you can say 'I am group A OR B OR AB OR O' with no middle ground — that's discontinuous."
+      "memTip": "Discontinuous = you can Divide into boxes. Bar chart with gaps: each bar is one category, nothing in between."
     }
   ],
   "tables": [
     {
       "title": "Continuous vs discontinuous variation",
       "examFlag": true,
-      "headers": ["Feature", "Continuous", "Discontinuous"],
+      "headers": [
+        "Feature",
+        "Continuous",
+        "Discontinuous"
+      ],
       "rows": [
-        ["Examples", "Height, mass, hand span", "Blood group, tongue rolling, earlobe type"],
-        ["Number of genes involved", "Many (polygenic)", "One or a few"],
-        ["Environmental influence", "Significant", "Little or none"],
-        ["Graph type", "Histogram / bell curve (no gaps)", "Bar chart (gaps between bars)"],
-        ["Can inheritance be inherited?", "Yes (the genetic component)", "Yes — almost entirely genetic"]
+        [
+          "Examples",
+          "Height, mass, hand span",
+          "Blood group, tongue rolling, earlobe type"
+        ],
+        [
+          "Number of genes involved",
+          "Many (polygenic)",
+          "One or a few"
+        ],
+        [
+          "Environmental influence",
+          "Significant",
+          "Little or none"
+        ],
+        [
+          "Graph type",
+          "Histogram / bell curve (no gaps)",
+          "Bar chart (gaps between bars)"
+        ],
+        [
+          "Can inheritance be inherited?",
+          "Yes (the genetic component)",
+          "Yes — almost entirely genetic"
+        ]
       ]
     }
   ],

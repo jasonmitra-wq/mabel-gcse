@@ -26,10 +26,16 @@
         "All monomer atoms end up in the polymer — nothing eliminated"
       ],
       "keyTerms": [
-        { "term": "Addition polymer", "def": "A polymer formed when alkene monomers join via opening of C=C double bonds; no by-products are produced" },
-        { "term": "Repeat unit", "def": "The smallest repeating section of a polymer chain; drawn with bonds extending from both sides of the bracket" }
+        {
+          "term": "Addition polymer",
+          "def": "A polymer formed when alkene monomers join via opening of C=C double bonds; no by-products are produced"
+        },
+        {
+          "term": "Repeat unit",
+          "def": "The smallest repeating section of a polymer chain; drawn with bonds extending from both sides of the bracket"
+        }
       ],
-      "memTip": "Addition = ADD it all together. Nothing leaves — every atom in the monomers ends up in the polymer. No escape.",
+      "memTip": "Addition = ADD it all together. Nothing leaves — every atom in the monomers ends up in the polymer.",
       "tutor_note": "Students sometimes draw repeat units incorrectly — the bonds must extend outside the bracket. Also remind them that the subscript n means 'many' and goes outside the bracket."
     },
     {
@@ -46,13 +52,28 @@
         "By-product of most condensation polymerisations: water"
       ],
       "keyTerms": [
-        { "term": "Condensation polymerisation", "def": "Polymerisation where monomers with two functional groups join, eliminating a small molecule (e.g. water) each time a bond forms" },
-        { "term": "Polyamide", "def": "A condensation polymer with amide bonds (−CO−NH−); formed from a diamine and a dicarboxylic acid; e.g. nylon" },
-        { "term": "Polyester", "def": "A condensation polymer with ester bonds (−COO−); formed from a diol and a dicarboxylic acid; e.g. PET (Terylene)" },
-        { "term": "Amide bond", "def": "The linkage −CO−NH− formed in condensation polymerisation of a polyamide" },
-        { "term": "Ester bond", "def": "The linkage −COO− formed in condensation polymerisation of a polyester" }
+        {
+          "term": "Condensation polymerisation",
+          "def": "Polymerisation where monomers with two functional groups join, eliminating a small molecule (e.g. water) each time a bond forms"
+        },
+        {
+          "term": "Polyamide",
+          "def": "A condensation polymer with amide bonds (−CO−NH−); formed from a diamine and a dicarboxylic acid; e.g. nylon"
+        },
+        {
+          "term": "Polyester",
+          "def": "A condensation polymer with ester bonds (−COO−); formed from a diol and a dicarboxylic acid; e.g. PET (Terylene)"
+        },
+        {
+          "term": "Amide bond",
+          "def": "The linkage −CO−NH− formed in condensation polymerisation of a polyamide"
+        },
+        {
+          "term": "Ester bond",
+          "def": "The linkage −COO− formed in condensation polymerisation of a polyester"
+        }
       ],
-      "memTip": "Condensation = water CONDENSes out. One monomer + another monomer → link + H₂O. Like two people shaking hands and a drop of sweat falls off.",
+      "memTip": "Condensation = water CONDENSes out. One monomer + another monomer → link + H₂O.",
       "tutor_note": "The key distinction in exam questions is: addition = no by-product; condensation = small molecule (usually water) is eliminated. Students must also name the type of bond formed."
     },
     {
@@ -68,10 +89,16 @@
         "Strong, flexible — used in ropes, clothing, parachutes"
       ],
       "keyTerms": [
-        { "term": "Diamine", "def": "A monomer with two amino groups (−NH₂), one at each end; used in polyamide synthesis" },
-        { "term": "Diacid chloride", "def": "A monomer with two acid chloride groups (−COCl), one at each end; reacts with diamines to form nylon" }
+        {
+          "term": "Diamine",
+          "def": "A monomer with two amino groups (−NH₂), one at each end; used in polyamide synthesis"
+        },
+        {
+          "term": "Diacid chloride",
+          "def": "A monomer with two acid chloride groups (−COCl), one at each end; reacts with diamines to form nylon"
+        }
       ],
-      "memTip": "Nylon: two N-containing monomers per chain? No — one diamine (N) and one diacid. The amide bond always has N−H next to C=O. Nylon → amide → Nylon has N in it.",
+      "memTip": "Nylon: two N-containing monomers per chain? No — one diamine (N) and one diacid.",
       "tutor_note": "Nylon can be made dramatically in the lab by the nylon rope trick — useful if demonstrated in class. Focus students on identifying the monomers and the bond formed."
     },
     {
@@ -88,10 +115,16 @@
         "Biodegradable polymers: from plant materials, broken down by microbes — more expensive"
       ],
       "keyTerms": [
-        { "term": "Non-biodegradable", "def": "Cannot be broken down by microorganisms; persists in the environment for very long periods" },
-        { "term": "Biodegradable polymer", "def": "A polymer that can be broken down by microorganisms; usually made from plant-derived materials" }
+        {
+          "term": "Non-biodegradable",
+          "def": "Cannot be broken down by microorganisms; persists in the environment for very long periods"
+        },
+        {
+          "term": "Biodegradable polymer",
+          "def": "A polymer that can be broken down by microorganisms; usually made from plant-derived materials"
+        }
       ],
-      "memTip": "Non-biodegradable = microbes can't eat it. Once made, it stays for centuries. That's the core of the plastic waste problem.",
+      "memTip": "Non-biodegradable = microbes can't eat it. Once made, it stays for centuries.",
       "tutor_note": "Evaluate questions on polymer disposal are common. Students should be able to give advantages and disadvantages of at least two disposal methods and reach a justified conclusion."
     }
   ],
@@ -99,24 +132,68 @@
     {
       "title": "Addition vs condensation polymerisation",
       "examFlag": true,
-      "headers": ["Feature", "Addition polymerisation", "Condensation polymerisation"],
+      "headers": [
+        "Feature",
+        "Addition polymerisation",
+        "Condensation polymerisation"
+      ],
       "rows": [
-        ["Monomer type", "Alkene (C=C double bond)", "Two monomers, each with two functional groups"],
-        ["By-product?", "None — all atoms in polymer", "Yes — water or HCl eliminated"],
-        ["Bond formed", "C−C single bond (from C=C)", "Amide (−CO−NH−) or ester (−COO−)"],
-        ["Example polymer", "Poly(ethene), PVC", "Nylon (polyamide), PET (polyester)"],
-        ["Example monomers", "Ethene, chloroethene", "Diamine + dicarboxylic acid (nylon)"]
+        [
+          "Monomer type",
+          "Alkene (C=C double bond)",
+          "Two monomers, each with two functional groups"
+        ],
+        [
+          "By-product?",
+          "None — all atoms in polymer",
+          "Yes — water or HCl eliminated"
+        ],
+        [
+          "Bond formed",
+          "C−C single bond (from C=C)",
+          "Amide (−CO−NH−) or ester (−COO−)"
+        ],
+        [
+          "Example polymer",
+          "Poly(ethene), PVC",
+          "Nylon (polyamide), PET (polyester)"
+        ],
+        [
+          "Example monomers",
+          "Ethene, chloroethene",
+          "Diamine + dicarboxylic acid (nylon)"
+        ]
       ]
     },
     {
       "title": "Polymer disposal — advantages and disadvantages",
       "examFlag": true,
-      "headers": ["Method", "Advantages", "Disadvantages"],
+      "headers": [
+        "Method",
+        "Advantages",
+        "Disadvantages"
+      ],
       "rows": [
-        ["Landfill", "Cheap, no energy needed", "Uses land; plastic does not decompose; methane from surrounding waste"],
-        ["Incineration", "Generates energy; reduces waste volume", "CO₂ produced; toxic gases from PVC; non-renewable resource lost"],
-        ["Recycling", "Saves raw materials and energy", "Sorting different plastics is difficult and expensive"],
-        ["Biodegradable polymers", "Break down naturally; less environmental impact", "More expensive; may have inferior properties to synthetic polymers"]
+        [
+          "Landfill",
+          "Cheap, no energy needed",
+          "Uses land; plastic does not decompose; methane from surrounding waste"
+        ],
+        [
+          "Incineration",
+          "Generates energy; reduces waste volume",
+          "CO₂ produced; toxic gases from PVC; non-renewable resource lost"
+        ],
+        [
+          "Recycling",
+          "Saves raw materials and energy",
+          "Sorting different plastics is difficult and expensive"
+        ],
+        [
+          "Biodegradable polymers",
+          "Break down naturally; less environmental impact",
+          "More expensive; may have inferior properties to synthetic polymers"
+        ]
       ]
     }
   ],

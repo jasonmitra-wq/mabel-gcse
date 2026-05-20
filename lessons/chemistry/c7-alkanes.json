@@ -26,12 +26,24 @@
         "Higher carbons = higher boiling point, less flammable as liquid"
       ],
       "keyTerms": [
-        { "term": "Saturated", "def": "Contains only single C−C bonds; no C=C double bonds" },
-        { "term": "Hydrocarbon", "def": "A compound containing hydrogen and carbon only" },
-        { "term": "Alkane", "def": "A saturated hydrocarbon with general formula CnH2n+2; all single bonds" },
-        { "term": "General formula", "def": "A formula that applies to a whole homologous series; for alkanes: CnH2n+2" }
+        {
+          "term": "Saturated",
+          "def": "Contains only single C−C bonds; no C=C double bonds"
+        },
+        {
+          "term": "Hydrocarbon",
+          "def": "A compound containing hydrogen and carbon only"
+        },
+        {
+          "term": "Alkane",
+          "def": "A saturated hydrocarbon with general formula CnH2n+2; all single bonds"
+        },
+        {
+          "term": "General formula",
+          "def": "A formula that applies to a whole homologous series; for alkanes: CnH2n+2"
+        }
       ],
-      "memTip": "MEPB — Methane, Ethane, Propane, Butane. Or use the prefixes: meth=1, eth=2, prop=3, but=4. Then add 'ane' for alkanes.",
+      "memTip": "MEPB — Methane, Ethane, Propane, Butane. Or use the prefixes: meth=1, eth=2, prop=3, but=4.",
       "tutor_note": "Students must be able to draw the structural (displayed) formula for the first four alkanes and derive any alkane formula from the general formula. Test this regularly."
     },
     {
@@ -48,9 +60,12 @@
         "Blue flame indicates complete combustion"
       ],
       "keyTerms": [
-        { "term": "Complete combustion", "def": "Burning with excess oxygen; always produces CO₂ and H₂O as the only products" }
+        {
+          "term": "Complete combustion",
+          "def": "Burning with excess oxygen; always produces CO₂ and H₂O as the only products"
+        }
       ],
-      "memTip": "Complete combustion: everything converted. C becomes CO₂, H becomes H₂O. No leftovers — you have enough oxygen to finish the job.",
+      "memTip": "Complete combustion: everything converted. C becomes CO₂, H becomes H₂O.",
       "tutor_note": "Students need to be able to balance combustion equations. A good method: balance C first (→ CO₂), then H (→ H₂O), then count O atoms needed and put that number in front of O₂."
     },
     {
@@ -67,11 +82,20 @@
         "Orange/yellow flame = sign of incomplete combustion"
       ],
       "keyTerms": [
-        { "term": "Incomplete combustion", "def": "Burning with insufficient oxygen; produces CO, soot (C), and water — CO is toxic" },
-        { "term": "Carbon monoxide (CO)", "def": "A toxic, colourless, odourless gas produced by incomplete combustion; binds to haemoglobin, preventing oxygen transport" },
-        { "term": "Particulates / soot", "def": "Fine carbon particles produced by incomplete combustion; cause respiratory damage and global dimming" }
+        {
+          "term": "Incomplete combustion",
+          "def": "Burning with insufficient oxygen; produces CO, soot (C), and water — CO is toxic"
+        },
+        {
+          "term": "Carbon monoxide (CO)",
+          "def": "A toxic, colourless, odourless gas produced by incomplete combustion; binds to haemoglobin, preventing oxygen transport"
+        },
+        {
+          "term": "Particulates / soot",
+          "def": "Fine carbon particles produced by incomplete combustion; cause respiratory damage and global dimming"
+        }
       ],
-      "memTip": "Incomplete = not enough O. C becomes CO instead of CO₂. CO = silent killer (colourless, odourless). Soot = black particles you can see in diesel exhaust.",
+      "memTip": "Incomplete = not enough O. C becomes CO instead of CO₂.",
       "tutor_note": "In exam questions, students must clearly link CO to haemoglobin and oxygen transport — just saying 'it is toxic' is rarely enough for full marks."
     },
     {
@@ -87,7 +111,10 @@
         "Given name: use n value in CnH2n+2 to find formula"
       ],
       "keyTerms": [
-        { "term": "Homologous series", "def": "A family of compounds with the same general formula and similar chemical properties; members differ by CH₂" }
+        {
+          "term": "Homologous series",
+          "def": "A family of compounds with the same general formula and similar chemical properties; members differ by CH₂"
+        }
       ],
       "memTip": "My Enormous Purple Butterfly Penguin Hen: Meth, Eth, Prop, But, Pent, Hex — learn the first six prefixes in order.",
       "tutor_note": "Many students can name but cannot write the formula, or vice versa. Practise both directions — name → formula and formula → name."
@@ -97,14 +124,56 @@
     {
       "title": "First six alkanes — names, formulas and uses",
       "examFlag": true,
-      "headers": ["Name", "Formula", "n (carbons)", "State at room temp", "Use"],
+      "headers": [
+        "Name",
+        "Formula",
+        "n (carbons)",
+        "State at room temp",
+        "Use"
+      ],
       "rows": [
-        ["Methane", "CH₄", "1", "Gas", "Natural gas (heating, cooking)"],
-        ["Ethane", "C₂H₆", "2", "Gas", "Fuel, chemical feedstock"],
-        ["Propane", "C₃H₈", "3", "Gas", "LPG, camping gas"],
-        ["Butane", "C₄H₁₀", "4", "Gas", "Lighter fluid, LPG"],
-        ["Pentane", "C₅H₁₂", "5", "Liquid", "Fuel component"],
-        ["Hexane", "C₆H₁₄", "6", "Liquid", "Solvent"]
+        [
+          "Methane",
+          "CH₄",
+          "1",
+          "Gas",
+          "Natural gas (heating, cooking)"
+        ],
+        [
+          "Ethane",
+          "C₂H₆",
+          "2",
+          "Gas",
+          "Fuel, chemical feedstock"
+        ],
+        [
+          "Propane",
+          "C₃H₈",
+          "3",
+          "Gas",
+          "LPG, camping gas"
+        ],
+        [
+          "Butane",
+          "C₄H₁₀",
+          "4",
+          "Gas",
+          "Lighter fluid, LPG"
+        ],
+        [
+          "Pentane",
+          "C₅H₁₂",
+          "5",
+          "Liquid",
+          "Fuel component"
+        ],
+        [
+          "Hexane",
+          "C₆H₁₄",
+          "6",
+          "Liquid",
+          "Solvent"
+        ]
       ]
     }
   ],

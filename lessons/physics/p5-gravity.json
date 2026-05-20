@@ -25,12 +25,24 @@
         "In deep space: g ≈ 0 → effectively weightless (but mass unchanged)"
       ],
       "keyTerms": [
-        {"term": "Mass", "def": "The amount of matter in an object, measured in kg — constant regardless of location"},
-        {"term": "Weight", "def": "The gravitational force acting on an object, measured in N — varies with the local gravitational field strength"},
-        {"term": "Gravitational field strength (g)", "def": "The force per unit mass acting on an object in a gravitational field, measured in N/kg — on Earth, g = 9.8 N/kg"},
-        {"term": "W = mg", "def": "The equation for weight: weight (N) = mass (kg) × gravitational field strength (N/kg)"}
+        {
+          "term": "Mass",
+          "def": "The amount of matter in an object, measured in kg — constant regardless of location"
+        },
+        {
+          "term": "Weight",
+          "def": "The gravitational force acting on an object, measured in N — varies with the local gravitational field strength"
+        },
+        {
+          "term": "Gravitational field strength (g)",
+          "def": "The force per unit mass acting on an object in a gravitational field, measured in N/kg — on Earth, g = 9.8 N/kg"
+        },
+        {
+          "term": "W = mg",
+          "def": "The equation for weight: weight (N) = mass (kg) × gravitational field strength (N/kg)"
+        }
       ],
-      "memTip": "Mass = matter, measured in kg, never changes. Weight = force, measured in N, changes with gravity. W = mg. On Earth g = 9.8 N/kg. A 70 kg person: weight on Earth = 70 × 9.8 = 686 N; on Moon = 70 × 1.6 = 112 N. Same mass, very different weight."
+      "memTip": "Mass = matter, measured in kg, never changes. Weight = force, measured in N, changes with gravity."
     },
     {
       "heading": "Gravitational fields",
@@ -46,9 +58,12 @@
         "Field lines point towards centre of mass (direction of force on a small test mass)"
       ],
       "keyTerms": [
-        {"term": "Gravitational field", "def": "A region of space around a mass where other masses experience a gravitational force — field strength decreases with distance from the mass"}
+        {
+          "term": "Gravitational field",
+          "def": "A region of space around a mass where other masses experience a gravitational force — field strength decreases with distance from the mass"
+        }
       ],
-      "memTip": "Gravitational field = region where gravity acts. Field lines point IN (towards the mass). Stronger near the surface, weaker further away. Earth's field extends far into space — that's why the Moon and satellites orbit Earth."
+      "memTip": "Gravitational field = region where gravity acts. Field lines point IN (towards the mass)."
     },
     {
       "heading": "Orbits — free fall and centripetal force",
@@ -64,23 +79,52 @@
         "Satellites in lower orbits move faster and orbit more quickly"
       ],
       "keyTerms": [
-        {"term": "Free fall", "def": "Motion under gravity alone — an object in orbit is continuously falling towards Earth but moving sideways fast enough to orbit"},
-        {"term": "Centripetal force", "def": "The resultant force directed towards the centre of a circle, keeping an object in circular motion — for orbits, this force is provided by gravity"},
-        {"term": "Orbital period", "def": "The time taken for one complete orbit — longer for higher orbits"}
+        {
+          "term": "Free fall",
+          "def": "Motion under gravity alone — an object in orbit is continuously falling towards Earth but moving sideways fast enough to orbit"
+        },
+        {
+          "term": "Centripetal force",
+          "def": "The resultant force directed towards the centre of a circle, keeping an object in circular motion — for orbits, this force is provided by gravity"
+        },
+        {
+          "term": "Orbital period",
+          "def": "The time taken for one complete orbit — longer for higher orbits"
+        }
       ],
-      "memTip": "Orbit = continuous free fall that keeps missing. Gravity is always pulling in, sideways velocity keeps it going around. Higher orbit → weaker gravity → slower speed AND longer period. Geostationary satellites are at a specific height where the period = 24 hours, so they stay above the same point on Earth."
+      "memTip": "Orbit = continuous free fall that keeps missing. Gravity is always pulling in, sideways velocity keeps it going around."
     }
   ],
   "tables": [
     {
       "title": "Gravitational field strength on different bodies",
       "examFlag": true,
-      "headers": ["Location", "g (N/kg)", "Weight of 70 kg person (N)"],
+      "headers": [
+        "Location",
+        "g (N/kg)",
+        "Weight of 70 kg person (N)"
+      ],
       "rows": [
-        ["Earth's surface", "9.8", "686"],
-        ["Moon's surface", "1.6", "112"],
-        ["Mars surface", "3.7", "259"],
-        ["Deep space (far from any mass)", "≈ 0", "≈ 0 (weightless)"]
+        [
+          "Earth's surface",
+          "9.8",
+          "686"
+        ],
+        [
+          "Moon's surface",
+          "1.6",
+          "112"
+        ],
+        [
+          "Mars surface",
+          "3.7",
+          "259"
+        ],
+        [
+          "Deep space (far from any mass)",
+          "≈ 0",
+          "≈ 0 (weightless)"
+        ]
       ]
     }
   ],

@@ -200,7 +200,19 @@
     }
   ],
   "checkpoints": {
-    "2": {
+    "0": {
+      "question": "Which subatomic particle has a relative charge of -1 and negligible mass?",
+      "options": [
+        "Proton",
+        "Neutron",
+        "Electron",
+        "Nucleus"
+      ],
+      "correct": 2,
+      "correctFeedback": "Correct -- electrons have a charge of -1 and a relative mass that is so small it is considered negligible. Protons have charge +1 and mass 1; neutrons have charge 0 and mass 1.",
+      "wrongFeedback": "The three subatomic particles: proton (charge +1, mass 1), neutron (charge 0, mass 1), electron (charge -1, negligible mass). Electrons are the lightest and are found in shells outside the nucleus."
+    },
+    "1": {
       "question": "An atom has an atomic number of 17 and a mass number of 35. How many neutrons does it have?",
       "options": [
         "17",
@@ -212,7 +224,7 @@
       "correctFeedback": "Correct — 35 − 17 = 18 neutrons. Mass number minus atomic number gives you the neutrons every time.",
       "wrongFeedback": "Neutrons = mass number − atomic number = 35 − 17 = 18. The atomic number (17) tells you protons; the mass number (35) is protons + neutrons combined."
     },
-    "3": {
+    "2": {
       "question": "Carbon-12 and carbon-14 are isotopes. What is the same in both atoms, and what is different?",
       "options": [
         "Same number of neutrons, different number of protons",
@@ -223,6 +235,18 @@
       "correct": 1,
       "correctFeedback": "Exactly right. Same atomic number (6 protons) — it's still carbon. Different mass number because the number of neutrons differs (6 in carbon-12, 8 in carbon-14).",
       "wrongFeedback": "Isotopes always have the SAME number of protons (same atomic number — that's what makes them the same element). What changes is the number of NEUTRONS, giving a different mass number."
+    },
+    "3": {
+      "question": "Chlorine has two isotopes: Cl-35 (75% abundance) and Cl-37 (25% abundance). Which statement explains why the relative atomic mass of chlorine is approximately 35.5?",
+      "options": [
+        "The relative atomic mass is always the average of the two mass numbers",
+        "The relative atomic mass is a weighted average, taking into account the abundance of each isotope",
+        "The relative atomic mass rounds up because Cl-37 is heavier",
+        "The relative atomic mass equals the most common mass number plus 0.5"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct -- relative atomic mass is a weighted average. With 75% Cl-35 and 25% Cl-37: (35 x 75 + 37 x 25) / 100 = (2625 + 925) / 100 = 35.5. The more abundant isotope has a bigger influence.",
+      "wrongFeedback": "Relative atomic mass is not a simple average of the mass numbers -- it is a weighted average. The abundance of each isotope is taken into account. Cl-35 is more abundant (75%) so the Ar is closer to 35 than to 37."
     }
   },
   "commonMistakes": [

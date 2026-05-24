@@ -139,7 +139,7 @@
   ],
   "tables": [],
   "checkpoints": {
-    "1": {
+    "0": {
       "question": "A 2 kg ball is moving at 3 m/s. What is its kinetic energy?",
       "options": [
         "6 J",
@@ -151,7 +151,19 @@
       "correctFeedback": "Correct — Ek = ½ × 2 × 3² = ½ × 2 × 9 = 9 J. Remember to square v before multiplying.",
       "wrongFeedback": "Use Ek = ½mv². Here: ½ × 2 × 3² = ½ × 2 × 9 = 9 J. The most common mistake is forgetting to square v first — always deal with v² before multiplying by m."
     },
-    "3": {
+    "1": {
+      "question": "A 5 kg bag is lifted to a height of 3 m. Using g = 10 N/kg, what is its gravitational potential energy?",
+      "options": [
+        "15 J",
+        "150 J",
+        "1.5 J",
+        "1500 J"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct -- GPE = mgh = 5 x 10 x 3 = 150 J. Mass in kg, g in N/kg, height in m gives energy in joules.",
+      "wrongFeedback": "Use GPE = mgh. Here: 5 kg x 10 N/kg x 3 m = 150 J. A common error is to forget to multiply all three values together -- the formula has three variables, not two."
+    },
+    "2": {
       "question": "A ball is dropped from a height of 5 m. Assuming no air resistance, what is its speed just before it hits the ground? (g = 10 N/kg)",
       "options": [
         "5 m/s",
@@ -162,6 +174,18 @@
       "correct": 2,
       "correctFeedback": "Correct — v = √(2gh) = √(2 × 10 × 5) = √100 = 10 m/s. GPE fully converts to KE, masses cancel, leaving v = √(2gh).",
       "wrongFeedback": "Equate GPE and KE: mgh = ½mv². Masses cancel: gh = ½v². So v² = 2gh = 2 × 10 × 5 = 100. Therefore v = √100 = 10 m/s."
+    },
+    "3": {
+      "question": "A spring with spring constant k = 400 N/m is compressed by 0.05 m. What is the elastic potential energy stored?",
+      "options": [
+        "0.5 J",
+        "1.0 J",
+        "10 J",
+        "20 J"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct -- Ee = 1/2 x k x e2 = 0.5 x 400 x (0.05)2 = 0.5 x 400 x 0.0025 = 0.5 J. Remember to square the extension before multiplying.",
+      "wrongFeedback": "Use Ee = 1/2 x k x e2. Extension e = 0.05 m. e2 = 0.0025. Then: 0.5 x 400 x 0.0025 = 0.5 J. The most common error is forgetting to square the extension."
     }
   },
   "commonMistakes": [

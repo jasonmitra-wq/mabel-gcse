@@ -26,9 +26,18 @@
         "Bigger reactivity gap between metals = higher voltage"
       ],
       "keyTerms": [
-        { "term": "Cell", "def": "A device that converts chemical energy into electrical energy using a redox reaction between two different electrodes in an electrolyte" },
-        { "term": "Electrolyte", "def": "A solution or molten ionic compound that conducts electricity by allowing ions to move" },
-        { "term": "Electrode", "def": "A conductor (usually a metal or graphite) at which oxidation or reduction occurs in a cell or during electrolysis" }
+        {
+          "term": "Cell",
+          "def": "A device that converts chemical energy into electrical energy using a redox reaction between two different electrodes in an electrolyte"
+        },
+        {
+          "term": "Electrolyte",
+          "def": "A solution or molten ionic compound that conducts electricity by allowing ions to move"
+        },
+        {
+          "term": "Electrode",
+          "def": "A conductor (usually a metal or graphite) at which oxidation or reduction occurs in a cell or during electrolysis"
+        }
       ],
       "memTip": "More reactive = negative electrode. Think of the reactive metal as 'eager to give up electrons' — it pushes them out (negative charge flows out = negative electrode).",
       "tutor_note": "Students often confuse cells with electrolysis. In a cell, the redox reaction drives the current spontaneously. In electrolysis, an external current drives a non-spontaneous reaction. Contrast them directly."
@@ -47,8 +56,14 @@
         "Rechargeable: current reverses the reaction, regenerates reactants"
       ],
       "keyTerms": [
-        { "term": "Battery", "def": "Two or more cells connected in series; produces a higher combined voltage than a single cell" },
-        { "term": "Rechargeable cell", "def": "A cell in which the redox reaction can be reversed by applying an external current, regenerating the original reactants" }
+        {
+          "term": "Battery",
+          "def": "Two or more cells connected in series; produces a higher combined voltage than a single cell"
+        },
+        {
+          "term": "Rechargeable cell",
+          "def": "A cell in which the redox reaction can be reversed by applying an external current, regenerating the original reactants"
+        }
       ],
       "memTip": "Non-rechargeable = one-way trip for the chemicals. Rechargeable = a reversible reaction you can reset by plugging it in.",
       "tutor_note": "Exam questions sometimes ask students to explain in terms of chemistry why a rechargeable cell can be used again — the answer must reference the redox reaction being reversed."
@@ -68,8 +83,14 @@
         "Disadvantages: H₂ storage problems, most H₂ from fossil fuels, expensive"
       ],
       "keyTerms": [
-        { "term": "Fuel cell", "def": "A device that generates electricity from a continuous supply of fuel and an oxidant; the hydrogen-oxygen fuel cell produces only water as a by-product" },
-        { "term": "Hydrogen fuel cell", "def": "A specific type of fuel cell using hydrogen as the fuel and oxygen as the oxidant; overall reaction: 2H₂ + O₂ → 2H₂O" }
+        {
+          "term": "Fuel cell",
+          "def": "A device that generates electricity from a continuous supply of fuel and an oxidant; the hydrogen-oxygen fuel cell produces only water as a by-product"
+        },
+        {
+          "term": "Hydrogen fuel cell",
+          "def": "A specific type of fuel cell using hydrogen as the fuel and oxygen as the oxidant; overall reaction: 2H₂ + O₂ → 2H₂O"
+        }
       ],
       "memTip": "Fuel cells: hydrogen IN, water OUT, electricity produced the whole time. Think of it as a very clean, controlled version of burning hydrogen.",
       "tutor_note": "Evaluate questions on fuel cells are very common. Students must be able to give both advantages and disadvantages and consider the full hydrogen supply chain (not just the fuel cell itself)."
@@ -87,7 +108,10 @@
         "Evaluation questions: consider cost, waste, emissions, and practicality"
       ],
       "keyTerms": [
-        { "term": "Evaluate", "def": "To consider advantages and disadvantages and reach a supported conclusion — common command word in exam questions about fuel cells" }
+        {
+          "term": "Evaluate",
+          "def": "To consider advantages and disadvantages and reach a supported conclusion — common command word in exam questions about fuel cells"
+        }
       ],
       "memTip": "For evaluate questions: give both sides. Fuel cells look perfect until you ask 'where does the hydrogen come from?'",
       "tutor_note": "Remind students that 'evaluate' questions require a balanced answer with a justified conclusion — listing only advantages will not score full marks."
@@ -97,12 +121,42 @@
     {
       "title": "Comparison of cell types",
       "examFlag": true,
-      "headers": ["Type", "Rechargeable?", "By-products", "Best use", "Limitation"],
+      "headers": [
+        "Type",
+        "Rechargeable?",
+        "By-products",
+        "Best use",
+        "Limitation"
+      ],
       "rows": [
-        ["Simple cell (e.g. Zn/Cu)", "No", "Depleted metals/solution", "Low-drain devices", "Goes flat, creates waste"],
-        ["Non-rechargeable battery", "No", "Waste materials on disposal", "Remote controls, clocks", "Cannot be reused"],
-        ["Rechargeable battery", "Yes", "Minimal (reused many times)", "Phones, laptops, EVs", "Higher upfront cost"],
-        ["Hydrogen fuel cell", "No (refuelled)", "Water only", "Vehicles, large-scale", "H₂ storage; infrastructure gaps"]
+        [
+          "Simple cell (e.g. Zn/Cu)",
+          "No",
+          "Depleted metals/solution",
+          "Low-drain devices",
+          "Goes flat, creates waste"
+        ],
+        [
+          "Non-rechargeable battery",
+          "No",
+          "Waste materials on disposal",
+          "Remote controls, clocks",
+          "Cannot be reused"
+        ],
+        [
+          "Rechargeable battery",
+          "Yes",
+          "Minimal (reused many times)",
+          "Phones, laptops, EVs",
+          "Higher upfront cost"
+        ],
+        [
+          "Hydrogen fuel cell",
+          "No (refuelled)",
+          "Water only",
+          "Vehicles, large-scale",
+          "H₂ storage; infrastructure gaps"
+        ]
       ]
     }
   ],
@@ -120,6 +174,18 @@
       "wrongFeedback": "Zinc is the negative electrode because it is more reactive — it loses electrons (is oxidised). The more reactive metal is always the negative electrode."
     },
     "1": {
+      "question": "Which of the following factors affects the voltage produced by a simple cell?",
+      "options": [
+        "The temperature of the electrolyte only",
+        "The choice of metals used -- a greater difference in reactivity between the two metals gives a higher voltage",
+        "The volume of electrolyte in the cell",
+        "The size of the electrodes -- larger electrodes always produce more voltage"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct -- the voltage of a cell depends on the choice of electrode metals. A bigger difference in reactivity between them produces a higher voltage. Duration is affected by the amount of reactants available.",
+      "wrongFeedback": "Voltage in a cell depends on the reactivity difference between the two metals. Metals further apart in the reactivity series produce a higher voltage. Duration depends on how much reactant is available."
+    },
+    "2": {
       "question": "What is the only by-product of a hydrogen-oxygen fuel cell?",
       "options": [
         "Water",

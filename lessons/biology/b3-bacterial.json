@@ -130,7 +130,7 @@
   ],
   "tables": null,
   "checkpoints": {
-    "1": {
+    "0": {
       "question": "A person eats undercooked chicken and develops fever, vomiting, and diarrhoea 24 hours later. What is the most likely cause of their symptoms?",
       "options": [
         "Salmonella virus entering the bloodstream",
@@ -139,8 +139,20 @@
         "A fungal infection from the chicken skin"
       ],
       "correct": 1,
-      "correctFeedback": "✅ Correct — Salmonella bacteria reproduce in the digestive system and release toxins that cause the classic food poisoning symptoms.",
+      "correctFeedback": "Correct — Salmonella bacteria reproduce in the digestive system and release toxins that cause the classic food poisoning symptoms.",
       "wrongFeedback": "Salmonella is a bacterium, not a virus. Once in the digestive system it reproduces rapidly and releases toxins — and it's those toxins that cause fever, vomiting, and diarrhoea. Remember: bacteria cause disease mainly through toxins."
+    },
+    "1": {
+      "question": "Gonorrhoea used to be easily treated with antibiotics. Why is this no longer always the case?",
+      "options": [
+        "Gonorrhoea has become a viral infection, which antibiotics cannot treat",
+        "Antibiotic-resistant strains of Neisseria gonorrhoeae have developed, making treatment much harder",
+        "The bacteria that cause gonorrhoea now hide inside host cells away from antibiotics",
+        "New laws prevent doctors from prescribing antibiotics for sexually transmitted infections"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct — antibiotic-resistant strains of Neisseria gonorrhoeae have evolved through natural selection. The bacteria that survived earlier antibiotic treatments reproduced, spreading resistance through the population.",
+      "wrongFeedback": "Gonorrhoea is still caused by bacteria (Neisseria gonorrhoeae), not a virus. The problem is that antibiotic-resistant strains have developed — random mutations gave some bacteria resistance; antibiotics killed the susceptible ones; resistant bacteria survived and reproduced."
     },
     "3": {
       "question": "Why should you always finish a full course of antibiotics, even if you feel better before the end?",
@@ -151,7 +163,7 @@
         "Stopping early causes an allergic reaction"
       ],
       "correct": 1,
-      "correctFeedback": "✅ Exactly right. Feeling better means susceptible bacteria have been killed — but resistant ones may still be present. Stopping early gives them a chance to reproduce and become dominant.",
+      "correctFeedback": "Exactly right. Feeling better means susceptible bacteria have been killed — but resistant ones may still be present. Stopping early gives them a chance to reproduce and become dominant.",
       "wrongFeedback": "Finishing the course is about natural selection. When you feel better, the most susceptible bacteria have been killed — but the most resistant ones may still be present in smaller numbers. Stop early and those resistant bacteria reproduce unchallenged, eventually giving you a harder-to-treat infection."
     }
   },

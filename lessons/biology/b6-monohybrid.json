@@ -139,7 +139,7 @@
     }
   ],
   "checkpoints": {
-    "1": {
+    "0": {
       "question": "A student says: 'Because an allele is recessive, it will never be seen in the phenotype.' Is this correct?",
       "options": [
         "Yes — recessive alleles are always hidden by dominant ones",
@@ -148,10 +148,10 @@
         "Yes — only dominant alleles affect phenotype"
       ],
       "correct": 1,
-      "correctFeedback": "✅ Correct — a recessive allele is expressed when an organism is homozygous recessive (e.g. ff). It's only masked when paired with a dominant allele (Ff).",
+      "correctFeedback": "Correct — a recessive allele is expressed when an organism is homozygous recessive (e.g. ff). It's only masked when paired with a dominant allele (Ff).",
       "wrongFeedback": "A recessive allele is expressed in the phenotype when two copies are present — the homozygous recessive genotype (e.g. ff). When paired with a dominant allele (Ff), the recessive allele is masked — but it's still there and can be passed to offspring."
     },
-    "2": {
+    "1": {
       "question": "Two carriers (Ff) for cystic fibrosis have children. What is the probability that a child has cystic fibrosis?",
       "options": [
         "0% — carriers cannot pass on the condition",
@@ -160,10 +160,10 @@
         "100% — both parents carry the allele"
       ],
       "correct": 1,
-      "correctFeedback": "✅ Right — from Ff × Ff, one quarter of offspring are ff (affected). That's a 25% (1 in 4) probability for each child.",
+      "correctFeedback": "Right — from Ff × Ff, one quarter of offspring are ff (affected). That's a 25% (1 in 4) probability for each child.",
       "wrongFeedback": "Draw the Punnett square: Ff × Ff gives FF, Ff, Ff, ff. Only ff shows cystic fibrosis — that's 1 out of 4 combinations, so 25% probability. Remember this is per child — it's an independent event each time."
     },
-    "3": {
+    "2": {
       "question": "Why can cystic fibrosis appear to skip a generation, but polydactyly cannot?",
       "options": [
         "Cystic fibrosis is caused by a virus that disappears between generations",
@@ -172,7 +172,7 @@
         "Cystic fibrosis is caused by an X-linked gene, which skips generations in males"
       ],
       "correct": 1,
-      "correctFeedback": "✅ Exactly — carriers of cystic fibrosis (Ff) are phenotypically unaffected, so the condition can disappear from sight for a generation. Polydactyly is dominant, so you can never be a silent carrier — if you have the D allele, you show the condition.",
+      "correctFeedback": "Exactly — carriers of cystic fibrosis (Ff) are phenotypically unaffected, so the condition can disappear from sight for a generation. Polydactyly is dominant, so you can never be a silent carrier — if you have the D allele, you show the condition.",
       "wrongFeedback": "The key is dominant vs recessive. Cystic fibrosis is recessive (ff) — carriers (Ff) show no symptoms but can pass the allele on silently. Polydactyly is dominant — a single D allele always shows in the phenotype, so at least one parent must be affected."
     }
   },

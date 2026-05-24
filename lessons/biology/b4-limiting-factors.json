@@ -149,7 +149,7 @@
     }
   ],
   "checkpoints": {
-    "1": {
+    "0": {
       "question": "A plant is photosynthesising. You increase the light intensity but the rate doesn't change. What does this tell you?",
       "options": [
         "Light is the limiting factor",
@@ -161,7 +161,7 @@
       "correctFeedback": "Exactly right. If increasing light doesn't increase the rate, light is NOT the limiting factor. Something else is holding the rate back — most likely CO₂ concentration or temperature.",
       "wrongFeedback": "If light were the limiting factor, adding more light would increase the rate. Since it doesn't, something else is the bottleneck — probably CO₂ or temperature. The plant is still photosynthesising, just limited by a different factor."
     },
-    "2": {
+    "1": {
       "question": "A lamp is 10 cm from a plant. You move it to 20 cm. What happens to the light intensity received by the plant?",
       "options": [
         "It halves",
@@ -172,6 +172,30 @@
       "correct": 1,
       "correctFeedback": "Correct — the inverse square law says intensity ∝ 1 ÷ d². Doubling the distance (10 → 20 cm) means 1 ÷ 2² = 1 ÷ 4. The intensity drops to one quarter.",
       "wrongFeedback": "The inverse square law is the key here: intensity ∝ 1 ÷ distance². Doubling the distance means the divisor goes from 1² to 2² — so the intensity drops to 1/4, not 1/2. The 'square' makes it a much bigger drop than you might expect."
+    },
+    "2": {
+      "question": "A grower pumps extra CO₂ into a greenhouse. The rate of photosynthesis rises then levels off. Why does it level off?",
+      "options": [
+        "The plants have absorbed all the CO₂ and there is none left",
+        "The plants are producing too much glucose and stop photosynthesising",
+        "Another factor — light intensity or temperature — has become the new limiting factor",
+        "CO₂ becomes toxic to the plants at high concentrations"
+      ],
+      "correct": 2,
+      "correctFeedback": "Correct — the rate plateaus because increasing CO₂ has been used up as the limiting factor, and something else (light or temperature) is now the bottleneck. Only one factor limits at any one time.",
+      "wrongFeedback": "The plateau doesn't mean CO₂ runs out — the plant keeps photosynthesising at a steady rate. It means that CO₂ is no longer the limiting factor. Light intensity or temperature has taken over as the new limit. This is why greenhouses also use artificial lighting and temperature control."
+    },
+    "3": {
+      "question": "A graph shows photosynthesis rate against temperature. The rate rises, peaks at 30 °C, then drops sharply. Why does the rate drop sharply above 30 °C?",
+      "options": [
+        "The plant runs out of CO₂ above 30 °C",
+        "The plant stomata close in the heat, preventing CO₂ entry",
+        "Enzymes controlling photosynthesis denature above the optimum temperature — active site shape changes permanently",
+        "Light intensity decreases as temperature increases"
+      ],
+      "correct": 2,
+      "correctFeedback": "Correct — above the optimum temperature, enzymes denature. The active site changes shape permanently, so substrates can no longer bind and the reaction stops. This is different from low temperature, where enzymes are just slow but not destroyed.",
+      "wrongFeedback": "The sharp drop above the optimum is caused by enzyme denaturation — not a shortage of CO₂. Above the optimum temperature, the enzyme's active site permanently changes shape, so the substrate can no longer bind. This is irreversible, which is why the graph drops steeply rather than levelling off."
     }
   },
   "commonMistakes": [

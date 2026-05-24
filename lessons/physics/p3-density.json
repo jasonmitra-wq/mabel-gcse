@@ -193,19 +193,19 @@
       "correctFeedback": "Correct! ρ = m/V = 270/100 = 2.7 g/cm³. This is the density of aluminium — the stone is denser than water, so it sinks.",
       "wrongFeedback": "Use ρ = m/V. Divide mass by volume: 270 ÷ 100 = 2.7 g/cm³. Watch out for dividing the wrong way around — mass goes on top."
     },
-    "2": {
-      "question": "Why does ice float on liquid water? Choose the best explanation.",
+    "1": {
+      "question": "A metal block has a mass of 540 g and a volume of 200 cm3. What is its density?",
       "options": [
-        "Ice is less dense than liquid water because its particles form an open hexagonal lattice that takes up more space",
-        "Ice is less dense because its particles have less mass than liquid water particles",
-        "Ice floats because it is a solid and all solids float on liquids",
-        "Ice floats because it is colder and cold things are always less dense"
+        "2.7 g/cm3",
+        "108 000 g/cm3",
+        "0.37 g/cm3",
+        "340 g/cm3"
       ],
       "correct": 0,
-      "correctFeedback": "Exactly right. Ice forms an open hexagonal structure — the particles are actually slightly further apart than in liquid water, making ice less dense (917 vs 1000 kg/m³).",
-      "wrongFeedback": "The particles in ice and liquid water are identical water molecules — same mass. The difference is arrangement. In ice, a hexagonal lattice creates a more open structure, so the same mass takes up more volume → lower density."
+      "correctFeedback": "Correct -- density = mass / volume = 540 / 200 = 2.7 g/cm3. This is the density of aluminium. Always check your units -- if mass is in g and volume in cm3, the density will be in g/cm3.",
+      "wrongFeedback": "Use the formula: density = mass / volume. Here: 540 g / 200 cm3 = 2.7 g/cm3. A common error is to multiply instead of divide. Check your units too -- mass in g and volume in cm3 gives density in g/cm3."
     },
-    "3": {
+    "2": {
       "question": "How would you measure the volume of an irregularly shaped lump of rock in the lab?",
       "options": [
         "Submerge it in water using a eureka can or measuring cylinder and measure the volume of water displaced",
@@ -216,6 +216,18 @@
       "correct": 0,
       "correctFeedback": "Spot on. For irregular objects you use water displacement — the volume of water pushed out equals the volume of the object.",
       "wrongFeedback": "You can only use length × width × height for regular shapes like cuboids. For irregular shapes, water displacement (eureka can or measuring cylinder) gives you the volume directly."
+    },
+    "3": {
+      "question": "Why does ice float on liquid water? Choose the best explanation.",
+      "options": [
+        "Ice is less dense than liquid water because its particles form an open hexagonal lattice that takes up more space",
+        "Ice is less dense because its particles have less mass than liquid water particles",
+        "Ice floats because it is a solid and all solids float on liquids",
+        "Ice floats because it is colder and cold things are always less dense"
+      ],
+      "correct": 0,
+      "correctFeedback": "Exactly right. Ice forms an open hexagonal structure — the particles are actually slightly further apart than in liquid water, making ice less dense (917 vs 1000 kg/m³).",
+      "wrongFeedback": "The particles in ice and liquid water are identical water molecules — same mass. The difference is arrangement. In ice, a hexagonal lattice creates a more open structure, so the same mass takes up more volume → lower density."
     }
   },
   "commonMistakes": [

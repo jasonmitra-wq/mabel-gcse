@@ -128,7 +128,7 @@
   ],
   "tables": null,
   "checkpoints": {
-    "1": {
+    "0": {
       "question": "A child has not been vaccinated against measles. Measles is still rare in her school because 96% of the other children are vaccinated. What is the name for this type of protection?",
       "options": [
         "Natural immunity",
@@ -137,10 +137,10 @@
         "Passive immunity"
       ],
       "correct": 1,
-      "correctFeedback": "✅ That's herd immunity — when vaccination rates are high enough, the virus can't spread even to unvaccinated individuals.",
+      "correctFeedback": "That's herd immunity — when vaccination rates are high enough, the virus can't spread even to unvaccinated individuals.",
       "wrongFeedback": "This is herd immunity. When enough people in a population are immune, the pathogen can't find new hosts to infect, so even unvaccinated individuals are protected. It's why vaccination rates matter for everyone, not just the person being vaccinated."
     },
-    "2": {
+    "1": {
       "question": "A patient with HIV is told they have developed AIDS. Which of the following best explains what AIDS means?",
       "options": [
         "The HIV virus has spread to their lungs",
@@ -149,8 +149,20 @@
         "The patient has developed a fever and rash from the HIV virus"
       ],
       "correct": 1,
-      "correctFeedback": "✅ Exactly right. AIDS is the stage where the immune system can no longer defend against infections it would normally handle. It's the consequence of HIV destroying white blood cells over time.",
+      "correctFeedback": "Exactly right. AIDS is the stage where the immune system can no longer defend against infections it would normally handle. It's the consequence of HIV destroying white blood cells over time.",
       "wrongFeedback": "AIDS isn't a direct symptom of HIV — it's what happens when the immune system is so badly damaged that it can't fight off other infections. HIV destroys white blood cells; once there aren't enough left, even minor infections become life-threatening. That stage is AIDS."
+    },
+    "2": {
+      "question": "A tobacco plant has pale, mottled patches on its leaves and is growing more slowly than expected. What is the most likely cause, and why does it affect growth?",
+      "options": [
+        "Salmonella bacteria releasing toxins that damage leaf cells",
+        "Tobacco mosaic virus damaging chloroplasts, reducing photosynthesis and therefore growth",
+        "A fungal infection blocking water transport through the stem",
+        "Overwatering causing the roots to rot, reducing nutrient uptake"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct — the mosaic discolouration pattern on leaves is the signature of TMV. The virus damages chloroplasts, which reduces photosynthesis, which reduces the glucose available for growth.",
+      "wrongFeedback": "The mosaic pattern (mottled patches of yellow/pale green) is the key sign of tobacco mosaic virus (TMV). It damages chloroplasts in infected cells, so those areas can't photosynthesise. Less photosynthesis means less glucose, which means stunted growth."
     }
   },
   "commonMistakes": [

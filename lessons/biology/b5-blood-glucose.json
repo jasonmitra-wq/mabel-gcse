@@ -179,6 +179,18 @@
   ],
   "checkpoints": {
     "0": {
+      "question": "Why must blood glucose concentration be kept within a narrow range?",
+      "options": [
+        "Because glucose needs to be kept high so muscles always have fuel available",
+        "Too high causes cells to dehydrate by osmosis; too low means cells lack glucose for respiration",
+        "Because the pancreas can only produce a fixed amount of insulin per day",
+        "Because excess glucose is converted to fat, causing weight gain"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct — if blood glucose is too high, the low water potential causes cells to lose water by osmosis. If it is too low, cells (especially brain cells) cannot carry out enough respiration and may stop functioning. The narrow range keeps both problems from occurring.",
+      "wrongFeedback": "Blood glucose must stay within a narrow range for two reasons. Too high: cells lose water by osmosis (because the blood has a very low water potential), causing dehydration. Too low: cells run short of glucose for respiration — brain cells are especially vulnerable. The pancreas monitors this constantly."
+    },
+    "1": {
       "question": "What happens when blood glucose levels rise above the set point?",
       "options": [
         "The pancreas secretes glucagon, which converts glucose to glycogen",
@@ -187,20 +199,20 @@
         "The liver releases glucose into the blood to raise the level further"
       ],
       "correct": 1,
-      "correctFeedback": "✅ Correct — high blood glucose → insulin secreted by pancreas → liver (and muscles) convert glucose to glycogen (glycogenesis). Blood glucose falls back to set point.",
+      "correctFeedback": "Correct — high blood glucose triggers insulin secretion by the pancreas. Insulin causes the liver and muscles to convert glucose to glycogen (glycogenesis), storing the excess and lowering blood glucose back to the set point.",
       "wrongFeedback": "High blood glucose triggers insulin release from the pancreas (not glucagon — that's for low glucose). Insulin causes the liver to convert glucose to glycogen (glycogenesis), storing the excess. The adrenal glands and adrenaline are not involved in blood glucose regulation in this way."
     },
     "2": {
-      "question": "Why does blood glucose fall when glucagon is released?",
+      "question": "Why does blood glucose rise when glucagon is released?",
       "options": [
         "Glucagon causes the liver to convert glucose to glycogen",
-        "Glucagon causes the liver to convert glycogen back to glucose and release it into the blood — this raises blood glucose from a low level back to normal",
+        "Glucagon causes the liver to convert glycogen back to glucose and release it into the blood",
         "Glucagon is released when blood glucose is high, and it lowers it by promoting respiration",
         "Glucagon is released when blood glucose is high and stores it as glycogen"
       ],
       "correct": 1,
-      "correctFeedback": "✅ Right, though note the question was slightly tricky — glucagon RAISES blood glucose (by breaking down glycogen), not lowers it. You correctly identified what glucagon does. It's released when glucose is LOW to bring it back UP.",
-      "wrongFeedback": "This is a common confusion. Glucagon is released when blood glucose is LOW. It causes the liver to break down glycogen into glucose (glycogenolysis) and release it into the blood — this RAISES blood glucose back to the set point. Glucagon raises glucose. Insulin lowers glucose."
+      "correctFeedback": "Correct — glucagon is released when blood glucose is LOW. It causes the liver to break down glycogen into glucose (glycogenolysis) and release it into the blood, raising blood glucose back to the set point.",
+      "wrongFeedback": "Glucagon is released when blood glucose is LOW. It causes the liver to break down glycogen into glucose (glycogenolysis) and release it into the blood — this RAISES blood glucose back to the set point. Glucagon raises glucose. Insulin lowers glucose."
     },
     "3": {
       "question": "A patient is diagnosed with Type 1 diabetes. What is the most likely cause and the appropriate treatment?",
@@ -211,7 +223,7 @@
         "The liver cannot store glycogen; treated with glucagon injections"
       ],
       "correct": 1,
-      "correctFeedback": "✅ Exactly right — Type 1 is an autoimmune destruction of beta cells, meaning no insulin is produced. The treatment is daily insulin injections to replace what the body cannot make.",
+      "correctFeedback": "Exactly right — Type 1 is an autoimmune destruction of beta cells, meaning no insulin is produced. The treatment is daily insulin injections to replace what the body cannot make.",
       "wrongFeedback": "Type 1 diabetes occurs when the immune system destroys the beta cells in the pancreas, so no insulin is produced. The treatment is insulin injections — not diet or exercise, which are management strategies for Type 2. Type 2 involves insulin resistance, not absent insulin production."
     }
   },

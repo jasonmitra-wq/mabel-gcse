@@ -217,7 +217,7 @@
     }
   ],
   "checkpoints": {
-    "1": {
+    "0": {
       "question": "A book sits on a high shelf. Which energy store does it have?",
       "options": [
         "Kinetic energy store",
@@ -229,7 +229,43 @@
       "correctFeedback": "Correct — the book is at height, so it has energy in its gravitational potential store. It would convert to kinetic energy if it fell.",
       "wrongFeedback": "The book is at height above the ground, so the correct store is gravitational potential. Kinetic needs movement; elastic needs stretching or compression; chemical is stored in bonds like food or fuel."
     },
+    "1": {
+      "question": "A moving car transfers energy to its surroundings when it brakes. Which energy transfer pathway best describes this?",
+      "options": [
+        "Electrically -- an electric current transfers energy to the brakes",
+        "Mechanically -- the force of friction between brakes and wheels transfers energy as heat",
+        "By radiation -- infrared radiation carries energy from the car to the air",
+        "Chemically -- the fuel reacts with brake fluid to release energy"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct -- when brakes apply a friction force to the wheels, energy is transferred mechanically (by a force). The energy is then dissipated as thermal energy in the brakes and surroundings.",
+      "wrongFeedback": "Energy can be transferred in four ways: mechanically (by a force), electrically (by a current), by heating (from hotter to cooler), and by radiation (waves). Braking involves a contact force -- that is mechanical transfer. The energy then becomes thermal."
+    },
+    "2": {
+      "question": "A student says energy is destroyed when a ball rolls to a stop on a carpet. Why is this incorrect?",
+      "options": [
+        "Energy is actually created when the ball stops -- it converts to cold",
+        "Energy cannot be created or destroyed -- it has been transferred to thermal energy in the carpet and surroundings",
+        "The ball still has kinetic energy even though it has stopped",
+        "Energy is only destroyed if the object is on a frictionless surface"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct -- conservation of energy: energy cannot be created or destroyed. When the ball stops, its kinetic energy has been transferred to thermal energy (heat) in the carpet, ball, and surrounding air by friction.",
+      "wrongFeedback": "Energy is never destroyed. The law of conservation of energy states that total energy is constant. When the ball stops, the kinetic energy has been transferred to thermal energy (heat) in the carpet and surroundings. It has changed store, not disappeared."
+    },
     "3": {
+      "question": "A light bulb transfers 100 J of electrical energy. 15 J becomes light and the rest becomes thermal energy in the surroundings. Which term describes the 85 J of thermal energy?",
+      "options": [
+        "Useful energy output",
+        "Conserved energy",
+        "Dissipated energy",
+        "Stored energy"
+      ],
+      "correct": 2,
+      "correctFeedback": "Correct -- the 85 J transferred to the surroundings as thermal energy is dissipated energy. It is not useful for the purpose of the bulb (light) and is spread out into the surroundings where it is hard to recover.",
+      "wrongFeedback": "Dissipation means energy transferred to a store that is not useful for the intended purpose -- most commonly thermal energy spread out in the surroundings. The 85 J of thermal energy from the bulb is dissipated energy."
+    },
+    "4": {
       "question": "A motor uses 500 J of electrical energy and does 350 J of useful work. What is its efficiency?",
       "options": [
         "0.50",

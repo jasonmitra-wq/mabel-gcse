@@ -25,9 +25,18 @@
         "Units: V in volts, I in amps, R in ohms"
       ],
       "keyTerms": [
-        {"term": "Ohmic conductor", "def": "A component whose resistance stays constant as voltage changes — produces a straight-line I-V graph through the origin."},
-        {"term": "Variable resistor", "def": "A resistor whose resistance can be changed manually, used to control current in a circuit."},
-        {"term": "Resistance", "def": "The opposition to current flow; measured in ohms (Ω). R = V ÷ I."}
+        {
+          "term": "Ohmic conductor",
+          "def": "A component whose resistance stays constant as voltage changes — produces a straight-line I-V graph through the origin."
+        },
+        {
+          "term": "Variable resistor",
+          "def": "A resistor whose resistance can be changed manually, used to control current in a circuit."
+        },
+        {
+          "term": "Resistance",
+          "def": "The opposition to current flow; measured in ohms (Ω). R = V ÷ I."
+        }
       ],
       "memTip": "Straight line = straight behaviour = fixed resistor. If the graph curves, something is changing.",
       "tutor_note": "Students often confuse gradient with resistance — remind them that a steeper gradient means MORE current for the same voltage, so LOWER resistance."
@@ -47,10 +56,22 @@
         "Circuit symbol — triangle + bar; triangle points in direction of conventional current"
       ],
       "keyTerms": [
-        {"term": "Diode", "def": "A component that allows current to flow in one direction only, with very high resistance in reverse bias."},
-        {"term": "LED", "def": "Light-emitting diode — a diode that releases light energy when current flows through it in the forward direction."},
-        {"term": "Forward threshold voltage", "def": "The minimum voltage needed for a diode to conduct; approximately 0.7 V for silicon diodes."},
-        {"term": "Rectification", "def": "Converting AC to DC using one or more diodes, as in phone chargers and power adapters."}
+        {
+          "term": "Diode",
+          "def": "A component that allows current to flow in one direction only, with very high resistance in reverse bias."
+        },
+        {
+          "term": "LED",
+          "def": "Light-emitting diode — a diode that releases light energy when current flows through it in the forward direction."
+        },
+        {
+          "term": "Forward threshold voltage",
+          "def": "The minimum voltage needed for a diode to conduct; approximately 0.7 V for silicon diodes."
+        },
+        {
+          "term": "Rectification",
+          "def": "Converting AC to DC using one or more diodes, as in phone chargers and power adapters."
+        }
       ],
       "memTip": "The triangle in the symbol points the way current can go — like an arrow saying 'this way only'.",
       "tutor_note": "The flat part of the diode I-V graph confuses many students — emphasise that it is not zero resistance, just extremely high resistance meaning negligible current."
@@ -70,9 +91,18 @@
         "Graph: resistance vs light intensity — downward curve (inverse relationship)"
       ],
       "keyTerms": [
-        {"term": "LDR", "def": "Light-dependent resistor — a semiconductor component whose resistance decreases as light intensity increases."},
-        {"term": "Charge carrier", "def": "A free electron or hole that can carry electric charge through a semiconductor material."},
-        {"term": "Potential divider", "def": "A circuit with two resistors in series; the output voltage depends on the ratio of the resistances."}
+        {
+          "term": "LDR",
+          "def": "Light-dependent resistor — a semiconductor component whose resistance decreases as light intensity increases."
+        },
+        {
+          "term": "Charge carrier",
+          "def": "A free electron or hole that can carry electric charge through a semiconductor material."
+        },
+        {
+          "term": "Potential divider",
+          "def": "A circuit with two resistors in series; the output voltage depends on the ratio of the resistances."
+        }
       ],
       "memTip": "More light → more carriers → more current → less resistance. Think of a crowd opening doors — more light means more people, easier to get through.",
       "tutor_note": "Students mix up LDR and thermistor. Both are inverse (more → less resistance), but the trigger is different: LDR responds to light, thermistor responds to temperature."
@@ -92,9 +122,18 @@
         "Graph: resistance vs temperature — downward curve (not linear)"
       ],
       "keyTerms": [
-        {"term": "Thermistor", "def": "A temperature-sensitive resistor whose resistance decreases as temperature increases (NTC type)."},
-        {"term": "NTC", "def": "Negative temperature coefficient — resistance decreases as temperature rises."},
-        {"term": "Thermal energy", "def": "Energy associated with the temperature of a material; at higher temperatures, more electrons gain enough energy to become free charge carriers."}
+        {
+          "term": "Thermistor",
+          "def": "A temperature-sensitive resistor whose resistance decreases as temperature increases (NTC type)."
+        },
+        {
+          "term": "NTC",
+          "def": "Negative temperature coefficient — resistance decreases as temperature rises."
+        },
+        {
+          "term": "Thermal energy",
+          "def": "Energy associated with the temperature of a material; at higher temperatures, more electrons gain enough energy to become free charge carriers."
+        }
       ],
       "memTip": "NTC = 'Nothing To Conduct when cold'. Heat it up and it conducts more easily — resistance goes down.",
       "tutor_note": "Common exam question: describe and explain the shape of the resistance-temperature graph for a thermistor. Students must say resistance decreases AND explain why (more carriers at higher temperature)."
@@ -104,53 +143,135 @@
     {
       "title": "Circuit components — summary",
       "examFlag": true,
-      "headers": ["Component", "Circuit symbol (description)", "What it does", "How resistance changes", "Real-world use"],
+      "headers": [
+        "Component",
+        "Circuit symbol (description)",
+        "What it does",
+        "How resistance changes",
+        "Real-world use"
+      ],
       "rows": [
-        ["Fixed resistor", "Rectangle (or zigzag)", "Opposes current flow by a fixed amount", "Constant — does not change", "Current limiting in LED circuits"],
-        ["Variable resistor", "Rectangle with arrow through it", "Allows manual adjustment of resistance", "Changes when slider is moved", "Dimmer switches, volume controls"],
-        ["Diode", "Triangle + vertical bar", "Allows current in one direction only", "Very low (forward) / very high (reverse)", "Rectification in power supplies"],
-        ["LED", "Triangle + bar + two arrows (light)", "Emits light when forward current flows", "Very low (forward) / very high (reverse)", "Indicator lights, screens, street lighting"],
-        ["LDR", "Rectangle with circle and arrows in", "Resistance changes with light intensity", "Decreases as light increases", "Automatic street lights, burglar alarms"],
-        ["Thermistor", "Rectangle with diagonal line", "Resistance changes with temperature", "Decreases as temperature increases", "Thermostats, fire alarms, engine sensors"]
+        [
+          "Fixed resistor",
+          "Rectangle (or zigzag)",
+          "Opposes current flow by a fixed amount",
+          "Constant — does not change",
+          "Current limiting in LED circuits"
+        ],
+        [
+          "Variable resistor",
+          "Rectangle with arrow through it",
+          "Allows manual adjustment of resistance",
+          "Changes when slider is moved",
+          "Dimmer switches, volume controls"
+        ],
+        [
+          "Diode",
+          "Triangle + vertical bar",
+          "Allows current in one direction only",
+          "Very low (forward) / very high (reverse)",
+          "Rectification in power supplies"
+        ],
+        [
+          "LED",
+          "Triangle + bar + two arrows (light)",
+          "Emits light when forward current flows",
+          "Very low (forward) / very high (reverse)",
+          "Indicator lights, screens, street lighting"
+        ],
+        [
+          "LDR",
+          "Rectangle with circle and arrows in",
+          "Resistance changes with light intensity",
+          "Decreases as light increases",
+          "Automatic street lights, burglar alarms"
+        ],
+        [
+          "Thermistor",
+          "Rectangle with diagonal line",
+          "Resistance changes with temperature",
+          "Decreases as temperature increases",
+          "Thermostats, fire alarms, engine sensors"
+        ]
       ]
     },
     {
       "title": "I-V graph shapes for key components",
       "examFlag": true,
-      "headers": ["Component", "I-V graph shape", "What the shape tells you"],
+      "headers": [
+        "Component",
+        "I-V graph shape",
+        "What the shape tells you"
+      ],
       "rows": [
-        ["Fixed resistor (ohmic)", "Straight line through origin", "Constant resistance — I directly proportional to V"],
-        ["Filament lamp", "Curve — gets less steep at higher current", "Resistance increases as it gets hotter"],
-        ["Diode", "Flat near zero for negative V; steep rise above ~0.7 V", "Only conducts in forward direction above threshold"],
-        ["LDR", "Different straight lines for different light levels", "Each light level gives different (constant) resistance"]
+        [
+          "Fixed resistor (ohmic)",
+          "Straight line through origin",
+          "Constant resistance — I directly proportional to V"
+        ],
+        [
+          "Filament lamp",
+          "Curve — gets less steep at higher current",
+          "Resistance increases as it gets hotter"
+        ],
+        [
+          "Diode",
+          "Flat near zero for negative V; steep rise above ~0.7 V",
+          "Only conducts in forward direction above threshold"
+        ],
+        [
+          "LDR",
+          "Different straight lines for different light levels",
+          "Each light level gives different (constant) resistance"
+        ]
       ]
     }
   ],
   "checkpoints": {
     "0": {
       "question": "A fixed resistor has V = 12 V and I = 0.4 A. What is its resistance?",
-      "options": ["30 Ω", "4.8 Ω", "0.033 Ω", "12.4 Ω"],
+      "options": [
+        "30 Ω",
+        "4.8 Ω",
+        "0.033 Ω",
+        "12.4 Ω"
+      ],
       "correct": 0,
       "correctFeedback": "Correct! R = V ÷ I = 12 ÷ 0.4 = 30 Ω. Always check your units — volts and amps give ohms.",
       "wrongFeedback": "Use R = V ÷ I. Divide 12 V by 0.4 A to get 30 Ω. Don't multiply or add — Ohm's Law is a division here."
     },
     "1": {
-      "question": "What happens to the resistance of an LDR when it is moved from a bright room into a dark cupboard?",
-      "options": ["Resistance increases significantly", "Resistance decreases", "Resistance stays the same", "Resistance becomes zero"],
-      "correct": 0,
-      "correctFeedback": "Exactly right. In the dark, fewer charge carriers are available so current is harder to push through — resistance increases significantly.",
-      "wrongFeedback": "Remember: LDR is an inverse component — MORE light = LESS resistance. So less light (dark cupboard) means HIGHER resistance."
-    },
-    "2": {
       "question": "On an I-V graph for a diode, what does the flat line at negative voltages represent?",
-      "options": ["The diode has very high resistance and almost no current flows in reverse bias", "The diode has zero resistance", "The diode allows equal current in both directions", "The diode has broken"],
+      "options": [
+        "The diode has very high resistance and almost no current flows in reverse bias",
+        "The diode has zero resistance",
+        "The diode allows equal current in both directions",
+        "The diode has broken"
+      ],
       "correct": 0,
       "correctFeedback": "Spot on. In reverse bias the diode has extremely high resistance — the flat line shows that virtually no current flows, even as voltage increases in the negative direction.",
       "wrongFeedback": "The flat line does NOT mean zero resistance — it means very high resistance, so the tiny amount of current that does flow is negligible. The diode is blocking current in the reverse direction."
     },
+    "2": {
+      "question": "What happens to the resistance of an LDR when it is moved from a bright room into a dark cupboard?",
+      "options": [
+        "Resistance increases significantly",
+        "Resistance decreases",
+        "Resistance stays the same",
+        "Resistance becomes zero"
+      ],
+      "correct": 0,
+      "correctFeedback": "Exactly right. In the dark, fewer charge carriers are available so current is harder to push through — resistance increases significantly.",
+      "wrongFeedback": "Remember: LDR is an inverse component — MORE light = LESS resistance. So less light (dark cupboard) means HIGHER resistance."
+    },
     "3": {
       "question": "Both LDRs and thermistors are described as 'inverse' components. What does this mean?",
-      "options": ["As the physical quantity (light or heat) increases, resistance decreases", "As resistance increases, current decreases", "They only work when connected in reverse", "Their I-V graphs are mirror images of each other"],
+      "options": [
+        "As the physical quantity (light or heat) increases, resistance decreases",
+        "As resistance increases, current decreases",
+        "They only work when connected in reverse",
+        "Their I-V graphs are mirror images of each other"
+      ],
       "correct": 0,
       "correctFeedback": "Perfect. 'Inverse' means the relationship is opposite — more light or more heat leads to less resistance in both components.",
       "wrongFeedback": "Think about what the LDR does: bright light → low resistance. And the thermistor: hot → low resistance. Both respond to more of something by giving less resistance — that's what 'inverse' means here."

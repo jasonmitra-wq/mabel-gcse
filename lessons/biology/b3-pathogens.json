@@ -173,7 +173,7 @@
     }
   ],
   "checkpoints": {
-    "1": {
+    "0": {
       "question": "Which of the following correctly describes a pathogen?",
       "options": [
         "Any microorganism found in the human body",
@@ -182,8 +182,32 @@
         "A type of white blood cell that fights infection"
       ],
       "correct": 1,
-      "correctFeedback": "✅ Exactly right — a pathogen is specifically a microorganism that causes infectious disease. Not all microorganisms are pathogens.",
+      "correctFeedback": "Exactly right — a pathogen is specifically a microorganism that causes infectious disease. Not all microorganisms are pathogens.",
       "wrongFeedback": "A pathogen is a microorganism that causes infectious disease. 'Any microorganism' is too broad — most bacteria in your gut are harmless. Toxins and white blood cells are different things entirely."
+    },
+    "1": {
+      "question": "A person catches measles after someone nearby sneezes. Which route of transmission does this represent?",
+      "options": [
+        "Contaminated food",
+        "Direct contact with infected skin",
+        "Airborne droplets",
+        "A vector carrying the pathogen"
+      ],
+      "correct": 2,
+      "correctFeedback": "Correct — measles spreads via airborne droplets released when an infected person coughs or sneezes. Breathing in those droplets transmits the virus.",
+      "wrongFeedback": "Sneezing releases tiny droplets containing pathogens into the air — breathing them in is the airborne droplet route. The five transmission routes are: direct contact, airborne droplets, contaminated water, contaminated food, and vectors."
+    },
+    "2": {
+      "question": "Why do symptoms like fever and vomiting occur in a bacterial infection?",
+      "options": [
+        "The bacteria physically destroy cells by bursting out of them",
+        "The bacteria release toxins that damage cells and trigger the immune response",
+        "The bacteria block blood vessels, reducing oxygen supply to tissues",
+        "The immune system destroys too many red blood cells fighting the bacteria"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct — bacteria reproduce rapidly inside the body and release toxins. It is mainly those toxins that cause the symptoms of a bacterial infection, not the bacteria destroying cells directly.",
+      "wrongFeedback": "Bursting out of cells is what viruses do — not bacteria. Bacteria cause disease mainly by releasing toxins. Those toxins damage cells and trigger the symptoms you feel, such as fever and vomiting."
     },
     "3": {
       "question": "A student says: 'Bacteria make you ill by bursting out of your cells.' What is wrong with this statement?",
@@ -194,7 +218,7 @@
         "Bacteria only cause disease in plants, not humans"
       ],
       "correct": 1,
-      "correctFeedback": "✅ Good catch — the 'bursting out of cells' mechanism belongs to viruses, not bacteria. Bacteria reproduce rapidly and release toxins that cause symptoms.",
+      "correctFeedback": "Good catch — the 'bursting out of cells' mechanism belongs to viruses, not bacteria. Bacteria reproduce rapidly and release toxins that cause symptoms.",
       "wrongFeedback": "This is a classic mix-up. Bacteria cause disease by reproducing rapidly and releasing toxins. It's viruses that hijack host cells and burst out of them. Keep these two mechanisms separate — AQA will test exactly this distinction."
     }
   },

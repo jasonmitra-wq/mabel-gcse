@@ -118,6 +118,18 @@
     }
   ],
   "checkpoints": {
+    "0": {
+      "question": "A person has the sex chromosomes XY. Which sex are they, and which parent determined this?",
+      "options": [
+        "Female; the sex was determined by the egg from the mother",
+        "Male; the sex was determined by the sperm from the father carrying the Y chromosome",
+        "Male; the sex was determined by the egg from the mother carrying the X chromosome",
+        "Female; the sex was determined by the sperm from the father carrying the X chromosome"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct -- XY = male. Sex is determined by the sperm: if a Y-carrying sperm fertilises the egg, the offspring is male (XY); if an X-carrying sperm fertilises the egg, the offspring is female (XX). The mother always contributes an X.",
+      "wrongFeedback": "XY = male; XX = female. All eggs carry an X chromosome, so the sex of the offspring is always determined by the sperm. A sperm carrying Y produces a boy; a sperm carrying X produces a girl."
+    },
     "1": {
       "question": "Why are males more commonly affected by X-linked recessive conditions than females?",
       "options": [
@@ -127,7 +139,7 @@
         "Females have a special immune response that prevents X-linked conditions"
       ],
       "correct": 1,
-      "correctFeedback": "✅ Correct — males have only one X chromosome. If the recessive allele is on it, there's no second X with a dominant allele to mask the condition. Females need two copies of the recessive allele to be affected.",
+      "correctFeedback": "Correct — males have only one X chromosome. If the recessive allele is on it, there's no second X with a dominant allele to mask the condition. Females need two copies of the recessive allele to be affected.",
       "wrongFeedback": "The key is that males are XY — they only have one X chromosome. If that X carries the recessive allele, there's no backup dominant allele on the Y to override it. Females are XX, so they need both X chromosomes to carry the recessive allele before the condition shows."
     },
     "2": {
@@ -139,20 +151,8 @@
         "100% of sons — they all get X^b from their mother"
       ],
       "correct": 2,
-      "correctFeedback": "✅ Right — sons get their X from their mother and Y from their father. The mother is X^B X^b, so there's a 50% chance each son gets X^b — making him colour blind (X^b Y).",
+      "correctFeedback": "Right — sons get their X from their mother and Y from their father. The mother is X^B X^b, so there's a 50% chance each son gets X^b — making him colour blind (X^b Y).",
       "wrongFeedback": "Sons get their X chromosome from their mother (not their father — the father only contributes Y to sons). The mother is X^B X^b, so each son has a 50% chance of inheriting X^b. If he does, he has no backup dominant allele and will be colour blind."
-    },
-    "3": {
-      "question": "Can a male be a 'carrier' of an X-linked recessive condition without showing it?",
-      "options": [
-        "Yes — males can carry one copy without being affected, just like females",
-        "No — males have only one X chromosome; if they carry the recessive allele, they show the condition",
-        "Yes — males carry the allele on their Y chromosome instead",
-        "No — males cannot inherit X-linked conditions at all"
-      ],
-      "correct": 1,
-      "correctFeedback": "✅ Correct — males have only one X chromosome, so there is no second copy to mask a recessive allele. If a male has the recessive allele on his X, he shows the condition. Carriers (unaffected but carrying the allele) can only be female.",
-      "wrongFeedback": "Males cannot be carriers for X-linked recessive conditions. They have only one X chromosome, so any allele on it — dominant or recessive — is expressed. If a male has the recessive allele, he shows the condition. Only females (XX) can be carriers."
     }
   },
   "commonMistakes": [

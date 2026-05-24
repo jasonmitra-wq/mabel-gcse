@@ -173,7 +173,7 @@
     }
   ],
   "checkpoints": {
-    "1": {
+    "0": {
       "question": "Why does anaerobic respiration only release a small amount of energy compared to aerobic respiration?",
       "options": [
         "Because anaerobic respiration uses less glucose",
@@ -185,7 +185,19 @@
       "correctFeedback": "Exactly — without oxygen, glucose can't be fully broken down, so most of the energy remains locked in the products (lactic acid or ethanol).",
       "wrongFeedback": "The key is that without oxygen, glucose can't be completely broken down. Aerobic respiration fully breaks it down to CO₂ and water, releasing all the stored energy. Anaerobic only partially breaks it down, so much of the energy stays locked in the products."
     },
-    "3": {
+    "1": {
+      "question": "A sprinter's muscles switch to anaerobic respiration during a race. What is the word equation for anaerobic respiration in animal muscle cells?",
+      "options": [
+        "Glucose + oxygen → carbon dioxide + water",
+        "Glucose → lactic acid",
+        "Glucose → ethanol + carbon dioxide",
+        "Glucose → carbon dioxide + ATP"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct — in animal cells, anaerobic respiration produces lactic acid only. There is no carbon dioxide produced — that distinguishes it from both aerobic respiration and yeast fermentation.",
+      "wrongFeedback": "In animal cells, anaerobic respiration: glucose → lactic acid. No oxygen, no CO₂. The ethanol + CO₂ version is fermentation by yeast/plants. The glucose + oxygen version is aerobic. The animal anaerobic equation is the shortest: one reactant, one product."
+    },
+    "2": {
       "question": "What are the products of anaerobic respiration in yeast?",
       "options": [
         "Lactic acid only",
@@ -196,6 +208,18 @@
       "correct": 2,
       "correctFeedback": "Correct — yeast produces ethanol and carbon dioxide. The CO₂ is what makes bread rise and creates bubbles in beer.",
       "wrongFeedback": "Lactic acid is the product in animal cells, not in yeast. Yeast (and plants) produce ethanol + carbon dioxide — this is fermentation. CO₂ and water are the products of aerobic respiration, not anaerobic."
+    },
+    "3": {
+      "question": "After a hard race, a runner keeps breathing heavily for several minutes. What is the scientific explanation for this?",
+      "options": [
+        "The runner is still producing lactic acid even though they have stopped",
+        "The runner needs extra oxygen to oxidise the lactic acid in the liver, paying off the oxygen debt",
+        "The heart is still beating fast and forces the lungs to keep breathing quickly",
+        "The runner is producing ethanol from fermentation that must be removed"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct — this is oxygen debt. Lactic acid built up during anaerobic respiration must be broken down in the liver using oxygen. The elevated breathing delivers that extra oxygen until all the lactic acid is dealt with.",
+      "wrongFeedback": "This is oxygen debt. During anaerobic exercise, lactic acid accumulates. After stopping, the body needs extra oxygen to oxidise that lactic acid in the liver. Breathing stays elevated until the debt is 'paid off'. The liver is the key organ here."
     }
   },
   "commonMistakes": [

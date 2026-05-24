@@ -164,7 +164,7 @@
     }
   ],
   "checkpoints": {
-    "1": {
+    "0": {
       "question": "A student says: 'The electron microscope is useful because it has much higher magnification than a light microscope.' What is wrong or incomplete about this statement?",
       "options": [
         "Nothing — higher magnification is exactly why electron microscopes are better",
@@ -176,7 +176,7 @@
       "correctFeedback": "Exactly — the critical word is resolution. Higher resolution means you can distinguish more detail. Electron microscopes do have higher magnification too, but resolution is the key scientific advance.",
       "wrongFeedback": "The student's statement is incomplete. The main advantage of electron microscopes is their far higher resolution — the ability to see fine detail (separate structures close together). Magnification alone without resolution just gives you a bigger blur. Electron microscopes also cannot be used on living specimens."
     },
-    "3": {
+    "1": {
       "question": "A cell has an image size of 45 mm under a microscope. The actual size of the cell is 30 µm. What is the magnification? (1 mm = 1000 µm)",
       "options": [
         "×1.5",
@@ -185,8 +185,20 @@
         "×15,000"
       ],
       "correct": 2,
-      "correctFeedback": "Correct. Convert: 45 mm = 45,000 µm. Magnification = 45,000 ÷ 30 = ×1500.",
-      "wrongFeedback": "Convert the image size to µm first: 45 mm × 1000 = 45,000 µm. Then: Magnification = Image ÷ Actual = 45,000 ÷ 30 = ×1500. The most common error is forgetting to convert mm to µm before dividing."
+      "correctFeedback": "Correct. Convert: 45 mm = 45,000 µm. Magnification = Image ÷ Actual = 45,000 ÷ 30 = ×1500.",
+      "wrongFeedback": "Convert the image size to µm first: 45 mm × 1000 = 45,000 µm. Then use M = I ÷ A: 45,000 ÷ 30 = ×1500. The most common error is forgetting to convert mm to µm before dividing — both measurements must be in the same unit."
+    },
+    "3": {
+      "question": "When preparing a microscope slide, why is the coverslip added at an angle rather than placed flat onto the slide?",
+      "options": [
+        "To increase the magnification of the slide",
+        "To prevent air bubbles forming, which would create dark circles and obscure the specimen",
+        "To make the stain spread more evenly across the specimen",
+        "To stop the specimen from drying out during observation"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct — lowering the coverslip at an angle lets the liquid flow in gradually, pushing air out. Air bubbles trapped underneath create dark circles that ruin the view.",
+      "wrongFeedback": "The angle prevents air becoming trapped under the coverslip. Air bubbles form dark circles in the image that make it hard to see the specimen clearly. Angle the coverslip down slowly from one edge."
     }
   },
   "commonMistakes": [

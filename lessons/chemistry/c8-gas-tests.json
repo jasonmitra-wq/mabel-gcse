@@ -26,7 +26,10 @@
         "Always describe both the test AND the observation for full marks"
       ],
       "keyTerms": [
-        { "term": "Gas test", "def": "A standard chemical procedure to identify a specific gas by a distinctive observation" }
+        {
+          "term": "Gas test",
+          "def": "A standard chemical procedure to identify a specific gas by a distinctive observation"
+        }
       ],
       "memTip": "H-O-C-C: Hydrogen, Oxygen, Carbon dioxide, Chlorine — four tests, four marks.",
       "tutor_note": "Reinforce early that the exam wants test + result, not just the gas name. Practice writing both parts every time."
@@ -46,8 +49,14 @@
         "Safety — hydrogen is flammable; use only small amounts in a test tube"
       ],
       "keyTerms": [
-        { "term": "Squeaky pop", "def": "The sound produced when a lit splint ignites hydrogen gas at the mouth of a test tube" },
-        { "term": "Cathode", "def": "The negative electrode in electrolysis — where hydrogen is produced from water or acid" }
+        {
+          "term": "Squeaky pop",
+          "def": "The sound produced when a lit splint ignites hydrogen gas at the mouth of a test tube"
+        },
+        {
+          "term": "Cathode",
+          "def": "The negative electrode in electrolysis — where hydrogen is produced from water or acid"
+        }
       ],
       "memTip": "H for Hydrogen, H for HOO-ray (the pop). Lit splint → bang.",
       "tutor_note": "Students sometimes say 'it makes a noise' — insist on 'squeaky pop' as that is the accepted term in mark schemes."
@@ -67,9 +76,18 @@
         "Excess CO₂ — white precipitate redissolves as soluble calcium hydrogencarbonate forms"
       ],
       "keyTerms": [
-        { "term": "Glowing splint", "def": "A splint that has been blown out but still has a glowing ember — used to test for oxygen" },
-        { "term": "Limewater", "def": "Calcium hydroxide solution — turns milky/cloudy white in the presence of CO₂" },
-        { "term": "Anode", "def": "The positive electrode in electrolysis — where oxygen is produced from water" }
+        {
+          "term": "Glowing splint",
+          "def": "A splint that has been blown out but still has a glowing ember — used to test for oxygen"
+        },
+        {
+          "term": "Limewater",
+          "def": "Calcium hydroxide solution — turns milky/cloudy white in the presence of CO₂"
+        },
+        {
+          "term": "Anode",
+          "def": "The positive electrode in electrolysis — where oxygen is produced from water"
+        }
       ],
       "memTip": "Glowing → grows (relights) in oxygen. CO₂ makes limewater go cloudy — like fog.",
       "tutor_note": "Emphasise 'glowing' not 'burning' for the oxygen test — a burning splint test is for hydrogen (it produces the pop)."
@@ -89,9 +107,18 @@
         "Produced at — anode during electrolysis of brine (NaCl solution)"
       ],
       "keyTerms": [
-        { "term": "Damp litmus paper", "def": "Moistened litmus paper used to test for chlorine — turns red then bleaches white" },
-        { "term": "HOCl (hypochlorous acid)", "def": "The bleaching agent formed when chlorine dissolves in water" },
-        { "term": "Brine", "def": "Concentrated sodium chloride (NaCl) solution — electrolysis produces chlorine at the anode" }
+        {
+          "term": "Damp litmus paper",
+          "def": "Moistened litmus paper used to test for chlorine — turns red then bleaches white"
+        },
+        {
+          "term": "HOCl (hypochlorous acid)",
+          "def": "The bleaching agent formed when chlorine dissolves in water"
+        },
+        {
+          "term": "Brine",
+          "def": "Concentrated sodium chloride (NaCl) solution — electrolysis produces chlorine at the anode"
+        }
       ],
       "memTip": "Chlorine = bleach in a tube. Damp litmus goes red then white — like a tiny bleaching experiment.",
       "tutor_note": "The 'damp' requirement is a classic exam trap — one mark often lost here. Also: the paper goes red THEN white, in that order."
@@ -101,27 +128,79 @@
     {
       "title": "The four gas tests — AQA required",
       "examFlag": true,
-      "headers": ["Gas", "Test", "Positive result", "Chemical explanation"],
+      "headers": [
+        "Gas",
+        "Test",
+        "Positive result",
+        "Chemical explanation"
+      ],
       "rows": [
-        ["Hydrogen (H₂)", "Hold a lit splint at the mouth of the tube", "Squeaky pop", "H₂ ignites and reacts with O₂ in air: 2H₂ + O₂ → 2H₂O"],
-        ["Oxygen (O₂)", "Insert a glowing splint into the tube", "Glowing splint relights", "Oxygen supports combustion — reignites the splint"],
-        ["Carbon dioxide (CO₂)", "Bubble gas through limewater", "Limewater turns milky/cloudy white", "Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O (white precipitate)"],
-        ["Chlorine (Cl₂)", "Hold damp litmus paper in the tube", "Turns red, then bleached white", "Cl₂ + H₂O → HCl + HOCl; HOCl bleaches the dye"]
+        [
+          "Hydrogen (H₂)",
+          "Hold a lit splint at the mouth of the tube",
+          "Squeaky pop",
+          "H₂ ignites and reacts with O₂ in air: 2H₂ + O₂ → 2H₂O"
+        ],
+        [
+          "Oxygen (O₂)",
+          "Insert a glowing splint into the tube",
+          "Glowing splint relights",
+          "Oxygen supports combustion — reignites the splint"
+        ],
+        [
+          "Carbon dioxide (CO₂)",
+          "Bubble gas through limewater",
+          "Limewater turns milky/cloudy white",
+          "Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O (white precipitate)"
+        ],
+        [
+          "Chlorine (Cl₂)",
+          "Hold damp litmus paper in the tube",
+          "Turns red, then bleached white",
+          "Cl₂ + H₂O → HCl + HOCl; HOCl bleaches the dye"
+        ]
       ]
     },
     {
       "title": "Where these gases are produced in GCSE reactions",
       "examFlag": false,
-      "headers": ["Gas", "Key reactions that produce it"],
+      "headers": [
+        "Gas",
+        "Key reactions that produce it"
+      ],
       "rows": [
-        ["Hydrogen", "Metal + acid; electrolysis of water/dilute acid (cathode)"],
-        ["Oxygen", "Decomposition of H₂O₂ (MnO₂ catalyst); electrolysis of water (anode); photosynthesis"],
-        ["Carbon dioxide", "Combustion of carbon/hydrocarbons; acid + carbonate; respiration"],
-        ["Chlorine", "Electrolysis of brine (NaCl solution) at the anode"]
+        [
+          "Hydrogen",
+          "Metal + acid; electrolysis of water/dilute acid (cathode)"
+        ],
+        [
+          "Oxygen",
+          "Decomposition of H₂O₂ (MnO₂ catalyst); electrolysis of water (anode); photosynthesis"
+        ],
+        [
+          "Carbon dioxide",
+          "Combustion of carbon/hydrocarbons; acid + carbonate; respiration"
+        ],
+        [
+          "Chlorine",
+          "Electrolysis of brine (NaCl solution) at the anode"
+        ]
       ]
     }
   ],
   "checkpoints": {
+    "0": {
+      "question": "Which four gases does AQA require you to be able to test for at GCSE?",
+      "options": [
+        "Oxygen, nitrogen, carbon dioxide, hydrogen",
+        "Hydrogen, oxygen, carbon dioxide, chlorine",
+        "Chlorine, nitrogen, hydrogen, sulfur dioxide",
+        "Oxygen, methane, chlorine, ammonia"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct -- the four AQA gas tests are: hydrogen (squeaky pop), oxygen (relights glowing splint), carbon dioxide (turns limewater milky), and chlorine (bleaches damp litmus). These four are the ones you are expected to recall.",
+      "wrongFeedback": "The four gases you need to be able to test for at AQA GCSE are: hydrogen, oxygen, carbon dioxide, and chlorine. Each has a specific test and a specific positive result. Nitrogen and methane are not in the required list."
+    },
     "1": {
       "question": "You hold a lit splint at the mouth of a test tube containing an unknown gas. You hear a squeaky pop. What does this tell you?",
       "options": [
@@ -134,7 +213,7 @@
       "correctFeedback": "Correct! A squeaky pop when a lit splint is applied is the definitive test for hydrogen.",
       "wrongFeedback": "A squeaky pop is the unique positive result for the hydrogen test. Oxygen relights a glowing splint; CO₂ turns limewater milky; chlorine bleaches damp litmus."
     },
-    "2": {
+    "3": {
       "question": "Why must the litmus paper be damp when testing for chlorine?",
       "options": [
         "Chlorine must dissolve in water to form HOCl, which is the bleaching agent",
@@ -146,7 +225,7 @@
       "correctFeedback": "Exactly right. Chlorine dissolves in water to form hypochlorous acid (HOCl), which bleaches the litmus. Dry paper shows no reaction.",
       "wrongFeedback": "The key reason is chemistry: Cl₂ must dissolve in water (on the damp paper) to form HOCl, the actual bleaching agent. Dry litmus doesn't change colour at all."
     },
-    "3": {
+    "2": {
       "question": "A gas turns limewater milky white when bubbled through it. What is the gas?",
       "options": [
         "Carbon dioxide",

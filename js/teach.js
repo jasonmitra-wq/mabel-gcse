@@ -1,0 +1,375 @@
+/* ============================================================
+   TEACH.JS — Conversational teaching mode
+   Used only for lessons listed in Lessons' TEACH_ENABLED array
+   (currently just b3-defences). One key point at a time, taught
+   through back-and-forth chat instead of slides.
+   ============================================================ */
+
+const Teach = (() => {
+  const TRANSCRIPT_CAP   = 40;
+  const MAX_REPLY_WORDS   = 120;
+  const MAX_LENGTH_TRIES  = 3;
+  const HISTORY_TURNS     = 6;
+
+  const STOPWORDS = new Set([
+    'the','a','an','is','are','was','were','to','of','in','on','and','or','it','that',
+    'this','with','for','as','by','be','been','being','has','have','had','not','no',
+    'do','does','did','you','your','i','we','they','he','she','them','their','its',
+    'can','could','would','should','will','shall','from','at','but','if','so','than',
+    'then','because','when','which','who','what','where','how','why','also','into',
+    'about','these','those','there','all','any','some','just','like','get','got',
+    'one','two','three','more','most','over','out','up','down','off','still','only',
+    'very','really','think','know','yeah','yes','okay','ok','well','maybe'
+  ]);
+
+  let _data          = null;
+  let _subtopicId     = '';
+  let _subtopicName   = '';
+  let _subject        = 'biology';
+  let _points         = [];
+  let _state          = null;
+  let _busy           = false;
+
+  // ── Helpers ─────────────────────────────────────────────────
+  function _storageKey() { return `teach_${_subtopicId}`; }
+
+  function _stripHtml(html) {
+    return (html || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+
+  function _contentWords(text) {
+    return ((text || '').toLowerCase().match(/[a-z']{3,}/g) || [])
+      .filter(w => !STOPWORDS.has(w));
+  }
+
+  function _buildPointWordSet(kp) {
+    const parts = [kp.heading, _stripHtml(kp.content)];
+    (kp.keyTerms || []).forEach(t => parts.push(t.term, t.def));
+    return new Set(_contentWords(parts.join(' ')));
+  }
+
+  // A reply counts as substantive only if it's more than three words
+  // AND touches at least one content word from the point being taught.
+  function _isSubstantive(reply, wordSet) {
+    const words = (reply || '').trim().split(/\s+/).filter(Boolean);
+    if (words.length <= 3) return false;
+    return _contentWords(reply).some(w => wordSet.has(w));
+  }
+
+  function _pointBrief(point) {
+    const terms = (point.keyTerms || []).map(t => `${t.term}: ${t.def}`).join(' | ');
+    return [
+      `Key point: ${point.heading}`,
+      `Content: ${_stripHtml(point.content)}`,
+      terms ? `Key terms: ${terms}` : ''
+    ].filter(Boolean).join('\n');
+  }
+
+  // ── Persistence ──────────────────────────────────────────────
+  function _save() {
+    Store.set(_storageKey(), {
+      transcript: _state.transcript,
+      coverage: _state.coverage,
+      currentPointIndex: _state.currentPointIndex,
+      retriedCurrent: _state.retriedCurrent,
+      complete: _state.complete,
+    });
+  }
+
+  // ── Open ─────────────────────────────────────────────────────
+  function open(data, subtopicId, subtopicName, subject) {
+    _data        = data;
+    _subtopicId  = subtopicId;
+    _subtopicName = subtopicName;
+    _subject     = subject || 'biology';
+    _busy        = false;
+
+    _points = (data.keyPoints || []).map(kp => ({
+      heading: kp.heading,
+      content: kp.content,
+      keyTerms: kp.keyTerms || [],
+      diagram: kp.diagram || null,
+      diagramCaption: kp.diagramCaption || '',
+      diagramExamTip: !!kp.diagramExamTip,
+      wordSet: _buildPointWordSet(kp),
+    }));
+
+    const saved = Store.get(_storageKey());
+    if (saved && Array.isArray(saved.transcript) && saved.transcript.length) {
+      _state = {
+        transcript: saved.transcript,
+        coverage: Array.isArray(saved.coverage) && saved.coverage.length === _points.length
+          ? saved.coverage : _points.map(() => null),
+        currentPointIndex: typeof saved.currentPointIndex === 'number' ? saved.currentPointIndex : 0,
+        retriedCurrent: !!saved.retriedCurrent,
+        complete: !!saved.complete,
+      };
+      _renderShell();
+      _renderTranscript();
+      return;
+    }
+
+    _state = {
+      transcript: [],
+      coverage: _points.map(() => null),
+      currentPointIndex: 0,
+      retriedCurrent: false,
+      complete: false,
+    };
+    _renderShell();
+    _beginLesson();
+  }
+
+  // ── Shell / rendering ────────────────────────────────────────
+  function _renderShell() {
+    const inner = document.getElementById('lessonInner');
+    if (!inner) return;
+    const coveredCount = _state.coverage.filter(c => c === true).length;
+
+    inner.innerHTML = `
+      <div style="position:sticky;top:0;z-index:10;background:var(--bg);padding:0.75rem 0 0">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.4rem">
+          <button class="back-btn" onclick="Lessons.close()" style="flex-shrink:0">← Topics</button>
+          <div style="flex:1;font-size:0.8rem;color:var(--muted);font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
+            ${_data.title || _subtopicName}
+          </div>
+          <button class="back-btn" onclick="showHome()" style="flex-shrink:0;padding:0.25rem 0.45rem;line-height:0" title="Home">${Icons.inline('home', 22)}</button>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem">
+          <span style="font-size:0.75rem;color:var(--muted)">${coveredCount}/${_points.length} covered</span>
+          <a href="#" onclick="event.preventDefault();Teach.showSlides()" style="font-size:0.75rem;color:var(--muted);text-decoration:underline;cursor:pointer">Show me the slides instead</a>
+        </div>
+      </div>
+      <div id="teachDiagramSlot"></div>
+      <div class="askme-wrap" style="padding-top:0.75rem;padding-bottom:1rem">
+        <div class="askme-thread" id="teachThread"></div>
+        <div class="askme-input-row">
+          <textarea id="teachInput" rows="2" placeholder="Type here…"
+            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();Teach.send();}"></textarea>
+          <button class="btn pri" id="teachSendBtn" onclick="Teach.send()">Send</button>
+        </div>
+      </div>`;
+
+    document.getElementById('lessonInner').scrollTop = 0;
+    document.getElementById('lessonPanel').scrollTop = 0;
+    _updateDiagramSlot();
+  }
+
+  function _renderDiagram(point) {
+    const diagDef = (_data.diagrams || []).find(d => d.id === point.diagram);
+    const title   = diagDef?.title || point.diagram;
+    const cap     = point.diagramCaption || diagDef?.caption || '';
+    return `<div id="diag_${point.diagram}" class="diag-plate">
+      <div class="diag-plate-title">${title}</div>
+      <img src="diagrams/${_subject}/${point.diagram}.svg" alt="${title}"
+        onerror="this.style.display='none';document.getElementById('teachDiagFallback_${point.diagram}').style.display='block'"
+        style="width:100%;height:auto;display:block;border-radius:6px">
+      <div id="teachDiagFallback_${point.diagram}" style="display:none;color:var(--muted);font-size:0.83rem;font-style:italic;padding:0.5rem;text-align:center">
+        Diagram not yet available
+      </div>
+      ${cap ? `<p class="diag-plate-caption">${cap}</p>` : ''}
+      ${point.diagramExamTip ? `<p class="diag-plate-examtip">⚠️ Diagrams like this come up in questions — sketch this in your notes.</p>` : ''}
+    </div>`;
+  }
+
+  function _updateDiagramSlot() {
+    const slot = document.getElementById('teachDiagramSlot');
+    if (!slot) return;
+    const point = !_state.complete ? _points[_state.currentPointIndex] : null;
+    slot.innerHTML = (point && point.diagram) ? _renderDiagram(point) : '';
+  }
+
+  function _renderTranscript() {
+    const thread = document.getElementById('teachThread');
+    if (!thread) return;
+    thread.innerHTML = '';
+    _state.transcript.forEach(t => {
+      const el = document.createElement('div');
+      el.className = t.role === 'user' ? 'askme-q-bubble' : 'askme-a-bubble';
+      el.textContent = t.text;
+      thread.appendChild(el);
+    });
+    thread.scrollTop = thread.scrollHeight;
+    _updateDiagramSlot();
+  }
+
+  function _appendBubble(role, text) {
+    _state.transcript.push({ role, text });
+    if (_state.transcript.length > TRANSCRIPT_CAP) {
+      _state.transcript = _state.transcript.slice(-TRANSCRIPT_CAP);
+    }
+    _save();
+    const thread = document.getElementById('teachThread');
+    if (!thread) return;
+    const el = document.createElement('div');
+    el.className = role === 'user' ? 'askme-q-bubble' : 'askme-a-bubble';
+    el.textContent = text;
+    thread.appendChild(el);
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function _showThinking() {
+    const thread = document.getElementById('teachThread');
+    if (!thread) return null;
+    const el = document.createElement('div');
+    el.className = 'askme-a-bubble loading';
+    el.textContent = 'Thinking…';
+    thread.appendChild(el);
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return el;
+  }
+
+  // ── Prompting ────────────────────────────────────────────────
+  function _buildSystemPrompt() {
+    return [
+      `You are a warm, encouraging GCSE Biology tutor teaching Mabel, who is 15 years old and studying AQA Separate Biology (8461), through natural back-and-forth conversation rather than slides.`,
+      `Lesson: "${_data.title}".`,
+      `Lesson overview: ${_stripHtml(_data.intro || '')}`,
+      (_data.commonMistakes || []).length
+        ? `Common mistakes students make here — watch for these and gently correct if she makes one: ${_data.commonMistakes.join(' | ')}`
+        : '',
+      `Rules: explain ideas a little at a time in plain, friendly language. Ask exactly ONE question at a time and never present a list of options for her to pick from. Keep every reply under about 120 words. If she asks about something off-topic or unrelated, answer it briefly and kindly, then guide her back to the lesson — never refuse to answer and never tell her to stay focused or scold her for going off-topic.`,
+    ].filter(Boolean).join('\n');
+  }
+
+  function _recentHistoryBlock() {
+    const all = _state.transcript.slice(0, -1);
+    const recent = all.slice(-HISTORY_TURNS);
+    if (!recent.length) return '';
+    return 'Recent conversation so far:\n' + recent.map(t => (t.role === 'user' ? 'Mabel' : 'You') + ': ' + t.text).join('\n');
+  }
+
+  function _buildUserPrompt(userText, decision) {
+    const lines = [];
+    const history = _recentHistoryBlock();
+    if (history) lines.push(history);
+    lines.push(`Mabel just said: "${userText}"`);
+
+    if (decision.kind === 'retry') {
+      lines.push(`Her reply didn't really engage with the key point below — too short, or off the topic. Gently explain this idea again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`);
+      lines.push(_pointBrief(decision.point));
+    } else if (decision.kind === 'next') {
+      lines.push(`Acknowledge her reply naturally in a sentence. Then move on: teach the next key point below, briefly and in plain language, and ask one question about it.`);
+      lines.push(_pointBrief(decision.point));
+    } else if (decision.kind === 'complete') {
+      lines.push(`Acknowledge her reply naturally. Then let her know all five key points in this lesson have now been covered. Ask, in one short friendly line, whether she'd like to stop here or carry on with some practice questions.`);
+    } else {
+      lines.push(`All five key points in this lesson have already been covered. Just respond naturally and helpfully to whatever she said.`);
+    }
+    return lines.join('\n\n');
+  }
+
+  async function _callWithLengthGuard(sys, user) {
+    let lastReply = '';
+    for (let attempt = 0; attempt < MAX_LENGTH_TRIES; attempt++) {
+      const prompt = attempt === 0 ? user : user + `\n\n(Your last reply was too long — respond in under 120 words this time.)`;
+      const reply = await AI.call(sys, prompt, 220);
+      lastReply = reply.trim();
+      const wordCount = lastReply.split(/\s+/).filter(Boolean).length;
+      if (wordCount <= MAX_REPLY_WORDS + 15) return lastReply;
+    }
+    return lastReply; // never truncate — after a few tries, use the last full reply as-is
+  }
+
+  // ── Coverage decision (pure — no state mutation) ────────────
+  function _decide(userText) {
+    if (_state.complete) return { kind: 'free' };
+    const idx = _state.currentPointIndex;
+    const point = _points[idx];
+    const substantive = _isSubstantive(userText, point.wordSet);
+    const isLast = idx >= _points.length - 1;
+
+    if (substantive) {
+      return { kind: isLast ? 'complete' : 'next', idx, verdict: true, point: isLast ? null : _points[idx + 1] };
+    }
+    if (!_state.retriedCurrent) {
+      return { kind: 'retry', idx, point };
+    }
+    return { kind: isLast ? 'complete' : 'next', idx, verdict: false, point: isLast ? null : _points[idx + 1] };
+  }
+
+  function _applyDecision(decision) {
+    if (decision.kind === 'free') return;
+    if (decision.kind === 'retry') {
+      _state.retriedCurrent = true;
+      return;
+    }
+    _state.coverage[decision.idx] = decision.verdict;
+    if (decision.kind === 'complete') {
+      _state.complete = true;
+    } else {
+      _state.currentPointIndex = decision.idx + 1;
+      _state.retriedCurrent = false;
+    }
+  }
+
+  async function _getTutorReply(userText) {
+    const decision = _decide(userText);
+    const sys  = _buildSystemPrompt();
+    const user = _buildUserPrompt(userText, decision);
+    const reply = await _callWithLengthGuard(sys, user);
+    _applyDecision(decision); // only commit once the call actually succeeded
+    return reply;
+  }
+
+  // ── Opening turn ─────────────────────────────────────────────
+  async function _beginLesson() {
+    const thinkingEl = _showThinking();
+    const sys = _buildSystemPrompt();
+    const user = [
+      `Begin the lesson. Welcome Mabel warmly in a sentence, using the lesson overview above in your own words — don't just repeat it. Then teach the first key point below, briefly and in plain language, and ask ONE question about it.`,
+      _pointBrief(_points[0]),
+    ].join('\n\n');
+
+    try {
+      const reply = await _callWithLengthGuard(sys, user);
+      thinkingEl?.remove();
+      _appendBubble('assistant', reply);
+    } catch {
+      thinkingEl?.remove();
+      _appendBubble('assistant', "I can't start us off right now — try again in a moment.");
+    }
+    _renderShell();
+    _renderTranscript();
+  }
+
+  // ── Sending a message ────────────────────────────────────────
+  async function send() {
+    if (_busy) return;
+    const input = document.getElementById('teachInput');
+    if (!input) return;
+    const text = input.value.trim();
+    if (!text) return;
+
+    input.value = '';
+    _busy = true;
+    const btn = document.getElementById('teachSendBtn');
+    if (btn) btn.disabled = true;
+
+    _appendBubble('user', text);
+    const thinkingEl = _showThinking();
+
+    try {
+      const reply = await _getTutorReply(text);
+      thinkingEl?.remove();
+      _appendBubble('assistant', reply);
+    } catch {
+      thinkingEl?.remove();
+      _appendBubble('assistant', "I can't answer that right now — try again in a moment.");
+    }
+
+    _busy = false;
+    if (btn) btn.disabled = false;
+    _renderShell();
+    _renderTranscript();
+    document.getElementById('teachInput')?.focus();
+  }
+
+  // ── Escape hatch back to the slide view ─────────────────────
+  function showSlides() {
+    if (!_data) return;
+    Lessons.openSlideView(_data, _subtopicId, _subtopicName, _subject);
+  }
+
+  return { open, send, showSlides };
+})();

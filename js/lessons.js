@@ -13,6 +13,9 @@ const Lessons = (() => {
   let _stepIdx            = 0;
   let _stepCpDone         = false; // checkpoint answered this step
 
+  // Lessons that open in conversational Teach mode instead of the slide view.
+  const TEACH_ENABLED = ['b3-defences'];
+
   // ── Open a lesson ─────────────────────────────────────────
   async function open(subtopicId, subtopicName, topicCode, subject = 'biology') {
     const panel = document.getElementById('lessonPanel');
@@ -43,6 +46,17 @@ const Lessons = (() => {
       return;
     }
 
+    if (TEACH_ENABLED.includes(subtopicId) && AI.hasKey()) {
+      Teach.open(data, subtopicId, subtopicName, subject);
+      return;
+    }
+
+    _openSlideView(data, subtopicId, subtopicName, subject);
+  }
+
+  // ── Open the existing slide-by-slide view ──────────────────
+  // Also the escape hatch from Teach mode's "show me the slides instead" link.
+  function _openSlideView(data, subtopicId, subtopicName, subject) {
     _current          = data;
     _current.subject  = subject;
     _subtopicName     = subtopicName;
@@ -1013,7 +1027,7 @@ const Lessons = (() => {
     if (_current) Questions.start(_current, _subtopicName, _current.id);
   }
 
-  return { open, close, checkpointClick, saveAllCards, _nextStep, _prevStep, _tryUnlockNext, _startPractice, sendAskMe: _sendAskMe, _cpHint };
+  return { open, close, checkpointClick, saveAllCards, _nextStep, _prevStep, _tryUnlockNext, _startPractice, sendAskMe: _sendAskMe, _cpHint, openSlideView: _openSlideView };
 })();
 
 /* ============================================================

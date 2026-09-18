@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 580" width="100%" role="img" xmlns:c2pa="http://c2pa.org/manifest">
+<defs>
+  <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+    <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.55"></feDropShadow></filter>
+  <filter id="blur" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="10"></feGaussianBlur></filter>
+  <linearGradient id="gArm" gradientUnits="userSpaceOnUse" x1="210" y1="220" x2="440" y2="500">
+    <stop offset="0%" stop-color="#ffd18a"></stop><stop offset="55%" stop-color="#e8a040"></stop><stop offset="100%" stop-color="#9c5c18"></stop></linearGradient>
+  <radialGradient id="gRd" cx="40%" cy="32%" r="78%">
+    <stop offset="0%" stop-color="#ff9b9b"></stop><stop offset="55%" stop-color="#e05252"></stop><stop offset="100%" stop-color="#7d1f1f"></stop></radialGradient>
+</defs>
+<rect width="640" height="580" fill="#0f0e0c"></rect>
+<text x="40" y="54" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="600" fill="#f5f0e8">Antibodies are specific</text>
+<text x="40" y="86" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="22" fill="rgba(245,240,232,0.6)">One antibody only fits one antigen.</text>
+<circle cx="320" cy="350" r="132" fill="#e8a040" opacity="0.12" filter="url(#blur)"></circle>
+<g transform="translate(234,246) rotate(-25)"><circle cx="0" cy="-30" r="58" fill="#4ecfaa" opacity="0.34" filter="url(#blur)"></circle></g>
+<g filter="url(#soft)" stroke="url(#gArm)" stroke-linecap="round" fill="none">
+  <path d="M320,506 L320,350" stroke-width="28"></path>
+  <path d="M320,354 L240,256" stroke-width="26"></path>
+  <path d="M320,354 L400,256" stroke-width="26"></path>
+</g>
+<g transform="translate(234,246) rotate(-25)"><path d="M-48,20 L-48,-26 L-15,-26 L0,2 L15,-26 L48,-26 L48,20 Z" fill="#dd9433"></path>
+  <rect x="-48" y="-26" width="33" height="6" fill="#ffd79f" opacity="0.7"></rect><rect x="15" y="-26" width="33" height="6" fill="#ffd79f" opacity="0.7"></rect></g>
+<g transform="translate(406,246) rotate(25)"><path d="M-48,20 L-48,-26 L-15,-26 L0,2 L15,-26 L48,-26 L48,20 Z" fill="#dd9433"></path>
+  <rect x="-48" y="-26" width="33" height="6" fill="#ffd79f" opacity="0.7"></rect><rect x="15" y="-26" width="33" height="6" fill="#ffd79f" opacity="0.7"></rect></g>
+<g transform="translate(234,246) rotate(-25)"><path d="M-38,-64 h76 v34 h-23 l-15,32 l-15,-32 h-23 z" fill="url(#gRd)"></path></g>
+<g transform="translate(406,246) rotate(25)">
+  <g transform="translate(8,-52) rotate(10)"><path d="M-46,-66 h92 v26 h-16 a44,44 0 0 1 -60,0 h-16 z" fill="url(#gRd)"></path></g>
+</g>
+<path d="M304,468 L212,468" stroke="#e8a040" stroke-opacity="0.5" stroke-width="2"></path>
+<text x="202" y="475" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="23" font-weight="600" fill="#e8a040" text-anchor="end">antibody</text>
+<path d="M256,180 L326,142" stroke="#4ecfaa" stroke-opacity="0.55" stroke-width="2"></path>
+<text x="336" y="150" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="23" font-weight="600" fill="#4ecfaa">antigen</text>
+<path d="M498,144 L526,130" stroke="#e05252" stroke-opacity="0.55" stroke-width="2"></path>
+<text x="536" y="138" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="23" font-weight="600" fill="#e05252">antigen</text>
+<path d="M436,282 L556,330" stroke="#e8a040" stroke-opacity="0.5" stroke-width="2"></path>
+<text x="606" y="362" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="23" font-weight="600" fill="#e8a040" text-anchor="end">binding site</text>
+<text x="320" y="548" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="22" fill="rgba(245,240,232,0.6)" text-anchor="middle">Only the matching shape locks in.</text>
+</svg>

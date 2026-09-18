@@ -426,7 +426,12 @@ const Personality = (() => {
     setTimeout(() => {
       const el = _showToast(`
         <div style="display:flex;align-items:flex-start;gap:0.75rem">
-          <div style="flex:1;font-size:0.95rem;line-height:1.65;color:var(--text)">${joke.text}</div>
+          <div style="flex:1">
+            <div style="font-size:0.95rem;line-height:1.65;color:var(--text)">${joke.text}</div>
+            <div style="margin-top:0.75rem">
+              <button class="btn" style="opacity:0.55" onclick="document.getElementById('personalityToast')?.remove()">Skip</button>
+            </div>
+          </div>
           <button onclick="document.getElementById('personalityToast')?.remove()"
             style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.1rem;padding:0;flex-shrink:0;line-height:1">✕</button>
         </div>`, 'personalityToast');

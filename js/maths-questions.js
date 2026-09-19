@@ -9915,12 +9915,12 @@ const MathsQuestions = (() => {
         }
       ],
       workedExample: {
-        question: 'An investment grows from £2000 to £2315.25 over 2 years. Find the annual interest rate.',
+        question: 'An investment grows from £2000 to £2311.25 over 2 years. Find the annual interest rate.',
         steps: [
-          'r² = 2315.25/2000 = 1.157625',
-          'r = √1.157625 = 1.075 (7.5%)',
+          'r² = 2311.25/2000 = 1.155625',
+          'r = √1.155625 = 1.075 (7.5%)',
           'Annual rate = <strong>7.5%</strong>',
-          'Check: 2000 × 1.075² = 2000 × 1.155625 ... recalculate: 1.075² = 1.155625, 2000 × 1.155625 = £2311.25 — let's recalculate: r² = 2315.25/2000 = 1.157625, r = 1.076, so rate ≈ 7.6% (exam questions will give clean answers)'
+          'Check: 2000 × 1.075² = 2000 × 1.155625 = £2311.25 ✓'
         ]
       },
       sampleAnswer: {
@@ -10042,7 +10042,7 @@ const MathsQuestions = (() => {
           answer: -1,
           tolerance: 0,
           unit: '%',
-          explanation: 'Both pairs end at £118.80. Net change: 0.99 → 1% overall decrease. Order doesn't change the final price.'
+          explanation: 'Both pairs end at £118.80. Net change: 0.99 → 1% overall decrease. Order doesn\'t change the final price.'
         }
       ],
       workedExample: {
@@ -10058,7 +10058,7 @@ const MathsQuestions = (() => {
         grade6: 'Pair 1: 120×1.10×0.90=£118.80. Pair 2: 120×0.90×1.10=£118.80. Both the same — multiplication is commutative. Net = −1%.',
         grade8: 'Both give £118.80. Multiplier = 1.10×0.90 = 0.99, regardless of order. The 10% rise applies to a smaller or larger base depending on order, but the combined effect is identical: a 1% net decrease.'
       },
-      examinerTip: 'The order of percentage changes doesn't affect the final price, but a rise and fall of the same rate always gives a net loss.',
+      examinerTip: 'The order of percentage changes doesn\'t affect the final price, but a rise and fall of the same rate always gives a net loss.',
       auditStatus: 'pending'
     },
     {
@@ -10529,7 +10529,7 @@ const MathsQuestions = (() => {
           explanation: 'V = M/D = 200/2.5 = 80 cm³.'
         },
         {
-          prompt: 'Compare the object's density to water (1 g/cm³). Will it sink? Enter 1 for sink, 2 for float.',
+          prompt: 'Compare the object\'s density to water (1 g/cm³). Will it sink? Enter 1 for sink, 2 for float.',
           hint1: '2.5 g/cm³ compared to 1 g/cm³ for water.',
           hint2: '2.5 > 1, so it is denser than water.',
           hint3: 'It sinks — enter 1.',
@@ -10682,7 +10682,7 @@ const MathsQuestions = (() => {
         grade6: 'D = 27 g/cm³. V_sphere = 4/3π×27 = 36π ≈ 113.10 cm³. M = 27×113.10 ≈ 3054 g = 3.054 kg.',
         grade8: 'D = 1728/64 = 27 g/cm³. V = 4/3π(3³) = 36π. M = 27×36π = 972π ≈ 3053.6 g ≈ 3.054 kg.'
       },
-      examinerTip: 'Find density from the cube first, then use it with the sphere's volume.',
+      examinerTip: 'Find density from the cube first, then use it with the sphere\'s volume.',
       auditStatus: 'pending'
     },
     {
@@ -10877,7 +10877,7 @@ const MathsQuestions = (() => {
         grade6: 'Using 100g: V_gold=75/19.3≈3.886, V_silver=25/10.5≈2.381. D=100/6.267≈15.96 g/cm³.',
         grade8: 'D = 100/(75/19.3 + 25/10.5) = 100/(3.886+2.381) = 100/6.267 ≈ 15.96 g/cm³.'
       },
-      examinerTip: 'For mixture density, use a fixed total mass and find each component's volume, then D = total mass / total volume.',
+      examinerTip: 'For mixture density, use a fixed total mass and find each component\'s volume, then D = total mass / total volume.',
       auditStatus: 'pending'
     },
 
@@ -10974,7 +10974,7 @@ const MathsQuestions = (() => {
       subtopic: 'rpr-growth-decay',
       band: 'A',
       marks: 2,
-      question: 'A town's population is 25 000. It grows at 4% per year. What is the population after 2 years?',
+      question: 'A town\'s population is 25 000. It grows at 4% per year. What is the population after 2 years?',
       steps: [
         {
           prompt: 'What is the multiplier for 4% annual growth?',
@@ -11213,7 +11213,7 @@ const MathsQuestions = (() => {
       subtopic: 'rpr-growth-decay',
       band: 'B',
       marks: 3,
-      question: 'A town's population is modelled by P = 12 000 × 1.03ⁿ where n is years after 2010. Predict the population in 2020.',
+      question: 'A town\'s population is modelled by P = 12 000 × 1.03ⁿ where n is years after 2010. Predict the population in 2020.',
       steps: [
         {
           prompt: 'What is the value of n for the year 2020?',
@@ -12173,7 +12173,7 @@ const MathsQuestions = (() => {
       ],
       workedExample: {
         question: 'Pentagon angles: 100°, 110°, 120°, 4x°, x°. Find x.',
-        steps: ['Sum = 540. 330+5x=540. 5x=210. x=42. But let's use these: 100+110+120+5x=540 → 5x=210 → x=42'],
+        steps: ['Sum = 540. 100+110+120+5x=540 → 330+5x=540 → 5x=210 → x=42'],
       },
       sampleAnswer: {
         grade4: 'x=42.',
@@ -12735,7 +12735,7 @@ const MathsQuestions = (() => {
           explanation: 'Area ratio = 3² : 5² = 9 : 25.',
         },
         {
-          prompt: 'If the smaller solid has surface area 63 cm², find the larger solid's surface area.',
+          prompt: 'If the smaller solid has surface area 63 cm², find the larger solid\'s surface area.',
           hint1: 'Larger SA = 63 × (25/9).',
           hint2: '63 × 25/9 = 1575/9.',
           hint3: '175 cm².',
@@ -13787,7 +13787,7 @@ const MathsQuestions = (() => {
           explanation: 'Segment = 188.4 − 36 = 152.4 cm².',
         },
         {
-          prompt: 'Check: is the segment larger than half the circle's area? Full circle = 3.14×144=452.16. Half = 226 cm². Is 152.4 < 226? Enter 1 for yes.',
+          prompt: 'Check: is the segment larger than half the circle\'s area? Full circle = 3.14×144=452.16. Half = 226 cm². Is 152.4 < 226? Enter 1 for yes.',
           hint1: 'The 150° sector is less than a semicircle (180°), so the segment should be less than the semicircle.',
           hint2: '152.4 < 226. Yes.',
           hint3: 'Enter 1.',
@@ -14075,7 +14075,7 @@ const MathsQuestions = (() => {
         grade6: '180° rotation: (x,y)→(−x,−y). Image = (−4,−2).',
         grade8: '(4,2) → (−4,−2). Equivalent to reflection in both axes.',
       },
-      examinerTip: '180° rotation about origin: negate both coordinates. Order of negation doesn't matter.',
+      examinerTip: '180° rotation about origin: negate both coordinates. Order of negation doesn\'t matter.',
       auditStatus: 'pending',
     },
     {
@@ -14088,7 +14088,7 @@ const MathsQuestions = (() => {
         {
           prompt: 'To enlarge from a non-origin centre, find the vector from centre to each point, scale it, then add back the centre.',
           hint1: 'For A(1,1): vector from (−1,−1) to (1,1) = (2, 2). Scale by 3: (6, 6). Add centre: (6+(−1), 6+(−1)) = (5, 5).',
-          hint2: 'A' = (5, 5).',
+          hint2: 'A\' = (5, 5).',
           hint3: '(5, 5).',
           answer: 5,
           tolerance: 0,
@@ -14125,7 +14125,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: {
         grade4: "A'=(5,5), B'=(11,5), C'=(5,11).",
-        grade6: 'From centre (−1,−1): vectors scaled by 3, add back centre. A'=(5,5), B'=(11,5), C'=(5,11).',
+        grade6: 'From centre (−1,−1): vectors scaled by 3, add back centre. A\'=(5,5), B\'=(11,5), C\'=(5,11).',
         grade8: "A'=3×(2,2)+(−1,−1)=(5,5). B'=3×(4,2)+(−1,−1)=(11,5). C'=3×(2,4)+(−1,−1)=(5,11).",
       },
       examinerTip: 'Enlargement from non-origin centre: scale the vector from centre to point, then add the centre coordinates.',
@@ -14136,11 +14136,11 @@ const MathsQuestions = (() => {
       subtopic: 'geo-transformations',
       band: 'B',
       marks: 3,
-      question: 'Describe fully the transformation that maps triangle PQR with vertices P(2,4), Q(6,4), R(6,7) to P'(1,2), Q'(3,2), R'(3,3.5).',
+      question: 'Describe fully the transformation that maps triangle PQR with vertices P(2,4), Q(6,4), R(6,7) to P\'(1,2), Q\'(3,2), R\'(3,3.5).',
       steps: [
         {
           prompt: 'What has happened to the size of the shape?',
-          hint1: 'PQ = 4 units. P'Q' = 2 units.',
+          hint1: 'PQ = 4 units. P\'Q\' = 2 units.',
           hint2: 'The shape has shrunk. Scale factor = 2÷4 = 0.5.',
           hint3: 'Scale factor = 0.5 (or ½).',
           answer: 0.5,
@@ -14161,26 +14161,26 @@ const MathsQuestions = (() => {
           explanation: 'An enlargement with SF=0.5 reduces size.',
         },
         {
-          prompt: 'Find the centre of enlargement. Extend lines PP', QQ' — they meet at the centre.',
-          hint1: 'P=(2,4), P'=(1,2). The line passes through... extend backward.',
-          hint2: 'Line through P and P': slope = (4−2)/(2−1) = 2. Through (0,0): y=2x.',
+          prompt: 'Find the centre of enlargement. Extend lines PP\', QQ\' — they meet at the centre.',
+          hint1: 'P=(2,4), P\'=(1,2). The line passes through... extend backward.',
+          hint2: 'Line through P and P\': slope = (4−2)/(2−1) = 2. Through (0,0): y=2x.',
           hint3: 'Centre = (0, 0).',
           answer: 0,
           tolerance: 0,
           unit: '',
           checkType: 'skip',
           displayAnswer: 'Centre of enlargement = (0, 0)',
-          explanation: 'Lines from P and P', Q and Q' converge at origin (0,0).',
+          explanation: 'Lines from P and P\', Q and Q\' converge at origin (0,0).',
         },
       ],
       workedExample: {
-        question: 'A(4,6) maps to A'(2,3). What transformation?',
-        steps: ['Coordinates halved → SF=0.5', 'Lines through A,A' pass through (0,0)', 'Enlargement SF=0.5 from (0,0)'],
+        question: 'A(4,6) maps to A\'(2,3). What transformation?',
+        steps: ['Coordinates halved → SF=0.5', 'Lines through A,A\' pass through (0,0)', 'Enlargement SF=0.5 from (0,0)'],
       },
       sampleAnswer: {
         grade4: 'Enlargement, scale factor 0.5, centre (0,0).',
-        grade6: 'Lengths halved → SF=0.5. Lines AA' extended meet at origin. Enlargement SF=0.5 from (0,0).',
-        grade8: 'SF=P'Q'/PQ=2/4=0.5. Centre at origin. Enlargement, SF=½, centre (0,0).',
+        grade6: 'Lengths halved → SF=0.5. Lines AA\' extended meet at origin. Enlargement SF=0.5 from (0,0).',
+        grade8: 'SF=P\'Q\'/PQ=2/4=0.5. Centre at origin. Enlargement, SF=½, centre (0,0).',
       },
       examinerTip: 'Always state: type, scale factor, and centre for an enlargement. SF < 1 = reduction.',
       auditStatus: 'pending',
@@ -14288,7 +14288,7 @@ const MathsQuestions = (() => {
       sampleAnswer: {
         grade4: 'Image = (2, −3).',
         grade6: 'Vector=(4,1). 90°CW→(1,−4). Image=(2,−3).',
-        grade8: 'V=(4,1). CW90: (a,b)→(b,−a)=(1,−4). Image=centre+V'=(2,−3).',
+        grade8: 'V=(4,1). CW90: (a,b)→(b,−a)=(1,−4). Image=centre+V\'=(2,−3).',
       },
       examinerTip: '90° clockwise: (a,b)→(b,−a). 90° anticlockwise: (a,b)→(−b,a).',
       auditStatus: 'pending',
@@ -14367,8 +14367,8 @@ const MathsQuestions = (() => {
         {
           prompt: 'Apply SF = −2: multiply each coordinate by −2.',
           hint1: 'A(−2,1)→(4,−2). B(2,1)→(−4,−2). C(0,4)→(0,−8).',
-          hint2: 'A'=(4,−2), B'=(−4,−2), C'=(0,−8).',
-          hint3: 'Enter 4 (x-coord of A').',
+          hint2: 'A\'=(4,−2), B\'=(−4,−2), C\'=(0,−8).',
+          hint3: 'Enter 4 (x-coord of A\').',
           answer: 4,
           tolerance: 0,
           unit: '',
@@ -14415,7 +14415,7 @@ const MathsQuestions = (() => {
       sampleAnswer: {
         grade4: "A'=(4,−2), B'=(−4,−2), C'=(0,−8). Image is larger and rotated.",
         grade6: 'SF=−2: multiply all coords by −2. Image is 2× larger, rotated 180° about origin.',
-        grade8: 'SF=−2: image 2× size, rotated 180°. A'=(4,−2), B'=(−4,−2), C'=(0,−8).',
+        grade8: 'SF=−2: image 2× size, rotated 180°. A\'=(4,−2), B\'=(−4,−2), C\'=(0,−8).',
       },
       examinerTip: 'A negative scale factor = enlargement × 180° rotation. The image appears on the opposite side of the centre.',
       auditStatus: 'pending',
@@ -14425,7 +14425,7 @@ const MathsQuestions = (() => {
       subtopic: 'geo-transformations',
       band: 'C',
       marks: 4,
-      question: 'Point P(3, 1) is transformed by the matrix M = [[0,−1],[1,0]]. Find the image P'. Then find the image of P(3,1) under M². Describe both transformations.',
+      question: 'Point P(3, 1) is transformed by the matrix M = [[0,−1],[1,0]]. Find the image P\'. Then find the image of P(3,1) under M². Describe both transformations.',
       steps: [
         {
           prompt: 'Apply M to (3, 1): multiply [[0,−1],[1,0]] × (3,1). New x = 0×3 + (−1)×1.',
@@ -14449,7 +14449,7 @@ const MathsQuestions = (() => {
           explanation: 'M represents 90° anticlockwise rotation.',
         },
         {
-          prompt: 'Apply M to P'=(−1,3) to get P''.',
+          prompt: 'Apply M to P\'=(−1,3) to get P\'\'.',
           hint1: 'x=0(−1)+(−1)(3)=−3. y=1(−1)+0(3)=−1.',
           hint2: "P'' = (−3, −1).",
           hint3: '(−3, −1).',
@@ -14479,7 +14479,7 @@ const MathsQuestions = (() => {
       sampleAnswer: {
         grade4: "P'=(−1,3). P''=(−3,−1).",
         grade6: 'M×(3,1)=(−1,3): 90° ACW. M²×(3,1)=(−3,−1): 180° rotation.',
-        grade8: 'M: 90°ACW. P'=(−1,3). M²: 180°. P''=(−3,−1). Check: (x,y)→(−x,−y) ✓',
+        grade8: 'M: 90°ACW. P\'=(−1,3). M²: 180°. P\'\'=(−3,−1). Check: (x,y)→(−x,−y) ✓',
       },
       examinerTip: 'Matrix [[0,−1],[1,0]] represents 90° anticlockwise rotation. M² represents 180°.',
       auditStatus: 'pending',
@@ -14798,7 +14798,7 @@ const MathsQuestions = (() => {
         grade6: 'Δx=6, Δy=8. d=√(36+64)=√100=10.',
         grade8: 'd=√((7−1)²+(10−2)²)=√(36+64)=10.',
       },
-      examinerTip: 'Distance between two points = √(Δx² + Δy²). It's Pythagoras on the coordinate grid.',
+      examinerTip: 'Distance between two points = √(Δx² + Δy²). It\'s Pythagoras on the coordinate grid.',
       auditStatus: 'pending',
     },
     {
@@ -17216,7 +17216,7 @@ const MathsQuestions = (() => {
       sampleAnswer: {
         grade4: 'P(exactly one) = 0.5',
         grade6: 'P(A, not B) = 0.3x0.5 = 0.15. P(not A, B) = 0.7x0.5 = 0.35. P(exactly one) = 0.5.',
-        grade8: 'P(exactly one) = P(A)P(B') + P(A')P(B) = 0.3x0.5 + 0.7x0.5 = 0.15+0.35 = 0.50.',
+        grade8: 'P(exactly one) = P(A)P(B\') + P(A\')P(B) = 0.3x0.5 + 0.7x0.5 = 0.15+0.35 = 0.50.',
       },
       examinerTip: "Students calculate P(exactly one) = P(A) + P(B) - P(A and B) = 0.3+0.5-0.15 = 0.65, which gives P(A or B), not P(exactly one). You must subtract both the 'both occur' AND 'neither occurs' paths.",
       auditStatus: 'pending',
@@ -17524,7 +17524,7 @@ const MathsQuestions = (() => {
     // comb-C03
     {
       id: 'comb-C03', subtopic: 'prob-combined', band: 'C', marks: 4,
-      question: 'Events A and B are mutually exclusive. P(A) = 0.3 and P(A or B) = 0.7. Find P(B) and P(A' and B'). Hence find P(A' or B).',
+      question: 'Events A and B are mutually exclusive. P(A) = 0.3 and P(A or B) = 0.7. Find P(B) and P(A\' and B\'). Hence find P(A\' or B).',
       steps: [
         {
           prompt: 'A and B are mutually exclusive, so P(A or B) = P(A) + P(B). Find P(B).',
@@ -17568,7 +17568,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: {
         grade4: "P(B) = 0.4; P(neither) = 0.3; P(A' or B) = 0.7",
-        grade6: 'P(B) = 0.4. P(neither) = 1 - 0.7 = 0.3. P(A' or B) = 0.7.',
+        grade6: 'P(B) = 0.4. P(neither) = 1 - 0.7 = 0.3. P(A\' or B) = 0.7.',
         grade8: "P(B) = 0.4. P(A'B') = 0.3. P(A' or B) = 1 - P(A and B') = 1 - 0.3 = 0.7.",
       },
       examinerTip: "Students confuse P(A' and B') with P(A' or B'). De Morgan's law: P(A' and B') = 1 - P(A or B), not 1 - P(A and B).",
@@ -18002,7 +18002,7 @@ const MathsQuestions = (() => {
       sampleAnswer: {
         grade4: 'P(picnic) = 0.65',
         grade6: 'P(sunny, picnic) = 0.7x0.8 = 0.56. P(not sunny, picnic) = 0.3x0.3 = 0.09. P(picnic) = 0.65.',
-        grade8: 'Total probability: P(picnic) = P(S)P(P|S) + P(S')P(P|S') = 0.7x0.8 + 0.3x0.3 = 0.65.',
+        grade8: 'Total probability: P(picnic) = P(S)P(P|S) + P(S\')P(P|S\') = 0.7x0.8 + 0.3x0.3 = 0.65.',
       },
       examinerTip: 'Students only calculate P(sunny and picnic) = 0.56 and forget the second route through "not sunny". Both branches of the tree leading to "picnic" must be added.',
       auditStatus: 'pending',
@@ -18370,7 +18370,7 @@ const MathsQuestions = (() => {
     // venn-A02
     {
       id: 'venn-A02', subtopic: 'prob-venn', band: 'A', marks: 2,
-      question: 'A Venn diagram shows sets A and B. A only = 6, A and B = 4, B only = 8, neither = 2. Total = 20. Find P(A) and P(A').',
+      question: 'A Venn diagram shows sets A and B. A only = 6, A and B = 4, B only = 8, neither = 2. Total = 20. Find P(A) and P(A\').',
       steps: [
         {
           prompt: 'Find P(A). n(A) = n(A only) + n(A and B).',
@@ -18409,7 +18409,7 @@ const MathsQuestions = (() => {
     // venn-A03
     {
       id: 'venn-A03', subtopic: 'prob-venn', band: 'A', marks: 2,
-      question: 'A Venn diagram shows sets P and Q. P only = 10, P and Q = 4, Q only = 6, neither = 5. Total = 25. Find P(P) and P(Q').',
+      question: 'A Venn diagram shows sets P and Q. P only = 10, P and Q = 4, Q only = 6, neither = 5. Total = 25. Find P(P) and P(Q\').',
       steps: [
         {
           prompt: 'Find P(P). n(P) = n(P only) + n(P and Q).',
@@ -18431,7 +18431,7 @@ const MathsQuestions = (() => {
         },
       ],
       workedExample: {
-        question: 'Venn: A only=8, A and B=5, B only=7, neither=5. Total=25. Find P(A) and P(B').',
+        question: 'Venn: A only=8, A and B=5, B only=7, neither=5. Total=25. Find P(A) and P(B\').',
         steps: [
           'P(A) = (8+5)/25 = 13/25.',
           "P(B') = (8+5)/25 = 13/25 (A only + neither = 8+5=13).",
@@ -18523,7 +18523,7 @@ const MathsQuestions = (() => {
     // venn-B01
     {
       id: 'venn-B01', subtopic: 'prob-venn', band: 'B', marks: 3,
-      question: 'A Venn diagram: A only = 12, A and B = 8, B only = 15, neither = 5. Total = 40. Find P(A), P(A|B) and P(A' and B').',
+      question: 'A Venn diagram: A only = 12, A and B = 8, B only = 15, neither = 5. Total = 40. Find P(A), P(A|B) and P(A\' and B\').',
       steps: [
         {
           prompt: 'Find P(A). n(A) = 12 + 8 = 20.',
@@ -18618,7 +18618,7 @@ const MathsQuestions = (() => {
     // venn-B03
     {
       id: 'venn-B03', subtopic: 'prob-venn', band: 'B', marks: 3,
-      question: 'Events A and B: P(A) = 0.5, P(B) = 0.4, P(A and B) = 0.2. Find P(A' and B') and P(A|B).',
+      question: 'Events A and B: P(A) = 0.5, P(B) = 0.4, P(A and B) = 0.2. Find P(A\' and B\') and P(A|B).',
       steps: [
         {
           prompt: 'Find P(A or B) using the addition rule.',
@@ -18709,7 +18709,7 @@ const MathsQuestions = (() => {
     // venn-B05
     {
       id: 'venn-B05', subtopic: 'prob-venn', band: 'B', marks: 3,
-      question: '50 students: 28 study history (H), 20 study geography (G), 10 study both. A student is chosen at random. Find P(H | G') and P(H' and G').',
+      question: '50 students: 28 study history (H), 20 study geography (G), 10 study both. A student is chosen at random. Find P(H | G\') and P(H\' and G\').',
       steps: [
         {
           prompt: "Find n(G') — the number NOT in G.",
@@ -18739,7 +18739,7 @@ const MathsQuestions = (() => {
         },
       ],
       workedExample: {
-        question: '40 students: 22 study art (A), 18 study music (M), 8 study both. Find P(A | M') and P(neither).',
+        question: '40 students: 22 study art (A), 18 study music (M), 8 study both. Find P(A | M\') and P(neither).',
         steps: [
           "n(M') = (22-8) + (40-22-18+8) = 14+8 = 22. n(A only) = 14. P(A | M') = 14/22 = 7/11.",
           'P(neither) = 8/40 = <strong>1/5</strong>.',
@@ -18756,7 +18756,7 @@ const MathsQuestions = (() => {
     // venn-B06
     {
       id: 'venn-B06', subtopic: 'prob-venn', band: 'B', marks: 3,
-      question: 'From a Venn diagram: P(A) = 0.45, P(B) = 0.35, P(A' and B') = 0.3. Find P(A and B) and P(A|B).',
+      question: 'From a Venn diagram: P(A) = 0.45, P(B) = 0.35, P(A\' and B\') = 0.3. Find P(A and B) and P(A|B).',
       steps: [
         {
           prompt: "Use P(A' and B') to find P(A or B).",
@@ -19259,7 +19259,7 @@ const MathsQuestions = (() => {
     // cond-B02
     {
       id: 'cond-B02', subtopic: 'prob-conditional', band: 'B', marks: 3,
-      question: 'P(A) = 0.6, P(B|A) = 0.4 and P(B|A') = 0.1. Find P(B) using the law of total probability.',
+      question: 'P(A) = 0.6, P(B|A) = 0.4 and P(B|A\') = 0.1. Find P(B) using the law of total probability.',
       steps: [
         {
           prompt: "Find P(A') and calculate P(A' and B).",
@@ -19278,7 +19278,7 @@ const MathsQuestions = (() => {
           explanation: 'P(A and B) = 0.4 x 0.6 = 0.24.',
         },
         {
-          prompt: 'Apply the total probability law: P(B) = P(A and B) + P(A' and B).',
+          prompt: 'Apply the total probability law: P(B) = P(A and B) + P(A\' and B).',
           hint1: '0.24 + 0.04.',
           hint2: '0.28.',
           hint3: '0.28.',
@@ -19295,8 +19295,8 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: {
         grade4: 'P(B) = 0.28',
-        grade6: 'P(A and B) = 0.24. P(A' and B) = 0.04. P(B) = 0.28.',
-        grade8: 'Total probability: P(B) = P(B|A)P(A) + P(B|A')P(A') = 0.24+0.04 = 0.28.',
+        grade6: 'P(A and B) = 0.24. P(A\' and B) = 0.04. P(B) = 0.28.',
+        grade8: 'Total probability: P(B) = P(B|A)P(A) + P(B|A\')P(A\') = 0.24+0.04 = 0.28.',
       },
       examinerTip: "Students use only one branch: P(B) = P(B|A) x P(A) = 0.24, ignoring the route through A'. The total probability law sums over all ways B can occur.",
       auditStatus: 'pending',
@@ -19488,7 +19488,7 @@ const MathsQuestions = (() => {
     // cond-C01
     {
       id: 'cond-C01', subtopic: 'prob-conditional', band: 'C', marks: 4,
-      question: 'P(A) = 0.3, P(B|A) = 0.7 and P(B|A') = 0.2. Use Bayes' theorem to find P(A|B).',
+      question: 'P(A) = 0.3, P(B|A) = 0.7 and P(B|A\') = 0.2. Use Bayes\' theorem to find P(A|B).',
       steps: [
         {
           prompt: "Find P(A') and use total probability to find P(B).",
@@ -20065,11 +20065,7 @@ const MathsQuestions = (() => {
     // ── stat-averages-B04 ──────────────────────────────────────
     {
       id: 'stat-averages-B04', subtopic: 'stat-averages', band: 'B', marks: 2,
-      question: 'Stem-and-leaf diagram (key: 1|3 means 13):
-1 | 3  7
-2 | 0  4  4  8
-3 | 1  5
-Find the mean and median.',
+      question: 'Stem-and-leaf diagram (key: 1|3 means 13):\n1 | 3  7\n2 | 0  4  4  8\n3 | 1  5\nFind the mean and median.',
       steps: [
         {
           prompt: 'List all 8 values, find the sum and calculate the mean.',
@@ -20387,7 +20383,7 @@ Find the mean and median.',
       },
       examinerTip: "Always sort after finding the missing value to verify — the missing value might itself be the median.",
       auditStatus: 'pending',
-    }
+    },
 
     // ══════════════════════════════════════════════════════════
     // CHARTS & DIAGRAMS (stat-charts)
@@ -21049,7 +21045,7 @@ Find the mean and median.',
       },
       examinerTip: "Always compute the class width from the boundaries first — wider classes will have a lower fd for the same frequency.",
       auditStatus: 'pending',
-    }
+    },
 
     // ══════════════════════════════════════════════════════════
     // SCATTER GRAPHS (stat-scatter)
@@ -22553,7 +22549,7 @@ Find the mean and median.',
         ],
       },
       sampleAnswer: { grade4: 'IQR = 11; range = 22.', grade6: 'IQR = Q3 − Q1 = 19 − 8 = 11. Range = max − min = 25 − 3 = 22.', grade8: 'IQR = 19 − 8 = 11 (measures spread of the middle 50%). Range = 25 − 3 = 22 (measures total spread, affected by extremes).' },
-      examinerTip: 'Two key measures: IQR uses quartiles (Q3 − Q1); range uses the extremes (max − min). Don't mix them up.',
+      examinerTip: 'Two key measures: IQR uses quartiles (Q3 − Q1); range uses the extremes (max − min). Don\'t mix them up.',
       auditStatus: 'pending',
     },
     {

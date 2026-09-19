@@ -35,6 +35,8 @@ const Teach = (() => {
   let _points         = [];
   let _state          = null;
   let _busy           = false;
+  let _openingKey     = null;   // "<lessonId>:<pointIndex>" of the opening request in flight, else null
+  let _openingFailed  = false;  // last opening attempt failed — show "Try again"
 
   // ── Helpers ─────────────────────────────────────────────────
   function _storageKey() { return `teach_${_subtopicId}`; }
@@ -148,6 +150,7 @@ const Teach = (() => {
     _subtopicName = subtopicName;
     _subject     = subject || 'biology';
     _busy        = false;
+    _openingFailed = false;
 
     _points = (data.keyPoints || []).map(kp => ({
       heading: kp.heading,
@@ -245,6 +248,7 @@ const Teach = (() => {
     if (!_subtopicId) return;
     Store.remove(_storageKey()); // removes exactly mabel_teach_<lessonId>, nothing else
     _state = _freshState();
+    _openingFailed = false;
     _renderShell();
     _beginLesson();
   }
@@ -285,6 +289,7 @@ const Teach = (() => {
     });
     thread.scrollTop = thread.scrollHeight;
     _updateDiagramSlot();
+    _renderOpeningStatus();
   }
 
   function _appendBubble(role, text) {
@@ -409,52 +414,86 @@ const Teach = (() => {
   }
 
   // ── Opening turn ─────────────────────────────────────────────
+  // Only one opening request can be in flight per key point. A second call —
+  // a retry tap, a re-render, or the lesson re-mounting — joins the one already
+  // running instead of firing again.
   async function _beginLesson() {
-    const thinkingEl = _showThinking();
-    const sys = _buildSystemPrompt();
-    const user = [
-      `Begin the lesson. In AT MOST TWO SENTENCES TOTAL, warmly welcome Mabel (using the lesson overview above in your own words, don't just repeat it) and introduce the first key point below — do not explain the whole point. Then immediately ask one question about it. Do not answer your own question.`,
-      _pointBrief(_points[0]),
-    ].join('\n\n');
-
-    try {
-      const reply = await _callWithLengthGuard(sys, user);
-      thinkingEl?.remove();
-      _appendBubble('assistant', reply);
-    } catch (e) {
-      thinkingEl?.remove();
-      _logError('opening message', e);
-      _showOpeningFailure();
+    const key = `${_subtopicId}:0`;
+    if (_openingKey === key) {
+      _renderOpeningStatus();
       return;
     }
+    _openingKey = key;
+    _renderOpeningStatus();
+
+    let reply, error;
+    try {
+      const sys = _buildSystemPrompt();
+      const user = [
+        `Begin the lesson. In AT MOST TWO SENTENCES TOTAL, warmly welcome Mabel (using the lesson overview above in your own words, don't just repeat it) and introduce the first key point below — do not explain the whole point. Then immediately ask one question about it. Do not answer your own question.`,
+        _pointBrief(_points[0]),
+      ].join('\n\n');
+      reply = await _callWithLengthGuard(sys, user);
+    } catch (e) {
+      error = e;
+    }
+
+    if (_openingKey !== key) return; // superseded — she has moved on to a different lesson
+    _openingKey = null;
+
+    if (error) {
+      _logError('opening message', error);
+      _openingFailed = true;
+      _renderOpeningStatus();
+      return;
+    }
+    _openingFailed = false;
+    _setOpening(reply);
     _renderShell();
     _renderTranscript();
   }
 
-  // Not saved to the transcript: a failed opening must not resume as if it
-  // were a real one, or be fed back to the model as conversation history.
-  function _showOpeningFailure() {
+  // The opening is always the first and only tutor message before she replies.
+  // It replaces anything already sitting there (e.g. a partial from an earlier
+  // attempt) rather than stacking a second one; if she has already replied, a
+  // late opening is dropped.
+  function _setOpening(text) {
+    if (_state.transcript.some(t => t.role === 'user')) return;
+    _state.transcript = [{ role: 'assistant', text }];
+    _save();
+  }
+
+  // Loading / failed state for the opening. Drawn from module state after every
+  // transcript render, so a re-render can neither lose it nor stack a second one.
+  // Not saved to the transcript: a failed opening must not resume as if it were
+  // a real one, or be fed back to the model as conversation history.
+  function _renderOpeningStatus() {
+    document.getElementById('teachOpeningStatus')?.remove();
     const thread = document.getElementById('teachThread');
     if (!thread) return;
 
+    const loading = _openingKey === `${_subtopicId}:0`;
+    if (!loading && !_openingFailed) return;
+
     const block = document.createElement('div');
-    block.id = 'teachRetryBlock';
+    block.id = 'teachOpeningStatus';
     block.style.cssText = 'align-self:flex-start;display:flex;flex-direction:column;gap:0.5rem;max-width:90%';
 
     const bubble = document.createElement('div');
-    bubble.className = 'askme-a-bubble';
-    bubble.textContent = "I can't start us off right now — try again in a moment.";
+    bubble.className = loading ? 'askme-a-bubble loading' : 'askme-a-bubble';
+    bubble.textContent = loading ? 'Thinking…' : "I can't start us off right now — try again in a moment.";
+    block.appendChild(bubble);
 
-    const btn = document.createElement('button');
-    btn.className = 'btn pri';
-    btn.style.alignSelf = 'flex-start';
-    btn.textContent = 'Try again';
-    btn.onclick = () => {
-      block.remove(); // also stops a second tap while the retry is in flight
-      _beginLesson(); // rebuilds the identical opening request
-    };
+    if (_openingFailed) {
+      const btn = document.createElement('button');
+      btn.className = 'btn pri';
+      btn.style.alignSelf = 'flex-start';
+      btn.disabled = loading;
+      btn.textContent = loading ? 'Trying…' : 'Try again';
+      btn.onclick = () => _beginLesson();
+      block.appendChild(btn);
+    }
 
-    block.append(bubble, btn);
     thread.appendChild(block);
     block.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }

@@ -96,16 +96,12 @@ const Teach = (() => {
   //           answer to a different part uses one of these, this part counts
   //           too — she has shown it without being asked.
   function _buildFacts(kp) {
-    // "Pathogen" is used throughout this lesson rather than being one of the
-    // barriers, so requiring it as a fact forces a vocabulary question ahead of
-    // the barriers themselves. Dropped as a REQUIRED fact only — it stays in the
-    // lesson JSON and in the Key Terms sidebar, which reads keyTerms directly.
-    // Scoped to this one lesson and point; a prefix match avoids depending on
-    // the em dash in the heading.
-    const dropPathogen = _subtopicId === 'b3-defences'
-      && String(kp.heading || '').startsWith('Physical barriers');
-    const terms = (kp.keyTerms || [])
-      .filter(t => !(dropPathogen && String(t.term || '').trim().toLowerCase() === 'pathogen'));
+    // A term marked referenceOnly in the lesson file is vocabulary she needs
+    // available, not something this point sets out to teach — a glossary word
+    // used across the whole lesson, say. It never becomes a required fact, so
+    // it can't gate the point, in any lesson. It still appears in the Key Terms
+    // sidebar, which reads keyTerms directly rather than facts.
+    const terms = (kp.keyTerms || []).filter(t => t.referenceOnly !== true);
     const heading = new Set(_stems(kp.heading));
     const defWords = terms.map(t => new Set(_stems(t.def)));
     const df = new Map();

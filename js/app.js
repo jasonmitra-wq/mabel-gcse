@@ -53,13 +53,14 @@ const AI = (() => {
     }
   }
 
+  // .catch first: a rejected call must not poison the queue for every call after it.
   function call(sys, user, tokens) {
-    _queue = _queue.then(() => _call(sys, user, tokens));
+    _queue = _queue.catch(() => {}).then(() => _call(sys, user, tokens));
     return _queue;
   }
 
   function callMultimodal(sys, contentBlocks, tokens) {
-    _queue = _queue.then(() => _call(sys, contentBlocks, tokens));
+    _queue = _queue.catch(() => {}).then(() => _call(sys, contentBlocks, tokens));
     return _queue;
   }
 

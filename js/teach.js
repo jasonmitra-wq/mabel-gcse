@@ -89,6 +89,28 @@ const Teach = (() => {
     return !!t && !/[.!?]["')]?$/.test(t);
   }
 
+  // Turns whatever AI.call threw into a plain-English cause. AI.call throws
+  // NO_KEY / BAD_KEY (401) / the bare HTTP status ("429") / a fetch TypeError.
+  function _describeError(e) {
+    const msg = String((e && e.message) || e);
+    if (msg === 'NO_KEY')  return 'no API key saved';
+    if (msg === 'BAD_KEY') return 'bad key — Anthropic rejected it (401)';
+    if (msg === '429')     return 'rate limit hit (429)';
+    if (msg === '529')     return 'Anthropic overloaded (529)';
+    if (msg === '400')     return 'bad request (400) — malformed request or billing problem';
+    if (msg === '403')     return 'key not permitted (403)';
+    if (/^[45]\d\d$/.test(msg)) return `HTTP error ${msg}`;
+    if ((e && e.name === 'AbortError') || /timeout|timed out/i.test(msg)) return 'timeout';
+    if (e instanceof TypeError || /failed to fetch|network|load failed/i.test(msg)) {
+      return 'network failure — the request never reached Anthropic (offline, blocked, or CORS)';
+    }
+    return `unrecognised error: ${msg}`;
+  }
+
+  function _logError(context, e) {
+    console.error(`[Teach] ${context} failed — ${_describeError(e)}`, e);
+  }
+
   function _pointBrief(point) {
     const terms = (point.keyTerms || []).map(t => `${t.term}: ${t.def}`).join(' | ');
     return [
@@ -399,12 +421,42 @@ const Teach = (() => {
       const reply = await _callWithLengthGuard(sys, user);
       thinkingEl?.remove();
       _appendBubble('assistant', reply);
-    } catch {
+    } catch (e) {
       thinkingEl?.remove();
-      _appendBubble('assistant', "I can't start us off right now — try again in a moment.");
+      _logError('opening message', e);
+      _showOpeningFailure();
+      return;
     }
     _renderShell();
     _renderTranscript();
+  }
+
+  // Not saved to the transcript: a failed opening must not resume as if it
+  // were a real one, or be fed back to the model as conversation history.
+  function _showOpeningFailure() {
+    const thread = document.getElementById('teachThread');
+    if (!thread) return;
+
+    const block = document.createElement('div');
+    block.id = 'teachRetryBlock';
+    block.style.cssText = 'align-self:flex-start;display:flex;flex-direction:column;gap:0.5rem;max-width:90%';
+
+    const bubble = document.createElement('div');
+    bubble.className = 'askme-a-bubble';
+    bubble.textContent = "I can't start us off right now — try again in a moment.";
+
+    const btn = document.createElement('button');
+    btn.className = 'btn pri';
+    btn.style.alignSelf = 'flex-start';
+    btn.textContent = 'Try again';
+    btn.onclick = () => {
+      block.remove(); // also stops a second tap while the retry is in flight
+      _beginLesson(); // rebuilds the identical opening request
+    };
+
+    block.append(bubble, btn);
+    thread.appendChild(block);
+    block.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   // ── Sending a message ────────────────────────────────────────

@@ -299,12 +299,19 @@ const Teach = (() => {
     });
   }
 
-  // Per point, per key term: answered (she engaged with it) / skipped (taught,
-  // retried once, still no real answer — moved past it).
+  // Per point, per key term:
+  //   answered — she engaged with it herself
+  //   told     — she missed it twice, so the tutor stated it plainly instead
+  // Either way the conversation has covered it, so both count towards the
+  // point being covered. A part is never abandoned: that used to let a point
+  // advance while still marked "not covered", leaving no checkmark and no
+  // terms in the sidebar even though the conversation had moved on.
   function _freshFacts(i, done) {
     const n = _points[i].facts.length;
-    return { answered: Array(n).fill(!!done), skipped: Array(n).fill(false) };
+    return { answered: Array(n).fill(!!done), told: Array(n).fill(false) };
   }
+
+  function _factDone(f, j) { return f.answered[j] || f.told[j]; }
 
   function _freshState() {
     return {
@@ -327,18 +334,19 @@ const Teach = (() => {
     return _points.map((p, i) => {
       const f = saved && saved[i];
       const n = p.facts.length;
-      if (f && Array.isArray(f.answered) && Array.isArray(f.skipped)
-          && f.answered.length === n && f.skipped.length === n) {
-        return { answered: f.answered.map(Boolean), skipped: f.skipped.map(Boolean) };
+      const other = f && (f.told || f.skipped); // "skipped" is the old name for the same slot
+      if (f && Array.isArray(f.answered) && Array.isArray(other)
+          && f.answered.length === n && other.length === n) {
+        return { answered: f.answered.map(Boolean), told: other.map(Boolean) };
       }
       return _freshFacts(i, coverage[i] === true);
     });
   }
 
-  // The part of point i to teach next: the first one neither answered nor skipped.
+  // The part of point i to teach next: the first one not yet covered either way.
   function _targetFactIndex(i) {
     const f = _state.facts[i];
-    return f.answered.findIndex((a, j) => !a && !f.skipped[j]);
+    return f.answered.findIndex((a, j) => !_factDone(f, j));
   }
 
   // Transcript entries: user / assistant messages, 'note' (a small divider when
@@ -800,11 +808,11 @@ const Teach = (() => {
       lines.push(_pointBrief(decision.point), _partLine(decision.fact),
         _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'fact') {
-      lines.push(`${decision.missedLast ? `Her reply didn't really get the last part, and that's fine — don't dwell on it or correct her at length. ` : `Acknowledge her reply naturally in one short sentence. `}Then carry on with the same key point: teach the next part of it, named below, in AT MOST TWO SENTENCES, then ask one question about that part. Teach only this part now — the other parts come later. Do not answer your own question.`);
+      lines.push(`${_toldLine(decision.toldNow) || `Acknowledge her reply naturally in one short sentence. `}Then carry on with the same key point: teach the next part of it, named below, in AT MOST TWO SENTENCES, then ask one question about that part. Teach only this part now — the other parts come later. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point), _partLine(decision.fact),
         _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'next') {
-      lines.push(`Acknowledge her reply naturally in one short sentence. Then move on to the next key point below: introduce it in AT MOST TWO SENTENCES, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`);
+      lines.push(`${_toldLine(decision.toldNow) || `Acknowledge her reply naturally in one short sentence. `}Then move on to the next key point below: introduce it in AT MOST TWO SENTENCES, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)),
         _remainingLine(decision.nextIndex, _state.facts[decision.nextIndex], _openingFact(decision.nextIndex)));
     } else if (decision.kind === 'resume') {
@@ -812,7 +820,7 @@ const Teach = (() => {
       lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)),
         _remainingLine(decision.nextIndex, _state.facts[decision.nextIndex], _openingFact(decision.nextIndex)));
     } else if (decision.kind === 'complete') {
-      lines.push(`Acknowledge her reply naturally. Then let her know all five key points in this lesson have now been covered. Ask, in one short friendly line, whether she'd like to stop here or carry on with some practice questions.`);
+      lines.push(`${_toldLine(decision.toldNow) || `Acknowledge her reply naturally. `}Then let her know all five key points in this lesson have now been covered. Ask, in one short friendly line, whether she'd like to stop here or carry on with some practice questions.`);
     } else {
       lines.push(`All five key points in this lesson have already been covered. Just respond naturally and helpfully to whatever she said.`);
     }
@@ -896,8 +904,10 @@ const Teach = (() => {
   // A point is taught one key term ("part") at a time. It is covered only once
   // every part has had a real answer from her — one good reply no longer
   // finishes the whole point. A weak answer gets one retry on that part; if
-  // that fails too the part is skipped, and a point with a skipped part ends
-  // not covered (its terms stay locked), the same rule as before but per part.
+  // that fails too the tutor simply tells her the answer, so the part is still
+  // covered and the point can finish. A point therefore only ever finishes with
+  // every part covered — which is the same moment its checkmark, its terms and
+  // the move to the next point all happen.
   function _decide(userText) {
     if (_state.complete) return { kind: 'free' };
     const idx = _state.currentPointIndex;
@@ -911,7 +921,7 @@ const Teach = (() => {
     }
 
     const cur = _state.facts[idx];
-    const answered = cur.answered.slice(), skipped = cur.skipped.slice();
+    const answered = cur.answered.slice(), told = cur.told.slice();
     let target = _targetFactIndex(idx);
     if (target === -1) target = answered.findIndex(a => !a); // defensive: nothing left to teach
 
@@ -919,23 +929,30 @@ const Teach = (() => {
     if (hit) answered[target] = true;
     // Anything else she has clearly shown, unprompted.
     point.facts.forEach((f, j) => {
-      if (!answered[j] && f.cues.size && _answers(userText, f.cues)) { answered[j] = true; skipped[j] = false; }
+      if (!answered[j] && f.cues.size && _answers(userText, f.cues)) { answered[j] = true; told[j] = false; }
     });
-    const facts = { answered, skipped };
+    const facts = { answered, told };
 
+    let toldNow = null;
     if (!hit && target !== -1) {
       if (!_state.retriedCurrent) {
         return { kind: 'retry', idx, point, fact: point.facts[target], facts };
       }
-      skipped[target] = true;
+      // Missed twice: stop quizzing her on it and just tell her, so the part is
+      // still covered in the conversation rather than dropped.
+      told[target] = true;
+      toldNow = point.facts[target];
     }
 
-    const next = answered.findIndex((a, j) => !a && !skipped[j]);
+    const next = answered.findIndex((a, j) => !answered[j] && !told[j]);
     if (next !== -1) {
-      return { kind: 'fact', idx, point, fact: point.facts[next], facts, missedLast: !hit };
+      return { kind: 'fact', idx, point, fact: point.facts[next], facts, toldNow };
     }
-    const covered = answered.every(Boolean);
-    return { idx, verdict: covered, facts, ..._afterPoint(idx, covered) };
+    // Every part is now covered — answered by her or told to her — so the point
+    // is covered. Its checkmark, its terms and the move to the next point all
+    // come from this one verdict.
+    const covered = point.facts.every((f, j) => answered[j] || told[j]);
+    return { idx, verdict: covered, facts, toldNow, ..._afterPoint(idx, covered) };
   }
 
   function _applyDecision(decision) {
@@ -968,6 +985,14 @@ const Teach = (() => {
     return fact ? `The part to ask about: ${fact.term} — ${fact.def}` : '';
   }
 
+  // She has missed this part twice. Don't quiz her a third time: give her the
+  // answer kindly so she still leaves the conversation having met it.
+  function _toldLine(fact) {
+    return fact
+      ? `She hasn't got this after two goes: ${fact.term} — ${fact.def}. Don't ask her about it again and don't make a thing of it. In ONE short friendly sentence, simply tell her the answer so she has it. `
+      : '';
+  }
+
   // The other parts of the SAME point still outstanding. A point whose content
   // is short (its terms are a few closely related names) then finishes in one
   // or two exchanges instead of being stretched to one exchange per term.
@@ -975,7 +1000,7 @@ const Teach = (() => {
     const point = _points[idx];
     if (!point || !factsState) return '';
     const names = point.facts
-      .filter((f, j) => !factsState.answered[j] && !factsState.skipped[j] && f !== focus)
+      .filter((f, j) => !_factDone(factsState, j) && f !== focus)
       .map(f => f.term);
     return names.length
       ? `Also still to cover in this same key point: ${names.join(', ')}. If any of them fit naturally into the same short question, cover them together — don't stretch this point out over more turns than it needs.`

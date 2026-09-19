@@ -169,26 +169,28 @@ const Teach = (() => {
       .teach-diagram-thumb { display:block; position:relative; width:100%; margin-top:0.7rem; padding:0;
         background:var(--bg); border:1px solid var(--border2); border-radius:8px; cursor:zoom-in; overflow:hidden; }
       .teach-diagram-thumb img { display:block; width:100%; height:150px; object-fit:contain; }
-      .teach-diagram-zoom { position:absolute; right:0.4rem; bottom:0.35rem; font-size:0.72rem;
-        color:var(--text); background:rgba(0,0,0,0.6); border-radius:6px; padding:0.1rem 0.4rem; }
       .teach-diagram-thumb:hover { border-color:var(--amber); }
       .teach-diagram-cap { font-size:0.82rem; color:var(--muted); font-style:italic; line-height:1.5; margin:0.55rem 0 0; }
-      .teach-diagram-overlay { position:fixed; inset:0; z-index:600; background:rgba(0,0,0,0.82);
-        display:flex; align-items:center; justify-content:center; padding:1rem; }
-      .teach-diagram-full { position:relative; max-width:min(720px, 96vw); max-height:94vh; overflow:auto;
-        background:var(--s2); border:1px solid var(--border2); border-radius:14px; padding:1rem; }
-      .teach-diagram-full img { display:block; width:100%; height:auto; }
-      .teach-diagram-close { position:sticky; top:0; float:right; background:var(--s2); border:1px solid var(--border2);
-        color:var(--text); border-radius:999px; width:2rem; height:2rem; cursor:pointer; font-size:0.9rem; z-index:1; }
+      /* Enlarged diagram: the panel wraps the image, which _fitDiagram sizes to
+         the diagram's own proportions and the screen. */
+      .teach-diagram-overlay { position:fixed; inset:0; z-index:600; background:rgba(0,0,0,0.85);
+        display:flex; align-items:center; justify-content:center; }
+      .teach-diagram-full { position:relative; background:var(--bg); border:1px solid var(--border2);
+        border-radius:14px; box-shadow:0 12px 48px rgba(0,0,0,0.6); }
+      .teach-diagram-full img { display:block; }
+      .teach-diagram-full .teach-diagram-cap { margin-top:10px; }
+      .teach-diagram-close { position:absolute; top:0.5rem; right:0.5rem; z-index:1;
+        background:rgba(24,21,16,0.92); border:1px solid var(--border2); color:var(--text);
+        border-radius:999px; width:2.25rem; height:2.25rem; cursor:pointer; font-size:1rem; line-height:1; }
+      .teach-diagram-close:hover { border-color:var(--amber); }
 
-      /* Shorter laptop screens: a thumbnail plus the jump list would push the
-         key terms out of view, so the diagram becomes a one-line button. */
+      /* Shorter laptop screens: a full thumbnail plus the jump list would push
+         the key terms out of view, so the thumbnail shrinks. */
       @media (min-width: 761px) and (max-height: 820px) {
         .teach-diagram.teach-panel { padding:0.5rem; }
         .teach-diagram .teach-panel-head { display:none; }
-        .teach-diagram-thumb { margin-top:0; cursor:pointer; padding:0.5rem 0.65rem; text-align:left; background:transparent; }
-        .teach-diagram-thumb img { display:none; }
-        .teach-diagram-zoom { position:static; background:none; padding:0; font-size:0.88rem; color:var(--text); }
+        .teach-diagram-thumb { margin-top:0; }
+        .teach-diagram-thumb img { height:64px; }
         .teach-diagram .teach-diagram-cap { display:none; }
         .teach-jump-btn { padding-top:0.3rem; padding-bottom:0.3rem; }
       }
@@ -230,7 +232,8 @@ const Teach = (() => {
       @media (max-width: 760px) {
         .teach-layout { flex-direction:column; gap:0.6rem; }
         .teach-main { width:100%; }
-        .teach-side { order:-1; width:100%; position:static; max-height:none !important; }
+        .teach-side { order:-1; width:100%; position:static; max-height:none !important; overflow:visible; }
+        .teach-side > .teach-terms { min-height:0; }
         .teach-terms .teach-panel-head { cursor:pointer; }
         .teach-terms-caret { display:inline; transition:transform 0.15s; }
         .teach-terms.open .teach-terms-caret { transform:rotate(180deg); }
@@ -486,10 +489,9 @@ const Teach = (() => {
     const { title, cap, src } = _diagramInfo(point);
     return `<section class="teach-panel teach-diagram" id="diag_${point.diagram}">
       <div class="teach-panel-head"><span>Diagram</span></div>
-      <button class="teach-diagram-thumb" onclick="Teach.expandDiagram()" title="Tap to see it full size">
+      <button class="teach-diagram-thumb" onclick="Teach.expandDiagram()" title="Tap to enlarge" aria-label="Enlarge diagram">
         <img src="${src}" alt="${_esc(title)}"
           onerror="this.parentElement.style.display='none';document.getElementById('teachDiagFallback_${point.diagram}').style.display='block'">
-        <span class="teach-diagram-zoom">⤢ View diagram full size</span>
       </button>
       <div id="teachDiagFallback_${point.diagram}" style="display:none;color:var(--muted);font-size:0.83rem;font-style:italic;padding:0.5rem 0 0">
         Diagram not yet available
@@ -508,13 +510,45 @@ const Teach = (() => {
     overlay.id = 'teachDiagramOverlay';
     overlay.className = 'teach-diagram-overlay';
     overlay.onclick = e => { if (e.target === overlay) closeDiagram(); };
-    overlay.innerHTML = `<div class="teach-diagram-full">
+    overlay.innerHTML = `<div class="teach-diagram-full" role="dialog" aria-label="${_esc(title)}">
         <button class="teach-diagram-close" onclick="Teach.closeDiagram()" aria-label="Close diagram">✕</button>
         <img src="${src}" alt="${_esc(title)}">
         ${cap ? `<p class="teach-diagram-cap">${cap}</p>` : ''}
       </div>`;
     document.body.appendChild(overlay);
+    const img = overlay.querySelector('img');
+    if (img.complete) _fitDiagram(); else img.onload = _fitDiagram;
+    _fitDiagram();
     document.addEventListener('keydown', _escCloses);
+    window.addEventListener('resize', _fitDiagram);
+  }
+
+  // Size the enlarged diagram to its own proportions, as large as the screen
+  // allows: nearly the full width on a phone, a big centred panel on desktop.
+  // The SVGs declare width="100%" with no pixel size, so left to itself the
+  // browser renders them at a tiny default (~233×150) — they must be sized
+  // explicitly. Their natural size still carries the right aspect ratio.
+  function _fitDiagram() {
+    const overlay = document.getElementById('teachDiagramOverlay');
+    if (!overlay) return;
+    const panel = overlay.querySelector('.teach-diagram-full');
+    const img = panel.querySelector('img');
+    const cap = panel.querySelector('.teach-diagram-cap');
+    const narrow = window.innerWidth <= 760;
+    const pad = narrow ? 8 : 16;
+    const maxW = Math.min(narrow ? window.innerWidth - 16 : window.innerWidth * 0.9, 1200) - pad * 2;
+    const maxH = window.innerHeight * (narrow ? 0.92 : 0.9) - pad * 2 - (cap ? cap.offsetHeight + 10 : 0);
+    const ratio = (img.naturalWidth && img.naturalHeight) ? img.naturalWidth / img.naturalHeight : 0;
+    panel.style.padding = pad + 'px';
+    if (ratio) {
+      const w = Math.min(maxW, maxH * ratio);
+      img.style.width  = Math.floor(w) + 'px';
+      img.style.height = Math.floor(w / ratio) + 'px';
+    } else {
+      // Unknown proportions: fill the available box and let the SVG scale inside it.
+      img.style.width  = Math.floor(maxW) + 'px';
+      img.style.height = Math.floor(maxH) + 'px';
+    }
   }
 
   function _escCloses(e) { if (e.key === 'Escape') closeDiagram(); }
@@ -522,6 +556,7 @@ const Teach = (() => {
   function closeDiagram() {
     document.getElementById('teachDiagramOverlay')?.remove();
     document.removeEventListener('keydown', _escCloses);
+    window.removeEventListener('resize', _fitDiagram);
   }
 
   function _updateDiagramSlot() {

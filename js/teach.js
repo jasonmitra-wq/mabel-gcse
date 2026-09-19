@@ -6,10 +6,16 @@
    ============================================================ */
 
 const Teach = (() => {
-  const TRANSCRIPT_CAP   = 40;
-  const MAX_REPLY_WORDS   = 120;
-  const MAX_LENGTH_TRIES  = 3;
+  const TRANSCRIPT_CAP    = 40;
   const HISTORY_TURNS     = 6;
+
+  // Reply length: max_tokens is the real ceiling — a system-prompt instruction
+  // alone won't hold to a hard limit. ~60 words is roughly 90-100 tokens of
+  // English; MAX_TOKENS_REPLY leaves just enough room for that and no more.
+  const MAX_REPLY_WORDS   = 60;
+  const RETRY_MAX_WORDS   = 40;
+  const MAX_TOKENS_REPLY  = 100;
+  const MAX_TOKENS_RETRY  = 70;
 
   const STOPWORDS = new Set([
     'the','a','an','is','are','was','were','to','of','in','on','and','or','it','that',
@@ -54,6 +60,33 @@ const Teach = (() => {
     const words = (reply || '').trim().split(/\s+/).filter(Boolean);
     if (words.length <= 3) return false;
     return _contentWords(reply).some(w => wordSet.has(w));
+  }
+
+  // Strip markdown formatting before counting words, so **bold** or `code`
+  // markers don't inflate — or hide — the true word count.
+  function _stripMarkdown(text) {
+    return (text || '')
+      .replace(/\*\*(.*?)\*\*/g, '$1')
+      .replace(/__(.*?)__/g, '$1')
+      .replace(/\*(.*?)\*/g, '$1')
+      .replace(/_(.*?)_/g, '$1')
+      .replace(/`{1,3}([^`]*)`{1,3}/g, '$1')
+      .replace(/^#{1,6}\s+/gm, '')
+      .replace(/^[-*+]\s+/gm, '')
+      .replace(/^\d+\.\s+/gm, '')
+      .trim();
+  }
+
+  function _wordCount(text) {
+    return (text || '').trim().split(/\s+/).filter(Boolean).length;
+  }
+
+  // A reply cut off by max_tokens usually stops mid-clause, without
+  // sentence-ending punctuation — treat that as "too long" too, not just
+  // literal word count over the limit.
+  function _looksTruncated(text) {
+    const t = (text || '').trim();
+    return !!t && !/[.!?]["')]?$/.test(t);
   }
 
   function _pointBrief(point) {
@@ -228,7 +261,7 @@ const Teach = (() => {
       (_data.commonMistakes || []).length
         ? `Common mistakes students make here — watch for these and gently correct if she makes one: ${_data.commonMistakes.join(' | ')}`
         : '',
-      `Rules: explain ideas a little at a time in plain, friendly language. Ask exactly ONE question at a time and never present a list of options for her to pick from. Keep every reply under about 120 words. If she asks about something off-topic or unrelated, answer it briefly and kindly, then guide her back to the lesson — never refuse to answer and never tell her to stay focused or scold her for going off-topic.`,
+      `Rules: explain ideas a little at a time in plain, friendly language. Ask exactly ONE question at a time and never present a list of options for her to pick from. Keep every reply very short — one to three sentences before your question, no more than about 60 words total. If she asks about something off-topic or unrelated, answer it briefly and kindly, then guide her back to the lesson — never refuse to answer and never tell her to stay focused or scold her for going off-topic.`,
     ].filter(Boolean).join('\n');
   }
 
@@ -249,7 +282,7 @@ const Teach = (() => {
       lines.push(`Her reply didn't really engage with the key point below — too short, or off the topic. Gently explain this idea again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`);
       lines.push(_pointBrief(decision.point));
     } else if (decision.kind === 'next') {
-      lines.push(`Acknowledge her reply naturally in a sentence. Then move on: teach the next key point below, briefly and in plain language, and ask one question about it.`);
+      lines.push(`Acknowledge her reply naturally in one short sentence. Then move on to the next key point below: introduce it in AT MOST TWO SENTENCES — do not explain the whole point — then immediately ask one question about it. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point));
     } else if (decision.kind === 'complete') {
       lines.push(`Acknowledge her reply naturally. Then let her know all five key points in this lesson have now been covered. Ask, in one short friendly line, whether she'd like to stop here or carry on with some practice questions.`);
@@ -260,15 +293,17 @@ const Teach = (() => {
   }
 
   async function _callWithLengthGuard(sys, user) {
-    let lastReply = '';
-    for (let attempt = 0; attempt < MAX_LENGTH_TRIES; attempt++) {
-      const prompt = attempt === 0 ? user : user + `\n\n(Your last reply was too long — respond in under 120 words this time.)`;
-      const reply = await AI.call(sys, prompt, 220);
-      lastReply = reply.trim();
-      const wordCount = lastReply.split(/\s+/).filter(Boolean).length;
-      if (wordCount <= MAX_REPLY_WORDS + 15) return lastReply;
+    const first = (await AI.call(sys, user, MAX_TOKENS_REPLY)).trim();
+    const firstPlain = _stripMarkdown(first);
+    if (_wordCount(firstPlain) <= MAX_REPLY_WORDS && !_looksTruncated(firstPlain)) {
+      return first;
     }
-    return lastReply; // never truncate — after a few tries, use the last full reply as-is
+
+    // Too long (or cut off mid-sentence by max_tokens) — discard it, never
+    // show it, and ask once for a shorter version instead of truncating it.
+    const retryPrompt = user + `\n\n(Your last reply was too long. Say the same thing again in under ${RETRY_MAX_WORDS} words.)`;
+    const retry = (await AI.call(sys, retryPrompt, MAX_TOKENS_RETRY)).trim();
+    return retry;
   }
 
   // ── Coverage decision (pure — no state mutation) ────────────
@@ -317,7 +352,7 @@ const Teach = (() => {
     const thinkingEl = _showThinking();
     const sys = _buildSystemPrompt();
     const user = [
-      `Begin the lesson. Welcome Mabel warmly in a sentence, using the lesson overview above in your own words — don't just repeat it. Then teach the first key point below, briefly and in plain language, and ask ONE question about it.`,
+      `Begin the lesson. In AT MOST TWO SENTENCES TOTAL, warmly welcome Mabel (using the lesson overview above in your own words, don't just repeat it) and introduce the first key point below — do not explain the whole point. Then immediately ask one question about it. Do not answer your own question.`,
       _pointBrief(_points[0]),
     ].join('\n\n');
 

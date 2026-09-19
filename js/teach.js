@@ -45,6 +45,8 @@ const Teach = (() => {
   let _state          = null;
   let _busy           = false;
   let _termsOpen      = false;  // key-terms panel expanded (only matters on narrow screens)
+  let _termsShown     = new Set(); // points whose terms were already in the sidebar at the last render
+  let _termsNew       = [];        // points whose terms have just appeared, to reveal and flash
   let _openingKey     = null;   // "<lessonId>:<pointIndex>" of the opening/jump request in flight, else null
   let _openingReq     = null;   // { index, first } — what's being requested; kept after a failure for "Try again"
   let _openingFailed  = false;  // last opening attempt failed — show "Try again"
@@ -270,6 +272,17 @@ const Teach = (() => {
       .teach-term span { color:rgba(255,255,255,0.8); }
       .teach-terms-empty { font-size:0.88rem; color:var(--muted); line-height:1.55; margin:0; }
 
+      /* A group that has just unlocked: flashed and badged so it reads as new
+         rather than looking like nothing happened. */
+      .teach-terms-group.is-new { border-radius:8px; animation:teachTermsNew 2.6s ease-out 1; }
+      @keyframes teachTermsNew {
+        0%, 55% { background:rgba(78,207,170,0.16); box-shadow:0 0 0 6px rgba(78,207,170,0.16); }
+        100%    { background:transparent; box-shadow:0 0 0 6px rgba(78,207,170,0); }
+      }
+      .teach-terms-badge { margin-left:0.4rem; padding:0.05rem 0.4rem; border-radius:999px;
+        background:var(--teal); color:#07201a; font-size:0.66rem; letter-spacing:0.05em; vertical-align:middle; }
+      @media (prefers-reduced-motion: reduce) { .teach-terms-group.is-new { animation:none; } }
+
       .teach-note { align-self:center; font-size:0.8rem; color:var(--amber); font-weight:600;
         letter-spacing:0.04em; text-transform:uppercase;
         padding:0.25rem 0.9rem; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
@@ -405,12 +418,14 @@ const Teach = (() => {
         resumeIndex: (resume === -1 || (Number.isInteger(resume) && resume >= 0 && resume < _points.length)) ? resume : null,
         facts: _restoreFacts(saved.facts, coverage),
       };
+      _seedTermsShown();
       _renderShell();
       _renderTranscript();
       return;
     }
 
     _state = _freshState();
+    _seedTermsShown();
     _renderShell();
     _beginLesson();
   }
@@ -437,12 +452,12 @@ const Teach = (() => {
   // used to read ahead. Text is taken straight from each point's keyTerms.
   function _termsHtml() {
     const groups = _points
-      .map((p, i) => ({ p, covered: _state.coverage[i] === true }))
+      .map((p, i) => ({ p, i, covered: _state.coverage[i] === true }))
       .filter(g => g.covered && g.p.keyTerms.length);
     const count = groups.reduce((n, g) => n + g.p.keyTerms.length, 0);
     const body = groups.length
-      ? groups.map(g => `<div class="teach-terms-group">
-          <div class="teach-terms-point">${_esc(_shortHeading(g.p.heading))}</div>
+      ? groups.map(g => `<div class="teach-terms-group${_termsNew.includes(g.i) ? ' is-new' : ''}" data-pt="${g.i}">
+          <div class="teach-terms-point">${_esc(_shortHeading(g.p.heading))}${_termsNew.includes(g.i) ? '<span class="teach-terms-badge">new</span>' : ''}</div>
           ${g.p.keyTerms.map(t => `<div class="teach-term"><strong>${_esc(t.term)}</strong><span>${_esc(t.def)}</span></div>`).join('')}
         </div>`).join('')
       : `<p class="teach-terms-empty">Key terms show up here as you finish each point.</p>`;
@@ -454,9 +469,47 @@ const Teach = (() => {
     </section>`;
   }
 
+  // Which points' terms have appeared since the last render. The sidebar is
+  // rebuilt every turn, so a newly unlocked group lands at the bottom with the
+  // panel scrolled back to the top — present, but easy to miss entirely.
+  // Opening a lesson shouldn't flash everything she covered in an earlier
+  // session as though it had just arrived.
+  function _seedTermsShown() {
+    _termsShown = new Set(_points.map((p, i) => i)
+      .filter(i => _state.coverage[i] === true && _points[i].keyTerms.length));
+    _termsNew = [];
+  }
+
+  function _markNewTerms() {
+    const covered = _points
+      .map((p, i) => i)
+      .filter(i => _state.coverage[i] === true && _points[i].keyTerms.length);
+    _termsNew = covered.filter(i => !_termsShown.has(i));
+    _termsShown = new Set(covered);
+  }
+
+  // Scroll a container so a descendant is visible, by adjusting that
+  // container's own scrollTop. Deliberately not scrollIntoView, which walks up
+  // and scrolls the lesson panel too, moving her place in the conversation.
+  function _scrollWithin(container, el) {
+    if (!container || !el) return;
+    const c = container.getBoundingClientRect(), e = el.getBoundingClientRect();
+    if (e.top < c.top) container.scrollTop += e.top - c.top - 8;
+    else if (e.bottom > c.bottom) container.scrollTop += Math.min(e.top - c.top - 8, e.bottom - c.bottom + 8);
+  }
+
+  function _revealNewTerms() {
+    if (!_termsNew.length) return;
+    const group = document.querySelector(`.teach-terms-group.is-new[data-pt="${_termsNew[0]}"]`);
+    if (!group || !group.offsetParent) return; // collapsed on a narrow screen: the flash is waiting when she opens it
+    _scrollWithin(document.querySelector('.teach-terms-body'), group);
+    _scrollWithin(document.getElementById('teachSide'), group);
+  }
+
   function _renderShell() {
     const inner = document.getElementById('lessonInner');
     if (!inner) return;
+    _markNewTerms();
     const coveredCount = _state.coverage.filter(c => c === true).length;
 
     inner.innerHTML = `
@@ -496,6 +549,7 @@ const Teach = (() => {
     document.getElementById('lessonPanel').scrollTop = 0;
     _updateDiagramSlot();
     _positionTerms();
+    _revealNewTerms();
     _syncControls();
   }
 

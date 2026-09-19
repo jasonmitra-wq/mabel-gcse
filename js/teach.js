@@ -148,35 +148,48 @@ const Teach = (() => {
     const el = document.createElement('style');
     el.id = 'teachStyles';
     el.textContent = `
-      .teach-jump { display:flex; flex-wrap:wrap; align-items:center; gap:0.35rem; margin-bottom:0.4rem; }
-      .teach-jump-label { font-size:0.75rem; color:var(--muted); margin-right:0.15rem; }
-      .teach-jump-btn { background:transparent; border:1px solid var(--border2); color:var(--muted);
-        font-family:inherit; font-size:0.72rem; padding:0.22rem 0.6rem; border-radius:999px;
-        cursor:pointer; transition:all 0.15s; }
-      .teach-jump-btn:hover:not(:disabled) { border-color:var(--amber); color:var(--text); }
-      .teach-jump-btn.covered { border-color:rgba(78,207,170,0.4); color:var(--teal); }
-      .teach-jump-btn.current { background:rgba(232,160,64,0.12); border-color:var(--amber); color:var(--text); }
-      .teach-jump-btn:disabled { opacity:0.5; cursor:default; }
-
+      /* Right-hand column: jump list above key terms. Sticky, so it follows
+         her down a long conversation instead of staying up with content she
+         has already read. */
       .teach-layout { display:flex; gap:1.25rem; align-items:flex-start; }
       .teach-main { flex:1; min-width:0; }
-      .teach-terms { width:230px; flex-shrink:0; position:sticky; top:8rem; overflow-y:auto;
-        background:var(--s2); border:1px solid var(--border2); border-radius:12px; padding:0.8rem 0.9rem; }
-      .teach-terms-toggle { display:flex; width:100%; justify-content:space-between; align-items:center;
+      .teach-side { width:265px; flex-shrink:0; position:sticky; align-self:flex-start;
+        display:flex; flex-direction:column; gap:0.75rem; min-height:0; }
+      .teach-panel { background:var(--s2); border:1px solid var(--border2); border-radius:12px;
+        padding:0.85rem 0.95rem; }
+      /* The jump list stays put; only the terms list scrolls when it gets long. */
+      .teach-side > nav.teach-panel { flex-shrink:0; }
+      .teach-side > .teach-terms { min-height:0; display:flex; flex-direction:column; overflow:hidden; }
+      .teach-side > .teach-terms .teach-terms-body { overflow-y:auto; min-height:0; }
+      .teach-panel-head { display:flex; width:100%; justify-content:space-between; align-items:center;
         background:none; border:none; padding:0; color:var(--muted); font-family:inherit;
-        font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; cursor:default; }
+        font-size:12px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; cursor:default; }
+
+      /* Jump list — one row per key point, in lesson order */
+      .teach-jump-list { display:flex; flex-direction:column; gap:0.3rem; margin-top:0.7rem; }
+      .teach-jump-btn { display:flex; align-items:center; gap:0.45rem; width:100%; text-align:left;
+        background:transparent; border:1px solid var(--border2); color:var(--muted);
+        font-family:inherit; font-size:0.88rem; line-height:1.35; padding:0.45rem 0.6rem;
+        border-radius:8px; cursor:pointer; transition:all 0.15s; }
+      .teach-jump-btn:hover:not(:disabled) { border-color:var(--amber); color:var(--text); }
+      .teach-jump-btn.covered { border-color:rgba(78,207,170,0.35); color:var(--teal); }
+      .teach-jump-btn.current { background:rgba(232,160,64,0.12); border-color:var(--amber); color:var(--text); }
+      .teach-jump-btn:disabled { opacity:0.5; cursor:default; }
+      .teach-jump-mark { flex-shrink:0; width:1.1em; font-size:0.85em; }
+
       .teach-terms-caret { display:none; }
       .teach-terms-body { margin-top:0.7rem; }
-      .teach-terms-point { font-size:0.68rem; color:var(--amber); font-weight:700; letter-spacing:0.05em;
-        text-transform:uppercase; margin:0.7rem 0 0.3rem; }
+      .teach-terms-point { font-size:0.78rem; color:var(--amber); font-weight:700; letter-spacing:0.04em;
+        text-transform:uppercase; margin:0.85rem 0 0.35rem; }
       .teach-terms-group:first-child .teach-terms-point { margin-top:0; }
-      .teach-term { margin-bottom:0.55rem; font-size:0.8rem; line-height:1.5; }
-      .teach-term strong { display:block; color:var(--teal); font-size:0.85rem; }
+      .teach-term { margin-bottom:0.7rem; font-size:0.88rem; line-height:1.55; }
+      .teach-term strong { display:block; color:var(--teal); font-size:0.92rem; }
       .teach-term span { color:rgba(255,255,255,0.8); }
-      .teach-terms-empty { font-size:0.78rem; color:var(--muted); line-height:1.5; margin:0; }
+      .teach-terms-empty { font-size:0.88rem; color:var(--muted); line-height:1.55; margin:0; }
 
-      .teach-note { align-self:center; font-size:0.72rem; color:var(--muted); font-style:italic;
-        padding:0.2rem 0.8rem; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+      .teach-note { align-self:center; font-size:0.8rem; color:var(--amber); font-weight:600;
+        letter-spacing:0.04em; text-transform:uppercase;
+        padding:0.25rem 0.9rem; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
       .teach-recap { align-self:flex-start; max-width:95%; background:rgba(232,160,64,0.07);
         border:1.5px solid rgba(232,160,64,0.22); border-radius:12px; padding:0.8rem 1rem; }
       .teach-recap-title { font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
@@ -186,8 +199,8 @@ const Teach = (() => {
       @media (max-width: 760px) {
         .teach-layout { flex-direction:column; gap:0.6rem; }
         .teach-main { width:100%; }
-        .teach-terms { order:-1; width:100%; position:static; max-height:none !important; }
-        .teach-terms-toggle { cursor:pointer; }
+        .teach-side { order:-1; width:100%; position:static; max-height:none !important; }
+        .teach-terms .teach-panel-head { cursor:pointer; }
         .teach-terms-caret { display:inline; transition:transform 0.15s; }
         .teach-terms.open .teach-terms-caret { transform:rotate(180deg); }
         .teach-terms-body { display:none; }
@@ -279,14 +292,20 @@ const Teach = (() => {
   }
 
   // ── Shell / rendering ────────────────────────────────────────
-  function _jumpRowHtml() {
+  function _jumpPanelHtml() {
     const cur = _state.complete ? -1 : _state.currentPointIndex;
     const btns = _points.map((p, i) => {
       const covered = _state.coverage[i] === true;
       const cls = 'teach-jump-btn' + (covered ? ' covered' : '') + (i === cur ? ' current' : '');
-      return `<button class="${cls}" onclick="Teach.jumpTo(${i})" title="${_esc(p.heading)}">${covered ? '✓ ' : ''}${_esc(_shortHeading(p.heading))}</button>`;
+      const mark = covered ? '✓' : (i === cur ? '▸' : '');
+      return `<button class="${cls}" onclick="Teach.jumpTo(${i})" title="${_esc(p.heading)}">
+        <span class="teach-jump-mark">${mark}</span><span>${_esc(_shortHeading(p.heading))}</span>
+      </button>`;
     }).join('');
-    return `<div class="teach-jump" role="group" aria-label="Jump to a key point"><span class="teach-jump-label">Jump to:</span>${btns}</div>`;
+    return `<nav class="teach-panel" aria-label="Jump to a key point">
+      <div class="teach-panel-head"><span>Jump to</span></div>
+      <div class="teach-jump-list">${btns}</div>
+    </nav>`;
   }
 
   // Terms appear only once their key point is covered, so the panel can't be
@@ -302,12 +321,12 @@ const Teach = (() => {
           ${g.p.keyTerms.map(t => `<div class="teach-term"><strong>${_esc(t.term)}</strong><span>${_esc(t.def)}</span></div>`).join('')}
         </div>`).join('')
       : `<p class="teach-terms-empty">Key terms show up here as you finish each point.</p>`;
-    return `<aside class="teach-terms${_termsOpen ? ' open' : ''}" id="teachTerms">
-      <button class="teach-terms-toggle" onclick="Teach.toggleTerms()" aria-expanded="${_termsOpen}">
+    return `<section class="teach-panel teach-terms${_termsOpen ? ' open' : ''}" id="teachTerms">
+      <button class="teach-panel-head" onclick="Teach.toggleTerms()" aria-expanded="${_termsOpen}">
         <span>Key terms${count ? ` (${count})` : ''}</span><span class="teach-terms-caret">▾</span>
       </button>
       <div class="teach-terms-body">${body}</div>
-    </aside>`;
+    </section>`;
   }
 
   function _renderShell() {
@@ -328,14 +347,13 @@ const Teach = (() => {
           <span style="font-size:0.75rem;color:var(--muted)">${coveredCount}/${_points.length} covered</span>
           <a href="#" onclick="event.preventDefault();Teach.showSlides()" style="font-size:0.75rem;color:var(--muted);text-decoration:underline;cursor:pointer">Show me the slides instead</a>
         </div>
-        ${_jumpRowHtml()}
         <div id="teachResetWrap" style="margin-bottom:0.6rem">${_resetTriggerHtml()}</div>
       </div>
       <div class="teach-layout">
         <div class="teach-main">
-          <div id="teachDiagramSlot"></div>
           <div class="askme-wrap" style="padding-top:0.75rem;padding-bottom:1rem">
             <div class="askme-thread" id="teachThread"></div>
+            <div id="teachDiagramSlot"></div>
             <div class="askme-input-row">
               <textarea id="teachInput" rows="2" placeholder="Type here…"
                 onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();Teach.send();}"></textarea>
@@ -343,7 +361,10 @@ const Teach = (() => {
             </div>
           </div>
         </div>
-        ${_termsHtml()}
+        <aside class="teach-side" id="teachSide">
+          ${_jumpPanelHtml()}
+          ${_termsHtml()}
+        </aside>
       </div>`;
 
     document.getElementById('lessonInner').scrollTop = 0;
@@ -353,15 +374,15 @@ const Teach = (() => {
     _syncControls();
   }
 
-  // On wide screens the terms panel sticks just under the header, whatever
-  // height the header currently is.
+  // On wide screens the side column sticks just under the header, whatever
+  // height the header currently is, so it follows her down the conversation.
   function _positionTerms() {
     const header = document.getElementById('teachHeader');
-    const terms  = document.getElementById('teachTerms');
-    if (!header || !terms) return;
+    const side   = document.getElementById('teachSide');
+    if (!header || !side) return;
     const top = header.offsetHeight + 8;
-    terms.style.top = top + 'px';
-    terms.style.maxHeight = `calc(100vh - ${top + 72}px)`;
+    side.style.top = top + 'px';
+    side.style.maxHeight = `calc(100vh - ${top + 80}px)`;
   }
 
   function toggleTerms() {
@@ -707,13 +728,30 @@ const Teach = (() => {
     ].join('\n\n');
   }
 
-  // Same shape as any opening: a short introduction, then one question.
+  // Same shape as the lesson's own opening: a short introduction, then one
+  // question. Deliberately sends NO conversation history — with the previous
+  // exchange in front of it the model carries that conversation on instead of
+  // starting this point from the beginning.
   function _jumpPrompt(index) {
     return [
-      _recentHistoryBlock(true),
-      `Mabel has chosen to go straight to a different key point: "${_points[index].heading}". Teach it from the beginning, as if you had just reached it. She may not have covered the earlier points, so don't assume she knows terms from them — use plain words. In AT MOST TWO SENTENCES, introduce it — do not explain the whole point — then immediately ask one question about it. Do not answer your own question. Don't mention jumping or skipping.`,
+      `Mabel is starting a new key point: "${_points[index].heading}". Teach it from the very beginning, as if you had just reached it. This is a fresh start, not a continuation — do not refer back to anything discussed before, and do not greet her again. She may not have covered the earlier points, so don't assume she knows any terms from them. In AT MOST TWO SENTENCES, introduce this key point — do not explain the whole point — then immediately ask one question about it. Do not answer your own question.`,
       _pointBrief(_points[index]),
-    ].filter(Boolean).join('\n\n');
+    ].join('\n\n');
+  }
+
+  // Jumping away mid-exchange leaves a dangling question she never answered.
+  // Drop that unfinished stretch so the new point starts clean. A covered
+  // point's exchange is finished, so it stays; recaps are never removed.
+  function _clearUnfinished(oldIdx) {
+    if (_state.coverage[oldIdx] === true) return;
+    let end = _state.transcript.length;
+    while (end > 0) {
+      const e = _state.transcript[end - 1];
+      const isTalk = (e.role === 'user' || e.role === 'assistant') && e.pt === oldIdx;
+      if (isTalk || e.role === 'note') { end--; continue; }
+      break;
+    }
+    if (end < _state.transcript.length) _state.transcript = _state.transcript.slice(0, end);
   }
 
   async function _openPoint(index, first) {
@@ -767,15 +805,17 @@ const Teach = (() => {
   // A jump changes nothing until its teaching message has actually arrived.
   // It does not mark the point covered — that only happens when she answers.
   function _commitJump(index, reply) {
+    const leaving = _state.currentPointIndex;
     if (_state.resumeIndex === null) {
       // Remember where she was in the normal sequence (or that she was done).
-      _state.resumeIndex = _state.complete ? -1 : _state.currentPointIndex;
+      _state.resumeIndex = _state.complete ? -1 : leaving;
     }
     if (_state.resumeIndex === index) _state.resumeIndex = null; // back to her own place: detour over
+    if (!_state.complete && leaving !== index) _clearUnfinished(leaving);
     _state.currentPointIndex = index;
     _state.retriedCurrent = false;
     _state.complete = false;
-    _pushEntry({ role: 'note', text: `You chose to look at “${_shortHeading(_points[index].heading)}”` });
+    _pushEntry({ role: 'note', text: _shortHeading(_points[index].heading) });
     _pushEntry({ role: 'assistant', text: reply, pt: index, opening: true });
   }
 

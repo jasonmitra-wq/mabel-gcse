@@ -331,6 +331,29 @@
     </div>
 
     <!-- ═══════════════════════════════════════════
+         SECTION — AI FEATURES
+         ═══════════════════════════════════════════ -->
+    <div class="s-section">
+      <span class="s-section-label">AI features</span>
+
+      <div class="s-field">
+        <label class="s-label" for="inputApiKey">Anthropic API key</label>
+        <input
+          class="s-input" id="inputApiKey" type="password"
+          placeholder="sk-ant-…" autocomplete="off">
+      </div>
+
+      <div style="display:flex;gap:0.6rem">
+        <button class="btn grn" style="flex:1;font-size:14px;padding:0.6rem 1rem" onclick="_saveApiKey()">Save</button>
+        <button class="btn" style="flex:1;font-size:14px;padding:0.6rem 1rem" onclick="_clearApiKey()">Clear</button>
+      </div>
+
+      <p style="font-size:12px;color:var(--muted);margin-top:0.7rem;line-height:1.5">
+        Used for Ask Me and conversational lessons. Stored only on this device.
+      </p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
          SECTION 3 — DANGER ZONE
          ═══════════════════════════════════════════ -->
     <div class="danger-section">
@@ -638,6 +661,33 @@ function _shakeInput(id) {
 
 function _esc(str) {
   return (str || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+}
+
+// ── AI features (API key) ────────────────────────────────
+// Same localStorage key AI.hasKey()/getKey()/saveKey() read and write in js/app.js.
+const API_KEY_STORE = 'mabel_api_key';
+
+(function _initApiKeyField() {
+  const input = document.getElementById('inputApiKey');
+  if (input) input.value = localStorage.getItem(API_KEY_STORE) || '';
+})();
+
+function _saveApiKey() {
+  const input = document.getElementById('inputApiKey');
+  const key = input.value.trim();
+  if (!key) {
+    _shakeInput('inputApiKey');
+    _showToast('Enter a key first.', 'error');
+    return;
+  }
+  localStorage.setItem(API_KEY_STORE, key);
+  _showToast('✓ API key saved');
+}
+
+function _clearApiKey() {
+  localStorage.removeItem(API_KEY_STORE);
+  document.getElementById('inputApiKey').value = '';
+  _showToast('✓ API key cleared');
 }
 </script>
 </body>

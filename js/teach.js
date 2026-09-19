@@ -154,13 +154,44 @@ const Teach = (() => {
       .teach-layout { display:flex; gap:1.25rem; align-items:flex-start; }
       .teach-main { flex:1; min-width:0; }
       .teach-side { width:265px; flex-shrink:0; position:sticky; align-self:flex-start;
-        display:flex; flex-direction:column; gap:0.75rem; min-height:0; }
+        display:flex; flex-direction:column; gap:0.75rem; min-height:0; overflow-y:auto; }
       .teach-panel { background:var(--s2); border:1px solid var(--border2); border-radius:12px;
         padding:0.85rem 0.95rem; }
-      /* The jump list stays put; only the terms list scrolls when it gets long. */
-      .teach-side > nav.teach-panel { flex-shrink:0; }
-      .teach-side > .teach-terms { min-height:0; display:flex; flex-direction:column; overflow:hidden; }
+      /* Jump list and diagram keep their size; the terms list takes the rest and
+         scrolls when it gets long. On a very short screen the whole column
+         scrolls instead of squashing the terms to nothing. */
+      .teach-side > nav.teach-panel, #teachDiagramSlot { flex-shrink:0; }
+      #teachDiagramSlot:empty { display:none; }
+      .teach-side > .teach-terms { min-height:9rem; display:flex; flex-direction:column; overflow:hidden; }
       .teach-side > .teach-terms .teach-terms-body { overflow-y:auto; min-height:0; }
+
+      /* Diagram thumbnail in the side column, full size on tap */
+      .teach-diagram-thumb { display:block; position:relative; width:100%; margin-top:0.7rem; padding:0;
+        background:var(--bg); border:1px solid var(--border2); border-radius:8px; cursor:zoom-in; overflow:hidden; }
+      .teach-diagram-thumb img { display:block; width:100%; height:150px; object-fit:contain; }
+      .teach-diagram-zoom { position:absolute; right:0.4rem; bottom:0.35rem; font-size:0.72rem;
+        color:var(--text); background:rgba(0,0,0,0.6); border-radius:6px; padding:0.1rem 0.4rem; }
+      .teach-diagram-thumb:hover { border-color:var(--amber); }
+      .teach-diagram-cap { font-size:0.82rem; color:var(--muted); font-style:italic; line-height:1.5; margin:0.55rem 0 0; }
+      .teach-diagram-overlay { position:fixed; inset:0; z-index:600; background:rgba(0,0,0,0.82);
+        display:flex; align-items:center; justify-content:center; padding:1rem; }
+      .teach-diagram-full { position:relative; max-width:min(720px, 96vw); max-height:94vh; overflow:auto;
+        background:var(--s2); border:1px solid var(--border2); border-radius:14px; padding:1rem; }
+      .teach-diagram-full img { display:block; width:100%; height:auto; }
+      .teach-diagram-close { position:sticky; top:0; float:right; background:var(--s2); border:1px solid var(--border2);
+        color:var(--text); border-radius:999px; width:2rem; height:2rem; cursor:pointer; font-size:0.9rem; z-index:1; }
+
+      /* Shorter laptop screens: a thumbnail plus the jump list would push the
+         key terms out of view, so the diagram becomes a one-line button. */
+      @media (min-width: 761px) and (max-height: 820px) {
+        .teach-diagram.teach-panel { padding:0.5rem; }
+        .teach-diagram .teach-panel-head { display:none; }
+        .teach-diagram-thumb { margin-top:0; cursor:pointer; padding:0.5rem 0.65rem; text-align:left; background:transparent; }
+        .teach-diagram-thumb img { display:none; }
+        .teach-diagram-zoom { position:static; background:none; padding:0; font-size:0.88rem; color:var(--text); }
+        .teach-diagram .teach-diagram-cap { display:none; }
+        .teach-jump-btn { padding-top:0.3rem; padding-bottom:0.3rem; }
+      }
       .teach-panel-head { display:flex; width:100%; justify-content:space-between; align-items:center;
         background:none; border:none; padding:0; color:var(--muted); font-family:inherit;
         font-size:12px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; cursor:default; }
@@ -353,7 +384,6 @@ const Teach = (() => {
         <div class="teach-main">
           <div class="askme-wrap" style="padding-top:0.75rem;padding-bottom:1rem">
             <div class="askme-thread" id="teachThread"></div>
-            <div id="teachDiagramSlot"></div>
             <div class="askme-input-row">
               <textarea id="teachInput" rows="2" placeholder="Type here…"
                 onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();Teach.send();}"></textarea>
@@ -363,6 +393,7 @@ const Teach = (() => {
         </div>
         <aside class="teach-side" id="teachSide">
           ${_jumpPanelHtml()}
+          <div id="teachDiagramSlot"></div>
           ${_termsHtml()}
         </aside>
       </div>`;
@@ -382,7 +413,7 @@ const Teach = (() => {
     if (!header || !side) return;
     const top = header.offsetHeight + 8;
     side.style.top = top + 'px';
-    side.style.maxHeight = `calc(100vh - ${top + 80}px)`;
+    side.style.maxHeight = `calc(100vh - ${top + 72}px)`;
   }
 
   function toggleTerms() {
@@ -439,21 +470,58 @@ const Teach = (() => {
     _beginLesson();
   }
 
-  function _renderDiagram(point) {
+  // The current point's diagram lives in the side column as a thumbnail, so it
+  // never sits between the tutor's question and the box she answers in.
+  // Tapping it opens the full-size diagram over the page.
+  function _diagramInfo(point) {
     const diagDef = (_data.diagrams || []).find(d => d.id === point.diagram);
-    const title   = diagDef?.title || point.diagram;
-    const cap     = point.diagramCaption || diagDef?.caption || '';
-    return `<div id="diag_${point.diagram}" class="diag-plate">
-      <div class="diag-plate-title">${title}</div>
-      <img src="diagrams/${_subject}/${point.diagram}.svg" alt="${title}"
-        onerror="this.style.display='none';document.getElementById('teachDiagFallback_${point.diagram}').style.display='block'"
-        style="width:100%;height:auto;display:block;border-radius:6px">
-      <div id="teachDiagFallback_${point.diagram}" style="display:none;color:var(--muted);font-size:0.83rem;font-style:italic;padding:0.5rem;text-align:center">
+    return {
+      title: diagDef?.title || point.diagram,
+      cap:   point.diagramCaption || diagDef?.caption || '',
+      src:   `diagrams/${_subject}/${point.diagram}.svg`,
+    };
+  }
+
+  function _renderDiagram(point) {
+    const { title, cap, src } = _diagramInfo(point);
+    return `<section class="teach-panel teach-diagram" id="diag_${point.diagram}">
+      <div class="teach-panel-head"><span>Diagram</span></div>
+      <button class="teach-diagram-thumb" onclick="Teach.expandDiagram()" title="Tap to see it full size">
+        <img src="${src}" alt="${_esc(title)}"
+          onerror="this.parentElement.style.display='none';document.getElementById('teachDiagFallback_${point.diagram}').style.display='block'">
+        <span class="teach-diagram-zoom">⤢ View diagram full size</span>
+      </button>
+      <div id="teachDiagFallback_${point.diagram}" style="display:none;color:var(--muted);font-size:0.83rem;font-style:italic;padding:0.5rem 0 0">
         Diagram not yet available
       </div>
-      ${cap ? `<p class="diag-plate-caption">${cap}</p>` : ''}
-      ${point.diagramExamTip ? `<p class="diag-plate-examtip">⚠️ Diagrams like this come up in questions — sketch this in your notes.</p>` : ''}
-    </div>`;
+      ${cap ? `<p class="teach-diagram-cap">${cap}</p>` : ''}
+      ${point.diagramExamTip ? `<p class="teach-diagram-cap" style="color:var(--amber)">⚠️ Diagrams like this come up in questions — sketch this in your notes.</p>` : ''}
+    </section>`;
+  }
+
+  function expandDiagram() {
+    const point = !_state?.complete ? _points[_state.currentPointIndex] : null;
+    if (!point || !point.diagram) return;
+    const { title, cap, src } = _diagramInfo(point);
+    closeDiagram();
+    const overlay = document.createElement('div');
+    overlay.id = 'teachDiagramOverlay';
+    overlay.className = 'teach-diagram-overlay';
+    overlay.onclick = e => { if (e.target === overlay) closeDiagram(); };
+    overlay.innerHTML = `<div class="teach-diagram-full">
+        <button class="teach-diagram-close" onclick="Teach.closeDiagram()" aria-label="Close diagram">✕</button>
+        <img src="${src}" alt="${_esc(title)}">
+        ${cap ? `<p class="teach-diagram-cap">${cap}</p>` : ''}
+      </div>`;
+    document.body.appendChild(overlay);
+    document.addEventListener('keydown', _escCloses);
+  }
+
+  function _escCloses(e) { if (e.key === 'Escape') closeDiagram(); }
+
+  function closeDiagram() {
+    document.getElementById('teachDiagramOverlay')?.remove();
+    document.removeEventListener('keydown', _escCloses);
   }
 
   function _updateDiagramSlot() {
@@ -904,5 +972,5 @@ const Teach = (() => {
     Lessons.openSlideView(_data, _subtopicId, _subtopicName, _subject);
   }
 
-  return { open, send, showSlides, showResetConfirm, cancelReset, confirmReset, jumpTo, toggleTerms };
+  return { open, send, showSlides, showResetConfirm, cancelReset, confirmReset, jumpTo, toggleTerms, expandDiagram, closeDiagram };
 })();

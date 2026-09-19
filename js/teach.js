@@ -12,7 +12,7 @@
 const Teach = (() => {
   const TRANSCRIPT_CAP    = 40;
   const HISTORY_TURNS     = 6;
-  const RECAP_TURNS       = 8;
+  const RECAP_TURNS       = 24;  // a point now takes several exchanges — the recap must see all of them
 
   // Reply length: max_tokens is the real ceiling — a system-prompt instruction
   // alone won't hold to a hard limit. ~60 words is roughly 90-100 tokens of
@@ -72,6 +72,43 @@ const Teach = (() => {
     const parts = [kp.heading, _stripHtml(kp.content)];
     (kp.keyTerms || []).forEach(t => parts.push(t.term, t.def));
     return new Set(_contentWords(parts.join(' ')));
+  }
+
+  // Crude plural folding so "pathogens" matches "pathogen", "antibodies"
+  // matches "antibody". Applied to both sides, so odd stems still line up.
+  function _stem(w) {
+    if (w.length > 4 && w.endsWith('ies')) return w.slice(0, -3) + 'y';
+    if (w.length > 3 && w.endsWith('s') && !w.endsWith('ss')) return w.slice(0, -1);
+    return w;
+  }
+  function _stems(text) { return _contentWords(text).map(_stem); }
+
+  // Each key term of a point is one part that has to be taught before the
+  // point counts as covered.
+  //   words — what her answer can use to show she's engaged with this part:
+  //           the term itself plus the words that are distinctive to its
+  //           definition (words shared by most of the point's definitions,
+  //           like "pathogens", would let any answer pass).
+  //   cues  — the term's own words, minus the point's heading words. If her
+  //           answer to a different part uses one of these, this part counts
+  //           too — she has shown it without being asked.
+  function _buildFacts(kp) {
+    const terms = kp.keyTerms || [];
+    const heading = new Set(_stems(kp.heading));
+    const defWords = terms.map(t => new Set(_stems(t.def)));
+    const df = new Map();
+    defWords.forEach(s => s.forEach(w => df.set(w, (df.get(w) || 0) + 1)));
+    return terms.map((t, i) => {
+      const own = _stems(t.term);
+      const words = new Set(own);
+      defWords[i].forEach(w => { if (df.get(w) < 3) words.add(w); });
+      return { term: t.term, def: t.def, words, cues: new Set(own.filter(w => !heading.has(w))) };
+    });
+  }
+
+  function _answers(reply, set) {
+    if (_wordCount(reply) <= 3) return false;
+    return _stems(reply).some(w => set.has(w));
   }
 
   // A reply counts as substantive only if it's more than three words
@@ -206,7 +243,12 @@ const Teach = (() => {
         border-radius:8px; cursor:pointer; transition:all 0.15s; }
       .teach-jump-btn:hover:not(:disabled) { border-color:var(--amber); color:var(--text); }
       .teach-jump-btn.covered { border-color:rgba(78,207,170,0.35); color:var(--teal); }
-      .teach-jump-btn.current { background:rgba(232,160,64,0.12); border-color:var(--amber); color:var(--text); }
+      /* Three states that must read differently at a glance: done = teal with a
+         tick, current = solid amber block, not started = plain. */
+      .teach-jump-btn.current, .teach-jump-btn.current.covered {
+        background:var(--amber); border-color:var(--amber); color:#1a1408; font-weight:700;
+        box-shadow:0 0 0 3px rgba(232,160,64,0.22); }
+      .teach-jump-btn.current:hover:not(:disabled) { color:#1a1408; filter:brightness(1.06); }
       .teach-jump-btn:disabled { opacity:0.5; cursor:default; }
       .teach-jump-mark { flex-shrink:0; width:1.1em; font-size:0.85em; }
 
@@ -253,7 +295,15 @@ const Teach = (() => {
       retriedCurrent: _state.retriedCurrent,
       complete: _state.complete,
       resumeIndex: _state.resumeIndex,
+      facts: _state.facts,
     });
+  }
+
+  // Per point, per key term: answered (she engaged with it) / skipped (taught,
+  // retried once, still no real answer — moved past it).
+  function _freshFacts(i, done) {
+    const n = _points[i].facts.length;
+    return { answered: Array(n).fill(!!done), skipped: Array(n).fill(false) };
   }
 
   function _freshState() {
@@ -267,7 +317,28 @@ const Teach = (() => {
       // null = not on a detour, a point index = go back there, -1 = she had
       // finished the lesson, so go back to "all done".
       resumeIndex: null,
+      facts: _points.map((p, i) => _freshFacts(i, false)),
     };
+  }
+
+  // Saved progress from before parts were tracked, or from a lesson file whose
+  // key terms have since changed, is rebuilt from the point's coverage.
+  function _restoreFacts(saved, coverage) {
+    return _points.map((p, i) => {
+      const f = saved && saved[i];
+      const n = p.facts.length;
+      if (f && Array.isArray(f.answered) && Array.isArray(f.skipped)
+          && f.answered.length === n && f.skipped.length === n) {
+        return { answered: f.answered.map(Boolean), skipped: f.skipped.map(Boolean) };
+      }
+      return _freshFacts(i, coverage[i] === true);
+    });
+  }
+
+  // The part of point i to teach next: the first one neither answered nor skipped.
+  function _targetFactIndex(i) {
+    const f = _state.facts[i];
+    return f.answered.findIndex((a, j) => !a && !f.skipped[j]);
   }
 
   // Transcript entries: user / assistant messages, 'note' (a small divider when
@@ -301,19 +372,22 @@ const Teach = (() => {
       diagramCaption: kp.diagramCaption || '',
       diagramExamTip: !!kp.diagramExamTip,
       wordSet: _buildPointWordSet(kp),
+      facts: _buildFacts(kp),
     }));
 
     const saved = Store.get(_storageKey());
     if (saved && Array.isArray(saved.transcript) && saved.transcript.length) {
       const resume = saved.resumeIndex;
+      const coverage = Array.isArray(saved.coverage) && saved.coverage.length === _points.length
+        ? saved.coverage : _points.map(() => null);
       _state = {
         transcript: saved.transcript,
-        coverage: Array.isArray(saved.coverage) && saved.coverage.length === _points.length
-          ? saved.coverage : _points.map(() => null),
+        coverage,
         currentPointIndex: typeof saved.currentPointIndex === 'number' ? saved.currentPointIndex : 0,
         retriedCurrent: !!saved.retriedCurrent,
         complete: !!saved.complete,
         resumeIndex: (resume === -1 || (Number.isInteger(resume) && resume >= 0 && resume < _points.length)) ? resume : null,
+        facts: _restoreFacts(saved.facts, coverage),
       };
       _renderShell();
       _renderTranscript();
@@ -330,9 +404,10 @@ const Teach = (() => {
     const cur = _state.complete ? -1 : _state.currentPointIndex;
     const btns = _points.map((p, i) => {
       const covered = _state.coverage[i] === true;
-      const cls = 'teach-jump-btn' + (covered ? ' covered' : '') + (i === cur ? ' current' : '');
-      const mark = covered ? '✓' : (i === cur ? '▸' : '');
-      return `<button class="${cls}" onclick="Teach.jumpTo(${i})" title="${_esc(p.heading)}">
+      const isCur = i === cur;
+      const cls = 'teach-jump-btn' + (covered ? ' covered' : '') + (isCur ? ' current' : '');
+      const mark = covered ? '✓' : (isCur ? '▸' : '');
+      return `<button class="${cls}" onclick="Teach.jumpTo(${i})" title="${_esc(p.heading)}"${isCur ? ' aria-current="step"' : ''}>
         <span class="teach-jump-mark">${mark}</span><span>${_esc(_shortHeading(p.heading))}</span>
       </button>`;
     }).join('');
@@ -664,20 +739,25 @@ const Teach = (() => {
     lines.push(`Mabel just said: "${userText}"`);
 
     if (decision.kind === 'retry') {
-      lines.push(`Her reply didn't really engage with the key point below — too short, or off the topic. Gently explain this idea again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`);
-      lines.push(_pointBrief(decision.point));
+      lines.push(decision.fact
+        ? `Her reply didn't really engage with the part of the key point below that you just asked about — too short, or off the topic. Gently explain that part again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`
+        : `Her reply didn't really engage with the key point below — too short, or off the topic. Gently explain this idea again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`);
+      lines.push(_pointBrief(decision.point), _partLine(decision.fact));
+    } else if (decision.kind === 'fact') {
+      lines.push(`${decision.missedLast ? `Her reply didn't really get the last part, and that's fine — don't dwell on it or correct her at length. ` : `Acknowledge her reply naturally in one short sentence. `}Then carry on with the same key point: teach the next part of it, named below, in AT MOST TWO SENTENCES, then ask one question about that part. Teach only this part now — the other parts come later. Do not answer your own question.`);
+      lines.push(_pointBrief(decision.point), _partLine(decision.fact));
     } else if (decision.kind === 'next') {
-      lines.push(`Acknowledge her reply naturally in one short sentence. Then move on to the next key point below: introduce it in AT MOST TWO SENTENCES — do not explain the whole point — then immediately ask one question about it. Do not answer your own question.`);
-      lines.push(_pointBrief(decision.point));
+      lines.push(`Acknowledge her reply naturally in one short sentence. Then move on to the next key point below: introduce it in AT MOST TWO SENTENCES, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`);
+      lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)));
     } else if (decision.kind === 'resume') {
-      lines.push(`Acknowledge her reply naturally in one short sentence. Then take her back to where she was before she went off to look at something else: the key point below. She had already started it, so remind her of it briefly in AT MOST TWO SENTENCES, then immediately ask one question about it. Do not answer your own question.`);
-      lines.push(_pointBrief(decision.point));
+      lines.push(`Acknowledge her reply naturally in one short sentence. Then take her back to where she was before she went off to look at something else: the key point below. She had already started it, so remind her of it briefly in AT MOST TWO SENTENCES, then ask one question about the part named below. Do not answer your own question.`);
+      lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)));
     } else if (decision.kind === 'complete') {
       lines.push(`Acknowledge her reply naturally. Then let her know all five key points in this lesson have now been covered. Ask, in one short friendly line, whether she'd like to stop here or carry on with some practice questions.`);
     } else {
       lines.push(`All five key points in this lesson have already been covered. Just respond naturally and helpfully to whatever she said.`);
     }
-    return lines.join('\n\n');
+    return lines.filter(Boolean).join('\n\n');
   }
 
   async function _callWithLengthGuard(sys, user) {
@@ -754,27 +834,62 @@ const Teach = (() => {
       : { kind: 'next', point: _points[n], nextIndex: n };
   }
 
+  // A point is taught one key term ("part") at a time. It is covered only once
+  // every part has had a real answer from her — one good reply no longer
+  // finishes the whole point. A weak answer gets one retry on that part; if
+  // that fails too the part is skipped, and a point with a skipped part ends
+  // not covered (its terms stay locked), the same rule as before but per part.
   function _decide(userText) {
     if (_state.complete) return { kind: 'free' };
     const idx = _state.currentPointIndex;
     const point = _points[idx];
-    const substantive = _isSubstantive(userText, point.wordSet);
 
-    if (!substantive && !_state.retriedCurrent) {
-      return { kind: 'retry', idx, point };
+    // A point with no key terms has nothing to split into parts: one real answer finishes it.
+    if (!point.facts.length) {
+      const substantive = _isSubstantive(userText, point.wordSet);
+      if (!substantive && !_state.retriedCurrent) return { kind: 'retry', idx, point, fact: null };
+      return { idx, verdict: substantive, ..._afterPoint(idx, substantive) };
     }
-    return { idx, verdict: substantive, ..._afterPoint(idx, substantive) };
+
+    const cur = _state.facts[idx];
+    const answered = cur.answered.slice(), skipped = cur.skipped.slice();
+    let target = _targetFactIndex(idx);
+    if (target === -1) target = answered.findIndex(a => !a); // defensive: nothing left to teach
+
+    const hit = target !== -1 && _answers(userText, point.facts[target].words);
+    if (hit) answered[target] = true;
+    // Anything else she has clearly shown, unprompted.
+    point.facts.forEach((f, j) => {
+      if (!answered[j] && f.cues.size && _answers(userText, f.cues)) { answered[j] = true; skipped[j] = false; }
+    });
+    const facts = { answered, skipped };
+
+    if (!hit && target !== -1) {
+      if (!_state.retriedCurrent) {
+        return { kind: 'retry', idx, point, fact: point.facts[target], facts };
+      }
+      skipped[target] = true;
+    }
+
+    const next = answered.findIndex((a, j) => !a && !skipped[j]);
+    if (next !== -1) {
+      return { kind: 'fact', idx, point, fact: point.facts[next], facts, missedLast: !hit };
+    }
+    const covered = answered.every(Boolean);
+    return { idx, verdict: covered, facts, ..._afterPoint(idx, covered) };
   }
 
   function _applyDecision(decision) {
     if (decision.kind === 'free') return;
+    if (decision.facts) _state.facts[decision.idx] = decision.facts;
     if (decision.kind === 'retry') {
       _state.retriedCurrent = true;
       return;
     }
+    _state.retriedCurrent = false;
+    if (decision.kind === 'fact') return; // same point, next part
     // Never downgrade a point she has already covered.
     _state.coverage[decision.idx] = decision.verdict || _state.coverage[decision.idx] === true;
-    _state.retriedCurrent = false;
     if (decision.kind === 'complete') {
       _state.complete = true;
       _state.resumeIndex = null;
@@ -782,6 +897,16 @@ const Teach = (() => {
       _state.currentPointIndex = decision.nextIndex;
       if (decision.kind === 'resume') _state.resumeIndex = null;
     }
+  }
+
+  // The part a new/resumed point will open on, for its first question.
+  function _openingFact(i) {
+    const j = _targetFactIndex(i);
+    return j === -1 ? null : _points[i].facts[j];
+  }
+
+  function _partLine(fact) {
+    return fact ? `The part to ask about: ${fact.term} — ${fact.def}` : '';
   }
 
   async function _getTutorReply(userText) {
@@ -805,7 +930,7 @@ const Teach = (() => {
   // The tutor's reply, tagged with the point it belongs to.
   function _replyEntry(text, d) {
     const e = { role: 'assistant', text };
-    if (d.kind === 'retry') {
+    if (d.kind === 'retry' || d.kind === 'fact') {
       e.pt = d.idx;
     } else if (d.kind === 'next') {
       e.pt = d.nextIndex;
@@ -826,9 +951,10 @@ const Teach = (() => {
 
   function _firstOpeningPrompt() {
     return [
-      `Begin the lesson. In AT MOST TWO SENTENCES TOTAL, warmly welcome Mabel (using the lesson overview above in your own words, don't just repeat it) and introduce the first key point below — do not explain the whole point. Then immediately ask one question about it. Do not answer your own question.`,
+      `Begin the lesson. In AT MOST TWO SENTENCES TOTAL, warmly welcome Mabel (using the lesson overview above in your own words, don't just repeat it) and introduce the first key point below, starting from the first thing its content describes — do not explain the whole point. Then ask one question about the part named below. Do not answer your own question.`,
       _pointBrief(_points[0]),
-    ].join('\n\n');
+      _partLine(_openingFact(0)),
+    ].filter(Boolean).join('\n\n');
   }
 
   // Same shape as the lesson's own opening: a short introduction, then one
@@ -837,9 +963,10 @@ const Teach = (() => {
   // starting this point from the beginning.
   function _jumpPrompt(index) {
     return [
-      `Mabel is starting a new key point: "${_points[index].heading}". Teach it from the very beginning, as if you had just reached it. This is a fresh start, not a continuation — do not refer back to anything discussed before, and do not greet her again. She may not have covered the earlier points, so don't assume she knows any terms from them. In AT MOST TWO SENTENCES, introduce this key point — do not explain the whole point — then immediately ask one question about it. Do not answer your own question.`,
+      `Mabel is starting a new key point: "${_points[index].heading}". Teach it from the very beginning, as if you had just reached it. This is a fresh start, not a continuation — do not refer back to anything discussed before, and do not greet her again. She may not have covered the earlier points, so don't assume she knows any terms from them. In AT MOST TWO SENTENCES, introduce this key point, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`,
       _pointBrief(_points[index]),
-    ].join('\n\n');
+      _partLine(_points[index].facts[0] || null),
+    ].filter(Boolean).join('\n\n');
   }
 
   // Jumping away mid-exchange leaves a dangling question she never answered.
@@ -915,6 +1042,9 @@ const Teach = (() => {
     }
     if (_state.resumeIndex === index) _state.resumeIndex = null; // back to her own place: detour over
     if (!_state.complete && leaving !== index) _clearUnfinished(leaving);
+    // Starting the point from the beginning means all of its parts again.
+    // (Its coverage is untouched: a point she has covered stays covered.)
+    _state.facts[index] = _freshFacts(index, false);
     _state.currentPointIndex = index;
     _state.retriedCurrent = false;
     _state.complete = false;

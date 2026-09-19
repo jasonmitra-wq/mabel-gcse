@@ -109,6 +109,16 @@ const Teach = (() => {
     });
   }
 
+  function _freshState() {
+    return {
+      transcript: [],
+      coverage: _points.map(() => null),
+      currentPointIndex: 0,
+      retriedCurrent: false,
+      complete: false,
+    };
+  }
+
   // ── Open ─────────────────────────────────────────────────────
   function open(data, subtopicId, subtopicName, subject) {
     _data        = data;
@@ -142,13 +152,7 @@ const Teach = (() => {
       return;
     }
 
-    _state = {
-      transcript: [],
-      coverage: _points.map(() => null),
-      currentPointIndex: 0,
-      retriedCurrent: false,
-      complete: false,
-    };
+    _state = _freshState();
     _renderShell();
     _beginLesson();
   }
@@ -168,10 +172,11 @@ const Teach = (() => {
           </div>
           <button class="back-btn" onclick="showHome()" style="flex-shrink:0;padding:0.25rem 0.45rem;line-height:0" title="Home">${Icons.inline('home', 22)}</button>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem">
           <span style="font-size:0.75rem;color:var(--muted)">${coveredCount}/${_points.length} covered</span>
           <a href="#" onclick="event.preventDefault();Teach.showSlides()" style="font-size:0.75rem;color:var(--muted);text-decoration:underline;cursor:pointer">Show me the slides instead</a>
         </div>
+        <div id="teachResetWrap" style="margin-bottom:0.6rem">${_resetTriggerHtml()}</div>
       </div>
       <div id="teachDiagramSlot"></div>
       <div class="askme-wrap" style="padding-top:0.75rem;padding-bottom:1rem">
@@ -186,6 +191,40 @@ const Teach = (() => {
     document.getElementById('lessonInner').scrollTop = 0;
     document.getElementById('lessonPanel').scrollTop = 0;
     _updateDiagramSlot();
+  }
+
+  // ── Start this topic over ───────────────────────────────────
+  // Single tap opens an inline "Are you sure?" — never fires on one tap.
+  // Removes ONLY this lesson's own transcript key (mabel_teach_<lessonId>),
+  // nothing else: not the API key, profile, progress on other topics, or streak.
+  function _resetTriggerHtml() {
+    return `<button onclick="Teach.showResetConfirm()" style="background:none;border:none;color:var(--muted);font-size:0.75rem;text-decoration:underline;cursor:pointer;padding:0;font-family:inherit">↺ Start this topic over</button>`;
+  }
+
+  function _resetConfirmHtml() {
+    return `<span style="font-size:0.75rem;color:var(--muted)">Are you sure? This clears your progress on this lesson only and starts it fresh.</span>
+      <span style="display:inline-flex;gap:0.5rem;align-items:center;margin-left:0.5rem">
+        <button onclick="Teach.cancelReset()" style="background:none;border:none;color:var(--muted);font-size:0.75rem;cursor:pointer;padding:0.15rem 0.35rem;font-family:inherit">Cancel</button>
+        <button onclick="Teach.confirmReset()" style="background:#E05252;border:none;color:#fff;font-size:0.75rem;font-weight:600;border-radius:6px;padding:0.2rem 0.6rem;cursor:pointer;font-family:inherit">Yes, start over</button>
+      </span>`;
+  }
+
+  function showResetConfirm() {
+    const wrap = document.getElementById('teachResetWrap');
+    if (wrap) wrap.innerHTML = _resetConfirmHtml();
+  }
+
+  function cancelReset() {
+    const wrap = document.getElementById('teachResetWrap');
+    if (wrap) wrap.innerHTML = _resetTriggerHtml();
+  }
+
+  function confirmReset() {
+    if (!_subtopicId) return;
+    Store.remove(_storageKey()); // removes exactly mabel_teach_<lessonId>, nothing else
+    _state = _freshState();
+    _renderShell();
+    _beginLesson();
   }
 
   function _renderDiagram(point) {
@@ -406,5 +445,5 @@ const Teach = (() => {
     Lessons.openSlideView(_data, _subtopicId, _subtopicName, _subject);
   }
 
-  return { open, send, showSlides };
+  return { open, send, showSlides, showResetConfirm, cancelReset, confirmReset };
 })();

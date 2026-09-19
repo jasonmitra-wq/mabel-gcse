@@ -708,14 +708,69 @@ const Teach = (() => {
   }
 
   // ── Prompting ────────────────────────────────────────────────
-  function _buildSystemPrompt() {
+  // The lesson's commonMistakes are lesson-wide: sent whole, they hand the
+  // model later points' material (antibodies, antigens, phagocytosis) while
+  // she is still on an early point, and it teaches from them. Only mistakes
+  // that are really about the current point are passed on.
+  function _pointStems(i) {
+    const p = _points[i];
+    return new Set(_stems(`${p.heading} ${_stripHtml(p.content)} ${p.facts.map(f => f.term + ' ' + f.def).join(' ')}`));
+  }
+
+  // Words common to most of the lesson ("pathogen", "immune", "body") say
+  // nothing about which point a mistake belongs to — a mistake has to share
+  // words that are distinctive to this point.
+  function _genericStems() {
+    const df = new Map();
+    _points.forEach((p, i) => _pointStems(i).forEach(w => df.set(w, (df.get(w) || 0) + 1)));
+    return new Set([...df.keys()].filter(w => df.get(w) >= Math.max(3, _points.length - 1)));
+  }
+
+  // The vocabulary that actually identifies a point: its key terms and heading.
+  function _termStems(i) {
+    const p = _points[i];
+    return new Set(_stems(`${p.heading} ${p.facts.map(f => f.term).join(' ')}`));
+  }
+
+  // A mistake belongs to this point only if it uses this point's own term
+  // vocabulary. Several of the lesson's mistakes contrast two points
+  // ("phagocytes ENGULF; lymphocytes produce ANTIBODIES") — those are dropped
+  // while she is on the earlier one, or they hand her the later point's answer.
+  function _mistakesFor(idx) {
+    const all = _data.commonMistakes || [];
+    if (idx == null || !all.length) return [];
+    const own = _pointStems(idx), ownTerms = _termStems(idx), generic = _genericStems();
+    const laterTerms = new Set();
+    _points.forEach((p, i) => { if (i > idx) _termStems(i).forEach(w => { if (!ownTerms.has(w)) laterTerms.add(w); }); });
+    return all.filter(m => {
+      const st = _stems(m);
+      if (st.some(w => laterTerms.has(w))) return false;
+      if (!st.some(w => ownTerms.has(w) && !generic.has(w))) return false;
+      return new Set(st.filter(w => own.has(w) && !generic.has(w))).size >= 2;
+    });
+  }
+
+  function _laterPointsLine(idx) {
+    if (idx == null) return '';
+    // Names only — a full heading like "Lymphocytes — antibodies and antitoxins"
+    // would hand over the very material this line exists to fence off.
+    const later = _points.slice(idx + 1).map(p => `"${_shortHeading(p.heading)}"`);
+    return later.length
+      ? `Still to come later in this lesson, each with its own turn — do NOT teach, explain or preview any of it yet: ${later.join(', ')}.`
+      : '';
+  }
+
+  function _buildSystemPrompt(teachIdx) {
+    const mistakes = _mistakesFor(teachIdx);
     return [
       `You are a warm, encouraging GCSE Biology tutor teaching Mabel, who is 15 years old and studying AQA Separate Biology (8461), through natural back-and-forth conversation rather than slides.`,
       `Lesson: "${_data.title}".`,
       `Lesson overview: ${_stripHtml(_data.intro || '')}`,
-      (_data.commonMistakes || []).length
-        ? `Common mistakes students make here — watch for these and gently correct if she makes one: ${_data.commonMistakes.join(' | ')}`
+      mistakes.length
+        ? `Common mistakes on this particular key point — watch for these and gently correct if she makes one: ${mistakes.join(' | ')}`
         : '',
+      teachIdx == null ? '' : `Teach ONLY the key point given below, using only its own content and key terms. Do not bring in, name or preview material from any other key point, even if the conversation heads that way. If she asks about something from a later key point, answer in one short line, tell her it is coming up soon, and return to the current point's question.`,
+      _laterPointsLine(teachIdx),
       `Rules: explain ideas a little at a time in plain, friendly language. Ask exactly ONE question at a time and never present a list of options for her to pick from. Keep every reply very short — one to three sentences before your question, no more than about 60 words total. If she asks about something off-topic or unrelated, answer it briefly and kindly, then guide her back to the lesson — never refuse to answer and never tell her to stay focused or scold her for going off-topic.`,
     ].filter(Boolean).join('\n');
   }
@@ -742,16 +797,20 @@ const Teach = (() => {
       lines.push(decision.fact
         ? `Her reply didn't really engage with the part of the key point below that you just asked about — too short, or off the topic. Gently explain that part again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`
         : `Her reply didn't really engage with the key point below — too short, or off the topic. Gently explain this idea again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`);
-      lines.push(_pointBrief(decision.point), _partLine(decision.fact));
+      lines.push(_pointBrief(decision.point), _partLine(decision.fact),
+        _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'fact') {
       lines.push(`${decision.missedLast ? `Her reply didn't really get the last part, and that's fine — don't dwell on it or correct her at length. ` : `Acknowledge her reply naturally in one short sentence. `}Then carry on with the same key point: teach the next part of it, named below, in AT MOST TWO SENTENCES, then ask one question about that part. Teach only this part now — the other parts come later. Do not answer your own question.`);
-      lines.push(_pointBrief(decision.point), _partLine(decision.fact));
+      lines.push(_pointBrief(decision.point), _partLine(decision.fact),
+        _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'next') {
       lines.push(`Acknowledge her reply naturally in one short sentence. Then move on to the next key point below: introduce it in AT MOST TWO SENTENCES, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`);
-      lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)));
+      lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)),
+        _remainingLine(decision.nextIndex, _state.facts[decision.nextIndex], _openingFact(decision.nextIndex)));
     } else if (decision.kind === 'resume') {
       lines.push(`Acknowledge her reply naturally in one short sentence. Then take her back to where she was before she went off to look at something else: the key point below. She had already started it, so remind her of it briefly in AT MOST TWO SENTENCES, then ask one question about the part named below. Do not answer your own question.`);
-      lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)));
+      lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)),
+        _remainingLine(decision.nextIndex, _state.facts[decision.nextIndex], _openingFact(decision.nextIndex)));
     } else if (decision.kind === 'complete') {
       lines.push(`Acknowledge her reply naturally. Then let her know all five key points in this lesson have now been covered. Ask, in one short friendly line, whether she'd like to stop here or carry on with some practice questions.`);
     } else {
@@ -909,9 +968,31 @@ const Teach = (() => {
     return fact ? `The part to ask about: ${fact.term} — ${fact.def}` : '';
   }
 
+  // The other parts of the SAME point still outstanding. A point whose content
+  // is short (its terms are a few closely related names) then finishes in one
+  // or two exchanges instead of being stretched to one exchange per term.
+  function _remainingLine(idx, factsState, focus) {
+    const point = _points[idx];
+    if (!point || !factsState) return '';
+    const names = point.facts
+      .filter((f, j) => !factsState.answered[j] && !factsState.skipped[j] && f !== focus)
+      .map(f => f.term);
+    return names.length
+      ? `Also still to cover in this same key point: ${names.join(', ')}. If any of them fit naturally into the same short question, cover them together — don't stretch this point out over more turns than it needs.`
+      : '';
+  }
+
+  // Which key point a reply will be teaching, so the brief can be limited to it.
+  function _teachIndex(d) {
+    if (!d) return null;
+    if (d.kind === 'fact' || d.kind === 'retry') return d.idx;
+    if (d.kind === 'next' || d.kind === 'resume') return d.nextIndex;
+    return null;
+  }
+
   async function _getTutorReply(userText) {
     const decision = _decide(userText);
-    const sys  = _buildSystemPrompt();
+    const sys  = _buildSystemPrompt(_teachIndex(decision));
     const user = _buildUserPrompt(userText, decision);
     const reply = await _callWithLengthGuard(sys, user);
 
@@ -954,6 +1035,7 @@ const Teach = (() => {
       `Begin the lesson. In AT MOST TWO SENTENCES TOTAL, warmly welcome Mabel (using the lesson overview above in your own words, don't just repeat it) and introduce the first key point below, starting from the first thing its content describes — do not explain the whole point. Then ask one question about the part named below. Do not answer your own question.`,
       _pointBrief(_points[0]),
       _partLine(_openingFact(0)),
+      _remainingLine(0, _state.facts[0], _openingFact(0)),
     ].filter(Boolean).join('\n\n');
   }
 
@@ -966,6 +1048,9 @@ const Teach = (() => {
       `Mabel is starting a new key point: "${_points[index].heading}". Teach it from the very beginning, as if you had just reached it. This is a fresh start, not a continuation — do not refer back to anything discussed before, and do not greet her again. She may not have covered the earlier points, so don't assume she knows any terms from them. In AT MOST TWO SENTENCES, introduce this key point, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`,
       _pointBrief(_points[index]),
       _partLine(_points[index].facts[0] || null),
+      // A jump restarts the point, so every part is outstanding again —
+      // _commitJump resets them once this reply actually arrives.
+      _remainingLine(index, _freshFacts(index, false), _points[index].facts[0] || null),
     ].filter(Boolean).join('\n\n');
   }
 
@@ -996,7 +1081,7 @@ const Teach = (() => {
 
     let reply, error;
     try {
-      const sys = _buildSystemPrompt();
+      const sys = _buildSystemPrompt(index);
       reply = await _callWithLengthGuard(sys, first ? _firstOpeningPrompt() : _jumpPrompt(index));
     } catch (e) {
       error = e;

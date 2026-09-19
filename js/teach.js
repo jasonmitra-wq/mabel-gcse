@@ -13,6 +13,8 @@ const Teach = (() => {
   const TRANSCRIPT_CAP    = 40;
   const HISTORY_TURNS     = 6;
   const RECAP_TURNS       = 24;  // a point now takes several exchanges — the recap must see all of them
+  const CHECKIN_AFTER     = 4;   // exchanges on one point before asking whether she wants the rest explained
+  const EXTENSION_EXCHANGES = 2; // hard limit if she does — then the rest is told and the point advances
 
   // Reply length: max_tokens is the real ceiling — a system-prompt instruction
   // alone won't hold to a hard limit. ~60 words is roughly 90-100 tokens of
@@ -317,6 +319,9 @@ const Teach = (() => {
       complete: _state.complete,
       resumeIndex: _state.resumeIndex,
       facts: _state.facts,
+      turnsOnPoint: _state.turnsOnPoint,
+      checkinAsked: _state.checkinAsked,
+      extensionLeft: _state.extensionLeft,
     });
   }
 
@@ -346,7 +351,19 @@ const Teach = (() => {
       // finished the lesson, so go back to "all done".
       resumeIndex: null,
       facts: _points.map((p, i) => _freshFacts(i, false)),
+      // Exchanges spent on the current point, and where she is in the
+      // check-in that fires once that reaches CHECKIN_AFTER.
+      turnsOnPoint: 0,
+      checkinAsked: false,
+      extensionLeft: null,
     };
+  }
+
+  // A new point starts with a clean exchange count and no check-in pending.
+  function _resetPointPacing() {
+    _state.turnsOnPoint = 0;
+    _state.checkinAsked = false;
+    _state.extensionLeft = null;
   }
 
   // Saved progress from before parts were tracked, or from a lesson file whose
@@ -417,6 +434,9 @@ const Teach = (() => {
         complete: !!saved.complete,
         resumeIndex: (resume === -1 || (Number.isInteger(resume) && resume >= 0 && resume < _points.length)) ? resume : null,
         facts: _restoreFacts(saved.facts, coverage),
+        turnsOnPoint: Number.isInteger(saved.turnsOnPoint) ? saved.turnsOnPoint : 0,
+        checkinAsked: !!saved.checkinAsked,
+        extensionLeft: Number.isInteger(saved.extensionLeft) ? saved.extensionLeft : null,
       };
       _seedTermsShown();
       _renderShell();
@@ -873,20 +893,23 @@ const Teach = (() => {
           : `Her reply didn't really engage with the part of the key point below that you just asked about — too short, or off the topic. Gently explain that part again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`);
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts),
         _partLine(decision.fact), _remainingLine(decision.idx, decision.facts, decision.fact));
+    } else if (decision.kind === 'checkin') {
+      lines.push(`She has spent several exchanges on this key point and some of it is still to cover. Do NOT teach anything in this message and do not ask about any part of the topic. In ONE short, friendly line, ask her whether she'd like you to explain the rest quickly, or whether she's ready to move on. That question is the whole message.`);
+      lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts));
     } else if (decision.kind === 'fact') {
-      lines.push(`${_toldLine(decision.toldNow) || `Acknowledge her reply naturally in one short sentence. `}Then carry on with the same key point: teach the next part of it, named below, in AT MOST TWO SENTENCES, then ask one question about that part. Teach only this part now — the other parts come later. Do not answer your own question.`);
+      lines.push(`${decision.askedForMore ? `She asked you to explain the rest, so keep going with this key point. ` : ''}${_toldLine(decision.toldNow) || (decision.askedForMore ? '' : `Acknowledge her reply naturally in one short sentence. `)}Then carry on with the same key point: teach the next part of it, named below, in AT MOST TWO SENTENCES, then ask one question about that part. Teach only this part now — the other parts come later. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts),
         _partLine(decision.fact), _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'next') {
-      lines.push(`${_toldLine(decision.toldNow) || `Acknowledge her reply naturally in one short sentence. `}Then move on to the next key point below: introduce it in AT MOST TWO SENTENCES, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`);
+      lines.push(`${_toldRestLine(decision.toldRest) || _toldLine(decision.toldNow) || `Acknowledge her reply naturally in one short sentence. `}Then move on to the next key point below: introduce it in AT MOST TWO SENTENCES, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)),
         _remainingLine(decision.nextIndex, _state.facts[decision.nextIndex], _openingFact(decision.nextIndex)));
     } else if (decision.kind === 'resume') {
-      lines.push(`Acknowledge her reply naturally in one short sentence. Then take her back to where she was before she went off to look at something else: the key point below. She had already started it, so remind her of it briefly in AT MOST TWO SENTENCES, then ask one question about the part named below. Do not answer your own question.`);
+      lines.push(`${_toldRestLine(decision.toldRest) || _toldLine(decision.toldNow) || `Acknowledge her reply naturally in one short sentence. `}Then take her back to where she was before she went off to look at something else: the key point below. She had already started it, so remind her of it briefly in AT MOST TWO SENTENCES, then ask one question about the part named below. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)),
         _remainingLine(decision.nextIndex, _state.facts[decision.nextIndex], _openingFact(decision.nextIndex)));
     } else if (decision.kind === 'complete') {
-      lines.push(`${_toldLine(decision.toldNow) || `Acknowledge her reply naturally. `}Then let her know all five key points in this lesson have now been covered. Ask, in one short friendly line, whether she'd like to stop here or carry on with some practice questions.`);
+      lines.push(`${_toldRestLine(decision.toldRest) || _toldLine(decision.toldNow) || `Acknowledge her reply naturally. `}Then let her know all five key points in this lesson have now been covered. Ask, in one short friendly line, whether she'd like to stop here or carry on with some practice questions.`);
     } else {
       lines.push(`All five key points in this lesson have already been covered. Just respond naturally and helpfully to whatever she said.`);
     }
@@ -965,6 +988,25 @@ const Teach = (() => {
     return _parseRecap(raw);
   }
 
+  // Reading her answer to the check-in. A vague reply moves on rather than
+  // stalling; "yes" is treated as agreeing to move on, as is anything that
+  // isn't clearly a request for more.
+  function _wantsMore(text) {
+    const t = String(text || '');
+    if (/\b(explain|explanation|more|the rest|again|go over|elaborate|unpack|confus|don'?t (get|understand)|not sure|unsure|lost)\b/i.test(t)) return true;
+    return false;
+  }
+
+  // Tell her every part still outstanding, then move the point on. Used when
+  // she says she's ready, and when an extension she asked for runs out.
+  function _finishByTelling(idx, point, facts, rem) {
+    rem.forEach(j => { facts.told[j] = true; });
+    const covered = point.facts.every((f, j) => facts.answered[j] || facts.told[j]);
+    return { idx, verdict: covered, facts, toldRest: rem.map(j => point.facts[j]),
+             pacing: { turnsOnPoint: 0, checkinAsked: false, extensionLeft: null },
+             ..._afterPoint(idx, covered) };
+  }
+
   // ── Coverage decision (pure — no state mutation) ────────────
   // Where she goes once point idx is finished. If she jumped here from
   // somewhere else, she goes back to where she was; otherwise on to the next
@@ -1015,6 +1057,38 @@ const Teach = (() => {
     });
     const facts = { answered, told };
 
+    const remaining = () => point.facts.map((f, j) => j).filter(j => !answered[j] && !told[j]);
+    const engaged = point.facts.some((f, j) => answered[j] && !cur.answered[j]);
+
+    // She is answering the check-in ("explain the rest, or move on?"). If she
+    // actually answered a part instead, that counts and the lesson carries on
+    // normally — only a non-answer is read as a choice.
+    if (_state.checkinAsked && !engaged) {
+      const rem = remaining();
+      // Still working on the topic — even if the words didn't match a part —
+      // is a sign she wants to keep going, not a request to move on. The
+      // extension limit still bounds how long that can last.
+      const wantsMore = _wantsMore(userText) || _isSubstantive(userText, point.wordSet);
+      if (wantsMore && rem.length) {
+        return { kind: 'fact', idx, point, fact: point.facts[rem[0]], facts, askedForMore: true,
+                 pacing: { turnsOnPoint: _state.turnsOnPoint + 1, checkinAsked: false, extensionLeft: EXTENSION_EXCHANGES } };
+      }
+      return _finishByTelling(idx, point, facts, rem);
+    }
+
+    // Exchange limits. Below the cap nothing changes; at the cap she is asked
+    // rather than cut off, and an extension she asked for is hard-capped.
+    const turns = _state.turnsOnPoint + 1;
+    const inExtension = Number.isInteger(_state.extensionLeft);
+    const extensionLeft = inExtension ? _state.extensionLeft - 1 : null;
+    const capHit = inExtension ? extensionLeft <= 0 : turns >= CHECKIN_AFTER;
+    if (capHit && remaining().length) {
+      if (inExtension) return _finishByTelling(idx, point, facts, remaining());
+      return { kind: 'checkin', idx, point, facts,
+               pacing: { turnsOnPoint: turns, checkinAsked: true, extensionLeft: null } };
+    }
+    const pacing = { turnsOnPoint: turns, checkinAsked: false, extensionLeft };
+
     let toldNow = null;
     if (!hit && target !== -1) {
       if (!_state.retriedCurrent) {
@@ -1023,7 +1097,7 @@ const Teach = (() => {
         // that aren't key terms, like skin). That deserves acknowledging and
         // asking again — not re-explaining the point at her.
         const onTopic = _isSubstantive(userText, point.wordSet);
-        return { kind: 'retry', idx, point, fact: point.facts[target], facts, onTopic };
+        return { kind: 'retry', idx, point, fact: point.facts[target], facts, onTopic, pacing };
       }
       // Missed twice: stop quizzing her on it and just tell her, so the part is
       // still covered in the conversation rather than dropped.
@@ -1033,18 +1107,22 @@ const Teach = (() => {
 
     const next = answered.findIndex((a, j) => !answered[j] && !told[j]);
     if (next !== -1) {
-      return { kind: 'fact', idx, point, fact: point.facts[next], facts, toldNow };
+      return { kind: 'fact', idx, point, fact: point.facts[next], facts, toldNow, pacing };
     }
     // Every part is now covered — answered by her or told to her — so the point
     // is covered. Its checkmark, its terms and the move to the next point all
     // come from this one verdict.
     const covered = point.facts.every((f, j) => answered[j] || told[j]);
-    return { idx, verdict: covered, facts, toldNow, ..._afterPoint(idx, covered) };
+    return { idx, verdict: covered, facts, toldNow,
+             pacing: { turnsOnPoint: 0, checkinAsked: false, extensionLeft: null },
+             ..._afterPoint(idx, covered) };
   }
 
   function _applyDecision(decision) {
     if (decision.kind === 'free') return;
     if (decision.facts) _state.facts[decision.idx] = decision.facts;
+    if (decision.pacing) Object.assign(_state, decision.pacing);
+    if (decision.kind === 'checkin') return;  // waiting on her answer; the point stays put
     if (decision.kind === 'retry') {
       _state.retriedCurrent = true;
       return;
@@ -1089,6 +1167,14 @@ const Teach = (() => {
   function _toldLine(fact) {
     return fact
       ? `She hasn't got this after two goes: ${fact.term} — ${fact.def}. Don't ask her about it again and don't make a thing of it. In ONE short friendly sentence, simply tell her the answer so she has it. `
+      : '';
+  }
+
+  // She's ready to move on (or the extension she asked for has run out) with
+  // parts still uncovered: give her those plainly instead of quizzing on them.
+  function _toldRestLine(facts) {
+    return facts && facts.length
+      ? `These parts of the key point she has just finished were never covered: ${facts.map(f => `${f.term} — ${f.def}`).join('; ')}. In AT MOST TWO SHORT SENTENCES, tell her these plainly so she has them. Do not ask her about them. `
       : '';
   }
 
@@ -1254,6 +1340,7 @@ const Teach = (() => {
     // Starting the point from the beginning means all of its parts again.
     // (Its coverage is untouched: a point she has covered stays covered.)
     _state.facts[index] = _freshFacts(index, false);
+    _resetPointPacing();
     _state.currentPointIndex = index;
     _state.retriedCurrent = false;
     _state.complete = false;

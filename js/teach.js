@@ -19,8 +19,11 @@ const Teach = (() => {
   // English; MAX_TOKENS_REPLY leaves just enough room for that and no more.
   const MAX_REPLY_WORDS   = 60;
   const RETRY_MAX_WORDS   = 40;
-  const MAX_TOKENS_REPLY  = 100;
-  const MAX_TOKENS_RETRY  = 70;
+  // Headroom above the word limits: the word count is what keeps replies short,
+  // while a tight token cap just chops sentences in half. Too tight a cap was
+  // making the shortening retry itself come back cut off.
+  const MAX_TOKENS_REPLY  = 150;
+  const MAX_TOKENS_RETRY  = 120;
   const MAX_TOKENS_RECAP  = 160;
 
   const STOPWORDS = new Set([
@@ -802,15 +805,19 @@ const Teach = (() => {
     lines.push(`Mabel just said: "${userText}"`);
 
     if (decision.kind === 'retry') {
-      lines.push(decision.fact
-        ? `Her reply didn't really engage with the part of the key point below that you just asked about — too short, or off the topic. Gently explain that part again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`
-        : `Her reply didn't really engage with the key point below — too short, or off the topic. Gently explain this idea again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`);
-      lines.push(_pointBrief(decision.point), _partLine(decision.fact),
-        _remainingLine(decision.idx, decision.facts, decision.fact));
+      lines.push(!decision.fact
+        ? `Her reply didn't really engage with the key point below — too short, or off the topic. Gently explain this idea again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`
+        : decision.onTopic
+          // What she said was about this key point and may be perfectly correct —
+          // just not the part you asked. Re-explaining here reads as if she got it wrong.
+          ? `What she said is about this key point and may well be right, but it doesn't answer the part you asked about. In ONE short sentence, acknowledge what she said as correct, then ask about that part again, more directly. Do not re-explain the point and do not repeat anything she has already covered.`
+          : `Her reply didn't really engage with the part of the key point below that you just asked about — too short, or off the topic. Gently explain that part again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`);
+      lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts),
+        _partLine(decision.fact), _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'fact') {
       lines.push(`${_toldLine(decision.toldNow) || `Acknowledge her reply naturally in one short sentence. `}Then carry on with the same key point: teach the next part of it, named below, in AT MOST TWO SENTENCES, then ask one question about that part. Teach only this part now — the other parts come later. Do not answer your own question.`);
-      lines.push(_pointBrief(decision.point), _partLine(decision.fact),
-        _remainingLine(decision.idx, decision.facts, decision.fact));
+      lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts),
+        _partLine(decision.fact), _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'next') {
       lines.push(`${_toldLine(decision.toldNow) || `Acknowledge her reply naturally in one short sentence. `}Then move on to the next key point below: introduce it in AT MOST TWO SENTENCES, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)),
@@ -827,18 +834,34 @@ const Teach = (() => {
     return lines.filter(Boolean).join('\n\n');
   }
 
-  async function _callWithLengthGuard(sys, user) {
-    const first = (await AI.call(sys, user, MAX_TOKENS_REPLY)).trim();
-    const firstPlain = _stripMarkdown(first);
-    if (_wordCount(firstPlain) <= MAX_REPLY_WORDS && !_looksTruncated(firstPlain)) {
-      return first;
-    }
+  function _trimToLastSentence(text) {
+    const m = String(text || '').match(/^[\s\S]*[.!?]["')]?/);
+    return m ? m[0].trim() : '';
+  }
 
-    // Too long (or cut off mid-sentence by max_tokens) — discard it, never
-    // show it, and ask once for a shorter version instead of truncating it.
-    const retryPrompt = user + `\n\n(Your last reply was too long. Say the same thing again in under ${RETRY_MAX_WORDS} words.)`;
-    const retry = (await AI.call(sys, retryPrompt, MAX_TOKENS_RETRY)).trim();
-    return retry;
+  // Every attempt is checked, including the shortened ones. The earlier version
+  // checked only the first reply and returned the shortened retry unseen, so a
+  // retry that hit its own token cap was shown cut off mid-sentence.
+  async function _callWithLengthGuard(sys, user) {
+    const attempts = [
+      { words: MAX_REPLY_WORDS, tokens: MAX_TOKENS_REPLY, note: '' },
+      { words: RETRY_MAX_WORDS, tokens: MAX_TOKENS_RETRY,
+        note: `(Your last reply was too long or got cut off mid-sentence. Say the same thing again in under ${RETRY_MAX_WORDS} words, and make sure every sentence is finished.)` },
+      { words: 30, tokens: MAX_TOKENS_RETRY,
+        note: `(Still too long. Give the same message in under 30 words. Finish every sentence, and end with your question.)` },
+    ];
+    let complete = '', last = '';
+    for (const a of attempts) {
+      const reply = (await AI.call(sys, a.note ? `${user}\n\n${a.note}` : user, a.tokens)).trim();
+      const plain = _stripMarkdown(reply);
+      last = reply;
+      const cut = _looksTruncated(plain);
+      if (!cut && _wordCount(plain) <= a.words) return reply;
+      if (!cut && !complete) complete = reply; // finished, just long — usable if nothing better
+    }
+    // Never show a sentence that stops dead: prefer a complete-but-long reply,
+    // otherwise drop the unfinished tail of the last one.
+    return complete || _trimToLastSentence(last) || last;
   }
 
   // ── "Worth writing down" recap ───────────────────────────────
@@ -936,7 +959,12 @@ const Teach = (() => {
     let toldNow = null;
     if (!hit && target !== -1) {
       if (!_state.retriedCurrent) {
-        return { kind: 'retry', idx, point, fact: point.facts[target], facts };
+        // She may have said something perfectly correct about this point that
+        // simply isn't the part being asked (the point's content holds facts
+        // that aren't key terms, like skin). That deserves acknowledging and
+        // asking again — not re-explaining the point at her.
+        const onTopic = _isSubstantive(userText, point.wordSet);
+        return { kind: 'retry', idx, point, fact: point.facts[target], facts, onTopic };
       }
       // Missed twice: stop quizzing her on it and just tell her, so the part is
       // still covered in the conversation rather than dropped.
@@ -983,6 +1011,18 @@ const Teach = (() => {
 
   function _partLine(fact) {
     return fact ? `The part to ask about: ${fact.term} — ${fact.def}` : '';
+  }
+
+  // What she has already got. Without this the model has the point's whole
+  // content in front of it every turn and happily explains cilia or stomach
+  // acid again after she has already answered them.
+  function _coveredLine(idx, factsState) {
+    const point = _points[idx];
+    if (!point || !factsState) return '';
+    const done = point.facts.filter((f, j) => _factDone(factsState, j)).map(f => f.term);
+    return done.length
+      ? `She has already covered these parts of this key point: ${done.join(', ')}. Do not explain them again and do not ask about them again — treat them as known and build on them.`
+      : '';
   }
 
   // She has missed this part twice. Don't quiz her a third time: give her the

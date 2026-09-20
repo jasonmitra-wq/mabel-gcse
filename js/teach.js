@@ -322,6 +322,7 @@ const Teach = (() => {
       turnsOnPoint: _state.turnsOnPoint,
       checkinAsked: _state.checkinAsked,
       extensionLeft: _state.extensionLeft,
+      wrapOffered: _state.wrapOffered,
     });
   }
 
@@ -356,6 +357,9 @@ const Teach = (() => {
       turnsOnPoint: 0,
       checkinAsked: false,
       extensionLeft: null,
+      // Whether she has already been asked the closing "anything else?"
+      // question. Without this, free mode asks it again every single turn.
+      wrapOffered: false,
     };
   }
 
@@ -437,6 +441,7 @@ const Teach = (() => {
         turnsOnPoint: Number.isInteger(saved.turnsOnPoint) ? saved.turnsOnPoint : 0,
         checkinAsked: !!saved.checkinAsked,
         extensionLeft: Number.isInteger(saved.extensionLeft) ? saved.extensionLeft : null,
+        wrapOffered: !!saved.wrapOffered,
       };
       _seedTermsShown();
       _renderShell();
@@ -853,7 +858,7 @@ const Teach = (() => {
   function _buildSystemPrompt(teachIdx) {
     const mistakes = _mistakesFor(teachIdx);
     return [
-      `You are a warm, encouraging GCSE Biology tutor teaching Mabel, who is 15 years old and studying AQA Separate Biology (8461), through natural back-and-forth conversation rather than slides.`,
+      `You are a warm, encouraging GCSE Biology tutor teaching Mabel, a 14-year-old studying for her GCSEs, through natural back-and-forth conversation rather than slides.`,
       `Lesson: "${_data.title}".`,
       `Lesson overview: ${_stripHtml(_data.intro || '')}`,
       mistakes.length
@@ -910,8 +915,10 @@ const Teach = (() => {
         _remainingLine(decision.nextIndex, _state.facts[decision.nextIndex], _openingFact(decision.nextIndex)));
     } else if (decision.kind === 'complete') {
       lines.push(`${_toldRestLine(decision.toldRest) || _toldLine(decision.toldNow) || `Acknowledge her reply naturally. `}Then let her know all five key points in this lesson have now been covered. Ask, in one short friendly line, whether she'd like to stop here or carry on with some practice questions.`);
+    } else if (_state.wrapOffered) {
+      lines.push(`All five key points in this lesson have already been covered, and you have ALREADY asked her whether she wants to go over anything else. Do not ask that again in any form — no "anything else?", no "does that feel clear?", no "shall we stop there?". Respond to what she actually said and then stop. If she shows she is finished (no, nothing, bye, thanks, I'm good), give ONE warm, complete goodbye and nothing after it — no question of any kind. A light sign-off such as "same time next week?" is fine as that closing line itself, but only as the goodbye. If you do need to offer her a choice, give it as two numbered options — (1) … (2) … — rather than a yes/no question; this is the one place numbered options are allowed.`);
     } else {
-      lines.push(`All five key points in this lesson have already been covered. Just respond naturally and helpfully to whatever she said.`);
+      lines.push(`All five key points in this lesson have already been covered. Respond naturally and helpfully to whatever she said. If you offer her a choice, give it as two numbered options — (1) … (2) … — rather than a yes/no question; this is the one place numbered options are allowed. Ask at most one closing question, and only if it is genuinely useful.`);
     }
     return lines.filter(Boolean).join('\n\n');
   }
@@ -950,7 +957,7 @@ const Teach = (() => {
   // Written by the model from the conversation that just happened — not from
   // the lesson's pre-written writeBullets, which are never read or shown here.
   function _buildRecapSystemPrompt() {
-    return `You are a warm, encouraging GCSE Biology tutor helping Mabel, who is 15 and studying AQA Separate Biology (8461), keep her revision notes. You write brief recaps of what you have just taught her, in your own plain words — never a copied textbook list. Reply with the recap lines only.`;
+    return `You are a warm, encouraging GCSE Biology tutor helping Mabel, a 14-year-old studying for her GCSEs, keep her revision notes. You write brief recaps of what you have just taught her, in your own plain words — never a copied textbook list. Reply with the recap lines only.`;
   }
 
   // The stretch of conversation about one key point, from where its teaching
@@ -1134,6 +1141,7 @@ const Teach = (() => {
     if (decision.kind === 'complete') {
       _state.complete = true;
       _state.resumeIndex = null;
+      _state.wrapOffered = true; // this turn is itself the closing offer
     } else {
       _state.currentPointIndex = decision.nextIndex;
       if (decision.kind === 'resume') _state.resumeIndex = null;
@@ -1216,6 +1224,14 @@ const Teach = (() => {
 
     _applyDecision(decision); // only commit once the calls actually succeeded
     return { reply, recap, decision };
+  }
+
+  // A closing "anything else?" style question, in whatever words the model
+  // chose. Once one has been asked, free mode must not ask another.
+  function _looksLikeWrapUpQuestion(text) {
+    const t = String(text || '');
+    if (!t.includes('?')) return false;
+    return /(anything else|something else|anything you'?re|anything specific|go over (anything|something)|shall we (stop|finish|wrap|leave)|(ready|want|like) to (stop|finish|wrap)|that'?s it\?|is there anything|need anything|any other questions?)/i.test(t);
   }
 
   // The tutor's reply, tagged with the point it belongs to.
@@ -1414,6 +1430,11 @@ const Teach = (() => {
     try {
       const { reply, recap, decision } = await _getTutorReply(text);
       thinkingEl?.remove();
+      // Belt and braces: if a free reply asks a closing question anyway, that
+      // still counts as the one offer.
+      if (decision.kind === 'free' && !_state.wrapOffered && _looksLikeWrapUpQuestion(reply)) {
+        _state.wrapOffered = true;
+      }
       if (recap) _pushEntry({ role: 'recap', rid: _rid(), pt: decision.idx, lines: recap, done: false });
       _pushEntry(_replyEntry(reply, decision));
     } catch {

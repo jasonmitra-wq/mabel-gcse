@@ -858,7 +858,7 @@ const Teach = (() => {
   function _buildSystemPrompt(teachIdx) {
     const mistakes = _mistakesFor(teachIdx);
     return [
-      `You are a warm, encouraging GCSE Biology tutor teaching Mabel, a 14-year-old studying for her GCSEs, through natural back-and-forth conversation rather than slides.`,
+      `You are a warm, encouraging GCSE tutor teaching Mabel, a 14-year-old studying for her GCSEs, through natural back-and-forth conversation rather than slides.`,
       `Lesson: "${_data.title}".`,
       `Lesson overview: ${_stripHtml(_data.intro || '')}`,
       mistakes.length
@@ -957,7 +957,7 @@ const Teach = (() => {
   // Written by the model from the conversation that just happened — not from
   // the lesson's pre-written writeBullets, which are never read or shown here.
   function _buildRecapSystemPrompt() {
-    return `You are a warm, encouraging GCSE Biology tutor helping Mabel, a 14-year-old studying for her GCSEs, keep her revision notes. You write brief recaps of what you have just taught her, in your own plain words — never a copied textbook list. Reply with the recap lines only.`;
+    return `You are a warm, encouraging GCSE tutor helping Mabel, a 14-year-old studying for her GCSEs, keep her revision notes. You write brief recaps of what you have just taught her, in your own plain words — never a copied textbook list. Reply with the recap lines only.`;
   }
 
   // The stretch of conversation about one key point, from where its teaching

@@ -25,11 +25,11 @@
         "Happy Planet Index — adds wellbeing and environmental sustainability to HDI"
       ],
       "keyTerms": [
-        "GNI per capita",
-        "infant mortality rate",
-        "HDI",
-        "composite measure",
-        "life expectancy"
+        {"term": "GNI per capita", "def": "Gross National Income per capita — the total income a country earns in a year, divided by the number of people living there. 'Per capita' simply means 'per person', so it is an average income figure that lets you compare a large country with a small one fairly."},
+        {"term": "Life expectancy", "def": "The average number of years someone born in a country can expect to live. It reflects the quality of healthcare, diet, clean water and safety."},
+        {"term": "Infant mortality rate", "def": "The number of babies, out of every 1,000 born alive, who die before their first birthday. It is one of the clearest signs of how good a country's healthcare and nutrition are."},
+        {"term": "HDI", "def": "Human Development Index — a single score between 0 and 1 that combines income, life expectancy and years of schooling. A score close to 1 means people are wealthy, long-lived and well educated."},
+        {"term": "Composite measure", "def": "A measure built by combining several different indicators into one number, instead of relying on just one. HDI is a composite measure; GNI per capita is not."}
       ],
       "memTip": "GNI counts the cash; HDI adds health and learning. One number vs three dimensions.",
       "tutor_note": "Explain WHY composite measures are better — they capture more of what development means. Single indicators can be misleading."
@@ -48,11 +48,11 @@
         "Brandt Line is now outdated — China and Brazil (in south) are major economic powers"
       ],
       "keyTerms": [
-        "HIC",
-        "LIC",
-        "NEE",
-        "Brandt Line",
-        "World Bank"
+        {"term": "HIC", "def": "High Income Country — a wealthy country with a high GNI per capita, such as the UK, Japan or the United States."},
+        {"term": "LIC", "def": "Low Income Country — one of the world's poorest countries, with a low GNI per capita, such as Niger or Malawi."},
+        {"term": "NEE", "def": "Newly Emerging Economy — a country whose economy is growing quickly as it industrialises, lifting it out of the low income group. Nigeria, India and Brazil are examples."},
+        {"term": "Brandt Line", "def": "A line drawn across a world map in 1980 to separate the richer 'North' from the poorer 'South'. It dips below the equator so that Australia and New Zealand sit in the 'North'. It was always a rough guide, and it fits the world less well now than it did then."},
+        {"term": "World Bank", "def": "An international organisation that lends money to countries for development projects, and which publishes the income data used to sort countries into low, middle and high income groups."}
       ],
       "memTip": "HIC, UMIC, LMIC, LIC — from high to low income; NEEs are the fast movers in between.",
       "tutor_note": "Students often forget to critique the Brandt Line — stating it's outdated earns evaluation marks."
@@ -72,11 +72,11 @@
         "Terms of trade — prices of primary commodities fall over time relative to manufactured goods"
       ],
       "keyTerms": [
-        "development gap",
-        "colonialism",
-        "primary products",
-        "debt cycle",
-        "terms of trade"
+        {"term": "Development gap", "def": "The difference in wealth and quality of life between the richest countries and the poorest ones."},
+        {"term": "Colonialism", "def": "When one country takes control of another and runs it for its own benefit. European powers colonised much of Africa, Asia and the Caribbean, taking raw materials out and shutting down local industries that competed with their own."},
+        {"term": "Primary products", "def": "Raw materials sold before anything has been made from them — crops, timber, oil, metal ores. They earn far less than manufactured goods, and their prices swing sharply from year to year."},
+        {"term": "Debt cycle", "def": "When a country borrows money, then has to spend so much on interest repayments that it cannot afford schools, hospitals or roads — so it stays poor and has to borrow again."},
+        {"term": "Terms of trade", "def": "The relationship between what a country earns for its exports and what it pays for its imports. A country selling cheap raw materials and buying expensive manufactured goods has poor terms of trade."}
       ],
       "memTip": "CTDPP — Colonialism, Trade, Debt, Physical, Political. Five causes, five letters.",
       "tutor_note": "For 9-mark answers, use this as your structure — one paragraph per cause group, with evidence."
@@ -96,12 +96,12 @@
         "Tourism — brings income and jobs but profits may leak to multinational hotel chains"
       ],
       "keyTerms": [
-        "Fairtrade",
-        "HIPC",
-        "intermediate technology",
-        "microfinance",
-        "Grameen Bank",
-        "aid"
+        {"term": "Aid", "def": "Money, goods or expertise given by one country or organisation to another. Short-term emergency aid follows disasters; long-term development aid pays for things like schools and water supplies."},
+        {"term": "Fairtrade", "def": "A scheme that guarantees farmers a minimum price for their crop, plus an extra payment for their community, so that the growers rather than the buyers keep more of the money."},
+        {"term": "HIPC", "def": "Heavily Indebted Poor Countries — an international scheme that cancels part of the debt of the world's poorest countries, so the money can be spent at home instead of on repayments."},
+        {"term": "Intermediate technology", "def": "Simple, affordable equipment that local people can build, use and repair themselves, such as a hand-powered water pump, rather than expensive machinery that needs foreign engineers to keep it running."},
+        {"term": "Microfinance", "def": "Very small loans given to people too poor to use an ordinary bank, usually so they can start a small business."},
+        {"term": "Grameen Bank", "def": "A bank founded in Bangladesh that pioneered microfinance, lending small sums mainly to women so they could set up businesses of their own."}
       ],
       "memTip": "ATDIM-T — Aid, Trade (Fairtrade), Debt relief, Intermediate tech, Microfinance, Tourism.",
       "tutor_note": "Always evaluate each strategy — giving both advantages and limitations earns higher marks."
@@ -121,10 +121,9 @@
         "Progress uneven — concentrated in Asia; Africa lags on most SDG indicators"
       ],
       "keyTerms": [
-        "SDGs",
-        "Sustainable Development Goals",
-        "extreme poverty",
-        "NEE"
+        {"term": "Sustainable Development Goals (SDGs)", "def": "A set of 17 global targets agreed by countries at the United Nations in 2015, covering poverty, hunger, health, education and climate, to be met by 2030."},
+        {"term": "Extreme poverty", "def": "Living below the international poverty line — an income too low to cover basic food, shelter and healthcare. The share of the world's population living in extreme poverty has fallen sharply since 1990."},
+        {"term": "NEE", "def": "Newly Emerging Economy — a country whose economy is growing quickly as it industrialises, lifting it out of the low income group. Nigeria, India and Brazil are examples.", "referenceOnly": true}
       ],
       "memTip": "China soared, Africa stalled — the gap is closing for NEEs, widening for many LICs.",
       "tutor_note": "The SDGs give a framework for evaluation questions — use them to assess progress or lack of it."

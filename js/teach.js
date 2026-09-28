@@ -323,6 +323,7 @@ const Teach = (() => {
       checkinAsked: _state.checkinAsked,
       extensionLeft: _state.extensionLeft,
       wrapOffered: _state.wrapOffered,
+      farewell: _state.farewell,
     });
   }
 
@@ -360,6 +361,9 @@ const Teach = (() => {
       // Whether she has already been asked the closing "anything else?"
       // question. Without this, free mode asks it again every single turn.
       wrapOffered: false,
+      // She has had the goodbye, so the box is swapped for buttons until she
+      // asks to type again.
+      farewell: false,
     };
   }
 
@@ -442,6 +446,7 @@ const Teach = (() => {
         checkinAsked: !!saved.checkinAsked,
         extensionLeft: Number.isInteger(saved.extensionLeft) ? saved.extensionLeft : null,
         wrapOffered: !!saved.wrapOffered,
+        farewell: !!saved.farewell,
       };
       _seedTermsShown();
       _renderShell();
@@ -556,11 +561,20 @@ const Teach = (() => {
         <div class="teach-main">
           <div class="askme-wrap" style="padding-top:0.75rem;padding-bottom:1rem">
             <div class="askme-thread" id="teachThread"></div>
+            ${_state.farewell ? `
+            <div class="teach-finished">
+              <p style="font-size:0.85rem;color:var(--muted);margin:0 0 0.6rem">Lesson finished.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                <button class="btn" onclick="Lessons.close()">← Topics</button>
+                <button class="btn" onclick="Teach.showSlides()">Show me the slides</button>
+                <button class="btn pri" onclick="Teach.reopenInput()">Ask something else</button>
+              </div>
+            </div>` : `
             <div class="askme-input-row">
               <textarea id="teachInput" rows="2" placeholder="Type here…"
                 onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();Teach.send();}"></textarea>
               <button class="btn pri" id="teachSendBtn" onclick="Teach.send()">Send</button>
-            </div>
+            </div>`}
           </div>
         </div>
         <aside class="teach-side" id="teachSide">
@@ -1365,6 +1379,7 @@ const Teach = (() => {
     _state.currentPointIndex = index;
     _state.retriedCurrent = false;
     _state.complete = false;
+    _state.farewell = false; // she's being taught again, so she needs the box back
     _pushEntry({ role: 'note', text: _shortHeading(_points[index].heading) });
     _pushEntry({ role: 'assistant', text: reply, pt: index, opening: true });
   }
@@ -1440,6 +1455,8 @@ const Teach = (() => {
       if (decision.kind === 'free' && !_state.wrapOffered && _looksLikeWrapUpQuestion(reply)) {
         _state.wrapOffered = true;
       }
+      // The goodbye: lesson done, closing offer already made, and nothing asked.
+      if (_state.complete && _state.wrapOffered && !reply.includes('?')) _state.farewell = true;
       if (recap) _pushEntry({ role: 'recap', rid: _rid(), pt: decision.idx, lines: recap, done: false });
       _pushEntry(_replyEntry(reply, decision));
     } catch {
@@ -1459,5 +1476,15 @@ const Teach = (() => {
     Lessons.openSlideView(_data, _subtopicId, _subtopicName, _subject);
   }
 
-  return { open, send, showSlides, showResetConfirm, cancelReset, confirmReset, jumpTo, toggleTerms, expandDiagram, closeDiagram };
+  // The way back in after the goodbye — she is never locked out of asking more.
+  function reopenInput() {
+    if (!_state) return;
+    _state.farewell = false;
+    _save();
+    _renderShell();
+    _renderTranscript();
+    document.getElementById('teachInput')?.focus();
+  }
+
+  return { open, send, showSlides, reopenInput, showResetConfirm, cancelReset, confirmReset, jumpTo, toggleTerms, expandDiagram, closeDiagram };
 })();

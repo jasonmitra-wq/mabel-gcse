@@ -706,7 +706,7 @@ const Lessons = (() => {
     try {
       const context = (_current.keyPoints || []).map(kp => `${kp.heading}: ${kp.content.replace(/<[^>]+>/g,'')}`).join('\n');
       const answer = await AI.call(
-        `You are a warm, encouraging GCSE tutor talking to Mabel, a 14-year-old studying for her GCSEs. She has just finished the lesson "${_current.title}". Answer her question clearly in 3–5 sentences. Use plain, friendly language. Don't start with a definition. If relevant, connect to something she already covered in the lesson.`,
+        `You are a warm, encouraging GCSE tutor talking to Mabel, a 15-year-old studying for her GCSEs. She has just finished the lesson "${_current.title}". Answer her question clearly in 3–5 sentences. Use plain, friendly language. Don't start with a definition. If relevant, connect to something she already covered in the lesson.`,
         `Lesson: ${_current.title}\n\nKey content:\n${context}\n\nMabel's question: ${q}`,
         600
       );

@@ -104,7 +104,7 @@ const Lessons = (() => {
     if (data.commonMistakes?.length) steps.push({ type: 'mistakes' });
     if (data.examTips?.length)       steps.push({ type: 'examtips' });
     if (data.revisionCardBullets?.length) steps.push({ type: 'cards' });
-    if (data.videoLinks?.length)     steps.push({ type: 'videos' });
+    if (_watchable(data.videoLinks).length) steps.push({ type: 'videos' });
     if (AI.hasKey()) steps.push({ type: 'askme' });
     return steps;
   }
@@ -511,8 +511,8 @@ const Lessons = (() => {
         </div>
         ${kp.list ? _renderKpList(kp.content, kp.list) : _formatKpContent(kp.content)}`;
     if (kp.diagram) html += _renderInlineDiagram(kp.diagram, _current, kp.diagramCaption, kp.diagramExamTip);
-    const vids = _current.videoLinks;
-    if (vids?.length) {
+    const vids = _watchable(_current.videoLinks);
+    if (vids.length) {
       html += `<div class="kp-video-strip">
         <span class="kp-video-strip-label">Watch to reinforce — search on YouTube or BBC Bitesize:</span>
         <div class="kp-video-search-hint">🔍 <strong>${vids[0]?.searchQuery || ''}</strong></div>
@@ -620,8 +620,21 @@ const Lessons = (() => {
     return url?.match(/(?:youtu\.be\/|[?&]v=)([^&\n?#]+)/)?.[1] || null;
   }
 
+  // A link is watchable only if it points at actual content. Most entries in
+  // the lesson files are search-result pages, which teach nothing.
+  function _watchable(list) {
+    return (list || []).filter(v => {
+      const u = v && v.url;
+      if (!u) return false;
+      if (u.includes('results?search_query')) return false;
+      if (u.includes('bitesize/search?q=')) return false;
+      return true;
+    });
+  }
+
   function _renderVideosStep() {
-    const links = _current.videoLinks || [];
+    const links = _watchable(_current.videoLinks);
+    if (!links.length) return '';
     const cards = links.map(v => {
       const vid = _ytId(v.url);
       if (vid) {
@@ -710,7 +723,7 @@ const Lessons = (() => {
 
   function _renderCardsStep() {
     // ── Curated video thumbnail cards ──
-    const _videos = _current.videos || [];
+    const _videos = _watchable(_current.videos);
     let _videoHtml = '';
     if (_videos.length) {
       const _thumbCards = _videos.map(v => {

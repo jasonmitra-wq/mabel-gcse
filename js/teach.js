@@ -867,6 +867,7 @@ const Teach = (() => {
       teachIdx == null ? '' : `Teach ONLY the key point given below, using only its own content and key terms. Do not bring in, name or preview material from any other key point, even if the conversation heads that way. If she asks about something from a later key point, answer in one short line, tell her it is coming up soon, and return to the current point's question.`,
       _laterPointsLine(teachIdx),
       `Rules: explain ideas a little at a time in plain, friendly language. Ask exactly ONE question at a time and never present a list of options for her to pick from. Keep every reply very short — one to three sentences before your question, no more than about 60 words total. If she asks about something off-topic or unrelated, answer it briefly and kindly, then guide her back to the lesson — never refuse to answer and never tell her to stay focused or scold her for going off-topic.`,
+      `Every question you ask must be answerable in one or two words, and its answer must be unambiguous. Ask one thing only. Never join two questions with "or" — "does that make sense, or shall I explain it differently?" cannot be answered by "no". If you want to check she has followed you, ask a question about the content itself rather than about her understanding. If you genuinely need to offer her a choice between two things, ask about only one of them: "would you like me to explain that differently?" — and let her say yes or no.`,
     ].filter(Boolean).join('\n');
   }
 

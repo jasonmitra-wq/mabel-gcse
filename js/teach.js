@@ -1456,7 +1456,9 @@ const Teach = (() => {
         _state.wrapOffered = true;
       }
       // The goodbye: lesson done, closing offer already made, and nothing asked.
-      if (_state.complete && _state.wrapOffered && !reply.includes('?')) _state.farewell = true;
+      // Only on a free turn — the completion message itself leaves the box open
+      // so she can reply to it.
+      if (decision.kind === 'free' && _state.complete && _state.wrapOffered && !reply.includes('?')) _state.farewell = true;
       if (recap) _pushEntry({ role: 'recap', rid: _rid(), pt: decision.idx, lines: recap, done: false });
       _pushEntry(_replyEntry(reply, decision));
     } catch {

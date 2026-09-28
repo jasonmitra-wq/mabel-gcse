@@ -900,7 +900,7 @@ const Teach = (() => {
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts),
         _partLine(decision.fact), _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'checkin') {
-      lines.push(`She has spent several exchanges on this key point and some of it is still to cover. Do NOT teach anything in this message and do not ask about any part of the topic. In ONE short, friendly line, ask her whether she'd like you to explain the rest quickly, or whether she's ready to move on. That question is the whole message.`);
+      lines.push(`She has spent several exchanges on this key point and some of it is still to cover. Do NOT teach anything in this message and do not ask about any part of the topic. In ONE short, friendly line, ask her: would she like you to explain the rest of this point quickly? It must be a single yes-or-no question — do not add "or shall we move on" or any second option. That question is the whole message.`);
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts));
     } else if (decision.kind === 'fact') {
       lines.push(`${decision.askedForMore ? `She asked you to explain the rest, so keep going with this key point. ` : ''}${_toldLine(decision.toldNow) || (decision.askedForMore ? '' : `Acknowledge her reply naturally in one short sentence. `)}Then carry on with the same key point: teach the next part of it, named below, in AT MOST TWO SENTENCES, then ask one question about that part. Teach only this part now — the other parts come later. Do not answer your own question.`);
@@ -1001,6 +1001,10 @@ const Teach = (() => {
   // isn't clearly a request for more.
   function _wantsMore(text) {
     const t = String(text || '');
+    // The check-in is a yes/no question ("would you like me to explain the
+    // rest?"), so a yes means more — unless she says in the same breath to move on.
+    if (/^\W*(yes|yeah|yep|yup|yea|sure|ok|okay|please|go on|go ahead)\b/i.test(t)
+        && !/\b(move on|next|ready)\b/i.test(t)) return true;
     if (/\b(explain|explanation|more|the rest|again|go over|elaborate|unpack|confus|don'?t (get|understand)|not sure|unsure|lost)\b/i.test(t)) return true;
     return false;
   }
@@ -1068,7 +1072,7 @@ const Teach = (() => {
     const remaining = () => point.facts.map((f, j) => j).filter(j => !answered[j] && !told[j]);
     const engaged = point.facts.some((f, j) => answered[j] && !cur.answered[j]);
 
-    // She is answering the check-in ("explain the rest, or move on?"). If she
+    // She is answering the check-in ("explain the rest?" — yes/no). If she
     // actually answered a part instead, that counts and the lesson carries on
     // normally — only a non-answer is read as a choice.
     if (_state.checkinAsked && !engaged) {

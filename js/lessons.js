@@ -15,7 +15,7 @@ const Lessons = (() => {
   let _stepCpDone         = false; // checkpoint answered this step
 
   // Lessons that open in conversational Teach mode instead of the slide view.
-  const TEACH_ENABLED = ['b3-defences'];
+  const TEACH_ENABLED = ['b3-defences', 'g5-development'];
 
   // ── Open a lesson ─────────────────────────────────────────
   async function open(subtopicId, subtopicName, topicCode, subject = 'biology') {

@@ -394,6 +394,7 @@ function showSubjectPicker() {
     { id: 'chemistry', label: 'Chemistry',   icon: '⚗️', sub: 'AQA Separate Science', available: true  },
     { id: 'physics',   label: 'Physics',     icon: '⚡', sub: 'AQA Separate Science', available: true  },
     { id: 'maths',     label: 'Maths',       icon: '📐', sub: 'AQA · GCSE Maths',                    available: true  },
+    { id: 'geography', label: 'Geography',   icon: '🌍', sub: 'GCSE Geography',                       available: true  },
     { id: 'english',   label: 'English Lit', icon: '📚', sub: 'Coming soon',                          available: false },
   ];
 
@@ -472,7 +473,7 @@ function showTopics() {
   App.setStage('Topics');
   _progress = Store.getProgress();
 
-  const _subjectMeta = { biology:'🧬 Biology', chemistry:'⚗️ Chemistry', physics:'⚡ Physics', maths:'📐 Maths', english:'📚 English', history:'🏛️ History' };
+  const _subjectMeta = { biology:'🧬 Biology', chemistry:'⚗️ Chemistry', physics:'⚡ Physics', maths:'📐 Maths', geography:'🌍 Geography', english:'📚 English', history:'🏛️ History' };
   const subjectLabel = _subjectMeta[_activeSubject] || _activeSubject;
 
   const main = document.getElementById('main');

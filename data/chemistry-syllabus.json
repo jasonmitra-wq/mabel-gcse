@@ -11,11 +11,11 @@
       "paper": 1,
       "available": true,
       "subtopics": [
-        { "id": "c1-atomic-structure",  "name": "Atomic structure — protons, neutrons and electrons",       "available": true  },
-        { "id": "c1-periodic-table",    "name": "The periodic table — how it's organised and why",          "available": true  },
-        { "id": "c1-elements-compounds","name": "Elements, compounds and mixtures",                         "available": true },
-        { "id": "c1-isotopes",          "name": "Isotopes and relative atomic mass",                        "available": true },
-        { "id": "c1-electron-config",   "name": "Electron configuration and the periodic table",            "available": true }
+        { "id": "c1-atomic-structure",  "name": "Atomic structure — protons, neutrons and electrons",       "available": true, "specRef": ["4.1.1.3", "4.1.1.4", "4.1.1.5", "4.1.1.6"]  },
+        { "id": "c1-periodic-table",    "name": "The periodic table — how it's organised and why",          "available": true, "specRef": ["4.1.2.1", "4.1.2.2", "4.1.2.3", "4.1.2.4", "4.1.2.5", "4.1.2.6"]  },
+        { "id": "c1-elements-compounds","name": "Elements, compounds and mixtures",                         "available": true, "specRef": ["4.1.1.1", "4.1.1.2"] },
+        { "id": "c1-isotopes",          "name": "Isotopes and relative atomic mass",                        "available": true, "specRef": ["4.1.1.5", "4.1.1.6", "4.3.1.2"] },
+        { "id": "c1-electron-config",   "name": "Electron configuration and the periodic table",            "available": true, "specRef": ["4.1.1.7", "4.1.2.1", "4.2.1.1"] }
       ]
     },
     "C2": {
@@ -26,11 +26,11 @@
       "paper": 1,
       "available": true,
       "subtopics": [
-        { "id": "c2-ionic-bonding",     "name": "Ionic bonding — how ions form and hold together",          "available": true  },
-        { "id": "c2-covalent-bonding",  "name": "Covalent bonding — sharing electrons",                    "available": true  },
-        { "id": "c2-metallic-bonding",  "name": "Metallic bonding — why metals conduct",                   "available": true },
-        { "id": "c2-giant-structures",  "name": "Giant structures — diamond, graphite, metals",             "available": true },
-        { "id": "c2-nanoparticles",     "name": "Nanoparticles and their uses",                             "available": true }
+        { "id": "c2-ionic-bonding",     "name": "Ionic bonding — how ions form and hold together",          "available": true, "specRef": ["4.2.1.1", "4.2.1.2", "4.2.1.3", "4.2.2.3"]  },
+        { "id": "c2-covalent-bonding",  "name": "Covalent bonding — sharing electrons",                    "available": true, "specRef": ["4.2.1.4", "4.2.2.4", "4.2.2.6", "4.2.3.1", "4.2.3.2"]  },
+        { "id": "c2-metallic-bonding",  "name": "Metallic bonding — why metals conduct",                   "available": true, "specRef": ["4.2.1.5", "4.2.2.7", "4.2.2.8", "4.10.3.2"] },
+        { "id": "c2-giant-structures",  "name": "Giant structures — diamond, graphite, metals",             "available": true, "specRef": ["4.2.1.3", "4.2.2.3", "4.2.2.6", "4.2.3.1", "4.2.3.2", "4.2.3.3"] },
+        { "id": "c2-nanoparticles",     "name": "Nanoparticles and their uses",                             "available": true, "specRef": ["4.2.4.1", "4.2.4.2"] }
       ]
     },
     "C3": {
@@ -41,9 +41,9 @@
       "paper": 1,
       "available": true,
       "subtopics": [
-        { "id": "c3-moles",             "name": "The mole — counting particles in chemistry",               "available": true },
-        { "id": "c3-conservation",      "name": "Conservation of mass and balanced equations",              "available": true },
-        { "id": "c3-concentration",     "name": "Concentration of solutions",                               "available": true }
+        { "id": "c3-moles",             "name": "The mole — counting particles in chemistry",               "available": true, "specRef": ["4.3.2.1", "4.3.2.2", "4.3.2.4", "4.3.3.1", "4.3.3.2", "4.3.5"] },
+        { "id": "c3-conservation",      "name": "Conservation of mass and balanced equations",              "available": true, "specRef": ["4.3.1.1", "4.3.1.3", "4.3.2.2"] },
+        { "id": "c3-concentration",     "name": "Concentration of solutions",                               "available": true, "specRef": ["4.3.2.5", "4.3.4", "4.4.2.5"] }
       ]
     },
     "C4": {
@@ -54,10 +54,10 @@
       "paper": 1,
       "available": true,
       "subtopics": [
-        { "id": "c4-reactivity-series", "name": "The reactivity series — who beats who?",                   "available": true  },
-        { "id": "c4-acids-bases",       "name": "Acids, bases and neutralisation",                          "available": true  },
-        { "id": "c4-electrolysis",      "name": "Electrolysis — splitting compounds with electricity",      "available": true  },
-        { "id": "c4-redox",             "name": "Oxidation and reduction (redox)",                          "available": true }
+        { "id": "c4-reactivity-series", "name": "The reactivity series — who beats who?",                   "available": true, "specRef": ["4.4.1.2", "4.4.1.3"]  },
+        { "id": "c4-acids-bases",       "name": "Acids, bases and neutralisation",                          "available": true, "specRef": ["4.4.2.1", "4.4.2.2", "4.4.2.3", "4.4.2.4", "4.4.2.5", "4.4.2.6"]  },
+        { "id": "c4-electrolysis",      "name": "Electrolysis — splitting compounds with electricity",      "available": true, "specRef": ["4.4.3.1", "4.4.3.2", "4.4.3.3", "4.4.3.4", "4.4.3.5"]  },
+        { "id": "c4-redox",             "name": "Oxidation and reduction (redox)",                          "available": true, "specRef": ["4.4.1.1", "4.4.1.4"] }
       ]
     },
     "C5": {
@@ -68,9 +68,9 @@
       "paper": 1,
       "available": true,
       "subtopics": [
-        { "id": "c5-exo-endo",          "name": "Exothermic and endothermic reactions",                     "available": true },
-        { "id": "c5-bond-energies",     "name": "Bond energies — why reactions release or absorb heat",    "available": true },
-        { "id": "c5-cells-batteries",   "name": "Cells and batteries — chemical energy to electrical",     "available": true }
+        { "id": "c5-exo-endo",          "name": "Exothermic and endothermic reactions",                     "available": true, "specRef": ["4.5.1.1", "4.5.1.2"] },
+        { "id": "c5-bond-energies",     "name": "Bond energies — why reactions release or absorb heat",    "available": true, "specRef": ["4.5.1.3"] },
+        { "id": "c5-cells-batteries",   "name": "Cells and batteries — chemical energy to electrical",     "available": true, "specRef": ["4.5.2.1", "4.5.2.2"] }
       ]
     },
     "C6": {
@@ -81,9 +81,9 @@
       "paper": 1,
       "available": true,
       "subtopics": [
-        { "id": "c6-rate-factors",      "name": "What affects the rate of a reaction?",                    "available": true },
-        { "id": "c6-collision-theory",  "name": "Collision theory — why faster means more",                "available": true },
-        { "id": "c6-equilibrium",       "name": "Reversible reactions and equilibrium",                     "available": true }
+        { "id": "c6-rate-factors",      "name": "What affects the rate of a reaction?",                    "available": true, "specRef": ["4.6.1.1", "4.6.1.2", "4.6.1.4"] },
+        { "id": "c6-collision-theory",  "name": "Collision theory — why faster means more",                "available": true, "specRef": ["4.6.1.3", "4.6.1.4"] },
+        { "id": "c6-equilibrium",       "name": "Reversible reactions and equilibrium",                     "available": true, "specRef": ["4.6.2.1", "4.6.2.2", "4.6.2.3", "4.6.2.4", "4.6.2.5", "4.6.2.6", "4.6.2.7", "4.10.4.1"] }
       ]
     },
     "C7": {
@@ -94,10 +94,10 @@
       "paper": 2,
       "available": true,
       "subtopics": [
-        { "id": "c7-crude-oil",         "name": "Crude oil — fractional distillation and fractions",       "available": true },
-        { "id": "c7-alkanes",           "name": "Alkanes — structure, naming and combustion",               "available": true },
-        { "id": "c7-alkenes",           "name": "Alkenes — double bonds, addition reactions, polymers",    "available": true },
-        { "id": "c7-polymers",          "name": "Polymers — addition and condensation",                    "available": true }
+        { "id": "c7-crude-oil",         "name": "Crude oil — fractional distillation and fractions",       "available": true, "specRef": ["4.7.1.1", "4.7.1.2", "4.7.1.3", "4.7.1.4"] },
+        { "id": "c7-alkanes",           "name": "Alkanes — structure, naming and combustion",               "available": true, "specRef": ["4.7.1.1", "4.7.1.3", "4.9.3.1"] },
+        { "id": "c7-alkenes",           "name": "Alkenes — double bonds, addition reactions, polymers",    "available": true, "specRef": ["4.7.1.4", "4.7.2.1", "4.7.2.2", "4.7.3.1"] },
+        { "id": "c7-polymers",          "name": "Polymers — addition and condensation",                    "available": true, "specRef": ["4.7.3.1", "4.7.3.2"] }
       ]
     },
     "C8": {
@@ -108,9 +108,9 @@
       "paper": 2,
       "available": true,
       "subtopics": [
-        { "id": "c8-purity",            "name": "Purity, formulations and chromatography",                 "available": true },
-        { "id": "c8-gas-tests",         "name": "Testing for gases — hydrogen, oxygen, CO₂, chlorine",    "available": true },
-        { "id": "c8-flame-tests",       "name": "Flame tests and identifying ions",                        "available": true }
+        { "id": "c8-purity",            "name": "Purity, formulations and chromatography",                 "available": true, "specRef": ["4.8.1.1", "4.8.1.2", "4.8.1.3", "4.8.3.6"] },
+        { "id": "c8-gas-tests",         "name": "Testing for gases — hydrogen, oxygen, CO₂, chlorine",    "available": true, "specRef": ["4.8.2.1", "4.8.2.2", "4.8.2.3", "4.8.2.4"] },
+        { "id": "c8-flame-tests",       "name": "Flame tests and identifying ions",                        "available": true, "specRef": ["4.8.3.1", "4.8.3.3", "4.8.3.4", "4.8.3.5"] }
       ]
     },
     "C9": {
@@ -121,9 +121,9 @@
       "paper": 2,
       "available": true,
       "subtopics": [
-        { "id": "c9-atmosphere",        "name": "Earth's atmosphere — where it came from",                 "available": true },
-        { "id": "c9-greenhouse",        "name": "Greenhouse gases and climate change",                     "available": true },
-        { "id": "c9-air-pollution",     "name": "Air pollution — causes and effects",                      "available": true }
+        { "id": "c9-atmosphere",        "name": "Earth's atmosphere — where it came from",                 "available": true, "specRef": ["4.9.1.1", "4.9.1.2", "4.9.1.3", "4.9.1.4"] },
+        { "id": "c9-greenhouse",        "name": "Greenhouse gases and climate change",                     "available": true, "specRef": ["4.9.2.1", "4.9.2.2", "4.9.2.3"] },
+        { "id": "c9-air-pollution",     "name": "Air pollution — causes and effects",                      "available": true, "specRef": ["4.9.3.1", "4.9.3.2"] }
       ]
     },
     "C10": {
@@ -134,9 +134,9 @@
       "paper": 2,
       "available": true,
       "subtopics": [
-        { "id": "c10-finite-resources", "name": "Finite and renewable resources",                          "available": true },
-        { "id": "c10-water",            "name": "Water treatment and potable water",                       "available": true },
-        { "id": "c10-life-cycle",       "name": "Life cycle assessments",                                  "available": true }
+        { "id": "c10-finite-resources", "name": "Finite and renewable resources",                          "available": true, "specRef": ["4.10.1.1"] },
+        { "id": "c10-water",            "name": "Water treatment and potable water",                       "available": true, "specRef": ["4.10.1.2"] },
+        { "id": "c10-life-cycle",       "name": "Life cycle assessments",                                  "available": true, "specRef": ["4.10.2.1", "4.10.2.2"] }
       ]
     }
   }

@@ -27,7 +27,12 @@ open shared-code fault.
 | P6 Waves | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | p6-em-spectrum 'molecular bonds' (UV) checked and correct; 'bonded' ×3 → forces between particles, verified a6fd3c1 |
 | P7 Magnetism | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | iron-as-permanent-magnet error, solenoid poles, misplaced DC mistake corrected, verified a6fd3c1 |
 
+Spec coverage: 25 of 30 sections mapped (tools/spec-coverage.md)
+
 ## Biology, Chemistry, Geography, Sociology
+
+Biology spec coverage: 20 of 24 sections mapped (tools/spec-coverage.md)
+Chemistry spec coverage: 31 of 32 sections mapped (tools/spec-coverage.md)
 
 Not started on the pipeline. Already in place:
 - b3-defences: teach mode on; 5 diagrams. Built before the pipeline existed —
@@ -60,6 +65,7 @@ Not started on the pipeline. Already in place:
 | 8 | Maths bank: 600 questions; marks ≠ step count (87); none has sample answer verified by recomputation; 38 have no sampleAnswer (trig, vectors, circle theorems) | js/maths-questions.js | open — maths track |
 | 9 | 5 lessons outside Physics still name Mabel | scanner | closes as each subject is rewritten |
 | 10 | Slide renderer _tryRenderAsList cuts the text before an auto-list to one sentence of ≤15 words and drops exam-language sentences, so slides can show less than the lesson file. 0 Physics lines trigger it; 68 key-point lines in other subjects do. | js/lessons.js _tryRenderAsList, _renderKpList | open — fix before the Biology rewrite |
+| 11 | Physics syllabus has no Space physics topic (spec 4.8). Physics cannot be finished until it exists. | data/physics-syllabus.json, lessons/physics | open — new content, not a rewrite |
 
 ## Tools
 
@@ -68,12 +74,16 @@ Not started on the pipeline. Already in place:
 - tools/plain-english-rules.md — rewrite rules
 - tools/fix-board-refs.js — one-off, already run
 - tools/spec-check.js — TO BUILD (check C)
+- tools/extract-spec.py — spec PDF section 4 → data/spec/<subject>.md (spec text local only, not committed)
+- tools/check-spec-sections.py — independent check that every numbered spec section reached the .md
+- tools/spec-coverage.js — specRef coverage report → tools/spec-coverage.md
+- data/spec/MANIFEST.md — source URL, version, md5s and section counts for the local spec text
 - tools/teach-sim.js — TO BUILD (check D)
 - .claude/agents/lesson-auditor.md — independent lesson auditor (subagent); findings in tools/audit-runs/
 
 ## Next
 
-1. Spec text into data/spec/ and a specRef on every subtopic (section 7 step 3).
+1. Verify specRefs, then tools/spec-check.js (section 7 step 4).
 2. Build order, section 7 of the instructions: open defects 1–5; spec text
    into data/spec/; spec-check.js; teach-sim.js; scanner additions.
 3. Then Physics through C and D, topic by topic, until every Physics row is ✓.

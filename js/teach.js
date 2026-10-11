@@ -901,7 +901,7 @@ const Teach = (() => {
         : '',
       teachIdx == null ? '' : `Teach ONLY the key point given below, using only its own content and key terms. Do not bring in, name or preview material from any other key point, even if the conversation heads that way. If she asks about something from a later key point, answer in one short line, tell her it is coming up soon, and return to the current point's question.`,
       _laterPointsLine(teachIdx),
-      `Rules: explain ideas a little at a time in plain, friendly language. Ask exactly ONE question at a time and never present a list of options for her to pick from. Keep every reply very short — one to three sentences before your question, no more than about 60 words total. If she asks about something off-topic or unrelated, answer it briefly and kindly, then guide her back to the lesson — never refuse to answer and never tell her to stay focused or scold her for going off-topic.`,
+      `Rules: explain ideas a little at a time in plain, friendly language. Ask exactly ONE question at a time and never present a list of options for her to pick from. Keep every reply very short — one to three sentences before your question, no more than about 60 words total. If she asks about something off-topic or unrelated, answer it briefly and kindly, then guide her back to the lesson — never refuse to answer and never tell her to stay focused or scold her for going off-topic. Never open a reply by praising or rating what she said — no 'Great question', 'Good question', 'Great!', 'Nice!', 'Love that'. Only call something a question if she actually asked one. Praise only a correct answer, and then say briefly what was right, e.g. 'Right — they vibrate in place.'`,
       `Every question you ask must be answerable in one or two words, and its answer must be unambiguous. Ask one thing only. Never join two questions with "or" — "does that make sense, or shall I explain it differently?" cannot be answered by "no". HARD RULE: a question about the content must never be answerable with "yes" or "no". Never start it with do, does, is, are, can, could, will or would — not "can you tell me what happens?", not "do particles in a gas move faster?", not "is it A or B?". Ask what, which, why, how, where or when, so the answer is a specific word or short phrase. If you want to check she has followed you, ask a question about the content itself rather than about her understanding. If you genuinely need to offer her a choice between two things, ask about only one of them: "would you like me to explain that differently?" — and let her say yes or no.`,
     ].filter(Boolean).join('\n');
   }
@@ -964,6 +964,14 @@ const Teach = (() => {
     return m ? m[0].trim() : '';
   }
 
+  // A stock opener ("Good point!") praises nothing in particular — and is
+  // wrong when she didn't ask a question. Dropped from every reply; if that
+  // would leave nothing, the reply is kept as it was.
+  const STOCK_PRAISE = /^\s*(?:what an?\s+)?(?:great|good|excellent|brilliant|fantastic|awesome|nice|lovely)\s+(?:question|point|thinking|thought)\s*[!.]\s*/i;
+  function _stripStockPraise(text) {
+    return String(text || '').replace(STOCK_PRAISE, '') || text;
+  }
+
   // Every attempt is checked, including the shortened ones. The earlier version
   // checked only the first reply and returned the shortened retry unseen, so a
   // retry that hit its own token cap was shown cut off mid-sentence.
@@ -989,13 +997,13 @@ const Teach = (() => {
       const cut = _looksTruncated(plain);
       const long = !cut && _wordCount(plain) > a.words;
       yesNo = noYesNo && _asksYesNo(plain);
-      if (!cut && !long && !yesNo) return reply;
+      if (!cut && !long && !yesNo) return _stripStockPraise(reply);
       if (!cut && !yesNo && !complete) complete = reply; // finished, just long — usable if nothing better
       if (cut || long) level = Math.min(level + 1, limits.length - 1);
     }
     // Never show a sentence that stops dead: prefer a complete-but-long reply,
     // otherwise drop the unfinished tail of the last one.
-    return complete || _trimToLastSentence(last) || last;
+    return _stripStockPraise(complete || _trimToLastSentence(last) || last);
   }
 
   // ── "Worth writing down" recap ───────────────────────────────

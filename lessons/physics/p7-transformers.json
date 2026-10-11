@@ -2,28 +2,28 @@
   "id": "p7-transformers",
   "title": "Transformers and the national grid",
   "topic": "P7",
-  "examTip": "Transformers only work with AC — a changing current in the primary creates a changing magnetic field, which induces an EMF in the secondary. DC produces no change, so no induction. Always state this in transformer questions.",
+  "examTip": "Transformers only work with AC. A changing current in the primary creates a changing magnetic field. This induces an EMF in the secondary. DC makes no change, so there is no induction. Always say this in transformer questions.",
   "introTips": [
-    "A transformer changes the voltage of an alternating current — it does not work with DC.",
-    "Step-up transformer: more turns on secondary → higher output voltage.",
-    "Step-down transformer: fewer turns on secondary → lower output voltage.",
-    "The transformer equation: Vp/Vs = Np/Ns — voltages are proportional to the number of turns.",
-    "The national grid transmits at very high voltage to reduce current — less current means less power wasted as heat."
+    "A transformer changes the voltage of an alternating current. It does not work with DC.",
+    "Step-up transformer: more turns on the secondary → a higher output voltage.",
+    "Step-down transformer: fewer turns on the secondary → a lower output voltage.",
+    "The transformer equation is Vp/Vs = Np/Ns. The voltages are proportional to the numbers of turns.",
+    "The national grid sends electricity at very high voltage to reduce the current. Less current means less power wasted as heat."
   ],
-  "intro": "Electricity generated at a power station might be produced at around 25,000 V, but by the time it reaches a pylon it's been stepped up to 400,000 V — and by the time it reaches your socket at home it's back down to 230 V. That entire journey is managed by transformers, and the reason for those voltage changes is all about reducing waste. Transmitting electricity at high voltage keeps current low, and low current means less energy lost as heat in the cables. Without transformers, the national grid would waste so much energy in transmission that our electricity would be far more expensive and far less sustainable. Transformers are one of the most important practical applications in all of physics.",
+  "intro": "A power station might make electricity at around 25,000 V. By the time it reaches a pylon, it has been stepped up to 400,000 V. By the time it reaches your socket at home, it is back down to 230 V. Transformers manage that whole journey. The voltage changes are all about cutting waste. Sending electricity at high voltage keeps the current low. A low current means less energy is lost as heat in the cables. Without transformers, the national grid would waste so much energy that our electricity would cost far more. It would also be far less sustainable. Transformers are one of the most important practical uses of physics.",
   "keyPoints": [
     {
       "heading": "How a transformer works",
-      "content": "A transformer consists of two coils of wire — the <strong>primary coil</strong> and the <strong>secondary coil</strong> — wound around a shared <strong>iron core</strong>. Alternating current (AC) in the primary coil creates a <strong>continuously changing magnetic field</strong> in the iron core. This changing field passes through the secondary coil and, by <strong>electromagnetic induction</strong>, induces an alternating EMF (and therefore AC) in the secondary coil. The iron core is used because iron is a good magnetic conductor — it channels the magnetic field efficiently from primary to secondary. <strong>Transformers only work with AC</strong>: direct current (DC) produces a constant magnetic field which does not change, so no EMF is induced in the secondary. If the secondary has more turns than the primary, the output voltage is higher (step-up). If fewer turns, the voltage is lower (step-down).",
+      "content": "A transformer has two coils of wire, the <strong>primary coil</strong> and the <strong>secondary coil</strong>. Both are wound around a shared <strong>iron core</strong>.\n\nAlternating current (AC) in the primary coil creates a <strong>continuously changing magnetic field</strong> in the iron core. This changing field passes through the secondary coil. By <strong>electromagnetic induction</strong>, it induces an alternating EMF in the secondary coil, and so an AC.\n\nThe core is made of iron because iron is a good magnetic conductor. It carries the magnetic field efficiently from the primary to the secondary.\n\n<strong>Transformers only work with AC</strong>. Direct current (DC) makes a constant magnetic field that does not change. So no EMF is induced in the secondary.\n\nIf the secondary has more turns than the primary, the output voltage is higher (step-up). If it has fewer turns, the voltage is lower (step-down).",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Primary coil → AC → changing magnetic field in iron core",
-        "Changing field induces AC EMF in secondary coil (electromagnetic induction)",
-        "Iron core — channels magnetic field efficiently from primary to secondary",
-        "Only works with AC — DC gives no changing field, so no induction",
-        "More turns on secondary → higher voltage (step-up); fewer → lower voltage (step-down)"
+        "Primary coil → AC → a changing magnetic field in the iron core",
+        "The changing field induces an AC EMF in the secondary coil (electromagnetic induction)",
+        "Iron core — carries the magnetic field efficiently from the primary to the secondary",
+        "Only works with AC. DC gives no changing field, so no induction",
+        "More turns on the secondary → a higher voltage (step-up). Fewer → a lower voltage (step-down)"
       ],
       "keyTerms": [
         {
@@ -43,21 +43,21 @@
           "def": "The shared core of a transformer that channels the changing magnetic field between primary and secondary coils"
         }
       ],
-      "memTip": "Transformer = Primary coil (AC in) → changing field in iron core → Secondary coil (AC out at new voltage). Must be AC — no change, no induction.",
-      "tutor_note": "Students often say 'the transformer generates electricity' — clarify that it does not create electrical energy; it transfers it from primary to secondary at a different voltage, using induction."
+      "memTip": "Transformer = primary coil (AC in) → changing field in the iron core → secondary coil (AC out at a new voltage). It must be AC. No change, no induction.",
+      "tutor_note": "People often say 'the transformer generates electricity'. It does not create electrical energy. It uses induction to pass energy from the primary to the secondary, at a different voltage."
     },
     {
       "heading": "The transformer equation",
-      "content": "The relationship between voltages and turns in a transformer is: <strong>Vp/Vs = Np/Ns</strong>. Where Vp = primary (input) voltage (V), Vs = secondary (output) voltage (V), Np = number of turns on primary coil, Ns = number of turns on secondary coil. Rearrangements: <strong>Vs = Vp × (Ns/Np)</strong> or <strong>Np/Ns = Vp/Vs</strong>. Worked example 1: primary voltage = 230 V, primary turns = 100, secondary turns = 1000 → Vs = 230 × (1000/100) = <strong>2300 V</strong> (step-up). Worked example 2: primary voltage = 11,000 V, primary turns = 500, secondary turns = 25 → Vs = 11,000 × (25/500) = <strong>550 V</strong> (step-down). A transformer with more secondary turns than primary is a <strong>step-up</strong> transformer; fewer secondary turns = <strong>step-down</strong>.",
+      "content": "The link between voltages and turns in a transformer is: <strong>Vp/Vs = Np/Ns</strong>.\n- Vp = primary (input) voltage (V)\n- Vs = secondary (output) voltage (V)\n- Np = number of turns on the primary coil\n- Ns = number of turns on the secondary coil\n\nRearrangements: <strong>Vs = Vp × (Ns/Np)</strong> or <strong>Np/Ns = Vp/Vs</strong>.\n\nWorked example 1: primary voltage = 230 V, primary turns = 100, secondary turns = 1000 → Vs = 230 × (1000/100) = <strong>2300 V</strong> (step-up).\n\nWorked example 2: primary voltage = 11,000 V, primary turns = 500, secondary turns = 25 → Vs = 11,000 × (25/500) = <strong>550 V</strong> (step-down).\n\nA transformer with more secondary turns than primary turns is a <strong>step-up</strong> transformer. Fewer secondary turns = <strong>step-down</strong>.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "Transformer equation: Vp/Vs = Np/Ns",
-        "Step-up: Ns > Np → Vs > Vp (output voltage higher than input)",
-        "Step-down: Ns < Np → Vs < Vp (output voltage lower than input)",
+        "Step-up: Ns > Np → Vs > Vp (the output voltage is higher than the input)",
+        "Step-down: Ns < Np → Vs < Vp (the output voltage is lower than the input)",
         "Rearrangement: Vs = Vp × (Ns/Np)",
-        "Units: voltages in V; turns are dimensionless (just a ratio)"
+        "Units: voltages in V. Turns have no unit (they are just a ratio)"
       ],
       "keyTerms": [
         {
@@ -74,20 +74,20 @@
         }
       ],
       "memTip": "Vp/Vs = Np/Ns. Think of it as 'primary over secondary = primary turns over secondary turns'.",
-      "tutor_note": "Students frequently invert the ratio — write it as Vp/Vs = Np/Ns and stress that the same side of the transformer always goes together: primary voltage with primary turns, secondary with secondary."
+      "tutor_note": "It is easy to write the ratio upside down. Write it as Vp/Vs = Np/Ns. The same side of the transformer always goes together: primary voltage with primary turns, and secondary with secondary."
     },
     {
       "heading": "Power in a transformer — the power equation",
-      "content": "For an <strong>ideal (100% efficient) transformer</strong>, power in equals power out: <strong>VpIp = VsIs</strong>. Where Ip = primary current (A) and Is = secondary current (A). This means if a step-up transformer increases voltage, the current must decrease proportionally (so that power is conserved). If a step-down transformer decreases voltage, current increases. Example: a transformer steps voltage from 230 V to 11,500 V (50× increase) with primary current 20 A. Secondary current = (230 × 20) ÷ 11,500 = 4600 ÷ 11,500 = <strong>0.4 A</strong>. The current dropped by a factor of 50 as the voltage increased by 50 — power is conserved. Real transformers are not perfectly efficient (some energy is lost as thermal energy in coils and in the iron core due to eddy currents), but GCSE calculations assume 100% efficiency unless told otherwise.",
+      "content": "For an <strong>ideal (100% efficient) transformer</strong>, power in equals power out: <strong>VpIp = VsIs</strong>. Here Ip = primary current (A) and Is = secondary current (A).\n\nSo if a step-up transformer increases the voltage, the current must decrease in proportion. That way the power is conserved. If a step-down transformer decreases the voltage, the current increases.\n\nExample: a transformer steps the voltage up from 230 V to 11,500 V (a 50× increase). The primary current is 20 A. Secondary current = (230 × 20) ÷ 11,500 = 4600 ÷ 11,500 = <strong>0.4 A</strong>. The current fell by a factor of 50 as the voltage rose by 50. Power is conserved.\n\nReal transformers are not perfectly efficient. Some energy is lost as thermal energy in the coils, and in the iron core because of eddy currents. But GCSE calculations assume 100% efficiency unless you are told otherwise.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "Power equation (ideal transformer): VpIp = VsIs",
-        "Step-up voltage → current decreases proportionally (power conserved)",
-        "Step-down voltage → current increases proportionally",
+        "Step-up voltage → the current decreases in proportion (power conserved)",
+        "Step-down voltage → the current increases in proportion",
         "Rearrangement: Is = (VpIp) ÷ Vs",
-        "Real transformers lose some energy as heat (eddy currents in core); GCSE assumes 100% efficient"
+        "Real transformers lose some energy as heat (eddy currents in the core). GCSE assumes 100% efficiency"
       ],
       "keyTerms": [
         {
@@ -95,20 +95,20 @@
           "def": "The power equation for an ideal transformer — input power equals output power; voltage and current change in opposite directions"
         }
       ],
-      "memTip": "VpIp = VsIs — both sides equal the same power (in watts). If voltage goes up 10×, current must go down 10× to keep power the same.",
-      "tutor_note": "Students often try to use VpIp = VsIs and Vp/Vs = Np/Ns in the same calculation simultaneously — walk through each step separately: find the voltage change first, then use power conservation to find the current."
+      "memTip": "VpIp = VsIs. Both sides equal the same power (in watts). If the voltage goes up 10×, the current must go down 10× to keep the power the same.",
+      "tutor_note": "It is tempting to use VpIp = VsIs and Vp/Vs = Np/Ns both at once. Take each step separately. Find the voltage change first. Then use power conservation to find the current."
     },
     {
       "heading": "The national grid — why high voltage?",
-      "content": "The <strong>national grid</strong> is the network of cables, pylons, and substations that distributes electrical power from power stations to homes and businesses across the UK. Power is transmitted at very <strong>high voltage</strong> (around 400,000 V) and therefore very <strong>low current</strong>. The reason: power loss in cables is given by <strong>P = I²R</strong>. Because current is squared, even a small reduction in current dramatically reduces power lost as heat. For a cable with resistance R: halving the current reduces power loss by a factor of 4. By stepping up to 400 kV, current drops to tiny values — and power loss in the cables drops massively, making transmission far more efficient. <strong>Step-up transformers</strong> increase voltage from the power station (~25 kV) to the grid (~400 kV). <strong>Step-down transformers</strong> at local substations reduce voltage for homes (230 V) and factories (e.g. 33 kV or 11 kV).",
+      "content": "The <strong>national grid</strong> is the network of cables, pylons and substations. It carries electrical power from power stations to homes and businesses across the UK.\n\nPower is sent at very <strong>high voltage</strong> (around 400,000 V), and so at very <strong>low current</strong>. The reason is that power loss in cables is given by <strong>P = I²R</strong>. The current is squared. So even a small cut in current hugely reduces the power lost as heat. For a cable with resistance R, halving the current cuts the power loss by a factor of 4.\n\nStepping up to 400 kV makes the current tiny. So the power lost in the cables drops hugely. This makes transmission far more efficient.\n- <strong>Step-up transformers</strong> raise the voltage from the power station (~25 kV) to the grid (~400 kV).\n- <strong>Step-down transformers</strong> at local substations lower the voltage for homes (230 V) and factories (for example, 33 kV or 11 kV).",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "National grid transmits at ~400,000 V (very high voltage, very low current)",
-        "High voltage → low current → less power wasted as heat in cables (P = I²R)",
-        "P = I²R: power loss proportional to current squared — halve current, cut losses by 4",
-        "Step-up transformers at power station: ~25 kV → ~400 kV",
+        "The national grid sends power at ~400,000 V (very high voltage, very low current)",
+        "High voltage → low current → less power wasted as heat in the cables (P = I²R)",
+        "P = I²R: power loss is proportional to current squared. Halve the current, and losses fall by 4",
+        "Step-up transformers at the power station: ~25 kV → ~400 kV",
         "Step-down transformers at substations: ~400 kV → 230 V for homes"
       ],
       "keyTerms": [
@@ -121,8 +121,8 @@
           "def": "Power lost as heat in a conductor = current squared × resistance; explains why high voltage (low current) transmission wastes less energy"
         }
       ],
-      "memTip": "High voltage = low current = less power wasted (P = I²R). The grid uses high voltage because current is squared in the power loss equation — tiny current = tiny losses.",
-      "tutor_note": "This is a very common 4–6 mark question. Students should state: step-up transformer → high voltage → lower current → P=I²R → less power wasted as heat in cables. Each step must be linked explicitly."
+      "memTip": "High voltage = low current = less power wasted (P = I²R). The grid uses high voltage because current is squared in the power loss equation. A tiny current = tiny losses.",
+      "tutor_note": "This is a very common 4–6 mark question. Give the full chain: step-up transformer → high voltage → lower current → P=I²R → less power wasted as heat in cables. Link each step clearly."
     }
   ],
   "tables": [],
@@ -130,14 +130,14 @@
     "0": {
       "question": "A student connects a transformer to a DC battery instead of an AC supply. What happens?",
       "options": [
-        "No EMF is induced in the secondary coil — DC produces a constant field with no change to induce an EMF",
+        "No EMF is induced in the secondary coil. DC makes a constant field, with no change to induce an EMF",
         "The secondary coil produces a higher DC voltage",
-        "The transformer works normally but less efficiently",
+        "The transformer works normally, but less efficiently",
         "The iron core magnetises permanently and becomes a strong magnet"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! Transformers only work with AC. DC produces a constant (unchanging) magnetic field in the core — no change means no electromagnetic induction, so no EMF in the secondary.",
-      "wrongFeedback": "Transformers require AC. DC gives a constant magnetic field — no change in the field means no induction in the secondary coil. Without a changing field, no EMF is induced."
+      "correctFeedback": "Correct! Transformers only work with AC. DC makes a constant (unchanging) magnetic field in the core. No change means no electromagnetic induction, so no EMF in the secondary.",
+      "wrongFeedback": "Transformers need AC. DC gives a constant magnetic field. With no change in the field, there is no induction in the secondary coil. Without a changing field, no EMF is induced."
     },
     "1": {
       "question": "A transformer has 200 turns on the primary and 1000 turns on the secondary. The primary voltage is 230 V. What is the secondary voltage?",
@@ -148,48 +148,48 @@
         "200,000 V"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! Vs = Vp × (Ns/Np) = 230 × (1000/200) = 230 × 5 = 1150 V. This is a step-up transformer (more secondary turns).",
-      "wrongFeedback": "Use: Vp/Vs = Np/Ns → Vs = Vp × (Ns/Np) = 230 × (1000/200) = 230 × 5 = 1150 V. More secondary turns = step-up = higher voltage."
+      "correctFeedback": "Correct! Vs = Vp × (Ns/Np) = 230 × (1000/200) = 230 × 5 = 1150 V. This is a step-up transformer, with more secondary turns.",
+      "wrongFeedback": "Use Vp/Vs = Np/Ns → Vs = Vp × (Ns/Np) = 230 × (1000/200) = 230 × 5 = 1150 V. More secondary turns = step-up = a higher voltage."
     },
     "3": {
       "question": "Electricity is transmitted through the national grid at very high voltage. Why does this reduce energy waste?",
       "options": [
-        "Higher voltage means lower current, and power wasted in cables is proportional to current squared (P = I²R)",
-        "Higher voltage means the electricity travels faster so less time to lose energy",
+        "Higher voltage means lower current. The power wasted in the cables is proportional to current squared (P = I²R)",
+        "Higher voltage makes the electricity travel faster, so there is less time to lose energy",
         "High voltage reduces the resistance of the cables",
         "Less electricity is used when the voltage is high"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! P = I²R — power wasted as heat is proportional to current squared. High voltage means low current, so I² is very small and cable losses are minimised.",
-      "wrongFeedback": "The key is P = I²R. High voltage → low current (power is conserved: P = VI). Lower current → much lower power loss (because I is squared). This is why the grid uses high voltage."
+      "correctFeedback": "Correct! P = I²R: the power wasted as heat is proportional to current squared. High voltage means low current. So I² is very small, and cable losses are kept low.",
+      "wrongFeedback": "The key is P = I²R. High voltage → low current, because power is conserved (P = VI). A lower current → much lower power loss, because I is squared. This is why the grid uses high voltage."
     }
   },
   "commonMistakes": [
-    "Thinking transformers work with DC — they do not; the changing magnetic field from AC is essential for electromagnetic induction to occur in the secondary coil.",
-    "Inverting the transformer equation ratio — Vp/Vs = Np/Ns; the primary voltage always pairs with primary turns, and secondary with secondary.",
-    "Forgetting that high voltage reduces current (not increases it) for the same power — power = voltage × current; if voltage goes up, current must come down to keep power constant.",
-    "Saying 'high voltage reduces resistance in cables' — voltage does not change the cable resistance; the benefit is reduced current, which reduces P = I²R losses.",
-    "Not linking the steps in a national grid explanation — students must chain: step-up transformer → high voltage → lower current → P = I²R → less power lost as heat in cables."
+    "Thinking transformers work with DC. They do not. The changing magnetic field from AC is essential for electromagnetic induction in the secondary coil.",
+    "Writing the transformer ratio upside down. It is Vp/Vs = Np/Ns. The primary voltage always pairs with the primary turns, and secondary with secondary.",
+    "Forgetting that, for the same power, high voltage reduces the current. Power = voltage × current. If the voltage goes up, the current must come down to keep the power constant.",
+    "Saying 'high voltage reduces resistance in cables'. Voltage does not change the cable resistance. The benefit is a lower current, which reduces P = I²R losses.",
+    "Not linking the steps in a national grid explanation. Give the full chain: step-up transformer → high voltage → lower current → P = I²R → less power lost as heat in cables."
   ],
   "examTips": [
-    "For transformer equation questions: write Vp/Vs = Np/Ns, identify what you know and what you need to find, then rearrange — do not try to do it in your head.",
-    "Power equation questions: VpIp = VsIs. Identify which side has the known current, then solve for the unknown.",
-    "National grid 4–6 mark questions need a clear chain of reasoning: power station → step-up transformer → high voltage/low current → cables → P=I²R → less heating → step-down transformer → consumers.",
-    "Always state that transformers only work with AC and explain why (changing field induces EMF; constant DC field does not change).",
-    "In a step-up transformer, voltage increases and current decreases. In a step-down transformer, voltage decreases and current increases. Check your answer makes sense."
+    "For transformer equation questions, write Vp/Vs = Np/Ns. Work out what you know and what you need to find. Then rearrange. Don't try to do it in your head.",
+    "Power equation questions: VpIp = VsIs. Find which side has the known current, then solve for the unknown.",
+    "National grid 4–6 mark questions need a clear chain of reasoning. Power station → step-up transformer → high voltage and low current → cables → P=I²R → less heating → step-down transformer → consumers.",
+    "Always say that transformers only work with AC, and explain why. A changing field induces an EMF. A constant DC field does not change.",
+    "In a step-up transformer, the voltage goes up and the current goes down. In a step-down transformer, the voltage goes down and the current goes up. Check your answer makes sense."
   ],
   "revisionCardBullets": [
-    "Transformer — primary coil (AC) → changing field in iron core → EMF induced in secondary coil",
-    "Only works with AC — DC gives constant field, no induction",
-    "Step-up: Ns > Np → Vs > Vp (higher output voltage)",
-    "Step-down: Ns < Np → Vs < Vp (lower output voltage)",
+    "Transformer — primary coil (AC) → a changing field in the iron core → an EMF induced in the secondary coil",
+    "Only works with AC. DC gives a constant field, so no induction",
+    "Step-up: Ns > Np → Vs > Vp (a higher output voltage)",
+    "Step-down: Ns < Np → Vs < Vp (a lower output voltage)",
     "Transformer equation: Vp/Vs = Np/Ns",
     "Power equation (ideal transformer): VpIp = VsIs",
-    "Step-up voltage → current decreases (power conserved)",
-    "National grid transmits at ~400,000 V — very high voltage, very low current",
-    "P = I²R — power wasted in cables ∝ current squared; high voltage keeps current low",
-    "Step-up at power station (~25 kV → ~400 kV); step-down at substation (→ 230 V for homes)",
-    "Real transformers lose some energy as heat; GCSE assumes 100% efficiency in calculations"
+    "Step-up voltage → the current decreases (power conserved)",
+    "The national grid sends power at ~400,000 V: very high voltage, very low current",
+    "P = I²R: power wasted in cables ∝ current squared. High voltage keeps the current low",
+    "Step-up at the power station (~25 kV → ~400 kV). Step-down at a substation (→ 230 V for homes)",
+    "Real transformers lose some energy as heat. GCSE calculations assume 100% efficiency"
   ],
   "videos": [
     {

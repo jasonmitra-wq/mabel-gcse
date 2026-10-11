@@ -24,8 +24,8 @@ open shared-code fault.
 | P3 Particle model | ✓ dd98fe9 | ✓ 9b952ab | ✓ dd98fe9 | partial: p3-particle-model only (4110010) | n/a | n/a | partial: p3-particle-model only | n/a | – | |
 | P4 Atomic structure | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | |
 | P5 Forces | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | |
-| P6 Waves | – | – | – | – | n/a | n/a | – | n/a | – | next rewrite batch |
-| P7 Magnetism | – | – | – | – | n/a | n/a | – | n/a | – | |
+| P6 Waves | rewritten, awaiting verification | rewritten, awaiting verification | rewritten, awaiting verification | – | n/a | n/a | – | n/a | – | p6-em-spectrum 'molecular bonds' (UV) checked and correct |
+| P7 Magnetism | rewritten, awaiting verification | rewritten, awaiting verification | rewritten, awaiting verification | – | n/a | n/a | – | n/a | – | |
 
 ## Biology, Chemistry, Geography, Sociology
 
@@ -55,7 +55,7 @@ Not started on the pipeline. Already in place:
 | 3 | Four maths subtopics have no matching bank ids → "coming soon" | geo-perimeter-area, geo-volume, geo-circles, prob-tree | open |
 | 4 | "AQA" on subject tiles and maths tile | js/app.js (6 hits) | open |
 | 5 | HANDOFF.md stale and misleading; 40 one-off .py scripts at repo root | repo root | open — archive to tools/archive/, don't delete |
-| 6 | Slide renderer shows "- " lines as dashed paragraphs, not bullets | js/lessons.js _fmtChunk | fixed in _formatKpContent (commit "render '- ' lines in key point content as bullet lists") |
+| 6 | Slide renderer shows "- " lines as dashed paragraphs, not bullets | js/lessons.js _fmtChunk | fixed in _formatKpContent (4943b2a) |
 | 7 | Diagram title in slide view shows the file id (no `diagrams` list in any lesson) | js/lessons.js _renderInlineDiagram | open, cosmetic |
 | 8 | Maths: marks ≠ step count (~86), no readable steps (38), no answer verified | js/maths-questions.js | open — maths track |
 | 9 | 5 lessons outside Physics still name Mabel | scanner | closes as each subject is rewritten |
@@ -71,7 +71,7 @@ Not started on the pipeline. Already in place:
 
 ## Next
 
-1. Physics P6–P7 rewrite batch (S1–S3).
+1. Open defects 1–5 (section 7 step 2).
 2. Build order, section 7 of the instructions: open defects 1–5; spec text
    into data/spec/; spec-check.js; teach-sim.js; scanner additions.
 3. Then Physics through C and D, topic by topic, until every Physics row is ✓.

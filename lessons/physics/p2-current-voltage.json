@@ -2,27 +2,27 @@
   "id": "p2-current-voltage",
   "title": "Current and voltage — the basics of every circuit",
   "topic": "P2",
-  "examTip": "Calculation questions using Q = It, V = W/Q, and R = V/I appear almost every year. I-V characteristics (especially the filament lamp and diode) are a favourite for 'describe and explain' questions — examiners want the physics reason, not just the shape.",
+  "examTip": "Questions using Q = It, V = W/Q and R = V/I come up almost every year. I-V characteristics are a favourite for 'describe and explain' questions, especially the filament lamp and diode. Examiners want the physics reason, not just the shape.",
   "introTips": [
-    "Covers electric current, potential difference, and resistance — the three quantities used in every electricity question",
-    "You'll practise rearranging Q = It, V = W/Q, and R = V/I to find any unknown",
-    "By the end you'll be able to sketch and explain I-V graphs for three different components and describe the required practical"
+    "This covers electric current, potential difference and resistance. These are the three quantities used in every electricity question",
+    "You will practise rearranging Q = It, V = W/Q and R = V/I to find any unknown",
+    "By the end, you will be able to sketch and explain I-V graphs for three different components. You will also be able to describe the required practical"
   ],
-  "intro": "Every electrical device you've ever used — phone, kettle, Christmas lights — works because charge flows around a circuit and transfers energy. Understanding current, voltage, and resistance lets you predict exactly how any circuit will behave, and those three ideas come up on almost every electricity paper. Get these right and a big chunk of Topic 2 becomes straightforward.",
+  "intro": "Every electrical device you have used works because charge flows around a circuit and transfers energy. That includes your phone, a kettle and Christmas lights. Current, voltage and resistance let you predict exactly how any circuit will behave. Those three ideas come up on almost every electricity paper. Get them right, and a big chunk of Topic 2 becomes simple.",
   "keyPoints": [
     {
       "heading": "Electric current — charge on the move",
-      "content": "Electric current is the rate of flow of <strong>electric charge</strong>. Charge is measured in <strong>coulombs (C)</strong> and current in <strong>amperes (A)</strong>. The equation linking them is <strong>Q = It</strong>, where Q is charge (C), I is current (A), and t is time (s). So 1 ampere means 1 coulomb of charge passes a point every second. In a metal, it's <strong>free electrons</strong> that actually move — and they flow from the negative terminal to the positive terminal. <strong>Conventional current</strong> goes the opposite way: from positive to negative. This is just a historical convention (scientists got the direction wrong before they discovered electrons), but it's the direction shown on all circuit diagrams, so use it.",
+      "content": "Electric current is the rate of flow of <strong>electric charge</strong>. Charge is measured in <strong>coulombs (C)</strong> and current in <strong>amperes (A)</strong>. The equation linking them is <strong>Q = It</strong>. Here Q is charge (C), I is current (A) and t is time (s). So 1 ampere means 1 coulomb of charge passes a point every second.\n\nIn a metal, it is <strong>free electrons</strong> that really move. They flow from the negative terminal to the positive terminal. <strong>Conventional current</strong> goes the opposite way, from positive to negative. This is just a historical habit. Scientists chose the direction before they discovered electrons, and got it the wrong way round. But it is the direction shown on all circuit diagrams, so use it.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Electric current — rate of flow of charge (coulombs per second)",
-        "Ampere (A) — the unit of current; 1 A = 1 C s⁻¹",
+        "Electric current — the rate of flow of charge (coulombs per second)",
+        "Ampere (A) — the unit of current. 1 A = 1 C s⁻¹",
         "Q = It — charge (C) = current (A) × time (s)",
-        "Free electrons — the charge carriers in metals; move negative → positive",
+        "Free electrons — the charge carriers in metals. They move negative → positive",
         "Conventional current — flows positive → negative (opposite to electron flow)",
-        "Ammeter — measures current; always connected in series"
+        "Ammeter — measures current. Always connected in series"
       ],
       "keyTerms": [
         {
@@ -39,21 +39,21 @@
         }
       ],
       "memTip": "Q = It: 'Quiet Is Time'. Charge = current × time.",
-      "tutor_note": "The conventional vs electron flow distinction catches people out every year. In a metal, electrons move from − to +. Conventional current goes + to −. In circuit diagrams, always use conventional current direction."
+      "tutor_note": "Conventional current and electron flow catch people out every year. In a metal, electrons move from − to +. Conventional current goes from + to −. In circuit diagrams, always use the conventional current direction."
     },
     {
       "heading": "Potential difference — the energy push",
-      "content": "<strong>Potential difference (p.d.)</strong>, also called voltage, is the energy transferred per unit of charge as charges move between two points. The equation is <strong>V = W/Q</strong>, where V is voltage (volts, V), W is energy (joules, J), and Q is charge (coulombs, C). A p.d. of 1 volt means 1 joule of energy is transferred for every 1 coulomb of charge that passes. The <strong>electromotive force (EMF)</strong> of a battery is the energy the battery gives to each coulomb of charge — it's measured in volts too. However, the <strong>terminal p.d.</strong> (the voltage you actually measure across the battery terminals when it's in a circuit) is slightly less than the EMF because some energy is 'lost' pushing charge through the battery's own <strong>internal resistance</strong>. You'll meet internal resistance in more detail later, but knowing that terminal p.d. < EMF is important.",
+      "content": "<strong>Potential difference (p.d.)</strong> is also called voltage. It is the energy transferred per unit of charge as charges move between two points. The equation is <strong>V = W/Q</strong>. Here V is voltage (volts, V), W is energy (joules, J) and Q is charge (coulombs, C). A p.d. of 1 volt means 1 joule of energy is transferred for every 1 coulomb of charge that passes.\n\nThe <strong>electromotive force (EMF)</strong> of a battery is the energy it gives to each coulomb of charge. It is measured in volts too. But the <strong>terminal p.d.</strong> is slightly less than the EMF. This is the voltage you really measure across the battery terminals in a circuit. It is lower because some energy is 'lost' pushing charge through the battery's own <strong>internal resistance</strong>. You will meet internal resistance in more detail later. For now, know that terminal p.d. < EMF.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Potential difference (p.d.) — energy transferred per unit charge; measured in volts (V)",
+        "Potential difference (p.d.) — energy transferred per unit charge. Measured in volts (V)",
         "V = W/Q — voltage (V) = energy (J) ÷ charge (C)",
         "1 volt — 1 joule of energy per 1 coulomb of charge",
-        "EMF — energy per unit charge given to charge by the source (e.g. battery)",
-        "Terminal p.d. — voltage across battery terminals in a working circuit; less than EMF due to internal resistance",
-        "Voltmeter — measures p.d.; always connected in parallel"
+        "EMF — the energy per unit charge given to charge by the source (for example, a battery)",
+        "Terminal p.d. — voltage across the battery terminals in a working circuit. It is less than the EMF because of internal resistance",
+        "Voltmeter — measures p.d. Always connected in parallel"
       ],
       "keyTerms": [
         {
@@ -70,21 +70,21 @@
         }
       ],
       "memTip": "V = W/Q: 'Voltage is Watts per Queue'. Energy ÷ charge.",
-      "tutor_note": "Students often confuse EMF and voltage. EMF is what the battery provides per coulomb; terminal p.d. is what's actually available to the external circuit. They differ because of internal resistance."
+      "tutor_note": "EMF and voltage are easy to mix up. EMF is what the battery gives per coulomb. Terminal p.d. is what is really available to the outside circuit. They differ because of internal resistance."
     },
     {
       "heading": "Resistance — the opposition to current",
-      "content": "<strong>Resistance</strong> is the opposition to the flow of current. The greater the resistance, the less current flows for a given voltage. The equation linking the three is <strong>R = V/I</strong> (often called <strong>Ohm's law</strong>), where R is resistance in <strong>ohms (Ω)</strong>, V is potential difference in volts, and I is current in amperes. For example, if the p.d. across a resistor is 12 V and the current through it is 3 A, then R = 12/3 = <strong>4 Ω</strong>. Or if V = 12 V and R = 4 Ω, then I = V/R = 12/4 = <strong>3 A</strong>. Several factors affect resistance: <strong>length</strong> (longer wire → higher resistance), <strong>cross-sectional area</strong> (thicker wire → lower resistance), <strong>material</strong> (different metals have different resistivities), and <strong>temperature</strong> (for most metals, hotter → higher resistance because ions vibrate more and obstruct electron flow).",
+      "content": "<strong>Resistance</strong> is the opposition to the flow of current. The greater the resistance, the less current flows for a given voltage. The equation linking the three is <strong>R = V/I</strong>, often called <strong>Ohm's law</strong>. Here R is resistance in <strong>ohms (Ω)</strong>, V is potential difference in volts, and I is current in amperes.\n\nFor example, say the p.d. across a resistor is 12 V and the current through it is 3 A. Then R = 12/3 = <strong>4 Ω</strong>. Or if V = 12 V and R = 4 Ω, then I = V/R = 12/4 = <strong>3 A</strong>.\n\nSeveral factors affect resistance:\n- <strong>length</strong>: a longer wire → higher resistance\n- <strong>cross-sectional area</strong>: a thicker wire → lower resistance\n- <strong>material</strong>: different metals have different resistivities\n- <strong>temperature</strong>: for most metals, hotter → higher resistance. The ions vibrate more and get in the way of electron flow",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Resistance — opposition to current; measured in ohms (Ω)",
-        "R = V/I — resistance = voltage ÷ current (rearranges to V = IR and I = V/R)",
+        "Resistance — opposition to current. Measured in ohms (Ω)",
+        "R = V/I — resistance = voltage ÷ current. It rearranges to V = IR and I = V/R",
         "Ohm's law — for an ohmic conductor, R is constant (V ∝ I at constant temperature)",
         "Length — longer wire → greater resistance",
         "Cross-sectional area — thicker wire → lower resistance",
-        "Temperature — hotter metal → higher resistance (ions vibrate more, impede electrons)"
+        "Temperature — hotter metal → higher resistance (ions vibrate more and get in the way of electrons)"
       ],
       "keyTerms": [
         {
@@ -100,22 +100,22 @@
           "def": "For an ohmic conductor at constant temperature, current is proportional to potential difference"
         }
       ],
-      "memTip": "R = V/I: use the triangle — put V on top, I and R on the bottom. Cover any one to get the formula.",
-      "tutor_note": "In calculations, always write the formula first, then substitute values, then calculate. Showing your working gets method marks even if your arithmetic slips."
+      "memTip": "R = V/I: use the triangle. Put V on top, and I and R on the bottom. Cover any one to get the formula.",
+      "tutor_note": "In calculations, always write the formula first. Then substitute values, then calculate. Showing your working gets method marks, even if your arithmetic slips."
     },
     {
       "heading": "I-V characteristics — how components really behave",
-      "content": "An <strong>I-V characteristic</strong> graph shows how current (I, on the y-axis) changes with potential difference (V, on the x-axis) for a component. An <strong>ohmic conductor</strong> (e.g. a fixed resistor at constant temperature) gives a straight line through the origin — doubling V doubles I, so resistance is constant. A <strong>filament lamp</strong> gives a curve that flattens as V increases: as current rises, the filament heats up, resistance increases, so the graph curves away from the straight line. A <strong>diode</strong> only allows current to flow in one direction (<strong>forward bias</strong>); in reverse bias, resistance is extremely high and current is essentially zero. The forward bias threshold is roughly 0.7 V for a silicon diode. Knowing the shape AND the reason for the shape is essential — examiners will ask you to explain, not just describe.",
+      "content": "An <strong>I-V characteristic</strong> graph shows how current changes with potential difference for a component. Current (I) goes on the y-axis and potential difference (V) on the x-axis.\n\nAn <strong>ohmic conductor</strong> (for example, a fixed resistor at constant temperature) gives a straight line through the origin. Doubling V doubles I, so resistance is constant.\n\nA <strong>filament lamp</strong> gives a curve that flattens as V increases. As the current rises, the filament heats up and its resistance increases. So the graph curves away from the straight line.\n\nA <strong>diode</strong> only lets current flow in one direction (<strong>forward bias</strong>). In reverse bias, resistance is extremely high and current is almost zero. The forward bias threshold is roughly 0.7 V for a silicon diode.\n\nYou need to know the shape AND the reason for it. Examiners will ask you to explain, not just describe.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "I-V graph — current (y-axis) vs potential difference (x-axis) for a component",
-        "Ohmic conductor — straight line through origin; resistance is constant",
-        "Filament lamp — S-shaped curve; resistance increases as temperature rises",
-        "Diode — conducts in one direction only; near-zero current in reverse bias",
-        "Forward bias threshold — ~0.7 V for a silicon diode before significant current flows",
-        "Resistance from I-V graph — find gradient (I/V) and take its reciprocal, OR read off V and I and use R = V/I"
+        "Ohmic conductor — straight line through the origin. Resistance is constant",
+        "Filament lamp — S-shaped curve. Resistance increases as temperature rises",
+        "Diode — conducts in one direction only. Near-zero current in reverse bias",
+        "Forward bias threshold — ~0.7 V for a silicon diode, before much current flows",
+        "Resistance from an I-V graph — find the gradient (I/V) and take its reciprocal. Or read off V and I and use R = V/I"
       ],
       "keyTerms": [
         {
@@ -131,22 +131,22 @@
           "def": "A component that allows current in one direction only; very high resistance in reverse"
         }
       ],
-      "memTip": "Three shapes: Straight line = resistor; Bendy S = lamp (gets hot); One-sided hockey stick = diode (one direction only). Cover your notes and sketch all three graphs with labels from memory.",
-      "tutor_note": "A very common mistake is drawing the filament lamp curve the wrong way — it should curve AWAY from the straight line (not towards the I-axis), because resistance increases and less current flows than you'd expect from a simple proportionality."
+      "memTip": "Three shapes: straight line = resistor. Bendy S = lamp (it gets hot). One-sided hockey stick = diode (one direction only). Cover your notes and sketch all three graphs with labels from memory.",
+      "tutor_note": "A very common mistake is drawing the filament lamp curve the wrong way. It should curve AWAY from the straight line, not towards the I-axis. That is because resistance increases, so less current flows than a simple proportion would give."
     },
     {
       "heading": "Required practical — measuring I-V characteristics",
-      "content": "The required practical asks you to measure I-V characteristics for at least two components (typically a resistor and a filament lamp, plus sometimes a diode). The circuit uses a <strong>variable resistor (rheostat)</strong> to change the current, an <strong>ammeter in series</strong> with the component to measure I, and a <strong>voltmeter in parallel</strong> with the component to measure V. You record pairs of I and V values as you adjust the variable resistor, then plot the I-V graph. To get both directions on the graph (positive and negative V), you can reverse the component or swap the battery connections. <strong>Safety</strong>: filament lamps get very hot — do not touch the bulb. Keep currents within the specified limits to avoid overheating components. Always start with the variable resistor at maximum resistance (minimum current) before switching on.",
+      "content": "The required practical asks you to measure I-V characteristics for at least two components. These are usually a resistor and a filament lamp, and sometimes a diode.\n\nThe circuit uses:\n- a <strong>variable resistor (rheostat)</strong> to change the current\n- an <strong>ammeter in series</strong> with the component to measure I\n- a <strong>voltmeter in parallel</strong> with the component to measure V\n\nRecord pairs of I and V values as you adjust the variable resistor. Then plot the I-V graph. To get both positive and negative V on the graph, turn the component round. Or swap the battery connections.\n\n<strong>Safety</strong>: filament lamps get very hot, so do not touch the bulb. Keep currents within the given limits so components don't overheat. Always start with the variable resistor at maximum resistance (minimum current) before switching on.",
       "examFlag": true,
       "cardFlag": false,
       "diagram": null,
       "writeBullets": [
-        "Ammeter — placed in series with the component to measure current through it",
-        "Voltmeter — placed in parallel across the component to measure p.d. across it",
-        "Variable resistor — used to change the current in the circuit and collect multiple data points",
-        "Reverse connections — swap battery or component to get negative V values and complete the I-V curve",
-        "Safety — start at max resistance; lamp gets very hot; stay within current limits",
-        "Repeats — take repeat readings and average to reduce random error"
+        "Ammeter — placed in series with the component to measure the current through it",
+        "Voltmeter — placed in parallel across the component to measure the p.d. across it",
+        "Variable resistor — used to change the current in the circuit and collect many data points",
+        "Reverse connections — swap the battery or component to get negative V values and complete the I-V curve",
+        "Safety — start at max resistance. The lamp gets very hot. Stay within current limits",
+        "Repeats — take repeat readings and average them to reduce random error"
       ],
       "keyTerms": [
         {
@@ -162,8 +162,8 @@
           "def": "Instrument measuring p.d.; connected in parallel; has very high resistance"
         }
       ],
-      "memTip": "Series A, Parallel V — Ammeter in Series, Voltmeter in Parallel. Cover your notes and describe the full circuit setup from memory, including the safety precaution.",
-      "tutor_note": "Examiners often ask why the voltmeter is in parallel (it must measure the p.d. across the component) and why the ammeter is in series (to measure the same current that flows through the component). Know the reason, not just the rule."
+      "memTip": "Series A, Parallel V: Ammeter in Series, Voltmeter in Parallel. Cover your notes. Describe the full circuit from memory, including the safety step.",
+      "tutor_note": "Examiners often ask why each meter goes where it does. The voltmeter is in parallel because it must measure the p.d. across the component. The ammeter is in series to measure the same current that flows through the component. Know the reason, not just the rule."
     }
   ],
   "tables": [
@@ -208,8 +208,8 @@
         "60 A"
       ],
       "correct": 2,
-      "correctFeedback": "Correct — I = Q/t = 60/20 = 3 A. You rearranged Q = It perfectly.",
-      "wrongFeedback": "Use Q = It rearranged to I = Q/t. Divide the charge (60 C) by the time (20 s): 60 ÷ 20 = 3 A. Watch out for multiplying instead of dividing, or mixing up which letter is which."
+      "correctFeedback": "Correct. I = Q/t = 60/20 = 3 A. You rearranged Q = It perfectly.",
+      "wrongFeedback": "Rearrange Q = It to I = Q/t. Divide the charge (60 C) by the time (20 s): 60 ÷ 20 = 3 A. Watch out for multiplying instead of dividing, or mixing up the letters."
     },
     "2": {
       "question": "A lamp has a p.d. of 12 V across it and a current of 0.5 A through it. What is its resistance at this moment?",
@@ -220,48 +220,48 @@
         "6 V"
       ],
       "correct": 2,
-      "correctFeedback": "Correct — R = V/I = 12 ÷ 0.5 = 24 Ω. Well done for using R = V/I and handling the decimal divisor.",
-      "wrongFeedback": "Use R = V/I. Substitute: R = 12 ÷ 0.5 = 24 Ω. Dividing by 0.5 is the same as multiplying by 2, so 12 × 2 = 24 Ω. If you selected 6 Ω, you likely divided by 2 instead of 0.5."
+      "correctFeedback": "Correct. R = V/I = 12 ÷ 0.5 = 24 Ω. Well done for using R = V/I and dividing by a decimal.",
+      "wrongFeedback": "Use R = V/I. Substitute: R = 12 ÷ 0.5 = 24 Ω. Dividing by 0.5 is the same as multiplying by 2, so 12 × 2 = 24 Ω. If you chose 6 Ω, you probably divided by 2 instead of 0.5."
     },
     "3": {
-      "question": "Which of these best explains why the I-V graph for a filament lamp curves (rather than being straight)?",
+      "question": "Which of these best explains why the I-V graph for a filament lamp curves, rather than being straight?",
       "options": [
         "The lamp only conducts in one direction",
-        "As current increases, the filament heats up, increasing its resistance",
+        "As current increases, the filament heats up, which increases its resistance",
         "The lamp's voltage decreases as current increases",
         "The ammeter reads incorrectly at high currents"
       ],
       "correct": 1,
-      "correctFeedback": "Exactly right. The filament heats up, resistance rises, and so current is lower than you'd get from a simple proportional relationship — causing the curve.",
-      "wrongFeedback": "The key physics here is temperature. As more current flows, the filament gets hotter. Higher temperature means more resistance in a metal (ions vibrate more, obstructing electron flow). So for a given extra volt, you get less extra current than before — causing the graph to curve."
+      "correctFeedback": "Exactly right. The filament heats up and its resistance rises. So the current is lower than a simple proportion would give. That causes the curve.",
+      "wrongFeedback": "The key physics here is temperature. As more current flows, the filament gets hotter. In a metal, a higher temperature means more resistance. The ions vibrate more and block electron flow. So each extra volt gives less extra current than before. That makes the graph curve."
     }
   },
   "commonMistakes": [
-    "Drawing the filament lamp I-V curve curving towards the I-axis instead of away from it — it curves away because resistance increases and less current flows than expected.",
-    "Confusing conventional current direction with electron flow — electrons go − to +; conventional current goes + to − in the external circuit.",
-    "Connecting the voltmeter in series instead of parallel — a voltmeter must be in parallel to measure the p.d. across a component without affecting the current.",
-    "Forgetting to check units in Q = It — time must be in seconds, not minutes or hours, before substituting.",
-    "Saying a diode 'blocks all current' in reverse bias — in reality a tiny reverse current can flow, but for GCSE purposes resistance is treated as extremely high."
+    "Drawing the filament lamp I-V curve bending towards the I-axis instead of away from it. It curves away because resistance increases, so less current flows than expected.",
+    "Mixing up conventional current and electron flow. Electrons go from − to +. Conventional current goes from + to − in the outside circuit.",
+    "Connecting the voltmeter in series instead of parallel. A voltmeter must be in parallel to measure the p.d. across a component without changing the current.",
+    "Forgetting to check units in Q = It. Time must be in seconds, not minutes or hours, before substituting.",
+    "Saying a diode 'blocks all current' in reverse bias. In reality a tiny reverse current can flow. But at GCSE, its resistance is treated as extremely high."
   ],
   "examTips": [
-    "Always show the formula, then substitution, then the answer with units — even one mark is at stake if you skip a step.",
-    "For 'describe and explain' I-V questions: name the shape, then explain the physics (e.g. 'The curve means resistance is increasing because the filament temperature rises as current increases').",
-    "EMF vs terminal p.d.: if a question mentions a battery in a circuit with internal resistance, the terminal p.d. is less than the EMF — state this explicitly.",
-    "In the required practical, know why each meter is positioned where it is — not just that 'ammeter = series, voltmeter = parallel' but the reason (ammeter measures the current through the component; voltmeter measures the p.d. across it).",
-    "Ohm's law only applies to ohmic conductors at constant temperature — don't apply it to lamps or diodes without qualifying this."
+    "Always show the formula, then the substitution, then the answer with units. Even one mark is at stake if you skip a step.",
+    "For 'describe and explain' I-V questions, name the shape and then explain the physics. For example: 'The curve means resistance is increasing, because the filament temperature rises as current increases'.",
+    "EMF vs terminal p.d.: a question may mention a battery with internal resistance. Then the terminal p.d. is less than the EMF. Say this clearly.",
+    "In the required practical, know why each meter goes where it does. Don't just say 'ammeter = series, voltmeter = parallel'. Give the reason. The ammeter measures the current through the component. The voltmeter measures the p.d. across it.",
+    "Ohm's law only applies to ohmic conductors at constant temperature. Don't apply it to lamps or diodes without saying so."
   ],
   "revisionCardBullets": [
-    "Current (I) — rate of flow of charge; unit ampere (A)",
+    "Current (I) — the rate of flow of charge. Unit: ampere (A)",
     "Q = It — charge (C) = current (A) × time (s)",
-    "Conventional current — + to −; electrons flow − to +",
-    "Potential difference (V) — energy per unit charge; unit volt (V)",
+    "Conventional current goes + to −. Electrons flow − to +",
+    "Potential difference (V) — energy per unit charge. Unit: volt (V)",
     "V = W/Q — p.d. (V) = energy (J) ÷ charge (C)",
-    "EMF — energy given to each coulomb by the source; terminal p.d. < EMF",
+    "EMF — the energy given to each coulomb by the source. Terminal p.d. < EMF",
     "R = V/I — resistance (Ω) = voltage ÷ current",
-    "Ohmic conductor — constant resistance; straight-line I-V graph through origin",
-    "Filament lamp — resistance increases with temperature; curved I-V graph",
-    "Diode — conducts in one direction only; near-zero current in reverse bias",
-    "Ammeter — in series; voltmeter — in parallel",
+    "Ohmic conductor — constant resistance. Straight-line I-V graph through the origin",
+    "Filament lamp — resistance increases with temperature. Curved I-V graph",
+    "Diode — conducts in one direction only. Near-zero current in reverse bias",
+    "Ammeter goes in series. Voltmeter goes in parallel",
     "Resistance increases with: greater length, smaller cross-section, higher temperature"
   ],
   "videos": [

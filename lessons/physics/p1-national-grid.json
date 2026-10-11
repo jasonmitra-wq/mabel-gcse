@@ -2,25 +2,25 @@
   "id": "p1-national-grid",
   "title": "The national grid — getting electricity from power station to your home",
   "topic": "P1",
-  "examTip": "High voltage → low current → less power lost as heat in cables (P_lost = I²R). This is WHY the grid uses high voltage — not just 'to save energy' — you need to explain the physics.",
+  "examTip": "High voltage → low current → less power lost as heat in cables (P_lost = I²R). This is WHY the grid uses high voltage. Don't just say 'to save energy'. You need to explain the physics.",
   "introTips": [
-    "The national grid uses very high voltages — up to 400,000 V — to cut energy waste in cables.",
-    "Transformers only work with AC (alternating current) — this is why mains electricity is AC.",
-    "The transformer equation: V₁/V₂ = n₁/n₂ — voltage ratio equals turns ratio."
+    "The national grid uses very high voltages, up to 400,000 V. This cuts the energy wasted in cables.",
+    "Transformers only work with AC (alternating current). This is why mains electricity is AC.",
+    "The transformer equation is V₁/V₂ = n₁/n₂. The voltage ratio equals the turns ratio."
   ],
-  "intro": "Every time you plug something in, you're using electricity that may have been generated hundreds of miles away — at a wind farm off the coast of Scotland, a nuclear power station in Somerset, or a gas-fired plant in Yorkshire. Getting that electricity to your home without wasting most of it along the way is a fascinating engineering challenge. The solution — using very high voltages for long-distance transmission, then stepping the voltage back down before it reaches your kettle — is one of the cleverest applications of physics in everyday life.",
+  "intro": "When you plug something in, the electricity may have been made hundreds of miles away. It could come from a wind farm off Scotland or a nuclear power station in Somerset. It could come from a gas plant in Yorkshire. Getting it to you without wasting most of it is a tricky engineering problem. The answer is to use very high voltages to send it a long way. Then the voltage is stepped back down before it reaches your kettle. This is one of the cleverest uses of physics in everyday life.",
   "keyPoints": [
     {
       "heading": "How the national grid works",
-      "content": "The <strong>national grid</strong> is the network of cables and transformers that distributes electricity across the UK, from power stations to homes, schools, and businesses. Electricity is <strong>generated</strong> at power stations at around 25,000 V (25 kV). A <strong>step-up transformer</strong> then increases this to up to <strong>400,000 V (400 kV)</strong> for long-distance transmission through high-voltage overhead cables. At the other end, a series of <strong>step-down transformers</strong> reduce the voltage in stages — from 400 kV down to 33 kV for heavy industry, 11 kV for lighter industry, and finally to <strong>230 V</strong> for homes. Why use such high voltages? From <strong>P = IV</strong>: if power (P) is constant and voltage (V) is very high, current (I) must be very low. And from <strong>P_lost = I²R</strong>: lower current means dramatically less power wasted as heat in the resistance of the cables. Doubling the voltage halves the current, and since power loss ∝ I², this cuts cable losses by <strong>four times</strong>.",
+      "content": "The <strong>national grid</strong> is the network of cables and transformers that carries electricity across the UK. It runs from power stations to homes, schools and businesses.\n\nElectricity is <strong>generated</strong> at power stations at around 25,000 V (25 kV). A <strong>step-up transformer</strong> then raises this to up to <strong>400,000 V (400 kV)</strong>. This is for sending it a long way through high-voltage overhead cables. At the other end, a series of <strong>step-down transformers</strong> lower the voltage in stages:\n- 400 kV down to 33 kV for heavy industry\n- 11 kV for lighter industry\n- finally <strong>230 V</strong> for homes\n\nWhy use such high voltages? Start from <strong>P = IV</strong>. Say the power (P) is fixed and the voltage (V) is very high. Then the current (I) must be very low. Then use <strong>P_lost = I²R</strong>. A lower current means far less power wasted as heat in the resistance of the cables. Doubling the voltage halves the current. Power loss ∝ I², so this cuts cable losses by <strong>four times</strong>.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "National grid — the network of cables and transformers distributing electricity across the UK",
-        "Generated at ~25 kV → stepped up to ~400 kV for long-distance transmission",
-        "Stepped down to 230 V for homes via a series of step-down transformers",
-        "High voltage → low current (P = IV, constant P): I = P/V — higher V means lower I",
+        "National grid — the network of cables and transformers carrying electricity across the UK",
+        "Generated at ~25 kV → stepped up to ~400 kV to send it a long way",
+        "Stepped down to 230 V for homes by a series of step-down transformers",
+        "High voltage → low current (P = IV, fixed P). I = P/V, so higher V means lower I",
         "Low current → less power wasted as heat in cables: P_lost = I²R (power loss ∝ I²)"
       ],
       "keyTerms": [
@@ -37,19 +37,19 @@
           "def": "Power wasted as heat in cables = current squared × resistance; lower current dramatically reduces heat loss"
         }
       ],
-      "memTip": "High V → low I → low I²R loss. The grid uses high voltage because it squares the current reduction in cable losses.",
-      "tutor_note": "The I²R equation is the key to explaining WHY high voltage — students must go beyond 'less energy is wasted' and show the physics of why lower current reduces heating losses."
+      "memTip": "High V → low I → low I²R loss. The grid uses high voltage because cutting the current cuts cable losses by its square.",
+      "tutor_note": "The I²R equation is the key to explaining WHY high voltage is used. Go beyond 'less energy is wasted'. Show why a lower current reduces heating losses."
     },
     {
       "heading": "Transformers — how they work",
-      "content": "Transformers only work with <strong>alternating current (AC)</strong> — the changing magnetic field from an AC current in the primary coil induces a voltage in the secondary coil. (DC produces a constant magnetic field that does not induce a voltage.) A <strong>step-up transformer</strong> has more turns on the secondary than the primary — it increases voltage and decreases current. A <strong>step-down transformer</strong> has fewer turns on the secondary — it decreases voltage and increases current. The <strong>transformer equation</strong>: <strong>V₁/V₂ = n₁/n₂</strong> (primary voltage ÷ secondary voltage = primary turns ÷ secondary turns). For an <strong>ideal (100% efficient) transformer</strong>: <strong>V₁I₁ = V₂I₂</strong> (power in = power out). Worked example: a transformer has 200 turns on the primary and 2000 on the secondary, with an input voltage of 230 V. Output voltage = 230 × (2000 ÷ 200) = <strong>2300 V</strong> (step-up, ratio 1:10).",
+      "content": "Transformers only work with <strong>alternating current (AC)</strong>. An AC current in the primary coil makes a changing magnetic field. That changing field induces a voltage in the secondary coil. DC makes a constant magnetic field, which does not induce a voltage.\n\nA <strong>step-up transformer</strong> has more turns on the secondary than the primary. It increases voltage and decreases current. A <strong>step-down transformer</strong> has fewer turns on the secondary. It decreases voltage and increases current.\n\nThe <strong>transformer equation</strong>: <strong>V₁/V₂ = n₁/n₂</strong>. That is, primary voltage ÷ secondary voltage = primary turns ÷ secondary turns.\n\nFor an <strong>ideal (100% efficient) transformer</strong>: <strong>V₁I₁ = V₂I₂</strong> (power in = power out).\n\nWorked example: a transformer has 200 turns on the primary and 2000 on the secondary. The input voltage is 230 V. Output voltage = 230 × (2000 ÷ 200) = <strong>2300 V</strong> (step-up, ratio 1:10).",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Transformers only work with AC — changing current creates changing magnetic field, which induces a voltage",
-        "Step-up transformer — more turns on secondary; increases voltage, decreases current",
-        "Step-down transformer — fewer turns on secondary; decreases voltage, increases current",
+        "Transformers only work with AC. A changing current makes a changing magnetic field, which induces a voltage",
+        "Step-up transformer — more turns on the secondary. Increases voltage, decreases current",
+        "Step-down transformer — fewer turns on the secondary. Decreases voltage, increases current",
         "Transformer equation: V₁/V₂ = n₁/n₂ (voltage ratio = turns ratio)",
         "Ideal transformer: V₁I₁ = V₂I₂ (power in = power out, assuming 100% efficiency)"
       ],
@@ -72,21 +72,21 @@
         }
       ],
       "memTip": "Step UP = more turns on secondary → V goes up, I goes down. Step DOWN = fewer turns → V goes down, I goes up.",
-      "tutor_note": "A common exam question is to calculate missing values using V₁/V₂ = n₁/n₂, then use V₁I₁ = V₂I₂ to find the secondary current. Practise both steps together."
+      "tutor_note": "A common exam question asks you to find missing values using V₁/V₂ = n₁/n₂. Then you use V₁I₁ = V₂I₂ to find the secondary current. Practise both steps together."
     },
     {
       "heading": "Generating electricity",
-      "content": "Most conventional power stations work by: burning fuel (coal, gas, oil) or using <strong>nuclear fission</strong> (uranium) to release heat → heat water to produce <strong>steam</strong> → steam drives a <strong>turbine</strong> → turbine drives a <strong>generator</strong> → generator produces electricity by <strong>electromagnetic induction</strong> (spinning a coil inside a magnetic field). Renewable alternatives: <strong>wind turbines</strong> (wind pushes blades → turbine → generator — no steam needed), <strong>hydroelectric</strong> (flowing water drives turbines — very reliable), <strong>solar photovoltaic</strong> (light directly produces electricity from semiconductor cells — no turbine at all). Note: <strong>nuclear power</strong> still uses the steam-turbine-generator chain, just like fossil fuels — but produces no CO₂ during generation. The key distinction is between PV solar (no turbine) and everything else (turbine required).",
+      "content": "Most traditional power stations work in a chain:\n- burn fuel (coal, gas, oil), or use <strong>nuclear fission</strong> (uranium), to release heat\n- the heat boils water to make <strong>steam</strong>\n- the steam drives a <strong>turbine</strong>\n- the turbine drives a <strong>generator</strong>\n- the generator makes electricity by <strong>electromagnetic induction</strong> (spinning a coil inside a magnetic field)\n\nRenewable options:\n- <strong>wind turbines</strong>: wind pushes the blades → turbine → generator. No steam is needed\n- <strong>hydroelectric</strong>: flowing water drives turbines. Very reliable\n- <strong>solar photovoltaic</strong>: light makes electricity directly in semiconductor cells. No turbine at all\n\nNote: <strong>nuclear power</strong> still uses the steam-turbine-generator chain, just like fossil fuels. But it makes no CO₂ while generating. The key difference is between PV solar (no turbine) and everything else (turbine needed).",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Conventional chain: fuel/fission → heat → steam → turbine → generator → electricity",
-        "Electromagnetic induction — electricity generated by spinning a coil in a magnetic field",
-        "Wind turbine — wind turns blades directly; drives generator (no steam)",
-        "Hydroelectric — water flow drives turbine; drives generator (no steam)",
-        "Solar PV — light converted directly to electricity; no turbine, no steam, no generator",
-        "Nuclear — same steam-turbine-generator chain as fossil fuels; no CO₂ but radioactive waste"
+        "Traditional chain: fuel or fission → heat → steam → turbine → generator → electricity",
+        "Electromagnetic induction — electricity made by spinning a coil in a magnetic field",
+        "Wind turbine — wind turns the blades directly and drives a generator (no steam)",
+        "Hydroelectric — flowing water drives a turbine, which drives a generator (no steam)",
+        "Solar PV — light is turned directly into electricity. No turbine, no steam, no generator",
+        "Nuclear — the same steam-turbine-generator chain as fossil fuels. No CO₂, but radioactive waste"
       ],
       "keyTerms": [
         {
@@ -102,24 +102,24 @@
           "def": "Technology that directly converts light energy to electrical energy using semiconductor cells — no turbine needed"
         }
       ],
-      "memTip": "MOST energy sources: heat → steam → turbine → generator. Solar PV is the odd one out — straight to electricity.",
-      "tutor_note": "Students often forget that nuclear power still uses turbines and steam — it's not fundamentally different from coal, just a different heat source."
+      "memTip": "MOST energy sources: heat → steam → turbine → generator. Solar PV is the odd one out. It goes straight to electricity.",
+      "tutor_note": "It is easy to forget that nuclear power still uses turbines and steam. It is not really different from coal. It just has a different heat source."
     },
     {
       "heading": "Energy sources and the environment",
-      "content": "The UK uses a <strong>mix</strong> of energy sources to balance reliability, cost, and environmental impact. <strong>Non-renewables</strong>: <strong>Coal</strong> (highest CO₂ per kWh, cheapest to burn, being phased out), <strong>natural gas</strong> (lower CO₂ than coal, flexible — can be turned on quickly to meet peak demand), <strong>nuclear</strong> (no CO₂ during generation, reliable baseload, but radioactive waste and high construction costs). <strong>Renewables</strong>: <strong>Solar PV</strong> (no emissions, fast installation, cheap at scale, but <strong>intermittent</strong> — only works when sunny), <strong>wind</strong> (no emissions, cheapest new electricity source in the UK by 2020s, but intermittent), <strong>hydroelectric</strong> (reliable, controllable, no emissions, but requires rivers/dams and affects ecosystems), <strong>tidal</strong> (extremely predictable — tides never stop, but expensive to build), <strong>biomass</strong> (burns plant material — potentially carbon-neutral if crops regrow, but debated). UK energy mix (approximate 2023): ~40% renewables (mainly offshore wind), ~40% gas, ~15% nuclear, remainder other. The grid needs <strong>baseload</strong> power (constant, reliable — nuclear), <strong>peak load</strong> response (flexible — gas), and an expanding share of renewables with energy storage.",
+      "content": "The UK uses a <strong>mix</strong> of energy sources. This balances reliability, cost and harm to the environment.\n\n<strong>Non-renewables</strong>:\n- <strong>Coal</strong>: the most CO₂ per kWh and the cheapest to burn. It is being phased out.\n- <strong>natural gas</strong>: less CO₂ than coal. It is flexible, and can be turned on quickly to meet peak demand.\n- <strong>nuclear</strong>: no CO₂ while generating, and a reliable baseload. But it makes radioactive waste and costs a lot to build.\n\n<strong>Renewables</strong>:\n- <strong>Solar PV</strong>: no emissions, quick to install and cheap at scale. But it is <strong>intermittent</strong>, and only works when it is sunny.\n- <strong>wind</strong>: no emissions, and the cheapest new electricity source in the UK by the 2020s. But it is intermittent.\n- <strong>hydroelectric</strong>: reliable, controllable and no emissions. But it needs rivers and dams, and affects ecosystems.\n- <strong>tidal</strong>: very predictable, because tides never stop. But it is expensive to build.\n- <strong>biomass</strong>: burns plant material. It may be carbon-neutral if crops regrow, but this is debated.\n\nUK energy mix (approximate 2023): ~40% renewables (mainly offshore wind), ~40% gas, ~15% nuclear, and the rest other.\n\nThe grid needs <strong>baseload</strong> power (constant and reliable, like nuclear). It needs a <strong>peak load</strong> response (flexible, like gas). It also needs a growing share of renewables, with energy storage.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Non-renewable — fossil fuels (coal, gas, oil) + nuclear; finite supply; coal highest CO₂",
+        "Non-renewable — fossil fuels (coal, gas, oil) + nuclear. Finite supply. Coal has the most CO₂",
         "Coal — high CO₂, cheapest to burn, being phased out in the UK",
-        "Natural gas — lower CO₂ than coal, flexible peak-load response",
-        "Nuclear — no CO₂ in generation, reliable baseload; produces radioactive waste",
-        "Solar/wind — zero emissions, now cheapest new electricity, but intermittent (weather-dependent)",
-        "Hydroelectric — reliable, controllable, no emissions; needs rivers and dams (ecosystem impact)",
-        "Tidal — predictable and reliable; expensive to build and maintain",
-        "Biomass — burns plant material; potentially carbon-neutral; debated sustainability"
+        "Natural gas — less CO₂ than coal. Flexible response to peak load",
+        "Nuclear — no CO₂ while generating, reliable baseload. Makes radioactive waste",
+        "Solar and wind — zero emissions, now the cheapest new electricity. But intermittent (depends on weather)",
+        "Hydroelectric — reliable, controllable, no emissions. Needs rivers and dams (affects ecosystems)",
+        "Tidal — predictable and reliable. Expensive to build and maintain",
+        "Biomass — burns plant material. May be carbon-neutral. How sustainable it is is debated"
       ],
       "keyTerms": [
         {
@@ -140,7 +140,7 @@
         }
       ],
       "memTip": "Renewables are FREE to run but INTERMITTENT. Non-renewables are RELIABLE but produce CO₂ (or waste).",
-      "tutor_note": "6-mark questions often ask for an evaluation of energy sources — students must give both advantages AND disadvantages, and consider reliability, cost, and environmental impact."
+      "tutor_note": "6-mark questions often ask you to evaluate energy sources. Give both advantages AND disadvantages. Consider reliability, cost and harm to the environment."
     }
   ],
   "tables": [
@@ -234,19 +234,19 @@
       ],
       "correct": 0,
       "correctFeedback": "Correct! V₂ = V₁ × (n₂/n₁) = 230 × (5000/500) = 230 × 10 = 2300 V. This is a step-up transformer (ratio 1:10).",
-      "wrongFeedback": "Use V₁/V₂ = n₁/n₂. Rearrange: V₂ = V₁ × (n₂/n₁) = 230 × (5000 ÷ 500) = 230 × 10 = 2300 V. More turns on secondary → higher voltage (step-up)."
+      "wrongFeedback": "Use V₁/V₂ = n₁/n₂. Rearrange: V₂ = V₁ × (n₂/n₁) = 230 × (5000 ÷ 500) = 230 × 10 = 2300 V. More turns on the secondary → higher voltage (step-up)."
     },
     "0": {
       "question": "Why does the national grid transmit electricity at very high voltages (up to 400,000 V)?",
       "options": [
-        "High voltage means lower current, which greatly reduces the power wasted as heat in the cables (P_lost = I²R)",
+        "High voltage means lower current. This greatly reduces the power wasted as heat in the cables (P_lost = I²R)",
         "High voltage makes the electricity travel faster through the cables",
-        "High voltage prevents the cables from overheating due to solar radiation",
+        "High voltage stops the cables overheating from solar radiation",
         "High voltage is safer for the engineers who maintain the cables"
       ],
       "correct": 0,
-      "correctFeedback": "Exactly right! At constant power, higher voltage means lower current (from P = IV). Lower current dramatically reduces cable heating losses because P_lost = I²R — loss is proportional to current squared.",
-      "wrongFeedback": "The answer is about minimising energy waste in the cables. From P = IV: higher V → lower I. From P_lost = I²R: lower I → much less power wasted as heat. That's why the grid uses high voltages — not for speed, and not for safety."
+      "correctFeedback": "Exactly right! At constant power, higher voltage means lower current (from P = IV). Lower current hugely reduces heating losses in the cables. This is because P_lost = I²R, so loss is proportional to current squared.",
+      "wrongFeedback": "The answer is about cutting energy waste in the cables. From P = IV: higher V → lower I. From P_lost = I²R: lower I → much less power wasted as heat. That is why the grid uses high voltages. It is not for speed, and not for safety."
     },
     "3": {
       "question": "Which energy source can generate electricity without using a turbine?",
@@ -257,34 +257,34 @@
         "Hydroelectric dam"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! Solar PV directly converts light to electricity using semiconductor cells — no turbine, no steam, no generator. All the others (including nuclear and wind) drive a generator via a turbine.",
-      "wrongFeedback": "Solar PV is the only common electricity source that converts light directly to electricity without a turbine. Nuclear, wind, and hydroelectric all use turbines connected to generators."
+      "correctFeedback": "Correct! Solar PV turns light directly into electricity using semiconductor cells. No turbine, no steam, no generator. All the others (including nuclear and wind) drive a generator with a turbine.",
+      "wrongFeedback": "Solar PV is the only common source that turns light directly into electricity without a turbine. Nuclear, wind and hydroelectric all use turbines connected to generators."
     }
   },
   "commonMistakes": [
-    "Saying the grid uses high voltage 'to save energy' without explaining the mechanism — you must link it to P = IV (lower current) and P_lost = I²R (lower heating losses).",
-    "Thinking transformers work with DC — they only work with AC, because DC produces a constant (not changing) magnetic field, which does not induce a voltage in the secondary coil.",
-    "Confusing step-up and step-down transformers — step-up has MORE turns on the secondary (voltage goes UP); step-down has FEWER turns on secondary (voltage goes DOWN).",
-    "Forgetting that nuclear power stations still use turbines and steam — the difference from fossil fuels is the heat source (fission, not burning), not the generation method.",
-    "Saying solar PV is 'renewable' without noting it is intermittent — you should acknowledge both the advantage (no emissions, free fuel) and the disadvantage (weather-dependent)."
+    "Saying the grid uses high voltage 'to save energy' without explaining how. Link it to P = IV (lower current) and P_lost = I²R (lower heating losses).",
+    "Thinking transformers work with DC. They only work with AC. DC makes a constant, unchanging magnetic field. That does not induce a voltage in the secondary coil.",
+    "Mixing up step-up and step-down transformers. Step-up has MORE turns on the secondary (voltage goes UP). Step-down has FEWER turns on the secondary (voltage goes DOWN).",
+    "Forgetting that nuclear power stations still use turbines and steam. The difference from fossil fuels is the heat source (fission, not burning), not how electricity is generated.",
+    "Saying solar PV is 'renewable' without saying it is intermittent. Give the advantage (no emissions, free fuel). Give the disadvantage too (it depends on the weather)."
   ],
   "examTips": [
-    "For 'why high voltage in the grid' questions: state (1) P = IV so high V means low I; (2) P_lost = I²R so low I means much less power wasted. Give both equations for full marks.",
-    "Transformer equation: V₁/V₂ = n₁/n₂. Check your answer: does the voltage go up if secondary has more turns? If not, you've divided the wrong way.",
-    "For 6-mark energy source evaluation questions: give advantages AND disadvantages for each source, and include reliability, environmental impact, and cost.",
-    "Remember: transformers need AC because the electromagnetic induction only works with a changing current. This is a common exam question."
+    "For 'why high voltage in the grid' questions, say two things. (1) P = IV, so high V means low I. (2) P_lost = I²R, so low I means much less power wasted. Give both equations for full marks.",
+    "Transformer equation: V₁/V₂ = n₁/n₂. Check your answer: does the voltage go up if the secondary has more turns? If not, you divided the wrong way.",
+    "For 6-mark questions evaluating energy sources, give advantages AND disadvantages for each source. Include reliability, harm to the environment and cost.",
+    "Remember: transformers need AC. Electromagnetic induction only works with a changing current. This is a common exam question."
   ],
   "revisionCardBullets": [
     "National grid: generates at ~25 kV → steps up to ~400 kV → transmits → steps down to 230 V for homes",
-    "High voltage → low current (P = IV); low current → less heat loss in cables (P_lost = I²R)",
+    "High voltage → low current (P = IV). Low current → less heat loss in cables (P_lost = I²R)",
     "Step-up transformer: more secondary turns → voltage up, current down",
     "Step-down transformer: fewer secondary turns → voltage down, current up",
     "Transformer equation: V₁/V₂ = n₁/n₂ (voltage ratio = turns ratio)",
     "Ideal transformer: V₁I₁ = V₂I₂ (power in = power out)",
-    "Transformers only work with AC — DC gives constant magnetic field, no induction",
-    "Conventional generation: fuel/fission → heat → steam → turbine → generator",
-    "Solar PV exception: light → electricity directly; no turbine, no steam",
-    "Nuclear: same steam-turbine chain as fossil fuels; no CO₂ but radioactive waste",
+    "Transformers only work with AC. DC gives a constant magnetic field, so no induction",
+    "Traditional generation: fuel or fission → heat → steam → turbine → generator",
+    "Solar PV is the exception: light → electricity directly. No turbine, no steam",
+    "Nuclear: the same steam-turbine chain as fossil fuels. No CO₂, but radioactive waste",
     "Renewables (wind, solar, hydro, tidal) produce no CO₂ but can be intermittent",
     "UK mix (~2023): ~40% renewables, ~40% gas, ~15% nuclear"
   ],

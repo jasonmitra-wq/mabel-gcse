@@ -2,27 +2,27 @@
   "id": "p2-domestic",
   "title": "Mains electricity — AC, DC and your home's wiring",
   "topic": "P2",
-  "examTip": "Wire colours, what each wire does, and why earth + fuse work together are all favourite exam questions — learn them cold.",
+  "examTip": "Favourite exam questions: wire colours, what each wire does, and why earth + fuse work together. Learn them by heart.",
   "introTips": [
-    "Before reading, try to recall the colour and purpose of each wire in a three-pin plug — check your answers as you go.",
-    "Sketch an oscilloscope trace for both AC and DC from memory — then look at the real thing to compare.",
-    "Think about every electrical appliance at home that has a plastic casing — why doesn't it need an earth wire?"
+    "Before reading, try to recall the colour and job of each wire in a three-pin plug. Check your answers as you go.",
+    "Sketch an oscilloscope trace for both AC and DC from memory. Then look at the real thing to compare.",
+    "Think about every appliance at home with a plastic casing. Why doesn't it need an earth wire?"
   ],
-  "intro": "Every time you plug in a kettle, charge your phone or switch on a light, you are interacting with a carefully designed electrical system that keeps you safe from potentially lethal voltages. The mains supply in the UK delivers 230 V of alternating current — enough to kill — yet people use it millions of times a day without incident. That safety comes from smart engineering: the right wires in the right colours, fuses that melt before fires start, and earth connections that drain dangerous current away from you.",
+  "intro": "When you plug in a kettle, charge your phone or switch on a light, you use a carefully designed system. It keeps you safe from voltages that could kill. The UK mains supply gives 230 V of alternating current. That is enough to kill. Yet people use it millions of times a day without harm. That safety comes from smart engineering. It uses the right wires in the right colours, and fuses that melt before fires start. Earth connections also drain dangerous current away from you.",
   "keyPoints": [
     {
       "heading": "AC vs DC",
-      "content": "<strong>Direct current (DC)</strong>: current flows in one direction only. The voltage is constant. Produced by cells, batteries and solar panels. Used in phones, laptops and torches. <strong>Alternating current (AC)</strong>: current direction reverses repeatedly — it alternates back and forth. The UK mains supply is AC at <strong>230 V</strong> and <strong>50 Hz</strong> (50 complete cycles per second). The frequency (50 Hz) means the current direction reverses 100 times every second. Why do we use AC for mains? <strong>Transformers</strong> only work with AC — they cannot step DC voltages up or down. The National Grid uses high voltages (up to 400,000 V) to transmit electricity efficiently across the country, and transformers change the voltage at each end — this is only possible with AC. On an <strong>oscilloscope</strong>: DC appears as a flat horizontal line; AC appears as a <strong>sinusoidal wave</strong> (smooth repeating S-curve with equal peaks and troughs). The peak voltage is higher than the stated 230 V — the 230 V is the root mean square (RMS) value, which is the equivalent DC voltage that would deliver the same power.",
+      "content": "<strong>Direct current (DC)</strong>: current flows in one direction only. The voltage is constant. It comes from cells, batteries and solar panels. It is used in phones, laptops and torches.\n\n<strong>Alternating current (AC)</strong>: the current keeps reversing direction. It alternates back and forth. The UK mains supply is AC at <strong>230 V</strong> and <strong>50 Hz</strong> (50 complete cycles per second). The frequency is 50 Hz. So the current reverses direction 100 times every second.\n\nWhy do we use AC for mains? <strong>Transformers</strong> only work with AC. They cannot step DC voltages up or down. The National Grid uses high voltages (up to 400,000 V) to send electricity across the country efficiently. Transformers change the voltage at each end. This is only possible with AC.\n\nOn an <strong>oscilloscope</strong>, DC shows as a flat horizontal line. AC shows as a <strong>sinusoidal wave</strong>: a smooth, repeating S-curve with equal peaks and troughs.\n\nThe peak voltage is higher than the stated 230 V. The 230 V is the root mean square (RMS) value. This is the DC voltage that would give the same power.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "DC — current in one direction only; constant voltage; from batteries and cells",
-        "AC — current reverses direction repeatedly; from mains supply",
+        "DC — current in one direction only. Constant voltage. Comes from batteries and cells",
+        "AC — current keeps reversing direction. Comes from the mains supply",
         "UK mains: 230 V, 50 Hz (50 cycles per second)",
-        "AC used for mains because transformers (which need AC) allow efficient high-voltage transmission",
+        "AC is used for mains because transformers need AC. They allow efficient high-voltage transmission",
         "Oscilloscope: DC = flat line; AC = sinusoidal wave",
-        "230 V is the RMS value; peak voltage is higher (~325 V)"
+        "230 V is the RMS value. The peak voltage is higher (~325 V)"
       ],
       "keyTerms": [
         {
@@ -42,21 +42,21 @@
           "def": "An instrument that displays how voltage changes over time; used to show the difference between AC and DC waveforms."
         }
       ],
-      "memTip": "AC = Alternates, DC = Direct (one direction). The mains 'alternates' — think of it swinging like a pendulum, back and forth 50 times a second.",
-      "tutor_note": "Students often say 'AC is more dangerous than DC' — this is not strictly true; both are dangerous at mains voltages. Focus on the engineering reasons AC is used for mains (transformer compatibility)."
+      "memTip": "AC = Alternates, DC = Direct (one direction). The mains 'alternates'. Think of it swinging like a pendulum, back and forth 50 times a second.",
+      "tutor_note": "People often say 'AC is more dangerous than DC'. This is not strictly true. Both are dangerous at mains voltages. Focus on the engineering reason AC is used for mains: it works with transformers."
     },
     {
       "heading": "The three-pin plug",
-      "content": "A UK three-pin plug has three wires, each a different colour, each with a specific job. The <strong>live wire (BROWN)</strong> carries the alternating voltage from the mains supply — this is the dangerous wire (230 V AC). The <strong>neutral wire (BLUE)</strong> completes the circuit and returns current back to the supply — it is at approximately 0 V and is much safer to touch (though you should never touch any live circuit). The <strong>earth wire (GREEN and YELLOW stripes)</strong> is a safety wire connected to the metal casing of the appliance and to ground (0 V). Under normal operation, no current flows through the earth wire. If a fault develops and the live wire touches the metal casing, the casing becomes live — but the earth wire provides a low-resistance path for the current to flow safely to earth. This large current blows the <strong>fuse</strong>, breaking the circuit before anyone is electrocuted. The plug also has a <strong>cable grip</strong> that clamps the outer insulation — so the wires cannot be pulled loose if someone tugs the cable. Memory trick: <strong>BL</strong>ue = <strong>N</strong>eutral, <strong>BR</strong>own = <strong>L</strong>ive (BLaNk = Blue Neutral; BRiLliant = Brown Live).",
+      "content": "A UK three-pin plug has three wires. Each is a different colour, and each has a specific job.\n\nThe <strong>live wire (BROWN)</strong> carries the alternating voltage from the mains supply. This is the dangerous wire (230 V AC).\n\nThe <strong>neutral wire (BLUE)</strong> completes the circuit and returns current to the supply. It is at about 0 V and is much safer to touch. But you should never touch any live circuit.\n\nThe <strong>earth wire (GREEN and YELLOW stripes)</strong> is a safety wire. It connects the metal casing of the appliance to the ground (0 V). Normally, no current flows through the earth wire. Say a fault develops and the live wire touches the metal casing. Then the casing becomes live. But the earth wire gives a low-resistance path for the current to flow safely to earth. This large current blows the <strong>fuse</strong>. That breaks the circuit before anyone is electrocuted.\n\nThe plug also has a <strong>cable grip</strong> that clamps the outer insulation. So the wires cannot be pulled loose if someone tugs the cable.\n\nMemory trick: <strong>BL</strong>ue = <strong>N</strong>eutral, <strong>BR</strong>own = <strong>L</strong>ive (BLaNk = Blue Neutral; BRiLliant = Brown Live).",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Live wire — BROWN; carries 230 V AC from supply; most dangerous wire",
-        "Neutral wire — BLUE; returns current to supply; approximately 0 V",
-        "Earth wire — GREEN/YELLOW; safety wire connecting metal casing to ground",
+        "Live wire — BROWN. Carries 230 V AC from the supply. The most dangerous wire",
+        "Neutral wire — BLUE. Returns current to the supply. About 0 V",
+        "Earth wire — GREEN and YELLOW. A safety wire connecting the metal casing to the ground",
         "Earth + fuse: fault → casing goes live → large current → fuse blows → circuit broken",
-        "Cable grip — clamps outer insulation to prevent wires being pulled loose",
+        "Cable grip — clamps the outer insulation so the wires can't be pulled loose",
         "Memory: BLue Neutral, BRown Live"
       ],
       "keyTerms": [
@@ -77,22 +77,22 @@
           "def": "A thin wire that melts and breaks the circuit when current exceeds its rated value, protecting against overheating and fire."
         }
       ],
-      "memTip": "BLue Neutral, BRown Live. Or picture a bruise — BLue = Neutral is the 'safer' one; BRown is the 'live danger' one.",
-      "tutor_note": "A very common exam question asks students to explain why the fuse must be in the live wire, not the neutral wire. If the fuse were in the neutral wire, the appliance would still be connected to 230 V even after the fuse blew — dangerous."
+      "memTip": "BLue Neutral, BRown Live. Or picture a bruise. BLue = Neutral is the 'safer' one. BRown is the 'live danger' one.",
+      "tutor_note": "A very common exam question asks why the fuse must be in the live wire. Why not the neutral wire? Say the fuse were in the neutral wire and it blew. The appliance would still be connected to 230 V. That is dangerous."
     },
     {
       "heading": "Fuses and circuit breakers",
-      "content": "A <strong>fuse</strong> is a thin wire inside a ceramic casing, connected in series with the live wire. When current exceeds the fuse's <strong>rated current</strong>, the wire heats up and melts — breaking the circuit. You must choose a fuse rating just above the normal operating current. Worked example: a lamp drawing 0.2 A uses a 3 A fuse (next standard size up). A kettle drawing 9 A uses a 13 A fuse. Common UK fuse ratings: <strong>3 A</strong> (lamps, phone chargers, TVs), <strong>5 A</strong>, <strong>13 A</strong> (kettles, irons, microwaves). If the fuse rating is too high, it won't blow when there is a fault — dangerous. If too low, it keeps blowing unnecessarily. Once a fuse blows it must be <strong>replaced</strong>. A <strong>circuit breaker (MCB — miniature circuit breaker)</strong> is an electromagnetic switch in the consumer unit (fuse box) that trips and switches off when current is too high — it can be <strong>reset</strong> by flicking the switch back. Much more convenient than replacing fuses. An <strong>RCCB (residual current circuit breaker)</strong> is even more sensitive — it detects tiny differences in current between the live and neutral wires (even just 30 mA). If someone is being electrocuted, current leaks through their body rather than the neutral wire — the RCCB detects this imbalance and trips within milliseconds, potentially saving a life.",
+      "content": "A <strong>fuse</strong> is a thin wire inside a ceramic casing. It is connected in series with the live wire. When the current goes above the fuse's <strong>rated current</strong>, the wire heats up and melts. That breaks the circuit.\n\nChoose a fuse rating just above the normal working current. Worked example: a lamp drawing 0.2 A uses a 3 A fuse (the next standard size up). A kettle drawing 9 A uses a 13 A fuse.\n\nCommon UK fuse ratings: <strong>3 A</strong> (lamps, phone chargers, TVs), <strong>5 A</strong>, and <strong>13 A</strong> (kettles, irons, microwaves). If the rating is too high, the fuse won't blow when there is a fault. That is dangerous. If it is too low, it keeps blowing for no reason. Once a fuse blows, it must be <strong>replaced</strong>.\n\nA <strong>circuit breaker (MCB — miniature circuit breaker)</strong> is an electromagnetic switch in the consumer unit (fuse box). It trips and switches off when the current is too high. It can be <strong>reset</strong> by flicking the switch back. This is much easier than replacing fuses.\n\nAn <strong>RCCB (residual current circuit breaker)</strong> is even more sensitive. It detects tiny differences in current between the live and neutral wires, even just 30 mA. If someone is being electrocuted, current leaks through their body instead of the neutral wire. The RCCB detects this imbalance and trips within milliseconds. This could save a life.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Fuse — thin wire in series with live wire; melts and breaks circuit when current is too high",
-        "Correct fuse rating: just above normal operating current of the appliance",
-        "3 A: lamps, chargers; 13 A: kettles, irons, microwaves",
-        "Fuse too high: won't blow in a fault (dangerous); too low: unnecessary tripping",
-        "MCB (circuit breaker) — reusable electromagnetic switch; trips and can be reset",
-        "RCCB — detects current imbalance between live and neutral; trips in milliseconds; protects against electric shock"
+        "Fuse — a thin wire in series with the live wire. It melts and breaks the circuit when the current is too high",
+        "Correct fuse rating: just above the normal working current of the appliance",
+        "3 A: lamps, chargers. 13 A: kettles, irons, microwaves",
+        "Fuse too high: won't blow in a fault (dangerous). Too low: keeps blowing for no reason",
+        "MCB (circuit breaker) — a reusable electromagnetic switch. It trips and can be reset",
+        "RCCB — detects a current imbalance between live and neutral. Trips in milliseconds. Protects against electric shock"
       ],
       "keyTerms": [
         {
@@ -108,22 +108,22 @@
           "def": "Residual current circuit breaker — detects tiny current differences between live and neutral wires; trips within milliseconds to prevent electrocution."
         }
       ],
-      "memTip": "Fuse = sacrificial — it destroys itself to save you. MCB = reusable — flick it back.",
-      "tutor_note": "Students often confuse fuse rating with what the fuse 'does' — stress that the fuse rating is the current at which it blows, not the current it allows. Also reinforce that fuses are always in the live wire."
+      "memTip": "Fuse = sacrificial. It destroys itself to save you. MCB = reusable. Flick it back.",
+      "tutor_note": "It is easy to misread what a fuse rating means. The rating is the current at which the fuse blows, not the current it allows. And fuses are always in the live wire."
     },
     {
       "heading": "Earthing and double insulation",
-      "content": "<strong>Earthing</strong> is the process of connecting the metal casing of an appliance to earth (0 V) via the earth wire (green/yellow). Under normal operation, no current flows through the earth wire. If there is a fault — the live wire inside the appliance touches the metal casing — the casing becomes live at 230 V. Without earthing, anyone touching the casing would receive an electric shock as current flows through them to earth. With earthing: the earth wire provides a low-resistance path → a very large current flows through the earth wire → this blows the fuse or trips the MCB → circuit breaks before anyone is harmed. The earth wire and fuse must always work together for this protection to function. <strong>Double insulation</strong> is used for appliances with fully plastic casings (e.g., hairdryers, power drills, some lamps). Because the casing is made of plastic (an insulator), the live wire cannot make the casing dangerous — so no earth wire is needed. These use <strong>two-core cables</strong> (live + neutral only). The double-insulation symbol is a small square inside a larger square. Electrical safety rules: never use electrical appliances near water (water conducts electricity), never overload sockets with adaptors, always check cables for damage before use, use the correct fuse rating.",
+      "content": "<strong>Earthing</strong> means connecting an appliance's metal casing to earth (0 V). This is done through the earth wire (green and yellow). Normally, no current flows through the earth wire.\n\nSay there is a fault, and the live wire inside the appliance touches the metal casing. The casing becomes live at 230 V. Without earthing, anyone touching the casing would get an electric shock. Current would flow through them to earth.\n\nWith earthing:\n- the earth wire gives a low-resistance path\n- a very large current flows through the earth wire\n- this blows the fuse or trips the MCB\n- the circuit breaks before anyone is harmed\n The earth wire and fuse must always work together for this protection to work.\n\n<strong>Double insulation</strong> is used for appliances with fully plastic casings. Examples are hairdryers, power drills and some lamps. The casing is plastic, which is an insulator. So the live wire cannot make the casing dangerous, and no earth wire is needed. These appliances use <strong>two-core cables</strong> (live + neutral only). The double-insulation symbol is a small square inside a larger square.\n\nElectrical safety rules:\n- never use electrical appliances near water (water conducts electricity)\n- never overload sockets with adaptors\n- always check cables for damage before use\n- use the correct fuse rating",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Earthing — connects metal casing to earth via green/yellow wire; protects against electric shock",
+        "Earthing — connects the metal casing to earth through the green and yellow wire. Protects against electric shock",
         "Fault sequence: live touches casing → casing goes live → large current through earth wire → fuse blows → circuit broken",
-        "Double insulation — plastic casing cannot become live; no earth wire needed",
+        "Double insulation — a plastic casing cannot become live. No earth wire needed",
         "Double-insulated appliances use two-core cable (live + neutral only)",
-        "Double insulation symbol: small square inside larger square",
-        "Safety rules: no appliances near water; no overloaded sockets; check cables; use correct fuse"
+        "Double insulation symbol: a small square inside a larger square",
+        "Safety rules: no appliances near water. No overloaded sockets. Check cables. Use the correct fuse"
       ],
       "keyTerms": [
         {
@@ -140,7 +140,7 @@
         }
       ],
       "memTip": "Earth = escape route for fault current. Double insulated = nothing to earth (no metal casing).",
-      "tutor_note": "Students sometimes think earthing prevents faults — it doesn't prevent faults, it controls what happens when a fault occurs. The earth wire gives the fault current a safe route so the fuse blows before anyone is hurt."
+      "tutor_note": "It is easy to think earthing prevents faults. It doesn't. It controls what happens when a fault occurs. The earth wire gives the fault current a safe route, so the fuse blows before anyone is hurt."
     }
   ],
   "tables": [
@@ -219,11 +219,11 @@
         "Brown, 12 V DC"
       ],
       "correct": 0,
-      "correctFeedback": "Correct. The live wire is brown and carries the 230 V AC mains supply — it is the most dangerous wire in the plug.",
-      "wrongFeedback": "The live wire is BROWN and carries 230 V AC. Blue is neutral (~0 V). Green/yellow is the earth wire (also ~0 V in normal operation)."
+      "correctFeedback": "Correct. The live wire is brown and carries the 230 V AC mains supply. It is the most dangerous wire in the plug.",
+      "wrongFeedback": "The live wire is BROWN and carries 230 V AC. Blue is neutral (~0 V). Green and yellow is the earth wire, also ~0 V normally."
     },
     "1": {
-      "question": "A toaster draws 4.5 A at normal operation. Which fuse should be fitted?",
+      "question": "A toaster draws 4.5 A when working normally. Which fuse should be fitted?",
       "options": [
         "5 A",
         "3 A",
@@ -231,59 +231,59 @@
         "1 A"
       ],
       "correct": 0,
-      "correctFeedback": "Spot on. The fuse rating should be just above the normal operating current. 4.5 A → next standard size up is 5 A. A 13 A fuse would not blow in a fault at 4.5 A.",
-      "wrongFeedback": "The fuse must be rated just above the normal current drawn. 4.5 A rules out 3 A (too low — would blow unnecessarily) and 13 A (too high — wouldn't blow in a fault). The correct choice is 5 A."
+      "correctFeedback": "Spot on. The fuse rating should be just above the normal working current. 4.5 A → the next standard size up is 5 A. A 13 A fuse would not blow in a fault at 4.5 A.",
+      "wrongFeedback": "The fuse must be rated just above the normal current drawn. For 4.5 A, 3 A is too low: it would keep blowing. 13 A is too high: it wouldn't blow in a fault. The correct choice is 5 A."
     },
     "2": {
       "question": "Why does a hairdryer with a plastic casing not need an earth wire?",
       "options": [
-        "Plastic is an insulator so the casing cannot become live even if there is a fault",
-        "The hairdryer only uses DC so earthing is not needed",
-        "Plastic casings already contain an earth wire built in",
+        "Plastic is an insulator, so the casing cannot become live even if there is a fault",
+        "The hairdryer only uses DC, so earthing is not needed",
+        "Plastic casings already have an earth wire built in",
         "The fuse provides all the necessary protection on its own"
       ],
       "correct": 0,
-      "correctFeedback": "Exactly right. Because the casing is plastic (an insulator), it cannot become electrically live even if the live wire touches it — so there is nothing that can give you a shock. No earth wire needed.",
-      "wrongFeedback": "The reason is about the material, not the type of current or the fuse. Plastic is an electrical insulator — even if the live wire touches the inside of the casing, the casing itself stays safe. That is what double insulation means."
+      "correctFeedback": "Exactly right. The casing is plastic, which is an insulator. It cannot become live, even if the live wire touches it. So nothing can give you a shock, and no earth wire is needed.",
+      "wrongFeedback": "The reason is the material, not the type of current or the fuse. Plastic is an electrical insulator. Even if the live wire touches the inside of the casing, the casing itself stays safe. That is what double insulation means."
     },
     "3": {
       "question": "What is the frequency of the UK mains AC supply, and what does this mean?",
       "options": [
-        "50 Hz — the current reverses direction 100 times per second (50 complete cycles)",
-        "230 Hz — the voltage is 230 V",
-        "50 Hz — the voltage changes 50 times per second",
-        "60 Hz — the same as the USA"
+        "50 Hz. The current reverses direction 100 times per second (50 complete cycles)",
+        "230 Hz. The voltage is 230 V",
+        "50 Hz. The voltage changes 50 times per second",
+        "60 Hz. The same as the USA"
       ],
       "correct": 0,
-      "correctFeedback": "Perfect. 50 Hz means 50 complete cycles every second — since each cycle involves the current going forward then back, the direction changes 100 times per second.",
-      "wrongFeedback": "The UK mains is 50 Hz. Frequency means complete cycles per second — at 50 Hz there are 50 complete cycles (and 100 direction changes) every second. The 230 V is the voltage, not the frequency."
+      "correctFeedback": "Perfect. 50 Hz means 50 complete cycles every second. Each cycle has the current going forward, then back. So the direction changes 100 times per second.",
+      "wrongFeedback": "The UK mains is 50 Hz. Frequency means complete cycles per second. At 50 Hz there are 50 complete cycles (and 100 direction changes) every second. The 230 V is the voltage, not the frequency."
     }
   },
   "commonMistakes": [
-    "Confusing the live and neutral wire colours — live is BROWN, neutral is BLUE. Many students reverse these. Use BLue Neutral, BRown Live.",
-    "Thinking the earth wire carries current during normal operation — it does not. Current only flows through the earth wire during a fault.",
-    "Saying the fuse should be in the neutral wire — it must always be in the LIVE wire. A fuse in the neutral wire would leave the appliance connected to 230 V even after it blows.",
-    "Choosing a fuse rating equal to the appliance's current rather than just above it — the fuse rating must be just above normal current so it doesn't trip unnecessarily but will still blow in a fault.",
-    "Thinking double-insulated appliances are less safe — they are equally safe because the plastic casing physically cannot become live, making the earth wire unnecessary rather than missing."
+    "Mixing up the live and neutral wire colours. Live is BROWN and neutral is BLUE. Many people swap these. Use BLue Neutral, BRown Live.",
+    "Thinking the earth wire carries current when working normally. It does not. Current only flows through the earth wire during a fault.",
+    "Saying the fuse should be in the neutral wire. It must always be in the LIVE wire. A fuse in the neutral wire would leave the appliance connected to 230 V, even after it blows.",
+    "Choosing a fuse rating equal to the appliance's current, rather than just above it. The rating must be just above the normal current. Then it won't trip for no reason, but will still blow in a fault.",
+    "Thinking double-insulated appliances are less safe. They are just as safe. The plastic casing cannot become live, so the earth wire is not needed rather than missing."
   ],
   "examTips": [
-    "When explaining how earthing protects you, always give the full sequence: fault → casing live → large current through earth → fuse blows → circuit broken. Missing any step loses marks.",
-    "If asked to compare AC and DC on an oscilloscope, describe the shape precisely: DC is a flat horizontal line, AC is a sinusoidal (S-shaped) wave with equal peaks and troughs.",
-    "For fuse selection questions, always choose the rating just above the operating current from the standard values given — never choose one equal to or below the operating current."
+    "When explaining how earthing protects you, always give the full sequence. Fault → casing live → large current through earth → fuse blows → circuit broken. Missing any step loses marks.",
+    "If asked to compare AC and DC on an oscilloscope, describe the shapes exactly. DC is a flat horizontal line. AC is a sinusoidal (S-shaped) wave with equal peaks and troughs.",
+    "For fuse questions, always choose the rating just above the working current from the standard values given. Never choose one equal to or below the working current."
   ],
   "revisionCardBullets": [
     "DC: one direction only, constant voltage (batteries, cells, solar panels)",
-    "AC: current reverses direction; UK mains = 230 V, 50 Hz",
+    "AC: current reverses direction. UK mains = 230 V, 50 Hz",
     "AC used for mains because transformers (needed for National Grid) only work with AC",
     "Oscilloscope: DC = flat line; AC = sinusoidal wave",
-    "Live wire: BROWN, 230 V AC — most dangerous",
-    "Neutral wire: BLUE, ~0 V — completes circuit",
-    "Earth wire: GREEN/YELLOW, 0 V — safety; carries fault current to blow fuse",
-    "Fuse: in series with live wire; melts if current too high; must be replaced",
-    "Fuse rating: just above normal operating current (3 A, 5 A or 13 A)",
-    "MCB: reusable circuit breaker; can be reset after tripping",
-    "RCCB: detects live/neutral current imbalance; trips in milliseconds — protects against electrocution",
-    "Double insulation: plastic casing cannot go live; no earth wire needed (two-core cable)"
+    "Live wire: BROWN, 230 V AC. The most dangerous",
+    "Neutral wire: BLUE, ~0 V. Completes the circuit",
+    "Earth wire: GREEN and YELLOW, 0 V. Safety wire that carries fault current to blow the fuse",
+    "Fuse: in series with the live wire. Melts if the current is too high. Must be replaced",
+    "Fuse rating: just above the normal working current (3 A, 5 A or 13 A)",
+    "MCB: a reusable circuit breaker. Can be reset after tripping",
+    "RCCB: detects a current imbalance between live and neutral. Trips in milliseconds and protects against electrocution",
+    "Double insulation: a plastic casing cannot go live. No earth wire needed (two-core cable)"
   ],
   "videos": [
     {

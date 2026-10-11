@@ -15463,7 +15463,7 @@ const MathsQuestions = (() => {
     },
     // trig-A03
     {
-      id: 'trig-A03', topic: 'geo-trigonometry', band: 'A', marks: 2,
+      id: 'trig-A03', subtopic: 'geo-trigonometry', band: 'A', marks: 2,
       question: 'In a right-angled triangle, the opposite side is 6 cm and the hypotenuse is 10 cm. Find angle x.',
       workedExample: {
         question: 'In a right-angled triangle, the opposite side is 9 cm and the hypotenuse is 15 cm. Find angle x.',
@@ -15479,7 +15479,7 @@ const MathsQuestions = (() => {
     },
     // trig-A04
     {
-      id: 'trig-A04', topic: 'geo-trigonometry', band: 'A', marks: 2,
+      id: 'trig-A04', subtopic: 'geo-trigonometry', band: 'A', marks: 2,
       question: 'In a right-angled triangle, the adjacent side is 5 cm and the hypotenuse is 13 cm. Find angle x to 2 d.p.',
       workedExample: {
         question: 'In a right-angled triangle, the adjacent side is 8 cm and the hypotenuse is 17 cm. Find angle x to 2 d.p.',
@@ -15495,7 +15495,7 @@ const MathsQuestions = (() => {
     },
     // trig-A05
     {
-      id: 'trig-A05', topic: 'geo-trigonometry', band: 'A', marks: 2,
+      id: 'trig-A05', subtopic: 'geo-trigonometry', band: 'A', marks: 2,
       question: 'A right-angled triangle has an angle of 40° and an adjacent side of 7 cm. Find the opposite side to 2 d.p.',
       workedExample: {
         question: 'A right-angled triangle has an angle of 55° and an adjacent side of 4 cm. Find the opposite side to 2 d.p.',
@@ -15511,7 +15511,7 @@ const MathsQuestions = (() => {
     },
     // trig-B02
     {
-      id: 'trig-B02', topic: 'geo-trigonometry', band: 'B', marks: 3,
+      id: 'trig-B02', subtopic: 'geo-trigonometry', band: 'B', marks: 3,
       question: 'A ladder leans against a wall. The ladder is 6 m long and makes an angle of 72° with the ground. How high up the wall does it reach? Give your answer to 2 d.p.',
       workedExample: {
         question: 'A ladder is 8 m long and makes an angle of 65° with the ground. How high up the wall does it reach? Give your answer to 2 d.p.',
@@ -15529,7 +15529,7 @@ const MathsQuestions = (() => {
     },
     // trig-B03
     {
-      id: 'trig-B03', topic: 'geo-trigonometry', band: 'B', marks: 3,
+      id: 'trig-B03', subtopic: 'geo-trigonometry', band: 'B', marks: 3,
       question: 'From a point 20 m from the base of a building, the angle of elevation to the top is 38°. Find the height of the building to 2 d.p.',
       workedExample: {
         question: 'From a point 15 m from a tower, the angle of elevation to the top is 52°. Find the height of the tower to 2 d.p.',
@@ -15547,7 +15547,7 @@ const MathsQuestions = (() => {
     },
     // trig-B04
     {
-      id: 'trig-B04', topic: 'geo-trigonometry', band: 'B', marks: 3,
+      id: 'trig-B04', subtopic: 'geo-trigonometry', band: 'B', marks: 3,
       question: 'Triangle PQR has a right angle at R. PQ = 11 cm and PR = 7 cm. Find angle P to 2 d.p.',
       workedExample: {
         question: 'Triangle ABC has a right angle at C. AB = 13 cm and AC = 5 cm. Find angle A to 2 d.p.',
@@ -15565,7 +15565,7 @@ const MathsQuestions = (() => {
     },
     // trig-B05
     {
-      id: 'trig-B05', topic: 'geo-trigonometry', band: 'B', marks: 3,
+      id: 'trig-B05', subtopic: 'geo-trigonometry', band: 'B', marks: 3,
       question: 'A ship sails 12 km on a bearing of 035°. How far north and how far east has it travelled? Give answers to 2 d.p.',
       workedExample: {
         question: 'A plane flies 20 km on a bearing of 050°. How far north and how far east has it travelled? Give answers to 2 d.p.',
@@ -15583,7 +15583,7 @@ const MathsQuestions = (() => {
     },
     // trig-B06
     {
-      id: 'trig-B06', topic: 'geo-trigonometry', band: 'B', marks: 3,
+      id: 'trig-B06', subtopic: 'geo-trigonometry', band: 'B', marks: 3,
       question: 'In triangle ABC, angle B = 90°, AB = 9 cm, BC = 12 cm. Find the length AC and angle A to 2 d.p.',
       workedExample: {
         question: 'In triangle PQR, angle Q = 90°, PQ = 5 cm, QR = 12 cm. Find PR and angle P to 2 d.p.',
@@ -15601,7 +15601,7 @@ const MathsQuestions = (() => {
     },
     // trig-C01
     {
-      id: 'trig-C01', topic: 'geo-trigonometry', band: 'C', marks: 4,
+      id: 'trig-C01', subtopic: 'geo-trigonometry', band: 'C', marks: 4,
       question: 'A vertical flagpole stands on horizontal ground. From point A, the angle of elevation to the top is 30°. From point B, 10 m closer, the angle of elevation is 45°. Find the height of the flagpole to 2 d.p.',
       workedExample: {
         question: 'A tower is observed from two points. From A, elevation = 25°. From B, 8 m closer, elevation = 40°. Find the tower height to 2 d.p.',
@@ -15621,7 +15621,7 @@ const MathsQuestions = (() => {
     },
     // trig-C02
     {
-      id: 'trig-C02', topic: 'geo-trigonometry', band: 'C', marks: 4,
+      id: 'trig-C02', subtopic: 'geo-trigonometry', band: 'C', marks: 4,
       question: 'In triangle ABC, AB = 10 cm, BC = 7 cm, angle ABC = 90°. Point D lies on AB such that CD bisects angle ACB. Find the length AD to 2 d.p.',
       workedExample: {
         question: 'In right-angled triangle PQR (right angle Q), PQ = 8 cm, QR = 6 cm. Point S on PQ such that RS bisects angle PRQ. Find PS to 2 d.p.',
@@ -15641,7 +15641,7 @@ const MathsQuestions = (() => {
     },
     // trig-C03
     {
-      id: 'trig-C03', topic: 'geo-trigonometry', band: 'C', marks: 4,
+      id: 'trig-C03', subtopic: 'geo-trigonometry', band: 'C', marks: 4,
       question: 'A surveyor at point X measures the angles of elevation to the top T of a cliff from two positions: from X the angle is 20°, and from Y (50 m closer along the same horizontal) the angle is 35°. Calculate the height of the cliff to 2 d.p.',
       workedExample: {
         question: 'From point P, angle of elevation to cliff top = 18°. From Q, 40 m closer, angle = 32°. Find cliff height to 2 d.p.',
@@ -15661,7 +15661,7 @@ const MathsQuestions = (() => {
     },
     // trig-C04
     {
-      id: 'trig-C04', topic: 'geo-trigonometry', band: 'C', marks: 4,
+      id: 'trig-C04', subtopic: 'geo-trigonometry', band: 'C', marks: 4,
       question: 'Triangle XYZ has XY = 8 cm, YZ = 11 cm and angle XYZ = 50°. Using the cosine rule, find XZ to 2 d.p., then use the sine rule to find angle YXZ to 2 d.p.',
       workedExample: {
         question: 'Triangle ABC has AB = 6 cm, BC = 9 cm and angle ABC = 40°. Find AC to 2 d.p., then find angle BAC to 2 d.p.',
@@ -15745,7 +15745,7 @@ const MathsQuestions = (() => {
     },
     // cth-A02
     {
-      id: 'cth-A02', topic: 'geo-circle-theorems', band: 'A', marks: 2,
+      id: 'cth-A02', subtopic: 'geo-circles', band: 'A', marks: 2,
       question: 'O is the centre of a circle. The angle at the centre AOB = 110°. Find the angle at the circumference ACB, where C is any point on the major arc.',
       workedExample: {
         question: 'O is the centre of a circle. Angle AOB = 140°. Find angle ACB where C is on the major arc.',
@@ -15761,7 +15761,7 @@ const MathsQuestions = (() => {
     },
     // cth-A03
     {
-      id: 'cth-A03', topic: 'geo-circle-theorems', band: 'A', marks: 2,
+      id: 'cth-A03', subtopic: 'geo-circles', band: 'A', marks: 2,
       question: 'ABCD is a cyclic quadrilateral. Angle DAB = 78°. Find angle BCD.',
       workedExample: {
         question: 'PQRS is a cyclic quadrilateral. Angle SPQ = 112°. Find angle QRS.',
@@ -15777,7 +15777,7 @@ const MathsQuestions = (() => {
     },
     // cth-A04
     {
-      id: 'cth-A04', topic: 'geo-circle-theorems', band: 'A', marks: 2,
+      id: 'cth-A04', subtopic: 'geo-circles', band: 'A', marks: 2,
       question: 'AB is a diameter of a circle. C is a point on the circle. Angle BAC = 34°. Find angle ABC.',
       workedExample: {
         question: 'AB is a diameter. C is on the circle. Angle BAC = 28°. Find angle ABC.',
@@ -15793,7 +15793,7 @@ const MathsQuestions = (() => {
     },
     // cth-A05
     {
-      id: 'cth-A05', topic: 'geo-circle-theorems', band: 'A', marks: 2,
+      id: 'cth-A05', subtopic: 'geo-circles', band: 'A', marks: 2,
       question: 'A tangent touches a circle at point T, and O is the centre. OT = 5 cm and the tangent length from external point P is 12 cm. Find the distance OP.',
       workedExample: {
         question: 'A tangent from external point Q touches the circle at T. OT = 3 cm, QT = 4 cm. Find OQ.',
@@ -15809,7 +15809,7 @@ const MathsQuestions = (() => {
     },
     // cth-B02
     {
-      id: 'cth-B02', topic: 'geo-circle-theorems', band: 'B', marks: 3,
+      id: 'cth-B02', subtopic: 'geo-circles', band: 'B', marks: 3,
       question: 'O is the centre of a circle. Points A, B and C are on the circle. Angle OAB = 25° and OA = OB (radii). Find angle ACB.',
       workedExample: {
         question: 'O is the centre. OA = OB (radii), angle OAB = 32°. Find angle ACB (C on major arc).',
@@ -15827,7 +15827,7 @@ const MathsQuestions = (() => {
     },
     // cth-B03
     {
-      id: 'cth-B03', topic: 'geo-circle-theorems', band: 'B', marks: 3,
+      id: 'cth-B03', subtopic: 'geo-circles', band: 'B', marks: 3,
       question: 'Two chords AB and CD intersect inside a circle at point X. AX = 4 cm, XB = 9 cm, CX = 6 cm. Find XD.',
       workedExample: {
         question: 'Chords PQ and RS intersect at X inside a circle. PX = 3 cm, XQ = 8 cm, RX = 4 cm. Find XS.',
@@ -15845,7 +15845,7 @@ const MathsQuestions = (() => {
     },
     // cth-B04
     {
-      id: 'cth-B04', topic: 'geo-circle-theorems', band: 'B', marks: 3,
+      id: 'cth-B04', subtopic: 'geo-circles', band: 'B', marks: 3,
       question: 'A, B and C are points on a circle. The tangent to the circle at A makes an angle of 65° with chord AB. Find angle ACB (the angle in the alternate segment).',
       workedExample: {
         question: 'Tangent at A makes 48° with chord AB. Find angle in alternate segment ACB.',
@@ -15862,7 +15862,7 @@ const MathsQuestions = (() => {
     },
     // cth-B05
     {
-      id: 'cth-B05', topic: 'geo-circle-theorems', band: 'B', marks: 3,
+      id: 'cth-B05', subtopic: 'geo-circles', band: 'B', marks: 3,
       question: 'O is the centre. Angle PQR = 35° where P, Q, R are on the circle. Find angle POR.',
       workedExample: {
         question: 'O is the centre. Angle ABC = 42° where A, B, C are on the circle. Find angle AOC.',
@@ -15879,7 +15879,7 @@ const MathsQuestions = (() => {
     },
     // cth-B06
     {
-      id: 'cth-B06', topic: 'geo-circle-theorems', band: 'B', marks: 3,
+      id: 'cth-B06', subtopic: 'geo-circles', band: 'B', marks: 3,
       question: 'A, B, C, D are on a circle. Angle ABD = 40° and angle ACD = 55°. Are A, B, C, D concyclic (on the same circle)? Explain.',
       workedExample: {
         question: 'Points P, Q, R, S lie on a circle. Angle PQS = 30° and angle PRS = 30°. Are they on the same circle?',
@@ -15896,7 +15896,7 @@ const MathsQuestions = (() => {
     },
     // cth-C01
     {
-      id: 'cth-C01', topic: 'geo-circle-theorems', band: 'C', marks: 4,
+      id: 'cth-C01', subtopic: 'geo-circles', band: 'C', marks: 4,
       question: 'O is the centre of a circle. A, B and C are on the circle. Angle OBC = 20° and angle OCA = 35°. Find angle BAC.',
       workedExample: {
         question: 'O is the centre. Angle OBC = 18°, angle OCA = 28°. Find angle BAC.',
@@ -15915,7 +15915,7 @@ const MathsQuestions = (() => {
     },
     // cth-C02
     {
-      id: 'cth-C02', topic: 'geo-circle-theorems', band: 'C', marks: 4,
+      id: 'cth-C02', subtopic: 'geo-circles', band: 'C', marks: 4,
       question: 'Two circles intersect at points A and B. C is a point on the first circle and D is a point on the second circle, with C, A, D collinear. The chord CB subtends an angle of 64° at the circumference of the first circle. The chord DB subtends an angle of 71° at the circumference of the second circle. Find angle CBD.',
       workedExample: {
         question: 'Two intersecting circles. Chord PQ subtends 50° at first circle circumference. Chord QR subtends 65° at second circle circumference. P, Q, R collinear. Find angle PQR.',
@@ -15935,7 +15935,7 @@ const MathsQuestions = (() => {
     },
     // cth-C03
     {
-      id: 'cth-C03', topic: 'geo-circle-theorems', band: 'C', marks: 4,
+      id: 'cth-C03', subtopic: 'geo-circles', band: 'C', marks: 4,
       question: 'O is the centre of a circle. The tangent at P meets line OQ produced at T. OP = 5 cm and OT = 13 cm. Find PT and hence find angle POT.',
       workedExample: {
         question: 'O is centre. Tangent at A meets line OB produced at T. OA = 3, OT = 5. Find AT and angle AOT.',
@@ -15954,7 +15954,7 @@ const MathsQuestions = (() => {
     },
     // cth-C04
     {
-      id: 'cth-C04', topic: 'geo-circle-theorems', band: 'C', marks: 4,
+      id: 'cth-C04', subtopic: 'geo-circles', band: 'C', marks: 4,
       question: 'ABCD is a cyclic quadrilateral. Angle A = (3x + 10)°, angle B = (2x + 5)°, angle C = (x + 30)°, angle D = (4x − 15)°. Find x and all four angles.',
       workedExample: {
         question: 'Cyclic quadrilateral: angle P = (2x+5)°, Q = (x+20)°, R = (3x−10)°, S = (x+15)°. Find x.',
@@ -16041,7 +16041,7 @@ const MathsQuestions = (() => {
     },
     // vec-A02
     {
-      id: 'vec-A02', topic: 'geo-vectors', band: 'A', marks: 2,
+      id: 'vec-A02', subtopic: 'geo-vectors', band: 'A', marks: 2,
       question: 'Vector a = (3, 5) and vector b = (−1, 2). Find a + b and a − b.',
       workedExample: {
         question: 'Vector p = (4, 1) and q = (−2, 3). Find p + q and p − q.',
@@ -16057,7 +16057,7 @@ const MathsQuestions = (() => {
     },
     // vec-A03
     {
-      id: 'vec-A03', topic: 'geo-vectors', band: 'A', marks: 2,
+      id: 'vec-A03', subtopic: 'geo-vectors', band: 'A', marks: 2,
       question: 'Vector m = (6, −4). Find |m| (the magnitude of m) to 2 d.p.',
       workedExample: {
         question: 'Vector v = (3, 4). Find |v|.',
@@ -16072,7 +16072,7 @@ const MathsQuestions = (() => {
     },
     // vec-A04
     {
-      id: 'vec-A04', topic: 'geo-vectors', band: 'A', marks: 2,
+      id: 'vec-A04', subtopic: 'geo-vectors', band: 'A', marks: 2,
       question: 'Vector OA = (2, 3) and vector OB = (5, 1). Find vector AB.',
       workedExample: {
         question: 'Vector OP = (1, 4) and OQ = (6, 2). Find vector PQ.',
@@ -16087,7 +16087,7 @@ const MathsQuestions = (() => {
     },
     // vec-A05
     {
-      id: 'vec-A05', topic: 'geo-vectors', band: 'A', marks: 2,
+      id: 'vec-A05', subtopic: 'geo-vectors', band: 'A', marks: 2,
       question: 'Vector a = (4, 2). Find 3a.',
       workedExample: {
         question: 'Vector p = (3, −1). Find 4p.',
@@ -16102,7 +16102,7 @@ const MathsQuestions = (() => {
     },
     // vec-B02
     {
-      id: 'vec-B02', topic: 'geo-vectors', band: 'B', marks: 3,
+      id: 'vec-B02', subtopic: 'geo-vectors', band: 'B', marks: 3,
       question: 'OABC is a parallelogram. OA = a and OC = c. M is the midpoint of AB. Express OM in terms of a and c.',
       workedExample: {
         question: 'OPQR is a parallelogram. OP = p and OR = r. N is the midpoint of PQ. Express ON in terms of p and r.',
@@ -16120,7 +16120,7 @@ const MathsQuestions = (() => {
     },
     // vec-B03
     {
-      id: 'vec-B03', topic: 'geo-vectors', band: 'B', marks: 3,
+      id: 'vec-B03', subtopic: 'geo-vectors', band: 'B', marks: 3,
       question: 'OA = a and OB = b. P divides AB in the ratio 1:2. Find the position vector of P.',
       workedExample: {
         question: 'OX = x and OY = y. Q divides XY in ratio 1:3. Find position vector of Q.',
@@ -16137,7 +16137,7 @@ const MathsQuestions = (() => {
     },
     // vec-B04
     {
-      id: 'vec-B04', topic: 'geo-vectors', band: 'B', marks: 3,
+      id: 'vec-B04', subtopic: 'geo-vectors', band: 'B', marks: 3,
       question: 'Vectors u = (2, 5) and v = (−3, 1). Find |u − v| to 2 d.p.',
       workedExample: {
         question: 'Vectors p = (4, 1) and q = (1, 5). Find |p − q| to 2 d.p.',
@@ -16154,7 +16154,7 @@ const MathsQuestions = (() => {
     },
     // vec-B05
     {
-      id: 'vec-B05', topic: 'geo-vectors', band: 'B', marks: 3,
+      id: 'vec-B05', subtopic: 'geo-vectors', band: 'B', marks: 3,
       question: 'OA = 2a − b and OB = a + 3b. Find the vector AB and show that the magnitude of AB in terms of a = (1,0) and b = (0,1) is √(1 + 16) = √17.',
       workedExample: {
         question: 'OP = 3a + b and OQ = a − 2b. Find PQ.',
@@ -16170,7 +16170,7 @@ const MathsQuestions = (() => {
     },
     // vec-B06
     {
-      id: 'vec-B06', topic: 'geo-vectors', band: 'B', marks: 3,
+      id: 'vec-B06', subtopic: 'geo-vectors', band: 'B', marks: 3,
       question: 'OABC is a trapezium with OA parallel to CB. OA = 6a, OC = c and CB = 2a. M is the midpoint of OA. Find OM and MB in terms of a and c.',
       workedExample: {
         question: 'Trapezium OPQR, OP parallel to RQ. OP = 4p, OR = r, RQ = 2p. N midpoint of OP. Find ON and NQ in terms of p and r.',
@@ -16187,7 +16187,7 @@ const MathsQuestions = (() => {
     },
     // vec-C01
     {
-      id: 'vec-C01', topic: 'geo-vectors', band: 'C', marks: 4,
+      id: 'vec-C01', subtopic: 'geo-vectors', band: 'C', marks: 4,
       question: 'OA = a and OB = b. Point P lies on AB such that AP:PB = 3:1. Point Q lies on OB such that OQ:QB = 1:1 (midpoint). Show that O, P and Q are NOT collinear by comparing the vectors OP and OQ.',
       workedExample: {
         question: 'OA = a, OB = b. P on AB, AP:PB = 1:1. Q on OA, OQ:QA = 1:1. Show OP and OQ are parallel only if b = 0.',
@@ -16206,7 +16206,7 @@ const MathsQuestions = (() => {
     },
     // vec-C02
     {
-      id: 'vec-C02', topic: 'geo-vectors', band: 'C', marks: 4,
+      id: 'vec-C02', subtopic: 'geo-vectors', band: 'C', marks: 4,
       question: 'OA = a and OB = b. M is the midpoint of OA. N divides OB in ratio 2:1 from O. The line MN is extended to meet AB at point X. Find the ratio AX:XB.',
       workedExample: {
         question: 'OA = a, OB = b. M midpoint of OA. N midpoint of OB. MN extended meets AB at X. Find AX:XB.',
@@ -16226,7 +16226,7 @@ const MathsQuestions = (() => {
     },
     // vec-C03
     {
-      id: 'vec-C03', topic: 'geo-vectors', band: 'C', marks: 4,
+      id: 'vec-C03', subtopic: 'geo-vectors', band: 'C', marks: 4,
       question: 'OA = a = (3, 1) and OB = b = (1, 4). Find a unit vector in the direction of AB, and hence find the coordinates of a point C on AB that is 2 units from A.',
       workedExample: {
         question: 'OP = p = (4, 3). Find a unit vector in the direction of OP.',
@@ -16244,7 +16244,7 @@ const MathsQuestions = (() => {
     },
     // vec-C04
     {
-      id: 'vec-C04', topic: 'geo-vectors', band: 'C', marks: 4,
+      id: 'vec-C04', subtopic: 'geo-vectors', band: 'C', marks: 4,
       question: 'In triangle OAB, OA = a and OB = b. Point X lies on OA with OX = (2/5)a. Point Y lies on AB with AY:YB = 1:4. Prove that X, Y and B are collinear.',
       workedExample: {
         question: 'OA = a, OB = b. X on OA with OX = (1/3)a. Y on AB with AY:YB = 1:2. Prove X, Y, B collinear.',

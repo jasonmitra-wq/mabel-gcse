@@ -3,7 +3,7 @@
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.
 
-Last verified: 2026-10-11, from a fresh pull at commit a6fd3c1.
+Last verified: 2026-10-11, from a fresh pull at commit 51ff762.
 
 ## Definition of done (summary — full text in the project instructions)
 
@@ -50,14 +50,14 @@ Not started on the pipeline. Already in place:
 
 | # | Defect | Where | Status |
 |---|---|---|---|
-| 1 | EmailJS parent reporting still live | js/questions.js:639 | fixed next commit — pending verification |
-| 2 | "Show this to claim your reward" | js/maths.js:890 | fixed next commit — pending verification |
-| 3 | Four maths subtopics have no matching bank ids → "coming soon" — bank used different subtopic ids; geo-circles has only 2 questions after the fix (maths track top-up) | geo-perimeter-area, geo-volume, geo-circles, prob-tree | fixed next commit (bank subtopics + _topicMap M4/M5) — pending verification |
-| 4 | Exam board name visible in 9 places: js/app.js ×6, js/glossary.js ×2, js/maths-questions.js ×1 | js/app.js (6 hits) | fixed next commit — pending verification |
-| 5 | HANDOFF.md stale and misleading; 40 one-off .py scripts at repo root | repo root | fixed next commit — pending verification |
+| 1 | EmailJS parent reporting still live | js/questions.js:639 | fixed 51ff762, verified |
+| 2 | "Show this to claim your reward" | js/maths.js:890 | fixed 51ff762, verified |
+| 3 | Four maths subtopics have no matching bank ids → "coming soon" — bank used different subtopic ids | geo-perimeter-area, geo-volume, geo-circles, prob-tree | fixed 51ff762 (bank subtopics + _topicMap M4/M5), verified; 38 questions with topic: instead of subtopic: made reachable next commit — pending verification |
+| 4 | Exam board name visible in 9 places: js/app.js ×6, js/glossary.js ×2, js/maths-questions.js ×1 | js/app.js (6 hits) | fixed 51ff762, verified |
+| 5 | HANDOFF.md stale and misleading; 40 one-off .py scripts at repo root | repo root | fixed 51ff762, verified |
 | 6 | Slide renderer shows "- " lines as dashed paragraphs, not bullets | js/lessons.js _fmtChunk | fixed 4943b2a — code verified; render seen by Claude Code only |
 | 7 | Diagram title in slide view shows the file id (no `diagrams` list in any lesson) | js/lessons.js _renderInlineDiagram | open, cosmetic |
-| 8 | Maths: marks ≠ step count (~86), no readable steps (38), no answer verified | js/maths-questions.js | open — maths track |
+| 8 | Maths bank: 600 questions; marks ≠ step count (87); none has sample answer verified by recomputation; 38 have no sampleAnswer (trig, vectors, circle theorems) | js/maths-questions.js | open — maths track |
 | 9 | 5 lessons outside Physics still name Mabel | scanner | closes as each subject is rewritten |
 | 10 | Slide renderer _tryRenderAsList cuts the text before an auto-list to one sentence of ≤15 words and drops exam-language sentences, so slides can show less than the lesson file. 0 Physics lines trigger it; 68 key-point lines in other subjects do. | js/lessons.js _tryRenderAsList, _renderKpList | open — fix before the Biology rewrite |
 

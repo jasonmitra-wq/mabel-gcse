@@ -158,6 +158,27 @@ const Teach = (() => {
     return !!t && !/[.!?]["')]?$/.test(t);
   }
 
+  // Hard rule: a teaching question must never be answerable with a bare
+  // "yes" or "no" — "Can you tell me what happens?" / "Do particles move?" /
+  // "Is it A or B?" all let her say "yes" without showing anything. Offers
+  // ("would you like me to…?") are fine: there yes/no IS the answer.
+  const YES_NO_OPENER = /^(?:do|does|did|is|are|was|were|am|can|could|will|would|should|shall|has|have|had|may|might|must)(?:n't)?\b/i;
+  const LEAD_IN       = /^(?:(?:so|and|now|ok|okay|right|then|but|well|quick question)\b[\s,:]*)+/i;
+  const OFFER         = /^(?:would you like|shall i|should i|do you want me to|want me to)\b/i;
+  const TAG_QUESTION  = /^(?:do you think|would you say|do you reckon|can you guess|right|yeah)$/i;
+  function _asksYesNo(text) {
+    const questions = (String(text || '').match(/[^.!?:;—]*\?/g) || [])
+      .map(q => q.replace(/^[\s"'(]+|\?$/g, '').replace(LEAD_IN, '').trim());
+    return questions.some(q => {
+      if (OFFER.test(q)) return false;
+      if (YES_NO_OPENER.test(q)) return true;
+      // "If you heat it, do the particles speed up?" — the yes/no part comes
+      // after a comma. A trailing tag ("…, do you think?") is not that.
+      return q.split(',').slice(1).map(s => s.trim())
+        .some(s => !TAG_QUESTION.test(s) && !OFFER.test(s) && YES_NO_OPENER.test(s));
+    });
+  }
+
   // Turns whatever AI.call threw into a plain-English cause. AI.call throws
   // NO_KEY / BAD_KEY (401) / the bare HTTP status ("429") / a fetch TypeError.
   function _describeError(e) {
@@ -881,7 +902,7 @@ const Teach = (() => {
       teachIdx == null ? '' : `Teach ONLY the key point given below, using only its own content and key terms. Do not bring in, name or preview material from any other key point, even if the conversation heads that way. If she asks about something from a later key point, answer in one short line, tell her it is coming up soon, and return to the current point's question.`,
       _laterPointsLine(teachIdx),
       `Rules: explain ideas a little at a time in plain, friendly language. Ask exactly ONE question at a time and never present a list of options for her to pick from. Keep every reply very short — one to three sentences before your question, no more than about 60 words total. If she asks about something off-topic or unrelated, answer it briefly and kindly, then guide her back to the lesson — never refuse to answer and never tell her to stay focused or scold her for going off-topic.`,
-      `Every question you ask must be answerable in one or two words, and its answer must be unambiguous. Ask one thing only. Never join two questions with "or" — "does that make sense, or shall I explain it differently?" cannot be answered by "no". If you want to check she has followed you, ask a question about the content itself rather than about her understanding. If you genuinely need to offer her a choice between two things, ask about only one of them: "would you like me to explain that differently?" — and let her say yes or no.`,
+      `Every question you ask must be answerable in one or two words, and its answer must be unambiguous. Ask one thing only. Never join two questions with "or" — "does that make sense, or shall I explain it differently?" cannot be answered by "no". HARD RULE: a question about the content must never be answerable with "yes" or "no". Never start it with do, does, is, are, can, could, will or would — not "can you tell me what happens?", not "do particles in a gas move faster?", not "is it A or B?". Ask what, which, why, how, where or when, so the answer is a specific word or short phrase. If you want to check she has followed you, ask a question about the content itself rather than about her understanding. If you genuinely need to offer her a choice between two things, ask about only one of them: "would you like me to explain that differently?" — and let her say yes or no.`,
     ].filter(Boolean).join('\n');
   }
 
@@ -946,22 +967,31 @@ const Teach = (() => {
   // Every attempt is checked, including the shortened ones. The earlier version
   // checked only the first reply and returned the shortened retry unseen, so a
   // retry that hit its own token cap was shown cut off mid-sentence.
-  async function _callWithLengthGuard(sys, user) {
-    const attempts = [
+  // When teaching, a question she could answer with a bare yes/no also fails
+  // the check and is asked for again; the length limit only tightens when the
+  // reply was actually too long.
+  async function _callWithLengthGuard(sys, user, noYesNo = false) {
+    const limits = [
       { words: MAX_REPLY_WORDS, tokens: MAX_TOKENS_REPLY, note: '' },
       { words: RETRY_MAX_WORDS, tokens: MAX_TOKENS_RETRY,
         note: `(Your last reply was too long or got cut off mid-sentence. Say the same thing again in under ${RETRY_MAX_WORDS} words, and make sure every sentence is finished.)` },
       { words: 30, tokens: MAX_TOKENS_RETRY,
         note: `(Still too long. Give the same message in under 30 words. Finish every sentence, and end with your question.)` },
     ];
-    let complete = '', last = '';
-    for (const a of attempts) {
-      const reply = (await AI.call(sys, a.note ? `${user}\n\n${a.note}` : user, a.tokens)).trim();
+    const yesNoNote = `(Your question could be answered with just "yes" or "no", which shows nothing. Keep the rest, but ask it again as a what / which / why / how / where / when question whose answer is a specific word or short phrase from the content. Do not start it with do, does, is, are, can, could, will or would.)`;
+    let complete = '', last = '', level = 0, yesNo = false;
+    for (let i = 0; i < limits.length; i++) {
+      const a = limits[level];
+      const note = [a.note, yesNo ? yesNoNote : ''].filter(Boolean).join('\n');
+      const reply = (await AI.call(sys, note ? `${user}\n\n${note}` : user, a.tokens)).trim();
       const plain = _stripMarkdown(reply);
       last = reply;
       const cut = _looksTruncated(plain);
-      if (!cut && _wordCount(plain) <= a.words) return reply;
-      if (!cut && !complete) complete = reply; // finished, just long — usable if nothing better
+      const long = !cut && _wordCount(plain) > a.words;
+      yesNo = noYesNo && _asksYesNo(plain);
+      if (!cut && !long && !yesNo) return reply;
+      if (!cut && !yesNo && !complete) complete = reply; // finished, just long — usable if nothing better
+      if (cut || long) level = Math.min(level + 1, limits.length - 1);
     }
     // Never show a sentence that stops dead: prefer a complete-but-long reply,
     // otherwise drop the unfinished tail of the last one.
@@ -1231,7 +1261,8 @@ const Teach = (() => {
     const decision = _decide(userText);
     const sys  = _buildSystemPrompt(_teachIndex(decision));
     const user = _buildUserPrompt(userText, decision);
-    const reply = await _callWithLengthGuard(sys, user);
+    // Teaching turns only: the check-in and the closing turns ask yes/no on purpose.
+    const reply = await _callWithLengthGuard(sys, user, _teachIndex(decision) != null);
 
     // A finished point (she answered substantively) gets a recap. If writing it
     // fails she still moves on — she just doesn't get one for that point.
@@ -1327,7 +1358,7 @@ const Teach = (() => {
     let reply, error;
     try {
       const sys = _buildSystemPrompt(index);
-      reply = await _callWithLengthGuard(sys, first ? _firstOpeningPrompt() : _jumpPrompt(index));
+      reply = await _callWithLengthGuard(sys, first ? _firstOpeningPrompt() : _jumpPrompt(index), true);
     } catch (e) {
       error = e;
     }

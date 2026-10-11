@@ -2,28 +2,28 @@
   "id": "p4-half-life",
   "title": "Half-life and uses of radiation",
   "topic": "P4",
-  "examTip": "Half-life calculations: each half-life halves the activity. After n half-lives, remaining activity = initial × (1/2)ⁿ. Read this off a graph or calculate — the exam often gives you a decay graph and asks you to determine the half-life by finding how long it takes for activity to drop from one value to exactly half.",
+  "examTip": "Half-life calculations: each half-life halves the activity. After n half-lives, remaining activity = initial × (1/2)ⁿ. Read this off a graph, or calculate it. The exam often gives you a decay graph. It asks you to find the half-life. See how long the activity takes to drop from one value to exactly half.",
   "introTips": [
-    "Radioactive decay is random — you cannot predict when any individual nucleus will decay, but with large numbers the overall rate is very predictable.",
-    "Half-life is the time for half the undecayed nuclei to decay — equivalently, the time for activity to halve.",
-    "A short half-life means the substance decays quickly — useful for medical tracers; a long half-life means it stays radioactive for a very long time.",
-    "Contamination means radioactive material gets onto or inside the body; irradiation means the body is exposed to a radiation source nearby — these are different hazards.",
-    "Uses of radiation match the type of radiation to the job: gamma for medical imaging and sterilisation; alpha for smoke detectors; beta for thickness gauges."
+    "Radioactive decay is random. You cannot predict when any one nucleus will decay. But with large numbers, the overall rate is very predictable.",
+    "Half-life is the time for half the undecayed nuclei to decay. In other words, it is the time for the activity to halve.",
+    "A short half-life means the substance decays quickly. This is useful for medical tracers. A long half-life means it stays radioactive for a very long time.",
+    "Contamination means radioactive material gets onto or inside the body. Irradiation means the body is exposed to a radiation source nearby. These are different hazards.",
+    "Uses of radiation match the type of radiation to the job. Gamma is for medical imaging and sterilisation. Alpha is for smoke detectors. Beta is for thickness gauges."
   ],
-  "intro": "Every radioactive substance decays at its own characteristic rate. Some elements are so wildly unstable that they decay in milliseconds; others have been decaying since the Big Bang and will continue for billions of years. Half-life is how we measure this rate — and it turns out to be one of the most useful concepts in all of science. It lets archaeologists date bones that are tens of thousands of years old, doctors deliver targeted cancer treatments, and engineers sterilise surgical equipment. Understanding half-life also tells you how long radioactive waste stays dangerous — which is central to debates about nuclear power.",
+  "intro": "Every radioactive substance decays at its own rate. Some elements are so unstable that they decay in milliseconds. Others have been decaying since the Big Bang and will carry on for billions of years. Half-life is how we measure this rate. It turns out to be one of the most useful ideas in all of science. It lets archaeologists date bones that are tens of thousands of years old. It helps doctors give targeted cancer treatments. It lets engineers sterilise surgical equipment. Half-life also tells you how long radioactive waste stays dangerous. That is central to debates about nuclear power.",
   "keyPoints": [
     {
       "heading": "What half-life means",
-      "content": "<strong>Half-life</strong> is the <strong>time taken for the activity of a radioactive sample to halve</strong>. Equivalently, it is the time for half the undecayed nuclei in a sample to decay. Radioactive decay is <strong>random</strong> — you cannot predict which individual nucleus will decay next or when. But with very large numbers of atoms, the overall rate is statistically predictable. This is why half-life is a reliable measure even though individual decays are random. <strong>Activity</strong> (measured in becquerels, Bq) is the number of decays per second. After 1 half-life: activity = A₀/2. After 2 half-lives: activity = A₀/4. After 3 half-lives: activity = A₀/8. After n half-lives: activity = A₀ × (½)ⁿ. The number of undecayed nuclei halves at the same rate as the activity.",
+      "content": "<strong>Half-life</strong> is the <strong>time taken for the activity of a radioactive sample to halve</strong>. Put another way, it is the time for half the undecayed nuclei in a sample to decay.\n\nRadioactive decay is <strong>random</strong>. You cannot predict which nucleus will decay next, or when. But with very large numbers of atoms, the overall rate is predictable. This is why half-life is a reliable measure, even though each decay is random.\n\n<strong>Activity</strong> (measured in becquerels, Bq) is the number of decays per second.\n- After 1 half-life: activity = A₀/2\n- After 2 half-lives: activity = A₀/4\n- After 3 half-lives: activity = A₀/8\n- After n half-lives: activity = A₀ × (½)ⁿ\n\nThe number of undecayed nuclei halves at the same rate as the activity.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Half-life — time for activity (or number of undecayed nuclei) to halve",
-        "Activity measured in becquerels (Bq) = number of decays per second",
-        "Radioactive decay is random — you cannot predict individual decays, but the overall rate is predictable",
+        "Half-life — the time for the activity (or number of undecayed nuclei) to halve",
+        "Activity is measured in becquerels (Bq) = number of decays per second",
+        "Radioactive decay is random. You cannot predict single decays, but the overall rate is predictable",
         "After n half-lives: activity = initial activity × (½)ⁿ",
-        "Decay graph: curved line falling steeply then flattening — never reaches zero"
+        "Decay graph: a curved line that falls steeply, then flattens. It never reaches zero"
       ],
       "keyTerms": [
         {
@@ -39,21 +39,21 @@
           "def": "The unit of radioactive activity; 1 Bq = 1 decay per second"
         }
       ],
-      "memTip": "Each half-life: divide activity by 2. After 3 half-lives: divide by 8 (= 2 × 2 × 2).",
-      "tutor_note": "Give Mabel practice reading half-life from a graph — find a point, find half that value, read the time difference from the x-axis."
+      "memTip": "Each half-life, divide the activity by 2. After 3 half-lives, divide by 8 (= 2 × 2 × 2).",
+      "tutor_note": "Practise reading half-life from a graph. Find a point, then find half that value. Read the time difference from the x-axis."
     },
     {
       "heading": "Reading and drawing decay graphs",
-      "content": "A <strong>radioactive decay graph</strong> shows activity (Bq) on the y-axis and time on the x-axis. The shape is always a <strong>curved decrease that approaches but never reaches zero</strong> — this is an exponential decay curve. To find the half-life from a graph: (1) pick any starting activity value (e.g. 800 Bq); (2) find half that value (400 Bq); (3) read the time at 800 Bq (t₁) and the time at 400 Bq (t₂); (4) half-life = t₂ − t₁. You can check by repeating from 400 Bq → 200 Bq: the time interval should be the same. To draw a decay graph: plot points at each half-life (0, t½, 2t½, 3t½, ...) with activity halving each time, then join with a smooth curve. The curve must never touch or cross the x-axis.",
+      "content": "A <strong>radioactive decay graph</strong> shows activity (Bq) on the y-axis and time on the x-axis. The shape is always a <strong>curved decrease that approaches but never reaches zero</strong>. This is an exponential decay curve.\n\nTo find the half-life from a graph:\n(1) pick any starting activity value (for example, 800 Bq)\n(2) find half that value (400 Bq)\n(3) read the time at 800 Bq (t₁) and the time at 400 Bq (t₂)\n(4) half-life = t₂ − t₁\n\nYou can check by repeating from 400 Bq → 200 Bq. The time interval should be the same.\n\nTo draw a decay graph, plot points at each half-life (0, t½, 2t½, 3t½, ...). The activity halves each time. Then join them with a smooth curve. The curve must never touch or cross the x-axis.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Decay graph: exponential curve — steep at first, flattening gradually, never reaching zero",
-        "To find half-life: pick an activity value, find half of it, read the time difference",
-        "Half-life is constant — same time interval to go from 800→400 Bq as from 400→200 Bq",
-        "To draw: halve activity at each half-life interval; join with smooth curve, never touching x-axis",
-        "Activity in Bq on y-axis; time (s, min, hours, or years) on x-axis"
+        "Decay graph: an exponential curve. Steep at first, flattening slowly, never reaching zero",
+        "To find half-life: pick an activity value, find half of it, and read the time difference",
+        "Half-life is constant. It takes the same time to go from 800→400 Bq as from 400→200 Bq",
+        "To draw: halve the activity at each half-life. Join with a smooth curve that never touches the x-axis",
+        "Activity in Bq on the y-axis. Time (s, min, hours or years) on the x-axis"
       ],
       "keyTerms": [
         {
@@ -65,21 +65,21 @@
           "def": "A graph of activity vs time showing an exponential curve — used to determine half-life"
         }
       ],
-      "memTip": "Pick any two points where activity halves — the time between them is the half-life. Check it is the same anywhere on the curve.",
-      "tutor_note": "Mabel should practise both reading half-life from graphs AND drawing decay curves — both come up in exams."
+      "memTip": "Pick any two points where the activity halves. The time between them is the half-life. Check it is the same anywhere on the curve.",
+      "tutor_note": "Practise both reading half-life from graphs AND drawing decay curves. Both come up in exams."
     },
     {
       "heading": "Uses of radioactive isotopes",
-      "content": "Different isotopes are chosen for different jobs based on their type of radiation and half-life. <strong>Carbon-14 dating</strong>: half-life ~5,700 years; beta emitter. Living things absorb carbon-14 (from CO₂); when they die, C-14 decays and is not replaced. Measuring remaining C-14 activity gives the age of organic remains — useful up to ~50,000 years. <strong>Medical tracers</strong>: radioactive isotope injected or swallowed, travels to the target organ, detected by gamma camera outside the body. Must be gamma emitter (penetrates body), short half-life (days — reduces radiation dose). Example: technetium-99m (half-life ~6 hours). <strong>Radiotherapy (cancer treatment)</strong>: focused gamma beam kills cancer cells. <strong>Sterilisation</strong>: gamma radiation kills bacteria on surgical instruments — no chemicals needed. <strong>Smoke detectors</strong>: americium-241 (alpha emitter, half-life ~430 years) ionises air in the detector — when smoke blocks the ions, alarm triggers.",
+      "content": "Different isotopes are chosen for different jobs. The choice depends on their type of radiation and their half-life.\n\n<strong>Carbon-14 dating</strong>: half-life ~5,700 years; beta emitter. Living things take in carbon-14 (from CO₂). When they die, the C-14 decays and is not replaced. Measuring the C-14 activity left gives the age of organic remains. This works up to ~50,000 years.\n\n<strong>Medical tracers</strong>: a radioactive isotope is injected or swallowed. It travels to the target organ and is detected by a gamma camera outside the body. It must be a gamma emitter, so it gets out through the body. It must have a short half-life (days), to reduce the radiation dose. Example: technetium-99m (half-life ~6 hours).\n\n<strong>Radiotherapy (cancer treatment)</strong>: a focused gamma beam kills cancer cells.\n\n<strong>Sterilisation</strong>: gamma radiation kills bacteria on surgical instruments. No chemicals are needed.\n\n<strong>Smoke detectors</strong>: americium-241 (alpha emitter, half-life ~430 years) ionises the air in the detector. When smoke blocks the ions, the alarm goes off.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Carbon-14 dating — beta emitter, half-life 5,700 years; dates organic material up to ~50,000 years old",
-        "Medical tracers — gamma emitter, short half-life (days); injected and detected outside body",
-        "Technetium-99m — gamma, half-life ~6 hours; widely used medical tracer",
+        "Carbon-14 dating — beta emitter, half-life 5,700 years. Dates organic material up to ~50,000 years old",
+        "Medical tracers — gamma emitter with a short half-life (days). Injected, then detected outside the body",
+        "Technetium-99m — gamma, half-life ~6 hours. A widely used medical tracer",
         "Sterilisation — gamma radiation kills bacteria on surgical equipment without chemicals",
-        "Smoke detectors — americium-241, alpha emitter, half-life 430 years; ionises air; smoke breaks current → alarm"
+        "Smoke detectors — americium-241, alpha emitter, half-life 430 years. It ionises air; smoke breaks the current → alarm"
       ],
       "keyTerms": [
         {
@@ -96,20 +96,20 @@
         }
       ],
       "memTip": "Tracer: gamma + short half-life. Smoke detector: alpha (Am-241).",
-      "tutor_note": "Exam often asks 'why must the tracer have a short half-life?' — answer: to minimise the patient's total radiation dose."
+      "tutor_note": "Exams often ask 'why must the tracer have a short half-life?'. Answer: to keep the patient's total radiation dose as low as possible."
     },
     {
       "heading": "Contamination, irradiation and radiation dangers",
-      "content": "<strong>Irradiation</strong>: being exposed to a source of radiation from outside the body. The source is not touching or inside you. Remove the source → irradiation stops. Example: standing near a radioactive rock. <strong>Contamination</strong>: radioactive material gets onto or into the body (skin, clothes, ingested, inhaled). The material keeps irradiating you even when moved away from other sources. Much harder to manage — particularly dangerous if it is an alpha emitter (highly ionising if inside body). <strong>Why radiation is dangerous</strong>: ionising radiation knocks electrons off atoms in body cells → damages DNA → can cause cancer (uncontrolled cell division) or genetic mutations (if reproductive cells are affected). High doses can cause radiation sickness (rapid cell death). Risk increases with dose and with the type of radiation (alpha most ionising — most dangerous inside body). Protection: distance, shielding (lead/concrete), minimise exposure time.",
+      "content": "<strong>Irradiation</strong>: being exposed to a source of radiation from outside the body. The source is not touching you or inside you. Remove the source, and the irradiation stops. Example: standing near a radioactive rock.\n\n<strong>Contamination</strong>: radioactive material gets onto or into the body. It may be on skin or clothes, or swallowed or breathed in. The material keeps irradiating you, even when you move away from other sources. It is much harder to deal with. It is very dangerous if it is an alpha emitter. Alpha is highly ionising inside the body.\n\n<strong>Why radiation is dangerous</strong>:\n- ionising radiation knocks electrons off atoms in body cells\n- this damages DNA\n- that can cause cancer (uncontrolled cell division)\n- or it can cause genetic mutations (if reproductive cells are affected)\n High doses can cause radiation sickness (rapid cell death). The risk grows with the dose and depends on the type of radiation. Alpha is the most ionising, so it is the most dangerous inside the body.\n\nProtection: distance, shielding (lead or concrete) and keeping exposure time short.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Irradiation — exposed to radiation source from outside; stops when source removed",
-        "Contamination — radioactive material on/in the body; continues to irradiate even when moved away",
+        "Irradiation — exposed to a radiation source from outside. Stops when the source is removed",
+        "Contamination — radioactive material on or in the body. It keeps irradiating you even when you move away",
         "Ionising radiation damages DNA → cancer or genetic mutation",
-        "Alpha most dangerous if contamination — highly ionising near body cells",
-        "Protection: increase distance, use lead/concrete shielding, minimise time of exposure"
+        "Alpha is the most dangerous in contamination. It is highly ionising near body cells",
+        "Protection: increase distance, use lead or concrete shielding, keep exposure time short"
       ],
       "keyTerms": [
         {
@@ -121,8 +121,8 @@
           "def": "Radioactive material that enters or contacts the body — continues to cause exposure even when removed from the radiation area"
         }
       ],
-      "memTip": "Irradiation = from outside, stops with distance. Contamination = on/in the body, stays with you.",
-      "tutor_note": "Contamination vs irradiation is a classic exam distinction — Mabel should give an example of each and explain why contamination is more serious."
+      "memTip": "Irradiation = from outside, stops with distance. Contamination = on or in the body, stays with you.",
+      "tutor_note": "Contamination vs irradiation is a classic exam question. Give an example of each. Explain why contamination is more serious."
     }
   ],
   "tables": [
@@ -185,60 +185,60 @@
         "213 Bq"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! After 3 half-lives: 640 → 320 → 160 → 80 Bq. Each half-life divides by 2, so after 3: 640 ÷ 8 = 80 Bq.",
+      "correctFeedback": "Correct! After 3 half-lives: 640 → 320 → 160 → 80 Bq. Each half-life divides by 2. So after 3: 640 ÷ 8 = 80 Bq.",
       "wrongFeedback": "Divide by 2 three times: 640 → 320 → 160 → 80 Bq. Or use: 640 × (½)³ = 640 × (1/8) = 80 Bq."
     },
     "1": {
       "question": "Why must the radioactive tracer used in medical imaging have a short half-life?",
       "options": [
-        "To minimise the total radiation dose received by the patient",
+        "To keep the patient's total radiation dose as low as possible",
         "To make it easier to detect outside the body",
-        "To ensure the tracer reaches all organs equally",
-        "To prevent the tracer from decaying before it is injected"
+        "So the tracer reaches all organs equally",
+        "To stop the tracer decaying before it is injected"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! A short half-life means the tracer quickly decays to a very low activity — the patient receives a much smaller total radiation dose.",
-      "wrongFeedback": "The half-life must be short to minimise the total radiation dose — once the imaging is complete, you want the activity to fall quickly so the patient is not exposed to ongoing radiation."
+      "correctFeedback": "Correct! With a short half-life, the tracer quickly decays to a very low activity. So the patient gets a much smaller total radiation dose.",
+      "wrongFeedback": "The half-life must be short to keep the total radiation dose low. Once the imaging is done, you want the activity to fall quickly. Then the patient is not exposed to ongoing radiation."
     },
     "3": {
       "question": "What is the key difference between contamination and irradiation?",
       "options": [
-        "Contamination means radioactive material is on or in the body and continues to irradiate even when moved away from other sources; irradiation is exposure from an external source that stops when the source is removed",
-        "Contamination is always from gamma radiation; irradiation is always from alpha",
-        "Contamination only affects the skin; irradiation affects internal organs",
-        "Irradiation means the body becomes radioactive; contamination does not"
+        "Contamination: radioactive material is on or in the body, and keeps irradiating you as you move. Irradiation: exposure from an outside source, which stops when the source is removed",
+        "Contamination is always from gamma radiation. Irradiation is always from alpha",
+        "Contamination only affects the skin. Irradiation affects internal organs",
+        "Irradiation means the body becomes radioactive. Contamination does not"
       ],
       "correct": 0,
-      "correctFeedback": "Exactly right! Contamination: radioactive material is on/in the body — the risk continues wherever you go. Irradiation: external source — remove the source or move away and the exposure stops.",
-      "wrongFeedback": "The key distinction is location: contamination = radioactive material on/in the body (continues with you); irradiation = external source (stops when source removed or you move away)."
+      "correctFeedback": "Exactly right! Contamination: radioactive material is on or in the body, so the risk goes wherever you go. Irradiation: an outside source. Remove the source or move away, and the exposure stops.",
+      "wrongFeedback": "The key difference is location. Contamination = radioactive material on or in the body (it stays with you). Irradiation = an outside source (it stops when the source is removed or you move away)."
     }
   },
   "commonMistakes": [
-    "Dividing by n instead of (½)ⁿ — after 3 half-lives, divide by 8 (= 2³), not by 3.",
-    "Saying activity reaches zero — it never does; the curve approaches zero asymptotically but never arrives.",
-    "Confusing contamination and irradiation — contamination means radioactive material is on or in the body; irradiation is external exposure only.",
-    "Choosing an isotope with the wrong half-life for a medical tracer — a very long half-life gives an unnecessarily high radiation dose; too short and it decays before imaging is complete.",
-    "Forgetting to explain why the medical tracer must emit gamma — it needs to penetrate the body to be detected by a camera outside. Alpha or beta would be absorbed before reaching the detector."
+    "Dividing by n instead of using (½)ⁿ. After 3 half-lives, divide by 8 (= 2³), not by 3.",
+    "Saying the activity reaches zero. It never does. The curve gets closer and closer to zero but never arrives.",
+    "Mixing up contamination and irradiation. Contamination means radioactive material is on or in the body. Irradiation is outside exposure only.",
+    "Choosing an isotope with the wrong half-life for a medical tracer. A very long half-life gives a needlessly high radiation dose. Too short, and it decays before the imaging is done.",
+    "Forgetting to explain why a medical tracer must give out gamma. It must pass through the body to reach a camera outside. Alpha or beta would be absorbed before reaching the detector."
   ],
   "examTips": [
-    "To find half-life from a graph: pick a clear starting point, halve the activity, read both times from the x-axis, and subtract. Check your answer by repeating from the second point.",
-    "After n half-lives: remaining activity = initial × (½)ⁿ. Build a step-by-step table if you are not confident with powers.",
-    "For 'why gamma for a medical tracer' questions: (1) gamma penetrates tissues — detected outside body; (2) short half-life — dose falls quickly after the scan.",
-    "Contamination vs irradiation: contamination is harder to manage because the source stays with you — mention this when explaining why alpha contamination is so dangerous."
+    "To find half-life from a graph: pick a clear starting point and halve the activity. Read both times from the x-axis and subtract. Check your answer by repeating from the second point.",
+    "After n half-lives: remaining activity = initial × (½)ⁿ. If you are not confident with powers, build a step-by-step table.",
+    "For 'why gamma for a medical tracer' questions: (1) gamma passes through tissue. So it can be detected outside the body. (2) A short half-life means the dose falls quickly after the scan.",
+    "Contamination is harder to deal with than irradiation, because the source stays with you. Mention this when explaining why alpha contamination is so dangerous."
   ],
   "revisionCardBullets": [
-    "Half-life: time for activity (or undecayed nuclei) to halve",
+    "Half-life: the time for the activity (or undecayed nuclei) to halve",
     "Activity in becquerels (Bq) = decays per second",
     "After n half-lives: activity = A₀ × (½)ⁿ",
-    "Decay graph: exponential curve — never touches zero",
-    "Carbon-14 dating: beta, half-life 5,700 years; organic remains up to ~50,000 years",
-    "Medical tracers: gamma emitter, short half-life (e.g. technetium-99m, 6 hours)",
+    "Decay graph: an exponential curve that never touches zero",
+    "Carbon-14 dating: beta, half-life 5,700 years. Organic remains up to ~50,000 years",
+    "Medical tracers: gamma emitter, short half-life (for example, technetium-99m, 6 hours)",
     "Sterilisation: gamma kills bacteria on surgical equipment",
     "Smoke detector: americium-241, alpha emitter, half-life 430 years",
-    "Irradiation: external source — stops when source removed",
-    "Contamination: radioactive material on/in body — continues with you",
+    "Irradiation: outside source. Stops when the source is removed",
+    "Contamination: radioactive material on or in the body. It stays with you",
     "Ionising radiation damages DNA → cancer or mutation",
-    "Protection: distance, lead/concrete shielding, minimise exposure time"
+    "Protection: distance, lead or concrete shielding, short exposure time"
   ],
   "videos": [
     {

@@ -13,8 +13,8 @@ const Teach = (() => {
   const TRANSCRIPT_CAP    = 40;
   const HISTORY_TURNS     = 6;
   const RECAP_TURNS       = 24;  // a point now takes several exchanges — the recap must see all of them
-  const CHECKIN_AFTER     = 4;   // exchanges on one point before asking whether she wants the rest explained
-  const EXTENSION_EXCHANGES = 2; // hard limit if she does — then the rest is told and the point advances
+  const CHECKIN_AFTER     = 4;   // exchanges on one point before asking whether she wants just to be told the rest
+  const EXTENSION_EXCHANGES = 2; // hard limit if she keeps working on it instead — then the rest is told and the point advances
 
   // Reply length: max_tokens is the real ceiling — a system-prompt instruction
   // alone won't hold to a hard limit. ~60 words is roughly 90-100 tokens of
@@ -935,10 +935,10 @@ const Teach = (() => {
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts),
         _partLine(decision.fact), _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'checkin') {
-      lines.push(`She has spent several exchanges on this key point and some of it is still to cover. Do NOT teach anything in this message and do not ask about any part of the topic. In ONE short, friendly line, ask her: would she like you to explain the rest of this point quickly? It must be a single yes-or-no question — do not add "or shall we move on" or any second option. That question is the whole message.`);
+      lines.push(`She has spent several exchanges on this key point and some of it is still to cover. Do NOT teach anything in this message and do not ask about any part of the topic. In ONE short, friendly line, ask her one question meaning "Do you want me to just tell you the rest of this one?" — yes means you will tell her the rest, no means she keeps working on it herself. It must be a single yes-or-no question — do not add "or shall we move on" or any second option. That question is the whole message.`);
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts));
     } else if (decision.kind === 'fact') {
-      lines.push(`${decision.askedForMore ? `She asked you to explain the rest, so keep going with this key point. ` : ''}${_toldLine(decision.toldNow) || (decision.askedForMore ? '' : `Acknowledge her reply naturally in one short sentence. `)}Then carry on with the same key point: teach the next part of it, named below, in AT MOST TWO SENTENCES, then ask one question about that part. Teach only this part now — the other parts come later. Do not answer your own question.`);
+      lines.push(`${decision.keepsWorking ? `She chose to keep working through this point herself, so carry on with it. ` : ''}${_toldLine(decision.toldNow) || (decision.keepsWorking ? '' : `Acknowledge her reply naturally in one short sentence. `)}Then carry on with the same key point: teach the next part of it, named below, in AT MOST TWO SENTENCES, then ask one question about that part. Teach only this part now — the other parts come later. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts),
         _partLine(decision.fact), _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'next') {
@@ -1048,21 +1048,18 @@ const Teach = (() => {
     return _parseRecap(raw);
   }
 
-  // Reading her answer to the check-in. A vague reply moves on rather than
-  // stalling; "yes" is treated as agreeing to move on, as is anything that
-  // isn't clearly a request for more.
-  function _wantsMore(text) {
+  // Reading her answer to the check-in ("do you want me to just tell you the
+  // rest of this one?"). A yes, "just tell me", or any sign she's stuck means
+  // she wants to be told — unless she says in the same breath not to.
+  function _wantsTold(text) {
     const t = String(text || '');
-    // The check-in is a yes/no question ("would you like me to explain the
-    // rest?"), so a yes means more — unless she says in the same breath to move on.
-    if (/^\W*(yes|yeah|yep|yup|yea|sure|ok|okay|please|go on|go ahead)\b/i.test(t)
-        && !/\b(move on|next|ready)\b/i.test(t)) return true;
-    if (/\b(explain|explanation|more|the rest|again|go over|elaborate|unpack|confus|don'?t (get|understand)|not sure|unsure|lost)\b/i.test(t)) return true;
-    return false;
+    if (/\b(don'?t|do not|no need to) (just )?tell\b/i.test(t)) return false;
+    if (/^\W*(yes|yeah|yep|yup|yea|sure|ok|okay|please|go on|go ahead|go for it)\b/i.test(t)) return true;
+    return /\b(tell me|just tell|explain|explanation|confus\w*|lost|don'?t (get|understand|know)|not sure|unsure|no idea|no clue|idk|dunno|stuck)\b/i.test(t);
   }
 
   // Tell her every part still outstanding, then move the point on. Used when
-  // she says she's ready, and when an extension she asked for runs out.
+  // she asks to be told at the check-in, and when her extension runs out.
   function _finishByTelling(idx, point, facts, rem) {
     rem.forEach(j => { facts.told[j] = true; });
     const covered = point.facts.every((f, j) => facts.answered[j] || facts.told[j]);
@@ -1124,19 +1121,22 @@ const Teach = (() => {
     const remaining = () => point.facts.map((f, j) => j).filter(j => !answered[j] && !told[j]);
     const engaged = point.facts.some((f, j) => answered[j] && !cur.answered[j]);
 
-    // She is answering the check-in ("explain the rest?" — yes/no). If she
-    // actually answered a part instead, that counts and the lesson carries on
-    // normally — only a non-answer is read as a choice.
+    // She is answering the check-in ("just tell you the rest?" — yes/no). If
+    // she actually answered a part instead, that counts and the lesson carries
+    // on normally — only a non-answer is read as a choice.
     if (_state.checkinAsked && !engaged) {
       const rem = remaining();
-      // Still working on the topic — even if the words didn't match a part —
-      // is a sign she wants to keep going, not a request to move on. The
-      // extension limit still bounds how long that can last.
-      const wantsMore = _wantsMore(userText) || _isSubstantive(userText, point.wordSet);
-      if (wantsMore && rem.length) {
-        return { kind: 'fact', idx, point, fact: point.facts[rem[0]], facts, askedForMore: true,
+      // Yes, "tell me", or stuck → she is told the rest and the point moves on.
+      if (_wantsTold(userText) || !rem.length) return _finishByTelling(idx, point, facts, rem);
+      // No — or still working on the topic, even if the words didn't match a
+      // part — means she keeps going herself. The extension limit bounds it.
+      const saysNo = /^\W*(no|nope|nah|not yet)\b/i.test(userText)
+        || /\b(don'?t|do not|no need to) (just )?tell\b|\b(let me|i'?ll|i want to|i'?d like to) (try|have a go|work it out)\b/i.test(userText);
+      if (saysNo || _isSubstantive(userText, point.wordSet)) {
+        return { kind: 'fact', idx, point, fact: point.facts[rem[0]], facts, keepsWorking: true,
                  pacing: { turnsOnPoint: _state.turnsOnPoint + 1, checkinAsked: false, extensionLeft: EXTENSION_EXCHANGES } };
       }
+      // Anything vague moves on rather than stalling.
       return _finishByTelling(idx, point, facts, rem);
     }
 

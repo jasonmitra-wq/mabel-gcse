@@ -327,11 +327,27 @@ const Lessons = (() => {
       .replace(/<br\s*\/?>\s*<br\s*\/?>/gi, '\n\n')
       .replace(/<br\s*\/?>/gi, '\n');
 
-    // Split on blank lines (already-structured blocks, e.g. worked examples)
+    // Split on blank lines (already-structured blocks, e.g. worked examples).
+    // Within a section, consecutive "- " lines become one bulleted list;
+    // every other line is formatted as prose, in its original order.
     const sections = text.split(/\n\n+/);
-    return sections
-      .map(sec => sec.split(/\n/).filter(s => s.trim()).map(_fmtChunk).join(''))
-      .join('');
+    return sections.map(sec => {
+      let out = '', items = [];
+      const flush = () => {
+        if (items.length) out += `<ul class="kp-def-list">${items.join('')}</ul>`;
+        items = [];
+      };
+      for (const line of sec.split(/\n/).filter(s => s.trim())) {
+        if (line.startsWith('- ')) {
+          items.push(`<li><span class="kp-list-bullet">•</span>${_applyEquationStyles(line.slice(2))}</li>`);
+        } else {
+          flush();
+          out += _fmtChunk(line);
+        }
+      }
+      flush();
+      return out;
+    }).join('');
   }
 
   // Process a single prose chunk: sentence-split → group → annotate

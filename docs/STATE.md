@@ -55,7 +55,7 @@ Not started on the pipeline. Already in place:
 | 3 | Four maths subtopics have no matching bank ids → "coming soon" | geo-perimeter-area, geo-volume, geo-circles, prob-tree | open |
 | 4 | "AQA" on subject tiles and maths tile | js/app.js (6 hits) | open |
 | 5 | HANDOFF.md stale and misleading; 40 one-off .py scripts at repo root | repo root | open — archive to tools/archive/, don't delete |
-| 6 | Slide renderer shows "- " lines as dashed paragraphs, not bullets | js/lessons.js _fmtChunk | open, cosmetic |
+| 6 | Slide renderer shows "- " lines as dashed paragraphs, not bullets | js/lessons.js _fmtChunk | fixed in _formatKpContent (commit "render '- ' lines in key point content as bullet lists") |
 | 7 | Diagram title in slide view shows the file id (no `diagrams` list in any lesson) | js/lessons.js _renderInlineDiagram | open, cosmetic |
 | 8 | Maths: marks ≠ step count (~86), no readable steps (38), no answer verified | js/maths-questions.js | open — maths track |
 | 9 | 5 lessons outside Physics still name Mabel | scanner | closes as each subject is rewritten |

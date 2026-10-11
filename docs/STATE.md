@@ -3,7 +3,7 @@
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.
 
-Last verified: 2026-10-11, from a fresh pull at commit 13ac63d.
+Last verified: 2026-10-11, from a fresh pull at commit a6fd3c1.
 
 ## Definition of done (summary — full text in the project instructions)
 
@@ -24,8 +24,8 @@ open shared-code fault.
 | P3 Particle model | ✓ dd98fe9 | ✓ 9b952ab | ✓ dd98fe9 | partial: p3-particle-model only (4110010) | n/a | n/a | partial: p3-particle-model only | n/a | – | |
 | P4 Atomic structure | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | p4-nuclear-model 'chemical bonding' checked and correct |
 | P5 Forces | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | |
-| P6 Waves | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | p6-em-spectrum 'molecular bonds' (UV) checked and correct; 'bonded' ×3 → forces between particles, next commit — pending verification |
-| P7 Magnetism | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | iron-as-permanent-magnet error, solenoid poles, misplaced DC mistake corrected in next commit — pending verification |
+| P6 Waves | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | p6-em-spectrum 'molecular bonds' (UV) checked and correct; 'bonded' ×3 → forces between particles, verified a6fd3c1 |
+| P7 Magnetism | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | iron-as-permanent-magnet error, solenoid poles, misplaced DC mistake corrected, verified a6fd3c1 |
 
 ## Biology, Chemistry, Geography, Sociology
 
@@ -50,11 +50,11 @@ Not started on the pipeline. Already in place:
 
 | # | Defect | Where | Status |
 |---|---|---|---|
-| 1 | EmailJS parent reporting still live | js/questions.js:639 | open |
-| 2 | "Show this to claim your reward" | js/maths.js:890 | open |
-| 3 | Four maths subtopics have no matching bank ids → "coming soon" | geo-perimeter-area, geo-volume, geo-circles, prob-tree | open |
-| 4 | "AQA" on subject tiles and maths tile | js/app.js (6 hits) | open |
-| 5 | HANDOFF.md stale and misleading; 40 one-off .py scripts at repo root | repo root | open — archive to tools/archive/, don't delete |
+| 1 | EmailJS parent reporting still live | js/questions.js:639 | fixed next commit — pending verification |
+| 2 | "Show this to claim your reward" | js/maths.js:890 | fixed next commit — pending verification |
+| 3 | Four maths subtopics have no matching bank ids → "coming soon" — bank used different subtopic ids; geo-circles has only 2 questions after the fix (maths track top-up) | geo-perimeter-area, geo-volume, geo-circles, prob-tree | fixed next commit (bank subtopics + _topicMap M4/M5) — pending verification |
+| 4 | Exam board name visible in 9 places: js/app.js ×6, js/glossary.js ×2, js/maths-questions.js ×1 | js/app.js (6 hits) | fixed next commit — pending verification |
+| 5 | HANDOFF.md stale and misleading; 40 one-off .py scripts at repo root | repo root | fixed next commit — pending verification |
 | 6 | Slide renderer shows "- " lines as dashed paragraphs, not bullets | js/lessons.js _fmtChunk | fixed 4943b2a — code verified; render seen by Claude Code only |
 | 7 | Diagram title in slide view shows the file id (no `diagrams` list in any lesson) | js/lessons.js _renderInlineDiagram | open, cosmetic |
 | 8 | Maths: marks ≠ step count (~86), no readable steps (38), no answer verified | js/maths-questions.js | open — maths track |
@@ -69,10 +69,11 @@ Not started on the pipeline. Already in place:
 - tools/fix-board-refs.js — one-off, already run
 - tools/spec-check.js — TO BUILD (check C)
 - tools/teach-sim.js — TO BUILD (check D)
+- .claude/agents/lesson-auditor.md — independent lesson auditor (subagent); findings in tools/audit-runs/
 
 ## Next
 
-1. Open defects 1–5 (section 7 step 2).
+1. Spec text into data/spec/ and a specRef on every subtopic (section 7 step 3).
 2. Build order, section 7 of the instructions: open defects 1–5; spec text
    into data/spec/; spec-check.js; teach-sim.js; scanner additions.
 3. Then Physics through C and D, topic by topic, until every Physics row is ✓.

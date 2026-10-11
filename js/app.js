@@ -390,10 +390,10 @@ function showSubjectPicker() {
   App.setStage('Subjects');
 
   const subjects = [
-    { id: 'biology',   label: 'Biology',     icon: '🧬', sub: 'AQA Separate Science', available: true  },
-    { id: 'chemistry', label: 'Chemistry',   icon: '⚗️', sub: 'AQA Separate Science', available: true  },
-    { id: 'physics',   label: 'Physics',     icon: '⚡', sub: 'AQA Separate Science', available: true  },
-    { id: 'maths',     label: 'Maths',       icon: '📐', sub: 'AQA · GCSE Maths',                    available: true  },
+    { id: 'biology',   label: 'Biology',     icon: '🧬', sub: 'Separate Science', available: true  },
+    { id: 'chemistry', label: 'Chemistry',   icon: '⚗️', sub: 'Separate Science', available: true  },
+    { id: 'physics',   label: 'Physics',     icon: '⚡', sub: 'Separate Science', available: true  },
+    { id: 'maths',     label: 'Maths',       icon: '📐', sub: 'GCSE Maths',                    available: true  },
     { id: 'geography', label: 'Geography',   icon: '🌍', sub: 'GCSE Geography',                       available: true  },
     { id: 'english',   label: 'English Lit', icon: '📚', sub: 'Coming soon',                          available: false },
   ];
@@ -644,7 +644,7 @@ function showSubtopics(topicCode, topicData) {
       <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:0.85rem">
         <a href="${_pmtUrl}" target="_blank" rel="noopener"
           class="btn" style="text-decoration:none;justify-content:flex-start;gap:0.55rem">
-          📋 AQA past paper questions — ${_tName}
+          📋 Past paper questions — ${_tName}
         </a>
         <a href="${_smeUrl}" target="_blank" rel="noopener"
           class="btn" style="text-decoration:none;justify-content:flex-start;gap:0.55rem">
@@ -652,7 +652,7 @@ function showSubtopics(topicCode, topicData) {
         </a>
       </div>
       <p style="font-size:13px;color:var(--muted);font-style:italic;line-height:1.65">
-        These are real AQA questions. They're harder than the in-app checks — that's the point.
+        These are real past exam questions. They're harder than the in-app checks — that's the point.
       </p>`;
     list.appendChild(_ppSection);
   }

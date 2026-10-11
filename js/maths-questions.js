@@ -13183,7 +13183,7 @@ const MathsQuestions = (() => {
     // AREA & VOLUME (geo-area-volume)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'av-A01', subtopic: 'geo-area-volume', band: 'A', marks: 2,
+      id: 'av-A01', subtopic: 'geo-perimeter-area', band: 'A', marks: 2,
       question: 'Find the area of a circle with radius 6 cm. Give your answer in terms of π.',
       steps: [
         {
@@ -13209,7 +13209,7 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },
     {
-      id: 'av-A02', subtopic: 'geo-area-volume', band: 'A', marks: 3,
+      id: 'av-A02', subtopic: 'geo-volume', band: 'A', marks: 3,
       question: 'Find the volume of a cylinder with radius 4 cm and height 10 cm. Use π = 3.14.',
       steps: [
         {
@@ -13242,7 +13242,7 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },
     {
-      id: 'av-B01', subtopic: 'geo-area-volume', band: 'B', marks: 4,
+      id: 'av-B01', subtopic: 'geo-volume', band: 'B', marks: 4,
       question: 'A cone has radius 5 cm and slant height 13 cm. Find the total surface area (curved + base). Use π = 3.14.',
       steps: [
         {
@@ -13283,7 +13283,7 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },    {
       id: 'av-A03',
-      subtopic: 'geo-area-volume',
+      subtopic: 'geo-perimeter-area',
       band: 'A',
       marks: 2,
       question: 'Find the area of a trapezium with parallel sides 8 cm and 12 cm, and height 5 cm.',
@@ -13313,7 +13313,7 @@ const MathsQuestions = (() => {
     },
     {
       id: 'av-A04',
-      subtopic: 'geo-area-volume',
+      subtopic: 'geo-volume',
       band: 'A',
       marks: 2,
       question: 'Find the volume of a sphere with radius 3 cm. Give your answer in terms of π.',
@@ -13344,7 +13344,7 @@ const MathsQuestions = (() => {
     },
     {
       id: 'av-A05',
-      subtopic: 'geo-area-volume',
+      subtopic: 'geo-perimeter-area',
       band: 'A',
       marks: 2,
       question: 'A sector has radius 10 cm and angle 72°. Find the arc length. Use π = 3.14.',
@@ -13374,7 +13374,7 @@ const MathsQuestions = (() => {
     },
     {
       id: 'av-B02',
-      subtopic: 'geo-area-volume',
+      subtopic: 'geo-volume',
       band: 'B',
       marks: 3,
       question: 'Find the volume of a square-based pyramid with base side 6 cm and height 8 cm.',
@@ -13424,7 +13424,7 @@ const MathsQuestions = (() => {
     },
     {
       id: 'av-B03',
-      subtopic: 'geo-area-volume',
+      subtopic: 'geo-perimeter-area',
       band: 'B',
       marks: 3,
       question: 'A sector has radius 9 cm and angle 120°. Find (a) the arc length and (b) the area of the sector. Give answers in terms of π.',
@@ -13478,7 +13478,7 @@ const MathsQuestions = (() => {
     },
     {
       id: 'av-B04',
-      subtopic: 'geo-area-volume',
+      subtopic: 'geo-volume',
       band: 'B',
       marks: 3,
       question: 'Find the surface area of a sphere with radius 5 cm. Give your answer to 3 significant figures.',
@@ -13529,7 +13529,7 @@ const MathsQuestions = (() => {
     },
     {
       id: 'av-B05',
-      subtopic: 'geo-area-volume',
+      subtopic: 'geo-volume',
       band: 'B',
       marks: 3,
       question: 'A composite shape consists of a cylinder (radius 4 cm, height 6 cm) with a hemisphere (radius 4 cm) on top. Find the total volume. Use π = 3.14.',
@@ -13579,7 +13579,7 @@ const MathsQuestions = (() => {
     },
     {
       id: 'av-B06',
-      subtopic: 'geo-area-volume',
+      subtopic: 'geo-perimeter-area',
       band: 'B',
       marks: 3,
       question: 'A garden has a rectangular lawn 12 m × 8 m with a circular pond of diameter 4 m cut from it. Find the remaining area of the lawn. Use π = 3.14.',
@@ -13629,7 +13629,7 @@ const MathsQuestions = (() => {
     },
     {
       id: 'av-C01',
-      subtopic: 'geo-area-volume',
+      subtopic: 'geo-volume',
       band: 'C',
       marks: 4,
       question: 'A solid is made of a cone (radius 6 cm, height 8 cm) on top of a cylinder (radius 6 cm, height 10 cm). Find the total surface area. Use π = 3.14.',
@@ -13689,7 +13689,7 @@ const MathsQuestions = (() => {
     },
     {
       id: 'av-C02',
-      subtopic: 'geo-area-volume',
+      subtopic: 'geo-volume',
       band: 'C',
       marks: 4,
       question: 'A spherical ball of radius 6 cm is melted down and recast into small spheres of radius 1.5 cm. How many small spheres can be made?',
@@ -13751,7 +13751,7 @@ const MathsQuestions = (() => {
     },
     {
       id: 'av-C03',
-      subtopic: 'geo-area-volume',
+      subtopic: 'geo-perimeter-area',
       band: 'C',
       marks: 4,
       question: 'A sector has radius 12 cm and angle 150°. Find the area of the segment (the region between the chord and the arc). Use π = 3.14 and sin 150° = 0.5.',
@@ -13813,7 +13813,7 @@ const MathsQuestions = (() => {
     },
     {
       id: 'av-C04',
-      subtopic: 'geo-area-volume',
+      subtopic: 'geo-volume',
       band: 'C',
       marks: 4,
       question: 'A frustum is made by removing a small cone (radius 2 cm, height 3 cm) from a large cone (radius 6 cm, height 9 cm). Find the volume of the frustum. Use π = 3.14.',
@@ -15684,7 +15684,7 @@ const MathsQuestions = (() => {
     // CIRCLE THEOREMS (geo-circle-theorems) — Higher
     // ══════════════════════════════════════════════════════════
     {
-      id: 'cth-A01', subtopic: 'geo-circle-theorems', band: 'A', marks: 2,
+      id: 'cth-A01', subtopic: 'geo-circles', band: 'A', marks: 2,
       question: 'An inscribed angle is 38°. What is the central angle subtended by the same arc?',
       steps: [
         {
@@ -15709,7 +15709,7 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },
     {
-      id: 'cth-B01', subtopic: 'geo-circle-theorems', band: 'B', marks: 3,
+      id: 'cth-B01', subtopic: 'geo-circles', band: 'B', marks: 3,
       question: 'ABCD is a cyclic quadrilateral. Angle A = 75°. Find angle C.',
       steps: [
         {
@@ -17635,7 +17635,7 @@ const MathsQuestions = (() => {
     // TREE DIAGRAMS (prob-tree-diagrams)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'tree-A01', subtopic: 'prob-tree-diagrams', band: 'A', marks: 4,
+      id: 'tree-A01', subtopic: 'prob-tree', band: 'A', marks: 4,
       question: 'A bag has 4 red and 6 blue balls. One ball is drawn, replaced, and a second is drawn. Find P(two red).',
       steps: [
         {
@@ -17669,7 +17669,7 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },
     {
-      id: 'tree-B01', subtopic: 'prob-tree-diagrams', band: 'B', marks: 5,
+      id: 'tree-B01', subtopic: 'prob-tree', band: 'B', marks: 5,
       question: 'A bag has 3 red and 5 blue balls. Two are drawn WITHOUT replacement. Find P(one red, one blue).',
       steps: [
         {
@@ -17714,7 +17714,7 @@ const MathsQuestions = (() => {
     },
     // tree-A02
     {
-      id: 'tree-A02', subtopic: 'prob-tree-diagrams', band: 'A', marks: 2,
+      id: 'tree-A02', subtopic: 'prob-tree', band: 'A', marks: 2,
       question: 'A bag has 5 red and 3 yellow counters. One is taken out (not replaced), then another is taken. Find P(both red) as a fraction.',
       steps: [
         {
@@ -17753,7 +17753,7 @@ const MathsQuestions = (() => {
     },
     // tree-A03
     {
-      id: 'tree-A03', subtopic: 'prob-tree-diagrams', band: 'A', marks: 2,
+      id: 'tree-A03', subtopic: 'prob-tree', band: 'A', marks: 2,
       question: 'Player A has a probability of 0.6 of winning any game against player B. They play two independent games. Find P(player A wins both games).',
       steps: [
         {
@@ -17790,7 +17790,7 @@ const MathsQuestions = (() => {
     },
     // tree-A04
     {
-      id: 'tree-A04', subtopic: 'prob-tree-diagrams', band: 'A', marks: 2,
+      id: 'tree-A04', subtopic: 'prob-tree', band: 'A', marks: 2,
       question: 'A fair coin is tossed twice. Draw a tree diagram and use it to find P(exactly one head).',
       steps: [
         {
@@ -17829,7 +17829,7 @@ const MathsQuestions = (() => {
     },
     // tree-A05
     {
-      id: 'tree-A05', subtopic: 'prob-tree-diagrams', band: 'A', marks: 2,
+      id: 'tree-A05', subtopic: 'prob-tree', band: 'A', marks: 2,
       question: 'A bag has 6 blue and 4 yellow counters. A counter is drawn, its colour noted, then it is replaced. Find P(yellow first, then blue) as a fraction.',
       steps: [
         {
@@ -17868,7 +17868,7 @@ const MathsQuestions = (() => {
     },
     // tree-B02
     {
-      id: 'tree-B02', subtopic: 'prob-tree-diagrams', band: 'B', marks: 3,
+      id: 'tree-B02', subtopic: 'prob-tree', band: 'B', marks: 3,
       question: 'A box has 4 white and 2 black balls. Two balls are drawn without replacement. Find P(one white and one black, in any order) as a simplified fraction.',
       steps: [
         {
@@ -17916,7 +17916,7 @@ const MathsQuestions = (() => {
     },
     // tree-B03
     {
-      id: 'tree-B03', subtopic: 'prob-tree-diagrams', band: 'B', marks: 3,
+      id: 'tree-B03', subtopic: 'prob-tree', band: 'B', marks: 3,
       question: 'A test has two parts. P(pass part 1) = 3/4. If a student passes part 1, P(pass part 2) = 2/3. If they fail part 1, P(pass part 2) = 1/4. Find P(passes both parts) and P(passes part 2 overall).',
       steps: [
         {
@@ -17964,7 +17964,7 @@ const MathsQuestions = (() => {
     },
     // tree-B04
     {
-      id: 'tree-B04', subtopic: 'prob-tree-diagrams', band: 'B', marks: 3,
+      id: 'tree-B04', subtopic: 'prob-tree', band: 'B', marks: 3,
       question: 'P(sunny day) = 0.7. If it is sunny, P(picnic) = 0.8. If it is not sunny, P(picnic) = 0.3. Find P(picnic).',
       steps: [
         {
@@ -18009,7 +18009,7 @@ const MathsQuestions = (() => {
     },
     // tree-B05
     {
-      id: 'tree-B05', subtopic: 'prob-tree-diagrams', band: 'B', marks: 3,
+      id: 'tree-B05', subtopic: 'prob-tree', band: 'B', marks: 3,
       question: 'A bag has 7 green and 3 yellow balls. Two balls are drawn without replacement. Find P(at least one green) as a fraction.',
       steps: [
         {
@@ -18057,7 +18057,7 @@ const MathsQuestions = (() => {
     },
     // tree-B06
     {
-      id: 'tree-B06', subtopic: 'prob-tree-diagrams', band: 'B', marks: 3,
+      id: 'tree-B06', subtopic: 'prob-tree', band: 'B', marks: 3,
       question: 'A bag contains 2 red, 3 green and 1 yellow counter (6 total). Two are drawn without replacement. Find P(both are the same colour) as a simplified fraction.',
       steps: [
         {
@@ -18105,7 +18105,7 @@ const MathsQuestions = (() => {
     },
     // tree-C01
     {
-      id: 'tree-C01', subtopic: 'prob-tree-diagrams', band: 'C', marks: 4,
+      id: 'tree-C01', subtopic: 'prob-tree', band: 'C', marks: 4,
       question: 'Box A contains 3 red and 2 white balls. Box B contains 1 red and 4 white balls. A box is chosen at random, then a ball is drawn. Find P(red ball). If a red ball is drawn, find P(it came from box A).',
       steps: [
         {
@@ -18162,7 +18162,7 @@ const MathsQuestions = (() => {
     },
     // tree-C02
     {
-      id: 'tree-C02', subtopic: 'prob-tree-diagrams', band: 'C', marks: 4,
+      id: 'tree-C02', subtopic: 'prob-tree', band: 'C', marks: 4,
       question: 'P(it rains on Monday) = 0.4. If it rains Monday, P(rains Tuesday) = 0.7. If it is dry Monday, P(rains Tuesday) = 0.2. Find P(rains Tuesday). Given it rains Tuesday, find P(it also rained Monday).',
       steps: [
         {
@@ -18215,7 +18215,7 @@ const MathsQuestions = (() => {
     },
     // tree-C03
     {
-      id: 'tree-C03', subtopic: 'prob-tree-diagrams', band: 'C', marks: 4,
+      id: 'tree-C03', subtopic: 'prob-tree', band: 'C', marks: 4,
       question: 'Three boxes are chosen with probabilities P(box 1) = 1/2, P(box 2) = 1/3, P(box 3) = 1/6. Box 1 has 2 red and 1 white ball. Box 2 has 1 red and 2 white balls. Box 3 has 3 red and 0 white balls. A ball is drawn at random. Find P(red ball).',
       steps: [
         {
@@ -18272,7 +18272,7 @@ const MathsQuestions = (() => {
     },
     // tree-C04
     {
-      id: 'tree-C04', subtopic: 'prob-tree-diagrams', band: 'C', marks: 4,
+      id: 'tree-C04', subtopic: 'prob-tree', band: 'C', marks: 4,
       question: 'Bag A contains 4 red and 1 blue ball. Bag B contains 2 red and 3 blue balls. A fair coin is tossed: if heads, a ball is drawn from bag A; if tails, from bag B. Given that a red ball is drawn, find P(it came from bag A).',
       steps: [
         {
@@ -24503,7 +24503,7 @@ const MathsQuestions = (() => {
         grade6: "380 to 2 s.f. is nearest 10. Half = 5. Bounds: 375 to 385. Error interval: 375 ≤ n < 385.",
         grade8: "375 ≤ n < 385. Lower bound is inclusive (≤); upper bound is exclusive (<) since 385 rounds to 390, not 380.",
       },
-      examinerTip: "Always write error intervals as LB ≤ n < UB — the lower bound uses ≤ and the upper bound uses strict <. This is AQA's required notation.",
+      examinerTip: "Always write error intervals as LB ≤ n < UB — the lower bound uses ≤ and the upper bound uses strict <. This is the required notation.",
       auditStatus: 'pending',
     },
     // ── int-B03 ──────────────────────────────────────────────
@@ -26568,8 +26568,8 @@ const MathsQuestions = (() => {
     M1: ['num-integers','num-fractions','num-percentages','num-powers-roots','num-standard-form','num-bounds','num-ratio'],
     M2: ['alg-expressions','alg-equations','alg-inequalities','alg-sequences','alg-graphs','alg-quadratics','alg-simultaneous','alg-functions'],
     M3: ['rpr-ratio','rpr-proportion','rpr-speed','rpr-percentage-change','rpr-compound-measures'],
-    M4: ['geo-angles','geo-shapes','geo-area-volume','geo-transformations','geo-pythagoras','geo-trigonometry','geo-circle-theorems','geo-vectors'],
-    M5: ['prob-basic','prob-combined','prob-tree-diagrams','prob-venn','prob-conditional'],
+    M4: ['geo-angles','geo-shapes','geo-perimeter-area','geo-volume','geo-transformations','geo-pythagoras','geo-trigonometry','geo-circles','geo-vectors'],
+    M5: ['prob-basic','prob-combined','prob-tree','prob-venn','prob-conditional'],
     M6: ['stat-averages','stat-charts','stat-scatter','stat-cumulative','stat-boxplots','stat-sampling'],
   };
 

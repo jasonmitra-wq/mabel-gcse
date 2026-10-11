@@ -107,7 +107,7 @@ const Glossary = (() => {
       syllabusName: 'Osmosis (B1) — coming soon'
     },
     'nucleus': {
-      def: 'The control centre of the cell. It contains the cell\'s DNA (genetic material) and controls which proteins the cell makes. Note: red blood cells have no nucleus — this is a key AQA adaptation.',
+      def: 'The control centre of the cell. It contains the cell\'s DNA (genetic material) and controls which proteins the cell makes. Note: red blood cells have no nucleus — this is a key adaptation.',
       examRequired: true,
       syllabusTopic: null,
       syllabusName: 'Cell structure (B1) — coming soon'
@@ -305,7 +305,7 @@ const Glossary = (() => {
     if (!entry) return;
 
     const examBadge = entry.examRequired
-      ? `<span class="glossary-exam-badge exam">✓ AQA definition — you need to know this</span>`
+      ? `<span class="glossary-exam-badge exam">✓ Exam definition — you need to know this</span>`
       : `<span class="glossary-exam-badge info">ℹ Good to know — not a named definition</span>`;
 
     const syllabusLink = entry.syllabusTopic

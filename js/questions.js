@@ -3,6 +3,8 @@
    ============================================================ */
 
 const Questions = (() => {
+  const EMAIL_REPORT_ENABLED = false; // superseded: nothing is emailed
+
   // State
   let _questions           = [];
   let _idx                 = 0;
@@ -558,7 +560,9 @@ const Questions = (() => {
     }
     html += `<button class="btn pri" onclick="Questions.close()">📖 Back to lesson</button>`;
     html += `<button class="btn" onclick="showHome()">🏠 Home</button>`;
-    html += `<button class="btn" id="emailReportBtn" onclick="Questions._sendSessionReport()">📧 Email this report</button>`;
+    if (EMAIL_REPORT_ENABLED) {
+      html += `<button class="btn" id="emailReportBtn" onclick="Questions._sendSessionReport()">📧 Email this report</button>`;
+    }
     html += `</div>`;
 
     document.getElementById('qInner').innerHTML = html;
@@ -636,6 +640,7 @@ const Questions = (() => {
 
   // ── Session report email ──────────────────────────────────
   async function _sendSessionReport() {
+    if (!EMAIL_REPORT_ENABLED) return;
     const EMAILJS_PUBLIC_KEY  = '3UxpA4dBrUbXlNHs3';
     const EMAILJS_SERVICE_ID  = 'service_mabel';
     const EMAILJS_TEMPLATE_ID = 'template_session';

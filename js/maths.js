@@ -887,7 +887,6 @@ const Maths = (() => {
         </svg>
         <div class="maths-badge-name">${t.name}</div>
         <div class="maths-badge-sub">You scored 80%+ on the ${t.name} topic test.</div>
-        <div class="maths-badge-claim">Show this to claim your reward</div>
         <div class="maths-badge-actions">
           <button class="btn pri" onclick="Maths._saveBadge('${topicCode}')">🏅 Save badge</button>
           <button class="btn" onclick="document.getElementById('mathsBadgeOverlay')?.remove();Maths._showTopic('${topicCode}')">Back to topic</button>

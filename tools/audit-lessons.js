@@ -31,7 +31,7 @@ const WATCH = {
 };
 
 // Physics describes changes of state with forces between particles, not bonds.
-const PHYSICS_BOND = /\bbonds?\b/gi;
+const PHYSICS_BOND = /\bbond(s|ed|ing)?\b/gi;
 
 // A figure (percentage, millions, billions, $, £) in a string with no year.
 // Only for subjects whose figures date (economies, populations). Science

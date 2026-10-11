@@ -3,7 +3,7 @@
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.
 
-Last verified: 2026-10-11, from a fresh pull at commit 9984fe6.
+Last verified: 2026-10-11, from a fresh pull at commit 13ac63d.
 
 ## Definition of done (summary — full text in the project instructions)
 
@@ -20,12 +20,12 @@ open shared-code fault.
 | Topic | S1 | S2 | S3 | S4 | S5 | S6 | T1 | T2 | T3 | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
 | P1 Energy | ✓ 0c40b8e | ✓ 0c40b8e | ✓ 0c40b8e | – | n/a | n/a | – | n/a | – | p1-energy-stores "chemical energy stored in bonds" checked and correct |
-| P2 Electricity | ✓ 0c40b8e | ✓ 0c40b8e | ✓ 0c40b8e | – | n/a | n/a | – | n/a | – | misplaced common mistake removed 51a3dc2 |
+| P2 Electricity | ✓ 0c40b8e | ✓ 0c40b8e | ✓ 0c40b8e | – | n/a | n/a | – | n/a | – | misplaced common mistake removed 51a3dc2; p2-static 'bonding cables' (electrical bonding) checked and correct |
 | P3 Particle model | ✓ dd98fe9 | ✓ 9b952ab | ✓ dd98fe9 | partial: p3-particle-model only (4110010) | n/a | n/a | partial: p3-particle-model only | n/a | – | |
-| P4 Atomic structure | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | |
+| P4 Atomic structure | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | p4-nuclear-model 'chemical bonding' checked and correct |
 | P5 Forces | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | |
-| P6 Waves | rewritten, awaiting verification | rewritten, awaiting verification | rewritten, awaiting verification | – | n/a | n/a | – | n/a | – | p6-em-spectrum 'molecular bonds' (UV) checked and correct |
-| P7 Magnetism | rewritten, awaiting verification | rewritten, awaiting verification | rewritten, awaiting verification | – | n/a | n/a | – | n/a | – | |
+| P6 Waves | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | p6-em-spectrum 'molecular bonds' (UV) checked and correct; 'bonded' ×3 → forces between particles, next commit — pending verification |
+| P7 Magnetism | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | iron-as-permanent-magnet error, solenoid poles, misplaced DC mistake corrected in next commit — pending verification |
 
 ## Biology, Chemistry, Geography, Sociology
 
@@ -55,10 +55,11 @@ Not started on the pipeline. Already in place:
 | 3 | Four maths subtopics have no matching bank ids → "coming soon" | geo-perimeter-area, geo-volume, geo-circles, prob-tree | open |
 | 4 | "AQA" on subject tiles and maths tile | js/app.js (6 hits) | open |
 | 5 | HANDOFF.md stale and misleading; 40 one-off .py scripts at repo root | repo root | open — archive to tools/archive/, don't delete |
-| 6 | Slide renderer shows "- " lines as dashed paragraphs, not bullets | js/lessons.js _fmtChunk | fixed in _formatKpContent (4943b2a) |
+| 6 | Slide renderer shows "- " lines as dashed paragraphs, not bullets | js/lessons.js _fmtChunk | fixed 4943b2a — code verified; render seen by Claude Code only |
 | 7 | Diagram title in slide view shows the file id (no `diagrams` list in any lesson) | js/lessons.js _renderInlineDiagram | open, cosmetic |
 | 8 | Maths: marks ≠ step count (~86), no readable steps (38), no answer verified | js/maths-questions.js | open — maths track |
 | 9 | 5 lessons outside Physics still name Mabel | scanner | closes as each subject is rewritten |
+| 10 | Slide renderer _tryRenderAsList cuts the text before an auto-list to one sentence of ≤15 words and drops exam-language sentences, so slides can show less than the lesson file. 0 Physics lines trigger it; 68 key-point lines in other subjects do. | js/lessons.js _tryRenderAsList, _renderKpList | open — fix before the Biology rewrite |
 
 ## Tools
 

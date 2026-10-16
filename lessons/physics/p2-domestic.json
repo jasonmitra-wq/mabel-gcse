@@ -7,7 +7,7 @@
     "Before reading, try to recall the colour and job of each wire in three-core cable. Check your answers as you go.",
     "Before reading, think about why a live wire can be dangerous even when a switch is off."
   ],
-  "intro": "When you plug in a kettle, charge your phone or switch on a light, you use a carefully designed system. It keeps you safe from potential differences that could kill. The UK mains supply is an alternating potential difference of about 230 V. That is enough to kill. Yet people use it millions of times a day without harm. That safety comes from smart engineering. It uses the right wires in the right colours. Earth connections also drain dangerous current away from you.",
+  "intro": "When you plug in a kettle, charge your phone or switch on a light, you use a carefully designed system. It keeps you safe from potential differences that could kill. The UK mains supply is an alternating potential difference of about 230 V. That is enough to kill. Yet people use it millions of times a day without harm. That safety comes from smart engineering. It uses the right wires in the right colours. The earth wire also stops a faulty appliance becoming live.",
   "keyPoints": [
     {
       "heading": "ac vs dc",
@@ -69,7 +69,7 @@
     },
     {
       "heading": "Earthing",
-      "content": "<strong>Earthing</strong> means connecting an appliance's metal casing to earth (0 V). This is done through the earth wire (green and yellow). Normally, no current flows through the earth wire.\n\nThe earth wire is a safety wire. It stops the appliance becoming live. Say there is a fault, and the live wire inside touches the metal casing. The earth wire gives a low-resistance path to earth. So most of the fault current flows through the earth wire, not through anyone touching the casing.\n\nA live wire may be dangerous even when a switch in the mains circuit is open. It is still connected to the supply. Any connection between the live wire and earth is dangerous. Current can flow through that connection to earth. If the connection is a person, they get an electric shock.\n\nElectrical safety rules:\n- never use electrical appliances near water (water conducts electricity)\n- never overload sockets with adaptors\n- always check cables for damage before use",
+      "content": "<strong>Earthing</strong> means connecting an appliance's metal casing to earth (0 V). This is done through the earth wire (green and yellow). Normally, no current flows through the earth wire.\n\nSay there is a fault, and the live wire inside touches the metal casing. The earth wire is a safety wire to stop the appliance becoming live.\n\nA live wire may be dangerous even when a switch in the mains circuit is open. It is still connected to the supply. Any connection between the live wire and earth is dangerous. Current can flow through that connection to earth. If the connection is a person, they get an electric shock.\n\nElectrical safety rules:\n- never use electrical appliances near water (water conducts electricity)\n- never overload sockets with adaptors\n- always check cables for damage before use",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -85,8 +85,8 @@
           "def": "Connecting the metal casing of an appliance to earth via the earth wire, so the appliance cannot become live."
         }
       ],
-      "memTip": "Earth = escape route for fault current.",
-      "tutor_note": "It is easy to think earthing prevents faults. It doesn't. It controls what happens when a fault occurs. The earth wire gives the fault current a safe route to earth."
+      "memTip": "Earth wire = safety wire. It stops the appliance becoming live.",
+      "tutor_note": "It is easy to think earthing prevents faults. It doesn't. It controls what happens when a fault occurs. The earth wire is a safety wire to stop the appliance becoming live."
     }
   ],
   "tables": [
@@ -168,7 +168,7 @@
     "Thinking the earth wire carries current when working normally. It does not. Current only flows through the earth wire during a fault."
   ],
   "examTips": [
-    "When explaining how earthing protects you, say that the earth wire stops the appliance becoming live. Fault current flows to earth through the earth wire, not through you."
+    "When explaining how earthing protects you, say that the earth wire stops the appliance becoming live."
   ],
   "revisionCardBullets": [
     "dc: a direct potential difference, one direction only (batteries, cells, solar panels)",

@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 1, task 1.4 (S4 diagram check: tools/check-diagrams.js)
+Runbook position: Phase 1, task 1.5 (check D design, then tools/teach-sim.js)
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.
@@ -38,7 +38,7 @@ Checked against the repo 2026-10-16 at 8c8ab0f.
 
 | Item | Status | Runbook |
 |---|---|---|
-| S4 diagrams | – 33 of 34 Physics lessons have no diagram; only p3-particle-model has two (diagrams/physics/p3-state-changes.svg, p3-states-particles.svg). Render check tools/check-diagrams.js not built. | 1.4 check; 2.3 drawing |
+| S4 diagrams | – 33 of 34 Physics lessons have no diagram; only p3-particle-model has two (diagrams/physics/p3-state-changes.svg, p3-states-particles.svg). Render check built: tools/check-diagrams.js (headless Chrome via dev dependency puppeteer-core). First run 2026-10-16: 24 diagrams, 5 flagged, 5 text overruns, 10 text overlaps, all in Biology (b2-blood-vessels, b2-digestive-system, b2-enzyme-ph, b2-heart, cell-structure-plant); both Physics diagrams clean. | 1.4 check; 2.3 drawing |
 | S5 checkpoint proof | structural check built: tools/audit-lessons.js ERROR "checkpoint keys not 0..keyPoints−1". 135 of 170 lessons fail it, including all 21 Physics lessons outside P1 and P2. S5: P1 ✓; P2 – (last run had a checkpoint_mismatch ACCEPT). | 1.3 |
 | Check D teach simulator | – tools/teach-sim.js not built. Design step first: can the js/lessons.js decision and prompt-building code run in Node? | 1.5 |
 | T1 teach-enable | – Physics in TEACH_ENABLED (js/lessons.js:18): p3-particle-model only. | 2.4 |
@@ -94,6 +94,7 @@ Not started on the pipeline. Already in place:
 - tools/check-spec-sections.py — independent check that every numbered spec section reached the .md
 - tools/spec-coverage.js — specRef coverage report → tools/spec-coverage.md
 - data/spec/MANIFEST.md — source URL, version, md5s and section counts for the local spec text
+- tools/check-diagrams.js — S4 render check: text past the viewBox or overlapping other text; report tools/diagram-report.md. Needs npm install (puppeteer-core, dev only) and local Chrome or Edge
 - tools/teach-sim.js — TO BUILD (check D)
 - .claude/agents/lesson-auditor.md — independent lesson auditor (subagent); findings in tools/audit-runs/
 

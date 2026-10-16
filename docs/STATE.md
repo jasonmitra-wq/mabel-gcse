@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 1, task 1.6 (maths answer check). Task 1.5 calibration run still owed: node tools/teach-sim.js --run p3-particle-model once SPEC_CHECK_API_KEY is set
+Runbook position: Phase 1, task 1.7 (STOP until Mabel's verdict on P1 is in docs/MABEL-FEEDBACK.md). Task 1.5 calibration run still owed: node tools/teach-sim.js --run p3-particle-model once SPEC_CHECK_API_KEY is set
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.
@@ -43,7 +43,7 @@ Checked against the repo 2026-10-16 at 8c8ab0f.
 | Check D teach simulator | built, calibration pending. Design: the decision and prompt code was private to the browser module, so it moved verbatim into js/teach-core.js (loaded by index.html and by Node); js/teach.js keeps DOM and storage. Proof: one scripted p3-particle-model conversation (39 steps, every decision kind, stub model) gave byte-identical prompts, decisions and state before and after (514 KB); browser smoke test clean. tools/teach-sim.js: dry run, --mock self-test and scorer checks pass. Calibration --run on p3-particle-model not done: SPEC_CHECK_API_KEY is not set in this environment. | 1.5 |
 | T1 teach-enable | – Physics in TEACH_ENABLED (js/lessons.js:18): p3-particle-model only. | 2.4 |
 | Defect 11 new lessons | – not written: 4.5.3, 4.5.4, 4.5.5, 4.6.3, 4.8.1.1, 4.8.1.2, 4.8.2. P8 Space becomes a new topic in data/physics-syllabus.json (no P8 entry yet). Additions to existing lessons: 4.5.1.2 (p5-forces-motion), 4.3.3.3 (p3-pressure, in the P3 loop), seismic waves 4.6.1.5 (p6-sound). | 2.2 |
-| Maths track | – defect 8 open: 600 questions; marks ≠ step count in 87; 38 without sampleAnswer; no answer verified by recomputation. tools/maths-recompute.js not built. | 1.6 |
+| Maths track | – defect 8 open: 600 questions; marks ≠ step count in 87; 38 without sampleAnswer. Answer check built: tools/maths-recompute.js recomputes every step of 40 questions (seed 2026) from the question text. 2026-10-16: 111 steps, 85 checked by the app (26 are checkType skip). Error rate 4/85 = 4.7% of checked steps; 3 of 40 questions affected: pct-C01 step 1 stored 4434.9 with tolerance 0.01, correct 4434.87, so the right answer is marked wrong; venn-C03 step 3 stored 0.375, correct 0.1; eq-B06 step 1 and venn-C03 step 2 store a number the prompt does not ask for. 2 more ambiguous (tr-B02 step 2, pyth-C02 step 2). Report: tools/maths-recompute-report.md. No question changed. | 1.6 |
 
 ## Biology, Chemistry, Geography, Sociology
 
@@ -78,7 +78,7 @@ Not started on the pipeline. Already in place:
 | 5 | HANDOFF.md stale and misleading; 40 one-off .py scripts at repo root | repo root | fixed 51ff762, verified |
 | 6 | Slide renderer shows "- " lines as dashed paragraphs, not bullets | js/lessons.js _fmtChunk | fixed 4943b2a — code verified; render seen by Claude Code only |
 | 7 | Diagram title in slide view shows the file id (no `diagrams` list in any lesson) | js/lessons.js _renderInlineDiagram | open, cosmetic |
-| 8 | Maths bank: 600 questions; marks ≠ step count (87); none has sample answer verified by recomputation; 38 have no sampleAnswer (trig, vectors, circle theorems) | js/maths-questions.js | open — maths track |
+| 8 | Maths bank: 600 questions; marks ≠ step count (87); 38 have no sampleAnswer (trig, vectors, circle theorems). Step answers recomputed for a 40-question sample: 4.7% of checked steps wrong (tools/maths-recompute-report.md) | js/maths-questions.js | open — maths track |
 | 9 | 5 lessons outside Physics still name Mabel | scanner | closes as each subject is rewritten |
 | 10 | Slide renderer _tryRenderAsList cuts the text before an auto-list to one sentence of ≤15 words and drops exam-language sentences, so slides can show less than the lesson file. 0 Physics lines trigger it; 68 key-point lines in other subjects do. | js/lessons.js _tryRenderAsList, _renderKpList | open — fix before the Biology rewrite |
 | 11 | Physics content missing — new lessons needed for spec 4.5.3 forces and elasticity, 4.5.4 moments levers and gears, 4.5.5 pressure in fluids and atmospheric pressure, 4.6.3 black body radiation, 4.8.1.1 solar system, 4.8.1.2 life cycle of a star, 4.8.2 red-shift; additions needed: 4.5.1.2 contact and non-contact forces (p5-forces-motion), 4.3.3.3 work done on a gas (p3-pressure), seismic waves in 4.6.1.5 (p6-sound). Physics cannot be finished until these exist. | data/physics-syllabus.json, lessons/physics | open — new content, not a rewrite |
@@ -94,6 +94,7 @@ Not started on the pipeline. Already in place:
 - tools/check-spec-sections.py — independent check that every numbered spec section reached the .md
 - tools/spec-coverage.js — specRef coverage report → tools/spec-coverage.md
 - data/spec/MANIFEST.md — source URL, version, md5s and section counts for the local spec text
+- tools/maths-recompute.js — maths answer check: recomputes every step of a seeded 40-question sample; report tools/maths-recompute-report.md
 - tools/check-diagrams.js — S4 render check: text past the viewBox or overlapping other text; report tools/diagram-report.md. Needs npm install (puppeteer-core, dev only) and local Chrome or Edge
 - js/teach-core.js — teach mode decisions and prompts, shared by js/teach.js and tools/teach-sim.js
 - tools/teach-sim.js — check D: scripted student through teach mode with the browser's tutor model (claude-haiku-4-5-20251001); scores every tutor turn; --mock for an offline self-test; outputs in tools/teach-sim-runs/. Calibration on p3-particle-model pending (needs SPEC_CHECK_API_KEY)

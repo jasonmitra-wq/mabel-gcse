@@ -10,7 +10,7 @@ Last verified: 2026-10-16, from a fresh pull at commit 9951f13.
 Slide path: S1 rewritten to plain-English rules · S2 scanner clean · S3
 rewrite checker passes · S4 diagrams for visual concepts, render-checked · S5
 checkpoints test their key point · S6 spec audit clean.
-S6 means: every finding from a topic's spec-check run is fixed or rejected with a reason in tools/spec-check-results/<topic>-TRIAGE.md, and a re-check after the fixes shows no new spec-based factual error, no new missing spec content and no above-GCSE content. Above-GCSE content is removed, never signposted.
+S6 means: the topic was spec-checked repeatedly, every finding of every run was fixed or rejected for a listed reason in tools/spec-check-results/<topic>-TRIAGE.md, and the last run was clean (no finding needed a fix), within at most 5 runs. If 5 runs pass without a clean run, the topic is escalated to Jason. Above-GCSE content is removed, never signposted.
 AI teacher path: T1 in TEACH_ENABLED · T2 simulated-student run passes · T3 no
 open shared-code fault.
 
@@ -20,7 +20,7 @@ open shared-code fault.
 
 | Topic | S1 | S2 | S3 | S4 | S5 | S6 | T1 | T2 | T3 | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
-| P1 Energy | ✓ 5a36e2b (re-proved after content fix) | ✓ 5a36e2b (re-proved after content fix) | ✓ 5a36e2b (re-proved after content fix) | – | n/a | – escalated to Jason: see P1-RECHECK.md, Final re-check | – | n/a | – | Fix round 5a36e2b + close-out; triage in tools/spec-check-results/P1-TRIAGE.md; spec-check findings refer to commit d08b060 |
+| P1 Energy | ✓ 5a36e2b (re-proved after content fix) | ✓ 5a36e2b (re-proved after content fix) | ✓ 5a36e2b (re-proved after content fix) | – | n/a | – escalated to Jason: 5 runs, no clean run; see P1-TRIAGE.md | – | n/a | – | Fix round 5a36e2b + close-out; triage in tools/spec-check-results/P1-TRIAGE.md; spec-check findings refer to commit d08b060 |
 | P2 Electricity | ✓ 23999d0 + P2 fix round (re-proved after content fix) | ✓ 23999d0 + P2 fix round (re-proved after content fix) | ✓ 23999d0 + P2 fix round (re-proved after content fix) | – | n/a | – escalated to Jason: see P2-RECHECK.md; held: fuse — see P2-FIX-LOG.md | – | n/a | – | Fix round; triage in tools/spec-check-results/P2-TRIAGE.md; findings refer to commit d08b060; circuit diagrams deferred to S4 |
 | P3 Particle model | ✓ dd98fe9 | – reopened: p3-pressure has 24 Kelvin/absolute-zero WARNs unresolved; decided by spec-check | ✓ dd98fe9 | partial: p3-particle-model only (4110010) | n/a | n/a | partial: p3-particle-model only | n/a | – | |
 | P4 Atomic structure | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | p4-nuclear-model 'chemical bonding' checked and correct; p4-nuclear-model 'quantum' ×2 and its A-level pointer to be removed in the P4 fix round |

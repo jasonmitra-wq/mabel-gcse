@@ -1,19 +1,19 @@
 {
   "lesson": "p1-efficiency",
   "source_file": "lessons/physics/p1-efficiency.json",
-  "lesson_md5": "95310ea9d37205b3019fc47d8427014f",
+  "lesson_md5": "b62bb757682888217fbc20e42c590a00",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T18:18:42.385Z",
+  "date": "2026-10-16T19:05:13.260Z",
   "specRefs_sent": [
     "4.1.2.2"
   ],
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 6070,
-    "output_tokens": 3801
+    "input_tokens": 6105,
+    "output_tokens": 2485
   },
-  "cost_usd": 0.1003,
+  "cost_usd": 0.07412,
   "status": "OK",
   "result": {
     "lesson": "p1-efficiency",
@@ -21,51 +21,28 @@
     "above_gcse": [],
     "factual_errors": [
       {
-        "field": "tables[0].rows[0]",
-        "text": "\"LED bulb\", \"Electrical\", \"Light (radiation)\", \"Thermal (small amount)\"",
-        "correction": "An LED is much more efficient than a filament bulb. However, a typical LED lamp still transfers more than half of its input energy by heating, often about 60–80%. That is not a 'small amount'. It is correct to say an LED wastes less than a filament bulb. It is wrong to suggest that almost all of its input becomes light.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "Worked example 2: a lamp has a total power input of 10 W. Its useful power output is 9 W → efficiency = 9 ÷ 10 = <strong>0.9 (90%)</strong>.",
-        "correction": "The arithmetic is correct. But 90% is not a realistic efficiency for any real lamp, because even LEDs transfer most of their input by heating. Together with the 'small amount' claim in the table, this example could give the student a false idea of how efficient lamps are. A more realistic value would be, for example, 3 W useful output from 10 W input.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[0].keyTerms[1].def",
-        "text": "Energy transferred to the intended output store — the energy that does the job we want",
-        "correction": "For a lamp, the useful output is light. Light is energy transferred by radiation, which is a way of transferring energy, not an energy store. The table in the same lesson lists \"Light (radiation)\" as a useful output. Defining useful output only as energy transferred to a 'store' is inaccurate for devices whose useful output is light or sound. A better definition is 'energy transferred in the way we want (to a useful store or by a useful pathway)'.",
+        "field": "keyPoints[0].content",
+        "text": "It wastes 25% to heat, sound or other stores we don't want.",
+        "correction": "Sound is not an energy store. It is a way energy is transferred, and the energy carried by sound ends up in the thermal store of the surroundings. 'Heat' is also better described as energy transferred to the thermal store of the surroundings, where it is dissipated.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [
       {
+        "field": "keyPoints[0].content",
+        "text": "efficiency = (useful output ÷ total input) × 100%",
+        "spec_term": "useful output energy transfer / total input energy transfer"
+      },
+      {
         "field": "keyPoints[1].content",
-        "text": "<strong>efficiency = useful output energy (J) ÷ total input energy (J)</strong>",
-        "spec_term": "efficiency = useful output energy transfer / total input energy transfer"
-      },
-      {
-        "field": "keyPoints[0].keyTerms[1].term",
-        "text": "useful output energy",
-        "spec_term": "useful output energy transfer"
-      },
-      {
-        "field": "keyPoints[0].keyTerms[2].term",
-        "text": "total input energy",
-        "spec_term": "total input energy transfer"
-      },
-      {
-        "field": "keyPoints[1].keyTerms[0].def",
-        "text": "efficiency = useful output energy ÷ total input energy (or useful power ÷ total input power)",
-        "spec_term": "useful output energy transfer / total input energy transfer; useful power output / total power input"
+        "text": "useful output = efficiency × total input\n- total input = useful output ÷ efficiency",
+        "spec_term": "useful output energy transfer (or useful power output) / total input energy transfer (or total power input)"
       }
     ],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "The specification section supplied is labelled '(HT only)' for describing ways to increase efficiency. The lesson does not label keyPoints[3] ('Improving efficiency') as Higher Tier only. Whether this labelling is required is outside what can be judged from the supplied text.",
-      "The use of energy store and pathway terms (e.g. 'Electrical', 'Chemical (fuel)', 'Kinetic (mechanical)' in tables[0]) could not be checked against the specification. The section defining stores and pathways (4.1.1.1) was not supplied, so these terms were judged only on own knowledge.",
-      "No diagrams are included (all 'diagram' fields are null), so there was nothing visual to check."
+      "The specification marks 'describe ways to increase the efficiency of an intended energy transfer' as (HT only). The lesson's 'Improving efficiency' key point (keyPoints[3]) and checkpoint 3 are not labelled as Higher Tier. I could not check which tier this lesson is meant for, or whether that labelling matters for this student.",
+      "All key point diagrams are null, so there were no diagrams or images to check."
     ]
   }
 }

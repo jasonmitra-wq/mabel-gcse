@@ -12,7 +12,7 @@
   "keyPoints": [
     {
       "heading": "What power means",
-      "content": "<strong>Power</strong> is the rate at which energy is transferred. It is also the rate at which work is done. It is how much <strong>energy transfer</strong> happens per second. The equation is: <strong>P = E/t</strong> (power = energy ÷ time). The <strong>unit of power is the watt (W)</strong>. 1 W = 1 joule per second. You can also write it as <strong>P = W/t</strong>, where W is work done (in joules).\n\nA powerful machine doesn't always transfer more energy overall. It transfers the same energy in a shorter time. Example: a crane lifting a car does the same work whether it takes 5 seconds or 20 seconds. It transfers the same energy. But the crane that does it in 5 seconds has <strong>four times</strong> the power. The time is divided by 4, so the power is multiplied by 4.",
+      "content": "<strong>Power</strong> is the rate at which energy is transferred. It is also the rate at which work is done. It is how much <strong>energy transfer</strong> happens per second. The equation is: <strong>P = E/t</strong> (power = energy transferred ÷ time). The <strong>unit of power is the watt (W)</strong>. 1 W = 1 joule per second. You can also write it as <strong>P = W/t</strong>, where W is work done (in joules).\n\nA powerful machine doesn't always transfer more energy overall. It transfers the same energy in a shorter time. Example: a crane lifting a car does the same work whether it takes 5 seconds or 20 seconds. It transfers the same energy. But the crane that does it in 5 seconds has <strong>four times</strong> the power. The time is divided by 4, so the power is multiplied by 4.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -47,7 +47,7 @@
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "P = E/t — power (W) = energy (J) ÷ time (s)",
+        "P = E/t — power (W) = energy transferred (J) ÷ time (s)",
         "E = Pt — energy (J) = power (W) × time (s)",
         "t = E/P — time (s) = energy (J) ÷ power (W)",
         "1 kW = 1000 W. Always convert kilowatts to watts before calculating",
@@ -72,7 +72,7 @@
     },
     {
       "heading": "Power in everyday contexts",
-      "content": "Putting real numbers on power helps you make sense of the world.\n- <strong>Human body at rest</strong>: ~80 W, just keeping warm and breathing.\n- <strong>Walking</strong>: ~300 W.\n- <strong>Cycling</strong>: ~100–400 W, depending on speed.\n- <strong>Running</strong>: ~500–800 W. Top sprinters may briefly reach 2000 W.\n- <strong>Hairdryer</strong>: ~2000 W (2 kW).\n- <strong>Electric kettle</strong>: ~2000–3000 W.\n- <strong>Electric car motor</strong>: 100–300 kW.\n- <strong>Large power station</strong>: ~1–2 GW (gigawatts = 1,000,000,000 W).\n\nThis is why the Industrial Revolution changed so much. Steam engines could replace dozens of human workers by giving out many kilowatts non-stop.",
+      "content": "Putting real numbers on power helps you make sense of the world. A higher power means more joules are transferred each second.\n- <strong>Human body at rest</strong>: ~80 W, just keeping warm and breathing.\n- <strong>Walking</strong>: ~300 W.\n- <strong>Cycling</strong>: ~100–400 W, depending on speed.\n- <strong>Running</strong>: ~500–800 W. Top sprinters may briefly reach 2000 W.\n- <strong>Hairdryer</strong>: ~2000 W (2 kW).\n- <strong>Electric kettle</strong>: ~2000–3000 W.\n- <strong>Electric car motor</strong>: 100–300 kW.\n- <strong>Large power station</strong>: ~1–2 GW (gigawatts = 1,000,000,000 W).\n\nThis is why the Industrial Revolution changed so much. Steam engines could replace dozens of human workers by giving out many kilowatts non-stop.",
       "examFlag": false,
       "cardFlag": true,
       "diagram": null,
@@ -93,7 +93,7 @@
     },
     {
       "heading": "Work done",
-      "content": "<strong>Work done (W) = force (F) × distance (s)</strong>. Here s is the distance moved along the line of action of the force. Units: <strong>joules (J)</strong>. When a force moves an object, energy is transferred. We say 'work is done'.\n\nOne joule of work is done when a force of one newton moves an object one metre. So <strong>1 J = 1 N m</strong> (one newton-metre). To convert, 20 N m is the same as 20 J.\n\nWhen work is done, energy moves between stores:\n- lifting an object: work done fills its gravitational potential store\n- pushing an object against friction: work done against friction goes to the thermal store. This raises the temperature of the object\n\nWorked example: a force of 3000 N moves a car 20 m along the line of the force. W = Fs = 3000 × 20 = 60,000 J = <strong>60 kJ</strong>.",
+      "content": "<strong>Work done (W) = force (F) × distance moved along the line of action of the force (s)</strong>. Units: <strong>joules (J)</strong>. When a force moves an object, energy is transferred. We say 'work is done'.\n\nOne joule of work is done when a force of one newton moves an object one metre. So <strong>1 J = 1 N m</strong> (one newton-metre). To convert, 20 N m is the same as 20 J.\n\nWhen work is done, energy moves between stores:\n- lifting an object: work done fills its gravitational potential store\n- pushing an object against friction: work done against friction goes to the thermal store. This raises the temperature of the object\n\nWorked example: a force of 3000 N moves a car 20 m along the line of action of the force. W = Fs = 3000 × 20 = 60,000 J = <strong>60 kJ</strong>.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -202,19 +202,19 @@
       "wrongFeedback": "Use P = E/t. Substitute: P = 18,000 J ÷ 90 s = 200 W. Remember to divide energy by time in seconds."
     },
     "2": {
-      "question": "A hairdryer has a power of 2000 W. How much energy does it transfer in 10 s?",
+      "question": "A hairdryer has a power of 2000 W. A kettle has a power of 2500 W. Which transfers more energy each second?",
       "options": [
-        "20,000 J",
-        "200 J",
-        "2010 J",
-        "0.005 J"
+        "The kettle, because its power is higher",
+        "The hairdryer, because it heats air",
+        "They transfer the same energy each second",
+        "You cannot tell without knowing the time"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! E = Pt = 2000 × 10 = 20,000 J.",
-      "wrongFeedback": "Use E = Pt. E = 2000 W × 10 s = 20,000 J. Multiply power by time."
+      "correctFeedback": "Correct! Power is the energy transferred each second. The kettle has the higher power, so it transfers more energy each second.",
+      "wrongFeedback": "Power tells you how much energy is transferred each second. 2500 W means 2500 J every second. That is more than 2000 W."
     },
     "3": {
-      "question": "A force of 50 N pushes a box 4 m along the line of the force. How much work is done?",
+      "question": "A force of 50 N pushes a box 4 m along the line of action of the force. How much work is done?",
       "options": [
         "200 J",
         "12.5 J",

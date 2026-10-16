@@ -1,9 +1,9 @@
 {
   "lesson": "p1-national-grid",
   "source_file": "lessons/physics/p1-national-grid.json",
-  "lesson_md5": "ce7f3bcb11cc0feb54622cfc69f4e1e8",
+  "lesson_md5": "abdef74c63d1b99f75f1ac53c3b6f974",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T18:31:21.629Z",
+  "date": "2026-10-16T19:06:41.134Z",
   "specRefs_sent": [
     "4.1.3",
     "4.2.4.3"
@@ -11,10 +11,10 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7313,
-    "output_tokens": 5304
+    "input_tokens": 7139,
+    "output_tokens": 4880
   },
-  "cost_usd": 0.135332,
+  "cost_usd": 0.126156,
   "status": "OK",
   "result": {
     "lesson": "p1-national-grid",
@@ -22,102 +22,62 @@
       {
         "specRef": "4.1.3",
         "spec_text": "explain patterns and trends in the use of energy resources.",
-        "why": "The lesson only states trends and never explains them: \"Trends: coal use is falling. The use of renewable resources is rising.\" (keyPoints[2].content). It gives no reasons, such as concern about CO₂ and climate change, sulfur dioxide and acid rain, government policy and targets, falling costs of renewables, or fossil fuels running out."
+        "why": "The lesson states the trends but never explains them. It gives no reasons such as concern about CO₂ and climate change, coal power stations closing, or falling costs of renewables. The only text is: keyPoints[2].content \"Trends: coal use is falling. The use of renewable resources is rising.\" The spec requires students to explain the trends, not just state them."
       },
       {
         "specRef": "4.1.3",
         "spec_text": "compare ways that different energy resources are used, the uses to include transport, electricity generation and heating",
-        "why": "The lesson names the three uses and gives two examples: \"For example, petrol and diesel fuel cars. Gas heats many homes.\" (keyPoints[2].content). It does not compare which resources are used for each purpose. For example, it does not cover oil and bio-fuel for transport, or gas, electricity, solar heating and geothermal for heating. Its comparison table covers electricity generation only."
+        "why": "The lesson lists the three uses and gives two examples: keyPoints[2].content \"For example, petrol and diesel fuel cars. Gas heats many homes.\" It never compares how different resources are used across transport, electricity generation and heating. For example, it does not mention bio-fuel in transport, electricity or coal for heating, or the shift from petrol to electric vehicles. Almost all the resource discussion is about electricity generation only."
       }
     ],
-    "above_gcse": [
-      {
-        "field": "keyPoints[1].content",
-        "text": "A <strong>step-up transformer</strong> increases the potential difference and decreases the current.",
-        "why": "Section 4.2.4.3 only requires that step-up and step-down transformers change the potential difference. The spec says \"The construction and operation of transformers is covered Transformers (HT only)\". The linked change in current comes from Higher Tier transformer content, so a Foundation student may be confused. The same applies to keyPoints[1].writeBullets, keyTerms and revisionCardBullets[2] and [3]."
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "the cheapest new electricity source in the UK by the 2020s",
-        "why": "This economic claim is not required by the spec and depends on the date. The table (\"Cheapest new electricity (UK)\") and the bullet \"gas prices volatile\" add similar market detail that goes beyond the spec."
-      },
-      {
-        "field": "tables[0].rows[7][4]",
-        "text": "Can use existing coal power stations",
-        "why": "The spec states \"Descriptions of how energy resources are used to generate electricity are not required.\" Detail about power-station infrastructure goes beyond what is needed."
-      }
-    ],
+    "above_gcse": [],
     "factual_errors": [
       {
         "field": "keyPoints[2].content",
-        "text": "<strong>tidal</strong>: very predictable, because tides never stop.",
-        "correction": "Tides are predictable because they follow a regular cycle set by the Moon, so their times and heights can be calculated in advance. They do not flow constantly: there are periods of slack water when output falls. The reason given is wrong.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].memTip",
-        "text": "Renewables are FREE to run but INTERMITTENT.",
-        "correction": "Not all renewables are free to run. Bio-fuel has a fuel cost, and all renewables have maintenance costs. Not all renewables are intermittent either. The lesson itself calls hydroelectric \"reliable, controllable\" and geothermal \"reliable\". It also contradicts its own common mistake: \"Thinking renewable means 'free' or 'clean'.\"",
+        "text": "bio-fuel: made from plant material.",
+        "correction": "Bio-fuels can be made from plant or animal material, for example animal waste or biogas from manure. They are not only made from plants.",
         "basis": "own knowledge"
       },
       {
         "field": "keyPoints[2].content",
-        "text": "Fossil fuels and nuclear can supply energy whenever it is needed.",
-        "correction": "Nuclear power stations are reliable but slow to start up and cannot quickly follow changes in demand. The lesson's own table says nuclear is \"slow to start\". checkpoints[2].correctFeedback repeats the error: \"A nuclear power station can supply energy whenever it is needed.\"",
+        "text": "But barrages destroy habitats.",
+        "correction": "This is overstated. Tidal barrages change or damage estuary habitats, for example by altering mudflats used by wading birds. They do not necessarily destroy them. 'Can damage or alter habitats' is accurate.",
         "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "<strong>Coal</strong>: the most CO₂ per kWh and the cheapest to burn.",
-        "correction": "\"Cheapest to burn\" is not generally true for UK electricity. Carbon pricing and emission controls have made coal generation uneconomic compared with gas and renewables, which is part of why it is being phased out. Calling the fuel relatively cheap would be defensible. Calling it the cheapest to burn is not.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].writeBullets[5]",
-        "text": "Solar and wind — zero emissions, now the cheapest new electricity.",
-        "correction": "The content of keyPoints[2] says only wind is the cheapest new source (\"wind: ... the cheapest new electricity source\"). Also, solar and wind produce no emissions while generating, but they are not zero-emission over their whole life, because making them causes emissions.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "examTips[0]",
-        "text": "Give both equations for full marks.",
-        "correction": "Explaining why the National Grid is efficient does not require equations. The spec only requires students to \"explain why the National Grid system is an efficient way to transfer energy\". A clear explanation (high potential difference, so low current, so less energy lost by heating the cables) can earn full credit without quoting equations.",
-        "basis": "spec"
       }
     ],
     "wrong_terms": [
       {
-        "field": "keyPoints[0].memTip",
-        "text": "The grid uses high voltage because cutting the current cuts cable losses by its square.",
-        "spec_term": "potential difference"
+        "field": "keyPoints[2].keyTerms[0].term",
+        "text": "renewable energy",
+        "spec_term": "renewable energy resource"
       },
       {
-        "field": "examTips[0]",
-        "text": "For 'why high voltage in the grid' questions",
-        "spec_term": "potential difference"
-      },
-      {
-        "field": "keyPoints[0].tutor_note",
-        "text": "explaining WHY high voltage is used",
-        "spec_term": "potential difference"
+        "field": "keyPoints[2].keyTerms[1].term",
+        "text": "non-renewable energy",
+        "spec_term": "energy resources that are non-renewable"
       },
       {
         "field": "keyPoints[2].content",
-        "text": "<strong>Solar PV</strong>",
+        "text": "Solar PV",
         "spec_term": "the Sun"
       },
       {
         "field": "keyPoints[0].content",
-        "text": "to homes, schools and businesses",
-        "spec_term": "consumers"
+        "text": "for sending it a long way through overhead cables",
+        "spec_term": "transmission cables"
+      },
+      {
+        "field": "checkpoints.2.question",
+        "text": "Why is wind a less reliable energy resource than nuclear fuel?",
+        "spec_term": "nuclear fuel (correct here), but elsewhere the lesson uses \"nuclear\", e.g. keyPoints[2].content \"nuclear: no CO₂ while generating\". This is inconsistent with the spec term \"nuclear fuel\"."
       }
     ],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "All diagram fields are null, so there were no diagrams to check.",
-      "I assumed checkpoint keys \"0\", \"1\" and \"2\" correspond to keyPoints[0], [1] and [2] by index.",
-      "I could not check the time-dependent UK claims against current data: \"the cheapest new electricity source in the UK by the 2020s\", \"It is being phased out\" and \"gas prices volatile\".",
-      "I could not check the specific values \"around 25,000 V (25 kV)\" for generation and \"up to 400,000 V\" for transmission against the spec, which gives no figures. They are consistent with typical UK values."
+      "The equation P = I²R (written in the lesson as \"P_lost = I²R\", keyPoints[0].content) comes from a specification section not supplied (4.2.4.1 Power). It was checked against own knowledge only. The subscript notation \"P_lost\" could not be checked against spec wording.",
+      "The figures \"around 25,000 V (25 kV)\", \"up to 400,000 V (400 kV)\" and \"230 V\" (keyPoints[0].content) do not appear in the supplied spec sections. They were checked against own knowledge only.",
+      "The UK trend claims (\"coal use is falling. The use of renewable resources is rising\") were checked against general knowledge, not against current data or the spec.",
+      "No diagrams are present (all \"diagram\": null), so there is nothing visual to check."
     ]
   }
 }

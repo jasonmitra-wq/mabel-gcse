@@ -1,9 +1,9 @@
 {
   "lesson": "p1-energy-stores",
   "source_file": "lessons/physics/p1-energy-stores.json",
-  "lesson_md5": "830bffb7627f7722a2d76a431f3c229a",
+  "lesson_md5": "e447430915863528b34b9810061c7442",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T18:30:15.157Z",
+  "date": "2026-10-16T19:03:11.426Z",
   "specRefs_sent": [
     "4.1.1.1",
     "4.1.2.1",
@@ -12,78 +12,66 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 9502,
-    "output_tokens": 4317
+    "input_tokens": 9473,
+    "output_tokens": 6292
   },
-  "cost_usd": 0.124348,
+  "cost_usd": 0.163732,
   "status": "OK",
   "result": {
     "lesson": "p1-energy-stores",
     "missing_spec_content": [
       {
+        "specRef": "4.1.1.1",
+        "spec_text": "Throughout this section on Energy students should be able to calculate the changes in energy involved when a system is changed by: - heating - work done by forces - work done when a current flows",
+        "why": "The lesson never shows how to calculate an energy change caused by heating, by work done by a force, or by work done when a current flows. The keyTerms give Ek = ½mv², Ep = mgh and Ee = ½ke², but none of them is used in a calculation. No heating, work-done or electrical energy calculation appears anywhere."
+      },
+      {
         "specRef": "4.1.2.1",
         "spec_text": "Students should be able to explain ways of reducing unwanted energy transfers, for example through lubrication and the use of thermal insulation.",
-        "why": "The lesson describes wasted and dissipated energy. It never explains how to reduce unwanted energy transfers, and it does not mention lubrication or thermal insulation."
+        "why": "The lesson describes wasted energy but never explains how to reduce unwanted energy transfers. Lubrication and thermal insulation are not mentioned."
       },
       {
         "specRef": "4.1.2.1",
         "spec_text": "The higher the thermal conductivity of a material the higher the rate of energy transfer by conduction across the material.",
-        "why": "Thermal conductivity is not mentioned anywhere in the lesson. Conduction appears only as a named example of heating."
+        "why": "Thermal conductivity and its link to the rate of energy transfer by conduction are not taught."
       },
       {
         "specRef": "4.1.2.1",
         "spec_text": "Students should be able to describe how the rate of cooling of a building is affected by the thickness and thermal conductivity of its walls.",
-        "why": "The lesson has no content on the rate of cooling of buildings, wall thickness or wall thermal conductivity."
+        "why": "The lesson does not cover how wall thickness or thermal conductivity affects how fast a building cools."
       },
       {
         "specRef": "4.1.2.1",
         "spec_text": "Required practical activity 2 (physics only): investigate the effectiveness of different materials as thermal insulators and the factors that may affect the thermal insulation properties of a material.",
-        "why": "The required practical on thermal insulators is not covered or referred to."
+        "why": "The required practical on thermal insulators is not mentioned."
       },
       {
         "specRef": "4.1.2.2",
         "spec_text": "(HT only) Students should be able to describe ways to increase the efficiency of an intended energy transfer.",
-        "why": "The lesson explains how to calculate efficiency and why it is below 1. It gives no ways to increase efficiency."
+        "why": "The lesson explains why efficiency is less than 1 but never describes ways to increase efficiency."
       },
       {
-        "specRef": "4.1.1.1",
-        "spec_text": "Throughout this section on Energy students should be able to calculate the changes in energy involved when a system is changed by: heating; work done by forces; work done when a current flows",
-        "why": "Formulas for the kinetic, gravitational potential and elastic potential stores appear only in keyTerms definitions, and no calculation using them is worked through. Nothing covers calculating energy changes caused by heating or by work done when a current flows."
+        "specRef": "4.1.2.1",
+        "spec_text": "Energy can be transferred usefully, stored or dissipated, but cannot be created or destroyed.",
+        "why": "The lesson's statement of this idea leaves out 'stored'. It says energy \"can only be transferred from one store to another, or dissipated\" (keyPoints[2].content), so all three outcomes named in the spec are not given together."
       }
     ],
     "above_gcse": [],
-    "factual_errors": [
+    "factual_errors": [],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [
       {
-        "field": "tables[0].rows[7][3]",
-        "text": "Magnets are moved further apart (repelling) or together (attracting)",
-        "correction": "This is backwards. Energy in the magnetic store increases when repelling magnets are pushed closer together, or when attracting magnets are pulled further apart. Work must be done against the magnetic force. The electrostatic row in the same table states the analogous case correctly.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "It becomes so spread out that it cannot be used again.",
-        "correction": "Dissipated energy is stored in less useful ways. It is harder to use, but it is not impossible to use. The lesson's own writeBullets say \"harder to use\" and its memTip says \"cannot easily be recovered\".",
-        "basis": "spec"
+        "checkpoint": "3",
+        "key_point": "keyPoints[3]: \"Wasted energy is dissipated to the thermal store of the surroundings, so it is stored in less useful ways\"",
+        "why": "The key point says the dissipated energy \"is stored in less useful ways\", yet the checkpoint marks \"Stored energy\" as wrong. By conservation (keyPoints[2]), the 85 J is also conserved, yet \"Conserved energy\" is marked wrong too. Only \"Dissipated energy\" is the best answer, but the key point's own wording supports two of the distractors. That makes the question ambiguous for a student who has learned the key point."
       }
     ],
-    "wrong_terms": [
-      {
-        "field": "keyPoints[1].content",
-        "text": "<strong>Mechanically</strong>: by a force acting on an object",
-        "spec_term": "work done by forces"
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "<strong>Electrically</strong>: by an electric current moving through a circuit.",
-        "spec_term": "work done when a current flows"
-      }
-    ],
-    "checkpoint_mismatch": [],
     "not_checked": [
-      "The lesson's 'diagrams' array is empty and every keyPoint has 'diagram': null. No Sankey diagram image was available to check, so there are no arrow widths or proportions to verify.",
-      "The eight named energy stores (keyPoints[0]) and four transfer pathways (keyPoints[1]) do not appear in the specification sections provided. They could be checked only against own knowledge, not against the specification text.",
-      "examTip: \"Energy questions appear on every exam paper\" and introTips[2]: \"Sankey diagrams are a common 2–3 mark question\". These claims about exam frequency and mark allocation cannot be verified from the specification text.",
-      "keyPoints[0].keyTerms equations (Ek = ½mv², Ep = mgh with g = 9.8 N/kg, Ee = ½ke²) come from specification sections not provided. They could not be checked against the specification text."
+      "The list of eight energy stores and four transfer pathways (keyPoints[0], keyPoints[1], tables[0]) could not be checked against the supplied specification text. The supplied sections do not name the stores or the pathways. It is also unclear whether the claim \"Learn the eight stores and four transfer pathways by heart\" (examTip) reflects a specification requirement.",
+      "Sankey diagrams (keyPoints[4]) are not named in the supplied specification sections. Only the 'common scale' redistribution requirement in 4.1.1.1 is present, so the Sankey conventions could not be checked against the spec text.",
+      "The equations in keyPoints[0].keyTerms (Ek = ½mv², Ep = mgh with g = 9.8 N/kg, Ee = ½ke²) belong to specification sections not supplied. Their symbols and wording were checked only against own knowledge (they are correct), not against the spec.",
+      "The exam-frequency claims \"Energy questions appear on every exam paper\" (examTip) and \"Sankey diagrams are a common 2–3 mark question\" (introTips[2]) cannot be checked from the specification text.",
+      "No diagrams were supplied (\"diagrams\": [] and all keyPoints diagram fields are null), so no diagram content was checked."
     ]
   }
 }

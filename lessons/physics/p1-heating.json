@@ -8,7 +8,7 @@
     "Δθ means change in temperature. If water goes from 20°C to 100°C, Δθ = 80°C.",
     "Different materials need very different amounts of energy to change temperature by the same amount."
   ],
-  "intro": "A metal spoon left in soup reaches the soup's temperature, but no hotter. It feels hotter than the soup. This is because metal conducts energy to your hand quickly. The sea stays warm long after summer ends, keeping coastal towns milder than inland cities. Why? The answer is specific heat capacity. This property sets how much energy a material needs to change temperature. It is why water is used in car radiators and central heating. It is why coastal climates are gentler. It is also why a pie filling can burn your mouth while the pastry feels fine. This is one of the most important (and most examined) equations in physics.",
+  "intro": "The sea stays warm long after summer ends, keeping coastal towns milder than inland cities. Why? The answer is specific heat capacity. This property sets how much energy a material needs to change temperature. It is why water is used in car radiators and central heating. It is why coastal climates are gentler. It is also why a pie filling can burn your mouth while the pastry feels fine. This is one of the most important (and most examined) equations in physics.",
   "keyPoints": [
     {
       "heading": "Specific heat capacity",
@@ -42,7 +42,7 @@
     },
     {
       "heading": "Using ΔE = mcΔθ",
-      "content": "The equation <strong>ΔE = mcΔθ</strong> can be rearranged to find any variable. Rearrangements: <strong>m = ΔE / (cΔθ)</strong>, <strong>c = ΔE / (mΔθ)</strong>, <strong>Δθ = ΔE / (mc)</strong>.\n\nWorked example 1: how much energy is needed to heat 2 kg of water from 20°C to 100°C? Δθ = 80°C. ΔE = 2 × 4200 × 80 = <strong>672,000 J = 672 kJ</strong>.\n\nWorked example 2: a 1.5 kg block of aluminium (c = 900 J/kg°C) cools from 80°C to 20°C. Energy is released as it cools. Use the size of the temperature change, 60°C. Energy released = 1.5 × 900 × 60 = <strong>81,000 J = 81 kJ</strong>.\n\nWorked example 3: 5 kg of a material takes in 15,000 J. Its temperature rises by 10°C. What is its SHC? c = ΔE / (mΔθ) = 15,000 / (5 × 10) = <strong>300 J/kg°C</strong>. This is close to the value for brass or copper.",
+      "content": "The equation <strong>ΔE = mcΔθ</strong> can be rearranged to find any variable. Rearrangements: <strong>m = ΔE / (cΔθ)</strong>, <strong>c = ΔE / (mΔθ)</strong>, <strong>Δθ = ΔE / (mc)</strong>.\n\nWorked example 1: how much energy is needed to heat 2 kg of water from 20°C to 100°C? Δθ = 80°C. ΔE = 2 × 4200 × 80 = <strong>672,000 J = 672 kJ</strong>.\n\nWorked example 2: a 1.5 kg block of aluminium (c = 900 J/kg°C) cools from 80°C to 20°C. Energy is released as it cools. Use the size of the temperature change, 60°C. Energy released = 1.5 × 900 × 60 = <strong>81,000 J = 81 kJ</strong>.\n\nWorked example 3: 5 kg of a material takes in 15,000 J. Its temperature rises by 10°C. What is its SHC? c = ΔE / (mΔθ) = 15,000 / (5 × 10) = <strong>300 J/kg°C</strong>.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -64,29 +64,25 @@
     },
     {
       "heading": "Required practical — measuring specific heat capacity",
-      "content": "This is a required practical. Expect questions about the method, sources of error and how to improve accuracy. The practical links a decrease in one energy store (or work done) to a rise in temperature. That rise shows an increase in thermal energy stored.\n\n<strong>Method</strong>: heat a known mass (m) of a substance with an electrical heater. The substance is water or a metal block. Measure the energy supplied using <strong>E = IVt</strong> (current × voltage × time). Or read it straight from a joulemeter. Measure the temperature change (Δθ) with a thermometer. Calculate c = E / (mΔθ).\n\nFor a <strong>metal block</strong>: the heater fits into a hole in the block. A thermometer sits in a second hole. For <strong>water</strong>: heat it in a polystyrene cup. Stir all the time so the temperature is even.\n\n<strong>Sources of error</strong>:\n- heat loss to the surroundings (less energy went into the substance than you think)\n- not all the electrical energy heats the substance (some heats the heater element itself)\n- reading the thermometer before the temperature has settled\n\n<strong>Improvements</strong>: wrap the block or container in insulation to reduce heat loss. Stir water so the temperature is even all through. Wait for the temperature to settle before recording.",
+      "content": "This is a required practical. Expect questions about the method, sources of error and how to improve accuracy. The practical links a decrease in one energy store (or work done) to a rise in temperature. That rise shows an increase in thermal energy stored.\n\n<strong>Method</strong>: heat a known mass (m) of a substance with an electrical heater. The substance is water or a metal block. Measure the energy supplied with a <strong>joulemeter</strong>. Or find the power using P = IV (current × potential difference). Then use E = Pt. Measure the temperature change (Δθ) with a thermometer. Calculate c = E / (mΔθ).\n\nFor a <strong>metal block</strong>: the heater fits into a hole in the block. A thermometer sits in a second hole. For <strong>water</strong>: heat it in a polystyrene cup. Stir all the time so the temperature is even.\n\n<strong>Sources of error</strong>:\n- heat loss to the surroundings (less energy went into the substance than you think)\n- not all the electrical energy heats the substance (some heats the heater element itself)\n- reading the thermometer before the temperature has settled\n\n<strong>Improvements</strong>: wrap the block or container in insulation to reduce heat loss. Stir water so the temperature is even all through. Wait for the temperature to settle before recording.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Method: heat a known mass with an electrical heater. Measure E = IVt and Δθ. Calculate c = E/(mΔθ)",
+        "Method: heat a known mass with an electrical heater. Measure the energy supplied and Δθ. Calculate c = E/(mΔθ)",
         "Joulemeter — a device that measures electrical energy directly in joules",
-        "E = IVt — electrical energy (J) = current (A) × voltage (V) × time (s)",
+        "Energy supplied — from a joulemeter, or from P = IV and then E = Pt",
         "Error: some energy is lost to the surroundings. So the energy supplied is more than the sample received. This makes the calculated c too high",
         "Error: the heater also heats itself, not just the sample. This overestimates the energy input",
         "Improvement: insulate the sample well. Stir water. Wait for the temperature to settle before reading"
       ],
       "keyTerms": [
         {
-          "term": "E = IVt",
-          "def": "Electrical energy (J) = current (A) × voltage (V) × time (s); used to calculate energy supplied in the SHC practical"
-        },
-        {
           "term": "joulemeter",
           "def": "An instrument that directly measures electrical energy in joules"
         }
       ],
-      "memTip": "For the practical: E = IVt finds the energy in. Then c = E/(mΔθ). Remember to insulate to reduce heat loss error.",
+      "memTip": "For the practical: measure the energy supplied. Then c = E/(mΔθ). Remember to insulate to reduce heat loss error.",
       "tutor_note": "This practical almost always comes up in the exam. Be able to describe the method and name two sources of error. Suggest improvements, with scientific reasons."
     },
     {
@@ -121,39 +117,32 @@
       "examFlag": true,
       "headers": [
         "Material",
-        "Specific heat capacity (J/kg°C)",
-        "Comparative note"
+        "Specific heat capacity (J/kg°C)"
       ],
       "rows": [
         [
           "Water",
-          "4200",
-          "Highest of common substances — excellent heat store and coolant"
+          "4200"
         ],
         [
           "Aluminium",
-          "900",
-          "Used in engine parts and cookware"
+          "900"
         ],
         [
           "Iron / steel",
-          "450",
-          "Moderate — used in radiators and structural applications"
+          "450"
         ],
         [
           "Copper",
-          "390",
-          "Low SHC — heats quickly; used in electrical wiring and heat exchangers"
+          "390"
         ],
         [
           "Concrete",
-          "880",
-          "Useful thermal mass in buildings — stores heat from sunlight during the day"
+          "880"
         ],
         [
           "Air",
-          "1000",
-          "Relatively low — air heats and cools quickly compared to water"
+          "1000"
         ]
       ]
     }
@@ -192,7 +181,7 @@
         "To increase the specific heat capacity of the block"
       ],
       "correct": 0,
-      "correctFeedback": "Exactly right! Insulation reduces heat loss. So more of the measured electrical energy (IVt) really goes into heating the block. This improves accuracy.",
+      "correctFeedback": "Exactly right! Insulation reduces heat loss. So more of the measured energy supplied really goes into heating the block. This improves accuracy.",
       "wrongFeedback": "Insulation reduces heat loss to the surroundings. Without it, some electrical energy heats the air around the block instead of the block. That makes the calculated SHC bigger than the true value."
     },
     "3": {
@@ -226,12 +215,11 @@
     "ΔE = mcΔθ — change in thermal energy (J) = mass (kg) × c (J/kg°C) × temp change (°C)",
     "Rearrangements: c = ΔE/(mΔθ); m = ΔE/(cΔθ); Δθ = ΔE/(mc)",
     "Water SHC = 4200 J/kg°C. The highest of common substances, and an excellent heat store",
-    "Aluminium = 900; iron or steel = 450; copper = 390 J/kg°C",
-    "Required practical: use a heater + joulemeter. E = IVt, then calculate c = E/(mΔθ)",
+    "Required practical: use a heater + joulemeter. Measure the energy supplied, then calculate c = E/(mΔθ)",
     "Error: heat loss to the surroundings makes the calculated c too high. Insulate to reduce it",
     "Temperature = average kinetic energy of particles",
     "Internal energy = total KE + PE of all the particles that make up a system",
-    "Heat flows from hot to cold",
+    "Energy is transferred by heating from a hotter object to a cooler one",
     "Uses of high SHC: central heating, steadier coastal climates, solar thermal panels",
     "Example: 2 kg water, 20→100°C: ΔE = 2 × 4200 × 80 = 672,000 J"
   ],

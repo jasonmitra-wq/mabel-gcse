@@ -246,3 +246,116 @@ One line per change: lesson | what changed | decision ID (re-check decisions in 
 - p1-national-grid | revisionCardBullets[5]: same definition | p1-national-grid miss2
 - p1-power | keyPoints[2].tutor_note removed; both its sentences were the estimate / 6-mark claim (check-rewrite: `keyPoints[2]: keys changed`) | p1-power abov0
 - p1-efficiency | tables[0].title "Efficiency of common devices" became "Useful and wasted energy in common devices" (check-rewrite: `tables: must not change`) | p1-efficiency table title
+
+## Spec-check loop (BASE 79f8902)
+
+### R3 decisions applied
+
+- p1-energy-stores | keyPoints[3].content: "cannot be used again" became "is harder to use" | R3 fact1
+- p1-energy-stores | tables[0].rows[7][3] magnet row reversed: repelling magnets pushed closer, or attracting magnets pulled apart | R3 fact0
+- p1-national-grid | keyPoints[2].content tidal: "because tides never stop" became "tides follow a regular cycle, so they are predictable" | R3 tides
+- p1-national-grid | keyPoints[2].writeBullets[7] tidal: same, and "expensive" cut | R3 tides, R3 cost
+- p1-national-grid | tables[0] Tidal row: advantage "tides follow a regular cycle"; "Very expensive to build" cut | R3 tides, R3 cost
+- p1-national-grid | keyPoints[2].content reliability: "can supply energy whenever it is needed" became "are reliable. But nuclear power stations are slow to start up" | R3 nuclear
+- p1-national-grid | checkpoints.2.correctFeedback: "can supply energy whenever it is needed" became "does not depend on the weather, so it is reliable" | R3 nuclear
+- p1-national-grid | keyPoints[2].memTip: "Renewables are FREE to run but INTERMITTENT." cut | R3 memTip
+- p1-national-grid | keyPoints[2].content: coal "cheapest to burn", nuclear "costs a lot to build", solar "cheap at scale", wind "cheapest new electricity" cut | R3 cost
+- p1-national-grid | keyPoints[2].writeBullets[5]: "now the cheapest new electricity" cut | R3 cost
+- p1-national-grid | tables[0]: coal "Cheap fuel", gas "gas prices volatile", nuclear "high build cost", wind "Cheapest new electricity (UK)" cut; "no fuel cost" became "No fuel needed" (wind, geothermal, water waves) | R3 cost
+- p1-national-grid | examTips[0]: "Give both equations for full marks." cut | R3 examTips[0]
+- p1-national-grid | keyPoints[1].content, writeBullets[0–1], keyTerms[0–1].def, memTip, revisionCardBullets[2–3]: step-up and step-down now name only the change in potential difference; current change cut (the finding covered both transformers) | R3 above_gcse 0
+- p1-national-grid | tables[0] Bio-fuel advantage "Can use existing coal power stations" became "Reliable (on demand)" | R3 table cell
+- p1-national-grid | keyPoints[2].content coal: "the most CO₂ per kWh" became "the most CO₂" (spec has 0 matches for kWh / kilowatt-hour) | R3 kWh
+
+### R4 accepts applied
+
+- p1-conservation | intro: "energy changes form" became "energy is transferred between stores" | R4 p1-conservation wron1
+- p1-conservation | keyPoints[0].content: bounce now describes the fall, the impact (elastic potential store) and the rise | R4 p1-conservation fact0
+- p1-conservation | keyPoints[0].content: "total mechanical energy falls" became "energy in the ball's kinetic and gravitational potential stores falls" | R4 p1-conservation abov0
+- p1-conservation | keyPoints[1].content: light bulb "useful light energy / wasted thermal energy" became "transferred usefully by light / dissipated by heating" | R4 p1-conservation wron2
+- p1-conservation | keyPoints[1].content: "less useful form" became "dissipated, so it is stored in less useful ways" | R4 p1-conservation wron0
+- p1-conservation | keyPoints[1].content, keyPoints[2].content, keyPoints[2].writeBullets[1], keyPoints[3].content, checkpoints.0.wrongFeedback, revisionCardBullets: "mechanical energy" replaced with named stores or "energy" | R4 p1-conservation abov0
+- p1-conservation | keyPoints[2].content: "You can never get it back" became "It is very hard to use again" | R4 p1-conservation fact2
+- p1-conservation | examTips[2]: "All the arrows must add up to the input" became "The output arrows must add up to the input arrow" | R4 p1-conservation fact1
+- p1-efficiency | keyPoints[1].content: equation uses "useful output energy transfer ÷ total input energy transfer" | R4 p1-efficiency wron0
+- p1-efficiency | keyPoints[0].keyTerms[1–2] terms and writeBullets[1–2]: "useful output energy transfer", "total input energy transfer" | R4 p1-efficiency wron1, wron2
+- p1-efficiency | keyPoints[1].keyTerms[0].def: spec wording for both equations | R4 p1-efficiency wron3
+- p1-efficiency | keyPoints[1].writeBullets[0]: spec wording | R4 p1-efficiency wron4
+- p1-energy-stores | introTips[0]: "exactly eight energy stores examiners expect" became "Learn the names of the energy stores" | R4 p1-energy-stores abov0
+- p1-energy-stores | introTips[1]: "only moves between stores or spreads out as heat" became "transferred between stores, or dissipated" | R4 p1-energy-stores wron2
+- p1-energy-stores | intro: "shifts … changes form, or spreads out" became "The way it is stored changes, or it is dissipated" | R4 p1-energy-stores wron3
+- p1-energy-stores | keyPoints[1].content, writeBullets[0–1], keyTerms[0–1].def, revisionCardBullets[1]: mechanically = work done when a force moves an object; electrically = work done when a current flows | R4 p1-energy-stores fact0, wron0, wron1
+- p1-energy-stores | keyPoints[1].content, writeBullets[3], keyTerms[3].def: radiation is electromagnetic waves; sound waves listed separately; "no medium" aside cut | R4 p1-energy-stores fact2, abov1
+- p1-energy-stores | revisionCardBullets[3]: "useful energy lost" became "wasted energy is stored in less useful ways" | R4 p1-energy-stores fact1
+- p1-energy-stores | checkpoints.1: question asks for the transfer from the kinetic store to the brakes; feedback updated | R4 p1-energy-stores chec0
+- p1-energy-stores | checkpoints.3.question and checkpoints.4.question: "supplied with … energy electrically" | R4 p1-energy-stores wron4, wron5
+- p1-heating | intro: spoon opener cut | R4 p1-heating fact2
+- p1-heating | keyPoints[1].content: "close to the value for brass or copper" cut | R4 p1-heating fact0
+- p1-heating | keyPoints[2].content, writeBullets[0], writeBullets[2], keyTerms (E = IVt removed), memTip, checkpoints.2.correctFeedback, revisionCardBullets: E = IVt replaced by joulemeter, or P = IV then E = Pt; "voltage" gone | R4 p1-heating abov0, wron0, wron1, wron2
+- p1-heating | tables[0]: "Comparative note" column cut (applications, air "relatively low") | R4 p1-heating abov2, fact1
+- p1-heating | revisionCardBullets: "Aluminium = 900; iron or steel = 450; copper = 390" cut | R4 p1-heating abov2
+- p1-kinetic-potential | keyPoints[0].keyTerms[1].def: joule "in the direction of the force" | R4 p1-kinetic-potential fact0
+- p1-kinetic-potential | checkpoints.3.question: "compressed" became "stretched" | R4 p1-kinetic-potential chec0
+- p1-national-grid | intro: Scotland, Somerset and Yorkshire examples became "a wind farm, a nuclear power station or a gas power station" | R4 p1-national-grid fact0
+- p1-national-grid | keyPoints[0].content: National Grid defined as "a system of cables and transformers linking power stations to consumers" | R4 p1-national-grid wron3
+- p1-national-grid | keyPoints[0].memTip, keyPoints[0].tutor_note, examTips[0]: "high voltage" became "high potential difference" | R4 p1-national-grid wron0, wron1, wron2
+- p1-power | keyPoints[0].content: "power = energy transferred ÷ time" | R4 p1-power wron0
+- p1-power | keyPoints[1].writeBullets[0]: "energy transferred (J)" | R4 p1-power wron1
+- p1-power | keyPoints[3].content: bold W = Fs line in full spec wording; repeated sentence removed | R4 p1-power wron2
+- p1-power | checkpoints.2: E = Pt hairdryer question replaced by a which-transfers-more-energy-each-second question | R4 p1-power chec0
+
+### R5 accepts applied (not re-checked: run limit reached)
+
+- p1-conservation | keyPoints[2].content: resistance example "electrical energy → thermal energy. This is how a kettle heats water" became "a current heats the wires, so energy is dissipated" | R5 p1-conservation fact0
+- p1-conservation | tables[0]: header "Input energy store" became "Energy input"; "Electrical" became "Transferred electrically" (bulb, motor, kettle) | R5 p1-conservation fact1
+- p1-conservation | tables[0] kettle row: "Thermal lost to surroundings" became "Dissipated to the surroundings" | R5 p1-conservation wron0
+- p1-conservation | keyPoints[1].keyTerms[2].def lubrication: "reduce friction and heat loss" became "so less energy is dissipated by heating" | R5 p1-conservation fact2
+- p1-conservation | keyPoints[3].keyTerms[2].def streamlining: "kinetic energy lost to drag" became "so less energy is dissipated" | R5 p1-conservation wron1
+- p1-efficiency | keyPoints[0].content: "wastes 25% to heat, sound or other stores" became "The other 25% is wasted. It is dissipated to the thermal store of the surroundings" | R5 p1-efficiency fact0
+- p1-efficiency | keyPoints[0].content: percentage equation in "energy transfer" wording | R5 p1-efficiency wron0
+- p1-efficiency | keyPoints[1].content: rearrangements in "energy transfer" wording | R5 p1-efficiency wron1
+- p1-energy-stores | keyPoints[2].content: "can only be transferred from one store to another, or dissipated" became "can be transferred usefully, stored or dissipated" | R5 p1-energy-stores miss6
+- p1-energy-stores | checkpoints.3.options[1] and [3]: "Conserved energy" and "Stored energy" became "Energy destroyed by the bulb" and "Energy added to the bulb's chemical store" | R5 p1-energy-stores chec0
+- p1-heating | revisionCardBullets: "Heat flows from hot to cold" became "Energy is transferred by heating from a hotter object to a cooler one" | R5 p1-heating wron0
+- p1-kinetic-potential | introTips[2]: SHC is "the energy needed to raise the temperature of 1 kg of a substance by 1°C" | R5 p1-kinetic-potential fact0
+- p1-kinetic-potential | keyPoints[4].heading: "how much energy to heat something" became "energy per kilogram per degree" | R5 p1-kinetic-potential fact1
+- p1-kinetic-potential | keyPoints[2].content: "All the GPE at the top converts to KE at the bottom" became transfer from the gravitational potential store to the kinetic store | R5 p1-kinetic-potential wron0
+- p1-kinetic-potential | keyPoints[2].writeBullets[1]: same | R5 p1-kinetic-potential wron1
+- p1-national-grid | keyPoints[0].content: "overhead cables" became "transmission cables" | R5 p1-national-grid wron3
+- p1-national-grid | keyPoints[2].content and writeBullets[9]: bio-fuel "plant or animal material" | R5 p1-national-grid fact0
+- p1-national-grid | keyPoints[2].content, writeBullets[7], tables[0] Tidal: barrages "destroy" became "can damage" habitats | R5 p1-national-grid fact1
+- p1-national-grid | keyPoints[2].content, writeBullets[5], tables[0]: "Solar PV" became "the Sun (solar cells)" | R5 p1-national-grid wron2
+- p1-national-grid | keyPoints[2].content, writeBullets[4], tables[0]: "nuclear" became "nuclear fuel" | R5 p1-national-grid wron4
+- p1-national-grid | keyPoints[2].keyTerms[0–1] terms: "renewable energy resource", "non-renewable energy resource" | R5 p1-national-grid wron0, wron1
+- p1-power | keyPoints[2].content: added "A higher power means more joules are transferred each second." | R5 p1-power chec0
+- p1-power | keyPoints[3].content and checkpoints.3.question: "along the line of action of the force" | R5 p1-power wron0, wron1
+
+### Check-rewrite against BASE 79f8902 — every failure and the log line that covers it
+
+- p1-conservation | `keyPoints[1].content: number "two" lost`, bold "useful light energy" / "wasted thermal energy" lost | R4 p1-conservation wron2
+- p1-conservation | `keyPoints[1].keyTerms: must not change` | R5 p1-conservation fact2
+- p1-conservation | `keyPoints[3].keyTerms: must not change` | R5 p1-conservation wron1
+- p1-conservation | `tables: must not change` | R5 p1-conservation fact1, wron0
+- p1-efficiency | `keyPoints[0].keyTerms: must not change` | R4 p1-efficiency wron1, wron2
+- p1-efficiency | `keyPoints[1].keyTerms: must not change` | R4 p1-efficiency wron3
+- p1-efficiency | bold "efficiency = (useful output ÷ total input) × 100%" lost | R5 p1-efficiency wron0
+- p1-efficiency | bold "efficiency = useful output energy (J) ÷ total input energy (J)" lost | R4 p1-efficiency wron0
+- p1-energy-stores | `introTips[0]: number "eight" lost` | R4 p1-energy-stores abov0
+- p1-energy-stores | `intro: number "one" lost` | R4 p1-energy-stores wron3
+- p1-energy-stores | `keyPoints[1].keyTerms: must not change` | R4 p1-energy-stores fact0, wron0, wron1, abov1, fact2
+- p1-energy-stores | `keyPoints[2].content: number "one" lost` | R5 p1-energy-stores miss6
+- p1-energy-stores | `tables: must not change` | R3 p1-energy-stores fact0
+- p1-energy-stores | `checkpoints.1.wrongFeedback: number "two" lost` | R4 p1-energy-stores chec0
+- p1-heating | `keyPoints[2].keyTerms: must not change`, bold and key term "E = IVt" lost | R4 p1-heating abov0
+- p1-heating | `tables: must not change` | R4 p1-heating abov2, fact1
+- p1-heating | `revisionCardBullets: 12 items became 11`, `revisionCardBullets[4]` numbers 900, 450, 390 lost | R4 p1-heating abov2
+- p1-kinetic-potential | `keyPoints[0].keyTerms: must not change` | R4 p1-kinetic-potential fact0
+- p1-kinetic-potential | `keyPoints[4].heading: must not change` | R5 p1-kinetic-potential fact1
+- p1-kinetic-potential | bold "All the GPE at the top converts to KE at the bottom" lost | R5 p1-kinetic-potential wron0
+- p1-national-grid | `keyPoints[1].keyTerms: must not change` | R3 above_gcse 0
+- p1-national-grid | `keyPoints[2].content: number "2020" lost` | R3 cost
+- p1-national-grid | `keyPoints[2].keyTerms: must not change` | R5 p1-national-grid wron0, wron1
+- p1-national-grid | `tables: must not change` | R3 cost, R3 tides, R3 table cell; R5 p1-national-grid fact1, wron2, wron4
+- p1-national-grid | bold "Solar PV" lost | R5 p1-national-grid wron2
+- p1-power | `checkpoints.2.*` numbers lost | R4 p1-power chec0
+- p1-power | bold "Work done (W) = force (F) × distance (s)" lost | R4 p1-power wron2

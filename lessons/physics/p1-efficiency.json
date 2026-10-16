@@ -12,14 +12,14 @@
   "keyPoints": [
     {
       "heading": "What efficiency means",
-      "content": "<strong>Efficiency</strong> is the proportion of <strong>input energy</strong> that is <strong>usefully transferred</strong>. Most devices waste some energy, usually as thermal energy (heat) or sound. An electric heater is close to 100% efficient. This is because heating is its useful output.\n\nThe equation is: <strong>efficiency = useful output energy transfer ÷ total input energy transfer</strong>.\n\nYou can also give it as a percentage: <strong>efficiency = (useful output ÷ total input) × 100%</strong>.\n\nEfficiency has <strong>no units</strong>. It is a pure ratio (or percentage). The highest possible efficiency is 1.0 (or 100%). That would be a machine that wastes nothing. A machine with efficiency 0.75 transfers 75% of its input energy usefully. It wastes 25% to heat, sound or other stores we don't want.",
+      "content": "<strong>Efficiency</strong> is the proportion of <strong>input energy</strong> that is <strong>usefully transferred</strong>. Most devices waste some energy, usually as thermal energy (heat) or sound. An electric heater is close to 100% efficient. This is because heating is its useful output.\n\nThe equation is: <strong>efficiency = useful output energy transfer ÷ total input energy transfer</strong>.\n\nYou can also give it as a percentage: <strong>efficiency = (useful output energy transfer ÷ total input energy transfer) × 100%</strong>.\n\nEfficiency has <strong>no units</strong>. It is a pure ratio (or percentage). The highest possible efficiency is 1.0 (or 100%). That would be a machine that wastes nothing. A machine with efficiency 0.75 transfers 75% of its input energy usefully. The other 25% is wasted. It is dissipated to the thermal store of the surroundings.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "Efficiency — the fraction of input energy that is usefully transferred. No units, between 0 and 1",
-        "Useful output energy — energy transferred to the store we want",
-        "Total input energy — all the energy supplied to the device, including what is wasted",
+        "Useful output energy transfer — energy transferred to the store we want",
+        "Total input energy transfer — all the energy supplied to the device, including what is wasted",
         "Efficiency as a decimal — useful output ÷ total input (for example, 0.75)",
         "Efficiency as a percentage — (useful output ÷ total input) × 100% (for example, 75%)"
       ],
@@ -29,11 +29,11 @@
           "def": "The proportion of input energy that is usefully transferred; efficiency = useful output ÷ total input"
         },
         {
-          "term": "useful output energy",
+          "term": "useful output energy transfer",
           "def": "Energy transferred to the intended output store — the energy that does the job we want"
         },
         {
-          "term": "total input energy",
+          "term": "total input energy transfer",
           "def": "All energy supplied to a device, including both useful and wasted portions"
         }
       ],
@@ -42,12 +42,12 @@
     },
     {
       "heading": "Calculating efficiency",
-      "content": "The efficiency equation works with both <strong>energy</strong> (in joules) and <strong>power</strong> (in watts):\n- <strong>efficiency = useful output energy (J) ÷ total input energy (J)</strong>\n- <strong>efficiency = useful power output (W) ÷ total power input (W)</strong>\n\nWorked example 1: a motor gets 500 J of electrical energy. It does 375 J of useful work → efficiency = 375 ÷ 500 = <strong>0.75 (75%)</strong>.\n\nWorked example 2: a lamp has a total power input of 10 W. Its useful power output is 9 W → efficiency = 9 ÷ 10 = <strong>0.9 (90%)</strong>.\n\nWorked example 3: a petrol car engine has an input power of 100 kW. It has a useful power output of 25 kW → efficiency = 25 ÷ 100 = <strong>0.25 (25%)</strong>. The other 75 kW is wasted as thermal energy and sound.\n\nYou can also rearrange it:\n- useful output = efficiency × total input\n- total input = useful output ÷ efficiency",
+      "content": "The efficiency equation works with both <strong>energy</strong> (in joules) and <strong>power</strong> (in watts):\n- <strong>efficiency = useful output energy transfer (J) ÷ total input energy transfer (J)</strong>\n- <strong>efficiency = useful power output (W) ÷ total power input (W)</strong>\n\nWorked example 1: a motor gets 500 J of electrical energy. It does 375 J of useful work → efficiency = 375 ÷ 500 = <strong>0.75 (75%)</strong>.\n\nWorked example 2: a lamp has a total power input of 10 W. Its useful power output is 9 W → efficiency = 9 ÷ 10 = <strong>0.9 (90%)</strong>.\n\nWorked example 3: a petrol car engine has an input power of 100 kW. It has a useful power output of 25 kW → efficiency = 25 ÷ 100 = <strong>0.25 (25%)</strong>. The other 75 kW is wasted as thermal energy and sound.\n\nYou can also rearrange it:\n- useful output energy transfer = efficiency × total input energy transfer\n- total input energy transfer = useful output energy transfer ÷ efficiency",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Efficiency = useful output energy (J) ÷ total input energy (J). Works with joules",
+        "Efficiency = useful output energy transfer (J) ÷ total input energy transfer (J). Works with joules",
         "Efficiency = useful power output (W) ÷ total power input (W). Works with watts too",
         "Rearrangement: useful output = efficiency × total input",
         "Rearrangement: total input = useful output ÷ efficiency",
@@ -56,7 +56,7 @@
       "keyTerms": [
         {
           "term": "efficiency equation",
-          "def": "efficiency = useful output energy ÷ total input energy (or useful power ÷ total input power)"
+          "def": "efficiency = useful output energy transfer ÷ total input energy transfer (or useful power output ÷ total power input)"
         },
         {
           "term": "wasted energy",

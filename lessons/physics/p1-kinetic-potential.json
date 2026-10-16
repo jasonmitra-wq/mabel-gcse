@@ -7,7 +7,7 @@
   "introTips": [
     "Today you will learn three energy equations: kinetic, gravitational potential and elastic potential. Each one links a store to the situation that creates it.",
     "The skill examiners test most is rearranging these equations and picking the right one. You will also practise setting GPE equal to KE to find the speed of a falling object.",
-    "Specific heat capacity is in this topic too. It tells you how much energy is needed to heat something up. It looks scary, but it is just one equation, used in a very predictable way."
+    "Specific heat capacity is in this topic too. It is the energy needed to raise the temperature of 1 kg of a substance by 1°C. It looks scary, but it is just one equation, used in a very predictable way."
   ],
   "intro": "Every time you kick a ball, stretch a spring or drop your phone, energy moves between stores. This topic is about those stores. It is also about working out exactly how much energy is in them. You will use these equations in almost every physics paper. So the time you spend on them now pays back again and again. The maths isn't hard once you know which equation to use.",
   "diagrams": [],
@@ -31,7 +31,7 @@
         },
         {
           "term": "Joule (J)",
-          "def": "The SI unit of energy and work — 1 J = 1 N m = the energy transferred when a force of 1 N moves an object 1 m"
+          "def": "The SI unit of energy and work — 1 J = 1 N m = the energy transferred when a force of 1 N moves an object 1 m in the direction of the force"
         }
       ],
       "memTip": "Ek = ½mv² — 'half em vee squared'. If speed doubles, KE quadruples (2² = 4); if speed triples, KE multiplies by 9 (3² = 9)."
@@ -62,13 +62,13 @@
     },
     {
       "heading": "Conservation of energy — GPE becomes KE",
-      "content": "Energy can't be created or destroyed. It can only be transferred between stores. Picture an object falling, ignoring air resistance. <strong>All the GPE at the top converts to KE at the bottom</strong>. Halfway down, half of the original GPE has become KE. So you can set the two equations equal to find the speed at the bottom: <strong>mgh = ½mv²</strong>. The mass cancels from both sides, leaving <strong>gh = ½v²</strong>. So <strong>v = √(2gh)</strong>. This is a classic calculation. It looks scary, but it is just substituting, then rearranging.",
+      "content": "Energy can't be created or destroyed. It can only be transferred between stores. Picture an object falling, ignoring air resistance. <strong>All the energy in the gravitational potential store at the top is transferred to the kinetic store at the bottom</strong>. Halfway down, half of the original GPE has become KE. So you can set the two equations equal to find the speed at the bottom: <strong>mgh = ½mv²</strong>. The mass cancels from both sides, leaving <strong>gh = ½v²</strong>. So <strong>v = √(2gh)</strong>. This is a classic calculation. It looks scary, but it is just substituting, then rearranging.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "Conservation of energy: energy is never created or destroyed. It is only transferred",
-        "Falling object (no air resistance): GPE at top converts to KE at bottom",
+        "Falling object (no air resistance): energy is transferred from the gravitational potential store to the kinetic store",
         "At the top: all GPE. At the bottom: all KE",
         "Equate: mgh = ½mv² → mass cancels → v = √(2gh)"
       ],
@@ -113,7 +113,7 @@
       "memTip": "Ee = ½ke² has the same shape as Ek = ½mv². Both are ½ × something × (something)². e is extension only, not total length. Examiners use this to catch you out."
     },
     {
-      "heading": "Specific heat capacity — how much energy to heat something",
+      "heading": "Specific heat capacity — energy per kilogram per degree",
       "content": "Different materials need different amounts of energy to warm up. The <strong>specific heat capacity (c)</strong> of a material is the energy needed to raise 1 kg of it by 1°C. The equation is: <strong>ΔE = mcΔθ</strong>.\n- ΔE is the change in thermal energy in joules\n- m is mass in kg\n- c is specific heat capacity in J/kg°C\n- Δθ is the temperature change in °C\n\nThe same equation gives the energy released when a system cools.\n\nWater's specific heat capacity is 4200 J/kg°C. That is very high. It is why water is used as a coolant in car engines. It is also why the sea takes a long time to warm up in summer.",
       "examFlag": true,
       "cardFlag": true,
@@ -176,7 +176,7 @@
       "wrongFeedback": "Equate GPE and KE: mgh = ½mv². Masses cancel: gh = ½v². So v² = 2gh = 2 × 10 × 5 = 100. Therefore v = √100 = 10 m/s."
     },
     "3": {
-      "question": "A spring with spring constant k = 400 N/m is compressed by 0.05 m. How much elastic potential energy is stored?",
+      "question": "A spring with spring constant k = 400 N/m is stretched by 0.05 m. How much elastic potential energy is stored?",
       "options": [
         "0.5 J",
         "1.0 J",

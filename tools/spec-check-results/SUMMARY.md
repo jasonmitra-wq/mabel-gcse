@@ -57,3 +57,17 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-10-16 | p2-domestic | OK | missing_spec_content 1, above_gcse 7, factual_errors 5, wrong_terms 3, checkpoint_mismatch 1, not_checked 0 | 7951/5864 | $0.1491
 - 2026-10-16 | p2-power-energy | OK | missing_spec_content 2, above_gcse 1, factual_errors 1, wrong_terms 3, checkpoint_mismatch 1, not_checked 2 | 6629/3737 | $0.1013
 - 2026-10-16 | p2-static | OK | missing_spec_content 1, above_gcse 2, factual_errors 0, wrong_terms 6, checkpoint_mismatch 0, not_checked 1 | 6440/5120 | $0.1282
+- 2026-10-16 | p1-energy-stores | OK | missing_spec_content 6, above_gcse 2, factual_errors 3, wrong_terms 6, checkpoint_mismatch 1, not_checked 3 | 9508/6700 | $0.1720
+- 2026-10-16 | p1-kinetic-potential | OK | missing_spec_content 2, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 1, not_checked 1 | 7723/2595 | $0.0828
+- 2026-10-16 | p1-conservation | OK | missing_spec_content 2, above_gcse 2, factual_errors 3, wrong_terms 3, checkpoint_mismatch 0, not_checked 2 | 7281/4262 | $0.1144
+- 2026-10-16 | p1-efficiency | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 5, checkpoint_mismatch 0, not_checked 2 | 6074/2123 | $0.0668
+- 2026-10-16 | p1-power | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 3, checkpoint_mismatch 1, not_checked 2 | 6621/3138 | $0.0892
+- 2026-10-16 | p1-heating | OK | missing_spec_content 0, above_gcse 3, factual_errors 3, wrong_terms 3, checkpoint_mismatch 0, not_checked 3 | 8119/4887 | $0.1302
+- 2026-10-16 | p1-national-grid | OK | missing_spec_content 2, above_gcse 0, factual_errors 1, wrong_terms 4, checkpoint_mismatch 0, not_checked 0 | 7154/3686 | $0.1023
+- 2026-10-16 | p1-energy-stores | OK | missing_spec_content 7, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 1, not_checked 5 | 9473/6292 | $0.1637
+- 2026-10-16 | p1-kinetic-potential | OK | missing_spec_content 2, above_gcse 0, factual_errors 2, wrong_terms 2, checkpoint_mismatch 0, not_checked 2 | 7730/3348 | $0.0979
+- 2026-10-16 | p1-conservation | OK | missing_spec_content 2, above_gcse 0, factual_errors 3, wrong_terms 2, checkpoint_mismatch 0, not_checked 2 | 7347/3899 | $0.1074
+- 2026-10-16 | p1-efficiency | OK | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 2, checkpoint_mismatch 0, not_checked 2 | 6105/2485 | $0.0741
+- 2026-10-16 | p1-power | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 2, checkpoint_mismatch 1, not_checked 4 | 6672/3372 | $0.0941
+- 2026-10-16 | p1-heating | OK | missing_spec_content 0, above_gcse 1, factual_errors 0, wrong_terms 1, checkpoint_mismatch 0, not_checked 4 | 7800/3302 | $0.0972
+- 2026-10-16 | p1-national-grid | OK | missing_spec_content 2, above_gcse 0, factual_errors 2, wrong_terms 5, checkpoint_mismatch 0, not_checked 4 | 7139/4880 | $0.1262

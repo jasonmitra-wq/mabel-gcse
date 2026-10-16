@@ -385,3 +385,111 @@ Run R5: `node tools/spec-check.js --topic P1 --run --max-usd 3` on the R4 fixes.
 - p1-power | wron0 | ACCEPT | worked example "along the line of action of the force"
 - p1-power | wron1 | ACCEPT | checkpoint 3 "along the line of action of the force"
 - p1-power | chec0 | ACCEPT | key point 2 now says a higher power means more joules each second
+
+## R6
+
+Run R6 (runbook task 1.0, base 6960c44): `node tools/spec-check.js --topic P1 --run --max-usd 3`. Cost $0.7151. 33 findings.
+BLOCKING ACCEPTs = 10. NON-BLOCKING ACCEPTs = 8. REJECT = 15 (R-a 14, R-b 1). Not clean.
+
+- p1-conservation | miss0 | REJECT R-a (p1-conservation miss2 ACCEPT: required practical 2 described briefly) | factors in required practical 2
+- p1-conservation | miss1 | REJECT R-a (p1-conservation miss3 REJECT: skills suggestion) | thermal conductivity rods
+- p1-conservation | fact0 | ACCEPT (blocking) | revision card "electrical energy → thermal energy": no electrical store
+- p1-efficiency | miss0 | ACCEPT (blocking) | ways to increase efficiency labelled Higher Tier content
+- p1-efficiency | fact0 | ACCEPT (blocking) | introTips: higher efficiency = smaller proportion wasted, not less energy
+- p1-efficiency | fact1 | ACCEPT (blocking) | memTip: same
+- p1-efficiency | wron0 | ACCEPT | "power efficiency" is not a spec term
+- p1-energy-stores | miss0 | REJECT R-a (p1-energy-stores miss2 REJECT) | calculating energy changes
+- p1-energy-stores | miss1 | REJECT R-a (p1-energy-stores miss3 ACCEPT: Sankey worked example on a common scale) | redistribution on a common scale
+- p1-energy-stores | miss2 | REJECT R-a (p1-energy-stores miss4 REJECT) | lubrication and insulation
+- p1-energy-stores | miss3 | REJECT R-a (p1-energy-stores miss5 REJECT) | thermal conductivity
+- p1-energy-stores | miss4 | REJECT R-a (p1-energy-stores miss6 REJECT) | building cooling
+- p1-energy-stores | miss5 | REJECT R-a (p1-energy-stores miss7 REJECT) | required practical 2
+- p1-energy-stores | miss6 | REJECT R-a (p1-energy-stores miss8 REJECT) | increasing efficiency
+- p1-energy-stores | fact0 | ACCEPT (blocking) | dissipation bullet: "stored in less useful ways", not "no use"
+- p1-energy-stores | fact1 | ACCEPT (blocking) | conservation key term: "transferred usefully, stored or dissipated"
+- p1-energy-stores | wron0 | ACCEPT | "work done by forces"
+- p1-energy-stores | wron1 | REJECT R-b (spec: "work done when a current flows"; lesson: "by work done when a current flows in a circuit") | electrically
+- p1-heating | abov0 | REJECT R-a (p1-heating abov0 REJECT: specification 4.3.3.1) | temperature and average kinetic energy
+- p1-heating | fact0 | ACCEPT (blocking) | water not "the highest" specific heat capacity
+- p1-heating | wron0 | ACCEPT | internal energy key term in spec words ("system"; not "the thermal store")
+- p1-heating | wron1 | ACCEPT | "SHC" replaced by "specific heat capacity" throughout the lesson
+- p1-kinetic-potential | miss0 | REJECT R-a (p1-kinetic-potential miss1 REJECT: taught in p1-heating) | required practical 1
+- p1-kinetic-potential | miss1 | REJECT R-a (re-check decision p1-kinetic-potential miss1 REJECT: AT 1 skills) | investigate GPE → KE
+- p1-national-grid | miss0 | REJECT R-a (p1-national-grid miss2 ACCEPT: trends in words only) | explain trends
+- p1-national-grid | miss1 | ACCEPT (blocking) | CO₂ is a greenhouse gas: global warming and climate change
+- p1-national-grid | miss2 | REJECT R-a (p1-national-grid miss1 ACCEPT: uses for transport and heating) | compare uses
+- p1-national-grid | wron0 | ACCEPT | common mistake "solar PV" became "the Sun (solar cells)"
+- p1-national-grid | wron1 | ACCEPT | "hydroelectric" became "hydro-electricity" throughout the lesson
+- p1-power | abov0 | ACCEPT (blocking) | human power figures (metabolic and mechanical mixed) cut everywhere in the lesson
+- p1-power | fact0 | ACCEPT (blocking) | walking row cut with them
+- p1-power | wron0 | ACCEPT | "causes a displacement of one metre"
+- p1-power | wron1 | ACCEPT | newton-metre key term: "causes a displacement of 1 m"
+
+## R7
+
+Run R7: `node tools/spec-check.js --topic P1 --run --max-usd 3` on the R6 fixes. Cost $0.7343. 33 findings.
+BLOCKING ACCEPTs = 9. NON-BLOCKING ACCEPTs = 11. REJECT = 13 (R-a 13). Not clean.
+
+- p1-conservation | miss0 | REJECT R-a (p1-conservation miss2 ACCEPT: required practical 2 described briefly) | factors in required practical 2
+- p1-conservation | miss1 | REJECT R-a (p1-conservation miss3 REJECT: skills suggestion) | thermal conductivity rods
+- p1-conservation | fact0 | ACCEPT (blocking) | friction key term: work done against friction transfers energy; friction does not "convert"
+- p1-conservation | fact1 | ACCEPT (blocking) | car engine row: streamlining does not reduce engine waste; "Lubricate moving parts"
+- p1-conservation | wron0 | ACCEPT | "heat loss" became "rate of energy transfer" (loft bullet)
+- p1-conservation | wron1 | ACCEPT | revision card "reduces the rate of cooling"
+- p1-conservation | wron2 | ACCEPT | "wasted, usually as heat or sound" became "dissipated, so it is stored in less useful ways"
+- p1-efficiency | wron0 | ACCEPT | "input power" became "total power input" (throughout the lesson)
+- p1-energy-stores | miss0 | REJECT R-a (p1-energy-stores miss4 REJECT) | lubrication and insulation
+- p1-energy-stores | miss1 | REJECT R-a (p1-energy-stores miss5 REJECT) | thermal conductivity
+- p1-energy-stores | miss2 | REJECT R-a (p1-energy-stores miss6 REJECT) | building cooling
+- p1-energy-stores | miss3 | REJECT R-a (p1-energy-stores miss7 REJECT) | required practical 2
+- p1-energy-stores | miss4 | REJECT R-a (p1-energy-stores miss8 REJECT) | increasing efficiency
+- p1-energy-stores | miss5 | REJECT R-a (p1-energy-stores miss2 REJECT) | calculating energy changes
+- p1-energy-stores | fact0 | ACCEPT (blocking) | kettle: electrically to the element, then by heating to the water; some dissipated
+- p1-energy-stores | fact1 | ACCEPT (blocking) | "tested on every paper" claims cut (intro, examTip)
+- p1-energy-stores | wron0 | ACCEPT | key term "Mechanical transfer (work done by forces)"
+- p1-energy-stores | wron1 | ACCEPT | key term "Electrical transfer (work done when a current flows)"
+- p1-heating | abov0 | REJECT R-a (p1-heating abov0 REJECT: specification 4.3.3.1) | temperature and average kinetic energy
+- p1-heating | fact0 | ACCEPT (blocking) | insulation checkpoint: more of the energy supplied goes into the block (not "more accurate measurement")
+- p1-heating | fact1 | ACCEPT (blocking) | temperature key term no longer pairs average KE with the unit °C as a definition
+- p1-heating | fact2 | ACCEPT (blocking) | intro: specific heat capacity defined per kg per °C
+- p1-heating | wron0 | ACCEPT | "heat store" became "store of thermal energy" (throughout)
+- p1-heating | wron1 | ACCEPT | "T_final − T_initial" became "final temperature − initial temperature" (throughout)
+- p1-heating | wron2 | ACCEPT | "electrical energy heats the substance" became "work done by the heater"
+- p1-heating | chec0 | ACCEPT | checkpoint 2 now matches the key point (fixed with fact0)
+- p1-kinetic-potential | miss0 | REJECT R-a (p1-kinetic-potential miss1 REJECT: taught in p1-heating) | required practical 1
+- p1-kinetic-potential | miss1 | REJECT R-a (re-check decision p1-kinetic-potential miss1 REJECT: AT 1 skills) | investigate GPE → KE
+- p1-kinetic-potential | fact0 | ACCEPT (blocking) | checkpoint 3 working: "e2" became "e²", "x" became "×"
+- p1-national-grid | miss0 | REJECT R-a (p1-national-grid miss2 ACCEPT: trends in words only) | explain trends
+- p1-national-grid | miss1 | REJECT R-a (p1-national-grid miss1 ACCEPT: uses for transport and heating) | compare uses
+- p1-national-grid | wron0 | ACCEPT | "tidal" became "the tides" (throughout)
+- p1-power | fact0 | ACCEPT (blocking) | kettle tutor note: same water, ignoring energy lost to the surroundings
+
+## R8
+
+Run R8: `node tools/spec-check.js --topic P1 --run --max-usd 3` on the R7 fixes. Cost $0.6702. 24 findings.
+BLOCKING ACCEPTs = 4. NON-BLOCKING ACCEPTs = 5. REJECT = 15 (R-a 15). Not clean. Run 8 of 8 (limit), so the R8 ACCEPTs are applied but not re-checked; the topic goes to the independent audit as NOT CLEAN.
+
+- p1-conservation | miss0 | REJECT R-a (p1-conservation miss2 ACCEPT: required practical 2 described briefly) | factors in required practical 2
+- p1-conservation | miss1 | REJECT R-a (p1-conservation miss3 REJECT: skills suggestion) | thermal conductivity rods
+- p1-efficiency | fact0 | REJECT R-a (p1-efficiency fact4 ACCEPT: "Most devices waste some energy … an electric heater is close to 100% efficient") | "most" real devices
+- p1-efficiency | fact1 | REJECT R-a (p1-efficiency fact4 ACCEPT, same decision) | "most devices waste some energy"
+- p1-energy-stores | miss0 | REJECT R-a (p1-energy-stores miss4 REJECT) | lubrication and insulation
+- p1-energy-stores | miss1 | REJECT R-a (p1-energy-stores miss5 REJECT) | thermal conductivity
+- p1-energy-stores | miss2 | REJECT R-a (p1-energy-stores miss6 REJECT) | building cooling
+- p1-energy-stores | miss3 | REJECT R-a (p1-energy-stores miss7 REJECT) | required practical 2
+- p1-energy-stores | miss4 | REJECT R-a (p1-energy-stores miss8 REJECT) | increasing efficiency
+- p1-energy-stores | miss5 | REJECT R-a (p1-energy-stores miss2 REJECT) | calculating energy changes
+- p1-energy-stores | fact0 | ACCEPT (blocking) | "always less than 1" became "for most devices"; electric heater close to 1.0
+- p1-energy-stores | wron0 | ACCEPT | exam tip: heating, work done by forces, work done when a current flows; "earns marks" claim cut
+- p1-energy-stores | wron1 | ACCEPT | MEHR memTip replaced with the spec's ways a system changes
+- p1-energy-stores | wron2 | ACCEPT | braking checkpoint option: "By work done by forces"
+- p1-heating | abov0 | ACCEPT (blocking) | internal energy "depends on … the spacing between them" and "(the thermal store)" cut; temperature–KE part is R-a (p1-heating abov0)
+- p1-heating | abov1 | REJECT R-a (p1-heating abov0 REJECT: specification 4.3.3.1) | temperature as a measure of average kinetic energy
+- p1-heating | wron0 | ACCEPT | "c = E / (mΔθ)" became "c = ΔE / (mΔθ)" (throughout)
+- p1-heating | wron1 | ACCEPT | revision card, same
+- p1-kinetic-potential | miss0 | REJECT R-a (p1-kinetic-potential miss1 REJECT: taught in p1-heating) | required practical 1
+- p1-kinetic-potential | miss1 | REJECT R-a (re-check decision p1-kinetic-potential miss1 REJECT: AT 1 skills) | investigate GPE → KE
+- p1-national-grid | miss0 | REJECT R-a (p1-national-grid miss2 ACCEPT: trends in words only) | explain trends
+- p1-national-grid | miss1 | REJECT R-a (p1-national-grid miss1 ACCEPT: uses for transport and heating) | compare uses
+- p1-national-grid | fact0 | ACCEPT (blocking) | bio-fuel CO₂: released when burned, may be carbon-neutral overall
+- p1-power | fact0 | ACCEPT (blocking) | joule bullet: "causes a displacement of 1 m"

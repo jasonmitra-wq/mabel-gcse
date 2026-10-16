@@ -1,9 +1,9 @@
 {
   "lesson": "p1-kinetic-potential",
   "source_file": "lessons/physics/p1-kinetic-potential.json",
-  "lesson_md5": "0587d327484622abd60e6f87122d03bd",
+  "lesson_md5": "c3be006911b1d9ee896eb2574b5d037d",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:04:07.823Z",
+  "date": "2026-10-16T19:46:38.029Z",
   "specRefs_sent": [
     "4.1.1.2",
     "4.1.1.3"
@@ -11,10 +11,10 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7730,
-    "output_tokens": 3348
+    "input_tokens": 7753,
+    "output_tokens": 2588
   },
-  "cost_usd": 0.09788,
+  "cost_usd": 0.082772,
   "status": "OK",
   "result": {
     "lesson": "p1-kinetic-potential",
@@ -22,45 +22,22 @@
       {
         "specRef": "4.1.1.3",
         "spec_text": "Required practical activity 1: investigation to determine the specific heat capacity of one or more materials. The investigation will involve linking the decrease of one energy store (or work done) to the increase in temperature and subsequent increase in thermal energy stored.",
-        "why": "The lesson teaches only the equation ΔE = mcΔθ. It never describes the required practical: the method, what is measured, or how the decrease in one energy store (or work done) is linked to the temperature rise to find c."
+        "why": "The lesson teaches the equation ΔE = mcΔθ and the definition of specific heat capacity. It never describes the required practical: the method, what is measured, or how the decrease in one energy store (or work done) is linked to the rise in temperature and thermal energy."
       },
       {
         "specRef": "4.1.1.2",
         "spec_text": "AT 1 Investigate the transfer of energy from a gravitational potential energy store to a kinetic energy store.",
-        "why": "The lesson treats GPE to KE only as a calculation (mgh = ½mv²). It gives no practical or investigative context. This is listed as a key opportunity rather than core content, so it is a lower-priority gap."
+        "why": "The lesson covers the theory of GPE becoming KE (mgh = ½mv²). It does not describe how to investigate this transfer experimentally, for example measuring the height and the resulting speed. The spec lists this as a skills opportunity, not core content, so the gap is minor."
       }
     ],
     "above_gcse": [],
-    "factual_errors": [
-      {
-        "field": "introTips[2]",
-        "text": "Specific heat capacity is in this topic too. It tells you how much energy is needed to heat something up.",
-        "correction": "Specific heat capacity is the energy needed to raise the temperature of one kilogram of a substance by one degree Celsius. The total energy needed to heat an object is the change in thermal energy, ΔE, not c.",
-        "basis": "spec"
-      },
-      {
-        "field": "keyPoints[4].heading",
-        "text": "Specific heat capacity — how much energy to heat something",
-        "correction": "Specific heat capacity is the energy per kilogram per degree Celsius ('the amount of energy required to raise the temperature of one kilogram of the substance by one degree Celsius'). It is not the total energy needed to heat an object.",
-        "basis": "spec"
-      }
-    ],
-    "wrong_terms": [
-      {
-        "field": "keyPoints[2].content",
-        "text": "All the GPE at the top converts to KE at the bottom",
-        "spec_term": "transfer of energy from a gravitational potential energy store to a kinetic energy store"
-      },
-      {
-        "field": "writeBullets (keyPoints[2])",
-        "text": "Falling object (no air resistance): GPE at top converts to KE at bottom",
-        "spec_term": "transfer of energy from a gravitational potential energy store to a kinetic energy store"
-      }
-    ],
+    "factual_errors": [],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "The specification refers to 'Temperature changes in a system and specific heat capacity (page 34)', which was not supplied. I could not check the lesson's specific heat capacity content against that section.",
-      "The lesson's keyTerms defining the joule ('1 J = 1 N m') and the spring constant ('k = F ÷ e') come from specification sections that were not supplied. I could not check them against the specification text, although they agree with my own knowledge."
+      "examTip: \"Energy store equations appear on every exam paper.\" The supplied specification sections do not say which papers assess this content, so this claim cannot be checked from them. It may overstate things if topic 4.1 is assessed on Paper 1 only.",
+      "introTips[1]: \"The skill examiners test most is rearranging these equations and picking the right one.\" This is a claim about examiner priorities that cannot be checked against the specification text.",
+      "diagrams is an empty array and every keyPoints[].diagram is null, so there was no visual content to check."
     ]
   }
 }

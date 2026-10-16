@@ -1,19 +1,19 @@
 {
   "lesson": "p1-conservation",
   "source_file": "lessons/physics/p1-conservation.json",
-  "lesson_md5": "11c0934656b238a097b596592bd22be3",
+  "lesson_md5": "1666a9851067792eeb1c58142f00bff0",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:04:38.230Z",
+  "date": "2026-10-16T19:47:03.221Z",
   "specRefs_sent": [
     "4.1.2.1"
   ],
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7347,
-    "output_tokens": 3899
+    "input_tokens": 7390,
+    "output_tokens": 3108
   },
-  "cost_usd": 0.107368,
+  "cost_usd": 0.09172,
   "status": "OK",
   "result": {
     "lesson": "p1-conservation",
@@ -21,51 +21,22 @@
       {
         "specRef": "4.1.2.1 Required practical activity 2",
         "spec_text": "investigate the effectiveness of different materials as thermal insulators and the factors that may affect the thermal insulation properties of a material.",
-        "why": "The lesson covers only the first half of the practical: 'The independent variable is the material' (keyPoints[3].content). It never sets up an investigation of a factor that affects insulation properties, such as thickness or number of layers. Thickness appears only as a control variable."
+        "why": "keyPoints[3].content covers comparing materials only, with material as the independent variable. It never treats a factor such as thickness or number of layers as something to investigate. It lists 'the thickness of material' only as a control variable. So the second half of the practical is not taught."
       },
       {
         "specRef": "4.1.2.1 Key opportunities for skills development",
         "spec_text": "Investigate thermal conductivity using rods of different materials.",
-        "why": "The lesson does not mention comparing thermal conductivity using rods of different materials."
+        "why": "The lesson gives no investigation or example comparing thermal conductivity using rods of different materials."
       }
     ],
     "above_gcse": [],
-    "factual_errors": [
-      {
-        "field": "keyPoints[2].content",
-        "text": "<strong>electrical resistance</strong> in wires: electrical energy → thermal energy. This is how a kettle heats water.",
-        "correction": "This is listed as an example of dissipation, but heating the water is the useful transfer in a kettle. Only the energy that heats the kettle body and the air is dissipated. Checkpoint 1 and the tables row say exactly this, so the lesson contradicts itself. Also, 'electrical energy' is not an energy store. Energy is transferred electrically.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "tables[0].rows",
-        "text": "\"Incandescent light bulb\", \"Electrical\" (under the header \"Input energy store\"); likewise \"Electric motor\", \"Electrical\" and \"Electric kettle\", \"Electrical\"",
-        "correction": "'Electrical' is a transfer pathway (energy transferred electrically), not an energy store. Labelling it as an input store mixes up stores and transfers. The lesson itself warns against this in commonMistakes[1].",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[1].keyTerms[2].def",
-        "text": "Using oil or similar material between surfaces to reduce friction and heat loss",
-        "correction": "Lubrication reduces friction, so less energy is dissipated by heating the moving parts. 'Heat loss' is the language of thermal insulation and does not describe what lubrication does.",
-        "basis": "own knowledge"
-      }
-    ],
-    "wrong_terms": [
-      {
-        "field": "tables[0].rows",
-        "text": "Thermal lost to surroundings",
-        "spec_term": "dissipated"
-      },
-      {
-        "field": "keyPoints[3].keyTerms[2].def",
-        "text": "Shaping an object to reduce air resistance and the kinetic energy lost to drag",
-        "spec_term": "dissipated / 'wasted'"
-      }
-    ],
+    "factual_errors": [],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "All keyPoints have \"diagram\": null, so there were no diagrams or images to check.",
-      "The details of AT 1, AT 5, WS 1.4 and MS (\"Details of all skills are given in Key opportunities for skills development (page 90)\") were not supplied. I could not check whether the practical description meets those skill requirements."
+      "All diagram fields are null, so there were no diagrams or images to check.",
+      "Statements about Sankey diagrams (keyPoints[1].tutor_note: 'The width of each arrow shows the amount of energy.'; examTips[2]: 'Sankey diagrams are drawn to scale... The output arrows must add up to the input arrow.') belong to specification content that was not supplied. They could not be checked against the spec text, although they agree with own knowledge.",
+      "Statements on electrical resistance and transmission cables (keyPoints[2].content: 'This is why transmission cables waste energy') and the list of energy transfer pathways (commonMistakes[1]: 'Transfers are how it moves (heating, working, radiation)') relate to specification sections not supplied. Their wording could not be checked against the spec."
     ]
   }
 }

@@ -1,9 +1,9 @@
 {
   "lesson": "p1-heating",
   "source_file": "lessons/physics/p1-heating.json",
-  "lesson_md5": "24f8fce2a39d01fdac37f6c49afe0dc4",
+  "lesson_md5": "6e6cef862b6cdc7b0882e21576c87f59",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:06:09.884Z",
+  "date": "2026-10-16T19:48:18.170Z",
   "specRefs_sent": [
     "4.1.1.3",
     "4.3.2.1",
@@ -12,10 +12,10 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7800,
-    "output_tokens": 3302
+    "input_tokens": 7925,
+    "output_tokens": 3492
   },
-  "cost_usd": 0.09724,
+  "cost_usd": 0.10154,
   "status": "OK",
   "result": {
     "lesson": "p1-heating",
@@ -23,24 +23,33 @@
     "above_gcse": [
       {
         "field": "keyPoints[3].content",
-        "text": "<strong>Temperature</strong> is a measure of the average kinetic energy of the particles. The hotter the substance, the faster its particles move on average. This matters. Temperature measures the average KE per particle. Internal energy (the thermal store) depends on temperature AND the number of particles AND the spacing between them.",
-        "why": "The supplied sections (4.1.1.3, 4.3.2.1, 4.3.2.2) do not define temperature in terms of particle kinetic energy. They only say heating 'either raises the temperature of the system or produces a change of state'. The link between temperature and average kinetic energy is taught elsewhere in the specification, in the gas-particle section, which was not supplied. Calling internal energy 'the thermal store' while defining it as kinetic plus potential energy may also blur the spec's simpler 'thermal energy stored' wording. This is low risk, but it is not required by these sections."
+        "text": "This matters. Temperature measures the average KE per particle. Internal energy (the thermal store) depends on temperature AND the number of particles AND the spacing between them.",
+        "why": "The specification sections given (4.1.1.3, 4.3.2.1, 4.3.2.2) do not link temperature to average particle kinetic energy. They also do not say internal energy depends on particle spacing. The spec defines internal energy only as 'the total kinetic energy and potential energy of all the particles (atoms and molecules) that make up a system'. The extra dependence on spacing is not explained, and it could confuse the student."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Temperature is a measure of the average kinetic energy of the particles.",
+        "why": "This is not required by the sections given. It also clashes with the lesson's own keyTerms definition: 'It is related to the average kinetic energy of the particles'. Strictly, temperature is related to the average kinetic energy of the particles' random motion; it is not a direct measure of it. That nuance goes beyond these sections, so the two different wordings may confuse the student."
       }
     ],
     "factual_errors": [],
     "wrong_terms": [
       {
-        "field": "revisionCardBullets[8]",
-        "text": "Heat flows from hot to cold",
-        "spec_term": "The spec describes energy transfer by heating: 'Heating changes the energy stored within the system by increasing the energy of the particles'. Saying that heat 'flows' treats heat as a substance. The lesson's own wording in keyPoints[3].content, 'Energy is transferred by heating from a hotter object to a cooler one', matches the spec framing."
+        "field": "keyPoints[2].content",
+        "text": "Calculate c = E / (mΔθ).",
+        "spec_term": "change in thermal energy, ∆E (c = ∆E / (m∆θ))"
+      },
+      {
+        "field": "revisionCardBullets[4]",
+        "text": "Measure the energy supplied, then calculate c = E/(mΔθ)",
+        "spec_term": "change in thermal energy, ∆E"
       }
     ],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "All diagram fields are null, so there were no images to check.",
-      "Claims about exam frequency could not be verified: tutor_note in keyPoints[2] says 'This practical almost always comes up in the exam', and examTips[2] says 'Uses of high SHC are common 2–3 mark questions'.",
-      "The table values in tables[0] were checked against own knowledge and are acceptable approximations. The spec gives no data values to check them against.",
-      "Only these sections were supplied: 4.1.1.3, 4.3.2.1 and 4.3.2.2. Lesson content on temperature as average kinetic energy, P = IV and E = Pt could not be checked against the specification text for those topics."
+      "Claims about exam frequency could not be checked against the specification text: keyPoints[2].tutor_note 'This practical almost always comes up in the exam', intro 'one of the most important (and most examined) equations in physics' and examTips[2] 'Uses of high specific heat capacity are common 2–3 mark questions'.",
+      "The specification lists 'AT skills covered by this practical activity: AT 1 and 5' and MS 1a, 3b, c, d. The definitions of these skills were not supplied (the spec refers to page 89), so full coverage of those skills could not be checked.",
+      "Table values for aluminium, iron/steel, copper, concrete and air are not in the specification. They were checked only against typical textbook values from own knowledge (approximately correct)."
     ]
   }
 }

@@ -1,19 +1,19 @@
 {
   "lesson": "p1-efficiency",
   "source_file": "lessons/physics/p1-efficiency.json",
-  "lesson_md5": "b62bb757682888217fbc20e42c590a00",
+  "lesson_md5": "e7592da1bf351251e9e0717c9ffb9bc6",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:05:13.260Z",
+  "date": "2026-10-16T19:47:31.476Z",
   "specRefs_sent": [
     "4.1.2.2"
   ],
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 6105,
-    "output_tokens": 2485
+    "input_tokens": 6181,
+    "output_tokens": 2370
   },
-  "cost_usd": 0.07412,
+  "cost_usd": 0.072124,
   "status": "OK",
   "result": {
     "lesson": "p1-efficiency",
@@ -21,28 +21,22 @@
     "above_gcse": [],
     "factual_errors": [
       {
+        "field": "revisionCardBullets[2]",
+        "text": "Maximum efficiency = 1.0 (100%). Most real devices are less than this",
+        "correction": "All real devices have an efficiency less than 1 (100%), because every real energy transfer dissipates some energy to the surroundings. 'Most' suggests some real devices reach 100%. It also contradicts the lesson's own statement in keyPoints[1].keyTerms[1].def: 'always positive in a real device'.",
+        "basis": "own knowledge"
+      },
+      {
         "field": "keyPoints[0].content",
-        "text": "It wastes 25% to heat, sound or other stores we don't want.",
-        "correction": "Sound is not an energy store. It is a way energy is transferred, and the energy carried by sound ends up in the thermal store of the surroundings. 'Heat' is also better described as energy transferred to the thermal store of the surroundings, where it is dissipated.",
+        "text": "Most devices waste some energy, usually as thermal energy (heat) or sound.",
+        "correction": "All real devices waste some energy. It is usually dissipated by heating the surroundings. Saying 'most' implies some devices waste none. This is inconsistent with the lesson's statement that wasted energy is 'always positive in a real device'.",
         "basis": "own knowledge"
       }
     ],
-    "wrong_terms": [
-      {
-        "field": "keyPoints[0].content",
-        "text": "efficiency = (useful output ÷ total input) × 100%",
-        "spec_term": "useful output energy transfer / total input energy transfer"
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "useful output = efficiency × total input\n- total input = useful output ÷ efficiency",
-        "spec_term": "useful output energy transfer (or useful power output) / total input energy transfer (or total power input)"
-      }
-    ],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "The specification marks 'describe ways to increase the efficiency of an intended energy transfer' as (HT only). The lesson's 'Improving efficiency' key point (keyPoints[3]) and checkpoint 3 are not labelled as Higher Tier. I could not check which tier this lesson is meant for, or whether that labelling matters for this student.",
-      "All key point diagrams are null, so there were no diagrams or images to check."
+      "The specification refers to skills codes 'MS 3b, c', 'MS 1a, c, 3b, c' and '(HT only) WS 1.4'. The text of these skills statements was not supplied, so I could not check the lesson against their detailed requirements beyond the notes given ('recall and apply both equations'; 'calculate or use efficiency values as a decimal or as a percentage')."
     ]
   }
 }

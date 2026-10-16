@@ -66,7 +66,7 @@
     },
     {
       "heading": "Energy resources and the environment",
-      "content": "We use energy resources for <strong>transport</strong>, <strong>electricity generation</strong> and <strong>heating</strong>. For example, petrol and diesel fuel cars. Gas heats many homes.\n\nThe UK uses a <strong>mix</strong> of energy resources. This balances reliability, cost and harm to the environment. A renewable resource is one that is being (or can be) replenished as it is used.\n\n<strong>Non-renewables</strong>:\n- <strong>Coal</strong>: the most CO₂. It is being phased out.\n- <strong>oil</strong>: used for transport fuels. Oil spills harm sea life.\n- Burning coal and oil also releases sulfur dioxide. This causes acid rain.\n- <strong>natural gas</strong>: less CO₂ than coal. It can be turned on quickly when demand rises.\n- <strong>nuclear fuel</strong>: no CO₂ while generating, and very reliable. But it makes radioactive waste.\n\n<strong>Renewables</strong>:\n- <strong>the Sun</strong> (solar cells): no emissions and quick to install. But it is <strong>intermittent</strong>. Solar cells work in daylight and less well when it is cloudy. They do not work at night.\n- <strong>wind</strong>: no emissions. But it is intermittent.\n- <strong>hydroelectric</strong>: reliable, controllable and no emissions. But it needs rivers and dams, and affects ecosystems.\n- <strong>tidal</strong>: tides follow a regular cycle, so they are predictable. But barrages can damage habitats.\n- <strong>water waves</strong>: no emissions. But output depends on the weather, and it can disturb sea habitats.\n- <strong>geothermal</strong>: uses energy from hot rocks underground. It is reliable, but only works in a few places.\n- <strong>bio-fuel</strong>: made from plant or animal material. It may be carbon-neutral if crops regrow, but this is debated.\n\n<strong>Reliability</strong>: some resources are more reliable than others. Fossil fuels and nuclear are reliable. But nuclear power stations are slow to start up. Wind, solar and waves depend on the weather, so they are less reliable.\n\n<strong>Trends</strong>: coal use is falling. The use of renewable resources is rising.\n\nScience can identify environmental problems caused by using energy resources. But it cannot always solve them. This can be for political, social, ethical or economic reasons.",
+      "content": "We use energy resources for <strong>transport</strong>, <strong>electricity generation</strong> and <strong>heating</strong>. For example, petrol and diesel fuel cars. Gas heats many homes.\n\nThe UK uses a <strong>mix</strong> of energy resources. This balances reliability, cost and harm to the environment. A renewable resource is one that is being (or can be) replenished as it is used.\n\n<strong>Non-renewables</strong>:\n- <strong>Coal</strong>: the most CO₂. CO₂ is a greenhouse gas. It adds to global warming and climate change. It is being phased out.\n- <strong>oil</strong>: used for transport fuels. Oil spills harm sea life.\n- Burning coal and oil also releases sulfur dioxide. This causes acid rain.\n- <strong>natural gas</strong>: less CO₂ than coal. It can be turned on quickly when demand rises.\n- <strong>nuclear fuel</strong>: no CO₂ while generating, and very reliable. But it makes radioactive waste.\n\n<strong>Renewables</strong>:\n- <strong>the Sun</strong> (solar cells): no emissions and quick to install. But it is <strong>intermittent</strong>. Solar cells work in daylight and less well when it is cloudy. They do not work at night.\n- <strong>wind</strong>: no emissions. But it is intermittent.\n- <strong>hydro-electricity</strong>: reliable, controllable and no emissions. But it needs rivers and dams, and affects ecosystems.\n- <strong>the tides</strong>: tides follow a regular cycle, so they are predictable. But barrages can damage habitats.\n- <strong>water waves</strong>: no emissions. But output depends on the weather, and it can disturb sea habitats.\n- <strong>geothermal</strong>: uses energy from hot rocks underground. It is reliable, but only works in a few places.\n- <strong>bio-fuel</strong>: made from plant or animal material. It may be carbon-neutral if crops regrow, but this is debated.\n\n<strong>Reliability</strong>: some resources are more reliable than others. Fossil fuels and nuclear are reliable. But nuclear power stations are slow to start up. Wind, solar and waves depend on the weather, so they are less reliable.\n\n<strong>Trends</strong>: coal use is falling. The use of renewable resources is rising.\n\nScience can identify environmental problems caused by using energy resources. But it cannot always solve them. This can be for political, social, ethical or economic reasons.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -77,8 +77,8 @@
         "Natural gas — less CO₂ than coal. Can be turned on quickly when demand rises",
         "Nuclear fuel — no CO₂ while generating, very reliable. Makes radioactive waste",
         "The Sun (solar cells) and wind — zero emissions. But intermittent (depends on weather)",
-        "Hydroelectric — reliable, controllable, no emissions. Needs rivers and dams (affects ecosystems)",
-        "Tidal — predictable, because tides follow a regular cycle. Barrages can damage habitats",
+        "Hydro-electricity — reliable, controllable, no emissions. Needs rivers and dams (affects ecosystems)",
+        "The tides — predictable, because tides follow a regular cycle. Barrages can damage habitats",
         "Water waves — no emissions, but depends on the weather. Geothermal — reliable, but only in a few places",
         "Bio-fuel — made from plant or animal material. May be carbon-neutral. How sustainable it is is debated",
         "Trends — coal use is falling. Renewable use is rising",
@@ -87,7 +87,7 @@
       "keyTerms": [
         {
           "term": "renewable energy resource",
-          "def": "An energy resource that is being (or can be) replenished as it is used — wind, solar, hydro, tidal, water waves, geothermal, bio-fuel"
+          "def": "An energy resource that is being (or can be) replenished as it is used — wind, solar, hydro, the tides, water waves, geothermal, bio-fuel"
         },
         {
           "term": "non-renewable energy resource",
@@ -156,7 +156,7 @@
           "Only works in daylight; less output when cloudy"
         ],
         [
-          "Hydroelectric",
+          "Hydro-electricity",
           "Yes",
           "Zero",
           "Reliable and controllable",
@@ -164,7 +164,7 @@
           "Needs suitable geography; dam affects ecosystems"
         ],
         [
-          "Tidal",
+          "The tides",
           "Yes",
           "Zero",
           "Very predictable",
@@ -174,7 +174,7 @@
         [
           "Bio-fuel",
           "Yes",
-          "Low–moderate",
+          "Releases CO₂ when burned; may be carbon-neutral overall",
           "Reliable (on demand)",
           "Reliable (on demand)",
           "Land use; CO₂ neutrality is debated"
@@ -239,7 +239,7 @@
   "commonMistakes": [
     "Saying the grid uses a high potential difference 'to save energy' without explaining how. Link it to P = IV (lower current) and P_lost = I²R (lower heating losses).",
     "Mixing up step-up and step-down transformers. Step-up increases the potential difference. Step-down decreases it.",
-    "Saying solar PV is 'renewable' without saying it is intermittent. Give the advantage (no emissions, free fuel). Give the disadvantage too (it depends on the weather).",
+    "Saying the Sun (solar cells) is 'renewable' without saying it is intermittent. Give the advantage (no emissions, free fuel). Give the disadvantage too (it depends on the weather).",
     "Thinking renewable means 'free' or 'clean'. It means the resource is being (or can be) replenished as it is used."
   ],
   "examTips": [
@@ -253,8 +253,8 @@
     "Step-up transformer: potential difference up",
     "Step-down transformer: potential difference down",
     "Uses of energy resources: transport, electricity generation, heating",
-    "Renewable = being (or able to be) replenished as it is used: wind, solar, hydro, tidal, water waves, geothermal, bio-fuel",
-    "Renewables (wind, solar, hydro, tidal) produce no CO₂ but can be intermittent",
+    "Renewable = being (or able to be) replenished as it is used: wind, solar, hydro, the tides, water waves, geothermal, bio-fuel",
+    "Renewables (wind, solar, hydro, the tides) produce no CO₂ but can be intermittent",
     "Coal and oil release sulfur dioxide, which causes acid rain",
     "Trends: coal use falling, renewable use rising",
     "Science can identify environmental problems but cannot always solve them"

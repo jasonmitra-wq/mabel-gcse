@@ -38,7 +38,7 @@
         }
       ],
       "memTip": "P = E/t. Power is 'energy per second'.",
-      "tutor_note": "Power and energy are easy to mix up. A 2 kW kettle and a 1 kW kettle transfer the same energy to boil the water. But the 2 kW one does it twice as fast."
+      "tutor_note": "Power and energy are easy to mix up. For the same water, a 2 kW kettle transfers energy twice as fast as a 1 kW kettle. Ignoring energy lost to the surroundings, it boils the water in half the time."
     },
     {
       "heading": "Calculating power",
@@ -72,15 +72,13 @@
     },
     {
       "heading": "Power in everyday contexts",
-      "content": "Putting real numbers on power helps you make sense of the world. A higher power means more joules are transferred each second.\n- <strong>Human body at rest</strong>: ~80 W, just keeping warm and breathing.\n- <strong>Walking</strong>: ~300 W.\n- <strong>Cycling</strong>: ~100–400 W, depending on speed.\n- <strong>Running</strong>: ~500–800 W. Top sprinters may briefly reach 2000 W.\n- <strong>Hairdryer</strong>: ~2000 W (2 kW).\n- <strong>Electric kettle</strong>: ~2000–3000 W.\n- <strong>Electric car motor</strong>: 100–300 kW.\n- <strong>Large power station</strong>: ~1–2 GW (gigawatts = 1,000,000,000 W).\n\nThis is why the Industrial Revolution changed so much. Steam engines could replace dozens of human workers by giving out many kilowatts non-stop.",
+      "content": "Putting real numbers on power helps you make sense of the world. A higher power means more joules are transferred each second.\n- <strong>Hairdryer</strong>: ~2000 W (2 kW).\n- <strong>Electric kettle</strong>: ~2000–3000 W.\n- <strong>Electric car motor</strong>: 100–300 kW.\n- <strong>Large power station</strong>: ~1–2 GW (gigawatts = 1,000,000,000 W).\n\nThis is why the Industrial Revolution changed so much. Steam engines could replace dozens of human workers by giving out many kilowatts non-stop.",
       "examFlag": false,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Human body at rest — ~80 W. Mostly used for keeping warm and body functions",
-        "Cycling — ~100–400 W. Top cyclists keep up ~400 W for long periods",
         "Hairdryer or kettle — ~2 kW. High power to heat air or water quickly",
-        "Electric car motor — 100–300 kW. Far more powerful than a human, and very efficient",
+        "Electric car motor — 100–300 kW. Very powerful and very efficient",
         "Power station — hundreds of MW to GW. Gigawatts are needed to power whole cities"
       ],
       "keyTerms": [
@@ -89,18 +87,18 @@
           "def": "1,000,000,000 watts — unit used for national power output and very large power stations"
         }
       ],
-      "memTip": "You at rest = 80 W, a hairdryer = 2000 W, an electric car = 100,000 W. Scale matters!"
+      "memTip": "A hairdryer = 2000 W, an electric car = 100,000 W. Scale matters!"
     },
     {
       "heading": "Work done",
-      "content": "<strong>Work done (W) = force (F) × distance moved along the line of action of the force (s)</strong>. Units: <strong>joules (J)</strong>. When a force moves an object, energy is transferred. We say 'work is done'.\n\nOne joule of work is done when a force of one newton moves an object one metre. So <strong>1 J = 1 N m</strong> (one newton-metre). To convert, 20 N m is the same as 20 J.\n\nWhen work is done, energy moves between stores:\n- lifting an object: work done fills its gravitational potential store\n- pushing an object against friction: work done against friction goes to the thermal store. This raises the temperature of the object\n\nWorked example: a force of 3000 N moves a car 20 m along the line of action of the force. W = Fs = 3000 × 20 = 60,000 J = <strong>60 kJ</strong>.",
+      "content": "<strong>Work done (W) = force (F) × distance moved along the line of action of the force (s)</strong>. Units: <strong>joules (J)</strong>. When a force moves an object, energy is transferred. We say 'work is done'.\n\nOne joule of work is done when a force of one newton causes a displacement of one metre. So <strong>1 J = 1 N m</strong> (one newton-metre). To convert, 20 N m is the same as 20 J.\n\nWhen work is done, energy moves between stores:\n- lifting an object: work done fills its gravitational potential store\n- pushing an object against friction: work done against friction goes to the thermal store. This raises the temperature of the object\n\nWorked example: a force of 3000 N moves a car 20 m along the line of action of the force. W = Fs = 3000 × 20 = 60,000 J = <strong>60 kJ</strong>.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "Work done W = Fs. Force (N) × distance moved along the line of action of the force (m) = joules (J)",
         "Energy is transferred when a force moves an object",
-        "1 J of work is done when a force of 1 N moves an object 1 m. So 1 J = 1 N m",
+        "1 J of work is done when a force of 1 N causes a displacement of 1 m. So 1 J = 1 N m",
         "Work done against friction raises the temperature of the object",
         "Example: 3000 N force over 20 m → W = 60,000 J = 60 kJ"
       ],
@@ -111,7 +109,7 @@
         },
         {
           "term": "newton-metre (N m)",
-          "def": "1 N m = 1 J; the work done when a force of 1 N moves an object 1 m"
+          "def": "1 N m = 1 J; the work done when a force of 1 N causes a displacement of 1 m"
         }
       ],
       "memTip": "W = Fs. Force times distance gives work done. 1 N m = 1 J.",
@@ -128,26 +126,6 @@
         "What the energy is used for"
       ],
       "rows": [
-        [
-          "Human body at rest",
-          "~80 W",
-          "Maintaining body temperature, breathing, heartbeat"
-        ],
-        [
-          "Walking",
-          "~300 W",
-          "Muscular work to move the body forward"
-        ],
-        [
-          "Cycling (recreational)",
-          "~150 W",
-          "Propelling bicycle against friction and air resistance"
-        ],
-        [
-          "Elite cyclist (1 hr effort)",
-          "~400 W",
-          "Maximum sustained muscular output"
-        ],
         [
           "Hairdryer",
           "~2000 W (2 kW)",
@@ -244,7 +222,7 @@
     "1 kW = 1000 W; 1 MW = 1,000,000 W; 1 GW = 1,000,000,000 W",
     "Work done W = Fs (force × distance moved along the line of action of the force); unit: joules (J)",
     "1 J = 1 N m. Work done against friction raises the temperature",
-    "Human body at rest ~80 W; cycling ~150–400 W; hairdryer ~2 kW",
+    "Hairdryer ~2 kW",
     "Electric car motor ~100–300 kW; power station ~500 MW–2 GW",
     "Power tells you HOW FAST energy is transferred, not how much in total",
     "To work out P: write the formula, convert units, substitute, calculate, give units"

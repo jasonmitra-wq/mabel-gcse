@@ -359,3 +359,149 @@ One line per change: lesson | what changed | decision ID (re-check decisions in 
 - p1-national-grid | bold "Solar PV" lost | R5 p1-national-grid wron2
 - p1-power | `checkpoints.2.*` numbers lost | R4 p1-power chec0
 - p1-power | bold "Work done (W) = force (F) × distance (s)" lost | R4 p1-power wron2
+
+## Runbook task 1.0 (BASE 6960c44)
+
+### R6 accepts applied
+
+Blocking changes, with old and new text in full:
+
+- p1-conservation | revisionCardBullets[6] | R6 p1-conservation fact0
+  - OLD: Electrical resistance changes electrical energy → thermal energy
+  - NEW: Electrical resistance: a current heats the wire, so energy is dissipated to the thermal store of the surroundings
+- p1-efficiency | introTips[1] | R6 p1-efficiency fact0
+  - OLD: A higher efficiency number means less energy is wasted.
+  - NEW: A higher efficiency means a smaller proportion of the input energy is wasted.
+- p1-efficiency | keyPoints[2].memTip | R6 p1-efficiency fact1
+  - OLD: Compare with the numbers you are given. Higher efficiency = less energy wasted.
+  - NEW: Compare with the numbers you are given. Higher efficiency = a smaller proportion of the input energy wasted.
+- p1-efficiency | keyPoints[3].content | R6 p1-efficiency miss0
+  - OLD: We can improve efficiency in several ways:
+  - NEW: Describing ways to increase efficiency is Higher Tier content. We can improve efficiency in several ways:
+- p1-energy-stores | keyPoints[3].writeBullets[0] | R6 p1-energy-stores fact0
+  - OLD: Dissipation = energy transferred to a store that is no use to us
+  - NEW: Dissipation = energy dissipated, so it is stored in less useful ways
+- p1-energy-stores | keyPoints[2].keyTerms[0].def | R6 p1-energy-stores fact1
+  - OLD: Energy cannot be created or destroyed — it can only be transferred between stores or dissipated as thermal energy to the surroundings; total energy in a closed system is always constant
+  - NEW: Energy cannot be created or destroyed — it can be transferred usefully, stored or dissipated; total energy in a closed system is always constant
+- p1-heating | revisionCardBullets[3] | R6 p1-heating fact0
+  - OLD: Water SHC = 4200 J/kg°C. The highest of common substances, and an excellent heat store
+  - NEW: Water's specific heat capacity = 4200 J/kg°C. Very high compared with most common materials, so it is an excellent store of energy
+- p1-national-grid | keyPoints[2].content | R6 p1-national-grid miss1
+  - OLD: <strong>Coal</strong>: the most CO₂.
+  - NEW: <strong>Coal</strong>: the most CO₂. CO₂ is a greenhouse gas. It adds to global warming and climate change.
+- p1-power | keyPoints[2].content | R6 p1-power abov0, fact0
+  - OLD: - <strong>Human body at rest</strong>: ~80 W, just keeping warm and breathing. ⏎ - <strong>Walking</strong>: ~300 W. ⏎ - <strong>Cycling</strong>: ~100–400 W, depending on speed. ⏎ - <strong>Running</strong>: ~500–800 W. Top sprinters may briefly reach 2000 W.
+  - NEW: (cut)
+- p1-power | keyPoints[2].writeBullets | R6 p1-power abov0
+  - OLD: ["Human body at rest — ~80 W. Mostly used for keeping warm and body functions","Cycling — ~100–400 W. Top cyclists keep up ~400 W for long periods"] and "Far more powerful than a human"
+  - NEW: (cut)
+- p1-power | keyPoints[2].memTip | R6 p1-power abov0
+  - OLD: You at rest = 80 W, a hairdryer = 2000 W, an electric car = 100,000 W. Scale matters!
+  - NEW: A hairdryer = 2000 W, an electric car = 100,000 W. Scale matters!
+- p1-power | tables[0].rows | R6 p1-power abov0, fact0
+  - OLD: Human body at rest | ~80 W | Maintaining body temperature, breathing, heartbeat / Walking | ~300 W | Muscular work to move the body forward / Cycling (recreational) | ~150 W | Propelling bicycle against friction and air resistance / Elite cyclist (1 hr effort) | ~400 W | Maximum sustained muscular output
+  - NEW: (cut)
+- p1-power | revisionCardBullets[6] | R6 p1-power abov0
+  - OLD: Human body at rest ~80 W; cycling ~150–400 W; hairdryer ~2 kW
+  - NEW: Hairdryer ~2 kW
+
+Non-blocking changes:
+
+- p1-efficiency | commonMistakes[3]: "power efficiency and energy efficiency" became "the two ways of working out efficiency" | R6 p1-efficiency wron0
+- p1-energy-stores | keyPoints[1].content, writeBullets[0], keyTerms[0].def: "work done by forces" | R6 p1-energy-stores wron0
+- p1-heating | keyPoints[3].keyTerms[0].def: "The total kinetic and potential energy of all the particles that make up a system" | R6 p1-heating wron0
+- p1-heating | all fields: "SHC" became "specific heat capacity"; "(SHC)" removed after the full term | R6 p1-heating wron1
+- p1-national-grid | commonMistakes[2]: "solar PV" became "the Sun (solar cells)" | R6 p1-national-grid wron0
+- p1-national-grid | all fields: "hydroelectric" became "hydro-electricity" | R6 p1-national-grid wron1
+- p1-power | keyPoints[3].content: "moves an object one metre" became "causes a displacement of one metre" | R6 p1-power wron0
+- p1-power | keyPoints[3].keyTerms[1].def: "causes a displacement of 1 m" | R6 p1-power wron1
+
+### R7 accepts applied
+
+Blocking changes, with old and new text in full:
+
+- p1-conservation | keyPoints[2].keyTerms[1].def | R7 p1-conservation fact0
+  - OLD: A contact force between surfaces that converts kinetic energy to thermal energy
+  - NEW: A force between surfaces. When an object moves against friction, work is done and energy is transferred to the thermal store
+- p1-conservation | tables[0].rows[1][4] | R7 p1-conservation fact1
+  - OLD: Streamlining, lubrication
+  - NEW: Lubricate moving parts
+- p1-energy-stores | keyPoints[2].content | R7 p1-energy-stores fact0
+  - OLD: water boiled in an electric kettle: energy is transferred electrically to the thermal store of the water
+  - NEW: water boiled in an electric kettle: energy is transferred electrically to the heating element. It is then transferred by heating to the thermal store of the water. Some is dissipated to the surroundings
+- p1-energy-stores | intro | R7 p1-energy-stores fact1
+  - OLD:  It is tested on every paper, so getting it right now pays off hugely.
+  - NEW: (cut)
+- p1-energy-stores | examTip | R7 p1-energy-stores fact1
+  - OLD: Energy questions appear on every exam paper. 
+  - NEW: (cut)
+- p1-heating | checkpoints.2.options[0] | R7 p1-heating fact0, chec0
+  - OLD: To reduce heat loss to the surroundings. This makes the energy measurement more accurate
+  - NEW: To reduce energy transfer to the surroundings. So more of the energy supplied goes into the block
+- p1-heating | checkpoints.2.correctFeedback | R7 p1-heating fact0, chec0
+  - OLD: Exactly right! Insulation reduces heat loss. So more of the measured energy supplied really goes into heating the block. This improves accuracy.
+  - NEW: Exactly right! Insulation reduces energy transfer to the surroundings. So more of the measured energy supplied goes into the block. The calculated specific heat capacity is then more accurate.
+- p1-heating | keyPoints[3].keyTerms[1].def | R7 p1-heating fact1
+  - OLD: A measure of the average kinetic energy of the particles in a substance; unit: °C
+  - NEW: How hot or cold something is, measured in °C. It is related to the average kinetic energy of the particles
+- p1-heating | intro | R7 p1-heating fact2
+  - OLD: This property sets how much energy a material needs to change temperature.
+  - NEW: It is the energy needed to raise the temperature of 1 kg of a substance by 1°C.
+- p1-kinetic-potential | checkpoints.3.correctFeedback | R7 p1-kinetic-potential fact0
+  - OLD: Correct. Ee = 1/2 x k x e2 = 0.5 x 400 x (0.05)2 = 0.5 x 400 x 0.0025 = 0.5 J. Remember to square the extension before multiplying.
+  - NEW: Correct. Ee = ½ke² = 0.5 × 400 × (0.05)² = 0.5 × 400 × 0.0025 = 0.5 J. Remember to square the extension before multiplying.
+- p1-kinetic-potential | checkpoints.3.wrongFeedback | R7 p1-kinetic-potential fact0
+  - OLD: Use Ee = 1/2 x k x e2. Extension e = 0.05 m. e2 = 0.0025. Then: 0.5 x 400 x 0.0025 = 0.5 J. The most common mistake is forgetting to square the extension.
+  - NEW: Use Ee = ½ke². Extension e = 0.05 m. e² = 0.0025. Then: 0.5 × 400 × 0.0025 = 0.5 J. The most common mistake is forgetting to square the extension.
+- p1-power | keyPoints[0].tutor_note | R7 p1-power fact0
+  - OLD: Power and energy are easy to mix up. A 2 kW kettle and a 1 kW kettle transfer the same energy to boil the water. But the 2 kW one does it twice as fast.
+  - NEW: Power and energy are easy to mix up. For the same water, a 2 kW kettle transfers energy twice as fast as a 1 kW kettle. Ignoring energy lost to the surroundings, it boils the water in half the time.
+
+Non-blocking changes:
+
+- p1-conservation | keyPoints[1].content: "wasted, usually as heat or sound" became "dissipated, so it is stored in less useful ways" | R7 p1-conservation wron2
+- p1-conservation | keyPoints[3].writeBullets[2]: "reduces heat loss through the roof" became "reduces the rate of energy transfer through the roof" | R7 p1-conservation wron0
+- p1-conservation | revisionCardBullets[8]: "slows heat loss to the surroundings" became "reduces the rate of cooling" | R7 p1-conservation wron1
+- p1-efficiency | keyPoints[1].content and keyPoints[2].content: "input power" became "total power input" | R7 p1-efficiency wron0
+- p1-energy-stores | keyPoints[1].keyTerms[0–1].term: "Mechanical transfer (work done by forces)", "Electrical transfer (work done when a current flows)" | R7 p1-energy-stores wron0, wron1
+- p1-heating | keyPoints[0].content and writeBullets[4]: "heat store" became "store of thermal energy" | R7 p1-heating wron0
+- p1-heating | keyPoints[0].tutor_note and commonMistakes[0]: "T_final − T_initial" became "final temperature − initial temperature" | R7 p1-heating wron1
+- p1-heating | keyPoints[2].content and checkpoints.2.wrongFeedback: "electrical energy" became "work done by the heater" / "energy supplied" | R7 p1-heating wron2
+- p1-national-grid | keyPoints[2].content, writeBullets[7], keyTerms[0].def, tables[0], revisionCardBullets[5–6]: "tidal" became "the tides" | R7 p1-national-grid wron0
+
+### R8 accepts applied (not re-checked: run limit 8 reached)
+
+Blocking changes, with old and new text in full:
+
+- p1-energy-stores | keyPoints[4].content | R8 p1-energy-stores fact0
+  - OLD: In reality it is always less, because some energy is always dissipated.
+  - NEW: For most devices it is less, because some energy is dissipated. An electric heater is close to 1.0, because heating is its useful output.
+- p1-energy-stores | keyPoints[4].writeBullets[4] | R8 p1-energy-stores fact0
+  - OLD: In reality it is always less than 1.0 (or 100%)
+  - NEW: For most devices it is less than 1.0 (or 100%)
+- p1-energy-stores | keyPoints[4].memTip | R8 p1-energy-stores fact0
+  - OLD: It is always less than 1.
+  - NEW: It is never more than 1.
+- p1-energy-stores | checkpoints.4.wrongFeedback | R8 p1-energy-stores fact0
+  - OLD: Efficiency must always be less than 1.
+  - NEW: Efficiency can never be more than 1.
+- p1-energy-stores | revisionCardBullets[7] | R8 p1-energy-stores fact0
+  - OLD: Efficiency is always less than 1.0 (100%). Some energy is always dissipated
+  - NEW: Efficiency is never more than 1.0 (100%). For most devices it is less, because some energy is dissipated
+- p1-heating | keyPoints[3].content | R8 p1-heating abov0
+  - OLD: Internal energy (the thermal store) depends on temperature AND the number of particles AND the spacing between them.
+  - NEW: Internal energy depends on temperature AND the number of particles.
+- p1-national-grid | tables[0].rows[7][2] | R8 p1-national-grid fact0
+  - OLD: Low–moderate
+  - NEW: Releases CO₂ when burned; may be carbon-neutral overall
+- p1-power | keyPoints[3].writeBullets[2] | R8 p1-power fact0
+  - OLD: 1 J of work is done when a force of 1 N moves an object 1 m. So 1 J = 1 N m
+  - NEW: 1 J of work is done when a force of 1 N causes a displacement of 1 m. So 1 J = 1 N m
+
+Non-blocking changes:
+
+- p1-energy-stores | examTips[0]: pathway list became "by heating, by work done by forces, or by work done when a current flows"; "This wording earns marks" cut | R8 p1-energy-stores wron0
+- p1-energy-stores | keyPoints[1].memTip: MEHR mnemonic replaced with the spec ways a system changes | R8 p1-energy-stores wron1
+- p1-energy-stores | checkpoints.1.options[1]: "Mechanically." became "By work done by forces." | R8 p1-energy-stores wron2
+- p1-heating | keyPoints[2].content, writeBullets[0], memTip, revisionCardBullets[4]: "c = E/(mΔθ)" became "c = ΔE/(mΔθ)" | R8 p1-heating wron0, wron1

@@ -1,9 +1,9 @@
 {
   "lesson": "p1-energy-stores",
   "source_file": "lessons/physics/p1-energy-stores.json",
-  "lesson_md5": "e447430915863528b34b9810061c7442",
+  "lesson_md5": "26c7820469aec4a651970a5f4295801e",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:03:11.426Z",
+  "date": "2026-10-16T19:45:48.997Z",
   "specRefs_sent": [
     "4.1.1.1",
     "4.1.2.1",
@@ -12,66 +12,72 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 9473,
-    "output_tokens": 6292
+    "input_tokens": 9478,
+    "output_tokens": 5450
   },
-  "cost_usd": 0.163732,
+  "cost_usd": 0.146912,
   "status": "OK",
   "result": {
     "lesson": "p1-energy-stores",
     "missing_spec_content": [
       {
-        "specRef": "4.1.1.1",
-        "spec_text": "Throughout this section on Energy students should be able to calculate the changes in energy involved when a system is changed by: - heating - work done by forces - work done when a current flows",
-        "why": "The lesson never shows how to calculate an energy change caused by heating, by work done by a force, or by work done when a current flows. The keyTerms give Ek = ½mv², Ep = mgh and Ee = ½ke², but none of them is used in a calculation. No heating, work-done or electrical energy calculation appears anywhere."
-      },
-      {
         "specRef": "4.1.2.1",
         "spec_text": "Students should be able to explain ways of reducing unwanted energy transfers, for example through lubrication and the use of thermal insulation.",
-        "why": "The lesson describes wasted energy but never explains how to reduce unwanted energy transfers. Lubrication and thermal insulation are not mentioned."
+        "why": "The lesson says energy is wasted but never explains how to reduce unwanted transfers. Lubrication and thermal insulation are not mentioned anywhere."
       },
       {
         "specRef": "4.1.2.1",
         "spec_text": "The higher the thermal conductivity of a material the higher the rate of energy transfer by conduction across the material.",
-        "why": "Thermal conductivity and its link to the rate of energy transfer by conduction are not taught."
+        "why": "Thermal conductivity is not mentioned. Conduction appears only as a word in brackets, with no link to rate of energy transfer."
       },
       {
         "specRef": "4.1.2.1",
         "spec_text": "Students should be able to describe how the rate of cooling of a building is affected by the thickness and thermal conductivity of its walls.",
-        "why": "The lesson does not cover how wall thickness or thermal conductivity affects how fast a building cools."
+        "why": "The lesson does not cover how wall thickness and thermal conductivity affect how fast a building cools."
       },
       {
         "specRef": "4.1.2.1",
         "spec_text": "Required practical activity 2 (physics only): investigate the effectiveness of different materials as thermal insulators and the factors that may affect the thermal insulation properties of a material.",
-        "why": "The required practical on thermal insulators is not mentioned."
+        "why": "The required practical on thermal insulators is not covered."
       },
       {
         "specRef": "4.1.2.2",
         "spec_text": "(HT only) Students should be able to describe ways to increase the efficiency of an intended energy transfer.",
-        "why": "The lesson explains why efficiency is less than 1 but never describes ways to increase efficiency."
+        "why": "The lesson defines and calculates efficiency but gives no ways to increase it."
       },
       {
-        "specRef": "4.1.2.1",
-        "spec_text": "Energy can be transferred usefully, stored or dissipated, but cannot be created or destroyed.",
-        "why": "The lesson's statement of this idea leaves out 'stored'. It says energy \"can only be transferred from one store to another, or dissipated\" (keyPoints[2].content), so all three outcomes named in the spec are not given together."
+        "specRef": "4.1.1.1",
+        "spec_text": "Throughout this section on Energy students should be able to calculate the changes in energy involved when a system is changed by: heating, work done by forces, work done when a current flows",
+        "why": "No energy-change calculation is taught for heating, work done by forces or work done when a current flows. The only numerical work is the lamp Sankey example and the efficiency checkpoint. The Ek, Ep and Ee equations appear only inside keyTerms definitions and are never applied."
       }
     ],
     "above_gcse": [],
-    "factual_errors": [],
-    "wrong_terms": [],
-    "checkpoint_mismatch": [
+    "factual_errors": [
       {
-        "checkpoint": "3",
-        "key_point": "keyPoints[3]: \"Wasted energy is dissipated to the thermal store of the surroundings, so it is stored in less useful ways\"",
-        "why": "The key point says the dissipated energy \"is stored in less useful ways\", yet the checkpoint marks \"Stored energy\" as wrong. By conservation (keyPoints[2]), the 85 J is also conserved, yet \"Conserved energy\" is marked wrong too. Only \"Dissipated energy\" is the best answer, but the key point's own wording supports two of the distractors. That makes the question ambiguous for a student who has learned the key point."
+        "field": "keyPoints[4].content",
+        "text": "A perfect device would have efficiency = 1.0 (or 100%). In reality it is always less, because some energy is always dissipated.",
+        "correction": "This is true for most devices. But where the intended output is heating the surroundings, as in an electric heater, the 'dissipated' thermal energy is the useful output, so efficiency can be effectively 100%. The lesson should say 'for most devices' or 'almost always'. The same absolute claim appears in revisionCardBullets[7] ('Efficiency is always less than 1.0 (100%). Some energy is always dissipated') and in keyPoints[4].memTip ('It is always less than 1').",
+        "basis": "own knowledge"
       }
     ],
-    "not_checked": [
-      "The list of eight energy stores and four transfer pathways (keyPoints[0], keyPoints[1], tables[0]) could not be checked against the supplied specification text. The supplied sections do not name the stores or the pathways. It is also unclear whether the claim \"Learn the eight stores and four transfer pathways by heart\" (examTip) reflects a specification requirement.",
-      "Sankey diagrams (keyPoints[4]) are not named in the supplied specification sections. Only the 'common scale' redistribution requirement in 4.1.1.1 is present, so the Sankey conventions could not be checked against the spec text.",
-      "The equations in keyPoints[0].keyTerms (Ek = ½mv², Ep = mgh with g = 9.8 N/kg, Ee = ½ke²) belong to specification sections not supplied. Their symbols and wording were checked only against own knowledge (they are correct), not against the spec.",
-      "The exam-frequency claims \"Energy questions appear on every exam paper\" (examTip) and \"Sankey diagrams are a common 2–3 mark question\" (introTips[2]) cannot be checked from the specification text.",
-      "No diagrams were supplied (\"diagrams\": [] and all keyPoints diagram fields are null), so no diagram content was checked."
-    ]
+    "wrong_terms": [
+      {
+        "field": "examTips[0]",
+        "text": "The pathway is mechanically, electrically, by heating or by radiation. This wording earns marks.",
+        "spec_term": "The specification names the ways a system is changed as 'heating', 'work done by forces' and 'work done when a current flows' (4.1.1.1). 'Mechanically' and 'electrically' are not specification terms. 'By radiation' is not among the ways listed in these sections. The claim that this exact wording earns marks is not supported by the specification text."
+      },
+      {
+        "field": "keyPoints[1].memTip",
+        "text": "MEHR: Mechanical, Electrical, Heating, Radiation. These are the four transfer pathways examiners expect.",
+        "spec_term": "'work done by forces', 'work done when a current flows', 'heating' (4.1.1.1). The specification sections list three ways, not four named pathways."
+      },
+      {
+        "field": "checkpoints.1.options[1]",
+        "text": "Mechanically. The friction force between the brakes and wheels does work to slow the car",
+        "spec_term": "'work done by forces' (4.1.1.1)"
+      }
+    ],
+    "checkpoint_mismatch": [],
+    "not_checked": []
   }
 }

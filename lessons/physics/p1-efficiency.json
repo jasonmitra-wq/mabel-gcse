@@ -5,7 +5,7 @@
   "examTip": "Efficiency has no units. It is a ratio between 0 and 1 (or 0–100%). Always check whether the question wants a decimal or a percentage.",
   "introTips": [
     "Most devices waste some energy as heat or sound.",
-    "A higher efficiency number means less energy is wasted.",
+    "A higher efficiency means a smaller proportion of the input energy is wasted.",
     "You can work out efficiency using energy (joules) or power (watts). It is the same formula and the same answer."
   ],
   "intro": "Imagine a petrol car engine gets 100 units of energy from fuel. Only 25 units end up as useful motion. Efficiency tells you how good a device is at turning input energy into something useful. It matters because wasted energy costs money. It also uses up resources faster and adds to climate change. Efficiency is why LED bulbs replaced filament bulbs.",
@@ -42,7 +42,7 @@
     },
     {
       "heading": "Calculating efficiency",
-      "content": "The efficiency equation works with both <strong>energy</strong> (in joules) and <strong>power</strong> (in watts):\n- <strong>efficiency = useful output energy transfer (J) ÷ total input energy transfer (J)</strong>\n- <strong>efficiency = useful power output (W) ÷ total power input (W)</strong>\n\nWorked example 1: a motor gets 500 J of electrical energy. It does 375 J of useful work → efficiency = 375 ÷ 500 = <strong>0.75 (75%)</strong>.\n\nWorked example 2: a lamp has a total power input of 10 W. Its useful power output is 9 W → efficiency = 9 ÷ 10 = <strong>0.9 (90%)</strong>.\n\nWorked example 3: a petrol car engine has an input power of 100 kW. It has a useful power output of 25 kW → efficiency = 25 ÷ 100 = <strong>0.25 (25%)</strong>. The other 75 kW is wasted as thermal energy and sound.\n\nYou can also rearrange it:\n- useful output energy transfer = efficiency × total input energy transfer\n- total input energy transfer = useful output energy transfer ÷ efficiency",
+      "content": "The efficiency equation works with both <strong>energy</strong> (in joules) and <strong>power</strong> (in watts):\n- <strong>efficiency = useful output energy transfer (J) ÷ total input energy transfer (J)</strong>\n- <strong>efficiency = useful power output (W) ÷ total power input (W)</strong>\n\nWorked example 1: a motor gets 500 J of electrical energy. It does 375 J of useful work → efficiency = 375 ÷ 500 = <strong>0.75 (75%)</strong>.\n\nWorked example 2: a lamp has a total power input of 10 W. Its useful power output is 9 W → efficiency = 9 ÷ 10 = <strong>0.9 (90%)</strong>.\n\nWorked example 3: a petrol car engine has a total power input of 100 kW. It has a useful power output of 25 kW → efficiency = 25 ÷ 100 = <strong>0.25 (25%)</strong>. The other 75 kW is wasted as thermal energy and sound.\n\nYou can also rearrange it:\n- useful output energy transfer = efficiency × total input energy transfer\n- total input energy transfer = useful output energy transfer ÷ efficiency",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -68,7 +68,7 @@
     },
     {
       "heading": "Comparing efficiencies of different devices",
-      "content": "You may be asked to compare devices. The question gives you the values you need. Work out the efficiency of each device, then compare them. The device with the higher efficiency wastes less of its input energy.\n- <strong>LED bulbs</strong> are more efficient than <strong>Incandescent (filament) bulbs</strong>. For the same input power, an LED bulb gives out more useful light.\n- <strong>Electric motors</strong> are usually more efficient than <strong>Petrol car engines</strong>. Most of the energy from the fuel is wasted as heat in the engine and exhaust.\n\nWorked example: motor A has a total power input of 200 W and a useful power output of 150 W. Motor B has a total power input of 500 W and a useful power output of 300 W. A = 150 ÷ 200 = 0.75. B = 300 ÷ 500 = 0.60. So motor A is more efficient.",
+      "content": "You may be asked to compare devices. The question gives you the values you need. Work out the efficiency of each device, then compare them. The device with the higher efficiency wastes less of its input energy.\n- <strong>LED bulbs</strong> are more efficient than <strong>Incandescent (filament) bulbs</strong>. For the same total power input, an LED bulb gives out more useful light.\n- <strong>Electric motors</strong> are usually more efficient than <strong>Petrol car engines</strong>. Most of the energy from the fuel is wasted as heat in the engine and exhaust.\n\nWorked example: motor A has a total power input of 200 W and a useful power output of 150 W. Motor B has a total power input of 500 W and a useful power output of 300 W. A = 150 ÷ 200 = 0.75. B = 300 ÷ 500 = 0.60. So motor A is more efficient.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -90,12 +90,12 @@
           "def": "Light Emitting Diode — more efficient than a filament bulb at transferring energy usefully as light"
         }
       ],
-      "memTip": "Compare with the numbers you are given. Higher efficiency = less energy wasted.",
+      "memTip": "Compare with the numbers you are given. Higher efficiency = a smaller proportion of the input energy wasted.",
       "tutor_note": "Comparing devices is a common exam question. Use the values given in the question. Work out each efficiency, then compare."
     },
     {
       "heading": "Improving efficiency",
-      "content": "We can improve efficiency in several ways:\n- <strong>Reducing friction</strong>: oil between moving parts → less kinetic energy wasted as thermal energy.\n- <strong>Better insulation</strong>: less thermal energy lost from hot surfaces to the surroundings. Insulating a boiler is one example.\n- <strong>More efficient components</strong>: LEDs instead of filament bulbs, and electric motors instead of petrol engines.\n\nA more efficient device needs less input energy for the same useful output.",
+      "content": "Describing ways to increase efficiency is Higher Tier content. We can improve efficiency in several ways:\n- <strong>Reducing friction</strong>: oil between moving parts → less kinetic energy wasted as thermal energy.\n- <strong>Better insulation</strong>: less thermal energy lost from hot surfaces to the surroundings. Insulating a boiler is one example.\n- <strong>More efficient components</strong>: LEDs instead of filament bulbs, and electric motors instead of petrol engines.\n\nA more efficient device needs less input energy for the same useful output.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -206,7 +206,7 @@
     "Putting total input on top instead of useful output. Always put USEFUL output on top: efficiency = useful output ÷ total input.",
     "Thinking efficiency can be more than 1 (or 100%). That would break the conservation of energy. Always check your answer is ≤ 1.",
     "Forgetting to convert between decimal and percentage. If a question asks for a percentage, multiply by 100.",
-    "Mixing up power efficiency and energy efficiency. They give the same result. Keep the units the same: both in W, or both in J.",
+    "Mixing up the two ways of working out efficiency. They give the same result. Keep the units the same: both in W, or both in J.",
     "Saying a device 'creates' or 'destroys' energy. It transfers energy. The total input always equals useful output + wasted energy."
   ],
   "examTips": [

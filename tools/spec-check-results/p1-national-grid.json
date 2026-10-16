@@ -1,9 +1,9 @@
 {
   "lesson": "p1-national-grid",
   "source_file": "lessons/physics/p1-national-grid.json",
-  "lesson_md5": "abdef74c63d1b99f75f1ac53c3b6f974",
+  "lesson_md5": "92e3b5869af7c89a29dc42f1e73073a4",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:06:41.134Z",
+  "date": "2026-10-16T19:48:49.721Z",
   "specRefs_sent": [
     "4.1.3",
     "4.2.4.3"
@@ -11,10 +11,10 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7139,
-    "output_tokens": 4880
+    "input_tokens": 7208,
+    "output_tokens": 3384
   },
-  "cost_usd": 0.126156,
+  "cost_usd": 0.096512,
   "status": "OK",
   "result": {
     "lesson": "p1-national-grid",
@@ -22,62 +22,25 @@
       {
         "specRef": "4.1.3",
         "spec_text": "explain patterns and trends in the use of energy resources.",
-        "why": "The lesson states the trends but never explains them. It gives no reasons such as concern about CO₂ and climate change, coal power stations closing, or falling costs of renewables. The only text is: keyPoints[2].content \"Trends: coal use is falling. The use of renewable resources is rising.\" The spec requires students to explain the trends, not just state them."
+        "why": "The lesson only states the trends (keyPoints[2].content: \"Trends: coal use is falling. The use of renewable resources is rising.\"). It does not explain why they are happening, for example concern about CO₂ and climate change, government targets and policy, falling costs of renewables, or the closure of coal power stations. The specification requires students to explain the trends, not just state them."
       },
       {
         "specRef": "4.1.3",
         "spec_text": "compare ways that different energy resources are used, the uses to include transport, electricity generation and heating",
-        "why": "The lesson lists the three uses and gives two examples: keyPoints[2].content \"For example, petrol and diesel fuel cars. Gas heats many homes.\" It never compares how different resources are used across transport, electricity generation and heating. For example, it does not mention bio-fuel in transport, electricity or coal for heating, or the shift from petrol to electric vehicles. Almost all the resource discussion is about electricity generation only."
+        "why": "The lesson lists the three uses and gives brief examples (keyPoints[2].content: \"For example, petrol and diesel fuel cars. Gas heats many homes.\"). Almost all the rest of the lesson, including the table, treats resources only as sources for electricity generation. There is no comparison of how different resources serve transport and heating, for example bio-fuel as a transport fuel, coal or wood for heating, or the Sun for solar water heating."
       }
     ],
     "above_gcse": [],
     "factual_errors": [
       {
-        "field": "keyPoints[2].content",
-        "text": "bio-fuel: made from plant material.",
-        "correction": "Bio-fuels can be made from plant or animal material, for example animal waste or biogas from manure. They are not only made from plants.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "But barrages destroy habitats.",
-        "correction": "This is overstated. Tidal barrages change or damage estuary habitats, for example by altering mudflats used by wading birds. They do not necessarily destroy them. 'Can damage or alter habitats' is accurate.",
+        "field": "tables[0].rows[7][2]",
+        "text": "Low–moderate",
+        "correction": "Burning bio-fuel releases CO₂ at the point of use, in amounts similar to fossil fuels. Its CO₂ is only 'low' on a net basis, if regrowing crops absorb the CO₂ released. The table should make clear that the figure refers to net emissions. Otherwise it contradicts the lesson's own statement that carbon neutrality \"is debated\" and suggests that burning bio-fuel releases little CO₂.",
         "basis": "own knowledge"
       }
     ],
-    "wrong_terms": [
-      {
-        "field": "keyPoints[2].keyTerms[0].term",
-        "text": "renewable energy",
-        "spec_term": "renewable energy resource"
-      },
-      {
-        "field": "keyPoints[2].keyTerms[1].term",
-        "text": "non-renewable energy",
-        "spec_term": "energy resources that are non-renewable"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "Solar PV",
-        "spec_term": "the Sun"
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "for sending it a long way through overhead cables",
-        "spec_term": "transmission cables"
-      },
-      {
-        "field": "checkpoints.2.question",
-        "text": "Why is wind a less reliable energy resource than nuclear fuel?",
-        "spec_term": "nuclear fuel (correct here), but elsewhere the lesson uses \"nuclear\", e.g. keyPoints[2].content \"nuclear: no CO₂ while generating\". This is inconsistent with the spec term \"nuclear fuel\"."
-      }
-    ],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
-    "not_checked": [
-      "The equation P = I²R (written in the lesson as \"P_lost = I²R\", keyPoints[0].content) comes from a specification section not supplied (4.2.4.1 Power). It was checked against own knowledge only. The subscript notation \"P_lost\" could not be checked against spec wording.",
-      "The figures \"around 25,000 V (25 kV)\", \"up to 400,000 V (400 kV)\" and \"230 V\" (keyPoints[0].content) do not appear in the supplied spec sections. They were checked against own knowledge only.",
-      "The UK trend claims (\"coal use is falling. The use of renewable resources is rising\") were checked against general knowledge, not against current data or the spec.",
-      "No diagrams are present (all \"diagram\": null), so there is nothing visual to check."
-    ]
+    "not_checked": []
   }
 }

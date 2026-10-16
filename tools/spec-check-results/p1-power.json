@@ -1,9 +1,9 @@
 {
   "lesson": "p1-power",
   "source_file": "lessons/physics/p1-power.json",
-  "lesson_md5": "c207e5de3687bb3454ff08529f8a65a5",
+  "lesson_md5": "8868ed80ac93f16b5d8b01a531cb42ca",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:05:37.111Z",
+  "date": "2026-10-16T19:47:52.363Z",
   "specRefs_sent": [
     "4.1.1.4",
     "4.5.2"
@@ -11,40 +11,25 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 6672,
-    "output_tokens": 3372
+    "input_tokens": 6298,
+    "output_tokens": 2673
   },
-  "cost_usd": 0.094128,
+  "cost_usd": 0.078652,
   "status": "OK",
   "result": {
     "lesson": "p1-power",
     "missing_spec_content": [],
     "above_gcse": [],
-    "factual_errors": [],
-    "wrong_terms": [
+    "factual_errors": [
       {
-        "field": "keyPoints[3].content",
-        "text": "Worked example: a force of 3000 N moves a car 20 m along the line of the force.",
-        "spec_term": "distance moved along the line of action of the force"
-      },
-      {
-        "field": "checkpoints.3.question",
-        "text": "A force of 50 N pushes a box 4 m along the line of the force.",
-        "spec_term": "distance moved along the line of action of the force"
+        "field": "keyPoints[3].writeBullets[2]",
+        "text": "1 J of work is done when a force of 1 N moves an object 1 m. So 1 J = 1 N m",
+        "correction": "The bullet leaves out the direction. It should say that 1 J of work is done when a force of 1 N causes a displacement of 1 m along the line of action of the force. keyPoints[3].content states this correctly, but the summary bullet does not. The spec says: \"One joule of work is done when a force of one newton causes a displacement of one metre\" and \"distance moved along the line of action of the force\".",
+        "basis": "spec"
       }
     ],
-    "checkpoint_mismatch": [
-      {
-        "checkpoint": "checkpoints.2: \"A hairdryer has a power of 2000 W. A kettle has a power of 2500 W. Which transfers more energy each second?\"",
-        "key_point": "keyPoints[2] \"Power in everyday contexts\": \"Hairdryer: ~2000 W (2 kW). Electric kettle: ~2000–3000 W.\"",
-        "why": "The checkpoint tests the definition of power as energy transferred per second. That definition is taught in keyPoints[0] (\"It is how much energy transfer happens per second\"), not in keyPoints[2]. keyPoints[2] only lists typical values and never states that a higher wattage means more joules per second. So the answer is supported by a different key point from the one the checkpoint sits with."
-      }
-    ],
-    "not_checked": [
-      "The typical power values in keyPoints[2].content, keyPoints[2].writeBullets, tables[0] and revisionCardBullets (for example \"Human body at rest: ~80 W\", \"Walking: ~300 W\", \"Large power station: ~1–2 GW\", \"Small power station ~500 MW ... hundreds of thousands of homes\") are not in the specification sections. I could only check them as broadly plausible orders of magnitude from own knowledge. The cycling figures are also given inconsistently: \"~100–400 W\" in keyPoints[2].content, \"~150 W\" for recreational cycling in tables[0], and \"~150–400 W\" in revisionCardBullets.",
-      "examTips[2] (\"If a question gives you efficiency and power together, find the useful output power. It equals efficiency × input power.\") relates to efficiency, which is not in the specification sections provided. It could not be checked against the given spec text, although it is correct physics.",
-      "The specification's 'Key opportunities for skills development' references (MS 3b, c; MS 1c; WS 4.5) are not defined in the text provided, so I could not check whether the lesson covers the skills they refer to.",
-      "The historical claim in keyPoints[2].content about steam engines in the Industrial Revolution (\"giving out many kilowatts non-stop\") is outside the specification and was checked only loosely against own knowledge."
-    ]
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
+    "not_checked": []
   }
 }

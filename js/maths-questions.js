@@ -62,7 +62,7 @@ const MathsQuestions = (() => {
         grade8: "Multiplier for 35% reduction = 1 − 0.35 = 0.65. £85 × 0.65 = £55.25 in one step.",
       },
       examinerTip: "Students often calculate the discount (£29.75) correctly but give it as the final answer, forgetting to subtract it from the original price.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pct-A02', subtopic: 'num-percentages', band: 'A', marks: 2,
@@ -98,7 +98,7 @@ const MathsQuestions = (() => {
         grade8: "450 × 0.54 = 243. Alternative: 450 × 54/100 = 24300/100 = 243.",
       },
       examinerTip: "Students multiply without converting the percentage to a decimal first, writing 450 × 54 = 24,300.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pct-A03', subtopic: 'num-percentages', band: 'A', marks: 2,
@@ -134,7 +134,7 @@ const MathsQuestions = (() => {
         grade8: "£120 × 1.15 = £138. Alternative: 10% = £12, 5% = £6, total increase = £18, answer = £138.",
       },
       examinerTip: "Students use 0.15 instead of 1.15 as the multiplier, giving £18 (the increase) rather than £138 (the new amount).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // Band B ─────────────────────────────────────────────────
@@ -181,10 +181,10 @@ const MathsQuestions = (() => {
         grade8: "Percentage decrease = (12000 − 9600)/12000 × 100 = 2400/12000 × 100 = 20%.",
       },
       examinerTip: "Students divide by the NEW value (9600) instead of the ORIGINAL value (12000), giving 25% instead of 20%.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'pct-B02', subtopic: 'num-percentages', band: 'B', marks: 3,
+      id: 'pct-B02', subtopic: 'num-percentages', band: 'B', marks: 2,
       question: 'After a 20% pay rise, Emily earns £27,600 per year. What was her original salary?',
       steps: [
         {
@@ -217,10 +217,10 @@ const MathsQuestions = (() => {
         grade8: "Original = 27600/1.20 = £23,000. Reverse percentage: divide by the multiplier, never subtract the percentage from the new amount.",
       },
       examinerTip: "Students subtract 20% from the new salary (£27,600 × 0.80 = £22,080) instead of dividing by 1.20.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'pct-B03', subtopic: 'num-percentages', band: 'B', marks: 3,
+      id: 'pct-B03', subtopic: 'num-percentages', band: 'B', marks: 2,
       question: 'A TV costs £340 after a 15% reduction. What was the original price?',
       steps: [
         {
@@ -253,12 +253,12 @@ const MathsQuestions = (() => {
         grade8: "After 15% reduction, multiplier = 0.85. Reverse: original = 340/0.85 = £400.",
       },
       examinerTip: "Students add 15% to £340 (£340 × 1.15 = £391) instead of dividing by 0.85 to reverse the reduction.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // Band C ─────────────────────────────────────────────────
     {
-      id: 'pct-C01', subtopic: 'num-percentages', band: 'C', marks: 4,
+      id: 'pct-C01', subtopic: 'num-percentages', band: 'C', marks: 2,
       question: 'A savings account pays 3.5% compound interest per year. Jake invests £4,000 for 3 years. How much does he have at the end, to the nearest penny?',
       steps: [
         {
@@ -291,10 +291,10 @@ const MathsQuestions = (() => {
         grade8: "A = P(1 + r)ⁿ = 4000 × 1.035³ = 4000 × 1.10872 ≈ £4,434.90. Formula approach avoids step-by-step rounding errors.",
       },
       examinerTip: "Students add simple interest instead of compounding: 3 × 3.5% = 10.5% of £4000 = £420, total £4420 — not the same as compound interest.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'pct-C02', subtopic: 'num-percentages', band: 'C', marks: 4,
+      id: 'pct-C02', subtopic: 'num-percentages', band: 'C', marks: 2,
       question: 'The population of a town decreased by 4% each year for 2 years. Starting population was 25,000. What is the population after 2 years? Round to the nearest whole number.',
       steps: [
         {
@@ -327,7 +327,7 @@ const MathsQuestions = (() => {
         grade8: "25000 × 0.96² = 23,040. Step check: year 1 = 24,000; year 2 = 24,000 × 0.96 = 23,040.",
       },
       examinerTip: "Students subtract 4% twice as simple interest (25000 − 2000 = 23000 each year) rather than applying 0.96 twice to a reducing base.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
@@ -371,7 +371,7 @@ const MathsQuestions = (() => {
         grade8: "LCD(3,4) = 12. 8/12 + 3/12 = 11/12. HCF(11,12) = 1 so already in simplest form.",
       },
       examinerTip: "Students add numerators and denominators separately: 2/3 + 1/4 = 3/7.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'frc-A02', subtopic: 'num-fractions', band: 'A', marks: 2,
@@ -409,7 +409,7 @@ const MathsQuestions = (() => {
         grade8: "LCD(4,6) = 12. 9/12 − 2/12 = 7/12. HCF(7,12) = 1, already fully simplified.",
       },
       examinerTip: "Students subtract numerators and denominators separately, writing 3/4 − 1/6 = 2/2 = 1.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'frc-A03', subtopic: 'num-fractions', band: 'A', marks: 2,
@@ -447,7 +447,7 @@ const MathsQuestions = (() => {
         grade8: "Cross-cancel before multiplying: HCF(2,4)=2 → 1/5 × 3/2 = 3/10. Faster than multiplying then simplifying.",
       },
       examinerTip: "Students find a common denominator before multiplying (as they would for addition), which is incorrect for multiplication.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // Band B ─────────────────────────────────────────────────
@@ -496,10 +496,10 @@ const MathsQuestions = (() => {
         grade8: "5/3 × 9/4: cross-cancel HCF(9,3)=3 → 5/1 × 3/4 = 15/4 = 3¾.",
       },
       examinerTip: "Students multiply whole-number parts and fraction parts separately (1×2=2, 2/3×1/4=2/12) instead of converting to improper fractions first.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'frc-B02', subtopic: 'num-fractions', band: 'B', marks: 3,
+      id: 'frc-B02', subtopic: 'num-fractions', band: 'B', marks: 2,
       question: 'Work out 3/4 ÷ 3/8. Give your answer as a mixed number where appropriate.',
       steps: [
         {
@@ -536,7 +536,7 @@ const MathsQuestions = (() => {
         grade8: "3/4 ÷ 3/8 = 3/4 × 8/3. Cancel: 3s and 8/4 → 1 × 2 = 2.",
       },
       examinerTip: "Students flip the first fraction instead of the second, writing 4/3 × 3/8 = 1/2.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'frc-B03', subtopic: 'num-fractions', band: 'B', marks: 3,
@@ -584,12 +584,12 @@ const MathsQuestions = (() => {
         grade8: "49/12: 12×4=48, remainder 1. Answer: 4 1/12. Alternative: add whole parts (3) then fractions (1/3+3/4=13/12=1 1/12), total 4 1/12.",
       },
       examinerTip: "Students add whole and fraction parts separately but fail to regroup when the fraction sum exceeds 1, leaving the answer as 3 13/12.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // Band C ─────────────────────────────────────────────────
     {
-      id: 'frc-C01', subtopic: 'num-fractions', band: 'C', marks: 4,
+      id: 'frc-C01', subtopic: 'num-fractions', band: 'C', marks: 3,
       question: 'Show that 1/(2+√3) = 2−√3.',
       steps: [
         {
@@ -633,10 +633,10 @@ const MathsQuestions = (() => {
         grade8: "Rationalise: ×(2−√3)/(2−√3). Denominator = difference of squares = 4−3=1. Numerator = 2−√3. Therefore 1/(2+√3) = 2−√3. □",
       },
       examinerTip: "Students multiply by (2+√3)/(2+√3) instead of the conjugate (2−√3), making the denominator (2+√3)² = 7+4√3, which is harder to simplify.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'frc-C02', subtopic: 'num-fractions', band: 'C', marks: 3,
+      id: 'frc-C02', subtopic: 'num-fractions', band: 'C', marks: 2,
       question: 'Work out 3/(x+1) + 2/(x−2). Give your answer as a single fraction.',
       steps: [
         {
@@ -714,7 +714,7 @@ const MathsQuestions = (() => {
         grade8: "£9 per part. 3:5 → £27:£45. Check: 27+45=72 ✓",
       },
       examinerTip: "Students divide £72 by the larger ratio number (÷5) instead of the total number of parts (÷8).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'rat-A02', subtopic: 'rpr-ratio', band: 'A', marks: 2,
@@ -750,10 +750,10 @@ const MathsQuestions = (() => {
         grade8: "HCF by prime factors: 24=2³×3, 36=2²×3². HCF=12. 24÷12:36÷12 = 2:3.",
       },
       examinerTip: "Students divide by a common factor that is not the HCF (e.g. dividing by 6 to get 4:6) and stop without simplifying further.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'rat-A03', subtopic: 'rpr-ratio', band: 'A', marks: 3,
+      id: 'rat-A03', subtopic: 'rpr-ratio', band: 'A', marks: 2,
       question: 'Orange squash is mixed with water in the ratio 1 : 4. How much water is needed for 350 ml of squash?',
       steps: [
         {
@@ -786,7 +786,7 @@ const MathsQuestions = (() => {
         grade8: "Water = 4×350 = 1400 ml. Total mixture = 5×350 = 1750 ml (not required but useful check).",
       },
       examinerTip: "Students calculate the total mixture (5×350 = 1750 ml) instead of the water only (4×350 = 1400 ml).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // Band B ─────────────────────────────────────────────────
@@ -832,7 +832,7 @@ const MathsQuestions = (() => {
         grade8: "2 parts=£120 → 1 part=£60. Total=8 parts=£480. Jake=5/8×£480=£300. Check: £300−£180=£120 ✓",
       },
       examinerTip: "Students divide £120 by 5+3=8 (total parts) instead of 5−3=2 (difference), giving £15 per part and wrong answers.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'rat-B02', subtopic: 'rpr-ratio', band: 'B', marks: 3,
@@ -876,10 +876,10 @@ const MathsQuestions = (() => {
         grade8: "SF=2.5. Flour=750g, sugar=450g. Also: eggs=2×2.5=5 eggs (not asked, but same method).",
       },
       examinerTip: "Students use an additive scale factor (10−4=6 extra people) rather than a multiplicative one (10÷4=2.5), giving wrong quantities.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'rat-B03', subtopic: 'rpr-ratio', band: 'B', marks: 3,
+      id: 'rat-B03', subtopic: 'rpr-ratio', band: 'B', marks: 2,
       question: 'y is directly proportional to x. When x = 4, y = 10. Find y when x = 7.',
       steps: [
         {
@@ -912,12 +912,12 @@ const MathsQuestions = (() => {
         grade8: "y = kx where k = y/x = 10/4 = 2.5. y(7) = 17.5. Ratio method: y₂ = y₁×(x₂/x₁) = 10×(7/4) = 17.5.",
       },
       examinerTip: "Students find the additive difference (10−4=6) and try to apply it proportionally rather than finding the constant of proportionality k.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // Band C ─────────────────────────────────────────────────
     {
-      id: 'rat-C01', subtopic: 'rpr-ratio', band: 'C', marks: 4,
+      id: 'rat-C01', subtopic: 'rpr-ratio', band: 'C', marks: 2,
       question: 'y is inversely proportional to x. When x = 5, y = 4. Find y when x = 8.',
       steps: [
         {
@@ -950,10 +950,10 @@ const MathsQuestions = (() => {
         grade8: "y = 20/x. y(8) = 2.5. Note: doubling x from 4 to 8 halves y from 4 to 2 — hallmark of inverse proportion.",
       },
       examinerTip: "Students treat it as direct proportion (y = kx), finding k = 0.8 and y = 0.8×8 = 6.4 instead of 2.5.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'rat-C02', subtopic: 'rpr-ratio', band: 'C', marks: 4,
+      id: 'rat-C02', subtopic: 'rpr-ratio', band: 'C', marks: 2,
       question: 'p is proportional to q². When p = 75, q = 5. Find p when q = 8.',
       steps: [
         {
@@ -986,7 +986,7 @@ const MathsQuestions = (() => {
         grade8: "p = 3q². p(8) = 192. Check: if q doubles (5→10), p quadruples (75→300) since (10/5)²=4.",
       },
       examinerTip: "Students forget to square q before finding k, writing k = 75÷5 = 15, then p = 15×8 = 120.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },    {
       id: 'rat-A04',
       subtopic: 'rpr-ratio',
@@ -1029,7 +1029,7 @@ const MathsQuestions = (() => {
         grade8: 'Ratio 1:3 gives 4 parts. Each part = £96 ÷ 4 = £24. The two shares are £24 and £72, which sum to £96 ✓'
       },
       examinerTip: 'Always check your answers add back to the original total.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'rat-A05',
@@ -1073,7 +1073,7 @@ const MathsQuestions = (() => {
         grade8: 'The HCF of 45 and 60 is 15. Dividing both parts by 15 gives 3:4, which cannot be simplified further as 3 and 4 share no common factors other than 1.'
       },
       examinerTip: 'Divide both numbers by their HCF — not just any common factor.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'rat-B04',
@@ -1128,7 +1128,7 @@ const MathsQuestions = (() => {
         grade8: 'The ratio 2:5 has a difference of 3 parts. Since this difference equals £84, one part = £28. Amy receives 2 × £28 = £56 and Ben receives 5 × £28 = £140. Check: £140 − £56 = £84 ✓'
       },
       examinerTip: 'Use the difference in parts to find the value of one part, then scale up.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'rat-B05',
@@ -1182,7 +1182,7 @@ const MathsQuestions = (() => {
         grade8: 'Scale 1:50 000 means map distance × 50 000 = real distance. 7 × 50 000 = 350 000 cm. Converting: ÷100 gives 3500 m; ÷1000 gives 3.5 km.'
       },
       examinerTip: 'Convert units step by step — cm to m (÷100), then m to km (÷1000).',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'rat-B06',
@@ -1238,7 +1238,7 @@ const MathsQuestions = (() => {
         grade8: 'Ratio 3:2 with 18 litres of red: scale factor = 18/3 = 6. Yellow required = 6 × 2 = 12 litres. Maximum orange paint = 18 + 12 = 30 litres. Check: 30 ÷ 5 = 6 per part, so 18:12 = 3:2 ✓'
       },
       examinerTip: 'Find the scale factor first by dividing the given quantity by its ratio share.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'rat-C03',
@@ -1307,7 +1307,7 @@ const MathsQuestions = (() => {
         grade8: 'y = kx². Substituting x=3, y=36: 36 = 9k → k = 4. Equation: y = 4x². At x=5: y = 4 × 25 = 100. The relationship scales with the square, so doubling x quadruples y.'
       },
       examinerTip: 'Always find k first using the given pair of values, then use k in the equation.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'rat-C04',
@@ -1373,7 +1373,7 @@ const MathsQuestions = (() => {
         grade8: 'Total ratio parts = 10. Zinc fraction = 3/10. Total mass = 105 × (10/3) = 350 g. Copper: 5/10 × 350 = 175 g. Tin: 2/10 × 350 = 70 g. Check: 175 + 105 + 70 = 350 g ✓'
       },
       examinerTip: 'To find total from one component, divide the component by its fraction of the whole.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
 
 
@@ -1417,7 +1417,7 @@ const MathsQuestions = (() => {
         grade8: "4,750,000: place decimal after first non-zero digit → 4.75. Count 6 places left → 4.75 × 10⁶.",
       },
       examinerTip: "Students write 47.5 × 10⁵ instead of adjusting the coefficient to be strictly between 1 and 10.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stf-A02', subtopic: 'num-standard-form', band: 'A', marks: 2,
@@ -1454,10 +1454,10 @@ const MathsQuestions = (() => {
         grade8: "0.000085: first sig fig is 8. Move decimal 5 places right → 8.5 × 10⁻⁵. Numbers less than 1 always have negative powers.",
       },
       examinerTip: "Students write a positive power (8.5 × 10⁵) for a small number, not recognising that numbers less than 1 require a negative power.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'stf-A03', subtopic: 'num-standard-form', band: 'A', marks: 2,
+      id: 'stf-A03', subtopic: 'num-standard-form', band: 'A', marks: 1,
       question: 'Write 5.6 × 10⁴ as an ordinary number.',
       steps: [
         {
@@ -1482,7 +1482,7 @@ const MathsQuestions = (() => {
         grade8: "5.6 × 10⁴: positive power means multiply by 10,000. 5.6 × 10,000 = 56,000.",
       },
       examinerTip: "Students move the decimal in the wrong direction, writing 0.00056 instead of 56,000.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // Band B ─────────────────────────────────────────────────
@@ -1530,7 +1530,7 @@ const MathsQuestions = (() => {
         grade8: "3.2 × 4 = 12.8, 10⁵ × 10³ = 10⁸. Adjust: 12.8 × 10⁸ → 1.28 × 10¹ × 10⁸ = 1.28 × 10⁹.",
       },
       examinerTip: "Students correctly get 12.8 × 10⁸ but leave it in this non-standard form instead of adjusting the coefficient below 10.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stf-B02', subtopic: 'num-standard-form', band: 'B', marks: 3,
@@ -1576,7 +1576,7 @@ const MathsQuestions = (() => {
         grade8: "9.6/3.2 = 3; 10^(7−4) = 10³. Answer: 3 × 10³. Already in standard form (coefficient is exactly 3).",
       },
       examinerTip: "Students add the powers instead of subtracting when dividing, giving 10¹¹ instead of 10³.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stf-B03', subtopic: 'num-standard-form', band: 'B', marks: 3,
@@ -1621,12 +1621,12 @@ const MathsQuestions = (() => {
         grade8: "(1.5/3) × 10^(8−5) = 0.5 × 10³. Adjust: 5 × 10² = 500 s. Always check the coefficient is between 1 and 10 after dividing.",
       },
       examinerTip: "Students get 0.5 × 10³ but do not adjust to standard form, or divide powers rather than subtracting exponents.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // Band C ─────────────────────────────────────────────────
     {
-      id: 'stf-C01', subtopic: 'num-standard-form', band: 'C', marks: 4,
+      id: 'stf-C01', subtopic: 'num-standard-form', band: 'C', marks: 2,
       question: 'Work out (5 × 10³) + (8 × 10²). Give your answer in standard form.',
       steps: [
         {
@@ -1661,10 +1661,10 @@ const MathsQuestions = (() => {
         grade8: "5000+800=5800=5.8×10³. For addition in standard form, always convert to ordinary numbers first — you cannot add coefficients directly.",
       },
       examinerTip: "Students try to add coefficients directly: (5+8)×10^(something), which is meaningless when powers differ.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'stf-C02', subtopic: 'num-standard-form', band: 'C', marks: 4,
+      id: 'stf-C02', subtopic: 'num-standard-form', band: 'C', marks: 3,
       question: 'A red blood cell has a diameter of 8 × 10⁻³ mm. A human hair has a diameter of 7 × 10⁻² mm. How many times thicker is the hair than the blood cell?',
       steps: [
         {
@@ -1706,7 +1706,7 @@ const MathsQuestions = (() => {
         grade8: "(7/8) × 10^(−2−(−3)) = 0.875 × 10¹ = 8.75. The hair is 8.75 times thicker than a red blood cell.",
       },
       examinerTip: "Students subtract powers incorrectly: 10^(−2 − (−3)) = 10^(−5) instead of 10^(−2+3)=10¹, forgetting that subtracting a negative gives a positive.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
@@ -1748,7 +1748,7 @@ const MathsQuestions = (() => {
         grade8: "3x+7=22 → 3x=15 → x=5. Check: 3(5)+7=22 ✓",
       },
       examinerTip: "Students divide both sides by 3 before subtracting 7, giving x+7/3=22/3 — incorrect order of inverse operations.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'eq-A02', subtopic: 'alg-equations', band: 'A', marks: 3,
@@ -1795,7 +1795,7 @@ const MathsQuestions = (() => {
         grade8: "2(3x−4)=16: divide both sides by 2 first → 3x−4=8 → x=4. Or expand: 6x−8=16 → x=4.",
       },
       examinerTip: "Students only multiply the first term inside the bracket by 2: writing 6x−4=16 instead of 6x−8=16.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'eq-A03', subtopic: 'alg-equations', band: 'A', marks: 3,
@@ -1841,7 +1841,7 @@ const MathsQuestions = (() => {
         grade8: "5x−3=2x+9 → 3x=12 → x=4. Check: 5(4)−3=17; 2(4)+9=17 ✓",
       },
       examinerTip: "Students move the constant to the wrong side, writing 3x = 9−3 = 6, giving x=2 instead of x=4.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // Band B ─────────────────────────────────────────────────
@@ -1890,7 +1890,7 @@ const MathsQuestions = (() => {
         grade8: "×12: 3(x+3)=2(2x−1) → 3x+9=4x−2 → 9+2=x → x=11. Check: (14)/4=3.5 and (21)/6=3.5 ✓",
       },
       examinerTip: "Students multiply by 4 and 6 separately without clearing both fractions in one step, or forget to multiply the whole numerator expressions.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'eq-B02', subtopic: 'alg-equations', band: 'B', marks: 3,
@@ -1937,10 +1937,10 @@ const MathsQuestions = (() => {
         grade8: "6x+15=8x−2 → 17=2x → x=8.5 (or 17/2).",
       },
       examinerTip: "Students make a sign error expanding 2(4x−1) as 8x+2 instead of 8x−2.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'eq-B03', subtopic: 'alg-equations', band: 'B', marks: 4,
+      id: 'eq-B03', subtopic: 'alg-equations', band: 'B', marks: 3,
       question: 'The perimeter of a rectangle is 46 cm. The length is (2x + 3) cm and the width is (x − 1) cm. Find the value of x and the dimensions.',
       steps: [
         {
@@ -1982,12 +1982,12 @@ const MathsQuestions = (() => {
         grade8: "P=2(l+w)=46 → l+w=23. (2x+3)+(x−1)=23 → 3x+2=23 → x=7. Length=17cm, width=6cm. Check: 2(17+6)=46 ✓",
       },
       examinerTip: "Students write P=l+w=46 (omitting the factor of 2), giving 3x+2=46, x=44/3 — a non-integer which should signal an error.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // Band C ─────────────────────────────────────────────────
     {
-      id: 'eq-C01', subtopic: 'alg-equations', band: 'C', marks: 4,
+      id: 'eq-C01', subtopic: 'alg-equations', band: 'C', marks: 3,
       question: 'Solve the simultaneous equations: 3x + 2y = 16 and x − y = 2.',
       steps: [
         {
@@ -2030,10 +2030,10 @@ const MathsQuestions = (() => {
         grade8: "x=y+2 → 3(y+2)+2y=16 → 5y=10 → y=2, x=4. Check: 3(4)+2(2)=16 ✓; 4−2=2 ✓",
       },
       examinerTip: "Students substitute incorrectly, merging the expression into the equation: 3(y+2+2y)=16 instead of 3(y+2)+2y=16.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'eq-C02', subtopic: 'alg-equations', band: 'C', marks: 4,
+      id: 'eq-C02', subtopic: 'alg-equations', band: 'C', marks: 3,
       question: 'Solve x² + 3x − 10 = 0.',
       steps: [
         {
@@ -2077,7 +2077,7 @@ const MathsQuestions = (() => {
         grade8: "(x+5)(x−2)=0 → x=−5 or x=2. Alternative: quadratic formula gives x=(−3±7)/2 → x=2 or −5.",
       },
       examinerTip: "Students find the correct numbers (5 and −2) but write (x−5)(x+2)=0, reversing the signs and giving x=5 or x=−2.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
@@ -2086,7 +2086,7 @@ const MathsQuestions = (() => {
 
     // Band A ─────────────────────────────────────────────────
     {
-      id: 'sub-A01', subtopic: 'alg-expressions', band: 'A', marks: 2,
+      id: 'sub-A01', subtopic: 'alg-expressions', band: 'A', marks: 1,
       question: 'The formula for the area of a triangle is A = ½bh. Find A when b = 12 and h = 7.',
       steps: [
         {
@@ -2110,10 +2110,10 @@ const MathsQuestions = (() => {
         grade8: "A = ½bh = ½(12)(7) = 42. Units: 42 cm² if dimensions in cm.",
       },
       examinerTip: "Students forget the ½ and calculate 12 × 7 = 84.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'sub-A02', subtopic: 'alg-expressions', band: 'A', marks: 2,
+      id: 'sub-A02', subtopic: 'alg-expressions', band: 'A', marks: 1,
       question: 'Use the formula v = u + at. Find v when u = 5, a = 3 and t = 4.',
       steps: [
         {
@@ -2137,10 +2137,10 @@ const MathsQuestions = (() => {
         grade8: "v = u + at = 5 + (3)(4) = 17. BODMAS: multiplication before addition is essential here.",
       },
       examinerTip: "Students add u and a before multiplying by t: (5+3) × 4 = 32 — a BODMAS error.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'sub-A03', subtopic: 'alg-expressions', band: 'A', marks: 2,
+      id: 'sub-A03', subtopic: 'alg-expressions', band: 'A', marks: 1,
       question: 'The formula for the volume of a cuboid is V = lwh. Find V when l = 5, w = 4, h = 3.',
       steps: [
         {
@@ -2164,7 +2164,7 @@ const MathsQuestions = (() => {
         grade8: "V = lwh = 5 × 4 × 3 = 60 cm³. Multiplication is commutative so order does not matter.",
       },
       examinerTip: "Students confuse V = lwh with a surface area formula, or square one dimension accidentally.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // Band B ─────────────────────────────────────────────────
@@ -2211,10 +2211,10 @@ const MathsQuestions = (() => {
         grade8: "s = ut + ½at² = 12 + ½(−10)(9) = 12 − 45 = −33 m. Negative means below the starting point.",
       },
       examinerTip: "Students omit the ½: writing at² = −10×9 = −90, giving s = 12−90 = −78 m.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'sub-B02', subtopic: 'alg-expressions', band: 'B', marks: 3,
+      id: 'sub-B02', subtopic: 'alg-expressions', band: 'B', marks: 1,
       question: 'Make u the subject of v = u + at.',
       steps: [
         {
@@ -2243,7 +2243,7 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },
     {
-      id: 'sub-B03', subtopic: 'alg-expressions', band: 'B', marks: 3,
+      id: 'sub-B03', subtopic: 'alg-expressions', band: 'B', marks: 2,
       question: 'Make r the subject of A = πr².',
       steps: [
         {
@@ -2284,7 +2284,7 @@ const MathsQuestions = (() => {
 
     // Band C ─────────────────────────────────────────────────
     {
-      id: 'sub-C01', subtopic: 'alg-expressions', band: 'C', marks: 4,
+      id: 'sub-C01', subtopic: 'alg-expressions', band: 'C', marks: 3,
       question: 'Make x the subject of y = (3x + 2)/(x − 4).',
       steps: [
         {
@@ -2332,7 +2332,7 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },
     {
-      id: 'sub-C02', subtopic: 'alg-expressions', band: 'C', marks: 4,
+      id: 'sub-C02', subtopic: 'alg-expressions', band: 'C', marks: 3,
       question: 'Use the quadratic formula to solve 2x² − 5x − 3 = 0. Give answers to 2 d.p.',
       steps: [
         {
@@ -2375,14 +2375,14 @@ const MathsQuestions = (() => {
         grade8: "b²−4ac = 49. x=(5±7)/4 → x=3 or x=−½. Alternative: factorise as (2x+1)(x−3)=0 → same solutions.",
       },
       examinerTip: "Students use b=5 instead of b=−5 in the formula, giving x=(−5±7)/4 → x=0.5 or x=−3 instead of x=3 or x=−0.5.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
     // INTEGERS, DECIMALS & ROUNDING (num-integers)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'int-A01', subtopic: 'num-integers', band: 'A', marks: 2,
+      id: 'int-A01', subtopic: 'num-integers', band: 'A', marks: 1,
       question: 'Round 47,382 to the nearest thousand.',
       steps: [
         {
@@ -2404,7 +2404,7 @@ const MathsQuestions = (() => {
         grade8: "47,382: to nearest thousand, look at hundreds digit (3). 3 < 5 → round down. 47,000.",
       },
       examinerTip: "Students look at the tens digit (8) rather than the hundreds digit (3), rounding up to 48,000.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'int-A02', subtopic: 'num-integers', band: 'A', marks: 2,
@@ -2438,10 +2438,10 @@ const MathsQuestions = (() => {
         grade8: "0.04763: leading zeros are not significant. 1st sf=4, 2nd sf=7. Third sf=6≥5 → round up: 0.048.",
       },
       examinerTip: "Students count leading zeros as significant figures, rounding at the wrong digit entirely.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'int-A03', subtopic: 'num-integers', band: 'A', marks: 2,
+      id: 'int-A03', subtopic: 'num-integers', band: 'A', marks: 1,
       question: 'Write these numbers in order, smallest first: 0.34, 0.304, 0.043, 0.43',
       steps: [
         {
@@ -2506,14 +2506,14 @@ const MathsQuestions = (() => {
         grade8: "UB(A)=3.75, UB(B)=12.5. Max(A×B) = 3.75 × 12.5 = 46.875. Rule: max product uses both upper bounds.",
       },
       examinerTip: "Students use the lower bound for both values, or upper bound for only one, not recognising that maximum product requires both upper bounds.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
     // POWERS, ROOTS & INDICES (num-powers-roots)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'pow-A01', subtopic: 'num-powers-roots', band: 'A', marks: 2,
+      id: 'pow-A01', subtopic: 'num-powers-roots', band: 'A', marks: 1,
       question: 'Work out 2⁵ × 2³, giving your answer as a power of 2.',
       steps: [
         {
@@ -2536,7 +2536,7 @@ const MathsQuestions = (() => {
         grade8: "aᵐ × aⁿ = aᵐ⁺ⁿ. 2⁵ × 2³ = 2⁸ = 256.",
       },
       examinerTip: "Students multiply the indices instead of adding: 2⁵ × 2³ = 2¹⁵.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pow-A02', subtopic: 'num-powers-roots', band: 'A', marks: 2,
@@ -2569,10 +2569,10 @@ const MathsQuestions = (() => {
         grade8: "12² = 144 so √144 = 12. 3³ = 27 so ∛27 = 3. Total = 15.",
       },
       examinerTip: "Students confuse √ and ∛, evaluating √27 ≈ 5.2 instead of ∛27 = 3.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'pow-A03', subtopic: 'num-powers-roots', band: 'A', marks: 2,
+      id: 'pow-A03', subtopic: 'num-powers-roots', band: 'A', marks: 1,
       question: 'Simplify (3²)⁴.',
       steps: [
         {
@@ -2595,10 +2595,10 @@ const MathsQuestions = (() => {
         grade8: "(aᵐ)ⁿ = aᵐⁿ. (3²)⁴ = 3⁸ = 6561.",
       },
       examinerTip: "Students add the indices instead of multiplying: (3²)⁴ = 3^(2+4) = 3⁶.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'pow-B01', subtopic: 'num-powers-roots', band: 'B', marks: 3,
+      id: 'pow-B01', subtopic: 'num-powers-roots', band: 'B', marks: 2,
       question: 'Write 16^(3/4) as an integer.',
       steps: [
         {
@@ -2628,7 +2628,7 @@ const MathsQuestions = (() => {
         grade8: "16^(3/4) = (⁴√16)³ = 2³ = 8. Alternative: 16^(3/4) = (16^(1/4))³ = 2³ = 8.",
       },
       examinerTip: "Students evaluate 16³=4096 first, then struggle to find the fourth root, rather than taking the fourth root (giving 2) first.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
@@ -2666,7 +2666,7 @@ const MathsQuestions = (() => {
         grade8: "Precision = 0.1 cm; half = 0.05. 8.35 ≤ l < 8.45. Upper bound is strict (<): 8.45 would round to 8.5, not 8.4.",
       },
       examinerTip: "Students write 8.35 ≤ l ≤ 8.45 with ≤ at the upper bound, not recognising that the upper bound is strict (< not ≤).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'bnd-B01', subtopic: 'num-bounds', band: 'B', marks: 3,
@@ -2707,10 +2707,10 @@ const MathsQuestions = (() => {
         grade8: "LB(p−q) = LB(p) − UB(q) = 7.25 − 2.15 = 5.10. Rule: to minimise a difference, use minimum p and maximum q.",
       },
       examinerTip: "Students use LB(p) − LB(q) = 7.25 − 2.05 = 5.20, not realising that minimising a difference requires maximising the quantity being subtracted.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'bnd-C01', subtopic: 'num-bounds', band: 'C', marks: 4,
+      id: 'bnd-C01', subtopic: 'num-bounds', band: 'C', marks: 3,
       question: 'd = 240 m (3 s.f.), t = 12.4 s (3 s.f.). Find the upper bound of speed = d/t.',
       steps: [
         {
@@ -2748,7 +2748,7 @@ const MathsQuestions = (() => {
         grade8: "UB(d) = 240.5 m (±0.5), LB(t) = 12.35 s (±0.05). UB(speed) = 240.5/12.35 ≈ 19.47 m/s.",
       },
       examinerTip: "Students use max d and max t (both upper bounds) instead of max d and min t, reversing the logic for maximising a quotient.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
@@ -2785,7 +2785,7 @@ const MathsQuestions = (() => {
         grade8: "3 parts=24 → 1 part=8. Blue=5×8=40. Check: red:blue = 24:40 = 3:5 ✓",
       },
       examinerTip: "Students find 1 part (8) and multiply by 3 again instead of by 5, giving 24 blue counters.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'nrt-A02', subtopic: 'num-ratio', band: 'A', marks: 2,
@@ -2819,7 +2819,7 @@ const MathsQuestions = (() => {
         grade8: "HCF=15. 3:4. Alternative: 45:60 → 9:12 (÷5) → 3:4 (÷3). Always verify HCF gives the simplest form.",
       },
       examinerTip: "Students divide by a factor that is not the HCF (e.g. ÷5 gives 9:12) and stop without checking if further simplification is possible.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'nrt-B01', subtopic: 'num-ratio', band: 'B', marks: 3,
@@ -2860,7 +2860,7 @@ const MathsQuestions = (() => {
         grade8: "Scale: 1 part=70g. Sugar=140g. Total = 7 parts = 7×70 = 490 g.",
       },
       examinerTip: "Students calculate sugar as 350÷2=175 g instead of finding 1 part first (70 g) then multiplying by 2.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
@@ -2900,10 +2900,10 @@ const MathsQuestions = (() => {
         grade8: "3x+5>14 → 3x>9 → x>3. The inequality sign is preserved when dividing by a positive number.",
       },
       examinerTip: "Students solve correctly but write x=3 (an equation) rather than x>3, losing the inequality sign in the final answer.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'ineq-A02', subtopic: 'alg-inequalities', band: 'A', marks: 2,
+      id: 'ineq-A02', subtopic: 'alg-inequalities', band: 'A', marks: 1,
       question: 'Write down all the integers that satisfy −3 < x ≤ 2.',
       steps: [
         {
@@ -2973,7 +2973,7 @@ const MathsQuestions = (() => {
         grade8: "6x−2≤4x+6 → 2x≤8 → x≤4. Dividing by positive 2 preserves the ≤ direction.",
       },
       examinerTip: "Students expand the bracket as 6x−1≤4x+6 (multiplying only 3x by 2 and not −1), then solve incorrectly.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
@@ -3011,7 +3011,7 @@ const MathsQuestions = (() => {
         grade8: "d=3, first term=5. nth term = 5+3(n−1) = 3n+2. Check: n=2 → 8 ✓; n=3 → 11 ✓.",
       },
       examinerTip: "Students write 3n+5 by using the first term as the constant instead of adjusting: 3(1)=3, need 5, so constant = 5−3 = 2 (not 5).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-A02', subtopic: 'alg-sequences', band: 'A', marks: 2,
@@ -3045,10 +3045,10 @@ const MathsQuestions = (() => {
         grade8: "T₁₀=48. 5n−2=73 → n=15 (positive integer) → 73 is the 15th term. If n were fractional or negative, 73 would not be a term.",
       },
       examinerTip: "Students check if 73 is in the sequence by substituting trial values of n instead of solving 5n−2=73 algebraically.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'seq-B01', subtopic: 'alg-sequences', band: 'B', marks: 3,
+      id: 'seq-B01', subtopic: 'alg-sequences', band: 'B', marks: 2,
       question: 'A geometric sequence starts 3, 6, 12, 24, ... Find the 8th term.',
       steps: [
         {
@@ -3078,14 +3078,14 @@ const MathsQuestions = (() => {
         grade8: "aₙ = ar^(n−1) = 3 × 2⁷ = 384. Exponent is n−1=7, not n=8.",
       },
       examinerTip: "Students use the formula aₙ = ar^n instead of ar^(n−1), giving 3 × 2⁸ = 768 for the 8th term.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
     // GRAPHS (alg-graphs)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'gph-A01', subtopic: 'alg-graphs', band: 'A', marks: 3,
+      id: 'gph-A01', subtopic: 'alg-graphs', band: 'A', marks: 2,
       question: 'A straight line has equation y = 3x − 2. State the gradient and y-intercept.',
       steps: [
         {
@@ -3115,10 +3115,10 @@ const MathsQuestions = (() => {
         grade8: "y = 3x − 2: m=3, c=−2. Line crosses y-axis at (0,−2) and has slope 3 (rises 3 for every 1 across).",
       },
       examinerTip: "Students swap gradient and y-intercept, especially when the sign is negative — stating gradient = −2 and y-intercept = 3.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'gph-A02', subtopic: 'alg-graphs', band: 'A', marks: 3,
+      id: 'gph-A02', subtopic: 'alg-graphs', band: 'A', marks: 2,
       question: 'Find the equation of the line through (0, 3) with gradient 2.',
       steps: [
         {
@@ -3150,10 +3150,10 @@ const MathsQuestions = (() => {
         grade8: "y-intercept = 3, gradient = 2. Equation: y = 2x + 3. Check: y(0) = 3 ✓",
       },
       examinerTip: "Students swap gradient and y-intercept, writing y = 3x + 2 instead of y = 2x + 3.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'gph-B01', subtopic: 'alg-graphs', band: 'B', marks: 4,
+      id: 'gph-B01', subtopic: 'alg-graphs', band: 'B', marks: 2,
       question: 'Find the equation of the line passing through (2, 7) and (5, 13).',
       steps: [
         {
@@ -3184,14 +3184,14 @@ const MathsQuestions = (() => {
         grade8: "m=2. y=2x+c. Sub (2,7): c=3. Equation: y=2x+3. Verify (5,13): 2(5)+3=13 ✓",
       },
       examinerTip: "Students calculate the gradient correctly (m=2) but then divide m by y to find c, writing c = 2/7 instead of substituting a point.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
     // SIMULTANEOUS EQUATIONS (alg-simultaneous)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'sim-A01', subtopic: 'alg-simultaneous', band: 'A', marks: 4,
+      id: 'sim-A01', subtopic: 'alg-simultaneous', band: 'A', marks: 2,
       question: 'Solve: 2x + y = 7 and x + y = 4.',
       steps: [
         {
@@ -3221,10 +3221,10 @@ const MathsQuestions = (() => {
         grade8: "(2x+y)−(x+y)=7−4 → x=3. Then y=4−3=1. Check: 2(3)+1=7 ✓",
       },
       examinerTip: "Students add the equations instead of subtracting, getting 3x+2y=11 and solving incorrectly.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'sim-A02', subtopic: 'alg-simultaneous', band: 'A', marks: 4,
+      id: 'sim-A02', subtopic: 'alg-simultaneous', band: 'A', marks: 2,
       question: 'Solve: 3x + 2y = 16 and 3x − y = 7.',
       steps: [
         {
@@ -3255,10 +3255,10 @@ const MathsQuestions = (() => {
         grade8: "Subtract: 3y=9 → y=3. 3x=10 → x=10/3. Check: 3(10/3)+2(3)=10+6=16 ✓",
       },
       examinerTip: "Students subtract 2y−(−y) = y instead of 3y, mishandling the subtraction of a negative coefficient.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'sim-B01', subtopic: 'alg-simultaneous', band: 'B', marks: 4,
+      id: 'sim-B01', subtopic: 'alg-simultaneous', band: 'B', marks: 3,
       question: 'Solve: 4x + 3y = 25 and 2x − y = 5.',
       steps: [
         {
@@ -3298,7 +3298,7 @@ const MathsQuestions = (() => {
         grade8: "Multiply eq2×3: 6x−3y=15. Add: 10x=40 → x=4. Back-sub: y=3. Check: 4(4)+3(3)=25 ✓",
       },
       examinerTip: "Students correctly multiply to make coefficients equal but then subtract equations instead of adding (or vice versa), failing to eliminate the variable.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
@@ -3335,7 +3335,7 @@ const MathsQuestions = (() => {
         grade8: "Substitute directly: f(5)=11, f(−2)=−10. Negative inputs give negative results when the function has a positive coefficient.",
       },
       examinerTip: "Students calculate f(−2) as 3−2−4=−3, treating the negative sign as subtraction rather than as part of the input −2.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'fn-B01', subtopic: 'alg-functions', band: 'B', marks: 3,
@@ -3376,10 +3376,10 @@ const MathsQuestions = (() => {
         grade8: "fg(3) = f(g(3)) = f(9) = 19. gf(3) = g(f(3)) = g(7) = 49. Composition is not commutative: fg ≠ gf.",
       },
       examinerTip: "Students apply f and g in the wrong order, confusing fg (apply g first, then f) with gf (apply f first, then g).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'fn-C01', subtopic: 'alg-functions', band: 'C', marks: 3,
+      id: 'fn-C01', subtopic: 'alg-functions', band: 'C', marks: 2,
       question: 'f(x) = (x + 3)/2. Find f⁻¹(x).',
       steps: [
         {
@@ -3455,7 +3455,7 @@ const MathsQuestions = (() => {
         grade8: "4x − 9 = 15 → 4x = 24 → x = 6. Check: 4(6) − 9 = 15. ✓",
       },
       examinerTip: "Always check by substituting back: 4(6) − 9 = 24 − 9 = 15. ✓",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── eq-A05 ───────────────────────────────────────────────
     {
@@ -3492,7 +3492,7 @@ const MathsQuestions = (() => {
         grade8: "7 − 2x = 1 → 2x = 6 → x = 3. (Subtract 1, subtract 2x.) Check: 7 − 6 = 1. ✓",
       },
       examinerTip: "When dividing by a negative, the sign of the answer changes. −6 ÷ −2 = +3, not −3.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── eq-B04 ───────────────────────────────────────────────
     {
@@ -3538,7 +3538,7 @@ const MathsQuestions = (() => {
         grade8: "(2x+5)/3=7 → 2x+5=21 → 2x=16 → x=8. Check: (16+5)/3=21/3=7. ✓",
       },
       examinerTip: "Multiply both sides by the denominator first to clear the fraction. Deal with the bracket contents afterwards.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── eq-B05 ───────────────────────────────────────────────
     {
@@ -3584,7 +3584,7 @@ const MathsQuestions = (() => {
         grade8: "5x−10=3x+12 → 2x=22 → x=11. Check: 5(9)=45, 3(15)=45. ✓",
       },
       examinerTip: "Expand all brackets before collecting terms. A common error is writing 5x − 2 instead of 5x − 10.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── eq-B06 ───────────────────────────────────────────────
     {
@@ -3632,7 +3632,7 @@ const MathsQuestions = (() => {
         grade8: "LCD=4. 3x+2x=20 → 5x=20 → x=4. Check: 3/4+2/4=5/4×4=5. ✓",
       },
       examinerTip: "Multiply every term (including the right side) by the LCD. A common error is multiplying only the fraction terms.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── eq-C03 ───────────────────────────────────────────────
     {
@@ -3690,7 +3690,7 @@ const MathsQuestions = (() => {
         grade8: "3(x+3)=2(x−1) → 3x+9=2x−2 → x=−11. Check: 3/−12=2/−8=−1/4 ✓.",
       },
       examinerTip: "Cross-multiply by writing a/b=c/d → ad=bc. Expand both sides carefully before collecting terms.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── eq-C04 ───────────────────────────────────────────────
     {
@@ -3744,7 +3744,7 @@ const MathsQuestions = (() => {
         grade8: "x²+3x−28=0 → (x+7)(x−4)=0 → x=4 (x=−7 rejected). 8 cm × 3 cm.",
       },
       examinerTip: "Always reject negative solutions for physical lengths. After finding x, find both dimensions and verify their product equals the given area.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── sub-A04 ──────────────────────────────────────────────
@@ -3782,7 +3782,7 @@ const MathsQuestions = (() => {
         grade8: "Expand each bracket: 6x−15+4x+4. Collect: 10x−11.",
       },
       examinerTip: "Expand every bracket before collecting terms. Watch signs when expanding a negative bracket — 3(−5) = −15, not +15.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── sub-A05 ──────────────────────────────────────────────
     {
@@ -3819,7 +3819,7 @@ const MathsQuestions = (() => {
         grade8: "v² = 2as = 900 (since u=0). v = 30 m/s.",
       },
       examinerTip: "Substitute u = 0 first to simplify — u² = 0. Then evaluate 2 × a × s carefully before taking the square root.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── sub-B04 ──────────────────────────────────────────────
     {
@@ -3866,7 +3866,7 @@ const MathsQuestions = (() => {
         grade8: "E = ½mv² → 2E = mv² → v² = 2E/m → v = √(2E/m). (Taking positive root.)",
       },
       examinerTip: "Work in reverse order of operations: undo ½ first (×2), then undo ×m (÷m), then undo the square (√).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── sub-B05 ──────────────────────────────────────────────
     {
@@ -3913,7 +3913,7 @@ const MathsQuestions = (() => {
         grade8: "pq + r = s → pq = s − r → p = (s − r)/q.",
       },
       examinerTip: "Identify the term containing p, isolate it, then divide to make p the subject. Treat all other letters as constants.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── sub-B06 ──────────────────────────────────────────────
     {
@@ -3961,7 +3961,7 @@ const MathsQuestions = (() => {
         grade8: "V = ⅓πr²h → 3V = πr²h → h = 3V/(πr²).",
       },
       examinerTip: "Multiply both sides by 3 first to deal with the ⅓. Then divide by everything multiplying h. The formula for the volume of a cone is on the formula sheet.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── sub-C03 ──────────────────────────────────────────────
     {
@@ -4018,7 +4018,7 @@ const MathsQuestions = (() => {
         grade8: "Multiply out, collect x terms, factorise, divide. x=(−1−3y)/(y−2). Check y=1: x=4 ✓.",
       },
       examinerTip: "After multiplying out, collect ALL x terms to one side, factorise out x, then divide. Students often forget to move all x terms.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── sub-C04 ──────────────────────────────────────────────
     {
@@ -4074,7 +4074,7 @@ const MathsQuestions = (() => {
         grade8: "T=2π√(l/g) → T/(2π)=√(l/g) → T²/(4π²)=l/g → l=gT²/(4π²).",
       },
       examinerTip: "Isolate the square root first, then square both sides. Squaring both sides of T=2π√(l/g) directly gives T²=4π²(l/g), which also works.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── fn-A02 ───────────────────────────────────────────────
@@ -4112,7 +4112,7 @@ const MathsQuestions = (() => {
         grade8: "g(3)=3²−4=5. g(−2)=(−2)²−4=4−4=0.",
       },
       examinerTip: "(−2)² = +4, not −4. Squaring always gives a positive result.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── fn-A03 ───────────────────────────────────────────────
     {
@@ -4149,7 +4149,7 @@ const MathsQuestions = (() => {
         grade8: "h(x)=13 → 2x+5=13 → x=4. Check: h(4)=13. ✓",
       },
       examinerTip: "Setting h(x) = k and solving for x is the inverse of evaluating — you're working backwards.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── fn-A04 ───────────────────────────────────────────────
     {
@@ -4186,7 +4186,7 @@ const MathsQuestions = (() => {
         grade8: "f(4) = 4²+2(4)−3 = 16+8−3 = 21.",
       },
       examinerTip: "Substitute carefully and apply order of operations: powers first, then multiplication, then addition/subtraction.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── fn-A05 ───────────────────────────────────────────────
     {
@@ -4223,7 +4223,7 @@ const MathsQuestions = (() => {
         grade8: "p(6)=1/2=0.5. p(−3)=−1. Note: p(0) is undefined (division by zero).",
       },
       examinerTip: "3 divided by a negative number gives a negative answer. p(0) is undefined — you can't divide by zero.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── fn-B02 ───────────────────────────────────────────────
     {
@@ -4270,7 +4270,7 @@ const MathsQuestions = (() => {
         grade8: "fg: apply g first then f. fg(5)=f(9)=15. fg(x)=2(x+4)−3=2x+5.",
       },
       examinerTip: "fg means 'apply g first, then f' — read right to left. fg ≠ gf in general.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── fn-B03 ───────────────────────────────────────────────
     {
@@ -4315,7 +4315,7 @@ const MathsQuestions = (() => {
         grade8: "gf(x)=(x+3)²=x²+6x+9 ✓. (x+3)²=25 → x+3=±5 → x=2 or x=−8.",
       },
       examinerTip: "When taking square roots in equations, remember ±. Both +5 and −5 square to give 25.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── fn-B04 ───────────────────────────────────────────────
     {
@@ -4362,7 +4362,7 @@ const MathsQuestions = (() => {
         grade8: "f⁻¹(x)=(x+1)/4. f⁻¹(7)=2. Verify: f(2)=7 ✓.",
       },
       examinerTip: "To find an inverse: write y=f(x), swap x and y, rearrange for y. Always verify by checking f(f⁻¹(x)) = x.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── fn-B05 ───────────────────────────────────────────────
     {
@@ -4409,7 +4409,7 @@ const MathsQuestions = (() => {
         grade8: "f(3)=7. f(7)=15. Alternatively ff(x)=4x+3 → ff(3)=15.",
       },
       examinerTip: "ff means apply f twice. Evaluate the inner f first, then apply f again to the result.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── fn-B06 ───────────────────────────────────────────────
     {
@@ -4454,7 +4454,7 @@ const MathsQuestions = (() => {
         grade8: "gf(−2)=g(f(−2))=g(5)=7. fg(−2)=f(g(−2))=f(−7)=50. Note gf≠fg.",
       },
       examinerTip: "gf and fg are generally different. Always identify which function is applied first (right to left order).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── fn-C02 ───────────────────────────────────────────────
     {
@@ -4511,7 +4511,7 @@ const MathsQuestions = (() => {
         grade8: "f⁻¹(x)=(x−3)/2. f(x)=f⁻¹(x): multiply by 2 → 4x+6=x−3 → x=−3. Check: f(−3)=−3=f⁻¹(−3) ✓.",
       },
       examinerTip: "When setting f(x)=f⁻¹(x), multiply through by the denominator to clear fractions before collecting terms.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── fn-C03 ───────────────────────────────────────────────
     {
@@ -4566,7 +4566,7 @@ const MathsQuestions = (() => {
         grade8: "ff(x)=9x+4 ✓. ff(x)=22 → 9x=18 → x=2. Check: f(2)=7, f(7)=22 ✓.",
       },
       examinerTip: "For ff(x), substitute the entire expression f(x) in place of x in f. Expand carefully.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── fn-C04 ───────────────────────────────────────────────
     {
@@ -4625,7 +4625,7 @@ const MathsQuestions = (() => {
         grade8: "f⁻¹(x)=(3x+1)/(x−2). Undefined at x=2. Verify: f(f⁻¹(7))=7 ✓.",
       },
       examinerTip: "After finding f⁻¹(x), always check where the denominator equals zero — that is the excluded value from the domain.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'gph-A03', subtopic: 'alg-graphs', band: 'A', marks: 2,
@@ -4662,7 +4662,7 @@ const MathsQuestions = (() => {
         grade8: 'Comparing with y = mx + c: gradient = −3 (line falls 3 units for each 1 unit increase in x), y-intercept = 7 (crosses y-axis at (0, 7)).',
       },
       examinerTip: 'Always identify y = mx + c first. The gradient is the coefficient of x — include its sign. The y-intercept is the constant term.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'gph-A04', subtopic: 'alg-graphs', band: 'A', marks: 2,
@@ -4699,7 +4699,7 @@ const MathsQuestions = (() => {
         grade8: 'Substituting x = 2: y = 3(2) − 4 = 6 − 4 = 2. The point (2, 2) lies on the line y = 3x − 4.',
       },
       examinerTip: 'Substitute the x value given into the equation and evaluate — this is a direct substitution. Do not rearrange the equation.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'gph-A05', subtopic: 'alg-graphs', band: 'A', marks: 2,
@@ -4737,7 +4737,7 @@ const MathsQuestions = (() => {
         grade8: 'Midpoint = ((1+7)/2, (3+9)/2) = (8/2, 12/2) = (4, 6).',
       },
       examinerTip: 'Midpoint = (average of x-coordinates, average of y-coordinates). A common error is to add the coordinates without dividing by 2.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'gph-B02', subtopic: 'alg-graphs', band: 'B', marks: 3,
@@ -4785,7 +4785,7 @@ const MathsQuestions = (() => {
         grade8: 'm = 12/4 = 3. Since line crosses y-axis at −2, equation is y = 3x − 2. Verify (4, 10): 3(4)−2=10 ✓',
       },
       examinerTip: 'When one point is on the y-axis (x = 0), the y-intercept c is simply that y value. No substitution needed.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'gph-B03', subtopic: 'alg-graphs', band: 'B', marks: 3,
@@ -4833,7 +4833,7 @@ const MathsQuestions = (() => {
         grade8: 'm = (7−1)/(2−(−1)) = 2. Sub (−1, 1): 1 = −2+c → c=3. y=2x+3. Verify (2,7): 4+3=7 ✓',
       },
       examinerTip: 'Find m first, then substitute one point to find c. Always verify using the other point.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'gph-B04', subtopic: 'alg-graphs', band: 'B', marks: 3,
@@ -4881,7 +4881,7 @@ const MathsQuestions = (() => {
         grade8: 'Parallel → m = 2. Sub (3, 1): c = 1 − 6 = −5. y = 2x − 5. (Note: same gradient as y=2x+5 but different intercept.)',
       },
       examinerTip: 'Parallel lines have identical gradients. Only the y-intercept differs. Do not confuse parallel (same m) with perpendicular (product of gradients = −1).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'gph-B05', subtopic: 'alg-graphs', band: 'B', marks: 4,
@@ -4938,7 +4938,7 @@ const MathsQuestions = (() => {
         grade8: 'c = 4−(−2×3) = 10. y = −2x + 10. x-intercept (y=0): x = 5. Point (5, 0). Line has negative gradient, falls left to right.',
       },
       examinerTip: 'For the x-intercept, substitute y = 0 and solve. For the y-intercept, substitute x = 0. These are two different things.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'gph-B06', subtopic: 'alg-graphs', band: 'B', marks: 4,
@@ -4993,7 +4993,7 @@ const MathsQuestions = (() => {
         grade8: 'Set equal: 2x = 6 → x = 3, y = 5. Verify: 3(3)−4=5 ✓ Intersection: (3, 5).',
       },
       examinerTip: 'To find intersection algebraically: set the two y expressions equal, solve for x, then substitute back. Always verify in the other equation.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'gph-C01', subtopic: 'alg-graphs', band: 'C', marks: 4,
@@ -5050,7 +5050,7 @@ const MathsQuestions = (() => {
         grade8: 'm(AB)=1, m⊥=−1. Midpoint=(4,6). y=−x+c: 6=−4+c → c=10. Perpendicular bisector: y=−x+10.',
       },
       examinerTip: 'Two steps: (1) find the negative reciprocal of the gradient for perpendicular, (2) use the midpoint (not an endpoint) to find c.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'gph-C02', subtopic: 'alg-graphs', band: 'C', marks: 4,
@@ -5107,7 +5107,7 @@ const MathsQuestions = (() => {
         grade8: 'm = 2, m⊥ = −1/2. Sub (4,1): 1 = −2+c → c=3. Perpendicular line: y=−½x+3. Verify: −2+3=1 ✓',
       },
       examinerTip: 'Perpendicular gradient = −1/m. If m = 2, perpendicular gradient = −1/2. The product of perpendicular gradients is always −1.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'gph-C03', subtopic: 'alg-graphs', band: 'C', marks: 4,
@@ -5161,7 +5161,7 @@ const MathsQuestions = (() => {
         grade8: 'm=2. y=2x−3. Intersection: 2x−3=−x+12 → 3x=15 → x=5, y=7. Point (5,7). Verify in y=−x+12: −5+12=7 ✓',
       },
       examinerTip: 'Two-part questions: find the equation first, then use it in the second part. A clear working structure gains more marks.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'gph-C04', subtopic: 'alg-graphs', band: 'C', marks: 4,
@@ -5215,7 +5215,7 @@ const MathsQuestions = (() => {
         grade8: 'dx=6, dy=8. d=√100=10. Midpoint ((−1+5)/2, (2+10)/2)=(2,6). m=8/6=4/3≈1.33. (3,4,5 scaled by 2.)',
       },
       examinerTip: 'Distance formula is Pythagoras applied to coordinate differences. Midpoint is just averaging x and y separately. All three are linked by the same pair of points.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ineq-A03', subtopic: 'alg-inequalities', band: 'A', marks: 2,
@@ -5253,7 +5253,7 @@ const MathsQuestions = (() => {
         grade8: '4x ≥ 9 + 3 = 12 → x ≥ 3. The inequality sign stays the same when dividing by a positive number.',
       },
       examinerTip: 'Solve inequalities the same way as equations — but when dividing or multiplying by a negative number, flip the inequality sign.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ineq-A04', subtopic: 'alg-inequalities', band: 'A', marks: 2,
@@ -5291,7 +5291,7 @@ const MathsQuestions = (() => {
         grade8: 'Subtract 2: 4x < 8. Divide by 4: x < 2. Inequality direction unchanged (dividing by positive 4).',
       },
       examinerTip: 'Work step by step: isolate the term with x first, then divide. Keep the inequality sign pointing the same way when dividing by a positive number.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ineq-A05', subtopic: 'alg-inequalities', band: 'A', marks: 3,
@@ -5339,7 +5339,7 @@ const MathsQuestions = (() => {
         grade8: '5 ≤ 2x+1 < 11. Subtract 1: 4 ≤ 2x < 10. Divide by 2: 2 ≤ x < 5. Note: left is closed (≤), right is open (<).',
       },
       examinerTip: 'Treat the double inequality as one operation applied to all three parts simultaneously. Do NOT separate into two inequalities unless you prefer to — both methods are acceptable.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ineq-B02', subtopic: 'alg-inequalities', band: 'B', marks: 3,
@@ -5385,7 +5385,7 @@ const MathsQuestions = (() => {
         grade8: '3x+6>2x+10 → x>4. Note: dividing by a positive number, inequality direction unchanged.',
       },
       examinerTip: 'Expand brackets first, then collect like terms. Avoid trying to move brackets across an inequality without expanding — you will make errors.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ineq-B03', subtopic: 'alg-inequalities', band: 'B', marks: 3,
@@ -5435,7 +5435,7 @@ const MathsQuestions = (() => {
         grade8: '−1 < 3n ≤ 9 → −1/3 < n ≤ 3. Integer values: 0, 1, 2, 3 (four values). Note −1/3 ≈ −0.33 so n = 0 is the smallest integer satisfying n > −1/3.',
       },
       examinerTip: 'After solving, list integers systematically from smallest to largest. Do not include boundary values excluded by strict inequality (<).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ineq-B04', subtopic: 'alg-inequalities', band: 'B', marks: 3,
@@ -5481,7 +5481,7 @@ const MathsQuestions = (() => {
         grade8: '4−3x ≤ 13 → −3x ≤ 9 → x ≥ −3. With x ≥ −2: the binding constraint is x ≥ −2 (more restrictive). Solution: x ≥ −2.',
       },
       examinerTip: 'Flipping the inequality when dividing by a negative is one of the most common errors. To avoid it, move the variable term to the other side before dividing.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ineq-B05', subtopic: 'alg-inequalities', band: 'B', marks: 4,
@@ -5536,7 +5536,7 @@ const MathsQuestions = (() => {
         grade8: 'x ≥ −1 → smallest integer is −1. x < 3 (strict) → largest integer is 2. Integers: −1, 0, 1, 2. Total: 4.',
       },
       examinerTip: 'With strict inequality (<), the boundary value is NOT included. With ≤, it is. Always check whether the endpoints are included before listing integers.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ineq-B06', subtopic: 'alg-inequalities', band: 'B', marks: 4,
@@ -5591,7 +5591,7 @@ const MathsQuestions = (() => {
         grade8: 'Inequality 1: 2x>8 → x>4. Inequality 2: x≤7. Combined: 4<x≤7. Integer solutions: 5, 6, 7 (3 solutions).',
       },
       examinerTip: 'Solve each inequality separately, then find the overlap. Draw a number line if it helps — mark both conditions and shade the intersection.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ineq-C01', subtopic: 'alg-inequalities', band: 'C', marks: 4,
@@ -5649,7 +5649,7 @@ const MathsQuestions = (() => {
         grade8: 'x(x−4)≤0. Parabola opens upward; below x-axis between roots. Solution: 0 ≤ x ≤ 4.',
       },
       examinerTip: 'For quadratic inequalities: find the roots, sketch the parabola, then determine where it is positive or negative. ax²+bx+c < 0 is satisfied BETWEEN the roots when a > 0.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ineq-C02', subtopic: 'alg-inequalities', band: 'C', marks: 4,
@@ -5706,7 +5706,7 @@ const MathsQuestions = (() => {
         grade8: '(x+4)(x−2)<0. Leading coefficient positive → parabola opens up → negative between roots. Solution: −4<x<2.',
       },
       examinerTip: 'After finding the roots, always state which way the parabola opens (positive leading coefficient = opens up = negative between roots).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ineq-C03', subtopic: 'alg-inequalities', band: 'C', marks: 4,
@@ -5763,7 +5763,7 @@ const MathsQuestions = (() => {
         grade8: '(2x+1)(x−3)≤0. Roots x=−½, x=3. Parabola positive outside roots, negative/zero between. Solution: −½ ≤ x ≤ 3 (inclusive since ≤).',
       },
       examinerTip: 'For ≤ (not strict), the endpoints ARE included in the solution. Use ≤ x ≤ in your answer. For strictly < 0, use open inequalities.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ineq-C04', subtopic: 'alg-inequalities', band: 'C', marks: 4,
@@ -5819,7 +5819,7 @@ const MathsQuestions = (() => {
         grade8: 'x²<25 → −5<x<5. 2x>2 → x>1. Intersection: 1<x<5. Integer solutions: {2, 3, 4}, count = 3.',
       },
       examinerTip: 'Solve each inequality separately, then find the intersection of the solution sets. Sketch a number line to visualise both conditions simultaneously.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-A03', subtopic: 'alg-sequences', band: 'A', marks: 2,
@@ -5855,7 +5855,7 @@ const MathsQuestions = (() => {
         grade8: 'Substituting n = 10 into 2n + 5: 2(10) + 5 = 25. The 10th term is 25.',
       },
       examinerTip: 'Substitution into nth term is straightforward — write out each step to avoid arithmetic errors. Show 2 × 10 = 20, then 20 + 5 = 25.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-A04', subtopic: 'alg-sequences', band: 'A', marks: 2,
@@ -5893,7 +5893,7 @@ const MathsQuestions = (() => {
         grade8: 'd = 4 so nth term = 4n + c. Substituting n=1: 4+c=2 → c=−2. nth term = 4n − 2. Verify n=3: 12−2=10 ✓',
       },
       examinerTip: 'The coefficient of n equals the common difference. The constant c = (first term) − (common difference). Always verify with a second term.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-A05', subtopic: 'alg-sequences', band: 'A', marks: 3,
@@ -5942,7 +5942,7 @@ const MathsQuestions = (() => {
         grade8: 'Set 3n − 2 = 197 → n = 199/3 = 66.3̄. Since n must be a positive integer and 66.3̄ is not, 197 is not in this sequence.',
       },
       examinerTip: 'To test membership: set nth term = target value, solve for n, then check if n is a positive integer. If not, the value is not in the sequence.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-B02', subtopic: 'alg-sequences', band: 'B', marks: 3,
@@ -5988,7 +5988,7 @@ const MathsQuestions = (() => {
         grade8: 'nth term = 3n+1. 8th term = 25. S₈ = (8/2)(4+25) = 4×29 = 116. Can verify by listing: 4+7+10+13+16+19+22+25=116 ✓',
       },
       examinerTip: 'Arithmetic sum formula: Sₙ = (n/2)(first + last). Find the last term first using nth term formula, then apply the sum formula.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-B03', subtopic: 'alg-sequences', band: 'B', marks: 3,
@@ -6033,7 +6033,7 @@ const MathsQuestions = (() => {
         grade8: 'r = 15/5 = 3. nth term = 5 × 3^(n−1). 5th term = 5 × 3⁴ = 5 × 81 = 405.',
       },
       examinerTip: 'Geometric sequences multiply by r each time. Either multiply step by step, or use nth term = a × r^(n−1).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-B04', subtopic: 'alg-sequences', band: 'B', marks: 3,
@@ -6079,7 +6079,7 @@ const MathsQuestions = (() => {
         grade8: 'Second diff = 2 → leading coeff = 1. n²: 1,4,9,16. Remainder: 2,4,6,8 → 2n. nth term = n²+2n. Verify n=5: 25+10=35 ✓',
       },
       examinerTip: 'For quadratic sequences: constant second difference → n² term. Leading coefficient = second difference ÷ 2. Then subtract n² to find the linear part.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-B05', subtopic: 'alg-sequences', band: 'B', marks: 3,
@@ -6124,7 +6124,7 @@ const MathsQuestions = (() => {
         grade8: 'n²−n+4: n=1 → 4, n=2 → 6, n=10 → 94. The sequence is not arithmetic (differences increase), indicating it is quadratic.',
       },
       examinerTip: 'Substitute n values one at a time and show each calculation. For n=10, evaluate each term (100, 10, 4) separately to avoid errors.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-B06', subtopic: 'alg-sequences', band: 'B', marks: 4,
@@ -6179,7 +6179,7 @@ const MathsQuestions = (() => {
         grade8: 'd=4, a=3. nth term = a+(n−1)d = 3+4(n−1) = 4n−1. Verify: n=7: 28−1=27 ✓',
       },
       examinerTip: 'Find d from (T_higher − T_lower)/(higher n − lower n). Then find the first term by working backwards. Simplify a + (n−1)d into the form pn + q.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-C01', subtopic: 'alg-sequences', band: 'C', marks: 4,
@@ -6234,7 +6234,7 @@ const MathsQuestions = (() => {
         grade8: 'Setting equal: n = 4. Common value = 19. The sequences share this value only at n = 4 — before that, 3n+7 is larger; after, 4n+3 is larger.',
       },
       examinerTip: 'Set the two formulas equal and solve for n. Check that n is a positive integer — if not, the sequences never share a value.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-C02', subtopic: 'alg-sequences', band: 'C', marks: 4,
@@ -6288,7 +6288,7 @@ const MathsQuestions = (() => {
         grade8: 'n²: 1,4,9,16,25. Subtract from sequence: −1,−1,−1,−1,−1. Constant remainder → nth term = n²−1. Verify n=5: 25−1=24 ✓',
       },
       examinerTip: 'After subtracting n², the remainder should be either constant (add a constant) or linear (find the linear nth term). If it is constant, you are done.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-C03', subtopic: 'alg-sequences', band: 'C', marks: 4,
@@ -6345,7 +6345,7 @@ const MathsQuestions = (() => {
         grade8: 'r²+r−12=0 → r=3 (positive) or r=−4 (negative, rejected for this context). Sequence: 2, 6, 18. Sum=26 ✓',
       },
       examinerTip: 'Divide by the first term to simplify. The resulting quadratic usually factorises neatly. If a positive ratio is expected, reject the negative root.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'seq-C04', subtopic: 'alg-sequences', band: 'C', marks: 4,
@@ -6398,7 +6398,7 @@ const MathsQuestions = (() => {
         grade8: 'Two equations: a+3d=19 and 2a+5d=26. Eliminate a: d=12, a=−17. Sequence: −17, −5, 7, 19 ✓ (4th term = 19). S₆=3×26=78 ✓',
       },
       examinerTip: 'Sum formula Sₙ = (n/2)(2a + (n−1)d). For S₆: (6/2)(2a + 5d) = 78. Combine with the term equation to form simultaneous equations.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'sim-A03', subtopic: 'alg-simultaneous', band: 'A', marks: 3,
@@ -6444,7 +6444,7 @@ const MathsQuestions = (() => {
         grade8: 'Set equal: 2x = 4 → x = 2, y = 7. Verify both: 3(2)+1=7 ✓ and 2+5=7 ✓',
       },
       examinerTip: 'When both equations give y in terms of x, set them equal and solve. This substitution method avoids rearranging.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'sim-A04', subtopic: 'alg-simultaneous', band: 'A', marks: 3,
@@ -6490,7 +6490,7 @@ const MathsQuestions = (() => {
         grade8: 'Eliminate y by subtraction: 2x=6, x=3. Sub: y=2. Verify: 3(3)+2=11 ✓',
       },
       examinerTip: 'When the y-coefficients are the same (both 1 here), subtract equations to eliminate y. Choose which to subtract based on which gives a positive result.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'sim-A05', subtopic: 'alg-simultaneous', band: 'A', marks: 4,
@@ -6544,7 +6544,7 @@ const MathsQuestions = (() => {
         grade8: 'Adding eliminates y (−y + y = 0). 7x=21, x=3, y=6. Both equations satisfied ✓',
       },
       examinerTip: 'When one equation has +y and the other has −y (with same coefficient), add the equations to eliminate y. When both have the same sign, subtract.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'sim-B02', subtopic: 'alg-simultaneous', band: 'B', marks: 4,
@@ -6598,7 +6598,7 @@ const MathsQuestions = (() => {
         grade8: 'Coefficients of y are +1 and −1, so adding eliminates y. 5x=25, x=5, y=1. Both equations check ✓',
       },
       examinerTip: 'If the y-coefficients are +1 and −1 (opposite signs, same magnitude), add the equations. They do not need to be multiplied first.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'sim-B03', subtopic: 'alg-simultaneous', band: 'B', marks: 4,
@@ -6654,7 +6654,7 @@ const MathsQuestions = (() => {
         grade8: 'LCM of 4 and 3 is 12. Multiply equations to get ±12y. Add: 17x=34, x=2, y=1. Verify: 2(2)−3(1)=1 ✓',
       },
       examinerTip: 'Choose which variable to eliminate based on the LCM of their coefficients. Here, LCM(4, 3) = 12, so multiply to get ±12y then add.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'sim-B04', subtopic: 'alg-simultaneous', band: 'B', marks: 4,
@@ -6708,7 +6708,7 @@ const MathsQuestions = (() => {
         grade8: 'Elimination: sub c=20−a → 3a=27 → a=9, c=11. Check: 72+55=127 ✓',
       },
       examinerTip: 'Define variables clearly at the start and form two equations — one for totals, one for cost/value. Substitution is often cleanest when one variable is already isolated.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'sim-B05', subtopic: 'alg-simultaneous', band: 'B', marks: 4,
@@ -6762,7 +6762,7 @@ const MathsQuestions = (() => {
         grade8: 'Half-perimeter gives l+w=13. l=w+3 → 2w=10, w=5, l=8. Area = 40 cm² (additional info).',
       },
       examinerTip: 'In geometry word problems, always halve the perimeter to get l + w. Then form a second equation from the given relationship between l and w.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'sim-B06', subtopic: 'alg-simultaneous', band: 'B', marks: 4,
@@ -6816,7 +6816,7 @@ const MathsQuestions = (() => {
         grade8: 'LCM of 5-coefficients → multiply eq2 by 5. Add eliminates y. x=3, y=2. Verify both: 6+10=16 ✓, 12−2=10 ✓',
       },
       examinerTip: 'Multiply to make y-coefficients equal and opposite, then add. Alternatively, make x-coefficients equal and subtract. Verify in BOTH equations.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'sim-C01', subtopic: 'alg-simultaneous', band: 'C', marks: 4,
@@ -6874,7 +6874,7 @@ const MathsQuestions = (() => {
         grade8: 'Quadratic formed: x²+x−6=0. Both solutions valid on the circle x²+y²=13. Verify (2,3): 4+9=13 ✓',
       },
       examinerTip: 'Non-linear simultaneous equations: always substitute from the linear into the non-linear. This gives a quadratic with (usually) two solutions — both may be valid.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'sim-C02', subtopic: 'alg-simultaneous', band: 'C', marks: 4,
@@ -6930,7 +6930,7 @@ const MathsQuestions = (() => {
         grade8: 'Graphically: intersection of y=x+3 (line) and y=x²−3 (parabola). Two intersection points: (3,6) and (−2,1).',
       },
       examinerTip: 'Setting two expressions for y equal gives a quadratic. Rearrange to ax²+bx+c=0 form before factorising. Remember to find BOTH x and y values for each solution.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'sim-C03', subtopic: 'alg-simultaneous', band: 'C', marks: 4,
@@ -6986,7 +6986,7 @@ const MathsQuestions = (() => {
         grade8: 'Substitution into product equation gives quadratic. Both solutions satisfy xy=12: 3×4=12 ✓ and (−4)(−3)=12 ✓',
       },
       examinerTip: 'With a product equation (xy = k), substitute the linear equation for one variable. You always get a quadratic — and usually two valid solutions.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'sim-C04', subtopic: 'alg-simultaneous', band: 'C', marks: 4,
@@ -7040,7 +7040,7 @@ const MathsQuestions = (() => {
         grade8: '4y=24 → y=6, x=12, z=9. Verify: 12+6+9=27 ✓ and all conditions satisfied.',
       },
       examinerTip: 'With three unknowns and three equations, substitute two into the third to get one equation in one unknown. Then back-substitute to find the others.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-A01', subtopic: 'alg-quadratics', band: 'A', marks: 2,
@@ -7078,7 +7078,7 @@ const MathsQuestions = (() => {
         grade8: 'Factorising x²−x−6: need pair multiplying to −6, adding to −1 → 2 and −3. (x+2)(x−3)=0. x=−2 or x=3.',
       },
       examinerTip: 'Find two numbers whose product = constant term (c) and whose sum = middle coefficient (b). Signs matter — be systematic.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-A02', subtopic: 'alg-quadratics', band: 'A', marks: 2,
@@ -7116,7 +7116,7 @@ const MathsQuestions = (() => {
         grade8: 'x²−16=0 is a difference of two squares: (x−4)(x+4)=0. Solutions: x=4 or x=−4.',
       },
       examinerTip: 'When there is no x term, rearrange to x² = k and take the square root — giving two solutions: +√k and −√k. Do not forget the negative root.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-A03', subtopic: 'alg-quadratics', band: 'A', marks: 3,
@@ -7164,7 +7164,7 @@ const MathsQuestions = (() => {
         grade8: 'Factors of −10 summing to 3: 5 and −2. (x+5)(x−2)=0. Roots x=−5 and x=2.',
       },
       examinerTip: 'For x² + bx + c: find factors of c that add to b. List factor pairs systematically (include negatives) to avoid missing the answer.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-A04', subtopic: 'alg-quadratics', band: 'A', marks: 2,
@@ -7202,7 +7202,7 @@ const MathsQuestions = (() => {
         grade8: '(x+a)² = x²+2ax+a². Here a=3: x²+6x+9. The middle coefficient is always 2a.',
       },
       examinerTip: '(x + a)² = x² + 2ax + a². The middle coefficient is twice the number in the bracket. Squaring only the bracket number is a very common error.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-A05', subtopic: 'alg-quadratics', band: 'A', marks: 3,
@@ -7250,7 +7250,7 @@ const MathsQuestions = (() => {
         grade8: 'Both numbers negative (product +12, sum −7): −3 and −4. (x−3)(x−4)=0. Check: 3²−21+12=0 ✓',
       },
       examinerTip: 'When both factors are negative (product positive, sum negative), both roots will be positive. This is a common pattern in GCSE factorising.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-B01', subtopic: 'alg-quadratics', band: 'B', marks: 3,
@@ -7296,7 +7296,7 @@ const MathsQuestions = (() => {
         grade8: '(x+3)²=1 → x+3=±1 → x=−2 or x=−4. Alternative: factorise (x+2)(x+4)=0 gives same answers.',
       },
       examinerTip: 'Completing the square: half the x-coefficient goes inside the bracket. Subtract the square of that number to compensate. Then rearrange to solve.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-B02', subtopic: 'alg-quadratics', band: 'B', marks: 4,
@@ -7350,7 +7350,7 @@ const MathsQuestions = (() => {
         grade8: 'x = (−b±√(b²−4ac))/(2a). a=2, b=5, c=−3. D=49, √D=7. x=0.5 or x=−3. Verify: 2(0.25)+2.5−3=0 ✓',
       },
       examinerTip: 'Always calculate the discriminant first. If it is a perfect square, the roots will be rational (exact). If not, give answers as surds or decimals.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-B03', subtopic: 'alg-quadratics', band: 'B', marks: 4,
@@ -7404,7 +7404,7 @@ const MathsQuestions = (() => {
         grade8: 'Complete square: (x+2)²=11 → x=−2±√11. √11≈3.3166. x≈1.32 or x≈−5.32 (2dp).',
       },
       examinerTip: 'Completing the square gives exact form x = −p ± √q. Always give BOTH roots. Check your answer by substituting back.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-B04', subtopic: 'alg-quadratics', band: 'B', marks: 4,
@@ -7460,7 +7460,7 @@ const MathsQuestions = (() => {
         grade8: 'x=4 (reject x=−9: gives negative width). 10×3=30 ✓. Dimensions: 10 cm by 3 cm.',
       },
       examinerTip: 'Reject negative values of x if they lead to negative dimensions. Always check by computing the area with your final dimensions.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-B05', subtopic: 'alg-quadratics', band: 'B', marks: 4,
@@ -7514,7 +7514,7 @@ const MathsQuestions = (() => {
         grade8: '(x+4)²−13. Since (x+4)²≥0, min occurs when (x+4)²=0 → x=−4, min value=−13.',
       },
       examinerTip: 'For (x+a)²+b: minimum value = b (for positive x² coefficient). It occurs when x = −a (not +a). Squaring can never give a negative result.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-B06', subtopic: 'alg-quadratics', band: 'B', marks: 4,
@@ -7568,7 +7568,7 @@ const MathsQuestions = (() => {
         grade8: 'D=25 (perfect square → rational roots). x=(7+5)/6=2 or x=(7−5)/6=1/3. Verify: 3(4)−14+2=0 ✓',
       },
       examinerTip: 'Note b = −7, so −b = +7. Take care with signs in the formula: x = (−b ± √D)/(2a). Write out −b = 7 explicitly to avoid sign errors.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-C01', subtopic: 'alg-quadratics', band: 'C', marks: 4,
@@ -7624,7 +7624,7 @@ const MathsQuestions = (() => {
         grade8: 'D=−4<0 (no real roots). Completed square form: (x+3)²+1 ≥ 1 > 0 for all real x. Expression is always positive.',
       },
       examinerTip: 'Two methods: (1) discriminant < 0 → no real roots. (2) Completing the square shows minimum > 0. For a "show" or "prove" question, use method 2 — it shows both facts at once.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-C02', subtopic: 'alg-quadratics', band: 'C', marks: 4,
@@ -7678,7 +7678,7 @@ const MathsQuestions = (() => {
         grade8: 'D=5 (not a perfect square). x=(5±√5)/2. x₁≈3.618, x₂≈1.382. To 2dp: x≈3.62 or x≈1.38.',
       },
       examinerTip: 'Non-perfect-square discriminant → irrational roots. Use calculator for √D. Give answers to the precision stated (here: 2dp). Show all formula substitution for method marks.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-C03', subtopic: 'alg-quadratics', band: 'C', marks: 5,
@@ -7742,7 +7742,7 @@ const MathsQuestions = (() => {
         grade8: 'h=17 at t=1s and t=3s (by symmetry of parabola, these are equal times before and after peak). Max at t=(1+3)/2=2s: h=22m.',
       },
       examinerTip: 'In projectile questions, the two times when h=k are symmetric about the time of maximum height. Use this symmetry to find the maximum efficiently.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'quad-C04', subtopic: 'alg-quadratics', band: 'C', marks: 4,
@@ -7796,10 +7796,10 @@ const MathsQuestions = (() => {
         grade8: 'D=0 for repeated root: k²=36 → k=6 or k=−6. k=6: (x+3)²=0, x=−3. k=−6: (x−3)²=0, x=3.',
       },
       examinerTip: 'Discriminant = 0 ↔ exactly one (repeated) root. Set b²−4ac=0 and solve for the unknown parameter.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'pro-A01', subtopic: 'rpr-proportion', band: 'A', marks: 3,
+      id: 'pro-A01', subtopic: 'rpr-proportion', band: 'A', marks: 2,
       question: 'y is directly proportional to x. When x = 4, y = 20. Find y when x = 7.',
       steps: [
         {
@@ -7829,10 +7829,10 @@ const MathsQuestions = (() => {
         grade8: "y = 5x. y(7) = 35. Verify: y/x = 35/7 = 5 = 20/4 ✓",
       },
       examinerTip: "Students add the difference (7−4=3) multiplied by y/x to y: 20+3×5=35 — this gives the right answer here but relies on wrong reasoning.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'pro-A02', subtopic: 'rpr-proportion', band: 'A', marks: 3,
+      id: 'pro-A02', subtopic: 'rpr-proportion', band: 'A', marks: 2,
       question: 'y is inversely proportional to x. When x = 5, y = 8. Find y when x = 10.',
       steps: [
         {
@@ -7862,10 +7862,10 @@ const MathsQuestions = (() => {
         grade8: "y = 40/x. y(10) = 4. When x doubles (5→10), y halves (8→4) — hallmark of inverse proportion.",
       },
       examinerTip: "Students treat it as direct proportion: k = y/x = 8/5 = 1.6, then y = 1.6×10 = 16 instead of 4.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'pro-B01', subtopic: 'rpr-proportion', band: 'B', marks: 3,
+      id: 'pro-B01', subtopic: 'rpr-proportion', band: 'B', marks: 2,
       question: 'y is proportional to x². When x = 3, y = 36. Find y when x = 5.',
       steps: [
         {
@@ -7895,7 +7895,7 @@ const MathsQuestions = (() => {
         grade8: "y = 4x². y(5) = 100. If x doubles, y quadruples (×2²=×4) — a useful check.",
       },
       examinerTip: "Students forget to square x when finding k: k = 36÷3 = 12, then y = 12×25 = 300.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },    {
       id: 'pro-A03',
       subtopic: 'rpr-proportion',
@@ -7937,7 +7937,7 @@ const MathsQuestions = (() => {
         grade8: 'Direct proportion: y = kx. k = 18/6 = 3. Equation: y = 3x. At x = 9: y = 27.'
       },
       examinerTip: 'State y = kx, find k, then substitute the new x value.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pro-A04',
@@ -7980,7 +7980,7 @@ const MathsQuestions = (() => {
         grade8: 'Inverse proportion: y = k/x. k = yx = 15 × 4 = 60. At x = 12: y = 60/12 = 5.'
       },
       examinerTip: 'For inverse proportion, k = xy. As x increases, y decreases.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pro-A05',
@@ -8023,7 +8023,7 @@ const MathsQuestions = (() => {
         grade8: 'Direct proportion: k = 24/8 = 3, so y = 3x. Rearranging: x = y/3. At y = 9: x = 3.'
       },
       examinerTip: 'Once you have the equation, rearrange to find whichever variable is unknown.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pro-B02',
@@ -8079,7 +8079,7 @@ const MathsQuestions = (() => {
         grade8: 'y ∝ x³ → y = kx³. Using (2, 32): 32 = 8k, k = 4. Equation: y = 4x³. At x=3: y = 4 × 27 = 108.'
       },
       examinerTip: 'Cube the x value carefully: 3³ = 27, not 9.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pro-B03',
@@ -8135,7 +8135,7 @@ const MathsQuestions = (() => {
         grade8: 'y ∝ 1/x² → y = k/x². Substituting (3,8): k = 8×9 = 72. At x=6: y = 72/36 = 2. Doubling x quarters y, consistent with inverse square.'
       },
       examinerTip: 'Inverse proportion to x² means y = k/x². Square x before dividing.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pro-B04',
@@ -8191,7 +8191,7 @@ const MathsQuestions = (() => {
         grade8: 'y ∝ √x → y = k√x. k = 12/4 = 3. Equation: y = 3√x. At x=25: y = 3×5 = 15.'
       },
       examinerTip: 'Find the square root of x first, then multiply by k.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pro-B05',
@@ -8247,7 +8247,7 @@ const MathsQuestions = (() => {
         grade8: 'Direct proportion: B = 7A (gradient 7, through origin). At A=11: B = 77. Graph is a straight line through (0,0).'
       },
       examinerTip: 'Direct proportion produces a straight-line graph through the origin.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pro-B06',
@@ -8303,7 +8303,7 @@ const MathsQuestions = (() => {
         grade8: 'Inverse proportion: y = 60/x. Rearranging for x: x = 60/y = 60/4 = 15. Check: 4 × 15 = 60 ✓'
       },
       examinerTip: 'Rearrange y = k/x to x = k/y when x is unknown.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pro-C01',
@@ -8370,7 +8370,7 @@ const MathsQuestions = (() => {
         grade8: 'y = 5x² (k=5). Setting y=80: x² = 16, so x = 4 (taking positive root). Check: 5×16=80 ✓'
       },
       examinerTip: 'When finding x from y = kx², isolate x² first then take the square root.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pro-C02',
@@ -8437,7 +8437,7 @@ const MathsQuestions = (() => {
         grade8: 'y = 100/x². Setting y=4: x² = 25, x = 5. Check: 100/25 = 4 ✓'
       },
       examinerTip: 'Multiply both sides by x², then divide by y to isolate x².',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pro-C03',
@@ -8502,7 +8502,7 @@ const MathsQuestions = (() => {
         grade8: 'y = 3x² (k=3). At x=5: y=75. z = 2.5y (k=2.5). At y=75: z=187.5. Combined: z = 2.5×3x² = 7.5x².'
       },
       examinerTip: 'Chain proportion problems — find each equation separately, then substitute through.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pro-C04',
@@ -8569,7 +8569,7 @@ const MathsQuestions = (() => {
         grade8: 'y ∝ 1/√x → y = 30/√x. At x=9: √9=3, y = 30/3 = 10. As x increases, y decreases, consistent with inverse proportion.'
       },
       examinerTip: 'Find the square root of x before substituting — do not square k accidentally.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
 
 
@@ -8577,7 +8577,7 @@ const MathsQuestions = (() => {
     // SPEED, DISTANCE, TIME (rpr-speed)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'spd-A01', subtopic: 'rpr-speed', band: 'A', marks: 2,
+      id: 'spd-A01', subtopic: 'rpr-speed', band: 'A', marks: 1,
       question: 'A car travels 180 km in 2.5 hours. Calculate the average speed.',
       steps: [
         {
@@ -8599,7 +8599,7 @@ const MathsQuestions = (() => {
         grade8: "180 ÷ 2.5 = 72 km/h. Alternative: 180 ÷ (5/2) = 180 × 2/5 = 72.",
       },
       examinerTip: "Students invert the formula, dividing time by distance: 2.5 ÷ 180 ≈ 0.014 km/h.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'spd-A02', subtopic: 'rpr-speed', band: 'A', marks: 2,
@@ -8632,10 +8632,10 @@ const MathsQuestions = (() => {
         grade8: "1h20min = 80min = 80/60 h = 4/3 h. d = 90 × (4/3) = 120 km.",
       },
       examinerTip: "Students convert 1h20min to 1.2 hours instead of 1.333... hours, treating 20 minutes as 0.2 of an hour.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'spd-B01', subtopic: 'rpr-speed', band: 'B', marks: 4,
+      id: 'spd-B01', subtopic: 'rpr-speed', band: 'B', marks: 3,
       question: 'Jay drives 60 km at 40 km/h, then 90 km at 60 km/h. Find his average speed for the whole journey.',
       steps: [
         {
@@ -8673,7 +8673,7 @@ const MathsQuestions = (() => {
         grade8: "Total distance=150km, total time=3h. Average speed=50km/h. Note: the shortcut (40+60)/2=50 gives the same answer here by coincidence — always use total distance ÷ total time.",
       },
       examinerTip: "Students calculate average speed as (40+60)÷2=50 km/h — this is a coincidence here; the correct method is always total distance ÷ total time.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },    {
       id: 'spd-A03',
       subtopic: 'rpr-speed',
@@ -8717,7 +8717,7 @@ const MathsQuestions = (() => {
         grade8: 'T = D/S = 45/15 = 3 hours.'
       },
       examinerTip: 'Remember the SDT triangle: cover the quantity you want to find.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'spd-A04',
@@ -8762,7 +8762,7 @@ const MathsQuestions = (() => {
         grade8: 'D = ST = 80 × 2.5 = 200 km.'
       },
       examinerTip: 'Make sure time is in hours when speed is in km/h.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'spd-A05',
@@ -8805,7 +8805,7 @@ const MathsQuestions = (() => {
         grade8: 'T = 80/60 hours = 4/3 h. S = D/T = 96 ÷ (4/3) = 72 km/h.'
       },
       examinerTip: 'Always convert time to hours (as a decimal or fraction) before calculating speed.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'spd-B02',
@@ -8859,7 +8859,7 @@ const MathsQuestions = (() => {
         grade8: 'Total distance = 150 km. Total time = 45/60 + 1 = 1.75 h. Average speed = 150/1.75 = 600/7 ≈ 85.7 km/h.'
       },
       examinerTip: 'Average speed uses total distance and total time — never average the individual speeds.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'spd-B03',
@@ -8915,7 +8915,7 @@ const MathsQuestions = (() => {
         grade8: 'T = 2.5 h. S = D/T = 200/2.5 = 80 km/h. Check: 80 × 2.5 = 200 ✓'
       },
       examinerTip: 'Work out the time gap first — convert to a decimal if needed.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'spd-B04',
@@ -8969,7 +8969,7 @@ const MathsQuestions = (() => {
         grade8: '90 km/h × (1000/3600) = 90 × 5/18 = 25 m/s. Shortcut: ÷3.6.'
       },
       examinerTip: 'To convert km/h → m/s, divide by 3.6. To convert m/s → km/h, multiply by 3.6.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'spd-B05',
@@ -9023,7 +9023,7 @@ const MathsQuestions = (() => {
         grade8: 'D₁ = 60 × (40/60) = 40 km. D₂ = 90 × (20/60) = 30 km. Total = 70 km.'
       },
       examinerTip: 'Convert minutes to hours before using D = ST.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'spd-B06',
@@ -9077,7 +9077,7 @@ const MathsQuestions = (() => {
         grade8: 'T₁=1.5h, T₂=1h, total=2.5h. Average speed = 12/2.5 = 4.8 km/h (not the arithmetic mean of 4 and 6).'
       },
       examinerTip: 'Average speed is never the average of the two speeds — always use total distance / total time.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'spd-C01',
@@ -9141,7 +9141,7 @@ const MathsQuestions = (() => {
         grade8: 'Relative speed = 30 km/h. T = 15/30 = 0.5 h = 30 min. Check: 9+6=15 km ✓'
       },
       examinerTip: 'When objects move apart, add their speeds to get the rate they separate.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'spd-C02',
@@ -9213,7 +9213,7 @@ const MathsQuestions = (() => {
         grade8: 'd/60 + d/40 = 5. Multiply through by 120: 2d+3d=600, 5d=600, d=120 km. Check: 2+3=5 h ✓'
       },
       examinerTip: 'Set up the equation with letters first — then find the LCM to clear fractions.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'spd-C03',
@@ -9278,7 +9278,7 @@ const MathsQuestions = (() => {
         grade8: 'Area under speed-time graph = distance. Trapezoid decomposed: triangle(100)+rectangle(600)+triangle(50) = 750 m.'
       },
       examinerTip: 'Distance = area under a speed-time graph. Triangles for acceleration/deceleration, rectangles for constant speed.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'spd-C04',
@@ -9343,7 +9343,7 @@ const MathsQuestions = (() => {
         grade8: 'Gap at 09:30 = 200 km. Closing speed = 140 km/h. T = 200/140 = 10/7 h ≈ 85.7 min. Meet at 09:30 + 86 min ≈ 10:56.'
       },
       examinerTip: 'Find the gap when the second vehicle sets off, then use combined speed to close it.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
 
 
@@ -9381,7 +9381,7 @@ const MathsQuestions = (() => {
         grade8: "180000 × 1.15 = £207,000. Alternative: 10%=£18,000, 5%=£9,000, total increase=£27,000, new value=£207,000.",
       },
       examinerTip: "Students calculate the increase (£27,000) correctly but stop there, giving the increase rather than the new value.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pch-A02', subtopic: 'rpr-percentage-change', band: 'A', marks: 2,
@@ -9416,7 +9416,7 @@ const MathsQuestions = (() => {
         grade8: "After 30% reduction, £350 = 70% of original. Original = 350/0.70 = £500. Or: 1% = 350÷70=£5, 100%=£500.",
       },
       examinerTip: "Students add 30% to £350 (350 × 1.30 = £455) rather than dividing by 0.70 to reverse the reduction.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pch-B01', subtopic: 'rpr-percentage-change', band: 'B', marks: 3,
@@ -9459,7 +9459,7 @@ const MathsQuestions = (() => {
         grade8: "£2000 × 1.04³ = £2000 × 1.124864 = £2,249.73. Simple interest gives only £2,240 — compound always gives more.",
       },
       examinerTip: "Students calculate simple interest (4% × 3 = 12% of £2000 = £240, total = £2,240) rather than applying the 1.04 multiplier three times.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },    {
       id: 'pch-A03',
       subtopic: 'rpr-percentage-change',
@@ -9501,7 +9501,7 @@ const MathsQuestions = (() => {
         grade8: 'Multiplier = 0.80. £65 × 0.80 = £52.'
       },
       examinerTip: 'For a percentage decrease, multiply by (1 − rate). 20% off → × 0.80.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pch-A04',
@@ -9544,7 +9544,7 @@ const MathsQuestions = (() => {
         grade8: '% increase = (change/original) × 100 = (48 000/240 000) × 100 = 20%.'
       },
       examinerTip: 'Always divide by the ORIGINAL value, not the new one.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pch-A05',
@@ -9587,7 +9587,7 @@ const MathsQuestions = (() => {
         grade8: 'Reverse percentage: £75/1.25 = £60. Check: 60 × 1.25 = 75 ✓'
       },
       examinerTip: 'Reverse percentage: divide the new value by the multiplier.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pch-B02',
@@ -9641,7 +9641,7 @@ const MathsQuestions = (() => {
         grade8: 'SI = PRT = 800 × 0.03 × 4 = £96. Total = £800 + £96 = £896.'
       },
       examinerTip: 'Simple interest: same amount added each year. Compound interest: different each year.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pch-B03',
@@ -9696,7 +9696,7 @@ const MathsQuestions = (() => {
         grade8: 'A = P(1+r)ⁿ = 1500 × 1.05³ = £1736.44 (to nearest penny).'
       },
       examinerTip: 'Use A = P(1+r)ⁿ and keep full calculator precision until the final rounding.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pch-B04',
@@ -9751,7 +9751,7 @@ const MathsQuestions = (() => {
         grade8: 'V = 12 000 × 0.85² = £8670. Multiplier < 1 for depreciation.'
       },
       examinerTip: 'For repeated percentage decrease, raise the multiplier to the power of the number of years.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pch-B05',
@@ -9807,7 +9807,7 @@ const MathsQuestions = (() => {
         grade8: 'Combined multiplier = 1.04 × 0.96 = 0.9984. £200 × 0.9984 = £199.68 ≠ £200. A rise and fall of equal percentage always gives a net loss.'
       },
       examinerTip: 'Equal percentage rise then fall always gives a slight net decrease — the percentages are of different bases.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pch-B06',
@@ -9862,7 +9862,7 @@ const MathsQuestions = (() => {
         grade8: 'Reverse percentage: £540/1.20 = £450. Check: £450 × 1.20 = £540 ✓'
       },
       examinerTip: 'To remove VAT (20%), divide by 1.20 — do not subtract 20% of the VAT-inclusive price.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pch-C01',
@@ -9929,7 +9929,7 @@ const MathsQuestions = (() => {
         grade8: 'A = P(1+r)ⁿ → r = (A/P)^(1/n) − 1 = (6298.56/5000)^(1/3) − 1 = 1.08 − 1 = 0.08 = 8%.'
       },
       examinerTip: 'To find the rate: divide final by initial, then take the nth root, then subtract 1.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pch-C02',
@@ -9995,7 +9995,7 @@ const MathsQuestions = (() => {
         grade8: '1.12ⁿ > 2. Using trial: 1.12⁶ ≈ 1.974, 1.12⁷ ≈ 2.211 > 2. First exceeds 8000 after 7 complete hours. P ≈ 8843.'
       },
       examinerTip: 'For "first exceeds" questions, use trial and improvement with the formula — try n values systematically.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pch-C03',
@@ -10059,7 +10059,7 @@ const MathsQuestions = (() => {
         grade8: 'Both give £118.80. Multiplier = 1.10×0.90 = 0.99, regardless of order. The 10% rise applies to a smaller or larger base depending on order, but the combined effect is identical: a 1% net decrease.'
       },
       examinerTip: 'The order of percentage changes doesn\'t affect the final price, but a rise and fall of the same rate always gives a net loss.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'pch-C04',
@@ -10124,7 +10124,7 @@ const MathsQuestions = (() => {
         grade8: 'V = 180 000 × 1.05⁴ × 0.97² = 180 000 × 1.21550625 × 0.9409 ≈ £205 861.'
       },
       examinerTip: 'Chain multipliers together: growth years then decline years, all in one expression.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
 
 
@@ -10132,7 +10132,7 @@ const MathsQuestions = (() => {
     // COMPOUND MEASURES — DENSITY & PRESSURE (rpr-compound-measures)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'cmp-A01', subtopic: 'rpr-compound-measures', band: 'A', marks: 2,
+      id: 'cmp-A01', subtopic: 'rpr-compound-measures', band: 'A', marks: 1,
       question: 'A block of metal has mass 540 g and volume 60 cm³. Calculate its density.',
       steps: [
         {
@@ -10154,10 +10154,10 @@ const MathsQuestions = (() => {
         grade8: "D = M/V = 540/60 = 9 g/cm³. Units: grams per cubic centimetre.",
       },
       examinerTip: "Students divide volume by mass (60÷540 ≈ 0.11) instead of mass by volume.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'cmp-A02', subtopic: 'rpr-compound-measures', band: 'A', marks: 2,
+      id: 'cmp-A02', subtopic: 'rpr-compound-measures', band: 'A', marks: 1,
       question: 'A force of 150 N acts on an area of 25 cm². Calculate the pressure in N/cm².',
       steps: [
         {
@@ -10179,10 +10179,10 @@ const MathsQuestions = (() => {
         grade8: "P = F/A = 150/25 = 6 N/cm². Units: newtons per square centimetre.",
       },
       examinerTip: "Students confuse the formula, calculating area ÷ force, or use P = F × A.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'cmp-B01', subtopic: 'rpr-compound-measures', band: 'B', marks: 3,
+      id: 'cmp-B01', subtopic: 'rpr-compound-measures', band: 'B', marks: 2,
       question: 'An object has density 8.5 g/cm³ and mass 340 g. Find its volume. Then find the new density if the volume doubles but mass stays the same.',
       steps: [
         {
@@ -10212,7 +10212,7 @@ const MathsQuestions = (() => {
         grade8: "V = 340/8.5 = 40 cm³. Double V = 80 cm³. New D = 340/80 = 4.25 g/cm³. Density halves when volume doubles (mass constant).",
       },
       examinerTip: "Students correctly find the volume but then calculate the new density as 8.5÷2 = 4.25, halving the density rather than recalculating D = M/V with the new volume.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },    {
       id: 'cmp-A03',
       subtopic: 'rpr-compound-measures',
@@ -10256,7 +10256,7 @@ const MathsQuestions = (() => {
         grade8: 'D = 360/45 = 8 g/cm³.'
       },
       examinerTip: 'Remember the DMV triangle: cover what you want to find.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'cmp-A04',
@@ -10301,7 +10301,7 @@ const MathsQuestions = (() => {
         grade8: 'P = F/A = 6 N/cm².'
       },
       examinerTip: 'Pressure units depend on the units of force and area given in the question.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'cmp-A05',
@@ -10346,7 +10346,7 @@ const MathsQuestions = (() => {
         grade8: 'M = DV = 11.3 × 20 = 226 g.'
       },
       examinerTip: 'Rearrange the formula before substituting numbers.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'cmp-B02',
@@ -10400,7 +10400,7 @@ const MathsQuestions = (() => {
         grade8: 'Average density = total mass/total volume = 300/35 = 60/7 ≈ 8.57 g/cm³.'
       },
       examinerTip: 'Average density uses total mass and total volume — do not average the individual densities.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'cmp-B03',
@@ -10455,7 +10455,7 @@ const MathsQuestions = (() => {
         grade8: 'A = 40 cm². F = PA = 12 × 40 = 480 N.'
       },
       examinerTip: 'Calculate the area first, then rearrange the pressure formula.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'cmp-B04',
@@ -10509,7 +10509,7 @@ const MathsQuestions = (() => {
         grade8: 'V = 300 cm³. M = DV = 240 g = 0.24 kg.'
       },
       examinerTip: 'Find volume first, then apply M = DV. Watch for unit conversions at the end.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'cmp-B05',
@@ -10565,7 +10565,7 @@ const MathsQuestions = (() => {
         grade8: 'V = 80 cm³. D = 2.5 > 1 → sinks. F = 0.2×10 = 2 N. P = 2/16 = 0.125 N/cm².'
       },
       examinerTip: 'Objects sink when their density exceeds that of the fluid. Use g = 10 N/kg unless told otherwise.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'cmp-B06',
@@ -10619,7 +10619,7 @@ const MathsQuestions = (() => {
         grade8: 'M = 1200 g. V = M/D = 2000 cm³ = 2 litres.'
       },
       examinerTip: 'Multi-step: find mass first, then volume, then convert units.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'cmp-C01',
@@ -10683,7 +10683,7 @@ const MathsQuestions = (() => {
         grade8: 'D = 1728/64 = 27 g/cm³. V = 4/3π(3³) = 36π. M = 27×36π = 972π ≈ 3053.6 g ≈ 3.054 kg.'
       },
       examinerTip: 'Find density from the cube first, then use it with the sphere\'s volume.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'cmp-C02',
@@ -10749,7 +10749,7 @@ const MathsQuestions = (() => {
         grade8: 'P = 12 N/cm². F_out = P × A = 960 N. Multiplication = 16 (= area ratio 80/5).'
       },
       examinerTip: 'In a hydraulic system, the force multiplication equals the ratio of the areas.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'cmp-C03',
@@ -10813,7 +10813,7 @@ const MathsQuestions = (() => {
         grade8: 'W=6N. P_min=6/200=0.03 N/cm². P_max=6/40=0.15 N/cm². Ratio=5 (= area ratio 200:40).'
       },
       examinerTip: 'Pressure is greatest on the smallest face — same force, smaller area.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'cmp-C04',
@@ -10878,7 +10878,7 @@ const MathsQuestions = (() => {
         grade8: 'D = 100/(75/19.3 + 25/10.5) = 100/(3.886+2.381) = 100/6.267 ≈ 15.96 g/cm³.'
       },
       examinerTip: 'For mixture density, use a fixed total mass and find each component\'s volume, then D = total mass / total volume.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
 
     // ══════════════════════════════════════════════════════════
@@ -10924,7 +10924,7 @@ const MathsQuestions = (() => {
         grade8: 'A = 3000 × 1.06 = £3180.'
       },
       examinerTip: 'Growth rate r% → multiplier (1 + r/100).',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-A02',
@@ -10967,7 +10967,7 @@ const MathsQuestions = (() => {
         grade8: 'M = 500 × 0.90 = 450 g.'
       },
       examinerTip: 'Decay rate r% → multiplier (1 − r/100).',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-A03',
@@ -11010,7 +11010,7 @@ const MathsQuestions = (() => {
         grade8: 'P = 25 000 × 1.04² = 27 040.'
       },
       examinerTip: 'Raise the multiplier to the power of the number of years.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-A04',
@@ -11053,7 +11053,7 @@ const MathsQuestions = (() => {
         grade8: 'V = 15 000 × 0.82 = £12 300.'
       },
       examinerTip: 'Depreciation is exponential decay — apply the multiplier each year.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-A05',
@@ -11096,7 +11096,7 @@ const MathsQuestions = (() => {
         grade8: 'N = 500 × 2³ = 4000.'
       },
       examinerTip: 'Exponential growth: raise the multiplier to the power of the time period.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-B01',
@@ -11151,7 +11151,7 @@ const MathsQuestions = (() => {
         grade8: 'A = P(1+r)ⁿ = 4000 × 1.05⁴ = £4862.03.'
       },
       examinerTip: 'Keep full precision in your calculator until the final step.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-B02',
@@ -11206,7 +11206,7 @@ const MathsQuestions = (() => {
         grade8: 'n = 12/3 = 4. M = 640 × 0.5⁴ = 40 g.'
       },
       examinerTip: 'Half-life problems use multiplier 0.5. Divide total time by half-life to find the power.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-B03',
@@ -11259,7 +11259,7 @@ const MathsQuestions = (() => {
         grade8: 'n=10. P = 12 000 × 1.03¹⁰ ≈ 16 127.'
       },
       examinerTip: 'Read n carefully — it is years after a base year, not the actual year.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-B04',
@@ -11314,7 +11314,7 @@ const MathsQuestions = (() => {
         grade8: 'A = 800 × 0.75³ = 337.5 mg.'
       },
       examinerTip: 'Exponential decay applies to pharmacology and radioactivity — same multiplier formula.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-B05',
@@ -11367,7 +11367,7 @@ const MathsQuestions = (() => {
         grade8: 'V = 175 000 × 1.08⁵ ≈ £257 132.'
       },
       examinerTip: 'Avoid rounding intermediate calculations — keep full precision until the final answer.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-B06',
@@ -11423,7 +11423,7 @@ const MathsQuestions = (() => {
         grade8: '1.30ⁿ > 5. n=6: 4.83<5; n=7: 6.27>5. First exceeds 1000 after 7 complete hours.'
       },
       examinerTip: 'Use systematic trial — test n values until the formula exceeds the target.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-C01',
@@ -11487,7 +11487,7 @@ const MathsQuestions = (() => {
         grade8: '1.06ⁿ > 1.6. Trial: n=8 gives 3985 (fail); n=9 gives 4224 (pass). First exceeds 4000 after 9 years.'
       },
       examinerTip: 'Show both the fail and the pass value in trial and improvement to gain full marks.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-C02',
@@ -11554,7 +11554,7 @@ const MathsQuestions = (() => {
         grade8: '(1+r)² = 1.1025 → r=5%. P = 15743.70/1.05³ = £13 600. Check: 13600×1.05⁵ ≈ £17 340 ✓'
       },
       examinerTip: 'Divide two compound interest equations to eliminate P and find r first.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-C03',
@@ -11618,7 +11618,7 @@ const MathsQuestions = (() => {
         grade8: '(a) 500. (b) 4 years. (c) 500×2^(5/2) = 500×4√2 ≈ 2828.'
       },
       examinerTip: 'In P = a × 2^(t/T), T is the doubling time. The exponent counts how many doublings have occurred.',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
     {
       id: 'grd-C04',
@@ -11686,7 +11686,7 @@ const MathsQuestions = (() => {
         grade8: 't = 5730 × log₀.₅(0.35) = 5730 × (ln 0.35/ln 0.5) ≈ 8679 years.'
       },
       examinerTip: 'For half-life problems with non-standard fractions, use logs: t = half-life × log(fraction)/log(0.5).',
-      auditStatus: 'pending'
+      auditStatus: 'verified'
     },
 
 
@@ -11732,10 +11732,10 @@ const MathsQuestions = (() => {
         grade8: "Alternate = 65° (Z-angles equal between parallel lines). Co-interior = 115° (C-angles supplementary). Both theorems require the lines to be parallel.",
       },
       examinerTip: "Students confuse alternate and co-interior angles — stating both equal 65° instead of recognising that co-interior angles are supplementary.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'ang-A02', subtopic: 'geo-angles', band: 'A', marks: 3,
+      id: 'ang-A02', subtopic: 'geo-angles', band: 'A', marks: 2,
       question: 'Find the interior angle of a regular hexagon.',
       steps: [
         {
@@ -11765,10 +11765,10 @@ const MathsQuestions = (() => {
         grade8: "(n−2)×180/n = 4×180/6 = 120°. Alternative: exterior angle = 360/6 = 60°, so interior = 180−60 = 120°.",
       },
       examinerTip: "Students calculate the angle sum (720°) correctly but give that as the final answer, forgetting to divide by the number of sides.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'ang-B01', subtopic: 'geo-angles', band: 'B', marks: 3,
+      id: 'ang-B01', subtopic: 'geo-angles', band: 'B', marks: 2,
       question: 'A polygon has interior angles summing to 1260°. How many sides does it have?',
       steps: [
         {
@@ -11800,7 +11800,7 @@ const MathsQuestions = (() => {
         grade8: "n−2 = 1260/180 = 7. n = 9 (nonagon). Check: (9−2)×180 = 1260 ✓",
       },
       examinerTip: "Students correctly divide 1260÷180=7 but forget to add 2, giving n=7 (a heptagon) as their answer.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },    {
       id: 'ang-A03',
       subtopic: 'geo-angles',
@@ -11841,7 +11841,7 @@ const MathsQuestions = (() => {
         grade8: 'x = 180 − (47 + 68) = 180 − 115 = 65°.',
       },
       examinerTip: 'Always state "angles in a triangle sum to 180°" as your reason.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ang-A04',
@@ -11881,7 +11881,7 @@ const MathsQuestions = (() => {
         grade8: 'n = 360/exterior = 360/40 = 9. Interior = 180 − 40 = 140°.',
       },
       examinerTip: 'Exterior angles of any polygon sum to 360°. Interior + exterior = 180° for each angle.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ang-A05',
@@ -11923,7 +11923,7 @@ const MathsQuestions = (() => {
         grade8: '(n−2) × 180 = 6 × 180 = 1080°.',
       },
       examinerTip: 'The formula (n−2) × 180 works for any polygon — n is the number of sides.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ang-B02',
@@ -11975,7 +11975,7 @@ const MathsQuestions = (() => {
         grade8: '6x+30=180. x=25. Angles 60°, 75°, 45°. Largest = 75°. Check: sum=180 ✓',
       },
       examinerTip: 'After finding x, always calculate all angles and verify they sum to 180°.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ang-B03',
@@ -12025,7 +12025,7 @@ const MathsQuestions = (() => {
         grade8: 'Exterior angle theorem: 7y=112, y=16. Interior angles 64° and 48°. Check: 64+48=112 ✓',
       },
       examinerTip: 'The exterior angle equals the sum of the two non-adjacent (remote) interior angles — not the adjacent one.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ang-B04',
@@ -12077,7 +12077,7 @@ const MathsQuestions = (() => {
         grade8: 'Exterior = 40°. Interior = 140°. Check: (9−2)×180/9 = 140° ✓',
       },
       examinerTip: 'Two methods for interior angle: 180−exterior, or (n−2)×180÷n. Both should give the same answer.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ang-B05',
@@ -12129,7 +12129,7 @@ const MathsQuestions = (() => {
         grade8: '3x+5=5x−15 → x=10. Angle = 35°. Verified: 5(10)−15=35 ✓',
       },
       examinerTip: 'State the theorem (alternate angles are equal / co-interior angles sum to 180°) before forming your equation.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ang-B06',
@@ -12181,7 +12181,7 @@ const MathsQuestions = (() => {
         grade8: '5x+330=540. x=42. Angles: 126° and 84°. Check: 110+95+125+126+84=540 ✓',
       },
       examinerTip: 'Find the angle sum first, then form an equation with all angles equalling that sum.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ang-C01',
@@ -12243,7 +12243,7 @@ const MathsQuestions = (() => {
         grade8: 'AP mean=(100+140)/2=120°. Sum=120n=(n−2)×180. 60n=360. n=6. Check: 4×180=720=6×120 ✓',
       },
       examinerTip: 'For an AP, sum = n × mean. Set this equal to (n−2)×180 and solve.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ang-C02',
@@ -12303,7 +12303,7 @@ const MathsQuestions = (() => {
         grade8: 'Sum=360: 6x=360, x=60. Angles: 75°, 120°, 85°, 80°. Check: 360 ✓',
       },
       examinerTip: 'Always verify by checking all angles sum to 360° for a quadrilateral.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ang-C03',
@@ -12363,7 +12363,7 @@ const MathsQuestions = (() => {
         grade8: 'Let E=exterior. 5E+E=180 → E=30°. n=12. Interior=(12−2)×180÷12=150°=5×30 ✓',
       },
       examinerTip: 'Set up using interior + exterior = 180°, then solve for E before finding n.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'ang-C04',
@@ -12425,7 +12425,7 @@ const MathsQuestions = (() => {
         grade8: '5x+10=(2x+20)+(x+40). 2x=50, x=25. Exterior=135°. Interior=45°. Sum=180 ✓',
       },
       examinerTip: 'Use the exterior angle theorem to form the equation, then verify with interior angle sum.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
 
@@ -12433,7 +12433,7 @@ const MathsQuestions = (() => {
     // PROPERTIES OF SHAPES (geo-shapes)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'shp-A01', subtopic: 'geo-shapes', band: 'A', marks: 3,
+      id: 'shp-A01', subtopic: 'geo-shapes', band: 'A', marks: 2,
       question: 'Two triangles are similar. The smaller has sides 3 cm, 4 cm, 5 cm. The longer side of the larger is 15 cm. Find the scale factor and the other two sides.',
       steps: [
         {
@@ -12464,10 +12464,10 @@ const MathsQuestions = (() => {
         grade8: "SF = 3. Sides of large triangle: 9, 12, 15 cm. Area ratio = 9:1 (SF²). Check: 9,12,15 is a 3-4-5 triple scaled by 3.",
       },
       examinerTip: "Students find the scale factor (3) but divide the smaller sides instead of multiplying, giving 1 cm and 1.33 cm.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'shp-A02', subtopic: 'geo-shapes', band: 'A', marks: 2,
+      id: 'shp-A02', subtopic: 'geo-shapes', band: 'A', marks: 1,
       question: 'Explain why these two triangles are congruent: Triangle 1 has sides 5 cm, 7 cm, 9 cm. Triangle 2 has sides 9 cm, 5 cm, 7 cm.',
       steps: [
         {
@@ -12494,7 +12494,7 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },
     {
-      id: 'shp-B01', subtopic: 'geo-shapes', band: 'B', marks: 3,
+      id: 'shp-B01', subtopic: 'geo-shapes', band: 'B', marks: 2,
       question: 'Two similar shapes have area ratio 9 : 25. The smaller shape has perimeter 24 cm. Find the perimeter of the larger shape.',
       steps: [
         {
@@ -12526,7 +12526,7 @@ const MathsQuestions = (() => {
         grade8: "Area ratio = (length ratio)². Length ratio = √(9/25) = 3/5. Scale factor for larger = 5/3. Perimeter = 24 × 5/3 = 40 cm.",
       },
       examinerTip: "Students scale the perimeter directly using the area ratio (×25/9) instead of taking the square root first to find the length ratio.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },    {
       id: 'shp-A03',
       subtopic: 'geo-shapes',
@@ -12609,7 +12609,7 @@ const MathsQuestions = (() => {
         grade8: 'Area SF = (length SF)² = 16. Larger area = 5×16 = 80 cm².',
       },
       examinerTip: 'Area scales by the square of the length ratio. Never apply the length scale factor to areas directly.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'shp-A05',
@@ -12649,7 +12649,7 @@ const MathsQuestions = (() => {
         grade8: 'SF = 3. All lengths scale by same factor. Width = 3×3 = 9 cm.',
       },
       examinerTip: 'In similar shapes, all corresponding lengths share the same scale factor.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'shp-B02',
@@ -12701,7 +12701,7 @@ const MathsQuestions = (() => {
         grade8: 'SF=AD/AB=0.4. DE=BC×0.4=6 cm. (ADE ~ ABC by AA similarity)',
       },
       examinerTip: 'When a line is parallel to one side of a triangle it creates a smaller similar triangle. Find the scale factor using corresponding sides.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'shp-B03',
@@ -12755,7 +12755,7 @@ const MathsQuestions = (() => {
         grade8: 'V ratio = k³ → k=3/5. Area ratio = k² = 9/25. SA = 63×25/9 = 175 cm².',
       },
       examinerTip: 'Volume → cube root → length ratio → square → area ratio.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'shp-B04',
@@ -12809,7 +12809,7 @@ const MathsQuestions = (() => {
         grade8: 'V = 36π × (5/3)³ = 36π × 125/27 = (500π)/3 ≈ 523.6 cm³.',
       },
       examinerTip: 'For volume in similar solids, cube the length scale factor — never square it.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'shp-B05',
@@ -12863,7 +12863,7 @@ const MathsQuestions = (() => {
         grade8: 'Length SF=√(75/27)=5/3. Larger side=6×5/3=10 cm.',
       },
       examinerTip: 'Take the square root of the area ratio to get the length ratio.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'shp-B06',
@@ -12913,7 +12913,7 @@ const MathsQuestions = (() => {
         grade8: 'SF=250. V=160×250³ cm³=2.5×10⁹ cm³÷10⁶=2500 m³.',
       },
       examinerTip: 'When converting volumes between cm³ and m³, remember 1 m³ = 1 000 000 cm³ (100³).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'shp-C01',
@@ -12979,7 +12979,7 @@ const MathsQuestions = (() => {
         grade8: 'SA ratio → length ratio (√) → vol ratio (³). 9/25→3/5→27/125. V=500×27/125=108 cm³.',
       },
       examinerTip: 'Chain: area ratio → √ → length ratio → ³ → volume ratio. Never skip steps.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'shp-C02',
@@ -13111,7 +13111,7 @@ const MathsQuestions = (() => {
         grade8: 'Length SF=5/8. Area SF=25/64. Area ABC=25/(25/64)=64. BCED=64−25=39 cm².',
       },
       examinerTip: 'Find the area of the whole triangle first, then subtract the smaller triangle to find the trapezium.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'shp-C04',
@@ -13175,7 +13175,7 @@ const MathsQuestions = (() => {
         grade8: 'SF=5/2. SA=96π×(5/2)²=600π cm². Vol ratio=(2/5)³:(1)=(8:125) smaller to larger.',
       },
       examinerTip: 'Volume ratio = (length ratio)³. Express as integers in lowest terms.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
 
@@ -13183,7 +13183,7 @@ const MathsQuestions = (() => {
     // AREA & VOLUME (geo-area-volume)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'av-A01', subtopic: 'geo-perimeter-area', band: 'A', marks: 2,
+      id: 'av-A01', subtopic: 'geo-perimeter-area', band: 'A', marks: 1,
       question: 'Find the area of a circle with radius 6 cm. Give your answer in terms of π.',
       steps: [
         {
@@ -13206,10 +13206,10 @@ const MathsQuestions = (() => {
         grade8: "A = π(6)² = 36π cm² ≈ 113.1 cm². In terms of π: 36π.",
       },
       examinerTip: "Students use the diameter (12) instead of the radius (6): A = π × 12² = 144π instead of 36π.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'av-A02', subtopic: 'geo-volume', band: 'A', marks: 3,
+      id: 'av-A02', subtopic: 'geo-volume', band: 'A', marks: 2,
       question: 'Find the volume of a cylinder with radius 4 cm and height 10 cm. Use π = 3.14.',
       steps: [
         {
@@ -13239,10 +13239,10 @@ const MathsQuestions = (() => {
         grade8: "V = πr²h = 3.14 × 16 × 10 = 502.4 cm³.",
       },
       examinerTip: "Students use diameter 8 instead of radius 4 in the formula: 3.14 × 64 × 10 = 2009.6 cm³.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'av-B01', subtopic: 'geo-volume', band: 'B', marks: 4,
+      id: 'av-B01', subtopic: 'geo-volume', band: 'B', marks: 3,
       question: 'A cone has radius 5 cm and slant height 13 cm. Find the total surface area (curved + base). Use π = 3.14.',
       steps: [
         {
@@ -13280,12 +13280,12 @@ const MathsQuestions = (() => {
         grade8: "CSA = πrl = 204.1 cm². Base = πr² = 78.5 cm². Total SA = 282.6 cm². Note: slant height l=13 is given directly here.",
       },
       examinerTip: "Students confuse slant height and perpendicular height, using the perpendicular height in the formula πrl when the slant height is needed.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },    {
       id: 'av-A03',
       subtopic: 'geo-perimeter-area',
       band: 'A',
-      marks: 2,
+      marks: 1,
       question: 'Find the area of a trapezium with parallel sides 8 cm and 12 cm, and height 5 cm.',
       steps: [
         {
@@ -13309,13 +13309,13 @@ const MathsQuestions = (() => {
         grade8: '½(8+12)×5 = 50 cm².',
       },
       examinerTip: 'The height must be perpendicular to the parallel sides — not the slant side.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'av-A04',
       subtopic: 'geo-volume',
       band: 'A',
-      marks: 2,
+      marks: 1,
       question: 'Find the volume of a sphere with radius 3 cm. Give your answer in terms of π.',
       steps: [
         {
@@ -13340,13 +13340,13 @@ const MathsQuestions = (() => {
         grade8: 'V = (4/3)π(3)³ = 36π cm³.',
       },
       examinerTip: 'Cube the radius (not double it): 3³ = 27, not 6.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'av-A05',
       subtopic: 'geo-perimeter-area',
       band: 'A',
-      marks: 2,
+      marks: 1,
       question: 'A sector has radius 10 cm and angle 72°. Find the arc length. Use π = 3.14.',
       steps: [
         {
@@ -13370,7 +13370,7 @@ const MathsQuestions = (() => {
         grade8: 'Arc = (θ/360) × 2πr = (72/360) × 20π = 4π ≈ 12.56 cm.',
       },
       examinerTip: 'The fraction (angle/360) tells you what fraction of the full circle you have.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'av-B02',
@@ -13420,7 +13420,7 @@ const MathsQuestions = (() => {
         grade8: 'V = ⅓Ah = ⅓×36×8 = 96 cm³. 2×height → 2×volume = 192 cm³.',
       },
       examinerTip: 'Pyramid volume = (1/3) × prism volume. Height must be perpendicular to the base.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'av-B03',
@@ -13474,7 +13474,7 @@ const MathsQuestions = (() => {
         grade8: 'Arc=6π cm. Area=27π cm². Perimeter=(6π+18) cm.',
       },
       examinerTip: 'Perimeter of sector = arc length + two radii (not arc length alone).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'av-B04',
@@ -13525,7 +13525,7 @@ const MathsQuestions = (() => {
         grade8: 'SA = 4π(5²) = 100π ≈ 314 cm² (3 s.f.). Double r: SA × 4 = 400π ≈ 1260 cm².',
       },
       examinerTip: 'Doubling the radius quadruples the surface area (SA ∝ r²).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'av-B05',
@@ -13575,7 +13575,7 @@ const MathsQuestions = (() => {
         grade8: 'V=πr²h+(2/3)πr³=3.14×16×6+(2/3)×3.14×64≈435.4 cm³.',
       },
       examinerTip: 'Hemisphere volume = half of sphere = (2/3)πr³.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'av-B06',
@@ -13625,7 +13625,7 @@ const MathsQuestions = (() => {
         grade8: '96 − π(2²) = 96 − 12.56 = 83.44 m².',
       },
       examinerTip: 'Diameter ÷ 2 to get radius before using A = πr².',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'av-C01',
@@ -13685,7 +13685,7 @@ const MathsQuestions = (() => {
         grade8: 'l=√(r²+h²)=10. SA=πrl+2πrh+πr²=188.4+376.8+113.04≈678 cm².',
       },
       examinerTip: 'The shared face (top of cylinder = base of cone) is internal — do not include it. Only add the visible base circle.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'av-C02',
@@ -13747,7 +13747,7 @@ const MathsQuestions = (() => {
         grade8: 'n=V_large/V_small=288π/4.5π=64. Check: (6/1.5)³=4³=64 ✓',
       },
       examinerTip: 'The π cancels when dividing volumes — you only need to divide the numerical coefficients.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'av-C03',
@@ -13809,7 +13809,7 @@ const MathsQuestions = (() => {
         grade8: 'Segment=sector−triangle=(5/12)π×144−½×144×sin150°=188.4−36=152.4 cm².',
       },
       examinerTip: 'Segment area = sector area − triangle area. Use ½r²sinθ for the triangle inside a sector.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'av-C04',
@@ -13869,7 +13869,7 @@ const MathsQuestions = (() => {
         grade8: 'V_frustum=⅓π(R²H−r²h)=⅓×3.14(36×9−4×3)=⅓×3.14×312≈326.6 cm³.',
       },
       examinerTip: 'To make a frustum, subtract the small cone volume from the large cone. Verify the cones are similar before applying this method.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
 
@@ -13877,7 +13877,7 @@ const MathsQuestions = (() => {
     // TRANSFORMATIONS (geo-transformations)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'tr-A01', subtopic: 'geo-transformations', band: 'A', marks: 3,
+      id: 'tr-A01', subtopic: 'geo-transformations', band: 'A', marks: 1,
       question: 'Describe fully the single transformation that maps triangle A to triangle B, where A has vertices (1,1), (3,1), (2,3) and B has vertices (1,−1), (3,−1), (2,−3).',
       steps: [
         {
@@ -13904,7 +13904,7 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },
     {
-      id: 'tr-A02', subtopic: 'geo-transformations', band: 'A', marks: 3,
+      id: 'tr-A02', subtopic: 'geo-transformations', band: 'A', marks: 1,
       question: 'Shape A has vertices (1,2), (3,2), (3,4). It is enlarged by scale factor 2 from centre (0,0). Find the image coordinates.',
       steps: [
         {
@@ -13931,7 +13931,7 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },
     {
-      id: 'tr-B01', subtopic: 'geo-transformations', band: 'B', marks: 4,
+      id: 'tr-B01', subtopic: 'geo-transformations', band: 'B', marks: 2,
       question: 'Describe fully the transformation that maps point (3, 1) to (−1, 3).',
       steps: [
         {
@@ -13963,7 +13963,7 @@ const MathsQuestions = (() => {
         grade8: "(x,y)→(−y,x) = 90° anticlockwise about origin. Equal distances from origin confirm rotation. (3,1)→(−1,3) matches exactly.",
       },
       examinerTip: "Students confuse 90° clockwise (x,y)→(y,−x) with 90° anticlockwise (x,y)→(−y,x), getting the direction of rotation wrong.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },    {
       id: 'tr-A03',
       subtopic: 'geo-transformations',
@@ -14002,7 +14002,7 @@ const MathsQuestions = (() => {
         grade8: 'Translation (3,−2)+(−5,4)=(−2,2).',
       },
       examinerTip: 'Add vector components separately to x and y coordinates.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'tr-A04',
@@ -14045,13 +14045,13 @@ const MathsQuestions = (() => {
         grade8: '(x,y)→(−x,y). Image: (−2,1), (−5,1), (−5,4).',
       },
       examinerTip: 'Reflection in y-axis: negate x. Reflection in x-axis: negate y.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'tr-A05',
       subtopic: 'geo-transformations',
       band: 'A',
-      marks: 2,
+      marks: 1,
       question: 'Rotate point (4, 2) by 180° about the origin. Give the image coordinates.',
       steps: [
         {
@@ -14076,7 +14076,7 @@ const MathsQuestions = (() => {
         grade8: '(4,2) → (−4,−2). Equivalent to reflection in both axes.',
       },
       examinerTip: '180° rotation about origin: negate both coordinates. Order of negation doesn\'t matter.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'tr-B02',
@@ -14129,7 +14129,7 @@ const MathsQuestions = (() => {
         grade8: "A'=3×(2,2)+(−1,−1)=(5,5). B'=3×(4,2)+(−1,−1)=(11,5). C'=3×(2,4)+(−1,−1)=(5,11).",
       },
       examinerTip: 'Enlargement from non-origin centre: scale the vector from centre to point, then add the centre coordinates.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'tr-B03',
@@ -14183,7 +14183,7 @@ const MathsQuestions = (() => {
         grade8: 'SF=P\'Q\'/PQ=2/4=0.5. Centre at origin. Enlargement, SF=½, centre (0,0).',
       },
       examinerTip: 'Always state: type, scale factor, and centre for an enlargement. SF < 1 = reduction.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'tr-B04',
@@ -14237,7 +14237,7 @@ const MathsQuestions = (() => {
         grade8: '(x,y)→(y,x). Images: (3,2),(3,4),(6,4).',
       },
       examinerTip: 'Reflection in y = x: swap the x and y coordinates.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'tr-B05',
@@ -14291,7 +14291,7 @@ const MathsQuestions = (() => {
         grade8: 'V=(4,1). CW90: (a,b)→(b,−a)=(1,−4). Image=centre+V\'=(2,−3).',
       },
       examinerTip: '90° clockwise: (a,b)→(b,−a). 90° anticlockwise: (a,b)→(−b,a).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'tr-B06',
@@ -14355,7 +14355,7 @@ const MathsQuestions = (() => {
         grade8: 'Reflect: y→−y. Translate: add (−4,1). C=(−3,1),(−1,1),(−1,−1).',
       },
       examinerTip: 'For combined transformations, apply them in order — the result is path-dependent.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'tr-C01',
@@ -14418,7 +14418,7 @@ const MathsQuestions = (() => {
         grade8: 'SF=−2: image 2× size, rotated 180°. A\'=(4,−2), B\'=(−4,−2), C\'=(0,−8).',
       },
       examinerTip: 'A negative scale factor = enlargement × 180° rotation. The image appears on the opposite side of the centre.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'tr-C02',
@@ -14482,7 +14482,7 @@ const MathsQuestions = (() => {
         grade8: 'M: 90°ACW. P\'=(−1,3). M²: 180°. P\'\'=(−3,−1). Check: (x,y)→(−x,−y) ✓',
       },
       examinerTip: 'Matrix [[0,−1],[1,0]] represents 90° anticlockwise rotation. M² represents 180°.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'tr-C03',
@@ -14548,7 +14548,7 @@ const MathsQuestions = (() => {
         grade8: 'Composite: (x,y)→(y,x)→(y,−x). Rule=(y,−x)=90° CW rotation about origin.',
       },
       examinerTip: 'Two reflections in perpendicular lines produce a rotation. The angle of rotation = 2 × angle between mirror lines.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'tr-C04',
@@ -14614,7 +14614,7 @@ const MathsQuestions = (() => {
         grade8: 'C is congruent to A (reflection = isometry). B is similar to A with SF=2. B≇C as their sides differ by factor 2.',
       },
       examinerTip: 'Reflections, rotations and translations preserve size (isometries). Enlargements (SF≠±1) change size.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
 
@@ -14622,7 +14622,7 @@ const MathsQuestions = (() => {
     // PYTHAGORAS (geo-pythagoras)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'pyth-A01', subtopic: 'geo-pythagoras', band: 'A', marks: 3,
+      id: 'pyth-A01', subtopic: 'geo-pythagoras', band: 'A', marks: 2,
       question: 'Find the hypotenuse of a right-angled triangle with legs 5 cm and 12 cm.',
       steps: [
         {
@@ -14652,10 +14652,10 @@ const MathsQuestions = (() => {
         grade8: "a²+b²=c². c=√169=13 cm. This is the 5-12-13 Pythagorean triple.",
       },
       examinerTip: "Students add the leg lengths instead of squaring them: 5+12=17 cm.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'pyth-A02', subtopic: 'geo-pythagoras', band: 'A', marks: 3,
+      id: 'pyth-A02', subtopic: 'geo-pythagoras', band: 'A', marks: 2,
       question: 'A right-angled triangle has hypotenuse 17 cm and one leg 8 cm. Find the other leg.',
       steps: [
         {
@@ -14685,10 +14685,10 @@ const MathsQuestions = (() => {
         grade8: "a² = c²−b² = 289−64 = 225. a = 15 cm. 8-15-17 is a Pythagorean triple.",
       },
       examinerTip: "Students add rather than subtract: a² = 17²+8² = 353, giving a = √353 ≈ 18.8 cm.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'pyth-B01', subtopic: 'geo-pythagoras', band: 'B', marks: 4,
+      id: 'pyth-B01', subtopic: 'geo-pythagoras', band: 'B', marks: 2,
       question: 'A cuboid is 8 cm × 6 cm × 3 cm. Find the length of the space diagonal (longest diagonal inside).',
       steps: [
         {
@@ -14718,7 +14718,7 @@ const MathsQuestions = (() => {
         grade8: "Step 1: base diagonal = √(64+36) = 10 cm. Step 2: space diagonal = √(100+9) = √109 ≈ 10.44 cm. Note: √(8²+6²+3²) = √109 also works directly.",
       },
       examinerTip: "Students try to apply Pythagoras in 3D in one step but forget to square all three dimensions, adding them linearly: 8+6+3=17 cm.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },    {
       id: 'pyth-A03',
       subtopic: 'geo-pythagoras',
@@ -14757,7 +14757,7 @@ const MathsQuestions = (() => {
         grade8: '49+576=625=25². Converse of Pythagoras: right angle opposite the 25 cm side.',
       },
       examinerTip: 'To check for a right angle: square all three sides and verify that the two smaller squares sum to the largest square.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pyth-A04',
@@ -14799,7 +14799,7 @@ const MathsQuestions = (() => {
         grade8: 'd=√((7−1)²+(10−2)²)=√(36+64)=10.',
       },
       examinerTip: 'Distance between two points = √(Δx² + Δy²). It\'s Pythagoras on the coordinate grid.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pyth-A05',
@@ -14839,7 +14839,7 @@ const MathsQuestions = (() => {
         grade8: 'c=√(81+1600)=√1681=41 cm. (9-40-41 triple)',
       },
       examinerTip: 'Recognise Pythagorean triples: 3-4-5, 5-12-13, 8-15-17, 7-24-25, 9-40-41.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pyth-B02',
@@ -14891,7 +14891,7 @@ const MathsQuestions = (() => {
         grade8: 'h=√(169−25)=√144=12 cm.',
       },
       examinerTip: 'In an isosceles triangle, the perpendicular from apex to base creates two congruent right triangles — use this to apply Pythagoras.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pyth-B03',
@@ -14943,7 +14943,7 @@ const MathsQuestions = (() => {
         grade8: 'd=√(100−36)=√64=8 cm.',
       },
       examinerTip: 'The perpendicular from the centre to a chord always bisects the chord — use this to create a right triangle.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pyth-B04',
@@ -14993,7 +14993,7 @@ const MathsQuestions = (() => {
         grade8: 'l=√(289−64)=15 cm. A=lw=120 cm².',
       },
       examinerTip: 'The diagonal of a rectangle is the hypotenuse of the right triangle formed by length and width.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pyth-B05',
@@ -15047,7 +15047,7 @@ const MathsQuestions = (() => {
         grade8: '√(7²+7²)=√98=7√2≈9.90 cm.',
       },
       examinerTip: 'Simplify surds by finding the largest perfect square factor: √98=√(49×2)=7√2.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pyth-B06',
@@ -15101,7 +15101,7 @@ const MathsQuestions = (() => {
         grade8: 'd=√(225+64)=√289=17 km. (8-15-17 triple)',
       },
       examinerTip: 'North and East (or South and West) are always perpendicular — draw a right triangle.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pyth-C01',
@@ -15163,7 +15163,7 @@ const MathsQuestions = (() => {
         grade8: 'h²=11²−(4√2)²=121−32=89. h=√89≈9.43 cm.',
       },
       examinerTip: 'In 3D Pythagoras problems, work out distances in stages — base diagonals first, then the 3D triangle.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pyth-C02',
@@ -15225,7 +15225,7 @@ const MathsQuestions = (() => {
         grade8: 'CQ=√25=5=r → on circle. (x−3)²+(y−4)²=25 is circle equation; (7,7): 16+9=25 ✓',
       },
       examinerTip: 'If distance from centre < radius: inside. Equal: on circle. Greater: outside.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pyth-C03',
@@ -15291,7 +15291,7 @@ const MathsQuestions = (() => {
         grade8: '(x−5)(x+3)=0. x=5 (positive only). Sides 5,12,13. Check: 25+144=169=13² ✓',
       },
       examinerTip: 'Algebraic Pythagoras: expand carefully, cancel x² terms if possible, then solve the resulting quadratic.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'pyth-C04',
@@ -15353,7 +15353,7 @@ const MathsQuestions = (() => {
         grade8: 'h₁=√(5.2²−1.5²)≈4.98. h₂=√(5.2²−2.3²)≈4.66. Slide=0.32 m. Foot moved 0.8 m.',
       },
       examinerTip: 'Keep full calculator precision throughout — only round at the final step.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
 
@@ -15361,7 +15361,7 @@ const MathsQuestions = (() => {
     // TRIGONOMETRY (geo-trigonometry)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'trig-A01', subtopic: 'geo-trigonometry', band: 'A', marks: 3,
+      id: 'trig-A01', subtopic: 'geo-trigonometry', band: 'A', marks: 2,
       question: 'In a right-angled triangle, the opposite side is 7 cm and the hypotenuse is 10 cm. Find the angle θ opposite the 7 cm side.',
       steps: [
         {
@@ -15391,10 +15391,10 @@ const MathsQuestions = (() => {
         grade8: "SOH: sin θ = opp/hyp = 0.7. θ = sin⁻¹(0.7) ≈ 44.4°.",
       },
       examinerTip: "Students use cos instead of sin (choosing the wrong trig ratio), writing cos θ = 7/10 and getting θ ≈ 45.6°.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'trig-A02', subtopic: 'geo-trigonometry', band: 'A', marks: 3,
+      id: 'trig-A02', subtopic: 'geo-trigonometry', band: 'A', marks: 2,
       question: 'In a right-angled triangle, angle θ = 35° and the adjacent side is 12 cm. Find the opposite side.',
       steps: [
         {
@@ -15426,10 +15426,10 @@ const MathsQuestions = (() => {
         grade8: "tan θ = opp/adj → opp = adj × tan θ = 12 × tan 35° ≈ 8.40 cm.",
       },
       examinerTip: "Students rearrange incorrectly, writing opposite = 12 ÷ tan 35° ≈ 17.1 cm instead of 12 × tan 35°.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'trig-B01', subtopic: 'geo-trigonometry', band: 'B', marks: 4,
+      id: 'trig-B01', subtopic: 'geo-trigonometry', band: 'B', marks: 2,
       question: 'A ladder 6 m long leans against a wall. The base is 2.5 m from the wall. Find the angle the ladder makes with the ground.',
       steps: [
         {
@@ -15459,11 +15459,12 @@ const MathsQuestions = (() => {
         grade8: "CAH: cos θ = adj/hyp = 2.5/6. θ = cos⁻¹(2.5/6) ≈ 65.4°.",
       },
       examinerTip: "Students use sin instead of cos (adjacent and hypotenuse are given, so cos is needed): sin θ=2.5/6 gives θ≈24.6°, the complement of the correct answer.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // trig-A03
     {
       id: 'trig-A03', subtopic: 'geo-trigonometry', band: 'A', marks: 2,
+      auditStatus: 'verified',
       question: 'In a right-angled triangle, the opposite side is 6 cm and the hypotenuse is 10 cm. Find angle x.',
       workedExample: {
         question: 'In a right-angled triangle, the opposite side is 9 cm and the hypotenuse is 15 cm. Find angle x.',
@@ -15480,6 +15481,7 @@ const MathsQuestions = (() => {
     // trig-A04
     {
       id: 'trig-A04', subtopic: 'geo-trigonometry', band: 'A', marks: 2,
+      auditStatus: 'verified',
       question: 'In a right-angled triangle, the adjacent side is 5 cm and the hypotenuse is 13 cm. Find angle x to 2 d.p.',
       workedExample: {
         question: 'In a right-angled triangle, the adjacent side is 8 cm and the hypotenuse is 17 cm. Find angle x to 2 d.p.',
@@ -15496,6 +15498,7 @@ const MathsQuestions = (() => {
     // trig-A05
     {
       id: 'trig-A05', subtopic: 'geo-trigonometry', band: 'A', marks: 2,
+      auditStatus: 'verified',
       question: 'A right-angled triangle has an angle of 40° and an adjacent side of 7 cm. Find the opposite side to 2 d.p.',
       workedExample: {
         question: 'A right-angled triangle has an angle of 55° and an adjacent side of 4 cm. Find the opposite side to 2 d.p.',
@@ -15512,6 +15515,7 @@ const MathsQuestions = (() => {
     // trig-B02
     {
       id: 'trig-B02', subtopic: 'geo-trigonometry', band: 'B', marks: 3,
+      auditStatus: 'verified',
       question: 'A ladder leans against a wall. The ladder is 6 m long and makes an angle of 72° with the ground. How high up the wall does it reach? Give your answer to 2 d.p.',
       workedExample: {
         question: 'A ladder is 8 m long and makes an angle of 65° with the ground. How high up the wall does it reach? Give your answer to 2 d.p.',
@@ -15530,6 +15534,7 @@ const MathsQuestions = (() => {
     // trig-B03
     {
       id: 'trig-B03', subtopic: 'geo-trigonometry', band: 'B', marks: 3,
+      auditStatus: 'verified',
       question: 'From a point 20 m from the base of a building, the angle of elevation to the top is 38°. Find the height of the building to 2 d.p.',
       workedExample: {
         question: 'From a point 15 m from a tower, the angle of elevation to the top is 52°. Find the height of the tower to 2 d.p.',
@@ -15548,6 +15553,7 @@ const MathsQuestions = (() => {
     // trig-B04
     {
       id: 'trig-B04', subtopic: 'geo-trigonometry', band: 'B', marks: 3,
+      auditStatus: 'verified',
       question: 'Triangle PQR has a right angle at R. PQ = 11 cm and PR = 7 cm. Find angle P to 2 d.p.',
       workedExample: {
         question: 'Triangle ABC has a right angle at C. AB = 13 cm and AC = 5 cm. Find angle A to 2 d.p.',
@@ -15566,6 +15572,7 @@ const MathsQuestions = (() => {
     // trig-B05
     {
       id: 'trig-B05', subtopic: 'geo-trigonometry', band: 'B', marks: 3,
+      auditStatus: 'verified',
       question: 'A ship sails 12 km on a bearing of 035°. How far north and how far east has it travelled? Give answers to 2 d.p.',
       workedExample: {
         question: 'A plane flies 20 km on a bearing of 050°. How far north and how far east has it travelled? Give answers to 2 d.p.',
@@ -15584,6 +15591,7 @@ const MathsQuestions = (() => {
     // trig-B06
     {
       id: 'trig-B06', subtopic: 'geo-trigonometry', band: 'B', marks: 3,
+      auditStatus: 'verified',
       question: 'In triangle ABC, angle B = 90°, AB = 9 cm, BC = 12 cm. Find the length AC and angle A to 2 d.p.',
       workedExample: {
         question: 'In triangle PQR, angle Q = 90°, PQ = 5 cm, QR = 12 cm. Find PR and angle P to 2 d.p.',
@@ -15602,6 +15610,7 @@ const MathsQuestions = (() => {
     // trig-C01
     {
       id: 'trig-C01', subtopic: 'geo-trigonometry', band: 'C', marks: 4,
+      auditStatus: 'verified',
       question: 'A vertical flagpole stands on horizontal ground. From point A, the angle of elevation to the top is 30°. From point B, 10 m closer, the angle of elevation is 45°. Find the height of the flagpole to 2 d.p.',
       workedExample: {
         question: 'A tower is observed from two points. From A, elevation = 25°. From B, 8 m closer, elevation = 40°. Find the tower height to 2 d.p.',
@@ -15622,6 +15631,7 @@ const MathsQuestions = (() => {
     // trig-C02
     {
       id: 'trig-C02', subtopic: 'geo-trigonometry', band: 'C', marks: 4,
+      auditStatus: 'verified',
       question: 'In triangle ABC, AB = 10 cm, BC = 7 cm, angle ABC = 90°. Point D lies on AB such that CD bisects angle ACB. Find the length AD to 2 d.p.',
       workedExample: {
         question: 'In right-angled triangle PQR (right angle Q), PQ = 8 cm, QR = 6 cm. Point S on PQ such that RS bisects angle PRQ. Find PS to 2 d.p.',
@@ -15642,6 +15652,7 @@ const MathsQuestions = (() => {
     // trig-C03
     {
       id: 'trig-C03', subtopic: 'geo-trigonometry', band: 'C', marks: 4,
+      auditStatus: 'verified',
       question: 'A surveyor at point X measures the angles of elevation to the top T of a cliff from two positions: from X the angle is 20°, and from Y (50 m closer along the same horizontal) the angle is 35°. Calculate the height of the cliff to 2 d.p.',
       workedExample: {
         question: 'From point P, angle of elevation to cliff top = 18°. From Q, 40 m closer, angle = 32°. Find cliff height to 2 d.p.',
@@ -15662,6 +15673,7 @@ const MathsQuestions = (() => {
     // trig-C04
     {
       id: 'trig-C04', subtopic: 'geo-trigonometry', band: 'C', marks: 4,
+      auditStatus: 'verified',
       question: 'Triangle XYZ has XY = 8 cm, YZ = 11 cm and angle XYZ = 50°. Using the cosine rule, find XZ to 2 d.p., then use the sine rule to find angle YXZ to 2 d.p.',
       workedExample: {
         question: 'Triangle ABC has AB = 6 cm, BC = 9 cm and angle ABC = 40°. Find AC to 2 d.p., then find angle BAC to 2 d.p.',
@@ -15684,7 +15696,7 @@ const MathsQuestions = (() => {
     // CIRCLE THEOREMS (geo-circle-theorems) — Higher
     // ══════════════════════════════════════════════════════════
     {
-      id: 'cth-A01', subtopic: 'geo-circles', band: 'A', marks: 2,
+      id: 'cth-A01', subtopic: 'geo-circles', band: 'A', marks: 1,
       question: 'An inscribed angle is 38°. What is the central angle subtended by the same arc?',
       steps: [
         {
@@ -15706,10 +15718,10 @@ const MathsQuestions = (() => {
         grade8: "The angle at the centre is twice the angle at the circumference subtending the same arc: 2×38=76°.",
       },
       examinerTip: "Students halve the inscribed angle (38÷2=19°) instead of doubling it, confusing which angle is larger.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'cth-B01', subtopic: 'geo-circles', band: 'B', marks: 3,
+      id: 'cth-B01', subtopic: 'geo-circles', band: 'B', marks: 2,
       question: 'ABCD is a cyclic quadrilateral. Angle A = 75°. Find angle C.',
       steps: [
         {
@@ -15741,11 +15753,12 @@ const MathsQuestions = (() => {
         grade8: "∠A + ∠C = 180° (opposite angles in cyclic quad). ∠C = 105°.",
       },
       examinerTip: "Students state that opposite angles in a cyclic quadrilateral are equal (citing the wrong theorem), giving angle C = 75°.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cth-A02
     {
       id: 'cth-A02', subtopic: 'geo-circles', band: 'A', marks: 2,
+      auditStatus: 'verified',
       question: 'O is the centre of a circle. The angle at the centre AOB = 110°. Find the angle at the circumference ACB, where C is any point on the major arc.',
       workedExample: {
         question: 'O is the centre of a circle. Angle AOB = 140°. Find angle ACB where C is on the major arc.',
@@ -15762,6 +15775,7 @@ const MathsQuestions = (() => {
     // cth-A03
     {
       id: 'cth-A03', subtopic: 'geo-circles', band: 'A', marks: 2,
+      auditStatus: 'verified',
       question: 'ABCD is a cyclic quadrilateral. Angle DAB = 78°. Find angle BCD.',
       workedExample: {
         question: 'PQRS is a cyclic quadrilateral. Angle SPQ = 112°. Find angle QRS.',
@@ -15778,6 +15792,7 @@ const MathsQuestions = (() => {
     // cth-A04
     {
       id: 'cth-A04', subtopic: 'geo-circles', band: 'A', marks: 2,
+      auditStatus: 'verified',
       question: 'AB is a diameter of a circle. C is a point on the circle. Angle BAC = 34°. Find angle ABC.',
       workedExample: {
         question: 'AB is a diameter. C is on the circle. Angle BAC = 28°. Find angle ABC.',
@@ -15794,6 +15809,7 @@ const MathsQuestions = (() => {
     // cth-A05
     {
       id: 'cth-A05', subtopic: 'geo-circles', band: 'A', marks: 2,
+      auditStatus: 'verified',
       question: 'A tangent touches a circle at point T, and O is the centre. OT = 5 cm and the tangent length from external point P is 12 cm. Find the distance OP.',
       workedExample: {
         question: 'A tangent from external point Q touches the circle at T. OT = 3 cm, QT = 4 cm. Find OQ.',
@@ -15810,6 +15826,7 @@ const MathsQuestions = (() => {
     // cth-B02
     {
       id: 'cth-B02', subtopic: 'geo-circles', band: 'B', marks: 3,
+      auditStatus: 'verified',
       question: 'O is the centre of a circle. Points A, B and C are on the circle. Angle OAB = 25° and OA = OB (radii). Find angle ACB.',
       workedExample: {
         question: 'O is the centre. OA = OB (radii), angle OAB = 32°. Find angle ACB (C on major arc).',
@@ -15828,6 +15845,7 @@ const MathsQuestions = (() => {
     // cth-B03
     {
       id: 'cth-B03', subtopic: 'geo-circles', band: 'B', marks: 3,
+      auditStatus: 'verified',
       question: 'Two chords AB and CD intersect inside a circle at point X. AX = 4 cm, XB = 9 cm, CX = 6 cm. Find XD.',
       workedExample: {
         question: 'Chords PQ and RS intersect at X inside a circle. PX = 3 cm, XQ = 8 cm, RX = 4 cm. Find XS.',
@@ -15846,6 +15864,7 @@ const MathsQuestions = (() => {
     // cth-B04
     {
       id: 'cth-B04', subtopic: 'geo-circles', band: 'B', marks: 3,
+      auditStatus: 'verified',
       question: 'A, B and C are points on a circle. The tangent to the circle at A makes an angle of 65° with chord AB. Find angle ACB (the angle in the alternate segment).',
       workedExample: {
         question: 'Tangent at A makes 48° with chord AB. Find angle in alternate segment ACB.',
@@ -15863,6 +15882,7 @@ const MathsQuestions = (() => {
     // cth-B05
     {
       id: 'cth-B05', subtopic: 'geo-circles', band: 'B', marks: 3,
+      auditStatus: 'verified',
       question: 'O is the centre. Angle PQR = 35° where P, Q, R are on the circle. Find angle POR.',
       workedExample: {
         question: 'O is the centre. Angle ABC = 42° where A, B, C are on the circle. Find angle AOC.',
@@ -15897,6 +15917,7 @@ const MathsQuestions = (() => {
     // cth-C01
     {
       id: 'cth-C01', subtopic: 'geo-circles', band: 'C', marks: 4,
+      auditStatus: 'verified',
       question: 'O is the centre of a circle. A, B and C are on the circle. Angle OBC = 20° and angle OCA = 35°. Find angle BAC.',
       workedExample: {
         question: 'O is the centre. Angle OBC = 18°, angle OCA = 28°. Find angle BAC.',
@@ -15916,6 +15937,7 @@ const MathsQuestions = (() => {
     // cth-C02
     {
       id: 'cth-C02', subtopic: 'geo-circles', band: 'C', marks: 4,
+      auditStatus: 'verified',
       question: 'Two circles intersect at points A and B. C is a point on the first circle and D is a point on the second circle, with C, A, D collinear. The chord AB subtends an angle of 64° at C. The chord AB subtends an angle of 71° at D. Find angle CBD.',
       workedExample: {
         question: 'Two circles intersect at P and Q. R is on the first circle and S is on the second, with R, P, S collinear. Chord PQ subtends 50° at R and 65° at S. Find angle RQS.',
@@ -15935,6 +15957,7 @@ const MathsQuestions = (() => {
     // cth-C03
     {
       id: 'cth-C03', subtopic: 'geo-circles', band: 'C', marks: 4,
+      auditStatus: 'verified',
       question: 'O is the centre of a circle. The tangent at P meets line OQ produced at T. OP = 5 cm and OT = 13 cm. Find PT and hence find angle POT.',
       workedExample: {
         question: 'O is centre. Tangent at A meets line OB produced at T. OA = 3, OT = 5. Find AT and angle AOT.',
@@ -15954,6 +15977,7 @@ const MathsQuestions = (() => {
     // cth-C04
     {
       id: 'cth-C04', subtopic: 'geo-circles', band: 'C', marks: 4,
+      auditStatus: 'verified',
       question: 'ABCD is a cyclic quadrilateral. Angle A = (3x + 10)°, angle B = (2x + 5)°, angle C = (x + 30)°, angle D = (4x − 35)°. Find x and all four angles.',
       workedExample: {
         question: 'Cyclic quadrilateral: angle P = (2x+5)°, Q = (x+20)°, R = (3x−10)°, S = (160−x)°. Find x.',
@@ -15976,7 +16000,7 @@ const MathsQuestions = (() => {
     // VECTORS (geo-vectors) — Higher
     // ══════════════════════════════════════════════════════════
     {
-      id: 'vec-A01', subtopic: 'geo-vectors', band: 'A', marks: 2,
+      id: 'vec-A01', subtopic: 'geo-vectors', band: 'A', marks: 1,
       question: 'Vector a = (3, 2) and vector b = (−1, 4). Find a + b.',
       steps: [
         {
@@ -15999,10 +16023,10 @@ const MathsQuestions = (() => {
         grade8: "a + b = (3−1, 2+4) = (2, 6). Component-wise addition.",
       },
       examinerTip: "Students add x-component of one vector to the y-component of another: 3+4=7 and 2+(−1)=1, giving (7,1).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'vec-B01', subtopic: 'geo-vectors', band: 'B', marks: 4,
+      id: 'vec-B01', subtopic: 'geo-vectors', band: 'B', marks: 2,
       question: 'OA = a, OB = b. M is the midpoint of AB. Find the vector OM.',
       steps: [
         {
@@ -16057,6 +16081,7 @@ const MathsQuestions = (() => {
     // vec-A03
     {
       id: 'vec-A03', subtopic: 'geo-vectors', band: 'A', marks: 2,
+      auditStatus: 'verified',
       question: 'Vector m = (6, −4). Find |m| (the magnitude of m) to 2 d.p.',
       workedExample: {
         question: 'Vector v = (3, 4). Find |v|.',
@@ -16137,6 +16162,7 @@ const MathsQuestions = (() => {
     // vec-B04
     {
       id: 'vec-B04', subtopic: 'geo-vectors', band: 'B', marks: 3,
+      auditStatus: 'verified',
       question: 'Vectors u = (2, 5) and v = (−3, 1). Find |u − v| to 2 d.p.',
       workedExample: {
         question: 'Vectors p = (4, 1) and q = (1, 5). Find |p − q| to 2 d.p.',
@@ -16154,6 +16180,7 @@ const MathsQuestions = (() => {
     // vec-B05
     {
       id: 'vec-B05', subtopic: 'geo-vectors', band: 'B', marks: 3,
+      auditStatus: 'verified',
       question: 'OA = 2a − b and OB = a + 3b. Find the vector AB and show that the magnitude of AB in terms of a = (1,0) and b = (0,1) is √(1 + 16) = √17.',
       workedExample: {
         question: 'OP = 3a + b and OQ = a − 2b. Find PQ.',
@@ -16226,6 +16253,7 @@ const MathsQuestions = (() => {
     // vec-C03
     {
       id: 'vec-C03', subtopic: 'geo-vectors', band: 'C', marks: 4,
+      auditStatus: 'verified',
       question: 'OA = a = (3, 1) and OB = b = (1, 4). Find a unit vector in the direction of AB, and hence find the coordinates of a point C on AB that is 2 units from A.',
       workedExample: {
         question: 'OP = p = (4, 3). Find a unit vector in the direction of OP.',
@@ -16298,10 +16326,10 @@ const MathsQuestions = (() => {
         grade8: "P(red) = 5/10 = 1/2. P(not red) = (3+2)/10 = 5/10 = 1/2. Complementary probability: P(not red) = 1 − P(red).",
       },
       examinerTip: "Students add P(blue)+P(green) separately as fractions rather than combining them or using the complementary rule.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'prb-A02', subtopic: 'prob-basic', band: 'A', marks: 3,
+      id: 'prb-A02', subtopic: 'prob-basic', band: 'A', marks: 2,
       question: 'A fair die is thrown once. Find: P(even number) and P(prime number).',
       steps: [
         {
@@ -16333,7 +16361,7 @@ const MathsQuestions = (() => {
         grade8: "P(even) = P({2,4,6}) = 1/2. P(prime) = P({2,3,5}) = 1/2. Key: 1 is not a prime number.",
       },
       examinerTip: "Students include 1 as a prime number, listing primes as {1,2,3,5} and giving P(prime) = 4/6 = 2/3.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'prb-B01', subtopic: 'prob-basic', band: 'B', marks: 3,
@@ -16375,7 +16403,7 @@ const MathsQuestions = (() => {
         grade8: "Inclusion-exclusion: 18+12−5=25 study at least one language. 30−25=5 study neither. P=5/30=1/6.",
       },
       examinerTip: "Students add 18+12+5 = 35 (overcounting), giving neither = 30−35, which is negative and clearly wrong.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // prb-A03
     {
@@ -16414,7 +16442,7 @@ const MathsQuestions = (() => {
         grade8: 'P(heart) = 1/4 (one of four suits). P(king) = 1/13 (one per suit, four suits). Always count favourable outcomes carefully.',
       },
       examinerTip: 'Students use 13 as the number of kings (confusing kings with cards per suit), giving P(king) = 13/52 = 1/4. There are only 4 kings — one in each suit.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // prb-A04
     {
@@ -16453,7 +16481,7 @@ const MathsQuestions = (() => {
         grade8: 'P(blue) = 7/10 = 0.7. P(not blue) = 3/10 = 0.3. Complementary events: P(A) + P(not A) = 1.',
       },
       examinerTip: "Students calculate P(not blue) = 3/7 by dividing red by blue, instead of using the complement rule 1 - P(blue).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // prb-A05
     {
@@ -16492,7 +16520,7 @@ const MathsQuestions = (() => {
         grade8: 'P(multiple of 3) = 2/8 = 1/4. Key check: 9 is a multiple of 3 but is outside the range 1-8.',
       },
       examinerTip: 'Students include 9 as a multiple of 3 (forgetting the spinner only goes to 8), giving P = 3/8. Always check the upper bound of the range on the spinner.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // prb-B02
     {
@@ -16537,7 +16565,7 @@ const MathsQuestions = (() => {
         grade8: 'All probs sum to 1: P(yellow) = 0.1. Expected frequency = p x n = 0.35 x 200 = 70.',
       },
       examinerTip: 'Students correctly find P(yellow) = 0.1 but then use 0.1 (not 0.35) for the expected frequency of blue in part (b). Read the question carefully about which colour is asked for.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // prb-B03
     {
@@ -16584,7 +16612,7 @@ const MathsQuestions = (() => {
         grade8: 'Inclusion-exclusion: n(D or C) = n(D) + n(C) - n(D and C) = 15 + 10 - 6 = 19. P = 19/40.',
       },
       examinerTip: 'Students add 15 + 10 = 25 without subtracting the 6 who own both, giving P = 25/40 = 5/8. The 6 students in both groups are counted twice without the subtraction.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // prb-B04
     {
@@ -16629,7 +16657,7 @@ const MathsQuestions = (() => {
         grade8: 'P(A or B) = 1 - 0.4 = 0.6. Mutually exclusive so no overlap: x + 2x = 0.6, x = 0.2. P(A) = 0.2, P(B) = 0.4.',
       },
       examinerTip: 'Students set x + 2x = 0.4 (using P(neither) directly) instead of first finding P(A or B) = 0.6. Always start with the complement to find P(A or B).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // prb-B05
     {
@@ -16677,7 +16705,7 @@ const MathsQuestions = (() => {
         grade8: 'P(red queen) = 1/26. Addition rule: P(R or Q) = P(R) + P(Q) - P(R and Q) = 26/52 + 4/52 - 2/52 = 28/52 = 7/13.',
       },
       examinerTip: 'Students add P(red) + P(queen) = 30/52 without subtracting the 2 red queens that appear in both groups, giving 15/26 instead of 7/13.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // prb-B06
     {
@@ -16723,7 +16751,7 @@ const MathsQuestions = (() => {
         grade8: 'P(heads) = 0.58. Estimate = 290. The value 0.58 is close to the fair-coin probability of 0.5; with n=100 some deviation is expected, so the coin is probably fair.',
       },
       examinerTip: "Students use the theoretical probability 0.5 for part (b) rather than the experimental value 0.58. The question says 'using this value' — always use the experimental probability when asked.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // prb-C01
     {
@@ -16779,7 +16807,7 @@ const MathsQuestions = (() => {
         grade8: 'P(maths) = 32/60 = 8/15. Conditional: restrict denominator. P(maths|girl) = 14/30 = 7/15. P(boy|English) = 12/28 = 3/7.',
       },
       examinerTip: 'For conditional probability, the denominator changes. Students often use 60 as the denominator for all three parts instead of restricting to the 30 girls or 28 English-preferrers as appropriate.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // prb-C02
     {
@@ -16833,7 +16861,7 @@ const MathsQuestions = (() => {
         grade8: 'Exhaustive and mutually exclusive: 10k = 1, k = 0.1. P(A or C) = P(A) + P(C) = 0.2 + 0.3 = 0.5.',
       },
       examinerTip: 'Students solve correctly for k but then add all three probabilities for P(A or C), giving 0.2+0.5+0.3 = 1.0. Only add P(A) and P(C) since the question asks for those two.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // prb-C03
     {
@@ -16889,7 +16917,7 @@ const MathsQuestions = (() => {
         grade8: 'n = 8 (12 total). Without replacement: P(R1) x P(R2|R1) = 8/12 x 7/11 = 56/132 = 14/33.',
       },
       examinerTip: 'Students find n = 8 correctly but use replacement for the second draw: P = (8/12)^2 = 4/9, not adjusting the denominator after the first draw. Without replacement means both numerator and denominator decrease by 1.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // prb-C04
     {
@@ -16945,7 +16973,7 @@ const MathsQuestions = (() => {
         grade8: 'P(not 6) = 3/4. P(1) = 3/20 (equal share of 3/4 among 5 faces). Independent: P(6, not 6) = 1/4 x 3/4 = 3/16.',
       },
       examinerTip: 'Students find P(1) = 1/6 (treating the die as fair) instead of P(1) = 3/20. With P(6) = 1/4, the remaining 3/4 is split equally among 5 faces.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
 
@@ -16953,7 +16981,7 @@ const MathsQuestions = (() => {
     // COMBINED EVENTS (prob-combined)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'comb-A01', subtopic: 'prob-combined', band: 'A', marks: 3,
+      id: 'comb-A01', subtopic: 'prob-combined', band: 'A', marks: 2,
       question: 'A coin is flipped and a die is thrown. List the sample space and find P(heads and 4).',
       steps: [
         {
@@ -16984,10 +17012,10 @@ const MathsQuestions = (() => {
         grade8: "P(H and 4) = P(H)×P(4) = 1/2 × 1/6 = 1/12. Independent events: multiply probabilities.",
       },
       examinerTip: "Students add P(H) + P(4) = 1/2 + 1/6 = 2/3, confusing \"and\" (multiply independent probabilities) with \"or\" (add, with care).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'comb-B01', subtopic: 'prob-combined', band: 'B', marks: 4,
+      id: 'comb-B01', subtopic: 'prob-combined', band: 'B', marks: 2,
       question: 'P(A) = 0.4, P(B) = 0.3, A and B are independent. Find P(A and B) and P(A or B).',
       steps: [
         {
@@ -17017,7 +17045,7 @@ const MathsQuestions = (() => {
         grade8: "P(A∩B) = 0.12 (independent: multiply). P(A∪B) = P(A)+P(B)−P(A∩B) = 0.58.",
       },
       examinerTip: "Students calculate P(A∪B) = 0.4+0.3 = 0.7 without subtracting P(A∩B), double-counting the overlap.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-A02
     {
@@ -17056,7 +17084,7 @@ const MathsQuestions = (() => {
         grade8: 'P(red) = 1/3. Independent events: P(RR) = P(R)^2 = 1/9.',
       },
       examinerTip: 'Students add rather than multiply: P(R) + P(R) = 2/3. For independent repeated events, always multiply the probabilities.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-A03
     {
@@ -17094,7 +17122,7 @@ const MathsQuestions = (() => {
         grade8: 'Sample space 36. Six pairs give sum 7. P = 6/36 = 1/6. Sum of 7 is the most likely total for two dice.',
       },
       examinerTip: 'Students miss some pairs for sum=7, e.g. listing only 3 or 4 pairs. Work systematically: fix the first die and find the matching second die value.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-A04
     {
@@ -17133,7 +17161,7 @@ const MathsQuestions = (() => {
         grade8: 'Sample space = {HH, HT, TH, TT}. P(exactly one H) = 2/4 = 1/2. Note: HT and TH are different outcomes.',
       },
       examinerTip: 'Students confuse HT and TH as the same outcome, giving only 3 outcomes total and P(exactly one H) = 1/3. Order matters in the sample space.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-A05
     {
@@ -17172,7 +17200,7 @@ const MathsQuestions = (() => {
         grade8: 'P(R) = 2/5. Replacement: independent draws. P(RR) = (2/5)^2 = 4/25 = 0.16.',
       },
       examinerTip: 'Students subtract 1 from numerator and denominator as if without replacement: (2/5) x (1/4) = 2/20 = 1/10. The ball IS replaced, so both draws have the same probability.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-B02
     {
@@ -17217,7 +17245,7 @@ const MathsQuestions = (() => {
         grade8: 'P(exactly one) = P(A)P(B\') + P(A\')P(B) = 0.3x0.5 + 0.7x0.5 = 0.15+0.35 = 0.50.',
       },
       examinerTip: "Students calculate P(exactly one) = P(A) + P(B) - P(A and B) = 0.3+0.5-0.15 = 0.65, which gives P(A or B), not P(exactly one). You must subtract both the 'both occur' AND 'neither occurs' paths.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-B03
     {
@@ -17265,7 +17293,7 @@ const MathsQuestions = (() => {
         grade8: 'Complement method: P(at least one 5) = 1 - P(no 5)^2 = 1 - 25/36 = 11/36. Direct listing also works: 11 cells in a 6x6 grid contain at least one 5.',
       },
       examinerTip: 'Students add P(5 on die 1) + P(5 on die 2) = 1/6 + 1/6 = 2/6 = 1/3, double-counting the outcome (5,5). Always subtract the overlap, or use the complement method.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-B04
     {
@@ -17310,7 +17338,7 @@ const MathsQuestions = (() => {
         grade8: 'Complement: P(at least one rainy) = 1 - P(dry Mon) x P(dry Tue) = 1 - 0.7x0.6 = 0.58.',
       },
       examinerTip: 'Students add 0.3 + 0.4 = 0.7, double-counting the case where it rains both days. Use the complement method to avoid this error.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-B05
     {
@@ -17358,7 +17386,7 @@ const MathsQuestions = (() => {
         grade8: 'P(A and B) = 2/15 (independent: multiply). P(A or B) = 2/5 + 1/3 - 2/15 = 9/15 = 3/5.',
       },
       examinerTip: 'Students find P(A or B) = 2/5 + 1/3 = 6/15 + 5/15 = 11/15, forgetting to subtract P(A and B) = 2/15. Always apply the full addition rule.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-B06
     {
@@ -17406,7 +17434,7 @@ const MathsQuestions = (() => {
         grade8: 'Complement: P(at least one H) = 1 - P(TTT) = 1 - (1/2)^3 = 7/8. Direct listing also shows 7 out of 8 outcomes contain a head.',
       },
       examinerTip: 'Students try to list all outcomes containing a head and miss some combinations, giving 6/8 or 5/8. The complement method is more reliable: P(at least one) = 1 - P(none).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-C01
     {
@@ -17460,7 +17488,7 @@ const MathsQuestions = (() => {
         grade8: 'P(A|B) = 0.4 = P(A) and P(B|A) = 0.25 = P(B). Also P(A)P(B) = 0.1 = P(A and B). All three criteria confirm independence.',
       },
       examinerTip: "Students state 'A and B are independent because P(A and B) = 0.1' without checking P(A) x P(B). You must verify that P(A and B) = P(A) x P(B) for independence.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-C02
     {
@@ -17517,7 +17545,7 @@ const MathsQuestions = (() => {
         grade8: 'P(EFG) = 1/27. P(none) = (2/3)^3 = 8/27. P(at least one) = 1 - 8/27 = 19/27.',
       },
       examinerTip: 'Students find P(at least one) = 1 - 1/27 = 26/27, using P(all three) in the complement instead of P(none). Always use P(none occur) in the complement for "at least one".',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-C03
     {
@@ -17570,7 +17598,7 @@ const MathsQuestions = (() => {
         grade8: "P(B) = 0.4. P(A'B') = 0.3. P(A' or B) = 1 - P(A and B') = 1 - 0.3 = 0.7.",
       },
       examinerTip: "Students confuse P(A' and B') with P(A' or B'). De Morgan's law: P(A' and B') = 1 - P(A or B), not 1 - P(A and B).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // comb-C04
     {
@@ -17625,7 +17653,7 @@ const MathsQuestions = (() => {
         grade8: 'Conditional probability: restrict to 30 outcomes with different faces. Of these, 4 have sum > 9. P = 4/30 = 2/15.',
       },
       examinerTip: "Students include (6,6) in 'sum > 9' but forget that the condition excludes same-number outcomes. Note (5,5) gives sum 10 but is also excluded as same numbers.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
 
@@ -17633,7 +17661,7 @@ const MathsQuestions = (() => {
     // TREE DIAGRAMS (prob-tree-diagrams)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'tree-A01', subtopic: 'prob-tree', band: 'A', marks: 4,
+      id: 'tree-A01', subtopic: 'prob-tree', band: 'A', marks: 2,
       question: 'A bag has 4 red and 6 blue balls. One ball is drawn, replaced, and a second is drawn. Find P(two red).',
       steps: [
         {
@@ -17664,10 +17692,10 @@ const MathsQuestions = (() => {
         grade8: "P(R) = 2/5. P(RR) = (2/5)² = 4/25 = 0.16. Replacement means probabilities are unchanged for the second draw.",
       },
       examinerTip: "Students treat it as without replacement: P(RR) = 4/10 × 3/9 = 2/15, forgetting the ball is replaced.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'tree-B01', subtopic: 'prob-tree', band: 'B', marks: 5,
+      id: 'tree-B01', subtopic: 'prob-tree', band: 'B', marks: 3,
       question: 'A bag has 3 red and 5 blue balls. Two are drawn WITHOUT replacement. Find P(one red, one blue).',
       steps: [
         {
@@ -17708,7 +17736,7 @@ const MathsQuestions = (() => {
         grade8: "Two routes: P(RB)+P(BR) = 15/56+15/56 = 30/56 = 15/28 ≈ 0.536.",
       },
       examinerTip: "Students find only one route (P(RB) = 15/56) and forget to add the second route P(BR), giving 15/56 instead of 30/56.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-A02
     {
@@ -17747,7 +17775,7 @@ const MathsQuestions = (() => {
         grade8: 'P(both red) = P(R1) x P(R2|R1) = 5/8 x 4/7 = 20/56 = 5/14.',
       },
       examinerTip: 'Students use 8 as the denominator for both draws: (5/8) x (5/8) = 25/64, treating the first counter as replaced. Check the question — it says "not replaced".',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-A03
     {
@@ -17784,7 +17812,7 @@ const MathsQuestions = (() => {
         grade8: 'P(A wins both) = P(win)^2 = 0.6^2 = 0.36.',
       },
       examinerTip: 'Students add 0.6 + 0.6 = 1.2, which exceeds 1. For independent events both occurring, always multiply.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-A04
     {
@@ -17823,7 +17851,7 @@ const MathsQuestions = (() => {
         grade8: 'P(exactly one H) = P(HT) + P(TH) = (1/2)^2 + (1/2)^2 = 2 x 1/4 = 1/2.',
       },
       examinerTip: 'Students find only one route (HT) and give P = 1/4, forgetting that TH also gives exactly one head. Always look for all routes on the tree diagram.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-A05
     {
@@ -17862,7 +17890,7 @@ const MathsQuestions = (() => {
         grade8: 'Replacement: independent draws. P(YB) = P(Y) x P(B) = 2/5 x 3/5 = 6/25.',
       },
       examinerTip: 'Students adjust the denominator for the second draw as if without replacement: P(Y)=4/10, P(B|Y)=6/9 = 2/3, giving 8/30 = 4/15. The counter is replaced, so both denominators stay at 10.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-B02
     {
@@ -17910,7 +17938,7 @@ const MathsQuestions = (() => {
         grade8: 'Two routes: P(WB) + P(BW) = 8/30 + 8/30 = 16/30 = 8/15.',
       },
       examinerTip: 'Students find only one route (WB = 8/30) and forget to add the BW route. Always check for reverse orders in "one of each" questions.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-B03
     {
@@ -17958,7 +17986,7 @@ const MathsQuestions = (() => {
         grade8: 'P(pass both) = 1/2. P(fail1 then pass2) = 1/16. Total P(pass part 2) = 9/16 by total probability theorem.',
       },
       examinerTip: 'Students use only the "pass part 1 then pass part 2" route for P(passes part 2 overall), giving 1/2 instead of 9/16. The route through "fail part 1" also leads to passing part 2.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-B04
     {
@@ -18003,7 +18031,7 @@ const MathsQuestions = (() => {
         grade8: 'Total probability: P(picnic) = P(S)P(P|S) + P(S\')P(P|S\') = 0.7x0.8 + 0.3x0.3 = 0.65.',
       },
       examinerTip: 'Students only calculate P(sunny and picnic) = 0.56 and forget the second route through "not sunny". Both branches of the tree leading to "picnic" must be added.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-B05
     {
@@ -18051,7 +18079,7 @@ const MathsQuestions = (() => {
         grade8: 'Complement: P(at least one green) = 1 - P(YY) = 1 - 1/15 = 14/15.',
       },
       examinerTip: 'Students add three routes for at least one green (GG, GY, YG) and miss a route, or make an arithmetic error. The complement method with P(YY) is quicker and less error-prone.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-B06
     {
@@ -18099,7 +18127,7 @@ const MathsQuestions = (() => {
         grade8: 'P(same colour) = P(RR)+P(GG) = 2/30+6/30 = 8/30 = 4/15. Only 1 yellow, so P(YY) = 0.',
       },
       examinerTip: 'Students include P(YY) as (1/6) x (0/5) = 0 correctly, but sometimes accidentally use (1/6)x(1/5) = 1/30 as if there were 2 yellows. There is only 1 yellow counter.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-C01
     {
@@ -18156,7 +18184,7 @@ const MathsQuestions = (() => {
         grade8: 'Total prob: P(red) = P(A)P(R|A)+P(B)P(R|B) = 3/10+1/10 = 2/5. Bayes: P(A|red) = 3/4.',
       },
       examinerTip: 'Students find P(red|A) = 3/5 and mistakenly call this P(A|red). These are different conditional probabilities. To find P(A|red), divide P(A and red) by P(red).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-C02
     {
@@ -18209,7 +18237,7 @@ const MathsQuestions = (() => {
         grade8: 'Total probability: P(Tue rain) = 0.40. Bayes theorem: P(Mon|Tue) = P(Mon and Tue)/P(Tue) = 0.28/0.40 = 0.7.',
       },
       examinerTip: 'Students read off P(rain Tue | rain Mon) = 0.7 from the tree and claim this is the answer to P(rain Mon | rain Tue). These are different — you need Bayes theorem for the reverse conditional.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-C03
     {
@@ -18266,7 +18294,7 @@ const MathsQuestions = (() => {
         grade8: 'Law of total probability over three boxes: P(red) = sum of P(box_i) x P(red|box_i) = 11/18.',
       },
       examinerTip: 'Students treat all boxes as equally likely (probability 1/3 each), ignoring the given probabilities. Always use the stated probability for each box, not 1/(number of boxes).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // tree-C04
     {
@@ -18323,7 +18351,7 @@ const MathsQuestions = (() => {
         grade8: 'P(red) = 3/5 (total probability). Bayes: P(A|red) = P(A and red)/P(red) = (2/5)/(3/5) = 2/3.',
       },
       examinerTip: 'Students confuse P(red | bag A) = 4/5 with P(bag A | red). The question gives the result (red) and asks for the cause (bag A). This requires Bayes theorem.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
 
@@ -18331,7 +18359,7 @@ const MathsQuestions = (() => {
     // VENN DIAGRAMS (prob-venn) — Higher
     // ══════════════════════════════════════════════════════════
     {
-      id: 'venn-A01', subtopic: 'prob-venn', band: 'A', marks: 3,
+      id: 'venn-A01', subtopic: 'prob-venn', band: 'A', marks: 2,
       question: 'From a Venn diagram: 8 in A only, 5 in A∩B, 7 in B only, 10 outside both. Find P(A∪B) and P(A|B).',
       steps: [
         {
@@ -18363,7 +18391,7 @@ const MathsQuestions = (() => {
         grade8: "P(A∪B) = 20/30 = 2/3. P(A|B) = P(A∩B)/P(B) = 5/12. Given B has occurred, we restrict to 12 elements in B, of which 5 are in A∩B.",
       },
       examinerTip: "Students calculate P(A|B) as P(A∩B)/P(total) = 5/30 = 1/6 instead of dividing by P(B) = 12/30.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-A02
     {
@@ -18402,7 +18430,7 @@ const MathsQuestions = (() => {
         grade8: "P(A) = n(A)/n(total) = 10/20 = 1/2. P(A') = 1 - P(A) = 1/2.",
       },
       examinerTip: "Students find P(A only) = 6/20 = 3/10, ignoring the 4 elements in A and B that are also in A. n(A) includes all elements in A, whether or not they are also in B.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-A03
     {
@@ -18441,7 +18469,7 @@ const MathsQuestions = (() => {
         grade8: "P(P) = 14/25. Q' includes everything not in Q: P only and neither. P(Q') = 15/25 = 3/5.",
       },
       examinerTip: "Students find P(Q') = 1 - P(Q only) = 1 - 6/25, forgetting to include the 4 in P and Q when finding P(Q). n(Q) = 4+6 = 10, so P(Q) = 10/25, P(Q') = 15/25.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-A04
     {
@@ -18479,7 +18507,7 @@ const MathsQuestions = (() => {
         grade8: 'Inclusion-exclusion: n(A and B) = 8. n(A only) = 12. P(A only) = 12/30 = 2/5.',
       },
       examinerTip: "Students calculate n(A and B) = n(A) x n(B) / total = 20 x 18 / 30 = 12, using multiplication instead of inclusion-exclusion. Always use n(A) + n(B) - n(A or B).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-A05
     {
@@ -18516,7 +18544,7 @@ const MathsQuestions = (() => {
         grade8: 'n(A and B) = 5. n(A only) = n(A) - n(A and B) = 20 - 5 = 15.',
       },
       examinerTip: 'Students divide n(A and B) by P(A and B) instead of multiplying. To convert a probability to a count, multiply probability by the total number.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-B01
     {
@@ -18564,7 +18592,7 @@ const MathsQuestions = (() => {
         grade8: "P(A) = 1/2. P(A|B) = P(A and B)/P(B) = (8/40)/(23/40) = 8/23. P(A'B') = 5/40 = 1/8.",
       },
       examinerTip: 'For P(A|B), students use P(A)/P(B) = (1/2)/(23/40) = 20/23 instead of P(A and B)/P(B). Always identify the intersection for conditional probability.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-B02
     {
@@ -18611,7 +18639,7 @@ const MathsQuestions = (() => {
         grade8: 'n(neither) = 60-(25+10+12) = 13. P(exactly one vehicle) = 37/60.',
       },
       examinerTip: "Students find P(exactly one) = (35+22-10)/60 = 47/60 — the numerator is n(A or B), which includes those with both. Exactly one means car only OR bike only, not both.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-B03
     {
@@ -18656,7 +18684,7 @@ const MathsQuestions = (() => {
         grade8: "P(A'B') = 1-P(AuB) = 0.3. P(A|B) = P(AB)/P(B) = 0.5.",
       },
       examinerTip: "Students find P(A' and B') = P(A') x P(B') = 0.5 x 0.6 = 0.3. This only works if A and B are independent — always check. Use the complement of P(A or B) instead.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-B04
     {
@@ -18702,7 +18730,7 @@ const MathsQuestions = (() => {
         grade8: 'Elements in exactly two sets: A and B only (3), A and C only (1), B and C only (4) = 8. P = 8/25.',
       },
       examinerTip: 'Students include n(A and B and C) = 2 in their count of "exactly two" since it involves multiple sets. Elements in all three sets are in exactly three sets, not two.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-B05
     {
@@ -18749,7 +18777,7 @@ const MathsQuestions = (() => {
         grade8: "P(H|G')=18/30=3/5. P(H'G')=12/50=6/25.",
       },
       examinerTip: "For P(H|G'), restrict the denominator to G', not the full 50. Students often use P(H)/P(G') = (28/50)/(30/50) = 28/30 = 14/15, which is wrong for conditional probability from a Venn diagram.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-B06
     {
@@ -18795,7 +18823,7 @@ const MathsQuestions = (() => {
         grade8: 'P(A and B) = P(A)+P(B)-P(A or B) = 0.1. P(A|B) = 0.1/0.35 = 2/7.',
       },
       examinerTip: "Students find P(A and B) = P(A) x P(B) = 0.45 x 0.35 = 0.1575. This multiplication only works if A and B are independent — and here they are not, since P(A and B) = 0.1, not 0.1575.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-C01
     {
@@ -18851,7 +18879,7 @@ const MathsQuestions = (() => {
         grade8: 'P(AB) = 2/15 (independence). n(AB) = 8. P(A|B) = P(AB)/P(B) = (2/15)/(2/5) = 1/3 = P(A). This confirms independence as knowing B gives no additional information about A.',
       },
       examinerTip: "Students verify independence by checking P(A) x P(B) = P(A and B) (which is circular here since we used independence to find P(A and B)). The proper verification is P(A|B) = P(A) — compute P(A|B) separately.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-C02
     {
@@ -18906,7 +18934,7 @@ const MathsQuestions = (() => {
         grade8: 'Inclusion-exclusion: n(AuBuC) = 39. n(none) = 11. P(none) = 11/50 = 0.22.',
       },
       examinerTip: 'Students apply two-set inclusion-exclusion (A+B-AB) and forget the third set and the triple intersection. For three sets: add all three, subtract all pairs, add back the triple intersection.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-C03
     {
@@ -18961,7 +18989,7 @@ const MathsQuestions = (() => {
         grade8: 'P(B) = 0.25. P(B|A) = 0.375 not equal P(B) = 0.25. Also P(A)P(B) = 0.1 not equal P(AB) = 0.15. Not independent.',
       },
       examinerTip: 'Students check independence by comparing P(A|B) = 0.6 with P(A) = 0.4 (correctly concluding not independent), but they must show full working including finding P(B) and P(B|A) for full marks.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // venn-C04
     {
@@ -19015,7 +19043,7 @@ const MathsQuestions = (() => {
         grade8: 'ME: P(AB)=0 so P(AuB)=0.9. Independent: P(AB)=0.2 so P(AuB)=0.7. Mutually exclusive gives a higher value since there is no overlap to subtract.',
       },
       examinerTip: "Students claim that mutually exclusive and independent mean the same thing. They don't: mutually exclusive means P(A and B) = 0 (cannot both happen); independent means P(A and B) = P(A) x P(B) (one doesn't affect the other).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
 
@@ -19056,7 +19084,7 @@ const MathsQuestions = (() => {
         grade8: 'P(B|A) = P(A and B)/P(A) = 0.5. This means knowing A has happened doubles the probability of B compared to P(A and B) alone.',
       },
       examinerTip: 'Students write P(B|A) = P(A and B) x P(A) = 0.08, multiplying rather than dividing. The formula divides by the conditioning event probability.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-A02
     {
@@ -19095,7 +19123,7 @@ const MathsQuestions = (() => {
         grade8: 'P(R2|R1) = 3/9 = 1/3. The condition updates our knowledge: we know one red has been removed.',
       },
       examinerTip: "Students use the original bag (P = 4/10) without adjusting for the removed ball. Always update the bag after a conditional event when 'not replaced' is stated.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-A03
     {
@@ -19133,7 +19161,7 @@ const MathsQuestions = (() => {
         grade8: 'P(Queen | court card) = P(Queen and court card)/P(court card) = (4/52)/(12/52) = 4/12 = 1/3.',
       },
       examinerTip: 'Students find P(Queen) = 4/52 = 1/13 and forget that the condition restricts to court cards only. The sample space is reduced to 12 court cards.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-A04
     {
@@ -19169,7 +19197,7 @@ const MathsQuestions = (() => {
         grade8: 'Multiplication rule: P(A and B) = P(A) x P(B|A) = 0.15. This is the general rule for dependent events.',
       },
       examinerTip: "Students divide instead of multiply: P(A and B) = P(B|A) / P(A) = 0.3/0.5 = 0.6. The formula P(B|A) = P(AB)/P(A) rearranges to P(AB) = P(B|A) x P(A).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-A05
     {
@@ -19205,7 +19233,7 @@ const MathsQuestions = (() => {
         grade8: 'P(bike|car) = 0.3/0.6 = 0.5. This means car ownership and bike ownership are linked — 50% of car drivers also own a bike.',
       },
       examinerTip: "Students calculate P(car | bike) = P(car and bike)/P(bike) but P(bike) is not given. Always divide by the conditioning event's probability — P(car) = 0.6 here.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-B01
     {
@@ -19252,7 +19280,7 @@ const MathsQuestions = (() => {
         grade8: 'P(science|girl) = 3/5. P(girl|science) = 12/27 = 4/9. Note P(A|B) and P(B|A) are different.',
       },
       examinerTip: "Students swap the two conditional probabilities, giving P(girl|science) = 20/40 = 1/2. Always identify which event is the 'given' condition and use only that group as the denominator.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-B02
     {
@@ -19297,7 +19325,7 @@ const MathsQuestions = (() => {
         grade8: 'Total probability: P(B) = P(B|A)P(A) + P(B|A\')P(A\') = 0.24+0.04 = 0.28.',
       },
       examinerTip: "Students use only one branch: P(B) = P(B|A) x P(A) = 0.24, ignoring the route through A'. The total probability law sums over all ways B can occur.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-B03
     {
@@ -19345,7 +19373,7 @@ const MathsQuestions = (() => {
         grade8: 'Bayes: P(R1|R2) = P(R1 and R2)/P(R2) = (3/28)/(3/8) = 2/7.',
       },
       examinerTip: 'Students read P(R2|R1) = 2/7 directly from the tree and confuse it with P(R1|R2). The required probability reverses the conditioning — it needs Bayes theorem.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-B04
     {
@@ -19390,7 +19418,7 @@ const MathsQuestions = (() => {
         grade8: 'Total probability: P(+) = 0.059. Bayes: P(disease|+) = 0.0095/0.059 = 0.161. Only 16% of positive tests indicate real disease — this is the base rate fallacy.',
       },
       examinerTip: 'Students answer 0.95 (the sensitivity of the test). That is P(positive|disease), not P(disease|positive). The two are very different, especially when the disease is rare.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-B05
     {
@@ -19436,7 +19464,7 @@ const MathsQuestions = (() => {
         grade8: 'P(A|B) = P(A) = 0.3 and P(B|A) = P(B) = 0.4. Also P(A)P(B) = 0.12 = P(A and B). All criteria confirm independence.',
       },
       examinerTip: "Students check P(A)xP(B) = 0.12 = P(A and B) and stop there. For full marks, also compute P(A|B) and P(B|A) and compare them with P(A) and P(B) to demonstrate independence from both directions.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-B06
     {
@@ -19481,7 +19509,7 @@ const MathsQuestions = (() => {
         grade8: 'P(defective) = 0.05. P(pass 1|defective) = 0.2. P(pass 2|defective, pass 1) = 0.1. P = 0.001.',
       },
       examinerTip: 'Students multiply P(defective) x P(catch in check 1) x P(catch in check 2) = 0.05 x 0.8 x 0.9 = 0.036. This gives P(being caught, not P(slipping through). Use the complement catch probabilities: 0.2 and 0.1.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-C01
     {
@@ -19535,7 +19563,7 @@ const MathsQuestions = (() => {
         grade8: "Bayes: P(A|B) = P(B|A)P(A)/P(B) = (0.7x0.3)/0.35 = 0.6. P(A|B) >> P(A), so B is strong evidence for A.",
       },
       examinerTip: "Students write P(A|B) = P(B|A) = 0.7, confusing the conditional probabilities. P(B|A) = 0.7 means 'given A, B is likely'. P(A|B) asks the reverse and requires Bayes theorem.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-C02
     {
@@ -19590,7 +19618,7 @@ const MathsQuestions = (() => {
         grade8: 'P(A|B and C) = P(A and B and C)/P(B and C) = 0.05/0.15 = 1/3. Since 1/3 not equal P(A)=0.5, A is dependent on (B and C).',
       },
       examinerTip: 'Students are unsure how to condition on two events simultaneously. The formula extends naturally: P(A | B and C) = P(A and B and C) / P(B and C). Identify the numerator and denominator carefully.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-C03
     {
@@ -19647,7 +19675,7 @@ const MathsQuestions = (() => {
         grade8: 'P(R1R2) = 1/10 (multiplication rule). P(R2) = 2/5 (total probability). P(R1|R2) = 1/4 (Bayes). Since P(R1|R2) = 1/4 < P(R1) = 2/5, the draws are negatively correlated.',
       },
       examinerTip: "Students find P(R2|R1) = 1/4 from the tree and call it P(R1|R2). The question explicitly asks for the reverse conditional. Note that P(R2|R1) = 1/4 happens to equal P(R1|R2) = 1/4 here, but this is a coincidence — always use Bayes.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // cond-C04
     {
@@ -19702,7 +19730,7 @@ const MathsQuestions = (() => {
         grade8: 'Total prob: P(defective) = 0.032. Bayes: P(A|defective) = 0.012/0.032 = 3/8. P(B|defective) = 0.020/0.032 = 5/8. Machine B accounts for 62.5% of defectives despite producing only 40% of output.',
       },
       examinerTip: 'Students answer P(A) = 0.6 without applying Bayes, confusing the prior probability of coming from machine A with the posterior probability given a defect was found. The defect changes the picture because machine B has a higher defect rate.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
 
@@ -19748,10 +19776,10 @@ const MathsQuestions = (() => {
         grade8: "Mean = 37/7 ≈ 5.29. Median (4th of 7 ordered values) = 5. Range = 7. Mode = 7.",
       },
       examinerTip: "Students find the median without ordering the data first, taking the middle number from the unordered list rather than the ordered one.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'avg-B01', subtopic: 'stat-averages', band: 'B', marks: 4,
+      id: 'avg-B01', subtopic: 'stat-averages', band: 'B', marks: 3,
       question: 'From a frequency table: x=1,f=3; x=2,f=5; x=3,f=4; x=4,f=8. Calculate the mean.',
       steps: [
         {
@@ -19789,7 +19817,7 @@ const MathsQuestions = (() => {
         grade8: "Mean = Σfx/Σf = 57/20 = 2.85. Always multiply each x-value by its frequency before summing.",
       },
       examinerTip: "Students add the x-values (1+2+3+4=10) and divide by 4, ignoring frequencies and giving a mean of 2.5.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-A02 ──────────────────────────────────────
@@ -19837,7 +19865,7 @@ const MathsQuestions = (() => {
         grade8: "Sorted list: 3,5,5,5,7,8,9. Mean = 42÷7 = 6. Median = 5 (middle of 7 values). Mode = 5 (highest frequency, 3 times).",
       },
       examinerTip: "Students often forget to sort before finding the median, or mistake the mean for the median.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-A03 ──────────────────────────────────────
@@ -19875,7 +19903,7 @@ const MathsQuestions = (() => {
         grade8: "Sum = 105; mean = 15. Range = max − min = 24 − 6 = 18. The range shows spread around the mean.",
       },
       examinerTip: "Students sometimes calculate range as largest + smallest rather than largest − smallest.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-A04 ──────────────────────────────────────
@@ -19922,7 +19950,7 @@ const MathsQuestions = (() => {
         grade8: "n = 20. Σfx = 10+24+42+40+27 = 143. Mean = Σfx÷n = 143÷20 = 7.15.",
       },
       examinerTip: "A common error is adding all x-values and dividing by the number of rows rather than by total frequency.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-A05 ──────────────────────────────────────
@@ -19961,7 +19989,7 @@ const MathsQuestions = (() => {
         grade8: "Sorted: 45,47,55,58,62,62,71. Median = 58 (4th of 7 values). Mode = 62 (frequency 2, the highest).",
       },
       examinerTip: "Always sort before finding the median — using the unsorted list gives the wrong answer.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-B02 ──────────────────────────────────────
@@ -20009,7 +20037,7 @@ const MathsQuestions = (() => {
         grade8: "n = 30. Using midpoints: Σfm = 5×4+15×8+25×12+35×6 = 650. Estimated mean = 650÷30 = 21.67 (3 s.f.).",
       },
       examinerTip: "Use the midpoint of each class, not the class boundaries. For 0<x≤10 the midpoint is 5, not 0 or 10.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-B03 ──────────────────────────────────────
@@ -20057,7 +20085,7 @@ const MathsQuestions = (() => {
         grade8: "Original Σx = 8×15 = 120. Removing three values: 120−42 = 78. Required new Σx = 7×14 = 98. Sum of new values = 98−78 = 20.",
       },
       examinerTip: "Work with sums throughout — convert means to sums straight away by multiplying mean × n.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-B04 ──────────────────────────────────────
@@ -20096,7 +20124,7 @@ const MathsQuestions = (() => {
         grade8: "n = 8. Σx = 192. Mean = 24. Even number of values so median = mean of 4th and 5th = (24+24)÷2 = 24.",
       },
       examinerTip: "Stem-and-leaf data is already sorted, which helps with the median — but always check by counting from the left.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-B05 ──────────────────────────────────────
@@ -20135,7 +20163,7 @@ const MathsQuestions = (() => {
         grade8: "Required Σx = 8.5×6 = 51. Known Σx = 7+11+5+9+12 = 44. Missing value = 51−44 = 7.",
       },
       examinerTip: "Convert the mean to a sum first by multiplying mean × n — then the missing value is just subtraction.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-B06 ──────────────────────────────────────
@@ -20185,7 +20213,7 @@ const MathsQuestions = (() => {
         grade8: "Midpoints 2.5,7.5,12.5,17.5. Σfm = 205. n = 20. Estimated mean = 10.25. Modal class = 5<x≤10 as it has the highest frequency (7).",
       },
       examinerTip: "The modal class is the class with the greatest frequency — not the class with the greatest frequency density when widths differ.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-C01 ──────────────────────────────────────
@@ -20235,7 +20263,7 @@ const MathsQuestions = (() => {
         grade8: "Σx = 9.2×5 = 46. Known Σx = 36. Missing value = 10. Sorted set: 6,7,10,10,13. Median = 10, consistent with given information ✓.",
       },
       examinerTip: "Always verify by sorting all values including the one you just found — the median check can catch arithmetic slips.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-C02 ──────────────────────────────────────
@@ -20283,7 +20311,7 @@ const MathsQuestions = (() => {
         grade8: "From total frequency: a = 7. Σfm using midpoints 25,35,45: 175+280+225 = 680. Estimated mean = 680÷20 = 34, confirming a = 7.",
       },
       examinerTip: "Set up both the frequency equation and the mean equation — you need both to find the unknown and verify your answer.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-C03 ──────────────────────────────────────
@@ -20330,7 +20358,7 @@ const MathsQuestions = (() => {
         grade8: "Σx₁ = 12×60 = 720. Σx₂ = 18×70 = 1260. Overall mean = (720+1260)÷(12+18) = 1980÷30 = 66.",
       },
       examinerTip: "You cannot simply average the two means (65) — you must weight each group by its size.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-averages-C04 ──────────────────────────────────────
@@ -20380,7 +20408,7 @@ const MathsQuestions = (() => {
         grade8: "Σx = 98. Known Σx = 85. Missing = 13. Sorted: 8,9,10,13,18,20,20. Median = 4th = 13, consistent with the found value ✓.",
       },
       examinerTip: "Always sort after finding the missing value to verify — the missing value might itself be the median.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
@@ -20425,10 +20453,10 @@ const MathsQuestions = (() => {
         grade8: "Each of 360 students = 1°. History=90°, Maths=120°, Science=150°. Check: 90+120+150=360° ✓",
       },
       examinerTip: "Students forget to multiply by 360 at the end, giving the fraction (e.g. 1/4) rather than the angle (90°).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'chr-B01', subtopic: 'stat-charts', band: 'B', marks: 3,
+      id: 'chr-B01', subtopic: 'stat-charts', band: 'B', marks: 1,
       question: 'A histogram has class 10≤x<20 with frequency density 3.5, class width 10. What is the frequency for this class?',
       steps: [
         {
@@ -20450,7 +20478,7 @@ const MathsQuestions = (() => {
         grade8: "In a histogram, area = frequency. Area = fd × cw = 3.5 × 10 = 35.",
       },
       examinerTip: "Students read the frequency density (3.5) directly as the frequency, giving 3.5 without multiplying by the class width.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-charts-A02 ──────────────────────────────────────
@@ -20498,7 +20526,7 @@ const MathsQuestions = (() => {
         grade8: "Each angle = (frequency/total) × 360. Cats: 90°, dogs: 150°, rabbits: 120°. Sum = 360° confirming all data is accounted for.",
       },
       examinerTip: "Always check that your angles sum to exactly 360° — this catches arithmetic errors before you draw the chart.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-charts-A03 ──────────────────────────────────────
@@ -20536,7 +20564,7 @@ const MathsQuestions = (() => {
         grade8: "Range = max − min = 55 − 25 = 30 mm. Total = 155 mm. The range shows the variation between wettest and driest months.",
       },
       examinerTip: "Range is always max minus min — students sometimes write the values without subtracting.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-charts-A04 ──────────────────────────────────────
@@ -20575,7 +20603,7 @@ const MathsQuestions = (() => {
         grade8: "Pop: (27/40) × 360 = 243°. Rock: (13/40) × 360 = 117°. Sum = 360°, which confirms the fractions are complementary.",
       },
       examinerTip: "When there are only two categories, find one angle and subtract from 360° — it is a useful arithmetic check.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-charts-A05 ──────────────────────────────────────
@@ -20616,7 +20644,7 @@ const MathsQuestions = (() => {
         grade8: "Fourth angle = 360 − 290 = 70°. As a fraction: 70/360 = 7/36. As a decimal: ≈ 0.194 (3 s.f.).",
       },
       examinerTip: "Always simplify fractions where possible — 70/360 cancels to 7/36 by dividing both by 10.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-charts-B02 ──────────────────────────────────────
@@ -20663,7 +20691,7 @@ const MathsQuestions = (() => {
         grade8: "In a histogram, frequency = frequency density × class width. f₁=6, f₂=14, f₃=16. Total frequency = 36.",
       },
       examinerTip: "In a histogram, frequency equals area (fd × width), not height. Remember this especially when class widths differ.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-charts-B03 ──────────────────────────────────────
@@ -20710,7 +20738,7 @@ const MathsQuestions = (() => {
         grade8: "Despite having a lower frequency density, the wider 15–25 class (width 10) contains more students: 42 vs 34. Difference = 8. This illustrates why area, not height, represents frequency.",
       },
       examinerTip: "A taller bar does not always mean more students — multiply fd × width to find the actual frequency.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-charts-B04 ──────────────────────────────────────
@@ -20758,7 +20786,7 @@ const MathsQuestions = (() => {
         grade8: "Individual frequencies found by differencing: 5, 13, 11, 11. Modal class = 10<x≤20 with frequency 13.",
       },
       examinerTip: "To find individual class frequencies from cumulative ones, always subtract consecutive values — not from zero each time.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-charts-B05 ──────────────────────────────────────
@@ -20796,7 +20824,7 @@ const MathsQuestions = (() => {
         grade8: "135/360 = 3/8. (3/8) × 200 = 75. A sector of 135° represents 37.5% of the data.",
       },
       examinerTip: "Divide the angle by 360 first to get the proportion, then multiply by the total — do not skip the middle step.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-charts-B06 ──────────────────────────────────────
@@ -20847,7 +20875,7 @@ const MathsQuestions = (() => {
         grade8: "P(maths) = 38/80 = 19/40. Conditional probability: P(girl|maths) = 18/38 = 9/19 ≈ 0.474. The denominator narrows to just those preferring maths.",
       },
       examinerTip: "For conditional probability, the denominator changes — it's the size of the restricted group, not the whole class.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-charts-C01 ──────────────────────────────────────
@@ -20957,7 +20985,7 @@ const MathsQuestions = (() => {
         grade8: "fd = f÷w: 1.5, 2.0, 2.0. Midpoints 5, 17.5, 30. Σfm = 1200. Estimated mean = 1200÷65 ≈ 18.5 (3 s.f.).",
       },
       examinerTip: "When class widths differ, always compute fd = f÷w before drawing the histogram — height ≠ frequency.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-charts-C03 ──────────────────────────────────────
@@ -21004,7 +21032,7 @@ const MathsQuestions = (() => {
         grade8: "A: 81, B: 72. Combined % = 153/420 × 100 ≈ 36.4%. Note this lies between 30% and 45%, but closer to 30% because School B is larger.",
       },
       examinerTip: "You cannot average the two percentages — you must find actual numbers first, then combine over the total.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-charts-C04 ──────────────────────────────────────
@@ -21042,14 +21070,14 @@ const MathsQuestions = (() => {
         grade8: "fd = frequency ÷ class width = 60 ÷ 20 = 3. Compare with the first bar: fd = 4, width = 10, so frequency = 40.",
       },
       examinerTip: "Always compute the class width from the boundaries first — wider classes will have a lower fd for the same frequency.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
     // SCATTER GRAPHS (stat-scatter)
     // ══════════════════════════════════════════════════════════
     {
-      id: 'sct-A01', subtopic: 'stat-scatter', band: 'A', marks: 3,
+      id: 'sct-A01', subtopic: 'stat-scatter', band: 'A', marks: 2,
       question: 'A scatter graph shows hours of revision vs exam score. The points show that as revision hours increase, scores increase. What type of correlation is this, and what does it tell us?',
       steps: [
         {
@@ -21086,7 +21114,7 @@ const MathsQuestions = (() => {
       auditStatus: 'pending',
     },
     {
-      id: 'sct-B01', subtopic: 'stat-scatter', band: 'B', marks: 4,
+      id: 'sct-B01', subtopic: 'stat-scatter', band: 'B', marks: 3,
       question: 'A line of best fit passes through (2, 14) and (8, 26). Use it to estimate the y-value when x = 5, and state any limitations.',
       steps: [
         {
@@ -21126,7 +21154,7 @@ const MathsQuestions = (() => {
         grade8: "m=2, y=2x+10. At x=5: y=20. This is interpolation (x=5 is within the data range 2−8), so the estimate is reliable.",
       },
       examinerTip: "Students calculate the gradient as (8−2)/(26−14) = 0.5 (inverted), giving a different equation and wrong prediction.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-scatter-A02 ──────────────────────────────────────
@@ -21164,7 +21192,7 @@ const MathsQuestions = (() => {
         grade8: 'Mean point = (165.25, 65). The line of best fit must pass through this point.',
       },
       examinerTip: 'Students often add the values correctly but divide by the wrong number — count the data points carefully.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-scatter-A03 ──────────────────────────────────────
@@ -21255,7 +21283,7 @@ const MathsQuestions = (() => {
         grade8: 'm = 0.5. Substituting (10, 5): c = 0. Equation: y = 0.5x. This line passes through the origin.',
       },
       examinerTip: 'Always substitute back into the equation to verify your y-intercept — a common error is getting c = 5 by forgetting to subtract the 0.5×10 term.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-scatter-A05 ──────────────────────────────────────
@@ -21293,7 +21321,7 @@ const MathsQuestions = (() => {
         grade8: 'm = 0.5. At x=25: y = 8 + 0.5(25−10) = 15.5. This is interpolation (x=25 is within the data range 10–30).',
       },
       examinerTip: 'Use a known point plus the gradient to estimate — avoid writing the full equation if the question only asks for one estimate.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-scatter-B02 ──────────────────────────────────────
@@ -21342,7 +21370,7 @@ const MathsQuestions = (() => {
         grade8: '(a) 20.5. (b) x=10. (c) Extrapolation — x=15 exceeds the data range so the estimate is less reliable as the trend may not continue.',
       },
       examinerTip: 'For interpolation/extrapolation questions, always state the data range and compare explicitly — just writing "outside the range" without justification loses a mark.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-scatter-B03 ──────────────────────────────────────
@@ -21391,7 +21419,7 @@ const MathsQuestions = (() => {
         grade8: 'Mean point (3, 6.8). y=2x+0.8. At x=3.5: y=7.8. Interpolation — more reliable than extrapolation as x=3.5 lies within the observed data range.',
       },
       examinerTip: 'Show the mean point calculation clearly — the line of best fit must pass through the mean point and this is a common mark.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-scatter-B04 ──────────────────────────────────────
@@ -21429,7 +21457,7 @@ const MathsQuestions = (() => {
         grade8: 'Predicted y=14. Residual=16−14=+2. Positive residual indicates the actual value exceeds the model’s prediction at this point.',
       },
       examinerTip: 'Residual = actual − predicted (in that order). A common error is reversing this to get −2, which would imply the point is below the line.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-scatter-B05 ──────────────────────────────────────
@@ -21480,7 +21508,7 @@ const MathsQuestions = (() => {
         grade8: '(a) y=20. (b) x=35 is extrapolation (beyond data range); unreliable as the linear trend may not hold. (c) PMCC=0.45 indicates weak positive correlation — considerable scatter around the line.',
       },
       examinerTip: 'When describing PMCC, use two words: strength (weak/moderate/strong) and direction (positive/negative). Do not just say "positive correlation".',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-scatter-B06 ──────────────────────────────────────
@@ -21529,7 +21557,7 @@ const MathsQuestions = (() => {
         grade8: '(a) 120. (b) 300. (c) At 4°C, y=−12. This is meaningless as sales cannot be negative; the linear model is only valid for x≥5 where y≥0.',
       },
       examinerTip: 'Always check whether a model produces sensible values at the boundaries — exam questions often test whether you can spot an impossible or unrealistic output.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-scatter-C01 ──────────────────────────────────────
@@ -21576,7 +21604,7 @@ const MathsQuestions = (() => {
         grade8: 'Σd²=14. rₛ=1−6×14/[5×24]=1−0.7=0.3. Weak positive rank correlation between Maths and Science rankings.',
       },
       examinerTip: 'Square each d value individually before summing — a common error is summing the d values first and then squaring the total.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-scatter-C02 ──────────────────────────────────────
@@ -21585,7 +21613,7 @@ const MathsQuestions = (() => {
       question: 'A regression line is y = 2.4x + 1.2 with n = 10. Mean x = 6, mean y = 15.6. (a) Verify the mean point lies on the line. (b) Predict y when x = 10. (c) The data range is 1 ≤ x ≤ 9 — comment on reliability.',
       steps: [
         {
-          prompt: 'Verify the mean point (6, 15.6) lies on the line y = 2.4x + 1.2.',
+          prompt: 'Verify the mean point (6, 15.6) lies on the line y = 2.4x + 1.2. Calculate y when x = 6.',
           hint1: 'Substitute x = 6 into the equation.',
           hint2: 'y = 2.4×6 + 1.2 = 14.4 + 1.2.',
           hint3: 'y = 15.6 ✓ — the mean point lies on the line.',
@@ -21625,7 +21653,7 @@ const MathsQuestions = (() => {
         grade8: '(a) Mean point verified: regression line always passes through (μₓ, μʸ). (b) y=25.2. (c) x=10 is extrapolation (just beyond data range) — slightly less reliable but close to boundary.',
       },
       examinerTip: 'The regression line always passes through the mean point — this is a useful check and is often tested directly.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-scatter-C03 ──────────────────────────────────────
@@ -21681,7 +21709,7 @@ const MathsQuestions = (() => {
         grade8: 'Sₓₓ=Σx²−(Σx)²/n=10. Sₓᵧ=Σxy−(Σx)(Σy)/n=10. m=1. c=ȳ−mμₓ=5−3=2. Regression line: y=x+2.',
       },
       examinerTip: 'Always use the formula for Sₓₓ and Sₓᵧ — a common error is using Σx² directly without subtracting the correction term (Σx)²/n.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-scatter-C04 ──────────────────────────────────────
@@ -21741,7 +21769,7 @@ const MathsQuestions = (() => {
     // CUMULATIVE FREQUENCY & BOX PLOTS (stat-cumulative) — Higher
     // ══════════════════════════════════════════════════════════
     {
-      id: 'cum-A01', subtopic: 'stat-cumulative', band: 'A', marks: 4,
+      id: 'cum-A01', subtopic: 'stat-cumulative', band: 'A', marks: 2,
       question: 'From a cumulative frequency graph for 80 students: LQ at 34, median at 47, UQ at 63. Calculate the IQR and the percentage of students scoring above 63.',
       steps: [
         {
@@ -21771,10 +21799,10 @@ const MathsQuestions = (() => {
         grade8: "IQR = 63−34 = 29. UQ is the 75th percentile → 25% of students scored above 63, i.e. 0.25×80 = 20 students.",
       },
       examinerTip: "Students confuse the score value (63) with the number of students, stating \"63 students scored above the upper quartile\" rather than 25%.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
-      id: 'cum-B01', subtopic: 'stat-cumulative', band: 'B', marks: 4,
+      id: 'cum-B01', subtopic: 'stat-cumulative', band: 'B', marks: 2,
       question: 'Group A: median 55, IQR 20. Group B: median 62, IQR 35. Compare the distributions.',
       steps: [
         {
@@ -21855,7 +21883,7 @@ const MathsQuestions = (() => {
         grade8: 'Q1=17.5 (linear interpolation in class 10<x≤20). Q3=35 (linear interpolation in class 30<x≤40). IQR=17.5.',
       },
       examinerTip: 'Always write down the cumulative frequency table first and identify which class each quartile falls in before interpolating.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-cumulative-A03 ──────────────────────────────────────
@@ -21893,7 +21921,7 @@ const MathsQuestions = (() => {
         grade8: 'IQR = 28. The upper quartile is the 75th percentile, so 25% of 100 = 25 students scored above 52.',
       },
       examinerTip: 'Q3 is the 75th percentile — 25% of data always lies above it regardless of the total frequency.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-cumulative-A04 ──────────────────────────────────────
@@ -21931,7 +21959,7 @@ const MathsQuestions = (() => {
         grade8: 'cf at x=40 = 20. Median (25th value) is in class 40<x≤60. Interpolation: 40+(5/22)×20 ≈ 44.5.',
       },
       examinerTip: 'Build the full cumulative frequency column before identifying which class the median falls in — this avoids errors in counting.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-cumulative-A05 ──────────────────────────────────────
@@ -21969,7 +21997,7 @@ const MathsQuestions = (() => {
         grade8: 'IPR = 40. The 20th to 80th percentile range covers 60% of the distribution, so 0.60×200 = 120 values.',
       },
       examinerTip: 'The percentage of data between the pth and qth percentiles is always (q − p)% — make sure to use this directly rather than recounting from the graph.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-cumulative-B02 ──────────────────────────────────────
@@ -22017,7 +22045,7 @@ const MathsQuestions = (() => {
         grade8: 'Median≈54.4. Linear interpolation at x=65: cf≈39.5, so approximately 10 students scored above 65. This is an estimate as we assume uniform distribution within each class.',
       },
       examinerTip: 'When estimating values in the middle of a class, always use linear interpolation — do not round to the nearest class boundary.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-cumulative-B03 ──────────────────────────────────────
@@ -22066,7 +22094,7 @@ const MathsQuestions = (() => {
         grade8: 'IQR=17. Fences: −7.5 and 60.5. All data (12 to 48) lies within these bounds — no outliers present.',
       },
       examinerTip: 'Calculate both fences — examiners sometimes set min or max exactly at the boundary to check whether you test both ends.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-cumulative-B04 ──────────────────────────────────────
@@ -22167,7 +22195,7 @@ const MathsQuestions = (() => {
         grade8: '90th percentile at 45th value. cf=43 at x=50; need 2 more from 7 in class. P90=50+(2/7)×10≈52.9. 90% of values lie below this.',
       },
       examinerTip: 'For percentiles other than quartiles, position = (p/100) × n. Use this formula consistently rather than guessing which class boundary to use.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-cumulative-B06 ──────────────────────────────────────
@@ -22214,7 +22242,7 @@ const MathsQuestions = (() => {
         grade8: 'Linear interpolation: cf at 45=12+(16×0.5)=20; cf at 65=52+(16×0.5)=60. Students between 45 and 65 = 40.',
       },
       examinerTip: 'Always interpolate to find cf at a non-boundary value — reading directly from graph gridlines often introduces rounding errors.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-cumulative-C01 ──────────────────────────────────────
@@ -22272,7 +22300,7 @@ const MathsQuestions = (() => {
         grade8: 'Mean=46.67, median≈48.3. Since mean<median, the distribution shows a slight negative skew — the lower values drag the mean below the median.',
       },
       examinerTip: 'Skew direction: if mean < median → negative skew; mean > median → positive skew. Always state which is larger to justify your answer.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-cumulative-C02 ──────────────────────────────────────
@@ -22326,7 +22354,7 @@ const MathsQuestions = (() => {
         grade8: 'Group B: higher median (63.3 vs 58.3) — performed better on average. Group B: smaller IQR (12.9 vs 16.7) — more consistent. Overall Group B outperformed Group A.',
       },
       examinerTip: 'When Q1 falls exactly on a cumulative frequency boundary, read off the boundary value directly — no interpolation needed.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-cumulative-C03 ──────────────────────────────────────
@@ -22375,7 +22403,7 @@ const MathsQuestions = (() => {
         grade8: 'IQR=19. Lower fence=16−28.5=−12.5, upper fence=35+28.5=63.5. All data (2 to 58) lies within [−12.5, 63.5] — no outliers.',
       },
       examinerTip: 'Always compute both fences and check both the minimum and maximum — the question may reward checking both ends separately.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stat-cumulative-C04 ──────────────────────────────────────
@@ -22434,7 +22462,7 @@ const MathsQuestions = (() => {
         grade8: 'IQR=24. Upper fence=88. max=74<88 — not an outlier. Box plot: whiskers 8 to 74, box Q1=28 to Q3=52. Without the median, skew cannot be confirmed but the longer right whisker (22) vs left (20) suggests very slight positive skew.',
       },
       examinerTip: 'When sketching a box plot, label all five key values — missing even one (e.g. not marking Q1 or Q3) typically costs a mark.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ══════════════════════════════════════════════════════════
@@ -22470,7 +22498,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'IQR = 15; range = 30.', grade6: 'IQR = Q3 − Q1 = 27 − 12 = 15. Range = 35 − 5 = 30. 50% of data lies between Q1 and Q3.', grade8: 'IQR = 27 − 12 = 15. Range = 35 − 5 = 30. By definition, 50% of all values fall between Q1 and Q3 (the middle two quartiles).' },
       examinerTip: 'Always subtract Q1 from Q3 for IQR — not max minus min. The IQR covers exactly 50% of the data.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-A02', subtopic: 'stat-boxplots', band: 'A', marks: 2,
@@ -22522,7 +22550,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'IQR = 12. 40 values lie between Q1 and Q3.', grade6: 'IQR = 26 − 14 = 12. 50% of 80 = 40 values lie between Q1 and Q3.', grade8: 'IQR = Q3 − Q1 = 26 − 14 = 12. Since Q1 and Q3 are the lower and upper quartiles, 50% of all values fall between them: 0.5 × 80 = 40 values.' },
       examinerTip: 'Always remember: 50% of data lies in the box (between Q1 and Q3). Multiply n by 0.5 to find the count.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-A04', subtopic: 'stat-boxplots', band: 'A', marks: 2,
@@ -22548,7 +22576,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'IQR = 11; range = 22.', grade6: 'IQR = Q3 − Q1 = 19 − 8 = 11. Range = max − min = 25 − 3 = 22.', grade8: 'IQR = 19 − 8 = 11 (measures spread of the middle 50%). Range = 25 − 3 = 22 (measures total spread, affected by extremes).' },
       examinerTip: 'Two key measures: IQR uses quartiles (Q3 − Q1); range uses the extremes (max − min). Don\'t mix them up.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-A05', subtopic: 'stat-boxplots', band: 'A', marks: 2,
@@ -22576,7 +22604,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'IQR = 14. Both halves are equal.', grade6: 'Q1 = 16, Q3 = 30. IQR = 30 − 16 = 14. Lower half: 23 − 16 = 7. Upper half: 30 − 23 = 7. Both halves equal — symmetric.', grade8: 'IQR = Q3 − Q1 = 30 − 16 = 14. The box is symmetric: lower half (median − Q1 = 7) equals upper half (Q3 − median = 7), indicating a roughly symmetric distribution with no skew.' },
       examinerTip: 'To judge skew from a box plot, compare (median − Q1) with (Q3 − median). If Q3 − median is larger, it is positively skewed.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-B01', subtopic: 'stat-boxplots', band: 'B', marks: 3,
@@ -22608,14 +22636,14 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'IQR = 24. Upper fence = 80. 65 is not an outlier.', grade6: 'IQR = 44 − 20 = 24. Upper fence = 44 + 1.5 × 24 = 80. Since 65 < 80, it is not an outlier.', grade8: 'IQR = 24. Upper fence = Q3 + 1.5 × IQR = 44 + 36 = 80. The value 65 < 80, so it does not exceed the outlier threshold and is not classified as an outlier.' },
       examinerTip: 'The outlier rule is: value > Q3 + 1.5 × IQR (upper) or value < Q1 − 1.5 × IQR (lower). Always show the fence calculation.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-B02', subtopic: 'stat-boxplots', band: 'B', marks: 3,
       question: 'Class A exam scores: min = 40, Q1 = 55, median = 65, Q3 = 75, max = 90. Class B: min = 35, Q1 = 50, median = 68, Q3 = 80, max = 95. Compare the two distributions.',
       steps: [
         {
-          prompt: 'Find the IQR for both classes. Which class has greater spread?', hint1: 'IQR = Q3 − Q1 for each class.', hint2: 'IQR_A = 75 − 55 = 20; IQR_B = 80 − 50 = ?', hint3: 'IQR_B = 80 − 50 = 30. Class B has greater spread.',
+          prompt: 'Find the IQR for both classes. Enter the IQR for Class B.', hint1: 'IQR = Q3 − Q1 for each class.', hint2: 'IQR_A = 75 − 55 = 20; IQR_B = 80 − 50 = ?', hint3: 'IQR_B = 80 − 50 = 30. Class B has greater spread.',
           answer: 30, tolerance: 0, unit: '',
           explanation: 'IQR_A = 75 − 55 = 20. IQR_B = 80 − 50 = 30. Class B has the greater spread.',
         },
@@ -22640,7 +22668,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Class B has the higher median. Class B has greater spread.', grade6: 'Class B has a higher median (68 > 65) and greater spread (IQR 30 > 20). Class A is more consistent.', grade8: 'Median: Class B (68) > Class A (65) — B performed better on average. IQR: B (30) > A (20) — B had more variability. Range: A = 50, B = 60. Overall, Class B scored slightly higher but was less consistent than Class A.' },
       examinerTip: 'A full comparison needs: median (average), IQR (spread), and a contextual comment. Missing any of these costs marks.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-B03', subtopic: 'stat-boxplots', band: 'B', marks: 4,
@@ -22678,7 +22706,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Min = 12, Q1 = 16.5, median = 24, Q3 = 32.5, max = 40.', grade6: 'Sorted: 12, 15, 18, 21, 24, 27, 30, 35, 40. Min = 12, max = 40, median = 24 (5th value), Q1 = 16.5 (median of lower 4), Q3 = 32.5 (median of upper 4).', grade8: 'Five-number summary: min = 12, Q1 = (15+18)/2 = 16.5, median = 24 (5th of 9), Q3 = (30+35)/2 = 32.5, max = 40. IQR = 32.5 − 16.5 = 16.' },
       examinerTip: 'When n is odd, the median value is excluded from the lower and upper halves when finding Q1 and Q3.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-B04', subtopic: 'stat-boxplots', band: 'B', marks: 3,
@@ -22710,7 +22738,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'IQR = 18. Upper fence = 60. 58 is not an outlier.', grade6: 'IQR = 33 − 15 = 18. Upper fence = 33 + 1.5 × 18 = 60. Since 58 < 60, the maximum is not an outlier.', grade8: 'IQR = 18. Upper fence = Q3 + 1.5 × IQR = 33 + 27 = 60. The maximum value of 58 is below this threshold, so it is not classified as an outlier.' },
       examinerTip: 'Show all three steps: IQR → fence → comparison. A one-line answer without the fence calculation will not gain full marks.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-B05', subtopic: 'stat-boxplots', band: 'B', marks: 2,
@@ -22737,7 +22765,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Positive skew — upper half of the box is wider.', grade6: 'Q3 − median = 15; median − Q1 = 6. Upper half is wider, indicating positive (right) skew.', grade8: 'Q3 − median = 45 − 30 = 15 and median − Q1 = 30 − 24 = 6. Since the upper half is wider (15 > 6), the distribution is positively skewed, with a longer tail towards higher values.' },
       examinerTip: 'Skew from a box plot: compare the two halves of the box. Larger upper half = positive skew. Larger lower half = negative skew.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-B06', subtopic: 'stat-boxplots', band: 'B', marks: 3,
@@ -22769,7 +22797,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'IQR = 16. 5 values above Q3. 10 between Q1 and Q3.', grade6: 'IQR = 34 − 18 = 16. Above Q3: 25% of 20 = 5. Between Q1 and Q3: 50% of 20 = 10.', grade8: 'IQR = 16. Quartile properties: 25% of 20 = 5 values lie above Q3; 50% of 20 = 10 values lie between Q1 and Q3 (the interquartile range).' },
       examinerTip: 'Know your quartile percentages: 25% below Q1, 25% between Q1 and median, 25% between median and Q3, 25% above Q3.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-C01', subtopic: 'stat-boxplots', band: 'C', marks: 3,
@@ -22802,7 +22830,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Upper fence = 65. 62 is not an outlier. The distribution is positively skewed.', grade6: 'IQR = 20. Upper fence = 35 + 30 = 65. max = 62 < 65, not an outlier. Q3 − median = 13 > median − Q1 = 7, so positively skewed.', grade8: 'IQR = 20. Upper fence = Q3 + 1.5 × IQR = 65. Since max (62) < 65, it is not an outlier. Box skew: Q3 − median = 13 vs median − Q1 = 7 — upper half wider confirms positive skew with a longer right tail.' },
       examinerTip: 'For a 3-part question: IQR → fence → compare; then box halves → skew direction. Set out each step clearly.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-C02', subtopic: 'stat-boxplots', band: 'C', marks: 4,
@@ -22840,7 +22868,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Boys have a higher median. Both groups have similar spread.', grade6: 'Boys have a higher median weight (70 > 65). IQRs are similar (boys 16, girls 15). Both have the same range (37). Boys are typically heavier with similar variability.', grade8: 'Median: boys (70) > girls (65) — boys are typically heavier. IQR: boys (16) ≈ girls (15) — similar central spread. Range: both = 37 — identical overall spread. Conclusion: boys are generally heavier but both groups are equally consistent.' },
       examinerTip: 'A 4-mark comparison needs four distinct points: median, IQR, range, and a contextual summary. Use the context (weights, not just numbers).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-C03', subtopic: 'stat-boxplots', band: 'C', marks: 2,
@@ -22866,7 +22894,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Q3 = 38. 60 values between Q1 and Q3.', grade6: 'Q3 = Q1 + IQR = 20 + 18 = 38. Values between Q1 and Q3: 50% of 120 = 60.', grade8: 'Q3 = Q1 + IQR = 20 + 18 = 38. Since 50% of data lies between the quartiles, 0.5 × 120 = 60 values lie between Q1 = 20 and Q3 = 38.' },
       examinerTip: 'If given Q1 and IQR, find Q3 by adding: Q3 = Q1 + IQR. Then use the 50% rule for values in the box.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-boxplots-C04', subtopic: 'stat-boxplots', band: 'C', marks: 3,
@@ -22929,7 +22957,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Year 10: 20 students; Year 11: 30 students.', grade6: 'Year 10: (120/300) × 50 = 20. Year 11: (180/300) × 50 = 30. Total: 50 ✓', grade8: 'Stratified sample — proportional allocation. Year 10: (120/300) × 50 = 20. Year 11: (180/300) × 50 = 30. Total = 50 ✓. Each year group is represented in proportion to its size.' },
       examinerTip: 'Stratified sampling: (group size ÷ total) × sample size. Always check your answers add up to the total sample size.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-sampling-A02', subtopic: 'stat-sampling', band: 'A', marks: 2,
@@ -22956,7 +22984,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: '100 items sampled. Estimated 160 defective in the batch.', grade6: '5% of 2000 = 100 items. Defect rate = 8/100 = 0.08. Estimated defectives = 0.08 × 2000 = 160.', grade8: 'Sample size = 0.05 × 2000 = 100. Defect rate = 8/100 = 0.08 (8%). Applying to full batch: 0.08 × 2000 = 160 estimated defective items.' },
       examinerTip: 'To estimate a total from a sample: find the proportion in the sample, then multiply by the population size.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-sampling-A03', subtopic: 'stat-sampling', band: 'A', marks: 2,
@@ -22982,7 +23010,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Proportion = 0.24. Estimated defectives = 120.', grade6: 'Defect rate = 12/50 = 0.24. Estimated defectives in 500 = 0.24 × 500 = 120.', grade8: 'Sample defect rate = 12/50 = 0.24. Assuming this rate applies to the full batch: estimated defectives = 0.24 × 500 = 120 items.' },
       examinerTip: 'Always find the rate (proportion) first, then scale up to the full population. Show both steps.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-sampling-A04', subtopic: 'stat-sampling', band: 'A', marks: 2,
@@ -23008,7 +23036,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Sampling interval = 20. Next person = 27.', grade6: 'Sampling interval = 400 ÷ 20 = 20. Next person = 7 + 20 = 27.', grade8: 'Sampling interval = 400 ÷ 20 = 20. Starting at person 7, the sequence is 7, 27, 47, ... The next person after 7 is 7 + 20 = 27.' },
       examinerTip: 'Systematic sampling interval = population ÷ sample size. The starting point is chosen randomly within the first interval.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-sampling-A05', subtopic: 'stat-sampling', band: 'A', marks: 2,
@@ -23034,7 +23062,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Sample size = 50. Last person = 493.', grade6: 'Sample size = 500 ÷ 10 = 50. Last person = 3 + 49 × 10 = 493.', grade8: 'Sample size = 500 ÷ 10 = 50. Sequence: 3, 13, 23, …, last = first + (n−1) × interval = 3 + 49 × 10 = 493.' },
       examinerTip: 'For the last value in systematic sampling: last = first + (n − 1) × interval. Check it does not exceed the population size.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-sampling-B01', subtopic: 'stat-sampling', band: 'B', marks: 4,
@@ -23071,7 +23099,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Sales: 12, Marketing: 6, Finance: 8, HR: 4.', grade6: 'Sales: (60/150)×30=12. Marketing: (30/150)×30=6. Finance: (40/150)×30=8. HR: (20/150)×30=4. Total: 30 ✓', grade8: 'Sampling fraction = 30/150 = 1/5. Sales: 60×(1/5)=12. Marketing: 30×(1/5)=6. Finance: 40×(1/5)=8. HR: 20×(1/5)=4. Total: 30 ✓ Each department is represented proportionally.' },
       examinerTip: 'Alternatively: find the sampling fraction (30÷150 = 1/5) and multiply each stratum by it. Always verify totals.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-sampling-B02', subtopic: 'stat-sampling', band: 'B', marks: 3,
@@ -23167,7 +23195,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Year 10: 20; Year 11: 30; Year 10 boys: 10.', grade6: 'Year 10: (200/500)×50=20. Year 11: (300/500)×50=30. Year 10 boys: (100/200)×20=10.', grade8: 'Year 10: (200/500)×50=20; Year 11: (300/500)×50=30 (total 50 ✓). Within Year 10, boys = 100/200 = 50%, so 0.5×20=10 boys in the Year 10 sample.' },
       examinerTip: 'Two-stage stratification: first stratify by year group, then within each year group stratify by gender. Apply the proportion at each stage.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-sampling-B05', subtopic: 'stat-sampling', band: 'B', marks: 2,
@@ -23193,7 +23221,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Interval = 30. Not truly random — only the first item is random.', grade6: 'Sampling interval = 1200 ÷ 40 = 30. Systematic sampling is not fully random: the first item is chosen randomly, but all other items are determined by the interval.', grade8: 'Interval = 30. Systematic sampling has limited randomness: the starting point (within the first 30) is chosen at random, but all subsequent items are fixed. This means not every possible sample of size 40 has an equal chance of selection.' },
       examinerTip: 'Systematic sampling is practical and spread across the population, but it is only partially random. It can miss patterns that repeat at the same interval (periodicity bias).',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-sampling-B06', subtopic: 'stat-sampling', band: 'B', marks: 4,
@@ -23232,7 +23260,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Fraction = 0.2. Strata: 16, 24, 12, 8.', grade6: 'Sampling fraction = 60/300 = 0.2. Strata: 80×0.2=16; 120×0.2=24; 60×0.2=12; 40×0.2=8. Total: 60 ✓', grade8: 'Sampling fraction = 60/300 = 1/5. Multiply each stratum by 1/5: stratum 1 → 16, stratum 2 → 24, stratum 3 → 12, stratum 4 → 8. Total = 60 ✓. Each stratum is proportionally represented.' },
       examinerTip: 'Finding the sampling fraction first makes all four calculations straightforward. Always verify by summing all stratum samples.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-sampling-C01', subtopic: 'stat-sampling', band: 'C', marks: 4,
@@ -23271,7 +23299,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: '65%. Self-selection sampling. Biased because only motivated people respond. Use random sampling.', grade6: '65%. Method: self-selection sampling. Unreliable because: (1) people with strong opinions over-respond; (2) excludes non-internet users. Better: stratified random sample.', grade8: '65% (780/1200). Method: voluntary response (self-selection) sampling. Limitations: (1) individuals with strong opinions are disproportionately represented; (2) internet access required, excluding part of the population. Improvement: stratified random sample from the full population using a valid sampling frame (e.g. electoral register).' },
       examinerTip: 'For online polls, always critique: who responds (strong opinions), who is excluded (no internet), and what this means for representativeness.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-sampling-C02', subtopic: 'stat-sampling', band: 'C', marks: 3,
@@ -23304,7 +23332,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Year 10: 36; Year 12: 12; difference = 24.', grade6: 'Year 10: (240/500)×75=36. Year 11: 27. Year 12: (80/500)×75=12. Total: 75 ✓. Difference: 36−12=24.', grade8: 'Sampling fraction = 75/500 = 0.15. Year 10: 240×0.15=36; Year 11: 180×0.15=27; Year 12: 80×0.15=12. Total=75 ✓. Year 10 provides 36−12=24 more than Year 12.' },
       examinerTip: 'Work out all strata, check they sum to the required sample, then answer the specific comparison asked.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-sampling-C03', subtopic: 'stat-sampling', band: 'C', marks: 3,
@@ -23337,7 +23365,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Morning: 20; afternoon: 30; night: 10. Defect rate = 0.2. Estimated defective = 120.', grade6: 'Morning: (200/600)×60=20. Afternoon: 30. Night: 10. Total: 60 ✓. Defect rate = 4/20=0.2. Estimated total defective = 0.2×600=120.', grade8: 'Stratified sample: morning 20, afternoon 30, night 10 (total 60 ✓). Defect rate from morning = 4/20 = 0.2. Assuming this rate applies across all production: estimated defectives = 0.2 × 600 = 120 items.' },
       examinerTip: 'When estimating a total from a stratified sample, use the overall defect rate (from the whole sample or one stratum if specified) and apply it to the full population.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     {
       id: 'stat-sampling-C04', subtopic: 'stat-sampling', band: 'C', marks: 4,
@@ -23375,7 +23403,7 @@ const MathsQuestions = (() => {
       },
       sampleAnswer: { grade4: 'Difference = 4. This is not proof of bias. Larger sample helps. Random selection reduces bias.', grade6: 'Difference = 62 − 58 = 4. This is not necessarily bias — sampling variability means a random sample rarely gives exactly the population mean. Larger sample reduces variability. Truly random selection reduces bias.', grade8: 'Difference = 4. This is sampling variability, not evidence of bias — any single random sample can deviate from the population mean. Increasing sample size to 25 reduces standard error but does not remove methodological bias if the method is flawed. To reduce bias: use simple random sampling (e.g. assign each student a number, use a random number generator).' },
       examinerTip: 'Distinguish between sampling variability (random fluctuation, reduced by larger n) and sampling bias (systematic error, reduced by better method). Examiners look for this distinction.',
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
 
@@ -23414,7 +23442,7 @@ const MathsQuestions = (() => {
         grade8: "65% = 0.65 as a multiplier. 320 × 0.65 = 208.",
       },
       examinerTip: "Convert the percentage to a decimal first (÷ 100), then multiply. Don't try to find 1% then scale — the decimal method is faster and less error-prone.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pct-A05 ──────────────────────────────────────────────
     {
@@ -23451,7 +23479,7 @@ const MathsQuestions = (() => {
         grade8: "% = (part ÷ whole) × 100 = (52 ÷ 80) × 100 = 65%",
       },
       examinerTip: "Always divide the part by the whole (not the other way round), then multiply by 100. A common error is dividing 80 by 52.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pct-B04 ──────────────────────────────────────────────
     {
@@ -23497,7 +23525,7 @@ const MathsQuestions = (() => {
         grade8: "% loss = (240 − 204)/240 × 100 = 36/240 × 100 = 15%.",
       },
       examinerTip: "Always divide by the ORIGINAL price, not the selling price. Dividing by 204 instead of 240 is one of the most common errors in percentage change questions.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pct-B05 ──────────────────────────────────────────────
     {
@@ -23543,7 +23571,7 @@ const MathsQuestions = (() => {
         grade8: "Combined multiplier: 1.25 × 0.80 = 1.00. £400 × 1.00 = £400 — back to the original price.",
       },
       examinerTip: "A 25% increase followed by a 20% decrease does NOT give zero change in general. The percentages apply to different bases. Always apply each change to the current price.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pct-B06 ──────────────────────────────────────────────
     {
@@ -23589,7 +23617,7 @@ const MathsQuestions = (() => {
         grade8: "Combined multiplier: 1.40 × 0.90 = 1.26. £150 × 1.26 = £189, a net 26% increase.",
       },
       examinerTip: "Don't just subtract the percentages (40% − 10% = 30% increase). The 10% applies to the NEW price of £210, not the original £150.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pct-C03 ──────────────────────────────────────────────
     {
@@ -23644,7 +23672,7 @@ const MathsQuestions = (() => {
         grade8: "Combined multiplier: 1.08 × 0.95 = 1.026. £180,000 × 1.026 = £184,680, a net 2.6% increase.",
       },
       examinerTip: "Apply each year's percentage to the value at the START of that year — not the original. Year 2's 5% decrease acts on £194,400, not £180,000.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pct-C04 ──────────────────────────────────────────────
     {
@@ -23699,7 +23727,7 @@ const MathsQuestions = (() => {
         grade8: "Interest = 750 × (1.06² − 1) = 750 × 0.1236 = £92.70. Or: 750 × 1.06² = 842.70; subtract original.",
       },
       examinerTip: "The question asks for interest EARNED, not the final value. Many students correctly calculate £842.70 but forget to subtract the original £750.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── frc-A04 ──────────────────────────────────────────────
@@ -23737,7 +23765,7 @@ const MathsQuestions = (() => {
         grade8: "3/8 × 72 = 216/8 = 27. Alternatively divide then multiply: 72 ÷ 8 × 3 = 27.",
       },
       examinerTip: "Divide by the denominator first, then multiply by the numerator. This keeps the numbers smaller than multiplying first.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── frc-A05 ──────────────────────────────────────────────
     {
@@ -23774,7 +23802,7 @@ const MathsQuestions = (() => {
         grade8: "7/8 = 0.875 = 87.5%. Know the eighths: 1/8=12.5%, 2/8=25%, 3/8=37.5% ... 7/8=87.5%.",
       },
       examinerTip: "Decimal = top ÷ bottom. Percentage = decimal × 100. Learn the common fractions: halves, quarters, thirds, eighths — they come up repeatedly.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── frc-B04 ──────────────────────────────────────────────
     {
@@ -23823,7 +23851,7 @@ const MathsQuestions = (() => {
         grade8: "Convert to improper: 7/2 − 5/3 = 21/6 − 10/6 = 11/6 = 1⅚. Check: 1.833 − 1.667 ≈ 1.833. ✓",
       },
       examinerTip: "Convert to improper fractions first, then find the LCD. A common error is subtracting whole parts and fraction parts separately without finding a common denominator for the fractions.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── frc-B05 ──────────────────────────────────────────────
     {
@@ -23872,7 +23900,7 @@ const MathsQuestions = (() => {
         grade8: "KCF: 8/3 × 3/4. Cancel 3s: 8/1 × 1/4 = 8/4 = 2.",
       },
       examinerTip: "Always convert to improper fractions BEFORE applying keep-change-flip. Dividing mixed numbers directly without converting first leads to errors.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── frc-B06 ──────────────────────────────────────────────
     {
@@ -23921,7 +23949,7 @@ const MathsQuestions = (() => {
         grade8: "Convert to improper fractions, LCD=10: 22/10 + 15/10 = 37/10 = 3 7/10.",
       },
       examinerTip: "Don't add whole parts and fraction parts separately if the fractions need a common denominator. Convert to improper fractions first for a reliable method.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── frc-C03 ──────────────────────────────────────────────
     {
@@ -23980,7 +24008,7 @@ const MathsQuestions = (() => {
         grade8: "11/12 ÷ 5/12 = 11/12 × 12/5 = 11/5 = 2⅕. The 12s cancel cleanly.",
       },
       examinerTip: "Work out each bracket separately before dividing. A common error is to try to operate across brackets without evaluating them first. Show brackets evaluated as separate fractions.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── frc-C04 ──────────────────────────────────────────────
     {
@@ -24039,7 +24067,7 @@ const MathsQuestions = (() => {
         grade8: "Scale factor = 10/6 = 5/3. 9/4 × 5/3 = 45/12 = 15/4 = 3¾ cups. More efficient direct method.",
       },
       examinerTip: "Divide by the original number of people, then multiply by the new number. Or find the scale factor (10 ÷ 6 = 5/3) and multiply directly. Both methods are valid — show your working clearly.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── stf-A04 ──────────────────────────────────────────────
@@ -24078,7 +24106,7 @@ const MathsQuestions = (() => {
         grade8: "0.00307 = 3.07 × 10⁻³. Negative exponent because the number is less than 1.",
       },
       examinerTip: "For numbers less than 1, the power of 10 is negative. Count how many places the decimal moves to get to a number between 1 and 10 — that count (negative) is the exponent.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── stf-A05 ──────────────────────────────────────────────
     {
@@ -24118,7 +24146,7 @@ const MathsQuestions = (() => {
         grade8: "2.3 × 10⁻³ = 2.3 ÷ 10³ = 2.3 ÷ 1000 = 0.0023.",
       },
       examinerTip: "Negative power → move decimal LEFT → number less than 1. Positive power → move right → number greater than 10. The magnitude of the exponent tells you how many places.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── stf-B04 ──────────────────────────────────────────────
     {
@@ -24143,7 +24171,7 @@ const MathsQuestions = (() => {
           displayAnswer: '10³',
         },
         {
-          prompt: 'Write the full answer in standard form and as an ordinary number.',
+          prompt: 'Write the full answer in standard form. Enter it as an ordinary number.',
           hint1: 'Combine: 4 × 10³.',
           hint2: '4 × 10³ = 4 × 1000 = ?',
           hint3: '4000',
@@ -24166,7 +24194,7 @@ const MathsQuestions = (() => {
         grade8: "(6.4 ÷ 1.6) × 10^(8−5) = 4 × 10³ = 4000.",
       },
       examinerTip: "Divide the coefficients and subtract the exponents separately. Check your final coefficient is between 1 and 10 — if not, adjust and change the power accordingly.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── stf-B05 ──────────────────────────────────────────────
     {
@@ -24191,7 +24219,7 @@ const MathsQuestions = (() => {
           displayAnswer: '3.15',
         },
         {
-          prompt: 'State the full answer in standard form.',
+          prompt: 'State the full answer in standard form. Enter it as an ordinary number.',
           hint1: '31,500 = 3.15 × 10?',
           hint2: 'Decimal moved 4 places.',
           hint3: '3.15 × 10⁴',
@@ -24214,7 +24242,7 @@ const MathsQuestions = (() => {
         grade8: "Equalise powers first: 2.5 × 10⁴ + 0.65 × 10⁴ = 3.15 × 10⁴.",
       },
       examinerTip: "For addition/subtraction in standard form, convert to ordinary numbers first. Trying to add with different powers directly (2.5 + 6.5) gives the wrong answer.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── stf-B06 ──────────────────────────────────────────────
     {
@@ -24239,7 +24267,7 @@ const MathsQuestions = (() => {
           explanation: '1.5 ÷ 3 = 0.5.',
         },
         {
-          prompt: 'Divide powers: 10¹¹ ÷ 10⁸ = 10³. Adjust 0.5 × 10³ to standard form.',
+          prompt: 'Divide powers: 10¹¹ ÷ 10⁸ = 10³. Adjust 0.5 × 10³ to standard form. Enter the time in seconds as an ordinary number.',
           hint1: '0.5 × 10³ is not standard form (coefficient must be ≥ 1).',
           hint2: '0.5 = 5 × 10⁻¹, so 0.5 × 10³ = 5 × 10² = ?',
           hint3: '5 × 10²',
@@ -24263,7 +24291,7 @@ const MathsQuestions = (() => {
         grade8: "time = 1.5 ÷ 3 × 10^(11−8) = 0.5 × 10³ = 5 × 10² = 500 s.",
       },
       examinerTip: "After dividing, check that the coefficient is between 1 and 10. If 0.5 × 10³ comes out, rewrite as 5 × 10², adjusting the power by 1.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── stf-C03 ──────────────────────────────────────────────
     {
@@ -24279,7 +24307,7 @@ const MathsQuestions = (() => {
           explanation: '3.6 × 4 = 14.4.',
         },
         {
-          prompt: 'Multiply the powers: 10⁵ × 10⁻³. Then adjust to standard form.',
+          prompt: 'Multiply the powers: 10⁵ × 10⁻³. Then adjust to standard form. Enter the result as an ordinary number.',
           hint1: 'Add the exponents: 5 + (−3) = 2. So 14.4 × 10².',
           hint2: '14.4 × 10² = 1440. Express in standard form.',
           hint3: '1440 = 1.44 × 10³',
@@ -24296,7 +24324,7 @@ const MathsQuestions = (() => {
           explanation: '2.5 × 10² = 250.',
         },
         {
-          prompt: 'Subtract and write in standard form: 1440 − 250.',
+          prompt: 'Subtract 1440 − 250 and write the answer in standard form. Enter it as an ordinary number.',
           hint1: '1440 − 250 = ?',
           hint2: '1440 − 250 = 1190',
           hint3: '1190 = 1.19 × 10³',
@@ -24319,7 +24347,7 @@ const MathsQuestions = (() => {
         grade8: "First term: 14.4 × 10² = 1.44 × 10³ = 1440. Second: 2.5 × 10² = 250. 1440 − 250 = 1190 = 1.19 × 10³.",
       },
       examinerTip: "Work out each term separately as an ordinary number before subtracting. Only convert back to standard form at the final step.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── stf-C04 ──────────────────────────────────────────────
     {
@@ -24344,7 +24372,7 @@ const MathsQuestions = (() => {
           explanation: '7.5 ÷ 2.5 = 3.',
         },
         {
-          prompt: 'Find the power of 10: 10⁻⁵ ÷ 10⁻⁶.',
+          prompt: 'Find the power of 10: 10⁻⁵ ÷ 10⁻⁶ = 10ⁿ. Enter n.',
           hint1: 'Subtract the exponents: −5 − (−6) = ?',
           hint2: '−5 − (−6) = −5 + 6 = 1',
           hint3: '10¹',
@@ -24375,7 +24403,7 @@ const MathsQuestions = (() => {
         grade8: "(7.5 × 10⁻⁵) ÷ (2.5 × 10⁻⁶) = 3 × 10^(−5+6) = 3 × 10¹ = 30.",
       },
       examinerTip: "When subtracting a negative exponent, be careful: −5 − (−6) = +1, not −11. Write out the subtraction explicitly to avoid sign errors.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── int-A04 ──────────────────────────────────────────────
@@ -24415,7 +24443,7 @@ const MathsQuestions = (() => {
         grade8: "The ten-thousands digit is 4; the thousands digit 5 means round up. 345,679 → 350,000.",
       },
       examinerTip: "Look at the digit AFTER the one you are rounding to. If it is 5 or more, round up. If less than 5, round down (keep the digit the same).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── int-A05 ──────────────────────────────────────────────
     {
@@ -24455,7 +24483,7 @@ const MathsQuestions = (() => {
         grade8: "Significant figures start at the first non-zero digit. 0.006455 to 3 s.f. = 0.00646 (4th digit rounds the 3rd up).",
       },
       examinerTip: "With small decimals, zeros between the decimal point and the first non-zero digit are NOT significant — they are just placeholders. Count significant figures from the first non-zero digit.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── int-B02 ──────────────────────────────────────────────
     {
@@ -24463,7 +24491,7 @@ const MathsQuestions = (() => {
       question: 'A number n is given as 380 correct to 2 significant figures. Write down the error interval for n.',
       steps: [
         {
-          prompt: 'What is the degree of rounding? What is half of this?',
+          prompt: 'What is the degree of rounding? Enter half of it.',
           hint1: '380 to 2 s.f. means rounded to the nearest 10.',
           hint2: 'Half of 10 = 5.',
           hint3: 'Half the degree of accuracy = 5.',
@@ -24479,7 +24507,7 @@ const MathsQuestions = (() => {
           explanation: 'Lower bound = 380 − 5 = 375.',
         },
         {
-          prompt: 'State the full error interval.',
+          prompt: 'State the full error interval. Enter the upper bound.',
           hint1: 'Upper bound = 380 + 5 = 385. The interval uses ≤ n < for upper bound.',
           hint2: '375 ≤ n < 385',
           hint3: '375 ≤ n < 385',
@@ -24502,7 +24530,7 @@ const MathsQuestions = (() => {
         grade8: "375 ≤ n < 385. Lower bound is inclusive (≤); upper bound is exclusive (<) since 385 rounds to 390, not 380.",
       },
       examinerTip: "Always write error intervals as LB ≤ n < UB — the lower bound uses ≤ and the upper bound uses strict <. This is the required notation.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── int-B03 ──────────────────────────────────────────────
     {
@@ -24550,7 +24578,7 @@ const MathsQuestions = (() => {
         grade8: "(287 × 0.41)/0.97 ≈ (300 × 0.4)/1 = 120. Actual ≈ 121.3, so estimate is close.",
       },
       examinerTip: "Round each number to 1 significant figure before calculating. Always show the rounded values you used — marks are given for method as well as the estimate.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── int-B04 ──────────────────────────────────────────────
     {
@@ -24596,7 +24624,7 @@ const MathsQuestions = (() => {
         grade8: "Order of operations: square first, then multiply, then subtract. 12.96 − 9.45 = 3.51 → 3.5.",
       },
       examinerTip: "Apply order of operations (BIDMAS): powers first, then multiplication, then subtraction. Don't try to do it left-to-right.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── int-B05 ──────────────────────────────────────────────
     {
@@ -24646,7 +24674,7 @@ const MathsQuestions = (() => {
         grade8: "99x = 36 → x = 36/99. HCF(36,99) = 9. 36/99 = 4/11.",
       },
       examinerTip: "The repeating block has 2 digits, so multiply by 100. The number of digits in the repeating block determines the multiplier (1 digit → ×10, 2 digits → ×100).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── int-B06 ──────────────────────────────────────────────
     {
@@ -24692,7 +24720,7 @@ const MathsQuestions = (() => {
         grade8: "Min product requires both values at their lower bounds: 8.35 × 3.65 = 30.4775.",
       },
       examinerTip: "For minimum product, use lower bound × lower bound. For maximum product, use upper bound × upper bound. For min/max of division, the combinations differ — min = LB ÷ UB.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── int-C01 ──────────────────────────────────────────────
     {
@@ -24748,7 +24776,7 @@ const MathsQuestions = (() => {
         grade8: "UB of division: use LB of denominator. 1000 ÷ 6450 = 0.15504... → 0.155 (3 s.f.).",
       },
       examinerTip: "Upper bound of a fraction (a ÷ b): use UB(a) and LB(b). Lower bound: use LB(a) and UB(b). These combinations give the extreme values.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── int-C02 ──────────────────────────────────────────────
     {
@@ -24802,7 +24830,7 @@ const MathsQuestions = (() => {
         grade8: "UB of quotient: max numerator / min denominator = 7.10 / 2.30 = 3.0869... = 3.09 (3 s.f.).",
       },
       examinerTip: "To maximise a fraction, maximise the numerator AND minimise the denominator. For subtraction in the denominator, use LB(x) − UB(y) to get the smallest denominator.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── int-C03 ──────────────────────────────────────────────
     {
@@ -24820,7 +24848,7 @@ const MathsQuestions = (() => {
           displayAnswer: '100x = 41.414141...',
         },
         {
-          prompt: 'Subtract x from 100x.',
+          prompt: 'Subtract x from 100x. 99x = ?',
           hint1: '100x − x = 41.414141... − 0.414141...',
           hint2: '99x = 41',
           hint3: '99x = 41',
@@ -24862,11 +24890,11 @@ const MathsQuestions = (() => {
         grade8: "Let x = 0.41̄. 100x − x = 99x = 41. x = 41/99. HCF(41,99)=1, fully simplified.",
       },
       examinerTip: "When the repeating block starts immediately after the decimal point, the method gives (repeating block)/99 (2 digits) or /9 (1 digit). Always check whether the fraction simplifies.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── int-C04 ──────────────────────────────────────────────
     {
-      id: 'int-C04', subtopic: 'num-integers', band: 'C', marks: 4,
+      id: 'int-C04', subtopic: 'num-integers', band: 'C', marks: 3,
       question: 'A square has side length 24 m, measured to the nearest metre. Find the upper bound of the area of the square. Give your answer in standard form to 3 significant figures.',
       steps: [
         {
@@ -24886,7 +24914,7 @@ const MathsQuestions = (() => {
           explanation: 'UB(area) = 24.5² = 600.25 m².',
         },
         {
-          prompt: 'Write 600.25 in standard form to 3 significant figures.',
+          prompt: 'Write 600.25 in standard form to 3 significant figures. Enter it as an ordinary number.',
           hint1: '600.25 = 6.0025 × 10²',
           hint2: 'To 3 s.f.: the 4th s.f. is 2 < 5, so round down.',
           hint3: '6.00 × 10²',
@@ -24909,7 +24937,7 @@ const MathsQuestions = (() => {
         grade8: "UB side = 24.5. Area UB = 24.5² = 600.25 = 6.0025 × 10². To 3 s.f.: 6.00 × 10² m².",
       },
       examinerTip: "When writing 600 in standard form to 3 s.f., write 6.00 × 10² — the trailing zeros after the decimal are significant and must be shown.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── pow-A04 ──────────────────────────────────────────────
@@ -24948,7 +24976,7 @@ const MathsQuestions = (() => {
         grade8: "Division law: subtract exponents. 5^(3−4) = 5⁻¹ = 1/5 = 0.2.",
       },
       examinerTip: "Negative index = reciprocal. 5⁻¹ = 1/5, not −5. Always write the reciprocal before converting to decimal.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pow-A05 ──────────────────────────────────────────────
     {
@@ -24960,7 +24988,7 @@ const MathsQuestions = (() => {
           hint1: 'Negative index: a⁻ⁿ = 1/aⁿ.',
           hint2: '4⁻² = 1/4² = 1/?',
           hint3: '1/16',
-          answer: 16, tolerance: 0, unit: '',
+          answer: 0.0625, tolerance: 0.0001, unit: '',
           explanation: '4⁻² = 1/4² = 1/16. The denominator is 4² = 16.',
           displayAnswer: '1/16',
         },
@@ -24986,7 +25014,7 @@ const MathsQuestions = (() => {
         grade8: "a⁻ⁿ = 1/aⁿ. 4⁻² = 1/16 = 0.0625.",
       },
       examinerTip: "4⁻² does NOT mean −16. Negative power means take the reciprocal: flip to 1/4², then square the denominator.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pow-B02 ──────────────────────────────────────────────
     {
@@ -24994,7 +25022,7 @@ const MathsQuestions = (() => {
       question: 'Express (2³ × 4²) ÷ 8² as a power of 2.',
       steps: [
         {
-          prompt: 'Write 4² and 8² as powers of 2.',
+          prompt: 'Write 4² and 8² as powers of 2. 4² = 2 to the power of what?',
           hint1: '4 = 2², so 4² = (2²)² = 2⁴. And 8 = 2³, so 8² = (2³)² = 2⁶.',
           hint2: '4² = 2⁴ and 8² = 2⁶.',
           hint3: '2⁴ and 2⁶',
@@ -25035,7 +25063,7 @@ const MathsQuestions = (() => {
         grade8: "Convert all to powers of 2: 2³ × 2⁴ ÷ 2⁶ = 2^(3+4−6) = 2¹.",
       },
       examinerTip: "Convert all bases to the same number first. Power of power rule: (aᵐ)ⁿ = aᵐⁿ — multiply the indices.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pow-B03 ──────────────────────────────────────────────
     {
@@ -25082,7 +25110,7 @@ const MathsQuestions = (() => {
         grade8: "Fractional index: denominator = root, numerator = power. (∛27)² = 3² = 9.",
       },
       examinerTip: "For a^(m/n): take the nth root first (easier with smaller numbers), then apply the power m. Doing power first with large numbers can make arithmetic much harder.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pow-B04 ──────────────────────────────────────────────
     {
@@ -25107,7 +25135,7 @@ const MathsQuestions = (() => {
           displayAnswer: 'x⁵',
         },
         {
-          prompt: 'Apply the multiplication law to the y terms: y² × y³. State the full simplified expression.',
+          prompt: 'Apply the multiplication law to the y terms: y² × y³. Enter the power of y.',
           hint1: 'y² × y³ = y^(2+3) = ?',
           hint2: 'y⁵',
           hint3: 'Full answer: 12x⁵y⁵',
@@ -25130,7 +25158,7 @@ const MathsQuestions = (() => {
         grade8: "Multiply coefficients, add powers of like bases: 6×2=12, x^(3+2)=x⁵, y^(2+3)=y⁵ → 12x⁵y⁵.",
       },
       examinerTip: "Multiply coefficients as normal numbers; add powers of identical letter bases. Only add powers when the BASE is the same — x³ × y² stays x³y², powers don't combine.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pow-B05 ──────────────────────────────────────────────
     {
@@ -25176,7 +25204,7 @@ const MathsQuestions = (() => {
         grade8: "1000^(2/3) = 100. 81^(1/4) = 3. 100 − 3 = 97.",
       },
       examinerTip: "Work out each term separately before combining. For fractional indices: denominator = root, numerator = power. Calculate the root FIRST to keep numbers manageable.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pow-B06 ──────────────────────────────────────────────
     {
@@ -25184,7 +25212,7 @@ const MathsQuestions = (() => {
       question: 'Simplify (2x²)³ × x⁴.',
       steps: [
         {
-          prompt: 'Expand (2x²)³ using the power of a product rule.',
+          prompt: 'Expand (2x²)³ using the power of a product rule. Enter the number in front of x.',
           hint1: '(ab)ⁿ = aⁿbⁿ. So (2x²)³ = 2³ × (x²)³.',
           hint2: '2³ = ?',
           hint3: '2³ = 8',
@@ -25201,7 +25229,7 @@ const MathsQuestions = (() => {
           displayAnswer: 'x⁶',
         },
         {
-          prompt: 'Multiply 8x⁶ × x⁴ to get the final simplified expression.',
+          prompt: 'Multiply 8x⁶ × x⁴ to get the final simplified expression. Enter the power of x.',
           hint1: 'x⁶ × x⁴ = x^(6+4) = ?',
           hint2: 'x¹⁰',
           hint3: '8x¹⁰',
@@ -25223,7 +25251,7 @@ const MathsQuestions = (() => {
         grade8: "(2x²)³ = 2³(x²)³ = 8x⁶. Then 8x⁶ · x⁴ = 8x¹⁰.",
       },
       examinerTip: "Apply the power to EVERY factor inside the bracket: (2x²)³ = 2³ × x^(2×3) = 8x⁶. A common error is to cube only the x and forget to cube the 2.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pow-C01 ──────────────────────────────────────────────
     {
@@ -25282,7 +25310,7 @@ const MathsQuestions = (() => {
         grade8: "√50 = 5√2 (since 50=25×2). √18 = 3√2 (since 18=9×2). Sum = 8√2 as required.",
       },
       examinerTip: "Find the largest perfect square factor of each surd. √50 = √(25×2) = 5√2, not √(10×5). Writing the largest square factor gives the simplest surd form in one step.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pow-C02 ──────────────────────────────────────────────
     {
@@ -25339,7 +25367,7 @@ const MathsQuestions = (() => {
         grade8: "15/(2√3) × √3/√3 = 15√3/6 = 5√3/2. HCF(15,6)=3.",
       },
       examinerTip: "Rationalise by multiplying top and bottom by the surd in the denominator (not the whole denominator expression). Check the final fraction simplifies — don't leave it as 15√3/6.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pow-C03 ──────────────────────────────────────────────
     {
@@ -25347,7 +25375,7 @@ const MathsQuestions = (() => {
       question: 'Solve 4^x = 8^(x−1). Show your working.',
       steps: [
         {
-          prompt: 'Write both sides as powers of 2.',
+          prompt: 'Write both sides as powers of 2. 4^x = 2 to the power of (?)x. Enter the number in front of x.',
           hint1: '4 = 2² and 8 = 2³.',
           hint2: '4^x = (2²)^x = 2^(2x). 8^(x−1) = (2³)^(x−1) = 2^(3x−3).',
           hint3: '2^(2x) = 2^(3x−3)',
@@ -25399,7 +25427,7 @@ const MathsQuestions = (() => {
         grade8: "Express in base 2: 2^(2x) = 2^(3x−3). Equal exponents: 2x = 3x−3 → x = 3. Check: 4³ = 64 = 8². ✓",
       },
       examinerTip: "Find a common base for both sides (here, base 2). Once both sides are the same base, set the exponents equal and solve the resulting linear equation.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── pow-C04 ──────────────────────────────────────────────
     {
@@ -25456,7 +25484,7 @@ const MathsQuestions = (() => {
         grade8: "(3+√5)² = 3² + 2(3)(√5) + (√5)² = 9 + 6√5 + 5 = 14 + 6√5.",
       },
       examinerTip: "Use the full expansion (a+b)² = a² + 2ab + b². A common error is writing (3+√5)² = 9 + 5 = 14 and forgetting the 2ab middle term.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── bnd-A02 ──────────────────────────────────────────────
@@ -25473,7 +25501,7 @@ const MathsQuestions = (() => {
           explanation: 'Lower bound = 35 − 0.5 = 34.5 s.',
         },
         {
-          prompt: 'Find the upper bound and write the error interval.',
+          prompt: 'Find the upper bound and write the error interval. Enter the upper bound.',
           hint1: 'Upper bound = 35 + 0.5.',
           hint2: '35 + 0.5 = 35.5',
           hint3: '34.5 ≤ t < 35.5',
@@ -25495,7 +25523,7 @@ const MathsQuestions = (() => {
         grade8: "Measured to nearest 1 s: 35 ± 0.5. Error interval: 34.5 ≤ t < 35.5.",
       },
       examinerTip: "Use ≤ for the lower bound and < (strict) for the upper bound. 35.5 is not included because it would round to 36, not 35.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── bnd-A03 ──────────────────────────────────────────────
     {
@@ -25511,7 +25539,7 @@ const MathsQuestions = (() => {
           explanation: 'Lower bound = 2.36 − 0.005 = 2.355 kg.',
         },
         {
-          prompt: 'Find the upper bound and state the error interval.',
+          prompt: 'Find the upper bound and state the error interval. Enter the upper bound.',
           hint1: '2.36 + 0.005 = ?',
           hint2: '2.365',
           hint3: '2.355 ≤ m < 2.365',
@@ -25533,7 +25561,7 @@ const MathsQuestions = (() => {
         grade8: "2.36 ± 0.005. Error interval: 2.355 ≤ m < 2.365.",
       },
       examinerTip: "The degree of accuracy is the position of the last significant figure. For 2.36 (3 s.f.), the last digit is hundredths — so half the unit is 0.005.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── bnd-A04 ──────────────────────────────────────────────
     {
@@ -25549,7 +25577,7 @@ const MathsQuestions = (() => {
           explanation: 'Lower bound = 8 − 0.5 = 7.5 km.',
         },
         {
-          prompt: 'Find the upper bound and write the error interval.',
+          prompt: 'Find the upper bound and write the error interval. Enter the upper bound.',
           hint1: '8 + 0.5 = ?',
           hint2: '8.5',
           hint3: '7.5 ≤ d < 8.5',
@@ -25571,7 +25599,7 @@ const MathsQuestions = (() => {
         grade8: "8 ± 0.5 km. Error interval: 7.5 ≤ d < 8.5.",
       },
       examinerTip: "Half the unit of measurement gives the ± value. Nearest km: ±0.5 km. Nearest 10 m: ±5 m. Always check what unit the measurement is given in.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── bnd-A05 ──────────────────────────────────────────────
     {
@@ -25587,7 +25615,7 @@ const MathsQuestions = (() => {
           explanation: 'Lower bound = 13.7 − 0.05 = 13.65 m/s.',
         },
         {
-          prompt: 'Find the upper bound and write the error interval.',
+          prompt: 'Find the upper bound and write the error interval. Enter the upper bound.',
           hint1: '13.7 + 0.05 = ?',
           hint2: '13.75',
           hint3: '13.65 ≤ v < 13.75',
@@ -25609,7 +25637,7 @@ const MathsQuestions = (() => {
         grade8: "13.7 ± 0.05. Error interval: 13.65 ≤ v < 13.75.",
       },
       examinerTip: "To 1 d.p. means rounded to nearest 0.1, so half the unit = 0.05. Don't confuse d.p. with s.f. — 13.7 to 1 d.p. is the hundredths as the boundary.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── bnd-B02 ──────────────────────────────────────────────
     {
@@ -25654,7 +25682,7 @@ const MathsQuestions = (() => {
         grade8: "Max product: UB × UB. 6.35 × 1.85 = 11.7475.",
       },
       examinerTip: "For maximum product: use upper bounds of both values. For minimum product: use lower bounds of both values.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── bnd-B03 ──────────────────────────────────────────────
     {
@@ -25700,7 +25728,7 @@ const MathsQuestions = (() => {
         grade8: "Max(a−b): use UB(a) and LB(b). 9.45 − 3.15 = 6.30.",
       },
       examinerTip: "To maximise a difference (a − b): use the UPPER bound of a and the LOWER bound of b. This is the opposite combination to minimising.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── bnd-B04 ──────────────────────────────────────────────
     {
@@ -25745,7 +25773,7 @@ const MathsQuestions = (() => {
         grade8: "Max perimeter: use UB of both dimensions. 2(12.35+4.75) = 2×17.10 = 34.20 cm.",
       },
       examinerTip: "Perimeter adds lengths, so to maximise, use the upper bound of every length. To minimise, use every lower bound.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── bnd-B05 ──────────────────────────────────────────────
     {
@@ -25753,7 +25781,7 @@ const MathsQuestions = (() => {
       question: 'Kinetic energy KE = ½mv². m = 8.5 kg and v = 3.2 m/s, both to 1 d.p. Find the upper bound of KE.',
       steps: [
         {
-          prompt: 'Find the upper bound of m and of v.',
+          prompt: 'Find the upper bound of m and of v. Enter the upper bound of m.',
           hint1: 'UB(m) = 8.5 + 0.05 = 8.55. UB(v) = 3.2 + 0.05 = 3.25.',
           hint2: 'UB(m) = 8.55, UB(v) = 3.25.',
           hint3: '8.55 and 3.25',
@@ -25792,7 +25820,7 @@ const MathsQuestions = (() => {
         grade8: "Max KE: UB(m) and UB(v). ½×8.55×3.25² = ½×8.55×10.5625 = 45.155 J.",
       },
       examinerTip: "For an expression that increases with each variable, use upper bounds throughout. Square the upper bound of v (don't use v² = 10.24 from the rounded value).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── bnd-B06 ──────────────────────────────────────────────
     {
@@ -25837,7 +25865,7 @@ const MathsQuestions = (() => {
         grade8: "Min(p/q): LB(p)/UB(q) = 7.35/2.65 = 2.7736... = 2.77 (3 s.f.).",
       },
       examinerTip: "Lower bound of a quotient: use LB(numerator) ÷ UB(denominator). A smaller dividend divided by a larger divisor gives the smallest possible result.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── bnd-C02 ──────────────────────────────────────────────
     {
@@ -25891,7 +25919,7 @@ const MathsQuestions = (() => {
         grade8: "Max quotient: UB(A+B)/LB(A−B). 5.60/3.00 = 1.867 → 1.87 (3 s.f.).",
       },
       examinerTip: "Maximise a fraction: max numerator, min denominator. For subtraction in denominator: use LB(A) − UB(B) to get the smallest possible denominator.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── bnd-C03 ──────────────────────────────────────────────
     {
@@ -25946,11 +25974,11 @@ const MathsQuestions = (() => {
         grade8: "Min area: ½×LB(b)×LB(h) = ½×8.35×5.75 = 24.00625 → 24.0 cm² (3 s.f.).",
       },
       examinerTip: "For minimum area, use lower bounds of all measurements. Note that 24.0 written to 3 s.f. requires the '.0' — writing just '24' shows only 2 s.f.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── bnd-C04 ──────────────────────────────────────────────
     {
-      id: 'bnd-C04', subtopic: 'num-bounds', band: 'C', marks: 4,
+      id: 'bnd-C04', subtopic: 'num-bounds', band: 'C', marks: 3,
       question: 'A cylinder has radius r = 3.5 cm and height h = 9.2 cm, both to 1 d.p. Find the upper bound of its volume. Give your answer to 3 significant figures.',
       steps: [
         {
@@ -25993,7 +26021,7 @@ const MathsQuestions = (() => {
         grade8: "UB(V) = π × (3.55)² × 9.25 = π × 12.6025 × 9.25 = 366.2... ≈ 366 cm³ (3 s.f.).",
       },
       examinerTip: "Use π from your calculator (not 3.14). Square UB(r) fully before multiplying by π and UB(h). Round only at the final step.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
     // ── nrt-A03 ──────────────────────────────────────────────
@@ -26010,7 +26038,7 @@ const MathsQuestions = (() => {
           explanation: 'One part = £150 ÷ 5 = £30.',
         },
         {
-          prompt: 'Calculate each share.',
+          prompt: 'Calculate each share. Enter the larger share.',
           hint1: 'First share = 2 × £30. Second share = 3 × £30.',
           hint2: '2 × 30 = 60 and 3 × 30 = 90.',
           hint3: '£60 and £90',
@@ -26032,7 +26060,7 @@ const MathsQuestions = (() => {
         grade8: "Total parts = 5. Part value = £150/5 = £30. Shares: £60 : £90.",
       },
       examinerTip: "Always check your shares add up to the original total. If they don't, you've made an arithmetic error somewhere.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── nrt-A04 ──────────────────────────────────────────────
     {
@@ -26040,7 +26068,7 @@ const MathsQuestions = (() => {
       question: 'Write the ratio 120 cm : 3 m in its simplest form.',
       steps: [
         {
-          prompt: 'Convert to the same units.',
+          prompt: 'Convert to the same units. Write 3 m in centimetres.',
           hint1: '3 m = ? cm',
           hint2: '3 m = 300 cm',
           hint3: '120 cm : 300 cm',
@@ -26048,7 +26076,7 @@ const MathsQuestions = (() => {
           explanation: '3 m = 300 cm. Now both quantities are in centimetres.',
         },
         {
-          prompt: 'Simplify 120 : 300 by dividing both by the HCF.',
+          prompt: 'Simplify 120 : 300 by dividing both by the HCF. Enter the second part of the simplified ratio.',
           hint1: 'HCF(120, 300) = 60.',
           hint2: '120 ÷ 60 = 2, 300 ÷ 60 = 5.',
           hint3: '2 : 5',
@@ -26070,7 +26098,7 @@ const MathsQuestions = (() => {
         grade8: "Convert to same units: 120 cm : 300 cm = 2 : 5 (÷ 60).",
       },
       examinerTip: "Always convert to the SAME units before simplifying a ratio. You cannot simplify 120 cm : 3 m — the units must match first.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── nrt-A05 ──────────────────────────────────────────────
     {
@@ -26107,7 +26135,7 @@ const MathsQuestions = (() => {
         grade8: "5:3 → difference = 2 parts = £15 → 1 part = £7.50. Tom: 5 × 7.50 = £37.50.",
       },
       examinerTip: "Find the difference in parts first (5 − 3 = 2), then use the given difference in actual amounts to find one part. This type is often called 'difference ratio' problems.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── nrt-B02 ──────────────────────────────────────────────
     {
@@ -26153,7 +26181,7 @@ const MathsQuestions = (() => {
         grade8: "3/10 × 2.5 = 0.75 litres of orange juice.",
       },
       examinerTip: "Add the ratio parts to find the total, divide the given amount by the total, then multiply by the relevant part. Always label your answer with units.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── nrt-B03 ──────────────────────────────────────────────
     {
@@ -26198,7 +26226,7 @@ const MathsQuestions = (() => {
         grade8: "7/10 × 450 = 315 g (Cu); 3/10 × 450 = 135 g (Zn). Check: 315+135=450. ✓",
       },
       examinerTip: "Always verify your answer adds back to the total. If copper + zinc ≠ 450 g, you've made an error.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── nrt-B04 ──────────────────────────────────────────────
     {
@@ -26244,7 +26272,7 @@ const MathsQuestions = (() => {
         grade8: "7.4 cm × 50,000 = 370,000 cm. ÷ 100,000 = 3.7 km.",
       },
       examinerTip: "Multiply map distance by the scale factor to get real distance in the same units. Then convert to the required unit. 100,000 cm = 1 km (not 10,000).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── nrt-B05 ──────────────────────────────────────────────
     {
@@ -26268,7 +26296,7 @@ const MathsQuestions = (() => {
           explanation: 'One part = £480 ÷ 8 = £60.',
         },
         {
-          prompt: 'Calculate each share: 1 part, 2 parts, and 5 parts.',
+          prompt: 'Calculate each share: 1 part, 2 parts, and 5 parts. Enter the largest share.',
           hint1: '1×£60 = £60. 2×£60 = £120. 5×£60 = ?',
           hint2: '5 × £60 = £300',
           hint3: '£60, £120, £300',
@@ -26290,7 +26318,7 @@ const MathsQuestions = (() => {
         grade8: "1:2:5 → 8 parts. £480/8 = £60 each part. Shares: £60, £120, £300. Check: 480. ✓",
       },
       examinerTip: "With three-way ratios, the method is identical: add all parts, find one part's value, then multiply each ratio number by the part value.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── nrt-B06 ──────────────────────────────────────────────
     {
@@ -26314,7 +26342,7 @@ const MathsQuestions = (() => {
           explanation: 'One part = 252 ÷ 7 = 36 students.',
         },
         {
-          prompt: 'Calculate Year 10 and Year 11 numbers.',
+          prompt: 'Calculate the Year 10 and Year 11 numbers. Enter the Year 11 number.',
           hint1: 'Year 10 = 4 × 36. Year 11 = 3 × 36.',
           hint2: '4 × 36 = 144. 3 × 36 = 108.',
           hint3: 'Year 10: 144, Year 11: 108',
@@ -26336,7 +26364,7 @@ const MathsQuestions = (() => {
         grade8: "4:3 → 7 parts. Part = 36. Year 10=144, Year 11=108. Check: 252. ✓",
       },
       examinerTip: "If 252 didn't divide evenly by the total parts, check the question — ratio problems at GCSE always give exact answers.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── nrt-C01 ──────────────────────────────────────────────
     {
@@ -26392,7 +26420,7 @@ const MathsQuestions = (() => {
         grade8: "Z=35g=1 part. 6 parts total = 210 g. Original mass unchanged (equal replacement). Verify: orig X=140, Y=70. After swap: 105:70:35=3:2:1. ✓",
       },
       examinerTip: "Equal-mass replacement keeps the total unchanged. Use the known quantity (Z = 35 g) to find the part value in the new ratio, then scale to the total.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── nrt-C02 ──────────────────────────────────────────────
     {
@@ -26416,7 +26444,7 @@ const MathsQuestions = (() => {
           explanation: '1 part = 48 ÷ 2 = 24 students.',
         },
         {
-          prompt: 'Find Year 10 and Year 11 student numbers.',
+          prompt: 'Find the Year 10 and Year 11 student numbers. Enter the Year 11 number.',
           hint1: 'Year 10 = 5 × 24 = 120. Year 11 = 4 × 24 = 96.',
           hint2: 'Year 12 = 3 × 24 = 72.',
           hint3: '120 + 96 + 72',
@@ -26447,11 +26475,11 @@ const MathsQuestions = (() => {
         grade8: "Diff = 2 parts = 48 → 1 part = 24. Total = (5+4+3)×24 = 12×24 = 288.",
       },
       examinerTip: "Use the difference in ratio parts to find the value of one part. A shortcut: total parts × one part = total (here 12 × 24 = 288).",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── nrt-C03 ──────────────────────────────────────────────
     {
-      id: 'nrt-C03', subtopic: 'num-ratio', band: 'C', marks: 4,
+      id: 'nrt-C03', subtopic: 'num-ratio', band: 'C', marks: 3,
       question: 'The exchange rate is £1 = 1.18 euros. Ali changes £350 into euros. He spends 285 euros on holiday. He changes the remaining euros back to pounds at the same rate. How many pounds does he get back? Give your answer to the nearest penny.',
       steps: [
         {
@@ -26493,7 +26521,7 @@ const MathsQuestions = (() => {
         grade8: "413 − 285 = 128 euros. To convert back: 128 ÷ 1.18 = 108.474... = £108.47.",
       },
       examinerTip: "To convert FROM euros TO pounds, DIVIDE by the exchange rate (not multiply). Multiplying by the rate goes pounds → euros; dividing goes euros → pounds.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
     // ── nrt-C04 ──────────────────────────────────────────────
     {
@@ -26527,7 +26555,7 @@ const MathsQuestions = (() => {
           explanation: '480 ÷ 40 = 12. Ben can make the recipe for 12 people.',
         },
         {
-          prompt: 'State the conclusion clearly.',
+          prompt: 'State the conclusion. How many grams of butter is Ben short?',
           hint1: 'He needs 560 g but has 480 g — short by 80 g.',
           hint2: 'No, he does not have enough. He is 80 g short.',
           hint3: 'He can only make it for 12 people, not 14.',
@@ -26550,7 +26578,7 @@ const MathsQuestions = (() => {
         grade8: "Need: 320×14/8 = 560 g. Have: 480 g. Shortfall: 80 g. Ben can only serve 480÷40=12 people.",
       },
       examinerTip: "Always state a clear conclusion: 'Yes, he has enough' or 'No, he does not have enough'. Without a comparison and conclusion you won't get full marks.",
-      auditStatus: 'pending',
+      auditStatus: 'verified',
     },
 
   ];

@@ -2,9 +2,9 @@
 
 Generated 2026-10-16 by tools/maths-recompute.js. Read-only: no question was changed.
 
-All 487 questions, 1373 steps. Checked by the app: 1102; checkType skip: 271.  
-Checked steps: ok 1102, ambiguous 0, wrong 0, mismatch 0.  
-Error rate (wrong + mismatch over checked steps): 0/1102 = 0.0%. Questions with at least one error: 0/487.  
+All 600 questions, 1706 steps. Checked by the app: 1375; checkType skip: 331.  
+Checked steps: ok 1375, ambiguous 0, wrong 0, mismatch 0.  
+Error rate (wrong + mismatch over checked steps): 0/1375 = 0.0%. Questions with at least one error: 0/600.  
 
 | Question | Step | Prompt | Stored | Recomputed | Status | Note |
 |---|---|---|---|---|---|---|
@@ -1361,23 +1361,356 @@ Error rate (wrong + mismatch over checked steps): 0/1102 = 0.0%. Questions with 
 | stat-scatter-B02 | 0 | Estimate y when x = 7. | 20.5 | 20.5 | ok |  |
 | stat-scatter-B02 | 1 | Estimate x when y = 28. | 10 | 10 | ok |  |
 | stat-scatter-B02 | 2 | Is x = 15 interpolation or extrapolation? Justify your answer. | 0 | — | skip |  |
+| stat-scatter-B03 | 0 | Calculate the mean y-value (ȳ). | 6.8 | 6.8 | ok |  |
+| stat-scatter-B03 | 1 | Using gradient m = 2 and the mean point (3, 6.8), estimate y when x =  | 7.8 | 7.8 | ok |  |
+| stat-scatter-B03 | 2 | Is x = 3.5 interpolation or extrapolation? | 0 | — | skip |  |
+| stat-scatter-B04 | 0 | Find the predicted value when x = 4. | 14 | 14 | ok |  |
+| stat-scatter-B04 | 1 | Calculate the residual. | 2 | 2 | ok |  |
+| stat-scatter-B05 | 0 | Estimate y when x = 20. | 20 | 20 | ok |  |
+| stat-scatter-B05 | 1 | Is using x = 35 to estimate reliable? Explain. | 0 | — | skip |  |
+| stat-scatter-B05 | 2 | Describe the correlation given PMCC = 0.45. | 0 | — | skip |  |
+| stat-scatter-B06 | 0 | Predict sales at 15°C. | 120 | 120 | ok |  |
+| stat-scatter-B06 | 1 | Predict sales at 30°C. | 300 | 300 | ok |  |
+| stat-scatter-B06 | 2 | Explain why y = −12 at 4°C is not meaningful. | 0 | — | skip |  |
+| stat-scatter-C01 | 0 | Find d² for each student and calculate Σd². | 14 | 14 | ok |  |
+| stat-scatter-C01 | 1 | Calculate the denominator n(n² − 1) with n = 5. | 120 | 120 | ok |  |
+| stat-scatter-C01 | 2 | Calculate rₛ = 1 − 6Σd² / [n(n²−1)]. | 0.3 | 0.3 | ok |  |
+| stat-scatter-C02 | 0 | Verify the mean point (6, 15.6) lies on the line y = 2.4x + 1.2. Calcu | 15.6 | 15.6 | ok |  |
+| stat-scatter-C02 | 1 | Predict y when x = 10. | 25.2 | 25.2 | ok |  |
+| stat-scatter-C02 | 2 | Comment on the reliability of the prediction at x = 10. | 0 | — | skip |  |
+| stat-scatter-C03 | 0 | Calculate Sₓₓ = Σx² − (Σx)²/n. | 10 | 10 | ok |  |
+| stat-scatter-C03 | 1 | Calculate Sₓᵧ = Σxy − (Σx)(Σy)/n. | 10 | 10 | ok |  |
+| stat-scatter-C03 | 2 | Find the gradient m = Sₓᵧ / Sₓₓ. | 1 | 1 | ok |  |
+| stat-scatter-C03 | 3 | Find c = ȳ − mμₓ and write the full equation. | 2 | 2 | ok |  |
+| stat-scatter-C04 | 0 | Interpret the PMCC value of 0.87. | 0 | — | skip |  |
+| stat-scatter-C04 | 1 | Does a PMCC of 0.87 prove that revision causes better scores? | 0 | — | skip |  |
+| stat-scatter-C04 | 2 | Suggest a confounding variable that could explain the relationship. | 0 | — | skip |  |
+| cum-A01 | 0 | IQR = Upper Quartile − Lower Quartile. | 29 | 29 | ok |  |
+| cum-A01 | 1 | The UQ represents the 75th percentile — 75% of students scored at or b | 25 | 25 | ok |  |
 | cum-B01 | 0 | Compare the medians. What does this tell us? | 62 | 62 | skip |  |
 | cum-B01 | 1 | Compare the IQRs. What does the larger IQR tell us about Group B? | 35 | 35 | skip |  |
+| stat-cumulative-A02 | 0 | Estimate Q1 (the 10th value). | 17.5 | 17.5 | ok |  |
+| stat-cumulative-A02 | 1 | Estimate Q3 (the 30th value). | 35 | 35 | ok |  |
+| stat-cumulative-A02 | 2 | Calculate the IQR. | 17.5 | 17.5 | ok |  |
+| stat-cumulative-A03 | 0 | Find the IQR. | 28 | 28 | ok |  |
+| stat-cumulative-A03 | 1 | How many students scored above Q3 (above 52)? | 25 | 25 | ok |  |
+| stat-cumulative-A04 | 0 | State the cumulative frequency at x = 40. | 20 | 20 | ok |  |
+| stat-cumulative-A04 | 1 | Estimate the median (25th value). | 44.5 | 44.545455 | ok |  |
 | stat-cumulative-A05 | 0 | Find the inter-percentile range (80th percentile − 20th percentile). | 40 | 40 | ok |  |
 | stat-cumulative-A05 | 1 | How many of the 200 values lie between the 20th and 80th percentiles? | 120 | 120 | ok |  |
+| stat-cumulative-B02 | 0 | Estimate the median (25th value). | 54.4 | 54.375 | ok |  |
+| stat-cumulative-B02 | 1 | Estimate the number of students who scored above 65. | 10.5 | 10.5 | ok |  |
+| stat-cumulative-B02 | 2 | Interpret the result for students scoring above 65. | 0 | — | skip |  |
+| stat-cumulative-B03 | 0 | Find the IQR. | 17 | 17 | ok |  |
+| stat-cumulative-B03 | 1 | Find the upper outlier fence. | 60.5 | 60.5 | ok |  |
+| stat-cumulative-B03 | 2 | Are there any outliers? Justify your answer. | 0 | — | skip |  |
+| stat-cumulative-B04 | 0 | Compare the medians of Group X and Group Y. | 0 | — | skip |  |
+| stat-cumulative-B04 | 1 | Compare the spread (IQR) of Group X and Group Y. | 0 | — | skip |  |
+| stat-cumulative-B04 | 2 | Write an overall conclusion comparing the two groups. | 0 | — | skip |  |
+| stat-cumulative-B05 | 0 | Find the position of the 90th percentile. | 45 | 45 | ok |  |
+| stat-cumulative-B05 | 1 | Use the cumulative frequencies to estimate the 90th percentile value. | 52.9 | 52.857143 | ok |  |
+| stat-cumulative-B05 | 2 | Interpret the 90th percentile in context. | 0 | — | skip |  |
+| stat-cumulative-B06 | 0 | Estimate the cumulative frequency at 45. | 20 | 20 | ok |  |
+| stat-cumulative-B06 | 1 | Estimate the cumulative frequency at 65. | 60 | 60 | ok |  |
+| stat-cumulative-B06 | 2 | Find the number of students between 45 and 65. | 40 | 40 | ok |  |
+| stat-cumulative-C01 | 0 | Calculate Σfm (midpoints × frequencies). | 2800 | 2800 | ok |  |
+| stat-cumulative-C01 | 1 | Calculate the estimated mean. | 46.67 | 46.666667 | ok |  |
+| stat-cumulative-C01 | 2 | Estimate the median using cumulative frequency. | 48.3 | 48.333333 | ok |  |
+| stat-cumulative-C01 | 3 | Comment on the skew by comparing mean and median. | 0 | — | skip |  |
+| stat-cumulative-C02 | 0 | Estimate the median for Group A. | 58.3 | 58.333333 | ok |  |
+| stat-cumulative-C02 | 1 | Estimate the median for Group B. | 63.3 | 63.333333 | ok |  |
+| stat-cumulative-C02 | 2 | Calculate the IQR for Group A. | 16.7 | 16.666667 | ok |  |
+| stat-cumulative-C02 | 3 | Calculate the IQR for Group B and compare both groups. | 12.9 | 12.888889 | ok |  |
+| stat-cumulative-C03 | 0 | Find the IQR. | 19 | 19 | ok |  |
+| stat-cumulative-C03 | 1 | Find the upper outlier fence. | 63.5 | 63.5 | ok |  |
+| stat-cumulative-C03 | 2 | Are there any outliers? Justify. | 0 | — | skip |  |
+| stat-cumulative-C04 | 0 | Find the IQR. | 24 | 24 | ok |  |
+| stat-cumulative-C04 | 1 | Find the upper outlier fence. | 88 | 88 | ok |  |
+| stat-cumulative-C04 | 2 | Is the maximum value (74) an outlier? | 0 | — | skip |  |
+| stat-cumulative-C04 | 3 | Describe the key features of the resulting box plot. | 0 | — | skip |  |
+| stat-boxplots-A01 | 0 | Calculate the interquartile range (IQR = Q3 − Q1). | 15 | 15 | ok |  |
+| stat-boxplots-A01 | 1 | Calculate the range (max − min). | 30 | 30 | ok |  |
+| stat-boxplots-A01 | 2 | What percentage of data lies between Q1 and Q3? | 0 | — | skip |  |
+| stat-boxplots-A02 | 0 | Which dataset has the higher median? | 0 | — | skip |  |
+| stat-boxplots-A02 | 1 | Which dataset has the greater spread (compare IQRs)? | 0 | — | skip |  |
+| stat-boxplots-A03 | 0 | Calculate the IQR. | 12 | 12 | ok |  |
+| stat-boxplots-A03 | 1 | How many of the 80 values lie between Q1 and Q3? | 40 | 40 | ok |  |
+| stat-boxplots-A04 | 0 | Calculate the IQR. | 11 | 11 | ok |  |
+| stat-boxplots-A04 | 1 | Calculate the range. | 22 | 22 | ok |  |
+| stat-boxplots-A05 | 0 | Identify Q1 and Q3, then calculate the IQR. | 14 | 14 | ok |  |
+| stat-boxplots-A05 | 1 | Which half of the box is wider — lower (Q1 to median) or upper (median | 0 | — | skip |  |
+| stat-boxplots-B01 | 0 | Calculate the IQR. | 24 | 24 | ok |  |
+| stat-boxplots-B01 | 1 | Calculate the upper fence (Q3 + 1.5 × IQR). | 80 | 80 | ok |  |
+| stat-boxplots-B01 | 2 | Is 65 an outlier? Compare it to the upper fence. | 0 | — | skip |  |
+| stat-boxplots-B02 | 0 | Find the IQR for both classes. Enter the IQR for Class B. | 30 | 30 | ok |  |
+| stat-boxplots-B02 | 1 | Which class has the higher median? | 0 | — | skip |  |
+| stat-boxplots-B02 | 2 | Summarise the overall comparison: which class is more consistent? | 0 | — | skip |  |
+| stat-boxplots-B03 | 0 | State the minimum and maximum values. Enter the maximum. | 40 | 40 | ok |  |
+| stat-boxplots-B03 | 1 | Find the median (middle value of 9 data points). | 24 | 24 | ok |  |
+| stat-boxplots-B03 | 2 | Find Q1 (median of the lower half: {12, 15, 18, 21}). | 16.5 | 16.5 | ok |  |
+| stat-boxplots-B03 | 3 | Find Q3 (median of the upper half: {27, 30, 35, 40}). | 32.5 | 32.5 | ok |  |
+| stat-boxplots-B04 | 0 | Calculate the IQR. | 18 | 18 | ok |  |
+| stat-boxplots-B04 | 1 | Calculate the upper fence (Q3 + 1.5 × IQR). | 60 | 60 | ok |  |
+| stat-boxplots-B04 | 2 | Is max = 58 an outlier? Compare to the upper fence. | 0 | — | skip |  |
+| stat-boxplots-B05 | 0 | Find Q3 − median and median − Q1. Enter Q3 − median. | 15 | 15 | ok |  |
+| stat-boxplots-B05 | 1 | What direction of skew does this indicate? | 0 | — | skip |  |
 | stat-boxplots-B06 | 0 | Calculate the IQR. | 16 | 16 | ok |  |
 | stat-boxplots-B06 | 1 | How many of the 20 values lie above Q3? | 5 | 5 | ok |  |
 | stat-boxplots-B06 | 2 | How many values lie between Q1 and Q3? | 10 | 10 | ok |  |
+| stat-boxplots-C01 | 0 | Calculate IQR then find the upper fence (Q3 + 1.5 × IQR). | 65 | 65 | ok |  |
+| stat-boxplots-C01 | 1 | Find Q3 − median to assess the upper half of the box. | 13 | 13 | ok |  |
+| stat-boxplots-C01 | 2 | What does the box shape and the long upper whisker tell us about skewn | 0 | — | skip |  |
+| stat-boxplots-C02 | 0 | Compare the medians. Which group is typically heavier? | 0 | — | skip |  |
+| stat-boxplots-C02 | 1 | Find IQR for boys (Q3 − Q1). Enter boys' IQR. | 16 | 16 | ok |  |
+| stat-boxplots-C02 | 2 | Compare the ranges. Find the range for boys. | 37 | 37 | ok |  |
+| stat-boxplots-C02 | 3 | Write an overall summary comparing both groups. | 0 | — | skip |  |
+| stat-boxplots-C03 | 0 | Find Q3 using Q1 and the IQR. | 38 | 38 | ok |  |
+| stat-boxplots-C03 | 1 | How many of the 120 values lie between Q1 and Q3? | 60 | 60 | ok |  |
+| stat-boxplots-C04 | 0 | Assess skewness using the box plot (compare Q3 − median and median − Q | 0 | — | skip |  |
+| stat-boxplots-C04 | 1 | Assess skewness using mean vs median. What does mean > median indicate | 0 | — | skip |  |
+| stat-boxplots-C04 | 2 | Are the two skewness indicators consistent with each other? | 0 | — | skip |  |
+| stat-sampling-A01 | 0 | How many students should be selected from Year 10? | 20 | 20 | ok |  |
+| stat-sampling-A01 | 1 | How many students should be selected from Year 11? | 30 | 30 | ok |  |
+| stat-sampling-A02 | 0 | How many items are sampled (5% of 2000)? | 100 | 100 | ok |  |
+| stat-sampling-A02 | 1 | Estimate the total defective items in the full batch of 2000. | 160 | 160 | ok |  |
+| stat-sampling-A03 | 0 | Calculate the proportion of defective items in the sample. | 0.24 | 0.24 | ok |  |
+| stat-sampling-A03 | 1 | Estimate the total defective items in a batch of 500. | 120 | 120 | ok |  |
+| stat-sampling-A04 | 0 | Calculate the sampling interval. | 20 | 20 | ok |  |
+| stat-sampling-A04 | 1 | If the first person is number 7, what is the next person selected? | 27 | 27 | ok |  |
+| stat-sampling-A05 | 0 | How many people are in the sample? | 50 | 50 | ok |  |
+| stat-sampling-A05 | 1 | What is the number of the last person selected? | 493 | 493 | ok |  |
+| stat-sampling-B01 | 0 | How many from Sales? | 12 | 12 | ok |  |
+| stat-sampling-B01 | 1 | How many from Marketing? | 6 | 6 | ok |  |
+| stat-sampling-B01 | 2 | How many from Finance? | 8 | 8 | ok |  |
+| stat-sampling-B01 | 3 | How many from HR? Verify the total. | 4 | 4 | ok |  |
+| stat-sampling-B02 | 0 | What sampling method is being used? | 0 | — | skip |  |
+| stat-sampling-B02 | 1 | Give one reason this sample may be biased. | 0 | — | skip |  |
+| stat-sampling-B02 | 2 | Suggest a better sampling method. | 0 | — | skip |  |
+| stat-sampling-B03 | 0 | What was the intended male:female ratio? | 0 | — | skip |  |
+| stat-sampling-B03 | 1 | What is the actual male:female ratio (38 males, 22 females)? | 0 | — | skip |  |
+| stat-sampling-B03 | 2 | What problem does this introduce into the sample? | 0 | — | skip |  |
+| stat-sampling-B04 | 0 | How many students from Year 10? | 20 | 20 | ok |  |
+| stat-sampling-B04 | 1 | How many students from Year 11? | 30 | 30 | ok |  |
+| stat-sampling-B04 | 2 | How many of the Year 10 sample should be boys? | 10 | 10 | ok |  |
+| stat-sampling-B05 | 0 | Calculate the sampling interval. | 30 | 30 | ok |  |
+| stat-sampling-B05 | 1 | Is systematic sampling truly random? Explain. | 0 | — | skip |  |
+| stat-sampling-B06 | 0 | Calculate the sampling fraction (sample ÷ population). | 0.2 | 0.2 | ok |  |
+| stat-sampling-B06 | 1 | How many from stratum 1 (size 80) and stratum 2 (size 120)? Enter the  | 16 | 16 | ok |  |
+| stat-sampling-B06 | 2 | How many from stratum 3 (size 60)? | 12 | 12 | ok |  |
+| stat-sampling-B06 | 3 | How many from stratum 4 (size 40)? Verify the total. | 8 | 8 | ok |  |
+| stat-sampling-C01 | 0 | Calculate the percentage who said 'yes'. | 65 | 65 | ok |  |
+| stat-sampling-C01 | 1 | Identify the sampling method used. | 0 | — | skip |  |
+| stat-sampling-C01 | 2 | Give two reasons the results are unreliable. | 0 | — | skip |  |
+| stat-sampling-C01 | 3 | Suggest a better sampling method. | 0 | — | skip |  |
+| stat-sampling-C02 | 0 | Find the sample size from Year 10. | 36 | 36 | ok |  |
+| stat-sampling-C02 | 1 | Find the sample size from Year 12. | 12 | 12 | ok |  |
+| stat-sampling-C02 | 2 | How many more are sampled from Year 10 than Year 12? | 24 | 24 | ok |  |
+| stat-sampling-C03 | 0 | How many items are sampled from the morning shift? | 20 | 20 | ok |  |
+| stat-sampling-C03 | 1 | Find the defect rate from the morning sample (4 defective out of 20). | 0.2 | 0.2 | ok |  |
+| stat-sampling-C03 | 2 | Estimate the total defective items across all 600 items. | 120 | 120 | ok |  |
+| stat-sampling-C04 | 0 | Find the difference between the population mean and the sample mean. | 4 | 4 | ok |  |
+| stat-sampling-C04 | 1 | Is a difference of 4 evidence of bias in the sampling method? | 0 | — | skip |  |
+| stat-sampling-C04 | 2 | If the sample size increased to 25, what effect would this have? | 0 | — | skip |  |
+| stat-sampling-C04 | 3 | What would definitely reduce bias in the sampling method? | 0 | — | skip |  |
+| pct-A04 | 0 | Convert 65% to a decimal multiplier. | 0.65 | 0.65 | ok |  |
+| pct-A04 | 1 | Multiply 320 by your decimal to find 65% of 320. | 208 | 208 | ok |  |
+| pct-A05 | 0 | Divide the part by the whole. | 0.65 | 0.65 | ok |  |
+| pct-A05 | 1 | Multiply by 100 to convert to a percentage. | 65 | 65 | ok |  |
+| pct-B04 | 0 | Find the loss in pounds. | 36 | 36 | ok |  |
+| pct-B04 | 1 | Divide the loss by the original price. | 0.15 | 0.15 | ok |  |
+| pct-B04 | 2 | Convert to a percentage. | 15 | 15 | ok |  |
+| pct-B05 | 0 | Apply the 25% increase. What is the price after the increase? | 500 | 500 | ok |  |
+| pct-B05 | 1 | Write the multiplier for a 20% decrease. | 0.8 | 0.8 | ok |  |
+| pct-B05 | 2 | Apply the 20% decrease to £500. What is the final price? | 400 | 400 | ok |  |
+| pct-B06 | 0 | Apply the 40% increase to £150. | 210 | 210 | ok |  |
+| pct-B06 | 1 | Write the multiplier for the 10% reduction. | 0.9 | 0.9 | ok |  |
+| pct-B06 | 2 | Apply the 10% reduction to £210. | 189 | 189 | ok |  |
+| pct-C03 | 0 | Write the multiplier for an 8% increase. | 1.08 | 1.08 | ok |  |
+| pct-C03 | 1 | Find the value after year 1. | 194400 | 194400 | ok |  |
+| pct-C03 | 2 | Write the multiplier for a 5% decrease. | 0.95 | 0.95 | ok |  |
+| pct-C03 | 3 | Find the value at the end of year 2. | 184680 | 184680 | ok |  |
+| pct-C04 | 0 | Write the compound interest multiplier. | 1.06 | 1.06 | ok |  |
+| pct-C04 | 1 | Find the value after year 1. | 795 | 795 | ok |  |
+| pct-C04 | 2 | Find the value after year 2. | 842.7 | 842.7 | ok |  |
+| pct-C04 | 3 | Find the interest earned (total value minus original investment). | 92.7 | 92.7 | ok |  |
+| frc-A04 | 0 | Divide 72 by the denominator (8). | 9 | 9 | ok |  |
+| frc-A04 | 1 | Multiply by the numerator (3) to get three-eighths. | 27 | 27 | ok |  |
+| frc-A05 | 0 | Convert 7/8 to a decimal by dividing the numerator by the denominator. | 0.875 | 0.875 | ok |  |
+| frc-A05 | 1 | Convert the decimal to a percentage. | 87.5 | 87.5 | ok |  |
+| frc-B04 | 0 | Convert 3½ to an improper fraction. | 3.5 | 3.5 | ok |  |
+| frc-B04 | 1 | Convert 1⅔ to an improper fraction. | 1.6666666666666667 | 1.666667 | ok |  |
+| frc-B04 | 2 | Subtract: 7/2 − 5/3. Use LCD = 6. Give your answer as a mixed number. | 1.8333333333333333 | 1.833333 | ok |  |
+| frc-B05 | 0 | Convert 2⅔ to an improper fraction. | 2.6666666666666665 | 2.666667 | ok |  |
+| frc-B05 | 1 | Convert 1⅓ to an improper fraction. | 1.3333333333333333 | 1.333333 | ok |  |
+| frc-B05 | 2 | Divide 8/3 ÷ 4/3 using keep, change, flip. | 2 | 2 | ok |  |
+| frc-B06 | 0 | Convert 2⅕ to an improper fraction. | 2.2 | 2.2 | ok |  |
+| frc-B06 | 1 | Convert 1½ to an improper fraction. | 1.5 | 1.5 | ok |  |
+| frc-B06 | 2 | Add 11/5 + 3/2. Use LCD = 10. Give your answer as a mixed number. | 3.7 | 3.7 | ok |  |
+| frc-C03 | 0 | Work out the numerator bracket: 3/4 + 1/6. Use LCD = 12. | 0.9166666666666666 | 0.916667 | ok |  |
+| frc-C03 | 1 | Work out the denominator bracket: 2/3 − 1/4. Use LCD = 12. | 0.4166666666666667 | 0.416667 | ok |  |
+| frc-C03 | 2 | Divide: 11/12 ÷ 5/12. Apply keep, change, flip. | 2.2 | 2.2 | ok |  |
+| frc-C03 | 3 | Convert 11/5 to a mixed number. | 2.2 | 2.2 | ok |  |
+| frc-C04 | 0 | Convert 2¼ to an improper fraction. | 2.25 | 2.25 | ok |  |
+| frc-C04 | 1 | Find the amount of flour for 1 person. | 0.375 | 0.375 | ok |  |
+| frc-C04 | 2 | Multiply by 10 to find the amount for 10 people. | 3.75 | 3.75 | ok |  |
+| frc-C04 | 3 | Convert 15/4 to a mixed number. | 3.75 | 3.75 | ok |  |
+| stf-A04 | 0 | Write the significant figure part: a number between 1 and 10. | 3.07 | 3.07 | ok |  |
+| stf-A04 | 1 | Write the power of 10. How many places did the decimal move, and in wh | -3 | -3 | ok |  |
+| stf-A05 | 0 | The power is −3. How many places does the decimal move, and in which d | 3 | — | skip |  |
+| stf-A05 | 1 | Write the ordinary number. | 0.0023 | 0.0023 | ok |  |
+| stf-B04 | 0 | Divide the coefficients: 6.4 ÷ 1.6. | 4 | 4 | ok |  |
+| stf-B04 | 1 | Divide the powers of 10: 10⁸ ÷ 10⁵. | 3 | 3 | ok |  |
+| stf-B04 | 2 | Write the full answer in standard form. Enter it as an ordinary number | 4000 | 4000 | ok |  |
+| stf-B05 | 0 | Convert both numbers to ordinary numbers and add. | 31500 | 31500 | ok |  |
+| stf-B05 | 1 | Write 31,500 in standard form. What is the coefficient? | 3.15 | 3.15 | ok |  |
+| stf-B05 | 2 | State the full answer in standard form. Enter it as an ordinary number | 31500 | 31500 | ok |  |
+| stf-B06 | 0 | Write down the formula: time = distance ÷ speed. | 0 | — | skip |  |
+| stf-B06 | 1 | Divide the coefficients: 1.5 ÷ 3. | 0.5 | 0.5 | ok |  |
+| stf-B06 | 2 | Divide powers: 10¹¹ ÷ 10⁸ = 10³. Adjust 0.5 × 10³ to standard form. En | 500 | 500 | ok |  |
+| stf-C03 | 0 | Work out 3.6 × 10⁵ × 4 × 10⁻³. Multiply the coefficients. | 14.4 | 14.4 | ok |  |
+| stf-C03 | 1 | Multiply the powers: 10⁵ × 10⁻³. Then adjust to standard form. Enter t | 1440 | 1440 | ok |  |
+| stf-C03 | 2 | Work out 2.5 × 10². | 250 | 250 | ok |  |
+| stf-C03 | 3 | Subtract 1440 − 250 and write the answer in standard form. Enter it as | 1190 | 1190 | ok |  |
+| stf-C04 | 0 | Write the calculation: number = total mass ÷ mass per bacterium. | 0 | — | skip |  |
+| stf-C04 | 1 | Divide the coefficients: 7.5 ÷ 2.5. | 3 | 3 | ok |  |
+| stf-C04 | 2 | Find the power of 10: 10⁻⁵ ÷ 10⁻⁶ = 10ⁿ. Enter n. | 1 | 1 | ok |  |
+| stf-C04 | 3 | Combine: 3 × 10¹. Write as an ordinary number. | 30 | 30 | ok |  |
+| int-A04 | 0 | Identify the ten-thousands digit and the digit to its right. | 0 | — | skip |  |
+| int-A04 | 1 | Write the rounded number. | 350000 | 350000 | ok |  |
 | int-A05 | 0 | Identify the first significant figure in 0.006455. | 0 | 6 | skip | wrong: stored 0 (tolerance 0); recomputed 6 |
 | int-A05 | 1 | Round to 3 s.f. The 4th significant figure is 5. Write the answer. | 0.00646 | 0.00646 | ok |  |
+| int-B02 | 0 | What is the degree of rounding? Enter half of it. | 5 | 5 | ok |  |
+| int-B02 | 1 | Find the lower bound. | 375 | 375 | ok |  |
+| int-B02 | 2 | State the full error interval. Enter the upper bound. | 385 | 385 | ok |  |
+| int-B03 | 0 | Round each number to 1 significant figure. | 0 | — | skip |  |
+| int-B03 | 1 | Estimate the numerator: 300 × 0.4. | 120 | 120 | ok |  |
+| int-B03 | 2 | Divide by the denominator: 120 ÷ 1. | 120 | 120 | ok |  |
+| int-B04 | 0 | Calculate 3.6².  | 12.96 | 12.96 | ok |  |
+| int-B04 | 1 | Calculate 2.1 × 4.5. | 9.45 | 9.45 | ok |  |
+| int-B04 | 2 | Subtract: 12.96 − 9.45. Round to 1 d.p. | 3.5 | 3.5 | ok |  |
+| int-B05 | 0 | Let x = 0.363636... Multiply both sides by 100 to shift two decimal pl | 0 | — | skip |  |
+| int-B05 | 1 | Solve: 99x = 36. Write x as a fraction. | 0.36363636363636365 | 0.363636 | ok |  |
+| int-B05 | 2 | Simplify 36/99 to its lowest terms. | 0.36363636363636365 | 0.363636 | ok |  |
+| int-B06 | 0 | Find the lower bound of x. | 8.35 | 8.35 | ok |  |
+| int-B06 | 1 | Find the lower bound of y. | 3.65 | 3.65 | ok |  |
+| int-B06 | 2 | Calculate the minimum value of x × y. | 30.4775 | 30.4775 | ok |  |
+| int-C01 | 0 | Find the lower bound of n. | 6450 | 6450 | ok |  |
+| int-C01 | 1 | Find the upper bound of n. | 6550 | 6550 | ok |  |
+| int-C01 | 2 | To find the upper bound of 1000 ÷ n, which bound of n do you use? | 0 | — | skip |  |
+| int-C01 | 3 | Calculate 1000 ÷ 6450. Give your answer to 3 s.f. | 0.155 | 0.155 | ok |  |
+| int-C02 | 0 | Find the upper bound of (x + y). Use UB(x) + UB(y). | 7.1 | 7.1 | ok |  |
+| int-C02 | 1 | Find the lower bound of (x − y). Use LB(x) − UB(y). | 2.3 | 2.3 | ok |  |
+| int-C02 | 2 | Divide: UB(x+y) ÷ LB(x−y) = 7.10 ÷ 2.30. | 3.087 | 3.086957 | ok |  |
+| int-C02 | 3 | Round to 3 significant figures. | 3.09 | 3.09 | ok |  |
+| int-C03 | 0 | Let x = 0.414141... Identify the repeating block length and choose the | 0 | — | skip |  |
+| int-C03 | 1 | Subtract x from 100x. 99x = ? | 41 | 41 | ok |  |
+| int-C03 | 2 | Solve for x. | 0 | — | skip |  |
+| int-C03 | 3 | State the fraction. | 0.41414141414141414 | 0.414141 | ok |  |
+| int-C04 | 0 | Find the upper bound of the side length. | 24.5 | 24.5 | ok |  |
+| int-C04 | 1 | Calculate the upper bound of the area. | 600.25 | 600.25 | ok |  |
+| int-C04 | 2 | Write 600.25 in standard form to 3 significant figures. Enter it as an | 600 | 600 | ok |  |
+| pow-A04 | 0 | Apply the division law for indices: subtract the powers. | -1 | -1 | ok |  |
+| pow-A04 | 1 | Write 5⁻¹ as a decimal. | 0.2 | 0.2 | ok |  |
+| pow-A05 | 0 | Apply the negative index rule: write 4⁻² as a fraction. | 0.0625 | 0.0625 | ok |  |
+| pow-A05 | 1 | Convert 1/16 to a decimal. | 0.0625 | 0.0625 | ok |  |
+| pow-B02 | 0 | Write 4² and 8² as powers of 2. 4² = 2 to the power of what? | 4 | 4 | ok |  |
+| pow-B02 | 1 | Combine the numerator: 2³ × 2⁴. | 7 | 7 | ok |  |
+| pow-B02 | 2 | Divide: 2⁷ ÷ 2⁶. | 1 | 1 | ok |  |
 | pow-B03 | 0 | Interpret the fractional index: 27^(2/3) = (27^(1/3))². What does the  | 0 | 3 | skip | wrong: stored 0 (tolerance 0); recomputed 3 |
 | pow-B03 | 1 | Find the cube root of 27. | 3 | 3 | ok |  |
 | pow-B03 | 2 | Now apply the numerator: square the result. 3² = ? | 9 | 9 | ok |  |
+| pow-B04 | 0 | Multiply the numerical coefficients. | 12 | 12 | ok |  |
+| pow-B04 | 1 | Apply the multiplication law to the x terms: x³ × x². | 5 | 5 | ok |  |
+| pow-B04 | 2 | Apply the multiplication law to the y terms: y² × y³. Enter the power  | 5 | 5 | ok |  |
+| pow-B05 | 0 | Evaluate 1000^(2/3). Start by finding the cube root of 1000. | 10 | 10 | ok |  |
+| pow-B05 | 1 | Apply the numerator: 10². What is 1000^(2/3)? | 100 | 100 | ok |  |
+| pow-B05 | 2 | Evaluate 81^(1/4) and subtract from 100. | 97 | 97 | ok |  |
+| pow-B06 | 0 | Expand (2x²)³ using the power of a product rule. Enter the number in f | 8 | 8 | ok |  |
+| pow-B06 | 1 | Simplify (x²)³ using the power of a power rule. | 6 | 6 | ok |  |
+| pow-B06 | 2 | Multiply 8x⁶ × x⁴ to get the final simplified expression. Enter the po | 10 | 10 | ok |  |
 | pow-C01 | 0 | Simplify √50. | 5 | 5 | ok |  |
 | pow-C01 | 1 | Simplify √18. | 3 | 3 | ok |  |
 | pow-C01 | 2 | Add 5√2 + 3√2. | 8 | 8 | ok |  |
 | pow-C01 | 3 | State the conclusion. | 0 | — | skip |  |
+| pow-C02 | 0 | Multiply numerator and denominator by √3. What does the denominator be | 6 | 6 | ok |  |
+| pow-C02 | 1 | Write the new numerator after multiplying by √3. | 0 | — | skip |  |
+| pow-C02 | 2 | Write the fraction 15√3/6 in simplest form. What is p? | 5 | 5 | ok |  |
+| pow-C02 | 3 | State the simplified answer as a decimal (to 2 d.p.). | 4.33 | 4.330127 | ok |  |
+| pow-C03 | 0 | Write both sides as powers of 2. 4^x = 2 to the power of (?)x. Enter t | 2 | 2 | ok |  |
+| pow-C03 | 1 | Since the bases are equal, equate the exponents. | 0 | — | skip |  |
+| pow-C03 | 2 | Solve 2x = 3x − 3 for x. | 3 | 3 | ok |  |
+| pow-C03 | 3 | Verify: check that 4³ = 8². | 0 | — | skip |  |
 | pow-C04 | 0 | Apply (a + b)² = a² + 2ab + b². What is a² when a = 3? | 9 | 9 | ok |  |
 | pow-C04 | 1 | Find the middle term: 2 × 3 × √5. What is the coefficient of √5? | 6 | 6 | ok |  |
 | pow-C04 | 2 | Find the last term: (√5)². | 5 | 5 | ok |  |
 | pow-C04 | 3 | Combine all three terms: 9 + 6√5 + 5. What is the integer part (a)? | 14 | 14 | ok |  |
+| bnd-A02 | 0 | Find the lower bound. | 34.5 | 34.5 | ok |  |
+| bnd-A02 | 1 | Find the upper bound and write the error interval. Enter the upper bou | 35.5 | 35.5 | ok |  |
+| bnd-A03 | 0 | Find the lower bound. | 2.355 | 2.355 | ok |  |
+| bnd-A03 | 1 | Find the upper bound and state the error interval. Enter the upper bou | 2.365 | 2.365 | ok |  |
+| bnd-A04 | 0 | Find the lower bound. | 7.5 | 7.5 | ok |  |
+| bnd-A04 | 1 | Find the upper bound and write the error interval. Enter the upper bou | 8.5 | 8.5 | ok |  |
+| bnd-A05 | 0 | Find the lower bound. | 13.65 | 13.65 | ok |  |
+| bnd-A05 | 1 | Find the upper bound and write the error interval. Enter the upper bou | 13.75 | 13.75 | ok |  |
+| bnd-B02 | 0 | Find the upper bound of a. | 6.35 | 6.35 | ok |  |
+| bnd-B02 | 1 | Find the upper bound of b. | 1.85 | 1.85 | ok |  |
+| bnd-B02 | 2 | Calculate the upper bound of a × b. | 11.7475 | 11.7475 | ok |  |
+| bnd-B03 | 0 | Find the upper bound of a. | 9.45 | 9.45 | ok |  |
+| bnd-B03 | 1 | Find the lower bound of b. | 3.15 | 3.15 | ok |  |
+| bnd-B03 | 2 | Calculate the upper bound of a − b. | 6.3 | 6.3 | ok |  |
+| bnd-B04 | 0 | Find the upper bound of l. | 12.35 | 12.35 | ok |  |
+| bnd-B04 | 1 | Find the upper bound of w. | 4.75 | 4.75 | ok |  |
+| bnd-B04 | 2 | Calculate the upper bound of the perimeter: 2(l + w). | 34.2 | 34.2 | ok |  |
+| bnd-B05 | 0 | Find the upper bound of m and of v. Enter the upper bound of m. | 8.55 | 8.55 | ok |  |
+| bnd-B05 | 1 | Calculate UB(v²) = 3.25². | 10.5625 | 10.5625 | ok |  |
+| bnd-B05 | 2 | Calculate UB(KE) = ½ × 8.55 × 10.5625. | 45.155 | 45.154688 | ok |  |
+| bnd-B06 | 0 | Find the lower bound of p. | 7.35 | 7.35 | ok |  |
+| bnd-B06 | 1 | Find the upper bound of q. | 2.65 | 2.65 | ok |  |
+| bnd-B06 | 2 | Calculate LB(p ÷ q) = 7.35 ÷ 2.65. Give to 3 s.f. | 2.77 | 2.77 | ok |  |
+| bnd-C02 | 0 | Find UB(A + B). Use UB(A) + UB(B). | 5.6 | 5.6 | ok |  |
+| bnd-C02 | 1 | Find LB(A − B). Use LB(A) − UB(B). | 3 | 3 | ok |  |
+| bnd-C02 | 2 | Divide: 5.60 ÷ 3.00. | 1.867 | 1.866667 | ok |  |
+| bnd-C02 | 3 | Round to 3 significant figures. | 1.87 | 1.87 | ok |  |
+| bnd-C03 | 0 | Find the lower bound of b. | 8.35 | 8.35 | ok |  |
+| bnd-C03 | 1 | Find the lower bound of h. | 5.75 | 5.75 | ok |  |
+| bnd-C03 | 2 | Calculate LB(area) = ½ × LB(b) × LB(h). | 24.006 | 24.00625 | ok |  |
+| bnd-C03 | 3 | Round to 3 significant figures. | 24 | 24 | ok |  |
+| bnd-C04 | 0 | Find the upper bound of r. | 3.55 | 3.55 | ok |  |
+| bnd-C04 | 1 | Calculate UB(r²). | 12.6025 | 12.6025 | ok |  |
+| bnd-C04 | 2 | Find UB(h) and calculate π × UB(r²) × UB(h). | 366 | 366.225273 | ok |  |
+| nrt-A03 | 0 | Find the value of one part. | 30 | 30 | ok |  |
+| nrt-A03 | 1 | Calculate each share. Enter the larger share. | 90 | 90 | ok |  |
+| nrt-A04 | 0 | Convert to the same units. Write 3 m in centimetres. | 300 | 300 | ok |  |
+| nrt-A04 | 1 | Simplify 120 : 300 by dividing both by the HCF. Enter the second part  | 5 | 5 | ok |  |
+| nrt-A05 | 0 | Find the value of one part. | 7.5 | 7.5 | ok |  |
+| nrt-A05 | 1 | Calculate Tom's share: 5 parts. | 37.5 | 37.5 | ok |  |
+| nrt-B02 | 0 | Find the total number of parts. | 10 | 10 | ok |  |
+| nrt-B02 | 1 | Find the volume of one part. | 0.25 | 0.25 | ok |  |
+| nrt-B02 | 2 | Calculate the volume of orange juice: 3 parts. | 0.75 | 0.75 | ok |  |
+| nrt-B03 | 0 | Find the total number of parts. | 10 | 10 | ok |  |
+| nrt-B03 | 1 | Find the mass of copper: 7 parts out of 10. | 315 | 315 | ok |  |
+| nrt-B03 | 2 | Find the mass of zinc: 3 parts out of 10. | 135 | 135 | ok |  |
+| nrt-B04 | 0 | Convert the map distance to real distance in centimetres. | 370000 | 370000 | ok |  |
+| nrt-B04 | 1 | Convert centimetres to metres. | 3700 | 3700 | ok |  |
+| nrt-B04 | 2 | Convert metres to kilometres. | 3.7 | 3.7 | ok |  |
+| nrt-B05 | 0 | Find the total number of parts. | 8 | 8 | ok |  |
+| nrt-B05 | 1 | Find the value of one part. | 60 | 60 | ok |  |
+| nrt-B05 | 2 | Calculate each share: 1 part, 2 parts, and 5 parts. Enter the largest  | 300 | 300 | ok |  |
+| nrt-B06 | 0 | Find the total number of parts. | 7 | 7 | ok |  |
+| nrt-B06 | 1 | Find the number of students per part. | 36 | 36 | ok |  |
+| nrt-B06 | 2 | Calculate the Year 10 and Year 11 numbers. Enter the Year 11 number. | 108 | 108 | ok |  |
+| nrt-C01 | 0 | In the new alloy, the ratio is 3 : 2 : 1. Z = 35 g. Find the mass of o | 35 | 35 | ok |  |
+| nrt-C01 | 1 | Find the total mass of the new alloy. | 210 | 210 | ok |  |
+| nrt-C01 | 2 | Find the total mass of the original alloy. | 210 | 210 | ok |  |
+| nrt-C01 | 3 | Verify: in the original alloy (X:Y = 2:1, total 210 g), what was the m | 0 | — | skip |  |
+| nrt-C02 | 0 | Find the difference in parts between Year 10 and Year 12. | 2 | 2 | ok |  |
+| nrt-C02 | 1 | Find the value of one part. | 24 | 24 | ok |  |
+| nrt-C02 | 2 | Find the Year 10 and Year 11 student numbers. Enter the Year 11 number | 96 | 96 | ok |  |
+| nrt-C02 | 3 | Find the total number of students. | 288 | 288 | ok |  |
+| nrt-C03 | 0 | Convert £350 to euros. | 413 | 413 | ok |  |
+| nrt-C03 | 1 | Find the euros remaining after spending 285 euros. | 128 | 128 | ok |  |
+| nrt-C03 | 2 | Convert 128 euros back to pounds. | 108.47 | 108.47 | ok |  |
+| nrt-C04 | 0 | Find the amount of butter needed for 14 people. | 560 | 560 | ok |  |
+| nrt-C04 | 1 | Compare with what Ben has. | 0 | — | skip |  |
+| nrt-C04 | 2 | How many people could Ben actually serve with 480 g? | 12 | 12 | ok |  |
+| nrt-C04 | 3 | State the conclusion. How many grams of butter is Ben short? | 80 | 80 | ok |  |

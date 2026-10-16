@@ -1,0 +1,112 @@
+{
+  "lesson": "p7-motor-effect",
+  "source_file": "lessons/physics/p7-motor-effect.json",
+  "lesson_md5": "050719491666f11dd3a4e9ece008e305",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:55:12.140Z",
+  "specRefs_sent": [
+    "4.7.2.2",
+    "4.7.2.3",
+    "4.7.2.4"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 6395,
+    "output_tokens": 4556
+  },
+  "cost_usd": 0.1167,
+  "status": "OK",
+  "result": {
+    "lesson": "p7-motor-effect",
+    "missing_spec_content": [
+      {
+        "specRef": "4.7.2.2",
+        "spec_text": "When a conductor carrying a current is placed in a magnetic field the magnet producing the field and the conductor exert a force on each other.",
+        "why": "The lesson only says the conductor feels a force (keyPoints[0].content: \"the conductor feels a <strong>force</strong>\"). It never says that the magnet producing the field and the conductor exert a force on each other, so the force on the magnet is missing."
+      },
+      {
+        "specRef": "4.7.2.2",
+        "spec_text": "For a conductor at right angles to a magnetic field and carrying a current: force = magnetic flux density × current × length",
+        "why": "keyPoints[2].content gives F = BIL but never states that the equation applies when the conductor is at right angles to the field."
+      },
+      {
+        "specRef": "4.7.2.4",
+        "spec_text": "Loudspeakers and headphones use the motor effect to convert variations in current in electrical circuits to the pressure variations in sound waves.",
+        "why": "Headphones are not mentioned anywhere in the lesson. The idea that current variations become pressure variations in sound waves is also not taught. keyPoints[3].content only says \"The coil pushes a cone, which makes sound waves.\""
+      },
+      {
+        "specRef": "4.7.2.4",
+        "spec_text": "Students should be able to explain how a moving-coil loudspeaker and headphones work.",
+        "why": "The lesson gives no explanation of how headphones work."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "intro",
+        "text": "Then you get a lot of torque.",
+        "why": "Torque is not a term used in these specification sections. It appears again in keyPoints[3].content (\"To increase motor speed or torque\") and could confuse the student."
+      },
+      {
+        "field": "commonMistakes[0]",
+        "text": "The right hand is for the generator effect (induction).",
+        "why": "Fleming's right-hand rule and the generator effect are not part of these specification sections. Introducing a second hand rule could confuse the student."
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "This effect is how electric motors, loudspeakers and galvanometers work.",
+        "why": "Galvanometers are not in the specification. The spec names only electric motors, loudspeakers and headphones."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[0].memTip",
+        "text": "The three quantities (force, current, field) are always at right angles to each other.",
+        "correction": "The force is perpendicular to both the current and the field. The current and the field do not have to be at right angles; there is a force whenever the conductor has a component across the field. This also contradicts keyPoints[0].content (\"must run at least partly across the field\"). The spec's condition \"For a conductor at right angles\" implies this is a special case, not a rule.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "The size of the force on a current-carrying conductor is given by: <strong>F = BIL</strong>.",
+        "correction": "F = BIl gives the force only when the conductor is at right angles to the magnetic field.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "The problem: if the current direction stays the same, the forces reverse after half a turn, and the motor stops.",
+        "correction": "Without a commutator, the forces on each side of the coil keep the same direction in space. After the coil passes the vertical, the sides swap positions, so the turning effect reverses. The coil then rocks back and forth and settles in the vertical position. It is the turning effect that reverses, not the forces. The statement is also inconsistent with keyPoints[3].memTip (\"the motor would rock back and forth\").",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "your <strong>thumb</strong> then points in the direction of the <strong>Thrust</strong> (the force on the conductor)",
+        "spec_term": "force"
+      },
+      {
+        "field": "examTip",
+        "text": "Thumb = thrust (force)",
+        "spec_term": "force"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "<strong>F = BIL</strong>",
+        "spec_term": "F = B I l (length written as lower-case l)"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "0",
+        "key_point": "keyPoints[0] \"The motor effect — force on a current-carrying conductor\"",
+        "why": "The question asks which finger shows the magnetic field in Fleming's left-hand rule. Finger assignments are taught in keyPoints[1], not keyPoints[0], so this key point does not support the answer."
+      },
+      {
+        "checkpoint": "1",
+        "key_point": "keyPoints[1] \"Fleming's left-hand rule\"",
+        "why": "The question is an F = BIL calculation, which is taught in keyPoints[2], not keyPoints[1]. As a result, keyPoints[2] has no checkpoint. The question also does not state that the wire is at right angles to the field, which the equation requires."
+      }
+    ],
+    "not_checked": []
+  }
+}

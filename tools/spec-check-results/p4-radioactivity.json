@@ -1,0 +1,128 @@
+{
+  "lesson": "p4-radioactivity",
+  "source_file": "lessons/physics/p4-radioactivity.json",
+  "lesson_md5": "be8a86c472b4c001e138cc401102c701",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:44:08.734Z",
+  "specRefs_sent": [
+    "4.4.2.1",
+    "4.4.2.2",
+    "4.4.3.1"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7606,
+    "output_tokens": 4507
+  },
+  "cost_usd": 0.120564,
+  "status": "OK",
+  "result": {
+    "lesson": "p4-radioactivity",
+    "missing_spec_content": [
+      {
+        "specRef": "4.4.2.1",
+        "spec_text": "Some atomic nuclei are unstable. The nucleus gives out radiation as it changes to become more stable.",
+        "why": "The lesson says decay is spontaneous and random (introTips[0]). It never says that nuclei are unstable or that emitting radiation makes the nucleus more stable."
+      },
+      {
+        "specRef": "4.4.2.1",
+        "spec_text": "Activity is the rate at which a source of unstable nuclei decays. Activity is measured in becquerel (Bq)",
+        "why": "Activity and its unit, the becquerel, are not taught anywhere. Becquerel appears only as a person's name in the intro."
+      },
+      {
+        "specRef": "4.4.2.1",
+        "spec_text": "Count-rate is the number of decays recorded each second by a detector (eg Geiger-Muller tube).",
+        "why": "Count-rate and the Geiger-Muller tube are not mentioned."
+      },
+      {
+        "specRef": "4.4.2.1",
+        "spec_text": "The nuclear radiation emitted may be: ... a neutron (n).",
+        "why": "The lesson covers only alpha, beta and gamma. Its title and introduction present these as the only three types. Neutron emission is never mentioned."
+      },
+      {
+        "specRef": "4.4.2.1",
+        "spec_text": "Students should be able to apply their knowledge to the uses of radiation and evaluate the best sources of radiation to use in a given situation.",
+        "why": "Uses appear only as a list in the intro (\"cancer treatments, smoke detectors, carbon dating and nuclear power\"). The lesson does not teach how to choose a suitable source for a given use."
+      },
+      {
+        "specRef": "4.4.3.1",
+        "spec_text": "man-made sources such as the fallout from nuclear weapons testing and nuclear accidents.",
+        "why": "Nuclear accidents are not given as a source of background radiation. keyPoints[3].content lists medical uses, nuclear power stations and weapons testing only."
+      },
+      {
+        "specRef": "4.4.3.1",
+        "spec_text": "The level of background radiation and radiation dose may be affected by occupation and/or location.",
+        "why": "The lesson does not mention that occupation or location affect background level or dose."
+      },
+      {
+        "specRef": "4.4.3.1",
+        "spec_text": "Radiation dose is measured in sieverts (Sv) 1000 millisieverts (mSv) = 1 sievert (Sv)",
+        "why": "Radiation dose, sieverts and the mSv to Sv conversion are not taught."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "Note: a neutrino is also given out, but you don't need to include it at GCSE.",
+        "why": "Neutrinos are not in the specification. The spec describes beta decay only as \"a neutron turns into a proton\"."
+      },
+      {
+        "field": "keyPoints[1].writeBullets[0]",
+        "text": "Neutron → proton + electron (+ neutrino)",
+        "why": "This puts the neutrino into a bullet the student is asked to write down. It is beyond the spec and could lead students to include it in equations."
+      },
+      {
+        "field": "checkpoints.3.correctFeedback",
+        "text": "The daughter nucleus is polonium-218.",
+        "why": "The spec states \"The identification of daughter elements from such decays is not required.\""
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "The nucleus is still in an excited state. It releases its extra energy as a gamma ray.",
+        "why": "Excited nuclear states are not in the spec. The spec requires only that gamma is \"electromagnetic radiation from the nucleus\" and causes no change in mass or charge."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Natural sources (~85% in the UK) ... Also food and drink (potassium-40) ... Artificial sources (~15%)",
+        "why": "Percentage contributions and potassium-40 go beyond the spec. The spec requires only examples of natural and man-made sources."
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "making lots of ion pairs",
+        "why": "The term \"ion pairs\" is not used in the spec. The spec requires only \"ionising power\"."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "revisionCardBullets[2]",
+        "text": "Beta: fast electron from the nucleus. Mass 0, charge −1.",
+        "correction": "A beta particle (an electron) has a very small mass, not zero. Its mass number is 0. The bullet should say \"mass number 0\" or \"very small mass\".",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "It comes from natural and artificial sources. ... Artificial sources (~15%)",
+        "spec_term": "man-made sources"
+      },
+      {
+        "field": "keyTerms (keyPoints[3]) background radiation def",
+        "text": "Low-level radiation from natural and artificial sources",
+        "spec_term": "man-made sources"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "checkpoints.3",
+        "key_point": "keyPoints[3] Background radiation and nuclear equations",
+        "why": "The correctFeedback names the daughter nucleus as \"polonium-218\". The key point never teaches polonium, and the spec does not require daughter elements to be identified. That part of the feedback is not supported by the key point."
+      }
+    ],
+    "not_checked": [
+      "The specification text for 4.4.2.2 leaves out the alpha and beta symbols and the two example equations (shown as blanks: \"may be represented by the symbol:\"). I could not check the lesson's notation (⁴₂He, ⁰₋₁e) against the spec's own symbols.",
+      "Whether the Unicode superscripts and subscripts in the nuclear equations display correctly for the student."
+    ]
+  }
+}

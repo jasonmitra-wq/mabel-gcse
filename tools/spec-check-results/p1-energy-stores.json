@@ -1,0 +1,163 @@
+{
+  "lesson": "p1-energy-stores",
+  "source_file": "lessons/physics/p1-energy-stores.json",
+  "lesson_md5": "8de3dbc57a8f076c3e933c2759acf825",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:29:43.794Z",
+  "specRefs_sent": [
+    "4.1.1.1",
+    "4.1.2.1",
+    "4.1.2.2"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 8972,
+    "output_tokens": 6841
+  },
+  "cost_usd": 0.172708,
+  "status": "OK",
+  "result": {
+    "lesson": "p1-energy-stores",
+    "missing_spec_content": [
+      {
+        "specRef": "4.1.1.1",
+        "spec_text": "A system is an object or group of objects.",
+        "why": "The lesson never defines 'system'. It only defines 'Closed system' in keyPoints[2].keyTerms. The idea of a system changing is the framework for this whole spec section."
+      },
+      {
+        "specRef": "4.1.1.1",
+        "spec_text": "Students should be able to describe all the changes involved in the way energy is stored when a system changes, for common situations. For example: an object projected upwards; a moving object hitting an obstacle; an object accelerated by a constant force; a vehicle slowing down; bringing water to a boil in an electric kettle.",
+        "why": "Only a falling book, a car engine, a braking car and a rolling ball appear. The lesson does not work through an object projected upwards, an object accelerated by a constant force, or boiling water in an electric kettle."
+      },
+      {
+        "specRef": "4.1.1.1",
+        "spec_text": "Throughout this section on Energy students should be able to calculate the changes in energy involved when a system is changed by: heating; work done by forces; work done when a current flows",
+        "why": "The lesson gives no calculation of energy change by heating, by work done by a force, or by work done when a current flows. Equations for kinetic, gravitational potential and elastic potential energy are only listed in keyTerms, with no worked use."
+      },
+      {
+        "specRef": "4.1.1.1",
+        "spec_text": "use calculations to show on a common scale how the overall energy in a system is redistributed when the system is changed.",
+        "why": "Sankey diagrams are described, but no calculation shows how a system's total energy is shared out among stores on a common scale. Only one efficiency calculation is given (checkpoint 4)."
+      },
+      {
+        "specRef": "4.1.2.1",
+        "spec_text": "Students should be able to explain ways of reducing unwanted energy transfers, for example through lubrication and the use of thermal insulation.",
+        "why": "Lubrication and thermal insulation are not mentioned. No way of reducing unwanted energy transfers is taught."
+      },
+      {
+        "specRef": "4.1.2.1",
+        "spec_text": "The higher the thermal conductivity of a material the higher the rate of energy transfer by conduction across the material.",
+        "why": "Thermal conductivity is not mentioned anywhere in the lesson."
+      },
+      {
+        "specRef": "4.1.2.1",
+        "spec_text": "Students should be able to describe how the rate of cooling of a building is affected by the thickness and thermal conductivity of its walls.",
+        "why": "The lesson does not cover how wall thickness and thermal conductivity affect how fast a building cools."
+      },
+      {
+        "specRef": "4.1.2.1",
+        "spec_text": "Required practical activity 2 (physics only): investigate the effectiveness of different materials as thermal insulators and the factors that may affect the thermal insulation properties of a material.",
+        "why": "The required practical on thermal insulators is not mentioned."
+      },
+      {
+        "specRef": "4.1.2.2",
+        "spec_text": "(HT only) Students should be able to describe ways to increase the efficiency of an intended energy transfer.",
+        "why": "The lesson explains why devices are not 100% efficient. It does not describe ways to increase efficiency."
+      }
+    ],
+    "above_gcse": [],
+    "factual_errors": [
+      {
+        "field": "keyPoints[4].content",
+        "text": "One wide arrow = useful energy output. One or more thinner arrows = wasted energy, usually pointing down.",
+        "correction": "The useful output arrow is not always the widest. Its width depends on how much energy is useful. For an inefficient device, such as the lesson's own bulb (15 J light from 100 J), the useful arrow is narrower than the wasted arrow.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[4].writeBullets[2]",
+        "text": "Wide right arrow = useful output. Thin arrow(s) = wasted energy",
+        "correction": "Arrow width shows the amount of energy, not whether it is useful. A wasted-energy arrow can be wider than the useful arrow.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "tables[0].rows[6][3]",
+        "text": "Objects become more charged or move further apart",
+        "correction": "Moving charged objects further apart increases the electrostatic store only for opposite (attracting) charges. For like (repelling) charges, the store decreases as they move apart. The lesson draws this distinction correctly for magnets but not here.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "<strong>By heating</strong>: energy flows from a hotter object to a cooler one (conduction, convection, radiation).",
+        "correction": "Radiation is then listed as a separate fourth pathway ('By radiation: by electromagnetic waves (light, infrared)...'). Listing radiation under heating as well makes the four pathways overlap. Transfer by infrared radiation belongs to the radiation pathway. Heating, as used here, should be conduction and convection.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].keyTerms[2].def",
+        "text": "Energy transferred from a hotter object to a cooler one by conduction, convection, or radiation",
+        "correction": "This repeats the overlap with the separate 'Radiation' pathway. Radiation should not appear under both heating and radiation.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "<strong>Thermal</strong>: any object with heat.",
+        "correction": "Heat is energy being transferred, not something an object holds. The thermal store depends on an object's temperature (and mass and material). Every object has energy in its thermal store, not only hot ones.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[0].writeBullets[3]",
+        "text": "Thermal — any object with heat energy",
+        "correction": "Objects do not hold 'heat energy'. They have energy in a thermal store, which is linked to temperature. Heating is a transfer pathway.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Then it becomes sound and thermal energy when the book hits the floor.",
+        "correction": "Sound is not an energy store, and it is not on the lesson's own list of eight stores. Energy is transferred by sound waves, which the lesson counts as radiation, and ends up in the thermal store of the floor and surroundings.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].writeBullets[3]",
+        "text": "Example: a falling book. Gravitational potential → kinetic → thermal + sound on impact",
+        "correction": "Sound is a way energy is transferred, not a store. Energy goes from the kinetic store to the thermal store of the surroundings, partly transferred by sound waves.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "In any real energy transfer, some energy ends up in a store that is no use. ... But some becomes sound (engine noise).",
+        "correction": "Sound is not a store. Engine noise transfers energy by sound waves, which ends up in the thermal store of the surroundings.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].writeBullets[4]",
+        "text": "Example: a light bulb. Electrical → light (useful) + thermal (wasted)",
+        "correction": "Neither 'electrical' nor 'light' is one of the lesson's eight stores. Energy is transferred electrically to the bulb. It is then transferred usefully by light (radiation), and the rest is dissipated to the thermal store of the surroundings.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[4].writeBullets[3]",
+        "text": "Efficiency = useful output energy ÷ total input energy",
+        "spec_term": "efficiency = (useful output energy transfer)/(total input energy transfer)"
+      },
+      {
+        "field": "revisionCardBullets[6]",
+        "text": "Efficiency = useful output energy ÷ total input energy (multiply by 100 for %)",
+        "spec_term": "efficiency = (useful output energy transfer)/(total input energy transfer)"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "1",
+        "key_point": "keyPoints[1] The four ways energy is transferred",
+        "why": "The correct option reads 'Mechanically. The friction force between brakes and wheels transfers energy as heat'. This mixes the mechanical pathway with heating, which the key point teaches as a separate pathway. A student who learned the key point's distinctions could reasonably see this option as self-contradictory."
+      }
+    ],
+    "not_checked": [
+      "The lesson has no diagrams ('diagrams': [] and every 'diagram': null). The Sankey diagram content was checked only as text. No actual Sankey diagram was seen.",
+      "The lesson's claims of 'exactly eight energy stores' (introTips[0]) and 'four transfer pathways' (keyPoints[1]) do not appear in the specification sections supplied. They were checked against own knowledge only, not against spec text.",
+      "The equations in keyPoints[0].keyTerms (Ek = ½mv², Ep = mgh, Ee = ½ke², g = 9.8 N/kg) belong to specification sections not supplied. They were checked against own knowledge only."
+    ]
+  }
+}

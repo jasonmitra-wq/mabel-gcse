@@ -73,7 +73,7 @@ Not started on the pipeline. Already in place:
 - tools/check-rewrite.js — rewrite checker (check B)
 - tools/plain-english-rules.md — rewrite rules
 - tools/fix-board-refs.js — one-off, already run
-- tools/spec-check.js — built; calibration PASS; key from env var SPEC_CHECK_API_KEY
+- tools/spec-check.js — built; calibration PASS; key from env var SPEC_CHECK_API_KEY; max_tokens 16000; Physics run 2026-10-16, results in tools/spec-check-results/
 - tools/extract-spec.py — spec PDF section 4 → data/spec/<subject>.md (spec text local only, not committed)
 - tools/check-spec-sections.py — independent check that every numbered spec section reached the .md
 - tools/spec-coverage.js — specRef coverage report → tools/spec-coverage.md
@@ -83,7 +83,7 @@ Not started on the pipeline. Already in place:
 
 ## Next
 
-1. Run spec-check on Physics P1–P7 and fix findings.
+1. Triage the Physics spec-check findings (tools/spec-check-results/PHYSICS-RUN-2026-10-16.md), then one fix round per topic. Findings with basis 'own knowledge' are judged, not applied automatically; no fix may introduce 'bond' in Physics.
 2. Write the missing Physics content (defect 11): lesson-auditor
    mode for new files first; decide whether P8 Space becomes a
    topic in the syllabus file.

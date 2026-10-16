@@ -1,0 +1,85 @@
+{
+  "lesson": "p7-transformers",
+  "source_file": "lessons/physics/p7-transformers.json",
+  "lesson_md5": "72eb86d52d1ba21d57ad2f780f0eccba",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:56:29.599Z",
+  "specRefs_sent": [
+    "4.2.4.3",
+    "4.7.3.4"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7244,
+    "output_tokens": 3481
+  },
+  "cost_usd": 0.098596,
+  "status": "OK",
+  "result": {
+    "lesson": "p7-transformers",
+    "missing_spec_content": [
+      {
+        "specRef": "4.7.3.4",
+        "spec_text": "Iron is used as it is easily magnetised.",
+        "why": "The lesson never gives the specification's reason for using iron. keyPoints[0].content says only that \"iron is a good magnetic conductor. It carries the magnetic field efficiently from the primary to the secondary\". The phrase \"easily magnetised\" does not appear anywhere in the lesson."
+      },
+      {
+        "specRef": "4.7.3.4",
+        "spec_text": "calculate the current drawn from the input supply to provide a particular power output",
+        "why": "The only worked example and the only rearrangement (keyPoints[2].writeBullets: \"Rearrangement: Is = (VpIp) ÷ Vs\") find the secondary current from a known primary current. The lesson never shows how to find the primary (input) current, Ip = VsIs ÷ Vp or Ip = Pout ÷ Vp, needed to supply a given power output. No checkpoint tests this either."
+      },
+      {
+        "specRef": "4.7.3.4",
+        "spec_text": "explain how the ratio of the potential differences across the two coils depends on the ratio of the number of turns on each",
+        "why": "The lesson states the relationship (\"The voltages are proportional to the numbers of turns\", introTips[3]; \"Vp/Vs = Np/Ns\", keyPoints[1].content). It does not explain why: the same changing magnetic field passes through every turn of both coils, so the induced p.d. depends on the number of turns. The specification asks students to explain this, not just state it."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "Some energy is lost as thermal energy in the coils, and in the iron core because of eddy currents.",
+        "why": "The specification states \"Knowledge of laminations and eddy currents in the core is not required.\" Introducing eddy currents goes beyond the specification and could confuse the student."
+      },
+      {
+        "field": "keyPoints[2].writeBullets[4]",
+        "text": "Real transformers lose some energy as heat (eddy currents in the core). GCSE assumes 100% efficiency",
+        "why": "This repeats eddy currents in a bullet the student is told to write down. The specification says \"Knowledge of laminations and eddy currents in the core is not required.\""
+      }
+    ],
+    "factual_errors": [],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "The core is made of iron because iron is a good magnetic conductor.",
+        "spec_term": "easily magnetised (\"Iron is used as it is easily magnetised.\")"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "Vp = primary (input) voltage (V)\n- Vs = secondary (output) voltage (V)",
+        "spec_term": "potential difference (\"potential difference, Vp and Vs in volts, V\")"
+      },
+      {
+        "field": "introTips[0]",
+        "text": "A transformer changes the voltage of an alternating current.",
+        "spec_term": "potential difference (\"Step-up transformers are used to increase the potential difference\")"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Power is sent at very <strong>high voltage</strong> (around 400,000 V), and so at very <strong>low current</strong>.",
+        "spec_term": "high potential differences (\"the advantages of power transmission at high potential differences\")"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "it induces an alternating EMF in the secondary coil, and so an AC.",
+        "spec_term": "induced current / potential difference (\"the effect of an alternating current in one coil in inducing a current in another\"). The specification sections given do not use the term EMF."
+      }
+    ],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "All keyPoints have \"diagram\": null, so there were no diagrams or images to check.",
+      "No checkpoint is provided for keyPoints[2] (the power equation VpIp = VsIs); checkpoint keys are \"0\", \"1\" and \"3\". Understanding of that key point is therefore not tested and could not be assessed for checkpoint alignment.",
+      "The figures of about 25 kV generation, 400 kV transmission and 33 kV/11 kV for factories are not in the specification text. They were checked against own knowledge only, and are typical UK values."
+    ]
+  }
+}

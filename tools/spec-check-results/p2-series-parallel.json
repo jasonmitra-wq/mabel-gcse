@@ -1,0 +1,164 @@
+{
+  "lesson": "p2-series-parallel",
+  "source_file": "lessons/physics/p2-series-parallel.json",
+  "lesson_md5": "2eb07344abe59a5896a53df9845ae72a",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:36:14.280Z",
+  "specRefs_sent": [
+    "4.2.2"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 8125,
+    "output_tokens": 5889
+  },
+  "cost_usd": 0.15028,
+  "status": "OK",
+  "result": {
+    "lesson": "p2-series-parallel",
+    "missing_spec_content": [
+      {
+        "specRef": "4.2.2",
+        "spec_text": "explain qualitatively why adding resistors in series increases the total resistance whilst adding resistors in parallel decreases the total resistance",
+        "why": "The parallel half is explained in keyPoints[1].content: 'Adding branches gives charge more routes, so it flows more easily overall'. The series half is only stated, not explained, in keyPoints[0].content: 'Adding more components to a series circuit always increases the total resistance'. There is no reason given, for example that the same current has to pass through each resistor in turn."
+      },
+      {
+        "specRef": "4.2.2",
+        "spec_text": "explain the design and use of dc series circuits for measurement and testing purposes",
+        "why": "keyPoints[4] says where ammeters and voltmeters go and why. It does not explain how a dc series circuit is designed and used for measurement or testing, for example a variable resistor in series to change the current through a component under test."
+      },
+      {
+        "specRef": "4.2.2",
+        "spec_text": "use circuit diagrams to construct and check series and parallel circuits that include a variety of common circuit components",
+        "why": "Every key point has \"diagram\": null, and the lesson contains no circuit diagrams or circuit symbols. introTips[2] promises 'you will be able to set up and read circuit diagrams', but this is never taught."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "The formula is <strong>1/R<sub>total</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub></strong>.\n\nExample: two resistors of 4 Ω and 4 Ω in parallel give 1/R<sub>total</sub> = 1/4 + 1/4 = 2/4 = 0.5. So R<sub>total</sub> = <strong>2 Ω</strong>.",
+        "why": "The spec says 'Students are not required to calculate the total resistance of two resistors joined in parallel.' Teaching and practising this calculation goes beyond the spec and suggests to the student that it will be assessed."
+      },
+      {
+        "field": "keyPoints[1].writeBullets[5]",
+        "text": "Formula — 1/Rtotal = 1/R1 + 1/R2. Take the reciprocal of the answer to get Rtotal",
+        "why": "This is a parallel resistance calculation that the spec says is not required."
+      },
+      {
+        "field": "keyPoints[1].tutor_note",
+        "text": "The most common mistake with the parallel resistance formula is not taking the reciprocal at the end. If you get 1/Rtotal = 0.5, then Rtotal = 1/0.5 = 2 Ω, not 0.5 Ω.",
+        "why": "This is a parallel resistance calculation that the spec says is not required."
+      },
+      {
+        "field": "keyPoints[1].memTip",
+        "text": "1/Rtotal = 1/R1 + 1/R2. Don't forget to flip the answer at the end.",
+        "why": "This is a parallel resistance calculation that the spec says is not required."
+      },
+      {
+        "field": "keyPoints[1].keyTerms[1].def",
+        "text": "Found using 1/Rtotal = 1/R1 + 1/R2; always less than the smallest resistance",
+        "why": "The spec only requires that the total is 'less than the resistance of the smallest individual resistor', not the formula."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "<strong>Step 1:</strong> Replace any parallel combination with its equivalent resistance, using 1/R<sub>total</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub>.",
+        "why": "The spec asks students to 'solve problems for circuits which include resistors in series using the concept of equivalent resistance'. The mixed-circuit method and worked example depend on calculating a parallel equivalent resistance ('1/R<sub>parallel</sub> = 1/6 + 1/3'), which the spec excludes."
+      },
+      {
+        "field": "tables[0].rows[2][2]",
+        "text": "Less than smallest resistance: 1/Rtotal = 1/R1 + 1/R2",
+        "why": "This adds the parallel formula, which the spec says is not required."
+      },
+      {
+        "field": "checkpoints.1.question",
+        "text": "Two resistors of 4 Ω and 12 Ω are connected in parallel. What is the total resistance of this combination?",
+        "why": "This tests a calculation the spec explicitly says students are not required to do."
+      },
+      {
+        "field": "examTips[1]",
+        "text": "For parallel resistance, write out 1/Rtotal = 1/R1 + 1/R2. Work out the right-hand side, then flip it to get Rtotal. Showing each step earns method marks.",
+        "why": "This is exam advice for a calculation that is not required by the spec."
+      },
+      {
+        "field": "commonMistakes[1]",
+        "text": "Not taking the reciprocal at the end of the parallel resistance formula. If 1/Rtotal = 0.25, then Rtotal = 4 Ω, not 0.25 Ω.",
+        "why": "This is a parallel resistance calculation that the spec says is not required."
+      },
+      {
+        "field": "revisionCardBullets[1]",
+        "text": "Parallel: voltage the same across all branches (= supply). Current splits. 1/Rtotal = 1/R1 + 1/R2",
+        "why": "This puts the non-required parallel formula on a revision card."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "examTip",
+        "text": "Two favourites keep coming back. One is the parallel resistance formula (1/Rtotal = 1/R1 + 1/R2).",
+        "correction": "The spec states 'Students are not required to calculate the total resistance of two resistors joined in parallel', so this formula is not an assessed favourite at this level.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "the <strong>potential difference is the same across every branch</strong>, and equals the supply voltage",
+        "correction": "The spec says 'the potential difference across each component is the same'. The p.d. across parallel branches equals the supply p.d. only when the branches are connected directly across the supply. The lesson's own mixed-circuit example in keyPoints[3] has 6 V across the parallel section from a 12 V supply. The same overgeneralisation appears in keyPoints[1].writeBullets[1] '(equals the supply voltage)' and in tables[0].rows[1][2] 'Same across every branch — equals supply voltage'.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Modern sets wire bulbs in parallel, so each has its own branch.",
+        "correction": "This is an overgeneralisation. Many modern light strings use series or series–parallel strings, often with shunted bulbs or LED drivers. Not all modern sets are fully parallel.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "the <strong>potential differences add up to the supply voltage</strong>",
+        "spec_term": "the total potential difference of the power supply is shared between the components"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "and equals the supply voltage",
+        "spec_term": "potential difference"
+      },
+      {
+        "field": "keyPoints[0].memTip",
+        "text": "Voltages split, and resistances add.",
+        "spec_term": "potential difference"
+      },
+      {
+        "field": "keyPoints[1].keyTerms[0].def",
+        "text": "voltage is equal across each branch",
+        "spec_term": "the potential difference across each component is the same"
+      },
+      {
+        "field": "checkpoints.3.question",
+        "text": "In a parallel circuit, the supply voltage is 9 V.",
+        "spec_term": "potential difference of the power supply"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "0",
+        "key_point": "keyPoints[0] Series circuits — one loop, shared everything",
+        "why": "Answering needs I = V/R ('I = V/R = 16/16 = 1 A'), but keyPoints[0].content never states I = V/R. It first appears in keyPoints[3]. So the answer is not fully supported by the key point it sits with."
+      },
+      {
+        "checkpoint": "1",
+        "key_point": "keyPoints[1] Parallel circuits — branches give choice",
+        "why": "It tests the key point as written, but it tests a parallel resistance calculation that the spec excludes ('Students are not required to calculate the total resistance of two resistors joined in parallel'). It does not test the spec's actual requirement that the total 'is less than the resistance of the smallest individual resistor'."
+      },
+      {
+        "checkpoint": "3",
+        "key_point": "keyPoints[3] Calculating values in mixed circuits",
+        "why": "The question tests the parallel p.d. rule ('9 V across each branch'), which is taught in keyPoints[1], not the mixed-circuit calculation steps in keyPoints[3]. In a mixed circuit, as keyPoints[3]'s own example shows (6 V across the parallel section from a 12 V supply), the branch p.d. would not equal the supply. keyPoints[2] and keyPoints[4] have no checkpoints."
+      }
+    ],
+    "not_checked": [
+      "All key points have \"diagram\": null, so there are no diagrams to check. The absence of circuit diagrams is reported under missing_spec_content.",
+      "Claims about exam frequency and mark schemes cannot be checked against the spec text: examTip 'Both circuit types appear in every paper', keyPoints[4].tutor_note 'is a frequent exam question', keyPoints[2].tutor_note 'One alone is unlikely to earn full marks'.",
+      "Household mains content (230 V, parallel household wiring) in keyPoints[2] is not part of the 4.2.2 text supplied, so it was checked only against own knowledge."
+    ]
+  }
+}

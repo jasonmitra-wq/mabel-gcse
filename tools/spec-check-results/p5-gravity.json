@@ -1,0 +1,119 @@
+{
+  "lesson": "p5-gravity",
+  "source_file": "lessons/physics/p5-gravity.json",
+  "lesson_md5": "cf99b7db0d8dac78e250c89334d4f501",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:57:09.151Z",
+  "specRefs_sent": [
+    "4.5.1.3",
+    "4.8.1.3"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 5451,
+    "output_tokens": 4550
+  },
+  "cost_usd": 0.112804,
+  "status": "OK",
+  "result": {
+    "lesson": "p5-gravity",
+    "missing_spec_content": [
+      {
+        "specRef": "4.5.1.3",
+        "spec_text": "The weight of an object may be considered to act at a single point referred to as the object’s ‘centre of mass’.",
+        "why": "The lesson never mentions centre of mass."
+      },
+      {
+        "specRef": "4.5.1.3",
+        "spec_text": "The weight of an object and the mass of an object are directly proportional.",
+        "why": "The lesson gives W = mg but never states that weight is directly proportional to mass. It also never introduces the proportionality symbol ∝, which the spec requires (\"Students should recognise and be able to use the symbol for proportionality, ∝\")."
+      },
+      {
+        "specRef": "4.5.1.3",
+        "spec_text": "Weight is measured using a calibrated spring-balance (a newtonmeter).",
+        "why": "The lesson does not say how weight is measured."
+      },
+      {
+        "specRef": "4.5.1.3",
+        "spec_text": "The force of gravity close to the Earth is due to the gravitational field around the Earth.",
+        "why": "This is only partly covered. keyPoints[1] describes gravitational fields in general, which is acceptable. No action is strictly needed, but the explicit link between weight and Earth's field is never stated."
+      },
+      {
+        "specRef": "4.8.1.3",
+        "spec_text": "Students should be able to describe the similarities and distinctions between the planets, their moons, and artificial satellites.",
+        "why": "The lesson does not compare planets, moons and artificial satellites. It also never uses the idea of natural versus artificial satellites."
+      },
+      {
+        "specRef": "4.8.1.3",
+        "spec_text": "(HT only) for circular orbits, the force of gravity can lead to changing velocity but unchanged speed",
+        "why": "The lesson never explains that in a circular orbit the direction changes, so the velocity changes, while the speed stays constant."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "The gravitational field is shown by field lines pointing towards the centre of the mass. They show the direction of the force on a small test mass.",
+        "why": "Gravitational field lines and test masses are not in these spec sections. Field-line treatment of gravity is beyond what is required here."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Too fast, and the object escapes.",
+        "why": "This introduces the idea of escape from orbit, which is not in the spec and is also misleading (see factual_errors)."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "So the orbital period (the time for one orbit) is longer.",
+        "why": "Orbital period is not required by 4.8.1.3. The spec only requires the qualitative link between speed and radius."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "The result is a circular (or elliptical) orbit.",
+        "why": "The spec deals only with circular orbits. Introducing elliptical orbits without explanation could confuse."
+      },
+      {
+        "field": "examTips[1]",
+        "text": "Don't just say 'gravity keeps it going round'. Say 'gravity provides the centripetal force needed for circular motion'.",
+        "why": "The spec says only \"Gravity provides the force that allows planets and satellites ... to maintain their circular orbits\". The term 'centripetal force' is not required. Telling students that marks depend on it overstates what the spec demands."
+      },
+      {
+        "field": "revisionCardBullets[8]",
+        "text": "Geostationary satellites: 24-hour period, same position above Earth",
+        "why": "Geostationary satellites are not in these spec sections. They are also never taught in the lesson body, yet they appear on the revision card."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "Near Earth's surface, the field is roughly uniform (the same in all directions near the surface).",
+        "correction": "A uniform field has the same strength and the same direction at every point in the region. It does not mean 'the same in all directions'. Near Earth's surface the field everywhere points straight down with about the same strength.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Too fast, and the object escapes. Too slow, and it falls back to Earth.",
+        "correction": "A small change in speed changes the orbit, not whether the object stays in it. Slightly too fast gives a higher or elliptical orbit. Escape happens only above escape speed. Slightly too slow gives a lower or elliptical orbit. The object hits Earth only if that new path meets the atmosphere or the surface. The spec puts it this way: \"for a stable orbit, the radius must change if the speed changes\".",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "commonMistakes[3]",
+        "text": "Not using g = 9.8 N/kg in calculations. The gravitational field strength on Earth is 9.8 N/kg. Use 10 N/kg only if told to round.",
+        "correction": "The spec states: \"In any calculation the value of the gravitational field strength (g) will be given.\" Students should use whatever value the question gives. There is no default value to recall, and 'not using 9.8' is not a mistake.",
+        "basis": "spec"
+      }
+    ],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "1",
+        "key_point": "keyPoints[1] (Gravitational fields)",
+        "why": "This assumes checkpoint keys line up with keyPoints indices. Checkpoint 1 asks why higher orbits are slower, but keyPoints[1] covers only gravitational fields. It does not mention orbital speed or centripetal force. The answer is supported by keyPoints[2], not by the key point the checkpoint sits with."
+      }
+    ],
+    "not_checked": [
+      "No diagrams are present (all \"diagram\": null), so nothing visual could be checked.",
+      "examTips[3] \"Examiners use it in every set of papers\" is a claim about past papers that cannot be verified from the material provided.",
+      "The lesson does not label which orbital content is Higher Tier only. Whether this matters depends on how the lesson is delivered, which cannot be checked here."
+    ]
+  }
+}

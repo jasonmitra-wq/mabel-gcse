@@ -1,0 +1,130 @@
+{
+  "lesson": "p2-power-energy",
+  "source_file": "lessons/physics/p2-power-energy.json",
+  "lesson_md5": "35ead01d6b56ea4327fa4b22617c984e",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:38:45.059Z",
+  "specRefs_sent": [
+    "4.2.4.1",
+    "4.2.4.2"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 8672,
+    "output_tokens": 4692
+  },
+  "cost_usd": 0.128528,
+  "status": "OK",
+  "result": {
+    "lesson": "p2-power-energy",
+    "missing_spec_content": [
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "Students should be able to describe how different domestic appliances transfer energy from batteries or ac mains to the kinetic energy of electric motors or the energy of heating devices.",
+        "why": "The lesson never describes how appliances transfer energy from batteries or ac mains. It does not say where the energy goes, such as the kinetic energy store of a motor or the thermal store of a heating device. It only gives power values and calculations."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "Students should be able to describe, with examples, the relationship between the power ratings for domestic electrical appliances and the changes in stored energy when they are in use.",
+        "why": "Power ratings are listed (keyPoints[0].content, tables[1]) but are never linked to changes in stored energy. For example, a higher-power kettle transfers more energy to the water's thermal store per second."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "Everyday electrical appliances are designed to bring about energy transfers.",
+        "why": "This idea is not stated. The lesson treats appliances only as things that cost money to run (intro, keyPoints[2])."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "<strong>P = V²/R</strong> (put I = V/R into P = IV)",
+        "why": "The specification lists only P = VI and P = I²R as the equations to recall and apply. P = V²/R is taught as a third equation to learn, and it also appears in the tables, revisionCardBullets and checkpoint 2 feedback. This goes beyond the required equations."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "<strong>Payback time</strong> = extra cost of the efficient appliance ÷ yearly saving.",
+        "why": "Payback time is not in the specification sections given. It is tested in checkpoint 3."
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "For bills, electricity companies use a much larger unit: the <strong>kilowatt-hour (kWh)</strong>.",
+        "why": "The kilowatt-hour and the cost-of-electricity calculations are not in these specification sections. The specification gives energy only in joules: \"energy transferred, E, in joules, J\". About a third of the lesson is about content outside the specification."
+      },
+      {
+        "field": "tables[1].headers",
+        "text": "Fuse rating",
+        "why": "Fuse ratings are not part of these specification sections. They are given without any explanation."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "use appliances at off-peak times",
+        "correction": "This is listed under \"Ways to save energy\", but using appliances off-peak does not reduce the energy transferred. It may reduce cost on some tariffs only.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "tables[1].rows[6]",
+        "text": "13 A (dedicated circuit)",
+        "correction": "An 8–10 kW shower on 230 V draws about 35–45 A. It is protected by a breaker of roughly 40–45 A on a dedicated circuit, not by a 13 A fuse.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "<strong>V = IR</strong> (Ohm's Law: voltage = current × resistance)",
+        "correction": "V = IR relates potential difference, current and resistance for any component. Ohm's law is the statement that current is directly proportional to potential difference for an ohmic conductor at constant temperature. Calling V = IR \"Ohm's Law\" is imprecise. The same label appears in tables[0].rows[0] and keyPoints[3].writeBullets[0].",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "<strong>P = IV</strong> (power = current × voltage)",
+        "spec_term": "potential difference (power = potential difference × current)"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "<strong>E = QV</strong> (energy = charge × voltage)",
+        "spec_term": "energy transferred = charge flow × potential difference"
+      },
+      {
+        "field": "keyPoints[3].keyTerms[0].term",
+        "text": "Charge (Q)",
+        "spec_term": "charge flow, Q, in coulombs, C"
+      },
+      {
+        "field": "tables[0].rows[0]",
+        "text": "V in V, I in A, R in Ω",
+        "spec_term": "potential difference, V, in volts, V. The lesson uses \"voltage\" for V throughout the tables, writeBullets and revisionCardBullets."
+      },
+      {
+        "field": "revisionCardBullets[11]",
+        "text": "E = QV (energy = charge × voltage)",
+        "spec_term": "energy transferred = charge flow × potential difference"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "1",
+        "key_point": "keyPoints[1] Electrical energy",
+        "why": "The question asks for a cost at 28p per kWh. Cost calculations are taught in keyPoints[2] (Cost of electricity), not in keyPoints[1]."
+      },
+      {
+        "checkpoint": "2",
+        "key_point": "keyPoints[2] Cost of electricity",
+        "why": "The question is the multi-step resistor energy calculation from keyPoints[3]. It is the same numbers as that worked example. It does not test cost of electricity or payback."
+      },
+      {
+        "checkpoint": "3",
+        "key_point": "keyPoints[3] Linking all the electrical equations",
+        "why": "The question tests payback time, which is taught in keyPoints[2]. It does not test linking the electrical equations."
+      }
+    ],
+    "not_checked": [
+      "I assumed checkpoint keys \"0\" to \"3\" sit with keyPoints[0] to keyPoints[3] in index order. The lesson does not state this mapping explicitly.",
+      "I did not verify that the typical electricity price of 28p per kWh is current, because it varies over time.",
+      "No diagrams are present (all diagram fields are null)."
+    ]
+  }
+}

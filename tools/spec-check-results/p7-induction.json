@@ -1,0 +1,133 @@
+{
+  "lesson": "p7-induction",
+  "source_file": "lessons/physics/p7-induction.json",
+  "lesson_md5": "c8ea3830db15a507b1627ccd2a8ed49c",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:55:50.830Z",
+  "specRefs_sent": [
+    "4.7.3.1",
+    "4.7.3.2",
+    "4.7.3.3"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 6605,
+    "output_tokens": 4252
+  },
+  "cost_usd": 0.11146,
+  "status": "OK",
+  "result": {
+    "lesson": "p7-induction",
+    "missing_spec_content": [
+      {
+        "specRef": "4.7.3.2",
+        "spec_text": "The generator effect is used in an alternator to generate ac and in a dynamo to generate dc.",
+        "why": "The lesson never explains the dynamo. It does not say that a dynamo uses a split-ring commutator to give a dc output. The only mention is 'It powers a bicycle dynamo' in intro. The commutator appears only in the context of a DC motor."
+      },
+      {
+        "specRef": "4.7.3.2",
+        "spec_text": "explain how the generator effect is used in an alternator to generate ac and in a dynamo to generate dc",
+        "why": "The alternator is explained, but the lesson gives no explanation of how a dynamo produces dc."
+      },
+      {
+        "specRef": "4.7.3.2",
+        "spec_text": "draw/interpret graphs of potential difference generated in the coil against time.",
+        "why": "The lesson only describes the alternator output as sinusoidal and tells students to sketch a sine wave (examTips[3]). It does not show a dynamo (dc) output graph, which never goes negative. It does not explain how faster rotation changes both the peak height and the frequency on the graph."
+      },
+      {
+        "specRef": "4.7.3.3",
+        "spec_text": "Microphones use the generator effect to convert the pressure variations in sound waves into variations in current in electrical circuits.",
+        "why": "keyPoints[3].content says only that 'Sound waves make a diaphragm vibrate'. It never states that the diaphragm responds to the pressure variations in the sound wave, or that the output is a variation in current."
+      },
+      {
+        "specRef": "4.7.3.1",
+        "spec_text": "This is called the generator effect.",
+        "why": "The lesson never uses or defines the specification's name 'generator effect'."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "Fleming's right-hand rule gives the direction of the induced current in a conductor moving through a magnetic field.",
+        "why": "The specification sections ask students to recall the factors that affect the direction of the induced p.d./current. They do not require Fleming's right-hand rule. The lesson also calls the rule 'often tested directly', which may cause confusion with the left-hand rule that the motor effect does require."
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "Lenz's law describes the direction. The induced current always flows in a direction that opposes the change that caused it.",
+        "why": "The specification states the idea ('An induced current generates a magnetic field that opposes the original change') but does not name Lenz's law. The link to conservation of energy is extra."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "introTips[1]",
+        "text": "To induce an EMF, the conductor and the magnetic field must move relative to each other.",
+        "correction": "Relative movement is not required. A changing magnetic field around a stationary conductor also induces a potential difference.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[0].tutor_note",
+        "text": "In fact, induction comes from relative movement between the conductor and the field.",
+        "correction": "Induction comes from relative movement OR from a change in the magnetic field around the conductor.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[2].keyTerms[1].def",
+        "text": "Continuous rings in an AC generator that allow the coil to rotate freely while maintaining electrical contact, producing AC output",
+        "correction": "Slip rings do not produce the ac. The ac is induced in the rotating coil. Slip rings simply pass it to the external circuit without reversing the connections, so the output stays ac. A commutator would reverse the connections and give dc.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "revisionCardBullets[5]",
+        "text": "Slip rings — allow free rotation and give an AC output",
+        "correction": "The alternating p.d. comes from the rotating coil. Slip rings keep contact without reversing the connections, so the ac reaches the circuit unchanged.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "A stationary conductor in a constant magnetic field feels nothing.",
+        "correction": "No p.d. is induced. However, if the stationary conductor carries a current it does experience a force (the motor effect). The claim should be limited to 'no induced p.d.'.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "Electromagnetic induction is when an electromotive force (EMF) is produced",
+        "spec_term": "generator effect; induced potential difference"
+      },
+      {
+        "field": "keyPoints[0].keyTerms[1].term",
+        "text": "induced EMF",
+        "spec_term": "induced potential difference"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "An AC generator (alternator)",
+        "spec_term": "alternator"
+      },
+      {
+        "field": "examTip",
+        "text": "There are two ways to induce an EMF.",
+        "spec_term": "induced potential difference"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "3",
+        "key_point": "keyPoints[3] (The microphone and Fleming's right-hand rule)",
+        "why": "The checkpoint tests slip rings versus the split-ring commutator, which is content from keyPoints[2]. It does not test the microphone or the right-hand rule. There is also no checkpoint keyed to keyPoints[2]."
+      },
+      {
+        "checkpoint": "3",
+        "key_point": "keyPoints[2].content: \"A DC motor uses a split-ring commutator instead.\"",
+        "why": "The correct answer says 'The commutator reverses the current every half turn to keep DC rotation going'. The key point content never explains what the commutator does, so the answer is not supported by the key point it relies on (only the memTip hints at it)."
+      }
+    ],
+    "not_checked": [
+      "All keyPoints have diagram: null, so there were no diagrams to check. The lesson has no visual of the p.d.–time graph that the spec requires.",
+      "The 'Key opportunities for skills development: WS 1.4' reference could not be checked, because the WS 1.4 text was not supplied.",
+      "The specification marks all three sections as HT only. I could not check whether the lesson is flagged as Higher tier, because the JSON has no tier field."
+    ]
+  }
+}

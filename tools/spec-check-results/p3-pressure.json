@@ -1,0 +1,130 @@
+{
+  "lesson": "p3-pressure",
+  "source_file": "lessons/physics/p3-pressure.json",
+  "lesson_md5": "2e74ccb7673d2c8bb8461a0724d3419f",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:42:33.358Z",
+  "specRefs_sent": [
+    "4.3.3.1",
+    "4.3.3.2"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 6757,
+    "output_tokens": 5080
+  },
+  "cost_usd": 0.128628,
+  "status": "OK",
+  "result": {
+    "lesson": "p3-pressure",
+    "missing_spec_content": [
+      {
+        "specRef": "4.3.3.1",
+        "spec_text": "The molecules of a gas are in constant random motion.",
+        "why": "The lesson never says that gas molecules or particles are in constant random motion. It only describes them 'crashing into a container's walls, again and again' (intro). Random motion is the starting point of the particle explanation."
+      },
+      {
+        "specRef": "4.3.3.2",
+        "spec_text": "The pressure produces a net force at right angles to the wall of the gas container (or any surface).",
+        "why": "The lesson says 'Each collision pushes on the wall with a tiny force' (keyPoints[0].content). It never says that the net force acts at right angles to the wall or to any surface."
+      },
+      {
+        "specRef": "4.3.3.2",
+        "spec_text": "A gas can be compressed or expanded by pressure changes.",
+        "why": "The lesson describes squashing a gas but never states that a gas can be compressed or expanded by pressure changes."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "The Kelvin scale starts at <strong>absolute zero: 0 K = −273 °C</strong>. ... To convert: <strong>T (K) = θ (°C) + 273</strong>.",
+        "why": "The specification sections say nothing about the Kelvin scale, absolute zero or converting temperatures. A whole key point is given to content the spec does not require."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "When the temperature can change too, use the <strong>combined gas law</strong>. It is <strong>p₁V₁ / T₁ = p₂V₂ / T₂</strong>, where T is in Kelvin.",
+        "why": "The spec requires only pV = constant at constant temperature. For temperature and pressure at constant volume it asks students to 'explain qualitatively'. The combined gas law and pressure–temperature calculations go beyond this."
+      },
+      {
+        "field": "keyPoints[3].keyTerms[1]",
+        "text": "Gay-Lussac's Law: At constant volume, pressure is directly proportional to Kelvin temperature: p/T = constant",
+        "why": "The spec asks only for a qualitative relationship between temperature and pressure at constant volume. It does not ask for a proportional law or the name Gay-Lussac."
+      },
+      {
+        "field": "tables[0].rows[2]",
+        "text": "Charles's Law | Pressure (p) | V and T directly proportional | V₁/T₁ = V₂/T₂",
+        "why": "The spec sections do not mention Charles's Law or volume–temperature relationships at all."
+      },
+      {
+        "field": "tables[0].rows[3]",
+        "text": "Combined Gas Law | Mass of gas | Links p, V and T | p₁V₁/T₁ = p₂V₂/T₂",
+        "why": "The combined gas law is not in the specification sections."
+      },
+      {
+        "field": "introTips[4]",
+        "text": "p₁V₁ = p₂V₂ and pV/T = constant are the two equations you need.",
+        "why": "This tells the student that pV/T = constant is a required equation. The spec gives only pV = constant."
+      },
+      {
+        "field": "introTips[3]",
+        "text": "If the temperature changes, use the combined gas law instead.",
+        "why": "The combined gas law is not required by the spec."
+      },
+      {
+        "field": "commonMistakes[1]",
+        "text": "If T changes, use pV/T = constant.",
+        "why": "This presents a non-spec equation as the expected method."
+      },
+      {
+        "field": "checkpoints.3.question",
+        "text": "A gas in a container with a fixed volume is at 200 kPa and 300 K. It is heated to 450 K. What is the new pressure?",
+        "why": "This is a quantitative pressure–temperature calculation. The spec requires only a qualitative explanation at constant volume."
+      },
+      {
+        "field": "checkpoints.1.question",
+        "text": "What is 27 °C converted to Kelvin?",
+        "why": "Kelvin conversion is not in the specification sections."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "They hit the walls <strong>twice as often</strong> per second → pressure doubles.",
+        "correction": "Halving the volume doubles the number of particles per unit volume. This doubles the rate of collisions per unit area of wall, which is why the pressure doubles. The total wall area also changes, so the total number of hits on all the walls does not simply double. revisionCardBullets[2] correctly says 'per unit area'.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[0].writeBullets[1]",
+        "text": "Billions of collisions per second make a pressure you can measure",
+        "correction": "The true number is vastly larger, around 10²³ collisions per square centimetre per second at room conditions. 'Billions' understates it by many orders of magnitude.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "Gas pressure is caused by <strong>gas particles colliding with the walls of their container</strong>.",
+        "spec_term": "molecules (\"The molecules of a gas are in constant random motion\"; \"average kinetic energy of the molecules\")"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "Now squash the gas into a smaller volume.",
+        "spec_term": "compressed (\"A gas can be compressed or expanded by pressure changes\")"
+      },
+      {
+        "field": "checkpoints.0.question",
+        "text": "The gas is squashed to 2 m³ at constant temperature.",
+        "spec_term": "compressed"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "0",
+        "key_point": "keyPoints[0] \"What causes gas pressure\"",
+        "why": "Checkpoint 0 is a p₁V₁ = p₂V₂ calculation. Key point 0 explains collisions qualitatively and never gives the pV equation, so the answer is not supported by the key point it sits with. The calculation belongs with keyPoints[2] (Boyle's Law), which has no checkpoint."
+      }
+    ],
+    "not_checked": []
+  }
+}

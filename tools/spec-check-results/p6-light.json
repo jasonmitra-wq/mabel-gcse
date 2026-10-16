@@ -1,0 +1,176 @@
+{
+  "lesson": "p6-light",
+  "source_file": "lessons/physics/p6-light.json",
+  "lesson_md5": "7262455322909af382824c0cc844d864",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:52:43.272Z",
+  "specRefs_sent": [
+    "4.6.1.3",
+    "4.6.2.2",
+    "4.6.2.5",
+    "4.6.2.6"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7815,
+    "output_tokens": 5333
+  },
+  "cost_usd": 0.13792,
+  "status": "OK",
+  "result": {
+    "lesson": "p6-light",
+    "missing_spec_content": [
+      {
+        "specRef": "4.6.1.3",
+        "spec_text": "Waves can be absorbed or transmitted at the boundary between two different materials.",
+        "why": "The lesson teaches reflection and refraction but never teaches absorption or transmission at a boundary."
+      },
+      {
+        "specRef": "4.6.1.3",
+        "spec_text": "Students should be able to describe the effects of reflection, transmission and absorption of waves at material interfaces.",
+        "why": "The lesson does not describe the effects of transmission or absorption at material interfaces."
+      },
+      {
+        "specRef": "4.6.1.3",
+        "spec_text": "Required practical activity 9 (physics only): investigate the reflection of light by different types of surface and the refraction of light by different substances.",
+        "why": "The lesson does not mention or describe this required practical."
+      },
+      {
+        "specRef": "4.6.2.2",
+        "spec_text": "(HT only) Different substances may absorb, transmit, refract or reflect electromagnetic waves in ways that vary with wavelength.",
+        "why": "The lesson never says that these effects depend on wavelength."
+      },
+      {
+        "specRef": "4.6.2.2",
+        "spec_text": "(HT only) Students should be able to use wave front diagrams to explain refraction in terms of the change of speed that happens when a wave travels from one medium to a different medium.",
+        "why": "The lesson explains refraction only with rays and speed. Wave front diagrams are not taught."
+      },
+      {
+        "specRef": "4.6.2.2",
+        "spec_text": "Required practical activity 10: investigate how the amount of infrared radiation absorbed or radiated by a surface depends on the nature of that surface.",
+        "why": "The lesson does not cover this required practical."
+      },
+      {
+        "specRef": "4.6.2.5",
+        "spec_text": "Ray diagrams are used to show the formation of images by convex and concave lenses.",
+        "why": "The lesson covers only converging (convex) lenses. Concave lenses are not taught."
+      },
+      {
+        "specRef": "4.6.2.5",
+        "spec_text": "The image produced by a concave lens is always virtual.",
+        "why": "This statement is absent from the lesson."
+      },
+      {
+        "specRef": "4.6.2.5",
+        "spec_text": "Students should be able to construct ray diagrams to illustrate the similarities and differences between convex and concave lenses.",
+        "why": "The lesson makes no comparison between convex and concave lenses and gives no concave lens ray diagrams."
+      },
+      {
+        "specRef": "4.6.2.5",
+        "spec_text": "magnification = (image height)/(object height)",
+        "why": "The magnification equation is not taught, although the lesson uses the words 'magnified' and 'diminished'."
+      },
+      {
+        "specRef": "4.6.2.5",
+        "spec_text": "Magnification is a ratio and so has no units. Image height and object height should both be measured in either mm or cm.",
+        "why": "The lesson does not teach the units point or the measurement guidance."
+      },
+      {
+        "specRef": "4.6.2.5",
+        "spec_text": "Investigate the magnification produced by a range of convex lenses.",
+        "why": "This practical opportunity is not covered."
+      },
+      {
+        "specRef": "4.6.2.6",
+        "spec_text": "Each colour within the visible light spectrum has its own narrow band of wavelength and frequency.",
+        "why": "The lesson does not teach the visible spectrum or colour bands."
+      },
+      {
+        "specRef": "4.6.2.6",
+        "spec_text": "Colour filters work by absorbing certain wavelengths (and colour) and transmitting other wavelengths (and colour).",
+        "why": "Colour filters are not taught."
+      },
+      {
+        "specRef": "4.6.2.6",
+        "spec_text": "The colour of an opaque object is determined by which wavelengths of light are more strongly reflected. Wavelengths that are not reflected are absorbed. If all wavelengths are reflected equally the object appears white. If all wavelengths are absorbed the objects appears black.",
+        "why": "The lesson does not explain the colour of opaque objects, or why objects appear white or black."
+      },
+      {
+        "specRef": "4.6.2.6",
+        "spec_text": "Objects that transmit light are either transparent or translucent.",
+        "why": "The terms transparent and translucent are not taught."
+      },
+      {
+        "specRef": "4.6.2.6",
+        "spec_text": "how the colour of an object is related to the differential absorption, transmission and reflection of different wavelengths of light by the object",
+        "why": "This required explanation is absent from the lesson."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "<strong>Total internal reflection (TIR)</strong> can happen when light in a denser medium meets a less dense medium. If the angle is <strong>greater than the critical angle</strong>, the light does not refract out.",
+        "why": "Total internal reflection, the critical angle and optical fibres do not appear in any of the specification sections supplied. A whole key point is spent on content the spec does not require, while required content is missing."
+      },
+      {
+        "field": "checkpoints.1.question",
+        "text": "Light in glass hits the glass-air boundary at an angle greater than the critical angle. What happens?",
+        "why": "This checkpoint tests total internal reflection, which is not in the specification sections supplied."
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "This is Snell's law described in words.",
+        "why": "Snell's law is not in the specification. The qualitative toward/away rule is also not Snell's law itself, which is quantitative. This could confuse the student."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "<strong>glasses for long-sight</strong>: a converging lens bends rays so they focus on the retina",
+        "why": "Correcting sight defects is not in the specification sections supplied."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "The media have different densities, and so different wave speeds.",
+        "correction": "The speed of light in a material depends on its optical properties (refractive index), not on its mass density. A denser material does not always slow light more. The spec frames refraction only as being 'due to the difference in velocity of the waves in different substances'.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].writeBullets[3]",
+        "text": "Hits the boundary at 90° (along the normal) → no change in direction. Only the speed changes",
+        "correction": "A ray along the normal has an angle of incidence of 0°. It is at 90° to the surface. This contradicts keyPoints[1].content, which says '0° incidence', and the lesson's own rule to measure angles from the normal.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[3].keyTerms[1].term",
+        "text": "focal point (F)",
+        "spec_term": "principal focus"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "It refracts parallel rays so they meet at the <strong>focal point</strong> (F) on the other side. The distance from the lens to the focal point is the <strong>focal length</strong>.",
+        "spec_term": "principal focus ('The distance from the lens to the principal focus is called the focal length.')"
+      },
+      {
+        "field": "keyPoints[3].keyTerms[0].term",
+        "text": "converging lens",
+        "spec_term": "convex lens"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "1",
+        "key_point": "keyPoints[1] — Refraction — light bending at a boundary",
+        "why": "Checkpoint 1 sits with the refraction key point but tests total internal reflection and the critical angle. Those are taught in keyPoints[2], not keyPoints[1], so the answer is not supported by the key point it sits with. Meanwhile keyPoints[2] has no checkpoint."
+      }
+    ],
+    "not_checked": [
+      "All keyPoints have \"diagram\": null, so no ray diagrams or wave front diagrams could be checked for accuracy.",
+      "The specification text 'In ray diagrams a convex lens will be represented by:' and 'A concave lens will be represented by:' refers to symbols not shown in the text supplied, so the lesson's lens representation could not be checked against them.",
+      "intro: 'This topic shows up in more than one exam paper' — cannot be checked from the specification sections supplied."
+    ]
+  }
+}

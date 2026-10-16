@@ -1,0 +1,161 @@
+{
+  "lesson": "p4-half-life",
+  "source_file": "lessons/physics/p4-half-life.json",
+  "lesson_md5": "77779e060c1e318e40c0062a2a7c852c",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:44:47.380Z",
+  "specRefs_sent": [
+    "4.4.2.3",
+    "4.4.2.4",
+    "4.4.3.2",
+    "4.4.3.3"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7761,
+    "output_tokens": 6994
+  },
+  "cost_usd": 0.170924,
+  "status": "OK",
+  "result": {
+    "lesson": "p4-half-life",
+    "missing_spec_content": [
+      {
+        "specRef": "4.4.2.4",
+        "spec_text": "Students should understand that it is important for the findings of studies into the effects of radiation on humans to be published and shared with other scientists so that the findings can be checked by peer review.",
+        "why": "The lesson never mentions publishing or sharing findings on radiation effects, or peer review."
+      },
+      {
+        "specRef": "4.4.2.4",
+        "spec_text": "Irradiation is the process of exposing an object to nuclear radiation. The irradiated object does not become radioactive.",
+        "why": "No key point, introTip or revision bullet states that an irradiated object does not become radioactive. The idea appears only indirectly: as a distractor in checkpoint 3 (\"Irradiation means the body becomes radioactive\") and in tables[0] (\"without making equipment radioactive\")."
+      },
+      {
+        "specRef": "4.4.2.4",
+        "spec_text": "Radioactive contamination is the unwanted presence of materials containing radioactive atoms on other materials. The hazard from contamination is due to the decay of the contaminating atoms. The type of radiation emitted affects the level of hazard.",
+        "why": "The lesson defines contamination only for the human body (introTips[3]: \"radioactive material gets onto or inside the body\"). It does not give the general definition (radioactive atoms on other materials). It does not state that the hazard comes from the decay of the contaminating atoms."
+      },
+      {
+        "specRef": "4.4.2.4",
+        "spec_text": "Students should be able to compare the hazards associated with contamination and irradiation.",
+        "why": "The comparison is only partial. The lesson does not explain how the hazard depends on radiation type in each case. For example, an alpha source outside the body is a low irradiation hazard because alpha is stopped by skin or air. Gamma is the main irradiation hazard. Alpha is the main contamination hazard when inside the body."
+      },
+      {
+        "specRef": "4.4.3.2",
+        "spec_text": "Students should be able to explain why the hazards associated with radioactive material differ according to the half-life involved.",
+        "why": "The lesson only says a long half-life \"stays radioactive for a very long time\" (introTips[2]). It does not explain the trade-off. A short half-life gives a high initial activity, so the hazard is intense but brief. A long half-life gives a lower activity, but the hazard (for example, contamination or waste) lasts for a long time."
+      },
+      {
+        "specRef": "4.4.3.3",
+        "spec_text": "evaluate the perceived risks of using nuclear radiations in relation to given data and consequences.",
+        "why": "The lesson never asks the student to weigh risks against benefits, or to use data to evaluate perceived risk."
+      },
+      {
+        "specRef": "4.4.3.3",
+        "spec_text": "describe and evaluate the uses of nuclear radiations for exploration of internal organs, and for control or destruction of unwanted tissue",
+        "why": "Control or destruction of unwanted tissue gets one sentence (keyPoints[2].content: \"a focused gamma beam kills cancer cells\"). There is no evaluation of this use, such as the damage to healthy tissue or the choice of radiation type and half-life."
+      },
+      {
+        "specRef": "4.4.2.3",
+        "spec_text": "the time it takes for the count rate (or activity) from a sample containing the isotope to fall to half its initial level",
+        "why": "The lesson never mentions count rate, which is the quantity actually measured with a detector. Only activity is used."
+      },
+      {
+        "specRef": "4.4.2.3",
+        "spec_text": "(HT only) Students should be able to calculate the net decline, expressed as a ratio, in a radioactive emission after a given number of half-lives.",
+        "why": "The lesson calculates the remaining activity (A₀ × (½)ⁿ). It never expresses the net decline as a ratio, for example \"the activity has fallen to 1/8 of its initial value\" or \"has declined by 7/8\"."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "Carbon-14 dating: half-life ~5,700 years; beta emitter. Living things take in carbon-14 (from CO₂). When they die, the C-14 decays and is not replaced. Measuring the C-14 activity left gives the age of organic remains. This works up to ~50,000 years.",
+        "why": "Carbon dating is not required by any of the specification sections given. It adds content to learn and may distract from the medical uses the spec does require."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Smoke detectors: americium-241 (alpha emitter, half-life ~430 years) ionises the air in the detector. When smoke blocks the ions, the alarm goes off.",
+        "why": "Non-medical uses are not in these sections. 4.4.3.3 covers only medical uses."
+      },
+      {
+        "field": "introTips[4]",
+        "text": "Beta is for thickness gauges.",
+        "why": "Thickness gauges are not in these sections. The lesson also never explains them, so this is unsupported extra content."
+      },
+      {
+        "field": "tables[0].rows[2]",
+        "text": "Cobalt-60 ... ~5 years",
+        "why": "Specific isotope names and half-lives (cobalt-60, technetium-99m, americium-241) are not required. Students may think they must memorise them."
+      },
+      {
+        "field": "keyPoints[2].keyTerms[2].term",
+        "text": "technetium-99m",
+        "why": "The \"m\" (metastable) notation is unexplained and beyond GCSE. It could confuse students about isotope notation."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "intro",
+        "text": "Others have been decaying since the Big Bang and will carry on for billions of years.",
+        "correction": "The long-lived radioactive isotopes on Earth, such as uranium-238 and thorium-232, were made in stars, supernovae and neutron-star mergers, not in the Big Bang. The Big Bang produced mainly hydrogen and helium. They have been decaying since before the Earth formed, about 4.6 billion years ago.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].memTip",
+        "text": "Irradiation = from outside, stops with distance.",
+        "correction": "Moving away reduces irradiation. It does not generally stop it: gamma radiation is only reduced with distance, not eliminated. Irradiation stops when the source is removed or fully shielded.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "checkpoints[3].correctFeedback",
+        "text": "Remove the source or move away, and the exposure stops.",
+        "correction": "Removing the source stops the exposure. Moving away only reduces it, especially for gamma.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "or it can cause genetic mutations (if reproductive cells are affected)",
+        "correction": "Radiation can cause mutations in any cell, and cancer itself results from mutations. Mutations in reproductive cells are the ones that can be passed on to offspring.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "commonMistakes[1]",
+        "text": "Saying the activity reaches zero. It never does. The curve gets closer and closer to zero but never arrives.",
+        "correction": "The mathematical model approaches zero without reaching it. A real sample has a finite number of nuclei, so its activity does eventually become zero. Saying the activity \"never\" reaches zero is true of the model, not of a real sample.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].writeBullets[4]",
+        "text": "It ionises air; smoke breaks the current → alarm",
+        "correction": "Smoke absorbs the alpha particles and ions and so reduces the current. The alarm triggers when the current falls; the current is not completely broken.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "introTips[3]",
+        "text": "Contamination means radioactive material gets onto or inside the body.",
+        "correction": "Contamination is the unwanted presence of materials containing radioactive atoms on other materials. The body is one case, but objects and surfaces can also be contaminated.",
+        "basis": "spec"
+      }
+    ],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "1",
+        "key_point": "keyPoints[1] \"Reading and drawing decay graphs\"",
+        "why": "Checkpoint 1 asks why a medical tracer must have a short half-life. That is tested by keyPoints[2] (uses), not by the decay-graph key point it is indexed with. Nothing checks reading half-life from a graph. No checkpoint is indexed \"2\"."
+      },
+      {
+        "checkpoint": "3",
+        "key_point": "keyPoints[3] \"Contamination, irradiation and radiation dangers\"",
+        "why": "The correctFeedback claims exposure stops if you \"move away\". The key point content only supports \"Remove the source, and the irradiation stops\". This part of the feedback is not backed by the key point and is inaccurate."
+      }
+    ],
+    "not_checked": [
+      "All diagram fields are null, so no diagrams were available to check.",
+      "I assumed the checkpoint keys (\"0\", \"1\", \"3\") map to keyPoints indices. If they map differently, the checkpoint 1 finding may not apply.",
+      "Whether this student is on the Higher tier. The (½)ⁿ calculation and checkpoint 0 test HT-only content.",
+      "The spec skill \"use data presented in standard form\" (4.4.3.2). The lesson contains no standard-form data, but this is a skills requirement and I could not judge how it is meant to be covered."
+    ]
+  }
+}

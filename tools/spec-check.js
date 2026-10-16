@@ -29,7 +29,7 @@ const ROOT = path.join(__dirname, '..');
 const OUT_DIR = path.join(__dirname, 'spec-check-results');
 const SUBJECTS = ['biology', 'chemistry', 'physics'];
 const MODEL = 'claude-opus-5-5';
-const MAX_TOKENS = 8000;
+const MAX_TOKENS = 16000;
 const USD_IN = 4 / 1e6, USD_OUT = 20 / 1e6;
 const DEFAULT_CAP_USD = 2;
 const API = 'https://api.anthropic.com/v1';

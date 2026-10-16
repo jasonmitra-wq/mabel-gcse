@@ -1,0 +1,147 @@
+{
+  "lesson": "p5-newtons-laws",
+  "source_file": "lessons/physics/p5-newtons-laws.json",
+  "lesson_md5": "77350fad0079956ee0053f81c17f7997",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:47:32.688Z",
+  "specRefs_sent": [
+    "4.5.1.3",
+    "4.5.1.4",
+    "4.5.6.2.1",
+    "4.5.6.2.2",
+    "4.5.6.2.3"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 8109,
+    "output_tokens": 6156
+  },
+  "cost_usd": 0.155556,
+  "status": "OK",
+  "result": {
+    "lesson": "p5-newtons-laws",
+    "missing_spec_content": [
+      {
+        "specRef": "4.5.1.3",
+        "spec_text": "The force of gravity close to the Earth is due to the gravitational field around the Earth.",
+        "why": "The lesson defines weight only as 'the force of gravity acting on an object' (keyPoints[3].content). It never says that gravity near the Earth is caused by the Earth's gravitational field."
+      },
+      {
+        "specRef": "4.5.1.3",
+        "spec_text": "The weight of an object may be considered to act at a single point referred to as the object’s ‘centre of mass’.",
+        "why": "Centre of mass is not mentioned anywhere in the lesson."
+      },
+      {
+        "specRef": "4.5.1.3",
+        "spec_text": "The weight of an object and the mass of an object are directly proportional.",
+        "why": "The lesson never states that weight is directly proportional to mass. It also never introduces the proportionality symbol ∝, which the spec lists under MS 3a."
+      },
+      {
+        "specRef": "4.5.1.3",
+        "spec_text": "Weight is measured using a calibrated spring-balance (a newtonmeter).",
+        "why": "The lesson does not say how weight is measured."
+      },
+      {
+        "specRef": "4.5.1.4",
+        "spec_text": "(HT only) A single force can be resolved into two components acting at right angles to each other. The two component forces together have the same effect as the single force.",
+        "why": "Resolving a force into components is not taught. The lesson only covers forces that act in a straight line."
+      },
+      {
+        "specRef": "4.5.1.4",
+        "spec_text": "(HT only) Students should be able to use vector diagrams to illustrate resolution of forces, equilibrium situations and determine the resultant of two forces, to include both magnitude and direction (scale drawings only).",
+        "why": "Vector diagrams and scale drawings are not covered. The lesson only says to 'add forces in the same direction and subtract forces in opposite directions' (keyPoints[3].content)."
+      },
+      {
+        "specRef": "4.5.6.2.2",
+        "spec_text": "The acceleration of an object is proportional to the resultant force acting on the object, and inversely proportional to the mass of the object.",
+        "why": "The lesson gives only the qualitative version: 'more force → more acceleration; more mass → less acceleration' (keyPoints[1].content). It never states the proportional and inversely proportional relationships."
+      },
+      {
+        "specRef": "4.5.6.2.2",
+        "spec_text": "(HT only) Students should be able to explain that: inertial mass is a measure of how difficult it is to change the velocity of an object; inertial mass is defined as the ratio of force over acceleration.",
+        "why": "The lesson says 'the mass measured by F = ma is called inertial mass' and gives m = F/a. It never states the definition explicitly as the ratio of force over acceleration, or as a measure of how difficult it is to change the velocity of an object."
+      },
+      {
+        "specRef": "4.5.6.2.2",
+        "spec_text": "Students should be able to estimate the speed, accelerations and forces involved in large accelerations for everyday road transport.",
+        "why": "The lesson does not ask the student to estimate values for road transport. The only car example uses a given acceleration."
+      },
+      {
+        "specRef": "4.5.6.2.2",
+        "spec_text": "Students should recognise and be able to use the symbol that indicates an approximate value or approximate answer, ~",
+        "why": "The ~ symbol is not introduced. The lesson uses ≈ throughout."
+      },
+      {
+        "specRef": "4.5.6.2.2",
+        "spec_text": "Required practical activity 7: investigate the effect of varying the force on the acceleration of an object of constant mass, and the effect of varying the mass of an object on the acceleration produced by a constant force.",
+        "why": "The required practical is not mentioned."
+      },
+      {
+        "specRef": "4.5.6.2.3",
+        "spec_text": "Students should be able to apply Newton’s Third Law to examples of equilibrium situations.",
+        "why": "The Third Law key point uses a wall, a rocket and the Earth–person pair. None of these is analysed as an equilibrium situation. The book-on-table equilibrium appears only under the First Law, and its Third Law pairs are never identified."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "Experiments show that inertial mass equals gravitational mass (the mass in W = mg). This holds to extremely high precision.",
+        "why": "The spec requires only that inertial mass measures how difficult it is to change velocity and is the ratio F/a. The equivalence of inertial and gravitational mass is not in the spec and may confuse students about what 'inertial mass' means."
+      },
+      {
+        "field": "keyPoints[1].writeBullets[5]",
+        "text": "Inertial mass — measured from F = ma; equals gravitational mass in all experiments",
+        "why": "Same equivalence-principle content as above. It goes beyond the spec."
+      },
+      {
+        "field": "keyPoints[1].keyTerms[1].def",
+        "text": "Mass measured by resistance to acceleration using F = ma; equal to gravitational mass",
+        "why": "The definition includes the non-spec claim of equivalence with gravitational mass."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "Friction and air resistance are the resultant forces that slow real objects.",
+        "correction": "Friction and air resistance are individual resistive forces. The resultant force is the single force that has the same effect as all the forces acting together. Friction and air resistance contribute to a resultant force that slows the object; they are not themselves 'the resultant forces'.",
+        "basis": "spec"
+      },
+      {
+        "field": "checkpoints.0.correctFeedback",
+        "text": "Correct! Constant velocity means zero acceleration.",
+        "correction": "The question says 'constant speed', not constant velocity. Velocity includes direction. A car at constant speed on a curved road has a changing velocity and therefore a non-zero resultant force. Zero resultant force follows only if the speed and direction are both constant.",
+        "basis": "spec"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "This only changes if a resultant (net) force acts on it.",
+        "spec_term": "resultant force"
+      },
+      {
+        "field": "keyPoints[0].writeBullets[3]",
+        "text": "Balanced forces ≠ no forces — they just cancel to give zero net force",
+        "spec_term": "resultant force"
+      },
+      {
+        "field": "keyPoints[0].writeBullets[5]",
+        "text": "A spacecraft far from gravity: no net force → continues at constant velocity forever",
+        "spec_term": "resultant force"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "checkpoints.0: \"A car travels at constant speed on a level road. What can you say about the forces acting on it?\"",
+        "key_point": "keyPoints[0].content: \"If the resultant force on an object is zero, there is no acceleration. The object either stays still or keeps the same velocity.\"",
+        "why": "The key point links zero resultant force to constant velocity. The question gives only constant speed on a 'level' road, which does not guarantee a straight path. The correct answer, 'The forces are balanced (resultant force = 0)', is not strictly supported unless the question says the road is straight or the velocity is constant."
+      }
+    ],
+    "not_checked": [
+      "All keyPoints have \"diagram\": null, so there were no diagrams to check. Free body diagrams are described only in text.",
+      "The spec refers to 'Key opportunities for skills development (page 96)' for Required practical 7 skills; that text was not provided.",
+      "Exam mark-scheme claims could not be checked against mark schemes, e.g. examTip \"If you say they cancel out, you will lose the mark every time\" and examTips[2] \"Free body diagram marks: arrows need the right relative lengths, labels and directions.\""
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "lesson": "p5-forces-motion",
+  "source_file": "lessons/physics/p5-forces-motion.json",
+  "lesson_md5": "298ef201842ca5d35cc9c34833a80694",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:46:38.360Z",
+  "specRefs_sent": [
+    "4.5.1.1",
+    "4.5.6.1.1",
+    "4.5.6.1.2",
+    "4.5.6.1.3",
+    "4.5.6.1.4",
+    "4.5.6.1.5"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 9584,
+    "output_tokens": 6751
+  },
+  "cost_usd": 0.173356,
+  "status": "OK",
+  "result": {
+    "lesson": "p5-forces-motion",
+    "missing_spec_content": [
+      {
+        "specRef": "4.5.1.1",
+        "spec_text": "A vector quantity may be represented by an arrow. The length of the arrow represents the magnitude, and the direction of the arrow the direction of the vector quantity.",
+        "why": "The lesson never explains that vectors can be shown as arrows, or that arrow length shows magnitude and arrow direction shows direction."
+      },
+      {
+        "specRef": "4.5.6.1.2",
+        "spec_text": "The speed of a moving object is rarely constant. When people walk, run or travel in a car their speed is constantly changing.",
+        "why": "The lesson does not teach that real speeds are rarely constant."
+      },
+      {
+        "specRef": "4.5.6.1.2",
+        "spec_text": "The speed at which a person can walk, run or cycle depends on many factors including: age, terrain, fitness and distance travelled.",
+        "why": "The factors that affect a person's speed are not mentioned."
+      },
+      {
+        "specRef": "4.5.6.1.2",
+        "spec_text": "running ~ 3 m/s",
+        "why": "The typical running speed is missing. The lesson lists walking, cycling, car, sound and light, but not running, which the spec requires students to recall."
+      },
+      {
+        "specRef": "4.5.6.1.2",
+        "spec_text": "as well as the typical values of speed for different types of transportation systems.",
+        "why": "Only one transport value is given ('car on a motorway ≈ 30 m/s'). Other transport systems (for example trains or planes) are not covered."
+      },
+      {
+        "specRef": "4.5.6.1.2",
+        "spec_text": "It is not only moving objects that have varying speed. The speed of sound and the speed of the wind also vary.",
+        "why": "The lesson does not say that the speed of sound and wind speed vary."
+      },
+      {
+        "specRef": "4.5.6.1.2",
+        "spec_text": "A typical value for the speed of sound in air is 330 m/s.",
+        "why": "The spec's typical value (330 m/s) is not taught. The lesson gives 'speed of sound in air ≈ 340 m/s' (keyPoints[1].content, keyPoints[1].writeBullets[5], revisionCardBullets[11]). That is physically reasonable, but it is not the value the spec states."
+      },
+      {
+        "specRef": "4.5.6.1.2",
+        "spec_text": "Students should be able to make measurements of distance and time and then calculate speeds of objects.",
+        "why": "The lesson does not cover how to measure distance and time practically to find a speed."
+      },
+      {
+        "specRef": "4.5.6.1.3",
+        "spec_text": "(HT only) Students should be able to explain qualitatively, with examples, that motion in a circle involves constant speed but changing velocity.",
+        "why": "Circular motion at constant speed but changing velocity is not taught."
+      },
+      {
+        "specRef": "4.5.6.1.4",
+        "spec_text": "(HT only) If an object is accelerating, its speed at any particular time can be determined by drawing a tangent and measuring the gradient of the distance–time graph at that time.",
+        "why": "The lesson says a curved d-t line means changing speed, but never teaches drawing a tangent to find the speed at a particular time."
+      },
+      {
+        "specRef": "4.5.6.1.4",
+        "spec_text": "Students should be able to draw distance–time graphs from measurements and extract and interpret lines and slopes of distance–time graphs, translating information between graphical and numerical form.",
+        "why": "Drawing d-t graphs from measured data is not covered. Only interpreting graph shapes is taught."
+      },
+      {
+        "specRef": "4.5.6.1.5",
+        "spec_text": "Students should be able to estimate the magnitude of everyday accelerations.",
+        "why": "No typical everyday acceleration values are given, and the lesson does not show how to estimate them."
+      },
+      {
+        "specRef": "4.5.6.1.5",
+        "spec_text": "draw velocity–time graphs from measurements and interpret lines and slopes to determine acceleration",
+        "why": "Drawing v-t graphs from measured data is not covered."
+      },
+      {
+        "specRef": "4.5.6.1.5",
+        "spec_text": "(HT only) measure, when appropriate, the area under a velocity–time graph by counting squares.",
+        "why": "Counting squares to find the area under a v-t graph is not taught. Only the triangle and trapezium formulas are given."
+      },
+      {
+        "specRef": "4.5.6.1.5",
+        "spec_text": "An object falling through a fluid initially accelerates due to the force of gravity. Eventually the resultant force will be zero and the object will move at its terminal velocity.",
+        "why": "Terminal velocity is taught only for falling through air. The general idea of falling through any fluid (for example a liquid) is not mentioned."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "s = ½(u + v)t",
+        "why": "This equation is not in the specification. The spec only requires a = Δv/t and v² − u² = 2as for uniform acceleration. Teaching extra 'SUVAT' equations could confuse students about which equations they must know."
+      },
+      {
+        "field": "keyPoints[3].heading",
+        "text": "Equations of motion (SUVAT)",
+        "why": "The spec does not use the term 'SUVAT' or present a set of equations of motion. The 'three values, find a fourth' framework goes beyond the spec."
+      },
+      {
+        "field": "checkpoints.4.correctFeedback",
+        "text": "s = ½at² = ½ × 9.8 × 9 = 44.1m",
+        "why": "s = ½at² is not in the specification and is not taught anywhere in the lesson."
+      },
+      {
+        "field": "introTips[2]",
+        "text": "Equations of motion questions nearly always give you three values and ask for a fourth. Find your u, v, a, s and t before writing anything.",
+        "why": "This assumes a SUVAT-style problem framework that the spec does not require."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "Displacement = 500m at an angle north-east.",
+        "correction": "For 300 m east then 400 m north, the displacement is 500 m at about 53° north of east (a bearing of about 037°). This is not north-east, which would be 45°. The spec says students must 'express a displacement in terms of both the magnitude and direction', so the direction should be stated precisely.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "Equation: <strong>v = d/t</strong>. Rearrangements: d = vt, t = d/v.",
+        "spec_term": "s = v t (distance travelled = speed × time), with distance given the symbol s"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "s (displacement, m)",
+        "spec_term": "distance, s, in metres, m (the spec defines s in v² − u² = 2as as distance)"
+      },
+      {
+        "field": "keyPoints[4].content",
+        "text": "The net force and the acceleration both decrease.",
+        "spec_term": "resultant force"
+      },
+      {
+        "field": "keyPoints[4].content",
+        "text": "Parachute opens. Drag increases hugely, so the net force is now upward.",
+        "spec_term": "air resistance; resultant force"
+      },
+      {
+        "field": "revisionCardBullets[9]",
+        "text": "Terminal velocity: air resistance = weight → zero net force → constant velocity",
+        "spec_term": "resultant force"
+      },
+      {
+        "field": "keyPoints[4].writeBullets[5]",
+        "text": "Parachute opens → massive drag → decelerates to new lower terminal velocity",
+        "spec_term": "air resistance"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "1",
+        "key_point": "keyPoints[0] (Scalar and vector quantities)",
+        "why": "This assumes checkpoint '1' sits with the first key point. It asks for a speed calculation ('A car travels 240m in 8s...'), which is taught in keyPoints[1]. It does not test the scalar/vector distinction."
+      },
+      {
+        "checkpoint": "2",
+        "key_point": "keyPoints[1] (Speed, velocity and distance-time graphs)",
+        "why": "This assumes checkpoint '2' sits with the second key point. It asks what the gradient of a velocity-time graph shows, which is taught in keyPoints[2], not in the distance-time key point."
+      },
+      {
+        "checkpoint": "4",
+        "key_point": "keyPoints[3] (Equations of motion) / keyPoints[4] (free fall)",
+        "why": "The correctFeedback uses 's = ½at²', which no key point teaches. The answer 44.1 m is correct and can be reached with the taught equations (v = u + at, then s = ½(u + v)t), as the wrongFeedback shows. However, the main feedback relies on an untaught equation."
+      }
+    ],
+    "not_checked": [
+      "The lesson does not say which key point each checkpoint sits with. The mismatches above assume checkpoint N follows keyPoints[N-1]. There are 4 checkpoints and 5 key points, so keyPoints[4] (terminal velocity) has no checkpoint under that assumption.",
+      "Claims about exam frequency and mark values (for example 'Area under v-t graph calculations come up as 6-mark questions', 'Gradient calculations on d-t graphs come up almost every year', 'v² = u² + 2as is the most tested', 'a very common 4-mark question') cannot be checked against the specification text.",
+      "All diagram fields are null, so there were no diagrams or images to check."
+    ]
+  }
+}

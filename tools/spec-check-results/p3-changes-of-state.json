@@ -1,0 +1,107 @@
+{
+  "lesson": "p3-changes-of-state",
+  "source_file": "lessons/physics/p3-changes-of-state.json",
+  "lesson_md5": "ad4d91fff3e16cff82faa249c94c1464",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:41:49.192Z",
+  "specRefs_sent": [
+    "4.3.1.2",
+    "4.3.2.3"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7812,
+    "output_tokens": 5081
+  },
+  "cost_usd": 0.132868,
+  "status": "OK",
+  "result": {
+    "lesson": "p3-changes-of-state",
+    "missing_spec_content": [
+      {
+        "specRef": "4.3.1.2",
+        "spec_text": "Students should be able to describe how, when substances change state (melt, freeze, boil, evaporate, condense or sublimate), mass is conserved.",
+        "why": "The lesson never says that mass is conserved during a change of state."
+      },
+      {
+        "specRef": "4.3.1.2",
+        "spec_text": "Changes of state are physical changes which differ from chemical changes because the material recovers its original properties if the change is reversed.",
+        "why": "The lesson does not call changes of state physical changes. It does not contrast them with chemical changes or say that the material recovers its original properties when the change is reversed."
+      },
+      {
+        "specRef": "4.3.2.3",
+        "spec_text": "When a change of state occurs, the energy supplied changes the energy stored (internal energy) but not the temperature.",
+        "why": "The lesson never uses the term 'internal energy'. It describes only a gain in 'potential energy' (keyPoints[0].content). It never links latent heat to a change in internal energy, which is the specification's wording."
+      },
+      {
+        "specRef": "4.3.2.3",
+        "spec_text": "Perform an experiment to measure the latent heat of fusion of water.",
+        "why": "The lesson does not describe this experiment (AT 5): its method, measurements or calculation."
+      },
+      {
+        "specRef": "4.3.2.3",
+        "spec_text": "Students should be able to interpret heating and cooling graphs that include changes of state.",
+        "why": "The lesson covers heating curves in detail. Cooling graphs get only one sentence ('The flat sections appear again, at the same temperatures.'). It gives no guidance on reading a cooling graph."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "Refrigerators: a working fluid (refrigerant) is pumped around a circuit. Inside the fridge it evaporates. It takes in latent heat from the contents, which cools them. Outside the fridge it condenses.",
+        "why": "Refrigeration cycles are not in the specification sections. The tutor_note treats this as core exam content, which could mislead the student about what is examined."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Freeze-drying food: food is frozen. Then it is put somewhere with low pressure, so the ice sublimates straight to vapour.",
+        "why": "The effect of pressure on sublimation and freeze-drying goes beyond the specification. The specification only lists 'sublimate' as a change of state."
+      },
+      {
+        "field": "revisionCardBullets[6]",
+        "text": "L_v >> L_f, because vaporisation fully separates all the particles (much more potential energy)",
+        "why": "The '>>' notation and the comparison of fusion and vaporisation at particle level are not required by the specification. The '>>' symbol may also be unfamiliar to the student."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[3].memTip",
+        "text": "Steam burns = DOUBLE the energy. You get L_v as it condenses, THEN Q = mcΔT as it cools.",
+        "correction": "It is not double. Per kg, condensing steam releases 2,260,000 J. Cooling the condensed water from 100°C to body temperature releases only about 4200 × 63 ≈ 265,000 J. So steam delivers roughly 9–10 times the energy of the same mass of boiling water, not twice as much.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "examTip",
+        "text": "Latent heat of FUSION is for melting or freezing. Latent heat of VAPORISATION is for boiling or condensing.",
+        "spec_term": "Specific latent heat of fusion / Specific latent heat of vaporisation"
+      },
+      {
+        "field": "tables[0].rows[0][0]",
+        "text": "Latent heat of fusion",
+        "spec_term": "Specific latent heat of fusion"
+      },
+      {
+        "field": "tables[0].rows[2][0]",
+        "text": "Latent heat of vaporisation",
+        "spec_term": "Specific latent heat of vaporisation"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "You can see this on a <strong>heating curve</strong>.",
+        "spec_term": "heating and cooling graphs"
+      },
+      {
+        "field": "keyPoints[3].writeBullets[5]",
+        "text": "Freeze-drying — ice sublimes to vapour at low pressure.",
+        "spec_term": "sublimate"
+      }
+    ],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "Checkpoint keys are \"1\" and \"3\", and no checkpoint has a stated key point. I assumed zero-based indexing: checkpoint 1 goes with keyPoints[1] (E = mL) and checkpoint 3 with keyPoints[3] (applications). With one-based indexing, checkpoint 1 would sit with the heating-curve key point and checkpoint 3 with the calculations key point. Neither question tests those key points, so both would then be mismatches.",
+      "keyPoints[3].tutor_note claims 'The refrigerator explanation is a classic 6-mark question'. keyPoints[1].tutor_note claims 'the value of L for water is given in exams'. Exam-paper practice cannot be checked against the specification text supplied.",
+      "All keyPoints have \"diagram\": null, so there were no diagrams to check. keyPoints[0].tutor_note asks the tutor to draw a heating curve, which cannot be checked."
+    ]
+  }
+}

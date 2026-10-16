@@ -1,0 +1,221 @@
+{
+  "lesson": "p6-em-spectrum",
+  "source_file": "lessons/physics/p6-em-spectrum.json",
+  "lesson_md5": "d46f959b78724285afa86ce1d9684f82",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:51:32.385Z",
+  "specRefs_sent": [
+    "4.6.2.1",
+    "4.6.2.2",
+    "4.6.2.3",
+    "4.6.2.4"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 8209,
+    "output_tokens": 8569
+  },
+  "cost_usd": 0.204216,
+  "status": "OK",
+  "result": {
+    "lesson": "p6-em-spectrum",
+    "missing_spec_content": [
+      {
+        "specRef": "4.6.2.1",
+        "spec_text": "Electromagnetic waves are transverse waves that transfer energy from the source of the waves to an absorber.",
+        "why": "The lesson says only that EM waves 'carry energy' (keyPoints[0].content). It never describes energy moving from a source to an absorber."
+      },
+      {
+        "specRef": "4.6.2.1",
+        "spec_text": "Students should be able to give examples that illustrate the transfer of energy by electromagnetic waves.",
+        "why": "The lesson never presents worked examples as energy transfer from source to absorber, such as the Sun warming skin or a heater warming a room. The microwave-oven point is not framed as source-to-absorber transfer."
+      },
+      {
+        "specRef": "4.6.2.1",
+        "spec_text": "Electromagnetic waves form a continuous spectrum and all types of electromagnetic wave travel at the same velocity through a vacuum (space) or air.",
+        "why": "The lesson never says the spectrum is continuous. It also never says the waves travel at the same velocity through air, only through a vacuum."
+      },
+      {
+        "specRef": "4.6.2.2",
+        "spec_text": "(HT only) Different substances may absorb, transmit, refract or reflect electromagnetic waves in ways that vary with wavelength.",
+        "why": "keyPoints[0].content lists 'reflected, refracted, diffracted and absorbed'. It omits transmission and never says the behaviour varies with wavelength."
+      },
+      {
+        "specRef": "4.6.2.2",
+        "spec_text": "(HT only) Some effects, for example refraction, are due to the difference in velocity of the waves in different substances.",
+        "why": "The lesson does not explain refraction as a change in wave speed between substances."
+      },
+      {
+        "specRef": "4.6.2.2",
+        "spec_text": "Students should be able to construct ray diagrams to illustrate the refraction of a wave at the boundary between two different media.",
+        "why": "The lesson has no content on refraction ray diagrams."
+      },
+      {
+        "specRef": "4.6.2.2",
+        "spec_text": "(HT only) Students should be able to use wave front diagrams to explain refraction in terms of the change of speed that happens when a wave travels from one medium to a different medium.",
+        "why": "The lesson has no content on wave front diagrams."
+      },
+      {
+        "specRef": "4.6.2.2",
+        "spec_text": "Required practical activity 10: investigate how the amount of infrared radiation absorbed or radiated by a surface depends on the nature of that surface.",
+        "why": "Required practical 10 is not mentioned. The lesson also does not cover how the nature of a surface affects infrared absorption or emission."
+      },
+      {
+        "specRef": "4.6.2.3",
+        "spec_text": "(HT only) Radio waves can be produced by oscillations in electrical circuits.",
+        "why": "The lesson does not cover how radio waves are produced."
+      },
+      {
+        "specRef": "4.6.2.3",
+        "spec_text": "(HT only) When radio waves are absorbed they may create an alternating current with the same frequency as the radio wave itself, so radio waves can themselves induce oscillations in an electrical circuit.",
+        "why": "The lesson does not cover radio waves inducing an alternating current in a circuit."
+      },
+      {
+        "specRef": "4.6.2.3",
+        "spec_text": "Changes in atoms and the nuclei of atoms can result in electromagnetic waves being generated or absorbed over a wide frequency range. Gamma rays originate from changes in the nucleus of an atom.",
+        "why": "The lesson does not explain how EM waves are generated or absorbed by atoms and nuclei. It does not say that gamma rays come from changes in the nucleus."
+      },
+      {
+        "specRef": "4.6.2.3",
+        "spec_text": "The effects depend on the type of radiation and the size of the dose. Radiation dose (in sieverts) is a measure of the risk of harm resulting from an exposure of the body to the radiation. 1000 millisieverts (mSv) = 1 sievert (Sv)",
+        "why": "The lesson does not mention radiation dose, sieverts, or the idea that the harm depends on the size of the dose."
+      },
+      {
+        "specRef": "4.6.2.3",
+        "spec_text": "Students should be able to draw conclusions from given data about the risks and consequences of exposure to radiation.",
+        "why": "The lesson gives no data-interpretation task or guidance on radiation risk."
+      },
+      {
+        "specRef": "4.6.2.3",
+        "spec_text": "Ultraviolet waves can cause skin to age prematurely and increase the risk of skin cancer.",
+        "why": "The lesson covers skin cancer but never mentions premature ageing of the skin."
+      },
+      {
+        "specRef": "4.6.2.4",
+        "spec_text": "infrared – electrical heaters, cooking food, infrared cameras",
+        "why": "The lesson does not list electrical heaters or cooking food as uses of infrared."
+      },
+      {
+        "specRef": "4.6.2.4",
+        "spec_text": "ultraviolet – energy efficient lamps, sun tanning",
+        "why": "The lesson does not mention energy efficient lamps as a use of UV."
+      },
+      {
+        "specRef": "4.6.2.4",
+        "spec_text": "(HT only) Students should be able to give brief explanations why each type of electromagnetic wave is suitable for the practical application.",
+        "why": "keyPoints[2].content lists uses but explains suitability for only a few: microwave absorption by water, and X-ray absorption by bone. There is no explanation for most wave types."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "Higher frequency EM waves carry more energy per photon.",
+        "why": "The photon model is not in this specification. A student who has not met 'photon' may be confused. The same idea appears in keyPoints[1].content, keyPoints[3].content and keyPoints[0].writeBullets."
+      },
+      {
+        "field": "keyPoints[0].keyTerms[0].def",
+        "text": "consists of oscillating electric and magnetic fields",
+        "why": "The specification does not require the electric and magnetic field structure of EM waves."
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "EM waves can be reflected, refracted, diffracted and absorbed.",
+        "why": "Diffraction is not part of these specification sections."
+      },
+      {
+        "field": "tables[0].headers",
+        "text": "Wavelength range",
+        "why": "The specification requires only the order of the groups by wavelength. Numerical ranges such as '~0.01 – 10 nm' and '<0.01 nm' go beyond it and add memorisation load."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "detecting tumours (PET and gamma scans)",
+        "why": "PET scanning involves positron annihilation, which is beyond GCSE. The specification asks only for 'medical imaging and treatments'."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "The <strong>only difference</strong> between types of EM radiation is their <strong>frequency</strong>, and so their wavelength.",
+        "correction": "The specification links gamma rays to their origin: 'Gamma rays originate from changes in the nucleus of an atom.' X-rays and gamma rays overlap in frequency and are distinguished by their source, not only by frequency.",
+        "basis": "spec"
+      },
+      {
+        "field": "revisionCardBullets[9]",
+        "text": "UV, X-ray and gamma are all ionising. Radio, microwave and IR usually are not",
+        "correction": "The specification names only X-rays and gamma rays as ionising: 'X-rays and gamma rays are ionising radiation'. It describes UV separately, as causing premature skin ageing and skin cancer. The same error appears in keyPoints[3].keyTerms[0].def: 'includes UV, X-rays, and gamma rays'.",
+        "basis": "spec"
+      },
+      {
+        "field": "checkpoints.3.wrongFeedback",
+        "text": "It is ionising enough to break molecular bonds.",
+        "correction": "The specification does not class UV as ionising. It classes only X-rays and gamma rays as ionising radiation.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Gamma rays</strong>: highly ionising, and the most dangerous type.",
+        "correction": "Gamma rays are weakly ionising but highly penetrating; alpha radiation is the most ionising. The specification also says 'The effects depend on the type of radiation and the size of the dose', so no single type is simply 'the most dangerous'. The same error appears in keyPoints[3].writeBullets[3] ('the most ionising') and keyPoints[3].keyTerms[1].def ('highly ionising').",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "tables[0].rows[0][2]",
+        "text": "mm to km",
+        "correction": "Radio wavelengths are longer than microwave wavelengths, from about 1 m or more up to kilometres. 'mm to km' overlaps the microwave range given in the next row ('~1 mm – 1 m').",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "Gamma rays have the shortest, smaller than an atomic nucleus.",
+        "correction": "Typical gamma ray wavelengths are around 10⁻¹² m or less. Only very high-energy gamma rays have wavelengths smaller than a nucleus, so the statement is not generally true.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "introTips[2]",
+        "text": "Higher frequency EM waves carry more energy. That is why gamma rays are dangerous and radio waves are not.",
+        "correction": "Higher frequency means more energy per photon. The total energy a wave carries depends on its intensity, so a powerful radio beam can carry a lot of energy.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "checkpoints.0.correctFeedback",
+        "text": "All EM waves travel at exactly 3 × 10⁸ m/s in a vacuum.",
+        "correction": "The speed is approximately 3 × 10⁸ m/s (2.998 × 10⁸ m/s), not exactly.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "at a speed of <strong>3 × 10⁸ m/s</strong>",
+        "spec_term": "velocity ('all types of electromagnetic wave travel at the same velocity through a vacuum (space) or air')"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "thermal imaging (heat cameras)",
+        "spec_term": "infrared cameras"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "They cause cancer and cell mutation.",
+        "spec_term": "mutation of genes"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "checkpoints.1: Which part of the EM spectrum is used to sterilise medical equipment and kill cancer cells?",
+        "key_point": "keyPoints[1].heading: Order of the EM spectrum",
+        "why": "The checkpoint sits with the key point on the order of the spectrum but tests uses of gamma rays. Its answer is supported by keyPoints[2] ('Gamma rays: killing cancer cells (radiotherapy), sterilising medical equipment'), not by keyPoints[1]."
+      },
+      {
+        "checkpoint": "checkpoints.3: UV radiation is described as a hazard. What is the main risk to the body from too much UV?",
+        "key_point": "keyPoints[3].heading: Hazards of EM radiation",
+        "why": "The question matches the key point. However, the wrongFeedback claims UV 'is ionising enough to break molecular bonds'. keyPoints[3].content never says UV is ionising or that it breaks molecular bonds, so this part of the feedback is not supported by the key point."
+      }
+    ],
+    "not_checked": [
+      "Every diagram field is null, so there were no diagrams or images to check.",
+      "I assumed each checkpoint key ('0', '1', '3') matches the keyPoints index it sits with. There is no checkpoint for keyPoints[2] (Uses)."
+    ]
+  }
+}

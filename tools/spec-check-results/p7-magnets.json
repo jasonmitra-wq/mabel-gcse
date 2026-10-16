@@ -1,0 +1,158 @@
+{
+  "lesson": "p7-magnets",
+  "source_file": "lessons/physics/p7-magnets.json",
+  "lesson_md5": "b44d70b549459c8b38f6c6c0edab805b",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:54:15.546Z",
+  "specRefs_sent": [
+    "4.7.1.1",
+    "4.7.1.2",
+    "4.7.2.1"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 8575,
+    "output_tokens": 6836
+  },
+  "cost_usd": 0.17102,
+  "status": "OK",
+  "result": {
+    "lesson": "p7-magnets",
+    "missing_spec_content": [
+      {
+        "specRef": "4.7.1.1",
+        "spec_text": "Induced magnetism always causes a force of attraction.",
+        "why": "The lesson defines induced magnets but never says that induced magnetism always causes attraction and never repulsion."
+      },
+      {
+        "specRef": "4.7.1.2",
+        "spec_text": "The force between a magnet and a magnetic material is always one of attraction.",
+        "why": "The lesson does not say this. It only gives the like/unlike pole rule, which a student could wrongly apply to a magnet and an unmagnetised piece of iron or steel."
+      },
+      {
+        "specRef": "4.7.1.2",
+        "spec_text": "explain how the behaviour of a magnetic compass is related to evidence that the core of the Earth must be magnetic.",
+        "why": "keyPoints[1].content says 'Earth acts like a giant bar magnet' and explains why compasses point north. It never presents compass behaviour as evidence that the Earth's core is magnetic, and the core is not mentioned."
+      },
+      {
+        "specRef": "4.7.1.2",
+        "spec_text": "A magnetic compass contains a small bar magnet.",
+        "why": "The lesson refers to a compass needle's north pole but never says that a compass contains a small bar magnet."
+      },
+      {
+        "specRef": "4.7.1.2",
+        "spec_text": "The strength of the magnetic field depends on the distance from the magnet.",
+        "why": "The lesson gives field-line spacing and 'strongest near the poles'. It does not state that field strength depends on, and decreases with, distance from the magnet."
+      },
+      {
+        "specRef": "4.7.2.1",
+        "spec_text": "describe how the magnetic effect of a current can be demonstrated",
+        "why": "keyPoints[2].content mentions Ørsted's discovery but gives no demonstration method, such as a compass needle deflecting near a current-carrying wire or plotting compasses/iron filings around the wire."
+      },
+      {
+        "specRef": "4.7.2.1",
+        "spec_text": "Shaping a wire to form a solenoid increases the strength of the magnetic field created by a current through the wire. ... explain how a solenoid arrangement can increase the magnetic effect of the current.",
+        "why": "The lesson does not explain why coiling a wire into a solenoid strengthens the field (the fields from each turn add together inside the coil). It only says 'the field inside is uniform and strong'."
+      },
+      {
+        "specRef": "4.7.1.1",
+        "spec_text": "The poles of a magnet are the places where the magnetic forces are strongest.",
+        "why": "keyPoints[0] introduces poles without this definition. Only keyPoints[1].content says 'The field is strongest near the poles', and it is not tied to what a pole is."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[1].keyTerms[2]",
+        "text": "Flux density — A measure of the strength of a magnetic field — stronger where field lines are closer",
+        "why": "Magnetic flux density is not part of 4.7.1–4.7.2.1. It belongs to the higher-tier motor effect content (4.7.2.2), and introducing it here may confuse the student."
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "We show magnetic fields using <strong>field lines</strong>, also called flux lines.",
+        "why": "'Flux lines' is not used in the specification and adds an extra term."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "<strong>MRI scanners</strong>: extremely powerful superconducting electromagnets are cooled to near absolute zero. They make fields strong enough to line up hydrogen atoms in the body.",
+        "why": "Superconductivity, absolute zero and the alignment of hydrogen nuclei go well beyond these sections. keyPoints[3].keyTerms[2] also defines 'Superconducting'."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "<strong>Loudspeakers</strong>: a permanent magnet and an electromagnet (the voice coil) push on each other. This moves a cone back and forth, making sound waves.",
+        "why": "Loudspeakers depend on the motor effect (4.7.2.2–4.7.2.4), which is outside the sections given."
+      },
+      {
+        "field": "checkpoints.2.correctFeedback",
+        "text": "Doubling the turns doubles the field, and halving the current halves it. These two changes cancel out.",
+        "why": "The specification requires no proportional or quantitative reasoning about solenoid field strength, and the lesson only teaches qualitative relationships."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[0].tutor_note",
+        "text": "Only iron, cobalt, nickel and steel are ferromagnetic.",
+        "correction": "Other materials are ferromagnetic too, for example gadolinium and the neodymium–iron–boron alloys the lesson itself names for permanent magnets. The specification lists iron, steel, cobalt and nickel as the magnetic materials to know. It does not say they are the only ones. The lesson contradicts itself by also citing neodymium alloys.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "revisionCardBullets[3]",
+        "text": "Ferromagnetic materials: iron, steel, cobalt, nickel only",
+        "correction": "As above: these are the magnetic materials named in the specification, but they are not the only ferromagnetic materials.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "All other materials, like aluminium, copper, wood and plastic, are <strong>non-magnetic</strong>. Magnetic fields do not affect them.",
+        "correction": "These materials are not attracted to magnets in any noticeable way. They are still very weakly affected (paramagnetism/diamagnetism), and a changing field induces currents in metals like copper and aluminium. It would be more accurate to say they are not attracted to magnets.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "They make fields strong enough to line up hydrogen atoms in the body.",
+        "correction": "MRI fields align the magnetic moments (spins) of hydrogen nuclei (protons), not whole hydrogen atoms.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "People have used this for navigation for thousands of years.",
+        "correction": "Magnetic compasses have been used for navigation for roughly one thousand years, from about the 11th century. Earlier lodestone devices were not navigational.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "checkpoints.2.correctFeedback",
+        "text": "Doubling the turns doubles the field, and halving the current halves it.",
+        "correction": "A solenoid's field depends on turns per unit length. Doubling the turns doubles the field only if the solenoid's length stays the same, and the question does not say this.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "<strong>Ferromagnetic materials</strong> can be strongly magnetised: iron, steel, cobalt and nickel.",
+        "spec_term": "magnetic material (iron, steel, cobalt and nickel)"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "also called flux lines",
+        "spec_term": "magnetic field line"
+      },
+      {
+        "field": "keyPoints[1].keyTerms[2].term",
+        "text": "Flux density",
+        "spec_term": "strength of the magnetic field"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "checkpoints.2: \"A wire carrying a current is wound into a solenoid. The number of turns is doubled and the current is halved. What happens to the magnetic field strength?\"",
+        "key_point": "keyPoints[2] \"Electromagnetism — magnetic fields from currents\": \"What affects the strength of the field around a wire: Current ... Distance from the wire\"",
+        "why": "This key point never mentions the number of turns. Turns appear only qualitatively in keyPoints[3] ('more turns → a stronger field'). No key point teaches that field strength is proportional to turns or current, so the 'stays roughly the same' answer cannot be worked out from the lesson. It also assumes the solenoid's length is unchanged."
+      }
+    ],
+    "not_checked": [
+      "Every keyPoints[].diagram is null, so there are no drawn field patterns (bar magnet, straight wire, solenoid) to check against the requirement to 'draw the magnetic field pattern ... showing the direction of the field'.",
+      "No diagrams of electromagnetic devices are provided, so I could not check whether the lesson supports the physics-only requirement to 'interpret diagrams of electromagnetic devices in order to explain how they work'."
+    ]
+  }
+}

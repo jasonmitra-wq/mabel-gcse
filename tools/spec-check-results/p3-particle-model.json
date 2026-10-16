@@ -1,0 +1,122 @@
+{
+  "lesson": "p3-particle-model",
+  "source_file": "lessons/physics/p3-particle-model.json",
+  "lesson_md5": "bf9f3ca3d0338d83fe16e83517baf901",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:40:22.341Z",
+  "specRefs_sent": [
+    "4.3.1.1",
+    "4.3.1.2",
+    "4.3.2.1"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7630,
+    "output_tokens": 4885
+  },
+  "cost_usd": 0.12822,
+  "status": "OK",
+  "result": {
+    "lesson": "p3-particle-model",
+    "missing_spec_content": [
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "The density of a material is defined by the equation: density = mass/volume ρ = m/V density, ρ, in kilograms per metre cubed, kg/m^3 mass, m, in kilograms, kg volume, V, in metres cubed, m^3",
+        "why": "The lesson never gives the density equation, its symbols or its units. Density appears only as a qualitative table row ('High' / 'Very low')."
+      },
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "Students should be able to recall and apply this equation to changes where mass is conserved.",
+        "why": "There is no use of ρ = m/V anywhere. Nothing applies it to a change of state where mass is conserved."
+      },
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "Students should be able to explain the differences in density between the different states of matter in terms of the arrangement of atoms or molecules.",
+        "why": "This is covered only by a passing bracket in keyPoints[3].content: 'particles far apart in a gas → low density'. There is no explanation of why solids and liquids have similar, high densities in terms of particle arrangement."
+      },
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "Required practical activity 5: use appropriate apparatus to make and record the measurements needed to determine the densities of regular and irregular solid objects and liquids. Volume should be determined from the dimensions of regularly shaped objects, and by a displacement technique for irregularly shaped objects. Dimensions to be measured using appropriate apparatus such as a ruler, micrometer or Vernier callipers.",
+        "why": "The required practical is not covered. There is nothing on measuring dimensions, displacement, or using a ruler, micrometer or Vernier callipers."
+      },
+      {
+        "specRef": "4.3.1.2",
+        "spec_text": "Students should be able to describe how, when substances change state (melt, freeze, boil, evaporate, condense or sublimate), mass is conserved.",
+        "why": "The lesson says particles are 'NOT created or destroyed' but never states that mass is conserved during a change of state."
+      },
+      {
+        "specRef": "4.3.1.2",
+        "spec_text": "Changes of state are physical changes which differ from chemical changes because the material recovers its original properties if the change is reversed.",
+        "why": "The lesson says 'All changes of state can be reversed' (keyPoints[2].content). It never calls them physical changes, never contrasts them with chemical changes, and never says the material recovers its original properties."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "The <strong>simple particle model</strong> treats particles as identical, solid spheres with no features.",
+        "why": "Evaluating the limitations of the particle model is not required by the specification sections given. Its 'no forces' claim also contradicts the earlier key points, which could confuse the student."
+      },
+      {
+        "field": "keyPoints[3].tutor_note",
+        "text": "On the higher tier, you may be asked to evaluate the particle model.",
+        "why": "Nothing in the supplied specification sections requires evaluation of the particle model. The claim is not supported by the spec text given."
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "This model explains three things. Gases exert pressure, because particles hit the walls. Diffusion happens, because particles spread out randomly. Substances expand when heated",
+        "why": "Gas pressure, diffusion and thermal expansion are not part of the specification sections being taught here. They add load without being required by these sections."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "The model shows no forces between particles",
+        "correction": "The particle model used at GCSE does include forces of attraction between particles. The lesson itself relies on them in keyPoints[0] ('strong forces of attraction between particles') and keyPoints[1] ('particles gain potential energy ... forces of attraction ... are overcome'). Internal energy includes potential energy, which only makes sense if there are forces between particles. So this 'limitation' is wrong and contradicts the rest of the lesson.",
+        "basis": "spec"
+      },
+      {
+        "field": "revisionCardBullets[10]",
+        "text": "Particle model limitations: particles shown as identical solid spheres, with no forces between them",
+        "correction": "Same error as above. The model includes attractive forces between particles, and internal energy includes the potential energy that comes from those forces.",
+        "basis": "spec"
+      },
+      {
+        "field": "tables[0].rows[3]",
+        "text": "Kinetic energy | Low | Medium | High",
+        "correction": "The average kinetic energy of particles depends on temperature, not on state. Ice and water at 0 °C have the same average particle kinetic energy. The difference between states is potential energy and arrangement. The lesson itself says kinetic energy does not change during melting.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "KEY POINT: temperature stays constant during any change of state.",
+        "correction": "This holds for a pure substance being heated or cooled at its melting or boiling point. It does not hold for evaporation, which happens 'at ANY temperature' and usually cools the remaining liquid. It also does not hold for mixtures, which change state over a range of temperatures.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "tables[0].rows[7]",
+        "text": "High (slightly less than solid)",
+        "correction": "This is true for most substances, but water is a common exception: ice is less dense than liquid water. It should be stated as 'usually'.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[1].heading",
+        "text": "Internal energy and the kinetic theory model",
+        "spec_term": "particle model"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "A substance's <strong>internal energy</strong> is the total kinetic and potential energy of all its particles.",
+        "spec_term": "Internal energy is the total kinetic energy and potential energy of all the particles (atoms and molecules) that make up a system"
+      }
+    ],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "Diagram 'p3-states-particles' (keyPoints[0].diagram) cannot be seen. I could not check whether it meets the spec requirement 'Students should be able to recognise/draw simple diagrams to model the difference between solids, liquids and gases.'",
+      "Diagram 'p3-state-changes' (keyPoints[2].diagram) cannot be seen. I could not check whether its labels and direction of energy flow are correct.",
+      "Checkpoint keys '0', '1', '2' are assumed to correspond to keyPoints[0], [1] and [2]. The JSON does not state this mapping explicitly."
+    ]
+  }
+}

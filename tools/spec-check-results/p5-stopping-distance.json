@@ -1,0 +1,148 @@
+{
+  "lesson": "p5-stopping-distance",
+  "source_file": "lessons/physics/p5-stopping-distance.json",
+  "lesson_md5": "1cc0d0a2a2187215e3f5d57b3833b65d",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:48:22.469Z",
+  "specRefs_sent": [
+    "4.5.6.3.1",
+    "4.5.6.3.2",
+    "4.5.6.3.3",
+    "4.5.6.3.4"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7307,
+    "output_tokens": 5518
+  },
+  "cost_usd": 0.139588,
+  "status": "OK",
+  "result": {
+    "lesson": "p5-stopping-distance",
+    "missing_spec_content": [
+      {
+        "specRef": "4.5.6.3.2",
+        "spec_text": "explain methods used to measure human reaction times and recall typical results",
+        "why": "The lesson gives the typical range 0.2–0.9 s but never describes how reaction times are measured, for example the ruler-drop test or a computer-based test."
+      },
+      {
+        "specRef": "4.5.6.3.2",
+        "spec_text": "interpret and evaluate measurements from simple methods to measure the different reaction times of students",
+        "why": "The lesson has no measurement data and no activity on interpreting or evaluating reaction-time measurements, such as repeats, means, spread or reliability."
+      },
+      {
+        "specRef": "4.5.6.3.2",
+        "spec_text": "evaluate the effect of various factors on thinking distance based on given data.",
+        "why": "Factors are listed descriptively. The student is never given data to use when evaluating their effect on thinking distance."
+      },
+      {
+        "specRef": "4.5.6.3.1",
+        "spec_text": "(Physics only) Students will be required to interpret graphs relating speed to stopping distance for a range of vehicles.",
+        "why": "The lesson gives one table for cars only. It has no graph of speed against stopping distance and does not cover other vehicles such as lorries or buses."
+      },
+      {
+        "specRef": "4.5.6.3.4",
+        "spec_text": "The greater the speed of a vehicle the greater the braking force needed to stop the vehicle in a certain distance.",
+        "why": "The lesson only treats braking distance at constant braking force. It never states the spec's inverse framing: stopping within a fixed distance at a higher speed needs a larger braking force."
+      },
+      {
+        "specRef": "4.5.6.3.4",
+        "spec_text": "Large decelerations may lead to brakes overheating and/or loss of control.",
+        "why": "Overheating is covered. Loss of control (e.g. skidding or the wheels locking) as a danger of large decelerations is not mentioned."
+      },
+      {
+        "specRef": "4.5.6.3.4",
+        "spec_text": "(HT only) estimate the forces involved in the deceleration of road vehicles in typical situations on a public road.",
+        "why": "The lesson quotes 'braking force = mass × deceleration' but never estimates a force using typical values, such as a 1000 kg car decelerating from about 13 m/s."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "The UK legal minimum tyre tread depth is 1.6 mm.",
+        "why": "This is legal detail the spec does not require. The spec only requires that tyre condition affects braking distance."
+      },
+      {
+        "field": "keyPoints[1].list[2].definition",
+        "text": "severe tiredness can cause microsleep at the wheel",
+        "why": "Microsleep is a physiological term the spec does not require. The spec only states that tiredness affects reaction time."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "This is why seatbelts and crumple zones are essential.",
+        "why": "Seatbelts and crumple zones belong to the momentum/force safety content, not these sections. Bringing them in here without explanation may confuse the student."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Brake fade (overheated brakes losing their effect) can happen on long downhill stretches.",
+        "why": "The spec links overheating only to large decelerations. The term 'brake fade' and the long-descent scenario go beyond it."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "That is roughly four car-lengths compared with 24 car-lengths.",
+        "correction": "Using the Highway Code convention of about 4 m per car length, 23 m is about six car lengths, not four. 96 m is about 24 car lengths. The comparison should be roughly six car-lengths against 24.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].keyTerms[0].def",
+        "text": "The force applied by the brakes to decelerate the vehicle; transferred from kinetic energy to thermal energy in the brakes",
+        "correction": "A force is not 'transferred' from kinetic energy. Work done by the friction force between the brakes and the wheel reduces the vehicle's kinetic energy, and the temperature of the brakes increases. The definition mixes up force and energy.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[1].list[0].definition",
+        "text": "slows brain processing significantly — the biggest single impairment",
+        "correction": "There is no basis for ranking alcohol as the single biggest impairment. The spec lists tiredness, drugs and alcohol as factors without ranking them, and severe tiredness or some drugs can impair reactions as much or more.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Ice can reduce friction to nearly zero.",
+        "correction": "Ice greatly reduces the friction between tyres and road. The coefficient of friction typically falls to around 0.1, which is much lower than on dry roads but not 'nearly zero'.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "braking distance is proportional to KE",
+        "correction": "This is only true for a constant braking force, because work done = force × distance = KE lost. The condition is missing from this sentence, although it is given elsewhere in the lesson.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "kinetic energy of the car is transferred to thermal energy</strong> (heat) in the brakes through friction",
+        "spec_term": "work done by the friction force between the brakes and the wheel reduces the kinetic energy of the vehicle and the temperature of the brakes increases"
+      },
+      {
+        "field": "checkpoints.3.wrongFeedback",
+        "text": "They are taking in the car's kinetic energy as heat.",
+        "spec_term": "temperature of the brakes increases (energy transferred by work done by the friction force), not 'heat'"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Road surface condition",
+        "spec_term": "adverse road and weather conditions"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "checkpoints.1: \"A car's braking distance at 20 m/s is 25 m. What would the braking distance be at 40 m/s, on the same road?\"",
+        "key_point": "keyPoints[1].heading: \"Factors affecting reaction time and thinking distance\"",
+        "why": "This checkpoint tests the v² link for braking distance, which is taught in keyPoints[2], not reaction-time factors. Nothing in keyPoints[1] supports the answer."
+      },
+      {
+        "checkpoint": "(none — checkpoints object has keys \"0\", \"1\", \"3\" only)",
+        "key_point": "keyPoints[2].heading: \"Factors affecting braking distance\"",
+        "why": "No checkpoint \"2\" exists. The braking-distance factors (wet or icy roads, tyres, brakes) are never tested, and keyPoints[1] factors (alcohol, drugs, tiredness, distractions) are not tested either."
+      }
+    ],
+    "not_checked": [
+      "keyPoints[0].tutor_note refers to 'a diagram of a car journey from hazard to stop', but every keyPoints[*].diagram is null, so no diagram could be checked.",
+      "The pairing of checkpoints to key points was assumed to be by matching index (checkpoint key = keyPoints index). This mapping is not stated in the lesson."
+    ]
+  }
+}

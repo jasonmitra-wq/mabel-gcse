@@ -1,0 +1,141 @@
+{
+  "lesson": "p6-wave-properties",
+  "source_file": "lessons/physics/p6-wave-properties.json",
+  "lesson_md5": "0b892cf9947120dbb491c4ba7639452a",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:50:32.606Z",
+  "specRefs_sent": [
+    "4.6.1.1",
+    "4.6.1.2",
+    "4.6.1.3"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7599,
+    "output_tokens": 5878
+  },
+  "cost_usd": 0.147956,
+  "status": "OK",
+  "result": {
+    "lesson": "p6-wave-properties",
+    "missing_spec_content": [
+      {
+        "specRef": "4.6.1.1",
+        "spec_text": "Students should be able to describe evidence that, for both ripples on a water surface and sound waves in air, it is the wave and not the water or air itself that travels.",
+        "why": "The lesson only states the idea: \"All waves transfer <strong>energy</strong> without transferring matter\" (keyPoints[0].content) and \"The medium itself just oscillates\" (introTips[0]). It gives no evidence. For example, it does not mention a floating object bobbing up and down on ripples without moving along, or air not streaming away from a loudspeaker."
+      },
+      {
+        "specRef": "4.6.1.2",
+        "spec_text": "describe a method to measure the speed of sound waves in air",
+        "why": "The lesson does not describe any method for measuring the speed of sound in air."
+      },
+      {
+        "specRef": "4.6.1.2",
+        "spec_text": "describe a method to measure the speed of ripples on a water surface.",
+        "why": "The lesson does not describe any method for measuring the speed of ripples on water."
+      },
+      {
+        "specRef": "4.6.1.2",
+        "spec_text": "Required practical activity 8: make observations to identify the suitability of apparatus to measure the frequency, wavelength and speed of waves in a ripple tank and waves in a solid and take appropriate measurements.",
+        "why": "Required practical 8 does not appear at all. There is no ripple tank, no waves in a solid, and no discussion of how suitable the apparatus is or how to take measurements."
+      },
+      {
+        "specRef": "4.6.1.2",
+        "spec_text": "(Physics only) Students should be able to show how changes in velocity, frequency and wavelength, in transmission of sound waves from one medium to another, are inter-related.",
+        "why": "This is only partly covered. The lesson says in general terms that on refraction \"The frequency stays the same, but the wavelength changes\" (keyPoints[3].content). It never applies this to sound passing from one medium to another. It also never uses v = fλ to show that, with f fixed, wavelength changes in proportion to speed."
+      },
+      {
+        "specRef": "4.6.1.3",
+        "spec_text": "Waves can be absorbed or transmitted at the boundary between two different materials.",
+        "why": "The lesson mentions reflection only. Absorption and transmission at a boundary are not taught."
+      },
+      {
+        "specRef": "4.6.1.3",
+        "spec_text": "Students should be able to describe the effects of reflection, transmission and absorption of waves at material interfaces.",
+        "why": "Transmission and absorption, and their effects, are absent."
+      },
+      {
+        "specRef": "4.6.1.3",
+        "spec_text": "Students should be able to construct ray diagrams to illustrate the reflection of a wave at a surface.",
+        "why": "The lesson states the rule \"The angle of incidence equals the angle of reflection\" (keyPoints[3].content). It does not teach how to construct a ray diagram, and every \"diagram\" field is null."
+      },
+      {
+        "specRef": "4.6.1.3",
+        "spec_text": "Required practical activity 9 (physics only): investigate the reflection of light by different types of surface and the refraction of light by different substances.",
+        "why": "Required practical 9 is not mentioned."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "<strong>Diffraction</strong>: waves spread out as they pass through a gap or around an obstacle. Diffraction is strongest when the <strong>gap size is similar to the wavelength</strong>.",
+        "why": "Diffraction is not in the supplied specification sections, and it is not part of this specification's GCSE content. This key point, checkpoint 3, introTips[3], commonMistakes[1], examTips[2] and a revision card bullet all teach and test content the student will not be examined on."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "A wave that slows down bends <strong>toward</strong> the normal. A wave that speeds up bends <strong>away</strong> from the normal. The frequency stays the same, but the wavelength changes.",
+        "why": "The supplied sections (4.6.1.1–4.6.1.3) mention refraction only as part of required practical 9. The detailed rules about bending toward or away from the normal belong to a different section. They are not required by the sections this lesson claims to teach."
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "the distance between two neighbouring points that are in phase",
+        "why": "\"In phase\" is not used in the specification and is not explained in the lesson. A 15-year-old may be confused by it. The specification defines wavelength without it."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[3].keyTerms[1].def",
+        "text": "Change in wave speed at a boundary causing a change in direction (frequency unchanged)",
+        "correction": "A change in speed at a boundary only changes the direction when the wave meets the boundary at an angle. A wave travelling along the normal changes speed but does not change direction. The lesson's own content says this correctly: \"If it hits at an angle, its direction changes too.\"",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].tutor_note",
+        "text": "People often say diffraction happens 'when the gap is smaller than the wavelength'. The correct phrase is 'similar to the wavelength'.",
+        "correction": "Spreading increases as the gap gets narrower. It is very marked when the gap is similar to or smaller than the wavelength. A gap smaller than the wavelength does not give less diffraction, so calling 'smaller than the wavelength' incorrect is misleading. It also contradicts the lesson's own statement that \"a narrow gap diffracts more than a wide one\". The same issue appears in commonMistakes[1].",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "intro",
+        "text": "Waves are how energy moves through space.",
+        "correction": "Waves are one way energy is transferred. Energy is also transferred by heating through conduction and convection, by electric currents, and by forces doing work. The statement should be limited, for example \"Waves are one way energy is transferred from place to place.\"",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "the maximum displacement of a point on the wave from its rest (equilibrium) position",
+        "spec_term": "undisturbed position"
+      },
+      {
+        "field": "keyPoints[1].keyTerms[0].def",
+        "text": "Maximum displacement of a wave from its equilibrium (rest) position",
+        "spec_term": "undisturbed position"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "the distance between two neighbouring points that are in phase",
+        "spec_term": "the distance from a point on one wave to the equivalent point on the adjacent wave"
+      },
+      {
+        "field": "keyPoints[1].keyTerms[1].def",
+        "text": "Distance between two successive points in phase",
+        "spec_term": "the distance from a point on one wave to the equivalent point on the adjacent wave"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "1: A wave has a frequency of 500 Hz and travels at 340 m/s. What is its wavelength?",
+        "key_point": "keyPoints[1] \"Amplitude, wavelength, frequency, and period\"",
+        "why": "The checkpoint needs λ = v/f, which is taught in keyPoints[2] (\"The wave equation: v = fλ\"). keyPoints[1].content does not teach the wave equation; it appears only in passing in that key point's memTip. So the answer is not supported by the key point it sits with. keyPoints[1]'s own content (amplitude, period, T = 1/f) is not tested, and keyPoints[2] has no checkpoint."
+      }
+    ],
+    "not_checked": [
+      "Every keyPoints[].diagram field is null, so no diagrams could be inspected. The spec skill \"identify amplitude and wavelength from given diagrams\" is described in text only and could not be checked against a visual.",
+      "It is assumed that the checkpoint keys \"0\", \"1\", \"3\" map to keyPoints indices 0, 1 and 3.",
+      "It could not be checked whether the lesson is meant for the physics-only or the combined science route. This affects whether the 4.6.1.3 content and the physics-only part of 4.6.1.2 are required."
+    ]
+  }
+}

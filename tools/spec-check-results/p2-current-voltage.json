@@ -1,0 +1,215 @@
+{
+  "lesson": "p2-current-voltage",
+  "source_file": "lessons/physics/p2-current-voltage.json",
+  "lesson_md5": "8658b2ed799293fc49fc3343caba6b35",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:35:10.822Z",
+  "specRefs_sent": [
+    "4.2.1.2",
+    "4.2.1.3",
+    "4.2.1.4",
+    "4.2.4.2"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 9304,
+    "output_tokens": 7835
+  },
+  "cost_usd": 0.193916,
+  "status": "OK",
+  "result": {
+    "lesson": "p2-current-voltage",
+    "missing_spec_content": [
+      {
+        "specRef": "4.2.1.2",
+        "spec_text": "For electrical charge to flow through a closed circuit the circuit must include a source of potential difference.",
+        "why": "The lesson never states that a closed circuit and a source of potential difference are both needed for charge to flow."
+      },
+      {
+        "specRef": "4.2.1.2",
+        "spec_text": "A current has the same value at any point in a single closed loop.",
+        "why": "The lesson does not teach that current is the same everywhere in a single closed loop."
+      },
+      {
+        "specRef": "4.2.1.3",
+        "spec_text": "Required practical activity 3: Use circuit diagrams to set up and check appropriate circuits to investigate the factors affecting the resistance of electrical circuits. This should include: the length of a wire at constant temperature; combinations of resistors in series and parallel.",
+        "why": "Length is listed as a factor, but Required practical 3 is not described. Combinations of resistors in series and parallel are not covered at all."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "The resistance of a thermistor decreases as the temperature increases. The applications of thermistors in circuits eg a thermostat is required.",
+        "why": "Thermistors and their applications are not taught anywhere in the lesson."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "The resistance of an LDR decreases as light intensity increases. The application of LDRs in circuits eg switching lights on when it gets dark is required.",
+        "why": "LDRs and their applications are not taught anywhere in the lesson."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "The resistance of components such as lamps, diodes, thermistors and LDRs is not constant; it changes with the current through the component.",
+        "why": "The general point that resistance can change with current is only shown for the lamp. Thermistors and LDRs are left out."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "draw an appropriate circuit diagram using correct circuit symbols.",
+        "why": "Every keyPoint has \"diagram\": null. No circuit diagram or circuit symbols are taught, including for the required practical circuit."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "Students should be able to use graphs to explore whether circuit elements are linear or non-linear and relate the curves produced to their function and properties.",
+        "why": "The lesson describes the graph shapes but never uses or teaches the terms linear and non-linear."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "energy transferred = power × time  E = P t",
+        "why": "The E = Pt equation and the idea of power are not taught."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "Students should be able to explain how the power of a circuit device is related to: the potential difference across it and the current through it; the energy transferred over a given time.",
+        "why": "The lesson does not cover power at all."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "Students should be able to describe how different domestic appliances transfer energy from batteries or ac mains to the kinetic energy of electric motors or the energy of heating devices.",
+        "why": "Energy transfers in everyday appliances are not described. The intro only mentions devices in passing."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "Students should be able to describe, with examples, the relationship between the power ratings for domestic electrical appliances and the changes in stored energy when they are in use.",
+        "why": "Power ratings of appliances are not covered."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "The amount of energy an appliance transfers depends on how long the appliance is switched on for and the power of the appliance.",
+        "why": "This dependence on time and power is not taught."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "The <strong>electromotive force (EMF)</strong> of a battery is the energy it gives to each coulomb of charge. It is measured in volts too. But the <strong>terminal p.d.</strong> is slightly less than the EMF.",
+        "why": "EMF, terminal p.d. and internal resistance are not in these specification sections. They are A-level content and could confuse the student's understanding of potential difference."
+      },
+      {
+        "field": "keyPoints[1].writeBullets[4]",
+        "text": "Terminal p.d. — voltage across the battery terminals in a working circuit. It is less than the EMF because of internal resistance",
+        "why": "Internal resistance and terminal p.d. go beyond the specification."
+      },
+      {
+        "field": "examTips[2]",
+        "text": "EMF vs terminal p.d.: a question may mention a battery with internal resistance. Then the terminal p.d. is less than the EMF. Say this clearly.",
+        "why": "This suggests GCSE exam questions will test internal resistance. The specification does not include it."
+      },
+      {
+        "field": "revisionCardBullets[5]",
+        "text": "EMF — the energy given to each coulomb by the source. Terminal p.d. < EMF",
+        "why": "Puts beyond-spec EMF and terminal p.d. content onto the revision card."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "The forward bias threshold is roughly 0.7 V for a silicon diode.",
+        "why": "The specification only requires that current flows in one direction and that reverse resistance is very high. Threshold voltages and silicon diodes are not required."
+      },
+      {
+        "field": "keyPoints[3].writeBullets[4]",
+        "text": "Forward bias threshold — ~0.7 V for a silicon diode, before much current flows",
+        "why": "Threshold voltage is not in the specification."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "<strong>material</strong>: different metals have different resistivities",
+        "why": "Resistivity is not in these specification sections. It is an A-level quantity."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "<strong>cross-sectional area</strong>: a thicker wire → lower resistance",
+        "why": "The specification only names the length of a wire at constant temperature. Cross-sectional area is not required here."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "The equation linking the three is <strong>R = V/I</strong>, often called <strong>Ohm's law</strong>.",
+        "correction": "R = V/I (V = IR) defines resistance and applies to any component, including lamps and diodes. Ohm's law is the separate statement that current is directly proportional to potential difference for an ohmic conductor at constant temperature. Calling R = V/I Ohm's law contradicts examTips[4], which says not to apply Ohm's law to lamps. Checkpoint 2 correctly applies R = V/I to a lamp.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].keyTerms[2].def",
+        "text": "The p.d. measured across the battery terminals in a working circuit — always less than EMF",
+        "correction": "Terminal p.d. equals the EMF when no current flows. It can exceed the EMF when the battery is being charged. It is not always less.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[4].content",
+        "text": "These are usually a resistor and a filament lamp, and sometimes a diode.",
+        "correction": "Required practical 4 must include a filament lamp, a diode and a resistor at constant temperature. The diode is required, not optional.",
+        "basis": "spec"
+      },
+      {
+        "field": "revisionCardBullets[11]",
+        "text": "Resistance increases with: greater length, smaller cross-section, higher temperature",
+        "correction": "Resistance rises with temperature only for metals, such as a filament. The resistance of a thermistor decreases as temperature increases.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[3].writeBullets[5]",
+        "text": "Resistance from an I-V graph — find the gradient (I/V) and take its reciprocal. Or read off V and I and use R = V/I",
+        "correction": "The reciprocal of the gradient gives resistance only for a straight line through the origin. For curved graphs such as the lamp or diode, resistance at a point is V/I at that point, not the reciprocal of the tangent gradient.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "tables[0].rows[2][1]",
+        "text": "zero current in reverse bias",
+        "correction": "In the reverse direction the diode has a very high resistance, so the current is very small but not exactly zero. The lesson's own commonMistakes[4] says this.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[1].memTip",
+        "text": "V = W/Q: 'Voltage is Watts per Queue'. Energy ÷ charge.",
+        "correction": "W here stands for energy (work done) in joules, not watts. Watts are units of power, so the mnemonic links the symbol to the wrong quantity.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "The equation is <strong>V = W/Q</strong>. Here V is voltage (volts, V), W is energy (joules, J)",
+        "spec_term": "energy transferred, E (E = Q V); potential difference"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "Here Q is charge (C), I is current (A) and t is time (s).",
+        "spec_term": "charge flow, Q"
+      },
+      {
+        "field": "keyPoints[2].writeBullets[1]",
+        "text": "R = V/I — resistance = voltage ÷ current.",
+        "spec_term": "potential difference (\"Questions will be set using the term potential difference\")"
+      },
+      {
+        "field": "revisionCardBullets[6]",
+        "text": "R = V/I — resistance (Ω) = voltage ÷ current",
+        "spec_term": "potential difference"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "often called <strong>Ohm's law</strong>",
+        "spec_term": "ohmic conductor (the specification does not use \"Ohm's law\")"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "In reverse bias, resistance is extremely high and current is almost zero.",
+        "spec_term": "\"The diode has a very high resistance in the reverse direction\""
+      }
+    ],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "All keyPoints have \"diagram\": null, so there are no diagrams or images to check. The lack of a circuit diagram is reported under missing_spec_content.",
+      "Checkpoint keys \"0\", \"2\" and \"3\" were assumed to map to keyPoints[0], [2] and [3]. keyPoints[1] and keyPoints[4] have no checkpoint.",
+      "Claims about exam frequency in examTip (\"come up almost every year\", \"a favourite for 'describe and explain' questions\") cannot be checked against the specification text."
+    ]
+  }
+}

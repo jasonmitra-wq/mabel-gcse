@@ -1,0 +1,151 @@
+{
+  "lesson": "p2-domestic",
+  "source_file": "lessons/physics/p2-domestic.json",
+  "lesson_md5": "35984e88cf0bca93c8db40f1bdd6f871",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:37:58.323Z",
+  "specRefs_sent": [
+    "4.2.3.1",
+    "4.2.3.2"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 8481,
+    "output_tokens": 5521
+  },
+  "cost_usd": 0.144344,
+  "status": "OK",
+  "result": {
+    "lesson": "p2-domestic",
+    "missing_spec_content": [
+      {
+        "specRef": "4.2.3.2",
+        "spec_text": "Students should be able to explain: - that a live wire may be dangerous even when a switch in the mains circuit is open",
+        "why": "The lesson never explains this. It does not say that the live wire stays at about 230 V when a switch is open, or that touching it can still give a shock. The nearest text is keyPoints[1].tutor_note, which only covers a fuse fitted in the neutral wire."
+      },
+      {
+        "specRef": "4.2.3.2",
+        "spec_text": "the dangers of providing any connection between the live wire and earth.",
+        "why": "This is covered only indirectly, through the fault case in keyPoints[3].content: \"Without earthing, anyone touching the casing would get an electric shock. Current would flow through them to earth.\" The lesson never states the general idea. A person is at earth potential, so any connection between live and earth puts about 230 V across that connection and a large, possibly fatal, current flows."
+      },
+      {
+        "specRef": "4.2.3.2",
+        "spec_text": "Most electrical appliances are connected to the mains using three- core cable.",
+        "why": "The lesson talks about a \"three-pin plug\" and mentions \"two-core cables\" for double-insulated appliances. It never says that most appliances are connected using three-core cable."
+      },
+      {
+        "specRef": "4.2.3.1",
+        "spec_text": "Students should be able to explain the difference between direct and alternating potential difference.",
+        "why": "The lesson explains direct and alternating current, not direct and alternating potential difference. It never states that a direct potential difference stays the same direction (polarity) while an alternating potential difference keeps reversing."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "The peak voltage is higher than the stated 230 V. The 230 V is the root mean square (RMS) value. This is the DC voltage that would give the same power.",
+        "why": "RMS and peak values are not required by these specification sections, which only say the supply \"is about 230 V\". This could confuse the student about the 230 V figure."
+      },
+      {
+        "field": "keyPoints[0].writeBullets[5]",
+        "text": "230 V is the RMS value. The peak voltage is higher (~325 V)",
+        "why": "Peak and RMS values go beyond these sections and add a second voltage figure for students to remember."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "An <strong>RCCB (residual current circuit breaker)</strong> is even more sensitive. It detects tiny differences in current between the live and neutral wires, even just 30 mA.",
+        "why": "RCCBs, the 30 mA trip current and current-imbalance detection are not in the specification sections given."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "A <strong>circuit breaker (MCB — miniature circuit breaker)</strong> is an electromagnetic switch in the consumer unit (fuse box).",
+        "why": "Fuses, MCBs and fuse-rating choice are not part of the specification sections given. This whole key point is extra content."
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "The National Grid uses high voltages (up to 400,000 V) to send electricity across the country efficiently. Transformers change the voltage at each end.",
+        "why": "Transformers and National Grid voltages are not part of these sections (4.2.3.1 and 4.2.3.2)."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "The double-insulation symbol is a small square inside a larger square.",
+        "why": "Double insulation and its symbol are not required by these specification sections."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[2].tutor_note",
+        "text": "The rating is the current at which the fuse blows, not the current it allows.",
+        "correction": "A fuse's rating is the largest current it can carry normally without blowing. It blows when the current goes significantly above this value. The note also contradicts the lesson's own definition in keyPoints[2].keyTerms[0].def: \"The maximum current (in amps) a fuse can carry before it melts\".",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "<strong>Double insulation</strong> is used for appliances with fully plastic casings. ... The casing is plastic, which is an insulator. So the live wire cannot make the casing dangerous, and no earth wire is needed.",
+        "correction": "Double insulation means the live parts are separated from the user by two independent layers of insulation, often insulated wiring plus an insulating casing. It is not just having a plastic casing. Some double-insulated appliances have metal parts that the user can touch, but these are insulated from the live parts.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].memTip",
+        "text": "Double insulated = nothing to earth (no metal casing).",
+        "correction": "Double-insulated appliances can have metal parts. No earth is needed because two layers of insulation separate the live parts from anything the user can touch, not because there is no metal at all.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "<strong>Direct current (DC)</strong>: current flows in one direction only. The voltage is constant.",
+        "spec_term": "direct potential difference"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "<strong>Alternating current (AC)</strong>: the current keeps reversing direction.",
+        "spec_term": "alternating potential difference"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "The <strong>live wire (BROWN)</strong> carries the alternating voltage from the mains supply.",
+        "spec_term": "alternating potential difference"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "A UK three-pin plug has three wires.",
+        "spec_term": "three-core cable"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "It connects the metal casing of the appliance to the ground (0 V).",
+        "spec_term": "earth (0 V)"
+      },
+      {
+        "field": "tables[0].rows[2][3]",
+        "text": "Safety: connects metal casing to ground; carries fault current to blow fuse",
+        "spec_term": "earth"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "checkpoints[0]: \"What is the colour and voltage of the live wire in a UK three-pin plug?\"",
+        "key_point": "keyPoints[0] \"AC vs DC\"",
+        "why": "This checkpoint tests wire colours and voltages. Those are taught in keyPoints[1] (\"The three-pin plug\"), not in the AC vs DC key point it sits with."
+      },
+      {
+        "checkpoint": "checkpoints[1]: \"A toaster draws 4.5 A when working normally. Which fuse should be fitted?\"",
+        "key_point": "keyPoints[1] \"The three-pin plug\"",
+        "why": "This checkpoint tests choosing a fuse rating. That is taught in keyPoints[2] (\"Fuses and circuit breakers\"), not in the three-pin plug key point it sits with."
+      },
+      {
+        "checkpoint": "checkpoints[2]: \"Why does a hairdryer with a plastic casing not need an earth wire?\"",
+        "key_point": "keyPoints[2] \"Fuses and circuit breakers\"",
+        "why": "This checkpoint tests double insulation. That is taught in keyPoints[3] (\"Earthing and double insulation\"), not in the fuses key point it sits with."
+      },
+      {
+        "checkpoint": "checkpoints[3]: \"What is the frequency of the UK mains AC supply, and what does this mean?\"",
+        "key_point": "keyPoints[3] \"Earthing and double insulation\"",
+        "why": "This checkpoint tests mains frequency. That is taught in keyPoints[0] (\"AC vs DC\"), not in the earthing key point it sits with."
+      }
+    ],
+    "not_checked": []
+  }
+}

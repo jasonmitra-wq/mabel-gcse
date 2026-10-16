@@ -1,0 +1,124 @@
+{
+  "lesson": "p3-density",
+  "source_file": "lessons/physics/p3-density.json",
+  "lesson_md5": "ccc2b1b0b646e41be8411dd0a788724b",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:41:02.931Z",
+  "specRefs_sent": [
+    "4.3.1.1"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7630,
+    "output_tokens": 5375
+  },
+  "cost_usd": 0.13802,
+  "status": "OK",
+  "result": {
+    "lesson": "p3-density",
+    "missing_spec_content": [
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "Students should be able to recognise/draw simple diagrams to model the difference between solids, liquids and gases.",
+        "why": "Every keyPoint has \"diagram\": null, and the lesson never describes or asks the student to draw simple particle diagrams of a solid, a liquid and a gas. The particle arrangement in a liquid is only mentioned in passing (\"jumbled arrangement in liquid water\" in keyPoints[3].content)."
+      },
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "The particle model can be used to explain - the different states of matter",
+        "why": "The lesson uses the particle model only to explain density differences. It never uses the model to explain what makes something a solid, a liquid or a gas: arrangement, spacing and movement of the particles in each state."
+      },
+      {
+        "specRef": "4.3.1.1 Required practical activity 5",
+        "spec_text": "Dimensions to be measured using appropriate apparatus such as a ruler, micrometer or Vernier callipers.",
+        "why": "keyPoints[2].content names only a ruler for regular solids. The micrometer and Vernier callipers are not mentioned, and neither is choosing apparatus that suits the size of the object."
+      },
+      {
+        "specRef": "4.3.1.1 Key opportunities for skills development",
+        "spec_text": "Students should be able to recall and apply this equation to changes where mass is conserved.",
+        "why": "The lesson never applies ρ = m/V to a change of state where mass stays the same and only the volume changes, for example water freezing or evaporating. It does not state that mass is conserved during a change of state."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "In ice, water molecules form a regular, open hexagonal lattice. Forces of attraction between the molecules hold it together.",
+        "why": "The specification only asks for density differences to be explained by the arrangement of atoms or molecules. The hexagonal lattice structure of ice (and the hydrogen bonding behind it) is not required. Checkpoint 3 then makes it the marked correct answer."
+      },
+      {
+        "field": "keyPoints[3].keyTerms[0]",
+        "text": "Hexagonal lattice",
+        "why": "This term is not in the specification and is not needed at this level."
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "Osmium (densest natural element): 22,590 kg/m³",
+        "why": "The specification does not require this fact. It adds a number to remember for no assessed purpose."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Liquid aluminium: ~2375 kg/m³ (slightly less dense, as particles are slightly further apart)",
+        "why": "Data on molten metals is not required and goes beyond the specification."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "The density of a liquid compared with its gas is typically about 1000:1.",
+        "why": "The specification does not require a quantitative liquid-to-gas density ratio."
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "Floating and sinking: compare the object with the fluid it is in. An object floats if it is less dense than the fluid. An object sinks if it is denser than the fluid.",
+        "why": "Floating and sinking are not part of 4.3.1.1. The topic is repeated across writeBullets, revisionCardBullets, examTips and introTips (\"Density is why steel ships can float. It is the shape and what is inside that matters\"). That last idea is average density, which this section does not cover."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Lakes freeze from the top down. Ice forms at the surface and insulates the water below",
+        "why": "The ecology and thermal insulation of frozen lakes are not required by this specification section."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[2].writeBullets[2]",
+        "text": "Volume of displaced water = volume of the irregular object (Archimedes' principle)",
+        "correction": "Archimedes' principle says that the upthrust on an object equals the weight of fluid it displaces. The fact that a fully submerged object displaces its own volume of water is simply the displacement method. It should not be labelled Archimedes' principle.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "intro",
+        "text": "It explains why the air gets thinner the higher you go.",
+        "correction": "\"Thinner\" air is lower-density air, so density describes the effect rather than explaining it. Air is less dense higher up because there is less air above pressing down on it, so the pressure is lower.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].writeBullets[5]",
+        "text": "Liquid to gas density ratio: typically ~1000:1. For example, water and water vapour",
+        "correction": "At 100 °C and atmospheric pressure, liquid water (about 958 kg/m³) is roughly 1600 times denser than steam (about 0.6 kg/m³). The ratio is roughly 1000:1 or more. Using water as the example of exactly ~1000:1 is inaccurate.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "checkpoints.2.wrongFeedback",
+        "text": "A eureka can or measuring cylinder gives you the volume directly.",
+        "correction": "A eureka can does not give a volume reading. The displaced water has to be collected and measured in a measuring cylinder, as keyPoints[2].content itself says.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "Measure its size with a ruler.",
+        "spec_term": "dimensions (\"Volume should be determined from the dimensions of regularly shaped objects\")"
+      },
+      {
+        "field": "revisionCardBullets[6]",
+        "text": "Regular solid: measure its size with a ruler → work out the volume with a formula",
+        "spec_term": "dimensions"
+      }
+    ],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "No diagrams are supplied (every keyPoint has \"diagram\": null), so there is nothing to check against the specification requirement to recognise or draw particle diagrams of solids, liquids and gases.",
+      "The formula triangle mentioned in keyPoints[0].memTip and keyPoints[1].memTip is not shown, so its layout could not be checked.",
+      "The specification refers to AT 1, MS 1a, b, c, 3b, c, WS 1.2 and \"Key opportunities for skills development (page 94)\". The text of these skills was not provided, so the lesson's coverage of them could not be checked."
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "lesson": "p4-nuclear-fission",
+  "source_file": "lessons/physics/p4-nuclear-fission.json",
+  "lesson_md5": "96356b6f39a537a8bc9e8f4b74d109e6",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:45:47.040Z",
+  "specRefs_sent": [
+    "4.4.4.1",
+    "4.4.4.2"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7784,
+    "output_tokens": 6075
+  },
+  "cost_usd": 0.152636,
+  "status": "OK",
+  "result": {
+    "lesson": "p4-nuclear-fission",
+    "missing_spec_content": [
+      {
+        "specRef": "4.4.4.1",
+        "spec_text": "Spontaneous fission is rare. Usually, for fission to occur the unstable nucleus must first absorb a neutron.",
+        "why": "The lesson never mentions spontaneous fission. It presents neutron absorption as the only route: keyPoints[0].content says \"In nuclear fission, a large unstable nucleus absorbs a neutron\". So the student is not taught that fission can occasionally happen without absorbing a neutron, or that this is rare."
+      },
+      {
+        "specRef": "4.4.4.1",
+        "spec_text": "The nucleus undergoing fission splits into two smaller nuclei, roughly equal in size",
+        "why": "The lesson says \"splits into two smaller nuclei\" (keyPoints[0].content) but never says the two nuclei are roughly equal in size."
+      },
+      {
+        "specRef": "4.4.4.1",
+        "spec_text": "All of the fission products have kinetic energy.",
+        "why": "keyPoints[0].content says \"The energy comes out as kinetic energy of the fragments and as gamma radiation\", and writeBullets[4] repeats this. The released neutrons are also fission products with kinetic energy, but this is not taught. The point that all the products have kinetic energy is missing."
+      },
+      {
+        "specRef": "4.4.4.1",
+        "spec_text": "Students should be able to draw/interpret diagrams representing nuclear fission and how a chain reaction may occur.",
+        "why": "Every keyPoints[].diagram is null. The only reference is keyPoints[1].tutor_note: \"Be able to draw or describe the chain reaction diagram\". No fission or chain-reaction diagram is given for the student to interpret."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "Each fission reaction releases about 200 MeV. A chemical reaction releases only a few eV. That is about 50 million times less.",
+        "why": "The specification does not require MeV/eV units or energy values per reaction. These unfamiliar units could confuse the student."
+      },
+      {
+        "field": "tables[0].rows[3]",
+        "text": "~17.6 MeV per D-T reaction, but more per kg of fuel",
+        "why": "Specific energy values and per-kg comparisons go beyond the specification, which only says energy is released."
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "<strong>Moderator</strong>: this slows neutrons down to the right speed for U-235 to absorb them. It is usually water or graphite.",
+        "why": "The specification only says \"The chain reaction is controlled in a nuclear reactor\". Moderators and neutron speeds are not required at this level."
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "They are made of boron or cadmium.",
+        "why": "Control rod materials are not in the specification sections."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "This mass difference is converted to energy by E = mc².",
+        "why": "E = mc² is not in the specification sections. The spec only says \"some of the mass may be converted into the energy of radiation\" for fusion."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "²₁H + ³₁H → ⁴₂He + ¹₀n + energy",
+        "why": "The specific deuterium–tritium reaction and its products go beyond the specification, which only defines fusion in general terms."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "it needs extremely high temperatures (~100 million °C on Earth) and pressures. These overcome the electrostatic repulsion between positively charged nuclei.",
+        "why": "Fusion conditions, temperatures and electrostatic repulsion are not in specification section 4.4.4.2."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "risk of nuclear weapons spreading, as the waste can be used for weapons",
+        "why": "A detailed evaluation of nuclear power (proliferation, cost, named accidents, \"always 30 years away\") is not part of 4.4.4.1 or 4.4.4.2."
+      },
+      {
+        "field": "keyPoints[0].keyTerms[2].def",
+        "text": "A fissile isotope used as fuel in nuclear reactors; splits when it absorbs a slow neutron",
+        "why": "The term \"fissile\" and the need for slow neutrons are not required by the specification."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[2].keyTerms[1].def",
+        "text": "Hydrogen isotopes used as fuel in fusion reactions; abundant and available from seawater (deuterium)",
+        "correction": "Only deuterium is abundant and can be taken from seawater. Tritium is radioactive (half-life about 12 years) and extremely rare in nature. It has to be produced, usually from lithium, so it is not abundant.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "almost limitless fuel (hydrogen from seawater)",
+        "correction": "Deuterium can be taken from seawater, but tritium cannot. D-T fusion fuel supply is limited by tritium production (from lithium). It is not simply hydrogen from seawater.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "commonMistakes[2]",
+        "text": "Fusion's main product is helium. Its radioactivity is much shorter-lived than that of fission fragments.",
+        "correction": "Helium-4 is stable and not radioactive. The radioactivity linked to fusion comes from the tritium fuel and from reactor materials made radioactive by neutrons. It does not come from the helium product.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "two small nuclei combine to form a larger nucleus",
+        "spec_term": "the joining of two light nuclei to form a heavier nucleus"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "called fission fragments",
+        "spec_term": "fission products"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "as kinetic energy of the fragments and as gamma radiation",
+        "spec_term": "gamma rays"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "0: \"In nuclear fission, what triggers a uranium-235 nucleus to split?\" correct: \"Absorption of a slow neutron\"",
+        "key_point": "keyPoints[0].content: \"a large unstable nucleus absorbs a neutron\"",
+        "why": "The key point content never says the neutron must be slow. \"Slow\" appears only in keyPoints[0].keyTerms[2].def and in the moderator part of keyPoints[1]. The answer is not fully supported by the key point it sits with."
+      }
+    ],
+    "not_checked": [
+      "All keyPoints[].diagram fields are null, so no diagrams could be checked. Whether any separate chain-reaction or fission diagram exists outside the JSON could not be checked.",
+      "Checkpoint keys are \"0\", \"1\" and \"3\". I assumed checkpoint \"3\" sits with keyPoints[3]. There is no checkpoint for keyPoints[2] (Nuclear fusion), and I could not confirm how checkpoints are mapped to key points.",
+      "The intro statistic \"about 10% of the world's electricity\" is roughly consistent with current figures, but the exact figure was not checked against a source."
+    ]
+  }
+}

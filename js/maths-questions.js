@@ -274,7 +274,7 @@ const MathsQuestions = (() => {
           hint1: 'Compound means apply the multiplier repeatedly: 4000 × 1.035³.',
           hint2: '1.035³ = 1.035 × 1.035 × 1.035 ≈ 1.10872...',
           hint3: '4000 × 1.035³ ≈ 4434.90',
-          answer: 4434.90, tolerance: 0.01, unit: '£',
+          answer: 4434.87, tolerance: 0.005, unit: '£',
           explanation: 'Compound interest formula: A = P × (1 + r)ⁿ. Here P=4000, r=0.035, n=3.',
         },
       ],
@@ -456,7 +456,7 @@ const MathsQuestions = (() => {
       question: 'Work out 1⅔ × 2¼. Give your answer as a mixed number.',
       steps: [
         {
-          prompt: 'Convert both mixed numbers to improper fractions.',
+          prompt: 'Convert both mixed numbers to improper fractions. Enter 1⅔ as an improper fraction.',
           hint1: '1⅔ = (1×3 + 2)/3 and 2¼ = (2×4 + 1)/4.',
           hint2: '1⅔ = 5/3 and 2¼ = 9/4.',
           hint3: '5/3 and 9/4.',
@@ -543,7 +543,7 @@ const MathsQuestions = (() => {
       question: 'Work out 2⅓ + 1¾. Give your answer as a mixed number.',
       steps: [
         {
-          prompt: 'Convert both mixed numbers to improper fractions.',
+          prompt: 'Convert both mixed numbers to improper fractions. Enter 2⅓ as an improper fraction.',
           hint1: '2⅓ = (2×3 + 1)/3 and 1¾ = (1×4 + 3)/4.',
           hint2: '2⅓ = 7/3 and 1¾ = 7/4.',
           hint3: '7/3 and 7/4.',
@@ -693,7 +693,7 @@ const MathsQuestions = (() => {
           explanation: 'Total ratio parts = 8. One part = 72 ÷ 8 = £9.',
         },
         {
-          prompt: 'Calculate the two shares.',
+          prompt: 'Calculate the two shares. Enter the larger share.',
           hint1: 'Multiply one part by each ratio number.',
           hint2: '3 × £9 = ? and 5 × £9 = ?',
           hint3: '3 × £9 = £27 and 5 × £9 = £45.',
@@ -729,7 +729,7 @@ const MathsQuestions = (() => {
           explanation: 'HCF(24, 36) = 12. Divide both parts by 12 to simplify.',
         },
         {
-          prompt: 'Divide both parts by the HCF.',
+          prompt: 'Divide both parts by the HCF. Enter the second part of the simplified ratio.',
           hint1: '24 ÷ 12 = ? and 36 ÷ 12 = ?',
           hint2: '24 ÷ 12 = 2 and 36 ÷ 12 = 3.',
           hint3: 'Simplified ratio: 2 : 3.',
@@ -921,7 +921,7 @@ const MathsQuestions = (() => {
       question: 'y is inversely proportional to x. When x = 5, y = 4. Find y when x = 8.',
       steps: [
         {
-          prompt: 'Write the equation for inverse proportion.',
+          prompt: 'Write the equation for inverse proportion, y = k/x. Enter the value of k.',
           hint1: 'Inverse proportion: y = k/x, where k is a constant.',
           hint2: 'Substitute x = 5 and y = 4: 4 = k/5.',
           hint3: 'k = 20.',
@@ -957,7 +957,7 @@ const MathsQuestions = (() => {
       question: 'p is proportional to q². When p = 75, q = 5. Find p when q = 8.',
       steps: [
         {
-          prompt: 'Write the equation for this type of proportion.',
+          prompt: 'Write the equation for this type of proportion, p = kq². Enter the value of k.',
           hint1: 'p ∝ q² means p = kq².',
           hint2: 'Substitute p = 75, q = 5: 75 = k × 25.',
           hint3: 'k = 3.',
@@ -1461,7 +1461,7 @@ const MathsQuestions = (() => {
       question: 'Write 5.6 × 10⁴ as an ordinary number.',
       steps: [
         {
-          prompt: 'The power is +4. How far and in which direction do you move the decimal?',
+          prompt: 'The power is +4, so move the decimal point 4 places to the right. Write the ordinary number.',
           hint1: 'Positive power means the number is large — move decimal right.',
           hint2: 'Move the decimal 4 places to the right.',
           hint3: '5.6 → 56000.',
@@ -1507,7 +1507,7 @@ const MathsQuestions = (() => {
           explanation: 'When multiplying powers of 10, add the exponents: 10⁵ × 10³ = 10⁸.',
         },
         {
-          prompt: 'Write in standard form. (12.8 × 10⁸ is not standard form — adjust.)',
+          prompt: 'Write in standard form. (12.8 × 10⁸ is not standard form — adjust.) Enter the power of 10.',
           hint1: '12.8 = 1.28 × 10¹. So 12.8 × 10⁸ = 1.28 × 10¹ × 10⁸.',
           hint2: '10¹ × 10⁸ = 10⁹.',
           hint3: '1.28 × 10⁹.',
@@ -1553,7 +1553,7 @@ const MathsQuestions = (() => {
           explanation: 'When dividing powers of 10, subtract the exponents: 10⁷ ÷ 10⁴ = 10³.',
         },
         {
-          prompt: 'Write the final answer in standard form.',
+          prompt: 'Write the final answer in standard form. Enter it as an ordinary number.',
           hint1: 'Combine coefficient and power.',
           hint2: '3 × 10³.',
           hint3: '3 × 10³.',
@@ -1638,7 +1638,7 @@ const MathsQuestions = (() => {
           explanation: 'For addition in standard form, convert to ordinary numbers first: 5000 + 800 = 5800.',
         },
         {
-          prompt: 'Write 5800 in standard form.',
+          prompt: 'Write 5800 in standard form. Enter the power of 10.',
           hint1: 'Move the decimal to get a number between 1 and 10.',
           hint2: '5800 = 5.8 × 10³.',
           hint3: '5.8 × 10³.',
@@ -1676,7 +1676,7 @@ const MathsQuestions = (() => {
           explanation: 'Coefficient: 7 ÷ 8 = 0.875.',
         },
         {
-          prompt: 'Subtract the powers: 10⁻² ÷ 10⁻³.',
+          prompt: 'Work out 10⁻² ÷ 10⁻³. Enter it as an ordinary number.',
           hint1: '10⁻² ÷ 10⁻³ = 10^(−2 − (−3)) = 10^(−2+3).',
           hint2: '−2 + 3 = 1.',
           hint3: '10¹ = 10.',
@@ -1961,7 +1961,7 @@ const MathsQuestions = (() => {
           explanation: '6x + 4 = 46 → 6x = 42 → x = 7.',
         },
         {
-          prompt: 'Find the length and width by substituting x = 7.',
+          prompt: 'Find the length by substituting x = 7.',
           hint1: 'Length = 2(7) + 3 = ? Width = 7 − 1 = ?',
           hint2: 'Length = 17 cm, Width = 6 cm.',
           hint3: 'Length = 17 cm, Width = 6 cm.',
@@ -2037,7 +2037,7 @@ const MathsQuestions = (() => {
       question: 'Solve x² + 3x − 10 = 0.',
       steps: [
         {
-          prompt: 'Find two numbers that multiply to −10 and add to +3.',
+          prompt: 'Find two numbers that multiply to −10 and add to +3. Enter the positive one.',
           hint1: 'You need a × b = −10 and a + b = +3.',
           hint2: 'Try 5 and −2: 5 × (−2) = −10 and 5 + (−2) = 3.',
           hint3: 'Numbers are 5 and −2.',
@@ -2054,7 +2054,7 @@ const MathsQuestions = (() => {
           checkType: 'skip',
         },
         {
-          prompt: 'Solve: each bracket = 0. State both values of x.',
+          prompt: 'Solve: each bracket = 0. Enter the positive value of x.',
           hint1: 'x + 5 = 0 → x = −5. x − 2 = 0 → x = 2.',
           hint2: 'x = −5 or x = 2.',
           hint3: 'x = −5 or x = 2.',
@@ -2336,7 +2336,7 @@ const MathsQuestions = (() => {
       question: 'Use the quadratic formula to solve 2x² − 5x − 3 = 0. Give answers to 2 d.p.',
       steps: [
         {
-          prompt: 'Identify a, b, c from 2x² − 5x − 3 = 0.',
+          prompt: 'Identify a, b, c from 2x² − 5x − 3 = 0. Enter the value of a.',
           hint1: 'The quadratic formula needs a, b, c where ax² + bx + c = 0.',
           hint2: 'a = 2, b = −5, c = −3.',
           hint3: 'a = 2, b = −5, c = −3.',
@@ -2352,7 +2352,7 @@ const MathsQuestions = (() => {
           explanation: 'b² − 4ac = 25 + 24 = 49.',
         },
         {
-          prompt: 'Apply the formula: x = (−b ± √49) / (2a). Find both solutions.',
+          prompt: 'Apply the formula: x = (−b ± √49) / (2a). Find both solutions. Enter the positive one.',
           hint1: 'x = (5 ± 7) / 4.',
           hint2: 'x = (5+7)/4 = 3 or x = (5−7)/4 = −0.5.',
           hint3: 'x = 3 or x = −0.5.',
@@ -2386,7 +2386,7 @@ const MathsQuestions = (() => {
       question: 'Round 47,382 to the nearest thousand.',
       steps: [
         {
-          prompt: 'Look at the hundreds digit. Is it 5 or more?',
+          prompt: 'Look at the hundreds digit. If it is 5 or more, round up. If not, round down. Write the rounded number.',
           hint1: 'The hundreds digit is 3 (in 47,382).',
           hint2: '3 is less than 5, so round down.',
           hint3: 'Round down: the thousands digit stays as 7.',
@@ -2517,7 +2517,7 @@ const MathsQuestions = (() => {
       question: 'Work out 2⁵ × 2³, giving your answer as a power of 2.',
       steps: [
         {
-          prompt: 'Use the multiplication law: aᵐ × aⁿ = aᵐ⁺ⁿ. Add the powers.',
+          prompt: 'Use the multiplication law: aᵐ × aⁿ = aᵐ⁺ⁿ. Add the powers. Enter the new power of 2.',
           hint1: '5 + 3 = ?',
           hint2: '5 + 3 = 8.',
           hint3: '2⁸.',
@@ -2551,7 +2551,7 @@ const MathsQuestions = (() => {
           explanation: '12² = 144, so √144 = 12.',
         },
         {
-          prompt: 'Find ∛27, then add.',
+          prompt: 'Find ∛27, then add it to √144. Enter the total.',
           hint1: '3 × 3 × 3 = 27, so ∛27 = 3.',
           hint2: '12 + 3 = 15.',
           hint3: '15.',
@@ -2576,7 +2576,7 @@ const MathsQuestions = (() => {
       question: 'Simplify (3²)⁴.',
       steps: [
         {
-          prompt: 'Use the power law: (aᵐ)ⁿ = aᵐⁿ. Multiply the indices.',
+          prompt: 'Use the power law: (aᵐ)ⁿ = aᵐⁿ. Multiply the indices. Enter the new power of 3.',
           hint1: '2 × 4 = ?',
           hint2: '2 × 4 = 8.',
           hint3: '3⁸.',
@@ -2647,7 +2647,7 @@ const MathsQuestions = (() => {
           explanation: 'Rounded to 1 d.p. (precision 0.1 cm). Lower bound = 8.4 − 0.05 = 8.35 cm.',
         },
         {
-          prompt: 'State the error interval using inequality notation.',
+          prompt: 'State the error interval using inequality notation. Enter the upper bound.',
           hint1: 'Upper bound = 8.4 + 0.05 = 8.45 cm.',
           hint2: '8.35 ≤ length < 8.45.',
           hint3: '8.35 ≤ l < 8.45.',
@@ -2800,7 +2800,7 @@ const MathsQuestions = (() => {
           explanation: 'HCF(45, 60) = 15.',
         },
         {
-          prompt: 'Divide both parts by 15.',
+          prompt: 'Divide both parts by 15. Enter the second part of the simplified ratio.',
           hint1: '45 ÷ 15 = 3, 60 ÷ 15 = 4.',
           hint2: 'Ratio = 3 : 4.',
           hint3: '3 : 4.',
@@ -3228,7 +3228,7 @@ const MathsQuestions = (() => {
       question: 'Solve: 3x + 2y = 16 and 3x − y = 7.',
       steps: [
         {
-          prompt: 'Subtract equation 2 from equation 1.',
+          prompt: 'Subtract equation 2 from equation 1, then find y.',
           hint1: '(3x + 2y) − (3x − y) = 16 − 7.',
           hint2: '3y = 9.',
           hint3: 'y = 3.',
@@ -3236,11 +3236,11 @@ const MathsQuestions = (() => {
           explanation: '2y − (−y) = 3y. 3y = 9 → y = 3.',
         },
         {
-          prompt: 'Substitute y = 3 into 3x − y = 7.',
+          prompt: 'Substitute y = 3 into 3x − y = 7 and solve for x. Give x to 2 decimal places.',
           hint1: '3x − 3 = 7.',
           hint2: '3x = 10, so x = 10/3.',
           hint3: 'x = 10/3.',
-          answer: 10, tolerance: 0.1, unit: '',
+          answer: 3.3333, tolerance: 0.01, unit: '',
           explanation: '3x = 10 → x = 10/3.',
           displayAnswer: 'x = 10/3, y = 3',
         },
@@ -3546,7 +3546,7 @@ const MathsQuestions = (() => {
       question: 'Solve 5(x − 2) = 3(x + 4).',
       steps: [
         {
-          prompt: 'Expand the left-hand side.',
+          prompt: 'Expand the left-hand side, 5(x − 2). Enter the number term.',
           hint1: '5 × x = 5x and 5 × (−2) = ?',
           hint2: '5(x − 2) = 5x − 10.',
           hint3: 'LHS = 5x − 10',
@@ -3554,7 +3554,7 @@ const MathsQuestions = (() => {
           explanation: '5(x − 2) = 5x − 10.',
         },
         {
-          prompt: 'Expand the right-hand side.',
+          prompt: 'Expand the right-hand side, 3(x + 4). Enter the number term.',
           hint1: '3 × x = 3x and 3 × 4 = ?',
           hint2: '3(x + 4) = 3x + 12.',
           hint3: 'RHS = 3x + 12',
@@ -3602,7 +3602,7 @@ const MathsQuestions = (() => {
           displayAnswer: '3x + 2x = 20',
         },
         {
-          prompt: 'Simplify the left side.',
+          prompt: 'Simplify the left side. 5x = ?',
           hint1: '3x + 2x = ?',
           hint2: '5x',
           hint3: '5x = 20',
@@ -3698,7 +3698,7 @@ const MathsQuestions = (() => {
       question: 'A rectangle has length (x + 4) cm and width (x − 1) cm. Its area is 24 cm². Find x and state the dimensions.',
       steps: [
         {
-          prompt: 'Form a quadratic equation using area = length × width.',
+          prompt: 'Form a quadratic equation using area = length × width, with 0 on the right. Enter the number term.',
           hint1: '(x + 4)(x − 1) = 24.',
           hint2: 'Expand: x² + 3x − 4 = 24.',
           hint3: 'x² + 3x − 28 = 0',
@@ -3706,7 +3706,7 @@ const MathsQuestions = (() => {
           explanation: '(x+4)(x−1)=x²+3x−4=24 → x²+3x−28=0.',
         },
         {
-          prompt: 'Factorise x² + 3x − 28 = 0.',
+          prompt: 'Factorise x² + 3x − 28 = 0. Enter the positive value of x.',
           hint1: 'Find factors of −28 that add to 3: 7 and −4.',
           hint2: '(x + 7)(x − 4) = 0.',
           hint3: 'x = 4 (positive) or x = −7 (reject)',
@@ -4120,7 +4120,7 @@ const MathsQuestions = (() => {
       question: 'h(x) = 2x + 5. Find the value of x when h(x) = 13.',
       steps: [
         {
-          prompt: 'Set h(x) = 13 and solve for x.',
+          prompt: 'Set h(x) = 13 and subtract 5 from both sides. 2x = ?',
           hint1: '2x + 5 = 13. Subtract 5.',
           hint2: '2x = 8.',
           hint3: '2x = 8',
@@ -4286,7 +4286,7 @@ const MathsQuestions = (() => {
           explanation: 'gf(x) = (x+3)² = x²+6x+9. ✓',
         },
         {
-          prompt: 'Solve gf(x) = 25: (x+3)² = 25.',
+          prompt: 'Solve gf(x) = 25: (x+3)² = 25. Enter the positive solution.',
           hint1: 'Take the square root: x+3 = ±5.',
           hint2: 'x+3 = 5 → x = 2.',
           hint3: 'x = 2 (or x = −8)',
@@ -4472,7 +4472,7 @@ const MathsQuestions = (() => {
           displayAnswer: 'f⁻¹(x) = (x−3)/2',
         },
         {
-          prompt: 'Set f(x) = f⁻¹(x) and multiply through by 2.',
+          prompt: 'Set f(x) = f⁻¹(x) and multiply through by 2. Collect the x terms. 3x = ?',
           hint1: '2x+3 = (x−3)/2. Multiply by 2: 4x+6 = x−3.',
           hint2: '4x − x = −3 − 6.',
           hint3: '3x = −9',
@@ -4945,7 +4945,7 @@ const MathsQuestions = (() => {
       question: 'Find the coordinates of the intersection of the lines y = 3x − 4 and y = x + 2.',
       steps: [
         {
-          prompt: 'At the intersection, both y values are equal. Set 3x − 4 = x + 2 and collect x terms.',
+          prompt: 'At the intersection, both y values are equal. Set 3x − 4 = x + 2 and collect x terms. 2x = ?',
           hint1: '3x − 4 = x + 2 → 3x − x = ?',
           hint2: '2x = 2 + 4.',
           hint3: '2x = 6.',
@@ -14108,7 +14108,7 @@ const MathsQuestions = (() => {
           displayAnswer: "B' = (11, 5)",
         },
         {
-          prompt: 'Find image of C(1, 3).',
+          prompt: 'Find the image of C(1, 3). Enter its y-coordinate.',
           hint1: 'Vector from (−1,−1) to (1,3) = (2,4). Scale by 3: (6,12). Add centre.',
           hint2: '(6+(−1), 12+(−1)) = (5, 11).',
           hint3: '(5, 11).',
@@ -15195,7 +15195,7 @@ const MathsQuestions = (() => {
           explanation: 'CQ equals the radius → Q is on the circle.',
         },
         {
-          prompt: 'Is R(0, 0) inside or outside the circle?',
+          prompt: 'Is R(0, 0) inside or outside the circle? Enter the distance CR.',
           hint1: 'CR = √((0−3)² + (0−4)²) = √(9+16).',
           hint2: '√25 = 5.',
           hint3: 'R is also on the circle.',
@@ -18932,20 +18932,20 @@ const MathsQuestions = (() => {
           explanation: 'P(B|A) = 0.15 / 0.4 = 0.375.',
         },
         {
-          prompt: 'Compare P(B|A) with P(B). Are A and B independent?',
+          prompt: 'Compare P(B|A) with P(B). Enter P(B).',
           hint1: 'P(B) = 0.25. P(B|A) = 0.375.',
           hint2: '0.375 does not equal 0.25.',
           hint3: 'A and B are NOT independent.',
-          answer: 0.375, tolerance: 0.005, unit: '',
+          answer: 0.25, tolerance: 0.005, unit: '',
           explanation: 'P(B|A) = 0.375 does not equal P(B) = 0.25, so A and B are not independent.',
           displayAnswer: 'Not independent: P(B|A) = 0.375 but P(B) = 0.25',
         },
         {
-          prompt: 'Verify by checking P(A) x P(B) vs P(A and B).',
+          prompt: 'Verify by checking P(A) × P(B) against P(A and B). Enter P(A) × P(B).',
           hint1: 'P(A) x P(B) = 0.4 x 0.25 = 0.1.',
           hint2: 'P(A and B) = 0.15.',
           hint3: '0.1 does not equal 0.15, confirming NOT independent.',
-          answer: 0.375, tolerance: 0.005, unit: '',
+          answer: 0.1, tolerance: 0.005, unit: '',
           explanation: 'P(A)xP(B) = 0.1, but P(A and B) = 0.15. Not equal, so not independent. Confirmed.',
           displayAnswer: 'P(A)xP(B) = 0.1 but P(A and B) = 0.15 — not equal, confirming dependence',
         },

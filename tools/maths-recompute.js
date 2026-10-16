@@ -6,9 +6,14 @@
  * (js/maths.js _matchAnswer: |input − answer| ≤ tolerance, default 0.005).
  *
  *   node tools/maths-recompute.js            # sample of 40, seed 2026
+ *   node tools/maths-recompute.js --all [--base <commit>]
+ *                                            # all 600 (task 2.2), optionally on the bank
+ *                                            # as it was at <commit>; functions for the
+ *                                            # other 560 are in tools/maths-recompute-fns.js
  *
  * Reads js/maths-questions.js (never changes it). Writes
- * tools/maths-recompute-report.md. Exit code 1 if any checked step is wrong.
+ * tools/maths-recompute-report.md (sample) or tools/maths-recompute-all-report.md
+ * (--all). Exit code 1 if any checked step is wrong.
  *
  * Each sampled question has its own recompute function below, written from
  * the question text: the stored answers and hints are never used to get the
@@ -28,8 +33,10 @@ const ROOT = path.join(__dirname, '..');
 const SEED = 2026, SAMPLE = 40;
 const APP_TOL = 0.005;   // js/maths.js default when a step has no tolerance
 
-function loadBank() {
-  let src = fs.readFileSync(path.join(ROOT, 'js/maths-questions.js'), 'utf8');
+function loadBank(base) {
+  // base: a commit; the bank is read from that commit instead of the working tree
+  let src = base ? require('child_process').execSync(`git show ${base}:js/maths-questions.js`, { cwd: ROOT, maxBuffer: 1 << 26 }).toString('utf8')
+                 : fs.readFileSync(path.join(ROOT, 'js/maths-questions.js'), 'utf8');
   const anchor = '  return { getQuestion, getTestQuestions, hasQuestions };';
   if (!src.includes(anchor)) throw new Error('maths-questions.js export line not found');
   src = src.replace(anchor, '  globalThis.__bank = _allBank;\n' + anchor);
@@ -170,7 +177,17 @@ function same(stored, expected, tol) {
 }
 
 function main() {
-  const qs = sample(loadBank());
+  const ALL = process.argv.includes('--all');
+  if (ALL) Object.assign(RECOMPUTE, require('./maths-recompute-fns.js')({ N, gcd, lcm, sigFig, pennies }));
+  const bi = process.argv.indexOf('--base');
+  const BASE = bi > 0 ? process.argv[bi + 1] : null;
+  const bank = loadBank(BASE);
+  let qs = ALL ? bank : sample(bank);
+  if (ALL) {
+    const todo = qs.filter(q => !RECOMPUTE[q.id]);
+    if (todo.length) console.log(`No recompute function yet for ${todo.length} question(s); not checked: ${todo.map(q => q.id).join(', ')}`);
+    qs = qs.filter(q => RECOMPUTE[q.id]);
+  }
   const rows = [];
   for (const q of qs) {
     const fn = RECOMPUTE[q.id];
@@ -182,7 +199,13 @@ function main() {
       const tol = s.tolerance ?? APP_TOL;
       const skip = s.checkType === 'skip';
       let status, note = '', value = e;
-      if (e && typeof e === 'object') {
+      if (e && typeof e === 'object' && e.anyOf) {
+        // the prompt does not say which of these to enter; any of them is right
+        const hit = e.anyOf.find(v => same(s.answer, v, tol));
+        value = hit ?? e.anyOf[0];
+        status = hit !== undefined ? 'ambiguous' : 'wrong';
+        note = hit !== undefined ? e.ambiguous : `stored ${JSON.stringify(s.answer)} (tolerance ${tol}); recomputed one of ${e.anyOf.map(v => typeof v === 'number' ? +v.toFixed(6) : v).join(' / ')}`;
+      } else if (e && typeof e === 'object') {
         value = e.value;
         if (e.mismatch) { status = 'mismatch'; note = e.mismatch; }
         else { status = same(s.answer, e.value, tol) ? 'ambiguous' : 'wrong'; note = e.ambiguous; }
@@ -202,7 +225,7 @@ function main() {
   const errors = checked.filter(r => r.status === 'wrong' || r.status === 'mismatch');
   const qErr = new Set(errors.map(r => r.id));
   const rate = (100 * errors.length / checked.length).toFixed(1);
-  const head = `Sample: ${qs.length} questions (seed ${SEED}) of 600, ${rows.length} steps. Checked by the app: ${checked.length}; checkType skip: ${count('skip')}.\n` +
+  const head = `${ALL ? 'All' : 'Sample:'} ${qs.length} questions${ALL ? '' : ` (seed ${SEED}) of 600`}, ${rows.length} steps. Checked by the app: ${checked.length}; checkType skip: ${count('skip')}.\n` +
     `Checked steps: ok ${count('ok')}, ambiguous ${count('ambiguous')}, wrong ${count('wrong')}, mismatch ${count('mismatch')}.\n` +
     `Error rate (wrong + mismatch over checked steps): ${errors.length}/${checked.length} = ${rate}%. Questions with at least one error: ${qErr.size}/${qs.length}.`;
   console.log(head);
@@ -211,15 +234,17 @@ function main() {
   }
 
   const md = ['# Maths answer check', '', `Generated ${new Date().toISOString().slice(0, 10)} by tools/maths-recompute.js. Read-only: no question was changed.`, '', ...head.split('\n').map(l => l + '  '), '',
-    `Sampled ids: ${qs.map(q => q.id).join(', ')}`, '', '| Question | Step | Prompt | Stored | Recomputed | Status | Note |', '|---|---|---|---|---|---|---|'];
+    ...(ALL ? [] : [`Sampled ids: ${qs.map(q => q.id).join(', ')}`, '']), '| Question | Step | Prompt | Stored | Recomputed | Status | Note |', '|---|---|---|---|---|---|---|'];
   const cell = v => String(v ?? '').replace(/\|/g, '\\|').replace(/\n/g, ' ');
   for (const r of rows) {
     const val = typeof r.value === 'number' ? +r.value.toFixed(6) : r.value;
     md.push(`| ${r.id} | ${r.step} | ${cell(r.prompt.slice(0, 70))} | ${cell(JSON.stringify(r.stored))} | ${cell(val === null ? '—' : val)} | ${r.status} | ${cell(r.note)} |`);
   }
-  fs.writeFileSync(path.join(ROOT, 'tools/maths-recompute-report.md'), md.join('\n') + '\n');
-  console.log('\nReport: tools/maths-recompute-report.md');
+  const out = ALL ? (BASE ? `tools/maths-recompute-all-report-${BASE}.md` : 'tools/maths-recompute-all-report.md') : 'tools/maths-recompute-report.md';
+  fs.writeFileSync(path.join(ROOT, out), md.join('\n') + '\n');
+  console.log('\nReport: ' + out);
   process.exit(errors.length ? 1 : 0);
 }
 
-main();
+module.exports = { RECOMPUTE, N, gcd, lcm, sigFig, pennies, loadBank };
+if (require.main === module) main();

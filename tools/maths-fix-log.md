@@ -1,0 +1,130 @@
+# Maths bank fixes (task 2.2)
+
+Every change to js/maths-questions.js made from tools/maths-recompute.js --all, with old and new values.
+
+## Batch 1: bank questions 1–120 (pct-A01 … gph-C02)
+
+- pct-C01 step 1 | wrong: £4000 × 1.035³ = £4434.87 to the nearest penny; stored 4434.9 with tolerance 0.01 marked the right answer wrong
+  - answer OLD: 4434.90
+  - answer NEW: 4434.87
+  - tolerance OLD: 0.01
+  - tolerance NEW: 0.005
+- frc-B01 step 0 | ambiguous: two fractions asked for, one box
+  - prompt OLD: 'Convert both mixed numbers to improper fractions.'
+  - prompt NEW: 'Convert both mixed numbers to improper fractions. Enter 1⅔ as an improper fraction.'
+- frc-B03 step 0 | ambiguous: two fractions asked for, one box
+  - prompt OLD: 'Convert both mixed numbers to improper fractions.'
+  - prompt NEW: 'Convert both mixed numbers to improper fractions. Enter 2⅓ as an improper fraction.'
+- rat-A01 step 1 | ambiguous: two shares asked for, one box
+  - prompt OLD: 'Calculate the two shares.'
+  - prompt NEW: 'Calculate the two shares. Enter the larger share.'
+- rat-A02 step 1 | ambiguous: two parts asked for, one box
+  - prompt OLD: 'Divide both parts by the HCF.'
+  - prompt NEW: 'Divide both parts by the HCF. Enter the second part of the simplified ratio.'
+- rat-C01 step 0 | ambiguous: prompt asked for an equation; the box takes k
+  - prompt OLD: 'Write the equation for inverse proportion.'
+  - prompt NEW: 'Write the equation for inverse proportion, y = k/x. Enter the value of k.'
+- rat-C02 step 0 | ambiguous: prompt asked for an equation; the box takes k
+  - prompt OLD: 'Write the equation for this type of proportion.'
+  - prompt NEW: 'Write the equation for this type of proportion, p = kq². Enter the value of k.'
+- stf-A03 step 0 | ambiguous: prompt asked how far to move the point; the box takes the number
+  - prompt OLD: 'The power is +4. How far and in which direction do you move the decimal?'
+  - prompt NEW: 'The power is +4, so move the decimal point 4 places to the right. Write the ordinary number.'
+- stf-B01 step 2 | ambiguous: one box for a standard-form answer; it takes the power
+  - prompt OLD: 'Write in standard form. (12.8 × 10⁸ is not standard form — adjust.)'
+  - prompt NEW: 'Write in standard form. (12.8 × 10⁸ is not standard form — adjust.) Enter the power of 10.'
+- stf-B02 step 2 | ambiguous: one box for a standard-form answer; it takes the ordinary number
+  - prompt OLD: 'Write the final answer in standard form.'
+  - prompt NEW: 'Write the final answer in standard form. Enter it as an ordinary number.'
+- stf-C01 step 1 | ambiguous: one box for a standard-form answer; it takes the power
+  - prompt OLD: 'Write 5800 in standard form.'
+  - prompt NEW: 'Write 5800 in standard form. Enter the power of 10.'
+- stf-C02 step 1 | ambiguous: the box takes the value, not the power
+  - prompt OLD: 'Subtract the powers: 10⁻² ÷ 10⁻³.'
+  - prompt NEW: 'Work out 10⁻² ÷ 10⁻³. Enter it as an ordinary number.'
+- eq-B03 step 2 | ambiguous: length and width asked for, one box (the box takes the length)
+  - prompt OLD: 'Find the length and width by substituting x = 7.'
+  - prompt NEW: 'Find the length by substituting x = 7.'
+- eq-C02 step 0 | ambiguous: two numbers asked for, one box
+  - prompt OLD: 'Find two numbers that multiply to −10 and add to +3.'
+  - prompt NEW: 'Find two numbers that multiply to −10 and add to +3. Enter the positive one.'
+- eq-C02 step 2 | ambiguous: both values asked for, one box
+  - prompt OLD: 'Solve: each bracket = 0. State both values of x.'
+  - prompt NEW: 'Solve: each bracket = 0. Enter the positive value of x.'
+- sub-C02 step 0 | ambiguous: three values asked for, one box
+  - prompt OLD: 'Identify a, b, c from 2x² − 5x − 3 = 0.'
+  - prompt NEW: 'Identify a, b, c from 2x² − 5x − 3 = 0. Enter the value of a.'
+- sub-C02 step 2 | ambiguous: two solutions asked for, one box
+  - prompt OLD: 'Apply the formula: x = (−b ± √49) / (2a). Find both solutions.'
+  - prompt NEW: 'Apply the formula: x = (−b ± √49) / (2a). Find both solutions. Enter the positive one.'
+- int-A01 step 0 | mismatch: prompt asked a yes/no question; the box takes the rounded number
+  - prompt OLD: 'Look at the hundreds digit. Is it 5 or more?'
+  - prompt NEW: 'Look at the hundreds digit. If it is 5 or more, round up. If not, round down. Write the rounded number.'
+- pow-A01 step 0 | ambiguous: index or value
+  - prompt OLD: 'Use the multiplication law: aᵐ × aⁿ = aᵐ⁺ⁿ. Add the powers.'
+  - prompt NEW: 'Use the multiplication law: aᵐ × aⁿ = aᵐ⁺ⁿ. Add the powers. Enter the new power of 2.'
+- pow-A02 step 1 | ambiguous: ∛27 or the total
+  - prompt OLD: 'Find ∛27, then add.'
+  - prompt NEW: 'Find ∛27, then add it to √144. Enter the total.'
+- pow-A03 step 0 | ambiguous: index or value
+  - prompt OLD: 'Use the power law: (aᵐ)ⁿ = aᵐⁿ. Multiply the indices.'
+  - prompt NEW: 'Use the power law: (aᵐ)ⁿ = aᵐⁿ. Multiply the indices. Enter the new power of 3.'
+- bnd-A01 step 1 | ambiguous: two bounds, one box
+  - prompt OLD: 'State the error interval using inequality notation.'
+  - prompt NEW: 'State the error interval using inequality notation. Enter the upper bound.'
+- nrt-A02 step 1 | ambiguous: two parts asked for, one box
+  - prompt OLD: 'Divide both parts by 15.'
+  - prompt NEW: 'Divide both parts by 15. Enter the second part of the simplified ratio.'
+- sim-A02 step 0 | ambiguous: 3y = 9 or y
+  - prompt OLD: 'Subtract equation 2 from equation 1.'
+  - prompt NEW: 'Subtract equation 2 from equation 1, then find y.'
+- sim-A02 step 1 | wrong: x = 10/3; stored 10 (the value of 3x) marked the right answer wrong
+  - prompt OLD: 'Substitute y = 3 into 3x − y = 7.'
+  - prompt NEW: 'Substitute y = 3 into 3x − y = 7 and solve for x. Give x to 2 decimal places.'
+  - answer OLD: 10
+  - answer NEW: 3.3333
+  - tolerance OLD: 0.1
+  - tolerance NEW: 0.01
+- eq-B05 step 0 | ambiguous: an expansion asked for, one box
+  - prompt OLD: 'Expand the left-hand side.'
+  - prompt NEW: 'Expand the left-hand side, 5(x − 2). Enter the number term.'
+- eq-B05 step 1 | ambiguous: an expansion asked for, one box
+  - prompt OLD: 'Expand the right-hand side.'
+  - prompt NEW: 'Expand the right-hand side, 3(x + 4). Enter the number term.'
+- eq-B06 step 1 | mismatch: prompt asked to simplify the left side (5x); the box takes the right side, 20
+  - prompt OLD: 'Simplify the left side.'
+  - prompt NEW: 'Simplify the left side. 5x = ?'
+- eq-C04 step 0 | ambiguous: an equation asked for, one box
+  - prompt OLD: 'Form a quadratic equation using area = length × width.'
+  - prompt NEW: 'Form a quadratic equation using area = length × width, with 0 on the right. Enter the number term.'
+- eq-C04 step 1 | ambiguous: x = 4 or x = −7
+  - prompt OLD: 'Factorise x² + 3x − 28 = 0.'
+  - prompt NEW: 'Factorise x² + 3x − 28 = 0. Enter the positive value of x.'
+- fn-A03 step 0 | ambiguous: 2x = 8 or x = 4
+  - prompt OLD: 'Set h(x) = 13 and solve for x.'
+  - prompt NEW: 'Set h(x) = 13 and subtract 5 from both sides. 2x = ?'
+- fn-B03 step 1 | ambiguous: x = 2 or x = −8
+  - prompt OLD: 'Solve gf(x) = 25: (x+3)² = 25.'
+  - prompt NEW: 'Solve gf(x) = 25: (x+3)² = 25. Enter the positive solution.'
+- fn-C02 step 1 | ambiguous: an equation asked for, one box
+  - prompt OLD: 'Set f(x) = f⁻¹(x) and multiply through by 2.'
+  - prompt NEW: 'Set f(x) = f⁻¹(x) and multiply through by 2. Collect the x terms. 3x = ?'
+- gph-B06 step 0 | ambiguous: 2x = 6, one box
+  - prompt OLD: 'At the intersection, both y values are equal. Set 3x − 4 = x + 2 and collect x terms.'
+  - prompt NEW: 'At the intersection, both y values are equal. Set 3x − 4 = x + 2 and collect x terms. 2x = ?'
+- tr-B02 step 2 | ambiguous (sample report): image is (5, 11); the box takes the y-coordinate
+  - prompt OLD: 'Find image of C(1, 3).'
+  - prompt NEW: 'Find the image of C(1, 3). Enter its y-coordinate.'
+- pyth-C02 step 2 | ambiguous (sample report): prompt asked inside or outside; the box takes CR
+  - prompt OLD: 'Is R(0, 0) inside or outside the circle?'
+  - prompt NEW: 'Is R(0, 0) inside or outside the circle? Enter the distance CR.'
+- venn-C03 step 2 | mismatch (sample report): prompt asked whether A and B are independent; the box now takes P(B), which is compared with P(B|A) = 0.375
+  - prompt OLD: 'Compare P(B|A) with P(B). Are A and B independent?'
+  - prompt NEW: 'Compare P(B|A) with P(B). Enter P(B).'
+  - answer OLD: 0.375
+  - answer NEW: 0.25
+- venn-C03 step 3 | wrong (sample report): P(A) × P(B) = 0.4 × 0.25 = 0.1; stored 0.375
+  - prompt OLD: 'Verify by checking P(A) x P(B) vs P(A and B).'
+  - prompt NEW: 'Verify by checking P(A) × P(B) against P(A and B). Enter P(A) × P(B).'
+  - answer OLD: 0.375
+  - answer NEW: 0.1

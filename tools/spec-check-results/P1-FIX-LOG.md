@@ -1,0 +1,227 @@
+# P1 Energy — check-rewrite failures and the triage decision behind each
+
+Output of `node tools/check-rewrite.js d08b060` after the P1 fix round. One line per failure: lesson | what changed | triage ID. "Step 2"/"step 3d" marks a change the task rules require that has no triage ID.
+
+- p1-conservation | `intro: number "three" lost` — cut perpetual-motion sentence from intro, so "three things" became "two things" | abov1
+- p1-conservation | `keyPoints[2].writeBullets: 5 items became 4` — perpetual motion write bullet removed | abov1
+- p1-conservation | `keyPoints[2].keyTerms: must not change` — "perpetual motion" key term removed | abov1
+- p1-conservation | `keyPoints[3].writeBullets: 6 items became 8` — regenerative braking bullet removed; thermal conductivity, building walls and testing-insulators bullets added | abov0, miss0, miss1, miss2
+- p1-conservation | `keyPoints[3].writeBullets[2]: number "double" lost` — bullets shifted after the regenerative braking cut; the double glazing bullet is unchanged, now at [3] | abov0
+- p1-conservation | `keyPoints[3].keyTerms: must not change` — regenerative braking key term replaced by thermal conductivity | abov0, miss0
+- p1-conservation | `keyPoints[3].memTip: number "four" lost` — memTip "LSRI ... four ways" became "LIS ... three ways" after regenerative braking cut | abov0
+- p1-conservation | `tables: must not change` — rows[2][4] "Better conductors, cooling" became lubricate bearings / lower-resistance wires; "Electric car (braking)" row removed | fact1, abov0
+- p1-conservation | `checkpoints: keys changed` — checkpoint 1 added for key point 1; checkpoint 3 now tests thermal conductivity, not regenerative braking | chec1, chec0, abov0
+- p1-conservation | `commonMistakes: 5 items became 4` — perpetual motion mistake removed | abov1
+- p1-conservation | `keyPoints[2].content: bold term "perpetual motion machine" lost` — perpetual motion removed from key point 2 content | abov1
+- p1-conservation | `keyPoints[2].content: key term "perpetual motion" lost` — perpetual motion removed from key point 2 content | abov1
+- p1-conservation | `keyPoints[3].content: bold term "Regenerative braking" lost` — regenerative braking removed from key point 3 content | abov0
+- p1-conservation | `keyPoints[3].content: key term "regenerative braking" lost` — regenerative braking removed from key point 3 content | abov0
+- p1-efficiency | `introTips[0]: number "100" lost` — "No machine is ever 100% efficient" became "Most devices waste some energy" | fact4
+- p1-efficiency | `intro: number "100" lost` — intro: petrol engine now "energy from fuel"; LED "90 units" example, EV and energy ratings removed | fact0, fact3, abov4, abov1
+- p1-efficiency | `intro: number "90" lost` — intro: petrol engine now "energy from fuel"; LED "90 units" example, EV and energy ratings removed | fact0, fact3, abov4, abov1
+- p1-efficiency | `keyPoints[2].content: number "90" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].content: number "70" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].content: number "80" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].content: number "5" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].content: number "90" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].content: number "25" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].content: number "30" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].content: number "85" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].content: number "90" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].content: number "15" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].content: number "20" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].content: number "25" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].writeBullets[0]: number "90" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].writeBullets[1]: number "5" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].writeBullets[1]: number "95" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].writeBullets[2]: number "90" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].writeBullets[3]: number "25" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].writeBullets[3]: number "30" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].writeBullets[4]: number "85" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].writeBullets[4]: number "90" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].writeBullets[5]: number "25" lost` — device efficiency figures (LED, fluorescent, filament, motor, petrol, EV, solar, human body) replaced by comparing values given in the question | abov2, fact2, fact3, abov3, abov4
+- p1-efficiency | `keyPoints[2].keyTerms: must not change` — LED (~90%) and incandescent (~5%) key term figures removed | fact3, abov2
+- p1-efficiency | `keyPoints[2].memTip: number "90" lost` — "LED ≈ 90%, filament ≈ 5%" memTip replaced | fact3, abov2
+- p1-efficiency | `keyPoints[2].memTip: number "5" lost` — "LED ≈ 90%, filament ≈ 5%" memTip replaced | fact3, abov2
+- p1-efficiency | `keyPoints[3].heading: must not change` — heading "Improving efficiency and energy ratings" became "Improving efficiency" | abov1
+- p1-efficiency | `keyPoints[3].content: number "200" lost` — payback example (£200, £40, 5 years, "cheap one") and energy labels cut | abov0, abov1
+- p1-efficiency | `keyPoints[3].content: number "40" lost` — payback example (£200, £40, 5 years, "cheap one") and energy labels cut | abov0, abov1
+- p1-efficiency | `keyPoints[3].content: number "200" lost` — payback example (£200, £40, 5 years, "cheap one") and energy labels cut | abov0, abov1
+- p1-efficiency | `keyPoints[3].content: number "40" lost` — payback example (£200, £40, 5 years, "cheap one") and energy labels cut | abov0, abov1
+- p1-efficiency | `keyPoints[3].content: number "5" lost` — payback example (£200, £40, 5 years, "cheap one") and energy labels cut | abov0, abov1
+- p1-efficiency | `keyPoints[3].content: number "one" lost` — payback example (£200, £40, 5 years, "cheap one") and energy labels cut | abov0, abov1
+- p1-efficiency | `keyPoints[3].writeBullets: 6 items became 3` — regenerative braking, energy label and payback bullets cut | abov4, abov1, abov0
+- p1-efficiency | `keyPoints[3].keyTerms: must not change` — energy label and payback key terms cut; lubrication key term added | abov1, abov0
+- p1-efficiency | `keyPoints[3].tutor_note: number "6" lost` — payback tutor note ("6-mark") replaced | abov0
+- p1-efficiency | `tables: must not change` — fluorescent, electric vehicle, solar panel and human body rows and the approximate-efficiency column removed | fact2, abov4, fact5, abov3, abov2, fact3
+- p1-efficiency | `checkpoints: keys changed` — checkpoint 2 added for key point 2 (compare two devices from given values) | chec0
+- p1-efficiency | `checkpoints.1.question: number "60" lost` — checkpoint 1 (LED ~90% vs filament ~5%) replaced by a calculation from given values | chec0, fact3
+- p1-efficiency | `checkpoints.1.options[0]: number "90" lost` — checkpoint 1 (LED ~90% vs filament ~5%) replaced by a calculation from given values | chec0, fact3
+- p1-efficiency | `checkpoints.1.options[0]: number "5" lost` — checkpoint 1 (LED ~90% vs filament ~5%) replaced by a calculation from given values | chec0, fact3
+- p1-efficiency | `checkpoints.1.correctFeedback: number "90" lost` — checkpoint 1 (LED ~90% vs filament ~5%) replaced by a calculation from given values | chec0, fact3
+- p1-efficiency | `checkpoints.1.correctFeedback: number "60" lost` — checkpoint 1 (LED ~90% vs filament ~5%) replaced by a calculation from given values | chec0, fact3
+- p1-efficiency | `checkpoints.1.correctFeedback: number "54" lost` — checkpoint 1 (LED ~90% vs filament ~5%) replaced by a calculation from given values | chec0, fact3
+- p1-efficiency | `checkpoints.1.correctFeedback: number "5" lost` — checkpoint 1 (LED ~90% vs filament ~5%) replaced by a calculation from given values | chec0, fact3
+- p1-efficiency | `checkpoints.1.correctFeedback: number "3" lost` — checkpoint 1 (LED ~90% vs filament ~5%) replaced by a calculation from given values | chec0, fact3
+- p1-efficiency | `checkpoints.1.wrongFeedback: number "90" lost` — checkpoint 1 (LED ~90% vs filament ~5%) replaced by a calculation from given values | chec0, fact3
+- p1-efficiency | `checkpoints.1.wrongFeedback: number "60" lost` — checkpoint 1 (LED ~90% vs filament ~5%) replaced by a calculation from given values | chec0, fact3
+- p1-efficiency | `checkpoints.1.wrongFeedback: number "5" lost` — checkpoint 1 (LED ~90% vs filament ~5%) replaced by a calculation from given values | chec0, fact3
+- p1-efficiency | `checkpoints.3.question: number "150" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `checkpoints.3.question: number "30" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `checkpoints.3.options[0]: number "5" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `checkpoints.3.options[1]: number "3" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `checkpoints.3.options[2]: number "15" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `checkpoints.3.options[3]: number "50" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `checkpoints.3.correctFeedback: number "150" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `checkpoints.3.correctFeedback: number "30" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `checkpoints.3.correctFeedback: number "5" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `checkpoints.3.wrongFeedback: number "150" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `checkpoints.3.wrongFeedback: number "30" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `checkpoints.3.wrongFeedback: number "5" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `checkpoints.3.wrongFeedback: number "5" lost` — payback checkpoint replaced by an improving-efficiency checkpoint | abov0
+- p1-efficiency | `examTips: 4 items became 3` — payback exam tip cut | abov0
+- p1-efficiency | `revisionCardBullets: 12 items became 9` — LED/filament, EV/petrol, solar, human body, label and payback bullets cut | fact3, abov2, abov4, abov3, abov1, abov0
+- p1-efficiency | `revisionCardBullets[4]: number "90" lost` — LED/filament, EV/petrol, solar, human body, label and payback bullets cut | fact3, abov2, abov4, abov3, abov1, abov0
+- p1-efficiency | `revisionCardBullets[4]: number "5" lost` — LED/filament, EV/petrol, solar, human body, label and payback bullets cut | fact3, abov2, abov4, abov3, abov1, abov0
+- p1-efficiency | `revisionCardBullets[5]: number "85" lost` — LED/filament, EV/petrol, solar, human body, label and payback bullets cut | fact3, abov2, abov4, abov3, abov1, abov0
+- p1-efficiency | `revisionCardBullets[5]: number "90" lost` — LED/filament, EV/petrol, solar, human body, label and payback bullets cut | fact3, abov2, abov4, abov3, abov1, abov0
+- p1-efficiency | `revisionCardBullets[5]: number "25" lost` — LED/filament, EV/petrol, solar, human body, label and payback bullets cut | fact3, abov2, abov4, abov3, abov1, abov0
+- p1-efficiency | `revisionCardBullets[5]: number "30" lost` — LED/filament, EV/petrol, solar, human body, label and payback bullets cut | fact3, abov2, abov4, abov3, abov1, abov0
+- p1-efficiency | `revisionCardBullets[6]: number "15" lost` — LED/filament, EV/petrol, solar, human body, label and payback bullets cut | fact3, abov2, abov4, abov3, abov1, abov0
+- p1-efficiency | `revisionCardBullets[6]: number "20" lost` — LED/filament, EV/petrol, solar, human body, label and payback bullets cut | fact3, abov2, abov4, abov3, abov1, abov0
+- p1-efficiency | `revisionCardBullets[7]: number "25" lost` — LED/filament, EV/petrol, solar, human body, label and payback bullets cut | fact3, abov2, abov4, abov3, abov1, abov0
+- p1-efficiency | `keyPoints[0].content: bold term "efficiency = useful output energy ÷ total input energy" lost` — equation now "useful output energy transfer ÷ total input energy transfer" | wron0
+- p1-efficiency | `keyPoints[1].content: bold term "efficiency = useful output power (W) ÷ total input power (W)" lost` — equation now "useful power output ÷ total power input" | wron1
+- p1-efficiency | `keyPoints[2].content: bold term "Fluorescent tubes" lost` — fluorescent tube figures removed | fact2
+- p1-efficiency | `keyPoints[2].content: bold term "Electric vehicles" lost` — electric vehicles cut | abov4
+- p1-efficiency | `keyPoints[2].content: bold term "Solar panels" lost` — solar panel figure removed | abov2, fact5
+- p1-efficiency | `keyPoints[2].content: bold term "The human body" lost` — human body efficiency cut | abov3
+- p1-efficiency | `keyPoints[3].content: bold term "Regenerative systems" lost` — regenerative braking cut | abov4
+- p1-efficiency | `keyPoints[3].content: bold term "Energy efficiency labels" lost` — energy labels cut | abov1
+- p1-efficiency | `keyPoints[3].content: bold term "A–G energy label" lost` — energy labels cut | abov1
+- p1-efficiency | `keyPoints[3].content: bold term "Payback time" lost` — payback time cut | abov0
+- p1-efficiency | `keyPoints[3].content: bold term "5 years" lost` — payback time cut | abov0
+- p1-efficiency | `keyPoints[3].content: key term "energy efficiency label" lost` — energy labels cut | abov1
+- p1-efficiency | `keyPoints[3].content: key term "payback time" lost` — payback time cut | abov0
+- p1-energy-stores | `keyPoints[1].keyTerms: must not change` — "Heating" key term definition no longer lists radiation | fact4
+- p1-energy-stores | `keyPoints[2].writeBullets: 4 items became 5` — write bullet added: "System — an object or group of objects" | miss0
+- p1-energy-stores | `tables: must not change` — rows[6][3] electrostatic: opposite charges pulled apart or like charges pushed together; rows[3][1] thermal: every object, depends on temperature; rows[4][1] "Chemical bonds" became "Food, fuels and batteries" | fact2, fact5, step 3d grep (no "bond" in Physics, not a triage ID)
+- p1-heating | `keyPoints[0].content: number "1" lost` — "(1 K is the same size change.)" removed | abov2
+- p1-heating | `keyPoints[0].keyTerms: must not change` — Δθ definition "(°C or K)" became "(°C)" | abov2
+- p1-heating | `keyPoints[2].keyTerms: must not change` — thermal equilibrium key term removed | abov3
+- p1-heating | `keyPoints[3].content: number "two" lost` — thermal equilibrium sentence ("two objects") removed | abov3
+- p1-heating | `keyPoints[3].writeBullets: 5 items became 4` — thermal equilibrium write bullet removed | abov3
+- p1-heating | `keyPoints[3].writeBullets[3]: number "two" lost` — bullets shifted after thermal equilibrium bullet removed | abov3
+- p1-heating | `keyPoints[3].keyTerms: must not change` — thermal equilibrium key term removed; temperature unit "°C or K" became "°C" | abov3, abov2
+- p1-heating | `tables: must not change` — "Air (at const. pressure)" became "Air"; aluminium "Low SHC" note removed | abov1, fact2
+- p1-heating | `checkpoints: keys changed` — checkpoint 1 added for key point 1 (cooling calculation); task step 2 requires one checkpoint per key point | step 2 checkpoint rule, fact1
+- p1-heating | `checkpoints.3.correctFeedback: number "4200" lost` — coastal-climate checkpoint replaced by internal energy versus temperature | chec0
+- p1-heating | `checkpoints.3.wrongFeedback: number "4200" lost` — coastal-climate checkpoint replaced by internal energy versus temperature | chec0
+- p1-heating | `keyPoints[2].content: key term "thermal equilibrium" lost` — thermal equilibrium cut | abov3
+- p1-heating | `keyPoints[3].content: bold term "Thermal equilibrium" lost` — thermal equilibrium cut | abov3
+- p1-heating | `keyPoints[3].content: key term "thermal equilibrium" lost` — thermal equilibrium cut | abov3
+- p1-kinetic-potential | `keyPoints[1].content: number "10" lost` — "Use 10 in non-calculator questions" removed; use the value of g given | fact0
+- p1-kinetic-potential | `keyPoints[1].writeBullets[1]: number "9.8" lost` — "g = 9.8 N/kg (use 10 in non-calculator)" became "use the value of g given in the question" | fact2
+- p1-kinetic-potential | `keyPoints[1].writeBullets[1]: number "10" lost` — "g = 9.8 N/kg (use 10 in non-calculator)" became "use the value of g given in the question" | fact2
+- p1-kinetic-potential | `keyPoints[1].keyTerms: must not change` — g definition: non-calculator rule removed | fact3
+- p1-kinetic-potential | `keyPoints[4].keyTerms: must not change` — key term "ΔT" became "Δθ" | wron4
+- p1-kinetic-potential | `checkpoints: keys changed` — checkpoint 4 added for key point 4 (ΔE = mcΔθ); task step 2 requires one checkpoint per key point | step 2 checkpoint rule
+- p1-kinetic-potential | `commonMistakes[1]: number "10" lost` — non-calculator rule replaced by "use the value of g given" | fact1
+- p1-kinetic-potential | `revisionCardBullets[2]: number "9.8" lost` — "g = 9.8 N/kg (use 10 for non-calculator)" became "use the value of g given" | fact4
+- p1-kinetic-potential | `revisionCardBullets[2]: number "10" lost` — "g = 9.8 N/kg (use 10 for non-calculator)" became "use the value of g given" | fact4
+- p1-kinetic-potential | `keyPoints[4].content: bold term "Q = mcΔT" lost` — Q = mcΔT became ΔE = mcΔθ | wron0
+- p1-kinetic-potential | `keyPoints[4].content: key term "ΔT" lost` — ΔT became Δθ | wron2
+- p1-national-grid | `keyPoints: 4 items became 3` — generating-electricity key point cut | abov0
+- p1-national-grid | `keyPoints[0].content: number "400" lost` — 33 kV and 11 kV stages cut; "400 kV down to" removed with them | abov7
+- p1-national-grid | `keyPoints[0].content: number "33" lost` — 33 kV and 11 kV stages cut; "400 kV down to" removed with them | abov7
+- p1-national-grid | `keyPoints[0].content: number "11" lost` — 33 kV and 11 kV stages cut; "400 kV down to" removed with them | abov7
+- p1-national-grid | `keyPoints[0].keyTerms: must not change` — P = IV definition: "voltage" became "potential difference" | wron0
+- p1-national-grid | `keyPoints[1].heading: must not change` — "Transformers — how they work" became "Step-up and step-down transformers" | abov3
+- p1-national-grid | `keyPoints[1].content: number "100" lost` — transformer equation, V₁I₁ = V₂I₂, ideal transformer and worked example cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: number "200" lost` — transformer equation, V₁I₁ = V₂I₂, ideal transformer and worked example cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: number "2000" lost` — transformer equation, V₁I₁ = V₂I₂, ideal transformer and worked example cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: number "230" lost` — transformer equation, V₁I₁ = V₂I₂, ideal transformer and worked example cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: number "230" lost` — transformer equation, V₁I₁ = V₂I₂, ideal transformer and worked example cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: number "2000" lost` — transformer equation, V₁I₁ = V₂I₂, ideal transformer and worked example cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: number "200" lost` — transformer equation, V₁I₁ = V₂I₂, ideal transformer and worked example cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: number "2300" lost` — transformer equation, V₁I₁ = V₂I₂, ideal transformer and worked example cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: number "1" lost` — transformer equation, V₁I₁ = V₂I₂, ideal transformer and worked example cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: number "10" lost` — transformer equation, V₁I₁ = V₂I₂, ideal transformer and worked example cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].writeBullets: 5 items became 3` — AC, transformer equation and ideal-transformer bullets cut | abov3, abov1, abov2
+- p1-national-grid | `keyPoints[1].keyTerms: must not change` — V₁/V₂ = n₁/n₂ and V₁I₁ = V₂I₂ key terms cut; step-up/down definitions use potential difference, turns removed | abov1, abov2, abov3, wron1
+- p1-national-grid | `keyPoints[2].heading: must not change` — old key point 2 cut, so key point 2 is now the resources key point; heading "Energy sources..." became "Energy resources and the environment" | abov0, wron3
+- p1-national-grid | `keyPoints[2].writeBullets: 6 items became 12` — old key point 2 cut; resources bullets now cover uses, geothermal, water waves, bio-fuel, acid rain, oil spills, trends, limits of science | abov0, miss0, miss1, miss2, miss3, miss4
+- p1-national-grid | `keyPoints[2].keyTerms: must not change` — old key point 2 cut; renewable redefined, baseload term cut, intermittent covers solar at night | abov0, wron4, abov4, fact0
+- p1-national-grid | `keyPoints[2].memTip: number "one" lost` — old key point 2 (memTip "odd one out") cut; key point 2 is now the resources key point | abov0
+- p1-national-grid | `tables: must not change` — title and header "sources" became "resources"; baseload, solar efficiency figure and pumped hydro removed; Biomass became Bio-fuel; acid rain and habitat loss added; geothermal and water waves rows added | wron3, abov4, abov5, abov6, wron2, miss0, miss4
+- p1-national-grid | `checkpoints: keys changed` — turbine checkpoint cut with its key point; checkpoint 2 now tests the resources key point | chec0, abov0
+- p1-national-grid | `checkpoints.1.question: number "500" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.question: number "5000" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.question: number "230" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.options[0]: number "2300" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.options[1]: number "23" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.options[2]: number "230" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.options[3]: number "11,500" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.correctFeedback: number "230" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.correctFeedback: number "5000" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.correctFeedback: number "500" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.correctFeedback: number "230" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.correctFeedback: number "10" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.correctFeedback: number "2300" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.correctFeedback: number "1" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.correctFeedback: number "10" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.wrongFeedback: number "230" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.wrongFeedback: number "5000" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.wrongFeedback: number "500" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.wrongFeedback: number "230" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.wrongFeedback: number "10" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `checkpoints.1.wrongFeedback: number "2300" lost` — transformer-equation checkpoint replaced by a step-down transformer checkpoint | abov1
+- p1-national-grid | `commonMistakes: 5 items became 4` — transformer-DC and nuclear-turbine mistakes cut; renewable-definition mistake added | abov3, abov0, wron4
+- p1-national-grid | `examTips: 4 items became 3` — transformer equation and transformer-AC tips cut; reliability tip added | abov1, abov3, abov4
+- p1-national-grid | `examTips[2]: number "6" lost` — tips shifted after cuts; the 6-mark tip is unchanged except "sources" became "resources", now at [1] | abov1, wron3
+- p1-national-grid | `revisionCardBullets: 12 items became 10` — transformer equation, ideal transformer, AC, generation-chain, solar PV, nuclear-chain and UK mix bullets cut; uses, renewable definition, acid rain, trends and limits of science added | abov1, abov2, abov3, abov0, fact2, miss1, wron4, miss4, miss2, miss3
+- p1-national-grid | `keyPoints[1].content: bold term "alternating current (AC)" lost` — transformer operation, equation and ideal transformer cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: bold term "transformer equation" lost` — transformer operation, equation and ideal transformer cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: bold term "V₁/V₂ = n₁/n₂" lost` — transformer operation, equation and ideal transformer cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: bold term "ideal (100% efficient) transformer" lost` — transformer operation, equation and ideal transformer cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: bold term "V₁I₁ = V₂I₂" lost` — transformer operation, equation and ideal transformer cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: bold term "2300 V" lost` — transformer operation, equation and ideal transformer cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: key term "V₁/V₂ = n₁/n₂" lost` — transformer operation, equation and ideal transformer cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[1].content: key term "V₁I₁ = V₂I₂" lost` — transformer operation, equation and ideal transformer cut | abov1, abov2, abov3
+- p1-national-grid | `keyPoints[2].content: bold term "nuclear fission" lost` — generating-electricity key point cut | abov0
+- p1-national-grid | `keyPoints[2].content: bold term "steam" lost` — generating-electricity key point cut | abov0
+- p1-national-grid | `keyPoints[2].content: bold term "turbine" lost` — generating-electricity key point cut | abov0
+- p1-national-grid | `keyPoints[2].content: bold term "generator" lost` — generating-electricity key point cut | abov0
+- p1-national-grid | `keyPoints[2].content: bold term "electromagnetic induction" lost` — generating-electricity key point cut | abov0
+- p1-national-grid | `keyPoints[2].content: bold term "wind turbines" lost` — generating-electricity key point cut | abov0
+- p1-national-grid | `keyPoints[2].content: bold term "solar photovoltaic" lost` — generating-electricity key point cut | abov0
+- p1-national-grid | `keyPoints[2].content: bold term "nuclear power" lost` — generating-electricity key point cut | abov0
+- p1-national-grid | `keyPoints[2].content: key term "electromagnetic induction" lost` — generating-electricity key point cut | abov0
+- p1-national-grid | `keyPoints[2].content: key term "turbine" lost` — generating-electricity key point cut | abov0
+- p1-power | `keyPoints[2].content: number "400" lost` — Tour de France cyclist versus motor comparison removed | fact1
+- p1-power | `keyPoints[3].heading: must not change` — "Work done and power — force × velocity" became "Work done" | abov0
+- p1-power | `keyPoints[3].keyTerms: must not change` — P = Fv key term cut; work done uses W = Fs; newton-metre key term added | abov0, wron2, miss0
+- p1-power | `tables: must not change` — row "Baseload electricity generation for a whole region" became "Electricity generation for a whole region" | step 3d grep ("baseload" must be 0, not a triage ID)
+- p1-power | `checkpoints: keys changed` — checkpoints 0 and 2 added for key points 0 and 2; task step 2 requires one checkpoint per key point | step 2 checkpoint rule
+- p1-power | `checkpoints.3.question: number "4000" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.question: number "25" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.options[0]: number "100,000" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.options[0]: number "100" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.options[1]: number "160" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.options[2]: number "4025" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.options[3]: number "25,000" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.options[3]: number "25" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.correctFeedback: number "4000" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.correctFeedback: number "25" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.correctFeedback: number "100,000" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.correctFeedback: number "100" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.wrongFeedback: number "4000" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.wrongFeedback: number "25" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.wrongFeedback: number "100,000" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `checkpoints.3.wrongFeedback: number "100" lost` — P = Fv checkpoint replaced by a W = Fs checkpoint | abov1
+- p1-power | `commonMistakes: 5 items became 4` — P = Fv common mistake cut | abov3
+- p1-power | `examTips: 4 items became 3` — P = Fv exam tip cut | abov2
+- p1-power | `keyPoints[3].content: bold term "Work done (W) = force (F) × distance (d)" lost` — W = Fd became W = Fs, s along the line of action of the force | wron0
+- p1-power | `keyPoints[3].content: bold term "P = Fv" lost` — P = Fv and its worked example cut | abov0
+- p1-power | `keyPoints[3].content: bold term "60 kW" lost` — P = Fv and its worked example cut | abov0
+- p1-power | `keyPoints[3].content: key term "P = Fv" lost` — P = Fv and its worked example cut | abov0

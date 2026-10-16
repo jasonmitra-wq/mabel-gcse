@@ -1,124 +1,103 @@
 {
   "lesson": "p1-conservation",
   "source_file": "lessons/physics/p1-conservation.json",
-  "lesson_md5": "070757320d5bf54db2e9a1d518a9f6fb",
+  "lesson_md5": "c5a85a573394bfa6f88349ec8b6d8ef2",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:31:15.973Z",
+  "date": "2026-10-16T18:17:57.648Z",
   "specRefs_sent": [
     "4.1.2.1"
   ],
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7123,
-    "output_tokens": 4628
+    "input_tokens": 7299,
+    "output_tokens": 5101
   },
-  "cost_usd": 0.121052,
+  "cost_usd": 0.131216,
   "status": "OK",
   "result": {
     "lesson": "p1-conservation",
     "missing_spec_content": [
       {
-        "specRef": "4.1.2.1",
-        "spec_text": "The higher the thermal conductivity of a material the higher the rate of energy transfer by conduction across the material.",
-        "why": "The lesson never uses the term 'thermal conductivity' and never states this relationship. The nearest it gets is 'materials that conduct heat poorly slow down energy transfer' (keyPoints[3].content), which does not link higher thermal conductivity to a higher rate of energy transfer by conduction."
+        "specRef": "4.1.2.1 Required practical activity 2",
+        "spec_text": "investigate the effectiveness of different materials as thermal insulators and the factors that may affect the thermal insulation properties of a material.",
+        "why": "The lesson covers only the first half of the practical: comparing materials (keyPoints[3].content, 'The independent variable is the material'). It treats thickness only as a control variable. It never shows how to investigate a factor such as thickness or number of layers as the independent variable."
       },
       {
-        "specRef": "4.1.2.1",
-        "spec_text": "Students should be able to describe how the rate of cooling of a building is affected by the thickness and thermal conductivity of its walls.",
-        "why": "The lesson lists loft, double-glazing and cavity wall insulation. It never explains how wall thickness or wall thermal conductivity affects a building's rate of cooling."
-      },
-      {
-        "specRef": "4.1.2.1",
-        "spec_text": "Required practical activity 2 (physics only): investigate the effectiveness of different materials as thermal insulators and the factors that may affect the thermal insulation properties of a material.",
-        "why": "The required practical is not mentioned. There is nothing on method, variables or the factors that affect how well a material insulates."
-      },
-      {
-        "specRef": "4.1.2.1 (Key opportunities for skills development)",
+        "specRef": "4.1.2.1 Key opportunities for skills development",
         "spec_text": "Investigate thermal conductivity using rods of different materials.",
-        "why": "No investigation or comparison of thermal conductivity in different materials is included."
+        "why": "The lesson does not mention comparing thermal conductivity using rods of different materials."
       }
     ],
     "above_gcse": [
       {
-        "field": "keyPoints[3].content",
-        "text": "Regenerative braking in electric vehicles: normally, brake pads waste kinetic energy as heat. Instead, the motor runs backwards and acts as a generator.",
-        "why": "The specification section asks only for ways of reducing unwanted transfers 'for example through lubrication and the use of thermal insulation'. A motor working as a generator relies on the generator effect, which is not part of this section. This topic gets a whole key point, a checkpoint and a tutor note calling it 'a favourite exam topic', so it may lead the student to over-prioritise it."
+        "field": "keyPoints[3].keyTerms[1].def",
+        "text": "How well a material conducts energy; the higher it is, the higher the rate of energy transfer by conduction",
+        "why": "The spec says 'Students do not need to know the definition of thermal conductivity.' The lesson presents a definition as a key term to learn. Only the relationship to the rate of energy transfer is required."
       },
       {
-        "field": "keyPoints[2].content",
-        "text": "This is why a perpetual motion machine is impossible.",
-        "why": "Perpetual motion machines are not required by the specification. Here they are made a key term, a write bullet, a revision card bullet and a common mistake."
+        "field": "keyPoints[3].content",
+        "text": "<strong>Thermal conductivity</strong>: this tells you how well a material conducts energy.",
+        "why": "This is the same issue. The spec explicitly says the definition is not required, yet the lesson presents one."
       },
       {
         "field": "examTips[2]",
-        "text": "Sankey diagrams must be drawn to scale. The width of each arrow shows the amount of energy. All the arrows must add up to the input.",
-        "why": "Sankey diagrams are not required by this specification section. Presenting them as an exam requirement may mislead the student."
-      },
-      {
-        "field": "keyPoints[2].tutor_note",
-        "text": "It still exists, just as low-grade heat in the surroundings.",
-        "why": "'Low-grade heat' is not a specification term (it also appears in checkpoints['2'].correctFeedback). The specification phrase is 'stored in less useful ways'."
+        "text": "Sankey diagrams are drawn to scale. The width of each arrow shows the amount of energy. All the arrows must add up to the input.",
+        "why": "Sankey diagrams are not part of the supplied specification section 4.1.2.1. They are presented as exam content without support from these sections."
       }
     ],
     "factual_errors": [
       {
-        "field": "keyPoints[2].writeBullets[2]",
-        "text": "Electrical resistance — the property of a material that turns electrical energy into heat",
-        "correction": "Resistance is opposition to the flow of current (R = V/I). Heating of a resistor is a consequence of current flowing through it, not the definition of resistance.",
+        "field": "tables[0].headers / tables[0].rows",
+        "text": "\"Input energy store\" ... \"Electrical\"",
+        "correction": "'Electrical' is not an energy store in the GCSE stores-and-pathways model. Energy is transferred electrically, which is a pathway. For the bulb, kettle and motor, the input is energy transferred electrically from a store such as a chemical store in a power station or battery.",
         "basis": "own knowledge"
       },
       {
-        "field": "tables[0].rows[2][4]",
-        "text": "Better conductors, cooling",
-        "correction": "Cooling a motor does not reduce the energy wasted. It only removes the thermal energy after it has already been dissipated. Wasted energy is reduced by lowering resistance (for example, better conductors) and by reducing friction (for example, lubricating bearings).",
+        "field": "keyPoints[1].content",
+        "text": "A light bulb transfers electrical energy into two outputs. These are <strong>useful light energy</strong> and <strong>wasted thermal energy</strong>.",
+        "correction": "Light and electrical energy are not stores. Energy is transferred electrically to the bulb. It is transferred usefully by light (radiation) and dissipated by heating to the thermal store of the surroundings.",
         "basis": "own knowledge"
       },
       {
-        "field": "examTip",
-        "text": "Energy is never created or destroyed. It is always transferred.",
-        "correction": "Energy can be transferred usefully, stored or dissipated. It is not always transferred: it can also remain stored.",
-        "basis": "spec"
+        "field": "keyPoints[2].content",
+        "text": "<strong>electrical resistance</strong> in wires: electrical energy → thermal energy. This is how a kettle heats water.",
+        "correction": "Heating the water is the useful transfer in a kettle, not dissipation. The lesson itself says this in tables[0] and checkpoints[1]. Using it as an example of dissipation, i.e. energy 'stored in less useful ways', is wrong.",
+        "basis": "own knowledge"
       },
       {
-        "field": "keyPoints[0].content",
-        "text": "On every impact, some energy goes to the thermal store of the ball, floor and air. It goes as sound and heat.",
-        "correction": "Sound is not a store. Energy is transferred by sound waves and then ends up in the thermal store of the surroundings. As written, this suggests energy enters the thermal store 'as sound'.",
+        "field": "introTips[2]",
+        "text": "The words 'lost' and 'used up' are banned in physics.",
+        "correction": "'Energy loss' and 'heat loss' are widely used in physics to mean energy transferred out of a system. The lesson uses them itself: keyPoints[1].keyTerms[2].def 'heat loss', keyPoints[3].writeBullets[2] 'heat loss through the roof', tables[0] 'Thermal lost to surroundings'. The real point is that energy is not destroyed.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [
       {
         "field": "keyPoints[3].content",
-        "text": "materials that conduct heat poorly slow down energy transfer",
-        "spec_term": "thermal conductivity (lower thermal conductivity → lower rate of energy transfer by conduction)"
+        "text": "<strong>double glazing</strong> has an air gap between the panes, which reduces heat conduction",
+        "spec_term": "rate of energy transfer by conduction"
       },
       {
         "field": "keyPoints[1].content",
-        "text": "insulation reduces heat loss",
-        "spec_term": "thermal insulation; reducing unwanted energy transfers / rate of cooling"
-      },
-      {
-        "field": "keyPoints[2].writeBullets[4]",
-        "text": "Sound absorption — sound energy transferred to thermal energy",
+        "text": "The rest is <strong>wasted</strong>, usually as heat or sound.",
         "spec_term": "dissipated, so that it is stored in less useful ways"
-      }
-    ],
-    "checkpoint_mismatch": [
-      {
-        "checkpoint": "checkpoints['3']",
-        "key_point": "keyPoints[3] 'Reducing unwanted energy transfers'",
-        "why": "The checkpoint tests only regenerative braking, which is beyond this specification section. It does not test the specification's examples for this key point, lubrication and thermal insulation, or the effect of thermal conductivity."
       },
       {
-        "checkpoint": "(none for keyPoints[1])",
-        "key_point": "keyPoints[1] 'Useful and wasted energy'",
-        "why": "The checkpoints object has keys '0', '2' and '3' only, so the key point on useful and wasted energy transfers has no checkpoint testing it."
+        "field": "keyPoints[3].writeBullets[2]",
+        "text": "This reduces heat loss through the roof by conduction and convection",
+        "spec_term": "rate of cooling / energy transfer"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "The total mechanical energy falls with each bounce.",
+        "spec_term": "energy stored in less useful ways ('mechanical energy' is not a spec term)"
       }
     ],
+    "checkpoint_mismatch": [],
     "not_checked": [
-      "All keyPoints have diagram: null, so there were no diagrams to check.",
-      "Checkpoint keys ('0', '2', '3') were assumed to map to keyPoints indices; the lesson JSON does not state this mapping."
+      "Coverage of the skills codes named in the spec (AT 1, AT 5, WS 1.4, MS) could not be checked. Their details (page 90) were not supplied.",
+      "No diagrams are included (all 'diagram' fields are null), so there was nothing visual to check."
     ]
   }
 }

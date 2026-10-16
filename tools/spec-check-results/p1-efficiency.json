@@ -1,116 +1,71 @@
 {
   "lesson": "p1-efficiency",
   "source_file": "lessons/physics/p1-efficiency.json",
-  "lesson_md5": "2c0e38455d6eba4be602807e0dac1f13",
+  "lesson_md5": "95310ea9d37205b3019fc47d8427014f",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:31:54.460Z",
+  "date": "2026-10-16T18:18:42.385Z",
   "specRefs_sent": [
     "4.1.2.2"
   ],
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 6930,
-    "output_tokens": 4652
+    "input_tokens": 6070,
+    "output_tokens": 3801
   },
-  "cost_usd": 0.12076,
+  "cost_usd": 0.1003,
   "status": "OK",
   "result": {
     "lesson": "p1-efficiency",
     "missing_spec_content": [],
-    "above_gcse": [
-      {
-        "field": "keyPoints[3].content",
-        "text": "<strong>Payback time</strong> = extra cost of the efficient appliance ÷ yearly saving on energy bills.",
-        "why": "Payback time is not in spec 4.1.2.2. The spec requires only the two efficiency equations, use of decimals and percentages, and (HT) ways to increase efficiency. The lesson also gives payback a checkpoint, and keyPoints[3].tutor_note tells students to 'Know both formulas'. This presents payback as required content, which it is not."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "<strong>Energy efficiency labels</strong>: UK and EU appliances carry an <strong>A–G energy label</strong>. A is the most efficient, and G is the least.",
-        "why": "Energy labels are not part of the specification section. They also appear in revisionCardBullets as if they were content to learn."
-      },
-      {
-        "field": "keyPoints[2].tutor_note",
-        "text": "Comparing devices is a common exam question. Know rough efficiency values for LEDs and filament bulbs. Know them for electric and petrol vehicles too.",
-        "why": "The spec does not require students to recall efficiency values for particular devices. It says 'Students may be required to calculate or use efficiency values'. Telling students to memorise device values, including electric vehicles, solar panels and the human body, goes beyond the spec. Several of the values given are also inaccurate (see factual_errors)."
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "<strong>The human body</strong>: about 25% efficient at turning chemical energy (food) into mechanical energy.",
-        "why": "Human body efficiency is not in the spec. It also brings in 'mechanical energy', which is not one of the spec's energy stores."
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "<strong>Electric vehicles</strong>: ~85–90% efficient. The motor is very efficient, and regenerative braking recovers more energy.",
-        "why": "Electric vehicle efficiency and regenerative braking are not required by 4.1.2.2. Regenerative braking is also listed in revisionCardBullets as a way to improve efficiency, but the spec does not name it."
-      }
-    ],
+    "above_gcse": [],
     "factual_errors": [
       {
-        "field": "intro",
-        "text": "Imagine you pay for 100 units of electricity and only get 25 units of useful motion. That is a petrol car engine.",
-        "correction": "A petrol engine is supplied with chemical energy from fuel, not electricity. The example should say something like '100 units of energy from fuel'.",
+        "field": "tables[0].rows[0]",
+        "text": "\"LED bulb\", \"Electrical\", \"Light (radiation)\", \"Thermal (small amount)\"",
+        "correction": "An LED is much more efficient than a filament bulb. However, a typical LED lamp still transfers more than half of its input energy by heating, often about 60–80%. That is not a 'small amount'. It is correct to say an LED wastes less than a filament bulb. It is wrong to suggest that almost all of its input becomes light.",
         "basis": "own knowledge"
       },
       {
         "field": "keyPoints[1].content",
-        "text": "a petrol car engine has an input power of 100 kW. It gives out 25 kW of kinetic energy",
-        "correction": "Kilowatts measure power, not energy. It should say 'a useful power output of 25 kW'. This matches the spec's 'efficiency = useful power output / total power input'.",
-        "basis": "spec"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "<strong>Fluorescent tubes</strong>: ~70–80% efficient.",
-        "correction": "Fluorescent tubes transfer only about 20–30% of their electrical input as visible light. A figure of 70–80% is far too high. The same error appears as '~75% (0.75)' in tables[0].",
+        "text": "Worked example 2: a lamp has a total power input of 10 W. Its useful power output is 9 W → efficiency = 9 ÷ 10 = <strong>0.9 (90%)</strong>.",
+        "correction": "The arithmetic is correct. But 90% is not a realistic efficiency for any real lamp, because even LEDs transfer most of their input by heating. Together with the 'small amount' claim in the table, this example could give the student a false idea of how efficient lamps are. A more realistic value would be, for example, 3 W useful output from 10 W input.",
         "basis": "own knowledge"
       },
       {
-        "field": "keyPoints[2].content",
-        "text": "<strong>LED bulbs</strong>: ~90% efficient (electrical → light). Excellent.",
-        "correction": "Typical LED lamps transfer roughly 30–50% of their electrical input as light. They are far better than filament bulbs (about 5%), but ~90% overstates them. The same figure is repeated in intro, tables[0], checkpoints['1'] and revisionCardBullets.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "No real machine is 100% efficient. Some energy is always wasted, usually as thermal energy (heat) or sound.",
-        "correction": "Efficiency depends on which output counts as useful. An electric heater, where the thermal output is the useful output, is close to 100% efficient. Most devices waste some energy, but the blanket statement is not true for every device.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "tables[0].rows[6]",
-        "text": "Thermal (reflected/absorbed)",
-        "correction": "Light that is reflected stays as light (radiation). It is not transferred to a thermal store. Only absorbed light that is not converted to electricity heats the panel.",
+        "field": "keyPoints[0].keyTerms[1].def",
+        "text": "Energy transferred to the intended output store — the energy that does the job we want",
+        "correction": "For a lamp, the useful output is light. Light is energy transferred by radiation, which is a way of transferring energy, not an energy store. The table in the same lesson lists \"Light (radiation)\" as a useful output. Defining useful output only as energy transferred to a 'store' is inaccurate for devices whose useful output is light or sound. A better definition is 'energy transferred in the way we want (to a useful store or by a useful pathway)'.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [
       {
-        "field": "keyPoints[0].content",
-        "text": "<strong>efficiency = useful output energy ÷ total input energy</strong>",
+        "field": "keyPoints[1].content",
+        "text": "<strong>efficiency = useful output energy (J) ÷ total input energy (J)</strong>",
         "spec_term": "efficiency = useful output energy transfer / total input energy transfer"
       },
       {
-        "field": "keyPoints[1].content",
-        "text": "<strong>efficiency = useful output power (W) ÷ total input power (W)</strong>",
-        "spec_term": "efficiency = useful power output / total power input"
+        "field": "keyPoints[0].keyTerms[1].term",
+        "text": "useful output energy",
+        "spec_term": "useful output energy transfer"
       },
       {
-        "field": "keyPoints[2].content",
-        "text": "about 25% efficient at turning chemical energy (food) into mechanical energy",
-        "spec_term": "useful output energy transfer (the spec does not use 'mechanical energy')"
-      }
-    ],
-    "checkpoint_mismatch": [
+        "field": "keyPoints[0].keyTerms[2].term",
+        "text": "total input energy",
+        "spec_term": "total input energy transfer"
+      },
       {
-        "checkpoint": "1",
-        "key_point": "keyPoints[1] 'Calculating efficiency'",
-        "why": "The checkpoint depends on knowing that LEDs are about 90% efficient and filament bulbs about 5% ('~90% vs ~5%'). Those values are taught in keyPoints[2] 'Comparing efficiencies of different devices', not in keyPoints[1]. KeyPoints[1] only mentions an LED at 0.9 and never mentions filament bulbs. So the checkpoint does not test the calculation key point it sits with, and keyPoints[2] has no checkpoint of its own."
+        "field": "keyPoints[1].keyTerms[0].def",
+        "text": "efficiency = useful output energy ÷ total input energy (or useful power ÷ total input power)",
+        "spec_term": "useful output energy transfer / total input energy transfer; useful power output / total power input"
       }
     ],
+    "checkpoint_mismatch": [],
     "not_checked": [
-      "Whether the lesson marks 'describe ways to increase the efficiency of an intended energy transfer' as Higher Tier only, as the spec does. No tier labelling is visible in the JSON, so I could not tell how tiers are shown to the student.",
-      "The skills references 'MS 3b, c', 'MS 1a, c, 3b, c' and 'WS 1.4'. Their full text is not given, so I could not check how well the lesson covers them.",
-      "All diagram fields are null, so there were no diagrams or images to check."
+      "The specification section supplied is labelled '(HT only)' for describing ways to increase efficiency. The lesson does not label keyPoints[3] ('Improving efficiency') as Higher Tier only. Whether this labelling is required is outside what can be judged from the supplied text.",
+      "The use of energy store and pathway terms (e.g. 'Electrical', 'Chemical (fuel)', 'Kinetic (mechanical)' in tables[0]) could not be checked against the specification. The section defining stores and pathways (4.1.1.1) was not supplied, so these terms were judged only on own knowledge.",
+      "No diagrams are included (all 'diagram' fields are null), so there was nothing visual to check."
     ]
   }
 }

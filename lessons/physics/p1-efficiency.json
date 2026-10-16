@@ -4,15 +4,15 @@
   "topic": "P1",
   "examTip": "Efficiency has no units. It is a ratio between 0 and 1 (or 0–100%). Always check whether the question wants a decimal or a percentage.",
   "introTips": [
-    "No machine is ever 100% efficient. Some energy always leaks away as heat or sound.",
+    "Most devices waste some energy as heat or sound.",
     "A higher efficiency number means less energy is wasted.",
     "You can work out efficiency using energy (joules) or power (watts). It is the same formula and the same answer."
   ],
-  "intro": "Imagine you pay for 100 units of electricity and only get 25 units of useful motion. That is a petrol car engine. Or you pay for 100 units and get 90 units of light. That is an LED. Efficiency tells you how good a device is at turning input energy into something useful. It matters because wasted energy costs money. It also uses up resources faster and adds to climate change. Efficiency is why LEDs replaced filament bulbs. It is why electric vehicles are gaining ground over petrol cars. It is also why energy ratings on appliances really matter.",
+  "intro": "Imagine a petrol car engine gets 100 units of energy from fuel. Only 25 units end up as useful motion. Efficiency tells you how good a device is at turning input energy into something useful. It matters because wasted energy costs money. It also uses up resources faster and adds to climate change. Efficiency is why LED bulbs replaced filament bulbs.",
   "keyPoints": [
     {
       "heading": "What efficiency means",
-      "content": "<strong>Efficiency</strong> is the proportion of <strong>input energy</strong> that is <strong>usefully transferred</strong>. No real machine is 100% efficient. Some energy is always wasted, usually as thermal energy (heat) or sound.\n\nThe equation is: <strong>efficiency = useful output energy ÷ total input energy</strong>.\n\nYou can also give it as a percentage: <strong>efficiency = (useful output ÷ total input) × 100%</strong>.\n\nEfficiency has <strong>no units</strong>. It is a pure ratio (or percentage). The highest possible efficiency is 1.0 (or 100%). That would be a machine that wastes nothing. A machine with efficiency 0.75 transfers 75% of its input energy usefully. It wastes 25% to heat, sound or other stores we don't want.",
+      "content": "<strong>Efficiency</strong> is the proportion of <strong>input energy</strong> that is <strong>usefully transferred</strong>. Most devices waste some energy, usually as thermal energy (heat) or sound. An electric heater is close to 100% efficient. This is because heating is its useful output.\n\nThe equation is: <strong>efficiency = useful output energy transfer ÷ total input energy transfer</strong>.\n\nYou can also give it as a percentage: <strong>efficiency = (useful output ÷ total input) × 100%</strong>.\n\nEfficiency has <strong>no units</strong>. It is a pure ratio (or percentage). The highest possible efficiency is 1.0 (or 100%). That would be a machine that wastes nothing. A machine with efficiency 0.75 transfers 75% of its input energy usefully. It wastes 25% to heat, sound or other stores we don't want.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -42,13 +42,13 @@
     },
     {
       "heading": "Calculating efficiency",
-      "content": "The efficiency equation works with both <strong>energy</strong> (in joules) and <strong>power</strong> (in watts):\n- <strong>efficiency = useful output energy (J) ÷ total input energy (J)</strong>\n- <strong>efficiency = useful output power (W) ÷ total input power (W)</strong>\n\nWorked example 1: a motor gets 500 J of electrical energy. It does 375 J of useful mechanical work → efficiency = 375 ÷ 500 = <strong>0.75 (75%)</strong>.\n\nWorked example 2: an LED bulb uses 10 W of electrical power. It gives out 9 W of useful light → efficiency = 9 ÷ 10 = <strong>0.9 (90%)</strong>.\n\nWorked example 3: a petrol car engine has an input power of 100 kW. It gives out 25 kW of kinetic energy → efficiency = 25 ÷ 100 = <strong>0.25 (25%)</strong>. The other 75 kW is wasted as thermal energy and sound.\n\nYou can also rearrange it:\n- useful output = efficiency × total input\n- total input = useful output ÷ efficiency",
+      "content": "The efficiency equation works with both <strong>energy</strong> (in joules) and <strong>power</strong> (in watts):\n- <strong>efficiency = useful output energy (J) ÷ total input energy (J)</strong>\n- <strong>efficiency = useful power output (W) ÷ total power input (W)</strong>\n\nWorked example 1: a motor gets 500 J of electrical energy. It does 375 J of useful work → efficiency = 375 ÷ 500 = <strong>0.75 (75%)</strong>.\n\nWorked example 2: a lamp has a total power input of 10 W. Its useful power output is 9 W → efficiency = 9 ÷ 10 = <strong>0.9 (90%)</strong>.\n\nWorked example 3: a petrol car engine has an input power of 100 kW. It has a useful power output of 25 kW → efficiency = 25 ÷ 100 = <strong>0.25 (25%)</strong>. The other 75 kW is wasted as thermal energy and sound.\n\nYou can also rearrange it:\n- useful output = efficiency × total input\n- total input = useful output ÷ efficiency",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "Efficiency = useful output energy (J) ÷ total input energy (J). Works with joules",
-        "Efficiency = useful output power (W) ÷ total input power (W). Works with watts too",
+        "Efficiency = useful power output (W) ÷ total power input (W). Works with watts too",
         "Rearrangement: useful output = efficiency × total input",
         "Rearrangement: total input = useful output ÷ efficiency",
         "Converting to %: multiply the decimal efficiency by 100"
@@ -63,62 +63,55 @@
           "def": "Total input energy minus useful output energy — always positive in a real device"
         }
       ],
-      "memTip": "Worked examples: motor 375/500=0.75; LED 9/10=0.9; car engine 25/100=0.25. Practise these numbers.",
+      "memTip": "Worked examples: motor 375/500=0.75; lamp 9/10=0.9; car engine 25/100=0.25. Practise these numbers.",
       "tutor_note": "Always write out the formula first. Then substitute, then calculate. This picks up method marks even if the final answer is wrong."
     },
     {
       "heading": "Comparing efficiencies of different devices",
-      "content": "Real devices have very different efficiencies. Some are surprisingly poor.\n- <strong>LED bulbs</strong>: ~90% efficient (electrical → light). Excellent.\n- <strong>Fluorescent tubes</strong>: ~70–80% efficient.\n- <strong>Incandescent (filament) bulbs</strong>: only ~5% efficient. Most electrical energy goes to heat, and hardly any to light!\n- <strong>Electric motors</strong>: up to 90% efficient.\n- <strong>Petrol car engines</strong>: typically 25–30% efficient. Most energy is wasted as heat in the engine and exhaust.\n- <strong>Electric vehicles</strong>: ~85–90% efficient. The motor is very efficient, and regenerative braking recovers more energy.\n- <strong>Solar panels</strong> (photovoltaic): typically 15–20% efficient in everyday use.\n- <strong>The human body</strong>: about 25% efficient at turning chemical energy (food) into mechanical energy. The rest is thermal energy. That is why you get warm when you exercise.",
+      "content": "You may be asked to compare devices. The question gives you the values you need. Work out the efficiency of each device, then compare them. The device with the higher efficiency wastes less of its input energy.\n- <strong>LED bulbs</strong> are more efficient than <strong>Incandescent (filament) bulbs</strong>. For the same input power, an LED bulb gives out more useful light.\n- <strong>Electric motors</strong> are usually more efficient than <strong>Petrol car engines</strong>. Most of the energy from the fuel is wasted as heat in the engine and exhaust.\n\nWorked example: motor A has a total power input of 200 W and a useful power output of 150 W. Motor B has a total power input of 500 W and a useful power output of 300 W. A = 150 ÷ 200 = 0.75. B = 300 ÷ 500 = 0.60. So motor A is more efficient.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "LED bulb — ~90% efficient. Electrical energy → light, with very little wasted as heat",
-        "Incandescent bulb — only ~5% efficient. ~95% of the energy is wasted as thermal energy",
-        "Electric motor — up to ~90% efficient. Very good at turning electrical energy → kinetic energy",
-        "Petrol engine — ~25–30% efficient. Most energy is lost as thermal energy and sound",
-        "Electric vehicle — ~85–90% efficient. Much better than petrol, and helped by regenerative braking",
-        "Human body — ~25% efficient. Chemical energy (food) → mechanical energy + lots of heat"
+        "Compare devices using the values given in the question",
+        "Work out the efficiency of each device first, then compare",
+        "Higher efficiency — less of the input energy is wasted",
+        "LED bulb — more efficient than a filament bulb. More of its input energy is transferred as light",
+        "Incandescent bulb — wastes most of its input energy by heating the surroundings",
+        "Petrol engine — most energy from the fuel is wasted as thermal energy and sound"
       ],
       "keyTerms": [
         {
           "term": "incandescent bulb",
-          "def": "Old-style filament light bulb — only ~5% efficient, wastes most energy as heat"
+          "def": "Old-style filament light bulb — wastes most of its input energy by heating"
         },
         {
           "term": "LED",
-          "def": "Light Emitting Diode — ~90% efficient at converting electrical energy to light"
+          "def": "Light Emitting Diode — more efficient than a filament bulb at transferring energy usefully as light"
         }
       ],
-      "memTip": "Remember the big contrast: LED ≈ 90% efficient, old filament bulb ≈ 5% efficient. That is why the switch mattered!",
-      "tutor_note": "Comparing devices is a common exam question. Know rough efficiency values for LEDs and filament bulbs. Know them for electric and petrol vehicles too."
+      "memTip": "Compare with the numbers you are given. Higher efficiency = less energy wasted.",
+      "tutor_note": "Comparing devices is a common exam question. Use the values given in the question. Work out each efficiency, then compare."
     },
     {
-      "heading": "Improving efficiency and energy ratings",
-      "content": "We can improve efficiency in several ways:\n- <strong>Reducing friction</strong>: oil between moving parts → less kinetic energy wasted as thermal energy.\n- <strong>Better insulation</strong>: less thermal energy lost from hot surfaces to the surroundings. Insulating a boiler is one example.\n- <strong>More efficient components</strong>: LEDs instead of filament bulbs, and electric motors instead of petrol engines.\n- <strong>Regenerative systems</strong>: these capture energy that would be wasted. Regenerative braking in EVs is an example.\n\n<strong>Energy efficiency labels</strong>: UK and EU appliances carry an <strong>A–G energy label</strong>. A is the most efficient, and G is the least. Very efficient appliances cost more to buy. But they use less electricity, which saves money on bills.\n\n<strong>Payback time</strong> = extra cost of the efficient appliance ÷ yearly saving on energy bills.\n\nExample: an efficient fridge costs £200 more than a cheap one. It saves £40/year → payback time = 200 ÷ 40 = <strong>5 years</strong>.",
+      "heading": "Improving efficiency",
+      "content": "We can improve efficiency in several ways:\n- <strong>Reducing friction</strong>: oil between moving parts → less kinetic energy wasted as thermal energy.\n- <strong>Better insulation</strong>: less thermal energy lost from hot surfaces to the surroundings. Insulating a boiler is one example.\n- <strong>More efficient components</strong>: LEDs instead of filament bulbs, and electric motors instead of petrol engines.\n\nA more efficient device needs less input energy for the same useful output.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "Lubrication — reduces friction between moving parts, cutting wasted thermal energy",
         "Insulation — slows thermal energy loss from hot surfaces to the surroundings",
-        "Efficient components — LEDs and electric motors use less energy for the same output",
-        "Regenerative braking — recovers kinetic energy instead of wasting it as heat",
-        "Energy label (A–G) — A is the most efficient. It helps buyers compare appliances",
-        "Payback time — extra cost ÷ annual saving. It tells you how long until the savings cover the higher price"
+        "Efficient components — LEDs and electric motors use less energy for the same output"
       ],
       "keyTerms": [
         {
-          "term": "energy efficiency label",
-          "def": "A–G rating on UK/EU appliances showing how efficiently they use energy"
-        },
-        {
-          "term": "payback time",
-          "def": "Time for energy savings to cover the extra cost of a more efficient device; payback time = extra cost ÷ annual saving"
+          "term": "lubrication",
+          "def": "Using oil between moving parts to reduce friction, so less energy is wasted by heating"
         }
       ],
-      "memTip": "Payback time = extra cost ÷ annual saving. Units: years.",
-      "tutor_note": "Payback time questions often come up in 6-mark questions with efficiency. Know both formulas. Be able to judge whether an upgrade is worth it."
+      "memTip": "To improve efficiency, cut the wasted energy: reduce friction, insulate, use better parts.",
+      "tutor_note": "When asked how to improve efficiency, name the method. Then say which wasted energy transfer it reduces."
     }
   ],
   "tables": [
@@ -129,65 +122,32 @@
         "Device",
         "Input energy",
         "Useful output",
-        "Wasted output",
-        "Approximate efficiency"
+        "Wasted output"
       ],
       "rows": [
         [
           "LED bulb",
           "Electrical",
           "Light (radiation)",
-          "Thermal (small amount)",
-          "~90% (0.90)"
-        ],
-        [
-          "Fluorescent tube",
-          "Electrical",
-          "Light (radiation)",
-          "Thermal",
-          "~75% (0.75)"
+          "Thermal (small amount)"
         ],
         [
           "Incandescent bulb",
           "Electrical",
           "Light (radiation)",
-          "Thermal (most)",
-          "~5% (0.05)"
+          "Thermal (most)"
         ],
         [
           "Electric motor",
           "Electrical",
           "Kinetic (mechanical)",
-          "Thermal",
-          "~90% (0.90)"
+          "Thermal"
         ],
         [
           "Petrol car engine",
           "Chemical (fuel)",
           "Kinetic",
-          "Thermal + sound",
-          "~25–30% (0.25–0.30)"
-        ],
-        [
-          "Electric vehicle",
-          "Electrical (battery)",
-          "Kinetic",
-          "Thermal (small)",
-          "~85–90% (0.85–0.90)"
-        ],
-        [
-          "Solar panel (PV)",
-          "Light (radiation)",
-          "Electrical",
-          "Thermal (reflected/absorbed)",
-          "~15–20% (0.15–0.20)"
-        ],
-        [
-          "Human body (exercise)",
-          "Chemical (food)",
-          "Mechanical (kinetic)",
-          "Thermal (body heat)",
-          "~25% (0.25)"
+          "Thermal + sound"
         ]
       ]
     }
@@ -206,28 +166,40 @@
       "wrongFeedback": "Use efficiency = useful output ÷ total input = 560 ÷ 800 = 0.70. Multiply by 100 for a percentage: 70%."
     },
     "1": {
-      "question": "An LED bulb and a filament bulb both use 60 W of electrical power. Which statement is correct?",
+      "question": "A motor has a total power input of 400 W. Its useful power output is 300 W. What is its efficiency?",
       "options": [
-        "The LED gives more useful light, because it is more efficient (~90% vs ~5%)",
-        "They give the same amount of light, because they use the same power",
-        "The filament bulb is more efficient, because it also gives out heat",
-        "The LED wastes more energy, because it runs cooler"
+        "0.75 (75%)",
+        "1.33 (133%)",
+        "0.25 (25%)",
+        "100 W"
       ],
       "correct": 0,
-      "correctFeedback": "Exactly right! The LED turns ~90% of 60 W into light (~54 W of light). The filament bulb turns only ~5% into light (~3 W of light). Same input, very different useful output.",
-      "wrongFeedback": "The same power input does NOT mean the same efficiency. The LED (~90% efficient) turns far more of its 60 W into useful light. The filament bulb (~5% efficient) wastes almost all its energy as heat."
+      "correctFeedback": "Correct! efficiency = useful power output ÷ total power input = 300 ÷ 400 = 0.75 = 75%.",
+      "wrongFeedback": "Use efficiency = useful power output ÷ total power input = 300 ÷ 400 = 0.75. Efficiency has no units, and it is never more than 1."
+    },
+    "2": {
+      "question": "Lamp A has a total power input of 40 W and gives out 8 W of light. Lamp B has a total power input of 10 W and gives out 4 W of light. Which lamp is more efficient?",
+      "options": [
+        "Lamp B, because its efficiency is 0.4 and lamp A's is 0.2",
+        "Lamp A, because it gives out more light",
+        "Lamp A, because it uses more power",
+        "They are equally efficient"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! Lamp A: 8 ÷ 40 = 0.2. Lamp B: 4 ÷ 10 = 0.4. Lamp B transfers a bigger fraction of its input usefully.",
+      "wrongFeedback": "Work out each efficiency first. Lamp A: 8 ÷ 40 = 0.2. Lamp B: 4 ÷ 10 = 0.4. The higher efficiency wins, so lamp B is more efficient."
     },
     "3": {
-      "question": "A more efficient washing machine costs £150 more. It saves £30 per year on electricity bills. What is the payback time?",
+      "question": "Oil is put between the moving parts of a machine. Why does this make the machine more efficient?",
       "options": [
-        "5 years",
-        "3 years",
-        "15 years",
-        "50 years"
+        "It reduces friction, so less energy is wasted by heating",
+        "It adds energy to the machine's chemical store",
+        "It increases the total input energy",
+        "It stops all energy being dissipated"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! Payback time = extra cost ÷ annual saving = £150 ÷ £30 = 5 years.",
-      "wrongFeedback": "Payback time = extra cost ÷ annual saving = £150 ÷ £30 = 5 years. After 5 years, the savings have paid back the extra cost."
+      "correctFeedback": "Correct! Lubrication reduces friction. Less energy is wasted as thermal energy, so more of the input is transferred usefully.",
+      "wrongFeedback": "Oil is a lubricant. It reduces friction between moving parts. So less energy is wasted by heating, and the efficiency goes up."
     }
   },
   "commonMistakes": [
@@ -239,22 +211,18 @@
   ],
   "examTips": [
     "Efficiency = useful output ÷ total input. Check: is the answer between 0 and 1? If not, you have divided the wrong way round.",
-    "You may be given power values instead of energy values. The same formula works: efficiency = useful output power ÷ total input power.",
-    "For payback time: payback time (years) = extra cost (£) ÷ annual saving (£/year). Always give the units.",
-    "When comparing devices, quote efficiency values. Explain what 'more efficient' means for energy transfer. Don't just say 'wastes less'."
+    "You may be given power values instead of energy values. The same formula works: efficiency = useful power output ÷ total power input.",
+    "When comparing devices, work out each efficiency from the values given. Explain what 'more efficient' means for energy transfer. Don't just say 'wastes less'."
   ],
   "revisionCardBullets": [
-    "Efficiency = useful output energy ÷ total input energy (no units)",
+    "Efficiency = useful output energy transfer ÷ total input energy transfer (no units)",
     "Efficiency as % = (useful output ÷ total input) × 100%",
-    "Maximum efficiency = 1.0 (100%). Real devices are always less than this",
-    "Also works with power: efficiency = useful output power (W) ÷ total input power (W)",
-    "LED bulb ~90% efficient; incandescent filament bulb ~5% efficient",
-    "Electric vehicle ~85–90% efficient; petrol car engine ~25–30% efficient",
-    "Solar panels ~15–20% efficient (photovoltaic)",
-    "Human body ~25% efficient at converting food energy to mechanical energy",
-    "Improve efficiency: lubrication, insulation, efficient components, regenerative braking",
-    "Energy labels A–G: A = most efficient, G = least efficient",
-    "Payback time = extra cost ÷ annual saving (in years)",
+    "Maximum efficiency = 1.0 (100%). Most real devices are less than this",
+    "Also works with power: efficiency = useful power output (W) ÷ total power input (W)",
+    "An electric heater is close to 100% efficient, because heating is its useful output",
+    "An LED bulb is more efficient than a filament bulb",
+    "Compare devices by working out each efficiency from the values given",
+    "Improve efficiency: lubrication, insulation, efficient components",
     "Wasted energy = total input − useful output (always positive)"
   ],
   "videos": [

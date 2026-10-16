@@ -10,6 +10,7 @@ Last verified: 2026-10-16, from a fresh pull at commit 9951f13.
 Slide path: S1 rewritten to plain-English rules · S2 scanner clean · S3
 rewrite checker passes · S4 diagrams for visual concepts, render-checked · S5
 checkpoints test their key point · S6 spec audit clean.
+S6 means: every finding from a topic's spec-check run is fixed or rejected with a reason in tools/spec-check-results/<topic>-TRIAGE.md, and a re-check after the fixes shows no new spec-based factual error, no new missing spec content and no above-GCSE content. Above-GCSE content is removed, never signposted.
 AI teacher path: T1 in TEACH_ENABLED · T2 simulated-student run passes · T3 no
 open shared-code fault.
 
@@ -19,10 +20,10 @@ open shared-code fault.
 
 | Topic | S1 | S2 | S3 | S4 | S5 | S6 | T1 | T2 | T3 | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
-| P1 Energy | ✓ 0c40b8e | ✓ 0c40b8e | ✓ 0c40b8e | – | n/a | n/a | – | n/a | – | p1-energy-stores "chemical energy stored in bonds" checked and correct |
+| P1 Energy | ✓ this commit, "P1 Energy: spec-check fix round" (re-proved after content fix) | ✓ this commit, "P1 Energy: spec-check fix round" (re-proved after content fix) | ✓ this commit, "P1 Energy: spec-check fix round" (re-proved after content fix) | – | n/a | – re-check findings open, see P1-RECHECK.md | – | n/a | – | p1-energy-stores "chemical energy stored in bonds" checked and correct |
 | P2 Electricity | ✓ 0c40b8e | ✓ 0c40b8e | ✓ 0c40b8e | – | n/a | n/a | – | n/a | – | misplaced common mistake removed 51a3dc2; p2-static 'bonding cables' (electrical bonding) checked and correct |
 | P3 Particle model | ✓ dd98fe9 | – reopened: p3-pressure has 24 Kelvin/absolute-zero WARNs unresolved; decided by spec-check | ✓ dd98fe9 | partial: p3-particle-model only (4110010) | n/a | n/a | partial: p3-particle-model only | n/a | – | |
-| P4 Atomic structure | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | p4-nuclear-model 'chemical bonding' checked and correct; p4-nuclear-model 'quantum' ×2 checked and correct — mentioned only to say it is A-level, not taught |
+| P4 Atomic structure | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | p4-nuclear-model 'chemical bonding' checked and correct; p4-nuclear-model 'quantum' ×2 and its A-level pointer to be removed in the P4 fix round |
 | P5 Forces | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | |
 | P6 Waves | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | p6-em-spectrum 'molecular bonds' (UV) checked and correct; 'bonded' ×3 → forces between particles, verified a6fd3c1 |
 | P7 Magnetism | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | iron-as-permanent-magnet error, solenoid poles, misplaced DC mistake corrected, verified a6fd3c1 |
@@ -83,7 +84,7 @@ Not started on the pipeline. Already in place:
 
 ## Next
 
-1. Triage the Physics spec-check findings (tools/spec-check-results/PHYSICS-RUN-2026-10-16.md), then one fix round per topic. Findings with basis 'own knowledge' are judged, not applied automatically; no fix may introduce 'bond' in Physics.
+1. Triage and fix P2 Electricity (spec-check results already run).
 2. Write the missing Physics content (defect 11): lesson-auditor
    mode for new files first; decide whether P8 Space becomes a
    topic in the syllabus file.

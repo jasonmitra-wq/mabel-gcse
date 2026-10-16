@@ -1,9 +1,9 @@
 {
   "lesson": "p1-heating",
   "source_file": "lessons/physics/p1-heating.json",
-  "lesson_md5": "4c312ea6136f3381bb58a9e83b3344ee",
+  "lesson_md5": "b48fc4abb893845f229984ef7ba0f6cb",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:33:15.303Z",
+  "date": "2026-10-16T18:19:54.893Z",
   "specRefs_sent": [
     "4.1.1.3",
     "4.3.2.1",
@@ -12,113 +12,40 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7980,
-    "output_tokens": 6087
+    "input_tokens": 8123,
+    "output_tokens": 3711
   },
-  "cost_usd": 0.15366,
+  "cost_usd": 0.106712,
   "status": "OK",
   "result": {
     "lesson": "p1-heating",
-    "missing_spec_content": [
-      {
-        "specRef": "4.3.2.1",
-        "spec_text": "Heating changes the energy stored within the system by increasing the energy of the particles that make up the system. This either raises the temperature of the system or produces a change of state.",
-        "why": "The lesson never says that heating increases the energy of the particles. It never says that heating can produce a change of state instead of a temperature rise. Change of state is not mentioned anywhere."
-      },
-      {
-        "specRef": "4.3.2.2",
-        "spec_text": "If the temperature of the system increases, the increase in temperature depends on the mass of the substance heated, the type of material and the energy input to the system.",
-        "why": "The lesson only states that the temperature change depends on the type of material: \"Different materials need different amounts of energy to change their temperature by the same amount\" (keyPoints[0].content). It never states that the temperature rise also depends on the mass heated and the energy input."
-      },
-      {
-        "specRef": "4.1.1.3 Required practical activity 1",
-        "spec_text": "The investigation will involve linking the decrease of one energy store (or work done) to the increase in temperature and subsequent increase in thermal energy stored.",
-        "why": "keyPoints[2].content describes measuring the energy supplied (E = IVt or a joulemeter). It never frames the practical as linking the decrease in one energy store (or work done) to the increase in the thermal energy store."
-      }
-    ],
+    "missing_spec_content": [],
     "above_gcse": [
       {
         "field": "keyPoints[3].content",
-        "text": "<strong>Temperature</strong> is a measure of the average kinetic energy of the particles.",
-        "why": "The specification sections do not define temperature in terms of the average kinetic energy of particles. This kinetic-theory definition goes beyond what is required here. It is also repeated as an assessable fact in keyTerms, memTip and revisionCardBullets."
+        "text": "Temperature is a measure of the average kinetic energy of the particles. The hotter the substance, the faster its particles move on average.",
+        "why": "The supplied sections (4.1.1.3, 4.3.2.1, 4.3.2.2) do not link temperature to average particle kinetic energy. The lesson applies the statement to all substances, which is a simplification. The idea is not needed for these sections, and the checkpoint on internal energy rests on it."
       },
       {
-        "field": "tables[0].rows[5][0]",
-        "text": "Air (at const. pressure)",
-        "why": "Specific heat capacity at constant pressure versus constant volume is beyond GCSE and may confuse the student."
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "(1 K is the same size change.)",
-        "why": "The specification gives temperature change only in degrees Celsius (°C). Kelvin is not required in these sections. The same applies to \"Change in temperature (°C or K)\" in keyPoints[0].keyTerms[2].def."
-      },
-      {
-        "field": "keyPoints[3].keyTerms[2].def",
-        "text": "When two objects are at the same temperature and no net heat transfer occurs between them",
-        "why": "Thermal equilibrium is not in the specification sections. It is presented as a key term (also in keyPoints[2].keyTerms) that the student might think they must learn."
+        "field": "keyPoints[3].content",
+        "text": "Heat always flows from hot to cold. It never flows the other way on its own.",
+        "why": "This is not required by the supplied sections. It is correct, but it introduces an idea related to the second law that these sections do not ask for."
       }
     ],
     "factual_errors": [
       {
-        "field": "intro",
-        "text": "A metal spoon left in soup gets scorching hot. So why does the soup stay drinkable?",
-        "correction": "A spoon heated only by the soup cannot become hotter than the soup. At most it reaches the soup's temperature. The spoon feels hot because metal is a good thermal conductor and transfers energy to your hand quickly, not because it is hotter than the soup.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "examTips[0]",
-        "text": "If an object cools, Δθ is still positive, because it is the size of the change.",
-        "correction": "This contradicts the lesson's own definition \"Δθ = final temperature − initial temperature\" (keyPoints[0].writeBullets[2]). By that definition Δθ is negative when an object cools, so ΔE is negative (energy released). If the size of the change is wanted, the lesson should say to use the magnitude of the change.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "tables[0].rows[1][2]",
-        "text": "Low SHC — heats and cools quickly; used in engine parts and cookware",
-        "correction": "At 900 J/kg°C, aluminium has a high specific heat capacity for a metal. It is double iron/steel's 450, which the table calls \"Moderate\", and similar to concrete's 880, which the table calls \"Useful thermal mass\". Aluminium cookware heats quickly mainly because of its high thermal conductivity and thin construction, not a low SHC.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].writeBullets[3]",
-        "text": "Error: heat loss to the surroundings makes the measured c too high (more energy needed than calculated)",
-        "correction": "The reason in brackets is muddled. Heat loss means the measured energy supplied is more than the energy actually transferred to the sample. Using that larger energy in c = E/(mΔθ) gives a value of c that is too high.",
+        "field": "keyPoints[1].content",
+        "text": "c = ΔE / (mΔθ) = 15,000 / (5 × 10) = <strong>300 J/kg°C</strong>. This is close to the value for brass or copper.",
+        "correction": "The specific heat capacities of copper and brass are about 380–390 J/kg°C. The lesson's own table gives copper as 390. A value of 300 J/kg°C is not especially close to either material.",
         "basis": "own knowledge"
       }
     ],
-    "wrong_terms": [
-      {
-        "field": "keyPoints[0].writeBullets[1]",
-        "text": "ΔE = mcΔθ — change in energy (J) = mass (kg) × SHC (J/kg°C) × temperature change (°C)",
-        "spec_term": "change in thermal energy"
-      },
-      {
-        "field": "revisionCardBullets[1]",
-        "text": "ΔE = mcΔθ — change in energy (J) = mass (kg) × c (J/kg°C) × temp change (°C)",
-        "spec_term": "change in thermal energy"
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "<strong>solar thermal panels</strong> use water to store heat energy collected from sunlight",
-        "spec_term": "thermal energy"
-      },
-      {
-        "field": "keyPoints[3].writeBullets[0]",
-        "text": "Internal energy — the total kinetic and potential energy of all the particles in a substance",
-        "spec_term": "system (\"all the particles (atoms and molecules) that make up a system\")"
-      }
-    ],
-    "checkpoint_mismatch": [
-      {
-        "checkpoint": "3",
-        "key_point": "keyPoints[3] \"Thermal stores and temperature\"",
-        "why": "The key point is mainly about internal energy, temperature, heat flow and thermal equilibrium. The checkpoint only tests one listed use of high SHC (coastal climates), which belongs with keyPoints[0]. None of the key point's core concepts (internal energy versus temperature) are tested."
-      }
-    ],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
     "not_checked": [
-      "All diagram fields are null, so there were no diagrams or images to check.",
-      "The lesson uses E = IVt with \"voltage\" (keyPoints[2].content, keyPoints[2].keyTerms[0].def). The specification sections provided do not include this equation or its terminology, so I could not check the term \"voltage\" against the specification text.",
-      "The specification sections provided say nothing about sources of error or improvements for Required practical activity 1. These were checked against own knowledge only.",
-      "The specific heat capacity values in tables[0] are not in the specification text. They were checked against own knowledge only and are typical textbook values.",
-      "The checkpoints are keyed \"0\", \"2\" and \"3\". There is no checkpoint for keyPoints[1] (Using ΔE = mcΔθ). I could not tell whether this is intended."
+      "Wording and units for E = IVt ('current × voltage × time') in keyPoints[2].content cannot be checked against the specification. The supplied sections contain no electrical equations and do not show whether the specification uses 'potential difference' rather than 'voltage'.",
+      "The table values for SHC ('Concrete', '880'; 'Air', '1000'; 'Iron / steel', '450') and the application notes are not in the supplied specification. I checked them only as standard approximate values, and they appear reasonable.",
+      "No diagrams were supplied (all 'diagram' fields are null), so there was nothing visual to check."
     ]
   }
 }

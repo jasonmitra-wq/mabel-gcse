@@ -1,9 +1,9 @@
 {
   "lesson": "p1-national-grid",
   "source_file": "lessons/physics/p1-national-grid.json",
-  "lesson_md5": "db55506b4b0e970c322578594bc5cd3c",
+  "lesson_md5": "c6d7025dbd04c15cda621bc71fd826d0",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:34:08.020Z",
+  "date": "2026-10-16T18:20:29.135Z",
   "specRefs_sent": [
     "4.1.3",
     "4.2.4.3"
@@ -11,140 +11,96 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 8680,
-    "output_tokens": 6749
+    "input_tokens": 7282,
+    "output_tokens": 6064
   },
-  "cost_usd": 0.1697,
+  "cost_usd": 0.150408,
   "status": "OK",
   "result": {
     "lesson": "p1-national-grid",
     "missing_spec_content": [
       {
         "specRef": "4.1.3",
-        "spec_text": "The main energy resources available for use on Earth include: fossil fuels (coal, oil and gas), nuclear fuel, bio-fuel, wind, hydro- electricity, geothermal, the tides, the Sun and water waves.",
-        "why": "Geothermal and water waves are never mentioned. Oil is only named in a list and gets no description, advantages or disadvantages. Bio-fuel is replaced by 'biomass'."
+        "spec_text": "explain patterns and trends in the use of energy resources.",
+        "why": "The lesson only states the trends: \"Trends: coal use is falling. The use of renewable resources is rising.\" (keyPoints[2].content). It never explains why, for example concern about CO₂ and climate change, emissions targets and legislation, the falling cost of wind and solar, or fossil fuels running out. The specification asks students to explain the trends, not just describe them."
       },
       {
         "specRef": "4.1.3",
         "spec_text": "compare ways that different energy resources are used, the uses to include transport, electricity generation and heating",
-        "why": "The lesson only covers electricity generation. It does not mention using energy resources for transport (for example petrol, diesel or bio-fuels) or for heating (for example gas boilers or solar water heating)."
+        "why": "Transport and heating get one sentence each: \"For example, petrol and diesel fuel cars. Gas heats many homes.\" (keyPoints[2].content). Nothing compares how different resources are used for each purpose, for example bio-fuel or electricity for transport, or electric, solar or geothermal heating. The table compares resources only \"for the national grid\", which is electricity generation."
       },
       {
         "specRef": "4.1.3",
-        "spec_text": "explain patterns and trends in the use of energy resources.",
-        "why": "The lesson gives one snapshot ('UK energy mix (approximate 2023)') and says coal is 'being phased out'. It does not teach the student to explain trends over time, such as the fall in coal, the rise in renewables or changing demand."
-      },
-      {
-        "specRef": "4.1.3",
-        "spec_text": "show that science has the ability to identify environmental issues arising from the use of energy resources but not always the power to deal with the issues because of political, social, ethical or economic considerations.",
-        "why": "This is not taught anywhere in the lesson."
-      },
-      {
-        "specRef": "4.1.3",
-        "spec_text": "describe the environmental impact arising from the use of different energy resources",
-        "why": "This is only partly covered. The impacts given are mostly CO₂, radioactive waste, visual impact and dam ecosystems. Other impacts are missing, such as sulfur dioxide and acid rain from coal and oil, oil spills, and habitat effects of tidal barrages. Wave and geothermal impacts are absent because those resources are absent."
+        "spec_text": "A renewable energy resource is one that is being (or can be) replenished as it is used.",
+        "why": "The lesson's definition, \"A renewable resource is one that is replenished as it is used.\" (keyPoints[2].content), drops the \"(or can be)\" part. That part is what makes bio-fuel count as renewable. Its absence may explain why the table marks bio-fuel only \"Potentially\" renewable."
       }
     ],
-    "above_gcse": [
-      {
-        "field": "keyPoints[2].content",
-        "text": "Most traditional power stations work in a chain:\n- burn fuel (coal, gas, oil), or use <strong>nuclear fission</strong> (uranium), to release heat\n- the heat boils water to make <strong>steam</strong>\n- the steam drives a <strong>turbine</strong>\n- the turbine drives a <strong>generator</strong>",
-        "why": "Spec 4.1.3 says 'Descriptions of how energy resources are used to generate electricity are not required.' This whole key point, its writeBullets, keyTerms and checkpoint 3 teach content the specification excludes."
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "The <strong>transformer equation</strong>: <strong>V₁/V₂ = n₁/n₂</strong>. That is, primary voltage ÷ secondary voltage = primary turns ÷ secondary turns.",
-        "why": "Spec 4.2.4.3 says 'The construction and operation of transformers is covered Transformers (HT only)'. The turns-ratio equation is Higher Tier only and is not part of the National Grid section. It could confuse Foundation students. The same applies to checkpoint 1 and examTips[1]."
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "For an <strong>ideal (100% efficient) transformer</strong>: <strong>V₁I₁ = V₂I₂</strong> (power in = power out).",
-        "why": "This is Higher Tier transformer content from a different spec section. It is not required by 4.2.4.3."
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "An AC current in the primary coil makes a changing magnetic field. That changing field induces a voltage in the secondary coil.",
-        "why": "The spec defers how transformers operate to the separate Higher Tier section. Section 4.2.4.3 only requires knowing that step-up and step-down transformers change the potential difference."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "The grid needs <strong>baseload</strong> power (constant and reliable, like nuclear). It needs a <strong>peak load</strong> response (flexible, like gas).",
-        "why": "Baseload and peak load are not spec terms. The spec only asks students to 'understand why some energy resources are more reliable than others'."
-      },
-      {
-        "field": "tables[0].rows[4]",
-        "text": "efficiency ~15–20%",
-        "why": "Solar cell efficiency figures are not required by the specification."
-      },
-      {
-        "field": "tables[0].rows[5]",
-        "text": "Can store energy (pumped hydro); no fuel",
-        "why": "Pumped storage is not in the specification sections."
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "400 kV down to 33 kV for heavy industry\n- 11 kV for lighter industry",
-        "why": "The intermediate distribution voltages go beyond the spec. The spec only requires that step-down transformers decrease the potential difference 'to a much lower value' for domestic use."
-      }
-    ],
+    "above_gcse": [],
     "factual_errors": [
       {
-        "field": "keyPoints[3].content",
-        "text": "But it is <strong>intermittent</strong>, and only works when it is sunny.",
-        "correction": "Solar PV works in any daylight, including cloudy conditions, though output is lower. It produces nothing at night. The lesson's own table correctly says 'Only works in daylight'.",
+        "field": "intro",
+        "text": "It could come from a wind farm off Scotland or a nuclear power station in Somerset.",
+        "correction": "Somerset's only operating nuclear power station, Hinkley Point B, stopped generating in 2022. Hinkley Point C is still being built. Electricity cannot currently come from a nuclear power station in Somerset.",
         "basis": "own knowledge"
       },
       {
-        "field": "keyPoints[3].content",
-        "text": "UK energy mix (approximate 2023): ~40% renewables (mainly offshore wind), ~40% gas, ~15% nuclear, and the rest other.",
-        "correction": "UK government (DESNZ) figures for 2023 electricity generation are about 46–47% renewables, about 34–35% gas and about 14% nuclear. Wind as a whole, onshore and offshore together, was the largest renewable share. Calling renewables 'mainly offshore wind' overstates offshore wind's share.",
+        "field": "keyPoints[2].content",
+        "text": "Coal: the most CO₂ per kWh and the cheapest to burn. It is being phased out.",
+        "correction": "The UK's last coal-fired power station (Ratcliffe-on-Soar) closed in 2024, so coal has already been phased out of UK electricity generation. \"Cheapest to burn\" is also doubtful once carbon costs are included. At most, coal fuel is relatively cheap.",
         "basis": "own knowledge"
       },
       {
-        "field": "revisionCardBullets[11]",
-        "text": "UK mix (~2023): ~40% renewables, ~40% gas, ~15% nuclear",
-        "correction": "This repeats the inaccurate figures. The 2023 figures are about 47% renewables, about 35% gas and about 14% nuclear.",
+        "field": "keyPoints[2].content",
+        "text": "tidal: very predictable, because tides never stop.",
+        "correction": "Tidal power is predictable because tides follow a regular, known cycle. The reason is not that they \"never stop\". There are periods of slack water when output falls to zero, and the tidal range varies with the spring/neap cycle.",
         "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Fossil fuels and nuclear can supply energy whenever it is needed.",
+        "correction": "Nuclear power stations are reliable because they do not depend on the weather. However, they are slow to start up and cannot quickly change output to meet demand. The lesson's own table says nuclear is \"slow to start\". The same claim appears in checkpoints[2].correctFeedback: \"A nuclear power station can supply energy whenever it is needed.\"",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].memTip",
+        "text": "Renewables are FREE to run but INTERMITTENT.",
+        "correction": "Not all renewables are free to run. Bio-fuel has fuel costs, and all renewables have maintenance costs. Hydroelectric, geothermal and bio-fuel are not intermittent. The lesson itself lists \"Thinking renewable means 'free' or 'clean'\" in commonMistakes[3].",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "tables[0].rows[7]",
+        "text": "\"Bio-fuel\", \"Potentially\"",
+        "correction": "Bio-fuel is a renewable resource because it can be replenished as it is used. The lesson's own keyTerms (\"renewable energy ... bio-fuel\") and revisionCardBullets also list it as renewable.",
+        "basis": "spec"
       }
     ],
     "wrong_terms": [
       {
-        "field": "keyPoints[0].content",
-        "text": "A <strong>step-up transformer</strong> then raises this to up to <strong>400,000 V (400 kV)</strong>. This is for sending it a long way through high-voltage overhead cables. At the other end, a series of <strong>step-down transformers</strong> lower the voltage in stages",
-        "spec_term": "potential difference (\"Step-up transformers are used to increase the potential difference\")"
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "It increases voltage and decreases current.",
+        "field": "examTips[0]",
+        "text": "For 'why high voltage in the grid' questions",
         "spec_term": "potential difference"
       },
       {
-        "field": "keyPoints[3].content",
-        "text": "<strong>biomass</strong>: burns plant material.",
-        "spec_term": "bio-fuel"
+        "field": "keyPoints[0].memTip",
+        "text": "The grid uses high voltage because cutting the current cuts cable losses by its square.",
+        "spec_term": "potential difference"
       },
       {
-        "field": "tables[0].title",
-        "text": "Energy sources — comparison for the national grid",
-        "spec_term": "energy resources"
+        "field": "keyPoints[0].tutor_note",
+        "text": "The I²R equation is the key to explaining WHY high voltage is used.",
+        "spec_term": "potential difference"
       },
       {
-        "field": "keyTerms (keyPoints[3])",
-        "text": "Energy source that is naturally replenished and will not run out",
-        "spec_term": "energy resource that is being (or can be) replenished as it is used"
+        "field": "keyPoints[2].content",
+        "text": "Solar PV",
+        "spec_term": "the Sun"
       }
     ],
-    "checkpoint_mismatch": [
-      {
-        "checkpoint": "3: Which energy source can generate electricity without using a turbine?",
-        "key_point": "keyPoints[3] 'Energy sources and the environment'",
-        "why": "Checkpoint 3 sits with keyPoints[3], which covers renewability, reliability and environmental impact. Its answer rests on keyPoints[2] ('Solar PV is the odd one out'), which keyPoints[3] does not mention. No checkpoint tests keyPoints[3]'s own content, and keyPoints[2] has no checkpoint of its own. The question also tests content the spec excludes ('Descriptions of how energy resources are used to generate electricity are not required')."
-      }
-    ],
+    "checkpoint_mismatch": [],
     "not_checked": [
-      "All 'diagram' fields are null, so there were no diagrams to check.",
-      "examTips[0] claims 'Give both equations for full marks'. I could not check this against mark schemes from the specification text provided. In my understanding, AQA mark schemes credit the explanation (higher p.d., lower current, less heating in cables) without requiring equations.",
-      "Cost claims such as 'the cheapest new electricity source in the UK by the 2020s' and 'Coal: ... the cheapest to burn' depend on the date and the source used. They could not be checked against the specification."
+      "Cost claims such as \"the cheapest new electricity source in the UK by the 2020s\" (keyPoints[2].content) and \"Cheapest new electricity (UK)\" (tables[0]) depend on current economic data. They cannot be checked against the specification text supplied.",
+      "The equations P = IV and P = I²R are not in the specification sections supplied. Their exact specification wording, including whether the notation 'P_lost' differs from the specification, could not be checked.",
+      "All diagram fields are null, so there were no diagrams to check."
     ]
   }
 }

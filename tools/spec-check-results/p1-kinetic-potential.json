@@ -1,9 +1,9 @@
 {
   "lesson": "p1-kinetic-potential",
   "source_file": "lessons/physics/p1-kinetic-potential.json",
-  "lesson_md5": "4abafed56ade5c56c86b7055abbf2dfd",
+  "lesson_md5": "e8b7e72d3b591775af0b4591f0a8d4a9",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:30:43.458Z",
+  "date": "2026-10-16T18:17:32.256Z",
   "specRefs_sent": [
     "4.1.1.2",
     "4.1.1.3"
@@ -11,120 +11,43 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7377,
-    "output_tokens": 3987
+    "input_tokens": 7723,
+    "output_tokens": 2457
   },
-  "cost_usd": 0.109248,
+  "cost_usd": 0.080032,
   "status": "OK",
   "result": {
     "lesson": "p1-kinetic-potential",
     "missing_spec_content": [
       {
-        "specRef": "4.1.1.2",
-        "spec_text": "Ee = 1/2 k e^2 (assuming the limit of proportionality has not been exceeded)",
-        "why": "The lesson presents Ee = ½ke² with no condition attached. It never says the equation only applies if the limit of proportionality has not been exceeded. keyPoints[3].content also extends it to 'a rubber band, or anything elastic' without this condition."
-      },
-      {
         "specRef": "4.1.1.3",
         "spec_text": "Required practical activity 1: investigation to determine the specific heat capacity of one or more materials. The investigation will involve linking the decrease of one energy store (or work done) to the increase in temperature and subsequent increase in thermal energy stored.",
-        "why": "The lesson does not describe the required practical at all. It does not cover the method, linking the energy supplied (work done) to the temperature rise, or how c is found from the results."
-      },
-      {
-        "specRef": "4.1.1.3",
-        "spec_text": "The amount of energy stored in or released from a system as its temperature changes can be calculated using the equation",
-        "why": "The lesson only talks about energy 'needed to warm up' or 'to heat something up' (keyPoints[4].content). It never says that the same equation gives the energy released when a system cools."
+        "why": "The lesson teaches the equation ΔE = mcΔθ and the definition of specific heat capacity. It never describes the required practical: the method, how energy supplied is measured, how the temperature rise is measured, or how c is found from the results."
       },
       {
         "specRef": "4.1.1.2",
-        "spec_text": "Students should be able to recall and apply this equation. ... Students should be able to apply this equation which is given on the Physics equation sheet.",
-        "why": "The lesson never tells the student which equations must be memorised and which are given on the equation sheet. Ek = ½mv² and Ep = mgh must be recalled. Ee = ½ke² and ΔE = mcΔθ are given on the sheet."
+        "spec_text": "AT 1 Investigate the transfer of energy from a gravitational potential energy store to a kinetic energy store.",
+        "why": "The lesson covers the GPE → KE calculation (mgh = ½mv²) only in theory. It gives no experimental context for investigating this transfer. This is listed as a skills opportunity, so it is a lower-priority gap."
       }
     ],
     "above_gcse": [],
-    "factual_errors": [
-      {
-        "field": "keyPoints[1].content",
-        "text": "It is 9.8 N/kg on Earth. Use 10 in non-calculator questions unless told otherwise",
-        "correction": "The specification states that in any calculation the value of g will be given. The student should use the value the question provides. There is no 'non-calculator' rule for choosing g.",
-        "basis": "spec"
-      },
-      {
-        "field": "commonMistakes[1]",
-        "text": "g = 9.8 N/kg is the standard value. Only use g = 10 N/kg when the question says 'non-calculator' or tells you to use 10.",
-        "correction": "The specification says: 'In any calculation the value of the gravitational field strength (g) will be given'. Students should always use the value stated in the question.",
-        "basis": "spec"
-      },
-      {
-        "field": "keyPoints[1].writeBullets[1]",
-        "text": "g = 9.8 N/kg (use 10 in non-calculator)",
-        "correction": "The value of g is always given in the question. Use the value provided.",
-        "basis": "spec"
-      },
-      {
-        "field": "keyPoints[1].keyTerms[1].def",
-        "text": "g = 9.8 N/kg on Earth's surface (use 10 N/kg in non-calculator questions unless told otherwise)",
-        "correction": "The value of g is always given in the question. Use the value provided.",
-        "basis": "spec"
-      },
-      {
-        "field": "revisionCardBullets[2]",
-        "text": "g = 9.8 N/kg (use 10 for non-calculator)",
-        "correction": "The value of g is always given in the question. Use the value provided.",
-        "basis": "spec"
-      }
-    ],
+    "factual_errors": [],
     "wrong_terms": [
       {
-        "field": "keyPoints[4].content",
-        "text": "The equation is: <strong>Q = mcΔT</strong>.",
-        "spec_term": "∆E = m c ∆θ"
-      },
-      {
-        "field": "keyPoints[4].content",
-        "text": "Q is energy in joules",
-        "spec_term": "change in thermal energy, ∆E"
-      },
-      {
-        "field": "keyPoints[4].content",
-        "text": "ΔT is the temperature change in °C",
-        "spec_term": "temperature change, ∆θ"
-      },
-      {
-        "field": "keyPoints[4].writeBullets[0]",
-        "text": "Specific heat capacity equation: Q = mcΔT",
-        "spec_term": "∆E = m c ∆θ"
-      },
-      {
-        "field": "keyPoints[4].keyTerms[1].term",
-        "text": "ΔT",
-        "spec_term": "∆θ"
-      },
-      {
-        "field": "keyPoints[4].memTip",
-        "text": "c = Q ÷ (mΔT), m = Q ÷ (cΔT), ΔT = Q ÷ (mc)",
-        "spec_term": "∆E and ∆θ"
-      },
-      {
-        "field": "commonMistakes[4]",
-        "text": "In Q = mcΔT, ΔT is the change in temperature",
-        "spec_term": "∆E = m c ∆θ"
-      },
-      {
-        "field": "examTips[2]",
-        "text": "check which you need: Q (energy), m (mass), c or ΔT",
-        "spec_term": "∆E (change in thermal energy) and ∆θ (temperature change)"
-      },
-      {
-        "field": "revisionCardBullets[6]",
-        "text": "Specific heat capacity: Q = mcΔT. Q in J, m in kg, c in J/kg°C. ΔT = temperature change in °C",
-        "spec_term": "∆E = m c ∆θ"
+        "field": "checkpoints.3.question",
+        "text": "A spring with spring constant k = 400 N/m is compressed by 0.05 m.",
+        "spec_term": "extension (spec: \"The amount of elastic potential energy stored in a stretched spring\" … \"extension, e, in metres, m\")"
       }
     ],
-    "checkpoint_mismatch": [],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "checkpoints.3: \"A spring with spring constant k = 400 N/m is compressed by 0.05 m. How much elastic potential energy is stored?\"",
+        "key_point": "keyPoints[3].content: \"Note that e is the extension, not the total length. It is how far the spring has stretched beyond its natural length.\"",
+        "why": "The key point defines e only as how far the spring has stretched. The checkpoint uses a compression, and the feedback calls it \"Extension e = 0.05 m\". The key point does mention \"stretch or squash\", but it never says that the compression is used as e. So the student is not directly shown how to answer a compression question."
+      }
+    ],
     "not_checked": [
-      "The lesson contains no diagrams, so there were none to check.",
-      "The specification cross-reference 'Temperature changes in a system and specific heat capacity (page 34)' was not provided, so I could not check content that section requires.",
-      "keyPoints[4] (specific heat capacity) has no checkpoint, so there was no checkpoint to check against it."
+      "examTip: \"Energy store equations appear on every exam paper.\" This is a claim about exam papers that cannot be checked against the specification text supplied."
     ]
   }
 }

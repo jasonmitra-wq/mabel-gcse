@@ -12,12 +12,12 @@
   "keyPoints": [
     {
       "heading": "What power means",
-      "content": "<strong>Power</strong> is the rate of <strong>energy transfer</strong>. It is how much energy is transferred per second. The equation is: <strong>P = E/t</strong> (power = energy ÷ time). The <strong>unit of power is the watt (W)</strong>. 1 W = 1 joule per second. You can also write it as <strong>P = W/t</strong>, where W is work done (in joules).\n\nA powerful machine doesn't always transfer more energy overall. It transfers the same energy in a shorter time. Example: a crane lifting a car does the same work whether it takes 5 seconds or 20 seconds. It transfers the same energy. But the crane that does it in 5 seconds has <strong>four times</strong> the power. P = E/t, so for the same E, halving t doubles P.",
+      "content": "<strong>Power</strong> is the rate at which energy is transferred. It is also the rate at which work is done. It is how much <strong>energy transfer</strong> happens per second. The equation is: <strong>P = E/t</strong> (power = energy ÷ time). The <strong>unit of power is the watt (W)</strong>. 1 W = 1 joule per second. You can also write it as <strong>P = W/t</strong>, where W is work done (in joules).\n\nA powerful machine doesn't always transfer more energy overall. It transfers the same energy in a shorter time. Example: a crane lifting a car does the same work whether it takes 5 seconds or 20 seconds. It transfers the same energy. But the crane that does it in 5 seconds has <strong>four times</strong> the power. The time is divided by 4, so the power is multiplied by 4.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Power — the rate of energy transfer. How much energy is transferred per second",
+        "Power — the rate at which energy is transferred, or the rate at which work is done",
         "P = E/t — power (W) = energy (J) ÷ time (s)",
         "Watt (W) — the unit of power. 1 W = 1 J/s",
         "P = W/t — power also equals work done (J) ÷ time (s)",
@@ -67,12 +67,12 @@
           "def": "1,000,000 watts — unit used for power stations and large industrial outputs"
         }
       ],
-      "memTip": "Triangle trick: put P at the top, and E and t at the bottom. Cover what you want to find: P = E/t, E = Pt, t = E/P.",
+      "memTip": "Triangle trick: put E at the top, and P and t at the bottom. Cover what you want to find: P = E/t, E = Pt, t = E/P.",
       "tutor_note": "It is easy to forget to convert minutes to seconds, or kW to W. Make a unit check a habit."
     },
     {
       "heading": "Power in everyday contexts",
-      "content": "Putting real numbers on power helps you make sense of the world.\n- <strong>Human body at rest</strong>: ~80 W, just keeping warm and breathing.\n- <strong>Walking</strong>: ~300 W.\n- <strong>Cycling</strong>: ~100–400 W, depending on speed.\n- <strong>Running</strong>: ~500–800 W. Top sprinters may briefly reach 2000 W.\n- <strong>Hairdryer</strong>: ~2000 W (2 kW).\n- <strong>Electric kettle</strong>: ~2000–3000 W.\n- <strong>Electric car motor</strong>: 100–300 kW.\n- <strong>Large power station</strong>: ~1–2 GW (gigawatts = 1,000,000,000 W).\n\nA professional Tour de France cyclist can keep up about 400 W for an hour. That is impressive, but far less than even a small electric motor. This is exactly why the Industrial Revolution changed so much. Steam engines could replace dozens of human workers by giving out many kilowatts non-stop.",
+      "content": "Putting real numbers on power helps you make sense of the world.\n- <strong>Human body at rest</strong>: ~80 W, just keeping warm and breathing.\n- <strong>Walking</strong>: ~300 W.\n- <strong>Cycling</strong>: ~100–400 W, depending on speed.\n- <strong>Running</strong>: ~500–800 W. Top sprinters may briefly reach 2000 W.\n- <strong>Hairdryer</strong>: ~2000 W (2 kW).\n- <strong>Electric kettle</strong>: ~2000–3000 W.\n- <strong>Electric car motor</strong>: 100–300 kW.\n- <strong>Large power station</strong>: ~1–2 GW (gigawatts = 1,000,000,000 W).\n\nThis is why the Industrial Revolution changed so much. Steam engines could replace dozens of human workers by giving out many kilowatts non-stop.",
       "examFlag": false,
       "cardFlag": true,
       "diagram": null,
@@ -93,30 +93,30 @@
       "tutor_note": "Real power values help with 'estimate' questions. These come up in 6-mark or multi-step problems."
     },
     {
-      "heading": "Work done and power — force × velocity",
-      "content": "<strong>Work done (W) = force (F) × distance (d)</strong>, when the force and movement are in the same direction. Units: <strong>joules (J)</strong>. When a force acts through a distance, energy is transferred. We say 'work is done'.\n\nPower can also be written as: <strong>P = Fv</strong> (power = force × velocity). This comes from P = W/t = Fd/t = F × (d/t) = Fv. Units: N × m/s = W.\n\nWorked example: a car engine gives a driving force of 3000 N. It moves at a constant velocity of 20 m/s → P = 3000 × 20 = 60,000 W = <strong>60 kW</strong>.\n\nThis form is very useful when you are given a force and a speed, not energy and time. At constant velocity, the driving force equals the total resistive forces (drag + friction). So P = Fv gives you the engine power needed.",
+      "heading": "Work done",
+      "content": "<strong>Work done (W) = force (F) × distance (s)</strong>. Here s is the distance moved along the line of action of the force. Units: <strong>joules (J)</strong>. When a force moves an object, energy is transferred. We say 'work is done'.\n\nOne joule of work is done when a force of one newton moves an object one metre. So <strong>1 J = 1 N m</strong> (one newton-metre). To convert, 20 N m is the same as 20 J.\n\nWhen work is done, energy moves between stores:\n- lifting an object: work done fills its gravitational potential store\n- pushing an object against friction: work done against friction goes to the thermal store. This raises the temperature of the object\n\nWorked example: a force of 3000 N moves a car 20 m along the line of the force. W = Fs = 3000 × 20 = 60,000 J = <strong>60 kJ</strong>.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Work done W = Fd. Force (N) × distance (m) = joules (J)",
-        "Energy is transferred when a force moves an object through a distance",
-        "P = Fv. Power (W) = force (N) × velocity (m/s)",
-        "Derived from P = W/t = Fd/t = F × v",
-        "Example: 3000 N force at 20 m/s → P = 60,000 W = 60 kW"
+        "Work done W = Fs. Force (N) × distance moved along the line of action of the force (m) = joules (J)",
+        "Energy is transferred when a force moves an object",
+        "1 J of work is done when a force of 1 N moves an object 1 m. So 1 J = 1 N m",
+        "Work done against friction raises the temperature of the object",
+        "Example: 3000 N force over 20 m → W = 60,000 J = 60 kJ"
       ],
       "keyTerms": [
         {
           "term": "work done",
-          "def": "W = Fd; energy transferred when a force moves an object through a distance; unit: joule (J)"
+          "def": "W = Fs; energy transferred when a force moves an object, where s is the distance moved along the line of action of the force; unit: joule (J)"
         },
         {
-          "term": "P = Fv",
-          "def": "Power equals force multiplied by velocity; useful when force and speed are given instead of energy and time"
+          "term": "newton-metre (N m)",
+          "def": "1 N m = 1 J; the work done when a force of 1 N moves an object 1 m"
         }
       ],
-      "memTip": "P = Fv. Force times velocity gives power.",
-      "tutor_note": "P = Fv questions often involve a vehicle at constant speed. At constant velocity, driving force = drag. So you can find the resistive force from the engine power."
+      "memTip": "W = Fs. Force times distance gives work done. 1 N m = 1 J.",
+      "tutor_note": "Say which store the energy goes to. Lifting fills the gravitational potential store. Friction fills the thermal store."
     }
   ],
   "tables": [
@@ -172,12 +172,24 @@
         [
           "Large nuclear power station",
           "~1–2 GW",
-          "Baseload electricity generation for a whole region"
+          "Electricity generation for a whole region"
         ]
       ]
     }
   ],
   "checkpoints": {
+    "0": {
+      "question": "Crane A lifts a car in 20 s. Crane B lifts the same car to the same height in 5 s. Which statement is correct?",
+      "options": [
+        "Crane B has four times the power of crane A",
+        "Crane B transfers four times as much energy as crane A",
+        "Both cranes have the same power",
+        "Crane A has four times the power of crane B"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! Both cranes transfer the same energy. Crane B does it in a quarter of the time, so its power is four times bigger.",
+      "wrongFeedback": "Both cranes do the same work. Power = energy ÷ time. Crane B takes a quarter of the time, so it has four times the power."
+    },
     "1": {
       "question": "A runner does 18,000 J of work in 90 seconds. What is their power output?",
       "options": [
@@ -190,39 +202,49 @@
       "correctFeedback": "Correct! P = E/t = 18,000 ÷ 90 = 200 W. That is a sensible value for a runner.",
       "wrongFeedback": "Use P = E/t. Substitute: P = 18,000 J ÷ 90 s = 200 W. Remember to divide energy by time in seconds."
     },
-    "3": {
-      "question": "A car engine produces a driving force of 4000 N at a speed of 25 m/s. What is the engine's power output?",
+    "2": {
+      "question": "A hairdryer has a power of 2000 W. How much energy does it transfer in 10 s?",
       "options": [
-        "100,000 W (100 kW)",
-        "160 W",
-        "4025 W",
-        "25,000 W (25 kW)"
+        "20,000 J",
+        "200 J",
+        "2010 J",
+        "0.005 J"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! P = Fv = 4000 × 25 = 100,000 W = 100 kW. That is a realistic value for a car engine.",
-      "wrongFeedback": "Use P = Fv (power = force × velocity). P = 4000 N × 25 m/s = 100,000 W = 100 kW. Don't add force and velocity. Multiply them."
+      "correctFeedback": "Correct! E = Pt = 2000 × 10 = 20,000 J.",
+      "wrongFeedback": "Use E = Pt. E = 2000 W × 10 s = 20,000 J. Multiply power by time."
+    },
+    "3": {
+      "question": "A force of 50 N pushes a box 4 m along the line of the force. How much work is done?",
+      "options": [
+        "200 J",
+        "12.5 J",
+        "54 J",
+        "0.08 J"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct! W = Fs = 50 × 4 = 200 J.",
+      "wrongFeedback": "Use W = Fs (work done = force × distance). W = 50 N × 4 m = 200 J. Multiply, don't divide or add."
     }
   },
   "commonMistakes": [
     "Mixing up power (rate of energy transfer, W) with energy (total amount transferred, J). They are different quantities with different units.",
     "Forgetting to convert minutes to seconds, or kW to W, before calculating. Always work in SI units (W and s).",
-    "Adding force and velocity instead of multiplying in P = Fv. Always multiply: P = F × v.",
     "Thinking a more powerful device always transfers more energy. It transfers energy faster, not always more in total.",
     "Leaving the unit off the answer. Power must be in W (or kW or MW, with conversion), not J or N."
   ],
   "examTips": [
     "P = E/t. If you see 'how fast' or 'rate of energy transfer', think power. If you see 'how much total energy', think E = Pt.",
     "Convert units before calculating: kW → W (×1000), minutes → seconds (×60). Write the conversion step out clearly.",
-    "For P = Fv questions, check the units: newtons × metres per second = watts. This shows the formula is right.",
     "If a question gives you efficiency and power together, find the useful output power. It equals efficiency × input power."
   ],
   "revisionCardBullets": [
-    "Power = rate of energy transfer",
+    "Power = rate at which energy is transferred, or rate at which work is done",
     "P = E/t. Unit: watts (W). 1 W = 1 J/s",
     "Rearrangements: E = Pt; t = E/P",
     "1 kW = 1000 W; 1 MW = 1,000,000 W; 1 GW = 1,000,000,000 W",
-    "Work done W = Fd (force × distance); unit: joules (J)",
-    "P = Fv (power = force × velocity). Useful for vehicles at constant speed",
+    "Work done W = Fs (force × distance moved along the line of action of the force); unit: joules (J)",
+    "1 J = 1 N m. Work done against friction raises the temperature",
     "Human body at rest ~80 W; cycling ~150–400 W; hairdryer ~2 kW",
     "Electric car motor ~100–300 kW; power station ~500 MW–2 GW",
     "Power tells you HOW FAST energy is transferred, not how much in total",

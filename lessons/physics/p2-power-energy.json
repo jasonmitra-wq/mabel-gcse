@@ -1,26 +1,26 @@
 {
   "id": "p2-power-energy",
-  "title": "Electrical power and energy — what it costs to run your devices",
+  "title": "Electrical power and energy — how your devices transfer energy",
   "topic": "P2",
   "examTip": "Multi-step calculation questions are common. Write down what you know and pick the right equation. Substitute carefully, and always include units. Practice is the only way to get fast at this.",
   "introTips": [
     "Before you start: can you write down P = IV, E = Pt and V = IR from memory? If not, that is your first job.",
     "Before reading, try estimating the power of five appliances at home. Then check how close you were.",
-    "Watch the unit conversions: watts ↔ kilowatts, seconds ↔ hours. These trip people up in exams."
+    "Watch the unit conversions: watts ↔ kilowatts, minutes ↔ seconds. These trip people up in exams."
   ],
-  "intro": "Every time you boil a kettle, stream a video or charge your phone, you pay for electrical energy. The bill at the end of the month comes straight from the physics you are about to learn. Power and energy are not just abstract maths. They tell you which appliances cost the most to run. They show why LED bulbs save money. They let you work out the exact cost of a tumble dryer cycle. These equations also come up in almost every electricity exam question.",
+  "intro": "Every time you boil a kettle, stream a video or charge your phone, electrical energy is transferred. Everyday electrical appliances are designed to bring about energy transfers. Power tells you how fast an appliance transfers energy. It shows why a high-power kettle boils water faster. These equations also come up in almost every electricity exam question.",
   "keyPoints": [
     {
       "heading": "Electrical power",
-      "content": "<strong>Power</strong> is the rate at which energy is transferred. It is how many joules are transferred per second. The unit of power is the <strong>watt (W)</strong>, where 1 W = 1 J/s.\n\nThe key equations are:\n- <strong>P = IV</strong> (power = current × voltage)\n- <strong>P = I²R</strong> (put V = IR into P = IV)\n- <strong>P = V²/R</strong> (put I = V/R into P = IV)\n\nWorked example 1: a kettle with I = 10 A and V = 230 V → P = 10 × 230 = <strong>2300 W = 2.3 kW</strong>.\n\nWorked example 2: a phone charger with I = 1 A, V = 5 V → P = 1 × 5 = <strong>5 W</strong>.\n\nWorked example 3: a resistor with R = 20 Ω and I = 3 A → P = 3² × 20 = 9 × 20 = <strong>180 W</strong>.\n\nTypical values to know: kettle ~2 kW, microwave ~800 W, laptop ~65 W, LED bulb ~10 W, old incandescent bulb ~60 W. 1 kW = 1000 W.",
+      "content": "<strong>Power</strong> is the rate at which energy is transferred. It is how many joules are transferred per second. The unit of power is the <strong>watt (W)</strong>, where 1 W = 1 J/s.\n\nThe key equations are:\n- <strong>P = IV</strong> (power = potential difference × current)\n- <strong>P = I²R</strong> (put V = IR into P = IV)\n\nWorked example 1: a kettle with I = 10 A and V = 230 V → P = 10 × 230 = <strong>2300 W = 2.3 kW</strong>.\n\nWorked example 2: a phone charger with I = 1 A, V = 5 V → P = 1 × 5 = <strong>5 W</strong>.\n\nWorked example 3: a resistor with R = 20 Ω and I = 3 A → P = 3² × 20 = 9 × 20 = <strong>180 W</strong>.\n\nTypical values to know: kettle ~2 kW, microwave ~800 W, laptop ~65 W, LED bulb ~10 W, old incandescent bulb ~60 W. 1 kW = 1000 W.\n\nThe power rating tells you how much energy an appliance transfers each second. A higher power kettle transfers more energy to the water each second. So the water's thermal energy store fills faster.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "Power — the rate of energy transfer. Measured in watts (W). 1 W = 1 J/s",
-        "P = IV (the main equation: power = current × voltage)",
+        "P = IV (the main equation: power = potential difference × current)",
         "P = I²R (substitute V = IR into P = IV)",
-        "P = V²/R (substitute I = V/R into P = IV)",
+        "Higher power rating → more energy transferred each second",
         "Kettle: I = 10 A, V = 230 V → P = 2300 W = 2.3 kW",
         "1 kW = 1000 W. Typical appliances: kettle 2 kW, LED bulb 10 W, laptop 65 W"
       ],
@@ -39,11 +39,11 @@
         }
       ],
       "memTip": "PIV: Power = I × V. Think of it as 'PIV-ot', the central equation everything else turns around.",
-      "tutor_note": "People often use P = IV and forget P = I²R. Use P = I²R when the voltage is not given. All three equations are the same equation in different forms. There is no new physics, just algebra."
+      "tutor_note": "People often use P = IV and forget P = I²R. Use P = I²R when the potential difference is not given. Both are the same equation in different forms. There is no new physics, just algebra."
     },
     {
       "heading": "Electrical energy",
-      "content": "<strong>Energy transferred = power × time</strong>: E = Pt. The units are joules (J) when P is in watts (W) and t is in seconds (s). Putting in P = IV gives <strong>E = IVt</strong>.\n\nWorked example 1: a 2 kW kettle running for 3 minutes → E = 2000 × (3 × 60) = 2000 × 180 = <strong>360,000 J = 360 kJ</strong>.\n\nWorked example 2: a 60 W bulb left on for 1 hour → E = 60 × 3600 = <strong>216,000 J = 216 kJ</strong>.\n\nFor bills, electricity companies use a much larger unit: the <strong>kilowatt-hour (kWh)</strong>. <strong>1 kWh</strong> = the energy transferred by a 1 kW device running for 1 hour = 1000 W × 3600 s = <strong>3,600,000 J = 3.6 MJ</strong>.\n\nUnits used (kWh) = power (kW) × time (hours).\n\nWorked example 3: a 2 kW kettle for 30 minutes = 2 kW × 0.5 h = <strong>1 kWh</strong>.",
+      "content": "<strong>Energy transferred = power × time</strong>: E = Pt. The units are joules (J) when P is in watts (W) and t is in seconds (s). Putting in P = IV gives <strong>E = IVt</strong>.\n\nEveryday electrical appliances are designed to bring about energy transfers. They transfer energy from batteries or the ac mains. In an electric motor, the energy goes to a kinetic energy store. In a heating device, it goes to a thermal energy store. The energy transferred depends on the power of the appliance and how long it is on.\n\nWorked example 1: a 2 kW kettle running for 3 minutes → E = 2000 × (3 × 60) = 2000 × 180 = <strong>360,000 J = 360 kJ</strong>.\n\nWorked example 2: a 60 W bulb left on for 1 hour → E = 60 × 3600 = <strong>216,000 J = 216 kJ</strong>.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -51,87 +51,50 @@
         "E = Pt (energy = power × time). Joules when P is in W and t in seconds",
         "E = IVt (substitute P = IV)",
         "Always convert time to seconds before using joules",
-        "kWh: the energy unit for bills. 1 kWh = energy from a 1 kW device for 1 hour",
-        "1 kWh = 1000 W × 3600 s = 3,600,000 J = 3.6 MJ",
-        "Units used (kWh) = Power (kW) × time (hours)"
+        "Appliances transfer energy from batteries or ac mains — to a kinetic store (motor) or a thermal store (heater)"
       ],
       "keyTerms": [
         {
           "term": "Energy transferred",
-          "def": "The total energy moved from one store to another; E = Pt (joules) or Power (kW) × time (hours) for kWh."
-        },
-        {
-          "term": "Kilowatt-hour (kWh)",
-          "def": "The unit electricity companies use for billing; the energy transferred by a 1 kW device in 1 hour = 3.6 MJ."
+          "def": "The total energy moved from one store to another; E = Pt, in joules."
         },
         {
           "term": "Joule (J)",
           "def": "The SI unit of energy; 1 J = 1 W × 1 s."
         }
       ],
-      "memTip": "Joules = watts × seconds (small scale). kWh = kilowatts × hours (big scale, for bills). The physics is the same. The units just suit different situations.",
-      "tutor_note": "Know when to use seconds (for joules) and when to use hours (for kWh). Mixing them up is the most common mistake in energy calculations."
-    },
-    {
-      "heading": "Cost of electricity",
-      "content": "Once you know how many kilowatt-hours an appliance uses, you can work out the cost. <strong>Cost = units used (kWh) × price per unit (p/kWh)</strong>. The exam question gives you the price per kWh. A typical value is around <strong>28p per kWh</strong>. This varies, so always use the figure given.\n\nWorked example 1: a 2.5 kW tumble dryer runs for 2 hours → units = 2.5 × 2 = <strong>5 kWh</strong> → cost = 5 × 28p = <strong>140p = £1.40</strong>.\n\nWorked example 2: a 100 W television watched for 4 hours → units = 0.1 kW × 4 h = <strong>0.4 kWh</strong> → cost = 0.4 × 28p = <strong>11.2p</strong>.\n\nWays to save energy:\n- switch to LED bulbs (10 W vs 60 W incandescent for the same light)\n- turn devices off standby\n- take shorter showers (if you use an electric shower)\n- use appliances at off-peak times\n\n<strong>Payback time</strong> = extra cost of the efficient appliance ÷ yearly saving. Example: an energy-efficient boiler costs £800 more but saves £200/year → payback time = 800 ÷ 200 = <strong>4 years</strong>. After 4 years it starts saving money.",
-      "examFlag": true,
-      "cardFlag": true,
-      "diagram": null,
-      "writeBullets": [
-        "Cost (pence) = units (kWh) × price per kWh (p)",
-        "Units used (kWh) = power (kW) × time (hours). Convert watts to kilowatts first",
-        "Worked example: 2.5 kW dryer × 2 h = 5 kWh × 28p = £1.40",
-        "Payback time = extra upfront cost ÷ annual saving (in years)",
-        "LED bulbs: ~10 W vs 60 W incandescent. Same light, 83% less energy",
-        "The price per kWh is always given in the exam. Don't learn a fixed value"
-      ],
-      "keyTerms": [
-        {
-          "term": "Cost of electricity",
-          "def": "Cost (p) = units used (kWh) × price per unit (p/kWh). Units = power (kW) × time (hours)."
-        },
-        {
-          "term": "Payback time",
-          "def": "The time it takes for savings from an energy-efficient appliance to recoup the extra purchase cost. Payback time = extra cost ÷ annual saving."
-        },
-        {
-          "term": "Energy efficiency",
-          "def": "Using less energy to achieve the same output; e.g. LED bulbs give the same light as incandescent bulbs for a fraction of the power."
-        }
-      ],
-      "memTip": "Units → cost: power (kW) × hours = kWh. kWh × pence = pence. Always do it in that order and you won't go wrong.",
-      "tutor_note": "A common slip is forgetting to convert watts to kilowatts before working out kWh. That gives answers 1000× too large. Make a habit of writing 'P = ___ W = ___ kW' before every calculation."
+      "memTip": "Joules = watts × seconds. Always convert time to seconds first.",
+      "tutor_note": "Always convert time to seconds before working out energy in joules. Forgetting this is the most common mistake in energy calculations."
     },
     {
       "heading": "Linking all the electrical equations",
-      "content": "In a multi-step calculation, you need to choose and combine equations. Here is how they all link together:\n- <strong>V = IR</strong> (Ohm's Law: voltage = current × resistance)\n- <strong>P = IV</strong> (power). Substituting gives <strong>P = I²R</strong> and <strong>P = V²/R</strong>\n- <strong>E = Pt</strong> (energy = power × time). Substituting gives <strong>E = IVt</strong>\n- <strong>Q = It</strong> (charge = current × time; Q in coulombs, C)\n- <strong>E = QV</strong> (energy = charge × voltage). This links the mechanical 'work done' idea of energy to circuit quantities\n\nMulti-step strategy:\n(1) write down all the values you know\n(2) find what the question asks for\n(3) choose the equation that links what you know to what you need\n(4) substitute values\n(5) rearrange if needed\n(6) check units\n\nWorked multi-step example: a resistor has R = 50 Ω and V = 10 V. Find the energy transferred in 2 minutes. Step 1: I = V/R = 10/50 = 0.2 A. Step 2: P = IV = 0.2 × 10 = 2 W. Step 3: E = Pt = 2 × 120 = <strong>240 J</strong>.",
+      "content": "In a multi-step calculation, you need to choose and combine equations. Here is how they all link together:\n- <strong>V = IR</strong> (potential difference = current × resistance)\n- <strong>P = IV</strong> (power). Substituting gives <strong>P = I²R</strong>\n- <strong>E = Pt</strong> (energy = power × time). Substituting gives <strong>E = IVt</strong>\n- <strong>Q = It</strong> (charge flow = current × time; Q in coulombs, C)\n- <strong>E = QV</strong> (energy transferred = charge flow × potential difference). This links the mechanical 'work done' idea of energy to circuit quantities\n\nMulti-step strategy:\n(1) write down all the values you know\n(2) find what the question asks for\n(3) choose the equation that links what you know to what you need\n(4) substitute values\n(5) rearrange if needed\n(6) check units\n\nWorked multi-step example: a resistor has R = 50 Ω and V = 10 V. Find the energy transferred in 2 minutes. Step 1: I = V/R = 10/50 = 0.2 A. Step 2: P = IV = 0.2 × 10 = 2 W. Step 3: E = Pt = 2 × 120 = <strong>240 J</strong>.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "V = IR — Ohm's Law. Links voltage, current and resistance",
-        "P = IV — power. Leads to P = I²R and P = V²/R by substitution",
+        "V = IR — links potential difference, current and resistance",
+        "P = IV — power. Leads to P = I²R by substitution",
         "E = Pt = IVt — energy transferred, in joules",
-        "Q = It — charge (coulombs) = current × time",
-        "E = QV — energy = charge × voltage. Links work done to circuit quantities",
+        "Q = It — charge flow (coulombs) = current × time",
+        "E = QV — energy transferred = charge flow × potential difference. Links work done to circuit quantities",
         "Multi-step strategy: list knowns → pick equation → substitute → rearrange → check units"
       ],
       "keyTerms": [
         {
-          "term": "Charge (Q)",
-          "def": "The quantity of electricity flowing past a point; Q = It. Unit: coulombs (C)."
+          "term": "Charge flow (Q)",
+          "def": "The charge that flows past a point; Q = It. Unit: coulombs (C)."
         },
         {
           "term": "E = QV",
-          "def": "Energy transferred (J) = charge (C) × voltage (V). Connects the electrical quantities to the concept of work done."
+          "def": "Energy transferred (J) = charge flow (C) × potential difference (V). Connects the electrical quantities to the concept of work done."
         },
         {
           "term": "Multi-step calculation",
           "def": "A calculation requiring two or more equations applied in sequence."
         }
       ],
-      "memTip": "Draw a spider diagram with P in the middle. Draw all four equations coming out from it: P=IV, P=I²R, P=V²/R, E=Pt. Then link V=IR as the bridge between them.",
+      "memTip": "Draw a spider diagram with P in the middle. Draw the equations coming out from it: P=IV, P=I²R, E=Pt. Then link V=IR as the bridge between them.",
       "tutor_note": "E = QV is often skipped, but it comes up in higher-grade questions. It is just energy = work done to move charge Q through a potential difference V. It is the same idea as W = Fd, but for electrical charge."
     }
   ],
@@ -148,13 +111,13 @@
       "rows": [
         [
           "V = IR",
-          "Ohm's Law",
+          "Links potential difference, current and resistance",
           "V in V, I in A, R in Ω",
-          "Finding voltage, current or resistance when two of the three are known"
+          "Finding potential difference, current or resistance when two of the three are known"
         ],
         [
           "P = IV",
-          "Power from current and voltage",
+          "Power from current and potential difference",
           "P in W, I in A, V in V",
           "Most common power calculation"
         ],
@@ -162,13 +125,7 @@
           "P = I²R",
           "Power from current and resistance",
           "P in W, I in A, R in Ω",
-          "When voltage is not given"
-        ],
-        [
-          "P = V²/R",
-          "Power from voltage and resistance",
-          "P in W, V in V, R in Ω",
-          "When current is not given"
+          "When potential difference is not given"
         ],
         [
           "E = Pt",
@@ -178,19 +135,19 @@
         ],
         [
           "E = IVt",
-          "Energy from current, voltage, time",
+          "Energy from current, potential difference, time",
           "E in J, I in A, V in V, t in s",
           "Direct substitution when P is not given"
         ],
         [
           "Q = It",
-          "Charge from current and time",
+          "Charge flow from current and time",
           "Q in C, I in A, t in s",
           "Finding charge; convert t to seconds"
         ],
         [
           "E = QV",
-          "Energy from charge and voltage",
+          "Energy from charge flow and potential difference",
           "E in J, Q in C, V in V",
           "Linking charge to energy; higher-grade questions"
         ]
@@ -202,51 +159,43 @@
       "headers": [
         "Appliance",
         "Typical power",
-        "Fuse rating",
-        "Energy use in 1 hour (kWh)"
+        "Fuse rating"
       ],
       "rows": [
         [
           "LED bulb",
           "10 W",
-          "3 A",
-          "0.01 kWh"
+          "3 A"
         ],
         [
           "Phone charger",
           "5–20 W",
-          "3 A",
-          "0.005–0.02 kWh"
+          "3 A"
         ],
         [
           "Laptop",
           "65 W",
-          "3 A",
-          "0.065 kWh"
+          "3 A"
         ],
         [
           "Microwave",
           "800 W",
-          "13 A",
-          "0.8 kWh"
+          "13 A"
         ],
         [
           "Kettle",
           "2000–3000 W",
-          "13 A",
-          "2–3 kWh"
+          "13 A"
         ],
         [
           "Tumble dryer",
           "2500 W",
-          "13 A",
-          "2.5 kWh"
+          "13 A"
         ],
         [
           "Electric shower",
           "8000–10000 W",
-          "13 A (dedicated circuit)",
-          "8–10 kWh"
+          "13 A (dedicated circuit)"
         ]
       ]
     }
@@ -265,16 +214,16 @@
       "wrongFeedback": "Use P = I²R. Square the current first (10² = 100), then multiply by resistance (100 × 23 = 2300 W). P = IV would also work. First find V = IR = 10 × 23 = 230 V, then P = 10 × 230 = 2300 W."
     },
     "1": {
-      "question": "A 3 kW electric heater runs for 2.5 hours. How many kWh does it use? What does it cost at 28p per kWh?",
+      "question": "A 2000 W kettle is switched on for 60 s. How much energy does it transfer?",
       "options": [
-        "7.5 kWh, £2.10",
-        "3 kWh, 84p",
-        "7.5 kWh, 75p",
-        "2.5 kWh, 70p"
+        "120,000 J",
+        "33 J",
+        "2060 J",
+        "120 J"
       ],
       "correct": 0,
-      "correctFeedback": "Perfect. Units = 3 kW × 2.5 h = 7.5 kWh. Cost = 7.5 × 28p = 210p = £2.10. Clean two-step calculation.",
-      "wrongFeedback": "Step 1: Units (kWh) = power (kW) × time (hours) = 3 × 2.5 = 7.5 kWh. Step 2: Cost = 7.5 kWh × 28p = 210p = £2.10."
+      "correctFeedback": "Correct. E = Pt = 2000 × 60 = 120,000 J. Power in watts and time in seconds give energy in joules.",
+      "wrongFeedback": "Use E = Pt (energy = power × time). E = 2000 W × 60 s = 120,000 J. Multiply, don't divide or add."
     },
     "2": {
       "question": "A resistor has R = 50 Ω and V = 10 V. What is the energy transferred in 2 minutes?",
@@ -285,47 +234,29 @@
         "12,000 J"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! First find P = V²/R = 100/50 = 2 W. Then E = Pt = 2 × 120 = 240 J. (Remember: 2 minutes = 120 seconds.)",
-      "wrongFeedback": "This is a multi-step calculation. Step 1: P = V²/R = 10²/50 = 100/50 = 2 W. Step 2: convert 2 minutes to seconds (× 60) = 120 s. Step 3: E = Pt = 2 × 120 = 240 J."
-    },
-    "3": {
-      "question": "An energy-efficient washing machine costs £150 more than a standard model. It saves £50 per year on electricity bills. What is the payback time?",
-      "options": [
-        "3 years",
-        "150 years",
-        "50 years",
-        "1.5 years"
-      ],
-      "correct": 0,
-      "correctFeedback": "Right. Payback time = extra cost ÷ annual saving = £150 ÷ £50 = 3 years. After that, the savings are pure profit.",
-      "wrongFeedback": "Payback time = extra cost ÷ annual saving = 150 ÷ 50 = 3 years. Don't mix up the numbers. Divide the upfront cost by the yearly saving."
+      "correctFeedback": "Correct! First find I = V/R = 10/50 = 0.2 A. Then P = IV = 0.2 × 10 = 2 W. Then E = Pt = 2 × 120 = 240 J. (Remember: 2 minutes = 120 seconds.)",
+      "wrongFeedback": "This is a multi-step calculation. Step 1: I = V/R = 10/50 = 0.2 A. Step 2: P = IV = 0.2 × 10 = 2 W. Step 3: convert 2 minutes to seconds (× 60) = 120 s. Step 4: E = Pt = 2 × 120 = 240 J."
     }
   },
   "commonMistakes": [
-    "Forgetting to convert watts to kilowatts before working out kWh. Divide by 1000. A 2000 W kettle is 2 kW, not 2000 kW.",
-    "Using seconds instead of hours (or the other way round) when working out energy. Use seconds for joules (E = Pt) and hours for kWh. Mixing them up gives wildly wrong answers.",
+    "Forgetting to convert time to seconds when working out energy in joules (E = Pt). Three minutes is 180 s, not 3 s.",
     "Using P = I + V, or some made-up equation, instead of P = IV. Power is a product (multiplication), not a sum.",
     "Forgetting to square the current in P = I²R. Writing P = IR instead of P = I²R gives the voltage, not the power.",
-    "Leaving units out of answers. Mark schemes need the correct unit (W, J, kWh) as well as the number."
+    "Leaving units out of answers. Mark schemes need the correct unit (W, J) as well as the number."
   ],
   "examTips": [
     "In multi-step electricity calculations, always write out every step. Examiners give marks for correct working, even if your final answer is wrong. Never skip steps.",
-    "The price per kWh is always given in the exam question. Never learn a fixed value. Read the question carefully and use the number given.",
     "When a question gives you R and I, use P = I²R straight away. Don't work out V first and then use P = IV. It is faster and gives fewer chances for arithmetic slips."
   ],
   "revisionCardBullets": [
     "Power = rate of energy transfer. Unit = watt (W). 1 W = 1 J/s",
-    "P = IV (current × voltage)",
-    "P = I²R (when voltage not given)",
-    "P = V²/R (when current not given)",
+    "P = IV (potential difference × current)",
+    "P = I²R (when potential difference not given)",
     "E = Pt (joules; t in seconds)",
     "E = IVt (substitute P = IV into E = Pt)",
-    "1 kWh = energy from 1 kW device for 1 hour = 3.6 MJ",
-    "Units used (kWh) = power (kW) × time (hours)",
-    "Cost (p) = units (kWh) × price per kWh (p)",
-    "Payback time (years) = extra cost ÷ annual saving",
-    "Q = It (charge in coulombs = current × time in seconds)",
-    "E = QV (energy = charge × voltage). Links charge to work done"
+    "Appliances transfer energy to kinetic stores (motors) or thermal stores (heaters)",
+    "Q = It (charge flow in coulombs = current × time in seconds)",
+    "E = QV (energy transferred = charge flow × potential difference). Links charge to work done"
   ],
   "videos": [
     {

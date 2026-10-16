@@ -1,9 +1,9 @@
 {
   "lesson": "p2-components",
   "source_file": "lessons/physics/p2-components.json",
-  "lesson_md5": "2f03c31fa6bfc8d9b2b1f8be2881787b",
+  "lesson_md5": "d4f170cdc10e29aa8ff9866e8ad459a1",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:37:01.888Z",
+  "date": "2026-10-16T18:45:49.097Z",
   "specRefs_sent": [
     "4.2.1.1",
     "4.2.1.4"
@@ -11,200 +11,58 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 8170,
-    "output_tokens": 6908
+    "input_tokens": 7360,
+    "output_tokens": 3576
   },
-  "cost_usd": 0.17084,
+  "cost_usd": 0.10096,
   "status": "OK",
   "result": {
     "lesson": "p2-components",
     "missing_spec_content": [
       {
         "specRef": "4.2.1.4",
-        "spec_text": "The resistance of a filament lamp increases as the temperature of the filament increases.",
-        "why": "No key point teaches the filament lamp. It appears only as one row of tables[1] ('Resistance increases as it gets hotter') and in the examTip. The examTip tells the student to 'Know the shape for ... a filament bulb', but no explanation is given."
-      },
-      {
-        "specRef": "4.2.1.4",
-        "spec_text": "Students should be able to explain that, for some resistors, the value of R remains constant but that in others it can change as the current changes.",
-        "why": "The lesson never says that resistance can change as the current changes. It does not contrast constant-resistance components with components whose resistance varies with current."
-      },
-      {
-        "specRef": "4.2.1.4",
-        "spec_text": "The resistance of components such as lamps, diodes, thermistors and LDRs is not constant; it changes with the current through the component.",
-        "why": "This statement is not taught. tables[1] goes further and says the opposite for an LDR."
-      },
-      {
-        "specRef": "4.2.1.4",
         "spec_text": "explain the design and use of a circuit to measure the resistance of a component by measuring the current through, and potential difference across, the component",
-        "why": "There is no circuit with an ammeter in series and a voltmeter in parallel. The lesson does not explain how resistance is measured using R = V ÷ I from meter readings."
+        "why": "The lesson never describes a measuring circuit. It does not cover an ammeter in series, a voltmeter in parallel, or using a variable resistor or supply to vary the potential difference, and then R = V ÷ I. It gives R = V ÷ I only as a calculation."
       },
       {
         "specRef": "4.2.1.4",
         "spec_text": "Required practical activity 4: use circuit diagrams to construct appropriate circuits to investigate the I–V characteristics of a variety of circuit elements, including a filament lamp, a diode and a resistor at constant temperature.",
-        "why": "The required practical is not mentioned. There is no method, no circuit and no guidance on reversing the supply to get negative values."
+        "why": "The lesson gives the I-V graph shapes but not how to get them. It has no circuit and no method: varying the potential difference, reading the ammeter and voltmeter, and reversing the connections to obtain negative values."
+      },
+      {
+        "specRef": "4.2.1.1 / 4.2.1.4",
+        "spec_text": "Students should be able to draw and interpret circuit diagrams.",
+        "why": "Symbols are described only in words, and only for resistors, diodes, LEDs, LDRs and thermistors. The lesson has no circuit diagrams. Symbols needed to build these circuits, such as the ammeter, voltmeter, cell or battery and filament lamp, are not given. The lesson does not teach drawing or interpreting a circuit diagram."
       },
       {
         "specRef": "4.2.1.4",
         "spec_text": "Students should be able to use graphs to explore whether circuit elements are linear or non-linear and relate the curves produced to their function and properties.",
-        "why": "The terms 'linear' and 'non-linear' are never used or defined. Graph shapes are described but not classified this way."
-      },
-      {
-        "specRef": "4.2.1.1",
-        "spec_text": "Students should be able to draw and interpret circuit diagrams.",
-        "why": "No circuit diagrams are given. All diagram fields are null. Symbols are only described in words in tables[0], so the student cannot practise drawing or interpreting circuit diagrams."
+        "why": "The lesson never uses the terms linear and non-linear. It does not ask the student to classify components by their I-V graphs. The filament lamp curve is explained only in one row of a table (tables[1].rows[1]), not in a key point."
       }
     ],
-    "above_gcse": [
-      {
-        "field": "keyPoints[1].content",
-        "text": "This is ~0.7 V for silicon diodes.",
-        "why": "The spec only requires that current flows one way and that reverse resistance is very high. A threshold voltage value for silicon is beyond the spec."
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "In <strong>reverse bias</strong> (the wrong direction)",
-        "why": "The spec says 'reverse direction'. The term 'reverse bias' is A-level or semiconductor-physics language."
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "It gives out photons as electrons lose energy crossing the junction.",
-        "why": "Photons and junction physics are not required by this spec section."
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "Diodes are used in <strong>rectification</strong>. This means turning alternating current (AC) into direct current (DC), for example in phone chargers.",
-        "why": "Rectification is not in the supplied spec sections."
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "In bright light, more photons hit the semiconductor material (often cadmium sulphide). This releases more charge carriers.",
-        "why": "The spec only requires that LDR resistance decreases as light intensity increases. Semiconductor charge-carrier explanations and named materials go beyond it."
-      },
-      {
-        "field": "keyPoints[2].keyTerms[1].def",
-        "text": "A free electron or hole that can carry electric charge through a semiconductor material.",
-        "why": "'Holes' are not part of GCSE physics and may confuse."
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "An LDR can sit in a <strong>potential divider</strong> circuit with a fixed resistor. Its changing resistance shifts the voltage across each part. This voltage change can trigger a transistor switch.",
-        "why": "Potential dividers and transistor switching are not in the supplied spec sections."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "The most common type is an <strong>NTC thermistor</strong> (negative temperature coefficient).",
-        "why": "The spec simply states that the resistance of a thermistor decreases as temperature increases. NTC terminology goes beyond this."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "At high temperatures, more electrons have enough thermal energy to break free from atoms. They act as charge carriers, so resistance falls a lot.",
-        "why": "This charge-carrier mechanism is not required by the spec."
-      },
-      {
-        "field": "examTips[2]",
-        "text": "You may be asked to pick the right fuse or explain how a circuit behaves.",
-        "why": "Fuse selection is not part of the supplied spec sections."
-      }
-    ],
-    "factual_errors": [
-      {
-        "field": "keyPoints[0].content",
-        "text": "A <strong>fixed resistor</strong> has a constant resistance, whatever the temperature, light or other conditions.",
-        "correction": "Current through an ohmic conductor is proportional to potential difference only at a constant temperature. A resistor's resistance can change if its temperature changes.",
-        "basis": "spec"
-      },
-      {
-        "field": "keyPoints[0].writeBullets[0]",
-        "text": "Fixed resistor — resistance stays the same at all voltages and temperatures",
-        "correction": "Resistance is constant only at constant temperature ('at a constant temperature' in the spec).",
-        "basis": "spec"
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "It follows <strong>Ohm's Law</strong>: V = IR.",
-        "correction": "V = IR defines resistance and applies to any component. Ohm's law is the statement that current is directly proportional to potential difference at constant temperature.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[0].writeBullets[2]",
-        "text": "Ohm's Law — V = IR. Current is proportional to voltage for ohmic conductors",
-        "correction": "V = IR is the resistance relationship for all components, not Ohm's law itself.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "tables[1].rows[3]",
-        "text": "Different straight lines for different light levels / Each light level gives different (constant) resistance",
-        "correction": "The spec states that the resistance of LDRs 'is not constant; it changes with the current through the component'.",
-        "basis": "spec"
-      },
-      {
-        "field": "tables[0].rows[2]",
-        "text": "Very low (forward) / very high (reverse)",
-        "correction": "In the forward direction a diode's resistance is high below the threshold and becomes low only once the threshold is passed. Its resistance changes with current.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "Key rule: the <strong>LDR and the thermistor are inverse components</strong>.",
-        "correction": "Resistance decreases as light intensity or temperature increases, but the relationship is non-linear. It is not an inverse proportion, which is what 'inverse' suggests.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].writeBullets[5]",
-        "text": "Graph: resistance vs light intensity is a downward curve (inverse relationship)",
-        "correction": "Resistance decreases non-linearly with light intensity. It is not inversely proportional.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "checkpoints.0.wrongFeedback",
-        "text": "Ohm's Law is a division here.",
-        "correction": "R = V ÷ I is the definition of resistance, not Ohm's law.",
-        "basis": "own knowledge"
-      }
-    ],
+    "above_gcse": [],
+    "factual_errors": [],
     "wrong_terms": [
       {
-        "field": "keyPoints[0].content",
-        "text": "Here V is voltage (volts, V)",
-        "spec_term": "potential difference"
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "Current is directly proportional to voltage.",
-        "spec_term": "potential difference"
-      },
-      {
-        "field": "examTip",
-        "text": "Know the shape for a fixed resistor, a diode and a filament bulb.",
-        "spec_term": "filament lamp"
+        "field": "keyPoints[0].keyTerms[0].def",
+        "text": "A component whose resistance stays constant as voltage changes",
+        "spec_term": "potential difference (spec: \"directly proportional to the potential difference across the resistor\"; \"the resistance remains constant as the current changes\")"
       },
       {
         "field": "keyPoints[1].content",
-        "text": "In <strong>reverse bias</strong> (the wrong direction)",
-        "spec_term": "reverse direction"
+        "text": "the diode shows a flat line near zero for negative voltages. Then there is a sudden steep rise once the <strong>forward threshold voltage</strong> is passed.",
+        "spec_term": "potential difference"
       },
       {
-        "field": "keyPoints[3].content",
-        "text": "the <strong>LDR and the thermistor are inverse components</strong>",
-        "spec_term": "resistance ... decreases as the temperature increases / decreases as light intensity increases"
-      },
-      {
-        "field": "tables[0].rows[0]",
-        "text": "Rectangle (or zigzag)",
-        "spec_term": "standard circuit diagram symbols (rectangle)"
+        "field": "checkpoints.1.question",
+        "text": "On an I-V graph for a diode, what does the flat line at negative voltages show?",
+        "spec_term": "potential difference"
       }
     ],
-    "checkpoint_mismatch": [
-      {
-        "checkpoint": "3: Both LDRs and thermistors are described as 'inverse' components. What does this mean?",
-        "key_point": "keyPoints[3] Thermistors",
-        "why": "The concept being tested is the lesson's own label, not a spec term. The label also wrongly implies inverse proportion. The distractor 'As resistance increases, current decreases' is also a genuine inverse relationship, so the question is ambiguous. It does not test the thermistor content itself, such as its resistance-temperature behaviour or its use in a thermostat."
-      }
-    ],
+    "checkpoint_mismatch": [],
     "not_checked": [
-      "All keyPoints have \"diagram\": null and no circuit diagrams or I-V graph images are provided. Circuit symbols and graph shapes could only be checked from their text descriptions in tables[0] and tables[1].",
-      "The accuracy of the drawn appearance of symbols (e.g. 'Rectangle with diagonal line' for the thermistor, 'Rectangle with circle and arrows in' for the LDR) cannot be confirmed against the spec's symbol chart, because that chart is not included in the supplied spec text."
+      "All diagram fields are null and circuit symbols are given only as text descriptions (tables[0], column \"Circuit symbol (description)\", e.g. \"Rectangle with diagonal line\" for the thermistor and \"Rectangle with circle and arrows in\" for the LDR). Whether these match the standard symbols the student must draw could not be checked visually.",
+      "Checkpoints are keyed \"0\" to \"3\". I assumed each sits with keyPoints[0] to keyPoints[3] in order. The lesson JSON does not state this link explicitly."
     ]
   }
 }

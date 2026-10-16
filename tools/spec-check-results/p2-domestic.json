@@ -1,9 +1,9 @@
 {
   "lesson": "p2-domestic",
   "source_file": "lessons/physics/p2-domestic.json",
-  "lesson_md5": "35984e88cf0bca93c8db40f1bdd6f871",
+  "lesson_md5": "4834099309c0131574b46162c01200d5",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:37:58.323Z",
+  "date": "2026-10-16T18:46:21.380Z",
   "specRefs_sent": [
     "4.2.3.1",
     "4.2.3.2"
@@ -11,10 +11,10 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 8481,
-    "output_tokens": 5521
+    "input_tokens": 7951,
+    "output_tokens": 5864
   },
-  "cost_usd": 0.144344,
+  "cost_usd": 0.149084,
   "status": "OK",
   "result": {
     "lesson": "p2-domestic",
@@ -22,128 +22,100 @@
       {
         "specRef": "4.2.3.2",
         "spec_text": "Students should be able to explain: - that a live wire may be dangerous even when a switch in the mains circuit is open",
-        "why": "The lesson never explains this. It does not say that the live wire stays at about 230 V when a switch is open, or that touching it can still give a shock. The nearest text is keyPoints[1].tutor_note, which only covers a fuse fitted in the neutral wire."
-      },
-      {
-        "specRef": "4.2.3.2",
-        "spec_text": "the dangers of providing any connection between the live wire and earth.",
-        "why": "This is covered only indirectly, through the fault case in keyPoints[3].content: \"Without earthing, anyone touching the casing would get an electric shock. Current would flow through them to earth.\" The lesson never states the general idea. A person is at earth potential, so any connection between live and earth puts about 230 V across that connection and a large, possibly fatal, current flows."
-      },
-      {
-        "specRef": "4.2.3.2",
-        "spec_text": "Most electrical appliances are connected to the mains using three- core cable.",
-        "why": "The lesson talks about a \"three-pin plug\" and mentions \"two-core cables\" for double-insulated appliances. It never says that most appliances are connected using three-core cable."
-      },
-      {
-        "specRef": "4.2.3.1",
-        "spec_text": "Students should be able to explain the difference between direct and alternating potential difference.",
-        "why": "The lesson explains direct and alternating current, not direct and alternating potential difference. It never states that a direct potential difference stays the same direction (polarity) while an alternating potential difference keeps reversing."
+        "why": "The lesson only states the fact and never explains it. The quotes are keyPoints[1].content \"It may be dangerous even when a switch in the mains circuit is open\" and writeBullets \"Live wire — can be dangerous even when a switch in the mains circuit is open\". It does not say that the live wire is still connected to the supply at about 230 V relative to earth, so touching it can still let current flow through you to earth. The explanation the spec asks for appears only in checkpoint 3's feedback."
       }
     ],
     "above_gcse": [
       {
-        "field": "keyPoints[0].content",
-        "text": "The peak voltage is higher than the stated 230 V. The 230 V is the root mean square (RMS) value. This is the DC voltage that would give the same power.",
-        "why": "RMS and peak values are not required by these specification sections, which only say the supply \"is about 230 V\". This could confuse the student about the 230 V figure."
-      },
-      {
-        "field": "keyPoints[0].writeBullets[5]",
-        "text": "230 V is the RMS value. The peak voltage is higher (~325 V)",
-        "why": "Peak and RMS values go beyond these sections and add a second voltage figure for students to remember."
-      },
-      {
         "field": "keyPoints[2].content",
-        "text": "An <strong>RCCB (residual current circuit breaker)</strong> is even more sensitive. It detects tiny differences in current between the live and neutral wires, even just 30 mA.",
-        "why": "RCCBs, the 30 mA trip current and current-imbalance detection are not in the specification sections given."
+        "text": "A <strong>fuse</strong> is a thin wire inside a ceramic casing. It is connected in series with the live wire. When the current goes above the fuse's <strong>rated current</strong>, the wire heats up and melts.",
+        "why": "Fuses, fuse ratings and choosing a fuse are not in spec sections 4.2.3.1 or 4.2.3.2. A whole key point and checkpoint 2 are spent on content the student will not be examined on."
       },
       {
         "field": "keyPoints[2].content",
         "text": "A <strong>circuit breaker (MCB — miniature circuit breaker)</strong> is an electromagnetic switch in the consumer unit (fuse box).",
-        "why": "Fuses, MCBs and fuse-rating choice are not part of the specification sections given. This whole key point is extra content."
+        "why": "Circuit breakers are not in the specified sections."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "An <strong>RCCB (residual current circuit breaker)</strong> is even more sensitive. It detects tiny differences in current between the live and neutral wires, even just 30 mA.",
+        "why": "RCCBs and current imbalance between live and neutral are well beyond the specified sections."
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "The plug also has a <strong>cable grip</strong> that clamps the outer insulation.",
+        "why": "Plug construction and the cable grip are not in the specified sections."
+      },
+      {
+        "field": "examTip",
+        "text": "Favourite exam questions: wire colours, what each wire does, and why earth + fuse work together.",
+        "why": "This presents the earth and fuse mechanism as a core exam topic. The fuse is not in the specified sections, so the tip could mislead the student about what will be examined."
+      },
+      {
+        "field": "keyPoints[1].tutor_note",
+        "text": "A very common exam question asks why the fuse must be in the live wire.",
+        "why": "Fuse position is not in the specified sections, so the claim that this is a common exam question is not supported by this spec."
       },
       {
         "field": "keyPoints[0].content",
-        "text": "The National Grid uses high voltages (up to 400,000 V) to send electricity across the country efficiently. Transformers change the voltage at each end.",
-        "why": "Transformers and National Grid voltages are not part of these sections (4.2.3.1 and 4.2.3.2)."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "The double-insulation symbol is a small square inside a larger square.",
-        "why": "Double insulation and its symbol are not required by these specification sections."
+        "text": "On an <strong>oscilloscope</strong>, DC shows as a flat horizontal line. AC shows as a <strong>sinusoidal wave</strong>",
+        "why": "Oscilloscope traces are not mentioned in 4.2.3.1. The spec only requires the student to explain the difference between direct and alternating potential difference."
       }
     ],
     "factual_errors": [
       {
+        "field": "keyPoints[1].content",
+        "text": "Say a fault develops and the live wire touches the metal casing. Then the casing becomes live. But the earth wire gives a low-resistance path for the current to flow safely to earth.",
+        "correction": "The earth wire's job is to stop the appliance becoming live. When the casing is earthed it is held at, or close to, 0 V. It does not first become live and then get rescued by the earth wire.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[1].writeBullets[4]",
+        "text": "Earth + fuse: fault → casing goes live → large current → fuse blows → circuit broken",
+        "correction": "In an earthed appliance the earth wire stops the casing becoming live. The spec says: \"The earth wire is a safety wire to stop the appliance becoming live.\"",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[3].writeBullets[1]",
+        "text": "Fault sequence: live touches casing → casing goes live → large current through earth wire → fuse blows → circuit broken",
+        "correction": "With earthing, the casing is kept at earth potential (0 V) rather than going live. The earth wire stops the appliance becoming live.",
+        "basis": "spec"
+      },
+      {
+        "field": "examTips[0]",
+        "text": "Fault → casing live → large current through earth → fuse blows → circuit broken.",
+        "correction": "The spec describes the earth wire as stopping the appliance becoming live. Telling students to write \"casing live\" contradicts this.",
+        "basis": "spec"
+      },
+      {
         "field": "keyPoints[2].tutor_note",
         "text": "The rating is the current at which the fuse blows, not the current it allows.",
-        "correction": "A fuse's rating is the largest current it can carry normally without blowing. It blows when the current goes significantly above this value. The note also contradicts the lesson's own definition in keyPoints[2].keyTerms[0].def: \"The maximum current (in amps) a fuse can carry before it melts\".",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "<strong>Double insulation</strong> is used for appliances with fully plastic casings. ... The casing is plastic, which is an insulator. So the live wire cannot make the casing dangerous, and no earth wire is needed.",
-        "correction": "Double insulation means the live parts are separated from the user by two independent layers of insulation, often insulated wiring plus an insulating casing. It is not just having a plastic casing. Some double-insulated appliances have metal parts that the user can touch, but these are insulated from the live parts.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[3].memTip",
-        "text": "Double insulated = nothing to earth (no metal casing).",
-        "correction": "Double-insulated appliances can have metal parts. No earth is needed because two layers of insulation separate the live parts from anything the user can touch, not because there is no metal at all.",
+        "correction": "A fuse's rated current is the current it can carry continuously without blowing. It blows when the current is significantly above the rating. This note also contradicts the lesson's own keyTerms definition: \"The maximum current (in amps) a fuse can carry before it melts\".",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [
       {
-        "field": "keyPoints[0].content",
-        "text": "<strong>Direct current (DC)</strong>: current flows in one direction only. The voltage is constant.",
-        "spec_term": "direct potential difference"
+        "field": "tables[0].headers[2]",
+        "text": "Voltage",
+        "spec_term": "potential difference"
       },
       {
-        "field": "keyPoints[0].content",
-        "text": "<strong>Alternating current (AC)</strong>: the current keeps reversing direction.",
+        "field": "keyPoints[1].keyTerms[0].def",
+        "text": "carries the 230 V AC supply voltage",
         "spec_term": "alternating potential difference"
       },
       {
-        "field": "keyPoints[1].content",
-        "text": "The <strong>live wire (BROWN)</strong> carries the alternating voltage from the mains supply.",
-        "spec_term": "alternating potential difference"
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "A UK three-pin plug has three wires.",
-        "spec_term": "three-core cable"
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "It connects the metal casing of the appliance to the ground (0 V).",
-        "spec_term": "earth (0 V)"
-      },
-      {
-        "field": "tables[0].rows[2][3]",
-        "text": "Safety: connects metal casing to ground; carries fault current to blow fuse",
-        "spec_term": "earth"
+        "field": "checkpoints.1.question",
+        "text": "What is the colour and voltage of the live wire in a UK three-pin plug?",
+        "spec_term": "potential difference"
       }
     ],
     "checkpoint_mismatch": [
       {
-        "checkpoint": "checkpoints[0]: \"What is the colour and voltage of the live wire in a UK three-pin plug?\"",
-        "key_point": "keyPoints[0] \"AC vs DC\"",
-        "why": "This checkpoint tests wire colours and voltages. Those are taught in keyPoints[1] (\"The three-pin plug\"), not in the AC vs DC key point it sits with."
-      },
-      {
-        "checkpoint": "checkpoints[1]: \"A toaster draws 4.5 A when working normally. Which fuse should be fitted?\"",
-        "key_point": "keyPoints[1] \"The three-pin plug\"",
-        "why": "This checkpoint tests choosing a fuse rating. That is taught in keyPoints[2] (\"Fuses and circuit breakers\"), not in the three-pin plug key point it sits with."
-      },
-      {
-        "checkpoint": "checkpoints[2]: \"Why does a hairdryer with a plastic casing not need an earth wire?\"",
-        "key_point": "keyPoints[2] \"Fuses and circuit breakers\"",
-        "why": "This checkpoint tests double insulation. That is taught in keyPoints[3] (\"Earthing and double insulation\"), not in the fuses key point it sits with."
-      },
-      {
-        "checkpoint": "checkpoints[3]: \"What is the frequency of the UK mains AC supply, and what does this mean?\"",
-        "key_point": "keyPoints[3] \"Earthing and double insulation\"",
-        "why": "This checkpoint tests mains frequency. That is taught in keyPoints[0] (\"AC vs DC\"), not in the earthing key point it sits with."
+        "checkpoint": "checkpoints.3: \"A switch in a mains circuit is open. Why can touching the live wire still be dangerous?\" (correct: \"The live wire is still connected to the supply, so current can flow through you to earth\")",
+        "key_point": "keyPoints[3] (Earthing): \"Any connection between the live wire and earth is dangerous. Current can flow through that connection to earth. If the connection is a person, they get an electric shock.\"",
+        "why": "This checkpoint sits with the Earthing key point, which never mentions switches. The switch-open fact appears only in keyPoints[1], and only as a bare statement. No key point says the live wire stays connected to the supply when a switch is open, so the correct answer is not supported by the key point."
       }
     ],
     "not_checked": []

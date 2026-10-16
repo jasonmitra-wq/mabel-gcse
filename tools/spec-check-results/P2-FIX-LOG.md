@@ -1,0 +1,437 @@
+# P2 Electricity — fix log
+
+Findings refer to the d08b060 results. HELD: p2-domestic abov2 and abov3, and p2-power-energy abov3. The spec guard counts "fuse" case-insensitively, and data/spec/physics.md matched it once, in line 1991 ("diffuse reflection"). Fuses, MCBs, RCCBs and the fuse rating column stay in place. p2-domestic chec1 follows its HELD branch.
+
+## Check-rewrite failures (`node tools/check-rewrite.js 23999d0`)
+
+lesson | what changed (failure) | triage ID
+
+- p2-components | `keyPoints[0].writeBullets: 6 items became 8` — write bullets: fixed resistor constant at constant temperature; V = IR for any component; ohmic conductor bullet; lamps/diodes/thermistors/LDRs bullet added | fact1, fact3, miss2
+- p2-components | `keyPoints[1].content: number "0.7" lost` — diode: 0.7 V, reverse bias, photons/junction and rectification cut; "reverse direction" used | abov0, abov1, abov2, abov3, wron3
+- p2-components | `keyPoints[1].writeBullets: 6 items became 5` — diode: 0.7 V, reverse bias, photons/junction and rectification cut; "reverse direction" used | abov0, abov1, abov2, abov3, wron3
+- p2-components | `keyPoints[1].writeBullets[1]: number "0.7" lost` — diode: 0.7 V, reverse bias, photons/junction and rectification cut; "reverse direction" used | abov0, abov1, abov2, abov3, wron3
+- p2-components | `keyPoints[1].keyTerms: must not change` — diode: 0.7 V, reverse bias, photons/junction and rectification cut; "reverse direction" used | abov0, abov1, abov2, abov3, wron3
+- p2-components | `keyPoints[2].writeBullets: 6 items became 4` — LDR: photons, charge carriers, cadmium sulphide, potential divider and transistor cut; Charge carrier and Potential divider key terms cut; "inverse relationship" removed | abov4, abov5, abov6, fact7
+- p2-components | `keyPoints[2].keyTerms: must not change` — LDR: photons, charge carriers, cadmium sulphide, potential divider and transistor cut; Charge carrier and Potential divider key terms cut; "inverse relationship" removed | abov4, abov5, abov6, fact7
+- p2-components | `keyPoints[3].writeBullets: 6 items became 5` — thermistor: NTC, charge-carrier mechanism and Thermal energy key term cut; "inverse components" replaced; thermostat use kept | abov7, abov8, fact6, wron4, abov6
+- p2-components | `keyPoints[3].keyTerms: must not change` — thermistor: NTC, charge-carrier mechanism and Thermal energy key term cut; "inverse components" replaced; thermostat use kept | abov7, abov8, fact6, wron4, abov6
+- p2-components | `tables: must not change` — resistor symbol "Rectangle"; fixed resistor constant at constant temperature; diode and LED rows: very high resistance in the reverse direction, no "very low" forward value, rectification use removed; diode I-V row 0.7 V removed; LDR I-V row removed | wron5, fact0, fact5, abov3, abov0, fact4
+- p2-components | `revisionCardBullets: 12 items became 11` — potential divider bullet cut; Ohm's law, NTC and "inverse" bullets reworded | abov6, fact2, abov7, fact6
+- p2-components | `revisionCardBullets[3]: number "0.7" lost` — diode: 0.7 V, reverse bias, photons/junction and rectification cut; "reverse direction" used | abov0, abov1, abov2, abov3, wron3
+- p2-components | `keyPoints[0].content: bold term "Ohm's Law" lost` — "Ohm's Law" label removed; V = IR links p.d., current and resistance for any component | fact2
+- p2-components | `keyPoints[1].content: bold term "reverse bias" lost` — diode: 0.7 V, reverse bias, photons/junction and rectification cut; "reverse direction" used | abov0, abov1, abov2, abov3, wron3
+- p2-components | `keyPoints[1].content: bold term "rectification" lost` — diode: 0.7 V, reverse bias, photons/junction and rectification cut; "reverse direction" used | abov0, abov1, abov2, abov3, wron3
+- p2-components | `keyPoints[1].content: key term "Rectification" lost` — diode: 0.7 V, reverse bias, photons/junction and rectification cut; "reverse direction" used | abov0, abov1, abov2, abov3, wron3
+- p2-components | `keyPoints[2].content: bold term "potential divider" lost` — LDR: photons, charge carriers, cadmium sulphide, potential divider and transistor cut; Charge carrier and Potential divider key terms cut; "inverse relationship" removed | abov4, abov5, abov6, fact7
+- p2-components | `keyPoints[2].content: key term "Charge carrier" lost` — LDR: photons, charge carriers, cadmium sulphide, potential divider and transistor cut; Charge carrier and Potential divider key terms cut; "inverse relationship" removed | abov4, abov5, abov6, fact7
+- p2-components | `keyPoints[2].content: key term "Potential divider" lost` — LDR: photons, charge carriers, cadmium sulphide, potential divider and transistor cut; Charge carrier and Potential divider key terms cut; "inverse relationship" removed | abov4, abov5, abov6, fact7
+- p2-components | `keyPoints[3].content: bold term "NTC thermistor" lost` — thermistor: NTC, charge-carrier mechanism and Thermal energy key term cut; "inverse components" replaced; thermostat use kept | abov7, abov8, fact6, wron4, abov6
+- p2-components | `keyPoints[3].content: bold term "LDR and the thermistor are inverse components" lost` — thermistor: NTC, charge-carrier mechanism and Thermal energy key term cut; "inverse components" replaced; thermostat use kept | abov7, abov8, fact6, wron4, abov6
+- p2-components | `keyPoints[3].content: key term "NTC" lost` — thermistor: NTC, charge-carrier mechanism and Thermal energy key term cut; "inverse components" replaced; thermostat use kept | abov7, abov8, fact6, wron4, abov6
+- p2-components | `keyPoints[3].content: key term "Thermal energy" lost` — thermistor: NTC, charge-carrier mechanism and Thermal energy key term cut; "inverse components" replaced; thermostat use kept | abov7, abov8, fact6, wron4, abov6
+- p2-current-voltage | `keyPoints[0].writeBullets: 6 items became 8` — Q = It uses charge flow; closed-circuit and single-loop bullets added; "charge carriers" bullet reworded | wron1, miss0, miss1, step 4d grep ("charge carrier")
+- p2-current-voltage | `keyPoints[1].writeBullets: 6 items became 4` — V = W/Q replaced by E = QV; EMF, terminal p.d. and internal resistance cut with their bullets and key terms | fact6, wron0, abov0, abov1
+- p2-current-voltage | `keyPoints[1].keyTerms: must not change` — V = W/Q replaced by E = QV; EMF, terminal p.d. and internal resistance cut with their bullets and key terms | fact6, wron0, abov0, abov1
+- p2-current-voltage | `keyPoints[2].keyTerms: must not change` — "Ohm's law" label and key term cut; cross-sectional area and material/resistivity cut; length and filament/thermistor temperature rule; required practical 3 added | fact0, wron4, abov6, abov7, fact3, miss2
+- p2-current-voltage | `keyPoints[3].content: number "0.7" lost` — 0.7 V and forward/reverse bias cut; diode has very high resistance in the reverse direction; linear and non-linear added; reciprocal-of-gradient method cut | abov4, abov5, fact5, wron5, miss7, fact4
+- p2-current-voltage | `keyPoints[3].writeBullets[4]: number "0.7" lost` — 0.7 V and forward/reverse bias cut; diode has very high resistance in the reverse direction; linear and non-linear added; reciprocal-of-gradient method cut | abov4, abov5, fact5, wron5, miss7, fact4
+- p2-current-voltage | `keyPoints[4].content: number "two" lost` — required practical 4 now names a filament lamp, a diode and a resistor at constant temperature ("at least two" removed) | fact2
+- p2-current-voltage | `tables: must not change` — diode row: 0.7 V and "zero current" removed, very small reverse current; "potential divider" and "Rectifier" uses replaced | abov4, fact5, step 4d grep ("potential divider", "rectif")
+- p2-current-voltage | `checkpoints: keys changed` — checkpoints 1 (E = QV) and 4 (meter placement) added; each key point now has one | step 3 checkpoint rule, fact6
+- p2-current-voltage | `examTips: 5 items became 4` — EMF exam tip cut; Ohm's law tip reworded | abov2, fact0
+- p2-current-voltage | `revisionCardBullets: 12 items became 11` — EMF bullet cut; bullets shifted; diode bullet now "very high resistance in the reverse direction"; E = QV, charge flow, p.d. and resistance bullets reworded | abov3, wron5, fact6, wron1, wron3, fact3
+- p2-current-voltage | `revisionCardBullets[9]: number "one" lost` — EMF bullet cut; bullets shifted; diode bullet now "very high resistance in the reverse direction"; E = QV, charge flow, p.d. and resistance bullets reworded | abov3, wron5, fact6, wron1, wron3, fact3
+- p2-current-voltage | `keyPoints[1].content: bold term "V = W/Q" lost` — V = W/Q replaced by E = QV; EMF, terminal p.d. and internal resistance cut with their bullets and key terms | fact6, wron0, abov0, abov1
+- p2-current-voltage | `keyPoints[1].content: bold term "electromotive force (EMF)" lost` — V = W/Q replaced by E = QV; EMF, terminal p.d. and internal resistance cut with their bullets and key terms | fact6, wron0, abov0, abov1
+- p2-current-voltage | `keyPoints[1].content: bold term "terminal p.d." lost` — V = W/Q replaced by E = QV; EMF, terminal p.d. and internal resistance cut with their bullets and key terms | fact6, wron0, abov0, abov1
+- p2-current-voltage | `keyPoints[1].content: bold term "internal resistance" lost` — V = W/Q replaced by E = QV; EMF, terminal p.d. and internal resistance cut with their bullets and key terms | fact6, wron0, abov0, abov1
+- p2-current-voltage | `keyPoints[1].content: key term "Terminal p.d." lost` — V = W/Q replaced by E = QV; EMF, terminal p.d. and internal resistance cut with their bullets and key terms | fact6, wron0, abov0, abov1
+- p2-current-voltage | `keyPoints[2].content: bold term "Ohm's law" lost` — "Ohm's law" label and key term cut; cross-sectional area and material/resistivity cut; length and filament/thermistor temperature rule; required practical 3 added | fact0, wron4, abov6, abov7, fact3, miss2
+- p2-current-voltage | `keyPoints[2].content: bold term "cross-sectional area" lost` — "Ohm's law" label and key term cut; cross-sectional area and material/resistivity cut; length and filament/thermistor temperature rule; required practical 3 added | fact0, wron4, abov6, abov7, fact3, miss2
+- p2-current-voltage | `keyPoints[2].content: bold term "material" lost` — "Ohm's law" label and key term cut; cross-sectional area and material/resistivity cut; length and filament/thermistor temperature rule; required practical 3 added | fact0, wron4, abov6, abov7, fact3, miss2
+- p2-current-voltage | `keyPoints[2].content: key term "Ohm's law" lost` — "Ohm's law" label and key term cut; cross-sectional area and material/resistivity cut; length and filament/thermistor temperature rule; required practical 3 added | fact0, wron4, abov6, abov7, fact3, miss2
+- p2-current-voltage | `keyPoints[3].content: bold term "forward bias" lost` — 0.7 V and forward/reverse bias cut; diode has very high resistance in the reverse direction; linear and non-linear added; reciprocal-of-gradient method cut | abov4, abov5, fact5, wron5, miss7, fact4
+- p2-domestic | `keyPoints[0].content: number "400,000" lost` — AC/DC: direct and alternating potential difference; RMS/peak cut; National Grid and transformer sentence cut; "peaks and troughs" reworded | wron0, wron1, miss3, abov0, abov1, abov4, step 4d grep ("peak")
+- p2-domestic | `keyPoints[0].content: number "230" lost` — AC/DC: direct and alternating potential difference; RMS/peak cut; National Grid and transformer sentence cut; "peaks and troughs" reworded | wron0, wron1, miss3, abov0, abov1, abov4, step 4d grep ("peak")
+- p2-domestic | `keyPoints[0].content: number "230" lost` — AC/DC: direct and alternating potential difference; RMS/peak cut; National Grid and transformer sentence cut; "peaks and troughs" reworded | wron0, wron1, miss3, abov0, abov1, abov4, step 4d grep ("peak")
+- p2-domestic | `keyPoints[0].writeBullets: 6 items became 4` — AC/DC: direct and alternating potential difference; RMS/peak cut; National Grid and transformer sentence cut; "peaks and troughs" reworded | wron0, wron1, miss3, abov0, abov1, abov4, step 4d grep ("peak")
+- p2-domestic | `keyPoints[0].keyTerms: must not change` — AC/DC: direct and alternating potential difference; RMS/peak cut; National Grid and transformer sentence cut; "peaks and troughs" reworded | wron0, wron1, miss3, abov0, abov1, abov4, step 4d grep ("peak")
+- p2-domestic | `keyPoints[1].writeBullets: 6 items became 7` — live-wire-with-switch-open bullet added (bullets shifted); earth wire bullet says "earth" | miss0, wron4
+- p2-domestic | `keyPoints[1].writeBullets[1]: number "0" lost` — live-wire-with-switch-open bullet added (bullets shifted); earth wire bullet says "earth" | miss0, wron4
+- p2-domestic | `keyPoints[3].heading: must not change` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `keyPoints[3].content: number "double" lost` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `keyPoints[3].content: number "two" lost` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `keyPoints[3].content: number "double" lost` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `keyPoints[3].writeBullets: 6 items became 4` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `keyPoints[3].writeBullets[2]: number "double" lost` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `keyPoints[3].writeBullets[3]: number "double" lost` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `keyPoints[3].writeBullets[3]: number "two" lost` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `keyPoints[3].keyTerms: must not change` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `keyPoints[3].memTip: number "double" lost` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `tables: must not change` — earth wire row: "connects metal casing to earth" | wron5
+- p2-domestic | `checkpoints.0.question: number "three" lost` — checkpoints re-keyed: mains frequency question now follows the AC/DC key point | chec3, chec0
+- p2-domestic | `checkpoints.0.options[0]: number "230" lost` — checkpoints re-keyed: mains frequency question now follows the AC/DC key point | chec3, chec0
+- p2-domestic | `checkpoints.0.options[1]: number "0" lost` — checkpoints re-keyed: mains frequency question now follows the AC/DC key point | chec3, chec0
+- p2-domestic | `checkpoints.0.options[2]: number "0" lost` — checkpoints re-keyed: mains frequency question now follows the AC/DC key point | chec3, chec0
+- p2-domestic | `checkpoints.0.options[3]: number "12" lost` — checkpoints re-keyed: mains frequency question now follows the AC/DC key point | chec3, chec0
+- p2-domestic | `checkpoints.0.correctFeedback: number "230" lost` — checkpoints re-keyed: mains frequency question now follows the AC/DC key point | chec3, chec0
+- p2-domestic | `checkpoints.0.wrongFeedback: number "0" lost` — checkpoints re-keyed: mains frequency question now follows the AC/DC key point | chec3, chec0
+- p2-domestic | `checkpoints.0.wrongFeedback: number "0" lost` — checkpoints re-keyed: mains frequency question now follows the AC/DC key point | chec3, chec0
+- p2-domestic | `checkpoints.1.question: number "4.5" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.1.options[0]: number "5" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.1.options[1]: number "3" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.1.options[2]: number "13" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.1.options[3]: number "1" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.1.correctFeedback: number "4.5" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.1.correctFeedback: number "5" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.1.correctFeedback: number "13" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.1.correctFeedback: number "4.5" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.1.wrongFeedback: number "4.5" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.1.wrongFeedback: number "3" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.1.wrongFeedback: number "13" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.1.wrongFeedback: number "5" lost` — checkpoints re-keyed: live wire question now follows the three-core cable key point | chec0, chec1
+- p2-domestic | `checkpoints.2.wrongFeedback: number "double" lost` — checkpoints re-keyed: fuse question now follows the fuses key point (HELD branch) | chec1 (abov3 HELD)
+- p2-domestic | `checkpoints.3.options[0]: number "50" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.options[0]: number "100" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.options[0]: number "50" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.options[1]: number "230" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.options[1]: number "230" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.options[2]: number "50" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.options[2]: number "50" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.options[3]: number "60" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.correctFeedback: number "50" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.correctFeedback: number "50" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.correctFeedback: number "100" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.wrongFeedback: number "50" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.wrongFeedback: number "50" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.wrongFeedback: number "50" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.wrongFeedback: number "100" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `checkpoints.3.wrongFeedback: number "230" lost` — double insulation question cut; new earthing checkpoint (live wire dangerous with switch open) | chec2, abov5, miss0
+- p2-domestic | `commonMistakes: 5 items became 4` — double insulation mistake cut | abov5
+- p2-domestic | `revisionCardBullets[11]: number "double" lost` — transformer and double insulation bullets cut; three-core cable and live-wire danger bullets added | abov4, abov5, miss2, miss0, miss1
+- p2-domestic | `revisionCardBullets[11]: number "two" lost` — transformer and double insulation bullets cut; three-core cable and live-wire danger bullets added | abov4, abov5, miss2, miss0, miss1
+- p2-domestic | `keyPoints[0].content: bold term "Transformers" lost` — AC/DC: direct and alternating potential difference; RMS/peak cut; National Grid and transformer sentence cut; "peaks and troughs" reworded | wron0, wron1, miss3, abov0, abov1, abov4, step 4d grep ("peak")
+- p2-domestic | `keyPoints[3].content: bold term "Double insulation" lost` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `keyPoints[3].content: bold term "two-core cables" lost` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `keyPoints[3].content: key term "Double insulation" lost` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-domestic | `keyPoints[3].content: key term "Two-core cable" lost` — heading "Earthing and double insulation" became "Earthing"; double insulation, its symbol, two-core cable and key terms cut; live-to-earth danger added | abov5, miss1
+- p2-power-energy | `title: must not change` — title "...what it costs to run your devices" became "...how your devices transfer energy" | abov2
+- p2-power-energy | `keyPoints: 4 items became 3` — cost of electricity key point cut (kWh, cost, payback) | abov2, abov1
+- p2-power-energy | `keyPoints[0].tutor_note: number "three" lost` — P = V²/R cut; P = IV uses potential difference; power rating linked to stored energy | abov0, wron0, miss1
+- p2-power-energy | `keyPoints[1].content: number "1" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: number "1" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: number "1" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: number "1000" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: number "3600" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: number "3,600,000" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: number "3.6" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: number "3" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: number "2" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: number "30" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: number "2" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: number "0.5" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: number "1" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].writeBullets: 6 items became 4` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].writeBullets[3]: number "1" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].writeBullets[3]: number "1" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].writeBullets[3]: number "1" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].keyTerms: must not change` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[2].heading: must not change` — old key point 2 (cost) cut; key point 2 is now "Linking all the electrical equations" | abov2
+- p2-power-energy | `keyPoints[2].content: number "28" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "2.5" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "2.5" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "5" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "28" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "140" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "1.40" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "100" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "0.1" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "4" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "0.4" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "0.4" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "28" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "11.2" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "60" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "800" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "200" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "800" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "200" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "4" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].content: number "4" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].writeBullets[2]: number "2.5" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].writeBullets[2]: number "2" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].writeBullets[2]: number "5" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].writeBullets[2]: number "28" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].writeBullets[2]: number "1.40" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].writeBullets[4]: number "10" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].writeBullets[4]: number "60" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].writeBullets[4]: number "83" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].keyTerms: must not change` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `keyPoints[2].tutor_note: number "1000" lost` — old key point 2 (cost, payback) cut; key point 2 is now the linking key point (V = IR, P = I²R, charge flow, E = QV wording) | abov2, abov1, fact2, abov0, wron1, wron2, wron4
+- p2-power-energy | `tables: must not change` — P = V²/R row cut; table rows use potential difference and charge flow; "Ohm's Law" label removed; kWh column cut (fuse rating column HELD) | abov0, wron3, fact2, abov2 (abov3 HELD)
+- p2-power-energy | `checkpoints: keys changed` — cost and payback checkpoints cut; checkpoints re-keyed so each key point has one | chec0, chec1, chec2, abov2, abov1
+- p2-power-energy | `checkpoints.1.question: number "3" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.question: number "2.5" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.question: number "28" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.options[0]: number "7.5" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.options[0]: number "2.10" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.options[1]: number "3" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.options[1]: number "84" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.options[2]: number "7.5" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.options[2]: number "75" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.options[3]: number "2.5" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.options[3]: number "70" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.correctFeedback: number "3" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.correctFeedback: number "2.5" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.correctFeedback: number "7.5" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.correctFeedback: number "7.5" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.correctFeedback: number "28" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.correctFeedback: number "210" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.correctFeedback: number "2.10" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.correctFeedback: number "two" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.wrongFeedback: number "1" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.wrongFeedback: number "3" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.wrongFeedback: number "2.5" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.wrongFeedback: number "7.5" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.wrongFeedback: number "2" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.wrongFeedback: number "7.5" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.wrongFeedback: number "28" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.wrongFeedback: number "210" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.1.wrongFeedback: number "2.10" lost` — kWh cost checkpoint replaced by an E = Pt checkpoint in joules | chec0, abov2
+- p2-power-energy | `checkpoints.2.correctFeedback: number "100" lost` — feedback uses I = V/R then P = IV, not P = V²/R | abov0
+- p2-power-energy | `checkpoints.2.wrongFeedback: number "100" lost` — feedback uses I = V/R then P = IV, not P = V²/R | abov0
+- p2-power-energy | `checkpoints.2.wrongFeedback: number "50" lost` — feedback uses I = V/R then P = IV, not P = V²/R | abov0
+- p2-power-energy | `commonMistakes: 5 items became 4` — kWh mistakes cut; units mistake drops kWh | abov2
+- p2-power-energy | `commonMistakes[0]: number "1000" lost` — kWh mistakes cut; units mistake drops kWh | abov2
+- p2-power-energy | `commonMistakes[0]: number "2000" lost` — kWh mistakes cut; units mistake drops kWh | abov2
+- p2-power-energy | `commonMistakes[0]: number "2" lost` — kWh mistakes cut; units mistake drops kWh | abov2
+- p2-power-energy | `commonMistakes[0]: number "2000" lost` — kWh mistakes cut; units mistake drops kWh | abov2
+- p2-power-energy | `examTips: 3 items became 2` — price per kWh exam tip cut | abov2
+- p2-power-energy | `revisionCardBullets: 12 items became 8` — P = V²/R, kWh, cost and payback bullets cut; p.d. and charge flow wording; appliance energy transfer bullet added | abov0, abov2, abov1, wron0, wron2, wron4, miss0
+- p2-power-energy | `revisionCardBullets[6]: number "1" lost` — P = V²/R, kWh, cost and payback bullets cut; p.d. and charge flow wording; appliance energy transfer bullet added | abov0, abov2, abov1, wron0, wron2, wron4, miss0
+- p2-power-energy | `revisionCardBullets[6]: number "1" lost` — P = V²/R, kWh, cost and payback bullets cut; p.d. and charge flow wording; appliance energy transfer bullet added | abov0, abov2, abov1, wron0, wron2, wron4, miss0
+- p2-power-energy | `revisionCardBullets[6]: number "1" lost` — P = V²/R, kWh, cost and payback bullets cut; p.d. and charge flow wording; appliance energy transfer bullet added | abov0, abov2, abov1, wron0, wron2, wron4, miss0
+- p2-power-energy | `revisionCardBullets[6]: number "3.6" lost` — P = V²/R, kWh, cost and payback bullets cut; p.d. and charge flow wording; appliance energy transfer bullet added | abov0, abov2, abov1, wron0, wron2, wron4, miss0
+- p2-power-energy | `keyPoints[0].content: bold term "P = V²/R" lost` — P = V²/R cut; P = IV uses potential difference; power rating linked to stored energy | abov0, wron0, miss1
+- p2-power-energy | `keyPoints[1].content: bold term "kilowatt-hour (kWh)" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: bold term "1 kWh" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: bold term "3,600,000 J = 3.6 MJ" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: bold term "1 kWh" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[1].content: key term "Kilowatt-hour (kWh)" lost` — kilowatt-hour and its examples cut; appliance energy transfers added; kWh key term cut | abov2, miss0, miss2
+- p2-power-energy | `keyPoints[2].content: bold term "Cost = units used (kWh) × price per unit (p/kWh)" lost` — cost of electricity and payback content cut | abov2, abov1
+- p2-power-energy | `keyPoints[2].content: bold term "28p per kWh" lost` — cost of electricity and payback content cut | abov2, abov1
+- p2-power-energy | `keyPoints[2].content: bold term "5 kWh" lost` — cost of electricity and payback content cut | abov2, abov1
+- p2-power-energy | `keyPoints[2].content: bold term "140p = £1.40" lost` — cost of electricity and payback content cut | abov2, abov1
+- p2-power-energy | `keyPoints[2].content: bold term "0.4 kWh" lost` — cost of electricity and payback content cut | abov2, abov1
+- p2-power-energy | `keyPoints[2].content: bold term "11.2p" lost` — cost of electricity and payback content cut | abov2, abov1
+- p2-power-energy | `keyPoints[2].content: bold term "Payback time" lost` — cost of electricity and payback content cut | abov2, abov1
+- p2-power-energy | `keyPoints[2].content: bold term "4 years" lost` — cost of electricity and payback content cut | abov2, abov1
+- p2-power-energy | `keyPoints[2].content: key term "Payback time" lost` — cost of electricity and payback content cut | abov2, abov1
+- p2-series-parallel | `examTip: number "1" lost` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `examTip: number "1" lost` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `examTip: number "1" lost` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `examTip: number "1" lost` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `examTip: number "2" lost` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `examTip: number "two" lost` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `keyPoints[0].writeBullets: 6 items became 7` — p.d. bullet: supply p.d. shared; I = V ÷ Rtotal bullet added (bullets shifted) | wron0, chec0
+- p2-series-parallel | `keyPoints[0].writeBullets[5]: number "one" lost` — p.d. bullet: supply p.d. shared; I = V ÷ Rtotal bullet added (bullets shifted) | wron0, chec0
+- p2-series-parallel | `keyPoints[1].content: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "2" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "4" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "4" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "4" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "4" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "2" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "4" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "0.5" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "2" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: number "half" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].writeBullets: 6 items became 5` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].keyTerms: must not change` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].memTip: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].memTip: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].memTip: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].memTip: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].memTip: number "2" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].tutor_note: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].tutor_note: number "0.5" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].tutor_note: number "1" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].tutor_note: number "0.5" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].tutor_note: number "2" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].tutor_note: number "0.5" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[3].heading: must not change` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "1" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "3" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "1" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "1" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "1" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "1" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "3" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "1" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "6" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "6" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "3" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "6" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "0.5" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "3" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "3" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "3" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "6" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "3" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "3" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "6" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "6" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].content: number "6" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].writeBullets: 6 items became 4` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[3].memTip: number "four" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-series-parallel | `keyPoints[4].writeBullets: 6 items became 7` — dc series testing circuit bullet added | miss1
+- p2-series-parallel | `tables: must not change` — parallel formula removed from table; p.d. rows reworded; "modern Christmas lights" became "lights wired in parallel" | abov6, fact1, wron0, fact2
+- p2-series-parallel | `checkpoints: keys changed` — checkpoints 2 (household parallel) and 4 (testing circuit) added; each key point has one | step 3 checkpoint rule, miss1
+- p2-series-parallel | `checkpoints.1.question: number "two" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.options[2]: number "3" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.options[3]: number "6" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "12" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "3" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "12" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "12" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "4" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "12" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "3" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "3" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.correctFeedback: number "4" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "2" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "12" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "3" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "12" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "12" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "4" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "12" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "1" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "4" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "12" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "12" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "4" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "3" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "4" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "12" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.1.wrongFeedback: number "3" lost` — parallel calculation checkpoint replaced: total resistance less than the smallest resistor | chec1, abov7
+- p2-series-parallel | `checkpoints.3.question: number "9" lost` — parallel p.d. checkpoint replaced by a series equivalent-resistance calculation | chec2, wron4
+- p2-series-parallel | `checkpoints.3.options[1]: number "3" lost` — parallel p.d. checkpoint replaced by a series equivalent-resistance calculation | chec2, wron4
+- p2-series-parallel | `checkpoints.3.options[1]: number "3" lost` — parallel p.d. checkpoint replaced by a series equivalent-resistance calculation | chec2, wron4
+- p2-series-parallel | `checkpoints.3.options[2]: number "9" lost` — parallel p.d. checkpoint replaced by a series equivalent-resistance calculation | chec2, wron4
+- p2-series-parallel | `checkpoints.3.options[3]: number "9" lost` — parallel p.d. checkpoint replaced by a series equivalent-resistance calculation | chec2, wron4
+- p2-series-parallel | `checkpoints.3.correctFeedback: number "two" lost` — parallel p.d. checkpoint replaced by a series equivalent-resistance calculation | chec2, wron4
+- p2-series-parallel | `checkpoints.3.correctFeedback: number "one" lost` — parallel p.d. checkpoint replaced by a series equivalent-resistance calculation | chec2, wron4
+- p2-series-parallel | `checkpoints.3.wrongFeedback: number "9" lost` — parallel p.d. checkpoint replaced by a series equivalent-resistance calculation | chec2, wron4
+- p2-series-parallel | `checkpoints.3.wrongFeedback: number "two" lost` — parallel p.d. checkpoint replaced by a series equivalent-resistance calculation | chec2, wron4
+- p2-series-parallel | `commonMistakes: 5 items became 4` — reciprocal mistake cut (list shifted); parallel p.d. mistake reworded | abov9, fact1
+- p2-series-parallel | `commonMistakes[1]: number "1" lost` — reciprocal mistake cut (list shifted); parallel p.d. mistake reworded | abov9, fact1
+- p2-series-parallel | `commonMistakes[1]: number "0.25" lost` — reciprocal mistake cut (list shifted); parallel p.d. mistake reworded | abov9, fact1
+- p2-series-parallel | `commonMistakes[1]: number "4" lost` — reciprocal mistake cut (list shifted); parallel p.d. mistake reworded | abov9, fact1
+- p2-series-parallel | `commonMistakes[1]: number "0.25" lost` — reciprocal mistake cut (list shifted); parallel p.d. mistake reworded | abov9, fact1
+- p2-series-parallel | `commonMistakes[2]: number "one" lost` — reciprocal mistake cut (list shifted); parallel p.d. mistake reworded | abov9, fact1
+- p2-series-parallel | `examTips: 5 items became 4` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `examTips[1]: number "1" lost` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `examTips[1]: number "1" lost` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `examTips[1]: number "1" lost` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `examTips[2]: number "1" lost` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `examTips[2]: number "2" lost` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `examTips[2]: number "two" lost` — exam tip calling the parallel formula a favourite cut | fact0
+- p2-series-parallel | `revisionCardBullets: 12 items became 13` — parallel formula removed; series p.d. shared; testing circuit bullet added | abov10, wron0, fact1, abov5, miss1
+- p2-series-parallel | `revisionCardBullets[1]: number "1" lost` — parallel formula removed; series p.d. shared; testing circuit bullet added | abov10, wron0, fact1, abov5, miss1
+- p2-series-parallel | `revisionCardBullets[1]: number "1" lost` — parallel formula removed; series p.d. shared; testing circuit bullet added | abov10, wron0, fact1, abov5, miss1
+- p2-series-parallel | `revisionCardBullets[1]: number "1" lost` — parallel formula removed; series p.d. shared; testing circuit bullet added | abov10, wron0, fact1, abov5, miss1
+- p2-series-parallel | `revisionCardBullets[1]: number "1" lost` — parallel formula removed; series p.d. shared; testing circuit bullet added | abov10, wron0, fact1, abov5, miss1
+- p2-series-parallel | `revisionCardBullets[1]: number "2" lost` — parallel formula removed; series p.d. shared; testing circuit bullet added | abov10, wron0, fact1, abov5, miss1
+- p2-series-parallel | `keyPoints[0].content: bold term "potential differences add up to the supply voltage" lost` — "potential differences add up to the supply voltage" became "total potential difference of the supply is shared between the components" | wron0
+- p2-series-parallel | `keyPoints[1].content: bold term "potential difference is the same across every branch" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: bold term "1/R total  = 1/R 1  + 1/R 2" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[1].content: bold term "2 Ω" lost` — parallel formula and worked example cut; p.d. across each component in parallel is the same; total less than the smaller resistor | abov0, abov1, abov2, abov3, abov4, fact1, wron1, wron3
+- p2-series-parallel | `keyPoints[3].content: bold term "3 A" lost` — mixed-circuit key point rewritten as series equivalent resistance, then current and p.d. | abov5
+- p2-static | `keyPoints[0].keyTerms: must not change` — conservation of charge: the material that loses electrons is left with an equal positive charge | fact0
+- p2-static | `keyPoints[1].keyTerms: must not change` — lightning definition: "ionise the air" cut | abov6
+- p2-static | `keyPoints[2].content: number "two" lost` — parallel plates and uniform field cut; "at a distance" became "non-contact force"; isolated charged sphere field pattern added | abov0, wron0, wron1, miss1
+- p2-static | `keyPoints[2].keyTerms: must not change` — parallel plates and uniform field cut; "at a distance" became "non-contact force"; isolated charged sphere field pattern added | abov0, wron0, wron1, miss1
+- p2-static | `keyPoints[3].heading: must not change` — "Dangers and uses of static electricity" became "Sparking" | abov1, miss0
+- p2-static | `keyPoints[3].content: number "99" lost` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `keyPoints[3].writeBullets: 6 items became 3` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `keyPoints[3].keyTerms: must not change` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `tables: must not change` — dangers and uses table cut | abov1, abov2, abov3, abov4
+- p2-static | `commonMistakes: 5 items became 4` — tanker earthing mistake cut | abov1
+- p2-static | `examTips: 3 items became 2` — uses-of-static tip cut | abov1
+- p2-static | `revisionCardBullets: 12 items became 10` — uniform field and application bullets cut; sphere field and sparking bullets added | abov0, abov1, miss1, miss0
+- p2-static | `keyPoints[1].content: bold term "Unlike (opposite) charges attract" lost` — charge rule in spec wording: same type of charge repel, different types attract | wron2
+- p2-static | `keyPoints[1].content: bold term "Like (same) charges repel" lost` — charge rule in spec wording: same type of charge repel, different types attract | wron2
+- p2-static | `keyPoints[2].content: bold term "isolated positive charge" lost` — parallel plates and uniform field cut; "at a distance" became "non-contact force"; isolated charged sphere field pattern added | abov0, wron0, wron1, miss1
+- p2-static | `keyPoints[2].content: bold term "isolated negative charge" lost` — parallel plates and uniform field cut; "at a distance" became "non-contact force"; isolated charged sphere field pattern added | abov0, wron0, wron1, miss1
+- p2-static | `keyPoints[2].content: bold term "uniform" lost` — parallel plates and uniform field cut; "at a distance" became "non-contact force"; isolated charged sphere field pattern added | abov0, wron0, wron1, miss1
+- p2-static | `keyPoints[2].content: bold term "at a distance" lost` — parallel plates and uniform field cut; "at a distance" became "non-contact force"; isolated charged sphere field pattern added | abov0, wron0, wron1, miss1
+- p2-static | `keyPoints[3].content: bold term "Fuel tanker lorries" lost` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `keyPoints[3].content: bold term "Aircraft" lost` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `keyPoints[3].content: bold term "Bonding cables" lost` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `keyPoints[3].content: bold term "Uses of static electricity:" lost` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `keyPoints[3].content: bold term "Inkjet printers" lost` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `keyPoints[3].content: bold term "Photocopiers (laser printers)" lost` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `keyPoints[3].content: bold term "Electrostatic precipitators" lost` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `keyPoints[3].content: bold term "Electrostatic paint spraying" lost` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `keyPoints[3].content: key term "Electrostatic precipitator" lost` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `keyPoints[3].content: key term "Inkjet printer" lost` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+- p2-static | `keyPoints[3].content: key term "Bonding cable" lost` — all applications cut (tankers, aircraft, bonding cables, inkjet, photocopier, precipitator, paint spraying); sparking explained with the electric field | abov1, abov2, abov3, abov4, miss0
+
+## Changes that trip no check-rewrite rule (wording only)
+
+- p2-components | examTip: "filament bulb" became "filament lamp" | wron2
+- p2-components | keyPoints[0].content: fixed resistor constant at constant temperature; R constant for some resistors, changes with current in others; lamps, diodes, thermistors and LDRs not constant; V = IR for any component; ohmic conductor proportionality; "voltage" became "potential difference" | fact0, miss1, miss2, fact2, wron0, wron1
+- p2-components | keyPoints[2].memTip and tutor_note: "carriers" and "inverse" removed | abov8, fact6
+- p2-components | keyPoints[3].memTip ("NTC = …") and tutor_note ("more carriers") replaced | abov7, abov8
+- p2-components | checkpoints.0.wrongFeedback: "Ohm's Law is a division here" became "R = V ÷ I is a division" | fact8
+- p2-components | checkpoints.1 option 0 and correctFeedback: "reverse bias" became "reverse direction" | abov1
+- p2-components | checkpoints.2 feedback: charge carriers and "inverse component" removed | abov8, fact6
+- p2-components | checkpoints.3: "inverse components" question replaced by thermistor-in-thermostat question | chec0, fact6
+- p2-components | commonMistakes[1]: "reverse bias" became "reverse direction" | abov1
+- p2-components | examTips[0]: "in terms of charge carriers" cut | abov8
+- p2-components | examTips[2]: fuse clause cut | abov9
+- p2-current-voltage | examTip and introTips[1]: V = W/Q became E = QV | fact6
+- p2-current-voltage | keyPoints[0].content: "charge flow"; closed circuit with a source of p.d.; same current everywhere in a single loop; "negative terminal" became "negative side of the cell" | wron1, miss0, miss1, step 4d grep ("terminal")
+- p2-current-voltage | keyPoints[1].memTip and tutor_note: W/Q and EMF replaced by E = QV | fact6, abov0
+- p2-current-voltage | commonMistakes[4]: "reverse bias" and "at GCSE" removed; very small current in the reverse direction | fact5, wron5
+- p2-domestic | keyPoints[0].keyTerms[0].def: DC from a direct potential difference | wron0
+- p2-domestic | keyPoints[0].tutor_note: transformer reason cut | abov4
+- p2-domestic | keyPoints[1].content: three-core cable; alternating potential difference; live wire dangerous with switch open; "ground" became "earth" | miss2, wron3, wron2, miss0, wron4
+- p2-domestic | introTips[2]: plastic-casing (double insulation) tip replaced | abov5, miss0
+- p2-domestic | examTips[1]: "equal peaks and troughs" became "goes above and below zero" | step 4d grep ("peak")
+- p2-power-energy | intro: bills, cost and money cut; appliances designed to bring about energy transfers | abov2, miss2
+- p2-power-energy | introTips[2]: "seconds ↔ hours" became "minutes ↔ seconds" | abov2
+- p2-power-energy | keyPoints[0].tutor_note: P = V²/R reference cut; "potential difference" | abov0
+- p2-power-energy | keyPoints[1].memTip and tutor_note: kWh cut | abov2
+- p2-power-energy | linking key point memTip: P = V²/R removed | abov0
+- p2-series-parallel | introTips[1]: "including the parallel resistance formula" cut | abov0
+- p2-series-parallel | keyPoints[0].content: p.d. shared; why series adds resistance; current = p.d. ÷ total resistance | wron0, miss0, chec0
+- p2-series-parallel | keyPoints[0].memTip: "Voltages split" became "Potential difference is shared" | wron2
+- p2-series-parallel | keyPoints[2].content and writeBullets[1]: "Modern sets" removed; lights in parallel keep working if one bulb fails | fact2
+- p2-series-parallel | keyPoints[4].content: dc series testing circuit with a variable resistor | miss1
+- p2-static | intro: insulating-surface claim and applications removed | fact2, abov1
+- p2-static | keyPoints[0].content and writeBullets[3]: equal positive charge; certain insulators become charged when rubbed | fact0, fact1
+- p2-static | keyPoints[1].content and writeBullets: spec charge rule; storm-cloud mechanism cut | wron2, abov5
+- p2-static | keyPoints[2].tutor_note: parallel-plates note replaced by sphere field note | abov0, miss1
+- p2-static | checkpoints.2: tanker question replaced by electric field (isolated sphere) question | chec0, abov1
+- p2-static | checkpoints.3: paint spraying question replaced by sparking question | abov1, miss0
+- p2-static | examTips[1]: "Between plates" clause cut | abov0

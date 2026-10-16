@@ -1,9 +1,9 @@
 {
   "lesson": "p2-power-energy",
   "source_file": "lessons/physics/p2-power-energy.json",
-  "lesson_md5": "35ead01d6b56ea4327fa4b22617c984e",
+  "lesson_md5": "760705a5b0c208cdbcab5a50b6778abc",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:38:45.059Z",
+  "date": "2026-10-16T18:47:12.159Z",
   "specRefs_sent": [
     "4.2.4.1",
     "4.2.4.2"
@@ -11,120 +11,67 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 8672,
-    "output_tokens": 4692
+    "input_tokens": 6629,
+    "output_tokens": 3737
   },
-  "cost_usd": 0.128528,
+  "cost_usd": 0.101256,
   "status": "OK",
   "result": {
     "lesson": "p2-power-energy",
     "missing_spec_content": [
       {
         "specRef": "4.2.4.2",
-        "spec_text": "Students should be able to describe how different domestic appliances transfer energy from batteries or ac mains to the kinetic energy of electric motors or the energy of heating devices.",
-        "why": "The lesson never describes how appliances transfer energy from batteries or ac mains. It does not say where the energy goes, such as the kinetic energy store of a motor or the thermal store of a heating device. It only gives power values and calculations."
+        "spec_text": "Work is done when charge flows in a circuit. The amount of energy transferred by electrical work can be calculated using the equation:",
+        "why": "The lesson never states that work is done when charge flows in a circuit, or that this is how appliances transfer energy. It only says, in passing, that E = QV 'links the mechanical 'work done' idea of energy to circuit quantities' (keyPoints[2].content). It also gives a brief analogy in keyPoints[2].tutor_note: 'It is just energy = work done to move charge Q through a potential difference V.' The spec's own statement is never taught directly."
       },
       {
         "specRef": "4.2.4.2",
-        "spec_text": "Students should be able to describe, with examples, the relationship between the power ratings for domestic electrical appliances and the changes in stored energy when they are in use.",
-        "why": "Power ratings are listed (keyPoints[0].content, tables[1]) but are never linked to changes in stored energy. For example, a higher-power kettle transfers more energy to the water's thermal store per second."
-      },
-      {
-        "specRef": "4.2.4.2",
-        "spec_text": "Everyday electrical appliances are designed to bring about energy transfers.",
-        "why": "This idea is not stated. The lesson treats appliances only as things that cost money to run (intro, keyPoints[2])."
+        "spec_text": "energy transferred = charge flow × potential difference\n\nE = Q V ... Students should be able to recall and apply both equations.",
+        "why": "E = QV appears in the lesson as a listed equation. However, the lesson gives no worked example and no checkpoint that applies it. The spec requires students to apply it, not only recall it."
       }
     ],
     "above_gcse": [
       {
-        "field": "keyPoints[0].content",
-        "text": "<strong>P = V²/R</strong> (put I = V/R into P = IV)",
-        "why": "The specification lists only P = VI and P = I²R as the equations to recall and apply. P = V²/R is taught as a third equation to learn, and it also appears in the tables, revisionCardBullets and checkpoint 2 feedback. This goes beyond the required equations."
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "<strong>Payback time</strong> = extra cost of the efficient appliance ÷ yearly saving.",
-        "why": "Payback time is not in the specification sections given. It is tested in checkpoint 3."
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "For bills, electricity companies use a much larger unit: the <strong>kilowatt-hour (kWh)</strong>.",
-        "why": "The kilowatt-hour and the cost-of-electricity calculations are not in these specification sections. The specification gives energy only in joules: \"energy transferred, E, in joules, J\". About a third of the lesson is about content outside the specification."
-      },
-      {
-        "field": "tables[1].headers",
-        "text": "Fuse rating",
-        "why": "Fuse ratings are not part of these specification sections. They are given without any explanation."
+        "field": "tables[1].headers[2] and tables[1].rows",
+        "text": "\"Fuse rating\" ... \"Electric shower\", \"8000–10000 W\", \"13 A (dedicated circuit)\"",
+        "why": "Neither specification section asks for fuse ratings or dedicated circuits. These are extra details that the student is not asked to learn here. The shower entry is also wrong (see factual_errors), so it could confuse the student."
       }
     ],
     "factual_errors": [
       {
-        "field": "keyPoints[2].content",
-        "text": "use appliances at off-peak times",
-        "correction": "This is listed under \"Ways to save energy\", but using appliances off-peak does not reduce the energy transferred. It may reduce cost on some tariffs only.",
-        "basis": "own knowledge"
-      },
-      {
         "field": "tables[1].rows[6]",
-        "text": "13 A (dedicated circuit)",
-        "correction": "An 8–10 kW shower on 230 V draws about 35–45 A. It is protected by a breaker of roughly 40–45 A on a dedicated circuit, not by a 13 A fuse.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "<strong>V = IR</strong> (Ohm's Law: voltage = current × resistance)",
-        "correction": "V = IR relates potential difference, current and resistance for any component. Ohm's law is the statement that current is directly proportional to potential difference for an ohmic conductor at constant temperature. Calling V = IR \"Ohm's Law\" is imprecise. The same label appears in tables[0].rows[0] and keyPoints[3].writeBullets[0].",
+        "text": "\"Electric shower\", \"8000–10000 W\", \"13 A (dedicated circuit)\"",
+        "correction": "An 8–10 kW shower on 230 V mains draws about 35–43 A, since I = P/V. It is therefore not protected by a 13 A fuse. It runs on a dedicated circuit with a protective device of roughly 40–45 A. The lesson's own P = IV shows that 13 A is far too low.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [
       {
-        "field": "keyPoints[0].content",
-        "text": "<strong>P = IV</strong> (power = current × voltage)",
-        "spec_term": "potential difference (power = potential difference × current)"
+        "field": "commonMistakes[2]",
+        "text": "Writing P = IR instead of P = I²R gives the voltage, not the power.",
+        "spec_term": "potential difference"
       },
       {
-        "field": "keyPoints[3].content",
-        "text": "<strong>E = QV</strong> (energy = charge × voltage)",
-        "spec_term": "energy transferred = charge flow × potential difference"
+        "field": "checkpoints[0].correctFeedback",
+        "text": "This is the right equation when you have current and resistance but not voltage.",
+        "spec_term": "potential difference"
       },
       {
-        "field": "keyPoints[3].keyTerms[0].term",
-        "text": "Charge (Q)",
-        "spec_term": "charge flow, Q, in coulombs, C"
-      },
-      {
-        "field": "tables[0].rows[0]",
-        "text": "V in V, I in A, R in Ω",
-        "spec_term": "potential difference, V, in volts, V. The lesson uses \"voltage\" for V throughout the tables, writeBullets and revisionCardBullets."
-      },
-      {
-        "field": "revisionCardBullets[11]",
-        "text": "E = QV (energy = charge × voltage)",
-        "spec_term": "energy transferred = charge flow × potential difference"
+        "field": "intro",
+        "text": "Every time you boil a kettle, stream a video or charge your phone, electrical energy is transferred.",
+        "spec_term": "energy transferred by electrical work (work is done when charge flows in a circuit)"
       }
     ],
     "checkpoint_mismatch": [
       {
-        "checkpoint": "1",
-        "key_point": "keyPoints[1] Electrical energy",
-        "why": "The question asks for a cost at 28p per kWh. Cost calculations are taught in keyPoints[2] (Cost of electricity), not in keyPoints[1]."
-      },
-      {
-        "checkpoint": "2",
-        "key_point": "keyPoints[2] Cost of electricity",
-        "why": "The question is the multi-step resistor energy calculation from keyPoints[3]. It is the same numbers as that worked example. It does not test cost of electricity or payback."
-      },
-      {
-        "checkpoint": "3",
-        "key_point": "keyPoints[3] Linking all the electrical equations",
-        "why": "The question tests payback time, which is taught in keyPoints[2]. It does not test linking the electrical equations."
+        "checkpoint": "checkpoints[2]: \"A resistor has R = 50 Ω and V = 10 V. What is the energy transferred in 2 minutes?\"",
+        "key_point": "keyPoints[2] \"Linking all the electrical equations\": \"Worked multi-step example: a resistor has R = 50 Ω and V = 10 V. Find the energy transferred in 2 minutes. ... 240 J\"",
+        "why": "The checkpoint copies the worked example word for word, with the same numbers. It tests whether the student remembers the example, not whether they can apply the method. It also does not test the content this key point adds, which is Q = It and E = QV."
       }
     ],
     "not_checked": [
-      "I assumed checkpoint keys \"0\" to \"3\" sit with keyPoints[0] to keyPoints[3] in index order. The lesson does not state this mapping explicitly.",
-      "I did not verify that the typical electricity price of 28p per kWh is current, because it varies over time.",
-      "No diagrams are present (all diagram fields are null)."
+      "Q = It (keyPoints[2].content, tables[0].rows[5], revisionCardBullets[6]) is not in the specification sections supplied (4.2.4.1, 4.2.4.2). Its spec wording and terminology could not be checked against the specification text. It was checked against own knowledge only and is correct.",
+      "All diagram fields are null, so there were no diagrams or images to check."
     ]
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "p2-current-voltage",
-  "title": "Current and voltage — the basics of every circuit",
+  "title": "Current and potential difference — the basics of every circuit",
   "topic": "P2",
   "examTip": "Questions using Q = It, E = QV and R = V/I come up almost every year. I-V characteristics are a favourite for 'describe and explain' questions, especially the filament lamp and diode. Examiners want the physics reason, not just the shape.",
   "introTips": [
@@ -8,22 +8,20 @@
     "You will practise rearranging Q = It, E = QV and R = V/I to find any unknown",
     "By the end, you will be able to sketch and explain I-V graphs for three different components. You will also be able to describe the required practical"
   ],
-  "intro": "Every electrical device you have used works because charge flows around a circuit and transfers energy. That includes your phone, a kettle and Christmas lights. Current, voltage and resistance let you predict exactly how any circuit will behave. Those three ideas come up on almost every electricity paper. Get them right, and a big chunk of Topic 2 becomes simple.",
+  "intro": "Every electrical device you have used works because charge flows around a circuit and transfers energy. That includes your phone, a kettle and Christmas lights. Current, potential difference and resistance let you predict exactly how any circuit will behave. Those three ideas come up on almost every electricity paper. Get them right, and a big chunk of Topic 2 becomes simple.",
   "keyPoints": [
     {
       "heading": "Electric current — charge on the move",
-      "content": "Electric current is the rate of flow of <strong>electric charge</strong>. Charge is measured in <strong>coulombs (C)</strong> and current in <strong>amperes (A)</strong>. The equation linking them is <strong>Q = It</strong>. Here Q is charge flow (C), I is current (A) and t is time (s). So 1 ampere means 1 coulomb of charge passes a point every second.\n\nCharge only flows through a closed circuit that includes a source of potential difference, such as a cell. In a single closed loop, the current has the same value at every point.\n\nIn a metal, it is <strong>free electrons</strong> that really move. They flow from the negative side of the cell to the positive side. <strong>Conventional current</strong> goes the opposite way, from positive to negative. This is just a historical habit. Scientists chose the direction before they discovered electrons, and got it the wrong way round. But it is the direction shown on all circuit diagrams, so use it.",
+      "content": "Electric current is the rate of flow of <strong>electric charge</strong>. Charge is measured in <strong>coulombs (C)</strong> and current in <strong>amperes (A)</strong>. The equation linking them is <strong>Q = It</strong>. Here Q is charge flow (C), I is current (A) and t is time (s). So 1 ampere means 1 coulomb of charge passes a point every second.\n\nCharge only flows through a closed circuit that includes a source of potential difference, such as a cell. In a single closed loop, the current has the same value at every point.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "Electric current — the rate of flow of charge (coulombs per second)",
-        "Ampere (A) — the unit of current. 1 A = 1 C s⁻¹",
+        "Ampere (A) — the unit of current. 1 ampere is 1 coulomb per second",
         "Q = It — charge flow (C) = current (A) × time (s)",
         "Closed circuit — charge only flows if the circuit includes a source of potential difference",
         "Single closed loop — the current is the same at every point",
-        "Free electrons — the charges that move in metals. They move negative → positive",
-        "Conventional current — flows positive → negative (opposite to electron flow)",
         "Ammeter — measures current. Always connected in series"
       ],
       "keyTerms": [
@@ -34,18 +32,14 @@
         {
           "term": "Coulomb",
           "def": "The unit of electric charge (C); 1 coulomb = 1 ampere × 1 second"
-        },
-        {
-          "term": "Conventional current",
-          "def": "The direction current is drawn in circuit diagrams — from + to −, opposite to electron flow"
         }
       ],
       "memTip": "Q = It: 'Quiet Is Time'. Charge = current × time.",
-      "tutor_note": "Conventional current and electron flow catch people out every year. In a metal, electrons move from − to +. Conventional current goes from + to −. In circuit diagrams, always use the conventional current direction."
+      "tutor_note": "Charge only flows in a closed circuit with a source of potential difference. In a single loop, the current is the same everywhere."
     },
     {
       "heading": "Potential difference — the energy push",
-      "content": "<strong>Potential difference (p.d.)</strong> is measured in volts. It tells you how much energy is transferred for each coulomb of charge that flows between two points. The equation is <strong>E = QV</strong>. Here E is energy transferred (joules, J), Q is charge flow (coulombs, C) and V is potential difference (volts, V). A p.d. of 1 volt means 1 joule of energy is transferred for every 1 coulomb of charge that passes.",
+      "content": "<strong>Potential difference (p.d.)</strong> is measured in volts. Work is done when charge flows in a circuit. It tells you how much energy is transferred for each coulomb of charge that flows between two points. The equation is <strong>E = QV</strong>. Here E is energy transferred (joules, J), Q is charge flow (coulombs, C) and V is potential difference (volts, V). A p.d. of 1 volt means 1 joule of energy is transferred for every 1 coulomb of charge that passes.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -66,7 +60,7 @@
     },
     {
       "heading": "Resistance — the opposition to current",
-      "content": "<strong>Resistance</strong> is the opposition to the flow of current. The greater the resistance, the less current flows for a given potential difference. The equation linking the three is <strong>R = V/I</strong>. It works for any component. Here R is resistance in <strong>ohms (Ω)</strong>, V is potential difference in volts, and I is current in amperes.\n\nFor example, say the p.d. across a resistor is 12 V and the current through it is 3 A. Then R = 12/3 = <strong>4 Ω</strong>. Or if V = 12 V and R = 4 Ω, then I = V/R = 12/4 = <strong>3 A</strong>.\n\nTwo factors affect resistance:\n- <strong>length</strong>: resistance increases with the length of the wire\n- <strong>temperature</strong>: a filament's resistance increases as it gets hotter. The ions vibrate more and get in the way of electron flow. A thermistor's resistance decreases as it gets hotter\n\n<strong>Required practical 3</strong>: you investigate what affects resistance. Change the length of a wire, keeping its temperature constant. Measure V and I, then work out R = V/I. You also measure the resistance of resistors combined in series and in parallel.",
+      "content": "<strong>Resistance</strong> is the opposition to the flow of current. The greater the resistance, the less current flows for a given potential difference. The equation linking the three is <strong>V = IR</strong> (potential difference = current × resistance). It works for any component. Rearranged, R = V/I. Here R is resistance in <strong>ohms (Ω)</strong>, V is potential difference in volts, and I is current in amperes.\n\nFor example, say the p.d. across a resistor is 12 V and the current through it is 3 A. Then R = 12/3 = <strong>4 Ω</strong>. Or if V = 12 V and R = 4 Ω, then I = V/R = 12/4 = <strong>3 A</strong>.\n\nThe resistance of a wire depends on its length and its temperature:\n- <strong>length</strong>: resistance increases with the length of the wire\n- <strong>temperature</strong>: a hotter wire, such as a filament, has more resistance.\n\nA thermistor's resistance decreases as it gets hotter.\n\n<strong>Required practical 3</strong>: you investigate what affects resistance. Change the length of a wire, keeping its temperature constant. Measure V and I, then work out R = V/I. You also measure the resistance of resistors combined in series and in parallel.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -85,7 +79,7 @@
         },
         {
           "term": "Ohm (Ω)",
-          "def": "The unit of resistance; 1 Ω = 1 V A⁻¹"
+          "def": "The unit of resistance; 1 ohm is 1 volt per ampere"
         }
       ],
       "memTip": "R = V/I: use the triangle. Put V on top, and I and R on the bottom. Cover any one to get the formula.",
@@ -112,7 +106,7 @@
         },
         {
           "term": "Ohmic conductor",
-          "def": "A component whose resistance stays constant — gives a straight-line I-V graph"
+          "def": "A component whose resistance stays constant at constant temperature — gives a straight-line I-V graph"
         },
         {
           "term": "Diode",
@@ -143,11 +137,11 @@
         },
         {
           "term": "Ammeter",
-          "def": "Instrument measuring current; connected in series; has very low resistance"
+          "def": "Instrument measuring current; connected in series"
         },
         {
           "term": "Voltmeter",
-          "def": "Instrument measuring p.d.; connected in parallel; has very high resistance"
+          "def": "Instrument measuring p.d.; connected in parallel"
         }
       ],
       "memTip": "Series A, Parallel V: Ammeter in Series, Voltmeter in Parallel. Cover your notes. Describe the full circuit from memory, including the safety step.",
@@ -179,7 +173,7 @@
         ],
         [
           "Diode",
-          "Near-zero current until the forward potential difference is large enough, then steep rise; very small current in the reverse direction",
+          "Current flows in one direction only; very small current in the reverse direction",
           "Only conducts in one direction; very high reverse resistance",
           "LED lighting"
         ]
@@ -228,12 +222,12 @@
       "options": [
         "The lamp only conducts in one direction",
         "As current increases, the filament heats up, which increases its resistance",
-        "The lamp's voltage decreases as current increases",
+        "The lamp's potential difference decreases as current increases",
         "The ammeter reads incorrectly at high currents"
       ],
       "correct": 1,
       "correctFeedback": "Exactly right. The filament heats up and its resistance rises. So the current is lower than a simple proportion would give. That causes the curve.",
-      "wrongFeedback": "The key physics here is temperature. As more current flows, the filament gets hotter. In a metal, a higher temperature means more resistance. The ions vibrate more and block electron flow. So each extra volt gives less extra current than before. That makes the graph curve."
+      "wrongFeedback": "The key physics here is temperature. As more current flows, the filament gets hotter. In a metal, a higher temperature means more resistance. So each extra volt gives less extra current than before. That makes the graph curve."
     },
     "4": {
       "question": "In the I-V required practical, how should the ammeter and voltmeter be connected?",
@@ -250,7 +244,6 @@
   },
   "commonMistakes": [
     "Drawing the filament lamp I-V curve bending towards the I-axis instead of away from it. It curves away because resistance increases, so less current flows than expected.",
-    "Mixing up conventional current and electron flow. Electrons go from − to +. Conventional current goes from + to − in the outside circuit.",
     "Connecting the voltmeter in series instead of parallel. A voltmeter must be in parallel to measure the p.d. across a component without changing the current.",
     "Forgetting to check units in Q = It. Time must be in seconds, not minutes or hours, before substituting.",
     "Saying a diode 'blocks all current' in the reverse direction. It has a very high resistance, so a very small current flows."
@@ -264,7 +257,6 @@
   "revisionCardBullets": [
     "Current (I) — the rate of flow of charge. Unit: ampere (A)",
     "Q = It — charge flow (C) = current (A) × time (s)",
-    "Conventional current goes + to −. Electrons flow − to +",
     "Potential difference (V) — energy per unit charge. Unit: volt (V)",
     "E = QV — energy transferred (J) = charge flow (C) × potential difference (V)",
     "R = V/I — resistance (Ω) = potential difference ÷ current",

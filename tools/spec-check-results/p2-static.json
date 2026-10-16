@@ -1,9 +1,9 @@
 {
   "lesson": "p2-static",
   "source_file": "lessons/physics/p2-static.json",
-  "lesson_md5": "87175f57c3e4f6a0dc1ddb4dfba75615",
+  "lesson_md5": "879c9d3e542767a0c079bcd8699eced3",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T18:47:45.643Z",
+  "date": "2026-10-16T19:25:33.132Z",
   "specRefs_sent": [
     "4.2.5.1",
     "4.2.5.2"
@@ -11,68 +11,44 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 6440,
-    "output_tokens": 5120
+    "input_tokens": 6444,
+    "output_tokens": 3312
   },
-  "cost_usd": 0.12816,
+  "cost_usd": 0.092016,
   "status": "OK",
   "result": {
     "lesson": "p2-static",
-    "missing_spec_content": [
+    "missing_spec_content": [],
+    "above_gcse": [],
+    "factual_errors": [
       {
-        "specRef": "4.2.5.1",
-        "spec_text": "explain how the transfer of electrons between objects can explain the phenomena of static electricity.",
-        "why": "The lesson explains charging in terms of electron transfer. It does not use electron transfer to explain the other phenomena it covers. Sparking and discharge are described only as 'charge' moving: keyPoints[3].content says 'Charge jumps between your hand and the handle', and keyPoints[0].content says 'The charge flows through the conductor'. The lesson never says that electrons move during discharge or sparking. Clinging clothes and hair standing on end are also not linked back to which object gained or lost electrons. This spec point is only partly covered."
+        "field": "keyPoints[1].keyTerms[2].def",
+        "text": "A huge spark between a charged storm cloud and the ground.",
+        "correction": "This definition is incomplete. Lightning is a large electrical discharge (spark) that can happen within a cloud, between clouds, or between a cloud and the ground. Cloud-to-ground is only one type. Most lightning does not reach the ground.",
+        "basis": "own knowledge"
       }
     ],
-    "above_gcse": [
-      {
-        "field": "keyPoints[1].content",
-        "text": "dust sticking to screens: the screen becomes charged and attracts neutral dust particles",
-        "why": "A charged object attracting a neutral object needs induced charge separation (polarisation). The specification does not cover this. It only describes forces between two charged objects ('When two electrically charged objects are brought close together they exert a force on each other'). The example is given without explanation, so it may confuse a student who has just learned that attraction needs different types of charge."
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "The field gets weaker with distance from a charged object, like a gravitational field. This is why a charged rod held near small bits of paper can attract them without touching.",
-        "why": "Attraction of uncharged paper also depends on induced charge separation, which is beyond the specification. The lesson presents the weakening of the field with distance as the whole reason, which is incomplete. This may confuse students, because the spec only deals with forces on 'a second charged object placed in the field'."
-      }
-    ],
-    "factual_errors": [],
     "wrong_terms": [
       {
-        "field": "keyPoints[1].tutor_note",
-        "text": "LIKE charges repel and UNLIKE charges attract.",
-        "spec_term": "same type of charge repel / different types of charge attract"
-      },
-      {
-        "field": "commonMistakes[1]",
-        "text": "Saying 'like charges attract'. This is the opposite of the rule. Like charges REPEL. Unlike (opposite) charges ATTRACT.",
-        "spec_term": "same type of charge / different types of charge"
-      },
-      {
-        "field": "keyPoints[1].keyTerms[0].def",
-        "text": "unlike charges attract.",
-        "spec_term": "Two objects that carry different types of charge attract."
-      },
-      {
-        "field": "keyPoints[1].keyTerms[1].def",
-        "text": "The force pushing like charges apart; same charges repel.",
+        "field": "keyPoints[1].writeBullets[2]",
+        "text": "Two charged rods with the same sign: repel (swing apart on threads)",
         "spec_term": "Two objects that carry the same type of charge repel."
       },
       {
-        "field": "checkpoints.1.correctFeedback",
-        "text": "Correct. Like charges repel.",
-        "spec_term": "same type of charge repel"
+        "field": "keyPoints[1].writeBullets[3]",
+        "text": "Two charged rods with opposite signs: attract (swing together)",
+        "spec_term": "Two objects that carry different types of charge attract."
       },
       {
-        "field": "keyPoints[0].heading",
-        "text": "Charging by friction",
-        "spec_term": "Static charge: 'When certain insulating materials are rubbed against each other they become electrically charged.'"
+        "field": "keyPoints[0].keyTerms[1].term",
+        "text": "Conservation of charge",
+        "spec_term": "The material that loses electrons is left with an equal positive charge."
       }
     ],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "Every keyPoints[].diagram is null, so there are no diagrams to check. The spec requires students to 'draw the electric field pattern for an isolated charged sphere'. The lesson describes this pattern only in words (keyPoints[2].content), so I could not check whether a drawn field pattern would be correct."
+      "Spec 4.2.5.2 requires students to 'draw the electric field pattern for an isolated charged sphere'. Every keyPoint has \"diagram\": null, so no drawn field pattern could be checked. The lesson gives only a text description in keyPoints[2].content: 'Around an isolated charged sphere, the field lines are straight. They meet the surface at right angles.' The lesson does not check whether the student can actually produce the drawing.",
+      "The spec lists 'Key opportunities for skills development: WS 1.2, 1.5'. The text of these Working Scientifically statements was not supplied, so they could not be checked against the lesson."
     ]
   }
 }

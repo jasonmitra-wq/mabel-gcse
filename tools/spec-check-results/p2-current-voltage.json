@@ -1,9 +1,9 @@
 {
   "lesson": "p2-current-voltage",
   "source_file": "lessons/physics/p2-current-voltage.json",
-  "lesson_md5": "0dbaad3fd26524e8f323737cecebb656",
+  "lesson_md5": "f0c57181a36f1572306d66140d54039a",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T18:44:27.422Z",
+  "date": "2026-10-16T19:22:56.467Z",
   "specRefs_sent": [
     "4.2.1.2",
     "4.2.1.3",
@@ -13,10 +13,10 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 9407,
-    "output_tokens": 4901
+    "input_tokens": 9116,
+    "output_tokens": 4708
   },
-  "cost_usd": 0.135648,
+  "cost_usd": 0.130624,
   "status": "OK",
   "result": {
     "lesson": "p2-current-voltage",
@@ -24,92 +24,85 @@
       {
         "specRef": "4.2.1.4",
         "spec_text": "The resistance of an LDR decreases as light intensity increases.",
-        "why": "The lesson never mentions the LDR or how its resistance depends on light intensity. The spec also lists LDRs among components whose 'resistance ... is not constant'."
+        "why": "The lesson never mentions LDRs. It has no statement of how LDR resistance changes with light intensity."
       },
       {
         "specRef": "4.2.1.4",
         "spec_text": "The application of LDRs in circuits eg switching lights on when it gets dark is required.",
-        "why": "The lesson gives no LDR application."
+        "why": "The lesson gives no application of an LDR in a circuit."
       },
       {
         "specRef": "4.2.1.4",
         "spec_text": "The applications of thermistors in circuits eg a thermostat is required.",
-        "why": "The lesson says a thermistor's resistance falls as it gets hotter. It gives no application, such as a thermostat."
+        "why": "The lesson only says 'A thermistor's resistance decreases as it gets hotter' (keyPoints[2].content). It gives no application such as a thermostat."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "The resistance of components such as lamps, diodes, thermistors and LDRs is not constant; it changes with the current through the component.",
+        "why": "The lesson does not state the general point that the resistance of these components changes with the current through them. LDRs are left out entirely."
       },
       {
         "specRef": "4.2.1.4",
         "spec_text": "draw an appropriate circuit diagram using correct circuit symbols.",
-        "why": "The lesson describes the circuit only in words. It does not teach circuit symbols or how to draw the circuit diagram."
+        "why": "The lesson has no circuit diagram and teaches no circuit symbols. Every diagram field is null. The required practicals also say 'use circuit diagrams to construct appropriate circuits'."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "relate the curves produced to their function and properties.",
+        "why": "The lesson explains the lamp and resistor curves. For the diode, it does not describe the forward-direction shape of the graph and links it to function only as 'one direction only'."
       },
       {
         "specRef": "4.2.4.2",
         "spec_text": "energy transferred = power × time\n\nE = P t",
-        "why": "The lesson teaches E = QV only. E = Pt, which students must recall and apply, is missing."
+        "why": "The lesson teaches E = QV from this section but leaves out E = Pt. Students must recall and apply both equations ('Students should be able to recall and apply both equations')."
       },
       {
         "specRef": "4.2.4.2",
-        "spec_text": "Students should be able to explain how the power of a circuit device is related to:\n\n- the potential difference across it and the current through it\n- the energy transferred over a given time.",
-        "why": "Power is not covered anywhere in the lesson."
+        "spec_text": "The amount of energy an appliance transfers depends on how long the appliance is switched on for and the power of the appliance.",
+        "why": "The lesson does not cover this."
       },
       {
         "specRef": "4.2.4.2",
         "spec_text": "Students should be able to describe how different domestic appliances transfer energy from batteries or ac mains to the kinetic energy of electric motors or the energy of heating devices.",
-        "why": "The lesson does not describe energy transfers in everyday appliances. The intro only mentions a phone, a kettle and Christmas lights in passing."
+        "why": "The lesson does not cover energy transfers in domestic appliances. The intro only mentions a phone, a kettle and Christmas lights in passing."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "Students should be able to explain how the power of a circuit device is related to: the potential difference across it and the current through it; the energy transferred over a given time.",
+        "why": "The lesson does not mention power at all."
       },
       {
         "specRef": "4.2.4.2",
         "spec_text": "Students should be able to describe, with examples, the relationship between the power ratings for domestic electrical appliances and the changes in stored energy when they are in use.",
-        "why": "Power ratings are not covered."
-      },
-      {
-        "specRef": "4.2.4.2",
-        "spec_text": "Work is done when charge flows in a circuit.",
-        "why": "The lesson talks about energy transferred per coulomb. It never states that work is done when charge flows, or that energy is transferred by electrical work."
+        "why": "The lesson does not cover power ratings."
       }
     ],
     "above_gcse": [
       {
-        "field": "keyPoints[0].content",
-        "text": "<strong>Conventional current</strong> goes the opposite way, from positive to negative. This is just a historical habit. Scientists chose the direction before they discovered electrons, and got it the wrong way round.",
-        "why": "The specification sections given do not mention conventional current or electron flow direction. The lesson presents it as a frequent exam trap (tutor_note: 'catch people out every year'), which may make the student over-focus on content these sections do not require."
+        "field": "keyPoints[2].content",
+        "text": "The ions vibrate more and get in the way of electron flow",
+        "why": "The specification sections given only require that the resistance of a filament lamp increases as temperature increases. The ion and electron model is not required by them. It is also repeated in checkpoints[3].wrongFeedback."
       },
       {
-        "field": "keyPoints[0].writeBullets[1]",
-        "text": "Ampere (A) — the unit of current. 1 A = 1 C s⁻¹",
-        "why": "Negative-index unit notation (C s⁻¹, and V A⁻¹ in keyPoints[2].keyTerms[1]) is not used in the specification and may confuse a 15-year-old. 'Coulombs per second' is enough."
+        "field": "keyPoints[4].keyTerms[1].def / keyTerms[2].def",
+        "text": "connected in series; has very low resistance / connected in parallel; has very high resistance",
+        "why": "The resistances of the meters are not required by the specification sections given. This is minor and unlikely to confuse."
       }
     ],
     "factual_errors": [
       {
         "field": "keyPoints[2].content",
-        "text": "Two factors affect resistance:\n- <strong>length</strong>: resistance increases with the length of the wire\n- <strong>temperature</strong>",
-        "correction": "Length and temperature are not the only factors that affect resistance. For example, the resistance of an LDR depends on light intensity. Cross-sectional area and material also affect a wire's resistance. The text should say 'Two factors you need here include…' or similar.",
-        "basis": "spec"
-      },
-      {
-        "field": "keyPoints[3].keyTerms[1].def",
-        "text": "A component whose resistance stays constant — gives a straight-line I-V graph",
-        "correction": "An ohmic conductor's resistance is constant only at constant temperature. The current through it is then directly proportional to the potential difference.",
-        "basis": "spec"
+        "text": "The resistance of a wire depends on its length and its temperature:",
+        "correction": "The resistance of a wire also depends on its material and its cross-sectional area. As written, the sentence implies length and temperature are the only factors. The specification only asks for length at constant temperature in RP3.",
+        "basis": "own knowledge"
       }
     ],
-    "wrong_terms": [
-      {
-        "field": "title",
-        "text": "Current and voltage — the basics of every circuit",
-        "spec_term": "potential difference"
-      },
-      {
-        "field": "intro",
-        "text": "Current, voltage and resistance let you predict exactly how any circuit will behave.",
-        "spec_term": "potential difference"
-      }
-    ],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "Every keyPoints[].diagram is null. No I-V graph sketches or circuit diagrams could be checked. The graph shapes (for example 'Curve that bends away from straight line (S-shape)' in tables[0]) were judged from the text alone.",
-      "The examTip claim 'Questions using Q = It, E = QV and R = V/I come up almost every year' could not be checked against past papers.",
-      "The skills details referred to in the spec ('page 91', 'page 93') were not supplied. Lesson coverage of WS/MS/AT skills could not be checked."
+      "All diagram fields are null, so there are no circuit diagrams or I-V graph images to check. The shapes are only described in text.",
+      "The 'Key opportunities for skills development' details (AT 1, 6, 7; WS 1.2, 1.4; MS 3b, c, 4c, d, e) on pages 91 and 93 were not supplied, so the practical and skills coverage could not be checked against them.",
+      "How the HTML tags (<strong>) display on screen was not checked."
     ]
   }
 }

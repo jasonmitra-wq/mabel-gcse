@@ -1,9 +1,9 @@
 {
   "lesson": "p2-components",
   "source_file": "lessons/physics/p2-components.json",
-  "lesson_md5": "d4f170cdc10e29aa8ff9866e8ad459a1",
+  "lesson_md5": "c33cceaa17c7458bf3b7cb2d821b44ee",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T18:45:49.097Z",
+  "date": "2026-10-16T19:24:03.708Z",
   "specRefs_sent": [
     "4.2.1.1",
     "4.2.1.4"
@@ -11,58 +11,61 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7360,
-    "output_tokens": 3576
+    "input_tokens": 7392,
+    "output_tokens": 3867
   },
-  "cost_usd": 0.10096,
+  "cost_usd": 0.106908,
   "status": "OK",
   "result": {
     "lesson": "p2-components",
     "missing_spec_content": [
       {
+        "specRef": "4.2.1.1",
+        "spec_text": "Students should be able to draw and interpret circuit diagrams.",
+        "why": "The lesson never shows or explains a circuit diagram. Symbols are only described in words in tables[0] (for example \"Rectangle\", \"Triangle + vertical bar\"), and every keyPoints diagram field is null. There is no teaching on drawing or interpreting a complete circuit diagram."
+      },
+      {
         "specRef": "4.2.1.4",
         "spec_text": "explain the design and use of a circuit to measure the resistance of a component by measuring the current through, and potential difference across, the component",
-        "why": "The lesson never describes a measuring circuit. It does not cover an ammeter in series, a voltmeter in parallel, or using a variable resistor or supply to vary the potential difference, and then R = V ÷ I. It gives R = V ÷ I only as a calculation."
+        "why": "The lesson gives R = V ÷ I but does not describe the measuring circuit. It never says the ammeter goes in series with the component, the voltmeter goes in parallel across it, or that R is calculated from these readings."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "draw an appropriate circuit diagram using correct circuit symbols.",
+        "why": "No ammeter, voltmeter, cell, battery or switch symbols are taught, and there is no guidance on drawing a circuit diagram."
       },
       {
         "specRef": "4.2.1.4",
         "spec_text": "Required practical activity 4: use circuit diagrams to construct appropriate circuits to investigate the I–V characteristics of a variety of circuit elements, including a filament lamp, a diode and a resistor at constant temperature.",
-        "why": "The lesson gives the I-V graph shapes but not how to get them. It has no circuit and no method: varying the potential difference, reading the ammeter and voltmeter, and reversing the connections to obtain negative values."
-      },
-      {
-        "specRef": "4.2.1.1 / 4.2.1.4",
-        "spec_text": "Students should be able to draw and interpret circuit diagrams.",
-        "why": "Symbols are described only in words, and only for resistors, diodes, LEDs, LDRs and thermistors. The lesson has no circuit diagrams. Symbols needed to build these circuits, such as the ammeter, voltmeter, cell or battery and filament lamp, are not given. The lesson does not teach drawing or interpreting a circuit diagram."
-      },
-      {
-        "specRef": "4.2.1.4",
-        "spec_text": "Students should be able to use graphs to explore whether circuit elements are linear or non-linear and relate the curves produced to their function and properties.",
-        "why": "The lesson never uses the terms linear and non-linear. It does not ask the student to classify components by their I-V graphs. The filament lamp curve is explained only in one row of a table (tables[1].rows[1]), not in a key point."
+        "why": "The required practical is not taught. There is no method, no circuit, no use of a variable resistor to vary the current, no reversing of connections to get negative potential differences, and no step of plotting I against V."
       }
     ],
-    "above_gcse": [],
-    "factual_errors": [],
-    "wrong_terms": [
-      {
-        "field": "keyPoints[0].keyTerms[0].def",
-        "text": "A component whose resistance stays constant as voltage changes",
-        "spec_term": "potential difference (spec: \"directly proportional to the potential difference across the resistor\"; \"the resistance remains constant as the current changes\")"
-      },
+    "above_gcse": [
       {
         "field": "keyPoints[1].content",
-        "text": "the diode shows a flat line near zero for negative voltages. Then there is a sudden steep rise once the <strong>forward threshold voltage</strong> is passed.",
-        "spec_term": "potential difference"
-      },
+        "text": "Then there is a sudden steep rise once the <strong>forward threshold potential difference</strong> is passed.",
+        "why": "The specification only requires that a diode conducts in one direction and has very high resistance in the reverse direction. A named 'forward threshold potential difference', given as a key term with its own definition, goes beyond the specification text."
+      }
+    ],
+    "factual_errors": [
       {
-        "field": "checkpoints.1.question",
-        "text": "On an I-V graph for a diode, what does the flat line at negative voltages show?",
-        "spec_term": "potential difference"
+        "field": "tables[0].rows[5][1]",
+        "text": "Rectangle with diagonal line",
+        "correction": "The standard thermistor symbol is a rectangle with a diagonal line through it that ends in a short horizontal tail (a 'hockey-stick' shape). A plain diagonal line is incomplete and is easily confused with the variable resistor symbol.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "tables[0].rows[4][3]",
+        "text": "Decreases as light increases",
+        "spec_term": "light intensity (\"The resistance of an LDR decreases as light intensity increases.\")"
       }
     ],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "All diagram fields are null and circuit symbols are given only as text descriptions (tables[0], column \"Circuit symbol (description)\", e.g. \"Rectangle with diagonal line\" for the thermistor and \"Rectangle with circle and arrows in\" for the LDR). Whether these match the standard symbols the student must draw could not be checked visually.",
-      "Checkpoints are keyed \"0\" to \"3\". I assumed each sits with keyPoints[0] to keyPoints[3] in order. The lesson JSON does not state this link explicitly."
+      "All keyPoints diagram fields are null and circuit symbols are described only in words in tables[0], so the accuracy of any drawn symbols or I-V graph sketches could not be checked.",
+      "The filament lamp I-V curve is described only in words in tables[1] (\"Curve — gets less steep at higher current\"). Without a graph, it could not be checked whether the lesson shows the curve passing through the origin and being symmetrical for negative potential differences."
     ]
   }
 }

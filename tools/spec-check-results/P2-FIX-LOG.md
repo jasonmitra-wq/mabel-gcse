@@ -435,3 +435,154 @@ lesson | what changed (failure) | triage ID
 - p2-static | checkpoints.2: tanker question replaced by electric field (isolated sphere) question | chec0, abov1
 - p2-static | checkpoints.3: paint spraying question replaced by sparking question | abov1, miss0
 - p2-static | examTips[1]: "Between plates" clause cut | abov0
+
+## Spec-check loop (BASE f9f57a1)
+
+### Fuse hold released and R2 decisions applied
+
+- p2-domestic | keyPoints[2] "Fuses and circuit breakers" cut (content, write bullets, key terms Fuse rating, MCB, RCCB); key points re-keyed | abov3, abov2
+- p2-domestic | tables[1] "Fuses and circuit breakers — comparison" cut | abov3, abov2
+- p2-domestic | checkpoints: fuse question cut; earthing question re-keyed from 3 to 2 | chec1, abov3
+- p2-domestic | examTip: "why earth + fuse work together" became "how the earth wire keeps you safe" | abov3
+- p2-domestic | intro: "fuses that melt before fires start" cut | abov3
+- p2-domestic | keyPoints[1].keyTerms: Fuse key term cut; Earth wire definition "blow the fuse" became "stops the appliance becoming live" | abov3, fact0
+- p2-domestic | keyPoints[1].tutor_note: fuse-in-live-wire note replaced with the earth wire's job | abov3
+- p2-domestic | commonMistakes[2–3]: fuse mistakes cut | abov3
+- p2-domestic | examTips[2]: fuse rating tip cut | abov3
+- p2-domestic | revisionCardBullets: fuse, fuse rating, MCB and RCCB bullets cut | abov3, abov2
+- p2-domestic | keyPoints[2] (Earthing) content: "blows the fuse or trips the MCB", "earth wire and fuse must work together" and "use the correct fuse rating" cut | abov3
+- p2-domestic | keyPoints[2] (Earthing) writeBullets[3]: "Use the correct fuse" cut | abov3
+- p2-domestic | keyPoints[2] (Earthing) tutor_note: "so the fuse blows" cut | abov3
+- p2-domestic | tables[0]: "if earth and fuse not working" became "if the earth wire is not working"; earth row "carries fault current to blow fuse" became "stops the appliance becoming live" | abov3, fact0
+- p2-domestic | keyPoints[1].content: earth wire "stops the appliance becoming live"; "casing becomes live" sequence and fuse sentence cut | R2 fact0, abov3
+- p2-domestic | keyPoints[1].writeBullets: "Earth + fuse: fault → casing goes live → …" became "Earth wire — stops the appliance becoming live if there is a fault" | R2 fact1
+- p2-domestic | keyPoints[2] (Earthing) content: fault paragraph rewritten; the earth wire stops the appliance becoming live | R2 fact0
+- p2-domestic | keyPoints[2] (Earthing) writeBullets[1]: "Fault sequence … casing goes live …" became "Earth wire — a safety wire that stops the appliance becoming live" | R2 fact2
+- p2-domestic | keyPoints[2] (Earthing) keyTerms[0].def: "so the appliance cannot become live" | R2 fact0
+- p2-domestic | examTips[0]: fault sequence became "the earth wire stops the appliance becoming live" | R2 fact3
+- p2-domestic | keyPoints[1].content and writeBullets: cable grip cut | R2 abov3
+- p2-domestic | keyPoints[0].content, writeBullets[3], keyTerms (Oscilloscope), introTips[1], examTips[1], revisionCardBullets[3]: oscilloscope traces cut | R2 abov6
+- p2-power-energy | tables[1]: "Fuse rating" column cut | abov3
+- p2-power-energy | keyPoints[2].content: added "Work is done when charge flows in a circuit." | R2 miss0
+- p2-power-energy | keyPoints[2].content: worked example E = QV = 4 × 6 = 24 J added | R2 miss1
+- p2-current-voltage | keyPoints[2].content: "Two factors affect resistance" became "The resistance of a wire depends on its length and its temperature"; thermistor sentence separate | R2 fact0
+- p2-current-voltage | keyPoints[3].keyTerms[1].def ohmic conductor: "at constant temperature" | R2 fact1
+- p2-current-voltage | keyPoints[1].content: added "Work is done when charge flows in a circuit." | R2 miss8
+- p2-current-voltage | keyPoints[0].content: free-electron and conventional current paragraph cut | R2 abov0
+- p2-current-voltage | keyPoints[0].writeBullets: free electrons and conventional current bullets cut | R2 abov0
+- p2-current-voltage | keyPoints[0].keyTerms: Conventional current cut | R2 abov0
+- p2-current-voltage | keyPoints[0].tutor_note: conventional current note replaced with closed circuit / single loop | R2 abov0
+- p2-current-voltage | commonMistakes[1]: conventional current mistake cut | R2 abov0
+- p2-current-voltage | revisionCardBullets[2]: conventional current bullet cut | R2 abov0
+- p2-current-voltage | keyPoints[0].writeBullets[1]: "1 A = 1 C s⁻¹" became "1 ampere is 1 coulomb per second" | R2 abov1
+- p2-current-voltage | keyPoints[2].keyTerms[1].def: "1 Ω = 1 V A⁻¹" became "1 ohm is 1 volt per ampere" | R2 abov1
+- p2-series-parallel | keyPoints[1].content: added "Some circuits include both series and parallel parts." | R2 miss0
+- p2-series-parallel | keyPoints[4].content: ammeter and voltmeter resistance sentences cut; reasons in the mistakes list cut | R2 abov0
+- p2-series-parallel | keyPoints[4].writeBullets: resistance bullets cut; wrong-position bullets give the placement reason, not resistance | R2 abov0
+- p2-series-parallel | keyPoints[4].keyTerms: "has very low/high resistance" cut | R2 abov0
+- p2-series-parallel | keyPoints[4].tutor_note cut | R2 abov1
+- p2-series-parallel | commonMistakes[2]: "short-circuits the component" reason replaced | R2 abov0
+- p2-series-parallel | revisionCardBullets[6–7]: "with very low/high resistance" cut | R2 abov0
+- p2-static | keyPoints[1].content: clinging clothes and hair described as electrons transferred | R2 miss0
+- p2-static | keyPoints[1].writeBullets[5]: hair "electrons are transferred" | R2 miss0
+- p2-static | keyPoints[1].content: dust on screens example cut | R2 abov0
+- p2-static | keyPoints[2].content: charged rod attracting paper sentence cut | R2 abov1
+- p2-static | keyPoints[3].content and writeBullets[0]: sparking described as electrons jumping; door-handle shock explained by electron transfer | R2 miss0
+
+### R3 accepts applied
+
+- p2-components | every "voltage" became "potential difference" (key term, tutor note, diode content, threshold bullets and key term, checkpoint 1) | R3 p2-components wron0, wron1, wron2, wron3
+- p2-components | keyPoints[0].keyTerms[0].def: ohmic conductor "at constant temperature" | R3 p2-components wron0
+- p2-current-voltage | title: "Current and voltage" became "Current and potential difference" | R3 p2-current-voltage wron0
+- p2-current-voltage | intro and checkpoints.3.options[2]: "voltage" became "potential difference" | R3 p2-current-voltage wron1
+- p2-domestic | intro: "230 V of alternating current" became "an alternating potential difference of about 230 V"; "voltages" became "potential differences" | R3 p2-domestic fact0, wron2
+- p2-domestic | keyPoints[1].content: live–earth potential difference about 230 V; open-switch danger explained | R3 p2-domestic wron3, miss1, miss0
+- p2-domestic | keyPoints[1].content: neutral "at, or close to, earth potential (0 V)"; "much safer to touch" cut | R3 p2-domestic fact1
+- p2-domestic | keyPoints[1].keyTerms[0].def: "supply voltage" became "supply potential difference" | R3 p2-domestic wron0
+- p2-domestic | keyPoints[2].content: "most of the fault current flows through the earth wire" | R3 p2-domestic fact2
+- p2-domestic | keyPoints[2].content: open-switch danger added to the Earthing key point | R3 p2-domestic chec0
+- p2-domestic | tables[0].headers[2], checkpoints.0 options and feedback, checkpoints.1.question: "voltage" became "potential difference" | R3 p2-domestic wron1
+- p2-power-energy | keyPoints[2].tutor_note: "higher-grade questions" cut; E = QV is core | R3 p2-power-energy fact0
+- p2-power-energy | tables[0] E = QV row: "Linking charge to energy; higher-grade questions" became "Linking charge flow to energy" | R3 p2-power-energy fact1
+- p2-power-energy | commonMistakes[2] and checkpoints.0.correctFeedback: "voltage" became "potential difference" | R3 p2-power-energy wron0, wron1
+- p2-series-parallel | every "voltage" became "potential difference" (introTips, tutor notes, key point 2 content, bullet and key term, table, common mistake, exam tip, revision cards) | R3 p2-series-parallel wron0–wron11
+- p2-static | keyPoints[0].heading and keyTerms[0].term: "Charging by friction" became "Charging by rubbing" | R3 p2-static wron3
+- p2-static | keyPoints[1].heading: "Like and unlike charges" became "Same and different types of charge" | R3 p2-static wron0
+- p2-static | keyPoints[1].tutor_note and commonMistakes[1]: spec wording for same and different types of charge | R3 p2-static wron1, wron2
+
+### R4 accepts applied
+
+- p2-components | keyPoints[0].content: added "Current goes on the y-axis and potential difference on the x-axis." | R4 p2-components fact0
+- p2-current-voltage | tables[0] diode row: "Near-zero current until the forward potential difference is large enough, then steep rise" became "Current flows in one direction only" | R4 p2-current-voltage abov0
+- p2-current-voltage | keyPoints[2].content: bold "R = V/I" became "V = IR (potential difference = current × resistance)", then rearranged | R4 p2-current-voltage wron0
+- p2-domestic | keyPoints[1].content: insulation colour coded for easy identification | R4 p2-domestic miss0
+- p2-domestic | keyPoints[0].tutor_note (AC versus DC danger) cut | R4 p2-domestic abov0, fact0
+- p2-domestic | keyPoints[0].keyTerms[0–1]: "Direct current (DC)" and "Alternating current (AC)" became "Direct potential difference" and "Alternating potential difference" | R4 p2-domestic wron0
+- p2-domestic | tables[0] neutral row: "but is less immediately dangerous" cut | R4 p2-domestic abov1
+- p2-power-energy | keyPoints[0].content: "Typical values to know: …" cut | R4 p2-power-energy abov0
+- p2-power-energy | keyPoints[0].writeBullets[5]: typical appliance values cut | R4 p2-power-energy abov0
+- p2-power-energy | tables[1] "Typical power values of common appliances" cut | R4 p2-power-energy abov0
+- p2-power-energy | keyPoints[2].content: "links the mechanical 'work done' idea" became "is the energy transferred by electrical work" | R4 p2-power-energy wron0
+- p2-series-parallel | examTip: "Both circuit types appear in every paper." cut | R4 p2-series-parallel fact0
+- p2-series-parallel | keyPoints[0].content, writeBullets[5], tables[0].rows[3][0]: "components" became "resistors" | R4 p2-series-parallel wron0, wron1, wron2
+- p2-series-parallel | checkpoints.4: question "vary … in steps"; option 3 "A diode the wrong way round" became "A second voltmeter" | R4 p2-series-parallel chec0
+- p2-static | keyPoints[1].keyTerms[0–1].def: spec wording for same and different types of charge | R4 p2-static wron0, wron1
+- p2-static | keyPoints[1].keyTerms[2].def: "massive electrostatic discharge (spark)" became "huge spark" | R4 p2-static wron7
+- p2-static | keyPoints[1].memTip, checkpoints.1 feedback: spec wording | R4 p2-static wron2, wron3, wron4
+- p2-static | tables[0].title: "Charging by friction — summary" became "Charging by rubbing — summary" | R4 p2-static wron5
+- p2-static | keyPoints[0].writeBullets[0], revisionCardBullets[0], keyPoints[0].content, checkpoints.0.wrongFeedback, commonMistakes[0], examTips[0]: "friction" became "rubbing" | R4 p2-static wron6
+
+### R5 accepts applied (not re-checked: run limit reached)
+
+- p2-components | keyPoints[1].content, writeBullets, keyTerms (Forward threshold potential difference removed), revisionCardBullets, tables[1] diode row: threshold concept cut; "steep rise in the forward direction" | R5 p2-components abov0
+- p2-components | tables[0] thermistor symbol: "Rectangle with a diagonal line that ends in a short flat tail" | R5 p2-components fact0
+- p2-components | tables[0] LDR row: "Decreases as light intensity increases" | R5 p2-components wron0
+- p2-current-voltage | keyPoints[2].content and checkpoints.3.wrongFeedback: ion and electron model sentence cut | R5 p2-current-voltage abov0
+- p2-current-voltage | keyPoints[4].keyTerms[1–2].def: "has very low/high resistance" cut | R5 p2-current-voltage abov1
+- p2-domestic | keyPoints[0].content: "So the current reverses direction 100 times every second" cut | R5 p2-domestic abov0
+- p2-domestic | checkpoints.0: options 0 and 2 and both feedbacks reworded (no 100 reversals) | R5 p2-domestic abov0
+- p2-domestic | checkpoints.2.correctFeedback: "the potential difference between the live wire and earth is still about 230 V" | R5 p2-domestic fact0
+- p2-domestic | keyPoints[1].heading: "The three-pin plug" became "Three-core cable" | R5 p2-domestic wron0
+- p2-domestic | introTips[0], keyPoints[1].keyTerms[0].def: "three-pin plug" / "UK plug" became "three-core cable" | R5 p2-domestic wron0
+- p2-domestic | tables[0].title: "The three wires in three-core cable" | R5 p2-domestic wron1
+- p2-domestic | checkpoints.1.question: "in three-core cable" | R5 p2-domestic wron2
+- p2-power-energy | intro: "electrical energy is transferred" became "energy is transferred by electrical work" | R5 p2-power-energy wron0
+- p2-power-energy | keyPoints[0].content: added electric motor and kinetic store as a second power-rating example | R5 p2-power-energy miss0
+- p2-power-energy | checkpoints.2: copy of the worked example replaced by a Q = It then E = QV question | R5 p2-power-energy chec0
+- p2-static | keyPoints[1].keyTerms[2].def lightning: "to another cloud or to the ground" | R5 p2-static fact0
+- p2-static | keyPoints[1].writeBullets[2–3]: "same sign" and "opposite signs" became "same type of charge" and "different types of charge" | R5 p2-static wron0, wron1
+- p2-static | keyPoints[0].keyTerms[1].term: "Conservation of charge" became "Equal positive charge" | R5 p2-static wron2
+
+### Check-rewrite against BASE f9f57a1 — every failure and the log line that covers it
+
+- p2-components | `keyPoints[0].keyTerms` | R3 p2-components wron0
+- p2-components | `keyPoints[1].writeBullets: 5 items became 4`, `keyPoints[1].keyTerms`, bold/key term "forward threshold voltage" lost | R5 p2-components abov0 (term first renamed by R3 wron3)
+- p2-components | `tables` | R5 p2-components abov0, fact0, wron0
+- p2-current-voltage | `title` | R3 p2-current-voltage wron0
+- p2-current-voltage | `keyPoints[0].writeBullets: 8 items became 6`, `keyPoints[0].keyTerms`, bold "free electrons" / "Conventional current" lost, `commonMistakes: 5 items became 4`, `revisionCardBullets: 11 items became 10`, `revisionCardBullets[8]: number "one" lost` (shift) | R2 p2-current-voltage abov0
+- p2-current-voltage | `keyPoints[2].content: number "two" lost` | R2 p2-current-voltage fact0
+- p2-current-voltage | `keyPoints[2].keyTerms` | R2 p2-current-voltage abov1
+- p2-current-voltage | `keyPoints[3].keyTerms` | R2 p2-current-voltage fact1
+- p2-current-voltage | `keyPoints[4].keyTerms` | R5 p2-current-voltage abov1
+- p2-current-voltage | `tables` | R4 p2-current-voltage abov0
+- p2-domestic | `keyPoints: 4 items became 3`, `keyPoints[2].*` numbers, bold and key terms (fuse, MCB, RCCB), `keyPoints[2].heading` (old key point 3 now index 2), `checkpoints: keys changed`, `checkpoints.2.*` numbers, `commonMistakes: 4 items became 2`, `revisionCardBullets: 12 items became 7` and shifted numbers, `keyPoints[1].tutor_note: number "230" lost`, bold/key term "fuse" in key point 1 | fuse release abov3, abov2, chec1
+- p2-domestic | `introTips: 3 items became 2`, `keyPoints[0].writeBullets: 4 items became 3`, `keyPoints[0].keyTerms` (Oscilloscope), bold "oscilloscope" / "sinusoidal wave", `examTips: 3 items became 1` | R2 p2-domestic abov6, fact3, abov3
+- p2-domestic | `keyPoints[0].keyTerms` (DC/AC terms renamed) | R4 p2-domestic wron0
+- p2-domestic | `keyPoints[0]: keys changed` (tutor_note removed) | R4 p2-domestic abov0, fact0
+- p2-domestic | `keyPoints[0].content` numbers "50", "100", key term "Frequency" lost from content, `checkpoints.0.*` numbers | R5 p2-domestic abov0
+- p2-domestic | `keyPoints[1].heading` | R5 p2-domestic wron0
+- p2-domestic | `keyPoints[1].content: number "three" lost` | R4 p2-domestic miss0
+- p2-domestic | `keyPoints[1].writeBullets: 7 items became 6`, bold "cable grip" | R2 p2-domestic abov3 (cable grip), fact1
+- p2-domestic | `keyPoints[1].keyTerms` | fuse release abov3; R2 fact0; R3 wron0; R5 wron0
+- p2-domestic | `tables` | fuse release abov3, abov2; R2 fact0; R3 wron1; R4 abov1; R5 wron1
+- p2-power-energy | `keyPoints[0].content` and `writeBullets[5]` numbers | R4 p2-power-energy abov0
+- p2-power-energy | `tables` | fuse release p2-power-energy abov3; R3 fact1; R4 abov0
+- p2-power-energy | `checkpoints.2.*` numbers | R5 p2-power-energy chec0
+- p2-series-parallel | `keyPoints[2].keyTerms` | R3 p2-series-parallel wron3
+- p2-series-parallel | `keyPoints[4]: keys changed`, `keyPoints[4].writeBullets: 7 items became 5`, `keyPoints[4].keyTerms`, bold "very low resistance" / "very high resistance" | R2 p2-series-parallel abov0, abov1
+- p2-series-parallel | `tables` | R3 p2-series-parallel wron6; R4 wron2
+- p2-static | `keyPoints[0].heading`, `keyPoints[0].keyTerms` | R3 p2-static wron3; R5 wron2
+- p2-static | `keyPoints[1].heading` | R3 p2-static wron0
+- p2-static | `keyPoints[1].keyTerms` | R4 p2-static wron0, wron1, wron7; R5 fact0
+- p2-static | `tables` | R4 p2-static wron5
+- p2-static | bold "dust sticking to screens" lost | R2 p2-static abov0

@@ -12,7 +12,7 @@
   "keyPoints": [
     {
       "heading": "Fixed resistors and variable resistors",
-      "content": "A <strong>fixed resistor</strong> has a constant resistance at a constant temperature. For some resistors, the value of R stays constant. In others, it changes as the current changes. The resistance of lamps, diodes, thermistors and LDRs is not constant. It changes with the current through them.\n\nThe equation <strong>V = IR</strong> links potential difference, current and resistance for any component. Here V is potential difference (volts, V), I is current (amps, A) and R is resistance (ohms, Ω). For an <strong>ohmic conductor</strong> at a constant temperature, the current is directly proportional to the potential difference.\n\nA <strong>variable resistor</strong> (also called a <strong>rheostat</strong>) lets you change the resistance by hand. You slide a contact along a resistive wire or track. They are used in dimmer switches, volume controls and lab experiments to control current.\n\nTake an <strong>I-V graph</strong> for an ohmic conductor (a fixed resistor at constant temperature). You get a straight line through the origin. The steeper the line, the lower the resistance. Doubling the resistance halves the gradient.\n\nWorked example: R = 10 Ω, V = 5 V → I = V ÷ R = 5 ÷ 10 = 0.5 A.",
+      "content": "A <strong>fixed resistor</strong> has a constant resistance at a constant temperature. For some resistors, the value of R stays constant. In others, it changes as the current changes. The resistance of lamps, diodes, thermistors and LDRs is not constant. It changes with the current through them.\n\nThe equation <strong>V = IR</strong> links potential difference, current and resistance for any component. Here V is potential difference (volts, V), I is current (amps, A) and R is resistance (ohms, Ω). For an <strong>ohmic conductor</strong> at a constant temperature, the current is directly proportional to the potential difference.\n\nA <strong>variable resistor</strong> (also called a <strong>rheostat</strong>) lets you change the resistance by hand. You slide a contact along a resistive wire or track. They are used in dimmer switches, volume controls and lab experiments to control current.\n\nTake an <strong>I-V graph</strong> for an ohmic conductor (a fixed resistor at constant temperature). Current goes on the y-axis and potential difference on the x-axis. You get a straight line through the origin. The steeper the line, the lower the resistance. Doubling the resistance halves the gradient.\n\nWorked example: R = 10 Ω, V = 5 V → I = V ÷ R = 5 ÷ 10 = 0.5 A.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -29,7 +29,7 @@
       "keyTerms": [
         {
           "term": "Ohmic conductor",
-          "def": "A component whose resistance stays constant as voltage changes — produces a straight-line I-V graph through the origin."
+          "def": "A component whose resistance stays constant at constant temperature — produces a straight-line I-V graph through the origin."
         },
         {
           "term": "Variable resistor",
@@ -41,18 +41,17 @@
         }
       ],
       "memTip": "Straight line = straight behaviour = fixed resistor. If the graph curves, something is changing.",
-      "tutor_note": "It is easy to mix up gradient and resistance. A steeper gradient means MORE current for the same voltage. So it means LOWER resistance."
+      "tutor_note": "It is easy to mix up gradient and resistance. A steeper gradient means MORE current for the same potential difference. So it means LOWER resistance."
     },
     {
       "heading": "Diodes",
-      "content": "A <strong>diode</strong> is a component that only lets current flow in <strong>one direction</strong>, the forward direction. In the <strong>reverse direction</strong>, the diode has a very high resistance. So only a very small current flows.\n\nOn an <strong>I-V graph</strong>, the diode shows a flat line near zero for negative voltages. Then there is a sudden steep rise once the <strong>forward threshold voltage</strong> is passed.\n\nThe circuit symbol is a triangle pointing the way conventional current flows. A vertical bar blocks flow the other way.\n\nAn <strong>LED (light-emitting diode)</strong> is a diode that gives out light when current flows forwards. It also has a threshold voltage. LEDs are used in TVs, phone screens, traffic lights and energy-efficient lighting.",
+      "content": "A <strong>diode</strong> is a component that only lets current flow in <strong>one direction</strong>, the forward direction. In the <strong>reverse direction</strong>, the diode has a very high resistance. So only a very small current flows.\n\nOn an <strong>I-V graph</strong>, the diode shows a flat line near zero for negative potential differences. In the forward direction, the current rises steeply.\n\nThe circuit symbol is a triangle pointing the way conventional current flows. A vertical bar blocks flow the other way.\n\nAn <strong>LED (light-emitting diode)</strong> is a diode that gives out light when current flows forwards. LEDs are used in TVs, phone screens, traffic lights and energy-efficient lighting.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "Diode — lets current flow forwards only. In the reverse direction, very high resistance and a very small current",
-        "Forward threshold voltage — the diode won't conduct below this",
-        "I-V graph — flat for negative V, then a sudden steep rise above the threshold voltage",
+        "I-V graph — flat for negative V, then a steep rise in the forward direction",
         "LED — gives out light when forward current flows. Used in energy-efficient lighting",
         "Circuit symbol — triangle + bar. The triangle points the way conventional current flows"
       ],
@@ -64,10 +63,6 @@
         {
           "term": "LED",
           "def": "Light-emitting diode — a diode that releases light energy when current flows through it in the forward direction."
-        },
-        {
-          "term": "Forward threshold voltage",
-          "def": "The minimum voltage needed for a diode to conduct in the forward direction."
         }
       ],
       "memTip": "The triangle in the symbol points the way current can go. It is like an arrow saying 'this way only'.",
@@ -161,12 +156,12 @@
           "LDR",
           "Rectangle with circle and arrows in",
           "Resistance changes with light intensity",
-          "Decreases as light increases",
+          "Decreases as light intensity increases",
           "Automatic street lights, burglar alarms"
         ],
         [
           "Thermistor",
-          "Rectangle with diagonal line",
+          "Rectangle with a diagonal line that ends in a short flat tail",
           "Resistance changes with temperature",
           "Decreases as temperature increases",
           "Thermostats, fire alarms, engine sensors"
@@ -194,8 +189,8 @@
         ],
         [
           "Diode",
-          "Flat near zero for negative V; steep rise above the threshold",
-          "Only conducts in forward direction above threshold"
+          "Flat near zero for negative V; steep rise in the forward direction",
+          "Only conducts in the forward direction"
         ]
       ]
     }
@@ -214,7 +209,7 @@
       "wrongFeedback": "Use R = V ÷ I. Divide 12 V by 0.4 A to get 30 Ω. Don't multiply or add. R = V ÷ I is a division."
     },
     "1": {
-      "question": "On an I-V graph for a diode, what does the flat line at negative voltages show?",
+      "question": "On an I-V graph for a diode, what does the flat line at negative potential differences show?",
       "options": [
         "The diode has very high resistance, and almost no current flows in the reverse direction",
         "The diode has zero resistance",
@@ -222,7 +217,7 @@
         "The diode has broken"
       ],
       "correct": 0,
-      "correctFeedback": "Spot on. In the reverse direction the diode has a very high resistance. The flat line shows that only a very small current flows, even as the voltage grows more negative.",
+      "correctFeedback": "Spot on. In the reverse direction the diode has a very high resistance. The flat line shows that only a very small current flows, even as the potential difference grows more negative.",
       "wrongFeedback": "The flat line does NOT mean zero resistance. It means very high resistance, so the tiny current that does flow is negligible. The diode is blocking current in the reverse direction."
     },
     "2": {
@@ -267,7 +262,7 @@
     "V = IR: potential difference = current × resistance",
     "Diode: current in one direction only. Very high resistance in the reverse direction",
     "LED: a diode that gives out light. Used in screens, traffic lights and energy-efficient bulbs",
-    "I-V graph for a diode: flat for negative V, steep rise above the threshold",
+    "I-V graph for a diode: flat for negative V, steep rise in the forward direction",
     "LDR: more light → less resistance",
     "Thermistor: higher temperature → less resistance",
     "Resistance of lamps, diodes, thermistors and LDRs is not constant. It changes with the current",

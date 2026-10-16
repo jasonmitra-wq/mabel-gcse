@@ -1,9 +1,9 @@
 {
   "lesson": "p2-power-energy",
   "source_file": "lessons/physics/p2-power-energy.json",
-  "lesson_md5": "760705a5b0c208cdbcab5a50b6778abc",
+  "lesson_md5": "ba0f121bdceb78b0be87aeaf62bd0411",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T18:47:12.159Z",
+  "date": "2026-10-16T19:25:03.707Z",
   "specRefs_sent": [
     "4.2.4.1",
     "4.2.4.2"
@@ -11,67 +11,39 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 6629,
-    "output_tokens": 3737
+    "input_tokens": 6260,
+    "output_tokens": 3087
   },
-  "cost_usd": 0.101256,
+  "cost_usd": 0.08678,
   "status": "OK",
   "result": {
     "lesson": "p2-power-energy",
     "missing_spec_content": [
       {
         "specRef": "4.2.4.2",
-        "spec_text": "Work is done when charge flows in a circuit. The amount of energy transferred by electrical work can be calculated using the equation:",
-        "why": "The lesson never states that work is done when charge flows in a circuit, or that this is how appliances transfer energy. It only says, in passing, that E = QV 'links the mechanical 'work done' idea of energy to circuit quantities' (keyPoints[2].content). It also gives a brief analogy in keyPoints[2].tutor_note: 'It is just energy = work done to move charge Q through a potential difference V.' The spec's own statement is never taught directly."
-      },
-      {
-        "specRef": "4.2.4.2",
-        "spec_text": "energy transferred = charge flow × potential difference\n\nE = Q V ... Students should be able to recall and apply both equations.",
-        "why": "E = QV appears in the lesson as a listed equation. However, the lesson gives no worked example and no checkpoint that applies it. The spec requires students to apply it, not only recall it."
+        "spec_text": "Students should be able to describe, with examples, the relationship between the power ratings for domestic electrical appliances and the changes in stored energy when they are in use.",
+        "why": "The lesson links a power rating to a change in a named energy store for only one appliance: the kettle in keyPoints[0].content (\"A higher power kettle transfers more energy to the water each second. So the water's thermal energy store fills faster.\"). The phone charger and 60 W bulb appear only as arithmetic examples, with no store named. The spec asks for examples, in the plural, of power rating linked to changes in stored energy, so this is only partly covered."
       }
     ],
-    "above_gcse": [
-      {
-        "field": "tables[1].headers[2] and tables[1].rows",
-        "text": "\"Fuse rating\" ... \"Electric shower\", \"8000–10000 W\", \"13 A (dedicated circuit)\"",
-        "why": "Neither specification section asks for fuse ratings or dedicated circuits. These are extra details that the student is not asked to learn here. The shower entry is also wrong (see factual_errors), so it could confuse the student."
-      }
-    ],
-    "factual_errors": [
-      {
-        "field": "tables[1].rows[6]",
-        "text": "\"Electric shower\", \"8000–10000 W\", \"13 A (dedicated circuit)\"",
-        "correction": "An 8–10 kW shower on 230 V mains draws about 35–43 A, since I = P/V. It is therefore not protected by a 13 A fuse. It runs on a dedicated circuit with a protective device of roughly 40–45 A. The lesson's own P = IV shows that 13 A is far too low.",
-        "basis": "own knowledge"
-      }
-    ],
+    "above_gcse": [],
+    "factual_errors": [],
     "wrong_terms": [
-      {
-        "field": "commonMistakes[2]",
-        "text": "Writing P = IR instead of P = I²R gives the voltage, not the power.",
-        "spec_term": "potential difference"
-      },
-      {
-        "field": "checkpoints[0].correctFeedback",
-        "text": "This is the right equation when you have current and resistance but not voltage.",
-        "spec_term": "potential difference"
-      },
       {
         "field": "intro",
         "text": "Every time you boil a kettle, stream a video or charge your phone, electrical energy is transferred.",
-        "spec_term": "energy transferred by electrical work (work is done when charge flows in a circuit)"
+        "spec_term": "energy transferred by electrical work (the spec says \"The amount of energy transferred by electrical work can be calculated using the equation\"; it does not treat 'electrical energy' as a form or store of energy)"
       }
     ],
     "checkpoint_mismatch": [
       {
-        "checkpoint": "checkpoints[2]: \"A resistor has R = 50 Ω and V = 10 V. What is the energy transferred in 2 minutes?\"",
-        "key_point": "keyPoints[2] \"Linking all the electrical equations\": \"Worked multi-step example: a resistor has R = 50 Ω and V = 10 V. Find the energy transferred in 2 minutes. ... 240 J\"",
-        "why": "The checkpoint copies the worked example word for word, with the same numbers. It tests whether the student remembers the example, not whether they can apply the method. It also does not test the content this key point adds, which is Q = It and E = QV."
+        "checkpoint": "2",
+        "key_point": "keyPoints[2] \"Linking all the electrical equations\" — \"E = QV (energy transferred = charge flow × potential difference). This is the energy transferred by electrical work\"",
+        "why": "This key point introduces E = QV, which the spec requires students to \"recall and apply\". The checkpoint only uses V = IR, P = IV and E = Pt, so no checkpoint in the lesson tests E = QV. The checkpoint is also a word-for-word copy of the key point's worked example (\"a resistor has R = 50 Ω and V = 10 V. Find the energy transferred in 2 minutes\"), so it tests recall of that example rather than the ability to choose and combine equations."
       }
     ],
     "not_checked": [
-      "Q = It (keyPoints[2].content, tables[0].rows[5], revisionCardBullets[6]) is not in the specification sections supplied (4.2.4.1, 4.2.4.2). Its spec wording and terminology could not be checked against the specification text. It was checked against own knowledge only and is correct.",
-      "All diagram fields are null, so there were no diagrams or images to check."
+      "All keyPoints have \"diagram\": null, so there were no diagrams or images to check.",
+      "V = IR and Q = It (keyPoints[2].content, tables[0]) are not in the provided specification sections (4.2.4.1, 4.2.4.2). They were checked against own knowledge only and are correct, but the specification wording and units for them could not be confirmed from the text supplied."
     ]
   }
 }

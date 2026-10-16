@@ -21,7 +21,7 @@ open shared-code fault.
 | Topic | S1 | S2 | S3 | S4 | S5 | S6 | T1 | T2 | T3 | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
 | P1 Energy | ✓ 5a36e2b (re-proved after content fix) | ✓ 5a36e2b (re-proved after content fix) | ✓ 5a36e2b (re-proved after content fix) | – | n/a | – escalated to Jason: 5 runs, no clean run; see P1-TRIAGE.md | – | n/a | – | Fix round 5a36e2b + close-out; triage in tools/spec-check-results/P1-TRIAGE.md; spec-check findings refer to commit d08b060 |
-| P2 Electricity | ✓ 23999d0 + P2 fix round (re-proved after content fix) | ✓ 23999d0 + P2 fix round (re-proved after content fix) | ✓ 23999d0 + P2 fix round (re-proved after content fix) | – | n/a | – escalated to Jason: see P2-RECHECK.md; held: fuse — see P2-FIX-LOG.md | – | n/a | – | Fix round; triage in tools/spec-check-results/P2-TRIAGE.md; findings refer to commit d08b060; circuit diagrams deferred to S4 |
+| P2 Electricity | ✓ 23999d0 + P2 fix round (re-proved after content fix) | ✓ 23999d0 + P2 fix round (re-proved after content fix) | ✓ 23999d0 + P2 fix round (re-proved after content fix) | – | n/a | – escalated to Jason: 5 runs, no clean run; see P2-TRIAGE.md | – | n/a | – | Fix round; triage in tools/spec-check-results/P2-TRIAGE.md; findings refer to commit d08b060; circuit diagrams deferred to S4 |
 | P3 Particle model | ✓ dd98fe9 | – reopened: p3-pressure has 24 Kelvin/absolute-zero WARNs unresolved; decided by spec-check | ✓ dd98fe9 | partial: p3-particle-model only (4110010) | n/a | n/a | partial: p3-particle-model only | n/a | – | |
 | P4 Atomic structure | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | p4-nuclear-model 'chemical bonding' checked and correct; p4-nuclear-model 'quantum' ×2 and its A-level pointer to be removed in the P4 fix round |
 | P5 Forces | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | |
@@ -84,7 +84,7 @@ Not started on the pipeline. Already in place:
 
 ## Next
 
-1. Triage and fix P3 Particle model (spec-check results at d08b060).
+1. Triage and fix P3 Particle model (first triage by Claude in the planning chat, then the spec-check loop).
 2. Write the missing Physics content (defect 11): lesson-auditor
    mode for new files first; decide whether P8 Space becomes a
    topic in the syllabus file.

@@ -8,11 +8,11 @@
     "Before reading, try estimating the power of five appliances at home. Then check how close you were.",
     "Watch the unit conversions: watts ↔ kilowatts, minutes ↔ seconds. These trip people up in exams."
   ],
-  "intro": "Every time you boil a kettle, stream a video or charge your phone, electrical energy is transferred. Everyday electrical appliances are designed to bring about energy transfers. Power tells you how fast an appliance transfers energy. It shows why a high-power kettle boils water faster. These equations also come up in almost every electricity exam question.",
+  "intro": "Every time you boil a kettle, stream a video or charge your phone, energy is transferred by electrical work. Everyday electrical appliances are designed to bring about energy transfers. Power tells you how fast an appliance transfers energy. It shows why a high-power kettle boils water faster. These equations also come up in almost every electricity exam question.",
   "keyPoints": [
     {
       "heading": "Electrical power",
-      "content": "<strong>Power</strong> is the rate at which energy is transferred. It is how many joules are transferred per second. The unit of power is the <strong>watt (W)</strong>, where 1 W = 1 J/s.\n\nThe key equations are:\n- <strong>P = IV</strong> (power = potential difference × current)\n- <strong>P = I²R</strong> (put V = IR into P = IV)\n\nWorked example 1: a kettle with I = 10 A and V = 230 V → P = 10 × 230 = <strong>2300 W = 2.3 kW</strong>.\n\nWorked example 2: a phone charger with I = 1 A, V = 5 V → P = 1 × 5 = <strong>5 W</strong>.\n\nWorked example 3: a resistor with R = 20 Ω and I = 3 A → P = 3² × 20 = 9 × 20 = <strong>180 W</strong>.\n\nTypical values to know: kettle ~2 kW, microwave ~800 W, laptop ~65 W, LED bulb ~10 W, old incandescent bulb ~60 W. 1 kW = 1000 W.\n\nThe power rating tells you how much energy an appliance transfers each second. A higher power kettle transfers more energy to the water each second. So the water's thermal energy store fills faster.",
+      "content": "<strong>Power</strong> is the rate at which energy is transferred. It is how many joules are transferred per second. The unit of power is the <strong>watt (W)</strong>, where 1 W = 1 J/s.\n\nThe key equations are:\n- <strong>P = IV</strong> (power = potential difference × current)\n- <strong>P = I²R</strong> (put V = IR into P = IV)\n\nWorked example 1: a kettle with I = 10 A and V = 230 V → P = 10 × 230 = <strong>2300 W = 2.3 kW</strong>.\n\nWorked example 2: a phone charger with I = 1 A, V = 5 V → P = 1 × 5 = <strong>5 W</strong>.\n\nWorked example 3: a resistor with R = 20 Ω and I = 3 A → P = 3² × 20 = 9 × 20 = <strong>180 W</strong>.\n\n1 kW = 1000 W.\n\nThe power rating tells you how much energy an appliance transfers each second. A higher power kettle transfers more energy to the water each second. So the water's thermal energy store fills faster. In the same way, a higher power electric motor transfers more energy to its kinetic energy store each second.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -22,7 +22,7 @@
         "P = I²R (substitute V = IR into P = IV)",
         "Higher power rating → more energy transferred each second",
         "Kettle: I = 10 A, V = 230 V → P = 2300 W = 2.3 kW",
-        "1 kW = 1000 W. Typical appliances: kettle 2 kW, LED bulb 10 W, laptop 65 W"
+        "1 kW = 1000 W"
       ],
       "keyTerms": [
         {
@@ -68,7 +68,7 @@
     },
     {
       "heading": "Linking all the electrical equations",
-      "content": "In a multi-step calculation, you need to choose and combine equations. Here is how they all link together:\n- <strong>V = IR</strong> (potential difference = current × resistance)\n- <strong>P = IV</strong> (power). Substituting gives <strong>P = I²R</strong>\n- <strong>E = Pt</strong> (energy = power × time). Substituting gives <strong>E = IVt</strong>\n- <strong>Q = It</strong> (charge flow = current × time; Q in coulombs, C)\n- <strong>E = QV</strong> (energy transferred = charge flow × potential difference). This links the mechanical 'work done' idea of energy to circuit quantities\n\nMulti-step strategy:\n(1) write down all the values you know\n(2) find what the question asks for\n(3) choose the equation that links what you know to what you need\n(4) substitute values\n(5) rearrange if needed\n(6) check units\n\nWorked multi-step example: a resistor has R = 50 Ω and V = 10 V. Find the energy transferred in 2 minutes. Step 1: I = V/R = 10/50 = 0.2 A. Step 2: P = IV = 0.2 × 10 = 2 W. Step 3: E = Pt = 2 × 120 = <strong>240 J</strong>.",
+      "content": "Work is done when charge flows in a circuit. In a multi-step calculation, you need to choose and combine equations. Here is how they all link together:\n- <strong>V = IR</strong> (potential difference = current × resistance)\n- <strong>P = IV</strong> (power). Substituting gives <strong>P = I²R</strong>\n- <strong>E = Pt</strong> (energy = power × time). Substituting gives <strong>E = IVt</strong>\n- <strong>Q = It</strong> (charge flow = current × time; Q in coulombs, C)\n- <strong>E = QV</strong> (energy transferred = charge flow × potential difference). This is the energy transferred by electrical work\n\nWorked example: a charge flow of 4 C moves through a potential difference of 6 V. E = QV = 4 × 6 = <strong>24 J</strong>.\n\nMulti-step strategy:\n(1) write down all the values you know\n(2) find what the question asks for\n(3) choose the equation that links what you know to what you need\n(4) substitute values\n(5) rearrange if needed\n(6) check units\n\nWorked multi-step example: a resistor has R = 50 Ω and V = 10 V. Find the energy transferred in 2 minutes. Step 1: I = V/R = 10/50 = 0.2 A. Step 2: P = IV = 0.2 × 10 = 2 W. Step 3: E = Pt = 2 × 120 = <strong>240 J</strong>.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -95,7 +95,7 @@
         }
       ],
       "memTip": "Draw a spider diagram with P in the middle. Draw the equations coming out from it: P=IV, P=I²R, E=Pt. Then link V=IR as the bridge between them.",
-      "tutor_note": "E = QV is often skipped, but it comes up in higher-grade questions. It is just energy = work done to move charge Q through a potential difference V. It is the same idea as W = Fd, but for electrical charge."
+      "tutor_note": "E = QV is a core equation. You must be able to recall it and apply it. It is just energy = work done to move charge Q through a potential difference V."
     }
   ],
   "tables": [
@@ -149,53 +149,7 @@
           "E = QV",
           "Energy from charge flow and potential difference",
           "E in J, Q in C, V in V",
-          "Linking charge to energy; higher-grade questions"
-        ]
-      ]
-    },
-    {
-      "title": "Typical power values of common appliances",
-      "examFlag": false,
-      "headers": [
-        "Appliance",
-        "Typical power",
-        "Fuse rating"
-      ],
-      "rows": [
-        [
-          "LED bulb",
-          "10 W",
-          "3 A"
-        ],
-        [
-          "Phone charger",
-          "5–20 W",
-          "3 A"
-        ],
-        [
-          "Laptop",
-          "65 W",
-          "3 A"
-        ],
-        [
-          "Microwave",
-          "800 W",
-          "13 A"
-        ],
-        [
-          "Kettle",
-          "2000–3000 W",
-          "13 A"
-        ],
-        [
-          "Tumble dryer",
-          "2500 W",
-          "13 A"
-        ],
-        [
-          "Electric shower",
-          "8000–10000 W",
-          "13 A (dedicated circuit)"
+          "Linking charge flow to energy"
         ]
       ]
     }
@@ -210,7 +164,7 @@
         "P = IR = 10 × 23 = 230 W"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! P = I²R = 10² × 23 = 100 × 23 = 2300 W = 2.3 kW. This is the right equation when you have current and resistance but not voltage.",
+      "correctFeedback": "Correct! P = I²R = 10² × 23 = 100 × 23 = 2300 W = 2.3 kW. This is the right equation when you have current and resistance but not potential difference.",
       "wrongFeedback": "Use P = I²R. Square the current first (10² = 100), then multiply by resistance (100 × 23 = 2300 W). P = IV would also work. First find V = IR = 10 × 23 = 230 V, then P = 10 × 230 = 2300 W."
     },
     "1": {
@@ -226,22 +180,22 @@
       "wrongFeedback": "Use E = Pt (energy = power × time). E = 2000 W × 60 s = 120,000 J. Multiply, don't divide or add."
     },
     "2": {
-      "question": "A resistor has R = 50 Ω and V = 10 V. What is the energy transferred in 2 minutes?",
+      "question": "A current of 2 A flows for 10 s through a potential difference of 6 V. How much energy is transferred?",
       "options": [
-        "240 J",
-        "1000 J",
-        "2 J",
-        "12,000 J"
+        "120 J",
+        "12 J",
+        "20 J",
+        "3.3 J"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! First find I = V/R = 10/50 = 0.2 A. Then P = IV = 0.2 × 10 = 2 W. Then E = Pt = 2 × 120 = 240 J. (Remember: 2 minutes = 120 seconds.)",
-      "wrongFeedback": "This is a multi-step calculation. Step 1: I = V/R = 10/50 = 0.2 A. Step 2: P = IV = 0.2 × 10 = 2 W. Step 3: convert 2 minutes to seconds (× 60) = 120 s. Step 4: E = Pt = 2 × 120 = 240 J."
+      "correctFeedback": "Correct! Step 1: Q = It = 2 × 10 = 20 C. Step 2: E = QV = 20 × 6 = 120 J.",
+      "wrongFeedback": "This needs two equations. Step 1: charge flow Q = It = 2 × 10 = 20 C. Step 2: E = QV = 20 × 6 = 120 J."
     }
   },
   "commonMistakes": [
     "Forgetting to convert time to seconds when working out energy in joules (E = Pt). Three minutes is 180 s, not 3 s.",
     "Using P = I + V, or some made-up equation, instead of P = IV. Power is a product (multiplication), not a sum.",
-    "Forgetting to square the current in P = I²R. Writing P = IR instead of P = I²R gives the voltage, not the power.",
+    "Forgetting to square the current in P = I²R. Writing P = IR instead of P = I²R gives the potential difference, not the power.",
     "Leaving units out of answers. Mark schemes need the correct unit (W, J) as well as the number."
   ],
   "examTips": [

@@ -777,3 +777,153 @@ Every change to js/maths-questions.js made from tools/maths-recompute.js --all, 
 - trig-A05 step 0 | unit matched to the new step 1 (tan 40° has no unit)
   - unit OLD: 'cm'
   - unit NEW: ''
+
+## Batch 4: bank questions 361–480 (vec-B03 … )
+
+- vec-C04 whole question | wrong: the question asked to prove X, Y and B collinear, which is false (Y and B both lie on AB, X does not); step 4 and its hints admitted the contradiction ("Try again … state result correctly"), and the worked example ended "check the actual problem". Rewritten as a true proof: with OX = (4/5)a, XY = (1/5)b, so XY is parallel to OB. Worked example rewritten the same way (OX = (2/3)a, XY = (1/3)b)
+  - OLD:
+```js
+      id: 'vec-C04', subtopic: 'geo-vectors', band: 'C', marks: 4,
+      question: 'In triangle OAB, OA = a and OB = b. Point X lies on OA with OX = (2/5)a. Point Y lies on AB with AY:YB = 1:4. Prove that X, Y and B are collinear.',
+      workedExample: {
+        question: 'OA = a, OB = b. X on OA with OX = (1/3)a. Y on AB with AY:YB = 1:2. Prove X, Y, B collinear.',
+        steps: [
+          { explanation: 'OY = OA + AY = a + (1/3)(b−a) = (2/3)a + (1/3)b' },
+          { explanation: 'XY = OY − OX = (2/3)a + (1/3)b − (1/3)a = (1/3)a + (1/3)b = (1/3)(a + b)' },
+          { explanation: 'XB = OB − OX = b − (1/3)a' },
+          { explanation: 'XY is not a multiple of XB unless specific values — check the actual problem' }
+        ]
+      },
+      steps: [
+        { prompt: 'Find OY. AY:YB = 1:4, so AY = (1/5)AB. Calculate OY.', hint1: 'AB = b − a; AY = (1/5)(b − a)', hint2: 'OY = OA + AY = a + (1/5)(b − a)', hint3: 'OY = (4/5)a + (1/5)b', answer: '(4/5)a + (1/5)b', checkType: 'skip', displayAnswer: 'OY = (4/5)a + (1/5)b', explanation: 'OY = a + (1/5)(b−a) = (4/5)a + (1/5)b' },
+        { prompt: 'Find XY = OY − OX, where OX = (2/5)a.', hint1: 'XY = (4/5)a + (1/5)b − (2/5)a', hint2: 'XY = (2/5)a + (1/5)b', hint3: '(1/5)(2a + b)', answer: '(1/5)(2a+b)', checkType: 'skip', displayAnswer: 'XY = (1/5)(2a + b)', explanation: 'XY = (4/5 − 2/5)a + (1/5)b = (2/5)a + (1/5)b = (1/5)(2a + b)' },
+        { prompt: 'Find XB = OB − OX.', hint1: 'XB = b − (2/5)a', hint2: '−(2/5)a + b', hint3: '(1/5)(−2a + 5b)', answer: '(1/5)(-2a+5b)', checkType: 'skip', displayAnswer: 'XB = b − (2/5)a', explanation: 'XB = b − (2/5)a' },
+        { prompt: 'Is XY a scalar multiple of XB? If XY = k × XB, find k and state the conclusion.', hint1: 'XY = (2/5)a + (1/5)b; XB = b − (2/5)a = (−2/5)a + b', hint2: 'If XY = k XB: (2/5) = k(−2/5) → k = −1; and (1/5) = k(1) = −1 — contradiction', hint3: 'Try again: XY = (1/5)XB? (1/5)(2a+b) vs (1/5)(5b−2a): these differ. Actually check if XB = 2×... No — they are NOT multiples, so not collinear from this route — state result correctly', answer: 'not collinear from these vectors', checkType: 'skip', displayAnswer: 'XY is not a scalar multiple of XB — X, Y, B are not collinear in this configuration', explanation: 'XY = (2/5)a + (1/5)b and XB = −(2/5)a + b; for XY = k·XB: 2/5 = −2k/5 gives k=−1, but 1/5 = k·1 = −1 contradiction. X, Y, B are NOT collinear.' }
+      ]
+```
+  - NEW:
+```js
+      id: 'vec-C04', subtopic: 'geo-vectors', band: 'C', marks: 4,
+      question: 'In triangle OAB, OA = a and OB = b. Point X lies on OA with OX = (4/5)a. Point Y lies on AB with AY:YB = 1:4. Prove that XY is parallel to OB.',
+      workedExample: {
+        question: 'OA = a, OB = b. X on OA with OX = (2/3)a. Y on AB with AY:YB = 1:2. Prove XY is parallel to OB.',
+        steps: [
+          { explanation: 'OY = OA + AY = a + (1/3)(b−a) = (2/3)a + (1/3)b' },
+          { explanation: 'XY = OY − OX = (2/3)a + (1/3)b − (2/3)a = (1/3)b' },
+          { explanation: 'XY = (1/3)b = (1/3)OB, a multiple of OB, so XY is parallel to OB' }
+        ]
+      },
+      steps: [
+        { prompt: 'Find OY. AY:YB = 1:4, so AY = (1/5)AB. Calculate OY.', hint1: 'AB = b − a; AY = (1/5)(b − a)', hint2: 'OY = OA + AY = a + (1/5)(b − a)', hint3: 'OY = (4/5)a + (1/5)b', answer: '(4/5)a + (1/5)b', checkType: 'skip', displayAnswer: 'OY = (4/5)a + (1/5)b', explanation: 'OY = a + (1/5)(b−a) = (4/5)a + (1/5)b' },
+        { prompt: 'Find XY = OY − OX, where OX = (4/5)a.', hint1: 'XY = (4/5)a + (1/5)b − (4/5)a', hint2: 'The a terms cancel', hint3: 'XY = (1/5)b', answer: '(1/5)b', checkType: 'skip', displayAnswer: 'XY = (1/5)b', explanation: 'XY = (4/5 − 4/5)a + (1/5)b = (1/5)b' },
+        { prompt: 'Write XY as a multiple of OB.', hint1: 'OB = b', hint2: 'XY = (1/5)b', hint3: 'XY = (1/5)OB', answer: '(1/5)OB', checkType: 'skip', displayAnswer: 'XY = (1/5)OB', explanation: 'XY = (1/5)b and OB = b, so XY = (1/5)OB' },
+        { prompt: 'State the conclusion.', hint1: 'Two vectors are parallel if one is a multiple of the other', hint2: 'XY = (1/5)OB', hint3: 'XY is parallel to OB', answer: 'parallel', checkType: 'skip', displayAnswer: 'XY = (1/5)OB, so XY is parallel to OB', explanation: 'XY is a multiple of OB, so XY is parallel to OB. It is one fifth of the length of OB.' }
+      ]
+```
+- prb-A05 step 0 | mismatch: prompt asked for a list; the box takes P(multiple of 3) = 2/8
+  - prompt OLD: 'List the multiples of 3 from 1 to 8.'
+  - prompt NEW: 'List the multiples of 3 from 1 to 8, then find P(multiple of 3).'
+- prb-B06 step 2 | mismatch: the step asks for a comment (displayAnswer "Probably fair …") but the box checked 290, the answer to step 2; the step is now unchecked like other comment steps
+  - checkType OLD: (none)
+  - checkType NEW: 'skip'
+- prb-C01 step 2 | mismatch: prompt asked how many girls prefer maths (14); the box takes P(maths | girl) = 7/15
+  - prompt OLD: 'For P(maths | girl), restrict to the 30 girls only. How many girls prefer maths?'
+  - prompt NEW: 'For P(maths | girl), restrict to the 30 girls only. 14 of them prefer maths. Find P(maths | girl).'
+- prb-C01 step 3 | mismatch: prompt asked how many are boys (12); the box takes P(boy | English) = 3/7
+  - prompt OLD: 'For P(boy | English), restrict to the 28 who prefer English. How many are boys?'
+  - prompt NEW: 'For P(boy | English), restrict to the 28 who prefer English. 12 of them are boys. Find P(boy | English).'
+- comb-C01 step 2 | mismatch: the step asks what you notice (displayAnswer "P(A|B) = P(A), so independent") but the box checked 0.4; the step is now unchecked like other comment steps
+  - checkType OLD: (none)
+  - checkType NEW: 'skip'
+- vec-B04 step 1 | ambiguous: prompt asked for the calculation; the box takes √41 = 6.40
+  - prompt OLD: 'Find |u − v| = |(5, 4)|. Write the calculation.'
+  - prompt NEW: 'Find |u − v| = |(5, 4)| = √(5² + 4²). Calculate it to 2 d.p.'
+- vec-B05 step 2 | ambiguous: √17 or 4.12
+  - prompt OLD: 'Calculate |AB| = |(−1, 4)|.'
+  - prompt NEW: 'Calculate |AB| = |(−1, 4)| to 2 d.p.'
+- prb-A03 step 0 | ambiguous: a count and a probability asked for, one box
+  - prompt OLD: 'How many hearts are in the pack? Find P(heart).'
+  - prompt NEW: 'How many hearts are in the pack? Find P(heart) as a decimal.'
+- prb-A03 step 1 | ambiguous: a count and a probability asked for, one box
+  - prompt OLD: 'How many kings are in the pack? Find P(king).'
+  - prompt NEW: 'How many kings are in the pack? Find P(king) to 4 d.p.'
+- prb-A04 step 0 | ambiguous: a count and a probability asked for, one box
+  - prompt OLD: 'How many counters in total? Find P(blue).'
+  - prompt NEW: 'How many counters in total? Find P(blue) as a decimal.'
+- prb-B04 step 2 | ambiguous: two probabilities asked for, one box
+  - prompt OLD: 'State P(A) and P(B).'
+  - prompt NEW: 'State P(A) and P(B). Enter P(B).'
+- prb-B05 step 0 | ambiguous: a count and a probability asked for, one box
+  - prompt OLD: 'Find P(red queen). How many red queens are there?'
+  - prompt NEW: 'How many red queens are there? Find P(red queen) to 4 d.p.'
+- prb-C02 step 0 | ambiguous: prompt asked for the equation; the box takes 10 (unit text "k coefficient gives 10k = 1" gave the answer away)
+  - prompt OLD: 'Mutually exclusive and exhaustive means the probabilities sum to 1. Write the equation.'
+  - prompt NEW: 'Mutually exclusive and exhaustive means the probabilities sum to 1: 2k + 5k + 3k = 1. What is the total coefficient of k?'
+  - unit OLD: 'k coefficient gives 10k = 1'
+  - unit NEW: ''
+- prb-C02 step 2 | ambiguous: two probabilities asked for, one box
+  - prompt OLD: 'Find P(A) and P(C).'
+  - prompt NEW: 'Find P(A) and P(C). Enter P(C).'
+- comb-A03 step 1 | ambiguous: a count of pairs and a probability asked for, one box
+  - prompt OLD: 'List the pairs (d1, d2) that sum to 7. Find P(sum = 7).'
+  - prompt NEW: 'List the pairs (d1, d2) that sum to 7. Find P(sum = 7) as a decimal.'
+- comb-B05 step 1 | ambiguous: 9/15 or its numerator
+  - prompt OLD: 'Use the addition rule: P(A or B) = P(A) + P(B) - P(A and B). Convert to 15ths.'
+  - prompt NEW: 'Use the addition rule: P(A or B) = P(A) + P(B) − P(A and B). Work in 15ths. Give P(A or B) as a decimal.'
+- tree-A02 step 1 | ambiguous: P(second red) or the product
+  - prompt OLD: 'After removing a red counter, find P(red on second draw). Then multiply.'
+  - prompt NEW: 'After removing a red counter, find P(red on second draw). Multiply to find P(both red) as a decimal.'
+- tree-A05 step 0 | ambiguous: two probabilities asked for, one box (P(blue) is used in the next step)
+  - prompt OLD: 'Find P(yellow on first draw). The counter is replaced, so what is P(blue on second draw)?'
+  - prompt NEW: 'Find P(yellow on first draw).'
+- venn-A01 step 1 | ambiguous: two probabilities asked for, one box
+  - prompt OLD: 'P(A|B) = P(A∩B)/P(B). Find P(B) and then P(A|B).'
+  - prompt NEW: 'P(A|B) = P(A∩B)/P(B). Find P(B) and then P(A|B). Enter P(A|B).'
+- venn-B02 step 0 | ambiguous: two counts asked for, one box
+  - prompt OLD: 'Find n(car only) and n(bike only).'
+  - prompt NEW: 'Find n(car only) and n(bike only). Enter n(car only).'
+
+## Batch 4 (continued): comment steps and prompts that did not name the number to enter
+
+- venn-C01 step 3 | mismatch: the step asks for an explanation (displayAnswer "P(A|B) = P(A) — confirms independence") but the box checked 1/3, the answer to step 3; now unchecked like other comment steps
+  - checkType OLD: (none)
+  - checkType NEW: 'skip'
+- venn-C02 step 3 | mismatch: the step asks a yes/no check but the box checked 0.22, the answer to step 3; now unchecked
+  - checkType OLD: (none)
+  - checkType NEW: 'skip'
+- venn-C04 step 3 | mismatch: the step asks for an explanation but the box checked 0.7, the answer to step 3; now unchecked
+  - checkType OLD: (none)
+  - checkType NEW: 'skip'
+- cond-B05 step 2 | mismatch: the step asks whether A and B are independent but the box checked 0.4, the answer to step 2; now unchecked
+  - checkType OLD: (none)
+  - checkType NEW: 'skip'
+- cond-C01 step 3 | mismatch: the step asks for an interpretation but the box checked 0.6, the answer to step 3; now unchecked
+  - checkType OLD: (none)
+  - checkType NEW: 'skip'
+- cond-C02 step 3 | mismatch: the step asks whether A is independent of (B and C) but the box checked 1/3, the answer to step 3; now unchecked
+  - checkType OLD: (none)
+  - checkType NEW: 'skip'
+- cond-C03 step 3 | mismatch: the step asks for an interpretation but the box checked 0.25, the answer to step 3; now unchecked
+  - checkType OLD: (none)
+  - checkType NEW: 'skip'
+- cond-C04 step 3 | mismatch: the step asks for an interpretation but the box checked 0.375, the answer to step 3; now unchecked
+  - checkType OLD: (none)
+  - checkType NEW: 'skip'
+- venn-B05 step 1 | ambiguous: prompt asked how many (18); the box takes P(H | G') = 3/5
+  - prompt OLD: "Find P(H | G'). Of the 30 not in G, how many are in H?"
+  - prompt NEW: 'Find P(H | G\'). Of the 30 not in G, 18 are in H. Find the probability.'
+- cond-A01 step 0 | ambiguous: prompt asked for the formula; the box takes 0.5
+  - prompt OLD: 'Write the formula for conditional probability.'
+  - prompt NEW: 'Use the formula P(B|A) = P(A and B) ÷ P(A). Calculate P(B|A).'
+- cond-A02 step 0 | ambiguous: two counts asked for, one box (unit "balls remain")
+  - prompt OLD: 'After drawing a red ball (not replaced), how many balls remain? How many are red?'
+  - prompt NEW: 'After drawing a red ball (not replaced), how many balls remain?'
+- cond-B02 step 0 | ambiguous: two probabilities asked for, one box; the box takes P(A' and B)
+  - prompt OLD: "Find P(A') and calculate P(A' and B)."
+  - prompt NEW: 'Find P(A\'), then calculate P(A\' and B).'
+- cond-C01 step 0 | ambiguous: two probabilities asked for, one box; the box takes P(B)
+  - prompt OLD: "Find P(A') and use total probability to find P(B)."
+  - prompt NEW: 'Find P(A\'), then use total probability to find P(B).'
+- stat-averages-B04 step 0 | ambiguous: sum or mean
+  - prompt OLD: 'List all 8 values, find the sum and calculate the mean.'
+  - prompt NEW: 'List all 8 values, find the sum and calculate the mean. Enter the mean.'

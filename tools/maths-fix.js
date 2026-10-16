@@ -5,7 +5,7 @@
  *
  *   node tools/maths-fix.js <fixes.json> "<log heading>"
  *
- * fixes.json: [{ id, step, prompt?, answer?, tolerance?, unit?, reason }]
+ * fixes.json: [{ id, step, prompt?, answer?, tolerance?, unit?, checkType?, reason }]
  *          or  [{ id, question: [old, new], reason }] — replace old with new in the question text
  *          or  [{ id, block: "<new source>", reason }] — replace the whole question object
  *              (from its `id:` line to the line before its closing `},`) with new source
@@ -94,7 +94,7 @@ function main() {
       lines[a] = lines[a].replace(re, (_, k) => k + q1(f.prompt));
       entry.push(`  - prompt OLD: ${m[2]}`, `  - prompt NEW: ${q1(f.prompt)}`);
     }
-    for (const key of ['answer', 'tolerance', 'unit']) {
+    for (const key of ['answer', 'tolerance', 'unit', 'checkType']) {
       if (f[key] === undefined) continue;
       const re = new RegExp(`(\\b${key}: )([^,]+)(,)`);
       // on a one-line step the field follows the prompt on the same line
@@ -104,11 +104,11 @@ function main() {
         const old = lines[i].match(re)[2];
         lines[i] = lines[i].replace(re, `$1${val}$3`);
         entry.push(`  - ${key} OLD: ${old}`, `  - ${key} NEW: ${val}`);
-      } else if (key === 'tolerance') {
+      } else if (key !== 'answer') {
         let j = a; while (j < b && !/\banswer: [^,]+,/.test(lines[j])) j++;
         if (j === b) throw new Error(`${f.id} step ${f.step}: no answer line`);
-        lines[j] = lines[j].replace(/(\banswer: [^,]+,)/, `$1 tolerance: ${val},`);
-        entry.push(`  - tolerance OLD: (none, app default 0.005)`, `  - tolerance NEW: ${val}`);
+        lines[j] = lines[j].replace(/(\banswer: [^,]+,)/, `$1 ${key}: ${val},`);
+        entry.push(`  - ${key} OLD: (none${key === 'tolerance' ? ', app default 0.005' : ''})`, `  - ${key} NEW: ${val}`);
       } else throw new Error(`${f.id} step ${f.step}: no ${key} line`);
     }
     log.push(...entry);

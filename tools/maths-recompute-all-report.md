@@ -2,9 +2,9 @@
 
 Generated 2026-10-16 by tools/maths-recompute.js. Read-only: no question was changed.
 
-All 374 questions, 1050 steps. Checked by the app: 827; checkType skip: 223.  
-Checked steps: ok 827, ambiguous 0, wrong 0, mismatch 0.  
-Error rate (wrong + mismatch over checked steps): 0/827 = 0.0%. Questions with at least one error: 0/374.  
+All 487 questions, 1373 steps. Checked by the app: 1102; checkType skip: 271.  
+Checked steps: ok 1102, ambiguous 0, wrong 0, mismatch 0.  
+Error rate (wrong + mismatch over checked steps): 0/1102 = 0.0%. Questions with at least one error: 0/487.  
 
 | Question | Step | Prompt | Stored | Recomputed | Status | Note |
 |---|---|---|---|---|---|---|
@@ -1017,27 +1017,350 @@ Error rate (wrong + mismatch over checked steps): 0/827 = 0.0%. Questions with a
 | vec-B02 | 0 | In parallelogram OABC, what is vector OB? (Tip: OB = OA + OC in a para | "a + c" | — | skip |  |
 | vec-B02 | 1 | M is the midpoint of AB. Write OM = OA + AM. | "a + c/2" | — | skip |  |
 | vec-B02 | 2 | State the final expression for OM. | "a + (1/2)c" | — | skip |  |
+| vec-B03 | 0 | Find vector AB in terms of a and b. | "b - a" | — | skip |  |
+| vec-B03 | 1 | P divides AB in ratio 1:2, so AP = (1/3)AB. Find AP. | "(b-a)/3" | — | skip |  |
+| vec-B03 | 2 | Find OP = OA + AP. Simplify. | "(2/3)a + (1/3)b" | — | skip |  |
+| vec-B04 | 0 | Calculate u − v where u = (2, 5) and v = (−3, 1). | "(5,4)" | — | skip |  |
+| vec-B04 | 1 | Find \|u − v\| = \|(5, 4)\| = √(5² + 4²). Calculate it to 2 d.p. | "6.40" | 6.4 | ok |  |
+| vec-B04 | 2 | Calculate √41 to 2 d.p. | "6.40" | 6.4 | ok |  |
+| vec-B05 | 0 | Find AB = OB − OA. | "-a + 4b" | — | skip |  |
+| vec-B05 | 1 | With a = (1,0) and b = (0,1), write AB as a column vector. | "(-1,4)" | — | skip |  |
+| vec-B05 | 2 | Calculate \|AB\| = \|(−1, 4)\| to 2 d.p. | "4.12" | 4.12 | ok |  |
+| vec-B06 | 0 | Find OM. M is the midpoint of OA and OA = 6a. | "3a" | — | skip |  |
+| vec-B06 | 1 | Find MB. Route: M → O → C → B. | "c - a" | — | skip |  |
+| vec-B06 | 2 | State both final answers. | "OM = 3a, MB = c - a" | — | skip |  |
+| vec-C01 | 0 | Find OP. AP:PB = 3:1 means AP = (3/4)AB. Write AB, then find OP. | "(1/4)a + (3/4)b" | — | skip |  |
+| vec-C01 | 1 | Find OQ. Q is the midpoint of OB. | "(1/2)b" | — | skip |  |
+| vec-C01 | 2 | For O, P, Q to be collinear, OP must be a scalar multiple of OQ. Is (1 | "not a scalar multiple" | — | skip |  |
+| vec-C01 | 3 | State your conclusion about collinearity. | "not collinear" | — | skip |  |
+| vec-C02 | 0 | Write OM and ON. OM = midpoint of OA; ON = (2/3)OB. | "OM=(1/2)a, ON=(2/3)b" | — | skip |  |
+| vec-C02 | 1 | A point X on line MN can be written as OX = OM + t(MN). Find MN first. | "(1-t)/2 a + 2t/3 b" | — | skip |  |
+| vec-C02 | 2 | X also lies on AB: OX = (1−s)a + sb for some s. Equate coefficients of | "s=2" | — | skip |  |
+| vec-C02 | 3 | Since s = 2, X lies on the extension of AB beyond B. State the ratio A | "2:1" | — | skip |  |
 | vec-C03 | 0 | Find vector AB = OB − OA using the given column vectors. | "(-2,3)" | (-2,3) | skip |  |
 | vec-C03 | 1 | Find \|AB\| to 2 d.p. | "3.61" | 3.61 | ok |  |
 | vec-C03 | 2 | Write the unit vector in the direction of AB (to 3 d.p.). | "(-0.555, 0.832)" | (-0.555, 0.832) | skip |  |
 | vec-C03 | 3 | Point C is 2 units from A along AB. Find the coordinates of C. | "(1.89, 2.66)" | (1.89, 2.66) | skip |  |
+| vec-C04 | 0 | Find OY. AY:YB = 1:4, so AY = (1/5)AB. Calculate OY. | "(4/5)a + (1/5)b" | — | skip |  |
+| vec-C04 | 1 | Find XY = OY − OX, where OX = (4/5)a. | "(1/5)b" | — | skip |  |
+| vec-C04 | 2 | Write XY as a multiple of OB. | "(1/5)OB" | — | skip |  |
+| vec-C04 | 3 | State the conclusion. | "parallel" | — | skip |  |
+| prb-A01 | 0 | Find P(red) = number of red ÷ total. | 0.5 | 0.5 | ok |  |
+| prb-A01 | 1 | Find P(not red) = 1 − P(red). | 0.5 | 0.5 | ok |  |
+| prb-A02 | 0 | List the even numbers on a die (1–6). Find P(even). | 0.5 | 0.5 | ok |  |
+| prb-A02 | 1 | List the prime numbers on a die. Find P(prime). | 0.5 | 0.5 | ok |  |
+| prb-B01 | 0 | Use the addition rule: n(F ∪ S) = n(F) + n(S) − n(F ∩ S). | 25 | 25 | ok |  |
+| prb-B01 | 1 | Find the number who study neither. | 5 | 5 | ok |  |
+| prb-B01 | 2 | P(studies neither) = 5/30. | 0.1667 | 0.166667 | ok |  |
+| prb-A03 | 0 | How many hearts are in the pack? Find P(heart) as a decimal. | 0.25 | 0.25 | ok |  |
+| prb-A03 | 1 | How many kings are in the pack? Find P(king) to 4 d.p. | 0.0769 | 0.076923 | ok |  |
+| prb-A04 | 0 | How many counters in total? Find P(blue) as a decimal. | 0.7 | 0.7 | ok |  |
+| prb-A04 | 1 | Find P(not blue) using the complement rule. | 0.3 | 0.3 | ok |  |
+| prb-A05 | 0 | List the multiples of 3 from 1 to 8, then find P(multiple of 3). | 0.25 | 0.25 | ok |  |
+| prb-A05 | 1 | Simplify 2/8. | 0.25 | 0.25 | ok |  |
+| prb-B02 | 0 | All probabilities must sum to 1. Find the sum of the known probabiliti | 0.9 | 0.9 | ok |  |
+| prb-B02 | 1 | Find P(yellow). | 0.1 | 0.1 | ok |  |
+| prb-B02 | 2 | Calculate the expected frequency of blue in 200 spins. | 70 | 70 | ok |  |
+| prb-B03 | 0 | Use the addition rule: n(dog or cat) = n(dog) + n(cat) - n(both). | 19 | 19 | ok |  |
+| prb-B03 | 1 | Find P(dog or cat) = n(dog or cat) / total. | 0.475 | 0.475 | ok |  |
+| prb-B03 | 2 | Does 19/40 simplify? State your final answer. | 0.475 | 0.475 | ok |  |
+| prb-B04 | 0 | Since P(neither) = 0.4, find P(A or B) using the complement. | 0.6 | 0.6 | ok |  |
+| prb-B04 | 1 | For mutually exclusive events, P(A or B) = P(A) + P(B). Form an equati | 0.2 | 0.2 | ok |  |
+| prb-B04 | 2 | State P(A) and P(B). Enter P(B). | 0.4 | 0.4 | ok |  |
+| prb-B05 | 0 | How many red queens are there? Find P(red queen) to 4 d.p. | 0.0385 | 0.038462 | ok |  |
+| prb-B05 | 1 | Use the addition rule: P(red or queen) = P(red) + P(queen) - P(red que | 0.5385 | 0.538462 | ok |  |
+| prb-B05 | 2 | Simplify 28/52. | 0.5385 | 0.538462 | ok |  |
+| prb-B06 | 0 | Find the experimental probability of heads. | 0.58 | 0.58 | ok |  |
+| prb-B06 | 1 | Estimate the number of heads in 500 flips using the experimental proba | 290 | 290 | ok |  |
+| prb-B06 | 2 | Compare 0.58 with the fair-coin value 0.5. Comment on whether the coin | 290 | — | skip |  |
+| prb-C01 | 0 | Find the total number of students who prefer maths. | 32 | 32 | ok |  |
+| prb-C01 | 1 | Find P(prefers maths) as a simplified fraction. | 0.5333 | 0.533333 | ok |  |
+| prb-C01 | 2 | For P(maths \| girl), restrict to the 30 girls only. 14 of them prefer  | 0.4667 | 0.466667 | ok |  |
+| prb-C01 | 3 | For P(boy \| English), restrict to the 28 who prefer English. 12 of the | 0.4286 | 0.428571 | ok |  |
+| prb-C02 | 0 | Mutually exclusive and exhaustive means the probabilities sum to 1: 2k | 10 | 10 | ok |  |
+| prb-C02 | 1 | Solve for k. | 0.1 | 0.1 | ok |  |
+| prb-C02 | 2 | Find P(A) and P(C). Enter P(C). | 0.3 | 0.3 | ok |  |
+| prb-C02 | 3 | Find P(A or C). A and C are mutually exclusive, so add their probabili | 0.5 | 0.5 | ok |  |
+| prb-C03 | 0 | Set up the equation P(red) = n/(n + 4) = 2/3. Solve for n. | 8 | 8 | ok |  |
+| prb-C03 | 1 | Find P(first counter is red). There are 8 red and 12 total. | 0.6667 | 0.666667 | ok |  |
+| prb-C03 | 2 | Without replacement, one red has been removed. Find P(second is red \|  | 0.6364 | 0.636364 | ok |  |
+| prb-C03 | 3 | Multiply the two probabilities to find P(two red without replacement). | 0.4242 | 0.424242 | ok |  |
+| prb-C04 | 0 | Find P(not 6). | 0.75 | 0.75 | ok |  |
+| prb-C04 | 1 | Faces 1 to 5 share equally the remaining probability of 3/4. Find P(1) | 0.15 | 0.15 | ok |  |
+| prb-C04 | 2 | The two throws are independent. Find P(6 on first throw AND not 6 on s | 0.1875 | 0.1875 | ok |  |
+| prb-C04 | 3 | State your final answer for part (c) as a decimal. | 0.1875 | 0.1875 | ok |  |
+| comb-A01 | 0 | How many outcomes are there in total? | 12 | 12 | ok |  |
+| comb-A01 | 1 | Find P(heads AND 4). | 0.0833 | 0.083333 | ok |  |
+| comb-B01 | 0 | For independent events, P(A and B) = P(A) × P(B). | 0.12 | 0.12 | ok |  |
+| comb-B01 | 1 | P(A or B) = P(A) + P(B) − P(A and B). | 0.58 | 0.58 | ok |  |
+| comb-A02 | 0 | What is P(red) on a single spin? | 0.3333 | 0.333333 | ok |  |
+| comb-A02 | 1 | The two spins are independent. Find P(red on both spins). | 0.1111 | 0.111111 | ok |  |
+| comb-A03 | 0 | How many outcomes are there when two dice are rolled? | 36 | 36 | ok |  |
+| comb-A03 | 1 | List the pairs (d1, d2) that sum to 7. Find P(sum = 7) as a decimal. | 0.1667 | 0.166667 | ok |  |
 | comb-A04 | 0 | List all outcomes for two coin tosses. | 4 | 4 | ok |  |
 | comb-A04 | 1 | Find P(exactly one head). | 0.5 | 0.5 | ok |  |
+| comb-A05 | 0 | What is P(red) on any single draw? (The ball is replaced each time.) | 0.4 | 0.4 | ok |  |
+| comb-A05 | 1 | Find P(both red) = P(red) x P(red). | 0.16 | 0.16 | ok |  |
+| comb-B02 | 0 | Find P(A and not B). Note P(not B) = 1 - P(B). | 0.15 | 0.15 | ok |  |
+| comb-B02 | 1 | Find P(not A and B). Note P(not A) = 1 - P(A). | 0.35 | 0.35 | ok |  |
+| comb-B02 | 2 | P(exactly one of A or B) = P(A and not B) + P(not A and B). | 0.5 | 0.5 | ok |  |
+| comb-B03 | 0 | Use the complement: find P(no 5 on either die) first. | 0.6944 | 0.694444 | ok |  |
+| comb-B03 | 1 | Find P(at least one 5) using the complement. | 0.3056 | 0.305556 | ok |  |
+| comb-B03 | 2 | State your final answer. | 0.3056 | 0.305556 | ok |  |
+| comb-B04 | 0 | Use the complement: find P(no rain on either day). | 0.42 | 0.42 | ok |  |
+| comb-B04 | 1 | Find P(rain on at least one day) using the complement. | 0.58 | 0.58 | ok |  |
+| comb-B04 | 2 | State your final answer. | 0.58 | 0.58 | ok |  |
+| comb-B05 | 0 | For independent events, P(A and B) = P(A) x P(B). Calculate. | 0.1333 | 0.133333 | ok |  |
+| comb-B05 | 1 | Use the addition rule: P(A or B) = P(A) + P(B) − P(A and B). Work in 1 | 0.6 | 0.6 | ok |  |
+| comb-B05 | 2 | Simplify 9/15. | 0.6 | 0.6 | ok |  |
 | comb-B06 | 0 | Use the complement method. Find P(no heads in three flips). | 0.125 | 0.125 | ok |  |
 | comb-B06 | 1 | Find P(at least one head). | 0.875 | 0.875 | ok |  |
 | comb-B06 | 2 | State your final answer. | 0.875 | 0.875 | ok |  |
+| comb-C01 | 0 | Find P(A\|B) using the conditional probability formula. | 0.4 | 0.4 | ok |  |
+| comb-C01 | 1 | Find P(B\|A). | 0.25 | 0.25 | ok |  |
+| comb-C01 | 2 | Compare P(A\|B) with P(A), and P(B\|A) with P(B). What do you notice? | 0.4 | — | skip |  |
+| comb-C01 | 3 | Verify using the multiplication rule for independent events: P(A) x P( | 0.1 | 0.1 | ok |  |
+| comb-C02 | 0 | Find P(all three occur). Independent events: multiply. | 0.037 | 0.037037 | ok |  |
+| comb-C02 | 1 | Find P(none occur). P(not E) = P(not F) = P(not G) = 2/3. | 0.2963 | 0.296296 | ok |  |
+| comb-C02 | 2 | Find P(at least one occurs) using the complement. | 0.7037 | 0.703704 | ok |  |
+| comb-C02 | 3 | Check: does P(all three) + P(none) + P(exactly one) + P(exactly two) = | 0.7037 | 0.703704 | ok |  |
+| comb-C03 | 0 | A and B are mutually exclusive, so P(A or B) = P(A) + P(B). Find P(B). | 0.4 | 0.4 | ok |  |
+| comb-C03 | 1 | Find P(A' and B'), i.e. P(neither A nor B). | 0.3 | 0.3 | ok |  |
+| comb-C03 | 2 | Find P(A' or B). Use: P(A' or B) = 1 - P(A and B'). Since A and B are  | 0.7 | 0.7 | ok |  |
+| comb-C03 | 3 | Verify: P(A' or B) = P(A') + P(B) - P(A' and B). Since A and B are mut | 0.7 | 0.7 | ok |  |
+| comb-C04 | 0 | How many outcomes have both dice showing different numbers? | 30 | 30 | ok |  |
+| comb-C04 | 1 | List outcomes where sum > 9 AND both dice are different. | 4 | 4 | ok |  |
+| comb-C04 | 2 | Find P(sum > 9 \| different numbers) = favourable outcomes / different- | 0.1333 | 0.133333 | ok |  |
+| comb-C04 | 3 | Simplify 4/30. | 0.1333 | 0.133333 | ok |  |
+| tree-A01 | 0 | P(red on first draw). | 0.4 | 0.4 | ok |  |
+| tree-A01 | 1 | P(two red) = P(R) × P(R) — because the ball is replaced. | 0.16 | 0.16 | ok |  |
+| tree-B01 | 0 | P(red first, then blue) = P(R) × P(B\|R). | 0.268 | 0.267857 | ok |  |
+| tree-B01 | 1 | P(blue first, then red) = P(B) × P(R\|B). | 0.268 | 0.267857 | ok |  |
+| tree-B01 | 2 | P(one red, one blue) = add both routes. | 0.536 | 0.535714 | ok |  |
+| tree-A02 | 0 | Find P(red on first draw). | 0.625 | 0.625 | ok |  |
+| tree-A02 | 1 | After removing a red counter, find P(red on second draw). Multiply to  | 0.3571 | 0.357143 | ok |  |
+| tree-A03 | 0 | What is P(A wins one game)? | 0.6 | 0.6 | ok |  |
+| tree-A03 | 1 | The games are independent. Find P(A wins both games). | 0.36 | 0.36 | ok |  |
+| tree-A04 | 0 | In your tree diagram, identify the branches for exactly one head. | 2 | 2 | ok |  |
+| tree-A04 | 1 | Calculate P(exactly one head) by adding the probabilities of the two r | 0.5 | 0.5 | ok |  |
+| tree-A05 | 0 | Find P(yellow on first draw). | 0.4 | 0.4 | ok |  |
+| tree-A05 | 1 | Find P(yellow then blue). | 0.24 | 0.24 | ok |  |
+| tree-B02 | 0 | Find P(white first, then black). | 0.2667 | 0.266667 | ok |  |
+| tree-B02 | 1 | Find P(black first, then white). | 0.2667 | 0.266667 | ok |  |
+| tree-B02 | 2 | Add the two routes. Simplify the fraction. | 0.5333 | 0.533333 | ok |  |
+| tree-B03 | 0 | Find P(passes both parts) = P(pass 1) x P(pass 2 \| pass 1). | 0.5 | 0.5 | ok |  |
+| tree-B03 | 1 | Find P(fail 1 and pass 2) = P(fail 1) x P(pass 2 \| fail 1). | 0.0625 | 0.0625 | ok |  |
+| tree-B03 | 2 | P(passes part 2 overall) = P(pass 1 and pass 2) + P(fail 1 and pass 2) | 0.5625 | 0.5625 | ok |  |
+| tree-B04 | 0 | Find P(sunny and picnic). | 0.56 | 0.56 | ok |  |
+| tree-B04 | 1 | Find P(not sunny and picnic). | 0.09 | 0.09 | ok |  |
+| tree-B04 | 2 | Add both routes to find P(picnic). | 0.65 | 0.65 | ok |  |
+| tree-B05 | 0 | Use the complement: find P(no green balls drawn) = P(both yellow). | 0.0667 | 0.066667 | ok |  |
+| tree-B05 | 1 | Find P(at least one green) using the complement. | 0.9333 | 0.933333 | ok |  |
+| tree-B05 | 2 | State your final answer. | 0.9333 | 0.933333 | ok |  |
+| tree-B06 | 0 | Find P(both red) = P(R1) x P(R2\|R1). After removing a red: 1 red, 3 gr | 0.0667 | 0.066667 | ok |  |
+| tree-B06 | 1 | Find P(both green). After removing a green: 2 red, 2 green, 1 yellow,  | 0.2 | 0.2 | ok |  |
+| tree-B06 | 2 | P(both yellow) = 0 (only one yellow). Add all same-colour probabilitie | 0.2667 | 0.266667 | ok |  |
+| tree-C01 | 0 | Find P(box A chosen and red drawn). | 0.3 | 0.3 | ok |  |
+| tree-C01 | 1 | Find P(box B chosen and red drawn). | 0.1 | 0.1 | ok |  |
+| tree-C01 | 2 | Find P(red ball overall) by adding the two routes. | 0.4 | 0.4 | ok |  |
+| tree-C01 | 3 | Find P(from box A \| red ball drawn). Use Bayes: P(A\|red) = P(A and red | 0.75 | 0.75 | ok |  |
+| tree-C02 | 0 | Find P(rains Mon AND rains Tue). | 0.28 | 0.28 | ok |  |
+| tree-C02 | 1 | Find P(dry Mon AND rains Tue). | 0.12 | 0.12 | ok |  |
+| tree-C02 | 2 | Find P(rains Tuesday) by adding both routes. | 0.4 | 0.4 | ok |  |
+| tree-C02 | 3 | Find P(rained Monday \| rains Tuesday) using Bayes formula. | 0.7 | 0.7 | ok |  |
+| tree-C03 | 0 | Find P(box 1 chosen and red drawn). | 0.3333 | 0.333333 | ok |  |
+| tree-C03 | 1 | Find P(box 2 chosen and red drawn). | 0.1111 | 0.111111 | ok |  |
+| tree-C03 | 2 | Find P(box 3 chosen and red drawn). Box 3 has only red balls. | 0.1667 | 0.166667 | ok |  |
+| tree-C03 | 3 | Add all three routes to find P(red ball). Convert to 18ths. | 0.6111 | 0.611111 | ok |  |
+| tree-C04 | 0 | Find P(heads and red) = P(heads) x P(red \| bag A). | 0.4 | 0.4 | ok |  |
+| tree-C04 | 1 | Find P(tails and red) = P(tails) x P(red \| bag B). | 0.2 | 0.2 | ok |  |
+| tree-C04 | 2 | Find P(red overall) by adding both routes. | 0.6 | 0.6 | ok |  |
+| tree-C04 | 3 | Apply Bayes theorem: P(bag A \| red) = P(heads and red) / P(red). | 0.6667 | 0.666667 | ok |  |
+| venn-A01 | 0 | Total number of elements. n(total) = 8 + 5 + 7 + 10 = 30. Find P(A∪B). | 0.667 | 0.666667 | ok |  |
+| venn-A01 | 1 | P(A\|B) = P(A∩B)/P(B). Find P(B) and then P(A\|B). Enter P(A\|B). | 0.417 | 0.416667 | ok |  |
+| venn-A02 | 0 | Find P(A). n(A) = n(A only) + n(A and B). | 0.5 | 0.5 | ok |  |
+| venn-A02 | 1 | Find P(A') using the complement. | 0.5 | 0.5 | ok |  |
+| venn-A03 | 0 | Find P(P). n(P) = n(P only) + n(P and Q). | 0.56 | 0.56 | ok |  |
+| venn-A03 | 1 | Find P(Q'). Elements NOT in Q are: P only and neither. | 0.6 | 0.6 | ok |  |
+| venn-A04 | 0 | Use inclusion-exclusion to find n(A and B). Everyone is in A or B, so  | 8 | 8 | ok |  |
+| venn-A04 | 1 | Find P(A only). n(A only) = n(A) - n(A and B). | 0.4 | 0.4 | ok |  |
+| venn-A05 | 0 | Find n(A and B) from P(A and B) = 1/10. | 5 | 5 | ok |  |
+| venn-A05 | 1 | Find n(A only). First find n(A), then subtract n(A and B). | 15 | 15 | ok |  |
+| venn-B01 | 0 | Find P(A). n(A) = 12 + 8 = 20. | 0.5 | 0.5 | ok |  |
+| venn-B01 | 1 | Find P(A\|B). Restrict to n(B) = 8 + 15 = 23. Of those, n(A and B) = 8. | 0.3478 | 0.347826 | ok |  |
+| venn-B01 | 2 | Find P(A' and B'). This is the probability of being in neither A nor B | 0.125 | 0.125 | ok |  |
+| venn-B02 | 0 | Find n(car only) and n(bike only). Enter n(car only). | 25 | 25 | ok |  |
+| venn-B02 | 1 | Find n(neither). | 13 | 13 | ok |  |
+| venn-B02 | 2 | Find P(owns exactly one vehicle). | 0.6167 | 0.616667 | ok |  |
+| venn-B03 | 0 | Find P(A or B) using the addition rule. | 0.7 | 0.7 | ok |  |
+| venn-B03 | 1 | Find P(A' and B') using the complement of A or B. | 0.3 | 0.3 | ok |  |
+| venn-B03 | 2 | Find P(A\|B). | 0.5 | 0.5 | ok |  |
+| venn-B04 | 0 | Verify the total: sum all regions. | 25 | 25 | ok |  |
+| venn-B04 | 1 | Find n(exactly two sets). These are elements in exactly two of A, B, C | 8 | 8 | ok |  |
+| venn-B04 | 2 | Find P(exactly two sets). | 0.32 | 0.32 | ok |  |
+| venn-B05 | 0 | Find n(G') — the number NOT in G. | 30 | 30 | ok |  |
+| venn-B05 | 1 | Find P(H \| G'). Of the 30 not in G, 18 are in H. Find the probability. | 0.6 | 0.6 | ok |  |
+| venn-B05 | 2 | Find P(H' and G') — the probability of being in neither H nor G. | 0.24 | 0.24 | ok |  |
+| venn-B06 | 0 | Use P(A' and B') to find P(A or B). | 0.7 | 0.7 | ok |  |
+| venn-B06 | 1 | Use the addition rule to find P(A and B). | 0.1 | 0.1 | ok |  |
+| venn-B06 | 2 | Find P(A\|B). | 0.2857 | 0.285714 | ok |  |
+| venn-C01 | 0 | For independent events, P(A and B) = P(A) x P(B). Calculate P(A and B) | 0.1333 | 0.133333 | ok |  |
+| venn-C01 | 1 | Find n(A and B). | 8 | 8 | ok |  |
+| venn-C01 | 2 | Find P(A\|B) and compare it with P(A). | 0.3333 | 0.333333 | ok |  |
+| venn-C01 | 3 | State and explain what this tells you about independence. | 0.3333 | — | skip |  |
+| venn-C02 | 0 | Apply inclusion-exclusion for three sets: n(A or B or C) = n(A)+n(B)+n | 39 | 39 | ok |  |
+| venn-C02 | 1 | Find n(in none of A, B or C). | 11 | 11 | ok |  |
+| venn-C02 | 2 | Find P(in none of A, B, C). | 0.22 | 0.22 | ok |  |
+| venn-C02 | 3 | Check: does n(A only) + n(B only) + n(C only) + intersections + n(ABC) | 0.22 | — | skip |  |
 | venn-C03 | 0 | Use P(A\|B) = P(A and B) / P(B). Rearrange to find P(B). | 0.25 | 0.25 | ok |  |
 | venn-C03 | 1 | Find P(B\|A) using P(A) = 0.4. | 0.375 | 0.375 | ok |  |
 | venn-C03 | 2 | Compare P(B\|A) with P(B). Enter P(B). | 0.25 | 0.25 | ok |  |
 | venn-C03 | 3 | Verify by checking P(A) × P(B) against P(A and B). Enter P(A) × P(B). | 0.1 | 0.1 | ok |  |
+| venn-C04 | 0 | Scenario (i): A and B are mutually exclusive. Find P(A or B). | 0.9 | 0.9 | ok |  |
+| venn-C04 | 1 | Scenario (ii): A and B are independent. Find P(A and B) first. | 0.2 | 0.2 | ok |  |
+| venn-C04 | 2 | Now find P(A or B) for scenario (ii). | 0.7 | 0.7 | ok |  |
+| venn-C04 | 3 | Explain why the answers differ (0.9 vs 0.7). | 0.7 | — | skip |  |
+| cond-A01 | 0 | Use the formula P(B\|A) = P(A and B) ÷ P(A). Calculate P(B\|A). | 0.5 | 0.5 | ok |  |
+| cond-A01 | 1 | State your answer and interpret it briefly. | 0.5 | 0.5 | ok |  |
+| cond-A02 | 0 | After drawing a red ball (not replaced), how many balls remain? | 9 | 9 | ok |  |
+| cond-A02 | 1 | Find P(next ball is red \| first was red). | 0.3333 | 0.333333 | ok |  |
+| cond-A03 | 0 | How many court cards are there in a standard pack? | 12 | 12 | ok |  |
+| cond-A03 | 1 | Given the card is a court card, find P(it is a Queen). | 0.3333 | 0.333333 | ok |  |
+| cond-A04 | 0 | Use the multiplication rule: P(A and B) = P(B\|A) x P(A). | 0.15 | 0.15 | ok |  |
+| cond-A04 | 1 | State your final answer. | 0.15 | 0.15 | ok |  |
+| cond-A05 | 0 | Apply the conditional probability formula. | 0.5 | 0.5 | ok |  |
+| cond-A05 | 1 | State the answer and give a brief interpretation. | 0.5 | 0.5 | ok |  |
+| cond-B01 | 0 | Find P(prefers science \| girl). Restrict to the 20 girls. | 0.6 | 0.6 | ok |  |
+| cond-B01 | 1 | Find the total number who prefer science. | 27 | 27 | ok |  |
+| cond-B01 | 2 | Find P(girl \| prefers science). Restrict to the 27 who prefer science. | 0.4444 | 0.444444 | ok |  |
+| cond-B02 | 0 | Find P(A'), then calculate P(A' and B). | 0.04 | 0.04 | ok |  |
+| cond-B02 | 1 | Calculate P(A and B). | 0.24 | 0.24 | ok |  |
+| cond-B02 | 2 | Apply the total probability law: P(B) = P(A and B) + P(A' and B). | 0.28 | 0.28 | ok |  |
+| cond-B03 | 0 | Find P(second is red) using total probability. Consider both routes: R | 0.375 | 0.375 | ok |  |
+| cond-B03 | 1 | Find P(R1 and R2). | 0.1071 | 0.107143 | ok |  |
+| cond-B03 | 2 | Apply Bayes theorem: P(R1\|R2) = P(R1 and R2) / P(R2). | 0.2857 | 0.285714 | ok |  |
+| cond-B04 | 0 | Find P(positive test) using the total probability law. | 0.059 | 0.059 | ok |  |
+| cond-B04 | 1 | Find P(disease and positive test). | 0.0095 | 0.0095 | ok |  |
+| cond-B04 | 2 | Apply Bayes theorem: P(disease \| positive) = P(disease and positive) / | 0.161 | 0.161 | ok |  |
+| cond-B05 | 0 | Find P(A\|B). | 0.3 | 0.3 | ok |  |
+| cond-B05 | 1 | Find P(B\|A). | 0.4 | 0.4 | ok |  |
+| cond-B05 | 2 | Compare P(A\|B) with P(A), and P(B\|A) with P(B). Are A and B independen | 0.4 | — | skip |  |
+| cond-B06 | 0 | P(item is defective) = 0.05. Find P(defective AND passes check 1). | 0.01 | 0.01 | ok |  |
+| cond-B06 | 1 | Of defective items that pass check 1, find P(also passes check 2). | 0.1 | 0.1 | ok |  |
+| cond-B06 | 2 | Find P(defective AND passes both checks). | 0.001 | 0.001 | ok |  |
+| cond-C01 | 0 | Find P(A'), then use total probability to find P(B). | 0.35 | 0.35 | ok |  |
+| cond-C01 | 1 | Find P(A and B). | 0.21 | 0.21 | ok |  |
+| cond-C01 | 2 | Apply Bayes theorem: P(A\|B) = P(A and B) / P(B). | 0.6 | 0.6 | ok |  |
+| cond-C01 | 3 | Interpret: P(A) = 0.3 but P(A\|B) = 0.6. What does this tell you about  | 0.6 | — | skip |  |
+| cond-C02 | 0 | Find P(B and C) from the given information. | 0.15 | 0.15 | ok |  |
+| cond-C02 | 1 | Find P(A and B and C). | 0.05 | 0.05 | ok |  |
+| cond-C02 | 2 | Apply conditional probability: P(A \| B and C) = P(A and B and C) / P(B | 0.3333 | 0.333333 | ok |  |
+| cond-C02 | 3 | Compare P(A \| B and C) = 1/3 with P(A) = 0.5. Is A independent of the  | 0.3333 | — | skip |  |
+| cond-C03 | 0 | Find P(R1 and R2) using the multiplication rule. | 0.1 | 0.1 | ok |  |
+| cond-C03 | 1 | Find P(R2) using total probability. Consider both routes: RR and BR. | 0.4 | 0.4 | ok |  |
+| cond-C03 | 2 | Apply Bayes: P(R1\|R2) = P(R1 and R2) / P(R2). | 0.25 | 0.25 | ok |  |
+| cond-C03 | 3 | Interpret: P(R1\|R2) = 1/4 but P(R1) = 2/5. What does this tell you? | 0.25 | — | skip |  |
+| cond-C04 | 0 | Find P(defective) using the law of total probability. | 0.032 | 0.032 | ok |  |
+| cond-C04 | 1 | Find P(machine A and defective). | 0.012 | 0.012 | ok |  |
+| cond-C04 | 2 | Apply Bayes theorem: P(A \| defective) = P(A and defective) / P(defecti | 0.375 | 0.375 | ok |  |
+| cond-C04 | 3 | Interpret: machine A produces 60% of items but only 37.5% of defective | 0.375 | — | skip |  |
+| avg-A01 | 0 | Find the mean: add all values and divide by 7. | 5.29 | 5.285714 | ok |  |
+| avg-A01 | 1 | Find the median: order the data and find the middle value. | 5 | 5 | ok |  |
+| avg-A01 | 2 | Find the range: maximum − minimum. | 7 | 7 | ok |  |
+| avg-B01 | 0 | Find the total frequency (n). | 20 | 20 | ok |  |
+| avg-B01 | 1 | Find Σ(fx): multiply each x by its frequency and sum. | 57 | 57 | ok |  |
+| avg-B01 | 2 | Mean = Σfx ÷ n. | 2.85 | 2.85 | ok |  |
+| stat-averages-A02 | 0 | Sort the data and find the mean. | 6 | 6 | ok |  |
+| stat-averages-A02 | 1 | Find the median (middle value of the sorted list). | 5 | 5 | ok |  |
+| stat-averages-A02 | 2 | Find the mode (most frequent value). | 5 | 5 | ok |  |
+| stat-averages-A03 | 0 | Find the mean. | 15 | 15 | ok |  |
+| stat-averages-A03 | 1 | Find the range. | 18 | 18 | ok |  |
+| stat-averages-A04 | 0 | Find the total frequency. | 20 | 20 | ok |  |
+| stat-averages-A04 | 1 | Calculate Σfx (multiply each mark by its frequency, then add). | 143 | 143 | ok |  |
+| stat-averages-A04 | 2 | Find the mean: Σfx ÷ n. | 7.15 | 7.15 | ok |  |
 | stat-averages-A05 | 0 | Sort the data and find the median. | 58 | 58 | ok |  |
 | stat-averages-A05 | 1 | Find the mode. | 62 | 62 | ok |  |
+| stat-averages-B02 | 0 | Find the total frequency n. | 30 | 30 | ok |  |
+| stat-averages-B02 | 1 | Use midpoints (5, 15, 25, 35) to calculate Σfm. | 650 | 650 | ok |  |
+| stat-averages-B02 | 2 | Estimate the mean: Σfm ÷ n. | 21.67 | 21.666667 | ok |  |
+| stat-averages-B03 | 0 | Find the original sum of all 8 values. | 120 | 120 | ok |  |
+| stat-averages-B03 | 1 | Find the sum after removing 10, 12 and 20. | 78 | 78 | ok |  |
+| stat-averages-B03 | 2 | Find the sum of the two new values. | 20 | 20 | ok |  |
+| stat-averages-B04 | 0 | List all 8 values, find the sum and calculate the mean. Enter the mean | 24 | 24 | ok |  |
+| stat-averages-B04 | 1 | Find the median (average of 4th and 5th values in the ordered list). | 24 | 24 | ok |  |
+| stat-averages-B05 | 0 | Find the total sum needed for a mean of 8.5 with 6 numbers. | 51 | 51 | ok |  |
+| stat-averages-B05 | 1 | Find the sixth number. | 7 | 7 | ok |  |
+| stat-averages-B06 | 0 | Use midpoints (2.5, 7.5, 12.5, 17.5) to calculate Σfm. | 205 | 205 | ok |  |
+| stat-averages-B06 | 1 | Estimate the mean. (Total frequency = 20.) | 10.25 | 10.25 | ok |  |
+| stat-averages-B06 | 2 | State the modal class (the class with the highest frequency). | 0 | — | skip |  |
+| stat-averages-C01 | 0 | Find the total sum of all 5 numbers. | 46 | 46 | ok |  |
+| stat-averages-C01 | 1 | Find the fifth number. | 10 | 10 | ok |  |
+| stat-averages-C01 | 2 | Verify: sort all five numbers and check the median is 10. | 0 | — | skip |  |
+| stat-averages-C02 | 0 | Use the total frequency to find a. | 7 | 7 | ok |  |
+| stat-averages-C02 | 1 | Calculate Σfm using midpoints 25, 35, 45 and a = 7. | 680 | 680 | ok |  |
+| stat-averages-C02 | 2 | Verify the estimated mean. | 34 | 34 | ok |  |
 | stat-averages-C03 | 0 | Find the total score for Group 1. | 720 | 720 | ok |  |
 | stat-averages-C03 | 1 | Find the total score for Group 2. | 1260 | 1260 | ok |  |
 | stat-averages-C03 | 2 | Find the overall mean for all 30 students. | 66 | 66 | ok |  |
+| stat-averages-C04 | 0 | Find the total sum of all 7 values. | 98 | 98 | ok |  |
+| stat-averages-C04 | 1 | Find the missing value. | 13 | 13 | ok |  |
+| stat-averages-C04 | 2 | Sort all 7 values and find the median to verify. | 0 | — | skip |  |
+| chr-A01 | 0 | Angle for History: (90/360) × 360°. | 90 | 90 | ok |  |
+| chr-A01 | 1 | Angle for Maths: (120/360) × 360°. | 120 | 120 | ok |  |
+| chr-A01 | 2 | Angle for Science: (150/360) × 360°. | 150 | 150 | ok |  |
+| chr-B01 | 0 | In a histogram: frequency = frequency density × class width. | 35 | 35 | ok |  |
+| stat-charts-A02 | 0 | Calculate the angle for cats. | 90 | 90 | ok |  |
+| stat-charts-A02 | 1 | Calculate the angle for dogs. | 150 | 150 | ok |  |
+| stat-charts-A02 | 2 | Calculate the angle for rabbits. Check all three sum to 360°. | 120 | 120 | ok |  |
+| stat-charts-A03 | 0 | Find the range of rainfall. | 30 | 30 | ok |  |
+| stat-charts-A03 | 1 | Find the total rainfall over the four months. | 155 | 155 | ok |  |
+| stat-charts-A04 | 0 | Find the angle for pop music. | 243 | 243 | ok |  |
+| stat-charts-A04 | 1 | Find the angle for rock. Check both angles sum to 360°. | 117 | 117 | ok |  |
+| stat-charts-A05 | 0 | Find the fourth angle. | 70 | 70 | ok |  |
+| stat-charts-A05 | 1 | Express the fourth sector as a fraction of the whole. | 0 | — | skip |  |
 | stat-charts-B02 | 0 | Find the frequency for class 4<x≤8. | 14 | 14 | ok |  |
 | stat-charts-B02 | 1 | Find the frequency for class 8<x≤16. | 16 | 16 | ok |  |
 | stat-charts-B02 | 2 | Find the total frequency. (f₁ = 1.5 × 4 = 6.) | 36 | 36 | ok |  |
+| stat-charts-B03 | 0 | Find the frequency for class 15≤x<25 (width = 10). | 42 | 42 | ok |  |
+| stat-charts-B03 | 1 | Find the frequency for class 25≤x<30 (width = 5). | 34 | 34 | ok |  |
+| stat-charts-B03 | 2 | How many more students are in the 15–25 class than the 25–30 class? | 8 | 8 | ok |  |
+| stat-charts-B04 | 0 | Find the frequency for the class 10<x≤20. | 13 | 13 | ok |  |
+| stat-charts-B04 | 1 | Find the frequency for the class 20<x≤30. | 11 | 11 | ok |  |
+| stat-charts-B04 | 2 | State the modal class. (Frequencies are: 5, 13, 11, 11.) | 0 | — | skip |  |
+| stat-charts-B05 | 0 | Express the sector as a fraction of the whole circle. | 0.375 | 0.375 | ok |  |
+| stat-charts-B05 | 1 | Find the number of people who chose football. | 75 | 75 | ok |  |
+| stat-charts-B06 | 0 | Find the total number of students who prefer maths. | 38 | 38 | ok |  |
+| stat-charts-B06 | 1 | Find P(prefers maths) as a simplified fraction. | 0 | — | skip |  |
+| stat-charts-B06 | 2 | Find P(girl \| prefers maths) — the probability a randomly chosen maths | 0 | — | skip |  |
+| stat-charts-C01 | 0 | Express sector A as a fraction of the whole. | 0 | — | skip |  |
+| stat-charts-C01 | 1 | Express sector B as a fraction of the whole. | 0 | — | skip |  |
+| stat-charts-C01 | 2 | Find the ratio A÷B and decide if the claim is correct. | 0 | — | skip |  |
+| stat-charts-C02 | 0 | Find the frequency density for class 0<x≤10 (width = 10). | 1.5 | 1.5 | ok |  |
+| stat-charts-C02 | 1 | Find the frequency density for class 10<x≤25 (width = 15) and for clas | 2 | 2 | ok |  |
+| stat-charts-C02 | 2 | Calculate Σfm using midpoints 5, 17.5 and 30. | 1200 | 1200 | ok |  |
+| stat-charts-C02 | 3 | Estimate the mean. (Total frequency = 65.) | 18.46 | 18.461538 | ok |  |
+| stat-charts-C03 | 0 | Find the number from School A who chose the animal charity. | 81 | 81 | ok |  |
+| stat-charts-C03 | 1 | Find the number from School B who chose the animal charity. | 72 | 72 | ok |  |
+| stat-charts-C03 | 2 | Find the combined percentage across both schools. | 36.4 | 36.428571 | ok |  |
+| stat-charts-C04 | 0 | Find the width of class 30≤x<50. | 20 | 20 | ok |  |
+| stat-charts-C04 | 1 | Find the frequency density for class 30≤x<50. | 3 | 3 | ok |  |
+| sct-A01 | 0 | What type of correlation is shown? | 0 | — | skip |  |
+| sct-A01 | 1 | Does correlation prove that revision CAUSES higher scores? | 0 | — | skip |  |
+| sct-B01 | 0 | Find the gradient of the line of best fit. | 2 | 2 | ok |  |
+| sct-B01 | 1 | Find the equation: y = 2x + c. Use (2, 14) to find c. | 10 | — | skip |  |
+| sct-B01 | 2 | Estimate y when x = 5. | 20 | 20 | ok |  |
+| stat-scatter-A02 | 0 | Calculate the mean height. | 165.25 | 165.25 | ok |  |
+| stat-scatter-A02 | 1 | Calculate the mean weight. | 65 | 65 | ok |  |
+| stat-scatter-A03 | 0 | What type of correlation is shown? | 0 | — | skip |  |
+| stat-scatter-A03 | 1 | What does this correlation mean in context? | 0 | — | skip |  |
+| stat-scatter-A04 | 0 | Calculate the gradient m = (y₂ − y₁)/(x₂ − x₁). | 0.5 | 0.5 | ok |  |
+| stat-scatter-A04 | 1 | Find the y-intercept c using y = 0.5x + c and the point (10, 5). | 0 | 0 | ok |  |
+| stat-scatter-A04 | 2 | Write the full equation of the line. | 0 | — | skip |  |
+| stat-scatter-A05 | 0 | Find the gradient of the line. | 0.5 | 0.5 | ok |  |
+| stat-scatter-A05 | 1 | Estimate y when x = 25. Use the point (10, 8) and the gradient. | 15.5 | 15.5 | ok |  |
+| stat-scatter-B02 | 0 | Estimate y when x = 7. | 20.5 | 20.5 | ok |  |
+| stat-scatter-B02 | 1 | Estimate x when y = 28. | 10 | 10 | ok |  |
+| stat-scatter-B02 | 2 | Is x = 15 interpolation or extrapolation? Justify your answer. | 0 | — | skip |  |
 | cum-B01 | 0 | Compare the medians. What does this tell us? | 62 | 62 | skip |  |
 | cum-B01 | 1 | Compare the IQRs. What does the larger IQR tell us about Group B? | 35 | 35 | skip |  |
 | stat-cumulative-A05 | 0 | Find the inter-percentile range (80th percentile − 20th percentile). | 40 | 40 | ok |  |

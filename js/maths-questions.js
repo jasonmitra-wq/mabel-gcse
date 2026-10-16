@@ -16147,7 +16147,7 @@ const MathsQuestions = (() => {
       },
       steps: [
         { prompt: 'Calculate u − v where u = (2, 5) and v = (−3, 1).', hint1: 'x: 2 − (−3) = 5', hint2: 'y: 5 − 1 = 4', hint3: '(5, 4)', answer: '(5,4)', checkType: 'skip', displayAnswer: 'u − v = (5, 4)', explanation: 'u − v = (2−(−3), 5−1) = (5, 4)' },
-        { prompt: 'Find |u − v| = |(5, 4)|. Write the calculation.', hint1: '|u − v| = √(5² + 4²)', hint2: '√(25 + 16) = √41', hint3: '6.40', answer: '6.40', tolerance: 0.005, explanation: '|u − v| = √41 ≈ 6.40' },
+        { prompt: 'Find |u − v| = |(5, 4)| = √(5² + 4²). Calculate it to 2 d.p.', hint1: '|u − v| = √(5² + 4²)', hint2: '√(25 + 16) = √41', hint3: '6.40', answer: '6.40', tolerance: 0.005, explanation: '|u − v| = √41 ≈ 6.40' },
         { prompt: 'Calculate √41 to 2 d.p.', hint1: '√41 ≈ 6.4031', hint2: '6.40', hint3: '6.40', answer: '6.40', tolerance: 0.005, explanation: '|u − v| = √41 ≈ 6.40' }
       ]
     },
@@ -16164,7 +16164,7 @@ const MathsQuestions = (() => {
       steps: [
         { prompt: 'Find AB = OB − OA.', hint1: 'AB = (a + 3b) − (2a − b)', hint2: 'AB = a + 3b − 2a + b', hint3: '−a + 4b', answer: '-a + 4b', checkType: 'skip', displayAnswer: 'AB = −a + 4b', explanation: 'AB = OB − OA = (a+3b) − (2a−b) = −a + 4b' },
         { prompt: 'With a = (1,0) and b = (0,1), write AB as a column vector.', hint1: 'AB = −1×(1,0) + 4×(0,1)', hint2: '(−1, 4)', hint3: '(−1, 4)', answer: '(-1,4)', checkType: 'skip', displayAnswer: 'AB = (−1, 4)', explanation: 'AB = −a + 4b = (−1, 0) + (0, 4) = (−1, 4)' },
-        { prompt: 'Calculate |AB| = |(−1, 4)|.', hint1: '√((−1)² + 4²) = √(1 + 16)', hint2: '√17', hint3: '4.12', answer: '4.12', tolerance: 0.005, explanation: '|AB| = √17 ≈ 4.12' }
+        { prompt: 'Calculate |AB| = |(−1, 4)| to 2 d.p.', hint1: '√((−1)² + 4²) = √(1 + 16)', hint2: '√17', hint3: '4.12', answer: '4.12', tolerance: 0.005, explanation: '|AB| = √17 ≈ 4.12' }
       ]
     },
     // vec-B06
@@ -16244,21 +16244,20 @@ const MathsQuestions = (() => {
     // vec-C04
     {
       id: 'vec-C04', subtopic: 'geo-vectors', band: 'C', marks: 4,
-      question: 'In triangle OAB, OA = a and OB = b. Point X lies on OA with OX = (2/5)a. Point Y lies on AB with AY:YB = 1:4. Prove that X, Y and B are collinear.',
+      question: 'In triangle OAB, OA = a and OB = b. Point X lies on OA with OX = (4/5)a. Point Y lies on AB with AY:YB = 1:4. Prove that XY is parallel to OB.',
       workedExample: {
-        question: 'OA = a, OB = b. X on OA with OX = (1/3)a. Y on AB with AY:YB = 1:2. Prove X, Y, B collinear.',
+        question: 'OA = a, OB = b. X on OA with OX = (2/3)a. Y on AB with AY:YB = 1:2. Prove XY is parallel to OB.',
         steps: [
           { explanation: 'OY = OA + AY = a + (1/3)(b−a) = (2/3)a + (1/3)b' },
-          { explanation: 'XY = OY − OX = (2/3)a + (1/3)b − (1/3)a = (1/3)a + (1/3)b = (1/3)(a + b)' },
-          { explanation: 'XB = OB − OX = b − (1/3)a' },
-          { explanation: 'XY is not a multiple of XB unless specific values — check the actual problem' }
+          { explanation: 'XY = OY − OX = (2/3)a + (1/3)b − (2/3)a = (1/3)b' },
+          { explanation: 'XY = (1/3)b = (1/3)OB, a multiple of OB, so XY is parallel to OB' }
         ]
       },
       steps: [
         { prompt: 'Find OY. AY:YB = 1:4, so AY = (1/5)AB. Calculate OY.', hint1: 'AB = b − a; AY = (1/5)(b − a)', hint2: 'OY = OA + AY = a + (1/5)(b − a)', hint3: 'OY = (4/5)a + (1/5)b', answer: '(4/5)a + (1/5)b', checkType: 'skip', displayAnswer: 'OY = (4/5)a + (1/5)b', explanation: 'OY = a + (1/5)(b−a) = (4/5)a + (1/5)b' },
-        { prompt: 'Find XY = OY − OX, where OX = (2/5)a.', hint1: 'XY = (4/5)a + (1/5)b − (2/5)a', hint2: 'XY = (2/5)a + (1/5)b', hint3: '(1/5)(2a + b)', answer: '(1/5)(2a+b)', checkType: 'skip', displayAnswer: 'XY = (1/5)(2a + b)', explanation: 'XY = (4/5 − 2/5)a + (1/5)b = (2/5)a + (1/5)b = (1/5)(2a + b)' },
-        { prompt: 'Find XB = OB − OX.', hint1: 'XB = b − (2/5)a', hint2: '−(2/5)a + b', hint3: '(1/5)(−2a + 5b)', answer: '(1/5)(-2a+5b)', checkType: 'skip', displayAnswer: 'XB = b − (2/5)a', explanation: 'XB = b − (2/5)a' },
-        { prompt: 'Is XY a scalar multiple of XB? If XY = k × XB, find k and state the conclusion.', hint1: 'XY = (2/5)a + (1/5)b; XB = b − (2/5)a = (−2/5)a + b', hint2: 'If XY = k XB: (2/5) = k(−2/5) → k = −1; and (1/5) = k(1) = −1 — contradiction', hint3: 'Try again: XY = (1/5)XB? (1/5)(2a+b) vs (1/5)(5b−2a): these differ. Actually check if XB = 2×... No — they are NOT multiples, so not collinear from this route — state result correctly', answer: 'not collinear from these vectors', checkType: 'skip', displayAnswer: 'XY is not a scalar multiple of XB — X, Y, B are not collinear in this configuration', explanation: 'XY = (2/5)a + (1/5)b and XB = −(2/5)a + b; for XY = k·XB: 2/5 = −2k/5 gives k=−1, but 1/5 = k·1 = −1 contradiction. X, Y, B are NOT collinear.' }
+        { prompt: 'Find XY = OY − OX, where OX = (4/5)a.', hint1: 'XY = (4/5)a + (1/5)b − (4/5)a', hint2: 'The a terms cancel', hint3: 'XY = (1/5)b', answer: '(1/5)b', checkType: 'skip', displayAnswer: 'XY = (1/5)b', explanation: 'XY = (4/5 − 4/5)a + (1/5)b = (1/5)b' },
+        { prompt: 'Write XY as a multiple of OB.', hint1: 'OB = b', hint2: 'XY = (1/5)b', hint3: 'XY = (1/5)OB', answer: '(1/5)OB', checkType: 'skip', displayAnswer: 'XY = (1/5)OB', explanation: 'XY = (1/5)b and OB = b, so XY = (1/5)OB' },
+        { prompt: 'State the conclusion.', hint1: 'Two vectors are parallel if one is a multiple of the other', hint2: 'XY = (1/5)OB', hint3: 'XY is parallel to OB', answer: 'parallel', checkType: 'skip', displayAnswer: 'XY = (1/5)OB, so XY is parallel to OB', explanation: 'XY is a multiple of OB, so XY is parallel to OB. It is one fifth of the length of OB.' }
       ]
     },
 
@@ -16384,7 +16383,7 @@ const MathsQuestions = (() => {
       question: 'A card is drawn at random from a standard 52-card pack. Find P(heart) and P(king), each as a simplified fraction.',
       steps: [
         {
-          prompt: 'How many hearts are in the pack? Find P(heart).',
+          prompt: 'How many hearts are in the pack? Find P(heart) as a decimal.',
           hint1: 'There are 13 hearts in 52 cards.',
           hint2: 'P(heart) = 13/52.',
           hint3: '1/4.',
@@ -16393,7 +16392,7 @@ const MathsQuestions = (() => {
           displayAnswer: '1/4',
         },
         {
-          prompt: 'How many kings are in the pack? Find P(king).',
+          prompt: 'How many kings are in the pack? Find P(king) to 4 d.p.',
           hint1: 'There are 4 kings (one per suit) in 52 cards.',
           hint2: 'P(king) = 4/52.',
           hint3: '1/13.',
@@ -16423,7 +16422,7 @@ const MathsQuestions = (() => {
       question: 'A bag contains 3 red and 7 blue counters. A counter is drawn at random. Find P(blue) and P(not blue) as decimals.',
       steps: [
         {
-          prompt: 'How many counters in total? Find P(blue).',
+          prompt: 'How many counters in total? Find P(blue) as a decimal.',
           hint1: 'Total = 3 + 7 = 10.',
           hint2: 'P(blue) = 7/10.',
           hint3: '0.7.',
@@ -16462,7 +16461,7 @@ const MathsQuestions = (() => {
       question: 'A fair spinner has 8 equal sections numbered 1 to 8. Find P(multiple of 3) as a fraction in its simplest form.',
       steps: [
         {
-          prompt: 'List the multiples of 3 from 1 to 8.',
+          prompt: 'List the multiples of 3 from 1 to 8, then find P(multiple of 3).',
           hint1: 'Think: 3, 6, 9... which are in range 1-8?',
           hint2: 'Multiples of 3 in {1,...,8}: 3, 6. That is 2 outcomes.',
           hint3: 'P = 2/8.',
@@ -16609,7 +16608,7 @@ const MathsQuestions = (() => {
           explanation: '3x = 0.6, so x = 0.2.',
         },
         {
-          prompt: 'State P(A) and P(B).',
+          prompt: 'State P(A) and P(B). Enter P(B).',
           hint1: 'P(A) = x = 0.2.',
           hint2: 'P(B) = 2x = 2 x 0.2.',
           hint3: 'P(A) = 0.2, P(B) = 0.4.',
@@ -16638,7 +16637,7 @@ const MathsQuestions = (() => {
       question: 'A card is drawn at random from a standard 52-card pack. Find P(red queen) and P(red or queen), each as simplified fractions.',
       steps: [
         {
-          prompt: 'Find P(red queen). How many red queens are there?',
+          prompt: 'How many red queens are there? Find P(red queen) to 4 d.p.',
           hint1: 'Red suits: hearts and diamonds. Each has one queen.',
           hint2: '2 red queens in 52 cards.',
           hint3: 'P(red queen) = 2/52 = 1/26.',
@@ -16706,7 +16705,7 @@ const MathsQuestions = (() => {
           hint1: '0.58 is slightly higher than 0.5.',
           hint2: 'With only 100 trials, variation is expected.',
           hint3: 'Likely fair — 0.58 is close to 0.5 but more trials would give a better estimate.',
-          answer: 290, tolerance: 0, unit: '',
+          answer: 290, checkType: 'skip', tolerance: 0, unit: '',
           explanation: '0.58 is close to 0.5. With 100 trials, this level of variation is normal. The coin is probably fair, but more trials are needed.',
           displayAnswer: 'Probably fair — 0.58 is close to 0.5, but more trials needed',
         },
@@ -16749,7 +16748,7 @@ const MathsQuestions = (() => {
           displayAnswer: '8/15',
         },
         {
-          prompt: 'For P(maths | girl), restrict to the 30 girls only. How many girls prefer maths?',
+          prompt: 'For P(maths | girl), restrict to the 30 girls only. 14 of them prefer maths. Find P(maths | girl).',
           hint1: '14 girls prefer maths out of 30 girls.',
           hint2: 'P(maths | girl) = 14/30.',
           hint3: '7/15.',
@@ -16758,7 +16757,7 @@ const MathsQuestions = (() => {
           displayAnswer: '7/15',
         },
         {
-          prompt: 'For P(boy | English), restrict to the 28 who prefer English. How many are boys?',
+          prompt: 'For P(boy | English), restrict to the 28 who prefer English. 12 of them are boys. Find P(boy | English).',
           hint1: '12 boys prefer English out of 28 total who prefer English.',
           hint2: 'P(boy | English) = 12/28.',
           hint3: '3/7.',
@@ -16788,11 +16787,11 @@ const MathsQuestions = (() => {
       question: 'Three events A, B and C are mutually exclusive and exhaustive. P(A) = 2k, P(B) = 5k, P(C) = 3k. Find the value of k and hence find P(A or C).',
       steps: [
         {
-          prompt: 'Mutually exclusive and exhaustive means the probabilities sum to 1. Write the equation.',
+          prompt: 'Mutually exclusive and exhaustive means the probabilities sum to 1: 2k + 5k + 3k = 1. What is the total coefficient of k?',
           hint1: 'P(A) + P(B) + P(C) = 1.',
           hint2: '2k + 5k + 3k = 1.',
           hint3: '10k = 1.',
-          answer: 10, tolerance: 0, unit: 'k coefficient gives 10k = 1',
+          answer: 10, tolerance: 0, unit: '',
           explanation: '2k + 5k + 3k = 10k = 1.',
           displayAnswer: '10k = 1',
         },
@@ -16805,7 +16804,7 @@ const MathsQuestions = (() => {
           explanation: 'k = 1/10 = 0.1.',
         },
         {
-          prompt: 'Find P(A) and P(C).',
+          prompt: 'Find P(A) and P(C). Enter P(C).',
           hint1: 'P(A) = 2 x 0.1 = 0.2.',
           hint2: 'P(C) = 3 x 0.1 = 0.3.',
           hint3: '0.2 and 0.3.',
@@ -17073,7 +17072,7 @@ const MathsQuestions = (() => {
           explanation: 'Sample space has 6 x 6 = 36 outcomes.',
         },
         {
-          prompt: 'List the pairs (d1, d2) that sum to 7. Find P(sum = 7).',
+          prompt: 'List the pairs (d1, d2) that sum to 7. Find P(sum = 7) as a decimal.',
           hint1: 'Pairs: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1).',
           hint2: '6 favourable outcomes.',
           hint3: 'P = 6/36 = 1/6.',
@@ -17328,7 +17327,7 @@ const MathsQuestions = (() => {
           displayAnswer: '2/15',
         },
         {
-          prompt: 'Use the addition rule: P(A or B) = P(A) + P(B) - P(A and B). Convert to 15ths.',
+          prompt: 'Use the addition rule: P(A or B) = P(A) + P(B) − P(A and B). Work in 15ths. Give P(A or B) as a decimal.',
           hint1: 'P(A) = 6/15, P(B) = 5/15, P(A and B) = 2/15.',
           hint2: '6/15 + 5/15 - 2/15 = 9/15.',
           hint3: '9/15.',
@@ -17435,7 +17434,7 @@ const MathsQuestions = (() => {
           hint1: 'P(A|B) = 0.4 = P(A). P(B|A) = 0.25 = P(B).',
           hint2: 'Knowing B has occurred does not change the probability of A.',
           hint3: 'A and B are independent.',
-          answer: 0.4, tolerance: 0.005, unit: '',
+          answer: 0.4, checkType: 'skip', tolerance: 0.005, unit: '',
           explanation: 'P(A|B) = P(A) = 0.4 and P(B|A) = P(B) = 0.25. Knowing one event occurred does not affect the probability of the other.',
           displayAnswer: 'P(A|B) = P(A), so independent',
         },
@@ -17726,7 +17725,7 @@ const MathsQuestions = (() => {
           displayAnswer: '5/8',
         },
         {
-          prompt: 'After removing a red counter, find P(red on second draw). Then multiply.',
+          prompt: 'After removing a red counter, find P(red on second draw). Multiply to find P(both red) as a decimal.',
           hint1: 'Now 4 red and 3 yellow remain — 7 counters total.',
           hint2: 'P(red 2nd | red 1st) = 4/7. P(both red) = 5/8 x 4/7.',
           hint3: '20/56 = 5/14.',
@@ -17832,7 +17831,7 @@ const MathsQuestions = (() => {
       question: 'A bag has 6 blue and 4 yellow counters. A counter is drawn, its colour noted, then it is replaced. Find P(yellow first, then blue) as a fraction.',
       steps: [
         {
-          prompt: 'Find P(yellow on first draw). The counter is replaced, so what is P(blue on second draw)?',
+          prompt: 'Find P(yellow on first draw).',
           hint1: 'P(yellow) = 4/10 = 2/5. P(blue) = 6/10 = 3/5 — same each draw (replacement).',
           hint2: 'P(yellow 1st) = 2/5, P(blue 2nd) = 3/5.',
           hint3: '2/5 and 3/5.',
@@ -18345,7 +18344,7 @@ const MathsQuestions = (() => {
           displayAnswer: '2/3',
         },
         {
-          prompt: 'P(A|B) = P(A∩B)/P(B). Find P(B) and then P(A|B).',
+          prompt: 'P(A|B) = P(A∩B)/P(B). Find P(B) and then P(A|B). Enter P(A|B).',
           hint1: 'n(B) = 5 + 7 = 12. P(B) = 12/30.',
           hint2: 'P(A|B) = (5/30)/(12/30) = 5/12.',
           hint3: '5/12.',
@@ -18573,7 +18572,7 @@ const MathsQuestions = (() => {
       question: 'In a survey of 60 people, 35 own a car, 22 own a bike, and 10 own both. Find the number who own neither, and find P(owns exactly one vehicle).',
       steps: [
         {
-          prompt: 'Find n(car only) and n(bike only).',
+          prompt: 'Find n(car only) and n(bike only). Enter n(car only).',
           hint1: 'Car only = 35 - 10 = 25. Bike only = 22 - 10 = 12.',
           hint2: '25 car only, 12 bike only.',
           hint3: '25 and 12.',
@@ -18719,7 +18718,7 @@ const MathsQuestions = (() => {
           explanation: "n(G') = n(H only) + n(neither) = 18 + 12 = 30.",
         },
         {
-          prompt: "Find P(H | G'). Of the 30 not in G, how many are in H?",
+          prompt: 'Find P(H | G\'). Of the 30 not in G, 18 are in H. Find the probability.',
           hint1: 'n(H and not G) = n(H only) = 18.',
           hint2: "P(H | G') = 18/30.",
           hint3: '3/5.',
@@ -18834,7 +18833,7 @@ const MathsQuestions = (() => {
           hint1: 'P(A|B) = P(A) = 1/3.',
           hint2: 'Knowing B has occurred does not change the probability of A.',
           hint3: 'This confirms A and B are independent.',
-          answer: 0.3333, tolerance: 0.005, unit: '',
+          answer: 0.3333, checkType: 'skip', tolerance: 0.005, unit: '',
           explanation: 'P(A|B) = P(A) = 1/3 confirms independence: the occurrence of B carries no information about A.',
           displayAnswer: 'P(A|B) = P(A) — confirms independence',
         },
@@ -18889,7 +18888,7 @@ const MathsQuestions = (() => {
           hint1: 'A only = 20-7-5+2=10. B only = 18-7-4+2=9. C only = 15-5-4+2=8.',
           hint2: 'AB only = 7-2=5. AC only = 5-2=3. BC only = 4-2=2. ABC = 2. None = 11.',
           hint3: '10+9+8+5+3+2+2+11 = 50. Correct.',
-          answer: 0.22, tolerance: 0.005, unit: '',
+          answer: 0.22, checkType: 'skip', tolerance: 0.005, unit: '',
           explanation: 'Verified: all regions sum to 50. P(none) = 11/50 = 0.22.',
           displayAnswer: '11/50',
         },
@@ -18998,7 +18997,7 @@ const MathsQuestions = (() => {
           hint1: 'Mutually exclusive: no overlap — P(A or B) is larger.',
           hint2: 'Independent: there is an overlap of 0.2 which is subtracted.',
           hint3: 'Mutually exclusive means no event can occur with the other; independent means knowing one event gives no information about the other.',
-          answer: 0.7, tolerance: 0.005, unit: '',
+          answer: 0.7, checkType: 'skip', tolerance: 0.005, unit: '',
           explanation: 'Mutually exclusive (no overlap) gives a higher P(A or B) = 0.9. Independent events share an overlap of P(A)xP(B) = 0.2, giving P(A or B) = 0.7. Note: large probabilities like 0.5 and 0.4 cannot be mutually exclusive AND independent — if they were independent, P(A and B) = 0.2, not 0.',
           displayAnswer: '0.9 (mutually exclusive) vs 0.7 (independent) — overlap makes the difference',
         },
@@ -19029,7 +19028,7 @@ const MathsQuestions = (() => {
       question: 'P(A) = 0.4 and P(A and B) = 0.2. Find P(B|A).',
       steps: [
         {
-          prompt: 'Write the formula for conditional probability.',
+          prompt: 'Use the formula P(B|A) = P(A and B) ÷ P(A). Calculate P(B|A).',
           hint1: 'P(B|A) = P(A and B) / P(A).',
           hint2: '0.2 / 0.4.',
           hint3: '0.5.',
@@ -19065,7 +19064,7 @@ const MathsQuestions = (() => {
       question: 'A bag has 4 red and 6 blue balls. A ball is drawn at random and found to be red. It is not replaced. What is P(the next ball drawn is also red)?',
       steps: [
         {
-          prompt: 'After drawing a red ball (not replaced), how many balls remain? How many are red?',
+          prompt: 'After drawing a red ball (not replaced), how many balls remain?',
           hint1: 'Started with 4 red, 6 blue (10 total). One red removed.',
           hint2: 'Now: 3 red, 6 blue, 9 total.',
           hint3: '3 red out of 9 remain.',
@@ -19261,7 +19260,7 @@ const MathsQuestions = (() => {
       question: 'P(A) = 0.6, P(B|A) = 0.4 and P(B|A\') = 0.1. Find P(B) using the law of total probability.',
       steps: [
         {
-          prompt: "Find P(A') and calculate P(A' and B).",
+          prompt: 'Find P(A\'), then calculate P(A\' and B).',
           hint1: "P(A') = 1 - 0.6 = 0.4.",
           hint2: "P(A' and B) = P(B|A') x P(A') = 0.1 x 0.4.",
           hint3: '0.04.',
@@ -19419,7 +19418,7 @@ const MathsQuestions = (() => {
           hint1: 'P(A|B) = 0.3 = P(A). P(B|A) = 0.4 = P(B).',
           hint2: 'Conditional probabilities equal unconditional probabilities.',
           hint3: 'A and B are independent.',
-          answer: 0.4, tolerance: 0.005, unit: '',
+          answer: 0.4, checkType: 'skip', tolerance: 0.005, unit: '',
           explanation: 'P(A|B) = P(A) and P(B|A) = P(B). A and B are independent. Also: P(A)xP(B) = 0.12 = P(A and B). Confirmed.',
           displayAnswer: 'Independent: P(A|B) = P(A) and P(B|A) = P(B)',
         },
@@ -19490,7 +19489,7 @@ const MathsQuestions = (() => {
       question: 'P(A) = 0.3, P(B|A) = 0.7 and P(B|A\') = 0.2. Use Bayes\' theorem to find P(A|B).',
       steps: [
         {
-          prompt: "Find P(A') and use total probability to find P(B).",
+          prompt: 'Find P(A\'), then use total probability to find P(B).',
           hint1: "P(A') = 0.7. P(B) = P(B|A)P(A) + P(B|A')P(A').",
           hint2: '0.7x0.3 + 0.2x0.7 = 0.21 + 0.14.',
           hint3: '0.35.',
@@ -19518,7 +19517,7 @@ const MathsQuestions = (() => {
           hint1: 'Knowing B occurred doubled the probability of A.',
           hint2: 'B is evidence for A.',
           hint3: 'A and B are not independent — knowing B has occurred makes A more likely.',
-          answer: 0.6, tolerance: 0.005, unit: '',
+          answer: 0.6, checkType: 'skip', tolerance: 0.005, unit: '',
           explanation: 'P(A|B) = 0.6, which is double P(A) = 0.3. Knowing B occurred makes A much more likely. A and B are dependent.',
           displayAnswer: 'P(A|B) = 0.6 — B is strong evidence for A',
         },
@@ -19573,7 +19572,7 @@ const MathsQuestions = (() => {
           hint1: '1/3 does not equal 0.5.',
           hint2: 'Knowing B and C have both occurred changes the probability of A.',
           hint3: 'A is NOT independent of the event (B and C).',
-          answer: 0.3333, tolerance: 0.005, unit: '',
+          answer: 0.3333, checkType: 'skip', tolerance: 0.005, unit: '',
           explanation: 'P(A | B and C) = 1/3, but P(A) = 0.5. They differ, so A is not independent of (B and C).',
           displayAnswer: 'Not independent: 1/3 not equal to P(A) = 0.5',
         },
@@ -19630,7 +19629,7 @@ const MathsQuestions = (() => {
           hint1: 'Knowing the second ball is red makes it less likely the first was red.',
           hint2: 'If the first was red, fewer reds are available for the second draw.',
           hint3: 'The draws are dependent: the second draw carries information about the first.',
-          answer: 0.25, tolerance: 0.005, unit: '',
+          answer: 0.25, checkType: 'skip', tolerance: 0.005, unit: '',
           explanation: 'P(R1|R2) = 1/4 < P(R1) = 2/5. Knowing the second is red suggests the first may have been blue (keeping more reds available). The draws are dependent.',
           displayAnswer: 'P(R1|R2) = 1/4 < P(R1) = 2/5 — draws are dependent',
         },
@@ -19685,7 +19684,7 @@ const MathsQuestions = (() => {
           hint1: 'Machine A has a lower defect rate (2%) than machine B (5%).',
           hint2: 'Despite producing more items, machine A contributes fewer defectives proportionally.',
           hint3: 'Machine B is more likely responsible for a defective item despite producing fewer items.',
-          answer: 0.375, tolerance: 0.005, unit: '',
+          answer: 0.375, checkType: 'skip', tolerance: 0.005, unit: '',
           explanation: 'P(A | defective) = 0.375 < P(A) = 0.6. Machine A produces more items but at a lower defect rate, so a defective item is more likely to have come from machine B.',
           displayAnswer: 'Machine A: P = 0.375; Machine B: P = 0.625',
         },
@@ -20067,7 +20066,7 @@ const MathsQuestions = (() => {
       question: 'Stem-and-leaf diagram (key: 1|3 means 13):\n1 | 3  7\n2 | 0  4  4  8\n3 | 1  5\nFind the mean and median.',
       steps: [
         {
-          prompt: 'List all 8 values, find the sum and calculate the mean.',
+          prompt: 'List all 8 values, find the sum and calculate the mean. Enter the mean.',
           hint1: 'Values: 13, 17, 20, 24, 24, 28, 31, 35.',
           hint2: 'Sum = 192. n = 8.',
           hint3: 'Mean = 192 ÷ 8 = 24.',

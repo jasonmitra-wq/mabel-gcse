@@ -1,26 +1,27 @@
-# mabel-gcse — Runbook
+# mabel-gcse — Runbook v2
 
-Claude Code follows this file. Jason starts each session with "Continue
-with docs/RUNBOOK.md". Read this file, docs/STATE.md (the "Runbook
-position" line) and the project rules below, then carry on from that
-position. Do not ask Jason anything except the STOP cases in section 2.
+Jason starts each session with "Continue with docs/RUNBOOK.md". Read
+this file and the "Runbook position" line in docs/STATE.md, then carry
+on. Never ask Jason anything except the STOP cases in section 2.
 
-## 1. Standing rules for every task
+## 1. Rules for every task
 
-- One task = one commit. Before each task: folder is C:\dev\mabel-gcse,
-  git status --porcelain empty (otherwise STOP and report), git pull.
-  After each task: node tools/audit-lessons.js, commit, push, confirm
-  with git log origin/main -1, then update "Runbook position" in STATE
-  in the same or a follow-up commit.
-- When a session ends mid-task (usage limit), nothing is committed; the
-  next session redoes the task from the start.
+- Folder C:\dev\mabel-gcse (or a worktree of it whose branch is main);
+  git status --porcelain empty at the start (otherwise STOP); git pull.
+- Commit and push after every fix round, not only at the end of a task,
+  so an interrupted session loses at most one round. Update "Runbook
+  position" in STATE with each commit, precise to the step.
+- One topic per session: after finishing a topic, end the session with
+  "Topic done. Type Continue in a new session." (fresh context is
+  cheaper).
 - Never delete a file. Superseded code goes behind a flag.
-- The API key is in env var SPEC_CHECK_API_KEY. Never print it, never
-  write it to a file, never read ANTHROPIC_API_KEY.
-- If an API call fails with a billing or credit error: STOP (see
-  section 2).
-- Before marking anything verified, re-read what you claim from disk;
-  no status from memory.
+- API key: env var SPEC_CHECK_API_KEY (if unset in the shell, read it
+  with [Environment]::GetEnvironmentVariable('SPEC_CHECK_API_KEY','User')
+  inside the same command). Never print it or write it to a file. Never
+  read ANTHROPIC_API_KEY.
+- Record every API call's actual cost. STATE keeps a "Spend" table: one
+  row per topic with API runs and dollars.
+- Before marking anything verified, re-read it from disk.
 
 EDIT RULES for lesson content:
 - Edit only what a decision or finding names. A term fixed for a
@@ -28,163 +29,140 @@ EDIT RULES for lesson content:
   the content everywhere in that lesson (content, writeBullets,
   keyTerms, tables, tutor_note, memTip, examTip(s), commonMistakes,
   revisionCardBullets, introTips, intro, checkpoints).
-- Content above the specification is removed, never signposted. No
-  pointers to later or higher study.
+- Content above the specification is removed, never signposted.
 - Short real-world examples are allowed only when they illustrate
   required content and add no new term, equation, number or fact to
   learn. Do not restore examples already cut.
 - tools/plain-english-rules.md; speak to "you"; never name the student;
-  no sentence over 20 words; reading grade 9 or below; science terms
-  exactly as the specification uses them; "potential difference",
-  never "voltage".
-- No exam board name, code or paper number anywhere she can see,
-  including model prompts.
+  no sentence over 20 words; reading grade 9 or below; specification
+  terms exactly; "potential difference", never "voltage".
+- No exam board name, code or paper number. Never label tiers or use
+  the specification's own numbering (topic, section or required
+  practical numbers) in lesson text.
 - Physics: never bond, bonds, bonded or bonding.
 - No new real-world figures, prices, dates or market claims.
 - Each key point ends with exactly one checkpoint that tests it, keyed
-  by the key point's index (checkpoints[i] shows right after
-  keyPoints[i]). Re-key when a key point is removed or added.
-- Log every change in tools/spec-check-results/<TOPIC>-FIX-LOG.md:
-  lesson | field | decision or finding ID. For every change made for a
-  factual_errors, above_gcse or missing_spec_content finding, also log
-  the old text and the new text in full.
+  by the key point's index. Re-key when key points change.
+- FIX-LOG line for every change: lesson | field | decision or finding
+  ID; for factual_errors, above_gcse and missing_spec_content changes,
+  also old and new text in full.
 
-## 2. STOP cases (the only times to wait for Jason)
+## 2. STOP cases (the only times to wait)
 
-- git status not empty at the start of a task, or HEAD not where STATE
-  says.
-- API billing or credit error. Report: "Add credits, then type
-  Continue."
-- Phase 2 gate: Mabel's verdict is not yet recorded (section 4).
-- A change would delete a file, or would remove taught content that
-  the specification requires.
-On STOP: commit nothing partial, report in three lines, end.
+- git status not empty at the start, or HEAD not where STATE says.
+- API billing or credit error: "Add credits, then type Continue."
+- Usage limit reached: commit what is complete, then end.
+- A change would delete a file, or remove content the specification
+  requires.
+- A HOLD in the Runbook position line: stop where it says.
+Escalations do NOT stop work: write them to docs/ESCALATIONS.md and
+carry on. Claude in the planning chat decides them.
 
-When Jason types a line starting "Mabel:" at any time, write it verbatim
-with the date to docs/MABEL-FEEDBACK.md, commit "Mabel feedback", and
-continue.
+When Jason types a line starting "Mabel:", write it verbatim with the
+date to docs/MABEL-FEEDBACK.md, remove any HOLD that waits for it,
+commit "Mabel feedback", and continue.
 
-## 3. The topic loop (used for every science topic)
+## 3. Topic procedure (every science topic)
 
-Input: TOPIC (e.g. P3), its lesson files, TRIAGE FILE
-tools/spec-check-results/<TOPIC>-TRIAGE.md (create if missing), runs
-already used (count the "## R" sections in the TRIAGE FILE plus the
-first runs recorded in SUMMARY.md for that topic). Limit 5 runs per
-topic (P1: 8).
+TRIAGE FILE: tools/spec-check-results/<TOPIC>-TRIAGE.md. Run budget per
+topic: R1 (a double run) plus at most two re-checks.
 
-a. Record BASE = HEAD.
-b. Checks, fix until clean: scanner shows no ERROR or WARN in any topic
-   lesson; every topic JSON parses.
-c. If runs used = limit, go to g as NOT CLEAN. Otherwise
-   node tools/spec-check.js --topic <TOPIC> --run --max-usd 3. Name the
-   run R<n>.
-d. For every finding in all five categories decide ACCEPT or REJECT.
-   REJECT only for:
+a. BASE = HEAD. Scanner clean for the topic; every topic JSON parses.
+b. R1: run node tools/spec-check.js --topic <TOPIC> --run twice (R1a,
+   R1b). Combine the findings; treat two findings on the same field and
+   text as one.
+c. Triage every R1 finding ACCEPT or REJECT. REJECT only for:
      R-a already decided in the TRIAGE FILE (give the ID);
      R-b the lesson wording matches the specification text (quote it);
      R-c the correction would break an EDIT RULE or contradict the
          specification text (say which);
      R-d moot, the text no longer exists;
      R-e taught in a sibling lesson of the same topic (name it, quote
-         the line found by grep);
-     R-f a skills or practical suggestion the specification marks as a
-         skills opportunity, not required content.
-   Anything else is ACCEPT. Append "## R<n>" to the TRIAGE FILE: one
-   line per finding (lesson | category+index | ACCEPT or REJECT code |
-   summary), with BLOCKING ACCEPTs (factual_errors, above_gcse,
-   missing_spec_content) and NON-BLOCKING ACCEPTs (wrong_terms,
-   checkpoint_mismatch) counted at the top.
-e. Apply every ACCEPT under the EDIT RULES.
-f. If BLOCKING ACCEPTs = 0: CLEAN, go to g. Else back to b.
-g. Independent audit: invoke the lesson-auditor subagent with BASE set
-   to the commit before this topic's first loop edit (for P1, P2 and P3
-   use d08b060). Do not edit .claude/agents/lesson-auditor.md; confirm
-   its md5 is 90b88f8fd486eab28278852ee5ed067a first. Read its findings
-   file. Fix every factual error, contradiction, wrong term and rule
-   breach it finds, once, logging old and new text. Any finding you
-   reject must cite an R code; write it to docs/ESCALATIONS.md with the
-   topic and the auditor's evidence.
-h. node tools/check-rewrite.js BASE: every failure must match a FIX-LOG
+         the line);
+     R-f a skills suggestion the specification marks as a skills
+         opportunity.
+   Write "## R1" in the TRIAGE FILE: one line per finding (lesson |
+   category+index | decision | summary). Apply every ACCEPT. Commit
+   "<TOPIC>: R1 fixes". Push.
+d. Re-check R2: node tools/spec-check.js --run --blocking-only
+   --decided <TRIAGE FILE> <only the lessons changed in the last round>.
+   Triage and apply as in c; write "## R2". Commit. If R2 has no
+   ACCEPT, go to f.
+e. Re-check R3: same as d, on the lessons changed in R2. Triage, apply,
+   commit. Do not run R4; anything left is handled by the audit.
+f. Independent audit: invoke the lesson-auditor subagent with BASE
+   (confirm its md5 is bd6484be683355a5ff38abc61f4ee9f9 first; never
+   edit it). Fix every factual error, contradiction, wrong term and rule
+   breach once, logging old and new text. Rejections need an R code and
+   go to docs/ESCALATIONS.md.
+g. node tools/check-rewrite.js BASE: every failure must match a FIX-LOG
    line, otherwise undo it.
-i. STATE row for the topic: S1–S3 "✓ <hash> (re-proved after content
-   fix)"; S6 "✓ <hash> (clean at R<n>; audited <auditor file>)" or
-   "✓ <hash> (not clean after <limit> runs; auditor-reviewed; open
-   items in docs/ESCALATIONS.md)"; Notes point to the TRIAGE FILE.
-   Commit "<TOPIC>: spec-check loop and independent audit". Push.
+h. STATE row: S1–S3 "✓ <hash>"; S6 "✓ <hash> (R<last>; audited <file>)"
+   with "clean" if the last re-check had no ACCEPT; S5 "✓" if the
+   scanner's checkpoint check is clean and the last run has no
+   checkpoint_mismatch ACCEPT. Spend row. Commit "<TOPIC>: done".
+   End the session (one topic per session).
 
-Starting notes:
-- P1: runs used 5, limit 8.
-- P2: runs used 5 (limit reached). Also cut "conventional current" from
-  the diode symbol description in p2-components (decision R2-extend,
-  log it).
-- P3: runs used 1. Spec 4.3.3.3 (work done on a gas) is added to
-  p3-pressure as a new key point during the P3 loop (defect 11).
+## 4. Phase 2 tasks, in order
 
-## 4. Phases
+2.0 Read docs/MABEL-FEEDBACK.md. If there is no verdict yet, carry on
+    with 2.1–2.4 and stop at the HOLD before 2.5. If she says the look
+    is the problem, add "Design: ask Mabel to name two screens" to
+    ESCALATIONS.md and carry on. If she says the content or the
+    questions are the problem, write docs/PHASE2-PLAN.md (one page)
+    proposing the change and add it to ESCALATIONS.md; carry on with
+    2.1–2.4, and do not start 2.5 until the planning chat has decided
+    it.
+2.1 Cheaper defaults. Add "model": "sonnet" to .claude/settings.json
+    (create it if missing). In tools/spec-check.js add: --blocking-only
+    (ask the model only for missing_spec_content, above_gcse and
+    factual_errors); --decided <file> (append the TRIAGE FILE's decision
+    lines to the prompt under "Already decided — do not report these
+    again"). Recalibrate with --blocking-only on
+    tools/spec-check-calibration/p7-magnets-13ac63d.json (--file --as
+    p7-magnets): it must still flag iron as a permanent magnet; if not,
+    STOP and report.
+2.2 Maths answers (no API): extend tools/maths-recompute.js to all 600
+    questions. Fix every step whose stored answer, tolerance or unit
+    disagrees with the recomputed value, or whose prompt asks for
+    something different from the stored answer, so the right answer is
+    accepted. Then marks = steps.length everywhere. auditStatus
+    "verified" only where every step recomputes and passes. Log every
+    change in tools/maths-fix-log.md with old and new values. Report the
+    error rate before and after in STATE. Commit after every 100
+    questions.
+2.3 Teach-mode shared code (one fix for all lessons): in js/teach-core.js
+    the tutor never names the student; replies over 60 words are
+    shortened, and a reply still too long after retries is cut at the
+    last full sentence under 60 words, not sent long; the praise filter
+    also strips a stock opener ("Good", "Great", "Nice", "Well done")
+    unless it directly names what was right. Behind a flag, old path
+    kept. Re-run tools/teach-sim.js --rescore and one --run on
+    p3-particle-model; all three fault types must be gone.
+2.4 Missing Physics content before any further topic loops:
+    - new lessons 4.5.3 forces and elasticity, 4.5.4 moments levers and
+      gears, 4.5.5 pressure in fluids (into P5); 4.6.3 black body
+      radiation (into P6); a new topic P8 Space in
+      data/physics-syllabus.json with lessons for 4.8.1.1, 4.8.1.2 (with
+      4.8.1.3 orbits if not fully taught in p5-gravity) and 4.8.2;
+    - additions: 4.5.1.2 contact and non-contact forces to
+      p5-forces-motion; seismic waves (4.6.1.5) to p6-sound.
+    Write each from the specification text, using the fields of
+    existing Physics lessons, under the EDIT RULES. Add specRefs. Commit
+    per lesson.
+2.5 Topic procedure (section 3) for P3, P4, P5, P6, P7, P8, one per
+    session. P1 and P2 are done; do not re-run them.
+2.6 Diagrams (S4): for each Physics lesson, add a diagram wherever the
+    spec-check or auditor named a visual concept or the specification
+    asks students to draw or interpret one (circuits, field patterns,
+    graphs, particle arrangements). Run tools/check-diagrams.js until
+    clean. Commit per topic.
+2.7 Teach mode: add every Physics lesson to TEACH_ENABLED. Run
+    tools/teach-sim.js --run once per lesson. Fix lesson faults in the
+    lesson; re-run only lessons that failed, once. Record T1–T3 in
+    STATE.
+2.8 When every Physics row is ✓ on S1–S6 and T1–T3: STOP with "Physics
+    finished. One real session needed (Jason or Mabel)."
 
-Phase 1 — while P1 is with Mabel
-1.0 P1: section 3 in full (loop from R6, limit 8, then audit g–i).
-1.1 P2: section 3 (it goes straight to g as NOT CLEAN), including the
-    R2-extend cut.
-1.2 Roadmap: add a "Physics roadmap" section to STATE listing, with
-    status: S4 diagrams (33 of 34 lessons have none), S5 checkpoint
-    proof, check D teach simulator, T1 teach-enable, defect 11 new
-    lessons (4.5.3, 4.5.4, 4.5.5, 4.6.3, 4.8.1.1, 4.8.1.2, 4.8.2; P8
-    Space becomes a new topic in data/physics-syllabus.json), and the
-    maths track.
-1.3 S5 structural check: add to tools/audit-lessons.js an ERROR when a
-    lesson's checkpoint keys are not exactly 0..(number of key points
-    − 1). S5 for a topic = this check clean AND the last spec-check run
-    has no checkpoint_mismatch ACCEPT.
-1.4 S4 diagram check: build tools/check-diagrams.js. Render each
-    diagrams/<subject>/*.svg headless (Playwright or Puppeteer, dev
-    dependency only, never loaded by the site) and flag text that
-    overruns the viewBox or overlaps other text. Report counts. If no
-    headless browser can be installed, record "S4 check blocked:
-    <reason>" in STATE and continue.
-1.5 Check D design: read js/lessons.js and the teach-mode code. Decide
-    whether the decision and prompt-building functions can run in Node.
-    If not, move them into a module both the browser and Node load,
-    with no change in behaviour: prove it by building the same prompts
-    for p3-particle-model before and after and diffing them (must be
-    identical). Then build tools/teach-sim.js as specified in the
-    project instructions (check D): scripted student turns (correct,
-    wrong, "idk", yes/no at the check-in, off-topic, "give me the
-    answer"); score every tutor turn for yes/no questions, stock
-    praise, unanswerable questions, over-length, cut-off sentences,
-    board name, student's name, URLs, points that never complete, no
-    clean ending; save transcripts to tools/teach-sim-runs/. Use
-    SPEC_CHECK_API_KEY; dry-run cost estimate first; --max-usd guard
-    as in spec-check. Calibrate on p3-particle-model (teach-enabled).
-1.6 Maths answer check (no API cost): write tools/maths-recompute.js.
-    For a fixed random sample of 40 questions (seed 2026), recompute
-    every step answer in code from the question's numbers and compare
-    within tolerance. Report the error rate in STATE. Do not change any
-    question.
-1.7 Then STOP if docs/MABEL-FEEDBACK.md has no entry: "Phase 1 done.
-    Waiting for Mabel's verdict on P1. Type 'Mabel: <what she said>'."
-
-Phase 2 — after Mabel's verdict is recorded
-2.0 Read docs/MABEL-FEEDBACK.md. If it says the content or questions are
-    the problem, write docs/PHASE2-PLAN.md proposing the content change
-    in one page, then continue with 2.1 using it. If it says the look is
-    the problem, record that in STATE, skip to 2.4 for content and add
-    "Design: ask Mabel to name two screens" to ESCALATIONS.md.
-    Otherwise continue.
-2.1 Topic loop (section 3) for P3, P4, P5, P6, P7, in order.
-2.2 Defect 11: write the seven new Physics lessons and P8 Space topic
-    from the specification text, following the lesson TEMPLATE fields
-    used by existing Physics lessons, then run the topic loop on each
-    affected topic (new lessons start at run 1).
-2.3 S4: draw diagrams for every Physics visual concept the spec-check
-    or auditor names, run tools/check-diagrams.js until clean.
-2.4 Teach mode: add each finished Physics lesson to TEACH_ENABLED, run
-    tools/teach-sim.js on it, fix lesson faults in the lesson; fix
-    shared-code faults once behind a flag and re-run every
-    teach-enabled lesson.
-2.5 When every Physics row in STATE is ✓ on S1–S6 and T1–T3: STOP with
-    "Physics finished. One real session needed (Jason or Mabel)."
-
-Phase 3 — Biology, then Chemistry: defect 10 renderer fix first (it is
-recorded in STATE), then plain-English rewrite batches, then the topic
-loop per topic. Order follows the syllabus files.
+Phase 3 — Biology, then Chemistry: defect 10 renderer fix first, then
+plain-English rewrite batches, then the topic procedure per topic.

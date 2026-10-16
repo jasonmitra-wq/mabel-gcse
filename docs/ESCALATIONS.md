@@ -134,3 +134,8 @@ B3 (pronoun), B4 (door handle reason), B5, B6, C1, C2, C4 (orphan bullet), C5, C
 ## Runbook v2 task 2.1: --blocking-only recalibration not run (2026-10-16)
 
 - Gate: `node tools/spec-check.js --run --blocking-only --file tools/spec-check-calibration/p7-magnets-13ac63d.json --as p7-magnets` must still flag iron as a permanent magnet. Not run in the cloud session: SPEC_CHECK_API_KEY unset, and data/spec/physics.md absent (gitignored; filestore.aqa.org.uk blocked by the session's network policy). Code and dry run done. Run the gate on C:\dev\mabel-gcse before task 2.5; if iron is not flagged, STOP per 2.1.
+
+## Runbook v2 task 2.3: teach-sim --run not done (2026-10-16)
+
+- Gate: one `node tools/teach-sim.js --run p3-particle-model` with all three fault types (student's name, over 60 words, stock praise) gone. Not run in the cloud session: SPEC_CHECK_API_KEY unset. Done instead: `--rescore` (saved run unchanged, 8 flagged) and `--rescore --replay` (the same model replies through the new post-processing: 0 flagged). Run the gate on C:\dev\mabel-gcse.
+- Seen while doing it, not changed (outside teach mode): js/lessons.js:725–726, the "ask a question" prompt after a lesson, still names the student in the system and user prompt.

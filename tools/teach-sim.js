@@ -8,6 +8,11 @@
  *   node tools/teach-sim.js --run p3-particle-model    # real calls
  *   node tools/teach-sim.js --mock p3-particle-model   # offline: canned tutor replies, tests the pipeline
  *   node tools/teach-sim.js --rescore <run.json>      # re-score a saved run with the current scorer (no calls)
+ *   node tools/teach-sim.js --rescore <run.json> --replay
+ *                      # also pass each saved reply (and recap) through the current
+ *                      # reply post-processing (js/teach-core.js _finishReply), as if
+ *                      # the model had said the same thing again; writes <run>-replay.json/.md
+ *                      # and leaves the saved run as it was. No calls.
  *   --max-usd <n>   allow a --run whose estimate is over $1 but under n; also a hard stop on actual spend
  *
  * The student is scripted, not a model. Per key point it cycles through: a
@@ -60,6 +65,7 @@ function parseArgs(argv) {
     else if (v === '--mock') a.mock = true;
     else if (v === '--max-usd') a.maxUsd = Number(argv[++i]);
     else if (v === '--rescore') a.rescore = argv[++i];
+    else if (v === '--replay') a.replay = true;
     else if (v.startsWith('--')) die(`Unknown option ${v}`);
     else a.ids.push(v);
   }
@@ -242,15 +248,22 @@ function score(r, core, points) {
 }
 
 // Re-scores a saved run with the current scorer: no model calls, no cost.
-function rescore(file) {
+function rescore(file, replay = false) {
   const saved = JSON.parse(fs.readFileSync(file, 'utf8'));
   const { data } = findLesson(saved.id);
   const core = TeachCore.create({ call: async () => '' });
   const points = core._buildPoints(data);
   core.bind(data, points, null);
+  if (replay) {
+    for (const t of saved.turns) {
+      t.reply = core._finishReply(t.reply);
+      if (t.recap) t.recap = t.recap.map(core._stripName);
+    }
+    file = file.replace(/\.json$/, '-replay.json');
+  }
   const r = score(saved, core, points);
   fs.writeFileSync(file, JSON.stringify(r, null, 2));
-  writeMd(file.replace(/\.json$/, ''), r, `${saved.mode}, rescored`, saved.date);
+  writeMd(file.replace(/\.json$/, ''), r, `${saved.mode}, ${replay ? 'replayed through current post-processing and ' : ''}rescored`, saved.date);
   const flagged = r.turns.filter(t => t.flags.length).length;
   console.log(`${r.id}: rescored ${path.relative(ROOT, file).replace(/\\/g, '/')}: ${r.turns.length} tutor turns, ${flagged} flagged; ${r.lessonFlags.join('; ') || 'no lesson flags'}.`);
   return r;
@@ -311,7 +324,7 @@ function writeMd(base, r, mode, date) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
-  if (args.rescore) { rescore(path.resolve(args.rescore)); return; }
+  if (args.rescore) { rescore(path.resolve(args.rescore), args.replay); return; }
   const ests = args.ids.map(estimate);
   const total = ests.reduce((s, e) => s + e.usd, 0);
   console.log(args.run ? 'RUN' : args.mock ? 'MOCK (offline, canned tutor replies)' : 'DRY RUN (add --run for real calls)');

@@ -1,0 +1,231 @@
+{
+  "id": "p3-particle-model",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Everything is made of tiny particles arranged differently depending on whether it's solid, liquid or gas — and that's why they behave so differently. Let's start with solids.\n\nIn a solid, the particles sit in a regular, repeating pattern called a lattice. What word describes how tightly packed those particles are in a solid?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's Lattice, A regular, repeating arrangement of particles in a solid",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Now, because those particles in a solid are packed so tightly together and held by strong forces, there's no space to squeeze them into. That's why solids are virtually incompressible — you can't compress them. What do you think happens to the volume of a solid when you try to squeeze it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Those forces are definitely part of it, but let me put it simply: in a solid, the particles are jammed so tightly together that there's literally no empty space between them to squeeze into. When you push down hard on a solid block, what happens to how much space it takes up?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "It just stays the same — the volume doesn't change at all because there's no space to squeeze.\n\nNow, those particles in a solid are held together by strong attractive forces between them. What would you call these forces that pull the particles toward each other?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Ha, I'm not much of a football person! Shall I just tell you the rest about these forces between particles?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "no",
+      "studentType": "no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "So those forces pulling particles together are called **intermolecular forces**. They're what keeps solids held in that tight lattice pattern we talked about. In liquids, these forces are weaker, which is why particles can slip past each other.\n\nIn a gas, how strong would you say these forces between particles are?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "In a gas, the particles are so spread out and moving so fast that they barely pull on each other at all — those forces are almost zero.\n\nWhat word would you use to describe forces that are almost zero?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "I think it's Intermolecular forces, Attractive forces between particles that hold them together",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Exactly — intermolecular forces are what hold particles together.\n\nNow, when you heat up a substance, something changes inside it. All the particles have energy — some energy from moving around, and some energy from the forces pulling them together. What word describes the *total* energy stored by all those particles put together?",
+      "recap": [
+        "Solids have particles packed in a tight lattice pattern with virtually no space between them.",
+        "The volume of a solid can't change because there's nowhere to squeeze into.",
+        "Intermolecular forces are the attractive forces that hold particles together — they're strongest in solids and weakest in gases.",
+        "In gases, particles are spread so far apart that intermolecular forces are almost negligible."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "I think it's Internal energy, The total kinetic and potential energy stored by all particles",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "You've got it — internal energy is the total energy of all the particles in a substance.\n\nSo when you heat something up, the particles start moving faster, right? That extra movement means they have more of a particular type of energy. What's the name for energy that comes from movement?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "When particles move faster, the energy they have from that movement is called kinetic energy — it's just energy from motion, nothing to do with magnets or electricity.\n\nWhen you heat something up and the particles start moving faster, what happens to their kinetic energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "When you heat something up, the particles move faster and gain kinetic energy.\n\nNow, something really interesting happens when you heat a solid — at a certain temperature, it starts to turn into a liquid. That temperature where a solid becomes a liquid has a special name. What's it called?",
+      "recap": [
+        "Internal energy is the total energy stored by all particles in a substance combined together.",
+        "When you heat something up, particles move faster and gain more kinetic energy from that movement.",
+        "Kinetic energy is simply the energy that comes from how fast particles are moving around."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "I think it's Melting point, The temperature at which a substance changes from solid to",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "But there's actually a process where a solid can skip that step and turn straight into a gas without becoming a liquid at all — it's called sublimation. A really famous example is dry ice, which goes directly from solid to gas. What state does dry ice go straight to when it warms up?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Dry ice is solid carbon dioxide, and when it gets warm, it turns straight into gas — it skips being a liquid completely. That's sublimation.\n\nWhat state does dry ice turn into?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Dry ice turns straight into gas — it skips the liquid stage completely.\n\nNow, the particle model we've been using is really powerful and explains loads of things about solids, liquids and gases. But here's the thing — it's a simplified version of reality, not the actual truth. What would you say a *model* is used for in science?",
+      "recap": [
+        "When a solid gets hot enough, it melts at its melting point and turns into a liquid.",
+        "Usually liquids then turn to gas, but some solids can skip straight to gas instead.",
+        "This direct change from solid to gas is called sublimation, and dry ice is a great example of it."
+      ],
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "I think it's Model, A simplified representation of reality used to explain and predict",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Exactly — a model is a simplified version that helps us explain and predict things, just like you said. It explains loads of stuff — like why a gas spreads out to fill a room even if you don't stir it. What would you notice if you opened a bottle of perfume in a room?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "When you open perfume, you don't smell it just near the bottle — the smell spreads around the whole room because the perfume particles are moving randomly and gradually spreading out everywhere. That's diffusion happening.\n\nWhat would you smell if you stood on the opposite side of the room from the perfume bottle?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "You'd smell the perfume because the particles have randomly drifted all the way across the room — that's diffusion. So you've now covered the big ideas: particles are always moving, solids and liquids and gases differ in how their particles are arranged and packed, energy affects how much particles move, and particles spread out randomly through diffusion.",
+      "recap": [
+        "The particle model is a simplified version of reality that helps explain and predict how things behave.",
+        "The particle model explains diffusion — how gas particles spread randomly from areas with lots of them to areas with fewer.",
+        "When you open perfume across a room, the smell gradually reaches you because particles are moving and spreading out everywhere."
+      ],
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've done really well today — you've got the particle model down. Good luck with your revision!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0.061683999999999996,
+  "mode": "run",
+  "date": "2026-10-16"
+}

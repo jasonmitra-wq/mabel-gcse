@@ -17,6 +17,16 @@
 function create(env) {
   const AI = { call: (sys, user, tokens) => env.call(sys, user, tokens) };
 
+  // Task 2.3 (runbook v2) shared fixes, on by default. create({ call, fix23: false })
+  // keeps the earlier behaviour exactly: the student is named in the prompts,
+  // a reply still too long after the retries is sent long, and only
+  // "Great question"-style openers are stripped.
+  const FIX23 = env.fix23 !== false;
+  const STUDENT_NAME = env.studentName || 'Mabel';   // used only to filter it out of replies
+  const WHO     = FIX23 ? 'the student' : 'Mabel';   // how prompts refer to her
+  const WHO_CAP = FIX23 ? 'The student' : 'Mabel';
+  const LABEL   = FIX23 ? 'Student' : 'Mabel';       // speaker label in conversation history
+
   // Lesson state. teach.js owns these and hands them over with bind()
   // whenever it replaces one; the functions below read and mutate them.
   let _data   = null;
@@ -323,7 +333,9 @@ function create(env) {
   function _buildSystemPrompt(teachIdx) {
     const mistakes = _mistakesFor(teachIdx);
     return [
-      `You are a warm, encouraging GCSE tutor teaching Mabel, a 15-year-old studying for her GCSEs, through natural back-and-forth conversation rather than slides.`,
+      FIX23
+        ? `You are a warm, encouraging GCSE tutor teaching a 15-year-old student who is studying for her GCSEs, through natural back-and-forth conversation rather than slides. You do not know her name: never use a name or call her by one.`
+        : `You are a warm, encouraging GCSE tutor teaching Mabel, a 15-year-old studying for her GCSEs, through natural back-and-forth conversation rather than slides.`,
       `Lesson: "${_data.title}".`,
       `Lesson overview: ${_stripHtml(_data.intro || '')}`,
       mistakes.length
@@ -344,7 +356,7 @@ function create(env) {
     const recent = base.filter(t => t.role !== 'recap').slice(-HISTORY_TURNS);
     if (!recent.length) return '';
     return 'Recent conversation so far:\n' + recent.map(t =>
-      t.role === 'note' ? `(${t.text})` : (t.role === 'user' ? 'Mabel' : 'You') + ': ' + t.text
+      t.role === 'note' ? `(${t.text})` : (t.role === 'user' ? LABEL : 'You') + ': ' + t.text
     ).join('\n');
   }
 
@@ -352,7 +364,7 @@ function create(env) {
     const lines = [];
     const history = _recentHistoryBlock(false);
     if (history) lines.push(history);
-    lines.push(`Mabel just said: "${userText}"`);
+    lines.push(`${WHO_CAP} just said: "${userText}"`);
 
     if (decision.kind === 'retry') {
       lines.push(!decision.fact
@@ -402,6 +414,76 @@ function create(env) {
     return String(text || '').replace(STOCK_PRAISE, '') || text;
   }
 
+  // Task 2.3: a bare opener ("Good —", "Great!", "Nice.", "Well done,") is
+  // stock praise too, unless the words right after it say what was right
+  // ("Good — lattice is right."). Removing it re-capitalises what follows.
+  // Only an opener followed by punctuation counts: "Well done today" is a sign-off.
+  const STOCK_OPENER = /^\s*(?:good|great|nice|well done)\s*[!.,:;—–-]+\s*/i;   // "Nice try", "Good luck" have no mark and stay
+  const NAMES_WHAT_WAS_RIGHT = /^[^.!?]{0,60}\b(?:right|correct|exactly|spot on)\b/i;
+  function _stripStockOpener(text) {
+    const t = String(text || '');
+    const m = t.match(STOCK_OPENER);
+    if (!m) return t;
+    const rest = t.slice(m[0].length);
+    if (!rest.trim() || NAMES_WHAT_WAS_RIGHT.test(rest)) return t;
+    return rest.charAt(0).toUpperCase() + rest.slice(1);
+  }
+
+  // Task 2.3: the tutor never names the student. The prompts no longer give the
+  // name; this removes it if a reply uses it anyway ("Hi Mabel!", ", Mabel").
+  function _stripName(text) {
+    const n = STUDENT_NAME.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const t = String(text || '')
+      .replace(new RegExp(`\\s*,\\s*${n}\\b(?=\\s*[!.,?—–-])`, 'g'), '')   // "Thanks, Mabel!" → "Thanks!"
+      .replace(new RegExp(`\\b(hi|hello|hey|well done|thanks|thank you|bye|goodbye)\\s+${n}\\b`, 'gi'), '$1')
+      .replace(new RegExp(`^\\s*${n}\\s*[,!—–-]\\s*`, 'i'), '')
+      .replace(new RegExp(`\\b${n}\\b`, 'g'), 'you');
+    return t.charAt(0).toUpperCase() + t.slice(1);
+  }
+
+  // Task 2.3: a reply still over the word limit after the retries is cut at
+  // sentence boundaries so it fits, rather than sent long. If the reply ended
+  // with a question, the question is always kept (a teaching turn without one
+  // leaves her nothing to answer): with the sentences it leans on (any sentence
+  // sharing a content word with it) if they fit, otherwise with the opening
+  // sentences only; either way topped up with opening sentences, in their
+  // original order. A reply not ending in a question is cut at the last full
+  // sentence under the limit.
+  function _sentences(text) {
+    return String(text || '').match(/[^.!?]+[.!?]+["')\]]*\s*|[^.!?]+$/g) || [];
+  }
+  function _cutToWords(text, maxWords) {
+    const sents = _sentences(text).map(x => x.trim()).filter(Boolean);
+    const wc = x => _wordCount(_stripMarkdown(x));
+    const plainCut = () => {
+      const out = []; let n = 0;
+      for (const x of sents) { if (n + wc(x) > maxWords) break; out.push(x); n += wc(x); }
+      return out.join(' ').trim();
+    };
+    const last = sents[sents.length - 1] || '';
+    if (!/\?["')\]]*$/.test(last)) return plainCut();
+    const body = sents.slice(0, -1);
+    const qStems = new Set(_stems(last));
+    const needed = body.map(x => _stems(x).some(w => qStems.has(w)));
+    let n = wc(last) + body.reduce((t, x, k) => t + (needed[k] ? wc(x) : 0), 0);
+    let keep = needed.slice();
+    if (n > maxWords) { keep = body.map(() => false); n = wc(last); }
+    for (let k = 0; k < body.length; k++) {
+      if (keep[k]) continue;
+      if (n + wc(body[k]) > maxWords) break;
+      keep[k] = true; n += wc(body[k]);
+    }
+    return [...body.filter((x, k) => keep[k]), last].join(' ').trim();
+  }
+
+  // Every reply the student sees goes through this.
+  function _finishReply(text, maxWords = MAX_REPLY_WORDS) {
+    if (!FIX23) return _stripStockPraise(text);
+    let t = _stripStockOpener(_stripName(_stripStockPraise(text)));
+    if (_wordCount(_stripMarkdown(t)) > maxWords) t = _cutToWords(t, maxWords) || t;
+    return t;
+  }
+
   // Every attempt is checked, including the shortened ones. The earlier version
   // checked only the first reply and returned the shortened retry unseen, so a
   // retry that hit its own token cap was shown cut off mid-sentence.
@@ -427,20 +509,22 @@ function create(env) {
       const cut = _looksTruncated(plain);
       const long = !cut && _wordCount(plain) > a.words;
       yesNo = noYesNo && _asksYesNo(plain);
-      if (!cut && !long && !yesNo) return _stripStockPraise(reply);
+      if (!cut && !long && !yesNo) return _finishReply(reply);
       if (!cut && !yesNo && !complete) complete = reply; // finished, just long — usable if nothing better
       if (cut || long) level = Math.min(level + 1, limits.length - 1);
     }
     // Never show a sentence that stops dead: prefer a complete-but-long reply,
     // otherwise drop the unfinished tail of the last one.
-    return _stripStockPraise(complete || _trimToLastSentence(last) || last);
+    return _finishReply(complete || _trimToLastSentence(last) || last);
   }
 
   // ── "Worth writing down" recap ───────────────────────────────
   // Written by the model from the conversation that just happened — not from
   // the lesson's pre-written writeBullets, which are never read or shown here.
   function _buildRecapSystemPrompt() {
-    return `You are a warm, encouraging GCSE tutor helping Mabel, a 15-year-old studying for her GCSEs, keep her revision notes. You write brief recaps of what you have just taught her, in your own plain words — never a copied textbook list. Reply with the recap lines only.`;
+    return FIX23
+      ? `You are a warm, encouraging GCSE tutor helping a 15-year-old student studying for her GCSEs keep her revision notes. You write brief recaps of what you have just taught her, in your own plain words — never a copied textbook list. Never use a name. Reply with the recap lines only.`
+      : `You are a warm, encouraging GCSE tutor helping Mabel, a 15-year-old studying for her GCSEs, keep her revision notes. You write brief recaps of what you have just taught her, in your own plain words — never a copied textbook list. Reply with the recap lines only.`;
   }
 
   // The stretch of conversation about one key point, from where its teaching
@@ -462,6 +546,7 @@ function create(env) {
       lines = (cleaned.match(/[^.!?]+[.!?]+["')]?/g) || [cleaned]).map(l => l.trim()).filter(Boolean);
     }
     lines = lines.slice(0, 4);
+    if (FIX23) lines = lines.map(_stripName);
     if (lines.length > 2 && _looksTruncated(lines[lines.length - 1])) lines.pop();
     return lines.length >= 2 ? lines : null;
   }
@@ -470,8 +555,8 @@ function create(env) {
     const convo = _pointConversation(idx);
     if (!convo.length) return null;
     const user = [
-      `Mabel has just finished the key point "${_points[idx].heading}". Here is the conversation about it:`,
-      convo.map(t => (t.role === 'user' ? 'Mabel' : 'You') + ': ' + t.text).join('\n'),
+      `${WHO_CAP} has just finished the key point "${_points[idx].heading}". Here is the conversation about it:`,
+      convo.map(t => (t.role === 'user' ? LABEL : 'You') + ': ' + t.text).join('\n'),
       `Write a short "Worth writing down" recap of what you actually taught her in this conversation, in your own words: 2 to 4 short lines, one idea per line, each under 15 words. Base it on what was said above. No heading, no bullet symbols or numbering, and don't ask a question.`,
     ].join('\n\n');
     const raw = await AI.call(_buildRecapSystemPrompt(), user, MAX_TOKENS_RECAP);
@@ -738,7 +823,7 @@ function create(env) {
 
   function _firstOpeningPrompt() {
     return [
-      `Begin the lesson. In AT MOST TWO SENTENCES TOTAL, warmly welcome Mabel (using the lesson overview above in your own words, don't just repeat it) and introduce the first key point below, starting from the first thing its content describes — do not explain the whole point. Then ask one question about the part named below. Do not answer your own question.`,
+      `Begin the lesson. In AT MOST TWO SENTENCES TOTAL, warmly welcome ${WHO} (using the lesson overview above in your own words, don't just repeat it) and introduce the first key point below, starting from the first thing its content describes — do not explain the whole point. Then ask one question about the part named below. Do not answer your own question.`,
       _pointBrief(_points[0]),
       _partLine(_openingFact(0)),
       _remainingLine(0, _state.facts[0], _openingFact(0)),
@@ -751,7 +836,7 @@ function create(env) {
   // starting this point from the beginning.
   function _jumpPrompt(index) {
     return [
-      `Mabel is starting a new key point: "${_points[index].heading}". Teach it from the very beginning, as if you had just reached it. This is a fresh start, not a continuation — do not refer back to anything discussed before, and do not greet her again. She may not have covered the earlier points, so don't assume she knows any terms from them. In AT MOST TWO SENTENCES, introduce this key point, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`,
+      `${WHO_CAP} is starting a new key point: "${_points[index].heading}". Teach it from the very beginning, as if you had just reached it. This is a fresh start, not a continuation — do not refer back to anything discussed before, and do not greet her again. She may not have covered the earlier points, so don't assume she knows any terms from them. In AT MOST TWO SENTENCES, introduce this key point, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`,
       _pointBrief(_points[index]),
       _partLine(_points[index].facts[0] || null),
       // A jump restarts the point, so every part is outstanding again —
@@ -775,7 +860,7 @@ function create(env) {
   }));
   }
 
-  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt };
+  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt };
 }
 
 return { create };

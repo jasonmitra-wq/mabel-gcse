@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 1 done (1.7); Jason's instruction list of 2026-10-16, part 3 (P1 escalation decisions) next. HOLD before 2.5 until a Mabel verdict is in docs/MABEL-FEEDBACK.md
+Runbook position: Phase 1 done (1.7); Jason's instruction list of 2026-10-16, part 4 (P2 escalation decisions) next. HOLD before 2.5 until a Mabel verdict is in docs/MABEL-FEEDBACK.md
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

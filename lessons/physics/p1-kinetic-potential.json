@@ -3,11 +3,10 @@
   "title": "Kinetic and potential energy — the energy stores",
   "topic": "P1",
   "subject": "Physics",
-  "examTip": "Energy store equations appear on every exam paper. Know each equation and its units. You must learn Ek = ½mv² and Ep = mgh. You are given Ee = ½ke² and ΔE = mcΔθ. Know what happens when energy moves between stores. The v² in the kinetic energy equation loses the most marks.",
+  "examTip": "Energy store equations appear on every exam paper. Know each equation and its units. You must learn Ek = ½mv² and Ep = mgh. You are given Ee = ½ke². Know what happens when energy moves between stores. The v² in the kinetic energy equation loses the most marks.",
   "introTips": [
-    "Today you will learn four energy equations: kinetic, gravitational potential, elastic potential and specific heat capacity. Each one links a store to the situation that creates it.",
-    "The skill examiners test most is rearranging these equations and picking the right one. You will also practise setting GPE equal to KE to find the speed of a falling object.",
-    "Specific heat capacity is in this topic too. It is the energy needed to raise the temperature of 1 kg of a substance by 1°C. It looks scary, but it is just one equation, used in a very predictable way."
+    "Today you will learn three energy equations: kinetic, gravitational potential and elastic potential. Each one links a store to the situation that creates it.",
+    "The skill examiners test most is rearranging these equations and picking the right one. You will also practise setting GPE equal to KE to find the speed of a falling object."
   ],
   "intro": "Every time you kick a ball, stretch a spring or drop your phone, energy moves between stores. This topic is about those stores. It is also about working out exactly how much energy is in them. You will use these equations in almost every physics paper. So the time you spend on them now pays back again and again. The maths isn't hard once you know which equation to use.",
   "diagrams": [],
@@ -111,30 +110,6 @@
         }
       ],
       "memTip": "Ee = ½ke² has the same shape as Ek = ½mv². Both are ½ × something × (something)². e is extension only, not total length. Examiners use this to catch you out."
-    },
-    {
-      "heading": "Specific heat capacity — energy per kilogram per degree",
-      "content": "Different materials need different amounts of energy to warm up. The <strong>specific heat capacity (c)</strong> of a material is the energy needed to raise 1 kg of it by 1°C. The equation is: <strong>ΔE = mcΔθ</strong>.\n- ΔE is the change in thermal energy in joules\n- m is mass in kg\n- c is specific heat capacity in J/kg°C\n- Δθ is the temperature change in °C\n\nThe same equation gives the energy released when a system cools.\n\nWater's specific heat capacity is 4200 J/kg°C. That is very high. It is why water is used as a coolant in car engines. It is also why the sea takes a long time to warm up in summer.",
-      "examFlag": true,
-      "cardFlag": true,
-      "diagram": null,
-      "writeBullets": [
-        "Specific heat capacity equation: ΔE = mcΔθ",
-        "ΔE = change in thermal energy (J), m = mass (kg), c = specific heat capacity (J/kg°C), Δθ = temperature change (°C)",
-        "High c means the material needs more energy per kg per °C to heat up",
-        "Water: c = 4200 J/kg°C. Very high, so useful as a coolant"
-      ],
-      "keyTerms": [
-        {
-          "term": "Specific heat capacity (c)",
-          "def": "The energy needed to raise the temperature of 1 kg of a substance by 1°C — units J/kg°C"
-        },
-        {
-          "term": "Δθ",
-          "def": "The change in temperature (final temperature minus initial temperature) in °C"
-        }
-      ],
-      "memTip": "ΔE = mcΔθ is a favourite rearrangement question. Cover each letter in turn. Practise writing each rearrangement: c = ΔE ÷ (mΔθ), m = ΔE ÷ (cΔθ), Δθ = ΔE ÷ (mc)."
     }
   ],
   "tables": [],
@@ -186,31 +161,17 @@
       "correct": 0,
       "correctFeedback": "Correct. Ee = ½ke² = 0.5 × 400 × (0.05)² = 0.5 × 400 × 0.0025 = 0.5 J. Remember to square the extension before multiplying.",
       "wrongFeedback": "Use Ee = ½ke². Extension e = 0.05 m. e² = 0.0025. Then: 0.5 × 400 × 0.0025 = 0.5 J. The most common mistake is forgetting to square the extension."
-    },
-    "4": {
-      "question": "How much energy is needed to raise the temperature of 0.5 kg of water by 10°C? (c = 4200 J/kg°C)",
-      "options": [
-        "21,000 J",
-        "2100 J",
-        "42,000 J",
-        "210 J"
-      ],
-      "correct": 0,
-      "correctFeedback": "Correct. ΔE = mcΔθ = 0.5 × 4200 × 10 = 21,000 J.",
-      "wrongFeedback": "Use ΔE = mcΔθ. Multiply all three values: 0.5 × 4200 × 10 = 21,000 J."
     }
   },
   "commonMistakes": [
     "In Ek = ½mv², square v before multiplying by anything else. For a 2 kg object at 4 m/s: Ek = ½ × 2 × 16 = 16 J (not ½ × 2 × 4 = 4 J).",
     "The question always gives you the value of g. Use that value, whether it is 9.8 N/kg or 10 N/kg.",
     "In the elastic PE equation Ee = ½ke², e is the extension. It is how far the spring has stretched beyond its natural length. Say a spring is 0.3 m long naturally and is stretched to 0.5 m. Then e = 0.2 m, not 0.5 m.",
-    "When a falling object hits the ground, all its GPE has become KE only if air resistance is ignored. If the question mentions air resistance, some energy has gone to thermal stores. Then you cannot simply set mgh = ½mv².",
-    "In ΔE = mcΔθ, Δθ is the change in temperature, not the final temperature. If an object heats from 20°C to 80°C, Δθ = 60°C."
+    "When a falling object hits the ground, all its GPE has become KE only if air resistance is ignored. If the question mentions air resistance, some energy has gone to thermal stores. Then you cannot simply set mgh = ½mv²."
   ],
   "examTips": [
     "Always show the equation, substitution and answer on separate lines. Mark schemes give method marks at each stage.",
-    "A question may say 'ignoring air resistance' or 'no energy dissipated to the surroundings'. Then set GPE = KE at the bottom: mgh = ½mv². This simplifies to v = √(2gh).",
-    "For specific heat capacity, check which you need: ΔE (change in thermal energy), m (mass), c or Δθ. Rearrange before substituting. Don't try to rearrange after putting numbers in."
+    "A question may say 'ignoring air resistance' or 'no energy dissipated to the surroundings'. Then set GPE = KE at the bottom: mgh = ½mv². This simplifies to v = √(2gh)."
   ],
   "videoLinks": [
     {
@@ -238,8 +199,6 @@
     "Gravitational PE: Ep = mgh. Use the value of g given in the question",
     "Falling object (no air resistance). By the bottom, all the energy in the gravitational potential store is transferred to the kinetic store",
     "Equate GPE and KE: mgh = ½mv² → mass cancels → v = √(2gh)",
-    "Elastic PE: Ee = ½ke² (if the limit of proportionality is not exceeded). k = spring constant (N/m). e = extension in metres (not total length)",
-    "Specific heat capacity: ΔE = mcΔθ. ΔE in J, m in kg, c in J/kg°C. Δθ = temperature change in °C",
-    "Water's specific heat capacity = 4200 J/kg°C. Very high, so it is used as a coolant"
+    "Elastic PE: Ee = ½ke² (if the limit of proportionality is not exceeded). k = spring constant (N/m). e = extension in metres (not total length)"
   ]
 }

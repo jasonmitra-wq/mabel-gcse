@@ -702,3 +702,51 @@ Fixes for the auditor's factual errors, contradictions, wrong terms and rule bre
 - p1-national-grid keyPoints[2].content bold "hydroelectric": R6 p1-national-grid wron1 line
 - p1-power keyPoints[0].tutor_note numbers "2", "one": R7 p1-power fact0 line
 - p1-power keyPoints[2] human power figures, bold terms, writeBullets, memTip, revisionCardBullets[6] (20 failures): R6 p1-power abov0 and fact0 lines
+
+## Jason escalation decisions (2026-10-16)
+
+### P1 escalation decisions
+
+- p1-efficiency | keyPoints.3.content | Jason decision P1 E6 (tier label removed, content kept)
+  - OLD: Describing ways to increase efficiency is Higher Tier content. We can improve efficiency in several ways: ⏎ - <strong>Reducing friction</strong>: oil between moving parts → less kinetic energy wasted as thermal energy. ⏎ - <strong>Better insulation</strong>: less energy is dissipated from hot surfaces to the surroundings. Insulating a boiler is one example. ⏎ - <strong>More efficient components</strong>: LEDs instead of filament bulbs, and electric motors instead of petrol engines. ⏎  ⏎ A more efficient device needs less input energy for the same useful output.
+  - NEW: We can improve efficiency in several ways: ⏎ - <strong>Reducing friction</strong>: oil between moving parts → less kinetic energy wasted as thermal energy. ⏎ - <strong>Better insulation</strong>: less energy is dissipated from hot surfaces to the surroundings. Insulating a boiler is one example. ⏎ - <strong>More efficient components</strong>: LEDs instead of filament bulbs, and electric motors instead of petrol engines. ⏎  ⏎ A more efficient device needs less input energy for the same useful output.
+- p1-heating | keyPoints.3.content | Jason decision P1 H5
+  - OLD: <strong>Thermal energy</strong> is stored in the <strong>internal energy</strong> of a system. Internal energy is the total kinetic and potential energy of all the particles that make up a system. ⏎  ⏎ <strong>Temperature</strong> is related to the average kinetic energy of the particles. The hotter the substance, the faster its particles move on average. This matters. Temperature is related to the average KE per particle. Internal energy depends on temperature AND the number of particles. ⏎  ⏎ <strong>Energy is transferred by heating</strong> from a hotter object to a cooler one. ⏎  ⏎ Uses of high specific heat capacity: ⏎ - water in <strong>central heating</strong> carries a lot of energy per kg ⏎ - <strong>coastal climates</strong> are milder than inland areas. The sea's high specific heat capacity evens out temperature changes. It warms up and cools down slowly ⏎ - <strong>solar thermal panels</strong> use water to store energy collected from sunlight
+  - NEW: <strong>Thermal energy</strong> is stored in the <strong>internal energy</strong> of a system. Internal energy is the total kinetic and potential energy of all the particles that make up a system. ⏎  ⏎ <strong>Temperature</strong> is related to the average kinetic energy of the particles. The hotter the substance, the faster its particles move on average. This matters. Temperature is related to the average KE per particle. Internal energy is the total kinetic energy and potential energy of all the particles that make up a system. ⏎  ⏎ <strong>Energy is transferred by heating</strong> from a hotter object to a cooler one. ⏎  ⏎ Uses of high specific heat capacity: ⏎ - water in <strong>central heating</strong> carries a lot of energy per kg ⏎ - <strong>coastal climates</strong> are milder than inland areas. The sea's high specific heat capacity evens out temperature changes. It warms up and cools down slowly ⏎ - <strong>solar thermal panels</strong> use water to store energy collected from sunlight
+- p1-kinetic-potential | revisionCardBullets.7 | Jason decision P1 K2/X6 (specific heat capacity cut; taught in p1-heating)
+  - OLD: Water's specific heat capacity = 4200 J/kg°C. Very high, so it is used as a coolant
+  - NEW: (removed)
+- p1-kinetic-potential | revisionCardBullets.6 | Jason decision P1 K2/X6
+  - OLD: Specific heat capacity: ΔE = mcΔθ. ΔE in J, m in kg, c in J/kg°C. Δθ = temperature change in °C
+  - NEW: (removed)
+- p1-kinetic-potential | examTips.2 | Jason decision P1 K2/X6
+  - OLD: For specific heat capacity, check which you need: ΔE (change in thermal energy), m (mass), c or Δθ. Rearrange before substituting. Don't try to rearrange after putting numbers in.
+  - NEW: (removed)
+- p1-kinetic-potential | commonMistakes.4 | Jason decision P1 K2/X6
+  - OLD: In ΔE = mcΔθ, Δθ is the change in temperature, not the final temperature. If an object heats from 20°C to 80°C, Δθ = 60°C.
+  - NEW: (removed)
+- p1-kinetic-potential | checkpoints.4 | Jason decision P1 K2/X6 (checkpoint for removed key point 4; keys 0..3 remain, no re-key needed)
+  - OLD: {"question":"How much energy is needed to raise the temperature of 0.5 kg of water by 10°C? (c = 4200 J/kg°C)","options":["21,000 J","2100 J","42,000 J","210 J"],"correct":0,"correctFeedback":"Correct. ΔE = mcΔθ = 0.5 × 4200 × 10 = 21,000 J.","wrongFeedback":"Use ΔE = mcΔθ. Multiply all three values: 0.5 × 4200 × 10 = 21,000 J."}
+  - NEW: (removed)
+- p1-kinetic-potential | keyPoints.4 | Jason decision P1 K2/X6
+  - OLD: {"heading":"Specific heat capacity — energy per kilogram per degree","content":"Different materials need different amounts of energy to warm up. The <strong>specific heat capacity (c)</strong> of a material is the energy needed to raise 1 kg of it by 1°C. The equation is: <strong>ΔE = mcΔθ</strong>.\n- ΔE is the change in thermal energy in joules\n- m is mass in kg\n- c is specific heat capacity in J/kg°C\n- Δθ is the temperature change in °C\n\nThe same equation gives the energy released when a system cools.\n\nWater's specific heat capacity is 4200 J/kg°C. That is very high. It is why water is used as a coolant in car engines. It is also why the sea takes a long time to warm up in summer.","examFlag":true,"cardFlag":true,"diagram":null,"writeBullets":["Specific heat capacity equation: ΔE = mcΔθ","ΔE = change in thermal energy (J), m = mass (kg), c = specific heat capacity (J/kg°C), Δθ = temperature change (°C)","High c means the material needs more energy per kg per °C to heat up","Water: c = 4200 J/kg°C. Very high, so useful as a coolant"],"keyTerms":[{"term":"Specific heat capacity (c)","def":"The energy needed to raise the temperature of 1 kg of a substance by 1°C — units J/kg°C"},{"term":"Δθ","def":"The change in temperature (final temperature minus initial temperature) in °C"}],"memTip":"ΔE = mcΔθ is a favourite rearrangement question. Cover each letter in turn. Practise writing each rearrangement: c = ΔE ÷ (mΔθ), m = ΔE ÷ (cΔθ), Δθ = ΔE ÷ (mc)."}
+  - NEW: (removed)
+- p1-kinetic-potential | introTips.2 | Jason decision P1 K2/X6
+  - OLD: Specific heat capacity is in this topic too. It is the energy needed to raise the temperature of 1 kg of a substance by 1°C. It looks scary, but it is just one equation, used in a very predictable way.
+  - NEW: (removed)
+- p1-kinetic-potential | introTips.0 | Jason decision P1 K2/X6
+  - OLD: Today you will learn four energy equations: kinetic, gravitational potential, elastic potential and specific heat capacity. Each one links a store to the situation that creates it.
+  - NEW: Today you will learn three energy equations: kinetic, gravitational potential and elastic potential. Each one links a store to the situation that creates it.
+- p1-kinetic-potential | examTip | Jason decision P1 K2/X6
+  - OLD: Energy store equations appear on every exam paper. Know each equation and its units. You must learn Ek = ½mv² and Ep = mgh. You are given Ee = ½ke² and ΔE = mcΔθ. Know what happens when energy moves between stores. The v² in the kinetic energy equation loses the most marks.
+  - NEW: Energy store equations appear on every exam paper. Know each equation and its units. You must learn Ek = ½mv² and Ep = mgh. You are given Ee = ½ke². Know what happens when energy moves between stores. The v² in the kinetic energy equation loses the most marks.
+- p1-national-grid | title | Jason decision P1 N14
+  - OLD: The National Grid — getting electricity from power station to your home
+  - NEW: Energy resources and the National Grid
+- data/physics-syllabus.json | P1.subtopics[p1-kinetic-potential].specRef | Jason decision P1 K2/X6
+  - OLD: ["4.1.1.2", "4.1.1.3"]
+  - NEW: ["4.1.1.2"]
+- data/physics-syllabus.json | P1.subtopics[p1-national-grid].name | Jason decision P1 N14
+  - OLD: The national grid and electricity generation
+  - NEW: Energy resources and the National Grid
+- p1-power | (none) | Jason decision P1 W2: W = Fs stays in p1-power; no change

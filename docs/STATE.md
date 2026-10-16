@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 1, task 1.0, step g (independent audit of P1, BASE d08b060)
+Runbook position: Phase 1, task 1.1 (P2: section 3, straight to g as NOT CLEAN, BASE d08b060)
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.
@@ -22,7 +22,7 @@ open shared-code fault.
 
 | Topic | S1 | S2 | S3 | S4 | S5 | S6 | T1 | T2 | T3 | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
-| P1 Energy | ✓ 5a36e2b (re-proved after content fix) | ✓ 5a36e2b (re-proved after content fix) | ✓ 5a36e2b (re-proved after content fix) | – | n/a | – escalated to Jason: 5 runs, no clean run; see P1-TRIAGE.md | – | n/a | – | Fix round 5a36e2b + close-out; triage in tools/spec-check-results/P1-TRIAGE.md; spec-check findings refer to commit d08b060 |
+| P1 Energy | ✓ f3a97da (re-proved after content fix) | ✓ f3a97da (re-proved after content fix) | ✓ f3a97da (re-proved after content fix) | – | n/a | ✓ f3a97da (not clean after 8 runs; auditor-reviewed; open items in docs/ESCALATIONS.md) | – | n/a | – | Spec-check loop R1–R8 and independent audit tools/audit-runs/d08b060-1.md; triage in tools/spec-check-results/P1-TRIAGE.md; fixes in P1-FIX-LOG.md |
 | P2 Electricity | ✓ 23999d0 + P2 fix round (re-proved after content fix) | ✓ 23999d0 + P2 fix round (re-proved after content fix) | ✓ 23999d0 + P2 fix round (re-proved after content fix) | – | n/a | – escalated to Jason: 5 runs, no clean run; see P2-TRIAGE.md | – | n/a | – | Fix round; triage in tools/spec-check-results/P2-TRIAGE.md; findings refer to commit d08b060; circuit diagrams deferred to S4 |
 | P3 Particle model | ✓ dd98fe9 | – reopened: p3-pressure has 24 Kelvin/absolute-zero WARNs unresolved; decided by spec-check | ✓ dd98fe9 | partial: p3-particle-model only (4110010) | n/a | n/a | partial: p3-particle-model only | n/a | – | |
 | P4 Atomic structure | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | p4-nuclear-model 'chemical bonding' checked and correct; p4-nuclear-model 'quantum' ×2 and its A-level pointer to be removed in the P4 fix round |

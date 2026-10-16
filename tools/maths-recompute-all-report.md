@@ -2,9 +2,9 @@
 
 Generated 2026-10-16 by tools/maths-recompute.js. Read-only: no question was changed.
 
-All 266 questions, 748 steps. Checked by the app: 605; checkType skip: 143.  
-Checked steps: ok 605, ambiguous 0, wrong 0, mismatch 0.  
-Error rate (wrong + mismatch over checked steps): 0/605 = 0.0%. Questions with at least one error: 0/266.  
+All 374 questions, 1050 steps. Checked by the app: 827; checkType skip: 223.  
+Checked steps: ok 827, ambiguous 0, wrong 0, mismatch 0.  
+Error rate (wrong + mismatch over checked steps): 0/827 = 0.0%. Questions with at least one error: 0/374.  
 
 | Question | Step | Prompt | Stored | Recomputed | Status | Note |
 |---|---|---|---|---|---|---|
@@ -681,40 +681,342 @@ Error rate (wrong + mismatch over checked steps): 0/605 = 0.0%. Questions with a
 | grd-B02 | 0 | How many half-lives occur in 12 years? | 4 | 4 | ok |  |
 | grd-B02 | 1 | The mass halves with each half-life. Write the formula. | 0 | — | skip |  |
 | grd-B02 | 2 | Calculate the mass after 12 years. (g) | 40 | 40 | ok |  |
+| grd-B03 | 0 | What is the value of n for the year 2020? | 10 | 10 | ok |  |
+| grd-B03 | 1 | Calculate 1.03¹⁰ to 4 decimal places. | 1.3439 | 1.3439 | ok |  |
+| grd-B03 | 2 | Calculate the predicted population (to the nearest whole number). | 16127 | 16127 | ok |  |
+| grd-B04 | 0 | What is the multiplier per hour for 25% elimination? | 0.75 | 0.75 | ok |  |
+| grd-B04 | 1 | Write the formula for the amount remaining after 3 hours. | 0 | — | skip |  |
+| grd-B04 | 2 | Calculate the amount remaining. (mg) | 337.5 | 337.5 | ok |  |
+| grd-B05 | 0 | What multiplier is used for 8% annual growth? | 1.08 | 1.08 | ok |  |
+| grd-B05 | 1 | Calculate 1.08⁵ to 6 significant figures. | 1.46933 | 1.46933 | ok |  |
+| grd-B05 | 2 | Calculate the value after 5 years. (£, nearest pound) | 257132 | 257132 | ok |  |
+| grd-B06 | 0 | Write the growth formula. | 0 | — | skip |  |
+| grd-B06 | 1 | We need 200 × 1.30ⁿ > 1000. What must 1.30ⁿ exceed? | 5 | 5 | ok |  |
+| grd-B06 | 2 | Find the smallest whole number n. (Use trial: calculate 1.30⁵ and 1.30 | 7 | 7 | ok |  |
+| grd-C01 | 0 | Set up the inequality: what must 1.06ⁿ exceed? | 1.6 | 1.6 | ok |  |
+| grd-C01 | 1 | Calculate 1.06⁸ and 1.06⁹. What is the smallest n for which 1.06ⁿ > 1. | 9 | 9 | ok |  |
+| grd-C01 | 2 | What is the value of V when n = 9? (to nearest whole number) | 4224 | 4224 | ok |  |
+| grd-C01 | 3 | Check n=8 gives V < 4000. What is V when n=8? | 3985 | 3984.620186 | ok |  |
+| grd-C02 | 0 | Write two equations using A = P(1+r)ⁿ. Divide the 5-year equation by t | 0 | — | skip |  |
+| grd-C02 | 1 | Find (1+r) by taking the square root, then find r (%). | 5 | 5.000002 | ok |  |
+| grd-C02 | 2 | Find P using P × 1.05³ = 15743.70. | 13600 | 13599.999119 | ok |  |
+| grd-C02 | 3 | Verify: does £13 600 × 1.05⁵ = £17 357.43? | 1 | — | skip |  |
+| grd-C03 | 0 | (a) Find the population when t = 0. | 500 | 500 | ok |  |
+| grd-C03 | 1 | (b) What is the doubling time in years? | 4 | 4 | ok |  |
+| grd-C03 | 2 | (c) Calculate the population when t = 10. | 2828 | 2828 | ok |  |
+| grd-C03 | 3 | How many doublings have occurred in 10 years? | 2.5 | 2.5 | ok |  |
+| grd-C04 | 0 | Set up the equation: N/N₀ = 0.35. Write the equation to solve. | 0 | — | skip |  |
+| grd-C04 | 1 | Take logarithms of both sides: t/5730 = log(0.35)/log(0.5). Calculate  | 1.5146 | 1.5146 | ok |  |
+| grd-C04 | 2 | Find t in years. | 8679 | 8678.50428 | ok |  |
+| grd-C04 | 3 | Check: does 0.5^(8679/5730) ≈ 0.35? Calculate 0.5^1.515 to verify. | 1 | — | skip |  |
+| ang-A01 | 0 | Alternate angles (Z-angles) are equal. What is the alternate angle? | 65 | 65 | ok |  |
+| ang-A01 | 1 | Co-interior angles (C-angles) add up to 180°. Find the co-interior ang | 115 | 115 | ok |  |
+| ang-A02 | 0 | Find the sum of interior angles of a hexagon using (n − 2) × 180°. | 720 | 720 | ok |  |
+| ang-A02 | 1 | Divide by the number of sides to get one interior angle. | 120 | 120 | ok |  |
+| ang-B01 | 0 | Use the formula: sum = (n − 2) × 180. Set equal to 1260. | 7 | — | skip |  |
+| ang-B01 | 1 | Solve for n. | 9 | 9 | ok |  |
+| ang-A03 | 0 | What do the angles of a triangle sum to? | 180 | — | skip |  |
+| ang-A03 | 1 | Find x. | 65 | 65 | ok |  |
 | ang-A04 | 0 | Use the formula: number of sides = 360° ÷ exterior angle. | 9 | 9 | ok |  |
 | ang-A04 | 1 | What is the interior angle of this polygon? | 140 | 140 | ok |  |
+| ang-A05 | 0 | How many sides does an octagon have? | 8 | — | skip |  |
+| ang-A05 | 1 | Use the formula (n − 2) × 180°. Calculate the angle sum. | 1080 | 1080 | ok |  |
+| ang-B02 | 0 | Form an equation using the fact that angles in a triangle sum to 180°. | 150 | — | skip |  |
+| ang-B02 | 1 | Find x. | 25 | 25 | ok |  |
+| ang-B02 | 2 | Find the largest angle. | 75 | 75 | ok |  |
+| ang-B03 | 0 | Use the exterior angle theorem: 4y + 3y = 112. Find y. | 16 | 16 | ok |  |
+| ang-B03 | 1 | Find the first interior angle: 4y. | 64 | 64 | ok |  |
+| ang-B03 | 2 | Find the second interior angle: 3y. | 48 | 48 | ok |  |
+| ang-B04 | 0 | Find the exterior angle of a regular nonagon. | 40 | 40 | ok |  |
+| ang-B04 | 1 | Find the interior angle. | 140 | 140 | ok |  |
+| ang-B04 | 2 | Verify using the interior angle sum formula. | 1 | — | skip |  |
+| ang-B05 | 0 | Use the property of alternate angles to form an equation and solve it. | 10 | 10 | ok |  |
+| ang-B05 | 1 | Calculate the angle using 3x + 5. | 35 | 35 | ok |  |
+| ang-B05 | 2 | Verify: does 5x−15 also equal 35°? | 1 | — | skip |  |
+| ang-B06 | 0 | What is the sum of interior angles of a pentagon? | 540 | 540 | ok |  |
+| ang-B06 | 1 | Form and simplify the equation. | 210 | — | skip |  |
+| ang-B06 | 2 | Find x. | 42 | 42 | ok |  |
+| ang-C01 | 0 | Find the mean of the angles in the arithmetic progression. | 120 | 120 | ok |  |
+| ang-C01 | 1 | Express the sum of angles two ways. Set n×120 = (n−2)×180. Expand the  | 360 | — | skip |  |
+| ang-C01 | 2 | Find n. | 6 | 6 | ok |  |
+| ang-C01 | 3 | Verify: sum of interior angles of a hexagon. | 720 | 720 | ok |  |
+| ang-C02 | 0 | Form an equation using the angle sum of a quadrilateral (360°) and sol | 60 | 60 | ok |  |
+| ang-C02 | 1 | Find ∠A = x + 15. | 75 | 75 | ok |  |
+| ang-C02 | 2 | Find ∠B = 2x. | 120 | 120 | ok |  |
+| ang-C02 | 3 | Find ∠D = 2x − 40. | 80 | 80 | ok |  |
+| ang-C03 | 0 | Let the exterior angle = E°. Write an equation using interior + exteri | 30 | 30 | ok |  |
+| ang-C03 | 1 | Find the number of sides: n = 360 ÷ E. | 12 | 12 | ok |  |
+| ang-C03 | 2 | What is the interior angle? | 150 | 150 | ok |  |
+| ang-C03 | 3 | Verify using (n−2)×180÷n. | 150 | 150 | ok |  |
+| ang-C04 | 0 | Apply the exterior angle theorem: exterior = sum of two non-adjacent i | 50 | — | skip |  |
+| ang-C04 | 1 | Find x. | 25 | 25 | ok |  |
+| ang-C04 | 2 | Find the exterior angle at R. | 135 | 135 | ok |  |
+| ang-C04 | 3 | Find the interior angle at R and verify angles in the triangle sum to  | 45 | 45 | ok |  |
+| shp-A01 | 0 | Find the scale factor: longer side of large ÷ corresponding side of sm | 3 | 3 | ok |  |
+| shp-A01 | 1 | Find the other sides of the larger triangle. Enter the longer of the t | 12 | 12 | ok |  |
+| shp-A02 | 0 | Which congruence condition applies when all three sides are equal? | 0 | — | skip |  |
+| shp-B01 | 0 | Find the length ratio from the area ratio. Area ratio = (length ratio) | 5 | — | skip |  |
+| shp-B01 | 1 | Use the length ratio to find the larger perimeter. | 40 | 40 | ok |  |
+| shp-A03 | 0 | What is the name of the congruence condition when two sides and the in | 0 | — | skip |  |
+| shp-A03 | 1 | Are the triangles congruent? Enter 1 for yes. | 1 | — | skip |  |
+| shp-A04 | 0 | The area scale factor = (length scale factor)². Calculate it. | 16 | 16 | ok |  |
+| shp-A04 | 1 | If the smaller shape has area 5 cm², find the area of the larger shape | 80 | 80 | ok |  |
+| shp-A05 | 0 | Find the length scale factor. | 3 | 3 | ok |  |
+| shp-A05 | 1 | Find the width of the larger rectangle. | 9 | 9 | ok |  |
+| shp-B02 | 0 | Find the scale factor from triangle ABC to triangle ADE: AD ÷ AB. | 0.4 | 0.4 | ok |  |
+| shp-B02 | 1 | Find DE using the scale factor. | 6 | 6 | ok |  |
+| shp-B02 | 2 | State the theorem used. | 1 | — | skip |  |
+| shp-B03 | 0 | Find the length scale factor from the volume ratio. Volume ratio = (le | 0 | — | skip |  |
+| shp-B03 | 1 | Find the surface area ratio. Area ratio = (length SF)². | 25 | — | skip |  |
+| shp-B03 | 2 | If the smaller solid has surface area 63 cm², find the larger solid's  | 175 | 175 | ok |  |
+| shp-B04 | 0 | Find the length scale factor. | 0 | — | skip |  |
+| shp-B04 | 1 | Find the volume scale factor = (length SF)³. | 0 | — | skip |  |
+| shp-B04 | 2 | Find the volume of the larger cone, to 1 decimal place. | 523.6 | 523.6 | ok |  |
+| shp-B05 | 0 | Find the area scale factor. | 0 | — | skip |  |
+| shp-B05 | 1 | Find the length scale factor = √(area SF). | 0 | — | skip |  |
+| shp-B05 | 2 | Find the corresponding side of the larger triangle. | 10 | 10 | ok |  |
+| shp-B06 | 0 | Convert heights to the same unit. Find the length scale factor. | 250 | 250 | ok |  |
+| shp-B06 | 1 | Find the volume scale factor = SF³. | 15625000 | 15625000 | ok |  |
+| shp-B06 | 2 | Find the volume of the real building in cm³, then convert to m³. | 2500 | 2500 | ok |  |
+| shp-C01 | 0 | Find the area scale factor. | 0 | — | skip |  |
+| shp-C01 | 1 | Find the length scale factor. | 0 | — | skip |  |
+| shp-C01 | 2 | Find the volume scale factor. | 0 | — | skip |  |
+| shp-C01 | 3 | Find the volume of the smaller pyramid. | 108 | 108 | ok |  |
 | shp-C02 | 0 | State the equal angles from the parallel lines AB and CD. | 1 | 1 | skip |  |
 | shp-C02 | 1 | State the equal sides. | 1 | 1 | skip |  |
 | shp-C02 | 2 | Which congruence condition applies? | 0 | 0 | skip |  |
 | shp-C02 | 3 | State the conclusion. | 1 | 1 | skip |  |
+| shp-C03 | 0 | Find the length scale factor from triangle ADE to triangle ABC. | 0 | — | skip |  |
+| shp-C03 | 1 | Find the area scale factor. | 0 | — | skip |  |
+| shp-C03 | 2 | Find the area of triangle ABC. | 64 | 64 | ok |  |
+| shp-C03 | 3 | Find the area of trapezium BCED. | 39 | 39 | ok |  |
+| shp-C04 | 0 | Find the length scale factor. | 2.5 | 2.5 | ok |  |
+| shp-C04 | 1 | (a) Find the surface area of the larger cylinder. Area SF = SF². | 600 | 600 | ok |  |
+| shp-C04 | 2 | (b) Find the volume scale factor = SF³. | 0 | — | skip |  |
+| shp-C04 | 3 | Express the volume ratio (smaller : larger) in the form a : b. | 125 | — | skip |  |
+| av-A01 | 0 | Use the formula: A = πr². Enter the number in front of π. | 36 | 36 | ok |  |
+| av-A02 | 0 | Area of the circular cross-section: A = πr². | 50.24 | 50.24 | ok |  |
+| av-A02 | 1 | Volume = area × height. | 502.4 | 502.4 | ok |  |
+| av-B01 | 0 | Curved surface area = πrl. Find l (slant height) and calculate. | 204.1 | 204.1 | ok |  |
+| av-B01 | 1 | Base area = πr². | 78.5 | 78.5 | ok |  |
+| av-B01 | 2 | Total surface area = curved + base. | 282.6 | 282.6 | ok |  |
+| av-A03 | 0 | Use the formula: Area = ½ × (a + b) × h. | 50 | 50 | ok |  |
+| av-A04 | 0 | Use the formula: V = (4/3)πr³. Enter the number in front of π. | 36 | 36 | ok |  |
+| av-A05 | 0 | Use: arc length = (angle/360) × 2πr. | 12.56 | 12.56 | ok |  |
+| av-B02 | 0 | Find the area of the square base. | 36 | 36 | ok |  |
+| av-B02 | 1 | Use: Volume of pyramid = (1/3) × base area × height. | 96 | 96 | ok |  |
+| av-B02 | 2 | If another pyramid has the same base but double the height, what is it | 192 | 192 | ok |  |
+| av-B03 | 0 | (a) Arc length = (angle/360) × 2πr. Enter the number in front of π. | 6 | 6 | ok |  |
+| av-B03 | 1 | (b) Area of sector = (angle/360) × πr². Enter the number in front of π | 27 | 27 | ok |  |
+| av-B03 | 2 | Find the perimeter of the sector (arc + 2 radii). Answer in terms of π | 18 | — | skip |  |
+| av-B04 | 0 | Use: Surface area = 4πr². Enter the number in front of π. | 100 | 100 | ok |  |
+| av-B04 | 1 | Calculate 100π to 3 significant figures. | 314 | 314 | ok |  |
+| av-B04 | 2 | What would the surface area be if the radius were doubled to 10 cm? Gi | 1260 | 1260 | ok |  |
 | av-B05 | 0 | Find the volume of the cylinder. | 301.44 | 301.44 | ok |  |
 | av-B05 | 1 | Find the volume of the hemisphere (half a sphere). | 134 | 133.973333 | ok |  |
 | av-B05 | 2 | Find the total volume. | 435.44 | 435.413333 | ok |  |
+| av-B06 | 0 | Find the area of the rectangular lawn. | 96 | 96 | ok |  |
+| av-B06 | 1 | Find the area of the circular pond. (Diameter = 4 m, so radius = 2 m.) | 12.56 | 12.56 | ok |  |
+| av-B06 | 2 | Find the remaining area of lawn. | 83.44 | 83.44 | ok |  |
+| av-C01 | 0 | Find the slant height of the cone using Pythagoras. | 10 | 10 | ok |  |
+| av-C01 | 1 | Find the curved surface area of the cone: πrl. | 188.4 | 188.4 | ok |  |
+| av-C01 | 2 | Find the curved surface area of the cylinder (no top or bottom, just t | 376.8 | 376.8 | ok |  |
+| av-C01 | 3 | Add the base circle of the cylinder and find total SA. (Only one circu | 678.24 | 678.24 | ok |  |
+| av-C02 | 0 | Find the volume of the large sphere in terms of π. Enter the number in | 288 | 288 | ok |  |
+| av-C02 | 1 | Find the volume of one small sphere in terms of π. Enter the number in | 4.5 | 4.5 | ok |  |
+| av-C02 | 2 | Calculate the number of small spheres. | 64 | 64 | ok |  |
+| av-C02 | 3 | Verify using scale factor: radius ratio = 6/1.5 = 4. Volume ratio = 4³ | 64 | 64 | ok |  |
+| av-C03 | 0 | Find the area of the sector. | 188.4 | 188.4 | ok |  |
+| av-C03 | 1 | Find the area of the triangle formed by the two radii and the chord. U | 36 | 36 | ok |  |
+| av-C03 | 2 | Find the area of the segment. | 152.4 | 152.4 | ok |  |
+| av-C03 | 3 | Check: is the segment larger than half the circle's area? Full circle  | 1 | — | skip |  |
+| av-C04 | 0 | Find the volume of the large cone. | 339.12 | 339.12 | ok |  |
+| av-C04 | 1 | Find the volume of the small cone. | 12.56 | 12.56 | ok |  |
+| av-C04 | 2 | Find the volume of the frustum. | 326.56 | 326.56 | ok |  |
+| av-C04 | 3 | Verify the cones are similar: check ratio of radii = ratio of heights. | 3 | 3 | ok |  |
+| tr-A01 | 0 | Compare coordinates. The x-coordinates are the same; the y-coordinates | 0 | — | skip |  |
+| tr-A02 | 0 | Multiply each coordinate by the scale factor 2. | 8 | — | skip |  |
+| tr-B01 | 0 | Check if it could be a rotation. Does the distance from the origin sta | 0 | — | skip |  |
+| tr-B01 | 1 | (x, y) → (−y, x) corresponds to which rotation about the origin? | 90 | 90 | ok |  |
 | tr-A03 | 0 | Add the x-components: 3 + (−5). | -2 | -2 | ok |  |
 | tr-A03 | 1 | Add the y-components: −2 + 4. | 2 | 2 | ok |  |
+| tr-A04 | 0 | When reflecting in the y-axis, which coordinate changes sign? | 0 | — | skip |  |
+| tr-A04 | 1 | Apply to all vertices. Give the x-coordinate of the image of (5, 1). | -5 | -5 | ok |  |
+| tr-A05 | 0 | 180° rotation about origin: (x, y) → (−x, −y). What is the x-coordinat | -4 | -4 | ok |  |
 | tr-B02 | 0 | To enlarge from a non-origin centre, find the vector from centre to ea | 5 | 5 | ok |  |
 | tr-B02 | 1 | Find image of B(3, 1). | 11 | 11 | ok |  |
 | tr-B02 | 2 | Find the image of C(1, 3). Enter its y-coordinate. | 11 | 11 | ok |  |
+| tr-B03 | 0 | What has happened to the size of the shape? | 0.5 | 0.5 | ok |  |
+| tr-B03 | 1 | What type of transformation is this? | 0 | — | skip |  |
+| tr-B03 | 2 | Find the centre of enlargement. Extend lines PP', QQ' — they meet at t | 0 | — | skip |  |
+| tr-B04 | 0 | Reflection in y = x: what rule maps (x, y) to the image? | 0 | — | skip |  |
+| tr-B04 | 1 | Find the image of (2, 3). Enter its x-coordinate. | 3 | 3 | ok |  |
+| tr-B04 | 2 | Find the images of (4,3) and (4,6). Enter the y-coordinate of the imag | 4 | 4 | ok |  |
+| tr-B05 | 0 | Find the vector from centre (1,1) to point (5,2). | 0 | — | skip |  |
+| tr-B05 | 1 | 90° clockwise rotation: (a, b) → (b, −a). Apply to (4, 1). Enter the s | -4 | -4 | ok |  |
+| tr-B05 | 2 | Add the rotated vector to the centre (1,1). Find the image. Enter its  | -3 | -3 | ok |  |
+| tr-B06 | 0 | Reflect A in the x-axis: (x,y)→(x,−y). Enter the y-coordinate of the i | -2 | -2 | ok |  |
+| tr-B06 | 1 | Translate B by (−4, 1). Apply to (1, 0). Enter the x-coordinate. | -3 | -3 | ok |  |
+| tr-B06 | 2 | Apply the translation to (3, 0). Enter the x-coordinate. | -1 | -1 | ok |  |
+| tr-B06 | 3 | Apply the translation to (3, −2). Enter the y-coordinate of the final  | -1 | -1 | ok |  |
+| tr-C01 | 0 | Apply SF = −2: multiply each coordinate by −2. Enter the x-coordinate  | 4 | 4 | ok |  |
+| tr-C01 | 1 | How does the size change? (What is \|SF\|?) | 2 | 2 | ok |  |
+| tr-C01 | 2 | Negative SF also causes a rotation. By how many degrees? | 180 | 180 | ok |  |
+| tr-C01 | 3 | Are the original triangle and its image on the same or opposite sides  | 1 | — | skip |  |
+| tr-C02 | 0 | Apply M to (3, 1): multiply [[0,−1],[1,0]] × (3,1). New x = 0×3 + (−1) | -1 | -1 | ok |  |
+| tr-C02 | 1 | What rotation does M represent? (−1, 3) from (3, 1)? | 90 | 90 | ok |  |
+| tr-C02 | 2 | Apply M to P'=(−1,3) to get P''. Enter the x-coordinate of P''. | -3 | -3 | ok |  |
+| tr-C02 | 3 | M² represents 90°+90°=180° rotation. Check: does (3,1)→(−3,−1) match 1 | 1 | — | skip |  |
+| tr-C03 | 0 | Find B: reflect A in y=x. Apply (x,y)→(y,x). | 0 | — | skip |  |
+| tr-C03 | 1 | Find C: reflect B in x-axis. Apply (x,y)→(x,−y). | 0 | — | skip |  |
+| tr-C03 | 2 | The rule (x,y)→(y,−x) maps (2,1) to (1,−2). It is a rotation about the | 90 | 90 | ok |  |
+| tr-C03 | 3 | Verify with second vertex: does (4,1)→(1,−4) under 90° CW? | 1 | — | skip |  |
+| tr-C04 | 0 | Find vertices of B (enlarged by SF=2 from (−1,0)). | 0 | — | skip |  |
+| tr-C04 | 1 | Find vertices of C (reflected in x=2). Rule: x→ 2×2−x = 4−x. | 0 | — | skip |  |
+| tr-C04 | 2 | Find the side length of base in A: from (1,2) to (3,2). Length = ? | 2 | 2 | ok |  |
+| tr-C04 | 3 | Are B and C congruent to each other? Enter 1 for yes, 2 for no. | 2 | — | skip |  |
+| pyth-A01 | 0 | Use Pythagoras: a² + b² = c². Calculate a² + b². | 169 | 169 | ok |  |
+| pyth-A01 | 1 | Find c = √169. | 13 | 13 | ok |  |
+| pyth-A02 | 0 | Use a² = c² − b². Calculate 17² − 8². | 225 | 225 | ok |  |
+| pyth-A02 | 1 | Find a = √225. | 15 | 15 | ok |  |
+| pyth-B01 | 0 | Find the diagonal of the base (8 × 6 rectangle) using Pythagoras. | 10 | 10 | ok |  |
+| pyth-B01 | 1 | Now use Pythagoras again with the base diagonal and height: √(10² + 3² | 10.44 | 10.440307 | ok |  |
+| pyth-A03 | 0 | Check if a² + b² = c² (where c is the longest side). | 625 | 625 | ok |  |
+| pyth-A03 | 1 | Calculate 25². Does it equal 7² + 24²? | 625 | 625 | ok |  |
+| pyth-A04 | 0 | Find the horizontal and vertical distances. | 0 | — | skip |  |
+| pyth-A04 | 1 | Use Pythagoras: distance = √(6² + 8²). | 10 | 10 | ok |  |
+| pyth-A05 | 0 | Use a² + b² = c². Calculate 9² + 40². | 1681 | 1681 | ok |  |
+| pyth-A05 | 1 | Find c = √1681. | 41 | 41 | ok |  |
+| pyth-B02 | 0 | The perpendicular from apex bisects the base. What is half the base? | 5 | 5 | ok |  |
+| pyth-B02 | 1 | Form a right triangle: hypotenuse = 13, base = 5. Use Pythagoras to fi | 144 | — | skip |  |
+| pyth-B02 | 2 | Find h. | 12 | 12 | ok |  |
 | pyth-B03 | 0 | The perpendicular from the centre bisects the chord. What is half the  | 6 | 6 | ok |  |
 | pyth-B03 | 1 | Form a right triangle: hypotenuse (radius) = 10, one leg = 6. Find the | 64 | 64 | skip |  |
 | pyth-B03 | 2 | Find d. | 8 | 8 | ok |  |
+| pyth-B04 | 0 | Use Pythagoras: diagonal² = length² + width². Find length². | 225 | 225 | ok |  |
+| pyth-B04 | 1 | Find the length. | 15 | 15 | ok |  |
+| pyth-B04 | 2 | Find the area. | 120 | 120 | ok |  |
+| pyth-B05 | 0 | Use Pythagoras: diagonal² = 7² + 7². | 98 | — | skip |  |
+| pyth-B05 | 1 | Simplify √98 as a surd. | 0 | — | skip |  |
+| pyth-B05 | 2 | Give the decimal approximation to 2 decimal places. | 9.9 | 9.9 | ok |  |
+| pyth-B06 | 0 | The path forms a right triangle. Identify the two legs. | 0 | — | skip |  |
+| pyth-B06 | 1 | Use Pythagoras: d² = 15² + 8². | 289 | — | skip |  |
+| pyth-B06 | 2 | Find d. | 17 | 17 | ok |  |
+| pyth-C01 | 0 | Find half the diagonal of the square base using Pythagoras. Base diago | 0 | — | skip |  |
+| pyth-C01 | 1 | Form a right triangle: slant edge (hyp) = 11, base = 4√2. Find h². | 89 | 89 | ok |  |
+| pyth-C01 | 2 | Find h to 2 decimal places. | 9.43 | 9.43 | ok |  |
+| pyth-C01 | 3 | Verify: 9.43² + 32 ≈ 121. Calculate 9.43². | 89 | 88.9249 | ok |  |
 | pyth-C02 | 0 | Find the distance CQ from C(3,4) to Q(7,7). | 5 | 5 | ok |  |
 | pyth-C02 | 1 | Compare CQ with the radius. | 0 | 0 | skip |  |
 | pyth-C02 | 2 | Is R(0, 0) inside or outside the circle? Enter the distance CR. | 5 | 5 | ok |  |
 | pyth-C02 | 3 | Is S(6, 8) inside or outside? Find CS. | 5 | 5 | ok |  |
+| pyth-C03 | 0 | Apply Pythagoras: x² + (x + 7)² = (x + 8)². Expand both brackets. | 0 | — | skip |  |
+| pyth-C03 | 1 | Collect all the terms on one side to get a quadratic equal to 0. | 0 | — | skip |  |
+| pyth-C03 | 2 | Factorise x² − 2x − 15 = 0. | 0 | — | skip |  |
+| pyth-C03 | 3 | Solve. A length must be positive, so find the positive value of x. | 5 | 5 | ok |  |
+| pyth-C04 | 0 | Find the initial height up the wall (foot at 1.5 m from wall). | 4.98 | 4.978956 | ok |  |
+| pyth-C04 | 1 | Find the new height up the wall (foot at 2.3 m from wall). | 4.66 | 4.66369 | ok |  |
+| pyth-C04 | 2 | How far has the top of the ladder slid down? | 0.32 | 0.315266 | ok |  |
+| pyth-C04 | 3 | The foot moved out by 2.3−1.5=0.8 m, but the top only slid 0.32 m. Whi | 1 | — | skip |  |
+| trig-A01 | 0 | Which trig ratio uses opposite and hypotenuse? Calculate it as a decim | 0.7 | 0.7 | ok |  |
+| trig-A01 | 1 | Find θ using the inverse sine: θ = sin⁻¹(0.7). | 44.4 | 44.427004 | ok |  |
+| trig-A02 | 0 | Which trig ratio uses opposite and adjacent? | 0 | — | skip |  |
+| trig-A02 | 1 | Calculate: 12 × tan 35°. | 8.4 | 8.40249 | ok |  |
 | trig-B01 | 0 | Identify: hypotenuse = 6 m, adjacent = 2.5 m. Which ratio? | 0.417 | 0.416667 | ok |  |
 | trig-B01 | 1 | Find θ = cos⁻¹(2.5/6). | 65.4 | 65.375682 | ok |  |
+| trig-A03 | 0 | Write sin x = opposite/hypotenuse. What fraction do you get? | "0.6" | 0.6 | ok |  |
+| trig-A03 | 1 | Use sin⁻¹ to find angle x. Give your answer in degrees to 2 d.p. | "36.87" | 36.87 | ok |  |
+| trig-A04 | 0 | Write cos x = adjacent/hypotenuse. What decimal do you get? | "0.3846" | 0.384615 | ok |  |
+| trig-A04 | 1 | Use cos⁻¹ to find x in degrees to 2 d.p. | "67.38" | 67.38 | ok |  |
+| trig-A05 | 0 | Which trig ratio links opposite and adjacent? Enter tan 40° to 4 d.p. | "0.8391" | 0.8391 | ok |  |
+| trig-A05 | 1 | Calculate 7 × tan 40° to 2 d.p. | "5.87" | 5.87 | ok |  |
+| trig-B02 | 0 | Draw a diagram. Label the ladder (hypotenuse) and the angle with the g | "6" | 6 | ok |  |
+| trig-B02 | 1 | Write the equation: sin 72° = height/6. Rearrange for height. | "5.71" | 5.706339 | ok |  |
+| trig-B02 | 2 | Calculate 6 × sin 72° to 2 d.p. | "5.71" | 5.71 | ok |  |
+| trig-B03 | 0 | In this right-angled triangle, the height is opposite the 38° angle. T | "20" | 20 | ok |  |
+| trig-B03 | 1 | Rearrange tan 38° = height/20 to find height. | "15.63" | 15.625713 | ok |  |
+| trig-B03 | 2 | Calculate 20 × tan 38° to 2 d.p. | "15.63" | 15.63 | ok |  |
+| trig-B04 | 0 | From angle P: PR is the adjacent side and PQ is the hypotenuse. Enter  | "7" | 7 | ok |  |
+| trig-B04 | 1 | Write cos P = 7/11. What decimal is this? | "0.6364" | 0.636364 | ok |  |
+| trig-B04 | 2 | Use cos⁻¹ to find angle P in degrees to 2 d.p. | "50.48" | 50.48 | ok |  |
+| trig-B05 | 0 | A bearing of 035° means 35° clockwise from north. The north component  | "9.83" | 9.83 | ok |  |
+| trig-B05 | 1 | Which trig function gives the east component? Calculate it to 2 d.p. | "6.88" | 6.88 | ok |  |
+| trig-B05 | 2 | State both components. Enter the north component in km. | "9.83" | 9.83 | ok |  |
+| trig-B06 | 0 | Use Pythagoras to find AC. AC² = AB² + BC². Calculate AC. | "15" | 15 | ok |  |
+| trig-B06 | 1 | Now find angle A. From angle A, BC is opposite and AB is adjacent. Cal | "1.3333" | 1.333333 | ok |  |
+| trig-B06 | 2 | Use tan⁻¹ to find angle A in degrees to 2 d.p. | "53.13" | 53.13 | ok |  |
+| trig-C01 | 0 | Let the height of the flagpole = h. Let the distance from B to the bas | "h/(h+10)" | — | skip |  |
+| trig-C01 | 1 | Since tan 45° = 1, d = h. Substitute into the second equation and solv | "h(1-tan30)" | — | skip |  |
+| trig-C01 | 2 | Rearrange to find h: h(1 − tan 30°) = 10 tan 30°. Calculate h. | "13.66" | 13.660254 | ok |  |
+| trig-C01 | 3 | State the height of the flagpole to 2 d.p. | "13.66" | 13.66 | ok |  |
+| trig-C02 | 0 | Find AC using Pythagoras. AB = 10, BC = 7, right angle at B. | "12.21" | 12.206556 | ok |  |
+| trig-C02 | 1 | Find angle ACB. From C, BC = 7 (adjacent) and AC ≈ 12.21 (hypotenuse). | "55.01" | 55.00798 | ok |  |
+| trig-C02 | 2 | CD bisects angle ACB, so angle BCD = 55.01° ÷ 2 ≈ 27.50°. Triangle BCD | "3.64" | 3.644589 | ok |  |
+| trig-C02 | 3 | D lies on AB, so AD = AB − BD. Calculate AD to 2 d.p. | "6.36" | 6.355411 | ok |  |
+| trig-C03 | 0 | Let h = height of cliff, d = distance from Y to cliff base. Write equa | "h=d·tan35" | — | skip |  |
+| trig-C03 | 1 | Substitute h = d·tan 35° into tan 20° = h/(d+50) and rearrange to find | "50tan20" | — | skip |  |
+| trig-C03 | 2 | Calculate d = 50·tan 20°/(tan 35° − tan 20°). Give your answer to 2 d. | "54.12" | 54.12 | ok |  |
+| trig-C03 | 3 | Find height h = d × tan 35° to 2 d.p. | "37.90" | 37.9 | ok |  |
+| trig-C04 | 0 | Apply the cosine rule: XZ² = XY² + YZ² − 2·XY·YZ·cos(XYZ). Substitute  | "71.87" | 71.869381 | ok |  |
+| trig-C04 | 1 | Calculate XZ² = 185 − 176·cos 50°, then find XZ to 2 d.p. | "8.48" | 8.48 | ok |  |
+| trig-C04 | 2 | Use the sine rule: sin(YXZ)/YZ = sin(XYZ)/XZ. Find sin(YXZ) to 4 d.p.  | "0.9940" | 0.993973 | ok |  |
+| trig-C04 | 3 | Find angle YXZ = sin⁻¹(0.9940) to 2 d.p. | "83.71" | 83.706427 | ok |  |
+| cth-A01 | 0 | The central angle theorem: central angle = 2 × inscribed angle. | 76 | 76 | ok |  |
+| cth-B01 | 0 | Which theorem applies to opposite angles in a cyclic quadrilateral? | 0 | — | skip |  |
+| cth-B01 | 1 | Find angle C. | 105 | 105 | ok |  |
+| cth-A02 | 0 | The angle at the centre is twice the angle at the circumference. Use t | "55" | 55 | ok |  |
+| cth-A02 | 1 | Calculate angle ACB. | "55" | 55 | ok |  |
+| cth-A03 | 0 | Opposite angles in a cyclic quadrilateral add up to how many degrees? | "180" | 180 | ok |  |
+| cth-A03 | 1 | Calculate angle BCD. | "102" | 102 | ok |  |
+| cth-A04 | 0 | What is the angle ACB? (AB is a diameter — use the angle in a semicirc | "90" | 90 | ok |  |
+| cth-A04 | 1 | Use angles in a triangle to find angle ABC. | "56" | 56 | ok |  |
+| cth-A05 | 0 | What is the angle between a radius and a tangent at the point of conta | "90" | 90 | ok |  |
+| cth-A05 | 1 | Use Pythagoras to find OP. OT = 5, TP = 12. | "13" | 13 | ok |  |
+| cth-B02 | 0 | Triangle OAB is isosceles. What is angle OBA? | "25" | 25 | ok |  |
+| cth-B02 | 1 | Find angle AOB (the angle at the centre). | "130" | 130 | ok |  |
+| cth-B02 | 2 | Find angle ACB using the angle at the centre theorem. | "65" | 65 | ok |  |
+| cth-B03 | 0 | The intersecting chords theorem says AX × XB = CX × XD. Calculate AX × | "36" | 36 | ok |  |
+| cth-B03 | 1 | Write the equation: 4 × 9 = 6 × XD. Solve for XD. | "6" | 6 | ok |  |
+| cth-B03 | 2 | State the final answer for XD. | "6" | 6 | ok |  |
 | cth-B04 | 0 | Name the theorem that connects a tangent-chord angle to an angle in th | "alternate segment theorem" | — | skip |  |
 | cth-B04 | 1 | Use the alternate segment theorem to find angle ACB. | "65" | 65 | ok |  |
 | cth-B04 | 2 | State your answer clearly with the theorem used. | "65" | 65 | ok |  |
-| cth-C02 | 0 | In the first circle, chord CB subtends 64° at the circumference. So an | "64 + 71 + angle CBD = 180" | — | skip |  |
+| cth-B05 | 0 | Which circle theorem links angle PQR (at circumference) to angle POR ( | "angle at centre = 2 x angle at circumference" | — | skip |  |
+| cth-B05 | 1 | Calculate angle POR. | "70" | 70 | ok |  |
+| cth-B05 | 2 | State your final answer for angle POR. | "70" | 70 | ok |  |
+| cth-B06 | 0 | Which theorem tells us about angles subtended by the same chord in the | "angles in same segment are equal" | — | skip |  |
+| cth-B06 | 1 | Compare angle ABD and angle ACD. What do you notice? | "not equal" | — | skip |  |
+| cth-B06 | 2 | State your conclusion: are A, B, C, D concyclic? Explain why. | "not concyclic" | — | skip |  |
+| cth-C01 | 0 | Triangle OBC is isosceles (OB = OC = radii). Find angle BOC. | "140" | 140 | ok |  |
+| cth-C01 | 1 | Triangle OAC is isosceles (OA = OC = radii). Find angle AOC. | "110" | 110 | ok |  |
+| cth-C01 | 2 | Find angle BOA using angles around point O (total = 360°). | "110" | 110 | ok |  |
+| cth-C01 | 3 | Angle BAC stands on arc BC. Use the angle at the centre theorem to fin | "70" | 70 | ok |  |
+| cth-C02 | 0 | C, A, D lie on a straight line, so C, B and D form a triangle. Angle B | "64 + 71 + angle CBD = 180" | — | skip |  |
 | cth-C02 | 1 | Calculate 64° + 71°. | "135" | 135 | ok |  |
 | cth-C02 | 2 | Find angle CBD. | "45" | 45 | ok |  |
 | cth-C02 | 3 | State your final answer for angle CBD. | "45" | 45 | ok |  |
+| cth-C03 | 0 | What is the angle between radius OP and the tangent at P? | "90" | 90 | ok |  |
+| cth-C03 | 1 | Use Pythagoras in triangle OPT to find PT. OP = 5, OT = 13. | "12" | 12 | ok |  |
+| cth-C03 | 2 | Find angle POT using trigonometry. Which ratio uses PT (opposite) and  | "67.38" | 67.380135 | ok |  |
+| cth-C03 | 3 | State both answers: PT and angle POT. Enter angle POT. | "67.38" | 67.380135 | ok |  |
+| cth-C04 | 0 | State the two pairs of opposite angles in cyclic quadrilateral ABCD. | "4x+40=180" | — | skip |  |
+| cth-C04 | 1 | Solve (3x + 10) + (x + 30) = 180 to find x. | "35" | 35 | ok |  |
+| cth-C04 | 2 | Check with the other pair: B + D = (2×35 + 5) + (4×35 − 35). Calculate | "180" | 180 | ok |  |
+| cth-C04 | 3 | With x = 35, find all four angles. Enter angle D. | "105" | 105 | ok |  |
+| vec-A01 | 0 | Add the x-components and y-components separately. Enter the y-componen | 6 | 6 | ok |  |
+| vec-B01 | 0 | Find the vector AB in terms of a and b. | 0 | — | skip |  |
+| vec-B01 | 1 | AM = ½AB. Find OM = OA + AM. | 0 | — | skip |  |
+| vec-A02 | 0 | Calculate a + b, where a = (3, 5) and b = (−1, 2). | "(2,7)" | — | skip |  |
+| vec-A02 | 1 | Calculate a − b. | "(4,3)" | — | skip |  |
+| vec-A03 | 0 | Write \|m\| = √(6² + (−4)²). Calculate \|m\| to 2 d.p. | "7.21" | 7.21 | ok |  |
+| vec-A03 | 1 | Calculate \|m\| to 2 d.p. | "7.21" | 7.21 | ok |  |
 | vec-A04 | 0 | Write the formula for AB in terms of OA and OB. | "OB - OA" | — | skip |  |
 | vec-A04 | 1 | Calculate AB = OB − OA = (5, 1) − (2, 3). | "(3,-2)" | (3,-2) | skip |  |
 | vec-A05 | 0 | Multiply each component of a = (4, 2) by 3. | "(12,6)" | (12,6) | skip |  |
 | vec-A05 | 1 | State the final answer for 3a. | "(12,6)" | (12,6) | skip |  |
+| vec-B02 | 0 | In parallelogram OABC, what is vector OB? (Tip: OB = OA + OC in a para | "a + c" | — | skip |  |
+| vec-B02 | 1 | M is the midpoint of AB. Write OM = OA + AM. | "a + c/2" | — | skip |  |
+| vec-B02 | 2 | State the final expression for OM. | "a + (1/2)c" | — | skip |  |
 | vec-C03 | 0 | Find vector AB = OB − OA using the given column vectors. | "(-2,3)" | (-2,3) | skip |  |
 | vec-C03 | 1 | Find \|AB\| to 2 d.p. | "3.61" | 3.61 | ok |  |
 | vec-C03 | 2 | Write the unit vector in the direction of AB (to 3 d.p.). | "(-0.555, 0.832)" | (-0.555, 0.832) | skip |  |

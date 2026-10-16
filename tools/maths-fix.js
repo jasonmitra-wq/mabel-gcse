@@ -5,7 +5,10 @@
  *
  *   node tools/maths-fix.js <fixes.json> "<log heading>"
  *
- * fixes.json: [{ id, step, prompt?, answer?, tolerance?, reason }]
+ * fixes.json: [{ id, step, prompt?, answer?, tolerance?, unit?, reason }]
+ *          or  [{ id, question: [old, new], reason }] — replace old with new in the question text
+ *          or  [{ id, block: "<new source>", reason }] — replace the whole question object
+ *              (from its `id:` line to the line before its closing `},`) with new source
  *          or  [{ id, text: [old, new], reason }] — replace old with new in every
  *              hint, explanation, displayAnswer and sample answer of that question
  * Only the named fields of the named step change. Source layout is kept: the
@@ -29,8 +32,9 @@ function stepRange(lines, id, step) {
   if (end < 0) end = lines.length;
   const prompts = [];
   for (let i = start; i < end; i++) {
-    if (/^\s*workedExample:/.test(lines[i])) { end = i; break; }
-    if (/^\s*prompt: /.test(lines[i])) prompts.push(i);
+    // a workedExample after the steps ends the last step; one before the steps is skipped
+    if (/^\s*workedExample:/.test(lines[i]) && prompts.length) { end = i; break; }
+    if (/^\s*\{?\s*prompt: /.test(lines[i])) prompts.push(i);
   }
   if (step >= prompts.length) throw new Error(`${id} has ${prompts.length} steps, no step ${step}`);
   return [prompts[step], step + 1 < prompts.length ? prompts[step + 1] : end];
@@ -43,6 +47,27 @@ function main() {
   const lines = fs.readFileSync(SRC, 'utf8').split('\n');
   const log = [];
   for (const f of fixes) {
+    if (f.question) {
+      const i = lines.findIndex((l, k) => k > lines.findIndex(m => m.includes(`id: '${f.id}'`)) && /^\s*question: /.test(l));
+      const [old, neu] = f.question;
+      if (i < 0 || !lines[i].includes(old)) throw new Error(`${f.id}: question text "${old}" not found`);
+      const before = lines[i].trim();
+      lines[i] = lines[i].split(old).join(neu);
+      log.push(`- ${f.id} question | ${f.reason}`, `  - OLD: ${before}`, `  - NEW: ${lines[i].trim()}`);
+      continue;
+    }
+    if (f.block) {
+      const start = lines.findIndex(l => l.includes(`id: '${f.id}'`));
+      if (start < 0) throw new Error(`id ${f.id} not found`);
+      const indent = lines[start].match(/^\s*/)[0].length - 2;
+      let end = start + 1;
+      while (end < lines.length && !new RegExp(`^ {${indent}}\\},?\\s*$`).test(lines[end])) end++;
+      if (end === lines.length) throw new Error(`${f.id}: end of question object not found`);
+      const old = lines.slice(start, end);
+      lines.splice(start, end - start, ...f.block.replace(/\n$/, '').split('\n'));
+      log.push(`- ${f.id} whole question | ${f.reason}`, '  - OLD:', '```js', ...old, '```', '  - NEW:', '```js', ...f.block.replace(/\n$/, '').split('\n'), '```');
+      continue;
+    }
     if (f.text) {
       const start = lines.findIndex(l => l.includes(`id: '${f.id}'`));
       if (start < 0) throw new Error(`id ${f.id} not found`);
@@ -51,7 +76,7 @@ function main() {
       const [old, neu] = f.text;
       const hits = [];
       for (let i = start; i < end; i++) {
-        if (/^\s*(prompt|question):/.test(lines[i]) || !lines[i].includes(old)) continue;
+        if (/^\s*question:/.test(lines[i]) || !lines[i].includes(old)) continue;
         hits.push(`  - line ${i + 1} OLD: ${lines[i].trim()}`);
         lines[i] = lines[i].split(old).join(neu);
         hits.push(`  - line ${i + 1} NEW: ${lines[i].trim()}`);
@@ -63,15 +88,17 @@ function main() {
     const [a, b] = stepRange(lines, f.id, f.step);
     const entry = [`- ${f.id} step ${f.step} | ${f.reason}`];
     if (f.prompt !== undefined) {
-      const m = lines[a].match(/^(\s*)prompt: (.*),\s*$/);
-      if (!m) throw new Error(`${f.id} step ${f.step}: prompt line not on one line`);
-      lines[a] = `${m[1]}prompt: ${q1(f.prompt)},`;
+      const re = /(\bprompt: )('(?:\\.|[^'\\])*'|"(?:\\.|[^"\\])*")/;
+      const m = lines[a].match(re);
+      if (!m) throw new Error(`${f.id} step ${f.step}: prompt not found`);
+      lines[a] = lines[a].replace(re, (_, k) => k + q1(f.prompt));
       entry.push(`  - prompt OLD: ${m[2]}`, `  - prompt NEW: ${q1(f.prompt)}`);
     }
-    for (const key of ['answer', 'tolerance']) {
+    for (const key of ['answer', 'tolerance', 'unit']) {
       if (f[key] === undefined) continue;
       const re = new RegExp(`(\\b${key}: )([^,]+)(,)`);
-      let i = a; while (i < b && !re.test(lines[i])) i++;
+      // on a one-line step the field follows the prompt on the same line
+      let i = a; while (i < b && !re.test(lines[i].slice(i === a ? lines[i].indexOf('prompt: ') : 0))) i++;
       const val = typeof f[key] === 'string' ? q1(f[key]) : String(f[key]);
       if (i < b) {
         const old = lines[i].match(re)[2];

@@ -11443,7 +11443,7 @@ const MathsQuestions = (() => {
           explanation: '1.06ⁿ > 4000/2500 = 1.6.'
         },
         {
-          prompt: 'Calculate 1.06⁷ and 1.06⁸ to check which bracket n falls in.',
+          prompt: 'Calculate 1.06⁸ and 1.06⁹. What is the smallest n for which 1.06ⁿ > 1.6?',
           hint1: '1.06⁷ ≈ 1.5036; 1.06⁸ ≈ 1.5938.',
           hint2: '1.06⁸ ≈ 1.5938 < 1.6. Try n=9.',
           hint3: '1.06⁹ ≈ 1.6895 > 1.6.',
@@ -11494,50 +11494,50 @@ const MathsQuestions = (() => {
       subtopic: 'rpr-growth-decay',
       band: 'C',
       marks: 4,
-      question: 'An investment of £P grows at rate r% per year. After 3 years it is worth £15 746.40. After 5 years it is worth £17 340.16. Find P and r.',
+      question: 'An investment of £P grows at rate r% per year. After 3 years it is worth £15 743.70. After 5 years it is worth £17 357.43. Find P and r.',
       steps: [
         {
           prompt: 'Write two equations using A = P(1+r)ⁿ. Divide the 5-year equation by the 3-year equation to find (1+r)².',
-          hint1: 'Equation 1: P×(1+r)³ = 15746.40. Equation 2: P×(1+r)⁵ = 17340.16. Divide E2 by E1.',
-          hint2: '(1+r)² = 17340.16/15746.40.',
-          hint3: '(1+r)² = 1.1012...',
+          hint1: 'Equation 1: P×(1+r)³ = 15743.70. Equation 2: P×(1+r)⁵ = 17357.43. Divide E2 by E1.',
+          hint2: '(1+r)² = 17357.43/15743.70.',
+          hint3: '(1+r)² = 1.1025',
           answer: 0,
           tolerance: 0,
           unit: '',
           checkType: 'skip',
-          displayAnswer: '(1+r)² = 17340.16 ÷ 15746.40 ≈ 1.1012',
-          explanation: 'Dividing eliminates P: (1+r)² = 17340.16/15746.40 ≈ 1.1012.'
+          displayAnswer: '(1+r)² = 17357.43 ÷ 15743.70 = 1.1025',
+          explanation: 'Dividing eliminates P: (1+r)² = 17357.43/15743.70 = 1.1025.'
         },
         {
           prompt: 'Find (1+r) by taking the square root, then find r (%).',
-          hint1: '1+r = √1.1012 ≈ 1.04938.',
-          hint2: 'Wait — exact answer: 17340.16/15746.40 = 1.1025 (check with clean numbers). √1.1025 = 1.05.',
+          hint1: '1+r = √1.1025 = 1.05.',
+          hint2: 'So r = 0.05.',
           hint3: 'r = 5%.',
           answer: 5,
           tolerance: 0.1,
           unit: '%',
-          explanation: '(1+r)² = 17340.16/15746.40 = 1.1025. √1.1025 = 1.05. r = 5%.'
+          explanation: '(1+r)² = 17357.43/15743.70 = 1.1025. √1.1025 = 1.05. r = 5%.'
         },
         {
-          prompt: 'Find P using P × 1.05³ = 15746.40.',
+          prompt: 'Find P using P × 1.05³ = 15743.70.',
           hint1: '1.05³ = 1.157625.',
-          hint2: 'P = 15746.40 ÷ 1.157625.',
+          hint2: 'P = 15743.70 ÷ 1.157625.',
           hint3: 'P = 13600.',
           answer: 13600,
           tolerance: 1,
           unit: '£',
-          explanation: 'P = 15746.40/1.157625 = £13 600.'
+          explanation: 'P = 15743.70/1.157625 = £13 600.'
         },
         {
-          prompt: 'Verify: does £13 600 × 1.05⁵ = £17 340.16?',
+          prompt: 'Verify: does £13 600 × 1.05⁵ = £17 357.43?',
           hint1: '1.05⁵ = 1.2762816.',
-          hint2: '13600 × 1.2762816 ≈ 17357 — round check.',
+          hint2: '13600 × 1.2762816 = 17357.43.',
           hint3: 'Enter 1 to confirm.',
           answer: 1,
           tolerance: 0,
           unit: '',
           checkType: 'skip',
-          displayAnswer: '13600 × 1.05⁵ = 13600 × 1.27628 ≈ £17 357 ≈ £17 340 ✓ (minor rounding)',
+          displayAnswer: '13600 × 1.05⁵ = 13600 × 1.27628 = £17 357.43 ✓',
           explanation: 'Verified to the nearest pound.'
         }
       ],
@@ -11549,9 +11549,9 @@ const MathsQuestions = (() => {
         ]
       },
       sampleAnswer: {
-        grade4: '(1+r)² = 17340.16/15746.40 = 1.1025. r = 5%. P = 15746.40/1.157625 = £13 600.',
-        grade6: 'Dividing gives (1+r)² = 1.1025, so r = 5%. P = 15746.40/1.05³ = £13 600.',
-        grade8: '(1+r)² = 1.1025 → r=5%. P = 15746.40/1.05³ = £13 600. Check: 13600×1.05⁵ ≈ £17 340 ✓'
+        grade4: '(1+r)² = 17357.43/15743.70 = 1.1025. r = 5%. P = 15743.70/1.157625 = £13 600.',
+        grade6: 'Dividing gives (1+r)² = 1.1025, so r = 5%. P = 15743.70/1.05³ = £13 600.',
+        grade8: '(1+r)² = 1.1025 → r=5%. P = 15743.70/1.05³ = £13 600. Check: 13600×1.05⁵ ≈ £17 340 ✓'
       },
       examinerTip: 'Divide two compound interest equations to eliminate P and find r first.',
       auditStatus: 'pending'
@@ -11985,7 +11985,7 @@ const MathsQuestions = (() => {
       question: 'The exterior angle of a triangle is 112°. The two non-adjacent interior angles are 4y° and 3y°. Find y and both interior angles.',
       steps: [
         {
-          prompt: 'Use the exterior angle theorem: exterior angle = sum of two non-adjacent interior angles.',
+          prompt: 'Use the exterior angle theorem: 4y + 3y = 112. Find y.',
           hint1: '4y + 3y = 112.',
           hint2: '7y = 112.',
           hint3: 'y = 16.',
@@ -12087,7 +12087,7 @@ const MathsQuestions = (() => {
       question: 'Two parallel lines are cut by a transversal. One angle is (3x + 5)° and its alternate angle is (5x − 15)°. Find x and the angle.',
       steps: [
         {
-          prompt: 'Use the property of alternate angles to form an equation.',
+          prompt: 'Use the property of alternate angles to form an equation and solve it. x = ?',
           hint1: 'Alternate angles are equal: 3x+5 = 5x−15.',
           hint2: 'Rearrange: 20 = 2x.',
           hint3: 'x = 10.',
@@ -12253,7 +12253,7 @@ const MathsQuestions = (() => {
       question: 'Quadrilateral ABCD has ∠A = (x+15)°, ∠B = (2x)°, ∠C = (x+25)° and ∠D = (2x−40)°. Find all four angles.',
       steps: [
         {
-          prompt: 'Form an equation using the angle sum of a quadrilateral (360°).',
+          prompt: 'Form an equation using the angle sum of a quadrilateral (360°) and solve it. x = ?',
           hint1: '(x+15)+(2x)+(x+25)+(2x−40) = 360.',
           hint2: 'Simplify: 6x + 0 = 360.',
           hint3: 'x = 60.',
@@ -12445,7 +12445,7 @@ const MathsQuestions = (() => {
           explanation: 'Scale factor = 15/5 = 3.',
         },
         {
-          prompt: 'Find the other sides of the larger triangle.',
+          prompt: 'Find the other sides of the larger triangle. Enter the longer of the two.',
           hint1: '3 × 3 = 9 and 4 × 3 = 12.',
           hint2: '9 cm and 12 cm.',
           hint3: '9 cm and 12 cm.',
@@ -12659,7 +12659,7 @@ const MathsQuestions = (() => {
       question: 'In triangle ABC, DE is parallel to BC where D is on AB and E is on AC. AD = 4 cm, DB = 6 cm and BC = 15 cm. Find DE.',
       steps: [
         {
-          prompt: 'Find the scale factor from triangle ADE to triangle ABC.',
+          prompt: 'Find the scale factor from triangle ABC to triangle ADE: AD ÷ AB.',
           hint1: 'AB = AD + DB = 4 + 6 = 10 cm.',
           hint2: 'Scale factor = AD/AB = 4/10.',
           hint3: '0.4.',
@@ -12789,7 +12789,7 @@ const MathsQuestions = (() => {
           explanation: 'Volume SF = (5/3)³ = 125/27.',
         },
         {
-          prompt: 'Find the volume of the larger cone.',
+          prompt: 'Find the volume of the larger cone, to 1 decimal place.',
           hint1: 'Larger volume = 36π × 125/27.',
           hint2: '36 × 125/27 = 4500/27 = 500/3.',
           hint3: '500π/3 cm³ ≈ 523.6 cm³.',
@@ -13187,7 +13187,7 @@ const MathsQuestions = (() => {
       question: 'Find the area of a circle with radius 6 cm. Give your answer in terms of π.',
       steps: [
         {
-          prompt: 'Use the formula: A = πr².',
+          prompt: 'Use the formula: A = πr². Enter the number in front of π.',
           hint1: 'r = 6, so r² = 36.',
           hint2: 'A = π × 36.',
           hint3: '36π cm².',
@@ -13319,7 +13319,7 @@ const MathsQuestions = (() => {
       question: 'Find the volume of a sphere with radius 3 cm. Give your answer in terms of π.',
       steps: [
         {
-          prompt: 'Use the formula: V = (4/3)πr³.',
+          prompt: 'Use the formula: V = (4/3)πr³. Enter the number in front of π.',
           hint1: 'r = 3, so r³ = 27.',
           hint2: 'V = (4/3) × π × 27.',
           hint3: '36π cm³.',
@@ -13430,7 +13430,7 @@ const MathsQuestions = (() => {
       question: 'A sector has radius 9 cm and angle 120°. Find (a) the arc length and (b) the area of the sector. Give answers in terms of π.',
       steps: [
         {
-          prompt: '(a) Arc length = (angle/360) × 2πr.',
+          prompt: '(a) Arc length = (angle/360) × 2πr. Enter the number in front of π.',
           hint1: '(120/360) × 2π × 9.',
           hint2: '(1/3) × 18π = 6π.',
           hint3: '6π cm.',
@@ -13441,7 +13441,7 @@ const MathsQuestions = (() => {
           explanation: 'Arc = (120/360) × 2π × 9 = 6π cm.',
         },
         {
-          prompt: '(b) Area of sector = (angle/360) × πr².',
+          prompt: '(b) Area of sector = (angle/360) × πr². Enter the number in front of π.',
           hint1: '(120/360) × π × 9².',
           hint2: '(1/3) × 81π = 27π.',
           hint3: '27π cm².',
@@ -13484,7 +13484,7 @@ const MathsQuestions = (() => {
       question: 'Find the surface area of a sphere with radius 5 cm. Give your answer to 3 significant figures.',
       steps: [
         {
-          prompt: 'Use: Surface area = 4πr².',
+          prompt: 'Use: Surface area = 4πr². Enter the number in front of π.',
           hint1: '4 × π × 5².',
           hint2: '4 × π × 25 = 100π.',
           hint3: '100π cm².',
@@ -13505,7 +13505,7 @@ const MathsQuestions = (() => {
           explanation: 'SA = 100π ≈ 314 cm² (3 s.f.).',
         },
         {
-          prompt: 'What would the surface area be if the radius were doubled to 10 cm?',
+          prompt: 'What would the surface area be if the radius were doubled to 10 cm? Give your answer to 3 significant figures.',
           hint1: 'Doubling radius multiplies SA by 4.',
           hint2: 'SA = 4π × 100 = 400π ≈ 1257 cm².',
           hint3: '≈ 1260 cm² (3 s.f.).',
@@ -13695,7 +13695,7 @@ const MathsQuestions = (() => {
       question: 'A spherical ball of radius 6 cm is melted down and recast into small spheres of radius 1.5 cm. How many small spheres can be made?',
       steps: [
         {
-          prompt: 'Find the volume of the large sphere. (In terms of π.)',
+          prompt: 'Find the volume of the large sphere in terms of π. Enter the number in front of π.',
           hint1: 'V = (4/3)πr³ = (4/3)π × 6³.',
           hint2: '(4/3)π × 216 = 288π.',
           hint3: '288π cm³.',
@@ -13706,7 +13706,7 @@ const MathsQuestions = (() => {
           explanation: 'V_large = (4/3)π × 216 = 288π cm³.',
         },
         {
-          prompt: 'Find the volume of one small sphere. (In terms of π.)',
+          prompt: 'Find the volume of one small sphere in terms of π. Enter the number in front of π.',
           hint1: 'V = (4/3)π × 1.5³.',
           hint2: '1.5³ = 3.375. (4/3) × 3.375 = 4.5.',
           hint3: '4.5π cm³.',
@@ -14055,7 +14055,7 @@ const MathsQuestions = (() => {
       question: 'Rotate point (4, 2) by 180° about the origin. Give the image coordinates.',
       steps: [
         {
-          prompt: '180° rotation about origin: (x, y) → (−x, −y). What is the image of (4, 2)?',
+          prompt: '180° rotation about origin: (x, y) → (−x, −y). What is the x-coordinate of the image of (4, 2)?',
           hint1: 'Negate both coordinates.',
           hint2: '(−4, −2).',
           hint3: '(−4, −2).',
@@ -14205,7 +14205,7 @@ const MathsQuestions = (() => {
           explanation: 'Reflection in y=x swaps coordinates.',
         },
         {
-          prompt: 'Find the image of (2, 3).',
+          prompt: 'Find the image of (2, 3). Enter its x-coordinate.',
           hint1: 'Swap x and y.',
           hint2: '(3, 2).',
           hint3: '(3, 2).',
@@ -14259,7 +14259,7 @@ const MathsQuestions = (() => {
           explanation: 'Vector = (5−1, 2−1) = (4, 1).',
         },
         {
-          prompt: '90° clockwise rotation: (a, b) → (b, −a). Apply to (4, 1).',
+          prompt: '90° clockwise rotation: (a, b) → (b, −a). Apply to (4, 1). Enter the second component.',
           hint1: '(a,b)→(b,−a). (4,1)→(1,−4).',
           hint2: 'Rotated vector = (1, −4).',
           hint3: '(1, −4).',
@@ -14270,7 +14270,7 @@ const MathsQuestions = (() => {
           displayAnswer: 'Rotated vector = (1, −4)',
         },
         {
-          prompt: 'Add the rotated vector to the centre (1,1). Find the image.',
+          prompt: 'Add the rotated vector to the centre (1,1). Find the image. Enter its y-coordinate.',
           hint1: 'Image = (1+1, 1+(−4)).',
           hint2: '(2, −3).',
           hint3: '(2, −3).',
@@ -14301,7 +14301,7 @@ const MathsQuestions = (() => {
       question: 'Triangle A has vertices (1,0), (3,0), (3,2). It is first reflected in the x-axis to give B, then B is translated by vector (−4, 1) to give C. Find the vertices of C.',
       steps: [
         {
-          prompt: 'Reflect A in the x-axis: (x,y)→(x,−y).',
+          prompt: 'Reflect A in the x-axis: (x,y)→(x,−y). Enter the y-coordinate of the image of (3, 2).',
           hint1: '(1,0)→(1,0). (3,0)→(3,0). (3,2)→(3,−2).',
           hint2: 'B: (1,0), (3,0), (3,−2).',
           hint3: 'B = {(1,0),(3,0),(3,−2)}.',
@@ -14312,7 +14312,7 @@ const MathsQuestions = (() => {
           displayAnswer: 'B: (1,0), (3,0), (3,−2)',
         },
         {
-          prompt: 'Translate B by (−4, 1). Apply to (1, 0).',
+          prompt: 'Translate B by (−4, 1). Apply to (1, 0). Enter the x-coordinate.',
           hint1: '(1+(−4), 0+1) = (−3, 1).',
           hint2: '(−3, 1).',
           hint3: '(−3, 1).',
@@ -14323,7 +14323,7 @@ const MathsQuestions = (() => {
           displayAnswer: "(1,0) → (−3,1)",
         },
         {
-          prompt: 'Apply translation to (3, 0).',
+          prompt: 'Apply the translation to (3, 0). Enter the x-coordinate.',
           hint1: '(3+(−4), 0+1) = (−1, 1).',
           hint2: '(−1, 1).',
           hint3: '(−1, 1).',
@@ -14334,7 +14334,7 @@ const MathsQuestions = (() => {
           displayAnswer: '(3,0) → (−1,1)',
         },
         {
-          prompt: 'Apply translation to (3, −2). Give final vertex.',
+          prompt: 'Apply the translation to (3, −2). Enter the y-coordinate of the final vertex.',
           hint1: '(3+(−4), −2+1) = (−1, −1).',
           hint2: '(−1, −1).',
           hint3: '(−1, −1).',
@@ -14365,7 +14365,7 @@ const MathsQuestions = (() => {
       question: 'Triangle ABC has vertices A(−2, 1), B(2, 1), C(0, 4). It is enlarged by scale factor −2 from centre (0, 0). Find the image and describe what happens with a negative scale factor.',
       steps: [
         {
-          prompt: 'Apply SF = −2: multiply each coordinate by −2.',
+          prompt: 'Apply SF = −2: multiply each coordinate by −2. Enter the x-coordinate of A\'.',
           hint1: 'A(−2,1)→(4,−2). B(2,1)→(−4,−2). C(0,4)→(0,−8).',
           hint2: 'A\'=(4,−2), B\'=(−4,−2), C\'=(0,−8).',
           hint3: 'Enter 4 (x-coord of A\').',
@@ -14449,7 +14449,7 @@ const MathsQuestions = (() => {
           explanation: 'M represents 90° anticlockwise rotation.',
         },
         {
-          prompt: 'Apply M to P\'=(−1,3) to get P\'\'.',
+          prompt: 'Apply M to P\'=(−1,3) to get P\'\'. Enter the x-coordinate of P\'\'.',
           hint1: 'x=0(−1)+(−1)(3)=−3. y=1(−1)+0(3)=−1.',
           hint2: "P'' = (−3, −1).",
           hint3: '(−3, −1).',
@@ -14516,7 +14516,7 @@ const MathsQuestions = (() => {
           explanation: 'Reflection in x-axis: negate y.',
         },
         {
-          prompt: 'What single transformation maps (2,1)→(1,−2)? The rule is (x,y)→(y,−x).',
+          prompt: 'The rule (x,y)→(y,−x) maps (2,1) to (1,−2). It is a rotation about the origin. How many degrees clockwise?',
           hint1: '(x,y)→(y,−x) is a 90° clockwise rotation.',
           hint2: 'Check: does (2,1)→(1,−2)? y=1, −x=−2. Yes ✓.',
           hint3: '90° clockwise about origin.',
@@ -14737,7 +14737,7 @@ const MathsQuestions = (() => {
           explanation: '7² + 24² = 49 + 576 = 625.',
         },
         {
-          prompt: 'Does this equal 25²?',
+          prompt: 'Calculate 25². Does it equal 7² + 24²?',
           hint1: '25² = 625.',
           hint2: '625 = 625. ✓',
           hint3: 'Yes — it is a right-angled triangle.',
@@ -15232,49 +15232,49 @@ const MathsQuestions = (() => {
       subtopic: 'geo-pythagoras',
       band: 'C',
       marks: 4,
-      question: 'In a right-angled triangle, the hypotenuse is (x+4) cm, one leg is x cm and the other is 4 cm. Find x and all three sides.',
+      question: 'In a right-angled triangle, the two shorter sides are x cm and (x + 7) cm. The hypotenuse is (x + 8) cm. Find x and all three sides.',
       steps: [
         {
-          prompt: 'Apply Pythagoras: x² + 4² = (x+4)². Expand the right side.',
-          hint1: '(x+4)² = x² + 8x + 16.',
-          hint2: 'So x² + 16 = x² + 8x + 16.',
-          hint3: '0 = 8x. Hmm — let me simplify.',
+          prompt: 'Apply Pythagoras: x² + (x + 7)² = (x + 8)². Expand both brackets.',
+          hint1: '(x + 7)² = x² + 14x + 49.',
+          hint2: '(x + 8)² = x² + 16x + 64.',
+          hint3: 'x² + x² + 14x + 49 = x² + 16x + 64.',
           answer: 0,
           tolerance: 0,
           unit: '',
           checkType: 'skip',
-          displayAnswer: 'x² + 16 = x² + 8x + 16',
-          explanation: 'Expanding: x²+16 = x²+8x+16.',
+          displayAnswer: 'x² + x² + 14x + 49 = x² + 16x + 64',
+          explanation: 'Expanding both brackets gives 2x² + 14x + 49 = x² + 16x + 64.',
         },
         {
-          prompt: 'Simplify: subtract x² + 16 from both sides.',
-          hint1: '0 = 8x.',
-          hint2: 'x = 0. But that gives a degenerate triangle — the original problem needs a different setup.',
-          hint3: 'This means the algebra gives x=0, which is impossible for a triangle. Recheck: the hypotenuse must be the longest side.',
+          prompt: 'Collect all the terms on one side to get a quadratic equal to 0.',
+          hint1: 'Subtract x² + 16x + 64 from both sides.',
+          hint2: '2x² − x² + 14x − 16x + 49 − 64 = 0.',
+          hint3: 'x² − 2x − 15 = 0.',
           answer: 0,
           tolerance: 0,
           unit: '',
           checkType: 'skip',
-          displayAnswer: 'This gives 0=8x → x=0: impossible. Reconsider which side is the hypotenuse.',
-          explanation: 'If (x+4) is the hypotenuse, we get x=0. So the correct setup uses (x+4) ≠ hypotenuse.',
+          displayAnswer: 'x² − 2x − 15 = 0',
+          explanation: 'Collecting terms gives x² − 2x − 15 = 0.',
         },
         {
-          prompt: 'Re-set up: legs are x and (x+4), hypotenuse is (2x−2). Use Pythagoras: x²+(x+4)²=(2x−2)². Expand and solve. Find x.',
-          hint1: 'x²+x²+8x+16=4x²−8x+4. Simplify: 2x²+8x+16=4x²−8x+4.',
-          hint2: '0=2x²−16x−12. x²−8x−6=0... Hmm, not clean. Try: hyp=(x+6), legs x and (x+2).',
-          hint3: 'x²+(x+2)²=(x+6)²: x²+x²+4x+4=x²+12x+36 → x²−8x−32=0 → (x−12)(x+... not easy.',
+          prompt: 'Factorise x² − 2x − 15 = 0.',
+          hint1: 'Find two numbers that multiply to −15 and add to −2.',
+          hint2: '−5 and 3.',
+          hint3: '(x − 5)(x + 3) = 0.',
           answer: 0,
           tolerance: 0,
           unit: '',
           checkType: 'skip',
-          displayAnswer: 'Setup: legs = 3x and 4x, hypotenuse = 5x (Pythagorean ratio)',
-          explanation: 'Using a scaled 3-4-5 triple. If one leg = 3x and other = 4x, then hyp = 5x.',
+          displayAnswer: '(x − 5)(x + 3) = 0',
+          explanation: '−5 × 3 = −15 and −5 + 3 = −2, so (x − 5)(x + 3) = 0.',
         },
         {
-          prompt: 'Use: legs are x and (x+7), hypotenuse is (x+8). Solve x²+(x+7)²=(x+8)². Find x.',
-          hint1: 'x²+x²+14x+49=x²+16x+64. So x²−2x−15=0.',
-          hint2: '(x−5)(x+3)=0. x=5 (positive).',
-          hint3: 'x=5. Sides: 5, 12, 13.',
+          prompt: 'Solve. A length must be positive, so find the positive value of x.',
+          hint1: 'x − 5 = 0 or x + 3 = 0.',
+          hint2: 'x = 5 or x = −3.',
+          hint3: 'x = 5. Sides: 5, 12, 13.',
           answer: 5,
           tolerance: 0,
           unit: 'cm',
@@ -15365,7 +15365,7 @@ const MathsQuestions = (() => {
       question: 'In a right-angled triangle, the opposite side is 7 cm and the hypotenuse is 10 cm. Find the angle θ opposite the 7 cm side.',
       steps: [
         {
-          prompt: 'Write the correct trig ratio: which one uses opposite and hypotenuse?',
+          prompt: 'Which trig ratio uses opposite and hypotenuse? Calculate it as a decimal.',
           hint1: 'sin θ = opposite/hypotenuse.',
           hint2: 'sin θ = 7/10 = 0.7.',
           hint3: 'sin θ = 0.7.',
@@ -15505,7 +15505,7 @@ const MathsQuestions = (() => {
         ]
       },
       steps: [
-        { prompt: 'Which trig ratio links opposite and adjacent? Write the formula for the opposite side.', hint1: 'tan 40° = opposite/adjacent', hint2: 'opposite = adjacent × tan 40°', hint3: 'opposite = 7 × tan 40°', answer: '5.88', tolerance: 0.005, unit: 'cm', explanation: 'tan 40° = opp/adj, so opp = 7 × tan 40° = 7 × 0.8391 ≈ 5.87 cm' },
+        { prompt: 'Which trig ratio links opposite and adjacent? Enter tan 40° to 4 d.p.', hint1: 'tan 40° = opposite/adjacent', hint2: 'opposite = adjacent × tan 40°', hint3: 'tan 40° ≈ 0.8391', answer: '0.8391', tolerance: 0.0001, unit: '', explanation: 'tan 40° = opp/adj, so opp = 7 × tan 40° = 7 × 0.8391 ≈ 5.87 cm' },
         { prompt: 'Calculate 7 × tan 40° to 2 d.p.', hint1: 'tan 40° ≈ 0.8391', hint2: '7 × 0.8391 = 5.8737', hint3: '5.87', answer: '5.87', tolerance: 0.005, unit: 'cm', explanation: '7 × tan 40° ≈ 5.87 cm' }
       ]
     },
@@ -15522,7 +15522,7 @@ const MathsQuestions = (() => {
         ]
       },
       steps: [
-        { prompt: 'Draw a diagram. Label the ladder (hypotenuse = 6 m) and the angle with the ground (72°). Which side is the height?', hint1: 'The height up the wall is the opposite side', hint2: 'sin 72° = height/6', hint3: 'height = 6 × sin 72°', answer: '6', tolerance: 0.5, explanation: 'sin 72° = opposite/hypotenuse; height = 6 × sin 72°' },
+        { prompt: 'Draw a diagram. Label the ladder (hypotenuse) and the angle with the ground (72°). The height is the side opposite the angle. Enter the length of the hypotenuse.', hint1: 'The height up the wall is the opposite side', hint2: 'sin 72° = height/6', hint3: 'height = 6 × sin 72°', answer: '6', tolerance: 0.5, explanation: 'sin 72° = opposite/hypotenuse; height = 6 × sin 72°' },
         { prompt: 'Write the equation: sin 72° = height/6. Rearrange for height.', hint1: 'Multiply both sides by 6', hint2: 'height = 6 × sin 72°', hint3: '6 × 0.9511', answer: '5.71', tolerance: 0.005, unit: 'm', explanation: 'height = 6 × sin 72° = 6 × 0.9511 = 5.71 m' },
         { prompt: 'Calculate 6 × sin 72° to 2 d.p.', hint1: 'sin 72° ≈ 0.9511', hint2: '6 × 0.9511 = 5.7063', hint3: '5.71', answer: '5.71', tolerance: 0.005, unit: 'm', explanation: 'Height = 5.71 m' }
       ]
@@ -15540,7 +15540,7 @@ const MathsQuestions = (() => {
         ]
       },
       steps: [
-        { prompt: 'In this right-angled triangle, which sides are known and unknown? Write the trig ratio.', hint1: 'adjacent = 20 m (horizontal distance), opposite = height (unknown)', hint2: 'tan 38° = height/20', hint3: 'height = 20 × tan 38°', answer: '20', tolerance: 1, explanation: 'tan θ = opp/adj; tan 38° = height/20' },
+        { prompt: 'In this right-angled triangle, the height is opposite the 38° angle. The known side is adjacent to it. Enter the length of the adjacent side.', hint1: 'adjacent = 20 m (horizontal distance), opposite = height (unknown)', hint2: 'tan 38° = height/20', hint3: 'height = 20 × tan 38°', answer: '20', tolerance: 1, explanation: 'tan θ = opp/adj; tan 38° = height/20' },
         { prompt: 'Rearrange tan 38° = height/20 to find height.', hint1: 'Multiply both sides by 20', hint2: 'height = 20 × tan 38°', hint3: '20 × 0.7813', answer: '15.63', tolerance: 0.005, unit: 'm', explanation: 'height = 20 × tan 38°' },
         { prompt: 'Calculate 20 × tan 38° to 2 d.p.', hint1: 'tan 38° ≈ 0.7813', hint2: '20 × 0.7813 = 15.626', hint3: '15.63', answer: '15.63', tolerance: 0.005, unit: 'm', explanation: 'Height of building = 15.63 m' }
       ]
@@ -15558,7 +15558,7 @@ const MathsQuestions = (() => {
         ]
       },
       steps: [
-        { prompt: 'From angle P: which sides are PQ and PR? Identify adjacent and hypotenuse.', hint1: 'PQ is the hypotenuse (opposite the right angle)', hint2: 'PR is the adjacent side (next to angle P)', hint3: 'cos P = PR/PQ = 7/11', answer: '7', tolerance: 0.5, explanation: 'From angle P: adjacent = PR = 7, hypotenuse = PQ = 11; cos P = 7/11' },
+        { prompt: 'From angle P: PR is the adjacent side and PQ is the hypotenuse. Enter the length of the adjacent side.', hint1: 'PQ is the hypotenuse (opposite the right angle)', hint2: 'PR is the adjacent side (next to angle P)', hint3: 'cos P = PR/PQ = 7/11', answer: '7', tolerance: 0.5, explanation: 'From angle P: adjacent = PR = 7, hypotenuse = PQ = 11; cos P = 7/11' },
         { prompt: 'Write cos P = 7/11. What decimal is this?', hint1: '7 ÷ 11 = 0.6364', hint2: 'cos P ≈ 0.6364', hint3: '0.6364', answer: '0.6364', tolerance: 0.005, explanation: 'cos P = 7/11 ≈ 0.6364' },
         { prompt: 'Use cos⁻¹ to find angle P in degrees to 2 d.p.', hint1: 'P = cos⁻¹(7/11)', hint2: 'Use your calculator', hint3: '50.48', answer: '50.48', tolerance: 0.005, unit: '°', explanation: 'P = cos⁻¹(7/11) ≈ 50.48°' }
       ]
@@ -15576,9 +15576,9 @@ const MathsQuestions = (() => {
         ]
       },
       steps: [
-        { prompt: 'A bearing of 035° means 35° clockwise from north. Which trig function gives the north component?', hint1: 'The angle is 35° from north', hint2: 'North component = 12 × cos 35°', hint3: '12 × 0.8192', answer: '9.83', tolerance: 0.005, unit: 'km', explanation: 'North = 12 × cos 35° = 12 × 0.8192 = 9.83 km' },
+        { prompt: 'A bearing of 035° means 35° clockwise from north. The north component is 12 × cos 35°. Calculate it to 2 d.p.', hint1: 'The angle is 35° from north', hint2: 'North component = 12 × cos 35°', hint3: '12 × 0.8192', answer: '9.83', tolerance: 0.005, unit: 'km', explanation: 'North = 12 × cos 35° = 12 × 0.8192 = 9.83 km' },
         { prompt: 'Which trig function gives the east component? Calculate it to 2 d.p.', hint1: 'East component = 12 × sin 35°', hint2: 'sin 35° ≈ 0.5736', hint3: '6.88', answer: '6.88', tolerance: 0.005, unit: 'km', explanation: 'East = 12 × sin 35° = 12 × 0.5736 = 6.88 km' },
-        { prompt: 'State both components: North = ? km, East = ? km', hint1: 'North = 9.83 km', hint2: 'East = 6.88 km', hint3: 'North 9.83 km, East 6.88 km', answer: '9.83', tolerance: 0.005, unit: 'km north', explanation: 'North = 9.83 km, East = 6.88 km' }
+        { prompt: 'State both components. Enter the north component in km.', hint1: 'North = 9.83 km', hint2: 'East = 6.88 km', hint3: 'North 9.83 km, East 6.88 km', answer: '9.83', tolerance: 0.005, unit: 'km north', explanation: 'North = 9.83 km, East = 6.88 km' }
       ]
     },
     // trig-B06
@@ -15595,7 +15595,7 @@ const MathsQuestions = (() => {
       },
       steps: [
         { prompt: 'Use Pythagoras to find AC. AC² = AB² + BC². Calculate AC.', hint1: 'AC² = 9² + 12² = 81 + 144 = 225', hint2: 'AC = √225', hint3: '15', answer: '15', tolerance: 0.005, unit: 'cm', explanation: 'AC = √(81 + 144) = √225 = 15 cm' },
-        { prompt: 'Now find angle A. From angle A, BC is opposite and AB is adjacent. Write the trig ratio.', hint1: 'tan A = BC/AB = 12/9', hint2: 'tan A = 1.3333', hint3: '1.3333', answer: '1.3333', tolerance: 0.005, explanation: 'tan A = 12/9 = 1.3333' },
+        { prompt: 'Now find angle A. From angle A, BC is opposite and AB is adjacent. Calculate tan A as a decimal.', hint1: 'tan A = BC/AB = 12/9', hint2: 'tan A = 1.3333', hint3: '1.3333', answer: '1.3333', tolerance: 0.005, explanation: 'tan A = 12/9 = 1.3333' },
         { prompt: 'Use tan⁻¹ to find angle A in degrees to 2 d.p.', hint1: 'A = tan⁻¹(12/9)', hint2: 'Use your calculator', hint3: '53.13', answer: '53.13', tolerance: 0.005, unit: '°', explanation: 'angle A = tan⁻¹(12/9) = 53.13°' }
       ]
     },
@@ -15626,17 +15626,17 @@ const MathsQuestions = (() => {
       workedExample: {
         question: 'In right-angled triangle PQR (right angle Q), PQ = 8 cm, QR = 6 cm. Point S on PQ such that RS bisects angle PRQ. Find PS to 2 d.p.',
         steps: [
-          { explanation: 'PR = √(64+36) = 10 cm; tan(PRQ) = PQ/QR = 8/6, angle PRQ = 53.13°' },
-          { explanation: 'RS bisects angle PRQ, so angle PRS = 26.565°' },
-          { explanation: 'In triangle PRS: tan(26.565°) = PS/PR → PS = 10 × tan(26.565°) ... but use angle bisector theorem instead' },
-          { explanation: 'Angle bisector: PS/SR = PR/QR = 10/6; SR = QR - ... use PS/QS = PR/QR with QS = QR = 6, PS/6 = 10/6, so this needs full setup. PS = PQ × PR/(PR+QR) = 8×10/16 = 5 cm' }
+          { explanation: 'tan(PRQ) = PQ/QR = 8/6, so angle PRQ = 53.13°' },
+          { explanation: 'RS bisects angle PRQ, so angle QRS = 26.57°' },
+          { explanation: 'Triangle QRS has its right angle at Q: QS = 6 × tan(26.57°) = 3.00 cm' },
+          { explanation: 'S lies on PQ, so PS = PQ − QS = 8 − 3 = 5.00 cm' }
         ]
       },
       steps: [
         { prompt: 'Find AC using Pythagoras. AB = 10, BC = 7, right angle at B.', hint1: 'AC² = AB² + BC² = 100 + 49 = 149', hint2: 'AC = √149', hint3: '12.21', answer: '12.21', tolerance: 0.005, unit: 'cm', explanation: 'AC = √(100+49) = √149 ≈ 12.21 cm' },
         { prompt: 'Find angle ACB. From C, BC = 7 (adjacent) and AC ≈ 12.21 (hypotenuse). Find angle ACB.', hint1: 'cos(ACB) = BC/AC = 7/12.21 ≈ 0.5733', hint2: 'angle ACB = cos⁻¹(0.5733)', hint3: '55.01', answer: '55.01', tolerance: 0.005, unit: '°', explanation: 'cos(ACB) = 7/√149; angle ACB ≈ 55.01°' },
-        { prompt: 'CD bisects angle ACB, so angle ACD = 55.01°/2 ≈ 27.5°. In triangle ACD, angle A = 90° (same right angle). Find AD using tan.', hint1: 'In triangle ACD: angle DAC = 90°, angle ACD = 27.5°, AC = 12.21 cm', hint2: 'tan(27.5°) = AD/AC', hint3: 'AD = 12.21 × tan(27.5°)', answer: '6.35', tolerance: 0.005, unit: 'cm', explanation: 'tan(27.5°) = AD/AC; AD = 12.21 × tan(27.5°) ≈ 12.21 × 0.5206 ≈ 6.36 cm' },
-        { prompt: 'Calculate AD = AC × tan(27.5°) to 2 d.p.', hint1: 'tan(27.5°) ≈ 0.5206', hint2: '12.21 × 0.5206 ≈ 6.36', hint3: '6.36', answer: '6.36', tolerance: 0.01, unit: 'cm', explanation: 'AD ≈ 6.36 cm' }
+        { prompt: 'CD bisects angle ACB, so angle BCD = 55.01° ÷ 2 ≈ 27.50°. Triangle BCD has its right angle at B. Find BD to 2 d.p.', hint1: 'tan(BCD) = BD/BC', hint2: 'BD = 7 × tan(27.50°)', hint3: '7 × 0.5207 ≈ 3.64', answer: '3.64', tolerance: 0.01, unit: 'cm', explanation: 'In right-angled triangle BCD, BD = BC × tan(BCD) = 7 × tan(27.50°) ≈ 3.64 cm' },
+        { prompt: 'D lies on AB, so AD = AB − BD. Calculate AD to 2 d.p.', hint1: 'AD = 10 − BD', hint2: '10 − 3.645 ≈ 6.355', hint3: '6.36', answer: '6.36', tolerance: 0.01, unit: 'cm', explanation: 'AD = 10 − 3.645 ≈ 6.36 cm' }
       ]
     },
     // trig-C03
@@ -15649,14 +15649,14 @@ const MathsQuestions = (() => {
           { explanation: 'Let h = height, d = distance from Q to cliff base' },
           { explanation: 'tan 32° = h/d and tan 18° = h/(d+40)' },
           { explanation: 'h = d·tan 32°; d+40 = h/tan 18° = d·tan 32°/tan 18°' },
-          { explanation: 'd(tan 32°/tan 18° − 1) = 40; d = 40/(1.8939 − 1) = 44.77 m; h = 44.77 × 0.6249 = 27.98 m' }
+          { explanation: 'd(tan 32°/tan 18° − 1) = 40; d = 40/(1.9232 − 1) = 43.33 m; h = 43.33 × 0.6249 = 27.08 m' }
         ]
       },
       steps: [
         { prompt: 'Let h = height of cliff, d = distance from Y to cliff base. Write equations for tan 35° and tan 20°.', hint1: 'tan 35° = h/d and tan 20° = h/(d+50)', hint2: 'So h = d·tan 35°', hint3: 'And h/(d+50) = tan 20°', answer: 'h=d·tan35', checkType: 'skip', displayAnswer: 'h = d·tan35°; h/(d+50) = tan20°', explanation: 'Two equations from the two observation points' },
         { prompt: 'Substitute h = d·tan 35° into tan 20° = h/(d+50) and rearrange to find d.', hint1: 'tan 20° = d·tan 35°/(d+50)', hint2: 'd·tan 20° + 50·tan 20° = d·tan 35°', hint3: '50·tan 20° = d(tan 35° − tan 20°)', answer: '50tan20', checkType: 'skip', displayAnswer: '50·tan20° = d(tan35° − tan20°)', explanation: 'Rearranging gives d(tan 35° − tan 20°) = 50 tan 20°' },
-        { prompt: 'Calculate d = 50·tan 20°/(tan 35° − tan 20°). Give your answer to 2 d.p.', hint1: 'tan 20° = 0.3640, tan 35° = 0.7002', hint2: '50 × 0.3640/(0.7002 − 0.3640)', hint3: '18.2/0.3362 = 54.14', answer: '54.14', tolerance: 0.005, unit: 'm', explanation: 'd = 50 × 0.3640/0.3362 = 54.14 m' },
-        { prompt: 'Find height h = d × tan 35° to 2 d.p.', hint1: 'h = 54.14 × tan 35°', hint2: '54.14 × 0.7002', hint3: '37.92', answer: '37.92', tolerance: 0.005, unit: 'm', explanation: 'h = 54.14 × 0.7002 = 37.92 m' }
+        { prompt: 'Calculate d = 50·tan 20°/(tan 35° − tan 20°). Give your answer to 2 d.p.', hint1: 'tan 20° = 0.36397, tan 35° = 0.70021', hint2: '50 × 0.36397/(0.70021 − 0.36397)', hint3: '18.1985/0.33624 = 54.12', answer: '54.12', tolerance: 0.01, unit: 'm', explanation: 'd = 50 × 0.36397/0.33624 ≈ 54.12 m' },
+        { prompt: 'Find height h = d × tan 35° to 2 d.p.', hint1: 'h = 54.124 × tan 35°', hint2: '54.124 × 0.70021', hint3: '37.90', answer: '37.90', tolerance: 0.01, unit: 'm', explanation: 'h = 54.124 × 0.70021 ≈ 37.90 m' }
       ]
     },
     // trig-C04
@@ -15666,16 +15666,16 @@ const MathsQuestions = (() => {
       workedExample: {
         question: 'Triangle ABC has AB = 6 cm, BC = 9 cm and angle ABC = 40°. Find AC to 2 d.p., then find angle BAC to 2 d.p.',
         steps: [
-          { explanation: 'Cosine rule: AC² = AB² + BC² − 2·AB·BC·cos(ABC) = 36 + 81 − 108·cos 40° = 117 − 82.72 = 34.28; AC = 5.86 cm' },
-          { explanation: 'Sine rule: sin(BAC)/BC = sin(ABC)/AC → sin(BAC) = 9·sin 40°/5.86 = 0.9877' },
-          { explanation: 'angle BAC = sin⁻¹(0.9877) = 80.87°' }
+          { explanation: 'Cosine rule: AC² = AB² + BC² − 2·AB·BC·cos(ABC) = 36 + 81 − 108·cos 40° = 117 − 82.73 = 34.27; AC = 5.85 cm' },
+          { explanation: 'Sine rule: sin(BAC)/BC = sin(ABC)/AC → sin(BAC) = 9·sin 40°/5.854 = 0.9883' },
+          { explanation: 'BC is the longest side, so check whether BAC is obtuse: cos(BAC) = (36 + 34.27 − 81)/(2 × 6 × 5.854) < 0, so angle BAC = 180° − sin⁻¹(0.9883) = 98.79°' }
         ]
       },
       steps: [
-        { prompt: 'Apply the cosine rule: XZ² = XY² + YZ² − 2·XY·YZ·cos(XYZ). Substitute values.', hint1: 'XZ² = 8² + 11² − 2×8×11×cos 50°', hint2: 'XZ² = 64 + 121 − 176 × cos 50°', hint3: 'XZ² = 185 − 176 × 0.6428', answer: '72.14', tolerance: 0.05, explanation: 'XZ² = 185 − 176 × 0.6428 = 185 − 113.13 = 71.87; varies slightly with precision' },
+        { prompt: 'Apply the cosine rule: XZ² = XY² + YZ² − 2·XY·YZ·cos(XYZ). Substitute values and calculate XZ² to 2 d.p.', hint1: 'XZ² = 8² + 11² − 2×8×11×cos 50°', hint2: 'XZ² = 64 + 121 − 176 × cos 50°', hint3: 'XZ² = 185 − 176 × 0.6428', answer: '71.87', tolerance: 0.05, explanation: 'XZ² = 185 − 176 × 0.6428 = 185 − 113.13 = 71.87' },
         { prompt: 'Calculate XZ² = 185 − 176·cos 50°, then find XZ to 2 d.p.', hint1: '176 × cos 50° = 176 × 0.6428 = 113.13', hint2: 'XZ² = 185 − 113.13 = 71.87', hint3: 'XZ = √71.87 = 8.48', answer: '8.48', tolerance: 0.005, unit: 'cm', explanation: 'XZ = √71.87 ≈ 8.48 cm' },
-        { prompt: 'Use the sine rule: sin(YXZ)/YZ = sin(XYZ)/XZ. Rearrange to find sin(YXZ).', hint1: 'sin(YXZ) = YZ × sin(XYZ)/XZ', hint2: 'sin(YXZ) = 11 × sin 50°/8.48', hint3: '11 × 0.7660/8.48 = 0.9937', answer: '0.9937', tolerance: 0.005, explanation: 'sin(YXZ) = 11 × sin 50° / 8.48 ≈ 0.9937' },
-        { prompt: 'Find angle YXZ = sin⁻¹(0.9937) to 2 d.p.', hint1: 'Use your calculator: sin⁻¹(0.9937)', hint2: 'Check: is this the correct triangle? (angle sum must be < 180°)', hint3: '83.47', answer: '83.47', tolerance: 0.005, unit: '°', explanation: 'angle YXZ = sin⁻¹(0.9937) ≈ 83.47°' }
+        { prompt: 'Use the sine rule: sin(YXZ)/YZ = sin(XYZ)/XZ. Find sin(YXZ) to 4 d.p. Use XZ = √71.87, not the rounded 8.48.', hint1: 'sin(YXZ) = YZ × sin(XYZ)/XZ', hint2: 'sin(YXZ) = 11 × sin 50°/√71.87', hint3: '11 × 0.76604/8.4776 = 0.9940', answer: '0.9940', tolerance: 0.0005, explanation: 'sin(YXZ) = 11 × sin 50° / 8.4776 ≈ 0.9940' },
+        { prompt: 'Find angle YXZ = sin⁻¹(0.9940) to 2 d.p.', hint1: 'Use your calculator: sin⁻¹(0.9940)', hint2: 'Check: is this the correct triangle? (angle sum must be < 180°)', hint3: '83.71', answer: '83.71', tolerance: 0.02, unit: '°', explanation: 'angle YXZ = sin⁻¹(0.99397) ≈ 83.71°' }
       ]
     },
 
@@ -15755,7 +15755,7 @@ const MathsQuestions = (() => {
         ]
       },
       steps: [
-        { prompt: 'State the circle theorem that connects the angle at the centre to the angle at the circumference.', hint1: 'Angle at the centre = 2 × angle at the circumference', hint2: 'Both angles stand on the same arc', hint3: 'Angle ACB = 110°/2', answer: '55', tolerance: 0.005, unit: '°', explanation: 'Angle at centre = 2 × angle at circumference; ACB = 110°/2 = 55°' },
+        { prompt: 'The angle at the centre is twice the angle at the circumference. Use this to find angle ACB.', hint1: 'Angle at the centre = 2 × angle at the circumference', hint2: 'Both angles stand on the same arc', hint3: 'Angle ACB = 110°/2', answer: '55', tolerance: 0.005, unit: '°', explanation: 'Angle at centre = 2 × angle at circumference; ACB = 110°/2 = 55°' },
         { prompt: 'Calculate angle ACB.', hint1: '110 ÷ 2 = 55', hint2: '55°', hint3: '55', answer: '55', tolerance: 0.005, unit: '°', explanation: 'Angle ACB = 55°' }
       ]
     },
@@ -15771,7 +15771,7 @@ const MathsQuestions = (() => {
         ]
       },
       steps: [
-        { prompt: 'State the theorem for opposite angles in a cyclic quadrilateral.', hint1: 'Opposite angles in a cyclic quadrilateral sum to 180°', hint2: 'Angle DAB + angle BCD = 180°', hint3: '78 + angle BCD = 180', answer: '180', tolerance: 0.005, explanation: 'Opposite angles in a cyclic quadrilateral add to 180°' },
+        { prompt: 'Opposite angles in a cyclic quadrilateral add up to how many degrees?', hint1: 'Opposite angles in a cyclic quadrilateral sum to 180°', hint2: 'Angle DAB + angle BCD = 180°', hint3: '78 + angle BCD = 180', answer: '180', tolerance: 0.005, explanation: 'Opposite angles in a cyclic quadrilateral add to 180°' },
         { prompt: 'Calculate angle BCD.', hint1: '180° − 78° = 102°', hint2: '102°', hint3: '102', answer: '102', tolerance: 0.005, unit: '°', explanation: 'Angle BCD = 180° − 78° = 102°' }
       ]
     },
@@ -15838,7 +15838,7 @@ const MathsQuestions = (() => {
         ]
       },
       steps: [
-        { prompt: 'State the intersecting chords theorem.', hint1: 'When two chords intersect inside a circle:', hint2: 'AX × XB = CX × XD', hint3: '4 × 9 = 6 × XD', answer: '36', tolerance: 0.005, explanation: 'AX × XB = 4 × 9 = 36' },
+        { prompt: 'The intersecting chords theorem says AX × XB = CX × XD. Calculate AX × XB.', hint1: 'When two chords intersect inside a circle:', hint2: 'AX × XB = CX × XD', hint3: '4 × 9 = 6 × XD', answer: '36', tolerance: 0.005, explanation: 'AX × XB = 4 × 9 = 36' },
         { prompt: 'Write the equation: 4 × 9 = 6 × XD. Solve for XD.', hint1: '36 = 6 × XD', hint2: 'XD = 36/6', hint3: '6', answer: '6', tolerance: 0.005, unit: 'cm', explanation: 'XD = 36/6 = 6 cm' },
         { prompt: 'State the final answer for XD.', hint1: 'XD = 6 cm', hint2: '6', hint3: '6', answer: '6', tolerance: 0.005, unit: 'cm', explanation: 'XD = 6 cm' }
       ]
@@ -15903,31 +15903,30 @@ const MathsQuestions = (() => {
         steps: [
           { explanation: 'OB = OC (radii), so triangle OBC is isosceles: angle OCB = angle OBC = 18°; angle BOC = 180 − 36 = 144°' },
           { explanation: 'OA = OC (radii), so triangle OAC isosceles: angle OAC = angle OCA = 28°; angle AOC = 180 − 56 = 124°' },
-          { explanation: 'Angle BOA = 360° − 144° − 124° = 92°; angle BAC = 92°/2 = 46°' }
+          { explanation: 'Angle BAC stands on arc BC, so angle BAC = angle BOC ÷ 2 = 144° ÷ 2 = 72°' }
         ]
       },
       steps: [
-        { prompt: 'Triangle OBC is isosceles (OB = OC = radii). Find angles OCB and BOC.', hint1: 'Angle OCB = angle OBC = 20°', hint2: 'Angle BOC = 180° − 20° − 20° = 140°', hint3: '140', answer: '140', tolerance: 0.005, unit: '°', explanation: 'Angle BOC = 180° − 20° − 20° = 140°' },
+        { prompt: 'Triangle OBC is isosceles (OB = OC = radii). Find angle BOC.', hint1: 'Angle OCB = angle OBC = 20°', hint2: 'Angle BOC = 180° − 20° − 20° = 140°', hint3: '140', answer: '140', tolerance: 0.005, unit: '°', explanation: 'Angle BOC = 180° − 20° − 20° = 140°' },
         { prompt: 'Triangle OAC is isosceles (OA = OC = radii). Find angle AOC.', hint1: 'Angle OAC = angle OCA = 35°', hint2: 'Angle AOC = 180° − 35° − 35° = 110°', hint3: '110', answer: '110', tolerance: 0.005, unit: '°', explanation: 'Angle AOC = 180° − 35° − 35° = 110°' },
         { prompt: 'Find angle BOA using angles around point O (total = 360°).', hint1: 'Angle BOA = 360° − 140° − 110°', hint2: '360 − 140 − 110 = 110°', hint3: '110', answer: '110', tolerance: 0.005, unit: '°', explanation: 'Angle BOA = 360° − 140° − 110° = 110°' },
-        { prompt: 'Use the angle at the centre theorem to find angle BAC.', hint1: 'Angle BAC = angle BOA / 2', hint2: '110°/2 = 55°', hint3: '55', answer: '55', tolerance: 0.005, unit: '°', explanation: 'Angle BAC = 110°/2 = 55°' }
+        { prompt: 'Angle BAC stands on arc BC. Use the angle at the centre theorem to find angle BAC.', hint1: 'Angle BAC = angle BOC / 2', hint2: '140°/2 = 70°', hint3: '70', answer: '70', tolerance: 0.005, unit: '°', explanation: 'Angle BAC = 140°/2 = 70° (angle at the centre is twice the angle at the circumference on the same arc BC)' }
       ]
     },
     // cth-C02
     {
       id: 'cth-C02', subtopic: 'geo-circles', band: 'C', marks: 4,
-      question: 'Two circles intersect at points A and B. C is a point on the first circle and D is a point on the second circle, with C, A, D collinear. The chord CB subtends an angle of 64° at the circumference of the first circle. The chord DB subtends an angle of 71° at the circumference of the second circle. Find angle CBD.',
+      question: 'Two circles intersect at points A and B. C is a point on the first circle and D is a point on the second circle, with C, A, D collinear. The chord AB subtends an angle of 64° at C. The chord AB subtends an angle of 71° at D. Find angle CBD.',
       workedExample: {
-        question: 'Two intersecting circles. Chord PQ subtends 50° at first circle circumference. Chord QR subtends 65° at second circle circumference. P, Q, R collinear. Find angle PQR.',
+        question: 'Two circles intersect at P and Q. R is on the first circle and S is on the second, with R, P, S collinear. Chord PQ subtends 50° at R and 65° at S. Find angle RQS.',
         steps: [
-          { explanation: 'Angle in semicircle at circumference... use the angles provided directly' },
-          { explanation: 'Angle QPR = 50° (given); angle QRP = 65° ... actually this needs specific diagram setup' },
-          { explanation: 'Use the fact that angle in same segment: angle CAB = 64° in first circle, angle DAB = 71° in second circle' },
-          { explanation: 'Angle CBD = 180° − 64° − 71° = 45° (angles on a straight line with the circle angles)' }
+          { explanation: 'Angle QRS = angle QRP = 50° (the angle chord PQ subtends at R)' },
+          { explanation: 'Angle QSR = angle QSP = 65° (the angle chord PQ subtends at S)' },
+          { explanation: 'R, Q and S form a triangle, so angle RQS = 180° − 50° − 65° = 65°' }
         ]
       },
       steps: [
-        { prompt: 'In the first circle, chord CB subtends 64° at the circumference. So angle CAB = 64°. In the second circle, chord DB subtends 71°. So angle DAB = 71°. What is the relationship between angle CAB and angle DAB?', hint1: 'C, A, D are collinear (on a straight line)', hint2: 'Angle CAB and angle DAB are on opposite sides of AB', hint3: 'Angle CAB + angle DAB + angle CBD = 180°', answer: '64 + 71 + angle CBD = 180', checkType: 'skip', displayAnswer: 'CAB + DAB + CBD = 180° (angles on straight line)', explanation: 'Since CAD is a straight line, angles CAB + DAB + angle CBD add to 180°' },
+        { prompt: 'C, A, D lie on a straight line, so C, B and D form a triangle. Angle BCD = 64° and angle BDC = 71°. Which fact links the three angles of triangle CBD?', hint1: 'Angle BCD = angle BCA = 64°', hint2: 'Angle BDC = angle BDA = 71°', hint3: 'Angles in a triangle add up to 180°', answer: '64 + 71 + angle CBD = 180', checkType: 'skip', displayAnswer: 'BCD + BDC + CBD = 180° (angles in triangle CBD)', explanation: 'The three angles of triangle CBD add up to 180°' },
         { prompt: 'Calculate 64° + 71°.', hint1: '64 + 71 = 135', hint2: '135°', hint3: '135', answer: '135', tolerance: 0.005, unit: '°', explanation: '64° + 71° = 135°' },
         { prompt: 'Find angle CBD.', hint1: '180° − 135° = 45°', hint2: '45°', hint3: '45', answer: '45', tolerance: 0.005, unit: '°', explanation: 'Angle CBD = 180° − 135° = 45°' },
         { prompt: 'State your final answer for angle CBD.', hint1: '45°', hint2: '45', hint3: '45', answer: '45', tolerance: 0.005, unit: '°', explanation: 'Angle CBD = 45°' }
@@ -15949,26 +15948,26 @@ const MathsQuestions = (() => {
         { prompt: 'What is the angle between radius OP and the tangent at P?', hint1: 'Radius is perpendicular to tangent', hint2: 'Angle OPT = 90°', hint3: '90', answer: '90', tolerance: 0.005, unit: '°', explanation: 'Angle OPT = 90° (radius perpendicular to tangent)' },
         { prompt: 'Use Pythagoras in triangle OPT to find PT. OP = 5, OT = 13.', hint1: 'PT² = OT² − OP² = 169 − 25 = 144', hint2: 'PT = √144 = 12', hint3: '12', answer: '12', tolerance: 0.005, unit: 'cm', explanation: 'PT = √(169 − 25) = √144 = 12 cm' },
         { prompt: 'Find angle POT using trigonometry. Which ratio uses PT (opposite) and OP (adjacent)?', hint1: 'tan(POT) = PT/OP = 12/5 = 2.4', hint2: 'Angle POT = tan⁻¹(2.4)', hint3: '67.38', answer: '67.38', tolerance: 0.005, unit: '°', explanation: 'tan(POT) = 12/5 = 2.4; angle POT = tan⁻¹(2.4) = 67.38°' },
-        { prompt: 'State both answers: PT and angle POT.', hint1: 'PT = 12 cm, angle POT = 67.38°', hint2: '67.38', hint3: '67.38', answer: '67.38', tolerance: 0.005, unit: '°', explanation: 'PT = 12 cm; angle POT = 67.38°' }
+        { prompt: 'State both answers: PT and angle POT. Enter angle POT.', hint1: 'PT = 12 cm, angle POT = 67.38°', hint2: '67.38', hint3: '67.38', answer: '67.38', tolerance: 0.005, unit: '°', explanation: 'PT = 12 cm; angle POT = 67.38°' }
       ]
     },
     // cth-C04
     {
       id: 'cth-C04', subtopic: 'geo-circles', band: 'C', marks: 4,
-      question: 'ABCD is a cyclic quadrilateral. Angle A = (3x + 10)°, angle B = (2x + 5)°, angle C = (x + 30)°, angle D = (4x − 15)°. Find x and all four angles.',
+      question: 'ABCD is a cyclic quadrilateral. Angle A = (3x + 10)°, angle B = (2x + 5)°, angle C = (x + 30)°, angle D = (4x − 35)°. Find x and all four angles.',
       workedExample: {
-        question: 'Cyclic quadrilateral: angle P = (2x+5)°, Q = (x+20)°, R = (3x−10)°, S = (x+15)°. Find x.',
+        question: 'Cyclic quadrilateral: angle P = (2x+5)°, Q = (x+20)°, R = (3x−10)°, S = (160−x)°. Find x.',
         steps: [
           { explanation: 'Opposite angles sum to 180°: P + R = 180 and Q + S = 180' },
           { explanation: '(2x+5) + (3x−10) = 180; 5x − 5 = 180; 5x = 185; x = 37' },
-          { explanation: 'Check: Q + S = (37+20) + (37+15) = 57 + 52 = 109 ≠ 180 → use all angles sum to 360° approach instead: 7x + 30 = 360; x = 47.14... Use opposite angles only' }
+          { explanation: 'Check: Q + S = (37+20) + (160−37) = 57 + 123 = 180 ✓' }
         ]
       },
       steps: [
         { prompt: 'State the two pairs of opposite angles in cyclic quadrilateral ABCD.', hint1: 'A and C are opposite; B and D are opposite', hint2: 'A + C = 180° and B + D = 180°', hint3: '(3x+10) + (x+30) = 180', answer: '4x+40=180', checkType: 'skip', displayAnswer: 'A + C = 180°: (3x+10) + (x+30) = 180', explanation: 'Opposite angles in a cyclic quadrilateral sum to 180°' },
         { prompt: 'Solve (3x + 10) + (x + 30) = 180 to find x.', hint1: '4x + 40 = 180', hint2: '4x = 140', hint3: 'x = 35', answer: '35', tolerance: 0.005, explanation: '4x + 40 = 180; 4x = 140; x = 35' },
-        { prompt: 'Check with the other pair: B + D = (2×35+5) + (4×35−15). Calculate B + D.', hint1: 'B = 75°, D = 125°', hint2: '75 + 125 = 200 ... ', hint3: 'Check: 75 + 125 = 200 ≠ 180 — use all four sum to 360: 10x+30=360, x=33', answer: '33', tolerance: 0.005, explanation: 'Using all four angles: (3x+10)+(2x+5)+(x+30)+(4x-15)=360; 10x+30=360; x=33' },
-        { prompt: 'With x = 33, find all four angles.', hint1: 'A = 3(33)+10 = 109°; B = 2(33)+5 = 71°; C = 33+30 = 63°; D = 4(33)-15 = 117°', hint2: 'Check A+C = 172, B+D = 188 — these should each be 180, so x = 35 from A+C=180 gives A=115, C=65, B=75, D=125', hint3: 'A=115°, B=75°, C=65°, D=125°', answer: '35', tolerance: 0.005, explanation: 'x = 35; A = 115°, B = 75°, C = 65°, D = 125°; check: A+C=180 ✓, B+D=200 — discrepancy means angles are overdetermined; use A+C=180 result: x=35' }
+        { prompt: 'Check with the other pair: B + D = (2×35 + 5) + (4×35 − 35). Calculate B + D.', hint1: 'B = 75°, D = 105°', hint2: '75 + 105 = ?', hint3: '180, as opposite angles should be', answer: '180', tolerance: 0.005, explanation: 'B + D = 75 + 105 = 180°, so the other pair of opposite angles checks' },
+        { prompt: 'With x = 35, find all four angles. Enter angle D.', hint1: 'A = 3(35)+10 = 115°; B = 2(35)+5 = 75°; C = 35+30 = 65°; D = 4(35)−35 = ?', hint2: 'Check: A + C = 180 and B + D = 180', hint3: 'A=115°, B=75°, C=65°, D=105°', answer: '105', tolerance: 0.005, explanation: 'x = 35; A = 115°, B = 75°, C = 65°, D = 105°; check: A+C=180 ✓, B+D=180 ✓' }
       ]
     },
 
@@ -15981,7 +15980,7 @@ const MathsQuestions = (() => {
       question: 'Vector a = (3, 2) and vector b = (−1, 4). Find a + b.',
       steps: [
         {
-          prompt: 'Add the x-components and y-components separately.',
+          prompt: 'Add the x-components and y-components separately. Enter the y-component of a + b.',
           hint1: 'x: 3 + (−1) = 2. y: 2 + 4 = 6.',
           hint2: 'a + b = (2, 6).',
           hint3: '(2, 6).',
@@ -16066,7 +16065,7 @@ const MathsQuestions = (() => {
         ]
       },
       steps: [
-        { prompt: 'Write the formula for |m| and substitute the components of m = (6, −4).', hint1: '|m| = √(x² + y²)', hint2: '|m| = √(6² + (−4)²)', hint3: '|m| = √(36 + 16) = √52', answer: '7.21', tolerance: 0.005, explanation: '|m| = √(36 + 16) = √52 ≈ 7.21' },
+        { prompt: 'Write |m| = √(6² + (−4)²). Calculate |m| to 2 d.p.', hint1: '|m| = √(x² + y²)', hint2: '|m| = √(6² + (−4)²)', hint3: '|m| = √(36 + 16) = √52', answer: '7.21', tolerance: 0.005, explanation: '|m| = √(36 + 16) = √52 ≈ 7.21' },
         { prompt: 'Calculate |m| to 2 d.p.', hint1: '√52 = √(4 × 13) = 2√13', hint2: '2 × 3.606 = 7.211', hint3: '7.21', answer: '7.21', tolerance: 0.005, explanation: '|m| = √52 ≈ 7.21' }
       ]
     },

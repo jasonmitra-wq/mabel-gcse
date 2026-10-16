@@ -273,7 +273,7 @@ const MathsQuestions = (() => {
           prompt: 'Apply the multiplier three times (or use a power).',
           hint1: 'Compound means apply the multiplier repeatedly: 4000 × 1.035³.',
           hint2: '1.035³ = 1.035 × 1.035 × 1.035 ≈ 1.10872...',
-          hint3: '4000 × 1.035³ ≈ 4434.90',
+          hint3: '4000 × 1.035³ ≈ 4434.87',
           answer: 4434.87, tolerance: 0.005, unit: '£',
           explanation: 'Compound interest formula: A = P × (1 + r)ⁿ. Here P=4000, r=0.035, n=3.',
         },
@@ -5192,7 +5192,7 @@ const MathsQuestions = (() => {
           explanation: 'xₘ = (−1+5)/2 = 2.',
         },
         {
-          prompt: 'Find the y-coordinate of the midpoint, then calculate the gradient of AB.',
+          prompt: 'Find the y-coordinate of the midpoint, then calculate the gradient of AB. Enter the gradient.',
           hint1: 'yₘ = (2+10)/2 = 6. Gradient = dy/dx = 8/6.',
           hint2: '8/6 = 4/3 ≈ 1.33.',
           hint3: 'Midpoint (2, 6), gradient ≈ 1.33.',
@@ -5412,7 +5412,7 @@ const MathsQuestions = (() => {
           displayAnswer: 'n > −1/3',
         },
         {
-          prompt: 'Upper bound: 3n ≤ 9 → n ≤ ? And how many integers satisfy this?',
+          prompt: 'Upper bound: 3n ≤ 9 → n ≤ 3. How many integers satisfy the inequality?',
           hint1: '3n ≤ 9 → n ≤ 3.',
           hint2: 'Integers: 0, 1, 2, 3. Count = 4.',
           hint3: '4 integers.',
@@ -5543,7 +5543,7 @@ const MathsQuestions = (() => {
       question: 'Find all integer values satisfying both 4x − 1 > 2x + 7 and 3x ≤ 21.',
       steps: [
         {
-          prompt: 'Solve 4x − 1 > 2x + 7. Collect x terms.',
+          prompt: 'Solve 4x − 1 > 2x + 7. Collect x terms, then divide. x > ?',
           hint1: '4x − 2x > 7 + 1.',
           hint2: '2x > 8.',
           hint3: 'x > 4.',
@@ -6352,7 +6352,7 @@ const MathsQuestions = (() => {
       question: 'An arithmetic sequence has first term a and common difference d. The 4th term is 19 and the sum of the first 6 terms is 78. Find a and d.',
       steps: [
         {
-          prompt: 'Write the equation for the 4th term: a + 3d = 19. Now write the sum of 6 terms formula and set equal to 78.',
+          prompt: 'Write the equation for the 4th term: a + 3d = 19. Now write the sum of 6 terms formula, set it equal to 78 and divide by 3. 2a + 5d = ?',
           hint1: 'S₆ = (6/2)(2a + 5d) = 78 → 3(2a + 5d) = 78.',
           hint2: '2a + 5d = 26.',
           hint3: '26.',
@@ -6405,7 +6405,7 @@ const MathsQuestions = (() => {
       question: 'Solve the simultaneous equations: y = 3x + 1 and y = x + 5.',
       steps: [
         {
-          prompt: 'Set the two expressions for y equal: 3x + 1 = x + 5. Collect x terms.',
+          prompt: 'Set the two expressions for y equal: 3x + 1 = x + 5. Collect x terms. 2x = ?',
           hint1: '3x − x = 5 − 1.',
           hint2: '2x = 4.',
           hint3: '2x = 4.',
@@ -6451,7 +6451,7 @@ const MathsQuestions = (() => {
       question: 'Solve the simultaneous equations: 3x + y = 11 and x + y = 5.',
       steps: [
         {
-          prompt: 'Subtract equation 2 from equation 1 to eliminate y.',
+          prompt: 'Subtract equation 2 from equation 1 to eliminate y. 2x = ?',
           hint1: '(3x + y) − (x + y) = 11 − 5.',
           hint2: '2x = 6.',
           hint3: '2x = 6.',
@@ -6497,7 +6497,7 @@ const MathsQuestions = (() => {
       question: 'Solve the simultaneous equations: 5x − y = 9 and 2x + y = 12.',
       steps: [
         {
-          prompt: 'Add the two equations to eliminate y.',
+          prompt: 'Add the two equations to eliminate y. 7x = ?',
           hint1: '(5x − y) + (2x + y) = 9 + 12.',
           hint2: '7x = 21.',
           hint3: '7x = 21.',
@@ -6551,7 +6551,7 @@ const MathsQuestions = (() => {
       question: 'Solve the simultaneous equations: 2x + y = 11 and 3x − y = 14.',
       steps: [
         {
-          prompt: 'Add the equations to eliminate y.',
+          prompt: 'Add the equations to eliminate y. 5x = ?',
           hint1: '(2x + y) + (3x − y) = 11 + 14.',
           hint2: '5x = 25.',
           hint3: '5x = 25.',
@@ -6615,7 +6615,7 @@ const MathsQuestions = (() => {
           displayAnswer: '9x+12y=30 ; 8x−12y=4',
         },
         {
-          prompt: 'Add the two new equations to eliminate y. What is 9x + 8x = ?',
+          prompt: 'Add the two new equations to eliminate y. 17x = ?',
           hint1: '(9x+12y) + (8x−12y) = 30 + 4.',
           hint2: '17x = 34.',
           hint3: '34.',
@@ -6661,7 +6661,7 @@ const MathsQuestions = (() => {
       question: 'A cinema charges £8 for adults and £5 for children. In one session, 20 tickets are sold for £127. How many adult and child tickets were sold?',
       steps: [
         {
-          prompt: 'Let a = adults, c = children. Write two equations. Substitute c = 20 − a into 8a + 5c = 127 and expand. Find 3a + 100.',
+          prompt: 'Let a = adults, c = children. Write two equations. Substitute c = 20 − a into 8a + 5c = 127 and expand to get 3a + 100 = 127. Find 3a.',
           hint1: '8a + 5(20 − a) = 127 → 8a + 100 − 5a = 127.',
           hint2: '3a + 100 = 127 → 3a = 27.',
           hint3: '27.',
@@ -6769,7 +6769,7 @@ const MathsQuestions = (() => {
       question: 'Solve the simultaneous equations: 2x + 5y = 16 and 4x − y = 10.',
       steps: [
         {
-          prompt: 'Multiply the second equation by 5 to match y-coefficients.',
+          prompt: 'Multiply the second equation by 5 to match y-coefficients. 20x − 5y = ?',
           hint1: '5 × (4x − y) = 5 × 10.',
           hint2: '20x − 5y = 50.',
           hint3: '50.',
@@ -6777,7 +6777,7 @@ const MathsQuestions = (() => {
           explanation: '20x − 5y = 50.',
         },
         {
-          prompt: 'Add to the first equation to eliminate y.',
+          prompt: 'Add to the first equation to eliminate y. 22x = ?',
           hint1: '(2x + 5y) + (20x − 5y) = 16 + 50.',
           hint2: '22x = 66.',
           hint3: '66.',
@@ -7749,7 +7749,7 @@ const MathsQuestions = (() => {
       question: 'Find the values of k such that x² + kx + 9 = 0 has exactly one solution (a repeated root).',
       steps: [
         {
-          prompt: 'A quadratic has exactly one solution when the discriminant = 0. Write the discriminant.',
+          prompt: 'A quadratic has exactly one solution when the discriminant = 0. Set the discriminant equal to 0. k² = ?',
           hint1: 'Discriminant = k² − 4(1)(9).',
           hint2: 'k² − 36 = 0.',
           hint3: 'k² = 36.',
@@ -9961,7 +9961,7 @@ const MathsQuestions = (() => {
           explanation: '1.12ⁿ > 2.'
         },
         {
-          prompt: 'Calculate 1.12⁶ to check if n = 6 is sufficient.',
+          prompt: 'Calculate 1.12⁶ and 1.12⁷. What is the smallest number of complete hours for which 1.12ⁿ > 2?',
           hint1: '1.12⁶ ≈ 1.9738 < 2. Try n = 7.',
           hint2: '1.12⁷ ≈ 2.2107 > 2.',
           hint3: 'n = 7.',
@@ -10079,7 +10079,7 @@ const MathsQuestions = (() => {
           explanation: '180 000 × 1.05⁴ = 180 000 × 1.21550625 ≈ £218 791.'
         },
         {
-          prompt: 'Now apply 3% decrease for 2 years. What multiplier is applied?',
+          prompt: 'Now apply 3% decrease for 2 years. What single multiplier covers both years?',
           hint1: '3% decrease → multiplier 0.97 each year, applied twice.',
           hint2: '0.97² = 0.9409.',
           hint3: '0.9409.',
@@ -10092,23 +10092,23 @@ const MathsQuestions = (() => {
           prompt: 'Find the value after the 2 years of decline. (£, nearest pound)',
           hint1: '218 791 × 0.9409.',
           hint2: '218 791 × 0.9409 ≈ ?',
-          hint3: '£205 820.',
-          answer: 205820,
-          tolerance: 10,
+          hint3: '£205 861.',
+          answer: 205861,
+          tolerance: 1,
           unit: '£',
-          explanation: '218 791 × 0.9409 ≈ £205 820.'
+          explanation: '218 791 × 0.9409 ≈ £205 861.'
         },
         {
           prompt: 'Alternatively, write the whole calculation as one expression and verify your answer is correct. Enter 1 if your answer is within £10.',
           hint1: 'V = 180 000 × 1.05⁴ × 0.97².',
-          hint2: '180 000 × 1.21550625 × 0.9409 ≈ £205 820.',
+          hint2: '180 000 × 1.21550625 × 0.9409 ≈ £205 861.',
           hint3: 'Enter 1.',
           answer: 1,
           tolerance: 0,
           unit: '',
           checkType: 'skip',
-          displayAnswer: 'V = 180 000 × 1.05⁴ × 0.97² ≈ £205 820',
-          explanation: '180 000 × 1.05⁴ × 0.97² ≈ £205 820.'
+          displayAnswer: 'V = 180 000 × 1.05⁴ × 0.97² ≈ £205 861',
+          explanation: '180 000 × 1.05⁴ × 0.97² ≈ £205 861.'
         }
       ],
       workedExample: {
@@ -10119,9 +10119,9 @@ const MathsQuestions = (() => {
         ]
       },
       sampleAnswer: {
-        grade4: 'After growth: £218 791. After decline: £218 791 × 0.9409 ≈ £205 820.',
-        grade6: 'V = 180 000 × 1.05⁴ × 0.97² ≈ £218 791 × 0.9409 ≈ £205 820.',
-        grade8: 'V = 180 000 × 1.05⁴ × 0.97² = 180 000 × 1.21550625 × 0.9409 ≈ £205 820.'
+        grade4: 'After growth: £218 791. After decline: £218 791 × 0.9409 ≈ £205 861.',
+        grade6: 'V = 180 000 × 1.05⁴ × 0.97² ≈ £218 791 × 0.9409 ≈ £205 861.',
+        grade8: 'V = 180 000 × 1.05⁴ × 0.97² = 180 000 × 1.21550625 × 0.9409 ≈ £205 861.'
       },
       examinerTip: 'Chain multipliers together: growth years then decline years, all in one expression.',
       auditStatus: 'pending'
@@ -10759,7 +10759,7 @@ const MathsQuestions = (() => {
       question: 'A block of wood (density 0.75 g/cm³) has dimensions 20 cm × 10 cm × 4 cm. It is placed on a table. Calculate the maximum and minimum pressure it can exert on the table. (Use g = 10 N/kg.)',
       steps: [
         {
-          prompt: 'Find the volume and mass of the block.',
+          prompt: 'Find the volume and mass of the block, then its weight (g = 10 N/kg). Enter the weight in N.',
           hint1: 'Volume = 20×10×4 = 800 cm³. Mass = 0.75 × 800 = 600 g = 0.6 kg.',
           hint2: 'Weight = 0.6 × 10 = 6 N.',
           hint3: 'Weight = 6 N.',

@@ -128,3 +128,85 @@ Every change to js/maths-questions.js made from tools/maths-recompute.js --all, 
   - prompt NEW: 'Verify by checking P(A) × P(B) against P(A and B). Enter P(A) × P(B).'
   - answer OLD: 0.375
   - answer NEW: 0.1
+
+## Batch 2: bank questions 121–240 (gph-C03 … pro-B02)
+
+- gph-C04 step 3 | ambiguous: midpoint y-coordinate and gradient asked for, one box
+  - prompt OLD: 'Find the y-coordinate of the midpoint, then calculate the gradient of AB.'
+  - prompt NEW: 'Find the y-coordinate of the midpoint, then calculate the gradient of AB. Enter the gradient.'
+- ineq-B03 step 2 | ambiguous: upper bound and number of integers asked for, one box
+  - prompt OLD: 'Upper bound: 3n ≤ 9 → n ≤ ? And how many integers satisfy this?'
+  - prompt NEW: 'Upper bound: 3n ≤ 9 → n ≤ 3. How many integers satisfy the inequality?'
+- ineq-B06 step 0 | ambiguous: 2x > 8 or x > 4
+  - prompt OLD: 'Solve 4x − 1 > 2x + 7. Collect x terms.'
+  - prompt NEW: 'Solve 4x − 1 > 2x + 7. Collect x terms, then divide. x > ?'
+- seq-C04 step 0 | ambiguous: an equation asked for, one box
+  - prompt OLD: 'Write the equation for the 4th term: a + 3d = 19. Now write the sum of 6 terms formula and set equal to 78.'
+  - prompt NEW: 'Write the equation for the 4th term: a + 3d = 19. Now write the sum of 6 terms formula, set it equal to 78 and divide by 3. 2a + 5d = ?'
+- sim-A03 step 0 | ambiguous: 2x = 4 or x
+  - prompt OLD: 'Set the two expressions for y equal: 3x + 1 = x + 5. Collect x terms.'
+  - prompt NEW: 'Set the two expressions for y equal: 3x + 1 = x + 5. Collect x terms. 2x = ?'
+- sim-A04 step 0 | ambiguous: 2x = 6 or x
+  - prompt OLD: 'Subtract equation 2 from equation 1 to eliminate y.'
+  - prompt NEW: 'Subtract equation 2 from equation 1 to eliminate y. 2x = ?'
+- sim-A05 step 0 | ambiguous: 7x = 21 or x
+  - prompt OLD: 'Add the two equations to eliminate y.'
+  - prompt NEW: 'Add the two equations to eliminate y. 7x = ?'
+- sim-B02 step 0 | ambiguous: 5x = 25 or x
+  - prompt OLD: 'Add the equations to eliminate y.'
+  - prompt NEW: 'Add the equations to eliminate y. 5x = ?'
+- sim-B03 step 1 | ambiguous: prompt asked 9x + 8x = ? (17x); the box takes 34
+  - prompt OLD: 'Add the two new equations to eliminate y. What is 9x + 8x = ?'
+  - prompt NEW: 'Add the two new equations to eliminate y. 17x = ?'
+- sim-B04 step 0 | ambiguous: prompt asked for 3a + 100 (= 127); the box takes 3a = 27
+  - prompt OLD: 'Let a = adults, c = children. Write two equations. Substitute c = 20 − a into 8a + 5c = 127 and expand. Find 3a + 100.'
+  - prompt NEW: 'Let a = adults, c = children. Write two equations. Substitute c = 20 − a into 8a + 5c = 127 and expand to get 3a + 100 = 127. Find 3a.'
+- sim-B06 step 0 | ambiguous: an equation asked for, one box
+  - prompt OLD: 'Multiply the second equation by 5 to match y-coefficients.'
+  - prompt NEW: 'Multiply the second equation by 5 to match y-coefficients. 20x − 5y = ?'
+- sim-B06 step 1 | ambiguous: 22x = 66 or x
+  - prompt OLD: 'Add to the first equation to eliminate y.'
+  - prompt NEW: 'Add to the first equation to eliminate y. 22x = ?'
+- quad-C04 step 0 | ambiguous: prompt asked for the discriminant expression; the box takes k² = 36
+  - prompt OLD: 'A quadratic has exactly one solution when the discriminant = 0. Write the discriminant.'
+  - prompt NEW: 'A quadratic has exactly one solution when the discriminant = 0. Set the discriminant equal to 0. k² = ?'
+
+## Batch 2 (continued): pch, cmp
+
+- pch-C02 step 2 | ambiguous: prompt asked for 1.12⁶; the box (unit hours) takes n = 7
+  - prompt OLD: 'Calculate 1.12⁶ to check if n = 6 is sufficient.'
+  - prompt NEW: 'Calculate 1.12⁶ and 1.12⁷. What is the smallest number of complete hours for which 1.12ⁿ > 2?'
+- pch-C04 step 1 | ambiguous: per-year (0.97) or two-year (0.9409) multiplier
+  - prompt OLD: 'Now apply 3% decrease for 2 years. What multiplier is applied?'
+  - prompt NEW: 'Now apply 3% decrease for 2 years. What single multiplier covers both years?'
+- pch-C04 step 2 | wrong: £180 000 × 1.05⁴ × 0.97² = £205 860.57, so £205 861 to the nearest pound; stored 205820 (tolerance 10) marked the right answer wrong
+  - answer OLD: 205820
+  - answer NEW: 205861
+  - tolerance OLD: 10
+  - tolerance NEW: 1
+- cmp-C03 step 0 | ambiguous: prompt asked for volume and mass; the box (unit N) takes the weight
+  - prompt OLD: 'Find the volume and mass of the block.'
+  - prompt NEW: 'Find the volume and mass of the block, then its weight (g = 10 N/kg). Enter the weight in N.'
+
+## Batch 2 (continued): stale values in hints and sample answers
+
+- pct-C01 text | wrong value in hint (answer fixed in batch 1): £4000 × 1.035³ = £4434.87
+  - line 276 OLD: hint3: '4000 × 1.035³ ≈ 4434.90',
+  - line 276 NEW: hint3: '4000 × 1.035³ ≈ 4434.87',
+- pch-C04 text | wrong value in hints, explanations, displayAnswer and sample answers (answer fixed above): £205 860.57 → £205 861
+  - line 10095 OLD: hint3: '£205 820.',
+  - line 10095 NEW: hint3: '£205 861.',
+  - line 10099 OLD: explanation: '218 791 × 0.9409 ≈ £205 820.'
+  - line 10099 NEW: explanation: '218 791 × 0.9409 ≈ £205 861.'
+  - line 10104 OLD: hint2: '180 000 × 1.21550625 × 0.9409 ≈ £205 820.',
+  - line 10104 NEW: hint2: '180 000 × 1.21550625 × 0.9409 ≈ £205 861.',
+  - line 10110 OLD: displayAnswer: 'V = 180 000 × 1.05⁴ × 0.97² ≈ £205 820',
+  - line 10110 NEW: displayAnswer: 'V = 180 000 × 1.05⁴ × 0.97² ≈ £205 861',
+  - line 10111 OLD: explanation: '180 000 × 1.05⁴ × 0.97² ≈ £205 820.'
+  - line 10111 NEW: explanation: '180 000 × 1.05⁴ × 0.97² ≈ £205 861.'
+  - line 10122 OLD: grade4: 'After growth: £218 791. After decline: £218 791 × 0.9409 ≈ £205 820.',
+  - line 10122 NEW: grade4: 'After growth: £218 791. After decline: £218 791 × 0.9409 ≈ £205 861.',
+  - line 10123 OLD: grade6: 'V = 180 000 × 1.05⁴ × 0.97² ≈ £218 791 × 0.9409 ≈ £205 820.',
+  - line 10123 NEW: grade6: 'V = 180 000 × 1.05⁴ × 0.97² ≈ £218 791 × 0.9409 ≈ £205 861.',
+  - line 10124 OLD: grade8: 'V = 180 000 × 1.05⁴ × 0.97² = 180 000 × 1.21550625 × 0.9409 ≈ £205 820.'
+  - line 10124 NEW: grade8: 'V = 180 000 × 1.05⁴ × 0.97² = 180 000 × 1.21550625 × 0.9409 ≈ £205 861.'

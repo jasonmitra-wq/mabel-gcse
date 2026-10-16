@@ -2,9 +2,9 @@
 
 Generated 2026-10-16 by tools/maths-recompute.js. Read-only: no question was changed.
 
-All 149 questions, 386 steps. Checked by the app: 298; checkType skip: 88.  
-Checked steps: ok 298, ambiguous 0, wrong 0, mismatch 0.  
-Error rate (wrong + mismatch over checked steps): 0/298 = 0.0%. Questions with at least one error: 0/149.  
+All 266 questions, 748 steps. Checked by the app: 605; checkType skip: 143.  
+Checked steps: ok 605, ambiguous 0, wrong 0, mismatch 0.  
+Error rate (wrong + mismatch over checked steps): 0/605 = 0.0%. Questions with at least one error: 0/266.  
 
 | Question | Step | Prompt | Stored | Recomputed | Status | Note |
 |---|---|---|---|---|---|---|
@@ -309,16 +309,378 @@ Error rate (wrong + mismatch over checked steps): 0/298 = 0.0%. Questions with a
 | gph-C02 | 1 | Find the perpendicular gradient. (m₁ × m₂ = −1, so m₂ = −1/m₁.) | 0 | — | skip |  |
 | gph-C02 | 2 | Substitute m = −1/2 and point (4, 1) into y = mx + c. Calculate c. | 3 | 3 | ok |  |
 | gph-C02 | 3 | Write the equation of the perpendicular line. | 0 | — | skip |  |
+| gph-C03 | 0 | Find the gradient of AB. | 2 | 2 | ok |  |
+| gph-C03 | 1 | Substitute m = 2 and A(2, 1) to find c. | -3 | -3 | ok |  |
+| gph-C03 | 2 | Find the intersection with y = −x + 12. Set 2x − 3 = −x + 12 and solve | 5 | 5 | ok |  |
+| gph-C03 | 3 | Calculate y by substituting x = 5 into y = −x + 12. | 7 | 7 | ok |  |
+| gph-C04 | 0 | Calculate d² using Pythagoras: d² = (x₂ − x₁)² + (y₂ − y₁)². | 100 | 100 | ok |  |
+| gph-C04 | 1 | Calculate the length AB = √d². | 10 | 10 | ok |  |
+| gph-C04 | 2 | Find the x-coordinate of the midpoint of AB. | 2 | 2 | ok |  |
+| gph-C04 | 3 | Find the y-coordinate of the midpoint, then calculate the gradient of  | 1.33 | 1.333333 | ok |  |
+| ineq-A03 | 0 | Add 3 to both sides. | 12 | 12 | ok |  |
+| ineq-A03 | 1 | Divide both sides by 4. | 3 | 3 | ok |  |
+| ineq-A04 | 0 | Subtract 2 from both sides. What does 4x become less than? | 8 | 8 | ok |  |
+| ineq-A04 | 1 | Divide both sides by 4. | 2 | 2 | ok |  |
+| ineq-A05 | 0 | Subtract 1 from all three parts. | 0 | — | skip |  |
+| ineq-A05 | 1 | Divide all three parts by 2. What is the left bound of x? | 2 | 2 | ok |  |
+| ineq-A05 | 2 | What is the right bound of x? | 5 | 5 | ok |  |
+| ineq-B02 | 0 | Expand the left bracket. What is 3 × 2? | 6 | 6 | ok |  |
+| ineq-B02 | 1 | Expand the right bracket. What is 2 × 5? | 10 | 10 | ok |  |
+| ineq-B02 | 2 | Subtract 2x and 6 from both sides to find x. | 4 | 4 | ok |  |
+| ineq-B03 | 0 | Add 1 to all three parts. | 0 | — | skip |  |
+| ineq-B03 | 1 | Divide by 3. What is the lower bound of n (strictly greater than)? | 0 | — | skip |  |
+| ineq-B03 | 2 | Upper bound: 3n ≤ 9 → n ≤ 3. How many integers satisfy the inequality? | 4 | 4 | ok |  |
+| ineq-B04 | 0 | Solve 4 − 3x ≤ 13. Subtract 4 from both sides. | 9 | 9 | ok |  |
+| ineq-B04 | 1 | Divide both sides by −3 (flip the inequality). What value must x be at | -3 | -3 | ok |  |
+| ineq-B04 | 2 | Combine x ≥ −3 with x ≥ −2. Which gives the more restrictive lower bou | -2 | -2 | ok |  |
+| ineq-B05 | 0 | The lower bound is x ≥ −1. What is the smallest integer satisfying thi | -1 | -1 | ok |  |
+| ineq-B05 | 1 | The upper bound is x < 3. What is the largest integer satisfying this? | 2 | 2 | ok |  |
+| ineq-B05 | 2 | List the integer solutions from −1 to 2. | 0 | — | skip |  |
+| ineq-B05 | 3 | How many integer solutions are there? | 4 | 4 | ok |  |
+| ineq-B06 | 0 | Solve 4x − 1 > 2x + 7. Collect x terms, then divide. x > ? | 4 | 4 | ok |  |
+| ineq-B06 | 1 | Solve 3x ≤ 21. | 7 | 7 | ok |  |
+| ineq-B06 | 2 | Combine the two results: 4 < x ≤ 7. List the integers in this range. | 0 | — | skip |  |
+| ineq-B06 | 3 | How many integers satisfy both inequalities? | 3 | 3 | ok |  |
+| ineq-C01 | 0 | Rearrange: subtract 4x from both sides. | 0 | — | skip |  |
+| ineq-C01 | 1 | Find the critical values where x(x − 4) = 0. | 0 | — | skip |  |
+| ineq-C01 | 2 | The expression x(x − 4) ≤ 0 is satisfied between the roots. What is th | 0 | 0 | ok |  |
+| ineq-C01 | 3 | What is the upper bound of x? | 4 | 4 | ok |  |
+| ineq-C02 | 0 | Factorise x² + 2x − 8. | 0 | — | skip |  |
+| ineq-C02 | 1 | Find the roots: what is the smaller root? | -4 | -4 | ok |  |
+| ineq-C02 | 2 | What is the larger root? | 2 | 2 | ok |  |
+| ineq-C02 | 3 | For (x+4)(x−2) < 0 (parabola opening upward), the solution is between  | 0 | — | skip |  |
+| ineq-C03 | 0 | Factorise 2x² − 5x − 3. | 0 | — | skip |  |
+| ineq-C03 | 1 | Find the smaller root: 2x + 1 = 0 → x = ? | -0.5 | -0.5 | ok |  |
+| ineq-C03 | 2 | Find the larger root: x − 3 = 0 → x = ? | 3 | 3 | ok |  |
+| ineq-C03 | 3 | Write the solution: the quadratic is ≤ 0 between and including the roo | 0 | — | skip |  |
+| ineq-C04 | 0 | Solve x² < 25. This gives −5 < x < 5. What is the lower bound? | -5 | -5 | ok |  |
+| ineq-C04 | 1 | Solve 2x + 3 > 5. | 1 | 1 | ok |  |
+| ineq-C04 | 2 | Combine the conditions: x > 1 and x < 5. What is the combined range? | 0 | — | skip |  |
+| ineq-C04 | 3 | List the integers satisfying 1 < x < 5 and state how many there are. | 3 | 3 | ok |  |
+| seq-A03 | 0 | Substitute n = 10: calculate 2 × 10. | 20 | 20 | ok |  |
+| seq-A03 | 1 | Add 5: what is 20 + 5? | 25 | 25 | ok |  |
+| seq-A04 | 0 | Find the common difference d. | 4 | 4 | ok |  |
+| seq-A04 | 1 | nth term = 4n + c. Use the first term (n = 1) to find c. | -2 | -2 | ok |  |
+| seq-A05 | 0 | Set 3n − 2 = 197 and solve. Add 2 to both sides: 3n = ? | 199 | 199 | ok |  |
+| seq-A05 | 1 | Divide by 3: what is 199 ÷ 3? | 0 | — | skip |  |
+| seq-A05 | 2 | Since n must be a positive integer, is 197 in this sequence? Enter 1 f | 0 | — | skip |  |
+| seq-B02 | 0 | Find the 8th term using nth term = 3n + 1. | 25 | 25 | ok |  |
+| seq-B02 | 1 | Use Sₙ = (n/2)(first + last): calculate (first + last). | 29 | 29 | ok |  |
+| seq-B02 | 2 | Calculate S₈ = (8/2) × 29. | 116 | 116 | ok |  |
+| seq-B03 | 0 | Find the common ratio r. | 3 | 3 | ok |  |
+| seq-B03 | 1 | Find the 4th term by multiplying the 3rd term by r. | 135 | 135 | ok |  |
+| seq-B03 | 2 | Find the 5th term. | 405 | 405 | ok |  |
+| seq-B04 | 0 | Find the second differences. First differences: 5, 7, 9, 11. What is t | 2 | 2 | ok |  |
+| seq-B04 | 1 | Leading coefficient of n² = second difference ÷ 2. What is it? | 1 | 1 | ok |  |
+| seq-B04 | 2 | Subtract n² from each term: 3−1=2, 8−4=4, 15−9=6 ... This is 2n. Write | 15 | 15 | ok |  |
 | seq-B05 | 0 | Substitute n = 1: calculate 1² − 1 + 4. | 4 | 4 | ok |  |
 | seq-B05 | 1 | Substitute n = 2: calculate 2² − 2 + 4. | 6 | 6 | ok |  |
 | seq-B05 | 2 | Substitute n = 10: calculate 10² − 10 + 4. | 94 | 94 | ok |  |
+| seq-B06 | 0 | The difference between the 7th and 3rd terms spans 4 steps. Find the c | 4 | 4 | ok |  |
+| seq-B06 | 1 | Work back from the 3rd term to find the 1st term: a = T₃ − 2d. | 3 | 3 | ok |  |
+| seq-B06 | 2 | nth term = a + (n − 1)d. Simplify. | 0 | — | skip |  |
+| seq-B06 | 3 | Verify: when n = 3, nth term = 4(3) − 1 = ? | 11 | 11 | ok |  |
+| seq-C01 | 0 | Set the two nth terms equal. | 0 | — | skip |  |
+| seq-C01 | 1 | Subtract 3n from both sides: n + 3 = 7. Solve for n. | 4 | 4 | ok |  |
+| seq-C01 | 2 | Find the common value at n = 4 using 4n + 3. | 19 | 19 | ok |  |
+| seq-C01 | 3 | Verify using the second sequence: 3(4) + 7 = ? | 19 | 19 | ok |  |
+| seq-C02 | 0 | Find the second differences. First differences: 3, 5, 7, 9. Second dif | 2 | 2 | ok |  |
+| seq-C02 | 1 | Leading coefficient of n² = second diff ÷ 2. What is it? | 1 | 1 | ok |  |
+| seq-C02 | 2 | Subtract n² from each term: 0−1=−1, 3−4=−1, 8−9=−1. What is the consta | -1 | -1 | ok |  |
+| seq-C02 | 3 | Verify: when n = 4, nth term = 4² − 1 = ? | 15 | 15 | ok |  |
+| seq-C03 | 0 | Write the first 3 terms: 2, 2r, 2r². Their sum = 26. Set up the equati | 0 | — | skip |  |
+| seq-C03 | 1 | Factorise r² + r − 12. | 0 | — | skip |  |
+| seq-C03 | 2 | The common ratio r is positive. What is r? | 3 | 3 | ok |  |
+| seq-C03 | 3 | Verify: 2 + 2(3) + 2(9) = ? | 26 | 26 | ok |  |
+| seq-C04 | 0 | Write the equation for the 4th term: a + 3d = 19. Now write the sum of | 26 | 26 | ok |  |
+| seq-C04 | 1 | From a + 3d = 19: a = 19 − 3d. Substitute into 2a + 5d = 26. Solve for | 12 | 12 | ok |  |
+| seq-C04 | 2 | Find a: a = 19 − 3d. | -17 | -17 | ok |  |
+| seq-C04 | 3 | Verify the sum: S₆ = (6/2)(2(−17) + 5(12)) = 3(−34 + 60) = ? | 78 | 78 | ok |  |
+| sim-A03 | 0 | Set the two expressions for y equal: 3x + 1 = x + 5. Collect x terms.  | 4 | 4 | ok |  |
+| sim-A03 | 1 | Find x. | 2 | 2 | ok |  |
+| sim-A03 | 2 | Substitute x = 2 into y = x + 5. | 7 | 7 | ok |  |
+| sim-A04 | 0 | Subtract equation 2 from equation 1 to eliminate y. 2x = ? | 6 | 6 | ok |  |
+| sim-A04 | 1 | Find x. | 3 | 3 | ok |  |
+| sim-A04 | 2 | Substitute x = 3 into x + y = 5. | 2 | 2 | ok |  |
+| sim-A05 | 0 | Add the two equations to eliminate y. 7x = ? | 21 | 21 | ok |  |
+| sim-A05 | 1 | Find x. | 3 | 3 | ok |  |
+| sim-A05 | 2 | Substitute x = 3 into 2x + y = 12. | 6 | 6 | ok |  |
+| sim-A05 | 3 | Verify in the first equation: 5(3) − 6 = ? | 9 | 9 | ok |  |
+| sim-B02 | 0 | Add the equations to eliminate y. 5x = ? | 25 | 25 | ok |  |
+| sim-B02 | 1 | Find x. | 5 | 5 | ok |  |
+| sim-B02 | 2 | Substitute x = 5 into 2x + y = 11. | 1 | 1 | ok |  |
+| sim-B02 | 3 | Verify in 3x − y = 14: 3(5) − 1 = ? | 14 | 14 | ok |  |
+| sim-B03 | 0 | Multiply the first equation by 3 and the second by 4 to match y-coeffi | 0 | — | skip |  |
+| sim-B03 | 1 | Add the two new equations to eliminate y. 17x = ? | 34 | 34 | ok |  |
+| sim-B03 | 2 | Find x. | 2 | 2 | ok |  |
+| sim-B03 | 3 | Substitute x = 2 into 3x + 4y = 10. Find y. | 1 | 1 | ok |  |
+| sim-B04 | 0 | Let a = adults, c = children. Write two equations. Substitute c = 20 − | 27 | 27 | ok |  |
+| sim-B04 | 1 | Find a (number of adult tickets). | 9 | 9 | ok |  |
+| sim-B04 | 2 | Find c = 20 − a. | 11 | 11 | ok |  |
+| sim-B04 | 3 | Verify: 8(9) + 5(11) = ? | 127 | 127 | ok |  |
+| sim-B05 | 0 | Let length = l, width = w. Perimeter equation: 2(l + w) = 26 → l + w = | 10 | 10 | ok |  |
+| sim-B05 | 1 | Find the width w. | 5 | 5 | ok |  |
+| sim-B05 | 2 | Find the length l = w + 3. | 8 | 8 | ok |  |
+| sim-B05 | 3 | Verify the perimeter: 2(8 + 5) = ? | 26 | 26 | ok |  |
+| sim-B06 | 0 | Multiply the second equation by 5 to match y-coefficients. 20x − 5y =  | 50 | 50 | ok |  |
+| sim-B06 | 1 | Add to the first equation to eliminate y. 22x = ? | 66 | 66 | ok |  |
+| sim-B06 | 2 | Find x. | 3 | 3 | ok |  |
+| sim-B06 | 3 | Substitute x = 3 into 4x − y = 10. Find y. | 2 | 2 | ok |  |
+| sim-C01 | 0 | Substitute y = x + 1 into x² + y² = 13. Expand (x + 1)². | 0 | — | skip |  |
+| sim-C01 | 1 | Factorise x² + x − 6 = 0. | 0 | — | skip |  |
+| sim-C01 | 2 | Find the first solution: smaller value of x. | -3 | -3 | ok |  |
+| sim-C01 | 3 | Find the second solution: larger value of x. | 2 | 2 | ok |  |
 | sim-C02 | 0 | Set the two expressions for y equal: x + 3 = x² − 3. Rearrange. | 0 | 0 | skip |  |
 | sim-C02 | 1 | Find the larger value of x. | 3 | 3 | ok |  |
 | sim-C02 | 2 | Find the smaller value of x. | -2 | -2 | ok |  |
 | sim-C02 | 3 | Find y when x = 3 using y = x + 3. | 6 | 6 | ok |  |
+| sim-C03 | 0 | Substitute y = x + 1 into xy = 12. | 0 | — | skip |  |
+| sim-C03 | 1 | Factorise and find the negative root. | -4 | -4 | ok |  |
+| sim-C03 | 2 | Find the positive root. | 3 | 3 | ok |  |
+| sim-C03 | 3 | Find y when x = 3 using y = x + 1. | 4 | 4 | ok |  |
+| sim-C04 | 0 | Substitute x = 2y and z = y + 3 into x + y + z = 27. Find 4y. | 24 | 24 | ok |  |
+| sim-C04 | 1 | Find y. | 6 | 6 | ok |  |
+| sim-C04 | 2 | Find x = 2y. | 12 | 12 | ok |  |
+| sim-C04 | 3 | Find z = y + 3. | 9 | 9 | ok |  |
+| quad-A01 | 0 | Factorise: find two numbers multiplying to −6 and adding to −1. State  | 3 | 3 | ok |  |
+| quad-A01 | 1 | State the smaller root. | -2 | -2 | ok |  |
+| quad-A02 | 0 | Rearrange: x² = 16. What is the positive square root of 16? | 4 | 4 | ok |  |
+| quad-A02 | 1 | State the negative root. | -4 | -4 | ok |  |
+| quad-A03 | 0 | Find two numbers that multiply to −10 and add to 3. | 0 | — | skip |  |
+| quad-A03 | 1 | State the positive root. | 2 | 2 | ok |  |
+| quad-A03 | 2 | State the negative root. | -5 | -5 | ok |  |
+| quad-A04 | 0 | (x + 3)² = x² + 2(3)x + 9. What is the coefficient of x? | 6 | 6 | ok |  |
+| quad-A04 | 1 | What is the constant term? | 9 | 9 | ok |  |
+| quad-A05 | 0 | Find two numbers that multiply to 12 and add to −7. | 0 | — | skip |  |
+| quad-A05 | 1 | Find the smaller root. | 3 | 3 | ok |  |
+| quad-A05 | 2 | Find the larger root. | 4 | 4 | ok |  |
+| quad-B01 | 0 | Complete the square: (x + 3)² = x² + 6x + 9. Rewrite the equation as ( | 1 | 1 | ok |  |
+| quad-B01 | 1 | Solve: (x + 3)² = 1 → x + 3 = ±1. Find the larger root. | -2 | -2 | ok |  |
+| quad-B01 | 2 | Find the smaller root. | -4 | -4 | ok |  |
+| quad-B02 | 0 | Calculate the discriminant: b² − 4ac where a=2, b=5, c=−3. | 49 | 49 | ok |  |
+| quad-B02 | 1 | √49 = ? | 7 | 7 | ok |  |
+| quad-B02 | 2 | Find the larger root: x = (−5 + 7)/(2×2). | 0.5 | 0.5 | ok |  |
+| quad-B02 | 3 | Find the smaller root: x = (−5 − 7)/(2×2). | -3 | -3 | ok |  |
+| quad-B03 | 0 | Complete the square: (x + 2)² − 4 − 7 = 0 → (x + 2)² = 11. What number | 2 | 2 | ok |  |
+| quad-B03 | 1 | Calculate √11 to 2 decimal places. | 3.32 | 3.32 | ok |  |
+| quad-B03 | 2 | Larger root: x = −2 + √11 ≈ ? | 1.32 | 1.316625 | ok |  |
+| quad-B03 | 3 | Smaller root: x = −2 − √11 ≈ ? | -5.32 | -5.316625 | ok |  |
+| quad-B04 | 0 | Form the equation: (x+6)(x−1) = 30. Expand and rearrange to ax²+bx+c = | 0 | — | skip |  |
+| quad-B04 | 1 | Solve: (x + 9)(x − 4) = 0. The positive value of x = ? | 4 | 4 | ok |  |
+| quad-B04 | 2 | Find the length: x + 6. | 10 | 10 | ok |  |
+| quad-B04 | 3 | Find the width: x − 1. | 3 | 3 | ok |  |
+| quad-B05 | 0 | Find a: a = half of 8. | 4 | 4 | ok |  |
+| quad-B05 | 1 | Find b: (x+4)² − 16 + 3. What is b? | -13 | -13 | ok |  |
+| quad-B05 | 2 | The minimum value of the expression is b (since (x+4)² ≥ 0). What is t | -13 | -13 | ok |  |
+| quad-B05 | 3 | At what value of x does the minimum occur? | -4 | -4 | ok |  |
+| quad-B06 | 0 | Calculate the discriminant: b² − 4ac where a=3, b=−7, c=2. | 25 | 25 | ok |  |
+| quad-B06 | 1 | √25 = ? | 5 | 5 | ok |  |
+| quad-B06 | 2 | Find the larger root: x = (7 + 5)/(2×3). | 2 | 2 | ok |  |
+| quad-B06 | 3 | Find the smaller root: x = (7 − 5)/(2×3). | 0.333 | 0.333333 | ok |  |
+| quad-C01 | 0 | Calculate the discriminant for x² + 6x + 10 = 0: b² − 4ac. | -4 | -4 | ok |  |
+| quad-C01 | 1 | Since discriminant < 0, there are no real roots. Complete the square t | 0 | — | skip |  |
+| quad-C01 | 2 | What is the minimum value of x² + 6x + 10? | 1 | 1 | ok |  |
+| quad-C01 | 3 | Since the minimum is positive, confirm the expression is always positi | 1 | 1 | ok |  |
+| quad-C02 | 0 | Calculate the discriminant: b² − 4ac where a=1, b=−5, c=5. | 5 | 5 | ok |  |
+| quad-C02 | 1 | √5 ≈ ? (to 2 dp) | 2.24 | 2.24 | ok |  |
+| quad-C02 | 2 | Larger root: x = (5 + √5)/2 ≈ ? | 3.62 | 3.618034 | ok |  |
+| quad-C02 | 3 | Smaller root: x = (5 − √5)/2 ≈ ? | 1.38 | 1.381966 | ok |  |
+| quad-C03 | 0 | Set h = 17: −5t² + 20t + 2 = 17 → rearrange to standard form. | 0 | — | skip |  |
+| quad-C03 | 1 | Find the first time t when h = 17. | 1 | 1 | ok |  |
+| quad-C03 | 2 | Find the second time t when h = 17. | 3 | 3 | ok |  |
+| quad-C03 | 3 | Maximum height occurs at t = (1 + 3)/2 = 2 s (by symmetry). Calculate  | 22 | 22 | ok |  |
+| quad-C03 | 4 | Verify: at t = 2, h = 22. This is the maximum. What is the maximum hei | 22 | 22 | ok |  |
+| quad-C04 | 0 | A quadratic has exactly one solution when the discriminant = 0. Set th | 36 | 36 | ok |  |
+| quad-C04 | 1 | Find the positive value of k. | 6 | 6 | ok |  |
+| quad-C04 | 2 | Find the negative value of k. | -6 | -6 | ok |  |
+| quad-C04 | 3 | Verify: for k = 6, the equation x² + 6x + 9 = 0 gives a repeated root  | 0 | 0 | ok |  |
+| pro-A01 | 0 | Write the equation: y = kx. Find the constant k using x = 4, y = 20. | 5 | 5 | ok |  |
+| pro-A01 | 1 | Find y when x = 7. | 35 | 35 | ok |  |
+| pro-A02 | 0 | Write: y = k/x. Find k using x = 5, y = 8. | 40 | 40 | ok |  |
+| pro-A02 | 1 | Find y when x = 10. | 4 | 4 | ok |  |
+| pro-B01 | 0 | Write: y = kx². Find k. | 4 | 4 | ok |  |
+| pro-B01 | 1 | Find y when x = 5. | 100 | 100 | ok |  |
+| pro-A03 | 0 | Find the constant of proportionality k. | 3 | 3 | ok |  |
+| pro-A03 | 1 | Find y when x = 9. | 27 | 27 | ok |  |
+| pro-A04 | 0 | Find the constant k using y = k/x. | 60 | 60 | ok |  |
+| pro-A04 | 1 | Find y when x = 12. | 5 | 5 | ok |  |
+| pro-A05 | 0 | Find k (the constant of proportionality). | 3 | 3 | ok |  |
+| pro-A05 | 1 | Find x when y = 9. | 3 | 3 | ok |  |
+| pro-B02 | 0 | Write the proportionality equation. | 0 | — | skip |  |
+| pro-B02 | 1 | Find k by substituting x = 2, y = 32. | 4 | 4 | ok |  |
+| pro-B02 | 2 | Find y when x = 3. | 108 | 108 | ok |  |
+| pro-B03 | 0 | Write the equation for inverse proportion to x². | 0 | — | skip |  |
+| pro-B03 | 1 | Find k by substituting x = 3, y = 8. | 72 | 72 | ok |  |
+| pro-B03 | 2 | Find y when x = 6. | 2 | 2 | ok |  |
+| pro-B04 | 0 | Write the equation: y = k√x. Find k using x=16, y=12. | 3 | 3 | ok |  |
+| pro-B04 | 1 | Write the full equation. | 0 | — | skip |  |
+| pro-B04 | 2 | Find y when x = 25. | 15 | 15 | ok |  |
+| pro-B05 | 0 | Find the constant of proportionality k. | 7 | 7 | ok |  |
+| pro-B05 | 1 | Find B when A = 11. | 77 | 77 | ok |  |
+| pro-B05 | 2 | What does the graph of B against A look like? Enter 1 for a straight l | 1 | — | skip |  |
+| pro-B06 | 0 | Find k using y = k/x. | 60 | 60 | ok |  |
+| pro-B06 | 1 | Find x when y = 4. | 15 | 15 | ok |  |
+| pro-B06 | 2 | Check: does y × x = 60 when x = 15? Enter 1 for yes. | 1 | — | skip |  |
+| pro-C01 | 0 | Write the equation and find k. Substitute x=3, y=45. | 5 | 5 | ok |  |
+| pro-C01 | 1 | Substitute y = 80 into y = 5x². | 16 | 16 | ok |  |
+| pro-C01 | 2 | Find x (take the positive root). | 4 | 4 | ok |  |
+| pro-C01 | 3 | Check: does 5 × 4² = 80? Enter 1 for yes. | 1 | — | skip |  |
+| pro-C02 | 0 | Find k using y = k/x², x=2, y=25. | 100 | 100 | ok |  |
+| pro-C02 | 1 | Substitute y = 4 to find x².  | 25 | 25 | ok |  |
+| pro-C02 | 2 | Find x (positive value). | 5 | 5 | ok |  |
+| pro-C02 | 3 | Check: does 100/5² = 4? Enter 1 for yes. | 1 | — | skip |  |
+| pro-C03 | 0 | Find the constant k₁ for y = k₁x². Use x=2, y=12. | 3 | 3 | ok |  |
+| pro-C03 | 1 | Find y when x = 5 using y = 3x². | 75 | 75 | ok |  |
+| pro-C03 | 2 | Find k₂ for z = k₂y using z=30, y=12. | 2.5 | 2.5 | ok |  |
+| pro-C03 | 3 | Find z when y = 75. | 187.5 | 187.5 | ok |  |
+| pro-C04 | 0 | Write the equation and find k. Use x=4, y=15. | 30 | 30 | ok |  |
+| pro-C04 | 1 | Write the full equation. | 0 | — | skip |  |
+| pro-C04 | 2 | Find √9. | 3 | 3 | ok |  |
+| pro-C04 | 3 | Find y when x = 9. | 10 | 10 | ok |  |
+| spd-A01 | 0 | Use the formula: speed = distance ÷ time. | 72 | 72 | ok |  |
+| spd-A02 | 0 | Convert 1 hour 20 minutes to hours. | 1.333 | 1.333333 | ok |  |
+| spd-A02 | 1 | Calculate distance = speed × time. | 120 | 120 | ok |  |
+| spd-B01 | 0 | Find time for first part: time = distance ÷ speed. | 1.5 | 1.5 | ok |  |
+| spd-B01 | 1 | Find time for second part. | 1.5 | 1.5 | ok |  |
+| spd-B01 | 2 | Average speed = total distance ÷ total time. | 50 | 50 | ok |  |
+| spd-A03 | 0 | Write the formula linking time, distance and speed. | 0 | — | skip |  |
+| spd-A03 | 1 | Calculate the time in hours. | 3 | 3 | ok |  |
+| spd-A04 | 0 | Write the formula for distance. | 0 | — | skip |  |
+| spd-A04 | 1 | Calculate the distance in km. | 200 | 200 | ok |  |
+| spd-A05 | 0 | Convert 1 hour 20 minutes to hours. | 1.333 | 1.333333 | ok |  |
+| spd-A05 | 1 | Calculate the speed in km/h. | 72 | 72 | ok |  |
+| spd-B02 | 0 | What is the total distance? (km) | 150 | 150 | ok |  |
+| spd-B02 | 1 | What is the total time in hours? | 1.75 | 1.75 | ok |  |
+| spd-B02 | 2 | Calculate the average speed in km/h. | 85.71 | 85.714286 | ok |  |
+| spd-B03 | 0 | How long does the journey take? Give your answer in hours. | 2.5 | 2.5 | ok |  |
+| spd-B03 | 1 | Calculate the average speed in km/h. | 80 | 80 | ok |  |
+| spd-B03 | 2 | Check: does 80 km/h × 2.5 h = 200 km? Enter 1 for yes. | 1 | — | skip |  |
+| spd-B04 | 0 | Convert 90 km/h to metres per hour. | 90000 | 90000 | ok |  |
+| spd-B04 | 1 | Convert metres per hour to metres per second. | 25 | 25 | ok |  |
+| spd-B04 | 2 | State the shortcut: to convert km/h to m/s, divide by ___. | 3.6 | 3.6 | ok |  |
+| spd-B05 | 0 | How far does the car travel in the first 40 minutes? (km) | 40 | 40 | ok |  |
+| spd-B05 | 1 | How far does the car travel in the next 20 minutes? (km) | 30 | 30 | ok |  |
+| spd-B05 | 2 | What is the total distance? (km) | 70 | 70 | ok |  |
+| spd-B06 | 0 | How long does the walking section take? (hours) | 1.5 | 1.5 | ok |  |
+| spd-B06 | 1 | How long does the jogging section take? (hours) | 1 | 1 | ok |  |
+| spd-B06 | 2 | Calculate average speed for the whole trip. (km/h) | 4.8 | 4.8 | ok |  |
+| spd-C01 | 0 | What is their combined speed? (km/h) | 30 | 30 | ok |  |
+| spd-C01 | 1 | How long until they are 15 km apart? (hours) | 0.5 | 0.5 | ok |  |
+| spd-C01 | 2 | Convert 0.5 hours to minutes. | 30 | 30 | ok |  |
+| spd-C01 | 3 | Check: after 30 min, how far has A gone? (km) | 9 | 9 | ok |  |
+| spd-C02 | 0 | Let the distance from X to Y be d km. Write an expression for the time | 0 | — | skip |  |
+| spd-C02 | 1 | Write an equation for the total journey time. | 0 | — | skip |  |
+| spd-C02 | 2 | Solve: find the value of d/120 by combining fractions. What is the com | 0 | — | skip |  |
+| spd-C02 | 3 | Find d (the one-way distance in km). | 120 | 120 | ok |  |
+| spd-C03 | 0 | Find the distance during acceleration (0 to 20 m/s in 10 s). Area of t | 100 | 100 | ok |  |
+| spd-C03 | 1 | Find the distance at constant speed (20 m/s for 30 s). Area of rectang | 600 | 600 | ok |  |
+| spd-C03 | 2 | Find the distance during deceleration (20 m/s to 0 in 5 s). Area of tr | 50 | 50 | ok |  |
+| spd-C03 | 3 | Find the total distance. (m) | 750 | 750 | ok |  |
+| spd-C04 | 0 | How far has the first car travelled by 09:30? (km) | 40 | 40 | ok |  |
+| spd-C04 | 1 | What is the remaining gap between the two cars at 09:30? (km) | 200 | 200 | ok |  |
+| spd-C04 | 2 | At what combined speed are the cars closing the gap? (km/h) | 140 | 140 | ok |  |
+| spd-C04 | 3 | How many minutes after 09:30 do they meet? Round to the nearest minute | 86 | 86 | ok |  |
+| pch-A01 | 0 | Find the multiplier for a 15% increase. | 1.15 | 1.15 | ok |  |
+| pch-A01 | 1 | Calculate the new value. | 207000 | 207000 | ok |  |
+| pch-A02 | 0 | £350 is what percentage of the original price? | 70 | 70 | skip |  |
+| pch-A02 | 1 | Find 100% (the original price). | 500 | 500 | ok |  |
+| pch-B01 | 0 | Write the multiplier for 4% increase. | 1.04 | 1.04 | ok |  |
+| pch-B01 | 1 | Apply for 3 years: £2000 × 1.04³. | 1.124864 | — | skip |  |
+| pch-B01 | 2 | Calculate the final value. | 2249.73 | 2249.73 | ok |  |
+| pch-A03 | 0 | Calculate 20% of £65. | 13 | 13 | ok |  |
+| pch-A03 | 1 | What is the sale price? (£) | 52 | 52 | ok |  |
+| pch-A04 | 0 | Calculate the actual increase in value. (£) | 48000 | 48000 | ok |  |
+| pch-A04 | 1 | Calculate the percentage increase. | 20 | 20 | ok |  |
+| pch-A05 | 0 | What multiplier represents a 25% increase? | 1.25 | 1.25 | ok |  |
+| pch-A05 | 1 | Find the original price. (£) | 60 | 60 | ok |  |
+| pch-B02 | 0 | Calculate the interest earned in one year. (£) | 24 | 24 | ok |  |
+| pch-B02 | 1 | Calculate the total interest over 4 years. (£) | 96 | 96 | ok |  |
+| pch-B02 | 2 | What is the total amount in the account after 4 years? (£) | 896 | 896 | ok |  |
+| pch-B03 | 0 | What is the multiplier for 5% compound interest? | 1.05 | 1.05 | ok |  |
+| pch-B03 | 1 | Write the compound interest formula for 3 years. | 0 | — | skip |  |
+| pch-B03 | 2 | Calculate the total to the nearest penny. (£) | 1736.44 | 1736.44 | ok |  |
+| pch-B04 | 0 | What multiplier represents a 15% decrease? | 0.85 | 0.85 | ok |  |
+| pch-B04 | 1 | Calculate the value after 1 year. (£) | 10200 | 10200 | ok |  |
+| pch-B04 | 2 | Calculate the value after 2 years. (£) | 8670 | 8670 | ok |  |
+| pch-B05 | 0 | Calculate the price after year 1 (4% increase). (£) | 208 | 208 | ok |  |
+| pch-B05 | 1 | Calculate the price after year 2 (4% decrease). (£) | 199.68 | 199.68 | ok |  |
+| pch-B05 | 2 | Is the final price the same as the original? Enter 1 for yes, 2 for no | 2 | — | skip |  |
+| pch-B06 | 0 | What percentage of the pre-VAT price does £540 represent? | 120 | 120 | ok |  |
+| pch-B06 | 1 | Find 1% of the original price. (£) | 4.5 | 4.5 | ok |  |
+| pch-B06 | 2 | Find the original pre-VAT price (100%). (£) | 450 | 450 | ok |  |
+| pch-C01 | 0 | Write the compound interest equation: 6298.56 = 5000 × r³, where r is  | 1.259712 | 1.259712 | ok |  |
+| pch-C01 | 1 | Find r by taking the cube root of 1.259712. | 1.08 | 1.08 | ok |  |
+| pch-C01 | 2 | What is the annual interest rate? (%) | 8 | 8 | ok |  |
+| pch-C01 | 3 | Check: does £5000 × 1.08³ = £6298.56? Enter 1 for yes. | 1 | — | skip |  |
+| pch-C02 | 0 | Write the formula for the population after n hours. | 0 | — | skip |  |
+| pch-C02 | 1 | We need 4000 × 1.12ⁿ > 8000. What must 1.12ⁿ exceed? | 2 | 2 | ok |  |
+| pch-C02 | 2 | Calculate 1.12⁶ and 1.12⁷. What is the smallest number of complete hou | 7 | 7 | ok |  |
+| pch-C02 | 3 | What is the population after 7 hours (to the nearest whole number)? | 8843 | 8843 | ok |  |
+| pch-C03 | 0 | Find the final price of Pair 1 (increase then decrease). (£) | 118.8 | 118.8 | ok |  |
+| pch-C03 | 1 | Find the final price of Pair 2 (decrease then increase). (£) | 118.8 | 118.8 | ok |  |
+| pch-C03 | 2 | What is the combined multiplier for both pairs? | 0.99 | 0.99 | ok |  |
+| pch-C03 | 3 | What is the net percentage change? (%) | -1 | -1 | ok |  |
+| pch-C04 | 0 | Find the value after 4 years of 5% growth. (£) | 218791 | 218791.125 | ok |  |
+| pch-C04 | 1 | Now apply 3% decrease for 2 years. What single multiplier covers both  | 0.9409 | 0.9409 | ok |  |
+| pch-C04 | 2 | Find the value after the 2 years of decline. (£, nearest pound) | 205861 | 205861 | ok |  |
+| pch-C04 | 3 | Alternatively, write the whole calculation as one expression and verif | 1 | — | skip |  |
+| cmp-A01 | 0 | Use: density = mass ÷ volume. | 9 | 9 | ok |  |
+| cmp-A02 | 0 | Use: pressure = force ÷ area. | 6 | 6 | ok |  |
+| cmp-B01 | 0 | Rearrange density formula to find volume: volume = mass ÷ density. | 40 | 40 | ok |  |
+| cmp-B01 | 1 | If volume doubles (80 cm³), find the new density. | 4.25 | 4.25 | ok |  |
+| cmp-A03 | 0 | Write the formula for density. | 0 | — | skip |  |
+| cmp-A03 | 1 | Calculate the density in g/cm³. | 8 | 8 | ok |  |
+| cmp-A04 | 0 | Write the formula for pressure. | 0 | — | skip |  |
+| cmp-A04 | 1 | Calculate the pressure in N/cm². | 6 | 6 | ok |  |
+| cmp-A05 | 0 | Rearrange the density formula to find mass. | 0 | — | skip |  |
+| cmp-A05 | 1 | Calculate the mass in grams. | 226 | 226 | ok |  |
+| cmp-B02 | 0 | Find the total mass of the block. (g) | 300 | 300 | ok |  |
+| cmp-B02 | 1 | Find the total volume of the block. (cm³) | 35 | 35 | ok |  |
+| cmp-B02 | 2 | Calculate the average density. (g/cm³, to 2 decimal places) | 8.57 | 8.57 | ok |  |
+| cmp-B03 | 0 | Calculate the area of the surface. (cm²) | 40 | 40 | ok |  |
+| cmp-B03 | 1 | Rearrange the pressure formula to find force. | 0 | — | skip |  |
+| cmp-B03 | 2 | Calculate the force. (N) | 480 | 480 | ok |  |
+| cmp-B04 | 0 | Calculate the volume of the liquid. (cm³) | 300 | 300 | ok |  |
+| cmp-B04 | 1 | Use M = D × V to find the mass. (g) | 240 | 240 | ok |  |
+| cmp-B04 | 2 | Convert the mass to kilograms. (kg) | 0.24 | 0.24 | ok |  |
 | cmp-B05 | 0 | Find the volume of the object. (cm³) | 80 | 80 | ok |  |
 | cmp-B05 | 1 | Compare the object's density to water (1 g/cm³). Will it sink? Enter 1 | 1 | 1 | skip |  |
 | cmp-B05 | 2 | What pressure does the object exert on the base of the container if it | 0.125 | 0.125 | ok |  |
+| cmp-B06 | 0 | Find the total mass of ingredient needed. (g) | 1200 | 1200 | ok |  |
+| cmp-B06 | 1 | Find the volume needed. (cm³) | 2000 | 2000 | ok |  |
+| cmp-B06 | 2 | Convert to litres. (1 litre = 1000 cm³) | 2 | 2 | ok |  |
+| cmp-C01 | 0 | Find the volume of the cube. (cm³) | 64 | 64 | ok |  |
+| cmp-C01 | 1 | Find the density of the metal. (g/cm³) Note: 1.728 kg = 1728 g. | 27 | 27 | ok |  |
+| cmp-C01 | 2 | Find the volume of the sphere. (cm³, to 2 dp) r = 3 cm. | 113.1 | 113.097336 | ok |  |
+| cmp-C01 | 3 | Find the mass of the sphere. (kg, to 3 dp) | 3.054 | 3.053628 | ok |  |
+| cmp-C02 | 0 | Calculate the pressure created by the small piston. (N/cm²) | 12 | 12 | ok |  |
+| cmp-C02 | 1 | The same pressure acts on the large piston. Write the equation for for | 0 | — | skip |  |
+| cmp-C02 | 2 | Calculate the force at the large piston. (N) | 960 | 960 | ok |  |
+| cmp-C02 | 3 | What is the force multiplication factor of this hydraulic system? | 16 | 16 | ok |  |
+| cmp-C03 | 0 | Find the volume and mass of the block, then its weight (g = 10 N/kg).  | 6 | 6 | ok |  |
+| cmp-C03 | 1 | Find the minimum pressure (largest face down). Largest face area = 20× | 0.03 | 0.03 | ok |  |
+| cmp-C03 | 2 | Find the maximum pressure (smallest face down). Smallest face area = 1 | 0.15 | 0.15 | ok |  |
+| cmp-C03 | 3 | What is the ratio of maximum to minimum pressure? | 5 | 5 | ok |  |
+| cmp-C04 | 0 | In a 100 g sample, find the volume of gold. (cm³, to 3 dp) | 3.886 | 3.88601 | ok |  |
+| cmp-C04 | 1 | Find the volume of silver in the 100 g sample. (cm³, to 3 dp) | 2.381 | 2.380952 | ok |  |
+| cmp-C04 | 2 | Find the total volume of the 100 g sample. (cm³, to 3 dp) | 6.267 | 6.266963 | ok |  |
+| cmp-C04 | 3 | Calculate the density of the alloy. (g/cm³, to 2 dp) | 15.96 | 15.956693 | ok |  |
+| grd-A01 | 0 | What multiplier represents 6% growth? | 1.06 | 1.06 | ok |  |
+| grd-A01 | 1 | Calculate the total after 1 year. (£) | 3180 | 3180 | ok |  |
+| grd-A02 | 0 | What multiplier represents 10% decay? | 0.9 | 0.9 | ok |  |
+| grd-A02 | 1 | Calculate the mass after 1 year. (g) | 450 | 450 | ok |  |
+| grd-A03 | 0 | What is the multiplier for 4% annual growth? | 1.04 | 1.04 | ok |  |
+| grd-A03 | 1 | Calculate the population after 2 years (to the nearest whole number). | 27040 | 27040 | ok |  |
+| grd-A04 | 0 | What multiplier represents 18% depreciation? | 0.82 | 0.82 | ok |  |
+| grd-A04 | 1 | Calculate the value after 1 year. (£) | 12300 | 12300 | ok |  |
+| grd-A05 | 0 | What is the multiplier per hour? | 2 | 2 | ok |  |
+| grd-A05 | 1 | How many bacteria after 3 hours? | 4000 | 4000 | ok |  |
+| grd-B01 | 0 | Write the compound interest formula. | 0 | — | skip |  |
+| grd-B01 | 1 | Calculate 1.05⁴. | 1.21550625 | 1.215506 | ok |  |
+| grd-B01 | 2 | Calculate the total. (£) | 4862.03 | 4862.03 | ok |  |
+| grd-B02 | 0 | How many half-lives occur in 12 years? | 4 | 4 | ok |  |
+| grd-B02 | 1 | The mass halves with each half-life. Write the formula. | 0 | — | skip |  |
+| grd-B02 | 2 | Calculate the mass after 12 years. (g) | 40 | 40 | ok |  |
 | ang-A04 | 0 | Use the formula: number of sides = 360° ÷ exterior angle. | 9 | 9 | ok |  |
 | ang-A04 | 1 | What is the interior angle of this polygon? | 140 | 140 | ok |  |
 | shp-C02 | 0 | State the equal angles from the parallel lines AB and CD. | 1 | 1 | skip |  |

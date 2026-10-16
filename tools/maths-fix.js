@@ -6,6 +6,8 @@
  *   node tools/maths-fix.js <fixes.json> "<log heading>"
  *
  * fixes.json: [{ id, step, prompt?, answer?, tolerance?, reason }]
+ *          or  [{ id, text: [old, new], reason }] — replace old with new in every
+ *              hint, explanation, displayAnswer and sample answer of that question
  * Only the named fields of the named step change. Source layout is kept: the
  * prompt line is rewritten in place; answer and tolerance are replaced inside
  * the step's own lines.
@@ -41,6 +43,23 @@ function main() {
   const lines = fs.readFileSync(SRC, 'utf8').split('\n');
   const log = [];
   for (const f of fixes) {
+    if (f.text) {
+      const start = lines.findIndex(l => l.includes(`id: '${f.id}'`));
+      if (start < 0) throw new Error(`id ${f.id} not found`);
+      let end = lines.findIndex((l, i) => i > start && /^\s*id: '/.test(l));
+      if (end < 0) end = lines.length;
+      const [old, neu] = f.text;
+      const hits = [];
+      for (let i = start; i < end; i++) {
+        if (/^\s*(prompt|question):/.test(lines[i]) || !lines[i].includes(old)) continue;
+        hits.push(`  - line ${i + 1} OLD: ${lines[i].trim()}`);
+        lines[i] = lines[i].split(old).join(neu);
+        hits.push(`  - line ${i + 1} NEW: ${lines[i].trim()}`);
+      }
+      if (!hits.length) throw new Error(`${f.id}: "${old}" not found outside prompts`);
+      log.push(`- ${f.id} text | ${f.reason}`, ...hits);
+      continue;
+    }
     const [a, b] = stepRange(lines, f.id, f.step);
     const entry = [`- ${f.id} step ${f.step} | ${f.reason}`];
     if (f.prompt !== undefined) {

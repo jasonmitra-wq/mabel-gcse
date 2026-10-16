@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 1, task 1.2 (Physics roadmap section in STATE)
+Runbook position: Phase 1, task 1.3 (S5 structural check in tools/audit-lessons.js)
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.
@@ -31,6 +31,19 @@ open shared-code fault.
 | P7 Magnetism | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | iron-as-permanent-magnet error, solenoid poles, misplaced DC mistake corrected, verified a6fd3c1 |
 
 Spec coverage: 25 of 30 sections mapped; 79 of 91 deepest-level sections mapped (tools/spec-coverage.md). Spec coverage counts a section as mapped if any lesson points into it, not that it is fully taught; spec-check (C) measures teaching.
+
+## Physics roadmap
+
+Checked against the repo 2026-10-16 at 8c8ab0f.
+
+| Item | Status | Runbook |
+|---|---|---|
+| S4 diagrams | – 33 of 34 Physics lessons have no diagram; only p3-particle-model has two (diagrams/physics/p3-state-changes.svg, p3-states-particles.svg). Render check tools/check-diagrams.js not built. | 1.4 check; 2.3 drawing |
+| S5 checkpoint proof | n/a: structural check (checkpoint keys exactly 0..keyPoints − 1) not yet in tools/audit-lessons.js. S5 for a topic = that check clean AND no checkpoint_mismatch ACCEPT in its last spec-check run. | 1.3 |
+| Check D teach simulator | – tools/teach-sim.js not built. Design step first: can the js/lessons.js decision and prompt-building code run in Node? | 1.5 |
+| T1 teach-enable | – Physics in TEACH_ENABLED (js/lessons.js:18): p3-particle-model only. | 2.4 |
+| Defect 11 new lessons | – not written: 4.5.3, 4.5.4, 4.5.5, 4.6.3, 4.8.1.1, 4.8.1.2, 4.8.2. P8 Space becomes a new topic in data/physics-syllabus.json (no P8 entry yet). Additions to existing lessons: 4.5.1.2 (p5-forces-motion), 4.3.3.3 (p3-pressure, in the P3 loop), seismic waves 4.6.1.5 (p6-sound). | 2.2 |
+| Maths track | – defect 8 open: 600 questions; marks ≠ step count in 87; 38 without sampleAnswer; no answer verified by recomputation. tools/maths-recompute.js not built. | 1.6 |
 
 ## Biology, Chemistry, Geography, Sociology
 

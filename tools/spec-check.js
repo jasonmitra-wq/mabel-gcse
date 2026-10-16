@@ -11,6 +11,9 @@
  *   node tools/spec-check.js --run --file <path> --as p7-magnets
  *                                                     # check a file in place of the lesson
  *   --max-usd <n>   allow a --run whose estimate is over $2 but under n
+ *   --blocking-only ask only for missing_spec_content, above_gcse and factual_errors
+ *   --decided <file> append the TRIAGE FILE's decision lines to the prompt under
+ *                   "Already decided — do not report these again"
  *
  * Reads data/<subject>-syllabus.json (specRef per subtopic), data/spec/<subject>.md
  * (local only — see data/spec/MANIFEST.md) and lessons/<subject>/<id>.json.
@@ -57,10 +60,32 @@ Return JSON only, in exactly this shape, with empty arrays where there is nothin
   "checkpoint_mismatch": [{ "checkpoint": "", "key_point": "", "why": "" }],
   "not_checked": [] }`;
 
+// --blocking-only: same reply shape, but only the three blocking categories are asked for.
+const BLOCKING_NOTE = `
+
+This is a re-check. Report ONLY missing_spec_content, above_gcse and factual_errors. Return wrong_terms and checkpoint_mismatch as empty arrays.`;
+
+// --decided: the decision lines of a TRIAGE FILE (headings, and every list item
+// that records ACCEPT or REJECT, with its continuation lines).
+function decidedLines(file) {
+  if (!fs.existsSync(file)) die(`Missing --decided file ${file}`);
+  const lines = fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n').split('\n');
+  const out = [];
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i];
+    if (/^#{1,6} /.test(l)) { out.push(l); continue; }
+    if (!/^- /.test(l)) continue;
+    const item = [l];
+    while (i + 1 < lines.length && lines[i + 1].trim() && !/^(- |#)/.test(lines[i + 1])) item.push(lines[++i]);
+    if (/\b(ACCEPT|REJECT)\b/.test(item.join(' '))) out.push(...item);
+  }
+  return out.join('\n');
+}
+
 // ---------- arguments ----------
 
 function parseArgs(argv) {
-  const a = { ids: [], run: false, topic: null, subject: null, maxUsd: null, file: null, as: null };
+  const a = { ids: [], run: false, topic: null, subject: null, maxUsd: null, file: null, as: null, blockingOnly: false, decided: null };
   for (let i = 0; i < argv.length; i++) {
     const v = argv[i];
     if (v === '--run') a.run = true;
@@ -70,6 +95,8 @@ function parseArgs(argv) {
     else if (v === '--max-usd') a.maxUsd = Number(argv[++i]);
     else if (v === '--file') a.file = argv[++i];
     else if (v === '--as') a.as = argv[++i];
+    else if (v === '--blocking-only') a.blockingOnly = true;
+    else if (v === '--decided') a.decided = argv[++i];
     else if (v.startsWith('--')) die(`Unknown option ${v}`);
     else a.ids.push(v);
   }
@@ -132,7 +159,7 @@ function topRefs(refs) {
 
 // ---------- building one check ----------
 
-function buildJob(st, filePath) {
+function buildJob(st, filePath, opts = {}) {
   const lessonPath = filePath ? path.resolve(filePath) : path.join(ROOT, 'lessons', st.subject, st.id + '.json');
   if (!fs.existsSync(lessonPath)) die(`Missing ${path.relative(ROOT, lessonPath)}`);
   const raw = fs.readFileSync(lessonPath);
@@ -144,11 +171,13 @@ function buildJob(st, filePath) {
   const spec = refs.map(r => section(st.subject, r)).join('\n\n');
   const user =
     `Lesson id: ${st.id}\n\n<lesson_json>\n${JSON.stringify(lesson, null, 2)}\n</lesson_json>\n\n` +
-    `<specification_sections>\n${spec}\n</specification_sections>`;
-  const chars = SYSTEM.length + user.length;
+    `<specification_sections>\n${spec}\n</specification_sections>` +
+    (opts.decided ? `\n\nAlready decided — do not report these again:\n<already_decided>\n${opts.decided}\n</already_decided>` : '');
+  const system = SYSTEM + (opts.blockingOnly ? BLOCKING_NOTE : '');
+  const chars = system.length + user.length;
   const estIn = Math.ceil(chars / 4);
   return {
-    id: st.id, subject: st.subject, refs, user, chars, estIn,
+    id: st.id, subject: st.subject, refs, system, user, chars, estIn,
     estUsd: estIn * USD_IN + MAX_TOKENS * USD_OUT,
     lessonFile: path.relative(ROOT, lessonPath).replace(/\\/g, '/'),
     lessonMd5: crypto.createHash('md5').update(raw).digest('hex'),
@@ -186,7 +215,7 @@ async function callModel(job) {
   const res = await fetch(`${API}/messages`, {
     method: 'POST',
     headers: headers(),
-    body: JSON.stringify({ model: MODEL, max_tokens: MAX_TOKENS, system: SYSTEM, messages: [{ role: 'user', content: job.user }] }),
+    body: JSON.stringify({ model: MODEL, max_tokens: MAX_TOKENS, system: job.system, messages: [{ role: 'user', content: job.user }] }),
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} ${await res.text()}`);
   return res.json();
@@ -225,10 +254,13 @@ async function main() {
   }
   if (!chosen.length) die('Nothing to check. Give lesson ids, --topic, --subject or --file/--as.');
 
-  const jobs = chosen.map(c => buildJob(c.st, c.file));
+  const opts = { blockingOnly: args.blockingOnly, decided: args.decided ? decidedLines(path.resolve(args.decided)) : null };
+  const jobs = chosen.map(c => buildJob(c.st, c.file, opts));
   const total = jobs.reduce((s, j) => s + j.estUsd, 0);
 
   console.log(args.run ? 'RUN' : 'DRY RUN (add --run for real calls)');
+  if (args.blockingOnly) console.log('Mode: --blocking-only (missing_spec_content, above_gcse, factual_errors)');
+  if (opts.decided) console.log(`Decided: ${opts.decided.split('\n').length} line(s) from ${args.decided}`);
   console.log('lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)');
   for (const j of jobs) {
     console.log(`${j.outName} | ${j.refs.join(', ')} | ${j.chars} | ${j.estIn} | ${j.estUsd.toFixed(4)}`);
@@ -254,7 +286,8 @@ async function main() {
   let spent = 0;
   for (const j of jobs) {
     const date = new Date().toISOString();
-    const record = { lesson: j.id, source_file: j.lessonFile, lesson_md5: j.lessonMd5, model: MODEL, date, specRefs_sent: j.refs };
+    const record = { lesson: j.id, source_file: j.lessonFile, lesson_md5: j.lessonMd5, model: MODEL, date, specRefs_sent: j.refs,
+      blocking_only: args.blockingOnly, decided_file: args.decided || null };
     let status, findings = '';
     try {
       const reply = await callModel(j);

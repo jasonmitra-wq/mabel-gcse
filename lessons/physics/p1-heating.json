@@ -2,13 +2,13 @@
   "id": "p1-heating",
   "title": "Heating and cooling — specific heat capacity explained",
   "topic": "P1",
-  "examTip": "ΔE = mcΔθ. Remember: Δ means 'change in'. Δθ is the temperature CHANGE (final − initial), not the final temperature.",
+  "examTip": "ΔE = mcΔθ. Remember: Δ means 'change in'. Δθ is the temperature CHANGE (the difference between final and initial), not the final temperature.",
   "introTips": [
     "Water takes a long time to heat up and cool down. This is specific heat capacity in action.",
     "Δθ means change in temperature. If water goes from 20°C to 100°C, Δθ = 80°C.",
     "Different materials need very different amounts of energy to change temperature by the same amount."
   ],
-  "intro": "The sea stays warm long after summer ends, keeping coastal towns milder than inland cities. Why? The answer is specific heat capacity. It is the energy needed to raise the temperature of 1 kg of a substance by 1°C. It is why water is used in car radiators and central heating. It is why coastal climates are gentler. It is also why a pie filling can burn your mouth while the pastry feels fine. This is one of the most important (and most examined) equations in physics.",
+  "intro": "The sea stays warm long after summer ends, keeping coastal towns milder than inland cities. Why? The answer is specific heat capacity. It is the energy needed to raise the temperature of 1 kg of a substance by 1°C. It is why water is used in car radiators and central heating. It is why coastal climates are gentler. It is also why a pie filling can burn your mouth while the pastry feels fine.",
   "keyPoints": [
     {
       "heading": "Specific heat capacity",
@@ -19,7 +19,7 @@
       "writeBullets": [
         "Specific heat capacity (c) — energy needed to raise 1 kg of a substance by 1°C. Unit: J/kg°C",
         "ΔE = mcΔθ — change in thermal energy (J) = mass (kg) × specific heat capacity (J/kg°C) × temperature change (°C)",
-        "Δθ — change in temperature = final temperature − initial temperature",
+        "Δθ — change in temperature: the difference between the final and initial temperatures",
         "Water specific heat capacity = 4200 J/kg°C. Very high: it takes a lot of energy to heat up and cools slowly",
         "High specific heat capacity = good store of thermal energy. Used in central heating, car cooling and keeping coastal climates steady"
       ],
@@ -38,7 +38,7 @@
         }
       ],
       "memTip": "ΔE = mcΔθ. Say it as 'em-see-delta-theta'. m = mass, c = specific heat capacity, Δθ = temp change.",
-      "tutor_note": "A common mistake is using the final temperature instead of the temperature change. Every time, Δθ = final temperature − initial temperature."
+      "tutor_note": "A common mistake is using the final temperature instead of the temperature change. Every time, Δθ is the difference between the final and initial temperatures."
     },
     {
       "heading": "Using ΔE = mcΔθ",
@@ -72,7 +72,7 @@
         "Method: heat a known mass with an electrical heater. Measure the energy supplied and Δθ. Calculate c = ΔE/(mΔθ)",
         "Joulemeter — a device that measures electrical energy directly in joules",
         "Energy supplied — from a joulemeter, or from P = IV and then E = Pt",
-        "Error: some energy is lost to the surroundings. So the energy supplied is more than the sample received. This makes the calculated c too high",
+        "Error: some energy is dissipated to the surroundings. So the energy supplied is more than the sample received. This makes the calculated c too high",
         "Error: the heater also heats itself, not just the sample. This overestimates the energy input",
         "Improvement: insulate the sample well. Stir water. Wait for the temperature to settle before reading"
       ],
@@ -87,7 +87,7 @@
     },
     {
       "heading": "Thermal stores and temperature",
-      "content": "<strong>Thermal energy</strong> is stored in the <strong>internal energy</strong> of a system. Internal energy is the total kinetic and potential energy of all the particles that make up a system.\n\n<strong>Temperature</strong> is a measure of the average kinetic energy of the particles. The hotter the substance, the faster its particles move on average. This matters. Temperature measures the average KE per particle. Internal energy depends on temperature AND the number of particles.\n\n<strong>Energy is transferred by heating</strong> from a hotter object to a cooler one.\n\nUses of high specific heat capacity:\n- water in <strong>central heating</strong> carries a lot of energy per kg\n- <strong>coastal climates</strong> are milder than inland areas. The sea's high specific heat capacity evens out temperature changes. It warms up and cools down slowly\n- <strong>solar thermal panels</strong> use water to store energy collected from sunlight",
+      "content": "<strong>Thermal energy</strong> is stored in the <strong>internal energy</strong> of a system. Internal energy is the total kinetic and potential energy of all the particles that make up a system.\n\n<strong>Temperature</strong> is related to the average kinetic energy of the particles. The hotter the substance, the faster its particles move on average. This matters. Temperature is related to the average KE per particle. Internal energy depends on temperature AND the number of particles.\n\n<strong>Energy is transferred by heating</strong> from a hotter object to a cooler one.\n\nUses of high specific heat capacity:\n- water in <strong>central heating</strong> carries a lot of energy per kg\n- <strong>coastal climates</strong> are milder than inland areas. The sea's high specific heat capacity evens out temperature changes. It warms up and cools down slowly\n- <strong>solar thermal panels</strong> use water to store energy collected from sunlight",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -198,9 +198,9 @@
     }
   },
   "commonMistakes": [
-    "Using the final temperature instead of the temperature change in ΔE = mcΔθ. Always work out Δθ = final temperature − initial temperature first.",
+    "Using the final temperature instead of the temperature change in ΔE = mcΔθ. Always work out Δθ first: the difference between the final and initial temperatures.",
     "Forgetting to convert mass to kg. If mass is given in grams, divide by 1000 before substituting.",
-    "Mixing up temperature (average KE of particles) and internal energy (total energy of all particles). They are different quantities.",
+    "Mixing up temperature (related to the average KE of particles) and internal energy (total energy of all particles). They are different quantities.",
     "In the required practical, naming heat loss as an error without saying its effect. Say it makes the measured specific heat capacity higher than the true value.",
     "Thinking a higher temperature always means more internal energy. A large cold object can have more internal energy than a small hot one."
   ],

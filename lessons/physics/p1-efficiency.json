@@ -60,7 +60,7 @@
         },
         {
           "term": "wasted energy",
-          "def": "Total input energy minus useful output energy — always positive in a real device"
+          "def": "Total input energy minus useful output energy"
         }
       ],
       "memTip": "Worked examples: motor 375/500=0.75; lamp 9/10=0.9; car engine 25/100=0.25. Practise these numbers.",
@@ -68,7 +68,7 @@
     },
     {
       "heading": "Comparing efficiencies of different devices",
-      "content": "You may be asked to compare devices. The question gives you the values you need. Work out the efficiency of each device, then compare them. The device with the higher efficiency wastes less of its input energy.\n- <strong>LED bulbs</strong> are more efficient than <strong>Incandescent (filament) bulbs</strong>. For the same total power input, an LED bulb gives out more useful light.\n- <strong>Electric motors</strong> are usually more efficient than <strong>Petrol car engines</strong>. Most of the energy from the fuel is wasted as heat in the engine and exhaust.\n\nWorked example: motor A has a total power input of 200 W and a useful power output of 150 W. Motor B has a total power input of 500 W and a useful power output of 300 W. A = 150 ÷ 200 = 0.75. B = 300 ÷ 500 = 0.60. So motor A is more efficient.",
+      "content": "You may be asked to compare devices. The question gives you the values you need. Work out the efficiency of each device, then compare them. The device with the higher efficiency wastes less of its input energy.\n- <strong>LED bulbs</strong> are more efficient than <strong>incandescent (filament) bulbs</strong>. For the same total power input, an LED bulb gives out more useful light.\n- <strong>Electric motors</strong> are usually more efficient than <strong>petrol car engines</strong>. Most of the energy from the fuel is wasted as heat in the engine and exhaust.\n\nWorked example: motor A has a total power input of 200 W. Its useful power output is 150 W. Motor B has a total power input of 500 W. Its useful power output is 300 W. A = 150 ÷ 200 = 0.75. B = 300 ÷ 500 = 0.60. So motor A is more efficient.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -95,7 +95,7 @@
     },
     {
       "heading": "Improving efficiency",
-      "content": "Describing ways to increase efficiency is Higher Tier content. We can improve efficiency in several ways:\n- <strong>Reducing friction</strong>: oil between moving parts → less kinetic energy wasted as thermal energy.\n- <strong>Better insulation</strong>: less thermal energy lost from hot surfaces to the surroundings. Insulating a boiler is one example.\n- <strong>More efficient components</strong>: LEDs instead of filament bulbs, and electric motors instead of petrol engines.\n\nA more efficient device needs less input energy for the same useful output.",
+      "content": "Describing ways to increase efficiency is Higher Tier content. We can improve efficiency in several ways:\n- <strong>Reducing friction</strong>: oil between moving parts → less kinetic energy wasted as thermal energy.\n- <strong>Better insulation</strong>: less energy is dissipated from hot surfaces to the surroundings. Insulating a boiler is one example.\n- <strong>More efficient components</strong>: LEDs instead of filament bulbs, and electric motors instead of petrol engines.\n\nA more efficient device needs less input energy for the same useful output.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -120,26 +120,26 @@
       "examFlag": true,
       "headers": [
         "Device",
-        "Input energy",
+        "Energy input",
         "Useful output",
         "Wasted output"
       ],
       "rows": [
         [
           "LED bulb",
-          "Electrical",
+          "Transferred electrically",
           "Light (radiation)",
           "Thermal (small amount)"
         ],
         [
           "Incandescent bulb",
-          "Electrical",
+          "Transferred electrically",
           "Light (radiation)",
           "Thermal (most)"
         ],
         [
           "Electric motor",
-          "Electrical",
+          "Transferred electrically",
           "Kinetic (mechanical)",
           "Thermal"
         ],
@@ -178,7 +178,7 @@
       "wrongFeedback": "Use efficiency = useful power output ÷ total power input = 300 ÷ 400 = 0.75. Efficiency has no units, and it is never more than 1."
     },
     "2": {
-      "question": "Lamp A has a total power input of 40 W and gives out 8 W of light. Lamp B has a total power input of 10 W and gives out 4 W of light. Which lamp is more efficient?",
+      "question": "Lamp A has a total power input of 40 W. It gives out 8 W of light. Lamp B has a total power input of 10 W. It gives out 4 W of light. Which lamp is more efficient?",
       "options": [
         "Lamp B, because its efficiency is 0.4 and lamp A's is 0.2",
         "Lamp A, because it gives out more light",
@@ -223,7 +223,7 @@
     "An LED bulb is more efficient than a filament bulb",
     "Compare devices by working out each efficiency from the values given",
     "Improve efficiency: lubrication, insulation, efficient components",
-    "Wasted energy = total input − useful output (always positive)"
+    "Wasted energy = total input − useful output"
   ],
   "videos": [
     {

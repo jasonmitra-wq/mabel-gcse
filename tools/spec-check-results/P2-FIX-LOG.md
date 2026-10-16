@@ -586,3 +586,140 @@ lesson | what changed (failure) | triage ID
 - p2-static | `keyPoints[1].keyTerms` | R4 p2-static wron0, wron1, wron7; R5 fact0
 - p2-static | `tables` | R4 p2-static wron5
 - p2-static | bold "dust sticking to screens" lost | R2 p2-static abov0
+
+## Runbook task 1.1 (BASE 68f8307)
+
+### R2-extend applied
+
+- p2-components | keyPoints[1].content | R2-extend (p2-current-voltage abov0 extended)
+  - OLD: A <strong>diode</strong> is a component that only lets current flow in <strong>one direction</strong>, the forward direction. In the <strong>reverse direction</strong>, the diode has a very high resistance. So only a very small current flows. ⏎  ⏎ On an <strong>I-V graph</strong>, the diode shows a flat line near zero for negative potential differences. In the forward direction, the current rises steeply. ⏎  ⏎ The circuit symbol is a triangle pointing the way conventional current flows. A vertical bar blocks flow the other way. ⏎  ⏎ An <strong>LED (light-emitting diode)</strong> is a diode that gives out light when current flows forwards. LEDs are used in TVs, phone screens, traffic lights and energy-efficient lighting.
+  - NEW: A <strong>diode</strong> is a component that only lets current flow in <strong>one direction</strong>, the forward direction. In the <strong>reverse direction</strong>, the diode has a very high resistance. So only a very small current flows. ⏎  ⏎ On an <strong>I-V graph</strong>, the diode shows a flat line near zero for negative potential differences. In the forward direction, the current rises steeply. ⏎  ⏎ The circuit symbol is a triangle pointing the way current flows. A vertical bar blocks flow the other way. ⏎  ⏎ An <strong>LED (light-emitting diode)</strong> is a diode that gives out light when current flows forwards. LEDs are used in TVs, phone screens, traffic lights and energy-efficient lighting.
+- p2-components | keyPoints[1].writeBullets[3] | R2-extend (p2-current-voltage abov0 extended)
+  - OLD: Circuit symbol — triangle + bar. The triangle points the way conventional current flows
+  - NEW: Circuit symbol — triangle + bar. The triangle points the way current flows
+
+### Step g: independent audit (BASE d08b060, findings tools/audit-runs/d08b060-2.md)
+
+Fixes for the auditor's factual errors, contradictions, wrong terms and rule breaches. One line per field change: lesson | field | audit finding ID. Old and new text in full (⏎ marks a line break). Rejected findings are in docs/ESCALATIONS.md.
+
+- p2-current-voltage | keyPoints.1.content | audit d08b060-2 B3
+  - OLD: <strong>Potential difference (p.d.)</strong> is measured in volts. Work is done when charge flows in a circuit. It tells you how much energy is transferred for each coulomb of charge that flows between two points. The equation is <strong>E = QV</strong>. Here E is energy transferred (joules, J), Q is charge flow (coulombs, C) and V is potential difference (volts, V). A p.d. of 1 volt means 1 joule of energy is transferred for every 1 coulomb of charge that passes.
+  - NEW: <strong>Potential difference (p.d.)</strong> is measured in volts. It tells you how much energy is transferred for each coulomb of charge that flows between two points. Work is done when charge flows in a circuit. The equation is <strong>E = QV</strong>. Here E is energy transferred (joules, J), Q is charge flow (coulombs, C) and V is potential difference (volts, V). A p.d. of 1 volt means 1 joule of energy is transferred for every 1 coulomb of charge that passes.
+- p2-current-voltage | tables.0.rows.2.1 | audit d08b060-2 B6
+  - OLD: Current flows in one direction only; very small current in the reverse direction
+  - NEW: Very small current in the reverse direction; current rises steeply in the forward direction
+- p2-static | keyPoints.0.content | audit d08b060-2 B4
+  - OLD: When two <strong>insulating materials</strong> are rubbed together, electrons are transferred from one surface to the other. The material that <strong>gains electrons</strong> becomes <strong>negatively charged</strong>. The material that <strong>loses electrons</strong> becomes <strong>positively charged</strong>. ⏎  ⏎ Key rule: <strong>only electrons transfer</strong>. Protons are fixed inside atomic nuclei and cannot be moved by rubbing. ⏎  ⏎ <strong>Charge is conserved</strong>: the material that loses electrons is left with an equal positive charge. ⏎  ⏎ Examples: ⏎ - a <strong>polythene rod</strong> rubbed with a cloth gains electrons from the cloth. The polythene becomes negative, and the cloth becomes positive ⏎ - an <strong>acetate rod</strong> rubbed with a cloth loses electrons to the cloth. The acetate becomes positive, and the cloth becomes negative ⏎  ⏎ Certain <strong>insulators</strong> become charged when rubbed against each other. A metal door handle is a conductor. This is why it discharges you at once. The charge flows through the conductor. But a polythene rod stays charged.
+  - NEW: When two <strong>insulating materials</strong> are rubbed together, electrons are transferred from one surface to the other. The material that <strong>gains electrons</strong> becomes <strong>negatively charged</strong>. The material that <strong>loses electrons</strong> becomes <strong>positively charged</strong>. ⏎  ⏎ Key rule: <strong>only electrons transfer</strong>. Protons are fixed inside atomic nuclei and cannot be moved by rubbing. ⏎  ⏎ <strong>Charge is conserved</strong>: the material that loses electrons is left with an equal positive charge. ⏎  ⏎ Examples: ⏎ - a <strong>polythene rod</strong> rubbed with a cloth gains electrons from the cloth. The polythene becomes negative, and the cloth becomes positive ⏎ - an <strong>acetate rod</strong> rubbed with a cloth loses electrons to the cloth. The acetate becomes positive, and the cloth becomes negative ⏎  ⏎ Certain <strong>insulators</strong> become charged when rubbed against each other. A metal door handle is a conductor. Charge flows through it easily. This is why it discharges you at once. The charge flows through the conductor. But a polythene rod stays charged.
+- p2-static | keyPoints.0.keyTerms.1.def | audit d08b060-2 B5
+  - OLD: The material that loses electrons is left with an equal positive charge.
+  - NEW: The material that loses electrons is left with a positive charge. It is equal in size to the negative charge on the other material.
+- p2-static | keyPoints.0.content | audit d08b060-2 B5
+  - OLD: When two <strong>insulating materials</strong> are rubbed together, electrons are transferred from one surface to the other. The material that <strong>gains electrons</strong> becomes <strong>negatively charged</strong>. The material that <strong>loses electrons</strong> becomes <strong>positively charged</strong>. ⏎  ⏎ Key rule: <strong>only electrons transfer</strong>. Protons are fixed inside atomic nuclei and cannot be moved by rubbing. ⏎  ⏎ <strong>Charge is conserved</strong>: the material that loses electrons is left with an equal positive charge. ⏎  ⏎ Examples: ⏎ - a <strong>polythene rod</strong> rubbed with a cloth gains electrons from the cloth. The polythene becomes negative, and the cloth becomes positive ⏎ - an <strong>acetate rod</strong> rubbed with a cloth loses electrons to the cloth. The acetate becomes positive, and the cloth becomes negative ⏎  ⏎ Certain <strong>insulators</strong> become charged when rubbed against each other. A metal door handle is a conductor. Charge flows through it easily. This is why it discharges you at once. The charge flows through the conductor. But a polythene rod stays charged.
+  - NEW: When two <strong>insulating materials</strong> are rubbed together, electrons are transferred from one surface to the other. The material that <strong>gains electrons</strong> becomes <strong>negatively charged</strong>. The material that <strong>loses electrons</strong> becomes <strong>positively charged</strong>. ⏎  ⏎ Key rule: <strong>only electrons transfer</strong>. Protons are fixed inside atomic nuclei and cannot be moved by rubbing. ⏎  ⏎ <strong>Charge is conserved</strong>: one material gains a negative charge, and the other is left with an equal positive charge. ⏎  ⏎ Examples: ⏎ - a <strong>polythene rod</strong> rubbed with a cloth gains electrons from the cloth. The polythene becomes negative, and the cloth becomes positive ⏎ - an <strong>acetate rod</strong> rubbed with a cloth loses electrons to the cloth. The acetate becomes positive, and the cloth becomes negative ⏎  ⏎ Certain <strong>insulators</strong> become charged when rubbed against each other. A metal door handle is a conductor. Charge flows through it easily. This is why it discharges you at once. The charge flows through the conductor. But a polythene rod stays charged.
+- p2-static | keyPoints.0.writeBullets.3 | audit d08b060-2 B5
+  - OLD: Charge is conserved: the material that loses electrons is left with an equal positive charge
+  - NEW: Charge is conserved: one material gains a negative charge, and the other is left with an equal positive charge
+- p2-static | revisionCardBullets.2 | audit d08b060-2 B5
+  - OLD: Charge is conserved: the material that loses electrons is left with an equal positive charge
+  - NEW: Charge is conserved: one material gains a negative charge, and the other is left with an equal positive charge
+- p2-static | revisionCardBullets.3 | audit d08b060-2 D4
+  - OLD: Same type of charge repel. Different types of charge attract
+  - NEW: Same type of charge repels. Different types of charge attract
+- p2-static | introTips.1 | audit d08b060-2 C7
+  - OLD: Before reading, try this. In one sentence, explain why rubbing a balloon on your hair makes it stick to a wall.
+  - NEW: Before reading, try this. In one sentence, explain why your hair can stand on end after you rub a balloon on it.
+- p2-domestic | checkpoints.1.correctFeedback | audit d08b060-2 C1
+  - OLD: Correct. The live wire is brown and carries the 230 V AC mains supply. It is the most dangerous wire in the plug.
+  - NEW: Correct. The live wire is brown and carries the 230 V AC mains supply. It is the most dangerous wire in three-core cable.
+- p2-domestic | keyPoints.1.content | audit d08b060-2 C2
+  - OLD: Most appliances are connected to the mains using <strong>three-core cable</strong>. The insulation covering each wire is colour coded for easy identification. Each wire has a specific job. ⏎  ⏎ The <strong>live wire (BROWN)</strong> carries the alternating potential difference from the mains supply. The potential difference between the live wire and earth (0 V) is about 230 V. This is the dangerous wire. It may be dangerous even when a switch in the mains circuit is open. This is because it is still connected to the supply. ⏎  ⏎ The <strong>neutral wire (BLUE)</strong> completes the circuit and returns current to the supply. It is at, or close to, earth potential (0 V). But you should never touch any live circuit. ⏎  ⏎ The <strong>earth wire (GREEN and YELLOW stripes)</strong> is a safety wire. It stops the appliance becoming live. It connects the metal casing of the appliance to earth (0 V). Normally, no current flows through the earth wire. If the live wire touches the metal casing, current flows to earth through the earth wire. ⏎  ⏎ Memory trick: <strong>BL</strong>ue = <strong>N</strong>eutral, <strong>BR</strong>own = <strong>L</strong>ive (BLaNk = Blue Neutral; BRiLliant = Brown Live).
+  - NEW: Most appliances are connected to the mains using <strong>three-core cable</strong>. The insulation covering each wire is colour coded for easy identification. Each wire has a specific job. ⏎  ⏎ The <strong>live wire (BROWN)</strong> carries the alternating potential difference from the mains supply. The potential difference between the live wire and earth (0 V) is about 230 V. This is the dangerous wire. It may be dangerous even when a switch in the mains circuit is open. This is because it is still connected to the supply. ⏎  ⏎ The <strong>neutral wire (BLUE)</strong> completes the circuit and returns current to the supply. It is at, or close to, earth potential (0 V). You should never touch any part of a live circuit. ⏎  ⏎ The <strong>earth wire (GREEN and YELLOW stripes)</strong> is a safety wire. It stops the appliance becoming live. It connects the metal casing of the appliance to earth (0 V). Normally, no current flows through the earth wire. If the live wire touches the metal casing, current flows to earth through the earth wire. ⏎  ⏎ Memory trick: <strong>BL</strong>ue = <strong>N</strong>eutral, <strong>BR</strong>own = <strong>L</strong>ive (BLaNk = Blue Neutral; BRiLliant = Brown Live).
+- p2-domestic | title | audit d08b060-2 C5
+  - OLD: Mains electricity — AC, DC and your home's wiring
+  - NEW: Mains electricity — ac, DC and your home's wiring
+- p2-domestic | keyPoints.0.heading | audit d08b060-2 C5
+  - OLD: AC vs DC
+  - NEW: ac vs DC
+- p2-domestic | keyPoints.0.content | audit d08b060-2 C5
+  - OLD: <strong>Direct current (DC)</strong>: a <strong>direct potential difference</strong> stays in one direction, so the current flows in one direction only. It comes from cells, batteries and solar panels. It is used in phones, laptops and torches. ⏎  ⏎ <strong>Alternating current (AC)</strong>: an <strong>alternating potential difference</strong> keeps reversing direction, so the current keeps reversing too. The UK mains supply is AC at about <strong>230 V</strong> and <strong>50 Hz</strong> (50 complete cycles per second).
+  - NEW: <strong>Direct current (DC)</strong>: a <strong>direct potential difference</strong> stays in one direction, so the current flows in one direction only. It comes from cells, batteries and solar panels. It is used in phones, laptops and torches. ⏎  ⏎ <strong>Alternating current (ac)</strong>: an <strong>alternating potential difference</strong> keeps reversing direction, so the current keeps reversing too. The UK mains supply is ac at about <strong>230 V</strong> and <strong>50 Hz</strong> (50 complete cycles per second).
+- p2-domestic | keyPoints.0.writeBullets.1 | audit d08b060-2 C5
+  - OLD: AC — an alternating potential difference keeps reversing, so the current reverses. Comes from the mains supply
+  - NEW: ac — an alternating potential difference keeps reversing, so the current reverses. Comes from the mains supply
+- p2-domestic | keyPoints.0.keyTerms.2.def | audit d08b060-2 C5
+  - OLD: The number of complete AC cycles per second, measured in hertz (Hz). UK mains = 50 Hz.
+  - NEW: The number of complete ac cycles per second, measured in hertz (Hz). UK mains = 50 Hz.
+- p2-domestic | keyPoints.0.memTip | audit d08b060-2 C5
+  - OLD: AC = Alternates, DC = Direct (one direction). The mains 'alternates'. Think of it swinging like a pendulum, back and forth 50 times a second.
+  - NEW: ac = Alternates, DC = Direct (one direction). The mains 'alternates'. Think of it swinging like a pendulum, back and forth 50 times a second.
+- p2-domestic | keyPoints.1.writeBullets.0 | audit d08b060-2 C5
+  - OLD: Live wire — BROWN. Carries 230 V AC from the supply. The most dangerous wire
+  - NEW: Live wire — BROWN. Carries 230 V ac from the supply. The most dangerous wire
+- p2-domestic | keyPoints.1.keyTerms.0.def | audit d08b060-2 C5
+  - OLD: The brown wire in three-core cable; carries the 230 V AC supply potential difference and is the most dangerous wire.
+  - NEW: The brown wire in three-core cable; carries the 230 V ac supply potential difference and is the most dangerous wire.
+- p2-domestic | tables.0.rows.0.2 | audit d08b060-2 C5
+  - OLD: 230 V AC
+  - NEW: 230 V ac
+- p2-domestic | checkpoints.0.question | audit d08b060-2 C5
+  - OLD: What is the frequency of the UK mains AC supply, and what does this mean?
+  - NEW: What is the frequency of the UK mains ac supply, and what does this mean?
+- p2-domestic | checkpoints.1.options.0 | audit d08b060-2 C5
+  - OLD: Brown, 230 V AC
+  - NEW: Brown, 230 V ac
+- p2-domestic | checkpoints.1.correctFeedback | audit d08b060-2 C5
+  - OLD: Correct. The live wire is brown and carries the 230 V AC mains supply. It is the most dangerous wire in three-core cable.
+  - NEW: Correct. The live wire is brown and carries the 230 V ac mains supply. It is the most dangerous wire in three-core cable.
+- p2-domestic | checkpoints.1.wrongFeedback | audit d08b060-2 C5
+  - OLD: The live wire is BROWN and carries 230 V AC. Blue is neutral (~0 V). Green and yellow is the earth wire, also ~0 V normally.
+  - NEW: The live wire is BROWN and carries 230 V ac. Blue is neutral (~0 V). Green and yellow is the earth wire, also ~0 V normally.
+- p2-domestic | revisionCardBullets.1 | audit d08b060-2 C5
+  - OLD: AC: an alternating potential difference keeps reversing. UK mains = about 230 V, 50 Hz
+  - NEW: ac: an alternating potential difference keeps reversing. UK mains = about 230 V, 50 Hz
+- p2-domestic | revisionCardBullets.3 | audit d08b060-2 C5
+  - OLD: Live wire: BROWN, 230 V AC. The most dangerous
+  - NEW: Live wire: BROWN, 230 V ac. The most dangerous
+- p2-domestic | title | audit d08b060-2 C5
+  - OLD: Mains electricity — ac, DC and your home's wiring
+  - NEW: Mains electricity — ac, dc and your home's wiring
+- p2-domestic | keyPoints.0.heading | audit d08b060-2 C5
+  - OLD: ac vs DC
+  - NEW: ac vs dc
+- p2-domestic | keyPoints.0.content | audit d08b060-2 C5
+  - OLD: <strong>Direct current (DC)</strong>: a <strong>direct potential difference</strong> stays in one direction, so the current flows in one direction only. It comes from cells, batteries and solar panels. It is used in phones, laptops and torches. ⏎  ⏎ <strong>Alternating current (ac)</strong>: an <strong>alternating potential difference</strong> keeps reversing direction, so the current keeps reversing too. The UK mains supply is ac at about <strong>230 V</strong> and <strong>50 Hz</strong> (50 complete cycles per second).
+  - NEW: <strong>Direct current (dc)</strong>: a <strong>direct potential difference</strong> stays in one direction, so the current flows in one direction only. It comes from cells, batteries and solar panels. It is used in phones, laptops and torches. ⏎  ⏎ <strong>Alternating current (ac)</strong>: an <strong>alternating potential difference</strong> keeps reversing direction, so the current keeps reversing too. The UK mains supply is ac at about <strong>230 V</strong> and <strong>50 Hz</strong> (50 complete cycles per second).
+- p2-domestic | keyPoints.0.writeBullets.0 | audit d08b060-2 C5
+  - OLD: DC — a direct potential difference. Current in one direction only. Comes from batteries and cells
+  - NEW: dc — a direct potential difference. Current in one direction only. Comes from batteries and cells
+- p2-domestic | keyPoints.0.memTip | audit d08b060-2 C5
+  - OLD: ac = Alternates, DC = Direct (one direction). The mains 'alternates'. Think of it swinging like a pendulum, back and forth 50 times a second.
+  - NEW: ac = Alternates, dc = Direct (one direction). The mains 'alternates'. Think of it swinging like a pendulum, back and forth 50 times a second.
+- p2-domestic | checkpoints.1.options.3 | audit d08b060-2 C5
+  - OLD: Brown, 12 V DC
+  - NEW: Brown, 12 V dc
+- p2-domestic | revisionCardBullets.0 | audit d08b060-2 C5
+  - OLD: DC: a direct potential difference, one direction only (batteries, cells, solar panels)
+  - NEW: dc: a direct potential difference, one direction only (batteries, cells, solar panels)
+- p2-components | keyPoints.2.keyTerms.0.def | audit d08b060-2 C8
+  - OLD: Light-dependent resistor — a semiconductor component whose resistance decreases as light intensity increases.
+  - NEW: Light-dependent resistor — a component whose resistance decreases as light intensity increases.
+- p2-series-parallel | revisionCardBullets.11 | audit d08b060-2 C4
+  - OLD: Current in a parallel branch: I = Vbranch / Rbranch. The potential difference is the same for all branches
+  - NEW: (bullet removed)
+
+### Check-rewrite against BASE d08b060 (step h)
+
+`node tools/check-rewrite.js d08b060`: 444 failures in the six P2 lessons. 390 match a check-rewrite line in this log. The other 54 match a logged change line. None undone:
+
+- p2-components bold and key term "forward threshold voltage": line for R5 p2-components abov0 and the BASE f9f57a1 mapping line
+- p2-current-voltage title: R3 p2-current-voltage wron0 line
+- p2-current-voltage revisionCardBullets 12 became 10, bold "free electrons", "Conventional current", key term "Conventional current": R2 p2-current-voltage abov0 lines
+- p2-domestic title: audit C5 line above (ac, dc in spec case); earlier wording unchanged
+- p2-domestic keyPoints[0].content numbers "50", "100": R5 p2-domestic abov0 line (current reverses 100 times a second cut)
+- p2-domestic keyPoints[0].writeBullets 6 became 3, bold "oscilloscope", "sinusoidal wave", key term "Oscilloscope": section 1 line (6 became 4) and R2 p2-domestic abov6 lines
+- p2-domestic keyPoints[1] and [2] fuse, MCB, RCCB, rated current, 3 A, 5 A, 13 A, replaced, reset, cable grip; commonMistakes 5 became 2; revisionCardBullets[6]: fuse hold released (abov2, abov3), abov5 and R2 p2-domestic abov3 lines
+- p2-power-energy keyPoints[0] number "65": R4 p2-power-energy abov0 line (typical values cut)
+- p2-power-energy checkpoints.2 numbers (9 failures): R5 p2-power-energy chec0 lines
+- p2-series-parallel keyPoints[4] bold "very low resistance", "very high resistance": R2 p2-series-parallel abov0 and abov1 lines
+- p2-static keyPoints[1] bold "dust sticking to screens": R2 p2-static abov0 line

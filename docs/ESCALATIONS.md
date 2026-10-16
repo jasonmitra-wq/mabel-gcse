@@ -139,3 +139,7 @@ B3 (pronoun), B4 (door handle reason), B5, B6, C1, C2, C4 (orphan bullet), C5, C
 
 - Gate: one `node tools/teach-sim.js --run p3-particle-model` with all three fault types (student's name, over 60 words, stock praise) gone. Not run in the cloud session: SPEC_CHECK_API_KEY unset. Done instead: `--rescore` (saved run unchanged, 8 flagged) and `--rescore --replay` (the same model replies through the new post-processing: 0 flagged). Run the gate on C:\dev\mabel-gcse.
 - Seen while doing it, not changed (outside teach mode): js/lessons.js:725–726, the "ask a question" prompt after a lesson, still names the student in the system and user prompt.
+
+## Runbook v2 task 2.4: new Physics content not written (2026-10-16)
+
+- 2.4 says to write the new lessons (4.5.3, 4.5.4, 4.5.5, 4.6.3, P8 Space: 4.8.1.1, 4.8.1.2, 4.8.1.3 if needed, 4.8.2) and the additions (4.5.1.2 to p5-forces-motion, 4.6.1.5 seismic waves to p6-sound) from the specification text. data/spec/physics.md is gitignored and absent from the cloud container, and filestore.aqa.org.uk, www.aqa.org.uk are blocked by the session's network policy, so it cannot be rebuilt (MANIFEST md5 check impossible). Writing from memory would break the EDIT RULE "specification terms exactly", so nothing was written. Do 2.4 on C:\dev\mabel-gcse, where data/spec/physics.md exists.

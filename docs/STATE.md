@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 2, task 2.4 (2.3 code done; its --run pending, see ESCALATIONS). HOLD before 2.5 until a Mabel verdict is in docs/MABEL-FEEDBACK.md
+Runbook position: Phase 2, task 2.4 blocked in the cloud session (no data/spec/physics.md; see ESCALATIONS); 2.1 recalibration and 2.3 --run also pending there. HOLD before 2.5 until a Mabel verdict is in docs/MABEL-FEEDBACK.md
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

@@ -1,19 +1,19 @@
 {
   "lesson": "p1-conservation",
   "source_file": "lessons/physics/p1-conservation.json",
-  "lesson_md5": "c5a85a573394bfa6f88349ec8b6d8ef2",
+  "lesson_md5": "51d0e61e6a7a1fb19f7875513d3cd4c8",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T18:17:57.648Z",
+  "date": "2026-10-16T18:29:28.499Z",
   "specRefs_sent": [
     "4.1.2.1"
   ],
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7299,
-    "output_tokens": 5101
+    "input_tokens": 7281,
+    "output_tokens": 5289
   },
-  "cost_usd": 0.131216,
+  "cost_usd": 0.134904,
   "status": "OK",
   "result": {
     "lesson": "p1-conservation",
@@ -21,83 +21,56 @@
       {
         "specRef": "4.1.2.1 Required practical activity 2",
         "spec_text": "investigate the effectiveness of different materials as thermal insulators and the factors that may affect the thermal insulation properties of a material.",
-        "why": "The lesson covers only the first half of the practical: comparing materials (keyPoints[3].content, 'The independent variable is the material'). It treats thickness only as a control variable. It never shows how to investigate a factor such as thickness or number of layers as the independent variable."
+        "why": "The lesson only covers the first half of the practical: comparing different materials (keyPoints[3].content: \"The independent variable is the material\"). It never covers investigating the factors that affect a material's insulating properties, such as thickness or number of layers. Instead, thickness appears only as a control variable (\"Control variables include ... the thickness of material\")."
       },
       {
         "specRef": "4.1.2.1 Key opportunities for skills development",
         "spec_text": "Investigate thermal conductivity using rods of different materials.",
-        "why": "The lesson does not mention comparing thermal conductivity using rods of different materials."
+        "why": "The lesson does not mention any activity that compares thermal conductivity using rods of different materials. This is listed as a skills opportunity rather than core content, so it may be lower priority."
       }
     ],
-    "above_gcse": [
-      {
-        "field": "keyPoints[3].keyTerms[1].def",
-        "text": "How well a material conducts energy; the higher it is, the higher the rate of energy transfer by conduction",
-        "why": "The spec says 'Students do not need to know the definition of thermal conductivity.' The lesson presents a definition as a key term to learn. Only the relationship to the rate of energy transfer is required."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "<strong>Thermal conductivity</strong>: this tells you how well a material conducts energy.",
-        "why": "This is the same issue. The spec explicitly says the definition is not required, yet the lesson presents one."
-      },
-      {
-        "field": "examTips[2]",
-        "text": "Sankey diagrams are drawn to scale. The width of each arrow shows the amount of energy. All the arrows must add up to the input.",
-        "why": "Sankey diagrams are not part of the supplied specification section 4.1.2.1. They are presented as exam content without support from these sections."
-      }
-    ],
+    "above_gcse": [],
     "factual_errors": [
       {
-        "field": "tables[0].headers / tables[0].rows",
-        "text": "\"Input energy store\" ... \"Electrical\"",
-        "correction": "'Electrical' is not an energy store in the GCSE stores-and-pathways model. Energy is transferred electrically, which is a pathway. For the bulb, kettle and motor, the input is energy transferred electrically from a store such as a chemical store in a power station or battery.",
-        "basis": "own knowledge"
-      },
-      {
         "field": "keyPoints[1].content",
-        "text": "A light bulb transfers electrical energy into two outputs. These are <strong>useful light energy</strong> and <strong>wasted thermal energy</strong>.",
-        "correction": "Light and electrical energy are not stores. Energy is transferred electrically to the bulb. It is transferred usefully by light (radiation) and dissipated by heating to the thermal store of the surroundings.",
+        "text": "<strong>streamlining</strong> reduces air resistance, so less kinetic energy is wasted pushing through the air",
+        "correction": "For a vehicle moving at steady speed, the kinetic store does not decrease. The energy transferred doing work against air resistance comes from the fuel's chemical store, and streamlining reduces that wasted transfer. The same wording appears in keyPoints[1].writeBullets[4], keyPoints[3].content, keyPoints[3].keyTerms[2].def and revisionCardBullets[11]. This is a minor imprecision.",
         "basis": "own knowledge"
       },
       {
-        "field": "keyPoints[2].content",
-        "text": "<strong>electrical resistance</strong> in wires: electrical energy → thermal energy. This is how a kettle heats water.",
-        "correction": "Heating the water is the useful transfer in a kettle, not dissipation. The lesson itself says this in tables[0] and checkpoints[1]. Using it as an example of dissipation, i.e. energy 'stored in less useful ways', is wrong.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "introTips[2]",
-        "text": "The words 'lost' and 'used up' are banned in physics.",
-        "correction": "'Energy loss' and 'heat loss' are widely used in physics to mean energy transferred out of a system. The lesson uses them itself: keyPoints[1].keyTerms[2].def 'heat loss', keyPoints[3].writeBullets[2] 'heat loss through the roof', tables[0] 'Thermal lost to surroundings'. The real point is that energy is not destroyed.",
+        "field": "keyPoints[2].keyTerms[1].def",
+        "text": "A contact force between surfaces that converts kinetic energy to thermal energy",
+        "correction": "A force does not itself convert energy. Work done against friction transfers energy from the kinetic store to the thermal store of the surfaces and surroundings. This is a minor imprecision.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [
       {
-        "field": "keyPoints[3].content",
-        "text": "<strong>double glazing</strong> has an air gap between the panes, which reduces heat conduction",
-        "spec_term": "rate of energy transfer by conduction"
+        "field": "keyPoints[1].keyTerms[2].def",
+        "text": "Using oil or similar material between surfaces to reduce friction and heat loss",
+        "spec_term": "unwanted energy transfers / dissipated (spec: \"ways of reducing unwanted energy transfers, for example through lubrication\"). The lesson itself says 'lost' is not to be used (introTips[2])."
       },
       {
-        "field": "keyPoints[1].content",
-        "text": "The rest is <strong>wasted</strong>, usually as heat or sound.",
-        "spec_term": "dissipated, so that it is stored in less useful ways"
+        "field": "keyPoints[3].keyTerms[2].def",
+        "text": "Shaping an object to reduce air resistance and the kinetic energy lost to drag",
+        "spec_term": "dissipated / 'wasted' (spec: \"energy is dissipated, so that it is stored in less useful ways. This energy is often described as being 'wasted'\")"
       },
       {
         "field": "keyPoints[3].writeBullets[2]",
         "text": "This reduces heat loss through the roof by conduction and convection",
-        "spec_term": "rate of cooling / energy transfer"
+        "spec_term": "rate of energy transfer / unwanted energy transfers (the same 'heat loss' wording appears in revisionCardBullets[8]: \"slows heat loss to the surroundings\")"
       },
       {
-        "field": "keyPoints[0].content",
-        "text": "The total mechanical energy falls with each bounce.",
-        "spec_term": "energy stored in less useful ways ('mechanical energy' is not a spec term)"
+        "field": "intro",
+        "text": "Each time, energy changes form.",
+        "spec_term": "transferred / stored (spec: \"Energy can be transferred usefully, stored or dissipated\"). The lesson elsewhere uses a forms model, e.g. keyPoints[1].content \"useful light energy\", and keyPoints[0].content \"The total mechanical energy falls\"."
       }
     ],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "Coverage of the skills codes named in the spec (AT 1, AT 5, WS 1.4, MS) could not be checked. Their details (page 90) were not supplied.",
-      "No diagrams are included (all 'diagram' fields are null), so there was nothing visual to check."
+      "All keyPoints have \"diagram\": null, so there were no diagrams to check.",
+      "The spec refers to \"AT 1 and 5\", \"WS 1.4\" and skills details on \"page 90\". These details were not provided, so I could not check whether the practical description meets those skill requirements.",
+      "keyPoints[1].tutor_note and examTips[2] refer to Sankey diagrams. Sankey diagrams are not in the supplied spec section, and no Sankey diagram is included to check."
     ]
   }
 }

@@ -225,3 +225,24 @@ Output of `node tools/check-rewrite.js d08b060` after the P1 fix round. One line
 - p1-power | `keyPoints[3].content: bold term "P = Fv" lost` — P = Fv and its worked example cut | abov0
 - p1-power | `keyPoints[3].content: bold term "60 kW" lost` — P = Fv and its worked example cut | abov0
 - p1-power | `keyPoints[3].content: key term "P = Fv" lost` — P = Fv and its worked example cut | abov0
+
+## Close-out after re-check (against 5a36e2b)
+
+One line per change: lesson | what changed | decision ID (re-check decisions in P1-TRIAGE.md). Failures from `node tools/check-rewrite.js 5a36e2b` are noted on the line that causes them.
+
+- p1-conservation | keyPoints[3].keyTerms[1].def "How well a material conducts energy; …" became "The higher the thermal conductivity, the higher the rate of energy transfer by conduction" (check-rewrite: `keyPoints[3].keyTerms: must not change`) | p1-conservation abov0
+- p1-conservation | keyPoints[3].content: sentence "this tells you how well a material conducts energy." cut; relationship kept | p1-conservation abov1
+- p1-energy-stores | keyPoints[3].content: "Key point: all energy eventually ends up as thermal energy in the surroundings" became "Wasted energy is dissipated to the thermal store of the surroundings, so it is stored in less useful ways" (check-rewrite: bold term "all energy eventually ends up as thermal energy in the surroundings" lost) | p1-energy-stores fact2
+- p1-energy-stores | keyPoints[3].writeBullets[2]: same replacement | p1-energy-stores fact2
+- p1-energy-stores | commonMistakes[2]: same replacement | p1-energy-stores fact2
+- p1-energy-stores | revisionCardBullets[4]: same replacement | p1-energy-stores fact2
+- p1-heating | keyPoints[3].content: "Heat always flows from hot to cold. It never flows the other way on its own." became "Energy is transferred by heating from a hotter object to a cooler one." (check-rewrite: bold term "Heat always flows from hot to cold" lost) | p1-heating abov1
+- p1-heating | keyPoints[3].writeBullets[2]: "It never flows from cold to hot on its own" cut; now "Energy is transferred by heating from a hotter object to a cooler one" | p1-heating abov1
+- p1-national-grid | tables[0] Bio-fuel row "Potentially" became "Yes" (check-rewrite: `tables: must not change`) | p1-national-grid fact5
+- p1-national-grid | keyPoints[2].content: renewable is "being (or can be) replenished as it is used" | p1-national-grid miss2
+- p1-national-grid | keyPoints[2].writeBullets[1]: same definition | p1-national-grid miss2
+- p1-national-grid | keyPoints[2].keyTerms[0].def: same definition (check-rewrite: `keyPoints[2].keyTerms: must not change`) | p1-national-grid miss2
+- p1-national-grid | commonMistakes[3]: same definition | p1-national-grid miss2
+- p1-national-grid | revisionCardBullets[5]: same definition | p1-national-grid miss2
+- p1-power | keyPoints[2].tutor_note removed; both its sentences were the estimate / 6-mark claim (check-rewrite: `keyPoints[2]: keys changed`) | p1-power abov0
+- p1-efficiency | tables[0].title "Efficiency of common devices" became "Useful and wasted energy in common devices" (check-rewrite: `tables: must not change`) | p1-efficiency table title

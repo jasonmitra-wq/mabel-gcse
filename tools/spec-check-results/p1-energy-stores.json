@@ -1,9 +1,9 @@
 {
   "lesson": "p1-energy-stores",
   "source_file": "lessons/physics/p1-energy-stores.json",
-  "lesson_md5": "6f5e80f5402405a915be45ecd62c3234",
+  "lesson_md5": "830bffb7627f7722a2d76a431f3c229a",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T18:16:30.135Z",
+  "date": "2026-10-16T18:30:15.157Z",
   "specRefs_sent": [
     "4.1.1.1",
     "4.1.2.1",
@@ -12,48 +12,43 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 9451,
-    "output_tokens": 6287
+    "input_tokens": 9502,
+    "output_tokens": 4317
   },
-  "cost_usd": 0.163544,
+  "cost_usd": 0.124348,
   "status": "OK",
   "result": {
     "lesson": "p1-energy-stores",
     "missing_spec_content": [
       {
-        "specRef": "4.1.1.1",
-        "spec_text": "Throughout this section on Energy students should be able to calculate the changes in energy involved when a system is changed by: - heating - work done by forces - work done when a current flows",
-        "why": "The lesson has no worked calculation of an energy change. The only equations are Ek = ½mv², Ep = mgh and Ee = ½ke², and they appear only inside keyTerms definitions. There is no calculation of energy change by heating (specific heat capacity) or of work done when a current flows."
-      },
-      {
-        "specRef": "4.1.1.1",
-        "spec_text": "Students should be able to describe all the changes involved in the way energy is stored when a system changes, for common situations.",
-        "why": "Some of the listed situations are only partly described. 'an object accelerated by a constant force: work done by the force fills the kinetic store' does not say which store decreases. 'water boiled in an electric kettle: energy is transferred electrically to the thermal store of the water' does not give the source store and leaves out dissipation to the kettle and surroundings. So the lesson does not describe 'all the changes'."
-      },
-      {
         "specRef": "4.1.2.1",
         "spec_text": "Students should be able to explain ways of reducing unwanted energy transfers, for example through lubrication and the use of thermal insulation.",
-        "why": "The lesson never mentions lubrication, thermal insulation or any other way of reducing unwanted energy transfers."
+        "why": "The lesson describes wasted and dissipated energy. It never explains how to reduce unwanted energy transfers, and it does not mention lubrication or thermal insulation."
       },
       {
         "specRef": "4.1.2.1",
         "spec_text": "The higher the thermal conductivity of a material the higher the rate of energy transfer by conduction across the material.",
-        "why": "Thermal conductivity is not mentioned anywhere in the lesson."
+        "why": "Thermal conductivity is not mentioned anywhere in the lesson. Conduction appears only as a named example of heating."
       },
       {
         "specRef": "4.1.2.1",
         "spec_text": "Students should be able to describe how the rate of cooling of a building is affected by the thickness and thermal conductivity of its walls.",
-        "why": "The lesson does not cover the rate of cooling of buildings, wall thickness or wall thermal conductivity."
+        "why": "The lesson has no content on the rate of cooling of buildings, wall thickness or wall thermal conductivity."
       },
       {
         "specRef": "4.1.2.1",
         "spec_text": "Required practical activity 2 (physics only): investigate the effectiveness of different materials as thermal insulators and the factors that may affect the thermal insulation properties of a material.",
-        "why": "The required practical on thermal insulators is not mentioned."
+        "why": "The required practical on thermal insulators is not covered or referred to."
       },
       {
         "specRef": "4.1.2.2",
         "spec_text": "(HT only) Students should be able to describe ways to increase the efficiency of an intended energy transfer.",
-        "why": "The lesson explains why efficiency is below 100% but never describes any way to increase efficiency."
+        "why": "The lesson explains how to calculate efficiency and why it is below 1. It gives no ways to increase efficiency."
+      },
+      {
+        "specRef": "4.1.1.1",
+        "spec_text": "Throughout this section on Energy students should be able to calculate the changes in energy involved when a system is changed by: heating; work done by forces; work done when a current flows",
+        "why": "Formulas for the kinetic, gravitational potential and elastic potential stores appear only in keyTerms definitions, and no calculation using them is worked through. Nothing covers calculating energy changes caused by heating or by work done when a current flows."
       }
     ],
     "above_gcse": [],
@@ -61,50 +56,34 @@
       {
         "field": "tables[0].rows[7][3]",
         "text": "Magnets are moved further apart (repelling) or together (attracting)",
-        "correction": "This is the wrong way round. The magnetic store increases when work is done against the magnetic force. That means pushing repelling magnets closer together, or pulling attracting magnets further apart. (The lesson's own electrostatic row gets the equivalent idea right.)",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "By radiation: by electromagnetic waves (light, infrared) or by sound waves.",
-        "correction": "Sound is a mechanical wave that needs a medium. It is not electromagnetic radiation. The lesson's own definition contradicts this by saying radiation travels 'without requiring a medium for EM waves'. Energy carried by sound should not be described as transfer by radiation in the sense of electromagnetic waves.",
+        "correction": "This is backwards. Energy in the magnetic store increases when repelling magnets are pushed closer together, or when attracting magnets are pulled further apart. Work must be done against the magnetic force. The electrostatic row in the same table states the analogous case correctly.",
         "basis": "own knowledge"
       },
       {
         "field": "keyPoints[3].content",
-        "text": "Key point: <strong>all energy eventually ends up as thermal energy in the surroundings</strong>.",
-        "correction": "This overstates the case. The specification says energy 'can be transferred usefully, stored or dissipated'. Energy can stay stored, for example in a charged battery or a raised object. It is the dissipated energy that ends up spread out in the thermal store of the surroundings. The same claim is repeated in writeBullets, commonMistakes[2] and revisionCardBullets[4].",
+        "text": "It becomes so spread out that it cannot be used again.",
+        "correction": "Dissipated energy is stored in less useful ways. It is harder to use, but it is not impossible to use. The lesson's own writeBullets say \"harder to use\" and its memTip says \"cannot easily be recovered\".",
         "basis": "spec"
       }
     ],
     "wrong_terms": [
       {
-        "field": "keyPoints[4].keyTerms[1].def",
-        "text": "efficiency = useful output ÷ total input",
-        "spec_term": "efficiency = useful output energy transfer / total input energy transfer (or useful power output / total power input)"
+        "field": "keyPoints[1].content",
+        "text": "<strong>Mechanically</strong>: by a force acting on an object",
+        "spec_term": "work done by forces"
       },
       {
-        "field": "keyPoints[4].memTip",
-        "text": "Efficiency = useful OUT ÷ total IN.",
-        "spec_term": "useful output energy transfer / total input energy transfer"
-      },
-      {
-        "field": "intro",
-        "text": "It shifts from one place to another, changes form, or spreads out.",
-        "spec_term": "changes in the way energy is stored; dissipated"
-      },
-      {
-        "field": "introTips[1]",
-        "text": "It only moves between stores or spreads out as heat.",
-        "spec_term": "dissipated"
+        "field": "keyPoints[1].content",
+        "text": "<strong>Electrically</strong>: by an electric current moving through a circuit.",
+        "spec_term": "work done when a current flows"
       }
     ],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "The claims that there are 'exactly eight energy stores examiners expect you to name' (introTips[0]) and 'four transfer pathways' (examTip, keyPoints[1].content) cannot be checked against the specification text supplied, because these sections do not list the stores or pathways.",
-      "The equations Ek = ½mv², Ep = mgh (g = 9.8 N/kg) and Ee = ½ke² in keyPoints[0].keyTerms belong to specification sections that were not supplied. They are correct by own knowledge but were not checked against the specification.",
-      "The exam-frequency claims 'Energy questions appear on every exam paper' (examTip) and 'Sankey diagrams are a common 2–3 mark question' (introTips[2]) cannot be checked from the specification text.",
-      "The lesson has no diagrams (the diagrams array is empty and every keyPoint diagram is null). No Sankey diagram image was available to check against the text description."
+      "The lesson's 'diagrams' array is empty and every keyPoint has 'diagram': null. No Sankey diagram image was available to check, so there are no arrow widths or proportions to verify.",
+      "The eight named energy stores (keyPoints[0]) and four transfer pathways (keyPoints[1]) do not appear in the specification sections provided. They could be checked only against own knowledge, not against the specification text.",
+      "examTip: \"Energy questions appear on every exam paper\" and introTips[2]: \"Sankey diagrams are a common 2–3 mark question\". These claims about exam frequency and mark allocation cannot be verified from the specification text.",
+      "keyPoints[0].keyTerms equations (Ek = ½mv², Ep = mgh with g = 9.8 N/kg, Ee = ½ke²) come from specification sections not provided. They could not be checked against the specification text."
     ]
   }
 }

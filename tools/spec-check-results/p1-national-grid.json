@@ -1,9 +1,9 @@
 {
   "lesson": "p1-national-grid",
   "source_file": "lessons/physics/p1-national-grid.json",
-  "lesson_md5": "c6d7025dbd04c15cda621bc71fd826d0",
+  "lesson_md5": "ce7f3bcb11cc0feb54622cfc69f4e1e8",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T18:20:29.135Z",
+  "date": "2026-10-16T18:31:21.629Z",
   "specRefs_sent": [
     "4.1.3",
     "4.2.4.3"
@@ -11,10 +11,10 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7282,
-    "output_tokens": 6064
+    "input_tokens": 7313,
+    "output_tokens": 5304
   },
-  "cost_usd": 0.150408,
+  "cost_usd": 0.135332,
   "status": "OK",
   "result": {
     "lesson": "p1-national-grid",
@@ -22,85 +22,102 @@
       {
         "specRef": "4.1.3",
         "spec_text": "explain patterns and trends in the use of energy resources.",
-        "why": "The lesson only states the trends: \"Trends: coal use is falling. The use of renewable resources is rising.\" (keyPoints[2].content). It never explains why, for example concern about CO₂ and climate change, emissions targets and legislation, the falling cost of wind and solar, or fossil fuels running out. The specification asks students to explain the trends, not just describe them."
+        "why": "The lesson only states trends and never explains them: \"Trends: coal use is falling. The use of renewable resources is rising.\" (keyPoints[2].content). It gives no reasons, such as concern about CO₂ and climate change, sulfur dioxide and acid rain, government policy and targets, falling costs of renewables, or fossil fuels running out."
       },
       {
         "specRef": "4.1.3",
         "spec_text": "compare ways that different energy resources are used, the uses to include transport, electricity generation and heating",
-        "why": "Transport and heating get one sentence each: \"For example, petrol and diesel fuel cars. Gas heats many homes.\" (keyPoints[2].content). Nothing compares how different resources are used for each purpose, for example bio-fuel or electricity for transport, or electric, solar or geothermal heating. The table compares resources only \"for the national grid\", which is electricity generation."
-      },
-      {
-        "specRef": "4.1.3",
-        "spec_text": "A renewable energy resource is one that is being (or can be) replenished as it is used.",
-        "why": "The lesson's definition, \"A renewable resource is one that is replenished as it is used.\" (keyPoints[2].content), drops the \"(or can be)\" part. That part is what makes bio-fuel count as renewable. Its absence may explain why the table marks bio-fuel only \"Potentially\" renewable."
+        "why": "The lesson names the three uses and gives two examples: \"For example, petrol and diesel fuel cars. Gas heats many homes.\" (keyPoints[2].content). It does not compare which resources are used for each purpose. For example, it does not cover oil and bio-fuel for transport, or gas, electricity, solar heating and geothermal for heating. Its comparison table covers electricity generation only."
       }
     ],
-    "above_gcse": [],
+    "above_gcse": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "A <strong>step-up transformer</strong> increases the potential difference and decreases the current.",
+        "why": "Section 4.2.4.3 only requires that step-up and step-down transformers change the potential difference. The spec says \"The construction and operation of transformers is covered Transformers (HT only)\". The linked change in current comes from Higher Tier transformer content, so a Foundation student may be confused. The same applies to keyPoints[1].writeBullets, keyTerms and revisionCardBullets[2] and [3]."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "the cheapest new electricity source in the UK by the 2020s",
+        "why": "This economic claim is not required by the spec and depends on the date. The table (\"Cheapest new electricity (UK)\") and the bullet \"gas prices volatile\" add similar market detail that goes beyond the spec."
+      },
+      {
+        "field": "tables[0].rows[7][4]",
+        "text": "Can use existing coal power stations",
+        "why": "The spec states \"Descriptions of how energy resources are used to generate electricity are not required.\" Detail about power-station infrastructure goes beyond what is needed."
+      }
+    ],
     "factual_errors": [
       {
-        "field": "intro",
-        "text": "It could come from a wind farm off Scotland or a nuclear power station in Somerset.",
-        "correction": "Somerset's only operating nuclear power station, Hinkley Point B, stopped generating in 2022. Hinkley Point C is still being built. Electricity cannot currently come from a nuclear power station in Somerset.",
-        "basis": "own knowledge"
-      },
-      {
         "field": "keyPoints[2].content",
-        "text": "Coal: the most CO₂ per kWh and the cheapest to burn. It is being phased out.",
-        "correction": "The UK's last coal-fired power station (Ratcliffe-on-Soar) closed in 2024, so coal has already been phased out of UK electricity generation. \"Cheapest to burn\" is also doubtful once carbon costs are included. At most, coal fuel is relatively cheap.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "tidal: very predictable, because tides never stop.",
-        "correction": "Tidal power is predictable because tides follow a regular, known cycle. The reason is not that they \"never stop\". There are periods of slack water when output falls to zero, and the tidal range varies with the spring/neap cycle.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "Fossil fuels and nuclear can supply energy whenever it is needed.",
-        "correction": "Nuclear power stations are reliable because they do not depend on the weather. However, they are slow to start up and cannot quickly change output to meet demand. The lesson's own table says nuclear is \"slow to start\". The same claim appears in checkpoints[2].correctFeedback: \"A nuclear power station can supply energy whenever it is needed.\"",
+        "text": "<strong>tidal</strong>: very predictable, because tides never stop.",
+        "correction": "Tides are predictable because they follow a regular cycle set by the Moon, so their times and heights can be calculated in advance. They do not flow constantly: there are periods of slack water when output falls. The reason given is wrong.",
         "basis": "own knowledge"
       },
       {
         "field": "keyPoints[2].memTip",
         "text": "Renewables are FREE to run but INTERMITTENT.",
-        "correction": "Not all renewables are free to run. Bio-fuel has fuel costs, and all renewables have maintenance costs. Hydroelectric, geothermal and bio-fuel are not intermittent. The lesson itself lists \"Thinking renewable means 'free' or 'clean'\" in commonMistakes[3].",
+        "correction": "Not all renewables are free to run. Bio-fuel has a fuel cost, and all renewables have maintenance costs. Not all renewables are intermittent either. The lesson itself calls hydroelectric \"reliable, controllable\" and geothermal \"reliable\". It also contradicts its own common mistake: \"Thinking renewable means 'free' or 'clean'.\"",
         "basis": "own knowledge"
       },
       {
-        "field": "tables[0].rows[7]",
-        "text": "\"Bio-fuel\", \"Potentially\"",
-        "correction": "Bio-fuel is a renewable resource because it can be replenished as it is used. The lesson's own keyTerms (\"renewable energy ... bio-fuel\") and revisionCardBullets also list it as renewable.",
+        "field": "keyPoints[2].content",
+        "text": "Fossil fuels and nuclear can supply energy whenever it is needed.",
+        "correction": "Nuclear power stations are reliable but slow to start up and cannot quickly follow changes in demand. The lesson's own table says nuclear is \"slow to start\". checkpoints[2].correctFeedback repeats the error: \"A nuclear power station can supply energy whenever it is needed.\"",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "<strong>Coal</strong>: the most CO₂ per kWh and the cheapest to burn.",
+        "correction": "\"Cheapest to burn\" is not generally true for UK electricity. Carbon pricing and emission controls have made coal generation uneconomic compared with gas and renewables, which is part of why it is being phased out. Calling the fuel relatively cheap would be defensible. Calling it the cheapest to burn is not.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].writeBullets[5]",
+        "text": "Solar and wind — zero emissions, now the cheapest new electricity.",
+        "correction": "The content of keyPoints[2] says only wind is the cheapest new source (\"wind: ... the cheapest new electricity source\"). Also, solar and wind produce no emissions while generating, but they are not zero-emission over their whole life, because making them causes emissions.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "examTips[0]",
+        "text": "Give both equations for full marks.",
+        "correction": "Explaining why the National Grid is efficient does not require equations. The spec only requires students to \"explain why the National Grid system is an efficient way to transfer energy\". A clear explanation (high potential difference, so low current, so less energy lost by heating the cables) can earn full credit without quoting equations.",
         "basis": "spec"
       }
     ],
     "wrong_terms": [
-      {
-        "field": "examTips[0]",
-        "text": "For 'why high voltage in the grid' questions",
-        "spec_term": "potential difference"
-      },
       {
         "field": "keyPoints[0].memTip",
         "text": "The grid uses high voltage because cutting the current cuts cable losses by its square.",
         "spec_term": "potential difference"
       },
       {
+        "field": "examTips[0]",
+        "text": "For 'why high voltage in the grid' questions",
+        "spec_term": "potential difference"
+      },
+      {
         "field": "keyPoints[0].tutor_note",
-        "text": "The I²R equation is the key to explaining WHY high voltage is used.",
+        "text": "explaining WHY high voltage is used",
         "spec_term": "potential difference"
       },
       {
         "field": "keyPoints[2].content",
-        "text": "Solar PV",
+        "text": "<strong>Solar PV</strong>",
         "spec_term": "the Sun"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "to homes, schools and businesses",
+        "spec_term": "consumers"
       }
     ],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "Cost claims such as \"the cheapest new electricity source in the UK by the 2020s\" (keyPoints[2].content) and \"Cheapest new electricity (UK)\" (tables[0]) depend on current economic data. They cannot be checked against the specification text supplied.",
-      "The equations P = IV and P = I²R are not in the specification sections supplied. Their exact specification wording, including whether the notation 'P_lost' differs from the specification, could not be checked.",
-      "All diagram fields are null, so there were no diagrams to check."
+      "All diagram fields are null, so there were no diagrams to check.",
+      "I assumed checkpoint keys \"0\", \"1\" and \"2\" correspond to keyPoints[0], [1] and [2] by index.",
+      "I could not check the time-dependent UK claims against current data: \"the cheapest new electricity source in the UK by the 2020s\", \"It is being phased out\" and \"gas prices volatile\".",
+      "I could not check the specific values \"around 25,000 V (25 kV)\" for generation and \"up to 400,000 V\" for transmission against the spec, which gives no figures. They are consistent with typical UK values."
     ]
   }
 }

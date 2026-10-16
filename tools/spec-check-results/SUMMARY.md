@@ -46,3 +46,8 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-10-16 | p1-power | OK | missing_spec_content 0, above_gcse 1, factual_errors 0, wrong_terms 1, checkpoint_mismatch 1, not_checked 4 | 6663/3443 | $0.0955
 - 2026-10-16 | p1-heating | OK | missing_spec_content 0, above_gcse 2, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 3 | 8123/3711 | $0.1067
 - 2026-10-16 | p1-national-grid | OK | missing_spec_content 3, above_gcse 0, factual_errors 6, wrong_terms 4, checkpoint_mismatch 0, not_checked 3 | 7282/6064 | $0.1504
+- 2026-10-16 | p1-conservation | OK | missing_spec_content 2, above_gcse 0, factual_errors 2, wrong_terms 4, checkpoint_mismatch 0, not_checked 3 | 7281/5289 | $0.1349
+- 2026-10-16 | p1-energy-stores | OK | missing_spec_content 6, above_gcse 0, factual_errors 2, wrong_terms 2, checkpoint_mismatch 0, not_checked 4 | 9502/4317 | $0.1243
+- 2026-10-16 | p1-heating | OK | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 3 | 8119/2789 | $0.0883
+- 2026-10-16 | p1-national-grid | OK | missing_spec_content 2, above_gcse 3, factual_errors 6, wrong_terms 5, checkpoint_mismatch 0, not_checked 4 | 7313/5304 | $0.1353
+- 2026-10-16 | p1-power | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 3, checkpoint_mismatch 2, not_checked 4 | 6621/4031 | $0.1071

@@ -63,3 +63,43 @@ None.
   spec does not require typical power values; with the table flagged for the
   exam, this suggests the figures must be learned. Present before this fix
   round.
+
+## Final re-check
+
+`node tools/spec-check.js --run --max-usd 2 p1-conservation p1-energy-stores
+p1-heating p1-national-grid p1-power`, run on the close-out edits. Cost
+$0.5899. Listed: spec-basis factual errors, missing spec items and above-GCSE
+items that no ACCEPT or REJECT in P1-TRIAGE.md already covers. Not fixed.
+
+Left out because already decided: p1-conservation missing 0 (required
+practical 2, miss2 ACCEPT) and 1 (rods, miss3 REJECT); p1-energy-stores
+missing 0–5 (miss2, miss4–miss8 REJECT); p1-national-grid missing 0 (trends,
+miss2 ACCEPT) and 1 (uses, miss1 ACCEPT). p1-heating and p1-power have no
+spec-basis, missing or above-GCSE items.
+
+### p1-energy-stores
+- factual_errors 1 (spec) — `keyPoints[3].content` "It becomes so spread out
+  that it cannot be used again." Dissipated energy is stored in less useful
+  ways: harder to use, not impossible. The lesson's own writeBullets say
+  "harder to use" and its memTip says "cannot easily be recovered". This is the
+  sentence right after the one changed by fact2; it was there before.
+
+### p1-national-grid
+- factual_errors 5 (spec) — `examTips[0]` "Give both equations for full
+  marks." The spec asks students to explain why the National Grid is an
+  efficient way to transfer energy; a clear explanation earns credit without
+  quoting equations. Present since before d08b060.
+- above_gcse 0 — `keyPoints[1].content` "A step-up transformer increases the
+  potential difference and decreases the current." The change in current comes
+  from the Higher Tier transformer section; 4.2.4.3 only needs the change in
+  potential difference. Also in keyPoints[1].writeBullets, keyTerms and
+  revisionCardBullets[2] and [3]. abov3 kept "step-up increases the potential
+  difference, step-down decreases it" but did not decide the current.
+- above_gcse 1 — `keyPoints[2].content` "the cheapest new electricity source
+  in the UK by the 2020s". A dated economic claim the spec does not need. The
+  table ("Cheapest new electricity (UK)", "gas prices volatile") adds similar
+  market detail. Present since before d08b060.
+- above_gcse 2 — `tables[0].rows[7][4]` "Can use existing coal power
+  stations". The spec says descriptions of how resources generate electricity
+  are not required. abov0 cut the generating key point but did not cover this
+  table cell. Present since before d08b060.

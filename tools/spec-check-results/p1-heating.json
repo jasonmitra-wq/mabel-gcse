@@ -1,9 +1,9 @@
 {
   "lesson": "p1-heating",
   "source_file": "lessons/physics/p1-heating.json",
-  "lesson_md5": "b48fc4abb893845f229984ef7ba0f6cb",
+  "lesson_md5": "c37ca4def9eba592d57f33e1e84d5af6",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T18:19:54.893Z",
+  "date": "2026-10-16T18:30:54.169Z",
   "specRefs_sent": [
     "4.1.1.3",
     "4.3.2.1",
@@ -12,40 +12,29 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 8123,
-    "output_tokens": 3711
+    "input_tokens": 8119,
+    "output_tokens": 2789
   },
-  "cost_usd": 0.106712,
+  "cost_usd": 0.088256,
   "status": "OK",
   "result": {
     "lesson": "p1-heating",
     "missing_spec_content": [],
-    "above_gcse": [
-      {
-        "field": "keyPoints[3].content",
-        "text": "Temperature is a measure of the average kinetic energy of the particles. The hotter the substance, the faster its particles move on average.",
-        "why": "The supplied sections (4.1.1.3, 4.3.2.1, 4.3.2.2) do not link temperature to average particle kinetic energy. The lesson applies the statement to all substances, which is a simplification. The idea is not needed for these sections, and the checkpoint on internal energy rests on it."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "Heat always flows from hot to cold. It never flows the other way on its own.",
-        "why": "This is not required by the supplied sections. It is correct, but it introduces an idea related to the second law that these sections do not ask for."
-      }
-    ],
+    "above_gcse": [],
     "factual_errors": [
       {
         "field": "keyPoints[1].content",
         "text": "c = ΔE / (mΔθ) = 15,000 / (5 × 10) = <strong>300 J/kg°C</strong>. This is close to the value for brass or copper.",
-        "correction": "The specific heat capacities of copper and brass are about 380–390 J/kg°C. The lesson's own table gives copper as 390. A value of 300 J/kg°C is not especially close to either material.",
+        "correction": "Copper is about 385–390 J/kg°C and brass about 380 J/kg°C. The lesson's own table gives \"Copper\", \"390\". A value of 300 J/kg°C is about 25% below these, so calling it 'close to' copper or brass is misleading.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "Wording and units for E = IVt ('current × voltage × time') in keyPoints[2].content cannot be checked against the specification. The supplied sections contain no electrical equations and do not show whether the specification uses 'potential difference' rather than 'voltage'.",
-      "The table values for SHC ('Concrete', '880'; 'Air', '1000'; 'Iron / steel', '450') and the application notes are not in the supplied specification. I checked them only as standard approximate values, and they appear reasonable.",
-      "No diagrams were supplied (all 'diagram' fields are null), so there was nothing visual to check."
+      "keyPoints[2].content uses \"E = IVt (current × voltage × time)\" and keyPoints[2].keyTerms gives \"E = IVt\" with the definition \"Electrical energy (J) = current (A) × voltage (V) × time (s)\". The equation E = IVt and the term 'voltage' (rather than 'potential difference') are not in the specification sections provided (4.1.1.3, 4.3.2.1, 4.3.2.2). The terminology could not be checked against the specification text.",
+      "keyPoints[3].content states \"Temperature is a measure of the average kinetic energy of the particles\". The specification sections provided do not define temperature in this way. The statement is consistent with GCSE-level physics, but it could not be checked against the supplied specification text.",
+      "No diagrams are included (\"diagram\": null in all key points), so there was nothing visual to check."
     ]
   }
 }

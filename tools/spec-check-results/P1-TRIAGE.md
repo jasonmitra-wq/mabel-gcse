@@ -221,3 +221,33 @@ the specification is removed, never signposted.
 - wron2 ACCEPT: same.
 - wron3 ACCEPT: same.
 - wron4 ACCEPT: as miss4.
+
+## Re-check decisions (re-check run on 5a36e2b)
+
+- p1-conservation abov0 ACCEPT: the thermal conductivity key term keeps
+  only the relationship: the higher the thermal conductivity, the higher
+  the rate of energy transfer by conduction. No "how well a material
+  conducts" definition.
+- p1-conservation abov1 ACCEPT: same fix in keyPoints[3].content.
+- p1-conservation abov2 REJECT: already decided (abov2, Sankey diagrams
+  support 4.1.1.1).
+- p1-energy-stores fact2 ACCEPT: replace "all energy eventually ends up
+  as thermal energy in the surroundings" with "wasted energy is
+  dissipated to the thermal store of the surroundings, so it is stored
+  in less useful ways", in content, writeBullets, commonMistakes and
+  revisionCardBullets.
+- p1-heating abov0 REJECT: already decided (abov0, specification
+  4.3.3.1).
+- p1-heating abov1 ACCEPT: keep "Energy is transferred by heating from a
+  hotter object to a cooler one." Cut "It never flows the other way on
+  its own."
+- p1-kinetic-potential miss1 REJECT: skills suggestion (AT 1), not
+  required content.
+- p1-national-grid fact5 ACCEPT: the bio-fuel table row says renewable,
+  matching the key terms and revision card.
+- p1-national-grid miss2 ACCEPT: renewable means being (or able to be)
+  replenished as it is used.
+- p1-power abov0 ACCEPT: cut the tutor note sentences saying real power
+  values help with estimate or 6-mark questions.
+- p1-efficiency table title ACCEPT: the title matches the columns that
+  remain (the efficiency column was removed in abov2).

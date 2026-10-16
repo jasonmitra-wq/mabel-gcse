@@ -7,6 +7,7 @@
  *   node tools/teach-sim.js p3-particle-model          # dry run: cost estimate only
  *   node tools/teach-sim.js --run p3-particle-model    # real calls
  *   node tools/teach-sim.js --mock p3-particle-model   # offline: canned tutor replies, tests the pipeline
+ *   node tools/teach-sim.js --rescore <run.json>      # re-score a saved run with the current scorer (no calls)
  *   --max-usd <n>   allow a --run whose estimate is over $1 but under n; also a hard stop on actual spend
  *
  * The student is scripted, not a model. Per key point it cycles through: a
@@ -58,12 +59,13 @@ function parseArgs(argv) {
     if (v === '--run') a.run = true;
     else if (v === '--mock') a.mock = true;
     else if (v === '--max-usd') a.maxUsd = Number(argv[++i]);
+    else if (v === '--rescore') a.rescore = argv[++i];
     else if (v.startsWith('--')) die(`Unknown option ${v}`);
     else a.ids.push(v);
   }
   if (a.run && a.mock) die('--run and --mock are separate modes');
   if (a.maxUsd !== null && !(a.maxUsd > 0)) die('--max-usd needs a positive number');
-  if (!a.ids.length) die('Give one or more lesson ids.');
+  if (!a.ids.length && !a.rescore) die('Give one or more lesson ids.');
   return a;
 }
 
@@ -133,7 +135,8 @@ function mockCall() {
 const BOARD = /\b(AQA|Edexcel|OCR|WJEC|8463|8464|8465|specification|paper [12])\b/i;
 const NAME = /\bMabel\b/;
 const URL_RE = /https?:\/\/|www\.|\.(com|org|co\.uk)\b/i;
-const PRAISE = /^\W*(great|good|nice|excellent|brilliant|fantastic|awesome|amazing|perfect|lovely|love that|well done)\b[^.!?]{0,20}[!.,—–-]/i;
+const TAG = /,\s*(right|yeah|ok|okay|isn'?t it|don'?t they|doesn'?t it|aren'?t they)\s*\?$/i;
+const PRAISE =/^\W*(great|good|nice|excellent|brilliant|fantastic|awesome|amazing|perfect|lovely|love that|well done)\b[^.!?]{0,20}[!.,—–-]/i;
 
 function scoreTurn(core, turn, pointWords) {
   const plain = core._stripMarkdown(turn.reply);
@@ -147,11 +150,17 @@ function scoreTurn(core, turn, pointWords) {
   if (NAME.test(plain)) flags.push("student's name");
   if (URL_RE.test(plain)) flags.push('URL');
   if (teaching) {
-    const qs = plain.match(/[^.!?]*\?/g) || [];
+    // A tag on a statement ("…move faster, right?") is not a second question.
+    const qs = (plain.match(/[^.!?]*\?/g) || []).filter(q => !TAG.test(q));
     if (!qs.length) flags.push('no question on a teaching turn');
     else if (qs.length > 1) flags.push('unanswerable: more than one question');
     else if (/\bor\b/i.test(qs[0])) flags.push('unanswerable: either/or question');
-    else if (pointWords && !core._stems(qs[0]).some(w => pointWords.has(w))) flags.push('unanswerable: no word from the lesson');
+    else if (pointWords) {
+      // The question is read with the sentence before it: "…has a special name. What's it called?"
+      const at = plain.indexOf(qs[0]);
+      const before = (plain.slice(0, at).match(/[^.!?]+[.!?]\s*$/) || [''])[0];
+      if (!core._stems(before + ' ' + qs[0]).some(w => pointWords.has(w))) flags.push('unanswerable: no word from the lesson');
+    }
   }
   for (const line of turn.recap || []) {
     if (NAME.test(line)) flags.push("recap: student's name");
@@ -213,7 +222,15 @@ async function simulate(id, call) {
     if (state.farewell) break;
   }
 
+  return score({ id, subject, model: MODEL, turns, coverage: state.coverage, complete: state.complete, farewell: state.farewell }, core, points);
+}
+
+// Flags every turn and the lesson as a whole. Also used by --rescore on a saved run.
+function score(r, core, points) {
+  const { turns, coverage: cov, complete, farewell } = r;
+  const pointWords = points.map((p, i) => core._pointStems(i));
   for (const t of turns) t.flags = scoreTurn(core, t, t.teachIndex !== null ? pointWords[t.teachIndex] : null);
+  const state = { coverage: cov, complete, farewell };
   const lessonFlags = [];
   const never = state.coverage.map((c, i) => c === true ? null : i).filter(i => i !== null);
   if (never.length) lessonFlags.push(`points never completed: ${never.map(i => `${i} "${core._shortHeading(points[i].heading)}"`).join(', ')}`);
@@ -221,7 +238,22 @@ async function simulate(id, call) {
   if (!state.complete) lessonFlags.push('no clean ending: lesson not completed');
   else if (!state.farewell || last.reply.includes('?')) lessonFlags.push('no clean ending: last reply is not a goodbye without a question');
 
-  return { id, subject, model: MODEL, turns, coverage: state.coverage, complete: state.complete, farewell: state.farewell, lessonFlags };
+  return { ...r, lessonFlags };
+}
+
+// Re-scores a saved run with the current scorer: no model calls, no cost.
+function rescore(file) {
+  const saved = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const { data } = findLesson(saved.id);
+  const core = TeachCore.create({ call: async () => '' });
+  const points = core._buildPoints(data);
+  core.bind(data, points, null);
+  const r = score(saved, core, points);
+  fs.writeFileSync(file, JSON.stringify(r, null, 2));
+  writeMd(file.replace(/\.json$/, ''), r, `${saved.mode}, rescored`, saved.date);
+  const flagged = r.turns.filter(t => t.flags.length).length;
+  console.log(`${r.id}: rescored ${path.relative(ROOT, file).replace(/\\/g, '/')}: ${r.turns.length} tutor turns, ${flagged} flagged; ${r.lessonFlags.join('; ') || 'no lesson flags'}.`);
+  return r;
 }
 
 // ---------- estimate ----------
@@ -249,7 +281,19 @@ function writeRun(r, mode) {
   while (fs.existsSync(path.join(OUT_DIR, `${r.id}-${date}-${k}.json`))) k++;
   const base = path.join(OUT_DIR, `${r.id}-${date}-${k}${mode === 'mock' ? '-mock' : ''}`);
   fs.writeFileSync(base + '.json', JSON.stringify({ ...r, mode, date }, null, 2));
+  writeMd(base, r, mode, date);
 
+  const summary = path.join(OUT_DIR, 'SUMMARY.md');
+  if (!fs.existsSync(summary)) fs.writeFileSync(summary, '# Teach sim runs\n\nOne line per run: date | lesson | mode | tutor turns | flagged turns | flags by type | lesson flags | cost.\n\n');
+  const byType = {};
+  r.turns.forEach(t => t.flags.forEach(f => { const key = f.replace(/ \(.*\)$/, ''); byType[key] = (byType[key] || 0) + 1; }));
+  const types = Object.entries(byType).map(([k, v]) => `${k} ${v}`).join(', ') || 'none';
+  const flaggedN = r.turns.filter(t => t.flags.length).length;
+  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode} | ${r.turns.length} | ${flaggedN} | ${types} | ${r.lessonFlags.join('; ') || 'none'} | ${mode === 'run' ? '$' + r.cost.toFixed(4) : '-'}\n`);
+  return base;
+}
+
+function writeMd(base, r, mode, date) {
   const flagged = r.turns.filter(t => t.flags.length);
   const md = [`# Teach sim: ${r.id} (${mode}, ${date})`, '', `Model ${r.model}. ${r.turns.length} tutor turns, ${flagged.length} flagged. Complete: ${r.complete}. Coverage: ${JSON.stringify(r.coverage)}.`, ''];
   md.push(r.lessonFlags.length ? `Lesson flags: ${r.lessonFlags.join('; ')}` : 'Lesson flags: none', '');
@@ -261,20 +305,13 @@ function writeRun(r, mode) {
     md.push('');
   }
   fs.writeFileSync(base + '.md', md.join('\n'));
-
-  const summary = path.join(OUT_DIR, 'SUMMARY.md');
-  if (!fs.existsSync(summary)) fs.writeFileSync(summary, '# Teach sim runs\n\nOne line per run: date | lesson | mode | tutor turns | flagged turns | flags by type | lesson flags | cost.\n\n');
-  const byType = {};
-  r.turns.forEach(t => t.flags.forEach(f => { const key = f.replace(/ \(.*\)$/, ''); byType[key] = (byType[key] || 0) + 1; }));
-  const types = Object.entries(byType).map(([k, v]) => `${k} ${v}`).join(', ') || 'none';
-  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode} | ${r.turns.length} | ${flagged.length} | ${types} | ${r.lessonFlags.join('; ') || 'none'} | ${mode === 'run' ? '$' + r.cost.toFixed(4) : '-'}\n`);
-  return base;
 }
 
 // ---------- main ----------
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
+  if (args.rescore) { rescore(path.resolve(args.rescore)); return; }
   const ests = args.ids.map(estimate);
   const total = ests.reduce((s, e) => s + e.usd, 0);
   console.log(args.run ? 'RUN' : args.mock ? 'MOCK (offline, canned tutor replies)' : 'DRY RUN (add --run for real calls)');

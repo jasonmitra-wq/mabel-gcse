@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 1, task 1.0 (see docs/RUNBOOK.md)
+Runbook position: Phase 1, task 1.0, step g (independent audit of P1, BASE d08b060)
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

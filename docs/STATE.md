@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 1, task 1.5 (check D design, then tools/teach-sim.js)
+Runbook position: Phase 1, task 1.6 (maths answer check). Task 1.5 calibration run still owed: node tools/teach-sim.js --run p3-particle-model once SPEC_CHECK_API_KEY is set
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.
@@ -40,7 +40,7 @@ Checked against the repo 2026-10-16 at 8c8ab0f.
 |---|---|---|
 | S4 diagrams | – 33 of 34 Physics lessons have no diagram; only p3-particle-model has two (diagrams/physics/p3-state-changes.svg, p3-states-particles.svg). Render check built: tools/check-diagrams.js (headless Chrome via dev dependency puppeteer-core). First run 2026-10-16: 24 diagrams, 5 flagged, 5 text overruns, 10 text overlaps, all in Biology (b2-blood-vessels, b2-digestive-system, b2-enzyme-ph, b2-heart, cell-structure-plant); both Physics diagrams clean. | 1.4 check; 2.3 drawing |
 | S5 checkpoint proof | structural check built: tools/audit-lessons.js ERROR "checkpoint keys not 0..keyPoints−1". 135 of 170 lessons fail it, including all 21 Physics lessons outside P1 and P2. S5: P1 ✓; P2 – (last run had a checkpoint_mismatch ACCEPT). | 1.3 |
-| Check D teach simulator | – tools/teach-sim.js not built. Design step first: can the js/lessons.js decision and prompt-building code run in Node? | 1.5 |
+| Check D teach simulator | built, calibration pending. Design: the decision and prompt code was private to the browser module, so it moved verbatim into js/teach-core.js (loaded by index.html and by Node); js/teach.js keeps DOM and storage. Proof: one scripted p3-particle-model conversation (39 steps, every decision kind, stub model) gave byte-identical prompts, decisions and state before and after (514 KB); browser smoke test clean. tools/teach-sim.js: dry run, --mock self-test and scorer checks pass. Calibration --run on p3-particle-model not done: SPEC_CHECK_API_KEY is not set in this environment. | 1.5 |
 | T1 teach-enable | – Physics in TEACH_ENABLED (js/lessons.js:18): p3-particle-model only. | 2.4 |
 | Defect 11 new lessons | – not written: 4.5.3, 4.5.4, 4.5.5, 4.6.3, 4.8.1.1, 4.8.1.2, 4.8.2. P8 Space becomes a new topic in data/physics-syllabus.json (no P8 entry yet). Additions to existing lessons: 4.5.1.2 (p5-forces-motion), 4.3.3.3 (p3-pressure, in the P3 loop), seismic waves 4.6.1.5 (p6-sound). | 2.2 |
 | Maths track | – defect 8 open: 600 questions; marks ≠ step count in 87; 38 without sampleAnswer; no answer verified by recomputation. tools/maths-recompute.js not built. | 1.6 |
@@ -95,7 +95,8 @@ Not started on the pipeline. Already in place:
 - tools/spec-coverage.js — specRef coverage report → tools/spec-coverage.md
 - data/spec/MANIFEST.md — source URL, version, md5s and section counts for the local spec text
 - tools/check-diagrams.js — S4 render check: text past the viewBox or overlapping other text; report tools/diagram-report.md. Needs npm install (puppeteer-core, dev only) and local Chrome or Edge
-- tools/teach-sim.js — TO BUILD (check D)
+- js/teach-core.js — teach mode decisions and prompts, shared by js/teach.js and tools/teach-sim.js
+- tools/teach-sim.js — check D: scripted student through teach mode with the browser's tutor model (claude-haiku-4-5-20251001); scores every tutor turn; --mock for an offline self-test; outputs in tools/teach-sim-runs/. Calibration on p3-particle-model pending (needs SPEC_CHECK_API_KEY)
 - .claude/agents/lesson-auditor.md — independent lesson auditor (subagent); findings in tools/audit-runs/
 
 ## Next

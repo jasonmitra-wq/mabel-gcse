@@ -1,0 +1,177 @@
+{
+  "lesson": "p7-magnets",
+  "source_file": "tools/spec-check-calibration/p7-magnets-13ac63d.json",
+  "lesson_md5": "ed2d6291199c66db9350623243fb9b5a",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:22:33.395Z",
+  "specRefs_sent": [
+    "4.7.1.1",
+    "4.7.1.2",
+    "4.7.2.1"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 8611,
+    "output_tokens": 7598
+  },
+  "cost_usd": 0.186404,
+  "status": "OK",
+  "result": {
+    "lesson": "p7-magnets",
+    "missing_spec_content": [
+      {
+        "specRef": "4.7.1.1 / 4.7.1.2",
+        "spec_text": "Induced magnetism always causes a force of attraction. ... The force between a magnet and a magnetic material is always one of attraction.",
+        "why": "The lesson never says that the force between a magnet and an induced magnet or magnetic material is always attractive. It only covers attraction and repulsion between poles of permanent magnets."
+      },
+      {
+        "specRef": "4.7.1.2",
+        "spec_text": "The strength of the magnetic field depends on the distance from the magnet.",
+        "why": "The lesson links field strength to how close the field lines are and says the field is 'strongest near the poles'. It never states that field strength depends on distance from the magnet."
+      },
+      {
+        "specRef": "4.7.1.2",
+        "spec_text": "A magnetic compass contains a small bar magnet.",
+        "why": "The lesson never explains that a compass needle is a small bar magnet. The table lists 'compass needle' as an example of a permanent magnet, but the point is not taught."
+      },
+      {
+        "specRef": "4.7.1.2",
+        "spec_text": "explain how the behaviour of a magnetic compass is related to evidence that the core of the Earth must be magnetic.",
+        "why": "The lesson says 'Earth acts like a giant bar magnet' but never presents compass behaviour as evidence that the Earth's core is magnetic."
+      },
+      {
+        "specRef": "4.7.2.1",
+        "spec_text": "describe how the magnetic effect of a current can be demonstrated",
+        "why": "Ørsted's discovery is mentioned, but no demonstration is described (for example, plotting compasses or iron filings around a current-carrying wire, or a compass deflecting when the current is switched on)."
+      },
+      {
+        "specRef": "4.7.2.1",
+        "spec_text": "Shaping a wire to form a solenoid increases the strength of the magnetic field created by a current through the wire. ... explain how a solenoid arrangement can increase the magnetic effect of the current.",
+        "why": "The lesson states that the field inside a solenoid is 'uniform and strong'. It never explains that coiling the wire strengthens the field because the fields from each turn add together."
+      },
+      {
+        "specRef": "4.7.2.1",
+        "spec_text": "(Physics only) Students should be able to interpret diagrams of electromagnetic devices in order to explain how they work.",
+        "why": "Devices (bell, relay, circuit breaker) are described only in words. All diagram fields are null, so the student gets no practice interpreting device diagrams."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[1].keyTerms[2]",
+        "text": "Flux density — A measure of the strength of a magnetic field — stronger where field lines are closer",
+        "why": "Magnetic flux density is not part of these sections. It belongs to the Higher Tier motor effect content (4.7.2.2)."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "MRI scanners: extremely powerful superconducting electromagnets are cooled to near absolute zero. They make fields strong enough to line up hydrogen atoms in the body.",
+        "why": "Superconductivity and the alignment of hydrogen nuclei are beyond GCSE requirements and are not in these sections."
+      },
+      {
+        "field": "keyPoints[3].keyTerms[2]",
+        "text": "Superconducting — Zero electrical resistance at very low temperatures — used for very powerful electromagnets in MRI",
+        "why": "Superconductivity is not required at GCSE."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Loudspeakers: a permanent magnet and an electromagnet (the voice coil) push on each other. This moves a cone back and forth, making sound waves.",
+        "why": "Loudspeakers depend on the motor effect (4.7.2.2/4.7.2.4), which is not in these sections. Calling the voice coil an 'electromagnet' also conflicts with the lesson's own definition of an electromagnet as a solenoid with an iron core."
+      },
+      {
+        "field": "commonMistakes[4]",
+        "text": "Thinking a DC current can work in a transformer. Transformers only work with AC. A steady DC makes a constant magnetic field. No change means no induced EMF.",
+        "why": "Transformers and induced potential difference belong to 4.7.3 (Physics only, HT). This content is not in the sections taught and may confuse the student."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "A <strong>permanent magnet</strong> is a material that is always magnetic. It does not need to be placed in a field to be magnetic. Examples include iron, cobalt, nickel and neodymium alloys.",
+        "correction": "Iron, cobalt and nickel are magnetic materials. They are not automatically permanent magnets. Iron in particular is magnetically soft and does not keep its magnetism, as the lesson itself says. The spec defines a permanent magnet as one that 'produces its own magnetic field'. Typical permanent magnets are made of steel, alnico, ferrites or neodymium (NdFeB) alloys.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[0].writeBullets[0]",
+        "text": "Permanent magnets — always magnetic. Examples: iron, cobalt, nickel, neodymium",
+        "correction": "Same error as in keyPoints[0].content. Iron is magnetically soft and is not a permanent magnet. Iron, cobalt and nickel are magnetic materials.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "tables[0].rows[3][1]",
+        "text": "Iron, cobalt, nickel, neodymium steel",
+        "correction": "'Neodymium steel' is not a standard magnet material. Neodymium magnets are neodymium–iron–boron alloys. Iron should not be listed as a permanent magnet material, because it is magnetically soft.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[0].tutor_note",
+        "text": "Only iron, cobalt, nickel and steel are ferromagnetic.",
+        "correction": "Other ferromagnetic materials exist, for example gadolinium and many alloys such as the neodymium alloys the lesson itself names. The spec only lists 'iron, steel, cobalt and nickel' as examples of magnetic materials. It does not say they are the only ones.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "revisionCardBullets[3]",
+        "text": "Ferromagnetic materials: iron, steel, cobalt, nickel only",
+        "correction": "The word 'only' is incorrect. Other ferromagnetic materials exist (for example gadolinium and neodymium alloys), and the lesson itself names neodymium alloys.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "A field line shows the direction a free north pole would move.",
+        "correction": "The field direction is the direction of the force that would act on a north pole placed at that point. A 'free' pole would not necessarily move along a field line.",
+        "basis": "spec"
+      },
+      {
+        "field": "commonMistakes[3]",
+        "text": "That is the direction a north pole would move.",
+        "correction": "The field direction is the direction of the force on a north pole placed at that point, not the direction the pole would move.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "Take it out of the field, and it loses its magnetism.",
+        "correction": "The spec says an induced magnet 'loses most/all of its magnetism quickly'. The absolute wording also conflicts with checkpoint 0, where a steel paperclip stays slightly magnetic.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "People have used this for navigation for thousands of years.",
+        "correction": "Magnetic compasses have been used for navigation for roughly a thousand years, from around the 11th century. They have not been used for 'thousands of years'.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "They make fields strong enough to line up hydrogen atoms in the body.",
+        "correction": "MRI aligns the spins of hydrogen nuclei (protons), not whole hydrogen atoms.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "We show magnetic fields using <strong>field lines</strong>, also called flux lines.",
+        "spec_term": "magnetic field line"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "<strong>Ferromagnetic materials</strong> can be strongly magnetised: iron, steel, cobalt and nickel.",
+        "spec_term": "magnetic material (iron, steel, cobalt and nickel)"
+      },
+      {
+        "field": "keyPoints[0].keyTerms[2]",
+        "text": "Ferromagnetic — Materials that can be strongly magnetised: iron, steel, cobalt, nickel",
+        "spec_term": "magnetic material"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "2",
+        "key_point": "keyPoints[2] (Electromagnetism — magnetic fields from currents)",
+        "why": "The checkpoint asks about doubling the number of turns. Key point 2 never mentions number of turns; it only covers current and distance for a straight wire. Turns appear only in keyPoints[3]. The answer also relies on the field being proportional to turns and to current ('Doubling the turns doubles the field'). No key point supports this; keyPoints[3] only says 'more turns → a stronger field'. The spec itself does not require a quantitative link between field strength and number of turns."
+      }
+    ],
+    "not_checked": [
+      "All keyPoints have \"diagram\": null, so there are no field-pattern diagrams to check. The spec skills to 'draw the magnetic field pattern of a bar magnet' and 'draw the magnetic field pattern for a straight wire carrying a current and for a solenoid' could not be checked against any visual material.",
+      "The checkpoint keys \"0\", \"2\" and \"3\" were assumed to correspond to keyPoints indices 0, 2 and 3. keyPoints[1] (Magnetic field lines) has no checkpoint."
+    ]
+  }
+}

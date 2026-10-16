@@ -1,0 +1,167 @@
+{
+  "lesson": "p6-sound",
+  "source_file": "lessons/physics/p6-sound.json",
+  "lesson_md5": "e57f0a704da183325e224de2c224e746",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-16T17:21:43.614Z",
+  "specRefs_sent": [
+    "4.6.1.1",
+    "4.6.1.4",
+    "4.6.1.5"
+  ],
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7464,
+    "output_tokens": 5366
+  },
+  "cost_usd": 0.137176,
+  "status": "OK",
+  "result": {
+    "lesson": "p6-sound",
+    "missing_spec_content": [
+      {
+        "specRef": "4.6.1.1",
+        "spec_text": "Students should be able to describe the difference between longitudinal and transverse waves.",
+        "why": "The lesson defines only longitudinal waves (keyPoints[0]). It never describes transverse waves, where oscillation is perpendicular to the direction of travel, so the student cannot describe the difference."
+      },
+      {
+        "specRef": "4.6.1.1",
+        "spec_text": "The ripples on a water surface are an example of a transverse wave.",
+        "why": "Water ripples are not mentioned anywhere as the example of a transverse wave."
+      },
+      {
+        "specRef": "4.6.1.1",
+        "spec_text": "Students should be able to describe evidence that, for both ripples on a water surface and sound waves in air, it is the wave and not the water or air itself that travels.",
+        "why": "Only tutor_note in keyPoints[0] states 'The molecules themselves don't travel along with the wave'. No evidence is described for sound or for ripples (for example, a floating object bobbing in place, or air not streaming away from a loudspeaker)."
+      },
+      {
+        "specRef": "4.6.1.4",
+        "spec_text": "Within the ear, sound waves cause the ear drum and other parts to vibrate which causes the sensation of sound.",
+        "why": "The ear drum and the mechanism of hearing are not taught. The lesson title is 'Sound waves and hearing', but it gives only the hearing range."
+      },
+      {
+        "specRef": "4.6.1.4",
+        "spec_text": "describe, with examples, processes which convert wave disturbances between sound waves and vibrations in solids. Examples may include the effect of sound waves on the ear drum",
+        "why": "No process that converts sound waves into vibrations in solids (or back again) is described. The loudspeaker cone appears only as a source, not as a conversion process."
+      },
+      {
+        "specRef": "4.6.1.4",
+        "spec_text": "explain why such processes only work over a limited frequency range and the relevance of this to human hearing.",
+        "why": "The lesson states the range 20 Hz to 20,000 Hz but never explains why hearing is limited: the conversion of sound waves to vibrations of solids works only over a limited frequency range."
+      },
+      {
+        "specRef": "4.6.1.4",
+        "spec_text": "Sound waves can travel through solids causing vibrations in the solid.",
+        "why": "The lesson covers the speed of sound in solids but does not state that sound waves cause vibrations in the solid."
+      },
+      {
+        "specRef": "4.6.1.5",
+        "spec_text": "Ultrasound waves are partially reflected when they meet a boundary between two different media.",
+        "why": "keyPoints[3].content says pulses 'reflect off boundaries between tissues'. It never says the reflection is partial, so the student is not told that some of the wave carries on to deeper boundaries."
+      },
+      {
+        "specRef": "4.6.1.5",
+        "spec_text": "This allows ultrasound waves to be used for both medical and industrial imaging.",
+        "why": "The lesson gives 'industrial cleaning' rather than industrial imaging, such as detecting flaws in materials."
+      },
+      {
+        "specRef": "4.6.1.5",
+        "spec_text": "Students should be able to explain in qualitative terms, how the differences in velocity, absorption and reflection between different types of wave in solids and liquids can be used both for detection and exploration of structures which are hidden from direct observation.",
+        "why": "Absorption is not mentioned. Differences in velocity, absorption and reflection are not linked to detecting or exploring hidden structures."
+      },
+      {
+        "specRef": "4.6.1.5",
+        "spec_text": "Seismic waves are produced by earthquakes. P-waves are longitudinal, seismic waves. P-waves travel at different speeds through solids and liquids. S-waves are transverse, seismic waves. S-waves cannot travel through a liquid. P-waves and S-waves provide evidence for the structure and size of the Earth's core.",
+        "why": "Seismic waves, P-waves, S-waves and the evidence they give about the Earth's core are not taught at all."
+      },
+      {
+        "specRef": "4.6.1.5",
+        "spec_text": "Students should be aware that the study of seismic waves provided new evidence that led to discoveries about parts of the Earth which are not directly observable.",
+        "why": "Not covered."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "Loudness is measured indirectly in decibels (dB).",
+        "why": "Decibels are not in the specification sections. The word 'indirectly' is unexplained and may confuse."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Below 20 Hz: <strong>infrasound</strong>. It is too low to hear. Earthquakes and whales make it.",
+        "why": "Infrasound is not in the specification sections. It also sits uncomfortably with the spec's statement that earthquakes produce seismic waves, which the lesson never covers."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "These limits change with age. Older adults often cannot hear above 15,000–17,000 Hz.",
+        "why": "Not required. The spec asks students to know the range 20 Hz to 20 kHz."
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "Approximate speeds: <strong>steel ~5000 m/s</strong>, <strong>water ~1500 m/s</strong>, <strong>air ~340 m/s</strong>.",
+        "why": "Specific speeds in steel and water are not required by these sections. Students may think they must memorise them."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "<strong>industrial cleaning</strong>: high-frequency vibrations shake dirt loose.",
+        "why": "Not in the spec, which asks for industrial imaging. This could displace the required use."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[1].keyTerms[0].def",
+        "text": "~340 m/s in air at room temperature; faster in denser media",
+        "correction": "The speed of sound is not set by density. It depends mainly on how stiff (incompressible) the medium is. A denser medium can carry sound more slowly: lead is denser than steel but sound is slower in lead, and sound is faster in helium than in air.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].tutor_note",
+        "text": "Light slows down in denser media, but sound speeds up. These are easy to mix up. Remember the opposite relationship, and why: particle spacing and the forces between particles.",
+        "correction": "There is no general rule that sound speeds up in denser media. Light's speed depends on optical density, and sound's speed depends on stiffness and density. Presenting the two as a simple 'opposite relationship' is misleading.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "In solids, particles are closest together, with the strongest forces between them. So they pass on vibrations very efficiently.",
+        "correction": "Particle spacing alone does not explain the speed. Liquid particles are about as close together as solid particles. Ice is less dense than water, yet sound travels faster in ice. The higher speed in solids comes from their greater stiffness (strong bonds resisting compression), not from particles being 'closest together'.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].writeBullets[1]",
+        "text": "Solids — particles are closest together → vibrations pass on most efficiently",
+        "correction": "Same issue: the speed is due to stiffness and bond strength, not mainly to particle spacing.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].memTip",
+        "text": "Particles closer together = faster passing on of vibrations.",
+        "correction": "Same issue: the speed is due to stiffness and bond strength, not mainly to particle spacing.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "<strong>sonar</strong>: ships send ultrasound pulses toward the seabed. They time the returning echo to measure the water depth.",
+        "spec_term": "echo sounding"
+      },
+      {
+        "field": "revisionCardBullets[10]",
+        "text": "Sonar — measures water depth using timed ultrasound pulses",
+        "spec_term": "echo sounding"
+      }
+    ],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "1",
+        "key_point": "keyPoints[1] 'Speed of sound in different media'",
+        "why": "Checkpoint 1 asks how frequency and amplitude affect pitch and loudness. That is the content of keyPoints[2], not of the speed-of-sound key point it sits with. keyPoints[1] has no checkpoint testing it, and keyPoints[2] has no checkpoint of its own (there is no key '2')."
+      }
+    ],
+    "not_checked": [
+      "All diagram fields are null, so there were no diagrams or images to check.",
+      "examTips[4] 'The question may give this value, or you may need to remember it' cannot be checked, because the supplied specification sections do not say whether the speed of sound in air is given or must be recalled."
+    ]
+  }
+}

@@ -134,6 +134,13 @@ function auditLesson(file, subject) {
   if (kps.length && !kps.some(k => (k.keyTerms || []).length)) add('WARN', 'no keyTerms', 'keyPoints', '');
   if (kps.length && !kps.some(k => k.diagram)) add('INFO', 'no diagram', 'keyPoints', '');
 
+  // S5 structure: one checkpoint per key point, keyed by its index (checkpoints[i] follows keyPoints[i]).
+  const cpKeys = d.checkpoints && typeof d.checkpoints === 'object' ? Object.keys(d.checkpoints) : [];
+  const want = kps.map((_, i) => String(i));
+  if (kps.length && (cpKeys.length !== want.length || want.some(k => !cpKeys.includes(k)))) {
+    add('ERROR', 'checkpoint keys not 0..keyPoints−1', 'checkpoints', `keys [${cpKeys.join(', ')}], want [${want.join(', ')}]`);
+  }
+
   const watch = [WATCH['*'], WATCH[subject]].filter(Boolean);
   const prose = [];
   for (const [where, text] of strings(d)) {

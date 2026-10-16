@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 1, task 1.3 (S5 structural check in tools/audit-lessons.js)
+Runbook position: Phase 1, task 1.4 (S4 diagram check: tools/check-diagrams.js)
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.
@@ -22,13 +22,13 @@ open shared-code fault.
 
 | Topic | S1 | S2 | S3 | S4 | S5 | S6 | T1 | T2 | T3 | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
-| P1 Energy | ✓ f3a97da (re-proved after content fix) | ✓ f3a97da (re-proved after content fix) | ✓ f3a97da (re-proved after content fix) | – | n/a | ✓ f3a97da (not clean after 8 runs; auditor-reviewed; open items in docs/ESCALATIONS.md) | – | n/a | – | Spec-check loop R1–R8 and independent audit tools/audit-runs/d08b060-1.md; triage in tools/spec-check-results/P1-TRIAGE.md; fixes in P1-FIX-LOG.md |
-| P2 Electricity | ✓ 52be2ad (re-proved after content fix) | ✓ 52be2ad (re-proved after content fix) | ✓ 52be2ad (re-proved after content fix) | – | n/a | ✓ 52be2ad (not clean after 5 runs; auditor-reviewed; open items in docs/ESCALATIONS.md) | – | n/a | – | Spec-check loop R1–R5 and independent audit tools/audit-runs/d08b060-2.md; triage in tools/spec-check-results/P2-TRIAGE.md; fixes in P2-FIX-LOG.md; circuit diagrams deferred to S4 |
-| P3 Particle model | ✓ dd98fe9 | – reopened: p3-pressure has 24 Kelvin/absolute-zero WARNs unresolved; decided by spec-check | ✓ dd98fe9 | partial: p3-particle-model only (4110010) | n/a | n/a | partial: p3-particle-model only | n/a | – | |
-| P4 Atomic structure | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | p4-nuclear-model 'chemical bonding' checked and correct; p4-nuclear-model 'quantum' ×2 and its A-level pointer to be removed in the P4 fix round |
-| P5 Forces | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | n/a | n/a | – | n/a | – | |
-| P6 Waves | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | p6-em-spectrum 'molecular bonds' (UV) checked and correct; 'bonded' ×3 → forces between particles, verified a6fd3c1 |
-| P7 Magnetism | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | n/a | n/a | – | n/a | – | iron-as-permanent-magnet error, solenoid poles, misplaced DC mistake corrected, verified a6fd3c1 |
+| P1 Energy | ✓ f3a97da (re-proved after content fix) | ✓ f3a97da (re-proved after content fix) | ✓ f3a97da (re-proved after content fix) | – | ✓ (check clean; R8 has no checkpoint_mismatch ACCEPT) | ✓ f3a97da (not clean after 8 runs; auditor-reviewed; open items in docs/ESCALATIONS.md) | – | n/a | – | Spec-check loop R1–R8 and independent audit tools/audit-runs/d08b060-1.md; triage in tools/spec-check-results/P1-TRIAGE.md; fixes in P1-FIX-LOG.md |
+| P2 Electricity | ✓ 52be2ad (re-proved after content fix) | ✓ 52be2ad (re-proved after content fix) | ✓ 52be2ad (re-proved after content fix) | – | – (check clean; R5 had p2-power-energy chec0 ACCEPT) | ✓ 52be2ad (not clean after 5 runs; auditor-reviewed; open items in docs/ESCALATIONS.md) | – | n/a | – | Spec-check loop R1–R5 and independent audit tools/audit-runs/d08b060-2.md; triage in tools/spec-check-results/P2-TRIAGE.md; fixes in P2-FIX-LOG.md; circuit diagrams deferred to S4 |
+| P3 Particle model | ✓ dd98fe9 | – reopened: p3-pressure has 24 Kelvin/absolute-zero WARNs unresolved; decided by spec-check | ✓ dd98fe9 | partial: p3-particle-model only (4110010) | – (checkpoint keys check fails) | n/a | partial: p3-particle-model only | n/a | – | |
+| P4 Atomic structure | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | – (checkpoint keys check fails) | n/a | – | n/a | – | p4-nuclear-model 'chemical bonding' checked and correct; p4-nuclear-model 'quantum' ×2 and its A-level pointer to be removed in the P4 fix round |
+| P5 Forces | ✓ 9984fe6 | ✓ 9984fe6 | ✓ 9984fe6 | – | – (checkpoint keys check fails) | n/a | – | n/a | – | |
+| P6 Waves | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | – (checkpoint keys check fails) | n/a | – | n/a | – | p6-em-spectrum 'molecular bonds' (UV) checked and correct; 'bonded' ×3 → forces between particles, verified a6fd3c1 |
+| P7 Magnetism | ✓ 13ac63d | ✓ 13ac63d | ✓ 13ac63d | – | – (checkpoint keys check fails) | n/a | – | n/a | – | iron-as-permanent-magnet error, solenoid poles, misplaced DC mistake corrected, verified a6fd3c1 |
 
 Spec coverage: 25 of 30 sections mapped; 79 of 91 deepest-level sections mapped (tools/spec-coverage.md). Spec coverage counts a section as mapped if any lesson points into it, not that it is fully taught; spec-check (C) measures teaching.
 
@@ -39,7 +39,7 @@ Checked against the repo 2026-10-16 at 8c8ab0f.
 | Item | Status | Runbook |
 |---|---|---|
 | S4 diagrams | – 33 of 34 Physics lessons have no diagram; only p3-particle-model has two (diagrams/physics/p3-state-changes.svg, p3-states-particles.svg). Render check tools/check-diagrams.js not built. | 1.4 check; 2.3 drawing |
-| S5 checkpoint proof | n/a: structural check (checkpoint keys exactly 0..keyPoints − 1) not yet in tools/audit-lessons.js. S5 for a topic = that check clean AND no checkpoint_mismatch ACCEPT in its last spec-check run. | 1.3 |
+| S5 checkpoint proof | structural check built: tools/audit-lessons.js ERROR "checkpoint keys not 0..keyPoints−1". 135 of 170 lessons fail it, including all 21 Physics lessons outside P1 and P2. S5: P1 ✓; P2 – (last run had a checkpoint_mismatch ACCEPT). | 1.3 |
 | Check D teach simulator | – tools/teach-sim.js not built. Design step first: can the js/lessons.js decision and prompt-building code run in Node? | 1.5 |
 | T1 teach-enable | – Physics in TEACH_ENABLED (js/lessons.js:18): p3-particle-model only. | 2.4 |
 | Defect 11 new lessons | – not written: 4.5.3, 4.5.4, 4.5.5, 4.6.3, 4.8.1.1, 4.8.1.2, 4.8.2. P8 Space becomes a new topic in data/physics-syllabus.json (no P8 entry yet). Additions to existing lessons: 4.5.1.2 (p5-forces-motion), 4.3.3.3 (p3-pressure, in the P3 loop), seismic waves 4.6.1.5 (p6-sound). | 2.2 |
@@ -85,7 +85,7 @@ Not started on the pipeline. Already in place:
 
 ## Tools
 
-- tools/audit-lessons.js — scanner (check A)
+- tools/audit-lessons.js — scanner (check A); includes the S5 structural check (checkpoint keys 0..keyPoints−1)
 - tools/check-rewrite.js — rewrite checker (check B)
 - tools/plain-english-rules.md — rewrite rules
 - tools/fix-board-refs.js — one-off, already run

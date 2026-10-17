@@ -1,0 +1,40 @@
+# Site test: M1 (maths, 2026-10-17)
+
+**FAIL** · cost $0.0126 (1 tool calls, 0 calls from the site; tutor claude-sonnet-5-5 $0.0000)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "The test run stopped before the maths warm-up or the M1 topic test loaded, so no questions were shown, answered or marked. The test tool could not find the export line in maths-questions.js. This means no maths answers could be checked against independent values, and nothing on the warm-up, topic test or results screens was exercised.",
+      "step": "[test stopped: maths-questions.js export line not found]"
+    },
+    {
+      "what": "test could not finish: maths-questions.js export line not found",
+      "step": ""
+    }
+  ],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": [
+    {
+      "target": "maths-questions.js, export line",
+      "change": "Add or restore the export of the question data at the end of the file in the form the loader and test tool expect (for example the same export name and syntax as the other question files), so the M1 question set can be imported."
+    },
+    {
+      "target": "maths-questions.js, M1 entries",
+      "change": "Check that the M1 warm-up and topic test entries are inside the exported object and that the file has no syntax error before the export line, such as an unclosed bracket or a missing comma."
+    },
+    {
+      "target": "Test run for M1",
+      "change": "Rerun the warm-up and topic test for M1 at 390×844 and 1366×768 after the export is fixed, and capture screenshots of every screen so layout and marking can be reviewed. None were provided in this run."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    [test stopped: maths-questions.js export line not found]

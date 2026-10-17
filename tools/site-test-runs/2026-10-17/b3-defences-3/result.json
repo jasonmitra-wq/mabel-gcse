@@ -1,0 +1,218 @@
+{
+  "id": "b3-defences",
+  "mode": "lesson",
+  "date": "2026-10-17",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "The tutor asks about 'those memory cells' before memory cells have ever been introduced. The new idea arrives as a question about something never taught.",
+        "step": "T21"
+      },
+      {
+        "what": "S9 answered correctly ('to fight infections'), but the tutor gave no feedback and jumped straight to a 'shall I just tell you the rest' check-in.",
+        "step": "T9"
+      },
+      {
+        "what": "The tutor states the answer in the same turn it asks the question. T6 says 'part of the immune system' then asks which system. T16 names antibodies and antitoxins then asks what lymphocytes produce. T14 defines phagocytosis then asks what happens during it. These are recall-by-parroting, not checking understanding.",
+        "step": "T6, T14, T16"
+      },
+      {
+        "what": "After S10 ('nah im good, ask me stuff'), the tutor starts a red-blood-cell/haemoglobin detour and re-asks the leucocyte question already answered at S8. The white blood cells point dragged on from T5 to T12.",
+        "step": "T10-T11"
+      },
+      {
+        "what": "S15 'trap it' was partly right (engulf), but it got no credit. 'She's never met before' wrongly gives the bacterium/phagocyte the pronoun 'she', which is confusing.",
+        "step": "T15"
+      },
+      {
+        "what": "At S5 the student chose 'just tell me', but T5 then carried on asking questions within the next point. The check-in choice did not end the questioning.",
+        "step": "T5"
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "The '← Home' button and the 'What are you revising?' heading are clipped under the sticky header at the top.",
+        "screenshot": "02-subjects-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The lesson title in the header is truncated to 'Your body's defences — how yo...'.",
+        "screenshot": "05-ai-lesson-opening-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The diagram thumbnail is tiny and its text is unreadable.",
+        "screenshot": "05-ai-lesson-opening-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "Diagram thumbnails in the side panel are too small to read.",
+        "screenshot": "06-exchange-3-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "The sticky lesson header overlaps the top of the 'Worth writing down' box, cutting its first lines off.",
+        "screenshot": "07-exchange-6-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The Key Terms panel cuts the Mucus definition off mid-sentence ('...and traps').",
+        "screenshot": "07-exchange-6-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "The Key Terms panel cuts off at 'Tiny hair-like projections on cells' with no visible scroll cue.",
+        "screenshot": "13-exchange-24-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "The end screen is scrolled back up mid-conversation. 'Lesson finished.' and the Topics/Slides/Ask buttons are not visible.",
+        "screenshot": "14-end-phone.png",
+        "stops_use": true
+      },
+      {
+        "what": "The end screen is scrolled up to T22, so the finish message and action buttons are out of view.",
+        "screenshot": "14-end-laptop.png",
+        "stops_use": false
+      }
+    ],
+    "would_quit": {
+      "turn": "S11",
+      "quote": "red blood cells but im so hungry rn",
+      "why": "The white blood cells point dragged across 8 turns with repeated, answer-given questions after she asked to just be quizzed. A bored, hungry teen bails here."
+    },
+    "fixes": [
+      {
+        "target": "Immunological memory point opening (T21 generation)",
+        "change": "State that lymphocytes leave behind memory cells before asking what memory cells do. Never reference a term with 'those' unless it has already been said."
+      },
+      {
+        "target": "Check-in behaviour after a correct answer (T9)",
+        "change": "Always give one line of feedback on the student's answer ('Yes, fighting infection is its job') before any 'shall I just tell you' check-in."
+      },
+      {
+        "target": "Question generation rule",
+        "change": "Reject any question whose answer appears verbatim in the same tutor message. Ask an application question instead, e.g. 'A pathogen gets past the mucus. What cells deal with it next?'"
+      },
+      {
+        "target": "White blood cells point length / checkin-no handling",
+        "change": "Cap each point at about 3 questions, and do not re-ask facts already answered (leucocyte). After 'ask me stuff', go straight to fresh quiz questions, not a new detour on red blood cells."
+      },
+      {
+        "target": "Lesson end view / phone header",
+        "change": "Auto-scroll to the bottom so 'Lesson finished.' and its buttons are visible on load. Give the sticky header a solid background with top padding on the content so text is not hidden underneath it."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "AI lesson opens by default (in TEACH_ENABLED)",
+      "ok": true,
+      "detail": "AI lesson opened"
+    }
+  ],
+  "transcript": [
+    "Lesson b3-defences (Biology › Disease — how we get ill and how we fight back › Your body's defences — how you fight infection).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "[screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects",
+    "[screenshot 03-topics-biology-phone.png and 03-topics-biology-laptop.png] topics-biology",
+    "[screenshot 04-lessons-b3-phone.png and 04-lessons-b3-laptop.png] lessons-B3",
+    "[check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened",
+    "T0: Welcome! Every second, pathogens (microorganisms that cause disease) are trying to get into your body, and most never make it because you have layers of defence working constantly. Your first layer is physical barriers, like the sticky mucus lining your nose, throat and airways. What do you think that mucus does to pathogens you breathe in?",
+    "[screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening",
+    "S1 (bored): tldr this is way too long",
+    "T1: Fair enough, that was a lot, so I'll keep it short. Mucus is sticky and lines your airways, so what do you think it does to pathogens you breathe in?",
+    "S2 (try): traps them i guess?",
+    "T2: Yes, trapping is right. But trapped pathogens would just sit there, so tiny hair-like cilia lining your airways beat rhythmically to sweep the mucus, and the pathogens in it, up and out where they can be swallowed. What do you think the cilia do to the mucus?",
+    "S3 (offtopic): honestly idk im hungry rn",
+    "T3: No worries, we can pause whenever you like. Quick picture: cilia are like tiny hairs that wave back and forth, moving the sticky mucus along like a conveyor belt. Which way do they sweep the mucus and the trapped pathogens?",
+    "[screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3",
+    "S4 (try): up and out?",
+    "T4: Up and out is right. Do you want me to just tell you the rest of this one?",
+    "S5 (checkin-yes): yeah just tell me",
+    "T5: Cilia sweep mucus upwards, stomach acid (HCl, about pH 2) kills most swallowed pathogens, and these defences are non-specific, so they work on every pathogen. If a pathogen gets past them, white blood cells, part of the immune system, take over. What part of the body's defence system are white blood cells?",
+    "S6 (try): like the second line of defence?",
+    "T6: Yes, they're the next layer after the barriers, part of the immune system. Which system is it that white blood cells belong to?",
+    "[screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6",
+    "S7 (wrong): the nervous system?",
+    "T7: It's the immune system, not the nervous system. White blood cells have another name too: leucocytes, which is just the scientific word for a white blood cell. So if a scientist wrote \"leucocytes patrol the blood\", which cells would she mean?",
+    "S8 (try): white blood cells?",
+    "T8: Yes, \"leucocyte\" is just the scientific word for a white blood cell, so same cells, fancier name. Here's a clue to use: white blood cells belong to the immune system, and they have a nucleus, which holds their genetic material. What is the job of the immune system?",
+    "S9 (try): to fight infections?",
+    "T9: We've covered quite a bit on this one, so would you like me to just tell you the rest of it?",
+    "[screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9",
+    "S10 (checkin-no): nah im good, ask me stuff",
+    "T10: Another job to separate out: red blood cells carry oxygen using haemoglobin, but white blood cells don't carry oxygen at all, because they're part of the immune system. Both types are blood cells, but their jobs are totally different. Which type of blood cell carries oxygen?",
+    "S11 (offtopic): red blood cells but im so hungry rn",
+    "T11: Right, red blood cells carry oxygen, and hang in there, we're nearly done. Which scientific name means the same thing as \"white blood cell\"?",
+    "S12 (try): leucocyte",
+    "T12: Yes, leucocyte is the scientific name for a white blood cell. Now the fast responders: a type of white blood cell called a phagocyte changes shape to surround a bacterium and pull it inside, then enzymes digest it. What do phagocytes do to a bacterium once it's inside them?",
+    "[screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12",
+    "S13 (try): they digest it with enzymes",
+    "T13: Right, enzymes do the digesting. That whole process of surrounding, engulfing and digesting has a name: phagocytosis. Phagocytes are also non-specific, meaning they attack anything that isn't a normal body cell without needing to recognise it first. Why is that useful when an infection has only just started?",
+    "S14 (try): cuz they dont need to recognize it first so they attack fast",
+    "T14: Yes, not needing to recognise the pathogen first is exactly what makes them fast. Phagocytosis is the surround, engulf and digest process, so what do phagocytes do to a bacterium during phagocytosis?",
+    "S15 (idk): idk maybe they like trap it or something",
+    "T15: Phagocytosis is where the phagocyte surrounds the bacterium, engulfs it, then digests it with enzymes. Phagocytes are also \"non-specific\", meaning they act against all pathogens equally, without needing a specific match first. If a brand-new bacterium she's never met before gets in, how would a non-specific phagocyte treat it?",
+    "[screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15",
+    "S16 (try): they'd still attack it cuz theyre non-specific",
+    "T16: Right, non-specific means they attack anything foreign straight away. The other white blood cells, lymphocytes, take a targeted approach: when they spot a pathogen, they produce antibodies and antitoxins in a specific response. What do lymphocytes produce when they detect a pathogen?",
+    "S17 (try): antibodies and antitoxins i guess",
+    "T17: Yes, antibodies and antitoxins are what lymphocytes make. Every pathogen has unique proteins on its surface called antigens, which the immune system spots as foreign. So where on a pathogen would you find its antigens?",
+    "S18 (minimal): on its surface?",
+    "T18: Yes, the surface. An antigen is a foreign protein sitting on the outside of a pathogen, like a flag saying \"I'm not yours\". The lymphocyte spots that flag and makes antibodies shaped to fit it. Why would that flag help the body recognise a pathogen as foreign?",
+    "[screenshot 11-exchange-18-phone.png and 11-exchange-18-laptop.png] exchange-18",
+    "S19 (try): cuz its not on our cells so looks different",
+    "T19: Yes, your own cells don't carry that protein, so it stands out as foreign. The antibody the lymphocyte makes is complementary in shape to that one antigen, so it binds to it and marks the pathogen for destruction. So why does each antibody only work against one particular pathogen?",
+    "S20 (idk): idk tbh",
+    "T20: That's okay, that one's a bit tricky. Would you like me to just tell you the rest of this one?",
+    "S21 (checkin-no): nah explain it more",
+    "T21: Each antibody is a protein shaped to fit just one antigen, so it only works against that one pathogen, which is called a specific response. Lymphocytes can also make antitoxins, proteins that neutralise the toxins pathogens release. What do you think those memory cells let your body do if the same pathogen comes back?",
+    "[screenshot 12-exchange-21-phone.png and 12-exchange-21-laptop.png] exchange-21",
+    "S22 (try): remember it and make antibodies faster?",
+    "T22: Yes, that's it, they remember the antigen and respond faster. That ability is called immunological memory: on a second infection the response is faster, stronger and makes more antibodies, so the pathogen is usually destroyed before you feel ill. Why don't you usually get chickenpox twice?",
+    "S23 (offtopic): cos memory cells remember it innit",
+    "T23: Yep, that's it. The memory cells recognise the chickenpox antigen and respond fast, so you're usually protected the second time. That's the end of this lesson, and you worked out the key idea about memory cells yourself. Nice work sticking with it.",
+    "S24 (closing): ok thanks bye",
+    "T24: Bye! You did well today, and you can come back to this lesson any time. Good luck with the GCSEs.",
+    "[screenshot 13-exchange-24-phone.png and 13-exchange-24-laptop.png] exchange-24",
+    "[the lesson shows \"Lesson finished.\"]",
+    "[screenshot 14-end-phone.png and 14-end-laptop.png] end"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-17/b3-defences-3/01-home-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/02-subjects-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/02-subjects-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/03-topics-biology-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/03-topics-biology-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/04-lessons-b3-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/04-lessons-b3-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/05-ai-lesson-opening-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/05-ai-lesson-opening-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/06-exchange-3-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/06-exchange-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/07-exchange-6-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/07-exchange-6-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/08-exchange-9-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/08-exchange-9-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/09-exchange-12-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/09-exchange-12-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/10-exchange-15-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/10-exchange-15-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/11-exchange-18-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/11-exchange-18-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/12-exchange-21-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/12-exchange-21-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/13-exchange-24-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/13-exchange-24-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/14-end-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-3/14-end-laptop.png"
+  ],
+  "cost": 0.403255,
+  "tutorModel": "claude-sonnet-5-5",
+  "tutorCost": 0.21672199999999997,
+  "apiCalls": 25,
+  "browserApiCalls": 42
+}

@@ -1,0 +1,44 @@
+# Site test: M5 (maths, 2026-10-17)
+
+**FAIL** · cost $0.0130 (1 tool calls, 0 calls from the site; tutor claude-sonnet-5-5 $0.0000)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "The test run aborted before any warm-up or M5 topic-test question loaded because the tool could not find the export line in maths-questions.js. No questions, answers or marking were exercised, so no answer checks (accepted or rejected) could be verified.",
+      "step": "[test stopped: maths-questions.js export line not found]"
+    },
+    {
+      "what": "test could not finish: maths-questions.js export line not found",
+      "step": ""
+    }
+  ],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": [
+    {
+      "target": "maths-questions.js export statement",
+      "change": "Make sure the file ends with a single explicit export of the question bank on its own line, in the form the test tool parses (e.g. `export const questions = [...]` or `module.exports = questions;`), not a renamed, wrapped or minified export."
+    },
+    {
+      "target": "test tool loader for maths-questions.js",
+      "change": "When the export line is not found, log the file path, the exact pattern searched for and the first and last lines of the file, so the mismatch can be fixed without guessing."
+    },
+    {
+      "target": "build or pre-commit check",
+      "change": "Add a check that imports maths-questions.js and asserts that the M5 warm-up and M5 topic-test question arrays exist and are non-empty before the site is deployed or tested."
+    },
+    {
+      "target": "test run for M5",
+      "change": "Rerun the full warm-up and M5 topic test at 390×844 and 1366×768 once the export loads, and capture labelled screenshots of each question and its feedback screen so answer marking and layout can be reviewed."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    [test stopped: maths-questions.js export line not found]

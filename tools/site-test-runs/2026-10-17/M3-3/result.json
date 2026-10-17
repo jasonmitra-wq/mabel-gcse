@@ -1,0 +1,44 @@
+{
+  "id": "M3",
+  "mode": "maths",
+  "date": "2026-10-17",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "The test never ran. The tool stopped because it could not find the export line in maths-questions.js. No warm-up or M3 topic test questions were loaded, answered or checked, so it is unknown whether correct answers are accepted and wrong ones rejected.",
+        "step": "[test stopped: maths-questions.js export line not found]"
+      },
+      {
+        "what": "test could not finish: maths-questions.js export line not found",
+        "step": ""
+      }
+    ],
+    "looks_wrong": [],
+    "would_quit": false,
+    "fixes": [
+      {
+        "target": "maths-questions.js, question bank export",
+        "change": "Add or restore the export the test tool expects (e.g. 'export const questions = [...]' or 'module.exports = { questions }') so the M3 warm-up and topic test can load."
+      },
+      {
+        "target": "Test tool, question loader",
+        "change": "Make the loader report the file path and the export pattern it searched for, so a renamed or reformatted export is easy to spot."
+      },
+      {
+        "target": "Test run, M3 warm-up and topic test",
+        "change": "Re-run the full M3 warm-up and topic test at 390×844 and 1366×768 once the export is found, so there are answer checks and screenshots to review."
+      }
+    ]
+  },
+  "checks": [],
+  "transcript": [
+    "[test stopped: maths-questions.js export line not found]"
+  ],
+  "screenshots": [],
+  "cost": 0.011204,
+  "tutorModel": "claude-sonnet-5-5",
+  "tutorCost": 0,
+  "apiCalls": 1,
+  "browserApiCalls": 0
+}

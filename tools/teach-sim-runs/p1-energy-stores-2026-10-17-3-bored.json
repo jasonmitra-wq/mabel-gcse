@@ -1,0 +1,551 @@
+{
+  "id": "p1-energy-stores",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! Every time you move, eat or switch on a light, energy is being held in different ways, and we're going to meet the eight \"energy stores\" where it can sit. A kicked football is moving, so which store is its energy in right now?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "idk, is it like... moving energy or something?",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, that's the idea: the football's energy is in its kinetic energy store, which belongs to any moving object. A car, a kicked ball and a running person all have it, and it's measured in joules (J). If a heavy lorry is parked and not moving, how much energy is in its kinetic store?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "yeah this is long mate",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Fair enough, I'll keep it quick. Kinetic energy only belongs to things that are moving, so a parked lorry has none, however heavy it is. What would the lorry's kinetic energy be once it's sitting still?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "zero joules i guess? btw im starving lol",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Zero joules, yes, a parked lorry has none. Now, an object raised above the ground has energy in its gravitational potential store, like a book on a shelf. Where would a roller coaster have the most of this energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "at the top of the track?",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, at the top, that's where it has the most. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "yeah go on then",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Gravitational potential energy is stored by height and calculated with Ep = mgh (g = 9. 8 N/kg), and elastic potential energy is stored in stretched or compressed objects, calculated with Ee = ½ke². Both are measured in joules. When you kick a football, what is doing the work to transfer the energy?",
+      "recap": [
+        "Energy is held in stores, and it's measured in joules (J).",
+        "Anything that's moving has energy in its kinetic store.",
+        "A parked lorry has zero kinetic energy, however heavy it is.",
+        "Raised objects have gravitational potential energy, like a roller coaster at the top."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "huh? too much",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Too much, fair enough. Here's the simple version: when a force pushes, pulls or kicks something, that's energy being moved by mechanical transfer. So when you kick a football, what is doing the work?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "idk maybe the ball?",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "It's the force, the kick itself, that does the work and moves the energy. Next pathway: electrical transfer, which is energy moved by work done when a current flows in a circuit, like in a torch. In a phone charger, what is flowing through the wire to transfer the energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "is it voltage?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not quite: voltage isn't what flows. Think of a circuit like a loop of pipe: what moves around it, carrying the energy, is the current, a flow of charge. When a current flows in a circuit, that's electrical transfer. So in a phone charger, what is flowing through the wire?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "oh right so its like electricity flowing?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Yes, it's a current of charge flowing. We still have heating and radiation to go, so do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "yeah just tell me",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Heating moves energy from a hotter object to a cooler one, by conduction or convection. Radiation moves energy by electromagnetic waves, like light and infrared.\n\nNow the big rule: energy can't be created or destroyed, it only moves between stores. If a book falls off a table and its gravitational potential store drops, what happens to that energy?",
+      "recap": [
+        "Mechanical transfer is a force doing work, like a kick moving a football.",
+        "Electrical transfer is a current of charge flowing round a circuit.",
+        "Voltage doesn't flow; the current is what carries the energy along.",
+        "Gravitational and elastic potential energy are stores, both measured in joules."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "idk where it goes",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "That's okay. Here's another way to see it: the energy never vanishes, it just moves into a different store. As the book falls, its gravitational potential energy becomes kinetic energy, the energy of movement. So while the book is falling, which store is the energy now in?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "no idea",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "While it falls, the energy is in the kinetic store. A closed system is one where no energy goes in or out, so the total stays exactly the same. If a sealed box gains no energy and loses none, what happens to the total energy inside it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "stays the same",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right, the total stays the same. Let me say it another way: a closed system is like a sealed box where no energy can get in or out. So any energy inside can only move from one store to another. Where does that energy go?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "between different stores",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Would you like me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "yeah go on",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "A closed system is one where no energy goes in or out, so the total stays constant. In real transfers, though, some energy ends up in a store that is no use, called dissipation. For example, a car engine warms the air around it. Where does that wasted energy end up?",
+      "recap": [
+        "Energy is never created or destroyed, it only moves between stores.",
+        "A falling book turns gravitational potential energy into kinetic energy.",
+        "A closed system has no energy going in or out.",
+        "In a closed system, energy moves between stores but the total stays the same."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "in a thermal store",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right, the thermal store of the surroundings. That energy is called wasted energy: it goes to a store that isn't useful for what the device is meant to do, and it isn't destroyed, just spread out. In a car engine, the useful energy is kinetic, so what is the wasted energy there?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Let me put that more simply. A car engine is meant to make the car move, but it also gets hot and noisy, and that extra heat and noise is the wasted energy. What does the engine's heat end up warming?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "the air around it i guess",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Now there's a neat way to draw this called a Sankey diagram, where a thick input arrow on the left splits into a useful arrow and wasted arrows, and the width of each arrow shows how much energy it carries. On a Sankey diagram, what does the width of an arrow show?",
+      "recap": [
+        "In a closed system, the total energy stays the same.",
+        "Dissipation means some energy ends up somewhere useless.",
+        "Wasted energy isn't destroyed, just spread out into the surroundings.",
+        "A car engine's heat and noise warm the air around it."
+      ],
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "how much energy it has",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Yes, the width shows how much energy each arrow carries. Efficiency compares the useful arrow to the input arrow: efficiency = useful output ÷ total input, which is always between 0 and 1. A lamp takes in 100 J and gives out 15 J as light, so what is its efficiency as a decimal?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Fair enough, I'll keep it short. Efficiency is just: useful energy out ÷ total energy in. For the lamp, that's 15 J of light out of 100 J put in. What does 15 ÷ 100 come to?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "um like 0.15?",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "The lamp's efficiency is 0.15, so 15% of the energy becomes useful light. That's the end of this lesson. You spotted that a Sankey arrow's width shows how much energy it carries. Come back any time.",
+      "recap": [
+        "A Sankey diagram shows energy flowing from input to useful and wasted outputs.",
+        "The width of each arrow shows how much energy it carries.",
+        "Efficiency = useful energy out ÷ total energy in.",
+        "The lamp gives 15 J light from 100 J, so its efficiency is 0.15."
+      ],
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "ok thanks",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You worked out that 0.15 efficiency nicely, and the rest will keep sticking the more you use it. Come back any time.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "S12: no idea",
+    "would_quit": {
+      "turn": "T5",
+      "quote": "T5: Gravitational potential energy is stored by height and calculated with Ep = mgh (g = 9. 8 N/kg), and elastic potential energy is stored in stretched or compressed objects, calculated with Ee = ½ke².",
+      "why": "This student had already complained at S2. The tutor then dumped two formulas on a learner who is weak at maths and asked about a pathway that had not been taught. The student replied 'huh? too much'. This is the likeliest point to close the app."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T0: A kicked football is moving, so which store is its energy in right now?",
+        "note": "Asks for a store name before any store has been named."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T1: If a heavy lorry is parked and not moving, how much energy is in its kinetic store?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T2: so a parked lorry has none, however heavy it is. What would the lorry's kinetic energy be once it's sitting still?",
+        "note": "Gives the answer and then asks the same question. This is not a real check."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T3: Where would a roller coaster have the most of this energy?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T4: Do you want me to just tell you the rest of this one?",
+        "note": "Offers to skip right after a correct answer. This invites a disengaged student to stop thinking."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": true,
+        "confusing": true,
+        "quote": "T5: When you kick a football, what is doing the work to transfer the energy?",
+        "note": "Reads out formulas from the keyTerms. 'g = 9. 8' is broken. It asks about work and transfer pathways before teaching them. Student: 'huh? too much'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T6: when a force pushes, pulls or kicks something, that's energy being moved by mechanical transfer.",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T7: In a phone charger, what is flowing through the wire to transfer the energy?",
+        "note": ""
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T8: what moves around it, carrying the energy, is the current, a flow of charge.",
+        "note": "States the answer, then re-asks the same question."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T9: do you want me to just tell you the rest of this one?",
+        "note": "Second skip offer after a correct answer."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "T10: Heating moves energy from a hotter object to a cooler one, by conduction or convection. Radiation moves energy by electromagnetic waves",
+        "note": "Packs heating, radiation and conservation into one turn. Heating and radiation are never checked."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T11: its gravitational potential energy becomes kinetic energy, the energy of movement. So while the book is falling, which store is the energy now in?",
+        "note": "Gives the answer in the line before the question. Student: 'no idea'."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T12: If a sealed box gains no energy and loses none, what happens to the total energy inside it?",
+        "note": ""
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T13: Right, the total stays the same. Let me say it another way",
+        "note": "Re-explains after a correct answer. 'Where does that energy go?' is vague."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T14: Would you like me to just tell you the rest of this one?",
+        "note": "No acknowledgement of the correct answer 'between different stores'. Third skip offer."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T15: A closed system is one where no energy goes in or out, so the total stays constant.",
+        "note": "Closed system explained for the third time."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T16: In a car engine, the useful energy is kinetic, so what is the wasted energy there?",
+        "note": "Vague question with no clear expected answer. Student: 'huh?'."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T17: What does the engine's heat end up warming?",
+        "note": ""
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T18: Now there's a neat way to draw this called a Sankey diagram",
+        "note": "Does not confirm the correct answer 'the air around it'."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "T19: A lamp takes in 100 J and gives out 15 J as light, so what is its efficiency as a decimal?",
+        "note": "Student replied 'this is long'. The division should have been set up for this learner, who is weak at maths."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T20: What does 15 ÷ 100 come to?",
+        "note": ""
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T21: The lamp's efficiency is 0.15, so 15% of the energy becomes useful light. That's the end of this lesson.",
+        "note": "No 'correct' for S21. Ends without any checkpoints."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T22: You worked out that 0.15 efficiency nicely",
+        "note": "Repeats 'Come back any time' from T21."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "keyPoints[0].keyTerms[2].def",
+        "change": "Move the Ep = mgh, Ee = ½ke² and Ek = ½mv² formulas out of the store definitions in keyTerms[1]–[3], e.g. into a separate optional formula field. Teach-core must not read formulas aloud in store-introduction turns. Also fix the '9. 8' rendering so it reads '9.8'.",
+        "quote": "T5: Gravitational potential energy is stored by height and calculated with Ep = mgh (g = 9. 8 N/kg)"
+      },
+      {
+        "target": "teach-core: end-of-turn question must test content taught in this or the previous turn",
+        "change": "Block questions about a concept, such as work or transfer pathways, until it has been introduced. At T5, ask about elastic potential instead.",
+        "quote": "T5: When you kick a football, what is doing the work to transfer the energy?"
+      },
+      {
+        "target": "teach-core: skip-offer trigger",
+        "change": "Only offer 'tell you the rest' after two or more consecutive wrong or 'idk' replies. Never offer it right after a correct answer.",
+        "quote": "T14: Would you like me to just tell you the rest of this one?"
+      },
+      {
+        "target": "teach-core: acknowledge correct answers before moving on",
+        "change": "Start the next turn with a short confirmation such as 'Yes — the air around it.' Do not re-explain a concept the student just answered correctly.",
+        "quote": "T13: Right, the total stays the same. Let me say it another way"
+      },
+      {
+        "target": "teach-core: no answer in the question",
+        "change": "When re-asking after a hint, do not state the answer in the same turn. Give a partial cue instead, e.g. 'it starts with c'.",
+        "quote": "T2: so a parked lorry has none, however heavy it is. What would the lorry's kinetic energy be once it's sitting still?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "would quit at T5",
+      "question does not match what was taught: T0, T5"
+    ]
+  },
+  "cost": 0.34755900000000006,
+  "tutorCost": 0.19073600000000002,
+  "tutorCalls": 37,
+  "mode": "run",
+  "date": "2026-10-17"
+}

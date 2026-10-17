@@ -59,3 +59,7 @@ One line per run: date | lesson | mode | tutor turns | flagged turns | flags by 
 - 2026-10-17 | p1-efficiency | run, persona bored | 17 | FAIL | engagement 2 | would quit T6 | engagement 2; would quit at T6; question does not match what was taught: T1, T5, T6, T10, T12 | $0.2184
 - 2026-10-17 | p1-power | run, persona bored | 15 | FAIL | engagement 3 | would quit false | question does not match what was taught: T0, T11 | $0.1629
 - 2026-10-17 | p1-heating | run, persona bored | 13 | FAIL | engagement 2 | would quit T11 | engagement 2; would quit at T11; question does not match what was taught: T1, T5, T6, T8 | $0.1882
+- 2026-10-17 | p1-energy-stores | run, persona bored | 23 | FAIL | engagement 2 | would quit T5 | engagement 2; would quit at T5; question does not match what was taught: T0, T5 | $0.3476 (tutor claude-sonnet-5-5 $0.1907)
+- 2026-10-17 | p2-current-voltage | run, persona bored | 23 | FAIL | engagement 2 | would quit false | engagement 2 | $0.2989 (tutor claude-sonnet-5-5 $0.1615)
+- 2026-10-17 | b3-defences | run, persona bored | 31 | FAIL | engagement 2 | would quit T15 | engagement 2; would quit at T15; question does not match what was taught: T8, T10, T14, T26 | $0.4706 (tutor claude-sonnet-5-5 $0.2477)
+- 2026-10-17 | g5-development | run, persona bored | 33 | FAIL | engagement 2 | would quit T14 | engagement 2; would quit at T14; question does not match what was taught: T5, T11, T12, T13 | $0.5074 (tutor claude-sonnet-5-5 $0.3262)

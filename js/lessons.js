@@ -16,6 +16,10 @@ const Lessons = (() => {
 
   // Lessons that open in conversational Teach mode instead of the slide view.
   const TEACH_ENABLED = ['b3-defences', 'g5-development', 'g5-nigeria', 'g5-uk-economy', 'p3-particle-model'];
+  // Task 2.5a (runbook v2): the AI lesson is the default for a TEACH_ENABLED
+  // lesson when a key is present; the slides are one tap away in its header.
+  // false: open the slides first, with a link to the AI lesson in their header.
+  const TEACH_FIRST = true;
 
   // ── Open a lesson ─────────────────────────────────────────
   async function open(subtopicId, subtopicName, topicCode, subject = 'biology') {
@@ -47,7 +51,7 @@ const Lessons = (() => {
       return;
     }
 
-    if (TEACH_ENABLED.includes(subtopicId) && AI.hasKey()) {
+    if (TEACH_FIRST && TEACH_ENABLED.includes(subtopicId) && AI.hasKey()) {
       Teach.open(data, subtopicId, subtopicName, subject);
       return;
     }
@@ -130,7 +134,7 @@ const Lessons = (() => {
     // when it could actually open. Every other lesson's header is unchanged.
     const _teachLink = (TEACH_ENABLED.includes(_subtopicId) && AI.hasKey())
       ? `<div style="margin-bottom:0.5rem">
-           <button onclick="Lessons.backToTeach()" style="background:none;border:none;color:var(--amber);font-family:inherit;font-size:0.8rem;font-weight:600;text-decoration:underline;cursor:pointer;padding:0">← Back to conversation</button>
+           <button onclick="Lessons.backToTeach()" style="background:none;border:none;color:var(--amber);font-family:inherit;font-size:0.8rem;font-weight:600;text-decoration:underline;cursor:pointer;padding:0">${TEACH_FIRST ? '← Back to conversation' : 'Learn this with the AI tutor →'}</button>
          </div>`
       : '';
     const header = `

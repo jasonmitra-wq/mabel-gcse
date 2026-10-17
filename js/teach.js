@@ -178,6 +178,7 @@ const Teach = (() => {
       wrapOffered: _state.wrapOffered,
       farewell: _state.farewell,
       taught: _state.taught,   // TEACH_THEN_ASK (js/teach-core.js); absent when off
+      flow: _state.flow,       // FLOW_FIX (js/teach-core.js); absent when off
     });
   }
 
@@ -226,6 +227,7 @@ const Teach = (() => {
         wrapOffered: !!saved.wrapOffered,
         farewell: !!saved.farewell,
         ...(Array.isArray(saved.taught) ? { taught: saved.taught } : {}),
+        ...(saved.flow && typeof saved.flow === 'object' ? { flow: saved.flow } : {}),
       };
       _core.bind(_data, _points, _state);
       _seedTermsShown();

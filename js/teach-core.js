@@ -58,6 +58,20 @@ function create(env) {
   // anything it has said, it is asked once to try again. A key point is covered
   // only when every one of its sentences has been taught.
   const TEACH_THEN_ASK = env.teachThenAsk === true;
+  // Tutor flow fixes (brief docs/briefs/2026-10-17-tutor-flow.md step 3), on by
+  // default. create({ call, flowFix: false }) keeps every prompt, decision and
+  // state exactly as before (tools/check-flag-identical.js). With it on:
+  // (a) after a correct answer the reply's first sentence says so and what was
+  // right; (b) the "just tell you the rest?" check-in comes only after a wrong
+  // answer, an "idk" or two short or off-topic replies in a row; (c) a question
+  // she answered correctly is recorded and never asked again; (d) "just tell
+  // me" / yes at the check-in tells her the whole of the key point, then moves
+  // on; (e) "skip" moves to the next key point at once, saying what was
+  // skipped; (f) the closing message says which points she worked through and
+  // which she was told or skipped; (g) numbers and units are copied from the
+  // lesson. Her answer is marked by one short model call (CORRECT / PARTLY /
+  // WRONG / IDK / OTHER); if that call fails, the word match decides as before.
+  const FLOW_FIX = env.flowFix !== false;
   const STUDENT_NAME = env.studentName || 'Mabel';   // used only to filter it out of replies
   const WHO     = FIX23 ? 'the student' : 'Mabel';   // how prompts refer to her
   const WHO_CAP = FIX23 ? 'The student' : 'Mabel';
@@ -296,7 +310,21 @@ function create(env) {
       farewell: false,
       // TEACH_THEN_ASK: per point, which sentences of its content have been taught.
       ...(TEACH_THEN_ASK ? { taught: _points.map(p => Array(p.sentences.length).fill(false)) } : {}),
+      // FLOW_FIX: questions she answered correctly, the run of short or
+      // off-topic replies, and per point how it ended (worked / told / skipped).
+      ...(FLOW_FIX ? { flow: _freshFlow() } : {}),
     };
+  }
+
+  function _freshFlow() { return { correctQs: [], shortRun: 0, how: _points.map(() => null) }; }
+  // FLOW_FIX state (a state saved before it existed starts empty).
+  function _flow() {
+    if (!_state.flow || typeof _state.flow !== 'object') _state.flow = _freshFlow();
+    const f = _state.flow;
+    if (!Array.isArray(f.correctQs)) f.correctQs = [];
+    if (!Number.isInteger(f.shortRun)) f.shortRun = 0;
+    if (!Array.isArray(f.how) || f.how.length !== _points.length) f.how = _points.map(() => null);
+    return f;
   }
 
   // A new point starts with a clean exchange count and no check-in pending.
@@ -407,6 +435,11 @@ function create(env) {
           ? `After you teach an idea, ask about what you have just said: the answer to your question must be in your own words before it. If her answer shows a wrong idea, name the wrong idea and correct it with one reason before you move on.`
           : `After you teach an idea, ask her to use it (for example on a small number or an everyday case), not to repeat the words you just said. If her answer shows a wrong idea, name the wrong idea and correct it with one reason before you move on.`,
       ].join('\n') : '',
+      FLOW_FIX ? [
+        `When her answer is right, the first sentence of your reply says so and names what was right ("Yes — chemical energy is right."), before anything else.`,
+        `Never ask again a question she has already answered correctly in this lesson, in the same or other words.`,
+        `Numbers and units: copy every number and unit exactly as the key point's content and key terms write them. Never recalculate, convert, round or rewrite a number or unit.`,
+      ].join('\n') : '',
     ].filter(Boolean).join('\n');
   }
 
@@ -427,6 +460,11 @@ function create(env) {
     const history = _recentHistoryBlock(false);
     if (history) lines.push(history);
     lines.push(`${WHO_CAP} just said: "${userText}"`);
+    if (FLOW_FIX) {
+      if (decision.mark === 'correct') lines.push(`Her answer is right. The FIRST sentence of your reply says so and names what was right, before anything else.`);
+      const qs = _state.flow && _state.flow.correctQs.length ? _state.flow.correctQs.slice(-8) : [];
+      if (qs.length && _teachIndex(decision) != null) lines.push(`Questions she has already answered correctly in this lesson — never ask any of them again, in any words: ${qs.map(q => `"${q}"`).join(' | ')}`);
+    }
 
     if (decision.kind === 'retry') {
       lines.push(!decision.fact
@@ -446,21 +484,23 @@ function create(env) {
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts),
         _partLine(decision.fact), _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'next') {
-      lines.push(`${_toldRestLine(decision.toldRest, _toldTexts(decision)) || _toldLine(decision.toldNow) || `Acknowledge her reply naturally in one short sentence. `}Then move on to the next key point below: introduce it in AT MOST TWO SENTENCES, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`);
+      lines.push(`${_flowLead(decision) || _toldRestLine(decision.toldRest, _toldTexts(decision)) || _toldLine(decision.toldNow) || `Acknowledge her reply naturally in one short sentence. `}Then move on to the next key point below: introduce it in AT MOST TWO SENTENCES, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)),
         _remainingLine(decision.nextIndex, _state.facts[decision.nextIndex], _openingFact(decision.nextIndex)));
     } else if (decision.kind === 'resume') {
-      lines.push(`${_toldRestLine(decision.toldRest, _toldTexts(decision)) || _toldLine(decision.toldNow) || `Acknowledge her reply naturally in one short sentence. `}Then take her back to where she was before she went off to look at something else: the key point below. She had already started it, so remind her of it briefly in AT MOST TWO SENTENCES, then ask one question about the part named below. Do not answer your own question.`);
+      lines.push(`${_flowLead(decision) || _toldRestLine(decision.toldRest, _toldTexts(decision)) || _toldLine(decision.toldNow) || `Acknowledge her reply naturally in one short sentence. `}Then take her back to where she was before she went off to look at something else: the key point below. She had already started it, so remind her of it briefly in AT MOST TWO SENTENCES, then ask one question about the part named below. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)),
         _remainingLine(decision.nextIndex, _state.facts[decision.nextIndex], _openingFact(decision.nextIndex)));
     } else if (decision.kind === 'complete') {
-      lines.push(`${_toldRestLine(decision.toldRest, _toldTexts(decision)) || _toldLine(decision.toldNow) || `Acknowledge her reply naturally. `}${FIX_T4
+      lines.push(`${_flowLead(decision) || _toldRestLine(decision.toldRest, _toldTexts(decision)) || _toldLine(decision.toldNow) || `Acknowledge her reply naturally. `}${FLOW_FIX
+        ? _closingLine(decision)
+        : FIX_T4
         ? `Then say you have reached the end of this lesson, name in a few words one thing she got right, and close warmly in one short line. Do not say she has covered, learned or mastered everything, and do not list topics.`
         : `Then let her know all ${_points.length} key points in this lesson have now been covered, and close warmly in one short line.`} Do not ask a question. Do not offer practice questions. She can ask you anything further, or leave, whenever she likes.`);
     } else if (_state.wrapOffered) {
-      lines.push(`All ${_points.length} key points in this lesson have already been covered, and you have ALREADY asked her whether she wants to go over anything else. Do not ask that again in any form — no "anything else?", no "does that feel clear?", no "shall we stop there?". Respond to what she actually said and then stop. If she shows she is finished (no, nothing, bye, thanks, I'm good), give ONE warm, complete goodbye and nothing after it — no question of any kind. A light sign-off such as "same time next week?" is fine as that closing line itself, but only as the goodbye.`);
+      lines.push(`${FLOW_FIX ? `This lesson has reached its end (${_howSummary()}). Never say she covered or got through all of it unless she worked through every point` : `All ${_points.length} key points in this lesson have already been covered`}, and you have ALREADY asked her whether she wants to go over anything else. Do not ask that again in any form — no "anything else?", no "does that feel clear?", no "shall we stop there?". Respond to what she actually said and then stop. If she shows she is finished (no, nothing, bye, thanks, I'm good), give ONE warm, complete goodbye and nothing after it — no question of any kind. A light sign-off such as "same time next week?" is fine as that closing line itself, but only as the goodbye.`);
     } else {
-      lines.push(`All ${_points.length} key points in this lesson have already been covered. Respond naturally and helpfully to whatever she said. Do not offer practice questions and do not present lettered or numbered options. Ask at most one closing question, and only if it is genuinely useful.`);
+      lines.push(`${FLOW_FIX ? `This lesson has reached its end (${_howSummary()}). Never say she covered or got through all of it unless she worked through every point.` : `All ${_points.length} key points in this lesson have already been covered.`} Respond naturally and helpfully to whatever she said. Do not offer practice questions and do not present lettered or numbered options. Ask at most one closing question, and only if it is genuinely useful.`);
     }
     if (decision.chunk) lines.push(_teachLine(decision.chunk));
     return lines.filter(Boolean).join('\n\n');
@@ -652,8 +692,15 @@ function create(env) {
     return need.every(w => have.has(w));
   }
 
-  async function _callWithLengthGuard(sys, user, noYesNo = false) {
-    const limits = [
+  async function _callWithLengthGuard(sys, user, noYesNo = false, maxWords = null) {
+    // FLOW_FIX: a reply that tells her a whole key point gets a higher word limit.
+    const limits = FLOW_FIX && maxWords ? [
+      { words: maxWords, tokens: Math.ceil(maxWords * 2.2) + 60, note: '' },
+      { words: maxWords, tokens: Math.ceil(maxWords * 2.2) + 60,
+        note: `(Your last reply was too long or got cut off mid-sentence. Say the same thing again in under ${maxWords} words, leaving nothing out, and make sure every sentence is finished.)` },
+      { words: maxWords, tokens: Math.ceil(maxWords * 2.2) + 60,
+        note: `(Still too long or cut off. Give the same message in under ${maxWords} words. Finish every sentence.)` },
+    ] : [
       { words: MAX_REPLY_WORDS, tokens: MAX_TOKENS_REPLY, note: '' },
       { words: RETRY_MAX_WORDS, tokens: MAX_TOKENS_RETRY,
         note: `(Your last reply was too long or got cut off mid-sentence. Say the same thing again in under ${RETRY_MAX_WORDS} words, and make sure every sentence is finished.)` },
@@ -667,15 +714,17 @@ function create(env) {
     const namingNote = `(Your question asks her to name or guess a term. Say the term yourself in this reply, then ask a what / why / how question that makes her use the idea. Do not ask what something is called.)`;
     let complete = '', last = '', level = 0, yesNo = false, eitherOr = false, noQuestion = false, many = false, naming = false;
     let unanchored = false, anchorTried = false, answerSaid = '';
+    let repeated = null, repeatTried = false;
     const chunk = _pendingChunk;
     _pendingChunk = null;
-    const done = text => { if (TEACH_THEN_ASK && chunk) _markTaught(chunk); return _finishReply(text); };
+    const done = text => { if (TEACH_THEN_ASK && chunk) _markTaught(chunk); return FLOW_FIX && maxWords ? _finishReply(text, maxWords) : _finishReply(text); };
     for (let i = 0; i < limits.length; i++) {
       const a = limits[level];
       const anchorNote = unanchored
         ? `(The answer to your question, "${answerSaid}", is not in anything you have said. ${chunk ? `Teach this first, in your own words: "${chunk.text}" Then ask` : 'Ask'} one question whose answer is in what you have just said, and end with the "ANSWER:" line again.)`
         : '';
-      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : '', many ? manyNote : '', naming ? namingNote : '', anchorNote].filter(Boolean).join('\n');
+      const repeatNote = repeated ? `(Your question repeats one she has already answered correctly: "${repeated}". Keep the rest, but ask about something she has not answered yet.)` : '';
+      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : '', many ? manyNote : '', naming ? namingNote : '', anchorNote, repeatNote].filter(Boolean).join('\n');
       const raw = (await AI.call(sys, note ? `${user}\n\n${note}` : user, a.tokens)).trim();
       const { text: reply, answer } = TEACH_THEN_ASK ? _splitAnswer(raw) : { text: raw, answer: null };
       const plain = _stripMarkdown(reply);
@@ -690,7 +739,10 @@ function create(env) {
       // TEACH_THEN_ASK: one more try when the question's answer has not been taught.
       unanchored = TEACH_THEN_ASK && noYesNo && !anchorTried && !_answerTaught(answer, plain);
       if (unanchored) { anchorTried = true; answerSaid = answer; }
-      const badQ = yesNo || eitherOr || noQuestion || many || naming || unanchored;
+      // FLOW_FIX: one more try when the question repeats one she answered correctly.
+      repeated = FLOW_FIX && noYesNo && !repeatTried ? _repeatsCorrect(plain) : null;
+      if (repeated) repeatTried = true;
+      const badQ = yesNo || eitherOr || noQuestion || many || naming || unanchored || !!repeated;
       if (!cut && !long && !badQ) return done(reply);
       if (!cut && !badQ && !complete) complete = reply; // finished, just long — usable if nothing better
       if (cut || long) level = Math.min(level + 1, limits.length - 1);
@@ -762,6 +814,7 @@ function create(env) {
     const covered = point.facts.every((f, j) => facts.answered[j] || facts.told[j]);
     return { idx, verdict: covered, facts, toldRest: rem.map(j => point.facts[j]), toldSentences: TEACH_THEN_ASK ? _untaughtSentences(idx) : null,
              pacing: { turnsOnPoint: 0, checkinAsked: false, extensionLeft: null },
+             ...(FLOW_FIX ? { tellAll: point, how: 'told' } : {}),
              ..._afterPoint(idx, covered) };
   }
 
@@ -794,9 +847,16 @@ function create(env) {
     if (_state.complete) return { kind: 'free' };
     const idx = _state.currentPointIndex;
     const point = _points[idx];
+    if (FLOW_FIX) { const d = _flowDecide(userText, idx, point); if (d) return d; }
 
     // A point with no key terms has nothing to split into parts: one real answer finishes it.
     if (!point.facts.length) {
+      if (FLOW_FIX) {
+        const ok = _turnMark ? _turnMark.mark === 'correct' : _isSubstantive(userText, point.wordSet);
+        if (!ok && !_state.retriedCurrent) return { kind: 'retry', idx, point, fact: null };
+        if (!ok) return _finishByTelling(idx, point, { answered: [], told: [] }, []);
+        return { idx, verdict: true, how: 'worked', ..._afterPoint(idx, true) };
+      }
       const substantive = _isSubstantive(userText, point.wordSet);
       if (!substantive && !_state.retriedCurrent) return { kind: 'retry', idx, point, fact: null };
       if (TEACH_THEN_ASK && _untaughtSentences(idx)) return { kind: 'fact', idx, point, fact: null };
@@ -808,10 +868,10 @@ function create(env) {
     let target = _targetFactIndex(idx);
     if (target === -1) target = answered.findIndex(a => !a); // defensive: nothing left to teach
 
-    const hit = target !== -1 && _answers(userText, point.facts[target].words);
+    const hit = target !== -1 && (FLOW_FIX && _turnMark ? _turnMark.mark === 'correct' : _answers(userText, point.facts[target].words));
     if (hit) answered[target] = true;
-    // Anything else she has clearly shown, unprompted.
-    point.facts.forEach((f, j) => {
+    // Anything else she has clearly shown, unprompted (FLOW_FIX: only in a correct answer).
+    if (!(FLOW_FIX && _turnMark && _turnMark.mark !== 'correct')) point.facts.forEach((f, j) => {
       if (!answered[j] && f.cues.size && _answers(userText, f.cues)) { answered[j] = true; told[j] = false; }
     });
     const facts = { answered, told };
@@ -844,7 +904,12 @@ function create(env) {
     const inExtension = Number.isInteger(_state.extensionLeft);
     const extensionLeft = inExtension ? _state.extensionLeft - 1 : null;
     const capHit = inExtension ? extensionLeft <= 0 : turns >= CHECKIN_AFTER;
-    if (capHit && (remaining().length || (TEACH_THEN_ASK && _untaughtSentences(idx)))) {
+    // FLOW_FIX: the check-in only after a wrong answer, an "idk" or two short or
+    // off-topic replies in a row; otherwise she carries on and is asked later.
+    const kind = FLOW_FIX ? _replyKind(userText, point, hit) : null;
+    const struggling = !FLOW_FIX || inExtension || kind === 'wrong' || kind === 'partly' || kind === 'idk'
+      || (kind === 'other' && _flow().shortRun >= 1);
+    if (capHit && struggling && (remaining().length || (TEACH_THEN_ASK && _untaughtSentences(idx)))) {
       if (inExtension) return _finishByTelling(idx, point, facts, remaining());
       return { kind: 'checkin', idx, point, facts,
                pacing: { turnsOnPoint: turns, checkinAsked: true, extensionLeft: null } };
@@ -858,7 +923,7 @@ function create(env) {
         // simply isn't the part being asked (the point's content holds facts
         // that aren't key terms, like skin). That deserves acknowledging and
         // asking again — not re-explaining the point at her.
-        const onTopic = _isSubstantive(userText, point.wordSet);
+        const onTopic = FLOW_FIX && _turnMark ? _turnMark.mark === 'partly' : _isSubstantive(userText, point.wordSet);
         return { kind: 'retry', idx, point, fact: point.facts[target], facts, onTopic, pacing };
       }
       // Missed twice: stop quizzing her on it and just tell her, so the part is
@@ -882,10 +947,17 @@ function create(env) {
     const covered = point.facts.every((f, j) => answered[j] || told[j]);
     return { idx, verdict: covered, facts, toldNow,
              pacing: { turnsOnPoint: 0, checkinAsked: false, extensionLeft: null },
+             ...(FLOW_FIX ? { how: told.some(Boolean) ? 'told' : 'worked' } : {}),
              ..._afterPoint(idx, covered) };
   }
 
   function _applyDecision(decision) {
+    if (FLOW_FIX && decision.flowNote) {
+      const f = _flow();
+      f.shortRun = decision.flowNote.shortRun;
+      if (decision.flowNote.correctQ && !f.correctQs.includes(decision.flowNote.correctQ)) f.correctQs.push(decision.flowNote.correctQ);
+      if (decision.idx != null && decision.how && decision.kind !== 'fact' && decision.kind !== 'retry' && decision.kind !== 'checkin') f.how[decision.idx] = decision.how;
+    }
     if (decision.kind === 'free') return;
     if (decision.toldSentences) _markTaught(decision.toldSentences);
     if (decision.facts) _state.facts[decision.idx] = decision.facts;
@@ -962,6 +1034,116 @@ function create(env) {
       : '';
   }
 
+  // ── Tutor flow (FLOW_FIX) ─────────────────────────────────────
+  // "can we skip this", "move on", "next one" — not "don't skip".
+  const SKIP_REQUEST = /\b(skip|move on|next (one|bit|point|part|topic)|go on to the next)\b/i;
+  const NOT_SKIP     = /\b(don'?t|do not|no) (skip|move on)\b/i;
+  // An explicit request to be told, outside the check-in.
+  const TELL_REQUEST = /\b(tell me|give me the answer|just say it|what'?s the answer|just explain)\b/i;
+  const IDK_REPLY    = /\b(idk|dunno|no idea|no clue|not sure|unsure|i (don'?t|do not) know)\b/i;
+  function _wantsSkip(text) { return SKIP_REQUEST.test(text) && !NOT_SKIP.test(text); }
+  function _wantsTelling(text) { return TELL_REQUEST.test(text) && !/\b(don'?t|do not|no need to) (just )?tell\b/i.test(text); }
+
+  // The question at the end of the tutor's last reply, if it asked one.
+  function _lastQuestion() {
+    const last = [...(_state.transcript || [])].reverse().find(t => t.role === 'assistant');
+    if (!last) return null;
+    const qs = _stripMarkdown(last.text).match(/[^.!?]*\?/g) || [];
+    return qs.length ? { said: last.text, q: qs[qs.length - 1].trim() } : null;
+  }
+
+  // One short call: is her reply a correct answer to that question?
+  async function _markAnswer(userText) {
+    if (_state.complete || _state.checkinAsked) return null;
+    if (_wantsSkip(userText) || _wantsTelling(userText)) return null;
+    const last = _lastQuestion();
+    if (!last) return null;
+    const sys = `You mark one reply from a GCSE student to her tutor's question. Reply with one word only: CORRECT, PARTLY, WRONG, IDK or OTHER.`;
+    const user = [
+      `The tutor said: "${last.said}"`,
+      `The question: "${last.q}"`,
+      `The student replied: "${userText}"`,
+      _pointBrief(_points[_state.currentPointIndex]),
+      `CORRECT: it answers the question correctly (spelling, slang and short answers are fine). PARTLY: partly right, but part is missing or wrong. WRONG: an answer, but a wrong one. IDK: she says she does not know. OTHER: not an answer to the question (off topic, "ok", "huh?", a request, or a question of her own).`,
+    ].join('\n\n');
+    try {
+      const raw = String(await AI.call(sys, user, 10) || '').toUpperCase();
+      const m = raw.match(/\b(CORRECT|PARTLY|WRONG|IDK|OTHER)\b/);
+      return m ? { mark: m[1].toLowerCase(), question: last.q } : null;
+    } catch (e) { _logError('marking', e); return null; }
+  }
+
+  // Her reply this turn, set by _getTutorReply before _decide reads it.
+  let _turnMark = null;
+
+  // What her reply was, by the mark if there is one, otherwise by the word match.
+  function _replyKind(userText, point, hit) {
+    if (_turnMark) return _turnMark.mark;
+    if (hit) return 'correct';
+    if (IDK_REPLY.test(userText)) return 'idk';
+    return _isSubstantive(userText, point.wordSet) ? 'wrong' : 'other';
+  }
+
+  // Skip and "tell me" come before anything else on the point.
+  function _flowDecide(userText, idx, point) {
+    const cur = _state.facts[idx];
+    const facts = { answered: cur.answered.slice(), told: cur.told.slice() };
+    const rem = point.facts.map((f, j) => j).filter(j => !facts.answered[j] && !facts.told[j]);
+    const reset = { turnsOnPoint: 0, checkinAsked: false, extensionLeft: null };
+    if (_wantsSkip(userText)) {
+      return { idx, verdict: false, facts, skipped: point, pacing: reset, how: 'skipped', ..._afterPoint(idx, false) };
+    }
+    if (!_state.checkinAsked && _wantsTelling(userText)) return _finishByTelling(idx, point, facts, rem);
+    return null;
+  }
+
+  // The start of a next / resume / complete turn that ends a point by telling or skipping.
+  function _flowLead(d) {
+    if (!FLOW_FIX) return '';
+    if (d.skipped) return `She asked to skip the key point "${_shortHeading(d.skipped.heading)}". In ONE short sentence, say that you are skipping it and what it was about, in a few words. Do not teach it. `;
+    if (d.tellAll) {
+      const p = d.tellAll;
+      const terms = (p.keyTerms || []).map(t => `${t.term}: ${t.def}`).join(' | ');
+      return `She wants to be told the rest of the key point "${_shortHeading(p.heading)}". Tell her the whole of it now, in plain words: every sentence of its content below, in order, one short sentence each. Leave nothing out, not even parts she has already met, and do not ask about any of it. Content: "${_stripHtml(p.content)}"${terms ? ` Key terms: ${terms}` : ''} `;
+    }
+    return '';
+  }
+
+  // How each point ended, with the point now finishing counted in.
+  function _howList(d) {
+    const how = _flow().how.slice();
+    if (d && d.idx != null && d.how) how[d.idx] = d.how;
+    return how;
+  }
+  function _howSummary(d) {
+    const how = _howList(d);
+    const names = k => _points.map((p, i) => how[i] === k ? `"${_shortHeading(p.heading)}"` : null).filter(Boolean);
+    const parts = [];
+    if (names('worked').length) parts.push(`she worked through ${names('worked').join(', ')}`);
+    if (names('told').length) parts.push(`you told her ${names('told').join(', ')}`);
+    if (names('skipped').length) parts.push(`she skipped ${names('skipped').join(', ')}`);
+    const none = _points.filter((p, i) => !how[i]).map(p => `"${_shortHeading(p.heading)}"`);
+    if (none.length) parts.push(`she did not reach ${none.join(', ')}`);
+    return parts.join('; ');
+  }
+  function _closingLine(d) {
+    const all = _howList(d).every(h => h === 'worked');
+    return `Then say you have reached the end of this lesson and say honestly, in one or two short sentences, how it went: ${_howSummary(d)}. ${all ? 'She worked through every point herself.' : 'Never say she got through, covered, learned or mastered all of it.'} Close warmly in one short line.`;
+  }
+
+  // A teaching question that repeats one she has already answered correctly.
+  function _repeatsCorrect(plain) {
+    if (!FLOW_FIX || !_state.flow || !_state.flow.correctQs.length) return null;
+    const q = (plain.match(/[^.!?]*\?\s*$/) || [''])[0];
+    const a = new Set(_stems(q));
+    if (a.size < 2) return null;
+    return _state.flow.correctQs.find(old => {
+      const b = new Set(_stems(old));
+      const both = [...a].filter(w => b.has(w)).length;
+      return both / (a.size + b.size - both) >= 0.6;
+    }) || null;
+  }
+
   // Which key point a reply will be teaching, so the brief can be limited to it.
   function _teachIndex(d) {
     if (!d) return null;
@@ -971,13 +1153,25 @@ function create(env) {
   }
 
   async function _getTutorReply(userText) {
+    _turnMark = FLOW_FIX ? await _markAnswer(userText) : null;
     const decision = _decide(userText);
+    if (FLOW_FIX && decision.kind !== 'free') {
+      const point = _points[_state.currentPointIndex];
+      const kind = point ? _replyKind(userText, point, false) : null;
+      decision.mark = _turnMark ? _turnMark.mark : null;
+      decision.flowNote = { shortRun: kind === 'other' ? _flow().shortRun + 1 : 0,
+                            correctQ: _turnMark && _turnMark.mark === 'correct' ? _turnMark.question : null };
+      if (decision.tellAll) decision.maxWords = Math.min(170, MAX_REPLY_WORDS + _wordCount(_stripHtml(decision.tellAll.content)));
+    }
+    _turnMark = null;
     if (TEACH_THEN_ASK) decision.chunk = _chunkFor(decision);
     _pendingChunk = decision.chunk || null;
     const sys  = _buildSystemPrompt(_teachIndex(decision));
     const user = _buildUserPrompt(userText, decision);
     // Teaching turns only: the check-in and the closing turns ask yes/no on purpose.
-    const reply = await _callWithLengthGuard(sys, user, _teachIndex(decision) != null);
+    const reply = FLOW_FIX && decision.maxWords
+      ? await _callWithLengthGuard(sys, user, _teachIndex(decision) != null, decision.maxWords)
+      : await _callWithLengthGuard(sys, user, _teachIndex(decision) != null);
 
     // A finished point (she answered substantively) gets a recap. If writing it
     // fails she still moves on — she just doesn't get one for that point.
@@ -1062,7 +1256,7 @@ function create(env) {
   }));
   }
 
-  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor };
+  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow };
 }
 
 return { create, TUTOR_SONNET, TUTOR_MODEL, TUTOR_MODEL_SONNET, TUTOR_MODEL_HAIKU, tutorParams };

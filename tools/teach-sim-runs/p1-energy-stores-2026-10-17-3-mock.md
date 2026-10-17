@@ -1,6 +1,6 @@
 # Teach sim: p1-energy-stores (mock, 2026-10-17)
 
-Model claude-sonnet-5-5. 23 tutor turns, 0 flagged. Complete: true. Coverage: [true,true,true,true,true].
+Model claude-sonnet-5-5. 21 tutor turns, 0 flagged. Complete: true. Coverage: [true,true,true,true,true].
 
 Lesson flags: none
 
@@ -20,17 +20,9 @@ Lesson flags: none
 
 **Student** (offtopic): what's your favourite football team
 
-**Tutor** [checkin, point 0]: Do you want me to just tell you the rest of this one?
-
-**Student** (no): no
-
-**Tutor** [fact, point 0]: Right. Next is Gravitational potential energy store. What word describes how the particles are arranged?
-
-**Student** (give): just give me the answer
-
 **Tutor** [retry, point 0]: Right. Next is Gravitational potential energy store. What word describes how the particles are arranged?
 
-**Student** (correct): I think it's Gravitational potential energy store, Energy stored in an object due to its height above
+**Student** (give): just give me the answer
 
 **Tutor** [next, point 0]: Right. Next is Mechanical transfer (work done by forces). What word describes how the particles are arranged?
 
@@ -50,9 +42,9 @@ Lesson flags: none
 
 **Student** (offtopic): what's your favourite football team
 
-**Tutor** [checkin, point 1]: Do you want me to just tell you the rest of this one?
+**Tutor** [retry, point 1]: Right. Next is Radiation. What word describes how the particles are arranged?
 
-**Student** (yes): yes
+**Student** (give): just give me the answer
 
 **Tutor** [next, point 1]: Right. Next is Law of conservation of energy. What word describes how the particles are arranged?
 

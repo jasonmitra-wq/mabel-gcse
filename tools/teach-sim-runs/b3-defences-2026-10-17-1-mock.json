@@ -1,0 +1,309 @@
+{
+  "id": "b3-defences",
+  "subject": "biology",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Right. Next is Mucus. What word describes how the particles are arranged?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's Mucus, A sticky secretion that lines the respiratory tract and traps",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is Cilia. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is Cilia. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is Hydrochloric acid (HCl). What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is Hydrochloric acid (HCl). What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Right. Next is White blood cell. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "I think it's White blood cell, A blood cell that forms part of the immune system;",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is Leucocyte. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is Leucocyte. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is Nucleus. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is Nucleus. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Right. Next is Phagocyte. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "I think it's Phagocyte, A white blood cell that engulfs and digests pathogens and",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right. Next is Phagocytosis. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right. Next is Phagocytosis. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right. Next is Non-specific. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right. Next is Non-specific. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Right. Next is Lymphocyte. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "I think it's Lymphocyte, A white blood cell that produces antibodies and antitoxins in",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Next is Antigen. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Next is Antigen. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Next is Antibody. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Next is Antibody. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Right. Next is Memory cell. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "I think it's Memory cell, A long-lived lymphocyte that persists after an infection, allowing a",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Right. Next is Immunological memory. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Right. Next is Immunological memory. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Well done today. See you next time.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0,
+  "tutorCost": 0,
+  "tutorCalls": 0,
+  "mode": "mock",
+  "date": "2026-10-17"
+}

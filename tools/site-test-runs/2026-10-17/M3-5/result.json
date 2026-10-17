@@ -1,0 +1,230 @@
+{
+  "id": "M3",
+  "mode": "maths",
+  "date": "2026-10-17",
+  "pass": true,
+  "judge": {
+    "broken": [],
+    "looks_wrong": [
+      {
+        "what": "The 'Revise a topic' card lists Biology · Chemistry · Physics · Geography · Sociology but not Maths, even though Maths is the subject she is using.",
+        "screenshot": "01-home-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "Same subject list without Maths on the laptop home card.",
+        "screenshot": "01-home-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "After coming back, the home 'Revise a topic' card still omits Maths, while the resume card directly above it says Maths.",
+        "screenshot": "17-after-leaving-laptop.png",
+        "stops_use": false
+      }
+    ],
+    "would_quit": {
+      "turn": "Question 5",
+      "quote": "Step 2: \"Calculate the flour needed.\" — the student gives up here and leaves the question unfinished.",
+      "why": "Fifth question in a row is a 3-step, 3-mark recipe question. A bored 15-year-old with 6 questions still to go and no sense of score or reward taps Home."
+    },
+    "fixes": [
+      {
+        "target": "Home page 'Revise a topic' card subject list",
+        "change": "Add Maths to the list, e.g. 'Maths · Biology · Chemistry · Physics · Geography · Sociology'."
+      },
+      {
+        "target": "Topic test header (progress area)",
+        "change": "Show marks so far, e.g. 'Marks so far: 6/7'. Also show a short note on how many questions are left to the 80% badge, so there is a visible reason to push on."
+      },
+      {
+        "target": "Question rat-B02 step 2 prompt",
+        "change": "Make the step concrete and short to lower the effort: 'Flour: 300 g × 2.5 = ? g'. Or show the scale factor 2.5 inline in the prompt."
+      },
+      {
+        "target": "Wrong-answer feedback for pro-A05 step 1 (k)",
+        "change": "Replace the generic 'Not quite — check your working' with a targeted line, e.g. 'k = y ÷ x. Use y = 24 and x = 8.'"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "warm-up 1: \"46\" for 71 − 25 accepted",
+      "ok": true,
+      "detail": "app accepted"
+    },
+    {
+      "what": "warm-up 2: \"91\" for 7 × 13 accepted",
+      "ok": true,
+      "detail": "app accepted"
+    },
+    {
+      "what": "warm-up 3: \"11\" for 24 ÷ 3 rejected",
+      "ok": true,
+      "detail": "app rejected"
+    },
+    {
+      "what": "warm-up 4: \"18\" for Find 3/4 of 24 accepted",
+      "ok": true,
+      "detail": "app accepted"
+    },
+    {
+      "what": "warm-up 5: \"idk\" for 10% of 56 rejected",
+      "ok": true,
+      "detail": "app rejected"
+    },
+    {
+      "what": "cmp-A01 step 1: \"9\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 9"
+    },
+    {
+      "what": "pch-A03 step 1: \"13\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 13"
+    },
+    {
+      "what": "pch-A03 step 2: \"52\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 52"
+    },
+    {
+      "what": "pro-A03 step 1: \"3\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 3"
+    },
+    {
+      "what": "pro-A03 step 2: \"27\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 27"
+    },
+    {
+      "what": "pro-A05 step 1: \"4.75\" should be rejected",
+      "ok": true,
+      "detail": "app rejected; independent value 3"
+    },
+    {
+      "what": "pro-A05 step 1: \"3\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 3"
+    },
+    {
+      "what": "pro-A05 step 2: \"3\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 3"
+    },
+    {
+      "what": "rat-B02 step 1: \"2.5\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 2.5"
+    },
+    {
+      "what": "coming back resumes the same test question",
+      "ok": true,
+      "detail": "same question"
+    }
+  ],
+  "transcript": [
+    "Maths topic M3 (Ratio, Proportion & Rates of Change).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "Warm-up offered.",
+    "[screenshot 02-warm-up-phone.png and 02-warm-up-laptop.png] warm-up",
+    "Warm-up 1: \"71 − 25\" — typed \"46\" — app accepted — true answer 46",
+    "[check] OK: warm-up 1: \"46\" for 71 − 25 accepted — app accepted",
+    "Warm-up 2: \"7 × 13\" — typed \"91\" — app accepted — true answer 91",
+    "[check] OK: warm-up 2: \"91\" for 7 × 13 accepted — app accepted",
+    "Warm-up 3: \"24 ÷ 3\" — typed \"11\" — app rejected — true answer 8",
+    "[check] OK: warm-up 3: \"11\" for 24 ÷ 3 rejected — app rejected",
+    "[screenshot 03-warm-up-3-phone.png and 03-warm-up-3-laptop.png] warm-up-3",
+    "Warm-up 4: \"Find 3/4 of 24\" — typed \"18\" — app accepted — true answer 18",
+    "[check] OK: warm-up 4: \"18\" for Find 3/4 of 24 accepted — app accepted",
+    "Warm-up 5: \"10% of 56\" — typed \"idk\" — app rejected — true answer 5.6",
+    "[check] OK: warm-up 5: \"idk\" for 10% of 56 rejected — app rejected",
+    "[screenshot 04-warm-up-result-phone.png and 04-warm-up-result-laptop.png] warm-up-result",
+    "[screenshot 05-maths-topics-phone.png and 05-maths-topics-laptop.png] maths-topics",
+    "[screenshot 06-topic-m3-phone.png and 06-topic-m3-laptop.png] topic-M3",
+    "Question 1 (cmp-A01): A block of metal has mass 540 g and volume 60 cm³. Calculate its density.",
+    "[screenshot 07-question-1-phone.png and 07-question-1-laptop.png] question-1",
+    "  Step 1: \"Use: density = mass ÷ volume.\" — typed \"9\" (right) — app accepted \"✓ Correct. density = 540/60 = 9 g/cm³.\" — independent value 9",
+    "[check] OK: cmp-A01 step 1: \"9\" should be accepted — app accepted; independent value 9",
+    "[screenshot 08-q1-step1-phone.png and 08-q1-step1-laptop.png] q1-step1",
+    "Question 2 (pch-A03): A jacket costs £65. In a sale it is reduced by 20%. What is the sale price?",
+    "[screenshot 09-question-2-phone.png and 09-question-2-laptop.png] question-2",
+    "  Step 1: student asks for a hint — \"💡 Hint 1: 10% of £65 = £6.50. 20% = 2 × £6.50.\"",
+    "  Step 1: \"Calculate 20% of £65.\" — typed \"13\" (right) — app accepted \"✓ Correct. 20% of £65 = 0.20 × 65 = £13.\" — independent value 13",
+    "[check] OK: pch-A03 step 1: \"13\" should be accepted — app accepted; independent value 13",
+    "  Step 2: \"What is the sale price? (£)\" — typed \"52\" (try) — app accepted \"✓ Correct. Sale price = £65 − £13 = £52.\" — independent value 52",
+    "[check] OK: pch-A03 step 2: \"52\" should be accepted — app accepted; independent value 52",
+    "[screenshot 10-q2-step2-phone.png and 10-q2-step2-laptop.png] q2-step2",
+    "Question 3 (pro-A03): y is directly proportional to x. When x = 6, y = 18. Find y when x = 9.",
+    "[screenshot 11-question-3-phone.png and 11-question-3-laptop.png] question-3",
+    "Student looks for the worked example: there is none in the topic test (by design; it is in practice).",
+    "  Step 1: \"Find the constant of proportionality k.\" — typed \"3\" (right) — app accepted \"✓ Correct. k = 18 ÷ 6 = 3, so y = 3x.\" — independent value 3",
+    "[check] OK: pro-A03 step 1: \"3\" should be accepted — app accepted; independent value 3",
+    "  Step 2: \"Find y when x = 9.\" — typed \"27\" (try) — app accepted \"✓ Correct. y = 3 × 9 = 27.\" — independent value 27",
+    "[check] OK: pro-A03 step 2: \"27\" should be accepted — app accepted; independent value 27",
+    "Question 4 (pro-A05): y is directly proportional to x. y = 24 when x = 8. Find x when y = 9.",
+    "[screenshot 12-question-4-phone.png and 12-question-4-laptop.png] question-4",
+    "  Step 1: \"Find k (the constant of proportionality).\" — typed \"4.75\" (wrong) — app rejected \"Not quite — check your working.\" — independent value 3",
+    "[check] OK: pro-A05 step 1: \"4.75\" should be rejected — app rejected; independent value 3",
+    "[screenshot 13-q4-step1-phone.png and 13-q4-step1-laptop.png] q4-step1",
+    "  Step 1: \"Find k (the constant of proportionality).\" — typed \"3\" (right) — app accepted \"✓ Correct. k = 24 ÷ 8 = 3, so y = 3x.\" — independent value 3",
+    "[check] OK: pro-A05 step 1: \"3\" should be accepted — app accepted; independent value 3",
+    "  Step 2: \"Find x when y = 9.\" — typed \"3\" (try) — app accepted \"✓ Correct. x = 9 ÷ 3 = 3.\" — independent value 3",
+    "[check] OK: pro-A05 step 2: \"3\" should be accepted — app accepted; independent value 3",
+    "Question 5 (rat-B02): A recipe for 4 people uses 300 g of flour, 180 g of sugar and 2 eggs. How much flour and sugar are needed for 10 people?",
+    "[screenshot 14-question-5-phone.png and 14-question-5-laptop.png] question-5",
+    "  Step 1: \"Find the scale factor to go from 4 people to 10.\" — typed \"2.5\" (right) — app accepted \"✓ Correct. Scale factor = 10 ÷ 4 = 2.5.\" — independent value 2.5",
+    "[check] OK: rat-B02 step 1: \"2.5\" should be accepted — app accepted; independent value 2.5",
+    "[screenshot 15-q5-step1-phone.png and 15-q5-step1-laptop.png] q5-step1",
+    "  Step 2: \"Calculate the flour needed.\" — the student gives up here and leaves the question unfinished.",
+    "[screenshot 16-question-5-left-unfinished-phone.png and 16-question-5-left-unfinished-laptop.png] question-5-left-unfinished",
+    "Student taps Home and leaves the test.",
+    "[screenshot 17-after-leaving-phone.png and 17-after-leaving-laptop.png] after-leaving",
+    "Student comes back to the topic: \"Carry on your topic test (question 5 of 10) →\".",
+    "[check] OK: coming back resumes the same test question — same question",
+    "[screenshot 18-after-coming-back-phone.png and 18-after-coming-back-laptop.png] after-coming-back"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-17/M3-5/01-home-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/02-warm-up-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/02-warm-up-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/03-warm-up-3-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/03-warm-up-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/04-warm-up-result-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/04-warm-up-result-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/05-maths-topics-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/05-maths-topics-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/06-topic-m3-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/06-topic-m3-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/07-question-1-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/07-question-1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/08-q1-step1-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/08-q1-step1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/09-question-2-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/09-question-2-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/10-q2-step2-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/10-q2-step2-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/11-question-3-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/11-question-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/12-question-4-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/12-question-4-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/13-q4-step1-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/13-q4-step1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/14-question-5-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/14-question-5-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/15-q5-step1-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/15-q5-step1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/16-question-5-left-unfinished-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/16-question-5-left-unfinished-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/17-after-leaving-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/17-after-leaving-laptop.png",
+    "tools/site-test-runs/2026-10-17/M3-5/18-after-coming-back-phone.png",
+    "tools/site-test-runs/2026-10-17/M3-5/18-after-coming-back-laptop.png"
+  ],
+  "cost": 0.179124,
+  "tutorModel": "claude-sonnet-5-5",
+  "tutorCost": 0,
+  "apiCalls": 5,
+  "browserApiCalls": 0
+}

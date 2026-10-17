@@ -44,3 +44,9 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-10-17 | b3-defences | lesson | FAIL | 4 | 4 | false | tools/site-test-runs/2026-10-17/b3-defences-5 | $0.4493
 - 2026-10-17 | p1-energy-stores | lesson | FAIL | 6 | 5 | false | tools/site-test-runs/2026-10-17/p1-energy-stores-5 | $0.4234
 - 2026-10-17 | b3-defences | lesson | FAIL | 6 | 5 | S16 | tools/site-test-runs/2026-10-17/b3-defences-7 | $0.4338
+- 2026-10-17 | M1 | maths | PASS | 0 | 5 | Question 5 | tools/site-test-runs/2026-10-17/M1-6 | $0.1832
+- 2026-10-17 | M2 | maths | FAIL | 3 | 6 | Question 5 | tools/site-test-runs/2026-10-17/M2-5 | $0.1990
+- 2026-10-17 | M3 | maths | PASS | 0 | 3 | Question 5 | tools/site-test-runs/2026-10-17/M3-5 | $0.1791
+- 2026-10-17 | M4 | maths | FAIL | 4 | 4 | Question 5 | tools/site-test-runs/2026-10-17/M4-5 | $0.1939
+- 2026-10-17 | M5 | maths | FAIL | 3 | 4 | Question 5 | tools/site-test-runs/2026-10-17/M5-5 | $0.1888
+- 2026-10-17 | M6 | maths | FAIL | 2 | 5 | Question 5 | tools/site-test-runs/2026-10-17/M6-4 | $0.1828

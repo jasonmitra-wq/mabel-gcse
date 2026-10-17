@@ -191,3 +191,10 @@ Still there, all in shared code:
 - factual_or_unit_slip (p1: sound called an end store; b3: "non-specific" glossed as "all at once"): model wording, not lesson text.
 - Website (both FAIL, broken 6 each): answers given inside the question and copy-back questions (b3), a lamp Sankey example used without being introduced (p1), a correct "measles" marked wrong because the question was "which one did we say" (b3). b3 would quit at S16.
 - Not a flow fault but seen: questions asked before teaching are 0–1 per text run now (p1 T0, b3 T11), down from 1–4.
+
+## Brief 2026-10-17 (tutor flow): maths website re-run after step 5
+
+Re-run once on M1–M6 (tools/site-test-runs/2026-10-17/M1-6, M2-5, M3-5, M4-5, M5-5, M6-4). M1 and M3 PASS (all six failed before). The three step-5 faults are gone: no statement step gives away a marked answer, "10^6" is accepted, and the home page has a working resume card (no "Pick up where you left off" without one). Still failing, none of them step-5 items:
+- Home: History / Dashboard / Error log show nothing after a maths test (M2, M5); "Revise a topic" card lists no Maths (M2, M4).
+- Question wording: M2 Q3 unit cm³ not in the question; M4 step 2 repeats step 1 ("Calculate angle ACB"), step 1 "Identify the two legs" has no box, "What fraction do you get?" wants 0.6; M5 "Find P(B) and then P(A|B)" with one box, format message "like 15" on a probability step; M6 Q5 "minimum and maximum" checks only the maximum; M6 Q4 statement step now hides "7/36" until the question is done, and the judge wants a box for it.
+- Resume shows the stored answer in finished steps, not what she typed (M5; already listed above).

@@ -1,0 +1,258 @@
+{
+  "id": "M4",
+  "mode": "maths",
+  "date": "2026-10-17",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "Step 2 asks the same thing as step 1 ('Calculate angle ACB'). She types 55 twice and gets 2 marks for one fact, so the second step tests nothing.",
+        "step": "Question 4 (cth-A02) Step 2"
+      },
+      {
+        "what": "Step 1 tells her to 'Identify the two legs' but gives no answer box, only Next. Tapping through earns nothing and checks nothing.",
+        "step": "Question 5 (pyth-B06) Step 1"
+      },
+      {
+        "what": "Step 1 asks 'What fraction do you get?' but the expected answer is the decimal 0.6. The transcript does not show whether 6/10 or 3/5 would be accepted, so the wording and the expected format do not match.",
+        "step": "Question 3 (trig-A03) Step 1"
+      },
+      {
+        "what": "The home page 'Revise a topic' card lists Biology, Chemistry, Physics, Geography and Sociology but not Maths, even though Maths topics exist.",
+        "step": "01-home / 17-after-leaving Revise a topic card"
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "The test status line under the sticky header ('Topic test · question 1 of 10' / 'Good — keep going.') is half hidden behind the header bar.",
+        "screenshot": "07-question-1-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "The feedback line is cut to a single word ('going.') behind the header, with the icon clipped.",
+        "screenshot": "08-q1-step1-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The unit label (cm², °, km) sits to the left of the answer box instead of after it, so it looks like a prefix.",
+        "screenshot": "11-question-3-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "The 'Next question →' button is cut off at the bottom edge of the screen.",
+        "screenshot": "12-q3-step2-phone.png",
+        "stops_use": false
+      }
+    ],
+    "would_quit": {
+      "turn": "Question 5",
+      "quote": "Step 3: \"Find d.\" — the student gives up here and leaves the question unfinished.",
+      "why": "Two tap-through steps with nothing to do, then a square-root calculation with no prompt to work out d² = 289 first. A bored student stalls and leaves."
+    },
+    "fixes": [
+      {
+        "target": "Topic test page layout, sticky header",
+        "change": "Add top padding or scroll-margin equal to the header height so the 'Topic test · question N of 10' status bar is not hidden under the header on phone and laptop."
+      },
+      {
+        "target": "cth-A02 steps",
+        "change": "Remove the duplicate step 2, or change step 1 to ask for the rule ('angle at centre = ? × angle at circumference', answer 2) and keep step 2 as the calculation of 55."
+      },
+      {
+        "target": "pyth-B06 steps 1–2",
+        "change": "Give step 1 an input (for example 'longest side is the…' or enter the legs 15 and 8) and make step 2 ask for d² (289) before step 3 asks for d = 17."
+      },
+      {
+        "target": "trig-A03 step 1 text and accepted answers",
+        "change": "Reword to 'What value do you get?' and accept 0.6, 6/10 and 3/5."
+      },
+      {
+        "target": "Home 'Revise a topic' card subject list",
+        "change": "Add Maths to the subject list shown on the card."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "warm-up 1: \"60\" for 48 + 12 accepted",
+      "ok": true,
+      "detail": "app accepted"
+    },
+    {
+      "what": "warm-up 2: \"253\" for 11 × 23 accepted",
+      "ok": true,
+      "detail": "app accepted"
+    },
+    {
+      "what": "warm-up 3: \"16\" for 84 ÷ 7 rejected",
+      "ok": true,
+      "detail": "app rejected"
+    },
+    {
+      "what": "warm-up 4: \"21\" for Find 3/5 of 35 accepted",
+      "ok": true,
+      "detail": "app accepted"
+    },
+    {
+      "what": "warm-up 5: \"idk\" for 25% of 8 rejected",
+      "ok": true,
+      "detail": "app rejected"
+    },
+    {
+      "what": "shp-A04 step 1: \"16\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 16"
+    },
+    {
+      "what": "shp-A04 step 2: \"80\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 80"
+    },
+    {
+      "what": "shp-A05 step 1: \"3\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 3"
+    },
+    {
+      "what": "shp-A05 step 2: \"9\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 9"
+    },
+    {
+      "what": "trig-A03 step 1: \"0.6\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 0.6"
+    },
+    {
+      "what": "trig-A03 step 2: \"36.87\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 36.87"
+    },
+    {
+      "what": "cth-A02 step 1: \"69.75\" should be rejected",
+      "ok": true,
+      "detail": "app rejected; independent value 55"
+    },
+    {
+      "what": "cth-A02 step 1: \"55\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 55"
+    },
+    {
+      "what": "cth-A02 step 2: \"55\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 55"
+    },
+    {
+      "what": "coming back resumes the same test question",
+      "ok": true,
+      "detail": "same question"
+    }
+  ],
+  "transcript": [
+    "Maths topic M4 (Geometry & Measures).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "Warm-up offered.",
+    "[screenshot 02-warm-up-phone.png and 02-warm-up-laptop.png] warm-up",
+    "Warm-up 1: \"48 + 12\" — typed \"60\" — app accepted — true answer 60",
+    "[check] OK: warm-up 1: \"60\" for 48 + 12 accepted — app accepted",
+    "Warm-up 2: \"11 × 23\" — typed \"253\" — app accepted — true answer 253",
+    "[check] OK: warm-up 2: \"253\" for 11 × 23 accepted — app accepted",
+    "Warm-up 3: \"84 ÷ 7\" — typed \"16\" — app rejected — true answer 12",
+    "[check] OK: warm-up 3: \"16\" for 84 ÷ 7 rejected — app rejected",
+    "[screenshot 03-warm-up-3-phone.png and 03-warm-up-3-laptop.png] warm-up-3",
+    "Warm-up 4: \"Find 3/5 of 35\" — typed \"21\" — app accepted — true answer 21",
+    "[check] OK: warm-up 4: \"21\" for Find 3/5 of 35 accepted — app accepted",
+    "Warm-up 5: \"25% of 8\" — typed \"idk\" — app rejected — true answer 2",
+    "[check] OK: warm-up 5: \"idk\" for 25% of 8 rejected — app rejected",
+    "[screenshot 04-warm-up-result-phone.png and 04-warm-up-result-laptop.png] warm-up-result",
+    "[screenshot 05-maths-topics-phone.png and 05-maths-topics-laptop.png] maths-topics",
+    "[screenshot 06-topic-m4-phone.png and 06-topic-m4-laptop.png] topic-M4",
+    "Question 1 (shp-A04): Two similar shapes have a length scale factor of 4. What is the area scale factor?",
+    "[screenshot 07-question-1-phone.png and 07-question-1-laptop.png] question-1",
+    "  Step 1: \"The area scale factor = (length scale factor)². Calculate it.\" — typed \"16\" (right) — app accepted \"✓ Correct. Area scale factor = 4² = 16.\" — independent value 16",
+    "[check] OK: shp-A04 step 1: \"16\" should be accepted — app accepted; independent value 16",
+    "[screenshot 08-q1-step1-phone.png and 08-q1-step1-laptop.png] q1-step1",
+    "  Step 2: \"If the smaller shape has area 5 cm², find the area of the larger shape.\" — typed \"80\" (right) — app accepted \"✓ Correct. Area = 5 × 16 = 80 cm².\" — independent value 80",
+    "[check] OK: shp-A04 step 2: \"80\" should be accepted — app accepted; independent value 80",
+    "Question 2 (shp-A05): Two similar rectangles have lengths 5 cm and 15 cm. The smaller has width 3 cm. Find the width of the larger.",
+    "[screenshot 09-question-2-phone.png and 09-question-2-laptop.png] question-2",
+    "  Step 1: student asks for a hint — \"💡 Hint 1: Scale factor = larger length ÷ smaller length.\"",
+    "  Step 1: \"Find the length scale factor.\" — typed \"3\" (right) — app accepted \"✓ Correct. Scale factor = 15/5 = 3.\" — independent value 3",
+    "[check] OK: shp-A05 step 1: \"3\" should be accepted — app accepted; independent value 3",
+    "[screenshot 10-q2-step1-phone.png and 10-q2-step1-laptop.png] q2-step1",
+    "  Step 2: \"Find the width of the larger rectangle.\" — typed \"9\" (try) — app accepted \"✓ Correct. Larger width = 3 × 3 = 9 cm.\" — independent value 9",
+    "[check] OK: shp-A05 step 2: \"9\" should be accepted — app accepted; independent value 9",
+    "Question 3 (trig-A03): In a right-angled triangle, the opposite side is 6 cm and the hypotenuse is 10 cm. Find angle x.",
+    "[screenshot 11-question-3-phone.png and 11-question-3-laptop.png] question-3",
+    "Student looks for the worked example: there is none in the topic test (by design; it is in practice).",
+    "  Step 1: \"Write sin x = opposite/hypotenuse. What fraction do you get?\" — typed \"0.6\" (right) — app accepted \"✓ Correct. sin x = 6/10 = 0.6\" — independent value 0.6",
+    "[check] OK: trig-A03 step 1: \"0.6\" should be accepted — app accepted; independent value 0.6",
+    "  Step 2: \"Use sin⁻¹ to find angle x. Give your answer in degrees to 2 d.p.\" — typed \"36.87\" (try) — app accepted \"✓ Correct. x = sin⁻¹(0.6) = 36.87°\" — independent value 36.87",
+    "[check] OK: trig-A03 step 2: \"36.87\" should be accepted — app accepted; independent value 36.87",
+    "[screenshot 12-q3-step2-phone.png and 12-q3-step2-laptop.png] q3-step2",
+    "Question 4 (cth-A02): O is the centre of a circle. The angle at the centre AOB = 110°. Find the angle at the circumference ACB, where C is any point on the major arc.",
+    "[screenshot 13-question-4-phone.png and 13-question-4-laptop.png] question-4",
+    "  Step 1: \"The angle at the centre is twice the angle at the circumference. Use this to find angle ACB.\" — typed \"69.75\" (wrong) — app rejected \"Not quite — check your working.\" — independent value 55",
+    "[check] OK: cth-A02 step 1: \"69.75\" should be rejected — app rejected; independent value 55",
+    "  Step 1: \"The angle at the centre is twice the angle at the circumference. Use this to find angle ACB.\" — typed \"55\" (right) — app accepted \"✓ Correct. Angle at centre = 2 × angle at circumference; ACB = 110°/2 = 55°\" — independent value 55",
+    "[check] OK: cth-A02 step 1: \"55\" should be accepted — app accepted; independent value 55",
+    "  Step 2: \"Calculate angle ACB.\" — typed \"55\" (try) — app accepted \"✓ Correct. Angle ACB = 55°\" — independent value 55",
+    "[check] OK: cth-A02 step 2: \"55\" should be accepted — app accepted; independent value 55",
+    "[screenshot 14-q4-step2-phone.png and 14-q4-step2-laptop.png] q4-step2",
+    "Question 5 (pyth-B06): A ship sails 15 km due north then 8 km due east. How far is it from its starting point?",
+    "[screenshot 15-question-5-phone.png and 15-question-5-laptop.png] question-5",
+    "  Step 1: \"The path forms a right triangle. Identify the two legs.\" — a statement with no answer box; the student taps Next.",
+    "  Step 2: \"Use Pythagoras: d² = 15² + 8².\" — a statement with no answer box; the student taps Next.",
+    "  Step 3: \"Find d.\" — the student gives up here and leaves the question unfinished.",
+    "[screenshot 16-question-5-left-unfinished-phone.png and 16-question-5-left-unfinished-laptop.png] question-5-left-unfinished",
+    "Student taps Home and leaves the test.",
+    "[screenshot 17-after-leaving-phone.png and 17-after-leaving-laptop.png] after-leaving",
+    "Student comes back to the topic: \"Carry on your topic test (question 5 of 10) →\".",
+    "[check] OK: coming back resumes the same test question — same question",
+    "[screenshot 18-after-coming-back-phone.png and 18-after-coming-back-laptop.png] after-coming-back"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-17/M4-5/01-home-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/02-warm-up-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/02-warm-up-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/03-warm-up-3-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/03-warm-up-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/04-warm-up-result-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/04-warm-up-result-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/05-maths-topics-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/05-maths-topics-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/06-topic-m4-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/06-topic-m4-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/07-question-1-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/07-question-1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/08-q1-step1-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/08-q1-step1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/09-question-2-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/09-question-2-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/10-q2-step1-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/10-q2-step1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/11-question-3-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/11-question-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/12-q3-step2-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/12-q3-step2-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/13-question-4-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/13-question-4-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/14-q4-step2-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/14-q4-step2-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/15-question-5-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/15-question-5-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/16-question-5-left-unfinished-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/16-question-5-left-unfinished-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/17-after-leaving-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/17-after-leaving-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-5/18-after-coming-back-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-5/18-after-coming-back-laptop.png"
+  ],
+  "cost": 0.19386799999999998,
+  "tutorModel": "claude-sonnet-5-5",
+  "tutorCost": 0,
+  "apiCalls": 5,
+  "browserApiCalls": 0
+}

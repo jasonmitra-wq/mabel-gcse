@@ -1713,3 +1713,8 @@ Found by tools/site-test.js (M1-M6). After the fixes, `node tools/maths-recomput
   - workedExample.question NEW: 'Liquid density 1.2 g/cm³ fills a container 40 cm² base, 6 cm deep. Find the mass in kg.'
   - workedExample.steps OLD: 'Volume = 40 × 5 = 200 cm³' / 'Mass = 1.2 × 200 = 240 g' / '240 g = <strong>0.24 kg</strong>'
   - workedExample.steps NEW: 'Volume = 40 × 6 = 240 cm³' / 'Mass = 1.2 × 240 = 288 g' / '288 g = <strong>0.288 kg</strong>'
+
+## Tutor flow brief (docs/briefs/2026-10-17-tutor-flow.md step 5a), 2026-10-17
+- spd-C02 steps[2] (statement, no answer box): in a topic test a statement now shows its prompt and keeps its worked answer until the question is done (js/maths.js, MATHS_INPUT_FIXES). This prompt printed "d/120" while the marked last step's answer is d = 120.
+  - prompt OLD: 'Solve: find the value of d/120 by combining fractions. What is the combined fraction coefficient of d?'
+  - prompt NEW: 'Combine d/60 + d/40 into one fraction of d.'

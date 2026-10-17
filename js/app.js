@@ -173,7 +173,15 @@ function showHome(hasSaved) {
     ? `<div style="font-size:0.85rem;color:var(--amber);margin-top:0.5rem;font-weight:600">${streak.currentStreak} day streak 🔥</div>`
     : '';
 
-  const greeting = _pickGreeting();
+  // Maths fixes (js/maths.js MATHS_INPUT_FIXES): a topic test left part-way gets
+  // its own resume card, and "Pick up where you left off" is only said when a
+  // resume card is on the page.
+  const mathsFix  = typeof Maths !== 'undefined' && Maths.MATHS_INPUT_FIXES;
+  const mathsTest = mathsFix ? Maths.savedTestSummary() : null;
+  let greeting = _pickGreeting();
+  if (mathsFix && !(last?.subtopicId && last?.subtopicName) && !mathsTest && /^Pick up where you left off/.test(greeting)) {
+    greeting = "Small sessions add up. Let's do one now.";
+  }
 
   // ── Continue card ───────────────────────────────────────────
   let continueHtml = '';
@@ -192,6 +200,20 @@ function showHome(hasSaved) {
           <div class="home-continue-meta">${subj}${code}</div>
         </div>
         <button class="btn pri" style="flex-shrink:0;white-space:nowrap" onclick="event.stopPropagation();Lessons.open('${last.subtopicId}','${safeName}','${safeCode}','${safeSubj}')">Resume →</button>
+      </div>`;
+  }
+
+  if (mathsTest) {
+    const name = mathsTest.topicName ? ` · ${mathsTest.topicName}` : '';
+    continueHtml += `
+      <div class="home-continue" onclick="Maths.resumeTestFromHome()">
+        <div class="home-continue-play">▶</div>
+        <div class="home-continue-body">
+          <div class="home-continue-label">Carry on your topic test</div>
+          <div class="home-continue-title">Question ${mathsTest.question} of ${mathsTest.total}</div>
+          <div class="home-continue-meta">Maths${name}</div>
+        </div>
+        <button class="btn pri" style="flex-shrink:0;white-space:nowrap" onclick="event.stopPropagation();Maths.resumeTestFromHome()">Resume →</button>
       </div>`;
   }
 

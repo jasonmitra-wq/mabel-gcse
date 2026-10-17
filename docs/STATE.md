@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: HOLD — API credit error (2026-10-17). Brief docs/briefs/2026-10-17-tutor-flow.md: steps 1–2 done; step 3 FLOW_FIX code and fix round 1 in, re-run of the 6 failed runs (text p1-energy-stores, p2-current-voltage, b3-defences, g5-development; website p1-energy-stores, b3-defences) not done; step 4 done; step 5 code next. After credits: re-run step 3 failures once, then step 5 maths website re-run, then step 6 report. After the brief: Phase 2, task 2.6, P3 (new session).
+Runbook position: HOLD — API credit error (2026-10-17). Brief docs/briefs/2026-10-17-tutor-flow.md: steps 1, 2 and 4 done; step 3 FLOW_FIX code and its one fix round in (flag off proved identical), re-run of the 6 failed runs not done (text p1-energy-stores, p2-current-voltage, b3-defences, g5-development; website p1-energy-stores, b3-defences); step 5 maths code done (5a statements, 5b power of ten, 5c home resume card; checked in the browser), its maths website re-run not done. After credits: run those re-runs once each (dry run first, --max-usd 5), list remaining faults in docs/ESCALATIONS.md, commit "Tutor flow fixes (FLOW_FIX)", then step 6 report. After the brief: Phase 2, task 2.6, P3 (new session).
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

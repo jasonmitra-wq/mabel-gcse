@@ -9175,7 +9175,7 @@ const MathsQuestions = (() => {
           explanation: 'd/60 + d/40 = 5.'
         },
         {
-          prompt: 'Solve: find the value of d/120 by combining fractions. What is the combined fraction coefficient of d?',
+          prompt: 'Combine d/60 + d/40 into one fraction of d.',
           hint1: 'LCM of 60 and 40 is 120.',
           hint2: '2d/120 + 3d/120 = 5d/120.',
           hint3: '5/120 = 1/24. So d/24 = 5.',

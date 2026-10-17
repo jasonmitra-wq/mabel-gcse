@@ -450,7 +450,12 @@ const Maths = (() => {
     // MATHS_INPUT_FIXES: a step with no answer box is a statement to read, with
     // a Next button. It earns no marks, so it is not shown as something to answer.
     if (MATHS_INPUT_FIXES && isSkip) {
-      const text = step.explanation || step.displayAnswer || step.prompt;
+      // In a topic test the worked answer of a statement would give away the
+      // question (M2 "Find f⁻¹(x)", M4 "Which congruence condition applies?"):
+      // the step shows its instruction, and the answer only once the question is done.
+      const inTest = _testMode && step.prompt;
+      const text = inTest ? step.prompt : (step.explanation || step.displayAnswer || step.prompt);
+      const reveal = inTest ? (step.explanation || step.displayAnswer || '') : '';
       return `
       <div class="maths-step maths-step-statement ${unlocked ? '' : 'locked'}" id="mathsStep_${i}" data-step="${i}">
         <div class="maths-step-num">
@@ -458,6 +463,7 @@ const Maths = (() => {
         </div>
         ${hidePrompt ? `<div class="maths-step-prompt" id="stepPromptLocked_${i}" style="color:var(--muted);font-style:italic">Finish step ${i} first.</div>` : ''}
         <div class="maths-step-prompt" id="stepPrompt_${i}"${hidePrompt ? ' style="display:none"' : ''}>${text}</div>
+        ${reveal ? `<div class="maths-step-reveal" id="stepReveal_${i}" style="display:none;font-size:0.85rem;color:var(--muted);margin:0.3rem 0 0.5rem">${reveal}</div>` : ''}
         <button class="btn" id="stepNext_${i}" style="font-size:0.85rem;padding:0.35rem 0.9rem${hidePrompt ? ';display:none' : ''}"
           onclick="Maths._skipStep(${i})" ${unlocked ? '' : 'disabled'}>Next →</button>
       </div>`;
@@ -476,7 +482,7 @@ const Maths = (() => {
           : `<div class="maths-step-input-row">
                ${unit}
                <input type="text" id="stepInput_${i}" class="maths-step-input"
-                 placeholder="${MATHS_INPUT_FIXES && step.unit ? 'Answer' : 'Your answer…'}" ${unlocked ? '' : 'disabled'}
+                 placeholder="${MATHS_INPUT_FIXES ? _placeholder(step) : 'Your answer…'}" ${unlocked ? '' : 'disabled'}
                  onkeydown="if(event.key==='Enter')Maths._checkStep(${i})">
                <button class="maths-step-check-btn" id="stepBtn_${i}"
                  onclick="Maths._checkStep(${i})" ${unlocked ? '' : 'disabled'}>Check</button>
@@ -753,6 +759,22 @@ const Maths = (() => {
     if (message) _setTutorBar(message, false);
   }
 
+  // MATHS_INPUT_FIXES: the home page's card for a topic test left part-way, or null.
+  function savedTestSummary() {
+    const p = _savedProgress('test');
+    if (!p || p.mode !== 'test' || !Array.isArray(p.testQids) || !p.testQids.length) return null;
+    const n = (p.questionDone ? p.testQIdx + 1 : p.testQIdx) + 1;
+    if (n > p.testQids.length) return null;
+    return { topicName: p.topicName || _syllabus?.topics?.[p.topic]?.name || '', question: n, total: p.testQids.length };
+  }
+  async function resumeTestFromHome() {
+    App.setStage('Maths');
+    _sessionStart    = Date.now();
+    _sessionUsedQids = [];
+    if (!_syllabus) await _loadSyllabus();
+    _resumeTest();
+  }
+
   function _resumeTest() {
     const p = _savedProgress('test');
     if (!p || p.mode !== 'test') return;
@@ -801,6 +823,8 @@ const Maths = (() => {
     document.getElementById('mathsQProgress')?.remove();
 
     if (_testMode) {
+      // MATHS_INPUT_FIXES: the statements' worked answers, now the question is done.
+      if (MATHS_INPUT_FIXES) document.querySelectorAll('.maths-step-reveal').forEach(el => { el.style.display = ''; });
       // Test scoring: first-attempt-correct steps only
       const skipCount    = (_currentQ?.steps || []).filter(s => s.checkType === 'skip').length;
       const stepsTotal   = (_currentQ?.steps.length || 0) - skipCount;
@@ -943,8 +967,26 @@ const Maths = (() => {
     const m = String(str).replace(/\s+/g, '').replace(/−/g, '-').match(/^(-?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);
     return m && +m[2] !== 0 ? +m[1] / +m[2] : null;
   }
+  // MATHS_INPUT_FIXES: a step that asks for the power of 10 (its answer is the power).
+  function _wantsPower(step) {
+    return /\b(?:the|correct) power of (?:10|ten)\b|\b10ⁿ|\benter n\b(?!\()/i.test(step.prompt || '');
+  }
+  const _SUPERS = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9', '⁻': '-' };
+  // "10^6", "10**6", "10^(-3)", "10⁶", "1 × 10^6" → the power; otherwise null.
+  function _powerValue(str) {
+    const t = String(str).replace(/\s+/g, '').replace(/[−–]/g, '-')
+      .replace(/⁻?[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, m => '^' + [...m].map(c => _SUPERS[c]).join('')).replace(/\^\^/g, '^');
+    const m = t.match(/^(?:\d+(?:\.\d+)?[×x*])?10(?:\^|\*\*)\(?(-?\d+)\)?$/i);
+    return m ? +m[1] : null;
+  }
   function _wantsFraction(step) {
     return !!(step.displayAnswer && step.displayAnswer.includes('/') && /fraction/i.test(step.prompt || ''));
+  }
+  // MATHS_INPUT_FIXES: what to type, when the box takes one form only.
+  function _placeholder(step) {
+    if (_wantsFraction(step)) return 'A fraction, like 5/3';
+    if (_wantsPower(step)) return 'The power, e.g. 6 for 10⁶';
+    return step.unit ? 'Answer' : 'Your answer…';
   }
   // Why an input could not be marked: '' if it can be marked, otherwise the message to show.
   function _inputProblem(raw, step) {
@@ -961,6 +1003,8 @@ const Maths = (() => {
       const f = _fractionValue(str);
       if (f !== null) return Math.abs(f - step.answer) <= (step.tolerance ?? 0.005) + 1e-9;
       if (_wantsFraction(step)) return false;
+      const pw = _wantsPower(step) ? _powerValue(str) : null;
+      if (pw !== null && (Math.abs(pw - step.answer) <= (step.tolerance ?? 0.005) || Math.abs(Math.pow(10, pw) - step.answer) <= (step.tolerance ?? 0.005))) return true;
     }
 
     // If the step has a displayAnswer containing '/', accept fraction string too
@@ -1238,6 +1282,9 @@ const Maths = (() => {
     _skipStep,
     _showAnswer,
     _resumeTest,
+    savedTestSummary,
+    resumeTestFromHome,
+    MATHS_INPUT_FIXES,
     _showHint,
     _switchTab,
     _startTest,

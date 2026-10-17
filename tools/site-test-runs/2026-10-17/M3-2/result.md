@@ -1,0 +1,127 @@
+# Site test: M3 (maths, 2026-10-17)
+
+**FAIL** · cost $0.1823 (5 tool calls, 0 calls from the site)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "After 4 questions answered correctly, the home page still shows Dashboard 'Nothing secured yet — 0% across all subjects' and History 'No sessions yet'. The partial topic test is not saved, and there is no 'resume test' prompt.",
+      "step": "Student taps Home and leaves the test (17-after-leaving)"
+    },
+    {
+      "what": "The worked example for Q1 (280 g ÷ 35 cm³) has the same answer as the real question: 8 g/cm³. 'Different numbers, same method' gives the answer away, so the student can copy 8 without calculating.",
+      "step": "Question 1 (cmp-A03) Step 2"
+    },
+    {
+      "what": "Q5 has a step 3 asking for the mass in kg, but the question only says 'Calculate the mass of the liquid' with no unit. The kg conversion is only asked for in the worked example, so a mark depends on an unstated requirement.",
+      "step": "Question 5 (cmp-B04) Step 3"
+    },
+    {
+      "what": "On phone, the 'Read the worked example for this step' steps have no link to the example. It sits in a separate tab the student has to find, and they marked 'understood' without seeing it.",
+      "step": "Question 1 Step 1 / Question 2 Step 1 (phone)"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "The home 'Revise a topic' card lists 'Biology · Chemistry · Physics · Geography · Sociology' but not Maths, even though Maths topics exist.",
+      "screenshot": "01-home-laptop.png"
+    },
+    {
+      "what": "After a correct answer the header replaces 'Topic test · question 1 of 10' with 'Good — keep going.', so the question count disappears.",
+      "screenshot": "08-q1-step2-phone.png"
+    },
+    {
+      "what": "Step 1 tells the student to 'Read the worked example for this step', but on phone the example is hidden behind the 'Worked example' tab with no link.",
+      "screenshot": "07-question-1-phone.png"
+    }
+  ],
+  "would_quit": {
+    "turn": "Question 5",
+    "quote": "Use M = D × V to find the mass. (g)",
+    "why": "Fifth question and the first 3-mark one, with a third kg step the question never asked for. A bored student gives up rather than grind through it."
+  },
+  "fixes": [
+    {
+      "target": "Worked example for cmp-A03",
+      "change": "Use numbers that give a different answer, e.g. mass 300 g and volume 40 cm³, giving 7.5 g/cm³."
+    },
+    {
+      "target": "Question cmp-B04 text/steps",
+      "change": "Either add 'Give your answer in kg' to the question or remove step 3, so the mark scheme matches what is asked."
+    },
+    {
+      "target": "Topic test state on Home/History/Dashboard",
+      "change": "Save progress after each step and show a 'Resume Ratio test – question 5 of 10' card on Home. Also log the in-progress session in History."
+    },
+    {
+      "target": "Home 'Revise a topic' card subject list",
+      "change": "Add Maths to the subject list, e.g. 'Maths · Biology · Chemistry · Physics · Geography · Sociology'."
+    },
+    {
+      "target": "Phone layout, 'Mark as understood' steps",
+      "change": "Add a 'Show worked example' button inside the step that switches to the tab. Also keep 'question N of 10' visible next to the 'Good — keep going.' message."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Maths topic M3 (Ratio, Proportion & Rates of Change).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    Warm-up offered.
+    [screenshot 02-warm-up-phone.png and 02-warm-up-laptop.png] warm-up
+    Warm-up 1: "45 + 19" — typed "64" — app accepted — true answer 64
+    [check] OK: warm-up 1: "64" for 45 + 19 accepted — app accepted
+    Warm-up 2: "11 × 9" — typed "99" — app accepted — true answer 99
+    [check] OK: warm-up 2: "99" for 11 × 9 accepted — app accepted
+    Warm-up 3: "70 ÷ 5" — typed "18.5" — app rejected — true answer 14
+    [check] OK: warm-up 3: "18.5" for 70 ÷ 5 rejected — app rejected
+    [screenshot 03-warm-up-3-phone.png and 03-warm-up-3-laptop.png] warm-up-3
+    Warm-up 4: "Find 1/4 of 20" — typed "5" — app accepted — true answer 5
+    [check] OK: warm-up 4: "5" for Find 1/4 of 20 accepted — app accepted
+    Warm-up 5: "25% of 72" — typed "idk" — app rejected — true answer 18
+    [check] OK: warm-up 5: "idk" for 25% of 72 rejected — app rejected
+    [screenshot 04-warm-up-result-phone.png and 04-warm-up-result-laptop.png] warm-up-result
+    [screenshot 05-maths-topics-phone.png and 05-maths-topics-laptop.png] maths-topics
+    [screenshot 06-topic-m3-phone.png and 06-topic-m3-laptop.png] topic-M3
+    Question 1 (cmp-A03): A rectangular block has mass 360 g and volume 45 cm³. Calculate its density.
+    [screenshot 07-question-1-phone.png and 07-question-1-laptop.png] question-1
+      Step 1: "Write the formula for density." — marked as understood (no answer box).
+      Step 2: "Calculate the density in g/cm³." — typed "8" (right) — app accepted "✓ Correct. Density = 360 ÷ 45 = 8 g/cm³." — independent value 8
+    [check] OK: cmp-A03 step 2: "8" should be accepted — app accepted; independent value 8
+    [screenshot 08-q1-step2-phone.png and 08-q1-step2-laptop.png] q1-step2
+    Question 2 (cmp-A05): A substance has density 11.3 g/cm³. Calculate the mass of 20 cm³ of this substance.
+    [screenshot 09-question-2-phone.png and 09-question-2-laptop.png] question-2
+      Step 1: "Rearrange the density formula to find mass." — marked as understood (no answer box).
+      Step 2: "Calculate the mass in grams." — typed "226" (try) — app accepted "✓ Correct. M = 11.3 × 20 = 226 g." — independent value 226
+    [check] OK: cmp-A05 step 2: "226" should be accepted — app accepted; independent value 226
+    Question 3 (pro-A03): y is directly proportional to x. When x = 6, y = 18. Find y when x = 9.
+    [screenshot 10-question-3-phone.png and 10-question-3-laptop.png] question-3
+    Student opens the worked example.
+    [screenshot 11-worked-example-3-phone.png and 11-worked-example-3-laptop.png] worked-example-3
+      Step 1: "Find the constant of proportionality k." — typed "3" (right) — app accepted "✓ Correct. k = 18 ÷ 6 = 3, so y = 3x." — independent value 3
+    [check] OK: pro-A03 step 1: "3" should be accepted — app accepted; independent value 3
+      Step 2: "Find y when x = 9." — typed "27" (try) — app accepted "✓ Correct. y = 3 × 9 = 27." — independent value 27
+    [check] OK: pro-A03 step 2: "27" should be accepted — app accepted; independent value 27
+    [screenshot 12-q3-step2-phone.png and 12-q3-step2-laptop.png] q3-step2
+    Question 4 (rat-A03): Orange squash is mixed with water in the ratio 1 : 4. How much water is needed for 350 ml of squash?
+    [screenshot 13-question-4-phone.png and 13-question-4-laptop.png] question-4
+      Step 1: "Identify the ratio: 1 part squash to 4 parts water. For 350 ml of squash, what is one part?" — typed "438.5" (wrong) — app rejected "Not quite — check your working." — independent value 350
+    [check] OK: rat-A03 step 1: "438.5" should be rejected — app rejected; independent value 350
+      Step 1: "Identify the ratio: 1 part squash to 4 parts water. For 350 ml of squash, what is one part?" — typed "350" (right) — app accepted "✓ Correct. The squash IS the 1 part, so one part = 350 ml." — independent value 350
+    [check] OK: rat-A03 step 1: "350" should be accepted — app accepted; independent value 350
+      Step 2: "Calculate the volume of water needed." — typed "1400" (try) — app accepted "✓ Correct. Water = 4 parts = 4 × 350 = 1400 ml." — independent value 1400
+    [check] OK: rat-A03 step 2: "1400" should be accepted — app accepted; independent value 1400
+    [screenshot 14-q4-step2-phone.png and 14-q4-step2-laptop.png] q4-step2
+    Question 5 (cmp-B04): A liquid has density 0.8 g/cm³. It is poured into a container with base area 50 cm² to a depth of 6 cm. Calculate the mass of the liquid.
+    [screenshot 15-question-5-phone.png and 15-question-5-laptop.png] question-5
+      Step 1: "Calculate the volume of the liquid. (cm³)" — typed "300" (right) — app accepted "✓ Correct. Volume = 50 × 6 = 300 cm³." — independent value 300
+    [check] OK: cmp-B04 step 1: "300" should be accepted — app accepted; independent value 300
+      Step 2: "Use M = D × V to find the mass. (g)" — the student gives up here and leaves the question unfinished.
+    [screenshot 16-question-5-left-unfinished-phone.png and 16-question-5-left-unfinished-laptop.png] question-5-left-unfinished
+    Student taps Home and leaves the test.
+    [screenshot 17-after-leaving-phone.png and 17-after-leaving-laptop.png] after-leaving

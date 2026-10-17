@@ -750,3 +750,12 @@ Fixes for the auditor's factual errors, contradictions, wrong terms and rule bre
   - OLD: The national grid and electricity generation
   - NEW: Energy resources and the National Grid
 - p1-power | (none) | Jason decision P1 W2: W = Fs stays in p1-power; no change
+
+## Bored-student tester fixes (2026-10-17)
+
+Findings from the text tester (tools/teach-sim.js --persona bored), runs tools/teach-sim-runs/<lesson>-2026-10-17-1-bored.md.
+
+- p1-power | keyPoints[1].content | judge fix 4 (keyPoints[1].content: first worked example too hard for weak arithmetic) | old: "Worked example 1: a light bulb transfers 1800 J in 3 minutes (= 180 s) → P = 1800 ÷ 180 = <strong>10 W</strong>." new: "Worked example 1: a light bulb transfers 100 J in 10 s → P = 100 ÷ 10 = <strong>10 W</strong>. Over 3 minutes (= 180 s) it transfers 1800 J. P = 1800 ÷ 180 = <strong>10 W</strong> again."
+- p1-heating | keyPoints[1].tutor_note | judge fix 4 (keyPoints[1].tutor_note: rearranging for c) | added: "To find c, multiply the mass by the temperature change first. Then divide the energy by that answer."
+- p1-national-grid | keyPoints[0].tutor_note | judge fix 2 (keyPoints[0].tutor_note: no-calculator I² example) | added: "Try it without a calculator: 2 × 2 = 4, but 1 × 1 = 1. So halving the current cuts the heating loss to a quarter."
+- Not changed (lesson file already right; the fault was the tutor's, covered by fixT4 in js/teach-core.js): p1-conservation and p1-heating "truncated text" (a tester artefact: tools/bored-student.js cut each field to 400 characters for the judge; now marked " […]"); p1-efficiency keyPoints[1].content (formula already stated before the example); p1-energy-stores keyPoints[0].writeBullets ("four main ones" was the tutor's; the lesson says eight stores, four pathways); p1-heating keyPoints[3].tutor_note (the "most particles" claim was the tutor's).

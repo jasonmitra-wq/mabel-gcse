@@ -99,7 +99,7 @@ function judgeBody({ lessonTitle, subject, lessonFields, transcript, extra }) {
     `You judge a tutoring session for a 15-year-old who is easily bored and weak at mental arithmetic, learning ${subject}. ` +
     `You are strict and concrete. Reply with JSON only, no prose and no code fence.`;
   const user = [
-    `Lesson: "${lessonTitle}". Its fields (for naming fixes):`,
+    `Lesson: "${lessonTitle}". Its fields (for naming fixes; " […]" means this outline cut a long field short — the lesson file itself is complete):`,
     lessonFields,
     '',
     'Transcript. T = tutor turn, S = student turn:',
@@ -133,11 +133,14 @@ function verdict(j) {
   return { pass: !reasons.length, reasons };
 }
 
-// Lesson fields as path: text lines, short enough for the judge.
+// Lesson fields as path: text lines, short enough for the judge. A field cut
+// short ends in " […]" so the judge does not report the lesson as truncated
+// (first-pass judges did, for p1-conservation and p1-heating).
 function lessonFieldLines(data) {
   const out = [];
+  const short = s => (s.length > 400 ? `${s.slice(0, 400)} […]` : s);
   const walk = (v, p) => {
-    if (typeof v === 'string') { if (!/^(id|topic|url|icon|searchQuery|diagram)$/.test(p.split('.').pop())) out.push(`${p}: ${v.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').slice(0, 400)}`); }
+    if (typeof v === 'string') { if (!/^(id|topic|url|icon|searchQuery|diagram)$/.test(p.split('.').pop())) out.push(`${p}: ${short(v.replace(/<[^>]+>/g, '').replace(/\s+/g, ' '))}`); }
     else if (Array.isArray(v)) v.forEach((x, i) => walk(x, `${p}[${i}]`));
     else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) { if (k !== 'videos' && k !== 'videoLinks') walk(x, p ? `${p}.${k}` : k); }
   };

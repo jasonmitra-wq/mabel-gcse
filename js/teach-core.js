@@ -374,6 +374,9 @@ function create(env) {
         `If she says she is confused or that it is too long ("huh?", "what?", "this is long", "i don't get it"), that is not an answer: say the same idea again in ONE shorter, simpler sentence, then ask a simpler question about it.`,
         `If she says she wants to stop, is tired, hungry or bored, say in one short line that that's fine and she can come back to this lesson any time. Then give one short sentence and one easy question, in case she carries on.`,
         `Only state facts that are in the key point's content and key terms. If you are not sure a fact is right, leave it out.`,
+        `If you offered to explain or show something and she said yes, your next reply does exactly that, before anything new. If she said no, do not explain it; move on.`,
+        `Once she has said it is too long, or that she is bored or wants to skip, keep every later reply to two short sentences and one question.`,
+        `After you teach an idea, ask her to use it (for example on a small number or an everyday case), not to repeat the words you just said. If her answer shows a wrong idea, name the wrong idea and correct it with one reason before you move on.`,
       ].join('\n') : '',
     ].filter(Boolean).join('\n');
   }
@@ -422,7 +425,9 @@ function create(env) {
       lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.nextIndex)),
         _remainingLine(decision.nextIndex, _state.facts[decision.nextIndex], _openingFact(decision.nextIndex)));
     } else if (decision.kind === 'complete') {
-      lines.push(`${_toldRestLine(decision.toldRest) || _toldLine(decision.toldNow) || `Acknowledge her reply naturally. `}Then let her know all ${_points.length} key points in this lesson have now been covered, and close warmly in one short line. Do not ask a question. Do not offer practice questions. She can ask you anything further, or leave, whenever she likes.`);
+      lines.push(`${_toldRestLine(decision.toldRest) || _toldLine(decision.toldNow) || `Acknowledge her reply naturally. `}${FIX_T4
+        ? `Then say you have reached the end of this lesson, name in a few words one thing she got right, and close warmly in one short line. Do not say she has covered, learned or mastered everything, and do not list topics.`
+        : `Then let her know all ${_points.length} key points in this lesson have now been covered, and close warmly in one short line.`} Do not ask a question. Do not offer practice questions. She can ask you anything further, or leave, whenever she likes.`);
     } else if (_state.wrapOffered) {
       lines.push(`All ${_points.length} key points in this lesson have already been covered, and you have ALREADY asked her whether she wants to go over anything else. Do not ask that again in any form — no "anything else?", no "does that feel clear?", no "shall we stop there?". Respond to what she actually said and then stop. If she shows she is finished (no, nothing, bye, thanks, I'm good), give ONE warm, complete goodbye and nothing after it — no question of any kind. A light sign-off such as "same time next week?" is fine as that closing line itself, but only as the goodbye.`);
     } else {

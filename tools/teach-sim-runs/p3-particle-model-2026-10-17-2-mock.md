@@ -74,7 +74,7 @@ Lesson flags: none
 
 **Student** (idk): idk
 
-**Tutor** [complete, point 3]: That is every key point covered. Well done.
+**Tutor** [complete, point 3]: Right. Let us carry on. What word describes how the particles are arranged?
 
 > Recap: Particles vibrate in a fixed place. / Heating makes them move faster.
 

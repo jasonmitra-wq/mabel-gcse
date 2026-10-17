@@ -1,0 +1,437 @@
+{
+  "id": "p1-national-grid",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! So electricity travels hundreds of miles from power stations to your home through cables and transformers — that's the National Grid. What do you think the National Grid connects?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "k so like what am i meant to say",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right — so you need to name what gets connected. What does the National Grid link together?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "power stations and homes i guess?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's exactly right — power stations and homes, plus schools and businesses too. So here's why the grid uses such a huge potential difference. What happens to the current when you make the potential difference much bigger?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "umm the current gets smaller?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's right — when potential difference goes up and power stays the same, current has to come down. Now here's the clever bit: when current flows through the cables, some energy gets wasted as heat. What happens to the power wasted as heat when you halve the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "it halves too?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Not quite — it actually gets cut down to a quarter, not a half, because power loss depends on current squared. Would you like me to walk you through why that happens?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "yeah go on then",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "So the power wasted as heat is proportional to current squared — that's why even a small drop in current saves a massive amount of energy. The formula is: power lost equals current squared times resistance. What do you think happens to the current when the potential difference gets stepped up like that?",
+      "recap": [
+        "The National Grid connects power stations to homes, schools and businesses across the country.",
+        "The Grid uses really high potential differences to push electricity long distances.",
+        "When potential difference increases, the current flowing through the cables gets smaller.",
+        "Smaller currents waste much less energy as heat in the cables during transmission."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "When the potential difference gets stepped up really high, the current flowing through the cables becomes much smaller. So less energy gets wasted as heat in those cables.\n\nWhat does a step-up transformer do to the potential difference?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "it makes it bigger yeah?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes, exactly — it makes it bigger. So after the electricity leaves the power station with that high potential difference and travels safely through the cables without wasting energy, it needs to come back down to a safe level before it reaches your home. What do you think a step-down transformer does to the potential difference?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "makes it smaller i guess... anyway im starving lol",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "That's fair — go grab a snack if you need to! Before you do though: a step-down transformer decreases the potential difference, bringing it back down to a safe level for homes. Why do we need to step it down before electricity reaches your house?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "cuz it would be too dangerous for us? like we'd get shocked or something",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right — high potential difference would be really dangerous to touch.\n\nWould you like me to quickly explain the rest of how this all fits together?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "nah im good im just gonna eat lol",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Enjoy your food! Just so you've got the whole picture: that step-down transformer at the end is what makes it safe for your home, and it's why we can send electricity so far without wasting loads of energy on the way.\n\nWhat happens to the current when the potential difference goes up in those high-voltage cables?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "When electricity travels through those long cables at very high potential difference, the current stays low — that means less energy gets wasted as heat in the wires, which is clever. Then at the end, the step-down transformer brings that potential difference back down to safe levels for homes.\n\nWhat does the step-down transformer do to the potential difference?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "makes it lower? for homes and stuff",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "We use different energy resources to generate it — some like coal and oil will eventually run out, but others like wind and solar can be replenished as we use them. A renewable energy resource is one that keeps getting replaced naturally. What's an example of a renewable energy resource?",
+      "recap": [
+        "Step-up transformers increase the potential difference so electricity travels through cables with a low current.",
+        "Low current means far less energy gets wasted as heat in the cables during transmission.",
+        "Step-down transformers decrease the potential difference back to safe levels before electricity reaches homes.",
+        "This two-step process lets us send electricity long distances efficiently and safely."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "wind or solar i guess",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right — wind and solar are both renewable, so they keep getting replaced. Now, some energy resources won't keep getting replaced — they'll run out eventually. What's an example of a non-renewable energy resource?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "coal or oil like you said",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Now, even though renewable resources like wind and solar are better in some ways, they have a problem: they're not always available when we need them. Solar cells don't work at night, and wind turbines only work when the wind is blowing — we call this being **intermittent**. What happens to a solar panel at night?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "it still makes electricity but like less of it",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right — it does produce less when it's cloudy. But what happens to it at night?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "it still works but just way quieter or smth",
+      "studentType": "wrong",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Not quite — at night there's no sunlight at all, so a solar panel doesn't produce any electricity during those hours. You've covered the really important stuff now: where energy comes from (renewable and non-renewable resources), that some sources are intermittent, and how the National Grid solves that problem by using transformers to send electricity long distances without wasting it.",
+      "recap": [
+        "Renewable energy resources like wind and solar get replaced naturally and won't run out.",
+        "Non-renewable resources like coal and oil will eventually run out because they can't be replaced.",
+        "Renewable energy is intermittent — solar panels don't work at night and wind turbines need wind.",
+        "Intermittency means renewable energy isn't always available when we actually need to use it."
+      ],
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've done really well today — come back whenever you want to practise more. Good luck with your GCSEs!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "nah im good im just gonna eat lol",
+    "would_quit": {
+      "turn": "T10",
+      "quote": "What happens to the current when the potential difference goes up in those high-voltage cables?",
+      "why": "The student has just said they are leaving to eat. The tutor ignores this and re-asks a question already answered at S3. A bored student would close the app here."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think the National Grid connects?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the National Grid link together?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to the current when you make the potential difference much bigger?",
+        "note": "Asks about the current before P = IV has been taught. The student has to guess."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to the power wasted as heat when you halve the current?",
+        "note": "Tests the I² relationship before it is taught. The student guessed wrong: 'it halves too?'"
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to walk you through why that happens?",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What do you think happens to the current when the potential difference gets stepped up like that?",
+        "note": "The promised walk-through has no numbers. The question jumps back to something already answered at S3, and 'like that' has no referent. Student replies 'huh?'"
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does a step-up transformer do to the potential difference?",
+        "note": "This turn taught the drop in current. Transformers had not been taught yet."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "travels safely through the cables without wasting energy",
+        "note": "Factual error. Some energy is still wasted, just less."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why do we need to step it down before electricity reaches your house?",
+        "note": ""
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to quickly explain the rest of how this all fits together?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What happens to the current when the potential difference goes up in those high-voltage cables?",
+        "note": "Ignores the student's exit. Re-asks the S3 question, which this turn did not teach. Uses 'voltage' against keyPoints[1].tutor_note."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the step-down transformer do to the potential difference?",
+        "note": "Repeats the T7 question. The answer is given in the same turn."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "We use different energy resources to generate it",
+        "note": "Does not acknowledge S12. Abrupt topic switch, and 'it' has no referent."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What's an example of a non-renewable energy resource?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to a solar panel at night?",
+        "note": ""
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Right — it does produce less when it's cloudy.",
+        "note": "Says 'Right' to a wrong answer. The student is not corrected about night."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": true,
+        "confusing": true,
+        "quote": "how the National Grid solves that problem by using transformers to send electricity long distances without wasting it",
+        "note": "Factual error. Transformers do not solve intermittency, and the claim of zero waste is wrong."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You've done really well today — come back whenever you want to practise more.",
+        "note": ""
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: teach the fact before asking about it",
+        "change": "Before asking a prediction question, state the rule in one line. For example, say 'P = IV, so if power stays the same and V goes up, I goes down' before asking about current. Say 'loss = I²R, so the current is squared' before asking about halving it.",
+        "quote": "What happens to the power wasted as heat when you halve the current?"
+      },
+      {
+        "target": "keyPoints[0].tutor_note",
+        "change": "Add a no-calculator worked example the tutor must use when it offers a walk-through. Current 2 A gives loss 2×2 = 4 units. Halve it to 1 A and the loss is 1×1 = 1 unit, a quarter. Then ask: 'What if the current is cut to a third?'",
+        "quote": "So the power wasted as heat is proportional to current squared — that's why even a small drop in current saves a massive amount of energy."
+      },
+      {
+        "target": "teach-core: respect exit signals",
+        "change": "When the student declines more help or says they are leaving, give one summary line from revisionCardBullets[1] and end the session. Do not ask a new question.",
+        "quote": "nah im good im just gonna eat lol"
+      },
+      {
+        "target": "teach-core: never affirm a wrong answer",
+        "change": "If the answer is wrong, open with 'Not quite' and correct it immediately. Do not start with 'Right' and then re-ask.",
+        "quote": "Right — it does produce less when it's cloudy."
+      },
+      {
+        "target": "teach-core: end-of-session summary",
+        "change": "Build the summary only from revisionCardBullets. Never claim the grid or transformers fix intermittency or waste no energy. Say 'less energy wasted' (revisionCardBullets[1]).",
+        "quote": "how the National Grid solves that problem by using transformers to send electricity long distances without wasting it"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "would quit at T10",
+      "question does not match what was taught: T2, T3, T5, T6, T10"
+    ]
+  },
+  "cost": 0.214643,
+  "mode": "run",
+  "date": "2026-10-17"
+}

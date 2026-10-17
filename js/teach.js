@@ -380,6 +380,12 @@ const Teach = (() => {
     const top = header.offsetHeight + 8;
     side.style.top = top + 'px';
     side.style.maxHeight = `calc(100vh - ${top + 72}px)`;
+    // UI_FIXES (js/app.js): the header grows after this runs (e.g. the "Start
+    // this topic over" line), which left the top of the jump list under it.
+    if (typeof UI_FIXES !== 'undefined' && UI_FIXES && window.ResizeObserver && !header._sideObserver) {
+      header._sideObserver = new ResizeObserver(() => _positionTerms());
+      header._sideObserver.observe(header);
+    }
   }
 
   function toggleTerms() {

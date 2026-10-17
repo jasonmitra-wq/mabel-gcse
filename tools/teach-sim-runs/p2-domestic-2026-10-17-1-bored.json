@@ -1,0 +1,391 @@
+{
+  "id": "p2-domestic",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! A **direct potential difference** stays in one direction, so the current flows one way only — that's what you get from batteries and cells in torches and phones. What do we call it when a potential difference keeps reversing direction instead?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "A battery pushes current in just one direction — always the same way round. That's called direct current, or dc for short. Where does the current go when you use a battery in a torch?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "from the battery through the bulb and back?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Spot on — it goes out through the bulb and back to the battery. Now, the UK mains supply works differently. How many times per second does the mains current reverse direction?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "like 50 times?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right — 50 times per second is exactly it! So the mains current reverses direction 50 times every single second, which we call 50 Hz. That reversing back and forth is what makes it alternating current, or ac.\n\nWhat voltage is the UK mains supply?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "um like 230 volts?",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Would you like me to just tell you the rest about ac?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "nah im good, ask me stuff",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right — 230 volts is the UK mains voltage. So the mains supply is alternating current at 230 V that reverses 50 times per second.\n\nWhat do you use alternating current for in your home?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "like lights and stuff? plugging things in?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right — lights, phones, kettles, all of those. The thing is, all those devices can use the mains ac supply because ac is what comes out of the wall socket. Your phone charger and kettle are designed to work with that reversing current at 230 V.\n\nWhy do you think we use ac in homes rather than dc from batteries?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "OK, let me put that more simply. Now, when you plug in a kettle or phone charger, the wire that connects them has three different wires inside it, each one doing a different job. The live wire is brown, and that's the one carrying the dangerous 230 V from the mains supply. Which wire colour is the live wire?",
+      "recap": [
+        "Direct current (dc) from batteries flows one way only, like in a torch.",
+        "Alternating current (ac) from the mains reverses direction 50 times every second (50 Hz).",
+        "UK mains supply is 230 volts of alternating current.",
+        "Ac powers most things in your home like lights and kettles."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Inside a cable are three wires with different colours and different jobs. The brown one is called the live wire, and it carries the dangerous 230 V from the mains.\n\nWhat colour is the live wire?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "k",
+      "studentType": "minimal",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "The live wire is brown — it carries the dangerous 230 V from the mains. Now, there's also a blue wire called the neutral wire, and that one completes the circuit by returning the current back to the supply.\n\nWhat does the neutral wire do?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "returns the current back?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right — it returns the current back to the supply. There's also a third wire called the earth wire, and it's green and yellow striped. It's a safety wire that connects the metal casing of an appliance to earth, so if something goes wrong, the appliance doesn't become dangerous.\n\nWhat colour is the earth wire?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Would you like me to just tell you about the earth wire so we can move on?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "yeah just tell me",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "The earth wire is green and yellow. It connects the metal casing to earth so the appliance can't become dangerous if something goes wrong inside.\n\nWhat does earthing mean?",
+      "recap": [
+        "Three wires run through a cable, each with a different job to do.",
+        "The brown live wire carries the dangerous 230 V from the mains supply.",
+        "The blue neutral wire completes the circuit by sending current back.",
+        "The green and yellow earth wire is the safety wire protecting the metal casing."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "dunno im hungry lol",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "That's fair! So earthing is just connecting the metal case to the ground through that green and yellow wire, so it stays safe even if something breaks inside.\n\nWhy does connecting the metal casing to earth make an appliance safer?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "so like if something breaks the electricity goes to earth instead of like shocking you?",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Exactly — if something inside breaks and the metal casing becomes live, the current flows safely down the earth wire to the ground instead of through you.\n\nYou've got the main idea spot on: earthing keeps you safe when things go wrong. Come back to this whenever you're ready, or if you want to chat through anything else!",
+      "recap": [
+        "The earth wire (green and yellow) connects the metal casing safely to the ground.",
+        "If something breaks inside, the dangerous electricity flows into the earth instead of you.",
+        "This stops you getting an electric shock when you touch the appliance."
+      ],
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've done really well today — you've understood the key safety ideas. Come back whenever you're ready to learn more.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "S11: this is long",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do we call it when a potential difference keeps reversing direction instead?",
+        "note": "Asks the name for ac before ac has been taught. The student replied 'what?'"
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Where does the current go when you use a battery in a torch?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How many times per second does the mains current reverse direction?",
+        "note": "Asks for the mains frequency before teaching it. The student had to guess."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "So the mains current reverses direction 50 times every single second, which we call 50 Hz.",
+        "note": "Factual error: 50 Hz is 50 complete cycles per second, so the current reverses 100 times. It also asks for the mains voltage, which had not been taught."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Would you like me to just tell you the rest about ac?",
+        "note": "Ignores the student's correct answer '230 volts' and gives no feedback."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you use alternating current for in your home?",
+        "note": "This question was not taught and does not test anything from the lesson."
+      },
+      {
+        "turn": "T6",
+        "on_topic": false,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why do you think we use ac in homes rather than dc from batteries?",
+        "note": "Off-spec question that is not in the lesson. The student replied 'huh?'"
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": true,
+        "quote": "OK, let me put that more simply. Now, when you plug in a kettle or phone charger, the wire that connects them has three different wires inside it",
+        "note": "Promises to simplify, then abandons the question and switches topic. Around 60 words."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What colour is the live wire?",
+        "note": "Repeats T7 almost word for word right after the student said 'this is long'."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the neutral wire do?",
+        "note": "Answers its own previous question after the student's non-answer 'k'."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What colour is the earth wire?",
+        "note": "Asks the student to parrot a colour given one sentence earlier, which is low value."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to just tell you about the earth wire so we can move on?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does earthing mean?",
+        "note": "The student had just said 'yeah just tell me', but the tutor ends with another question anyway."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why does connecting the metal casing to earth make an appliance safer?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Exactly — if something inside breaks and the metal casing becomes live, the current flows safely down the earth wire to the ground instead of through you.",
+        "note": "Ends the session without covering 'live wire dangerous even when switch is open' or the neutral wire's ~0 V."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You're welcome! You've done really well today — you've understood the key safety ideas.",
+        "note": ""
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: only ask questions about content already taught",
+        "change": "Teach the fact first, then question it. Never open by asking for the name, frequency or voltage of ac before stating it.",
+        "quote": "T2: Now, the UK mains supply works differently. How many times per second does the mains current reverse direction?"
+      },
+      {
+        "target": "keyPoints[0].memTip",
+        "change": "Replace 'back and forth 50 times a second' with '50 complete back-and-forth cycles every second'. This stops the tutor saying the current reverses 50 times per second.",
+        "quote": "T3: So the mains current reverses direction 50 times every single second, which we call 50 Hz."
+      },
+      {
+        "target": "teach-core: acknowledge the student's answer before any check-in offer",
+        "change": "When the student answers, confirm it immediately in the same turn. Never reply with only a check-in offer.",
+        "quote": "S4: um like 230 volts?"
+      },
+      {
+        "target": "teach-core: respond to boredom signals",
+        "change": "After 'this is long', 'k' or 'huh?', cut the next turn to 25 words or fewer with one new fact and one question. Do not repeat the previous turn.",
+        "quote": "S8: this is long"
+      },
+      {
+        "target": "teach-core: stay within lesson scope and cover all keyPoints",
+        "change": "Drop off-spec questions such as 'why ac rather than dc'. Use the time to teach keyPoints[1].writeBullets[1], that the live wire can be dangerous even when a switch is open, before closing the session.",
+        "quote": "T6: Why do you think we use ac in homes rather than dc from batteries?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "question does not match what was taught: T0, T2, T3, T5, T6"
+    ]
+  },
+  "cost": 0.157376,
+  "mode": "run",
+  "date": "2026-10-17"
+}

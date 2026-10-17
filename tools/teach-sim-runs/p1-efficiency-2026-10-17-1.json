@@ -1,0 +1,121 @@
+{
+  "id": "p1-efficiency",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Today we're looking at efficiency — basically, how good devices are at turning the energy we give them into something useful, rather than wasting it as heat or sound. Let's start with what efficiency actually means. What word would you use to describe how much of the input energy actually does the job we want?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's efficiency, The proportion of input energy that is usefully transferred; efficiency",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Exactly — that's the definition. Now, to actually *calculate* efficiency, we use an equation. It divides the useful energy we get out by the total energy we put in. What do you think we'd divide to find efficiency?",
+      "recap": [
+        "Efficiency is how good a device is at doing its actual job.",
+        "Not all the energy we put in gets used usefully — some is wasted as heat or sound.",
+        "Efficiency measures what proportion of the input energy actually does something useful rather than being wasted."
+      ],
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "I think it's efficiency equation, efficiency = useful output energy transfer ÷ total input energy",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Spot on — that's the equation. Now, you might be asked to compare how efficient different devices are. The one with higher efficiency wastes less energy. What happens to most of the wasted energy in an old-style filament light bulb?",
+      "recap": [
+        "Efficiency is calculated by dividing the useful energy out by the total energy in.",
+        "The equation is: efficiency = useful output energy transfer ÷ total input energy.",
+        "This tells you what fraction of the energy you use is actually doing something helpful."
+      ],
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "I think it's incandescent bulb, Old-style filament light bulb — wastes most of its input",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right — they waste most energy as heat rather than light. LEDs are much more efficient: they transfer more of their input energy into useful light, and less as wasted heat. If an old filament bulb and an LED bulb both use the same amount of power, which one gives out more light?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not quite — we're just comparing two light bulbs here! An LED puts more of its input energy into making light, while a filament bulb wastes a lot as heat instead. So if they both use the same power, which bulb produces more light?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "The LED bulb does — it turns more of its energy into light instead of heat. Now, one way to improve efficiency is to reduce friction between moving parts by using oil. What's the name for using oil like that?",
+      "recap": [
+        "Old filament bulbs waste most of their energy as heat, not light.",
+        "LEDs are much more efficient because they turn more energy into useful light.",
+        "If two bulbs use the same power, the LED produces more light.",
+        "Comparing efficiency means looking at which device wastes less energy overall."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "I think it's lubrication, Using oil between moving parts to reduce friction, so less",
+      "studentType": "correct",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Spot on — lubrication reduces friction, so less energy gets wasted and more goes into doing useful work.\n\nYou've covered all the big ideas now: what efficiency is, why it matters (money, resources, climate), and real examples like LEDs and lubrication. You're ready to tackle this in your revision!",
+      "recap": [
+        "Lubrication means using oil between moving parts to cut down friction.",
+        "Less friction means less wasted energy as heat, so machines work better.",
+        "This is one practical way to boost a machine's efficiency in real life."
+      ],
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've done really well today — you've got a solid grip on efficiency now. Good luck with your revision!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0.022179000000000004,
+  "mode": "run",
+  "date": "2026-10-17"
+}

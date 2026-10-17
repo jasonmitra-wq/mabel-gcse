@@ -1,0 +1,285 @@
+{
+  "id": "p1-energy-stores",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Right. Next is Energy store. What word describes how the particles are arranged?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's Energy store, A way energy can be held. There are eight types:",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is Kinetic energy store. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is Kinetic energy store. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is Gravitational potential energy store. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "no",
+      "studentType": "no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is Gravitational potential energy store. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is Gravitational potential energy store. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "I think it's Gravitational potential energy store, Energy stored in an object due to its height above",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Right. Next is Mechanical transfer (work done by forces). What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "I think it's Mechanical transfer (work done by forces), Energy transferred by work done by forces — e.g. pushing,",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is Heating. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is Heating. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is Radiation. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "yes",
+      "studentType": "yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Right. Next is Law of conservation of energy. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "I think it's Law of conservation of energy, Energy cannot be created or destroyed — it can be",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right. Next is Closed system. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right. Next is Closed system. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Right. Next is Dissipation. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "I think it's Dissipation, The spreading of energy into the thermal store of the",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Next is Wasted energy. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Next is Wasted energy. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Right. Next is Sankey diagram. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "I think it's Sankey diagram, A flow diagram where the width of each arrow is",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Right. Next is Efficiency. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Right. Next is Efficiency. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "That is every key point covered. Well done.",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Well done today. See you next time.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0,
+  "mode": "mock",
+  "date": "2026-10-17"
+}

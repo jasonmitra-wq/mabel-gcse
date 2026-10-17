@@ -1,0 +1,301 @@
+{
+  "id": "p1-energy-stores",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Today we're exploring energy stores and transfers — basically, the different ways energy can be held and moved around. Understanding this is the foundation for everything from how engines work to why we need to eat. What's an example of something that's moving right now?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's Energy store, A way energy can be held. There are eight types:",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "So let's start with kinetic energy, which is stored in anything that's moving. A car driving down the road, a ball flying through the air, even you running — they all have kinetic energy because they're in motion. What's an example of something moving right now that would have kinetic energy stored in it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "You're right — magnetic energy is one of the eight stores! But let me ask again: what's something moving right now that has kinetic energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "A car driving along the road would be an example — anything moving has kinetic energy stored in it because of its motion. What's something you can think of that's raised up somewhere?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Would you like me to just tell you what the other energy stores are?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "no",
+      "studentType": "no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right, so you've got kinetic energy sorted — that's moving things. Now, anything that's raised up above the ground has energy stored in it because of its height. A book on a shelf or a roller coaster at the top of a hill both have this gravitational potential energy.\n\nWhat's something in your room or house that's raised up somewhere?",
+      "recap": null,
+      "flags": [
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 6,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "I can give you all eight, but let's stick with what we're doing — name one thing in your house that's up high somewhere.",
+      "recap": null,
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 7,
+      "student": "I think it's Gravitational potential energy store, Energy stored in an object due to its height above",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Spot on — that's exactly right.\n\nSo energy doesn't just jump from one store to another. It always travels along a pathway. One really common pathway is **mechanical** — that's when a force does work, like when you push something, pull it, or kick a ball.\n\nWhat happens to the energy when you kick a stationary football?",
+      "recap": [
+        "Energy can be stored in eight different ways — these are called energy stores.",
+        "Kinetic energy is stored in anything that's moving, like a car or a ball.",
+        "Gravitational potential energy is stored in things that are raised up high, like a book on a shelf.",
+        "Magnetic energy is another store that involves magnets and electricity."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "I think it's Mechanical transfer (work done by forces), Energy transferred by work done by forces — e.g. pushing,",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Exactly — you've got it. Now, there's another really common pathway called **heating**. When something hot touches something cold, energy flows from the hot one to the cold one — that's always the direction it goes.\n\nWhat happens when you hold a warm mug of tea?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not quite — magnets and electricity come up in circuits, but that's a different pathway we'll look at soon. When you hold a warm mug, the heat energy flows from the hot mug into your cooler hand. Where does the energy travel in that example — from your hand to the mug, or from the mug to your hand?",
+      "recap": null,
+      "flags": [
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 10,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "The energy flows from the mug to your hand — the hot object always transfers to the cooler one. There's one more really important pathway: **radiation**. This is when energy travels as electromagnetic waves, like light or infrared (heat radiation). What's an example of energy reaching you by radiation?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Would you like me to just tell you about radiation and wrap this up quickly?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "yes",
+      "studentType": "yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Radiation is when energy travels as electromagnetic waves, like light or heat. It doesn't need anything in between — the energy just reaches you through space. Now, here's something huge: the **law of conservation of energy**. What happens to the energy stored in a book when it falls off a table?",
+      "recap": [
+        "Energy transfers along pathways — mechanical transfer happens when a force does work on something.",
+        "Heating transfer is when energy flows from hot objects to cooler ones.",
+        "Radiation transfer happens when energy travels as waves, like light or heat from the sun."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "I think it's Law of conservation of energy, Energy cannot be created or destroyed — it can be",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Exactly right — energy can only be transferred, stored or dissipated, never created or destroyed.\n\nNow, a **closed system** is one where no energy escapes to or enters from outside. In a closed system, the total energy always stays the same. What would happen to the total energy in a closed system?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not quite — we're talking about energy staying the same in a closed system. A closed system is just one where energy doesn't escape to or get added from outside, so all the energy stays trapped inside it. What would the total amount of energy in that closed system do?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "In a closed system, the total energy always stays the same — it just moves between different stores. What happens to energy when a lightbulb lights up — where does some of it go besides making light?",
+      "recap": [
+        "Energy can't be created or destroyed — it can only be transferred, stored or dissipated.",
+        "A closed system is one where energy can't escape or enter from outside.",
+        "In a closed system, the total amount of energy always stays exactly the same."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "I think it's Dissipation, The spreading of energy into the thermal store of the",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Exactly — that heat warming the surroundings is wasted energy, because it's not doing the useful job we wanted. When a car engine runs, the useful energy makes the car move, but some energy escapes as sound and heat into the air around it — that's wasted.\n\nWhere does that wasted sound energy end up being stored?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "When sound comes out of a car engine, that sound energy spreads out into the air around it and warms up the surroundings — it ends up stored as heat in the air, because that's what happens to wasted energy.\n\nWhat store does that sound energy get transferred to?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Now, when energy flows through a device, we can show where it goes using a special diagram called a Sankey diagram — the width of each arrow shows how much energy moves along that path. What do you think the input arrow on the left represents?",
+      "recap": [
+        "When energy is wasted, it spreads out and becomes heat in the surroundings.",
+        "A lightbulb makes light but also wastes energy as heat into the air.",
+        "Car engines waste energy as sound and heat that spreads into the environment.",
+        "All wasted energy ends up being stored in the thermal energy store eventually."
+      ],
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "I think it's Sankey diagram, A flow diagram where the width of each arrow is",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Exactly — the width of each arrow shows the energy amount. So in that lamp example, 100 J comes in as electrical energy, 15 J comes out as useful light, and 85 J is wasted as heat. For that lamp, what would you divide to work out the efficiency?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Efficiency is about comparing the useful energy that comes out with the total energy that went in — so for that lamp, we'd divide the 15 J of useful light by the 100 J that was put in.\n\nWhich number goes on the top of that division — the useful output or the total input?",
+      "recap": null,
+      "flags": [
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 21,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "The useful energy goes on top — so for the lamp, that's 15 J divided by 100 J, which gives 0.15 or 15% efficiency.\n\nYou've now covered all the big ideas: energy stores, how energy transfers between them, conservation of energy, Sankey diagrams, and efficiency. That's a solid foundation — well done for working through it today!",
+      "recap": [
+        "Sankey diagrams show energy flow using arrow widths — thicker arrows mean more energy.",
+        "The useful energy output goes on top when you calculate efficiency.",
+        "You divide useful energy out by the total energy put in.",
+        "Efficiency tells you what fraction of input energy actually does the job you want."
+      ],
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've done really well today — you've got a solid grip on how energy moves and changes. Good luck with your revision!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0.08169799999999999,
+  "mode": "run",
+  "date": "2026-10-17"
+}

@@ -1,0 +1,187 @@
+{
+  "id": "p1-power",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Today we're looking at **power** — which is all about *how fast* energy gets transferred, not just how much. What do you think \"1 watt\" actually means — what's happening every second when something has 1 watt of power?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's power, The rate of energy transfer; P = E/t; unit: watts",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Exactly — P = E/t tells us that power is energy divided by time, measured in watts.\n\nSo now let's use that formula. Imagine a kettle transfers 5000 joules of energy in 10 seconds — what would you calculate to find its power?",
+      "recap": [
+        "Power is how fast energy gets transferred from one place to another, not just the total amount.",
+        "One watt means one joule of energy is being transferred every single second.",
+        "The formula P = E/t lets you work out power if you know the energy and time involved."
+      ],
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "I think it's P = E/t, Power equals energy divided by time; rearranges to E =",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right — you've got the rearrangement E = Pt sorted. Now, when you see something like a kettle rated as 2 kW, what does that \"k\" actually mean in terms of watts?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "No worries — that's a different topic! The \"k\" in kW is just short for \"kilo\", which means 1000. So 2 kW is the same as 2000 watts.\n\nHow many watts would 3 kW be?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "3 kW is 3000 watts.\n\nNow, power stations are huge, so we use an even bigger unit called a megawatt or MW — that's 1 million watts. How many watts would a 5 MW power station be generating?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "I like loads of teams, but let's crack on with this power stuff — shall I just tell you what 5 MW is in watts?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "no",
+      "studentType": "no",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right, so 5 MW is 5 million watts, or 5,000,000 W.\n\nWe use MW for really powerful things like power stations because the numbers get huge otherwise. What would 10 MW be in watts?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "I get it — you want the answer straightaway! But here's the thing: if you can spot the pattern, you can work out any MW question in an exam without having to ask anyone. So 1 MW is 1 million watts, and 10 MW is just 10 times that.\n\nWhat's 10 million as a number?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "I think it's megawatt (MW), 1,000,000 watts — unit used for power stations and large",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Spot on — you've got the pattern down.\n\nNow, a gigawatt is even bigger than a megawatt. One gigawatt is 1,000,000,000 watts — that's a thousand million. We use gigawatts for the biggest power stations in the country. How many megawatts would fit into 1 gigawatt?",
+      "recap": [
+        "Power is energy divided by time, measured in watts using the formula P = E/t.",
+        "The letter k in kW means kilo, so 1 kW equals 1000 watts.",
+        "MW stands for megawatt, which is 1 million watts — used for huge power stations."
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "I think it's gigawatt (GW), 1,000,000,000 watts — unit used for national power output and",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Exactly right — you've got the units sorted. So we've looked at power, which is about *how fast* energy gets transferred. But to understand power properly, we need to look at energy transfer itself. What happens to the energy when you lift a heavy box off the ground?",
+      "recap": [
+        "A gigawatt is 1,000,000,000 watts — used for measuring huge power stations.",
+        "Gigawatts measure the biggest power outputs across the whole country.",
+        "One gigawatt equals 1,000 megawatts, so it's the next scale up."
+      ],
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "I think it's work done, W = Fs; energy transferred when a force moves an",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "You've nailed it — work done is energy transferred when a force moves something. Now here's the clever bit: when you multiply force by distance, you get newton-metres, which we write as N m. If a force of 5 newtons pushes something 3 metres, how many joules of work is done?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Not quite — we're just looking at how much work gets done by a force pushing or pulling something a distance. So if a 5 newton force pushes something 3 metres, you multiply them together: 5 × 3 = 15. What's the answer when you multiply 5 newtons by 3 metres?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "No worries — it's 15 joules, because 5 × 3 = 15, and one newton-metre equals one joule.\n\nSo you've now covered everything: what power is, how to calculate it, where we see it in real life, and how work and energy fit in. You're all set!",
+      "recap": [
+        "Work done is the energy transferred when a force moves something.",
+        "The formula is W = F × s, where F is force and s is distance.",
+        "One newton-metre of work done equals one joule of energy.",
+        "To find work done, you multiply the force in newtons by the distance in metres."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've done really well today — you've got a solid grip on power now. Good luck with your revision!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0.03884700000000002,
+  "mode": "run",
+  "date": "2026-10-17"
+}

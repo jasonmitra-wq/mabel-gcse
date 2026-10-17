@@ -22,6 +22,11 @@ function create(env) {
   // a reply still too long after the retries is sent long, and only
   // "Great question"-style openers are stripped.
   const FIX23 = env.fix23 !== false;
+  // Task 2.5c (runbook v2) shared fix, on by default. create({ call, fix25: false })
+  // keeps the earlier behaviour: on a teaching turn, a question that offers an
+  // either/or choice ("from A to B, or from B to A?") or a reply with no
+  // question at all is no longer asked for again.
+  const FIX25 = env.fix25 !== false;
   const STUDENT_NAME = env.studentName || 'Mabel';   // used only to filter it out of replies
   const WHO     = FIX23 ? 'the student' : 'Mabel';   // how prompts refer to her
   const WHO_CAP = FIX23 ? 'The student' : 'Mabel';
@@ -177,6 +182,15 @@ function create(env) {
         .some(s => !TAG_QUESTION.test(s) && !OFFER.test(s) && YES_NO_OPENER.test(s));
     });
   }
+
+  // Task 2.5c: an either/or question hands her the answer as one of two
+  // options to pick from. Same test as tools/teach-sim.js uses to score it:
+  // "or" anywhere in the question. A false hit only costs one more ask.
+  function _asksEitherOr(text) {
+    const questions = String(text || '').match(/[^.!?:;—]*\?/g) || [];
+    return questions.some(q => !OFFER.test(q.replace(/^[\s"'(]+/, '').replace(LEAD_IN, '').trim()) && /\bor\b/i.test(q));
+  }
+  function _asksNothing(text) { return !/\?/.test(String(text || '')); }
 
   // Turns whatever AI.call threw into a plain-English cause. AI.call throws
   // NO_KEY / BAD_KEY (401) / the bare HTTP status ("429") / a fetch TypeError.
@@ -499,18 +513,23 @@ function create(env) {
         note: `(Still too long. Give the same message in under 30 words. Finish every sentence, and end with your question.)` },
     ];
     const yesNoNote = `(Your question could be answered with just "yes" or "no", which shows nothing. Keep the rest, but ask it again as a what / which / why / how / where / when question whose answer is a specific word or short phrase from the content. Do not start it with do, does, is, are, can, could, will or would.)`;
-    let complete = '', last = '', level = 0, yesNo = false;
+    const eitherOrNote = `(Your question offers her a choice between options joined by "or", so she can pick one without knowing. Keep the rest, but ask one what / which / why / how question with no options in it, whose answer is a specific word or short phrase from the content. Do not use the word "or" in the question.)`;
+    const noQuestionNote = `(Your reply did not end with a question. Keep the rest, and end with one what / which / why / how question about the content.)`;
+    let complete = '', last = '', level = 0, yesNo = false, eitherOr = false, noQuestion = false;
     for (let i = 0; i < limits.length; i++) {
       const a = limits[level];
-      const note = [a.note, yesNo ? yesNoNote : ''].filter(Boolean).join('\n');
+      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : ''].filter(Boolean).join('\n');
       const reply = (await AI.call(sys, note ? `${user}\n\n${note}` : user, a.tokens)).trim();
       const plain = _stripMarkdown(reply);
       last = reply;
       const cut = _looksTruncated(plain);
       const long = !cut && _wordCount(plain) > a.words;
       yesNo = noYesNo && _asksYesNo(plain);
-      if (!cut && !long && !yesNo) return _finishReply(reply);
-      if (!cut && !yesNo && !complete) complete = reply; // finished, just long — usable if nothing better
+      eitherOr = FIX25 && noYesNo && _asksEitherOr(plain);
+      noQuestion = FIX25 && noYesNo && !cut && _asksNothing(plain);
+      const badQ = yesNo || eitherOr || noQuestion;
+      if (!cut && !long && !badQ) return _finishReply(reply);
+      if (!cut && !badQ && !complete) complete = reply; // finished, just long — usable if nothing better
       if (cut || long) level = Math.min(level + 1, limits.length - 1);
     }
     // Never show a sentence that stops dead: prefer a complete-but-long reply,

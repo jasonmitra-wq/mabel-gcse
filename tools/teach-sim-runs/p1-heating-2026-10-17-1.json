@@ -1,0 +1,187 @@
+{
+  "id": "p1-heating",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Today we're exploring why the sea keeps coastal towns warm long after summer, and why your pie filling burns your mouth while the pastry stays cool — it's all about how much energy different materials need to heat up. What do you think happens to the particles inside a substance when you heat it up?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's specific heat capacity (c), The energy required to raise the temperature of 1 kg",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Exactly — you've nailed the definition! So specific heat capacity tells us how much energy different materials need to heat up. Now, scientists use an equation to work out the total energy needed: change in thermal energy equals mass times specific heat capacity times change in temperature — that's ΔE = mcΔθ.\n\nWhat does the \"m\" represent in that equation?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "No worries! In the equation, \"m\" just stands for the mass — how much stuff you've got, measured in kilograms. It's nothing to do with magnets or electricity.\n\nWhat would the mass be in this situation: heating up 2 kilograms of water?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "The mass would be 2 kilograms. Now, in the equation, that \"Δθ\" at the end is the change in temperature — it's not just the starting temperature or the final temperature, but the *difference* between them.\n\nIf you heated water from 20°C up to 50°C, what would the change in temperature be?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Ha, I support a different team myself! Shall I just walk you through how to find that temperature change?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "no",
+      "studentType": "no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "So to find the change in temperature, you subtract the starting temperature from the final one. If you went from 20°C to 50°C, that's 50 minus 20, which gives you 30°C.\n\nWhat would the temperature change be if you heated water from 15°C up to 60°C?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "It's just subtracting — if you end at 60°C and started at 15°C, you do 60 take away 15. That's your temperature change.\n\nIf water cooled down from 80°C to 20°C, what would Δθ be?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "I think it's Δθ, Change in temperature (°C) = final temperature − initial temperature",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "There's an equation that links the energy needed to heat something with its mass, specific heat capacity, and temperature change: **ΔE = mcΔθ**. We can rearrange this equation different ways depending on what we're trying to find. What happens to the other letters when you rearrange an equation to find just one of them?",
+      "recap": [
+        "Specific heat capacity tells you how much energy is needed to heat up 1 kg of a material.",
+        "The equation ΔE = mcΔθ works out the total thermal energy needed to change a substance's temperature.",
+        "In that equation, m is the mass in kilograms, c is specific heat capacity, and Δθ is temperature change.",
+        "Temperature change means subtracting the starting temperature from the final temperature, not just reading one number."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "I think it's ΔE = mcΔθ rearrangements, c = ΔE/(mΔθ); m = ΔE/(cΔθ); Δθ = ΔE/(mc)",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Exactly right — you've got all three rearrangements correct.\n\nNow, when we actually measure specific heat capacity in the lab, we need to heat something and measure how much energy goes into it. One way to measure that energy is using an instrument called a **joulemeter**, which directly measures electrical energy in joules.\n\nWhat does a joulemeter measure?",
+      "recap": [
+        "The equation ΔE = mcΔθ shows how energy, mass, specific heat capacity and temperature change are linked together.",
+        "You can rearrange this equation to find whichever variable you need, depending on what the question is asking for.",
+        "Each rearrangement just means moving the other letters to the bottom as a fraction to isolate the one you want."
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "I think it's joulemeter, An instrument that directly measures electrical energy in joules",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Right — it reads the electrical energy in joules as it heats things up. All that movement and all those collisions store energy inside the object. We call this **internal energy** — it's the total energy of all the particles added together. What's inside the object that stores this internal energy?",
+      "recap": [
+        "In the lab you can measure specific heat capacity by heating a material and measuring the energy put in.",
+        "A joulemeter is an instrument that directly measures electrical energy in joules.",
+        "This lets you find out exactly how much energy the material absorbed."
+      ],
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "I think it's internal energy, The total kinetic and potential energy of all the particles",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right — you've nailed that. Now, temperature tells us how fast the particles are moving *on average*. The hotter something is, the faster its particles jiggle about on average. What do we call the energy that comes from particles moving?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Not quite — but it's easy to mix things up! The energy from particles moving is called **kinetic energy**. It's just the energy of movement, nothing to do with magnets.",
+      "recap": [
+        "Internal energy is the total kinetic and potential energy stored by all particles in an object.",
+        "Temperature measures how fast particles are moving on average — hotter means faster movement.",
+        "When particles move and collide, they store energy as internal energy inside the object."
+      ],
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've really understood the big ideas today — well done. Same time next week?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "no thanks, bye",
+      "studentType": "bye",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "No problem — you've done brilliant work today. Good luck with your revision, and take care!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0.04106499999999996,
+  "mode": "run",
+  "date": "2026-10-17"
+}

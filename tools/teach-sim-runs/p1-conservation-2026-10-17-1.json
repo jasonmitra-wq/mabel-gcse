@@ -1,0 +1,255 @@
+{
+  "id": "p1-conservation",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Today we're exploring why energy never vanishes — it just moves around. Let's start with the most fundamental rule in physics.\n\nWhen you drop a ball, what happens to its energy?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's conservation of energy, Energy cannot be created or destroyed — only transferred between",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Exactly — energy transfers between stores, it never disappears. Now, here's the clever bit: when we say the total energy stays the same, we're talking about a **closed system** — that's a system where no energy can enter or leave it from outside.\n\nWhat's an example of a closed system from your everyday life?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "A closed system is just something sealed off — nothing energy-wise gets in or out of it. Think of a thermos flask keeping hot coffee hot, or a sealed box.\n\nWhat would happen to the total energy inside a closed system over time?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Now, here's something interesting: sometimes energy looks like it's gone, but it's actually spread out into the surroundings as heat. We call that **dissipated** energy. When a bouncing ball hits the ground, some of its energy turns into heat in the ball and floor, and some travels away as sound. Where does that heat energy end up?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "I like football, but I'm rubbish at it! Anyway — would you like me to just explain where that heat from the bouncing ball goes, so we can move on?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "no",
+      "studentType": "no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right, so that heat and sound spread out into the air and surroundings around the ball — we say the energy gets **dissipated**. Once it's spread out like that into the thermal store, it's really hard to collect it back up and use it again.\n\nWhat happens to each bounce of the ball after energy gets dissipated?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Think of it like this: every time the ball bounces, a bit of energy escapes as heat and sound into the air around it. That means there's less energy left in the ball to bounce with next time, so the next bounce gets smaller.\n\nWhy does the ball bounce lower each time?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "I think it's dissipated, Energy spread out into the surroundings, usually as thermal energy,",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Exactly — energy spreads out into the surroundings, usually as heat. Now, when we use energy to do something useful, like turn on a light bulb, only *some* of that energy does what we actually want it to do.\n\nWhat does a light bulb transfer energy into that we actually want?",
+      "recap": [
+        "Energy can't be created or destroyed — it just moves between different stores.",
+        "A closed system is sealed off so energy can't escape in or out of it.",
+        "When energy spreads into the surroundings as heat or sound, we call it dissipated energy.",
+        "Each time a ball bounces, dissipated energy means it has less energy left for the next bounce."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "I think it's useful energy, Energy transferred to the intended output store",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right — the light bulb transfers some energy usefully as light. But the rest of that electrical energy spreads out as heat into the surroundings. We call that wasted energy.\n\nWhere does the wasted energy end up stored?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "No worries! Let me put it simply: when a light bulb is on, it gets hot, right? That heat spreads out into the air around it. That's where the wasted energy ends up — stored as heat in the surroundings instead of doing anything useful.\n\nWhat form of energy is that heat?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "The heat around the bulb is thermal energy — it's just stored in a way we didn't want. Now, there are ways to stop so much energy being wasted. For example, if you put oil between two surfaces that rub together, it reduces friction, so less energy gets wasted as heat.\n\nWhy would reducing friction help save energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Ha! Mine's not really a football fan thing, but I get it — sometimes you want a break!\n\nShall I just walk you through how friction and lubrication fit into this energy idea?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "yes",
+      "studentType": "yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "So when you put oil between two surfaces, friction drops — less energy gets wasted as heat.\n\nNow, once energy spreads out into the air as heat, why is it hard to use again?",
+      "recap": [
+        "When energy is used, some does the job we want (useful energy) and some spreads out as heat (wasted energy).",
+        "Wasted energy usually ends up as thermal energy stored in the surroundings instead of doing anything helpful.",
+        "You can reduce wasted energy by lowering friction — like using oil between surfaces so less heat escapes."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "I think it's dissipation, The spreading of energy into the surroundings as thermal energy,",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Exactly — that's spot on. Once energy spreads out thinly like that, it's nearly impossible to gather it back up. So friction is a force between surfaces, and whenever something moves against friction, energy gets transferred to the thermal store. What happens to the kinetic energy in your hands when you rub them together?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Magnets and electricity are cool, but let's stick with what's happening in your hands right now! When you rub your hands together, there's a force pushing back against your movement — that's friction. Where does the kinetic energy from your moving hands end up?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Your hands turn hot because the kinetic energy transfers into thermal energy in your hands — that's friction at work! One way is to use materials that slow down how fast heat escapes from buildings. What's one material you've heard of that people put in houses to keep warmth in?",
+      "recap": [
+        "Energy spreads out into the surroundings as heat and becomes impossible to gather back up.",
+        "Friction is a force that opposes movement between surfaces.",
+        "When you move against friction, kinetic energy transfers into thermal energy, warming things up."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "I think it's thermal insulation, A material or design that slows the transfer of thermal",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "When a car drives through the air, it has to push against air resistance, which wastes kinetic energy. Designers make cars streamlined — shaped smoothly — so they cut through the air more easily and waste less energy. What shape would slip through air more easily — a boxy van or a smooth sports car?",
+      "recap": null,
+      "flags": [
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 17,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "A smooth, streamlined shape cuts through air more easily than a boxy one — so the car wastes less kinetic energy fighting air resistance. Think of a sports car compared to a van.\n\nWhat's another thing you've seen that's designed with a smooth, streamlined shape to move through air easily?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Examples are things like planes, boats, and even sports helmets — they're all shaped smoothly to slip through air or water and waste less energy.",
+      "recap": [
+        "Friction and air resistance waste energy by turning movement into heat.",
+        "Materials like thermal insulation trap heat inside buildings so less escapes.",
+        "Smooth, streamlined shapes like sports cars waste less energy fighting air resistance than boxy shapes."
+      ],
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've got the big idea now — energy moves around and spreads out, but it never disappears. That's going to help you understand so much of physics. Good luck with your revision!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0.05856599999999998,
+  "mode": "run",
+  "date": "2026-10-17"
+}

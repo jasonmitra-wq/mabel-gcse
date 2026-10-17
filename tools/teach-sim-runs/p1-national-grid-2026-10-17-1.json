@@ -1,0 +1,195 @@
+{
+  "id": "p1-national-grid",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! So when you turn on a kettle at home, the electricity might have travelled hundreds of miles from a power station — and the clever bit is getting it there without wasting loads of it as heat. The electricity gets generated at the power station, but what potential difference do you think it starts at?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's National Grid, The network of cables and transformers that distributes electricity from",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "You've got it — the National Grid is that network of cables and transformers. So the power station generates electricity at 25 kV, but then a step-up transformer raises it to around 400 kV before it goes down the transmission cables. What happens to the current when you increase the potential difference but keep the power the same?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right — transformers do use electromagnets, and we'll cover exactly how they work soon. But right now, when the potential difference goes up to 400 kV but the power stays the same, what happens to the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "When power stays the same and the potential difference goes up, the current must go down — that's from P = IV. What happens to the power loss when you halve the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "I support lots of teams, but let me just walk you through the rest of this bit so it clicks — shall I?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "no",
+      "studentType": "no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right, so lower current means much less power wasted as heat in the cables — and that's because power loss follows the rule P_lost = I²R. Notice the current is squared, so even a small drop in current saves a huge amount of energy.\n\nWhat happens to the power loss if you halve the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Okay, here's the thing: when current flows through a cable, it heats it up, and that wasted heat is given by P_lost = I²R. The key bit is that current gets squared — so if you halve the current, the heat loss goes down by four times, not just two times.\n\nWhy does squaring the current matter so much?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "I think it's P_lost = I²R, Power wasted as heat in cables = current squared ×",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Exactly — power wasted is current squared times resistance. We need a device called a **transformer** to change the potential difference. A **step-up transformer** does the first job — it's used right after the power station. What do you think a step-up transformer does to the potential difference?",
+      "recap": [
+        "Power stations generate electricity at 25 kV, then step-up transformers increase it to 400 kV.",
+        "When voltage goes up but power stays the same, the current has to drop down.",
+        "Lower current means much less energy wasted as heat in the cables during transmission.",
+        "The current gets squared in the power loss formula, so small current reductions save huge amounts."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "I think it's step-up transformer, A transformer that increases the potential difference",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right — a step-up transformer increases it, exactly. So by the time electricity travels along the transmission cables at high potential difference, the current is low and we waste very little energy as heat. What do you think a step-down transformer does to the potential difference?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Transformers do use magnets and electricity, but let me focus on what matters here: a step-down transformer simply lowers the potential difference back down before the electricity reaches your home — because you don't want 400,000 volts coming out of your socket!\n\nWhat does a step-down transformer do to the potential difference?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "A step-down transformer decreases the potential difference, so it's safe to use in your home. The UK uses lots of different energy resources, like wind, coal, nuclear, and solar. Some of these can be replenished as we use them — these are called renewable resources. What's an example of a renewable energy resource?",
+      "recap": [
+        "A step-up transformer increases the potential difference right after the power station.",
+        "High potential difference means low current, so less energy is wasted as heat.",
+        "A step-down transformer decreases the potential difference back down before it reaches homes.",
+        "We need lower potential difference at home because 400,000 volts would be dangerous."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "I think it's renewable energy resource, An energy resource that is being (or can be) replenished",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "That's exactly right — a renewable resource can be replenished as we use it. Now, some renewable resources like solar and wind have a problem: they're not always available. Solar cells don't work at night, and wind turbines only work when the wind is blowing. What time of day would a solar panel produce no electricity?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "You're right — transformers do involve magnets and electricity. But back to your question: what time of day would a solar panel produce no electricity?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Solar panels produce no electricity at night because there's no sunlight. So now you know the three big ideas: how transformers step voltage up and down, what renewable energy means, and why some renewables like solar and wind aren't always available — you've covered all the key bits!",
+      "recap": [
+        "Renewable energy resources are ones that can be replaced as we use them, like solar and wind.",
+        "Solar and wind energy have a big problem: they're not available all the time.",
+        "Solar panels produce no electricity at night because there's no sunlight.",
+        "Wind turbines only work when there's actually wind blowing."
+      ],
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've done really well today — you've got a solid understanding of how the National Grid works and why we need transformers. Good luck with your revision!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0.05391700000000005,
+  "mode": "run",
+  "date": "2026-10-17"
+}

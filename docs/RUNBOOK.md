@@ -8,6 +8,9 @@ on. Never ask Jason anything except the STOP cases in section 2.
 
 - Folder C:\dev\mabel-gcse (or a worktree of it whose branch is main);
   git status --porcelain empty at the start (otherwise STOP); git pull.
+- Work only on this PC (C:\dev\mabel-gcse or a worktree of it); push
+  with git push origin HEAD:main. If the session is running in a cloud
+  container or cannot push to GitHub, stop at once and say so.
 - Commit and push after every fix round, not only at the end of a task,
   so an interrupted session loses at most one round. Update "Runbook
   position" in STATE with each commit, precise to the step.
@@ -60,7 +63,8 @@ carry on. Claude in the planning chat decides them.
 
 When Jason types a line starting "Mabel:", write it verbatim with the
 date to docs/MABEL-FEEDBACK.md, remove any HOLD that waits for it,
-commit "Mabel feedback", and continue.
+commit "Mabel feedback", and continue. Do not change the plan because of
+it; the planning chat decides that.
 
 ## 3. Topic procedure (every science topic)
 
@@ -105,14 +109,9 @@ h. STATE row: S1–S3 "✓ <hash>"; S6 "✓ <hash> (R<last>; audited <file>)"
 
 ## 4. Phase 2 tasks, in order
 
-2.0 Read docs/MABEL-FEEDBACK.md. If there is no verdict yet, carry on
-    with 2.1–2.4 and stop at the HOLD before 2.5. If she says the look
-    is the problem, add "Design: ask Mabel to name two screens" to
-    ESCALATIONS.md and carry on. If she says the content or the
-    questions are the problem, write docs/PHASE2-PLAN.md (one page)
-    proposing the change and add it to ESCALATIONS.md; carry on with
-    2.1–2.4, and do not start 2.5 until the planning chat has decided
-    it.
+2.0 Done. Mabel's verdict: bored by the slides until she has the
+    interactive AI lesson. Decided by the planning chat: AI lessons
+    first, topic by topic.
 2.1 Cheaper defaults. Add "model": "sonnet" to .claude/settings.json
     (create it if missing). In tools/spec-check.js add: --blocking-only
     (ask the model only for missing_spec_content, above_gcse and
@@ -150,17 +149,28 @@ h. STATE row: S1–S3 "✓ <hash>"; S6 "✓ <hash> (R<last>; audited <file>)"
     Write each from the specification text, using the fields of
     existing Physics lessons, under the EDIT RULES. Add specRefs. Commit
     per lesson.
-2.5 Topic procedure (section 3) for P3, P4, P5, P6, P7, P8, one per
-    session. P1 and P2 are done; do not re-run them.
-2.6 Diagrams (S4): for each Physics lesson, add a diagram wherever the
+2.5 AI lessons for Energy (P1) and Electricity (P2), which are already
+    checked:
+    a. Make the AI lesson the default when a lesson is in TEACH_ENABLED
+       and a key is present; the slides stay available one tap away.
+       Behind a flag, old behaviour kept. Check in a headless browser
+       that both paths still open.
+    b. Add every P1 and P2 lesson to TEACH_ENABLED.
+    c. Run tools/teach-sim.js --run once on each P1 and P2 lesson (dry
+       run first, cost guard as built). Fix faults that are in the
+       lesson file, under the EDIT RULES. Fix faults in shared code
+       once, behind a flag. Re-run only the lessons that failed, once.
+    d. Record T1–T3 for P1 and P2 in STATE. Commit after each topic.
+2.6 For P3, P4, P5, P6, P7 and P8, one topic per session: run the topic
+    procedure (section 3); then, in the same session, add the topic's
+    lessons to TEACH_ENABLED and run 2.5c and 2.5d for that topic. End
+    the session with "Topic done. Type Continue in a new session."
+    P1 and P2 are not re-run.
+2.7 Diagrams (S4): for each Physics lesson, add a diagram wherever the
     spec-check or auditor named a visual concept or the specification
     asks students to draw or interpret one (circuits, field patterns,
     graphs, particle arrangements). Run tools/check-diagrams.js until
     clean. Commit per topic.
-2.7 Teach mode: add every Physics lesson to TEACH_ENABLED. Run
-    tools/teach-sim.js --run once per lesson. Fix lesson faults in the
-    lesson; re-run only lessons that failed, once. Record T1–T3 in
-    STATE.
 2.8 When every Physics row is ✓ on S1–S6 and T1–T3: STOP with "Physics
     finished. One real session needed (Jason or Mabel)."
 

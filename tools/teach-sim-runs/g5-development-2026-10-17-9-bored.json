@@ -1,0 +1,682 @@
+{
+  "id": "g5-development",
+  "subject": "geography",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! Today we're asking why people in some countries live into their 80s while in others the average is only about 55, and we start with what \"development\" means and how we measure it. If a country earns a huge total income but has a very large population, what does GNI per capita tell us about each person?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "huh? thats confusing",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Let me say it more simply. GNI per capita is a country's total yearly income divided by its number of people, so \"per capita\" just means \"per person\". Say a country earns $100 in total and has 10 people. What is its GNI per capita?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "um like 10? divide 100 by 10?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — 100 divided by 10 is 10, so each person's share is $10. GNI per capita measures wealth, but development also covers wellbeing, like life expectancy: the average number of years someone born in a country can expect to live. Which country probably has better healthcare, diet and clean water?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "the one with higher life expectancy?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — higher life expectancy points to better healthcare, diet and clean water. Another wellbeing measure is the infant mortality rate: how many babies out of every 1,000 born alive die before their first birthday. Chad's is 103 and the UK's is 4, so which country probably has the weaker healthcare?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "chad has worse healthcare",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — Chad's 103 is far higher than the UK's 4, so its healthcare is probably weaker. The HDI (Human Development Index) is a single score between 0 and 1 that combines three things: income, life expectancy and years of schooling. If a country scores close to 1, what does that tell you about its people?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "huh? thats confusing",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "No worries. HDI is one score from 0 to 1 that mixes income, life expectancy and schooling. A score near 1 is the best. Which number is best for a country, 0 or 1?",
+      "recap": null,
+      "flags": [
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 6,
+      "student": "1 is better innit",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — 1 is the best score, meaning people are wealthy, long-lived and well educated. HDI is called a composite measure because it combines several indicators into one number, whereas GNI per capita uses just one. Which three things does HDI combine?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "income, life expectancy and schooling",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes — income, life expectancy and schooling are the three things HDI combines. Now, the World Bank sorts countries by income, and the richest group are called HICs (High Income Countries), such as the UK, USA and Japan. What does the \"I\" in HIC stand for?",
+      "recap": [
+        "GNI per capita is a country's total income divided by its people.",
+        "Life expectancy and infant mortality show wellbeing, not just wealth.",
+        "Higher infant mortality, like Chad's 103 versus the UK's 4, suggests weaker healthcare.",
+        "HDI mixes income, life expectancy and schooling into one score from 0 to 1."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "income",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — \"income\" is right, so HIC means High Income Country. At the other end are LICs (Low Income Countries), the world's poorest, with a low GNI per capita, such as Niger and Malawi. What does the \"L\" in LIC stand for?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "idk but i guess low?",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — \"low\" is right, so LIC means Low Income Country. Between those two groups are NEEs (Newly Emerging Economies), countries whose economies are growing quickly as they industrialise, lifting them out of the low income group, like Nigeria, India and Brazil. What does the \"E\" in NEE stand for?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "economies",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — \"economies\" is right, so NEE means Newly Emerging Economy. Now the Brandt Line was a line drawn across a world map in 1980 to split the richer \"North\" from the poorer \"South\", and it dips below the equator so Australia and New Zealand sit in the \"North\". Which two countries does that dip put in the rich \"North\"?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "wait im so hungry can we like hurry up",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Nearly there, I'll keep it quick. The Brandt Line is a line across the world map from 1980 that splits the rich \"North\" from the poor \"South\", but it bends below the equator to fit two southern countries in with the rich \"North\". Which two countries sit in the rich \"North\" because of that bend?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "australia and new zealand?",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — Australia and New Zealand is right. Last bit: the World Bank is an international organisation that lends money to countries for development projects, and it publishes the income data used to sort countries into low, middle and high income groups. What does the World Bank lend money to countries for?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "No worries, simpler: the World Bank is a big organisation that gives loans to countries so they can pay for projects that help them develop. Think of it like a bank, but for whole countries. What does the World Bank give to countries to help them develop?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "money i guess? for like development projects",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Yes — money for development projects is right. Next, the development gap is the difference in wealth and quality of life between the richest and poorest countries. Based on what we've covered, which two things does that gap compare?",
+      "recap": [
+        "HIC means High Income Country, like the UK, USA and Japan.",
+        "LICs are the poorest, with low income per person, like Niger and Malawi.",
+        "NEEs are Newly Emerging Economies, growing fast as they industrialise, like India and Brazil.",
+        "The 1980 Brandt Line splits rich North from poor South, but bends to include Australia and New Zealand."
+      ],
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "wealth and quality of life?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Now, one cause of that gap is colonialism: when one country takes control of another and runs it for its own benefit, like European powers taking raw materials out of Africa, Asia and the Caribbean and shutting down local industries that competed with their own. What do you think colonising countries took out of the places they controlled?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Let me say that more simply. Colonialism is when a rich country takes over another one and uses it for its own benefit. For example, European powers took cotton, metals and crops out of Africa, Asia and the Caribbean.\n\nWhat kind of things did they take out of those countries?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "raw materials like cotton and metals",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes — raw materials like cotton and metals is right. Those are called primary products: raw materials sold before anything is made from them, such as crops, timber, oil and metal ores. They earn far less than manufactured goods, and their prices swing sharply from year to year.\n\nWhy would a country selling mainly primary products struggle to earn much?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Fair enough, I'll keep it shorter. Primary products, like coffee or cocoa, are cheap raw materials, while the machines and goods a poor country buys in are expensive. So it earns little but spends a lot.\n\nWhat kind of goods does a country selling coffee have to buy that cost it more?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "can we skip this",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "One strategy is aid, which is money, goods or expertise given by one country or organisation to another, either as short-term emergency help after disasters or long-term help for things like schools and water supplies. Which kind of aid would pay for a new school?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "long-term aid",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes — long-term aid is right, since it pays for things like schools. Next is Fairtrade, a scheme that guarantees farmers a minimum price for their crop, plus an extra payment for their community, so growers keep more of the money.\n\nWho gets that extra payment, the Fairtrade Premium?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "the community i think",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, the community is right, since the Fairtrade Premium pays for things like schools and clean water. Next is debt relief: the HIPC scheme cancels part of the debt of the world's poorest countries, so the money can be spent at home instead of on repayments.\n\nWhere does the money go instead, once the debt is cancelled?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Simply put: poor countries often owe huge debts, so lots of their money goes to repaying other countries. HIPC cancels part of that debt, so the money can stay at home. In Uganda, it paid to abolish school fees.\n\nWhat did Uganda spend the freed-up money on?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "im starving can we take a break",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Of course, a snack break is a good idea, and you can come back to this lesson any time. Before you go, do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "yeah go on then",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Here's the rest. Aid can be bilateral (government to government), multilateral (through the UN or World Bank) or voluntary (NGOs like Oxfam), and it can be short-term emergency aid or long-term development aid, though it's criticised for dependency, inappropriate projects and corruption. Fairtrade also raises questions about whether the money reaches farmers, and its benefits are limited to certified producers. HIPC cancelled debts for 36 countries. Practical Action designs intermediate technology like solar-powered water pumps, and the Grameen Bank in Bangladesh gives small loans mainly to women, with a 97% repayment rate. Tourism brings income and jobs, but profits often leak to multinational hotel chains.\n\nNow, is the development gap closing? It's mixed: the gap with HICs is narrowing for NEEs like China, but may be widening for many sub-Saharan African LICs. The UN agreed 17 global targets in 2015, called the Sustainable Development Goals, to end poverty and hunger by 2030.\n\nHow many Sustainable Development Goals did the UN agree?",
+      "recap": [
+        "Aid is money, goods or expertise given to help; long-term aid pays for schools.",
+        "Fairtrade guarantees farmers a minimum price, so growers keep more of the money.",
+        "The Fairtrade Premium is an extra payment that goes to the community.",
+        "HIPC cancels some debt, so Uganda could spend that money on abolishing school fees."
+      ],
+      "flags": [
+        "yes/no question",
+        "over length (161 words)",
+        "unanswerable: more than one question"
+      ]
+    },
+    {
+      "n": 25,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Sorry, that was a lot. Here's the short version: in 2015, countries at the UN agreed on a list of 17 targets, called the SDGs, to end things like poverty and hunger by 2030.\n\nWhat year are those 17 targets meant to be met by?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "2025?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Not quite: the goals are meant to be met by 2030, so you were close. Extreme poverty means living on an income too low to cover basic food, shelter and healthcare, and the share of the world's people in it has fallen sharply since 1990.\n\nIf someone is in extreme poverty, what basic things can't they afford?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "can we skip this",
+      "studentType": "bored",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Skipping \"Is the development gap closing?\" then. That's the end of this lesson: you answered questions on measuring development and the Brandt Line, some on strategies and why the gap exists, and skipped the rest. Thanks for sticking with it.",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 28,
+      "student": "ok bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Bye for now. You can come back to this lesson any time, and the parts you skipped will be waiting. Take care.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    false,
+    true,
+    false
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [
+    "points never completed: 2 \"Why does the development gap exist?\", 4 \"Is the development gap closing?\""
+  ],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "im starving can we take a break",
+    "would_quit": {
+      "turn": "T24",
+      "quote": "Here's the rest. Aid can be bilateral (government to government), multilateral (through the UN or World Bank) or voluntary (NGOs like Oxfam)",
+      "why": "She asked for a snack break and got a 200-word wall of text that ends in another quiz question. Her reply was \"this is long\"."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "If a country earns a huge total income but has a very large population, what does GNI per capita tell us about each person?",
+        "note": "Asks about GNI per capita before it has been defined. The student replied \"huh? thats confusing\"."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Say a country earns $100 in total and has 10 people. What is its GNI per capita?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Which country probably has better healthcare, diet and clean water?",
+        "note": "Says \"which country\" but no countries were given, so the question is unclear."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Chad's is 103 and the UK's is 4, so which country probably has the weaker healthcare?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a country scores close to 1, what does that tell you about its people?",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which number is best for a country, 0 or 1?",
+        "note": ""
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which three things does HDI combine?",
+        "note": "The question never covers why a composite measure is better, which the tutor_note asks for."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the \"I\" in HIC stand for?",
+        "note": "The answer is given in the same sentence, so it is a trivial question."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the \"L\" in LIC stand for?",
+        "note": "The answer is given in the same sentence, so it is a trivial question."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the \"E\" in NEE stand for?",
+        "note": "Trivial question. UMICs and LMICs are never mentioned."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which two countries does that dip put in the rich \"North\"?",
+        "note": "Asks for the countries just named in the same sentence. The tutor never says the Brandt Line is now outdated."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which two countries sit in the rich \"North\" because of that bend?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the World Bank lend money to countries for?",
+        "note": ""
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the World Bank give to countries to help them develop?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Based on what we've covered, which two things does that gap compare?",
+        "note": "The answer is given in the same sentence."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Now, one cause of that gap is colonialism: when one country takes control of another and runs it for its own benefit",
+        "note": "Does not acknowledge her correct answer. Very long sentence. The student replied \"what?\"."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What kind of things did they take out of those countries?",
+        "note": ""
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Why would a country selling mainly primary products struggle to earn much?",
+        "note": "The student replied \"this is long\"."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What kind of goods does a country selling coffee have to buy that cost it more?",
+        "note": ""
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which kind of aid would pay for a new school?",
+        "note": "Moves to the next key point without saying the rest of the causes (debt, physical, political) were skipped."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Who gets that extra payment, the Fairtrade Premium?",
+        "note": ""
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Where does the money go instead, once the debt is cancelled?",
+        "note": ""
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What did Uganda spend the freed-up money on?",
+        "note": "The answer is given in the sentence before."
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Before you go, do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "How many Sustainable Development Goals did the UN agree?",
+        "note": "About 200 words. She agreed to be told the rest, but the turn ends with a quiz question."
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What year are those 17 targets meant to be met by?",
+        "note": "Still quizzing after she agreed to be told the rest."
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If someone is in extreme poverty, what basic things can't they afford?",
+        "note": "Still quizzing after she agreed to be told the rest. The answer is given in the same turn."
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Skipping \"Is the development gap closing?\" then.",
+        "note": ""
+      },
+      {
+        "turn": "T28",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Bye for now.",
+        "note": ""
+      }
+    ],
+    "flow_faults": [
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T15",
+        "quote": "Now, one cause of that gap is colonialism: when one country takes control of another and runs it for its own benefit",
+        "note": "Her answer \"wealth and quality of life?\" was correct but was not confirmed."
+      },
+      {
+        "type": "tell_me_skipped_content",
+        "turn": "T24",
+        "quote": "It's mixed: the gap with HICs is narrowing for NEEs like China, but may be widening for many sub-Saharan African LICs.",
+        "note": "Telling of keyPoints[4] left out China's 800m lifted from poverty, extreme poverty falling from 36% to 8.6%, the COVID-19 setback and uneven progress (Asia vs Africa). It switched to quiz questions instead."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: tell-me mode",
+        "change": "Once she says yes to \"tell you the rest\", deliver each remaining key point as a short told summary of 40 words or fewer from its writeBullets, with no quiz questions. Cover keyPoints[4]'s 800m, 36%→8.6% and COVID-19 facts.",
+        "quote": "How many Sustainable Development Goals did the UN agree?"
+      },
+      {
+        "target": "keyPoints[1].content",
+        "change": "Teach and ask about the Brandt Line being outdated (China and Brazil sit in the 'South' but are major powers), as the tutor_note requires. Also briefly name UMICs and LMICs.",
+        "quote": "Which two countries does that dip put in the rich \"North\"?"
+      },
+      {
+        "target": "teach-core: acknowledge correct answers",
+        "change": "Every reply after a correct answer must open with \"Yes — <answer> is right\" before new content.",
+        "quote": "Now, one cause of that gap is colonialism: when one country takes control of another and runs it for its own benefit"
+      },
+      {
+        "target": "teach-core: chunk length and question quality",
+        "change": "Cap each turn at about 40 words. Don't ask questions whose answer is stated in the same sentence. Ask a short reasoning question instead, e.g. \"Why is HDI fairer than GNI alone?\"",
+        "quote": "Why would a country selling mainly primary products struggle to earn much?"
+      },
+      {
+        "target": "teach-core: opening turn",
+        "change": "Define the term before asking about it. Don't open by testing GNI per capita before defining it. Never ask \"which country\" without naming the countries.",
+        "quote": "If a country earns a huge total income but has a very large population, what does GNI per capita tell us about each person?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T24",
+      "flow faults: correct_answer_not_acknowledged T15, tell_me_skipped_content T24"
+    ]
+  },
+  "cost": 0.6356499999999999,
+  "tutorCost": 0.4341340000000001,
+  "tutorCalls": 109,
+  "mode": "run",
+  "date": "2026-10-17"
+}

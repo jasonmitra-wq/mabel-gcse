@@ -198,3 +198,17 @@ Re-run once on M1–M6 (tools/site-test-runs/2026-10-17/M1-6, M2-5, M3-5, M4-5, 
 - Home: History / Dashboard / Error log show nothing after a maths test (M2, M5); "Revise a topic" card lists no Maths (M2, M4).
 - Question wording: M2 Q3 unit cm³ not in the question; M4 step 2 repeats step 1 ("Calculate angle ACB"), step 1 "Identify the two legs" has no box, "What fraction do you get?" wants 0.6; M5 "Find P(B) and then P(A|B)" with one box, format message "like 15" on a probability step; M6 Q5 "minimum and maximum" checks only the maximum; M6 Q4 statement step now hides "7/36" until the question is done, and the judge wants a box for it.
 - Resume shows the stored answer in finished steps, not what she typed (M5; already listed above).
+
+## FLOW_FIX round 2 (2026-10-17): re-run, still failing
+
+Round 2 (ce3d08c: model check for reworded repeats, more lenient marking, tell-all up to 260 words, closing splits worked / part-told / told) was re-run once. Two sessions ran it at the same time, so b3, g5 and both website lessons have two runs each (text: tools/teach-sim-runs/*-2026-10-17-8-bored.md and b3/g5 -9; website: tools/site-test-runs/2026-10-17/p1-energy-stores-7, -8, b3-defences-8, -9; p1-energy-stores-6 was cut short and has no result). All FAIL. All stay live.
+
+Flow faults per text run, after round 1 (*-7) -> round 2: p1-energy-stores 3 -> 1; p2-current-voltage 3 -> 4; b3-defences 5 -> 2, 1; g5-development 5 -> 4, 2. Engagement 3 for p1 and p2 (was 2), 2 for b3 and g5. Website broken: p1 6 -> 4, 8; b3 6 -> 8, 7.
+
+Still there:
+- correct_answer_not_acknowledged (p1, p2, g5 x2; website p1-8 twice: "kinetic store cos its moving", "make it go higher?"). The lenient marking prompt did not fix it.
+- question_repeated_after_correct_answer down to one per b3 run (b3-8 T3, b3-9 T20); gone from p2 and g5.
+- tell_me_skipped_content (b3-8, g5-8, g5-9) and, on the website, "yeah just tell me" not answering the question just asked (b3-9 S5).
+- closing_claims_untaught_content (p2 x2) and factual_or_unit_slip (p2 T11, g5-8 T8).
+- checkin_without_struggle back once (g5-8 T17).
+- Website, new or still seen: "no just explain it better" read as yes to the tell-all (b3-8 S15); questions dropped unanswered (b3-8); copy-back questions after naming the term (b3-9 "leucocytes"; p1-8 "The next pathway is electrical ... which pathway?"); "too long" answered at the same length (p1-7 T3, T9); she asks to stop for lunch and gets another question (b3-9 S3); loose "heat" accepted (p1-7 T16).

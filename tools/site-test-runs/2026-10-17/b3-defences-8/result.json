@@ -1,0 +1,234 @@
+{
+  "id": "b3-defences",
+  "mode": "lesson",
+  "date": "2026-10-17",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "She said 'no just explain it better' to the offer to tell her the rest. The tutor treated it as a yes, said 'Here's the rest' and dumped a long block on nucleus, phagocytes, lymphocytes, oxygen and phagocytosis.",
+        "step": "S15/T15"
+      },
+      {
+        "what": "Her correct answer 'they attack stuff straight away' was accepted, then labelled as having a 'missing piece'. The same idea was re-asked, which confused her ('what?').",
+        "step": "S18/T18/S19"
+      },
+      {
+        "what": "Questions were dropped without being answered or resolved. T8 (what stomach acid does to a new pathogen) was replaced by a mucus question in T9. The T9 mucus question was abandoned after S10. The T26 chickenpox symptoms question was skipped after S27.",
+        "step": "T8/T9/T10, T26/T27"
+      },
+      {
+        "what": "T13 asked for the immune system's 'two jobs' (identify and destroy), which the tutor had already told her two turns earlier in T11. The near-repeat question made her say idk.",
+        "step": "T11/T13/S14"
+      },
+      {
+        "what": "Wrong answers got no correction before the check-in. T24 asked 'Do you want me to just tell you the rest?' without saying 'antigens' was wrong. T7 did the same after 'it only works on germs its seen before'.",
+        "step": "S7/T7, S24/T24"
+      },
+      {
+        "what": "The closing summary talks about the student in the third person to her face ('She answered questions…while I told her the rest'). It also undersells her: she correctly answered lymphocytes, antigens on the surface, shape not matching, and enzymes herself.",
+        "step": "T28"
+      },
+      {
+        "what": "Progress shows 5/5 covered with every Jump-to point ticked, even though large parts were told rather than answered. T29 then says 'come back… to go over the rest', which contradicts 5/5.",
+        "step": "T29 / 15-end"
+      },
+      {
+        "what": "S2 'they get coughed out' is partly right (mucus is coughed or swallowed). The tutor gave no acknowledgement and just restated the answer.",
+        "step": "S2/T2"
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "Sticky header covers the top of the Jump-to list. The 'Physical barriers' item is cut in half under the header.",
+        "screenshot": "05-ai-lesson-opening-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "Diagram thumbnail text is far too small to read at this size.",
+        "screenshot": "05-ai-lesson-opening-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "Diagram thumbnail is tiny and unreadable in the sidebar.",
+        "screenshot": "05-ai-lesson-opening-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "The 'JUMP TO' heading is hidden under the sticky header.",
+        "screenshot": "09-exchange-12-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "Key terms panel cuts the Mucus definition mid-sentence ('…and traps') with no visible scroll cue.",
+        "screenshot": "09-exchange-12-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "Key terms panel cuts off the Cilia definition at the panel's bottom edge.",
+        "screenshot": "15-end-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "Lesson title truncated to 'Your body's defences — how yo...'.",
+        "screenshot": "06-exchange-3-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The 'Lesson finished.' notice and the Topics / Show me the slides / Ask something else buttons are not visible. The chat ends at the bye message.",
+        "screenshot": "15-end-phone.png",
+        "stops_use": false
+      }
+    ],
+    "would_quit": {
+      "turn": "S16",
+      "quote": "huh?",
+      "why": "She had already said 'this is long' three times and asked for a better explanation, then got the longest wall of text in the lesson."
+    },
+    "fixes": [
+      {
+        "target": "tutor behaviour: check-in reply handling",
+        "change": "When the reply to 'want me to tell you?' is no or 'explain it better', re-explain the current point in one or two short sentences with an analogy. Never output 'Here's the rest' plus multi-point content."
+      },
+      {
+        "target": "tutor behaviour: answer marking",
+        "change": "When the answer is judged correct, move on. Do not add a 'missing piece' and re-ask the same idea. When an answer is wrong, say what's wrong in one line before any check-in offer."
+      },
+      {
+        "target": "tutor behaviour: open questions",
+        "change": "Before changing question or point, resolve the pending one by giving the answer in one line. Never leave a question hanging or ask again for facts given in the previous two turns."
+      },
+      {
+        "target": "closing summary template (T28)",
+        "change": "Address the student as 'you'. List the points she actually answered herself, including lymphocytes, antigens and enzymes, separately from points that were told. Drop 'go over the rest' when all points are marked covered."
+      },
+      {
+        "target": "progress / Jump-to ticks",
+        "change": "Use a distinct state such as 'told' or a half-tick for points delivered by explanation dump versus points answered, so 5/5 isn't shown when most content was told."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "AI lesson opens by default (in TEACH_ENABLED)",
+      "ok": true,
+      "detail": "AI lesson opened"
+    }
+  ],
+  "transcript": [
+    "Lesson b3-defences (Biology › Disease — how we get ill and how we fight back › Your body's defences — how you fight infection).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "[screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects",
+    "[screenshot 03-topics-biology-phone.png and 03-topics-biology-laptop.png] topics-biology",
+    "[screenshot 04-lessons-b3-phone.png and 04-lessons-b3-laptop.png] lessons-B3",
+    "[check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened",
+    "T0: Welcome! Every second, pathogens try to get into your body, and your first line of defence is a set of physical barriers that stops most of them. One of these is mucus, a sticky secretion lining your nose, throat and airways, so what do you think it does to the pathogens you breathe in?",
+    "[screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening",
+    "S1 (bored): this is long lol",
+    "T1: Fair enough, I'll keep it short. Think of mucus like flypaper inside your nose and throat: it's sticky, so germs that you breathe in get stuck to it. If germs get stuck in that sticky layer, what do you think stops them from reaching your lungs?",
+    "S2 (try): um they get coughed out?",
+    "T2: It's the sticky mucus that stops germs reaching your lungs by trapping them first. Next, tiny hair-like structures called cilia line your airways and beat rhythmically to sweep that mucus, with the trapped germs in it, up and out of the airway. If cilia sweep the mucus upwards, what happens to the germs stuck in it?",
+    "S3 (try): they get swept up and out too",
+    "T3: Yes, the germs do get swept up and out with the mucus. Once they reach the top of the airway, they can be swallowed, so where do you think they end up after that?",
+    "[screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3",
+    "S4 (minimal): what?",
+    "T4: They get swallowed, so they end up in your stomach. There, hydrochloric acid (HCl) makes it extremely acidic, around pH 2, and that kills most pathogens in swallowed food and drink. Why do you think the stomach being so acidic helps protect you?",
+    "S5 (idk): idk like the acid just kills them?",
+    "T5: Yes — the acid kills the pathogens, that's exactly right. Mucus, cilia and stomach acid are all non-specific defences: they act against all pathogens, whatever type they are, without needing to have met them before. Why do you think stomach acid counts as non-specific, rather than only fighting one kind of germ?",
+    "S6 (bored): this is long",
+    "T6: Fair enough, I'll keep it short. Non-specific means a defence works on every germ, not just one type. Stomach acid kills whatever pathogen gets swallowed. So if a brand-new germ arrives, would stomach acid still work on it?",
+    "[screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6",
+    "S7 (wrong): yeah it only works on germs its seen before",
+    "T7: Do you want me to just tell you the rest of this one?",
+    "S8 (checkin-no): nah im listening",
+    "T8: Not quite on that last one — stomach acid works on any pathogen, including brand-new ones, because it doesn't need to have met them before. That's what \"non-specific\" means: it acts against all pathogens, whatever type, without prior exposure. So if a pathogen you've never met before is swallowed, what does stomach acid do to it?",
+    "S9 (bored): k",
+    "T9: Think of stomach acid like a bin that burns everything dropped in it, with no need to recognise what it is first. Mucus works the same way: it traps any germ that lands in it, new or old. So if mucus catches a germ your body has never met before, what does it do to that germ?",
+    "[screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9",
+    "S10 (bored): this is long man",
+    "T10: Fair enough, here's the rest, quickly. Skin is a tough, continuous barrier that stops most pathogens as long as it's intact, and a cut breaks it, which is why wounds get infected. In your airways, cilia are tiny hairs that sweep mucus and the trapped pathogens up and out. Stomach acid (HCl, about pH 2) kills most swallowed pathogens. If a pathogen gets past all that, white blood cells, also called leucocytes, take over as part of your immune system. What do white blood cells belong to, in your body's defences?",
+    "S11 (try): the immune system?",
+    "T11: Yes — the immune system is right. Its job is to identify and destroy pathogens, and white blood cells are its key players. Their scientific name is leucocytes, so a leucocyte is just a white blood cell. If a doctor says \"your leucocytes are fighting an infection\", which cells is she talking about?",
+    "S12 (bored): huh?",
+    "T12: No worries, here it is simpler: \"leucocyte\" is just the fancy science word for a white blood cell. Same cell, two names. So if a doctor says \"leucocytes\", what everyday name for these cells means the same thing?",
+    "[screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12",
+    "S13 (try): white blood cells",
+    "T13: Yes, \"white blood cells\" is right, same cell as leucocyte. Your immune system is the body's system that identifies and destroys pathogens and foreign material, and white blood cells are part of it. What two jobs does the immune system do to pathogens?",
+    "S14 (idk): idk",
+    "T14: That's okay, it's a tricky one. Would you like me to just tell you the rest of this part?",
+    "S15 (checkin-no): no just explain it better",
+    "T15: Here's the rest. If a pathogen gets past your physical barriers, your immune system takes over. Unlike red blood cells, white blood cells have a nucleus. There are two main types, phagocytes and lymphocytes, and both patrol your blood and tissues attacking foreign material. White blood cells don't carry oxygen; red blood cells do that. Phagocytes are the fast first responders: they surround a pathogen and swallow it, then digest it with enzymes. That swallowing process is called phagocytosis. What does a phagocyte do to a pathogen once it has swallowed it?",
+    "[screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15",
+    "S16 (bored): huh?",
+    "T16: No worries, let me say it more simply. A phagocyte is a white blood cell that wraps itself around a germ and swallows it, a bit like a Pac-Man. Then it breaks the germ down using enzymes. So what does a phagocyte use to break down the germ once it's inside?",
+    "S17 (try): enzymes",
+    "T17: Yes — enzymes is right, they digest the germ. The whole process of surrounding, swallowing and digesting a pathogen is called phagocytosis. Phagocytes are also non-specific, meaning they attack anything that isn't a normal body cell without needing to recognise it first. So why does that make them the body's first responder?",
+    "S18 (try): they attack stuff straight away",
+    "T18: Yes — attacking straight away is right. The missing piece is that phagocytes don't need to recognise a pathogen first; they're non-specific, so they attack anything that isn't a normal body cell. The swallowing and digesting is called phagocytosis. What do phagocytes attack that makes them non-specific?",
+    "[screenshot 11-exchange-18-phone.png and 11-exchange-18-laptop.png] exchange-18",
+    "S19 (minimal): what?",
+    "T19: They attack anything that isn't a normal body cell. That's why they're \"non-specific\": they act against all pathogens equally, without needing to have met one before. So if a brand-new bacterium got in, which kind of cell would attack it first?",
+    "S20 (try): phagocytes",
+    "T20: Yes — phagocytes is right, they attack any non-normal cell straight away. Lymphocytes are another white blood cell, but they take a targeted approach: they produce antibodies and antitoxins. Which type of white blood cell makes antibodies?",
+    "S21 (offtopic): lymphocytes i guess but im starving lol",
+    "T21: Yes — lymphocytes is right, they're the ones that make antibodies. Every pathogen has unique proteins on its surface called antigens, and lymphocytes recognise these as foreign. Where on a pathogen would you find its antigens?",
+    "[screenshot 12-exchange-21-phone.png and 12-exchange-21-laptop.png] exchange-21",
+    "S22 (try): on the surface i think",
+    "T22: Yes — the surface is right, that's where the antigens sit. When a lymphocyte spots an antigen it recognises, it makes antibodies: proteins shaped to fit that one antigen, like a key to a lock. So why would an antibody made for one antigen not work against a different pathogen?",
+    "S23 (try): cos the shape wouldnt match innit",
+    "T23: Yes — the shape wouldn't match, so that antibody only fits its own antigen, which is why it's a specific response. Lymphocytes also make antitoxins, which are proteins that neutralise the toxins some pathogens release. What do antitoxins neutralise?",
+    "S24 (wrong): umm the antigens on the surface?",
+    "T24: Do you want me to just tell you the rest of this one?",
+    "[screenshot 13-exchange-24-phone.png and 13-exchange-24-laptop.png] exchange-24",
+    "S25 (checkin-yes): yeah go on then",
+    "T25: Antitoxins neutralise toxins, the harmful substances some pathogens release, so they stop them causing more harm. The antibody binds to its antigen, which marks the pathogen for destruction, clumps pathogens together, or neutralises them directly. It's slower than phagocytes but highly targeted. Next up: the first time lymphocytes meet a pathogen, the response is slow, but some of them become memory cells that stay in your body long after the infection is gone. What do you think memory cells let your body do if the same pathogen comes back?",
+    "S26 (try): recognize it faster maybe?",
+    "T26: Yes — recognising it faster is right, and the response is also stronger, with more antibodies made. Memory cells are long-lived lymphocytes that stay in your body after the infection is gone. So if chickenpox comes back, what would you probably not feel, because the pathogen is destroyed so quickly?",
+    "S27 (offtopic): nah i'm hungry can we finish soon",
+    "T27: That's fine, we're nearly done and you can come back to this lesson any time. That fast, stronger response to a pathogen you've met before is called immunological memory, and it's why you don't get chickenpox twice. So which cells hold that memory of the chickenpox antigen?",
+    "[screenshot 14-exchange-27-phone.png and 14-exchange-27-laptop.png] exchange-27",
+    "S28 (idk): idk is it the memory cells?",
+    "T28: Yes — memory cells are the ones that hold that memory of the antigen. That's the end of this lesson. She answered questions on immunological memory, and she answered some questions on physical barriers, white blood cells, phagocytes and lymphocytes, while I told her the rest. Go and get something to eat, and come back whenever you like.",
+    "S29 (closing): ok thanks bye",
+    "T29: Bye, and enjoy your food! Come back to this lesson any time to go over the rest.",
+    "[the lesson shows \"Lesson finished.\"]",
+    "[screenshot 15-end-phone.png and 15-end-laptop.png] end"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-17/b3-defences-8/01-home-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/02-subjects-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/02-subjects-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/03-topics-biology-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/03-topics-biology-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/04-lessons-b3-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/04-lessons-b3-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/05-ai-lesson-opening-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/05-ai-lesson-opening-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/06-exchange-3-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/06-exchange-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/07-exchange-6-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/07-exchange-6-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/08-exchange-9-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/08-exchange-9-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/09-exchange-12-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/09-exchange-12-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/10-exchange-15-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/10-exchange-15-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/11-exchange-18-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/11-exchange-18-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/12-exchange-21-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/12-exchange-21-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/13-exchange-24-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/13-exchange-24-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/14-exchange-27-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/14-exchange-27-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/15-end-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences-8/15-end-laptop.png"
+  ],
+  "cost": 0.555796,
+  "tutorModel": "claude-sonnet-5-5",
+  "tutorCost": 0.351136,
+  "apiCalls": 30,
+  "browserApiCalls": 101
+}

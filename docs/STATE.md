@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Brief docs/briefs/2026-10-17-tutor-flow.md done (steps 0–6). Extra FLOW_FIX round 2 asked for by Jason ("Try again", 2026-10-17): code in, re-run of 4 text + 2 website next. Then Phase 2, task 2.6, P3 (new session).
+Runbook position: Brief docs/briefs/2026-10-17-tutor-flow.md done (steps 0–6). Extra FLOW_FIX round 2 (Jason, "Try again", 2026-10-17) done: code in ce3d08c, re-run of 4 text + 2 website done, all FAIL, faults in docs/ESCALATIONS.md. Next: Phase 2, task 2.6, P3 (new session).
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.
@@ -55,6 +55,7 @@ Spec-check API calls, summed from tools/spec-check-results/SUMMARY.md (one line 
 | Bored-student testers, last first-pass runs and re-runs (2026-10-17) | text: 5 first-pass (p1-national-grid, p2-components, p2-domestic, p2-power-energy, p2-static), 13 re-runs; website: 6 maths re-runs (M1–M6), 4 lesson re-runs (p1-power, b3-defences, g5-development, p2-static) | 6.42 (text 0.95 + 3.25, website 1.12 + 1.10), plus two runs stopped part-way when the batches were restarted (p2-components first attempt, site p1-power-4; not recorded) |
 | Sonnet tutor brief (2026-10-17) | /v1/models + 1 Sonnet test call; step 4 sample: text 4, website 2; maths website M1–M6 (+6 runs stopped at once); step 5 re-run: text 4, website 2 | 6.62 (step 4 2.49; maths 1.14 + 0.08; step 5 2.91; test call under 0.01). Tutor (Sonnet) share per lesson: text $0.16–0.33 (step 4), $0.24–0.35 (step 5) |
 | Tutor flow brief (2026-10-17, docs/briefs/2026-10-17-tutor-flow.md) | 4 rejudges of the step-4 Sonnet runs (flow-fault baseline); FLOW_FIX first pass: text 4, website 2; re-run of the 6 stopped at once by the API credit error (site folders p1-energy-stores-4, b3-defences-6 hold only the first screens); re-run after credits: text 4, website 2; maths website M1–M6 after step 5 | 7.50 (maths 1.13; re-run: text 1.98, tutor share p1 0.26, p2 0.15, b3 0.28, g5 0.54; website p1 0.42 (tutor 0.26), b3 0.43 (tutor 0.25); first part 3.54: rejudge 0.82; text 1.83, tutor share p1 0.22, p2 0.18, b3 0.26, g5 0.45; website p1 0.44 (tutor 0.27), b3 0.45 (tutor 0.27)) |
+| FLOW_FIX round 2 re-run (2026-10-17) | text: p1, p2 once, b3, g5 twice (two sessions ran them at once); website: p1 ×2 (+1 cut short, p1-energy-stores-6), b3 ×2 | 4.85 (text 2.95: p1 0.37, p2 0.35, b3 0.49 + 0.47, g5 0.63 + 0.64; website 1.91: p1 0.47 + 0.44, b3 0.56 + 0.44; the cut-short p1-energy-stores-6 run not counted, cost unknown) |
 
 ## Physics roadmap
 

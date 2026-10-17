@@ -1,0 +1,413 @@
+{
+  "id": "p1-energy-stores",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! Every time you move, eat or switch on a light, energy is being held in some way and then changed, and today we start by learning that there are eight different \"energy stores\". One of them is kinetic, the energy of anything that's moving, like a kicked ball. Which store is a stretched spring holding its energy in?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "elastic energy store?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — a stretched spring holds its energy in the elastic potential store. Now back to kinetic: it's the energy of anything moving, worked out with Ek = ½mv², where m is mass in kg and v is speed in m/s, measured in joules (J). A parked lorry isn't moving, so what is its kinetic energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "zero because its not moving",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Next is the gravitational potential store: energy an object has because of its height above a reference point, worked out with Ep = mgh, where g = 9.8 N/kg on Earth. A book on a high shelf has energy in this store, so what does the book's height do to that energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "the higher it is the more energy it has",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — the higher the book is, the more energy it has in its gravitational potential store. Now back to the spring: its elastic potential store is worked out with Ee = ½ke², where k is the spring constant (N/m) and e is the extension (m), measured in joules (J). In that formula, what does the letter e stand for?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "is it the spring constant?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "yeah just tell me",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Here's the rest, quickly. The \"e\" in that formula is the extension, in metres, so it's not the spring constant. Thermal: every object has it, and more energy at a higher temperature. Chemical: food, fuels and batteries. Nuclear: inside atomic nuclei, like uranium or the Sun's core. Electrostatic: between charged objects, like static on a balloon. Magnetic: between magnets.\n\nEnergy doesn't just jump between stores. It moves by pathways, and one is mechanical: work done by forces, like pushing, pulling or kicking a ball. When you kick a ball, what is the force doing to the energy?",
+      "recap": [
+        "Kinetic energy is the energy of moving things: Ek = ½mv², in joules.",
+        "A stationary object, like a parked lorry, has zero kinetic energy.",
+        "The higher an object is, the more gravitational potential energy it has: Ep = mgh.",
+        "A stretched spring stores elastic energy: Ee = ½ke², where k is spring constant, e is extension."
+      ],
+      "flags": [
+        "over length (97 words)"
+      ]
+    },
+    {
+      "n": 6,
+      "student": "huh? can we skip this",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "That's fine, we'll skip the four ways energy is transferred. Next is the rule that never breaks: energy cannot be created or destroyed, so the total energy in a closed system always stays the same. If a book falls off a table, its gravitational potential energy doesn't vanish, so what happens to the total amount of energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "idk what happens to it",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Think of it like money moving between pockets: the book's energy doesn't vanish, it just moves from one store to another, and the total stays the same. As the book falls, its gravitational potential energy becomes kinetic energy. So if the book started with 10 J of energy in total, how much energy is there in total once it's falling?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "like 5 j? cuz half went somewhere",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not quite — the total stays 10 J, because none of the energy went anywhere; it just moved between stores. If a closed system has 20 J of energy in total, how much energy is in it after something changes inside it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "still 20 j right",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Yes — the total stays 20 J, because energy only moves between stores. In real life, though, some energy always ends up in a store that is no use, which is called dissipation: it spreads into the thermal store of the surroundings, like heat warming the air around a car engine. Where does that wasted energy end up?",
+      "recap": [
+        "Energy can't be created or destroyed, only moved between stores.",
+        "In a closed system, the total energy always stays the same.",
+        "A falling book turns gravitational potential energy into kinetic energy.",
+        "Start with 20 J in total, and you still have 20 J after."
+      ],
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "huh",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Let me say that more simply. When a car engine runs, some of its energy warms the air around it, and that heat spreads out so much that we can't use it again. Where does that wasted energy end up?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "the air?",
+      "studentType": "minimal",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes — the air around the engine is right, because wasted energy spreads into the thermal store of the surroundings. In a car engine, the useful job is making the car move, so what is the wasted energy there?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "the heat that comes out?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Yes — the heat that comes out is right, because that's the wasted energy spreading into the surroundings. The thick input arrow splits into a useful arrow and a wasted arrow, so which arrow is wider if the engine wastes more than it uses?",
+      "recap": [
+        "Energy is never lost, it only moves between stores.",
+        "Dissipation means energy spreads into the surroundings, where we can't use it.",
+        "Wasted energy ends up in the thermal store of the surroundings.",
+        "In a car engine, the waste is heat warming the air."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "the wasted arrow would be wider?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Yes — the wasted arrow is wider when more energy is wasted than used. Now, efficiency compares the two: efficiency = useful output ÷ total input. A lamp is supplied with 100 J and transfers 15 J usefully by light, so what is its efficiency as a decimal?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "um 15 divided by 100... is like 0.15?",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Yes — 15 ÷ 100 = 0.15 is right, so the lamp's efficiency is 0.15. That brings us to the end of this lesson. You answered questions on \"Dissipation\" and \"Sankey diagrams and efficiency\", and answered some questions on \"The eight energy stores\" and \"Conservation of energy\", where I told you the rest.",
+      "recap": [
+        "A Sankey diagram's input arrow splits into a useful arrow and a wasted arrow.",
+        "Arrow width shows how much energy there is, so more waste means a wider wasted arrow.",
+        "Efficiency = useful output ÷ total input.",
+        "The lamp's 15 J useful out of 100 J in gives 0.15."
+      ],
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Bye for now! You can come back to \"The four ways energy is transferred\" any time, and good luck with your GCSE revision.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    false,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [
+    "points never completed: 1 \"The four ways energy is transferred\""
+  ],
+  "persona": "bored",
+  "judge": {
+    "engagement": 3,
+    "engagement_quote": "huh? can we skip this",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which store is a stretched spring holding its energy in?",
+        "note": "The turn taught only kinetic, but the question asks about the elastic store, which had not been taught yet."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A parked lorry isn't moving, so what is its kinetic energy?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Next is the gravitational potential store: energy an object has because of its height above a reference point, worked out with Ep = mgh, where g = 9.8 N/kg on Earth.",
+        "note": "Moves on without confirming her correct 'zero' answer."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In that formula, what does the letter e stand for?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": "Check-in follows a wrong answer, which is allowed."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": true,
+        "quote": "When you kick a ball, what is the force doing to the energy?",
+        "note": "About 95 words. It bolts a new key point onto the telling, and the closing question is vague, so she replies 'huh?'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a book falls off a table, its gravitational potential energy doesn't vanish, so what happens to the total amount of energy?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if the book started with 10 J of energy in total, how much energy is there in total once it's falling?",
+        "note": ""
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Not quite — the total stays 10 J, because none of the energy went anywhere; it just moved between stores.",
+        "note": "'Went nowhere' contradicts 'moved between stores', and this student just guessed that half went somewhere."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Where does that wasted energy end up?",
+        "note": "The answer was stated in the same sentence, and she still replied 'huh'."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When a car engine runs, some of its energy warms the air around it, and that heat spreads out so much that we can't use it again.",
+        "note": ""
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In a car engine, the useful job is making the car move, so what is the wasted energy there?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "The thick input arrow splits into a useful arrow and a wasted arrow, so which arrow is wider if the engine wastes more than it uses?",
+        "note": "Sankey diagrams are never named or introduced, and 'arrow width = amount of energy' was never taught."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A lamp is supplied with 100 J and transfers 15 J usefully by light, so what is its efficiency as a decimal?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "You answered questions on \"Dissipation\" and \"Sankey diagrams and efficiency\", and answered some questions on \"The eight energy stores\" and \"Conservation of energy\", where I told you the rest.",
+        "note": "She was never 'told the rest' of Conservation of energy; she worked through it herself."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Bye for now! You can come back to \"The four ways energy is transferred\" any time, and good luck with your GCSE revision.",
+        "note": ""
+      }
+    ],
+    "flow_faults": [
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T2",
+        "quote": "Next is the gravitational potential store: energy an object has because of its height above a reference point, worked out with Ep = mgh, where g = 9.8 N/kg on Earth.",
+        "note": "She answered 'zero because its not moving', which is correct, and got no confirmation."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: confirm correct answers before moving on",
+        "change": "Always open the reply to a correct answer with confirmation plus the reason, e.g. 'Yes — zero, because kinetic energy needs movement.'",
+        "quote": "zero because its not moving"
+      },
+      {
+        "target": "keyPoints[4].content / teach-core: introduce before asking",
+        "change": "Before any width question, name the Sankey diagram and state 'arrow width = amount of energy'. Then ask which arrow is wider.",
+        "quote": "The thick input arrow splits into a useful arrow and a wasted arrow, so which arrow is wider if the engine wastes more than it uses?"
+      },
+      {
+        "target": "teach-core: tell-me scope",
+        "change": "When telling the rest, finish only the current key point in one short turn. Then start the next key point in a separate short turn with a concrete question, e.g. 'When you kick a ball, energy goes into which store of the ball?', using the sentence frame in keyPoints[1].memTip.",
+        "quote": "When you kick a ball, what is the force doing to the energy?"
+      },
+      {
+        "target": "teach-core: first question tests taught content",
+        "change": "The opening question must test what was just taught, e.g. ask about the kicked ball's store, not the elastic store that comes later.",
+        "quote": "Which store is a stretched spring holding its energy in?"
+      },
+      {
+        "target": "teach-core: closing summary accuracy",
+        "change": "Tag 'told you the rest' only on key points where tell-me was actually used (here The eight energy stores), not on Conservation of energy.",
+        "quote": "You answered questions on \"Dissipation\" and \"Sankey diagrams and efficiency\", and answered some questions on \"The eight energy stores\" and \"Conservation of energy\", where I told you the rest."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "question does not match what was taught: T0, T12",
+      "flow faults: correct_answer_not_acknowledged T2"
+    ]
+  },
+  "cost": 0.37364600000000003,
+  "tutorCost": 0.22572,
+  "tutorCalls": 65,
+  "mode": "run",
+  "date": "2026-10-17"
+}

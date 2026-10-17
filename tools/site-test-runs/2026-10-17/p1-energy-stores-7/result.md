@@ -1,0 +1,136 @@
+# Site test: p1-energy-stores (lesson, 2026-10-17)
+
+**FAIL** · cost $0.4370 (21 tool calls, 79 calls from the site; tutor claude-sonnet-5-5 $0.2740)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "When the student said the lesson was too long, the tutor promised to keep it short but repeated the same explanation at the same length, with a reworded copy of the same question. This happened twice.",
+      "step": "T3, T9"
+    },
+    {
+      "what": "T4 asks which 'kind of force-based transfer' moves the energy, but the question already names the answer. T5 then changes it to 'what kind of thing is doing the work'. After the vague answer 'a push or something', the tutor gave the answer ('a force') instead of prompting. The term 'mechanical' was never checked.",
+      "step": "T4-T6"
+    },
+    {
+      "what": "The student's answer 'the heat that warms up the air' was accepted as right with no correction of the loose word 'heat'. GCSE wants 'energy transferred to the thermal store of the surroundings'.",
+      "step": "T16"
+    },
+    {
+      "what": "'The eight energy stores' was marked complete (✓, 1/5) after asking about only two stores, kinetic and gravitational potential. The other six were only listed once.",
+      "step": "T4 / 07-exchange-6"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "The Key Terms panel cuts the Kinetic energy store definition off mid-line ('calculated using Ek = ½mv²' is clipped at the bottom edge).",
+      "screenshot": "07-exchange-6-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The '← Home' button and the 'What are you revising?' heading are partly hidden under the sticky top bar.",
+      "screenshot": "02-subjects-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The 'JUMP TO' heading and the top of the panel are scrolled under the lesson header, so the topic list starts with no label.",
+      "screenshot": "08-exchange-9-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The 'Lesson finished.' message and the Topics / Show me the slides / Ask something else buttons shown on laptop are not visible on the phone end screen, so there is no next step on screen.",
+      "screenshot": "12-end-phone.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": {
+    "turn": "S9",
+    "quote": "this is too long mate",
+    "why": "This is the second complaint about length. The previous promise to keep it quick was not kept, and the reply was just as long again. The lesson still had about 10 turns to go."
+  },
+  "fixes": [
+    {
+      "target": "Tutor behaviour on bored/'too long' replies",
+      "change": "Reply with one short sentence plus the question, never a restatement. For example: 'Short version: sunlight = electromagnetic waves. What carries the Sun's energy to you?'"
+    },
+    {
+      "target": "Tutor behaviour on vague or wrong answers (T6)",
+      "change": "Give one hint and re-ask instead of stating the answer. Ask for the key term itself ('mechanical') rather than a question that already contains it."
+    },
+    {
+      "target": "Tutor answer checking for terminology (T16)",
+      "change": "Accept the idea but correct the wording: 'Yes. In exams say \"energy transferred to the thermal store of the surroundings\", not \"heat\".'"
+    },
+    {
+      "target": "Lesson point 'The eight energy stores' completion rule",
+      "change": "Before marking it done, ask at least one quick question on another store. For example, use the student's food remark: 'Food stores energy in which store?' (chemical)."
+    },
+    {
+      "target": "Key Terms panel CSS (laptop) and phone subjects page top padding",
+      "change": "Let the Key Terms panel scroll with a visible fade or scrollbar rather than clipping mid-line. Add top padding equal to the sticky header height so '← Home' and the page heading are not covered."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Lesson p1-energy-stores (Physics › Energy › Energy stores and transfers — what energy actually is).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p1-phone.png and 04-lessons-p1-laptop.png] lessons-P1
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! Energy can be held in eight different "stores", like kinetic, which is energy in anything moving. A car speeding along has energy in which store?
+    [screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (minimal): ok what stores did u say again
+    T1: The eight stores are kinetic, gravitational potential, elastic potential, thermal, chemical, nuclear, electrostatic and magnetic. A store is just a way energy can be held, and kinetic is the one for anything moving, like a speeding car. So which store holds the car's energy?
+    S2 (offtopic): kinetic i guess but im starving rn
+    T2: Yes — kinetic is right, because the car is moving. Food is chemical energy, which we'll get to soon! Next, an object raised above the ground has energy in its gravitational potential store, like a book on a shelf. Which store holds the energy of a roller coaster waiting at the top of a hill?
+    S3 (bored): this is long lol
+    T3: Fair enough, I'll keep it quick! The higher an object is above the ground, the more energy it has in its gravitational potential store, like a book on a high shelf. Which store holds the energy of a roller coaster stopped at the top of a hill?
+    [screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3
+    S4 (try): gravitational potential i guess
+    T4: Yes — gravitational potential is right, because the coaster is high up. Energy doesn't just jump between stores; it moves by a pathway, and one is mechanical transfer, which is work done by forces like pushing, pulling or kicking. When you kick a football, which kind of force-based transfer is moving the energy?
+    S5 (bored): huh?
+    T5: No worries, here's the simple version: when a force like a push, pull or kick does work, it moves energy from one place to another. That's called mechanical transfer. So when you kick a football, what kind of thing is doing the work to move the energy?
+    S6 (wrong): is it like a push or something
+    T6: Yes, a push is part of it. Kicking is a force doing work, so the answer is a force. Next pathway: electrical transfer is energy moved by work done when a current flows in a circuit, like in a torch. What flows around the circuit to do that work?
+    [screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6
+    S7 (try): current flows i think?
+    T7: Yes — current is right, it's what flows around the circuit. Heating is the next pathway: energy flows from a hotter object to a cooler one. If a hot mug warms your cold hands, which way does the energy flow?
+    S8 (try): from the mug to my hands
+    T8: Yes — from the mug to your hands is right, because heating always flows from hotter to cooler. The last pathway is radiation: energy transferred by electromagnetic waves, such as light and infrared. When you sit in sunshine and feel warm, what kind of waves are carrying that energy to you?
+    S9 (bored): this is too long mate
+    T9: Fair enough, I'll keep it short. Radiation means energy carried by electromagnetic waves, like light and infrared. Sunshine warms you because light and infrared waves bring energy to you. What does the sunshine's energy travel as when it reaches you?
+    [screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9
+    S10 (try): waves innit
+    T10: Waves is right, specifically electromagnetic waves like light and infrared. Next up is the big rule: energy cannot be created or destroyed, only transferred, stored or dissipated. If a book falls off a table, its gravitational potential energy doesn't vanish, so what does it become as it falls?
+    S11 (idk): idk what happens to it
+    T11: That's okay. The energy doesn't disappear, it just changes store. As the book falls, its gravitational potential energy becomes movement energy. Which store is the movement energy held in?
+    S12 (try): kinetic energy?
+    T12: Yes, kinetic energy is right. Now a closed system is one where no energy goes in or out to the surroundings, so its total energy always stays the same. If a closed system holds 50 J of energy at the start, how much does it hold at the end?
+    [screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12
+    S13 (try): still 50 j right
+    T13: Yes, 50 J is right: in a closed system the total never changes. In real machines, though, some energy ends up in a store that's no use, and that spreading out into the thermal store of the surroundings is called dissipation. A car engine warms the air around it, so where does that wasted energy end up?
+    S14 (bored): huh?
+    T14: Let me say that more simply: when a car engine runs, some energy warms the air around it instead of moving the car. That wasted energy is spread out into the thermal store of the surroundings. Where does the wasted energy from a car engine end up?
+    S15 (try): thermal store of the surroundings?
+    T15: Yes, the thermal store of the surroundings is right. Energy sent to a store that is no use for the machine's job is called wasted energy. For a car, the useful job is moving, so what is the engine's wasted energy?
+    [screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15
+    S16 (wrong): the heat that warms up the air
+    T16: Yes, the heat warming the air is right: that's the wasted energy. A Sankey diagram is an arrow diagram where each arrow's width is proportional to the amount of energy, and the thick input arrow on the left splits into a useful output arrow and wasted energy arrows. In a Sankey diagram, what does the width of an arrow show?
+    S17 (try): how much energy there is
+    T17: Yes, the width shows how much energy there is. Efficiency tells us how much of the input energy ends up useful: efficiency = useful output energy transfer ÷ total input energy transfer. A lamp is supplied with 100 J, and 15 J is transferred usefully by light. What is the lamp's efficiency as a decimal?
+    S18 (bored): huh?
+    T18: Let me say it more simply. Efficiency compares the useful energy you get out with the total energy you put in: useful ÷ total. For the lamp, the useful energy is 15 J and the total input is 100 J. What is 15 ÷ 100?
+    [screenshot 11-exchange-18-phone.png and 11-exchange-18-laptop.png] exchange-18
+    S19 (try): umm 0.15?
+    T19: Yes, 0.15 is right: that's 15 ÷ 100, the lamp's efficiency as a decimal. That brings us to the end of this lesson. You answered questions on "The eight energy stores", "Conservation of energy", "Dissipation" and "Sankey diagrams and efficiency". You answered some questions on "The four ways energy is transferred", and I told you the rest.
+    S20 (closing): ok thanks bye
+    T20: You're welcome! Energy stores and transfers is a big topic, and you handled the efficiency question well. Come back any time to go over the parts we skimmed. Bye for now!
+    [the lesson shows "Lesson finished."]
+    [screenshot 12-end-phone.png and 12-end-laptop.png] end

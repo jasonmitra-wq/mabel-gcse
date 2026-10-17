@@ -1,0 +1,162 @@
+# Site test: p1-energy-stores (lesson, 2026-10-17)
+
+**FAIL** · cost $0.4739 (23 tool calls, 83 calls from the site; tutor claude-sonnet-5-5 $0.2942)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "Correct answer 'kinetic store cos its moving' gets no acknowledgement. T3 just switches back to the book.",
+      "step": "S3 -> T3"
+    },
+    {
+      "what": "Correct answer 'make it go higher?' gets no confirmation. T5 moves straight on to elastic potential, so she never learns she was right.",
+      "step": "S5 -> T5"
+    },
+    {
+      "what": "The question gives away its own answer. T8 says 'The next pathway is electrical' and then asks 'which pathway is moving the energy?'.",
+      "step": "T8"
+    },
+    {
+      "what": "After 'yeah go on', the tutor dumps three pathways plus conservation of energy in one long message. It then asks 'where did that energy go' straight after saying it became kinetic. She replies 'huh?'.",
+      "step": "T11 / S12"
+    },
+    {
+      "what": "Wrong answer '30 J' is not corrected on that turn. The tutor only offers to 'tell the rest', so the correction is delayed to T16.",
+      "step": "S15 -> T15"
+    },
+    {
+      "what": "The explanation contradicts itself. It says the closed system stays at 50 J, then that 'energy that seems to disappear has gone to the thermal store of the surroundings', which is energy leaving the system. This muddles closed systems with dissipation.",
+      "step": "T16"
+    },
+    {
+      "what": "Sankey diagrams are never explained. T19 asks about Sankey arrow width without first saying what a Sankey diagram is.",
+      "step": "T19"
+    },
+    {
+      "what": "The closing praises only Sankey diagrams and efficiency. It says nothing about the stores and conservation she struggled with, and does not suggest a recap.",
+      "step": "T22"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "The '← Home' button and the 'What are you revising?' heading are half hidden under the sticky header.",
+      "screenshot": "02-subjects-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The Key Terms panel cuts off mid-line at the bottom ('calculated using Ek = ½mv²' is clipped), with no visible sign that it scrolls.",
+      "screenshot": "07-exchange-6-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The top chat bubble is clipped under the 'Start this topic over' bar, showing only a partial line.",
+      "screenshot": "06-exchange-3-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "No 'Lesson finished.' text, end buttons (Topics / Show me the slides / Ask something else) or input box is visible. The phone user may not see how to leave the lesson.",
+      "screenshot": "13-end-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The 'Worth writing down' notes box appears above the tutor's reply to her answer, so it reads out of order.",
+      "screenshot": "12-exchange-21-phone.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": {
+    "turn": "S14",
+    "quote": "this is long",
+    "why": "This is her third 'this is long', on top of three 'huh?'s. The messages keep running long, and a wrong answer then gets no correction."
+  },
+  "fixes": [
+    {
+      "target": "AI lesson behaviour: correct-answer handling",
+      "change": "Always confirm a correct answer in the first clause (e.g. 'Yes, higher = more GPE') before moving to new content. This applies to T3 and T5."
+    },
+    {
+      "target": "AI lesson behaviour: wrong answer",
+      "change": "On a wrong answer like '30 J', correct it immediately and briefly ('No, it stays 50 J because nothing leaves a closed system'). Only then offer to continue."
+    },
+    {
+      "target": "p1-energy-stores Sankey section",
+      "change": "Add one plain sentence defining a Sankey diagram (arrows showing where energy goes, width = amount) before the arrow-width question."
+    },
+    {
+      "target": "AI lesson behaviour: 'tell me the rest' and bored responses",
+      "change": "Limit each tutor message to about 2 short sentences plus one question. Never reveal the answer inside the question (T8, T11). Split the T11 dump into separate turns."
+    },
+    {
+      "target": "p1-energy-stores conservation text (T16)",
+      "change": "Keep closed systems separate from dissipation. Say the total stays 50 J because nothing enters or leaves. Explain separately that in real, non-closed systems some energy spreads to the surroundings' thermal store."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Lesson p1-energy-stores (Physics › Energy › Energy stores and transfers — what energy actually is).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p1-phone.png and 04-lessons-p1-laptop.png] lessons-P1
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! Every time you move, eat or switch on a light, energy is doing something, and the first step is learning where it can be held: physics says there are eight "energy stores". What do you think a book sitting on a high shelf is storing, and in which store?
+    [screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (minimal): ok what are they
+    T1: Here they are: kinetic, gravitational potential, elastic potential, thermal, chemical, nuclear, electrostatic and magnetic. An "energy store" is just a way energy can be held. The book on the shelf is raised above the ground, so its energy is in the gravitational potential store. A spring that's been squashed holds energy too, so which store would that be?
+    S2 (try): elastic potential?
+    T2: Yes — elastic potential is right, because a squashed spring holds energy. Now, anything that is moving, like a kicked ball or a running person, has energy in its kinetic store. Which store would a speeding car have energy in?
+    S3 (try): kinetic store cos its moving
+    T3: Now back to the book: its energy is in the gravitational potential store, which depends on height above a reference point, using Ep = mgh, where g = 9.8 N/kg on Earth. Looking at that formula, which quantity would you increase to give a roller coaster at the top of a hill more energy in this store?
+    [screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3
+    S4 (bored): huh?
+    T4: Let me say it more simply: the higher up an object is, the more energy it has in its gravitational potential store. A roller coaster at the top of a hill has lots; at the bottom, much less. So what would you change about a roller coaster to give it more energy in this store?
+    S5 (bored): make it go higher?
+    T5: Now the elastic potential store: a stretched or squashed spring holds energy given by Ee = ½ke², where k is the spring constant and e is the extension, measured in metres. Which quantity in that formula tells you how far the spring has been stretched?
+    S6 (try): the e thing right?
+    T6: Yes — e is right, it's the extension, how far the spring is stretched. Energy doesn't just jump between stores, it moves by a pathway, and the first is mechanical: energy transferred by work done by forces, like pushing, pulling or kicking a ball. When you kick a ball, what is doing the work?
+    [screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6
+    S7 (bored): this is long
+    T7: Fair enough, I'll keep it short. Mechanical transfer just means a force pushing or pulling something, like a foot kicking a ball. The foot does work on the ball and moves energy into it. When you kick a ball, what does the ball start to do?
+    S8 (try): it moves really fast
+    T8: Yes — it moves really fast, so the foot did work on the ball. The next pathway is electrical: energy transferred by work done when a current flows in a circuit, like in a torch or a phone charger. When a current flows round a circuit, which pathway is moving the energy?
+    S9 (bored): this is long
+    T9: Okay, shorter still. Electrical transfer just means energy moving because a current flows round a circuit, like in a phone charger. A torch bulb lights up when a current flows through it. What is flowing round the circuit to move the energy?
+    [screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9
+    S10 (idk): idk what flows
+    T10: No worries if that one's tricky. Would you like me to just tell you the rest of this one?
+    S11 (checkin-no): yeah go on
+    T11: Here's the rest. Current flowing in a circuit is the electrical pathway. Heating moves energy from a hotter object to a cooler one. Radiation uses electromagnetic waves like light and infrared, and sound waves carry energy too. Now the big rule: energy cannot be created or destroyed, so the total in a closed system always stays the same. If a book falls off a table, its gravitational potential energy becomes kinetic energy. So where did that energy go, if it can't disappear?
+    S12 (bored): huh?
+    T12: Sorry, that was a lot. Simply: energy can't vanish, it just moves into a different store. When the book falls, its gravitational potential energy turns into kinetic energy. So when the book is falling, which store is the energy now in?
+    [screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12
+    S13 (try): kinetic energy i guess
+    T13: Yes — kinetic energy is right, the book's store changed but the energy didn't vanish. A closed system is one where no energy is transferred to or from the surroundings, so its total energy stays constant. If a closed system starts with 50 J of energy in total, how much does it have after the energy moves between stores?
+    S14 (bored): this is long
+    T14: Fair enough, I'll keep it short. A closed system is one where no energy goes in or out, so the total never changes. Say a closed system holds 50 J of energy in total. What is the total afterwards?
+    S15 (wrong): like 30 j? some of it left maybe
+    T15: Would you like me to just tell you the rest of this one?
+    [screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15
+    S16 (checkin-yes): yeah go on
+    T16: Sure. Energy can't be created or destroyed, and a system is just an object or group of objects. So in a closed system the total stays at 50 J, not 30 J: energy that seems to disappear has gone to the thermal store of the surroundings. The book's energy goes gravitational potential, then kinetic, then thermal, partly by sound waves. In real machines, some energy always ends up in a store that's no use, which is called dissipation. A car engine does this when it heats the air around it. When energy spreads out like that, what store does it end up in?
+    S17 (bored): huh?
+    T17: Let me say it more simply. A car engine gets hot and warms the air around it, so some energy spreads out into the surroundings where it's no use. That spreading out is called dissipation. Where does the energy from the warm engine end up?
+    S18 (try): the thermal store?
+    T18: The thermal store is right, and it's the thermal store of the surroundings, the air around the engine. Energy sent somewhere that isn't useful for what the device is meant to do is called wasted energy. In a car, what is the useful energy the engine is meant to produce?
+    [screenshot 11-exchange-18-phone.png and 11-exchange-18-laptop.png] exchange-18
+    S19 (try): kinetic energy? to make it move?
+    T19: Yes, kinetic energy is right, because the useful output of a car's engine is making it move. If a Sankey arrow is twice as wide as another, what does that tell you about its energy?
+    S20 (try): its twice as much energy?
+    T20: Yes, twice as wide means twice as much energy. Now we can measure how good a device is: efficiency = useful output energy transfer ÷ total input energy transfer. A lamp is supplied with 100 J and 15 J of that is transferred usefully by light. What is the lamp's efficiency as a decimal?
+    S21 (try): 15 divided by 100... is like 0.15?
+    T21: Yes, 0.15 is right, because you divided the useful output of 15 J by the total input of 100 J. That brings us to the end of this lesson.
+    [screenshot 12-exchange-21-phone.png and 12-exchange-21-laptop.png] exchange-21
+    S22 (closing): ok thanks bye
+    T22: You're welcome! You did well on Sankey diagrams and efficiency today. The other topics are there whenever you want to come back to them. Bye for now!
+    [the lesson shows "Lesson finished."]
+    [screenshot 13-end-phone.png and 13-end-laptop.png] end

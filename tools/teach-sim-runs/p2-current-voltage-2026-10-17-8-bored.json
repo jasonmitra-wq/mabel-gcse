@@ -1,0 +1,437 @@
+{
+  "id": "p2-current-voltage",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome in! Everything electrical, from your phone to a kettle, works because charge flows around a circuit, and today we start with the idea behind it all: electric current is the rate of flow of electric charge, measured in amperes (A). In your own words, what do you think \"rate of flow\" means for charge moving round a circuit?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "like how fast the charge moves through the wire?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Fast is close, but it's about how much charge passes a point each second, not just speed. Charge is measured in coulombs (C), and 1 ampere means 1 coulomb passes a point every second. So if 3 coulombs pass a point in 1 second, how many amperes is the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it 3 coulombs? or like 1/3?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "The answer is 3 amperes, because 3 coulombs passing each second means a current of 3 A. If a current of 2 A flows for 1 second, how many coulombs of charge pass?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk how to work that out",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's fine, let's make it simpler. 1 ampere means 1 coulomb passes every second, so 2 amperes just means 2 coulombs pass every second. How many coulombs pass in 1 second at 2 A?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "2 coulombs pass in 1 second?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes — 2 coulombs pass in 1 second at 2 A. Next idea: potential difference (p.d.) is measured in volts, and it tells you how much energy is transferred for each coulomb of charge flowing between two points. What unit is potential difference measured in?",
+      "recap": [
+        "Current is how much charge passes a point each second, not just how fast.",
+        "Charge is measured in coulombs (C) and current in amperes (A).",
+        "1 ampere means 1 coulomb passes a point every second.",
+        "So 2 A means 2 coulombs pass each second, and 3 C per second is 3 A."
+      ],
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "volts?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Yes — volts is the unit of potential difference. Next, resistance is the opposition to the flow of current, and it is measured in ohms (Ω). If a component has a greater resistance, what happens to the current flowing through it for the same potential difference?",
+      "recap": [
+        "Potential difference (p.d.) is measured in volts.",
+        "It tells you the energy transferred per coulomb of charge.",
+        "That energy is transferred between two points in a circuit.",
+        "Think of p.d. as the energy push each coulomb gets."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "the current gets smaller?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes — a greater resistance means the current gets smaller. Resistance is measured in ohms (Ω), and 1 ohm is 1 volt per ampere. So what is the unit of resistance?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "is it volts per ampere?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not quite the full answer: \"volts per ampere\" is what 1 ohm equals, but the unit itself is the ohm, written Ω. So if a resistor has 1 V across it and 1 A through it, its resistance is 1 Ω. What would the resistance be if 1 V gave a current of 2 A?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "No worries — 1 V giving a current of 2 A means the resistance is 0.5 Ω. Now for a new idea: an I-V characteristic is a graph showing how the current through a component changes with the potential difference across it. Which quantity goes on the y-axis?",
+      "recap": [
+        "Resistance is how much a component opposes the flow of current.",
+        "More resistance means less current for the same potential difference.",
+        "The unit of resistance is the ohm, written Ω.",
+        "1 Ω is the resistance when 1 V drives 1 A."
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "is it current?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes — current (I) goes on the y-axis, with potential difference (V) on the x-axis. An ohmic conductor, like a fixed resistor at constant temperature, gives a straight line through the origin, because its resistance stays constant. So if the potential difference across it doubles, what happens to the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "it doubles too?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes — doubling the potential difference doubles the current, because the resistance stays constant. Now a diode is a component that lets current flow in one direction only, called the forward direction. In the reverse direction, how would you describe the current through a diode?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "basically zero?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Yes — basically zero is right for a diode in the reverse direction. Next, the required practical: you measure I-V characteristics using a variable resistor, which is a resistor whose resistance can be changed. What does changing its resistance let you vary in the circuit?",
+      "recap": [
+        "An I-V graph plots current on the y-axis against potential difference on the x-axis.",
+        "A fixed resistor at constant temperature gives a straight line through the origin.",
+        "Double the potential difference and the current doubles, because resistance stays constant.",
+        "A diode only lets current flow forwards; in reverse the current is basically zero."
+      ],
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "does it change the current?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Yes — changing the resistance changes the current, so you can collect a range of readings. The ammeter measures that current, and it goes in series with the component, so the same current passes through both. In a series connection, how many paths does the current have to follow?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "just one path right? anyway im starving lol",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Yes — just one path is right for a series connection. A voltmeter measures the p.d. across the component, and it is connected in parallel with the component, not in series. In a parallel connection, how many paths does the current have to choose from?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "idk, more than one?",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Yes, more than one is right for a parallel connection, since the current can split between the branches. That brings us to the end of this lesson. You answered questions on potential difference, I-V characteristics and the required practical, and you answered some questions on electric current and resistance, with me telling you the rest.",
+      "recap": [
+        "A variable resistor lets you change the resistance, which changes the current.",
+        "The ammeter goes in series with the component, so one path carries the same current.",
+        "The voltmeter measures p.d. across the component and goes in parallel with it.",
+        "Parallel means the current has more than one path to choose from."
+      ],
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Bye, and go get that food! You worked well on potential difference, I-V characteristics and the required practical today, and you can come back to this lesson any time to go over the rest.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 3,
+    "engagement_quote": "just one path right? anyway im starving lol",
+    "would_quit": {
+      "turn": "T13",
+      "quote": "A voltmeter measures the p.d. across the component, and it is connected in parallel with the component, not in series. In a parallel connection, how many paths does the current have to choose from?",
+      "why": "She had just drifted off-topic ('im starving lol') and got another dry, abstract question. Her next reply was a low-effort 'idk'."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In your own words, what do you think \"rate of flow\" means for charge moving round a circuit?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if 3 coulombs pass a point in 1 second, how many amperes is the current?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a current of 2 A flows for 1 second, how many coulombs of charge pass?",
+        "note": "Q = It is never stated, so this works only by the 1 A = 1 C/s idea."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "so 2 amperes just means 2 coulombs pass every second. How many coulombs pass in 1 second at 2 A?",
+        "note": "The answer is given in the sentence before the question, so it tests nothing."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What unit is potential difference measured in?",
+        "note": "Parrot question asked straight after saying 'measured in volts'. Q = It, the closed-circuit rule, same current in a loop and the ammeter (keyPoints[0]) were all skipped, and E = QV was never taught."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a component has a greater resistance, what happens to the current flowing through it for the same potential difference?",
+        "note": ""
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Resistance is measured in ohms (Ω), and 1 ohm is 1 volt per ampere. So what is the unit of resistance?",
+        "note": "Ambiguous parrot question: both 'ohm' and 'volt per ampere' were just given as answers."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Not quite the full answer: \"volts per ampere\" is what 1 ohm equals, but the unit itself is the ohm, written Ω.",
+        "note": "Rejects an answer that matches keyTerms[1].def. It then asks for a division (1 ÷ 2) when R = V/I was never taught."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "No worries — 1 V giving a current of 2 A means the resistance is 0.5 Ω.",
+        "note": "Gives the answer with no working or formula. V = IR, length and temperature effects (keyPoints[2]) were skipped."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if the potential difference across it doubles, what happens to the current?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In the reverse direction, how would you describe the current through a diode?",
+        "note": "The filament lamp, the lesson's key exam item, was skipped entirely."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Yes — basically zero is right for a diode in the reverse direction.",
+        "note": "Endorses the misconception in commonMistakes[3]. The lesson requires 'very high resistance, so a very small current'."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In a series connection, how many paths does the current have to follow?",
+        "note": ""
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In a parallel connection, how many paths does the current have to choose from?",
+        "note": "Tests a general definition that was not taught. It does not test the taught reason (the voltmeter measures p.d. across the component)."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That brings us to the end of this lesson.",
+        "note": "Ends with the filament lamp, Q = It, E = QV, safety, reverse connections and repeats never covered."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You worked well on potential difference, I-V characteristics and the required practical today",
+        "note": "Overclaims coverage."
+      }
+    ],
+    "flow_faults": [
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T7",
+        "quote": "Not quite the full answer: \"volts per ampere\" is what 1 ohm equals, but the unit itself is the ohm, written Ω.",
+        "note": "Volts per ampere matches keyPoints[2].keyTerms[1].def. It should be confirmed as correct."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T11",
+        "quote": "Yes — basically zero is right for a diode in the reverse direction.",
+        "note": "The lesson says a very small current flows because the reverse resistance is very high. The diode does not block all current."
+      },
+      {
+        "type": "closing_claims_untaught_content",
+        "turn": "T14",
+        "quote": "You answered questions on potential difference, I-V characteristics and the required practical",
+        "note": "Her only p.d. answer was 'volts'. E = QV, the filament lamp and the practical's safety and repeats were never reached."
+      },
+      {
+        "type": "closing_claims_untaught_content",
+        "turn": "T15",
+        "quote": "You worked well on potential difference, I-V characteristics and the required practical today",
+        "note": "Implies these topics were covered, but most of their content was never taught."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: teach every writeBullet of a key point before advancing",
+        "change": "Teach and practise Q = It (keyPoints[0].writeBullets[2]), E = QV (keyPoints[1].writeBullets[1]) and R = V/I (keyPoints[2].writeBullets[1]) before moving on. Each needs one worked example with easy numbers. None of the three equations was ever stated, yet all five checkpoints rely on them.",
+        "quote": "What would the resistance be if 1 V gave a current of 2 A?"
+      },
+      {
+        "target": "teach-core: do not close the lesson until all key points are covered",
+        "change": "Do not end at T14. Cover keyPoints[3]'s filament lamp (heats → resistance rises → curve bends away) and keyPoints[4]'s safety, reverse connections and repeats. The filament lamp is the examTip's named favourite.",
+        "quote": "That brings us to the end of this lesson."
+      },
+      {
+        "target": "keyPoints[3].tutor_note / teach-core: check answers against commonMistakes",
+        "change": "When her answer matches a commonMistakes entry, correct it rather than confirm it. For example: 'Nearly — a diode has very high resistance in reverse, so a very small current flows, not zero.'",
+        "quote": "Yes — basically zero is right for a diode in the reverse direction."
+      },
+      {
+        "target": "teach-core: accept answers equivalent to keyTerms definitions",
+        "change": "Treat 'volts per ampere' as correct, since it matches keyPoints[2].keyTerms[1].def. Then add 'and we call that the ohm, Ω'. Also avoid asking a unit question right after stating the answer.",
+        "quote": "Not quite the full answer: \"volts per ampere\" is what 1 ohm equals, but the unit itself is the ohm, written Ω."
+      },
+      {
+        "target": "teach-core: closing summary",
+        "change": "Name only the specific items she answered herself (e.g. the unit of p.d., ammeter in series). List the skipped items (Q = It, E = QV, filament lamp, practical safety) as things to come back to.",
+        "quote": "You worked well on potential difference, I-V characteristics and the required practical today"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T13",
+      "question does not match what was taught: T7, T13",
+      "flow faults: correct_answer_not_acknowledged T7, factual_or_unit_slip T11, closing_claims_untaught_content T14, closing_claims_untaught_content T15"
+    ]
+  },
+  "cost": 0.3464950000000002,
+  "tutorCost": 0.18500399999999997,
+  "tutorCalls": 56,
+  "mode": "run",
+  "date": "2026-10-17"
+}

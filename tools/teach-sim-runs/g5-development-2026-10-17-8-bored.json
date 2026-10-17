@@ -1,0 +1,736 @@
+{
+  "id": "g5-development",
+  "subject": "geography",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! Today we're asking why people's lives differ so much between countries, starting with how we measure development. GNI per capita is a country's total yearly income divided by its population, so \"per capita\" means per what?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "per person innit",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — \"per person\" is right, so GNI per capita is an average income figure. Income only shows wealth, so we also use social indicators, like life expectancy: the average number of years someone born in a country can expect to live. Japan's is 84 years and Sierra Leone's is 55 years, so which country has the higher life expectancy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "huh",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "No worries, let me say it simpler. Life expectancy is how many years a baby born in a country can expect to live. In Japan that's 84 years, and in Sierra Leone it's 55 years. Which of those two countries has people living longer?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "japan i guess",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, Japan is right, since 84 years is more than 55. Another social indicator is infant mortality rate (IMR): how many babies out of every 1,000 born alive die before their first birthday. Chad's is 103 and the UK's is 4, so which country has the better healthcare and nutrition?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "uk i think cuz lower number is better",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, the UK is right, because a lower IMR means fewer babies dying. The HDI combines income, life expectancy and years of schooling into one score between 0 and 1, so how many different things does it combine?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "ugh im so hungry rn",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Fair enough, hunger makes everything harder, and you can come back to this lesson any time. Quick version: the HDI squashes income, life expectancy and years of schooling into one score between 0 and 1. A score near 1 means people are wealthy, long-lived and well educated. Which of those three things is about how long people live?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "life expectancy i guess",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, life expectancy is right, because it's the number about how long people live. A measure built by combining several indicators into one number is called a composite measure, and the HDI is one, while GNI per capita is not. Why is the HDI called a composite measure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "cuz it combines like three things together",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes, it combines three things, income, life expectancy and years of schooling, which is exactly why it's called composite. Now, the World Bank sorts countries into groups by income, and the top group is HICs, or High Income Countries, such as the UK, Japan and the United States. What does HIC stand for in full?",
+      "recap": [
+        "GNI per capita means a country's yearly income per person, so it's an average.",
+        "Life expectancy is how many years a baby born there can expect to live.",
+        "Infant mortality rate counts baby deaths per 1,000 births, so lower is better.",
+        "The HDI is a composite measure, combining income, life expectancy and schooling into one score."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Sorry, that was a bit much. HIC just means High Income Country, a wealthy country where people earn a lot on average, like the UK, Japan or the United States. Which one of those three countries did we already say has people living longer than in Chad?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "um all of them probably? theyre all rich",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes, all of them is right, because the UK, Japan and the United States are all HICs, high income countries. At the other end are LICs, Low Income Countries, the world's poorest, with a low GNI per capita, such as Niger or Malawi. What does the L in LIC stand for?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "k",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "LIC just means Low Income Country, one of the world's poorest, where people earn very little on average, like Niger or Malawi. The L is the opposite of the H in HIC. So what does the L in LIC stand for?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "idk lol",
+      "studentType": "idk",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "That's totally fine, this bit can be fiddly. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "yeah fine just tell me",
+      "studentType": "checkin-no",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Okay, here's the rest. The World Bank sorts countries by GNI per capita into HICs, UMICs (Upper Middle Income, like Brazil and China), LMICs (Lower Middle Income, like Nigeria and India) and LICs. NEEs, Newly Emerging Economies, have rapid growth, large populations and growing global influence, like China, India, Brazil, South Africa, Nigeria and Mexico. The Brandt Line (1980) split a rich \"North\" from a poor \"South\", but it's outdated now, since China and Brazil in the south are major economic powers.\n\nNext up: the development gap is the difference in wealth and quality of life between the richest and poorest countries. In your own words, what do you think the \"gap\" is between?",
+      "recap": [
+        "The L in LIC stands for Low, so it means Low Income Country.",
+        "HIC means High Income Country, a wealthy country like the UK, Japan or the United States.",
+        "LICs are the world's poorest countries, with low GNI per capita, like Niger or Malawi.",
+        "The World Bank sorts countries into groups by how much people earn on average."
+      ],
+      "flags": [
+        "over length (114 words)"
+      ]
+    },
+    {
+      "n": 13,
+      "student": "ugh im so hungry rn can we take a break",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Sure, grab some food, this lesson will be here when you're back. Quick idea for while you think: the development gap is just how far apart the richest and poorest countries are in wealth and quality of life, like Japan and Niger. So the gap is between which two kinds of country?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "It's between the richest countries and the poorest ones, like Japan and Niger. What did European powers take out of the countries they colonised?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "um like gold and stuff? or was it people",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Gold and stuff is right: they took out raw materials, like crops, timber and metal ores. People isn't part of this point, though. What's missing is that they also shut down local industries that competed with their own. So why would shutting down local industries keep a colonised country poor?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "cos they cant make their own stuff to sell?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes, if local industries are shut down, the country can't make and sell its own goods. If a country sells cheap coffee beans but has to buy expensive manufactured goods, which of the two earns it more money?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "buying stuff costs more money so that loses them money?",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "yeah ok just tell me",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Here's the rest. Cheap primary products earn less than expensive manufactured goods, and their prices swing from year to year, so a country's terms of trade get worse over time. Colonial powers also drew arbitrary borders cutting across ethnic groups. Many poor countries borrowed from the IMF and World Bank in the 1970s–80s at high interest, so repayments drain money from schools and hospitals. That's the debt cycle. Physical factors like being landlocked, poor soils and unreliable rainfall hold countries back, and natural disasters damage infrastructure. Political factors matter too: corruption diverts money, and conflict destroys infrastructure and deters investment.\n\nNext: there are many strategies to close the development gap, and the first is aid, meaning money, goods or expertise given by one country or organisation to another. Emergency aid arrives after a disaster, while long-term development aid pays for things like schools and water supplies.\n\nAfter an earthquake, which kind of aid would arrive first?",
+      "recap": [
+        "The development gap is how far apart the richest and poorest countries are.",
+        "Countries are grouped by income: HICs, UMICs, LMICs and LICs.",
+        "Colonial powers took raw materials and shut down local industries that competed.",
+        "Cheap raw materials sell for little, but imported manufactured goods cost much more."
+      ],
+      "flags": [
+        "over length (156 words)"
+      ]
+    },
+    {
+      "n": 19,
+      "student": "emergency aid",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes — emergency aid is right, because it arrives straight after a disaster. Next strategy is trade: the Fairtrade scheme guarantees farmers a minimum price for their crop, plus an extra payment for their community to spend on things like schools or clean water.\n\nWhy does this mean the growers keep more of the money than the buyers do?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Simpler: Fairtrade promises a coffee farmer a minimum price, so they can't be paid too little. They also get an extra payment for their village's school or clean water.\n\nWhat does the farmer's community use that extra payment for?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "schools or clean water",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes — schools or clean water is right, that's what the extra payment is for. Next is debt relief: the HIPC scheme cancels part of the debt of the world's poorest countries, so the money can be spent at home instead of on repayments. Uganda used the freed money to abolish school fees. What did Uganda spend it on instead?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Fair enough, I'll keep it short. HIPC cancels some of a poor country's debt, so its money stays at home instead of going on repayments. Uganda used the freed money to abolish school fees.\n\nWhat did Uganda spend the freed-up money on?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "abolishing school fees",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes — abolishing school fees is right. Next is intermediate technology: simple, affordable equipment that local people can build, use and repair themselves, like a hand-powered water pump.\n\nWhy is that better than expensive machinery needing foreign engineers?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "cos theyre cheaper to buy",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Cheaper is right. The other half is the repairs: local people can fix the equipment themselves, so nothing breaks down waiting for foreign engineers. If a hand-powered water pump breaks in a village, who can mend it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "someone from the village maybe idk im starving",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes — someone from the village is right, because local people can mend it themselves. Go and eat soon! Next is microfinance: very small loans for people too poor to use an ordinary bank, so they can start a small business.\n\nWhat would someone use one of these small loans for?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "like starting their own business i guess",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes — starting their own business is right, which is exactly what the small loan is for. The Grameen Bank in Bangladesh pioneered microfinance, lending small sums mainly to women, and 97% of its loans get repaid.\n\nWhy might that high repayment rate matter for a bank lending to very poor people?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "shows theyre reliable with money",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Yes, reliable with money is right, and that's why a high repayment rate matters to a bank. Now for the bigger picture: in 2015, countries at the United Nations agreed 17 Sustainable Development Goals (SDGs), covering poverty, hunger, health, education and climate, to be met by 2030.\n\nBy which year are countries meant to meet these 17 goals?",
+      "recap": [
+        "Aid is money, goods or expertise given to help, either emergency or long-term.",
+        "Fairtrade guarantees farmers a minimum price plus extra money for their community.",
+        "Debt relief cancels debt so money stays home, like Uganda scrapping school fees.",
+        "Intermediate technology and microfinance give cheap, local tools and tiny loans for small businesses."
+      ],
+      "flags": []
+    },
+    {
+      "n": 28,
+      "student": "2030 but this is long",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Yes — 2030 is right, and I'll keep this short. Extreme poverty means living on an income too low to cover basic food, shelter and healthcare, and the share of the world's population in it fell from 36% in 1990 to 8.6% in 2022.\n\nWhat was the share of people in extreme poverty in 2022?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 29,
+      "student": "8.6% i guess",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Yes — 8.6% is right, the share of people in extreme poverty in 2022, down from 36% in 1990. That brings us to the end of this lesson. You answered questions on \"What is development and how do we measure it?\" , \"Strategies to reduce the development gap\" and \"Is the development gap closing?\"",
+      "recap": [
+        "In 2015, countries agreed 17 Sustainable Development Goals, due by 2030.",
+        "The goals cover poverty, hunger, health, education and climate.",
+        "Extreme poverty means too little income for basic food, shelter and healthcare.",
+        "Extreme poverty fell from 36% in 1990 to 8.6% in 2022."
+      ],
+      "flags": []
+    },
+    {
+      "n": 30,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Bye, and well done sticking with it today. You can come back to this lesson any time you want to go over the development gap again.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "ugh im so hungry rn can we take a break",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "GNI per capita is a country's total yearly income divided by its population, so \"per capita\" means per what?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Japan's is 84 years and Sierra Leone's is 55 years, so which country has the higher life expectancy?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which of those two countries has people living longer?",
+        "note": ""
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Chad's is 103 and the UK's is 4, so which country has the better healthcare and nutrition?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The HDI combines income, life expectancy and years of schooling into one score between 0 and 1, so how many different things does it combine?",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which of those three things is about how long people live?",
+        "note": ""
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why is the HDI called a composite measure?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does HIC stand for in full?",
+        "note": ""
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Which one of those three countries did we already say has people living longer than in Chad?",
+        "note": "Chad was only compared on IMR (with the UK), never on life expectancy. Japan was compared with Sierra Leone. The question also drops the HIC idea just taught."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Yes, all of them is right, because the UK, Japan and the United States are all HICs, high income countries.",
+        "note": "Accepts an answer to a flawed question and gives a reason that doesn't fit it."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So what does the L in LIC stand for?",
+        "note": ""
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "The Brandt Line (1980) split a rich \"North\" from a poor \"South\", but it's outdated now, since China and Brazil in the south are major economic powers.",
+        "note": "Over 120 words: a whole key point plus a new concept in one block."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Sure, grab some food, this lesson will be here when you're back. Quick idea for while you think:",
+        "note": "Agrees to a break, then carries on teaching and asks a question."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What did European powers take out of the countries they colonised?",
+        "note": "Asks about colonialism before teaching anything about it."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So why would shutting down local industries keep a colonised country poor?",
+        "note": ""
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a country sells cheap coffee beans but has to buy expensive manufactured goods, which of the two earns it more money?",
+        "note": "Trade disadvantage and primary products were not taught first, and the question is ambiguous."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": "Offers to tell her the rest straight after a reasonable answer."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Physical factors like being landlocked, poor soils and unreliable rainfall hold countries back, and natural disasters damage infrastructure.",
+        "note": "About 170 words: five causes plus a new strategy in one turn."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why does this mean the growers keep more of the money than the buyers do?",
+        "note": ""
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the farmer's community use that extra payment for?",
+        "note": ""
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Uganda used the freed money to abolish school fees. What did Uganda spend it on instead?",
+        "note": ""
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What did Uganda spend the freed-up money on?",
+        "note": ""
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why is that better than expensive machinery needing foreign engineers?",
+        "note": ""
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a hand-powered water pump breaks in a village, who can mend it?",
+        "note": ""
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What would someone use one of these small loans for?",
+        "note": ""
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why might that high repayment rate matter for a bank lending to very poor people?",
+        "note": ""
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "By which year are countries meant to meet these 17 goals?",
+        "note": "Tourism, the last strategy, is never taught."
+      },
+      {
+        "turn": "T28",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What was the share of people in extreme poverty in 2022?",
+        "note": ""
+      },
+      {
+        "turn": "T29",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That brings us to the end of this lesson.",
+        "note": "Ends with China, Sub-Saharan Africa and COVID from keyPoints[4] untaught."
+      },
+      {
+        "turn": "T30",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Bye, and well done sticking with it today.",
+        "note": ""
+      }
+    ],
+    "flow_faults": [
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T8",
+        "quote": "Which one of those three countries did we already say has people living longer than in Chad?",
+        "note": "Chad was compared with the UK on infant mortality, not on life expectancy."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T17",
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": "S17 correctly said buying costs more, and the tutor did not confirm it."
+      },
+      {
+        "type": "checkin_without_struggle",
+        "turn": "T17",
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": "Her last reply was a near-correct attempt, not wrong and not idk."
+      },
+      {
+        "type": "tell_me_skipped_content",
+        "turn": "T18",
+        "quote": "Colonial powers also drew arbitrary borders cutting across ethnic groups.",
+        "note": "Leaves out the British destroying Indian cotton weaving to sell Lancashire textiles."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: check-in trigger",
+        "change": "Only offer to tell her the rest after a wrong answer, an idk, or a second short or off-topic reply. Otherwise confirm what was right first.",
+        "quote": "Do you want me to just tell you the rest of this one?"
+      },
+      {
+        "target": "teach-core: break requests",
+        "change": "When she asks for a break, pause and invite her to return. Do not tack on a teaching question.",
+        "quote": "Sure, grab some food, this lesson will be here when you're back. Quick idea for while you think:"
+      },
+      {
+        "target": "teach-core: re-ask after confusion",
+        "change": "A simplified re-ask must reuse the same concept and the comparisons actually made earlier, never a new or invented one.",
+        "quote": "Which one of those three countries did we already say has people living longer than in Chad?"
+      },
+      {
+        "target": "teach-core: teach before asking",
+        "change": "Give a one-sentence definition (colonialism, trade disadvantage) before asking any question about it.",
+        "quote": "What did European powers take out of the countries they colonised?"
+      },
+      {
+        "target": "teach-core: tell-me summaries",
+        "change": "Cap tell-me summaries at about 60 words per turn and split them across turns. Keep the lesson's key example (Indian cotton vs Lancashire from keyPoints[2].content). Don't skip tourism in keyPoints[3].",
+        "quote": "Political factors matter too: corruption diverts money, and conflict destroys infrastructure and deters investment."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "question does not match what was taught: T8, T14, T16",
+      "flow faults: factual_or_unit_slip T8, correct_answer_not_acknowledged T17, checkin_without_struggle T17, tell_me_skipped_content T18"
+    ]
+  },
+  "cost": 0.629745000000002,
+  "tutorCost": 0.44747199999999965,
+  "tutorCalls": 116,
+  "mode": "run",
+  "date": "2026-10-17"
+}

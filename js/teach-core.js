@@ -463,6 +463,7 @@ function create(env) {
     lines.push(`${WHO_CAP} just said: "${userText}"`);
     if (FLOW_FIX) {
       if (decision.mark === 'correct') lines.push(`Her answer is right. The FIRST sentence of your reply says so and names what was right, before anything else.`);
+      if (decision.mark === 'partly') lines.push(`Her answer is partly right. The FIRST sentence of your reply says which part is right, then say what is missing.`);
       const qs = _state.flow && _state.flow.correctQs.length ? _state.flow.correctQs.slice(-8) : [];
       const as = _state.flow && _state.flow.correctAs ? _state.flow.correctAs.slice(-8) : [];
       if (qs.length && _teachIndex(decision) != null) lines.push(`Questions she has already answered correctly in this lesson, with her answers — never ask any of them again, in any words, and never ask a question whose answer is one she has already given: ${qs.map((q, k) => `"${q}" (she said: "${as[k - qs.length + as.length] || ''}")`).join(' | ')}`);
@@ -747,6 +748,9 @@ function create(env) {
       if (unanchored) { anchorTried = true; answerSaid = answer; }
       // FLOW_FIX: one more try when the question repeats one she answered correctly.
       repeated = FLOW_FIX && noYesNo && !repeatTried ? _repeatsCorrect(plain) : null;
+      // Fix round 2: a repeat in other words ("what does non-specific tell us…"
+      // after she said "it attacks anything") is caught by one short model check.
+      if (FLOW_FIX && noYesNo && !repeatTried && !repeated && !cut) repeated = await _askedAlready(plain);
       if (repeated) repeatTried = true;
       const badQ = yesNo || eitherOr || noQuestion || many || naming || unanchored || !!repeated;
       if (!cut && !long && !badQ) return done(reply);
@@ -953,7 +957,7 @@ function create(env) {
     const covered = point.facts.every((f, j) => answered[j] || told[j]);
     return { idx, verdict: covered, facts, toldNow,
              pacing: { turnsOnPoint: 0, checkinAsked: false, extensionLeft: null },
-             ...(FLOW_FIX ? { how: answered.some(Boolean) ? 'worked' : 'told' } : {}),
+             ...(FLOW_FIX ? { how: answered.every(Boolean) ? 'worked' : answered.some(Boolean) ? 'part-told' : 'told' } : {}),
              ..._afterPoint(idx, covered) };
   }
 
@@ -1077,7 +1081,7 @@ function create(env) {
       `The question: "${last.q}"`,
       `The student replied: "${userText}"`,
       _pointBrief(_points[_state.currentPointIndex]),
-      `CORRECT: it answers the question correctly (spelling, slang and short answers are fine). PARTLY: partly right, but part is missing or wrong. WRONG: an answer, but a wrong one. IDK: she says she does not know. OTHER: not an answer to the question (off topic, "ok", "huh?", a request, or a question of her own).`,
+      `CORRECT: it answers the question correctly in substance — spelling, slang, short or loosely worded answers are fine, and so is a right reason in her own words. PARTLY: only when part of what the question asked is wrong or missing. WRONG: an answer, but a wrong one. IDK: she says she does not know. OTHER: not an answer to the question (off topic, "ok", "huh?", a request, or a question of her own).`,
     ].join('\n\n');
     try {
       const raw = String(await AI.call(sys, user, 10) || '').toUpperCase();
@@ -1160,6 +1164,24 @@ function create(env) {
     }) || null;
   }
 
+  // Has she already answered what this question asks (in any words)? Returns
+  // the earlier question, or null. A failed call counts as no.
+  async function _askedAlready(plain) {
+    const f = _state.flow;
+    if (!f || !f.correctQs.length) return null;
+    const q = (plain.match(/[^.!?]*\?\s*$/) || [''])[0].trim();
+    if (!q) return null;
+    const qs = f.correctQs.slice(-8), as = (f.correctAs || []).slice(-8);
+    const list = qs.map((x, k) => `${k + 1}. "${x}" — she said "${as[k - qs.length + as.length] || ''}"`).join('\n');
+    const sys = `You check a tutor's question against what a student has already answered. Reply with one number only: the number of the earlier question whose answer already answers the new question, or 0 if none does.`;
+    const user = `Earlier questions she answered correctly, with her answers:\n${list}\n\nNew question: "${q}"\n\nDoes one of her earlier answers already answer the new question, even in other words or the other way round? Reply with its number, or 0.`;
+    try {
+      const m = String(await AI.call(sys, user, 10) || '').match(/\d+/);
+      const k = m ? +m[0] : 0;
+      return k >= 1 && k <= qs.length ? qs[k - 1] : null;
+    } catch (e) { _logError('repeat check', e); return null; }
+  }
+
   // Which key point a reply will be teaching, so the brief can be limited to it.
   function _teachIndex(d) {
     if (!d) return null;
@@ -1178,7 +1200,7 @@ function create(env) {
       decision.flowNote = { shortRun: kind === 'other' ? _flow().shortRun + 1 : 0,
                             correctQ: _turnMark && _turnMark.mark === 'correct' ? _turnMark.question : null,
                             correctA: _turnMark && _turnMark.mark === 'correct' ? String(userText).slice(0, 120) : null };
-      if (decision.tellAll) decision.maxWords = Math.min(170, MAX_REPLY_WORDS + _wordCount(_stripHtml(decision.tellAll.content)));
+      if (decision.tellAll) decision.maxWords = Math.min(260, MAX_REPLY_WORDS + _wordCount(_stripHtml(decision.tellAll.content)));
     }
     _turnMark = null;
     if (TEACH_THEN_ASK) decision.chunk = _chunkFor(decision);

@@ -1,0 +1,183 @@
+{
+  "id": "p2-series-parallel",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Today we're looking at how the way you wire components up completely changes how a circuit works. In a series circuit, all the components are wired in one continuous loop with no branches, so the charge only has one path to follow. What does \"one path\" mean for where the current can go?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's Series circuit, Components connected in a single loop with no branches; current",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "You've got it — the current can only go one way because there's just one loop.\n\nSince current flows through every component in that single loop, each component has to oppose it. If you add another resistor to the series, what happens to the total resistance?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Let me put it simply: when you add another resistor to a series circuit, each resistor fights against the current flowing through it. So if you have two resistors in the same loop, they both add up to make the total resistance bigger. What happens to the total resistance when you add a second resistor to a series circuit?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "In a series circuit, the resistances add together — so the total gets bigger each time you add one. In a parallel circuit, components sit in separate branches instead of one loop, and the charge can take different routes. When two resistors are in separate branches like this, what's the same about the potential difference across each one?",
+      "recap": [
+        "In a series circuit, all components are wired in one continuous loop with no branches.",
+        "Current can only flow one way through the loop, passing through every component.",
+        "When you add another resistor to a series circuit, the total resistance increases.",
+        "Each resistor in the loop adds to the overall opposition against the current."
+      ],
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "I think it's Parallel circuit, Components in separate branches between the same two points; the",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Now here's something that surprises most people: when you add a second resistor in a parallel branch, the total resistance actually gets *smaller*, not bigger like in series. What do you think happens to the total resistance of a parallel circuit compared to the smallest single resistor in it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Think of it this way: when you have two separate branches, the current has two different paths to flow down instead of just one. More paths mean the charge can flow more easily, so the total resistance gets smaller. \n\nIf the smallest resistor on its own is 10 ohms, what must the total resistance be smaller than?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "It's smaller than 10 ohms. Now, why do you think your home's lights stay on when you switch off your bedroom lamp, rather than everything going dark?",
+      "recap": [
+        "In parallel circuits, components sit in separate branches between the same two points.",
+        "The potential difference is the same across each branch in a parallel circuit.",
+        "Adding more branches gives current extra routes to flow, so total resistance gets smaller.",
+        "The total resistance in parallel is always smaller than the smallest individual resistor."
+      ],
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "I think it's Parallel household wiring, Mains circuits wired so every appliance gets full supply potential",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Exactly right — that's why your lights don't all go out. In series circuits, we can replace all the resistors with a single one that works the same way, called the equivalent resistance. What do you get when you add two series resistors together?",
+      "recap": [
+        "Household circuits are wired in parallel so each appliance gets the full mains voltage.",
+        "When you switch off one appliance, the others keep working because they're on separate branches.",
+        "If circuits were in series instead, switching off one device would cut power to everything.",
+        "Parallel wiring is why your lights stay on when you turn off your bedroom lamp."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "I think it's Equivalent resistance, A single resistance value that has the same effect on",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "That's it — you've got the idea of adding them together.\n\nNow, when we want to measure the current flowing through a component, we need to use a special meter. How should an ammeter be connected to the component — what position in the circuit?",
+      "recap": [
+        "In a series circuit, you can add all the resistors together to find the total resistance.",
+        "This total is called the equivalent resistance — it acts like one big resistor.",
+        "The equivalent resistance always equals R₁ + R₂ + R₃ and so on."
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "I think it's Ammeter, Measures current; connected in series",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Spot on — in series so all that current flows through it. Now, a voltmeter measures potential difference instead. It connects differently: it goes across the component, between the same two points. How would you describe that connection?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "No worries! Let me put it differently. A voltmeter connects across the component — it plugs into the circuit at two points, one on each side of the component, like a bridge between them. That's called connecting *in parallel*.\n\nWhat do you think \"in parallel\" means when we talk about how something is connected?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "In parallel just means the component has its own separate branch or loop — the current can go through it without going through other parts.\n\nYou've now covered all the key ideas: series circuits, parallel circuits, how they behave differently, equivalent resistance, and how to measure current and voltage. That's a solid foundation — well done.",
+      "recap": [
+        "Ammeters measure current and go in series with a component so all current flows through them.",
+        "Voltmeters measure potential difference and connect in parallel, plugged across the component at two different points.",
+        "In parallel means connecting at two separate places to bridge across the component rather than in the main current path."
+      ],
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've got a really solid grasp of how circuits work now — series, parallel, and how to measure them. Good luck with your revision.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0.048176,
+  "mode": "run",
+  "date": "2026-10-17"
+}

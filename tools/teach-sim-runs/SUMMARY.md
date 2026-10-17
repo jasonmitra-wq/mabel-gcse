@@ -22,3 +22,5 @@ One line per run: date | lesson | mode | tutor turns | flagged turns | flags by 
 - 2026-10-17 | p2-power-energy | run | 15 | 0 | none | none | $0.0479
 - 2026-10-17 | p2-static | run | 18 | 4 | unanswerable: more than one question 1, stock praise 2, unanswerable: either/or question 1 | none | $0.0527
 - 2026-10-17 | p2-static | mock | 18 | 0 | none | none | -
+- 2026-10-17 | p2-series-parallel | run | 13 | 0 | none | none | $0.0482
+- 2026-10-17 | p2-static | run | 18 | 0 | none | none | $0.0490

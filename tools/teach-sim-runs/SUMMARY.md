@@ -67,3 +67,5 @@ One line per run: date | lesson | mode | tutor turns | flagged turns | flags by 
 - 2026-10-17 | p2-current-voltage | run, persona bored | 29 | FAIL | engagement 2 | would quit T25 | engagement 2; would quit at T25 | $0.4003 (tutor claude-sonnet-5-5 $0.2387)
 - 2026-10-17 | b3-defences | run, persona bored | 33 | FAIL | engagement 2 | would quit T10 | engagement 2; would quit at T10 | $0.4969 (tutor claude-sonnet-5-5 $0.3161)
 - 2026-10-17 | g5-development | run, persona bored | 31 | FAIL | engagement 2 | would quit T24 | engagement 2; would quit at T24 | $0.5389 (tutor claude-sonnet-5-5 $0.3524)
+- 2026-10-17 | p1-energy-stores | mock | 29 | 2 | unanswerable: no word from the lesson 2 | none | -
+- 2026-10-17 | p1-energy-stores | mock | 23 | 0 | none | none | -

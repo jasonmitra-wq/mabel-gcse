@@ -48,14 +48,16 @@ function create(env) {
   // reply to a wrong or confused answer with "Right", treated "huh?" or "this
   // is long" as an answer, and taught on after she asked to stop.
   const FIX_T4 = env.fixT4 !== false;
-  // Teach-then-ask (brief 2026-10-17, step 5), on by default. create({ call,
-  // teachThenAsk: false }) keeps the turns as before. Before each teaching turn
+  // Teach-then-ask (brief 2026-10-17, step 5). Off by default since brief
+  // docs/briefs/2026-10-17-tutor-flow.md step 1 (it made the tutor read a
+  // sentence and ask it straight back); create({ call, teachThenAsk: true })
+  // switches it on. Before each teaching turn
   // the code picks the next untaught sentence(s) of the key point's content and
   // tells the tutor to teach them first, then ask one question whose answer is
   // in them. The tutor adds a hidden "ANSWER:" line; if that answer is not in
   // anything it has said, it is asked once to try again. A key point is covered
   // only when every one of its sentences has been taught.
-  const TEACH_THEN_ASK = env.teachThenAsk !== false;
+  const TEACH_THEN_ASK = env.teachThenAsk === true;
   const STUDENT_NAME = env.studentName || 'Mabel';   // used only to filter it out of replies
   const WHO     = FIX23 ? 'the student' : 'Mabel';   // how prompts refer to her
   const WHO_CAP = FIX23 ? 'The student' : 'Mabel';

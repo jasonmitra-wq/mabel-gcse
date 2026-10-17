@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Brief docs/briefs/2026-10-17-sonnet-tutor.md done (steps 0–8, 2026-10-17). Next: Phase 2, task 2.6, P3 (new session).
+Runbook position: Brief docs/briefs/2026-10-17-tutor-flow.md in progress: step 1 done (TEACH_THEN_ASK off). Next: step 2 (tester rule). After the brief: Phase 2, task 2.6, P3 (new session).
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

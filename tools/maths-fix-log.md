@@ -1697,3 +1697,19 @@ Found by tools/site-test.js (M1-M6). After the fixes, `node tools/maths-recomput
 - stat-boxplots-A01 | steps[2] | a step with a definite answer (50%) had no answer box | answer 0, unit '', checkType 'skip' → answer 50, unit '%', checked (tools/maths-recompute-fns.js: null → 50)
 - stat-boxplots-A05 | question, steps[1] hint2, hint3, displayAnswer, explanation, sampleAnswer | the question asks which half of the box is wider but both halves were 7 | median 23 → 21; hint2 'Lower: 23 − 16 = 7; upper: 30 − 23 = 7.' → 'Lower: 21 − 16 = 5; upper: 30 − 21 = 9.'; hint3 'Both halves are equal (7 each).' → 'The upper half is wider (9 > 5).'; displayAnswer 'Both halves equal (7 each) — symmetric distribution' → 'Upper half wider (9 > 5) — positive skew'; explanation and sampleAnswer grade4/6/8 rewritten to the same figures. IQR (step 1) unchanged at 14.
 - seq-A04, sim-A02, sim-A05, rat-B06 | locked step prompts gave earlier answers | no content change: js/maths.js now hides a locked step's prompt until it unlocks (MATHS_INPUT_FIXES)
+
+## Website tester content faults (brief 2026-10-17, step 6e)
+
+- cmp-A03 workedExample | the worked example had the same answer as the question (8 g/cm³), so it gave the answer away
+  - workedExample.question OLD: 'A block has mass 280 g and volume 35 cm³. Find its density.'
+  - workedExample.question NEW: 'A block has mass 280 g and volume 40 cm³. Find its density.'
+  - workedExample.steps[1] OLD: 'D = 280 ÷ 35 = <strong>8 g/cm³</strong>'
+  - workedExample.steps[1] NEW: 'D = 280 ÷ 40 = <strong>7 g/cm³</strong>'
+- cmp-B04 question | step 3 asks for the mass in kg, which the question did not ask for
+  - question OLD: 'A liquid has density 0.8 g/cm³. It is poured into a container with base area 50 cm² to a depth of 6 cm. Calculate the mass of the liquid.'
+  - question NEW: 'A liquid has density 0.8 g/cm³. It is poured into a container with base area 50 cm² to a depth of 6 cm. Calculate the mass of the liquid in kilograms.'
+- cmp-B04 workedExample | its mass (240 g = 0.24 kg) was the question's own answer
+  - workedExample.question OLD: 'Liquid density 1.2 g/cm³ fills a container 40 cm² base, 5 cm deep. Find the mass in kg.'
+  - workedExample.question NEW: 'Liquid density 1.2 g/cm³ fills a container 40 cm² base, 6 cm deep. Find the mass in kg.'
+  - workedExample.steps OLD: 'Volume = 40 × 5 = 200 cm³' / 'Mass = 1.2 × 200 = 240 g' / '240 g = <strong>0.24 kg</strong>'
+  - workedExample.steps NEW: 'Volume = 40 × 6 = 240 cm³' / 'Mass = 1.2 × 240 = 288 g' / '288 g = <strong>0.288 kg</strong>'

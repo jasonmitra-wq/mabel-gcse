@@ -1,0 +1,131 @@
+# Site test: M1 (maths, 2026-10-17)
+
+**FAIL** · cost $0.1900 (5 tool calls, 0 calls from the site; tutor claude-sonnet-5-5 $0.0000)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "Step 2 asks her to 'Write the correct power of 10' and she typed '10^6', which is a correct power of 10. The app rejected it with the generic 'Not quite — check your working.' It only accepts the exponent '6', but the prompt never says so.",
+      "step": "Question 4 (stf-A01) Step 2: typed \"10^6\" — app rejected"
+    },
+    {
+      "what": "After she tapped Next on step 1 and step 2 opened, the footer still said 'Step 1 of 2' with an empty progress bar. It only changed to 'Step 2 of 2' after she left and came back.",
+      "step": "Question 5 (frc-B02) Step 1 → Step 2"
+    },
+    {
+      "what": "After warm-up wrong answers, 4 completed test questions and a wrong attempt on Q4, the home screen still shows 'Nothing secured yet', 'No sessions yet' and Error log 'All clear'. Nothing she did shows up there.",
+      "step": "Student taps Home and leaves the test"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "Footer reads 'Step 1 of 2' with an empty progress bar while step 2 is the active, unlocked step.",
+      "screenshot": "16-question-5-left-unfinished-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "Footer reads 'Step 1 of 2' with an empty progress bar while step 2 is active.",
+      "screenshot": "16-question-5-left-unfinished-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "Dashboard says 'Nothing secured yet / 0%', History says 'No sessions yet' and Error log says 'All clear' after a warm-up and 4 test questions including a wrong attempt.",
+      "screenshot": "17-after-leaving-laptop.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": {
+    "turn": "Question 5",
+    "quote": "Step 2: \"Multiply and simplify: 3/4 × 8/3.\" — the student gives up here",
+    "why": "Step 1 was a read-only statement she just tapped past. Step 2 is the whole calculation with no hint of the answer format (fraction, whole number, mixed number). After the 10^6 rejection on Q4 she can't tell what the box wants, so she gives up."
+  },
+  "fixes": [
+    {
+      "target": "stf-A01 step 2 prompt / answer matching",
+      "change": "Change the prompt to 'What is the power (the index n in 10ⁿ)?' and also accept '10^6', '10⁶' and '10**6' as equivalent to 6."
+    },
+    {
+      "target": "stf-A01 step 1 prompt",
+      "change": "Reword to 'Write the number between 1 and 10 (just that number, e.g. 3.2)' so she doesn't try typing the whole '4.75 × 10^6'."
+    },
+    {
+      "target": "Wrong-answer feedback in topic test steps",
+      "change": "Replace 'Not quite — check your working' with a format-aware message when the answer is mathematically equivalent but in the wrong form, e.g. 'Right idea — just type the index, e.g. 6'."
+    },
+    {
+      "target": "Step footer counter/progress bar on statement steps",
+      "change": "Update 'Step X of N' and the progress bar as soon as Next is tapped on a no-input step, not only on reload."
+    },
+    {
+      "target": "frc-B02 step 2 prompt",
+      "change": "Add the expected form, e.g. 'Multiply and simplify: 3/4 × 8/3. Type a whole number, a fraction like 5/3, or a mixed number like 1 2/3.'"
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Maths topic M1 (Number).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    Warm-up offered.
+    [screenshot 02-warm-up-phone.png and 02-warm-up-laptop.png] warm-up
+    Warm-up 1: "76 − 42" — typed "34" — app accepted — true answer 34
+    [check] OK: warm-up 1: "34" for 76 − 42 accepted — app accepted
+    Warm-up 2: "7 × 21" — typed "147" — app accepted — true answer 147
+    [check] OK: warm-up 2: "147" for 7 × 21 accepted — app accepted
+    Warm-up 3: "81 ÷ 9" — typed "12.25" — app rejected — true answer 9
+    [check] OK: warm-up 3: "12.25" for 81 ÷ 9 rejected — app rejected
+    [screenshot 03-warm-up-3-phone.png and 03-warm-up-3-laptop.png] warm-up-3
+    Warm-up 4: "Find 4/5 of 20" — typed "16" — app accepted — true answer 16
+    [check] OK: warm-up 4: "16" for Find 4/5 of 20 accepted — app accepted
+    Warm-up 5: "20% of 8" — typed "idk" — app rejected — true answer 1.6
+    [check] OK: warm-up 5: "idk" for 20% of 8 rejected — app rejected
+    [screenshot 04-warm-up-result-phone.png and 04-warm-up-result-laptop.png] warm-up-result
+    [screenshot 05-maths-topics-phone.png and 05-maths-topics-laptop.png] maths-topics
+    [screenshot 06-topic-m1-phone.png and 06-topic-m1-laptop.png] topic-M1
+    Question 1 (int-A01): Round 47,382 to the nearest thousand.
+    [screenshot 07-question-1-phone.png and 07-question-1-laptop.png] question-1
+      Step 1: "Look at the hundreds digit. If it is 5 or more, round up. If not, round down. Write the rounded number." — typed "47000" (right) — app accepted "✓ Correct. Hundreds digit = 3 < 5, so the thousands digit stays at 7. Answer: 47,000." — independent value 47000
+    [check] OK: int-A01 step 1: "47000" should be accepted — app accepted; independent value 47000
+    [screenshot 08-q1-step1-phone.png and 08-q1-step1-laptop.png] q1-step1
+    Question 2 (nrt-A02): Write the ratio 45 : 60 in its simplest form.
+    [screenshot 09-question-2-phone.png and 09-question-2-laptop.png] question-2
+      Step 1: student asks for a hint — "💡 Hint 1: Factors of 45: 1, 3, 5, 9, 15, 45. Factors of 60: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60."
+      Step 1: "Find the HCF of 45 and 60." — typed "15" (right) — app accepted "✓ Correct. HCF(45, 60) = 15." — independent value 15
+    [check] OK: nrt-A02 step 1: "15" should be accepted — app accepted; independent value 15
+      Step 2: "Divide both parts by 15. Enter the second part of the simplified ratio." — typed "4" (try) — app accepted "✓ Correct. 45 ÷ 15 = 3, 60 ÷ 15 = 4. Simplest form: 3 : 4." — independent value 4
+    [check] OK: nrt-A02 step 2: "4" should be accepted — app accepted; independent value 4
+    [screenshot 10-q2-step2-phone.png and 10-q2-step2-laptop.png] q2-step2
+    Question 3 (frc-A04): Find 3/8 of 72.
+    [screenshot 11-question-3-phone.png and 11-question-3-laptop.png] question-3
+    Student looks for the worked example: there is none in the topic test (by design; it is in practice).
+      Step 1: "Divide 72 by the denominator (8)." — typed "9" (right) — app accepted "✓ Correct. 72 ÷ 8 = 9. This is one-eighth of 72." — independent value 9
+    [check] OK: frc-A04 step 1: "9" should be accepted — app accepted; independent value 9
+      Step 2: "Multiply by the numerator (3) to get three-eighths." — typed "27" (try) — app accepted "✓ Correct. 9 × 3 = 27. So 3/8 of 72 = 27." — independent value 27
+    [check] OK: frc-A04 step 2: "27" should be accepted — app accepted; independent value 27
+    Question 4 (stf-A01): Write 4,750,000 in standard form.
+    [screenshot 12-question-4-phone.png and 12-question-4-laptop.png] question-4
+      Step 1: "Write the number as a value between 1 and 10, multiplied by a power of 10." — typed "6.94" (wrong) — app rejected "Not quite — check your working." — independent value 4.75
+    [check] OK: stf-A01 step 1: "6.94" should be rejected — app rejected; independent value 4.75
+    [screenshot 13-q4-step1-phone.png and 13-q4-step1-laptop.png] q4-step1
+      Step 1: "Write the number as a value between 1 and 10, multiplied by a power of 10." — typed "4.75" (right) — app accepted "✓ Correct. 4,750,000 = 4.75 × 10ⁿ. The 4.75 comes from placing the decimal after the first digit." — independent value 4.75
+    [check] OK: stf-A01 step 1: "4.75" should be accepted — app accepted; independent value 4.75
+      Step 2: "Write the correct power of 10." — typed "10^6" (try) — app rejected "Not quite — check your working." — independent value 6
+    [check] OK: stf-A01 step 2: "10^6" should be rejected — app rejected; independent value 6
+      Step 2: "Write the correct power of 10." — typed "6" (right) — app accepted "✓ Correct. Moving left means a positive power. 4,750,000 = 4.75 × 10⁶." — independent value 6
+    [check] OK: stf-A01 step 2: "6" should be accepted — app accepted; independent value 6
+    [screenshot 14-q4-step2-phone.png and 14-q4-step2-laptop.png] q4-step2
+    Question 5 (frc-B02): Work out 3/4 ÷ 3/8. Give your answer as a mixed number where appropriate.
+    [screenshot 15-question-5-phone.png and 15-question-5-laptop.png] question-5
+      Step 1: "KCF: 3/4 × 8/3. Keep 3/4, Change ÷ to ×, Flip 3/8 to 8/3." — a statement with no answer box; the student taps Next.
+      Step 2: "Multiply and simplify: 3/4 × 8/3." — the student gives up here and leaves the question unfinished.
+    [screenshot 16-question-5-left-unfinished-phone.png and 16-question-5-left-unfinished-laptop.png] question-5-left-unfinished
+    Student taps Home and leaves the test.
+    [screenshot 17-after-leaving-phone.png and 17-after-leaving-laptop.png] after-leaving
+    Student comes back to the topic: "Carry on your topic test (question 5 of 10) →".
+    [check] OK: coming back resumes the same test question — same question
+    [screenshot 18-after-coming-back-phone.png and 18-after-coming-back-laptop.png] after-coming-back

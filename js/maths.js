@@ -35,6 +35,7 @@ const Maths = (() => {
     attempted: 'maths_attempted',     // { 'num-percentages': true, ... }
     testCool:  'maths_test_cooldown', // { M1: '2026-05-16', ... }
     sessions:  'maths_sessions',
+    progress:  'maths_progress',      // + _test / _practice: the question and step she is on (MATHS_INPUT_FIXES)
   };
 
   // ── Utilities ─────────────────────────────────────────────────
@@ -167,6 +168,12 @@ const Maths = (() => {
         : `<button class="btn pri" onclick="Maths._startTest('${topicCode}', '${t.name.replace(/'/g, "\\'")}')">
              Take the topic test →
            </button>`;
+    const saved = _savedProgress('test');
+    const resume = saved && saved.mode === 'test' && saved.topic === topicCode
+      ? `<div style="margin-bottom:0.6rem"><button class="btn pri" onclick="Maths._resumeTest()">
+           Carry on your topic test (question ${Math.min(saved.testQIdx + (saved.questionDone ? 2 : 1), saved.testQids.length)} of ${saved.testQids.length}) →
+         </button></div>`
+      : '';
 
     document.getElementById('main').innerHTML = `
       <div style="max-width:640px">
@@ -179,13 +186,29 @@ const Maths = (() => {
         <div class="maths-subtopic-list">${subsHtml}</div>
         <div style="margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid var(--border2)">
           <div class="maths-section-label" style="margin-bottom:0.6rem">Topic test — score 80%+ to earn the badge</div>
-          ${testSection}
+          ${resume}${testSection}
         </div>
       </div>`;
   }
 
   // ── LESSON ROUTING ────────────────────────────────────────────
   async function _selectSubtopic(subtopicId, subtopicName, topicCode, hasLesson) {
+    // A practice question left part-way: back to the same question and step.
+    const saved = _savedProgress('practice');
+    if (saved && saved.mode === 'practice' && saved.subtopic === subtopicId) {
+      const q = MathsQuestions.getById(saved.qid);
+      if (q) {
+        _testMode = false;
+        _sessionUsedQids.push(q.id);
+        _sessionSubtopic = subtopicId;
+        _sessionTopic    = topicCode;
+        _currentQ        = q;
+        _restoreState(saved);
+        _renderQuestion(q, subtopicName, topicCode, 'Back where you left off.');
+        _restoreSteps('Back where you left off.');
+        return;
+      }
+    }
     if (hasLesson) {
       try {
         const res = await fetch(`lessons/maths/${subtopicId}.json`);
@@ -331,6 +354,8 @@ const Maths = (() => {
       return;
     }
     _sessionUsedQids.push(q.id);
+    // MATHS_INPUT_FIXES: a test left part-way must not make practice count as a test.
+    if (MATHS_INPUT_FIXES) _testMode = false;
     _sessionSubtopic = subtopicId;
     _sessionTopic    = topicCode;
     _currentQ        = q;
@@ -338,6 +363,8 @@ const Maths = (() => {
     _hintLevel       = {};
     _stepResults     = new Array(q.steps.length).fill(null);
     _renderQuestion(q, subtopicName, topicCode, tutorMsg);
+    _progressExtra = {};
+    _saveProgress({ subtopicName });
   }
 
   function _noQuestionsScreen(subtopicName, topicCode) {
@@ -369,7 +396,7 @@ const Maths = (() => {
       'Same method as the worked example — different numbers, same idea.',
     ];
     const opener = tutorMsg || openers[Math.floor(Math.random() * openers.length)];
-    const stepsHtml = q.steps.map((s, i) => _buildStepHtml(s, i, i === 0)).join('');
+    const stepsHtml = q.steps.map((s, i) => _buildStepHtml(s, i, i === _currentStep)).join('');
     const egSteps   = (q.workedExample?.steps || [])
       .map(s => `<div class="maths-eg-step">${s}</div>`).join('');
 
@@ -391,7 +418,7 @@ const Maths = (() => {
             <div>
               <div class="maths-q-header">
                 <span class="maths-q-topic-tag">${subtopicName}</span>
-                <span class="maths-q-marks">${q.marks} mark${q.marks !== 1 ? 's' : ''}</span>
+                <span class="maths-q-marks">${_marksLabel(q)}</span>
               </div>
               <div class="maths-q-text">${q.question}</div>
             </div>
@@ -420,6 +447,21 @@ const Maths = (() => {
     // MATHS_INPUT_FIXES: a locked step's prompt can give away an earlier answer
     // ("Substitute y = 3 …"), so it stays hidden until the step unlocks.
     const hidePrompt = MATHS_INPUT_FIXES && !unlocked;
+    // MATHS_INPUT_FIXES: a step with no answer box is a statement to read, with
+    // a Next button. It earns no marks, so it is not shown as something to answer.
+    if (MATHS_INPUT_FIXES && isSkip) {
+      const text = step.explanation || step.displayAnswer || step.prompt;
+      return `
+      <div class="maths-step maths-step-statement ${unlocked ? '' : 'locked'}" id="mathsStep_${i}" data-step="${i}">
+        <div class="maths-step-num">
+          <span id="stepLabel_${i}">Step ${i + 1}</span>
+        </div>
+        ${hidePrompt ? `<div class="maths-step-prompt" id="stepPromptLocked_${i}" style="color:var(--muted);font-style:italic">Finish step ${i} first.</div>` : ''}
+        <div class="maths-step-prompt" id="stepPrompt_${i}"${hidePrompt ? ' style="display:none"' : ''}>${text}</div>
+        <button class="btn" id="stepNext_${i}" style="font-size:0.85rem;padding:0.35rem 0.9rem${hidePrompt ? ';display:none' : ''}"
+          onclick="Maths._skipStep(${i})" ${unlocked ? '' : 'disabled'}>Next →</button>
+      </div>`;
+    }
     return `
       <div class="maths-step ${unlocked ? '' : 'locked'}" id="mathsStep_${i}" data-step="${i}">
         <div class="maths-step-num">
@@ -448,6 +490,10 @@ const Maths = (() => {
           : `<a class="maths-hint-link" id="stepHintLink_${i}"
                onclick="Maths._showHint(${i})">I need a hint</a>`
         }
+        ${MATHS_INPUT_FIXES && !isSkip
+          ? `<a class="maths-hint-link" id="stepShowAns_${i}" style="display:none;margin-left:1rem"
+               onclick="Maths._showAnswer(${i})">Show me the answer</a>`
+          : ''}
       </div>`;
   }
 
@@ -473,6 +519,7 @@ const Maths = (() => {
     if (!_currentQ) return;
     const step = _currentQ.steps[stepIdx];
     if (!step || step.checkType === 'skip') return;
+    if (MATHS_INPUT_FIXES && stepIdx !== _currentStep) return;   // only the step she is on
 
     const input = document.getElementById(`stepInput_${stepIdx}`);
     if (!input) return;
@@ -494,6 +541,8 @@ const Maths = (() => {
     } else {
       if (_stepResults[stepIdx] === null) _stepResults[stepIdx] = false;
       _applyWrong(stepIdx);
+      _offerAnswer(stepIdx);
+      _saveProgress();
     }
   }
 
@@ -506,7 +555,9 @@ const Maths = (() => {
 
     if (input) { input.classList.add('correct-input'); input.disabled = true; }
     if (btn)   btn.remove();
-    if (MATHS_INPUT_FIXES) { const hl = document.getElementById(`stepHintLink_${stepIdx}`); if (hl) hl.style.display = 'none'; }
+    if (MATHS_INPUT_FIXES) {
+      for (const id of [`stepHintLink_${stepIdx}`, `stepShowAns_${stepIdx}`]) { const l = document.getElementById(id); if (l) l.style.display = 'none'; }
+    }
     if (fb)    { fb.className = 'maths-step-feedback ok'; fb.innerHTML = `✓ Correct. <span class="expl">${step.explanation || ''}</span>`; }
     if (label) label.innerHTML = `<span class="step-tick">✓</span> Step ${stepIdx + 1}`;
     el?.classList.add('correct');
@@ -532,7 +583,8 @@ const Maths = (() => {
     if (fb) { fb.className = 'maths-step-feedback err'; fb.textContent = 'Not quite — check your working.'; }
 
     const wrongs = _stepResults.filter(r => r === false).length;
-    if (wrongs === 1) _setTutorBar(MATHS_INPUT_FIXES && _NARROW() ? 'Tap "Worked example" at the top — it shows you the method.' : 'Have a look at the example on the right — it shows you the method.', true);
+    if (wrongs === 1 && MATHS_INPUT_FIXES && _testMode) _setTutorBar('Not quite. Try again, or tap "I need a hint".', true);
+    else if (wrongs === 1) _setTutorBar(MATHS_INPUT_FIXES && _NARROW() ?'Tap "Worked example" at the top — it shows you the method.' : 'Have a look at the example on the right — it shows you the method.', true);
 
     setTimeout(() => {
       input?.classList.remove('wrong-input');
@@ -545,7 +597,16 @@ const Maths = (() => {
     if (next < (_currentQ?.steps.length ?? 0)) {
       _currentStep = next;
       _unlockStep(next);
+      if (MATHS_INPUT_FIXES) {
+        // Statements and shown answers move the step count on too, not only a correct answer.
+        const bar = document.getElementById('mathsStepBar');
+        if (bar) bar.style.width = Math.round((next / _currentQ.steps.length) * 100) + '%';
+        const cnt = document.getElementById('mathsStepCount');
+        if (cnt) cnt.textContent = next + 1;
+      }
+      _saveProgress();
     } else {
+      if (MATHS_INPUT_FIXES) _currentStep = next;
       _completeQuestion();
     }
   }
@@ -560,15 +621,152 @@ const Maths = (() => {
     if (prompt) prompt.style.display = '';
     if (input) { input.disabled = false; setTimeout(() => input.focus(), 60); }
     if (btn)   btn.disabled = false;
+    const nextBtn = document.getElementById(`stepNext_${stepIdx}`);
+    if (nextBtn) { nextBtn.disabled = false; nextBtn.style.display = ''; }
   }
 
   // ── SKIP (explanation-only steps) ────────────────────────────
   function _skipStep(stepIdx) {
+    if (MATHS_INPUT_FIXES) {
+      // Only the step she is on, and only a statement step: nothing to tap through.
+      if (stepIdx !== _currentStep || _currentQ?.steps[stepIdx]?.checkType !== 'skip') return;
+      _stepResults[stepIdx] = 'statement';   // read, not marked: earns no marks
+      document.getElementById(`stepNext_${stepIdx}`)?.remove();
+      _advanceOrFinish(stepIdx);
+      return;
+    }
     if (_stepResults[stepIdx] === null) _stepResults[stepIdx] = true;
     const label = document.getElementById(`stepLabel_${stepIdx}`);
     if (label) label.innerHTML = `<span class="step-tick">✓</span> Step ${stepIdx + 1}`;
     document.getElementById(`mathsStep_${stepIdx}`)?.classList.add('correct');
     _advanceOrFinish(stepIdx);
+  }
+
+  // ── SHOW THE ANSWER (MATHS_INPUT_FIXES) ───────────────────────
+  // Offered once she has had a go or asked for a hint. The step then counts
+  // as not correct first time, and the next step unlocks.
+  function _offerAnswer(stepIdx) {
+    if (!MATHS_INPUT_FIXES) return;
+    const link = document.getElementById(`stepShowAns_${stepIdx}`);
+    if (link && _stepResults[stepIdx] !== true) link.style.display = '';
+  }
+
+  function _showAnswer(stepIdx) {
+    if (!MATHS_INPUT_FIXES || !_currentQ || stepIdx !== _currentStep) return;
+    const step = _currentQ.steps[stepIdx];
+    if (!step || step.checkType === 'skip') return;
+    _stepResults[stepIdx] = 'shown';   // not correct first time: no mark
+    _markShown(stepIdx, step);
+    _advanceOrFinish(stepIdx);
+  }
+
+  function _answerText(step) {
+    return `${step.displayAnswer ?? step.answer}${step.unit && !String(step.displayAnswer ?? '').includes(step.unit) ? ' ' + step.unit : ''}`;
+  }
+
+  // A step whose answer she was shown: the answer in the box, no marks.
+  function _markShown(stepIdx, step) {
+    const input = document.getElementById(`stepInput_${stepIdx}`);
+    const fb    = document.getElementById(`stepFeedback_${stepIdx}`);
+    if (input) { input.value = step.displayAnswer ?? step.answer; input.disabled = true; }
+    document.getElementById(`stepBtn_${stepIdx}`)?.remove();
+    for (const id of [`stepHintLink_${stepIdx}`, `stepShowAns_${stepIdx}`]) { const l = document.getElementById(id); if (l) l.style.display = 'none'; }
+    if (fb) { fb.className = 'maths-step-feedback'; fb.innerHTML = `The answer is ${_answerText(step)}. <span class="expl">${step.explanation || ''}</span>`; }
+    const label = document.getElementById(`stepLabel_${stepIdx}`);
+    if (label) label.textContent = `Step ${stepIdx + 1} · answer shown`;
+  }
+
+  // Marks: one per step with an answer box (statements earn none).
+  function _marksLabel(q) {
+    if (!MATHS_INPUT_FIXES) return `${q.marks} mark${q.marks !== 1 ? 's' : ''}`;
+    const n = q.steps.filter(s => s.checkType !== 'skip').length;
+    return n ? `${n} mark${n !== 1 ? 's' : ''}` : 'no marks';
+  }
+
+  // ── PROGRESS SAVED AS SHE GOES (MATHS_INPUT_FIXES) ────────────
+  // One record for practice and one for the topic test: the question and step
+  // she is on, so leaving and coming back resumes there.
+  let _progressExtra = {};
+  const _progressKey = mode => `${K.progress}_${mode}`;
+  function _savedProgress(mode) {
+    if (!MATHS_INPUT_FIXES) return null;
+    const p = Store.get(_progressKey(mode));
+    return p && p.v === 1 ? p : null;
+  }
+
+  function _saveProgress(extra) {
+    if (!MATHS_INPUT_FIXES || !_currentQ) return;
+    if (extra) _progressExtra = { ..._progressExtra, ...extra };
+    Store.set(_progressKey(_testMode ? 'test' : 'practice'), {
+      v: 1,
+      mode: _testMode ? 'test' : 'practice',
+      topic: _sessionTopic,
+      subtopic: _sessionSubtopic,
+      qid: _currentQ.id,
+      currentStep: _currentStep,
+      stepResults: _stepResults,
+      hintLevel: _hintLevel,
+      testQids: _testMode ? _testQuestions.map(q => q.id) : [],
+      testQIdx: _testQIdx,
+      testResults: _testMode ? _testResults : [],
+      questionDone: _currentStep >= _currentQ.steps.length,
+      ..._progressExtra,
+    });
+  }
+
+  function _clearProgress(mode = _testMode ? 'test' : 'practice') {
+    if (!MATHS_INPUT_FIXES) return;
+    _progressExtra = {};
+    Store.remove(_progressKey(mode));
+  }
+
+  function _restoreState(p) {
+    _currentStep = p.currentStep;
+    _stepResults = p.stepResults;
+    _hintLevel   = p.hintLevel || {};
+    _progressExtra = { subtopicName: p.subtopicName, topicName: p.topicName };
+  }
+
+  // After the question is drawn with _currentStep unlocked: the steps before it
+  // shown as done, and the current step as she left it.
+  function _restoreSteps(message) {
+    const steps = _currentQ.steps;
+    for (let i = 0; i < Math.min(_currentStep, steps.length); i++) {
+      const step = steps[i], r = _stepResults[i];
+      document.getElementById(`stepPromptLocked_${i}`)?.remove();
+      const prompt = document.getElementById(`stepPrompt_${i}`);
+      if (prompt) prompt.style.display = '';
+      document.getElementById(`mathsStep_${i}`)?.classList.remove('locked');
+      if (step.checkType === 'skip') { document.getElementById(`stepNext_${i}`)?.remove(); continue; }
+      if (r !== 'shown') {
+        const input = document.getElementById(`stepInput_${i}`);
+        if (input) input.value = step.displayAnswer ?? step.answer;
+        _applyCorrect(i, step);
+      } else _markShown(i, step);
+    }
+    if (_currentStep < steps.length && (_stepResults[_currentStep] === false || _hintLevel[_currentStep])) _offerAnswer(_currentStep);
+    const done = _stepResults.filter(r => r !== null).length;
+    const bar  = document.getElementById('mathsStepBar');
+    if (bar) bar.style.width = Math.round((done / steps.length) * 100) + '%';
+    const cnt  = document.getElementById('mathsStepCount');
+    if (cnt) cnt.textContent = Math.min(_currentStep + 1, steps.length);
+    if (message) _setTutorBar(message, false);
+  }
+
+  function _resumeTest() {
+    const p = _savedProgress('test');
+    if (!p || p.mode !== 'test') return;
+    const questions = p.testQids.map(id => MathsQuestions.getById(id));
+    const topicName = p.topicName || _syllabus?.topics?.[p.topic]?.name || '';
+    if (questions.some(q => !q)) { _clearProgress('test'); return _startTest(p.topic, topicName); }
+    _testMode      = true;
+    _testQuestions = questions;
+    _testResults   = p.testResults || [];
+    _sessionTopic  = p.topic;
+    _progressExtra = { topicName };
+    if (p.questionDone) { _testQIdx = p.testQIdx + 1; return _renderTestQuestion(p.topic, topicName); }
+    _testQIdx = p.testQIdx;
+    _renderTestQuestion(p.topic, topicName, p);
   }
 
   // ── HINTS ─────────────────────────────────────────────────────
@@ -594,6 +792,8 @@ const Maths = (() => {
 
     if (level === 1) _setTutorBar("Good — using hints is smart, not weak.", false);
     if (_stepResults[stepIdx] === null) _stepResults[stepIdx] = 'hinted';
+    _offerAnswer(stepIdx);
+    _saveProgress();
   }
 
   // ── COMPLETE QUESTION (lesson & test mode) ────────────────────
@@ -606,6 +806,7 @@ const Maths = (() => {
       const stepsTotal   = (_currentQ?.steps.length || 0) - skipCount;
       const stepsCorrect = _stepResults.filter(r => r === true).length;
       _testResults.push({ stepsTotal, stepsCorrect });
+      _saveProgress();   // question done: coming back goes to the next one
 
       const topicCode = _sessionTopic;
       const t = _syllabus?.topics?.[topicCode];
@@ -642,6 +843,7 @@ const Maths = (() => {
       const attempted = Store.get(K.attempted) || {};
       attempted[subtopicId] = true;
       Store.set(K.attempted, attempted);
+      _clearProgress();
 
       const celebrations = [
         "That's it — all steps done. Nice work.",
@@ -789,10 +991,12 @@ const Maths = (() => {
     _testQIdx      = 0;
     _testResults   = [];
     _sessionTopic  = topicCode;
+    _progressExtra = { topicName };
     _renderTestQuestion(topicCode, topicName);
   }
 
-  function _renderTestQuestion(topicCode, topicName) {
+  // restore: saved progress to resume this question at (MATHS_INPUT_FIXES).
+  function _renderTestQuestion(topicCode, topicName, restore) {
     if (_testQIdx >= _testQuestions.length) {
       _finishTest(topicCode, topicName);
       return;
@@ -800,25 +1004,30 @@ const Maths = (() => {
 
     const q = _testQuestions[_testQIdx];
     _currentQ    = q;
-    _currentStep = 0;
-    _hintLevel   = {};
-    _stepResults = new Array(q.steps.length).fill(null);
+    if (restore) _restoreState(restore);
+    else {
+      _currentStep = 0;
+      _hintLevel   = {};
+      _stepResults = new Array(q.steps.length).fill(null);
+    }
+    // MATHS_INPUT_FIXES: no worked example in a scored test (it stays in practice).
+    const showExample = !MATHS_INPUT_FIXES;
 
     const dots = _testQuestions.map((_, i) => {
       const cls = i < _testQIdx ? 'done' : i === _testQIdx ? 'current' : '';
       return `<div class="maths-test-dot ${cls}"></div>`;
     }).join('');
 
-    const stepsHtml = q.steps.map((s, i) => _buildStepHtml(s, i, i === 0)).join('');
+    const stepsHtml = q.steps.map((s, i) => _buildStepHtml(s, i, i === _currentStep)).join('');
     const egSteps   = (q.workedExample?.steps || [])
       .map(s => `<div class="maths-eg-step">${s}</div>`).join('');
 
     document.getElementById('main').innerHTML = `
       <div class="maths-q-page" id="mathsQPage">
-        <div class="maths-tabs">
+        ${showExample ? `<div class="maths-tabs">
           <div class="maths-tab active" id="tabQ"  onclick="Maths._switchTab('question')">Question</div>
           <div class="maths-tab"        id="tabEg" onclick="Maths._switchTab('example')">Worked example</div>
-        </div>
+        </div>` : ''}
         <div class="maths-tutor-bar" id="mathsTutorBar">
           <span class="mtb-icon">📝</span>
           <span class="mtb-text" id="mathsTutorText">
@@ -827,11 +1036,11 @@ const Maths = (() => {
           <div class="maths-test-progress" style="margin-left:auto">${dots}</div>
         </div>
         <div class="maths-split">
-          <div class="maths-q-panel" id="mathsQPanel">
+          <div class="maths-q-panel" id="mathsQPanel"${showExample ? '' : ' style="width:100%;border-right:none"'}>
             <div>
               <div class="maths-q-header">
                 <span class="maths-q-topic-tag">${topicName} test</span>
-                <span class="maths-q-marks">${q.marks} mark${q.marks !== 1 ? 's' : ''}</span>
+                <span class="maths-q-marks">${_marksLabel(q)}</span>
               </div>
               <div class="maths-q-text">${q.question}</div>
             </div>
@@ -844,14 +1053,16 @@ const Maths = (() => {
               </div>
             </div>
           </div>
-          <div class="maths-eg-panel">
+          ${showExample ? `<div class="maths-eg-panel">
             <div class="maths-eg-label">Worked example</div>
             <div class="maths-eg-subtitle">Different numbers, same method</div>
             <div class="maths-eg-q">${q.workedExample?.question || ''}</div>
             <div class="maths-eg-steps">${egSteps}</div>
-          </div>
+          </div>` : ''}
         </div>
       </div>`;
+    if (restore) _restoreSteps(`Topic test · question ${_testQIdx + 1} of ${_testQuestions.length}`);
+    _saveProgress();
   }
 
   function _nextTestQuestion(topicCode, topicName) {
@@ -862,6 +1073,7 @@ const Maths = (() => {
 
   function _finishTest(topicCode, topicName) {
     _testMode = false;
+    _clearProgress('test');
 
     const totalSteps   = _testResults.reduce((s, r) => s + r.stepsTotal, 0);
     const correctSteps = _testResults.reduce((s, r) => s + r.stepsCorrect, 0);
@@ -950,7 +1162,7 @@ const Maths = (() => {
     const topicCode = _sessionTopic;
     const t         = _syllabus?.topics?.[topicCode];
 
-    const stepsTotal   = _stepResults.filter(r => r !== null).length;
+    const stepsTotal   = _stepResults.filter(r => r !== null && r !== 'statement').length;
     const stepsCorrect = _stepResults.filter(r => r === true).length;
     const hintsUsed    = Object.values(_hintLevel).reduce((s, v) => s + v, 0);
     const mins         = Math.round((Date.now() - (_sessionStart || Date.now())) / 60000);
@@ -1024,6 +1236,8 @@ const Maths = (() => {
     _lessonPrev,
     _checkStep,
     _skipStep,
+    _showAnswer,
+    _resumeTest,
     _showHint,
     _switchTab,
     _startTest,

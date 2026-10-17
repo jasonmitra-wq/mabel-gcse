@@ -1,0 +1,139 @@
+# Site test: M4 (maths, 2026-10-17)
+
+**FAIL** · cost $0.1816 (4 tool calls, 0 calls from the site; tutor claude-sonnet-5-5 $0.0000)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "Question 1 is a topic-test question with no answer box. Step 1 shows the answer ('All three sides are equal (SSS)…') and the student only taps Next. Nothing is tested, and it is marked 'no marks' even though it counts as one of the 10 questions.",
+      "step": "Question 1 (shp-A02) Step 1"
+    },
+    {
+      "what": "Question 4 asks 'Which congruence condition applies?' but Step 1 shows the answer 'SAS congruence' straight away. Both steps are statements with no input, so the student cannot answer and the app records nothing.",
+      "step": "Question 4 (shp-A03) Steps 1–2"
+    },
+    {
+      "what": "In a topic test, the method and working are given as unanswerable statements. Q3 Step 1 gives the tan rearrangement and Q5 Step 1 gives u − v = (5, 4). Only the final calculator step is tested.",
+      "step": "Question 3 Step 1; Question 5 Step 1"
+    },
+    {
+      "what": "After the student leaves mid-test, the home page says 'Pick up where you left off' but has no button or card to resume the test. The student has to find the topic again to see 'Carry on your topic test (question 5 of 10)'.",
+      "step": "Student taps Home and leaves the test / after-leaving"
+    },
+    {
+      "what": "The resumed test page has no 'question 5 of 10' label and no progress dots, so the student cannot see where they are in the test.",
+      "step": "Student comes back to the topic / after-coming-back"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "The test header line 'Topic test · question N of 10' is half hidden under the sticky top nav, so the text is clipped at the top.",
+      "screenshot": "07-question-1-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The encouragement message in the test header is cut off under the nav: only 'Good — using hints is smart, not weak.' is partly visible on laptop, and only 'is smart, not weak.' shows on phone.",
+      "screenshot": "09-q2-hint-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The feedback line is clipped to just 'going.' under the top nav.",
+      "screenshot": "11-q3-step2-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The home page says 'Pick up where you left off — you were doing well.' but no resume card is shown, and History still says 'No sessions yet'.",
+      "screenshot": "15-after-leaving-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The resumed test has no question counter or progress dots at the top.",
+      "screenshot": "16-after-coming-back-phone.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": {
+    "turn": "Question 5",
+    "quote": "Find |u − v| = |(5, 4)| = √(5² + 4²). Calculate it to 2 d.p.",
+    "why": "The test never says whether a calculator is allowed (the warm-up said no calculator), there are two free 'no marks' questions so it feels pointless, and the student gave up here."
+  },
+  "fixes": [
+    {
+      "target": "Questions shp-A02 and shp-A03 (test mode)",
+      "change": "Add an answer input, e.g. a choice of SSS/SAS/ASA/RHS. Show the explanation statement only after the student answers, and give the question at least 1 mark."
+    },
+    {
+      "target": "Topic test step rendering",
+      "change": "In test mode, hide working statements such as the tan rearrangement and u − v = (5, 4). Either turn them into answerable steps or move them behind 'I need a hint'."
+    },
+    {
+      "target": "Test header / sticky nav CSS",
+      "change": "Add top padding equal to the nav height so 'Topic test · question N of 10' and the feedback text sit fully below the nav. Keep this header visible on the resumed test page."
+    },
+    {
+      "target": "Home page when a test is in progress",
+      "change": "Show a highlighted card 'Carry on your Geometry & Measures test (question 5 of 10) →' that links straight to the saved question."
+    },
+    {
+      "target": "Topic test intro and question header",
+      "change": "State 'Calculator allowed' on calculator questions such as Q3 and Q5, so it does not clash with the warm-up's 'no calculator' message."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Maths topic M4 (Geometry & Measures).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    Warm-up offered.
+    [screenshot 02-warm-up-phone.png and 02-warm-up-laptop.png] warm-up
+    Warm-up 1: "96 − 43" — typed "53" — app accepted — true answer 53
+    [check] OK: warm-up 1: "53" for 96 − 43 accepted — app accepted
+    Warm-up 2: "5 × 6" — typed "30" — app accepted — true answer 30
+    [check] OK: warm-up 2: "30" for 5 × 6 accepted — app accepted
+    Warm-up 3: "60 ÷ 6" — typed "13.5" — app rejected — true answer 10
+    [check] OK: warm-up 3: "13.5" for 60 ÷ 6 rejected — app rejected
+    [screenshot 03-warm-up-3-phone.png and 03-warm-up-3-laptop.png] warm-up-3
+    Warm-up 4: "Find 4/5 of 15" — typed "12" — app accepted — true answer 12
+    [check] OK: warm-up 4: "12" for Find 4/5 of 15 accepted — app accepted
+    Warm-up 5: "20% of 20" — typed "idk" — app rejected — true answer 4
+    [check] OK: warm-up 5: "idk" for 20% of 20 rejected — app rejected
+    [screenshot 04-warm-up-result-phone.png and 04-warm-up-result-laptop.png] warm-up-result
+    [screenshot 05-maths-topics-phone.png and 05-maths-topics-laptop.png] maths-topics
+    [screenshot 06-topic-m4-phone.png and 06-topic-m4-laptop.png] topic-M4
+    Question 1 (shp-A02): Explain why these two triangles are congruent: Triangle 1 has sides 5 cm, 7 cm, 9 cm. Triangle 2 has sides 9 cm, 5 cm, 7 cm.
+    [screenshot 07-question-1-phone.png and 07-question-1-laptop.png] question-1
+      Step 1: "All three sides are equal (SSS), so the triangles are congruent." — a statement with no answer box; the student taps Next.
+    Question 2 (pyth-A05): A right-angled triangle has legs 9 cm and 40 cm. Find the hypotenuse.
+    [screenshot 08-question-2-phone.png and 08-question-2-laptop.png] question-2
+      Step 1: student asks for a hint — "💡 Hint 1: 81 + 1600 = ?"
+    [screenshot 09-q2-hint-phone.png and 09-q2-hint-laptop.png] q2-hint
+      Step 1: "Use a² + b² = c². Calculate 9² + 40²." — typed "1681" (right) — app accepted "✓ Correct. 9² + 40² = 81 + 1600 = 1681." — independent value 1681
+    [check] OK: pyth-A05 step 1: "1681" should be accepted — app accepted; independent value 1681
+      Step 2: "Find c = √1681." — typed "41" (try) — app accepted "✓ Correct. c = √1681 = 41 cm. (9-40-41 triple)" — independent value 41
+    [check] OK: pyth-A05 step 2: "41" should be accepted — app accepted; independent value 41
+    Question 3 (trig-A02): In a right-angled triangle, angle θ = 35° and the adjacent side is 12 cm. Find the opposite side.
+    [screenshot 10-question-3-phone.png and 10-question-3-laptop.png] question-3
+    Student looks for the worked example: there is none in the topic test (by design; it is in practice).
+      Step 1: "tan θ = opp/adj → opp = adj × tan θ." — a statement with no answer box; the student taps Next.
+      Step 2: "Calculate: 12 × tan 35°." — typed "8.4" (try) — app accepted "✓ Correct. 12 × tan 35° ≈ 8.40 cm." — independent value 8.4025
+    [check] OK: trig-A02 step 2: "8.4" should be accepted — app accepted; independent value 8.4025
+    [screenshot 11-q3-step2-phone.png and 11-q3-step2-laptop.png] q3-step2
+    Question 4 (shp-A03): Two triangles share two equal sides of 6 cm and 9 cm with an included angle of 50°. Which congruence condition applies?
+    [screenshot 12-question-4-phone.png and 12-question-4-laptop.png] question-4
+      Step 1: "Two sides and the included angle equal → SAS congruence." — a statement with no answer box; the student taps Next.
+      Step 2: "SAS is a valid congruence condition, so the triangles are congruent." — a statement with no answer box; the student taps Next.
+    Question 5 (vec-B04): Vectors u = (2, 5) and v = (−3, 1). Find |u − v| to 2 d.p.
+    [screenshot 13-question-5-phone.png and 13-question-5-laptop.png] question-5
+      Step 1: "u − v = (2−(−3), 5−1) = (5, 4)" — a statement with no answer box; the student taps Next.
+      Step 2: "Find |u − v| = |(5, 4)| = √(5² + 4²). Calculate it to 2 d.p." — the student gives up here and leaves the question unfinished.
+    [screenshot 14-question-5-left-unfinished-phone.png and 14-question-5-left-unfinished-laptop.png] question-5-left-unfinished
+    Student taps Home and leaves the test.
+    [screenshot 15-after-leaving-phone.png and 15-after-leaving-laptop.png] after-leaving
+    Student comes back to the topic: "Carry on your topic test (question 5 of 10) →".
+    [check] OK: coming back resumes the same test question — same question
+    [screenshot 16-after-coming-back-phone.png and 16-after-coming-back-laptop.png] after-coming-back

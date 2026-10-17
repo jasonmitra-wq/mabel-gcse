@@ -10244,10 +10244,10 @@ const MathsQuestions = (() => {
         }
       ],
       workedExample: {
-        question: 'A block has mass 280 g and volume 35 cm³. Find its density.',
+        question: 'A block has mass 280 g and volume 40 cm³. Find its density.',
         steps: [
           'Density = Mass ÷ Volume',
-          'D = 280 ÷ 35 = <strong>8 g/cm³</strong>'
+          'D = 280 ÷ 40 = <strong>7 g/cm³</strong>'
         ]
       },
       sampleAnswer: {
@@ -10462,7 +10462,7 @@ const MathsQuestions = (() => {
       subtopic: 'rpr-compound-measures',
       band: 'B',
       marks: 3,
-      question: 'A liquid has density 0.8 g/cm³. It is poured into a container with base area 50 cm² to a depth of 6 cm. Calculate the mass of the liquid.',
+      question: 'A liquid has density 0.8 g/cm³. It is poured into a container with base area 50 cm² to a depth of 6 cm. Calculate the mass of the liquid in kilograms.',
       steps: [
         {
           prompt: 'Calculate the volume of the liquid. (cm³)',
@@ -10496,11 +10496,11 @@ const MathsQuestions = (() => {
         }
       ],
       workedExample: {
-        question: 'Liquid density 1.2 g/cm³ fills a container 40 cm² base, 5 cm deep. Find the mass in kg.',
+        question: 'Liquid density 1.2 g/cm³ fills a container 40 cm² base, 6 cm deep. Find the mass in kg.',
         steps: [
-          'Volume = 40 × 5 = 200 cm³',
-          'Mass = 1.2 × 200 = 240 g',
-          '240 g = <strong>0.24 kg</strong>'
+          'Volume = 40 × 6 = 240 cm³',
+          'Mass = 1.2 × 240 = 288 g',
+          '288 g = <strong>0.288 kg</strong>'
         ]
       },
       sampleAnswer: {
@@ -26654,10 +26654,14 @@ const MathsQuestions = (() => {
   /**
    * Check if any questions exist for a given subtopic.
    */
+  function getById(id) {
+    return _allBank.find(q => q.id === id) || null;
+  }
+
   function hasQuestions(subtopicId) {
     return _allBank.some(q => q.subtopic === subtopicId);
   }
 
-  return { getQuestion, getTestQuestions, hasQuestions };
+  return { getQuestion, getTestQuestions, hasQuestions, getById };
 
 })();

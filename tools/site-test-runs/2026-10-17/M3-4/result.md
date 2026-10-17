@@ -1,0 +1,136 @@
+# Site test: M3 (maths, 2026-10-17)
+
+**FAIL** · cost $0.1839 (4 tool calls, 0 calls from the site; tutor claude-sonnet-5-5 $0.0000)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "The step counter lags behind the active step. Step 3 'Find y when x = 25' is open with its answer box, but the footer still says 'Step 2 of 3'. It only shows 'Step 3 of 3' after leaving and coming back.",
+      "step": "Question 5 Step 3 (screenshot 16 vs 18)"
+    },
+    {
+      "what": "After the warm-up and four and a half test questions, the home page still shows History 'No sessions yet' and Dashboard '0% across all subjects'. The started test is not recorded anywhere on home.",
+      "step": "Student taps Home and leaves the test"
+    },
+    {
+      "what": "Home has no 'Carry on your topic test' prompt after leaving mid-test. The resume link only appears once she navigates back into the M3 topic.",
+      "step": "Student taps Home and leaves the test"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "The header status line swaps 'Topic test · question 5 of 10' for 'Good — keep going.', so the question number disappears after each correct step.",
+      "screenshot": "15-q5-step1-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "Footer reads 'Step 2 of 3' while step 3 is the active step.",
+      "screenshot": "16-question-5-left-unfinished-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "Hint 1 is shown inside the already-completed green step 1 card, below the 'Correct' line. It looks like leftover clutter.",
+      "screenshot": "10-q2-step1-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "Step 2 prompt 'What is the sale price? (£)' repeats the £ already shown as a prefix beside the box.",
+      "screenshot": "08-q1-step1-phone.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": {
+    "turn": "Question 5",
+    "quote": "Step 3: \"Find y when x = 25.\" — the student gives up here and leaves the question unfinished.",
+    "why": "Third step of a 2-mark question, after a no-input 'Next' step. It is halfway through a 10-question test with no end in sight for a bored teen."
+  },
+  "fixes": [
+    {
+      "target": "Topic test footer step counter",
+      "change": "Update 'Step N of M' when a step unlocks (including after a statement step's Next), not only on reload."
+    },
+    {
+      "target": "Topic test header status line",
+      "change": "Keep 'Question 5 of 10' visible and show 'Good — keep going.' alongside it rather than replacing it."
+    },
+    {
+      "target": "Home page",
+      "change": "Add a 'Carry on your M3 topic test (question 5 of 10) →' card at the top when a test is in progress."
+    },
+    {
+      "target": "History/Dashboard on home",
+      "change": "Record the warm-up and the in-progress topic test as a session so History is not 'No sessions yet'."
+    },
+    {
+      "target": "pro-B04 step 2 (statement step)",
+      "change": "Merge 'Equation: y = 3√x' into step 3's prompt so there is no extra Next tap."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Maths topic M3 (Ratio, Proportion & Rates of Change).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    Warm-up offered.
+    [screenshot 02-warm-up-phone.png and 02-warm-up-laptop.png] warm-up
+    Warm-up 1: "63 − 12" — typed "51" — app accepted — true answer 51
+    [check] OK: warm-up 1: "51" for 63 − 12 accepted — app accepted
+    Warm-up 2: "3 × 12" — typed "36" — app accepted — true answer 36
+    [check] OK: warm-up 2: "36" for 3 × 12 accepted — app accepted
+    Warm-up 3: "56 ÷ 8" — typed "9.75" — app rejected — true answer 7
+    [check] OK: warm-up 3: "9.75" for 56 ÷ 8 rejected — app rejected
+    [screenshot 03-warm-up-3-phone.png and 03-warm-up-3-laptop.png] warm-up-3
+    Warm-up 4: "Find 4/5 of 35" — typed "28" — app accepted — true answer 28
+    [check] OK: warm-up 4: "28" for Find 4/5 of 35 accepted — app accepted
+    Warm-up 5: "25% of 32" — typed "idk" — app rejected — true answer 8
+    [check] OK: warm-up 5: "idk" for 25% of 32 rejected — app rejected
+    [screenshot 04-warm-up-result-phone.png and 04-warm-up-result-laptop.png] warm-up-result
+    [screenshot 05-maths-topics-phone.png and 05-maths-topics-laptop.png] maths-topics
+    [screenshot 06-topic-m3-phone.png and 06-topic-m3-laptop.png] topic-M3
+    Question 1 (pch-A03): A jacket costs £65. In a sale it is reduced by 20%. What is the sale price?
+    [screenshot 07-question-1-phone.png and 07-question-1-laptop.png] question-1
+      Step 1: "Calculate 20% of £65." — typed "13" (right) — app accepted "✓ Correct. 20% of £65 = 0.20 × 65 = £13." — independent value 13
+    [check] OK: pch-A03 step 1: "13" should be accepted — app accepted; independent value 13
+    [screenshot 08-q1-step1-phone.png and 08-q1-step1-laptop.png] q1-step1
+      Step 2: "What is the sale price? (£)" — typed "52" (right) — app accepted "✓ Correct. Sale price = £65 − £13 = £52." — independent value 52
+    [check] OK: pch-A03 step 2: "52" should be accepted — app accepted; independent value 52
+    Question 2 (pro-A05): y is directly proportional to x. y = 24 when x = 8. Find x when y = 9.
+    [screenshot 09-question-2-phone.png and 09-question-2-laptop.png] question-2
+      Step 1: student asks for a hint — "💡 Hint 1: y = kx, so k = y ÷ x."
+      Step 1: "Find k (the constant of proportionality)." — typed "3" (right) — app accepted "✓ Correct. k = 24 ÷ 8 = 3, so y = 3x." — independent value 3
+    [check] OK: pro-A05 step 1: "3" should be accepted — app accepted; independent value 3
+    [screenshot 10-q2-step1-phone.png and 10-q2-step1-laptop.png] q2-step1
+      Step 2: "Find x when y = 9." — typed "3" (try) — app accepted "✓ Correct. x = 9 ÷ 3 = 3." — independent value 3
+    [check] OK: pro-A05 step 2: "3" should be accepted — app accepted; independent value 3
+    Question 3 (spd-A01): A car travels 180 km in 2.5 hours. Calculate the average speed.
+    [screenshot 11-question-3-phone.png and 11-question-3-laptop.png] question-3
+    Student looks for the worked example: there is none in the topic test (by design; it is in practice).
+      Step 1: "Use the formula: speed = distance ÷ time." — typed "72" (right) — app accepted "✓ Correct. speed = 180 ÷ 2.5 = 72 km/h." — independent value 72
+    [check] OK: spd-A01 step 1: "72" should be accepted — app accepted; independent value 72
+    Question 4 (pro-A02): y is inversely proportional to x. When x = 5, y = 8. Find y when x = 10.
+    [screenshot 12-question-4-phone.png and 12-question-4-laptop.png] question-4
+      Step 1: "Write: y = k/x. Find k using x = 5, y = 8." — typed "51" (wrong) — app rejected "Not quite — check your working." — independent value 40
+    [check] OK: pro-A02 step 1: "51" should be rejected — app rejected; independent value 40
+    [screenshot 13-q4-step1-phone.png and 13-q4-step1-laptop.png] q4-step1
+      Step 1: "Write: y = k/x. Find k using x = 5, y = 8." — typed "40" (right) — app accepted "✓ Correct. y = k/x → 8 = k/5 → k = 40." — independent value 40
+    [check] OK: pro-A02 step 1: "40" should be accepted — app accepted; independent value 40
+      Step 2: "Find y when x = 10." — typed "4" (try) — app accepted "✓ Correct. y = 40/10 = 4." — independent value 4
+    [check] OK: pro-A02 step 2: "4" should be accepted — app accepted; independent value 4
+    Question 5 (pro-B04): y is directly proportional to the square root of x. When x = 16, y = 12. Find y when x = 25.
+    [screenshot 14-question-5-phone.png and 14-question-5-laptop.png] question-5
+      Step 1: "Write the equation: y = k√x. Find k using x=16, y=12." — typed "3" (right) — app accepted "✓ Correct. y = k√x. 12 = k × 4, so k = 3." — independent value 3
+    [check] OK: pro-B04 step 1: "3" should be accepted — app accepted; independent value 3
+    [screenshot 15-q5-step1-phone.png and 15-q5-step1-laptop.png] q5-step1
+      Step 2: "Equation: y = 3√x." — a statement with no answer box; the student taps Next.
+      Step 3: "Find y when x = 25." — the student gives up here and leaves the question unfinished.
+    [screenshot 16-question-5-left-unfinished-phone.png and 16-question-5-left-unfinished-laptop.png] question-5-left-unfinished
+    Student taps Home and leaves the test.
+    [screenshot 17-after-leaving-phone.png and 17-after-leaving-laptop.png] after-leaving
+    Student comes back to the topic: "Carry on your topic test (question 5 of 10) →".
+    [check] OK: coming back resumes the same test question — same question
+    [screenshot 18-after-coming-back-phone.png and 18-after-coming-back-laptop.png] after-coming-back

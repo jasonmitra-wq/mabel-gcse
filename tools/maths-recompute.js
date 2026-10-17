@@ -37,8 +37,9 @@ function loadBank(base) {
   // base: a commit; the bank is read from that commit instead of the working tree
   let src = base ? require('child_process').execSync(`git show ${base}:js/maths-questions.js`, { cwd: ROOT, maxBuffer: 1 << 26 }).toString('utf8')
                  : fs.readFileSync(path.join(ROOT, 'js/maths-questions.js'), 'utf8');
-  const anchor = '  return { getQuestion, getTestQuestions, hasQuestions };';
-  if (!src.includes(anchor)) throw new Error('maths-questions.js export line not found');
+  // The export line, with or without the later getById (2026-10-17).
+  const anchor = (src.match(/^  return \{ getQuestion, getTestQuestions, hasQuestions(?:, getById)? \};/m) || [])[0];
+  if (!anchor) throw new Error('maths-questions.js export line not found');
   src = src.replace(anchor, '  globalThis.__bank = _allBank;\n' + anchor);
   const ctx = vm.createContext({});
   vm.runInContext(src, ctx);

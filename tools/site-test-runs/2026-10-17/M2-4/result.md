@@ -1,0 +1,137 @@
+# Site test: M2 (maths, 2026-10-17)
+
+**FAIL** · cost $0.1920 (5 tool calls, 0 calls from the site; tutor claude-sonnet-5-5 $0.0000)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "After tapping Next on the statement step, the counter still says 'Step 1 of 3' while step 2 is active. After leaving and returning, the same state shows 'Step 2 of 3'. The progress count does not update on statement-only steps.",
+      "step": "Question 5 Step 1 (Next tapped) / screenshot 16 vs 18"
+    },
+    {
+      "what": "The test question asks the student to 'Find f⁻¹(x)', but step 1 simply states f⁻¹(x) = (x+1)/4 with no answer box. The marked part of the question is given away in a topic test.",
+      "step": "Question 5 Step 1"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "The test status line ('Topic test · question 1 of 10' / 'Good — keep going.') is half hidden under the sticky top header.",
+      "screenshot": "07-question-1-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The status line under the header is clipped: only 'question 1 of 10' and later 'going.' are visible, and the pencil icon is cut off.",
+      "screenshot": "08-q1-step1-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The 'Take the topic test →' button is cut off at the bottom edge, and the Algebra title is scrolled under the header.",
+      "screenshot": "06-topic-m2-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The progress bar reads 'Step 1 of 3' even though step 1 is done and step 2 is open.",
+      "screenshot": "16-question-5-left-unfinished-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The 'Next question' button is cut off at the bottom of the screen.",
+      "screenshot": "14-q4-step2-phone.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": {
+    "turn": "Question 5",
+    "quote": "The denominator of f⁻¹(x) is 4. Find the numerator when x = 7.",
+    "why": "The wording ('denominator', 'numerator' of a function) is confusing after being handed the formula with no explanation, so the student gave up and left the test."
+  },
+  "fixes": [
+    {
+      "target": "Topic test step progress: behaviour on statement/Next steps",
+      "change": "Advance the 'Step n of N' counter and the progress bar when Next is tapped on a no-input step, so it shows 'Step 2 of 3' immediately."
+    },
+    {
+      "target": "fn-B04 step 1",
+      "change": "Replace the stated answer with an input step, e.g. 'Let y = 4x − 1. Rearrange to make x the subject. What do you add to both sides first?' so the student actually finds f⁻¹(x)."
+    },
+    {
+      "target": "fn-B04 step 2 prompt",
+      "change": "Reword to 'f⁻¹(7) = (7 + 1)/4. Work out 7 + 1.', followed by step 3 'Now divide by 4', instead of the 'denominator/numerator' phrasing."
+    },
+    {
+      "target": "Topic test page layout (status bar under sticky header)",
+      "change": "Add top padding/scroll offset equal to the header height so 'Topic test · question X of 10' and the feedback line are fully visible below the header on phone and laptop."
+    },
+    {
+      "target": "Topic M2 page (laptop) scroll position",
+      "change": "Open the page at the top so the Algebra title is visible, and make sure the 'Take the topic test' button is not clipped (e.g. add bottom padding)."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Maths topic M2 (Algebra).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    Warm-up offered.
+    [screenshot 02-warm-up-phone.png and 02-warm-up-laptop.png] warm-up
+    Warm-up 1: "47 + 25" — typed "72" — app accepted — true answer 72
+    [check] OK: warm-up 1: "72" for 47 + 25 accepted — app accepted
+    Warm-up 2: "12 × 13" — typed "156" — app accepted — true answer 156
+    [check] OK: warm-up 2: "156" for 12 × 13 accepted — app accepted
+    Warm-up 3: "60 ÷ 5" — typed "16" — app rejected — true answer 12
+    [check] OK: warm-up 3: "16" for 60 ÷ 5 rejected — app rejected
+    [screenshot 03-warm-up-3-phone.png and 03-warm-up-3-laptop.png] warm-up-3
+    Warm-up 4: "Find 4/5 of 30" — typed "24" — app accepted — true answer 24
+    [check] OK: warm-up 4: "24" for Find 4/5 of 30 accepted — app accepted
+    Warm-up 5: "20% of 40" — typed "idk" — app rejected — true answer 8
+    [check] OK: warm-up 5: "idk" for 20% of 40 rejected — app rejected
+    [screenshot 04-warm-up-result-phone.png and 04-warm-up-result-laptop.png] warm-up-result
+    [screenshot 05-maths-topics-phone.png and 05-maths-topics-laptop.png] maths-topics
+    [screenshot 06-topic-m2-phone.png and 06-topic-m2-laptop.png] topic-M2
+    Question 1 (gph-A04): The line y = 3x − 4 passes through the point (2, k). Find the value of k.
+    [screenshot 07-question-1-phone.png and 07-question-1-laptop.png] question-1
+      Step 1: "Substitute x = 2 into the equation. Calculate 3 × 2." — typed "6" (right) — app accepted "✓ Correct. Substituting x = 2: y = 3(2) − 4 = 6 − 4." — independent value 6
+    [check] OK: gph-A04 step 1: "6" should be accepted — app accepted; independent value 6
+    [screenshot 08-q1-step1-phone.png and 08-q1-step1-laptop.png] q1-step1
+      Step 2: "Calculate k = 6 − 4." — typed "2" (right) — app accepted "✓ Correct. k = 6 − 4 = 2." — independent value 2
+    [check] OK: gph-A04 step 2: "2" should be accepted — app accepted; independent value 2
+    Question 2 (fn-A04): f(x) = x² + 2x − 3. Find f(4).
+    [screenshot 09-question-2-phone.png and 09-question-2-laptop.png] question-2
+      Step 1: student asks for a hint — "💡 Hint 1: 4² = 16. 2×4 = 8."
+      Step 1: "Substitute x = 4. Calculate 4² + 2×4." — typed "24" (right) — app accepted "✓ Correct. 4² + 2×4 = 16 + 8 = 24." — independent value 24
+    [check] OK: fn-A04 step 1: "24" should be accepted — app accepted; independent value 24
+    [screenshot 10-q2-step1-phone.png and 10-q2-step1-laptop.png] q2-step1
+      Step 2: "Subtract 3 to find f(4)." — typed "21" (try) — app accepted "✓ Correct. f(4) = 24 − 3 = 21." — independent value 21
+    [check] OK: fn-A04 step 2: "21" should be accepted — app accepted; independent value 21
+    Question 3 (fn-A02): g(x) = x² − 4. Find g(3) and g(−2).
+    [screenshot 11-question-3-phone.png and 11-question-3-laptop.png] question-3
+    Student looks for the worked example: there is none in the topic test (by design; it is in practice).
+      Step 1: "Find g(3) by substituting x = 3." — typed "5" (right) — app accepted "✓ Correct. g(3) = 9 − 4 = 5." — independent value 5
+    [check] OK: fn-A02 step 1: "5" should be accepted — app accepted; independent value 5
+      Step 2: "Find g(−2) by substituting x = −2." — typed "0" (try) — app accepted "✓ Correct. g(−2) = 4 − 4 = 0." — independent value 0
+    [check] OK: fn-A02 step 2: "0" should be accepted — app accepted; independent value 0
+    [screenshot 12-q3-step2-phone.png and 12-q3-step2-laptop.png] q3-step2
+    Question 4 (seq-A04): Find the nth term of the arithmetic sequence 2, 6, 10, 14, ...
+    [screenshot 13-question-4-phone.png and 13-question-4-laptop.png] question-4
+      Step 1: "Find the common difference d." — typed "6" (wrong) — app rejected "Not quite — check your working." — independent value 4
+    [check] OK: seq-A04 step 1: "6" should be rejected — app rejected; independent value 4
+      Step 1: "Find the common difference d." — typed "4" (right) — app accepted "✓ Correct. d = 6 − 2 = 4." — independent value 4
+    [check] OK: seq-A04 step 1: "4" should be accepted — app accepted; independent value 4
+      Step 2: "nth term = 4n + c. Use the first term (n = 1) to find c." — typed "-2" (try) — app accepted "✓ Correct. 4(1) + c = 2 → c = −2. nth term = 4n − 2." — independent value -2
+    [check] OK: seq-A04 step 2: "-2" should be accepted — app accepted; independent value -2
+    [screenshot 14-q4-step2-phone.png and 14-q4-step2-laptop.png] q4-step2
+    Question 5 (fn-B04): f(x) = 4x − 1. Find f⁻¹(x) and hence evaluate f⁻¹(7).
+    [screenshot 15-question-5-phone.png and 15-question-5-laptop.png] question-5
+      Step 1: "f⁻¹(x) = (x+1)/4." — a statement with no answer box; the student taps Next.
+      Step 2: "The denominator of f⁻¹(x) is 4. Find the numerator when x = 7." — the student gives up here and leaves the question unfinished.
+    [screenshot 16-question-5-left-unfinished-phone.png and 16-question-5-left-unfinished-laptop.png] question-5-left-unfinished
+    Student taps Home and leaves the test.
+    [screenshot 17-after-leaving-phone.png and 17-after-leaving-laptop.png] after-leaving
+    Student comes back to the topic: "Carry on your topic test (question 5 of 10) →".
+    [check] OK: coming back resumes the same test question — same question
+    [screenshot 18-after-coming-back-phone.png and 18-after-coming-back-laptop.png] after-coming-back

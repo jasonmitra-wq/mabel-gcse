@@ -434,7 +434,9 @@ async function mathsMode(page, run, code) {
     let expected = [];
     try { expected = fn ? fn(q) : []; } catch { expected = []; }
     const plan = plans[qi];
-    if (plan === 'example') {
+    if (plan === 'example' && !(await page.$('#tabEg')) && !(await page.$('.maths-eg-panel'))) {
+      run.say('Student looks for the worked example: there is none in the topic test (by design; it is in practice).');
+    } else if (plan === 'example') {
       await page.evaluate(() => Maths._switchTab('example'));
       await sleep(500);
       run.say('Student opens the worked example.');
@@ -448,8 +450,10 @@ async function mathsMode(page, run, code) {
       const step = steps[si] || {};
       const prompt = await page.evaluate(i => (document.querySelector(`#mathsStep_${i} .maths-step-prompt`) || {}).innerText || '', si);
       if (step.checkType === 'skip' || !(await page.$(`#stepInput_${si}`))) {
-        await page.evaluate(i => Maths._skipStep(i), si);
-        run.say(`  Step ${si + 1}: "${prompt}" — marked as understood (no answer box).`);
+        const nextBtn = await page.$(`#stepNext_${si}`);
+        if (nextBtn) await nextBtn.click();
+        else await page.evaluate(i => Maths._skipStep(i), si);
+        run.say(`  Step ${si + 1}: "${prompt}" — ${nextBtn ? 'a statement with no answer box; the student taps Next' : 'marked as understood (no answer box)'}.`);
         await sleep(300);
         continue;
       }
@@ -508,6 +512,17 @@ async function mathsMode(page, run, code) {
       await sleep(800);
       run.say('Student taps Home and leaves the test.');
       await shoot(page, run, 'after-leaving');
+      // Coming back: the test should carry on at the same question and step.
+      await page.evaluate(() => Maths.open());
+      await sleep(900);
+      if (await page.$('#maths-warmup')) { await page.evaluate(() => MathsWarmup.dismiss()); await sleep(600); }
+      await clickText(page, '.maths-topic-card', topic.name, 'maths topic card').catch(() => {});
+      const resumeLabel = await page.evaluate(() => { const b = [...document.querySelectorAll('button')].find(x => /Carry on your topic test/.test(x.textContent)); if (b) { b.click(); return b.textContent.trim(); } return ''; });
+      await sleep(900);
+      const backText = await page.evaluate(() => (document.querySelector('.maths-q-text') || {}).textContent || '').then(t => t.replace(/\s+/g, ' ').trim());
+      run.say(`Student comes back to the topic: ${resumeLabel ? `"${resumeLabel}"` : 'no way to carry on the test'}.`);
+      run.check('coming back resumes the same test question', !!resumeLabel && backText === qPlain, resumeLabel ? (backText === qPlain ? 'same question' : `different question: ${backText.slice(0, 60)}`) : 'no carry-on button');
+      await shoot(page, run, 'after-coming-back');
       break;
     }
     const next = await page.evaluate(() => { const b = [...document.querySelectorAll('#mathsQComplete button.btn.pri')].find(x => x.offsetParent); if (b) { b.click(); return b.textContent.trim(); } return ''; });

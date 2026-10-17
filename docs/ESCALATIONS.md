@@ -156,3 +156,13 @@ B3 (pronoun), B4 (door handle reason), B5, B6, C1, C2, C4 (orphan bullet), C5, C
   - Question repeated from above: should the Physics AI lessons (P1, P2, p3-particle-model) also come off the live site until they pass, as the new section 1 rule says for new switch-ons? They are still on. **Resolved 2026-10-17: they stay on (see above).**
 - Step 4e of the tester brief not applied: it says to add "(with 2.5c2 testing before they go live)" after "each followed by its AI lessons" in Phase 3, but docs/RUNBOOK.md's Phase 3 line ("Phase 3 — Biology, then Chemistry: defect 10 renderer fix first, then plain-English rewrite batches, then the topic procedure per topic.") has no such phrase. Section 1's new rule already covers every subject. Where should the words go? **Resolved 2026-10-17 (brief docs/briefs/2026-10-17-sonnet-tutor.md, step 7a): "(with AI lesson testing before they go live)" added as the last sentence of the Phase 3 paragraph.**
 - Half-done maths topic test saves nothing: leaving after 4 of the questions leaves Dashboard 0%, History "No sessions yet", Error log "All clear" (M1, M2, M3 runs). What should a half-done test count as? Not changed. **Decided 2026-10-17 (brief docs/briefs/2026-10-17-sonnet-tutor.md, step 6d): progress is saved as she goes and resumes at the same question and step.**
+
+## Brief 2026-10-17 (Sonnet tutor): faults still open after the maths re-run (step 6)
+
+Website tester, maths mode, one run each (tools/site-test-runs/2026-10-17/M1-5, M2-4, M3-4, M4-4, M5-4, M6-3). Not fixed, as they are outside the brief:
+- Statement steps (no answer box) can hold the marked answer in a topic test: M2 f⁻¹(x) = (x+1)/4 given in step 1; M4 Q1 "All three sides are equal (SSS)" and Q4 "SAS congruence" given, both steps statements, so the question tests nothing; M4 Q3 and Q5 give the method. A question whose answer is a statement step needs rewriting or leaving out of tests.
+- Answer format: "Write the correct power of 10" rejects "10^6" (wants 6); M5 Q5 step 1 asks for a decimal to 4 d.p. while the question asks for simplified fractions, and asks two things with one box; M5 Q3 step 2 "State your answer and interpret it briefly" is a number box that re-accepts the last value.
+- Home: "Pick up where you left off" with no resume card; Dashboard, History and Error log show nothing after a test (the test resumes from the topic page only).
+- Test header: "Topic test · question N of 10" is replaced by "Good — keep going." after a correct step, and is half hidden under the sticky nav on laptop.
+- Resume shows the stored answer in finished steps, not what she typed.
+- Hint box stays inside a step after it is correct; "£" in a prompt and as a prefix.

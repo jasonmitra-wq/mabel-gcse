@@ -1,0 +1,240 @@
+{
+  "id": "p2-static",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! So you know that feeling when you walk across a carpet and then touch a door handle and get a shock? Let's start by understanding how things get charged in the first place, which happens when you rub two insulating materials together. When you rub two insulators together, what transfers from one surface to the other?",
+      "flags": [
+        "unanswerable: more than one question"
+      ]
+    },
+    {
+      "n": 1,
+      "student": "I think it's Charging by rubbing, The transfer of electrons between two insulating surfaces when rubbed",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Spot on — electrons transfer between the surfaces when you rub them. So when one material gains electrons and becomes negative, what happens to the charge on the other material that lost those electrons?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Good question, but let's stick with what happens during rubbing for now — we'll come back to magnetism another time! So when one material rubs against another and loses electrons, it's left behind with a positive charge. When you rub a cloth against a polythene rod and the polythene gains electrons, what charge is left on the cloth?",
+      "recap": null,
+      "flags": [
+        "stock praise"
+      ]
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "The cloth loses electrons, so it's left with a positive charge. Now here's the thing — the polythene rod stays charged for ages because it's an insulator, which means charge can't flow through it easily. What happens when you touch that charged polythene rod to a metal door handle?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "I'm useless at football, me! Shall I just tell you what happens next when you touch that charged rod to the handle?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "no",
+      "studentType": "no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Brilliant — so when you touch that charged polythene rod to a metal door handle, the charge flows out of the rod straight away because metal is a conductor and lets charge move through it easily. But the polythene rod itself stays charged for ages because it's an insulator — charge can't flow through it.\n\nWhat's an insulator?",
+      "recap": null,
+      "flags": [
+        "stock praise"
+      ]
+    },
+    {
+      "n": 6,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Think of it like this — an insulator is a material where electrons get stuck and can't move around freely, so charge just stays put on the surface where you rubbed it. That's why the polythene rod stays charged for ages.\n\nWhat's different about a conductor like a metal handle?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "I think it's Insulator, A material that does not allow charge to flow through",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Exactly — charge can't flow through an insulator, so it stays stuck where it is.\n\nNow here's something interesting: when you've got two charged objects, they can either push each other away or pull each other together, depending on what type of charge they have. If two objects carry *different* types of charge, what happens between them?",
+      "recap": [
+        "When you rub two insulators together, electrons transfer from one material to the other.",
+        "The material that loses electrons gets a positive charge, and the one that gains them gets negative.",
+        "Insulators don't let charge flow through them, so rubbed objects stay charged for a long time.",
+        "Conductors like metals let charge flow away quickly, which is why you feel a shock when touching one."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "I think it's Attraction, The force pulling objects together; two objects that carry different",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Exactly — different charges attract each other. Now here's the opposite: when two objects carry the *same* type of charge, they push each other away instead. We call that repulsion.\n\nWhat happens when you bring two negatively charged polythene rods close to each other?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Magnets and electricity are related but a bit different — we'll touch on that another time. For now, think of it simply: when two things have the *same* charge, they push away from each other. That's called repulsion.\n\nWhen you hold those two negatively charged polythene rods near each other, what do they do?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "They push away from each other — that's repulsion. That's lightning — it's the same basic thing as the small shock you get from a door handle, just much, much bigger. What do you think lightning actually is?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Ha, I'm more of a rugby person myself! Anyway, shall I just walk you through what lightning actually is so you see how it all connects?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "yes",
+      "studentType": "yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Right! It creates an invisible region around it called an **electric field**, and anything charged in that region feels a force. When you walk across the carpet and pick up charge, what do you think is around you — in the space around your body?",
+      "recap": [
+        "There are two types of charge, and they behave in opposite ways depending on what they meet.",
+        "When two objects have different charges, they pull towards each other — that's called attraction.",
+        "When two objects have the same type of charge, they push away from each other — that's repulsion."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "I think it's Electric field, A region of space around a charged object where another",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Exactly — you've got it. So we draw invisible field lines to show which way that force points and how strong the field is. If the lines are close together, the field is stronger; if they're spread out, it's weaker.\n\nImagine you drew lines around a positive charge like you — which way should those lines point?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Magnets are a different thing — we'll leave those for now. Let me put it this way: imagine you're a tiny positive charge, and I place you near a positive charge like the one you picked up from the carpet. Which way would the force push you — toward it or away from it?",
+      "recap": null,
+      "flags": [
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 15,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Positive charges repel each other — so the lines point away from a positive charge. Now, when you've picked up lots of charge from that carpet, the electric field around you gets really strong. Strong enough that electrons can actually jump through the air — that's called a **spark**.\n\nWhat jumps through the air in a spark?",
+      "recap": [
+        "An electric field is the invisible region around anything charged where forces happen.",
+        "Field lines show you which way a force would push on something charged nearby.",
+        "When field lines are packed close together, the field is stronger there.",
+        "Positive charges push other positive charges away, so field lines point outward from them."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "I think it's Spark, Charge jumping through the air when the electric field near",
+      "studentType": "correct",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right — electrons jumping through the air as a spark. You've now covered all four big ideas: how charge builds up, electric fields, repulsion, and sparks. You've got a really solid grip on static electricity!",
+      "recap": [
+        "When you build up lots of static charge, the electric field becomes really strong.",
+        "The field gets so intense that electrons can actually jump through the air.",
+        "This jumping of electrons through air is what we call a spark."
+      ],
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're very welcome! You've done really well today — you understand how everyday shocks actually work. Good luck with your revision!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0.052716999999999986,
+  "mode": "run",
+  "date": "2026-10-17"
+}

@@ -191,6 +191,9 @@ function create(env) {
     return questions.some(q => !OFFER.test(q.replace(/^[\s"'(]+/, '').replace(LEAD_IN, '').trim()) && /\bor\b/i.test(q));
   }
   function _asksNothing(text) { return !/\?/.test(String(text || '')); }
+  // More than one question ("You know that feeling when…? … What transfers?")
+  // leaves her unsure which to answer, even when the first is rhetorical.
+  function _asksMoreThanOne(text) { return (String(text || '').match(/\?/g) || []).length > 1; }
 
   // Turns whatever AI.call threw into a plain-English cause. AI.call throws
   // NO_KEY / BAD_KEY (401) / the bare HTTP status ("429") / a fetch TypeError.
@@ -434,9 +437,13 @@ function create(env) {
   // Only an opener followed by punctuation counts: "Well done today" is a sign-off.
   const STOCK_OPENER = /^\s*(?:good|great|nice|well done)\s*[!.,:;—–-]+\s*/i;   // "Nice try", "Good luck" have no mark and stay
   const NAMES_WHAT_WAS_RIGHT = /^[^.!?]{0,60}\b(?:right|correct|exactly|spot on)\b/i;
+  // Task 2.5c (fix25): the same, for "Good question, but…" (no full stop) and
+  // for openers the 2.3 list missed ("Brilliant —", "Excellent!", "Perfect.").
+  const STOCK_PRAISE_25 = /^\s*(?:what an?\s+)?(?:great|good|excellent|brilliant|fantastic|awesome|nice|lovely)\s+(?:question|point|thinking|thought)\s*[!.,:;—–-]+\s*(?:but\s+)?/i;
+  const STOCK_OPENER_25 = /^\s*(?:good|great|nice|well done|brilliant|excellent|perfect|awesome|fantastic|lovely|amazing|superb|nice one)\s*[!.,:;—–-]+\s*/i;
   function _stripStockOpener(text) {
     const t = String(text || '');
-    const m = t.match(STOCK_OPENER);
+    const m = t.match(FIX25 ? STOCK_OPENER_25 : STOCK_OPENER);
     if (!m) return t;
     const rest = t.slice(m[0].length);
     if (!rest.trim() || NAMES_WHAT_WAS_RIGHT.test(rest)) return t;
@@ -493,7 +500,7 @@ function create(env) {
   // Every reply the student sees goes through this.
   function _finishReply(text, maxWords = MAX_REPLY_WORDS) {
     if (!FIX23) return _stripStockPraise(text);
-    let t = _stripStockOpener(_stripName(_stripStockPraise(text)));
+    let t = _stripStockOpener(_stripName(FIX25 ? (String(text || '').replace(STOCK_PRAISE_25, '') || text) : _stripStockPraise(text)));
     if (_wordCount(_stripMarkdown(t)) > maxWords) t = _cutToWords(t, maxWords) || t;
     return t;
   }
@@ -515,10 +522,11 @@ function create(env) {
     const yesNoNote = `(Your question could be answered with just "yes" or "no", which shows nothing. Keep the rest, but ask it again as a what / which / why / how / where / when question whose answer is a specific word or short phrase from the content. Do not start it with do, does, is, are, can, could, will or would.)`;
     const eitherOrNote = `(Your question offers her a choice between options joined by "or", so she can pick one without knowing. Keep the rest, but ask one what / which / why / how question with no options in it, whose answer is a specific word or short phrase from the content. Do not use the word "or" in the question.)`;
     const noQuestionNote = `(Your reply did not end with a question. Keep the rest, and end with one what / which / why / how question about the content.)`;
-    let complete = '', last = '', level = 0, yesNo = false, eitherOr = false, noQuestion = false;
+    const manyNote = `(Your reply has more than one question mark. Ask exactly one question, at the end. Turn any other question, including a rhetorical one, into a statement.)`;
+    let complete = '', last = '', level = 0, yesNo = false, eitherOr = false, noQuestion = false, many = false;
     for (let i = 0; i < limits.length; i++) {
       const a = limits[level];
-      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : ''].filter(Boolean).join('\n');
+      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : '', many ? manyNote : ''].filter(Boolean).join('\n');
       const reply = (await AI.call(sys, note ? `${user}\n\n${note}` : user, a.tokens)).trim();
       const plain = _stripMarkdown(reply);
       last = reply;
@@ -527,7 +535,8 @@ function create(env) {
       yesNo = noYesNo && _asksYesNo(plain);
       eitherOr = FIX25 && noYesNo && _asksEitherOr(plain);
       noQuestion = FIX25 && noYesNo && !cut && _asksNothing(plain);
-      const badQ = yesNo || eitherOr || noQuestion;
+      many = FIX25 && noYesNo && _asksMoreThanOne(plain);
+      const badQ = yesNo || eitherOr || noQuestion || many;
       if (!cut && !long && !badQ) return _finishReply(reply);
       if (!cut && !badQ && !complete) complete = reply; // finished, just long — usable if nothing better
       if (cut || long) level = Math.min(level + 1, limits.length - 1);

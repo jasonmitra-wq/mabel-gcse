@@ -1,0 +1,465 @@
+{
+  "id": "p2-series-parallel",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Let's start with series circuits, where all the components are wired up in one single loop. What do you think \"single loop\" means — how many different paths can the charge take?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "um like 3 different paths?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Not quite — in a single loop, the charge can only take one path, so there's just one route all the way round. In a series circuit, the components are all joined in that one continuous loop with no branches. What's the total resistance when you connect a 10 Ω resistor and a 6 Ω resistor in series?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "In a series circuit, resistances just add together — so a 10 Ω resistor and a 6 Ω resistor give you 10 + 6 altogether. What's that total?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "like 16 ohms?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes, 16 ohms is right.\n\nNow let's look at a completely different way to wire things up. In a parallel circuit, components are joined in separate branches between the same two points, so the charge has different routes it can take. What's different about how many paths the charge has compared to a series circuit?",
+      "recap": [
+        "In a series circuit, all components are connected in one continuous loop with no branches.",
+        "The charge can only follow one single path all the way around the circuit.",
+        "Resistances in series just add together — so 10 Ω plus 6 Ω equals 16 Ω total."
+      ],
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "In a parallel circuit, the branches split off and then join back up — so the charge can go different ways instead of just one loop. How many routes can the charge take in a parallel circuit with three separate branches?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "like 3 different paths?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right — three different paths, exactly.\n\nHere's the really important bit: when you add branches in parallel, the total resistance actually gets *smaller*, not bigger like in series. It's always less than even the smallest single resistor you've got.\n\nWhat do you think happens to how easily charge can flow when you give it more routes to take?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Think of it like this: if water can flow down one pipe or two pipes instead, it spreads out and flows more easily through the whole system. More routes means less resistance overall.\n\nWhat happens to the total resistance when you add a second branch in parallel?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "it gets smaller?",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right — it gets smaller, exactly.\n\nWould you like me to tell you the rest about parallel resistance now?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "nah im good for now",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "So in a parallel circuit, the total resistance is always smaller than the smallest single resistor in it. That's the key rule to remember — it's what makes parallel circuits so useful.\n\nWhat would the total resistance be if you had one resistor of 10 ohms and another of 20 ohms in parallel?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "umm like 30 ohms?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not quite — remember, in parallel the total resistance is always *less* than the smallest resistor, not more. So if your smallest one is 10 ohms, the total has to be smaller than 10 ohms.\n\nWhat's the smallest resistor in your 10 and 20 ohms pair?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "10 ohms is smaller",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Right — 10 ohms is the smallest. So the total resistance must be less than 10 ohms, not 30. Now, think about your home. Why would it be a problem if your house wiring was in series instead?",
+      "recap": [
+        "In parallel circuits, the charge can split and take multiple different routes instead of just one path.",
+        "When you add more branches in parallel, the total resistance actually gets smaller, not bigger.",
+        "The total resistance in a parallel circuit is always less than even the smallest single resistor in it.",
+        "More routes for charge to flow means the overall resistance decreases — like water spreading through extra pipes."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "cos then like all the lights would be really bright?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right — lights in series would actually all go dim, not bright. But the real problem is: what happens if you turn off one device, like your phone charger?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "then all the other stuff would turn off too?",
+      "studentType": "wrong",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Exactly — in series, if one device switches off, the whole circuit breaks and everything stops.\n\nNow let's look at series circuits properly. When resistors are in series, we can replace them all with a single resistance that has the same effect — we call that the **equivalent resistance**. \n\nWhat do you think \"equivalent\" means?",
+      "recap": [
+        "In a series circuit, if one device switches off, everything else stops working too.",
+        "Home wiring uses parallel circuits so you can control each device independently.",
+        "Series circuits don't work for houses because you'd lose power to everything if one thing breaks or turns off."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "um that's like a lot of words",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "No worries — think of it this way: instead of lots of resistors all joined up, you can pretend there's just one resistor that does the same job. What's a word that means \"does the same job\"?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "same?",
+      "studentType": "wrong",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Yeah, same — that's the idea. Now, when you want to measure the current flowing through a component, you need to use a meter called an **ammeter**, and it has to be connected in series with the component.\n\nWhat does \"in series\" mean?",
+      "recap": [
+        "In a series circuit, all the resistors work together as one unit.",
+        "You can replace multiple resistors with a single \"equivalent resistor\" that has the same effect.",
+        "Equivalent just means it does the same job as all the others combined."
+      ],
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "like all connected in a line?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Now, to measure the **potential difference** across a component, you use a different meter called a **voltmeter**, and it connects **in parallel** with the component — that means it joins between the same two points as the component, like a little branch off to the side. What does \"across\" a component mean?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "this is way too long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Think of it simply: the voltmeter sits beside the component, touching both its ends — like a shortcut that doesn't block anything.\n\nWhere does a voltmeter connect compared to the component?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "both ends of it?",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Yes, exactly — both ends of the component, so it can measure the voltage across it.\n\nThat's the end of this lesson — you've really got the core idea that **where** you connect things completely changes how the circuit works. You can always ask me anything else about circuits whenever you need to.",
+      "recap": [
+        "An ammeter measures current and connects in series — right in the path of the flow.",
+        "A voltmeter measures potential difference and connects in parallel — touching both ends of a component.",
+        "In parallel means the voltmeter sits beside the component like a branch, not blocking anything."
+      ],
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome — well done today, and good luck with your GCSEs!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is way too long",
+    "would_quit": {
+      "turn": "T15",
+      "quote": "this is way too long",
+      "why": "This is the third length complaint (after 'this is long' and 'that's like a lot of words'). T15 is still a long, bold-heavy paragraph that ignores the student's earlier answer."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think \"single loop\" means — how many different paths can the charge take?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What's the total resistance when you connect a 10 Ω resistor and a 6 Ω resistor in series?",
+        "note": "Asks for a series total before teaching that resistances add. The student replies 'huh?'."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "so a 10 Ω resistor and a 6 Ω resistor give you 10 + 6 altogether. What's that total?",
+        "note": ""
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "What's different about how many paths the charge has compared to a series circuit?",
+        "note": "Around 55 words. The student immediately says 'this is long'."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How many routes can the charge take in a parallel circuit with three separate branches?",
+        "note": "Ignores the student's 'this is long' complaint and carries on unchanged."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": true,
+        "quote": "What do you think happens to how easily charge can flow when you give it more routes to take?",
+        "note": "Too long. The vague, abstract question switches from 'resistance' to 'how easily charge flows'. The student replies 'huh?'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to the total resistance when you add a second branch in parallel?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to tell you the rest about parallel resistance now?",
+        "note": "This check-in invites a 'no'. The student declines."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What would the total resistance be if you had one resistor of 10 ohms and another of 20 ohms in parallel?",
+        "note": "Overrides the student's 'nah im good for now'. Asks for a numeric parallel total, but no method was taught; only 'less than smallest' was. The student guesses 30."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What's the smallest resistor in your 10 and 20 ohms pair?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why would it be a problem if your house wiring was in series instead?",
+        "note": "Jumps to household wiring without teaching it first."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Right — lights in series would actually all go dim, not bright.",
+        "note": "Says 'Right' to a wrong answer, then contradicts it."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "What do you think \"equivalent\" means?",
+        "note": "Around 60 words, with the new term bolded mid-paragraph. The student says 'that's like a lot of words'."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What's a word that means \"does the same job\"?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does \"in series\" mean?",
+        "note": "Skips the whole series calculation method (I = V ÷ Rtotal, V = IR, the add-up check) and jumps to meters."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "What does \"across\" a component mean?",
+        "note": "Gives no feedback on S15 'like all connected in a line?'. The long paragraph triggers 'this is way too long'."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "like a shortcut that doesn't block anything",
+        "note": "'Shortcut' suggests a short circuit. This is a misleading picture of a voltmeter."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That's the end of this lesson",
+        "note": "Ends with no series calculation taught, no checkpoints run, and the household two-point answer never given."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You're welcome — well done today, and good luck with your GCSEs!",
+        "note": ""
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: respond to boredom/length signals",
+        "change": "When the student writes 'this is long', 'too long', 'lot of words' or 'huh?', drop to one idea in 25 words or fewer plus one short question. Remove bold markup and the preamble.",
+        "quote": "this is way too long"
+      },
+      {
+        "target": "teach-core: teach before testing",
+        "change": "Never ask a question whose rule hasn't been stated yet. In T1, state 'in series, resistances just add' before asking for the 10 Ω + 6 Ω total.",
+        "quote": "What's the total resistance when you connect a 10 Ω resistor and a 6 Ω resistor in series?"
+      },
+      {
+        "target": "keyPoints[3].content",
+        "change": "Teach the series calculation steps in small chunks, using checkpoints.0 and checkpoints.3 as worked mini-questions with whole-number arithmetic. Only end the lesson after the checkpoints have been run.",
+        "quote": "That's the end of this lesson — you've really got the core idea"
+      },
+      {
+        "target": "teach-core: feedback on wrong answers",
+        "change": "Never open with 'Right' or 'Exactly' when the answer is wrong. Say 'Not quite' and give the correct fact once. Always acknowledge the student's previous answer before moving on, which T15 skipped.",
+        "quote": "Right — lights in series would actually all go dim, not bright."
+      },
+      {
+        "target": "keyPoints[1].tutor_note",
+        "change": "Add: 'Don't ask for a numeric parallel total. Ask a comparison instead, e.g. Is it bigger or smaller than 10 Ω?' This avoids mental arithmetic the student can't do and that wasn't taught.",
+        "quote": "What would the total resistance be if you had one resistor of 10 ohms and another of 20 ohms in parallel?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "would quit at T15",
+      "question does not match what was taught: T1, T8, T10"
+    ]
+  },
+  "cost": 0.20281900000000003,
+  "mode": "run",
+  "date": "2026-10-17"
+}

@@ -1,0 +1,243 @@
+{
+  "id": "M6",
+  "mode": "maths",
+  "date": "2026-10-17",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "Question 4 has no answer box. Both steps are only 'Mark as understood', yet the question is worth 2 marks. The progress dots on 15-question-5 show Q4 green, so it counted as done without the student answering anything.",
+        "step": "Question 4 (sct-A01) Steps 1–2"
+      },
+      {
+        "what": "Q4 Step 2 (does correlation prove causation?) says 'Read the worked example for this step', but the worked example only covers positive correlation. Nothing explains causation.",
+        "step": "Question 4 Step 2"
+      },
+      {
+        "what": "After leaving mid-test, nothing is saved. The home Dashboard still says 'Nothing secured yet' and '0% across all subjects', and History says 'No sessions yet', even though 4 questions were completed correctly. No resume option is offered.",
+        "step": "Student taps Home and leaves the test"
+      },
+      {
+        "what": "Q5 Step 2 asks for two things ('How many from stratum 1 … and stratum 2?') and then says enter only the stratum 1 count. This is confusing, and it is where the student gave up.",
+        "step": "Question 5 Step 2"
+      },
+      {
+        "what": "Q2 steps give the answer away. The step text '(90/360) × 360°' with 360 students means the answer is just the given count, so nothing is tested.",
+        "step": "Question 2 Steps 1–3"
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "The degree sign '°' sits to the left of the answer box as a prefix instead of after the input as a unit.",
+        "screenshot": "09-question-2-phone.png"
+      },
+      {
+        "what": "The degree sign '°' sits to the left of the answer box as a prefix instead of after the input as a unit.",
+        "screenshot": "09-question-2-laptop.png"
+      },
+      {
+        "what": "The 'Question / Worked example' tab labels are scrolled off the top, so there is no visible way back to the question from the worked-example view.",
+        "screenshot": "12-worked-example-3-phone.png"
+      },
+      {
+        "what": "The 'Topic test · question 1 of 10' counter is replaced by 'Good — keep going.', so the student loses track of which question they are on.",
+        "screenshot": "08-q1-step1-phone.png"
+      },
+      {
+        "what": "The 'WORKED EXAMPLE' heading and the test header row are cut off under the sticky top bar.",
+        "screenshot": "11-question-3-laptop.png"
+      }
+    ],
+    "would_quit": {
+      "turn": "Question 5",
+      "quote": "How many from stratum 1 (size 80) and stratum 2 (size 120)? Enter the stratum 1 count.",
+      "why": "Confusing two-in-one wording on question 5 of 10, after a no-input Q4, so the student gave up and left."
+    },
+    "fixes": [
+      {
+        "target": "sct-A01 steps 1–2",
+        "change": "Replace 'Mark as understood' with answer inputs: a multiple-choice for correlation type (positive/negative/none) and yes/no for causation. Award marks only for correct answers."
+      },
+      {
+        "target": "stat-sampling-B06 step 2 prompt",
+        "change": "Change to 'How many should be selected from stratum 1 (size 80)?' and give stratum 2 its own step."
+      },
+      {
+        "target": "Topic test session persistence",
+        "change": "Save step results as they are answered. Show a 'Resume Statistics test (4/10)' card on home and update Dashboard and History after partial attempts."
+      },
+      {
+        "target": "chr-A01 question data",
+        "change": "Use a total that is not 360 (e.g. 120 students) and remove the formula from the step prompt so the student has to work out the angle."
+      },
+      {
+        "target": "Degree-unit input layout",
+        "change": "Move the '°' suffix to the right side of the answer input."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "warm-up 1: \"70\" for 15 + 55 accepted",
+      "ok": true,
+      "detail": "app accepted"
+    },
+    {
+      "what": "warm-up 2: \"28\" for 4 × 7 accepted",
+      "ok": true,
+      "detail": "app accepted"
+    },
+    {
+      "what": "warm-up 3: \"11\" for 48 ÷ 6 rejected",
+      "ok": true,
+      "detail": "app rejected"
+    },
+    {
+      "what": "warm-up 4: \"4\" for Find 1/4 of 16 accepted",
+      "ok": true,
+      "detail": "app accepted"
+    },
+    {
+      "what": "warm-up 5: \"idk\" for 50% of 68 rejected",
+      "ok": true,
+      "detail": "app rejected"
+    },
+    {
+      "what": "stat-cumulative-A05 step 1: \"40\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 40"
+    },
+    {
+      "what": "stat-cumulative-A05 step 2: \"120\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 120"
+    },
+    {
+      "what": "chr-A01 step 1: \"90\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 90"
+    },
+    {
+      "what": "chr-A01 step 2: \"120\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 120"
+    },
+    {
+      "what": "chr-A01 step 3: \"150\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 150"
+    },
+    {
+      "what": "stat-sampling-A02 step 1: \"100\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 100"
+    },
+    {
+      "what": "stat-sampling-A02 step 2: \"160\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 160"
+    },
+    {
+      "what": "stat-sampling-B06 step 1: \"0.2\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 0.2"
+    }
+  ],
+  "transcript": [
+    "Maths topic M6 (Statistics).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "Warm-up offered.",
+    "[screenshot 02-warm-up-phone.png and 02-warm-up-laptop.png] warm-up",
+    "Warm-up 1: \"15 + 55\" — typed \"70\" — app accepted — true answer 70",
+    "[check] OK: warm-up 1: \"70\" for 15 + 55 accepted — app accepted",
+    "Warm-up 2: \"4 × 7\" — typed \"28\" — app accepted — true answer 28",
+    "[check] OK: warm-up 2: \"28\" for 4 × 7 accepted — app accepted",
+    "Warm-up 3: \"48 ÷ 6\" — typed \"11\" — app rejected — true answer 8",
+    "[check] OK: warm-up 3: \"11\" for 48 ÷ 6 rejected — app rejected",
+    "[screenshot 03-warm-up-3-phone.png and 03-warm-up-3-laptop.png] warm-up-3",
+    "Warm-up 4: \"Find 1/4 of 16\" — typed \"4\" — app accepted — true answer 4",
+    "[check] OK: warm-up 4: \"4\" for Find 1/4 of 16 accepted — app accepted",
+    "Warm-up 5: \"50% of 68\" — typed \"idk\" — app rejected — true answer 34",
+    "[check] OK: warm-up 5: \"idk\" for 50% of 68 rejected — app rejected",
+    "[screenshot 04-warm-up-result-phone.png and 04-warm-up-result-laptop.png] warm-up-result",
+    "[screenshot 05-maths-topics-phone.png and 05-maths-topics-laptop.png] maths-topics",
+    "[screenshot 06-topic-m6-phone.png and 06-topic-m6-laptop.png] topic-M6",
+    "Question 1 (stat-cumulative-A05): From a cumulative frequency graph, the 20th percentile is 15 and the 80th percentile is 55. (a) Find the inter-percentile range. (b) How many values lie between these percentiles if n = 200?",
+    "[screenshot 07-question-1-phone.png and 07-question-1-laptop.png] question-1",
+    "  Step 1: \"Find the inter-percentile range (80th percentile − 20th percentile).\" — typed \"40\" (right) — app accepted \"✓ Correct. Inter-percentile range = 55 − 15 = 40.\" — independent value 40",
+    "[check] OK: stat-cumulative-A05 step 1: \"40\" should be accepted — app accepted; independent value 40",
+    "[screenshot 08-q1-step1-phone.png and 08-q1-step1-laptop.png] q1-step1",
+    "  Step 2: \"How many of the 200 values lie between the 20th and 80th percentiles?\" — typed \"120\" (right) — app accepted \"✓ Correct. 80th − 20th percentile = 60% of data. 60% × 200 = 120 values.\" — independent value 120",
+    "[check] OK: stat-cumulative-A05 step 2: \"120\" should be accepted — app accepted; independent value 120",
+    "Question 2 (chr-A01): 360 students were surveyed. 90 prefer History, 120 prefer Maths, 150 prefer Science. Calculate the angle for each subject in a pie chart.",
+    "[screenshot 09-question-2-phone.png and 09-question-2-laptop.png] question-2",
+    "  Step 1: student asks for a hint — \"💡 Hint 1: Fraction = 90/360 = 1/4.\"",
+    "  Step 1: \"Angle for History: (90/360) × 360°.\" — typed \"90\" (right) — app accepted \"✓ Correct. History: (90/360) × 360 = 90°.\" — independent value 90",
+    "[check] OK: chr-A01 step 1: \"90\" should be accepted — app accepted; independent value 90",
+    "[screenshot 10-q2-step1-phone.png and 10-q2-step1-laptop.png] q2-step1",
+    "  Step 2: \"Angle for Maths: (120/360) × 360°.\" — typed \"120\" (try) — app accepted \"✓ Correct. Maths: (120/360) × 360 = 120°.\" — independent value 120",
+    "[check] OK: chr-A01 step 2: \"120\" should be accepted — app accepted; independent value 120",
+    "  Step 3: \"Angle for Science: (150/360) × 360°.\" — typed \"150\" (right) — app accepted \"✓ Correct. Science: (150/360) × 360 = 150°. Check: 90+120+150 = 360 ✓\" — independent value 150",
+    "[check] OK: chr-A01 step 3: \"150\" should be accepted — app accepted; independent value 150",
+    "Question 3 (stat-sampling-A02): A quality control team samples 5% of 2000 items produced each day. (a) How many items are sampled? (b) If 8 are defective, estimate the total number of defective items in the batch.",
+    "[screenshot 11-question-3-phone.png and 11-question-3-laptop.png] question-3",
+    "Student opens the worked example.",
+    "[screenshot 12-worked-example-3-phone.png and 12-worked-example-3-laptop.png] worked-example-3",
+    "  Step 1: \"How many items are sampled (5% of 2000)?\" — typed \"100\" (right) — app accepted \"✓ Correct. 5% of 2000 = 0.05 × 2000 = 100 items sampled.\" — independent value 100",
+    "[check] OK: stat-sampling-A02 step 1: \"100\" should be accepted — app accepted; independent value 100",
+    "[screenshot 13-q3-step1-phone.png and 13-q3-step1-laptop.png] q3-step1",
+    "  Step 2: \"Estimate the total defective items in the full batch of 2000.\" — typed \"160\" (try) — app accepted \"✓ Correct. Defect rate = 8 ÷ 100 = 0.08. Estimated total defective = 0.08 × 2000 = 160 items.\" — independent value 160",
+    "[check] OK: stat-sampling-A02 step 2: \"160\" should be accepted — app accepted; independent value 160",
+    "Question 4 (sct-A01): A scatter graph shows hours of revision vs exam score. The points show that as revision hours increase, scores increase. What type of correlation is this, and what does it tell us?",
+    "[screenshot 14-question-4-phone.png and 14-question-4-laptop.png] question-4",
+    "  Step 1: \"What type of correlation is shown?\" — marked as understood (no answer box).",
+    "  Step 2: \"Does correlation prove that revision CAUSES higher scores?\" — marked as understood (no answer box).",
+    "Question 5 (stat-sampling-B06): A population is divided into 4 strata with sizes 80, 120, 60, 40. Total = 300. A stratified sample of 60 is required. Find the sampling fraction and the number to select from each stratum.",
+    "[screenshot 15-question-5-phone.png and 15-question-5-laptop.png] question-5",
+    "  Step 1: \"Calculate the sampling fraction (sample ÷ population).\" — typed \"0.2\" (right) — app accepted \"✓ Correct. Sampling fraction = 60 ÷ 300 = 0.2 (one fifth of the population).\" — independent value 0.2",
+    "[check] OK: stat-sampling-B06 step 1: \"0.2\" should be accepted — app accepted; independent value 0.2",
+    "  Step 2: \"How many from stratum 1 (size 80) and stratum 2 (size 120)? Enter the stratum 1 count.\" — the student gives up here and leaves the question unfinished.",
+    "[screenshot 16-question-5-left-unfinished-phone.png and 16-question-5-left-unfinished-laptop.png] question-5-left-unfinished",
+    "Student taps Home and leaves the test.",
+    "[screenshot 17-after-leaving-phone.png and 17-after-leaving-laptop.png] after-leaving"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-17/M6-2/01-home-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/02-warm-up-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/02-warm-up-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/03-warm-up-3-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/03-warm-up-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/04-warm-up-result-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/04-warm-up-result-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/05-maths-topics-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/05-maths-topics-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/06-topic-m6-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/06-topic-m6-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/07-question-1-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/07-question-1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/08-q1-step1-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/08-q1-step1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/09-question-2-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/09-question-2-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/10-q2-step1-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/10-q2-step1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/11-question-3-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/11-question-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/12-worked-example-3-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/12-worked-example-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/13-q3-step1-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/13-q3-step1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/14-question-4-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/14-question-4-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/15-question-5-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/15-question-5-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/16-question-5-left-unfinished-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/16-question-5-left-unfinished-laptop.png",
+    "tools/site-test-runs/2026-10-17/M6-2/17-after-leaving-phone.png",
+    "tools/site-test-runs/2026-10-17/M6-2/17-after-leaving-laptop.png"
+  ],
+  "cost": 0.18096399999999999,
+  "apiCalls": 4,
+  "browserApiCalls": 0
+}

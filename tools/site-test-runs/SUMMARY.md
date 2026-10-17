@@ -15,3 +15,13 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-10-17 | b3-defences | lesson | FAIL | 12 | 9 | S17 | tools/site-test-runs/2026-10-17/b3-defences | $0.2864
 - 2026-10-17 | g5-development | lesson | FAIL | 11 | 7 | S22 | tools/site-test-runs/2026-10-17/g5-development | $0.3422
 - 2026-10-17 | p2-static | lesson | FAIL | 8 | 6 | S11 | tools/site-test-runs/2026-10-17/p2-static | $0.1836
+- 2026-10-17 | M1 | maths | FAIL | 5 | 5 | Question 5 | tools/site-test-runs/2026-10-17/M1-3 | $0.1696
+- 2026-10-17 | M2 | maths | FAIL | 4 | 6 | Question 5 | tools/site-test-runs/2026-10-17/M2-2 | $0.2005
+- 2026-10-17 | M3 | maths | FAIL | 4 | 3 | Question 5 | tools/site-test-runs/2026-10-17/M3-2 | $0.1823
+- 2026-10-17 | M4 | maths | FAIL | 5 | 6 | Question 5 | tools/site-test-runs/2026-10-17/M4-2 | $0.1740
+- 2026-10-17 | M5 | maths | FAIL | 7 | 4 | Question 5 | tools/site-test-runs/2026-10-17/M5-2 | $0.2093
+- 2026-10-17 | p1-power | lesson | FAIL | 7 | 5 | S10 | tools/site-test-runs/2026-10-17/p1-power-5 | $0.2333
+- 2026-10-17 | M6 | maths | FAIL | 5 | 5 | Question 5 | tools/site-test-runs/2026-10-17/M6-2 | $0.1810
+- 2026-10-17 | b3-defences | lesson | FAIL | 9 | 5 | S24 | tools/site-test-runs/2026-10-17/b3-defences-2 | $0.3064
+- 2026-10-17 | g5-development | lesson | FAIL | 10 | 5 | S12 | tools/site-test-runs/2026-10-17/g5-development-2 | $0.3689
+- 2026-10-17 | p2-static | lesson | FAIL | 6 | 4 | false | tools/site-test-runs/2026-10-17/p2-static-2 | $0.1876

@@ -1,0 +1,461 @@
+{
+  "id": "p2-static",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Let's start with what happens when you rub two materials together. When you rub two insulators against each other, electrons transfer from one surface to the other. What happens to the material that gains those electrons?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "ugh my phone battery's dead again",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's annoying! Batteries never last as long as we'd like.\n\nSo, when you rub two insulating materials together, electrons move from one to the other. The material that picks up those extra electrons gets a negative charge. What happens to the material that loses those electrons?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "wait what's an insulator again",
+      "studentType": "minimal",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "An insulator is a material that doesn't let charge flow through it easily, so charge can build up on it when you rub it. What happens to the total amount of charge overall?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "um does it like... disappear or something",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "No, charge doesn't disappear — it just moves around! When one material gains electrons and becomes negative, the other material loses those same electrons, so it becomes positive. The two charges are equal in size, just opposite.\n\nWhat happens to the total charge when you add the negative charge and the positive charge together?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Would you like me to just tell you the answer to that?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "yeah ok tell me",
+      "studentType": "checkin-no",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "When one material loses electrons, it becomes positive. The positive and negative charges add up to zero overall — the charge just moved from one to the other.\n\nNow, when two things have different types of charge, what happens between them?",
+      "recap": [
+        "When you rub two insulators together, electrons shift from one to the other.",
+        "The material that gains electrons becomes negatively charged, and the one that loses them becomes positive.",
+        "Charge doesn't vanish — it just moves around between the two materials.",
+        "The total charge stays the same because the negative and positive charges balance each other out."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "When one object is negative and another is positive, they pull towards each other — that's called attraction. What happens when both objects are negative?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "they push away?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "You've got it — when they're both negative, they push away from each other, and we call that repulsion. So same type of charge pushes apart, different types pull together.\n\nNow imagine you walk across a carpet and electrons rub off onto you, so you become negatively charged all over. What happens between all those negative charges on your body?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "You're right, let me put it simply: you've got negative charge all over your body, so all those negative charges push each other away. What do they try to do?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "can we do this after lunch im starving",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "No problem — shall I just finish explaining what happens when all those negative charges push each other away?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "yeah go on then",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Those negative charges all push each other away, so they spread out over your body and try to get as far apart as possible. When you touch the door handle, they jump across as a spark — that's lightning on a tiny scale. What direction would field lines point around a positive charge?",
+      "recap": [
+        "Opposite charges attract each other, like positive and negative pulling together.",
+        "Same charges repel each other, pushing apart when they're both positive or both negative.",
+        "When you get negative charge all over from friction, those charges all push away from each other."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Think of it like this: a charged object pushes or pulls on other charges around it, even without touching them — that's its electric field. How far away from a charged object do you think its electric field reaches?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "like... everywhere? does it go forever?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes, it reaches everywhere, though it gets weaker the further away you go. We draw field lines around a charged object to show which way the force would push or pull on another charge nearby — like arrows showing the direction.\n\nWhat would happen to a positive charge if you placed it right next to a negative sphere?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "it would get pulled towards it i guess",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right — it would be pulled towards it. So which direction would the field lines point around that negative sphere?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "wait what",
+      "studentType": "minimal",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Would you like me to just tell you what happens with those field lines?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "yeah ok just tell me",
+      "studentType": "checkin-no",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Field lines point in the direction the force would push a positive charge — so they point *away* from a positive sphere and *towards* a negative one. The closer the lines are together, the stronger the field. What do you think we call it when charge jumps through the air like that?",
+      "recap": [
+        "Electric fields are invisible forces that reach out from charged objects in all directions, getting weaker further away.",
+        "We use field lines (arrows) to show the direction a charge would be pushed or pulled in that field.",
+        "Field lines point away from positive charges and towards negative charges.",
+        "A positive charge placed next to a negative charge gets pulled towards it because opposite charges attract."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "can we skip this",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "That's fine — we can move on whenever you're ready. When you touch the handle, what's jumping through the air?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "umm the charge thing? like electrons or whatever",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Exactly — it's the electrons jumping through the air from the handle to your skin, and that's what makes the spark you feel. You've worked through the big idea here: charge builds up when you walk on the carpet, and then it jumps across as a spark when you touch something. That's the same physics as lightning, just much smaller.",
+      "recap": [
+        "Field lines show which way a positive charge would be pushed by the field.",
+        "The stronger the field is, the closer together the field lines are.",
+        "When charge jumps through the air between objects, it's actually electrons moving across."
+      ],
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "ok cool thanks",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! Feel free to come back to this whenever you want to go over anything else about electricity or any other topic.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "can we do this after lunch im starving",
+    "would_quit": {
+      "turn": "T15",
+      "quote": "What do you think we call it when charge jumps through the air like that?",
+      "why": "This was the third 'huh/wait what' in a row. The question refers to sparking, which was never taught, so the student asks to skip."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to the material that gains those electrons?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to the material that loses those electrons?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What happens to the total amount of charge overall?",
+        "note": "Drops the unanswered 'loses electrons' question and asks about conservation before teaching it."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What happens to the total charge when you add the negative charge and the positive charge together?",
+        "note": "Adding signed charges is mental arithmetic this student is weak at. The student replied 'huh?'."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to just tell you the answer to that?",
+        "note": "Offers the answer instead of re-asking a simpler question."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Now, when two things have different types of charge, what happens between them?",
+        "note": "Attraction was not taught yet. The student replied 'what?'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens when both objects are negative?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "What happens between all those negative charges on your body?",
+        "note": "About 60 words. The student said 'this is long'."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "so all those negative charges push each other away. What do they try to do?",
+        "note": ""
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "No problem — shall I just finish explaining what happens when all those negative charges push each other away?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What direction would field lines point around a positive charge?",
+        "note": "Jumps to field lines with no teaching. The spark is explained without mentioning the electric field."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How far away from a charged object do you think its electric field reaches?",
+        "note": "Asks the student to guess range, which was not taught."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What would happen to a positive charge if you placed it right next to a negative sphere?",
+        "note": ""
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So which direction would the field lines point around that negative sphere?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to just tell you what happens with those field lines?",
+        "note": "Second time offering the answer instead of rephrasing."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What do you think we call it when charge jumps through the air like that?",
+        "note": "'Like that' refers to nothing just taught. It also omits that the lines are straight and at right angles to the surface."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When you touch the handle, what's jumping through the air?",
+        "note": "Recalls the T10 spark, so it is answerable."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "it's the electrons jumping through the air from the handle to your skin",
+        "note": "Contradicts T7. If you are negative, electrons jump from you to the handle. The electric field is never mentioned."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You're welcome! Feel free to come back to this whenever you want to go over anything else about electricity or any other topic.",
+        "note": ""
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: only ask about content taught in this turn or the previous one",
+        "change": "Before asking, check that the tested fact appeared in the last two tutor turns. If it did not, teach it in one sentence first. This fixes T2, T5, T10 and T15.",
+        "quote": "What direction would field lines point around a positive charge?"
+      },
+      {
+        "target": "keyPoints[3].content",
+        "change": "State the direction explicitly: 'If you are negatively charged, electrons jump from you to the handle.' Add a consistency check that spark direction matches the charge the tutor set up earlier.",
+        "quote": "it's the electrons jumping through the air from the handle to your skin"
+      },
+      {
+        "target": "teach-core: on 'huh?'/'what?' re-ask a simpler either/or question",
+        "change": "After confusion, do not offer to give the answer. Re-ask as a two-option choice, e.g. 'Do the field lines point towards the negative sphere or away from it?'",
+        "quote": "Would you like me to just tell you what happens with those field lines?"
+      },
+      {
+        "target": "keyPoints[3].tutor_note",
+        "change": "Require the tutor to say 'strong electric field near the charged object makes electrons jump' whenever a spark is explained. Checkpoint 3 tests exactly this.",
+        "quote": "When you touch the door handle, they jump across as a spark — that's lightning on a tiny scale."
+      },
+      {
+        "target": "keyPoints[0].content",
+        "change": "Teach conservation as 'equal and opposite, nothing is lost', not as adding positive and negative charges. Give a tutor hint to avoid signed-sum questions for weak-arithmetic students.",
+        "quote": "What happens to the total charge when you add the negative charge and the positive charge together?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "would quit at T15",
+      "question does not match what was taught: T2, T5, T10, T11, T15"
+    ]
+  },
+  "cost": 0.191233,
+  "mode": "run",
+  "date": "2026-10-17"
+}

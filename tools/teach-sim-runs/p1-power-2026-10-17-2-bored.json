@@ -1,0 +1,375 @@
+{
+  "id": "p1-power",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Today we're looking at power — what it really means and why it matters. You'll see that a machine can do exactly the same job as another, but one might do it much faster, and that's what we call having more power. But which one is doing it faster?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "idk, which one?",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Okay, think of it this way — imagine two identical cranes lifting the exact same car the exact same distance. One finishes in 5 seconds, the other takes 20 seconds. They've both moved the same amount of energy, but one did it quicker.\n\nWhich crane moved the energy faster?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "the one that did it in 5 seconds obviously lol",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right — the 5-second crane transfers the energy faster, so it's more powerful. Power is measured in watts, and 1 watt means 1 joule of energy transferred every second.\n\nWhat does 1 watt equal?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "1 joule per second innit",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Exactly right — 1 joule per second. So power is really about the *rate* — that means how quickly the energy gets transferred, measured in joules per second. How many joules per second would a more powerful crane transfer compared to a less powerful one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "way more joules i guess idk im starving tho",
+      "studentType": "offtopic",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Fair enough — grab some food if you need to!\n\nSo we know power is about how fast energy gets transferred. There's actually a simple equation that links power, energy and time together. Power equals energy divided by time — we write it as P = E/t.\n\nWhat do you think the E stands for in that equation?",
+      "recap": [
+        "Power is about how fast energy gets transferred, not just how much work gets done.",
+        "A more powerful machine does the same job in less time than a less powerful one.",
+        "Power is measured in watts, where 1 watt means 1 joule of energy transferred every second."
+      ],
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "So the equation P = E/t just means: power equals the energy transferred, divided by the time it took. The E is energy.\n\nWhat does the t stand for?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "time innit",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right — t stands for time. So you've got P = E/t: power equals energy divided by time.\n\nNow, when machines are really powerful — like a kettle or a heater — we don't always write the power in watts. Instead we use kilowatts, which is 1000 watts, or kW for short. How many watts is a 2 kW kettle?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "um like 2000 watts?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Spot on — 2000 watts is right.\n\nSo when power gets really huge — like at a power station — we use an even bigger unit called a megawatt, or MW. One megawatt is a million watts, so 1 MW = 1,000,000 W.\n\nHow many watts is a power station rated at 500 MW?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "ugh that's too many zeros",
+      "studentType": "minimal",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Would you like me to just tell you what 500 MW is in watts?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "yeah just tell me",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "500 MW is 500,000,000 watts — that's half a billion watts. When power gets even bigger, we use gigawatts, or GW, which is a billion watts: 1 GW = 1,000,000,000 W.\n\nWhat's the difference between a megawatt and a gigawatt?",
+      "recap": [
+        "Power is the speed at which energy gets transferred from one place to another.",
+        "Use P = E/t: power equals energy divided by the time taken.",
+        "Kilowatts (kW) are 1000 watts, so a 2 kW kettle uses 2000 watts.",
+        "Megawatts (MW) are a million watts, used for massive power like power stations."
+      ],
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "gigawatt is like 1000 times bigger?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Right — a gigawatt is a thousand times bigger than a megawatt.\n\nNow let's look at something that power depends on: work done. When a force moves an object, energy gets transferred, and we call that work done. It's measured in joules.\n\nIf a force of 10 newtons pushes a box 5 metres along the ground, what happens to energy?",
+      "recap": [
+        "A megawatt (MW) is a million watts, and a gigawatt (GW) is a billion watts.",
+        "A gigawatt is 1000 times bigger than a megawatt.",
+        "500 MW means 500 million watts — that's half a billion.",
+        "We use these bigger units when talking about really large power amounts."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "When a force pushes or pulls something and it moves, energy gets transferred — that's called work done. So when you push the box along the ground, work is being done because the force is moving it.\n\nHow far did the box move in that example?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "5 metres right",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, 5 metres is right. So the work done is force times distance: 10 newtons × 5 metres = 50 joules. We can also write that as 50 newton-metres, because 1 newton-metre equals 1 joule.\n\nWhat does 1 newton-metre mean?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "like the force needed to move something 1 metre?",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Yes — that's the energy you transfer when a 1 newton force moves something 1 metre. That's a really good way to think about it. You've got the core idea: power is about how fast energy gets transferred, and it all starts with work done — force moving distance.",
+      "recap": [
+        "Work done is energy transferred when a force moves an object, measured in joules.",
+        "Work done = force × distance, so 10 N × 5 m = 50 joules.",
+        "One newton-metre is the same thing as one joule."
+      ],
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "ok cool thanks",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've really got the hang of this — you can now work out power for anything that transfers energy, and you know why it matters in real life. Good luck with your revision!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 3,
+    "engagement_quote": "S8: ugh that's too many zeros",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "But which one is doing it faster?",
+        "note": "Asks 'which one' before any two machines or times are given, so the student cannot answer."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "imagine two identical cranes lifting the exact same car the exact same distance. One finishes in 5 seconds, the other takes 20 seconds.",
+        "note": "Two 'identical' cranes with different times contradicts the point that they differ in power. Say 'two cranes'."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "1 watt means 1 joule of energy transferred every second. What does 1 watt equal?",
+        "note": "Only asks the student to repeat the line just said. No thinking needed."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How many joules per second would a more powerful crane transfer compared to a less powerful one?",
+        "note": "'How many' with no numbers given leaves only a vague guess possible."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Power equals energy divided by time — we write it as P = E/t. What do you think the E stands for in that equation?",
+        "note": "The answer is given in the same sentence. The turn is too long for a hungry student, and it got 'huh?'."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The E is energy. What does the t stand for?",
+        "note": "Trivial recall that does not test the meaning of P = E/t."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How many watts is a 2 kW kettle?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How many watts is a power station rated at 500 MW?",
+        "note": "A conversion with many zeros is badly pitched for a student weak at mental arithmetic, and it triggered 'too many zeros'."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to just tell you what 500 MW is in watts?",
+        "note": ""
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What's the difference between a megawatt and a gigawatt?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "If a force of 10 newtons pushes a box 5 metres along the ground, what happens to energy?",
+        "note": "Open-ended question asked before W = Fs is introduced. The student replied 'huh?'."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How far did the box move in that example?",
+        "note": "Asks the student to read back a given number. It does not test work done."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So the work done is force times distance: 10 newtons × 5 metres = 50 joules.",
+        "note": "The tutor did the W = Fs calculation instead of letting the student try 10 × 5."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Yes — that's the energy you transfer when a 1 newton force moves something 1 metre. That's a really good way to think about it.",
+        "note": "Affirms the wrong answer 'the force needed to move something 1 metre'. The student said force, but it is energy."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "you can now work out power for anything that transfers energy",
+        "note": "False claim. The student never did a single P = E/t calculation."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: correct wrong answers before praising",
+        "change": "When the student's answer swaps a term (force vs energy), say 'Close — not force, energy' before any 'Yes'. Never say 'really good way to think about it' about a wrong answer.",
+        "quote": "S13: like the force needed to move something 1 metre?"
+      },
+      {
+        "target": "teach-core: require a checkpoint before wrap-up",
+        "change": "Do not end or claim mastery until the student has solved a P = E/t question, e.g. checkpoints.1. Use friendly numbers first (100 J in 10 s, from keyPoints[1].content).",
+        "quote": "T14: You've really got the hang of this — you can now work out power for anything that transfers energy"
+      },
+      {
+        "target": "teach-core: questions must need thinking, not echoing",
+        "change": "Don't ask for something stated in the same turn. Replace 'What does the t stand for?' and 'How far did the box move?' with a quick calculation: 'A crane transfers 1000 J in 10 s — what's its power?' or 'Work out 10 N × 5 m'.",
+        "quote": "T11: How far did the box move in that example?"
+      },
+      {
+        "target": "teach-core: avoid zero-heavy conversions for weak-arithmetic learners",
+        "change": "Ask comparisons ('Is 500 MW more or less than 1 GW?') or say 'million' in words instead of making the student convert 500 MW to watts. Keep revisionCardBullets[3] only as a reference.",
+        "quote": "S8: ugh that's too many zeros"
+      },
+      {
+        "target": "intro / teach-core: opening question",
+        "change": "Open with the concrete crane comparison from the intro (5 s vs 20 s) before asking 'which one'. Drop 'identical' so the cranes can differ in power.",
+        "quote": "T0: But which one is doing it faster?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "question does not match what was taught: T0, T11"
+    ]
+  },
+  "cost": 0.162912,
+  "mode": "run",
+  "date": "2026-10-17"
+}

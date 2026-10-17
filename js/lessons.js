@@ -15,9 +15,17 @@ const Lessons = (() => {
   let _stepCpDone         = false; // checkpoint answered this step
 
   // Lessons that open in conversational Teach mode instead of the slide view.
-  const TEACH_ENABLED = ['b3-defences', 'g5-development', 'g5-nigeria', 'g5-uk-economy', 'p3-particle-model',
+  const TEACH_ENABLED_ALL = ['b3-defences', 'g5-development', 'g5-nigeria', 'g5-uk-economy', 'p3-particle-model',
     'p1-energy-stores', 'p1-kinetic-potential', 'p1-conservation', 'p1-efficiency', 'p1-power', 'p1-heating', 'p1-national-grid',
     'p2-current-voltage', 'p2-series-parallel', 'p2-components', 'p2-domestic', 'p2-power-energy', 'p2-static'];
+  // Bored-student testers (2026-10-17): these non-Physics AI lessons still
+  // failed the text tester after their one re-run, so they open as slides
+  // until they pass (docs/ESCALATIONS.md). false restores the full list.
+  const TEACH_OFF_UNTIL_TESTED = true;
+  const TESTER_FAILED = ['b3-defences', 'g5-development', 'g5-nigeria', 'g5-uk-economy'];
+  const TEACH_ENABLED = TEACH_OFF_UNTIL_TESTED
+    ? TEACH_ENABLED_ALL.filter(id => !TESTER_FAILED.includes(id))
+    : TEACH_ENABLED_ALL;
   // Task 2.5a (runbook v2): the AI lesson is the default for a TEACH_ENABLED
   // lesson when a key is present; the slides are one tap away in its header.
   // false: open the slides first, with a link to the AI lesson in their header.

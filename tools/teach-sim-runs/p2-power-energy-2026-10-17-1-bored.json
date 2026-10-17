@@ -1,0 +1,435 @@
+{
+  "id": "p2-power-energy",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Every time you use an electrical device — like boiling a kettle or charging your phone — energy gets transferred. Power tells you *how fast* that energy transfer happens, which is why a high-power kettle boils water quicker than a low-power one.\n\nWhat unit do we use to measure power?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "watts?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right — watts is correct! So a watt measures how many joules of energy are transferred *every second*. It's all about the speed of that energy transfer.\n\nHow many joules does a 1 watt device transfer in one second?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "umm 1 joule?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yeah, 1 watt means 1 joule transferred every second. So now you know that power tells us the speed of energy transfer, and we measure it in watts.\n\nWhat happens to the energy transfer speed if the power gets bigger?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk, it gets faster?",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Exactly — the energy transfer gets faster. So if a device has a higher power rating, how much more energy does it transfer in one second compared to a lower-power device?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "um like twice as much energy?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Would you like me to just tell you the rest of this bit?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "nah im getting it",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "So if power is bigger, the energy transfer is faster — that's right. Let me show you with a real example: a kettle uses 10 amps at 230 volts, so the power is 10 × 230, which gives 2300 watts. What do you think 2300 watts means in terms of energy transfer?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "So a watt just tells you how many joules of energy transfer every single second — it's that simple. The kettle's 2300 watts means it transfers 2300 joules of energy every second.\n\nHow many joules does a 5-watt phone charger transfer in one second?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "no idea lol",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "A watt is just 1 joule of energy every second, so a 5-watt charger transfers 5 joules in one second. Kilowatts are used for bigger appliances — 1 kilowatt is 1000 watts. When you switch on a device, where does that energy actually go — what does the appliance do with it?",
+      "recap": [
+        "Power measures how fast energy gets transferred, measured in watts.",
+        "One watt means one joule of energy transfers every single second.",
+        "Higher power means faster energy transfer — so more joules per second.",
+        "You can find power by multiplying current (amps) by voltage (volts)."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "it makes heat?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Heat is one thing, yes — but think broader: an appliance transfers energy *into* different stores depending on what it does. A kettle puts energy into a thermal energy store to heat water, but a fan puts energy into a kinetic energy store to make the blades spin. What energy store does a light bulb transfer energy into?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "like thermal store? cuz it gets hot",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "You're right — a light bulb does get hot, but most of its energy actually goes into a light energy store, which is why it's bright. Now, we know that energy transferred is power times time. If a device uses 10 watts for 5 seconds, how many joules of energy transfer?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "So if power is in watts and time is in seconds, we just multiply them together to get energy in joules. A 10-watt device running for 5 seconds transfers 10 × 5 = 50 joules.\n\nWhat's the calculation when a 3-watt device runs for 2 seconds?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "3 times 2 is like 6 joules?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Now, there's another way to think about energy transfer using charge. When charge flows through a circuit, we can work out *how much* charge has flowed using current and time: charge flow equals current times time, and we measure it in coulombs. What's the charge flow when a current of 2 amps flows for 5 seconds?",
+      "recap": [
+        "Power is measured in watts, and 1 watt means 1 joule transferred every second.",
+        "Appliances transfer electrical energy into different stores depending on what they do — like thermal, kinetic, or light energy.",
+        "To find total energy transferred, multiply power in watts by time in seconds to get joules."
+      ],
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "wait im hungry lol can we take a break",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "That's fine — take a break when you need to! Just so it's fresh when you're back: charge flow is just how much electric charge moves past a point, and we work it out by multiplying current and time together. When 2 amps flows for 5 seconds, what's the charge flow in coulombs?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "When charge flows through a circuit, the energy it transfers depends on how much charge flows and the potential difference it moves through. The equation is: energy transferred equals charge flow times potential difference, or E = QV, where energy is in joules.\n\nIf 4 coulombs of charge flows through a potential difference of 6 volts, what's the energy transferred?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "ok what",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "So when charge flows through a circuit, it does work and transfers energy. The energy transferred depends on *how much* charge flows and *how hard* it's being pushed through — that's the potential difference.\n\nIf 4 coulombs of charge flows through a potential difference of 6 volts, what energy gets transferred?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "um like 24 joules?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Right — that's exactly it, 4 × 6 = 24 joules!\n\nWould you like me to walk you through how all these electrical equations link together?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "yeah go on then",
+      "studentType": "checkin-yes",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "So you've just used E = QV — that's energy transferred in joules equals charge in coulombs times potential difference in volts. Sometimes you'll need to use two or more equations in sequence to solve a tricky problem, like finding the charge first and then the energy.",
+      "recap": [
+        "Charge flow is how much electric charge moves through a circuit — work it out using current × time.",
+        "Energy transferred through a circuit depends on two things: how much charge flows and the potential difference.",
+        "The equation E = QV links them together — energy in joules equals charge in coulombs times voltage."
+      ],
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "That's brilliant — you've got the key ideas down. Come back anytime you want to go over this stuff again, or if you hit a tricky exam question on it.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "S13: this is long",
+    "would_quit": {
+      "turn": "T16",
+      "quote": "S17: ok thanks bye",
+      "why": "The student agreed to a walkthrough. T16 only repeated E = QV, asked nothing, and gave no worked example, so the student left. This came after the earlier break request was ignored."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What unit do we use to measure power?",
+        "note": "Asks for the unit before teaching it. It works as a recall check, but it was not taught."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How many joules does a 1 watt device transfer in one second?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to the energy transfer speed if the power gets bigger?",
+        "note": ""
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "how much more energy does it transfer in one second compared to a lower-power device?",
+        "note": "Asks for a quantity with no numbers given, so it cannot be answered. The student is pushed into guessing 'twice as much'."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to just tell you the rest of this bit?",
+        "note": "Offers to give up instead of correcting the wrong guess 'twice as much energy'."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What do you think 2300 watts means in terms of energy transfer?",
+        "note": "Open, abstract question straight after a calculation. The student replied 'huh?'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How many joules does a 5-watt phone charger transfer in one second?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When you switch on a device, where does that energy actually go — what does the appliance do with it?",
+        "note": "Teaches kilowatts, then asks about energy stores, which have not been taught. The kW fact is never checked."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What energy store does a light bulb transfer energy into?",
+        "note": "Only thermal and kinetic stores were taught, and light is not a store. The question has no correct answer from what was taught."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": true,
+        "quote": "most of its energy actually goes into a light energy store",
+        "note": "Factual error: light is not an energy store, and the student's thermal answer was partly right. 'we know that energy transferred is power times time' claims E = Pt was taught when it was not."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What's the calculation when a 3-watt device runs for 2 seconds?",
+        "note": ""
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Now, there's another way to think about energy transfer using charge.",
+        "note": "Never confirms the student's correct '6 joules', and moves straight on to new content."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That's fine — take a break when you need to!",
+        "note": "Agrees to a break, then immediately re-asks the question. This ignores the request."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": true,
+        "quote": "The equation is: energy transferred equals charge flow times potential difference, or E = QV",
+        "note": "Drops the unanswered Q = It question, says nothing about 'this is long', and adds a new equation in a long block."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If 4 coulombs of charge flows through a potential difference of 6 volts, what energy gets transferred?",
+        "note": ""
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to walk you through how all these electrical equations link together?",
+        "note": ""
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Sometimes you'll need to use two or more equations in sequence to solve a tricky problem, like finding the charge first and then the energy.",
+        "note": "The promised walkthrough never happens: no Q = It → E = QV example and no question. The student leaves."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That's brilliant — you've got the key ideas down.",
+        "note": "Overclaims mastery. The student never answered Q = It, never used P = I²R, and never converted kW or minutes."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: honour break / fatigue signals",
+        "change": "When the student asks for a break or says the session is long, stop asking questions. Give a 1-line recap and offer to resume. Do not re-ask the pending question in the same turn.",
+        "quote": "S12: wait im hungry lol can we take a break"
+      },
+      {
+        "target": "keyPoints[1].tutor_note",
+        "change": "Add: 'Light is NOT an energy store. A bulb transfers energy by light (radiation) and heats the surroundings (thermal store). Only name stores: kinetic, thermal, chemical, etc.' Also limit store questions to motor→kinetic and heater→thermal.",
+        "quote": "most of its energy actually goes into a light energy store"
+      },
+      {
+        "target": "teach-core: confirm or correct every student answer before moving on",
+        "change": "Always start the next turn with an explicit verdict on the last answer. For example, say 'Yes, 6 J' or 'Not twice — it depends on the power: 2000 W vs 1000 W is twice'. Never skip straight to new content.",
+        "quote": "S4: um like twice as much energy?"
+      },
+      {
+        "target": "keyPoints[2].tutor_note",
+        "change": "When the student accepts a 'link the equations' walkthrough, run checkpoints.2 as a two-step guided example. Step 1: Q = It = 2 × 10 = 20 C. Ask for that number. Step 2: E = QV = 20 × 6. End with a question, not a statement.",
+        "quote": "T16: So you've just used E = QV — that's energy transferred in joules equals charge in coulombs times potential difference in volts."
+      },
+      {
+        "target": "teach-core: only ask about content already taught; after 'huh?' give a tiny worked example first",
+        "change": "Do not ask comparison or 'what does it mean' questions without numbers. After 'huh?' or 'no idea', show one worked line with single-digit numbers, then ask a near-identical question. Keep turns under ~40 words for this student.",
+        "quote": "S6: huh?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "would quit at T16",
+      "question does not match what was taught: T0, T3, T7, T8"
+    ]
+  },
+  "cost": 0.19583,
+  "mode": "run",
+  "date": "2026-10-17"
+}

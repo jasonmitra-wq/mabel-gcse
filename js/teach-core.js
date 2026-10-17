@@ -529,6 +529,14 @@ function create(env) {
   // When teaching, a question she could answer with a bare yes/no also fails
   // the check and is asked for again; the length limit only tightens when the
   // reply was actually too long.
+  // fixT4: the closing question asks her to name a term ("What do we call…?",
+  // "What is that called?", "What word…?"). The bored-student tester found the
+  // tutor asks these before it has said the term, so she can only guess.
+  function _asksForName(plain) {
+    const q = (plain.match(/[^.!?]*\?\s*$/) || [''])[0];
+    return /\bwhat (do|would|could|might) (we|you|scientists|people|they) call\b|\bwhat(?:'s| is| are) (it|this|that|these|those|they)(?: \w+){0,2} called\b|\b(what|which) (word|term|name)\b|\bwhat is the (name|word|term)\b|\bcalled\?\s*$/i.test(q);
+  }
+
   async function _callWithLengthGuard(sys, user, noYesNo = false) {
     const limits = [
       { words: MAX_REPLY_WORDS, tokens: MAX_TOKENS_REPLY, note: '' },
@@ -541,10 +549,11 @@ function create(env) {
     const eitherOrNote = `(Your question offers her a choice between options joined by "or", so she can pick one without knowing. Keep the rest, but ask one what / which / why / how question with no options in it, whose answer is a specific word or short phrase from the content. Do not use the word "or" in the question.)`;
     const noQuestionNote = `(Your reply did not end with a question. Keep the rest, and end with one what / which / why / how question about the content.)`;
     const manyNote = `(Your reply has more than one question mark. Ask exactly one question, at the end. Turn any other question, including a rhetorical one, into a statement.)`;
-    let complete = '', last = '', level = 0, yesNo = false, eitherOr = false, noQuestion = false, many = false;
+    const namingNote = `(Your question asks her to name or guess a term. Say the term yourself in this reply, then ask a what / why / how question that makes her use the idea. Do not ask what something is called.)`;
+    let complete = '', last = '', level = 0, yesNo = false, eitherOr = false, noQuestion = false, many = false, naming = false;
     for (let i = 0; i < limits.length; i++) {
       const a = limits[level];
-      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : '', many ? manyNote : ''].filter(Boolean).join('\n');
+      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : '', many ? manyNote : '', naming ? namingNote : ''].filter(Boolean).join('\n');
       const reply = (await AI.call(sys, note ? `${user}\n\n${note}` : user, a.tokens)).trim();
       const plain = _stripMarkdown(reply);
       last = reply;
@@ -554,7 +563,8 @@ function create(env) {
       eitherOr = FIX25 && noYesNo && _asksEitherOr(plain);
       noQuestion = FIX25 && noYesNo && !cut && _asksNothing(plain);
       many = FIX25 && noYesNo && _asksMoreThanOne(plain);
-      const badQ = yesNo || eitherOr || noQuestion || many;
+      naming = FIX_T4 && noYesNo && _asksForName(plain);
+      const badQ = yesNo || eitherOr || noQuestion || many || naming;
       if (!cut && !long && !badQ) return _finishReply(reply);
       if (!cut && !badQ && !complete) complete = reply; // finished, just long — usable if nothing better
       if (cut || long) level = Math.min(level + 1, limits.length - 1);

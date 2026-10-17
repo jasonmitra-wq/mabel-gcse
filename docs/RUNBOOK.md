@@ -25,6 +25,11 @@ on. Never ask Jason anything except the STOP cases in section 2.
 - Record every API call's actual cost. STATE keeps a "Spend" table: one
   row per topic with API runs and dollars.
 - Before marking anything verified, re-read it from disk.
+- Never switch a lesson's AI teacher on for the live site, in any subject,
+  until it has passed the text tester, and its topic has passed the website
+  tester. Test on the local server first; push the TEACH_ENABLED change
+  only after the tests pass. After any change to the maths module or maths
+  questions, run the website tester in maths mode on the affected topics.
 
 EDIT RULES for lesson content:
 - Edit only what a decision or finding names. A term fixed for a
@@ -160,18 +165,26 @@ h. STATE row: S1–S3 "✓ <hash>"; S6 "✓ <hash> (R<last>; audited <file>)"
        run first, cost guard as built). Fix faults that are in the
        lesson file, under the EDIT RULES. Fix faults in shared code
        once, behind a flag. Re-run only the lessons that failed, once.
+    c2. Run the text tester (tools/teach-sim.js --persona bored) on every
+       P1 and P2 lesson, and the website tester (tools/site-test.js) on
+       one lesson per topic, on the local server, before pushing the
+       TEACH_ENABLED change. Fix every FAIL (lesson faults in the lesson,
+       shared-code faults once behind a flag); re-run only failures,
+       once; anything still failing goes to docs/ESCALATIONS.md and that
+       lesson stays off the live site.
     d. Record T1–T3 for P1 and P2 in STATE. Commit after each topic.
 2.6 For P3, P4, P5, P6, P7 and P8, one topic per session: run the topic
     procedure (section 3); then, in the same session, add the topic's
-    lessons to TEACH_ENABLED and run 2.5c and 2.5d for that topic. End
-    the session with "Topic done. Type Continue in a new session."
+    lessons to TEACH_ENABLED and run 2.5c and 2.5d for that topic and
+    2.5c2. End the session with "Topic done. Type Continue in a new
+    session."
     P1 and P2 are not re-run.
 2.7 Diagrams (S4): for each Physics lesson, add a diagram wherever the
     spec-check or auditor named a visual concept or the specification
     asks students to draw or interpret one (circuits, field patterns,
     graphs, particle arrangements). Run tools/check-diagrams.js until
     clean. Commit per topic.
-2.8 When every Physics row is ✓ on S1–S6 and T1–T3: STOP with "Physics
+2.8 When every Physics row is ✓ on S1–S6 and T1–T4: STOP with "Physics
     finished. One real session needed (Jason or Mabel)."
 
 Phase 3 — Biology, then Chemistry: defect 10 renderer fix first, then

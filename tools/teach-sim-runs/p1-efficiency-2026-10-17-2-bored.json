@@ -1,0 +1,424 @@
+{
+  "id": "p1-efficiency",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! So imagine a petrol engine gets 100 units of energy from fuel, but only 25 of those units actually make the car move — the rest just heats up or gets wasted. What fraction of the petrol engine's input energy actually became useful motion?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "wait so like 25 out of 100? that's like a quarter right?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That fraction, 25/100, tells us how much of the input energy was actually useful. We call that **efficiency** — it's just the proportion of energy that goes into doing the job we want, rather than being wasted as heat or sound. What proportion of the petrol engine's input energy was wasted?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "huh? like just tell me is it 75",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, 75 out of 100 is wasted. So efficiency is just how much of the energy you put in actually does the job you want — the rest gets lost as heat or sound. In the engine, the 25 units that make the car move is the useful output energy.\n\nWhat happens to the other 75 units?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "turns into heat or whatever",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right — it does turn into heat. So those 75 units are wasted as heat, but the 25 units that actually move the car are what we call the **useful output energy transfer** — that's the energy doing the job we want.\n\nWhat's the job the engine is trying to do?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "make heat?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Would you like me to just tell you what the engine's job actually is?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "yeah go on",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "The engine's job is to make the car move — so the 25 units that push the car forward are the useful output energy, and all the energy the engine gets from fuel (100 units) is the total input energy. What do you think happens to the other 75 units we talked about?",
+      "recap": [
+        "Efficiency means how much of the energy you put in actually does the job you want.",
+        "The rest of the input energy gets wasted as heat or sound instead.",
+        "You can write efficiency as a fraction — useful energy out divided by total energy in.",
+        "In a petrol engine, only about 25% becomes useful motion; the other 75% becomes wasted heat."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "this is long innit",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Sorry, let me make it simpler. The engine wastes 75 units as heat, and only uses 25 units to move the car. So we divide the useful bit by the total bit: 25 ÷ 100, which gives us 0.25 or 25%.\n\nWhat do you get if you divide 375 by 500?",
+      "recap": null,
+      "flags": [
+        "unanswerable: no word from the lesson"
+      ]
+    },
+    {
+      "n": 7,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "You get 0. 75, or 75%. Now, here's something useful: the energy that doesn't become useful output is wasted energy. So wasted energy is just the total input energy minus the useful output energy. How much energy was wasted in the car engine — the one that got 100 units in and only 25 units as useful motion?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "um like 50?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not quite — let me say it a different way. The engine gets 100 units in total, and only 25 units become useful motion, so the wasted energy is 100 minus 25.\n\nWhat's 100 minus 25?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "75?",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right — that's 75 units wasted.\n\nWould you like me to just walk you through how we use this to work out efficiency, so you can see the whole thing?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "yeah ok go on",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "So wasted energy is the total input energy minus the useful output energy — in that car engine, 100 minus 25 equals 75 units wasted. What happens to most of the energy that goes into a filament bulb?",
+      "recap": [
+        "Efficiency means dividing useful energy output by total energy input.",
+        "Wasted energy is whatever doesn't become useful output — just subtract it out.",
+        "Most engines waste loads of energy as heat rather than moving things.",
+        "You can write efficiency as a decimal or a percentage."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "idk like heat?",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "You're on the right track — a filament bulb does waste a lot of energy as heat, but it wastes *most* of its energy that way, not just some. So when you put energy into an old filament bulb, where does most of it go?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "most of it becomes heat",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Exactly — most of it becomes heat. An LED bulb is different: it's much better at turning the energy it gets into useful light instead of wasting it as heat, which is why LEDs replaced old filament bulbs in most homes.\n\nWhat do you think happens to the wasted energy in an LED bulb — where does it go?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "An LED bulb wastes some energy as heat too, but much less than a filament bulb does — most of its energy becomes useful light instead.\n\nHow much of the energy going into an LED bulb becomes useful light?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "most of it? like more than the filament one",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Exactly — an LED turns far more of its energy into useful light than a filament bulb does. One simple way is to put oil between moving parts — this is called lubrication — so that friction doesn't waste so much energy as heat. Why would putting oil between moving parts reduce the wasted heat?",
+      "recap": [
+        "Filament bulbs waste most of their energy as heat, not light.",
+        "LED bulbs turn most of their energy into useful light instead.",
+        "LEDs are more efficient because they waste less energy as heat.",
+        "You can compare devices by looking at how much energy they waste."
+      ],
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "oil makes them slide easier so less friction i guess",
+      "studentType": "offtopic",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Exactly — oil lets the surfaces slide more smoothly, so there's less friction rubbing away energy as heat. That's a really good way to think about efficiency: you've seen that wasted energy usually becomes heat, and that we can reduce waste by making things work more smoothly. You've got the main idea — well done.",
+      "recap": [
+        "Oil between moving parts makes them slide more easily instead of rubbing.",
+        "When parts rub less, there's less friction creating wasted heat energy.",
+        "LEDs waste much less energy as heat than old filament bulbs do."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome — you've done really well today. Come back whenever you want to go over it again.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "S6: this is long innit",
+    "would_quit": {
+      "turn": "T6",
+      "quote": "T6: Sorry, let me make it simpler. The engine wastes 75 units as heat, and only uses 25 units to move the car. So we divide the useful bit by the total bit: 25 ÷ 100, which gives us 0.25 or 25%. What do you get if you divide 375 by 500?",
+      "why": "Student had just said 'this is long innit'. Instead of simplifying, the tutor fires an unexplained hard division at a student weak in mental arithmetic."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T0: Hi! So imagine a petrol engine gets 100 units of energy from fuel, but only 25 of those units actually make the car move — the rest just heats up or gets wasted. What fraction of the petrol engine's input energy actually became useful motion?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T1: That fraction, 25/100, tells us how much of the input energy was actually useful. We call that **efficiency** — it's just the proportion of energy that goes into doing the job we want, rather than being wasted as heat or sound. What proportion of the petrol engine's input energy was wasted?",
+        "note": "Never confirms the student's correct 'a quarter'. It teaches efficiency as the useful proportion, then asks about the wasted proportion instead. Student replies 'huh?'."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T2: Yes, 75 out of 100 is wasted. So efficiency is just how much of the energy you put in actually does the job you want — the rest gets lost as heat or sound. In the engine, the 25 units that make the car move is the useful output energy. What happens to the other 75 units?",
+        "note": "Asks something it already answered in the same sentence ('gets lost as heat or sound'), which wastes the student's patience."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T3: Right — it does turn into heat. So those 75 units are wasted as heat, but the 25 units that actually move the car are what we call the **useful output energy transfer** — that's the energy doing the job we want. What's the job the engine is trying to do?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T4: Would you like me to just tell you what the engine's job actually is?",
+        "note": "Leaves the misconception 'make heat?' uncorrected and adds a wasted round-trip."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T5: The engine's job is to make the car move — so the 25 units that push the car forward are the useful output energy, and all the energy the engine gets from fuel (100 units) is the total input energy. What do you think happens to the other 75 units we talked about?",
+        "note": "Teaches total input, but re-asks the 75-units question for the third time instead of testing total input. Student: 'this is long innit'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T6: Sorry, let me make it simpler. The engine wastes 75 units as heat, and only uses 25 units to move the car. So we divide the useful bit by the total bit: 25 ÷ 100, which gives us 0.25 or 25%. What do you get if you divide 375 by 500?",
+        "note": "375 ÷ 500 appears with no motor context and is hard mental arithmetic for this student. Student: 'huh?'."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T7: You get 0. 75, or 75%. Now, here's something useful: the energy that doesn't become useful output is wasted energy. So wasted energy is just the total input energy minus the useful output energy. How much energy was wasted in the car engine — the one that got 100 units in and only 25 units as useful motion?",
+        "note": "Answers its own question with a malformed '0. 75' and never explains it. Then re-asks the wasted amount that the student already gave as 75 in S2."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T8: Not quite — let me say it a different way. The engine gets 100 units in total, and only 25 units become useful motion, so the wasted energy is 100 minus 25. What's 100 minus 25?",
+        "note": ""
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T9: Right — that's 75 units wasted. Would you like me to just walk you through how we use this to work out efficiency, so you can see the whole thing?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T10: So wasted energy is the total input energy minus the useful output energy — in that car engine, 100 minus 25 equals 75 units wasted. What happens to most of the energy that goes into a filament bulb?",
+        "note": "Breaks the promised efficiency walkthrough, repeats the subtraction, then jumps to filament bulbs, which have not been taught."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T11: You're on the right track — a filament bulb does waste a lot of energy as heat, but it wastes *most* of its energy that way, not just some. So when you put energy into an old filament bulb, where does most of it go?",
+        "note": "The student's 'heat' was correct. The tutor treats it as partial and re-asks the same question."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T12: Exactly — most of it becomes heat. An LED bulb is different: it's much better at turning the energy it gets into useful light instead of wasting it as heat, which is why LEDs replaced old filament bulbs in most homes. What do you think happens to the wasted energy in an LED bulb — where does it go?",
+        "note": "Teaches that LEDs give more useful light, then asks where LED waste goes, which was not taught. Student: 'this is long'."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T13: An LED bulb wastes some energy as heat too, but much less than a filament bulb does — most of its energy becomes useful light instead. How much of the energy going into an LED bulb becomes useful light?",
+        "note": "The question just echoes the sentence before it, so it tests nothing."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T14: Exactly — an LED turns far more of its energy into useful light than a filament bulb does. One simple way is to put oil between moving parts — this is called lubrication — so that friction doesn't waste so much energy as heat. Why would putting oil between moving parts reduce the wasted heat?",
+        "note": "'One simple way' refers to nothing. 'Improving efficiency' is never introduced."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T15: Exactly — oil lets the surfaces slide more smoothly, so there's less friction rubbing away energy as heat. That's a really good way to think about efficiency: you've seen that wasted energy usually becomes heat, and that we can reduce waste by making things work more smoothly. You've got the main idea — well done.",
+        "note": "Claims mastery, but the student never calculated an efficiency. No checkpoint was run, and the ≤1 rule and percentage conversion were never covered."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T16: You're welcome — you've done really well today. Come back whenever you want to go over it again.",
+        "note": ""
+      }
+    ],
+    "fixes": [
+      {
+        "target": "keyPoints[1].memTip",
+        "change": "Remove the bare 'motor 375/500=0.75' drill. Set the motor up as a story first ('motor gets 500 J, does 375 J useful work'). Have the tutor show the division, or use easy numbers like 300/400. Never ask raw division of a weak-arithmetic student.",
+        "quote": "T6: Sorry, let me make it simpler. The engine wastes 75 units as heat, and only uses 25 units to move the car. So we divide the useful bit by the total bit: 25 ÷ 100, which gives us 0.25 or 25%. What do you get if you divide 375 by 500?"
+      },
+      {
+        "target": "teach-core: track answered questions",
+        "change": "Never re-ask a question the student has already answered correctly. After the answer, move to the next concept. Here: total input, then the efficiency formula, then the ≤1 check.",
+        "quote": "T5: The engine's job is to make the car move — so the 25 units that push the car forward are the useful output energy, and all the energy the engine gets from fuel (100 units) is the total input energy. What do you think happens to the other 75 units we talked about?"
+      },
+      {
+        "target": "teach-core: confirm correct answers",
+        "change": "Explicitly confirm correct student answers ('Yes — a quarter, 0.25, is its efficiency') instead of ignoring them or calling them partial.",
+        "quote": "S1: wait so like 25 out of 100? that's like a quarter right?"
+      },
+      {
+        "target": "teach-core: honour walkthrough offers / run checkpoints before wrap-up",
+        "change": "When the student accepts 'walk you through how we use this to work out efficiency', do that walkthrough. Before T15 praises mastery, run checkpoints.0 (560/800) and checkpoints.2 (lamp comparison) at minimum.",
+        "quote": "T9: Right — that's 75 units wasted. Would you like me to just walk you through how we use this to work out efficiency, so you can see the whole thing?"
+      },
+      {
+        "target": "teach-core: shorten after boredom signal",
+        "change": "After 'this is long', switch to one-sentence turns with an either/or question (e.g. 'Engine's job: make heat or make the car move?'). Correct misconceptions directly instead of asking permission to tell.",
+        "quote": "T4: Would you like me to just tell you what the engine's job actually is?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "would quit at T6",
+      "question does not match what was taught: T1, T5, T6, T10, T12"
+    ]
+  },
+  "cost": 0.218418,
+  "mode": "run",
+  "date": "2026-10-17"
+}

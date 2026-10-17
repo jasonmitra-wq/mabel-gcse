@@ -1,0 +1,342 @@
+{
+  "id": "p1-heating",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Ever wondered why the sea keeps coastal towns warm long after summer, or why pie filling burns your mouth but the pastry doesn't? That's all about specific heat capacity — how much energy different materials need to heat up. What does specific heat capacity measure?",
+      "flags": [
+        "unanswerable: more than one question"
+      ]
+    },
+    {
+      "n": 1,
+      "student": "ugh my battery's dying why's this even important tho",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Hope your battery holds! So specific heat capacity just means: how much energy you need to heat up 1 kg of something by 1°C. Why's that useful to know?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "oh ok so like... different things need different amounts of energy?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Exactly — different materials need very different amounts of energy to heat up by the same amount. So scientists use an equation to work out how much energy you need: change in thermal energy equals mass times specific heat capacity times the change in temperature. What does the \"m\" stand for in that equation?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "mass innit",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right — mass is what we need. So in that equation, the \"m\" is the mass of whatever you're heating up, measured in kilograms. The bigger the mass, the more energy you need to heat it.\n\nWhat does the \"c\" stand for in that equation?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "wait my mate just texted me something mad lol",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Want me to just tell you what the \"c\" stands for so we can move on?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "nah nah tell me i can figure it out",
+      "studentType": "checkin-no",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Right, so the \"c\" stands for **specific heat capacity** — that's the amount of energy needed to raise 1 kg of a substance by 1°C. The equation is **ΔE = mcΔθ**, which means change in thermal energy equals mass times specific heat capacity times temperature change. If you wanted to find the mass, how would you rearrange the equation?",
+      "recap": [
+        "Specific heat capacity tells you how much energy is needed to heat 1 kg by 1°C.",
+        "Different materials need different amounts of energy to warm up by the same temperature.",
+        "The equation is: change in energy = mass × specific heat capacity × temperature change.",
+        "Mass (m) is measured in kilograms — bigger mass means you need more energy."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "huh? too much mate",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Fair enough — let me make it simpler. If you know the energy, the mass, and the temperature change, how would you find the specific heat capacity?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "um divide energy by mass and temp change?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "That's right — divide energy by mass and temperature change, so c = ΔE divided by m times Δθ. There's a special instrument called a **joulemeter** that measures this energy directly in joules. What do you think a joulemeter does?",
+      "recap": [
+        "The equation ΔE = mcΔθ links thermal energy, mass, specific heat capacity, and temperature change.",
+        "Specific heat capacity is the energy needed to warm 1 kg of something by 1°C.",
+        "To find specific heat capacity, divide the energy by both the mass and temperature change."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "measures how many joules something uses?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Spot on. Now, imagine a big cold swimming pool and a small hot cup of tea — which one has more total energy stored in all its particles?",
+      "recap": [
+        "The formula for specific heat capacity is c = ΔE ÷ (m × Δθ).",
+        "A joulemeter is a device that directly measures energy transferred in joules.",
+        "To find specific heat capacity, you need to measure the energy supplied to a material."
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Think of it this way: a big cold pool has loads of particles, even though they're moving slowly. A tiny hot cup has far fewer particles moving fast. Which one has more energy altogether in all its particles?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "the pool i guess? cos theres way more stuff in it",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right — the pool does have more total energy altogether because it has so many more particles, even though they're cold. Now, temperature is different: it's about how fast the particles are moving *on average*. What do you think happens to how fast particles move when you heat something up?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "they move slower cuz theres less energy?",
+      "studentType": "wrong",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Not quite — when you heat something up, you're actually *adding* energy to it, so the particles move *faster*, not slower. More heat means faster movement on average. We've done a lot of ground here today!",
+      "recap": [
+        "Thermal energy is the total energy stored in all the particles in something — a big cold pool has more total energy than a hot cup because it has way more particles.",
+        "Temperature is different — it measures how fast particles are moving on average, not the total amount of energy.",
+        "When you heat something up, its particles move faster on average, so the temperature goes up."
+      ],
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've got the main idea now — particles move faster when heated, and different materials need different amounts of energy to warm up. Come back anytime you want to go over it again.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "huh? too much mate",
+    "would_quit": {
+      "turn": "T11",
+      "quote": "We've done a lot of ground here today!",
+      "why": "The tutor wraps up after a wrong answer with no quick win or next step, which hands a bored student an exit; the reply is 'ok thanks bye'."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That's all about specific heat capacity — how much energy different materials need to heat up. What does specific heat capacity measure?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Hope your battery holds! So specific heat capacity just means: how much energy you need to heat up 1 kg of something by 1°C. Why's that useful to know?",
+        "note": "The student asked 'why's this even important'. The tutor bounces the same question back without answering it, though the intro has hooks ready (radiators, sea, pie filling). Usefulness was never taught."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the \"m\" stand for in that equation?",
+        "note": "The answer was given in the same turn ('mass times...'), so it tests nothing."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the \"c\" stand for in that equation?",
+        "note": "Already stated in T2 ('mass times specific heat capacity'), so this is a giveaway question."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Want me to just tell you what the \"c\" stands for so we can move on?",
+        "note": "Offers to give up instead of a quick hook to win attention back."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": true,
+        "confusing": false,
+        "quote": "If you wanted to find the mass, how would you rearrange the equation?",
+        "note": "Rearranging was never taught. The turn is a dense ~58-word block with an untaught question; the student replies 'huh? too much mate'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you know the energy, the mass, and the temperature change, how would you find the specific heat capacity?",
+        "note": "Still an untaught rearrangement; it is no simpler than T5. No numbers and no Δθ subtraction were ever shown."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "so c = ΔE divided by m times Δθ. There's a special instrument called a **joulemeter** that measures this energy directly in joules. What do you think a joulemeter does?",
+        "note": "No brackets, so it reads as (ΔE/m)×Δθ. The joulemeter appears with no practical context ('this energy'?). The question repeats the answer just given."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Now, imagine a big cold swimming pool and a small hot cup of tea — which one has more total energy stored in all its particles?",
+        "note": "Abrupt jump to internal energy with nothing taught first; the student replies 'what?'."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which one has more energy altogether in all its particles?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Now, temperature is different: it's about how fast the particles are moving *on average*.",
+        "note": "The term 'internal energy' is never named, so the student can't link it to the exam wording."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "More heat means faster movement on average. We've done a lot of ground here today!",
+        "note": "'More heat' blurs energy transferred with temperature. 'done a lot of ground' is garbled. The tutor ends the session right after an error with no recheck."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You've got the main idea now",
+        "note": "Overclaims: no ΔE = mcΔθ calculation was done, and Δθ = final − initial (the lesson's examTip) was never covered."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: answer the student's 'why does this matter' with a lesson hook before asking anything",
+        "change": "When the student asks why it's important, give one concrete hook from intro (e.g. 'it's why the sea stays warm and pie filling burns you'). Then ask a question about it. Never reflect the student's question back.",
+        "quote": "ugh my battery's dying why's this even important tho"
+      },
+      {
+        "target": "teach-core: only ask about content taught in the same or previous turn",
+        "change": "Before asking for a rearrangement (keyPoints[1]) or an internal-energy comparison (keyPoints[3]), teach it in one short sentence first. Block questions whose answer was never shown, and block questions whose answer is stated in the same turn.",
+        "quote": "If you wanted to find the mass, how would you rearrange the equation?"
+      },
+      {
+        "target": "keyPoints[1].tutor_note",
+        "change": "Add: 'For learners weak at mental arithmetic, first do one tiny example: 1 kg water warmed from 20°C to 30°C, so Δθ = 30 − 20 = 10, and ΔE = 1 × 4200 × 10 = 42,000 J. Show the subtraction step out loud before any rearrangement.'",
+        "quote": "um divide energy by mass and temp change?"
+      },
+      {
+        "target": "teach-core: write rearranged formulas with explicit brackets/multiplication",
+        "change": "Always render as c = ΔE ÷ (m × Δθ), and say 'multiply mass by temp change first, then divide', as in keyPoints[1].tutor_note.",
+        "quote": "so c = ΔE divided by m times Δθ."
+      },
+      {
+        "target": "teach-core: don't close the session after a wrong answer",
+        "change": "After correcting an error, ask one easy recheck question (e.g. 'So heating makes particles move faster or slower?'). Then offer one short checkpoint (checkpoints.0) before any wrap-up. Never volunteer an ending line like 'We've done a lot of ground'.",
+        "quote": "Not quite — when you heat something up, you're actually *adding* energy to it, so the particles move *faster*, not slower."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "would quit at T11",
+      "question does not match what was taught: T1, T5, T6, T8"
+    ]
+  },
+  "cost": 0.188225,
+  "mode": "run",
+  "date": "2026-10-17"
+}

@@ -1,0 +1,687 @@
+{
+  "id": "g5-development",
+  "subject": "geography",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! What do you think GNI per capita tells us about people's lives in different countries?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "like how rich ppl are i guess? money stuff",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "You're right that it's about money! But GNI per capita is more specific: it's the *average* income per person in a country. Nigeria's GNI per capita is about $2,100 a year — what does that number tell you about how much money an average person there has compared to, say, the UK at $47,000?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "So Nigeria's average person earns about $2,100 a year, while a UK person earns roughly $47,000 — that's the big difference GNI per capita shows us. Now, money alone doesn't tell the whole story about people's lives. What do you think would make people in one country live so much longer than people in another?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "like healthcare and stuff? clean water maybe",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Exactly — healthcare, clean water, and nutrition all matter for how long people live. Chad has an infant mortality rate of 103, while the UK is only 4 — what does that big difference suggest about the two countries?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "ngl im so hungry rn",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "That's totally fair — shall I just walk you through the rest quickly before you go eat?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "nah im gonna go get food sry",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's fine — come back to this whenever you're ready! So we've looked at wealth and life expectancy; there's another really important social indicator called **infant mortality rate**, or IMR. Why do you think a country with better healthcare would have a lower infant mortality rate?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "cuz theyd treat sick babies better i guess",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Spot on — better healthcare means babies get treated faster and have a better chance of surviving. So far we've looked at wealth (GNI per capita) and two health and social measures (life expectancy and IMR). What do you think the advantage is of having all three bundled together like that instead of looking at them one at a time?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "So when we put income, life expectancy and years of schooling all together into a single score, that's called a composite measure. Now, the World Bank groups countries by how much money they make — and the richest ones are called High Income Countries, or HICs. What do you think \"high income\" refers to?",
+      "recap": [
+        "GNI per capita shows the average income per person, revealing huge wealth gaps between countries.",
+        "Life expectancy and infant mortality rate tell us about healthcare and living conditions, not just money.",
+        "Countries with better healthcare have lower infant mortality because sick babies get treated faster.",
+        "Using multiple indicators together gives a fuller picture of how developed a country really is."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "High income just means a country makes a lot of money — so the UK, Japan, and the USA are examples because they have high GNI per capita. What does that tell you about how rich the people living there are, on average?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "theyre probably pretty rich then",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Exactly — people in those countries are on average pretty wealthy. Now, at the opposite end, there are Low Income Countries, or LICs — these are among the world's poorest, with very low GNI per capita, like Niger and Malawi. What do you think life expectancy might be like in an LIC compared to a HIC?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "probably lower i guess? cos theyre poorer",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right — being poorer does mean life expectancy is lower. So in an LIC like Niger, the average life expectancy is actually around 55 years, whereas in a HIC like Japan it's around 80 — that's a massive difference. What do you think might be some of the reasons why poorer countries have shorter life expectancies?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "nah im getting bored can we talk about smth else",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "That's totally fine — do you want me to just run through the rest of this bit quickly so you know what you need?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "no not really lol",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right, well there are actually four income groups the World Bank uses to sort countries, not just two. So alongside HICs, there are also UMICs and LMICs — upper and lower middle income — which are countries in between, like Brazil and India. What's the difference between an LIC and one of those middle-income countries?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "So an LIC — that's a Low Income Country — is one of the poorest countries in the world, like Niger or Malawi, where people earn very little money. A middle-income country is somewhere in between poor and rich.\n\nWhat's an example of a middle-income country?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "brazil or india i guess",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Now, we're going to look at *why* some countries are rich and others are poor — which is what we call the development gap. What do you think the development gap actually means?",
+      "recap": [
+        "The World Bank divides countries into income groups based on how much money they make.",
+        "High Income Countries like the UK and Japan have wealthy populations and longer life expectancies.",
+        "Low Income Countries like Niger and Malawi are very poor with much shorter life expectancies.",
+        "Middle Income Countries like Brazil and India fall somewhere in between the richest and poorest nations."
+      ],
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "like the difference between rich and poor countries?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Exactly — that's it. So one big reason for the development gap is colonialism: European powers took control of countries in Africa and Asia, pulled out raw materials, and deliberately shut down local industries so they could sell their own goods instead. Why would closing down local industries make a country stay poor?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "If a country can't make things for itself, it has to buy manufactured goods from other countries — which are expensive — so the country stays poor and can't develop its own industries.\n\nWhat happens to a country's money when it has to keep buying expensive goods from abroad instead of making them itself?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "it goes away i guess",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right — so all that money leaves the country and goes to other countries instead. Now, many poor countries make their living by selling raw materials like coffee, timber, oil and metals — we call these **primary products**. What do you think happens to a country that depends on selling something whose price keeps changing like that?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Shall I just explain the rest of this bit about primary products and money for you?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "nah just ask me questions",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "When the price of a primary product like coffee or copper keeps going up and down, a country that relies on selling it can't plan ahead — some years it earns lots of money, other years very little. What problem does that create for a country trying to build schools and hospitals?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Imagine a country sells coffee to earn money for its budget — but one year the world price of coffee drops sharply, so they earn half as much. That year, they can't afford to build the new hospital they planned.\n\nWhat happens the year after when they still need that hospital but have no money?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "can we skip this",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "That's fine — we can move on. So when a country relies on one or two raw materials to sell, and their prices keep changing, it gets trapped in cycles of borrowing and debt that make it even harder to develop. What's the difference between emergency aid and development aid in terms of how quickly it's needed?",
+      "recap": [
+        "The development gap is the difference in wealth between rich and poor countries.",
+        "Colonialism weakened poor countries by removing raw materials and stopping local industries from growing.",
+        "Many poor countries rely on selling primary products like coffee or oil, but prices for these keep changing unpredictably.",
+        "When prices drop suddenly, countries can't afford to build schools and hospitals they need."
+      ],
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Emergency aid is money sent really fast after a disaster like an earthquake, while development aid is slower money for long-term things like building schools.\n\nWhen a country gets development aid to build a school, how long does it take before kids actually benefit from it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "dunno im hungry can we do smth easier",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "That makes sense — get some food in you! What do you think might be a problem with Fairtrade — like, who might actually benefit and who might miss out?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "my mates are going town later honestly cant focus rn",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "No worries, go have fun in town! Before you go though — with Fairtrade, farmers get guaranteed money for their crops, which sounds good, but here's the thing: not all farmers can actually join the scheme because they need special certification, so some get left behind.\n\nWhat do you reckon happens to the farmers who can't afford to get certified?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Shall I just explain what happens to those farmers who can't afford the certification?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "yeah ok go on then",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Right, here's what you've missed. Now, back in 2015, countries around the world agreed on 17 Sustainable Development Goals — basically a UN promise to tackle poverty, hunger, health, education and climate change by 2030. What does \"goals\" mean to you in this context?",
+      "recap": [
+        "When countries depend on just one or two raw materials, prices changing trap them in debt cycles.",
+        "Emergency aid arrives fast after disasters, but development aid takes longer for long-term improvements like schools.",
+        "Fairtrade guarantees farmers better money for crops, but only farmers who can afford certification actually benefit from it."
+      ],
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "like... things they wanna achieve by 2030?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Right — that's exactly what they are, things countries promised to achieve by 2030. So what areas do those 17 goals cover?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 28,
+      "student": "um like poverty and health and stuff?",
+      "studentType": "wrong",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Exactly — poverty, health, education, climate change, hunger. You've got the main ones. That's a good place to stop for now. Come back whenever you want to carry on!",
+      "recap": [
+        "The UN created 17 Sustainable Development Goals for countries to achieve by 2030.",
+        "These goals aim to tackle major issues like poverty, hunger, health, and education.",
+        "Climate change is also included as one of the main global priorities."
+      ],
+      "flags": []
+    },
+    {
+      "n": 29,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! Well done for getting through this today — come back whenever you're ready to learn more.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 1,
+    "engagement_quote": "S11: nah im getting bored can we talk about smth else",
+    "would_quit": {
+      "turn": "T5",
+      "quote": "S5: nah im gonna go get food sry",
+      "why": "The student says outright that they are leaving. T5 ignores this and starts teaching a new indicator, so the student has no reason to stay."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T0: Hi! What do you think GNI per capita tells us about people's lives in different countries?",
+        "note": "Asks about a term before teaching it. Acceptable as a diagnostic opener, but it tests nothing taught."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T1: You're right that it's about money! But GNI per capita is more specific: it's the *average* income per person in a country.",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T2: What do you think would make people in one country live so much longer than people in another?",
+        "note": "Answers its own previous question, then asks about life expectancy, which has not been taught."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T3: Chad has an infant mortality rate of 103, while the UK is only 4 — what does that big difference suggest about the two countries?",
+        "note": "Uses IMR figures without defining IMR or saying they are per 1,000 births. The student cannot interpret the numbers."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T4: That's totally fair — shall I just walk you through the rest quickly before you go eat?",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T5: That's fine — come back to this whenever you're ready! So we've looked at wealth and life expectancy; there's another really important social indicator called **infant mortality rate**",
+        "note": "Says goodbye, then keeps teaching. Re-introduces IMR as new even though T3 already used it. Life expectancy was never actually taught."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T6: What do you think the advantage is of having all three bundled together like that instead of looking at them one at a time?",
+        "note": "Asks about combining indicators before the composite idea has been taught. The student replies 'huh?'."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T7: So when we put income, life expectancy and years of schooling all together into a single score, that's called a composite measure. Now, the World Bank groups countries",
+        "note": "Responds to 'huh?' by naming the term without saying why composite measures are better, against tutor_note. Adds schooling with no introduction. Then jumps topic."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T8: High income just means a country makes a lot of money — so the UK, Japan, and the USA are examples because they have high GNI per capita.",
+        "note": ""
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T9: What do you think life expectancy might be like in an LIC compared to a HIC?",
+        "note": "Asks about life expectancy in LICs, which was not taught in this turn."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T10: So in an LIC like Niger, the average life expectancy is actually around 55 years, whereas in a HIC like Japan it's around 80",
+        "note": "The lesson gives Sierra Leone 55 and Japan 84, not Niger 55 and Japan 80. The question also repeats one the student already answered at S3."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T11: That's totally fine — do you want me to just run through the rest of this bit quickly so you know what you need?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T12: Right, well there are actually four income groups the World Bank uses to sort countries, not just two.",
+        "note": "The student said 'no not really lol' and the tutor keeps teaching anyway, ignoring the request to change topic."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T13: A middle-income country is somewhere in between poor and rich. What's an example of a middle-income country?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T14: Now, we're going to look at *why* some countries are rich and others are poor — which is what we call the development gap. What do you think the development gap actually means?",
+        "note": "Does not praise the correct answer at S14. Asks about the development gap before defining it."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T15: Why would closing down local industries make a country stay poor?",
+        "note": ""
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T16: If a country can't make things for itself, it has to buy manufactured goods from other countries — which are expensive",
+        "note": ""
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T17: What do you think happens to a country that depends on selling something whose price keeps changing like that?",
+        "note": "'Like that' refers to price swings the tutor never mentioned."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T18: Shall I just explain the rest of this bit about primary products and money for you?",
+        "note": ""
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T19: What problem does that create for a country trying to build schools and hospitals?",
+        "note": "The student asked 'just ask me questions' but gets a lecture first."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T20: What happens the year after when they still need that hospital but have no money?",
+        "note": ""
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T21: What's the difference between emergency aid and development aid in terms of how quickly it's needed?",
+        "note": "Mentions the debt cycle in passing, then asks about aid, which has not been taught at all."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T22: When a country gets development aid to build a school, how long does it take before kids actually benefit from it?",
+        "note": "Vague question with no clear answer, and it adds no exam value."
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T23: That makes sense — get some food in you! What do you think might be a problem with Fairtrade",
+        "note": "Tells the student to go eat, then asks about Fairtrade, which was never taught."
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "T24: No worries, go have fun in town! Before you go though — with Fairtrade, farmers get guaranteed money for their crops",
+        "note": "About 60 words sent to a student who has already said they are leaving."
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T25: Shall I just explain what happens to those farmers who can't afford the certification?",
+        "note": ""
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T26: Right, here's what you've missed. Now, back in 2015, countries around the world agreed on 17 Sustainable Development Goals",
+        "note": "The student finally accepts the offer ('yeah ok go on then'), but the tutor never explains the certification point and jumps to SDGs."
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T27: So what areas do those 17 goals cover?",
+        "note": ""
+      },
+      {
+        "turn": "T28",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T28: Exactly — poverty, health, education, climate change, hunger. You've got the main ones.",
+        "note": ""
+      },
+      {
+        "turn": "T29",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T29: You're welcome! Well done for getting through this today",
+        "note": ""
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: honour exit and decline signals",
+        "change": "When the student says they are leaving or declines an offer, stop teaching new content. Either give a single 1-line recap and save progress, or do what the student asked. Never add a new concept after saying goodbye.",
+        "quote": "S5: nah im gonna go get food sry"
+      },
+      {
+        "target": "teach-core: teach before asking",
+        "change": "Every question must test something stated in the current or previous tutor turn. Before asking about IMR, composite measures, aid or Fairtrade, give a 1-sentence definition of the term.",
+        "quote": "T23: That makes sense — get some food in you! What do you think might be a problem with Fairtrade"
+      },
+      {
+        "target": "teach-core: deliver the explanation when an offer is accepted",
+        "change": "If the student says yes to 'shall I explain', the next turn must contain that explanation (here: uncertified farmers miss the guaranteed price) before moving on.",
+        "quote": "T26: Right, here's what you've missed. Now, back in 2015, countries around the world agreed on 17 Sustainable Development Goals"
+      },
+      {
+        "target": "teach-core: quote lesson figures exactly",
+        "change": "Use only the country/figure pairs in keyPoints[0].writeBullets[2] (Japan 84, Sierra Leone 55). Do not swap in Niger or round Japan to 80.",
+        "quote": "T10: So in an LIC like Niger, the average life expectancy is actually around 55 years, whereas in a HIC like Japan it's around 80"
+      },
+      {
+        "target": "keyPoints[0].tutor_note",
+        "change": "Add a concrete one-line example to use after 'huh?' on composite measures. For example: 'A country can be rich but people die young — GNI alone would miss that; HDI catches it.' Reply to the confusion with this before moving to HICs.",
+        "quote": "S7: huh?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 1",
+      "would quit at T5",
+      "question does not match what was taught: T0, T2, T3, T6, T9, T10, T14, T17, T21, T23"
+    ]
+  },
+  "cost": 0.32880899999999996,
+  "mode": "run",
+  "date": "2026-10-17"
+}

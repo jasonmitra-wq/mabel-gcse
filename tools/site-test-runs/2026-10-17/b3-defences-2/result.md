@@ -1,0 +1,175 @@
+# Site test: b3-defences (lesson, 2026-10-17)
+
+**FAIL** · cost $0.3064 (29 tool calls, 57 calls from the site)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "The student said 'just tell me' about what happens in the stomach. The tutor never mentioned stomach acid and jumped straight to white blood cells. The stomach barrier is never taught, and skin (shown in the diagram) is skipped too.",
+      "step": "S5/T5"
+    },
+    {
+      "what": "The student agreed to a walk-through of 'the two main types of white blood cell'. Instead the tutor repeated the immune-system definition and said 'This whole process is called phagocytosis' without ever describing the process.",
+      "step": "S10/T10"
+    },
+    {
+      "what": "Repeated questions. The advantage of phagocytes being non-specific is asked three times (T10, T12, T16), even though the student answered correctly at S11 and S13. T13 asks what happens after engulfing when T12 had just said enzymes break the pathogen down.",
+      "step": "T12, T13, T16"
+    },
+    {
+      "what": "The student's correct answer 'works on any infection straight away? so like faster?' gets no acknowledgement. The tutor moves straight on to lymphocytes.",
+      "step": "S17/T17"
+    },
+    {
+      "what": "The student asked 'whats an antigen again'. The reply 'I get it —' makes no sense and does not clearly define antigen. It also uses 'antibody' before that word has been introduced (antibody is only defined at T22).",
+      "step": "S20/T20"
+    },
+    {
+      "what": "The student asked to skip. The tutor said 'we can come back whenever you're ready', then carried on with the same topic and asked another question.",
+      "step": "S23/T23"
+    },
+    {
+      "what": "Circular questioning. T24 states that the pathogen is destroyed before you feel ill, then asks what happens because the response is quick. T25 restates the answer and asks again. A bored student gets the same question three times.",
+      "step": "T24/T25"
+    },
+    {
+      "what": "Wording error: 'when pathogens breathe in' — pathogens don't breathe. It should say 'when you breathe them in'.",
+      "step": "T1"
+    },
+    {
+      "what": "The closing line 'why some people need booster jabs and others don't' is misleading and unsupported. Boosters are given by schedule or vaccine type, not by individual. The lesson also never says that antibodies, antitoxins or memory cells come from lymphocytes in a specific secondary response before T22's dump.",
+      "step": "T28"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "The '← Home' button and the 'What are you revising?' heading are clipped under the sticky header.",
+      "screenshot": "02-subjects-phone.png"
+    },
+    {
+      "what": "The lesson title is truncated to 'Your body's defences — how yo...'. The Jump to, diagram and key-terms panels stack above the chat, so the first question sits at the bottom and the input box is off-screen.",
+      "screenshot": "05-ai-lesson-opening-phone.png"
+    },
+    {
+      "what": "The diagram thumbnail is tiny and its text is unreadable at laptop size.",
+      "screenshot": "05-ai-lesson-opening-laptop.png"
+    },
+    {
+      "what": "The Key terms panel cuts off mid-word ('Tiny hair-like projections on cells') at the bottom with no visible scroll cue. It only shows the Physical barriers terms even though 19 terms exist.",
+      "screenshot": "14-exchange-27-laptop.png"
+    },
+    {
+      "what": "The 'Lesson finished.' message and the end buttons (Topics / Show me the slides / Ask something else) are not visible on phone. The screen ends on the last chat bubble with no next step.",
+      "screenshot": "15-end-phone.png"
+    }
+  ],
+  "would_quit": {
+    "turn": "S24",
+    "quote": "this is too long mate",
+    "why": "The student asked to skip, the tutor ignored it, and then asked the same question again in a loop."
+  },
+  "fixes": [
+    {
+      "target": "tutor behaviour: checkin-yes handling",
+      "change": "When the student says 'just tell me', answer the exact pending question first (e.g. 'stomach acid kills them') in one sentence, then move on."
+    },
+    {
+      "target": "tutor behaviour: question repetition",
+      "change": "Track questions already answered correctly. Never re-ask the same concept (non-specific advantage, quick secondary response). Acknowledge correct answers before moving on."
+    },
+    {
+      "target": "tutor behaviour: skip / bored signals",
+      "change": "On 'can we skip' or a second bored signal, give a 2–3 bullet summary of the remaining points and jump to the next Jump-to section or the end. Do not ask another question."
+    },
+    {
+      "target": "phagocytes / lymphocytes content order",
+      "change": "Describe phagocytosis (engulf, then enzymes digest) before naming it. Define antigen and antibody in plain words the first time each is used. Remove 'I get it —' as a reply to a question."
+    },
+    {
+      "target": "phone layout of the AI lesson page",
+      "change": "Collapse Jump to / Diagram / Key terms into a single toggle bar on phone, so the chat and input are visible on first load and the end buttons appear on screen after the final message."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Lesson b3-defences (Biology › Disease — how we get ill and how we fight back › Your body's defences — how you fight infection).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-biology-phone.png and 03-topics-biology-laptop.png] topics-biology
+    [screenshot 04-lessons-b3-phone.png and 04-lessons-b3-laptop.png] lessons-B3
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Right now, pathogens are trying to get into your body — but you have defences stopping them before they can. Let's start with your respiratory tract, where mucus plays a key role. What does mucus do to pathogens?
+    [screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (wrong): um it like dissolves them right?
+    T1: Not quite — mucus doesn't dissolve them. Think of mucus like a sticky trap: when pathogens breathe in and hit it, they get stuck to it, so they can't go any further down into your lungs. What happens to the pathogens once they're stuck in that mucus?
+    S2 (try): oh right so they get stuck then like... coughed out?
+    T2: Right — the cilia, which are tiny hair-like structures in your airways, beat rhythmically to sweep that mucus and the trapped pathogens up and out, so they leave your body. It's like a moving escalator carrying the pathogens away. What do you think happens to the pathogens once they're swept up and out of your airways?
+    S3 (try): they get coughed up and swallowed i guess?
+    T3: That's right — they do get coughed up and swallowed. So when they're swallowed and go down into your stomach, what do you think happens to them there?
+    [screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3
+    S4 (minimal): what?
+    T4: Would you like me to just tell you what happens in the stomach, or do you want to work it out?
+    S5 (checkin-yes): just tell me lol
+    T5: The main soldiers in that army are white blood cells, which patrol your blood and tissues hunting down pathogens. What's the difference you'd expect between a white blood cell and a red blood cell — why would they need to look different if they do different jobs?
+    S6 (try): white ones probably look different cos they fight stuff and red ones just carry oxygen or whatever
+    T6: So white blood cells have a proper nucleus inside them — that's the control centre of the cell that holds all its genetic information. Red blood cells are different; mature ones don't have a nucleus at all, which actually lets them carry more oxygen instead. What's the scientific name we use for white blood cells?
+    [screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6
+    S7 (bored): huh?
+    T7: The fancy scientific name for a white blood cell is leucocyte — it just means a white blood cell. The word comes from "leuco" meaning white and "cyte" meaning cell. What job do these leucocytes do that red blood cells can't do?
+    S8 (try): they fight pathogens and red ones cant
+    T8: So all these leucocytes working together make up your immune system — it's like your body's defence team that spots pathogens and destroys them before they can make you ill. What do you think would happen if your immune system wasn't working properly?
+    S9 (try): you'd get ill more easily i guess
+    T9: Shall I just walk you through the two main types of white blood cell so you can see how different they are?
+    [screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9
+    S10 (try): yeah ok go on then
+    T10: Your immune system is basically your body's defence team made of cells and mechanisms that spot and destroy pathogens. This whole process is called phagocytosis, and the white blood cell doing it is a phagocyte. What do you think is the advantage of a phagocyte not needing to know exactly which pathogen it's attacking?
+    S11 (try): it can fight loads of different ones faster
+    T11: Right — they do attack lots of different types. The clever bit is that a phagocyte doesn't need to recognize or match a specific pathogen first; it just sees "that's not a body cell" and attacks it straight away. That's why they're so fast at the start of an infection. How does a phagocyte actually get the pathogen inside itself?
+    S12 (bored): that was long innit
+    T12: A phagocyte wraps around the pathogen to pull it inside, then special chemicals called enzymes break it down. Why do you reckon it's useful that phagocytes attack anything that isn't a normal body cell, rather than having to recognize one specific type of pathogen?
+    [screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12
+    S13 (try): so it works on any infection straight away
+    T13: Exactly — it kicks in right away on any infection. So when a phagocyte wraps around a pathogen and pulls it inside, what happens to it next?
+    S14 (idk): idk what happens after that
+    T14: Do you want me to just tell you what happens next?
+    S15 (checkin-no): nah give me a clue first
+    T15: Clue: think about what happens inside the phagocyte after it's pulled the pathogen in. What do you think breaks the pathogen down?
+    [screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15
+    S16 (try): those special chemicals you mentioned? enzymes?
+    T16: Exactly — enzymes inside the phagocyte break it down. Because phagocytes attack anything that isn't a normal body cell, they don't need to recognise a specific pathogen first — they work the same way on all infections, which is why they're called non-specific. What's the advantage of being non-specific when an infection just starts?
+    S17 (try): works on any infection straight away? so like faster?
+    T17: There's another type of white blood cell called a lymphocyte, and it works very differently — it's much more targeted and precise, like a lock-and-key system designed for one specific pathogen. What do you think a lymphocyte does that makes it so specific?
+    S18 (idk): no idea what makes it different tho
+    T18: So a pathogen has a unique marker on its surface — think of it like a fingerprint that's different for every infection. A lymphocyte recognises that specific marker and then makes a protein that fits it perfectly, like a key in a lock. What do you think happens once that protein locks onto the pathogen's marker?
+    [screenshot 11-exchange-18-phone.png and 11-exchange-18-laptop.png] exchange-18
+    S19 (bored): huh?
+    T19: The protein it makes sticks to the pathogen's surface marker and marks it for destruction — that's how lymphocytes work so precisely. Every pathogen has a unique protein fingerprint on its surface called an antigen. What do you think happens because of that unique marker?
+    S20 (minimal): whats an antigen again
+    T20: I get it — the unique fingerprint on each pathogen's surface. Once the antibody binds to the antigen, it marks the pathogen for destruction. What do you think happens to the pathogen once it's been marked?
+    S21 (try): it gets destroyed i guess
+    T21: Would you like me to just tell you the rest of how antibodies work?
+    [screenshot 12-exchange-21-phone.png and 12-exchange-21-laptop.png] exchange-21
+    S22 (checkin-yes): yeah ok just tell me
+    T22: So antibodies are proteins made by lymphocytes — they're shaped to fit a specific antigen perfectly, and they stick to it and neutralise the pathogen. Some lymphocytes also make antitoxins, which neutralise toxins that pathogens release. What do you think happens the second time you encounter a pathogen your body has already fought before?
+    S23 (bored): can we skip this
+    T23: That's fine — we can come back whenever you're ready. So here's the key bit: after you fight off an infection, some lymphocytes stay in your body for years as memory cells. When you meet that same pathogen again, those memory cells recognise it instantly and respond much faster. What's different about this second response compared to the first time?
+    S24 (bored): this is too long mate
+    T24: Fair enough! So the second time around, your memory cells spot that antigen straight away and your immune system launches a much faster, stronger response — the pathogen usually gets destroyed before you even feel poorly. That's why you don't get chickenpox twice. What do you think happens because the response is so quick the second time?
+    [screenshot 13-exchange-24-phone.png and 13-exchange-24-laptop.png] exchange-24
+    S25 (bored): huh?
+    T25: Your memory cells recognise that antigen instantly, so your immune system fights it off really fast — before you even get symptoms. Why would that mean you don't get ill the second time?
+    S26 (idk): idk maybe it dies too fast
+    T26: Do you want me to just tell you the answer to this one?
+    S27 (checkin-yes): yeah go on then
+    T27: So when your immune system meets a pathogen for the second time, your memory cells recognise it instantly and fight it off so fast that you don't get symptoms — that's called immunological memory. That's why vaccines work too: they teach your immune system to recognise a pathogen without you ever catching the real disease.
+    [screenshot 14-exchange-27-phone.png and 14-exchange-27-laptop.png] exchange-27
+    S28 (closing): ok thanks
+    T28: You've got it — and that's a really important idea for understanding why some people need booster jabs and others don't. Well done for working through that.
+    [the lesson shows "Lesson finished."]
+    [screenshot 15-end-phone.png and 15-end-laptop.png] end

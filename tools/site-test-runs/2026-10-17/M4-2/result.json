@@ -1,0 +1,218 @@
+{
+  "id": "M4",
+  "mode": "maths",
+  "date": "2026-10-17",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "The worked example for the vector question shows the literal text '[object Object]' instead of the worked step for PQ = OQ − OP. The example is useless.",
+        "step": "Question 3 (vec-A04): Student opens the worked example"
+      },
+      {
+        "what": "Question 3 has no answer box on either step. Both are 'Mark as understood' only. The student never works out AB = (3, −2), yet the question counts as done (green dot on question 4's progress bar).",
+        "step": "Question 3 (vec-A04) Steps 1–2"
+      },
+      {
+        "what": "Progress is not saved after leaving. Home still says Dashboard 'Nothing secured yet', 0% across all subjects, History 'No sessions yet' and Error log 'All clear'. This is despite 4 test questions done and 2 warm-up misses.",
+        "step": "Student taps Home and leaves the test"
+      },
+      {
+        "what": "Step 1 of question 5 ('Form an equation') is mark-as-understood only. The equation 6x + 30 = 180 is never shown or entered, so step 2 'Find x.' has nothing to build on.",
+        "step": "Question 5 (ang-B02) Step 1 → Step 2"
+      },
+      {
+        "what": "On phone, steps say 'Read the worked example for this step', but no worked example is shown on the question screen. It sits on a separate view.",
+        "step": "Question 2 Step 1 / Question 4 Step 1 / Question 5 Step 1 (phone)"
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "Literal '[object Object]' shown in the worked example box",
+        "screenshot": "10-question-3-laptop.png"
+      },
+      {
+        "what": "Literal '[object Object]' shown in the worked example box",
+        "screenshot": "11-worked-example-3-phone.png"
+      },
+      {
+        "what": "The 'Topic test · question N of 10' bar is clipped under the sticky top header, with the text half hidden",
+        "screenshot": "09-question-2-laptop.png"
+      },
+      {
+        "what": "The 'question 1 of 10' line is cut off under the header at the top",
+        "screenshot": "07-question-1-phone.png"
+      },
+      {
+        "what": "A completed step 1 still shows the 'Mark as understood →' link and the 'Read the worked example' instruction",
+        "screenshot": "15-question-5-left-unfinished-phone.png"
+      },
+      {
+        "what": "A stray '°' symbol floats to the left of the answer box, detached from the input",
+        "screenshot": "08-q1-step1-phone.png"
+      }
+    ],
+    "would_quit": {
+      "turn": "Question 5",
+      "quote": "Step 2: \"Find x.\" — the student gives up here and leaves the question unfinished.",
+      "why": "Step 1 let them tap 'understood' without ever seeing or writing the equation. 'Find x.' with no equation and no worked example on screen (phone) is a dead end for a bored student."
+    },
+    "fixes": [
+      {
+        "target": "vec-A04 worked example render",
+        "change": "Render the step's text field instead of the object. Show 'PQ = OQ − OP = (6, 2) − (1, 4) = (5, −2)'."
+      },
+      {
+        "target": "Session persistence on Home navigation",
+        "change": "Save completed questions, warm-up result and missed items before routing Home. Update Dashboard %, History and Error log accordingly."
+      },
+      {
+        "target": "vec-A04 step 2",
+        "change": "Replace 'Mark as understood' with an answer input for AB, checking against (3, −2)."
+      },
+      {
+        "target": "ang-B02 step 1",
+        "change": "After 'Mark as understood', reveal the equation '(2x+10) + 3x + (x+20) = 180 → 6x + 30 = 180' above step 2. Alternatively, ask the student to enter 6x + 30 = 180."
+      },
+      {
+        "target": "Topic test progress bar CSS",
+        "change": "Add top offset equal to the sticky header height so 'question N of 10' is not hidden. Hide the 'Mark as understood' link once a step is completed."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "warm-up 1: \"91\" for 38 + 53 accepted",
+      "ok": true,
+      "detail": "app accepted"
+    },
+    {
+      "what": "warm-up 2: \"220\" for 11 × 20 accepted",
+      "ok": true,
+      "detail": "app accepted"
+    },
+    {
+      "what": "warm-up 3: \"12.25\" for 54 ÷ 6 rejected",
+      "ok": true,
+      "detail": "app rejected"
+    },
+    {
+      "what": "warm-up 4: \"15\" for Find 3/5 of 25 accepted",
+      "ok": true,
+      "detail": "app accepted"
+    },
+    {
+      "what": "warm-up 5: \"idk\" for 25% of 64 rejected",
+      "ok": true,
+      "detail": "app rejected"
+    },
+    {
+      "what": "trig-A01 step 1: \"0.7\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 0.7"
+    },
+    {
+      "what": "trig-A01 step 2: \"44.427\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 44.427"
+    },
+    {
+      "what": "ang-A05 step 2: \"1080\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value 1080"
+    },
+    {
+      "what": "tr-A04 step 2: \"-5\" should be accepted",
+      "ok": true,
+      "detail": "app accepted; independent value -5"
+    }
+  ],
+  "transcript": [
+    "Maths topic M4 (Geometry & Measures).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "Warm-up offered.",
+    "[screenshot 02-warm-up-phone.png and 02-warm-up-laptop.png] warm-up",
+    "Warm-up 1: \"38 + 53\" — typed \"91\" — app accepted — true answer 91",
+    "[check] OK: warm-up 1: \"91\" for 38 + 53 accepted — app accepted",
+    "Warm-up 2: \"11 × 20\" — typed \"220\" — app accepted — true answer 220",
+    "[check] OK: warm-up 2: \"220\" for 11 × 20 accepted — app accepted",
+    "Warm-up 3: \"54 ÷ 6\" — typed \"12.25\" — app rejected — true answer 9",
+    "[check] OK: warm-up 3: \"12.25\" for 54 ÷ 6 rejected — app rejected",
+    "[screenshot 03-warm-up-3-phone.png and 03-warm-up-3-laptop.png] warm-up-3",
+    "Warm-up 4: \"Find 3/5 of 25\" — typed \"15\" — app accepted — true answer 15",
+    "[check] OK: warm-up 4: \"15\" for Find 3/5 of 25 accepted — app accepted",
+    "Warm-up 5: \"25% of 64\" — typed \"idk\" — app rejected — true answer 16",
+    "[check] OK: warm-up 5: \"idk\" for 25% of 64 rejected — app rejected",
+    "[screenshot 04-warm-up-result-phone.png and 04-warm-up-result-laptop.png] warm-up-result",
+    "[screenshot 05-maths-topics-phone.png and 05-maths-topics-laptop.png] maths-topics",
+    "[screenshot 06-topic-m4-phone.png and 06-topic-m4-laptop.png] topic-M4",
+    "Question 1 (trig-A01): In a right-angled triangle, the opposite side is 7 cm and the hypotenuse is 10 cm. Find the angle θ opposite the 7 cm side.",
+    "[screenshot 07-question-1-phone.png and 07-question-1-laptop.png] question-1",
+    "  Step 1: \"Which trig ratio uses opposite and hypotenuse? Calculate it as a decimal.\" — typed \"0.7\" (right) — app accepted \"✓ Correct. sin θ = opp/hyp = 7/10 = 0.7.\" — independent value 0.7",
+    "[check] OK: trig-A01 step 1: \"0.7\" should be accepted — app accepted; independent value 0.7",
+    "[screenshot 08-q1-step1-phone.png and 08-q1-step1-laptop.png] q1-step1",
+    "  Step 2: \"Find θ using the inverse sine: θ = sin⁻¹(0.7).\" — typed \"44.427\" (right) — app accepted \"✓ Correct. θ = sin⁻¹(0.7) ≈ 44.4°.\" — independent value 44.427",
+    "[check] OK: trig-A01 step 2: \"44.427\" should be accepted — app accepted; independent value 44.427",
+    "Question 2 (ang-A05): Find the sum of the interior angles of an octagon.",
+    "[screenshot 09-question-2-phone.png and 09-question-2-laptop.png] question-2",
+    "  Step 1: \"How many sides does an octagon have?\" — marked as understood (no answer box).",
+    "  Step 2: \"Use the formula (n − 2) × 180°. Calculate the angle sum.\" — typed \"1080\" (try) — app accepted \"✓ Correct. (8 − 2) × 180 = 6 × 180 = 1080°.\" — independent value 1080",
+    "[check] OK: ang-A05 step 2: \"1080\" should be accepted — app accepted; independent value 1080",
+    "Question 3 (vec-A04): Vector OA = (2, 3) and vector OB = (5, 1). Find vector AB.",
+    "[screenshot 10-question-3-phone.png and 10-question-3-laptop.png] question-3",
+    "Student opens the worked example.",
+    "[screenshot 11-worked-example-3-phone.png and 11-worked-example-3-laptop.png] worked-example-3",
+    "  Step 1: \"Write the formula for AB in terms of OA and OB.\" — marked as understood (no answer box).",
+    "  Step 2: \"Calculate AB = OB − OA = (5, 1) − (2, 3).\" — marked as understood (no answer box).",
+    "Question 4 (tr-A04): Shape A has vertices (2, 1), (5, 1), (5, 4). Reflect it in the y-axis. Give the image vertices.",
+    "[screenshot 12-question-4-phone.png and 12-question-4-laptop.png] question-4",
+    "  Step 1: \"When reflecting in the y-axis, which coordinate changes sign?\" — marked as understood (no answer box).",
+    "  Step 2: \"Apply to all vertices. Give the x-coordinate of the image of (5, 1).\" — typed \"-5\" (try) — app accepted \"✓ Correct. Image vertices: (−2,1), (−5,1), (−5,4).\" — independent value -5",
+    "[check] OK: tr-A04 step 2: \"-5\" should be accepted — app accepted; independent value -5",
+    "[screenshot 13-q4-step2-phone.png and 13-q4-step2-laptop.png] q4-step2",
+    "Question 5 (ang-B02): The angles of a triangle are (2x + 10)°, 3x° and (x + 20)°. Find x and the largest angle.",
+    "[screenshot 14-question-5-phone.png and 14-question-5-laptop.png] question-5",
+    "  Step 1: \"Form an equation using the fact that angles in a triangle sum to 180°.\" — marked as understood (no answer box).",
+    "  Step 2: \"Find x.\" — the student gives up here and leaves the question unfinished.",
+    "[screenshot 15-question-5-left-unfinished-phone.png and 15-question-5-left-unfinished-laptop.png] question-5-left-unfinished",
+    "Student taps Home and leaves the test.",
+    "[screenshot 16-after-leaving-phone.png and 16-after-leaving-laptop.png] after-leaving"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-17/M4-2/01-home-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/02-warm-up-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/02-warm-up-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/03-warm-up-3-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/03-warm-up-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/04-warm-up-result-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/04-warm-up-result-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/05-maths-topics-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/05-maths-topics-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/06-topic-m4-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/06-topic-m4-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/07-question-1-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/07-question-1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/08-q1-step1-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/08-q1-step1-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/09-question-2-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/09-question-2-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/10-question-3-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/10-question-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/11-worked-example-3-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/11-worked-example-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/12-question-4-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/12-question-4-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/13-q4-step2-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/13-q4-step2-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/14-question-5-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/14-question-5-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/15-question-5-left-unfinished-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/15-question-5-left-unfinished-laptop.png",
+    "tools/site-test-runs/2026-10-17/M4-2/16-after-leaving-phone.png",
+    "tools/site-test-runs/2026-10-17/M4-2/16-after-leaving-laptop.png"
+  ],
+  "cost": 0.174049,
+  "apiCalls": 4,
+  "browserApiCalls": 0
+}

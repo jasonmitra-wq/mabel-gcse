@@ -39,3 +39,23 @@ One line per run: date | lesson | mode | tutor turns | flagged turns | flags by 
 - 2026-10-17 | p1-power | run, persona bored | 17 | FAIL | engagement 2 | would quit T10 | engagement 2; would quit at T10; question does not match what was taught: T1, T9, T11 | $0.1888
 - 2026-10-17 | p1-heating | run, persona bored | 19 | FAIL | engagement 2 | would quit T13 | engagement 2; would quit at T13; question does not match what was taught: T2, T5, T6, T11, T13 | $0.2146
 - 2026-10-17 | p1-power | mock | 14 | 1 | unanswerable: no word from the lesson 1 | none | -
+- 2026-10-17 | p1-national-grid | run, persona bored | 18 | FAIL | engagement 2 | would quit T10 | engagement 2; would quit at T10; question does not match what was taught: T2, T3, T5, T6, T10 | $0.2146
+- 2026-10-17 | p3-particle-model | mock | 18 | 0 | none | none | -
+- 2026-10-17 | p2-components | run, persona bored | 17 | FAIL | engagement 2 | would quit T13 | engagement 2; would quit at T13; question does not match what was taught: T1, T2, T4, T6, T7, T9, T11 | $0.1930
+- 2026-10-17 | p2-domestic | run, persona bored | 16 | FAIL | engagement 2 | would quit false | engagement 2; question does not match what was taught: T0, T2, T3, T5, T6 | $0.1574
+- 2026-10-17 | p2-power-energy | run, persona bored | 18 | FAIL | engagement 2 | would quit T16 | engagement 2; would quit at T16; question does not match what was taught: T0, T3, T7, T8 | $0.1958
+- 2026-10-17 | p2-static | run, persona bored | 19 | FAIL | engagement 2 | would quit T15 | engagement 2; would quit at T15; question does not match what was taught: T2, T5, T10, T11, T15 | $0.1912
+- 2026-10-17 | p3-particle-model | run, persona bored | 22 | FAIL | engagement 2 | would quit T20 | engagement 2; would quit at T20; question does not match what was taught: T0, T5, T7, T8, T10, T11, T12, T13, T15, T16 | $0.2441
+- 2026-10-17 | p2-domestic | mock | 7 | 0 | none | none | -
+- 2026-10-17 | b3-defences | run, persona bored | 30 | FAIL | engagement 2 | would quit T15 | engagement 2; would quit at T15; question does not match what was taught: T0, T1, T2, T3, T5, T10, T11, T12, T14, T15, T17, T18, T20, T23, T24 | $0.2847
+- 2026-10-17 | p1-energy-stores | run, persona bored | 29 | FAIL | engagement 2 | would quit false | engagement 2; question does not match what was taught: T7, T8, T10, T15, T17, T24 | $0.2986
+- 2026-10-17 | p2-current-voltage | run, persona bored | 19 | FAIL | engagement 2 | would quit T13 | engagement 2; would quit at T13; question does not match what was taught: T2, T3, T6, T7, T9, T12 | $0.2131
+- 2026-10-17 | p2-series-parallel | run, persona bored | 19 | FAIL | engagement 2 | would quit T15 | engagement 2; would quit at T15; question does not match what was taught: T1, T8, T10 | $0.2028
+- 2026-10-17 | g5-development | run, persona bored | 30 | FAIL | engagement 1 | would quit T5 | engagement 1; would quit at T5; question does not match what was taught: T0, T2, T3, T6, T9, T10, T14, T17, T21, T23 | $0.3288
+- 2026-10-17 | g5-nigeria | run, persona bored | 33 | FAIL | engagement 1 | would quit T25 | engagement 1; would quit at T25; question does not match what was taught: T2, T5, T7, T10, T19, T24, T29 | $0.3851
+- 2026-10-17 | g5-uk-economy | run, persona bored | 22 | FAIL | engagement 2 | would quit T10 | engagement 2; would quit at T10; question does not match what was taught: T1, T6, T10, T11, T12 | $0.2596
+- 2026-10-17 | p1-kinetic-potential | run, persona bored | 22 | FAIL | engagement 1 | would quit T15 | engagement 1; would quit at T15; question does not match what was taught: T0, T1, T3, T5, T6, T7, T13, T17, T19 | $0.2267
+- 2026-10-17 | p1-conservation | run, persona bored | 22 | FAIL | engagement 2 | would quit T7 | engagement 2; would quit at T7; question does not match what was taught: T2, T7, T12, T17, T19 | $0.2394
+- 2026-10-17 | p1-efficiency | run, persona bored | 17 | FAIL | engagement 2 | would quit T6 | engagement 2; would quit at T6; question does not match what was taught: T1, T5, T6, T10, T12 | $0.2184
+- 2026-10-17 | p1-power | run, persona bored | 15 | FAIL | engagement 3 | would quit false | question does not match what was taught: T0, T11 | $0.1629
+- 2026-10-17 | p1-heating | run, persona bored | 13 | FAIL | engagement 2 | would quit T11 | engagement 2; would quit at T11; question does not match what was taught: T1, T5, T6, T8 | $0.1882

@@ -1,0 +1,664 @@
+{
+  "id": "p1-energy-stores",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Today we're looking at energy stores — the different ways energy can be held in objects and systems around us. Understanding this is the foundation for everything else in physics, from how cars move to how power stations work. What's an example of something that's moving right now?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "idk maybe a car driving past?",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, a car driving is a good example of something moving. What's the word we use in physics for the energy stored in something that's moving?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "um... kinetic energy?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Spot on — that's exactly it, kinetic energy. So kinetic energy is the energy stored in anything that's moving, like that car. Now, the amount of kinetic energy something has depends on two things: how heavy it is and how fast it's moving. What do you think happens to the kinetic energy of a car if it speeds up?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "it goes up i guess?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right — as a car speeds up, its kinetic energy definitely increases. The faster something moves, the more kinetic energy it has stored in it.\n\nNow, here's another question: if a car is parked and not moving at all, how much kinetic energy does it have?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "no idea lol",
+      "studentType": "idk",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Would it help if I just tell you the answer to that one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "nah im good just tell me",
+      "studentType": "checkin-no",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "If something isn't moving, it has zero kinetic energy stored in it — because kinetic energy is only in things that move. When you kick a ball, what energy store does the ball gain?",
+      "recap": [
+        "Kinetic energy is the energy stored in anything that's moving.",
+        "The faster something moves, the more kinetic energy it has.",
+        "How heavy something is also affects how much kinetic energy it stores.",
+        "A stationary object has zero kinetic energy because it's not moving."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "no idea tbh",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "When you kick a ball, your foot pushes it — that push is a force doing work. Energy moves from your leg into the ball's movement. What's the name we give to energy in something that's moving?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "is it potential energy",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not quite — it's kinetic energy, because that's the energy of movement. Now, energy can also be transferred electrically. What happens to the energy when current flows through a light bulb?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "it turns into light i guess",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right — light is one form of energy it becomes. Energy is transferred **electrically** when current flows through the circuit — that's the pathway the energy takes from the power supply into the bulb.\n\nWhere does that electrical energy come from originally, before it reaches the bulb?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "from the wires?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Would it help if I just tell you where that electrical energy comes from in the first place?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "yeah ok tell me",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "In a circuit, that electrical energy comes from a power supply — a battery or the grid. Energy can also be transferred by heating (from hot objects to cold ones) and by radiation, like light and infrared waves. Think of a book falling off a table — where does its energy go?",
+      "recap": [
+        "Kinetic energy is the energy stored in things that are moving.",
+        "Energy can be transferred mechanically when a force does work on something.",
+        "Electrical energy travels through circuits via current flowing from a power source.",
+        "When electrical energy reaches a device like a bulb, it transforms into other forms like light or heat."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "idk where does it go",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "When the book falls, it's moving really fast — that's kinetic energy. When it hits the floor, that energy doesn't vanish; it goes into the floor and the air around it as heat and sound. The total energy is still there, just in different forms.\n\nWhat happens to the energy stored in the book when it smashes into the ground?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "that's too long mate",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "The energy goes into heat and sound — it's still there, just in different forms. So here's the thing: if we say \"the book and floor\" together make up our system, and nothing else can add or take energy from outside, then all that energy stays trapped in there. What happens to the total energy in that closed system?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "can we skip this",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "That's fine — we can come back to it anytime. The key thing is: in a closed system, energy can move between different stores, but nothing escapes and nothing gets added from outside, so the total stays exactly the same. What happens to the total energy in a closed system?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "it gets smaller yeah",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Would you like me to just tell you the answer to that one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "yeah go on then",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Right — in a closed system, nothing can get energy in from outside and nothing escapes, so the total energy always stays exactly the same. It can move between different stores, but the amount never changes. When a kettle boils water, where does the wasted heat energy end up?",
+      "recap": [
+        "Energy changes form — like a falling book becomes heat and sound when it hits the ground.",
+        "In a closed system, energy can't escape or get added from outside, so the total stays the same.",
+        "Energy moves between different stores, but it never disappears — it's just shifted into a different form."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "stays in the room i guess",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right — that heat spreads out into the room and the air around it. When energy spreads out like that into the surroundings, we call it **dissipation**. What happens to that spread-out heat energy — can you still use it easily?",
+      "recap": null,
+      "flags": [
+        "yes/no question"
+      ]
+    },
+    {
+      "n": 17,
+      "student": "nah its too spread out to use",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Exactly — once it spreads out, you can't collect it back up easily. So when energy is wasted like that, we call it **wasted energy** — it's energy that goes to a store that's not useful for what the device is supposed to do. Where does that sound energy end up?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Sound from an engine spreads out into the air around it as heat — it's wasted energy that ends up in the thermal store of the surroundings, just like the kettle's heat does. What store does that sound energy transfer to?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "the air store?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Would you like me to just tell you the rest of this bit?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "nah im good",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Not quite — the sound spreads out into the air and warms it up. That's the thermal store of the surroundings. So what store does wasted energy end up in?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "the thermal store",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right — the thermal store of the surroundings is where wasted energy ends up. The reason it's wasted is that this heat spreads out so much into the air around us that we can't use it for anything useful anymore. Why is that heat spreading into the air less useful than the energy that moves the car?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "this is too long",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Now, physicists use a special arrow diagram called a Sankey diagram to show where energy goes. The width of each arrow shows how much energy it is, and the input arrow splits into one for useful output and others for wasted energy. What do you think the width of the arrows represents in a Sankey diagram?",
+      "recap": [
+        "When energy spreads out into the surroundings, we call that dissipation.",
+        "Wasted energy ends up in the thermal store of the air around us.",
+        "Once energy spreads out like that, it's too spread out to use."
+      ],
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "no idea",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Think of it like this — if a device wastes lots of energy, the wasted energy arrow gets wider, and if it wastes less, that arrow gets thinner. The width shows the amount.\n\nIn a Sankey diagram, what would a really thick arrow pointing down mean?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "lots of wasted energy",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Exactly — a thick arrow pointing down means lots of wasted energy. For that lamp — it got 100 J in, but only 15 J came out as useful light — what do you think the efficiency would be if you divide 15 by 100?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "um like 15 percent?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Right — 15 per cent is correct. When you divide the useful energy by the input energy, you get a decimal like 0. So efficiency is just useful energy out divided by total energy in. Now, what would the efficiency be if a device put out 50 J of useful energy but took in 100 J?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "idk lol",
+      "studentType": "idk",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Would you like me to walk you through the answer?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "yeah ok go on",
+      "studentType": "checkin-yes",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "So efficiency is just useful energy out divided by total input energy — divide 50 by 100 and you get 0. 5, which is 50 per cent. It's always a number between 0 and 1, or between 0 and 100 per cent.",
+      "recap": [
+        "Sankey diagrams show energy flow, with arrow width representing the amount of energy.",
+        "Thicker arrows mean more energy is wasted by a device.",
+        "Efficiency is calculated by dividing useful energy output by total energy input.",
+        "A result of 0.15 (or 15%) means only 15% of input energy becomes useful."
+      ],
+      "flags": []
+    },
+    {
+      "n": 28,
+      "student": "ok thanks",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've got the hang of efficiency now — that's a really solid bit of physics. Come back whenever you want to go over energy again.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "S22: this is too long",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T0: What's an example of something that's moving right now?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T1: What's the word we use in physics for the energy stored in something that's moving?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T2: What do you think happens to the kinetic energy of a car if it speeds up?",
+        "note": ""
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T3: if a car is parked and not moving at all, how much kinetic energy does it have?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T4: Would it help if I just tell you the answer to that one?",
+        "note": "Gives up after one 'no idea' with no hint."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T5: When you kick a ball, what energy store does the ball gain?",
+        "note": ""
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T6: What's the name we give to energy in something that's moving?",
+        "note": "Asks the S2 question again. It adds nothing new."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T7: What happens to the energy when current flows through a light bulb?",
+        "note": "Asks about the electrical pathway before teaching it."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T8: Where does that electrical energy come from originally, before it reaches the bulb?",
+        "note": "'Electrical energy' is not one of the 8 stores. The question tests something never taught (the chemical store in a battery)."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T9: Would it help if I just tell you where that electrical energy comes from in the first place?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T10: In a circuit, that electrical energy comes from a power supply — a battery or the grid.",
+        "note": "Never names the chemical store. It crams heating and radiation in, then asks about a falling book that was not taught."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": true,
+        "quote": "T11: When the book falls, it's moving really fast — that's kinetic energy.",
+        "note": "Skips the gravitational potential store the book starts with. It answers its own question, then re-asks it. Student: 'that's too long mate'."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "S13: can we skip this",
+        "note": "Still long right after the student said it was too long."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T13: That's fine — we can come back to it anytime.",
+        "note": "Agrees to skip, then asks the same question anyway."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T14: Would you like me to just tell you the answer to that one?",
+        "note": "Does not correct the wrong answer 'it gets smaller'."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T15: When a kettle boils water, where does the wasted heat energy end up?",
+        "note": "Wasted energy and dissipation have not been taught yet."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T16: can you still use it easily?",
+        "note": ""
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T17: Where does that sound energy end up?",
+        "note": "'That sound energy' refers to nothing. The kettle was about heat."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T18: Sound from an engine spreads out into the air around it as heat",
+        "note": "An engine appears from nowhere. The turn gives the answer, then asks for it."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T19: Would you like me to just tell you the rest of this bit?",
+        "note": ""
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T20: So what store does wasted energy end up in?",
+        "note": ""
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T21: Why is that heat spreading into the air less useful than the energy that moves the car?",
+        "note": "The student already said this in S17. The car is not in context."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "T22: The width of each arrow shows how much energy it is",
+        "note": "Ignores 'this is too long'. Gives the answer, then asks for it straight away."
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T23: In a Sankey diagram, what would a really thick arrow pointing down mean?",
+        "note": ""
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T24: For that lamp — it got 100 J in, but only 15 J came out as useful light",
+        "note": "No lamp was introduced. Asks for efficiency before teaching the formula."
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T25: When you divide the useful energy by the input energy, you get a decimal like 0. So efficiency",
+        "note": "Broken decimal. 0.15 is never shown."
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T26: Would you like me to walk you through the answer?",
+        "note": ""
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T27: divide 50 by 100 and you get 0. 5, which is 50 per cent.",
+        "note": "'0. 5' is split. It is hard to read for a student weak at arithmetic."
+      },
+      {
+        "turn": "T28",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T28: You've got the hang of efficiency now",
+        "note": "False praise: the student answered 'idk lol'. The 8 stores were never covered."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: respect 'too long'/'skip' signals",
+        "change": "When the student says 'too long' or 'skip', cut the next turn to 25 words or fewer. Move to the next key point. Do not re-ask the skipped question.",
+        "quote": "T13: That's fine — we can come back to it anytime."
+      },
+      {
+        "target": "teach-core: only ask about content already taught",
+        "change": "Teach a fact in one short sentence before asking about it. Never ask about a new pathway, store or example (electrical, kettle, sound, lamp) before it has been introduced.",
+        "quote": "T7: What happens to the energy when current flows through a light bulb?"
+      },
+      {
+        "target": "shared-code: number rendering",
+        "change": "Fix the sentence splitter so it does not break decimals ('0. 5', 'like 0.'). Always write out e.g. 15 ÷ 100 = 0.15 = 15%.",
+        "quote": "T27: divide 50 by 100 and you get 0. 5, which is 50 per cent."
+      },
+      {
+        "target": "keyPoints[2].writeBullets[4]",
+        "change": "Make the tutor follow this bullet exactly. The falling book starts in the gravitational potential store, then kinetic, then the thermal store of the surroundings. Do not start at kinetic or say 'heat and sound' as stores.",
+        "quote": "T11: When the book falls, it's moving really fast — that's kinetic energy."
+      },
+      {
+        "target": "keyPoints[4].content",
+        "change": "Introduce the worked lamp example (100 J in, 15 J light) explicitly before referring to it. State the formula efficiency = useful ÷ total input first, then show 15 ÷ 100 = 0.15.",
+        "quote": "T24: For that lamp — it got 100 J in, but only 15 J came out as useful light"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "question does not match what was taught: T7, T8, T10, T15, T17, T24"
+    ]
+  },
+  "cost": 0.298585,
+  "mode": "run",
+  "date": "2026-10-17"
+}

@@ -1,0 +1,120 @@
+# Site test: p2-static (lesson, 2026-10-17)
+
+**FAIL** · cost $0.1876 (14 tool calls, 33 calls from the site)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "The tutor gives away the answer and then asks for it: 'electrons move from one surface to the other… What particles move?' This checks nothing.",
+      "step": "T1"
+    },
+    {
+      "what": "After explaining that like charges repel, the tutor asks the same question again (two negatively charged rods). The student replies 'what?'. The tutor then moves on without ever getting a correct answer on repulsion.",
+      "step": "T5-T6"
+    },
+    {
+      "what": "The 'Same and different types of charge' point was marked covered, but 'opposite charges attract' was never taught or checked. The student never correctly answered a repulsion question.",
+      "step": "T6-T9 (progress 1/4 -> 2/4)"
+    },
+    {
+      "what": "Sparking and lightning were brought in during the charge section, before electric fields. The spark question was then asked again at T11. Content is out of order and repeated.",
+      "step": "T7, T11"
+    },
+    {
+      "what": "Field lines were never introduced or explained, but the tutor asks how field lines differ in weak and strong fields. Field direction was never covered, yet 'Electric fields' was marked covered.",
+      "step": "T10"
+    },
+    {
+      "what": "'Electricity jumping through the air' was accepted as 'exactly it'. GCSE wants charge or electrons crossing the air gap. The vague term was accepted and repeated back.",
+      "step": "S12/T12"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "At the lesson end on phone, the 'Lesson finished.' text and the Topics / Show me the slides / Ask something else buttons are not visible. The final message is cut at the bottom edge.",
+      "screenshot": "10-end-phone.png"
+    },
+    {
+      "what": "The Jump To panel heading has scrolled under the sticky header, so the top of the sidebar card is cut off.",
+      "screenshot": "07-exchange-6-laptop.png"
+    },
+    {
+      "what": "The Key Terms panel says (9) but only the first 'Charging by rubbing' group is visible. There is no sign the panel scrolls, so terms for the later sections cannot be seen.",
+      "screenshot": "10-end-laptop.png"
+    },
+    {
+      "what": "The lesson title is truncated to 'Static electricity — why you get ...'.",
+      "screenshot": "05-ai-lesson-opening-phone.png"
+    }
+  ],
+  "would_quit": false,
+  "fixes": [
+    {
+      "target": "AI tutor prompt: question generation",
+      "change": "Never state the answer in the same turn as the question. After an explanation, ask a different application question rather than repeating the one just answered."
+    },
+    {
+      "target": "Section completion logic",
+      "change": "Only mark a section covered after the student answers its key check correctly. 'Same and different types of charge' must include opposite charges attract."
+    },
+    {
+      "target": "Lesson plan for p2-static",
+      "change": "Keep sparking and lightning in the final section only. Introduce field lines and their direction (+ to −) before asking about field line spacing."
+    },
+    {
+      "target": "Answer checking",
+      "change": "Gently correct 'electricity jumps' to 'charge (electrons) jumps across the air gap' instead of praising it as exactly right."
+    },
+    {
+      "target": "Phone end-of-lesson view",
+      "change": "Auto-scroll to and show 'Lesson finished.' and the end buttons fixed above the fold on 390px width."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Lesson p2-static (Physics › Electricity › Static electricity).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p2-phone.png and 04-lessons-p2-laptop.png] lessons-P2
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Hi! Today we're looking at everyday electric shocks — like when you touch a door handle and get zapped. It turns out that happens because of electrons moving between surfaces when you rub them together. When you rub two insulating materials against each other, what do you think moves from one surface to the other?
+    [screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (bored): huh? that was long
+    T1: Sorry, let me put that more simply. When you rub two materials together, tiny particles called electrons move from one surface to the other — that's what creates the electric shock. What particles move when you rub two materials together?
+    S2 (try): electrons i guess?
+    T2: Right — electrons do move when you rub two materials together. When you rub a cloth against a polythene rod and electrons move into the rod, what charge is left on the cloth?
+    S3 (try): um like a positive one? bc electrons left?
+    T3: Exactly — when electrons leave, positive charge is left behind. Now, the cloth you rubbed stays charged for a while because it's an insulator, which means charge can't flow through it easily. What's an insulator?
+    [screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3
+    S4 (try): something charge cant flow through easily?
+    T4: Right — that's exactly what an insulator is. So when you rub materials together, one gets positive charge and one gets negative charge. What happens when you bring two negatively charged objects close to each other?
+    S5 (idk): idk do they like stick together or smth?
+    T5: Not quite — they actually push away from each other, not stick together. When two objects have the same type of charge, they repel, which means the force pushes them apart. What happens when you hold two negatively charged rods close to each other on threads?
+    S6 (minimal): what?
+    T6: When two things have the same type of charge — like both negative — the force between them pushes them apart. That's called repulsion. If you rubbed a balloon on your hair and it picked up electrons, what type of charge would the balloon have?
+    [screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6
+    S7 (try): negative cos it got electrons?
+    T7: Right — negative, because electrons are negative charge. When there's enough charge, it suddenly jumps through the air as a spark — and that's exactly what happens in lightning too, except much bigger. What do you think a lightning bolt actually is?
+    S8 (try): like a massive spark jumping through the air?
+    T8: Exactly — a massive spark jumping through the air. So here's the thing: when a charged object sits there, it actually creates an invisible region of space around it where other charges feel a force, even without touching. We call that an electric field. What do you think happens to another charged object if you bring it near that region?
+    S9 (bored): this is long ngl
+    T9: Think of it like this: around any charged object, there's an invisible force zone where other charges get pushed or pulled — you don't even need to touch it for that to happen. What happens to a negative charge if you bring it into the invisible zone around a positive charge?
+    [screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9
+    S10 (bored): gets pulled towards it?
+    T10: Spot on — it gets pulled towards it. How do you think the field lines would look different in a place where the field is weak compared to a place where it's strong?
+    S11 (try): they'd be closer together where its stronger?
+    T11: Right — they're closer together where it's stronger. So when the field around a charged object gets really strong, something dramatic happens: the charge actually jumps through the air itself as a spark. What do you think a spark actually is?
+    S12 (try): electricity jumping through the air?
+    T12: Yes — that's exactly it. Electricity jumping through the air, which is what happens when you touch a door handle after walking on carpet, and it's also what lightning is. You've really got the core idea: how charge builds up, creates a strong invisible force, and then jumps as a spark.
+    [screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12
+    S13 (closing): ok thanks that was actually cool
+    T13: I'm really glad it clicked! Static electricity and lightning are genuinely the same thing — just at different scales. You can come back to this any time if you want to explore more.
+    [the lesson shows "Lesson finished."]
+    [screenshot 10-end-phone.png and 10-end-laptop.png] end

@@ -26,3 +26,7 @@ One line per run: date | lesson | mode | tutor turns | flagged turns | flags by 
 - 2026-10-17 | p2-static | run | 18 | 0 | none | none | $0.0490
 - 2026-10-17 | p3-particle-model | mock | 18 | 0 | none | none | -
 - 2026-10-17 | p3-particle-model | run, persona bored | 22 | FAIL | engagement 2 | would quit T8 | engagement 2; would quit at T8; question does not match what was taught: T0, T1, T2, T3, T5, T6, T8, T10, T12, T17 | $0.2465
+- 2026-10-17 | p2-current-voltage | run, persona bored | 20 | FAIL | engagement 2 | would quit false | engagement 2; question does not match what was taught: T1, T3, T7, T14, T17 | $0.2043
+- 2026-10-17 | b3-defences | run, persona bored | 24 | FAIL | engagement 2 | would quit T18 | engagement 2; would quit at T18; question does not match what was taught: T0, T1, T2, T3, T5, T7, T12, T15 | $0.2386
+- 2026-10-17 | p1-energy-stores | run, persona bored | 28 | FAIL | engagement 2 | would quit T20 | engagement 2; would quit at T20; question does not match what was taught: T1, T2, T5, T6, T7, T10, T17, T19, T20, T21, T25 | $0.2608
+- 2026-10-17 | p2-series-parallel | run, persona bored | 16 | FAIL | engagement 2 | would quit T12 | engagement 2; would quit at T12; question does not match what was taught: T3, T4, T5, T8, T9, T12 | $0.2219

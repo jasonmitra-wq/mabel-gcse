@@ -1,0 +1,568 @@
+{
+  "id": "b3-defences",
+  "subject": "biology",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Right, let's start. Every single day, pathogens are trying to invade your body — but most never make it past your defences, and today we're going to see exactly how. What do you think a sticky substance like mucus does to pathogens floating around in there?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "traps them i guess? so they cant get in",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Exactly — it traps them so they can't just float straight through. Tiny hair-like structures called cilia line your airways and beat rhythmically to sweep that mucus — with all the trapped pathogens in it — up and out of the way. What happens to the pathogens once they've been swept out of your airways?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "huh? that was a lot",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Sorry, let me make that clearer! So the cilia — those tiny hairs — actually vibrate really fast to push the mucus with all the trapped pathogens up and out of your airways, where you swallow it.\n\nWhat happens to those pathogens once you've swallowed them?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "they go down to your stomach?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "So you've got mucus and cilia trapping and sweeping pathogens out in your airways, and then stomach acid destroying them if they get swallowed — what do you think all these defences have in common?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "dunno im hungry lol",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Would you like me to just tell you what that common thing is?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "yeah ok tell me",
+      "studentType": "checkin-no",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Right — so the stomach produces really strong acid that kills most pathogens you've swallowed. That's one more layer of defence working for you. What do you think a white blood cell does when it finds a pathogen?",
+      "recap": [
+        "Your body stops pathogens before they even get inside using sticky mucus that traps them.",
+        "Tiny hairs called cilia beat really fast to sweep that mucus with trapped pathogens out and up.",
+        "You swallow the mucus and pathogens, and your stomach acid destroys them so they can't hurt you.",
+        "These physical barriers work together as your first line of defence against infection."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "kills it like the acid does?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "So white blood cells do kill pathogens, but not like acid does — the acid just destroys them chemically. White blood cells actually patrol around your body looking for pathogens to deal with. They're part of your immune system, which is your body's defence team.\n\nWhat's the job of your immune system?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "that was long lol",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Your immune system's job is to find and destroy pathogens before they can make you ill. Scientists also call white blood cells \"leucocytes\" — it's just the fancy name for the same thing.\n\nWhat's the difference between a white blood cell and a red blood cell?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "what do red blood cells do tho",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Exactly — red blood cells carry oxygen using a protein called haemoglobin, that's their whole job. So what's the fancy scientific name we use for a white blood cell?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "leucocyte",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Shall I tell you what the two main types of white blood cell are?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "yeah go on",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "One type of white blood cell is called a phagocyte, and it's basically your immune system's first responder. When a phagocyte spots something foreign like a bacterium, it changes shape to wrap around it and pull it inside the cell, then digests it with enzymes. What do you think happens to the pathogen once it's inside the phagocyte?",
+      "recap": [
+        "White blood cells (leucocytes) patrol your body hunting for pathogens to destroy.",
+        "Your immune system's job is finding and killing pathogens before you get ill.",
+        "Red blood cells carry oxygen around using a protein called haemoglobin — totally different job."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "that's too long sorry",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "No worries! So inside the phagocyte, there are special chemicals called enzymes that break down the bacterium — basically they destroy it.\n\nWhat happens to the bacterium once those enzymes get to work on it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "it gets destroyed innit",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yeah, exactly — the enzymes destroy it. The whole process of the phagocyte wrapping around the pathogen and digesting it is called phagocytosis.\n\nWhat does the phagocyte need to recognise about a pathogen before it attacks it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "idk like what do u mean",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "So a phagocyte doesn't need to know what type of germ it is — it just attacks anything that looks foreign or abnormal, like a bacterium or virus or dead cell.\n\nWhat do you reckon would happen if phagocytes *did* need to recognise each specific type of pathogen before attacking?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "it would take longer to fight infections",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Do you want me to explain the rest of how that non-specific defence works?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "yeah go on then",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "So phagocytosis is just the name for when a phagocyte wraps around a pathogen and digests it with enzymes. And because phagocytes attack *all* pathogens the same way without needing to recognise them first, we call that non-specific. What do you think a lymphocyte does when it spots the pathogen it's trained to recognise?",
+      "recap": [
+        "Phagocytes are white blood cells that wrap around pathogens and pull them inside.",
+        "Once inside, enzymes break down and destroy the pathogen — this whole process is called phagocytosis.",
+        "Phagocytes don't need to recognise what type of germ it is, they just attack anything foreign.",
+        "If phagocytes had to identify each specific pathogen first, fighting infections would take much longer."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "attacks that specific one i guess",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "So every pathogen has unique proteins sticking out on its surface called antigens. When a lymphocyte recognises the right antigen, it makes antibodies that fit that antigen perfectly, like a key in a lock — and that binding marks the pathogen for destruction. Where do you think these antigens are located on the pathogen?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Sorry, let me put that differently! Every pathogen has unique proteins sticking out all over its surface — those are the antigens, the foreign markers that your immune system spots and says \"I recognise you, you're an invader.\"\n\nWhat's the name for those unique proteins on the pathogen's surface?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "antigens init",
+      "studentType": "minimal",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Now, when a lymphocyte spots that antigen, it makes a protein called an antibody that's shaped to fit that antigen perfectly — like a key and lock. The antibody then binds to the antigen and marks the pathogen for destruction. What happens to the pathogen once the antibody is stuck to it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Shall I just walk you through what happens next?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "yeah go on then",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "During that fight, some special lymphocytes turn into something called memory cells, and these hang around in your body long after you've beaten the infection. What do you think a memory cell does — why would it be useful to keep these cells around?",
+      "recap": [
+        "Lymphocytes recognise specific pathogens by their unique surface proteins called antigens.",
+        "When a lymphocyte spots the right antigen, it makes antibodies that fit perfectly onto it.",
+        "Antibodies are Y-shaped proteins that bind to antigens like a key in a lock.",
+        "Once antibodies stick to the pathogen, they mark it so other immune cells can destroy it."
+      ],
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "so like if u get the same illness again it remembers it?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Exactly — memory cells recognise the pathogen straight away next time. So the second response is much faster and stronger than the first one. What happens to the pathogen before you even notice you're ill?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "the memory cells kill it faster so u dont get sick",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Exactly right — they destroy it so fast you don't even get symptoms. You've just covered everything about how your body fights infection. Brilliant work today!",
+      "recap": [
+        "When you recover from an illness, memory cells stay in your body for years.",
+        "If you catch the same disease again, memory cells recognise it instantly.",
+        "The second immune response is much faster and stronger than the first one.",
+        "The pathogen gets destroyed so quickly you don't even notice you're ill."
+      ],
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "ok cool thanks",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've got a really solid grasp of how your body defends itself now — that's going to help a lot with your exam.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "S11: that's too long sorry",
+    "would_quit": {
+      "turn": "T18",
+      "quote": "S19: what?",
+      "why": "Fourth sign of overload ('huh? that was a lot', 'that was long lol', 'that's too long sorry', 'huh?'), and the reply is now just 'what?'. The student has stopped processing."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think a sticky substance like mucus does to pathogens floating around in there?",
+        "note": "Asks about mucus before teaching anything. The lesson's first barrier, skin, is skipped entirely."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": true,
+        "confusing": false,
+        "quote": "What happens to the pathogens once they've been swept out of your airways?",
+        "note": "Teaches cilia, then asks about the next step (swallowing), which was never taught. The student replied 'huh? that was a lot'."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to those pathogens once you've swallowed them?",
+        "note": "Stomach acid has not been taught, so the student can only guess. 'vibrate' is loose wording; the lesson uses 'beat'."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "what do you think all these defences have in common?",
+        "note": "Does not confirm the student's correct 'they go down to your stomach?'. Mentions stomach acid without teaching it. Asks for 'non-specific', which was never introduced."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to just tell you what that common thing is?",
+        "note": "Check-in offer."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Right — so the stomach produces really strong acid that kills most pathogens you've swallowed.",
+        "note": "Promised to say 'that common thing' but never does; 'non-specific' is not mentioned. Then asks about white blood cells before teaching them."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "What's the job of your immune system?",
+        "note": "About 55 words. The student replied 'that was long lol'."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What's the difference between a white blood cell and a red blood cell?",
+        "note": "The difference (nucleus vs oxygen transport) was never taught. The student had to ask 'what do red blood cells do tho'."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Exactly — red blood cells carry oxygen using a protein called haemoglobin",
+        "note": "Says 'Exactly' in reply to a student question. The nucleus difference (keyPoints[1].writeBullets[1]) is never taught."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Shall I tell you what the two main types of white blood cell are?",
+        "note": "Check-in offer."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "What do you think happens to the pathogen once it's inside the phagocyte?",
+        "note": "The answer ('digests it with enzymes') is given in the same turn. Too long; the student replied 'that's too long sorry'."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to the bacterium once those enzymes get to work on it?",
+        "note": "Repeats the previous question, and the answer ('destroy it') is in the same turn. Zero challenge."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What does the phagocyte need to recognise about a pathogen before it attacks it?",
+        "note": "Untaught and trick-worded, since the answer is 'nothing'. The student replied 'idk like what do u mean'."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you reckon would happen if phagocytes *did* need to recognise each specific type of pathogen before attacking?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to explain the rest of how that non-specific defence works?",
+        "note": "Gives no praise for the correct reasoning 'it would take longer to fight infections'."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think a lymphocyte does when it spots the pathogen it's trained to recognise?",
+        "note": "Lymphocytes have not been taught yet. Phagocytosis is re-explained for the third time."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Where do you think these antigens are located on the pathogen?",
+        "note": "Packs antigens, antibodies and lock-and-key into one turn. The answer ('on its surface') is in the same turn. The student replied 'huh?'."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What's the name for those unique proteins on the pathogen's surface?",
+        "note": ""
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What happens to the pathogen once the antibody is stuck to it?",
+        "note": "Vague question that repeats what was just said ('marks the pathogen for destruction'). The student replied 'what?'. Antitoxins are never taught."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Shall I just walk you through what happens next?",
+        "note": "Check-in offer."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "During that fight, some special lymphocytes turn into something called memory cells",
+        "note": "Breaks the T19 promise: it never explains that phagocytes destroy antibody-marked pathogens. Jumps straight to memory cells with no link back."
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to the pathogen before you even notice you're ill?",
+        "note": ""
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "You've just covered everything about how your body fights infection.",
+        "note": "False claim. Skin, nucleus, antitoxins, the vaccination link and the specific/non-specific comparison were never covered."
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You've got a really solid grasp of how your body defends itself now",
+        "note": "Goodbye. Overclaims what the student has mastered."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "shared-code: teach-core question generation",
+        "change": "The end-of-turn question must test only facts stated in this turn or an earlier one. Never ask about the next step (swallowing, stomach acid, lymphocytes, the red/white difference) before teaching it, and never put the answer in the same turn.",
+        "quote": "What happens to the pathogens once they've been swept out of your airways?"
+      },
+      {
+        "target": "shared-code: turn length for this learner profile",
+        "change": "Cap each tutor turn at about 35 words with one new idea per turn. After any 'too long', 'huh?' or 'what?' signal, halve the next turn and teach one term only.",
+        "quote": "S11: that's too long sorry"
+      },
+      {
+        "target": "shared-code: teach-core accept-offer handling",
+        "change": "When the student accepts 'Shall I tell you…', deliver exactly the promised content before moving on. In T5 that is 'they're all non-specific barriers'. In T20 that is 'phagocytes then destroy the marked pathogen'.",
+        "quote": "Right — so the stomach produces really strong acid that kills most pathogens you've swallowed."
+      },
+      {
+        "target": "shared-code: lesson coverage check before closing (keyPoints[0].writeBullets[0], keyPoints[1].writeBullets[1], keyPoints[3].writeBullets[3], keyPoints[4].writeBullets[3], tables[0])",
+        "change": "Before any 'covered everything' wrap-up, check every writeBullet was taught. Skin, nucleus, antitoxins, the vaccine link and the phagocyte vs lymphocyte comparison were all missed. Teach them in short turns, or run checkpoints.3, before ending.",
+        "quote": "You've just covered everything about how your body fights infection."
+      },
+      {
+        "target": "shared-code: teach-core feedback on student replies",
+        "change": "Explicitly confirm correct answers ('Yes — down to your stomach') before continuing. Never say 'Exactly' in reply to a student question. Rephrase trick questions like T12 into either/or form: 'Does a phagocyte need to know the germ's type, yes or no?'",
+        "quote": "Exactly — red blood cells carry oxygen using a protein called haemoglobin, that's their whole job."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "would quit at T18",
+      "question does not match what was taught: T0, T1, T2, T3, T5, T7, T12, T15"
+    ]
+  },
+  "cost": 0.238608,
+  "mode": "run",
+  "date": "2026-10-17"
+}

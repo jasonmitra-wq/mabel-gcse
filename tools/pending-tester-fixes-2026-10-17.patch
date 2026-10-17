@@ -1,0 +1,269 @@
+diff --git a/css/style.css b/css/style.css
+index dc5dd01..3a495d7 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -1073,3 +1073,16 @@ body::before {
+   padding: 0.65rem 0.9rem; margin-bottom: 0.85rem;
+   font-size: 1.05rem; line-height: 1.75; color: var(--text);
+ }
++
++/* ── Bored-student tester fixes (2026-10-17) ──
++   Only active when js/app.js sets class "ui-fix" on <html> (UI_FIXES = true).
++   On a phone the header title wrapped to three lines, its first line was
++   clipped above the screen, and the icon row ran off the right edge. */
++@media (max-width: 600px) {
++  .ui-fix .hdr { padding: 0.5rem 0.75rem; gap: 0.5rem; }
++  .ui-fix .hdr-text { flex: 1 1 auto; min-width: 0; }
++  .ui-fix .hdr-title { font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
++  .ui-fix .hdr-right { flex-shrink: 0; gap: 0.3rem; }
++  .ui-fix .hdr-btn { padding: 0.2rem 0.4rem; }
++  .ui-fix #hdrStage, .ui-fix #hdrTopic, .ui-fix #hdrScore { display: none !important; }
++}
+diff --git a/index.html b/index.html
+index 30a96ba..196a5cd 100644
+--- a/index.html
++++ b/index.html
+@@ -4,10 +4,11 @@
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Mabel's GCSE Tutor</title>
++<link rel="icon" href="data:,"><!-- no favicon file: stops the browser's /favicon.ico request returning 404 -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+-<link rel="stylesheet" href="css/style.css?v=4">
++<link rel="stylesheet" href="css/style.css?v=5">
+ <link rel="stylesheet" href="css/maths.css?v=1">
+ </head>
+ <body>
+@@ -84,12 +85,12 @@
+ <script src="js/cards.js?v=2"></script>
+ <script src="js/questions.js?v=2"></script>
+ <script src="js/glossary.js?v=2"></script>
+-<script src="js/teach-core.js?v=1"></script>
+-<script src="js/teach.js?v=21"></script>
++<script src="js/teach-core.js?v=2"></script>
++<script src="js/teach.js?v=22"></script>
+ <script src="js/lessons.js?v=9"></script>
+-<script src="js/maths-warmup.js?v=1"></script>
++<script src="js/maths-warmup.js?v=2"></script>
+ <script src="js/maths-questions.js?v=2"></script>
+-<script src="js/maths.js?v=1"></script>
+-<script src="js/app.js?v=4"></script>
++<script src="js/maths.js?v=2"></script>
++<script src="js/app.js?v=5"></script>
+ </body>
+ </html>
+diff --git a/js/app.js b/js/app.js
+index 80ec792..b0556a8 100644
+--- a/js/app.js
++++ b/js/app.js
+@@ -2,6 +2,11 @@
+    APP.JS — Main controller: home, routing, dashboard, AI calls
+    ============================================================ */
+ 
++// Bored-student tester layout fixes (2026-10-17): turns on the ".ui-fix" rules
++// at the end of css/style.css (phone header). false keeps the old layout.
++const UI_FIXES = true;
++if (UI_FIXES) document.documentElement.classList.add('ui-fix');
++
+ // ── AI API ────────────────────────────────────────────────────
+ const AI = (() => {
+   let _queue = Promise.resolve();
+diff --git a/js/maths-warmup.js b/js/maths-warmup.js
+index 3da844b..2c7e5c3 100644
+--- a/js/maths-warmup.js
++++ b/js/maths-warmup.js
+@@ -250,6 +250,10 @@ const MathsWarmup = (() => {
+   let _questions = [];
+   let _current   = 0;
+   let _score     = 0;
++  // Bored-student tester fix (2026-10-17): each pip shows that answer's result
++  // (green right, red wrong). false keeps every finished pip green.
++  const PIPS_SHOW_RESULT = true;
++  let _marks     = [];
+   let _callback  = null;
+   let _subtitle  = '';
+ 
+@@ -264,6 +268,7 @@ const MathsWarmup = (() => {
+     _questions = _generateSet(getLevel());
+     _current   = 0;
+     _score     = 0;
++    _marks     = [];
+     _subtitle  = _SUBTITLES[Math.floor(Math.random() * _SUBTITLES.length)];
+     _renderOverlay();
+   }
+@@ -277,6 +282,7 @@ const MathsWarmup = (() => {
+     const q       = _questions[_current];
+     const correct = _checkAnswer(raw, q);
+     if (correct) _score++;
++    _marks[_current] = correct;
+ 
+     _showResult(q, correct);
+ 
+@@ -310,7 +316,7 @@ const MathsWarmup = (() => {
+     const q   = _questions[_current];
+     const pips = [0,1,2,3,4].map(i =>
+       `<div style="width:30px;height:5px;border-radius:999px;background:${
+-        i < _current ? 'var(--green)' : i === _current ? 'var(--amber)' : 'var(--border2)'
++        i < _current ? (PIPS_SHOW_RESULT && _marks[i] === false ? 'var(--red)' : 'var(--green)') : i === _current ? 'var(--amber)' : 'var(--border2)'
+       }"></div>`
+     ).join('');
+ 
+@@ -393,8 +399,8 @@ const MathsWarmup = (() => {
+     const overlay = document.getElementById('maths-warmup');
+     if (!overlay) { if (_callback) _callback(); return; }
+ 
+-    const pips = [0,1,2,3,4].map(() =>
+-      `<div style="width:30px;height:5px;border-radius:999px;background:var(--green)"></div>`
++    const pips = [0,1,2,3,4].map(i =>
++      `<div style="width:30px;height:5px;border-radius:999px;background:${PIPS_SHOW_RESULT && _marks[i] === false ? 'var(--red)' : 'var(--green)'}"></div>`
+     ).join('');
+ 
+     const icon = _score >= 5 ? '🎯' : _score >= 4 ? '👍' : _score >= 3 ? '💪' : '🤔';
+diff --git a/js/maths.js b/js/maths.js
+index 66382d9..4157613 100644
+--- a/js/maths.js
++++ b/js/maths.js
+@@ -475,6 +475,12 @@ const Maths = (() => {
+     const raw = input.value.trim();
+     if (!raw) return;
+ 
++    const problem = _inputProblem(raw, step);
++    if (problem) {
++      const fb = document.getElementById(`stepFeedback_${stepIdx}`);
++      if (fb) { fb.className = 'maths-step-feedback err'; fb.textContent = problem; }
++      return;
++    }
+     const correct = _matchAnswer(raw, step);
+ 
+     if (correct) {
+@@ -496,6 +502,7 @@ const Maths = (() => {
+ 
+     if (input) { input.classList.add('correct-input'); input.disabled = true; }
+     if (btn)   btn.remove();
++    if (MATHS_INPUT_FIXES) { const hl = document.getElementById(`stepHintLink_${stepIdx}`); if (hl) hl.style.display = 'none'; }
+     if (fb)    { fb.className = 'maths-step-feedback ok'; fb.innerHTML = `✓ Correct. <span class="expl">${step.explanation || ''}</span>`; }
+     if (label) label.innerHTML = `<span class="step-tick">✓</span> Step ${stepIdx + 1}`;
+     el?.classList.add('correct');
+@@ -521,7 +528,7 @@ const Maths = (() => {
+     if (fb) { fb.className = 'maths-step-feedback err'; fb.textContent = 'Not quite — check your working.'; }
+ 
+     const wrongs = _stepResults.filter(r => r === false).length;
+-    if (wrongs === 1) _setTutorBar('Have a look at the example on the right — it shows you the method.', true);
++    if (wrongs === 1) _setTutorBar(MATHS_INPUT_FIXES && _NARROW() ? 'Tap "Worked example" at the top — it shows you the method.' : 'Have a look at the example on the right — it shows you the method.', true);
+ 
+     setTimeout(() => {
+       input?.classList.remove('wrong-input');
+@@ -714,8 +721,38 @@ const Maths = (() => {
+   }
+ 
+   // ── ANSWER MATCHING ───────────────────────────────────────────
++  // Bored-student tester fixes (2026-10-17), on by default; false keeps the old
++  // behaviour. (1) a/b is read as a fraction and compared by value, so 5/3 is
++  // accepted for 5/3 (defect 8). (2) When the prompt asks for a fraction and the
++  // answer is one, a decimal is not marked: she is asked for a fraction. (3) An
++  // answer with no number in it is not called wrong working: she is asked to
++  // type just the number. (4) A finished step no longer offers a hint. (5) On a
++  // narrow screen the worked example is a tab, not 'on the right'.
++  const MATHS_INPUT_FIXES = true;
++  const _NARROW = () => window.matchMedia && window.matchMedia('(max-width: 899px)').matches;
++  function _fractionValue(str) {
++    const m = String(str).replace(/\s+/g, '').replace(/−/g, '-').match(/^(-?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);
++    return m && +m[2] !== 0 ? +m[1] / +m[2] : null;
++  }
++  function _wantsFraction(step) {
++    return !!(step.displayAnswer && step.displayAnswer.includes('/') && /fraction/i.test(step.prompt || ''));
++  }
++  // Why an input could not be marked: '' if it can be marked, otherwise the message to show.
++  function _inputProblem(raw, step) {
++    if (!MATHS_INPUT_FIXES) return '';
++    const str = raw.trim();
++    if (_wantsFraction(step) && _fractionValue(str) === null && !isNaN(parseFloat(str.replace(/,/g, '')))) return 'Give this one as a fraction, like 5/3.';
++    if (_fractionValue(str) === null && isNaN(parseFloat(str.replace(/,/g, '').replace(/[£%\s]/g, '')))) return 'Type just your answer as a number, like 15.';
++    return '';
++  }
++
+   function _matchAnswer(raw, step) {
+     const str = raw.trim();
++    if (MATHS_INPUT_FIXES) {
++      const f = _fractionValue(str);
++      if (f !== null) return Math.abs(f - step.answer) <= (step.tolerance ?? 0.005) + 1e-9;
++      if (_wantsFraction(step)) return false;
++    }
+ 
+     // If the step has a displayAnswer containing '/', accept fraction string too
+     if (step.displayAnswer && step.displayAnswer.includes('/') && str === step.displayAnswer) {
+diff --git a/js/teach-core.js b/js/teach-core.js
+index af44799..abb292b 100644
+--- a/js/teach-core.js
++++ b/js/teach-core.js
+@@ -27,6 +27,12 @@ function create(env) {
+   // either/or choice ("from A to B, or from B to A?") or a reply with no
+   // question at all is no longer asked for again.
+   const FIX25 = env.fix25 !== false;
++  // Bored-student tester fixes (2026-10-17), on by default. create({ call, fixT4: false })
++  // keeps the earlier prompts. Found by tools/teach-sim.js --persona bored and
++  // tools/site-test.js: the tutor asked for a term before saying it, opened a
++  // reply to a wrong or confused answer with "Right", treated "huh?" or "this
++  // is long" as an answer, and taught on after she asked to stop.
++  const FIX_T4 = env.fixT4 !== false;
+   const STUDENT_NAME = env.studentName || 'Mabel';   // used only to filter it out of replies
+   const WHO     = FIX23 ? 'the student' : 'Mabel';   // how prompts refer to her
+   const WHO_CAP = FIX23 ? 'The student' : 'Mabel';
+@@ -362,6 +368,13 @@ function create(env) {
+       _laterPointsLine(teachIdx),
+       `Rules: explain ideas a little at a time in plain, friendly language. Ask exactly ONE question at a time and never present a list of options for her to pick from. Keep every reply very short — one to three sentences before your question, no more than about 60 words total. If she asks about something off-topic or unrelated, answer it briefly and kindly, then guide her back to the lesson — never refuse to answer and never tell her to stay focused or scold her for going off-topic. Never open a reply by praising or rating what she said — no 'Great question', 'Good question', 'Great!', 'Nice!', 'Love that'. Only call something a question if she actually asked one. Praise only a correct answer, and then say briefly what was right, e.g. 'Right — they vibrate in place.'`,
+       `Every question you ask must be answerable in one or two words, and its answer must be unambiguous. Ask one thing only. Never join two questions with "or" — "does that make sense, or shall I explain it differently?" cannot be answered by "no". HARD RULE: a question about the content must never be answerable with "yes" or "no". Never start it with do, does, is, are, can, could, will or would — not "can you tell me what happens?", not "do particles in a gas move faster?", not "is it A or B?". Ask what, which, why, how, where or when, so the answer is a specific word or short phrase. If you want to check she has followed you, ask a question about the content itself rather than about her understanding. If you genuinely need to offer her a choice between two things, ask about only one of them: "would you like me to explain that differently?" — and let her say yes or no.`,
++      FIX_T4 ? [
++        `Teach before you ask: never ask her to name a term, number, unit or fact that you have not already said in this conversation. Say the new idea first, in plain words, then ask her to use it or explain it.`,
++        `Mark every answer honestly. If her answer is wrong or only partly right, say so plainly first ("Not quite —"), then give the right idea and the reason in one sentence. Never start a reply to a wrong, partly wrong or confused answer with "Right", "Yes", "Exactly", "Correct" or "Spot on". If it is right, say what was right in a few words.`,
++        `If she says she is confused or that it is too long ("huh?", "what?", "this is long", "i don't get it"), that is not an answer: say the same idea again in ONE shorter, simpler sentence, then ask a simpler question about it.`,
++        `If she says she wants to stop, is tired, hungry or bored, say in one short line that that's fine and she can come back to this lesson any time. Then give one short sentence and one easy question, in case she carries on.`,
++        `Only state facts that are in the key point's content and key terms. If you are not sure a fact is right, leave it out.`,
++      ].join('\n') : '',
+     ].filter(Boolean).join('\n');
+   }
+ 
+diff --git a/js/teach.js b/js/teach.js
+index 5c87842..061366e 100644
+--- a/js/teach.js
++++ b/js/teach.js
+@@ -550,6 +550,19 @@ const Teach = (() => {
+     return card;
+   }
+ 
++  // Bored-student tester fix (2026-10-17), on by default; false keeps the old
++  // path. The tutor model writes **bold** and *italic*, which textContent showed
++  // as raw asterisks. Escape everything first, then turn only those two marks
++  // into tags. The student's own text is never formatted.
++  const RENDER_TUTOR_MARKDOWN = true;
++  function _setBubbleText(el, role, text) {
++    if (!RENDER_TUTOR_MARKDOWN || role === 'user') { el.textContent = text; return; }
++    el.innerHTML = String(text || '')
++      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
++      .replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>')
++      .replace(/(^|[^*\w])\*([^*\n]+?)\*(?![*\w])/g, '$1<em>$2</em>');
++  }
++
+   function _renderTranscript() {
+     const thread = document.getElementById('teachThread');
+     if (!thread) return;
+@@ -565,7 +578,7 @@ const Teach = (() => {
+       } else {
+         const el = document.createElement('div');
+         el.className = t.role === 'user' ? 'askme-q-bubble' : 'askme-a-bubble';
+-        el.textContent = t.text;
++        _setBubbleText(el, t.role, t.text);
+         thread.appendChild(el);
+       }
+     });
+@@ -580,7 +593,7 @@ const Teach = (() => {
+     if (!thread) return;
+     const el = document.createElement('div');
+     el.className = role === 'user' ? 'askme-q-bubble' : 'askme-a-bubble';
+-    el.textContent = text;
++    _setBubbleText(el, role, text);
+     thread.appendChild(el);
+     el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+   }

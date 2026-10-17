@@ -403,8 +403,10 @@ async function mathsMode(page, run, code) {
   for (let qi = 0; qi < 5; qi++) {
     const qText = await page.evaluate(() => (document.querySelector('.maths-q-text') || {}).innerHTML || '');
     if (!qText) { run.say('[no question on screen]'); break; }
-    const q = bank.find(b => b.question === qText) || bank.find(b => b.question.replace(/<[^>]+>/g, '').trim() === qText.replace(/<[^>]+>/g, '').trim());
-    const qPlain = qText.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    // Compare as plain text: innerHTML turns ">" into "&gt;" and so on.
+    const qPlain = await page.evaluate(() => (document.querySelector('.maths-q-text') || {}).textContent || '').then(t => t.replace(/\s+/g, ' ').trim());
+    const plainOf = h => h.replace(/<[^>]+>/g, ' ').replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+    const q = bank.find(b => b.question === qText) || bank.find(b => plainOf(b.question) === qPlain);
     run.say(`Question ${qi + 1}${q ? ` (${q.id})` : ''}: ${qPlain}`);
     await shoot(page, run, `question-${qi + 1}`);
     const fn = q && Recompute.RECOMPUTE[q.id];
@@ -451,7 +453,10 @@ async function mathsMode(page, run, code) {
         }
         let typed;
         if (kind === 'right') {
-          if (indep === null || indep === undefined) { typed = step.displayAnswer || fmt(step.answer); }
+          if (indep === null || indep === undefined) {
+            if (step.answer === undefined) { run.say(`  Step ${si + 1}: the question is not in the bank, so the tester has no answer to give.`); break; }
+            typed = step.displayAnswer || fmt(step.answer);
+          }
           else if (/fraction/i.test(prompt) && typeof indep === 'number' && !Number.isInteger(indep) && step.displayAnswer && /\//.test(step.displayAnswer) && near(step.displayAnswer, indep, 1e-9)) typed = step.displayAnswer;
           else typed = fmt(indep);
         } else if (kind === 'wrong') typed = indep !== null && indep !== undefined ? wrongOf(indep) : '0';

@@ -1,0 +1,483 @@
+{
+  "id": "p2-current-voltage",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! So every device you use — your phone, a kettle, lights — works because charge flows around a circuit and transfers energy. Today we're starting with electric current, which is all about how fast that charge moves.\n\nWhat do you think electric current measures?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "idk honestly, how fast stuff moves?",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, exactly — it's about how fast charge moves! More precisely, current measures *how much* charge flows past a point every second. We measure it in amperes, often called amps.\n\nHow much charge would you say flows past a point in a wire if the current is 1 amp and you wait for 1 second?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "huh? that's confusing",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right — so 1 amp means 1 coulomb of charge flows past each second. We measure that charge in units called coulombs, which we write as C.\n\nWhat does it mean if a wire carries a current of 2 amps?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "like 2 coulombs per second?",
+      "studentType": "wrong",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Exactly right — 2 coulombs flows past every second. That's where potential difference comes in. Potential difference measures how much energy is transferred for each coulomb of charge that flows between two points in a circuit. What do you think the unit for potential difference is?",
+      "recap": [
+        "Electric current measures how much charge flows past a point every second.",
+        "We measure current in amperes (amps) and charge in coulombs (C).",
+        "1 amp means 1 coulomb of charge flows past each second.",
+        "A higher current means more charge is flowing through the wire."
+      ],
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "no idea, is it like watts or something?",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not quite — but I can see why you'd think that! Watts measure power (energy per second), whereas potential difference measures energy *per coulomb of charge*. It's actually measured in volts.\n\nWhat happens to the energy transferred if you increase the potential difference across a wire?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "more energy gets transferred i think?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Now, some materials and components push back against the flow of current. We call this resistance — it's the opposition to current flowing through something. Resistance is measured in units called ohms, which we write as Ω. What do you think happens to the current if you increase the resistance in a circuit, keeping the potential difference the same?",
+      "recap": [
+        "Potential difference measures how much energy gets transferred per coulomb of charge flowing through a circuit.",
+        "We measure potential difference in volts, not watts — watts measure power instead.",
+        "When you increase the potential difference across a component, more energy gets transferred to it."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Think of it like this — if something has high resistance, it makes it harder for charge to push through, so less current flows. Imagine a pipe with a blockage versus one that's clear.\n\nWhat happens to the current if the resistance gets bigger?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "oh right, the current goes down",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Exactly right — the current goes down. So we can actually write this as a simple equation that links all three together: **V = IR**. That's potential difference equals current times resistance. If a resistor has a potential difference of 10 V across it and a current of 2 A flowing through it, what would its resistance be in ohms?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "To find resistance, we just divide the potential difference by the current: R = V/I. So with 10 V and 2 A, that's 10 divided by 2.\n\nWhat answer do you get?",
+      "recap": null,
+      "flags": [
+        "unanswerable: no word from the lesson"
+      ]
+    },
+    {
+      "n": 9,
+      "student": "um like 5 ohms?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "That's right — 5 ohms. Now, instead of doing calculations every time, we can draw a graph showing how current changes with potential difference for any component. We call this an **I-V characteristic** graph.\n\nWhat two things go on the axes of an I-V characteristic graph?",
+      "recap": [
+        "Resistance is the opposition to current flowing through a material, measured in ohms (Ω).",
+        "When resistance increases, the current decreases if the voltage stays the same.",
+        "The equation V = IR connects potential difference, current, and resistance together.",
+        "You can rearrange this to find resistance using R = V/I."
+      ],
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "current and potential difference?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Spot on. So for some components like a fixed resistor, when you double the potential difference, the current doubles too — that means the resistance stays the same. What shape would that line make on the graph?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "straight line?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Exactly — a straight line. And because that line is straight, it tells us something important: the resistance of the fixed resistor doesn't change, no matter what potential difference you use. That's why we call it an **ohmic conductor**.\n\nWhat stays the same for an ohmic conductor?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "the resistance stays the same",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Exactly — the resistance stays the same. Now, a **diode** is a component that only lets current flow in one direction. What happens to the resistance of a diode when you try to push current backwards through it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "it gets smaller?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Would you like me to tell you what actually happens to a diode's resistance in reverse?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "yeah go on",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "A diode has very high resistance when you try to push current backwards through it — so it basically blocks the current in that direction. What does changing the resistance of a rheostat do to the current flowing through the circuit?",
+      "recap": [
+        "An I-V characteristic graph plots current against potential difference for any component.",
+        "For ohmic conductors like fixed resistors, the line is straight because resistance stays constant.",
+        "A diode only lets current flow one way — it has very high resistance backwards."
+      ],
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "idk what a rheostat is",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "When you measure current in a circuit, you use an ammeter, and it has to go **in series** with the component — that means it's part of the main loop that the current flows through. What does \"in series\" mean?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "it's in the main loop thing innit",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Right — so being in series means the ammeter is part of the path the current travels along. The current flows through it to measure how much charge is moving.\n\nWhere do you connect the ammeter in the circuit?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "in the main loop so the current goes through it",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Exactly right. Now, to measure the potential difference across a component, you use a voltmeter — and here's the important bit: it has to go **in parallel** with the component, not in series like the ammeter does.\n\nWhat does \"in parallel\" mean?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "like connected across it not through it",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Spot on — the voltmeter sits across the component so it measures the potential difference without interrupting the main current path. You've now covered all the core ideas: what current is, what potential difference is, how they're different, and how to measure both of them properly in a real circuit.",
+      "recap": [
+        "When you measure current with an ammeter, it goes in series — part of the main loop the charge flows through.",
+        "To measure potential difference, a voltmeter goes in parallel across the component, not through the main circuit.",
+        "In series means the component is part of the current's path; in parallel means it's connected across something separately."
+      ],
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've got a really solid grip on current and potential difference now — that's a proper foundation for the rest of circuits. Good luck with your revision!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "S8: this is long",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T0: Today we're starting with electric current, which is all about how fast that charge moves. What do you think electric current measures?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T1: How much charge would you say flows past a point in a wire if the current is 1 amp and you wait for 1 second?",
+        "note": "The question needs the unit coulomb, which has not been introduced yet. The student cannot answer it."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T2: Right — so 1 amp means 1 coulomb of charge flows past each second. We measure that charge in units called coulombs",
+        "note": "Says 'Right' to 'huh? that's confusing'. Uses 'coulomb' before defining it."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T3: That's where potential difference comes in. ... What do you think the unit for potential difference is?",
+        "note": "Abrupt jump with no link from current. Asks for the unit before teaching it."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T4: It's actually measured in volts. What happens to the energy transferred if you increase the potential difference across a wire?",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T5: Now, some materials and components push back against the flow of current.",
+        "note": "Gives no feedback on S5's correct answer. Skips E = QV entirely."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T6: Imagine a pipe with a blockage versus one that's clear. What happens to the current if the resistance gets bigger?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": true,
+        "confusing": false,
+        "quote": "T7: If a resistor has a potential difference of 10 V across it and a current of 2 A flowing through it, what would its resistance be in ohms?",
+        "note": "Teaches V = IR but asks for R without showing the rearrangement. The student replied 'this is long'."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T8: So with 10 V and 2 A, that's 10 divided by 2. What answer do you get?",
+        "note": "Does not acknowledge the student's boredom."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T9: What two things go on the axes of an I-V characteristic graph?",
+        "note": "Does not say which quantity goes on which axis."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T10: What shape would that line make on the graph?",
+        "note": ""
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T11: What stays the same for an ohmic conductor?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T12: What happens to the resistance of a diode when you try to push current backwards through it?",
+        "note": "Skips the filament lamp completely."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T13: Would you like me to tell you what actually happens to a diode's resistance in reverse?",
+        "note": "Should correct the wrong answer straight away, not offer to."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T14: so it basically blocks the current in that direction. What does changing the resistance of a rheostat do to the current flowing through the circuit?",
+        "note": "Repeats commonMistakes[3] ('blocks'). Asks about a rheostat, which has never been introduced."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T15: When you measure current in a circuit, you use an ammeter",
+        "note": "Ignores 'idk what a rheostat is'. The rheostat is never explained."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T16: Where do you connect the ammeter in the circuit?",
+        "note": "Re-asks what the student has just answered."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T17: it has to go **in parallel** with the component, not in series like the ammeter does. What does \"in parallel\" mean?",
+        "note": "Asks for the meaning of 'parallel' without having taught it."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T18: You've now covered all the core ideas",
+        "note": "False claim. E = QV, the filament lamp, the rheostat and the meter reasons were never covered."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T19: You've got a really solid grip on current and potential difference now",
+        "note": "Overclaims what the student has learned."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: coverage check before wrap-up",
+        "change": "Block any closing summary until keyPoints[1] (E = QV with a 5 × 12 example), the filament lamp in keyPoints[3] and the rheostat in keyPoints[4] have each been taught and checked.",
+        "quote": "T18: You've now covered all the core ideas"
+      },
+      {
+        "target": "keyPoints[4].content",
+        "change": "Define the rheostat in one short line before any question uses it, e.g. 'a variable resistor: turn the knob to change the current'. When the student says 'idk what X is', explain X before moving on.",
+        "quote": "S15: idk what a rheostat is"
+      },
+      {
+        "target": "keyPoints[3].tutor_note",
+        "change": "Add: 'Never say a diode blocks current. Say: very high resistance in reverse, so only a tiny current flows.' This keeps the tutor in line with commonMistakes[3].",
+        "quote": "T14: so it basically blocks the current in that direction."
+      },
+      {
+        "target": "teach-core: respond to every student reply",
+        "change": "Confirm or correct each answer before teaching new content. Do not open with 'Right' after a confusion signal; re-explain more simply instead.",
+        "quote": "T2: Right — so 1 amp means 1 coulomb of charge flows past each second."
+      },
+      {
+        "target": "keyPoints[2].content",
+        "change": "State R = V/I with a worked example (10 ÷ 2 = 5 Ω) before asking the student to calculate. Do not introduce an equation and ask for a rearranged calculation in the same turn.",
+        "quote": "T7: If a resistor has a potential difference of 10 V across it and a current of 2 A flowing through it, what would its resistance be in ohms?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "question does not match what was taught: T1, T3, T7, T14, T17"
+    ]
+  },
+  "cost": 0.204314,
+  "mode": "run",
+  "date": "2026-10-17"
+}

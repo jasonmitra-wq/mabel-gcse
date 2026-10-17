@@ -28,9 +28,10 @@
  * and laptop size (1366×768), into tools/site-test-runs/<date>/<id>/.
  * Judge: claude-opus-5-5 gets the transcript and the screenshots and returns
  * JSON: broken, looks_wrong, would_quit, fixes.
- * PASS = nothing broken AND would_quit false AND nothing in looks_wrong that
- * stops her reading or using the page (the realistic rule, brief 2026-10-17;
- * before it, any looks_wrong item failed the run). The judge marks each
+ * PASS = nothing broken AND nothing in looks_wrong that stops her reading or
+ * using the page (brief docs/briefs/2026-10-17-tutor-flow.md step 2; would_quit
+ * is still reported but no longer fails the run. Before it: would_quit false
+ * was also needed; before the brief of 2026-10-17, any looks_wrong item failed). The judge marks each
  * looks_wrong item stops_use true or false; an item without the mark (runs
  * judged before the rule) counts as stopping her.
  *   node tools/site-test.js --rescore [<run folder> ...]   # the pass rule again on saved runs (no calls); default every run
@@ -564,7 +565,7 @@ async function judgeRun(run, kind, id) {
 // A looks_wrong item without stops_use was judged before the mark existed: it counts as stopping her.
 const stopsUse = l => l.stops_use !== false;
 function sitePass(j) {
-  return !(j.broken || []).length && !j.would_quit && !(j.looks_wrong || []).some(stopsUse);
+  return !(j.broken || []).length && !(j.looks_wrong || []).some(stopsUse);
 }
 
 // The pass rule again on saved runs: no calls. Updates result.json and the PASS/FAIL line of result.md.

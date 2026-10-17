@@ -18,8 +18,9 @@
  *                      # text tester: the student is a model playing a bored 15-year-old
  *                      # (tools/bored-student.js); after the lesson a judge (claude-opus-5-5)
  *                      # returns JSON: engagement, would_quit, per-turn checks, fixes.
- *                      # PASS = engagement >= 3, would_quit false, every question matches
- *                      # what was just taught. Writes <id>-<date>-<n>-bored.json/.md.
+ *                      # PASS = would_quit false, at most one question not matching what was
+ *                      # just taught, no flow_faults (engagement reported, not a pass condition).
+ *                      # Writes <id>-<date>-<n>-bored.json/.md.
  *   node tools/teach-sim.js --rejudge <run-bored.json>   # judge a saved bored run again
  *
  * Without --persona:
@@ -396,7 +397,7 @@ function writeBoredRun(r, mode) {
   writeJudgeMd(base, r);
   const j = r.judge;
   const summary = path.join(OUT_DIR, 'SUMMARY.md');
-  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}${r.tutorCost !== undefined ? ` (tutor ${r.model} $${r.tutorCost.toFixed(4)})` : ''}\n`);
+  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | flow faults ${j && j.flow_faults ? j.flow_faults.length : '-'} | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}${r.tutorCost !== undefined ? ` (tutor ${r.model} $${r.tutorCost.toFixed(4)})` : ''}\n`);
   return base;
 }
 
@@ -410,6 +411,8 @@ function writeJudgeMd(base, r) {
     md.push(`Would quit: ${j.would_quit ? `${j.would_quit.turn} — "${j.would_quit.quote || ''}" (${j.would_quit.why || ''})` : 'false'}`, '');
     md.push('| Turn | on topic | question matches | too long | confusing | quote / note |', '|---|---|---|---|---|---|');
     for (const t of j.turns || []) md.push(`| ${t.turn} | ${t.on_topic} | ${t.question_matches_what_was_just_taught} | ${t.too_long} | ${t.confusing} | "${String(t.quote || '').replace(/\|/g, '/')}"${t.note ? ' — ' + String(t.note).replace(/\|/g, '/') : ''} |`);
+    md.push('', `Flow faults (${(j.flow_faults || []).length}):`, '');
+    (j.flow_faults || []).forEach(f => md.push(`- ${f.turn} **${f.type}** — "${f.quote || ''}"${f.note ? ' — ' + f.note : ''}`));
     md.push('', 'Fixes:', '');
     (j.fixes || []).forEach((f, i) => md.push(`${i + 1}. **${f.target}**: ${f.change} — "${f.quote || ''}"`));
   } else md.push('Judge reply was not JSON:', '', '```', r.judgeRaw || '', '```');

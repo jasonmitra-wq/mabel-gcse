@@ -8,9 +8,12 @@
  * No prompt here ever contains the real student's name.
  *
  * The judge (claude-opus-5-5) reads the finished transcript and returns JSON.
- * PASS = engagement >= 3 AND would_quit false AND at most one tutor question that
- * fails question_matches_what_was_just_taught (the realistic rule, brief
- * 2026-10-17; before it, no such question at all was allowed).
+ * PASS = would_quit false AND at most one tutor question that fails
+ * question_matches_what_was_just_taught AND no item in flow_faults (brief
+ * docs/briefs/2026-10-17-tutor-flow.md step 2). The engagement score is still
+ * reported but is not a pass condition: it scored every lesson 2/5, including
+ * one the student likes, so it is not calibrated. (Before that brief: PASS also
+ * needed engagement >= 3, and there was no flow_faults list.)
  */
 
 const STUDENT_MODEL = 'claude-haiku-4-5-20251001';
@@ -83,6 +86,17 @@ function clean(reply) {
 
 // ---------- judge ----------
 
+// The flow fault types the judge reports (brief docs/briefs/2026-10-17-tutor-flow.md step 2).
+const FLOW_FAULT_TYPES = [
+  ['correct_answer_not_acknowledged', 'the student gave a correct answer and the tutor’s next reply does not open by confirming it and saying what was right.'],
+  ['checkin_without_struggle', 'the tutor offers to just tell her the rest ("do you want me to just tell you the rest?" or similar) when her last reply was not wrong, not "idk", and not the second short or off-topic reply in a row — for example straight after a correct answer.'],
+  ['question_repeated_after_correct_answer', 'the tutor asks again (in the same or other words) a question she has already answered correctly in this lesson.'],
+  ['tell_me_skipped_content', 'she asked to be told ("just tell me", or yes to the check-in) and the tutor’s telling left out part of that key point’s content (compare with the lesson fields).'],
+  ['skip_request_ignored', 'she asked to skip or move on and the tutor did not move to the next key point at once.'],
+  ['closing_claims_untaught_content', 'the closing message says or implies she worked through or got through content she was only told, skipped or never reached ("you got through all of it").'],
+  ['factual_or_unit_slip', 'a number, unit or fact in a tutor reply that differs from the lesson fields or is wrong.'],
+];
+
 const JUDGE_SCHEMA = `{
   "engagement": <integer 1-5: how engaged a bored 15-year-old would stay>,
   "engagement_quote": "<transcript line this rests on>",
@@ -91,6 +105,7 @@ const JUDGE_SCHEMA = `{
     { "turn": "<T label>", "on_topic": true|false, "question_matches_what_was_just_taught": true|false|null,
       "too_long": true|false, "confusing": true|false, "quote": "<the transcript line the judgement rests on>", "note": "<short, only if something is false or true-bad>" }
   ],
+  "flow_faults": [ { "type": "<one of the flow fault types listed above>", "turn": "<T label>", "quote": "<the transcript line, word for word>", "note": "<short>" } ],
   "fixes": [ { "target": "<lesson field path, e.g. keyPoints[2].content, or shared-code behaviour, e.g. teach-core: re-ask either/or questions>",
                "change": "<concrete change>", "quote": "<transcript line>" } ]
 }`;
@@ -110,6 +125,8 @@ function judgeBody({ lessonTitle, subject, lessonFields, transcript, extra }) {
     'Judge every tutor turn (every T label). question_matches_what_was_just_taught: does the question the tutor asks at the end of that turn test what the tutor taught in that turn or just before? null if the turn asks no question (greeting, goodbye, check-in offer).',
     'too_long: over about 60 words or more than the student would read. confusing: unclear wording, wrong term, contradiction, or a factual error.',
     'would_quit: the first turn at which this student would most likely close the app, or false.',
+    'flow_faults: list every case of these, one item per case, each with its turn and the quoted line (empty array if none):',
+    ...FLOW_FAULT_TYPES.map(([k, d]) => `  ${k}: ${d}`),
     'Give at most 5 fixes, most important first; each names a lesson field path or a shared-code behaviour.',
     'Every judgement quotes the transcript line it rests on, word for word.',
     '',
@@ -131,9 +148,11 @@ const MAX_MISMATCHED = 1;
 function verdict(j) {
   const mismatched = (j.turns || []).filter(t => t.question_matches_what_was_just_taught === false);
   const reasons = [];
-  if (!(j.engagement >= 3)) reasons.push(`engagement ${j.engagement}`);
   if (j.would_quit) reasons.push(`would quit at ${j.would_quit.turn || '?'}`);
   if (mismatched.length > MAX_MISMATCHED) reasons.push(`question does not match what was taught: ${mismatched.map(t => t.turn).join(', ')}`);
+  // A run judged before flow_faults existed has none listed; it is not failed for that.
+  const flow = j.flow_faults || [];
+  if (flow.length) reasons.push(`flow faults: ${flow.map(f => `${f.type} ${f.turn || '?'}`).join(', ')}`);
   return { pass: !reasons.length, reasons };
 }
 
@@ -152,4 +171,4 @@ function lessonFieldLines(data) {
   return out.join('\n');
 }
 
-module.exports = { STUDENT_MODEL, JUDGE_MODEL, makeStudent, clean, judgeBody, parseJudge, verdict, lessonFieldLines };
+module.exports = { FLOW_FAULT_TYPES, STUDENT_MODEL, JUDGE_MODEL, makeStudent, clean, judgeBody, parseJudge, verdict, lessonFieldLines };

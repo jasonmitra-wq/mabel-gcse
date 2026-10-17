@@ -20,6 +20,7 @@ const http = require('http');
 const puppeteer = require('puppeteer-core');
 
 const ROOT = path.resolve(__dirname, '..');
+const TUTOR = require('../js/teach-core.js').tutorParams();   // the tutor model the site must send
 const LESSONS = process.argv.slice(2).length ? process.argv.slice(2) : ['p3-particle-model'];
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png' };
 
@@ -75,12 +76,15 @@ async function run() {
       for (const id of LESSONS) {
         const { subject, name, topic } = subjectOf(id);
         const page = await browser.newPage();
-        const errors = [];
+        const errors = [], models = [];
         page.on('pageerror', e => errors.push(e.message));
         await page.setRequestInterception(true);
         page.on('request', req => {
           const u = req.url();
-          if (u.startsWith('https://api.anthropic.com/')) return req.respond({ status: 200, contentType: 'application/json', body: STUB, headers: { 'access-control-allow-origin': '*' } });
+          if (u.startsWith('https://api.anthropic.com/')) {
+            if (req.method() === 'POST') try { const b = JSON.parse(req.postData() || '{}'); models.push(JSON.stringify({ model: b.model, thinking: b.thinking })); } catch {}
+            return req.respond({ status: 200, contentType: 'application/json', body: STUB, headers: { 'access-control-allow-origin': '*', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'POST, OPTIONS' } });
+          }
           if (!teachFirst && u.startsWith(base) && u.split('?')[0].endsWith('/js/lessons.js')) {
             const src = fs.readFileSync(path.join(ROOT, 'js/lessons.js'), 'utf8');
             if (!/const TEACH_FIRST = true;/.test(src)) throw new Error('TEACH_FIRST flag not found');
@@ -112,6 +116,10 @@ async function run() {
           await new Promise(r => setTimeout(r, 300));
           const second = await page.evaluate(view);
           check(`${tag}: that link opens the AI lesson`, second === 'teach', `got ${second}`);
+        }
+        if (models.length) {
+          const want = JSON.stringify({ model: TUTOR.model, thinking: TUTOR.thinking });
+          check(`${tag}: AI lesson calls use the tutor model`, models.every(m => m === want), [...new Set(models)].join(', '));
         }
         check(`${tag}: no page errors`, errors.length === 0, errors.join('; '));
         await page.close();

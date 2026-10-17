@@ -43,7 +43,10 @@ const Recompute = require('./maths-recompute.js');
 const ROOT = path.resolve(__dirname, '..');
 const OUT_ROOT = path.join(__dirname, 'site-test-runs');
 const API = 'https://api.anthropic.com/v1';
-const RATES = { 'claude-haiku-4-5-20251001': [1 / 1e6, 5 / 1e6], 'claude-opus-5-5': [4 / 1e6, 20 / 1e6] };
+const RATES = { 'claude-haiku-4-5-20251001': [1 / 1e6, 5 / 1e6], 'claude-sonnet-5-5': [2 / 1e6, 10 / 1e6], 'claude-opus-5-5': [4 / 1e6, 20 / 1e6] };
+// The site's tutor model, read from the shared code (js/teach-core.js TUTOR_SONNET);
+// the site itself sends it, this is for the estimate and the cost split.
+const TUTOR_MODEL = require('../js/teach-core.js').TUTOR_MODEL;
 // Size only: switching isMobile or hasTouch makes puppeteer reload the page,
 // which would lose the lesson in the middle of a run.
 const PHONE = { width: 390, height: 844, deviceScaleFactor: 1 };
@@ -105,7 +108,7 @@ function teachEnabled() {
 
 // ---------- spend ----------
 
-const spend = { usd: 0, calls: 0, browserCalls: 0, cap: 1 };
+const spend = { usd: 0, calls: 0, browserCalls: 0, cap: 1, tutorUsd: 0 };
 function addUsage(model, usage) {
   const [rin, rout] = RATES[model] || RATES['claude-haiku-4-5-20251001'];
   spend.usd += (usage.input_tokens || 0) * rin + (usage.output_tokens || 0) * rout;
@@ -144,7 +147,8 @@ function estimate(a) {
     const { data } = findLesson(a.lesson);
     const points = data ? (data.keyPoints || []).length : 4;
     const turns = points * 6 + 4;
-    const tutor = turns * 1.5 * (2200 * 1 / 1e6 + 220 * 5 / 1e6) + points * (2500 / 1e6 + 300 * 5 / 1e6);
+    const [tin, tout] = RATES[TUTOR_MODEL];
+    const tutor = turns * 1.5 * (2200 * tin + 220 * tout) + points * (2500 * tin + 300 * tout);
     const student = turns * (1500 / 1e6 + 60 * 5 / 1e6);
     const shots = Math.min(MAX_JUDGE_IMAGES / 2, 6 + Math.ceil(turns / 3));
     const judge = (shots * 1850 + turns * 2 * 120 + 6000) * 4 / 1e6 + 8000 * 20 / 1e6;
@@ -237,7 +241,14 @@ async function newPage(browser, base, run) {
   page.on('response', async res => {
     if (!res.url().startsWith('https://api.anthropic.com/v1/messages') || res.request().method() !== 'POST') return;
     spend.browserCalls++;
-    try { const j = await res.json(); if (j.usage) addUsage(j.model, j.usage); } catch {}
+    try {
+      const j = await res.json();
+      if (j.usage) {
+        const before = spend.usd;
+        addUsage(j.model, j.usage);
+        if (j.model === TUTOR_MODEL) spend.tutorUsd += spend.usd - before;
+      }
+    } catch {}
   });
   const key = apiKey();
   await page.evaluateOnNewDocument(k => { try { localStorage.setItem('mabel_api_key', k); } catch {} }, key);
@@ -530,12 +541,13 @@ async function main() {
   const a = parseArgs(process.argv.slice(2));
   const est = estimate(a);
   console.log(a.run ? 'RUN' : 'DRY RUN (add --run for real calls)');
-  console.log(`${est.what}: about ${est.turns} exchanges, ${est.shots} screens × 2 sizes; est. cost $${est.usd.toFixed(4)} (tutor and student ${Bored.STUDENT_MODEL} at $1 / $5 per M; judge ${Bored.JUDGE_MODEL} at $4 / $20 per M with the screenshots, 8 000 output tokens assumed).`);
+  console.log(`${est.what}: about ${est.turns} exchanges, ${est.shots} screens × 2 sizes; est. cost $${est.usd.toFixed(4)} (tutor ${TUTOR_MODEL} at $${RATES[TUTOR_MODEL][0] * 1e6} / $${RATES[TUTOR_MODEL][1] * 1e6} per M; student ${Bored.STUDENT_MODEL} at $1 / $5 per M; judge ${Bored.JUDGE_MODEL} at $4 / $20 per M with the screenshots, 8 000 output tokens assumed).`);
   if (!a.run) return;
   const cap = a.maxUsd !== null ? a.maxUsd : 1;
   if (est.usd > cap) die(`Estimate $${est.usd.toFixed(4)} is over $${cap}. Stopping. Pass --max-usd <n> above the estimate to proceed.`);
   if (!apiKey()) die('SPEC_CHECK_API_KEY is not set (shell or Windows user environment).');
   spend.cap = cap;
+  if (a.lesson) await confirmModel(TUTOR_MODEL);
   await confirmModel(Bored.STUDENT_MODEL);
   await confirmModel(Bored.JUDGE_MODEL);
   const exe = findBrowser();
@@ -572,9 +584,9 @@ async function main() {
   const pass = !(j.broken || []).length && !(j.looks_wrong || []).length && !j.would_quit;
 
   const result = { id, mode: a.lesson ? 'lesson' : 'maths', date, pass, judge: j, checks: run.checks, transcript: run.log,
-                   screenshots: run.shots.map(s => path.relative(ROOT, s.file).replace(/\\/g, '/')), cost: spend.usd, apiCalls: spend.calls, browserApiCalls: spend.browserCalls };
+                   screenshots: run.shots.map(s => path.relative(ROOT, s.file).replace(/\\/g, '/')), cost: spend.usd, tutorModel: TUTOR_MODEL, tutorCost: spend.tutorUsd, apiCalls: spend.calls, browserApiCalls: spend.browserCalls };
   fs.writeFileSync(path.join(dir, 'result.json'), JSON.stringify(result, null, 2));
-  const md = [`# Site test: ${id} (${result.mode}, ${date})`, '', `**${pass ? 'PASS' : 'FAIL'}** · cost $${spend.usd.toFixed(4)} (${spend.calls} tool calls, ${spend.browserCalls} calls from the site)`, '',
+  const md = [`# Site test: ${id} (${result.mode}, ${date})`, '', `**${pass ? 'PASS' : 'FAIL'}** · cost $${spend.usd.toFixed(4)} (${spend.calls} tool calls, ${spend.browserCalls} calls from the site; tutor ${TUTOR_MODEL} $${spend.tutorUsd.toFixed(4)})`, '',
     '## Judge', '', '```json', JSON.stringify({ broken: j.broken, looks_wrong: j.looks_wrong, would_quit: j.would_quit, fixes: j.fixes }, null, 2), '```', '',
     '## Transcript', '', ...run.log.map(l => `    ${l}`), ''];
   fs.writeFileSync(path.join(dir, 'result.md'), md.join('\n'));

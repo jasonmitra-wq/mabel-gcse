@@ -50,8 +50,12 @@ const Bored = require('./bored-student.js');
 const ROOT = path.join(__dirname, '..');
 const OUT_DIR = path.join(__dirname, 'teach-sim-runs');
 const API = 'https://api.anthropic.com/v1';
-const MODEL = 'claude-haiku-4-5-20251001';   // the browser's tutor model (js/app.js AI._call)
-const USD_IN = 1 / 1e6, USD_OUT = 5 / 1e6;
+// The browser's tutor model, read from the shared code (js/teach-core.js TUTOR_SONNET).
+const TUTOR = TeachCore.tutorParams();
+const MODEL = TUTOR.model;
+// USD per token, input and output.
+const RATE_TABLE = { 'claude-haiku-4-5-20251001': [1 / 1e6, 5 / 1e6], 'claude-sonnet-5-5': [2 / 1e6, 10 / 1e6], 'claude-opus-5-5': [4 / 1e6, 20 / 1e6] };
+const [USD_IN, USD_OUT] = RATE_TABLE[MODEL];
 const DEFAULT_CAP_USD = 1;
 const TRANSCRIPT_CAP = 40;                    // as js/teach.js _pushEntry
 const MAX_TURNS_PER_POINT = 12;               // a point not covered by then never completes
@@ -110,12 +114,13 @@ async function confirmModel(model = MODEL) {
 }
 
 // Rates per model, USD per token. The judge rates are the ones tools/spec-check.js uses.
-const RATES = { [MODEL]: [USD_IN, USD_OUT], 'claude-opus-5-5': [4 / 1e6, 20 / 1e6] };
-const spend = { inTok: 0, outTok: 0, calls: 0, usd: 0, cap: DEFAULT_CAP_USD };
+const RATES = RATE_TABLE;
+const spend = { inTok: 0, outTok: 0, calls: 0, usd: 0, cap: DEFAULT_CAP_USD, tutorUsd: 0, tutorCalls: 0 };
 
 async function apiCall(body, attempt = 0) {
   if (spend.usd >= spend.cap) throw new Error(`STOP: spend $${spend.usd.toFixed(4)} reached the $${spend.cap} cap`);
-  const res = await fetch(`${API}/messages`, { method: 'POST', headers: headers(), body: JSON.stringify(body) });
+  const { tutor, ...sent } = body;   // tutor: a local marker for the cost split, not sent
+  const res = await fetch(`${API}/messages`, { method: 'POST', headers: headers(), body: JSON.stringify(sent) });
   if ((res.status === 429 || res.status === 529) && attempt < 4) {
     await new Promise(r => setTimeout(r, 4000 * Math.pow(2, attempt)));
     return apiCall(body, attempt + 1);
@@ -130,12 +135,14 @@ async function apiCall(body, attempt = 0) {
   spend.calls++;
   spend.inTok += data.usage.input_tokens;
   spend.outTok += data.usage.output_tokens;
-  spend.usd += data.usage.input_tokens * rin + data.usage.output_tokens * rout;
+  const usd = data.usage.input_tokens * rin + data.usage.output_tokens * rout;
+  spend.usd += usd;
+  if (body.tutor) { spend.tutorUsd += usd; spend.tutorCalls++; }
   return data.content.filter(b => b.type === 'text').map(b => b.text).join('');
 }
 
 async function realCall(sys, user, tokens) {
-  return apiCall({ model: MODEL, max_tokens: tokens || 2000, system: sys, messages: [{ role: 'user', content: user }] });
+  return apiCall({ ...TUTOR, tutor: true, max_tokens: tokens || 2000, system: sys, messages: [{ role: 'user', content: user }] });
 }
 
 // Offline tutor: well-formed replies that echo the part asked about, so the
@@ -332,6 +339,7 @@ function estimate(id, persona = null) {
   const inTok = Math.ceil(promptChars / 4) * calls;
   const outTok = core.MAX_TOKENS_REPLY * calls;
   const est = { id, points: points.length, calls, inTok, outTok, usd: inTok * USD_IN + outTok * USD_OUT };
+  const [sIn, sOut] = RATE_TABLE[Bored.STUDENT_MODEL];
   if (persona) {
     // Student: one small call a turn (about 1 500 tokens in, 60 out). Judge: lesson fields + transcript in, 12 000 out at most.
     const turnsN = Math.ceil(calls / 1.5);
@@ -339,7 +347,7 @@ function estimate(id, persona = null) {
     est.calls += turnsN + 1;
     est.inTok += turnsN * 1500 + judgeIn;
     est.outTok += turnsN * 60 + 12000;
-    est.usd += turnsN * (1500 * USD_IN + 60 * USD_OUT) + judgeIn * 4 / 1e6 + 12000 * 20 / 1e6;
+    est.usd += turnsN * (1500 * sIn + 60 * sOut) + judgeIn * 4 / 1e6 + 12000 * 20 / 1e6;
   }
   return est;
 }
@@ -387,7 +395,7 @@ function writeBoredRun(r, mode) {
   } else md.push('Judge reply was not JSON:', '', '```', r.judgeRaw || '', '```');
   fs.appendFileSync(base + '.md', md.join('\n') + '\n');
   const summary = path.join(OUT_DIR, 'SUMMARY.md');
-  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}\n`);
+  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}${r.tutorCost !== undefined ? ` (tutor ${r.model} $${r.tutorCost.toFixed(4)})` : ''}\n`);
   return base;
 }
 
@@ -426,7 +434,7 @@ async function main() {
   console.log(args.run ? 'RUN' : args.mock ? 'MOCK (offline, canned tutor replies)' : 'DRY RUN (add --run for real calls)');
   console.log('lesson | key points | est. calls | est. input tokens | est. output tokens | est. cost (USD)');
   for (const e of ests) console.log(`${e.id} | ${e.points} | ${e.calls} | ${e.inTok} | ${e.outTok} | ${e.usd.toFixed(4)}`);
-  console.log(`TOTAL $${total.toFixed(4)} at $1 per M input, $5 per M output (${MODEL}); output assumed at the reply token cap.` +
+  console.log(`TOTAL $${total.toFixed(4)} at $${USD_IN * 1e6} per M input, $${USD_OUT * 1e6} per M output (tutor ${MODEL}); output assumed at the reply token cap.` +
     (args.persona ? ` Includes the bored student (${Bored.STUDENT_MODEL}) and the judge (${Bored.JUDGE_MODEL}, $4 / $20 per M, 12 000 output tokens assumed).` : ''));
   if (!args.run && !args.mock) return;
 
@@ -440,7 +448,7 @@ async function main() {
   }
 
   for (const id of args.ids) {
-    const before = spend.usd;
+    const before = spend.usd, tutorBefore = spend.tutorUsd, tutorCallsBefore = spend.tutorCalls;
     let r;
     try {
       r = await simulate(id, args.run ? realCall : mockCall(), args.persona);
@@ -449,11 +457,13 @@ async function main() {
       die(String(e.message || e));
     }
     r.cost = spend.usd - before;
+    r.tutorCost = spend.tutorUsd - tutorBefore;
+    r.tutorCalls = spend.tutorCalls - tutorCallsBefore;
     const base = writeRun(r, args.run ? 'run' : 'mock');
     const flagged = r.turns.filter(t => t.flags.length).length;
     if (r.persona) console.log(`${id}: persona bored · ${r.verdict.pass ? 'PASS' : 'FAIL'}${r.verdict.reasons.length ? ' (' + r.verdict.reasons.join('; ') + ')' : ''} · engagement ${r.judge ? r.judge.engagement : '?'} · would quit ${r.judge && r.judge.would_quit ? r.judge.would_quit.turn : 'false'}`);
     console.log(`${id}: ${r.turns.length} tutor turns, ${flagged} flagged; ${r.lessonFlags.join('; ') || 'no lesson flags'}. ` +
-      `${path.relative(ROOT, base).replace(/\\/g, '/')}.md${args.run ? ` · $${r.cost.toFixed(4)}` : ''}`);
+      `${path.relative(ROOT, base).replace(/\\/g, '/')}.md${args.run ? ` · $${r.cost.toFixed(4)} (tutor ${r.model} $${r.tutorCost.toFixed(4)}, ${r.tutorCalls} calls)` : ''}`);
   }
   if (args.run) console.log(`Spent $${spend.usd.toFixed(4)} over ${spend.calls} calls.`);
 }

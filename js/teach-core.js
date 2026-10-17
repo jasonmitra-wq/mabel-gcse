@@ -13,6 +13,21 @@
   else root.TeachCore = factory();
 })(typeof self !== 'undefined' ? self : this, function () {
 
+// Tutor model (brief 2026-10-17, decided by Jason): Sonnet, on by default.
+// false keeps the old Haiku request exactly. js/app.js (through teach.js),
+// tools/teach-sim.js and tools/site-test.js all read the model from here.
+const TUTOR_SONNET = true;
+const TUTOR_MODEL_SONNET = 'claude-sonnet-5-5';
+const TUTOR_MODEL_HAIKU  = 'claude-haiku-4-5-20251001';
+// The model fields of a tutor request. Sonnet 5.5 thinks by default, and its
+// thinking would come out of the tutor's tight max_tokens; "between_tools"
+// is its thinking-off setting. The Haiku request has no extra fields.
+function tutorParams(sonnet = TUTOR_SONNET) {
+  return sonnet ? { model: TUTOR_MODEL_SONNET, thinking: { type: 'between_tools' } }
+                : { model: TUTOR_MODEL_HAIKU };
+}
+const TUTOR_MODEL = tutorParams().model;
+
 // env.call(system, user, maxTokens) → Promise<string>: one model call.
 function create(env) {
   const AI = { call: (sys, user, tokens) => env.call(sys, user, tokens) };
@@ -919,5 +934,5 @@ function create(env) {
   return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt };
 }
 
-return { create };
+return { create, TUTOR_SONNET, TUTOR_MODEL, TUTOR_MODEL_SONNET, TUTOR_MODEL_HAIKU, tutorParams };
 });

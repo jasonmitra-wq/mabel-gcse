@@ -17,7 +17,7 @@ const AI = (() => {
   function clearKey() { localStorage.removeItem(_KEY_STORE); }
   function hasKey()   { return !!getKey(); }
 
-  async function _call(sys, user, tokens, attempt = 0) {
+  async function _call(sys, user, tokens, attempt = 0, params = null) {
     const key = getKey();
     if (!key) throw new Error('NO_KEY');
     const MAX = 4;
@@ -32,6 +32,7 @@ const AI = (() => {
         },
         body: JSON.stringify({
           model: 'claude-haiku-4-5-20251001',
+          ...(params || {}),
           max_tokens: tokens || 2000,
           system: sys,
           messages: [{ role: 'user', content: user }]
@@ -40,7 +41,7 @@ const AI = (() => {
 
       if ((resp.status === 429 || resp.status === 529) && attempt < MAX) {
         await new Promise(r => setTimeout(r, 4000 * Math.pow(2, attempt)));
-        return _call(sys, user, tokens, attempt + 1);
+        return _call(sys, user, tokens, attempt + 1, params);
       }
       if (resp.status === 401) throw new Error('BAD_KEY');
       if (!resp.ok) throw new Error(resp.status);
@@ -52,15 +53,17 @@ const AI = (() => {
       if (e.message === 'NO_KEY' || e.message === 'BAD_KEY') throw e;
       if (attempt < MAX && !String(e.message).match(/^[45]\d\d$/)) {
         await new Promise(r => setTimeout(r, 3000));
-        return _call(sys, user, tokens, attempt + 1);
+        return _call(sys, user, tokens, attempt + 1, params);
       }
       throw e;
     }
   }
 
   // .catch first: a rejected call must not poison the queue for every call after it.
-  function call(sys, user, tokens) {
-    _queue = _queue.catch(() => {}).then(() => _call(sys, user, tokens));
+  // params: model fields that replace the default model (the AI lesson passes
+  // TeachCore.tutorParams()); without them the request is as before.
+  function call(sys, user, tokens, params) {
+    _queue = _queue.catch(() => {}).then(() => _call(sys, user, tokens, 0, params));
     return _queue;
   }
 

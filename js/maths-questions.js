@@ -1212,10 +1212,10 @@ const MathsQuestions = (() => {
           explanation: 'Total orange paint = 18 + 12 = 30 litres.'
         },
         {
-          prompt: 'Check: does 30 litres split in ratio 3:2 give 18 and 12? Enter 1 for yes.',
+          prompt: 'Check: split 30 litres in the ratio 3:2. It gives 18 litres of red and 12 litres of yellow.',
           hint1: '30 ÷ 5 = 6. Red = 3×6=18, Yellow = 2×6=12.',
-          hint2: 'Both values match — confirm with 1.',
-          hint3: 'Enter 1.',
+          hint2: 'Both values match.',
+          hint3: '18 and 12, as in steps 1 and 2.',
           answer: 1,
           tolerance: 0,
           unit: '',
@@ -7171,7 +7171,7 @@ const MathsQuestions = (() => {
       question: 'Expand (x + 3)². State the coefficient of x and the constant term.',
       steps: [
         {
-          prompt: '(x + 3)² = x² + 2(3)x + 9. What is the coefficient of x?',
+          prompt: 'Expand (x + 3)² = (x + 3)(x + 3). What is the coefficient of x?',
           hint1: '2 × 3 = ?',
           hint2: '6.',
           hint3: 'Coefficient of x = 6.',
@@ -9388,7 +9388,7 @@ const MathsQuestions = (() => {
       question: 'A TV costs £350 after a 30% reduction. What was the original price?',
       steps: [
         {
-          prompt: '£350 is what percentage of the original price?',
+          prompt: 'After a 30% reduction, £350 is 100% − 30% = 70% of the original price.',
           hint1: 'After 30% reduction, the price is 70% of original.',
           hint2: '100% − 30% = 70%.',
           hint3: '£350 = 70% of original.',
@@ -22484,7 +22484,7 @@ const MathsQuestions = (() => {
         },
         {
           prompt: 'What percentage of data lies between Q1 and Q3?', hint1: 'Think about what the quartiles represent.', hint2: 'The box in a box plot contains the middle 50%.', hint3: 'By definition, 50% of the data lies between Q1 and Q3.',
-          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: '50%',
+          answer: 50, tolerance: 0, unit: '%', displayAnswer: '50%',
           explanation: 'By definition, 50% of the data lies between the lower quartile (Q1) and upper quartile (Q3).',
         },
       ],
@@ -22580,7 +22580,7 @@ const MathsQuestions = (() => {
     },
     {
       id: 'stat-boxplots-A05', subtopic: 'stat-boxplots', band: 'A', marks: 2,
-      question: 'A box plot shows that 25% of data is below 16 and 75% is below 30. The median is 23. Find (a) the IQR and (b) state which half of the box (lower or upper) is wider.',
+      question: 'A box plot shows that 25% of data is below 16 and 75% is below 30. The median is 21. Find (a) the IQR and (b) state which half of the box (lower or upper) is wider.',
       steps: [
         {
           prompt: 'Identify Q1 and Q3, then calculate the IQR.', hint1: '25% below = Q1; 75% below = Q3.', hint2: 'Q1 = 16, Q3 = 30', hint3: 'IQR = 30 − 16 = 14',
@@ -22588,9 +22588,9 @@ const MathsQuestions = (() => {
           explanation: 'Q1 = 16 (25th percentile), Q3 = 30 (75th percentile). IQR = 30 − 16 = 14.',
         },
         {
-          prompt: 'Which half of the box is wider — lower (Q1 to median) or upper (median to Q3)?', hint1: 'Lower half = median − Q1; upper half = Q3 − median.', hint2: 'Lower: 23 − 16 = 7; upper: 30 − 23 = 7.', hint3: 'Both halves are equal (7 each).',
-          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Both halves equal (7 each) — symmetric distribution',
-          explanation: 'Lower half: median − Q1 = 23 − 16 = 7. Upper half: Q3 − median = 30 − 23 = 7. Both halves equal — the distribution is symmetric.',
+          prompt: 'Which half of the box is wider — lower (Q1 to median) or upper (median to Q3)?', hint1: 'Lower half = median − Q1; upper half = Q3 − median.', hint2: 'Lower: 21 − 16 = 5; upper: 30 − 21 = 9.', hint3: 'The upper half is wider (9 > 5).',
+          answer: 0, tolerance: 0, unit: '', checkType: 'skip', displayAnswer: 'Upper half wider (9 > 5) — positive skew',
+          explanation: 'Lower half: median − Q1 = 21 − 16 = 5. Upper half: Q3 − median = 30 − 21 = 9. The upper half is wider, so the distribution is positively skewed.',
         },
       ],
       workedExample: {
@@ -22602,7 +22602,7 @@ const MathsQuestions = (() => {
           'Skew — upper half wider (10 > 8) → <strong>positive skew</strong>',
         ],
       },
-      sampleAnswer: { grade4: 'IQR = 14. Both halves are equal.', grade6: 'Q1 = 16, Q3 = 30. IQR = 30 − 16 = 14. Lower half: 23 − 16 = 7. Upper half: 30 − 23 = 7. Both halves equal — symmetric.', grade8: 'IQR = Q3 − Q1 = 30 − 16 = 14. The box is symmetric: lower half (median − Q1 = 7) equals upper half (Q3 − median = 7), indicating a roughly symmetric distribution with no skew.' },
+      sampleAnswer: { grade4: 'IQR = 14. The upper half is wider.', grade6: 'Q1 = 16, Q3 = 30. IQR = 30 − 16 = 14. Lower half: 21 − 16 = 5. Upper half: 30 − 21 = 9. Upper half wider — positive skew.', grade8: 'IQR = Q3 − Q1 = 30 − 16 = 14. Lower half (median − Q1 = 5) is narrower than upper half (Q3 − median = 9), so the distribution is positively skewed.' },
       examinerTip: 'To judge skew from a box plot, compare (median − Q1) with (Q3 − median). If Q3 − median is larger, it is positively skewed.',
       auditStatus: 'verified',
     },

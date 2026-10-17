@@ -550,7 +550,7 @@ module.exports = ({ N, gcd, lcm, sigFig, pennies }) => {
     'stat-cumulative-C02': () => { const iqrA = (60 + 8 / 12 * 10) - 50, iqrB = (60 + 16 / 18 * 10) - (50 + 6 / 10 * 10); return [50 + 10 / 12 * 10, 60 + 6 / 18 * 10, iqrA, iqrB]; },
     'stat-cumulative-C03': () => [35 - 16, 35 + 1.5 * 19, null],
     'stat-cumulative-C04': () => [52 - 28, 52 + 1.5 * 24, null, null],
-    'stat-boxplots-A01': () => [27 - 12, 35 - 5, null],
+    'stat-boxplots-A01': () => [27 - 12, 35 - 5, 50],
     'stat-boxplots-A02': () => [null, null],
     'stat-boxplots-A03': () => [26 - 14, 80 / 2],
     'stat-boxplots-A04': () => [19 - 8, 25 - 3],

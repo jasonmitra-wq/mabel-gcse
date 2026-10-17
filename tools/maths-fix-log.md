@@ -1684,3 +1684,16 @@ marks set to steps.length where they differed (87 questions); auditStatus 'verif
 - nrt-C03 | marks | 4 → 3 (steps.length)
 - nrt-C03 | auditStatus | auditStatus: 'pending', → auditStatus: 'verified'
 - nrt-C04 | auditStatus | auditStatus: 'pending', → auditStatus: 'verified'
+
+## Bored-student tester fixes (2026-10-17)
+
+Found by tools/site-test.js (M1-M6). After the fixes, `node tools/maths-recompute.js --all`: 1376 checked steps, 0 wrong, 0 mismatch, 0 ambiguous.
+
+- quad-A04 | steps[0].prompt | the prompt gave the answer and step 2's answer | '(x + 3)² = x² + 2(3)x + 9. What is the coefficient of x?' → 'Expand (x + 3)² = (x + 3)(x + 3). What is the coefficient of x?'
+- rat-B06 | steps[2].prompt | "Enter 1 for yes" on a step with no answer box | 'Check: does 30 litres split in ratio 3:2 give 18 and 12? Enter 1 for yes.' → 'Check: split 30 litres in the ratio 3:2. It gives 18 litres of red and 12 litres of yellow.'
+- rat-B06 | steps[2].hint2 | same | 'Both values match — confirm with 1.' → 'Both values match.'
+- rat-B06 | steps[2].hint3 | same | 'Enter 1.' → '18 and 12, as in steps 1 and 2.'
+- pch-A02 | steps[0].prompt | a question on a step with no answer box | '£350 is what percentage of the original price?' → 'After a 30% reduction, £350 is 100% − 30% = 70% of the original price.'
+- stat-boxplots-A01 | steps[2] | a step with a definite answer (50%) had no answer box | answer 0, unit '', checkType 'skip' → answer 50, unit '%', checked (tools/maths-recompute-fns.js: null → 50)
+- stat-boxplots-A05 | question, steps[1] hint2, hint3, displayAnswer, explanation, sampleAnswer | the question asks which half of the box is wider but both halves were 7 | median 23 → 21; hint2 'Lower: 23 − 16 = 7; upper: 30 − 23 = 7.' → 'Lower: 21 − 16 = 5; upper: 30 − 21 = 9.'; hint3 'Both halves are equal (7 each).' → 'The upper half is wider (9 > 5).'; displayAnswer 'Both halves equal (7 each) — symmetric distribution' → 'Upper half wider (9 > 5) — positive skew'; explanation and sampleAnswer grade4/6/8 rewritten to the same figures. IQR (step 1) unchanged at 14.
+- seq-A04, sim-A02, sim-A05, rat-B06 | locked step prompts gave earlier answers | no content change: js/maths.js now hides a locked step's prompt until it unlocks (MATHS_INPUT_FIXES)

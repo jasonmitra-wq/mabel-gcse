@@ -1,0 +1,243 @@
+{
+  "id": "b3-defences",
+  "mode": "lesson",
+  "date": "2026-10-17",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "S1 'traps it so it can't move around' is correct (mucus traps pathogens), but it was labelled wrong and T1 replies 'But trapping them isn't enough' without confirming it.",
+        "step": "S1/T1"
+      },
+      {
+        "what": "T3 gives the answer (the acid kills most pathogens) and then asks 'What do you think that acid environment does to the pathogens?'. The question was already answered.",
+        "step": "T3"
+      },
+      {
+        "what": "T4 offers to finish explaining stomach acid. The student says 'k', but T5 drops stomach acid and jumps to white blood cells.",
+        "step": "T4/S5/T5"
+      },
+      {
+        "what": "T7 asks for the WBC vs RBC difference, which T5 had just stated. T8 then asks for the 'fancy scientific name', which T7 had just given (leucocytes). The student only has to parrot it.",
+        "step": "T7/T8"
+      },
+      {
+        "what": "T9 offers to explain the two types and the student says yes. T10 instead repeats the nucleus fact and asks 'What do we call this type of white blood cell?' without saying which type. The question cannot be answered.",
+        "step": "T10"
+      },
+      {
+        "what": "T15 asks what the lymphocyte produces before lymphocytes have been introduced at all.",
+        "step": "T15"
+      },
+      {
+        "what": "T20 asks what the long-lived lymphocytes are called, and T21's question contains the answer: 'What do we call those special memory cells?'",
+        "step": "T20/T21"
+      },
+      {
+        "what": "S24 'you dont get sick cos its gone quick' is correct but gets no acknowledgement. The tutor asks 'Shall I just tell you the rest?', the student says 'nah im good', and T25 explains anyway, ignoring the no.",
+        "step": "S24/T24/S25/T25"
+      },
+      {
+        "what": "T25/T26 re-ask what happens to the pathogen, which the student already answered correctly in S24.",
+        "step": "T25/T26"
+      },
+      {
+        "what": "Markdown bold is shown as raw asterisks: **non-specific**, **antigen**, **antibody**, **antitoxin**.",
+        "step": "T15, T17, T20"
+      },
+      {
+        "what": "T28 says 'You've got a really solid understanding' to a student who said 'im lost' and got most answers told to them.",
+        "step": "T28"
+      },
+      {
+        "what": "Console 404: a resource failed to load.",
+        "step": "page load"
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "On phone, the header title 'Mabel's GCSE Tutor' wraps to 3 lines and the top line is clipped off the screen.",
+        "screenshot": "01-home-phone.png"
+      },
+      {
+        "what": "The '← Home' button is overlapped and clipped by the 'What are you revising?' heading at the top.",
+        "screenshot": "02-subjects-phone.png"
+      },
+      {
+        "what": "The breadcrumb chip 'B3: Disease — how we get ill and...' runs off the right edge. The lesson title is truncated to 'Your body's defences — how yo...'.",
+        "screenshot": "05-ai-lesson-opening-phone.png"
+      },
+      {
+        "what": "The diagram thumbnail is tiny and its text is unreadable.",
+        "screenshot": "05-ai-lesson-opening-laptop.png"
+      },
+      {
+        "what": "Literal '**non-specific**' asterisks appear in the tutor bubble.",
+        "screenshot": "10-exchange-15-laptop.png"
+      },
+      {
+        "what": "Literal '**antigen**' asterisks appear in the tutor bubble.",
+        "screenshot": "11-exchange-18-phone.png"
+      },
+      {
+        "what": "Literal '**antibody**' and '**antitoxin**' asterisks appear in the tutor bubble.",
+        "screenshot": "12-exchange-21-laptop.png"
+      },
+      {
+        "what": "The Key Terms panel is cut off mid-definition: 'traps' ends with no rest of sentence.",
+        "screenshot": "07-exchange-6-laptop.png"
+      },
+      {
+        "what": "The Key Terms panel clips the Cilia definition: the 'Tiny hair-like projections on cells' line is half cut off at the bottom.",
+        "screenshot": "14-exchange-27-laptop.png"
+      }
+    ],
+    "would_quit": {
+      "turn": "S17",
+      "quote": "dunno mate im lost",
+      "why": "The student has complained 'too long' four times. The tutor keeps asking questions about things it never taught (T10, T15), or re-asking what it just said, so the student feels lost and is being quizzed for nothing."
+    },
+    "fixes": [
+      {
+        "target": "chat bubble renderer (tutor message component)",
+        "change": "Render **bold** markdown as <strong> instead of showing raw asterisks."
+      },
+      {
+        "target": "tutor system prompt",
+        "change": "Explicitly confirm a correct student answer before moving on (S1, S24). Never ask a question whose answer appeared in the same or the previous tutor turn (T3, T8, T21, T25). Never ask about a term or cell type before it has been introduced (T10, T15)."
+      },
+      {
+        "target": "tutor check-in handling",
+        "change": "If the student says yes to 'shall I explain X', explain X in the very next turn (T5 and T10 failed this). If they say no, skip the explanation and move on (T25 failed this)."
+      },
+      {
+        "target": "tutor brevity rule for bored learners",
+        "change": "After a 'too long'/'skip' signal, keep each turn to 2 short sentences plus one question. Make the closing praise match how the student actually performed."
+      },
+      {
+        "target": "phone header CSS",
+        "change": "Keep the app title on one line with ellipsis or hide it under 420px, and stop it being clipped. Give the breadcrumb chip max-width with ellipsis. Add top spacing so '← Home' is not overlapped by the page heading on 02-subjects-phone."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "AI lesson opens by default (in TEACH_ENABLED)",
+      "ok": true,
+      "detail": "AI lesson opened"
+    }
+  ],
+  "transcript": [
+    "[console error] Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Lesson b3-defences (Biology › Disease — how we get ill and how we fight back › Your body's defences — how you fight infection).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "[screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects",
+    "[screenshot 03-topics-biology-phone.png and 03-topics-biology-laptop.png] topics-biology",
+    "[screenshot 04-lessons-b3-phone.png and 04-lessons-b3-laptop.png] lessons-B3",
+    "[check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened",
+    "T0: Hi! Let's start with your first line of defence: physical barriers that make it really hard for pathogens to get in at all. What do you think mucus does when a pathogen lands on it?",
+    "[screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening",
+    "S1 (wrong): like traps it so it can't move around?",
+    "T1: But trapping them isn't enough on its own: there are tiny hair-like structures called cilia lining your airways that beat back and forth really fast to sweep that mucus — with all the trapped pathogens in it — up and out of your airway. What happens to the pathogens once they're swept out?",
+    "S2 (bored): that was long lol",
+    "T2: Ha, yeah — it's a lot happening in one go! So when the cilia sweep that mucus up and out, what actually happens to those trapped pathogens then?",
+    "S3 (offtopic): dunno im hungry tbh",
+    "T3: When you swallow, those pathogens go down into your stomach, where there's an incredibly strong acid called hydrochloric acid that kills most of them before they can cause any damage. So your stomach is basically another barrier working to stop pathogens reaching your intestines. What do you think that acid environment does to the pathogens?",
+    "[screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3",
+    "S4 (bored): this is too long man",
+    "T4: Should I just quickly finish telling you the rest of what happens with the stomach acid?",
+    "S5 (minimal): k",
+    "T5: But sometimes a pathogen sneaks past all those physical barriers — and that's when your white blood cells jump in to defend you. White blood cells are special because unlike red blood cells, they have a nucleus and they're part of your immune system. What do you think the job of white blood cells is?",
+    "S6 (try): kill the bad stuff i guess",
+    "T6: Yeah, exactly — they do kill pathogens, that's their main job. White blood cells are like your body's immune army patrolling through your blood and tissues looking for anything dangerous to destroy. There are actually two different types of white blood cells that work in different ways — what do you think they might be called?",
+    "[screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6",
+    "S7 (bored): can we skip this",
+    "T7: The two types are called phagocytes and lymphocytes, and we'll learn how each one works in a moment. But first, there's a fancy scientific name you might see in an exam: white blood cells are also called leucocytes — it's just another word for the same thing. What's the difference between a white blood cell and a red blood cell?",
+    "S8 (bored): huh",
+    "T8: Red blood cells carry oxygen around your body using something called haemoglobin, but white blood cells don't do that job — they're part of your immune system instead, fighting infections. What's the fancy scientific name for a white blood cell that you might see in an exam?",
+    "S9 (try): leucocytes",
+    "T9: Right — that's the fancy exam name! Would you like me to explain how the two types actually work?",
+    "[screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9",
+    "S10 (try): yeah ok go on",
+    "T10: So white blood cells have a nucleus — that's the part containing their genetic material — whereas mature red blood cells don't. White blood cells are all part of your immune system, which is your body's infection-fighting team. What do we call this type of white blood cell?",
+    "S11 (offtopic): im so hungry lol",
+    "T11: Haha, I get that — hopefully we'll be done soon! So one type of white blood cell is called a phagocyte, and its job is to wrap around invading bacteria or viruses, pull them inside itself, and then digest them with special chemicals. What's the name of that wrapping-and-pulling-inside process?",
+    "S12 (try): wrapping them up?",
+    "T12: It's called phagocytosis — the phagocyte changes shape to wrap around the pathogen and pull it inside. Once it's in there, special chemicals called enzymes break it down and destroy it. What do you think happens to the pathogen once those enzymes get to work on it?",
+    "[screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12",
+    "S13 (try): it gets destroyed i guess",
+    "T13: Exactly — it gets destroyed. So those enzymes are like tiny scissors that chop up the pathogen into pieces that the phagocyte can use or get rid of safely. Because phagocytes attack anything foreign without needing to know what it is first, what word describes that kind of defence — one that works against all pathogens the same way?",
+    "S14 (bored): huh?",
+    "T14: Would you like me to just tell you the answer to that one?",
+    "S15 (checkin-yes): yeah just tell me",
+    "T15: Right, so phagocytosis is just the name for how a phagocyte wraps around and destroys a pathogen with enzymes. And because phagocytes attack anything foreign without needing to know what it is first, we call that a **non-specific** defence. What do you think the lymphocyte produces when it recognises a pathogen?",
+    "[screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15",
+    "S16 (bored): this is long innit",
+    "T16: I know, there's quite a bit to take in! But here's the simple bit: lymphocytes spot something foreign on a pathogen — a kind of marker — and then they make a protein that sticks to it perfectly, like a key in a lock. What's that marker on the pathogen called?",
+    "S17 (bored): dunno mate im lost",
+    "T17: That marker's called an **antigen** — it's like a foreign flag on the pathogen's surface that your lymphocyte can recognise. So when a lymphocyte spots that antigen, what do you reckon it makes to stick to it?",
+    "S18 (minimal): what?",
+    "T18: No worries — let me put it differently. Your lymphocyte sees that foreign marker on the pathogen — the antigen — and your body makes a special protein to lock onto it and stop the pathogen. What's that special protein called?",
+    "[screenshot 11-exchange-18-phone.png and 11-exchange-18-laptop.png] exchange-18",
+    "S19 (try): like a protein thing that sticks to it?",
+    "T19: Do you want me to just tell you the name of that protein?",
+    "S20 (checkin-yes): yeah go on then",
+    "T20: Right — that protein is called an **antibody**. It's made by your lymphocytes and it locks onto the antigen to stop the pathogen. Your body can also make another protein called an **antitoxin** that neutralises toxins the pathogen releases. What do you think we call those long-lived lymphocytes that remember the pathogen?",
+    "S21 (bored): this is long",
+    "T21: No problem — I'll keep it short! So after you fight off an infection, some of your lymphocytes turn into special cells that stay in your body for years and remember that pathogen. What do we call those special memory cells?",
+    "[screenshot 12-exchange-21-phone.png and 12-exchange-21-laptop.png] exchange-21",
+    "S22 (minimal): umm what?",
+    "T22: They're called memory cells — they stay in your body and remember that pathogen. What happens to the strength of your immune response the second time you meet a pathogen you've had before?",
+    "S23 (try): gets stronger?",
+    "T23: Exactly — it gets stronger! So the second time, your memory cells spot that antigen straight away and your body makes antibodies much faster than the first time. Most of the time, the pathogen is destroyed before you even notice you're ill. How does that speed make a difference to whether you get symptoms?",
+    "S24 (try): you dont get sick cos its gone quick",
+    "T24: Shall I just tell you the rest of how that works?",
+    "[screenshot 13-exchange-24-phone.png and 13-exchange-24-laptop.png] exchange-24",
+    "S25 (checkin-no): nah im good",
+    "T25: So because your memory cells recognise that antigen instantly the second time, your whole immune system kicks in faster and stronger — that's called immunological memory. It's basically your body's ability to remember and react better to something it's seen before. What's the result of that faster, stronger response — what happens to the pathogen?",
+    "S26 (bored): huh?",
+    "T26: So the second time you meet that same pathogen, your memory cells recognise it straight away and your body fights it off super fast — often before you even get ill. It's like your immune system already knows the enemy. What happens to the pathogen when your body responds that quickly?",
+    "S27 (wrong): it mutates so it can hide?",
+    "T27: Not quite — when your body responds that fast, the pathogen gets destroyed before it can spread and make you ill, so you don't actually get sick. That's immunological memory: your immune system remembers pathogens it's seen before and fights them off super quickly the next time.",
+    "[screenshot 14-exchange-27-phone.png and 14-exchange-27-laptop.png] exchange-27",
+    "S28 (closing): ok thanks",
+    "T28: You're welcome! You've got a really solid understanding of how your body fights off infections now. Good luck with your revision.",
+    "[the lesson shows \"Lesson finished.\"]",
+    "[screenshot 15-end-phone.png and 15-end-laptop.png] end"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-17/b3-defences/01-home-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/02-subjects-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/02-subjects-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/03-topics-biology-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/03-topics-biology-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/04-lessons-b3-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/04-lessons-b3-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/05-ai-lesson-opening-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/05-ai-lesson-opening-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/06-exchange-3-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/06-exchange-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/07-exchange-6-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/07-exchange-6-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/08-exchange-9-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/08-exchange-9-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/09-exchange-12-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/09-exchange-12-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/10-exchange-15-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/10-exchange-15-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/11-exchange-18-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/11-exchange-18-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/12-exchange-21-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/12-exchange-21-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/13-exchange-24-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/13-exchange-24-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/14-exchange-27-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/14-exchange-27-laptop.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/15-end-phone.png",
+    "tools/site-test-runs/2026-10-17/b3-defences/15-end-laptop.png"
+  ],
+  "cost": 0.28644100000000006,
+  "apiCalls": 29,
+  "browserApiCalls": 51
+}

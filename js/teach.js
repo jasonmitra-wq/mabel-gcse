@@ -550,6 +550,19 @@ const Teach = (() => {
     return card;
   }
 
+  // Bored-student tester fix (2026-10-17), on by default; false keeps the old
+  // path. The tutor model writes **bold** and *italic*, which textContent showed
+  // as raw asterisks. Escape everything first, then turn only those two marks
+  // into tags. The student's own text is never formatted.
+  const RENDER_TUTOR_MARKDOWN = true;
+  function _setBubbleText(el, role, text) {
+    if (!RENDER_TUTOR_MARKDOWN || role === 'user') { el.textContent = text; return; }
+    el.innerHTML = String(text || '')
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[^*\w])\*([^*\n]+?)\*(?![*\w])/g, '$1<em>$2</em>');
+  }
+
   function _renderTranscript() {
     const thread = document.getElementById('teachThread');
     if (!thread) return;
@@ -565,7 +578,7 @@ const Teach = (() => {
       } else {
         const el = document.createElement('div');
         el.className = t.role === 'user' ? 'askme-q-bubble' : 'askme-a-bubble';
-        el.textContent = t.text;
+        _setBubbleText(el, t.role, t.text);
         thread.appendChild(el);
       }
     });
@@ -580,7 +593,7 @@ const Teach = (() => {
     if (!thread) return;
     const el = document.createElement('div');
     el.className = role === 'user' ? 'askme-q-bubble' : 'askme-a-bubble';
-    el.textContent = text;
+    _setBubbleText(el, role, text);
     thread.appendChild(el);
     el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }

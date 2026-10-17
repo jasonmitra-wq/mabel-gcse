@@ -417,12 +417,16 @@ const Maths = (() => {
   function _buildStepHtml(step, i, unlocked) {
     const unit = step.unit ? `<span class="maths-step-unit">${step.unit}</span>` : '';
     const isSkip = step.checkType === 'skip';
+    // MATHS_INPUT_FIXES: a locked step's prompt can give away an earlier answer
+    // ("Substitute y = 3 …"), so it stays hidden until the step unlocks.
+    const hidePrompt = MATHS_INPUT_FIXES && !unlocked;
     return `
       <div class="maths-step ${unlocked ? '' : 'locked'}" id="mathsStep_${i}" data-step="${i}">
         <div class="maths-step-num">
           <span id="stepLabel_${i}">Step ${i + 1}</span>
         </div>
-        <div class="maths-step-prompt">${step.prompt}</div>
+        ${hidePrompt ? `<div class="maths-step-prompt" id="stepPromptLocked_${i}" style="color:var(--muted);font-style:italic">Finish step ${i} first.</div>` : ''}
+        <div class="maths-step-prompt" id="stepPrompt_${i}"${hidePrompt ? ' style="display:none"' : ''}>${step.prompt}</div>
         ${isSkip
           ? `<div style="font-size:0.83rem;color:var(--muted);margin-bottom:0.5rem;font-style:italic">
                Read the worked example for this step, then mark as understood.
@@ -430,7 +434,7 @@ const Maths = (() => {
           : `<div class="maths-step-input-row">
                ${unit}
                <input type="text" id="stepInput_${i}" class="maths-step-input"
-                 placeholder="Your answer…" ${unlocked ? '' : 'disabled'}
+                 placeholder="${MATHS_INPUT_FIXES && step.unit ? 'Answer' : 'Your answer…'}" ${unlocked ? '' : 'disabled'}
                  onkeydown="if(event.key==='Enter')Maths._checkStep(${i})">
                <button class="maths-step-check-btn" id="stepBtn_${i}"
                  onclick="Maths._checkStep(${i})" ${unlocked ? '' : 'disabled'}>Check</button>
@@ -475,6 +479,12 @@ const Maths = (() => {
     const raw = input.value.trim();
     if (!raw) return;
 
+    const problem = _inputProblem(raw, step);
+    if (problem) {
+      const fb = document.getElementById(`stepFeedback_${stepIdx}`);
+      if (fb) { fb.className = 'maths-step-feedback err'; fb.textContent = problem; }
+      return;
+    }
     const correct = _matchAnswer(raw, step);
 
     if (correct) {
@@ -496,6 +506,7 @@ const Maths = (() => {
 
     if (input) { input.classList.add('correct-input'); input.disabled = true; }
     if (btn)   btn.remove();
+    if (MATHS_INPUT_FIXES) { const hl = document.getElementById(`stepHintLink_${stepIdx}`); if (hl) hl.style.display = 'none'; }
     if (fb)    { fb.className = 'maths-step-feedback ok'; fb.innerHTML = `✓ Correct. <span class="expl">${step.explanation || ''}</span>`; }
     if (label) label.innerHTML = `<span class="step-tick">✓</span> Step ${stepIdx + 1}`;
     el?.classList.add('correct');
@@ -521,7 +532,7 @@ const Maths = (() => {
     if (fb) { fb.className = 'maths-step-feedback err'; fb.textContent = 'Not quite — check your working.'; }
 
     const wrongs = _stepResults.filter(r => r === false).length;
-    if (wrongs === 1) _setTutorBar('Have a look at the example on the right — it shows you the method.', true);
+    if (wrongs === 1) _setTutorBar(MATHS_INPUT_FIXES && _NARROW() ? 'Tap "Worked example" at the top — it shows you the method.' : 'Have a look at the example on the right — it shows you the method.', true);
 
     setTimeout(() => {
       input?.classList.remove('wrong-input');
@@ -544,6 +555,9 @@ const Maths = (() => {
     const input = document.getElementById(`stepInput_${stepIdx}`);
     const btn   = document.getElementById(`stepBtn_${stepIdx}`);
     if (el)    el.classList.remove('locked');
+    document.getElementById(`stepPromptLocked_${stepIdx}`)?.remove();
+    const prompt = document.getElementById(`stepPrompt_${stepIdx}`);
+    if (prompt) prompt.style.display = '';
     if (input) { input.disabled = false; setTimeout(() => input.focus(), 60); }
     if (btn)   btn.disabled = false;
   }
@@ -714,8 +728,38 @@ const Maths = (() => {
   }
 
   // ── ANSWER MATCHING ───────────────────────────────────────────
+  // Bored-student tester fixes (2026-10-17), on by default; false keeps the old
+  // behaviour. (1) a/b is read as a fraction and compared by value, so 5/3 is
+  // accepted for 5/3 (defect 8). (2) When the prompt asks for a fraction and the
+  // answer is one, a decimal is not marked: she is asked for a fraction. (3) An
+  // answer with no number in it is not called wrong working: she is asked to
+  // type just the number. (4) A finished step no longer offers a hint. (5) On a
+  // narrow screen the worked example is a tab, not 'on the right'.
+  const MATHS_INPUT_FIXES = true;
+  const _NARROW = () => window.matchMedia && window.matchMedia('(max-width: 899px)').matches;
+  function _fractionValue(str) {
+    const m = String(str).replace(/\s+/g, '').replace(/−/g, '-').match(/^(-?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);
+    return m && +m[2] !== 0 ? +m[1] / +m[2] : null;
+  }
+  function _wantsFraction(step) {
+    return !!(step.displayAnswer && step.displayAnswer.includes('/') && /fraction/i.test(step.prompt || ''));
+  }
+  // Why an input could not be marked: '' if it can be marked, otherwise the message to show.
+  function _inputProblem(raw, step) {
+    if (!MATHS_INPUT_FIXES) return '';
+    const str = raw.trim();
+    if (_wantsFraction(step) && _fractionValue(str) === null && !isNaN(parseFloat(str.replace(/,/g, '')))) return 'Give this one as a fraction, like 5/3.';
+    if (_fractionValue(str) === null && isNaN(parseFloat(str.replace(/,/g, '').replace(/[£%\s]/g, '')))) return 'Type just your answer as a number, like 15.';
+    return '';
+  }
+
   function _matchAnswer(raw, step) {
     const str = raw.trim();
+    if (MATHS_INPUT_FIXES) {
+      const f = _fractionValue(str);
+      if (f !== null) return Math.abs(f - step.answer) <= (step.tolerance ?? 0.005) + 1e-9;
+      if (_wantsFraction(step)) return false;
+    }
 
     // If the step has a displayAnswer containing '/', accept fraction string too
     if (step.displayAnswer && step.displayAnswer.includes('/') && str === step.displayAnswer) {

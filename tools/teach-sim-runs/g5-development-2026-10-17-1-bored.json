@@ -1,0 +1,714 @@
+{
+  "id": "g5-development",
+  "subject": "geography",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Let's start with how we actually *measure* development, beginning with something called GNI per capita. What does \"per capita\" mean?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "like per person right",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Exactly — per person, spot on. This is called life expectancy, and it tells us the average age someone born in a country can expect to reach — it depends on things like healthcare, food, clean water, and how safe the place is. What does life expectancy measure in Japan compared to somewhere like Sierra Leone?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "huh? thats way too much lol",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Ha, I get it! Let me put it simply: life expectancy is just the average age people live to in a country — so if it's 84 in Japan, that means on average people there live to 84. What do you think causes people to live longer in Japan than in Sierra Leone?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "better healthcare and stuff i guess",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Exactly — healthcare, clean water, nutrition, all that stuff makes a huge difference. Now, there's another really important social indicator called **infant mortality rate**, or IMR. What do you think a high infant mortality rate tells us about a country?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "im so hungry rn ngl",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Fair enough — want me to just tell you what infant mortality rate means so we can keep moving?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "yeah ok fine tell me",
+      "studentType": "checkin-no",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Right, so **infant mortality rate** is the number of babies out of every 1,000 born alive who die before their first birthday — it's one of the clearest signs of how good a country's healthcare and nutrition are. What do you think a **High Income Country** is — what would make a country count as one?",
+      "recap": [
+        "Development is measured using indicators like GNI per capita, which shows average income per person.",
+        "Life expectancy tells us the average age people live to, and it depends on healthcare and living conditions.",
+        "Countries with better healthcare, clean water and nutrition tend to have higher life expectancy rates.",
+        "Infant mortality rate is another key indicator that shows how developed a country's healthcare system really is."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "huh? that was so long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Sorry, let me put it simpler — a **High Income Country** is just a wealthy country where people earn a lot of money on average. Think UK, USA, Japan — that kind of thing.\n\nWhat's the word we use to measure how much money people earn on average in a country?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "idk just tell me",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "It's called **GNI per capita** — that's the average income per person in a country. So countries aren't all wealthy or all poor — the World Bank sorts them into different income groups. What's an example of a Low Income Country you've heard of?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "umm like africa? is that a country lol",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right — Africa is a continent with lots of countries in it, and many of them are Low Income Countries. Can you name one specific Low Income Country you've heard of?",
+      "recap": null,
+      "flags": [
+        "yes/no question"
+      ]
+    },
+    {
+      "n": 9,
+      "student": "like... ethiopia? or sudan?",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Would you like me to just run through the different income groups quickly so you've got them straight?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "yeah ok go on then",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "So there are Low Income Countries like Ethiopia, Middle Income Countries whose economies are growing fast, and High Income Countries. Now, we're going to look at *why* some countries are so much richer than others — that difference is called the **development gap**. What do you think causes some countries to be wealthy while others stay poor?",
+      "recap": [
+        "Infant mortality rate tells us how healthy a country's babies are and how good healthcare is there.",
+        "GNI per capita is just the average amount of money each person earns in a country.",
+        "The World Bank divides countries into income groups — High Income, Middle Income, and Low Income Countries.",
+        "Most Low Income Countries are found in Africa, like Ethiopia and Sudan."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "So imagine one country is really wealthy — people have good jobs, hospitals, schools — and another country is really poor with fewer of those things. That big difference between them is what we call the development gap.\n\nWhat's one thing you think a wealthy country might have that a poor country struggles with?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "idk im hungry can we do this later",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Ha, fair enough — grab a snack if you need to! So the development gap is just the difference in wealth and quality of life between rich and poor countries. Right, so one big reason some countries stayed poor goes back hundreds of years: colonialism. What do you think happened to those countries' economies once the colonisers left?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "this is too long mate",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "No worries — I'll keep it shorter! So when European countries controlled Africa and Asia hundreds of years ago, they took out all the raw materials like gold and timber, and they actually *stopped* local businesses from competing with theirs. \n\nHow do you think that affected those countries once colonialism ended?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "can we skip this",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Want me to just tell you the rest of this bit?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "nah just make it simpler please",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Once they left, those countries were stuck — no industries of their own, and they could only sell cheap raw materials to other countries while having to buy back expensive manufactured goods. What do you think happened to their money when they had to keep buying expensive stuff and only selling cheap stuff?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Think of it this way — if you can only sell cheap things but have to buy expensive things, you lose money each time. So those countries got poorer and poorer.\n\nWhat happened to all that money they were losing?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "idk where it went",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Right — so when they sold cheap and bought expensive, that money flowed out to the richer countries. It's called **terms of trade** — and when it's unfair like this, poor countries stay poor. What's the difference between emergency aid and the long-term kind in terms of when they're used?",
+      "recap": [
+        "The development gap is the difference in wealth and living standards between rich and poor countries.",
+        "Colonialism is a big historical reason — European countries took resources and stopped local businesses from growing.",
+        "When colonies became independent, they had no industries, so they could only sell cheap raw materials.",
+        "This meant they spent money on expensive imported goods but earned very little from selling their own stuff."
+      ],
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "So emergency aid is quick money right after a disaster — like after an earthquake or flood. But development aid takes longer and builds things that help for years, like schools or water pipes. What's an example of when a country would need emergency aid?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "like after an earthquake or flood?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Exactly — good example. So emergency aid rushes in after disasters like earthquakes or floods to help people right away. Now, there's another strategy called **Fairtrade**. What do you think happens to the money when Fairtrade works well — who benefits most?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "the farmers get more money?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right — so Fairtrade tries to put more money into farmers' pockets. What do you think a country could do with the money it saves by not having to pay back its debts?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "spend it on like schools and hospitals?",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Exactly — schools and hospitals are spot on. Would you like me to tell you how debt relief actually works in practice?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "nah im ok thanks",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "So debt relief through the **HIPC initiative** actually cancelled debts for 36 of the world's poorest countries — meaning they didn't have to pay back money they owed, so they could spend it on things like schools instead. What happened to school attendance in Uganda after the fees were removed?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "it went up?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "It did go up — that's right! When Uganda stopped charging school fees thanks to debt relief, lots more families could afford to send their children to school. But here's the thing to think about: what might be a criticism of debt relief — what could go wrong with just cancelling debts?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Now, here's something really interesting: back in 2015, the UN got countries to agree on 17 big goals to tackle poverty, hunger, health, education and climate — they called them the **Sustainable Development Goals**, and they wanted them all done by 2030. What do you think \"extreme poverty\" means — how would you describe it?",
+      "recap": [
+        "Emergency aid helps right after disasters like earthquakes, but development aid builds long-term things like schools.",
+        "Fairtrade makes sure farmers get paid more money for what they produce and sell.",
+        "Debt relief like the HIPC initiative cancelled debts so poor countries could spend money on schools instead.",
+        "When Uganda removed school fees after debt relief, more families could afford to send their children."
+      ],
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "sorry im distracted my mates are asking me to come over",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "That's alright — sounds like you've got stuff going on! So basically, extreme poverty means living on less than $2.15 a day — not enough money for food, shelter, or healthcare. The UN set the Sustainable Development Goals to fix problems like that by 2030.\n\nWhat's one thing the SDGs try to tackle?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "can we skip this",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "So the SDGs are just 17 big goals the UN agreed on in 2015 to end poverty and fix global problems by 2030. Here's something really encouraging though: the number of people living in extreme poverty — that means earning less than $2. What year do you think we're talking about when that huge drop in extreme poverty happened?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "like 2015 maybe?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Good guess, but it's actually even more recent than that! Since 1990, the percentage of people living in extreme poverty dropped really sharply — from 36% back then down to just 8.6% in 2022. That's a huge change in just over 30 years.\n\nWhich parts of the world do you think saw most of that drop happen?",
+      "recap": null,
+      "flags": [
+        "stock praise",
+        "unanswerable: no word from the lesson"
+      ]
+    },
+    {
+      "n": 28,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Do you want me to just tell you where that poverty drop happened?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 29,
+      "student": "yeah just tell me",
+      "studentType": "checkin-yes",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "So extreme poverty means earning so little you can't afford basic food, shelter, or healthcare — and since 1990, the percentage of people living like that dropped massively from 36% down to just 8. 6% in 2022.",
+      "recap": [
+        "The UN created 17 Sustainable Development Goals in 2015 to tackle global problems by 2030.",
+        "Extreme poverty means living on less than $2.15 a day without enough for basics.",
+        "Since 1990, extreme poverty dropped massively — from 36% of people down to 8.6% in 2022.",
+        "This shows the development gap has been closing, especially in recent decades."
+      ],
+      "flags": []
+    },
+    {
+      "n": 30,
+      "student": "ok thanks that's mad",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "It really is — we've made huge progress in just a generation. You've got a solid grasp of how development works now.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "S26: can we skip this",
+    "would_quit": {
+      "turn": "T24",
+      "quote": "S25: sorry im distracted my mates are asking me to come over",
+      "why": "The student had already said 'huh?' to the debt-relief question. T24 ignored that and opened a new topic (SDGs), then asked about extreme poverty, which had not been taught. The student was already asking for a break, and this gave them a reason to leave."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T0: Hi! Let's start with how we actually *measure* development, beginning with something called GNI per capita. What does \"per capita\" mean?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T1: Exactly — per person, spot on. This is called life expectancy",
+        "note": "'This is called' has nothing to refer back to. GNI per capita was dropped without being explained. The question asks for a Japan vs Sierra Leone comparison, but neither figure had been given."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T2: Ha, I get it! Let me put it simply: life expectancy is just the average age people live to in a country",
+        "note": ""
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T3: What do you think a high infant mortality rate tells us about a country?",
+        "note": "Asks about IMR before IMR has been explained."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T4: Fair enough — want me to just tell you what infant mortality rate means so we can keep moving?",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": true,
+        "confusing": false,
+        "quote": "S6: huh? that was so long",
+        "note": "Teaches IMR, then asks about High Income Countries, which had not been taught. The student said it was too long."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T6: What's the word we use to measure how much money people earn on average in a country?",
+        "note": "Asks the student to recall GNI per capita. It was only named in T0 and never defined."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T7: What's an example of a Low Income Country you've heard of?",
+        "note": "No LIC examples (Niger, Malawi) had been given."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T8: Can you name one specific Low Income Country you've heard of?",
+        "note": "Asks again for an example that was never taught."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T9: Would you like me to just run through the different income groups quickly so you've got them straight?",
+        "note": "Does not confirm the student's answer 'ethiopia? or sudan?'."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T10: So there are Low Income Countries like Ethiopia, Middle Income Countries whose economies are growing fast, and High Income Countries.",
+        "note": "Mixes up NEEs with Middle Income Countries and leaves out the UMIC/LMIC split. Skips the Brandt Line. Asks about causes of the gap before teaching any."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T11: That big difference between them is what we call the development gap.",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T12: What do you think happened to those countries' economies once the colonisers left?",
+        "note": "Ignores 'can we do this later'. Asks what colonialism did to economies before teaching it."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T13: How do you think that affected those countries once colonialism ended?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T14: Want me to just tell you the rest of this bit?",
+        "note": ""
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T15: What do you think happened to their money when they had to keep buying expensive stuff and only selling cheap stuff?",
+        "note": ""
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T16: What happened to all that money they were losing?",
+        "note": ""
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T17: What's the difference between emergency aid and the long-term kind in terms of when they're used?",
+        "note": "Jumps to strategies with aid untaught. Skips the debt cycle, physical causes and political causes."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T18: What's an example of when a country would need emergency aid?",
+        "note": ""
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T19: Now, there's another strategy called **Fairtrade**. What do you think happens to the money when Fairtrade works well — who benefits most?",
+        "note": "Fairtrade is named but not explained before the question."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T20: What do you think a country could do with the money it saves by not having to pay back its debts?",
+        "note": "Debt relief had not been introduced."
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T21: Would you like me to tell you how debt relief actually works in practice?",
+        "note": ""
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T22: What happened to school attendance in Uganda after the fees were removed?",
+        "note": "The student declined ('nah im ok thanks') but got the explanation anyway. Uganda had never been mentioned."
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T23: what might be a criticism of debt relief — what could go wrong with just cancelling debts?",
+        "note": "No criticism of debt relief had been taught."
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T24: What do you think \"extreme poverty\" means — how would you describe it?",
+        "note": "Ignores the student's 'huh?'. Teaches SDGs, then asks about extreme poverty, which had not been taught."
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T25: What's one thing the SDGs try to tackle?",
+        "note": ""
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T26: the number of people living in extreme poverty — that means earning less than $2. What year do you think we're talking about when that huge drop in extreme poverty happened?",
+        "note": "The sentence is cut off. It asks about a 'drop' that was never described."
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T27: Good guess, but it's actually even more recent than that! Since 1990",
+        "note": "Contradicts itself: says 'more recent' than 2015, then gives 1990. Asks where the drop happened without having taught Asia."
+      },
+      {
+        "turn": "T28",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T28: Do you want me to just tell you where that poverty drop happened?",
+        "note": ""
+      },
+      {
+        "turn": "T29",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "T29: So extreme poverty means earning so little you can't afford basic food, shelter, or healthcare",
+        "note": "Promised to say where the drop happened but never says Asia. Repeats earlier content. Contains a '8. 6%' typo."
+      },
+      {
+        "turn": "T30",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "T30: You've got a solid grasp of how development works now.",
+        "note": "Overclaims. HDI, the Brandt Line, NEEs and physical causes were never taught, and the student answered almost nothing correctly."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: teach-then-ask",
+        "change": "Every closing question must test a fact stated in the same turn or the turn before. Block questions about untaught terms such as Fairtrade, Uganda, extreme poverty and LIC examples. Teach one fact, then ask about that exact fact.",
+        "quote": "T19: Now, there's another strategy called **Fairtrade**. What do you think happens to the money when Fairtrade works well — who benefits most?"
+      },
+      {
+        "target": "teach-core: required coverage of keyPoints[0].keyTerms[3] (HDI) and keyPoints[1].keyTerms[3] (Brandt Line)",
+        "change": "Do not move past keyPoint 0 until HDI and the composite-measure idea have been taught, since these are the core of examTip. Do not leave keyPoint 1 without stating that the Brandt Line is outdated. Block the closing praise if these were skipped.",
+        "quote": "T30: You've got a solid grasp of how development works now."
+      },
+      {
+        "target": "teach-core: length cap after 'too long' signals",
+        "change": "After any 'too long', 'huh?' or 'skip' message, keep turns to 30 words or fewer, with one fact and one short question. On 'huh?', re-explain the same point instead of starting a new topic.",
+        "quote": "S13: this is too long mate"
+      },
+      {
+        "target": "teach-core: respect student choices and break requests",
+        "change": "If the student declines an offer, do not deliver it; ask a quick recall question instead. If the student asks to stop or do it later, offer to save progress and give a 1-line summary rather than introducing new content.",
+        "quote": "S22: nah im ok thanks"
+      },
+      {
+        "target": "teach-core: output validation + keyPoints[4].writeBullets[5]",
+        "change": "Reject turns with cut-off sentences or self-contradiction such as 'more recent' followed by 1990. When answering 'where', state the bullet's answer: progress is concentrated in Asia and Africa lags. Also fix T10 so NEEs are not equated with Middle Income Countries, using keyPoints[1].keyTerms[2].def.",
+        "quote": "T26: the number of people living in extreme poverty — that means earning less than $2. What year do you think we're talking about when that huge drop in extreme poverty happened?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "would quit at T24",
+      "question does not match what was taught: T1, T3, T5, T6, T7, T8, T10, T12, T17, T19, T20, T22, T23, T24, T26, T27"
+    ]
+  },
+  "cost": 0.33286200000000005,
+  "mode": "run",
+  "date": "2026-10-17"
+}

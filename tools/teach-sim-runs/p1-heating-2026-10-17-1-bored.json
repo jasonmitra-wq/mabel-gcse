@@ -1,0 +1,461 @@
+{
+  "id": "p1-heating",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! When we heat something up, we're putting energy into it, and that energy makes the particles move around more. What do you think happens to the temperature when the particles have more energy?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "yeah but like my phone's about to die lol",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Oh no, plug it in when you get a chance! But quick thing — when particles get more energy and move around faster, the temperature *goes up*. That's what temperature really means: how fast the particles are jiggling.\n\nWhat happens to the temperature of water when you heat it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "it goes up innit cos particles move faster",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "We write that as an equation: **ΔE = mcΔθ**, which means change in energy equals mass times specific heat capacity times change in temperature. What does the **m** stand for in that equation?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk what m is ngl",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right, so in that equation, **m** just stands for how much of the substance you've got — like if you're heating up 1 kg of water versus 10 kg of water, the mass is different. What word do we use for how much something weighs?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "mass i guess? thats the m?",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Spot on — **m** is mass!\n\nDo you want me to walk you through what the **c** in that equation means?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "yeah go on then",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Right, so **Δθ** (that's the Greek letter delta theta) just means the temperature *change* — you take the final temperature and subtract the starting temperature. If you already know the energy and the mass and temperature change, but you need to find the specific heat capacity, which part of the equation would you move to the other side?",
+      "recap": [
+        "When you heat something, the particles move faster and the temperature goes up.",
+        "Energy, mass, and temperature are linked together in the equation ΔE = mcΔθ.",
+        "The m in that equation means mass — basically how much stuff you're heating up."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "No worries! So imagine you know the energy that went in, the mass, and how much the temperature changed — but you want to find out what the specific heat capacity **c** is. You'd need to rearrange the equation to get **c** on its own.\n\nWhat would you divide the energy by to get **c** by itself?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "this is confusing mate",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Now, in the actual practical where you heat something up to find its specific heat capacity, you need to measure how much electrical energy goes into it — and there's a handy meter called a **joulemeter** that does exactly that job for you. What does a joulemeter measure?",
+      "recap": [
+        "The formula ΔE = mcΔθ links energy, mass, specific heat capacity and temperature change together.",
+        "Δθ just means the temperature change — final temperature minus starting temperature.",
+        "You can rearrange the formula different ways depending on what you're trying to find.",
+        "If you know the energy, mass and temperature change, divide energy by both to find c."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "the energy thats gone in innit",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Now, here's something really important: when you heat something up, that energy doesn't just vanish — it gets stored inside the object. We call that stored energy the **internal energy**, and it's the total energy of all the particles moving and vibrating inside the substance. What do you think happens to those particles when you heat something up?",
+      "recap": [
+        "A joulemeter measures the electrical energy being supplied during the heating experiment.",
+        "This tells you exactly how much energy has gone into your substance.",
+        "You need this measurement to calculate the specific heat capacity using the results."
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "this is long mate",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Think of it this way — when you heat something, all those tiny particles inside start moving around faster and more energetically. That's the internal energy: it's all that movement and energy added together from every single particle.\n\nWhen you heat something up, what happens to how fast the particles are moving?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "they move faster i guess",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right — they move faster, and that's internal energy storing up inside the object. Now, **temperature** is actually different: it's how hot or cold something is, and it's linked to how fast the particles are moving *on average*.\n\nWhat do you think \"on average\" means when we're talking about millions of particles?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Okay, imagine you've got millions of particles bouncing around. Some move really fast, some slowly — temperature is about how fast *most* of them are moving, not every single one.\n\nHow would you measure temperature?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "idk with a thermometer?",
+      "studentType": "idk",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "You've got it — a thermometer measures temperature. Shall I just walk you through the rest of this bit about temperature and internal energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "no im bored lol",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Fair enough! So here's the thing: temperature is just a measure of how hot or cold something is, and it tells us about the average speed of the particles. The hotter something is, the faster those particles are moving on average.\n\nWhat do you measure temperature in?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "degrees? like celsius?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Exactly — degrees Celsius is right! So temperature tells us how fast the particles are moving *on average*. The higher the temperature, the faster they're jiggling about.\n\nWhat happens to how fast particles move when something gets hotter?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "they move faster innit",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Spot on — they move faster innit. So temperature is basically a measure of how fast the particles are moving on average, and it's linked to their kinetic energy, which is the energy of movement.",
+      "recap": [
+        "Internal energy is all the energy stored in an object from its moving particles.",
+        "Temperature measures how hot or cold something is and shows average particle speed.",
+        "When you heat something, particles move faster and temperature goes up.",
+        "Temperature is measured in degrees Celsius."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "ok can we stop now",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "No problem! You've got the big idea sorted — particles move faster when things heat up, and different materials need different amounts of energy to warm up. That's specific heat capacity, and it's why the sea keeps coastal towns cozy.\n\nSame time next week?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! Well done today — you've got the foundations of this sorted. Same time next week?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "yeah ok bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "See you next week!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "S13: no im bored lol",
+    "would_quit": {
+      "turn": "T13",
+      "quote": "Fair enough! So here's the thing: temperature is just a measure of how hot or cold something is, and it tells us about the average speed of the particles.",
+      "why": "The student refused more on this topic ('no im bored lol'), but the tutor kept re-teaching temperature for a third time. This came after the confusion at S7 was ignored and the complaint at S9 ('this is long mate')."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think happens to the temperature when the particles have more energy?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to the temperature of water when you heat it?",
+        "note": "The answer ('the temperature *goes up*') is stated in the same turn, so the question checks nothing."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What does the **m** stand for in that equation?",
+        "note": "Jumps straight to the full equation with no bridge, then asks about m before explaining any symbol. The student answers 'idk what m is ngl'."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What word do we use for how much something weighs?",
+        "note": "Mixes up mass and weight. Weight is a force in N; m is mass in kg."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to walk you through what the **c** in that equation means?",
+        "note": "The student accepts this offer, but T5 never delivers it."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": true,
+        "confusing": true,
+        "quote": "Right, so **Δθ** (that's the Greek letter delta theta) just means the temperature *change*",
+        "note": "Promised c but taught Δθ instead. Then asks about rearranging for c, which was never defined or shown. The student replies 'huh?'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What would you divide the energy by to get **c** by itself?",
+        "note": "Asks the student to rearrange without ever showing how or giving c = ΔE/(mΔθ). This student is weak at maths."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Now, in the actual practical where you heat something up to find its specific heat capacity",
+        "note": "Ignores 'this is confusing mate' and drops the rearrangement unresolved. The question just repeats the answer given in the same turn."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "We call that stored energy the **internal energy**, and it's the total energy of all the particles moving and vibrating inside the substance.",
+        "note": "Runs about 60 words; the student replies 'this is long mate'. It also omits potential energy from internal energy."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When you heat something up, what happens to how fast the particles are moving?",
+        "note": "Ignores 'this is long mate'. The answer ('moving around faster') is stated in the same turn. This is the second time the question has been asked."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think \"on average\" means when we're talking about millions of particles?",
+        "note": "An abstract question for a bored student; the reply is 'huh?'."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "temperature is about how fast *most* of them are moving, not every single one. How would you measure temperature?",
+        "note": "'Most' is wrong; temperature relates to the average. The question about measuring temperature does not test 'average'."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Shall I just walk you through the rest of this bit about temperature and internal energy?",
+        "note": ""
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you measure temperature in?",
+        "note": "Overrides the student's 'no' and re-teaches temperature anyway. The question about units was never taught."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to how fast particles move when something gets hotter?",
+        "note": "Third repeat of the same question, with the answer given in the same turn."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Spot on — they move faster innit.",
+        "note": "Mimics the student's slang awkwardly. Adds nothing new."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "different materials need different amounts of energy to warm up. That's specific heat capacity",
+        "note": "The summary claims content that was never taught in the session. c was never defined, and ΔE = mcΔθ was never used with numbers."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Well done today — you've got the foundations of this sorted. Same time next week?",
+        "note": "Repeats the sign-off already given in T16."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "See you next week!",
+        "note": ""
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: honour refusals and confusion signals",
+        "change": "Handle three signals. (1) If the student answers 'no' to a check-in, move to the next key point or offer to end; never re-teach the same point. (2) On 'confusing', 'huh?' or 'idk', re-explain the same idea in one sentence with one number example before moving on. (3) On 'this is long', cap the next turns at 30 words.",
+        "quote": "Fair enough! So here's the thing: temperature is just a measure of how hot or cold something is, and it tells us about the average speed of the particles."
+      },
+      {
+        "target": "teach-core: deliver what was offered",
+        "change": "When the student accepts an offer (e.g. 'walk you through what the c means'), the next turn must teach exactly that item. Teach c from keyPoints[0].writeBullets[0] before anything else. Do not switch to Δθ or rearranging.",
+        "quote": "Right, so **Δθ** (that's the Greek letter delta theta) just means the temperature *change*"
+      },
+      {
+        "target": "keyPoints[0].content, keyPoints[1].content, keyPoints[2].content, keyPoints[3].content",
+        "change": "Complete the truncated text: 'symbol c. I', 'Use the size of', 'Measure the energy supplied wi', 'Internal energy is the total '. Make sure keyPoints[0].content explicitly defines c as 'energy to warm 1 kg by 1°C' so the tutor teaches c before the equation.",
+        "quote": "What does the **m** stand for in that equation?"
+      },
+      {
+        "target": "keyPoints[1].tutor_note",
+        "change": "Add: 'For weak arithmetic, never ask the student to rearrange cold. First show a filled-in example, e.g. c = 630,000 ÷ (3 × 50) = 4200. Then ask the student only to pick the right number to divide by.'",
+        "quote": "What would you divide the energy by to get **c** by itself?"
+      },
+      {
+        "target": "keyPoints[3].tutor_note",
+        "change": "Add: 'Temperature relates to the AVERAGE kinetic energy per particle, not how fast \"most\" particles move. Do not ask the same \"what happens when heated\" question more than once. Use the lake-vs-spark checkpoint instead.'",
+        "quote": "temperature is about how fast *most* of them are moving, not every single one. How would you measure temperature?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "would quit at T13",
+      "question does not match what was taught: T2, T5, T6, T11, T13"
+    ]
+  },
+  "cost": 0.21456599999999998,
+  "mode": "run",
+  "date": "2026-10-17"
+}

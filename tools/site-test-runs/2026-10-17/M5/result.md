@@ -1,0 +1,157 @@
+# Site test: M5 (maths, 2026-10-17)
+
+**FAIL** · cost $0.2018 (5 tool calls, 0 calls from the site)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "A correct answer was rejected. '3/9' equals 1/3, but the app said 'Not quite — check your working.' Its own feedback after the retry then said '= 3/9 = 1/3'.",
+      "step": "Question 2 (cond-A02) Step 2: typed \"3/9\""
+    },
+    {
+      "what": "Progress was not saved after leaving the test. The student answered 4 questions with wrong attempts on Q2 and Q4, but the home page still shows 'Nothing secured yet', '0% across all subjects', 'No sessions yet' and Error log 'All clear'.",
+      "step": "Student taps Home and leaves the test"
+    },
+    {
+      "what": "The warm-up result shows all 5 progress bars green, although the score is 3 out of 5 and Q3 and Q5 were wrong.",
+      "step": "Warm-up result (after Warm-up 5)"
+    },
+    {
+      "what": "A resource failed to load with a 404 (Not Found) error.",
+      "step": "[console error] at start"
+    },
+    {
+      "what": "automatic check failed: cond-A02 step 2: \"3/9\" should be accepted",
+      "step": "app rejected; independent value 0.3333"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "On phone the header title 'Mabel's GCSE Tutor' wraps onto 3 lines. The top line 'Mabel's' is clipped off the top of the bar.",
+      "screenshot": "01-home-phone.png"
+    },
+    {
+      "what": "The wrapped header title 'GCSE Tutor' overlaps the large hero heading 'Mabel's GCSE Tutor'.",
+      "screenshot": "19-after-leaving-phone.png"
+    },
+    {
+      "what": "The 'balls remain' label squeezes the answer box so the placeholder is cut to 'Your'.",
+      "screenshot": "09-question-2-phone.png"
+    },
+    {
+      "what": "All five warm-up bars are green under '3 out of 5', so they contradict the score.",
+      "screenshot": "04-warm-up-result-phone.png"
+    },
+    {
+      "what": "The test status bar 'Topic test · question 3 of 10' is half hidden under the sticky top nav.",
+      "screenshot": "12-worked-example-3-laptop.png"
+    },
+    {
+      "what": "The Question/Worked example tab bar is scrolled off, and the 'Worked example' tab label is not visible.",
+      "screenshot": "12-worked-example-3-phone.png"
+    },
+    {
+      "what": "'Still stuck — next hint' is still shown under Step 1 after it is already marked correct.",
+      "screenshot": "10-q2-step1-phone.png"
+    }
+  ],
+  "would_quit": {
+    "turn": "Question 5",
+    "quote": "Step 2: \"Find P(at least one green) using the complement.\" — the student gives up here and leaves the question unfinished.",
+    "why": "Their fraction '3/9' was rejected in Q2, so they don't trust that a fraction like 14/15 will be accepted. The test also gives no feedback for leaving, so they just quit."
+  },
+  "fixes": [
+    {
+      "target": "Answer checker for numeric steps",
+      "change": "Parse fractions such as a/b and compare values with a tolerance, so 3/9, 1/3 and 0.3333 are all accepted for 1/3."
+    },
+    {
+      "target": "Topic test session storage",
+      "change": "Save each step attempt as it happens and on leaving the test. Update Dashboard %, History and Error log (Q2 step 2, Q4 steps 1–2) on the home page."
+    },
+    {
+      "target": "Warm-up result progress bar",
+      "change": "Colour each bar by its question's result: green for correct, red for wrong. Q3 and Q5 should show red for a 3/5 score."
+    },
+    {
+      "target": "Phone header (390px) app title",
+      "change": "Show the title on one line with ellipsis or show the logo only below 480px. Give the header a fixed height so it never overlaps the hero heading."
+    },
+    {
+      "target": "Step input with prefix label (cond-A02 step 1) and sticky test status bar",
+      "change": "On narrow screens put the 'balls remain' label above the input at full width. Add scroll-margin/top offset equal to the nav height so the 'question N of 10' bar and tabs stay visible."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    [console error] Failed to load resource: the server responded with a status of 404 (Not Found)
+    Maths topic M5 (Probability).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    Warm-up offered.
+    [screenshot 02-warm-up-phone.png and 02-warm-up-laptop.png] warm-up
+    Warm-up 1: "70 + 14" — typed "84" — app accepted — true answer 84
+    [check] OK: warm-up 1: "84" for 70 + 14 accepted — app accepted
+    Warm-up 2: "11 × 23" — typed "253" — app accepted — true answer 253
+    [check] OK: warm-up 2: "253" for 11 × 23 accepted — app accepted
+    Warm-up 3: "16 ÷ 2" — typed "11" — app rejected — true answer 8
+    [check] OK: warm-up 3: "11" for 16 ÷ 2 rejected — app rejected
+    [screenshot 03-warm-up-3-phone.png and 03-warm-up-3-laptop.png] warm-up-3
+    Warm-up 4: "Find 1/4 of 8" — typed "2" — app accepted — true answer 2
+    [check] OK: warm-up 4: "2" for Find 1/4 of 8 accepted — app accepted
+    Warm-up 5: "10% of 64" — typed "idk" — app rejected — true answer 6.4
+    [check] OK: warm-up 5: "idk" for 10% of 64 rejected — app rejected
+    [screenshot 04-warm-up-result-phone.png and 04-warm-up-result-laptop.png] warm-up-result
+    [screenshot 05-maths-topics-phone.png and 05-maths-topics-laptop.png] maths-topics
+    [screenshot 06-topic-m5-phone.png and 06-topic-m5-laptop.png] topic-M5
+    Question 1 (cond-A03): A card is drawn from a standard 52-card pack and is a court card (Jack, Queen or King). Find P(it is a Queen | it is a court card).
+    [screenshot 07-question-1-phone.png and 07-question-1-laptop.png] question-1
+      Step 1: "How many court cards are there in a standard pack?" — typed "12" (right) — app accepted "✓ Correct. There are 12 court cards: J, Q, K in each of 4 suits." — independent value 12
+    [check] OK: cond-A03 step 1: "12" should be accepted — app accepted; independent value 12
+    [screenshot 08-q1-step1-phone.png and 08-q1-step1-laptop.png] q1-step1
+      Step 2: "Given the card is a court card, find P(it is a Queen)." — typed "0.3333" (right) — app accepted "✓ Correct. P(Queen | court card) = 4/12 = 1/3." — independent value 0.3333
+    [check] OK: cond-A03 step 2: "0.3333" should be accepted — app accepted; independent value 0.3333
+    Question 2 (cond-A02): A bag has 4 red and 6 blue balls. A ball is drawn at random and found to be red. It is not replaced. What is P(the next ball drawn is also red)?
+    [screenshot 09-question-2-phone.png and 09-question-2-laptop.png] question-2
+      Step 1: student asks for a hint — "💡 Hint 1: Started with 4 red, 6 blue (10 total). One red removed."
+      Step 1: "After drawing a red ball (not replaced), how many balls remain?" — typed "9" (right) — app accepted "✓ Correct. After removing one red: 3 red, 6 blue, 9 total remain." — independent value 9
+    [check] OK: cond-A02 step 1: "9" should be accepted — app accepted; independent value 9
+    [screenshot 10-q2-step1-phone.png and 10-q2-step1-laptop.png] q2-step1
+      Step 2: "Find P(next ball is red | first was red)." — typed "3/9" (try) — app rejected "Not quite — check your working." — independent value 0.3333
+    [check] BROKEN: cond-A02 step 2: "3/9" should be accepted — app rejected; independent value 0.3333
+      Step 2: "Find P(next ball is red | first was red)." — typed "0.3333" (right) — app accepted "✓ Correct. P(second red | first red) = 3/9 = 1/3." — independent value 0.3333
+    [check] OK: cond-A02 step 2: "0.3333" should be accepted — app accepted; independent value 0.3333
+    Question 3 (prb-A04): A bag contains 3 red and 7 blue counters. A counter is drawn at random. Find P(blue) and P(not blue) as decimals.
+    [screenshot 11-question-3-phone.png and 11-question-3-laptop.png] question-3
+    Student opens the worked example.
+    [screenshot 12-worked-example-3-phone.png and 12-worked-example-3-laptop.png] worked-example-3
+      Step 1: "How many counters in total? Find P(blue) as a decimal." — typed "0.7" (right) — app accepted "✓ Correct. P(blue) = 7/10 = 0.7." — independent value 0.7
+    [check] OK: prb-A04 step 1: "0.7" should be accepted — app accepted; independent value 0.7
+    [screenshot 13-q3-step1-phone.png and 13-q3-step1-laptop.png] q3-step1
+      Step 2: "Find P(not blue) using the complement rule." — typed "0.3" (try) — app accepted "✓ Correct. P(not blue) = 1 - 0.7 = 0.3." — independent value 0.3
+    [check] OK: prb-A04 step 2: "0.3" should be accepted — app accepted; independent value 0.3
+    Question 4 (venn-A05): Universal set n(xi) = 50. P(A) = 2/5, P(B) = 3/10, P(A and B) = 1/10. Find n(A and B) and n(A only).
+    [screenshot 14-question-4-phone.png and 14-question-4-laptop.png] question-4
+      Step 1: "Find n(A and B) from P(A and B) = 1/10." — typed "7.25" (wrong) — app rejected "Not quite — check your working." — independent value 5
+    [check] OK: venn-A05 step 1: "7.25" should be rejected — app rejected; independent value 5
+      Step 1: "Find n(A and B) from P(A and B) = 1/10." — typed "5" (right) — app accepted "✓ Correct. n(A and B) = (1/10) x 50 = 5." — independent value 5
+    [check] OK: venn-A05 step 1: "5" should be accepted — app accepted; independent value 5
+    [screenshot 15-q4-step1-phone.png and 15-q4-step1-laptop.png] q4-step1
+      Step 2: "Find n(A only). First find n(A), then subtract n(A and B)." — typed "20" (try) — app rejected "Not quite — check your working." — independent value 15
+    [check] OK: venn-A05 step 2: "20" should be rejected — app rejected; independent value 15
+      Step 2: "Find n(A only). First find n(A), then subtract n(A and B)." — typed "15" (right) — app accepted "✓ Correct. n(A) = 20. n(A only) = 20 - 5 = 15." — independent value 15
+    [check] OK: venn-A05 step 2: "15" should be accepted — app accepted; independent value 15
+    Question 5 (tree-B05): A bag has 7 green and 3 yellow balls. Two balls are drawn without replacement. Find P(at least one green) as a fraction.
+    [screenshot 16-question-5-phone.png and 16-question-5-laptop.png] question-5
+      Step 1: "Use the complement: find P(no green balls drawn) = P(both yellow)." — typed "0.0667" (right) — app accepted "✓ Correct. P(both yellow) = (3/10) x (2/9) = 6/90 = 1/15." — independent value 0.0667
+    [check] OK: tree-B05 step 1: "0.0667" should be accepted — app accepted; independent value 0.0667
+    [screenshot 17-q5-step1-phone.png and 17-q5-step1-laptop.png] q5-step1
+      Step 2: "Find P(at least one green) using the complement." — the student gives up here and leaves the question unfinished.
+    [screenshot 18-question-5-left-unfinished-phone.png and 18-question-5-left-unfinished-laptop.png] question-5-left-unfinished
+    Student taps Home and leaves the test.
+    [screenshot 19-after-leaving-phone.png and 19-after-leaving-laptop.png] after-leaving

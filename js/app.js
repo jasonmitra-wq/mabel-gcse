@@ -2,6 +2,11 @@
    APP.JS — Main controller: home, routing, dashboard, AI calls
    ============================================================ */
 
+// Bored-student tester layout fixes (2026-10-17): turns on the ".ui-fix" rules
+// at the end of css/style.css (phone header). false keeps the old layout.
+const UI_FIXES = true;
+if (UI_FIXES) document.documentElement.classList.add('ui-fix');
+
 // ── AI API ────────────────────────────────────────────────────
 const AI = (() => {
   let _queue = Promise.resolve();

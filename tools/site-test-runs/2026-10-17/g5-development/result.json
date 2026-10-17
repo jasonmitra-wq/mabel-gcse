@@ -1,0 +1,238 @@
+{
+  "id": "g5-development",
+  "mode": "lesson",
+  "date": "2026-10-17",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "S18's wrong answer ('emergency aid is like for schools') was never corrected. The tutor jumped straight to Fairtrade, so the student keeps the misconception that emergency aid is long-term development aid.",
+        "step": "T18"
+      },
+      {
+        "what": "The student asked a clarifying question ('what do you mean by very little'). It was ignored and the LIC question was dropped. Low income countries were never actually explained.",
+        "step": "T8"
+      },
+      {
+        "what": "The tutor asked for colonialism's effect, then got an off-topic reply. It then said 'loses its factories and industries like that' as if it had already taught that colonialism destroyed industries, but it never had. This is a non-sequitur.",
+        "step": "T14"
+      },
+      {
+        "what": "The tutor gave the answer, then immediately asked the same question back: Fairtrade money goes to schools and water, then 'Where does that extra Fairtrade money actually go?'",
+        "step": "T19"
+      },
+      {
+        "what": "The student said 'nah not really' to more strategies. The tutor carried on anyway and re-asked a question the student had already answered at S21 (what debt-relief money is spent on).",
+        "step": "T22"
+      },
+      {
+        "what": "SDGs were asked about before being taught, and intermediate technology got a one-line mention. Both were then marked as covered in the notes.",
+        "step": "T24"
+      },
+      {
+        "what": "The extreme poverty threshold is inconsistent: '$2' in T26, then '$2.15' in T27. The same 1990 question was asked twice.",
+        "step": "T26/T27"
+      },
+      {
+        "what": "The student guessed 'half'. The tutor neither confirmed nor corrected this, and later said about 36% without saying the guess was too high.",
+        "step": "T28/T29"
+      },
+      {
+        "what": "'Development categories and the Brandt Line' was marked covered (2/5), but the Brandt Line was never mentioned in the chat. HDI was not taught either.",
+        "step": "T12 (2/5 covered)"
+      },
+      {
+        "what": "The tutor told the student 'you've got the right idea' for 'divided by countries', which was wrong.",
+        "step": "T1"
+      },
+      {
+        "what": "Console 404: a resource failed to load.",
+        "step": "page load"
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "Raw markdown asterisks are shown: '**aid**' and '**Fairtrade**'.",
+        "screenshot": "11-exchange-18-laptop.png"
+      },
+      {
+        "what": "Raw markdown asterisks '**Fairtrade**' appear in the tutor bubble.",
+        "screenshot": "11-exchange-18-phone.png"
+      },
+      {
+        "what": "The site title 'Mabel's GCSE Tutor' wraps onto 3 lines in the header, and the top line 'Mabel's' is clipped off the top of the screen.",
+        "screenshot": "05-ai-lesson-opening-phone.png"
+      },
+      {
+        "what": "The breadcrumb pill 'G5: The Changing Economic World' runs off the right edge and is cut off.",
+        "screenshot": "07-exchange-6-phone.png"
+      },
+      {
+        "what": "The 'Jump to' panel's heading is hidden under the sticky header. Key Terms text is cut off mid-sentence at the bottom of the panel ('capita' simply means 'per person'').",
+        "screenshot": "11-exchange-18-laptop.png"
+      },
+      {
+        "what": "The Brandt Line slide thumbnail is too small to read.",
+        "screenshot": "07-exchange-6-laptop.png"
+      },
+      {
+        "what": "The end screen on phone is scrolled to the middle of the chat. 'Lesson finished.' and the Topics / Slides / Ask buttons are not visible.",
+        "screenshot": "16-end-phone.png"
+      }
+    ],
+    "would_quit": {
+      "turn": "S22",
+      "quote": "nah not really. is it gonna help with my homework tho",
+      "why": "The tutor ignored the 'no' and repeated a question already answered, after many 'can we skip/finish' requests. A bored student closes the tab here."
+    },
+    "fixes": [
+      {
+        "target": "chat bubble renderer",
+        "change": "Render markdown bold (**x**) as <strong> instead of showing literal asterisks."
+      },
+      {
+        "target": "tutor prompt: answer handling",
+        "change": "Before moving on, explicitly correct any wrong answer (e.g. S18 emergency aid, S28 'half', S1 'countries'). Never re-ask a question just answered or just explained."
+      },
+      {
+        "target": "tutor prompt: student questions and refusals",
+        "change": "Answer clarifying questions (S8) before continuing. When the student says 'no' or asks to skip, give a 2–3 line summary and move to the next key point instead of asking another question."
+      },
+      {
+        "target": "key-point coverage logic",
+        "change": "Only mark a key point covered when its required terms were actually taught (Brandt Line, HDI, LIC for point 2; SDGs for point 4). Use one consistent figure: $2.15/day."
+      },
+      {
+        "target": "header CSS at ≤420px",
+        "change": "Hide or shorten the site title on phone (logo only) and truncate the breadcrumb pill with an ellipsis, so the header fits on one line without clipping."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "AI lesson opens by default (in TEACH_ENABLED)",
+      "ok": true,
+      "detail": "AI lesson opened"
+    }
+  ],
+  "transcript": [
+    "[console error] Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Lesson g5-development (Geography › The Changing Economic World › Development — measuring and explaining the gap).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "[screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects",
+    "[screenshot 03-topics-geography-phone.png and 03-topics-geography-laptop.png] topics-geography",
+    "[screenshot 04-lessons-g5-phone.png and 04-lessons-g5-laptop.png] lessons-G5",
+    "[check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened",
+    "T0: Hi! We're starting by looking at what development actually means and how we measure it. One key way we measure wealth is something called GNI per capita. What does \"per capita\" mean?",
+    "[screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening",
+    "S1 (wrong): is it like... per country? total money divided by countries?",
+    "T1: Good catch — it's actually divided by the number of *people* in the country, not countries, but you've got the right idea! So we also measure development using social indicators — things that show how well people are living. What do you think life expectancy might be higher in a country with better healthcare?",
+    "S2 (bored): yeah obviously lol. can we do something else tho",
+    "T2: No problem! So life expectancy is just the average age people live to in a country — it tells us a lot about healthcare, food, clean water, all that stuff. If Japan's life expectancy is 84 but Sierra Leone's is 55, what does that big difference suggest about those two countries?",
+    "S3 (wrong): um like japan has more money so better hospitals? but also sierra leone is hotter maybe",
+    "T3: You're right that better healthcare and resources definitely matter — and life expectancy shows us the average age people live to in a country, which reflects all of that. What do you think a high infant mortality rate would tell us about a country?",
+    "[screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3",
+    "S4 (try): like loads of babies dying? so bad healthcare or poverty or something",
+    "T4: Exactly — you've nailed it, that's what infant mortality rate shows us. Do you want me to explain what we use to measure development overall, or would you rather keep working through this yourself?",
+    "S5 (try): nah just tell me what it is im bored of guessing",
+    "T5: Countries like the UK, Japan and the USA are classified as HICs — High Income Countries — because they have high GNI per capita, which means people earn a lot of money on average. What does \"high GNI per capita\" mean, roughly speaking?",
+    "S6 (offtopic): wait whats per capita mean tho... also im starving can we finish soon",
+    "T6: Per capita means \"per person\" — so high GNI per capita means people earn lots on average. We can finish soon, don't worry! What do you think that means for things like hospitals or schools there?",
+    "[screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6",
+    "S7 (try): they can afford better hospitals and schools i guess",
+    "T7: Exactly right — so if people earn more money on average, countries can spend more on things like hospitals, schools, and healthcare. That's what makes a real difference to people's lives. On the flip side, what do you think happens in countries where people earn very little on average?",
+    "S8 (minimal): what do you mean by very little tho",
+    "T8: Now, some countries aren't stuck in that situation forever — some have economies that are growing really fast and moving up the income ladder, which is where NEEs come in. What does NEE stand for?",
+    "S9 (wrong): newly emerging economies?",
+    "T9: Right — you're spot on! Would you like me to run through the rest of the income categories quickly so we can move on?",
+    "[screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9",
+    "S10 (wrong): nah im good i think ive got it now",
+    "T10: So those income categories help us understand where countries sit right now, but some countries are changing fast. NEEs are countries whose economies are growing really quickly as they industrialise — that's why they're moving up from being low income to higher income. Think of China and Brazil as examples. What do you think \"industrialising\" means in that context?",
+    "S11 (bored): huh? that's confusing",
+    "T11: I see — let me put it more simply. Industrialising just means a country is building more factories and businesses, making things to sell, and earning more money because of it. That's what's happening in China and Brazil right now. What's one thing that happens to a country's income level when it industrialises?",
+    "S12 (try): it goes up i guess?",
+    "T12: Exactly right — as countries industrialise and earn more money, they move up the income levels. So here's the thing — there's a massive difference in wealth between the richest and poorest countries in the world. What word would you use to describe that gap between them?",
+    "[screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12",
+    "S13 (try): like... a big difference? idk maybe inequality?",
+    "T13: Inequality — that's exactly the right word for it. European countries colonised Africa, Asia and the Caribbean — that means they took control of those places and took raw materials out of them. How do you think that might have affected those colonised countries' ability to develop later on?",
+    "S14 (offtopic): sorry im kinda hungry can we do this later",
+    "T14: No worries — grab a snack if you need to! When a country loses its factories and industries like that, what do you think it ends up having to sell to other countries instead?",
+    "S15 (offtopic): wait did my mates message me? lemme check",
+    "T15: Go ahead — no rush! So when those industries were destroyed, countries had to sell raw materials like coffee, copper and cocoa instead — things straight from the ground that haven't been made into anything yet. Why do you think a country selling cheap coffee might struggle compared to one selling expensive electronics?",
+    "[screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15",
+    "S16 (wrong): um like coffee is cheaper so they get less money?",
+    "T16: Exactly right — so they earn less money and can't invest in things like schools and hospitals. Do you want me to walk you through what happens next with that money they do earn?",
+    "S17 (try): yeah ok but like make it quick tho",
+    "T17: Let's start with **aid** — that's money, goods or expertise given from one country or organisation to another. Some aid is quick emergency help after disasters, but some is long-term stuff like building schools and water supplies. What do you think is the difference between emergency aid after a flood and long-term development aid?",
+    "S18 (wrong): emergency aid is like for schools and stuff right?",
+    "T18: Another strategy is **Fairtrade**, which is a scheme that guarantees farmers get paid a decent price for their crops, plus extra money for their community to spend on projects like schools or clean water. What do you think happens to the extra money that Fairtrade adds on top of the regular price?",
+    "[screenshot 11-exchange-18-phone.png and 11-exchange-18-laptop.png] exchange-18",
+    "S19 (bored): huh? can we do something else",
+    "T19: So with Fairtrade, farmers get paid more than the normal price, plus extra money goes to their community for projects like schools or water. Where does that extra Fairtrade money actually go in the community?",
+    "S20 (try): goes to like schools and water stuff i guess",
+    "T20: Exactly — that's where it goes. Now, some poor countries have massive debts to repay to richer countries and banks, which costs them billions each year. When a country's debt gets cancelled, what do you think they'd do with the money they're no longer paying back?",
+    "S21 (try): spend it on like schools and hospitals maybe?",
+    "T21: Exactly right — schools and hospitals would get the money instead of debt repayments. Would you like me to tell you about some other strategies countries use to close the development gap?",
+    "[screenshot 12-exchange-21-phone.png and 12-exchange-21-laptop.png] exchange-21",
+    "S22 (wrong): nah not really. is it gonna help with my homework tho",
+    "T22: It'll definitely help — understanding these strategies is exactly what you need. So when countries get debt relief through the HIPC scheme, that money they save gets freed up for development. What kinds of things do you think countries would actually spend that money on?",
+    "S23 (minimal): ok fine",
+    "T23: So when Uganda got debt relief, the government stopped paying billions to rich countries and banks — and instead used that money at home. They actually abolished school fees so poor kids could go to school for free. What happened because of that?",
+    "S24 (try): more kids could go to school?",
+    "T24: Exactly — more kids could go to school and get education. So there are other ways to close the gap too. Intermediate technology means simple tools people can build and fix themselves, like hand pumps. But what do you think the UN created the Sustainable Development Goals to try to do?",
+    "[screenshot 13-exchange-24-phone.png and 13-exchange-24-laptop.png] exchange-24",
+    "S25 (bored): huh?",
+    "T25: So the UN got all countries together in 2015 and said \"let's agree on 17 big goals we all want to reach by 2030\" — things like ending poverty, stopping hunger, improving health and education. Why do you think countries would want to make those goals together instead of just working on their own?",
+    "S26 (bored): this is long mate",
+    "T26: Basically the UN created the SDGs so all countries would work together on the same big problems instead of each doing their own thing. So here's something really positive — the number of people living in extreme poverty, which means earning less than $2. What percentage of the world do you think was living in extreme poverty back in 1990?",
+    "S27 (bored): can we skip this",
+    "T27: So extreme poverty means earning less than $2.15 a day — not enough for food, shelter or healthcare. The really good news is that far fewer people live like that now than in 1990. How much of the world's population was living in extreme poverty in 1990?",
+    "[screenshot 14-exchange-27-phone.png and 14-exchange-27-laptop.png] exchange-27",
+    "S28 (try): dunno like half?",
+    "T28: Want me to just tell you the answer to that one?",
+    "S29 (checkin-no): yeah go on then",
+    "T29: Right, so extreme poverty means your income is too low to afford the basics like food, shelter and healthcare. The amazing thing is that the share of people living like that has dropped massively since 1990 — we're talking from about 36% down to under 10% now. That's actually all five key points of this lesson covered!",
+    "S30 (closing): ok thanks thats cool",
+    "T30: You're welcome! You've got a solid grip on development now — from how we measure it, right through to how extreme poverty has actually fallen dramatically. Good luck with your revision!",
+    "[screenshot 15-exchange-30-phone.png and 15-exchange-30-laptop.png] exchange-30",
+    "[the lesson shows \"Lesson finished.\"]",
+    "[screenshot 16-end-phone.png and 16-end-laptop.png] end"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-17/g5-development/01-home-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/02-subjects-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/02-subjects-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/03-topics-geography-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/03-topics-geography-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/04-lessons-g5-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/04-lessons-g5-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/05-ai-lesson-opening-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/05-ai-lesson-opening-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/06-exchange-3-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/06-exchange-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/07-exchange-6-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/07-exchange-6-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/08-exchange-9-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/08-exchange-9-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/09-exchange-12-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/09-exchange-12-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/10-exchange-15-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/10-exchange-15-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/11-exchange-18-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/11-exchange-18-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/12-exchange-21-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/12-exchange-21-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/13-exchange-24-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/13-exchange-24-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/14-exchange-27-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/14-exchange-27-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/15-exchange-30-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/15-exchange-30-laptop.png",
+    "tools/site-test-runs/2026-10-17/g5-development/16-end-phone.png",
+    "tools/site-test-runs/2026-10-17/g5-development/16-end-laptop.png"
+  ],
+  "cost": 0.3422219999999999,
+  "apiCalls": 31,
+  "browserApiCalls": 71
+}

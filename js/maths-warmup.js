@@ -250,6 +250,10 @@ const MathsWarmup = (() => {
   let _questions = [];
   let _current   = 0;
   let _score     = 0;
+  // Bored-student tester fix (2026-10-17): each pip shows that answer's result
+  // (green right, red wrong). false keeps every finished pip green.
+  const PIPS_SHOW_RESULT = true;
+  let _marks     = [];
   let _callback  = null;
   let _subtitle  = '';
 
@@ -264,6 +268,7 @@ const MathsWarmup = (() => {
     _questions = _generateSet(getLevel());
     _current   = 0;
     _score     = 0;
+    _marks     = [];
     _subtitle  = _SUBTITLES[Math.floor(Math.random() * _SUBTITLES.length)];
     _renderOverlay();
   }
@@ -277,6 +282,7 @@ const MathsWarmup = (() => {
     const q       = _questions[_current];
     const correct = _checkAnswer(raw, q);
     if (correct) _score++;
+    _marks[_current] = correct;
 
     _showResult(q, correct);
 
@@ -310,7 +316,7 @@ const MathsWarmup = (() => {
     const q   = _questions[_current];
     const pips = [0,1,2,3,4].map(i =>
       `<div style="width:30px;height:5px;border-radius:999px;background:${
-        i < _current ? 'var(--green)' : i === _current ? 'var(--amber)' : 'var(--border2)'
+        i < _current ? (PIPS_SHOW_RESULT && _marks[i] === false ? 'var(--red)' : 'var(--green)') : i === _current ? 'var(--amber)' : 'var(--border2)'
       }"></div>`
     ).join('');
 
@@ -393,8 +399,8 @@ const MathsWarmup = (() => {
     const overlay = document.getElementById('maths-warmup');
     if (!overlay) { if (_callback) _callback(); return; }
 
-    const pips = [0,1,2,3,4].map(() =>
-      `<div style="width:30px;height:5px;border-radius:999px;background:var(--green)"></div>`
+    const pips = [0,1,2,3,4].map(i =>
+      `<div style="width:30px;height:5px;border-radius:999px;background:${PIPS_SHOW_RESULT && _marks[i] === false ? 'var(--red)' : 'var(--green)'}"></div>`
     ).join('');
 
     const icon = _score >= 5 ? '🎯' : _score >= 4 ? '👍' : _score >= 3 ? '💪' : '🤔';

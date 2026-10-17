@@ -1,0 +1,154 @@
+# Site test: M6 (maths, 2026-10-17)
+
+**FAIL** · cost $0.1852 (4 tool calls, 0 calls from the site)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "Console shows a 404 for a missing resource on load.",
+      "step": "[console error] Failed to load resource: 404"
+    },
+    {
+      "what": "Question 3 is mathematically flawed. Lower half = 23 − 16 = 7 and upper half = 30 − 23 = 7, so neither half is wider. The worked example still teaches 'upper half wider → positive skew', which pushes the student towards a wrong conclusion.",
+      "step": "Question 3 (stat-boxplots-A05) Step 2"
+    },
+    {
+      "what": "A step with a definite numeric answer (50%) has no answer box and is just 'marked as understood', so the student is never tested on it.",
+      "step": "Question 1 (stat-boxplots-A01) Step 3"
+    },
+    {
+      "what": "Question 5 is marked 'Question 5 complete' with green progress after only tapping 'Mark as understood' twice. Nothing was written or checked, yet it is worth 2 marks in a test.",
+      "step": "Question 5 (cum-B01) Steps 1–2"
+    },
+    {
+      "what": "Leaving the test mid-way saves nothing. Dashboard still says 'Nothing secured yet', History says 'No sessions yet' and Error log says 'All clear', even though the wrong answer 26 on Q4 and two wrong warm-ups were given.",
+      "step": "Student taps Home and leaves the test / after-leaving"
+    },
+    {
+      "what": "Warm-up result says 3 out of 5, but all five progress segments show green, including the two wrong answers.",
+      "step": "warm-up-result"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "Site title 'Mabel's GCSE Tutor' wraps to three lines in the phone header. The top line is clipped and 'Tutor' spills below the header bar.",
+      "screenshot": "01-home-phone.png"
+    },
+    {
+      "what": "Wrapped header title 'Tutor' overlaps the question text scrolling underneath.",
+      "screenshot": "10-q2-step1-phone.png"
+    },
+    {
+      "what": "Wrapped header overlaps the big 'Mabel's GCSE Tutor' hero heading.",
+      "screenshot": "17-after-leaving-phone.png"
+    },
+    {
+      "what": "Feedback says 'Have a look at the example on the right', but on phone there is no right column; the example is behind a tab.",
+      "screenshot": "14-q4-step1-phone.png"
+    },
+    {
+      "what": "The 'Topic test · question 4 of 10' bar is half hidden under the sticky nav, so its text is cut off at the top.",
+      "screenshot": "13-question-4-laptop.png"
+    },
+    {
+      "what": "The feedback message 'Have a look at the example on the right…' is cut off under the sticky nav.",
+      "screenshot": "14-q4-step1-laptop.png"
+    },
+    {
+      "what": "Warm-up result shows five green bars despite a 3/5 score.",
+      "screenshot": "04-warm-up-result-phone.png"
+    }
+  ],
+  "would_quit": {
+    "turn": "Question 5",
+    "quote": "Student taps Home and leaves the test.",
+    "why": "Steps with no answer box feel pointless. After four answered questions, the home screen shows no progress at all, so the effort seems wasted."
+  },
+  "fixes": [
+    {
+      "target": "stat-boxplots-A05 question data",
+      "change": "Change the numbers so one half is wider, e.g. median 21: lower = 5, upper = 9, so 'upper'. Add a 'lower/upper' choice input instead of 'Mark as understood'."
+    },
+    {
+      "target": "stat-boxplots-A01 step 3",
+      "change": "Add a numeric answer box accepting '50' or '50%'."
+    },
+    {
+      "target": "Topic test progress saving",
+      "change": "Save each answered step and wrong attempt as soon as it happens. Show the partial test in History and Dashboard, and add wrong answers (e.g. Q4 '26') to the Error log."
+    },
+    {
+      "target": "Phone header CSS",
+      "change": "Below 480px, shorten the title to 'Mabel's' or hide it beside the logo, and use white-space: nowrap so it never wraps or overlaps content."
+    },
+    {
+      "target": "Test feedback copy and sticky offset",
+      "change": "On phone, say 'Tap the Worked example tab'. Add scroll-margin-top equal to the nav height so the test status bar is not hidden under the sticky nav."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    [console error] Failed to load resource: the server responded with a status of 404 (Not Found)
+    Maths topic M6 (Statistics).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    Warm-up offered.
+    [screenshot 02-warm-up-phone.png and 02-warm-up-laptop.png] warm-up
+    Warm-up 1: "47 + 43" — typed "90" — app accepted — true answer 90
+    [check] OK: warm-up 1: "90" for 47 + 43 accepted — app accepted
+    Warm-up 2: "3 × 13" — typed "39" — app accepted — true answer 39
+    [check] OK: warm-up 2: "39" for 3 × 13 accepted — app accepted
+    Warm-up 3: "40 ÷ 4" — typed "13.5" — app rejected — true answer 10
+    [check] OK: warm-up 3: "13.5" for 40 ÷ 4 rejected — app rejected
+    [screenshot 03-warm-up-3-phone.png and 03-warm-up-3-laptop.png] warm-up-3
+    Warm-up 4: "Find 3/4 of 32" — typed "24" — app accepted — true answer 24
+    [check] OK: warm-up 4: "24" for Find 3/4 of 32 accepted — app accepted
+    Warm-up 5: "50% of 64" — typed "idk" — app rejected — true answer 32
+    [check] OK: warm-up 5: "idk" for 50% of 64 rejected — app rejected
+    [screenshot 04-warm-up-result-phone.png and 04-warm-up-result-laptop.png] warm-up-result
+    [screenshot 05-maths-topics-phone.png and 05-maths-topics-laptop.png] maths-topics
+    [screenshot 06-topic-m6-phone.png and 06-topic-m6-laptop.png] topic-M6
+    Question 1 (stat-boxplots-A01): A box plot shows: min = 5, Q1 = 12, median = 18, Q3 = 27, max = 35. Find (a) the IQR, (b) the range, and (c) state what percentage of data lies between Q1 and Q3.
+    [screenshot 07-question-1-phone.png and 07-question-1-laptop.png] question-1
+      Step 1: "Calculate the interquartile range (IQR = Q3 − Q1)." — typed "15" (right) — app accepted "✓ Correct. IQR = Q3 − Q1 = 27 − 12 = 15." — independent value 15
+    [check] OK: stat-boxplots-A01 step 1: "15" should be accepted — app accepted; independent value 15
+    [screenshot 08-q1-step1-phone.png and 08-q1-step1-laptop.png] q1-step1
+      Step 2: "Calculate the range (max − min)." — typed "30" (right) — app accepted "✓ Correct. Range = max − min = 35 − 5 = 30." — independent value 30
+    [check] OK: stat-boxplots-A01 step 2: "30" should be accepted — app accepted; independent value 30
+      Step 3: "What percentage of data lies between Q1 and Q3?" — marked as understood (no answer box).
+    Question 2 (stat-sampling-A05): A researcher systematically samples every 10th person from a queue of 500. The first person selected is number 3. (a) How many people are in the sample? (b) What is the number of the last person selected?
+    [screenshot 09-question-2-phone.png and 09-question-2-laptop.png] question-2
+      Step 1: student asks for a hint — "💡 Hint 1: Sample size = population ÷ interval"
+      Step 1: "How many people are in the sample?" — typed "50" (right) — app accepted "✓ Correct. Sample size = 500 ÷ 10 = 50 people." — independent value 50
+    [check] OK: stat-sampling-A05 step 1: "50" should be accepted — app accepted; independent value 50
+    [screenshot 10-q2-step1-phone.png and 10-q2-step1-laptop.png] q2-step1
+      Step 2: "What is the number of the last person selected?" — typed "493" (try) — app accepted "✓ Correct. Last person = 3 + (50 − 1) × 10 = 3 + 490 = 493." — independent value 493
+    [check] OK: stat-sampling-A05 step 2: "493" should be accepted — app accepted; independent value 493
+    Question 3 (stat-boxplots-A05): A box plot shows that 25% of data is below 16 and 75% is below 30. The median is 23. Find (a) the IQR and (b) state which half of the box (lower or upper) is wider.
+    [screenshot 11-question-3-phone.png and 11-question-3-laptop.png] question-3
+    Student opens the worked example.
+    [screenshot 12-worked-example-3-phone.png and 12-worked-example-3-laptop.png] worked-example-3
+      Step 1: "Identify Q1 and Q3, then calculate the IQR." — typed "14" (right) — app accepted "✓ Correct. Q1 = 16 (25th percentile), Q3 = 30 (75th percentile). IQR = 30 − 16 = 14." — independent value 14
+    [check] OK: stat-boxplots-A05 step 1: "14" should be accepted — app accepted; independent value 14
+      Step 2: "Which half of the box is wider — lower (Q1 to median) or upper (median to Q3)?" — marked as understood (no answer box).
+    Question 4 (stat-sampling-A01): A school has 300 students: 120 in Year 10 and 180 in Year 11. A stratified sample of 50 is required. How many students should be selected from each year group?
+    [screenshot 13-question-4-phone.png and 13-question-4-laptop.png] question-4
+      Step 1: "How many students should be selected from Year 10?" — typed "26" (wrong) — app rejected "Not quite — check your working." — independent value 20
+    [check] OK: stat-sampling-A01 step 1: "26" should be rejected — app rejected; independent value 20
+    [screenshot 14-q4-step1-phone.png and 14-q4-step1-laptop.png] q4-step1
+      Step 1: "How many students should be selected from Year 10?" — typed "20" (right) — app accepted "✓ Correct. Year 10: (120 ÷ 300) × 50 = 0.4 × 50 = 20 students." — independent value 20
+    [check] OK: stat-sampling-A01 step 1: "20" should be accepted — app accepted; independent value 20
+      Step 2: "How many students should be selected from Year 11?" — typed "30" (try) — app accepted "✓ Correct. Year 11: (180 ÷ 300) × 50 = 0.6 × 50 = 30 students. Check: 20 + 30 = 50 ✓" — independent value 30
+    [check] OK: stat-sampling-A01 step 2: "30" should be accepted — app accepted; independent value 30
+    Question 5 (cum-B01): Group A: median 55, IQR 20. Group B: median 62, IQR 35. Compare the distributions.
+    [screenshot 15-question-5-phone.png and 15-question-5-laptop.png] question-5
+      Step 1: "Compare the medians. What does this tell us?" — marked as understood (no answer box).
+      Step 2: "Compare the IQRs. What does the larger IQR tell us about Group B?" — marked as understood (no answer box).
+    [screenshot 16-question-5-left-unfinished-phone.png and 16-question-5-left-unfinished-laptop.png] question-5-left-unfinished
+    Student taps Home and leaves the test.
+    [screenshot 17-after-leaving-phone.png and 17-after-leaving-laptop.png] after-leaving

@@ -1,10 +1,10 @@
 # Maths answer check
 
-Generated 2026-10-16 by tools/maths-recompute.js. Read-only: no question was changed.
+Generated 2026-10-17 by tools/maths-recompute.js. Read-only: no question was changed.
 
-All 600 questions, 1706 steps. Checked by the app: 1375; checkType skip: 331.  
-Checked steps: ok 1375, ambiguous 0, wrong 0, mismatch 0.  
-Error rate (wrong + mismatch over checked steps): 0/1375 = 0.0%. Questions with at least one error: 0/600.  
+All 600 questions, 1706 steps. Checked by the app: 1376; checkType skip: 330.  
+Checked steps: ok 1376, ambiguous 0, wrong 0, mismatch 0.  
+Error rate (wrong + mismatch over checked steps): 0/1376 = 0.0%. Questions with at least one error: 0/600.  
 
 | Question | Step | Prompt | Stored | Recomputed | Status | Note |
 |---|---|---|---|---|---|---|
@@ -75,7 +75,7 @@ Error rate (wrong + mismatch over checked steps): 0/1375 = 0.0%. Questions with 
 | rat-B05 | 2 | Convert 3500 m to kilometres. | 3.5 | 3.5 | ok |  |
 | rat-B06 | 0 | How many litres of yellow paint are needed for every 18 litres of red? | 12 | 12 | ok |  |
 | rat-B06 | 1 | What is the total amount of orange paint made? (litres) | 30 | 30 | ok |  |
-| rat-B06 | 2 | Check: does 30 litres split in ratio 3:2 give 18 and 12? Enter 1 for y | 1 | 1 | skip |  |
+| rat-B06 | 2 | Check: split 30 litres in the ratio 3:2. It gives 18 litres of red and | 1 | 1 | skip |  |
 | rat-C03 | 0 | Write the proportionality equation using a constant k. | 0 | — | skip |  |
 | rat-C03 | 1 | Substitute x = 3, y = 36 to find k. | 4 | 4 | ok |  |
 | rat-C03 | 2 | Write the full equation. | 0 | — | skip |  |
@@ -449,7 +449,7 @@ Error rate (wrong + mismatch over checked steps): 0/1375 = 0.0%. Questions with 
 | quad-A03 | 0 | Find two numbers that multiply to −10 and add to 3. | 0 | — | skip |  |
 | quad-A03 | 1 | State the positive root. | 2 | 2 | ok |  |
 | quad-A03 | 2 | State the negative root. | -5 | -5 | ok |  |
-| quad-A04 | 0 | (x + 3)² = x² + 2(3)x + 9. What is the coefficient of x? | 6 | 6 | ok |  |
+| quad-A04 | 0 | Expand (x + 3)² = (x + 3)(x + 3). What is the coefficient of x? | 6 | 6 | ok |  |
 | quad-A04 | 1 | What is the constant term? | 9 | 9 | ok |  |
 | quad-A05 | 0 | Find two numbers that multiply to 12 and add to −7. | 0 | — | skip |  |
 | quad-A05 | 1 | Find the smaller root. | 3 | 3 | ok |  |
@@ -582,7 +582,7 @@ Error rate (wrong + mismatch over checked steps): 0/1375 = 0.0%. Questions with 
 | spd-C04 | 3 | How many minutes after 09:30 do they meet? Round to the nearest minute | 86 | 86 | ok |  |
 | pch-A01 | 0 | Find the multiplier for a 15% increase. | 1.15 | 1.15 | ok |  |
 | pch-A01 | 1 | Calculate the new value. | 207000 | 207000 | ok |  |
-| pch-A02 | 0 | £350 is what percentage of the original price? | 70 | 70 | skip |  |
+| pch-A02 | 0 | After a 30% reduction, £350 is 100% − 30% = 70% of the original price. | 70 | 70 | skip |  |
 | pch-A02 | 1 | Find 100% (the original price). | 500 | 500 | ok |  |
 | pch-B01 | 0 | Write the multiplier for 4% increase. | 1.04 | 1.04 | ok |  |
 | pch-B01 | 1 | Apply for 3 years: £2000 × 1.04³. | 1.124864 | — | skip |  |
@@ -1430,7 +1430,7 @@ Error rate (wrong + mismatch over checked steps): 0/1375 = 0.0%. Questions with 
 | stat-cumulative-C04 | 3 | Describe the key features of the resulting box plot. | 0 | — | skip |  |
 | stat-boxplots-A01 | 0 | Calculate the interquartile range (IQR = Q3 − Q1). | 15 | 15 | ok |  |
 | stat-boxplots-A01 | 1 | Calculate the range (max − min). | 30 | 30 | ok |  |
-| stat-boxplots-A01 | 2 | What percentage of data lies between Q1 and Q3? | 0 | — | skip |  |
+| stat-boxplots-A01 | 2 | What percentage of data lies between Q1 and Q3? | 50 | 50 | ok |  |
 | stat-boxplots-A02 | 0 | Which dataset has the higher median? | 0 | — | skip |  |
 | stat-boxplots-A02 | 1 | Which dataset has the greater spread (compare IQRs)? | 0 | — | skip |  |
 | stat-boxplots-A03 | 0 | Calculate the IQR. | 12 | 12 | ok |  |

@@ -1,0 +1,170 @@
+{
+  "id": "p2-static",
+  "mode": "lesson",
+  "date": "2026-10-17",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "Console shows a 404 (Not Found) for a resource on load.",
+        "step": "page load (before T0)"
+      },
+      {
+        "what": "The student asked to skip. The tutor said 'Of course, no problem!' but did not skip. It kept teaching and ended with another question.",
+        "step": "S3/T3"
+      },
+      {
+        "what": "The student accepted the offer to speed up ('yeah go faster pls'). The tutor then asked 5 more questions over 5 more turns (T7–T11) instead of summarising the remaining points.",
+        "step": "S7/T7–T11"
+      },
+      {
+        "what": "Physics error: the tutor says the door handle has a positive charge and the opposite charges 'rush together'. At GCSE the handle is neutral or earthed, and the spark is charge (electrons) discharging to earth. 'Exactly' then confirmed the student's 'they rush together'.",
+        "step": "T3/T4"
+      },
+      {
+        "what": "Questionable physics: the tutor says the charge stays because 'your skin and clothes are insulators'. In the carpet example the insulating carpet or shoe soles stop the charge reaching earth. Skin is a fairly poor insulator.",
+        "step": "T1"
+      },
+      {
+        "what": "The hair-standing-on-end question was never answered or followed up. Lightning was dropped in with no link to the question, then the topic jumped straight to field lines.",
+        "step": "T5–T7"
+      },
+      {
+        "what": "The tutor asked a question the student had already been told the answer to: T10 asks what happens at the door handle, which was answered at T4 (spark). The student replied 'huh?'.",
+        "step": "T10/S11"
+      },
+      {
+        "what": "A key term is labelled 'Equal positive charge'. That is a description, not a GCSE key term.",
+        "step": "after T2 (key terms panel)"
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "Site title 'Mabel's GCSE Tutor' wraps to 3 lines and is clipped at the top of the header ('Mabel's' cut off).",
+        "screenshot": "01-home-phone.png"
+      },
+      {
+        "what": "Header title is again clipped. The nav icons overflow, so the settings and home buttons are cut off the right edge.",
+        "screenshot": "05-ai-lesson-opening-phone.png"
+      },
+      {
+        "what": "Topic page shows no 'Physics' heading or back button. The first card (Energy) sits flush under the header with its top edge hidden.",
+        "screenshot": "03-topics-physics-phone.png"
+      },
+      {
+        "what": "Sidebar 'JUMP TO' heading and the top of the panel are hidden under the sticky lesson header.",
+        "screenshot": "06-exchange-3-laptop.png"
+      },
+      {
+        "what": "Key terms panel says '(9)' but only 2 terms are visible. The other 7 are cut off with no visible scroll cue.",
+        "screenshot": "10-end-laptop.png"
+      },
+      {
+        "what": "End of lesson: the 'Lesson finished.' text and the Topics / Show me the slides / Ask something else buttons are not visible.",
+        "screenshot": "10-end-phone.png"
+      }
+    ],
+    "would_quit": {
+      "turn": "S11",
+      "quote": "huh?",
+      "why": "They had asked to skip, then to go faster, and still got 5 more questions, including one already answered at T4."
+    },
+    "fixes": [
+      {
+        "target": "AI tutor behaviour on skip / 'go faster'",
+        "change": "On a skip or speed-up request, give a 2–3 bullet summary of each remaining point and mark them covered. Ask no further questions unless the student asks."
+      },
+      {
+        "target": "p2-static lesson content / tutor prompt (charge-at-door-handle point)",
+        "change": "State that the handle is neutral or earthed and the spark is electrons discharging to earth. Remove 'door handle has positive charge'. Say the insulating carpet or shoes keep the charge on you, not your skin."
+      },
+      {
+        "target": "Header CSS at phone width (390px)",
+        "change": "Shorten the title to 'Mabel's' or hide it below 420px, keep it on one line, and let the nav icons wrap or move into a menu so none are cut off."
+      },
+      {
+        "target": "Lesson sidebar CSS (laptop)",
+        "change": "Set the sidebar's sticky top to at least the sticky lesson header height so 'JUMP TO' is not hidden. Make the key terms panel scroll (overflow-y:auto) or collapse each point's terms with a visible scroll cue."
+      },
+      {
+        "target": "Missing asset causing the 404",
+        "change": "Find the 404 URL in the network log and fix the path or remove the reference."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "AI lesson opens by default (in TEACH_ENABLED)",
+      "ok": true,
+      "detail": "AI lesson opened"
+    }
+  ],
+  "transcript": [
+    "[console error] Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Lesson p2-static (Physics › Electricity › Static electricity).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "[screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects",
+    "[screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics",
+    "[screenshot 04-lessons-p2-phone.png and 04-lessons-p2-laptop.png] lessons-P2",
+    "[check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened",
+    "T0: Hi! Ever wondered why you get shocked touching a door handle after walking on carpet? That's static electricity at work. When you rub two materials together, electrons move between them. What happens to the material that gains those electrons?",
+    "[screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening",
+    "S1 (try): it gets negative charge innit",
+    "T1: Exactly — it builds up negative charge. The reason the charge *stays* on you and doesn't just disappear is because your skin and clothes are insulators — they don't let charge flow away easily. What's an insulator?",
+    "S2 (try): something that stops charge flowing away",
+    "T2: Spot on — it stops charge flowing away. So here's the thing: when you've got negative charge built up on you, and you touch the metal door handle, something happens between those two charges. If the door handle has a different type of charge, what do you think they do to each other?",
+    "S3 (bored): can we skip this",
+    "T3: Of course, no problem! Here's the quick bit: when you've got negative charge on you and the door handle has positive charge, they're *different* charges — and different charges pull towards each other. That's called attraction. When you touch the handle, what happens between those opposite charges?",
+    "[screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3",
+    "S4 (try): they rush together and zap u",
+    "T4: That's it exactly — they rush together and create that spark. Now, what happens if *both* things have the same type of charge? Two negatively charged objects push each other apart instead — that's called repulsion. What do you think happens when two objects with the same charge get near each other?",
+    "S5 (minimal): yeah ok whatever",
+    "T5: Think of it like this: if two things both have negative charge, they're the same, so they push each other away — that's repulsion. It's the opposite of attraction. When you pull a jumper over your head and your hair stands on end, why do you think the hairs are all pushing away from each other?",
+    "S6 (bored): this is long ngl",
+    "T6: Do you want me to just run through the rest quickly?",
+    "[screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6",
+    "S7 (try): yeah go faster pls",
+    "T7: Right, so when two things have the same charge they push apart — that's repulsion. Lightning is just a huge spark jumping from a storm cloud to the ground or another cloud. What direction do you think the field lines point around a positive charge?",
+    "S8 (try): um outward from it?",
+    "T8: Right — they do point outward from a positive charge. So which direction would a positive test charge actually move if you placed it near a positive sphere?",
+    "S9 (try): away from the sphere i guess",
+    "T9: Exactly — it moves away, so the field lines point in the direction the positive charge would move. Now, the closer together those field lines are, the stronger the electric field is at that spot. What does a bunch of field lines packed tightly together tell you?",
+    "[screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9",
+    "S10 (try): that the field is stronger there?",
+    "T10: Right — that's exactly it. So when a charged object has a really strong electric field around it, something amazing happens: electrons can actually jump through the air from one thing to another. That jump through the air is what we call a spark. What do you think happens when you touch a door handle after walking on a carpet?",
+    "S11 (bored): huh?",
+    "T11: When your hand gets close to the metal handle, the electric field around you is so strong that electrons actually leap through the air between your hand and the handle. That leap through the air is the spark — that's the little shock you feel and sometimes see. What's jumping through the air in that spark?",
+    "S12 (bored): electrons right?",
+    "T12: Exactly — electrons jump through the air, and that's the spark you feel as the shock. So you've now got the four big ideas: charge builds up when you walk on carpet, your body gets charged, that creates a strong electric field around you, and when you touch the handle, electrons leap through the air as a spark.",
+    "[screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12",
+    "S13 (closing): ok cool thanks",
+    "T13: You're welcome! You've got a really solid grasp of how static electricity works now — from the carpet all the way to the spark at the door handle. Good luck with your revision!",
+    "[the lesson shows \"Lesson finished.\"]",
+    "[screenshot 10-end-phone.png and 10-end-laptop.png] end"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-17/p2-static/01-home-phone.png",
+    "tools/site-test-runs/2026-10-17/p2-static/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-17/p2-static/02-subjects-phone.png",
+    "tools/site-test-runs/2026-10-17/p2-static/02-subjects-laptop.png",
+    "tools/site-test-runs/2026-10-17/p2-static/03-topics-physics-phone.png",
+    "tools/site-test-runs/2026-10-17/p2-static/03-topics-physics-laptop.png",
+    "tools/site-test-runs/2026-10-17/p2-static/04-lessons-p2-phone.png",
+    "tools/site-test-runs/2026-10-17/p2-static/04-lessons-p2-laptop.png",
+    "tools/site-test-runs/2026-10-17/p2-static/05-ai-lesson-opening-phone.png",
+    "tools/site-test-runs/2026-10-17/p2-static/05-ai-lesson-opening-laptop.png",
+    "tools/site-test-runs/2026-10-17/p2-static/06-exchange-3-phone.png",
+    "tools/site-test-runs/2026-10-17/p2-static/06-exchange-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/p2-static/07-exchange-6-phone.png",
+    "tools/site-test-runs/2026-10-17/p2-static/07-exchange-6-laptop.png",
+    "tools/site-test-runs/2026-10-17/p2-static/08-exchange-9-phone.png",
+    "tools/site-test-runs/2026-10-17/p2-static/08-exchange-9-laptop.png",
+    "tools/site-test-runs/2026-10-17/p2-static/09-exchange-12-phone.png",
+    "tools/site-test-runs/2026-10-17/p2-static/09-exchange-12-laptop.png",
+    "tools/site-test-runs/2026-10-17/p2-static/10-end-phone.png",
+    "tools/site-test-runs/2026-10-17/p2-static/10-end-laptop.png"
+  ],
+  "cost": 0.183588,
+  "apiCalls": 14,
+  "browserApiCalls": 30
+}

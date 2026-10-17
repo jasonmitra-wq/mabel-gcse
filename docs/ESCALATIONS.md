@@ -166,3 +166,12 @@ Website tester, maths mode, one run each (tools/site-test-runs/2026-10-17/M1-5, 
 - Test header: "Topic test · question N of 10" is replaced by "Good — keep going." after a correct step, and is half hidden under the sticky nav on laptop.
 - Resume shows the stored answer in finished steps, not what she typed.
 - Hint box stays inside a step after it is correct; "£" in a prompt and as a prefix.
+
+## Brief 2026-10-17 (Sonnet tutor): AI lessons still failing after teach-then-ask (step 5)
+
+Same sample re-run once with TEACH_THEN_ASK on (tools/teach-sim-runs/*-2026-10-17-4-bored.md; tools/site-test-runs/2026-10-17/p1-energy-stores-2, b3-defences-4). All four text lessons and both website lessons FAIL; every one still has engagement 2 and a quit point. All stay live (runbook section 1). For the planning chat:
+- Questions asked before teaching: b3-defences 4 → 1, g5-development 4 → 1, p2-current-voltage 1 → 1, p1-energy-stores 2 → 3. The tutor now often asks back the sentence it has just said ("…called cilia… What are these tiny hair-like structures called?"), which the judge calls a question that tests nothing.
+- Lessons are longer (29–35 tutor turns, was 23–33): every content sentence must be taught before a point is covered (p1-energy-stores point 1 has 18 sentences).
+- A correct answer often gets no feedback when the check-in ("Do you want me to just tell you the rest?") fires on that turn (both website runs, 2–3 times each). This is the check-in path in js/teach-core.js `_decide`: the check-in prompt says not to teach or acknowledge anything.
+- She asks to stop ("can we do this later im hungry") and gets the same question again; no pause button.
+- Content errors seen from the tutor: "the lamp wastes the other 85 J" for a 100 W / 15 W example; heating "conduction and convection are the two ways"; "0. 15" with a stray space (also seen with Haiku: "0. 4").

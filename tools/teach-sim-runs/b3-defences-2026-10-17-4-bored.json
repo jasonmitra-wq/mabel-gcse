@@ -1,0 +1,750 @@
+{
+  "id": "b3-defences",
+  "subject": "biology",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! Every second, pathogens are trying to get into your body, but you have layers of defence stopping most of them. One of the first is in your nose, throat and airways, where sticky mucus is produced to trap pathogens before they reach your lungs. What does the mucus do to the pathogens?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "this is long lol",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Fair enough, I'll keep it short! The mucus is sticky, so it catches the pathogens before they reach your lungs. What does the mucus do to the pathogens?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "traps them i guess? so they cant get in",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, trapping them stops them getting in. But the mucus needs somewhere to go, so tiny hairs called cilia line your airways and beat to sweep the mucus and trapped pathogens up and out, where they get swallowed. What do the cilia do to the mucus?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "they sweep it up and out i think",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, swept up and out, where the mucus gets swallowed. And that's where the next defence waits: your stomach makes hydrochloric acid, which is extremely acidic at around pH 2, killing most pathogens that come in through your mouth. What does the stomach make to kill these pathogens?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "nah im hungry now tbh",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Fair enough, sounds like a snack break is due! Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "nah just ask me questions, thats easier",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Okay, questions it is. Before pathogens can cause disease, they have to get inside your body, so your first defences try to stop them getting in. Your stomach does this with hydrochloric acid, at around pH 2, which kills most pathogens you swallow in food and drink. What does the acid in your stomach do to most pathogens?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "this is long lol",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Fair, it has been a lot, so one tiny question: the acid in your stomach does what to most pathogens you swallow?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "kills them?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes, it kills them. Skin is a tough barrier, and if it's cut, pathogens can get in, which is why wounds get infected. If a pathogen gets past the barriers, white blood cells (also called leucocytes) take over as part of your immune system. What do white blood cells form part of in your body?",
+      "recap": [
+        "Sticky mucus in your airways traps pathogens before they reach your lungs.",
+        "Tiny hairs called cilia sweep the mucus up and out to be swallowed.",
+        "Stomach acid, around pH 2, kills most pathogens you swallow.",
+        "These defences all work to stop pathogens getting inside you."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "the immune system?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes, the immune system, that's the right place. White blood cells patrol your blood and tissues looking for pathogens, and there are two main types that each fight them in a different way. Their scientific name is leucocytes. What is the other name for a white blood cell?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "The other name is leucocyte, so you can use either one. If a pathogen gets past the physical barriers, your immune system takes over. What takes over when a pathogen gets past the barriers?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "the immune system",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Let me say that another way: \"leucocyte\" is just the scientific word for a white blood cell, so both names mean the same thing. And the immune system is what takes over once a pathogen gets past the skin and other barriers. What is the scientific name for a white blood cell?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "That's fair, it's been a lot of back and forth. Would you like me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "yeah just tell me",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "White blood cells have a nucleus and no haemoglobin, so they don't carry oxygen (red blood cells do that). The two main types are phagocytes and lymphocytes.\n\nPhagocytes are the fast-response unit of your immune system: they engulf pathogens and digest them. What kind of cell is a phagocyte?",
+      "recap": [
+        "Skin is a tough barrier, but cuts let pathogens in.",
+        "If pathogens get past the barriers, the immune system takes over.",
+        "White blood cells patrol your blood and tissues hunting for pathogens.",
+        "White blood cell and leucocyte mean the same thing."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "a white blood cell",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right, a white blood cell. A phagocyte surrounds a pathogen and pulls it inside, then enzymes digest it; this is called phagocytosis. Phagocytes are non-specific, so they attack anything that isn't a normal body cell. Why can a phagocyte attack so many different pathogens?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "cause they have loads of enzymes?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not quite: the enzymes only digest the pathogen once it's inside. What does a phagocyte do to the foreign thing to pull it inside?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "wait my phone's dying lol",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "No worries, take your time. A phagocyte changes shape to wrap around anything foreign, then pulls it inside. What does it do to the foreign thing to get it inside the cell?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "it wraps around it and pulls it in",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "You've got the main idea. Would you like me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "nah go on then ask me something",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Phagocytes are non-specific, which means they don't need to recognise a particular pathogen. They attack anything that isn't a normal body cell, so they act against all pathogens equally, which makes them the body's first responder. What do phagocytes act as when an infection starts?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "first responder?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes, \"first responder\" means they're first to react when an infection starts. They get there fast because they don't need to recognise one particular germ, they attack anything that isn't a normal body cell. Once inside, the pathogen is digested by enzymes. What do phagocytes use to digest a pathogen once it's inside?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "enzymes?",
+      "studentType": "minimal",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Yes, enzymes digest the pathogen once it's inside. Phagocytes are non-specific: they act against all pathogens equally, with no need for a specific match or prior exposure. They spot antigens, the unique proteins on a pathogen's surface, and respond by producing antibodies and antitoxins. What type of cell produces antibodies and antitoxins?",
+      "recap": [
+        "Phagocytes are white blood cells that engulf pathogens and destroy them.",
+        "They wrap around anything foreign and pull it inside the cell.",
+        "Enzymes then digest the pathogen once it's inside; this is phagocytosis.",
+        "Phagocytes are non-specific, attacking anything that isn't a normal body cell, so they respond first."
+      ],
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "phagocytes?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Not quite. Phagocytes engulf pathogens, while lymphocytes are the white blood cells that make antibodies and antitoxins. They're the precision team: each lymphocyte targets one specific antigen, a unique protein on a pathogen's surface. Which white blood cells produce antibodies when they detect an antigen they recognise?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "lymphocytes?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Lymphocytes are the ones, yes. When a lymphocyte detects an antigen it recognises, it makes antibodies, proteins shaped to fit that one antigen exactly, like a key for a lock. What shape does an antibody need to have to bind to its antigen?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "no idea",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "That's okay, let's try it another way. An antigen is a protein on a pathogen's surface, like a flag saying \"I'm foreign\". The lymphocyte makes an antibody with a shape that fits that antigen exactly, like a key fits one lock.\n\nWhere on a pathogen is the antigen found?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "on the surface?",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Yes, the surface is exactly right. Would you like me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "nah im ok",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Once the antibody binds to the antigen, it marks the pathogen for destruction, clumps pathogens together, or neutralises them. Antibodies don't do the killing themselves, so they're more like a tag that says \"deal with this one\".\n\nWhat does an antibody bind to on the pathogen?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "the antigen",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Your answer is right, it binds to the antigen. Think of the antigen as the pathogen's flag and the antibody as a key that only fits that one lock. Once it clicks on, the pathogen is marked, clumped together or neutralised.\n\nWhich protein is the \"flag\" on the pathogen that the antibody locks onto?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "The antigen is the pathogen's flag, and each antibody fits just one. Antitoxins also neutralise toxins. Next: during your first infection, some lymphocytes become memory cells, which stay in your body long after you've recovered.\n\nHow long do memory cells stay in your body?",
+      "recap": [
+        "Lymphocytes are the white blood cells that make antibodies and antitoxins.",
+        "An antigen is a protein on a pathogen's surface, like a \"foreign\" flag.",
+        "Each antibody's shape fits one antigen exactly, like a key in a lock.",
+        "Antibodies tag pathogens to be clumped, neutralised or destroyed, but don't kill them."
+      ],
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "like a few weeks?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Not quite, memory cells last much longer than that: they stay long after the infection is gone, which is why you don't get chickenpox twice. They remember the antigen from your first infection, so next time your body hits back fast.\n\nWhy don't you get chickenpox a second time?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 28,
+      "student": "cuz ur body already killed it?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "It's because memory cells stay behind and remember the antigen, so your body hits back fast. That ability is called immunological memory. The very first time you meet a pathogen, the response is slow, because it takes days to build up enough antibodies.\n\nHow long does it take to build up enough antibodies the first time?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 29,
+      "student": "like a week or two?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Not quite. The first time, it takes days to build up enough antibodies, because your body has never met that pathogen before. But the second time, memory cells recognise the antigen straight away, so the response is quicker and stronger.\n\nCompared with the first time, how is the response the second time?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 30,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "That's a lot of back and forth on this one, sorry! Would you like me to just tell you the rest of it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 31,
+      "student": "yeah ok just tell me",
+      "studentType": "checkin-yes",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Next time, your immune system spots the antigen straight away and responds faster, stronger, and with more antibodies, so the pathogen is usually destroyed before you feel ill. That same idea is how vaccination works. That's the end of this lesson. You were right that your body had already fought it before, and that's exactly why it's quicker.",
+      "recap": [
+        "During a first infection, some lymphocytes become memory cells.",
+        "Memory cells stay in your body long after you've recovered.",
+        "They remember the antigen, which is why you don't get chickenpox twice.",
+        "First time, antibodies take days to build up. Second time, it's quicker and stronger."
+      ],
+      "flags": []
+    },
+    {
+      "n": 32,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Bye! You've done well today, and you can come back to this lesson any time you like.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is long",
+    "would_quit": {
+      "turn": "T10",
+      "quote": "Let me say that another way: \"leucocyte\" is just the scientific word for a white blood cell, so both names mean the same thing.",
+      "why": "The student had just answered correctly, but the tutor ignored it and looped back to leucocyte for a third time after two earlier 'this is long' complaints."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "What does the mucus do to the pathogens?",
+        "note": "The student's first reply is 'this is long lol', so the opener is more than this student will read."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The mucus is sticky, so it catches the pathogens before they reach your lungs.",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do the cilia do to the mucus?",
+        "note": ""
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the stomach make to kill these pathogens?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Before pathogens can cause disease, they have to get inside your body, so your first defences try to stop them getting in.",
+        "note": "The student asked for just questions, but the tutor re-lectured the acid already taught in T3. The student replies 'this is long lol'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "the acid in your stomach does what to most pathogens you swallow?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do white blood cells form part of in your body?",
+        "note": "Skin is dropped in as an unquestioned aside, out of order."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Their scientific name is leucocytes. What is the other name for a white blood cell?",
+        "note": "The question just parrots the previous sentence. The student replied 'what?'."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What takes over when a pathogen gets past the barriers?",
+        "note": "This re-asks what S8 already answered correctly. It is redundant and does not explain the 'what?'."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Let me say that another way",
+        "note": "The tutor treats a correct answer ('the immune system') as a misunderstanding and re-asks leucocyte a third time."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What kind of cell is a phagocyte?",
+        "note": "The student said 'yeah just tell me', but the tutor still ends on a question."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why can a phagocyte attack so many different pathogens?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does a phagocyte do to the foreign thing to pull it inside?",
+        "note": "The tutor abandons the 'why so many pathogens' question and never gives the non-specific answer."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A phagocyte changes shape to wrap around anything foreign, then pulls it inside.",
+        "note": ""
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You've got the main idea. Would you like me to just tell you the rest of this one?",
+        "note": "The offer to quit comes straight after a correct answer, which is an odd signal."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do phagocytes act as when an infection starts?",
+        "note": "The question is a fill-in-the-blank of the previous sentence."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do phagocytes use to digest a pathogen once it's inside?",
+        "note": "This repeats enzymes, already covered in T13–T14."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Phagocytes are non-specific: they act against all pathogens equally, with no need for a specific match or prior exposure. They spot antigens, the unique proteins on a pathogen's surface, and respond by producing antibodies and antitoxins.",
+        "note": "Factual error: 'They' refers to phagocytes, so the tutor says phagocytes produce antibodies. The student then answers 'phagocytes?'."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Not quite. Phagocytes engulf pathogens, while lymphocytes are the white blood cells that make antibodies and antitoxins.",
+        "note": "The tutor marks the student wrong for an error the tutor caused and never admits it."
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What shape does an antibody need to have to bind to its antigen?",
+        "note": "The expected term 'complementary' was never taught. The student says 'no idea'."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Where on a pathogen is the antigen found?",
+        "note": "The tutor never returns to the shape question."
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, the surface is exactly right. Would you like me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does an antibody bind to on the pathogen?",
+        "note": ""
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Your answer is right, it binds to the antigen.",
+        "note": "The tutor re-asks the same fact in metaphor form after a correct answer. The student says 'huh?'."
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How long do memory cells stay in your body?",
+        "note": "Antitoxins get only a passing half-sentence."
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why don't you get chickenpox a second time?",
+        "note": ""
+      },
+      {
+        "turn": "T28",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How long does it take to build up enough antibodies the first time?",
+        "note": "The tutor gives no feedback on S28's partial answer before moving on."
+      },
+      {
+        "turn": "T29",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Not quite. The first time, it takes days to build up enough antibodies",
+        "note": "'A week or two' is a reasonable 'days' answer, but the tutor marks it wrong."
+      },
+      {
+        "turn": "T30",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to just tell you the rest of it?",
+        "note": ""
+      },
+      {
+        "turn": "T31",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That same idea is how vaccination works.",
+        "note": ""
+      },
+      {
+        "turn": "T32",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Bye! You've done well today, and you can come back to this lesson any time you like.",
+        "note": ""
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: when splitting/paraphrasing content, keep the grammatical subject; keyPoints[3].content",
+        "change": "Start keyPoints[3].content with 'Lymphocytes recognise antigens...'. Make the splitter keep the subject so a sentence about lymphocytes is never attached to 'Phagocytes are non-specific'.",
+        "quote": "They spot antigens, the unique proteins on a pathogen's surface, and respond by producing antibodies and antitoxins."
+      },
+      {
+        "target": "teach-core: on a correct answer, acknowledge and advance; never re-ask the same fact",
+        "change": "After a correct answer, say 'Yes' and move to the next new idea. Ban 'Let me say that another way' and any re-ask of the same fact once the student has answered it correctly.",
+        "quote": "Let me say that another way"
+      },
+      {
+        "target": "teach-core: honour 'just tell me' and 'this is long'",
+        "change": "When the student says 'just tell me', give a summary of 40 words or fewer with no question. When the student says 'this is long', the next turn must be 25 words or fewer and must not re-teach earlier content.",
+        "quote": "Before pathogens can cause disease, they have to get inside your body, so your first defences try to stop them getting in."
+      },
+      {
+        "target": "keyPoints[3].writeBullets[1]",
+        "change": "Have the tutor say the word 'complementary' ('antibodies are COMPLEMENTARY — they fit the antigen like a key fits a lock') before asking about shape. Ask 'What word means the antibody's shape fits the antigen?'",
+        "quote": "What shape does an antibody need to have to bind to its antigen?"
+      },
+      {
+        "target": "teach-core: answer matching tolerance",
+        "change": "Accept approximate answers within the taught meaning, such as 'a week or two' for 'days', and accept 'already killed it' as partial credit leading to memory cells, instead of saying 'Not quite'.",
+        "quote": "Not quite. The first time, it takes days to build up enough antibodies"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "would quit at T10"
+    ]
+  },
+  "cost": 0.4968990000000001,
+  "tutorCost": 0.31613000000000013,
+  "tutorCalls": 57,
+  "mode": "run",
+  "date": "2026-10-17"
+}

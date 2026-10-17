@@ -1,0 +1,710 @@
+{
+  "id": "g5-development",
+  "subject": "geography",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! The most common wealth measure is GNI per capita: a country's total yearly income divided by its population, so it's an average for each person, which makes big and small countries fair to compare. What does the phrase \"per capita\" mean in plain words?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "per person innit",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, per person. So GNI per capita is a country's total yearly income divided by how many people live there, and it's the most commonly used economic indicator of wealth. The USA's is about $70,000, while Niger's is about $590.\n\nWhich of those two countries has the higher GNI per capita?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "The USA is higher: about $70,000 compared with Niger's $590. Development is about quality of life, not just money, so life expectancy is a social measure: the average number of years someone born there can expect to live, like 84 in Japan but 55 in Sierra Leone.\n\nWhich country has the lower life expectancy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "sierra leone has lower life expectancy",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, Sierra Leone is lower, at 55 years. Another social indicator is infant mortality rate (IMR): how many babies out of every 1,000 born alive die before their first birthday, such as 103 in Chad compared with 4 in the UK.\n\nWhich of those two countries has the higher infant mortality rate?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "chad has higher infant mortality rate",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Chad is right, 103 against the UK's 4. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "nah keep asking me questions",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "The HDI (Human Development Index) is a composite measure: it combines income, life expectancy and education into one score between 0 and 1. That makes it better than a single indicator, though it still ignores things like inequality and women's rights.\n\nWhat are the three things the HDI combines?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "income, life expectancy and education",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "All three, correct. That's what makes HDI a composite measure: it builds several indicators into one number, whereas GNI per capita uses income alone. Looking at GNI per capita figures: the USA has about $70,000, the UK about $47,000, Nigeria about $2,100 and Niger about $590.\n\nWhich of those four countries has the lowest GNI per capita?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "this is too long",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Sorry, I'll keep it short. A composite measure combines several indicators into one number, and the Happy Planet Index adds wellbeing and ecological footprint.\n\nNext, the World Bank sorts countries by income. A wealthy country like the UK, Japan or the USA is an HIC, a High Income Country. What does the \"I\" in HIC stand for?",
+      "recap": [
+        "Development means quality of life, not just how much money a country has.",
+        "GNI per capita is a country's yearly income divided by its population.",
+        "Life expectancy and infant mortality rate show health: Sierra Leone 55 years, Chad 103 per 1,000.",
+        "HDI combines income, life expectancy and education into one score from 0 to 1."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "HIC just means a rich country, like the UK, Japan or the USA. Back in 1980, the Brandt Line split the world map into a rich \"North\" of HICs and a poor \"South\" of LICs, which are Low Income Countries like Niger.\n\nWhich kind of countries sat in the \"North\"?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "the rich ones?",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes, the \"North\" was the rich HICs. At the other end are LICs, Low Income Countries, the world's poorest, like Niger and Malawi.\n\nWhich country from that sentence is an LIC?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "niger and malawi",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Niger and Malawi are right, those are the LICs. LIC means a Low Income Country, where people earn very little on average. Think of it as the opposite of an HIC like Japan.\n\nIn your own words, what does the \"L\" in LIC stand for?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Would you like me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "yeah tell me",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "The Brandt Line, drawn in 1980, split the rich \"North\" from the poor \"South\", though it's now outdated. The development gap is the difference in wealth and quality of life between the richest and poorest countries, and it has several causes. In that definition, what two things differ between rich and poor countries?",
+      "recap": [
+        "A composite measure squashes several indicators into one number, like the Happy Planet Index.",
+        "HIC means High Income Country, a rich place like the UK, Japan or the USA.",
+        "LIC means Low Income Country, where people earn very little on average, like Niger or Malawi.",
+        "The 1980 Brandt Line split the map: rich HICs in the North, poor LICs in the South."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Sorry, that was a lot. The development gap is just how much richer and healthier some countries are than others. One big cause is colonialism: when European powers ran countries like India and took their raw materials out for their own benefit.\n\nWhat did colonial powers take out of the countries they ran?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "raw materials",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Raw materials, yes. Colonialism also shut down local industries: the British destroyed Indian cotton weaving so they could sell textiles made in Lancashire, in England.\n\nWhat did the British want to sell instead of Indian cotton?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "british textiles",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Her answer was close: the British sold textiles made in Lancashire, which is why they wrecked Indian cotton weaving. Colonialism meant running a country for the ruler's benefit, so local industries that competed got shut down.\n\nWhy did the British destroy Indian cotton weaving?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "so they could sell their own textiles",
+      "studentType": "try",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "yeah go on",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Now for fixing it: aid means money, goods or expertise given to another country, and it comes in three types: bilateral (government to government), multilateral (through the UN or World Bank), or voluntary (NGOs like Oxfam). Which type of aid is it when a government gives money directly to another government?",
+      "recap": [
+        "The development gap is the difference in wealth and quality of life between rich and poor countries.",
+        "The Brandt Line from 1980 split a rich North from a poor South, but it's outdated now.",
+        "Colonial powers ran countries like India and took their raw materials for their own benefit.",
+        "Britain destroyed Indian cotton weaving so it could sell its own Lancashire textiles instead."
+      ],
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "bilateral",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, bilateral is right. Aid is also short-term (emergency help after a disaster) or long-term (schools, clean water). One criticism is dependency: a country can end up relying on aid instead of building its own economy.\n\nWhat does dependency mean for a country receiving aid?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "relying on aid instead of making their own stuff",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, relying on aid instead of building their own economy is exactly it. Now for trade: Fairtrade guarantees farmers an above-market price for their crop, plus an extra Fairtrade Premium that pays for community projects like schools and clean water.\n\nWhat does the Fairtrade Premium get spent on?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "community stuff like schools and water",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, schools and clean water, spot on. Next is debt relief: the HIPC scheme (Heavily Indebted Poor Countries, run by the IMF and World Bank) cancelled debts for 36 countries, so money could be spent at home instead of on repayments. Uganda used its freed-up money to abolish school fees.\n\nWhat did Uganda spend its freed-up money on?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Would you like me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "nah im listening, repeat it",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Sure. HIPC is a scheme run by the IMF and World Bank that cancelled debts for 36 poor countries. That freed up money to spend at home, and Uganda used it to abolish school fees.\n\nWhat did Uganda use its freed-up money to do?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "got rid of school fees innit",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, Uganda got rid of school fees. Now, why does cancelling a country's debt leave more money to spend at home?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "man im starving can we do this later",
+      "studentType": "offtopic",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "That's fine, you can come back to this any time. Next up: the SDGs are 17 global goals, agreed by the UN in 2015, aiming to end poverty and hunger by 2030. By what year are the SDGs meant to be achieved?",
+      "recap": [
+        "Aid is money, goods or expertise given to another country.",
+        "Bilateral aid goes government to government, multilateral through the UN or World Bank.",
+        "Dependency means relying on aid instead of building your own economy.",
+        "Debt relief cancelled repayments, so Uganda could abolish school fees."
+      ],
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "2030 but like my battery's dying fr",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Yes, 2030, and I'll keep this quick. The SDGs have helped, but COVID-19 reversed some gains, and most of the progress is in Asia, while sub-Saharan Africa lags behind on most targets.\n\nWhich part of the world is lagging behind on most SDG targets?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "sub-saharan africa i guess",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Yes, sub-Saharan Africa. The SDGs are 17 global goals for 2030, covering things like poverty and hunger. Extreme poverty means living on an income too low to pay for basic food, shelter and healthcare. Roughly how many people has China lifted out of extreme poverty since 1980?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "like 500 million or smth",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Not quite 500, but you're on the right track: it's an estimated 800 million, the fastest reduction in history. That means China alone has lifted that many people above an income too low for basic food, shelter and healthcare. About how many people has China lifted out of extreme poverty since 1980?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 28,
+      "student": "wait that's confusing can we move on",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "That's fine, sorry it got confusing. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 29,
+      "student": "yeah just tell me",
+      "studentType": "checkin-yes",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "The picture is mixed: extreme poverty fell from 36% of the world's people in 1990 to 8. 6% in 2022, and the gap is narrowing fast for NEEs like China, India and Brazil, but may be widening for many sub-Saharan African LICs. That's the end of this lesson, and you were right that sub-Saharan Africa is where progress is slowest.",
+      "recap": [
+        "The SDGs are 17 UN goals, set in 2015, aiming to end poverty by 2030.",
+        "COVID-19 reversed some progress, and sub-Saharan Africa lags on most targets.",
+        "Extreme poverty means too little income for basic food, shelter and healthcare.",
+        "China has lifted about 800 million people out of extreme poverty since 1980."
+      ],
+      "flags": []
+    },
+    {
+      "n": 30,
+      "student": "ok thanks",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've covered a lot today, from why development differs between countries to how the gap is changing. Good luck with your GCSE revision, and come back to this lesson any time.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "man im starving can we do this later",
+    "would_quit": {
+      "turn": "T24",
+      "quote": "That's fine, you can come back to this any time. Next up: the SDGs are 17 global goals, agreed by the UN in 2015, aiming to end poverty and hunger by 2030.",
+      "why": "The student had already said 'this is long' four times, then asked to stop. The tutor agreed and kept teaching anyway."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the phrase \"per capita\" mean in plain words?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which of those two countries has the higher GNI per capita?",
+        "note": "Trivial comparison. The student's reply was 'this is long'."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Development is about quality of life, not just money, so life expectancy is a social measure: the average number of years someone born there can expect to live, like 84 in Japan but 55 in Sierra Leone.",
+        "note": "Ignored 'this is long' and stayed just as long. Never asked the student to answer the dropped question."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which of those two countries has the higher infant mortality rate?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": "Unprompted offer to skip, right after a correct answer."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What are the three things the HDI combines?",
+        "note": ""
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Looking at GNI per capita figures: the USA has about $70,000, the UK about $47,000, Nigeria about $2,100 and Niger about $590.",
+        "note": "Re-teaches the T1 figures for no reason. Triggered 'this is too long'."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What does the \"I\" in HIC stand for?",
+        "note": "Promises to keep it short, then crams in HPI and the World Bank. Drops the pending question. The question asks for a label just read out. Student: 'huh?'"
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "HIC just means a rich country, like the UK, Japan or the USA.",
+        "note": "Never gives the answer 'Income'. Piles on the Brandt Line and LICs at once."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Which country from that sentence is an LIC?",
+        "note": "Asks for one country when two were given. Trivial recall."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "In your own words, what does the \"L\" in LIC stand for?",
+        "note": "Answer was stated two sentences earlier. Pointless question. Student: 'what?'"
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "The Brandt Line, drawn in 1980, split the rich \"North\" from the poor \"South\", though it's now outdated.",
+        "note": "'Tell me the rest' skipped NEEs, UMIC/LMIC and the reason the line is outdated. Jumped to a new topic with a question. Student: 'this is long'."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What did colonial powers take out of the countries they ran?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What did the British want to sell instead of Indian cotton?",
+        "note": ""
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Her answer was close: the British sold textiles made in Lancashire, which is why they wrecked Indian cotton weaving.",
+        "note": "Refers to the student in the third person. Calls a correct answer 'close'."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": "No acknowledgement of the correct answer."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Now for fixing it: aid means money, goods or expertise given to another country",
+        "note": "'Tell me the rest' skipped trade, debt, terms of trade, physical and political causes. Jumps to strategies."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does dependency mean for a country receiving aid?",
+        "note": ""
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the Fairtrade Premium get spent on?",
+        "note": ""
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Next is debt relief: the HIPC scheme (Heavily Indebted Poor Countries, run by the IMF and World Bank) cancelled debts for 36 countries, so money could be spent at home instead of on repayments.",
+        "note": "Dense run of acronyms. Student: 'huh?'"
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What did Uganda use its freed-up money to do?",
+        "note": ""
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Now, why does cancelling a country's debt leave more money to spend at home?",
+        "note": ""
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "That's fine, you can come back to this any time. Next up: the SDGs are 17 global goals",
+        "note": "Agrees to stop, then carries on. Silently skips intermediate tech, microfinance and tourism."
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which part of the world is lagging behind on most SDG targets?",
+        "note": ""
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Roughly how many people has China lifted out of extreme poverty since 1980?",
+        "note": "The 800m figure was never taught. Asks the student to guess a number."
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "About how many people has China lifted out of extreme poverty since 1980?",
+        "note": "Re-asks the number it just gave. Clunky 'lifted that many people above an income too low'. Student: 'that's confusing'."
+      },
+      {
+        "turn": "T28",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T29",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "extreme poverty fell from 36% of the world's people in 1990 to 8. 6% in 2022",
+        "note": "'8. 6%' is broken number formatting. Ends the lesson with key content never taught."
+      },
+      {
+        "turn": "T30",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You're welcome! You've covered a lot today, from why development differs between countries to how the gap is changing.",
+        "note": "Claims full coverage, but NEEs and most causes and strategies were skipped."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: length complaint handling",
+        "change": "After 'this is long' or 'too long', cap every later turn at 35 words: one fact plus one question. Never re-teach earlier figures.",
+        "quote": "Sorry, I'll keep it short. A composite measure combines several indicators into one number, and the Happy Planet Index adds wellbeing and ecological footprint."
+      },
+      {
+        "target": "teach-core: 'tell me the rest' behaviour",
+        "change": "Give a 2–3 sentence summary of the remaining writeBullets for that keyPoint without a question, then move on. Covers NEEs, UMIC/LMIC and why the Brandt Line is outdated in keyPoints[1]. Covers trade, debt, terms of trade, physical and political causes in keyPoints[2].",
+        "quote": "Now for fixing it: aid means money, goods or expertise given to another country"
+      },
+      {
+        "target": "teach-core: question generation",
+        "change": "Ban questions whose answer is an acronym expansion or a word just read out ('what does the L stand for'). After 'huh?' or 'what?', state the answer and ask a different, reasoning-based question.",
+        "quote": "In your own words, what does the \"L\" in LIC stand for?"
+      },
+      {
+        "target": "teach-core: stop requests",
+        "change": "When the student asks to stop ('can we do this later', 'battery's dying'), save progress, list the skipped items (intermediate tech, microfinance, tourism) and end. Do not continue teaching.",
+        "quote": "man im starving can we do this later"
+      },
+      {
+        "target": "teach-core: question/feedback consistency",
+        "change": "Never ask for a figure before teaching it. Never re-ask a question whose answer was just given. Address the student as 'you', not 'her'. Fix the sentence splitter that renders '8.6%' as '8. 6%'.",
+        "quote": "Roughly how many people has China lifted out of extreme poverty since 1980?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "engagement 2",
+      "would quit at T24"
+    ]
+  },
+  "cost": 0.5388980000000012,
+  "tutorCost": 0.3523620000000004,
+  "tutorCalls": 57,
+  "mode": "run",
+  "date": "2026-10-17"
+}

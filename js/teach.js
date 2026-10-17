@@ -177,6 +177,7 @@ const Teach = (() => {
       extensionLeft: _state.extensionLeft,
       wrapOffered: _state.wrapOffered,
       farewell: _state.farewell,
+      taught: _state.taught,   // TEACH_THEN_ASK (js/teach-core.js); absent when off
     });
   }
 
@@ -224,6 +225,7 @@ const Teach = (() => {
         extensionLeft: Number.isInteger(saved.extensionLeft) ? saved.extensionLeft : null,
         wrapOffered: !!saved.wrapOffered,
         farewell: !!saved.farewell,
+        ...(Array.isArray(saved.taught) ? { taught: saved.taught } : {}),
       };
       _core.bind(_data, _points, _state);
       _seedTermsShown();

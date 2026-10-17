@@ -1,0 +1,220 @@
+{
+  "id": "p1-energy-stores",
+  "mode": "lesson",
+  "date": "2026-10-17",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "Student's correct answer 'thermal store of the air?' got no feedback. The tutor jumped straight to 'Would you like me to just tell you the rest?'",
+        "step": "S19/T19"
+      },
+      {
+        "what": "Student's correct answer '0.15' got no confirmation. The tutor offered a check-in instead and only confirmed after the student said 'nah im good'.",
+        "step": "S24/T24"
+      },
+      {
+        "what": "The ice cube question was never answered or resolved. After the 'tell me the rest' check-in, T10 skipped to radiation and conservation.",
+        "step": "T8-T10"
+      },
+      {
+        "what": "'Where does dissipated/wasted energy go?' was asked three times in a row, and the student said 'thermal store' each time. The tutor was looping instead of moving on.",
+        "step": "T15-T18"
+      },
+      {
+        "what": "Wrong unit in a power example. It says 'the lamp wastes the other 85 J' when the example was 100 W in and 15 W out, so it should be 85 W.",
+        "step": "T27"
+      },
+      {
+        "what": "Stray space in the number: 'giving 0. 15 (15%)'.",
+        "step": "T27"
+      },
+      {
+        "what": "Heating is described as 'Conduction and convection are the two ways'. Radiation is left out, which is misleading next to the four-pathways section.",
+        "step": "T8"
+      },
+      {
+        "what": "The opening question gives away its own answer ('there are eight... So how many are there?'). This is a pointless recall question for a bored student.",
+        "step": "T0"
+      },
+      {
+        "what": "Check-in 'tell you the rest?' was offered after a correct, engaged answer with no boredom signal.",
+        "step": "T4"
+      },
+      {
+        "what": "T27 ends without a question and the closing claims 'you got through all of it'. Much of it was skipped via 'just tell me'.",
+        "step": "T27-T28"
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "Key Terms panel cuts off mid-line at the bottom: 'calculated using Ek = ½mv²' is clipped.",
+        "screenshot": "07-exchange-6-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "The page heading 'What are you revising?' and the '← Home' button are half-hidden under the sticky header.",
+        "screenshot": "02-subjects-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The top line of the tutor message is partly hidden under the sticky lesson header ('Other stores: gravitational potential (raised...').",
+        "screenshot": "07-exchange-6-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The repeated 'Done — written into my notes' checkbox is never ticked or acknowledged, and the box sits above the chat, pushing content down on phone.",
+        "screenshot": "14-exchange-27-phone.png",
+        "stops_use": false
+      }
+    ],
+    "would_quit": {
+      "turn": "S18",
+      "quote": "huh?",
+      "why": "Asked which store wasted energy goes to for the third time after already answering 'thermal store' twice; feels like a loop."
+    },
+    "fixes": [
+      {
+        "target": "tutor behaviour: answer evaluation before check-in",
+        "change": "Always judge and confirm the student's answer first ('Yes, thermal store') before offering 'want me to tell you the rest?'. Never replace feedback with a check-in."
+      },
+      {
+        "target": "tutor behaviour: repeated questions",
+        "change": "Track concepts already answered correctly in the current section. Do not re-ask the same question; move to the next point."
+      },
+      {
+        "target": "tutor behaviour: check-in trigger",
+        "change": "Only offer 'tell you the rest' after a boredom or confusion signal (S7/S9/S13 style), not after correct answers like S4, S19 or S24."
+      },
+      {
+        "target": "lesson content p1-energy-stores: heating and efficiency text",
+        "change": "Include radiation as a heating method. In the power example use '85 W wasted', not '85 J'. Remove the space in '0. 15'."
+      },
+      {
+        "target": "CSS lesson header (phone) and subjects page header",
+        "change": "Add top padding or scroll-margin equal to the sticky header height so the heading and first chat line aren't hidden under it."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "AI lesson opens by default (in TEACH_ENABLED)",
+      "ok": true,
+      "detail": "AI lesson opened"
+    }
+  ],
+  "transcript": [
+    "Lesson p1-energy-stores (Physics › Energy › Energy stores and transfers — what energy actually is).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "[screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects",
+    "[screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics",
+    "[screenshot 04-lessons-p1-phone.png and 04-lessons-p1-laptop.png] lessons-P1",
+    "[check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened",
+    "T0: Welcome! Energy is always doing something around you, and a good way to keep track of it is to think of energy as being held in \"stores\", and there are eight different ones to learn, such as kinetic (a moving car) and chemical (food or petrol). So how many separate energy stores are there?",
+    "[screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening",
+    "S1 (offtopic): ugh im so tired, stayed up till like 2 watching tiktok lol",
+    "T1: Late night, I get it! Let's keep it light: an energy store is just a way energy can be held, and there are eight of them. A moving car holds its energy in the kinetic store, so what store holds the energy in petrol?",
+    "S2 (try): chemical store i think?",
+    "T2: Yes, chemical — petrol holds its energy in the chemical store. The kinetic store belongs to any moving object, like a kicked ball or a running person, and a moving object has kinetic energy while a stopped one has none. So what does an object have to be doing to have energy in its kinetic store?",
+    "S3 (bored): moving right?",
+    "T3: Yes, moving is the key. A parked lorry is heavy but isn't moving, so its kinetic store is empty. A kicked ball flying through the air has energy in its kinetic store. So what energy does a lorry sitting still in a car park have in its kinetic store?",
+    "[screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3",
+    "S4 (try): none i guess? cuz its not moving",
+    "T4: Right, none, because it's not moving. Do you want me to just tell you the rest of this one?",
+    "S5 (checkin-yes): yeah go on",
+    "T5: Other stores: gravitational potential (raised objects), elastic potential (stretched or squashed), thermal (temperature), electrostatic, magnetic, and nuclear (inside atoms). Energy moves between stores by pathways. One is mechanical: energy transferred by work done by forces, like pushing, pulling or kicking a ball. How is energy transferred when you kick a ball?",
+    "S6 (bored): huh?",
+    "T6: Let me put it more simply: when you kick a ball, your foot pushes it with a force. Pushing, pulling or kicking is called a mechanical transfer. Electricity has its own pathway too: energy is transferred electrically when a current flows in a circuit. So what has to flow in a circuit for energy to be transferred electrically?",
+    "[screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6",
+    "S7 (bored): this is long mate",
+    "T7: Fair enough, I'll keep it short. The answer was a current: energy is transferred electrically when a current flows in a circuit. Next is heating: energy flows from a hotter object to a cooler one, like a hot mug warming your hands. Which way does energy flow when a hot mug touches your cooler hands?",
+    "S8 (bored): from the mug to my hands?",
+    "T8: Heating always moves energy from the hotter object to the cooler one, never the other way round. Conduction and convection are the two ways this happens. So the mug warms your hands because it is hotter than them. If you hold an ice cube, which way does energy flow, from your hand or from the ice?",
+    "S9 (bored): this is long mate",
+    "T9: Sounds like this one's dragging a bit. Want me to just tell you the rest of it?",
+    "[screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9",
+    "S10 (checkin-yes): yeah go on then",
+    "T10: Radiation is energy carried by waves like light and infrared, and the wording to use is \"energy is transferred [pathway] from the [store] store to the [store] store\". Next is the big rule: energy cannot be created or destroyed. So if you push a book off a table, what happens to the total energy?",
+    "S11 (bored): huh?",
+    "T11: Sorry, let me say it simpler: energy never vanishes and never appears from nothing. When the book falls, its energy just changes form, and the total stays the same. So if the total never changes, what happens to the energy of the book when it falls?",
+    "S12 (try): it like... stays the same amount?",
+    "T12: Yep, the total stays the same, so the book's energy just changes form. A system is an object or group of objects, and a closed system is one where no energy goes in or out, so its total never changes. If the book and the floor were a closed system, what would happen to the total energy?",
+    "[screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12",
+    "S13 (bored): this is long",
+    "T13: Fair enough, I'll keep it short. A closed system is just a group of objects with no energy going in or out, so nothing gets added or lost. Imagine the book and the floor as one closed system. What stays constant in it?",
+    "S14 (try): total energy stays the same?",
+    "T14: That's the one, total energy stays the same. Do you want me to just tell you the rest of this one?",
+    "S15 (checkin-yes): yeah just tell me",
+    "T15: As the book falls, its gravitational potential energy becomes kinetic energy, and on impact some goes out as sound and ends up in the thermal store of the floor and surroundings. Energy can be transferred usefully, stored or dissipated, and the total always stays the same. Where does most dissipated energy end up?",
+    "[screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15",
+    "S16 (try): thermal store i guess",
+    "T16: Yes, the thermal store of the surroundings. Energy that ends up somewhere useless for the device's job is called wasted energy, like a car engine warming the air. Where does that wasted energy go?",
+    "S17 (try): the thermal store?",
+    "T17: Yes, the thermal store of the surroundings. Think of a car engine: only the energy that moves the car is useful, and the rest warms the air around it. That leftover energy is called wasted energy because it isn't useful for the job the device is meant to do. Why is that warmed-up air called wasted energy?",
+    "S18 (bored): huh?",
+    "T18: It's called wasted because that energy isn't useful for the car's job, which is moving. The most common wasted energy is heat that warms the air around a machine. Which store does that heat end up in?",
+    "[screenshot 11-exchange-18-phone.png and 11-exchange-18-laptop.png] exchange-18",
+    "S19 (try): thermal store of the air?",
+    "T19: Would you like me to just tell you the rest of this one?",
+    "S20 (checkin-yes): yeah ok",
+    "T20: The leftover energy ends up in the thermal store of the surroundings, so it's spread out and harder to use. A Sankey diagram is an arrow diagram, where each arrow's width is proportional to the amount of energy. What does a wider arrow show?",
+    "S21 (try): more energy?",
+    "T21: Yes, a wider arrow means more energy. Picture it like a river: the thick arrow on the left is all the energy going in, and it splits into thinner arrows on the right, one useful and the rest wasted. If 100 J goes in and 15 J comes out as light, where does the other 85 J go?",
+    "[screenshot 12-exchange-21-phone.png and 12-exchange-21-laptop.png] exchange-21",
+    "S22 (bored): huh?",
+    "T22: The other 85 J goes to the thermal store of the surroundings, wasted as heat. Efficiency tells us how good a device is: efficiency = useful output energy ÷ total input energy. So for the lamp, you'd divide the useful 15 J by which total energy?",
+    "S23 (try): divide by 100?",
+    "T23: Yes, divide by 100 J, because that's the total energy going in. Efficiency compares what you get out that's useful with everything you put in. So with 15 J useful out of 100 J in, what decimal do you get for the lamp's efficiency?",
+    "S24 (try): um like 0.15?",
+    "T24: Do you want me to just tell you the rest of this one?",
+    "[screenshot 13-exchange-24-phone.png and 13-exchange-24-laptop.png] exchange-24",
+    "S25 (checkin-no): nah im good",
+    "T25: Yes, 0.15 is right. Multiply by 100 and that's 15%. You can also work efficiency out with power: efficiency = useful power output ÷ total power input. A lamp takes in 100 W of power and gives out 15 W as light. What do you divide by 100 W to find its efficiency?",
+    "S26 (bored): huh?",
+    "T26: No worries, let me say it more simply. Efficiency is useful power out divided by total power in. The lamp's total power in is 100 W, and its useful light out is 15 W. So for efficiency, which number goes on the bottom of the division?",
+    "S27 (wrong): 15 w?",
+    "T27: Not quite, 15 W is the useful power out, so it goes on top, and the 100 W total goes on the bottom, giving 0. 15 (15%). Efficiency is always between 0 and 1, and the lamp wastes the other 85 J as heat, while a heater is near 1 because heat is its useful output.",
+    "[screenshot 14-exchange-27-phone.png and 14-exchange-27-laptop.png] exchange-27",
+    "S28 (closing): ok thanks bye",
+    "T28: You're welcome. Energy stores and transfers is a big topic, and you got through all of it today. Come back any time, and take care!",
+    "[the lesson shows \"Lesson finished.\"]",
+    "[screenshot 15-end-phone.png and 15-end-laptop.png] end"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/01-home-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/02-subjects-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/02-subjects-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/03-topics-physics-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/03-topics-physics-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/04-lessons-p1-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/04-lessons-p1-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/05-ai-lesson-opening-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/05-ai-lesson-opening-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/06-exchange-3-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/06-exchange-3-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/07-exchange-6-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/07-exchange-6-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/08-exchange-9-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/08-exchange-9-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/09-exchange-12-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/09-exchange-12-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/10-exchange-15-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/10-exchange-15-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/11-exchange-18-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/11-exchange-18-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/12-exchange-21-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/12-exchange-21-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/13-exchange-24-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/13-exchange-24-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/14-exchange-27-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/14-exchange-27-laptop.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/15-end-phone.png",
+    "tools/site-test-runs/2026-10-17/p1-energy-stores-2/15-end-laptop.png"
+  ],
+  "cost": 0.499443,
+  "tutorModel": "claude-sonnet-5-5",
+  "tutorCost": 0.3087840000000001,
+  "apiCalls": 29,
+  "browserApiCalls": 54
+}

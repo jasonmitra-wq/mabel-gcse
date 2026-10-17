@@ -25,11 +25,17 @@ on. Never ask Jason anything except the STOP cases in section 2.
 - Record every API call's actual cost. STATE keeps a "Spend" table: one
   row per topic with API runs and dollars.
 - Before marking anything verified, re-read it from disk.
-- Never switch a lesson's AI teacher on for the live site, in any subject,
-  until it has passed the text tester, and its topic has passed the website
-  tester. Test on the local server first; push the TEACH_ENABLED change
-  only after the tests pass. After any change to the maths module or maths
-  questions, run the website tester in maths mode on the affected topics.
+- Test every AI lesson (text tester on each lesson, website tester on one
+  per topic) before switching it on, and fix what fails once. A lesson that
+  still fails goes live anyway, with its faults listed in
+  docs/ESCALATIONS.md. Never take an AI lesson off the live site because of
+  a tester result.
+- After any change to the maths module or maths questions, run the website
+  tester in maths mode on the affected topics.
+- Every brief from the planning chat is saved word for word to docs/briefs/
+  before it is started. Never search old session transcripts for
+  instructions; if a brief is not in docs/briefs/, stop and say which one
+  is missing.
 
 EDIT RULES for lesson content:
 - Edit only what a decision or finding names. A term fixed for a
@@ -165,13 +171,13 @@ h. STATE row: S1–S3 "✓ <hash>"; S6 "✓ <hash> (R<last>; audited <file>)"
        run first, cost guard as built). Fix faults that are in the
        lesson file, under the EDIT RULES. Fix faults in shared code
        once, behind a flag. Re-run only the lessons that failed, once.
-    c2. Run the text tester (tools/teach-sim.js --persona bored) on every
-       P1 and P2 lesson, and the website tester (tools/site-test.js) on
-       one lesson per topic, on the local server, before pushing the
-       TEACH_ENABLED change. Fix every FAIL (lesson faults in the lesson,
-       shared-code faults once behind a flag); re-run only failures,
-       once; anything still failing goes to docs/ESCALATIONS.md and that
-       lesson stays off the live site.
+    c2. Test: run the text tester (tools/teach-sim.js --persona bored) on
+       every lesson of the topic, and the website tester
+       (tools/site-test.js) on one lesson per topic, on the local server.
+       Fix once: every FAIL (lesson faults in the lesson, shared-code
+       faults once behind a flag). Re-run once: only the failures. Then
+       switch the lessons on regardless; list the faults that remain in
+       docs/ESCALATIONS.md.
     d. Record T1–T3 for P1 and P2 in STATE. Commit after each topic.
 2.6 For P3, P4, P5, P6, P7 and P8, one topic per session: run the topic
     procedure (section 3); then, in the same session, add the topic's
@@ -188,4 +194,4 @@ h. STATE row: S1–S3 "✓ <hash>"; S6 "✓ <hash> (R<last>; audited <file>)"
     finished. One real session needed (Jason or Mabel)."
 
 Phase 3 — Biology, then Chemistry: defect 10 renderer fix first, then
-plain-English rewrite batches, then the topic procedure per topic.
+plain-English rewrite batches, then the topic procedure per topic. (with AI lesson testing before they go live)

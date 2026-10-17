@@ -114,6 +114,32 @@
       ],
       "memTip": "Terminal velocity: T for Terminal, T for Two forces balanced (weight = drag). No net force → no acceleration.",
       "tutor_note": "Describing the skydiver's v-t graph in words is a very common 4-mark question. Practise the five stages."
+    },
+    {
+      "heading": "Contact and non-contact forces",
+      "content": "A <strong>force</strong> is a push or a pull on an object. It comes from the object's interaction with another object.\n\nEvery force between objects is one of two kinds.\n- <strong>Contact forces</strong>: the objects are physically touching. Examples: friction, air resistance, tension and normal contact force.\n- <strong>Non-contact forces</strong>: the objects are physically separated. Examples: gravitational force, electrostatic force and magnetic force.\n\nAn interaction between a pair of objects produces a force on <strong>each</strong> object. Example: a book rests on a table. The book pushes down on the table. The table pushes up on the book with a normal contact force. Another example: the Earth pulls you down, and you pull the Earth up. Both are gravitational forces.\n\nForce is a <strong>vector</strong> quantity. You can show a force as an arrow. The length of the arrow shows the size of the force. The arrow points in the direction of the force.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Force: a push or pull from an interaction with another object",
+        "Contact forces (objects touching): friction, air resistance, tension, normal contact force",
+        "Non-contact forces (objects separated): gravitational, electrostatic, magnetic",
+        "An interaction between two objects produces a force on each object",
+        "Force is a vector: draw it as an arrow; length = size, arrow = direction"
+      ],
+      "keyTerms": [
+        {
+          "term": "Contact force",
+          "def": "A force between objects that are physically touching, such as friction, air resistance, tension or normal contact force"
+        },
+        {
+          "term": "Non-contact force",
+          "def": "A force between objects that are physically separated, such as gravitational, electrostatic or magnetic force"
+        }
+      ],
+      "memTip": "Touching = contact. Apart = non-contact: Gravity, Electrostatic, Magnetic (GEM).",
+      "tutor_note": "Ask the student to name the second force in each pair. This checks they see that both objects feel a force."
     }
   ],
   "tables": [
@@ -159,6 +185,18 @@
       "correct": 0,
       "correctFeedback": "Correct! s = ½at² = ½ × 9.8 × 9 = 44.1m (using u = 0, so s = ½(u+v)t or v = at = 29.4, s = ½ × 29.4 × 3 = 44.1m).",
       "wrongFeedback": "Use v = u + at first: v = 0 + 9.8 × 3 = 29.4 m/s. Then s = ½(u+v)t = ½ × 29.4 × 3 = 44.1m."
+    },
+    "5": {
+      "question": "Which of these is a non-contact force?",
+      "options": [
+        "Friction",
+        "Tension",
+        "Magnetic force",
+        "Air resistance"
+      ],
+      "correct": 2,
+      "correctFeedback": "Correct. Magnetic force acts between objects that are physically separated, so it is a non-contact force.",
+      "wrongFeedback": "Friction, tension and air resistance need the objects to touch. Magnetic force acts between separated objects, so it is non-contact."
     }
   },
   "commonMistakes": [
@@ -185,7 +223,9 @@
     "Free fall: all objects fall at g ≈ 9.8 m/s² ignoring air resistance",
     "Terminal velocity: air resistance = weight → zero net force → constant velocity",
     "Skydiver: accelerates → terminal velocity → parachute → decelerates → new terminal velocity",
-    "Typical speeds: walking 1.5, cycling 6, motorway car 30, sound 340 m/s, light 3×10⁸ m/s"
+    "Typical speeds: walking 1.5, cycling 6, motorway car 30, sound 340 m/s, light 3×10⁸ m/s",
+    "Contact forces (touching): friction, air resistance, tension, normal contact force",
+    "Non-contact forces (separated): gravitational, electrostatic, magnetic; force is a vector"
   ],
   "videos": [
     {

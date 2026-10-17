@@ -10,7 +10,7 @@ section; it does not mean every sentence of the section is taught.
 
 - Biology: 20 of 24 sections (4.x.y) mapped; 76 of 97 deepest-level sections mapped; 54 subtopics
 - Chemistry: 31 of 32 sections (4.x.y) mapped; 105 of 124 deepest-level sections mapped; 36 subtopics
-- Physics: 25 of 30 sections (4.x.y) mapped; 79 of 91 deepest-level sections mapped; 34 subtopics
+- Physics: 30 of 30 sections (4.x.y) mapped; 90 of 91 deepest-level sections mapped; 41 subtopics
 
 ## (a) Every 4.x.y section and the subtopics that map to it
 
@@ -95,19 +95,19 @@ section; it does not mean every sentence of the section is taught.
 - 4.4.4 Nuclear fission and fusion (physics only) — p4-nuclear-fission
 - 4.5.1 Forces and their interactions — p5-forces-motion, p5-newtons-laws, p5-gravity
 - 4.5.2 Work done and energy transfer — p1-power
-- 4.5.3 Forces and elasticity — **none**
-- 4.5.4 Moments, levers and gears (physics only) — **none**
-- 4.5.5 Pressure and pressure differences in fluids (physics only) — **none**
+- 4.5.3 Forces and elasticity — p5-elasticity
+- 4.5.4 Moments, levers and gears (physics only) — p5-moments
+- 4.5.5 Pressure and pressure differences in fluids (physics only) — p5-fluid-pressure
 - 4.5.6 Forces and motion — p5-forces-motion, p5-newtons-laws, p5-stopping-distance
 - 4.5.7 Momentum (HT only) — p5-momentum
 - 4.6.1 Waves in air, fluids and solids — p6-wave-properties, p6-light, p6-sound
 - 4.6.2 Electromagnetic waves — p6-em-spectrum, p6-light
-- 4.6.3 Black body radiation (physics only) — **none**
+- 4.6.3 Black body radiation (physics only) — p6-black-body
 - 4.7.1 Permanent and induced magnetism, magnetic forces and fields — p7-magnets
 - 4.7.2 The motor effect — p7-magnets, p7-motor-effect
 - 4.7.3 Induced potential, transformers and the National Grid (physics only) (HT only) — p7-induction, p7-transformers
-- 4.8.1 Solar system; stability of orbital motions; satellites (physics only) — p5-gravity
-- 4.8.2 Red-shift (physics only) — **none**
+- 4.8.1 Solar system; stability of orbital motions; satellites (physics only) — p5-gravity, p8-solar-system, p8-life-cycle-of-a-star
+- 4.8.2 Red-shift (physics only) — p8-red-shift
 
 ## (b) 4.x.y sections with no subtopic
 
@@ -124,11 +124,7 @@ section; it does not mean every sentence of the section is taught.
 
 ### Physics
 
-- 4.5.3 Forces and elasticity
-- 4.5.4 Moments, levers and gears (physics only)
-- 4.5.5 Pressure and pressure differences in fluids (physics only)
-- 4.6.3 Black body radiation (physics only)
-- 4.8.2 Red-shift (physics only)
+- none
 
 ## (c) Subtopics with an empty specRef
 
@@ -209,14 +205,3 @@ section; it does not mean every sentence of the section is taught.
 ### Physics
 
 - 4.3.3.3 Increasing the pressure of a gas (physics only) (HT only)
-- 4.5.1.2 Contact and non-contact forces
-- 4.5.3 Forces and elasticity
-- 4.5.4 Moments, levers and gears (physics only)
-- 4.5.5.1.1 Pressure in a fluid 1
-- 4.5.5.1.2 Pressure in a fluid 2 (HT only)
-- 4.5.5.2 Atmospheric pressure
-- 4.6.3.1 Emission and absorption of infrared radiation
-- 4.6.3.2 Perfect black bodies and radiation
-- 4.8.1.1 Our solar system
-- 4.8.1.2 The life cycle of a star
-- 4.8.2 Red-shift (physics only)

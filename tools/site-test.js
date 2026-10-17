@@ -97,8 +97,10 @@ function findLesson(id) {
 
 function teachEnabled() {
   const src = fs.readFileSync(path.join(ROOT, 'js/lessons.js'), 'utf8');
-  const m = src.match(/TEACH_ENABLED\s*=\s*\[([^\]]*)\]/);
-  return m ? [...m[1].matchAll(/'([^']+)'/g)].map(x => x[1]) : [];
+  const ids = re => { const m = src.match(re); return m ? [...m[1].matchAll(/'([^']+)'/g)].map(x => x[1]) : []; };
+  const all = ids(/TEACH_ENABLED(?:_ALL)?\s*=\s*\[([^\]]*)\]/);
+  const off = /TEACH_OFF_UNTIL_TESTED\s*=\s*true/.test(src) ? ids(/TESTER_FAILED\s*=\s*\[([^\]]*)\]/) : [];
+  return all.filter(id => !off.includes(id));
 }
 
 // ---------- spend ----------

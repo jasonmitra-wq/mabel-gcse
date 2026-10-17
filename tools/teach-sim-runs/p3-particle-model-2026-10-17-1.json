@@ -1,0 +1,233 @@
+{
+  "id": "p3-particle-model",
+  "subject": "physics",
+  "model": "claude-haiku-4-5-20251001",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Hi! Today we're exploring why a gas can be squashed but a liquid can't, even though they're both made of particles—it all comes down to how those particles are arranged and how tightly packed they are.\n\nIn a solid, the particles sit in a special pattern. What's the name for that regular, repeating arrangement?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's Lattice, A regular, repeating arrangement of particles in a solid",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right—lattice is exactly the word. But here's the thing: even though they can move around, the particles are already packed so tightly that you can't squeeze them any closer together. What do we call it when something can't be compressed?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "No worries! Let me put it simply: in a solid, the particles are already pressed so tightly together that there's no space left to squeeze them into. So when you try to compress a solid, its volume doesn't change—it stays the same.\n\nWhat word do we use to describe something that cannot be squeezed smaller?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "We call that **incompressible**—it means you can't squeeze it smaller.\n\nNow, in a solid, the particles are held tightly in place by strong attractive forces pulling them together. What do you think happens to those forces when you heat a solid up?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Ha, I'm not much of a football person! Shall I just tell you what happens to those forces when a solid gets heated?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "no",
+      "studentType": "no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "When you heat a solid, the particles vibrate more vigorously—they jiggle around faster. But they're still held in place by strong attractive forces between them, pulling them back together.\n\nWhat do you think happens to those attractive forces between particles as the solid gets hotter?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "OK! So think of it this way: in a solid, there are invisible forces pulling the particles together, like tiny magnets holding them in their spots. When you heat it up, the particles jiggle more, but those pulling forces are still there, keeping them stuck in place.\n\nWhat do those pulling forces between particles get called?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "I think it's Intermolecular forces, Attractive forces between particles that hold them together",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Right — attractive forces is spot on, they're what hold particles together in a solid. So here's something new: when you heat up a substance, you're actually putting energy into it. What do we call the total energy stored by all the particles in a substance?",
+      "recap": [
+        "Solids have a lattice structure—particles arranged in a regular, repeating pattern.",
+        "Solids are incompressible because particles are already packed so tightly together.",
+        "Particles in solids vibrate more when heated, but strong forces still hold them in place.",
+        "Intermolecular forces are the invisible attractive forces that pull particles together."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "I think it's Internal energy, The total kinetic and potential energy stored by all particles",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Exactly — that's it. So internal energy has two parts: the kinetic energy from particles moving, and the potential energy from the forces holding them together.\n\nWhen you heat something up, usually the particles start moving faster. What do we call the energy that comes from particles moving?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not quite — it's not about magnets and electricity! When particles move, they have energy just from that movement. If a particle is zooming around fast, it's got more of this movement energy than one crawling along slowly.\n\nWhat's the word for energy that comes from something moving?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "It's called kinetic energy — that's the energy things have just from moving. Now, when you heat up a solid, eventually it melts and turns into a liquid. What's the name for the temperature where that happens?",
+      "recap": [
+        "Internal energy is the total energy stored by all the particles in a substance combined.",
+        "It's made up of two types: kinetic energy from particles moving, and potential energy from forces between them.",
+        "When you heat something, the particles usually move faster, so the kinetic energy increases."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "I think it's Melting point, The temperature at which a substance changes from solid to",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right — melting point is exactly that temperature where a solid turns to liquid. So you know melting and boiling now. There's one more way a substance can change state that's a bit unusual: a solid can actually turn straight into a gas without becoming a liquid first. What do you think happens to the particles when a solid sublimates?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "No worries! So when a solid sublimates, it skips the liquid stage completely — the particles gain so much energy that they go straight from being locked in place to zooming around as a gas. It's like they jump from solid to gas without stopping in between.\n\nWhat happens to the particles' movement when they gain all that energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "When a solid sublimates, the particles jump straight from being locked in place to spreading out and zooming around as a gas — they gain loads of energy and skip the liquid stage entirely. What do you think the particle model helps us explain about why a gas takes up so much more space than a solid?",
+      "recap": [
+        "When a solid is heated to its melting point, it changes into a liquid.",
+        "Boiling point is the temperature where a liquid turns into a gas.",
+        "Sublimation is when a solid turns straight into a gas, skipping the liquid stage completely.",
+        "During sublimation, particles gain so much energy they escape directly from being locked in place."
+      ],
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "I think it's Model, A simplified representation of reality used to explain and predict",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "That's exactly right — a model is a simplified version of reality that helps us explain and predict things. So the particle model is really useful, but it has some limits. What do you think causes the particles to spread out like that?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Not quite — we're looking at why particles spread out and fill up space. When particles move randomly in all directions, they naturally spread away from each other rather than staying bunched together. What word describes this spreading out of particles?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "It's called diffusion — particles randomly bump into each other and spread out to fill the space available. You've now covered all the big ideas: how particles are arranged differently in solids, liquids and gases; how much energy they have in each state; how they change between states; and how diffusion works.",
+      "recap": [
+        "The particle model is a simplified way to explain how substances behave.",
+        "Particles in a gas spread out randomly in all directions to fill available space.",
+        "The particle model helps us understand and predict things, but it's still just a simplified version of reality.",
+        "Real particles are more complex than the simple spheres we use in the model."
+      ],
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You've done really well today — you've got a solid grip on the particle model now. Good luck with your revision!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0.060747999999999996,
+  "mode": "run",
+  "date": "2026-10-17"
+}

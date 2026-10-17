@@ -1,0 +1,574 @@
+{
+  "id": "p1-energy-stores",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! Every time you move, eat or switch on a light, energy is being held in different ways, and those ways are called energy stores. Here's a kick-off: a book sits on a high shelf, so which energy store is it holding?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "idk what u mean lol",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "No worries! Think of energy like money: it has to be kept somewhere, like a wallet or a bank account. An \"energy store\" is just a way energy can be held. One example: a moving car has energy in its kinetic store, because it's moving.\n\nSo where is a ball's energy held when it's flying through the air?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "A flying ball's energy is in its kinetic store, because it's moving. Kinetic energy belongs to any moving object, like a kicked ball or a running person, and it's measured in joules (J).\n\nSo which store is a car's energy in while it drives down the road?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "man im starving rn can we do this after lunch",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Totally fine, go and eat, and you can come back to this lesson any time. If you do carry on: a moving car has energy in its kinetic store, simply because it's moving.\n\nSo why does a parked car have no energy in its kinetic store?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "cuz its not moving innit",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, it's not moving, so its kinetic store is empty. Another store is gravitational potential: energy held by an object because it's raised above the ground, like a book on a shelf.\n\nSo what gives a roller coaster at the top of a hill lots of energy in this store?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "idk like whats the difference lol",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Kinetic is about moving, and gravitational potential is about height. A roller coaster at the top of the hill is high up, so it has lots of energy in its gravitational potential store, even if it's barely moving.\n\nSo what makes a book on a high shelf have more energy in this store than a book on the floor?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "No worries, this bit can feel like a lot. Would you like me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "yeah just tell me lol",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Here's the rest. Elastic potential is a stretched or squashed object, like a spring or a drawn bow. Thermal depends on temperature, so every object has it, and a hot cup of tea has more than the same tea cold. Chemical is food, fuels and batteries. Nuclear is stored inside atoms' nuclei, like uranium or the Sun's core. Electrostatic is between charged objects, like static on a balloon. Magnetic is between magnets, attracting or repelling.\n\nNext up: energy moves between stores by pathways, and one is mechanical, meaning work done by forces like pushing, pulling or kicking.\n\nSo when you kick a ball, what kind of thing is doing the work to transfer the energy?",
+      "recap": [
+        "Energy is kept in \"stores\", which are just different ways energy can be held.",
+        "Kinetic store: energy an object has because it's moving, measured in joules (J).",
+        "A parked car has an empty kinetic store because it isn't moving.",
+        "Gravitational potential store: energy from being raised up, like a book on a shelf."
+      ],
+      "flags": [
+        "over length (115 words)"
+      ]
+    },
+    {
+      "n": 8,
+      "student": "this is long man",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Fair enough, I'll keep it short. When you kick a ball, a force pushes it, and that's called mechanical transfer: energy moves by work done by forces, like pushing or pulling.\n\nSo what is the thing doing the work when you kick a ball?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "like... thermal energy?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not thermal. It's the force doing the work, like your foot pushing the ball. Next pathway: electrical transfer is energy moved by work done when a current flows in a circuit, like in a phone charger lead.\n\nSo what has to be flowing in the circuit for energy to be transferred electrically?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "No worries, simpler way: electrical transfer is energy moving when a current, which is electric charge flowing round a circuit, does work. Think of the charger lead moving energy into your phone.\n\nSo what is flowing round the circuit to carry that energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "idk what flows tbh",
+      "studentType": "idk",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "That's fine, not knowing yet is okay. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "yeah go on then",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "It's an electric current, which is charge flowing round the circuit. Heating moves energy from a hotter object to a cooler one by conduction or convection. Radiation moves it by electromagnetic waves like light and infrared, and sound waves carry energy too. The key sentence is \"energy is transferred [pathway] from the [store] store to the [store] store\".\n\nNext up: the law of conservation of energy says energy cannot be created or destroyed, so the total stays the same. When you push a book off a table and it falls, what happens to the energy it had?",
+      "recap": [
+        "Mechanical transfer is energy moved by a force doing work, like a kick.",
+        "Electrical transfer is energy moved when electric current flows round a circuit.",
+        "Current is just electric charge flowing, like in a phone charger lead.",
+        "Energy sits in stores, like thermal or chemical, and pathways move it between them."
+      ],
+      "flags": [
+        "over length (97 words)"
+      ]
+    },
+    {
+      "n": 13,
+      "student": "it gets destroyed when it hits the ground",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not quite: energy can't be destroyed. When the book hits the floor, its energy doesn't vanish. It moves to the floor and surroundings, partly as sound and thermal energy, so the total stays the same.\n\nSo where does the energy end up after the book lands?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "in the floor and air as heat and sound",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes — the floor and air, as thermal energy and sound, is right. A closed system is one where no energy is transferred to or from the surroundings, so its total energy stays constant.\n\nIf a system is closed and holds 50 J of energy to start with, how much does it hold later?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "still 50 j innit",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Yes — 50 J is right, because nothing enters or leaves a closed system. In real devices, though, some energy always ends up somewhere useless, like heat warming the air around a car engine. This is called dissipation.\n\nWhere does most of this wasted energy end up?",
+      "recap": [
+        "Energy can never be created or destroyed, only transferred between stores.",
+        "A falling book's energy ends up as sound and thermal energy in the floor and air.",
+        "A closed system has no energy going in or out.",
+        "So a closed system with 50 J at the start still has 50 J later."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "No worries, let me say it simpler. When a car engine runs, some energy just warms the air around it, and that spread-out energy is no use to us. That's dissipation.\n\nSo which energy store does that wasted energy go to?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "thermal energy i guess",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, thermal energy is right. Wasted energy is energy that goes to a store that isn't useful for what the device is meant to do, and it's most often dissipated to the thermal store of the surroundings.\n\nIn a car engine, the useful energy is kinetic. Why is the engine's heat warming the air counted as wasted energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Fair enough, I'll keep it short. Wasted energy is energy that goes somewhere we don't want it, like warming the air instead of moving the car.\n\nIf the engine's job is to make the car move, why does heating the air count as wasted?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "cause we want kinetic not heat",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Because heat in the air isn't what the engine is for. We want kinetic energy to move the car, so the heat is wasted. Next, a Sankey diagram is an arrow diagram where the width of each arrow shows how much energy there is. So what does a wider arrow tell you about the energy?",
+      "recap": [
+        "Energy is never lost, it just moves between stores.",
+        "Dissipation is energy spreading into places we can't use it.",
+        "Wasted energy usually ends up in the thermal store of the surroundings.",
+        "A car engine wants kinetic energy, so warming the air is wasted."
+      ],
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "wider arrow means more energy",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Yes, a wider arrow means more energy. Efficiency tells you how much of the input becomes useful output: efficiency = useful output ÷ total input. A lamp takes in 100 J and gives 15 J as light, so what is its efficiency as a decimal?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "um 15 divided by 100... is like 0.15?",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Yes, 0.15 is right: 15 divided by 100 gives the efficiency as a decimal. That brings us to the end of this lesson. You answered questions on \"Conservation of energy\", \"Dissipation\" and \"Sankey diagrams and efficiency\".",
+      "recap": [
+        "Wasted energy, like heat in the air, isn't what the device is for.",
+        "In a Sankey diagram, a wider arrow means more energy.",
+        "Efficiency equals useful output divided by total input.",
+        "The lamp's 15 J useful out of 100 J gives 0.15."
+      ],
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Bye for now! You worked well today on conservation of energy, dissipation and efficiency, and the Sankey diagrams too. Come back any time to go over the energy stores and transfers again.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is long man",
+    "would_quit": {
+      "turn": "T7",
+      "quote": "Here's the rest. Elastic potential is a stretched or squashed object, like a spring or a drawn bow.",
+      "why": "A wall of about 120 words straight after two 'huh?'s from a student who already asked to stop for lunch. Her next reply is 'this is long man'."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Here's a kick-off: a book sits on a high shelf, so which energy store is it holding?",
+        "note": "Asks her to name gravitational potential before any store has been taught. Her reply was 'idk what u mean lol'."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So where is a ball's energy held when it's flying through the air?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So which store is a car's energy in while it drives down the road?",
+        "note": ""
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Totally fine, go and eat, and you can come back to this lesson any time.",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, it's not moving, so its kinetic store is empty.",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So what makes a book on a high shelf have more energy in this store than a book on the floor?",
+        "note": ""
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Here's the rest. Elastic potential is a stretched or squashed object, like a spring or a drawn bow.",
+        "note": "About 120 words: six stores plus a new key point in one block. It also never answers the pending height question."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So what is the thing doing the work when you kick a ball?",
+        "note": ""
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Not thermal. It's the force doing the work, like your foot pushing the ball.",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So what is flowing round the circuit to carry that energy?",
+        "note": ""
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "It's an electric current, which is charge flowing round the circuit.",
+        "note": "About 95 words. It finishes key point 1 and starts conservation in one block."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "It moves to the floor and surroundings, partly as sound and thermal energy, so the total stays the same.",
+        "note": "Presents sound as a place energy ends up. The lesson says the energy goes to the thermal store, partly transferred by sound waves."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Yes — the floor and air, as thermal energy and sound, is right.",
+        "note": "Confirms sound as a store-like destination instead of correcting it to the thermal store of the surroundings."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes — 50 J is right, because nothing enters or leaves a closed system.",
+        "note": ""
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So which energy store does that wasted energy go to?",
+        "note": ""
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, thermal energy is right.",
+        "note": ""
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If the engine's job is to make the car move, why does heating the air count as wasted?",
+        "note": ""
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Because heat in the air isn't what the engine is for.",
+        "note": "Does not open by confirming her correct answer."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A lamp takes in 100 J and gives 15 J as light, so what is its efficiency as a decimal?",
+        "note": ""
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, 0.15 is right: 15 divided by 100 gives the efficiency as a decimal.",
+        "note": ""
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Bye for now!",
+        "note": ""
+      }
+    ],
+    "flow_faults": [
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T19",
+        "quote": "Because heat in the air isn't what the engine is for.",
+        "note": "She said 'cause we want kinetic not heat', which is correct. There is no 'Yes, that's right'."
+      },
+      {
+        "type": "tell_me_skipped_content",
+        "turn": "T7",
+        "quote": "Here's the rest. Elastic potential is a stretched or squashed object, like a spring or a drawn bow.",
+        "note": "The pending GPE answer is never given: a higher object has more, and so does a heavier one (tables[0].rows[1][3])."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T14",
+        "quote": "Yes — the floor and air, as thermal energy and sound, is right.",
+        "note": "Sound is a transfer by waves, not an end store. keyPoints[2].writeBullets[4] says 'thermal store of the surroundings, partly transferred by sound waves'."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: tell-me replies",
+        "change": "Cap a 'just tell me' reply at about 60 words. Deliver the remaining stores in two short chunks, using the writeBullets one line each. Do not start the next key point in the same message.",
+        "quote": "Here's the rest. Elastic potential is a stretched or squashed object, like a spring or a drawn bow."
+      },
+      {
+        "target": "teach-core: opening question",
+        "change": "In the first turn, define 'energy store' and give one example before asking anything. Do not ask her to name a store she has not been taught.",
+        "quote": "Here's a kick-off: a book sits on a high shelf, so which energy store is it holding?"
+      },
+      {
+        "target": "teach-core: acknowledge correct answers",
+        "change": "Always start the reply after a correct answer with 'Yes, ...' and name what was right before adding anything new.",
+        "quote": "Because heat in the air isn't what the engine is for."
+      },
+      {
+        "target": "keyPoints[2].content",
+        "change": "Add an explicit line: 'Sound is a way energy is transferred, not a store. The energy ends up in the thermal store of the surroundings.' The tutor should then correct 'heat and sound' answers to 'thermal store of the surroundings'.",
+        "quote": "Yes — the floor and air, as thermal energy and sound, is right."
+      },
+      {
+        "target": "teach-core: tell-me answers pending question",
+        "change": "When she accepts the check-in, answer the question left hanging first. Here that means: higher up, or heavier, means more GPE. Only then move to the rest of the key point.",
+        "quote": "So what makes a book on a high shelf have more energy in this store than a book on the floor?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T7",
+      "flow faults: correct_answer_not_acknowledged T19, tell_me_skipped_content T7, factual_or_unit_slip T14"
+    ]
+  },
+  "cost": 0.43379799999999996,
+  "tutorCost": 0.255686,
+  "tutorCalls": 57,
+  "mode": "run",
+  "date": "2026-10-17"
+}

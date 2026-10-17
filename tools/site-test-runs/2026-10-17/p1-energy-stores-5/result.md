@@ -1,0 +1,143 @@
+# Site test: p1-energy-stores (lesson, 2026-10-17)
+
+**FAIL** · cost $0.4234 (20 tool calls, 56 calls from the site; tutor claude-sonnet-5-5 $0.2631)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "After 'what?' the tutor gave away the answer (gravitational potential energy). Her correct reason 'cos its up high' was then tagged offtopic. T2 asked the same store question a third time, though it had just named the store itself.",
+      "step": "T1-T2"
+    },
+    {
+      "what": "Answer given inside the question: T10 says the GPE 'turns into kinetic energy' and then asks 'what kind of energy is it gaining?'. When she said she didn't know what kinetic meant, it still counted as covered.",
+      "step": "T10-T11"
+    },
+    {
+      "what": "She said 'this is long'. The tutor promised to keep it short, then stated the answer (heat warms the air) and asked the same question again.",
+      "step": "T13"
+    },
+    {
+      "what": "'In the lamp example' refers to a lamp Sankey diagram that was never introduced or shown. The student has no diagram or numbers to look at.",
+      "step": "T16"
+    },
+    {
+      "what": "T17 says the 85-unit arrow 'is the wasted energy' without saying what the lamp's useful output is (light). She is then asked for efficiency with no basis for which number is useful.",
+      "step": "T17"
+    },
+    {
+      "what": "The heating question (hot tea) was left unanswered when the section was skipped. The summary still says she 'answered some questions' on transfers, but only electrical and mechanical were touched. The heating and radiation pathways were never taught.",
+      "step": "T9 / T18"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "The Key Terms panel clips its text mid-line at the bottom ('calculated using Ek = ½mv²' is cut in half), and nothing shows that it scrolls.",
+      "screenshot": "07-exchange-6-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The 'WORTH WRITING DOWN' heading is sliced under the sticky header, so only the bottom half of the letters shows.",
+      "screenshot": "10-exchange-15-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The note card heading is hidden under the sticky header at the top of the chat.",
+      "screenshot": "11-exchange-18-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The 'Lesson finished.' text and the Topics / Show me the slides / Ask something else buttons are not visible at the end; the screen stops at the last tutor bubble.",
+      "screenshot": "12-end-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "There is a large empty gap between the 'k' bubble and the tutor's reply.",
+      "screenshot": "12-end-laptop.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": false,
+  "fixes": [
+    {
+      "target": "tutor behaviour: after giving an answer away (confused/bored replies)",
+      "change": "Never re-ask a question whose answer was just stated. Move on to a new question, or ask her to apply it to a different example."
+    },
+    {
+      "target": "tutor behaviour: 'this is long' / bored replies",
+      "change": "Cut the turn to one short sentence plus one new, easy question. Do not repeat the previous question."
+    },
+    {
+      "target": "p1-energy-stores Sankey section content",
+      "change": "Introduce the lamp before referencing it, e.g. 'A lamp takes in 100 J, gives 15 J as light (useful) and 85 J as heat (wasted)'. Show a simple Sankey image."
+    },
+    {
+      "target": "tutor behaviour: off-topic classification",
+      "change": "Mark answers that contain the correct idea ('up high and could fall') as correct, not offtopic. Advance instead of re-asking."
+    },
+    {
+      "target": "Key Terms panel CSS (laptop) and sticky header (phone)",
+      "change": "Fade the bottom edge of the Key Terms panel and add a visible scrollbar so clipped text is clearly scrollable. Add scroll-margin-top to chat cards so headings are not hidden under the sticky header. On phone, auto-scroll to show 'Lesson finished' and the end buttons."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Lesson p1-energy-stores (Physics › Energy › Energy stores and transfers — what energy actually is).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p1-phone.png and 04-lessons-p1-laptop.png] lessons-P1
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Energy is always doing something: it's held in different ways, called energy stores, and there are eight of them. A moving car has energy in its kinetic store. What kind of energy store does a book sitting high on a shelf have?
+    [screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (minimal): what?
+    T1: Let me say it more simply. An energy store is just a way energy can be held. A moving car holds it as kinetic energy, and a book high on a shelf holds it as gravitational potential energy. Why does the book on the shelf hold energy?
+    S2 (offtopic): cos its up high and could fall down i guess
+    T2: Yes — it's up high, so it holds gravitational potential energy. The kinetic energy store belongs to anything that is moving, like a kicked ball or a running person, and an object that isn't moving has none. What kind of energy store does it have because of its height?
+    S3 (try): gravitational potential energy
+    T3: Yes — gravitational potential energy is right, because the book is raised above the ground. It's worked out with Ep = mgh, where h is the height, g = 9.8 N/kg on Earth, and it's measured in joules (J). What does the "h" in Ep = mgh stand for?
+    [screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3
+    S4 (try): height
+    T4: Yes — "h" stands for height. Next, a stretched or squashed object, like a spring or a drawn bow, holds energy in its elastic potential store. What kind of energy store does a drawn bow hold?
+    S5 (try): elastic potential energy
+    T5: Yes — elastic potential energy is right, because a drawn bow is stretched. Energy doesn't just jump between stores; it moves by a pathway, and one is mechanical transfer, which is energy transferred by work done by forces, like pushing, pulling or kicking. When you kick a ball, what kind of thing is doing the work to transfer the energy?
+    S6 (bored): huh?
+    T6: No worries, let me say it more simply: a push, a pull or a kick is a force doing work, and that moves energy from one store to another. That's called a mechanical transfer. If you push a shopping trolley to make it move, what are you using to do the work?
+    [screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6
+    S7 (bored): this is long
+    T7: Fair enough, I'll keep it short. The answer was a force: your push is the force doing the work. Next, electrical transfer is energy moved by work done when a current flows in a circuit. When a current flows in a circuit, what is the thing flowing?
+    S8 (try): electric charge or electrons?
+    T8: Yes — electric charge is right, and electrons are the charges that move in a circuit. Next is heating: energy is transferred from a hotter object to a cooler one, never the other way round. If you leave a hot cup of tea on a table, which object does the energy flow towards?
+    S9 (bored): can we skip this
+    T9: Fine, we'll skip the four ways energy is transferred. Next is the big rule: energy can't be created or destroyed, so the total stays the same in a closed system. If you push a book off a table, its gravitational potential energy doesn't vanish, so what does it become as it falls?
+    [screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9
+    S10 (bored): huh?
+    T10: Let me say it simpler: energy never disappears, it just changes form. A falling book loses height, but its gravitational potential energy turns into kinetic energy, the energy of movement. So when the book is falling, what kind of energy is it gaining?
+    S11 (idk): idk what kinetic is
+    T11: Kinetic energy is the energy of movement, so the falling book is gaining kinetic energy. Now, a closed system is one where no energy is transferred to or from the surroundings, so its total energy stays the same. In a closed system, what happens to the total energy?
+    S12 (try): it stays the same i guess
+    T12: Yes — the total energy stays the same in a closed system. In real life, though, some energy always ends up somewhere useless, like the heat warming the air around a car engine, and we call that spreading out dissipation. When a car engine burns petrol, where does the wasted energy mostly end up?
+    [screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12
+    S13 (bored): this is long
+    T13: Sorry, I'll keep it short. A car engine gets hot, and that heat warms the air around it. That wasted energy is called dissipation. Where does the wasted energy from the engine end up?
+    S14 (try): it goes into heat i think
+    T14: Yes — heat is right, and it goes into the thermal energy store of the surroundings, warming the air around the engine. In the car engine, what is the useful energy store that the petrol's chemical energy is meant to be turned into?
+    S15 (try): kinetic energy to make it move
+    T15: Yes — kinetic energy is right, the useful store for making the car move. A Sankey diagram is an arrow diagram where each arrow's width shows how much energy there is, and the input arrow splits into useful and wasted arrows. What does the width of an arrow show?
+    [screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15
+    S16 (wrong): how fast the energy is going?
+    T16: Not quite. The width isn't about speed, it's about how much energy there is: a wider arrow means more energy. In the lamp example, the input arrow is 100 units wide and splits into a 15-unit arrow and an 85-unit arrow. Which of those two arrows is wider?
+    S17 (offtopic): the 85 one obviously lol
+    T17: Yes, the 85-unit arrow is wider, and that one is the wasted energy. Efficiency is useful output ÷ total input, so for the lamp it's 15 ÷ 100. What decimal does that give?
+    S18 (try): um like 0.15?
+    T18: Yes — 0.15 is right, the decimal you get from 15 ÷ 100. That brings us to the end of this lesson. You answered questions on "The eight energy stores", "Conservation of energy", "Dissipation" and "Sankey diagrams and efficiency", and you answered some questions on "The four ways energy is transferred", then skipped the rest of it.
+    [screenshot 11-exchange-18-phone.png and 11-exchange-18-laptop.png] exchange-18
+    S19 (bored): k
+    T19: Sounds good. You can come back to this lesson any time, and the part on the four ways energy is transferred is a good one to revisit when you're ready. Take care!
+    [the lesson shows "Lesson finished."]
+    [screenshot 12-end-phone.png and 12-end-laptop.png] end

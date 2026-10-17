@@ -175,3 +175,19 @@ Same sample re-run once with TEACH_THEN_ASK on (tools/teach-sim-runs/*-2026-10-1
 - A correct answer often gets no feedback when the check-in ("Do you want me to just tell you the rest?") fires on that turn (both website runs, 2–3 times each). This is the check-in path in js/teach-core.js `_decide`: the check-in prompt says not to teach or acknowledge anything.
 - She asks to stop ("can we do this later im hungry") and gets the same question again; no pause button.
 - Content errors seen from the tutor: "the lamp wastes the other 85 J" for a 100 W / 15 W example; heating "conduction and convection are the two ways"; "0. 15" with a stray space (also seen with Haiku: "0. 4").
+
+## Brief 2026-10-17 (tutor flow): AI lessons still failing after FLOW_FIX (step 3)
+
+FLOW_FIX (js/teach-core.js, on) ran once, got one fix round, and was re-run once (text: tools/teach-sim-runs/*-2026-10-17-7-bored.md; website: tools/site-test-runs/2026-10-17/p1-energy-stores-5, b3-defences-7). All six still FAIL under the new rule. All stay live (runbook section 1).
+
+Flow faults per text run: before FLOW_FIX (step-4 Sonnet runs re-judged, *-5-bored) → first pass (*-6) → after the fix round (*-7):
+p1-energy-stores 11 → 1 → 3; p2-current-voltage 4 → 2 → 3; b3-defences 9 → 4 → 5; g5-development 12 → 10 → 5. checkin_without_struggle is gone (0 in the re-run, was 12 across the baseline); skip_request_ignored is gone.
+
+Still there, all in shared code:
+- question_repeated_after_correct_answer (p2 ×2, b3 ×3): the repeat is reworded or reversed ("what does non-specific tell us…" after she said "it attacks anything"), so the word-overlap guard and the list of her correct answers in the prompt do not catch it. Next idea: let the answer-marking call also say whether the new question is already answered.
+- correct_answer_not_acknowledged (p1, b3, g5 ×2): the marking call said OTHER or PARTLY for an answer the judge calls right (e.g. "cause we want kinetic not heat", "schools and hospitals"), so the reply did not open with the confirmation.
+- tell_me_skipped_content (p1, g5 ×2): long key points (g5 causes of the gap, aid) are told in 170 words or fewer, which leaves sub-points out. The brief asks for all of it; that would need more than one turn per telling.
+- closing_claims_untaught_content (p2, g5): the closing names a point as "answered questions on" when she answered one of several questions, or names a point never reached. The point's state is per key term, not per content sentence.
+- factual_or_unit_slip (p1: sound called an end store; b3: "non-specific" glossed as "all at once"): model wording, not lesson text.
+- Website (both FAIL, broken 6 each): answers given inside the question and copy-back questions (b3), a lamp Sankey example used without being introduced (p1), a correct "measles" marked wrong because the question was "which one did we say" (b3). b3 would quit at S16.
+- Not a flow fault but seen: questions asked before teaching are 0–1 per text run now (p1 T0, b3 T11), down from 1–4.

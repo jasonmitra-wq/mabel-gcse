@@ -8,3 +8,4 @@ Written from data/spec/physics.md (md5 6a6e0cc7eaee22f1e58d78b217f4f4bc). New fi
 
 - p5-elasticity | new lesson, all fields; syllabus entry with specRef 4.5.3 | 2.4 (spec 4.5.3)
 - p5-moments | new lesson, all fields; syllabus entry with specRef 4.5.4 | 2.4 (spec 4.5.4)
+- p5-fluid-pressure | new lesson, all fields; syllabus entry with specRef 4.5.5.1.1, 4.5.5.1.2, 4.5.5.2 | 2.4 (spec 4.5.5)

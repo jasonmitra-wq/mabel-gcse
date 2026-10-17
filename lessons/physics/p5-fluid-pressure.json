@@ -1,0 +1,221 @@
+{
+  "id": "p5-fluid-pressure",
+  "title": "Pressure in fluids and atmospheric pressure",
+  "topic": "P5",
+  "examTip": "Know p = F/A by heart. You are given p = hρg. Be ready to explain why pressure in a liquid increases with depth, and why atmospheric pressure decreases with height.",
+  "introTips": [
+    "A fluid is a liquid or a gas. Pressure in a fluid pushes at right angles to any surface.",
+    "Deeper in a liquid, there is more liquid above you. So the pressure is greater.",
+    "Higher up in the atmosphere, there is less air above you. So the pressure is lower."
+  ],
+  "intro": "Your ears can hurt at the bottom of a swimming pool. A boat floats, but a stone sinks. In this lesson you learn what pressure in a fluid is and how to calculate it. You learn why it changes with depth, and what makes things float. You also learn why the air pressure gets lower as you go higher.",
+  "keyPoints": [
+    {
+      "heading": "Pressure in a fluid: p = F/A",
+      "content": "A <strong>fluid</strong> can be either a liquid or a gas.\n\nThe pressure in a fluid causes a force <strong>normal</strong> (at right angles) to any surface.\n\nThe pressure at the surface of a fluid is given by <strong>p = F/A</strong>.\n- p is the pressure, in pascals (Pa).\n- F is the force normal to the surface, in newtons (N).\n- A is the area of that surface, in metres squared (m²).\n\nThe same force on a smaller area gives a bigger pressure.\n\nWorked example: a force of 600 N acts on an area of 0.02 m². p = 600 ÷ 0.02 = <strong>30 000 Pa</strong>.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Fluid = a liquid or a gas",
+        "Pressure in a fluid causes a force normal (at right angles) to any surface",
+        "p = F/A: pressure (Pa) = force normal to a surface (N) ÷ area of that surface (m²)",
+        "Same force on a smaller area → bigger pressure"
+      ],
+      "keyTerms": [
+        {
+          "term": "Fluid",
+          "def": "A liquid or a gas"
+        },
+        {
+          "term": "Pressure",
+          "def": "The force normal to a surface divided by the area of that surface; p = F/A, measured in pascals (Pa)"
+        },
+        {
+          "term": "Pascal (Pa)",
+          "def": "The unit of pressure; 1 Pa = 1 N/m²"
+        }
+      ],
+      "memTip": "Pressure = Force ÷ Area. Small area, big pressure.",
+      "tutor_note": "Check the area is in m². An area in cm² gives an answer that is far too large."
+    },
+    {
+      "heading": "Pressure in a liquid increases with depth",
+      "content": "The pressure due to a column of liquid is given by <strong>p = hρg</strong>. You are given this equation in the exam.\n- p is the pressure, in pascals (Pa).\n- h is the height of the column of liquid, in metres (m).\n- ρ is the density of the liquid, in kilograms per metre cubed (kg/m³).\n- g is the gravitational field strength, in newtons per kilogram (N/kg).\n\nPressure at a point in a liquid increases with the <strong>height of the column</strong> of liquid above that point. Deeper down, the column of liquid above is taller. It has more weight, so the pressure is greater.\n\nPressure also increases with the <strong>density</strong> of the liquid. A denser liquid has more mass in each column. So it has more weight above the point.\n\nWorked example: water has density 1000 kg/m³, and g = 9.8 N/kg. At 2 m deep, p = 2 × 1000 × 9.8 = 19 600 Pa. At 5 m deep, p = 49 000 Pa. The difference in pressure is <strong>29 400 Pa</strong>.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "p = hρg (given in the exam): pressure (Pa) = height of column (m) × density (kg/m³) × g (N/kg)",
+        "Deeper → taller column of liquid above → more weight → greater pressure",
+        "Denser liquid → more weight above the point → greater pressure",
+        "Difference in pressure between two depths = difference in height × ρ × g"
+      ],
+      "keyTerms": [
+        {
+          "term": "p = hρg",
+          "def": "Pressure due to a column of liquid = height of the column × density of the liquid × gravitational field strength"
+        }
+      ],
+      "memTip": "Deeper and denser = more pressure.",
+      "tutor_note": "For a difference in pressure, the student can subtract the depths first. Then use p = hρg once."
+    },
+    {
+      "heading": "Upthrust, floating and sinking",
+      "content": "Think of an object partly or fully under the surface of a liquid. The bottom surface is deeper than the top surface. So the pressure on the bottom is greater than the pressure on the top.\n\nThis creates a resultant force upwards. This force is called the <strong>upthrust</strong>.\n\nWhether an object floats or sinks depends on its weight and the upthrust.\n- An object <strong>floats</strong> when the upthrust equals its weight. A floating object is less dense than the liquid.\n- An object <strong>sinks</strong> when its weight is greater than the upthrust, even when it is fully under the surface. A sinking object is denser than the liquid.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Submerged object: greater pressure on the bottom surface than the top",
+        "This gives a resultant force upwards called upthrust",
+        "Floats: upthrust = weight; the object is less dense than the liquid",
+        "Sinks: weight > upthrust, even when fully submerged; the object is denser than the liquid"
+      ],
+      "keyTerms": [
+        {
+          "term": "Upthrust",
+          "def": "The resultant upward force on an object in a liquid, caused by greater pressure on its bottom surface than its top"
+        }
+      ],
+      "memTip": "Bottom is deeper, so it is pushed harder. That push up is upthrust.",
+      "tutor_note": "Students often say upthrust is caused by the object being 'light'. Bring them back to the pressure difference between the top and bottom surfaces."
+    },
+    {
+      "heading": "Atmospheric pressure",
+      "content": "The <strong>atmosphere</strong> is a thin layer of air round the Earth. It is thin compared with the size of the Earth. The atmosphere gets less dense as altitude (height) increases.\n\nAir molecules collide with any surface. These collisions create <strong>atmospheric pressure</strong>.\n\nAs a surface gets higher above ground level, there are fewer air molecules above it. So the weight of air above it is less. There is always less air above a high surface than above a lower one.\n\nSo <strong>atmospheric pressure decreases as height increases</strong>.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Atmosphere: a thin layer of air round the Earth",
+        "It gets less dense as altitude increases",
+        "Air molecules colliding with a surface create atmospheric pressure",
+        "Higher up → fewer molecules and less weight of air above → lower pressure"
+      ],
+      "keyTerms": [
+        {
+          "term": "Atmosphere",
+          "def": "A thin layer of air round the Earth, thin compared with the size of the Earth"
+        },
+        {
+          "term": "Atmospheric pressure",
+          "def": "The pressure created by air molecules colliding with a surface; it decreases as height increases"
+        }
+      ],
+      "memTip": "Climb higher, less air above, less pressure.",
+      "tutor_note": "Link both ideas: collisions of air molecules make the pressure, and less air above means fewer of them."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Pressure equations",
+      "examFlag": true,
+      "headers": [
+        "Equation",
+        "Words",
+        "Learn or given"
+      ],
+      "rows": [
+        [
+          "p = F/A",
+          "pressure = force normal to a surface ÷ area of that surface",
+          "Learn it"
+        ],
+        [
+          "p = hρg",
+          "pressure = height of column × density of liquid × gravitational field strength",
+          "Given"
+        ]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "0": {
+      "question": "A force of 200 N acts at right angles on an area of 0.5 m². What is the pressure?",
+      "options": [
+        "100 Pa",
+        "400 Pa",
+        "200.5 Pa",
+        "0.0025 Pa"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct. p = F/A = 200 ÷ 0.5 = 400 Pa.",
+      "wrongFeedback": "Use p = F/A. p = 200 ÷ 0.5 = 400 Pa. Divide the force by the area."
+    },
+    "1": {
+      "question": "Why is the pressure greater at the bottom of a lake than near the top?",
+      "options": [
+        "The water is warmer at the bottom",
+        "The water is less dense at the bottom",
+        "There is a taller column of water above, so more weight pushes down",
+        "Atmospheric pressure is greater at the bottom"
+      ],
+      "correct": 2,
+      "correctFeedback": "Correct. Deeper down, the column of water above is taller. Its weight is greater, so the pressure is greater.",
+      "wrongFeedback": "Pressure in a liquid increases with the height of the column above the point. Deeper down there is more water above, so more weight pushes down."
+    },
+    "2": {
+      "question": "What causes the upthrust on an object under water?",
+      "options": [
+        "The pressure on its bottom surface is greater than on its top surface",
+        "The object is lighter than air",
+        "The pressure is the same on all its surfaces",
+        "The water pulls the object up"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct. The bottom surface is deeper, so the pressure there is greater. This gives a resultant force upwards: the upthrust.",
+      "wrongFeedback": "The bottom of the object is deeper than its top. So the pressure on the bottom is greater. This gives a resultant force upwards, called upthrust."
+    },
+    "3": {
+      "question": "Why does atmospheric pressure decrease as you climb a mountain?",
+      "options": [
+        "The air gets warmer",
+        "There is less air above you, so fewer molecules and less weight of air",
+        "Gravity stops acting on the air",
+        "The air molecules move faster"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct. Higher up, there are fewer air molecules above you. The weight of air above is less, so the pressure is lower.",
+      "wrongFeedback": "As you go higher, there is less air above you. Fewer molecules and less weight of air means lower atmospheric pressure."
+    }
+  },
+  "commonMistakes": [
+    "Using an area in cm² in p = F/A. Change it to m² first.",
+    "Saying pressure in a liquid acts only downwards. It acts at right angles to any surface.",
+    "Saying atmospheric pressure decreases because gravity is weaker higher up. The reason is that there is less air above.",
+    "Saying an object floats because it is light. It floats when the upthrust equals its weight."
+  ],
+  "examTips": [
+    "For p = hρg, write out what h, ρ and g are with their units before you put in numbers.",
+    "To explain upthrust, mention both surfaces: more pressure on the bottom than the top.",
+    "To explain why pressure changes with height or depth, talk about how much fluid is above the point."
+  ],
+  "revisionCardBullets": [
+    "Fluid = liquid or gas; pressure acts at right angles to any surface",
+    "p = F/A: pressure (Pa) = force (N) ÷ area (m²)",
+    "p = hρg (given): pressure due to a column of liquid",
+    "Pressure in a liquid increases with depth and with density",
+    "Upthrust: greater pressure on the bottom surface than the top → resultant force up",
+    "Floats: upthrust = weight. Sinks: weight > upthrust",
+    "Atmosphere: thin layer of air; less dense higher up",
+    "Atmospheric pressure decreases with height: less air above"
+  ],
+  "videos": [
+    {
+      "title": "Pressure in Fluids — GCSE Physics",
+      "url": "https://www.youtube.com/results?search_query=pressure+in+fluids+upthrust+atmospheric+pressure+GCSE+physics",
+      "source": "YouTube search",
+      "duration": "~9 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "pressure in fluids upthrust atmospheric pressure GCSE physics",
+      "label": "Pressure in Fluids",
+      "source": "YouTube search",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=pressure+in+fluids+upthrust+atmospheric+pressure+GCSE+physics"
+    }
+  ]
+}

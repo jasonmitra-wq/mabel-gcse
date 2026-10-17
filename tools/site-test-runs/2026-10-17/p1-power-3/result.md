@@ -1,0 +1,162 @@
+# Site test: p1-power (lesson, 2026-10-17)
+
+**FAIL** · cost $0.2050 (18 tool calls, 33 calls from the site)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "A resource returned 404 on load (console error 'Failed to load resource: the server responded with a status of 404').",
+      "step": "page load, before lesson"
+    },
+    {
+      "what": "Wrong answer was not clearly marked wrong. The student said '600 plus 3? so 603 watts?' and the tutor began with 'Right, 600 and 3 are the two numbers you need', which half-affirms adding. It never says 603 W is wrong.",
+      "step": "S6/T6"
+    },
+    {
+      "what": "A correct answer was left unconfirmed. The student said '2 joules' (2 N × 1 m = 2 J) and the tutor skipped any feedback, asking only 'Would you like me to just walk you through the rest of it?'",
+      "step": "S15/T15"
+    },
+    {
+      "what": "The tutor broke a promise. It offered to 'walk you through the actual formula for power'; the student said ok. The next message only repeated the watt definition. P = E/t was never stated in the chat, only in the key-terms panel.",
+      "step": "T4/T5"
+    },
+    {
+      "what": "The tutor ignored its own opening question about what 'rate' means. It never got an answer and moved on after the off-topic reply.",
+      "step": "T0/T1"
+    },
+    {
+      "what": "The student asked to be walked through the rest, but the tutor gave one sentence and declared all four points covered. Work done = force × distance was never practised with a calculation the tutor marked.",
+      "step": "S16/T16"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "Markdown is shown as raw asterisks: '**watt**', '*every second*' and '*how quickly*'.",
+      "screenshot": "06-exchange-3-laptop.png"
+    },
+    {
+      "what": "Raw markdown asterisks: '**watt**' and '**rate**'.",
+      "screenshot": "07-exchange-6-phone.png"
+    },
+    {
+      "what": "Raw markdown asterisks: '**gigawatt**'.",
+      "screenshot": "08-exchange-9-laptop.png"
+    },
+    {
+      "what": "Raw markdown asterisks: '**work done**' shown twice.",
+      "screenshot": "09-exchange-12-phone.png"
+    },
+    {
+      "what": "Raw markdown asterisks: '**joules**' and '**newton-metres**'.",
+      "screenshot": "10-exchange-15-laptop.png"
+    },
+    {
+      "what": "The site title 'Mabel's GCSE Tutor' wraps onto 3 lines in the phone header. The top line 'Mabel's' is clipped off the top.",
+      "screenshot": "01-home-phone.png"
+    },
+    {
+      "what": "The '← Home' button is clipped and overlaps the 'What are you revising?' heading, which is cut off under the header.",
+      "screenshot": "02-subjects-phone.png"
+    },
+    {
+      "what": "The header icon row overflows the right edge on phone. The last icon is cut off.",
+      "screenshot": "05-ai-lesson-opening-phone.png"
+    },
+    {
+      "what": "The lesson title is truncated to 'Power — how fast energy gets tr...'.",
+      "screenshot": "05-ai-lesson-opening-phone.png"
+    },
+    {
+      "what": "The Key Terms panel cuts off at the 'CALCULATING POWER NEW' heading with no terms visible beneath it.",
+      "screenshot": "08-exchange-9-laptop.png"
+    },
+    {
+      "what": "The panel says 'KEY TERMS (9)' but only 3 terms show. The 'CALCULATING POWER' heading is cut at the bottom with no scroll cue.",
+      "screenshot": "11-end-laptop.png"
+    },
+    {
+      "what": "The 'Lesson finished.' text and end buttons are not visible on phone. The page ends at the last tutor bubble.",
+      "screenshot": "11-end-phone.png"
+    }
+  ],
+  "would_quit": false,
+  "fixes": [
+    {
+      "target": "chat message renderer (tutor bubble)",
+      "change": "Parse markdown (**bold**, *italic*) into <strong>/<em>, or strip asterisks, before rendering tutor messages."
+    },
+    {
+      "target": "header CSS at ≤480px",
+      "change": "Shorten the title to 'Mabel's' or hide it below 480px with white-space:nowrap. Let the icon row shrink or collapse into a menu so nothing overflows or clips."
+    },
+    {
+      "target": "tutor prompt: wrong-answer handling",
+      "change": "If the student's answer is wrong (e.g. 603 W), first say plainly it's not right and why (power = energy ÷ time, not +). Never open feedback on a wrong answer with 'Right'."
+    },
+    {
+      "target": "tutor prompt: answer acknowledgement / walkthrough",
+      "change": "Always confirm or correct the student's last answer before offering a walkthrough. When the student accepts an offer (formula, walkthrough), deliver it explicitly, e.g. state P = E ÷ t and W = F × d with one worked example."
+    },
+    {
+      "target": "Key Terms panel (laptop) + missing asset",
+      "change": "Give the panel overflow-y:auto with a fade or scroll hint so all terms are reachable. Find and fix the 404 resource URL loaded on startup."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    [console error] Failed to load resource: the server responded with a status of 404 (Not Found)
+    Lesson p1-power (Physics › Energy › Power — how fast energy is transferred).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p1-phone.png and 04-lessons-p1-laptop.png] lessons-P1
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Hello! Today we're looking at power — which explains why one crane can lift a car much faster than another, or why a powerful kettle boils water quicker. Power is all about *how quickly* energy gets transferred, not just how much total energy moves. What do you think "rate" means when we talk about something happening?
+    [screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (offtopic): ugh my phone battery keeps dying so fast tho
+    T1: Ah, phone batteries are annoying! So when we say power is how *quickly* energy moves, we mean how much energy shifts in each second. If a kettle transfers lots of energy every single second, it's powerful. How much energy do you think a powerful kettle transfers in one second compared to a weaker one?
+    S2 (bored): more i guess? can we do something else
+    T2: Right — yes, a powerful kettle transfers more energy each second. So power is measured in a unit called the **watt** (W), and 1 watt just means 1 joule of energy transferred every single second. If a kettle is 2000 watts, how many joules does it transfer in one second?
+    S3 (wrong): like 2000 joules?
+    T3: Exactly right — 2000 joules! So when we say 1 watt means 1 joule transferred *every second*, a 2000-watt kettle transfers 2000 joules in each single second. If a kettle were only 1000 watts, how many joules would it transfer in one second?
+    [screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3
+    S4 (try): 1000 joules innit
+    T4: Right — 1000 joules, spot on. Would you like me to walk you through the actual formula for power now?
+    S5 (minimal): ok go on
+    T5: So a **watt** is just the unit we use to measure power — and 1 watt means 1 joule transferred every single second. The **rate** is how quickly that energy transfer happens — basically, how many joules per second. If a machine transfers 600 joules of energy in 3 seconds, what would you calculate to find its power?
+    S6 (wrong): like 600 plus 3? so 603 watts?
+    T6: Right, 600 and 3 are the two numbers you need — but which one do you divide by which?
+    [screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6
+    S7 (try): um 600 divided by 3?
+    T7: Spot on — 600 divided by 3 is exactly right, so the power is 200 watts. Now, when machines are really powerful, we don't always write the answer in watts — we use a bigger unit called a **kilowatt**, or kW for short. If a kettle uses 2000 watts, how would you write that in kilowatts?
+    S8 (try): is it like 2 kilowatts?
+    T8: Yes, exactly — 2 kilowatts is right. So when power gets even bigger, like at power stations, we use an even larger unit called a **megawatt** or MW — and 1 megawatt is 1 million watts. If a power station outputs 50 megawatts, how many watts would that be?
+    S9 (try): um like 50 million watts?
+    T9: Spot on — 50 million watts is exactly right. So now you know watts, kilowatts and megawatts, there's one more huge unit called a **gigawatt** or GW. A gigawatt is 1 billion watts, and that's what we use for really massive power stations and whole countries' electricity. How many watts are in 1 gigawatt?
+    [screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9
+    S10 (bored): huh?
+    T10: A gigawatt is just a massive way of writing 1 billion watts — it's what we use for things so powerful they power whole countries. Think of it like this: 1 gigawatt = 1,000,000,000 watts, all written as one word instead of all those zeros. What's 1 gigawatt in watts?
+    S11 (try): 1 billion watts?
+    T11: Right — that's 1 billion watts. Now, whenever a force moves something, energy gets transferred, and we call that **work done**. What do you think happens to the energy when you lift a heavy box off the ground?
+    S12 (try): it goes into the box i guess
+    T12: Right — energy does go into the box. When you lift it, the force you use moves the box upwards through a distance, and that's what we call **work done**. What two things do you think work done depends on — the force you use, and what else?
+    [screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12
+    S13 (idk): idk maybe like how heavy it is
+    T13: It's the distance you move it — work done equals the force times the distance it travels. Here's the thing: we measure work in **joules**, but we can also write it as **newton-metres** (N m) — they're exactly the same thing. If a force of 1 newton pushes something 1 metre, how many joules of work is that?
+    S14 (bored): huh?
+    T14: Think of it like this: if you push with a force of 1 newton, and you push something 1 metre away, you've done 1 joule of work. Newton-metres and joules are just two different ways of writing the same thing. If a force of 2 newtons pushes something 1 metre, how many joules of work is that?
+    S15 (try): um like 2 joules?
+    T15: Would you like me to just walk you through the rest of it?
+    [screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15
+    S16 (try): yeah that'd be easier ngl
+    T16: So 1 newton-metre is the same as 1 joule — that's just two ways of writing the same thing. You've now covered all four key points in this lesson, so you're all set! Anything else you'd like to know?
+    S17 (closing): nah im good thanks
+    T17: You've got this! Good luck with your revision, and feel free to come back anytime you need a hand.
+    [the lesson shows "Lesson finished."]
+    [screenshot 11-end-phone.png and 11-end-laptop.png] end

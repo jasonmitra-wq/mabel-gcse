@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 2, task 2.4 blocked in the cloud session (no data/spec/physics.md; see ESCALATIONS); 2.1 recalibration and 2.3 --run also pending there. HOLD before 2.5 until a Mabel verdict is in docs/MABEL-FEEDBACK.md
+Runbook position: Phase 2, task 2.3 live run next (2.1 recalibration PASS 2026-10-17); then 2.4. HOLD before 2.5 until a Mabel verdict is in docs/MABEL-FEEDBACK.md
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.
@@ -34,7 +34,7 @@ Spec coverage: 25 of 30 sections mapped; 79 of 91 deepest-level sections mapped 
 
 ## Spend
 
-Spec-check API calls, summed from tools/spec-check-results/SUMMARY.md (one line per lesson call, actual cost) on 2026-10-16. P7 includes the calibration calls on p7-magnets.
+Spec-check API calls, summed from tools/spec-check-results/SUMMARY.md (one line per lesson call, actual cost) on 2026-10-16. P7 includes the calibration calls on p7-magnets (and the task 2.1 --blocking-only recalibration, 2026-10-17, $0.15).
 
 | Topic | API calls | USD |
 |---|---|---|
@@ -44,7 +44,7 @@ Spec-check API calls, summed from tools/spec-check-results/SUMMARY.md (one line 
 | P4 Atomic structure | 4 | 0.60 |
 | P5 Forces | 6 | 0.81 |
 | P6 Waves | 5 | 0.77 |
-| P7 Magnetism | 5 | 0.68 |
+| P7 Magnetism | 6 | 0.83 |
 | Teach-sim (check D) | 1 run | 0.06 |
 
 ## Physics roadmap
@@ -104,7 +104,7 @@ Not started on the pipeline. Already in place:
 - tools/check-rewrite.js — rewrite checker (check B)
 - tools/plain-english-rules.md — rewrite rules
 - tools/fix-board-refs.js — one-off, already run
-- tools/spec-check.js — built; calibration PASS; key from env var SPEC_CHECK_API_KEY; max_tokens 16000; Physics run 2026-10-16, results in tools/spec-check-results/; --blocking-only and --decided <TRIAGE FILE> added (task 2.1, dry-run tested on the p7-magnets calibration file). --blocking-only recalibration NOT RUN: in the cloud session of 2026-10-16 SPEC_CHECK_API_KEY was unset and data/spec/physics.md absent (filestore.aqa.org.uk blocked by the network policy). Run it before task 2.5 (see docs/ESCALATIONS.md)
+- tools/spec-check.js — built; calibration PASS; key from env var SPEC_CHECK_API_KEY; max_tokens 16000; Physics run 2026-10-16, results in tools/spec-check-results/; --blocking-only and --decided <TRIAGE FILE> added (task 2.1, dry-run tested on the p7-magnets calibration file). --blocking-only recalibration PASS 2026-10-17 on C:\dev\mabel-gcse: `--run --blocking-only --file tools/spec-check-calibration/p7-magnets-13ac63d.json --as p7-magnets` flagged iron listed as a permanent magnet (factual_errors[0], keyPoints[0].content); 1 call, $0.15
 - tools/extract-spec.py — spec PDF section 4 → data/spec/<subject>.md (spec text local only, not committed)
 - tools/check-spec-sections.py — independent check that every numbered spec section reached the .md
 - tools/spec-coverage.js — specRef coverage report → tools/spec-coverage.md

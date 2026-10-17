@@ -133,7 +133,7 @@ B3 (pronoun), B4 (door handle reason), B5, B6, C1, C2, C4 (orphan bullet), C5, C
 
 ## Runbook v2 task 2.1: --blocking-only recalibration not run (2026-10-16)
 
-- Gate: `node tools/spec-check.js --run --blocking-only --file tools/spec-check-calibration/p7-magnets-13ac63d.json --as p7-magnets` must still flag iron as a permanent magnet. Not run in the cloud session: SPEC_CHECK_API_KEY unset, and data/spec/physics.md absent (gitignored; filestore.aqa.org.uk blocked by the session's network policy). Code and dry run done. Run the gate on C:\dev\mabel-gcse before task 2.5; if iron is not flagged, STOP per 2.1.
+- Gate: `node tools/spec-check.js --run --blocking-only --file tools/spec-check-calibration/p7-magnets-13ac63d.json --as p7-magnets` must still flag iron as a permanent magnet. Not run in the cloud session: SPEC_CHECK_API_KEY unset, and data/spec/physics.md absent (gitignored; filestore.aqa.org.uk blocked by the session's network policy). Code and dry run done. Run the gate on C:\dev\mabel-gcse before task 2.5; if iron is not flagged, STOP per 2.1. **RESOLVED 2026-10-17:** run on C:\dev\mabel-gcse; PASS, iron flagged as a permanent magnet (factual_errors[0], keyPoints[0].content); $0.15.
 
 ## Runbook v2 task 2.3: teach-sim --run not done (2026-10-16)
 

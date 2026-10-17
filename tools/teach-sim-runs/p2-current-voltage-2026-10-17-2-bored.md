@@ -1,4 +1,4 @@
-# Teach sim: p2-current-voltage (run, persona bored, 2026-10-17)
+# Teach sim: p2-current-voltage (run, persona bored, rescored, 2026-10-17)
 
 Model claude-haiku-4-5-20251001. 19 tutor turns, 0 flagged. Complete: true. Coverage: [true,true,true,true,true].
 

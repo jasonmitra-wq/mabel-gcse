@@ -318,6 +318,17 @@ function rescore(file, replay = false) {
     file = file.replace(/\.json$/, '-replay.json');
   }
   const r = score(saved, core, points);
+  if (saved.persona) {
+    // A bored run: its judge's answers stay as they were; only the pass rule is applied again.
+    const before = saved.verdict;
+    if (saved.judge) r.verdict = Bored.verdict(saved.judge);
+    r.verdictBefore = saved.verdictBefore || before;   // the verdict under the rule the run was judged with
+    fs.writeFileSync(file, JSON.stringify(r, null, 2));
+    writeMd(file.replace(/\.json$/, ''), r, `${saved.mode}, persona bored, rescored`, saved.date);
+    writeJudgeMd(file.replace(/\.json$/, ''), r);
+    console.log(`${r.id}: ${path.relative(ROOT, file).replace(/\\/g, '/')}: ${before && before.pass ? 'PASS' : 'FAIL'} → ${r.verdict.pass ? 'PASS' : 'FAIL'}${r.verdict.reasons.length ? ' (' + r.verdict.reasons.join('; ') + ')' : ''}`);
+    return r;
+  }
   fs.writeFileSync(file, JSON.stringify(r, null, 2));
   writeMd(file.replace(/\.json$/, ''), r, `${saved.mode}, ${replay ? 'replayed through current post-processing and ' : ''}rescored`, saved.date);
   const flagged = r.turns.filter(t => t.flags.length).length;
@@ -382,6 +393,15 @@ function writeBoredRun(r, mode) {
   const base = path.join(OUT_DIR, `${r.id}-${date}-${k}-bored`);
   fs.writeFileSync(base + '.json', JSON.stringify({ ...r, mode, date }, null, 2));
   writeMd(base, r, `${mode}, persona bored`, date);
+  writeJudgeMd(base, r);
+  const j = r.judge;
+  const summary = path.join(OUT_DIR, 'SUMMARY.md');
+  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}${r.tutorCost !== undefined ? ` (tutor ${r.model} $${r.tutorCost.toFixed(4)})` : ''}\n`);
+  return base;
+}
+
+// The judge's section of a bored run's .md, appended after the transcript.
+function writeJudgeMd(base, r) {
   const j = r.judge;
   const md = ['', '## Judge (' + Bored.JUDGE_MODEL + ')', '',
     `**${r.verdict.pass ? 'PASS' : 'FAIL'}**${r.verdict.reasons.length ? ' — ' + r.verdict.reasons.join('; ') : ''}`, ''];
@@ -394,9 +414,6 @@ function writeBoredRun(r, mode) {
     (j.fixes || []).forEach((f, i) => md.push(`${i + 1}. **${f.target}**: ${f.change} — "${f.quote || ''}"`));
   } else md.push('Judge reply was not JSON:', '', '```', r.judgeRaw || '', '```');
   fs.appendFileSync(base + '.md', md.join('\n') + '\n');
-  const summary = path.join(OUT_DIR, 'SUMMARY.md');
-  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}${r.tutorCost !== undefined ? ` (tutor ${r.model} $${r.tutorCost.toFixed(4)})` : ''}\n`);
-  return base;
 }
 
 function writeMd(base, r, mode, date) {

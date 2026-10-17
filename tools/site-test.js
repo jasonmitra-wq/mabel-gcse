@@ -28,7 +28,12 @@
  * and laptop size (1366×768), into tools/site-test-runs/<date>/<id>/.
  * Judge: claude-opus-5-5 gets the transcript and the screenshots and returns
  * JSON: broken, looks_wrong, would_quit, fixes.
- * PASS = nothing broken AND nothing in looks_wrong AND would_quit false.
+ * PASS = nothing broken AND would_quit false AND nothing in looks_wrong that
+ * stops her reading or using the page (the realistic rule, brief 2026-10-17;
+ * before it, any looks_wrong item failed the run). The judge marks each
+ * looks_wrong item stops_use true or false; an item without the mark (runs
+ * judged before the rule) counts as stopping her.
+ *   node tools/site-test.js --rescore [<run folder> ...]   # the pass rule again on saved runs (no calls); default every run
  *
  * Needs npm install (puppeteer-core, dev only) and local Chrome or Edge.
  */
@@ -59,15 +64,18 @@ function die(msg, code = 1) { console.error(msg); process.exit(code); }
 // ---------- arguments ----------
 
 function parseArgs(argv) {
-  const a = { lesson: null, maths: null, run: false, maxUsd: null };
+  const a = { lesson: null, maths: null, run: false, maxUsd: null, rescore: null };
   for (let i = 0; i < argv.length; i++) {
     const v = argv[i];
     if (v === '--lesson') a.lesson = argv[++i];
     else if (v === '--maths') a.maths = argv[++i];
     else if (v === '--run') a.run = true;
     else if (v === '--max-usd') a.maxUsd = Number(argv[++i]);
+    else if (v === '--rescore') a.rescore = [];
+    else if (a.rescore && !v.startsWith('--')) a.rescore.push(v);
     else die(`Unknown option ${v}`);
   }
+  if (a.rescore) return a;
   if (!!a.lesson === !!a.maths) die('Give exactly one of --lesson <id> or --maths <topic code>.');
   if (a.maxUsd !== null && !(a.maxUsd > 0)) die('--max-usd needs a positive number');
   return a;
@@ -526,19 +534,52 @@ async function judgeRun(run, kind, id) {
   content.push({ type: 'text', text: [
     'Return JSON only, no prose and no code fence, in exactly this shape:',
     '{ "broken": [ { "what": "<anything that did not work, including a correct maths answer rejected or a wrong one accepted>", "step": "<transcript line or step>" } ],',
-    '  "looks_wrong": [ { "what": "<text cut off, overlapping, unreadable, misplaced>", "screenshot": "<file name>" } ],',
+    '  "looks_wrong": [ { "what": "<text cut off, overlapping, unreadable, misplaced>", "screenshot": "<file name>", "stops_use": true | false } ],',
     '  "would_quit": false | { "turn": "<transcript label, e.g. S7 or Question 3>", "quote": "<line>", "why": "<short>" },',
     '  "fixes": [ { "target": "<file and field, or behaviour>", "change": "<concrete change>" } ] }',
     'At most 5 fixes. Only list a looks_wrong item you can see in a named screenshot. Empty arrays if nothing.',
+    'stops_use is true only when the fault stops her reading something she needs or using a control she needs (text she has to read is hidden or unreadable, a button she needs is covered or off screen); false when it is untidy but she can still read and use the page.',
   ].join('\n') });
   const text = await apiCall({ model: Bored.JUDGE_MODEL, max_tokens: 8000, system: 'You are a strict, concrete website tester. Reply with JSON only.', messages: [{ role: 'user', content }] });
   try { return Bored.parseJudge(text); } catch { return { raw: text }; }
+}
+
+// ---------- pass rule ----------
+
+// A looks_wrong item without stops_use was judged before the mark existed: it counts as stopping her.
+const stopsUse = l => l.stops_use !== false;
+function sitePass(j) {
+  return !(j.broken || []).length && !j.would_quit && !(j.looks_wrong || []).some(stopsUse);
+}
+
+// The pass rule again on saved runs: no calls. Updates result.json and the PASS/FAIL line of result.md.
+function rescore(dirs) {
+  if (!dirs.length) for (const d of fs.readdirSync(OUT_ROOT)) {
+    const day = path.join(OUT_ROOT, d);
+    if (fs.statSync(day).isDirectory()) for (const r of fs.readdirSync(day)) dirs.push(path.join(day, r));
+  }
+  let before = 0, after = 0, n = 0;
+  for (const dir of dirs) {
+    const file = path.join(dir, 'result.json');
+    if (!fs.existsSync(file)) continue;
+    const r = JSON.parse(fs.readFileSync(file, 'utf8'));
+    if (r.passBefore === undefined) r.passBefore = r.pass;   // the verdict under the rule the run was judged with
+    r.pass = sitePass(r.judge);
+    fs.writeFileSync(file, JSON.stringify(r, null, 2));
+    const md = path.join(dir, 'result.md');
+    if (fs.existsSync(md)) fs.writeFileSync(md, fs.readFileSync(md, 'utf8').replace(/^\*\*(PASS|FAIL)\*\*/m,`**${r.pass ? 'PASS' : 'FAIL'}**`));
+    const lw = (r.judge.looks_wrong || []);
+    n++; before += r.passBefore ? 1 : 0; after += r.pass ? 1 : 0;
+    console.log(`${path.relative(ROOT, dir).replace(/\\/g, '/')}: ${r.passBefore ? 'PASS' : 'FAIL'} → ${r.pass ? 'PASS' : 'FAIL'} · broken ${(r.judge.broken || []).length} · would quit ${r.judge.would_quit ? r.judge.would_quit.turn : 'false'} · looks wrong ${lw.length} (${lw.filter(stopsUse).length} stop her)`);
+  }
+  console.log(`${n} runs: PASS before ${before}, after ${after}.`);
 }
 
 // ---------- main ----------
 
 async function main() {
   const a = parseArgs(process.argv.slice(2));
+  if (a.rescore) return rescore(a.rescore);
   const est = estimate(a);
   console.log(a.run ? 'RUN' : 'DRY RUN (add --run for real calls)');
   console.log(`${est.what}: about ${est.turns} exchanges, ${est.shots} screens × 2 sizes; est. cost $${est.usd.toFixed(4)} (tutor ${TUTOR_MODEL} at $${RATES[TUTOR_MODEL][0] * 1e6} / $${RATES[TUTOR_MODEL][1] * 1e6} per M; student ${Bored.STUDENT_MODEL} at $1 / $5 per M; judge ${Bored.JUDGE_MODEL} at $4 / $20 per M with the screenshots, 8 000 output tokens assumed).`);
@@ -581,7 +622,7 @@ async function main() {
     if (!(j.broken || []).some(b => String(b.step || '').includes(c.what) || String(b.what || '').includes(c.what))) (j.broken = j.broken || []).push({ what: `automatic check failed: ${c.what}`, step: c.detail || '' });
   }
   if (crash) (j.broken = j.broken || []).push({ what: `test could not finish: ${crash}`, step: '' });
-  const pass = !(j.broken || []).length && !(j.looks_wrong || []).length && !j.would_quit;
+  const pass = sitePass(j);
 
   const result = { id, mode: a.lesson ? 'lesson' : 'maths', date, pass, judge: j, checks: run.checks, transcript: run.log,
                    screenshots: run.shots.map(s => path.relative(ROOT, s.file).replace(/\\/g, '/')), cost: spend.usd, tutorModel: TUTOR_MODEL, tutorCost: spend.tutorUsd, apiCalls: spend.calls, browserApiCalls: spend.browserCalls };

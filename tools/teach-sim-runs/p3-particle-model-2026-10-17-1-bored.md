@@ -1,4 +1,4 @@
-# Teach sim: p3-particle-model (run, persona bored, 2026-10-17)
+# Teach sim: p3-particle-model (run, persona bored, rescored, 2026-10-17)
 
 Model claude-haiku-4-5-20251001. 22 tutor turns, 1 flagged. Complete: true. Coverage: [true,true,true,true].
 

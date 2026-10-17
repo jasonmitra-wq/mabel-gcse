@@ -8,8 +8,9 @@
  * No prompt here ever contains the real student's name.
  *
  * The judge (claude-opus-5-5) reads the finished transcript and returns JSON.
- * PASS = engagement >= 3 AND would_quit false AND no tutor question that fails
- * question_matches_what_was_just_taught.
+ * PASS = engagement >= 3 AND would_quit false AND at most one tutor question that
+ * fails question_matches_what_was_just_taught (the realistic rule, brief
+ * 2026-10-17; before it, no such question at all was allowed).
  */
 
 const STUDENT_MODEL = 'claude-haiku-4-5-20251001';
@@ -124,12 +125,15 @@ function parseJudge(text) {
   return JSON.parse(t.slice(a, b + 1));
 }
 
+// Questions about things not yet taught that a lesson may have and still pass.
+const MAX_MISMATCHED = 1;
+
 function verdict(j) {
   const mismatched = (j.turns || []).filter(t => t.question_matches_what_was_just_taught === false);
   const reasons = [];
   if (!(j.engagement >= 3)) reasons.push(`engagement ${j.engagement}`);
   if (j.would_quit) reasons.push(`would quit at ${j.would_quit.turn || '?'}`);
-  if (mismatched.length) reasons.push(`question does not match what was taught: ${mismatched.map(t => t.turn).join(', ')}`);
+  if (mismatched.length > MAX_MISMATCHED) reasons.push(`question does not match what was taught: ${mismatched.map(t => t.turn).join(', ')}`);
   return { pass: !reasons.length, reasons };
 }
 

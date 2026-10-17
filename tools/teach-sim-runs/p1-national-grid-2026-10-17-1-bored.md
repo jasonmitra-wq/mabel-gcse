@@ -1,4 +1,4 @@
-# Teach sim: p1-national-grid (run, persona bored, 2026-10-17)
+# Teach sim: p1-national-grid (run, persona bored, rescored, 2026-10-17)
 
 Model claude-haiku-4-5-20251001. 18 tutor turns, 0 flagged. Complete: true. Coverage: [true,true,true].
 

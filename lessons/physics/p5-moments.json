@@ -1,0 +1,187 @@
+{
+  "id": "p5-moments",
+  "title": "Moments, levers and gears",
+  "topic": "P5",
+  "examTip": "Know M = Fd by heart. The distance is the perpendicular distance from the pivot to the line of action of the force. For a balanced object, set total clockwise moment equal to total anticlockwise moment, then solve.",
+  "introTips": [
+    "A moment is the turning effect of a force. M = Fd.",
+    "Use the perpendicular distance from the pivot to the line of action of the force.",
+    "Balanced: total clockwise moment = total anticlockwise moment."
+  ],
+  "intro": "Opening a door, using a spanner and sitting on a see-saw all make something turn. In this lesson you learn how to measure the turning effect of a force. You learn when a turning object is balanced. You also learn how levers and gears pass on turning effects.",
+  "keyPoints": [
+    {
+      "heading": "The moment of a force",
+      "content": "A force, or a system of forces, can make an object <strong>rotate</strong> (turn). Examples: pushing a door open, turning a nut with a spanner, a child on a see-saw.\n\nThe turning effect of a force is called the <strong>moment</strong> of the force. It turns about a fixed point called the <strong>pivot</strong>.\n\nThe equation is <strong>M = Fd</strong>.\n- M is the moment of the force, in newton-metres (Nm).\n- F is the force, in newtons (N).\n- d is the <strong>perpendicular distance</strong> from the pivot to the line of action of the force, in metres (m).\n\nA bigger force gives a bigger moment. So does a force further from the pivot. This is why a long spanner makes a nut easier to turn.\n\nWorked example: you push a door with 20 N, 0.8 m from the hinge. M = 20 × 0.8 = <strong>16 Nm</strong>.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "A force can make an object rotate about a pivot",
+        "Moment = the turning effect of a force",
+        "M = Fd: moment (Nm) = force (N) × distance (m)",
+        "d = perpendicular distance from the pivot to the line of action of the force",
+        "Bigger force or bigger distance → bigger moment"
+      ],
+      "keyTerms": [
+        {
+          "term": "Moment",
+          "def": "The turning effect of a force; M = Fd, measured in newton-metres (Nm)"
+        },
+        {
+          "term": "Pivot",
+          "def": "The fixed point that an object turns about"
+        }
+      ],
+      "memTip": "Moment = Force × distance. Further from the pivot = easier to turn.",
+      "tutor_note": "Students often use any distance. Stress that it must be the perpendicular distance from the pivot to the line of action of the force."
+    },
+    {
+      "heading": "Balanced moments",
+      "content": "A moment can turn an object <strong>clockwise</strong> or <strong>anticlockwise</strong>.\n\nIf an object is balanced, the total clockwise moment about a pivot equals the total anticlockwise moment about that pivot.\n\nYou can use this to find an unknown force or distance.\n\nWorked example: a see-saw is balanced. A child of weight 400 N sits 1.5 m to the left of the pivot. An adult of weight 600 N sits on the right. How far from the pivot is the adult?\n- Anticlockwise moment = 400 × 1.5 = 600 Nm.\n- Clockwise moment = 600 × d.\n- Balanced, so 600 × d = 600. So d = <strong>1.0 m</strong>.\n\nThe heavier person sits closer to the pivot.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Moments can be clockwise or anticlockwise",
+        "Balanced: total clockwise moment = total anticlockwise moment (about the same pivot)",
+        "Use this to find an unknown force or distance",
+        "Work out each moment with M = Fd, then set the two totals equal"
+      ],
+      "keyTerms": [
+        {
+          "term": "Balanced (moments)",
+          "def": "Total clockwise moment about a pivot equals total anticlockwise moment about that pivot"
+        }
+      ],
+      "memTip": "Balanced: Clockwise = Anticlockwise. Write C = A, then solve.",
+      "tutor_note": "Ask the student to say which way each force turns the object before they calculate. This avoids putting a moment on the wrong side."
+    },
+    {
+      "heading": "Levers and gears",
+      "content": "A simple <strong>lever</strong> and a simple <strong>gear</strong> system both pass on (transmit) the rotational effects of forces.\n\n<strong>Levers</strong>: a lever is a bar that turns about a pivot. You push on one end, far from the pivot. Your small force makes a large moment. The other end is close to the pivot. There, the same moment gives a large force on the load. Examples: a crowbar, a spanner, a wheelbarrow.\n\n<strong>Gears</strong>: gears are wheels with teeth that fit together. When one gear turns, its teeth push on the teeth of the next gear. So the next gear turns the other way.\n- A small gear driving a larger gear: the larger gear turns more slowly. It has a bigger moment, because its teeth are further from its centre.\n- A large gear driving a smaller gear: the smaller gear turns faster, with a smaller moment.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Levers and gears transmit the rotational effects of forces",
+        "Lever: small force far from the pivot → large force close to the pivot",
+        "Gears: toothed wheels; each gear turns the next one the opposite way",
+        "Small gear driving large gear: large gear turns slower, bigger moment",
+        "Large gear driving small gear: small gear turns faster, smaller moment"
+      ],
+      "keyTerms": [
+        {
+          "term": "Lever",
+          "def": "A bar that turns about a pivot; a small force far from the pivot gives a large force close to it"
+        },
+        {
+          "term": "Gear",
+          "def": "A wheel with teeth that turns another gear; it transmits the rotational effect of a force"
+        }
+      ],
+      "memTip": "Big gear = slow and strong. Small gear = fast and weak.",
+      "tutor_note": "For gears, link the moment to distance. The force at the teeth is the same, but the larger gear's teeth are further from its centre."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Gear systems",
+      "examFlag": true,
+      "headers": [
+        "Driving gear",
+        "Driven gear",
+        "Driven gear turns",
+        "Moment of driven gear"
+      ],
+      "rows": [
+        [
+          "Small",
+          "Large",
+          "Slower, opposite direction",
+          "Bigger"
+        ],
+        [
+          "Large",
+          "Small",
+          "Faster, opposite direction",
+          "Smaller"
+        ]
+      ]
+    }
+  ],
+  "checkpoints": {
+    "0": {
+      "question": "A force of 50 N acts 0.4 m from a pivot, at right angles to the bar. What is its moment?",
+      "options": [
+        "125 Nm",
+        "20 Nm",
+        "50.4 Nm",
+        "200 Nm"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct. M = Fd = 50 × 0.4 = 20 Nm.",
+      "wrongFeedback": "Use M = Fd. M = 50 × 0.4 = 20 Nm. Multiply force by distance, do not divide."
+    },
+    "1": {
+      "question": "A balanced beam has 30 N acting 2 m left of the pivot. A force of 60 N acts on the right. How far right of the pivot is it?",
+      "options": [
+        "4 m",
+        "0.5 m",
+        "2 m",
+        "1 m"
+      ],
+      "correct": 3,
+      "correctFeedback": "Correct. Anticlockwise moment = 30 × 2 = 60 Nm. Clockwise: 60 × d = 60, so d = 1 m.",
+      "wrongFeedback": "Balanced means clockwise = anticlockwise. 30 × 2 = 60 Nm. So 60 × d = 60, and d = 1 m."
+    },
+    "2": {
+      "question": "A small gear turns a larger gear. How does the larger gear turn?",
+      "options": [
+        "Faster, in the same direction",
+        "Slower, in the opposite direction",
+        "Faster, in the opposite direction",
+        "Slower, in the same direction"
+      ],
+      "correct": 1,
+      "correctFeedback": "Correct. The larger gear turns more slowly and in the opposite direction. Its moment is bigger.",
+      "wrongFeedback": "Gears that touch turn in opposite directions. A larger gear driven by a small one turns more slowly, with a bigger moment."
+    }
+  },
+  "commonMistakes": [
+    "Using a distance that is not perpendicular to the force. Use the perpendicular distance from the pivot to the line of action of the force.",
+    "Leaving the distance in centimetres. Change it to metres to get the moment in Nm.",
+    "Mixing up clockwise and anticlockwise moments. Decide which way each force turns the object first.",
+    "Saying two touching gears turn the same way. They turn in opposite directions."
+  ],
+  "examTips": [
+    "For a balance question, write 'total clockwise moment = total anticlockwise moment'. Then put in the numbers.",
+    "Always give the unit of a moment: Nm.",
+    "To explain a lever, say the moment is the same on both sides. A larger distance means a smaller force is needed."
+  ],
+  "revisionCardBullets": [
+    "Moment = turning effect of a force",
+    "M = Fd: moment (Nm) = force (N) × perpendicular distance from the pivot (m)",
+    "Balanced: total clockwise moment = total anticlockwise moment about the pivot",
+    "Levers: small force far from the pivot → large force close to the pivot",
+    "Gears transmit rotation; touching gears turn in opposite directions",
+    "Small gear drives large gear: slower, bigger moment"
+  ],
+  "videos": [
+    {
+      "title": "Moments, Levers and Gears — GCSE Physics",
+      "url": "https://www.youtube.com/results?search_query=moments+levers+gears+GCSE+physics",
+      "source": "YouTube search",
+      "duration": "~8 min"
+    }
+  ],
+  "videoLinks": [
+    {
+      "searchQuery": "moments levers gears GCSE physics",
+      "label": "Moments, Levers and Gears",
+      "source": "YouTube search",
+      "icon": "▶",
+      "url": "https://www.youtube.com/results?search_query=moments+levers+gears+GCSE+physics"
+    }
+  ]
+}

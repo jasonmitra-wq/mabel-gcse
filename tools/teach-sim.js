@@ -14,7 +14,15 @@
  *                      # the model had said the same thing again; writes <run>-replay.json/.md
  *                      # and leaves the saved run as it was. No calls.
  *   --max-usd <n>   allow a --run whose estimate is over $1 but under n; also a hard stop on actual spend
+ *   node tools/teach-sim.js --run --persona bored <id>
+ *                      # text tester: the student is a model playing a bored 15-year-old
+ *                      # (tools/bored-student.js); after the lesson a judge (claude-opus-5-5)
+ *                      # returns JSON: engagement, would_quit, per-turn checks, fixes.
+ *                      # PASS = engagement >= 3, would_quit false, every question matches
+ *                      # what was just taught. Writes <id>-<date>-<n>-bored.json/.md.
+ *   node tools/teach-sim.js --rejudge <run-bored.json>   # judge a saved bored run again
  *
+ * Without --persona:
  * The student is scripted, not a model. Per key point it cycles through: a
  * correct answer (the term and its definition), a wrong answer, "idk", an
  * off-topic question and "just give me the answer"; at the check-in it says
@@ -36,6 +44,8 @@
 const fs = require('fs');
 const path = require('path');
 const TeachCore = require('../js/teach-core.js');
+const { apiKey } = require('./lib-key.js');
+const Bored = require('./bored-student.js');
 
 const ROOT = path.join(__dirname, '..');
 const OUT_DIR = path.join(__dirname, 'teach-sim-runs');
@@ -58,7 +68,7 @@ const LINES = {
 function die(msg, code = 1) { console.error(msg); process.exit(code); }
 
 function parseArgs(argv) {
-  const a = { ids: [], run: false, mock: false, maxUsd: null };
+  const a = { ids: [], run: false, mock: false, maxUsd: null, persona: null };
   for (let i = 0; i < argv.length; i++) {
     const v = argv[i];
     if (v === '--run') a.run = true;
@@ -66,12 +76,16 @@ function parseArgs(argv) {
     else if (v === '--max-usd') a.maxUsd = Number(argv[++i]);
     else if (v === '--rescore') a.rescore = argv[++i];
     else if (v === '--replay') a.replay = true;
+    else if (v === '--persona') a.persona = argv[++i];
+    else if (v === '--rejudge') a.rejudge = argv[++i];
     else if (v.startsWith('--')) die(`Unknown option ${v}`);
     else a.ids.push(v);
   }
   if (a.run && a.mock) die('--run and --mock are separate modes');
+  if (a.persona !== null && a.persona !== 'bored') die('--persona takes: bored');
+  if (a.persona && a.mock) die('--persona bored needs --run (or a dry run); the student and the judge are models');
   if (a.maxUsd !== null && !(a.maxUsd > 0)) die('--max-usd needs a positive number');
-  if (!a.ids.length && !a.rescore) die('Give one or more lesson ids.');
+  if (!a.ids.length && !a.rescore && !a.rejudge) die('Give one or more lesson ids.');
   return a;
 }
 
@@ -86,38 +100,42 @@ function findLesson(id) {
 // ---------- model ----------
 
 function headers() {
-  return { 'x-api-key': process.env.SPEC_CHECK_API_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' };
+  return { 'x-api-key': apiKey(), 'anthropic-version': '2023-06-01', 'content-type': 'application/json' };
 }
 
-async function confirmModel() {
-  const res = await fetch(`${API}/models/${MODEL}`, { headers: headers() });
-  if (!res.ok) die(`${MODEL} not available: HTTP ${res.status} ${await res.text()}`);
-  console.log(`Model ${MODEL} confirmed.`);
+async function confirmModel(model = MODEL) {
+  const res = await fetch(`${API}/models/${model}`, { headers: headers() });
+  if (!res.ok) die(`${model} not available: HTTP ${res.status} ${await res.text()}`);
+  console.log(`Model ${model} confirmed.`);
 }
 
+// Rates per model, USD per token. The judge rates are the ones tools/spec-check.js uses.
+const RATES = { [MODEL]: [USD_IN, USD_OUT], 'claude-opus-5-5': [4 / 1e6, 20 / 1e6] };
 const spend = { inTok: 0, outTok: 0, calls: 0, usd: 0, cap: DEFAULT_CAP_USD };
 
-async function realCall(sys, user, tokens, attempt = 0) {
+async function apiCall(body, attempt = 0) {
   if (spend.usd >= spend.cap) throw new Error(`STOP: spend $${spend.usd.toFixed(4)} reached the $${spend.cap} cap`);
-  const res = await fetch(`${API}/messages`, {
-    method: 'POST', headers: headers(),
-    body: JSON.stringify({ model: MODEL, max_tokens: tokens || 2000, system: sys, messages: [{ role: 'user', content: user }] }),
-  });
+  const res = await fetch(`${API}/messages`, { method: 'POST', headers: headers(), body: JSON.stringify(body) });
   if ((res.status === 429 || res.status === 529) && attempt < 4) {
     await new Promise(r => setTimeout(r, 4000 * Math.pow(2, attempt)));
-    return realCall(sys, user, tokens, attempt + 1);
+    return apiCall(body, attempt + 1);
   }
   if (!res.ok) {
-    const body = await res.text();
-    if (/credit|billing|balance/i.test(body)) die('API billing or credit error. Add credits, then type Continue.', 3);
-    throw new Error(`HTTP ${res.status} ${body}`);
+    const text = await res.text();
+    if (/credit|billing|balance/i.test(text)) die('API billing or credit error. Add credits, then type Continue.', 3);
+    throw new Error(`HTTP ${res.status} ${text}`);
   }
   const data = await res.json();
+  const [rin, rout] = RATES[body.model];
   spend.calls++;
   spend.inTok += data.usage.input_tokens;
   spend.outTok += data.usage.output_tokens;
-  spend.usd = spend.inTok * USD_IN + spend.outTok * USD_OUT;
+  spend.usd += data.usage.input_tokens * rin + data.usage.output_tokens * rout;
   return data.content.filter(b => b.type === 'text').map(b => b.text).join('');
+}
+
+async function realCall(sys, user, tokens) {
+  return apiCall({ model: MODEL, max_tokens: tokens || 2000, system: sys, messages: [{ role: 'user', content: user }] });
 }
 
 // Offline tutor: well-formed replies that echo the part asked about, so the
@@ -178,7 +196,7 @@ function scoreTurn(core, turn, pointWords) {
 
 // ---------- one lesson ----------
 
-async function simulate(id, call) {
+async function simulate(id, call, persona = null) {
   const { subject, data } = findLesson(id);
   const core = TeachCore.create({ call });
   const points = core._buildPoints(data);
@@ -193,10 +211,13 @@ async function simulate(id, call) {
   // Words the tutor's question may draw on, per point: the point's own stems.
   const pointWords = points.map((p, i) => core._pointStems(i));
   const turns = [];
+  const student = persona ? Bored.makeStudent({ lessonTitle: data.title || id, subject }) : null;
+  const hist = [];
 
   const opening = await core._callWithLengthGuard(core._buildSystemPrompt(0), core._firstOpeningPrompt(), true);
   state.transcript = [{ role: 'assistant', text: opening, pt: 0, opening: true }];
   turns.push({ n: 0, student: null, kind: 'opening', teachIndex: 0, reply: opening });
+  hist.push({ who: 'tutor', text: opening });
 
   let cycleAt = 0, checkins = 0, onPoint = 0, lastPoint = 0, closing = 0;
   const maxTurns = points.length * MAX_TURNS_PER_POINT + 4;
@@ -204,13 +225,19 @@ async function simulate(id, call) {
     if (state.currentPointIndex !== lastPoint) { lastPoint = state.currentPointIndex; onPoint = 0; cycleAt = 0; }
     if (!state.complete && ++onPoint > MAX_TURNS_PER_POINT) break;   // stuck: the point never completes
 
-    let type;
-    if (state.complete) type = closing++ === 0 ? 'thanks' : 'bye';
+    let type, text;
+    if (student) {
+      if (state.complete && closing++ >= 3) break;   // a bored student has left by now
+      const phase = state.complete ? 'closing' : state.checkinAsked ? 'checkin' : 'teach';
+      type = student.mood(hist[hist.length - 1].text, phase);
+      text = Bored.clean(await apiCall(student.body(hist, type)));
+    }
+    else if (state.complete) type = closing++ === 0 ? 'thanks' : 'bye';
     else if (state.checkinAsked) type = checkins++ === 0 ? 'no' : 'yes';
     else type = CYCLE[cycleAt++ % CYCLE.length];
 
-    let text;
-    if (type === 'correct') {
+    if (text !== undefined) { /* student model already replied */ }
+    else if (type === 'correct') {
       const pt = points[state.currentPointIndex];
       const j = core._targetFactIndex(state.currentPointIndex);
       const f = pt.facts[j === -1 ? 0 : j];
@@ -223,12 +250,34 @@ async function simulate(id, call) {
     if (decision.kind === 'free' && state.complete && state.wrapOffered && !reply.includes('?')) state.farewell = true;
     if (recap) push({ role: 'recap', pt: decision.idx, lines: recap, done: false });
     push(core._replyEntry(reply, decision));
+    hist.push({ who: 'student', text }, { who: 'tutor', text: reply });
     turns.push({ n, student: text, studentType: type, kind: decision.kind, teachIndex: core._teachIndex(decision),
                  point: decision.idx ?? decision.nextIndex ?? null, reply, recap: recap || null });
     if (state.farewell) break;
   }
 
   return score({ id, subject, model: MODEL, turns, coverage: state.coverage, complete: state.complete, farewell: state.farewell }, core, points);
+}
+
+// ---------- bored-student judge ----------
+
+function transcriptText(r) {
+  const lines = [];
+  for (const t of r.turns) {
+    if (t.student !== null) lines.push(`S${t.n}: ${t.student}`);
+    lines.push(`T${t.n}: ${t.reply.replace(/\s*\n+\s*/g, ' ')}`);
+  }
+  if (!r.complete) lines.push('[The lesson did not finish: the session stopped here.]');
+  return lines.join('\n');
+}
+
+async function judge(r) {
+  const { data } = findLesson(r.id);
+  const text = await apiCall(Bored.judgeBody({ lessonTitle: data.title || r.id, subject: r.subject,
+    lessonFields: Bored.lessonFieldLines(data), transcript: transcriptText(r) }));
+  let j;
+  try { j = Bored.parseJudge(text); } catch (e) { return { judge: null, judgeRaw: text, verdict: { pass: false, reasons: ['judge reply was not JSON'] } }; }
+  return { judge: j, verdict: Bored.verdict(j) };
 }
 
 // Flags every turn and the lesson as a whole. Also used by --rescore on a saved run.
@@ -271,7 +320,7 @@ function rescore(file, replay = false) {
 
 // ---------- estimate ----------
 
-function estimate(id) {
+function estimate(id, persona = null) {
   const { data } = findLesson(id);
   const core = TeachCore.create({ call: async () => '' });
   const points = core._buildPoints(data);
@@ -282,12 +331,23 @@ function estimate(id) {
   const calls = Math.ceil(points.length * 6 * 1.5 + points.length + 4);
   const inTok = Math.ceil(promptChars / 4) * calls;
   const outTok = core.MAX_TOKENS_REPLY * calls;
-  return { id, points: points.length, calls, inTok, outTok, usd: inTok * USD_IN + outTok * USD_OUT };
+  const est = { id, points: points.length, calls, inTok, outTok, usd: inTok * USD_IN + outTok * USD_OUT };
+  if (persona) {
+    // Student: one small call a turn (about 1 500 tokens in, 60 out). Judge: lesson fields + transcript in, 12 000 out at most.
+    const turnsN = Math.ceil(calls / 1.5);
+    const judgeIn = Math.ceil((Bored.lessonFieldLines(data).length + turnsN * 2 * 250 + 4000) / 4);
+    est.calls += turnsN + 1;
+    est.inTok += turnsN * 1500 + judgeIn;
+    est.outTok += turnsN * 60 + 12000;
+    est.usd += turnsN * (1500 * USD_IN + 60 * USD_OUT) + judgeIn * 4 / 1e6 + 12000 * 20 / 1e6;
+  }
+  return est;
 }
 
 // ---------- output ----------
 
 function writeRun(r, mode) {
+  if (r.persona) return writeBoredRun(r, mode);
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const date = new Date().toISOString().slice(0, 10);
   let k = 1;
@@ -303,6 +363,31 @@ function writeRun(r, mode) {
   const types = Object.entries(byType).map(([k, v]) => `${k} ${v}`).join(', ') || 'none';
   const flaggedN = r.turns.filter(t => t.flags.length).length;
   fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode} | ${r.turns.length} | ${flaggedN} | ${types} | ${r.lessonFlags.join('; ') || 'none'} | ${mode === 'run' ? '$' + r.cost.toFixed(4) : '-'}\n`);
+  return base;
+}
+
+function writeBoredRun(r, mode) {
+  fs.mkdirSync(OUT_DIR, { recursive: true });
+  const date = r.date || new Date().toISOString().slice(0, 10);
+  let k = 1;
+  while (fs.existsSync(path.join(OUT_DIR, `${r.id}-${date}-${k}-bored.json`))) k++;
+  const base = path.join(OUT_DIR, `${r.id}-${date}-${k}-bored`);
+  fs.writeFileSync(base + '.json', JSON.stringify({ ...r, mode, date }, null, 2));
+  writeMd(base, r, `${mode}, persona bored`, date);
+  const j = r.judge;
+  const md = ['', '## Judge (' + Bored.JUDGE_MODEL + ')', '',
+    `**${r.verdict.pass ? 'PASS' : 'FAIL'}**${r.verdict.reasons.length ? ' — ' + r.verdict.reasons.join('; ') : ''}`, ''];
+  if (j) {
+    md.push(`Engagement ${j.engagement}/5 — "${j.engagement_quote || ''}"`, '');
+    md.push(`Would quit: ${j.would_quit ? `${j.would_quit.turn} — "${j.would_quit.quote || ''}" (${j.would_quit.why || ''})` : 'false'}`, '');
+    md.push('| Turn | on topic | question matches | too long | confusing | quote / note |', '|---|---|---|---|---|---|');
+    for (const t of j.turns || []) md.push(`| ${t.turn} | ${t.on_topic} | ${t.question_matches_what_was_just_taught} | ${t.too_long} | ${t.confusing} | "${String(t.quote || '').replace(/\|/g, '/')}"${t.note ? ' — ' + String(t.note).replace(/\|/g, '/') : ''} |`);
+    md.push('', 'Fixes:', '');
+    (j.fixes || []).forEach((f, i) => md.push(`${i + 1}. **${f.target}**: ${f.change} — "${f.quote || ''}"`));
+  } else md.push('Judge reply was not JSON:', '', '```', r.judgeRaw || '', '```');
+  fs.appendFileSync(base + '.md', md.join('\n') + '\n');
+  const summary = path.join(OUT_DIR, 'SUMMARY.md');
+  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}\n`);
   return base;
 }
 
@@ -325,33 +410,48 @@ function writeMd(base, r, mode, date) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   if (args.rescore) { rescore(path.resolve(args.rescore), args.replay); return; }
-  const ests = args.ids.map(estimate);
+  if (args.rejudge) {
+    const file = path.resolve(args.rejudge);
+    const saved = JSON.parse(fs.readFileSync(file, 'utf8'));
+    if (!apiKey()) die('SPEC_CHECK_API_KEY is not set (shell or Windows user environment).');
+    spend.cap = args.maxUsd !== null ? args.maxUsd : DEFAULT_CAP_USD;
+    await confirmModel(Bored.JUDGE_MODEL);
+    Object.assign(saved, await judge(saved), { persona: 'bored', cost: (saved.cost || 0) + spend.usd });
+    const base = writeBoredRun(saved, saved.mode || 'run');
+    console.log(`${saved.id}: rejudged → ${path.relative(ROOT, base).replace(/\\/g, '/')}.md · ${saved.verdict.pass ? 'PASS' : 'FAIL'} ${saved.verdict.reasons.join('; ')} · judge $${spend.usd.toFixed(4)}`);
+    return;
+  }
+  const ests = args.ids.map(id => estimate(id, args.persona));
   const total = ests.reduce((s, e) => s + e.usd, 0);
   console.log(args.run ? 'RUN' : args.mock ? 'MOCK (offline, canned tutor replies)' : 'DRY RUN (add --run for real calls)');
   console.log('lesson | key points | est. calls | est. input tokens | est. output tokens | est. cost (USD)');
   for (const e of ests) console.log(`${e.id} | ${e.points} | ${e.calls} | ${e.inTok} | ${e.outTok} | ${e.usd.toFixed(4)}`);
-  console.log(`TOTAL $${total.toFixed(4)} at $1 per M input, $5 per M output (${MODEL}); output assumed at the reply token cap.`);
+  console.log(`TOTAL $${total.toFixed(4)} at $1 per M input, $5 per M output (${MODEL}); output assumed at the reply token cap.` +
+    (args.persona ? ` Includes the bored student (${Bored.STUDENT_MODEL}) and the judge (${Bored.JUDGE_MODEL}, $4 / $20 per M, 12 000 output tokens assumed).` : ''));
   if (!args.run && !args.mock) return;
 
   if (args.run) {
     const cap = args.maxUsd !== null ? args.maxUsd : DEFAULT_CAP_USD;
     if (total > cap) die(`Estimate $${total.toFixed(4)} is over $${cap}. Stopping. Pass --max-usd <n> above the estimate to proceed.`);
-    if (!process.env.SPEC_CHECK_API_KEY) die('SPEC_CHECK_API_KEY is not set.');
+    if (!apiKey()) die('SPEC_CHECK_API_KEY is not set (shell or Windows user environment).');
     spend.cap = cap;
     await confirmModel();
+    if (args.persona) await confirmModel(Bored.JUDGE_MODEL);
   }
 
   for (const id of args.ids) {
     const before = spend.usd;
     let r;
     try {
-      r = await simulate(id, args.run ? realCall : mockCall());
+      r = await simulate(id, args.run ? realCall : mockCall(), args.persona);
+      if (args.persona) Object.assign(r, { persona: args.persona }, await judge(r));
     } catch (e) {
       die(String(e.message || e));
     }
     r.cost = spend.usd - before;
     const base = writeRun(r, args.run ? 'run' : 'mock');
     const flagged = r.turns.filter(t => t.flags.length).length;
+    if (r.persona) console.log(`${id}: persona bored · ${r.verdict.pass ? 'PASS' : 'FAIL'}${r.verdict.reasons.length ? ' (' + r.verdict.reasons.join('; ') + ')' : ''} · engagement ${r.judge ? r.judge.engagement : '?'} · would quit ${r.judge && r.judge.would_quit ? r.judge.would_quit.turn : 'false'}`);
     console.log(`${id}: ${r.turns.length} tutor turns, ${flagged} flagged; ${r.lessonFlags.join('; ') || 'no lesson flags'}. ` +
       `${path.relative(ROOT, base).replace(/\\/g, '/')}.md${args.run ? ` · $${r.cost.toFixed(4)}` : ''}`);
   }

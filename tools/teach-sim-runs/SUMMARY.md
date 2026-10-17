@@ -24,3 +24,5 @@ One line per run: date | lesson | mode | tutor turns | flagged turns | flags by 
 - 2026-10-17 | p2-static | mock | 18 | 0 | none | none | -
 - 2026-10-17 | p2-series-parallel | run | 13 | 0 | none | none | $0.0482
 - 2026-10-17 | p2-static | run | 18 | 0 | none | none | $0.0490
+- 2026-10-17 | p3-particle-model | mock | 18 | 0 | none | none | -
+- 2026-10-17 | p3-particle-model | run, persona bored | 22 | FAIL | engagement 2 | would quit T8 | engagement 2; would quit at T8; question does not match what was taught: T0, T1, T2, T3, T5, T6, T8, T10, T12, T17 | $0.2465

@@ -1,0 +1,144 @@
+# Site test: p1-energy-stores (lesson, 2026-10-17)
+
+**FAIL** · cost $0.4392 (24 tool calls, 61 calls from the site; tutor claude-sonnet-5-5 $0.2692)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "The final turn shows the decimal as '0. 15', with a stray space. Number formatting splits the decimal answer the student just gave.",
+      "step": "T22"
+    },
+    {
+      "what": "Dissipation is left unchecked (4/5 covered) and the summary says 'you skipped dissipation'. In fact the student was taught dissipation and answered its question correctly (S18). Only the follow-up 'why is it wasted' question was skipped, so the point should count as covered or at least partly covered.",
+      "step": "T19/T22"
+    },
+    {
+      "what": "After the wrong answer at S21, the tutor gave the answer straight away and moved on to efficiency. The student never got a retry on picking the useful arrow, unlike the retry at T15/S16.",
+      "step": "T21"
+    },
+    {
+      "what": "The summary says 'I told you about Sankey diagrams and efficiency', but the student answered both Sankey questions and the efficiency question. Those topics are framed as told rather than worked through.",
+      "step": "T22"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "The final message shows '0. 15' with a space inside the number.",
+      "screenshot": "13-end-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The Key Terms panel is clipped at the bottom. The kinetic energy store definition 'calculated using Ek = ½mv²' is cut off mid-line with no visible scroll cue.",
+      "screenshot": "09-exchange-12-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The 'JUMP TO' heading and top of the sidebar are hidden under the sticky header once the chat has scrolled.",
+      "screenshot": "08-exchange-9-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "On phone the end-of-lesson 'Lesson finished.' line and the Topics/Show me the slides/Ask something else buttons are off screen below the last message.",
+      "screenshot": "13-end-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "There is a large empty gap above and below the 'k' bubble in the chat.",
+      "screenshot": "13-end-laptop.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": false,
+  "fixes": [
+    {
+      "target": "AI tutor message rendering / number formatting",
+      "change": "Stop inserting a space after the decimal point (e.g. sentence splitting on '.'). Render '0.15' intact."
+    },
+    {
+      "target": "Lesson p1-energy-stores point completion logic",
+      "change": "Mark a point covered (or 'mostly covered') when the student has correctly answered its core check (S18). Don't record a skipped follow-up as skipping the whole point. Update the summary wording to match."
+    },
+    {
+      "target": "Lesson p1-energy-stores content scope",
+      "change": "Move conservation, dissipation and Sankey/efficiency to their own lessons, which already exist in the P1 list. This lesson is then stores and pathways only, cutting it to about 10 exchanges for a bored student."
+    },
+    {
+      "target": "AI tutor wrong-answer behaviour (T21)",
+      "change": "After a wrong answer, give a hint and re-ask once, as at T15, before revealing the answer."
+    },
+    {
+      "target": "Lesson page layout (phone end state, laptop sidebar)",
+      "change": "On finish, auto-scroll so the 'Lesson finished' buttons are visible on phone. Make the Key Terms panel a scrollable area with a fade/scroll cue. Make the sidebar sticky below the header so 'JUMP TO' isn't hidden."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Lesson p1-energy-stores (Physics › Energy › Energy stores and transfers — what energy actually is).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p1-phone.png and 04-lessons-p1-laptop.png] lessons-P1
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! Energy is involved in everything you do, and the first thing to know is that it can be held in eight different ways, which we call energy stores. Which store would a drawn bow, ready to fire an arrow, be holding its energy in?
+    [screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (minimal): k
+    T1: Let me say it more simply: an energy store is just a way energy can be held, and a stretched or squashed object, like a drawn bow, holds it in its elastic potential store. A moving car holds it in its kinetic store. Which store holds the energy in a book sitting on a high shelf?
+    S2 (try): gravitational potential store
+    T2: Yes — gravitational potential is right, because the book is raised above the ground. Now the kinetic store: any moving object holds energy there, and it's calculated with Ek = ½mv², measured in joules (J). A heavy lorry is parked at the side of the road. How much energy does it have in its kinetic store?
+    S3 (bored): huh?
+    T3: No worries! Kinetic energy is the energy of things that are moving. A lorry parked at the roadside isn't moving, so what is its speed?
+    [screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3
+    S4 (try): zero
+    T4: Yes — zero is right, because the lorry isn't moving, so its kinetic store is empty however heavy it is. Gravitational potential energy depends on height: Ep = mgh, where g = 9.8 N/kg on Earth, measured in joules (J). If the same lorry were lifted onto a high platform, which letter in Ep = mgh would get bigger?
+    S5 (bored): huh?
+    T5: Let's make it simpler. Gravitational potential energy depends on how high something is lifted: Ep = mgh, where m is mass, g is gravity and h is height. If you lift the lorry higher, which letter gets bigger?
+    S6 (try): h gets bigger
+    T6: Yes — h is right, because lifting the lorry higher increases its height. Now a different store: an elastic potential energy store is energy held in a stretched or squashed object, like a spring or a drawn bow. If you stretch a spring further, which letter in Ee = ½ke² gets bigger?
+    [screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6
+    S7 (bored): this is long
+    T7: Fair enough, I'll keep it short. A stretched or squashed spring stores energy in its elastic potential store, and e in the formula is how far it is stretched. What does the letter e stand for?
+    S8 (try): how far its stretched
+    T8: Yes — e is how far it's stretched. Energy doesn't just jump between stores; it moves by a pathway, and one is mechanical transfer: energy transferred by work done by forces, like pushing, pulling or kicking. When you kick a ball, which pathway is moving the energy?
+    S9 (try): mechanical transfer i think
+    T9: Yes — mechanical transfer is right, because kicking is a force doing work. Heating is another pathway: energy flows from a hotter object to a cooler one, never the other way. If you hold a hot mug, in which direction does the energy flow?
+    [screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9
+    S10 (idk): idk which way it goes
+    T10: Think of a hot cup of tea going cold: the tea loses energy to the cooler air around it. So energy always flows from the hotter thing to the cooler thing. A hot mug is hotter than your hand, so which one does the energy flow into?
+    S11 (try): into my hand
+    T11: Yes — into your hand, because heating always flows from hotter to cooler. The fourth pathway is radiation: energy transferred by electromagnetic waves, such as light and infrared. The Sun's light reaches Earth across empty space, so which pathway carries that energy?
+    S12 (try): radiation because theres no air in space
+    T12: Yes — radiation is right, because light travels as electromagnetic waves, and those don't need air. Now for the big rule: the law of conservation of energy says energy cannot be created or destroyed, only transferred, stored or dissipated (spread out). If you push a book off a table and its gravitational potential energy falls, what happens to that energy?
+    [screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12
+    S13 (bored): huh?
+    T13: Let me say it more simply: energy never vanishes, it just moves into a different store. When the book falls, its gravitational potential energy turns into kinetic energy, so the energy is still there. What store does the book's energy go into as it speeds up while falling?
+    S14 (try): kinetic energy
+    T14: Yes — kinetic energy is right, because the falling book speeds up. If a closed system starts with 50 J of total energy, how much does it have after the book falls and lands inside it?
+    S15 (wrong): like 30 j because some gets lost?
+    T15: Not quite — in a closed system no energy is transferred to or from the surroundings, so nothing can be lost, and the total stays the same. Some energy ends up in the floor's thermal store, but it's still counted. So after the book lands, how many joules does the closed system have in total?
+    [screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15
+    S16 (try): 50 j still then?
+    T16: Yes — 50 J is right, because in a closed system the total never changes. Now, in any real energy transfer, some energy spreads out into the thermal store of the surroundings, where it's much less useful — this is called dissipation. A car engine warms the air around it, so where does that wasted energy end up?
+    S17 (bored): this is long
+    T17: Fair enough, I'll keep it short. When a car engine runs, some energy just warms the air around it and spreads out, so it's no use for moving the car. Where does that wasted energy end up?
+    S18 (try): in the thermal store of the air?
+    T18: Yes — the thermal store of the air (the surroundings) is right. That energy is called wasted energy: energy transferred to a store that isn't useful for what the device is meant to do. In a car, moving it is the useful job, so why is the warmth in the air counted as wasted?
+    [screenshot 11-exchange-18-phone.png and 11-exchange-18-laptop.png] exchange-18
+    S19 (bored): can we skip this
+    T19: Okay, skipping that one, which was about why dissipated energy counts as wasted. Next is Sankey diagrams, which are arrow diagrams where each arrow's width shows how much energy it carries. The thick arrow on the left is the total energy input, so what does the width of an arrow tell you?
+    S20 (try): how much energy it has?
+    T20: Yes, the width shows how much energy each arrow carries. In a lamp's Sankey diagram, the 100 J input splits into a 15 J arrow of light and an 85 J arrow of wasted energy. Which of those two arrows is the useful one?
+    S21 (wrong): the 85 j one cos its bigger?
+    T21: The useful arrow is the 15 J one, because light is what a lamp is meant to do, and the widest arrow isn't always the useful one. Efficiency is useful output ÷ total input, so for the lamp it is 15 ÷ 100. What decimal does that give?
+    [screenshot 12-exchange-21-phone.png and 12-exchange-21-laptop.png] exchange-21
+    S22 (try): um like 0.15?
+    T22: Yes, 0. 15 is right: 15 ÷ 100 gives that decimal for the lamp's efficiency. That brings us to the end of this lesson. You worked through the eight energy stores, the four ways energy is transferred and conservation of energy. I told you about Sankey diagrams and efficiency, and you skipped dissipation.
+    S23 (bored): k
+    T23: Okay, that's a good place to leave it. Whenever you come back, we can pick up dissipation, the one point we skipped. See you next time!
+    [the lesson shows "Lesson finished."]
+    [screenshot 13-end-phone.png and 13-end-laptop.png] end

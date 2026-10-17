@@ -316,12 +316,13 @@ function create(env) {
     };
   }
 
-  function _freshFlow() { return { correctQs: [], shortRun: 0, how: _points.map(() => null) }; }
+  function _freshFlow() { return { correctQs: [], correctAs: [], shortRun: 0, how: _points.map(() => null) }; }
   // FLOW_FIX state (a state saved before it existed starts empty).
   function _flow() {
     if (!_state.flow || typeof _state.flow !== 'object') _state.flow = _freshFlow();
     const f = _state.flow;
     if (!Array.isArray(f.correctQs)) f.correctQs = [];
+    if (!Array.isArray(f.correctAs)) f.correctAs = [];
     if (!Number.isInteger(f.shortRun)) f.shortRun = 0;
     if (!Array.isArray(f.how) || f.how.length !== _points.length) f.how = _points.map(() => null);
     return f;
@@ -438,7 +439,7 @@ function create(env) {
       FLOW_FIX ? [
         `When her answer is right, the first sentence of your reply says so and names what was right ("Yes — chemical energy is right."), before anything else.`,
         `Never ask again a question she has already answered correctly in this lesson, in the same or other words.`,
-        `Numbers and units: copy every number and unit exactly as the key point's content and key terms write them. Never recalculate, convert, round or rewrite a number or unit.`,
+        `Numbers and units: copy every number and unit exactly as the key point's content and key terms write them. Never recalculate, convert, round or rewrite a number or unit. Never give an example, a classification or a figure that the content does not give.`,
       ].join('\n') : '',
     ].filter(Boolean).join('\n');
   }
@@ -463,7 +464,10 @@ function create(env) {
     if (FLOW_FIX) {
       if (decision.mark === 'correct') lines.push(`Her answer is right. The FIRST sentence of your reply says so and names what was right, before anything else.`);
       const qs = _state.flow && _state.flow.correctQs.length ? _state.flow.correctQs.slice(-8) : [];
-      if (qs.length && _teachIndex(decision) != null) lines.push(`Questions she has already answered correctly in this lesson — never ask any of them again, in any words: ${qs.map(q => `"${q}"`).join(' | ')}`);
+      const as = _state.flow && _state.flow.correctAs ? _state.flow.correctAs.slice(-8) : [];
+      if (qs.length && _teachIndex(decision) != null) lines.push(`Questions she has already answered correctly in this lesson, with her answers — never ask any of them again, in any words, and never ask a question whose answer is one she has already given: ${qs.map((q, k) => `"${q}" (she said: "${as[k - qs.length + as.length] || ''}")`).join(' | ')}`);
+      // A question about something not yet said (mucus, an arrow, a diagram) leaves her guessing.
+      if (_teachIndex(decision) != null) lines.push(`Your question may use only ideas and things you have already said to her, in this conversation or earlier in this reply. If it names something (a substance, a part, an arrow, a diagram), say what it is first.`);
     }
 
     if (decision.kind === 'retry') {
@@ -559,6 +563,8 @@ function create(env) {
   // original order. A reply not ending in a question is cut at the last full
   // sentence under the limit.
   function _sentences(text) {
+    // FLOW_FIX: a full stop between digits ("0.15") does not end a sentence.
+    if (FLOW_FIX) return String(text || '').match(/(?:[^.!?]|\.(?=\d))+[.!?]+["')\]]*\s*|(?:[^.!?]|\.(?=\d))+$/g) || [];
     return String(text || '').match(/[^.!?]+[.!?]+["')\]]*\s*|[^.!?]+$/g) || [];
   }
   function _cutToWords(text, maxWords) {
@@ -814,7 +820,7 @@ function create(env) {
     const covered = point.facts.every((f, j) => facts.answered[j] || facts.told[j]);
     return { idx, verdict: covered, facts, toldRest: rem.map(j => point.facts[j]), toldSentences: TEACH_THEN_ASK ? _untaughtSentences(idx) : null,
              pacing: { turnsOnPoint: 0, checkinAsked: false, extensionLeft: null },
-             ...(FLOW_FIX ? { tellAll: point, how: 'told' } : {}),
+             ...(FLOW_FIX ? { tellAll: point, how: facts.answered.some(Boolean) ? 'part-told' : 'told' } : {}),
              ..._afterPoint(idx, covered) };
   }
 
@@ -907,7 +913,7 @@ function create(env) {
     // FLOW_FIX: the check-in only after a wrong answer, an "idk" or two short or
     // off-topic replies in a row; otherwise she carries on and is asked later.
     const kind = FLOW_FIX ? _replyKind(userText, point, hit) : null;
-    const struggling = !FLOW_FIX || inExtension || kind === 'wrong' || kind === 'partly' || kind === 'idk'
+    const struggling = !FLOW_FIX || inExtension || kind === 'wrong' || kind === 'idk'
       || (kind === 'other' && _flow().shortRun >= 1);
     if (capHit && struggling && (remaining().length || (TEACH_THEN_ASK && _untaughtSentences(idx)))) {
       if (inExtension) return _finishByTelling(idx, point, facts, remaining());
@@ -947,7 +953,7 @@ function create(env) {
     const covered = point.facts.every((f, j) => answered[j] || told[j]);
     return { idx, verdict: covered, facts, toldNow,
              pacing: { turnsOnPoint: 0, checkinAsked: false, extensionLeft: null },
-             ...(FLOW_FIX ? { how: told.some(Boolean) ? 'told' : 'worked' } : {}),
+             ...(FLOW_FIX ? { how: answered.some(Boolean) ? 'worked' : 'told' } : {}),
              ..._afterPoint(idx, covered) };
   }
 
@@ -955,7 +961,10 @@ function create(env) {
     if (FLOW_FIX && decision.flowNote) {
       const f = _flow();
       f.shortRun = decision.flowNote.shortRun;
-      if (decision.flowNote.correctQ && !f.correctQs.includes(decision.flowNote.correctQ)) f.correctQs.push(decision.flowNote.correctQ);
+      if (decision.flowNote.correctQ && !f.correctQs.includes(decision.flowNote.correctQ)) {
+        f.correctQs.push(decision.flowNote.correctQ);
+        f.correctAs.push(decision.flowNote.correctA || '');
+      }
       if (decision.idx != null && decision.how && decision.kind !== 'fact' && decision.kind !== 'retry' && decision.kind !== 'checkin') f.how[decision.idx] = decision.how;
     }
     if (decision.kind === 'free') return;
@@ -1006,6 +1015,10 @@ function create(env) {
   // She has missed this part twice. Don't quiz her a third time: give her the
   // answer kindly so she still leaves the conversation having met it.
   function _toldLine(fact) {
+    if (FLOW_FIX && fact) {
+      const last = _lastQuestion();
+      return `She hasn't got this after two goes: ${fact.term} — ${fact.def}. Don't ask her about it again and don't make a thing of it. In ONE or TWO short friendly sentences, give her the answer to the question you just asked${last ? ` ("${last.q}")` : ''} — exactly what it asked for, with any number and unit copied from the content — so she has it. `;
+    }
     return fact
       ? `She hasn't got this after two goes: ${fact.term} — ${fact.def}. Don't ask her about it again and don't make a thing of it. In ONE short friendly sentence, simply tell her the answer so she has it. `
       : '';
@@ -1091,7 +1104,7 @@ function create(env) {
     const rem = point.facts.map((f, j) => j).filter(j => !facts.answered[j] && !facts.told[j]);
     const reset = { turnsOnPoint: 0, checkinAsked: false, extensionLeft: null };
     if (_wantsSkip(userText)) {
-      return { idx, verdict: false, facts, skipped: point, pacing: reset, how: 'skipped', ..._afterPoint(idx, false) };
+      return { idx, verdict: false, facts, skipped: point, pacing: reset, how: facts.answered.some(Boolean) ? 'part' : 'skipped', ..._afterPoint(idx, false) };
     }
     if (!_state.checkinAsked && _wantsTelling(userText)) return _finishByTelling(idx, point, facts, rem);
     return null;
@@ -1104,7 +1117,8 @@ function create(env) {
     if (d.tellAll) {
       const p = d.tellAll;
       const terms = (p.keyTerms || []).map(t => `${t.term}: ${t.def}`).join(' | ');
-      return `She wants to be told the rest of the key point "${_shortHeading(p.heading)}". Tell her the whole of it now, in plain words: every sentence of its content below, in order, one short sentence each. Leave nothing out, not even parts she has already met, and do not ask about any of it. Content: "${_stripHtml(p.content)}"${terms ? ` Key terms: ${terms}` : ''} `;
+      const bullets = (p.writeBullets || []).map(_stripHtml).filter(Boolean);
+      return `She wants to be told the rest of the key point "${_shortHeading(p.heading)}". Tell her the rest of it now, in plain words: every sentence of its content below that you have not already said to her, in order, one short sentence each — when unsure, include it. Every one of the points to remember below must be in what you say or what you said before. Do not ask about any of it. Content: "${_stripHtml(p.content)}"${terms ? ` Key terms: ${terms}` : ''}${bullets.length ? ` Points to remember: ${bullets.join(' | ')}` : ''} `;
     }
     return '';
   }
@@ -1119,8 +1133,10 @@ function create(env) {
     const how = _howList(d);
     const names = k => _points.map((p, i) => how[i] === k ? `"${_shortHeading(p.heading)}"` : null).filter(Boolean);
     const parts = [];
-    if (names('worked').length) parts.push(`she worked through ${names('worked').join(', ')}`);
+    if (names('worked').length) parts.push(`she answered your questions on ${names('worked').join(', ')}`);
+    if (names('part-told').length) parts.push(`she answered some questions on ${names('part-told').join(', ')} and you told her the rest`);
     if (names('told').length) parts.push(`you told her ${names('told').join(', ')}`);
+    if (names('part').length) parts.push(`she answered some questions on ${names('part').join(', ')}, then skipped the rest of it`);
     if (names('skipped').length) parts.push(`she skipped ${names('skipped').join(', ')}`);
     const none = _points.filter((p, i) => !how[i]).map(p => `"${_shortHeading(p.heading)}"`);
     if (none.length) parts.push(`she did not reach ${none.join(', ')}`);
@@ -1128,7 +1144,7 @@ function create(env) {
   }
   function _closingLine(d) {
     const all = _howList(d).every(h => h === 'worked');
-    return `Then say you have reached the end of this lesson and say honestly, in one or two short sentences, how it went: ${_howSummary(d)}. ${all ? 'She worked through every point herself.' : 'Never say she got through, covered, learned or mastered all of it.'} Close warmly in one short line.`;
+    return `Then say you have reached the end of this lesson and say honestly, in one or two short sentences, how it went: ${_howSummary(d)}. Use these words: say she "answered questions on" a point, never that she "worked through", "covered", "learned" or "mastered" a point or the lesson — answering questions on a point does not mean she met all of it. ${all ? '' : 'Never say she got through all of it. '}Close warmly in one short line.`;
   }
 
   // A teaching question that repeats one she has already answered correctly.
@@ -1160,7 +1176,8 @@ function create(env) {
       const kind = point ? _replyKind(userText, point, false) : null;
       decision.mark = _turnMark ? _turnMark.mark : null;
       decision.flowNote = { shortRun: kind === 'other' ? _flow().shortRun + 1 : 0,
-                            correctQ: _turnMark && _turnMark.mark === 'correct' ? _turnMark.question : null };
+                            correctQ: _turnMark && _turnMark.mark === 'correct' ? _turnMark.question : null,
+                            correctA: _turnMark && _turnMark.mark === 'correct' ? String(userText).slice(0, 120) : null };
       if (decision.tellAll) decision.maxWords = Math.min(170, MAX_REPLY_WORDS + _wordCount(_stripHtml(decision.tellAll.content)));
     }
     _turnMark = null;
@@ -1246,6 +1263,7 @@ function create(env) {
     heading: kp.heading,
     content: kp.content,
     keyTerms: kp.keyTerms || [],
+    ...(FLOW_FIX ? { writeBullets: kp.writeBullets || [] } : {}),
     diagram: kp.diagram || null,
     diagramCaption: kp.diagramCaption || '',
     diagramExamTip: !!kp.diagramExamTip,

@@ -1,0 +1,636 @@
+{
+  "id": "b3-defences",
+  "subject": "biology",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome — your body is fending off pathogens (germs that cause disease) every second, using several layers of defence, and the first layer is simply stopping them getting in. What do you think your body does with that mucus once it's full of trapped pathogens?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "um it gets like swallowed or coughed up?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — swallowed is right, and coughed up works too. The mucus doesn't move on its own: tiny hair-like structures called cilia line the airways and beat rhythmically, sweeping the mucus and trapped pathogens upwards. What do you think would happen to the pathogens if the cilia stopped beating?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "they'd go down into the lungs i guess?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — without the cilia sweeping, the trapped pathogens would reach the lungs. Swallowed pathogens then meet the next barrier: your stomach makes hydrochloric acid (HCl), which makes it extremely acidic, around pH 2, and kills most pathogens in food and drink. Why is that acid such a useful barrier for pathogens that come in through your mouth?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "this is too long mate",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Fair enough, I'll keep it short. Your stomach makes a strong acid, hydrochloric acid, and it kills most germs you swallow. What do you think happens to a pathogen that lands in that acid?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "it gets killed i guess. anyway im starving lol",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, killed is right, the acid destroys most germs before they get any further. And go grab a snack soon! These barriers are called non-specific defences: they act against all pathogens, whatever type, without needing to have met them before. Why do you think the stomach acid counts as non-specific?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "cos it kills all germs not just one type?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes — it kills all germs, not just one type, which is exactly what non-specific means. If a pathogen gets past those barriers, your immune system takes over, and its key players are white blood cells, also called leucocytes. What part of the body do you think white blood cells are a part of?",
+      "recap": [
+        "Mucus in your airways traps pathogens before they reach your lungs.",
+        "Cilia beat to sweep that mucus upwards, to be swallowed or coughed up.",
+        "Stomach acid (HCl, around pH 2) kills most pathogens you swallow.",
+        "These are non-specific defences: they act on all germs, not just one type."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "No worries, simpler: white blood cells are the cells that defend you from germs. They're part of your immune system, your body's defence team. What do white blood cells do for your body?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "they kill the germs yeah?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — they kill the germs is right. White blood cells have a scientific name too: leucocytes, so \"leucocyte\" just means white blood cell. Which of these two names would a scientist use for a white blood cell in an exam answer?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "leucocyte",
+      "studentType": "minimal",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes, \"leucocyte\" is the scientific name. White blood cells are part of your immune system, the body's system of cells that identifies and destroys pathogens and foreign material. What do you think the immune system does to a pathogen once it identifies it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "destroys it i guess",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — destroys is right. White blood cells also have a nucleus, the part of a cell that holds its genetic material, while mature red blood cells don't have one. Which type of blood cell has a nucleus?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "No worries, here it is another way. A nucleus is the control centre of a cell, where its genetic material is kept, and white blood cells have one. Mature red blood cells don't.\n\nSo which type of blood cell has a nucleus?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "white blood cells",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Yes — white blood cells are the ones with a nucleus. Now for one type of white blood cell: a phagocyte is the fast-response unit that engulfs a pathogen by changing shape to surround it, then digests it with enzymes. What do you think \"engulfs\" means a phagocyte does to a pathogen?",
+      "recap": [
+        "White blood cells defend you by killing germs.",
+        "Their scientific name is leucocytes, so use it in exams.",
+        "Leucocytes are part of your immune system, which destroys pathogens.",
+        "White blood cells have a nucleus; mature red blood cells don't."
+      ],
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Fair enough, I'll keep it short. A phagocyte is a white blood cell that wraps itself around a pathogen and swallows it, then digests it.\n\nWhat does a phagocyte use to digest the pathogen once it's inside?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "It uses enzymes to digest it. The whole process of surrounding, swallowing and digesting is called phagocytosis.\n\nPhagocytes are also non-specific, meaning they attack anything that isn't a normal body cell. Why does that make them the body's first responder?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "they attack anything fast",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes — attacking anything is what makes them fast. That whole process of surrounding, swallowing and digesting a pathogen is called phagocytosis.\n\nWhat does a phagocyte use to break the pathogen down once it's inside?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "ribosomes?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Not quite, but you're clearly still working at it. Would you like me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "yeah go on",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Phagocytes are the fast-response unit of your immune system. When they detect something foreign, like a bacterium, a dead cell or debris, they engulf it by changing shape to surround it and pulling it inside. Once inside, enzymes digest the pathogen, and this process is called phagocytosis. Phagocytes are non-specific, so they attack anything that isn't a normal body cell. That makes them the body's first responder when an infection starts.\n\nPhagocytes are non-specific, but lymphocytes take a targeted approach: they make antibodies and antitoxins. Which type of white blood cell makes antibodies?",
+      "recap": [
+        "A phagocyte is a white blood cell that swallows pathogens whole.",
+        "It wraps itself around the pathogen, then digests it with enzymes.",
+        "Enzymes do the breaking down, not ribosomes.",
+        "Surround, swallow, digest is called phagocytosis."
+      ],
+      "flags": [
+        "over length (93 words)"
+      ]
+    },
+    {
+      "n": 17,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Let me say that more simply. There are two kinds of white blood cell: phagocytes engulf pathogens, and lymphocytes make antibodies.\n\nSo which one makes the antibodies?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "lymphocytes",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, lymphocytes make the antibodies. Every pathogen has unique proteins on its surface called antigens, which your immune system spots as foreign.\n\nSo if a lymphocyte detects an antigen it recognises, what does it produce in response?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Let me try it another way. An antigen is like a flag on the surface of a pathogen that says \"I'm foreign\". When a lymphocyte spots that flag, it makes antibodies shaped to fit it.\n\nSo where on a pathogen would you find the antigen?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "inside it?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "This one's a bit fiddly, so would you like me to just tell you the rest of it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "yeah ok",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Sure. Unlike phagocytes, lymphocytes use a targeted approach. Every pathogen has unique proteins on its surface called antigens, so they sit on the outside, not inside. When a lymphocyte detects an antigen it recognises, it produces antibodies, proteins complementary in shape to that specific antigen. The antibody binds to the antigen, which marks the pathogen for destruction, clumps pathogens together, or directly neutralises them. Because each antibody only fits one specific antigen, this is a specific response. Lymphocytes also produce antitoxins, proteins that neutralise the toxins pathogens release.\n\nNext up: the first time lymphocytes meet a pathogen, the response is slow, but some of those lymphocytes become memory cells that stay in your body long after the infection is gone. If the same pathogen turns up again, what do you think those memory cells allow your body to do?",
+      "recap": [
+        "Phagocytes engulf and digest any foreign invader, so they act fast but non-specifically.",
+        "Lymphocytes are the white blood cells that make antibodies.",
+        "Antigens are the \"I'm foreign\" flags on the surface of a pathogen, not inside.",
+        "A lymphocyte that spots an antigen it recognises makes antibodies shaped to fit it."
+      ],
+      "flags": [
+        "over length (139 words)"
+      ]
+    },
+    {
+      "n": 22,
+      "student": "make more phagocytes faster?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Not quite. Memory cells are lymphocytes, not phagocytes, and they make the response faster and stronger. They stay in your body after the infection, so if the same pathogen returns, they recognise its antigen straight away. Then your body makes lots of antibodies quickly.\n\nSo how does the second response compare in speed to the first?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Memory cells are long-lived lymphocytes that stay in your body after an infection, so a second infection gets a faster, stronger response. That ability is called immunological memory, and it's why you don't get chickenpox twice. If the chickenpox pathogen turned up again, what would your memory cells recognise straight away?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "the antigen thing on it",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Yes — the antigen on the pathogen's surface is exactly what the memory cells recognise, so your body can respond quickly. That brings us to the end of this lesson. You worked through physical barriers and white blood cells, while I explained phagocytes, lymphocytes and immunological memory, so those last ideas are worth a second look another time.",
+      "recap": [
+        "The first time lymphocytes meet a pathogen, the response is slow.",
+        "Some of those lymphocytes become memory cells that stay in your body.",
+        "Memory cells recognise the pathogen's antigen straight away if it returns.",
+        "Your body then makes lots of antibodies faster, so you don't get chickenpox twice."
+      ],
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Bye, and thanks for sticking with it today! Come back any time to go over phagocytes, lymphocytes and memory cells again. Take care!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is too long mate",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What do you think your body does with that mucus once it's full of trapped pathogens?",
+        "note": "Mucus and skin were never taught. The question refers to 'that mucus' as if it had been introduced. Skin, the first barrier, is skipped entirely."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think would happen to the pathogens if the cilia stopped beating?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Swallowed pathogens then meet the next barrier: your stomach makes hydrochloric acid (HCl), which makes it extremely acidic, around pH 2, and kills most pathogens in food and drink.",
+        "note": "About 60 words of dense text. The student replied 'this is too long mate'."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think happens to a pathogen that lands in that acid?",
+        "note": "The answer was given in the previous sentence, so this is a giveaway question."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why do you think the stomach acid counts as non-specific?",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What part of the body do you think white blood cells are a part of?",
+        "note": "The immune system had not been taught yet, and 'part of the body' is vague. The student replied 'huh?'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do white blood cells do for your body?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which of these two names would a scientist use for a white blood cell in an exam answer?",
+        "note": ""
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think the immune system does to a pathogen once it identifies it?",
+        "note": "Re-teaches the immune system point from T6 and re-asks what she already answered ('they kill the germs')."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which type of blood cell has a nucleus?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So which type of blood cell has a nucleus?",
+        "note": ""
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What do you think \"engulfs\" means a phagocyte does to a pathogen?",
+        "note": "The question is ungrammatical, and its answer was given in the same sentence. The student replied 'this is long'."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does a phagocyte use to digest the pathogen once it's inside?",
+        "note": "The shortened version left out 'enzymes' and then asked for it. It relies on T11 only."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why does that make them the body's first responder?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That whole process of surrounding, swallowing and digesting a pathogen is called phagocytosis. What does a phagocyte use to break the pathogen down once it's inside?",
+        "note": "Repeats the phagocytosis sentence from T13. It also re-asks the enzymes question that was just told to her in T13."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Not quite, but you're clearly still working at it. Would you like me to just tell you the rest of this one?",
+        "note": "Never says that the answer is enzymes, not ribosomes."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Phagocytes are non-specific, but lymphocytes take a targeted approach: they make antibodies and antitoxins. Which type of white blood cell makes antibodies?",
+        "note": "About 110 words to a student who had already complained about length twice. The answer is in the sentence just before the question."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So which one makes the antibodies?",
+        "note": ""
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if a lymphocyte detects an antigen it recognises, what does it produce in response?",
+        "note": "Re-asks the lymphocyte-antibody link she had just answered correctly."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So where on a pathogen would you find the antigen?",
+        "note": ""
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "This one's a bit fiddly, so would you like me to just tell you the rest of it?",
+        "note": "Does not correct 'inside it?' before offering the check-in."
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "The antibody binds to the antigen, which marks the pathogen for destruction, clumps pathogens together, or directly neutralises them.",
+        "note": "About 140-word wall of text that also starts a new key point."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So how does the second response compare in speed to the first?",
+        "note": ""
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If the chickenpox pathogen turned up again, what would your memory cells recognise straight away?",
+        "note": ""
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You worked through physical barriers and white blood cells, while I explained phagocytes, lymphocytes and immunological memory, so those last ideas are worth a second look another time.",
+        "note": "Skin was never covered, and the vaccination link was never made."
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Bye, and thanks for sticking with it today!",
+        "note": ""
+      }
+    ],
+    "flow_faults": [
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T8",
+        "quote": "What do you think the immune system does to a pathogen once it identifies it?",
+        "note": "She had already answered 'they kill the germs' in S7."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T18",
+        "quote": "So if a lymphocyte detects an antigen it recognises, what does it produce in response?",
+        "note": "She had just answered 'lymphocytes' to 'which one makes the antibodies'. This asks the same fact in reverse."
+      },
+      {
+        "type": "tell_me_skipped_content",
+        "turn": "T21",
+        "quote": "Lymphocytes also produce antitoxins, proteins that neutralise the toxins pathogens release.",
+        "note": "Leaves out keyPoints[3].writeBullets[4], 'Slower than phagocytes but highly targeted'."
+      },
+      {
+        "type": "closing_claims_untaught_content",
+        "turn": "T24",
+        "quote": "You worked through physical barriers and white blood cells",
+        "note": "Skin, the main physical barrier, was never taught. Mucus trapping was assumed, not taught."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: first key point opening",
+        "change": "Teach keyPoints[0] in order, starting with skin and mucus trapping (writeBullets[0] and [1]). Only then ask what happens to the mucus. Never refer to 'that mucus' before it has been introduced.",
+        "quote": "What do you think your body does with that mucus once it's full of trapped pathogens?"
+      },
+      {
+        "target": "shared-code: tell-me and key-point transition length cap",
+        "change": "Cap every tutor turn at about 50 words. After a 'yes' to the check-in, deliver the telling in two or three short turns with one quick question each. Do not start the next key point in the same message. Once the student says 'this is long', keep every later turn under 40 words.",
+        "quote": "this is long"
+      },
+      {
+        "target": "teach-core: correct wrong answer before check-in",
+        "change": "After a wrong answer, first name the right answer in one line (e.g. 'Not ribosomes — enzymes do the digesting'), then offer the check-in.",
+        "quote": "ribosomes?"
+      },
+      {
+        "target": "teach-core: track answered facts",
+        "change": "Store the facts she has answered correctly, and do not re-ask them in reversed or reworded form. Also do not repeat a definition that was given in the previous turn (phagocytosis in T13 and T14).",
+        "quote": "So if a lymphocyte detects an antigen it recognises, what does it produce in response?"
+      },
+      {
+        "target": "keyPoints[4].content and shared-code: closing summary",
+        "change": "Make sure the memory point ends by linking to vaccination (writeBullets[3], revisionCardBullets[9]). The closing should list exactly which points were skipped (skin, the vaccination link) rather than claiming she worked through physical barriers.",
+        "quote": "That brings us to the end of this lesson."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "question does not match what was taught: T0, T5",
+      "flow faults: question_repeated_after_correct_answer T8, question_repeated_after_correct_answer T18, tell_me_skipped_content T21, closing_claims_untaught_content T24"
+    ]
+  },
+  "cost": 0.45770999999999995,
+  "tutorCost": 0.25911200000000006,
+  "tutorCalls": 62,
+  "mode": "run",
+  "date": "2026-10-17"
+}

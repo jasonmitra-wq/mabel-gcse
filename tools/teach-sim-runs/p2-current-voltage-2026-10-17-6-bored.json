@@ -1,0 +1,458 @@
+{
+  "id": "p2-current-voltage",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! Everything from your phone to a kettle works because charge flows around a circuit, and that flow is called electric current, which is the rate of flow of electric charge, measured in amperes (A). So if charge is the thing moving, what do you think \"rate of flow\" tells us about how that charge moves?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "um like how much charge moves? or how fast it goes somewhere?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, \"how much charge moves\" is on the right track, and \"how fast\" matters too: current is the amount of charge passing a point each second. So if more charge passes a point every second, what happens to the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "it gets slower?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "More charge passing each second actually means a bigger current, so the current goes up. Charge is measured in coulombs (C), and 1 coulomb is the charge that passes when a current of 1 ampere flows for 1 second. So what unit do we use to measure charge?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk what coulombs are tho",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's fine, a coulomb is just the unit we count charge in, a bit like a \"bucket\" of charge, and it's written C. If a current of 1 ampere flows for 1 second, exactly 1 coulomb of charge has passed. So what unit do we use to measure charge?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "coulombs?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes, coulombs (C) is right: that's the unit for charge. Now for the energy side: potential difference (p.d.) tells you how much energy is transferred for each coulomb of charge that flows between two points, and it's measured in volts (V). So what unit do we measure potential difference in?",
+      "recap": [
+        "Electric current is the rate at which charge flows past a point.",
+        "More charge passing each second means a bigger current.",
+        "Current is measured in amperes (A), and charge in coulombs (C).",
+        "One ampere flowing for one second moves exactly one coulomb of charge."
+      ],
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "volts",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Yes, volts (V) is right for potential difference. Next idea: resistance is the opposition to the flow of current, and it's measured in ohms (Ω). So if the resistance goes up but the potential difference stays the same, what happens to the current?",
+      "recap": [
+        "Charge is measured in coulombs, written C.",
+        "Potential difference is the energy transferred for each coulomb of charge.",
+        "It's measured in volts, written V.",
+        "A bigger p.d. means each coulomb gets a bigger energy push."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "it goes down?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes, the current goes down: more resistance means less current for the same p.d. Now the unit: resistance is measured in ohms (Ω), and 1 ohm is 1 volt per ampere. So what unit is resistance measured in?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "watts?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not quite. Watts measure power, which is a different idea. Resistance is measured in ohms (Ω), and 1 ohm means 1 volt for every 1 ampere of current. So if a resistor has a p.d. of 12 V across it and a current of 3 A through it, what is its resistance in ohms?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "No worries, here's the answer: resistance is measured in ohms (Ω). Now onto a new idea: an I-V characteristic is a graph showing how the current through a component changes with the potential difference across it. Which quantity goes on the y-axis of that graph?",
+      "recap": [
+        "Resistance is how much a component opposes the flow of current.",
+        "More resistance with the same p.d. means less current flows.",
+        "Resistance is measured in ohms (Ω), not watts, which measure power.",
+        "1 ohm means 1 volt for every 1 ampere of current."
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "current?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, current goes on the y-axis, with potential difference on the x-axis. A fixed resistor at constant temperature is an ohmic conductor, and its I-V graph is a straight line through the origin, so doubling V doubles I. What does that straight line tell you about its resistance?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "stays the same?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, a straight line through the origin means the resistance stays the same. Now for a new component: a diode only lets current flow in one direction, the forward direction, and in the reverse direction it has a very high resistance. So what kind of current flows through a diode in the reverse direction?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Fair enough, I'll keep it short. A diode has a very high resistance in the reverse direction, so only a very small current flows, not zero. How big is the current in the reverse direction?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "like a few amps?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "yeah go on",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "An I-V graph shows how current changes with potential difference, with I on the y-axis and V on the x-axis. An ohmic conductor, like a fixed resistor at constant temperature, gives a straight line through the origin, so doubling V doubles I and the resistance is constant. A filament lamp gives a curve that flattens as V increases, because the filament heats up and its resistance rises. A diode only lets current flow in the forward direction, and its very high reverse resistance means only a very small current flows. The lamp and diode graphs are non-linear. To find resistance at any point, read off V and I and use R = V ÷ I. Examiners want the shape AND the reason.\n\nNext, the required practical: you measure I-V characteristics of a filament lamp, a diode and a resistor. The circuit uses a variable resistor (rheostat), and what is it used for in the circuit?",
+      "recap": [
+        "An I-V graph plots current (y-axis) against potential difference (x-axis).",
+        "A fixed resistor at constant temperature gives a straight line through the origin.",
+        "Straight line means constant resistance, so doubling V doubles I.",
+        "A diode has very high reverse resistance, so only a tiny current flows."
+      ],
+      "flags": [
+        "over length (155 words)"
+      ]
+    },
+    {
+      "n": 14,
+      "student": "to change the voltage?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Changing the voltage is on the right track, since the variable resistor lets you change the settings as you go. What quantity does it directly vary in the circuit?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "changes the current?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Yes — changing the current is right, since the variable resistor varies the current in the circuit. To measure that current, you put an ammeter in series with the component, meaning in the same loop as it. If the component is a filament lamp, where in the circuit do you connect the ammeter?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "can we skip this",
+      "studentType": "bored",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Skipping the required practical, which was about measuring I-V characteristics. That's the end of this lesson: you worked through potential difference, I told you about current, resistance and I-V graphs, and you skipped the practical. Thanks for sticking with it!",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Bye for now! You can come back any time to go over the practical and the other ideas we only touched on. Good luck with the revision.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    false
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [
+    "points never completed: 4 \"Required practical\""
+  ],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is long",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if charge is the thing moving, what do you think \"rate of flow\" tells us about how that charge moves?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if more charge passes a point every second, what happens to the current?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "More charge passing each second actually means a bigger current, so the current goes up.",
+        "note": ""
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "a coulomb is just the unit we count charge in, a bit like a \"bucket\" of charge, and it's written C.",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, coulombs (C) is right: that's the unit for charge.",
+        "note": "Moves on without ever teaching Q = It."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if the resistance goes up but the potential difference stays the same, what happens to the current?",
+        "note": "E = QV was never taught before moving to resistance."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, the current goes down: more resistance means less current for the same p.d.",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if a resistor has a p.d. of 12 V across it and a current of 3 A through it, what is its resistance in ohms?",
+        "note": "R = V/I was never stated before this calculation."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "No worries, here's the answer: resistance is measured in ohms (Ω).",
+        "note": "Claims to give the answer but never works out 12 ÷ 3 = 4 Ω."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does that straight line tell you about its resistance?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So what kind of current flows through a diode in the reverse direction?",
+        "note": "Skips the filament lamp and jumps to the diode."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How big is the current in the reverse direction?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": "Leaves the wrong answer 'a few amps' uncorrected."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": true,
+        "confusing": false,
+        "quote": "The circuit uses a variable resistor (rheostat), and what is it used for in the circuit?",
+        "note": "About 160 words. Ends by asking about a purpose it never taught."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "since the variable resistor lets you change the settings as you go",
+        "note": "'change the settings' is vague."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If the component is a filament lamp, where in the circuit do you connect the ammeter?",
+        "note": ""
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "you worked through potential difference, I told you about current, resistance and I-V graphs",
+        "note": "Backwards: she answered questions on current and resistance, but only named the unit of p.d."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Bye for now! You can come back any time to go over the practical and the other ideas we only touched on.",
+        "note": ""
+      }
+    ],
+    "flow_faults": [
+      {
+        "type": "closing_claims_untaught_content",
+        "turn": "T16",
+        "quote": "you worked through potential difference, I told you about current, resistance and I-V graphs",
+        "note": "For p.d. she only gave the unit. E = QV was never taught."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T8",
+        "quote": "No worries, here's the answer: resistance is measured in ohms (Ω).",
+        "note": "The question asked for a number (4 Ω). The tutor gives the unit instead."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: give the worked answer on 'huh?' to a calculation",
+        "change": "When she is lost on a calculation, show formula, substitution and result (R = V/I = 12 ÷ 3 = 4 Ω) before moving on.",
+        "quote": "No worries, here's the answer: resistance is measured in ohms (Ω)."
+      },
+      {
+        "target": "keyPoints[0].tutor_note and keyPoints[1].tutor_note",
+        "change": "Require teaching Q = It and E = QV, each with one easy worked example, before leaving the key point. introTips[1] promises this, and the session never stated either equation.",
+        "quote": "Yes, coulombs (C) is right: that's the unit for charge."
+      },
+      {
+        "target": "teach-core: tell mode length and scope",
+        "change": "Keep the told summary to the current key point and under about 60 words. Start the next key point in a separate turn, and teach the rheostat's purpose before asking about it.",
+        "quote": "The circuit uses a variable resistor (rheostat), and what is it used for in the circuit?"
+      },
+      {
+        "target": "teach-core: closing summary",
+        "change": "Build the summary from the record of what she actually answered versus what she was told. Here she answered on current and resistance, and was told the I-V graphs.",
+        "quote": "you worked through potential difference, I told you about current, resistance and I-V graphs"
+      },
+      {
+        "target": "teach-core: correct before check-in",
+        "change": "Correct a wrong answer in one line before offering to tell the rest, e.g. 'No, it's a tiny current, nearly zero.'",
+        "quote": "Do you want me to just tell you the rest of this one?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "flow faults: closing_claims_untaught_content T16, factual_or_unit_slip T8"
+    ]
+  },
+  "cost": 0.32043799999999995,
+  "tutorCost": 0.184412,
+  "tutorCalls": 44,
+  "mode": "run",
+  "date": "2026-10-17"
+}

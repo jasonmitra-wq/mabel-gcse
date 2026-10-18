@@ -53,6 +53,14 @@ const RATES = { 'claude-haiku-4-5-20251001': [1 / 1e6, 5 / 1e6], 'claude-sonnet-
 // The site's tutor model, read from the shared code (js/teach-core.js TUTOR_SONNET);
 // the site itself sends it, this is for the estimate and the cost split.
 const TUTOR_MODEL = require('../js/teach-core.js').TUTOR_MODEL;
+// The lesson's terms (key terms and basics), for the student's 'what does that mean' check
+// (brief 2026-10-18 first-time learner, step 5). Same matching as js/teach-core.js.
+function lessonTerms(data) {
+  if (!data) return [];
+  const core = require('../js/teach-core.js').create({ call: async () => '' });
+  core.bind(data, core._buildPoints(data), null);
+  return core._lessonTerms();
+}
 // Size only: switching isMobile or hasTouch makes puppeteer reload the page,
 // which would lose the lesson in the middle of a run.
 const PHONE = { width: 390, height: 844, deviceScaleFactor: 1 };
@@ -271,6 +279,12 @@ async function lessonMode(page, run, id) {
   const L = findLesson(id);
   const student = Bored.makeStudent({ lessonTitle: (L.data && L.data.title) || L.name, subject: L.subjectLabel });
   const hist = [];
+  const terms = lessonTerms(L.data);
+  const newTermsFor = h => {
+    const tutor = h.filter(x => x.who === 'tutor').map(x => x.text || '');
+    const last = tutor.pop() || '', before = tutor.join('\n');
+    return terms.filter(t => t.re.test(last) && !t.re.test(before)).map(t => t.term);
+  };
   run.say(`Lesson ${id} (${L.subjectLabel} › ${L.topicName} › ${L.name}).`);
   await shoot(page, run, 'home');
   await clickText(page, '[onclick*="showSubjectPicker"]', 'Revise a topic', 'Revise a topic');
@@ -308,7 +322,7 @@ async function lessonMode(page, run, id) {
 
   const points = L.data ? (L.data.keyPoints || []).length : 4;
   const cap = points * 12 + 4;
-  let closing = 0;
+  let closing = 0, diagramsSeen = 0;
   for (let n = 1; n <= cap; n++) {
     const status = await page.evaluate(() => {
       const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || '';
@@ -320,7 +334,7 @@ async function lessonMode(page, run, id) {
     const phase = status.complete ? 'closing' : /tell you the rest|just tell you/i.test(t) ? 'checkin' : 'teach';
     if (phase === 'closing' && closing++ >= 3) { run.say('[the student leaves]'); break; }
     const mood = student.mood(t, phase);
-    const reply = Bored.clean(await apiCall(student.body(hist, mood)));
+    const reply = Bored.clean(await apiCall(student.body(hist, mood, newTermsFor(hist))));
     hist.push({ who: 'student', text: reply });
     run.say(`S${n} (${mood}): ${reply}`);
     await page.click('#teachInput');
@@ -330,6 +344,9 @@ async function lessonMode(page, run, id) {
     t = await lastTutor();
     hist.push({ who: 'tutor', text: t });
     run.say(`T${n}: ${t}`);
+    // A diagram shown inside the conversation (TEACH_INLINE_DIAGRAMS): one phone and laptop screen with it in view.
+    const fig = await page.evaluate(seen => { const f = [...document.querySelectorAll('#teachThread .teach-inline-diagram')]; const last = f[f.length - 1]; if (!last || f.length <= seen) return null; last.scrollIntoView({ block: 'end' }); return { n: f.length, cap: (last.querySelector('figcaption') || {}).textContent || '' }; }, diagramsSeen);
+    if (fig && fig.n > diagramsSeen) { diagramsSeen = fig.n; run.say(`[diagram shown in the conversation under T${n}: "${fig.cap}"]`); await shoot(page, run, `diagram-${n}`); }
     run.exchanges++;
     if (run.exchanges % 3 === 0) await shoot(page, run, `exchange-${n}`);
   }
@@ -554,6 +571,7 @@ async function judgeRun(run, kind, id) {
     '  "would_quit": false | { "turn": "<transcript label, e.g. S7 or Question 3>", "quote": "<line>", "why": "<short>" },',
     '  "fixes": [ { "target": "<file and field, or behaviour>", "change": "<concrete change>" } ] }',
     'At most 5 fixes. Only list a looks_wrong item you can see in a named screenshot. Empty arrays if nothing.',
+    'Screenshots named "…-diagram-…" show a diagram inside the conversation: say in looks_wrong if any of its labels are too small to read on the phone screen without zooming, cut off or overlapping.',
     'stops_use is true only when the fault stops her reading something she needs or using a control she needs (text she has to read is hidden or unreadable, a button she needs is covered or off screen); false when it is untidy but she can still read and use the page.',
   ].join('\n') });
   const text = await apiCall({ model: Bored.JUDGE_MODEL, max_tokens: 8000, system: 'You are a strict, concrete website tester. Reply with JSON only.', messages: [{ role: 'user', content }] });

@@ -159,3 +159,10 @@ Every finding F1–F15 fixed once, except F5 part (c) (REJECT, in docs/ESCALATIO
 - p3-pressure | keyPoints[0].writeBullets | same | cut «Fixed volume, higher temperature → faster molecules → harder, more frequent collisions with the walls → higher pressure» and «Smaller volume → same molecules in less space → more frequent collisions with the walls → higher pressure» (both in keyPoints[1] and [2] bullets)
 - p3-pressure | keyPoints[3].content | text tester tools/teach-sim-runs/p3-pressure-2026-10-18-1-bored.md T10 (internal energy → temperature asked, never taught) | old «It increases the <strong>internal energy</strong> of the gas. This can make the temperature of the gas rise.» | new «It increases the <strong>internal energy</strong> of the gas. More internal energy means the molecules move faster on average. So the temperature of the gas can rise.»
 - Shared code (not a lesson change): js/teach-core.js PAUSE_FIX, on by default; create({ pauseFix: false }) proved byte-identical (tools/check-flag-identical.js, 6 lessons, 2 707 750 bytes).
+
+## First-time learner brief (2026-10-18) step 3: basics
+
+- p3-changes-of-state | basics | brief 2026-10-18 first-time learner step 3 | added: Temperature, Solids, liquids and gases, Melting and boiling, Energy, Mass, Particles, Reading a graph
+- p3-density | basics | brief 2026-10-18 first-time learner step 3 | added: Mass, Volume, Changing units, Particles, Floating and sinking, Reading an equation
+- p3-particle-model | basics | brief 2026-10-18 first-time learner step 3 | added: Particles, Solids, liquids and gases, Energy, Temperature, Squashing
+- p3-pressure | basics | brief 2026-10-18 first-time learner step 3 | added: A gas, Force, Area, Temperature, Volume, Energy

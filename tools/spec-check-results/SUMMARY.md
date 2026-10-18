@@ -123,3 +123,6 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-10-18 | p3-density | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 11903/1892 | $0.0855
 - 2026-10-18 | p3-changes-of-state | OK | missing_spec_content 1, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 12330/2273 | $0.0948
 - 2026-10-18 | p3-pressure | OK | missing_spec_content 0, above_gcse 0, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 11352/2323 | $0.0919
+- 2026-10-18 | p3-particle-model | OK | missing_spec_content 0, above_gcse 0, factual_errors 3, wrong_terms 0, checkpoint_mismatch 0, not_checked 2 | 13165/3234 | $0.1173
+- 2026-10-18 | p3-changes-of-state | OK | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 12884/1851 | $0.0886
+- 2026-10-18 | p3-pressure | OK | missing_spec_content 0, above_gcse 0, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 11754/1707 | $0.0812

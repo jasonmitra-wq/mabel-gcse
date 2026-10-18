@@ -1,9 +1,9 @@
 {
   "lesson": "p3-pressure",
   "source_file": "lessons/physics/p3-pressure.json",
-  "lesson_md5": "81f218d32f4b35496df671f722b8c09d",
+  "lesson_md5": "82cd29a5d518463430d282b071a8d2f2",
   "model": "claude-opus-5-5",
-  "date": "2026-10-18T09:17:38.770Z",
+  "date": "2026-10-18T09:19:38.952Z",
   "specRefs_sent": [
     "4.3.3.1",
     "4.3.3.2",
@@ -14,10 +14,10 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 11352,
-    "output_tokens": 2323
+    "input_tokens": 11754,
+    "output_tokens": 1707
   },
-  "cost_usd": 0.091868,
+  "cost_usd": 0.081156,
   "status": "OK",
   "result": {
     "lesson": "p3-pressure",
@@ -25,16 +25,16 @@
     "above_gcse": [],
     "factual_errors": [
       {
-        "field": "keyPoints[0].writeBullets[2]",
-        "text": "Each collision pushes with a force. Billions of collisions per second make a pressure you can measure",
-        "correction": "The number of collisions per second is vastly larger than billions. At room temperature and atmospheric pressure there are roughly 10^23 collisions per square centimetre of wall every second. Say 'huge numbers of collisions every second', as keyPoints[0].content already does.",
-        "basis": "own knowledge"
+        "field": "keyPoints[0].writeBullets[4]",
+        "text": "Higher temperature → faster molecules → harder, more frequent collisions with the walls → higher pressure",
+        "correction": "The pressure only rises like this if the volume is fixed. Heated in a container that can expand, such as a balloon, the gas expands and its pressure need not rise. Add 'at constant volume'. The specification states the link for a gas 'held at constant volume'. keyPoints[0].content does include '(if the volume is fixed)', but this bullet leaves it out.",
+        "basis": "spec"
       },
       {
-        "field": "intro",
-        "text": "It is simply billions of tiny molecules crashing into a container's walls, again and again.",
-        "correction": "Even a small container of gas holds far more than billions of molecules. A litre of air at room conditions holds about 2.5 × 10^22 molecules. Say 'huge numbers of tiny molecules'.",
-        "basis": "own knowledge"
+        "field": "revisionCardBullets[3]",
+        "text": "Higher temperature → faster molecules → more frequent, harder collisions → higher pressure",
+        "correction": "Same issue. The pressure rises with temperature only when the volume is held constant. The spec says 'Changing the temperature of a gas, held at constant volume, changes the pressure exerted by the gas.' revisionCardBullets[5] gives the condition, but this bullet does not.",
+        "basis": "spec"
       }
     ],
     "wrong_terms": [],

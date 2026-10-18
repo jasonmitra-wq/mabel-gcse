@@ -1,9 +1,9 @@
 {
   "lesson": "p3-changes-of-state",
   "source_file": "lessons/physics/p3-changes-of-state.json",
-  "lesson_md5": "4995a7c48e79fd8ee9f63ea1c573c41e",
+  "lesson_md5": "d64e8e088cc84a1e46c423e27a0c0058",
   "model": "claude-opus-5-5",
-  "date": "2026-10-18T09:17:17.854Z",
+  "date": "2026-10-18T09:19:20.766Z",
   "specRefs_sent": [
     "4.3.1.2",
     "4.3.2.3"
@@ -13,22 +13,23 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 12330,
-    "output_tokens": 2273
+    "input_tokens": 12884,
+    "output_tokens": 1851
   },
-  "cost_usd": 0.09478,
+  "cost_usd": 0.088556,
   "status": "OK",
   "result": {
     "lesson": "p3-changes-of-state",
-    "missing_spec_content": [
+    "missing_spec_content": [],
+    "above_gcse": [],
+    "factual_errors": [
       {
-        "specRef": "4.3.2.3",
-        "spec_text": "Students should be able to distinguish between specific heat capacity and specific latent heat.",
-        "why": "No key point content explains the difference. Specific heat capacity appears only in passing: keyPoints[2].memTip \"E = mL for changes of state. Q = mcΔT for temperature changes.\", a checkpoint feedback line (checkpoints[1].wrongFeedback \"Raising the temperature by 1 °C is specific heat capacity.\") and revisionCardBullets \"Heating curve: slopes = temperature change (Q = mcΔT). Flats = change of state (E = mL)\". The lesson never states side by side that specific heat capacity is the energy to raise 1 kg by 1 °C (temperature changes, no change of state), while specific latent heat is the energy to change the state of 1 kg (no temperature change)."
+        "field": "keyPoints[1].memTip",
+        "text": "Fusion = melting (think of fusing solid particles into a liquid). Vaporisation = boiling (vapour = gas).",
+        "correction": "In melting, the particles are not joined or fused together. They gain energy and partly overcome the forces between them, so they become freer to move past each other. 'Fusion' here comes from the old meaning of 'fuse', which is 'to melt'. The spec defines it as 'Specific latent heat of fusion – change of state from solid to liquid'. The memory aid suggests particles are joined, which contradicts the lesson's own explanation that the energy 'overcomes the forces of attraction between the particles' (keyPoints[0].content).",
+        "basis": "own knowledge"
       }
     ],
-    "above_gcse": [],
-    "factual_errors": [],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": []

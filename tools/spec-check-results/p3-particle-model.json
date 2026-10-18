@@ -1,9 +1,9 @@
 {
   "lesson": "p3-particle-model",
   "source_file": "lessons/physics/p3-particle-model.json",
-  "lesson_md5": "14535fcf17c392936fa0df87909700fb",
+  "lesson_md5": "099fa5f79df203f352a6fbede247e48f",
   "model": "claude-opus-5-5",
-  "date": "2026-10-18T09:16:38.172Z",
+  "date": "2026-10-18T09:18:51.964Z",
   "specRefs_sent": [
     "4.3.1.1",
     "4.3.1.2",
@@ -14,10 +14,10 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 12753,
-    "output_tokens": 2420
+    "input_tokens": 13165,
+    "output_tokens": 3234
   },
-  "cost_usd": 0.099412,
+  "cost_usd": 0.11734,
   "status": "OK",
   "result": {
     "lesson": "p3-particle-model",
@@ -25,35 +25,29 @@
     "above_gcse": [],
     "factual_errors": [
       {
-        "field": "keyPoints[3].content",
-        "text": "The model shows no forces between particles",
-        "correction": "The lesson's own particle model includes forces between particles. keyPoints[0] says \"There are strong forces of attraction between particles\" in a solid, and keyPoints[1] and [2] explain internal energy and changes of state as the forces of attraction being overcome. Calling 'no forces' a limitation contradicts the model the lesson teaches. A valid limitation is that the simple model shows particles as small solid spheres and does not show the size or nature of the forces. It should not say the model shows no forces.",
+        "field": "keyPoints[2].content",
+        "text": "KEY POINT: temperature stays constant during any change of state. The energy is used to overcome the forces of attraction between particles. It is not used to increase kinetic energy.",
+        "correction": "The temperature part is correct. The energy part is only true for melting, boiling, evaporating and sublimating, where energy is supplied. In freezing and condensing, energy is transferred away from the substance. The particles lose potential energy as the forces pull them together, so no energy is being used to overcome the forces. The lesson already says this itself (\"Freezing ... particles lose potential energy\"; \"Condensation ... particles lose potential energy\"). Suggested wording: \"When a substance melts or boils, the energy supplied overcomes the forces of attraction between particles. When it freezes or condenses, energy is transferred away as the particles lose potential energy. In both cases the kinetic energy, and so the temperature, does not change.\"",
         "basis": "own knowledge"
       },
       {
-        "field": "keyPoints[3].writeBullets[4]",
-        "text": "Limitation — the model shows no forces between particles",
-        "correction": "Same error as in keyPoints[3].content. The particle model used throughout the lesson includes forces of attraction between particles, and it uses them to explain potential energy and changes of state.",
+        "field": "examTip",
+        "text": "Remember: during a change of state, the temperature stays CONSTANT. The energy overcomes the forces of attraction between particles. It does not raise their kinetic energy.",
+        "correction": "\"The energy overcomes the forces of attraction\" only applies to changes of state where energy is supplied (melting, boiling, evaporating, sublimating). In freezing and condensing, energy is transferred away and the particles' potential energy decreases.",
         "basis": "own knowledge"
       },
       {
-        "field": "revisionCardBullets[11]",
-        "text": "Particle model limitations: particles shown as identical solid spheres, with no forces between them",
-        "correction": "Remove 'with no forces between them'. The lesson's particle model includes forces of attraction, and it relies on them for internal energy (potential energy) and changes of state.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyTerms (keyPoints[0]) 'Incompressible'.def",
-        "text": "Cannot be compressed — volume stays constant under pressure",
-        "correction": "Solids and liquids are virtually incompressible, not totally incompressible. Their volume changes only very slightly under pressure. The definition contradicts the lesson's own wording, \"virtually incompressible\".",
+        "field": "commonMistakes[1]",
+        "text": "Thinking temperature rises during a change of state. It stays constant. The energy is overcoming the forces between particles, not increasing kinetic energy.",
+        "correction": "This applies to heating, for example melting and boiling. For freezing and condensing, energy is transferred away as the particles lose potential energy. The temperature still stays constant.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "Diagram 'p3-states-particles' (keyPoints[0].diagram): I cannot see it. I could not check whether it meets spec 4.3.1.1 \"Students should be able to recognise/draw simple diagrams to model the difference between solids, liquids and gases\".",
-      "Diagram 'p3-state-changes' (keyPoints[2].diagram): I cannot see it. I could not check whether the change-of-state names and energy-flow directions are correct."
+      "keyPoints[0].diagram \"p3-states-particles\": I cannot see this image. The specification (4.3.1.1) says \"Students should be able to recognise/draw simple diagrams to model the difference between solids, liquids and gases.\" I could not check that the diagram shows this correctly (regular closely packed solid, close irregular liquid, far-apart gas).",
+      "keyPoints[2].diagram \"p3-state-changes\" (caption \"The names of each change of state, and which way energy flows.\"): I cannot see this image, so I could not check the names or the energy-flow directions."
     ]
   }
 }

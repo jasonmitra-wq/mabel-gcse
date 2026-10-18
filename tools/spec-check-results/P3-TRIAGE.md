@@ -95,3 +95,14 @@ field and text are one line.
 - p3-changes-of-state | R2 miss0 (distinguish specific heat capacity and specific latent heat) | ACCEPT | keyPoints[1]: side-by-side lines and a write bullet.
 - p3-pressure | R2 fact0 ("Billions of collisions per second") | ACCEPT | "Huge numbers of collisions every second".
 - p3-pressure | R2 fact1 (intro "billions of tiny molecules") | ACCEPT | "huge numbers of tiny molecules".
+
+## R3
+
+--blocking-only --decided P3-TRIAGE.md on the three lessons changed in R2 (at 46e8c5f). Results in P3-R3/. No R4 (runbook); what is left goes to the audit.
+
+- p3-particle-model | R3 fact0 (KEY POINT: energy "overcomes the forces" in every change of state, also freezing and condensing) | ACCEPT | melting or boiling: energy supplied overcomes the forces; freezing or condensing: particles lose potential energy; kinetic energy and temperature unchanged.
+- p3-particle-model | R3 fact1 (same, examTip) | ACCEPT | "When a substance melts or boils, the energy overcomes…".
+- p3-particle-model | R3 fact2 (same, commonMistakes[1]) | ACCEPT | "When a substance melts or boils, the energy is overcoming…".
+- p3-changes-of-state | R3 fact0 (memTip: fusion as "fusing particles") | ACCEPT | "Fusion = melting or freezing (solid ↔ liquid)."
+- p3-pressure | R3 fact0 (writeBullets[4] temperature → pressure without fixed volume) | ACCEPT | "Fixed volume, higher temperature → …".
+- p3-pressure | R3 fact1 (same, revisionCardBullets[3]) | ACCEPT | "Fixed volume, higher temperature → …".

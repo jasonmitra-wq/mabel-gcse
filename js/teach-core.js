@@ -482,14 +482,18 @@ function create(env) {
     const basics = _basics();
     return [
       `She is meeting this topic for the first time. She knows everyday life, not the subject's words. Never assume she knows a term.`,
-      `In each message bring in at most ONE new term or idea. The first time you use a term, explain it in everyday words, with an everyday comparison where one helps, before you use it in a question. Never use a term you have not explained in this conversation, unless she has used it herself.`,
+      `In each message bring in at most ONE new term or idea. The first time you use a term, explain it in everyday words, with an everyday comparison where one helps, before you use it in a question. Never use a term you have not explained in this conversation, unless she has used it herself. Units are terms too (volts, amps, ohms, joules, watts): say what a unit measures the first time you use it.`,
       `Go from the concrete to the abstract: first what you would see, feel or measure; then the name for it; then the rule, equation or graph.`,
-      `Never ask a question whose answer is written in your message or in your last message: she would only copy it back. Ask her to use the idea — on an everyday case, a small change ("what would happen if…"), or a reason in her own words.`,
+      `Never ask a question whose answer is written in your message or in your last message: she would only copy it back. Describing the same situation in other words ("the wrong way round", then "wired in backwards") is still copying. Ask her to use the idea — on an everyday case, a small change ("what would happen if…"), or a reason in her own words.`,
       basics.length
         ? `If she says she does not know a basic idea, or her answer shows she does not have it, teach that idea first, from the basics below, in their plain words, then go on. Basics you may always use: ${basics.map(b => `${b.idea}: ${_stripHtml(b.text)}`).join(' | ')}\nWhen a message teaches one of these basics instead of the key point, add one last line on its own: "BASIC: " and the basic idea's name. That line is taken out before she sees the reply.`
         : `If she says she does not know a basic idea the lesson needs, explain it first in everyday words, then go on.`,
     ].join('\n');
   }
+
+  // "huh?", "what?", "i dont get it", "this is long": a confused reply, not an answer.
+  const CONFUSED = /^\W*(huh|what|wot|wdym|eh|confused|i\s*(don\W?t|dont) (get|understand)( it)?|i\W?m lost|this is (long|confusing))\W*$/i;
+  function _saysConfused(text) { return CONFUSED.test(String(text || '').trim()); }
 
   function _ft() { return (_state && _state.firstTime) || { probed: true, known: '' }; }
 
@@ -501,6 +505,8 @@ function create(env) {
     const names = [];
     (_data.keyPoints || []).forEach(kp => (kp.keyTerms || []).forEach(t => t && t.term && names.push(t.term)));
     _basics().forEach(b => names.push(b.idea));
+    // Fix round (2026-10-18): units count as terms too ("measured in volts (V)").
+    _basics().forEach(b => { for (const m of _stripHtml(b.text).matchAll(/measured in ([a-z]+)(?: \(([^)]+)\))?/gi)) names.push(m[2] ? `${m[1]} (${m[2]})` : m[1]); });
     const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const seen = new Set(), list = [];
     for (const name of names) {
@@ -509,9 +515,12 @@ function create(env) {
       seen.add(key);
       const forms = [name.replace(/\s*\(([^)]*)\)\s*/g, ' ').trim()];
       const acr = name.match(/\(([^)]+)\)/);
-      if (acr) forms.push(acr[1].trim());
+      // A one-letter acronym ("A", "W", "J") would match the word "a" or any lone letter.
+      if (acr && !/^[A-Za-z]$/.test(acr[1].trim())) forms.push(acr[1].trim());
       const re = new RegExp(`(^|[^A-Za-z])(${forms.filter(Boolean).map(f => esc(f).replace(/\s+/g, '[\\s-]+')).join('|')})(e?s)?(?![A-Za-z])`, 'i');
-      list.push({ term: name, re });
+      // A one-letter unit symbol after a number ("6 V"), matched with its case.
+      const one = acr && /^[A-Za-z]$/.test(acr[1].trim()) ? new RegExp(`\\d\\s?${acr[1].trim()}(?![A-Za-z])`) : null;
+      list.push({ term: name, re: one ? { test: s => re.test(s) || one.test(s) } : re });
     }
     _termCache = { data: _data, list };
     return list;
@@ -581,10 +590,22 @@ function create(env) {
       prev ? `The tutor's previous message: "${_stripMarkdown(prev.text)}"` : '',
       `The tutor's new message, before its question: "${before}"`,
       `Its question: "${q}"`,
-      `YES if the answer to the question is already stated, in the same or nearly the same words, in the new message before the question or in the previous message, so she could answer by copying it back. NO if she has to apply the idea to a new case, work something out, or give a reason or example that was not stated.`,
+      `YES if the answer to the question is already stated, in the same or nearly the same words, in the new message before the question or in the previous message, so she could answer by copying it back. Also YES if the question only describes the same situation in other words ("the wrong way round" and "wired in backwards"; "in the dark" and "when evening comes"), so the stated answer still fits it. NO only if she has to apply the idea to a genuinely different case, work something out, or give a reason or example that was not stated.`,
     ].filter(Boolean).join('\n\n');
     try { return /\bYES\b/i.test(String(await AI.call(sys, user, 5) || '')); }
     catch (e) { _logError('answer check', e); return false; }
+  }
+
+  // Fix round (2026-10-18): one short call: which of these new terms does the
+  // message use without saying what it means in everyday words? A failed call counts as none.
+  async function _unexplainedIn(plain, terms) {
+    const sys = `You check one message from a tutor to a student who is learning this topic for the first time. Reply with the words asked about that are not explained, separated by commas, or NONE.`;
+    const user = `The message: "${plain}"\n\nWords she has not met before: ${terms.join(', ')}.\n\nWhich of these words does the message use without saying, in everyday words, what it means or what it measures? Using a word only after explaining it in the same message is fine. Reply with those words, or NONE.`;
+    try {
+      const raw = String(await AI.call(sys, user, 30) || '');
+      if (/\bNONE\b/i.test(raw)) return [];
+      return terms.filter(t => raw.toLowerCase().includes(t.replace(/\s*\(.*\)\s*/, '').toLowerCase()));
+    } catch (e) { _logError('term check', e); return []; }
   }
 
   // What the next _callWithLengthGuard checks: { forbid: [terms] } for the
@@ -624,6 +645,8 @@ function create(env) {
       lines.push(_termsLine());
       const dl = _diagramLine(_teachIndex(decision));
       if (dl) lines.push(dl);
+      // Tone fix: after "huh?" the reference lessons simplify warmly; a new apply-it question made it worse.
+      if (_saysConfused(userText)) lines.push(`She is confused. Own it kindly ("Sorry, that was a lot"), then say the same idea again more simply, in one or two short sentences with an everyday picture. Then ask one easy question about what you have just said; this time it is fine if the answer is in your message. Do not move on to anything new.`);
     }
 
     if (decision.kind === 'retry') {
@@ -888,7 +911,7 @@ function create(env) {
     // has just said. Each is asked for again once.
     const ft = FIRST_TIME ? _pendingFT : null;
     _pendingFT = null;
-    let termFault = null, termTried = false, given = false, givenTried = false;
+    let termFault = null, termTried = false, termUnexplained = false, given = false, givenTried = false;
     const basicOf = new Map();
     const done = FIRST_TIME
       ? text => {
@@ -906,6 +929,7 @@ function create(env) {
       const termNote = !termFault ? ''
         : ft.forbid
           ? `(Your opening uses words the lesson is about to teach: ${termFault.join(', ')}. She does not know them yet. Ask your one question about the everyday idea again without any of them.)`
+          : termUnexplained ? `(Your reply uses ${termFault.join(', ')} without saying what it means. She has never met it. Say what it means in everyday words, with an everyday comparison if one helps, before you use it — or leave it out of this message.)`
           : `(Your reply brings in ${termFault.length} new terms at once: ${termFault.join(', ')}. She is meeting them for the first time. Keep only ONE new term in this message, explained in everyday words, and leave the others for later messages.)`;
       const givenNote = given ? `(The answer to your question is already in your message or your last one, so she would only copy it back. Keep the teaching, but ask a question that makes her use the idea: an everyday case, a small change, or a reason in her own words.)` : '';
       const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : '', many ? manyNote : '', naming ? namingNote : '', anchorNote, repeatNote, termNote, givenNote].filter(Boolean).join('\n');
@@ -937,9 +961,13 @@ function create(env) {
         if (!termTried && !cut) {
           const found = ft.forbid ? _lessonTerms().filter(t => ft.forbid.includes(t.term) && t.re.test(plain)).map(t => t.term)
             : ft.teach ? _newTermsIn(plain) : [];
-          if (ft.forbid ? found.length : found.length > 1) { termFault = found; termTried = true; }
+          if (ft.forbid ? found.length : found.length > 1) { termFault = found; termTried = true; termUnexplained = false; }
+          else if (ft.teach && found.length === 1) {
+            const un = await _unexplainedIn(plain, found);
+            if (un.length) { termFault = un; termTried = true; termUnexplained = true; }
+          }
         }
-        if (ft.teach && noYesNo && !givenTried && !cut && !termFault && !repeated) {
+        if (ft.teach && !ft.confused && noYesNo && !givenTried && !cut && !termFault && !repeated) {
           given = await _answerGiven(plain);
           givenTried = true;
         }
@@ -1423,7 +1451,9 @@ function create(env) {
       _applyDecision(decision);
       return { reply, recap: null, decision };
     }
-    _turnMark = FLOW_FIX ? await _markAnswer(userText) : null;
+    // FIRST_TIME tone fix (2026-10-18): an answer to a basics question is not marked against
+    // the key point (it was marked wrong and opened "Not quite"); the tutor judges it itself.
+    _turnMark = FLOW_FIX && !(FIRST_TIME && !_state.checkinAsked && _lastWasBasic()) ? await _markAnswer(userText) : null;
     const decision = _decide(userText);
     if (FLOW_FIX && decision.kind !== 'free') {
       const point = _points[_state.currentPointIndex];
@@ -1441,7 +1471,7 @@ function create(env) {
     _pendingChunk = decision.chunk || null;
     const sys  = _buildSystemPrompt(_teachIndex(decision));
     const user = _buildUserPrompt(userText, decision);
-    if (FIRST_TIME) _pendingFT = _teachIndex(decision) != null ? { teach: true } : null;
+    if (FIRST_TIME) _pendingFT = _teachIndex(decision) != null ? { teach: true, confused: _saysConfused(userText) } : null;
     // Teaching turns only: the check-in and the closing turns ask yes/no on purpose.
     const reply = FLOW_FIX && decision.maxWords
       ? await _callWithLengthGuard(sys, user, _teachIndex(decision) != null, decision.maxWords)

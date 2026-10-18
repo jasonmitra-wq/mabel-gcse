@@ -212,3 +212,7 @@ Still there:
 - closing_claims_untaught_content (p2 x2) and factual_or_unit_slip (p2 T11, g5-8 T8).
 - checkin_without_struggle back once (g5-8 T17).
 - Website, new or still seen: "no just explain it better" read as yes to the tell-all (b3-8 S15); questions dropped unanswered (b3-8); copy-back questions after naming the term (b3-9 "leucocytes"; p1-8 "The next pathway is electrical ... which pathway?"); "too long" answered at the same length (p1-7 T3, T9); she asks to stop for lunch and gets another question (b3-9 S3); loose "heat" accepted (p1-7 T16).
+
+## P3 Particle model audit (2026-10-18, tools/audit-runs/bb269b4-1.md)
+
+- F5 (c) REJECT, R-c: the auditor notes that p3-particle-model keyPoints[3] "Limitations of the particle model" (and its checkpoint 3) is not in the physics specification; it is chemistry 4.2.2.1 (HT there). Not cut: it is GCSE content, not above GCSE, and cutting it would remove what chemistry 4.2.2.1 requires ("Limitations of the simple model above include that in the model there are no forces, that all particles are represented as spheres and that the spheres are solid"). Parts (a) and (b) fixed: the lesson now says the spheres are drawn with no forces between them. For the planning chat: keep it here, or move it to the chemistry lessons when Chemistry is done.

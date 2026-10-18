@@ -11,10 +11,36 @@
     "Uses of radiation match the type of radiation to the job. Gamma is used to explore internal organs and to treat cancer."
   ],
   "intro": "Every radioactive substance decays at its own rate. Some radioactive isotopes are so unstable that they decay in milliseconds. Others decay so slowly that they will carry on for billions of years. Half-life is how we measure this rate. It turns out to be one of the most useful ideas in all of science. It helps doctors give targeted cancer treatments. Half-life also tells you how long a radioactive material stays dangerous.",
+  "basics": [
+    {
+      "idea": "Halving",
+      "text": "To halve something is to divide it by 2. Halve 800 and you get 400. Halve it again and you get 200."
+    },
+    {
+      "idea": "Graph axes",
+      "text": "A graph has two lines called axes. The x-axis runs along the bottom. The y-axis runs up the side. Each axis shows a quantity and its unit."
+    },
+    {
+      "idea": "Powers",
+      "text": "A small raised number tells you how many times to multiply. (½)³ means ½ × ½ × ½, which is 1/8."
+    },
+    {
+      "idea": "Fractions and ratios",
+      "text": "A fraction such as 1/4 means one part out of four equal parts. A ratio compares two amounts, like 1 part left to 3 parts gone."
+    },
+    {
+      "idea": "A mutation",
+      "text": "A mutation is a change in a cell's DNA. Some mutations do no harm. Others can make cells grow out of control."
+    },
+    {
+      "idea": "Risk",
+      "text": "Risk is how likely something harmful is, and how bad it would be. Crossing a busy road is riskier than crossing a quiet one."
+    }
+  ],
   "keyPoints": [
     {
       "heading": "What half-life means",
-      "content": "<strong>Half-life</strong> is the time it takes for the number of nuclei of a radioactive isotope in a sample to halve. It is also the time for the <strong>count rate</strong> (or activity) from the sample to fall to half.\n\nRadioactive decay is <strong>random</strong>. You cannot predict which nucleus will decay next, or when. But with very large numbers of atoms, the overall rate is predictable. This is why half-life is a reliable measure, even though each decay is random.\n\n<strong>Activity</strong> (measured in becquerels, Bq) is the number of decays per second. The count rate is the number of decays a detector records each second.\n- After 1 half-life: activity = A₀/2\n- After 2 half-lives: activity = A₀/4\n- After 3 half-lives: activity = A₀/8\n- After n half-lives: activity = A₀ × (½)ⁿ\n\nThe number of undecayed nuclei halves at the same rate as the activity.\n\nYou can also give the fall as a ratio. After 2 half-lives, the activity is 1/4 of its starting value. So the net decline is 3/4 of the starting activity.",
+      "content": "<strong>Half-life</strong> is the time it takes for the number of nuclei of a radioactive isotope in a sample to halve. It is also the time for the <strong>count rate</strong> (or activity) from the sample to fall to half.\n\nRadioactive decay is <strong>random</strong>. You cannot predict which nucleus will decay next, or when. But with very large numbers of atoms, the overall rate is predictable. This is why half-life is a reliable measure, even though each decay is random.\n\n<strong>Activity</strong> (measured in becquerels, Bq) is the number of decays per second. The count rate is the number of decays a detector records each second.\nA₀ means the starting activity.\n- After 1 half-life: activity = A₀/2\n- After 2 half-lives: activity = A₀/4\n- After 3 half-lives: activity = A₀/8\n- After n half-lives: activity = A₀ × (½)ⁿ\n\nThe number of undecayed nuclei halves at the same rate as the activity.\n\nYou can also give the fall as a ratio. After 2 half-lives, the activity is 1/4 of its starting value. So the net decline is 3/4 of the starting activity.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -49,10 +75,11 @@
     },
     {
       "heading": "Reading and drawing decay graphs",
-      "content": "A <strong>radioactive decay graph</strong> shows activity (Bq) or count rate on the y-axis and time on the x-axis. The shape is always a <strong>curved decrease that approaches but never reaches zero</strong>. This is an exponential decay curve.\n\nTo find the half-life from a graph:\n(1) pick any starting activity value (for example, 800 Bq)\n(2) find half that value (400 Bq)\n(3) read the time at 800 Bq (t₁) and the time at 400 Bq (t₂)\n(4) half-life = t₂ − t₁\n\nYou can check by repeating from 400 Bq → 200 Bq. The time interval should be the same.\n\nTo draw a decay graph, plot points at each half-life (0, t½, 2t½, 3t½, ...). The activity halves each time. Then join them with a smooth curve. The curve must never touch or cross the x-axis.",
+      "content": "A <strong>radioactive decay graph</strong> shows activity (Bq) or count rate on the y-axis and time on the x-axis. The shape is always a <strong>curved decrease that approaches but never reaches zero</strong>. This is an exponential decay curve.\n\nTo find the half-life from a graph:\n(1) pick any starting activity value (for example, 800 Bq)\n(2) find half that value (400 Bq)\n(3) read the time at 800 Bq (t₁) and the time at 400 Bq (t₂)\n(4) half-life = t₂ − t₁\n\nYou can check by repeating from 400 Bq → 200 Bq. The time interval should be the same.\n\nTo draw a decay graph, plot points at each half-life. t½ means one half-life, so the points are at 0, t½, 2t½, 3t½ and so on. The activity halves each time. Then join them with a smooth curve. The curve must never touch or cross the x-axis.",
       "examFlag": true,
       "cardFlag": true,
-      "diagram": null,
+      "diagram": "p4-decay-graph",
+      "diagramCaption": "The activity halves every 2 hours, so the half-life is 2 hours.",
       "writeBullets": [
         "Decay graph: an exponential curve. Steep at first, flattening slowly, never reaching zero",
         "To find half-life: pick an activity value, find half of it, and read the time difference",

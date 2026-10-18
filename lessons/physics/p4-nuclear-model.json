@@ -11,6 +11,48 @@
     "Electrons are at fixed energy levels. They move between levels when they absorb or emit electromagnetic radiation."
   ],
   "intro": "How do you find out what is inside something you cannot see? That was the challenge facing physicists in the early 1900s. They fired tiny particles at atoms and watched where they went. This led to one of the most important discoveries in science: the nucleus. This story is not just history. It shows how evidence forces scientists to drop a comfortable model and replace it with a better one. The nuclear model it produced is still used today.",
+  "basics": [
+    {
+      "idea": "An atom",
+      "text": "Everything is made of atoms. An atom is far too small to see, even with a normal microscope. Each kind of atom is a different element, such as carbon or gold."
+    },
+    {
+      "idea": "An element",
+      "text": "An element is a substance made of only one kind of atom. Gold, carbon and oxygen are elements."
+    },
+    {
+      "idea": "Electric charge",
+      "text": "Charge can be positive (+) or negative (−). Opposite charges attract, like a magnet's north and south. Like charges push each other away. Pushing away is called repelling."
+    },
+    {
+      "idea": "Mass",
+      "text": "Mass is how much stuff something has in it. A bowling ball has more mass than a football of the same size."
+    },
+    {
+      "idea": "Dense",
+      "text": "Something dense has a lot of mass packed into a small space. A lead weight is denser than a cork of the same size."
+    },
+    {
+      "idea": "Deflected",
+      "text": "Deflected means pushed off its straight path. A ball that glances off a wall is deflected."
+    },
+    {
+      "idea": "A scientific model",
+      "text": "A model is a picture or idea that scientists use to explain something they cannot see. When new evidence does not fit, the model is changed."
+    },
+    {
+      "idea": "A radioactive source",
+      "text": "A radioactive source is a material that gives out radiation on its own. You will learn more about this in the next lesson."
+    },
+    {
+      "idea": "Relative mass",
+      "text": "Relative mass compares masses with each other instead of giving them in kilograms. A proton has relative mass 1. Something with relative mass 2 is twice as heavy."
+    },
+    {
+      "idea": "Electromagnetic radiation",
+      "text": "Electromagnetic radiation is energy that travels as waves, like light. Radio waves, X-rays and gamma rays are other kinds. It can travel through empty space."
+    }
+  ],
   "keyPoints": [
     {
       "heading": "Thomson's plum pudding model",
@@ -44,7 +86,8 @@
       "content": "In 1909, Geiger and Marsden worked with Rutherford. They fired a beam of <strong>alpha particles</strong> at an extremely thin sheet of <strong>gold foil</strong>. Alpha particles are positively charged and came from a radioactive source. A screen that flashed when hit showed where the particles went. This is called the <strong>alpha particle scattering experiment</strong>.\n\nThere were three key observations, each with a conclusion.\n\n<strong>(1) Most alpha particles went straight through</strong> → the atom is <strong>mostly empty space</strong>.\n\n<strong>(2) A few alpha particles were deflected through large angles</strong> → the positive charge is not spread through the atom. The plum pudding model was wrong. The charge is packed into a small region at the centre. This region repels the alpha particles.\n\n<strong>(3) A very small number bounced almost straight back</strong> → there is an extremely <strong>small, dense nucleus</strong>. It holds the positive charge and most of the mass. Only alpha particles heading almost straight at the nucleus are pushed back. They are repelled before they reach it.\n\nThis new evidence led to the <strong>nuclear model</strong>. It replaced the plum pudding model.",
       "examFlag": true,
       "cardFlag": true,
-      "diagram": null,
+      "diagram": "p4-alpha-scattering",
+      "diagramCaption": "Most alpha particles pass straight through. A few are deflected through large angles. Very few bounce back.",
       "writeBullets": [
         "Alpha particles were fired at thin gold foil. A detector screen recorded where they went",
         "Most went straight through → atom is mostly empty space",
@@ -74,7 +117,8 @@
       "content": "Atoms are very small. An atom has a radius of about <strong>1 × 10⁻¹⁰ metres</strong>. This number is in standard form. It means 0.0000000001 m.\n\nThe nuclear model gives us the structure of the atom. There is a <strong>tiny, dense, positive nucleus</strong> at the centre. The radius of the nucleus is <strong>less than 1/10 000</strong> of the radius of the atom. Most of the mass of an atom is in the nucleus. The nucleus is surrounded by negatively charged <strong>electrons</strong>. Almost all of the atom is empty space.\n\nThe nucleus contains:\n- <strong>protons</strong> (positive charge, relative mass 1)\n- <strong>neutrons</strong> (no charge, relative mass 1)\n\nElectrons are outside the nucleus (relative charge −1, relative mass very small).\n\nKey numbers:\n- <strong>Atomic number (proton number, Z)</strong> = number of protons = number of electrons in a neutral atom. It decides the element.\n- <strong>Mass number (A)</strong> = number of protons + number of neutrons.\n- <strong>Number of neutrons = mass number − atomic number</strong>.\n\nExample: carbon-12 has atomic number 6 → 6 protons, 6 electrons. Its mass number is 12 → 12 − 6 = 6 neutrons.\n\nIn an atom, the number of electrons equals the number of protons. So an atom has no overall charge. An atom that loses one or more outer electrons becomes a <strong>positive ion</strong>. An ion is a charged particle. It forms when an atom loses or gains electrons. Its charge is written at the top right. A lithium atom that loses one electron is written Li⁺.\n\n<strong>Isotopes</strong> are atoms of the same element with different numbers of neutrons. They have the same atomic number but different mass numbers. Carbon-12 and carbon-14 are both carbon, with 6 protons each. Carbon-12 has 6 neutrons and carbon-14 has 8.\n\nYou write an atom like this: ¹²₆C. The top number is the mass number. The bottom number is the atomic number. So ¹²₆C and ¹⁴₆C are isotopes: same bottom number, different top number.",
       "examFlag": true,
       "cardFlag": true,
-      "diagram": null,
+      "diagram": "p4-atom-structure",
+      "diagramCaption": "A lithium-7 atom: 3 protons and 4 neutrons in the nucleus, 3 electrons around it. Not to scale.",
       "writeBullets": [
         "Atom radius about 1 × 10⁻¹⁰ m. Nucleus radius less than 1/10 000 of the atom's radius",
         "Nucleus — tiny, dense and positive. Contains protons and neutrons, and most of the mass",
@@ -116,7 +160,8 @@
       "content": "Niels Bohr changed the nuclear model. He suggested that electrons orbit the nucleus at <strong>specific distances</strong>. His calculations agreed with what experiments showed.\n\nEach distance matches a <strong>fixed energy level</strong>. Levels further from the nucleus are higher energy levels.\n\nWhen an electron <strong>absorbs electromagnetic radiation</strong>, it moves further from the nucleus, to a higher energy level. When it <strong>emits electromagnetic radiation</strong>, it moves closer to the nucleus, to a lower energy level.\n\nLater experiments showed that the positive charge of a nucleus is made of a whole number of smaller particles. Each one has the same positive charge. These particles were called <strong>protons</strong>.\n\nAbout 20 years after the nucleus was accepted, James Chadwick's experiments showed that the nucleus also holds <strong>neutrons</strong>.\n\nEach time new evidence was found, the model of the atom was changed.",
       "examFlag": false,
       "cardFlag": true,
-      "diagram": null,
+      "diagram": "p4-energy-levels",
+      "diagramCaption": "Absorbing radiation moves an electron to a higher energy level. Emitting radiation moves it to a lower one.",
       "writeBullets": [
         "Bohr: electrons orbit the nucleus at specific distances. His calculations agreed with experiments",
         "Each distance matches a fixed energy level. Further out = higher energy level",

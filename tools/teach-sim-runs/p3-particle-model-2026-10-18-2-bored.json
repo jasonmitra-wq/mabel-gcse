@@ -1,0 +1,589 @@
+{
+  "id": "p3-particle-model",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Ice and water are the same stuff, yet one holds its shape and the other pours, and it all comes down to how their tiny particles are arranged. In a solid, the particles sit in a regular, repeating pattern called a lattice, so how would you describe the way particles are arranged in a solid?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "they're all spread out randomly i think?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Not quite — random and spread out describes a gas, not a solid. In a solid the particles are packed closely together in a neat, repeating pattern called a lattice, a bit like eggs sitting in an egg box. Because they're locked in that pattern, how close together are the particles in a solid?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "this is long lol",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Fair enough, I'll keep it short. In a solid the particles are packed closely together. That means a solid is virtually incompressible: squeeze it and its volume hardly changes. Why can't the particles in a solid be squeezed closer?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "cuz theyre already packed tight together",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — they're already packed tight, so there's no room to squeeze closer. The particles in a solid are held together by strong forces of attraction, called intermolecular forces. How strong are these forces in a solid?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Sorry, let me say that more simply. Particles in a solid pull on each other, like tiny magnets. These pulls are called intermolecular forces, and in a solid they are strong. What do these strong pulls do to the particles?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "they keep them stuck in place",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes — strong forces keep the particles stuck in place. What two kinds of energy add up to a substance's internal energy?",
+      "recap": [
+        "In a solid, particles sit packed closely in a neat, repeating pattern called a lattice.",
+        "Gas particles are the spread-out, random ones, so that's not how a solid looks.",
+        "Particles already touching means no room to squeeze, so solids are virtually incompressible.",
+        "Strong pulls between particles, called intermolecular forces, keep them stuck in place."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "um idk, thermal and... particle stuff?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Thermal is half-right, but the two energies are kinetic and potential. Kinetic is energy from motion; potential is energy stored in the forces between particles. Which one increases when particles move faster?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "kinetic i think",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — kinetic is right, because faster particles have more kinetic energy. So when you heat a substance and its temperature rises, the particles move faster. What happens to their kinetic energy then?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "it goes up i guess. anyway im starving lol",
+      "studentType": "offtopic",
+      "kind": "pause",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "No problem. Your place is saved, so you can pick this up any time. See you soon!",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "cool thanks bye",
+      "studentType": "idk",
+      "kind": "pause",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "No problem. Your place is saved, so you can pick this up any time. See you soon!",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "ok see you",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "See you soon! One quick idea for later: hotter particles move faster, so their kinetic energy, the energy of motion, goes up. When the temperature rises, what happens to the speed of the particles?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "they move faster right",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — faster particles is right. The other type of energy is potential energy, which is energy stored because of the forces of attraction between particles. What do you think these forces of attraction are acting between?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "between the particles i guess",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Yes — between the particles is right. At this temperature, what do the particles start to do as the solid turns to liquid?",
+      "recap": [
+        "Internal energy is kinetic plus potential energy added together.",
+        "Kinetic energy is the energy of particle motion.",
+        "Hotter particles move faster, so their kinetic energy goes up.",
+        "Potential energy is stored in the attraction forces between particles."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "they start moving around more yeah",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Now for liquid to gas: boiling happens all through the liquid, with bubbles of vapour forming, but only at one set temperature called the boiling point. Where in the liquid do bubbles form when it boils?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "at the bottom where its hottest",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not quite — boiling isn't just at the bottom. Bubbles of vapour form all through the liquid, once it reaches the boiling point. Where in the liquid do bubbles form when it boils?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "everywhere in the liquid then",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Now a different one: sublimation is when a solid turns directly into a gas without passing through liquid, like solid carbon dioxide (\"dry ice\") at room temperature. What state is skipped out during sublimation?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "idk what that means lol",
+      "studentType": "idk",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "No worries, that one's a bit tricky. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "nah im good let me try",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Sublimation means a solid turns straight into a gas, so the liquid stage never happens. Solid carbon dioxide, \"dry ice\", does this at room temperature. Which state is missed out during sublimation?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "the liquid one right",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Now, the particle model we've been using is a model: a simplified picture of reality used to explain and predict what we observe. Why do scientists use a simplified picture like this?",
+      "recap": [
+        "Melting happens when particles gain energy and start moving around more.",
+        "Boiling forms bubbles of vapour all through the liquid, not just the bottom.",
+        "Boiling only happens at one set temperature, called the boiling point.",
+        "Sublimation is solid straight to gas, so the liquid stage is skipped."
+      ],
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "umm so its easier to understand?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes — a model is a simplified picture that makes things easier to understand. If you spray perfume in one corner of a room, what do the perfume particles do over time?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "they stay in one corner cuz theyre heavy",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "What kind of motion makes the perfume particles spread out?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "It's random motion. The perfume particles keep moving about randomly, so they spread out from where there are lots of them to where there are fewer. That spreading is called diffusion. That brings us to the end of this lesson.",
+      "recap": [
+        "A model is a simplified picture that helps us explain and predict what we see.",
+        "Models are simplified on purpose because that makes ideas easier to understand.",
+        "Perfume particles in a corner don't stay put; they spread out through the room.",
+        "Particles move randomly, and that random motion is what makes them spread."
+      ],
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You did well sticking with the tricky bits today. Come back any time to go over the rest of the particle model, and good luck with the revision.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "it goes up i guess. anyway im starving lol",
+    "would_quit": {
+      "turn": "T8",
+      "quote": "cool thanks bye",
+      "why": "She had already complained 'this is long lol' and was confused twice ('what?'). She announced she was hungry, and T8 handed her a goodbye, so she left."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In a solid, the particles sit in a regular, repeating pattern called a lattice, so how would you describe the way particles are arranged in a solid?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "In a solid the particles are packed closely together in a neat, repeating pattern called a lattice, a bit like eggs sitting in an egg box.",
+        "note": "About 52 words. She replied 'this is long lol', so it was more than she would read."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why can't the particles in a solid be squeezed closer?",
+        "note": ""
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "The particles in a solid are held together by strong forces of attraction, called intermolecular forces. How strong are these forces in a solid?",
+        "note": "The question asks for the word just stated ('strong'), and the jargon lands in the same line. She replied 'what?'."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Particles in a solid pull on each other, like tiny magnets.",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What two kinds of energy add up to a substance's internal energy?",
+        "note": "Asks about internal energy before teaching it. Also jumps past liquids, gases and compressibility in keyPoints[0]."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Thermal is half-right, but the two energies are kinetic and potential.",
+        "note": "'Thermal' is not one of the two parts of internal energy. Calling it half-right is misleading."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to their kinetic energy then?",
+        "note": "Re-asks what she just answered: faster particles mean more kinetic energy."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "No problem. Your place is saved, so you can pick this up any time. See you soon!",
+        "note": "Does not confirm her correct 'it goes up'."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "No problem. Your place is saved, so you can pick this up any time. See you soon!",
+        "note": "Word-for-word duplicate of the T8 goodbye."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "See you soon! One quick idea for later: hotter particles move faster, so their kinetic energy, the energy of motion, goes up. When the temperature rises, what happens to the speed of the particles?",
+        "note": "Says goodbye, then keeps teaching. It also re-asks a question she already answered."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The other type of energy is potential energy, which is energy stored because of the forces of attraction between particles. What do you think these forces of attraction are acting between?",
+        "note": "The answer ('between particles') is inside the question. Potential energy was already taught at T6."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "At this temperature, what do the particles start to do as the solid turns to liquid?",
+        "note": "'This temperature' refers to nothing. Melting and constant temperature during a change of state were never taught."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Now for liquid to gas: boiling happens all through the liquid, with bubbles of vapour forming, but only at one set temperature called the boiling point.",
+        "note": "Ignores her answer. Skips freezing, evaporation and condensation."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Bubbles of vapour form all through the liquid, once it reaches the boiling point. Where in the liquid do bubbles form when it boils?",
+        "note": "The answer is given just before the question."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What state is skipped out during sublimation?",
+        "note": "No confirmation of her correct 'everywhere in the liquid'."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which state is missed out during sublimation?",
+        "note": ""
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why do scientists use a simplified picture like this?",
+        "note": "No confirmation of her correct 'the liquid one'."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you spray perfume in one corner of a room, what do the perfume particles do over time?",
+        "note": "Diffusion is asked before it is taught."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What kind of motion makes the perfume particles spread out?",
+        "note": "Leaves her wrong 'they stay in one corner' uncorrected. Asks about random motion, which was never taught. She replied 'what?'."
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That spreading is called diffusion. That brings us to the end of this lesson.",
+        "note": "Ends with the limitations of the model never taught."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Come back any time to go over the rest of the particle model, and good luck with the revision.",
+        "note": ""
+      }
+    ],
+    "flow_faults": [
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T7",
+        "quote": "What happens to their kinetic energy then?",
+        "note": "She had just said kinetic energy is the one that increases when particles move faster."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T8",
+        "quote": "No problem. Your place is saved, so you can pick this up any time. See you soon!",
+        "note": "'it goes up' was correct."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T10",
+        "quote": "When the temperature rises, what happens to the speed of the particles?",
+        "note": "Already established at T7/S8."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T13",
+        "quote": "Now for liquid to gas: boiling happens all through the liquid, with bubbles of vapour forming, but only at one set temperature called the boiling point.",
+        "note": "'they start moving around more' was broadly correct for melting."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T15",
+        "quote": "Now a different one: sublimation is when a solid turns directly into a gas without passing through liquid, like solid carbon dioxide (\"dry ice\") at room temperature.",
+        "note": "'everywhere in the liquid then' was correct."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T18",
+        "quote": "Now, the particle model we've been using is a model: a simplified picture of reality used to explain and predict what we observe.",
+        "note": "'the liquid one right' was correct."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T6",
+        "quote": "Thermal is half-right, but the two energies are kinetic and potential.",
+        "note": "Lesson: internal energy = kinetic + potential. Thermal energy is not half of that definition."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "shared-code: session end handling",
+        "change": "Once a goodbye is sent and the student says bye, send no further messages. No duplicate goodbye and no resumed teaching.",
+        "quote": "See you soon! One quick idea for later: hotter particles move faster, so their kinetic energy, the energy of motion, goes up."
+      },
+      {
+        "target": "keyPoints[1].writeBullets[3]",
+        "change": "Teach 'Change of state — particles gain potential energy as forces between particles are overcome. Temperature stays constant' before any melting question. Replace the dangling 'At this temperature' with a question about what happens to temperature while ice melts.",
+        "quote": "At this temperature, what do the particles start to do as the solid turns to liquid?"
+      },
+      {
+        "target": "teach-core: acknowledge correct answers",
+        "change": "Open every reply after a correct answer with a short confirmation of what was right before moving on (T8, T13, T15, T18).",
+        "quote": "everywhere in the liquid then"
+      },
+      {
+        "target": "teach-core: teach before asking / correct wrong answers",
+        "change": "Never ask about content not yet taught (internal energy at T5, diffusion at T19). When an answer is wrong, say so and correct it before the next question.",
+        "quote": "they stay in one corner cuz theyre heavy"
+      },
+      {
+        "target": "keyPoints[3].writeBullets[2]",
+        "change": "Do not end the lesson until the limitations (keyPoints[3].writeBullets[2]–[4]) and the liquid/gas descriptions (keyPoints[0].writeBullets[1]–[3]) are taught in one short line each, since the lesson skipped them.",
+        "quote": "That spreading is called diffusion. That brings us to the end of this lesson."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T8",
+      "question does not match what was taught: T5, T12, T19, T20",
+      "flow faults: question_repeated_after_correct_answer T7, correct_answer_not_acknowledged T8, question_repeated_after_correct_answer T10, correct_answer_not_acknowledged T13, correct_answer_not_acknowledged T15, correct_answer_not_acknowledged T18, factual_or_unit_slip T6"
+    ]
+  },
+  "cost": 0.5537729999999998,
+  "tutorCost": 0.3786579999999999,
+  "tutorCalls": 106,
+  "mode": "run",
+  "date": "2026-10-18"
+}

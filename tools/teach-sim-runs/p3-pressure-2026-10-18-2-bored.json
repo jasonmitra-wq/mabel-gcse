@@ -1,0 +1,485 @@
+{
+  "id": "p3-pressure",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! Pumping up a bike tyre or squeezing a balloon shows gas pressure at work, and it all comes down to tiny gas molecules moving constantly and randomly inside their container. What do you think those molecules do when they reach the container's walls?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "ugh my phone battery's dying already lol",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Ha, fair enough, we'll keep it quick! Here's the idea another way: inside a tyre, billions of tiny gas molecules keep hitting the inner wall, and each hit gives the wall a tiny push. Those pushes all add up to gas pressure. What do the molecules do to the wall every time they hit it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "huh? too much lol",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Every time a molecule hits the wall, it gives the wall a tiny push. Each hit is called a collision, and each collision adds a tiny force to the total pressure. Why does a tyre have a steady pressure, even though each push is so tiny?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "No worries, let's make it simpler. Imagine a ball bouncing off a wall: that bounce is a collision, and it gives the wall a tiny push. In a tyre, billions of molecules do this every second. What does each collision give the wall?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "like a tiny... heat thing?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Not quite, but you're getting there. Would you like me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "nah i get it now. they push it right?",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — they push it. Each collision is one molecule striking the wall, and it gives the wall a tiny force; with huge numbers of collisions every second, those tiny forces add up to a steady pressure. So what does each collision give the wall?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "loads of tiny forces?",
+      "studentType": "wrong",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes — each collision gives the wall a tiny force, and loads of them add up to pressure. Next, the temperature of a gas is related to the average kinetic energy of its molecules, so a hotter gas has faster-moving molecules. If you heat a gas, what happens to the speed of its molecules?",
+      "recap": [
+        "Gas molecules move randomly and constantly, hitting the walls of their container.",
+        "Each collision gives the wall a tiny push, which is a tiny force.",
+        "Billions of collisions every second add up to a steady pressure.",
+        "Pressure is just loads of tiny forces from molecules pushing on the walls."
+      ],
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Let me say that more simply: when you heat a gas, its molecules gain energy and zoom around faster. So a hotter gas just means faster molecules. If you heat a gas, how does the speed of its molecules change?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "they go faster?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — hotter gas means faster molecules. Now put that gas in a sealed rigid container, so its volume stays the same, and heat it. The faster molecules hit the walls harder and more often. What happens to the pressure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "it goes up?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Yes — faster molecules hit the walls harder and more often, so the pressure goes up. Now keep the temperature the same and squeeze a fixed mass of gas into half the volume. The pressure and volume multiply to give the same number every time, so p₁V₁ = p₂V₂. If the volume halves, what happens to the pressure?",
+      "recap": [
+        "Pressure comes from loads of tiny molecule collisions pushing on the container walls.",
+        "Heating a gas gives its molecules more energy, so they move faster.",
+        "In a sealed rigid container, the volume stays the same when you heat the gas.",
+        "Faster molecules hit the walls harder and more often, so the pressure rises."
+      ],
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Fair enough, shorter: squeeze a gas into half the space and its molecules hit the walls twice as often, so the pressure doubles. Pressure × volume always stays the same. If the volume halves, what happens to the pressure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "idk what happens",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "That's fine, the answer is that the pressure doubles. Pressure and volume are inversely proportional, which means when one doubles, the other halves. So if you double the volume of a gas at constant temperature, what happens to the pressure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "no idea",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "No worries. Picture a gas spreading into a space twice as big: its molecules hit the walls less often, so the pressure halves. Now flip it: if you halve the pressure, what happens to the volume?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "no idea",
+      "studentType": "idk",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "nah im listening",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Let's keep going. Inversely proportional means that when one quantity doubles, the other halves, so pressure × volume always stays the same. So if a gas is squashed into half the space, what happens to its pressure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "it doubles?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Next idea: when you push a piston into a gas, you apply a force to it, and that transfers energy to the gas. So when you push a bike pump handle in, what is being transferred to the air inside?",
+      "recap": [
+        "Squash a gas into half the space and the pressure doubles.",
+        "Pressure and volume are inversely proportional: one goes up, the other goes down.",
+        "Pressure × volume stays the same, so p₁V₁ = p₂V₂.",
+        "Give a gas double the room and its pressure halves."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "energy",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes — energy is right. So when the pump does work on the air, what happens to the air's internal energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "it goes up",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Yes — the air's internal energy goes up, because the pump transfers energy to it. That brings us to the end of this lesson.",
+      "recap": [
+        "Pushing a piston into a gas applies a force to it.",
+        "That force does work, transferring energy to the gas.",
+        "The gas's internal energy goes up when work is done on it.",
+        "So pushing a bike pump handle in gives the air more energy."
+      ],
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "ok thanks",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You worked well today, especially on how adding energy to a gas raises its internal energy. Come back any time to go over the rest.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is long",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think those molecules do when they reach the container's walls?",
+        "note": "Asks about wall collisions before teaching them; only random motion had been taught."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Here's the idea another way: inside a tyre, billions of tiny gas molecules keep hitting the inner wall, and each hit gives the wall a tiny push.",
+        "note": "About 55 words. Student replied \"huh? too much lol\"."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why does a tyre have a steady pressure, even though each push is so tiny?",
+        "note": "Student had just said \"too much\", but the turn still introduces a new 'why' question instead of simplifying."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Imagine a ball bouncing off a wall: that bounce is a collision, and it gives the wall a tiny push.",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Not quite, but you're getting there.",
+        "note": "Wrong answer ('heat thing') is called close and never corrected to 'a push/force'."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So what does each collision give the wall?",
+        "note": "Re-asks a question she just answered correctly ('they push it right?')."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you heat a gas, what happens to the speed of its molecules?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "when you heat a gas, its molecules gain energy and zoom around faster.",
+        "note": ""
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The faster molecules hit the walls harder and more often. What happens to the pressure?",
+        "note": ""
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "The pressure and volume multiply to give the same number every time, so p₁V₁ = p₂V₂.",
+        "note": "About 55 words. Student replied \"this is long\"."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Pressure × volume always stays the same.",
+        "note": "Leaves out 'fixed mass, constant temperature', so it reads as always true."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if you double the volume of a gas at constant temperature, what happens to the pressure?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Now flip it: if you halve the pressure, what happens to the volume?",
+        "note": "Third abstract variant in a row after two non-answers; should have checked in or used numbers."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "so pressure × volume always stays the same",
+        "note": "Again drops the constant-temperature condition."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Next idea: when you push a piston into a gas, you apply a force to it, and that transfers energy to the gas.",
+        "note": "Does not acknowledge the correct 'it doubles?'. The term 'work' is never named."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "So when the pump does work on the air, what happens to the air's internal energy?",
+        "note": "Uses 'work' and 'internal energy' without defining either."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That brings us to the end of this lesson.",
+        "note": "Ends before the temperature-rise link in keyPoints[3], and no checkpoint is used."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You worked well today, especially on how adding energy to a gas raises its internal energy.",
+        "note": ""
+      }
+    ],
+    "flow_faults": [
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T5",
+        "quote": "So what does each collision give the wall?",
+        "note": "She had just answered 'they push it right?', which the tutor confirmed."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T15",
+        "quote": "Next idea: when you push a piston into a gas, you apply a force to it, and that transfers energy to the gas.",
+        "note": "S15 'it doubles?' was correct, but T15 opens with 'Next idea' and gives no confirmation."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T10",
+        "quote": "Pressure × volume always stays the same.",
+        "note": "Only true for a fixed mass at constant temperature (keyPoints[2].content)."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T14",
+        "quote": "so pressure × volume always stays the same",
+        "note": "Same missing condition as T10."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: acknowledge correct answers",
+        "change": "When the student's answer is correct, open with 'Yes — pressure doubles, because…' before starting the next key point.",
+        "quote": "Next idea: when you push a piston into a gas, you apply a force to it, and that transfers energy to the gas."
+      },
+      {
+        "target": "teach-core: do not re-ask answered questions",
+        "change": "After confirming a correct answer, move to the next link (many collisions → steady pressure) instead of re-asking the same question.",
+        "quote": "So what does each collision give the wall?"
+      },
+      {
+        "target": "keyPoints[3].content",
+        "change": "Teach the full chain in short steps: name 'work' as 'energy transferred by a force', define internal energy as 'energy of the molecules', then ask about temperature rise. Use checkpoints.3 before closing.",
+        "quote": "So when the pump does work on the air, what happens to the air's internal energy?"
+      },
+      {
+        "target": "keyPoints[2].content",
+        "change": "Every short restatement must keep the condition: 'for a fixed mass of gas at constant temperature, p × V stays the same'. Then use a simple worked number, e.g. 100 kPa × 2 m³ → 1 m³ gives 200 kPa.",
+        "quote": "Pressure × volume always stays the same."
+      },
+      {
+        "target": "teach-core: wrong-answer handling and turn length",
+        "change": "On a wrong answer, state the right one plainly ('Not heat — a push, a tiny force'). Cap turns at about 35 words, and use one sentence plus a question after 'too much' or 'this is long'.",
+        "quote": "Not quite, but you're getting there."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "flow faults: question_repeated_after_correct_answer T5, correct_answer_not_acknowledged T15, factual_or_unit_slip T10, factual_or_unit_slip T14"
+    ]
+  },
+  "cost": 0.359085,
+  "tutorCost": 0.216242,
+  "tutorCalls": 65,
+  "mode": "run",
+  "date": "2026-10-18"
+}

@@ -1,0 +1,418 @@
+{
+  "id": "p3-changes-of-state",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! Think of a kettle at 100°C: the water keeps taking in energy, yet its temperature stops rising while it turns to steam. That \"hidden\" energy is called latent heat, because it changes the state without changing the temperature. So where do you think that energy is going, if the thermometer isn't showing it?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "k",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Let's try it another way. The energy isn't lost: it goes into pulling the water particles away from each other, so they gain potential energy, not speed. And a thermometer only shows how fast the particles move. So what does the thermometer stay the same?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "oh so the particles move same speed still?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — the particles keep the same speed, so the thermometer stays put. If you draw temperature against time as you heat a substance, you get a heating curve: sloping sections where it's warming up, and flat sections at the melting point and boiling point. What is happening to the temperature on a flat section?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "that was long ngl",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Fair enough, I'll keep it short. A heating curve is just a graph of temperature against time, and its flat sections show where the substance is melting or boiling. What happens to the temperature on one of those flat sections?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "it stays the same innit",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — it stays the same on the flat section. Cooling works the same way in reverse: a cooling curve is a graph of temperature against time as a substance cools, with flat sections where it condenses or freezes. Latent heat is released there, so the temperature holds steady. When steam condenses, what is being released?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "this is long man",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Sorry, I'll keep it short. A cooling curve is a temperature-time graph as something cools, with flat sections where steam condenses or water freezes. On a cooling curve, what is the substance doing at a flat section?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "its condensing or freezing",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes — condensing or freezing is right, and the temperature stays flat there. Which two states does fusion change between?",
+      "recap": [
+        "Latent heat is energy absorbed during a state change, without any temperature rise.",
+        "That energy pulls particles apart, so they gain potential energy, not speed.",
+        "A heating curve plots temperature against time, with flat sections at melting and boiling.",
+        "On a cooling curve, flat sections show condensing or freezing, where latent heat is released."
+      ],
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "solid and gas?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not quite. Fusion here means solid and liquid, so melting or freezing. It has nothing to do with gas, or with nuclear fusion. When ice melts, which state does it turn into?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "liquid",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — liquid is right, so fusion is solid ↔ liquid. When water boils, which two states is it changing between?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "solid and gas",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not quite. Boiling changes liquid into gas (vapour), and condensing is the reverse. The energy per kg for that change is specific latent heat of vaporisation, measured in J/kg. What is the unit of specific latent heat?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "joules per kelvin?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "yeah go on",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "The unit is J/kg, joules per kilogram, because it's the energy needed to change the state of 1 kg. The equation is E = mL, with E in joules and m in kilograms. For water, melting needs 334,000 J/kg but boiling needs 2,260,000 J/kg, because boiling separates the particles completely.\n\nNext we use E = mL on real numbers. To melt 2 kg of ice at 0°C, with L = 334,000 J/kg, what do you get when you multiply 2 × 334,000?",
+      "recap": [
+        "E = mL gives the energy needed to change state, with no temperature change.",
+        "Specific latent heat is the energy needed to change 1 kg of a substance.",
+        "Its unit is J/kg, not J/K, which is a mix-up with specific heat capacity.",
+        "Fusion means solid and liquid, while vaporisation means liquid and gas."
+      ],
+      "flags": [
+        "over length (82 words)"
+      ]
+    },
+    {
+      "n": 12,
+      "student": "um like 600,000?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not quite, 600,000 isn't the product. E = mL means multiplying the mass, 2 kg, by L, 334,000 J/kg, so it's 2 lots of 334,000. What is 334,000 + 334,000?",
+      "recap": null,
+      "flags": [
+        "unanswerable: no word from the lesson"
+      ]
+    },
+    {
+      "n": 13,
+      "student": "668,000",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Yes, 668,000 is right: two lots of 334,000. Latent heat explains everyday things, like sweating. Sweat is mainly water, and when it evaporates it carries lots of energy away from your skin.\n\nWhy does sweating cool you down?",
+      "recap": [
+        "Latent heat is measured in J/kg, the energy to change 1 kg's state.",
+        "Energy E = mL, with energy in joules and mass in kilograms.",
+        "Boiling water needs far more energy than melting ice, since particles fully separate.",
+        "2 kg of ice melting needs 2 × 334,000 = 668,000 J."
+      ],
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "the sweat evaporates and takes energy away",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Yes, evaporating sweat takes energy away from your skin, and that's what cools you down. That's the end of this lesson. You answered questions on \"Temperature during changes of state\", \"Calculations using E = mL\" and \"Applications of latent heat\".",
+      "recap": [
+        "Latent heat is the energy needed to change state without changing temperature.",
+        "Sweat is mostly water, and evaporating needs lots of energy.",
+        "That energy is taken from your skin, which cools you down.",
+        "The calculation worked because 668,000 joules is two lots of 334,000."
+      ],
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Bye for now, and good luck with the revision. You can come back to latent heat any time you like.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is long man",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So where do you think that energy is going, if the thermometer isn't showing it?",
+        "note": "Asks her to predict something not yet taught, and she replied only 'k'."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "So what does the thermometer stay the same?",
+        "note": "The question is ungrammatical and garbled."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "If you draw temperature against time as you heat a substance, you get a heating curve: sloping sections where it's warming up, and flat sections at the melting point and boiling point.",
+        "note": "Close to 60 words, and the student complained it was long."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A heating curve is just a graph of temperature against time, and its flat sections show where the substance is melting or boiling.",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Cooling works the same way in reverse: a cooling curve is a graph of temperature against time as a substance cools, with flat sections where it condenses or freezes.",
+        "note": "Right after a length complaint, it adds a whole new concept, and she complains again."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "On a cooling curve, what is the substance doing at a flat section?",
+        "note": ""
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which two states does fusion change between?",
+        "note": "Fusion had not been taught yet, so she guessed wrong."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When ice melts, which state does it turn into?",
+        "note": ""
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When water boils, which two states is it changing between?",
+        "note": "Vaporisation and boiling had not been taught yet, so she guessed wrong."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The energy per kg for that change is specific latent heat of vaporisation, measured in J/kg. What is the unit of specific latent heat?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "For water, melting needs 334,000 J/kg but boiling needs 2,260,000 J/kg, because boiling separates the particles completely.",
+        "note": "About 80 words, sent to a student who has twice complained about length."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What is 334,000 + 334,000?",
+        "note": ""
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why does sweating cool you down?",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You answered questions on \"Temperature during changes of state\", \"Calculations using E = mL\" and \"Applications of latent heat\".",
+        "note": "Steam burns, the rearrangements and the g to kg conversion were never reached."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Bye for now, and good luck with the revision.",
+        "note": ""
+      }
+    ],
+    "flow_faults": [
+      {
+        "type": "tell_me_skipped_content",
+        "turn": "T11",
+        "quote": "The equation is E = mL, with E in joules and m in kilograms.",
+        "note": "Leaves out the rearrangements L = E/m and m = E/L, and the contrast with specific heat capacity in keyPoints[1].writeBullets[6]."
+      },
+      {
+        "type": "closing_claims_untaught_content",
+        "turn": "T14",
+        "quote": "You answered questions on \"Temperature during changes of state\", \"Calculations using E = mL\" and \"Applications of latent heat\".",
+        "note": "Implies she covered applications and calculations, but steam burns, the rearrangements and the g to kg conversion were never reached."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: after a length complaint",
+        "change": "Once she says a turn was long, cap every later turn at about 35 words and add no new concept in the same turn as the acknowledgement. In T4, ask only one thing about the heating curve, and move cooling curves to their own turn.",
+        "quote": "this is long man"
+      },
+      {
+        "target": "teach-core: teach before asking",
+        "change": "Never ask about a term before stating it. Say 'Fusion means solid ↔ liquid' before asking about fusion, and say 'Boiling: liquid → gas' before asking about boiling.",
+        "quote": "Which two states does fusion change between?"
+      },
+      {
+        "target": "keyPoints[1] tell-me path",
+        "change": "Send the telling in two short turns of about 35 words each. The second turn must include L = E/m, m = E/L, and the line 'heat capacity = temperature change, latent heat = state change'.",
+        "quote": "The unit is J/kg, joules per kilogram, because it's the energy needed to change the state of 1 kg."
+      },
+      {
+        "target": "teach-core: closing message",
+        "change": "List only the key points she actually answered. Name the parts she was not taken through as still to do, for example: 'Next time: steam burns and grams to kg.'",
+        "quote": "You answered questions on \"Temperature during changes of state\", \"Calculations using E = mL\" and \"Applications of latent heat\"."
+      },
+      {
+        "target": "keyPoints[0] question template",
+        "change": "Replace the garbled question with: 'So why does the thermometer reading stay the same?'",
+        "quote": "So what does the thermometer stay the same?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "question does not match what was taught: T0, T6, T8",
+      "flow faults: tell_me_skipped_content T11, closing_claims_untaught_content T14"
+    ]
+  },
+  "cost": 0.37453400000000003,
+  "tutorCost": 0.238136,
+  "tutorCalls": 67,
+  "mode": "run",
+  "date": "2026-10-18"
+}

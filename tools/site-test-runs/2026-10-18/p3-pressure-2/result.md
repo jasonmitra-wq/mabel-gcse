@@ -1,0 +1,137 @@
+# Site test: p3-pressure (lesson, 2026-10-18)
+
+**FAIL** · cost $0.3817 (19 tool calls, 59 calls from the site; tutor claude-sonnet-5-5 $0.2232)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "An off-topic remark about food 'after this' was treated as quitting. The tutor ended the session ('Your place is saved… See you soon!') instead of briefly acknowledging it and re-asking the double-volume question.",
+      "step": "S11/T11"
+    },
+    {
+      "what": "The 'shorter version' gave away the answer ('So the pressure doubles') and then asked the same question. Her 'it doubles innit' was praised as correct even though it was just copied.",
+      "step": "T9/S10"
+    },
+    {
+      "what": "After the wrong answer 'it doubles again?' the tutor gave no feedback or hint. It jumped straight to 'Do you want me to just tell you the rest of this one?'",
+      "step": "S13/T13"
+    },
+    {
+      "what": "The closing message contradicts the lesson state. T17 says 'That brings us to the end of this lesson' and the progress shows 4/4 covered, but T18 says 'you can come back to the rest of this lesson any time' and praises only 'work and internal energy'.",
+      "step": "T17/T18"
+    },
+    {
+      "what": "The student's 'nah just tell me lol' was logged as checkin-no but was actually a yes. The tutor handled it correctly, but the turn label/intent classification is inconsistent.",
+      "step": "S5"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "The Key Terms sidebar is clipped at the bottom of the viewport. It shows 'KEY TERMS (4/6/8)' but only gas pressure and collision are visible. The 'TEMPERATURE AND PRESSURE AT CONSTANT VOLUME' heading is cut off with no terms visible beneath it.",
+      "screenshot": "11-exchange-18-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The top of the Jump To panel ('JUMP TO' heading and first item) is hidden under the sticky lesson header.",
+      "screenshot": "08-exchange-9-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The '← Home' button and the 'What are you revising?' heading are cut off under the top bar.",
+      "screenshot": "02-subjects-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The lesson title is truncated to 'Pressure in gases — molecules i...'.",
+      "screenshot": "05-ai-lesson-opening-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The end screen is scrolled back up mid-chat, so the 'Lesson finished.' text and the Topics / Show me the slides / Ask something else buttons are not visible.",
+      "screenshot": "12-end-phone.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": false,
+  "fixes": [
+    {
+      "target": "tutor behaviour: off-topic handling",
+      "change": "For off-topic messages without an explicit request to stop (e.g. 'can i get food after this'), reply with one short line ('Nearly done, then food!') and re-ask the pending question. Only end the session on a clear stop intent."
+    },
+    {
+      "target": "tutor behaviour: rephrase after 'too long'/'huh?'",
+      "change": "Shorten the setup but never state the answer to the pending question. Drop 'So the pressure doubles' and ask, for example: 'Half the space, same molecules, so they hit the walls more often. What happens to the pressure?'"
+    },
+    {
+      "target": "tutor behaviour: wrong answer before check-in",
+      "change": "After a wrong answer, first give one line of targeted feedback ('Not quite — bigger space means fewer hits, so…') and one more try. Offer 'just tell you' only after a second miss."
+    },
+    {
+      "target": "closing message template",
+      "change": "When all sections are covered (4/4), say 'You've covered all four parts — causes of gas pressure, temperature, volume and work' rather than 'come back to the rest of this lesson'."
+    },
+    {
+      "target": "lesson page CSS: Key Terms sidebar (laptop)",
+      "change": "Give the sticky sidebar max-height: calc(100vh - header) with overflow-y: auto, and add top offset so the Jump To heading is not hidden under the sticky header. Keep the chat scrolled to the bottom on finish so 'Lesson finished' and its buttons stay in view."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Lesson p3-pressure (Physics › Particle model of matter › Pressure in gases).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p3-phone.png and 04-lessons-p3-laptop.png] lessons-P3
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! Gas pressure is the force per unit area from those molecules colliding with the walls, so what do you think is pushing on the inside of a bike tyre?
+    [screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (minimal): yeah ok what
+    T1: Let me say that more simply. Inside a bike tyre, tiny air molecules are zooming around and hitting the inside wall of the tyre, and each hit gives the wall a tiny push. What do you think those molecules are doing to the wall that makes the tyre feel hard?
+    S2 (minimal): k so theyre like bouncing off it yeah
+    T2: Bouncing off the wall is right — that's the key part. What's missing is that each bounce gives the wall a tiny push, and so many molecules hit every second that the pushes add up to a steady pressure. If far more molecules collided with the wall every second, what would happen to the pressure?
+    S3 (bored): huh?
+    T3: No worries, let me put it differently. Each time a molecule hits the wall, that's called a collision, and every collision gives the wall a tiny push. Picture the tyre wall being hit by a huge crowd of molecules every second. If there were more collisions every second, what would happen to the pressure?
+    [screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3
+    S4 (minimal): ok but like why does that matter
+    T4: Fair enough, I've been asking a lot of questions, so would you like me to just tell you the rest of this one?
+    S5 (checkin-no): nah just tell me lol
+    T5: Sure. The molecules of a gas are in constant random motion. Gas pressure is caused by them colliding with the walls of their container, and each collision pushes on the wall with a tiny force. Huge numbers collide every second, so the total is a steady pressure you can measure. It gives a net force at right angles to the wall, or any surface. Pressure = force ÷ area (Pa = N/m²), so more collisions per second, or harder ones, means higher pressure. Next: the temperature of a gas is related to the average kinetic energy of its molecules, so the hotter the gas, the faster its molecules move on average. If you heat a gas in a sealed rigid container, so its volume stays the same, what happens to the speed of its molecules?
+    S6 (try): they move faster?
+    T6: Yes — faster is right, because hotter gas means faster molecules on average. Now "constant volume" just means the gas stays in the same space, like a sealed rigid container. So the faster molecules hit the walls harder and more often. What happens to the pressure?
+    [screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6
+    S7 (wrong): it stays the same cuz the container is still the same size
+    T7: Not quite. The container staying the same size is why the volume is constant, but the pressure still changes. The molecules are now moving faster, so each one hits the wall harder, and more hits happen every second. What happens to the pressure then?
+    S8 (minimal): ohhh it goes up?
+    T8: Yes — pressure goes up, because faster molecules hit the walls harder and more often. Now keep the temperature the same and squash a fixed mass of gas into a smaller space. Its pressure and volume are inversely proportional, so p × V stays constant. If you halve the volume, what happens to the pressure?
+    S9 (bored): that's too long mate
+    T9: Fair enough, shorter version. Squash the gas into half the space and the same molecules hit the walls twice as often. So the pressure doubles. If the volume is halved, what happens to the pressure?
+    [screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9
+    S10 (try): it doubles innit
+    T10: Yes — halving the volume doubles the pressure. That's what "inversely proportional" means: when one quantity doubles, the other halves, so p × V stays constant. If you double the volume instead, what happens to the pressure?
+    S11 (offtopic): can i get food after this im starving
+    T11: No problem. Your place is saved, so you can pick this up any time. See you soon!
+    S12 (wrong): wait no i wanna finish this bit
+    T12: Glad you want to finish. Inversely proportional means when one quantity doubles, the other halves. Bigger space means molecules hit the walls less often. If you double the volume, what happens to the pressure?
+    [screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12
+    S13 (wrong): it doubles again?
+    T13: Do you want me to just tell you the rest of this one?
+    S14 (checkin-yes): yeah go on then
+    T14: Halving the volume doubles the pressure, so pressure times volume stays constant (p₁V₁ = p₂V₂). Doubling the volume halves the pressure instead, so not doubling again. For example, 200 kPa at 3 m³ squeezed to 1.5 m³ gives 400 kPa. Next, pushing a piston into a gas applies a force to it, and work is the transfer of energy by a force. If you push a bike pump handle in, what is being transferred to the air inside?
+    S15 (bored): huh?
+    T15: Pushing the pump handle in is a force on the air, and a force like that transfers energy. That energy transfer is called work. So when you push the handle in, what is being transferred to the air?
+    [screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15
+    S16 (try): energy?
+    T16: Yes — energy is right. So when the pump does work on the air, what happens to the internal energy of the air?
+    S17 (try): it goes up?
+    T17: Yes — the internal energy of the air goes up, and that's the right idea. That brings us to the end of this lesson.
+    S18 (closing): ok thanks bye
+    T18: Bye for now! You got the key ideas about work and internal energy, and you can come back to the rest of this lesson any time. Good luck with the revision!
+    [screenshot 11-exchange-18-phone.png and 11-exchange-18-laptop.png] exchange-18
+    [the lesson shows "Lesson finished."]
+    [screenshot 12-end-phone.png and 12-end-laptop.png] end

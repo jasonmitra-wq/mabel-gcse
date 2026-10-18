@@ -1,178 +1,70 @@
 {
   "lesson": "p4-half-life",
   "source_file": "lessons/physics/p4-half-life.json",
-  "lesson_md5": "5236a5126cfe9520d1353ca1e553a6d2",
+  "lesson_md5": "6054229cce3ab5d7811114a972068ae4",
   "model": "claude-opus-5-5",
-  "date": "2026-10-18T22:14:52.580Z",
+  "date": "2026-10-18T22:27:15.630Z",
   "specRefs_sent": [
     "4.4.2.3",
     "4.4.2.4",
     "4.4.3.2",
     "4.4.3.3"
   ],
-  "blocking_only": false,
-  "decided_file": null,
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P4-TRIAGE.md",
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 8019,
-    "output_tokens": 6808
+    "input_tokens": 14779,
+    "output_tokens": 3272
   },
-  "cost_usd": 0.168236,
+  "cost_usd": 0.124556,
   "status": "OK",
   "result": {
     "lesson": "p4-half-life",
-    "missing_spec_content": [
-      {
-        "specRef": "4.4.2.3",
-        "spec_text": "the time it takes for the count rate (or activity) from a sample containing the isotope to fall to half its initial level",
-        "why": "The lesson defines half-life only in terms of activity and undecayed nuclei. It never mentions count rate. Decay graphs in exam questions are often plotted as count rate, and students need to recognise that the definition applies to count rate too."
-      },
-      {
-        "specRef": "4.4.2.3",
-        "spec_text": "(HT only) Students should be able to calculate the net decline, expressed as a ratio, in a radioactive emission after a given number of half-lives.",
-        "why": "The lesson gives remaining activity = A₀ × (½)ⁿ but never expresses the net decline as a ratio (for example, after 2 half-lives the activity has fallen to 1/4, a net decline of 3/4). It also does not mark this content as Higher Tier only."
-      },
-      {
-        "specRef": "4.4.2.4",
-        "spec_text": "Radioactive contamination is the unwanted presence of materials containing radioactive atoms on other materials. The hazard from contamination is due to the decay of the contaminating atoms.",
-        "why": "The lesson defines contamination only as material \"on or in the body\". It does not give the general definition (unwanted radioactive material on other materials). It also does not state that the hazard comes from the decay of the contaminating atoms."
-      },
-      {
-        "specRef": "4.4.2.4",
-        "spec_text": "Irradiation is the process of exposing an object to nuclear radiation. The irradiated object does not become radioactive.",
-        "why": "No key point states that an irradiated object does not become radioactive. It appears only indirectly, in the sterilisation table row (\"without making equipment radioactive\") and as a distractor in checkpoint 3."
-      },
-      {
-        "specRef": "4.4.2.4",
-        "spec_text": "Students should understand that it is important for the findings of studies into the effects of radiation on humans to be published and shared with other scientists so that the findings can be checked by peer review.",
-        "why": "Publication and peer review of studies into radiation effects are not mentioned anywhere in the lesson."
-      },
-      {
-        "specRef": "4.4.3.2",
-        "spec_text": "Students should be able to explain why the hazards associated with radioactive material differ according to the half-life involved.",
-        "why": "The lesson only says a long half-life \"stays radioactive for a very long time\" (introTips[2]). It does not explain the comparison: a short half-life gives high activity that is dangerous but short-lived, while a long half-life gives lower activity that remains a hazard for a long time."
-      },
-      {
-        "specRef": "4.4.3.2",
-        "spec_text": "Students should be able to use data presented in standard form.",
-        "why": "No half-life data is presented or handled in standard form."
-      },
-      {
-        "specRef": "4.4.3.3",
-        "spec_text": "describe and evaluate the uses of nuclear radiations for exploration of internal organs, and for control or destruction of unwanted tissue",
-        "why": "Tracers and radiotherapy are described, but they are not evaluated. Benefits are not weighed against risks, and radiotherapy gets only one line (\"a focused gamma beam kills cancer cells\")."
-      },
-      {
-        "specRef": "4.4.3.3",
-        "spec_text": "evaluate the perceived risks of using nuclear radiations in relation to given data and consequences.",
-        "why": "Perceived risk compared with actual risk, judged using given data and consequences, is not addressed."
-      }
-    ],
+    "missing_spec_content": [],
     "above_gcse": [
       {
         "field": "keyPoints[2].content",
-        "text": "<strong>Carbon-14 dating</strong>: half-life ~5,700 years; beta emitter. Living things take in carbon-14 (from CO₂)... This works up to ~50,000 years.",
-        "why": "Carbon dating is not required by the specification sections given. It takes up a large share of the uses content, while the spec-required medical uses get less."
+        "text": "<strong>Sterilisation</strong>: gamma radiation kills bacteria on surgical instruments. No chemicals are needed. The instruments do not become radioactive.",
+        "why": "Spec 4.4.3.3 lists only the medical uses: \"exploration of internal organs\" and \"control or destruction of unwanted tissue\". Sterilisation is not in these sections. It is the same kind of non-specification use that was already cut (smoke detectors, thickness gauges, carbon dating). It is also taught as a third use under a key point the spec limits to two medical uses."
       },
       {
-        "field": "keyPoints[2].content",
-        "text": "<strong>Smoke detectors</strong>: americium-241 (alpha emitter, half-life ~430 years) ionises the air in the detector.",
-        "why": "Smoke detectors are not in the specification sections given. The spec's uses section is limited to medicine."
+        "field": "keyPoints[2].writeBullets[4]",
+        "text": "Sterilisation — gamma radiation kills bacteria on surgical equipment. The equipment does not become radioactive",
+        "why": "Same as above. Sterilisation is not required by spec 4.4.3.3."
+      },
+      {
+        "field": "tables[0].rows[2]",
+        "text": "Sterilisation | Gamma | Gamma kills bacteria without making equipment radioactive",
+        "why": "Same as above. This is a table row for a use the specification sections do not include."
       },
       {
         "field": "introTips[4]",
-        "text": "Beta is for thickness gauges.",
-        "why": "Thickness gauges are not in the specification sections given and are never taught in the lesson."
+        "text": "Gamma is used to explore internal organs, to treat cancer and to sterilise equipment.",
+        "why": "Sterilisation is not in spec 4.4.3.3."
       },
       {
-        "field": "tables[0].rows",
-        "text": "\"Radiotherapy\", \"Cobalt-60\", \"Gamma\", \"~5 years\"",
-        "why": "Specific isotopes and their half-lives (cobalt-60, technetium-99m, americium-241) are not required by the specification. Memorising them adds load with no spec requirement behind it."
+        "field": "revisionCardBullets[6]",
+        "text": "Sterilisation: gamma kills bacteria on surgical equipment",
+        "why": "Sterilisation is not in spec 4.4.3.3."
       },
       {
-        "field": "keyPoints[2].content",
-        "text": "Example: technetium-99m (half-life ~6 hours).",
-        "why": "The \"m\" (metastable) label is unexplained and beyond GCSE. It could confuse a student about what the isotope notation means."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "High doses can cause radiation sickness (rapid cell death).",
-        "why": "Radiation sickness is not in the specification sections given."
+        "field": "intro",
+        "text": "It lets engineers sterilise surgical equipment.",
+        "why": "Sterilisation is not in spec 4.4.3.3. The sentence also credits half-life for sterilisation, which the lesson never explains."
       }
     ],
     "factual_errors": [
       {
-        "field": "intro",
-        "text": "Others have been decaying since the Big Bang and will carry on for billions of years.",
-        "correction": "Long-lived radioactive isotopes such as uranium-238 were not made in the Big Bang. They were formed later in stars and stellar explosions, before the Solar System formed about 4.6 billion years ago.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "commonMistakes[1]",
-        "text": "Saying the activity reaches zero. It never does. The curve gets closer and closer to zero but never arrives.",
-        "correction": "The smooth exponential curve is a model that holds for large numbers of nuclei. A real sample contains a finite number of nuclei, so its activity does eventually reach zero. A more accurate statement: the activity halves every half-life, so it never reaches zero within any whole number of half-lives.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[3].memTip",
-        "text": "Irradiation = from outside, stops with distance.",
-        "correction": "Moving away from a source reduces irradiation but does not stop it, especially for gamma. Irradiation stops only when the source is removed or fully shielded. keyPoints[3].content itself says \"Remove the source, and the irradiation stops\".",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "checkpoints.3.wrongFeedback",
-        "text": "Irradiation = an outside source (it stops when the source is removed or you move away).",
-        "correction": "Moving away reduces irradiation but does not necessarily stop it. Removing or shielding the source stops it.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "When smoke blocks the ions, the alarm goes off.",
-        "correction": "Smoke particles absorb the alpha particles and attach to the ions. This reduces the ionisation current between the electrodes, and the drop in current triggers the alarm.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "Living things take in carbon-14 (from CO₂).",
-        "correction": "Only plants take in carbon-14 directly from CO₂. Animals take it in through their food.",
+        "field": "keyPoints[3].content",
+        "text": "that can cause cancer (uncontrolled cell division)\n- or it can cause genetic mutations (if reproductive cells are affected)",
+        "correction": "Damage to DNA in any cell is a mutation, and cancer is itself caused by such mutations. Mutations are not limited to reproductive cells. Mutations in reproductive cells are the ones that can be passed on to offspring. As written, the lesson implies that genetic mutations happen only in reproductive cells and that cancer is a separate outcome.",
         "basis": "own knowledge"
       }
     ],
-    "wrong_terms": [
-      {
-        "field": "intro",
-        "text": "Some elements are so unstable that they decay in milliseconds.",
-        "spec_term": "radioactive isotopes (\"Radioactive isotopes have a very wide range of half-life values.\")"
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "<strong>Half-life</strong> is the <strong>time taken for the activity of a radioactive sample to halve</strong>.",
-        "spec_term": "count rate (or activity) ... to fall to half its initial level"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "<strong>Radiotherapy (cancer treatment)</strong>",
-        "spec_term": "control or destruction of unwanted tissue"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "<strong>Medical tracers</strong>",
-        "spec_term": "exploration of internal organs"
-      }
-    ],
-    "checkpoint_mismatch": [
-      {
-        "checkpoint": "checkpoints.3: \"Irradiation means the body becomes radioactive. Contamination does not\"",
-        "key_point": "keyPoints[3].content",
-        "why": "This distractor rests on the spec point that an irradiated object does not become radioactive. keyPoints[3] never teaches that point, so the student cannot reject this option from the key point alone. The correct option itself is supported by the key point."
-      }
-    ],
-    "not_checked": [
-      "All keyPoints have \"diagram\": null, so no diagrams were available to check.",
-      "Checkpoints are keyed \"0\" to \"3\". I assumed they map to keyPoints[0] to keyPoints[3] by index; the JSON does not state this mapping.",
-      "Statements about activity, becquerels and the ionising and penetrating properties of alpha, beta and gamma depend on other specification sections (for example 4.4.2.1) that were not provided. These were checked against own knowledge only.",
-      "Whether the lesson is meant for Foundation or Higher Tier, which determines whether the (½)ⁿ calculation should be labelled HT only."
-    ]
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
+    "not_checked": []
   }
 }

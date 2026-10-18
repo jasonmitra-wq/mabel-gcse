@@ -1,0 +1,39 @@
+{
+  "lesson": "p4-nuclear-model",
+  "source_file": "lessons/physics/p4-nuclear-model.json",
+  "lesson_md5": "7df66dbb073598b7df24fef51f2583e9",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T22:26:22.275Z",
+  "specRefs_sent": [
+    "4.4.1.1",
+    "4.4.1.2",
+    "4.4.1.3"
+  ],
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P4-TRIAGE.md",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 15177,
+    "output_tokens": 2789
+  },
+  "cost_usd": 0.116488,
+  "status": "OK",
+  "result": {
+    "lesson": "p4-nuclear-model",
+    "missing_spec_content": [
+      {
+        "specRef": "4.4.1.2",
+        "spec_text": "Students should be able to relate differences between isotopes to differences in conventional representations of their identities, charges and masses.",
+        "why": "The lesson teaches the conventional representation only for identity and mass. In keyPoints[2].content it says: \"You write an atom like this: ¹²₆C. The top number is the mass number. The bottom number is the atomic number.\" It never shows how charge appears in that representation. For example, it does not show a superscript + on a positive ion. So the student cannot relate the conventional representation to charge. The earlier decision covered isotopes in notation, not charges."
+      }
+    ],
+    "above_gcse": [],
+    "factual_errors": [],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "Specification 4.4.1.2 says \"Atoms can be represented as shown in this example:\". The example itself is not included in the specification text provided. I could not check that the lesson's notation (¹²₆C, ²³⁸₉₂U, with the mass number on top and the atomic number below) matches the specification's example."
+    ]
+  }
+}

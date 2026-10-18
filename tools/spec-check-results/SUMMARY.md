@@ -134,3 +134,7 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-10-18 | p4-radioactivity | OK | missing_spec_content 8, above_gcse 5, factual_errors 2, wrong_terms 2, checkpoint_mismatch 0, not_checked 2 | 7858/4648 | $0.1244
 - 2026-10-18 | p4-half-life | OK | missing_spec_content 9, above_gcse 6, factual_errors 6, wrong_terms 4, checkpoint_mismatch 1, not_checked 4 | 8019/6808 | $0.1682
 - 2026-10-18 | p4-nuclear-fission | OK | missing_spec_content 5, above_gcse 8, factual_errors 4, wrong_terms 2, checkpoint_mismatch 0, not_checked 3 | 8031/5360 | $0.1393
+- 2026-10-18 | p4-nuclear-model | OK | missing_spec_content 1, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 1 | 15177/2789 | $0.1165
+- 2026-10-18 | p4-radioactivity | OK | missing_spec_content 0, above_gcse 3, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 1 | 15131/3206 | $0.1246
+- 2026-10-18 | p4-half-life | OK | missing_spec_content 0, above_gcse 6, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 14779/3272 | $0.1246
+- 2026-10-18 | p4-nuclear-fission | OK | missing_spec_content 0, above_gcse 3, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 12447/2193 | $0.0936

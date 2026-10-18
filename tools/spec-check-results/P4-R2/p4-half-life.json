@@ -1,0 +1,70 @@
+{
+  "lesson": "p4-half-life",
+  "source_file": "lessons/physics/p4-half-life.json",
+  "lesson_md5": "6054229cce3ab5d7811114a972068ae4",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T22:27:15.630Z",
+  "specRefs_sent": [
+    "4.4.2.3",
+    "4.4.2.4",
+    "4.4.3.2",
+    "4.4.3.3"
+  ],
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P4-TRIAGE.md",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 14779,
+    "output_tokens": 3272
+  },
+  "cost_usd": 0.124556,
+  "status": "OK",
+  "result": {
+    "lesson": "p4-half-life",
+    "missing_spec_content": [],
+    "above_gcse": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "<strong>Sterilisation</strong>: gamma radiation kills bacteria on surgical instruments. No chemicals are needed. The instruments do not become radioactive.",
+        "why": "Spec 4.4.3.3 lists only the medical uses: \"exploration of internal organs\" and \"control or destruction of unwanted tissue\". Sterilisation is not in these sections. It is the same kind of non-specification use that was already cut (smoke detectors, thickness gauges, carbon dating). It is also taught as a third use under a key point the spec limits to two medical uses."
+      },
+      {
+        "field": "keyPoints[2].writeBullets[4]",
+        "text": "Sterilisation — gamma radiation kills bacteria on surgical equipment. The equipment does not become radioactive",
+        "why": "Same as above. Sterilisation is not required by spec 4.4.3.3."
+      },
+      {
+        "field": "tables[0].rows[2]",
+        "text": "Sterilisation | Gamma | Gamma kills bacteria without making equipment radioactive",
+        "why": "Same as above. This is a table row for a use the specification sections do not include."
+      },
+      {
+        "field": "introTips[4]",
+        "text": "Gamma is used to explore internal organs, to treat cancer and to sterilise equipment.",
+        "why": "Sterilisation is not in spec 4.4.3.3."
+      },
+      {
+        "field": "revisionCardBullets[6]",
+        "text": "Sterilisation: gamma kills bacteria on surgical equipment",
+        "why": "Sterilisation is not in spec 4.4.3.3."
+      },
+      {
+        "field": "intro",
+        "text": "It lets engineers sterilise surgical equipment.",
+        "why": "Sterilisation is not in spec 4.4.3.3. The sentence also credits half-life for sterilisation, which the lesson never explains."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "that can cause cancer (uncontrolled cell division)\n- or it can cause genetic mutations (if reproductive cells are affected)",
+        "correction": "Damage to DNA in any cell is a mutation, and cancer is itself caused by such mutations. Mutations are not limited to reproductive cells. Mutations in reproductive cells are the ones that can be passed on to offspring. As written, the lesson implies that genetic mutations happen only in reproductive cells and that cancer is a separate outcome.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
+    "not_checked": []
+  }
+}

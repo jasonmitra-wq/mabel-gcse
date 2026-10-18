@@ -100,3 +100,18 @@ the same field and text are one line.
 - p4-nuclear-fission | R1a wron0 + R1b wron0 ("two small nuclei combine to form a larger nucleus") | ACCEPT | "two light nuclei join to form a heavier nucleus" everywhere.
 - p4-nuclear-fission | R1a wron1 + R1b wron1 ("fission fragments") | ACCEPT | "two smaller nuclei"; "fission products" for everything the fission makes; key term.
 - p4-nuclear-fission | R1a wron2 ("gamma radiation") | ACCEPT | "gamma rays".
+
+## R2
+
+Blocking-only re-check on all four lessons (all changed in R1), at d4cc782, with --decided this file. Results in tools/spec-check-results/P4-R2/.
+
+- p4-nuclear-model | R2 miss0 (charge in the conventional representation) | ACCEPT | keyPoints[2]: an ion's charge is written at the top right (Li⁺); write bullet.
+- p4-radioactivity | R2 abov0 (intro: smoke detectors, carbon dating) | ACCEPT | cut, as in p4-half-life R1.
+- p4-radioactivity | R2 abov1 (speed and mass as properties) | ACCEPT | spec 4.4.2.1 limits properties to penetration, range in air and ionising power; "slow-moving and heavy" and "faster and lighter" cut.
+- p4-radioactivity | R2 abov2 ("ion pairs per cm") | ACCEPT | "ions" everywhere (keyPoints[0] content and write bullet, keyPoints[2] content and write bullet).
+- p4-half-life | R2 abov0 + abov1 + abov2 + abov3 + abov4 + abov5 (sterilisation) | ACCEPT | cut everywhere (content, write bullet, table row, introTips[4], revision bullet, intro).
+- p4-half-life | R2 fact0 (mutations only in reproductive cells, cancer separate) | ACCEPT | DNA damage causes mutations; mutations can cause cancer; in reproductive cells they can be passed on; write bullet, revision bullet.
+- p4-nuclear-fission | R2 abov0 + abov1 (fission products radioactive, nuclear waste) | ACCEPT | cut everywhere (keyPoints[0] content and write bullet, keyPoints[3] content and write bullet, key term).
+- p4-nuclear-fission | R2 abov2 (how a power station makes electricity) | ACCEPT | paragraph cut from keyPoints[1].
+- p4-nuclear-fission | R2 fact0 ("large enough to become unstable") | ACCEPT | "These isotopes split easily after absorbing a neutron."
+- p4-nuclear-fission | R2 fact1 ("every star", "all stars") | ACCEPT | "stars such as the Sun" in intro, introTips[1], keyPoints[3], revision bullet.

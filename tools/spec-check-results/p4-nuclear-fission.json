@@ -1,137 +1,59 @@
 {
   "lesson": "p4-nuclear-fission",
   "source_file": "lessons/physics/p4-nuclear-fission.json",
-  "lesson_md5": "dd34bb1963c4344803dceef6a3ca52f8",
+  "lesson_md5": "43cb59e568c2ccfa4ecd826994986b96",
   "model": "claude-opus-5-5",
-  "date": "2026-10-18T22:15:50.654Z",
+  "date": "2026-10-18T22:27:43.300Z",
   "specRefs_sent": [
     "4.4.4.1",
     "4.4.4.2"
   ],
-  "blocking_only": false,
-  "decided_file": null,
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P4-TRIAGE.md",
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 8031,
-    "output_tokens": 5360
+    "input_tokens": 12447,
+    "output_tokens": 2193
   },
-  "cost_usd": 0.139324,
+  "cost_usd": 0.093648,
   "status": "OK",
   "result": {
     "lesson": "p4-nuclear-fission",
-    "missing_spec_content": [
-      {
-        "specRef": "4.4.4.1",
-        "spec_text": "The nucleus undergoing fission splits into two smaller nuclei, roughly equal in size, and emits two or three neutrons plus gamma rays.",
-        "why": "The lesson says the nucleus 'splits into two smaller nuclei' (keyPoints[0].content). It never says the two nuclei are roughly equal in size."
-      },
-      {
-        "specRef": "4.4.4.1",
-        "spec_text": "All of the fission products have kinetic energy.",
-        "why": "keyPoints[0].content says only 'The energy comes out as kinetic energy of the fragments and as gamma radiation.' It does not say that the emitted neutrons also have kinetic energy, which the spec requires when it says all fission products do."
-      },
-      {
-        "specRef": "4.4.4.1",
-        "spec_text": "Spontaneous fission is rare. Usually, for fission to occur the unstable nucleus must first absorb a neutron.",
-        "why": "The lesson never mentions spontaneous fission. It presents neutron absorption as the only way fission happens."
-      },
-      {
-        "specRef": "4.4.4.1",
-        "spec_text": "Students should be able to draw/interpret diagrams representing nuclear fission and how a chain reaction may occur.",
-        "why": "Every keyPoint has \"diagram\": null. The lesson gives no fission or chain-reaction diagram for the student to interpret. Only keyPoints[1].tutor_note says 'Be able to draw or describe the chain reaction diagram'."
-      },
-      {
-        "specRef": "4.4.4.2",
-        "spec_text": "In this process some of the mass may be converted into the energy of radiation.",
-        "why": "The lesson links fusion energy to a mass change: 'Both processes release energy because of a small change in nuclear mass' (keyPoints[3].content). It never states the spec point that the mass is converted into the energy of radiation."
-      }
-    ],
+    "missing_spec_content": [],
     "above_gcse": [
       {
         "field": "keyPoints[0].content",
-        "text": "Each fission reaction releases about 200 MeV. A chemical reaction releases only a few eV. That is about 50 million times less.",
-        "why": "The MeV/eV energy units and these numerical values are not required by the spec sections."
+        "text": "The two smaller nuclei are radioactive themselves. They must be managed as nuclear waste.",
+        "why": "Specification 4.4.4.1 does not mention that fission products are radioactive or need managing as nuclear waste. The point is repeated in keyPoints[0].writeBullets[5] (\"They must be stored as nuclear waste\"), keyPoints[3].content and keyPoints[3].writeBullets[3] (\"Fission leaves radioactive waste. It must be stored safely\"). It adds material the section does not require."
       },
       {
-        "field": "tables[0].rows[3]",
-        "text": "~17.6 MeV per D-T reaction, but more per kg of fuel",
-        "why": "A quantitative energy per reaction for fusion is not required, and it may confuse the student when set beside the 200 MeV figure for fission."
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "²₁H + ³₁H → ⁴₂He + ¹₀n + energy",
-        "why": "The spec requires only the general definition of fusion ('joining of two light nuclei to form a heavier nucleus'). It does not require the specific deuterium–tritium reaction equation."
+        "field": "keyPoints[3].keyTerms[0].def",
+        "text": "Radioactive material from nuclear reactors, including the smaller nuclei made in fission; it remains hazardous for thousands of years",
+        "why": "The specification text has no 'nuclear waste' term and no timescale for how long it stays hazardous. This is extra content beyond 4.4.4.1 and 4.4.4.2."
       },
       {
         "field": "keyPoints[1].content",
-        "text": "<strong>Control rods</strong>: these absorb extra neutrons... They are made of boron or cadmium.\n- <strong>Moderator</strong>: this slows neutrons down to the right speed for U-235 to absorb them. It is usually water or graphite.",
-        "why": "The spec says only that 'The chain reaction is controlled in a nuclear reactor'. Reactor components, their materials and neutron moderation are not in these spec sections."
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "<strong>Challenge</strong>: it needs extremely high temperatures (~100 million °C on Earth) and pressures. These overcome the electrostatic repulsion between positively charged nuclei.",
-        "why": "The conditions needed for fusion, electrostatic repulsion and specific temperatures are not in spec section 4.4.4.2."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "This mass difference is converted to energy by E = mc².",
-        "why": "E = mc² is not part of the spec sections given. The intro also builds on it: 'When Einstein wrote E = mc²...'"
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "<strong>Fission advantages</strong>: proven technology and large-scale electricity generation... <strong>Fusion disadvantages</strong>: ... People joke that it is 'always 30 years away'.",
-        "why": "Evaluating nuclear power as an energy resource is not in spec sections 4.4.4.1–4.4.4.2. Checkpoint 3 tests this content."
-      },
-      {
-        "field": "keyTerms[2] (keyPoints[0]).def",
-        "text": "A fissile isotope used as fuel in nuclear reactors; splits when it absorbs a slow neutron",
-        "why": "The term 'fissile' and the slow-neutron condition are not required by the spec."
+        "text": "In a nuclear power station, the heat from fission makes steam. The steam drives turbines and generates electricity. This is just like a traditional power station, but it uses nuclear fuel instead of burning fossil fuels.",
+        "why": "Specification 4.4.4.1 only requires that the chain reaction is controlled in a reactor to control the energy released. It does not require how a power station generates electricity."
       }
     ],
     "factual_errors": [
       {
-        "field": "keyPoints[0].keyTerms[0].def",
-        "text": "A large nucleus absorbs a neutron and splits into two smaller nuclei, releasing 2–3 neutrons and a large amount of energy",
-        "correction": "Fission is defined as the splitting of a large, unstable nucleus. Neutron absorption is the usual trigger but not the only one: spontaneous fission occurs, though it is rare.",
-        "basis": "spec"
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "almost limitless fuel (hydrogen from seawater)",
-        "correction": "Deuterium can be extracted from seawater. Tritium, the other fuel in the D-T reaction the lesson describes, is very scarce in nature. It must be produced (bred) from lithium.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "checkpoints.2.wrongFeedback",
-        "text": "Fusion uses hydrogen isotopes as fuel, not uranium. They are plentiful.",
-        "correction": "Deuterium is plentiful. Tritium is not plentiful naturally and must be bred from lithium.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "commonMistakes[2]",
-        "text": "Fusion's main product is helium. Its radioactivity is much shorter-lived than that of fission fragments.",
-        "correction": "Helium-4 is not radioactive. The radioactivity linked to D-T fusion comes from the tritium fuel and from reactor materials made radioactive by fusion neutrons, not from the helium product.",
-        "basis": "own knowledge"
-      }
-    ],
-    "wrong_terms": [
-      {
-        "field": "keyPoints[2].content",
-        "text": "two small nuclei combine to form a larger nucleus",
-        "spec_term": "two light nuclei ... a heavier nucleus"
-      },
-      {
         "field": "keyPoints[0].content",
-        "text": "splits into two smaller nuclei</strong>, called fission fragments",
-        "spec_term": "fission products"
+        "text": "These nuclei are large enough to become unstable after absorbing a neutron, so they split.",
+        "correction": "Size alone does not explain why U-235 and Pu-239 are used. Uranium-238 is larger than uranium-235 but does not normally split after absorbing a slow neutron. It is better to say that these particular isotopes readily split after absorbing a neutron.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "intro",
+        "text": "It powers every star in the universe, including the Sun.",
+        "correction": "Fusion is the energy source of stars during their main life, but not every star at every stage. For example, white dwarfs and neutron stars are not powered by fusion. It is safer to say 'Fusion is the energy source of stars such as the Sun'. The same overstatement appears in introTips[1] (\"Fusion powers the Sun and all stars\") and revisionCardBullets[6] (\"Fusion powers the Sun and all stars\").",
+        "basis": "own knowledge"
       }
     ],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
-    "not_checked": [
-      "No diagrams are present (every keyPoint has \"diagram\": null), so there was no diagram content to check against the spec's drawing/interpreting requirement.",
-      "The checkpoint keys \"0\"–\"3\" were assumed to correspond to keyPoints[0]–[3].",
-      "The statistic 'about 10% of the world's electricity' (intro) and the core temperature '~15 million °C' (keyPoints[2].content) were checked only approximately, from general knowledge."
-    ]
+    "not_checked": []
   }
 }

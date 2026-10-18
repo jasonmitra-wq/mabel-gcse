@@ -1,0 +1,49 @@
+{
+  "lesson": "p4-radioactivity",
+  "source_file": "lessons/physics/p4-radioactivity.json",
+  "lesson_md5": "3cd6202da80d6cdfd548fb35c616c928",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T22:26:47.215Z",
+  "specRefs_sent": [
+    "4.4.2.1",
+    "4.4.2.2",
+    "4.4.3.1"
+  ],
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P4-TRIAGE.md",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 15131,
+    "output_tokens": 3206
+  },
+  "cost_usd": 0.124644,
+  "status": "OK",
+  "result": {
+    "lesson": "p4-radioactivity",
+    "missing_spec_content": [],
+    "above_gcse": [
+      {
+        "field": "intro",
+        "text": "Radioactivity has given us cancer treatments, smoke detectors, carbon dating and nuclear power.",
+        "why": "Smoke detectors and carbon dating are not in these specification sections. They were cut as above-specification from the sibling half-life lesson. Naming them here signals that they are content to learn."
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "fairly slow-moving and heavy compared to other radiation",
+        "why": "Spec 4.4.2.1 says: \"Required knowledge of the properties of alpha particles, beta particles and gamma rays is limited to their penetration through materials, their range in air and ionising power.\" Speed and mass are listed as properties beyond that limit. The same applies to keyPoints[1].content: \"Beta radiation is faster and lighter than alpha.\""
+      },
+      {
+        "field": "keyPoints[0].writeBullets[6]",
+        "text": "Highly ionising. It makes many ion pairs per cm of path",
+        "why": "\"Ion pairs per cm\" is a quantitative measure of ionisation that the specification does not use. The spec only requires \"ionising power\". The same phrasing appears in keyPoints[0].content (\"making lots of ion pairs\"), keyPoints[2].content (\"ionises far fewer atoms per cm\") and keyPoints[2].writeBullets[3] (\"few ion pairs per cm\")."
+      }
+    ],
+    "factual_errors": [],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "Spec 4.4.2.2 refers to symbols and example equations (\"may be represented by the symbol:\" and \"For example:\") that are missing from the supplied spec text. I could not compare the lesson's ⁴₂He and ⁰₋₁e notation or its examples against them."
+    ]
+  }
+}

@@ -1,20 +1,23 @@
 {
   "lesson": "p3-pressure",
   "source_file": "lessons/physics/p3-pressure.json",
-  "lesson_md5": "2e74ccb7673d2c8bb8461a0724d3419f",
+  "lesson_md5": "a8a8981dc4bbd1db6486f4b3113626b9",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:42:33.358Z",
+  "date": "2026-10-18T09:07:07.076Z",
   "specRefs_sent": [
     "4.3.3.1",
-    "4.3.3.2"
+    "4.3.3.2",
+    "4.3.3.3"
   ],
+  "blocking_only": false,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 6757,
-    "output_tokens": 5080
+    "input_tokens": 7159,
+    "output_tokens": 4629
   },
-  "cost_usd": 0.128628,
+  "cost_usd": 0.121216,
   "status": "OK",
   "result": {
     "lesson": "p3-pressure",
@@ -22,109 +25,107 @@
       {
         "specRef": "4.3.3.1",
         "spec_text": "The molecules of a gas are in constant random motion.",
-        "why": "The lesson never says that gas molecules or particles are in constant random motion. It only describes them 'crashing into a container's walls, again and again' (intro). Random motion is the starting point of the particle explanation."
+        "why": "The lesson never says that gas molecules move constantly and randomly. It only describes particles 'crashing into a container's walls' (intro) and moving faster when heated."
       },
       {
         "specRef": "4.3.3.2",
-        "spec_text": "The pressure produces a net force at right angles to the wall of the gas container (or any surface).",
-        "why": "The lesson says 'Each collision pushes on the wall with a tiny force' (keyPoints[0].content). It never says that the net force acts at right angles to the wall or to any surface."
+        "spec_text": "A gas can be compressed or expanded by pressure changes. The pressure produces a net force at right angles to the wall of the gas container (or any surface).",
+        "why": "The lesson does not say that the force from gas pressure acts at right angles to the wall or surface. It also does not state that pressure changes compress or expand a gas. keyPoints[0].content only says 'Each collision pushes on the wall with a tiny force'."
       },
       {
-        "specRef": "4.3.3.2",
-        "spec_text": "A gas can be compressed or expanded by pressure changes.",
-        "why": "The lesson describes squashing a gas but never states that a gas can be compressed or expanded by pressure changes."
+        "specRef": "4.3.3.3",
+        "spec_text": "Work is the transfer of energy by a force. Doing work on a gas increases the internal energy of the gas and can cause an increase in the temperature of the gas. Students should be able to explain how, in a given situation eg a bicycle pump, doing work on an enclosed gas leads to an increase in the temperature of the gas.",
+        "why": "This whole section (HT only) is missing. The intro mentions 'pump up a bike tyre' but never explains that doing work on the gas transfers energy, raises its internal energy and raises its temperature. Internal energy is not mentioned anywhere."
       }
     ],
     "above_gcse": [
       {
-        "field": "keyPoints[1].content",
-        "text": "The Kelvin scale starts at <strong>absolute zero: 0 K = −273 °C</strong>. ... To convert: <strong>T (K) = θ (°C) + 273</strong>.",
-        "why": "The specification sections say nothing about the Kelvin scale, absolute zero or converting temperatures. A whole key point is given to content the spec does not require."
+        "field": "keyPoints[3].content",
+        "text": "When the temperature can change too, use the combined gas law. It is p₁V₁ / T₁ = p₂V₂ / T₂, where T is in Kelvin.",
+        "why": "The specification only requires pV = constant at constant temperature. The combined gas law is not in these sections."
       },
       {
         "field": "keyPoints[3].content",
-        "text": "When the temperature can change too, use the <strong>combined gas law</strong>. It is <strong>p₁V₁ / T₁ = p₂V₂ / T₂</strong>, where T is in Kelvin.",
-        "why": "The spec requires only pV = constant at constant temperature. For temperature and pressure at constant volume it asks students to 'explain qualitatively'. The combined gas law and pressure–temperature calculations go beyond this."
+        "text": "Worked example: a gas is at 100 kPa, 2 m³ and 300 K. It is heated to 600 K at constant volume. New pressure: p₂ = p₁ × T₂ / T₁ = 100 × 600/300 = 200 kPa.",
+        "why": "The spec asks students to 'explain qualitatively the relation between the temperature of a gas and its pressure at constant volume'. Calculations using p/T are not required."
       },
       {
         "field": "keyPoints[3].keyTerms[1]",
-        "text": "Gay-Lussac's Law: At constant volume, pressure is directly proportional to Kelvin temperature: p/T = constant",
-        "why": "The spec asks only for a qualitative relationship between temperature and pressure at constant volume. It does not ask for a proportional law or the name Gay-Lussac."
+        "text": "Gay-Lussac's Law",
+        "why": "This named law, with p/T = constant, is not in the specification. The spec only requires a qualitative relation."
       },
       {
         "field": "tables[0].rows[2]",
         "text": "Charles's Law | Pressure (p) | V and T directly proportional | V₁/T₁ = V₂/T₂",
-        "why": "The spec sections do not mention Charles's Law or volume–temperature relationships at all."
+        "why": "The volume–temperature relationship at constant pressure is not in the specification sections at all."
       },
       {
         "field": "tables[0].rows[3]",
         "text": "Combined Gas Law | Mass of gas | Links p, V and T | p₁V₁/T₁ = p₂V₂/T₂",
-        "why": "The combined gas law is not in the specification sections."
+        "why": "The combined gas law is not required by the specification."
       },
       {
-        "field": "introTips[4]",
-        "text": "p₁V₁ = p₂V₂ and pV/T = constant are the two equations you need.",
-        "why": "This tells the student that pV/T = constant is a required equation. The spec gives only pV = constant."
-      },
-      {
-        "field": "introTips[3]",
-        "text": "If the temperature changes, use the combined gas law instead.",
-        "why": "The combined gas law is not required by the spec."
-      },
-      {
-        "field": "commonMistakes[1]",
-        "text": "If T changes, use pV/T = constant.",
-        "why": "This presents a non-spec equation as the expected method."
+        "field": "keyPoints[1].content",
+        "text": "The Kelvin scale starts at absolute zero: 0 K = −273 °C ... To convert: T (K) = θ (°C) + 273 ... You must always use Kelvin in gas law calculations",
+        "why": "Absolute zero, the Kelvin scale and conversion between scales do not appear in these specification sections. Kelvin is only needed for the quantitative temperature laws, which are themselves beyond the spec."
       },
       {
         "field": "checkpoints.3.question",
         "text": "A gas in a container with a fixed volume is at 200 kPa and 300 K. It is heated to 450 K. What is the new pressure?",
-        "why": "This is a quantitative pressure–temperature calculation. The spec requires only a qualitative explanation at constant volume."
+        "why": "This tests a calculation of pressure from temperature. The spec only requires a qualitative explanation."
       },
       {
         "field": "checkpoints.1.question",
         "text": "What is 27 °C converted to Kelvin?",
-        "why": "Kelvin conversion is not in the specification sections."
+        "why": "Kelvin conversion is not required by these specification sections."
+      },
+      {
+        "field": "commonMistakes[1]",
+        "text": "If T changes, use pV/T = constant.",
+        "why": "This tells students to use an equation the specification does not include."
       }
     ],
     "factual_errors": [
       {
-        "field": "keyPoints[2].content",
-        "text": "They hit the walls <strong>twice as often</strong> per second → pressure doubles.",
-        "correction": "Halving the volume doubles the number of particles per unit volume. This doubles the rate of collisions per unit area of wall, which is why the pressure doubles. The total wall area also changes, so the total number of hits on all the walls does not simply double. revisionCardBullets[2] correctly says 'per unit area'.",
+        "field": "keyPoints[1].content",
+        "text": "At absolute zero, particles have the least kinetic energy possible. In theory, they stop moving completely.",
+        "correction": "At absolute zero, particles have the minimum possible energy, but quantum theory says they do not stop moving completely (zero-point energy). It is safer to say 'particles have the minimum possible kinetic energy'.",
         "basis": "own knowledge"
       },
       {
-        "field": "keyPoints[0].writeBullets[1]",
-        "text": "Billions of collisions per second make a pressure you can measure",
-        "correction": "The true number is vastly larger, around 10²³ collisions per square centimetre per second at room conditions. 'Billions' understates it by many orders of magnitude.",
+        "field": "keyPoints[1].writeBullets[1]",
+        "text": "At absolute zero, particles have the least kinetic energy. In theory, they stop moving",
+        "correction": "Same issue: at absolute zero, particle energy is at its minimum, not zero motion.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "At 0 K the pressure would be zero. Particles would have no kinetic energy and make no collisions.",
+        "correction": "Zero pressure at 0 K is an extrapolation for an ideal gas. Real gases liquefy or solidify long before 0 K. Particles do not have exactly zero kinetic energy at 0 K.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [
       {
         "field": "keyPoints[0].content",
-        "text": "Gas pressure is caused by <strong>gas particles colliding with the walls of their container</strong>.",
-        "spec_term": "molecules (\"The molecules of a gas are in constant random motion\"; \"average kinetic energy of the molecules\")"
+        "text": "Gas pressure is caused by gas particles colliding with the walls of their container",
+        "spec_term": "molecules (the spec says 'The molecules of a gas are in constant random motion' and 'the motion of the molecules in a gas')"
       },
       {
-        "field": "keyPoints[0].content",
-        "text": "Now squash the gas into a smaller volume.",
-        "spec_term": "compressed (\"A gas can be compressed or expanded by pressure changes\")"
+        "field": "keyPoints[2].heading",
+        "text": "Boyle's Law — pressure and volume at constant temperature",
+        "spec_term": "The spec does not name the law. It says 'For a fixed mass of gas held at a constant temperature: pressure × volume = constant, p V = constant'."
       },
       {
-        "field": "checkpoints.0.question",
-        "text": "The gas is squashed to 2 m³ at constant temperature.",
-        "spec_term": "compressed"
+        "field": "keyPoints[2].content",
+        "text": "Units: pressure in Pa (pascals) or kPa. Volume in m³ or cm³.",
+        "spec_term": "pressure, p, in pascals, Pa; volume, V, in metres cubed, m^3"
       }
     ],
-    "checkpoint_mismatch": [
-      {
-        "checkpoint": "0",
-        "key_point": "keyPoints[0] \"What causes gas pressure\"",
-        "why": "Checkpoint 0 is a p₁V₁ = p₂V₂ calculation. Key point 0 explains collisions qualitatively and never gives the pV equation, so the answer is not supported by the key point it sits with. The calculation belongs with keyPoints[2] (Boyle's Law), which has no checkpoint."
-      }
-    ],
-    "not_checked": []
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "The claims about mark schemes, e.g. keyPoints[0].tutor_note 'Mark schemes reward the phrase 'collisions with the walls'' and commonMistakes[2] 'You must say 'more frequent or harder collisions with the walls' for full marks', cannot be checked against the specification text supplied.",
+      "The lesson does not mark which content is 'physics only' or 'HT only' (4.3.3.2 and 4.3.3.3). Whether the lesson is meant for a tier or route that includes these sections could not be confirmed."
+    ]
   }
 }

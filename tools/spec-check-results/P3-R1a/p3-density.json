@@ -1,0 +1,119 @@
+{
+  "lesson": "p3-density",
+  "source_file": "lessons/physics/p3-density.json",
+  "lesson_md5": "ccc2b1b0b646e41be8411dd0a788724b",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T09:02:34.873Z",
+  "specRefs_sent": [
+    "4.3.1.1"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7630,
+    "output_tokens": 4887
+  },
+  "cost_usd": 0.12826,
+  "status": "OK",
+  "result": {
+    "lesson": "p3-density",
+    "missing_spec_content": [
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "Students should be able to recognise/draw simple diagrams to model the difference between solids, liquids and gases.",
+        "why": "Every keyPoint has \"diagram\": null. The lesson never describes how to draw or recognise particle diagrams for solids, liquids and gases. It does not say, for example, that particles in a solid sit in regular touching rows, particles in a liquid are touching but random, and particles in a gas are far apart."
+      },
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "The particle model can be used to explain - the different states of matter - differences in density.",
+        "why": "keyPoints[3].content does not use the particle model to describe the three states. It covers gases ('particles are very far apart') and solids ('packed more tightly'). Liquids get only the passing word 'jumbled'. The student is never told that liquid particles are still close together, which is why solid and liquid densities are similar and both are far greater than gas density."
+      },
+      {
+        "specRef": "4.3.1.1 Required practical activity 5",
+        "spec_text": "Dimensions to be measured using appropriate apparatus such as a ruler, micrometer or Vernier callipers.",
+        "why": "keyPoints[2].content only says 'Measure its size with a ruler'. Micrometers and Vernier callipers are not mentioned, nor when a more precise instrument is appropriate (for small objects)."
+      },
+      {
+        "specRef": "4.3.1.1 Key opportunities for skills development",
+        "spec_text": "Students should be able to recall and apply this equation to changes where mass is conserved.",
+        "why": "The lesson never applies ρ = m/V to a change where mass stays the same, such as a change of state. It does not show that the same mass taking up a larger volume means a lower density, and there is no calculation of this kind."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "In ice, water molecules form a regular, open hexagonal lattice. Forces of attraction between the molecules hold it together.",
+        "why": "The spec does not require the anomalous behaviour of water or the structure of ice. This also contradicts the spec-level generalisation the student is trying to learn, that solids are more closely packed."
+      },
+      {
+        "field": "keyPoints[3].keyTerms[0]",
+        "text": "Hexagonal lattice: The open ring-shaped structure of ice",
+        "why": "This key term is not required by the spec at this level."
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "Osmium (densest natural element): 22,590 kg/m³",
+        "why": "This data is not required by the spec."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Liquid aluminium: ~2375 kg/m³ (slightly less dense, as particles are slightly further apart)",
+        "why": "Specific liquid-metal data is not required by the spec."
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "Floating and sinking: compare the object with the fluid it is in. An object floats if it is less dense than the fluid.",
+        "why": "Floating and sinking is not part of spec section 4.3.1.1. It is reasonable background, but it is not required content for this section."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Lakes freeze from the top down. Ice forms at the surface and insulates the water below",
+        "why": "This is beyond the spec. The full explanation also involves water's maximum density at about 4 °C, which is not covered here."
+      },
+      {
+        "field": "keyPoints[2].writeBullets[2]",
+        "text": "Volume of displaced water = volume of the irregular object (Archimedes' principle)",
+        "why": "Archimedes' principle is not in this spec section. It is also wrongly attached to this statement (see factual_errors)."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[2].writeBullets[2]",
+        "text": "Volume of displaced water = volume of the irregular object (Archimedes' principle)",
+        "correction": "Archimedes' principle states that the upthrust on an object equals the weight of fluid it displaces. The idea that a fully submerged object displaces its own volume of water is simply the displacement method. It is not Archimedes' principle.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "commonMistakes[3]",
+        "text": "The water displaced has the same volume as the object, not the same mass.",
+        "correction": "This is only true if the object is fully submerged. A floating object displaces a mass of water equal to its own mass, and a volume smaller than its own volume.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "checkpoints[2].wrongFeedback",
+        "text": "A eureka can or measuring cylinder gives you the volume directly.",
+        "correction": "A eureka can does not give the volume directly. The displaced water must be collected and measured in a measuring cylinder (as keyPoints[2].content correctly states).",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "3",
+        "key_point": "keyPoints[3] 'Density and states of matter'",
+        "why": "The checkpoint tests only the ice/water exception, which is beyond the spec. The spec requirement this key point covers, explaining differences in density between solids, liquids and gases in terms of particle arrangement, is not tested."
+      },
+      {
+        "checkpoint": "0",
+        "key_point": "keyPoints[0] 'What density is and why it matters'",
+        "why": "Checkpoint 0 is a straight ρ = m/V calculation, essentially the same as checkpoint 1 (which sits with the worked-examples key point). It does not test the distinctive content of keyPoints[0]: what density means, the particle explanation, or floating and sinking."
+      }
+    ],
+    "not_checked": [
+      "All keyPoints have \"diagram\": null, so no diagrams were available to check against the spec requirement for simple particle diagrams.",
+      "How the HTML markup (<strong>, &nbsp;) and the formula triangle described in memTip will render could not be checked."
+    ]
+  }
+}

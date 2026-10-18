@@ -1,86 +1,87 @@
 {
   "id": "p3-pressure",
-  "title": "Pressure in gases — particles in motion",
+  "title": "Pressure in gases — molecules in motion",
   "topic": "P3",
-  "examTip": "Gas pressure questions almost always want an explanation using particles. Say 'more frequent collisions with the container walls', not just 'particles move faster'. And always check that a Boyle's Law question is at constant temperature.",
+  "examTip": "Gas pressure questions almost always want an explanation using the molecules. Say 'more frequent collisions with the container walls', not just 'molecules move faster'. And always check that a pV = constant question is at constant temperature.",
   "introTips": [
-    "Pressure is caused by gas particles hitting the walls of their container. More hits, or harder hits, means higher pressure.",
-    "Temperature is really a measure of the average kinetic energy of particles. Hotter means faster.",
-    "The Kelvin scale starts at absolute zero (0 K = −273 °C). You must convert to Kelvin before using any gas law equation.",
-    "Boyle's Law only works at constant temperature. If the temperature changes, use the combined gas law instead.",
-    "p₁V₁ = p₂V₂ and pV/T = constant are the two equations you need. Know them and be able to use them."
+    "Pressure is caused by gas molecules hitting the walls of their container. More hits, or harder hits, means higher pressure.",
+    "Temperature is really a measure of the average kinetic energy of the molecules. Hotter means faster.",
+    "pV = constant only works for a fixed mass of gas at constant temperature.",
+    "p₁V₁ = p₂V₂ is the equation you need. Know it and be able to use it."
   ],
-  "intro": "You see gas pressure at work when you pump up a bike tyre. You see it when you squeeze a balloon. You see it when a weather balloon grows as it rises. Gas pressure is not a mysterious force. It is simply billions of tiny particles crashing into a container's walls, again and again. Understanding this is powerful. You can predict exactly what happens to the pressure when you heat a gas. You can also predict what happens when you squash it into a smaller space. Engineers use these ideas to design car engines, aerosol cans and scuba diving equipment.",
+  "intro": "You see gas pressure at work when you pump up a bike tyre. You see it when you squeeze a balloon. You see it when a weather balloon grows as it rises. Gas pressure is not a mysterious force. It is simply billions of tiny molecules crashing into a container's walls, again and again. Understanding this is powerful. You can predict exactly what happens to the pressure when you heat a gas. You can also predict what happens when you compress it into a smaller space. Engineers use these ideas to design car engines, aerosol cans and scuba diving equipment.",
   "keyPoints": [
     {
       "heading": "What causes gas pressure",
-      "content": "Gas pressure is caused by <strong>gas particles colliding with the walls of their container</strong>. Each collision pushes on the wall with a tiny force. Huge numbers of particles collide every second. So the total effect is a steady pressure that you can measure. <strong>Pressure = force ÷ area</strong>. So more collisions per second, or harder collisions, means higher pressure. Key idea: <strong>the faster the particles move, the harder and more frequently they hit the walls → higher pressure</strong>. If you heat the gas, particles gain kinetic energy and move faster. They hit the walls harder and more often → pressure rises (if the volume is fixed). Now squash the gas into a smaller volume. The same number of particles are in a smaller space. They hit the walls more often per second → pressure rises (if the temperature is fixed).",
+      "content": "The molecules of a gas are in <strong>constant random motion</strong>. Gas pressure is caused by <strong>gas molecules colliding with the walls of their container</strong>. Each collision pushes on the wall with a tiny force. Huge numbers of molecules collide every second. So the total effect is a steady pressure that you can measure. The pressure gives a <strong>net force at right angles to the wall</strong> of the container. This is true for any surface. <strong>Pressure = force ÷ area</strong>. So more collisions per second, or harder collisions, means higher pressure. Key idea: <strong>the faster the molecules move, the harder and more frequently they hit the walls → higher pressure</strong>. If you heat the gas, molecules gain kinetic energy and move faster. They hit the walls harder and more often → pressure rises (if the volume is fixed). Now compress the gas into a smaller volume. The same number of molecules are in a smaller space. They hit the walls more often per second → pressure rises (if the temperature is fixed).",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Gas pressure — caused by gas particles colliding with the container walls",
+        "Gas molecules are in constant random motion",
+        "Gas pressure — caused by gas molecules colliding with the container walls",
         "Each collision pushes with a force. Billions of collisions per second make a pressure you can measure",
-        "Higher temperature → faster particles → harder, more frequent collisions with the walls → higher pressure",
-        "Smaller volume → same particles in less space → more frequent collisions with the walls → higher pressure",
+        "The pressure gives a net force at right angles to the wall (or any surface)",
+        "Higher temperature → faster molecules → harder, more frequent collisions with the walls → higher pressure",
+        "Smaller volume → same molecules in less space → more frequent collisions with the walls → higher pressure",
         "Pressure = force ÷ area (Pa = N/m²)"
       ],
       "keyTerms": [
         {
           "term": "gas pressure",
-          "def": "The force per unit area exerted by gas particles colliding with container walls"
+          "def": "The force per unit area exerted by gas molecules colliding with container walls"
         },
         {
           "term": "collision",
-          "def": "A particle striking the container wall — each collision exerts a tiny force contributing to total pressure"
+          "def": "A molecule striking the container wall — each collision exerts a tiny force contributing to total pressure"
         }
       ],
       "memTip": "More collisions OR harder collisions = higher pressure. Temperature controls speed. Volume controls how often they hit.",
       "tutor_note": "You need to link the cause (particle collisions) to the effect (pressure) clearly. Mark schemes reward the phrase 'collisions with the walls'."
     },
     {
-      "heading": "Absolute zero and the Kelvin scale",
-      "content": "In physics, temperature is measured in <strong>Kelvin (K)</strong>, not just Celsius. The Kelvin scale starts at <strong>absolute zero: 0 K = −273 °C</strong>. At absolute zero, particles have the least kinetic energy possible. In theory, they stop moving completely. This is the lowest possible temperature. You cannot go below it. To convert: <strong>T (K) = θ (°C) + 273</strong>. Examples: 0 °C = 273 K; 100 °C = 373 K; 20 °C = 293 K; −73 °C = 200 K. <strong>You must always use Kelvin in gas law calculations</strong>. Using Celsius gives completely wrong answers. The equations need a scale that starts at absolute zero. The Kelvin scale matters for another reason. At 0 K the pressure would be zero. Particles would have no kinetic energy and make no collisions. This has a real physical meaning, which 0 °C does not.",
+      "heading": "Temperature and pressure at constant volume",
+      "content": "The <strong>temperature</strong> of a gas is related to the <strong>average kinetic energy</strong> of its molecules. The hotter the gas, the faster its molecules move on average.\n\nNow keep the volume fixed, as in a sealed rigid container. Heat the gas, and its temperature rises. The molecules move faster. They hit the walls harder and more often. So the <strong>pressure rises</strong>.\n\nCool the gas, and the opposite happens. The molecules slow down. They hit the walls less hard and less often. So the pressure falls.\n\nSo changing the temperature of a gas at constant volume changes its pressure. You need to explain this in words, using the molecules.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Absolute zero — 0 K = −273 °C. The lowest possible temperature",
-        "At absolute zero, particles have the least kinetic energy. In theory, they stop moving",
-        "Kelvin conversion: T (K) = θ (°C) + 273",
-        "Always use Kelvin in gas law equations. Celsius gives wrong answers",
-        "0 °C = 273 K; 100 °C = 373 K; −273 °C = 0 K"
+        "The temperature of a gas is related to the average kinetic energy of its molecules",
+        "Fixed volume, higher temperature → faster molecules → harder, more frequent collisions → higher pressure",
+        "Fixed volume, lower temperature → slower molecules → softer, less frequent collisions → lower pressure",
+        "Explain it in words: molecules, then collisions, then pressure"
       ],
       "keyTerms": [
         {
-          "term": "absolute zero",
-          "def": "The lowest possible temperature: 0 K = −273 °C; particles have minimum kinetic energy"
+          "term": "temperature of a gas",
+          "def": "Related to the average kinetic energy of the gas molecules"
         },
         {
-          "term": "Kelvin (K)",
-          "def": "The absolute temperature scale; T(K) = θ(°C) + 273; must be used in gas law equations"
+          "term": "constant volume",
+          "def": "The gas stays in the same space, for example a sealed rigid container"
         }
       ],
-      "memTip": "Add 273 to convert °C to K. Take away 273 to go back. 0 K = absolute zero = −273 °C.",
-      "tutor_note": "A very common mistake is leaving temperature in °C in gas law calculations. Always convert first."
+      "memTip": "Hotter gas → faster molecules → harder, more frequent hits → higher pressure.",
+      "tutor_note": "Say what happens to the molecules, then to the collisions, then to the pressure. Each link in the chain matters."
     },
     {
-      "heading": "Boyle's Law — pressure and volume at constant temperature",
-      "content": "Take a fixed mass of gas at <strong>constant temperature</strong>. Its pressure and volume are inversely proportional. So <strong>p × V = constant</strong>, or <strong>p₁V₁ = p₂V₂</strong>. If you halve the volume, the pressure doubles. If you double the volume, the pressure halves. Particle explanation: squash the gas into half the volume. The same number of particles now have less space. They hit the walls <strong>twice as often</strong> per second → pressure doubles. Units: pressure in Pa (pascals) or kPa. Volume in m³ or cm³. Both sides must use the same unit. Worked example: a gas has pressure 200 kPa and volume 3 m³. It is squashed to 1.5 m³ at constant temperature. Find the new pressure: p₂ = p₁V₁ ÷ V₂ = (200 × 3) ÷ 1.5 = 600 ÷ 1.5 = <strong>400 kPa</strong>.",
+      "heading": "Pressure and volume at constant temperature",
+      "content": "A gas can be <strong>compressed</strong> or <strong>expanded</strong> by pressure changes. Take a fixed mass of gas at <strong>constant temperature</strong>. Its pressure and volume are inversely proportional. So <strong>p × V = constant</strong>, or <strong>p₁V₁ = p₂V₂</strong>. If you halve the volume, the pressure doubles. If you double the volume, the pressure halves. Particle explanation: compress the gas into half the volume. The same number of molecules now have less space. They hit each part of the walls <strong>twice as often</strong> per second → pressure doubles. Let the gas expand into a bigger volume, and they hit each part of the walls less often. So the pressure falls. Units: pressure in pascals (Pa). Volume in metres cubed (m³). You can use kPa or cm³ if both sides use the same unit. Worked example: a gas has pressure 200 kPa and volume 3 m³. It is compressed to 1.5 m³ at constant temperature. Find the new pressure: p₂ = p₁V₁ ÷ V₂ = (200 × 3) ÷ 1.5 = 600 ÷ 1.5 = <strong>400 kPa</strong>.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Boyle's Law: p₁V₁ = p₂V₂ at constant temperature",
+        "pV = constant for a fixed mass of gas at constant temperature. So p₁V₁ = p₂V₂",
         "Pressure and volume are inversely proportional. When one doubles, the other halves",
-        "Halve the volume → particles hit walls twice as often → pressure doubles",
-        "Units: pressure in Pa or kPa. Volume in m³ or cm³. Use the same units on both sides",
+        "Halve the volume → molecules hit each part of the walls twice as often → pressure doubles",
+        "Bigger volume → less frequent collisions with the walls → lower pressure",
+        "Units: pressure in Pa, volume in m³. kPa or cm³ also work if both sides use the same unit",
         "Rearrange: p₂ = p₁V₁ ÷ V₂ or V₂ = p₁V₁ ÷ p₂"
       ],
       "keyTerms": [
         {
-          "term": "Boyle's Law",
-          "def": "At constant temperature, p × V = constant for a fixed mass of gas; p₁V₁ = p₂V₂"
+          "term": "pV = constant",
+          "def": "For a fixed mass of gas at constant temperature, pressure × volume stays the same; p₁V₁ = p₂V₂"
         },
         {
           "term": "inversely proportional",
@@ -88,33 +89,32 @@
         }
       ],
       "memTip": "p₁V₁ = p₂V₂. Both sides equal the same constant.",
-      "tutor_note": "Check that the temperature is stated as constant before you use Boyle's Law. If the temperature changes, you need the combined law."
+      "tutor_note": "Check that the temperature is stated as constant before you use pV = constant."
     },
     {
-      "heading": "The combined gas law — pressure, volume and temperature",
-      "content": "When the temperature can change too, use the <strong>combined gas law</strong>. It is <strong>p₁V₁ / T₁ = p₂V₂ / T₂</strong>, where T is in Kelvin. It joins two laws. Boyle's Law links p and V at constant T. Gay-Lussac's Law links p and T at constant V. If the volume is fixed, as in a rigid container: <strong>p/T = constant</strong>. So doubling the Kelvin temperature doubles the pressure. Particle explanation: at a higher temperature, particles move faster. They hit the walls harder and more often → pressure rises. Worked example: a gas is at 100 kPa, 2 m³ and 300 K. It is heated to 600 K at constant volume. New pressure: p₂ = p₁ × T₂ / T₁ = 100 × 600/300 = <strong>200 kPa</strong>. Always convert °C to K before substituting. This is the most common mistake in exam answers.",
+      "heading": "Doing work on a gas",
+      "content": "<strong>Work</strong> is the transfer of energy by a force.\n\nPush a piston into a gas, and you apply a force to the gas. You are <strong>doing work on the gas</strong>. This transfers energy to the gas. It increases the <strong>internal energy</strong> of the gas. This can make the temperature of the gas rise.\n\n<strong>Example: a bicycle pump.</strong> You push the handle in, again and again. Each push does work on the air inside the pump. The internal energy of the air goes up. Its molecules move faster on average, so its temperature rises. That is why the pump gets warm.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Combined gas law: p₁V₁/T₁ = p₂V₂/T₂ (T must be in Kelvin)",
-        "Fixed volume: p/T = constant. Doubling the Kelvin temperature doubles the pressure",
-        "Higher temperature → faster particles → harder, more frequent collisions → higher pressure",
-        "Always convert temperature to Kelvin before substituting into any gas law",
-        "Rearrange for any unknown: p₂ = p₁V₁T₂ / (T₁V₂)"
+        "Work is the transfer of energy by a force",
+        "Doing work on a gas increases its internal energy",
+        "This can cause the temperature of the gas to rise",
+        "Bicycle pump: pushing the handle does work on the air → internal energy rises → temperature rises"
       ],
       "keyTerms": [
         {
-          "term": "combined gas law",
-          "def": "p₁V₁/T₁ = p₂V₂/T₂; links pressure, volume and temperature for a fixed mass of gas"
+          "term": "work",
+          "def": "The transfer of energy by a force"
         },
         {
-          "term": "Gay-Lussac's Law",
-          "def": "At constant volume, pressure is directly proportional to Kelvin temperature: p/T = constant"
+          "term": "internal energy",
+          "def": "The total kinetic and potential energy of all the particles (atoms and molecules) in a system"
         }
       ],
-      "memTip": "pV/T = constant. Each fraction equals the same number.",
-      "tutor_note": "Write out T in Kelvin before you substitute. It stops the most common calculation mistake."
+      "memTip": "Push on a gas → give it energy → warm it up.",
+      "tutor_note": "For a pump question, follow the chain: force on the gas, work done, internal energy up, temperature up."
     }
   ],
   "tables": [
@@ -129,47 +129,47 @@
       ],
       "rows": [
         [
-          "Boyle's Law",
+          "Pressure and volume",
           "Temperature (T)",
           "p and V inversely proportional",
           "p₁V₁ = p₂V₂"
         ],
         [
-          "Gay-Lussac's Law",
+          "Pressure and temperature",
           "Volume (V)",
-          "p and T directly proportional",
-          "p₁/T₁ = p₂/T₂"
-        ],
-        [
-          "Charles's Law",
-          "Pressure (p)",
-          "V and T directly proportional",
-          "V₁/T₁ = V₂/T₂"
-        ],
-        [
-          "Combined Gas Law",
-          "Mass of gas",
-          "Links p, V and T",
-          "p₁V₁/T₁ = p₂V₂/T₂"
+          "Temperature up → pressure up",
+          "Explain in words"
         ]
       ]
     }
   ],
   "checkpoints": {
     "0": {
-      "question": "A gas is heated in a sealed, rigid container. Why does its pressure rise?",
+      "question": "What causes the pressure a gas exerts on its container?",
       "options": [
-        "The particles move faster, so they hit the walls harder and more often",
-        "The particles get bigger and push on the walls",
-        "Heating makes more gas particles",
-        "The particles slow down and stick to the walls"
+        "Gas molecules colliding with the walls",
+        "Gas molecules sticking to the walls",
+        "The weight of the container",
+        "Gas molecules standing still and pressing on the walls"
       ],
       "correct": 0,
-      "correctFeedback": "Correct. Faster particles hit the walls harder and more often. So the force on the walls goes up, and so does the pressure.",
-      "wrongFeedback": "Heating does not change the number or size of the particles. It makes them move faster. They hit the walls harder and more often, so the pressure rises."
+      "correctFeedback": "Correct. The molecules are in constant random motion. Each collision pushes on the wall, at right angles to it.",
+      "wrongFeedback": "Gas molecules are always moving at random. They collide with the walls, and each collision pushes on the wall. Together these make the pressure."
+    },
+    "1": {
+      "question": "A gas is heated in a sealed, rigid container. Why does its pressure rise?",
+      "options": [
+        "The molecules move faster, so they hit the walls harder and more often",
+        "The molecules get bigger and push on the walls",
+        "Heating makes more gas molecules",
+        "The molecules slow down and stick to the walls"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct. Faster molecules hit the walls harder and more often. So the force on the walls goes up, and so does the pressure.",
+      "wrongFeedback": "Heating does not change the number or size of the molecules. It makes them move faster. They hit the walls harder and more often, so the pressure rises."
     },
     "2": {
-      "question": "A sealed container of gas has a pressure of 150 kPa at a volume of 4 m³. The gas is squashed to 2 m³ at constant temperature. What is the new pressure?",
+      "question": "A sealed container of gas has a pressure of 150 kPa at a volume of 4 m³. The gas is compressed to 2 m³ at constant temperature. What is the new pressure?",
       "options": [
         "300 kPa",
         "75 kPa",
@@ -178,61 +178,47 @@
       ],
       "correct": 0,
       "correctFeedback": "Correct! p₁V₁ = p₂V₂ → p₂ = (150 × 4) ÷ 2 = 300 kPa. Halving the volume doubles the pressure.",
-      "wrongFeedback": "Use Boyle's Law: p₁V₁ = p₂V₂. Rearrange: p₂ = p₁V₁ ÷ V₂ = (150 × 4) ÷ 2 = 300 kPa. When volume halves, pressure doubles."
-    },
-    "1": {
-      "question": "What is 27 °C converted to Kelvin?",
-      "options": [
-        "300 K",
-        "27 K",
-        "246 K",
-        "373 K"
-      ],
-      "correct": 0,
-      "correctFeedback": "Correct! T(K) = θ(°C) + 273 = 27 + 273 = 300 K. Always convert to Kelvin before using gas law equations.",
-      "wrongFeedback": "Convert using T(K) = θ(°C) + 273 = 27 + 273 = 300 K. You must add 273. Don't use the Celsius value directly."
+      "wrongFeedback": "Use pV = constant: p₁V₁ = p₂V₂. Rearrange: p₂ = p₁V₁ ÷ V₂ = (150 × 4) ÷ 2 = 300 kPa. When volume halves, pressure doubles."
     },
     "3": {
-      "question": "A gas in a container with a fixed volume is at 200 kPa and 300 K. It is heated to 450 K. What is the new pressure?",
+      "question": "You pump up a tyre quickly. Why does the air in the pump get warmer?",
       "options": [
-        "300 kPa",
-        "133 kPa",
-        "200 kPa",
-        "400 kPa"
+        "Pushing the handle does work on the air. Its internal energy rises, so its temperature rises",
+        "The air molecules get bigger as they are compressed",
+        "More air molecules are made inside the pump",
+        "The pump takes in heat from the tyre"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! At fixed volume, p/T = constant: p₂ = p₁ × T₂/T₁ = 200 × 450/300 = 300 kPa.",
-      "wrongFeedback": "At fixed volume, p₁/T₁ = p₂/T₂. So p₂ = p₁ × T₂/T₁ = 200 × (450/300) = 300 kPa. Temperature must be in Kelvin."
+      "correctFeedback": "Correct. Work is the transfer of energy by a force. Doing work on the air raises its internal energy and its temperature.",
+      "wrongFeedback": "Pushing the handle is a force on the air. That does work on the air, which transfers energy to it. Its internal energy rises, so its temperature rises."
     }
   },
   "commonMistakes": [
-    "Using Celsius instead of Kelvin in gas law equations. Always convert first: T(K) = θ(°C) + 273.",
-    "Using Boyle's Law when the temperature also changes. Boyle's Law only works at constant temperature. If T changes, use pV/T = constant.",
-    "Giving a vague reason for a pressure rise, like 'particles move faster'. You must say 'more frequent or harder collisions with the walls' for full marks.",
+    "Using pV = constant when the temperature also changes. It only works at constant temperature.",
+    "Giving a vague reason for a pressure rise, like 'molecules move faster'. You must say 'more frequent or harder collisions with the walls' for full marks.",
     "Mixing units in an equation. Pressure must be in the same units on each side: both Pa or both kPa. The same goes for volume.",
-    "Saying pressure goes up when volume goes up. It is the opposite. Bigger volume → particles hit the walls less often → pressure falls."
+    "Saying pressure goes up when volume goes up. It is the opposite. Bigger volume → molecules hit the walls less often → pressure falls."
   ],
   "examTips": [
-    "Always convert temperature to Kelvin (add 273) before substituting into any gas law. This mistake loses the most marks.",
-    "Particle explanations must mention collisions with the container walls, not just particle speed. You need both parts for full marks.",
-    "For Boyle's Law answers, check: does the pressure go up when the volume goes down? If yes, your answer makes sense.",
-    "Say which law you are using and write out the equation before substituting. This gets method marks, even if you make a maths slip."
+    "Particle explanations must mention collisions with the container walls, not just how fast the molecules move. You need both parts for full marks.",
+    "For pV = constant answers, check: does the pressure go up when the volume goes down? If yes, your answer makes sense.",
+    "Write out the equation before you substitute. This gets method marks, even if you make a maths slip."
   ],
   "revisionCardBullets": [
-    "Gas pressure is caused by particles colliding with the container walls",
-    "Higher temperature → faster particles → more frequent, harder collisions → higher pressure",
+    "Gas molecules are in constant random motion",
+    "Gas pressure is caused by molecules colliding with the container walls",
+    "The pressure gives a net force at right angles to the wall",
+    "Higher temperature → faster molecules → more frequent, harder collisions → higher pressure",
     "Smaller volume → more frequent collisions per unit area → higher pressure",
-    "Absolute zero: 0 K = −273 °C. The lowest possible temperature",
-    "Convert to Kelvin: T(K) = θ(°C) + 273",
-    "Boyle's Law (constant T): p₁V₁ = p₂V₂",
+    "Fixed volume: higher temperature → higher pressure. Explain it with the molecules",
+    "Constant temperature: p₁V₁ = p₂V₂",
     "Volume halves → pressure doubles (at constant temperature)",
-    "Combined gas law: p₁V₁/T₁ = p₂V₂/T₂ (T in Kelvin)",
-    "Fixed volume: p/T = constant. Doubling the Kelvin temperature doubles the pressure",
-    "Pressure units: Pa (pascals). Volume units: m³ or cm³. Keep them the same on both sides"
+    "Pressure units: Pa (pascals). Volume units: m³ or cm³. Keep them the same on both sides",
+    "Doing work on a gas raises its internal energy. This can raise its temperature, as in a bicycle pump"
   ],
   "videos": [
     {
-      "title": "Gas Pressure and Boyle's Law — Free Science Lessons",
+      "title": "Gas Pressure and Volume — Free Science Lessons",
       "url": "https://www.youtube.com/results?search_query=gas+pressure+Boyle%27s+law+AQA+GCSE+physics+free+science+lessons",
       "source": "Free Science Lessons",
       "duration": "~10 min"
@@ -247,7 +233,7 @@
   "videoLinks": [
     {
       "searchQuery": "gas pressure Boyle's law GCSE physics free science lessons",
-      "label": "Gas Pressure & Boyle's Law",
+      "label": "Gas Pressure and Volume",
       "source": "Free Science Lessons",
       "icon": "▶",
       "url": "https://www.youtube.com/results?search_query=gas+pressure+Boyle%27s+law+AQA+GCSE+physics+free+science+lessons"
@@ -258,13 +244,6 @@
       "source": "BBC Bitesize",
       "icon": "▶",
       "url": "https://www.youtube.com/results?search_query=gas+pressure+particles+GCSE+physics+BBC+bitesize"
-    },
-    {
-      "searchQuery": "absolute zero Kelvin scale GCSE physics",
-      "label": "Absolute Zero & Kelvin",
-      "source": "Free Science Lessons",
-      "icon": "▶",
-      "url": "https://www.youtube.com/results?search_query=absolute+zero+Kelvin+scale+GCSE+physics+AQA"
     }
   ]
 }

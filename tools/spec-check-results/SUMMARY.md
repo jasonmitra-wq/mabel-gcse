@@ -111,3 +111,11 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-10-16 | p1-heating | OK | missing_spec_content 0, above_gcse 2, factual_errors 0, wrong_terms 2, checkpoint_mismatch 0, not_checked 3 | 7925/3492 | $0.1015
 - 2026-10-16 | p1-national-grid | OK | missing_spec_content 2, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 7208/3384 | $0.0965
 - 2026-10-17 | p7-magnets--p7-magnets-13ac63d | OK | missing_spec_content 5, above_gcse 5, factual_errors 7, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 8671/5695 | $0.1486
+- 2026-10-18 | p3-particle-model | OK | missing_spec_content 6, above_gcse 1, factual_errors 4, wrong_terms 3, checkpoint_mismatch 0, not_checked 2 | 7861/4900 | $0.1294
+- 2026-10-18 | p3-density | OK | missing_spec_content 4, above_gcse 7, factual_errors 3, wrong_terms 0, checkpoint_mismatch 2, not_checked 2 | 7630/4887 | $0.1283
+- 2026-10-18 | p3-changes-of-state | OK | missing_spec_content 5, above_gcse 3, factual_errors 2, wrong_terms 2, checkpoint_mismatch 0, not_checked 3 | 8357/4188 | $0.1172
+- 2026-10-18 | p3-pressure | OK | missing_spec_content 4, above_gcse 7, factual_errors 3, wrong_terms 2, checkpoint_mismatch 0, not_checked 2 | 7159/4528 | $0.1192
+- 2026-10-18 | p3-particle-model | OK | missing_spec_content 4, above_gcse 0, factual_errors 5, wrong_terms 2, checkpoint_mismatch 0, not_checked 2 | 7861/5374 | $0.1389
+- 2026-10-18 | p3-density | OK | missing_spec_content 5, above_gcse 5, factual_errors 2, wrong_terms 0, checkpoint_mismatch 1, not_checked 2 | 7630/5374 | $0.1380
+- 2026-10-18 | p3-changes-of-state | OK | missing_spec_content 4, above_gcse 5, factual_errors 2, wrong_terms 4, checkpoint_mismatch 0, not_checked 3 | 8357/4277 | $0.1190
+- 2026-10-18 | p3-pressure | OK | missing_spec_content 3, above_gcse 9, factual_errors 3, wrong_terms 3, checkpoint_mismatch 0, not_checked 2 | 7159/4629 | $0.1212

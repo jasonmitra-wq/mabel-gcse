@@ -1,0 +1,112 @@
+{
+  "lesson": "p3-particle-model",
+  "source_file": "lessons/physics/p3-particle-model.json",
+  "lesson_md5": "9b02490e3066b0c7ac0bd4cc85adc6d9",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T09:01:52.667Z",
+  "specRefs_sent": [
+    "4.3.1.1",
+    "4.3.1.2",
+    "4.3.2.1"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7861,
+    "output_tokens": 4900
+  },
+  "cost_usd": 0.129444,
+  "status": "OK",
+  "result": {
+    "lesson": "p3-particle-model",
+    "missing_spec_content": [
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "The density of a material is defined by the equation: density = mass/volume ρ = m/V density, ρ, in kilograms per metre cubed, kg/m^3 mass, m, in kilograms, kg volume, V, in metres cubed, m^3",
+        "why": "The lesson never gives the density equation, its symbols or its units. It only describes density as 'High' or 'Very low' (tables[0].rows[7]) and links low gas density to particles being far apart."
+      },
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "Students should be able to recall and apply this equation to changes where mass is conserved.",
+        "why": "The lesson has no worked example or practice applying ρ = m/V. It does not apply the equation to a change of state where mass stays the same and the volume changes."
+      },
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "Required practical activity 5: use appropriate apparatus to make and record the measurements needed to determine the densities of regular and irregular solid objects and liquids. Volume should be determined from the dimensions of regularly shaped objects, and by a displacement technique for irregularly shaped objects. Dimensions to be measured using appropriate apparatus such as a ruler, micrometer or Vernier callipers.",
+        "why": "Required practical 5 is not covered. There is nothing on measuring the dimensions of regular objects, displacement for irregular objects, measuring liquid density, or the apparatus named."
+      },
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "Students should be able to explain the differences in density between the different states of matter in terms of the arrangement of atoms or molecules.",
+        "why": "This is covered only by a one-line bullet in keyPoints[3].content: 'Explains density differences between states (particles far apart in a gas → low density)'. There is no explanation of why solids and liquids have similar densities (both have closely packed particles), and no checkpoint tests it."
+      },
+      {
+        "specRef": "4.3.1.2",
+        "spec_text": "Students should be able to describe how, when substances change state (melt, freeze, boil, evaporate, condense or sublimate), mass is conserved.",
+        "why": "The lesson says particles 'are NOT created or destroyed' (keyPoints[0].content) but never says that mass is conserved during a change of state."
+      },
+      {
+        "specRef": "4.3.1.2",
+        "spec_text": "Changes of state are physical changes which differ from chemical changes because the material recovers its original properties if the change is reversed.",
+        "why": "The lesson says 'All changes of state can be reversed' (keyPoints[2].content). It never calls them physical changes. It never contrasts them with chemical changes, and never says the material recovers its original properties when the change is reversed."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[3].tutor_note",
+        "text": "On the higher tier, you may be asked to evaluate the particle model. Practise explaining what it gets right and where it is limited.",
+        "why": "The supplied specification sections do not require students to evaluate the limitations of the particle model. This claim about exam expectations is not supported by the sections the lesson claims to teach and could mislead the student about what will be assessed."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "<strong>Freezing</strong> (liquid → solid): particles lose energy and slow down.",
+        "correction": "During freezing the temperature stays constant, so the average kinetic energy (particle speed) does not change. The particles lose potential energy as they become bound into fixed positions. 'Slow down' contradicts the lesson's own point that temperature is constant during a change of state.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "<strong>Condensation</strong> (gas → liquid): particles lose energy and slow down.",
+        "correction": "At the condensation temperature the particles lose potential energy, not kinetic energy. The temperature, and so the average particle speed, stays constant during the change of state.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "tables[0].rows[3]",
+        "text": "\"Kinetic energy\", \"Low\", \"Medium\", \"High\"",
+        "correction": "Kinetic energy depends on temperature, not on state. A solid and a liquid at the melting point have the same average kinetic energy. The difference between states at the transition temperature is in potential energy, as the spec's definition of internal energy implies.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "tables[0].rows[7]",
+        "text": "\"High (slightly less than solid)\"",
+        "correction": "This is usually true but not always. Water is a common counter-example: liquid water is denser than ice. It should be stated as a general rule with exceptions.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[2].memTip",
+        "text": "MFECBS — Melt, Freeze, Evaporate, Condense, Boil, Sublime.",
+        "spec_term": "sublimate"
+      },
+      {
+        "field": "keyPoints[1].heading",
+        "text": "Internal energy and the kinetic theory model",
+        "spec_term": "particle model"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "A substance's <strong>internal energy</strong> is the total kinetic and potential energy of all its particles.",
+        "spec_term": "system (\"all the particles (atoms and molecules) that make up a system\")"
+      }
+    ],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "Diagram 'p3-states-particles' (keyPoints[0].diagram), captioned 'Same particles, different arrangement and movement.' I could not view it to check whether it correctly models solids, liquids and gases as the spec requires ('recognise/draw simple diagrams to model the difference between solids, liquids and gases').",
+      "Diagram 'p3-state-changes' (keyPoints[2].diagram), captioned 'The names of each change of state, and which way energy flows.' I could not view it to check the labels, the arrow directions or the use of the spec term 'sublimate'."
+    ]
+  }
+}

@@ -1,20 +1,22 @@
 {
   "lesson": "p3-changes-of-state",
   "source_file": "lessons/physics/p3-changes-of-state.json",
-  "lesson_md5": "ad4d91fff3e16cff82faa249c94c1464",
+  "lesson_md5": "26d8c5ef255b2570124e8027914c0dcb",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:41:49.192Z",
+  "date": "2026-10-18T09:06:30.708Z",
   "specRefs_sent": [
     "4.3.1.2",
     "4.3.2.3"
   ],
+  "blocking_only": false,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7812,
-    "output_tokens": 5081
+    "input_tokens": 8357,
+    "output_tokens": 4277
   },
-  "cost_usd": 0.132868,
+  "cost_usd": 0.118968,
   "status": "OK",
   "result": {
     "lesson": "p3-changes-of-state",
@@ -27,46 +29,57 @@
       {
         "specRef": "4.3.1.2",
         "spec_text": "Changes of state are physical changes which differ from chemical changes because the material recovers its original properties if the change is reversed.",
-        "why": "The lesson does not call changes of state physical changes. It does not contrast them with chemical changes or say that the material recovers its original properties when the change is reversed."
+        "why": "The lesson never says that changes of state are physical changes. It does not explain how they differ from chemical changes, or that the material gets its original properties back when the change is reversed."
       },
       {
         "specRef": "4.3.2.3",
         "spec_text": "When a change of state occurs, the energy supplied changes the energy stored (internal energy) but not the temperature.",
-        "why": "The lesson never uses the term 'internal energy'. It describes only a gain in 'potential energy' (keyPoints[0].content). It never links latent heat to a change in internal energy, which is the specification's wording."
+        "why": "The lesson explains this using particle 'potential energy' only. It never links latent heat to the energy stored, or to internal energy as the specification requires."
       },
       {
         "specRef": "4.3.2.3",
-        "spec_text": "Perform an experiment to measure the latent heat of fusion of water.",
-        "why": "The lesson does not describe this experiment (AT 5): its method, measurements or calculation."
-      },
-      {
-        "specRef": "4.3.2.3",
-        "spec_text": "Students should be able to interpret heating and cooling graphs that include changes of state.",
-        "why": "The lesson covers heating curves in detail. Cooling graphs get only one sentence ('The flat sections appear again, at the same temperatures.'). It gives no guidance on reading a cooling graph."
+        "spec_text": "AT 5 ... Perform an experiment to measure the latent heat of fusion of water.",
+        "why": "There is no description of an experiment to measure the specific latent heat of fusion of water."
       }
     ],
     "above_gcse": [
       {
         "field": "keyPoints[3].content",
-        "text": "Refrigerators: a working fluid (refrigerant) is pumped around a circuit. Inside the fridge it evaporates. It takes in latent heat from the contents, which cools them. Outside the fridge it condenses.",
-        "why": "Refrigeration cycles are not in the specification sections. The tutor_note treats this as core exam content, which could mislead the student about what is examined."
+        "text": "Freeze-drying food: food is frozen. Then it is put somewhere with low pressure, so the ice sublimates straight to vapour.",
+        "why": "Freeze-drying and the effect of low pressure on sublimation are not in the specification. This could confuse the student."
       },
       {
         "field": "keyPoints[3].content",
-        "text": "Freeze-drying food: food is frozen. Then it is put somewhere with low pressure, so the ice sublimates straight to vapour.",
-        "why": "The effect of pressure on sublimation and freeze-drying goes beyond the specification. The specification only lists 'sublimate' as a change of state."
+        "text": "Refrigerators: a working fluid (refrigerant) is pumped around a circuit. Inside the fridge it evaporates.",
+        "why": "The refrigeration cycle is not in these specification sections. The tutor_note also calls it \"a classic 6-mark question\", which these sections do not support."
       },
       {
-        "field": "revisionCardBullets[6]",
-        "text": "L_v >> L_f, because vaporisation fully separates all the particles (much more potential energy)",
-        "why": "The '>>' notation and the comparison of fusion and vaporisation at particle level are not required by the specification. The '>>' symbol may also be unfamiliar to the student."
+        "field": "keyPoints[2].content",
+        "text": "Heat ice from -10°C to 0°C: Q = mcΔT = 1 × 2100 × 10 = 21,000 J",
+        "why": "This four-step combined calculation brings in a specific heat capacity for ice. Neither the calculation nor that value is required by these specification sections."
+      },
+      {
+        "field": "keyPoints[2].keyTerms[1].term",
+        "text": "Exothermic",
+        "why": "Exothermic and endothermic are chemistry terms. The physics specification does not use them here, and they could blur the spec's point that changes of state are physical changes, not chemical ones."
+      },
+      {
+        "field": "keyPoints[2].keyTerms[2].term",
+        "text": "Endothermic",
+        "why": "Exothermic and endothermic are chemistry terms. The physics specification does not use them here, and they could blur the spec's point that changes of state are physical changes, not chemical ones."
       }
     ],
     "factual_errors": [
       {
         "field": "keyPoints[3].memTip",
         "text": "Steam burns = DOUBLE the energy. You get L_v as it condenses, THEN Q = mcΔT as it cools.",
-        "correction": "It is not double. Per kg, condensing steam releases 2,260,000 J. Cooling the condensed water from 100°C to body temperature releases only about 4200 × 63 ≈ 265,000 J. So steam delivers roughly 9–10 times the energy of the same mass of boiling water, not twice as much.",
+        "correction": "It is not double. For 1 kg cooling from 100°C to about 37°C, cooling gives about 265 kJ, while condensing gives about 2260 kJ. That makes steam roughly 9 to 10 times the energy of the same mass of boiling water.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Outside the fridge it condenses. It releases that latent heat to the surroundings. This is why the back of a fridge is warm.",
+        "correction": "The condenser also gives out the energy supplied by the compressor. The warmth at the back is not only the latent heat taken in from the fridge contents.",
         "basis": "own knowledge"
       }
     ],
@@ -77,31 +90,26 @@
         "spec_term": "Specific latent heat of fusion / Specific latent heat of vaporisation"
       },
       {
-        "field": "tables[0].rows[0][0]",
-        "text": "Latent heat of fusion",
-        "spec_term": "Specific latent heat of fusion"
+        "field": "keyPoints[1].content",
+        "text": "This is liquid ↔ gas",
+        "spec_term": "change of state from liquid to vapour"
       },
       {
-        "field": "tables[0].rows[2][0]",
-        "text": "Latent heat of vaporisation",
-        "spec_term": "Specific latent heat of vaporisation"
+        "field": "keyPoints[0].content",
+        "text": "The particles gain <strong>potential energy</strong> (not kinetic energy)",
+        "spec_term": "the energy supplied changes the energy stored (internal energy)"
       },
       {
         "field": "keyPoints[0].content",
         "text": "You can see this on a <strong>heating curve</strong>.",
         "spec_term": "heating and cooling graphs"
-      },
-      {
-        "field": "keyPoints[3].writeBullets[5]",
-        "text": "Freeze-drying — ice sublimes to vapour at low pressure.",
-        "spec_term": "sublimate"
       }
     ],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "Checkpoint keys are \"1\" and \"3\", and no checkpoint has a stated key point. I assumed zero-based indexing: checkpoint 1 goes with keyPoints[1] (E = mL) and checkpoint 3 with keyPoints[3] (applications). With one-based indexing, checkpoint 1 would sit with the heating-curve key point and checkpoint 3 with the calculations key point. Neither question tests those key points, so both would then be mismatches.",
-      "keyPoints[3].tutor_note claims 'The refrigerator explanation is a classic 6-mark question'. keyPoints[1].tutor_note claims 'the value of L for water is given in exams'. Exam-paper practice cannot be checked against the specification text supplied.",
-      "All keyPoints have \"diagram\": null, so there were no diagrams to check. keyPoints[0].tutor_note asks the tutor to draw a heating curve, which cannot be checked."
+      "The lesson writes the specific heat capacity equation as \"Q = mcΔT\" (keyPoints[2].content). Section 4.3.2.2 was not supplied, so I could not check the specification's own symbols for this equation (from own knowledge, AQA uses ΔE = m c Δθ).",
+      "keyPoints[1].tutor_note says \"the value of L for water is given in exams\". This claim about exam papers cannot be checked against the specification text.",
+      "No diagrams were present (all \"diagram\": null). Nothing visual was checked."
     ]
   }
 }

@@ -1,0 +1,100 @@
+{
+  "lesson": "p3-changes-of-state",
+  "source_file": "lessons/physics/p3-changes-of-state.json",
+  "lesson_md5": "26d8c5ef255b2570124e8027914c0dcb",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T09:03:17.540Z",
+  "specRefs_sent": [
+    "4.3.1.2",
+    "4.3.2.3"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 8357,
+    "output_tokens": 4188
+  },
+  "cost_usd": 0.117188,
+  "status": "OK",
+  "result": {
+    "lesson": "p3-changes-of-state",
+    "missing_spec_content": [
+      {
+        "specRef": "4.3.1.2",
+        "spec_text": "Students should be able to describe how, when substances change state (melt, freeze, boil, evaporate, condense or sublimate), mass is conserved.",
+        "why": "The lesson never says that mass is conserved during a change of state. Sublimation appears only in the freeze-drying application, with no link to conservation of mass."
+      },
+      {
+        "specRef": "4.3.1.2",
+        "spec_text": "Changes of state are physical changes which differ from chemical changes because the material recovers its original properties if the change is reversed.",
+        "why": "The lesson does not describe changes of state as physical changes. It also does not explain how they differ from chemical changes, namely that the material recovers its original properties when the change is reversed."
+      },
+      {
+        "specRef": "4.3.2.3",
+        "spec_text": "When a change of state occurs, the energy supplied changes the energy stored (internal energy) but not the temperature.",
+        "why": "The lesson explains the flat sections only through particle potential energy. It never states that the energy supplied changes the internal energy (energy stored) of the substance."
+      },
+      {
+        "specRef": "4.3.2.3",
+        "spec_text": "Perform an experiment to measure the latent heat of fusion of water.",
+        "why": "The lesson includes no practical method for measuring the specific latent heat of fusion of water."
+      },
+      {
+        "specRef": "4.3.2.3",
+        "spec_text": "Students should be able to interpret heating and cooling graphs that include changes of state.",
+        "why": "Cooling graphs get only one sentence in keyPoints[0].content: \"The flat sections appear again, at the same temperatures.\" No cooling curve is described or interpreted."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "Freeze-drying food: food is frozen. Then it is put somewhere with low pressure, so the ice sublimates straight to vapour. This preserves the food without heat damage.",
+        "why": "The specification lists sublimation only as a change of state in which mass is conserved. The effect of low pressure on phase changes goes beyond the specification."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Refrigerators: a working fluid (refrigerant) is pumped around a circuit. Inside the fridge it evaporates. It takes in latent heat from the contents, which cools them. Outside the fridge it condenses.",
+        "why": "Refrigerator operation is not in the specification section. The tutor_note also calls it \"a classic 6-mark question\", which overstates how central it is."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Heat ice from -10°C to 0°C: Q = mcΔT = 1 × 2100 × 10 = 21,000 J",
+        "why": "The four-stage combined calculation uses the specific heat capacity of ice. It goes beyond the single-step E = mL calculations the section requires."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[3].memTip",
+        "text": "Steam burns = DOUBLE the energy.",
+        "correction": "Condensing steam releases about 2260 kJ/kg. Water cooling from 100°C to skin temperature releases only about 4200 × 63 ≈ 265 kJ/kg. Steam therefore delivers roughly ten times as much energy, not double.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "tables[0].rows[0][2]",
+        "text": "Forces between particles weaken; particles free to move past each other",
+        "correction": "The forces of attraction do not get weaker. The particles gain enough energy (potential energy) to partly overcome those forces.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "the energy per kg to boil or condense a substance. This is liquid ↔ gas",
+        "spec_term": "Specific latent heat of vaporisation – change of state from liquid to vapour"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "The particles gain <strong>potential energy</strong> (not kinetic energy)",
+        "spec_term": "the energy supplied changes the energy stored (internal energy) but not the temperature"
+      }
+    ],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "All keyPoints have \"diagram\": null. The heating curve that keyPoints[0].tutor_note asks the tutor to draw is not supplied, so no labelled graph could be checked.",
+      "The claim in keyPoints[1].tutor_note that \"the value of L for water is given in exams\" could not be checked against the specification text supplied.",
+      "The symbol form Q = mcΔT (keyPoints[2].content) and the SHC values (4200 and 2100 J/kg°C) could not be checked against the specification's specific heat capacity section, which was not supplied."
+    ]
+  }
+}

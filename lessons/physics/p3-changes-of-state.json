@@ -2,27 +2,29 @@
   "id": "p3-changes-of-state",
   "title": "Changes of state and latent heat — energy that doesn't raise temperature",
   "topic": "P3",
-  "examTip": "E = mL is the key equation. There are two types. Latent heat of FUSION is for melting or freezing. Latent heat of VAPORISATION is for boiling or condensing. Vaporisation needs far more energy, because the particles must be fully separated.",
+  "examTip": "E = mL is the key equation. There are two types. Specific latent heat of FUSION is for melting or freezing. Specific latent heat of VAPORISATION is for boiling or condensing. Vaporisation needs far more energy, because the particles must be fully separated.",
   "introTips": [
     "Steam at 100°C causes much worse burns than boiling water at 100°C. Latent heat explains exactly why.",
-    "Sweating cools you down well because water has an enormous latent heat of vaporisation.",
+    "Sweating cools you down well because water has an enormous specific latent heat of vaporisation.",
     "The flat sections on a heating curve are a favourite exam graph question. You need to explain what is happening at each one."
   ],
-  "intro": "Once the water in a kettle reaches 100°C, it still takes ages to boil away. The temperature isn't rising. But the energy isn't disappearing. It is pulling water molecules away from each other as the liquid turns to steam. This 'hidden' energy changes the state without changing the temperature. It is called latent heat. It explains why steam burns are so bad. It explains how your fridge keeps food cold. It also explains why sweating on a hot day works.",
+  "intro": "Once the water in a kettle reaches 100°C, it still takes ages to boil away. The temperature isn't rising. But the energy isn't disappearing. It is pulling water molecules away from each other as the liquid turns to steam. This 'hidden' energy changes the state without changing the temperature. It is called latent heat. It explains why steam burns are so bad. It also explains why sweating on a hot day works.",
   "keyPoints": [
     {
       "heading": "Temperature during changes of state — the heating curve",
-      "content": "When you heat a substance, its temperature usually rises. But something interesting happens at its <strong>melting point</strong> or <strong>boiling point</strong>. The temperature stays constant, even though energy is still going in.\n\nYou can see this on a <strong>heating curve</strong>. This is a graph of temperature against time (or energy added):\n- Sloping sections: the temperature is rising, and the kinetic energy of the particles is increasing\n- <strong>Flat sections</strong>: the temperature is constant, because a change of state is happening\n\nAt a flat section:\n- The particles are taking in energy\n- This energy overcomes the forces of attraction between the particles\n- The particles gain <strong>potential energy</strong> (not kinetic energy)\n- No increase in kinetic energy → no increase in temperature\n\nThis energy is called <strong>latent heat</strong>. 'Latent' means 'hidden'. The energy is there, but you can't see it on the thermometer.\n\nWhen the substance cools, the reverse happens. Latent heat is released during freezing and condensation. The flat sections appear again, at the same temperatures.",
+      "content": "When you heat a substance, its temperature usually rises. But something interesting happens at its <strong>melting point</strong> or <strong>boiling point</strong>. The temperature stays constant, even though energy is still going in.\n\nYou can see this on a <strong>heating curve</strong>. This is a graph of temperature against time (or energy added):\n- Sloping sections: the temperature is rising, and the kinetic energy of the particles is increasing\n- <strong>Flat sections</strong>: the temperature is constant, because a change of state is happening\n\nAt a flat section:\n- The particles are taking in energy\n- This energy overcomes the forces of attraction between the particles\n- The energy supplied increases the <strong>internal energy</strong> (the energy stored), but not the temperature\n- The particles gain <strong>potential energy</strong> (not kinetic energy)\n- No increase in kinetic energy → no increase in temperature\n\nThis energy is called <strong>latent heat</strong>. 'Latent' means 'hidden'. The energy is there, but you can't see it on the thermometer.\n\nWhen the substance cools, you get a <strong>cooling curve</strong>. This is a graph of temperature against time as it cools.\n- Sloping sections: the temperature is falling\n- Flat sections: the substance is condensing or freezing. Latent heat is released, so the temperature stays constant\n\nThe flat sections appear at the same temperatures as on the heating curve.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "During a change of state, temperature stays CONSTANT, even though energy is going in",
         "Energy during a change of state → overcomes forces between particles → increases potential energy",
+        "The energy supplied raises the internal energy (energy stored), but not the temperature",
         "No increase in kinetic energy → no rise in temperature",
         "Heating curve: sloping = temperature rising. Flat = change of state",
         "Latent heat — 'hidden' energy taken in or released during a change of state",
-        "Flat sections appear at the melting point AND the boiling point"
+        "Flat sections appear at the melting point AND the boiling point",
+        "Cooling curve: sloping = temperature falling. Flat = condensing or freezing, latent heat released"
       ],
       "keyTerms": [
         {
@@ -32,6 +34,10 @@
         {
           "term": "Heating curve",
           "def": "A graph of temperature vs time (or energy) showing flat sections at melting and boiling points"
+        },
+        {
+          "term": "Cooling curve",
+          "def": "A graph of temperature vs time as a substance cools, with flat sections where it condenses or freezes"
         }
       ],
       "memTip": "Latent = hidden. The energy is there, but you can't see it on a thermometer. It is overcoming the forces between particles, not heating them up.",
@@ -39,15 +45,15 @@
     },
     {
       "heading": "Specific latent heat — the equation E = mL",
-      "content": "<strong>Specific latent heat (L)</strong> is the energy needed to change the state of 1 kg of a substance. The temperature does not change.\n\n<strong>Equation: E = mL</strong>\n\nWhere: E = energy (J), m = mass (kg), L = specific latent heat (J/kg)\n\nRearrangements: L = E/m &nbsp; m = E/L\n\n<strong>Two types:</strong>\n\n<strong>Specific latent heat of fusion (L_f)</strong>: the energy per kg to melt or freeze a substance. This is solid ↔ liquid\n- Water: L_f = 334,000 J/kg (334 kJ/kg)\n\n<strong>Specific latent heat of vaporisation (L_v)</strong>: the energy per kg to boil or condense a substance. This is liquid ↔ gas\n- Water: L_v = 2,260,000 J/kg (2260 kJ/kg)\n\n<strong>Why is L_v so much bigger than L_f?</strong>\nMelting only partly overcomes the forces between particles. The particles still stay close. Vaporisation fully overcomes the forces between particles. The particles must be completely separated and moved far apart. This needs a much bigger increase in potential energy. So much more energy is needed.",
+      "content": "<strong>Specific latent heat (L)</strong> is the energy needed to change the state of 1 kg of a substance. The temperature does not change.\n\n<strong>Equation: E = mL</strong>\n\nWhere: E = energy (J), m = mass (kg), L = specific latent heat (J/kg)\n\nRearrangements: L = E/m &nbsp; m = E/L\n\n<strong>Two types:</strong>\n\n<strong>Specific latent heat of fusion (L_f)</strong>: the energy per kg to melt or freeze a substance. This is solid ↔ liquid\n- Water: L_f = 334,000 J/kg (334 kJ/kg)\n\n<strong>Specific latent heat of vaporisation (L_v)</strong>: the energy per kg to boil or condense a substance. This is liquid ↔ vapour\n- Water: L_v = 2,260,000 J/kg (2260 kJ/kg)\n\n<strong>Why is L_v so much bigger than L_f?</strong>\nMelting only partly overcomes the forces between particles. The particles still stay close. Vaporisation fully overcomes the forces between particles. The particles must be completely separated and moved far apart. This needs a much bigger increase in potential energy. So much more energy is needed.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "Specific latent heat (L) — the energy per kg to change state. Unit: J/kg",
         "E = mL (energy = mass × specific latent heat)",
-        "Latent heat of fusion — melting or freezing (solid ↔ liquid). Water: 334,000 J/kg",
-        "Latent heat of vaporisation — boiling or condensing (liquid ↔ gas). Water: 2,260,000 J/kg",
+        "Specific latent heat of fusion — melting or freezing (solid ↔ liquid). Water: 334,000 J/kg",
+        "Specific latent heat of vaporisation — boiling or condensing (liquid ↔ vapour). Water: 2,260,000 J/kg",
         "Vaporisation needs far more energy than fusion. The particles must be completely separated",
         "Rearrangements: L = E/m and m = E/L"
       ],
@@ -70,7 +76,7 @@
     },
     {
       "heading": "Calculations using E = mL",
-      "content": "The equation <strong>E = mL</strong> is simple. But take care with units and rearrangements.\n\n<strong>Worked example 1 — melting ice</strong>\nHow much energy is needed to melt 2 kg of ice at 0°C?\nL_f (water) = 334,000 J/kg\nE = mL = 2 × 334,000 = <strong>668,000 J = 668 kJ</strong>\n\n<strong>Worked example 2 — condensing steam</strong>\nHow much energy is released when 0.5 kg of steam condenses to water at 100°C?\nL_v (water) = 2,260,000 J/kg\nE = mL = 0.5 × 2,260,000 = <strong>1,130,000 J = 1130 kJ</strong>\n(Released, because condensation is exothermic)\n\n<strong>Worked example 3 — finding specific latent heat</strong>\n500 g of a substance takes in 150,000 J while melting at constant temperature.\nL = E/m = 150,000 / 0.5 = <strong>300,000 J/kg</strong>\n\n<strong>Combined calculation — heating ice to steam</strong>\nTo turn 1 kg of ice at -10°C into steam at 100°C:\n1. Heat ice from -10°C to 0°C: Q = mcΔT = 1 × 2100 × 10 = 21,000 J\n2. Melt ice at 0°C: Q = mL_f = 1 × 334,000 = 334,000 J\n3. Heat water from 0°C to 100°C: Q = mcΔT = 1 × 4200 × 100 = 420,000 J\n4. Boil water at 100°C: Q = mL_v = 1 × 2,260,000 = 2,260,000 J\n<strong>Total = 3,035,000 J ≈ 3 MJ</strong>",
+      "content": "The equation <strong>E = mL</strong> is simple. But take care with units and rearrangements.\n\n<strong>Worked example 1 — melting ice</strong>\nHow much energy is needed to melt 2 kg of ice at 0°C?\nL_f (water) = 334,000 J/kg\nE = mL = 2 × 334,000 = <strong>668,000 J = 668 kJ</strong>\n\n<strong>Worked example 2 — condensing steam</strong>\nHow much energy is released when 0.5 kg of steam condenses to water at 100°C?\nL_v (water) = 2,260,000 J/kg\nE = mL = 0.5 × 2,260,000 = <strong>1,130,000 J = 1130 kJ</strong>\n(Released, because the steam condenses)\n\n<strong>Worked example 3 — finding specific latent heat</strong>\n500 g of a substance takes in 150,000 J while melting at constant temperature.\nL = E/m = 150,000 / 0.5 = <strong>300,000 J/kg</strong>",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -79,52 +85,26 @@
         "To melt 2 kg ice: E = 2 × 334,000 = 668,000 J",
         "To condense 0.5 kg steam: E = 0.5 × 2,260,000 = 1,130,000 J (released)",
         "Rearrange for L: L = E/m. Remember to convert mass to kg",
-        "Combined problems: add up Q = mcΔT for temperature changes AND E = mL for changes of state",
         "Say whether energy is taken in (melting or boiling) or released (freezing or condensing)"
       ],
-      "keyTerms": [
-        {
-          "term": "SHC of water",
-          "def": "Specific heat capacity of water = 4200 J/kg°C — used alongside latent heat in combined heating calculations"
-        },
-        {
-          "term": "Exothermic",
-          "def": "Energy is released to surroundings — freezing and condensation release latent heat"
-        },
-        {
-          "term": "Endothermic",
-          "def": "Energy is absorbed from surroundings — melting and boiling absorb latent heat"
-        }
-      ],
+      "keyTerms": [],
       "memTip": "E = mL for changes of state. Q = mcΔT for temperature changes.",
       "tutor_note": "Remember to convert 500 g to 0.5 kg before substituting. Unit errors are the main trap in E = mL calculations."
     },
     {
       "heading": "Applications of latent heat",
-      "content": "Latent heat is not just theory. It has important uses, and some of them save lives.\n\n<strong>Sweating and cooling:</strong> sweat is mainly water. Its specific latent heat of vaporisation is very high: 2260 kJ/kg. Sweat evaporates from your skin. It carries an enormous amount of energy away from your body. This is why sweating cools you so well, even in very hot weather.\n\n<strong>Steam burns:</strong> steam at 100°C causes far worse burns than boiling water at 100°C. Both are at the same temperature, so why? When steam condenses on skin, it releases its latent heat of vaporisation onto the skin. That is 2260 kJ/kg. This comes on top of the heat from cooling down from 100°C. This extra 2260 kJ/kg makes steam burns much more serious.\n\n<strong>Refrigerators:</strong> a working fluid (refrigerant) is pumped around a circuit. Inside the fridge it evaporates. It takes in latent heat from the contents, which cools them. Outside the fridge it condenses. It releases that latent heat to the surroundings. This is why the back of a fridge is warm. The refrigerator is really pumping heat from inside to outside.\n\n<strong>Freeze-drying food:</strong> food is frozen. Then it is put somewhere with low pressure, so the ice sublimates straight to vapour. This preserves the food without heat damage.",
+      "content": "Latent heat is not just theory. It has important uses, and some of them save lives.\n\n<strong>Sweating and cooling:</strong> sweat is mainly water. Its specific latent heat of vaporisation is very high: 2260 kJ/kg. Sweat evaporates from your skin. It carries an enormous amount of energy away from your body. This is why sweating cools you so well, even in very hot weather.\n\n<strong>Steam burns:</strong> steam at 100°C causes far worse burns than boiling water at 100°C. Both are at the same temperature, so why? When steam condenses on skin, it releases latent heat onto the skin. That is 2260 kJ for every kilogram. This comes on top of the heat from cooling down from 100°C. This extra 2260 kJ/kg makes steam burns much more serious.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
         "Sweating — water has a high L_v. So evaporation carries huge amounts of energy away from the body",
         "Steam burns — condensing steam releases 2260 kJ/kg of latent heat onto skin. This is on top of the heat from cooling",
-        "Steam at 100°C causes worse burns than water at 100°C for the same reason",
-        "Refrigerator — refrigerant evaporates inside, taking in latent heat and cooling the contents. It condenses outside, releasing heat",
-        "The back of a fridge is warm because latent heat is released there during condensation",
-        "Freeze-drying — ice sublimes to vapour at low pressure. This preserves food without high temperatures"
+        "Steam at 100°C causes worse burns than water at 100°C for the same reason"
       ],
-      "keyTerms": [
-        {
-          "term": "Refrigerant",
-          "def": "The working fluid in a refrigerator that evaporates and condenses as it cycles, transferring heat from inside to outside"
-        },
-        {
-          "term": "Freeze-drying",
-          "def": "Removing water from food by sublimation under low pressure — preserves food without cooking it"
-        }
-      ],
-      "memTip": "Steam burns = DOUBLE the energy. You get L_v as it condenses, THEN Q = mcΔT as it cools. It is always worse than the same mass of boiling water.",
-      "tutor_note": "The refrigerator explanation is a classic 6-mark question. Practise writing it in full. It evaporates inside, taking in latent heat. It condenses outside, releasing it."
+      "keyTerms": [],
+      "memTip": "Steam burns are much worse. You get the latent heat as it condenses, THEN more energy as it cools. It is always worse than the same mass of boiling water.",
+      "tutor_note": "For steam burns, explain both steps. The steam condenses and releases latent heat. Then the hot water cools and releases more energy."
     }
   ],
   "tables": [
@@ -140,31 +120,31 @@
       ],
       "rows": [
         [
-          "Latent heat of fusion",
+          "Specific latent heat of fusion",
           "Melting (solid → liquid)",
-          "Forces between particles weaken; particles free to move past each other",
-          "Absorbed (endothermic)",
+          "Particles gain enough energy to partly overcome the forces; particles free to move past each other",
+          "Taken in",
           "334,000 J/kg (334 kJ/kg)"
         ],
         [
-          "Latent heat of fusion",
+          "Specific latent heat of fusion",
           "Freezing (liquid → solid)",
           "Forces pull particles back together; particles lock into lattice",
-          "Released (exothermic)",
+          "Released",
           "334,000 J/kg"
         ],
         [
-          "Latent heat of vaporisation",
-          "Boiling/evaporation (liquid → gas)",
+          "Specific latent heat of vaporisation",
+          "Boiling/evaporation (liquid → vapour)",
           "Forces between particles overcome; particles far apart",
-          "Absorbed (endothermic)",
+          "Taken in",
           "2,260,000 J/kg (2260 kJ/kg)"
         ],
         [
-          "Latent heat of vaporisation",
-          "Condensation (gas → liquid)",
+          "Specific latent heat of vaporisation",
+          "Condensation (vapour → liquid)",
           "Forces pull particles back together; particles close together again",
-          "Released (exothermic)",
+          "Released",
           "2,260,000 J/kg"
         ]
       ]
@@ -210,7 +190,7 @@
     "3": {
       "question": "Steam at 100°C causes worse burns than boiling water at 100°C. They are at the same temperature. Why are steam burns worse?",
       "options": [
-        "When steam condenses on skin, it releases its latent heat of vaporisation (2260 kJ/kg). This adds to the energy from cooling",
+        "When steam condenses on skin, it releases latent heat (2260 kJ for every kg). This adds to the energy from cooling",
         "Steam moves faster, so it has more kinetic energy than water at the same temperature",
         "Steam is hotter than the water, even though the thermometer shows 100°C",
         "Steam has more particles per unit volume than liquid water"
@@ -222,29 +202,28 @@
   },
   "commonMistakes": [
     "Thinking temperature rises during a change of state. It stays constant while the energy overcomes the forces between particles. Potential energy increases, but kinetic energy does not.",
-    "Mixing up latent heat of fusion with nuclear fusion. Here, 'fusion' means melting or freezing (solid ↔ liquid).",
+    "Mixing up specific latent heat of fusion with nuclear fusion. Here, 'fusion' means melting or freezing (solid ↔ liquid).",
     "Using mass in grams instead of kg in E = mL. Always convert to kg first by dividing grams by 1000.",
-    "Forgetting that condensation and freezing RELEASE latent heat. Energy goes from the substance to the surroundings.",
-    "In combined calculations, forgetting to include both kinds of step. You need the latent heat steps (E = mL) AND the temperature-change steps (Q = mcΔT)."
+    "Forgetting that condensation and freezing RELEASE latent heat. Energy goes from the substance to the surroundings."
   ],
   "examTips": [
     "When asked about a flat section on a heating curve, say the temperature is constant. The energy is overcoming the forces of attraction between particles. This increases potential energy, not kinetic energy.",
     "In E = mL calculations, always convert mass to kg. Check you use the right L. Use fusion for melting or freezing. Use vaporisation for boiling or condensing.",
-    "For questions on uses, like sweating, steam burns and fridges, explain three things. Say which change of state is happening. Say whether energy is taken in or released. Say what effect this has."
+    "For questions on uses, like sweating and steam burns, explain three things. Say which change of state is happening. Say whether energy is taken in or released. Say what effect this has."
   ],
   "revisionCardBullets": [
     "Latent heat — energy taken in or released during a change of state. The temperature does not change",
     "Temperature stays CONSTANT during a change of state",
     "Energy during a change of state → overcomes forces between particles → increases potential energy (not kinetic)",
+    "Energy supplied during a change of state raises the internal energy, not the temperature",
     "E = mL (energy = mass × specific latent heat). Unit of L: J/kg",
-    "Latent heat of fusion — melting or freezing (solid ↔ liquid). Water: 334,000 J/kg",
-    "Latent heat of vaporisation — boiling or condensing (liquid ↔ gas). Water: 2,260,000 J/kg",
+    "Specific latent heat of fusion — melting or freezing (solid ↔ liquid). Water: 334,000 J/kg",
+    "Specific latent heat of vaporisation — boiling or condensing (liquid ↔ vapour). Water: 2,260,000 J/kg",
     "L_v >> L_f, because vaporisation fully separates all the particles (much more potential energy)",
     "Sweating cools the body. High L_v means evaporation removes a large amount of energy",
     "Steam burns worse than boiling water. Condensing releases 2260 kJ/kg of latent heat onto skin",
-    "Refrigerator — refrigerant evaporates inside (takes in heat) and condenses outside (releases heat)",
     "Heating curve: slopes = temperature change (Q = mcΔT). Flats = change of state (E = mL)",
-    "Combined calculation: add up all the Q = mcΔT and E = mL steps separately"
+    "Cooling curve: flat sections where it condenses or freezes. Latent heat is released there"
   ],
   "videos": [
     {

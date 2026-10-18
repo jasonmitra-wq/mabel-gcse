@@ -1,0 +1,272 @@
+{
+  "id": "p4-radioactivity",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome, it's lovely to have you here! To start us off, what happens to a thin T-shirt when you get caught out in the rain?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's alpha particle (α), A helium nucleus (2 protons + 2 neutrons); emitted during",
+      "studentType": "correct",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "You already know the alpha particle is a helium nucleus, and that is a useful start. Some atoms have unstable nuclei, and an unstable nucleus can spit out an alpha particle to settle down, like a fizzy drink letting out a burst of gas.\n\nHow many protons does one alpha particle contain?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Not quite, magnets and electricity aren't what an alpha particle is. It's a tiny lump from inside an atom's centre, made of 2 protons and 2 neutrons stuck together, and that lump is called a helium nucleus.\n\nIf one alpha particle is made of 2 protons and 2 neutrons, how many tiny pieces does it have altogether?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's no problem: it has 4 pieces altogether. An alpha particle is \"ionising\": as it travels it knocks tiny electrons off atoms, like a bowling ball scattering pins.\n\nWhat does an alpha particle knock off atoms?",
+      "recap": null,
+      "basic": "Radiation",
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "I'm a footy fan of no team, I'm afraid! Alpha is \"ionising radiation\": it knocks electrons off atoms. If an alpha particle hits many atoms, what happens to the electrons?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Here's the rest. Some nuclei are unstable, so they give out radiation to become more stable; this is radioactive decay, and it's random. Activity is the rate of decay, in becquerels (Bq), and a Geiger-Muller tube counts decays, giving the count rate each second. Radiation can be alpha, beta, gamma or neutron. An alpha particle has mass number 4 and atomic number 2, so after alpha emission the mass number falls by 4 and the atomic number falls by 2. It's stopped by paper or a few cm of air, highly ionising, short range (~5 cm), and most dangerous if swallowed or breathed in.\n\nNext is beta: a beta particle is a fast electron given out by the nucleus, made when a neutron turns into a proton. A nucleus gains one proton this way, so its atomic number goes up by 1.\n\nIf a nucleus has 6 protons and gives out a beta particle, how many protons does it have afterwards?",
+      "recap": [
+        "An alpha particle is a helium nucleus: 2 protons and 2 neutrons.",
+        "That makes 4 tiny pieces altogether in each alpha particle.",
+        "Unstable nuclei can spit out an alpha particle to settle down.",
+        "Alpha is ionising: it knocks electrons off the atoms it hits."
+      ],
+      "flags": [
+        "over length (161 words)"
+      ]
+    },
+    {
+      "n": 6,
+      "student": "I think it's beta particle (β), A fast electron emitted from the nucleus when a neutron",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "That's the right idea about what a beta particle is. Here it is another way: inside the nucleus, one neutron changes into a proton and an electron, and the electron shoots out. If a nucleus starts with 6 protons and gives out a beta particle, how many protons does it have afterwards?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "It does link to electricity, since an electron is what carries current. The answer: 6 protons plus one gained makes 7. Beta decay is when a neutron in the nucleus turns into a proton and shoots out an electron. If a nucleus gains one proton this way, what happens to its atomic number?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "That's fine, let's slow it down. Think of the nucleus as a box of protons and neutrons: in beta decay, one neutron swaps itself for a proton, so the box gains a proton. The atomic number is just the number of protons.\n\nA nucleus has 8 protons and gives out a beta particle. How many protons does it have afterwards?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Now a third type: gamma rays, which are very high-energy waves, a bit like light, sent out from the nucleus. Look at the diagram: paper stops alpha, a few millimetres of aluminium stop beta, but even thick lead only reduces gamma. Why do you think gamma gets through so much more than the other two?",
+      "recap": [
+        "A beta particle is a fast electron fired out of the nucleus.",
+        "It happens when one neutron turns into a proton and an electron.",
+        "The nucleus gains a proton, so its atomic number goes up by 1.",
+        "Example: 6 protons becomes 7 after beta decay."
+      ],
+      "diagram": "p4-penetration",
+      "diagramCaption": "Paper stops alpha. A few millimetres of aluminium stop beta. Thick lead only reduces gamma.",
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "I think it's gamma ray (γ), High-energy electromagnetic radiation emitted from the nucleus; no mass or",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes, gamma is high-energy electromagnetic radiation from the nucleus with no mass or charge, and that fits how it behaves. Because it has no mass and no charge, it ionises far fewer atoms as it travels, so it doesn't get used up quickly. What does that tell you about how far gamma can travel through the body?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Gamma can travel a long way through the body, even passing right out the other side. It's also electromagnetic radiation: waves travelling at the speed of light, and gamma is the highest energy kind.\n\nWhy would a doctor want gamma, rather than alpha, to see inside a patient's body?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "That's fine, let's try it another way. Gamma is electromagnetic radiation, so it's waves, like light, but with far more energy. Alpha is a stopped-by-paper particle, so it would never make it out of the body.\n\nWhere would alpha radiation from inside a patient end up?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "No favourite team, I'm afraid. Back to alpha: it would stop inside the body, because paper-thin barriers block it. Next, there's low-level radiation that's always around us, even when nothing nuclear is happening. Why might people living in different places get different amounts of it?",
+      "recap": [
+        "Gamma is high-energy electromagnetic radiation from the nucleus, with no mass or charge.",
+        "It ionises very few atoms, so it isn't used up quickly and travels far.",
+        "Gamma can pass right through the body, while alpha is stopped by paper.",
+        "Even thick lead only reduces gamma, it never fully stops it."
+      ],
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "I think it's background radiation, Low-level radiation from natural and man-made sources always present in",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, background radiation is the right name: low-level radiation that's always around us. What you haven't said yet is why the amount differs from place to place. Some rocks give out a gas called radon, so why might someone living on a rock that gives out more radon get a higher dose?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Not magnets or electricity, though. In ²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He, the radium is 226 on the left and the radon is 222, so what mass number must the alpha particle have for the right side to total 226?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "That's fine, let's slow it down. A nuclear equation shows one nucleus changing into another, and the mass numbers (the big numbers on top) must add up to the same total on both sides, like a bank balance that can't change. In ²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He, we have 222 + 4 on the right. What total does that make?",
+      "recap": null,
+      "flags": [
+        "unanswerable: no word from the lesson"
+      ]
+    },
+    {
+      "n": 17,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Football's not my thing, I'm afraid! The total is 226, so the numbers balance. Now, the radiation dose you receive is measured in sieverts (Sv), and 1000 millisieverts (mSv) make 1 sievert. So how many millisieverts are in 1 sievert?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Here's the rest. Background radiation is low-level radiation that is always around us, from natural and man-made sources. Natural sources are radon gas from rocks (the largest source in the UK), cosmic rays from space, food and drink, and rocks and buildings. Man-made sources are medical X-rays, fallout from nuclear weapons testing, and nuclear accidents. Your level depends on where you live and on your job. Some rocks give out more radon, and working with X-rays adds to your exposure. Dose is measured in sieverts (Sv), and 1000 millisieverts (mSv) = 1 sievert (Sv).\n\nIn nuclear equations, mass numbers must balance and atomic numbers must balance. Alpha: ²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He, so the daughter nucleus loses 4 from its mass number and 2 from its atomic number. Beta: ¹⁴₆C → ¹⁴₇N + ⁰₋₁e, so the mass number stays the same and the atomic number goes up by 1. Gamma changes neither number; the nucleus only loses energy. The steps are: write the parent nucleus, write the radiation with its numbers, then balance what's left to find the daughter nucleus.\n\nThat's the end of this lesson. I told you \"Radioactive decay and alpha radiation (α)\", \"Beta radiation (β)\", \"Gamma radiation (γ)\" and \"Background radiation and nuclear equations\", and you answered questions on some of it, but not all of it, so it's worth coming back to. Thanks for sticking with it.",
+      "recap": [
+        "Background radiation is low-level radiation that is always around us, all the time.",
+        "Some rocks release radon gas, so where you live changes your dose.",
+        "In a nuclear equation, mass numbers on both sides must add up equally.",
+        "Radiation dose is measured in sieverts, and 1000 millisieverts make 1 sievert."
+      ],
+      "flags": [
+        "over length (231 words)"
+      ]
+    },
+    {
+      "n": 19,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome. Come back whenever you like and we'll go over the bits we skipped, starting with alpha, beta and gamma. Good luck with the revision!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "exited": false,
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "lessonFlags": [],
+  "cost": 0.4825039999999998,
+  "tutorCost": 0.4825039999999998,
+  "tutorCalls": 92,
+  "mode": "run",
+  "date": "2026-10-18"
+}

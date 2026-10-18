@@ -1,0 +1,219 @@
+{
+  "id": "p4-nuclear-fission",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome, it's lovely to have you here! To start, what happens to a biscuit when you snap it in half?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's nuclear fission, The splitting of a large, unstable nucleus into two smaller",
+      "studentType": "correct",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "You already know the key idea: a large nucleus splitting into two smaller ones. Look at the diagram: a uranium-235 nucleus absorbs a neutron, then splits into two smaller nuclei and gives out 2 or 3 neutrons. What do you think had to happen to the uranium-235 nucleus before it split?",
+      "recap": null,
+      "diagram": "p4-fission",
+      "diagramCaption": "A uranium-235 nucleus absorbs a neutron and splits into two smaller nuclei. It gives out 2 or 3 neutrons.",
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Not quite: magnets and electricity aren't what makes it split. Think of the uranium-235 nucleus like a wobbly water balloon: if a small particle called a neutron crashes in and sticks, it gets unsettled and splits in two. Where does the neutron have to go for the nucleus to split?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "The neutron has to be absorbed by the nucleus, which makes it split. The two smaller nuclei and the neutrons it gives out are called fission products, and all of them are moving. What do you think moving things have, which is the energy a fast car has?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "I don't have a football team, but I'm happy to keep going! After fission, the two smaller nuclei and the neutrons all fly apart fast, like pieces of a smashed plate. What energy do fast-moving things have?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Fast-moving things have kinetic energy, so every fission product has it. The nucleus gives out 2 or 3 neutrons and gamma rays, and releases a large amount of energy. The fuels are uranium-235 and plutonium-239. Look at the diagram: each fission's neutrons can cause more fissions, which is a chain reaction. If one fission sets off two more, and each of those sets off two more, what would happen to the number of fissions after a few steps?",
+      "recap": [
+        "Nuclear fission is a large, unstable nucleus splitting into two smaller nuclei.",
+        "A uranium-235 nucleus must absorb a neutron before it splits.",
+        "The split also releases 2 or 3 neutrons.",
+        "The smaller nuclei and neutrons fly apart fast, so they carry kinetic energy."
+      ],
+      "diagram": "p4-chain-reaction",
+      "diagramCaption": "Each fission releases neutrons that can cause more fissions.",
+      "flags": [
+        "over length (78 words)"
+      ]
+    },
+    {
+      "n": 6,
+      "student": "I think it's chain reaction, Each fission releases neutrons that cause more fissions; controlled, it",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right — a chain reaction is neutrons from each fission causing more fissions, and you've got the \"controlled\" idea too. What's missing is the other case: if every fission triggers several more and nothing stops it, the number of fissions grows faster and faster. What would that release?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Not magnets, but it would release a huge amount of energy, an explosion. Look at the diagram: two light nuclei join into a heavier one, called fusion. If two drops of water merge, what happens to the number of drops?",
+      "recap": [
+        "Fission of uranium-235 or plutonium-239 releases 2 or 3 neutrons, gamma rays and lots of energy.",
+        "Those neutrons can trigger more fissions, which is what makes it a chain reaction.",
+        "Uncontrolled, each fission triggers several more, so the number of fissions grows faster and faster.",
+        "The \"controlled\" part still needs finishing: how a reactor keeps the chain reaction steady."
+      ],
+      "diagram": "p4-fusion",
+      "diagramCaption": "Two light nuclei join to form a heavier nucleus, and energy is released.",
+      "basic": "Split and join",
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "I think it's nuclear fusion, The joining of two light nuclei to form a heavier",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes, joining two light nuclei into a heavier one is nuclear fusion. Here \"light\" means a nucleus with only a few protons and neutrons. If two light nuclei fuse, what does the new nucleus end up being, compared with the two you started with?",
+      "recap": null,
+      "basic": "Light and heavy nuclei",
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not magnets or electricity. The new nucleus is heavier, because two light nuclei have joined into one, and some of the mass may be turned into the energy of radiation. That's why fusion releases a large amount of energy, and it's what powers the Sun. If the Sun runs on fusion, what kind of nuclei is it joining together?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "That's fine. Think of it like two small lumps of clay pressed together into one bigger lump. In fusion, two light nuclei (ones with only a few protons and neutrons) are squeezed together into one bigger nucleus, and energy is released. If you press two small lumps of clay together, how many lumps do you end up with?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "I don't have a favourite team, but the answer to the clay question is one lump. Fission and fusion both release lots of energy, but work in opposite directions. Fission splits one large nucleus into two smaller ones. What does fusion do to nuclei?",
+      "recap": [
+        "Nuclear fusion is when two light nuclei join to make one heavier nucleus.",
+        "A light nucleus has only a few protons and neutrons.",
+        "Some mass turns into energy, so fusion releases a huge amount of energy.",
+        "Fusion is what powers the Sun."
+      ],
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "it's about Comparing fission and fusion",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Comparing is exactly the job here. Fission and fusion both release lots of energy, but they work in opposite directions. Fission splits one big nucleus into smaller ones, and fusion fuses (joins) small ones into a bigger one. Which one of the two is used in nuclear power stations today?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Not quite magnets and electricity, though a power station does use fission to make electricity. Fission and fusion are both nuclear reactions, meaning they change nuclei, and both release a large amount of energy. Fission usually starts when a large, unstable nucleus absorbs a neutron, then splits into two smaller nuclei. Fusion joins two light nuclei into a heavier one. Fission's chain reaction is controlled in nuclear power stations, so the energy comes out steadily. Fusion powers stars such as the Sun, but it is not yet used to make electricity on a large scale.\n\nThat's the end of this lesson. You answered questions on \"Nuclear fission\", \"Chain reactions and controlling fission\", \"Nuclear fusion\" and \"Comparing fission and fusion\", though some answers were tricky, so it's worth coming back to them. Thanks for sticking with it.",
+      "recap": [
+        "Fission splits one big nucleus into smaller ones.",
+        "Fusion joins small nuclei together to make a bigger one.",
+        "Both release huge amounts of energy, but they work in opposite directions."
+      ],
+      "flags": [
+        "over length (136 words)"
+      ]
+    },
+    {
+      "n": 14,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're very welcome. Some of those ideas were tricky, so it's well worth coming back to them any time, and fission versus fusion is a great one to revisit before your exams. Take care, and good luck with the GCSEs!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "exited": false,
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "lessonFlags": [],
+  "cost": 0.29278999999999994,
+  "tutorCost": 0.29278999999999994,
+  "tutorCalls": 62,
+  "mode": "run",
+  "date": "2026-10-18"
+}

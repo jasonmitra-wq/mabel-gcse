@@ -95,6 +95,13 @@ function create(env) {
   // sentence that this bit is tricky, then the offer, never the same twice in
   // a row.
   const RESPECT_EXIT = FLOW_FIX && env.respectExit !== false;
+  // P4 teach-sim (runbook 2.5c, 2026-10-18), on by default with FLOW_FIX.
+  // create({ call, questionFix: false }) keeps the old path. When every
+  // length-guard attempt has been used (often by the term, repeat or
+  // answer-given checks) and the last reply still asks a yes/no or either/or
+  // question, one more call asks only for the question to be put another way;
+  // its reply is used if its question is now fine.
+  const QUESTION_FIX = FLOW_FIX && env.questionFix !== false;
   // First-time learner (brief docs/briefs/2026-10-18-first-time-learner.md
   // step 2), on by default. create({ call, firstTime: false }) keeps every
   // prompt, decision and state exactly as before (tools/check-flag-identical.js).
@@ -998,6 +1005,18 @@ function create(env) {
       if (!cut && !long && !badQ) return done(reply);
       if (!cut && !badQ && !complete) complete = reply; // finished, just long — usable if nothing better
       if (cut || long) level = Math.min(level + 1, limits.length - 1);
+    }
+    // QUESTION_FIX: the attempts ran out with a yes/no or either/or question
+    // still in the last reply, and no clean reply to fall back on.
+    if (QUESTION_FIX && noYesNo && !complete && (yesNo || eitherOr) && !_looksTruncated(_stripMarkdown(last))) {
+      const qNote = [yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : ''].filter(Boolean).join('\n');
+      const raw = (await AI.call(sys, `${user}\n\n${qNote}`, limits[level].tokens)).trim();
+      let reply = TEACH_THEN_ASK ? _splitAnswer(raw).text : raw;
+      if (FIRST_TIME) { const b = _splitBasic(reply); reply = b.text; if (b.basic) basicOf.set(reply, b.basic); }
+      const plain = _stripMarkdown(reply);
+      const fine = !_looksTruncated(plain) && !_asksYesNo(plain) && !_asksEitherOr(plain)
+        && !_asksNothing(plain) && !_asksMoreThanOne(plain);
+      if (fine) return done(reply);
     }
     // Never show a sentence that stops dead: prefer a complete-but-long reply,
     // otherwise drop the unfinished tail of the last one.

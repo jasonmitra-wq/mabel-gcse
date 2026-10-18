@@ -1,0 +1,153 @@
+{
+  "id": "p4-nuclear-fission",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's nuclear fission, The splitting of a large, unstable nucleus into two smaller",
+      "studentType": "correct",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is nuclear fission. What word describes how the particles are arranged?",
+      "recap": null,
+      "diagram": "p4-fission",
+      "diagramCaption": "A uranium-235 nucleus absorbs a neutron and splits into two smaller nuclei. It gives out 2 or 3 neutrons.",
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is nuclear fission. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is fission products. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is fission products. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Right. Next is chain reaction. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "diagram": "p4-chain-reaction",
+      "diagramCaption": "Each fission releases neutrons that can cause more fissions.",
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "I think it's chain reaction, Each fission releases neutrons that cause more fissions; controlled, it",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Right. Next is nuclear fusion. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "diagram": "p4-fusion",
+      "diagramCaption": "Two light nuclei join to form a heavier nucleus, and energy is released.",
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "I think it's nuclear fusion, The joining of two light nuclei to form a heavier",
+      "studentType": "correct",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": [
+        "unanswerable: no word from the lesson"
+      ]
+    },
+    {
+      "n": 8,
+      "student": "it's about Comparing fission and fusion",
+      "studentType": "correct",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Well done today. See you next time.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "exited": false,
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "lessonFlags": [],
+  "cost": 0,
+  "tutorCost": 0,
+  "tutorCalls": 0,
+  "mode": "mock",
+  "date": "2026-10-18"
+}

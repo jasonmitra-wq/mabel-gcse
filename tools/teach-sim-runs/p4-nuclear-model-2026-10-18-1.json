@@ -1,0 +1,282 @@
+{
+  "id": "p4-nuclear-model",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome! Imagine someone hands you a wrapped present and you can't open it. How might you figure out what's inside?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's plum pudding model, Thomson's model: a sphere of diffuse positive charge with electrons",
+      "studentType": "correct",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, that's the plum pudding model, with electrons (tiny negative particles) as the plums. The positive charge is spread out evenly, like the pudding. The atom is neutral overall, so what must the spread-out positive charge do to the negative electrons?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, electricity is the right area, because the electrons carry negative charge. Charge is what makes opposite things attract, like the north and south ends of two magnets. So what does the spread-out positive charge do to the negative electrons?",
+      "recap": null,
+      "basic": "Electric charge",
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's fine. Opposite charges attract, so the positive charge pulls on the negative electrons and holds them in the atom. Because the negative electrons balance the positive charge, the atom is neutral overall.\n\nSo in the plum pudding picture, what are the electrons compared to?",
+      "recap": null,
+      "basic": "Electric charge",
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "I don't have a favourite team, I'm afraid, but I'm happy to hear yours later! Back to Thomson: his model said the atom was a ball of spread-out positive charge with electrons dotted through it, like plums in a pudding. If you picture a pudding with plums scattered throughout, where in the atom would the electrons be found?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Here's the rest. Before electrons were found, atoms were thought to be tiny spheres that could not be divided. Thomson discovered the electron in 1897, a tiny, negatively charged particle. His model predicted that fired particles would pass straight through, with only tiny deflections, because the positive charge was too spread out. The atom was neutral overall. Then the alpha particle scattering experiment disproved this model.\n\nLook at the diagram: most particles pass straight through, a few are deflected through large angles, and very few bounce back. Rutherford's team fired positively charged particles at thin gold foil.\n\nIf the plum pudding model were right, what would you expect the fired particles to do?",
+      "recap": [
+        "Thomson pictured the atom as a ball of positive charge, spread out evenly.",
+        "The electrons were the plums, dotted through the positive pudding.",
+        "Opposite charges attract, so the positive charge holds the electrons in.",
+        "Negative electrons balance the positive charge, so the atom is neutral overall."
+      ],
+      "diagram": "p4-alpha-scattering",
+      "diagramCaption": "Most alpha particles pass straight through. A few are deflected through large angles. Very few bounce back.",
+      "flags": [
+        "over length (113 words)"
+      ]
+    },
+    {
+      "n": 6,
+      "student": "I think it's alpha particle scattering experiment, Rutherford's 1909 experiment: alpha particles fired at thin gold foil;",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Think of it like firing tiny bullets at a very thin sheet of foil. If the positive charge were spread evenly through the atom, why would you expect the alpha particles to go almost straight through?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "You're close: it is about electricity. The alpha particles are positive and the plum pudding charge is spread thinly, so there is nothing strong enough to push them off course. Rutherford's results showed instead a tiny, very dense centre of positive charge. If an alpha particle flew straight at that centre, what would happen to it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "That's fine. Picture the tiny centre as a solid, positive core, and the alpha particle is positive too. Like charges push each other away, so it gets repelled and bounces back. What do we call that tiny, dense centre of the atom?",
+      "recap": null,
+      "basic": "Electric charge",
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Ha, I'm just a tutor, no team for me! Back to the atom: Rutherford's evidence led to the nuclear model, with a tiny, dense, positive nucleus at the centre and electrons in mostly empty space around it. Why did most alpha particles go straight through the gold foil?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Here's the rest. In 1909, Geiger and Marsden fired alpha particles at extremely thin gold foil, and a screen flashed where they landed. A few were deflected through large angles, which showed the positive charge is packed into a small region at the centre. Very few bounced almost straight back, so the nucleus is tiny, dense and holds most of the mass. The plum pudding model was dropped and the nuclear model replaced it.\n\nLook at the diagram: the lithium atom has 3 protons and 4 neutrons in the nucleus. The number of protons is called the atomic number, and it decides which element an atom is. What is the atomic number of this lithium atom?",
+      "recap": [
+        "Rutherford fired positive alpha particles at very thin gold foil.",
+        "Plum pudding predicted they would pass through with only tiny deflections.",
+        "Most went straight through, a few deflected, very few bounced back.",
+        "So atoms have a tiny, dense, positive nucleus, with mostly empty space around it."
+      ],
+      "diagram": "p4-atom-structure",
+      "diagramCaption": "A lithium-7 atom: 3 protons and 4 neutrons in the nucleus, 3 electrons around it. Not to scale.",
+      "flags": [
+        "over length (116 words)"
+      ]
+    },
+    {
+      "n": 11,
+      "student": "I think it's atomic number (Z), The number of protons in the nucleus; determines which element",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "That's the definition, but I asked for the number itself. The atomic number is the count of protons, and the lithium atom has 3 protons and 4 neutrons. If a different atom had 6 protons, what would its atomic number be?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Magnets and electricity are close: protons are positive and electrons negative, and opposite charges attract. The answer was 6, since atomic number is the proton count. The mass number is the protons plus neutrons added together. Lithium has 3 protons and 4 neutrons, so what is its mass number?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "No problem, let's make it simpler. The nucleus holds two kinds of particle: protons and neutrons, and the mass number just counts both together, like adding apples and oranges to get the total fruit. Take a different atom with 6 protons and 6 neutrons in its nucleus. What is its mass number?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "I'm not telling, but the answer was 12: 6 protons plus 6 neutrons. A neutron has no charge at all, so it is neutral. What is the charge of a neutron?",
+      "recap": null,
+      "basic": "none",
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Here's the rest. An atom's radius is about 1 × 10⁻¹⁰ m, and the nucleus is less than 1/10 000 of that, so almost all of the atom is empty space. Protons are +1 with relative mass 1, neutrons are 0 with relative mass 1, and electrons are −1 with very small mass, outside the nucleus. Protons equal electrons in a neutral atom, so there's no overall charge, and neutrons = mass number − atomic number. Losing an outer electron makes a positive ion, like Li⁺. Isotopes have the same protons but different neutrons, like carbon-12 and carbon-14. Look at the diagram: absorbing radiation moves an electron to a higher energy level, emitting it moves it to a lower one. Next, Bohr said electrons orbit at set distances, and each distance is an energy level. If an electron emits radiation, does it move closer to or further from the nucleus?",
+      "recap": [
+        "Geiger and Marsden's gold foil experiment showed the nucleus is tiny, dense and positive.",
+        "Atomic number is the count of protons, and it decides the element.",
+        "Mass number is protons plus neutrons added together, so lithium's is 7.",
+        "Neutrons carry no charge; protons are positive and electrons are negative."
+      ],
+      "diagram": "p4-energy-levels",
+      "diagramCaption": "Absorbing radiation moves an electron to a higher energy level. Emitting radiation moves it to a lower one.",
+      "basic": "Mass",
+      "flags": [
+        "yes/no question",
+        "over length (150 words)",
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 16,
+      "student": "I think it's energy level, A fixed amount of energy an electron can have; each",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, energy level is right: a fixed amount of energy an electron can have, at a set distance from the nucleus. When an electron emits radiation, it drops to a lower energy level, closer to the nucleus. Where would an electron be if it absorbed radiation?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Not quite, though electricity is close. Absorbing radiation is like climbing a step: the electron gains energy and moves up to a higher energy level, further from the nucleus. Think of a ladder with the nucleus at the bottom. Which way does an electron move if it absorbs radiation?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "When an electron absorbs radiation, it moves up to a higher energy level, further from the nucleus. That brings us to the end of this lesson.",
+      "recap": [
+        "An energy level is a fixed amount of energy an electron can have.",
+        "Each energy level sits at a set distance from the nucleus.",
+        "Absorbing radiation lifts an electron up to a higher level, further out.",
+        "Emitting radiation drops it to a lower level, closer to the nucleus."
+      ],
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! When you come back, a good place to start is the energy levels idea, with an electron moving up when it absorbs radiation and down when it emits it. Take care, and see you next time.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "exited": false,
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "lessonFlags": [],
+  "cost": 0.5060699999999999,
+  "tutorCost": 0.5060699999999999,
+  "tutorCalls": 84,
+  "mode": "run",
+  "date": "2026-10-18"
+}

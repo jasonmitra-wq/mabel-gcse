@@ -48,8 +48,14 @@ EDIT RULES for lesson content:
   required content and add no new term, equation, number or fact to
   learn. Do not restore examples already cut.
 - tools/plain-english-rules.md; speak to "you"; never name the student;
-  no sentence over 20 words; reading grade 9 or below; specification
-  terms exactly; "potential difference", never "voltage".
+  no sentence over 20 words; reading grade 9 or below; "potential
+  difference", never "voltage".
+- Specification terms are taught and used exactly, but each is
+  introduced only after an everyday explanation, and is not repeated
+  where plain words do the job.
+- Lessons are for a first-time learner. Every lesson has a basics field.
+  No term is used before it is explained, in the lesson or in an earlier
+  lesson of the same topic.
 - No exam board name, code or paper number. Never label tiers or use
   the specification's own numbering (topic, section or required
   practical numbers) in lesson text.
@@ -110,6 +116,11 @@ f. Independent audit: invoke the lesson-auditor subagent with BASE
    edit it). Fix every factual error, contradiction, wrong term and rule
    breach once, logging old and new text. Rejections need an R code and
    go to docs/ESCALATIONS.md.
+f2. Read each lesson as a beginner: list every term used before it is
+   explained; fix in basics or content. Draw the diagrams the lesson
+   needs (as in the first-time-learner brief,
+   docs/briefs/2026-10-18-first-time-learner.md step 4) before the
+   topic's AI lessons go live.
 g. node tools/check-rewrite.js BASE: every failure must match a FIX-LOG
    line, otherwise undo it.
 h. STATE row: S1–S3 "✓ <hash>"; S6 "✓ <hash> (R<last>; audited <file>)"

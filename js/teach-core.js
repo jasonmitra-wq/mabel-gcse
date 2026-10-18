@@ -550,7 +550,7 @@ function create(env) {
     const p = _points[idx];
     const def = (_data.diagrams || []).find(d => d.id === id);
     const cap = p.diagramCaption || (def && def.caption) || '';
-    return `A diagram appears under your message now${cap ? `: "${cap}"` : ''}. Refer to it in words in this message ("Look at the diagram: …") and teach from what it shows.`;
+    return `A diagram appears under your message now${cap ? `: "${cap}"` : ''}. Refer to it in words in this message ("Look at the diagram: …") and teach from what it shows. Describe only what that caption says it shows: never describe a symbol, label, part or shape the caption does not name.`;
   }
 
   // The last tutor message taught a basic idea, not the key point (at most two in a row count).

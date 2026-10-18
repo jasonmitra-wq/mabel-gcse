@@ -151,7 +151,7 @@ function judgeBody({ lessonTitle, subject, lessonFields, transcript, extra, refe
     'Return exactly this JSON shape:',
     JUDGE_SCHEMA,
   ].join('\n');
-  return { model: JUDGE_MODEL, max_tokens: 12000, system, messages: [{ role: 'user', content: user }] };
+  return { model: JUDGE_MODEL, max_tokens: 24000, system, messages: [{ role: 'user', content: user }] };
 }
 
 function parseJudge(text) {

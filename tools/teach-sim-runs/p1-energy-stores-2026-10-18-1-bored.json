@@ -1,0 +1,624 @@
+{
+  "id": "p1-energy-stores",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome, glad you're here! When you've been running around all day and then get really hungry, what do you think is going on in your body?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "idk like... my body's tired?",
+      "studentType": "idk",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Tired is a good clue: your body ran low on something. That something is energy, what makes things move, heat up or light up, and food is where your body gets more. What kind of thing do you think a phone needs when it runs low?",
+      "recap": null,
+      "basic": "Energy",
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "a phone needs charging?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Charging is right: a phone needs charging because its battery has run low on energy. What's missing is the name for where the energy sits. Energy is held in something, called an energy store, and a battery is one, just like food in your body. What kind of store do you think a moving football has?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "like a moving one?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, a moving football does have a store, and \"moving\" is the right clue. That store is called the kinetic energy store: any moving object has energy in it, like a kicked ball or a running person. What store do you think the energy in a car driving along the road is in?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "the kinetic energy store? cos its moving",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, kinetic energy store is right, because the car is moving. Now think of a book sitting on a high shelf: it isn't moving, but it holds energy because it's raised above the ground. That's called the gravitational potential energy store. What would happen to the energy in that store if the book were lifted higher?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "it would get less energy?",
+      "studentType": "wrong",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Would you like me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "yeah go on",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Not quite: lifting the book higher gives its gravitational potential store more energy, not less. Look at the diagram: a torch's battery holds energy in its chemical store, and that ends up in the thermal store of the surroundings.\n\nThe rest of the eight stores: elastic potential is a stretched or squashed object, like a spring. Thermal is in every object, with more at a higher temperature. Chemical is food, fuels and batteries. Nuclear is inside atoms' nuclei. Electrostatic is between charged objects, like static on a balloon. Magnetic is between magnets.\n\nEnergy moves between stores by pathways, and one is mechanical, meaning pushing, pulling or kicking. When you kick a football, what is doing the pushing?",
+      "recap": [
+        "Energy is what makes things move, heat up or light up.",
+        "An energy store is where energy is held, like a battery or food.",
+        "Moving objects have energy in their kinetic energy store.",
+        "A raised object holds energy in its gravitational potential energy store."
+      ],
+      "diagram": "p1-torch-energy",
+      "diagramCaption": "A torch: energy goes from the battery's chemical store to the thermal store of the surroundings.",
+      "flags": [
+        "over length (117 words)"
+      ]
+    },
+    {
+      "n": 7,
+      "student": "this is long bro",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Fair enough, I'll keep it short. A mechanical transfer just means energy moved by a push or a pull, like your foot kicking a football. If you push a heavy door open, what is doing the pushing?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "my arm?",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes, your arm is right, it's the thing pushing the door. When you switch on a torch, what is the energy coming from?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "idk like where does it come from",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "In a torch, the energy comes from the battery, where it's kept in the chemical store. A current flowing round the circuit carries it to the bulb. What does the bulb do with that energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "idk what happens to it",
+      "studentType": "idk",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "No worries, that's a tricky one. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "yeah tell me",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "The bulb transfers the energy by radiation, as light. Energy always moves by a pathway: mechanically (forces), electrically (a current), by heating, or by radiation. Next, the big rule: energy can't be created or destroyed, so the total always stays the same. If you push a book off a table and it falls, where does its gravitational potential energy go?",
+      "recap": [
+        "Mechanical transfer means energy moved by a push or pull, like your arm pushing a door.",
+        "A torch battery keeps its energy in the chemical store.",
+        "A current carries that energy round the circuit to the bulb.",
+        "Lifting a book higher gives its gravitational potential store more energy, not less."
+      ],
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "whats radiation",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Radiation is energy travelling as light, like the glow from a torch bulb. When a book is sitting high on a table, which store holds its energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "the kinetic one?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not quite: it's the gravitational potential energy store, since the book is high up. In a closed system, what happens to the total energy?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "whats closed system",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "A closed system is like a sealed box: no energy goes in or out, so the total stays exactly the same. If energy leaked out of the box, what would happen to the total inside?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "it would go down?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Yes, it would go down, because energy leaked out of the box. When a laptop gets warm while you use it, where has some of its energy gone?",
+      "recap": [
+        "Energy can't be created or destroyed, so the total always stays the same.",
+        "A closed system is like a sealed box: no energy enters or leaves.",
+        "A book high on a table stores gravitational potential energy, not kinetic.",
+        "Radiation means energy travelling as light, like a torch bulb's glow."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "into thermal energy store?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, thermal energy store is right: the warmth is energy moving there. But it goes into the surroundings, the air around the laptop. Why is that energy less useful to you once it has spread into the air?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "cos its spread out everywhere?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Energy ending up in a store that does not help what a device is meant to do is called wasted energy. A kettle's job is to heat water, so what is the wasted energy there?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "like the heat that goes into the air instead of the water?",
+      "studentType": "wrong",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Yes, heat in the air instead of the water is the wasted energy. 15 J leaves as useful light and 85 J as waste heat, so which of those two arrows is wider?",
+      "recap": [
+        "When a device warms up, some energy moves into the thermal store of the air around it.",
+        "That energy has spread out everywhere, so it's too scattered to be useful.",
+        "Wasted energy is energy that ends up somewhere that doesn't help the device's job.",
+        "In a kettle, heat escaping into the air instead of the water is wasted energy."
+      ],
+      "diagram": "p1-sankey-lamp",
+      "diagramCaption": "A lamp: 100 J in, 15 J out usefully by light, 85 J wasted by heating.",
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "the heat one is wider",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Yes, the heat arrow is wider than the light arrow. Efficiency is useful output ÷ total input. For the lamp, the useful output is 15 J and the total input is 100 J, so what is 15 ÷ 100?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "whats efficiency",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Efficiency tells you how much of the energy put in comes out as the useful part. The lamp's useful output is 15 J and its input is 100 J, so what is 15 ÷ 100?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "um like 0.15?",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Yes, 0.15 is right: that's the lamp's efficiency. We've reached the end. You answered questions on dissipation and on Sankey diagrams and efficiency, and some on the stores, transfers and conservation of energy. Thanks for sticking with it.",
+      "recap": [
+        "A Sankey diagram shows energy splitting into useful and wasted arrows.",
+        "The wider the arrow, the more energy goes that way.",
+        "Efficiency is useful output divided by total input.",
+        "The lamp gives 15 ÷ 100 = 0.15, so most energy is wasted."
+      ],
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! Today's work on energy stores and transfers will make the rest of physics easier, and you can come back to it any time. Take care, and good luck with your GCSEs!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "coreOpts": {},
+  "firstTime": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is long bro",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When you've been running around all day and then get really hungry, what do you think is going on in your body?",
+        "note": "Everyday warm-up asked before any teaching."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What kind of thing do you think a phone needs when it runs low?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What kind of store do you think a moving football has?",
+        "note": "Asks her to name the kinetic store before it has been taught."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What store do you think the energy in a car driving along the road is in?",
+        "note": "The answer was stated in the line just before."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What would happen to the energy in that store if the book were lifted higher?",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Would you like me to just tell you the rest of this one?",
+        "note": "Offers the check-in without first correcting the wrong 'less energy' answer."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": true,
+        "quote": "Look at the diagram: a torch's battery holds energy in its chemical store, and that ends up in the thermal store of the surroundings.",
+        "note": "About 130 words. Shows the torch transfer diagram before chemical, thermal or transfers are explained. Crams 6 stores plus pathways into one turn."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you push a heavy door open, what is doing the pushing?",
+        "note": "Trivial question. It does not test the idea of mechanical transfer."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When you switch on a torch, what is the energy coming from?",
+        "note": "Jumps to the electrical case without teaching it."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What does the bulb do with that energy?",
+        "note": "Radiation is not taught yet."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": true,
+        "confusing": true,
+        "quote": "If you push a book off a table and it falls, where does its gravitational potential energy go?",
+        "note": "Uses 'radiation' unexplained. Rushes conservation into the same turn. Asks where the GPE goes (kinetic, then thermal) when neither path has been taught."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "When a book is sitting high on a table, which store holds its energy?",
+        "note": "Drops its own T11 question. Does not test radiation. The answer was named in T11."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In a closed system, what happens to the total energy?",
+        "note": "'Closed system' is used in a question before it is explained."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If energy leaked out of the box, what would happen to the total inside?",
+        "note": ""
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When a laptop gets warm while you use it, where has some of its energy gone?",
+        "note": "Dissipation is not taught yet."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why is that energy less useful to you once it has spread into the air?",
+        "note": "Asks the 'less useful' reason before teaching it."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Energy ending up in a store that does not help what a device is meant to do is called wasted energy.",
+        "note": "Does not confirm her correct 'spread out' answer."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "15 J leaves as useful light and 85 J as waste heat, so which of those two arrows is wider?",
+        "note": "The lamp, J, Sankey arrows and the rule 'width = amount' are never introduced."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Efficiency is useful output ÷ total input.",
+        "note": "Efficiency is given only as a formula, with no meaning in everyday words."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Efficiency tells you how much of the energy put in comes out as the useful part.",
+        "note": ""
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You answered questions on dissipation and on Sankey diagrams and efficiency, and some on the stores, transfers and conservation of energy.",
+        "note": "Overstates what she worked through. Most of the stores and transfers were only told to her."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Take care, and good luck with your GCSEs!",
+        "note": ""
+      }
+    ],
+    "tone_vs_reference": null,
+    "flow_faults": [
+      {
+        "type": "answer_in_question",
+        "turn": "T3",
+        "quote": "That store is called the kinetic energy store: any moving object has energy in it, like a kicked ball or a running person. What store do you think the energy in a car driving along the road is in?",
+        "note": "She can copy 'kinetic energy store' from the line before the question."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T6",
+        "quote": "Nuclear is inside atoms' nuclei.",
+        "note": "'Nuclei' is never explained."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T6",
+        "quote": "Electrostatic is between charged objects, like static on a balloon.",
+        "note": "'Charged' is never explained."
+      },
+      {
+        "type": "tell_me_skipped_content",
+        "turn": "T11",
+        "quote": "Energy always moves by a pathway: mechanically (forces), electrically (a current), by heating, or by radiation.",
+        "note": "Leaves out heating as hotter-to-cooler, and leaves out infrared and sound for radiation (keyPoints[1])."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T11",
+        "quote": "The bulb transfers the energy by radiation, as light.",
+        "note": "She has to ask 'whats radiation'."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T12",
+        "quote": "When a book is sitting high on a table, which store holds its energy?",
+        "note": "T11 had just said 'its gravitational potential energy'."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T13",
+        "quote": "In a closed system, what happens to the total energy?",
+        "note": "She has to ask 'whats closed system'."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T17",
+        "quote": "Energy ending up in a store that does not help what a device is meant to do is called wasted energy.",
+        "note": "'cos its spread out everywhere?' was correct but is never confirmed."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T18",
+        "quote": "15 J leaves as useful light and 85 J as waste heat, so which of those two arrows is wider?",
+        "note": "Joules (J) and Sankey arrows are not introduced."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T19",
+        "quote": "Efficiency is useful output ÷ total input.",
+        "note": "She has to ask 'whats efficiency'."
+      },
+      {
+        "type": "closing_claims_untaught_content",
+        "turn": "T21",
+        "quote": "You answered questions on dissipation and on Sankey diagrams and efficiency, and some on the stores, transfers and conservation of energy.",
+        "note": "Most stores and pathways were told to her, not answered. Sankey reading was barely covered."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: tell-the-rest length",
+        "change": "When she accepts the check-in, tell only the current key point and keep it under 60 words. Split the remaining stores across 2 short turns instead of one dump. Do not add transfer content in the same turn.",
+        "quote": "this is long bro"
+      },
+      {
+        "target": "keyPoints[1].diagramCaption (shared-code: diagram placement)",
+        "change": "Show the torch diagram only when keyPoints[1] (transfers) is taught, not inside the keyPoints[0] telling.",
+        "quote": "Look at the diagram: a torch's battery holds energy in its chemical store, and that ends up in the thermal store of the surroundings."
+      },
+      {
+        "target": "teach-core: define before asking",
+        "change": "Before any question that uses a term, explain the term in everyday words first. This applies to closed system, radiation, efficiency, J and Sankey arrows.",
+        "quote": "In a closed system, what happens to the total energy?"
+      },
+      {
+        "target": "keyPoints[4].content",
+        "change": "Open with a one-line set-up before asking about arrow width: 'A lamp gets 100 joules (J). The diagram's arrows are drawn wider for more energy.' Then ask. Also teach that efficiency is never more than 1.",
+        "quote": "15 J leaves as useful light and 85 J as waste heat, so which of those two arrows is wider?"
+      },
+      {
+        "target": "teach-core: respond to answer before check-in/next question",
+        "change": "After a wrong answer, give the one-line correction before offering the check-in. After a correct answer, open by confirming it.",
+        "quote": "Would you like me to just tell you the rest of this one?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "question does not match what was taught: T2, T8, T9, T11, T12, T13, T15, T16, T18",
+      "flow faults: answer_in_question T3, unexplained_term T6, unexplained_term T6, tell_me_skipped_content T11, unexplained_term T11, answer_in_question T12, unexplained_term T13, correct_answer_not_acknowledged T17, unexplained_term T18, unexplained_term T19, closing_claims_untaught_content T21"
+    ]
+  },
+  "cost": 0.721036,
+  "tutorCost": 0.5058279999999999,
+  "tutorCalls": 130,
+  "mode": "run",
+  "date": "2026-10-18"
+}

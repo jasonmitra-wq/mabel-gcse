@@ -56,3 +56,4 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-10-17 | b3-defences | lesson | FAIL | 7 | 7 | S11 | tools/site-test-runs/2026-10-17/b3-defences-9 | $0.4401
 - 2026-10-18 | p3-pressure | lesson | FAIL | 3 | 5 | S6 | tools/site-test-runs/2026-10-18/p3-pressure | $0.3236
 - 2026-10-18 | p3-pressure | lesson | FAIL | 5 | 5 | false | tools/site-test-runs/2026-10-18/p3-pressure-2 | $0.3817
+- 2026-10-18 | p2-components | lesson | FAIL | 7 | 6 | T8 | tools/site-test-runs/2026-10-18/p2-components | $0.4538

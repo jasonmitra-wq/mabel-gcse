@@ -1,0 +1,44 @@
+{
+  "lesson": "p3-pressure",
+  "source_file": "lessons/physics/p3-pressure.json",
+  "lesson_md5": "81f218d32f4b35496df671f722b8c09d",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T09:17:38.770Z",
+  "specRefs_sent": [
+    "4.3.3.1",
+    "4.3.3.2",
+    "4.3.3.3"
+  ],
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P3-TRIAGE.md",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 11352,
+    "output_tokens": 2323
+  },
+  "cost_usd": 0.091868,
+  "status": "OK",
+  "result": {
+    "lesson": "p3-pressure",
+    "missing_spec_content": [],
+    "above_gcse": [],
+    "factual_errors": [
+      {
+        "field": "keyPoints[0].writeBullets[2]",
+        "text": "Each collision pushes with a force. Billions of collisions per second make a pressure you can measure",
+        "correction": "The number of collisions per second is vastly larger than billions. At room temperature and atmospheric pressure there are roughly 10^23 collisions per square centimetre of wall every second. Say 'huge numbers of collisions every second', as keyPoints[0].content already does.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "intro",
+        "text": "It is simply billions of tiny molecules crashing into a container's walls, again and again.",
+        "correction": "Even a small container of gas holds far more than billions of molecules. A litre of air at room conditions holds about 2.5 × 10^22 molecules. Say 'huge numbers of tiny molecules'.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
+    "not_checked": []
+  }
+}

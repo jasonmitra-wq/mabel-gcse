@@ -1,115 +1,36 @@
 {
   "lesson": "p3-changes-of-state",
   "source_file": "lessons/physics/p3-changes-of-state.json",
-  "lesson_md5": "26d8c5ef255b2570124e8027914c0dcb",
+  "lesson_md5": "4995a7c48e79fd8ee9f63ea1c573c41e",
   "model": "claude-opus-5-5",
-  "date": "2026-10-18T09:06:30.708Z",
+  "date": "2026-10-18T09:17:17.854Z",
   "specRefs_sent": [
     "4.3.1.2",
     "4.3.2.3"
   ],
-  "blocking_only": false,
-  "decided_file": null,
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P3-TRIAGE.md",
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 8357,
-    "output_tokens": 4277
+    "input_tokens": 12330,
+    "output_tokens": 2273
   },
-  "cost_usd": 0.118968,
+  "cost_usd": 0.09478,
   "status": "OK",
   "result": {
     "lesson": "p3-changes-of-state",
     "missing_spec_content": [
       {
-        "specRef": "4.3.1.2",
-        "spec_text": "Students should be able to describe how, when substances change state (melt, freeze, boil, evaporate, condense or sublimate), mass is conserved.",
-        "why": "The lesson never says that mass is conserved during a change of state."
-      },
-      {
-        "specRef": "4.3.1.2",
-        "spec_text": "Changes of state are physical changes which differ from chemical changes because the material recovers its original properties if the change is reversed.",
-        "why": "The lesson never says that changes of state are physical changes. It does not explain how they differ from chemical changes, or that the material gets its original properties back when the change is reversed."
-      },
-      {
         "specRef": "4.3.2.3",
-        "spec_text": "When a change of state occurs, the energy supplied changes the energy stored (internal energy) but not the temperature.",
-        "why": "The lesson explains this using particle 'potential energy' only. It never links latent heat to the energy stored, or to internal energy as the specification requires."
-      },
-      {
-        "specRef": "4.3.2.3",
-        "spec_text": "AT 5 ... Perform an experiment to measure the latent heat of fusion of water.",
-        "why": "There is no description of an experiment to measure the specific latent heat of fusion of water."
+        "spec_text": "Students should be able to distinguish between specific heat capacity and specific latent heat.",
+        "why": "No key point content explains the difference. Specific heat capacity appears only in passing: keyPoints[2].memTip \"E = mL for changes of state. Q = mcΔT for temperature changes.\", a checkpoint feedback line (checkpoints[1].wrongFeedback \"Raising the temperature by 1 °C is specific heat capacity.\") and revisionCardBullets \"Heating curve: slopes = temperature change (Q = mcΔT). Flats = change of state (E = mL)\". The lesson never states side by side that specific heat capacity is the energy to raise 1 kg by 1 °C (temperature changes, no change of state), while specific latent heat is the energy to change the state of 1 kg (no temperature change)."
       }
     ],
-    "above_gcse": [
-      {
-        "field": "keyPoints[3].content",
-        "text": "Freeze-drying food: food is frozen. Then it is put somewhere with low pressure, so the ice sublimates straight to vapour.",
-        "why": "Freeze-drying and the effect of low pressure on sublimation are not in the specification. This could confuse the student."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "Refrigerators: a working fluid (refrigerant) is pumped around a circuit. Inside the fridge it evaporates.",
-        "why": "The refrigeration cycle is not in these specification sections. The tutor_note also calls it \"a classic 6-mark question\", which these sections do not support."
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "Heat ice from -10°C to 0°C: Q = mcΔT = 1 × 2100 × 10 = 21,000 J",
-        "why": "This four-step combined calculation brings in a specific heat capacity for ice. Neither the calculation nor that value is required by these specification sections."
-      },
-      {
-        "field": "keyPoints[2].keyTerms[1].term",
-        "text": "Exothermic",
-        "why": "Exothermic and endothermic are chemistry terms. The physics specification does not use them here, and they could blur the spec's point that changes of state are physical changes, not chemical ones."
-      },
-      {
-        "field": "keyPoints[2].keyTerms[2].term",
-        "text": "Endothermic",
-        "why": "Exothermic and endothermic are chemistry terms. The physics specification does not use them here, and they could blur the spec's point that changes of state are physical changes, not chemical ones."
-      }
-    ],
-    "factual_errors": [
-      {
-        "field": "keyPoints[3].memTip",
-        "text": "Steam burns = DOUBLE the energy. You get L_v as it condenses, THEN Q = mcΔT as it cools.",
-        "correction": "It is not double. For 1 kg cooling from 100°C to about 37°C, cooling gives about 265 kJ, while condensing gives about 2260 kJ. That makes steam roughly 9 to 10 times the energy of the same mass of boiling water.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "Outside the fridge it condenses. It releases that latent heat to the surroundings. This is why the back of a fridge is warm.",
-        "correction": "The condenser also gives out the energy supplied by the compressor. The warmth at the back is not only the latent heat taken in from the fridge contents.",
-        "basis": "own knowledge"
-      }
-    ],
-    "wrong_terms": [
-      {
-        "field": "examTip",
-        "text": "Latent heat of FUSION is for melting or freezing. Latent heat of VAPORISATION is for boiling or condensing.",
-        "spec_term": "Specific latent heat of fusion / Specific latent heat of vaporisation"
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "This is liquid ↔ gas",
-        "spec_term": "change of state from liquid to vapour"
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "The particles gain <strong>potential energy</strong> (not kinetic energy)",
-        "spec_term": "the energy supplied changes the energy stored (internal energy)"
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "You can see this on a <strong>heating curve</strong>.",
-        "spec_term": "heating and cooling graphs"
-      }
-    ],
+    "above_gcse": [],
+    "factual_errors": [],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
-    "not_checked": [
-      "The lesson writes the specific heat capacity equation as \"Q = mcΔT\" (keyPoints[2].content). Section 4.3.2.2 was not supplied, so I could not check the specification's own symbols for this equation (from own knowledge, AQA uses ΔE = m c Δθ).",
-      "keyPoints[1].tutor_note says \"the value of L for water is given in exams\". This claim about exam papers cannot be checked against the specification text.",
-      "No diagrams were present (all \"diagram\": null). Nothing visual was checked."
-    ]
+    "not_checked": []
   }
 }

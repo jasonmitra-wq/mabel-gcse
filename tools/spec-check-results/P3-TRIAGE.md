@@ -83,3 +83,15 @@ field and text are one line.
 - p3-pressure | R1a wron1 ("squashed") | ACCEPT | "compressed" everywhere.
 - p3-pressure | R1b wron1 (named "Boyle's Law") | ACCEPT | name cut everywhere; the lesson says "pV = constant" (heading, writeBullets, key term, table, tutor_note, introTips, examTip, examTips, commonMistakes, checkpoint feedback, video labels).
 - p3-pressure | R1b wron2 (units: Pa, m³) | ACCEPT | "pressure in pascals (Pa), volume in metres cubed (m³)"; kPa or cm³ only if both sides use the same unit.
+
+## R2
+
+--blocking-only --decided P3-TRIAGE.md on all four lessons (all changed in R1). Results in P3-R2/. p3-density: no findings.
+
+- p3-particle-model | R2 fact0 (limitation "the model shows no forces between particles" contradicts the lesson's own model) | ACCEPT | "does not show the size of the forces between particles".
+- p3-particle-model | R2 fact1 (same, writeBullets[4]) | ACCEPT | same wording.
+- p3-particle-model | R2 fact2 (same, revisionCardBullets[11]) | ACCEPT | same wording.
+- p3-particle-model | R2 fact3 (key term "Incompressible": volume "stays constant") | ACCEPT | "Virtually cannot be compressed — volume hardly changes under pressure".
+- p3-changes-of-state | R2 miss0 (distinguish specific heat capacity and specific latent heat) | ACCEPT | keyPoints[1]: side-by-side lines and a write bullet.
+- p3-pressure | R2 fact0 ("Billions of collisions per second") | ACCEPT | "Huge numbers of collisions every second".
+- p3-pressure | R2 fact1 (intro "billions of tiny molecules") | ACCEPT | "huge numbers of tiny molecules".

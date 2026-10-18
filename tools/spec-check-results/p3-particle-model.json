@@ -1,97 +1,59 @@
 {
   "lesson": "p3-particle-model",
   "source_file": "lessons/physics/p3-particle-model.json",
-  "lesson_md5": "9b02490e3066b0c7ac0bd4cc85adc6d9",
+  "lesson_md5": "14535fcf17c392936fa0df87909700fb",
   "model": "claude-opus-5-5",
-  "date": "2026-10-18T09:04:55.928Z",
+  "date": "2026-10-18T09:16:38.172Z",
   "specRefs_sent": [
     "4.3.1.1",
     "4.3.1.2",
     "4.3.2.1"
   ],
-  "blocking_only": false,
-  "decided_file": null,
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P3-TRIAGE.md",
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7861,
-    "output_tokens": 5374
+    "input_tokens": 12753,
+    "output_tokens": 2420
   },
-  "cost_usd": 0.138924,
+  "cost_usd": 0.099412,
   "status": "OK",
   "result": {
     "lesson": "p3-particle-model",
-    "missing_spec_content": [
-      {
-        "specRef": "4.3.1.1",
-        "spec_text": "The density of a material is defined by the equation: density = mass/volume ρ = m/V density, ρ, in kilograms per metre cubed, kg/m^3 mass, m, in kilograms, kg volume, V, in metres cubed, m^3",
-        "why": "The lesson never gives the density equation, its symbols or its units. Density appears only as qualitative words (\"High\", \"Very low\") in the table and keyPoints[3]. The spec also says students should \"recall and apply this equation to changes where mass is conserved\"."
-      },
-      {
-        "specRef": "4.3.1.1",
-        "spec_text": "Required practical activity 5: use appropriate apparatus to make and record the measurements needed to determine the densities of regular and irregular solid objects and liquids. Volume should be determined from the dimensions of regularly shaped objects, and by a displacement technique for irregularly shaped objects.",
-        "why": "The required practical is not covered. The lesson has nothing on measuring mass and volume, displacement, or using a ruler, micrometer or Vernier callipers."
-      },
-      {
-        "specRef": "4.3.1.2",
-        "spec_text": "Students should be able to describe how, when substances change state (melt, freeze, boil, evaporate, condense or sublimate), mass is conserved.",
-        "why": "The lesson says \"The particles themselves are NOT created or destroyed\" (keyPoints[0].content). It never states that mass is conserved during a change of state, and never links particle conservation to conservation of mass."
-      },
-      {
-        "specRef": "4.3.1.2",
-        "spec_text": "Changes of state are physical changes which differ from chemical changes because the material recovers its original properties if the change is reversed.",
-        "why": "The lesson says \"All changes of state can be reversed. It is the same substance, just rearranged\" (keyPoints[2].content). It never calls changes of state physical changes, never contrasts them with chemical changes, and never says the material recovers its original properties."
-      }
-    ],
+    "missing_spec_content": [],
     "above_gcse": [],
     "factual_errors": [
       {
-        "field": "keyPoints[2].content",
-        "text": "<strong>Freezing</strong> (liquid → solid): particles lose energy and slow down.",
-        "correction": "During freezing the temperature stays constant, so the average kinetic energy of the particles does not change and they do not slow down. The energy lost is potential energy, as the particles move closer together into fixed positions. As written, this contradicts the lesson's own KEY POINT.",
+        "field": "keyPoints[3].content",
+        "text": "The model shows no forces between particles",
+        "correction": "The lesson's own particle model includes forces between particles. keyPoints[0] says \"There are strong forces of attraction between particles\" in a solid, and keyPoints[1] and [2] explain internal energy and changes of state as the forces of attraction being overcome. Calling 'no forces' a limitation contradicts the model the lesson teaches. A valid limitation is that the simple model shows particles as small solid spheres and does not show the size or nature of the forces. It should not say the model shows no forces.",
         "basis": "own knowledge"
       },
       {
-        "field": "keyPoints[2].content",
-        "text": "<strong>Condensation</strong> (gas → liquid): particles lose energy and slow down.",
-        "correction": "During the condensation itself the temperature is constant, so the particles do not slow down. They lose potential energy as the forces of attraction pull them back together. Cooling of the gas before it condenses does slow the particles, but that is not part of the change of state.",
+        "field": "keyPoints[3].writeBullets[4]",
+        "text": "Limitation — the model shows no forces between particles",
+        "correction": "Same error as in keyPoints[3].content. The particle model used throughout the lesson includes forces of attraction between particles, and it uses them to explain potential energy and changes of state.",
         "basis": "own knowledge"
       },
       {
-        "field": "tables[0].rows[3]",
-        "text": "\"Kinetic energy\", \"Low\", \"Medium\", \"High\"",
-        "correction": "Average particle kinetic energy depends on temperature, not on state. At the melting point, solid and liquid particles have the same average kinetic energy. The difference between states is in potential energy (particle separation and forces). This row contradicts keyPoints[1] and commonMistakes[4] (\"State change = potential energy change\").",
+        "field": "revisionCardBullets[11]",
+        "text": "Particle model limitations: particles shown as identical solid spheres, with no forces between them",
+        "correction": "Remove 'with no forces between them'. The lesson's particle model includes forces of attraction, and it relies on them for internal energy (potential energy) and changes of state.",
         "basis": "own knowledge"
       },
       {
-        "field": "tables[0].rows[7]",
-        "text": "\"High (slightly less than solid)\"",
-        "correction": "This is usually true but not always. Liquid water is denser than ice, which is why ice floats. The lesson presents it as a universal rule with no exception.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "KEY POINT: temperature stays constant during any change of state.",
-        "correction": "This holds for a pure substance melting or boiling at its fixed melting or boiling point. Evaporation, which the lesson itself says happens \"at ANY temperature\", happens across a range of temperatures and cools the remaining liquid. Mixtures change state over a range of temperatures.",
+        "field": "keyTerms (keyPoints[0]) 'Incompressible'.def",
+        "text": "Cannot be compressed — volume stays constant under pressure",
+        "correction": "Solids and liquids are virtually incompressible, not totally incompressible. Their volume changes only very slightly under pressure. The definition contradicts the lesson's own wording, \"virtually incompressible\".",
         "basis": "own knowledge"
       }
     ],
-    "wrong_terms": [
-      {
-        "field": "keyPoints[1].content",
-        "text": "The <strong>kinetic theory model</strong> says:",
-        "spec_term": "particle model"
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "A substance's <strong>internal energy</strong> is the total kinetic and potential energy of all its particles.",
-        "spec_term": "system (\"the total kinetic energy and potential energy of all the particles (atoms and molecules) that make up a system\")"
-      }
-    ],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "Diagram \"p3-states-particles\" (keyPoints[0]): could not see it. Could not check that it correctly models solids, liquids and gases as the spec requires (\"recognise/draw simple diagrams to model the difference between solids, liquids and gases\").",
-      "Diagram \"p3-state-changes\" (keyPoints[2]): could not see it. Could not check the names of the changes of state or the stated direction of energy flow."
+      "Diagram 'p3-states-particles' (keyPoints[0].diagram): I cannot see it. I could not check whether it meets spec 4.3.1.1 \"Students should be able to recognise/draw simple diagrams to model the difference between solids, liquids and gases\".",
+      "Diagram 'p3-state-changes' (keyPoints[2].diagram): I cannot see it. I could not check whether the change-of-state names and energy-flow directions are correct."
     ]
   }
 }

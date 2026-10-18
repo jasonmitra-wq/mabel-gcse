@@ -1,0 +1,36 @@
+{
+  "lesson": "p3-changes-of-state",
+  "source_file": "lessons/physics/p3-changes-of-state.json",
+  "lesson_md5": "4995a7c48e79fd8ee9f63ea1c573c41e",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T09:17:17.854Z",
+  "specRefs_sent": [
+    "4.3.1.2",
+    "4.3.2.3"
+  ],
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P3-TRIAGE.md",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 12330,
+    "output_tokens": 2273
+  },
+  "cost_usd": 0.09478,
+  "status": "OK",
+  "result": {
+    "lesson": "p3-changes-of-state",
+    "missing_spec_content": [
+      {
+        "specRef": "4.3.2.3",
+        "spec_text": "Students should be able to distinguish between specific heat capacity and specific latent heat.",
+        "why": "No key point content explains the difference. Specific heat capacity appears only in passing: keyPoints[2].memTip \"E = mL for changes of state. Q = mcΔT for temperature changes.\", a checkpoint feedback line (checkpoints[1].wrongFeedback \"Raising the temperature by 1 °C is specific heat capacity.\") and revisionCardBullets \"Heating curve: slopes = temperature change (Q = mcΔT). Flats = change of state (E = mL)\". The lesson never states side by side that specific heat capacity is the energy to raise 1 kg by 1 °C (temperature changes, no change of state), while specific latent heat is the energy to change the state of 1 kg (no temperature change)."
+      }
+    ],
+    "above_gcse": [],
+    "factual_errors": [],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
+    "not_checked": []
+  }
+}

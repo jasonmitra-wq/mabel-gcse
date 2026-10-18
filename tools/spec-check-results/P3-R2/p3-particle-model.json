@@ -1,0 +1,59 @@
+{
+  "lesson": "p3-particle-model",
+  "source_file": "lessons/physics/p3-particle-model.json",
+  "lesson_md5": "14535fcf17c392936fa0df87909700fb",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T09:16:38.172Z",
+  "specRefs_sent": [
+    "4.3.1.1",
+    "4.3.1.2",
+    "4.3.2.1"
+  ],
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P3-TRIAGE.md",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 12753,
+    "output_tokens": 2420
+  },
+  "cost_usd": 0.099412,
+  "status": "OK",
+  "result": {
+    "lesson": "p3-particle-model",
+    "missing_spec_content": [],
+    "above_gcse": [],
+    "factual_errors": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "The model shows no forces between particles",
+        "correction": "The lesson's own particle model includes forces between particles. keyPoints[0] says \"There are strong forces of attraction between particles\" in a solid, and keyPoints[1] and [2] explain internal energy and changes of state as the forces of attraction being overcome. Calling 'no forces' a limitation contradicts the model the lesson teaches. A valid limitation is that the simple model shows particles as small solid spheres and does not show the size or nature of the forces. It should not say the model shows no forces.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].writeBullets[4]",
+        "text": "Limitation — the model shows no forces between particles",
+        "correction": "Same error as in keyPoints[3].content. The particle model used throughout the lesson includes forces of attraction between particles, and it uses them to explain potential energy and changes of state.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "revisionCardBullets[11]",
+        "text": "Particle model limitations: particles shown as identical solid spheres, with no forces between them",
+        "correction": "Remove 'with no forces between them'. The lesson's particle model includes forces of attraction, and it relies on them for internal energy (potential energy) and changes of state.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyTerms (keyPoints[0]) 'Incompressible'.def",
+        "text": "Cannot be compressed — volume stays constant under pressure",
+        "correction": "Solids and liquids are virtually incompressible, not totally incompressible. Their volume changes only very slightly under pressure. The definition contradicts the lesson's own wording, \"virtually incompressible\".",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "Diagram 'p3-states-particles' (keyPoints[0].diagram): I cannot see it. I could not check whether it meets spec 4.3.1.1 \"Students should be able to recognise/draw simple diagrams to model the difference between solids, liquids and gases\".",
+      "Diagram 'p3-state-changes' (keyPoints[2].diagram): I cannot see it. I could not check whether the change-of-state names and energy-flow directions are correct."
+    ]
+  }
+}

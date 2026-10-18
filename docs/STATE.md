@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 2, task 2.6, P3 (session 2026-10-18). Section 3: a done (4515076), R1 done (ce5c2d8, $1.01). Next: 3d, R2 re-check on all four P3 lessons (all changed in R1).
+Runbook position: Phase 2, task 2.6, P3 (session 2026-10-18). Section 3: a done (4515076), R1 done (ce5c2d8, $1.01), R2 done (this commit, $0.37; 7 ACCEPT in 3 lessons). Next: 3e, R3 on p3-particle-model, p3-changes-of-state, p3-pressure.
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

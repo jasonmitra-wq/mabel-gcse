@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 2, task 2.6, P4 (new session). Brief docs/briefs/2026-10-18-leaving-and-tired.md done (RESPECT_EXIT on; both lessons and the website test FAIL on older faults, listed in docs/ESCALATIONS.md; all stay live).
+Runbook position: Phase 2, task 2.6, P4, section 3 step a done (checkpoint keys; p4-nuclear-model quantum and bond WARNs; P4-FIX-LOG.md); next step b (R1).
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

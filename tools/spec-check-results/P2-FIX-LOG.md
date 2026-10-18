@@ -766,3 +766,12 @@ Findings from the text tester (tools/teach-sim.js --persona bored), runs tools/t
 
 - p2-current-voltage | keyPoints[3].tutor_note | judge fix 3 (tutor said a diode "blocks the current"; matches commonMistakes[3]) | added: "A diode does not block all current in the reverse direction. Its resistance is very high, so a very small current flows."
 - Not changed: p2-current-voltage keyPoints[4].content (rheostat already defined: "variable resistor (rheostat) to change the current"); keyPoints[2].content (worked example 12 ÷ 3 = 4 Ω already before any question); p2-series-parallel keyPoints[2].tutor_note (already gives both points); p2-static door-handle charge (the site judge's "door handle has positive charge" is not in the lesson; the tutor said it).
+
+## First-time learner brief (2026-10-18) step 3: basics
+
+- p2-components | basics | brief 2026-10-18 first-time learner step 3 | added: Electric current, Potential difference, Resistance, The two axes of a graph, The origin, Directly proportional, Light intensity
+- p2-current-voltage | basics | brief 2026-10-18 first-time learner step 3 | added: Electric charge, A circuit, A cell or battery, Energy, Rate, Reading an equation, The two axes of a graph, The origin
+- p2-domestic | basics | brief 2026-10-18 first-time learner step 3 | added: Electric current, Potential difference, Mains electricity, Insulation, A cycle, Earth
+- p2-power-energy | basics | brief 2026-10-18 first-time learner step 3 | added: Energy, Rate, Electric current, Potential difference, Resistance, Squaring a number, Energy stores, Time in seconds
+- p2-series-parallel | basics | brief 2026-10-18 first-time learner step 3 | added: A circuit, Electric current, Potential difference, Resistance, A branch
+- p2-static | basics | brief 2026-10-18 first-time learner step 3 | added: Atoms, Electrons and protons, Two types of charge, Conductors and insulators, Force

@@ -72,6 +72,15 @@ function create(env) {
   // lesson. Her answer is marked by one short model call (CORRECT / PARTLY /
   // WRONG / IDK / OTHER); if that call fails, the word match decides as before.
   const FLOW_FIX = env.flowFix !== false;
+  // P3 tester fixes (runbook 2.5c2, 2026-10-18), on by default with FLOW_FIX.
+  // create({ call, pauseFix: false }) keeps the old path. (a) "can we do this
+  // later", "gotta go", "im starving": a fixed short goodbye with no question
+  // and no model call; her place is kept and she carries on when she next
+  // writes. (b) once she has said the replies are too long, a "tell me the
+  // rest" gives only the main facts of the point in at most four short
+  // sentences (90 words), not the whole content, and every other reply is
+  // held to 40 words.
+  const PAUSE_FIX = FLOW_FIX && env.pauseFix !== false;
   const STUDENT_NAME = env.studentName || 'Mabel';   // used only to filter it out of replies
   const WHO     = FIX23 ? 'the student' : 'Mabel';   // how prompts refer to her
   const WHO_CAP = FIX23 ? 'The student' : 'Mabel';
@@ -1058,6 +1067,14 @@ function create(env) {
   // An explicit request to be told, outside the check-in.
   const TELL_REQUEST = /\b(tell me|give me the answer|just say it|what'?s the answer|just explain)\b/i;
   const IDK_REPLY    = /\b(idk|dunno|no idea|no clue|not sure|unsure|i (don'?t|do not) know)\b/i;
+  // PAUSE_FIX: "do this later", "can we stop", "gotta go", "im starving".
+  const PAUSE_REQUEST = /\b(do (this|it|the rest) later|(carry on|continue|finish) later|later pls|later please|can we stop|stop (now|here|for now)|i'?m done|im done|got ?ta go|got to go|(have|need) to go|go(ing)? (to )?eat|brb|bye)\b|\b(i'?m|im) (so )?(starving|hungry|tired)\b/i;
+  const TOO_LONG_SAID = /\b(too long|this is long|so long|long innit|tl;?dr|wall of text|too much (text|writing|to read))\b/i;
+  function _wantsPause(text) { return PAUSE_FIX && PAUSE_REQUEST.test(text); }
+  function _saidTooLong(text) {
+    return PAUSE_FIX && (TOO_LONG_SAID.test(text || '') ||
+      (_state.transcript || []).some(t => t.role === 'user' && TOO_LONG_SAID.test(t.text || '')));
+  }
   function _wantsSkip(text) { return SKIP_REQUEST.test(text) && !NOT_SKIP.test(text); }
   function _wantsTelling(text) { return TELL_REQUEST.test(text) && !/\b(don'?t|do not|no need to) (just )?tell\b/i.test(text); }
 
@@ -1118,6 +1135,10 @@ function create(env) {
   function _flowLead(d) {
     if (!FLOW_FIX) return '';
     if (d.skipped) return `She asked to skip the key point "${_shortHeading(d.skipped.heading)}". In ONE short sentence, say that you are skipping it and what it was about, in a few words. Do not teach it. `;
+    if (d.tellAll && d.shortTell) {
+      const p = d.tellAll;
+      return `She wants to be told the rest of the key point "${_shortHeading(p.heading)}", and she has said your replies are too long. Tell her only its most important facts that you have not already said, in at most four short sentences. Do not ask about any of it. Content: "${_stripHtml(p.content)}" `;
+    }
     if (d.tellAll) {
       const p = d.tellAll;
       const terms = (p.keyTerms || []).map(t => `${t.term}: ${t.def}`).join(' | ');
@@ -1191,6 +1212,10 @@ function create(env) {
   }
 
   async function _getTutorReply(userText) {
+    if (!_state.complete && _wantsPause(userText)) {
+      return { reply: `No problem. Your place is saved, so you can pick this up any time. See you soon!`,
+               recap: null, decision: { kind: 'pause', idx: _state.currentPointIndex } };
+    }
     _turnMark = FLOW_FIX ? await _markAnswer(userText) : null;
     const decision = _decide(userText);
     if (FLOW_FIX && decision.kind !== 'free') {
@@ -1201,6 +1226,8 @@ function create(env) {
                             correctQ: _turnMark && _turnMark.mark === 'correct' ? _turnMark.question : null,
                             correctA: _turnMark && _turnMark.mark === 'correct' ? String(userText).slice(0, 120) : null };
       if (decision.tellAll) decision.maxWords = Math.min(260, MAX_REPLY_WORDS + _wordCount(_stripHtml(decision.tellAll.content)));
+      if (decision.tellAll && _saidTooLong(userText)) { decision.shortTell = true; decision.maxWords = Math.min(decision.maxWords, 90); }
+      else if (_saidTooLong(userText)) decision.maxWords = Math.min(decision.maxWords || MAX_REPLY_WORDS, 40);
     }
     _turnMark = null;
     if (TEACH_THEN_ASK) decision.chunk = _chunkFor(decision);

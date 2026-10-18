@@ -96,3 +96,9 @@ One line per run: date | lesson | mode | tutor turns | flagged turns | flags by 
 - 2026-10-18 | p3-density | run | 14 | 1 | unanswerable: no word from the lesson 1 | none | $0.1476
 - 2026-10-18 | p3-changes-of-state | run | 16 | 4 | over length 4 | none | $0.1768
 - 2026-10-18 | p3-pressure | run | 17 | 0 | none | none | $0.2167
+- 2026-10-18 | p3-particle-model | run, persona bored | 12 | FAIL | engagement 2 | would quit T8 | flow faults 2 | would quit at T8; question does not match what was taught: T0, T3, T5, T9; flow faults: skip_request_ignored T8, closing_claims_untaught_content T10 | $0.3136 (tutor claude-sonnet-5-5 $0.1969)
+- 2026-10-18 | p3-density | run, persona bored | 10 | PASS | engagement 3 | would quit false | flow faults 0 | none | $0.2051 (tutor claude-sonnet-5-5 $0.0986)
+- 2026-10-18 | p3-pressure | mock | 12 | 0 | none | none | -
+- 2026-10-18 | p3-changes-of-state | run, persona bored | 16 | FAIL | engagement 2 | would quit false | flow faults 2 | flow faults: closing_claims_untaught_content T14, factual_or_unit_slip T13 | $0.3360 (tutor claude-sonnet-5-5 $0.1925)
+- 2026-10-18 | p3-pressure | run, persona bored | 14 | FAIL | engagement 2 | would quit T11 | flow faults 0 | would quit at T11; question does not match what was taught: T2, T10 | $0.2365 (tutor claude-sonnet-5-5 $0.1275)
+- 2026-10-18 | p3-particle-model | mock | 14 | 0 | none | none | -

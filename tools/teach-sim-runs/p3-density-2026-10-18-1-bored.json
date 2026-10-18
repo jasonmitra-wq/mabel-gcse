@@ -1,0 +1,280 @@
+{
+  "id": "p3-density",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! Today we're finding out why wood floats while a nail sinks, and the answer is density: how much mass is packed into a given space, with the symbol ρ (rho) and the unit kg/m³. So imagine two bags of the same size, one full of flour and one full of popcorn: which bag has the higher density?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "huh? like just tell me which one",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "The flour bag is denser, because more mass is packed into the same space. Density is ρ = m / V (mass divided by volume), in kg/m³ or g/cm³. High density means particles that are heavier, more closely packed, or both. Water is 1000 kg/m³, air is ~1.2 kg/m³, iron is 7900 kg/m³ and gold is 19,300 kg/m³. An object floats if it is less dense than the fluid, and sinks if it is denser.\n\nNext we'll use the equation, and watch units: 1 g/cm³ = 1000 kg/m³, so you multiply by 1000 to convert g/cm³ to kg/m³. Aluminium is 2.7 g/cm³, so what is that in kg/m³?",
+      "recap": [
+        "Density is how much mass is packed into a given space.",
+        "Its symbol is ρ (rho), and the unit is kg/m³.",
+        "Same-sized bags: flour has more mass, so it is denser than popcorn.",
+        "Density explains why wood floats but a nail sinks."
+      ],
+      "flags": [
+        "over length (108 words)"
+      ]
+    },
+    {
+      "n": 2,
+      "student": "this is long mate",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Fair enough, I'll keep it short. To switch from g/cm³ to kg/m³, you just multiply by 1000. So 1 g/cm³ becomes 1000 kg/m³.\n\nWater is 1 g/cm³, so what is its density in kg/m³?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk lol",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "No worries. Water is 1 g/cm³, so that's 1000 kg/m³.\n\nNow the lab: to find the volume of an odd-shaped stone, you lower it into a eureka can, which is filled to the brim with water. The stone pushes water out of the spout. What does that pushed-out water tell you about the stone?",
+      "recap": [
+        "Density is mass divided by volume: ρ = m / V.",
+        "More mass squeezed into the same space means higher density.",
+        "Less dense than the fluid floats, denser sinks.",
+        "To change g/cm³ into kg/m³, multiply by 1000."
+      ],
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "umm the water that comes out is like the same size as the stone right",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes — the pushed-out water is the same volume as the stone. That's called displacement, and it means you can catch that water in a measuring cylinder and read off the stone's volume.\n\nYou also need its mass, which you'd get from a balance. What equation then gives you the stone's density?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "k",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Let me say it another way. Once you've caught the water in the measuring cylinder, you read its volume, and that's the stone's volume. You've got the mass from the balance too.\n\nSo what do you divide the mass by to get the stone's density?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "divide mass by volume?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Yes — mass divided by volume is right. Now let's use the particle model to explain density: in a gas, the particles are very far apart, so most of a gas is empty space.\n\nSo how does that spread-out particle arrangement affect a gas's density?",
+      "recap": [
+        "Water is 1 g/cm³, which is the same as 1000 kg/m³.",
+        "Lower an odd-shaped stone into a brim-full eureka can.",
+        "The water pushed out has the same volume as the stone.",
+        "Catch it in a measuring cylinder, then divide mass by volume for density."
+      ],
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "so theres more space so density is like really high?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Not quite: more space means *less* mass packed into each bit of volume, so a gas's density is really low. Air is about 1.2 kg/m³, while water is 1000 kg/m³.\n\nSo in a gas, what is most of the volume made up of?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "empty space?",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Yes — empty space is right, which is why gases have such low density. That brings us to the end of this lesson.",
+      "recap": [
+        "Density is mass divided by volume: how much mass fits in each bit of space.",
+        "In a gas, the particles are far apart, so most of it is empty space.",
+        "More empty space means less mass per volume, so gases have low density.",
+        "Air is about 1.2 kg/m³, while water is 1000 kg/m³."
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome. You've picked up how density is mass divided by volume, and why gases come out so low. Come back any time to go over the rest. Bye for now!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 3,
+    "engagement_quote": "this is long mate",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So imagine two bags of the same size, one full of flour and one full of popcorn: which bag has the higher density?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Water is 1000 kg/m³, air is ~1.2 kg/m³, iron is 7900 kg/m³ and gold is 19,300 kg/m³.",
+        "note": "About 100 words. It packs the definition, the particle idea, four densities, floating and unit conversion into one reply. The student complained straight after."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So 1 g/cm³ becomes 1000 kg/m³. Water is 1 g/cm³, so what is its density in kg/m³?",
+        "note": "The answer is stated in the line just before the question. This is a pointless check, and the student replied 'idk lol'."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The stone pushes water out of the spout. What does that pushed-out water tell you about the stone?",
+        "note": "Unit conversion was dropped after 'idk' with no retry. The worked examples in keyPoints[1] were skipped completely."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes — the pushed-out water is the same volume as the stone.",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So what do you divide the mass by to get the stone's density?",
+        "note": ""
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So how does that spread-out particle arrangement affect a gas's density?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So in a gas, what is most of the volume made up of?",
+        "note": "This re-asks a fact T6 stated outright ('most of a gas is empty space'). It does not check the reasoning she just got wrong."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That brings us to the end of this lesson.",
+        "note": "The lesson ends early. The liquid/solid part of keyPoints[3], the keyPoints[1] calculations and the checkpoints were never reached."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You've picked up how density is mass divided by volume, and why gases come out so low.",
+        "note": ""
+      }
+    ],
+    "flow_faults": [],
+    "fixes": [
+      {
+        "target": "keyPoints[0].writeBullets[3], keyPoints[1].writeBullets[5], revisionCardBullets[3]",
+        "change": "Restore the missing comparison symbols. Write 'An object floats if its density < fluid density' and 'If density > fluid density → sinks'. As they stand, these lines say nothing.",
+        "quote": "An object floats if it is less dense than the fluid, and sinks if it is denser."
+      },
+      {
+        "target": "teach-core: tell-me replies",
+        "change": "When she says 'just tell me', answer the question in one sentence. Give at most one more new idea, keep it under 60 words, and move unit conversion to its own later turn.",
+        "quote": "The flour bag is denser, because more mass is packed into the same space."
+      },
+      {
+        "target": "teach-core: question generation",
+        "change": "Never ask a question whose answer appears in the same turn. Ask about a new value instead, e.g. aluminium 2.7 g/cm³ → kg/m³, after showing the water example.",
+        "quote": "So 1 g/cm³ becomes 1000 kg/m³. Water is 1 g/cm³, so what is its density in kg/m³?"
+      },
+      {
+        "target": "keyPoints[1].memTip",
+        "change": "Add a non-arithmetic trick for a student who is weak at mental maths: '×1000 = slide the decimal point 3 places right (2.7 → 2700)'. After an 'idk', give the answer, then retry one easy item using this trick instead of dropping the topic.",
+        "quote": "No worries. Water is 1 g/cm³, so that's 1000 kg/m³."
+      },
+      {
+        "target": "teach-core: lesson ending",
+        "change": "Do not close the lesson while key points or checkpoints remain unvisited. Finish keyPoints[3] (liquids vs solids) and run at least checkpoints 0 and 3 before saying the lesson is over.",
+        "quote": "Yes — empty space is right, which is why gases have such low density. That brings us to the end of this lesson."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": true,
+    "reasons": []
+  },
+  "cost": 0.20506200000000002,
+  "tutorCost": 0.09862200000000002,
+  "tutorCalls": 28,
+  "mode": "run",
+  "date": "2026-10-18"
+}

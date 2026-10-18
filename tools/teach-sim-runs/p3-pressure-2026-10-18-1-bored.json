@@ -1,0 +1,365 @@
+{
+  "id": "p3-pressure",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! You've seen gas pressure when pumping a bike tyre or squeezing a balloon, and it all comes down to tiny gas molecules moving randomly and constantly. Each time one strikes the wall of its container, it pushes on that wall with a tiny force. What do you think gas pressure is caused by?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "molecules hitting the walls?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — molecules hitting the walls is exactly what causes gas pressure. Each single collision pushes on the wall with only a tiny force, but huge numbers of molecules collide every second, so the total effect is a steady pressure. If each collision is that tiny, why can we still measure a steady pressure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "cos theres like millions of them hitting at once?",
+      "studentType": "wrong",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes — huge numbers of molecules hitting the walls is why the pressure is steady. If you heat a gas in a sealed rigid container, what happens to the speed of its molecules?",
+      "recap": [
+        "Gas molecules move randomly and constantly, bumping into the container walls.",
+        "Each collision gives the wall a tiny push, a very small force.",
+        "So many molecules collide every second that the pushes add up.",
+        "That total effect is a steady pressure we can measure."
+      ],
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "they move faster?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — heating a gas makes its molecules move faster on average. Now, in a sealed rigid container the gas stays in the same space, which is what \"constant volume\" means. If the molecules in that sealed container are moving faster, what happens to the pressure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "um does the pressure go down cos theres less space?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not quite — the space doesn't shrink here. In a sealed rigid container the gas stays in the same space, so the molecules have the same room as before, but they are moving faster. How does that change how hard and how often they hit the walls?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "oh they hit harder and more often so pressure goes up?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Yes — faster molecules hit the walls harder and more often, so the pressure goes up. Now keep the temperature constant and squash a fixed mass of gas into half its volume. The same molecules now have less space, so they hit the walls twice as often. What happens to the pressure?",
+      "recap": [
+        "Heating a gas makes its molecules move faster on average.",
+        "In a sealed rigid container, the volume stays the same.",
+        "Faster molecules hit the walls harder and more often.",
+        "So at constant volume, higher temperature means higher pressure."
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "this is too long ngl",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Fair, let me keep it short. Squash the gas into half the space and the molecules hit the walls twice as often, so the pressure doubles. That's because pressure × volume stays the same.\n\nIf the pressure starts at 100 kPa and the volume is halved, what is the new pressure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "No worries — the new pressure is 200 kPa, because halving the volume doubles it. That's called inversely proportional: when one quantity doubles, the other halves. If the volume of a gas is doubled at constant temperature, what happens to the pressure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "it gets halved?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Yes — halving is right: doubling the volume halves the pressure. Next up: work is the transfer of energy by a force, and pushing a piston into a gas applies a force to it. So when you push that piston in, what is being transferred to the gas?",
+      "recap": [
+        "Squash a gas into less space and the molecules hit the walls more often.",
+        "More frequent hits means higher pressure, as long as the temperature stays the same.",
+        "Pressure times volume stays constant, so halving the volume doubles the pressure.",
+        "That's inversely proportional: when one doubles, the other halves, just as you said."
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "That's okay. Think of it this way: when you push the piston in, your push passes energy into the gas, and we call that transfer \"work\". So the gas gains energy from your push. What is it that the gas gains when you do work on it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "energy?",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes — energy is right: the gas gains energy from your push. That energy increases the gas's internal energy, which is the total kinetic and potential energy of all its particles. When the internal energy of the gas goes up, what can happen to its temperature?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "no idea",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "No worries. Think of internal energy as the total energy of all the gas molecules added up, including the energy they have from moving. When your push gives the gas more energy, its molecules end up moving faster on average. So when the molecules move faster, what happens to the temperature of the gas?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "this is too long",
+      "studentType": "bored",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "The temperature goes up: faster molecules means a hotter gas. That brings us to the end of this lesson. You answered questions on \"What causes gas pressure\" and \"Temperature and pressure at constant volume\", answered some on \"Pressure and volume at constant temperature\" and \"Doing work on a gas\", and I told you the rest. Thanks for sticking with it.",
+      "recap": [
+        "Work is energy transferred by a force, like pushing a piston.",
+        "Pushing the piston in transfers energy to the gas.",
+        "That extra energy raises the gas's internal energy.",
+        "More energy means the molecules move faster, so the gas heats up."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "ok thanks",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome. Remember the big idea: gas pressure is just countless tiny molecules crashing into the container walls. Bye for now, and come back any time!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is too long",
+    "would_quit": {
+      "turn": "T11",
+      "quote": "So when the molecules move faster, what happens to the temperature of the gas?",
+      "why": "Second 'too long' complaint after two non-answers in a row ('idk', 'no idea'). The turns stayed at about 50 words even after she complained at S6."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think gas pressure is caused by?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If each collision is that tiny, why can we still measure a steady pressure?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you heat a gas in a sealed rigid container, what happens to the speed of its molecules?",
+        "note": "Asks about heating before teaching that temperature relates to molecule speed. Also skips 'net force at right angles to the wall' from keyPoints[0]."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If the molecules in that sealed container are moving faster, what happens to the pressure?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How does that change how hard and how often they hit the walls?",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Now keep the temperature constant and squash a fixed mass of gas into half its volume. The same molecules now have less space, so they hit the walls twice as often. What happens to the pressure?",
+        "note": "About 52 words. The student replied 'this is too long ngl'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If the pressure starts at 100 kPa and the volume is halved, what is the new pressure?",
+        "note": "Says 'pressure × volume stays the same' but never writes p₁V₁ = p₂V₂. The student answered 'huh?'."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If the volume of a gas is doubled at constant temperature, what happens to the pressure?",
+        "note": "Gave the answer outright after 'huh?' instead of a one-step hint."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So when you push that piston in, what is being transferred to the gas?",
+        "note": "pV = constant was never practised with the equation, and checkpoint 2 was never used."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What is it that the gas gains when you do work on it?",
+        "note": "Gives the answer away in the previous sentence ('the gas gains energy from your push')."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When the internal energy of the gas goes up, what can happen to its temperature?",
+        "note": "The link between internal energy and temperature was never taught. The student answered 'no idea'."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "Think of internal energy as the total energy of all the gas molecules added up, including the energy they have from moving.",
+        "note": "About 55 words after 'no idea', for a student who already said turns were too long."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": true,
+        "confusing": false,
+        "quote": "You answered questions on \"What causes gas pressure\" and \"Temperature and pressure at constant volume\", answered some on \"Pressure and volume at constant temperature\" and \"Doing work on a gas\", and I told you the rest.",
+        "note": "The closing recap is about 55 words, sent straight after 'this is too long'."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Remember the big idea: gas pressure is just countless tiny molecules crashing into the container walls.",
+        "note": ""
+      }
+    ],
+    "flow_faults": [],
+    "fixes": [
+      {
+        "target": "teach-core: length after 'too long'",
+        "change": "Once the student says 'too long', cap every later turn at 30 words: one fact, then one question. T9, T10 and T11 were still 45–55 words.",
+        "quote": "this is too long ngl"
+      },
+      {
+        "target": "keyPoints[3].content",
+        "change": "Add an explicit bridge sentence before any temperature question: 'More internal energy means the molecules move faster, and faster molecules mean a higher temperature.' This lets the tutor teach the link before asking for it.",
+        "quote": "When the internal energy of the gas goes up, what can happen to its temperature?"
+      },
+      {
+        "target": "keyPoints[2].writeBullets[0]",
+        "change": "Make the tutor show p₁V₁ = p₂V₂ with one tiny worked example (100 × 2 = p₂ × 1) before asking a numeric question. Then use checkpoints.2 so the equation is actually practised.",
+        "quote": "If the pressure starts at 100 kPa and the volume is halved, what is the new pressure?"
+      },
+      {
+        "target": "teach-core: confusion reply",
+        "change": "After 'huh?', give a one-step hint ('half the space → hits twice as often → pressure ×2. So 100 becomes…?') and re-ask, instead of stating the answer outright.",
+        "quote": "No worries — the new pressure is 200 kPa, because halving the volume doubles it."
+      },
+      {
+        "target": "keyPoints[1].keyTerms[0]",
+        "change": "Teach 'hotter gas = faster molecules' before asking about molecule speed, so T2's question tests something already taught.",
+        "quote": "If you heat a gas in a sealed rigid container, what happens to the speed of its molecules?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T11",
+      "question does not match what was taught: T2, T10"
+    ]
+  },
+  "cost": 0.23649600000000004,
+  "tutorCost": 0.12746599999999997,
+  "tutorCalls": 44,
+  "mode": "run",
+  "date": "2026-10-18"
+}

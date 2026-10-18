@@ -1,0 +1,162 @@
+{
+  "id": "p3-pressure",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Right. Next is gas pressure. What word describes how the particles are arranged?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's gas pressure, The force per unit area exerted by gas molecules colliding",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is collision. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is collision. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Right. Next is temperature of a gas. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "I think it's temperature of a gas, Related to the average kinetic energy of the gas molecules",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is constant volume. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is constant volume. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Right. Next is pV = constant. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "I think it's pV = constant, For a fixed mass of gas at constant temperature, pressure",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right. Next is inversely proportional. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right. Next is inversely proportional. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Right. Next is work. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "I think it's work, The transfer of energy by a force",
+      "studentType": "correct",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Well done today. See you next time.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0,
+  "tutorCost": 0,
+  "tutorCalls": 0,
+  "mode": "mock",
+  "date": "2026-10-18"
+}

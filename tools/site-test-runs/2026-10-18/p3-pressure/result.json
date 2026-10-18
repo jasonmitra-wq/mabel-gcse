@@ -1,0 +1,161 @@
+{
+  "id": "p3-pressure",
+  "mode": "lesson",
+  "date": "2026-10-18",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "The student said 'this is long innit' (S3), then 'what' (S4). The tutor offered to just tell her the rest, and T5 then sent the longest message of the lesson: about 100 words covering force ÷ area, units, heating, squeezing and kinetic energy. The bored signal was ignored.",
+        "step": "T5"
+      },
+      {
+        "what": "T5's explanation gave away the answers to the next two questions: heating at constant volume raises pressure, and squeezing raises pressure. T7 and T8 then asked those as if they were new, so her 'correct' answers prove little.",
+        "step": "T5 / T7 / T8"
+      },
+      {
+        "what": "The first section 'What causes gas pressure' was marked done after the student never answered a single question in it. The tutor dropped the T1, T2 and T3 questions and dumped the content instead.",
+        "step": "T4-T5"
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "The Key Terms panel shows a count of 4, 6 or 8 terms, but only the first two are visible. The heading 'TEMPERATURE AND PRESSURE AT CONSTANT VOLUME' is cut off at the bottom with no terms under it, and there is no visible scroll hint.",
+        "screenshot": "09-exchange-12-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "The 'WORTH WRITING DOWN' heading on the notes card is clipped behind the sticky lesson header, leaving only half-visible letters.",
+        "screenshot": "10-exchange-15-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "After the goodbye message, the input box is gone. The 'Lesson finished.' line and the Topics, Slides and Ask buttons that appear on laptop are not in view on phone, so there is no visible next step.",
+        "screenshot": "11-end-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The page title 'Pressure in gases — molecules i...' is truncated in the lesson header on phone.",
+        "screenshot": "05-ai-lesson-opening-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The '← Home' button and the 'What are you revising?' heading are half hidden under the sticky top bar.",
+        "screenshot": "02-subjects-phone.png",
+        "stops_use": false
+      }
+    ],
+    "would_quit": {
+      "turn": "S6",
+      "quote": "this is long",
+      "why": "She had already complained about length twice, then got a wall of text. A bored 15-year-old on a phone is likely to close the tab here."
+    },
+    "fixes": [
+      {
+        "target": "tutor behaviour: check-in 'yes, tell me' reveal",
+        "change": "When the student has flagged boredom or confusion, cap the reveal at 2 short sentences covering only the current section. Do not preview later sections."
+      },
+      {
+        "target": "tutor behaviour: reveal content vs later questions",
+        "change": "Never state facts in a reveal that later sections will ask as questions. Either trim the reveal or skip or rephrase the later questions."
+      },
+      {
+        "target": "section completion logic",
+        "change": "Do not tick a section as covered when it was only told, not answered. Mark it 'explained' with a different icon, or ask one quick recall question first."
+      },
+      {
+        "target": "Key Terms side panel (laptop)",
+        "change": "Give the panel its own visible scrollbar and a fade or 'more ↓' hint, or collapse earlier sections so the newest terms show."
+      },
+      {
+        "target": "end-of-lesson view (phone)",
+        "change": "Auto-scroll to the 'Lesson finished.' line and the action buttons after the closing message. Also stop the sticky header from overlapping the tops of cards."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "AI lesson opens by default (in TEACH_ENABLED)",
+      "ok": true,
+      "detail": "AI lesson opened"
+    }
+  ],
+  "transcript": [
+    "Lesson p3-pressure (Physics › Particle model of matter › Pressure in gases).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "[screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects",
+    "[screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics",
+    "[screenshot 04-lessons-p3-phone.png and 04-lessons-p3-laptop.png] lessons-P3",
+    "[check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened",
+    "T0: Welcome! Whenever you pump up a bike tyre or squeeze a balloon, you're seeing gas pressure, which comes from billions of tiny molecules zooming around randomly and crashing into the container's walls. What do you think the gas molecules are hitting that creates this pressure?",
+    "[screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening",
+    "S1 (minimal): ok so what we doing",
+    "T1: We're working out where gas pressure comes from. Picture a balloon full of air: the gas molecules are zooming about and crashing into the inside of the balloon, and each crash pushes on it a tiny bit. What do you think we call each of those crashes?",
+    "S2 (minimal): what u mean by crashes",
+    "T2: Each of those crashes is called a collision, which is just a molecule striking the container wall. Every single collision gives the wall a tiny push, and huge numbers of them happen every second, which adds up to a steady pressure. So if a gas has far more collisions with the wall every second, what happens to the pressure?",
+    "S3 (bored): this is long innit",
+    "T3: Fair enough, I'll keep it short. A collision is just one molecule hitting the wall, and each hit gives the wall a tiny push. If thousands more molecules hit the wall every second, what happens to the pressure?",
+    "[screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3",
+    "S4 (minimal): what",
+    "T4: No worries if this is feeling confusing. Would you like me to just tell you the rest of this one?",
+    "S5 (checkin-yes): yeah go on then",
+    "T5: Gas molecules are always moving randomly, and their collisions with the walls make a steady pressure you can measure. The pressure pushes at right angles to the wall, and pressure = force ÷ area (Pa = N/m²). More or harder collisions mean higher pressure, so heating a gas in a fixed space makes molecules faster and the pressure rises, and squeezing it into less space means more collisions, so pressure rises too. Next: the temperature of a gas is related to the average kinetic energy of its molecules, so a hotter gas has faster molecules. If a gas gets hotter, what happens to the speed of its molecules?",
+    "S6 (bored): this is long",
+    "T6: Got it, short version. Hotter gas means faster molecules, because temperature is linked to how much kinetic energy they have. So if you cool a gas right down, what happens to the speed of its molecules?",
+    "[screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6",
+    "S7 (idk): idk they get slower?",
+    "T7: Yes, slower is right: cooler gas means slower molecules. Now keep the gas in a sealed rigid container, so its volume stays the same (constant volume). If you heat it, the faster molecules hit the walls harder and more often. So what happens to the pressure?",
+    "S8 (try): goes up i guess",
+    "T8: Yes, pressure goes up is right: faster molecules hit the walls harder and more often. Now keep the temperature constant and change the volume instead. If a gas is at 100 kPa and you squeeze it to half its volume, what is the new pressure?",
+    "S9 (wrong): um like 50 kpa? less space means less pressure right",
+    "T9: Not quite — 50 kPa is the wrong way round. Squeezing a gas into half the space makes the pressure go up, because the same molecules now hit the walls twice as often. So what is the new pressure when 100 kPa is squeezed to half its volume?",
+    "[screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9",
+    "S10 (minimal): ohh ok so 200?",
+    "T10: Yes, 200 kPa is right: half the volume doubles the pressure. This pattern is called \"inversely proportional\" — when one quantity doubles, the other halves, so pressure × volume stays the same. So if you double the volume of a gas instead, what happens to its pressure?",
+    "S11 (wrong): it doubles right",
+    "T11: Not quite — it halves, not doubles. Inversely proportional means when the volume doubles, the pressure goes the opposite way. The same molecules now have twice the space, so they hit each part of the wall less often. So if a gas at 100 kPa has its volume doubled, what is the new pressure?",
+    "S12 (bored): yeah ok 50 kpa",
+    "T12: Yes, 50 kPa is right: doubling the volume halves the pressure. Next idea: when you push a piston into a gas, you apply a force to it, and that is called doing work, which means transferring energy by a force. So when you push a bike pump handle in, what is being transferred to the air inside?",
+    "[screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12",
+    "S13 (wrong): energy?",
+    "T13: Yes, energy is right: pushing the handle in transfers energy to the air. That energy adds to the gas's internal energy, which is the total kinetic and potential energy of all its molecules. So when you do work on a gas, what happens to its internal energy?",
+    "S14 (wrong): it goes down?",
+    "T14: Not quite: it goes up, not down. Pushing the handle in transfers energy to the air, so the total energy of its molecules increases. Think of the energy you put in as being added to what the air already had. If the internal energy of the air goes up, what happens to the temperature of the air in the pump?",
+    "S15 (try): it goes up?",
+    "T15: Yes, the temperature going up is right: doing work on the air raises its internal energy, so it warms up. That brings us to the end of this lesson. You answered questions on \"Temperature and pressure at constant volume\", \"Pressure and volume at constant temperature\" and \"Doing work on a gas\", and I explained \"What causes gas pressure\".",
+    "[screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15",
+    "S16 (closing): ok thanks bye",
+    "T16: Bye for now, and well done today! You can come back to this lesson any time you'd like to go over it again.",
+    "[the lesson shows \"Lesson finished.\"]",
+    "[screenshot 11-end-phone.png and 11-end-laptop.png] end"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-18/p3-pressure/01-home-phone.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/02-subjects-phone.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/02-subjects-laptop.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/03-topics-physics-phone.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/03-topics-physics-laptop.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/04-lessons-p3-phone.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/04-lessons-p3-laptop.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/05-ai-lesson-opening-phone.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/05-ai-lesson-opening-laptop.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/06-exchange-3-phone.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/06-exchange-3-laptop.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/07-exchange-6-phone.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/07-exchange-6-laptop.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/08-exchange-9-phone.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/08-exchange-9-laptop.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/09-exchange-12-phone.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/09-exchange-12-laptop.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/10-exchange-15-phone.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/10-exchange-15-laptop.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/11-end-phone.png",
+    "tools/site-test-runs/2026-10-18/p3-pressure/11-end-laptop.png"
+  ],
+  "cost": 0.323598,
+  "tutorModel": "claude-sonnet-5-5",
+  "tutorCost": 0.17967399999999997,
+  "apiCalls": 17,
+  "browserApiCalls": 53
+}

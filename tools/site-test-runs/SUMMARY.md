@@ -54,3 +54,4 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-10-17 | p1-energy-stores | lesson | FAIL | 4 | 4 | S9 | tools/site-test-runs/2026-10-17/p1-energy-stores-7 | $0.4370
 - 2026-10-17 | p1-energy-stores | lesson | FAIL | 8 | 5 | S14 | tools/site-test-runs/2026-10-17/p1-energy-stores-8 | $0.4739
 - 2026-10-17 | b3-defences | lesson | FAIL | 7 | 7 | S11 | tools/site-test-runs/2026-10-17/b3-defences-9 | $0.4401
+- 2026-10-18 | p3-pressure | lesson | FAIL | 3 | 5 | S6 | tools/site-test-runs/2026-10-18/p3-pressure | $0.3236

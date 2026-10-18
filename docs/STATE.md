@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 2, task 2.6, P3 (session 2026-10-18). Section 3 a–h done (01b3f2d). P3 lessons added to TEACH_ENABLED_ALL; 2.5c teach-sim run once on all four (this commit): 0 lesson or shared-code faults (7 flags, all scorer false positives: tell-all replies within the FLOW_FIX cap, "2.7 × 1000"). Next: 2.5c2 text tester on all four, website tester on one, then 2.5d.
+Runbook position: Phase 2, task 2.6, P3 (session 2026-10-18). Section 3 a–h done (01b3f2d); P3 in TEACH_ENABLED; teach-sim clean (82a70ff). 2.5c2 first pass: text p3-density PASS, other three FAIL; website p3-pressure FAIL. Fix round done (this commit: PAUSE_FIX in teach-core, two p3-pressure lesson fixes). Next: re-run once text p3-particle-model, p3-changes-of-state, p3-pressure and website p3-pressure; then escalations and 2.5d.
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

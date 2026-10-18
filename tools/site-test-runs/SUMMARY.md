@@ -59,3 +59,4 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-10-18 | p2-components | lesson | FAIL | 7 | 6 | T8 | tools/site-test-runs/2026-10-18/p2-components | $0.4538
 - 2026-10-18 | p2-components | lesson | FAIL | 8 | 6 | S17 | tools/site-test-runs/2026-10-18/p2-components-2 | $0.6943
 - 2026-10-18 | p2-components | lesson | FAIL | 8 | 7 | S13 | tools/site-test-runs/2026-10-18/p2-components-3 | $0.5668
+- 2026-10-18 | p4-half-life | lesson | FAIL | 10 | 5 | S10 | tools/site-test-runs/2026-10-18/p4-half-life | $0.7365

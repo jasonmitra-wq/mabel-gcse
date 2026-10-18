@@ -1,0 +1,235 @@
+{
+  "id": "p4-half-life",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's half-life, The time for the number of nuclei of a radioactive",
+      "studentType": "correct",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is half-life. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is half-life. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is activity. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is activity. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Right. Next is exponential decay. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "diagram": "p4-decay-graph",
+      "diagramCaption": "The activity halves every 2 hours, so the half-life is 2 hours.",
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "I think it's exponential decay, A curve where the quantity halves in equal time intervals",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is decay graph. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is decay graph. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Right. Next is tracer. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "I think it's tracer, A radioactive isotope (gamma emitter, short half-life) used to explore",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right. Next is radiotherapy. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right. Next is radiotherapy. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Right. Next is irradiation. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "I think it's irradiation, Exposing an object to nuclear radiation; the object does not",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Next is contamination. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Next is contamination. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Next is peer review. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Next is peer review. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": [
+        "Particles vibrate in a fixed place.",
+        "Heating makes them move faster."
+      ],
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Well done today. See you next time.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "exited": false,
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "lessonFlags": [],
+  "cost": 0,
+  "tutorCost": 0,
+  "tutorCalls": 0,
+  "mode": "mock",
+  "date": "2026-10-18"
+}

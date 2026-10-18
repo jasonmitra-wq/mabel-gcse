@@ -1,0 +1,561 @@
+{
+  "id": "p4-radioactivity",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome, I'm glad you're here! Think about a fire or a heater on a cold day: what do you feel coming off it when you stand nearby?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "heat and light i guess",
+      "studentType": "try",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Heat and light, yes. Some atoms give out something similar: tiny particles, called alpha particles, that a sheet of paper can stop. If you held paper in front of a source, what would reach your hand?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "the alpha particles would go through",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Not quite. Paper is like a wall to alpha particles: they are stopped by it, so nothing gets through to your hand. Think of throwing a ball at a closed door. If you held a sheet of paper in front of an alpha source, what would your hand feel?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "nothing would reach my hand",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, nothing reaches your hand: paper stops alpha. Even so, alpha is called ionising radiation, meaning it knocks tiny electrons off the atoms it hits. What do you think happens to an atom that loses an electron?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "it becomes charged or something?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, an atom that loses an electron becomes charged, and that's what ionising means. If a source has an activity of 50 Bq, how many of its atoms decay each second?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "whats activity mean",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Activity just means how fast a source is decaying, meaning how many of its unstable atoms give out radiation each second. It's like a speedometer reading, but for decays. It's measured in becquerels (Bq), and 1 Bq means one decay each second. So if a source has an activity of 50 Bq, how many of its atoms decay each second?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "that's confusing mate",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "nah just tell me",
+      "studentType": "checkin-no",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "So, the answer is 50 atoms each second. Some nuclei are unstable and give out radiation to become more stable, called radioactive decay, and it's random. A Geiger-Muller tube counts decays, and the count rate is the number it records each second. The radiation can be alpha, beta, gamma or a neutron. An alpha particle is 2 protons and 2 neutrons, so the nucleus loses 4 from its mass number and 2 from its atomic number, becoming a new element. Alpha is stopped by paper or a few cm of air, is highly ionising, and is most dangerous if swallowed or breathed in.\n\nNext is beta radiation, which is a fast-moving electron given out by the nucleus when a neutron turns into a proton. A neutron has no charge and a proton has a positive charge. If a nucleus gains a proton, what happens to its atomic number?",
+      "recap": [
+        "Alpha particles are stopped by a sheet of paper, so nothing gets through.",
+        "Ionising means the radiation knocks electrons off atoms, leaving them charged.",
+        "Activity is how many unstable atoms decay each second, measured in becquerels (Bq).",
+        "So 50 Bq means 50 decays every second."
+      ],
+      "flags": [
+        "over length (148 words)"
+      ]
+    },
+    {
+      "n": 8,
+      "student": "this is long man",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Fair enough, I'll keep it short. Beta radiation is a fast electron fired out of the nucleus when a neutron turns into a proton. The nucleus now has one extra proton. What happens to its atomic number?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "it goes down by one?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not quite: it goes up by 1, because the nucleus gains a proton and the atomic number counts protons. If a nucleus has 6 protons before beta decay, how many does it have after?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "7 protons?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Yes — 7 protons is right, because beta decay adds one. Gamma is different: it is energy sent out from the nucleus, with no mass and no charge. What stops gamma getting through, then?",
+      "recap": [
+        "Beta radiation is a fast electron fired out of the nucleus.",
+        "It happens when a neutron turns into a proton.",
+        "The nucleus gains one proton, so its atomic number goes up by 1.",
+        "6 protons before beta decay means 7 protons after, a new element."
+      ],
+      "diagram": "p4-penetration",
+      "diagramCaption": "Paper stops alpha. A few millimetres of aluminium stop beta. Thick lead only reduces gamma.",
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "paper stops it like alpha?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not quite: paper stops alpha, but gamma goes straight through it, and through your hand too. Only thick lead or thick concrete cuts it down. If gamma passes through your body that easily, what could it damage inside you?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "cells inside maybe? or organs?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes, cells and organs are right, since gamma passes through you and can damage DNA. If gamma has the most energy of all these waves, what might that mean for how well it passes through things?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "like more energy means it goes through stuff easier?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Now, radiation isn't only in labs: a little is always around you, even right now, from things like rocks and food. If it comes from rocks and food, what do you think makes it \"natural\" rather than man-made?",
+      "recap": [
+        "Gamma is pure energy from the nucleus, with no mass and no charge.",
+        "Paper doesn't stop gamma, and it passes through your body too.",
+        "Only thick lead or thick concrete cuts gamma down.",
+        "Gamma can damage DNA inside cells and organs as it passes through."
+      ],
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "it's not made by people in labs?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "A nuclear equation shows decay like a sum, with the mass numbers adding up the same on both sides. If a nucleus with mass number 226 gives off an alpha particle of mass number 4, what mass number is left?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "whats nuclear equation mean",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "So if one nucleus has mass number 226 and gives off an alpha particle with mass number 4, what mass number is left?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "um 222?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, 222 is right: 226 take away 4 leaves 222. The radiation dose you receive is measured in sieverts (Sv), and 1000 millisieverts (mSv) make 1 sievert. If someone gets a dose of 2000 mSv, how many sieverts is that?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "um like 2 sieverts?",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Yes, 2 sieverts is right: 2000 mSv divided by 1000 gives 2 Sv. That brings us to the end of this lesson. You answered questions on gamma radiation and on background radiation and nuclear equations.",
+      "recap": [
+        "Background radiation is always around us, from natural sources like rocks and food.",
+        "A nuclear equation shows decay like a sum, with mass numbers matching on both sides.",
+        "Alpha decay: 226 minus the alpha particle's 4 leaves a nucleus with mass number 222.",
+        "Radiation dose is measured in sieverts, and 1000 mSv make 1 Sv, so 2000 mSv is 2 Sv."
+      ],
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "whats background radiation",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Background radiation is the low level of radiation that is around us all the time, coming from things like rocks, the air and space. It's there everywhere, even when nothing special is going on.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "exited": false,
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is long man",
+    "would_quit": {
+      "turn": "T7",
+      "quote": "So, the answer is 50 atoms each second. Some nuclei are unstable and give out radiation to become more stable, called radioactive decay, and it's random.",
+      "why": "A block of about 150 words lands right after 'that's confusing mate'. Her reply 'this is long man' shows she is close to leaving."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Think about a fire or a heater on a cold day: what do you feel coming off it when you stand nearby?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "tiny particles, called alpha particles, that a sheet of paper can stop. If you held paper in front of a source, what would reach your hand?",
+        "note": "The answer is given in the line just before the question."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "they are stopped by it, so nothing gets through to your hand. Think of throwing a ball at a closed door. If you held a sheet of paper in front of an alpha source, what would your hand feel?",
+        "note": "The tutor states 'nothing gets through to your hand', then asks for it back."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "alpha is called ionising radiation, meaning it knocks tiny electrons off the atoms it hits. What do you think happens to an atom that loses an electron?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "If a source has an activity of 50 Bq, how many of its atoms decay each second?",
+        "note": "Asks about activity, Bq and decay before teaching any of them."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "It's measured in becquerels (Bq), and 1 Bq means one decay each second. So if a source has an activity of 50 Bq, how many of its atoms decay each second?",
+        "note": "About 59 words, close to the limit."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": true,
+        "quote": "An alpha particle is 2 protons and 2 neutrons, so the nucleus loses 4 from its mass number and 2 from its atomic number, becoming a new element.",
+        "note": "About 150 words. Introduces mass number and atomic number without explaining them, then asks about atomic number."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "The nucleus now has one extra proton. What happens to its atomic number?",
+        "note": "Atomic number has still not been defined as the count of protons."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "it goes up by 1, because the nucleus gains a proton and the atomic number counts protons. If a nucleus has 6 protons before beta decay, how many does it have after?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What stops gamma getting through, then?",
+        "note": "Penetration was not taught in the text. The question assumes gamma is stopped, which goes against keyPoints[2].tutor_note. Beta's aluminium and ionising facts were skipped."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If gamma passes through your body that easily, what could it damage inside you?",
+        "note": "Damage to cells had not been taught. She has to guess."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "If gamma has the most energy of all these waves, what might that mean for how well it passes through things?",
+        "note": "'These waves' was never introduced, and alpha and beta are not waves. The answer was already given: 'gamma passes through you'."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If it comes from rocks and food, what do you think makes it \"natural\" rather than man-made?",
+        "note": "Ignores her correct answer. The question tests the everyday meaning of 'natural', not radon or the sources."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a nucleus with mass number 226 gives off an alpha particle of mass number 4, what mass number is left?",
+        "note": "Does not acknowledge her correct answer. Atomic numbers balancing is skipped."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "So if one nucleus has mass number 226 and gives off an alpha particle with mass number 4, what mass number is left?",
+        "note": "Ignores her question 'whats nuclear equation mean'."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If someone gets a dose of 2000 mSv, how many sieverts is that?",
+        "note": ""
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You answered questions on gamma radiation and on background radiation and nuclear equations.",
+        "note": "Leaves out that alpha and activity were told to her rather than worked through."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Background radiation is the low level of radiation that is around us all the time, coming from things like rocks, the air and space.",
+        "note": "Radon as the largest source and the man-made sources are never given."
+      }
+    ],
+    "tone_vs_reference": null,
+    "flow_faults": [
+      {
+        "type": "answer_in_question",
+        "turn": "T1",
+        "quote": "tiny particles, called alpha particles, that a sheet of paper can stop. If you held paper in front of a source, what would reach your hand?",
+        "note": "Paper stopping alpha is stated just before the question."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T2",
+        "quote": "they are stopped by it, so nothing gets through to your hand.",
+        "note": "She can copy 'nothing' straight back."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T4",
+        "quote": "If a source has an activity of 50 Bq, how many of its atoms decay each second?",
+        "note": "activity"
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T4",
+        "quote": "If a source has an activity of 50 Bq, how many of its atoms decay each second?",
+        "note": "Bq (becquerel)"
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T4",
+        "quote": "If a source has an activity of 50 Bq, how many of its atoms decay each second?",
+        "note": "decay"
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T7",
+        "quote": "Some nuclei are unstable and give out radiation to become more stable",
+        "note": "nucleus/nuclei"
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T7",
+        "quote": "so the nucleus loses 4 from its mass number and 2 from its atomic number, becoming a new element.",
+        "note": "mass number"
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T7",
+        "quote": "so the nucleus loses 4 from its mass number and 2 from its atomic number, becoming a new element.",
+        "note": "Atomic number is used and then asked about at the end of T7 before T9 defines it."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T10",
+        "quote": "What stops gamma getting through, then?",
+        "note": "Gamma is only reduced, not stopped (keyPoints[2].tutor_note)."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T10",
+        "quote": "Paper stops alpha. A few millimetres of aluminium stop beta. Thick lead only reduces gamma.",
+        "note": "The diagram shown with the question gives the answer."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T12",
+        "quote": "If gamma has the most energy of all these waves",
+        "note": "Alpha and beta are particles, not waves. 'These waves' was never defined."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T12",
+        "quote": "Yes, cells and organs are right, since gamma passes through you and can damage DNA.",
+        "note": "'Passes through you' already answers the question that follows."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T13",
+        "quote": "Now, radiation isn't only in labs: a little is always around you, even right now, from things like rocks and food.",
+        "note": "Her answer to S13 was right and was skipped over."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T14",
+        "quote": "A nuclear equation shows decay like a sum, with the mass numbers adding up the same on both sides.",
+        "note": "Her answer to S14 was right and was skipped over."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "shared-code: teach-core: define before asking",
+        "change": "Never ask a question that uses a term (activity, Bq, decay, atomic number, mass number) before a one-line everyday explanation in that turn or the one before. For T4, teach '1 Bq = one decay each second' first, then ask.",
+        "quote": "If a source has an activity of 50 Bq, how many of its atoms decay each second?"
+      },
+      {
+        "target": "shared-code: tell-me mode length",
+        "change": "When she says 'just tell me', split the telling into chunks of 60 words or fewer, and stop before starting the next key point. Add one line to keyPoints[0].content: 'Atomic number = number of protons; mass number = protons + neutrons.'",
+        "quote": "So, the answer is 50 atoms each second. Some nuclei are unstable and give out radiation to become more stable, called radioactive decay, and it's random."
+      },
+      {
+        "target": "keyPoints[1].writeBullets / keyPoints[2] tutor question",
+        "change": "Teach beta's 'stopped by a few mm of aluminium' and 'moderately ionising' before moving to gamma. Rephrase the gamma question as 'Which of paper, aluminium or thick lead cuts gamma down the most?', and ask it only after saying that gamma is reduced, not stopped.",
+        "quote": "What stops gamma getting through, then?"
+      },
+      {
+        "target": "shared-code: answer student questions",
+        "change": "When she asks 'whats X mean', answer in one everyday sentence before re-asking the question.",
+        "quote": "So if one nucleus has mass number 226 and gives off an alpha particle with mass number 4, what mass number is left?"
+      },
+      {
+        "target": "shared-code: teach-core: acknowledge correct answers",
+        "change": "Open every reply after a correct answer with 'Yes — <what was right>'. In keyPoints[3], teach radon as the largest UK source and name the man-made sources, instead of asking what 'natural' means.",
+        "quote": "Now, radiation isn't only in labs: a little is always around you, even right now, from things like rocks and food."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T7",
+      "question does not match what was taught: T4, T10, T11, T12, T13",
+      "flow faults: answer_in_question T1, answer_in_question T2, unexplained_term T4, unexplained_term T4, unexplained_term T4, unexplained_term T7, unexplained_term T7, unexplained_term T7, factual_or_unit_slip T10, answer_in_question T10, factual_or_unit_slip T12, answer_in_question T12, correct_answer_not_acknowledged T13, correct_answer_not_acknowledged T14"
+    ]
+  },
+  "cost": 0.699395,
+  "tutorCost": 0.476362,
+  "tutorCalls": 122,
+  "mode": "run",
+  "date": "2026-10-18"
+}

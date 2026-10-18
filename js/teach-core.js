@@ -102,6 +102,15 @@ function create(env) {
   // question, one more call asks only for the question to be put another way;
   // its reply is used if its question is now fine.
   const QUESTION_FIX = FLOW_FIX && env.questionFix !== false;
+  // P4 testers (runbook 2.5c2, 2026-10-18), on by default with FLOW_FIX.
+  // create({ call, testerFix4: false }) keeps the old path. (a) "whats X mean",
+  // "what is a neutron?": the reply answers that first, in everyday words,
+  // before its question (it was sometimes ignored and the question repeated).
+  // (b) the goodbye line names points in lesson order, keeps a heading's own
+  // capitals only for a name ("Thomson's"), and counts a point she was mostly
+  // told as told, not answered. (c) "this is long" gets a check-in that says
+  // sorry for the length, not "this bit is tricky".
+  const TESTER_FIX4 = FLOW_FIX && env.testerFix4 !== false;
   // First-time learner (brief docs/briefs/2026-10-18-first-time-learner.md
   // step 2), on by default. create({ call, firstTime: false }) keeps every
   // prompt, decision and state exactly as before (tools/check-flag-identical.js).
@@ -656,6 +665,7 @@ function create(env) {
     const history = _recentHistoryBlock(false);
     if (history) lines.push(history);
     lines.push(`${WHO_CAP} just said: "${userText}"`);
+    if (TESTER_FIX4 && decision.kind !== 'checkin' && _asksMeaning(userText)) lines.push(`She is asking what a word or idea means. The FIRST sentence of your reply answers that, in everyday words, with an everyday comparison if one helps. Do not skip it. Only then go on, and if you ask again what you asked before, use other words.`);
     if (FLOW_FIX) {
       if (decision.mark === 'correct') lines.push(`Her answer is right. The FIRST sentence of your reply says so and names what was right, before anything else.`);
       if (decision.mark === 'partly') lines.push(`Her answer is partly right. The FIRST sentence of your reply says which part is right, then say what is missing.`);
@@ -720,6 +730,14 @@ function create(env) {
     }
     if (decision.chunk) lines.push(_teachLine(decision.chunk));
     return lines.filter(Boolean).join('\n\n');
+  }
+
+  // TESTER_FIX4 (a): "whats X mean", "what does X mean", "what is a neutron?".
+  const MEANING_ASKED = /\bwhat('?s| is| are| does| do)\b[^?.!]{0,40}\bmean/i;
+  const WHAT_IS_SHORT = /^\W*(what'?s|whats|what is|what are|wot'?s)\s+(a |an |the )?[a-z][\w'-]*(\s[\w'-]+){0,3}\s*\?*\s*$/i;
+  function _asksMeaning(text) {
+    const t = String(text || '');
+    return (MEANING_ASKED.test(t) || WHAT_IS_SHORT.test(t)) && !/\b(answer|point|time)\b/i.test(t);
   }
 
   function _trimToLastSentence(text) {
@@ -1382,18 +1400,28 @@ function create(env) {
   }
   function _listNames(xs) { return xs.length <= 1 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`; }
   // The goodbye when she leaves: what she did, honestly (FLOW_FIX words), her place saved, no question.
+  // TESTER_FIX4 (b): lower-case the first letter unless the first word is a
+  // name ("Thomson's", "Rutherford's") or has capitals inside it.
+  function _pointName4(i) {
+    const h = _shortHeading(_points[i].heading).trim();
+    const first = h.split(/\s/)[0];
+    return /'s$|[A-Z].*[A-Z]/.test(first) ? h : h[0].toLowerCase() + h.slice(1);
+  }
   function _exitLine() {
     const how = _flow().how, cur = _state.currentPointIndex;
-    const of = k => _points.map((p, i) => how[i] === k ? _pointName(i) : null).filter(Boolean);
-    const answered = [...of('worked'), ...of('part-told'), ...of('part')];
-    const told = of('told');
+    const name = TESTER_FIX4 ? _pointName4 : _pointName;
+    const of = k => _points.map((p, i) => how[i] === k ? name(i) : null).filter(Boolean);
+    // in lesson order; a point she was mostly told counts as told
+    const inOrder = ks => _points.map((p, i) => ks.includes(how[i]) ? name(i) : null).filter(Boolean);
+    const answered = TESTER_FIX4 ? inOrder(['worked', 'part']) : [...of('worked'), ...of('part-told'), ...of('part')];
+    const told = TESTER_FIX4 ? inOrder(['told', 'part-told']) : of('told');
     const f = _state.facts[cur];
     const started = !_state.complete && !how[cur] && (_state.turnsOnPoint > 0 || (f && (f.answered.some(Boolean) || f.told.some(Boolean))));
     const partAns = started && f && f.answered.some(Boolean);
     const bits = [];
-    if (answered.length || partAns) bits.push(`you answered questions on ${_listNames([...answered, ...(partAns ? [_pointName(cur)] : [])])}`);
+    if (answered.length || partAns) bits.push(`you answered questions on ${_listNames([...answered, ...(partAns ? [name(cur)] : [])])}`);
     if (told.length) bits.push(`I told you about ${_listNames(told)}`);
-    if (started && !partAns) bits.push(`we made a start on ${_pointName(cur)}`);
+    if (started && !partAns) bits.push(`we made a start on ${name(cur)}`);
     const did = bits.length ? `Today ${_listNames(bits)}.` : 'We only just got started today.';
     if (_state.complete) return `Thanks for sticking with it. ${did} Your progress is saved, so you can come back to this lesson any time. Bye for now!`;
     return `No problem, thanks for sticking with it. ${did} Your place is saved, so we'll pick up right here next time. Bye for now!`;
@@ -1669,7 +1697,9 @@ function create(env) {
     // RESPECT_EXIT: the check-in is fixed, warm wording, never the same twice in a row.
     if (RESPECT_EXIT && decision.kind === 'checkin') {
       const ex = _exit();
-      const reply = CHECKIN_LINES[ex.checkins % CHECKIN_LINES.length];
+      const reply = TESTER_FIX4 && TOO_LONG_SAID.test(userText || '')
+        ? 'Sorry, that was a lot to read. Do you want me to just tell you the rest of this one, short and quick?'
+        : CHECKIN_LINES[ex.checkins % CHECKIN_LINES.length];
       _applyDecision(decision);
       ex.checkins++;
       return { reply, recap: null, decision };

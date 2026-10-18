@@ -1,0 +1,381 @@
+{
+  "id": "p4-nuclear-model",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome, glad you're here! Imagine someone hands you a wrapped present and you can't open it: how might you work out what's inside?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "idk like shake it and listen?",
+      "studentType": "idk",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Shaking it and listening is exactly how scientists work, using clues to guess what's hidden. In 1897, J.J. Thomson found the electron, a tiny particle with negative charge, inside atoms. Atoms were far too small to open and look into.\n\nIf something has negative charge, what kind of charge would it be attracted to?",
+      "recap": null,
+      "basic": "Electric charge",
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "whats electron",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "An electron is a tiny particle with negative charge, far too small to see, found inside every atom. Thomson pictured the atom as a ball of spread-out positive charge with electrons dotted through it, like plums in a pudding.\n\nIf the pudding is the positive part, what are the plums?",
+      "recap": null,
+      "basic": "Electric charge",
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "the electrons",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, the electrons are the plums. This picture is called the plum pudding model: the atom is a sphere of positive charge spread out evenly, with electrons dotted through it. The atom is neutral overall because the negative electrons balance the positive charge.\n\nIf you took a few electrons out of the pudding, what would the atom's charge become?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "whats plum pudding model",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "The plum pudding model is Thomson's picture of the atom: a soft ball of positive charge with tiny electrons dotted through it, like raisins in a sticky pudding.\n\nIf the electrons are the dotted bits, what does the rest of the ball carry?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "positive charge",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, the rest of the ball carries positive charge, spread out evenly. Thomson discovered the electron in 1897, and it carries negative charge. That's why the atom is neutral overall: the two kinds of charge balance each other.\n\nIf the pudding had positive charge but there were no electrons in it, what would the atom's overall charge be?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Sorry, that was a lot. Picture raisins in a pudding: the raisins are electrons, tiny bits with negative charge. The pudding is positive, and the two balance out.\n\nWhat kind of charge does an electron carry?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "negative charge",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes, negative charge is right for an electron. What do you think the bullets passing straight through tell us about the gold atoms?",
+      "recap": [
+        "Thomson found the electron in 1897, a tiny negatively charged particle inside atoms.",
+        "His plum pudding model: a ball of positive charge with electrons dotted through it.",
+        "Electrons are the plums; the pudding is the positive part.",
+        "Positive and negative charge balance, so the atom is neutral overall."
+      ],
+      "diagram": "p4-alpha-scattering",
+      "diagramCaption": "Most alpha particles pass straight through. A few are deflected through large angles. Very few bounce back.",
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "no idea what bullets",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Sorry, I jumped ahead. Here's the experiment: in 1909, tiny positively charged particles, called alpha particles, were fired at a very thin sheet of gold. What do you think that tells us about the inside of a gold atom?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "whats alpha particle",
+      "studentType": "minimal",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "An alpha particle is a tiny positively charged bullet, fired from a radioactive source. Because that nucleus is positive and alpha particles are positive, what happens when one heads straight at it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "whats radioactive source",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Now picture one positively charged alpha particle flying straight at a positive centre: what do you think that centre does to it?",
+      "recap": null,
+      "basic": "A radioactive source",
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "it pushes it away?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes, pushed away is right: like charges repel. That tiny positive centre, called the nucleus, sat in mostly empty space, which is why most alpha particles went straight through. Why did only a very few bounce almost straight back?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "im starving tbh can we do this later",
+      "studentType": "offtopic",
+      "kind": "pause",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "No problem, thanks for sticking with it. Today you answered questions on Thomson's plum pudding model and we made a start on Rutherford's alpha particle scattering experiment. Your place is saved, so we'll pick up right here next time. Bye for now!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    null,
+    null,
+    null
+  ],
+  "complete": false,
+  "farewell": false,
+  "exited": "pause",
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "lessonFlags": [
+    "points never completed: 1 \"Rutherford's alpha particle scattering experiment\", 2 \"Structure of the atom\", 3 \"Energy levels and later changes to the model\""
+  ],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is long",
+    "would_quit": {
+      "turn": "T11",
+      "quote": "Why did only a very few bounce almost straight back?",
+      "why": "After her 'whats radioactive source' question was ignored, she got a question about an observation never explained. She left at the next reply."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Imagine someone hands you a wrapped present and you can't open it: how might you work out what's inside?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If something has negative charge, what kind of charge would it be attracted to?",
+        "note": "Opposite charges attracting (basics[2]) was never taught. 'Charge' itself is never explained."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If the pudding is the positive part, what are the plums?",
+        "note": "The answer appears in the previous sentence."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you took a few electrons out of the pudding, what would the atom's charge become?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "a soft ball of positive charge with tiny electrons dotted through it, like raisins in a sticky pudding",
+        "note": "Switches from plums to raisins. The answer to its own question is in the same message."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Thomson discovered the electron in 1897, and it carries negative charge.",
+        "note": "Repeats facts already given in T1 and T2, which prompts 'this is long'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What kind of charge does an electron carry?",
+        "note": "The answer ('tiny bits with negative charge') is in the same message."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What do you think the bullets passing straight through tell us about the gold atoms?",
+        "note": "Jumps to bullets and gold atoms with no setup. The experiment was never introduced."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What do you think that tells us about the inside of a gold atom?",
+        "note": "No observation is given, so there is nothing to draw a conclusion from."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Because that nucleus is positive and alpha particles are positive, what happens when one heads straight at it?",
+        "note": "'That nucleus' is never introduced. 'Radioactive source' is unexplained. Repulsion of like charges is not taught."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Now picture one positively charged alpha particle flying straight at a positive centre: what do you think that centre does to it?",
+        "note": "Ignores her question 'whats radioactive source'. Like charges repelling was never taught."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why did only a very few bounce almost straight back?",
+        "note": "The bounce-back observation and the 'dense' idea were not taught in this turn or the one before."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Your place is saved, so we'll pick up right here next time. Bye for now!",
+        "note": ""
+      }
+    ],
+    "tone_vs_reference": null,
+    "flow_faults": [
+      {
+        "type": "unexplained_term",
+        "turn": "T1",
+        "quote": "In 1897, J.J. Thomson found the electron, a tiny particle with negative charge, inside atoms.",
+        "note": "'Charge' (positive/negative) is never explained in everyday words."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T2",
+        "quote": "Thomson pictured the atom as a ball of spread-out positive charge with electrons dotted through it, like plums in a pudding. If the pudding is the positive part, what are the plums?",
+        "note": "Electrons are named as the plums just before the question."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T4",
+        "quote": "If the electrons are the dotted bits, what does the rest of the ball carry?",
+        "note": "The same message says 'a soft ball of positive charge'."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T6",
+        "quote": "What kind of charge does an electron carry?",
+        "note": "The same message says 'the raisins are electrons, tiny bits with negative charge'."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T9",
+        "quote": "An alpha particle is a tiny positively charged bullet, fired from a radioactive source.",
+        "note": "'Radioactive source' is unexplained. Her follow-up question was then ignored in T10."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T9",
+        "quote": "Because that nucleus is positive and alpha particles are positive, what happens when one heads straight at it?",
+        "note": "'Nucleus' is used in a question before it is explained (only named in T11)."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: answer 'what's X' questions before moving on",
+        "change": "When the student asks 'whats X', give a one-sentence everyday definition first (e.g. 'a material that gives out tiny particles on its own'), then continue.",
+        "quote": "whats radioactive source"
+      },
+      {
+        "target": "keyPoints[1].content",
+        "change": "Teach in order: set-up (alpha particles = tiny positive particles fired at thin gold), then one observation at a time, then ask for that one conclusion. Never use 'bullets' or 'nucleus' before introducing them.",
+        "quote": "What do you think the bullets passing straight through tell us about the gold atoms?"
+      },
+      {
+        "target": "teach-core: no echo questions",
+        "change": "Questions must need one step of reasoning beyond the sentence just given. Do not ask for a fact stated in the same message (e.g. ask what happens to the charge if electrons are removed, rather than what charge an electron has).",
+        "quote": "What kind of charge does an electron carry?"
+      },
+      {
+        "target": "basics[2].text",
+        "change": "Teach basics[2] (positive/negative charge, opposites attract, like charges repel) in one short line before the first question that relies on it.",
+        "quote": "If something has negative charge, what kind of charge would it be attracted to?"
+      },
+      {
+        "target": "teach-core: no repeated facts, shorter turns for this student",
+        "change": "Do not restate facts already given (Thomson 1897, electron is negative). Keep turns under about 35 words after 'this is long'.",
+        "quote": "Thomson discovered the electron in 1897, and it carries negative charge."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T11",
+      "question does not match what was taught: T1, T7, T8, T9, T10, T11",
+      "flow faults: unexplained_term T1, answer_in_question T2, answer_in_question T4, answer_in_question T6, unexplained_term T9, unexplained_term T9"
+    ]
+  },
+  "cost": 0.45204999999999995,
+  "tutorCost": 0.293908,
+  "tutorCalls": 67,
+  "mode": "run",
+  "date": "2026-10-18"
+}

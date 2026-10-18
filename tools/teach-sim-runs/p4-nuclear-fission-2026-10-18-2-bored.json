@@ -1,0 +1,432 @@
+{
+  "id": "p4-nuclear-fission",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome, I'm glad you're here! Think of a time you snapped a biscuit in half or watched two drops of water run together on a window: what did you notice happening?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "um when i snap a biscuit it breaks into two pieces? and the water drops like merge together i guess",
+      "studentType": "try",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, a biscuit breaking into two is the idea of splitting. Look at the diagram: a big uranium-235 nucleus takes in a tiny particle called a neutron, then splits into two smaller nuclei. If the two pieces came from one big nucleus, how many pieces do you get?",
+      "recap": null,
+      "diagram": "p4-fission",
+      "diagramCaption": "A uranium-235 nucleus absorbs a neutron and splits into two smaller nuclei. It gives out 2 or 3 neutrons.",
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "like three pieces? cus theres the neutron and then the two bits",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Not quite. The neutron goes in first, then the big nucleus splits into two smaller nuclei, like a biscuit snapping in half. The splitting itself is called nuclear fission. If a snapped biscuit gives you two pieces, how many smaller nuclei does one uranium-235 nucleus split into?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "oh right, two smaller nuclei then",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "When the nucleus splits, it also gives out 2 or 3 neutrons, and together the two smaller nuclei and those neutrons are called the fission products, like all the crumbs and pieces left after the snap. If the nucleus gives out 2 neutrons, how many fission products are there in total?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "whats fission products",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Fission products are just everything left over after the split, like all the pieces and crumbs once the biscuit snaps. They are the two smaller nuclei plus the neutrons that come out. If a nucleus gives out 3 neutrons, how many fission products come out altogether?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "um like 5? the two nuclei plus the 3 neutrons",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, 5 is right: the two nuclei plus the 3 neutrons. Uranium-235 is the fuel used in nuclear reactors, and it only splits after it absorbs a neutron, a bit like a biscuit that only snaps once you press on it. If a uranium-235 nucleus never meets a neutron, what would you expect it to do?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "it would just stay there and not split i guess",
+      "studentType": "wrong",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes, that's right: with no neutron to hit it, uranium-235 just stays as it is. Look at the diagram: each fission releases neutrons that can cause more fissions, and that repeating pattern is called a chain reaction. If one fission releases 3 neutrons and each of those causes another fission, how many fissions happen in the next step?",
+      "recap": [
+        "Fission means a big nucleus splits into two smaller nuclei, like snapping a biscuit.",
+        "Uranium-235 only splits after it absorbs a neutron, so no neutron means no split.",
+        "The split also gives out 2 or 3 neutrons.",
+        "The fission products are the two smaller nuclei plus those neutrons."
+      ],
+      "diagram": "p4-chain-reaction",
+      "diagramCaption": "Each fission releases neutrons that can cause more fissions.",
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "whats chain reaction",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "A chain reaction is when one fission sets off more fissions, like a row of dominoes where each one knocks over the next. Say one fission releases 3 neutrons, and each neutron hits a new nucleus and splits it. How many nuclei have split in that next step?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "idk like maybe 9?",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "The answer is 3 nuclei split. Look at the diagram: in nuclear fusion, two light nuclei join to form a heavier nucleus, and energy is released. Like your drops merging, what happens to two nuclei in fusion?",
+      "recap": [
+        "Uranium-235 only splits when a neutron hits it.",
+        "Each fission releases neutrons that can trigger more fissions.",
+        "That repeating pattern is called a chain reaction, like falling dominoes.",
+        "One fission releasing 3 neutrons can lead to 3 new fissions next."
+      ],
+      "diagram": "p4-fusion",
+      "diagramCaption": "Two light nuclei join to form a heavier nucleus, and energy is released.",
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "they join together to make one bigger nucleus",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Yes, two nuclei joining into one bigger nucleus is exactly what fusion is. Fission and fusion are both nuclear reactions that release a lot of energy, but they work in opposite directions: fission splits one big nucleus, fusion joins two small ones. Which of the two is used in nuclear power stations today?",
+      "recap": [
+        "In fusion, two light nuclei join to form one heavier nucleus.",
+        "Energy is released when the nuclei merge together.",
+        "Fusion is the opposite of fission, where a nucleus splits apart."
+      ],
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "this is long man",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Fair enough, I'll keep it short. Fission is the biscuit snapping, one big nucleus splitting apart. Fusion is the water drops merging, two small nuclei joining.\n\nWhich one of the two happens inside the Sun?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "no idea lol",
+      "studentType": "idk",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Fusion happens in the Sun, and stars like it. Fission usually starts when a big, unstable nucleus absorbs a neutron, and it's what nuclear power stations use today, with the chain reaction controlled so the energy comes out steadily. Fusion isn't used to make electricity on a large scale yet.\n\nThat's the end of this lesson. You answered questions on \"Nuclear fission\" and \"Nuclear fusion\", and I told you about \"Chain reactions and controlling fission\" and \"Comparing fission and fusion\". Thanks for sticking with it, and come back any time.",
+      "recap": [
+        "Fission splits one big nucleus into smaller ones, releasing energy.",
+        "Fusion joins two small nuclei into one bigger nucleus, also releasing energy.",
+        "Fission is the biscuit snapping; fusion is two water drops merging.",
+        "The two reactions work in opposite directions but both release lots of energy."
+      ],
+      "flags": [
+        "over length (90 words)"
+      ]
+    },
+    {
+      "n": 12,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Thanks for sticking with it. Today you answered questions on nuclear fission and nuclear fusion and I told you about chain reactions and controlling fission and comparing fission and fusion. Your progress is saved, so you can come back to this lesson any time. Bye for now!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "exited": false,
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is long man",
+    "would_quit": {
+      "turn": "T9",
+      "quote": "Which of the two is used in nuclear power stations today?",
+      "why": "After a long run of arithmetic-style questions, this asks something never taught. She replies \"this is long man\", then \"no idea lol\"."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Think of a time you snapped a biscuit in half or watched two drops of water run together on a window: what did you notice happening?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "If the two pieces came from one big nucleus, how many pieces do you get?",
+        "note": "The question states its own answer ('two pieces'). It is muddled enough that she counted the neutron and said three. 'Nucleus' is used without explanation."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a snapped biscuit gives you two pieces, how many smaller nuclei does one uranium-235 nucleus split into?",
+        "note": "The answer is given in the same message ('splits into two smaller nuclei')."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When the nucleus splits, it also gives out 2 or 3 neutrons, and together the two smaller nuclei and those neutrons are called the fission products",
+        "note": "Her correct answer 'two smaller nuclei' is not acknowledged. The lesson's point that all fission products have kinetic energy is never taught."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "They are the two smaller nuclei plus the neutrons that come out.",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "it only splits after it absorbs a neutron",
+        "note": "The lesson says 'usually'; spontaneous fission is rare but possible. The question then rewards the wrong idea. 'Reactors' is used without explanation."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "with no neutron to hit it, uranium-235 just stays as it is",
+        "note": "Confirms the 'never splits' slip. Defines chain reaction only as 'that repeating pattern'."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A chain reaction is when one fission sets off more fissions, like a row of dominoes where each one knocks over the next.",
+        "note": ""
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "The answer is 3 nuclei split.",
+        "note": "Gives the bare answer with no reason why 9 is wrong, then jumps topic. Controlled vs uncontrolled chain reactions is skipped. The fusion question is answered in the same message. 'Light' nuclei is unexplained."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which of the two is used in nuclear power stations today?",
+        "note": "Power stations were never taught."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which one of the two happens inside the Sun?",
+        "note": "The Sun was never taught. She says 'no idea lol'."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": true,
+        "confusing": false,
+        "quote": "That's the end of this lesson.",
+        "note": "About 95 words. Ends the lesson although she did not ask to stop. Crams in untaught content."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Today you answered questions on nuclear fission and nuclear fusion and I told you about chain reactions and controlling fission and comparing fission and fusion.",
+        "note": "Repeats the T11 summary word for word instead of giving one short goodbye line."
+      }
+    ],
+    "tone_vs_reference": null,
+    "flow_faults": [
+      {
+        "type": "answer_in_question",
+        "turn": "T1",
+        "quote": "If the two pieces came from one big nucleus, how many pieces do you get?",
+        "note": "The answer 'two' is stated in the question."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T1",
+        "quote": "a big uranium-235 nucleus takes in a tiny particle called a neutron",
+        "note": "'Nucleus' is never explained."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T2",
+        "quote": "If a snapped biscuit gives you two pieces, how many smaller nuclei does one uranium-235 nucleus split into?",
+        "note": "The same message says 'splits into two smaller nuclei'."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T3",
+        "quote": "When the nucleus splits, it also gives out 2 or 3 neutrons",
+        "note": "She correctly said 'two smaller nuclei'."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T5",
+        "quote": "it only splits after it absorbs a neutron",
+        "note": "The lesson says 'usually'; spontaneous fission is rare, not impossible."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T5",
+        "quote": "Uranium-235 is the fuel used in nuclear reactors",
+        "note": "'Reactor' is not explained (see basics[4])."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T5",
+        "quote": "If a uranium-235 nucleus never meets a neutron, what would you expect it to do?",
+        "note": "Implied by 'only splits after it absorbs a neutron'."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T6",
+        "quote": "with no neutron to hit it, uranium-235 just stays as it is",
+        "note": "Reinforces the 'never splits' error."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T8",
+        "quote": "Like your drops merging, what happens to two nuclei in fusion?",
+        "note": "The same message says 'two light nuclei join to form a heavier nucleus'."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T8",
+        "quote": "in nuclear fusion, two light nuclei join to form a heavier nucleus",
+        "note": "'Light' means small mass (basics[2]) and is not explained."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T11",
+        "quote": "Fission usually starts when a big, unstable nucleus absorbs a neutron",
+        "note": "'Unstable' is not explained."
+      },
+      {
+        "type": "exit_not_respected",
+        "turn": "T12",
+        "quote": "Thanks for sticking with it. Today you answered questions on nuclear fission and nuclear fusion and I told you about chain reactions and controlling fission and comparing fission and fusion.",
+        "note": "Several sentences repeating T11, not one short closing line."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: off-topic/idk handling",
+        "change": "After a second short or off-topic reply ('this is long man' then 'no idea lol'), offer a warm two-sentence check-in (stop, one quick thing, or tell the rest). Do not end the lesson unilaterally with a long summary.",
+        "quote": "That's the end of this lesson."
+      },
+      {
+        "target": "teach-core: question selection",
+        "change": "Only ask about content stated in this turn or the previous one. Teach 'fission is used in power stations' and 'fusion powers the Sun' before asking about them.",
+        "quote": "Which one of the two happens inside the Sun?"
+      },
+      {
+        "target": "keyPoints[0].content / teach-core: keep hedges",
+        "change": "Keep the lesson's 'usually' and mention that spontaneous fission is rare. Never say uranium-235 'only' splits after absorbing a neutron. Add the missing point that all fission products have kinetic energy.",
+        "quote": "it only splits after it absorbs a neutron"
+      },
+      {
+        "target": "teach-core: wrong-answer feedback + keyPoints[1].content",
+        "change": "After a wrong answer, say why in one line: 3 neutrons each split one nucleus, so 3, not 9. Then teach controlled (reactor) vs uncontrolled (weapon) before moving to fusion.",
+        "quote": "The answer is 3 nuclei split."
+      },
+      {
+        "target": "teach-core: answer-in-question check",
+        "change": "Reject questions whose answer appears in the same or previous tutor message. Ask her to apply the idea instead, e.g. which picture shows fusion. Also confirm a correct answer before teaching on.",
+        "quote": "If a snapped biscuit gives you two pieces, how many smaller nuclei does one uranium-235 nucleus split into?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T9",
+      "question does not match what was taught: T9, T10",
+      "flow faults: answer_in_question T1, unexplained_term T1, answer_in_question T2, correct_answer_not_acknowledged T3, factual_or_unit_slip T5, unexplained_term T5, answer_in_question T5, factual_or_unit_slip T6, answer_in_question T8, unexplained_term T8, unexplained_term T11, exit_not_respected T12"
+    ]
+  },
+  "cost": 0.38680499999999995,
+  "tutorCost": 0.22756000000000004,
+  "tutorCalls": 64,
+  "mode": "run",
+  "date": "2026-10-18"
+}

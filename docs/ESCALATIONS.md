@@ -256,3 +256,25 @@ Still there:
 - p2-components text re-run stopped at T12 on the first key point (the tester's 12-turns-a-point limit), so "bye, got to go" did not come up in that run. It was tested in both b3 runs and the website re-run.
 - Not RESPECT_EXIT, seen on the website: the "tell me the rest" message on fixed resistors is a wall of text (V = IR, worked example, I-V graph) and twice said LDR and thermistor resistance "changes with current" (not in the lesson; a tutor slip); "the origin is usually the bottom-left corner" while the diagram's origin is in the middle; phone layout items as before (panels above the chat, title truncated, end screen scrolled up).
 - The quick-thing reaction sometimes adds its own sign-off ("you can rest up and grab some food") before "stop here or keep going?".
+
+## P4 Atomic structure (runbook 2.6, 2026-10-18): testers still failing
+
+Topic procedure done (P4: done, 72a6fd4). AI lessons on for all four (bdd9612). teach-sim: QUESTION_FIX added (either/or question left after the retries ran out); re-runs clean apart from long tell-the-rest and closing replies.
+
+Text tester first pass -> re-run (one fix round, 1203c61: TESTER_FIX4 shared code; basics for neutron, gamma rays, atomic and mass number). All FAIL. All stay live.
+- p4-nuclear-model: quits T14 -> T11; unexplained_term 9 -> 3, answer_in_question 8 -> 3.
+- p4-radioactivity: quits T7 -> no quit; unexplained_term 6 -> 3, answer_in_question 4 -> 9.
+- p4-half-life: quits T8 -> T9; unexplained_term 5 -> 3, answer_in_question 2 -> 5.
+- p4-nuclear-fission: quits T9 -> T9; unexplained_term 6 -> 4, answer_in_question 6 -> 4.
+Website p4-half-life: FAIL, broken 10 (quits S10) -> 7 (quits S8) (tools/site-test-runs/2026-10-18/p4-half-life, -2). No looks_wrong item stops use.
+
+Fixed and seen fixed in the re-runs: "whats X mean" is now answered (it was ignored twice on the website); goodbye names points in lesson order with consistent capitals.
+
+Still there (tutor slips, not lesson text; the lesson text is right in each case):
+- Wrong arithmetic accepted and repeated (website -2 T6/T7: "40 Bq, then 25 Bq"); a correct answer ignored (website -2 S4, S15; text half-life T15, fission T3).
+- p4-radioactivity: tutor agreed gamma's high energy means "loads of damage" (gamma is weakly ionising); said only mass numbers balance.
+- p4-nuclear-fission: tutor said a nucleus "only" splits after absorbing a neutron (the lesson says usually; spontaneous fission is rare).
+- p4-half-life: a request to stop for lunch was followed by more teaching (exit_not_respected T9): "Lunch is a good call" did not match the exit patterns.
+- The goodbye after the lesson's end is still long and its "answered"/"told" split follows the FLOW_FIX record, which can be wrong (website -2 T16, text half-life T21).
+- answer_in_question stays high (p4-radioactivity 9).
+- Website: the side-column diagram thumbnail is unreadably small; the diagram's 800/400/200 Bq does not match the tutor's own 80/40 example; Key Terms panel cut off at the bottom.

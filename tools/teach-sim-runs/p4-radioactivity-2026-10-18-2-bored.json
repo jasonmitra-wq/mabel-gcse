@@ -1,0 +1,565 @@
+{
+  "id": "p4-radioactivity",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome, I'm glad you're here! Think about a time you've seen something give off energy that you couldn't see coming out, like a hot radiator or a torch. How could you tell it was giving something out?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "felt the heat from the radiator",
+      "studentType": "try",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — feeling heat on your skin is a good way to know something is giving energy out. If you held a source giving out alpha particles a few centimetres from your skin, what do you think would happen to those particles?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "whats an alpha particle",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "An alpha particle is a tiny lump of matter that some unstable atoms fire out, made of 2 protons and 2 neutrons stuck together. If you held a sheet of paper in front of a source giving out alpha particles, what would happen to them?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "they'd get stopped by the paper?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — paper stops alpha particles, so they can't get through it. But alpha particles are highly ionising: they knock electrons off atoms they pass, and a source swallowed or breathed in has no skin to stop it. Why would that be dangerous inside your body?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "cos they'd knock electrons off your cells and damage them?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — knocking electrons off atoms in your cells damages them. A source's activity is how many of its unstable nuclei decay each second, measured in becquerels (Bq). If a source has a high activity, what does that tell you about how much radiation it gives out?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "whats activity mean tho",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Activity is how fast a source is \"going off\", like how many popcorn kernels pop each second in a pan. Each pop here is one unstable nucleus decaying, so more pops per second means more radiation coming out. If source A has an activity of 500 Bq and source B has 20 Bq, which one gives out more radiation?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "k",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "nah tell me the answer",
+      "studentType": "checkin-no",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Source A, at 500 Bq, gives out more. Here's the rest: an unstable nucleus gives out radiation to become more stable, and it happens at random. An alpha particle is a helium nucleus, 2 protons and 2 neutrons, so the mass number falls by 4 and the atomic number by 2. It's stopped by paper or about 5 cm of air, but it's very dangerous if swallowed or breathed in.\n\nNext up: a beta particle is a fast electron that comes out of the nucleus. If a neutron turns into a proton, where do you think the electron comes from?",
+      "recap": [
+        "Alpha particles are 2 protons and 2 neutrons fired out by unstable atoms.",
+        "Paper stops them, so outside the body they can't get through skin.",
+        "Highly ionising: they knock electrons off atoms, so inside the body they damage cells.",
+        "Activity is how many nuclei decay each second, measured in becquerels (Bq)."
+      ],
+      "flags": [
+        "over length (100 words)"
+      ]
+    },
+    {
+      "n": 8,
+      "student": "this is confusing lol",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Fair enough, let me simplify. A neutron in the nucleus turns into a proton, and that change makes a fast electron which shoots out. That electron is the beta particle, made inside the nucleus, not taken from the outside of the atom.\n\nSo where is the beta particle made?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "from the electrons outside the atom?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not quite, but that's a really common mix-up: the beta particle is made inside the nucleus, when a neutron turns into a proton. When that happens, the nucleus has gained one proton, so its atomic number (its number of protons) goes up by 1. How many protons does it have afterwards?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "can we skip this",
+      "studentType": "bored",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Skipping beta for now; it was about fast electrons made in the nucleus. Next is gamma, which is high-energy waves from the nucleus, with no mass and no charge. Look at the diagram: paper stops alpha, aluminium stops beta, but thick lead only reduces gamma. Which of the three passes through the most material?",
+      "recap": null,
+      "diagram": "p4-penetration",
+      "diagramCaption": "Paper stops alpha. A few millimetres of aluminium stop beta. Thick lead only reduces gamma.",
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "gamma i guess",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes — gamma passes through the most material, which is why it needs thick lead to cut it down. So if gamma is the highest-energy wave, what does that tell you about how much damage it could do passing through your body?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "it could do loads of damage cos its strong?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Yes, you're right that gamma's high energy means loads of damage. One source is radon gas coming out of rocks. Which part of the UK's ground do you think radon comes from?",
+      "recap": [
+        "Gamma is a high-energy wave from the nucleus, with no mass or charge.",
+        "Paper stops alpha, aluminium stops beta, but gamma only fades in thick lead.",
+        "Gamma passes through the most material of the three.",
+        "That high energy means it can cause real damage inside the body."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "dunno, rocks underground?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, rocks underground is right: radon gas seeps out of rocks, and it's the biggest source of background radiation in the UK. Background radiation just means the low-level radiation that's always around us. Since some rocks give out more radon than others, what would that change about the radiation you get?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Sorry, that was a lot. A nuclear equation is like a balanced bank account: the numbers going in must match the numbers coming out. If the left side adds up to 10, what must the right side add up to?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "whats a nuclear equation",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "A nuclear equation is a short sum showing a radioactive atom changing into something else, with the mass numbers balanced on both sides. If the left side's mass numbers add to 14, what do the right side's add to?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "also 14?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, 14 is right: the mass numbers must balance on both sides. Next, the radiation dose you receive is measured in sieverts (Sv), and 1000 millisieverts (mSv) = 1 sievert (Sv). What unit measures your radiation dose?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "sieverts?",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Yes, sieverts is right: that's the unit for radiation dose. That brings us to the end of this lesson.",
+      "recap": [
+        "Background radiation is the low-level radiation that is always around us.",
+        "Radon gas seeping out of rocks is the biggest UK source.",
+        "In a nuclear equation, mass numbers must add up the same on both sides.",
+        "Radiation dose is measured in sieverts, and 1000 millisieverts make 1 sievert."
+      ],
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Thanks for sticking with it. Today you answered questions on gamma radiation (γ) and I told you about radioactive decay and alpha radiation (α) and background radiation and nuclear equations. Your progress is saved, so you can come back to this lesson any time. Bye for now!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    false,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "exited": false,
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "lessonFlags": [
+    "points never completed: 1 \"Beta radiation (β)\""
+  ],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is long",
+    "would_quit": false,
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Think about a time you've seen something give off energy that you couldn't see coming out, like a hot radiator or a torch.",
+        "note": "Everyday warm-up before any teaching."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "If you held a source giving out alpha particles a few centimetres from your skin, what do you think would happen to those particles?",
+        "note": "Asks about alpha particles before saying what they are. She replies 'whats an alpha particle'."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you held a sheet of paper in front of a source giving out alpha particles, what would happen to them?",
+        "note": "Teaches what alpha is made of, then asks about paper stopping it, which was never taught."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why would that be dangerous inside your body?",
+        "note": "The answer ('knock electrons off atoms') is in the same message."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A source's activity is how many of its unstable nuclei decay each second, measured in becquerels (Bq).",
+        "note": "'decay' is used without an everyday explanation."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If source A has an activity of 500 Bq and source B has 20 Bq, which one gives out more radiation?",
+        "note": "The rule 'more pops per second means more radiation' is given just before the question."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?",
+        "note": "Check-in offered after only one short reply ('k')."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": true,
+        "quote": "Next up: a beta particle is a fast electron that comes out of the nucleus. If a neutron turns into a proton, where do you think the electron comes from?",
+        "note": "About 95 words. Says the electron comes out of the nucleus, then asks where it comes from. She replies 'this is confusing lol'."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So where is the beta particle made?",
+        "note": "Answer ('made inside the nucleus') is stated just before."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "How many protons does it have afterwards?",
+        "note": "Cannot be answered: no starting number of protons was given."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which of the three passes through the most material?",
+        "note": "Answer is given just before: 'thick lead only reduces gamma'."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "So if gamma is the highest-energy wave, what does that tell you about how much damage it could do passing through your body?",
+        "note": "Leading question that steers her towards 'loads of damage'. Ionising power was never taught for gamma, and gamma is the least ionising."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Yes, you're right that gamma's high energy means loads of damage. One source is radon gas coming out of rocks.",
+        "note": "Confirms a misconception. Says 'one source' without saying of what (background radiation not yet introduced). The answer 'rocks' is in the same message."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, rocks underground is right: radon gas seeps out of rocks, and it's the biggest source of background radiation in the UK.",
+        "note": ""
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "A nuclear equation is like a balanced bank account: the numbers going in must match the numbers coming out.",
+        "note": "Uses 'nuclear equation' without explaining it. The bank-account analogy is muddled. The question is trivial."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "A nuclear equation is a short sum showing a radioactive atom changing into something else, with the mass numbers balanced on both sides.",
+        "note": "Leaves out that atomic numbers must also balance, which is the lesson's main common mistake."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What unit measures your radiation dose?",
+        "note": "Answer given in the sentence just before."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That brings us to the end of this lesson.",
+        "note": "Ends the lesson without teaching atomic-number balancing, alpha/beta/gamma in equations, or the inside/outside-the-body hazards."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Today you answered questions on gamma radiation (γ) and I told you about radioactive decay and alpha radiation (α) and background radiation and nuclear equations.",
+        "note": "Clunky summary. She also answered alpha and nuclear-equation questions."
+      }
+    ],
+    "tone_vs_reference": null,
+    "flow_faults": [
+      {
+        "type": "unexplained_term",
+        "turn": "T1",
+        "quote": "If you held a source giving out alpha particles a few centimetres from your skin, what do you think would happen to those particles?",
+        "note": "'alpha particles' is used in a question before it is explained."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T4",
+        "quote": "A source's activity is how many of its unstable nuclei decay each second, measured in becquerels (Bq).",
+        "note": "'decay' is never explained in everyday words."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T14",
+        "quote": "A nuclear equation is like a balanced bank account: the numbers going in must match the numbers coming out.",
+        "note": "She asks 'whats a nuclear equation'."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T3",
+        "quote": "But alpha particles are highly ionising: they knock electrons off atoms they pass",
+        "note": "She copies it back: 'knock electrons off your cells'."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T5",
+        "quote": "so more pops per second means more radiation coming out.",
+        "note": "The rule is stated just before the 500 Bq vs 20 Bq question."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T7",
+        "quote": "Next up: a beta particle is a fast electron that comes out of the nucleus.",
+        "note": "States where the electron comes from, then asks it."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T8",
+        "quote": "That electron is the beta particle, made inside the nucleus, not taken from the outside of the atom.",
+        "note": "Then asks where it is made."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T10",
+        "quote": "Look at the diagram: paper stops alpha, aluminium stops beta, but thick lead only reduces gamma.",
+        "note": "Answers 'which passes through the most'."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T12",
+        "quote": "One source is radon gas coming out of rocks.",
+        "note": "Then asks where radon comes from."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T14",
+        "quote": "the numbers going in must match the numbers coming out.",
+        "note": "Then asks what the right side must add up to."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T15",
+        "quote": "with the mass numbers balanced on both sides.",
+        "note": "Then asks 14 → ?"
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T16",
+        "quote": "Next, the radiation dose you receive is measured in sieverts (Sv)",
+        "note": "Then asks which unit measures dose."
+      },
+      {
+        "type": "checkin_without_struggle",
+        "turn": "T6",
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": "'k' was her first short reply, not the second in a row."
+      },
+      {
+        "type": "tell_me_skipped_content",
+        "turn": "T7",
+        "quote": "Source A, at 500 Bq, gives out more. Here's the rest:",
+        "note": "Leaves out the Geiger-Muller tube and count rate, and that radiation can also be a neutron (keyPoints[0])."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T12",
+        "quote": "Yes, you're right that gamma's high energy means loads of damage.",
+        "note": "The lesson says gamma is weakly ionising (least ionising). This confirms a misconception."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T15",
+        "quote": "with the mass numbers balanced on both sides.",
+        "note": "Implies only mass numbers balance. Atomic numbers must balance too (commonMistakes[2])."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "keyPoints[2].writeBullets[3] / teach-core: never affirm a wrong answer",
+        "change": "After the gamma penetration question, teach 'gamma is weakly ionising: it goes far but ionises few atoms'. Do not ask the leading 'highest-energy → damage' question. If she says gamma does loads of damage, correct it: it is dangerous from outside because it reaches organs, but it ionises weakly.",
+        "quote": "Yes, you're right that gamma's high energy means loads of damage."
+      },
+      {
+        "target": "teach-core: tell-me summary",
+        "change": "When she asks to be told, cover every keyPoints[0].writeBullets item (including count rate/detector and neutron) in at most two short sentences per message. Move to beta in a separate message, and do not ask a question whose answer was just stated.",
+        "quote": "Next up: a beta particle is a fast electron that comes out of the nucleus. If a neutron turns into a proton, where do you think the electron comes from?"
+      },
+      {
+        "target": "teach-core: question generation",
+        "change": "Reject any question whose answer appears in the same or the previous tutor message. Ask her to apply the idea to a new case instead, e.g. 'Which would get through a sheet of paper: alpha or gamma?' rather than restating the diagram.",
+        "quote": "Which of the three passes through the most material?"
+      },
+      {
+        "target": "keyPoints[1].content",
+        "change": "Add a concrete number to use in the beta question, e.g. 'Carbon-14 has 6 protons. After beta decay, how many?' (answer 7), so the question can actually be answered.",
+        "quote": "How many protons does it have afterwards?"
+      },
+      {
+        "target": "keyPoints[3].content",
+        "change": "Introduce 'nuclear equation' with a tiny worked example in notation (top = mass, bottom = atomic). State that both the top and bottom numbers balance. Then ask her to fill in a bottom number. Drop the bank-account analogy.",
+        "quote": "A nuclear equation is like a balanced bank account: the numbers going in must match the numbers coming out."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "question does not match what was taught: T1, T2, T11, T12",
+      "flow faults: unexplained_term T1, unexplained_term T4, unexplained_term T14, answer_in_question T3, answer_in_question T5, answer_in_question T7, answer_in_question T8, answer_in_question T10, answer_in_question T12, answer_in_question T14, answer_in_question T15, answer_in_question T16, checkin_without_struggle T6, tell_me_skipped_content T7, factual_or_unit_slip T12, factual_or_unit_slip T15"
+    ]
+  },
+  "cost": 0.708224,
+  "tutorCost": 0.47469199999999995,
+  "tutorCalls": 118,
+  "mode": "run",
+  "date": "2026-10-18"
+}

@@ -43,9 +43,11 @@
     {
       "heading": "Fixed resistors and variable resistors",
       "content": "A <strong>fixed resistor</strong> has a constant resistance at a constant temperature. For some resistors, the value of R stays constant. In others, it changes as the current changes. The resistance of lamps, diodes, thermistors and LDRs is not constant. It changes with the current through them.\n\nThe equation <strong>V = IR</strong> links potential difference, current and resistance for any component. Here V is potential difference (volts, V), I is current (amps, A) and R is resistance (ohms, Ω). For an <strong>ohmic conductor</strong> at a constant temperature, the current is directly proportional to the potential difference.\n\nA <strong>variable resistor</strong> (also called a <strong>rheostat</strong>) lets you change the resistance by hand. You slide a contact along a resistive wire or track. They are used in dimmer switches, volume controls and lab experiments to control current.\n\nTake an <strong>I-V graph</strong> for an ohmic conductor (a fixed resistor at constant temperature). Current goes on the y-axis and potential difference on the x-axis. You get a straight line through the origin. The steeper the line, the lower the resistance. Doubling the resistance halves the gradient.\n\nWorked example: R = 10 Ω, V = 5 V → I = V ÷ R = 5 ÷ 10 = 0.5 A.",
+      "diagram": "p2-iv-resistor",
+      "diagramCaption": "A resistor at constant temperature: a straight line through the origin.",
+      "diagramExamTip": true,
       "examFlag": true,
       "cardFlag": true,
-      "diagram": null,
       "writeBullets": [
         "Fixed resistor — constant resistance at a constant temperature",
         "Variable resistor (rheostat) — the user can change the resistance by hand",
@@ -76,9 +78,11 @@
     {
       "heading": "Diodes",
       "content": "A <strong>diode</strong> is a component that only lets current flow in <strong>one direction</strong>, the forward direction. In the <strong>reverse direction</strong>, the diode has a very high resistance. So only a very small current flows.\n\nOn an <strong>I-V graph</strong>, the diode shows a flat line near zero for negative potential differences. In the forward direction, the current rises steeply.\n\nThe circuit symbol is a triangle pointing the way current flows. A vertical bar blocks flow the other way.\n\nAn <strong>LED (light-emitting diode)</strong> is a diode that gives out light when current flows forwards. LEDs are used in TVs, phone screens, traffic lights and energy-efficient lighting.",
+      "diagram": "p2-iv-diode",
+      "diagramCaption": "A diode: current flows in one direction only.",
+      "diagramExamTip": true,
       "examFlag": true,
       "cardFlag": true,
-      "diagram": null,
       "writeBullets": [
         "Diode — lets current flow forwards only. In the reverse direction, very high resistance and a very small current",
         "I-V graph — flat for negative V, then a steep rise in the forward direction",
@@ -101,9 +105,11 @@
     {
       "heading": "Light-Dependent Resistors (LDRs)",
       "content": "An <strong>LDR (light-dependent resistor)</strong> is a component whose resistance <strong>decreases as light intensity increases</strong>.\n\nIn the dark, its resistance is very high, and can be hundreds of kΩ. In bright light, its resistance can drop to just a few hundred ohms.\n\nUses:\n- <strong>automatic street lights</strong>: when it gets dark, the LDR's resistance rises and the circuit switches the light on\n- <strong>burglar alarms</strong>: breaking a light beam changes the LDR's resistance, which sets off the alarm\n- <strong>camera exposure meters</strong> and garden solar lights\n\nGraph shape: resistance on the y-axis, light intensity on the x-axis → a downward curve (not a straight line).",
+      "diagram": "p2-ldr-graph",
+      "diagramCaption": "An LDR: brighter light, lower resistance.",
+      "diagramExamTip": true,
       "examFlag": true,
       "cardFlag": true,
-      "diagram": null,
       "writeBullets": [
         "LDR — resistance decreases as light intensity increases",
         "Dark — very high resistance (hundreds of kΩ). Bright light — low resistance (hundreds of Ω)",
@@ -122,9 +128,11 @@
     {
       "heading": "Thermistors",
       "content": "A <strong>thermistor</strong> is a component whose resistance <strong>decreases as temperature increases</strong>. The hotter it gets, the lower its resistance. At low temperatures, its resistance is high.\n\nWorked example: at 20°C a thermistor might have R = 5000 Ω. At 100°C it might fall to 200 Ω.\n\nUses: <strong>thermostats</strong> (central heating) and <strong>fire alarms</strong>. Also temperature sensors in <strong>car engines</strong> and medical devices, and smart home temperature controls. In a thermostat, the thermistor's resistance falls as the room warms up. The circuit uses this change to switch the heating off.\n\nKey rule: for an <strong>LDR</strong>, resistance decreases as light intensity increases. For a <strong>thermistor</strong>, resistance decreases as temperature increases.",
+      "diagram": "p2-thermistor-graph",
+      "diagramCaption": "A thermistor: hotter, lower resistance.",
+      "diagramExamTip": true,
       "examFlag": true,
       "cardFlag": true,
-      "diagram": null,
       "writeBullets": [
         "Thermistor — resistance decreases as temperature increases",
         "At low temperatures: high resistance. At high temperatures: low resistance",

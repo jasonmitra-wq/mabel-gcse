@@ -47,9 +47,11 @@
     {
       "heading": "Electric current — charge on the move",
       "content": "Electric current is the rate of flow of <strong>electric charge</strong>. Charge is measured in <strong>coulombs (C)</strong> and current in <strong>amperes (A)</strong>. The equation linking them is <strong>Q = It</strong>. Here Q is charge flow (C), I is current (A) and t is time (s). So 1 ampere means 1 coulomb of charge passes a point every second.\n\nCharge only flows through a closed circuit that includes a source of potential difference, such as a cell. In a single closed loop, the current has the same value at every point.",
+      "diagram": "p2-simple-circuit",
+      "diagramCaption": "A simple circuit. Each symbol stands for one part.",
+      "diagramExamTip": true,
       "examFlag": true,
       "cardFlag": true,
-      "diagram": null,
       "writeBullets": [
         "Electric current — the rate of flow of charge (coulombs per second)",
         "Ampere (A) — the unit of current. 1 ampere is 1 coulomb per second",
@@ -122,9 +124,11 @@
     {
       "heading": "I-V characteristics — how components really behave",
       "content": "An <strong>I-V characteristic</strong> graph shows how current changes with potential difference for a component. Current (I) goes on the y-axis and potential difference (V) on the x-axis.\n\nAn <strong>ohmic conductor</strong> (for example, a fixed resistor at constant temperature) gives a straight line through the origin. Doubling V doubles I, so resistance is constant. This graph is <strong>linear</strong>.\n\nA <strong>filament lamp</strong> gives a curve that flattens as V increases. As the current rises, the filament heats up and its resistance increases. So the graph curves away from the straight line.\n\nA <strong>diode</strong> only lets current flow in one direction (the <strong>forward direction</strong>). The diode has a very high resistance in the reverse direction. So only a very small current flows.\n\nThe filament lamp and diode graphs are <strong>non-linear</strong>. To find the resistance at any point, read off V and I. Then use R = V ÷ I.\n\nYou need to know the shape AND the reason for it. Examiners will ask you to explain, not just describe.",
+      "diagram": "p2-iv-graphs",
+      "diagramCaption": "I-V graphs for a resistor at constant temperature, a filament lamp and a diode.",
+      "diagramExamTip": true,
       "examFlag": true,
       "cardFlag": true,
-      "diagram": null,
       "writeBullets": [
         "I-V graph — current (y-axis) vs potential difference (x-axis) for a component",
         "Ohmic conductor — straight line through the origin. Resistance is constant",
@@ -153,9 +157,11 @@
     {
       "heading": "Required practical — measuring I-V characteristics",
       "content": "The required practical asks you to measure I-V characteristics. You test a filament lamp, a diode and a resistor at constant temperature.\n\nThe circuit uses:\n- a <strong>variable resistor (rheostat)</strong> to change the current\n- an <strong>ammeter in series</strong> with the component to measure I\n- a <strong>voltmeter in parallel</strong> with the component to measure V\n\nRecord pairs of I and V values as you adjust the variable resistor. Then plot the I-V graph. To get both positive and negative V on the graph, turn the component round. Or swap the battery connections.\n\n<strong>Safety</strong>: filament lamps get very hot, so do not touch the bulb. Keep currents within the given limits so components don't overheat. Always start with the variable resistor at maximum resistance (minimum current) before switching on.",
+      "diagram": "p2-iv-practical-circuit",
+      "diagramCaption": "The circuit for measuring an I-V graph: ammeter in series, voltmeter in parallel.",
+      "diagramExamTip": true,
       "examFlag": true,
       "cardFlag": false,
-      "diagram": null,
       "writeBullets": [
         "Ammeter — placed in series with the component to measure the current through it",
         "Voltmeter — placed in parallel across the component to measure the p.d. across it",

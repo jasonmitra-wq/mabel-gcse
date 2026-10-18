@@ -775,3 +775,20 @@ Findings from the text tester (tools/teach-sim.js --persona bored), runs tools/t
 - p2-power-energy | basics | brief 2026-10-18 first-time learner step 3 | added: Energy, Rate, Electric current, Potential difference, Resistance, Squaring a number, Energy stores, Time in seconds
 - p2-series-parallel | basics | brief 2026-10-18 first-time learner step 3 | added: A circuit, Electric current, Potential difference, Resistance, A branch
 - p2-static | basics | brief 2026-10-18 first-time learner step 3 | added: Atoms, Electrons and protons, Two types of charge, Conductors and insulators, Force
+
+## First-time learner brief (2026-10-18) step 4: diagrams
+
+Drawn by tools/draw-p1-p2-diagrams.js; tools/check-diagrams.js physics clean.
+
+- p2-current-voltage | keyPoints[0].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p2-simple-circuit, "A simple circuit. Each symbol stands for one part."
+- p2-current-voltage | keyPoints[3].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p2-iv-graphs, "I-V graphs for a resistor at constant temperature, a filament lamp and a diode."
+- p2-current-voltage | keyPoints[4].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p2-iv-practical-circuit, "The circuit for measuring an I-V graph: ammeter in series, voltmeter in parallel."
+- p2-series-parallel | keyPoints[0].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p2-series-circuit, "Series: the same current everywhere, and the supply p.d. is shared."
+- p2-series-parallel | keyPoints[1].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p2-parallel-circuit, "Parallel: each branch gets the full supply p.d., and the current splits."
+- p2-components | keyPoints[0].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p2-iv-resistor, "A resistor at constant temperature: a straight line through the origin."
+- p2-components | keyPoints[1].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p2-iv-diode, "A diode: current flows in one direction only."
+- p2-components | keyPoints[2].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p2-ldr-graph, "An LDR: brighter light, lower resistance."
+- p2-components | keyPoints[3].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p2-thermistor-graph, "A thermistor: hotter, lower resistance."
+- p2-domestic | keyPoints[0].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p2-ac-dc, "Direct potential difference stays one way. Alternating keeps reversing."
+- p2-domestic | keyPoints[1].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p2-plug, "Inside a plug: earth (green and yellow), neutral (blue), live (brown)."
+- p2-static | keyPoints[2].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p2-field-lines, "Field lines point away from a positive charge and towards a negative one."

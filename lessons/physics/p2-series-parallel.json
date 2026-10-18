@@ -35,9 +35,11 @@
     {
       "heading": "Series circuits — one loop, shared everything",
       "content": "In a <strong>series circuit</strong>, components are joined in a single continuous loop with no branches. So there is only one path for charge to flow. This leads to three key rules.\n\nFirst, <strong>current is the same everywhere</strong> in the circuit. If 2 A flows through one component, 2 A flows through all of them.\n\nSecond, the <strong>total potential difference of the supply is shared between the components</strong>. Say a battery gives 12 V and one resistor has 8 V across it. Then the other has 4 V.\n\nThird, the <strong>total resistance is the sum of all individual resistances</strong>: R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub> + ...\n\nFor example, two resistors of 3 Ω and 5 Ω in series give a total resistance of 3 + 5 = <strong>8 Ω</strong>. Adding more resistors to a series circuit always increases the total resistance. This is because the same current has to pass through each resistor in turn. Each one adds its own opposition. So the current from the supply falls.\n\nTo find the current, use <strong>current = potential difference ÷ total resistance</strong> (I = V ÷ R<sub>total</sub>).",
+      "diagram": "p2-series-circuit",
+      "diagramCaption": "Series: the same current everywhere, and the supply p.d. is shared.",
+      "diagramExamTip": true,
       "examFlag": true,
       "cardFlag": true,
-      "diagram": null,
       "writeBullets": [
         "Series circuit — a single loop with no branches. Only one path for current",
         "Current — the same at every point in a series circuit",
@@ -63,9 +65,11 @@
     {
       "heading": "Parallel circuits — branches give choice",
       "content": "In a <strong>parallel circuit</strong>, components are joined in separate branches between the same two points. Charge can take different routes. This leads to three rules that are very different from series.\n\nFirst, the <strong>potential difference across each component in parallel is the same</strong>. This is because each branch connects the same two points.\n\nSecond, the <strong>current splits between branches</strong>. The branch with lower resistance carries more current. The total current from the supply equals the sum of the branch currents.\n\nThird, the <strong>total resistance is less than the smallest individual resistance</strong>. Adding branches gives charge more routes, so it flows more easily overall. So the total resistance of two resistors in parallel is less than the resistance of the smaller one.\n\nSome circuits include both series and parallel parts.",
+      "diagram": "p2-parallel-circuit",
+      "diagramCaption": "Parallel: each branch gets the full supply p.d., and the current splits.",
+      "diagramExamTip": true,
       "examFlag": true,
       "cardFlag": true,
-      "diagram": null,
       "writeBullets": [
         "Parallel circuit — components in separate branches. Many paths for current",
         "Potential difference — the same across each component in parallel",

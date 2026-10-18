@@ -1,0 +1,37 @@
+{
+  "lesson": "p4-nuclear-fission",
+  "source_file": "lessons/physics/p4-nuclear-fission.json",
+  "lesson_md5": "5a88b454e878541f4d8e79d87ad5243d",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T22:30:36.563Z",
+  "specRefs_sent": [
+    "4.4.4.1",
+    "4.4.4.2"
+  ],
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P4-TRIAGE.md",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 12933,
+    "output_tokens": 1639
+  },
+  "cost_usd": 0.084512,
+  "status": "OK",
+  "result": {
+    "lesson": "p4-nuclear-fission",
+    "missing_spec_content": [],
+    "above_gcse": [],
+    "factual_errors": [
+      {
+        "field": "keyPoints[1].keyTerms[0].def",
+        "text": "Each fission event releases neutrons that trigger further fissions — self-sustaining if controlled, explosive if uncontrolled",
+        "correction": "An uncontrolled chain reaction is also self-sustaining. In fact it grows, because more than one neutron from each fission goes on to cause another fission. The difference is not whether the reaction keeps itself going. In a controlled chain reaction the rate stays steady: on average one neutron from each fission causes one more fission. In an uncontrolled chain reaction the rate grows rapidly and causes an explosion. Spec: 'The chain reaction is controlled in a nuclear reactor to control the energy released. The explosion caused by a nuclear weapon is caused by an uncontrolled chain reaction.'",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
+    "not_checked": []
+  }
+}

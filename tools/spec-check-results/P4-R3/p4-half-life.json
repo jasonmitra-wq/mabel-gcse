@@ -1,0 +1,45 @@
+{
+  "lesson": "p4-half-life",
+  "source_file": "lessons/physics/p4-half-life.json",
+  "lesson_md5": "6e273ba83e2d5c16690b1c6628f1597e",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T22:30:11.401Z",
+  "specRefs_sent": [
+    "4.4.2.3",
+    "4.4.2.4",
+    "4.4.3.2",
+    "4.4.3.3"
+  ],
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P4-TRIAGE.md",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 15329,
+    "output_tokens": 2732
+  },
+  "cost_usd": 0.115956,
+  "status": "OK",
+  "result": {
+    "lesson": "p4-half-life",
+    "missing_spec_content": [],
+    "above_gcse": [],
+    "factual_errors": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "<strong>Irradiation</strong>: exposing an object to nuclear radiation from outside. The source is not touching it or inside it.",
+        "correction": "The specification defines irradiation only as \"the process of exposing an object to nuclear radiation\". It does not say the source must be outside the object. The lesson also contradicts itself: in the same key point it says contaminating atoms \"keep irradiating you\". So a source that is on or inside the body also irradiates. The real difference is that a contaminated object carries the radioactive material with it. An irradiated object does not become radioactive.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "<strong>Controlling or destroying unwanted tissue</strong>: this is called <strong>radiotherapy</strong>. A focused beam of gamma rays is aimed at a tumour (a lump of cancer cells). It kills the cancer cells.",
+        "correction": "A focused external gamma beam is only one method. Unwanted tissue can also be treated with radioactive sources placed inside the body, such as implants. It can also be treated with a swallowed or injected radioactive isotope, for example a beta emitter taken up by the thyroid. The specification says only \"nuclear radiations\", so the lesson should not suggest that a gamma beam is the only method. The same over-narrow claim appears in memTip (\"Radiotherapy: a gamma beam aimed at the tumour\") and writeBullets (\"Radiotherapy — a focused gamma beam kills the cancer cells in a tumour\").",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
+    "not_checked": []
+  }
+}

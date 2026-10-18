@@ -115,3 +115,14 @@ Blocking-only re-check on all four lessons (all changed in R1), at d4cc782, with
 - p4-nuclear-fission | R2 abov2 (how a power station makes electricity) | ACCEPT | paragraph cut from keyPoints[1].
 - p4-nuclear-fission | R2 fact0 ("large enough to become unstable") | ACCEPT | "These isotopes split easily after absorbing a neutron."
 - p4-nuclear-fission | R2 fact1 ("every star", "all stars") | ACCEPT | "stars such as the Sun" in intro, introTips[1], keyPoints[3], revision bullet.
+## R3
+
+Blocking-only re-check on all four lessons (all changed in R2), at 745c0ee. Results in tools/spec-check-results/P4-R3/. Not clean: 7 ACCEPT. No R4 (runbook); anything left goes to the audit.
+
+- p4-nuclear-model | R3 fact0 ("An ion is an atom with an overall charge") | ACCEPT | "An ion is a charged particle. It forms when an atom loses or gains electrons."
+- p4-radioactivity | R3 abov0 (gamma symbol ⁰₀γ) | ACCEPT | cut; the spec gives symbols for alpha and beta only.
+- p4-radioactivity | R3 fact0 (proton and neutron "of the same mass") | ACCEPT | "a proton has the same relative mass (1) as a neutron".
+- p4-radioactivity | R3 fact1 (beta "Mass 0") | ACCEPT | revision bullet "Mass number 0".
+- p4-half-life | R3 fact0 (irradiation defined as from outside only) | ACCEPT | spec definition; a contaminated object carries the material with it; write bullet, key term, memTip, introTips[3], revision bullet.
+- p4-half-life | R3 fact1 (radiotherapy only by an external gamma beam) | ACCEPT | a beam or a source placed inside the body; write bullet, memTip.
+- p4-nuclear-fission | R3 fact0 (chain reaction key term: "self-sustaining if controlled") | ACCEPT | controlled = steady rate; uncontrolled = grows rapidly, explosion.

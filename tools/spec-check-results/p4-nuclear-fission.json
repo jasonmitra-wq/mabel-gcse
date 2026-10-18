@@ -1,9 +1,9 @@
 {
   "lesson": "p4-nuclear-fission",
   "source_file": "lessons/physics/p4-nuclear-fission.json",
-  "lesson_md5": "43cb59e568c2ccfa4ecd826994986b96",
+  "lesson_md5": "5a88b454e878541f4d8e79d87ad5243d",
   "model": "claude-opus-5-5",
-  "date": "2026-10-18T22:27:43.300Z",
+  "date": "2026-10-18T22:30:36.563Z",
   "specRefs_sent": [
     "4.4.4.1",
     "4.4.4.2"
@@ -13,42 +13,20 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 12447,
-    "output_tokens": 2193
+    "input_tokens": 12933,
+    "output_tokens": 1639
   },
-  "cost_usd": 0.093648,
+  "cost_usd": 0.084512,
   "status": "OK",
   "result": {
     "lesson": "p4-nuclear-fission",
     "missing_spec_content": [],
-    "above_gcse": [
-      {
-        "field": "keyPoints[0].content",
-        "text": "The two smaller nuclei are radioactive themselves. They must be managed as nuclear waste.",
-        "why": "Specification 4.4.4.1 does not mention that fission products are radioactive or need managing as nuclear waste. The point is repeated in keyPoints[0].writeBullets[5] (\"They must be stored as nuclear waste\"), keyPoints[3].content and keyPoints[3].writeBullets[3] (\"Fission leaves radioactive waste. It must be stored safely\"). It adds material the section does not require."
-      },
-      {
-        "field": "keyPoints[3].keyTerms[0].def",
-        "text": "Radioactive material from nuclear reactors, including the smaller nuclei made in fission; it remains hazardous for thousands of years",
-        "why": "The specification text has no 'nuclear waste' term and no timescale for how long it stays hazardous. This is extra content beyond 4.4.4.1 and 4.4.4.2."
-      },
-      {
-        "field": "keyPoints[1].content",
-        "text": "In a nuclear power station, the heat from fission makes steam. The steam drives turbines and generates electricity. This is just like a traditional power station, but it uses nuclear fuel instead of burning fossil fuels.",
-        "why": "Specification 4.4.4.1 only requires that the chain reaction is controlled in a reactor to control the energy released. It does not require how a power station generates electricity."
-      }
-    ],
+    "above_gcse": [],
     "factual_errors": [
       {
-        "field": "keyPoints[0].content",
-        "text": "These nuclei are large enough to become unstable after absorbing a neutron, so they split.",
-        "correction": "Size alone does not explain why U-235 and Pu-239 are used. Uranium-238 is larger than uranium-235 but does not normally split after absorbing a slow neutron. It is better to say that these particular isotopes readily split after absorbing a neutron.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "intro",
-        "text": "It powers every star in the universe, including the Sun.",
-        "correction": "Fusion is the energy source of stars during their main life, but not every star at every stage. For example, white dwarfs and neutron stars are not powered by fusion. It is safer to say 'Fusion is the energy source of stars such as the Sun'. The same overstatement appears in introTips[1] (\"Fusion powers the Sun and all stars\") and revisionCardBullets[6] (\"Fusion powers the Sun and all stars\").",
+        "field": "keyPoints[1].keyTerms[0].def",
+        "text": "Each fission event releases neutrons that trigger further fissions — self-sustaining if controlled, explosive if uncontrolled",
+        "correction": "An uncontrolled chain reaction is also self-sustaining. In fact it grows, because more than one neutron from each fission goes on to cause another fission. The difference is not whether the reaction keeps itself going. In a controlled chain reaction the rate stays steady: on average one neutron from each fission causes one more fission. In an uncontrolled chain reaction the rate grows rapidly and causes an explosion. Spec: 'The chain reaction is controlled in a nuclear reactor to control the energy released. The explosion caused by a nuclear weapon is caused by an uncontrolled chain reaction.'",
         "basis": "own knowledge"
       }
     ],

@@ -1,0 +1,52 @@
+{
+  "lesson": "p4-radioactivity",
+  "source_file": "lessons/physics/p4-radioactivity.json",
+  "lesson_md5": "a7f122a1de95bd28c1ab30f36c1ff4c6",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T22:29:40.810Z",
+  "specRefs_sent": [
+    "4.4.2.1",
+    "4.4.2.2",
+    "4.4.3.1"
+  ],
+  "blocking_only": true,
+  "decided_file": "tools/spec-check-results/P4-TRIAGE.md",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 15816,
+    "output_tokens": 3327
+  },
+  "cost_usd": 0.129804,
+  "status": "OK",
+  "result": {
+    "lesson": "p4-radioactivity",
+    "missing_spec_content": [],
+    "above_gcse": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "Nuclear notation: ⁰₀γ.",
+        "why": "The specification gives nuclear-equation symbols only for the alpha particle and the beta particle (\"In a nuclear equation an alpha particle may be represented by the symbol: ... and a beta particle by the symbol:\"). It requires only that \"The emission of a gamma ray does not cause the mass or the charge of the nucleus to change.\" A gamma symbol with mass and atomic numbers is not required. Students may think they must write it in balanced equations."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "The mass number stays the same, because a neutron became a proton of the same mass.",
+        "correction": "A proton and a neutron do not have exactly the same mass; the neutron is slightly heavier. They have the same relative mass (1), so the mass number stays the same. Say 'a proton has the same mass number (relative mass 1) as a neutron'.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "revisionCardBullets[5]",
+        "text": "Beta: fast electron from the nucleus. Mass 0, charge −1.",
+        "correction": "An electron has a very small mass, not zero mass. Its mass number is 0. Write 'mass number 0, charge −1'. This matches keyPoints[1].content: \"⁰₋₁e (mass number 0, atomic number −1)\".",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "The specification text for 4.4.2.2 is missing the alpha and beta particle symbols and the two example equations (shown as blanks after \"may be represented by the symbol:\" and \"For example:\"). The lesson's ⁴₂He, ⁰₋₁e and its example equations were checked against own knowledge of the standard notation, not against the specification text."
+    ]
+  }
+}

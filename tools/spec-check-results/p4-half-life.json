@@ -1,9 +1,9 @@
 {
   "lesson": "p4-half-life",
   "source_file": "lessons/physics/p4-half-life.json",
-  "lesson_md5": "6054229cce3ab5d7811114a972068ae4",
+  "lesson_md5": "6e273ba83e2d5c16690b1c6628f1597e",
   "model": "claude-opus-5-5",
-  "date": "2026-10-18T22:27:15.630Z",
+  "date": "2026-10-18T22:30:11.401Z",
   "specRefs_sent": [
     "4.4.2.3",
     "4.4.2.4",
@@ -15,51 +15,26 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 14779,
-    "output_tokens": 3272
+    "input_tokens": 15329,
+    "output_tokens": 2732
   },
-  "cost_usd": 0.124556,
+  "cost_usd": 0.115956,
   "status": "OK",
   "result": {
     "lesson": "p4-half-life",
     "missing_spec_content": [],
-    "above_gcse": [
-      {
-        "field": "keyPoints[2].content",
-        "text": "<strong>Sterilisation</strong>: gamma radiation kills bacteria on surgical instruments. No chemicals are needed. The instruments do not become radioactive.",
-        "why": "Spec 4.4.3.3 lists only the medical uses: \"exploration of internal organs\" and \"control or destruction of unwanted tissue\". Sterilisation is not in these sections. It is the same kind of non-specification use that was already cut (smoke detectors, thickness gauges, carbon dating). It is also taught as a third use under a key point the spec limits to two medical uses."
-      },
-      {
-        "field": "keyPoints[2].writeBullets[4]",
-        "text": "Sterilisation — gamma radiation kills bacteria on surgical equipment. The equipment does not become radioactive",
-        "why": "Same as above. Sterilisation is not required by spec 4.4.3.3."
-      },
-      {
-        "field": "tables[0].rows[2]",
-        "text": "Sterilisation | Gamma | Gamma kills bacteria without making equipment radioactive",
-        "why": "Same as above. This is a table row for a use the specification sections do not include."
-      },
-      {
-        "field": "introTips[4]",
-        "text": "Gamma is used to explore internal organs, to treat cancer and to sterilise equipment.",
-        "why": "Sterilisation is not in spec 4.4.3.3."
-      },
-      {
-        "field": "revisionCardBullets[6]",
-        "text": "Sterilisation: gamma kills bacteria on surgical equipment",
-        "why": "Sterilisation is not in spec 4.4.3.3."
-      },
-      {
-        "field": "intro",
-        "text": "It lets engineers sterilise surgical equipment.",
-        "why": "Sterilisation is not in spec 4.4.3.3. The sentence also credits half-life for sterilisation, which the lesson never explains."
-      }
-    ],
+    "above_gcse": [],
     "factual_errors": [
       {
         "field": "keyPoints[3].content",
-        "text": "that can cause cancer (uncontrolled cell division)\n- or it can cause genetic mutations (if reproductive cells are affected)",
-        "correction": "Damage to DNA in any cell is a mutation, and cancer is itself caused by such mutations. Mutations are not limited to reproductive cells. Mutations in reproductive cells are the ones that can be passed on to offspring. As written, the lesson implies that genetic mutations happen only in reproductive cells and that cancer is a separate outcome.",
+        "text": "<strong>Irradiation</strong>: exposing an object to nuclear radiation from outside. The source is not touching it or inside it.",
+        "correction": "The specification defines irradiation only as \"the process of exposing an object to nuclear radiation\". It does not say the source must be outside the object. The lesson also contradicts itself: in the same key point it says contaminating atoms \"keep irradiating you\". So a source that is on or inside the body also irradiates. The real difference is that a contaminated object carries the radioactive material with it. An irradiated object does not become radioactive.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "<strong>Controlling or destroying unwanted tissue</strong>: this is called <strong>radiotherapy</strong>. A focused beam of gamma rays is aimed at a tumour (a lump of cancer cells). It kills the cancer cells.",
+        "correction": "A focused external gamma beam is only one method. Unwanted tissue can also be treated with radioactive sources placed inside the body, such as implants. It can also be treated with a swallowed or injected radioactive isotope, for example a beta emitter taken up by the thyroid. The specification says only \"nuclear radiations\", so the lesson should not suggest that a gamma beam is the only method. The same over-narrow claim appears in memTip (\"Radiotherapy: a gamma beam aimed at the tumour\") and writeBullets (\"Radiotherapy — a focused gamma beam kills the cancer cells in a tumour\").",
         "basis": "own knowledge"
       }
     ],

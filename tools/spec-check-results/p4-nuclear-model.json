@@ -1,9 +1,9 @@
 {
   "lesson": "p4-nuclear-model",
   "source_file": "lessons/physics/p4-nuclear-model.json",
-  "lesson_md5": "7df66dbb073598b7df24fef51f2583e9",
+  "lesson_md5": "a5d5dd0d9bc645687c92e5e65a25fe45",
   "model": "claude-opus-5-5",
-  "date": "2026-10-18T22:26:22.275Z",
+  "date": "2026-10-18T22:29:16.410Z",
   "specRefs_sent": [
     "4.4.1.1",
     "4.4.1.2",
@@ -14,26 +14,27 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 15177,
-    "output_tokens": 2789
+    "input_tokens": 15968,
+    "output_tokens": 2681
   },
-  "cost_usd": 0.116488,
+  "cost_usd": 0.117492,
   "status": "OK",
   "result": {
     "lesson": "p4-nuclear-model",
-    "missing_spec_content": [
+    "missing_spec_content": [],
+    "above_gcse": [],
+    "factual_errors": [
       {
-        "specRef": "4.4.1.2",
-        "spec_text": "Students should be able to relate differences between isotopes to differences in conventional representations of their identities, charges and masses.",
-        "why": "The lesson teaches the conventional representation only for identity and mass. In keyPoints[2].content it says: \"You write an atom like this: ¹²₆C. The top number is the mass number. The bottom number is the atomic number.\" It never shows how charge appears in that representation. For example, it does not show a superscript + on a positive ion. So the student cannot relate the conventional representation to charge. The earlier decision covered isotopes in notation, not charges."
+        "field": "keyPoints[2].content",
+        "text": "An ion is an atom with an overall charge.",
+        "correction": "An ion is a charged particle. It forms when an atom loses (or gains) one or more electrons. By definition an atom has no overall charge, and the lesson says so two sentences earlier: \"So an atom has no overall charge.\" Calling an ion \"an atom with an overall charge\" contradicts this. Suggested wording: \"An ion is a charged particle formed when an atom loses or gains electrons.\" The specification says \"In an atom the number of electrons is equal to the number of protons in the nucleus. Atoms have no overall electrical charge\" and \"Atoms turn into positive ions if they lose one or more outer electron(s).\"",
+        "basis": "spec"
       }
     ],
-    "above_gcse": [],
-    "factual_errors": [],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "Specification 4.4.1.2 says \"Atoms can be represented as shown in this example:\". The example itself is not included in the specification text provided. I could not check that the lesson's notation (¹²₆C, ²³⁸₉₂U, with the mass number on top and the atomic number below) matches the specification's example."
+      "Spec 4.4.1.2 says \"Atoms can be represented as shown in this example:\" but the example itself is missing from the specification text supplied. The lesson's notation (¹²₆C, ¹⁴₆C, ²³⁸₉₂U, mass number top left, atomic number bottom left) was checked only against own knowledge, not against the specification's own example."
     ]
   }
 }

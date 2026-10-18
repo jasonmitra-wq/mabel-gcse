@@ -17,7 +17,8 @@ const Lessons = (() => {
   // Lessons that open in conversational Teach mode instead of the slide view.
   const TEACH_ENABLED_ALL = ['b3-defences', 'g5-development', 'g5-nigeria', 'g5-uk-economy', 'p3-particle-model',
     'p1-energy-stores', 'p1-kinetic-potential', 'p1-conservation', 'p1-efficiency', 'p1-power', 'p1-heating', 'p1-national-grid',
-    'p2-current-voltage', 'p2-series-parallel', 'p2-components', 'p2-domestic', 'p2-power-energy', 'p2-static'];
+    'p2-current-voltage', 'p2-series-parallel', 'p2-components', 'p2-domestic', 'p2-power-energy', 'p2-static',
+    'p3-density', 'p3-changes-of-state', 'p3-pressure'];
   // Bored-student testers (2026-10-17): true takes these four off the AI lesson
   // (they failed the text tester). Off since 2026-10-17 (planning chat): a
   // tester FAIL is a measure to improve, never a reason to remove a lesson.

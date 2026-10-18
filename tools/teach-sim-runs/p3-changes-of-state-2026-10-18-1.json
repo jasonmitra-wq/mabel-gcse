@@ -1,0 +1,222 @@
+{
+  "id": "p3-changes-of-state",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! When a kettle reaches 100°C, the water still takes ages to boil away because energy keeps going in without the temperature rising, and that hidden energy is called latent heat. What do you think happens to the temperature of water while it is boiling?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's Latent heat, Energy absorbed or released during a change of state —",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "You've got the definition, but let's use it. While water boils, energy keeps going in but the temperature stays constant, because that energy pulls the particles apart instead of making them move faster. So what happens to the temperature of boiling water?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "The temperature of boiling water stays constant, because the energy pulls particles apart instead of speeding them up. You can see this on a heating curve, a graph of temperature against time. It slopes upward while the temperature rises, but has flat sections at the melting point and boiling point. What is happening to the temperature on a flat section?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's okay. Picture a line on the graph going up like a hill, then a flat stretch like a shelf, then up again. On the flat shelf the line isn't rising at all, so the temperature isn't changing. Looking at that flat shelf, what is happening to the temperature?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "I don't have a favourite team, I'm afraid. On that flat shelf, the temperature is staying constant, not changing at all. When a substance cools, the graph is called a cooling curve, and it also has flat sections where the substance condenses or freezes. What is happening to the temperature on those flat sections?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Here's the rest. On a flat section the particles take in energy, which overcomes the forces of attraction between them. This raises their potential energy, not their kinetic energy, so the temperature doesn't rise. The energy raises the internal energy, the stored energy, and is called latent heat, meaning \"hidden\". On a cooling curve, flat sections are condensing or freezing, where latent heat is released, at the same temperatures as the heating curve.\n\nNext: specific latent heat, L, is the energy needed to change the state of 1 kg of a substance, with no temperature change. Specific latent heat of fusion is the energy per kg to melt or freeze it, measured in J/kg. What change of state does \"fusion\" describe?",
+      "recap": [
+        "While a substance melts or boils, its temperature stays constant.",
+        "The energy going in pulls particles apart instead of speeding them up.",
+        "On a heating curve, those flat shelves sit at the melting and boiling points.",
+        "Cooling curves have flat sections too, where the substance condenses or freezes."
+      ],
+      "flags": [
+        "over length (121 words)"
+      ]
+    },
+    {
+      "n": 6,
+      "student": "I think it's Specific latent heat of fusion, Energy per kg needed to melt (or freeze) a substance",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — fusion means melting or freezing, so energy per kg to melt or freeze is exactly right, and it has nothing to do with nuclear fusion. The partner idea is specific latent heat of vaporisation, the energy per kg to boil or condense a substance, also in J/kg. Which change of state does vaporisation describe: liquid turning into what?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Not magnets or electricity — this one is all about heat energy and particles. Vaporisation just means a liquid turning into a gas, like water boiling into steam. Specific latent heat of vaporisation is the energy per kg needed to boil a liquid, measured in J/kg. Boiling water turns into what?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Boiling water turns into steam, which is a gas. Now for the useful bit: the energy for a change of state is E = mL, where E is energy in J, m is mass in kg, and L is specific latent heat in J/kg. In E = mL, what does the letter m stand for?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "I don't have a football team, but let's get back to the equation. E = mL just means energy equals mass times specific latent heat, so a bigger mass needs more energy to change state. In E = mL, the letter m stands for the mass of the substance. What unit is mass measured in here?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Fair enough, here's the rest. Specific latent heat (L) is the energy needed to change the state of 1 kg of a substance, and the temperature does not change. The unit of m is kg, so the equation E = mL gives energy in J, and it rearranges to L = E/m and m = E/L. Water's specific latent heat of fusion (melting or freezing) is 334,000 J/kg, while its specific latent heat of vaporisation (boiling or condensing) is 2,260,000 J/kg. Vaporisation needs far more energy because the particles must be completely separated, not just loosened. Don't mix it up with specific heat capacity: that's the energy to raise 1 kg by 1 °C with no change of state.\n\nNext up is using E = mL in calculations, like melting 2 kg of ice at 0°C, where L_f for water is 334,000 J/kg. What do you get when you multiply 2 by 334,000?",
+      "recap": [
+        "During a flat section, energy goes into potential energy, so temperature stays the same.",
+        "Specific latent heat is the energy to change state of 1 kg, in J/kg.",
+        "Fusion means melting or freezing; vaporisation means boiling or condensing.",
+        "E = mL: energy in J, mass in kg, specific latent heat in J/kg."
+      ],
+      "flags": [
+        "over length (153 words)"
+      ]
+    },
+    {
+      "n": 11,
+      "student": "it's about Calculations using E = mL",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes, calculations with E = mL is exactly where we are. Here's the idea in one line: multiply the mass in kg by the specific latent heat in J/kg to get the energy in J. For melting 2 kg of ice, we use L = 334,000 J/kg, so E = 2 × 334,000. What is that energy in J?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Not magnets or electricity, this is all about energy and changes of state. Here's the rest of the calculations. For melting 2 kg of ice: E = 2 × 334,000 = 668,000 J, which is 668 kJ. For 0.5 kg of steam condensing: E = 0.5 × 2,260,000 = 1,130,000 J, which is 1130 kJ, and it is released because steam condenses. To find L, use L = E/m, converting mass to kg: 500 g is 0.5 kg, so 150,000 / 0.5 = 300,000 J/kg. Always say whether energy is taken in (melting or boiling) or released (freezing or condensing).\n\nNext up is everyday uses of latent heat, starting with sweat. Sweat is mainly water, and when it evaporates it carries a huge amount of energy, 2260 kJ/kg, away from your skin. What happens to your body temperature as that energy is carried away?",
+      "recap": [
+        "E = mL gives the energy in joules to change state.",
+        "Mass must be in kg, and L is in J/kg.",
+        "Melting 2 kg of ice needs 2 × 334,000 J.",
+        "Latent heat changes state with no temperature change; specific heat capacity raises temperature."
+      ],
+      "flags": [
+        "over length (144 words)"
+      ]
+    },
+    {
+      "n": 13,
+      "student": "it's about Applications of latent heat",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Yes, applications of latent heat is where we are. Sweat is mostly water, and when it evaporates it takes lots of energy from your skin with it. Losing that energy is what cools you down. So if energy is carried away from your skin, what happens to your body temperature?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "No magnets or electricity here, it's all about energy and water. Sweat is mainly water, and its specific latent heat of vaporisation is very high: 2260 kJ/kg. When sweat evaporates from your skin it carries an enormous amount of energy away from your body, which is why sweating cools you so well, even in very hot weather.\n\nSteam at 100°C causes far worse burns than boiling water at 100°C, even though both are at the same temperature. When steam condenses on skin, it releases latent heat onto the skin, 2260 kJ for every kilogram. That comes on top of the heat from cooling down from 100°C, so steam burns are much more serious.\n\nThat's the end of this lesson. You answered questions on \"Specific latent heat\", and I told you the rest of \"Temperature during changes of state\", \"Calculations using E = mL\" and \"Applications of latent heat\". Thanks for sticking with it. Ask me anything else, or head off whenever you like.",
+      "recap": [
+        "Energy for a change of state is E = m × L, with mass in kilograms.",
+        "To find L, rearrange to L = E/m, and convert grams to kg first.",
+        "Melting and boiling take energy in; freezing and condensing release it. Always say which.",
+        "Sweat evaporating carries energy away from your skin, which cools you down."
+      ],
+      "flags": [
+        "over length (163 words)"
+      ]
+    },
+    {
+      "n": 15,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! You did well with the questions on specific latent heat, and the rest is there to revisit whenever you like. Good luck with your GCSE revision, and come back any time.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0.17684799999999995,
+  "tutorCost": 0.17684799999999995,
+  "tutorCalls": 43,
+  "mode": "run",
+  "date": "2026-10-18"
+}

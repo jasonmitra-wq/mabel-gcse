@@ -1,0 +1,225 @@
+{
+  "id": "p3-pressure",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening",
+      "teachIndex": 0,
+      "reply": "Welcome! Whether it's pumping up a bike tyre or a weather balloon swelling as it rises, gas pressure comes from tiny molecules in constant random motion, crashing into the walls of their container. What do you think the container walls feel from each of those collisions?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's gas pressure, The force per unit area exerted by gas molecules colliding",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — gas pressure as the force per unit area from molecules colliding with the walls is exactly right. So why does a gas feel like it pushes steadily, rather than in tiny separate bumps?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Not quite. It's not magnets or electricity, just physical bumps: each collision of a molecule with the wall gives a tiny push, and huge numbers of collisions every second blur into one steady force. So if millions of molecules hit a wall each second, what do all those tiny pushes add up to?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "They add up to the gas pressure, one steady force on the wall. Now, the temperature of a gas is related to the average kinetic energy of its molecules, so a hotter gas has faster-moving molecules on average. If you heat a gas in a sealed rigid container, what happens to the speed of its molecules?",
+      "recap": [
+        "Gas molecules move randomly and constantly, crashing into the walls of their container.",
+        "Each collision gives the wall a tiny push.",
+        "Millions of collisions every second blur together into one steady force.",
+        "Gas pressure is that force per unit area, not magnets or electricity."
+      ],
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "I think it's temperature of a gas, Related to the average kinetic energy of the gas molecules",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "That repeats what I just said, but it doesn't yet answer the question. Think of it simply: hotter gas means its molecules zoom around faster. So if you heat a gas in a sealed rigid container, what happens to how fast its molecules move?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Still not magnets or electricity, it's just molecules bumping the walls. And to answer my last question: heating the gas makes its molecules move faster. With the molecules faster and the space fixed, what happens to how hard and how often they hit the walls?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "That's okay. Picture the gas shut in a sealed rigid box, so it can't spread out into any more space. Now its molecules are moving faster, hitting the walls with more force. What happens to the gas pressure on those walls?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "To finish that last one: the pressure goes up, because faster molecules hit the walls harder and more often. Now let's squeeze a gas instead. For a fixed mass of gas at constant temperature, pressure × volume stays the same, written p₁V₁ = p₂V₂. If a gas has pressure 200 kPa and volume 3 m³, what is p × V?",
+      "recap": [
+        "Gas temperature is linked to the average kinetic energy of its molecules.",
+        "Heating a gas makes its molecules move faster on average.",
+        "In a sealed rigid box, faster molecules hit the walls harder.",
+        "Harder hits on the walls mean the gas pressure goes up."
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "I think it's pV = constant, For a fixed mass of gas at constant temperature, pressure",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes — pV = constant is the right rule for a fixed mass of gas at constant temperature. I asked for a number, though: with p = 200 kPa and V = 3 m³, what is p × V?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Not magnets or electricity — it's just molecules hitting the walls. The number I was after is 600, since 200 × 3 = 600 (kPa m³). Pressure and volume are inversely proportional: when one doubles, the other halves, so their product stays constant. If the volume of a gas is halved at constant temperature, what happens to the pressure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "That's okay. Think of the same molecules squashed into half the space: they hit the walls twice as often, so the pressure doubles. Inversely proportional just means that when volume goes down, pressure goes up. If the volume is halved at constant temperature, what happens to the pressure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "I don't have a favourite team, I'm afraid. The answer to the last one is that the pressure doubles when the volume is halved. Next: work is the transfer of energy by a force, so pushing a piston into a gas is doing work on it. What is transferred to the gas when you do work on it?",
+      "recap": [
+        "For a fixed mass of gas at constant temperature, pressure × volume stays constant.",
+        "That rule is written p₁V₁ = p₂V₂.",
+        "Example: 200 kPa × 3 m³ = 600 kPa m³.",
+        "Pressure and volume are inversely proportional: halve the volume and pressure doubles."
+      ],
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "I think it's work, The transfer of energy by a force",
+      "studentType": "correct",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Not quite what I asked: she gave the definition of work, but I wanted what work transfers to the gas. Work moves energy into the gas, which raises its internal energy, the total kinetic and potential energy of all its molecules. When you push a piston into a gas, what is transferred to the gas?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Not magnets or electricity, it's energy that gets transferred to the gas. So pushing the piston does work on the gas and transfers energy to it. When you push a piston in and the gas's internal energy goes up, what do you think can happen to the gas's temperature?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "That's fine. Think of a bike pump: each push does work on the air inside, which gives the air's molecules more energy, so they move faster on average. That makes the air warmer, and it's why the pump gets warm. When you keep pushing the pump handle in, what happens to the air's temperature?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "I don't have a football team, I'm afraid. To answer the pump question: the air's temperature goes up, because pushing in does work on the air and that makes its molecules move faster. That's the end of this lesson.",
+      "recap": [
+        "Work is energy transferred by a force, like pushing a piston.",
+        "Doing work on a gas transfers energy to it.",
+        "That raises the gas's internal energy, the molecules' total kinetic and potential energy.",
+        "Molecules move faster on average, so the gas warms up, like a bike pump."
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You're welcome! Today we covered what gas pressure is, and I went through the other ideas with you, so they're ready to revisit any time. Come back whenever you like, and good luck with your GCSEs.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "lessonFlags": [],
+  "cost": 0.21669999999999995,
+  "tutorCost": 0.21669999999999995,
+  "tutorCalls": 69,
+  "mode": "run",
+  "date": "2026-10-18"
+}

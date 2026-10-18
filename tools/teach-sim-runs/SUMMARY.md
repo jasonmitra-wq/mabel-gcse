@@ -92,3 +92,7 @@ One line per run: date | lesson | mode | tutor turns | flagged turns | flags by 
 - 2026-10-17 | b3-defences | run, persona bored | 28 | FAIL | engagement 2 | would quit false | flow faults 1 | question does not match what was taught: T11, T20; flow faults: question_repeated_after_correct_answer T20 | $0.4673 (tutor claude-sonnet-5-5 $0.2839)
 - 2026-10-17 | g5-development | run, persona bored | 31 | FAIL | engagement 2 | would quit false | flow faults 4 | question does not match what was taught: T8, T14, T16; flow faults: factual_or_unit_slip T8, correct_answer_not_acknowledged T17, checkin_without_struggle T17, tell_me_skipped_content T18 | $0.6297 (tutor claude-sonnet-5-5 $0.4475)
 - 2026-10-17 | g5-development | run, persona bored | 29 | FAIL | engagement 2 | would quit T24 | flow faults 2 | would quit at T24; flow faults: correct_answer_not_acknowledged T15, tell_me_skipped_content T24 | $0.6356 (tutor claude-sonnet-5-5 $0.4341)
+- 2026-10-18 | p3-particle-model | run | 16 | 2 | over length 2 | none | $0.2160
+- 2026-10-18 | p3-density | run | 14 | 1 | unanswerable: no word from the lesson 1 | none | $0.1476
+- 2026-10-18 | p3-changes-of-state | run | 16 | 4 | over length 4 | none | $0.1768
+- 2026-10-18 | p3-pressure | run | 17 | 0 | none | none | $0.2167

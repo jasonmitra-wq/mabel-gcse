@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 2, task 2.6, P3 (session 2026-10-18). Section 3 a–h done ("P3: done"). Next, same session: add the P3 lessons to TEACH_ENABLED, then 2.5c (teach-sim), 2.5c2 (testers), 2.5d.
+Runbook position: Phase 2, task 2.6, P3 (session 2026-10-18). Section 3 a–h done (01b3f2d). P3 lessons added to TEACH_ENABLED_ALL; 2.5c teach-sim run once on all four (this commit): 0 lesson or shared-code faults (7 flags, all scorer false positives: tell-all replies within the FLOW_FIX cap, "2.7 × 1000"). Next: 2.5c2 text tester on all four, website tester on one, then 2.5d.
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

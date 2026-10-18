@@ -240,3 +240,19 @@ Still there:
 - g5-development tone worse. Judge evidence: "Not quite. Sharing 100 million pounds between 10 million people gives 10 pounds each ... So that is right." (a right answer still opens with "Not quite", after the fix round stopped marking basics answers; cause not yet traced); a reasonable answer skipped; a muddled pocket-money comparison instead of answering "what?". The brief asks for the cause to be fixed before finishing; the one re-run is used, so it is here for the planning chat.
 - b3-defences: the "Do you want me to just tell you the rest?" check-in is colder than the reference (no reassurance). Taken up by brief 2026-10-18 (3), step 1c.
 - answer_in_question stays high on b3-defences (12): mostly the same fact restated in the question one message later.
+
+## Brief 2026-10-18 (leaving and tired): RESPECT_EXIT test, still failing
+
+Text tester with --exit-script (she says "I'm tired" once, picks "one more quick thing" then "keep going", and says "bye, got to go" near the end), first pass -> re-run: tools/teach-sim-runs/p2-components-2026-10-18-3-bored -> -4, b3-defences-2026-10-18-5-bored -> -6. Website: tools/site-test-runs/2026-10-18/p2-components-2 -> -3. All FAIL. All stay live.
+
+Counts, first pass -> re-run (unexplained_term / answer_in_question / exit_not_respected / tiredness_pushed_on / checkin_curt_or_repeated):
+- p2-components: 5/7/1/1/0 -> 5/1/0/0/0.
+- b3-defences: 4/8/0/0/0 -> 4/11/0/0/0. tone_vs_reference worse -> same.
+
+Fixed in the one round: "bye" after the lesson has ended now gets the same fixed goodbye (it got a free reply with no "place is saved"); after the one quick question, a reply that would bring the check-in now still gets the reaction and "stop here or keep going?" (the choice was lost on the website); the quick question must not contain its own answer. Tester: "near the end" is her first reply on the last key point (the second never came, so p2 had no goodbye); the judge's tiredness_pushed_on says "this is long" is not tiredness (it flagged one).
+
+Still there:
+- The goodbye's "answered questions on" follows the FLOW_FIX record, which counted diodes as part-answered when she had only asked "whats a diode" (website p2-components-3 T16). The goodbye is honest only as far as that record is.
+- p2-components text re-run stopped at T12 on the first key point (the tester's 12-turns-a-point limit), so "bye, got to go" did not come up in that run. It was tested in both b3 runs and the website re-run.
+- Not RESPECT_EXIT, seen on the website: the "tell me the rest" message on fixed resistors is a wall of text (V = IR, worked example, I-V graph) and twice said LDR and thermistor resistance "changes with current" (not in the lesson; a tutor slip); "the origin is usually the bottom-left corner" while the diagram's origin is in the middle; phone layout items as before (panels above the chat, title truncated, end screen scrolled up).
+- The quick-thing reaction sometimes adds its own sign-off ("you can rest up and grab some food") before "stop here or keep going?".

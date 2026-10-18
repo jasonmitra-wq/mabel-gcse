@@ -91,6 +91,26 @@ function makeStudent({ lessonTitle, subject }) {
   };
 }
 
+// Brief 2026-10-18 leaving and tired, step 2 (--exit-script): the student says
+// "I'm tired" once (from her fifth reply), picks "one more quick thing" and
+// then "keep going" when offered, and says "bye, got to go" near the end (her
+// first reply on the last key point). Returns the fixed line, or null for a
+// normal reply.
+function exitScript() {
+  let saidTired = false, saidBye = false;
+  return {
+    get saidBye() { return saidBye; },
+    next({ n, nearEnd, choices }) {
+      const has = c => (choices || []).some(x => x.toLowerCase() === c);
+      if (has('one more quick thing')) return 'one more quick thing';
+      if (has('keep going')) return 'keep going';
+      if (!saidTired && n >= 5) { saidTired = true; return "I'm tired"; }
+      if (saidTired && !saidBye && nearEnd) { saidBye = true; return 'bye, got to go'; }
+      return null;
+    },
+  };
+}
+
 function clean(reply) {
   return String(reply || '').replace(/^["'\s]+|["'\s]+$/g, '').split('\n')[0].slice(0, 200) || 'idk';
 }
@@ -109,6 +129,10 @@ const FLOW_FAULT_TYPES = [
   // Brief docs/briefs/2026-10-18-first-time-learner.md step 5: she is a first-time learner.
   ['unexplained_term', 'the tutor uses a subject term (a word she would not know from everyday life) before explaining it in everyday words in this conversation, or uses it in a question before explaining it. One item per term, at the turn it is first used unexplained. A term she used herself first does not count.'],
   ['answer_in_question', 'the answer to the tutor’s question is already stated in the same tutor message or in the tutor message before it, so she can answer by copying it back.'],
+  // Brief docs/briefs/2026-10-18-leaving-and-tired.md step 1 (RESPECT_EXIT).
+  ['exit_not_respected', 'she says goodbye, that she has to go, or that she wants to stop, and the tutor’s reply is not one short warm closing line that says honestly what she did and that her place is saved — for example it asks another question, teaches more, or claims she covered what she did not.'],
+  ['tiredness_pushed_on', 'she says she is tired, bored or has had enough (in those or like words; "this is long" or "too long" asks for shorter replies and is not this), and the tutor carries on teaching without first offering her a choice (stop, one more quick thing, or the slides), or does not do what she then picks.'],
+  ['checkin_curt_or_repeated', 'the "do you want me to just tell you the rest?" check-in is curt or cold (no warm acknowledgement that this bit is tricky), longer than two short sentences, or the same check-in is asked twice in a row.'],
 ];
 
 const JUDGE_SCHEMA = `{
@@ -191,4 +215,4 @@ function lessonFieldLines(data) {
   return out.join('\n');
 }
 
-module.exports = { FLOW_FAULT_TYPES, STUDENT_MODEL, JUDGE_MODEL, makeStudent, clean, judgeBody, parseJudge, verdict, lessonFieldLines };
+module.exports = { FLOW_FAULT_TYPES, STUDENT_MODEL, JUDGE_MODEL, makeStudent, exitScript, clean, judgeBody, parseJudge, verdict, lessonFieldLines };

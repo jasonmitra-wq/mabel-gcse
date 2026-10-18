@@ -1,0 +1,575 @@
+{
+  "id": "p2-components",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome! Let's start with something you've probably noticed: what have you seen switch on or off by itself, like a street lamp coming on at dusk?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "oh yeah street lamps go on when its dark lol. anyway im so tired rn",
+      "studentType": "offtopic",
+      "kind": "exit-offer",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "That's fair, it's a lot of new stuff. Do you want to stop here, do one more quick thing, or switch to the slides?",
+      "recap": null,
+      "choices": [
+        "Stop here",
+        "One more quick thing",
+        "Switch to the slides"
+      ],
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "one more quick thing",
+      "studentType": "script",
+      "kind": "carryon",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Thanks, just one quick thing. Look at the diagram: a fixed resistor at constant temperature gives a perfectly straight line. That tells us its resistance stays constant. What shape is the line on the diagram?",
+      "recap": null,
+      "diagram": "p2-iv-resistor",
+      "diagramCaption": "A resistor at constant temperature: a straight line through the origin.",
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "whats resistance",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Resistance is how hard it is for current to get through something, like a narrow, crowded corridor that slows people down. And the line on the diagram is a straight line. That was the quick one. Do you want to stop here, or keep going?",
+      "recap": null,
+      "choices": [
+        "Stop here",
+        "Keep going"
+      ],
+      "flags": [
+        "yes/no question",
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 4,
+      "student": "keep going",
+      "studentType": "script",
+      "kind": "carryon",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Let's go. A fixed resistor at constant temperature always has the same resistance, so we call it an ohmic conductor. It's like a corridor that stays the same width, whatever the crowd does.\n\nIf its resistance stays the same, what happens to the current when you give it a bigger push?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "I'm tired",
+      "studentType": "script",
+      "kind": "exit-offer",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "That's fair, it's a lot of new stuff. Do you want to stop here, do one more quick thing, or switch to the slides?",
+      "recap": null,
+      "choices": [
+        "Stop here",
+        "One more quick thing",
+        "Switch to the slides"
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "one more quick thing",
+      "studentType": "script",
+      "kind": "carryon",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Thanks for sticking with it. For an ohmic conductor the current is directly proportional to the push, meaning doubling the push doubles the current.\n\nIf you double the push across a fixed resistor, what happens to the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "whats directly proportional",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Directly proportional just means that when one thing doubles, the other doubles too, like twice as many apples costing twice as much. So if you double the push across a fixed resistor, the current doubles as well. That was the quick one. Do you want to stop here, or keep going?",
+      "recap": null,
+      "choices": [
+        "Stop here",
+        "Keep going"
+      ],
+      "flags": [
+        "yes/no question",
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 8,
+      "student": "keep going",
+      "studentType": "script",
+      "kind": "carryon",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Let's keep going. A variable resistor is one where you change the resistance by hand, like the dial on a dimmer switch or a volume control. Turning it changes how hard it is for current to get through.\n\nIf you turn a dimmer switch so the resistance goes up, what happens to the lamp's brightness?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "goes dimmer i guess",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, dimmer is right: more resistance makes it harder for current to get through. Resistance is measured in ohms, which tell you how hard that squeeze is, like a narrower corridor.\n\nIf a lamp's resistance goes down, what happens to the current through it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "it goes up?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes — lower resistance means an easier path, so the current goes up. Look at the diagram: a diode is a component that lets current flow in one direction only, a bit like a one-way gate.\n\nIf current tries to go through a diode the opposite way, what do you think happens to it?",
+      "recap": [
+        "Resistance is how hard it is for current to get through something.",
+        "A fixed resistor keeps the same resistance, so its graph is a straight line.",
+        "Double the push across it and the current doubles too.",
+        "Turn a variable resistor up and the lamp dims."
+      ],
+      "diagram": "p2-iv-diode",
+      "diagramCaption": "A diode: current flows in one direction only.",
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "whats diode",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "A diode is a small electronic part that works like a one-way door for current. Let it flow forwards and it goes through easily; push it backwards and the diode has a very high resistance, so only a tiny bit gets through. If you push the wrong way, what do you think you'd feel?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Sorry, that was a lot. An LED is a diode that glows, like a tiny bulb, when current flows forwards. What do you think an LED gives out?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "whats led",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "LED stands for light-emitting diode. When current flows forwards through an LED, what do you think it gives out?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "light?",
+      "studentType": "minimal",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Yes — light is right, an LED gives out light. Now an LDR is a part whose resistance falls as the light gets brighter, as the diagram shows. In a bright room, what happens to the LDR's resistance?",
+      "recap": [
+        "A diode lets current flow in one direction only, like a one-way door.",
+        "Forwards, current passes easily; backwards, its resistance is very high.",
+        "Backwards, only a tiny bit of current gets through.",
+        "An LED is a light-emitting diode that gives out light when current flows forwards."
+      ],
+      "diagram": "p2-ldr-graph",
+      "diagramCaption": "An LDR: brighter light, lower resistance.",
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "it goes down",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Yes — brighter light means the LDR's resistance goes down. A thermistor is similar but reacts to heat, not light: look at the diagram, hotter means lower resistance. What happens to a thermistor's resistance as a room gets colder?",
+      "recap": [
+        "An LED gives out light, which is the opposite job to an LDR.",
+        "An LDR is a part that reacts to light.",
+        "Brighter light means the LDR's resistance goes down.",
+        "In a bright room, an LDR has low resistance."
+      ],
+      "diagram": "p2-thermistor-graph",
+      "diagramCaption": "A thermistor: hotter, lower resistance.",
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "it goes up",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Yes — colder means the thermistor's resistance goes up. That's the end of this lesson. You answered questions on LDRs and thermistors, and some on fixed and variable resistors and diodes, where I told you the rest. Nice work today.",
+      "recap": [
+        "A thermistor's resistance changes with temperature.",
+        "Hotter means lower resistance, so colder means higher.",
+        "An LDR works the same way, but with light.",
+        "Brighter light means the LDR's resistance goes down."
+      ],
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Bye for now! You worked out how LDRs and thermistors react to light and heat, and that's the idea behind things like street lamps switching on at dusk. Come back any time to go over diodes again.",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "exited": false,
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is long",
+    "would_quit": {
+      "turn": "T11",
+      "quote": "If you push the wrong way, what do you think you'd feel?",
+      "why": "She is already tired twice. She asked 'whats diode' and gets a re-explanation that gives the answer away, then a baffling question, and she replies 'this is long'."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "what have you seen switch on or off by itself, like a street lamp coming on at dusk?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That's fair, it's a lot of new stuff. Do you want to stop here, do one more quick thing, or switch to the slides?",
+        "note": "'a lot of new stuff' rings false, because nothing has been taught yet."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "a fixed resistor at constant temperature gives a perfectly straight line. That tells us its resistance stays constant. What shape is the line on the diagram?",
+        "note": "The answer is in the same message. 'Resistance' and 'fixed resistor' are used before being explained."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "And the line on the diagram is a straight line. That was the quick one.",
+        "note": "The tutor answers its own question. 'Current' is used before being explained."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If its resistance stays the same, what happens to the current when you give it a bigger push?",
+        "note": "Asks about the current/push relationship, which has not been taught yet."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That's fair, it's a lot of new stuff. Do you want to stop here, do one more quick thing, or switch to the slides?",
+        "note": ""
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "doubling the push doubles the current. If you double the push across a fixed resistor, what happens to the current?",
+        "note": "The answer is stated in the line just before the question. 'Directly proportional' is not explained."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if you double the push across a fixed resistor, the current doubles as well.",
+        "note": "The tutor answers the question for her."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you turn a dimmer switch so the resistance goes up, what happens to the lamp's brightness?",
+        "note": ""
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a lamp's resistance goes down, what happens to the current through it?",
+        "note": "Near-repeat of the last question in reverse. The ohms aside adds nothing."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "a diode is a component that lets current flow in one direction only, a bit like a one-way gate. If current tries to go through a diode the opposite way, what do you think happens to it?",
+        "note": "The answer is given in the same message."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "If you push the wrong way, what do you think you'd feel?",
+        "note": "'Feel' is a nonsensical question. The previous sentence already gave the answer ('only a tiny bit gets through')."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "An LED is a diode that glows, like a tiny bulb, when current flows forwards. What do you think an LED gives out?",
+        "note": "Ignores 'this is long' and keeps teaching. The answer ('glows') is in the message. The diode point is abandoned."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "LED stands for light-emitting diode. When current flows forwards through an LED, what do you think it gives out?",
+        "note": "'Light-emitting' gives the answer away."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "an LDR is a part whose resistance falls as the light gets brighter, as the diagram shows. In a bright room, what happens to the LDR's resistance?",
+        "note": "The answer is in the same message."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What happens to a thermistor's resistance as a room gets colder?",
+        "note": ""
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "You answered questions on LDRs and thermistors, and some on fixed and variable resistors and diodes, where I told you the rest.",
+        "note": "She answered no diode question. 'End of this lesson' hides that V = IR, the I-V graphs and the checkpoints were never reached."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Come back any time to go over diodes again.",
+        "note": "Does not say her place is saved."
+      }
+    ],
+    "tone_vs_reference": null,
+    "flow_faults": [
+      {
+        "type": "unexplained_term",
+        "turn": "T2",
+        "quote": "That tells us its resistance stays constant.",
+        "note": "'Resistance' is used before being explained. She asks 'whats resistance'."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T2",
+        "quote": "a fixed resistor at constant temperature gives a perfectly straight line.",
+        "note": "'Fixed resistor' is never explained in everyday words."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T2",
+        "quote": "a fixed resistor at constant temperature gives a perfectly straight line. That tells us its resistance stays constant. What shape is the line on the diagram?",
+        "note": "'Straight line' is stated just before the question."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T3",
+        "quote": "Resistance is how hard it is for current to get through something",
+        "note": "'Current' (basics[0]) is never explained."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T6",
+        "quote": "For an ohmic conductor the current is directly proportional to the push",
+        "note": "She asks 'whats directly proportional'."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T6",
+        "quote": "meaning doubling the push doubles the current. If you double the push across a fixed resistor, what happens to the current?",
+        "note": "She can copy the answer back."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T10",
+        "quote": "a diode is a component that lets current flow in one direction only, a bit like a one-way gate. If current tries to go through a diode the opposite way, what do you think happens to it?",
+        "note": "The answer is stated in the same message."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T11",
+        "quote": "push it backwards and the diode has a very high resistance, so only a tiny bit gets through. If you push the wrong way, what do you think you'd feel?",
+        "note": "The reverse behaviour is given just before the question."
+      },
+      {
+        "type": "tiredness_pushed_on",
+        "turn": "T12",
+        "quote": "Sorry, that was a lot. An LED is a diode that glows, like a tiny bulb, when current flows forwards.",
+        "note": "After 'this is long' (her third fatigue signal), the tutor teaches on without offering stop / one more / slides."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T12",
+        "quote": "An LED is a diode that glows, like a tiny bulb",
+        "note": "The acronym is not expanded. She asks 'whats led'."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T12",
+        "quote": "An LED is a diode that glows, like a tiny bulb, when current flows forwards. What do you think an LED gives out?",
+        "note": "'Glows' gives the answer away."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T13",
+        "quote": "LED stands for light-emitting diode. When current flows forwards through an LED, what do you think it gives out?",
+        "note": "'Light-emitting' gives the answer away."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T14",
+        "quote": "an LDR is a part whose resistance falls as the light gets brighter, as the diagram shows. In a bright room, what happens to the LDR's resistance?",
+        "note": "The answer is stated in the same message."
+      },
+      {
+        "type": "closing_claims_untaught_content",
+        "turn": "T16",
+        "quote": "You answered questions on LDRs and thermistors, and some on fixed and variable resistors and diodes, where I told you the rest.",
+        "note": "No diode question was answered. 'That's the end of this lesson' implies the lesson was completed, but V = IR, the I-V graphs and the checkpoints were never reached."
+      },
+      {
+        "type": "exit_not_respected",
+        "turn": "T17",
+        "quote": "Bye for now! You worked out how LDRs and thermistors react to light and heat, and that's the idea behind things like street lamps switching on at dusk. Come back any time to go over diodes again.",
+        "note": "Three sentences with no mention that her place is saved."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: ask before telling",
+        "change": "Never state the answer in the message that asks the question, or in the message just before it. Teach the rule for one case and ask about a different case (e.g. teach bright → low resistance, then ask about a dark cupboard). Do not answer a check question yourself after a check-in.",
+        "quote": "In a bright room, what happens to the LDR's resistance?"
+      },
+      {
+        "target": "teach-core: fatigue detection",
+        "change": "Treat 'this is long', 'im tired', 'boring' and similar as fatigue signals that always trigger the stop / one more quick thing / slides choice. After the third such signal, offer a stop with her place saved first.",
+        "quote": "Sorry, that was a lot. An LED is a diode that glows, like a tiny bulb, when current flows forwards."
+      },
+      {
+        "target": "teach-core: introduce basics before first use",
+        "change": "Teach basics[0] (current), basics[2] (resistance) and basics[5] (directly proportional) in one plain sentence each before any key point that uses them. Expand acronyms (LED, LDR) on first use.",
+        "quote": "whats resistance"
+      },
+      {
+        "target": "keyPoints[1].content (diode question generation)",
+        "change": "Replace the reverse-direction question with a concrete check whose answer is not given, e.g. 'An LED is put in the wrong way round. Will it light up?' Never ask what she would 'feel'. Finish the diode point before moving on to the LED.",
+        "quote": "If you push the wrong way, what do you think you'd feel?"
+      },
+      {
+        "target": "teach-core: closing message",
+        "change": "Do not say 'end of this lesson' when keyPoints or checkpoints are unreached. List only the topics she actually answered (LDR, thermistor, variable resistor). Name the unreached ones (V = IR, I-V graphs). Give one short line saying her place is saved.",
+        "quote": "That's the end of this lesson. You answered questions on LDRs and thermistors, and some on fixed and variable resistors and diodes, where I told you the rest."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T11",
+      "question does not match what was taught: T4, T11",
+      "flow faults: unexplained_term T2, unexplained_term T2, answer_in_question T2, unexplained_term T3, unexplained_term T6, answer_in_question T6, answer_in_question T10, answer_in_question T11, tiredness_pushed_on T12, unexplained_term T12, answer_in_question T12, answer_in_question T13, answer_in_question T14, closing_claims_untaught_content T16, exit_not_respected T17"
+    ]
+  },
+  "cost": 0.5299000000000001,
+  "tutorCost": 0.33545200000000003,
+  "tutorCalls": 87,
+  "mode": "run",
+  "date": "2026-10-18"
+}

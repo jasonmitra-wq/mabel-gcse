@@ -1,0 +1,808 @@
+{
+  "id": "b3-defences",
+  "subject": "biology",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome! Think about the last time you got a cut or a scrape: what happened on your skin afterwards as it healed?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "it got all red and crusty i think",
+      "studentType": "try",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Crusty and red, yes: that's your skin repairing a break. Look at the diagram: skin is a tough outer layer, and inside your nose and airways, sticky mucus lines the walls. Why might a sticky lining help your lungs?",
+      "recap": null,
+      "diagram": "b3-barriers",
+      "diagramCaption": "b3-barriers",
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "whats mucus",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Mucus is the sticky, slimy stuff you get in your nose, like snot. It lines your nose and airways, and tiny germs (very small things that can make you ill) breathed in with the air get stuck in it, a bit like flies on flypaper. Based on that, why would trapping germs in sticky mucus help your lungs?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "oh ok so they get stuck and cant get in?",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, stuck germs can't get in, that's exactly right. But mucus can't just sit there full of germs, so tiny hair-like things called cilia line your airways and beat back and forth, sweeping the mucus upwards. Where do you think the germ-filled mucus ends up going?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "whats cilia",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Cilia are tiny hairs lining your airways, a bit like a field of grass swaying in the wind. They beat back and forth and push the sticky, germ-filled mucus upwards, towards your throat. Where do you think the mucus ends up after that?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "I'm tired",
+      "studentType": "script",
+      "kind": "exit-offer",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "That's fair, it's a lot of new stuff. Do you want to stop here, do one more quick thing, or switch to the slides?",
+      "recap": null,
+      "choices": [
+        "Stop here",
+        "One more quick thing",
+        "Switch to the slides"
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "one more quick thing",
+      "studentType": "script",
+      "kind": "carryon",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Thanks for sticking with it. The cilia sweep the mucus up and out of your airway, where it can be swallowed. So if the mucus is swallowed, which part of your body does it drop into?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "your stomach i think",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, the stomach is right. That's where the swallowed mucus drops, and the acid there kills most of the germs trapped in it. You can come back to this lesson any time you like. That was the quick one. Do you want to stop here, or keep going?",
+      "recap": null,
+      "choices": [
+        "Stop here",
+        "Keep going"
+      ],
+      "flags": [
+        "yes/no question",
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 8,
+      "student": "keep going",
+      "studentType": "script",
+      "kind": "carryon",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's great, let's carry on. The stomach makes a strong acid called hydrochloric acid, and most germs that get swallowed in food or drink can't survive in it. So if you ate something with germs on it, what do you think would happen to most of those germs in your stomach?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "whats hydrochloric acid",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Hydrochloric acid is a strong acid your stomach makes, a bit like a very sharp lemon juice, but much stronger. Germs that are swallowed in food or drink get dropped into it, and most can't survive. What do you think happens to most of those germs once they reach your stomach?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "this is long",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "yeah tell me",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Look at the diagram: it shows the barriers we've covered. Skin is a tough outer layer, and when it's cut, wounds get infected. In your stomach, hydrochloric acid at around pH 2 kills most germs before they reach your intestines.\n\nNext, if a germ gets past those barriers, white blood cells take over. They are part of your defence team and, unlike red blood cells, don't carry oxygen. If you cut your finger and it gets red and crusty, why might white blood cells be needed there?",
+      "recap": [
+        "Skin is a tough outer layer that repairs itself when cut.",
+        "Sticky mucus in your nose and airways traps germs.",
+        "Cilia are tiny hairs that sweep germy mucus up to the throat.",
+        "Swallowed mucus drops into the stomach, where strong acid kills most germs."
+      ],
+      "diagram": "b3-white-blood-cells",
+      "diagramCaption": "b3-white-blood-cells",
+      "flags": [
+        "over length (87 words)"
+      ]
+    },
+    {
+      "n": 12,
+      "student": "whats white blood cell",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "A white blood cell is a cell in your blood that works as a germ-fighter. If a germ got through a cut in your skin, which kind of blood cell would be sent to fight it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "ok",
+      "studentType": "minimal",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "A white blood cell would be sent, and it's the germ-fighter in your blood. Its scientific name is \"leucocyte\", which just means white blood cell. Which kind of blood cell does the word \"leucocyte\" mean?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "white blood cell",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes, a white blood cell is right. White blood cells belong to your immune system, the body's team of cells that finds and destroys germs. If germs got into your cut finger, what would the immune system do to them?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "find and destroy them?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes, \"find and destroy\" is right. White blood cells have a nucleus, the part of a cell that holds its instructions, a bit like a control room. Why would a cell that has to fight germs need a control room?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "whats nucleus",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "So if a white blood cell is a germ-fighter, what would the instruction book inside its nucleus be useful for?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "so it knows how to fight germs?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Yes, that's right: its instructions tell it how to fight germs. One kind of white blood cell is a phagocyte, which means \"eating cell\". If a phagocyte surrounds a germ and pulls it inside, what happens to the germ?",
+      "recap": [
+        "White blood cells are germ-fighters in your blood, called leucocytes.",
+        "They belong to your immune system, which finds and destroys germs.",
+        "Unlike red blood cells, white blood cells don't carry oxygen.",
+        "The nucleus is the control room, holding the instructions for how to fight."
+      ],
+      "diagram": "b3-phagocytosis",
+      "diagramCaption": "b3-phagocytosis",
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "whats phagocyte",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "A phagocyte is a white blood cell that swallows germs whole, like a Pac-Man gobbling up dots. If a phagocyte swallows a germ in your cut finger, what has happened to that germ?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "im so hungry rn",
+      "studentType": "offtopic",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Fair enough, hungry brains are hard work! The germ gets swallowed and destroyed. The phagocyte pulls the germ inside, then enzymes break it down. If a phagocyte swallowed a germ, what would happen to it inside?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "enzymes break it down",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes, enzymes break the germ down. Phagocytes are non-specific, meaning they attack any germ equally, without needing to know which kind it is. If two different germs got into your cut, how would a phagocyte treat them?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "attack them both the same?",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Yes, both germs are treated the same, because phagocytes are non-specific. Why might aiming at one germ be useful?",
+      "recap": [
+        "A phagocyte is a white blood cell that swallows germs whole.",
+        "Inside the phagocyte, enzymes break the germ down and destroy it.",
+        "Phagocytes are non-specific, so they attack any germ in the same way."
+      ],
+      "diagram": "b3-antibody-specificity",
+      "diagramCaption": "b3-antibody-specificity",
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Sorry, that was a lot. Phagocytes swallow any germ they meet, like a vacuum cleaner. If a lymphocyte aims at one particular germ, what kind of germ would it ignore?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "whats lymphocyte",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Each germ has proteins on its surface called antigens, like a name tag. What do you think your body does when it spots a tag it doesn't recognise?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "whats antigen",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "An antigen is a protein on a germ's surface, like a name tag that says \"I'm foreign\". Your body can read it. If your cut finger let a germ in, where on the germ would its antigens be?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Lots of people find this part hard, so that's fine. Do you want me to just tell you the rest of it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "yeah just tell me",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Look at the diagram: a lymphocyte meets a germ's antigen. It makes antibodies, proteins shaped to fit only that one antigen, so it's a specific response. Some of those lymphocytes then stay in your body as memory cells, long after you're better.\n\nIf your cut finger got infected by the same germ a second time, what would those memory cells let your body do?",
+      "recap": [
+        "Phagocytes swallow any germ they meet, so they are non-specific.",
+        "An antigen is a protein on a germ's surface, like a name tag.",
+        "Your body reads that tag to spot germs it doesn't recognise.",
+        "Lymphocytes aim at one particular germ, so they are more specific."
+      ],
+      "diagram": "b3-vaccination",
+      "diagramCaption": "b3-vaccination",
+      "flags": [
+        "over length (64 words)"
+      ]
+    },
+    {
+      "n": 27,
+      "student": "bye, got to go",
+      "studentType": "script",
+      "kind": "pause",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "No problem, thanks for sticking with it. Today you answered questions on physical barriers, white blood cells and phagocytes and I told you about lymphocytes. Your place is saved, so we'll pick up right here next time. Bye for now!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    null
+  ],
+  "complete": false,
+  "farewell": false,
+  "exited": "pause",
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": true,
+  "lessonFlags": [
+    "points never completed: 4 \"Immunological memory\""
+  ],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "this is long",
+    "would_quit": {
+      "turn": "T26",
+      "quote": "If your cut finger got infected by the same germ a second time, what would those memory cells let your body do?",
+      "why": "After four confused turns (T21-T25) with her questions about lymphocytes ignored, she leaves straight after this long tell."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Think about the last time you got a cut or a scrape: what happened on your skin afterwards as it healed?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "inside your nose and airways, sticky mucus lines the walls. Why might a sticky lining help your lungs?",
+        "note": "'mucus' used before it was explained."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Based on that, why would trapping germs in sticky mucus help your lungs?",
+        "note": "Answer given in the same message."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Where do you think the germ-filled mucus ends up going?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "push the sticky, germ-filled mucus upwards, towards your throat. Where do you think the mucus ends up after that?",
+        "note": "'towards your throat' gives the answer away."
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want to stop here, do one more quick thing, or switch to the slides?",
+        "note": ""
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if the mucus is swallowed, which part of your body does it drop into?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want to stop here, or keep going?",
+        "note": ""
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if you ate something with germs on it, what do you think would happen to most of those germs in your stomach?",
+        "note": "T7 and T8 already state that the acid kills them."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think happens to most of those germs once they reach your stomach?",
+        "note": "Answer stated in the same message."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": "'this is long' asks for shorter replies, not for a check-in."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "In your stomach, hydrochloric acid at around pH 2 kills most germs before they reach your intestines.",
+        "note": "About 85 words. Gives pH unexplained and leaves out non-specific defence."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a germ got through a cut in your skin, which kind of blood cell would be sent to fight it?",
+        "note": "Answer is in the line before."
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which kind of blood cell does the word \"leucocyte\" mean?",
+        "note": "She only has to copy the answer back."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If germs got into your cut finger, what would the immune system do to them?",
+        "note": "'finds and destroys germs' was just stated."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why would a cell that has to fight germs need a control room?",
+        "note": "Misses the exam point that red blood cells have no nucleus."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "So if a white blood cell is a germ-fighter, what would the instruction book inside its nucleus be useful for?",
+        "note": "Ignores 'whats nucleus' and switches metaphor from control room to instruction book."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a phagocyte surrounds a germ and pulls it inside, what happens to the germ?",
+        "note": ""
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a phagocyte swallows a germ in your cut finger, what has happened to that germ?",
+        "note": "Answer is in the line before."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The phagocyte pulls the germ inside, then enzymes break it down. If a phagocyte swallowed a germ, what would happen to it inside?",
+        "note": "She copied the answer back. 'enzymes' is never explained."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If two different germs got into your cut, how would a phagocyte treat them?",
+        "note": "Answer is in the line before."
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Why might aiming at one germ be useful?",
+        "note": "Asks about specific targeting before lymphocytes or antibodies are taught."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "If a lymphocyte aims at one particular germ, what kind of germ would it ignore?",
+        "note": "'lymphocyte' is used without any explanation."
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Each germ has proteins on its surface called antigens, like a name tag.",
+        "note": "Ignores 'whats lymphocyte'."
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If your cut finger let a germ in, where on the germ would its antigens be?",
+        "note": "'on a germ's surface' was just stated."
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Lots of people find this part hard, so that's fine. Do you want me to just tell you the rest of it?",
+        "note": ""
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Look at the diagram: a lymphocyte meets a germ's antigen. It makes antibodies, proteins shaped to fit only that one antigen, so it's a specific response.",
+        "note": "Leaves out antitoxins, what antibodies do, and that lymphocytes are slower. 'lymphocyte' still never defined."
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Your place is saved, so we'll pick up right here next time. Bye for now!",
+        "note": ""
+      }
+    ],
+    "tone_vs_reference": {
+      "verdict": "same",
+      "evidence": [
+        {
+          "quote": "Fair enough, hungry brains are hard work! The germ gets swallowed and destroyed.",
+          "reference_quote": "Quick bit for when you do: the stomach acid is there to kill pathogens that get swallowed in food and drink.",
+          "note": "Warmer reaction to her off-topic hunger."
+        },
+        {
+          "quote": "Mucus is the sticky, slimy stuff you get in your nose, like snot.",
+          "reference_quote": "Mucus is like flypaper: it's sticky, so pathogens you breathe in get stuck to it.",
+          "note": "Both use plain, vivid comparisons; 'germs' is plainer than 'pathogens'."
+        },
+        {
+          "quote": "Each germ has proteins on its surface called antigens, like a name tag.",
+          "reference_quote": "A phagocyte is a white blood cell that swallows a pathogen whole, then digests it with enzymes.",
+          "note": "Here her 'whats lymphocyte' is ignored, while the reference answers her confusion directly, so it is harder to follow at the end."
+        }
+      ]
+    },
+    "flow_faults": [
+      {
+        "type": "unexplained_term",
+        "turn": "T1",
+        "quote": "inside your nose and airways, sticky mucus lines the walls",
+        "note": "'mucus' used before it was explained."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T2",
+        "quote": "Based on that, why would trapping germs in sticky mucus help your lungs?",
+        "note": "'get stuck in it' was said just before."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T4",
+        "quote": "push the sticky, germ-filled mucus upwards, towards your throat. Where do you think the mucus ends up after that?",
+        "note": "Gives the answer 'towards your throat'."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T8",
+        "quote": "So if you ate something with germs on it, what do you think would happen to most of those germs in your stomach?",
+        "note": "T7: 'the acid there kills most of the germs'."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T9",
+        "quote": "What do you think happens to most of those germs once they reach your stomach?",
+        "note": "'most can't survive' is in the same message."
+      },
+      {
+        "type": "checkin_without_struggle",
+        "turn": "T10",
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": "'this is long' asks for shorter replies; she had not answered wrongly."
+      },
+      {
+        "type": "tell_me_skipped_content",
+        "turn": "T11",
+        "quote": "Skin is a tough outer layer, and when it's cut, wounds get infected.",
+        "note": "Leaves out non-specific defence (keyPoints[0].keyTerms[4])."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T11",
+        "quote": "In your stomach, hydrochloric acid at around pH 2 kills most germs before they reach your intestines.",
+        "note": "'pH' is never explained."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T12",
+        "quote": "If a germ got through a cut in your skin, which kind of blood cell would be sent to fight it?",
+        "note": "'germ-fighter' was just said."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T13",
+        "quote": "Which kind of blood cell does the word \"leucocyte\" mean?",
+        "note": "'which just means white blood cell' is in the same message."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T14",
+        "quote": "If germs got into your cut finger, what would the immune system do to them?",
+        "note": "'finds and destroys germs' is in the same message."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T18",
+        "quote": "If a phagocyte swallows a germ in your cut finger, what has happened to that germ?",
+        "note": "'swallows germs whole' is in the same message."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T19",
+        "quote": "The phagocyte pulls the germ inside, then enzymes break it down.",
+        "note": "'enzymes' is never explained."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T19",
+        "quote": "If a phagocyte swallowed a germ, what would happen to it inside?",
+        "note": "She copied 'enzymes break it down' back."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T20",
+        "quote": "If two different germs got into your cut, how would a phagocyte treat them?",
+        "note": "'attack any germ equally' is in the same message."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T22",
+        "quote": "If a lymphocyte aims at one particular germ, what kind of germ would it ignore?",
+        "note": "'lymphocyte' is never explained, even after she asks."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T24",
+        "quote": "If your cut finger let a germ in, where on the germ would its antigens be?",
+        "note": "'on a germ's surface' is in the same message."
+      },
+      {
+        "type": "tell_me_skipped_content",
+        "turn": "T26",
+        "quote": "It makes antibodies, proteins shaped to fit only that one antigen, so it's a specific response.",
+        "note": "Leaves out antitoxins, what antibodies do (mark, clump, neutralise), slower than phagocytes, and the lymphocyte definition."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: answer 'whats X' questions directly",
+        "change": "When she asks 'whats X', reply first with a one-line everyday definition of X before any question. Never skip to a different term.",
+        "quote": "whats lymphocyte"
+      },
+      {
+        "target": "keyPoints[3].content",
+        "change": "Open by defining lymphocytes in everyday words ('white blood cells that make antibodies to attack one particular germ') before antigens or specific targeting. Do not ask 'why aim at one germ' until this has been taught.",
+        "quote": "Why might aiming at one germ be useful?"
+      },
+      {
+        "target": "teach-core: question generation",
+        "change": "Reject any question whose answer appears word-for-word in the same or previous tutor message. Ask her to apply the idea instead, e.g. 'a germ dodges the mucus and gets swallowed: what stops it?'",
+        "quote": "If a phagocyte swallowed a germ, what would happen to it inside?"
+      },
+      {
+        "target": "teach-core: tell-me summary",
+        "change": "When telling the rest of a key point, cover every writeBullet and keyTerm: non-specific defence for keyPoints[0]; antitoxins, what antibodies do, and 'slower than phagocytes' for keyPoints[3]. Explain pH and enzymes in everyday words (keyPoints[0].content, keyPoints[2].content).",
+        "quote": "It makes antibodies, proteins shaped to fit only that one antigen, so it's a specific response."
+      },
+      {
+        "target": "teach-core: 'this is long' handling",
+        "change": "Treat 'this is long' as a request for shorter replies: cut to at most 2 short sentences plus the question, with no check-in. Keep tells under 60 words.",
+        "quote": "This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T26",
+      "question does not match what was taught: T21, T22",
+      "flow faults: unexplained_term T1, answer_in_question T2, answer_in_question T4, answer_in_question T8, answer_in_question T9, checkin_without_struggle T10, tell_me_skipped_content T11, unexplained_term T11, answer_in_question T12, answer_in_question T13, answer_in_question T14, answer_in_question T18, unexplained_term T19, answer_in_question T19, answer_in_question T20, unexplained_term T22, answer_in_question T24, tell_me_skipped_content T26"
+    ]
+  },
+  "cost": 0.8897850000000003,
+  "tutorCost": 0.6192219999999999,
+  "tutorCalls": 179,
+  "mode": "run",
+  "date": "2026-10-18"
+}

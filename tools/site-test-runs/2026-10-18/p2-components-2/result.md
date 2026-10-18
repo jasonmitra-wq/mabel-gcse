@@ -1,0 +1,181 @@
+# Site test: p2-components (lesson, 2026-10-18)
+
+**FAIL** · cost $0.6943 (21 tool calls, 108 calls from the site; tutor claude-sonnet-5-5 $0.4448)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "The tutor teaches a physics error: 'Lamps, diodes, thermistors and LDRs have resistance that changes with current.' An LDR's resistance changes with light and a thermistor's with temperature, not current. This contradicts what the lesson teaches later.",
+      "step": "T12"
+    },
+    {
+      "what": "The origin is described as 'usually the bottom-left corner', but the diagram she is looking at has its origin in the middle, where the axes cross. This sends a confused student looking in the wrong place.",
+      "step": "T2"
+    },
+    {
+      "what": "After she said 'yeah just tell me', the tutor sent a long wall of text. It moved through fixed resistors, the rheostat, V=IR, the I-V graph, a worked example and diodes, then asked a beyond-GCSE 'why' question about diodes. Too much at once for a bored student.",
+      "step": "T12"
+    },
+    {
+      "what": "The 'two to six' question was asked twice and never answered or resolved. It was dropped when she said she was tired.",
+      "step": "T3–T5"
+    },
+    {
+      "what": "After she chose 'one more quick thing' the second time, the tutor did not offer to stop afterwards (it did at T7). It went on into LDRs and thermistors with new questions.",
+      "step": "T18–T22"
+    },
+    {
+      "what": "The question 'What kind of energy does an LED give out?' comes straight after the tutor said 'An LED gives out light', so it gives away its own answer.",
+      "step": "T18"
+    },
+    {
+      "what": "Diodes are marked covered and the lesson shows 4/4, but the goodbye says 'Come back any time to go over diodes'. She also never answered either LED question herself. The progress shown and the message disagree.",
+      "step": "T24"
+    },
+    {
+      "what": "The opening street-lamp question (a natural hook for LDRs) was never returned to, even when LDRs came up.",
+      "step": "T0/T20"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "On the phone, the Jump-to list, diagram and Key terms panels sit above the chat. The welcome message is pushed to the bottom of the screen with no text box visible.",
+      "screenshot": "05-ai-lesson-opening-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The '← Home' button and the 'What are you revising?' heading are cut off under the sticky top bar.",
+      "screenshot": "02-subjects-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The diagram thumbnail in the sidebar is tiny and its labels cannot be read.",
+      "screenshot": "12-diagram-12-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The Key terms panel is clipped at the bottom, so the definition is cut off mid-word ('origin').",
+      "screenshot": "14-exchange-15-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The end-of-lesson screen on the phone is scrolled back up to the thermistor diagram. 'Lesson finished.' and the end buttons are not visible.",
+      "screenshot": "20-end-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The page title is truncated to 'Circuit components — diodes, L...'.",
+      "screenshot": "07-exchange-3-phone.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": {
+    "turn": "S17",
+    "quote": "no im bored now",
+    "why": "After a long text dump at T12 and repeated 'whats X' questions, the lesson still pushed on with more questions."
+  },
+  "fixes": [
+    {
+      "target": "p2-components lesson content, summary text used in T12",
+      "change": "Replace 'Lamps, diodes, thermistors and LDRs have resistance that changes with current' with 'A lamp's resistance rises as it heats up; an LDR's changes with light; a thermistor's changes with temperature'. Split the summary into at most 2 short sentences per turn."
+    },
+    {
+      "target": "Tutor definition of origin (T2 behaviour)",
+      "change": "Define the origin as 'where the two axes cross, where both are zero — the middle of this diagram, marked 0', instead of 'bottom-left corner'."
+    },
+    {
+      "target": "'One more quick thing' flow",
+      "change": "After the one quick question is answered or told, always offer Stop here / Keep going buttons before starting any new section, as T7 does."
+    },
+    {
+      "target": "Closing message and coverage tracking",
+      "change": "Do not mark a section covered when the student only had the answer told to them. Make the goodbye match the progress shown (do not say 'go over diodes' when diodes are shown as covered)."
+    },
+    {
+      "target": "Phone layout of the lesson page",
+      "change": "Put the chat and text box first, with Jump-to, diagram and Key terms collapsed below or in a drawer. On 'Lesson finished', scroll to show the end buttons."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Lesson p2-components (Physics › Electricity › Circuit components — diodes, LDRs, thermistors).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p2-phone.png and 04-lessons-p2-laptop.png] lessons-P2
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome, glad you're here! Think about the last time you walked past a street lamp in the evening: what did you notice about when it came on?
+    [screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (idk): idk honestly, wasnt paying attention
+    T1: That's fine, we'll start from the beginning. Look at the diagram: a resistor at constant temperature gives a straight line through the origin. Where on the graph is the origin?
+    [diagram shown in the conversation under T1: "A resistor at constant temperature: a straight line through the origin."]
+    [screenshot 06-diagram-1-phone.png and 06-diagram-1-laptop.png] diagram-1
+    S2 (try): whats the origin?
+    T2: The origin is the spot on a graph where both quantities are zero, usually the bottom-left corner where the two axes meet. If a line goes through the origin and you double the amount on the bottom axis, what would you expect to happen to the amount on the side axis?
+    S3 (try): it would like double too i guess?
+    T3: Yes, doubling one doubles the other, that's what a line through the origin means. A component that behaves like this at constant temperature, giving a straight-line graph through the origin, is called an ohmic conductor. If one quantity on the bottom axis goes from 2 to 6, what happens to the side-axis amount?
+    [screenshot 07-exchange-3-phone.png and 07-exchange-3-laptop.png] exchange-3
+    S4 (bored): whats ohmic conductor
+    T4: An ohmic conductor is just the name for a component that behaves nicely: its graph is a straight line through the origin, so doubling one thing doubles the other. Think of it like apples: twice as many apples cost twice as much. Using that idea, if the bottom-axis amount goes from 2 to 6, what happens to the side-axis amount?
+    S5 (script): I'm tired
+    T5: That's fair, it's a lot of new stuff. Do you want to stop here, do one more quick thing, or switch to the slides?
+    S6 (script, tapped the button): one more quick thing
+    [screenshot 08-choices-6-phone.png and 08-choices-6-laptop.png] choices-6
+    T6: Thanks for carrying on. If you turn a lamp's dimmer so it gets dimmer, what is that dial doing to the current?
+    [screenshot 09-exchange-6-phone.png and 09-exchange-6-laptop.png] exchange-6
+    S7 (try): making it smaller?
+    T7: Yes — making the current smaller is right. A dimmer turns the resistance up, which lets less current through the lamp. That's a good place to stop, and you can come back to this lesson any time. That was the quick one. Do you want to stop here, or keep going?
+    S8 (script, tapped the button): keep going
+    [screenshot 10-choices-8-phone.png and 10-choices-8-laptop.png] choices-8
+    T8: That dimmer dial is a variable resistor, a resistor you can change by hand, like turning a tap to let more or less water flow. When you slide its contact along the wire, you change how hard it is for current to get through. If you turn the dial so the resistance goes up, what happens to the current?
+    S9 (bored): whats variable resistor
+    T9: A variable resistor is a resistor whose resistance you change by hand. Inside, you slide a contact along a resistive wire, and a longer stretch of wire is harder for current to get through. That is how a volume dial works too. If you slide the contact to make the resistance smaller, what happens to the current?
+    [screenshot 11-exchange-9-phone.png and 11-exchange-9-laptop.png] exchange-9
+    S10 (wrong): it gets bigger?
+    T10: Yes — smaller resistance means a bigger current, so "gets bigger" is right. Resistance is how hard it is for current to get through, like a narrow, crowded corridor. If you turn the dimmer so the resistance goes up, what happens to the lamp's brightness?
+    S11 (idk): no idea
+    T11: This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?
+    S12 (checkin-yes): yeah just tell me
+    T12: More resistance means less brightness: turn the dimmer up in resistance and the lamp dims. A fixed resistor keeps the same resistance at constant temperature. A variable resistor, also called a rheostat, is the hand-adjustable kind, used in dimmers, volume controls and lab experiments. V = IR links potential difference, current and resistance, and for an ohmic conductor at constant temperature, current is directly proportional to potential difference. On an I-V graph that gives a straight line through the origin, and a steeper line means lower resistance. Lamps, diodes, thermistors and LDRs have resistance that changes with current. Worked example: R = 10 Ω, V = 5 V gives I = 0.5 A. Next: a diode only lets current flow one way. Look at the diagram: current flows in one direction only. Why does the diode block current in the other direction?
+    [diagram shown in the conversation under T12: "A diode: current flows in one direction only."]
+    [screenshot 12-diagram-12-phone.png and 12-diagram-12-laptop.png] diagram-12
+    [screenshot 13-exchange-12-phone.png and 13-exchange-12-laptop.png] exchange-12
+    S13 (bored): whats diode
+    T13: A diode is a component that lets current flow one way only, like a one-way street for electricity. Going the wrong way, its resistance is very high. So how much current gets through that way?
+    S14 (try): like basically none?
+    T14: Yes — "basically none" is right, because the resistance is very high backwards. An LED is a diode that gives out light when current flows forwards. What do you think happens to an LED if you connect it backwards?
+    S15 (idk): whats led
+    T15: An LED is a tiny light, like the little glowing light on your phone charger or a TV standby light. It's a diode, so it only lights up when current flows the forward way. Picture a phone screen full of these tiny lights. If one LED is wired in backwards, what would you see it do?
+    [screenshot 14-exchange-15-phone.png and 14-exchange-15-laptop.png] exchange-15
+    S16 (bored): this is long
+    T16: Lots of people find this part hard, so that's fine. Do you want me to just tell you the rest of it?
+    S17 (checkin-no): no im bored now
+    T17: That's fair, it's a lot of new stuff. Do you want to stop here, do one more quick thing, or switch to the slides?
+    S18 (script, tapped the button): one more quick thing
+    [screenshot 15-choices-18-phone.png and 15-choices-18-laptop.png] choices-18
+    T18: Thanks for sticking with it. An LED gives out light when current flows through it the forward way. Think of a traffic light or a phone screen. What kind of energy does an LED give out?
+    [screenshot 16-exchange-18-phone.png and 16-exchange-18-laptop.png] exchange-18
+    S19 (idk): idk
+    T19: This one takes a bit of getting used to. Do you want me to just tell you the rest of this one?
+    S20 (checkin-yes): yeah tell me
+    T20: Here's the rest: an LED gives out light, which is why it's in TVs, phone screens and traffic lights. A diode lets current flow in only one direction, and the other way its resistance is very high, so almost no current gets through. Now look at the diagram: an LDR is a component whose resistance goes down as the light gets brighter. In the dark, its resistance is very high. In a bright room, what happens to the LDR's resistance?
+    S21 (bored): this is long
+    T21: Sorry, that was a lot. An LDR is a part that reacts to light: the brighter it gets, the lower its resistance, like a corridor getting wider. In a dark cupboard, what is the LDR's resistance like?
+    [screenshot 17-exchange-21-phone.png and 17-exchange-21-laptop.png] exchange-21
+    S22 (wrong): really low?
+    T22: Not quite. In the dark, the LDR's resistance is very high. Look at the diagram: a thermistor's resistance falls as it gets hotter. What happens to a thermistor's resistance when a room warms up?
+    [diagram shown in the conversation under T22: "A thermistor: hotter, lower resistance."]
+    [screenshot 18-diagram-22-phone.png and 18-diagram-22-laptop.png] diagram-22
+    S23 (try): it goes down?
+    T23: Yes, the resistance goes down as the thermistor gets hotter, and that's right. That brings us to the end of this lesson.
+    S24 (closing): ok thanks bye
+    T24: Bye for now! You got the thermistor right, and the LDR in the dark is the one to remember: very high resistance. Come back any time to go over diodes and the rest.
+    [screenshot 19-exchange-24-phone.png and 19-exchange-24-laptop.png] exchange-24
+    [the lesson shows "Lesson finished."]
+    [screenshot 20-end-phone.png and 20-end-laptop.png] end

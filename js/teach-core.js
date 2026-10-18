@@ -81,6 +81,20 @@ function create(env) {
   // sentences (90 words), not the whole content, and every other reply is
   // held to 40 words.
   const PAUSE_FIX = FLOW_FIX && env.pauseFix !== false;
+  // Leaving and tiredness (brief docs/briefs/2026-10-18-leaving-and-tired.md
+  // step 1), on by default with FLOW_FIX. create({ call, respectExit: false })
+  // keeps every prompt, decision and state exactly as before
+  // (tools/check-flag-identical.js). With it on: (a) "bye", "got to go", "I
+  // want to stop": one fixed warm line that says honestly what she did, that
+  // her place is saved, and no question; her place is kept. (b) "I'm tired",
+  // "bored", "had enough": one short message with three choices (buttons on
+  // the site): stop here, one more quick thing, or switch to the slides; the
+  // tutor does what she picks. One more quick thing is one short easy
+  // question, a short reaction to her answer, then "stop here or keep going?".
+  // (c) the "just tell you the rest?" check-in is fixed wording: one warm
+  // sentence that this bit is tricky, then the offer, never the same twice in
+  // a row.
+  const RESPECT_EXIT = FLOW_FIX && env.respectExit !== false;
   // First-time learner (brief docs/briefs/2026-10-18-first-time-learner.md
   // step 2), on by default. create({ call, firstTime: false }) keeps every
   // prompt, decision and state exactly as before (tools/check-flag-identical.js).
@@ -340,6 +354,10 @@ function create(env) {
       // FIRST_TIME: the opening question about what she already knows is
       // still waiting for her answer; known = that answer.
       ...(FIRST_TIME ? { firstTime: { probed: false, known: '' } } : {}),
+      // RESPECT_EXIT: the choice she has been offered and not yet answered
+      // ('tired', 'quick' = the one quick question is out, 'after-quick'),
+      // and how many check-ins she has had (their wording rotates).
+      ...(RESPECT_EXIT ? { exit: { offer: null, checkins: 0 } } : {}),
     };
   }
 
@@ -663,6 +681,10 @@ function create(env) {
       lines.push(`That is her answer to your opening question, which asked what she already knows about the everyday idea behind this lesson. It is not marked right or wrong. In ONE short sentence, respond to what she said: if something in it is useful, say what; if she does not know, say that is fine, you will start from the beginning. Then start teaching from where she is. If her answer shows she does not have one of the basics the first key point needs, teach that one basic idea, in everyday words with an everyday comparison, and ask one question that makes her use it. Otherwise introduce the first key point below in AT MOST TWO SENTENCES, starting from what she would see or measure, then ask one question about the part named below. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.idx)),
         _remainingLine(decision.idx, _state.facts[decision.idx], _openingFact(decision.idx)));
+    } else if (decision.kind === 'carryon') {
+      lines.push(_carryOnLine(decision));
+      lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts),
+        _partLine(decision.fact), _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'checkin') {
       lines.push(`She has spent several exchanges on this key point and some of it is still to cover. Do NOT teach anything in this message and do not ask about any part of the topic. In ONE short, friendly line, ask her one question meaning "Do you want me to just tell you the rest of this one?" — yes means you will tell her the rest, no means she keeps working on it herself. It must be a single yes-or-no question — do not add "or shall we move on" or any second option. That question is the whole message.`);
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts));
@@ -1209,6 +1231,10 @@ function create(env) {
     if (decision.facts) _state.facts[decision.idx] = decision.facts;
     if (decision.pacing) Object.assign(_state, decision.pacing);
     if (decision.kind === 'checkin') return;  // waiting on her answer; the point stays put
+    if (decision.kind === 'carryon') {        // RESPECT_EXIT: same point, same part
+      if (FIRST_TIME && _state.firstTime) _state.firstTime.probed = true;
+      return;
+    }
     if (decision.kind === 'retry') {
       _state.retriedCurrent = true;
       return;
@@ -1302,6 +1328,91 @@ function create(env) {
   }
   function _wantsSkip(text) { return SKIP_REQUEST.test(text) && !NOT_SKIP.test(text); }
   function _wantsTelling(text) { return TELL_REQUEST.test(text) && !/\b(don'?t|do not|no need to) (just )?tell\b/i.test(text); }
+
+  // ── Leaving and tiredness (RESPECT_EXIT) ──────────────────────
+  // Leaving, on top of PAUSE_REQUEST: "goodbye", "gtg", "cya", "I want to stop".
+  const EXIT_REQUEST = /\b(good ?bye|bye+|gtg|g2g|cya|see (ya|you)( later| soon)?|i'?m off|im off|(want|wanna|like) to stop|wanna stop|can i stop|let'?s stop|i'?ll stop|i want to leave|no more today)\b/i;
+  // Tired, bored, had enough — she has not asked to go, so she is asked what she wants.
+  const TIRED_SAID = /^\W*(so |really |very )?(tired|sleepy|knackered|bored)\W*$|\b(i'?m|im|i am|i feel|feeling|getting|i get|i'?m getting) (so |really |very |kinda |a bit |quite )?(tired|sleepy|knackered|exhausted|bored)\b|\bboring\b|\b(had enough|fed up|can'?t be bothered|cba|so done with this|my brain hurts)\b/i;
+  const NOT_TIRED = /\b(not|never|isn'?t|aren'?t) (that |really |even )?(tired|bored|boring)\b/i;
+  function _wantsExit(text) { return RESPECT_EXIT && (PAUSE_REQUEST.test(text) || EXIT_REQUEST.test(text)); }
+  function _saysTired(text) { return RESPECT_EXIT && TIRED_SAID.test(text) && !NOT_TIRED.test(text); }
+  function _exit() {
+    if (!_state.exit || typeof _state.exit !== 'object') _state.exit = { offer: null, checkins: 0 };
+    if (!Number.isInteger(_state.exit.checkins)) _state.exit.checkins = 0;
+    return _state.exit;
+  }
+  const TIRED_CHOICES = ['Stop here', 'One more quick thing', 'Switch to the slides'];
+  const AFTER_QUICK_CHOICES = ['Stop here', 'Keep going'];
+  // Her answer to the choices: 'stop', 'more', 'slides', or null (she said something else).
+  function _exitChoice(text) {
+    const t = String(text || '').trim();
+    if (/\bslides?\b/i.test(t)) return 'slides';
+    if (/\bno more\b/i.test(t)) return 'stop';
+    if (/\b(one more|quick (one|thing)|keep going|carry on|continue|go on|more)\b/i.test(t)) return 'more';
+    if (/\b(stop|done|finish|end it|enough|no more|bye|leave|go)\b/i.test(t) || _wantsExit(t)) return 'stop';
+    if (/^\W*(yes|yeah|yep|ok|okay|sure|fine)\W*$/i.test(t)) return 'more';
+    if (/^\W*(no|nah|nope|idk|dunno|whatever|meh|k)\W*$/i.test(t)) return 'stop';
+    return null;
+  }
+  // A point name for her: "physical barriers", but "LDRs" and "Diodes"-style
+  // names with capitals inside are left as they are.
+  function _pointName(i) {
+    const h = _shortHeading(_points[i].heading).trim();
+    return /^[A-Z][a-z'-]*(\s[a-z][\w'-]*)*$/.test(h) ? h[0].toLowerCase() + h.slice(1) : h;
+  }
+  function _listNames(xs) { return xs.length <= 1 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`; }
+  // The goodbye when she leaves: what she did, honestly (FLOW_FIX words), her place saved, no question.
+  function _exitLine() {
+    const how = _flow().how, cur = _state.currentPointIndex;
+    const of = k => _points.map((p, i) => how[i] === k ? _pointName(i) : null).filter(Boolean);
+    const answered = [...of('worked'), ...of('part-told'), ...of('part')];
+    const told = of('told');
+    const f = _state.facts[cur];
+    const started = !_state.complete && !how[cur] && (_state.turnsOnPoint > 0 || (f && (f.answered.some(Boolean) || f.told.some(Boolean))));
+    const partAns = started && f && f.answered.some(Boolean);
+    const bits = [];
+    if (answered.length || partAns) bits.push(`you answered questions on ${_listNames([...answered, ...(partAns ? [_pointName(cur)] : [])])}`);
+    if (told.length) bits.push(`I told you about ${_listNames(told)}`);
+    if (started && !partAns) bits.push(`we made a start on ${_pointName(cur)}`);
+    const did = bits.length ? `Today ${_listNames(bits)}.` : 'We only just got started today.';
+    if (_state.complete) return `Thanks for sticking with it. ${did} Your progress is saved, so you can come back to this lesson any time. Bye for now!`;
+    return `No problem, thanks for sticking with it. ${did} Your place is saved, so we'll pick up right here next time. Bye for now!`;
+  }
+  const CHECKIN_LINES = [
+    'This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?',
+    'Lots of people find this part hard, so that\'s fine. Do you want me to just tell you the rest of it?',
+    'This one takes a bit of getting used to. Do you want me to just tell you the rest of this one?',
+  ];
+  // The one more quick thing: carry on with the point, short and easy; or carry on as normal.
+  function _carryOnDecision(quick) {
+    const idx = _state.currentPointIndex, point = _points[idx], cur = _state.facts[idx];
+    const t = _targetFactIndex(idx);
+    const started = !!(_state.turnsOnPoint > 0 || cur.answered.some(Boolean) || cur.told.some(Boolean));
+    return { kind: 'carryon', idx, point, fact: t === -1 ? null : point.facts[t], quick, started,
+             facts: { answered: cur.answered.slice(), told: cur.told.slice() },
+             pacing: { turnsOnPoint: _state.turnsOnPoint, checkinAsked: false, extensionLeft: _state.extensionLeft },
+             ...(quick ? { maxWords: 40 } : {}) };
+  }
+  function _carryOnLine(d) {
+    const what = d.started
+      ? `carry on with the key point below: teach the next part of it, named below,`
+      : `start the key point below from the first thing its content describes,`;
+    return d.quick
+      ? `She is tired and chose to do just one more quick thing. Thank her in a few words, then ${what} in ONE short sentence, then ask one EASY question about it that she can answer in a word or two, by using what you said, not by copying it: the answer must not be written in your message. At most 40 words in all. Do not answer your own question.`
+      : `She chose to keep going. In a few words say that's great, then ${what} in AT MOST TWO SHORT SENTENCES, then ask one question about that part. Do not answer your own question.`;
+  }
+  // Her answer to the one quick question: a short reaction only, no question.
+  function _quickReactPrompt(userText, decision) {
+    const last = _lastQuestion();
+    return [
+      _recentHistoryBlock(false),
+      `${WHO_CAP} just said: "${userText}"`,
+      decision.mark === 'correct' ? `Her answer is right.` : decision.mark === 'partly' ? `Her answer is partly right.` : decision.mark ? `Her answer is not right.` : '',
+      `She is tired, and this was the one more quick thing she asked for. In ONE or TWO short sentences, react warmly to her answer: if it is right, say so and what was right; if not, kindly give her the right answer to the question you asked${last ? ` ("${last.q}")` : ''}, copying any number and unit from the content. Do not teach anything else. Do not ask any question.`,
+      _pointBrief(_points[_state.currentPointIndex]),
+    ].filter(Boolean).join('\n\n');
+  }
 
   // The question at the end of the tutor's last reply, if it asked one.
   function _lastQuestion() {
@@ -1431,12 +1542,86 @@ function create(env) {
   // Which key point a reply will be teaching, so the brief can be limited to it.
   function _teachIndex(d) {
     if (!d) return null;
-    if (d.kind === 'fact' || d.kind === 'retry' || d.kind === 'start') return d.idx;
+    if (d.kind === 'fact' || d.kind === 'retry' || d.kind === 'start' || d.kind === 'carryon') return d.idx;
     if (d.kind === 'next' || d.kind === 'resume') return d.nextIndex;
     return null;
   }
 
+  // RESPECT_EXIT: leaving, tiredness and the choices she is offered come first.
+  async function _respectTurn(userText) {
+    const ex = _exit();
+    const idx = _state.currentPointIndex;
+    const goodbye = () => { ex.offer = null; return { reply: _exitLine(), recap: null, decision: { kind: 'pause', idx } }; };
+    if (ex.offer === 'tired' || ex.offer === 'after-quick') {
+      const offer = ex.offer, pick = _exitChoice(userText);
+      if (pick === 'stop') return goodbye();
+      if (pick === 'slides') {
+        ex.offer = null;
+        return { reply: `Here are the slides. Your place in the chat is saved too, so you can come back to it any time.`, recap: null, decision: { kind: 'slides', idx } };
+      }
+      if (pick === 'more') return _carryOn(userText, offer === 'tired');
+      ex.offer = null;   // she said something else: the lesson carries on as normal
+    }
+    if (_wantsExit(userText)) return goodbye();
+    if (ex.offer === 'quick') { const r = await _quickAnswer(userText); if (r) return r; }
+    if (_saysTired(userText)) {
+      ex.offer = 'tired';
+      return { reply: `That's fair, it's a lot of new stuff. Do you want to stop here, do one more quick thing, or switch to the slides?`,
+               recap: null, decision: { kind: 'exit-offer', idx, choices: TIRED_CHOICES } };
+    }
+    return null;
+  }
+
+  // One more quick thing (quick) or keep going: a teaching turn on her current point.
+  async function _carryOn(userText, quick) {
+    const decision = _carryOnDecision(quick);
+    if (FIRST_TIME) _pendingFT = { teach: true, confused: false };
+    const reply = await _callWithLengthGuard(_buildSystemPrompt(decision.idx), _buildUserPrompt(userText, decision), true, decision.maxWords || null);
+    _applyDecision(decision);
+    _exit().offer = quick ? 'quick' : null;
+    return { reply, recap: null, decision };
+  }
+
+  // Her answer to the one quick question: marked and counted as usual, a short
+  // reaction with no question, then "stop here or keep going?". A reply that
+  // ends the point by telling, skipping or a check-in goes the normal way.
+  async function _quickAnswer(userText) {
+    _exit().offer = null;
+    _turnMark = await _markAnswer(userText);
+    let decision = _decide(userText);
+    // The check-in is not asked here: the reaction gives her the answer, then she chooses.
+    if (decision.kind === 'checkin') decision = { ...decision, kind: 'fact', fact: null, pacing: { ...decision.pacing, checkinAsked: false } };
+    if (!['fact', 'retry', 'next', 'resume'].includes(decision.kind) || decision.tellAll || decision.skipped) { _turnMark = null; return null; }
+    _noteFlow(userText, decision);
+    _turnMark = null;
+    decision.quickReact = true;
+    decision.choices = AFTER_QUICK_CHOICES;
+    if (FIRST_TIME) _pendingFT = null;
+    _pendingChunk = null;
+    const said = await _callWithLengthGuard(_buildSystemPrompt(null), _quickReactPrompt(userText, decision), false, 40);
+    let recap = null;
+    if (decision.verdict === true) {
+      try { recap = await _generateRecap(decision.idx); }
+      catch (e) { _logError('recap', e); }
+    }
+    _applyDecision(decision);
+    _exit().offer = 'after-quick';
+    return { reply: `${said.replace(/\?/g, '.')} That was the quick one. Do you want to stop here, or keep going?`, recap, decision };
+  }
+
+  // FLOW_FIX: what this turn adds to the flow record (mark, short-reply run, a correct answer).
+  function _noteFlow(userText, decision) {
+    const point = _points[_state.currentPointIndex];
+    const kind = point ? _replyKind(userText, point, false) : null;
+    decision.mark = _turnMark ? _turnMark.mark : null;
+    decision.flowNote = { shortRun: kind === 'other' ? _flow().shortRun + 1 : 0,
+                          correctQ: _turnMark && _turnMark.mark === 'correct' ? _turnMark.question : null,
+                          correctA: _turnMark && _turnMark.mark === 'correct' ? String(userText).slice(0, 120) : null };
+  }
+
   async function _getTutorReply(userText) {
+    if (RESPECT_EXIT && !_state.complete) { const r = await _respectTurn(userText); if (r) return r; }
+    if (RESPECT_EXIT && _state.complete && _wantsExit(userText)) return { reply: _exitLine(), recap: null, decision: { kind: 'free' } };
     if (!_state.complete && _wantsPause(userText)) {
       return { reply: `No problem. Your place is saved, so you can pick this up any time. See you soon!`,
                recap: null, decision: { kind: 'pause', idx: _state.currentPointIndex } };
@@ -1456,17 +1641,20 @@ function create(env) {
     _turnMark = FLOW_FIX && !(FIRST_TIME && !_state.checkinAsked && _lastWasBasic()) ? await _markAnswer(userText) : null;
     const decision = _decide(userText);
     if (FLOW_FIX && decision.kind !== 'free') {
-      const point = _points[_state.currentPointIndex];
-      const kind = point ? _replyKind(userText, point, false) : null;
-      decision.mark = _turnMark ? _turnMark.mark : null;
-      decision.flowNote = { shortRun: kind === 'other' ? _flow().shortRun + 1 : 0,
-                            correctQ: _turnMark && _turnMark.mark === 'correct' ? _turnMark.question : null,
-                            correctA: _turnMark && _turnMark.mark === 'correct' ? String(userText).slice(0, 120) : null };
+      _noteFlow(userText, decision);
       if (decision.tellAll) decision.maxWords = Math.min(260, MAX_REPLY_WORDS + _wordCount(_stripHtml(decision.tellAll.content)));
       if (decision.tellAll && _saidTooLong(userText)) { decision.shortTell = true; decision.maxWords = Math.min(decision.maxWords, 90); }
       else if (_saidTooLong(userText)) decision.maxWords = Math.min(decision.maxWords || MAX_REPLY_WORDS, 40);
     }
     _turnMark = null;
+    // RESPECT_EXIT: the check-in is fixed, warm wording, never the same twice in a row.
+    if (RESPECT_EXIT && decision.kind === 'checkin') {
+      const ex = _exit();
+      const reply = CHECKIN_LINES[ex.checkins % CHECKIN_LINES.length];
+      _applyDecision(decision);
+      ex.checkins++;
+      return { reply, recap: null, decision };
+    }
     if (TEACH_THEN_ASK) decision.chunk = _chunkFor(decision);
     _pendingChunk = decision.chunk || null;
     const sys  = _buildSystemPrompt(_teachIndex(decision));
@@ -1499,7 +1687,10 @@ function create(env) {
 
   // The tutor's reply, tagged with the point it belongs to.
   function _replyEntry(text, d) {
+    // RESPECT_EXIT: the reaction to the one quick question stays on its point; choices go with it.
+    if (RESPECT_EXIT && d.quickReact) return { role: 'assistant', text, pt: d.idx, choices: d.choices };
     const e = { role: 'assistant', text };
+    if (RESPECT_EXIT && d.choices) e.choices = d.choices;
     if (FIRST_TIME) {
       // The diagram the prompt told the tutor about, and a basics tag.
       const dg = _inlineDiagram(_teachIndex(d));
@@ -1507,7 +1698,7 @@ function create(env) {
       if (_lastBasicTag && _teachIndex(d) != null) e.basic = _lastBasicTag;
       _lastBasicTag = null;
     }
-    if (d.kind === 'retry' || d.kind === 'fact' || d.kind === 'start') {
+    if (d.kind === 'retry' || d.kind === 'fact' || d.kind === 'start' || d.kind === 'carryon') {
       e.pt = d.idx;
     } else if (d.kind === 'next') {
       e.pt = d.nextIndex;
@@ -1586,7 +1777,7 @@ function create(env) {
   }));
   }
 
-  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics };
+  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine };
 }
 
 return { create, TUTOR_SONNET, TUTOR_MODEL, TUTOR_MODEL_SONNET, TUTOR_MODEL_HAIKU, tutorParams };

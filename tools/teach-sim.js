@@ -22,6 +22,7 @@
  *                      # just taught, no flow_faults (engagement reported, not a pass condition).
  *                      # Writes <id>-<date>-<n>-bored.json/.md.
  *   node tools/teach-sim.js --rejudge <run-bored.json>   # judge a saved bored run again
+ *   --exit-script   with --persona bored: she says "I'm tired" once and "bye, got to go" near the end
  *
  * Without --persona:
  * The student is scripted, not a model. Per key point it cycles through: a
@@ -84,6 +85,7 @@ function parseArgs(argv) {
     else if (v === '--persona') a.persona = argv[++i];
     else if (v === '--rejudge') a.rejudge = argv[++i];
     else if (v === '--opts') a.opts = JSON.parse(argv[++i]);
+    else if (v === '--exit-script') a.exitScript = true;
     else if (v.startsWith('--')) die(`Unknown option ${v}`);
     else a.ids.push(v);
   }
@@ -207,6 +209,8 @@ function scoreTurn(core, turn, pointWords) {
 
 // --opts '<json>': merged into TeachCore.create (e.g. {"firstTime":false} for a before-run).
 let CORE_OPTS = {};
+// --exit-script: the bored student says "I'm tired" once and "bye, got to go" near the end (tools/bored-student.js exitScript).
+let EXIT_SCRIPT = false;
 
 function diagramCaption(data, id) {
   const kp = (data.keyPoints || []).find(k => k.diagram === id);
@@ -236,6 +240,8 @@ async function simulate(id, call, persona = null) {
   const pointWords = points.map((p, i) => core._pointStems(i));
   const turns = [];
   const student = persona ? Bored.makeStudent({ lessonTitle: data.title || id, subject }) : null;
+  const script = persona && EXIT_SCRIPT ? Bored.exitScript() : null;
+  let exited = false;
   const hist = [];
 
   const opening = await core._callWithLengthGuard(core._buildSystemPrompt(0), core._firstOpeningPrompt(), true);
@@ -254,8 +260,13 @@ async function simulate(id, call, persona = null) {
     if (student) {
       if (state.complete && closing++ >= 3) break;   // a bored student has left by now
       const phase = state.complete ? 'closing' : state.checkinAsked ? 'checkin' : 'teach';
-      type = student.mood(hist[hist.length - 1].text, phase);
-      text = Bored.clean(await apiCall(student.body(hist, type, newTermsFor(hist))));
+      const lastEntry = state.transcript[state.transcript.length - 1] || {};
+      const fixed = script && !state.complete ? script.next({ n, nearEnd: state.currentPointIndex === points.length - 1 && onPoint >= 1, choices: lastEntry.choices }) : null;
+      if (fixed) { type = 'script'; text = fixed; }
+      else {
+        type = student.mood(hist[hist.length - 1].text, phase);
+        text = Bored.clean(await apiCall(student.body(hist, type, newTermsFor(hist))));
+      }
     }
     else if (state.complete) type = closing++ === 0 ? 'thanks' : 'bye';
     else if (state.checkinAsked) type = checkins++ === 0 ? 'no' : 'yes';
@@ -280,11 +291,14 @@ async function simulate(id, call, persona = null) {
     turns.push({ n, student: text, studentType: type, kind: decision.kind, teachIndex: core._teachIndex(decision),
                  point: decision.idx ?? decision.nextIndex ?? null, reply, recap: recap || null,
                  ...(entry.diagram ? { diagram: entry.diagram, diagramCaption: diagramCaption(data, entry.diagram) } : {}),
-                 ...(entry.basic ? { basic: entry.basic } : {}) });
+                 ...(entry.basic ? { basic: entry.basic } : {}),
+                 ...(entry.choices ? { choices: entry.choices } : {}) });
     if (state.farewell) break;
+    // She said goodbye and got the goodbye: she has left (or opened the slides).
+    if (decision.kind === 'pause' || decision.kind === 'slides') { exited = decision.kind; break; }
   }
 
-  return score({ id, subject, model: MODEL, turns, coverage: state.coverage, complete: state.complete, farewell: state.farewell, coreOpts: CORE_OPTS, firstTime: core.FIRST_TIME }, core, points);
+  return score({ id, subject, model: MODEL, turns, coverage: state.coverage, complete: state.complete, farewell: state.farewell, exited, coreOpts: CORE_OPTS, firstTime: core.FIRST_TIME, respectExit: core.RESPECT_EXIT, exitScript: !!script }, core, points);
 }
 
 // ---------- bored-student judge ----------
@@ -295,8 +309,11 @@ function transcriptText(r) {
     if (t.student !== null) lines.push(`S${t.n}: ${t.student}`);
     lines.push(`T${t.n}: ${t.reply.replace(/\s*\n+\s*/g, ' ')}`);
     if (t.diagram) lines.push(`[A diagram is shown under T${t.n}: "${t.diagramCaption || t.diagram}"]`);
+    if (t.choices) lines.push(`[Buttons shown under T${t.n}: ${t.choices.map(c => `"${c}"`).join(', ')}]`);
   }
-  if (!r.complete) lines.push('[The lesson did not finish: the session stopped here.]');
+  if (r.exited === 'pause') lines.push('[She left the lesson here. Her place is saved.]');
+  else if (r.exited === 'slides') lines.push('[She switched to the slides here. Her place in the chat is saved.]');
+  else if (!r.complete) lines.push('[The lesson did not finish: the session stopped here.]');
   return lines.join('\n');
 }
 
@@ -330,7 +347,8 @@ function score(r, core, points) {
   const never = state.coverage.map((c, i) => c === true ? null : i).filter(i => i !== null);
   if (never.length) lessonFlags.push(`points never completed: ${never.map(i => `${i} "${core._shortHeading(points[i].heading)}"`).join(', ')}`);
   const last = turns[turns.length - 1];
-  if (!state.complete) lessonFlags.push('no clean ending: lesson not completed');
+  if (r.exited) { if (last.reply.includes('?')) lessonFlags.push('no clean ending: the goodbye after she left asks a question'); }
+  else if (!state.complete) lessonFlags.push('no clean ending: lesson not completed');
   else if (!state.farewell || last.reply.includes('?')) lessonFlags.push('no clean ending: last reply is not a goodbye without a question');
 
   return { ...r, lessonFlags };
@@ -429,7 +447,7 @@ function writeBoredRun(r, mode) {
   writeJudgeMd(base, r);
   const j = r.judge;
   const summary = path.join(OUT_DIR, 'SUMMARY.md');
-  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | flow faults ${j && j.flow_faults ? j.flow_faults.length : '-'} (unexplained_term ${ftCount(j, 'unexplained_term')}, answer_in_question ${ftCount(j, 'answer_in_question')}; tone ${j && j.tone_vs_reference ? j.tone_vs_reference.verdict : 'n/a'}) | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}${r.tutorCost !== undefined ? ` (tutor ${r.model} $${r.tutorCost.toFixed(4)})` : ''}\n`);
+  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | flow faults ${j && j.flow_faults ? j.flow_faults.length : '-'} (unexplained_term ${ftCount(j, 'unexplained_term')}, answer_in_question ${ftCount(j, 'answer_in_question')}${r.exitScript ? `, exit_not_respected ${ftCount(j, 'exit_not_respected')}, tiredness_pushed_on ${ftCount(j, 'tiredness_pushed_on')}, checkin_curt_or_repeated ${ftCount(j, 'checkin_curt_or_repeated')}` : ''}; tone ${j && j.tone_vs_reference ? j.tone_vs_reference.verdict : 'n/a'}) | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}${r.tutorCost !== undefined ? ` (tutor ${r.model} $${r.tutorCost.toFixed(4)})` : ''}\n`);
   return base;
 }
 
@@ -477,6 +495,7 @@ function writeMd(base, r, mode, date) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   if (args.opts) CORE_OPTS = args.opts;
+  if (args.exitScript) EXIT_SCRIPT = true;
   if (args.rescore) { rescore(path.resolve(args.rescore), args.replay); return; }
   if (args.rejudge) {
     const file = path.resolve(args.rejudge);

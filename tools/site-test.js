@@ -5,6 +5,8 @@
  *   node tools/site-test.js --lesson <id> --run      # real run
  *   node tools/site-test.js --maths <M1..M6> [--run]
  *   --max-usd <n>   allow a run whose estimate is over $1; also a hard stop on actual spend
+ *   --exit-script   lesson mode: she says "I'm tired" once (and taps the choice
+ *                   buttons) and "bye, got to go" near the end (tools/bored-student.js exitScript)
  *
  * The site is served from the working copy on a local web server. The browser
  * gets the API key the way the app stores it (localStorage 'mabel_api_key',
@@ -69,6 +71,7 @@ const MAX_JUDGE_IMAGES = 80;
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.woff2': 'font/woff2', '.ico': 'image/x-icon' };
 
 function die(msg, code = 1) { console.error(msg); process.exit(code); }
+let EXIT_SCRIPT = false;
 
 // ---------- arguments ----------
 
@@ -79,6 +82,7 @@ function parseArgs(argv) {
     if (v === '--lesson') a.lesson = argv[++i];
     else if (v === '--maths') a.maths = argv[++i];
     else if (v === '--run') a.run = true;
+    else if (v === '--exit-script') a.exitScript = true;
     else if (v === '--max-usd') a.maxUsd = Number(argv[++i]);
     else if (v === '--rescore') a.rescore = [];
     else if (a.rescore && !v.startsWith('--')) a.rescore.push(v);
@@ -278,6 +282,8 @@ async function newPage(browser, base, run) {
 async function lessonMode(page, run, id) {
   const L = findLesson(id);
   const student = Bored.makeStudent({ lessonTitle: (L.data && L.data.title) || L.name, subject: L.subjectLabel });
+  const script = EXIT_SCRIPT ? Bored.exitScript() : null;
+  let lastPointTurns = 0;
   const hist = [];
   const terms = lessonTerms(L.data);
   const newTermsFor = h => {
@@ -333,13 +339,24 @@ async function lessonMode(page, run, id) {
     if (spend.usd >= spend.cap) { run.say(`[stopped: spend cap $${spend.cap} reached]`); break; }
     const phase = status.complete ? 'closing' : /tell you the rest|just tell you/i.test(t) ? 'checkin' : 'teach';
     if (phase === 'closing' && closing++ >= 3) { run.say('[the student leaves]'); break; }
-    const mood = student.mood(t, phase);
-    const reply = Bored.clean(await apiCall(student.body(hist, mood, newTermsFor(hist))));
+    // --exit-script: "near the end" is her second reply once one key point is left.
+    const left = await page.evaluate(() => { const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || ''; const m = hdr.match(/(\d+)\/(\d+)/); return m ? +m[2] - +m[1] : 9; });
+    if (left <= 1) lastPointTurns++;
+    const choices = script ? await page.evaluate(() => [...document.querySelectorAll('#teachThread .teach-choices button')].map(b => b.textContent.trim())) : [];
+    const fixed = script && phase !== 'closing' ? script.next({ n, nearEnd: left <= 1 && lastPointTurns >= 1, choices }) : null;
+    const mood = fixed ? 'script' : student.mood(t, phase);
+    const reply = fixed || Bored.clean(await apiCall(student.body(hist, mood, newTermsFor(hist))));
     hist.push({ who: 'student', text: reply });
-    run.say(`S${n} (${mood}): ${reply}`);
-    await page.click('#teachInput');
-    await page.type('#teachInput', reply, { delay: 5 });
-    await page.click('#teachSendBtn');
+    const button = fixed && choices.find(c => c.toLowerCase() === reply);
+    run.say(`S${n} (${mood}${button ? ', tapped the button' : ''}): ${reply}`);
+    if (choices.length) await shoot(page, run, `choices-${n}`);
+    if (button) {
+      await page.evaluate(label => { [...document.querySelectorAll('#teachThread .teach-choices button')].find(b => b.textContent.trim() === label).click(); }, button);
+    } else {
+      await page.click('#teachInput');
+      await page.type('#teachInput', reply, { delay: 5 });
+      await page.click('#teachSendBtn');
+    }
     try { await waitReady(t); } catch { run.say(`[no tutor reply within 120 s after S${n}]`); run.check('tutor replies', false, `no reply after S${n}`); break; }
     t = await lastTutor();
     hist.push({ who: 'tutor', text: t });
@@ -349,6 +366,7 @@ async function lessonMode(page, run, id) {
     if (fig && fig.n > diagramsSeen) { diagramsSeen = fig.n; run.say(`[diagram shown in the conversation under T${n}: "${fig.cap}"]`); await shoot(page, run, `diagram-${n}`); }
     run.exchanges++;
     if (run.exchanges % 3 === 0) await shoot(page, run, `exchange-${n}`);
+    if (fixed === 'bye, got to go') { await shoot(page, run, `goodbye-${n}`); run.say('[the student leaves]'); break; }
   }
   await shoot(page, run, 'end');
 }
@@ -641,6 +659,7 @@ async function main() {
   let crash = null;
   try {
     const page = await newPage(browser, base, run);
+    EXIT_SCRIPT = !!a.exitScript;
     if (a.lesson) await lessonMode(page, run, a.lesson); else await mathsMode(page, run, a.maths);
   } catch (e) {
     crash = String(e.message || e);

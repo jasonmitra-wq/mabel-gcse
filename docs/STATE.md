@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: brief docs/briefs/2026-10-18-leaving-and-tired.md (RESPECT_EXIT), then Phase 2, task 2.6, P4. First-time-learner brief finished: step 6 re-run done (both FAIL, in docs/ESCALATIONS.md), step 8 reported.
+Runbook position: Phase 2, task 2.6, P4 (new session). Brief docs/briefs/2026-10-18-leaving-and-tired.md done (RESPECT_EXIT on; both lessons and the website test FAIL on older faults, listed in docs/ESCALATIONS.md; all stay live).
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.
@@ -44,6 +44,7 @@ Spec-check API calls, summed from tools/spec-check-results/SUMMARY.md (one line 
 | P2 Electricity | 30 | 3.49 |
 | P3 Particle model | 19 (4 before 2026-10-18; runbook v2: R1 8, R2 4, R3 3) | 2.20 (0.53 + R1 1.01, R2 0.37, R3 0.29) |
 | P3 AI lessons (2026-10-18, 2.5c and 2.5c2) | teach-sim 4 runs; text tester 7 runs; website tester 2 runs | 3.84 (teach-sim 0.76; text 1.09 first pass + 1.29 re-run; website 0.32 + 0.38) |
+| Brief 2026-10-18 leaving and tired (RESPECT_EXIT) | text tester 4 runs; website tester 2 runs | 4.12 (text 1.58 first pass + 1.28 re-run; website 0.69 + 0.57) |
 | P4 Atomic structure | 4 | 0.60 |
 | P5 Forces | 6 | 0.81 |
 | P6 Waves | 5 | 0.77 |

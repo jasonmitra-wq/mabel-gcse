@@ -98,6 +98,9 @@ const Teach = (() => {
         border:1px solid var(--border2); border-radius:10px; overflow:hidden; cursor:zoom-in; }
       .teach-inline-diagram-btn:hover { border-color:var(--amber); }
       .teach-inline-diagram-btn img { display:block; width:100%; height:auto; }
+      /* Choices under the tutor's newest message (RESPECT_EXIT: "I'm tired"). */
+      .teach-choices { align-self:flex-start; display:flex; flex-wrap:wrap; gap:0.5rem; max-width:100%; }
+      .teach-choices .btn { font-size:0.9rem; padding:0.45rem 0.85rem; }
       .teach-inline-diagram figcaption { font-size:0.85rem; color:var(--muted); font-style:italic; line-height:1.5; margin:0.4rem 0.2rem 0; }
 
       /* Shorter laptop screens: a full thumbnail plus the jump list would push
@@ -622,6 +625,19 @@ const Teach = (() => {
           const fig = _inlineDiagramEl(t.diagram);
           if (fig) thread.appendChild(fig);
         }
+        // Choices only under the newest message: once she answers, they go.
+        if (t.role === 'assistant' && Array.isArray(t.choices) && t === _state.transcript[_state.transcript.length - 1]) {
+          const row = document.createElement('div');
+          row.className = 'teach-choices';
+          t.choices.forEach(c => {
+            const b = document.createElement('button');
+            b.className = 'btn';
+            b.textContent = c;
+            b.onclick = () => choose(c);
+            row.appendChild(b);
+          });
+          thread.appendChild(row);
+        }
       }
     });
     _updateDiagramSlot();
@@ -806,7 +822,9 @@ const Teach = (() => {
     _syncControls();
 
     _appendBubble('user', text, _state.complete ? undefined : { pt: _state.currentPointIndex });
+    document.querySelector('#teachThread .teach-choices')?.remove();
     const thinkingEl = _showThinking();
+    let toSlides = false;
 
     try {
       const { reply, recap, decision } = await _getTutorReply(text);
@@ -822,6 +840,7 @@ const Teach = (() => {
       if (decision.kind === 'free' && _state.complete && _state.wrapOffered && !reply.includes('?')) _state.farewell = true;
       if (recap) _pushEntry({ role: 'recap', rid: _rid(), pt: decision.idx, lines: recap, done: false });
       _pushEntry(_replyEntry(reply, decision));
+      toSlides = decision.kind === 'slides';   // RESPECT_EXIT: she chose the slides
     } catch {
       thinkingEl?.remove();
       _appendBubble('assistant', "I can't answer that right now — try again in a moment.");
@@ -830,7 +849,17 @@ const Teach = (() => {
     _busy = false;
     _renderShell();
     _renderTranscript();
+    if (toSlides) { showSlides(); return; }
     document.getElementById('teachInput')?.focus();
+  }
+
+  // A choice button under the tutor's message: sent as if she had typed it.
+  function choose(label) {
+    if (_busy || _openingInFlight()) return;
+    const input = document.getElementById('teachInput');
+    if (!input) return;
+    input.value = label;
+    send();
   }
 
   // ── Escape hatch back to the slide view ─────────────────────
@@ -849,5 +878,5 @@ const Teach = (() => {
     document.getElementById('teachInput')?.focus();
   }
 
-  return { open, send, showSlides, reopenInput, showResetConfirm, cancelReset, confirmReset, jumpTo, toggleTerms, expandDiagram, closeDiagram };
+  return { open, send, choose, showSlides, reopenInput, showResetConfirm, cancelReset, confirmReset, jumpTo, toggleTerms, expandDiagram, closeDiagram };
 })();

@@ -1,0 +1,216 @@
+{
+  "id": "p2-components",
+  "mode": "lesson",
+  "date": "2026-10-18",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "Factual error: T2 says the origin is 'usually the bottom-left corner', but the diagram the student is looking at (06-diagram-1) has the origin in the middle of the graph.",
+        "step": "T2"
+      },
+      {
+        "what": "Factual error: T11 says 'Lamps, diodes, thermistors and LDRs change their resistance as current changes'. LDRs change with light and thermistors change with temperature, not current.",
+        "step": "T11"
+      },
+      {
+        "what": "Repetitive loop. The doubling question is asked three times (T2, T3 asks tripling, T6). At T6 the tutor answers its own T4 question instead of letting the student try. This led straight to 'I'm tired'.",
+        "step": "T2-T7"
+      },
+      {
+        "what": "After a wrong answer and a 'just tell me', T11 dumps a long wall of text for a bored student: V=IR, a worked example, the ohmic definition, then a new diode question. Fixed resistors were still marked covered (1/4).",
+        "step": "T11"
+      },
+      {
+        "what": "Diodes were marked covered (2/4) although the student never answered a diode question. They replied 'whats a diode' and then 'huh?', and the tutor gave the answer itself at T13.",
+        "step": "T13"
+      },
+      {
+        "what": "T8 already defined a variable resistor, so T9 just repeats the same definition and question with no new angle.",
+        "step": "T9"
+      },
+      {
+        "what": "The opening street-lamp-at-dusk hook is never resolved. The LDR section (T14-T15) never links back to it.",
+        "step": "T14"
+      },
+      {
+        "what": "The goodbye summary says the student 'answered questions on' diodes, but they answered none. It also lists topics in a jumbled order.",
+        "step": "T16"
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "On phone, the Jump-to panel, diagram and Key Terms stack above the chat. The 'JUMP TO' heading is clipped under the sticky header. The first tutor message and the input box are pushed to the bottom, with the input off screen.",
+        "screenshot": "05-ai-lesson-opening-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The diagram thumbnail in the panel has labels far too small to read without zooming.",
+        "screenshot": "05-ai-lesson-opening-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The sidebar diagram thumbnail is unreadably tiny on laptop.",
+        "screenshot": "12-diagram-11-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "The Key Terms panel text is cut off mid-word at the bottom ('origin'). The Jump-to panel heading is clipped at the top.",
+        "screenshot": "12-diagram-11-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "Chat messages are cut off under the sticky lesson header ('when the push is zero?' is half hidden).",
+        "screenshot": "06-diagram-1-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "The '← Home' button and the 'What are you revising?' title are partly hidden under the top bar.",
+        "screenshot": "02-subjects-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The end screen has scrolled back up to the LDR section instead of staying on the goodbye message.",
+        "screenshot": "18-end-phone.png",
+        "stops_use": false
+      }
+    ],
+    "would_quit": {
+      "turn": "S13",
+      "quote": "huh?",
+      "why": "After a huge wall of text at T11 and a question about something she hadn't been taught, she is lost and already bored."
+    },
+    "fixes": [
+      {
+        "target": "tutor prompt / T2 origin explanation",
+        "change": "Describe the origin as 'where the axes cross (here, the middle)' to match the diagram, not 'bottom-left corner'."
+      },
+      {
+        "target": "lesson content p2-components fixed-resistors summary (T11)",
+        "change": "Replace 'change their resistance as current changes' with 'LDR resistance changes with light, thermistor resistance with temperature, a lamp's as it heats up'. Cap the 'just tell me' reply at about 3 short sentences."
+      },
+      {
+        "target": "tutor behaviour after 'one more quick thing'",
+        "change": "Ask a new, different question (e.g. about the variable resistor) instead of re-asking the doubling question. Never answer the pending question for the student."
+      },
+      {
+        "target": "progress tracking (covered count, end summary)",
+        "change": "Only mark a section covered when the student answers a question in it correctly. Base 'you answered questions on' only on sections answered."
+      },
+      {
+        "target": "phone layout of ai-lesson page",
+        "change": "Collapse Jump-to/diagram/Key Terms into a toggle below the chat on phone, keep the input visible, and add top padding so the sticky header doesn't clip content."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "AI lesson opens by default (in TEACH_ENABLED)",
+      "ok": true,
+      "detail": "AI lesson opened"
+    }
+  ],
+  "transcript": [
+    "Lesson p2-components (Physics › Electricity › Circuit components — diodes, LDRs, thermistors).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "[screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects",
+    "[screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics",
+    "[screenshot 04-lessons-p2-phone.png and 04-lessons-p2-laptop.png] lessons-P2",
+    "[check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened",
+    "T0: Welcome, I'm glad you're here! When you walk past a street lamp at dusk, what do you think makes it switch itself on?",
+    "[screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening",
+    "S1 (idk): idk maybe like a timer or something?",
+    "T1: A timer is a sensible guess, and you'll soon see there's a clever alternative. Look at the diagram: for a resistor at constant temperature, the graph is a straight line through the origin, the point where both readings are zero. If the line goes through the origin, what must the current be when the push is zero?",
+    "[diagram shown in the conversation under T1: \"A resistor at constant temperature: a straight line through the origin.\"]",
+    "[screenshot 06-diagram-1-phone.png and 06-diagram-1-laptop.png] diagram-1",
+    "S2 (bored): whats the origin",
+    "T2: The origin is the spot on a graph where both readings are zero, usually the bottom-left corner. For our resistor, that means a line through it passes the point where there's no push and no flow. Now imagine the push is doubled and the line stays straight through the origin. What happens to the current?",
+    "S3 (try): it like doubles too?",
+    "T3: Yes, it doubles too, which is what a straight line through the origin means. A component that behaves like this is called an ohmic conductor: its I-V graph is a straight line through the origin. If the push is tripled, what happens to the current?",
+    "[screenshot 07-exchange-3-phone.png and 07-exchange-3-laptop.png] exchange-3",
+    "S4 (try): it triples too innit",
+    "T4: Yes, it triples too, so the current rises in step with the push. That steady pattern is because an ohmic conductor's resistance, how hard it is for current to get through, stays constant. If the resistance stays the same, what will the graph of current against push look like?",
+    "S5 (script): I'm tired",
+    "T5: That's fair, it's a lot of new stuff. Do you want to stop here, do one more quick thing, or switch to the slides?",
+    "S6 (script, tapped the button): one more quick thing",
+    "[screenshot 08-choices-6-phone.png and 08-choices-6-laptop.png] choices-6",
+    "T6: Thanks for sticking with it. When the resistance stays constant, the graph of current against push is a straight line through the origin. If the push doubles, what happens to the current?",
+    "[screenshot 09-exchange-6-phone.png and 09-exchange-6-laptop.png] exchange-6",
+    "S7 (try): doubles again?",
+    "T7: Yes, it doubles again. That's the straight-line pattern: the current goes up in step with the push. That's a good place to rest, and you can come back to this lesson any time. That was the quick one. Do you want to stop here, or keep going?",
+    "S8 (script, tapped the button): keep going",
+    "[screenshot 10-choices-8-phone.png and 10-choices-8-laptop.png] choices-8",
+    "T8: A variable resistor is a resistor whose resistance you change by hand, by sliding a contact along a track, like a dimmer switch for a light. Turning the resistance up makes it harder for current to get through, so the lamp gets dimmer. If you slide the contact to make the resistance smaller, what happens to the lamp's brightness?",
+    "S9 (bored): whats a variable resistor",
+    "T9: It's a resistor you can adjust by hand. Think of the dimmer switch on a lamp: you slide it, and the lamp gets brighter or dimmer. Sliding to a higher resistance makes it harder for current to get through. What happens to the lamp if you slide it to a lower resistance?",
+    "[screenshot 11-exchange-9-phone.png and 11-exchange-9-laptop.png] exchange-9",
+    "S10 (wrong): it gets dimmer?",
+    "T10: This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?",
+    "S11 (checkin-yes): yeah just tell me",
+    "T11: Lower resistance means a brighter lamp, so \"dimmer\" was the wrong way round. A fixed resistor keeps the same resistance at constant temperature, and V = IR links push (V), current (I) and resistance (R). Lamps, diodes, thermistors and LDRs change their resistance as current changes. An ohmic conductor has current directly proportional to V, giving a straight I-V line through the origin; the steeper it is, the lower the resistance. Example: R = 10 Ω, V = 5 V gives I = 5 ÷ 10 = 0.5 A. Next, a diode. Look at the diagram: current flows in one direction only. In the reverse direction a diode has very high resistance, so only a tiny current gets through. If you wire a diode into a circuit backwards, why does the lamp stay off?",
+    "[diagram shown in the conversation under T11: \"A diode: current flows in one direction only.\"]",
+    "[screenshot 12-diagram-11-phone.png and 12-diagram-11-laptop.png] diagram-11",
+    "S12 (try): whats a diode",
+    "T12: A diode is a one-way gate for current, like a turnstile that only spins one way. Wired backwards, it has very high resistance, so only a tiny current gets through. Picture a lamp wired in with the diode facing the wrong way. What would you expect to see happen to the lamp?",
+    "[screenshot 13-exchange-12-phone.png and 13-exchange-12-laptop.png] exchange-12",
+    "S13 (bored): huh?",
+    "T13: Sorry, that was a lot. Backwards, the lamp stays off, because only a tiny current gets through. Now, an LED is a diode that gives out light when current flows forwards, like in a TV screen or traffic light. If an LED is wired in the forward direction, what does it give out?",
+    "S14 (try): light?",
+    "T14: Yes — light is right, an LED gives out light when current flows forwards. Now look at the diagram: an LDR, a light-dependent resistor, is a component whose resistance gets lower as the light gets brighter. When it gets darker, what happens to an LDR's resistance?",
+    "[diagram shown in the conversation under T14: \"An LDR: brighter light, lower resistance.\"]",
+    "[screenshot 14-diagram-14-phone.png and 14-diagram-14-laptop.png] diagram-14",
+    "S15 (try): it goes higher?",
+    "T15: Yes — higher is right, because the darker it gets, the higher an LDR's resistance becomes. Look at the diagram: a thermistor is a component that reacts to heat instead of light, and the hotter it gets, the lower its resistance. If a thermistor is heated up a lot, what happens to its resistance?",
+    "[diagram shown in the conversation under T15: \"A thermistor: hotter, lower resistance.\"]",
+    "[screenshot 15-diagram-15-phone.png and 15-diagram-15-laptop.png] diagram-15",
+    "[screenshot 16-exchange-15-phone.png and 16-exchange-15-laptop.png] exchange-15",
+    "S16 (script): bye, got to go",
+    "T16: No problem, thanks for sticking with it. Today you answered questions on Light-Dependent Resistors (LDRs), fixed resistors and variable resistors and diodes. Your place is saved, so we'll pick up right here next time. Bye for now!",
+    "[screenshot 17-goodbye-16-phone.png and 17-goodbye-16-laptop.png] goodbye-16",
+    "[the student leaves]",
+    "[screenshot 18-end-phone.png and 18-end-laptop.png] end"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-18/p2-components-3/01-home-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/02-subjects-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/02-subjects-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/03-topics-physics-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/03-topics-physics-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/04-lessons-p2-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/04-lessons-p2-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/05-ai-lesson-opening-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/05-ai-lesson-opening-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/06-diagram-1-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/06-diagram-1-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/07-exchange-3-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/07-exchange-3-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/08-choices-6-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/08-choices-6-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/09-exchange-6-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/09-exchange-6-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/10-choices-8-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/10-choices-8-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/11-exchange-9-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/11-exchange-9-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/12-diagram-11-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/12-diagram-11-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/13-exchange-12-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/13-exchange-12-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/14-diagram-14-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/14-diagram-14-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/15-diagram-15-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/15-diagram-15-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/16-exchange-15-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/16-exchange-15-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/17-goodbye-16-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/17-goodbye-16-laptop.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/18-end-phone.png",
+    "tools/site-test-runs/2026-10-18/p2-components-3/18-end-laptop.png"
+  ],
+  "cost": 0.5668479999999998,
+  "tutorModel": "claude-sonnet-5-5",
+  "tutorCost": 0.35230799999999984,
+  "apiCalls": 13,
+  "browserApiCalls": 83
+}

@@ -1,0 +1,158 @@
+{
+  "lesson": "p4-nuclear-fission",
+  "source_file": "lessons/physics/p4-nuclear-fission.json",
+  "lesson_md5": "dd34bb1963c4344803dceef6a3ca52f8",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T22:12:32.333Z",
+  "specRefs_sent": [
+    "4.4.4.1",
+    "4.4.4.2"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 8031,
+    "output_tokens": 5647
+  },
+  "cost_usd": 0.145064,
+  "status": "OK",
+  "result": {
+    "lesson": "p4-nuclear-fission",
+    "missing_spec_content": [
+      {
+        "specRef": "4.4.4.1",
+        "spec_text": "Spontaneous fission is rare. Usually, for fission to occur the unstable nucleus must first absorb a neutron.",
+        "why": "The lesson teaches only neutron-induced fission. It never says that spontaneous fission exists but is rare. keyPoints[0].content says only: \"a large unstable nucleus absorbs a neutron\"."
+      },
+      {
+        "specRef": "4.4.4.1",
+        "spec_text": "The nucleus undergoing fission splits into two smaller nuclei, roughly equal in size",
+        "why": "The lesson says \"splits into two smaller nuclei\" (keyPoints[0].content) but never says the two nuclei are roughly equal in size."
+      },
+      {
+        "specRef": "4.4.4.1",
+        "spec_text": "All of the fission products have kinetic energy.",
+        "why": "keyPoints[0].content says \"The energy comes out as kinetic energy of the fragments and as gamma radiation.\" It does not say that the released neutrons also have kinetic energy, so the spec point that all fission products have kinetic energy is not taught."
+      },
+      {
+        "specRef": "4.4.4.1",
+        "spec_text": "Students should be able to draw/interpret diagrams representing nuclear fission and how a chain reaction may occur.",
+        "why": "Every keyPoint has \"diagram\": null, so the lesson contains no fission or chain-reaction diagram to interpret. The skill is mentioned only in keyPoints[1].tutor_note (\"Be able to draw or describe the chain reaction diagram\") and is never modelled."
+      },
+      {
+        "specRef": "4.4.4.2",
+        "spec_text": "In this process some of the mass may be converted into the energy of radiation.",
+        "why": "The lesson links energy to mass change only in general terms (keyPoints[3].content: \"This mass difference is converted to energy by E = mc²\"). It never states the spec point that in fusion some of the mass may be converted into the energy of radiation."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "Each fission reaction releases about 200 MeV. A chemical reaction releases only a few eV. That is about 50 million times less.",
+        "why": "MeV and eV energy units and per-reaction energy values are not in the specification sections. They could confuse a student."
+      },
+      {
+        "field": "tables[0].rows[3]",
+        "text": "~17.6 MeV per D-T reaction, but more per kg of fuel",
+        "why": "Per-reaction fusion energy in MeV, and comparing it with energy per kg, goes beyond the spec. It may also confuse students, because 17.6 MeV is smaller than fission's 200 MeV."
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "Control rods: these absorb extra neutrons. Push them in to slow the reaction down. Pull them out to speed it up. They are made of boron or cadmium.\n- Moderator: this slows neutrons down to the right speed for U-235 to absorb them. It is usually water or graphite.",
+        "why": "The spec says only \"The chain reaction is controlled in a nuclear reactor to control the energy released.\" Control rods, moderators and their materials are not required by these sections."
+      },
+      {
+        "field": "checkpoints.1.question",
+        "text": "What is the role of control rods in a nuclear reactor?",
+        "why": "This checkpoint tests reactor detail (control rods versus moderator) that the specification sections do not require."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "The most studied reaction for making energy uses deuterium (²H) and tritium (³H)... ²₁H + ³₁H → ⁴₂He + ¹₀n + energy.",
+        "why": "The spec defines fusion only as \"the joining of two light nuclei to form a heavier nucleus\". Named D-T fuels and the full nuclear equation are not required."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Challenge: it needs extremely high temperatures (~100 million °C on Earth) and pressures. These overcome the electrostatic repulsion between positively charged nuclei.",
+        "why": "Fusion conditions, temperatures and electrostatic repulsion are not in specification section 4.4.4.2."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "In the Sun's core, hydrogen nuclei fuse to form helium. This happens under enormous gravitational pressure, at temperatures of ~15 million °C.",
+        "why": "Conditions in stellar cores are not part of these specification sections."
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "Both processes release energy because of a small change in nuclear mass. This mass difference is converted to energy by E = mc².",
+        "why": "E = mc² and mass-energy conversion calculations are not required by these sections. The spec says only that \"some of the mass may be converted into the energy of radiation\"."
+      },
+      {
+        "field": "keyPoints[3].heading",
+        "text": "Comparing fission and fusion — nuclear power evaluation",
+        "why": "The detailed evaluation of fission and fusion power (accidents, proliferation, cost, \"always 30 years away\") is not part of specification sections 4.4.4.1 or 4.4.4.2."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "One neutron from each fission goes on to trigger exactly one more fission.",
+        "correction": "In a steady controlled reaction, on average one neutron from each fission goes on to cause another fission. It is not exactly one from every fission.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].keyTerms[1].def",
+        "text": "Hydrogen isotopes used as fuel in fusion reactions; abundant and available from seawater (deuterium)",
+        "correction": "Deuterium is abundant and can be extracted from seawater. Tritium is very rare in nature: it is radioactive with a half-life of about 12 years and must be produced, for example from lithium.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "almost limitless fuel (hydrogen from seawater)",
+        "correction": "Only the deuterium is plentiful from seawater. The tritium needed for D-T fusion is scarce and must be bred.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "tables[0].rows[6]",
+        "text": "Short-lived or none — much smaller problem",
+        "correction": "Fusion does produce some radioactive waste, because neutrons make the reactor structure radioactive. That waste is mostly shorter-lived than fission waste, but it is not \"none\".",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "risk of nuclear weapons spreading, as the waste can be used for weapons",
+        "correction": "Spent fuel cannot be used directly for weapons. Plutonium has to be chemically extracted from it by reprocessing.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "The energy comes out as kinetic energy of the fragments and as gamma radiation.",
+        "correction": "All of the fission products have kinetic energy, including the emitted neutrons, not just the two fragments.",
+        "basis": "spec"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "two small nuclei combine to form a larger nucleus",
+        "spec_term": "the joining of two light nuclei to form a heavier nucleus"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "two smaller nuclei, called fission fragments",
+        "spec_term": "fission products"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "as gamma radiation",
+        "spec_term": "gamma rays"
+      }
+    ],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "No diagrams were supplied (every keyPoint has \"diagram\": null), so no diagram content could be checked.",
+      "intro: \"about 10% of the world's electricity\". This figure changes over time. It is roughly right (about 9–10%), but it could not be checked against a current source."
+    ]
+  }
+}

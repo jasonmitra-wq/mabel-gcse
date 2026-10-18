@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase 2, task 2.6, P4, section 3 step a done (checkpoint keys; p4-nuclear-model quantum and bond WARNs; P4-FIX-LOG.md); next step b (R1).
+Runbook position: Phase 2, task 2.6, P4, section 3 step c done (R1 double run $1.15, triage P4-TRIAGE.md "## R1", fixes P4-FIX-LOG.md); next step d (R2 on all four lessons).
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

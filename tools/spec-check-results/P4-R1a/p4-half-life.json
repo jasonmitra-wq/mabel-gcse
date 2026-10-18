@@ -1,0 +1,133 @@
+{
+  "lesson": "p4-half-life",
+  "source_file": "lessons/physics/p4-half-life.json",
+  "lesson_md5": "5236a5126cfe9520d1353ca1e553a6d2",
+  "model": "claude-opus-5-5",
+  "date": "2026-10-18T22:11:45.101Z",
+  "specRefs_sent": [
+    "4.4.2.3",
+    "4.4.2.4",
+    "4.4.3.2",
+    "4.4.3.3"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 8019,
+    "output_tokens": 5425
+  },
+  "cost_usd": 0.140576,
+  "status": "OK",
+  "result": {
+    "lesson": "p4-half-life",
+    "missing_spec_content": [
+      {
+        "specRef": "4.4.2.4",
+        "spec_text": "Irradiation is the process of exposing an object to nuclear radiation. The irradiated object does not become radioactive.",
+        "why": "No key point, write bullet or key term says that an irradiated object does not become radioactive. The idea only appears in a wrong checkpoint option (checkpoints[3].options[3]) and in a table cell about sterilisation. The lesson never teaches it directly."
+      },
+      {
+        "specRef": "4.4.2.4",
+        "spec_text": "Radioactive contamination is the unwanted presence of materials containing radioactive atoms on other materials. The hazard from contamination is due to the decay of the contaminating atoms.",
+        "why": "The lesson defines contamination only for the human body: \"radioactive material gets onto or into the body\" (keyPoints[3].content) and \"Radioactive material that enters or contacts the body\" (keyPoints[3].keyTerms[1].def). The general definition (on other materials) is missing. So is the idea that the hazard comes from the decay of the contaminating atoms."
+      },
+      {
+        "specRef": "4.4.2.4",
+        "spec_text": "Students should understand that it is important for the findings of studies into the effects of radiation on humans to be published and shared with other scientists so that the findings can be checked by peer review.",
+        "why": "Peer review, and the publishing of studies on how radiation affects humans, is not mentioned anywhere in the lesson."
+      },
+      {
+        "specRef": "4.4.3.2",
+        "spec_text": "Students should be able to explain why the hazards associated with radioactive material differ according to the half-life involved.",
+        "why": "The lesson does not explain the general link between half-life and hazard. A short half-life gives a high activity at first, but the activity falls quickly. A long half-life gives a lower activity that lasts for a long time. The lesson only touches on this through the tracer dose and a passing mention of radioactive waste in intro."
+      },
+      {
+        "specRef": "4.4.3.3",
+        "spec_text": "evaluate the perceived risks of using nuclear radiations in relation to given data and consequences.",
+        "why": "The lesson does not show how to weigh risks against benefits using given data. It describes uses but does not evaluate them."
+      },
+      {
+        "specRef": "4.4.2.3",
+        "spec_text": "or the time it takes for the count rate (or activity) from a sample containing the isotope to fall to half its initial level.",
+        "why": "The lesson defines half-life only in terms of activity and number of nuclei. It never uses 'count rate', the term the specification names alongside activity."
+      },
+      {
+        "specRef": "4.4.3.2",
+        "spec_text": "Students should be able to use data presented in standard form.",
+        "why": "All half-life data are given in ordinary notation (for example \"5,700 years\", \"~6 hours\"). The lesson never uses or practises standard form."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "Carbon-14 dating: half-life ~5,700 years; beta emitter. Living things take in carbon-14 (from CO₂). When they die, the C-14 decays and is not replaced. Measuring the C-14 activity left gives the age of organic remains. This works up to ~50,000 years.",
+        "why": "Carbon dating is not in the specification sections given. Those sections limit uses to medicine: \"exploration of internal organs\" and \"control or destruction of unwanted tissue\"."
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Smoke detectors: americium-241 (alpha emitter, half-life ~430 years) ionises the air in the detector.",
+        "why": "Smoke detectors and specific isotope data are outside the uses listed in 4.4.3.3, which covers medical uses only."
+      },
+      {
+        "field": "introTips[4]",
+        "text": "Beta is for thickness gauges.",
+        "why": "Thickness gauges are not in the specification sections. The lesson also never teaches them, so this unexplained claim could confuse the student."
+      },
+      {
+        "field": "tables[0].rows[0]",
+        "text": "Long enough to date ancient remains; can be measured precisely",
+        "why": "This is detail about carbon dating, which is not required by the specification sections."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "intro",
+        "text": "Others have been decaying since the Big Bang and will carry on for billions of years.",
+        "correction": "Long-lived radioactive isotopes such as uranium-238 and thorium-232 were not made in the Big Bang. They formed later in stellar processes, such as supernovae and neutron-star mergers, before the Solar System formed. A better wording is 'since before the Earth formed'.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "commonMistakes[1]",
+        "text": "Saying the activity reaches zero. It never does. The curve gets closer and closer to zero but never arrives.",
+        "correction": "A real sample contains a finite number of nuclei, so its activity will eventually reach zero once every nucleus has decayed. It is the smooth model curve that approaches zero without reaching it. The lesson should say this is a feature of the graph or model, not that the activity of a real sample can never be zero.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].memTip",
+        "text": "Irradiation = from outside, stops with distance.",
+        "correction": "Exposure from an outside source falls as distance increases, but it does not simply stop. Gamma rays can travel a long way through air. Irradiation stops when the source is removed or fully shielded, as keyPoints[3].content correctly says.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].writeBullets[4]",
+        "text": "It ionises air; smoke breaks the current → alarm",
+        "correction": "Smoke reduces the current, because smoke particles absorb alpha particles and ions. It does not break the current completely. The alarm sounds when the current falls.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "Medical tracers: a radioactive isotope is injected or swallowed.",
+        "spec_term": "exploration of internal organs"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "Radiotherapy (cancer treatment): a focused gamma beam kills cancer cells.",
+        "spec_term": "control or destruction of unwanted tissue"
+      },
+      {
+        "field": "keyPoints[0].content",
+        "text": "Half-life is the time taken for the activity of a radioactive sample to halve",
+        "spec_term": "count rate (or activity)"
+      }
+    ],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "Every keyPoints[].diagram field is null, so there were no images or decay graphs to check.",
+      "The skills-development codes in the specification (WS 1.2, 1.4, 1.5, 1.6; MS 1b, 1c, 3d, 4a) have no matching lesson content that could be checked."
+    ]
+  }
+}

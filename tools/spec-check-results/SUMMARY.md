@@ -126,3 +126,11 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-10-18 | p3-particle-model | OK | missing_spec_content 0, above_gcse 0, factual_errors 3, wrong_terms 0, checkpoint_mismatch 0, not_checked 2 | 13165/3234 | $0.1173
 - 2026-10-18 | p3-changes-of-state | OK | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 12884/1851 | $0.0886
 - 2026-10-18 | p3-pressure | OK | missing_spec_content 0, above_gcse 0, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 11754/1707 | $0.0812
+- 2026-10-18 | p4-nuclear-model | OK | missing_spec_content 9, above_gcse 2, factual_errors 6, wrong_terms 1, checkpoint_mismatch 1, not_checked 2 | 7869/6347 | $0.1584
+- 2026-10-18 | p4-radioactivity | OK | missing_spec_content 8, above_gcse 5, factual_errors 3, wrong_terms 3, checkpoint_mismatch 0, not_checked 4 | 7858/5098 | $0.1334
+- 2026-10-18 | p4-half-life | OK | missing_spec_content 7, above_gcse 4, factual_errors 4, wrong_terms 3, checkpoint_mismatch 0, not_checked 2 | 8019/5425 | $0.1406
+- 2026-10-18 | p4-nuclear-fission | OK | missing_spec_content 5, above_gcse 9, factual_errors 6, wrong_terms 3, checkpoint_mismatch 0, not_checked 2 | 8031/5647 | $0.1451
+- 2026-10-18 | p4-nuclear-model | OK | missing_spec_content 9, above_gcse 4, factual_errors 8, wrong_terms 3, checkpoint_mismatch 1, not_checked 2 | 7869/5666 | $0.1448
+- 2026-10-18 | p4-radioactivity | OK | missing_spec_content 8, above_gcse 5, factual_errors 2, wrong_terms 2, checkpoint_mismatch 0, not_checked 2 | 7858/4648 | $0.1244
+- 2026-10-18 | p4-half-life | OK | missing_spec_content 9, above_gcse 6, factual_errors 6, wrong_terms 4, checkpoint_mismatch 1, not_checked 4 | 8019/6808 | $0.1682
+- 2026-10-18 | p4-nuclear-fission | OK | missing_spec_content 5, above_gcse 8, factual_errors 4, wrong_terms 2, checkpoint_mismatch 0, not_checked 3 | 8031/5360 | $0.1393

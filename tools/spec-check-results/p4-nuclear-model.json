@@ -1,21 +1,23 @@
 {
   "lesson": "p4-nuclear-model",
   "source_file": "lessons/physics/p4-nuclear-model.json",
-  "lesson_md5": "25a9416d73420c71297924011e381d9b",
+  "lesson_md5": "a9ab8d054d7a833cc2deb8e839610763",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:43:16.451Z",
+  "date": "2026-10-18T22:13:24.969Z",
   "specRefs_sent": [
     "4.4.1.1",
     "4.4.1.2",
     "4.4.1.3"
   ],
+  "blocking_only": false,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7942,
-    "output_tokens": 6256
+    "input_tokens": 7869,
+    "output_tokens": 5666
   },
-  "cost_usd": 0.156888,
+  "cost_usd": 0.144796,
   "status": "OK",
   "result": {
     "lesson": "p4-nuclear-model",
@@ -23,42 +25,42 @@
       {
         "specRef": "4.4.1.1",
         "spec_text": "Atoms are very small, having a radius of about 1 × 10^-10 metres.",
-        "why": "The lesson never gives the size of an atom. It also never uses standard form, which the spec flags as a skills point (MS 1b: 'recognise expressions given in standard form')."
+        "why": "The lesson never gives the size of an atom. It also never uses standard form, although the spec says 'Students should be able to recognise expressions given in standard form.'"
       },
       {
         "specRef": "4.4.1.1",
         "spec_text": "The radius of a nucleus is less than 1/10 000 of the radius of an atom.",
-        "why": "The lesson calls the nucleus 'tiny' but never gives its size relative to the atom."
+        "why": "The lesson only calls the nucleus 'tiny' or 'extremely small'. It never gives the size of the nucleus compared with the atom."
       },
       {
         "specRef": "4.4.1.2",
         "spec_text": "Atoms of the same element can have different numbers of neutrons; these atoms are called isotopes of that element.",
-        "why": "Isotopes are never defined or taught. The word appears only in tutor_note ('isotope notation'), with no explanation."
+        "why": "Isotopes are never defined or taught. The only mention is 'Practise reading isotope notation' in keyPoints[2].tutor_note."
       },
       {
         "specRef": "4.4.1.2",
         "spec_text": "Students should be able to relate differences between isotopes to differences in conventional representations of their identities, charges and masses.",
-        "why": "Because isotopes are not taught, students are never shown how isotopes of one element differ in their representations."
+        "why": "The lesson does not compare how different isotopes are represented."
       },
       {
         "specRef": "4.4.1.2",
         "spec_text": "Atoms turn into positive ions if they lose one or more outer electron(s).",
-        "why": "Ion formation is not mentioned anywhere in the lesson."
+        "why": "Ions are not mentioned anywhere in the lesson."
       },
       {
         "specRef": "4.4.1.3",
         "spec_text": "Before the discovery of the electron, atoms were thought to be tiny spheres that could not be divided.",
-        "why": "The lesson starts with the plum pudding model. It never describes the earlier idea of atoms as indivisible spheres."
+        "why": "The model from before the electron was discovered is not taught. introTips[0] only describes the plum pudding idea."
       },
       {
         "specRef": "4.4.1.3",
         "spec_text": "Niels Bohr adapted the nuclear model by suggesting that electrons orbit the nucleus at specific distances. The theoretical calculations of Bohr agreed with experimental observations.",
-        "why": "The lesson only says 'Bohr refined this model further (1913)'. It does not say what Bohr proposed (electrons orbiting at specific distances). It does not say that his calculations agreed with experiment."
+        "why": "keyPoints[3].content only says 'Bohr refined this model further (1913)'. It does not say what Bohr suggested, and it does not say that his calculations agreed with experiment."
       },
       {
         "specRef": "4.4.1.3",
         "spec_text": "Later experiments led to the idea that the positive charge of any nucleus could be subdivided into a whole number of smaller particles, each particle having the same amount of positive charge. The name proton was given to these particles.",
-        "why": "Protons are listed as particles, but how they were discovered is not taught."
+        "why": "The lesson lists protons but never explains how the idea of the proton came about."
       },
       {
         "specRef": "4.4.1.3",
@@ -69,70 +71,72 @@
     "above_gcse": [
       {
         "field": "keyPoints[3].content",
-        "text": "they emit electromagnetic radiation (light) of a specific frequency. This is why each element gives a unique spectrum.",
-        "why": "Specific frequencies and element spectra go beyond the spec. The spec only requires that electrons move to higher or lower energy levels by absorbing or emitting electromagnetic radiation."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "Bohr refined this model further (1913), and later quantum mechanics did too.",
-        "why": "Quantum mechanics is not in the specification and could confuse the student."
-      },
-      {
-        "field": "keyPoints[3].content",
         "text": "The innermost shell (lowest energy) fills first, then the next, and so on.",
         "why": "The order in which shells fill is chemistry content. It is not in these physics spec sections."
       },
       {
         "field": "keyPoints[3].content",
-        "text": "The arrangement of outer electrons decides how atoms bond chemically.",
-        "why": "Chemical bonding is not part of these specification sections."
-      },
-      {
-        "field": "checkpoints.3.question",
-        "text": "Which period of the periodic table is it in?",
-        "why": "Shell capacities and periodic table periods are chemistry content. They are not required by these physics sections."
+        "text": "This is why each element gives a unique spectrum.",
+        "why": "Line spectra are not part of the specification sections."
       },
       {
         "field": "keyPoints[2].content",
         "text": "relative mass ~1/1836 ≈ essentially 0",
-        "why": "The spec does not require relative masses of subatomic particles. The precise value 1/1836 goes beyond GCSE requirements."
+        "why": "The spec does not require the exact relative mass of the electron. The extra figure is not needed."
+      },
+      {
+        "field": "checkpoints.3.question",
+        "text": "Which period of the periodic table is it in?",
+        "why": "Periods and shell capacities ('the second holds up to 8') are not in these physics spec sections."
       }
     ],
     "factual_errors": [
       {
-        "field": "keyPoints[1].content",
-        "text": "(1) Most alpha particles went straight through → the atom is mostly empty space. The positive charge is not spread out as the plum pudding model said.",
-        "correction": "The plum pudding model also predicted that most alpha particles would pass straight through, so this observation does not disprove it. The evidence that the positive charge is concentrated, not spread out, comes from the large-angle deflections and back-scattering. The lesson itself says this in keyPoints[0]: 'They would all pass straight through'.",
+        "field": "keyPoints[0].content",
+        "text": "This prediction turned out to be almost completely wrong.",
+        "correction": "Most alpha particles did pass straight through, as the plum pudding model predicted. The model failed only because it could not explain the few large deflections and the particles that bounced back.",
         "basis": "own knowledge"
       },
       {
         "field": "keyPoints[1].content",
-        "text": "(2) Some alpha particles were deflected at small angles → there is a small, dense, positively charged region at the centre.",
-        "correction": "The plum pudding model predicted small deflections. The surprising evidence for a concentrated positive nucleus was that some particles were deflected through large angles. The conclusion should be tied to large-angle deflections, or simply to deflection by a positive charge.",
+        "text": "Most alpha particles went straight through</strong> → the atom is <strong>mostly empty space</strong>. The positive charge is not spread out as the plum pudding model said.",
+        "correction": "Most particles passing straight through fits both models. The evidence that the positive charge is not spread out comes from the large deflections, not from the particles that passed straight through.",
         "basis": "own knowledge"
       },
       {
         "field": "keyPoints[1].content",
         "text": "Only direct hits cause the large deflections.",
-        "correction": "Alpha particles do not hit the nucleus. They are strongly repelled when they come very close to it on a near head-on path.",
+        "correction": "Alpha particles do not hit the nucleus. They are repelled by electrostatic force when they pass very close to it or approach it nearly head-on.",
         "basis": "own knowledge"
       },
       {
         "field": "keyPoints[2].heading",
         "text": "Structure of the nucleus — protons, neutrons and electrons",
-        "correction": "Electrons are not part of the nucleus. The nucleus contains protons and neutrons, and electrons surround it.",
+        "correction": "Electrons are not part of the nucleus. The nucleus is 'composed of both protons and neutrons surrounded by negatively charged electrons'.",
+        "basis": "spec"
+      },
+      {
+        "field": "keyPoints[2].content",
+        "text": "The nuclear model gives us the structure of the atom. There is a <strong>tiny, dense, positive nucleus</strong> at the centre. It is surrounded by <strong>electrons in shells</strong>.",
+        "correction": "The idea that electrons orbit at specific distances came from Bohr's later adaptation, not from Rutherford's original nuclear model: 'Niels Bohr adapted the nuclear model by suggesting that electrons orbit the nucleus at specific distances.'",
         "basis": "spec"
       },
       {
         "field": "keyPoints[3].tutor_note",
         "text": "At GCSE, you just need to know two things. Electrons are in shells at set energy levels. Moving between them emits radiation.",
-        "correction": "Moving to a higher energy level involves absorbing electromagnetic radiation. Only moving to a lower level involves emitting it. The spec requires both.",
+        "correction": "The spec requires both absorption and emission: 'The electron arrangements may change with the absorption of electromagnetic radiation ... or by the emission of electromagnetic radiation'. This note also contradicts the 'three things' given in keyPoints[3].content.",
+        "basis": "spec"
+      },
+      {
+        "field": "checkpoints.1.wrongFeedback",
+        "text": "This showed the nucleus is tiny but holds almost all the positive charge.",
+        "correction": "All of the atom's positive charge is in the nucleus. It is almost all of the mass that is concentrated there: 'Most of the mass of an atom is concentrated in the nucleus.'",
         "basis": "spec"
       },
       {
         "field": "checkpoints.3.wrongFeedback",
         "text": "Two shells filled = Period 2.",
-        "correction": "The second shell is not filled: it holds 7 of a possible 8 electrons. It should say that two shells are occupied (in use).",
+        "correction": "The second shell is not filled; it holds 7 of a possible 8 electrons. The period number equals the number of occupied shells, not the number of filled shells.",
         "basis": "own knowledge"
       }
     ],
@@ -148,27 +152,21 @@
         "spec_term": "alpha particle scattering experiment"
       },
       {
-        "field": "introTips[3]",
-        "text": "Proton number (atomic number) tells you the element.",
-        "spec_term": "atomic number"
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "Electrons can absorb energy to jump to a higher energy level",
-        "spec_term": "absorption of electromagnetic radiation"
+        "field": "keyPoints[3].keyTerms[0].term",
+        "text": "electron shell",
+        "spec_term": "energy levels / different distances from the nucleus"
       }
     ],
     "checkpoint_mismatch": [
       {
         "checkpoint": "checkpoints.3: \"An atom has 2 electrons in its first shell and 7 in its second. How many electrons does it have in total? Which period of the periodic table is it in?\"",
-        "key_point": "keyPoints[3].content: \"Electrons can absorb energy to jump to a higher energy level... When they fall back to a lower level, they emit electromagnetic radiation\"",
-        "why": "The key point is about energy levels and absorbing or emitting radiation. The checkpoint tests electron counting and periodic table periods instead. The key point never gives shell capacities or the link between shells and periods, so the answer is not supported by it."
+        "key_point": "keyPoints[3] \"Electron shells and energy levels\"",
+        "why": "The key point teaches energy levels and absorbing or emitting radiation. It never mentions periods or shell capacities, so the answer is not supported by the key point and the question does not test what the key point teaches."
       }
     ],
     "not_checked": [
-      "The specification text says 'Atoms can be represented as shown in this example:' but the example is missing. The lesson's notation (²³⁸₉₂U, 'top number is the mass number') could not be checked against the spec's representation.",
-      "All diagrams are null, so there were no images to check.",
-      "Checkpoint keys \"0\" to \"3\" were assumed to map to keyPoints[0] to keyPoints[3] in order."
+      "Spec 4.4.1.2 'Atoms can be represented as shown in this example:' — the example image is not in the supplied spec text. The notation in keyPoints[2].tutor_note ('²³⁸₉₂U') could not be compared with it.",
+      "All keyPoints have \"diagram\": null, so there were no diagrams to check."
     ]
   }
 }

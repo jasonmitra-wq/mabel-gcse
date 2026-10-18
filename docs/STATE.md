@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: brief docs/briefs/2026-10-18-first-time-learner.md, step 6 (STOPPED: API billing or credit error during the b3-defences after-run). Steps 0–5 and 7 done; step 6 done for p2-components and p1-energy-stores (text) and p2-components (website). Next: add credits, type Continue; then step 6 text runs on b3-defences and g5-development (FIRST_TIME on) with --max-usd 6 less the $1.66 already spent in step 6; then the one fix round (shared-code fixes already made after the website run are in the commit "First-time learner: first fixes"); re-run failures once; step 8 report. After that, back to Phase 2, task 2.6, P4 (new session).
+Runbook position: brief docs/briefs/2026-10-18-leaving-and-tired.md (RESPECT_EXIT), then Phase 2, task 2.6, P4. First-time-learner brief finished: step 6 re-run done (both FAIL, in docs/ESCALATIONS.md), step 8 reported.
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

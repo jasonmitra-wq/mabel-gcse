@@ -1,0 +1,989 @@
+{
+  "id": "g5-development",
+  "subject": "geography",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome! Today we're exploring why life can be so different from one country to another. Think about what makes a good life for someone your age: what things do you rely on every day?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "um like my phone, wifi, food, bed? clean water maybe",
+      "studentType": "try",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Food, clean water and a bed are the basics, and they're what we mean by quality of life. Now, one way to compare countries is their income: the money earned, shared out equally per person. If a country earns 100 million pounds and has 10 million people, how much is that per person?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "uh what's per person mean",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "\"Per person\" just means shared out equally between everyone. If 100 sweets are shared by 4 people, each person gets 25 sweets.\n\nSo if a country earns 100 million pounds and has 10 million people, how much does each person get?",
+      "recap": null,
+      "basic": "Per person",
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk like... 10 pounds each?",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Not quite. Sharing 100 million pounds between 10 million people gives 10 pounds each, because 100 divided by 10 is 10. So that is right. Countries do this too: \"GNI per capita\" means a country's yearly income shared out per person. If a country earns 200 million pounds and has 10 million people, what is its GNI per capita?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "whats gni per capita",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "GNI per capita is a country's total yearly income divided by the number of people living there, so it's just income per person. That's why it lets us compare a huge country with a tiny one fairly. Try it: a country earns 200 million pounds in a year and has 10 million people. What is its GNI per capita?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "um like 20 pounds each?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "GNI per capita measures income, but development is also about quality of life, so we use life expectancy too: the average number of years a person born in a country can expect to live. What does a country's low life expectancy tell you about its healthcare, food and clean water?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "probably bad? like not enough food or clean water or doctors",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, not enough food, clean water or doctors is exactly what a low life expectancy points to. Another sign is the infant mortality rate: out of every 1,000 babies born alive, how many die before their first birthday. In Chad it's 103, but in the UK it's 4. Which of those two countries do you think has better healthcare?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "uk obviously lol",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, the UK is right: its infant mortality rate of 4 points to much better healthcare. HDI combines income, life expectancy and years of schooling into one score between 0 and 1. A country scores close to 1. What does that tell you about its people?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "whats hdi",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "HDI is the Human Development Index: one score from 0 to 1 that mixes income, life expectancy and years of schooling. A score near 1 is the best. Which country would score closer to 1, the UK or Chad?",
+      "recap": null,
+      "flags": [
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 9,
+      "student": "uk cuz better healthcare and money right",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, the UK is right, and you named two of the three things HDI mixes: healthcare (life expectancy) and money (income). Why might a composite measure like HDI tell us more about a country than money alone?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "whats composite measure",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "A composite measure just means one number built from several ingredients, like a school report grade that mixes your coursework, tests and homework. If a country was rich but its people died young, which ingredient of HDI would pull its score down?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "life expectancy would pull it down i guess",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 1,
+      "point": 0,
+      "reply": "Yes, life expectancy is right: people dying young drags the HDI score down even if the country is rich. Countries in the rich group are called HICs, short for High Income Countries, which have a high GNI per capita. Why would the UK count as an HIC?",
+      "recap": [
+        "Quality of life means having basics like food, clean water and a bed.",
+        "GNI per capita is a country's yearly income shared out per person.",
+        "Life expectancy and infant mortality show how good healthcare, food and water are.",
+        "HDI mixes income, life expectancy and schooling into one score from 0 to 1."
+      ],
+      "diagram": "g5-brandt-line",
+      "diagramCaption": "The Brandt Line of 1980 — a rough split between richer North and poorer South.",
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "whats hic",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "HIC stands for High Income Country. It just means a wealthy country where people earn a lot per person, like the UK, Japan or the USA. Think of it like a class where most people have plenty of pocket money.\n\nWhich phone-and-wifi, clean-water things you listed would be easy for most people to afford in an HIC?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "all of them probably? like everyone can afford phones and water and stuff",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes, everyone can afford phones and water in an HIC, which is exactly what a high GNI per capita buys. If an LIC has a low GNI per capita, what do you think would be hard for many people there to afford?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "whats lic",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "LIC stands for Low Income Country. It's one of the world's poorest countries, where people earn very little per person, like Niger or Malawi, the opposite of the UK or Japan.\n\nSo think back to your list of phone, wifi, food, bed and clean water. Which of those might be hardest for many people in an LIC to afford?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "this is long man",
+      "studentType": "bored",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Fair enough, I'll keep it quick. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "nah im ok just ask simpler",
+      "studentType": "checkin-no",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "In an LIC, many people earn so little that things like food and clean water can be hard to afford, never mind a phone. What would they have to spend it on first?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "idk honestly",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Picture a family in an LIC earning very little. Money goes first on the basics, like food and clean water, so a phone or wifi comes much later. Why would someone in a LIC buy food before a phone?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "k",
+      "studentType": "minimal",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "No worries, here's the short version. The Brandt Line split the world into rich \"North\" and poor \"South\", but it's outdated now. Look at the diagram: four causes of the development gap, each feeding the others. The development gap is how far apart the richest and poorest countries are in wealth and quality of life. If a poor country's money keeps going on paying back loans, what would suffer, and how would that keep the gap wide?",
+      "recap": [
+        "HIC means High Income Country, a wealthy place like the UK or Japan.",
+        "LIC means Low Income Country, one of the poorest, like Niger or Malawi.",
+        "GNI per capita is how much people earn on average per person.",
+        "In an LIC, food and clean water come first; phones come much later."
+      ],
+      "diagram": "g5-development-gap-causes",
+      "diagramCaption": "Four causes of the development gap, each feeding the others.",
+      "flags": [
+        "over length (77 words)"
+      ]
+    },
+    {
+      "n": 19,
+      "student": "whats development gap",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "The development gap is just how far apart rich and poor countries are in wealth and quality of life. Which of those would be hardest to get in a very poor country?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "like healthcare and schools probably",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "If a colonising country shut down a local cotton-weaving industry so it could sell its own cloth there, what would happen to local people's jobs?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "they'd lose their jobs innit",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Many poor countries then just sell primary products: raw materials like coffee, cocoa or copper, before anything is made from them. They earn far less than manufactured goods, so why would a country selling only cocoa struggle to afford phones?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "whats primary products",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Primary products are raw materials sold before anything is made from them, like cocoa beans, timber or oil. If a country sold only cocoa beans, what could it never earn by making the chocolate bars itself?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "like way more money? cuz chocolate costs more than beans",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Yes — chocolate bars earn more than raw beans, so making them adds money. What would that mean for the children there?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "they could go to school more?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Terms of trade means what a country earns from its exports compared with what it pays for its imports. If a country sells cheap raw materials but buys expensive phones, what happens to its terms of trade?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "whats terms of trade",
+      "studentType": "offtopic",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Think of it like your pocket money. Imagine you earn pennies from selling raw cocoa beans, but phones cost a fortune to buy. What would that do to the money left over for schools?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "im hungry can we finish this later",
+      "studentType": "offtopic",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "That's fine, you can come back to this lesson any time. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "nah im good thanks",
+      "studentType": "checkin-no",
+      "kind": "next",
+      "teachIndex": 3,
+      "point": 2,
+      "reply": "Fair enough, we'll carry on briefly. Rich countries and charities try to help closing the gap through aid: money, goods or expertise given to another country. After an earthquake, what kind of help would people need first?",
+      "recap": [
+        "The development gap is how far apart rich and poor countries are in wealth and quality of life.",
+        "Primary products are raw materials, like cocoa beans, sold before anything is made from them.",
+        "Making finished goods earns far more than selling raw materials, which keeps poor countries poorer.",
+        "When colonisers shut down local industries, people lost jobs, and the gap grew wider."
+      ],
+      "flags": []
+    },
+    {
+      "n": 28,
+      "student": "whats aid",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Aid is help given by one country or group to another, like money, goods or know-how. Which kind of aid would build a school in a poor village?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 29,
+      "student": "like money i guess? or the know-how stuff",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Money and know-how are both right, and long-term development aid is the kind that pays for schools. Who keeps more of the money from the farmers' crop under Fairtrade?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 30,
+      "student": "whats fairtrade",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Fairtrade is a scheme where farmers are promised a minimum price for their crop, plus an extra payment for their community. If a cocoa farmer gets that extra payment, what could their village spend it on?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 31,
+      "student": "no idea tbh",
+      "studentType": "idk",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "That's okay, this part has a few bits to it. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 32,
+      "student": "yeah go on then",
+      "studentType": "checkin-yes",
+      "kind": "next",
+      "teachIndex": 4,
+      "point": 3,
+      "reply": "Debt relief cancelled some poor countries' debts, and Uganda used the freed money to abolish school fees. Microfinance gives small loans to very poor people, mostly women, to start businesses, and the Grameen Bank in Bangladesh gets 97% repaid. Tourism brings jobs, but profits often \"leak\" to big companies.\n\nNext: is the gap closing? In 2015 countries at the UN agreed 17 goals, called the SDGs, to be met by 2030. By which year are countries meant to meet them?",
+      "recap": [
+        "Aid means one country or group giving help like money, goods or expertise.",
+        "Long-term development aid pays for lasting things, like building a school.",
+        "Fairtrade promises farmers a minimum price for their crop.",
+        "Farmers also get an extra payment for their community to spend."
+      ],
+      "flags": [
+        "yes/no question",
+        "over length (80 words)",
+        "unanswerable: more than one question"
+      ]
+    },
+    {
+      "n": 33,
+      "student": "this is long man",
+      "studentType": "bored",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Fair, that was a lot. The SDGs are 17 goals countries agreed in 2015 to fix things like poverty, hunger and school. Why do you think countries set a deadline for them?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 34,
+      "student": "so they actually do it by then?",
+      "studentType": "wrong",
+      "kind": "fact",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Right: you saw that the deadline is the point, and the goal is for countries to get there by 2030. Why do you think it matters that fewer people live like that?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 35,
+      "student": "like less people suffering and stuff",
+      "studentType": "try",
+      "kind": "complete",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Yes — fewer people suffering is the heart of it. That's the end of the lesson. You answered questions on three points, answered some on the Brandt Line, and I told you the rest, including the strategies.",
+      "recap": [
+        "Debt relief cancels poor countries' debts, freeing money for things like free school.",
+        "Microfinance gives tiny loans to poor people, mostly women, to start businesses.",
+        "Tourism creates jobs, but profits often leak out to big foreign companies.",
+        "The 17 SDGs, agreed in 2015, aim to cut poverty and suffering by 2030."
+      ],
+      "flags": []
+    },
+    {
+      "n": 36,
+      "student": "ok thanks bye",
+      "studentType": "closing",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Bye, and thanks for sticking with it. You can come back to the Brandt Line and the strategies any time, and they'll make more sense with a second go. Good luck with the GCSEs!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "coreOpts": {},
+  "firstTime": true,
+  "lessonFlags": [],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "im hungry can we finish this later",
+    "would_quit": {
+      "turn": "T25",
+      "quote": "Think of it like your pocket money. Imagine you earn pennies from selling raw cocoa beans, but phones cost a fortune to buy. What would that do to the money left over for schools?",
+      "why": "After many 'whats X' turns, a muddled analogy that skips her question leads her to ask to stop."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Think about what makes a good life for someone your age: what things do you rely on every day?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a country earns 100 million pounds and has 10 million people, how much is that per person?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "\"Per person\" just means shared out equally between everyone.",
+        "note": ""
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Not quite. Sharing 100 million pounds between 10 million people gives 10 pounds each, because 100 divided by 10 is 10. So that is right.",
+        "note": "Says 'Not quite' to a correct answer, then calls it right. This contradicts itself."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "GNI per capita is a country's total yearly income divided by the number of people living there, so it's just income per person.",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "GNI per capita measures income, but development is also about quality of life",
+        "note": "Ignores her correct '20 pounds each'."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In Chad it's 103, but in the UK it's 4. Which of those two countries do you think has better healthcare?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "A country scores close to 1. What does that tell you about its people?",
+        "note": "Garbled sentence. HDI is not expanded."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which country would score closer to 1, the UK or Chad?",
+        "note": ""
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Why might a composite measure like HDI tell us more about a country than money alone?",
+        "note": "Asks about 'composite measure' before explaining the term."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a country was rich but its people died young, which ingredient of HDI would pull its score down?",
+        "note": ""
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Countries in the rich group are called HICs, short for High Income Countries, which have a high GNI per capita. Why would the UK count as an HIC?",
+        "note": "Answer is in the same message. The Brandt Line diagram appears but is never mentioned."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which phone-and-wifi, clean-water things you listed would be easy for most people to afford in an HIC?",
+        "note": ""
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Yes, everyone can afford phones and water in an HIC",
+        "note": "Overclaims ('everyone'). Uses LIC in the question before explaining it."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "So think back to your list of phone, wifi, food, bed and clean water. Which of those might be hardest for many people in an LIC to afford?",
+        "note": "She replies 'this is long man'."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What would they have to spend it on first?",
+        "note": "'it' has no clear referent. The answer (food and clean water) is in the same message."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why would someone in a LIC buy food before a phone?",
+        "note": "The answer was given just before the question."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": true,
+        "confusing": true,
+        "quote": "If a poor country's money keeps going on paying back loans, what would suffer, and how would that keep the gap wide?",
+        "note": "Crams in Brandt, the diagram and the development gap, then asks about debt, which was never taught. NEEs and the reason the Brandt Line is outdated are skipped."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Which of those would be hardest to get in a very poor country?",
+        "note": "'those' (wealth and quality of life) does not fit 'get'."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a colonising country shut down a local cotton-weaving industry so it could sell its own cloth there, what would happen to local people's jobs?",
+        "note": "Ignores her answer. Colonialism is never taught."
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "They earn far less than manufactured goods, so why would a country selling only cocoa struggle to afford phones?",
+        "note": "Answer is in the same message. Her correct answer is not acknowledged."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a country sold only cocoa beans, what could it never earn by making the chocolate bars itself?",
+        "note": ""
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What would that mean for the children there?",
+        "note": "Vague and does not test primary products."
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a country sells cheap raw materials but buys expensive phones, what happens to its terms of trade?",
+        "note": "Ignores her answer."
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Imagine you earn pennies from selling raw cocoa beans, but phones cost a fortune to buy. What would that do to the money left over for schools?",
+        "note": "Does not answer 'whats terms of trade'. The analogy mixes pocket money, phones and schools."
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That's fine, you can come back to this lesson any time.",
+        "note": ""
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Rich countries and charities try to help closing the gap through aid",
+        "note": "Grammar slip."
+      },
+      {
+        "turn": "T28",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Which kind of aid would build a school in a poor village?",
+        "note": ""
+      },
+      {
+        "turn": "T29",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Who keeps more of the money from the farmers' crop under Fairtrade?",
+        "note": "Asks about Fairtrade before explaining it."
+      },
+      {
+        "turn": "T30",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a cocoa farmer gets that extra payment, what could their village spend it on?",
+        "note": ""
+      },
+      {
+        "turn": "T31",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T32",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": true,
+        "confusing": false,
+        "quote": "In 2015 countries at the UN agreed 17 goals, called the SDGs, to be met by 2030. By which year are countries meant to meet them?",
+        "note": "About 95 words. Answer is in the same message. Leaves out intermediate technology and the types of aid."
+      },
+      {
+        "turn": "T33",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why do you think countries set a deadline for them?",
+        "note": ""
+      },
+      {
+        "turn": "T34",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Why do you think it matters that fewer people live like that?",
+        "note": "'like that' points to extreme poverty, which was never mentioned. The China, Africa and poverty-figure content is skipped."
+      },
+      {
+        "turn": "T35",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "You answered questions on three points, answered some on the Brandt Line, and I told you the rest, including the strategies.",
+        "note": "She never answered anything on the Brandt Line."
+      },
+      {
+        "turn": "T36",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Bye, and thanks for sticking with it.",
+        "note": ""
+      }
+    ],
+    "tone_vs_reference": {
+      "verdict": "worse",
+      "evidence": [
+        {
+          "quote": "Not quite. Sharing 100 million pounds between 10 million people gives 10 pounds each, because 100 divided by 10 is 10. So that is right.",
+          "reference_quote": "The total divided by the population gives $10,000 per person, so your 10 thousand was right.",
+          "note": "The reference confirms clearly. This one wrongly says she was wrong, then reverses."
+        },
+        {
+          "quote": "If a colonising country shut down a local cotton-weaving industry so it could sell its own cloth there, what would happen to local people's jobs?",
+          "reference_quote": "Yes — emergency aid is right, because it follows disasters.",
+          "note": "The reference praises her answer. This one skips past her reasonable answer."
+        },
+        {
+          "quote": "Think of it like your pocket money. Imagine you earn pennies from selling raw cocoa beans, but phones cost a fortune to buy. What would that do to the money left over for schools?",
+          "reference_quote": "That's fine, let's make it simpler. HDI is like a school report card for a whole country: it mixes three marks into one score between 0 and 1",
+          "note": "The reference analogy is plain and answers her confusion. This one is muddled and dodges her question."
+        }
+      ]
+    },
+    "flow_faults": [
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T3",
+        "quote": "Not quite. Sharing 100 million pounds between 10 million people gives 10 pounds each",
+        "note": "Her answer of 10 pounds was correct."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T3",
+        "quote": "Not quite.",
+        "note": "Marks a correct calculation as wrong."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T5",
+        "quote": "GNI per capita measures income, but development is also about quality of life",
+        "note": "Her answer of 20 pounds was correct."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T7",
+        "quote": "HDI combines income, life expectancy and years of schooling into one score between 0 and 1.",
+        "note": "HDI is not expanded. She asks 'whats hdi'."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T9",
+        "quote": "Why might a composite measure like HDI tell us more about a country than money alone?",
+        "note": "'composite measure' is used in a question before it is explained."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T11",
+        "quote": "Countries in the rich group are called HICs, short for High Income Countries, which have a high GNI per capita. Why would the UK count as an HIC?",
+        "note": "'high GNI per capita' is stated just before the question."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T13",
+        "quote": "Yes, everyone can afford phones and water in an HIC",
+        "note": "Overgeneralises. T12 said 'most people'."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T13",
+        "quote": "If an LIC has a low GNI per capita, what do you think would be hard for many people there to afford?",
+        "note": "LIC is used before it is explained."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T16",
+        "quote": "In an LIC, many people earn so little that things like food and clean water can be hard to afford, never mind a phone. What would they have to spend it on first?",
+        "note": "Food and clean water are already named."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T17",
+        "quote": "Money goes first on the basics, like food and clean water, so a phone or wifi comes much later. Why would someone in a LIC buy food before a phone?",
+        "note": "The answer is given just before the question."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T20",
+        "quote": "If a colonising country shut down a local cotton-weaving industry",
+        "note": "Her answer 'healthcare and schools' was valid."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T20",
+        "quote": "If a colonising country shut down a local cotton-weaving industry so it could sell its own cloth there",
+        "note": "Colonialism is never explained."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T21",
+        "quote": "Many poor countries then just sell primary products",
+        "note": "Her answer 'they'd lose their jobs' was correct."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T21",
+        "quote": "They earn far less than manufactured goods, so why would a country selling only cocoa struggle to afford phones?",
+        "note": "The reason is stated in the same message."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T24",
+        "quote": "Terms of trade means what a country earns from its exports compared with what it pays for its imports.",
+        "note": "Her answer 'they could go to school more?' was not acknowledged."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T29",
+        "quote": "Who keeps more of the money from the farmers' crop under Fairtrade?",
+        "note": "Fairtrade is used in a question before it is explained."
+      },
+      {
+        "type": "tell_me_skipped_content",
+        "turn": "T32",
+        "quote": "Debt relief cancelled some poor countries' debts, and Uganda used the freed money to abolish school fees.",
+        "note": "Leaves out intermediate technology, the aid types (bilateral, multilateral, NGO), emergency vs development aid, the HIPC name and the 36 countries."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T32",
+        "quote": "In 2015 countries at the UN agreed 17 goals, called the SDGs, to be met by 2030. By which year are countries meant to meet them?",
+        "note": "The year 2030 is stated in the same message."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T34",
+        "quote": "Why do you think it matters that fewer people live like that?",
+        "note": "Refers to extreme poverty, which was never introduced."
+      },
+      {
+        "type": "closing_claims_untaught_content",
+        "turn": "T35",
+        "quote": "You answered questions on three points, answered some on the Brandt Line",
+        "note": "No question on the Brandt Line was ever asked or answered."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: acknowledge correct answers",
+        "change": "When the answer matches, open with 'Yes, X is right because…'. Never open with 'Not quite' on a correct answer. Never skip straight to new content after a correct answer.",
+        "quote": "Not quite. Sharing 100 million pounds between 10 million people gives 10 pounds each, because 100 divided by 10 is 10. So that is right."
+      },
+      {
+        "target": "teach-core: define terms before asking",
+        "change": "Before any question that uses a keyTerms term (HDI, composite measure, LIC, colonialism, Fairtrade, extreme poverty), give its plain-words definition earlier in the same turn.",
+        "quote": "If an LIC has a low GNI per capita, what do you think would be hard for many people there to afford?"
+      },
+      {
+        "target": "teach-core: tell-me covers whole key point; keyPoints[1].content and keyPoints[3].content",
+        "change": "When telling, cover all of the key point's writeBullets. That means NEEs and why the Brandt Line is outdated (China, Brazil), plus the aid types, intermediate technology and the HIPC name. Show keyPoints[1].diagramCaption only when the Brandt Line is actually taught.",
+        "quote": "Debt relief cancelled some poor countries' debts, and Uganda used the freed money to abolish school fees."
+      },
+      {
+        "target": "teach-core: no answer in question",
+        "change": "Ask questions whose answer is not stated in the same or previous message. Example: ask her to apply the idea ('Niger or the UK, which is an HIC?') instead of repeating back a fact just given.",
+        "quote": "In 2015 countries at the UN agreed 17 goals, called the SDGs, to be met by 2030. By which year are countries meant to meet them?"
+      },
+      {
+        "target": "teach-core: closing summary",
+        "change": "Build the closing summary only from key points where she actually answered a question. List told or skipped points as 'I told you about…'.",
+        "quote": "You answered questions on three points, answered some on the Brandt Line, and I told you the rest, including the strategies."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T25",
+      "question does not match what was taught: T9, T13, T18, T20, T23, T29, T34",
+      "flow faults: correct_answer_not_acknowledged T3, factual_or_unit_slip T3, correct_answer_not_acknowledged T5, unexplained_term T7, unexplained_term T9, answer_in_question T11, factual_or_unit_slip T13, unexplained_term T13, answer_in_question T16, answer_in_question T17, correct_answer_not_acknowledged T20, unexplained_term T20, correct_answer_not_acknowledged T21, answer_in_question T21, correct_answer_not_acknowledged T24, unexplained_term T29, tell_me_skipped_content T32, answer_in_question T32, unexplained_term T34, closing_claims_untaught_content T35",
+      "tone worse than the reference"
+    ]
+  },
+  "cost": 1.3350650000000024,
+  "tutorCost": 1.0106360000000012,
+  "tutorCalls": 240,
+  "mode": "run",
+  "date": "2026-10-18"
+}

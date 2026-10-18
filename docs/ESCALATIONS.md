@@ -229,3 +229,14 @@ Still there after the re-run:
 - Website: wrong answer "it doubles again?" goes straight to the "just tell you the rest?" check-in with no feedback; "nah just tell me lol" logged as check-in no; Key Terms side panel clipped at 1366×768; "Jump to" heading and "← Home" under the sticky bar; lesson title truncated on phone; end screen scrolled up so "Lesson finished." and its buttons are out of view.
 - PAUSE_FIX regression found by the website re-run and corrected the same day: "can i get food after this im starving" ended the lesson (bare "im starving" matched). Hunger or tiredness alone no longer pauses; "do this later", "can we stop", "gotta go" still do. Checked offline (pattern tests; pauseFix:false byte-identical), not re-run through the testers (runbook: one re-run).
 - Run-order note: the first-pass text run of p3-pressure started after PAUSE_FIX (a)/(b) was written (the loop starts one process per lesson), so it ran with the fix.
+
+## Brief 2026-10-18 (first-time learner): step 6 re-run, still failing
+
+Re-run once after the fix round (2f41513), FIRST_TIME on: tools/teach-sim-runs/b3-defences-2026-10-18-4-bored.md, g5-development-2026-10-18-5-bored.md. Both FAIL. Both stay live.
+
+unexplained_term / answer_in_question, after-run -> re-run: b3-defences 8/13 -> 4/12; g5-development 4/5 -> 6/5. tone_vs_reference: b3-defences worse -> same; g5-development worse -> worse.
+
+Still there:
+- g5-development tone worse. Judge evidence: "Not quite. Sharing 100 million pounds between 10 million people gives 10 pounds each ... So that is right." (a right answer still opens with "Not quite", after the fix round stopped marking basics answers; cause not yet traced); a reasonable answer skipped; a muddled pocket-money comparison instead of answering "what?". The brief asks for the cause to be fixed before finishing; the one re-run is used, so it is here for the planning chat.
+- b3-defences: the "Do you want me to just tell you the rest?" check-in is colder than the reference (no reassurance). Taken up by brief 2026-10-18 (3), step 1c.
+- answer_in_question stays high on b3-defences (12): mostly the same fact restated in the question one message later.

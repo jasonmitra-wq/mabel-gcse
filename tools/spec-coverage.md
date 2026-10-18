@@ -10,7 +10,7 @@ section; it does not mean every sentence of the section is taught.
 
 - Biology: 20 of 24 sections (4.x.y) mapped; 76 of 97 deepest-level sections mapped; 54 subtopics
 - Chemistry: 31 of 32 sections (4.x.y) mapped; 105 of 124 deepest-level sections mapped; 36 subtopics
-- Physics: 30 of 30 sections (4.x.y) mapped; 90 of 91 deepest-level sections mapped; 41 subtopics
+- Physics: 30 of 30 sections (4.x.y) mapped; 91 of 91 deepest-level sections mapped; 41 subtopics
 
 ## (a) Every 4.x.y section and the subtopics that map to it
 
@@ -204,4 +204,4 @@ section; it does not mean every sentence of the section is taught.
 
 ### Physics
 
-- 4.3.3.3 Increasing the pressure of a gas (physics only) (HT only)
+- none

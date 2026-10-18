@@ -115,7 +115,7 @@ function* strings(node, p = '') {
 }
 
 // ── Checks ──────────────────────────────────────────────────────
-function auditLesson(file, subject) {
+function auditLesson(file, subject, teachOn = false) {
   const findings = [];
   const add = (level, check, where, detail) => findings.push({ level, check, where, detail });
   let d;
@@ -135,6 +135,11 @@ function auditLesson(file, subject) {
   });
   if (kps.length && !kps.some(k => (k.keyTerms || []).length)) add('WARN', 'no keyTerms', 'keyPoints', '');
   if (kps.length && !kps.some(k => k.diagram)) add('INFO', 'no diagram', 'keyPoints', '');
+  // First-time learner brief (2026-10-18) step 3: every lesson has a basics
+  // field, [{ idea, text }]; a lesson with the AI tutor on must have one.
+  const basics = d.basics;
+  if (basics !== undefined && (!Array.isArray(basics) || basics.some(b => !b || typeof b !== 'object' || !b.idea || !b.text))) add('ERROR', 'basics not [{idea, text}]', 'basics', '');
+  else if (teachOn && !(Array.isArray(basics) && basics.length)) add('WARN', 'AI tutor on but no basics', 'basics', '');
 
   // S5 structure: one checkpoint per key point, keyed by its index (checkpoints[i] follows keyPoints[i]).
   const cpKeys = d.checkpoints && typeof d.checkpoints === 'object' ? Object.keys(d.checkpoints) : [];
@@ -179,7 +184,7 @@ for (const subject of fs.readdirSync(path.join(ROOT, 'lessons')).sort()) {
   for (const f of fs.readdirSync(dir).filter(x => x.endsWith('.json') && x !== 'TEMPLATE.json').sort()) {
     const id = f.replace(/\.json$/, '');
     const reach = teach.has(id) ? 'teach' : (liveSubjects.has(subject) && available[id]) ? 'live' : 'off';
-    const { findings, grade: g } = auditLesson(path.join(dir, f), subject);
+    const { findings, grade: g } = auditLesson(path.join(dir, f), subject, reach === 'teach');
     results.push({ subject, id, reach, findings, grade: g });
   }
 }

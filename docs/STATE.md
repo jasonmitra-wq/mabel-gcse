@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Brief docs/briefs/2026-10-17-tutor-flow.md done (steps 0–6). Extra FLOW_FIX round 2 (Jason, "Try again", 2026-10-17) done: code in ce3d08c, re-run of 4 text + 2 website done, all FAIL, faults in docs/ESCALATIONS.md. Next: Phase 2, task 2.6, P3 (new session).
+Runbook position: Phase 2, task 2.6, P3 (session 2026-10-18). Section 3: a done (4515076), R1 done (ce5c2d8, $1.01). Next: 3d, R2 re-check on all four P3 lessons (all changed in R1).
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

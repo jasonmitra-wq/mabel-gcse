@@ -83,6 +83,7 @@ function parseArgs(argv) {
     else if (v === '--replay') a.replay = true;
     else if (v === '--persona') a.persona = argv[++i];
     else if (v === '--rejudge') a.rejudge = argv[++i];
+    else if (v === '--opts') a.opts = JSON.parse(argv[++i]);
     else if (v.startsWith('--')) die(`Unknown option ${v}`);
     else a.ids.push(v);
   }
@@ -204,13 +205,28 @@ function scoreTurn(core, turn, pointWords) {
 
 // ---------- one lesson ----------
 
+// --opts '<json>': merged into TeachCore.create (e.g. {"firstTime":false} for a before-run).
+let CORE_OPTS = {};
+
+function diagramCaption(data, id) {
+  const kp = (data.keyPoints || []).find(k => k.diagram === id);
+  const def = (data.diagrams || []).find(d => d.id === id);
+  return (kp && kp.diagramCaption) || (def && def.caption) || id;
+}
+
 async function simulate(id, call, persona = null) {
   const { subject, data } = findLesson(id);
-  const core = TeachCore.create({ call });
+  const core = TeachCore.create({ call, ...CORE_OPTS });
   const points = core._buildPoints(data);
   core.bind(data, points, null);
   const state = core._freshState();
   core.bind(data, points, state);
+  // The lesson's terms in the newest tutor message that no earlier tutor message used (bored student).
+  const newTermsFor = h => {
+    const tutor = h.filter(x => x.who === 'tutor').map(x => core._stripMarkdown(x.text || ''));
+    const last = tutor.pop() || '', before = tutor.join('\n');
+    return core._lessonTerms().filter(t => t.re.test(last) && !t.re.test(before)).map(t => t.term);
+  };
 
   const push = entry => {
     state.transcript.push(entry);
@@ -224,7 +240,8 @@ async function simulate(id, call, persona = null) {
 
   const opening = await core._callWithLengthGuard(core._buildSystemPrompt(0), core._firstOpeningPrompt(), true);
   state.transcript = [{ role: 'assistant', text: opening, pt: 0, opening: true }];
-  turns.push({ n: 0, student: null, kind: 'opening', teachIndex: 0, reply: opening });
+  // FIRST_TIME: the opening only asks what she already knows; it teaches nothing.
+  turns.push({ n: 0, student: null, kind: core.FIRST_TIME ? 'opening (what she knows)' : 'opening', teachIndex: core.FIRST_TIME ? null : 0, reply: opening });
   hist.push({ who: 'tutor', text: opening });
 
   let cycleAt = 0, checkins = 0, onPoint = 0, lastPoint = 0, closing = 0;
@@ -238,7 +255,7 @@ async function simulate(id, call, persona = null) {
       if (state.complete && closing++ >= 3) break;   // a bored student has left by now
       const phase = state.complete ? 'closing' : state.checkinAsked ? 'checkin' : 'teach';
       type = student.mood(hist[hist.length - 1].text, phase);
-      text = Bored.clean(await apiCall(student.body(hist, type)));
+      text = Bored.clean(await apiCall(student.body(hist, type, newTermsFor(hist))));
     }
     else if (state.complete) type = closing++ === 0 ? 'thanks' : 'bye';
     else if (state.checkinAsked) type = checkins++ === 0 ? 'no' : 'yes';
@@ -257,14 +274,17 @@ async function simulate(id, call, persona = null) {
     if (decision.kind === 'free' && !state.wrapOffered && core._looksLikeWrapUpQuestion(reply)) state.wrapOffered = true;
     if (decision.kind === 'free' && state.complete && state.wrapOffered && !reply.includes('?')) state.farewell = true;
     if (recap) push({ role: 'recap', pt: decision.idx, lines: recap, done: false });
-    push(core._replyEntry(reply, decision));
+    const entry = core._replyEntry(reply, decision);
+    push(entry);
     hist.push({ who: 'student', text }, { who: 'tutor', text: reply });
     turns.push({ n, student: text, studentType: type, kind: decision.kind, teachIndex: core._teachIndex(decision),
-                 point: decision.idx ?? decision.nextIndex ?? null, reply, recap: recap || null });
+                 point: decision.idx ?? decision.nextIndex ?? null, reply, recap: recap || null,
+                 ...(entry.diagram ? { diagram: entry.diagram, diagramCaption: diagramCaption(data, entry.diagram) } : {}),
+                 ...(entry.basic ? { basic: entry.basic } : {}) });
     if (state.farewell) break;
   }
 
-  return score({ id, subject, model: MODEL, turns, coverage: state.coverage, complete: state.complete, farewell: state.farewell }, core, points);
+  return score({ id, subject, model: MODEL, turns, coverage: state.coverage, complete: state.complete, farewell: state.farewell, coreOpts: CORE_OPTS, firstTime: core.FIRST_TIME }, core, points);
 }
 
 // ---------- bored-student judge ----------
@@ -274,15 +294,27 @@ function transcriptText(r) {
   for (const t of r.turns) {
     if (t.student !== null) lines.push(`S${t.n}: ${t.student}`);
     lines.push(`T${t.n}: ${t.reply.replace(/\s*\n+\s*/g, ' ')}`);
+    if (t.diagram) lines.push(`[A diagram is shown under T${t.n}: "${t.diagramCaption || t.diagram}"]`);
   }
   if (!r.complete) lines.push('[The lesson did not finish: the session stopped here.]');
   return lines.join('\n');
 }
 
+// The tone reference for a lesson (brief 2026-10-18 first-time learner, step 1):
+// tools/teach-sim-runs/tone-reference/<id>-bored.json, saved before FIRST_TIME.
+const REF_DIR = path.join(OUT_DIR, 'tone-reference');
+function referenceText(id, own) {
+  const f = path.join(REF_DIR, `${id}-bored.json`);
+  if (!fs.existsSync(f)) return null;
+  const ref = transcriptText(JSON.parse(fs.readFileSync(f, 'utf8')));
+  return ref === own ? null : ref;   // the reference run is not compared with itself
+}
+
 async function judge(r) {
   const { data } = findLesson(r.id);
+  const own = transcriptText(r);
   const text = await apiCall(Bored.judgeBody({ lessonTitle: data.title || r.id, subject: r.subject,
-    lessonFields: Bored.lessonFieldLines(data), transcript: transcriptText(r) }));
+    lessonFields: Bored.lessonFieldLines(data), transcript: own, reference: referenceText(r.id, own) }));
   let j;
   try { j = Bored.parseJudge(text); } catch (e) { return { judge: null, judgeRaw: text, verdict: { pass: false, reasons: ['judge reply was not JSON'] } }; }
   return { judge: j, verdict: Bored.verdict(j) };
@@ -397,9 +429,11 @@ function writeBoredRun(r, mode) {
   writeJudgeMd(base, r);
   const j = r.judge;
   const summary = path.join(OUT_DIR, 'SUMMARY.md');
-  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | flow faults ${j && j.flow_faults ? j.flow_faults.length : '-'} | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}${r.tutorCost !== undefined ? ` (tutor ${r.model} $${r.tutorCost.toFixed(4)})` : ''}\n`);
+  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | flow faults ${j && j.flow_faults ? j.flow_faults.length : '-'} (unexplained_term ${ftCount(j, 'unexplained_term')}, answer_in_question ${ftCount(j, 'answer_in_question')}; tone ${j && j.tone_vs_reference ? j.tone_vs_reference.verdict : 'n/a'}) | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}${r.tutorCost !== undefined ? ` (tutor ${r.model} $${r.tutorCost.toFixed(4)})` : ''}\n`);
   return base;
 }
+
+function ftCount(j, type) { return j && j.flow_faults ? j.flow_faults.filter(f => f.type === type).length : '-'; }
 
 // The judge's section of a bored run's .md, appended after the transcript.
 function writeJudgeMd(base, r) {
@@ -411,6 +445,9 @@ function writeJudgeMd(base, r) {
     md.push(`Would quit: ${j.would_quit ? `${j.would_quit.turn} — "${j.would_quit.quote || ''}" (${j.would_quit.why || ''})` : 'false'}`, '');
     md.push('| Turn | on topic | question matches | too long | confusing | quote / note |', '|---|---|---|---|---|---|');
     for (const t of j.turns || []) md.push(`| ${t.turn} | ${t.on_topic} | ${t.question_matches_what_was_just_taught} | ${t.too_long} | ${t.confusing} | "${String(t.quote || '').replace(/\|/g, '/')}"${t.note ? ' — ' + String(t.note).replace(/\|/g, '/') : ''} |`);
+    const tv = j.tone_vs_reference;
+    md.push('', `Tone vs reference: ${tv ? `**${tv.verdict}**` : 'n/a (no reference)'}`, '');
+    if (tv) (tv.evidence || []).forEach(e => md.push(`- "${e.quote || ''}" vs reference "${e.reference_quote || ''}"${e.note ? ' — ' + e.note : ''}`));
     md.push('', `Flow faults (${(j.flow_faults || []).length}):`, '');
     (j.flow_faults || []).forEach(f => md.push(`- ${f.turn} **${f.type}** — "${f.quote || ''}"${f.note ? ' — ' + f.note : ''}`));
     md.push('', 'Fixes:', '');
@@ -426,6 +463,8 @@ function writeMd(base, r, mode, date) {
   for (const t of r.turns) {
     if (t.student !== null) md.push(`**Student** (${t.studentType}): ${t.student}`, '');
     md.push(`**Tutor** [${t.kind}${t.point !== null && t.point !== undefined ? `, point ${t.point}` : ''}]: ${t.reply.replace(/\n/g, ' ')}`);
+    if (t.diagram) md.push('', `🖼 Diagram shown: ${t.diagram} — "${t.diagramCaption || ''}"`);
+    if (t.basic) md.push('', `(basic: ${t.basic})`);
     if (t.recap) md.push('', `> Recap: ${t.recap.join(' / ')}`);
     if (t.flags.length) md.push('', `⚑ ${t.flags.join('; ')}`);
     md.push('');
@@ -437,6 +476,7 @@ function writeMd(base, r, mode, date) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
+  if (args.opts) CORE_OPTS = args.opts;
   if (args.rescore) { rescore(path.resolve(args.rescore), args.replay); return; }
   if (args.rejudge) {
     const file = path.resolve(args.rejudge);

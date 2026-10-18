@@ -14,6 +14,10 @@
  * reported but is not a pass condition: it scored every lesson 2/5, including
  * one the student likes, so it is not calibrated. (Before that brief: PASS also
  * needed engagement >= 3, and there was no flow_faults list.)
+ * Brief docs/briefs/2026-10-18-first-time-learner.md step 5: flow_faults also
+ * has unexplained_term and answer_in_question; when a tone reference transcript
+ * exists for the lesson (tools/teach-sim-runs/tone-reference/), the judge
+ * returns tone_vs_reference, and "worse" fails.
  */
 
 const STUDENT_MODEL = 'claude-haiku-4-5-20251001';
@@ -49,6 +53,7 @@ function makeStudent({ lessonTitle, subject }) {
     `You are role-playing a 15-year-old student in England, learning ${subject} ("${lessonTitle}") for the first time ` +
     `with an online AI tutor. You are easily bored, weak at mental arithmetic, and you do not like reading long messages. ` +
     `You only know what the tutor has told you in this conversation, plus everyday knowledge. ` +
+    `You know no science or subject words (for example current, resistance, energy store, pathogen, development indicator) unless the tutor has explained them in plain words in this conversation. ` +
     `You type like a teenager on a phone: short, lower case, little punctuation, usually 1 to 8 words, never more than 15. ` +
     `Never write anything but your reply. Never mention being an AI or role-playing. Never give yourself a name.`;
   return {
@@ -70,11 +75,17 @@ function makeStudent({ lessonTitle, subject }) {
       return MOODS[mood];
     },
     // history: [{who:'tutor'|'student', text}], last item is the tutor's message to answer.
-    body(history, mood) {
-      const recent = history.slice(-8);
+    // newTerms (brief 2026-10-18 first-time learner, step 5): the lesson's terms
+    // that appear in that message and in no earlier tutor message. With it, the
+    // student sees the whole lesson so far (up to 40 messages), so it knows what was explained.
+    body(history, mood, newTerms) {
+      const recent = history.slice(newTerms ? -40 : -8);
       while (recent.length && recent[0].who !== 'tutor') recent.shift();
       const messages = recent.map(h => ({ role: h.who === 'tutor' ? 'user' : 'assistant', content: h.text || '…' }));
-      messages[messages.length - 1] = { role: 'user', content: `${messages[messages.length - 1].content}\n\n[How to answer this time: ${this.instruction(mood)}]` };
+      const unknown = newTerms && newTerms.length
+        ? ` [This message uses these words for the first time in the lesson: ${newTerms.join(', ')}. If the message does not explain one of them in plain everyday words, ignore the instruction above: ask what that word means instead, in a few words (e.g. "whats ${newTerms[0].toLowerCase()}").]`
+        : '';
+      messages[messages.length - 1] = { role: 'user', content: `${messages[messages.length - 1].content}\n\n[How to answer this time: ${this.instruction(mood)}]${unknown}` };
       return { model: STUDENT_MODEL, max_tokens: 60, system, messages };
     },
   };
@@ -95,6 +106,9 @@ const FLOW_FAULT_TYPES = [
   ['skip_request_ignored', 'she asked to skip or move on and the tutor did not move to the next key point at once.'],
   ['closing_claims_untaught_content', 'the closing message says or implies she worked through or got through content she was only told, skipped or never reached ("you got through all of it").'],
   ['factual_or_unit_slip', 'a number, unit or fact in a tutor reply that differs from the lesson fields or is wrong.'],
+  // Brief docs/briefs/2026-10-18-first-time-learner.md step 5: she is a first-time learner.
+  ['unexplained_term', 'the tutor uses a subject term (a word she would not know from everyday life) before explaining it in everyday words in this conversation, or uses it in a question before explaining it. One item per term, at the turn it is first used unexplained. A term she used herself first does not count.'],
+  ['answer_in_question', 'the answer to the tutor’s question is already stated in the same tutor message or in the tutor message before it, so she can answer by copying it back.'],
 ];
 
 const JUDGE_SCHEMA = `{
@@ -105,12 +119,13 @@ const JUDGE_SCHEMA = `{
     { "turn": "<T label>", "on_topic": true|false, "question_matches_what_was_just_taught": true|false|null,
       "too_long": true|false, "confusing": true|false, "quote": "<the transcript line the judgement rests on>", "note": "<short, only if something is false or true-bad>" }
   ],
+  "tone_vs_reference": null | { "verdict": "better" | "same" | "worse", "evidence": [ { "quote": "<line from this transcript>", "reference_quote": "<line from the reference transcript>", "note": "<short>" } ] },
   "flow_faults": [ { "type": "<one of the flow fault types listed above>", "turn": "<T label>", "quote": "<the transcript line, word for word>", "note": "<short>" } ],
   "fixes": [ { "target": "<lesson field path, e.g. keyPoints[2].content, or shared-code behaviour, e.g. teach-core: re-ask either/or questions>",
                "change": "<concrete change>", "quote": "<transcript line>" } ]
 }`;
 
-function judgeBody({ lessonTitle, subject, lessonFields, transcript, extra }) {
+function judgeBody({ lessonTitle, subject, lessonFields, transcript, extra, reference }) {
   const system =
     `You judge a tutoring session for a 15-year-old who is easily bored and weak at mental arithmetic, learning ${subject}. ` +
     `You are strict and concrete. Reply with JSON only, no prose and no code fence.`;
@@ -122,11 +137,14 @@ function judgeBody({ lessonTitle, subject, lessonFields, transcript, extra }) {
     transcript,
     extra || '',
     '',
-    'Judge every tutor turn (every T label). question_matches_what_was_just_taught: does the question the tutor asks at the end of that turn test what the tutor taught in that turn or just before? null if the turn asks no question (greeting, goodbye, check-in offer).',
+    'Judge every tutor turn (every T label). question_matches_what_was_just_taught: does the question the tutor asks at the end of that turn test what the tutor taught in that turn or just before? null if the turn asks no question (greeting, goodbye, check-in offer), or if it only asks what she already knows from everyday life before teaching starts.',
     'too_long: over about 60 words or more than the student would read. confusing: unclear wording, wrong term, contradiction, or a factual error.',
     'would_quit: the first turn at which this student would most likely close the app, or false.',
     'flow_faults: list every case of these, one item per case, each with its turn and the quoted line (empty array if none):',
     ...FLOW_FAULT_TYPES.map(([k, d]) => `  ${k}: ${d}`),
+    reference
+      ? `tone_vs_reference: below is a reference transcript of this same lesson whose tone is the standard (warm, plain, easy for a first-time learner to follow). Compare this transcript's tone with it — warmth, plain words, how easy it is to follow, how it reacts to her — not its length or its content. "better", "same" or "worse", with at least two pairs of quotes as evidence.\n\nReference transcript:\n${reference}`
+      : 'tone_vs_reference: null (there is no reference transcript for this lesson).',
     'Give at most 5 fixes, most important first; each names a lesson field path or a shared-code behaviour.',
     'Every judgement quotes the transcript line it rests on, word for word.',
     '',
@@ -153,6 +171,8 @@ function verdict(j) {
   // A run judged before flow_faults existed has none listed; it is not failed for that.
   const flow = j.flow_faults || [];
   if (flow.length) reasons.push(`flow faults: ${flow.map(f => `${f.type} ${f.turn || '?'}`).join(', ')}`);
+  // Brief 2026-10-18 first-time learner, step 5: a tone worse than the reference fails.
+  if (j.tone_vs_reference && j.tone_vs_reference.verdict === 'worse') reasons.push('tone worse than the reference');
   return { pass: !reasons.length, reasons };
 }
 

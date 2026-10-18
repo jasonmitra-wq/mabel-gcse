@@ -81,6 +81,21 @@ function create(env) {
   // sentences (90 words), not the whole content, and every other reply is
   // held to 40 words.
   const PAUSE_FIX = FLOW_FIX && env.pauseFix !== false;
+  // First-time learner (brief docs/briefs/2026-10-18-first-time-learner.md
+  // step 2), on by default. create({ call, firstTime: false }) keeps every
+  // prompt, decision and state exactly as before (tools/check-flag-identical.js).
+  // With it on: (a) the lesson opens with one everyday question to find out
+  // what she already knows, using no term the lesson teaches, and her answer
+  // sets where the tutor starts; (b) at most one new term per message, each
+  // explained in everyday words the first time; (c) concrete first, then the
+  // name, then the rule or graph; (d) no question whose answer is in the same
+  // or the previous message; (e) a basic idea she does not have is taught from
+  // the lesson's "basics" field first; (f) a key point's diagram is shown in
+  // the conversation when its teaching starts, and the tutor refers to it.
+  const FIRST_TIME = env.firstTime !== false;
+  // The diagram is shown inside the conversation (js/teach.js
+  // TEACH_INLINE_DIAGRAMS); the tutor is told about it only when it is.
+  const INLINE_DIAGRAMS = FIRST_TIME && env.inlineDiagrams !== false;
   const STUDENT_NAME = env.studentName || 'Mabel';   // used only to filter it out of replies
   const WHO     = FIX23 ? 'the student' : 'Mabel';   // how prompts refer to her
   const WHO_CAP = FIX23 ? 'The student' : 'Mabel';
@@ -322,6 +337,9 @@ function create(env) {
       // FLOW_FIX: questions she answered correctly, the run of short or
       // off-topic replies, and per point how it ended (worked / told / skipped).
       ...(FLOW_FIX ? { flow: _freshFlow() } : {}),
+      // FIRST_TIME: the opening question about what she already knows is
+      // still waiting for her answer; known = that answer.
+      ...(FIRST_TIME ? { firstTime: { probed: false, known: '' } } : {}),
     };
   }
 
@@ -450,8 +468,130 @@ function create(env) {
         `Never ask again a question she has already answered correctly in this lesson, in the same or other words.`,
         `Numbers and units: copy every number and unit exactly as the key point's content and key terms write them. Never recalculate, convert, round or rewrite a number or unit. Never give an example, a classification or a figure that the content does not give.`,
       ].join('\n') : '',
+      FIRST_TIME ? _firstTimeRules() : '',
     ].filter(Boolean).join('\n');
   }
+
+  // ── First-time learner (FIRST_TIME) ──────────────────────────
+  // The lesson's "basics": [{ idea, text }] — what a beginner does not yet have.
+  function _basics() {
+    return Array.isArray(_data && _data.basics) ? _data.basics.filter(b => b && b.idea && b.text) : [];
+  }
+
+  function _firstTimeRules() {
+    const basics = _basics();
+    return [
+      `She is meeting this topic for the first time. She knows everyday life, not the subject's words. Never assume she knows a term.`,
+      `In each message bring in at most ONE new term or idea. The first time you use a term, explain it in everyday words, with an everyday comparison where one helps, before you use it in a question. Never use a term you have not explained in this conversation, unless she has used it herself.`,
+      `Go from the concrete to the abstract: first what you would see, feel or measure; then the name for it; then the rule, equation or graph.`,
+      `Never ask a question whose answer is written in your message or in your last message: she would only copy it back. Ask her to use the idea — on an everyday case, a small change ("what would happen if…"), or a reason in her own words.`,
+      basics.length
+        ? `If she says she does not know a basic idea, or her answer shows she does not have it, teach that idea first, from the basics below, in their plain words, then go on. Basics you may always use: ${basics.map(b => `${b.idea}: ${_stripHtml(b.text)}`).join(' | ')}\nWhen a message teaches one of these basics instead of the key point, add one last line on its own: "BASIC: " and the basic idea's name. That line is taken out before she sees the reply.`
+        : `If she says she does not know a basic idea the lesson needs, explain it first in everyday words, then go on.`,
+    ].join('\n');
+  }
+
+  function _ft() { return (_state && _state.firstTime) || { probed: true, known: '' }; }
+
+  // Every term this lesson teaches (its key terms, and the names of its basics),
+  // each with a pattern that finds it in a message (an acronym in brackets counts too).
+  let _termCache = null;
+  function _lessonTerms() {
+    if (_termCache && _termCache.data === _data) return _termCache.list;
+    const names = [];
+    (_data.keyPoints || []).forEach(kp => (kp.keyTerms || []).forEach(t => t && t.term && names.push(t.term)));
+    _basics().forEach(b => names.push(b.idea));
+    const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const seen = new Set(), list = [];
+    for (const name of names) {
+      const key = name.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const forms = [name.replace(/\s*\(([^)]*)\)\s*/g, ' ').trim()];
+      const acr = name.match(/\(([^)]+)\)/);
+      if (acr) forms.push(acr[1].trim());
+      const re = new RegExp(`(^|[^A-Za-z])(${forms.filter(Boolean).map(f => esc(f).replace(/\s+/g, '[\\s-]+')).join('|')})(e?s)?(?![A-Za-z])`, 'i');
+      list.push({ term: name, re });
+    }
+    _termCache = { data: _data, list };
+    return list;
+  }
+
+  // Terms already in the conversation, said by the tutor or by her.
+  function _termsMet() {
+    const said = (_state.transcript || []).filter(t => t.role === 'assistant' || t.role === 'user').map(t => _stripMarkdown(t.text || '')).join('\n');
+    return new Set(_lessonTerms().filter(t => t.re.test(said)).map(t => t.term));
+  }
+
+  function _newTermsIn(plain) {
+    const met = _termsMet();
+    return _lessonTerms().filter(t => !met.has(t.term) && t.re.test(plain)).map(t => t.term);
+  }
+
+  function _termsLine() {
+    const met = _termsMet();
+    const not = _lessonTerms().map(t => t.term).filter(t => !met.has(t));
+    return [
+      met.size ? `Terms she has already met in this conversation: ${[...met].join(', ')}.` : `She has not met any of this lesson's terms yet.`,
+      not.length ? `Terms she has NOT met yet: ${not.join(', ')}. Use at most one of these in this message, and explain it in everyday words the first time.` : '',
+    ].filter(Boolean).join(' ');
+  }
+
+  // A key point's diagram, if it has one and it has not yet been shown in the conversation.
+  function _inlineDiagram(idx) {
+    if (!INLINE_DIAGRAMS || idx == null || !_points[idx] || !_points[idx].diagram) return null;
+    const id = _points[idx].diagram;
+    return (_state.transcript || []).some(t => t.diagram === id) ? null : id;
+  }
+
+  function _diagramLine(idx) {
+    const id = _inlineDiagram(idx);
+    if (!id) return '';
+    const p = _points[idx];
+    const def = (_data.diagrams || []).find(d => d.id === id);
+    const cap = p.diagramCaption || (def && def.caption) || '';
+    return `A diagram appears under your message now${cap ? `: "${cap}"` : ''}. Refer to it in words in this message ("Look at the diagram: …") and teach from what it shows.`;
+  }
+
+  // The last tutor message taught a basic idea, not the key point (at most two in a row count).
+  function _lastWasBasic() {
+    const as = (_state.transcript || []).filter(t => t.role === 'assistant');
+    const last = as[as.length - 1];
+    if (!last || !last.basic) return false;
+    const prev = as[as.length - 2];
+    const prev2 = as[as.length - 3];
+    return !(prev && prev.basic && prev2 && prev2.basic);
+  }
+
+  // The hidden "BASIC:" line, taken off the reply she sees.
+  function _splitBasic(raw) {
+    const k = String(raw || '').search(/(^|\n)\s*BASIC\s*:/i);
+    if (k === -1) return { text: raw, basic: null };
+    return { text: raw.slice(0, k).trim(), basic: raw.slice(k).replace(/^\s*BASIC\s*:\s*/i, '').split('\n')[0].trim() || 'basic' };
+  }
+
+  // One short call: is the answer to the question already in this message or the last one?
+  async function _answerGiven(plain) {
+    const q = (plain.match(/[^.!?]*\?\s*$/) || [''])[0].trim();
+    if (!q) return false;
+    const before = plain.slice(0, plain.length - q.length).trim();
+    const prev = [...(_state.transcript || [])].reverse().find(t => t.role === 'assistant');
+    const sys = `You check one message from a tutor to a student. Reply with one word only: YES or NO.`;
+    const user = [
+      prev ? `The tutor's previous message: "${_stripMarkdown(prev.text)}"` : '',
+      `The tutor's new message, before its question: "${before}"`,
+      `Its question: "${q}"`,
+      `YES if the answer to the question is already stated, in the same or nearly the same words, in the new message before the question or in the previous message, so she could answer by copying it back. NO if she has to apply the idea to a new case, work something out, or give a reason or example that was not stated.`,
+    ].filter(Boolean).join('\n\n');
+    try { return /\bYES\b/i.test(String(await AI.call(sys, user, 5) || '')); }
+    catch (e) { _logError('answer check', e); return false; }
+  }
+
+  // What the next _callWithLengthGuard checks: { forbid: [terms] } for the
+  // opening question, { teach: true } on a teaching turn.
+  let _pendingFT = null;
+  // The "BASIC:" tag of the reply the guard last returned (put on its transcript entry).
+  let _lastBasicTag = null;
 
   // Notes and recaps aren't conversation: a note is passed on as a bracketed
   // aside, a recap is left out. By default the newest entry (her message that
@@ -479,6 +619,12 @@ function create(env) {
       // A question about something not yet said (mucus, an arrow, a diagram) leaves her guessing.
       if (_teachIndex(decision) != null) lines.push(`Your question may use only ideas and things you have already said to her, in this conversation or earlier in this reply. If it names something (a substance, a part, an arrow, a diagram), say what it is first.`);
     }
+    if (FIRST_TIME && _teachIndex(decision) != null) {
+      if (_ft().known && decision.kind !== 'start') lines.push(`What she said she already knew, at the start of the lesson: "${_ft().known}". Build on that.`);
+      lines.push(_termsLine());
+      const dl = _diagramLine(_teachIndex(decision));
+      if (dl) lines.push(dl);
+    }
 
     if (decision.kind === 'retry') {
       lines.push(!decision.fact
@@ -490,11 +636,15 @@ function create(env) {
           : `Her reply didn't really engage with the part of the key point below that you just asked about — too short, or off the topic. Gently explain that part again, a different way, in a sentence or two, then ask about it again with a different question. One question only.`);
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts),
         _partLine(decision.fact), _remainingLine(decision.idx, decision.facts, decision.fact));
+    } else if (decision.kind === 'start') {
+      lines.push(`That is her answer to your opening question, which asked what she already knows about the everyday idea behind this lesson. It is not marked right or wrong. In ONE short sentence, respond to what she said: if something in it is useful, say what; if she does not know, say that is fine, you will start from the beginning. Then start teaching from where she is. If her answer shows she does not have one of the basics the first key point needs, teach that one basic idea, in everyday words with an everyday comparison, and ask one question that makes her use it. Otherwise introduce the first key point below in AT MOST TWO SENTENCES, starting from what she would see or measure, then ask one question about the part named below. Do not answer your own question.`);
+      lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.idx)),
+        _remainingLine(decision.idx, _state.facts[decision.idx], _openingFact(decision.idx)));
     } else if (decision.kind === 'checkin') {
       lines.push(`She has spent several exchanges on this key point and some of it is still to cover. Do NOT teach anything in this message and do not ask about any part of the topic. In ONE short, friendly line, ask her one question meaning "Do you want me to just tell you the rest of this one?" — yes means you will tell her the rest, no means she keeps working on it herself. It must be a single yes-or-no question — do not add "or shall we move on" or any second option. That question is the whole message.`);
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts));
     } else if (decision.kind === 'fact') {
-      lines.push(`${decision.keepsWorking ? `She chose to keep working through this point herself, so carry on with it. ` : ''}${_toldLine(decision.toldNow) || (decision.keepsWorking ? '' : `Acknowledge her reply naturally in one short sentence. `)}Then carry on with the same key point: teach the next part of it, named below, in AT MOST TWO SENTENCES, then ask one question about that part. Teach only this part now — the other parts come later. Do not answer your own question.`);
+      lines.push(`${decision.afterBasic ? `Her reply answers your question about a basic idea, not the key point. If it shows she has the idea, say so in a few words; if not, explain the idea once more in one short sentence. ` : ''}${decision.keepsWorking ? `She chose to keep working through this point herself, so carry on with it. ` : ''}${_toldLine(decision.toldNow) || (decision.keepsWorking || decision.afterBasic ? '' : `Acknowledge her reply naturally in one short sentence. `)}Then carry on with the same key point: teach the next part of it, named below, in AT MOST TWO SENTENCES, then ask one question about that part. Teach only this part now — the other parts come later. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts),
         _partLine(decision.fact), _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'next') {
@@ -733,16 +883,37 @@ function create(env) {
     let repeated = null, repeatTried = false;
     const chunk = _pendingChunk;
     _pendingChunk = null;
-    const done = text => { if (TEACH_THEN_ASK && chunk) _markTaught(chunk); return FLOW_FIX && maxWords ? _finishReply(text, maxWords) : _finishReply(text); };
+    // FIRST_TIME: the opening question uses no term the lesson teaches; a
+    // teaching reply brings in at most one new term and does not ask what it
+    // has just said. Each is asked for again once.
+    const ft = FIRST_TIME ? _pendingFT : null;
+    _pendingFT = null;
+    let termFault = null, termTried = false, given = false, givenTried = false;
+    const basicOf = new Map();
+    const done = FIRST_TIME
+      ? text => {
+          if (TEACH_THEN_ASK && chunk) _markTaught(chunk);
+          _lastBasicTag = basicOf.get(text) || null;
+          return FLOW_FIX && maxWords ? _finishReply(text, maxWords) : _finishReply(text);
+        }
+      : text => { if (TEACH_THEN_ASK && chunk) _markTaught(chunk); return FLOW_FIX && maxWords ? _finishReply(text, maxWords) : _finishReply(text); };
     for (let i = 0; i < limits.length; i++) {
       const a = limits[level];
       const anchorNote = unanchored
         ? `(The answer to your question, "${answerSaid}", is not in anything you have said. ${chunk ? `Teach this first, in your own words: "${chunk.text}" Then ask` : 'Ask'} one question whose answer is in what you have just said, and end with the "ANSWER:" line again.)`
         : '';
       const repeatNote = repeated ? `(Your question repeats one she has already answered correctly: "${repeated}". Keep the rest, but ask about something she has not answered yet.)` : '';
-      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : '', many ? manyNote : '', naming ? namingNote : '', anchorNote, repeatNote].filter(Boolean).join('\n');
+      const termNote = !termFault ? ''
+        : ft.forbid
+          ? `(Your opening uses words the lesson is about to teach: ${termFault.join(', ')}. She does not know them yet. Ask your one question about the everyday idea again without any of them.)`
+          : `(Your reply brings in ${termFault.length} new terms at once: ${termFault.join(', ')}. She is meeting them for the first time. Keep only ONE new term in this message, explained in everyday words, and leave the others for later messages.)`;
+      const givenNote = given ? `(The answer to your question is already in your message or your last one, so she would only copy it back. Keep the teaching, but ask a question that makes her use the idea: an everyday case, a small change, or a reason in her own words.)` : '';
+      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : '', many ? manyNote : '', naming ? namingNote : '', anchorNote, repeatNote, termNote, givenNote].filter(Boolean).join('\n');
       const raw = (await AI.call(sys, note ? `${user}\n\n${note}` : user, a.tokens)).trim();
-      const { text: reply, answer } = TEACH_THEN_ASK ? _splitAnswer(raw) : { text: raw, answer: null };
+      const split = TEACH_THEN_ASK ? _splitAnswer(raw) : { text: raw, answer: null };
+      const { answer } = split;
+      let reply = split.text;
+      if (FIRST_TIME) { const b = _splitBasic(reply); reply = b.text; if (b.basic) basicOf.set(reply, b.basic); }
       const plain = _stripMarkdown(reply);
       last = reply;
       const cut = _looksTruncated(plain);
@@ -761,7 +932,19 @@ function create(env) {
       // after she said "it attacks anything") is caught by one short model check.
       if (FLOW_FIX && noYesNo && !repeatTried && !repeated && !cut) repeated = await _askedAlready(plain);
       if (repeated) repeatTried = true;
-      const badQ = yesNo || eitherOr || noQuestion || many || naming || unanchored || !!repeated;
+      if (ft) {
+        termFault = null; given = false;
+        if (!termTried && !cut) {
+          const found = ft.forbid ? _lessonTerms().filter(t => ft.forbid.includes(t.term) && t.re.test(plain)).map(t => t.term)
+            : ft.teach ? _newTermsIn(plain) : [];
+          if (ft.forbid ? found.length : found.length > 1) { termFault = found; termTried = true; }
+        }
+        if (ft.teach && noYesNo && !givenTried && !cut && !termFault && !repeated) {
+          given = await _answerGiven(plain);
+          givenTried = true;
+        }
+      }
+      const badQ = yesNo || eitherOr || noQuestion || many || naming || unanchored || !!repeated || !!termFault || given;
       if (!cut && !long && !badQ) return done(reply);
       if (!cut && !badQ && !complete) complete = reply; // finished, just long — usable if nothing better
       if (cut || long) level = Math.min(level + 1, limits.length - 1);
@@ -867,6 +1050,15 @@ function create(env) {
     const idx = _state.currentPointIndex;
     const point = _points[idx];
     if (FLOW_FIX) { const d = _flowDecide(userText, idx, point); if (d) return d; }
+    // FIRST_TIME: her reply answers a question about a basic idea, not a part
+    // of the point, so no part is marked; the tutor goes on to teach the part.
+    if (FIRST_TIME && !_state.checkinAsked && _lastWasBasic()) {
+      const cur = _state.facts[idx];
+      const t = _targetFactIndex(idx);
+      return { kind: 'fact', idx, point, fact: t === -1 ? null : point.facts[t], afterBasic: true,
+               facts: { answered: cur.answered.slice(), told: cur.told.slice() },
+               pacing: { turnsOnPoint: _state.turnsOnPoint + 1, checkinAsked: false, extensionLeft: _state.extensionLeft } };
+    }
 
     // A point with no key terms has nothing to split into parts: one real answer finishes it.
     if (!point.facts.length) {
@@ -981,6 +1173,10 @@ function create(env) {
       if (decision.idx != null && decision.how && decision.kind !== 'fact' && decision.kind !== 'retry' && decision.kind !== 'checkin') f.how[decision.idx] = decision.how;
     }
     if (decision.kind === 'free') return;
+    if (FIRST_TIME && decision.kind === 'start') {
+      _state.firstTime = { probed: true, known: decision.probeAnswer || '' };
+      return;
+    }
     if (decision.toldSentences) _markTaught(decision.toldSentences);
     if (decision.facts) _state.facts[decision.idx] = decision.facts;
     if (decision.pacing) Object.assign(_state, decision.pacing);
@@ -1207,7 +1403,7 @@ function create(env) {
   // Which key point a reply will be teaching, so the brief can be limited to it.
   function _teachIndex(d) {
     if (!d) return null;
-    if (d.kind === 'fact' || d.kind === 'retry') return d.idx;
+    if (d.kind === 'fact' || d.kind === 'retry' || d.kind === 'start') return d.idx;
     if (d.kind === 'next' || d.kind === 'resume') return d.nextIndex;
     return null;
   }
@@ -1216,6 +1412,16 @@ function create(env) {
     if (!_state.complete && _wantsPause(userText)) {
       return { reply: `No problem. Your place is saved, so you can pick this up any time. See you soon!`,
                recap: null, decision: { kind: 'pause', idx: _state.currentPointIndex } };
+    }
+    // FIRST_TIME: her answer to the opening question about what she already
+    // knows is not marked; it sets where the teaching starts.
+    if (FIRST_TIME && !_state.complete && !_ft().probed) {
+      const idx = _state.currentPointIndex;
+      const decision = { kind: 'start', idx, point: _points[idx], probeAnswer: String(userText).slice(0, 200) };
+      _pendingFT = { teach: true };
+      const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), _buildUserPrompt(userText, decision), true);
+      _applyDecision(decision);
+      return { reply, recap: null, decision };
     }
     _turnMark = FLOW_FIX ? await _markAnswer(userText) : null;
     const decision = _decide(userText);
@@ -1235,6 +1441,7 @@ function create(env) {
     _pendingChunk = decision.chunk || null;
     const sys  = _buildSystemPrompt(_teachIndex(decision));
     const user = _buildUserPrompt(userText, decision);
+    if (FIRST_TIME) _pendingFT = _teachIndex(decision) != null ? { teach: true } : null;
     // Teaching turns only: the check-in and the closing turns ask yes/no on purpose.
     const reply = FLOW_FIX && decision.maxWords
       ? await _callWithLengthGuard(sys, user, _teachIndex(decision) != null, decision.maxWords)
@@ -1263,7 +1470,14 @@ function create(env) {
   // The tutor's reply, tagged with the point it belongs to.
   function _replyEntry(text, d) {
     const e = { role: 'assistant', text };
-    if (d.kind === 'retry' || d.kind === 'fact') {
+    if (FIRST_TIME) {
+      // The diagram the prompt told the tutor about, and a basics tag.
+      const dg = _inlineDiagram(_teachIndex(d));
+      if (dg) e.diagram = dg;
+      if (_lastBasicTag && _teachIndex(d) != null) e.basic = _lastBasicTag;
+      _lastBasicTag = null;
+    }
+    if (d.kind === 'retry' || d.kind === 'fact' || d.kind === 'start') {
       e.pt = d.idx;
     } else if (d.kind === 'next') {
       e.pt = d.nextIndex;
@@ -1277,6 +1491,18 @@ function create(env) {
   function _firstOpeningPrompt() {
     const chunk = TEACH_THEN_ASK ? _pickChunk(0, _openingFact(0)) : null;
     _pendingChunk = chunk;
+    if (FIRST_TIME && !_ft().probed) {
+      // Opens by finding out what she already knows; teaching starts after her answer.
+      const terms = _lessonTerms().map(t => t.term);
+      _pendingFT = { forbid: terms };
+      const basics = _basics();
+      return [
+        `Begin the lesson. In AT MOST TWO SHORT SENTENCES: welcome ${WHO} warmly in a few words, then ask ONE short question to find out what she already knows about the everyday idea behind this lesson — something she could have seen, done or noticed in everyday life. She is meeting this topic for the first time.`,
+        `Rules for that question: it cannot be answered with yes or no (start it with what, why, how, where or when); it is about everyday life, not the subject; it uses none of these words the lesson is about to teach: ${terms.join(', ')}. Do not teach anything yet and do not answer your own question.`,
+        `What this lesson is about: ${_points.map(p => `"${_shortHeading(p.heading)}"`).join(', ')}.`,
+        basics.length ? `Everyday ideas it builds on: ${basics.map(b => `${b.idea}: ${_stripHtml(b.text)}`).join(' | ')}` : '',
+      ].filter(Boolean).join('\n\n');
+    }
     return [
       `Begin the lesson. In AT MOST TWO SENTENCES TOTAL, warmly welcome ${WHO} (using the lesson overview above in your own words, don't just repeat it) and introduce the first key point below, starting from the first thing its content describes — do not explain the whole point. Then ask one question about the part named below. Do not answer your own question.`,
       _pointBrief(_points[0]),
@@ -1295,6 +1521,11 @@ function create(env) {
     if (TEACH_THEN_ASK) _taughtFor(index).fill(false);
     const chunk = TEACH_THEN_ASK ? _pickChunk(index, _points[index].facts[0] || null) : null;
     _pendingChunk = chunk;
+    if (FIRST_TIME) {
+      // A jump starts teaching at once: no opening question is waiting any more.
+      if (_state && _state.firstTime) _state.firstTime.probed = true;
+      _pendingFT = { teach: true };
+    }
     return [
       `${WHO_CAP} is starting a new key point: "${_points[index].heading}". Teach it from the very beginning, as if you had just reached it. This is a fresh start, not a continuation — do not refer back to anything discussed before, and do not greet her again. She may not have covered the earlier points, so don't assume she knows any terms from them. In AT MOST TWO SENTENCES, introduce this key point, starting from the first thing its content describes — do not explain the whole point — then ask one question about the part named below. Do not answer your own question.`,
       _pointBrief(_points[index]),
@@ -1303,6 +1534,7 @@ function create(env) {
       // _commitJump resets them once this reply actually arrives.
       _remainingLine(index, _freshFacts(index, false), _points[index].facts[0] || null),
       _teachLine(chunk),
+      ...(FIRST_TIME ? [_termsLine(), _diagramLine(index)] : []),
     ].filter(Boolean).join('\n\n');
   }
 
@@ -1324,7 +1556,7 @@ function create(env) {
   }));
   }
 
-  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow };
+  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics };
 }
 
 return { create, TUTOR_SONNET, TUTOR_MODEL, TUTOR_MODEL_SONNET, TUTOR_MODEL_HAIKU, tutorParams };

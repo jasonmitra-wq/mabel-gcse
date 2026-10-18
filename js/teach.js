@@ -29,7 +29,13 @@ const Teach = (() => {
   // Decisions and prompts live in js/teach-core.js so Node can run them too
   // (tools/teach-sim.js). _data, _points and _state stay here; the core is
   // handed them again with _core.bind() whenever one is replaced.
-  const _core = TeachCore.create({ call: (sys, user, tokens) => AI.call(sys, user, tokens, TeachCore.tutorParams()) });
+  // First-time learner brief (2026-10-18) step 4a, on by default: when the
+  // tutor reaches a key point with a diagram, the diagram appears inside the
+  // conversation, full width of the chat column, with its caption; tapping it
+  // opens it full screen. The side-column thumbnail stays. false: the
+  // thumbnail only, and the tutor is not told a diagram is showing.
+  const TEACH_INLINE_DIAGRAMS = true;
+  const _core = TeachCore.create({ call: (sys, user, tokens) => AI.call(sys, user, tokens, TeachCore.tutorParams()), inlineDiagrams: TEACH_INLINE_DIAGRAMS });
   const { _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt } = _core;
 
   // ── Helpers ─────────────────────────────────────────────────
@@ -85,6 +91,14 @@ const Teach = (() => {
         background:rgba(24,21,16,0.92); border:1px solid var(--border2); color:var(--text);
         border-radius:999px; width:2.25rem; height:2.25rem; cursor:pointer; font-size:1rem; line-height:1; }
       .teach-diagram-close:hover { border-color:var(--amber); }
+      /* A diagram inside the conversation (TEACH_INLINE_DIAGRAMS): the full
+         width of the chat column, so it reads on a phone without zooming. */
+      .teach-inline-diagram { align-self:stretch; width:100%; margin:0; }
+      .teach-inline-diagram-btn { display:block; width:100%; padding:0; background:var(--bg);
+        border:1px solid var(--border2); border-radius:10px; overflow:hidden; cursor:zoom-in; }
+      .teach-inline-diagram-btn:hover { border-color:var(--amber); }
+      .teach-inline-diagram-btn img { display:block; width:100%; height:auto; }
+      .teach-inline-diagram figcaption { font-size:0.85rem; color:var(--muted); font-style:italic; line-height:1.5; margin:0.4rem 0.2rem 0; }
 
       /* Shorter laptop screens: a full thumbnail plus the jump list would push
          the key terms out of view, so the thumbnail shrinks. */
@@ -475,8 +489,10 @@ const Teach = (() => {
     </section>`;
   }
 
-  function expandDiagram() {
-    const point = !_state?.complete ? _points[_state.currentPointIndex] : null;
+  // id: a diagram shown in the conversation; without it, the current point's.
+  function expandDiagram(id) {
+    const point = id ? _points.find(p => p.diagram === id)
+      : !_state?.complete ? _points[_state.currentPointIndex] : null;
     if (!point || !point.diagram) return;
     const { title, cap, src } = _diagramInfo(point);
     closeDiagram();
@@ -573,6 +589,18 @@ const Teach = (() => {
       .replace(/(^|[^*\w])\*([^*\n]+?)\*(?![*\w])/g, '$1<em>$2</em>');
   }
 
+  function _inlineDiagramEl(id) {
+    const point = _points.find(p => p.diagram === id);
+    if (!point) return null;
+    const { title, cap, src } = _diagramInfo(point);
+    const fig = document.createElement('figure');
+    fig.className = 'teach-inline-diagram';
+    fig.innerHTML = `<button class="teach-inline-diagram-btn" onclick="Teach.expandDiagram('${_esc(id)}')" title="Tap to enlarge" aria-label="Enlarge diagram">
+        <img src="${src}" alt="${_esc(title)}" onerror="this.closest('figure').style.display='none'">
+      </button>${cap ? `<figcaption>${cap}</figcaption>` : ''}`;
+    return fig;
+  }
+
   function _renderTranscript() {
     const thread = document.getElementById('teachThread');
     if (!thread) return;
@@ -590,6 +618,10 @@ const Teach = (() => {
         el.className = t.role === 'user' ? 'askme-q-bubble' : 'askme-a-bubble';
         _setBubbleText(el, t.role, t.text);
         thread.appendChild(el);
+        if (TEACH_INLINE_DIAGRAMS && t.role === 'assistant' && t.diagram) {
+          const fig = _inlineDiagramEl(t.diagram);
+          if (fig) thread.appendChild(fig);
+        }
       }
     });
     _updateDiagramSlot();
@@ -709,7 +741,8 @@ const Teach = (() => {
     _state.complete = false;
     _state.farewell = false; // she's being taught again, so she needs the box back
     _pushEntry({ role: 'note', text: _shortHeading(_points[index].heading) });
-    _pushEntry({ role: 'assistant', text: reply, pt: index, opening: true });
+    const diagram = TEACH_INLINE_DIAGRAMS ? _core._inlineDiagram(index) : null;
+    _pushEntry({ role: 'assistant', text: reply, pt: index, opening: true, ...(diagram ? { diagram } : {}) });
   }
 
   function jumpTo(i) {

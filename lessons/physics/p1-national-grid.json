@@ -39,9 +39,11 @@
     {
       "heading": "How the National Grid works",
       "content": "The <strong>National Grid</strong> is a system of cables and transformers linking power stations to consumers. It runs from power stations to homes, schools and businesses.\n\nElectricity is <strong>generated</strong> at power stations at around 25,000 V (25 kV). A <strong>step-up transformer</strong> then raises the potential difference to up to <strong>400,000 V (400 kV)</strong>. This is for sending it a long way through transmission cables. At the other end, <strong>step-down transformers</strong> reduce the potential difference to a much lower value for homes. In homes it is <strong>230 V</strong>.\n\nWhy use such a high potential difference? Start from <strong>P = IV</strong>. Say the power (P) is fixed and the potential difference (V) is very high. Then the current (I) must be very low. Then use <strong>P_lost = I²R</strong>. A lower current means far less power wasted as heat in the resistance of the cables. Doubling the potential difference halves the current. Power loss ∝ I², so this cuts cable losses by <strong>four times</strong>.",
+      "diagram": "p1-national-grid",
+      "diagramCaption": "From power station to homes: the potential difference goes up for the cables, then down for homes.",
+      "diagramExamTip": true,
       "examFlag": true,
       "cardFlag": true,
-      "diagram": null,
       "writeBullets": [
         "National Grid — the network of cables and transformers carrying electricity across the UK",
         "Generated at ~25 kV → stepped up to ~400 kV to send it a long way",

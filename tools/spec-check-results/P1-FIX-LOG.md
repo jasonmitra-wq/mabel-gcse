@@ -773,3 +773,11 @@ Findings from the text tester (tools/teach-sim.js --persona bored), runs tools/t
 - p1-kinetic-potential | basics | brief 2026-10-18 first-time learner step 3 | added: Energy, The joule, Mass, Speed, Squaring a number, Gravity, Reading an equation, Stretching a spring
 - p1-national-grid | basics | brief 2026-10-18 first-time learner step 3 | added: Electric current, Potential difference, Power, Resistance, A power station, Fuel
 - p1-power | basics | brief 2026-10-18 first-time learner step 3 | added: Energy, The joule, Rate, Force, Kilo, mega and giga, Time in seconds
+
+## First-time learner brief (2026-10-18) step 4: diagrams
+
+Drawn by tools/draw-p1-p2-diagrams.js; tools/check-diagrams.js physics clean.
+
+- p1-energy-stores | keyPoints[1].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p1-torch-energy, "A torch: energy goes from the battery's chemical store to the thermal store of the surroundings."
+- p1-energy-stores | keyPoints[4].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p1-sankey-lamp, "A lamp: 100 J in, 15 J out usefully by light, 85 J wasted by heating."
+- p1-national-grid | keyPoints[0].diagram, diagramCaption, diagramExamTip | brief 2026-10-18 first-time learner step 4 | added: p1-national-grid, "From power station to homes: the potential difference goes up for the cables, then down for homes."

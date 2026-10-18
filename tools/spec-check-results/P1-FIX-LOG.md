@@ -763,3 +763,13 @@ Findings from the text tester (tools/teach-sim.js --persona bored), runs tools/t
 ## Tutor flow brief (docs/briefs/2026-10-17-tutor-flow.md step 4), 2026-10-17
 - p1-energy-stores | keyPoints[1].content | P1-TRIAGE fact3/fact4 (radiation is its own pathway), applied for the website tester finding (site-test-runs/2026-10-17/p1-energy-stores-2: heating described as conduction and convection only) | old: "energy flows from a hotter object to a cooler one (conduction, convection)." new: "energy flows from a hotter object to a cooler one (conduction, convection). Radiation is a separate pathway."
 - p1-energy-stores | keyPoints[1].keyTerms[Heating].def | P1-TRIAGE fact3/fact4, same finding | old: "Energy transferred from a hotter object to a cooler one by conduction or convection; always flows from higher to lower temperature" new: "Energy transferred from a hotter object to a cooler one by conduction or convection; always flows from higher to lower temperature. Radiation is a separate pathway."
+
+## First-time learner brief (2026-10-18) step 3: basics
+
+- p1-conservation | basics | brief 2026-10-18 first-time learner step 3 | added: Energy, Energy stores, Friction, The surroundings, Particles, Conduction
+- p1-efficiency | basics | brief 2026-10-18 first-time learner step 3 | added: Energy, The joule, A proportion, A percentage, Power, Friction
+- p1-energy-stores | basics | brief 2026-10-18 first-time learner step 3 | added: Energy, The joule, A store, Force, Electric current, Temperature, Proportional
+- p1-heating | basics | brief 2026-10-18 first-time learner step 3 | added: Energy, Temperature, Mass, Particles, Solids, liquids and gases, The Δ sign
+- p1-kinetic-potential | basics | brief 2026-10-18 first-time learner step 3 | added: Energy, The joule, Mass, Speed, Squaring a number, Gravity, Reading an equation, Stretching a spring
+- p1-national-grid | basics | brief 2026-10-18 first-time learner step 3 | added: Electric current, Potential difference, Power, Resistance, A power station, Fuel
+- p1-power | basics | brief 2026-10-18 first-time learner step 3 | added: Energy, The joule, Rate, Force, Kilo, mega and giga, Time in seconds

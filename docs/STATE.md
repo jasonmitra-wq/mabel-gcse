@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, task A7. Brief docs/briefs/2026-10-19-pilot-feedback-v3-1.md: steps 1 (lesson shape v3.1, free checks), 2 (PILOT_FIX) and 3 (runbook) done; A1–A5 done; A6 is now A7–A9.
+Runbook position: Phase A, task A8, p2-current-voltage: steps a–c done (BASE 8dde1a5); step d (lesson-auditor, tools/audit-runs/8dde1a5-1.md) was running when the usage limit was reached: read its findings file if present, otherwise run it again, then fix once, steps e–f. Then p2-components (step a script drafted, not applied), site tests, text tester (A8 counts), A9.
 
 ## Runbook v3 switch (2026-10-19)
 
@@ -204,3 +204,4 @@ Not started on the pipeline. Already in place:
    render check (S4).
 5. Physics diagrams.
 6. Each Physics topic through C, D and verification.
+| Brief v3.1 p2-current-voltage (2026-10-19) | spec-check step c 1 | 0.1662 |

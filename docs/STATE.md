@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, task A6, PILOT GATE: waiting for "Pilot: yes" (docs/ESCALATIONS.md, "Pilot"). A1–A5 done.
+Runbook position: Phase A, task A7. Brief docs/briefs/2026-10-19-pilot-feedback-v3-1.md: steps 1 (lesson shape v3.1, free checks), 2 (PILOT_FIX) and 3 (runbook) done; A1–A5 done; A6 is now A7–A9.
 
 ## Runbook v3 switch (2026-10-19)
 

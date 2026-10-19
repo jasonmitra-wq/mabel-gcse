@@ -46,7 +46,7 @@
   "keyPoints": [
     {
       "heading": "Electric current — charge on the move",
-      "content": "Every torch, phone and kettle runs on something moving through its wires. Switch on a torch and the bulb lights at once. Inside the metal wire, tiny particles that carry <dfn>electric charge</dfn> start to drift round together. You cannot see charge, but you can see what it does.\n\nA complete loop is a <dfn>closed circuit</dfn>. Charge only flows round a closed circuit if it includes something to push it, such as a cell or a battery. That push is called a <dfn>potential difference</dfn>, and the next key point explains it. Break the loop anywhere, with a switch or a cut wire, and the flow stops everywhere.\n\nA flow of charge is an <dfn>electric current</dfn>. Its size is the <dfn>rate</dfn> of flow: how much charge passes a point each second. Charge is counted in <dfn>coulombs</dfn> (C). Current is measured in <dfn>amperes</dfn> (A, or amps) with an <dfn>ammeter</dfn>. One ampere means one coulomb passing each second.\n\nIn a single loop, the current is the same at every point, because charge is not used up on the way round. So it does not matter where you put the ammeter.\n\nThe amount of charge that passes is the <dfn>charge flow</dfn>, Q. To find it, multiply the current by the time in seconds.",
+      "content": "Every torch, phone and kettle runs on something moving through its wires. Turn on a torch and the bulb lights at once. Inside the metal wire, tiny particles that carry <dfn>electric charge</dfn> start to drift round together. You cannot see charge, but you can see what it does.\n\nA complete loop is a <dfn>closed circuit</dfn>. Charge only flows round a closed circuit if it includes something to push it, such as a cell or a battery. That push is called a <dfn>potential difference</dfn>, and the next key point explains it. Break the loop anywhere and the flow stops everywhere. A <dfn>switch</dfn> does this on purpose: it opens a gap in the loop.\n\nA flow of charge is an <dfn>electric current</dfn>. Its size is the <dfn>rate</dfn> of flow: how much charge passes a point each second. Charge is counted in <dfn>coulombs</dfn> (C). Current is measured in <dfn>amperes</dfn> (A, or amps) with an <dfn>ammeter</dfn>. One ampere means one coulomb passing each second.\n\nIn a single loop, the current is the same at every point, because charge is not used up on the way round. So it does not matter where you put the ammeter.\n\nThe amount of charge that passes is the <dfn>charge flow</dfn>, Q. To find it, multiply the current by the time in seconds.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "p2-simple-circuit",
@@ -154,6 +154,11 @@
           "def": "A complete loop. Charge flows round it only if it also includes a source of potential difference, such as a cell."
         },
         {
+          "term": "Switch",
+          "def": "A part that opens or closes a gap in a circuit, to stop or start the current.",
+          "referenceOnly": true
+        },
+        {
           "term": "Ammeter",
           "def": "A meter that measures current. It goes in the loop, in line with the component."
         }
@@ -162,7 +167,7 @@
     },
     {
       "heading": "Potential difference and resistance — push and opposition",
-      "content": "Connect a lamp to one cell and it glows dimly. Use two cells and it glows brighter, because more current flows. Put a resistor in the loop as well and the lamp dims again, because less current flows. So the size of a current depends on two things.\n\nA <dfn>component</dfn> is any part of a circuit, such as a lamp or a resistor. The first thing is the push that drives charge through the component: the potential difference across it. It is measured in <dfn>volts</dfn> (V) with a <dfn>voltmeter</dfn>, which is connected across the part you are testing. People often call it <dfn>voltage</dfn>. Exam questions say potential difference, but either word gets the mark.\n\nThe second is how hard the component makes it for charge to get through: its <dfn>resistance</dfn>. Resistance is measured in <dfn>ohms</dfn> (Ω). For the same potential difference, the bigger the resistance, the smaller the current.\n\nThe three are linked by one equation: potential difference equals current times resistance. If you know any two of them, you can rearrange it to find the third.",
+      "content": "Connect a lamp to one cell and it glows dimly. Use two cells and it glows brighter, because more current flows. Put a <dfn>resistor</dfn>, a part that limits the current, in the loop as well. The lamp dims again, because less current flows. So the size of a current depends on two things.\n\nA <dfn>component</dfn> is any part of a circuit, such as a lamp or a resistor. The first thing is the push that drives charge through the component: the potential difference across it. It is measured in <dfn>volts</dfn> (V) with a <dfn>voltmeter</dfn>, which is connected across the part you are testing. People often call it <dfn>voltage</dfn>. Exam questions say potential difference, but either word gets the mark.\n\nThe second is how hard the component makes it for charge to get through: its <dfn>resistance</dfn>. Resistance is measured in <dfn>ohms</dfn> (Ω). For the same potential difference, the bigger the resistance, the smaller the current.\n\nThe three are linked by one equation: potential difference equals current times resistance. If you know any two of them, you can rearrange it to find the third.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -250,6 +255,11 @@
         {
           "term": "Voltage",
           "def": "Another name for potential difference.",
+          "referenceOnly": true
+        },
+        {
+          "term": "Resistor",
+          "def": "A component that limits the current in a circuit.",
           "referenceOnly": true
         },
         {

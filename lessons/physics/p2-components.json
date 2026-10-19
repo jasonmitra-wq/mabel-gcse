@@ -31,10 +31,6 @@
       "text": "The origin is the point on a graph where both quantities are zero. On many graphs it is the bottom-left corner. On some, the axes cross in the middle, and the origin is where they cross. A line \"through the origin\" means that when one quantity is zero, so is the other."
     },
     {
-      "idea": "Directly proportional",
-      "text": "Two quantities are directly proportional when doubling one doubles the other. Apples are like this: twice as many apples cost twice as much. On a graph this is a straight line through the origin."
-    },
-    {
       "idea": "Light intensity",
       "text": "Light intensity means how bright the light is. A sunny window has a high light intensity. A dark cupboard has a low one."
     }
@@ -42,7 +38,7 @@
   "keyPoints": [
     {
       "heading": "Circuit symbols — the language of circuit diagrams",
-      "content": "People draw circuits so that anyone can build them. Instead of drawing a real lamp or meter, they use simple shapes that everyone agrees on.\n\nThese shapes are <dfn>circuit symbols</dfn>, and a drawing made from them is a <dfn>circuit diagram</dfn>. Wires are drawn as straight lines. A <dfn>cell</dfn> is a long thin line next to a short thick one; two or more cells joined together make a <dfn>battery</dfn>. A resistor is a small rectangle. A lamp is a circle with a cross in it. A <dfn>switch</dfn> is drawn open, with a gap, or closed, with no gap. A meter is a circle with a letter: A for an ammeter, V for a voltmeter.\n\nSome symbols are built from others. A resistor with an arrow through it is a variable resistor. A diode with two arrows coming out of it is a <dfn>light-emitting diode (LED)</dfn>, a diode that gives out light. A <dfn>fuse</dfn>, a safety part that cuts off a current that is too big, is a rectangle with a line through it.\n\nTo read a circuit diagram, follow the wire from one side of the cell round to the other. Components on one single path are in series. Components on separate branches are in parallel.",
+      "content": "People draw circuits so that anyone can build them. Instead of drawing a real lamp or meter, they use simple shapes that everyone agrees on.\n\nThese shapes are <dfn>circuit symbols</dfn>, and a drawing made from them is a <dfn>circuit diagram</dfn>. Wires are drawn as straight lines. A <dfn>cell</dfn> is a long thin line next to a short thick one; two or more cells joined together make a <dfn>battery</dfn>. A <dfn>resistor</dfn>, a component that limits the current, is a small rectangle. A lamp is a circle with a cross in it. A <dfn>switch</dfn> is drawn open, with a gap, or closed, with no gap. A meter is a circle with a letter: A for an ammeter, V for a voltmeter.\n\nA diode is a triangle pointing the way current can flow, with a bar across its tip. Some symbols are built from others. A resistor with an arrow through it is a variable resistor. A diode with two arrows coming out of it is a <dfn>light-emitting diode (LED)</dfn>, a diode that gives out light. The chart also shows a fuse: a rectangle with a line through it.\n\nTo read a circuit diagram, follow the wire from one side of the cell round to the other. Components on one single path are in series. Components on separate branches are in parallel.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "p2-circuit-symbols",
@@ -57,7 +53,7 @@
       "examBox": {
         "definitions": [
           "Circuit diagrams use standard symbols for each component.",
-          "You should be able to draw a circuit diagram with the correct symbols, and read one to see what is in series and what is in parallel."
+          "Components in one single loop are in series; components on separate branches are in parallel."
         ],
         "equations": []
       },
@@ -91,8 +87,8 @@
           "referenceOnly": true
         },
         {
-          "term": "Fuse",
-          "def": "A safety part that cuts off a current that is too big. Symbol: a rectangle with a line through it.",
+          "term": "Resistor",
+          "def": "A component that limits the current. Symbol: a small rectangle.",
           "referenceOnly": true
         }
       ],
@@ -100,7 +96,7 @@
     },
     {
       "heading": "Thermistors — resistance that changes with temperature",
-      "content": "In an earlier lesson you saw that a filament lamp and a diode do not keep a fixed resistance. It changes as the current through them changes. The same is true of two components that react to the world around them: the <dfn>thermistor</dfn> and the <dfn>light-dependent resistor</dfn> (<dfn>LDR</dfn>).\n\nFirst, the thermistor. Its resistance depends on its <dfn>temperature</dfn>, which is how hot it is. As a thermistor gets warmer, its resistance goes down. When it cools, its resistance goes back up. So for the same potential difference, a warm thermistor lets a bigger current through than a cold one.\n\nThat makes a thermistor a good temperature <dfn>sensor</dfn>: a part that detects a change around it. In a <dfn>thermostat</dfn>, the control that keeps a room or an oven at a set temperature, a thermistor senses how warm it is. When the room warms up, the thermistor's resistance falls, the current changes, and the circuit switches the heater off. When the room cools, the heater comes back on.\n\nIts symbol is a resistor with a diagonal line through it that ends in a short flat tail.",
+      "content": "In an earlier lesson you saw that a filament lamp and a diode do not keep a fixed resistance. It changes as the current through them changes. The same is true of two components that react to the world around them. One is the <dfn>thermistor</dfn>, which reacts to <dfn>temperature</dfn>: how hot it is. The other is the <dfn>light-dependent resistor</dfn> (<dfn>LDR</dfn>), which reacts to light.\n\nFirst, the thermistor. Its resistance depends on its temperature. As a thermistor gets warmer, its resistance goes down. When it cools, its resistance goes back up. So for the same potential difference, a warm thermistor lets a bigger current through than a cold one.\n\nThat makes a thermistor a good temperature <dfn>sensor</dfn>: a part that detects a change around it. In a <dfn>thermostat</dfn>, the control that keeps a room or an oven at a set temperature, a thermistor senses how warm it is. When the room warms up, the thermistor's resistance falls, the current changes, and the circuit switches the heater off. When the room cools, the heater comes back on.\n\nIts symbol is a resistor with a diagonal line through it that ends in a short flat tail.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "p2-thermistor-graph",
@@ -178,7 +174,7 @@
     },
     {
       "heading": "Drawing a circuit to test a sensor",
-      "content": "Exam questions often ask you to draw a circuit to find how a thermistor's or an LDR's resistance changes. You use the same idea as for any component: measure the current and the potential difference, then find the resistance.\n\nDraw the cell, a switch and an ammeter in one loop with the thermistor, all in series. Then draw a voltmeter in parallel across the thermistor, on its own short branch. Use the correct symbol for every part, with straight lines for the wires and no gaps where wires should join.\n\nPut the thermistor in water and measure the water's temperature with a thermometer. Record the current and the potential difference, then change the temperature and repeat. For an LDR, change the light intensity instead, for example by moving a lamp closer.\n\nAt each reading, divide the potential difference by the current to get the resistance. Plot resistance against temperature, or against light intensity: both graphs slope downwards.",
+      "content": "Exam questions often ask you to draw a circuit to find how a thermistor's or an LDR's resistance changes. You use the same idea as for any component: measure the current and the potential difference, then find the resistance.\n\nDraw the cell, a switch and an ammeter in one loop with the thermistor, all in series. Then draw a voltmeter in parallel across the thermistor, on its own short branch. Use the correct symbol for every part, with straight lines for the wires and no gaps where wires should join.\n\nPut the thermistor in water and measure the water's temperature with a thermometer. Record the current and the potential difference, then change the temperature and repeat. For an LDR, change the light intensity instead, for example by moving a lamp closer.\n\nAt each reading, divide the potential difference by the current to get the resistance. Plot resistance against temperature, or against light intensity. Both graphs are downward curves, not straight lines, so both components are non-linear.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "p2-thermistor-circuit",
@@ -299,7 +295,7 @@
         [
           "Fixed resistor",
           "Rectangle",
-          "Opposes current flow by a fixed amount",
+          "Has a resistance that stays the same",
           "Constant at constant temperature",
           "Setting the current in a circuit"
         ],
@@ -322,47 +318,21 @@
           "Triangle + bar + two arrows (light)",
           "Emits light when forward current flows",
           "Very high in the reverse direction; changes with current",
-          "Indicator lights, screens, street lighting"
+          "Indicator lights"
         ],
         [
           "LDR",
           "Rectangle in a circle, with two arrows pointing in",
           "Resistance changes with light intensity",
           "Decreases as light intensity increases",
-          "Automatic street lights, burglar alarms"
+          "Switching lights on when it gets dark"
         ],
         [
           "Thermistor",
           "Rectangle with a diagonal line that ends in a short flat tail",
           "Resistance changes with temperature",
           "Decreases as temperature increases",
-          "Thermostats, fire alarms, engine sensors"
-        ]
-      ]
-    },
-    {
-      "title": "I-V graph shapes for key components",
-      "examFlag": true,
-      "headers": [
-        "Component",
-        "I-V graph shape",
-        "What the shape tells you"
-      ],
-      "rows": [
-        [
-          "Fixed resistor (ohmic)",
-          "Straight line through origin",
-          "Constant resistance — I directly proportional to V"
-        ],
-        [
-          "Filament lamp",
-          "Curve — gets less steep at higher current",
-          "Resistance increases as it gets hotter"
-        ],
-        [
-          "Diode",
-          "Flat near zero for negative V; steep rise in the forward direction",
-          "Only conducts in the forward direction"
+          "Thermostats"
         ]
       ]
     }
@@ -419,27 +389,26 @@
   },
   "commonMistakes": [
     "Drawing a resistor as a zigzag. The standard symbol is a small rectangle.",
-    "Thinking a diode has zero resistance in the reverse direction. It has very HIGH resistance. So only a very small current flows.",
+    "Leaving gaps where wires should join in a circuit diagram. A gap means no current can flow.",
     "Mixing up the LDR and thermistor. An LDR responds to light. A thermistor responds to temperature. Both drop in resistance as their quantity increases.",
     "Forgetting that an LED is a type of diode. So it only conducts in the forward direction. It will not light up if it is connected the wrong way round."
   ],
   "examTips": [
     "When describing an LDR or thermistor, always say what happens to resistance as light intensity or temperature increases.",
-    "For I-V graph questions, describe the shape exactly. For example: 'straight line through the origin', 'curve that gets less steep', or 'flat then sudden steep rise'. Vague answers lose marks.",
-    "For circuit questions, write down V = IR first and start from there. Most electricity questions link back to it."
+    "When you draw a circuit diagram, use the standard symbols, straight lines for wires and no gaps where wires should join.",
+    "Ammeter in series, voltmeter in parallel: say why. The ammeter measures the current through the component; the voltmeter measures the potential difference across it."
   ],
   "revisionCardBullets": [
-    "Fixed resistor: constant resistance at constant temperature. Its I-V graph is a straight line through the origin",
-    "Variable resistor (rheostat): resistance changed by hand. Used in dimmer switches",
-    "V = IR: potential difference = current × resistance",
-    "Diode: current in one direction only. Very high resistance in the reverse direction",
-    "LED: a diode that gives out light. Used in screens, traffic lights and energy-efficient bulbs",
-    "I-V graph for a diode: flat for negative V, steep rise in the forward direction",
-    "LDR: more light → less resistance",
-    "Thermistor: higher temperature → less resistance",
-    "Resistance of lamps, diodes, thermistors and LDRs is not constant. It changes with the current",
-    "LDR uses: automatic street lights, burglar alarms, camera meters",
-    "Thermistor uses: thermostats, fire alarms, engine and medical temperature sensors"
+    "Circuit diagrams use standard symbols; wires are straight lines",
+    "Cell: long thin line and short thick line. Battery: two or more cells",
+    "Resistor: rectangle. Variable resistor: rectangle with an arrow through it",
+    "Lamp: circle with a cross. Ammeter and voltmeter: circles with A and V",
+    "Diode: triangle and bar. LED: diode with two arrows coming out",
+    "Thermistor: hotter means lower resistance. Used in thermostats",
+    "LDR: brighter light means lower resistance. Used to switch lights on when it gets dark",
+    "Lamps, diodes, thermistors and LDRs: resistance changes with the current",
+    "Testing a sensor: ammeter in series, voltmeter in parallel, R = V ÷ I",
+    "Thermistor and LDR graphs are downward curves: non-linear"
   ],
   "videos": [
     {
@@ -449,10 +418,10 @@
       "duration": "~8 min"
     },
     {
-      "title": "I-V Characteristics — Diodes, Resistors, Filament Bulbs",
-      "url": "https://www.youtube.com/results?search_query=aqa+gcse+physics+IV+characteristics+diode+cognito",
+      "title": "Circuit symbols — GCSE Physics",
+      "url": "https://www.youtube.com/results?search_query=gcse+physics+circuit+symbols+cognito",
       "source": "Cognito",
-      "duration": "~7 min"
+      "duration": "~6 min"
     }
   ],
   "videoLinks": [
@@ -471,11 +440,11 @@
       "url": "https://www.bbc.co.uk/bitesize/search?q=circuit+components+electricity+physics+gcse"
     },
     {
-      "searchQuery": "aqa gcse physics IV characteristics components cognito",
-      "label": "I-V graphs and components — Cognito",
+      "searchQuery": "gcse physics circuit symbols cognito",
+      "label": "Circuit symbols — Cognito",
       "source": "Cognito",
       "icon": "▶",
-      "url": "https://www.youtube.com/results?search_query=aqa+gcse+physics+IV+characteristics+circuit+components+cognito"
+      "url": "https://www.youtube.com/results?search_query=gcse+physics+circuit+symbols+cognito"
     }
   ],
   "specChecklist": [
@@ -597,7 +566,15 @@
       "lesson": "p2-current-voltage"
     },
     {
-      "term": "Variable resistor",
+      "term": "Variable resistor (rheostat)",
+      "lesson": "p2-current-voltage"
+    },
+    {
+      "term": "Linear",
+      "lesson": "p2-current-voltage"
+    },
+    {
+      "term": "Non-linear",
       "lesson": "p2-current-voltage"
     }
   ],

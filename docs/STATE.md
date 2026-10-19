@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, task A5, p2-components step c (steps a and b done and committed; STOPPED 2026-10-19 on an API billing/credit error). Still owed in A5: p2-components steps c–f, then the phone-size site test of p2-current-voltage and of p2-components.
+Runbook position: Phase A, task A5, site tests (p2-current-voltage and p2-components rewritten; the phone-size site test of each is next).
 
 ## Runbook v3 switch (2026-10-19)
 
@@ -21,7 +21,7 @@ All eight are rewritten under runbook v3 (Phase A pilot P2, then Phase B).
 | Lesson | Steps a–f | Commit | API cost (USD) | Notes |
 |---|---|---|---|---|
 | p2-current-voltage | ✓ | (this commit, "p2-current-voltage: rewritten (v3)") | 0.12 (step c) | 7 key points, 1,234 words; new diagram p2-wire-length; audit 13cf62e-1: 16 fixed, F8 rejected (ESCALATIONS) |
-| p2-components | a, b ✓; c–f owed | (step a–b commit) | 0 | 4 key points, 697 words; new diagrams p2-circuit-symbols, p2-thermistor-circuit; first lesson with prerequisites (card checked in the browser) |
+| p2-components | ✓ | (this commit, "p2-components: rewritten (v3)") | 0.08 (step c) | 4 key points, 730 words; new diagrams p2-circuit-symbols, p2-thermistor-circuit; first lesson with prerequisites (card checked in the browser); audit 923f2b9-1: 13 fixed, F7 and F14 rejected (ESCALATIONS); p2-current-voltage step b re-run after the glossary grew (switch, resistor explained) |
 
 Tools: tools/lesson-shape-v3.md, tools/check-lesson-v3.js (A1, A2); flags SLIDES_V3 (js/lessons.js), v3Fields (js/teach-core.js), GLOSSARY_V3 (js/glossary.js); data/glossary/<subject>.json from tools/build-glossary.js (A3, A4).
 The brief names docs/briefs/2026-10-18-maths-redesign.md as superseded; that
@@ -76,6 +76,7 @@ Spec-check API calls, summed from tools/spec-check-results/SUMMARY.md (one line 
 | P7 Magnetism | 6 | 0.83 |
 | P4 AI lessons (2026-10-18, 2.5c and 2.5c2) | teach-sim 6 runs; text tester 8 runs; website tester 2 runs | 6.47 (teach-sim 1.64 + 0.75 re-runs; text 2.86 first pass + 2.23 re-run; website 0.74 + 0.64) |
 | Runbook v3 p2-current-voltage (2026-10-19) | spec-check step c 1; site test 1 attempt (ran to exchange 9, then stopped on an API billing/credit error before the judge; the tool reported no cost) | 0.12 + site test not reported (estimated under 0.20: about 9 tutor and student exchanges, no judge call) |
+| Runbook v3 p2-components (2026-10-19) | spec-check step c 1 | 0.08 |
 | Teach-sim (check D) | 2 runs | 0.12 |
 | Teach-sim P1 (task 2.5c) | 10 lesson runs | 0.55 |
 | Teach-sim P2 (task 2.5c) | 8 lesson runs | 0.37 |

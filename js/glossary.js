@@ -247,10 +247,62 @@ const Glossary = (() => {
     'gi'
   );
 
+  // ── Runbook v3 task A4: subject glossaries ───────────────────
+  // data/glossary/<subject>.json (tools/build-glossary.js), built from every
+  // lesson's keyTerms and <dfn> terms. With GLOSSARY_V3 on, a lesson of a
+  // subject with a glossary file underlines that subject's terms (in slides
+  // and in AI messages); a tap shows the definition and the lesson it comes
+  // from. false keeps the built-in Biology list above for every lesson.
+  const GLOSSARY_V3 = true;
+  const _subjects = {};      // subject → { entries: Map(key → entry), regex }
+  let _active = null;        // the subject whose glossary marks up lessons now
+  const _esc = s => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const _html = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  function _key(term) {
+    let k = String(term).toLowerCase().replace(/\s*\(.*?\)\s*/g, ' ').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+    if (k.length > 3 && /[^s]s$/.test(k)) k = k.slice(0, -1);
+    return k;
+  }
+  async function load(subject) {
+    if (!GLOSSARY_V3 || !subject) return null;
+    if (!(subject in _subjects)) {
+      _subjects[subject] = null;
+      try {
+        const res = await fetch(`data/glossary/${subject}.json`);
+        if (res.ok) {
+          const data = await res.json();
+          const entries = new Map();
+          (data.terms || []).forEach(t => { if (t && t.term) entries.set(_key(t.term), { ...t, subject }); });
+          // Match the term as written (before any bracket), with an optional plural.
+          const forms = [...entries.values()].map(t => String(t.term).replace(/\s*\(.*?\)\s*/g, ' ').trim()).filter(f => f.length > 1)
+            .sort((a, b) => b.length - a.length).map(f => _esc(f).replace(/\s+/g, '\\s+'));
+          _subjects[subject] = entries.size ? { entries, regex: new RegExp(`\\b(${forms.join('|')})(?:s|es)?\\b`, 'gi') } : null;
+        }
+      } catch { /* no glossary for this subject */ }
+    }
+    _active = _subjects[subject] ? subject : null;
+    return _subjects[subject];
+  }
+  function entry(subject, term) {
+    const g = _subjects[subject];
+    return g ? g.entries.get(_key(term)) || null : null;
+  }
+  // The term as matched → its entry key ("amperes" → "ampere").
+  function _v3KeyFor(text) {
+    const g = _active && _subjects[_active];
+    if (!g) return null;
+    const k = _key(text);
+    if (g.entries.has(k)) return k;
+    const k2 = k.replace(/e$/, '');
+    return g.entries.has(k2) ? k2 : null;
+  }
+
   // ── Markup a rendered container ──────────────────────────────
   // Wraps the FIRST occurrence of each known term in the container.
   // Skips text inside buttons, links, headings, and existing key-term spans.
   function markupContainer(container) {
+    const v3 = GLOSSARY_V3 && _active && _subjects[_active];
+    const regex = v3 ? v3.regex : _regex;
     const seen = new Set();
     const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
@@ -268,15 +320,16 @@ const Glossary = (() => {
 
     textNodes.forEach(textNode => {
       const text = textNode.textContent;
-      _regex.lastIndex = 0;
+      regex.lastIndex = 0;
 
       let hasNew = false;
       const parts = [];
       let last = 0;
       let m;
 
-      while ((m = _regex.exec(text)) !== null) {
-        const key = m[0].toLowerCase();
+      while ((m = regex.exec(text)) !== null) {
+        const key = v3 ? _v3KeyFor(m[0]) : m[0].toLowerCase();
+        if (!key) continue;
         if (seen.has(key)) continue;
         seen.add(key);
         hasNew = true;
@@ -300,6 +353,8 @@ const Glossary = (() => {
 
   // ── Show the bottom sheet ────────────────────────────────────
   function show(termKey) {
+    const v3 = GLOSSARY_V3 && _active && _subjects[_active] && _subjects[_active].entries.get(termKey);
+    if (v3) { _showV3(v3); return; }
     const key   = termKey.toLowerCase();
     const entry = _terms[key];
     if (!entry) return;
@@ -332,6 +387,62 @@ const Glossary = (() => {
 
   function lookup(key) { return _terms[key.toLowerCase()] || null; }
 
-  return { markupContainer, show, hide, lookup };
+  // v3 sheet: the plain definition and the lesson it comes from.
+  function _openLessonJs(e) {
+    const q = s => String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    return `Lessons.open('${q(e.lesson)}','${q(e.lessonName)}','${q(e.topic)}','${q(e.subject)}')`;
+  }
+  function _showV3(e) {
+    const here = typeof Lessons !== 'undefined' && Lessons.currentId && Lessons.currentId() === e.lesson;
+    document.getElementById('glossaryTerm').textContent = e.term;
+    document.getElementById('glossaryBody').innerHTML = `
+      <p style="font-size:0.95rem;line-height:1.7;margin:0.75rem 0 0.5rem">${_html(e.def)}</p>
+      ${here ? `<p class="glossary-from">From this lesson.</p>`
+        : `<p class="glossary-from">From the lesson: ${_html(e.lessonName)}</p>
+           <button class="btn" style="margin-top:0.5rem;width:100%;justify-content:flex-start;gap:0.5rem;font-size:0.85rem"
+             onclick="Glossary.hide();${_html(_openLessonJs(e))}">📖 Go to that lesson →</button>`}`;
+    document.getElementById('glossarySheet').classList.add('open');
+    document.getElementById('glossaryBackdrop').classList.add('open');
+  }
+
+  // One line of a definition: its first sentence.
+  function oneLine(def) { return String(def || '').split(/(?<=[.!?;])\s+/)[0].replace(/[;.]\s*$/, '') + '.'; }
+
+  // ── "Words I've learned": terms from lessons she has opened, by topic ──
+  async function showWordsPage() {
+    const main = document.getElementById('main');
+    main.innerHTML = `<div style="max-width:680px"><div class="topic-header">
+      <button class="back-btn" onclick="showHome()">← Home</button><h2>📚 Words I've learned</h2></div>
+      <p style="color:var(--muted)">Loading…</p></div>`;
+    const p = Store.getProgress();
+    const opened = { ...(p.covered || {}), ...(p.opened || {}) };
+    let html = `<div style="max-width:680px"><div class="topic-header">
+      <button class="back-btn" onclick="showHome()">← Home</button><h2>📚 Words I've learned</h2></div>`;
+    let any = false;
+    for (const subject of ['physics', 'biology', 'chemistry', 'geography', 'sociology', 'maths']) {
+      const g = await load(subject);
+      if (!g) continue;
+      let syl = null;
+      try { syl = await (await fetch(`data/${subject}-syllabus.json`)).json(); } catch { /* topic names only */ }
+      const byTopic = {};
+      for (const e of g.entries.values()) if (opened[e.lesson]) (byTopic[e.topic] = byTopic[e.topic] || []).push(e);
+      const topics = Object.keys(byTopic);
+      if (!topics.length) continue;
+      any = true;
+      html += `<h3 style="margin-top:1.5rem">${subject.charAt(0).toUpperCase() + subject.slice(1)}</h3>`;
+      const order = syl ? Object.keys(syl.topics || {}) : topics;
+      for (const t of order.filter(t => byTopic[t])) {
+        const name = syl && syl.topics[t] ? syl.topics[t].name : t;
+        html += `<h4 class="words-topic">${_html(name)}</h4><ul class="words-list">${byTopic[t].map(e =>
+          `<li><strong>${_html(e.term)}</strong> — ${_html(oneLine(e.def))}<br>
+           <button class="words-lesson" onclick="${_html(_openLessonJs(e))}">${_html(e.lessonName)} →</button></li>`).join('')}</ul>`;
+      }
+    }
+    if (!any) html += `<p style="color:var(--muted)">Open a lesson and its words will appear here.</p>`;
+    main.innerHTML = html + `</div>`;
+    _active = null;
+  }
+
+  return { markupContainer, show, hide, lookup, load, entry, oneLine, showWordsPage, GLOSSARY_V3 };
 
 })();

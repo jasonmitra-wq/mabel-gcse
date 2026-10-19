@@ -32,6 +32,13 @@ const Lessons = (() => {
   // lesson when a key is present; the slides are one tap away in its header.
   // false: open the slides first, with a link to the AI lesson in their header.
   const TEACH_FIRST = true;
+  // Runbook v3 task A3: a lesson written to tools/lesson-shape-v3.md (its key
+  // points have an examBox) shows each key point as one slide: the diagram,
+  // the exam box, at most three bullets to write down, and the worked example
+  // revealed step by step; the full teaching text is behind "Read the full
+  // explanation". false, or a lesson without examBox, keeps the old slides.
+  const SLIDES_V3 = true;
+  const _isV3 = data => SLIDES_V3 && (data.keyPoints || []).some(kp => kp.examBox);
 
   // ── Open a lesson ─────────────────────────────────────────
   async function open(subtopicId, subtopicName, topicCode, subject = 'biology') {
@@ -63,13 +70,54 @@ const Lessons = (() => {
       return;
     }
 
-    if (TEACH_FIRST && TEACH_ENABLED.includes(subtopicId) && AI.hasKey()) {
-      Teach.open(data, subtopicId, subtopicName, subject);
-      return;
-    }
+    const go = () => {
+      if (typeof Store.markOpened === 'function') Store.markOpened(subtopicId);
+      if (TEACH_FIRST && TEACH_ENABLED.includes(subtopicId) && AI.hasKey()) {
+        Teach.open(data, subtopicId, subtopicName, subject);
+        return;
+      }
+      _openSlideView(data, subtopicId, subtopicName, subject);
+    };
 
-    _openSlideView(data, subtopicId, subtopicName, subject);
+    // Runbook v3 A4: the subject glossary, and a card for words this lesson
+    // takes from earlier lessons she has not opened yet.
+    _openingId = subtopicId;
+    if (typeof Glossary !== 'undefined' && Glossary.GLOSSARY_V3) {
+      await Glossary.load(subject);
+      if (_prereqCard(data, subtopicId, subject, go)) return;
+    }
+    go();
   }
+
+  let _openingId = '';
+  let _prereqGo = null;
+  // The card: each term with a one-line meaning, a button per earlier lesson,
+  // and "Carry on". Returns false (no card) when every lesson is opened.
+  function _prereqCard(data, subtopicId, subject, go) {
+    const missing = (data.prerequisites || []).filter(p => p && p.lesson && p.lesson !== subtopicId && !Store.hasOpened(p.lesson));
+    if (!missing.length) return false;
+    const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    const q = s => esc(String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'"));
+    const lessons = [];
+    const items = missing.map(p => {
+      const e = Glossary.entry(subject, p.term);
+      if (!lessons.some(l => l.id === p.lesson)) lessons.push({ id: p.lesson, name: e ? e.lessonName : p.lesson, topic: e ? e.topic : '' });
+      return `<li><strong>${esc(p.term)}</strong>${e ? ` — ${esc(Glossary.oneLine(e.def))}` : ''}</li>`;
+    });
+    _prereqGo = go;
+    document.getElementById('lessonInner').innerHTML = `
+      <div style="padding-top:0.75rem"><button class="back-btn" onclick="Lessons.close()">← Topics</button></div>
+      <div class="prereq-card">
+        <h3>Words from earlier lessons</h3>
+        <p style="color:var(--muted);margin:0 0 0.75rem">This lesson uses these words. Here is what they mean:</p>
+        <ul>${items.join('')}</ul>
+        ${lessons.map(l => `<button class="btn" onclick="Lessons.open('${q(l.id)}','${q(l.name)}','${q(l.topic)}','${q(subject)}')">Go to ${esc(l.name)}</button>`).join('')}
+        <button class="btn pri" onclick="Lessons._carryOn()">Carry on</button>
+      </div>`;
+    return true;
+  }
+  function _carryOn() { const g = _prereqGo; _prereqGo = null; if (g) g(); }
+  function currentId() { return _openingId; }
 
   // ── Open the existing slide-by-slide view ──────────────────
   // Also the escape hatch from Teach mode's "show me the slides instead" link.
@@ -105,10 +153,12 @@ const Lessons = (() => {
   function _buildSteps(data) {
     const steps = [];
     steps.push({ type: 'intro' });
+    const v3 = _isV3(data);
     (data.keyPoints || []).forEach((kp, i) => {
-      steps.push({ type: 'kp-read', kp, i });
+      steps.push({ type: v3 ? 'kp-v3' : 'kp-read', kp, i });
       if (data.checkpoints?.[i]) steps.push({ type: 'kp-check', kp, i, checkpoint: data.checkpoints[i] });
-      if (kp.writeBullets?.length || kp.keyTerms?.length) steps.push({ type: 'kp-notes', kp, i });
+      // v3: the bullets to write down are on the key point's own slide.
+      if (!v3 && (kp.writeBullets?.length || kp.keyTerms?.length)) steps.push({ type: 'kp-notes', kp, i });
     });
     (data.tables || []).forEach(t => steps.push({ type: 'table', table: t }));
     if (data.diagrams?.length) {
@@ -172,6 +222,7 @@ const Lessons = (() => {
     switch (step.type) {
       case 'intro':     body = _renderIntroStep(); break;
       case 'kp-read':   body = _renderKpReadStep(step); break;
+      case 'kp-v3':     body = _renderKpV3Step(step); break;
       case 'kp-check':  body = _renderKpCheckStep(step); break;
       case 'kp-notes':  body = _renderKpNotesStep(step); break;
       case 'table':     body = _renderTableStep(step); break;
@@ -218,7 +269,7 @@ const Lessons = (() => {
 
   function _stepLabel(step) {
     if (!step) return '';
-    if (step.type === 'kp-read')   return step.kp.heading;
+    if (step.type === 'kp-read' || step.type === 'kp-v3') return step.kp.heading;
     if (step.type === 'kp-check')  return 'Quick check';
     if (step.type === 'kp-notes')  return 'Write it down';
     if (step.type === 'table')     return 'Summary table';
@@ -563,6 +614,58 @@ const Lessons = (() => {
       _usedJokeIds.push(moment.id);
     }
     return html;
+  }
+
+  // ── kp-v3: diagram, exam box, bullets, worked example; full text on request ──
+  function _renderKpV3Step(step) {
+    const { kp, i } = step;
+    const box = kp.examBox || {};
+    const eqHtml = (box.equations || []).map(e => `
+      <div class="v3-eq">
+        <div class="v3-eq-words">${e.words}</div>
+        <div class="v3-eq-symbols">${e.symbols}</div>
+        ${(e.units || []).length ? `<ul class="v3-eq-units">${e.units.map(u =>
+          `<li><strong>${u.symbol}</strong> = ${u.quantity}, in ${u.unit} (${u.unitSymbol})</li>`).join('')}</ul>` : ''}
+      </div>`).join('');
+    const defHtml = (box.definitions || []).map(d => `<p class="v3-def">${d}</p>`).join('');
+    const bullets = (kp.writeBullets || []).slice(0, 3);
+    const examples = (kp.workedExamples || []).map((x, j) => `
+      <div class="v3-worked" id="v3w_${i}_${j}" data-shown="0">
+        <div class="v3-worked-title">Worked example</div>
+        <p class="v3-worked-q">${x.question}</p>
+        <ol class="v3-worked-steps">${(x.steps || []).map((s, k) =>
+          `<li class="v3-worked-step" style="display:none" data-k="${k}">${s.text}</li>`).join('')}</ol>
+        <button class="btn v3-worked-btn" onclick="Lessons._revealWorkedStep(${i},${j})">Show the first step</button>
+      </div>`).join('');
+    return `
+      <div class="kp kp-v3">
+        <div class="kp-header">
+          <h3>${kp.heading}</h3>
+          ${kp.examFlag ? `<span class="flag flag-exam">this gets asked</span>` : ''}
+        </div>
+        ${kp.diagram ? _renderInlineDiagram(kp.diagram, _current, kp.diagramCaption, kp.diagramExamTip) : ''}
+        ${defHtml || eqHtml ? `<div class="v3-exambox"><div class="v3-exambox-title">${Icons.inline('exam', 18)} For the exam</div>${defHtml}${eqHtml}</div>` : ''}
+        ${bullets.length ? `<div class="v3-bullets"><div class="v3-bullets-title">${Icons.inline('notes', 18)} Write these into your notes</div>
+          <ul>${bullets.map(b => `<li>${b}</li>`).join('')}</ul></div>` : ''}
+        ${examples}
+        <details class="v3-full">
+          <summary>Read the full explanation</summary>
+          <div class="v3-full-body">${_formatKpContent(kp.content)}</div>
+        </details>
+      </div>`;
+  }
+
+  // Reveal the next step of a worked example; the button names what comes next.
+  function _revealWorkedStep(i, j) {
+    const el = document.getElementById(`v3w_${i}_${j}`);
+    if (!el) return;
+    const steps = el.querySelectorAll('.v3-worked-step');
+    const n = Number(el.dataset.shown) + 1;
+    steps.forEach((s, k) => { s.style.display = k < n ? '' : 'none'; });
+    el.dataset.shown = String(n);
+    const btn = el.querySelector('.v3-worked-btn');
+    if (n >= steps.length) btn.remove();
+    else btn.textContent = 'Show the next step';
   }
 
   // ── kp-check: checkpoint MCQ only ─────────────────────────
@@ -1090,7 +1193,7 @@ const Lessons = (() => {
     Teach.open(_current, _subtopicId, _subtopicName, _current.subject || 'biology');
   }
 
-  return { open, close, checkpointClick, saveAllCards, _nextStep, _prevStep, _tryUnlockNext, _startPractice, sendAskMe: _sendAskMe, _cpHint, openSlideView: _openSlideView, backToTeach };
+  return { open, close, checkpointClick, saveAllCards, _nextStep, _prevStep, _tryUnlockNext, _startPractice, sendAskMe: _sendAskMe, _cpHint, openSlideView: _openSlideView, backToTeach, _revealWorkedStep, _carryOn, currentId };
 })();
 
 /* ============================================================

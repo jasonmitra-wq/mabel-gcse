@@ -46,6 +46,20 @@ const Store = (() => {
     saveProgress(p);
   }
 
+  // Runbook v3 A4: every lesson she has opened, slides or AI lesson ("Words
+  // I've learned", and the card for words from earlier lessons).
+  function markOpened(subtopicId) {
+    const p = getProgress();
+    p.opened = p.opened || {};
+    if (p.opened[subtopicId]) return;
+    p.opened[subtopicId] = true;
+    saveProgress(p);
+  }
+  function hasOpened(subtopicId) {
+    const p = getProgress();
+    return !!((p.opened || {})[subtopicId] || (p.covered || {})[subtopicId]);
+  }
+
   function addScore(topicName, score, total) {
     const p = getProgress();
     const pct = Math.round((score / total) * 100);
@@ -274,7 +288,7 @@ const Store = (() => {
 
   return {
     get, set, remove,
-    getProgress, saveProgress, markCovered, addScore,
+    getProgress, saveProgress, markCovered, markOpened, hasOpened, addScore,
     setLastPosition, getLearnerProfile, updateLearnerProfile, clearAll,
     getDeck, saveDeck, addCards, updateCardStatus, clearDeck,
     getChildProfile, getChildName, getInterests,

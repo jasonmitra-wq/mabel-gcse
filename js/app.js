@@ -291,6 +291,12 @@ function showHome(hasSaved) {
         <div style="font-size:12px;color:var(--muted)">Past sessions</div>
         <div style="font-size:12px;color:var(--muted);margin-top:0.35rem">${lastLabel}</div>
       </div>
+
+      ${typeof Glossary !== 'undefined' && Glossary.GLOSSARY_V3 ? `<div class="home-stat-tile" onclick="showWordsLearned()">
+        <div style="font-size:1.1rem;margin-bottom:0.25rem">📚</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:0.2rem">Words I've learned</div>
+        <div style="font-size:12px;color:var(--muted)">Every new word, by topic</div>
+      </div>` : ''}
     </div>
 
     <div id="upcomingSection"></div>`;
@@ -885,6 +891,16 @@ function _resetConfirm() {
 }
 
 // ── ERROR LOG VIEW ─────────────────────────────────────────────
+// Runbook v3 A4: the terms from every lesson she has opened (js/glossary.js).
+function showWordsLearned() {
+  App.setStage("Words I've learned");
+  const _lp = document.getElementById('lessonPanel');
+  _lp.style.transition = 'transform 0.32s cubic-bezier(0.4,0,0.2,1)';
+  _lp.style.transform = 'translateX(100vw)';
+  setTimeout(() => { _lp.style.cssText = ''; _lp.classList.remove('open'); }, 340);
+  Glossary.showWordsPage();
+}
+
 function showErrorLog() {
   App.setStage('Error log');
   const log = Store.getErrorLog();

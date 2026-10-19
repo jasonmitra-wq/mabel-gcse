@@ -590,6 +590,8 @@ const Teach = (() => {
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>')
       .replace(/(^|[^*\w])\*([^*\n]+?)\*(?![*\w])/g, '$1<em>$2</em>');
+    // Runbook v3 A4: glossary terms in the tutor's message are underlined; a tap shows the definition.
+    if (typeof Glossary !== 'undefined' && Glossary.GLOSSARY_V3) Glossary.markupContainer(el);
   }
 
   function _inlineDiagramEl(id) {

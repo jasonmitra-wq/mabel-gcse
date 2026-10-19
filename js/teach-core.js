@@ -126,6 +126,12 @@ function create(env) {
   // The diagram is shown inside the conversation (js/teach.js
   // TEACH_INLINE_DIAGRAMS); the tutor is told about it only when it is.
   const INLINE_DIAGRAMS = FIRST_TIME && env.inlineDiagrams !== false;
+  // Runbook v3 task A3 (brief docs/briefs/2026-10-19-lesson-rewrite-v3.md), on
+  // by default. A key point's brief also carries its examBox (exact definitions
+  // and equations) and workedExamples, when the lesson has them. No other tutor
+  // change. create({ call, v3Fields: false }) keeps the old brief; a lesson
+  // without these fields gets the old brief either way.
+  const V3_FIELDS = env.v3Fields !== false;
   const STUDENT_NAME = env.studentName || 'Mabel';   // used only to filter it out of replies
   const WHO     = FIX23 ? 'the student' : 'Mabel';   // how prompts refer to her
   const WHO_CAP = FIX23 ? 'The student' : 'Mabel';
@@ -321,8 +327,26 @@ function create(env) {
     return [
       `Key point: ${point.heading}`,
       `Content: ${_stripHtml(point.content)}`,
-      terms ? `Key terms: ${terms}` : ''
+      terms ? `Key terms: ${terms}` : '',
+      ...(V3_FIELDS ? [_examBoxLine(point.examBox), _workedExampleLines(point.workedExamples)] : []),
     ].filter(Boolean).join('\n');
+  }
+
+  // V3_FIELDS: the exam box and worked examples, as plain lines.
+  function _examBoxLine(box) {
+    if (!box) return '';
+    const defs = (box.definitions || []).map(_stripHtml).filter(Boolean);
+    const eqs = (box.equations || []).map(e => {
+      const units = (e.units || []).map(u => `${u.symbol} = ${u.quantity} in ${u.unit} (${u.unitSymbol})`).join(', ');
+      return `${e.words}; ${e.symbols}${units ? `; ${units}` : ''}`;
+    });
+    const parts = [...defs.map(d => `Definition: ${d}`), ...eqs.map(q => `Equation: ${q}`)];
+    return parts.length ? `Exam box (exact wording the exam expects): ${parts.join(' | ')}` : '';
+  }
+  function _workedExampleLines(list) {
+    return (list || []).map((x, i) =>
+      `Worked example ${i + 1}: ${_stripHtml(x.question)} Steps: ${(x.steps || []).map(s => _stripHtml(s.text)).join(' / ')}`
+    ).join('\n');
   }
 
   // Per point, per key term:
@@ -1816,6 +1840,8 @@ function create(env) {
     content: kp.content,
     keyTerms: kp.keyTerms || [],
     ...(FLOW_FIX ? { writeBullets: kp.writeBullets || [] } : {}),
+    ...(V3_FIELDS && kp.examBox ? { examBox: kp.examBox } : {}),
+    ...(V3_FIELDS && kp.workedExamples ? { workedExamples: kp.workedExamples } : {}),
     diagram: kp.diagram || null,
     diagramCaption: kp.diagramCaption || '',
     diagramExamTip: !!kp.diagramExamTip,

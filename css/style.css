@@ -1086,3 +1086,45 @@ body::before {
   .ui-fix .hdr-btn { padding: 0.2rem 0.4rem; }
   .ui-fix #hdrStage, .ui-fix #hdrTopic, .ui-fix #hdrScore { display: none !important; }
 }
+
+/* ── Lesson shape v3 (runbook v3 A3/A4): one slide per key point ── */
+dfn { font-style: normal; font-weight: 700; color: var(--teal); }
+.v3-exambox {
+  border: 1.5px solid rgba(107,189,227,0.35); background: rgba(107,189,227,0.06);
+  border-radius: 10px; padding: 0.8rem 1rem; margin: 1rem 0;
+}
+.v3-exambox-title, .v3-bullets-title, .v3-worked-title {
+  display: flex; align-items: center; gap: 0.45rem;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.55rem;
+}
+.v3-exambox-title { color: var(--blue); }
+.v3-def { font-size: 1.02rem; line-height: 1.6; margin: 0 0 0.5rem; }
+.v3-eq { margin: 0.4rem 0 0.6rem; }
+.v3-eq-words { font-size: 0.98rem; color: var(--text); }
+.v3-eq-symbols {
+  font-family: 'Courier New', monospace; font-size: 1.3rem; font-weight: 700; color: var(--blue);
+  margin: 0.25rem 0; overflow-wrap: anywhere;
+}
+.v3-eq-units { list-style: none; padding: 0; margin: 0; font-size: 0.92rem; color: var(--muted); line-height: 1.6; }
+.v3-bullets { margin: 1rem 0; }
+.v3-bullets-title { color: var(--amber); }
+.v3-bullets ul { margin: 0; padding-left: 1.2rem; }
+.v3-bullets li { font-size: 1.05rem; line-height: 1.6; margin-bottom: 0.35rem; }
+.v3-worked { border-left: 3px solid var(--teal); background: rgba(78,207,170,0.06); border-radius: 0 10px 10px 0; padding: 0.75rem 1rem; margin: 1rem 0; }
+.v3-worked-title { color: var(--teal); }
+.v3-worked-q { font-size: 1.02rem; line-height: 1.6; margin: 0 0 0.5rem; }
+.v3-worked-steps { margin: 0 0 0.6rem; padding-left: 1.3rem; }
+.v3-worked-step { font-size: 1rem; line-height: 1.6; margin-bottom: 0.3rem; }
+.v3-full { margin: 1rem 0 0.5rem; border-top: 1px solid var(--border2); padding-top: 0.75rem; }
+.v3-full summary { cursor: pointer; color: var(--amber); font-weight: 600; font-size: 1rem; padding: 0.35rem 0; }
+.v3-full-body { margin-top: 0.75rem; }
+.glossary-from { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
+.prereq-card { border: 1.5px solid var(--border2); background: var(--s1); border-radius: 12px; padding: 1.1rem; margin: 1.5rem 0; }
+.prereq-card h3 { margin: 0 0 0.6rem; font-size: 1.2rem; }
+.prereq-card ul { list-style: none; padding: 0; margin: 0 0 1rem; }
+.prereq-card li { line-height: 1.55; margin-bottom: 0.5rem; font-size: 1rem; }
+.prereq-card .btn { margin: 0.25rem 0.4rem 0.25rem 0; }
+.words-topic { margin: 1.25rem 0 0.5rem; font-size: 1.1rem; }
+.words-list { list-style: none; padding: 0; margin: 0; }
+.words-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); line-height: 1.5; }
+.words-list .words-lesson { background: none; border: none; color: var(--amber); font: inherit; font-size: 0.85rem; text-decoration: underline; cursor: pointer; padding: 0; }

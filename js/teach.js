@@ -813,7 +813,9 @@ const Teach = (() => {
     _pushEntry({ role: 'note', text: _shortHeading(_points[index].heading) });
     if (_core.PILOT_FIX) {
       const r = _core._pilotJump(index, reply);
-      _pushEntry({ role: 'assistant', text: r.text, pt: index, opening: true, ...r.extra });
+      const { before, ...extra } = r.extra;
+      (before || []).forEach(text => _pushEntry({ role: 'assistant', text, pt: index }));
+      _pushEntry({ role: 'assistant', text: r.text, pt: index, opening: true, ...extra });
       return;
     }
     const diagram = TEACH_INLINE_DIAGRAMS ? _core._inlineDiagram(index) : null;
@@ -898,7 +900,11 @@ const Teach = (() => {
       // so she can reply to it.
       if (decision.kind === 'free' && _state.complete && _state.wrapOffered && !reply.includes('?')) _state.farewell = true;
       if (recap) _pushEntry({ role: 'recap', rid: _rid(), pt: decision.idx, lines: recap, done: false });
-      _pushEntry(_replyEntry(reply, decision));
+      // PILOT_FIX (h): a word explained first, each in its own message, before the reply.
+      const entry = _replyEntry(reply, decision);
+      (entry.before || []).forEach(text => _pushEntry({ role: 'assistant', text, ...(entry.pt != null ? { pt: entry.pt } : {}) }));
+      delete entry.before;
+      _pushEntry(entry);
       toSlides = decision.kind === 'slides';   // RESPECT_EXIT: she chose the slides
       if (_core.PILOT_FIX && _state.pilot && _state.pilot.finished && Store.markFinished) Store.markFinished(_subtopicId);
     } catch {

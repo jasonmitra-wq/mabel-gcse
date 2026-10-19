@@ -1,0 +1,211 @@
+# Site test: p2-current-voltage (lesson, 2026-10-19)
+
+**FAIL** · cost $0.8342 (38 tool calls, 132 calls from the site; tutor claude-sonnet-5-5 $0.5794)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "The tool logged no tutor reply within 120 s after her correct statement 'current times seconds equals charge'. Screenshot 19 does show a canned 'Here is a worked example' message with a new example (0.5 A for 2 minutes). Either way, her correct Q = I × t idea was never confirmed.",
+      "step": "S37"
+    },
+    {
+      "what": "The question is garbled ('what is the size of the current in that wire counted in?'). It mixes asking for a size with asking for a unit, so it cannot be answered.",
+      "step": "T2"
+    },
+    {
+      "what": "The tutor says 'ask away about your phone' and then asks a maths question instead of letting her ask.",
+      "step": "T7"
+    },
+    {
+      "what": "The tutor said goodbye, then answered 'cheers m8 see u' with 'This bit is a tricky one... want me to tell you the rest?'. Then, after 'nah im logging off soz', it asked another question. Sign-off is ignored.",
+      "step": "T13–T15"
+    },
+    {
+      "what": "The tutor said goodbye a second time and kept teaching. After 'ok cheers ill be back later' it lectured on.",
+      "step": "T18–T19, T29"
+    },
+    {
+      "what": "Her answer 'it just stops moving' got no feedback. The tutor jumped to 'Here's the rest of this one' and then sent disjointed fragments that ask nothing.",
+      "step": "T21–T23"
+    },
+    {
+      "what": "The text talks about a switch, but the diagram shown is the ammeter circuit, before ammeters have been explained.",
+      "step": "T26"
+    },
+    {
+      "what": "'To find it, multiply the current by the time' says 'it' without naming charge. Q = I × t and its units are never stated.",
+      "step": "T35"
+    },
+    {
+      "what": "The progress counter stays at '0/7 covered' and the Key Terms box stays empty for the whole lesson, even though many points were finished.",
+      "step": "T6 onward"
+    },
+    {
+      "what": "The message says 'Tap \"Show the next step\"' but the button is labelled 'Show the first step'.",
+      "step": "T36"
+    },
+    {
+      "what": "automatic check failed: tutor replies",
+      "step": "no reply after S37"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "'Required practical' appears twice in the Jump To list with no way to tell the two apart.",
+      "screenshot": "05-ai-lesson-opening-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The sidebar diagram thumbnail is far too small to read; its labels are illegible.",
+      "screenshot": "14-diagram-26-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The '← Home' button and 'What are you revising?' title are cut off under the sticky header.",
+      "screenshot": "02-subjects-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The lesson title is truncated to 'Current and potential difference ...'.",
+      "screenshot": "06-exchange-3-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The Jump To panel takes up most of the screen, pushing the first tutor message and the input box to the bottom.",
+      "screenshot": "05-ai-lesson-opening-phone.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": {
+    "turn": "S15",
+    "quote": "nah im logging off soz",
+    "why": "She said she was leaving three times, and the tutor kept firing questions at her after saying bye."
+  },
+  "fixes": [
+    {
+      "target": "tutor behaviour: sign-off handling",
+      "change": "Once she signals leaving or the tutor has said goodbye, send one goodbye and ask nothing more. On her next message, resume with 'Welcome back' instead of 'This bit is a tricky one'."
+    },
+    {
+      "target": "p2-current-voltage charge-flow key point (T35/T36)",
+      "change": "State 'charge Q (coulombs) = current I (amps) × time t (seconds)' before 'To find it'. Use matching button text ('Show the first step')."
+    },
+    {
+      "target": "tutor behaviour: student answers and correct restatements",
+      "change": "Always give right/wrong feedback on her answer before moving on. At S37, reply 'Yes, Q = I × t' before offering another example. Never time out silently."
+    },
+    {
+      "target": "lesson progress UI",
+      "change": "Update the 'x/7 covered' counter and fill Key Terms as each point finishes. Rename the duplicate 'Required practical' entries to their specific titles."
+    },
+    {
+      "target": "p2-current-voltage content: T2 question and T26 diagram",
+      "change": "Rewrite T2 to 'what is the current?' or 'what unit is current measured in?'. Show the one-loop switch diagram with the switch text, and save the ammeter diagram until after the ammeter is explained."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Lesson p2-current-voltage (Physics › Electricity › Current, potential difference and resistance).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p2-phone.png and 04-lessons-p2-laptop.png] lessons-P2
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! Let's start with something from everyday life: when you press the button on a torch and the light comes on, what do you think is happening inside it to make that happen?
+    [screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (offtopic): nah im so hungry rn, can we hurry up lol
+    T1: Fair enough, we'll be quick. In a torch, tiny particles in the wire carry electric charge, and the amount of charge passing a point is called the charge flow, Q, counted in coulombs (C). If the torch's wire had a gap in it, what would happen to the light?
+    S2 (try): the light would go off innit
+    T2: Yes — a gap in the wire stops the light. Now the fast bit: a flow of charge is called an electric current, and its size is how much charge passes a point each second. If 2 coulombs pass a point every second, what is the size of the current in that wire counted in?
+    S3 (bored): wait whats electric current
+    T3: Electric current is just charge on the move. It's how much charge passes a point in the wire every second, like counting how many runners cross a line on a track each second. If 2 coulombs pass a point every second, how much charge passes that point in 1 second?
+    [screenshot 06-exchange-3-phone.png and 06-exchange-3-laptop.png] exchange-3
+    S4 (wrong): like 4 coulombs?
+    T4: Not quite: if 2 coulombs pass each second, then 2 coulombs pass in 1 second. No hurry, that's the whole idea! Current is measured in amperes, or amps (A), and 1 ampere just means 1 coulomb passing each second. So if 3 coulombs pass a point every second, how many amperes is the current?
+    S5 (bored): whats ampere mean tho
+    T5: Ampere is the unit we count current in, like metres for distance. 1 ampere means 1 coulomb of charge passing a point each second. So if 3 coulombs pass a point every second, how many amperes is the current?
+    S6 (try): 3 amperes?
+    T6: Yes, 3 amperes is right: current is how much charge passes a point each second, so 3 coulombs every second means 3 amperes.
+    [screenshot 07-exchange-6-phone.png and 07-exchange-6-laptop.png] exchange-6
+    S7 (offtopic): sick can i ask u something bout my phone tho
+    T7: Yes, ask away about your phone, and I'll answer briefly, then we'll jump back in. Quick link first: a phone charger might carry 2 amperes, meaning 2 coulombs of charge passing each second. In 5 seconds, how many coulombs would pass?
+    S8 (wrong): um like 10 coulombs?
+    T8: Yes, 10 coulombs: 2 coulombs a second for 5 seconds. A complete loop is a closed circuit, and charge only flows round it if it includes a cell or battery.
+    S9 (wrong): whats a cell or battery mean
+    T9: A cell is the part that pushes charge round a circuit, and a battery is two or more cells joined together. So if a torch had a flat cell, what would be missing from its circuit?
+    [screenshot 08-exchange-9-phone.png and 08-exchange-9-laptop.png] exchange-9
+    S10 (minimal): whats a circuit
+    T10: A circuit is a complete loop of wire that charge can flow round, like a running track where you end up back where you started.
+    S11 (offtopic): so like a loop yeah ok but im proper tired rn
+    T11: That's fine, you can come back to this any time. Here's a short one: a closed circuit is a full loop, and charge only flows round it if a cell is in the loop too. Picture a torch with a complete loop of wire but no cell: what would the lamp do?
+    S12 (bored): huh?
+    T12: Sorry, let me say it simpler. A cell is what pushes the charge round the loop, so without one, nothing moves. Picture a torch with a flat cell: what would happen to the bulb?
+    [screenshot 09-exchange-12-phone.png and 09-exchange-12-laptop.png] exchange-12
+    S13 (offtopic): wait can we stop im actually dead tired lol
+    T13: No problem, thanks for sticking with it. Today you answered questions on electric current. Your place is saved, so we'll pick up right here next time. Bye for now!
+    S14 (wrong): yeah cheers m8 see u
+    T14: This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?
+    S15 (checkin-no): nah im logging off soz
+    T15: That's fine, go and eat, and come back to this lesson any time. One last bit for next time: a closed circuit is a complete loop, and charge only flows round it if it has a cell to push it. In a torch with a complete loop but no cell, what would the bulb do?
+    [screenshot 10-exchange-15-phone.png and 10-exchange-15-laptop.png] exchange-15
+    S16 (bored): this is long
+    T16: Sorry, that was too much. A torch needs a cell to push the charge round, even with a full loop of wire. If you take the cell out of the torch, what do you think happens to the bulb?
+    S17 (idk): idk lol
+    T17: That's okay, here's the answer: the bulb goes out, because the cell is what pushes the charge round the circuit, so without it nothing flows.
+    S18 (idk): ok cool cya
+    T18: No problem, thanks for sticking with it. Today you answered questions on electric current. Your place is saved, so we'll pick up right here next time. Bye for now!
+    [screenshot 11-exchange-18-phone.png and 11-exchange-18-laptop.png] exchange-18
+    S19 (wrong): wait one more thing tho
+    T19: Sure, go on. And here's the idea once more, short: a closed circuit is a full loop of wire, and charge only flows round it if there's a cell in the loop pushing it. So picture a torch with a full loop of wire but a cell that's been taken out.
+    S20 (try): the bulb goes off cuz theres no cell to push the charge
+    T20: Right: with no cell, nothing pushes the charge, so the bulb goes off. A closed circuit is a complete loop, and charge flows round it only if the loop also contains something to push it, like a cell. What happens to the charge in the rest of the loop?
+    S21 (try): it just stops moving i guess
+    T21: Here's the rest of this one. Every torch, phone and kettle runs on something moving through its wires. Turn on a torch and the bulb lights at once.
+    [screenshot 12-exchange-21-phone.png and 12-exchange-21-laptop.png] exchange-21
+    S22 (try): ok so like charge moves through the wires to make stuff light up
+    T22: You cannot see charge, but you can see what it does.
+    S23 (try): yeah that makes sense init
+    T23: That push is called a potential difference, and the next key point explains it.
+    S24 (try): whats potential difference mean
+    T24: Potential difference is the push that makes charge flow through a component. It's measured in volts (V), and you might also hear it called voltage. If a circuit has no push at all, what would happen to the charge?
+    [screenshot 13-exchange-24-phone.png and 13-exchange-24-laptop.png] exchange-24
+    S25 (try): itd just stay still innit
+    T25: Yes, with no push, the charge just stays still and nothing flows round the circuit.
+    S26 (try): ok got it so like push makes stuff work
+    T26: Break the loop anywhere and the flow stops everywhere. A switch does this on purpose: it opens a gap in the loop.
+    [diagram shown in the conversation under T26: "The same loop with an ammeter in it, measuring the current."]
+    [screenshot 14-diagram-26-phone.png and 14-diagram-26-laptop.png] diagram-26
+    S27 (idk): whats a switch
+    T27: A switch is a part that opens or closes a gap in the circuit, to stop or start the current. Think of the light switch on your wall. When you flick it off, what happens to the lamp?
+    [screenshot 15-exchange-27-phone.png and 15-exchange-27-laptop.png] exchange-27
+    S28 (offtopic): man im hungry ngl
+    T28: Fair enough, go grab a snack, you can come back to this lesson any time. The lamp goes off when the switch is flicked, because the gap stops anything flowing.
+    S29 (try): ok cheers ill be back later
+    T29: In a single loop, the current is the same at every point, because charge is not used up on the way round.
+    S30 (try): so like the charge just keeps going round same amount yeah
+    T30: So it does not matter where you put the ammeter.
+    [screenshot 16-exchange-30-phone.png and 16-exchange-30-laptop.png] exchange-30
+    S31 (minimal): whats ammeter
+    T31: An ammeter is a meter that measures current. It goes in the loop, in line with the component. Say there's a lamp in a loop, and you want to know the current through it. Where would you connect the ammeter?
+    S32 (idk): no idea lol
+    T32: That's fine, you'd connect the ammeter in series, which means in line with the part of the circuit you're measuring, so the charge has to flow through it.
+    S33 (try): whats in series mean
+    T33: In series means connected one after another in the same loop, so the same current flows through each. Picture a lamp and an ammeter joined one after the other in a single loop. What would you see on the ammeter if the loop had a gap in it?
+    [screenshot 17-exchange-33-phone.png and 17-exchange-33-laptop.png] exchange-33
+    S34 (try): it would show zero cuz nothings flowing
+    T34: Yes — zero is right, because a gap in the loop means no charge can flow round.
+    S35 (try): ok so gaps stop everything flowing got it
+    T35: To find it, multiply the current by the time in seconds.
+    S36 (wrong): wait multiply current by time? thats confusing lol
+    T36: Here is a worked example. Tap "Show the next step" to go through it.
+    [screenshot 18-exchange-36-phone.png and 18-exchange-36-laptop.png] exchange-36
+    S37 (wrong): so like current times seconds equals charge right
+    [no tutor reply within 120 s after S37]
+    [check] BROKEN: tutor replies — no reply after S37
+    [screenshot 19-end-phone.png and 19-end-laptop.png] end

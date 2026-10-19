@@ -315,3 +315,10 @@ What to try:
 
 - F12 (keyPoints[0..2] diagram and diagramCaption changed; lesson-level diagrams list not updated): rejected, as F1 and F7 for p2-current-voltage. The v3.1 shape makes each key point's diagram its last picture; old views lose the earlier pictures of a sequence. For the planning chat: whether v3.1 lessons should list their pictures in "diagrams".
 - Note for the planning chat (F1): the symbols chart needs the fuse symbol (data/spec 4.2.1.1 lists it, or the old chart had it); the lesson now names only its symbol, with no function.
+
+## Brief v3.1 site tests (task A8, 2026-10-19), not fixed
+
+Breakage-only fix round done (P2-FIX-LOG.md). Left, as frozen tutor behaviour or existing layout:
+- Sign-offs the RESPECT_EXIT patterns miss ("cheers m8 see u", "nah im logging off soz", "ok cheers ill be back later") are taken as answers (p2-current-voltage-3 T13–T19).
+- Choosing "Switch to the slides" opens the slides with no chat reply; the site tester counts this as no reply (p2-components-3 S45).
+- The Silver-the-cat profile popup covers the slide buttons on a phone; the sticky header covers page tops; the side-column thumbnail is small.

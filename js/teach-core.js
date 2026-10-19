@@ -1527,7 +1527,8 @@ function create(env) {
 
   // The question at the end of the tutor's last reply, if it asked one.
   function _lastQuestion() {
-    const last = [...(_state.transcript || [])].reverse().find(t => t.role === 'assistant');
+    // PILOT_FIX: a message with no question (a told sentence, a word explained) is passed over.
+    const last = [...(_state.transcript || [])].reverse().find(t => t.role === 'assistant' && (!PILOT_FIX || /\?/.test(t.text || '')));
     if (!last) return null;
     const qs = _stripMarkdown(last.text).match(/[^.!?]*\?/g) || [];
     return qs.length ? { said: last.text, q: qs[qs.length - 1].trim() } : null;
@@ -1888,6 +1889,7 @@ function create(env) {
   const SAME_AMOUNT = /\b(by the same amount|the same amount each time|go(es)? up (by )?the same|goes up evenly)\b/i;
   const ASKS = /^\W*(what|whats|what's|wat|wot|why|how|where|when|who|wdym|huh|eh)\b|\bwhat (does|do|is|are)\b.*\bmean|\b(don'?t|do not) (get|understand)|\bi'?m (confused|lost)\b|^\W*confused\b|makes no sense/i;
   const NOT_A_QUESTION = /^\W*(is it|it'?s|its|it is|the|a|an|because|cos|so|i think)\b/i;
+  const ASKS_MORE = /\?\s*$|\bwhat (do )?you want( me to do)?\b|\bwhat do i (do|say)\b/i;
 
   // Set by the page (or a tester): the subject glossary, which lessons she has
   // opened, the recall questions from the lesson before, this lesson's id.
@@ -1987,6 +1989,7 @@ function create(env) {
       if (j !== -1 && !P.sent[idx][j]) break;    // pictures come in order: a later one waits for this one
       P.shown.push(pic.diagram);
       out.push({ diagram: pic.diagram, caption: pic.caption || '', labels: pic.labels || [] });
+      break;   // one picture per message: the next one comes with a later message
     }
     return out;
   }
@@ -2047,10 +2050,7 @@ function create(env) {
     const unknown = _pilotUnknownTerms(t, extra.basic || _lastBasicTag).slice(0, 2);
     if (!unknown.length) return { text: t, extra };
     unknown.forEach(e => P.known.push(e.key));
-    const held = { t: 'msg', text: t, entry: extra, pending: P.pending };
-    P.pending = null;
-    P.queue.unshift(...unknown.slice(1).map(e => ({ t: 'msg', text: _pilotDefLine(e), entry: {} })), held);
-    return { text: _pilotDefLine(unknown[0]), extra: {} };
+    return { text: t, extra: { ...extra, before: unknown.map(_pilotDefLine) } };
   }
 
   // The reply this turn: Next when more steps wait and nothing else is asked.
@@ -2068,8 +2068,12 @@ function create(env) {
   // Her question, the way she asked it (not a tentative answer such as "is it the volts?").
   function _pilotAsks(text) {
     const t = String(text || '').trim();
-    if (!t || _wantsTelling(t) || _wantsSkip(t) || NOT_A_QUESTION.test(t)) return false;
-    return ASKS.test(t) || _saysConfused(t) || _asksMeaning(t);
+    if (!t || _wantsTelling(t) || _wantsSkip(t)) return false;
+    // A short tentative answer ("is it the volts?", "the potential difference?") is an answer.
+    if (NOT_A_QUESTION.test(t) && _wordCount(t) <= 5) return false;
+    if (/\bwhat (do )?you want( me to do)?\b|\bwhat do i (do|say)\b/i.test(t)) return true;
+    if (/\?\s*$/.test(t) && _wordCount(t) >= 5) return true;
+    return !NOT_A_QUESTION.test(t) && (ASKS.test(t) || _saysConfused(t) || _asksMeaning(t));
   }
 
   // ── Questions in code (readiness, mixed, recall, quiz) ──
@@ -2088,11 +2092,12 @@ function create(env) {
     if (m) { const n = /\d/.test(m[1]) ? Number(m[1]) - 1 : m[1].charCodeAt(0) - 97; return n < opts.length ? n : -1; }
     const ts = new Set(_stems(t));
     const nums = (t.match(/\d+(\.\d+)?/g) || []);
-    const scores = opts.map(o => {
-      const os = [...new Set(_stems(o))];
+    const stemSets = opts.map(o => new Set(_stems(o)));
+    const scores = opts.map((o, k) => {
+      const own = [...stemSets[k]].filter(w => !stemSets.some((x, m) => m !== k && x.has(w)));
       const on = o.match(/\d+(\.\d+)?/g) || [];
       if (on.length && nums.length && on[0] === nums[0]) return 1;
-      return os.length ? os.filter(w => ts.has(w)).length / os.length : 0;
+      return own.length ? own.filter(w => ts.has(w)).length / own.length : 0;
     });
     const best = Math.max(...scores);
     return best >= 0.5 && scores.filter(s => s === best).length === 1 ? scores.indexOf(best) : -1;
@@ -2158,6 +2163,8 @@ function create(env) {
       if (P.sent[idx][j]) { cur = null; return; }
       if (cur && cur.js[cur.js.length - 1] === j - 1 && _wordCount(cur.text) < 15 && _wordCount(cur.text) + _wordCount(x) <= 30) { cur.js.push(j); cur.text += ' ' + x; return; }
       cur = { t: 'tell', idx, js: [j], text: x };
+      // A sentence that leans on the one before ("To find it, …", "So …") brings it along.
+      if (j > 0 && /^(it|its|it's|this|that|these|those|they|so|to find it|to do this)\b/i.test(x)) cur.text = `${s[j - 1]} ${x}`;
       out.push(cur);
     });
     // The lesson's own words, without the gaps its HTML tags left (" closed circuit .").
@@ -2236,7 +2243,8 @@ function create(env) {
         const eq = x.equation;
         const can = PracticeLib && PracticeLib.has(eq);
         if (can) P.pending = { t: 'after-try', eq };
-        return _pilotOut(`Here is a worked example. Tap "Show the next step" to go through it.`,
+        const n = (p.workedExamples || []).length;
+        return _pilotOut(`Worked example${n > 1 ? ` ${s.j + 1} of ${n}` : ''}: ${_stripHtml(x.question)} Tap the button under it to see each step.`,
           { pt: s.idx, card: { type: 'worked', question: x.question, steps: (x.steps || []).map(st => st.text) }, ...(can ? { choices: ['Try another', 'Next'] } : {}) }, 'pilot', s.idx);
       }
       case 'widget':

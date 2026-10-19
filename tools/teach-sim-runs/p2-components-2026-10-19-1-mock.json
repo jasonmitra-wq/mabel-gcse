@@ -6,42 +6,54 @@
     {
       "n": 0,
       "student": null,
-      "kind": "opening (what she knows)",
+      "kind": "recall",
       "teachIndex": null,
-      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "reply": "From the last lesson, question 1 of 3: What is electric current?",
       "flags": []
     },
     {
       "n": 1,
       "student": "I think it's Circuit symbol, The standard drawing for a component in a circuit diagram.",
       "studentType": "correct",
-      "kind": "start",
-      "teachIndex": 0,
-      "point": 0,
-      "reply": "Right. Next is Circuit symbol. What word describes how the particles are arranged?",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite: it's \"The rate of flow of charge\". Current is how much charge passes a point each second.",
       "recap": null,
+      "choices": [
+        "Next"
+      ],
       "flags": []
     },
     {
       "n": 2,
       "student": "is it something to do with magnets and electricity",
       "studentType": "wrong",
-      "kind": "retry",
-      "teachIndex": 0,
-      "point": 0,
-      "reply": "Right. Next is Circuit symbol. What word describes how the particles are arranged?",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "From the last lesson, question 2 of 3: At constant temperature, what happens to a wire's resistance as its length increases?",
       "recap": null,
+      "choices": [
+        "It decreases",
+        "It falls to zero",
+        "It stays the same",
+        "It increases"
+      ],
       "flags": []
     },
     {
       "n": 3,
       "student": "idk",
       "studentType": "idk",
-      "kind": "fact",
-      "teachIndex": 0,
-      "point": 0,
-      "reply": "Right. Next is Circuit diagram. What word describes how the particles are arranged?",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite: it's \"It increases\". A longer wire has a bigger resistance.",
       "recap": null,
+      "choices": [
+        "Next"
+      ],
       "flags": []
     },
     {
@@ -62,7 +74,24 @@
       "kind": "pilot",
       "teachIndex": null,
       "point": null,
-      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "reply": "From the last lesson, question 3 of 3: What does the I-V characteristic of an ohmic conductor look like?",
+      "recap": null,
+      "choices": [
+        "A curve that gets flatter",
+        "A flat line along the bottom",
+        "Flat on one side, steep on the other",
+        "A straight line through the origin"
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "I think it's Circuit symbol, The standard drawing for a component in a circuit diagram.",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite: it's \"A straight line through the origin\". Its current is directly proportional to the potential difference.",
       "recap": null,
       "choices": [
         "Next"
@@ -70,24 +99,13 @@
       "flags": []
     },
     {
-      "n": 6,
-      "student": "I think it's Circuit diagram, A drawing of a circuit made from circuit symbols joined",
-      "studentType": "correct",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 0,
-      "reply": "Right. Next is Circuit diagram. What word describes how the particles are arranged?",
-      "recap": null,
-      "flags": []
-    },
-    {
       "n": 7,
       "student": "is it something to do with magnets and electricity",
       "studentType": "wrong",
-      "kind": "retry",
-      "teachIndex": 0,
+      "kind": "pilot",
+      "teachIndex": null,
       "point": 0,
-      "reply": "Right. Next is Circuit diagram. What word describes how the particles are arranged?",
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
       "recap": null,
       "flags": []
     },
@@ -95,26 +113,15 @@
       "n": 8,
       "student": "idk",
       "studentType": "idk",
-      "kind": "checkin",
-      "teachIndex": null,
+      "kind": "start",
+      "teachIndex": 0,
       "point": 0,
-      "reply": "This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?",
+      "reply": "Right. Next is Circuit symbol. What word describes how the particles are arranged?",
       "recap": null,
       "flags": []
     },
     {
       "n": 9,
-      "student": "no",
-      "studentType": "no",
-      "kind": "fact",
-      "teachIndex": 0,
-      "point": 0,
-      "reply": "Right. Next is Circuit diagram. What word describes how the particles are arranged?",
-      "recap": null,
-      "flags": []
-    },
-    {
-      "n": 10,
       "student": "what's your favourite football team",
       "studentType": "offtopic",
       "kind": "pilot",
@@ -125,45 +132,9 @@
       "flags": []
     },
     {
-      "n": 11,
+      "n": 10,
       "student": "just give me the answer",
       "studentType": "give",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": null,
-      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
-      "recap": null,
-      "choices": [
-        "Next"
-      ],
-      "flags": []
-    },
-    {
-      "n": 12,
-      "student": "I think it's Circuit diagram, A drawing of a circuit made from circuit symbols joined",
-      "studentType": "correct",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 0,
-      "reply": "Right. Next is Circuit diagram. What word describes how the particles are arranged?",
-      "recap": null,
-      "flags": []
-    },
-    {
-      "n": 13,
-      "student": "is it something to do with magnets and electricity",
-      "studentType": "wrong",
-      "kind": "retry",
-      "teachIndex": 0,
-      "point": 0,
-      "reply": "Right. Next is Circuit diagram. What word describes how the particles are arranged?",
-      "recap": null,
-      "flags": []
-    },
-    {
-      "n": 14,
-      "student": "idk",
-      "studentType": "idk",
       "kind": "pilot",
       "teachIndex": null,
       "point": 0,
@@ -175,38 +146,13 @@
       "flags": []
     },
     {
-      "n": 15,
-      "student": "what's your favourite football team",
-      "studentType": "offtopic",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 0,
-      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
-      "recap": null,
-      "flags": []
-    },
-    {
-      "n": 16,
-      "student": "just give me the answer",
-      "studentType": "give",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": null,
-      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
-      "recap": null,
-      "choices": [
-        "Next"
-      ],
-      "flags": []
-    },
-    {
-      "n": 17,
+      "n": 11,
       "student": "I think it's Circuit symbol, The standard drawing for a component in a circuit diagram.",
       "studentType": "correct",
       "kind": "pilot",
       "teachIndex": null,
       "point": 0,
-      "reply": "These shapes are circuit symbols, and a drawing made from them is a circuit diagram.",
+      "reply": "Instead of drawing a real lamp or meter, they use simple shapes that everyone agrees on. These shapes are circuit symbols, and a drawing made from them is a circuit diagram.",
       "recap": null,
       "choices": [
         "Next"
@@ -214,7 +160,7 @@
       "flags": []
     },
     {
-      "n": 18,
+      "n": 12,
       "student": "is it something to do with magnets and electricity",
       "studentType": "wrong",
       "kind": "pilot",
@@ -228,7 +174,7 @@
       "flags": []
     },
     {
-      "n": 19,
+      "n": 13,
       "student": "idk",
       "studentType": "idk",
       "kind": "pilot",
@@ -242,7 +188,7 @@
       "flags": []
     },
     {
-      "n": 20,
+      "n": 14,
       "student": "what's your favourite football team",
       "studentType": "offtopic",
       "kind": "pilot",
@@ -253,7 +199,7 @@
       "flags": []
     },
     {
-      "n": 21,
+      "n": 15,
       "student": "just give me the answer",
       "studentType": "give",
       "kind": "pilot",
@@ -267,7 +213,7 @@
       "flags": []
     },
     {
-      "n": 22,
+      "n": 16,
       "student": "I think it's Circuit symbol, The standard drawing for a component in a circuit diagram.",
       "studentType": "correct",
       "kind": "pilot",
@@ -278,10 +224,13 @@
       "choices": [
         "Next"
       ],
+      "pictures": [
+        "Circuit symbols: cell, battery, switches, lamp, resistor and the two meters."
+      ],
       "flags": []
     },
     {
-      "n": 23,
+      "n": 17,
       "student": "is it something to do with magnets and electricity",
       "studentType": "wrong",
       "kind": "pilot",
@@ -295,7 +244,7 @@
       "flags": []
     },
     {
-      "n": 24,
+      "n": 18,
       "student": "idk",
       "studentType": "idk",
       "kind": "pilot",
@@ -309,7 +258,7 @@
       "flags": []
     },
     {
-      "n": 25,
+      "n": 19,
       "student": "what's your favourite football team",
       "studentType": "offtopic",
       "kind": "pilot",
@@ -320,7 +269,7 @@
       "flags": []
     },
     {
-      "n": 26,
+      "n": 20,
       "student": "just give me the answer",
       "studentType": "give",
       "kind": "pilot",
@@ -334,7 +283,7 @@
       "flags": []
     },
     {
-      "n": 27,
+      "n": 21,
       "student": "I think it's Circuit symbol, The standard drawing for a component in a circuit diagram.",
       "studentType": "correct",
       "kind": "pilot",
@@ -348,21 +297,24 @@
       "flags": []
     },
     {
-      "n": 28,
+      "n": 22,
       "student": "is it something to do with magnets and electricity",
       "studentType": "wrong",
       "kind": "pilot",
       "teachIndex": null,
       "point": 0,
-      "reply": "The chart also shows a fuse: a rectangle with a line through it.",
+      "reply": "The chart also shows the symbol for a fuse: a rectangle with a line through it.",
       "recap": null,
       "choices": [
         "Next"
       ],
+      "pictures": [
+        "More symbols: diode, LED, variable resistor and fuse."
+      ],
       "flags": []
     },
     {
-      "n": 29,
+      "n": 23,
       "student": "idk",
       "studentType": "idk",
       "kind": "pilot",
@@ -376,7 +328,7 @@
       "flags": []
     },
     {
-      "n": 30,
+      "n": 24,
       "student": "what's your favourite football team",
       "studentType": "offtopic",
       "kind": "pilot",
@@ -387,7 +339,7 @@
       "flags": []
     },
     {
-      "n": 31,
+      "n": 25,
       "student": "just give me the answer",
       "studentType": "give",
       "kind": "pilot",
@@ -401,7 +353,7 @@
       "flags": []
     },
     {
-      "n": 32,
+      "n": 26,
       "student": "I think it's Circuit symbol, The standard drawing for a component in a circuit diagram.",
       "studentType": "correct",
       "kind": "pilot",
@@ -415,7 +367,7 @@
       "flags": []
     },
     {
-      "n": 33,
+      "n": 27,
       "student": "is it something to do with magnets and electricity",
       "studentType": "wrong",
       "kind": "pilot",
@@ -433,9 +385,121 @@
       "flags": []
     },
     {
-      "n": 34,
+      "n": 28,
       "student": "idk",
       "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "In one line: how do you read a circuit diagram?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 29,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 30,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: Which symbol is a long thin line next to a short thick one?",
+      "recap": null,
+      "choices": [
+        "A resistor",
+        "A lamp",
+        "A diode",
+        "A cell"
+      ],
+      "flags": []
+    },
+    {
+      "n": 31,
+      "student": "I think it's Circuit symbol, The standard drawing for a component in a circuit diagram.",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Not quite: it's \"A cell\". That is the cell symbol. Two or more cells joined together make a battery.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 32,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: What does a diode do?",
+      "recap": null,
+      "choices": [
+        "Its resistance increases as it gets hotter",
+        "It measures the current",
+        "Its resistance stays the same",
+        "It lets current flow in one direction only"
+      ],
+      "flags": []
+    },
+    {
+      "n": 33,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Not quite: it's \"It lets current flow in one direction only\". In the reverse direction its resistance is very high.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 34,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 35,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 36,
+      "student": "I think it's Circuit symbol, The standard drawing for a component in a circuit diagram.",
+      "studentType": "correct",
       "kind": "pilot",
       "teachIndex": null,
       "point": 1,
@@ -444,36 +508,23 @@
       "flags": []
     },
     {
-      "n": 35,
+      "n": 37,
       "student": "I think it's Thermistor, A component whose resistance decreases as its temperature increases.",
       "studentType": "correct",
       "kind": "fact",
       "teachIndex": 1,
       "point": 1,
-      "reply": "First, a word you'll need: **Sensor**. A part that detects a change around it, such as a thermistor (temperature) or an LDR (light).",
-      "recap": null,
-      "choices": [
-        "Next"
-      ],
-      "flags": [
-        "no question on a teaching turn"
-      ]
-    },
-    {
-      "n": 36,
-      "student": "is it something to do with magnets and electricity",
-      "studentType": "wrong",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 1,
       "reply": "Right. Next is Sensor. What word describes how the particles are arranged?",
       "recap": null,
+      "before": [
+        "First, a word you'll need: **Sensor**. A part that detects a change around it, such as a thermistor (temperature) or an LDR (light)."
+      ],
       "flags": []
     },
     {
-      "n": 37,
-      "student": "idk",
-      "studentType": "idk",
+      "n": 38,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
       "kind": "retry",
       "teachIndex": 1,
       "point": 1,
@@ -482,70 +533,21 @@
       "flags": []
     },
     {
-      "n": 38,
-      "student": "what's your favourite football team",
-      "studentType": "offtopic",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 1,
-      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
-      "recap": null,
-      "flags": []
-    },
-    {
       "n": 39,
-      "student": "just give me the answer",
-      "studentType": "give",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": null,
-      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is Thermostat. What word describes how the particles are arranged?",
       "recap": null,
-      "choices": [
-        "Next"
+      "before": [
+        "First, a word you'll need: **Thermostat**. A control that keeps a room or an oven at a set temperature."
       ],
       "flags": []
     },
     {
       "n": 40,
-      "student": "I think it's Sensor, A part that detects a change around it, such as",
-      "studentType": "correct",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 1,
-      "reply": "Right. Next is Sensor. What word describes how the particles are arranged?",
-      "recap": null,
-      "flags": []
-    },
-    {
-      "n": 41,
-      "student": "is it something to do with magnets and electricity",
-      "studentType": "wrong",
-      "kind": "fact",
-      "teachIndex": 1,
-      "point": 1,
-      "reply": "First, a word you'll need: **Thermostat**. A control that keeps a room or an oven at a set temperature.",
-      "recap": null,
-      "choices": [
-        "Next"
-      ],
-      "flags": [
-        "no question on a teaching turn"
-      ]
-    },
-    {
-      "n": 42,
-      "student": "idk",
-      "studentType": "idk",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 1,
-      "reply": "Right. Next is Thermostat. What word describes how the particles are arranged?",
-      "recap": null,
-      "flags": []
-    },
-    {
-      "n": 43,
       "student": "what's your favourite football team",
       "studentType": "offtopic",
       "kind": "pilot",
@@ -556,45 +558,9 @@
       "flags": []
     },
     {
-      "n": 44,
+      "n": 41,
       "student": "just give me the answer",
       "studentType": "give",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": null,
-      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
-      "recap": null,
-      "choices": [
-        "Next"
-      ],
-      "flags": []
-    },
-    {
-      "n": 45,
-      "student": "I think it's Thermostat, A control that keeps a room or an oven at",
-      "studentType": "correct",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 1,
-      "reply": "Right. Next is Thermostat. What word describes how the particles are arranged?",
-      "recap": null,
-      "flags": []
-    },
-    {
-      "n": 46,
-      "student": "is it something to do with magnets and electricity",
-      "studentType": "wrong",
-      "kind": "checkin",
-      "teachIndex": null,
-      "point": 1,
-      "reply": "Lots of people find this part hard, so that's fine. Do you want me to just tell you the rest of it?",
-      "recap": null,
-      "flags": []
-    },
-    {
-      "n": 47,
-      "student": "yes",
-      "studentType": "yes",
       "kind": "pilot",
       "teachIndex": null,
       "point": 1,
@@ -606,13 +572,13 @@
       "flags": []
     },
     {
-      "n": 48,
-      "student": "idk",
-      "studentType": "idk",
+      "n": 42,
+      "student": "I think it's Thermistor, A component whose resistance decreases as its temperature increases.",
+      "studentType": "correct",
       "kind": "pilot",
       "teachIndex": null,
       "point": 1,
-      "reply": "It changes as the current through them changes. The same is true of two components that react to the world around them.",
+      "reply": "In an earlier lesson you saw that a filament lamp and a diode do not keep a fixed resistance. It changes as the current through them changes.",
       "recap": null,
       "choices": [
         "Next"
@@ -620,7 +586,35 @@
       "flags": []
     },
     {
-      "n": 49,
+      "n": 43,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "The same is true of two components that react to the world around them. One is the thermistor, which reacts to temperature: how hot it is.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 44,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "The other is the light-dependent resistor (LDR), which reacts to light.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 45,
       "student": "what's your favourite football team",
       "studentType": "offtopic",
       "kind": "pilot",
@@ -631,7 +625,7 @@
       "flags": []
     },
     {
-      "n": 50,
+      "n": 46,
       "student": "just give me the answer",
       "studentType": "give",
       "kind": "pilot",
@@ -645,13 +639,13 @@
       "flags": []
     },
     {
-      "n": 51,
+      "n": 47,
       "student": "I think it's Thermistor, A component whose resistance decreases as its temperature increases.",
       "studentType": "correct",
       "kind": "pilot",
       "teachIndex": null,
       "point": 1,
-      "reply": "One is the thermistor, which reacts to temperature: how hot it is. The other is the light-dependent resistor (LDR), which reacts to light.",
+      "reply": "First, the thermistor. Its resistance depends on its temperature. As a thermistor gets warmer, its resistance goes down.",
       "recap": null,
       "choices": [
         "Next"
@@ -659,23 +653,9 @@
       "flags": []
     },
     {
-      "n": 52,
+      "n": 48,
       "student": "is it something to do with magnets and electricity",
       "studentType": "wrong",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 1,
-      "reply": "Its resistance depends on its temperature. As a thermistor gets warmer, its resistance goes down.",
-      "recap": null,
-      "choices": [
-        "Next"
-      ],
-      "flags": []
-    },
-    {
-      "n": 53,
-      "student": "idk",
-      "studentType": "idk",
       "kind": "pilot",
       "teachIndex": null,
       "point": 1,
@@ -684,10 +664,27 @@
       "choices": [
         "Next"
       ],
+      "pictures": [
+        "A thermistor: hotter means lower resistance."
+      ],
       "flags": []
     },
     {
-      "n": 54,
+      "n": 49,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "So for the same potential difference, a warm thermistor lets a bigger current through than a cold one. That makes a thermistor a good temperature sensor: a part that detects a change around it.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 50,
       "student": "what's your favourite football team",
       "studentType": "offtopic",
       "kind": "pilot",
@@ -698,7 +695,7 @@
       "flags": []
     },
     {
-      "n": 55,
+      "n": 51,
       "student": "just give me the answer",
       "studentType": "give",
       "kind": "pilot",
@@ -712,23 +709,9 @@
       "flags": []
     },
     {
-      "n": 56,
+      "n": 52,
       "student": "I think it's Thermistor, A component whose resistance decreases as its temperature increases.",
       "studentType": "correct",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 1,
-      "reply": "That makes a thermistor a good temperature sensor: a part that detects a change around it.",
-      "recap": null,
-      "choices": [
-        "Next"
-      ],
-      "flags": []
-    },
-    {
-      "n": 57,
-      "student": "is it something to do with magnets and electricity",
-      "studentType": "wrong",
       "kind": "pilot",
       "teachIndex": null,
       "point": 1,
@@ -740,9 +723,9 @@
       "flags": []
     },
     {
-      "n": 58,
-      "student": "idk",
-      "studentType": "idk",
+      "n": 53,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
       "kind": "pilot",
       "teachIndex": null,
       "point": 1,
@@ -754,7 +737,24 @@
       "flags": []
     },
     {
-      "n": 59,
+      "n": 54,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "When the room cools, the heater comes back on. Its symbol is a resistor with a diagonal line through it that ends in a short flat tail.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "The resistor symbol, and the thermistor symbol beside it."
+      ],
+      "flags": []
+    },
+    {
+      "n": 55,
       "student": "what's your favourite football team",
       "studentType": "offtopic",
       "kind": "pilot",
@@ -765,7 +765,7 @@
       "flags": []
     },
     {
-      "n": 60,
+      "n": 56,
       "student": "just give me the answer",
       "studentType": "give",
       "kind": "pilot",
@@ -779,23 +779,9 @@
       "flags": []
     },
     {
-      "n": 61,
+      "n": 57,
       "student": "I think it's Thermistor, A component whose resistance decreases as its temperature increases.",
       "studentType": "correct",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 1,
-      "reply": "When the room cools, the heater comes back on. Its symbol is a resistor with a diagonal line through it that ends in a short flat tail.",
-      "recap": null,
-      "choices": [
-        "Next"
-      ],
-      "flags": []
-    },
-    {
-      "n": 62,
-      "student": "is it something to do with magnets and electricity",
-      "studentType": "wrong",
       "kind": "pilot",
       "teachIndex": null,
       "point": 1,
@@ -811,7 +797,161 @@
       "flags": []
     },
     {
+      "n": 58,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "In one line: what does a thermistor do?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 59,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "No problem. A good line would say: as it gets hotter, its resistance decreases; it senses temperature; for example in a thermostat.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 60,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 61,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 62,
+      "student": "I think it's Thermistor, A component whose resistance decreases as its temperature increases.",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: A room warms up. What happens to the resistance of the thermistor in the thermostat?",
+      "recap": null,
+      "choices": [
+        "It stays the same",
+        "It falls to zero",
+        "It rises",
+        "It falls"
+      ],
+      "flags": []
+    },
+    {
       "n": 63,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Not quite: it's \"It falls\". A warmer thermistor has a lower resistance.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 64,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: Which symbol is a diode with two arrows coming out of it?",
+      "recap": null,
+      "choices": [
+        "A thermistor",
+        "A variable resistor",
+        "A fuse",
+        "An LED"
+      ],
+      "flags": []
+    },
+    {
+      "n": 65,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 66,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 67,
+      "student": "I think it's Thermistor, A component whose resistance decreases as its temperature increases.",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: Which symbol is a diode with two arrows coming out of it?",
+      "recap": null,
+      "choices": [
+        "A thermistor",
+        "A variable resistor",
+        "A fuse",
+        "An LED"
+      ],
+      "flags": []
+    },
+    {
+      "n": 68,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Not quite: it's \"An LED\". An LED is a diode that gives out light: the arrows show the light coming out.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 69,
       "student": "idk",
       "studentType": "idk",
       "kind": "pilot",
@@ -822,7 +962,7 @@
       "flags": []
     },
     {
-      "n": 64,
+      "n": 70,
       "student": "I think it's LDR (light-dependent resistor), A component whose resistance decreases as the light intensity on",
       "studentType": "correct",
       "kind": "pilot",
@@ -836,7 +976,7 @@
       "flags": []
     },
     {
-      "n": 65,
+      "n": 71,
       "student": "is it something to do with magnets and electricity",
       "studentType": "wrong",
       "kind": "pilot",
@@ -850,7 +990,7 @@
       "flags": []
     },
     {
-      "n": 66,
+      "n": 72,
       "student": "idk",
       "studentType": "idk",
       "kind": "pilot",
@@ -864,7 +1004,7 @@
       "flags": []
     },
     {
-      "n": 67,
+      "n": 73,
       "student": "what's your favourite football team",
       "studentType": "offtopic",
       "kind": "pilot",
@@ -875,7 +1015,7 @@
       "flags": []
     },
     {
-      "n": 68,
+      "n": 74,
       "student": "just give me the answer",
       "studentType": "give",
       "kind": "pilot",
@@ -889,7 +1029,7 @@
       "flags": []
     },
     {
-      "n": 69,
+      "n": 75,
       "student": "I think it's LDR (light-dependent resistor), A component whose resistance decreases as the light intensity on",
       "studentType": "correct",
       "kind": "pilot",
@@ -900,10 +1040,13 @@
       "choices": [
         "Next"
       ],
+      "pictures": [
+        "An LDR: brighter light means lower resistance."
+      ],
       "flags": []
     },
     {
-      "n": 70,
+      "n": 76,
       "student": "is it something to do with magnets and electricity",
       "studentType": "wrong",
       "kind": "pilot",
@@ -917,7 +1060,7 @@
       "flags": []
     },
     {
-      "n": 71,
+      "n": 77,
       "student": "idk",
       "studentType": "idk",
       "kind": "pilot",
@@ -931,7 +1074,7 @@
       "flags": []
     },
     {
-      "n": 72,
+      "n": 78,
       "student": "what's your favourite football team",
       "studentType": "offtopic",
       "kind": "pilot",
@@ -942,7 +1085,7 @@
       "flags": []
     },
     {
-      "n": 73,
+      "n": 79,
       "student": "just give me the answer",
       "studentType": "give",
       "kind": "pilot",
@@ -956,7 +1099,7 @@
       "flags": []
     },
     {
-      "n": 74,
+      "n": 80,
       "student": "I think it's LDR (light-dependent resistor), A component whose resistance decreases as the light intensity on",
       "studentType": "correct",
       "kind": "pilot",
@@ -970,7 +1113,7 @@
       "flags": []
     },
     {
-      "n": 75,
+      "n": 81,
       "student": "is it something to do with magnets and electricity",
       "studentType": "wrong",
       "kind": "pilot",
@@ -981,87 +1124,8 @@
       "choices": [
         "Next"
       ],
-      "flags": []
-    },
-    {
-      "n": 76,
-      "student": "idk",
-      "studentType": "idk",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 2,
-      "reply": "Copy those into your notes, then tap Next.",
-      "recap": [
-        "LDR: brighter light means lower resistance",
-        "Used to switch lights on when it gets dark",
-        "An LDR senses light; a thermistor senses temperature"
-      ],
-      "choices": [
-        "Next"
-      ],
-      "flags": []
-    },
-    {
-      "n": 77,
-      "student": "what's your favourite football team",
-      "studentType": "offtopic",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 2,
-      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
-      "recap": null,
-      "flags": []
-    },
-    {
-      "n": 78,
-      "student": "just give me the answer",
-      "studentType": "give",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": null,
-      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
-      "recap": null,
-      "choices": [
-        "Next"
-      ],
-      "flags": []
-    },
-    {
-      "n": 79,
-      "student": "I think it's LDR (light-dependent resistor), A component whose resistance decreases as the light intensity on",
-      "studentType": "correct",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 3,
-      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
-      "recap": null,
-      "flags": []
-    },
-    {
-      "n": 80,
-      "student": "it's about Drawing a circuit to test a sensor",
-      "studentType": "correct",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 3,
-      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
-      "recap": null,
-      "choices": [
-        "Next"
-      ],
-      "flags": []
-    },
-    {
-      "n": 81,
-      "student": "is it something to do with magnets and electricity",
-      "studentType": "wrong",
-      "kind": "pilot",
-      "teachIndex": null,
-      "point": 3,
-      "reply": "Exam questions often ask you to draw a circuit to find how a thermistor's or an LDR's resistance changes.",
-      "recap": null,
-      "choices": [
-        "Next"
+      "pictures": [
+        "The resistor symbol, and the LDR symbol beside it."
       ],
       "flags": []
     },
@@ -1071,12 +1135,13 @@
       "studentType": "idk",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
-      "reply": "You use the same idea as for any component: measure the current and the potential difference, then find the resistance.",
+      "point": 2,
+      "reply": "Try it: a thermistor or an LDR in a circuit with a 6 V battery. Slide the temperature or the light and watch the resistance and the current. Tap Next when you are done.",
       "recap": null,
       "choices": [
         "Next"
       ],
+      "card": "widget: sensor",
       "flags": []
     },
     {
@@ -1085,7 +1150,7 @@
       "studentType": "offtopic",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
+      "point": 2,
       "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
       "recap": null,
       "flags": []
@@ -1106,13 +1171,17 @@
     },
     {
       "n": 85,
-      "student": "it's about Drawing a circuit to test a sensor",
+      "student": "I think it's LDR (light-dependent resistor), A component whose resistance decreases as the light intensity on",
       "studentType": "correct",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
-      "reply": "Draw the cell, a switch and an ammeter in one loop with the thermistor, all in series.",
-      "recap": null,
+      "point": 2,
+      "reply": "Copy those into your notes, then tap Next.",
+      "recap": [
+        "LDR: brighter light means lower resistance",
+        "Used to switch lights on when it gets dark",
+        "An LDR senses light; a thermistor senses temperature"
+      ],
       "choices": [
         "Next"
       ],
@@ -1124,12 +1193,9 @@
       "studentType": "wrong",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
-      "reply": "Then draw a voltmeter in parallel across the thermistor, on its own short branch.",
+      "point": 2,
+      "reply": "In one line: what does an LDR do?",
       "recap": null,
-      "choices": [
-        "Next"
-      ],
       "flags": []
     },
     {
@@ -1138,8 +1204,8 @@
       "studentType": "idk",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
-      "reply": "Use the correct symbol for every part, with straight lines for the wires and no gaps where wires should join.",
+      "point": 2,
+      "reply": "No problem. A good line would say: brighter light means lower resistance; an LDR senses light; a thermistor senses temperature.",
       "recap": null,
       "choices": [
         "Next"
@@ -1152,7 +1218,7 @@
       "studentType": "offtopic",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
+      "point": 2,
       "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
       "recap": null,
       "flags": []
@@ -1173,15 +1239,18 @@
     },
     {
       "n": 90,
-      "student": "it's about Drawing a circuit to test a sensor",
+      "student": "I think it's LDR (light-dependent resistor), A component whose resistance decreases as the light intensity on",
       "studentType": "correct",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
-      "reply": "Put the thermistor in water and measure the water's temperature with a thermometer. Record the current and the potential difference, then change the temperature and repeat.",
+      "point": null,
+      "reply": "Quick question: It gets dark outside. What happens to the resistance of an LDR?",
       "recap": null,
       "choices": [
-        "Next"
+        "It falls",
+        "It falls to zero",
+        "It stays the same",
+        "It rises"
       ],
       "flags": []
     },
@@ -1191,8 +1260,8 @@
       "studentType": "wrong",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
-      "reply": "For an LDR, change the light intensity instead, for example by moving a lamp closer.",
+      "point": 2,
+      "reply": "Not quite: it's \"It rises\". In the dark, an LDR's resistance is high.",
       "recap": null,
       "choices": [
         "Next"
@@ -1205,11 +1274,14 @@
       "studentType": "idk",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
-      "reply": "At each reading, divide the potential difference by the current to get the resistance. Plot resistance against temperature, or against light intensity.",
+      "point": null,
+      "reply": "Quick question: What does a thermistor sense?",
       "recap": null,
       "choices": [
-        "Next"
+        "Light",
+        "Current",
+        "Sound",
+        "Temperature"
       ],
       "flags": []
     },
@@ -1219,7 +1291,7 @@
       "studentType": "offtopic",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
+      "point": 2,
       "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
       "recap": null,
       "flags": []
@@ -1240,15 +1312,18 @@
     },
     {
       "n": 95,
-      "student": "it's about Drawing a circuit to test a sensor",
+      "student": "I think it's LDR (light-dependent resistor), A component whose resistance decreases as the light intensity on",
       "studentType": "correct",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
-      "reply": "Both graphs are downward curves, not straight lines, so both components are non-linear.",
+      "point": null,
+      "reply": "Back to the question: What does a thermistor sense?",
       "recap": null,
       "choices": [
-        "Next"
+        "Light",
+        "Current",
+        "Sound",
+        "Temperature"
       ],
       "flags": []
     },
@@ -1258,14 +1333,12 @@
       "studentType": "wrong",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
-      "reply": "Here is a worked example. Tap \"Show the next step\" to go through it.",
+      "point": 2,
+      "reply": "Not quite: it's \"Temperature\". An LDR senses light. A thermistor senses temperature.",
       "recap": null,
       "choices": [
-        "Try another",
         "Next"
       ],
-      "card": "worked example: A thermistor in cold water has a potential difference of 6 V across it and a current of 0.002 A through it. What is its resistance? Steps: Start from V = I R. / You want R, so divide both sides by I: R = V ÷ I. / Put the numbers in: R = 6 ÷ 0.002 = 3000 / The resistance is 3000 Ω.",
       "flags": []
     },
     {
@@ -1274,18 +1347,64 @@
       "studentType": "idk",
       "kind": "pilot",
       "teachIndex": null,
-      "point": 3,
-      "reply": "Here is a worked example. Tap \"Show the next step\" to go through it.",
+      "point": null,
+      "reply": "Before the practical, question 1 of 2: Where does the voltmeter go when you test a component?",
       "recap": null,
       "choices": [
-        "Try another",
-        "Next"
+        "Next to the cell, in series",
+        "It is not needed",
+        "In series with the component",
+        "In parallel across the component"
       ],
-      "card": "worked example: The water is heated. With the same 6 V, the current rises to 0.03 A. What is the resistance now? Steps: Use R = V ÷ I again. / Put the numbers in: R = 6 ÷ 0.03 = 200 / The resistance is 200 Ω: lower, because the thermistor is hotter.",
       "flags": []
     },
     {
       "n": 98,
+      "student": "it's about Drawing a circuit to test a sensor",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Not quite: it's \"In parallel across the component\". It measures the potential difference across the component.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 99,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Before the practical, question 2 of 2: As a thermistor gets hotter, what happens to its resistance?",
+      "recap": null,
+      "choices": [
+        "It increases",
+        "It falls to zero",
+        "It stays the same",
+        "It decreases"
+      ],
+      "flags": []
+    },
+    {
+      "n": 100,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Not quite: it's \"It decreases\". A hotter thermistor has a lower resistance.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 101,
       "student": "what's your favourite football team",
       "studentType": "offtopic",
       "kind": "pilot",
@@ -1296,7 +1415,70 @@
       "flags": []
     },
     {
-      "n": 99,
+      "n": 102,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "A quick recap. The ammeter goes in series with the component and the voltmeter in parallel across it. Resistance = potential difference ÷ current. A thermistor's resistance falls as it gets hotter.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 103,
+      "student": "it's about Drawing a circuit to test a sensor",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 104,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": [
+        "unanswerable: no word from the lesson"
+      ]
+    },
+    {
+      "n": 105,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Here's the rest of this one. Exam questions often ask you to draw a circuit to find how a thermistor's or an LDR's resistance changes.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 106,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 107,
       "student": "just give me the answer",
       "studentType": "give",
       "kind": "pilot",
@@ -1310,7 +1492,213 @@
       "flags": []
     },
     {
-      "n": 100,
+      "n": 108,
+      "student": "it's about Drawing a circuit to test a sensor",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "You use the same idea as for any component: measure the current and the potential difference, then find the resistance.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 109,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Draw the cell, a switch and an ammeter in one loop with the thermistor, all in series.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 110,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Then draw a voltmeter in parallel across the thermistor, on its own short branch.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 111,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 112,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 113,
+      "student": "it's about Drawing a circuit to test a sensor",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Use the correct symbol for every part, with straight lines for the wires and no gaps where wires should join.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 114,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Put the thermistor in water and measure the water's temperature with a thermometer. Record the current and the potential difference, then change the temperature and repeat.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "Testing a thermistor: ammeter in series, voltmeter in parallel across it."
+      ],
+      "flags": []
+    },
+    {
+      "n": 115,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "For an LDR, change the light intensity instead, for example by moving a lamp closer.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 116,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 117,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 118,
+      "student": "it's about Drawing a circuit to test a sensor",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "At each reading, divide the potential difference by the current to get the resistance. Plot resistance against temperature, or against light intensity.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 119,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Both graphs are downward curves: a higher temperature or brighter light gives a lower resistance.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 120,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Worked example 1 of 2: A thermistor in cold water has a potential difference of 6 V across it and a current of 0.002 A through it. What is its resistance? Tap the button under it to see each step.",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "card": "worked example: A thermistor in cold water has a potential difference of 6 V across it and a current of 0.002 A through it. What is its resistance? Steps: Start from V = I R. / You want R, so divide both sides by I: R = V ÷ I. / Put the numbers in: R = 6 ÷ 0.002 = 3000 / The resistance is 3000 Ω.",
+      "flags": []
+    },
+    {
+      "n": 121,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 122,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 123,
       "student": "it's about Drawing a circuit to test a sensor",
       "studentType": "correct",
       "kind": "pilot",
@@ -1325,9 +1713,25 @@
       "flags": []
     },
     {
-      "n": 101,
+      "n": 124,
       "student": "is it something to do with magnets and electricity",
       "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Worked example 2 of 2: The water is heated. With the same 6 V, the current rises to 0.03 A. What is the resistance now? Tap the button under it to see each step.",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "card": "worked example: The water is heated. With the same 6 V, the current rises to 0.03 A. What is the resistance now? Steps: Use R = V ÷ I again. / Put the numbers in: R = 6 ÷ 0.03 = 200 / The resistance is 200 Ω: lower, because the thermistor is hotter.",
+      "flags": []
+    },
+    {
+      "n": 125,
+      "student": "idk",
+      "studentType": "idk",
       "kind": "pilot",
       "teachIndex": null,
       "point": 3,
@@ -1343,25 +1747,226 @@
       "flags": []
     },
     {
-      "n": 102,
-      "student": "idk",
-      "studentType": "idk",
+      "n": 126,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
       "kind": "pilot",
       "teachIndex": null,
-      "point": null,
+      "point": 3,
       "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
       "recap": null,
       "flags": []
     },
     {
-      "n": 103,
-      "student": "thanks",
-      "studentType": "thanks",
-      "kind": "free",
+      "n": 127,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
       "teachIndex": null,
       "point": null,
-      "reply": "Well done today. See you next time.",
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
       "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 128,
+      "student": "it's about Drawing a circuit to test a sensor",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "In one line: how do you find how a thermistor's resistance changes with temperature?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 129,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 130,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: A component has a potential difference of 3.2 V across it and a current of 0.4 A through it. What is its resistance, in ohms (Ω)?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 131,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 132,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 133,
+      "student": "it's about Drawing a circuit to test a sensor",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: A component has a potential difference of 3.2 V across it and a current of 0.4 A through it. What is its resistance, in ohms (Ω)?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 134,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite. Here is how it goes, one step at a time. Start from V = I R.",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": []
+    },
+    {
+      "n": 135,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You want R, so divide both sides by I: R = V ÷ I.",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": []
+    },
+    {
+      "n": 136,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 137,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 138,
+      "student": "it's about Drawing a circuit to test a sensor",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Put the numbers in: R = 3.2 ÷ 0.4 = 8",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": [
+        "cut off"
+      ]
+    },
+    {
+      "n": 139,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "The resistance is 8 Ω. Want to try another one?",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 140,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: Which symbol is a resistor with an arrow through it?",
+      "recap": null,
+      "choices": [
+        "A thermistor",
+        "A diode",
+        "An LDR",
+        "A variable resistor"
+      ],
+      "flags": []
+    },
+    {
+      "n": 141,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 142,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
       "flags": []
     }
   ],
@@ -1369,18 +1974,21 @@
     true,
     true,
     true,
-    true
+    null
   ],
-  "complete": true,
-  "farewell": true,
+  "complete": false,
+  "farewell": false,
   "exited": false,
   "coreOpts": {},
   "firstTime": true,
   "respectExit": true,
   "exitScript": false,
   "pilot": true,
-  "pilotFinished": true,
-  "lessonFlags": [],
+  "pilotFinished": false,
+  "lessonFlags": [
+    "points never completed: 3 \"Drawing a circuit to test a sensor\"",
+    "no clean ending: lesson not completed"
+  ],
   "cost": 0,
   "tutorCost": 0,
   "tutorCalls": 0,

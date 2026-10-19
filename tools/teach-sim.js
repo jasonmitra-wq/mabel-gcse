@@ -64,7 +64,7 @@ const [USD_IN, USD_OUT] = RATE_TABLE[MODEL];
 const DEFAULT_CAP_USD = 1;
 const TRANSCRIPT_CAP = 40;                    // as js/teach.js _pushEntry
 const MAX_TURNS_PER_POINT = 12;               // a point not covered by then never completes
-const MAX_TURNS_PER_POINT_PILOT = 45;         // PILOT_FIX: told sentences, worked examples, questions each take a turn
+const MAX_TURNS_PER_POINT_PILOT = 90;         // PILOT_FIX: told sentences, worked examples, questions each take a turn
 const CYCLE = ['correct', 'wrong', 'idk', 'offtopic', 'give'];
 const LINES = {
   wrong: 'is it something to do with magnets and electricity',
@@ -334,10 +334,14 @@ async function simulate(id, call, persona = null) {
     if (decision.kind === 'free' && state.complete && state.wrapOffered && !reply.includes('?')) state.farewell = true;
     if (recap) push({ role: 'recap', pt: decision.idx, lines: recap, done: false });
     const entry = core._replyEntry(reply, decision);
+    const before = entry.before || [];
+    delete entry.before;
+    before.forEach(b => push({ role: 'assistant', text: b, ...(entry.pt != null ? { pt: entry.pt } : {}) }));
     push(entry);
-    hist.push({ who: 'student', text }, { who: 'tutor', text: tutorSees(reply, entry) });
+    hist.push({ who: 'student', text }, ...before.map(b => ({ who: 'tutor', text: b })), { who: 'tutor', text: tutorSees(reply, entry) });
     turns.push({ n, student: text, studentType: type, kind: decision.kind, teachIndex: core._teachIndex(decision),
                  point: decision.idx ?? decision.nextIndex ?? null, reply, recap: recap || null,
+                 ...(before.length ? { before } : {}),
                  ...(entry.diagram ? { diagram: entry.diagram, diagramCaption: diagramCaption(data, entry.diagram) } : {}),
                  ...(entry.basic ? { basic: entry.basic } : {}),
                  ...(entry.choices ? { choices: entry.choices } : {}),
@@ -356,6 +360,7 @@ function transcriptText(r) {
   const lines = [];
   for (const t of r.turns) {
     if (t.student !== null) lines.push(`S${t.n}: ${t.student}`);
+    (t.before || []).forEach((b, k) => lines.push(`T${t.n}${'abc'[k]}: ${b}`));
     lines.push(`T${t.n}: ${t.reply.replace(/\s*\n+\s*/g, ' ')}`);
     if (t.diagram) lines.push(`[A diagram is shown under T${t.n}: "${t.diagramCaption || t.diagram}"]`);
     if (t.choices) lines.push(`[Buttons shown under T${t.n}: ${t.choices.map(c => `"${c}"`).join(', ')}]`);

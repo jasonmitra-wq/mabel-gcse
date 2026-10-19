@@ -1,0 +1,209 @@
+# Site test: p2-current-voltage (lesson, 2026-10-19)
+
+**FAIL** · cost $1.0755 (32 tool calls, 194 calls from the site; tutor claude-sonnet-5-5 $0.8067)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "After the session ended, the student's goodbye got the whole end-of-lesson summary again, word for word (two identical bubbles in 20-end). The tool also logged no proper reply. The chat box stays active after the lesson has ended.",
+      "step": "S31 / T30"
+    },
+    {
+      "what": "The student asked 'whats a coulomb'. The tutor did not answer and jumped straight to 'Do you want me to just tell you the rest'. The definition only came a turn later, after she said yes.",
+      "step": "S6 → T6"
+    },
+    {
+      "what": "The student asked 'whats in parallel mean'. The tutor ignored it and asked a new question about where to clip the voltmeter. 'In parallel' was never explained.",
+      "step": "S15 → T15"
+    },
+    {
+      "what": "The student asked 'whats resistance'. The tutor ignored it and moved on to plotting graphs. Resistance was never defined in the lesson.",
+      "step": "S18 → T18"
+    },
+    {
+      "what": "'It sits in parallel' follows two sentences about the ammeter in series, so 'It' reads as the ammeter. That is physically wrong; the voltmeter was meant.",
+      "step": "T14"
+    },
+    {
+      "what": "'That's an old-style bulb with a thin wire' points at nothing. The filament lamp was never introduced, and no filament-lamp diagram appeared in the conversation.",
+      "step": "T22"
+    },
+    {
+      "what": "'the potential difference?' was marked only 'partly there'. Moving the variable resistor does change the potential difference across the component, which is what you read off the voltmeter, so a correct answer was under-credited.",
+      "step": "S26 → T26"
+    },
+    {
+      "what": "The tutor says 'Earlier you said doubling the potential difference doubles the current'. The student never said that; the tutor said it in T18.",
+      "step": "T28"
+    },
+    {
+      "what": "The end summary lists 'required practical' as both answered and told. The progress bar shows 5/7, yet the second Required practical is still marked in progress. Topics are ticked as covered even when the student only said 'just tell me'.",
+      "step": "T30"
+    },
+    {
+      "what": "automatic check failed: tutor replies",
+      "step": "no reply after S31"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "The second bubble is a full duplicate of the goodbye summary.",
+      "screenshot": "20-end-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The sidebar diagram thumbnail for filament lamps and diodes is a garbled thin vertical squiggle and nothing can be made out.",
+      "screenshot": "16-exchange-24-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The sticky lesson header covers the top of the chat. The first line of the welcome message is cut off behind it.",
+      "screenshot": "05-ai-lesson-opening-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The sticky header cuts through the diagram's 'resistor' and 'ammeter' labels at the top of the chat.",
+      "screenshot": "07-exchange-3-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The Key Terms panel is cut off at the bottom of the screen, with text clipped mid-sentence ('carried by tiny particles in the…').",
+      "screenshot": "10-diagram-12-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "Sidebar diagram thumbnails are far too small to read any labels.",
+      "screenshot": "13-diagram-17-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The lesson title is truncated to 'Current and potential difference …'.",
+      "screenshot": "05-ai-lesson-opening-phone.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": {
+    "turn": "S30",
+    "quote": "nah im tired can we stop",
+    "why": "Her 'what's X' questions (coulomb, parallel, resistance) were repeatedly ignored, and she got a fourth 'want me to just tell you' offer. She gave up with 2 of 7 sections left."
+  },
+  "fixes": [
+    {
+      "target": "tutor behaviour: clarification questions",
+      "change": "When the student message is 'whats X' / 'what does X mean', first reply with a one-sentence plain definition of X, then re-ask the pending question. Do not skip to the check-in offer or a new question."
+    },
+    {
+      "target": "session end behaviour",
+      "change": "After the goodbye summary, mark the session closed. Replace the input with a 'Pick up next time' / 'Back to topics' card, or answer any later message with a short 'See you!' instead of resending the summary."
+    },
+    {
+      "target": "Filament lamps and diodes section: script and diagram",
+      "change": "Reword T22 to 'A filament lamp is an old-style bulb with a thin wire that glows white-hot.' Show the filament-lamp I-V curve diagram in the chat at that point, and fix the broken sidebar thumbnail render."
+    },
+    {
+      "target": "T14 wording and section names",
+      "change": "Change 'It sits in parallel' to 'The voltmeter sits in parallel'. Rename the two sections 'Required practical: resistance of a wire' and 'Required practical: I-V graphs', and dedupe topics in the end summary."
+    },
+    {
+      "target": "answer key for 'What does moving the slider change?' (T25/T26)",
+      "change": "Accept 'current' or 'potential difference' (or 'resistance') as correct, and praise the answer before adding that it does so by changing resistance."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Lesson p2-current-voltage (Physics › Electricity › Current, potential difference and resistance).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p2-phone.png and 04-lessons-p2-laptop.png] lessons-P2
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome, glad you're here! When you press the button on a torch and it lights up, what do you think is happening inside it to make that light come on?
+    [screenshot 05-ai-lesson-opening-phone.png and 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (offtopic): nah im just thinking about getting food lol
+    T1: Fair enough, food is a good thing to be thinking about, and we'll start from the very beginning anyway. Look at the diagram: it shows a simple circuit, a complete loop where each symbol is one part. If there were a gap somewhere in the loop, what would happen to the flow of charge?
+    [diagram shown in the conversation under T1: "A simple circuit. Each symbol stands for one part."]
+    [screenshot 06-diagram-1-phone.png and 06-diagram-1-laptop.png] diagram-1
+    S2 (bored): huh?
+    T2: Sorry, that was a lot. Picture a running track: a circuit is a loop that charge can run round, like runners going round and round. If the track has a gap, the runners stop. Where in the loop would a gap stop the runners?
+    S3 (try): anywhere? like if theres a break they just stop
+    T3: Yes, a break anywhere stops the flow everywhere. A flow of charge round the loop is called an electric current, like how many runners pass a point each second. If the runners pass faster, what happens to the current?
+    [screenshot 07-exchange-3-phone.png and 07-exchange-3-laptop.png] exchange-3
+    S4 (wrong): more runners pass so the current goes down?
+    T4: Not quite, the current goes up, not down. Current is how much charge passes a point each second, so if more runners pass every second, there's more flow, which means a bigger current. Think of a tap: a wider flow of water means more water passing each second. If fewer runners passed each second, what would happen to the current?
+    S5 (bored): this is long
+    T5: Sorry, that was long. Fewer runners each second means a smaller current. Current is counted in amps (A): 1 amp means 1 coulomb of charge passing each second. How many coulombs pass each second when the current is 1 amp?
+    S6 (try): whats a coulomb
+    T6: This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?
+    [screenshot 08-exchange-6-phone.png and 08-exchange-6-laptop.png] exchange-6
+    S7 (checkin-yes): yeah just tell me
+    T7: A coulomb is just the unit for counting charge, like "a litre" for water. The current is the same everywhere in a single loop, because charge isn't used up on the way round. A cell or battery supplies the push that keeps it flowing. That push is called potential difference. A lamp on one cell glows dimly, but with two cells it glows brighter. Why does the lamp get brighter with two cells?
+    S8 (wrong): whats potential difference
+    T8: Potential difference is the push from the cell that makes charge flow, like a pump pushing water round a pipe. It's measured in volts (V). What happens to the push if you take a cell away?
+    S9 (minimal): the push gets smaller?
+    T9: Yes — a smaller push is right when a cell is removed. If you wanted the push across a lamp, where would you connect the voltmeter?
+    [screenshot 09-exchange-9-phone.png and 09-exchange-9-laptop.png] exchange-9
+    S10 (offtopic): whats a voltmeter
+    T10: A voltmeter is a meter that reads the push across a part, like a gauge showing how hard a pump is pushing. If you wanted the push across a lamp, which part would the voltmeter go across?
+    S11 (wrong): across the wires connecting it?
+    T11: Lots of people find this part hard, so that's fine. Do you want me to just tell you the rest of it?
+    S12 (checkin-yes): yeah go on
+    T12: Look at the diagram: a wire is clipped along a ruler, and moving one clip changes the length being tested. The voltmeter goes across the part you test, so across the lamp or wire itself, not the connecting wires. A meter that reads current goes in the same loop, one after another with the wire. If the same current flows through the wire and that meter, why must they sit one after another in one loop?
+    [diagram shown in the conversation under T12: "Measuring the resistance of a wire. Moving one clip changes the length being tested."]
+    [screenshot 10-diagram-12-phone.png and 10-diagram-12-laptop.png] diagram-12
+    [screenshot 11-exchange-12-phone.png and 11-exchange-12-laptop.png] exchange-12
+    S13 (try): cause current is same everywhere in the loop?
+    T13: Yes — the current is the same all the way round the loop, which is exactly why it works. So if the meter is in series, what must the current through it be, compared with the wire?
+    S14 (try): the same as the wire?
+    T14: Yes, same as the wire: in series, the current is the same through both. It sits in parallel, side by side, clipped across the same two points as the wire. Where on the wire would you clip its two leads?
+    S15 (idk): whats in parallel mean
+    T15: If you wanted to test only a short piece of the wire, where would you clip the voltmeter's two leads?
+    [screenshot 12-exchange-15-phone.png and 12-exchange-15-laptop.png] exchange-15
+    S16 (idk): idk mate
+    T16: This one takes a bit of getting used to. Do you want me to just tell you the rest of this one?
+    S17 (checkin-yes): yeah just tell me fam
+    T17: Fine, here it is. A long wire goes along a ruler, with the ammeter in series and the voltmeter across the wire. Divide potential difference by current to get resistance. Move a clip to change the length: longer wire, bigger resistance, and keep the current small so the wire stays at a constant temperature. If you double the potential difference across that resistor, what happens to the current?
+    [diagram shown in the conversation under T17: "The I-V characteristic of a resistor at constant temperature."]
+    [screenshot 13-diagram-17-phone.png and 13-diagram-17-laptop.png] diagram-17
+    S18 (try): whats resistance
+    T18: Try plotting current up the side against potential difference along the bottom. If doubling the potential difference doubles the current, what shape is the line?
+    [screenshot 14-exchange-18-phone.png and 14-exchange-18-laptop.png] exchange-18
+    S19 (try): straight line?
+    T19: When two quantities change together like that, we say the current is directly proportional to the potential difference. If the potential difference triples, what happens to the current?
+    S20 (try): it triples too?
+    T20: Yes, tripling the potential difference triples the current, which is what directly proportional means. If the resistance stays the same as the current changes, what must be true of the graph's line?
+    S21 (try): it stays straight?
+    T21: Yes, the line stays straight, and it also passes through the origin, where both quantities are zero. If a resistor is at constant temperature and the current doubles, what happens to its resistance?
+    [screenshot 15-exchange-21-phone.png and 15-exchange-21-laptop.png] exchange-21
+    S22 (try): it stays the same?
+    T22: Yes, the resistance stays the same, so the line stays straight. That's an old-style bulb with a thin wire that glows white-hot. As the wire heats up, what do you think happens to its resistance?
+    S23 (try): it goes up?
+    T23: Yes, resistance goes up as the filament gets hotter. Now a different component: a diode lets current flow one way round only, because turned the other way it has a very high resistance. Think of a door that only opens outwards. If you connect a diode backwards, why does almost no current flow?
+    S24 (bored): whats a diode
+    T24: A diode is a small component that lets current through one way round only, like a turnstile that only turns one way. Turn it round and its resistance is very high, so almost no current gets through. If you connect a diode backwards, what is very high?
+    [screenshot 16-exchange-24-phone.png and 16-exchange-24-laptop.png] exchange-24
+    S25 (idk): no idea mate
+    T25: No worries, it's the diode's resistance that is very high when it's turned backwards. Look at the diagram: a cell, the component, an ammeter in series and a voltmeter in parallel. There's also a variable resistor, one with a slider, like a dimmer switch. What does moving the slider change in the circuit?
+    [diagram shown in the conversation under T25: "The circuit for measuring an I-V graph: ammeter in series, voltmeter in parallel."]
+    [screenshot 17-diagram-25-phone.png and 17-diagram-25-laptop.png] diagram-25
+    S26 (try): the potential difference?
+    T26: The potential difference is partly there, but what the slider really changes is the resistance, and that changes the current. So when you move the slider on the variable resistor, which quantity does that give you a different reading of?
+    S27 (try): the current?
+    T27: Yes, the current is what changes with the slider, so you get a whole range of readings. When you plot current against potential difference, a straight-line graph means the component is called linear, and any other shape is called non-linear. A resistor at constant temperature gives a straight line, so which word describes it?
+    [screenshot 18-exchange-27-phone.png and 18-exchange-27-laptop.png] exchange-27
+    S28 (idk): whats linear mean
+    T28: Linear just means "straight line": if you plot the readings and they sit on one straight line, the component is linear. A line that bends or curves, like a diode's graph, is called non-linear. Earlier you said doubling the potential difference doubles the current, so what shape of graph would that give?
+    S29 (bored): huh?
+    T29: This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?
+    S30 (checkin-no): nah im tired can we stop
+    T30: No problem, thanks for sticking with it. Today you answered questions on ohmic conductors and required practical and I told you about electric current, potential difference and resistance, required practical and filament lamps and diodes. Your place is saved, so we'll pick up right here next time. Bye for now!
+    [screenshot 19-exchange-30-phone.png and 19-exchange-30-laptop.png] exchange-30
+    S31 (try): bye see u next time
+    [no tutor reply within 120 s after S31]
+    [check] BROKEN: tutor replies — no reply after S31
+    [screenshot 20-end-phone.png and 20-end-laptop.png] end

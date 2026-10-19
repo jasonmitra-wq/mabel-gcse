@@ -300,6 +300,14 @@ async function lessonMode(page, run, id) {
   await clickText(page, '.topic-card', L.topicName, 'topic card', '.tc-name');
   await shoot(page, run, `lessons-${L.code}`);
   await clickText(page, '.subtopic-card', L.name, 'lesson card', '.st-name');
+  // Runbook v3 A4: a lesson whose prerequisites come from lessons she has not
+  // opened starts with the "Words from earlier lessons" card. Screen it, then
+  // tap "Carry on", as she would to start the lesson.
+  await page.waitForFunction(() => document.getElementById('teachThread') || document.querySelector('.prereq-card') || document.querySelector('#lessonInner [onclick*="Lessons._nextStep"]'), { timeout: 15000 }).catch(() => {});
+  if (await page.$('.prereq-card')) {
+    await shoot(page, run, 'earlier-words-card');
+    await page.click('.prereq-card [onclick*="Lessons._carryOn"]');
+  }
   await page.waitForFunction(() => document.getElementById('teachThread') || document.querySelector('#lessonInner [onclick*="Lessons._nextStep"]'), { timeout: 15000 }).catch(() => {});
   const isTeach = await page.evaluate(() => !!document.getElementById('teachThread'));
   const wantTeach = teachEnabled().includes(id);

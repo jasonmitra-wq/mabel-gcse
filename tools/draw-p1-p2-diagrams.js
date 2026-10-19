@@ -79,14 +79,14 @@ function switchClosed(cx, cy, vertical = false) {
 function ivPanel(ox, oy, title, curve, notes) {
   const L = 190, U = 125, D = 125;            // half-lengths of the axes
   const out = [];
-  out.push(text(20, oy - U - 22, title, { size: 22, weight: 600 }));
+  out.push(text(ox - 220, oy - U - 22, title, { size: 22, weight: 600 }));
   out.push(line(ox - L, oy, ox + L + 10, oy, { stroke: C.muted, w: 2, marker: 'am' }));
   out.push(line(ox, oy + D, ox, oy - U - 10, { stroke: C.muted, w: 2, marker: 'am' }));
   out.push(text(ox - 12, oy - U + 8, 'current (A)', { size: 18, anchor: 'end', fill: C.muted }));
   out.push(text(ox + L + 10, oy + 28, 'potential difference (V)', { size: 18, anchor: 'end', fill: C.muted }));
   out.push(text(ox - 8, oy - 8, '0', { size: 17, anchor: 'end', fill: C.muted }));   // top-left: no curve there
   out.push(pathD(curve(ox, oy, L, U), { stroke: C.teal, w: 4 }));
-  notes.forEach((s, k) => out.push(text(20, oy + D + 34 + 22 * k, s, { size: 17 })));
+  notes.forEach((s, k) => out.push(text(ox - 220, oy + D + 34 + 22 * k, s, { size: 17 })));
   return out.join('\n');
 }
 const pts = (f, x0, x1, n = 60) => Array.from({ length: n + 1 }, (_, i) => { const x = x0 + (x1 - x0) * i / n; return [x, f(x)]; });
@@ -158,6 +158,13 @@ D['p2-iv-graphs'] = () => svg(480, 1230, [
   line(20, 815, 460, 815, { stroke: C.grid, w: 1.5 }),
   ivPanel(240, 1010, 'Diode', IV.diode, IV_NOTES.diode),
 ], 'I-V graphs for a resistor at constant temperature, a filament lamp and a diode');
+// Runbook v3: the lamp and diode side by side (a tall three-panel image shrinks to an unreadable
+// thumbnail in the AI lesson's side column).
+D['p2-iv-lamp-diode'] = () => svg(960, 405, [
+  ivPanel(240, 190, 'Filament lamp', IV.lamp, IV_NOTES.lamp),
+  line(480, 20, 480, 385, { stroke: C.grid, w: 1.5 }),
+  ivPanel(720, 190, 'Diode', IV.diode, IV_NOTES.diode),
+], 'I-V graphs for a filament lamp (a curve that gets flatter) and a diode (current in one direction only)');
 D['p2-iv-resistor'] = () => svg(480, 405, [ivPanel(240, 190, 'Resistor at constant temperature', IV.resistor, IV_NOTES.resistor)], 'I-V graph for a resistor at constant temperature: a straight line through the origin');
 D['p2-iv-diode'] = () => svg(480, 405, [ivPanel(240, 190, 'Diode', IV.diode, IV_NOTES.diode)], 'I-V graph for a diode: almost no current in the reverse direction, current rises steeply in the forward direction');
 

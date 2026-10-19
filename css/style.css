@@ -1128,3 +1128,6 @@ dfn { font-style: normal; font-weight: 700; color: var(--teal); }
 .words-list { list-style: none; padding: 0; margin: 0; }
 .words-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); line-height: 1.5; }
 .words-list .words-lesson { background: none; border: none; color: var(--amber); font: inherit; font-size: 0.85rem; text-decoration: underline; cursor: pointer; padding: 0; }
+.prereq-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+.prereq-actions .btn { margin: 0; }
+.prereq-card ul.prereq-terms { max-height: 45vh; overflow-y: auto; margin: 0; padding-right: 0.25rem; }

@@ -109,10 +109,12 @@ const Lessons = (() => {
       <div style="padding-top:0.75rem"><button class="back-btn" onclick="Lessons.close()">← Topics</button></div>
       <div class="prereq-card">
         <h3>Words from earlier lessons</h3>
-        <p style="color:var(--muted);margin:0 0 0.75rem">This lesson uses these words. Here is what they mean:</p>
-        <ul>${items.join('')}</ul>
-        ${lessons.map(l => `<button class="btn" onclick="Lessons.open('${q(l.id)}','${q(l.name)}','${q(l.topic)}','${q(subject)}')">Go to ${esc(l.name)}</button>`).join('')}
-        <button class="btn pri" onclick="Lessons._carryOn()">Carry on</button>
+        <p style="color:var(--muted);margin:0 0 0.75rem">This lesson uses words from an earlier lesson. Go there first, or carry on: their meanings are below.</p>
+        <div class="prereq-actions">
+          <button class="btn pri" onclick="Lessons._carryOn()">Carry on</button>
+          ${lessons.map(l => `<button class="btn" onclick="Lessons.open('${q(l.id)}','${q(l.name)}','${q(l.topic)}','${q(subject)}')">Go to ${esc(l.name)}</button>`).join('')}
+        </div>
+        <ul class="prereq-terms">${items.join('')}</ul>
       </div>`;
     return true;
   }

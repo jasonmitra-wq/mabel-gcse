@@ -23,9 +23,9 @@ on. Never ask Jason anything except the STOP cases in section 2.
   inside the same command). Never print it or write it to a file. Never
   read ANTHROPIC_API_KEY. Record every API call's cost in the STATE
   Spend table.
-- The AI tutor is frozen. The only tutor change allowed is task A3
-  (reading the new lesson fields). No new tutor rules, no tutor tuning,
-  no tester rounds aimed at tutor behaviour.
+- The AI tutor is frozen except for the PILOT_FIX behaviour in
+  docs/briefs/2026-10-19-pilot-feedback-v3-1.md. No other tutor
+  changes, no tutor tuning, no tester rounds aimed at tutor behaviour.
 - No loops. Each lesson goes through the fixed sequence in section 3
   once. Nothing is re-run except the free script checks.
 - Escalations do not stop work: write them to docs/ESCALATIONS.md and
@@ -37,7 +37,7 @@ on. Never ask Jason anything except the STOP cases in section 2.
 - API billing, credit or spend-limit error: "Add credits or raise the
   limit, then type Continue."
 - Usage limit reached: commit what is complete, then end.
-- The pilot gate (task A6) and the end-of-subject gates.
+- The pilot gate (task A9) and the end-of-subject gates.
 - A change would delete a file.
 When Jason types a line starting "Mabel:" or "Pilot:", write it verbatim
 with the date to docs/MABEL-FEEDBACK.md, commit, and continue as the
@@ -83,10 +83,14 @@ LESSON SHAPE (all subjects):
 - Use the existing triage decisions for the topic
   (tools/spec-check-results/<TOPIC>-TRIAGE.md) as the to-do list: what
   was missing, wrong or above GCSE.
+- The additions in docs/briefs/2026-10-19-pilot-feedback-v3-1.md, step
+  1, apply to every lesson in every subject.
 
 FIXED SEQUENCE (once per lesson, no repeats):
 a. Rewrite the lesson in the shape above. Keep the existing file's other
    fields (id, topic, basics, diagrams, revisionCardBullets, etc.).
+a2. Build the lesson's picture sequence, worked examples, practice
+   generators, widgets and consolidation items (brief v3.1, step 1).
 b. Free script checks (tools/check-lesson-v3.js, task A2) until clean:
    spec checklist complete; every glossary term explained at first use
    or listed as a prerequisite; length; sentence rules; every examBox
@@ -135,14 +139,32 @@ A4 Glossary, all subjects: data/glossary/<subject>.json built from every
 A5 Rewrite p2-current-voltage, then p2-components, through the fixed
    sequence. Run tools/site-test.js once on each at phone size, for
    breakage only, and save screenshots.
-A6 PILOT GATE. Put in docs/ESCALATIONS.md under "Pilot": the two lesson
-   names, the screenshot folders, and what to try (read both lessons as
-   slides; do one as an AI lesson). STOP with: "Pilot ready. Jason:
-   read Physics → Electricity → Current and potential difference, and
-   Components. Mabel: do one of them as an AI lesson. Then type
-   'Pilot: yes' or 'Pilot: <what to change>', and 'Mabel: <what she
-   said>'." Continue only after "Pilot: yes" (apply any changes asked
-   for first, and update tools/lesson-shape-v3.md to match).
+A6 Rebuild the two pilot lessons with the v3.1 additions and the
+   PILOT_FIX tutor (A7–A9).
+A7 Build the practice generators for Q = It, E = QV and V = IR; the
+   circuit widget (add cells, potential-difference slider, ammeter
+   reading, lamp brightness); the I-V graph widget; the picture
+   sequences for both lessons.
+A8 Run both lessons through the fixed sequence again (steps a–f). Then:
+   tools/site-test.js once on each at phone size, for breakage only;
+   and the text tester once on each, reporting (not gating) the counts
+   for: messages over 60 words, two questions in one message, her
+   question not answered first, two key points in one message, answer
+   in question, term used before explained. Any of these above zero is
+   fixed once in PILOT_FIX and the text tester re-run once.
+A9 PILOT GATE (again). Update docs/ESCALATIONS.md "Pilot" with what
+   changed and what to try (slides and AI lesson; Try another; the
+   widgets; the quiz). STOP with: 'Pilot v3.1 ready. Jason: try Physics
+   → Electricity → Current and potential difference, and Components,
+   as slides and as an AI lesson. Mabel: do one as an AI lesson. Then
+   type "Pilot: yes" or "Pilot: <what to change>", and "Mabel: <what
+   she said>".' Continue only after "Pilot: yes".
+
+Phases B, C and D: each lesson includes the v3.1 additions (brief
+docs/briefs/2026-10-19-pilot-feedback-v3-1.md, step 1). Maths (Phase D)
+uses the same picture sequence, worked examples, practice generators,
+widgets and consolidation; its existing question bank provides practice
+where a generator is not needed.
 
 Phase B — Physics
 B1 The lessons live with the AI tutor first: the rest of P2, then P1,

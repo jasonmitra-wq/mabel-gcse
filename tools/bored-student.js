@@ -132,6 +132,9 @@ const FLOW_FAULT_TYPES = [
   // Brief docs/briefs/2026-10-18-leaving-and-tired.md step 1 (RESPECT_EXIT).
   ['exit_not_respected', 'she says goodbye, that she has to go, or that she wants to stop, and the tutor’s reply is not one short warm closing line that says honestly what she did and that her place is saved — for example it asks another question, teaches more, or claims she covered what she did not.'],
   ['tiredness_pushed_on', 'she says she is tired, bored or has had enough (in those or like words; "this is long" or "too long" asks for shorter replies and is not this), and the tutor carries on teaching without first offering her a choice (stop, one more quick thing, or the slides), or does not do what she then picks.'],
+  // Brief docs/briefs/2026-10-19-pilot-feedback-v3-1.md, task A8 (reported, with the code counts).
+  ['question_not_answered_first', 'she asks a question of her own ("what is X?", "why?", "I\u2019m confused", "whats that") and the tutor\u2019s next reply does not answer exactly that first, in one or two sentences, or adds a new idea before or instead of answering it.'],
+  ['two_key_points_in_one_message', 'one tutor message finishes one key point (or reacts to her last answer on it) and also starts the next key point, or teaches two key points at once.'],
   ['checkin_curt_or_repeated', 'the "do you want me to just tell you the rest?" check-in is curt or cold (no warm acknowledgement that this bit is tricky), longer than two short sentences, or the same check-in is asked twice in a row.'],
 ];
 

@@ -196,6 +196,7 @@ const Teach = (() => {
       farewell: _state.farewell,
       taught: _state.taught,   // TEACH_THEN_ASK (js/teach-core.js); absent when off
       flow: _state.flow,       // FLOW_FIX (js/teach-core.js); absent when off
+      pilot: _state.pilot,     // PILOT_FIX (js/teach-core.js); absent when off
     });
   }
 
@@ -212,7 +213,7 @@ const Teach = (() => {
   }
 
   // ── Open ─────────────────────────────────────────────────────
-  function open(data, subtopicId, subtopicName, subject) {
+  function open(data, subtopicId, subtopicName, subject, opts = {}) {
     _data        = data;
     _subtopicId  = subtopicId;
     _subtopicName = subtopicName;
@@ -224,6 +225,14 @@ const Teach = (() => {
 
     _points = _buildPoints(data);
     _core.bind(_data, _points, _state);
+    // PILOT_FIX: the glossary (words before use), the lessons she has opened,
+    // and the recall questions from the lesson before (brief v3.1).
+    if (_core.PILOT_FIX) _core.pilotContext({
+      lessonId: subtopicId,
+      glossary: typeof Glossary !== 'undefined' && Glossary.terms ? Glossary.terms(_subject) : [],
+      opened: id => Store.hasOpened(id),
+      recall: opts.recall || null,
+    });
 
     const saved = Store.get(_storageKey());
     if (saved && Array.isArray(saved.transcript) && saved.transcript.length) {
@@ -245,6 +254,7 @@ const Teach = (() => {
         farewell: !!saved.farewell,
         ...(Array.isArray(saved.taught) ? { taught: saved.taught } : {}),
         ...(saved.flow && typeof saved.flow === 'object' ? { flow: saved.flow } : {}),
+        ...(saved.pilot && typeof saved.pilot === 'object' ? { pilot: saved.pilot } : {}),
       };
       _core.bind(_data, _points, _state);
       _seedTermsShown();
@@ -494,7 +504,11 @@ const Teach = (() => {
 
   // id: a diagram shown in the conversation; without it, the current point's.
   function expandDiagram(id) {
-    const point = id ? _points.find(p => p.diagram === id)
+    // PILOT_FIX: a picture of the sequence (or the side column's latest one) by its own id.
+    const slotId = !id && _core.PILOT_FIX ? document.querySelector('#teachDiagramSlot .teach-diagram')?.id?.replace(/^diag_/, '') : null;
+    const pic = _core.PILOT_FIX && (id || slotId) ? _points.flatMap(p => (p.pictures || []).map(x => ({ p, x }))).find(o => o.x.diagram === (id || slotId)) : null;
+    const point = pic ? { ...pic.p, diagram: pic.x.diagram, diagramCaption: pic.x.caption }
+      : id ? _points.find(p => p.diagram === id)
       : !_state?.complete ? _points[_state.currentPointIndex] : null;
     if (!point || !point.diagram) return;
     const { title, cap, src } = _diagramInfo(point);
@@ -556,6 +570,14 @@ const Teach = (() => {
     const slot = document.getElementById('teachDiagramSlot');
     if (!slot) return;
     const point = !_state.complete ? _points[_state.currentPointIndex] : null;
+    if (_core.PILOT_FIX) {
+      // Only a picture already shown for this point: never one ahead of the teaching.
+      const idx = _state.currentPointIndex;
+      const last = [..._state.transcript].reverse().find(t => t.pt === idx && Array.isArray(t.pictures) && t.pictures.length);
+      const pic = last && last.pictures[last.pictures.length - 1];
+      slot.innerHTML = point && pic ? _renderDiagram({ ...point, diagram: pic.diagram, diagramCaption: pic.caption }) : '';
+      return;
+    }
     slot.innerHTML = (point && point.diagram) ? _renderDiagram(point) : '';
   }
 
@@ -606,6 +628,17 @@ const Teach = (() => {
     return fig;
   }
 
+  // PILOT_FIX: one picture of the sequence, its caption, and its labels as glossary words.
+  function _pictureEl(pic) {
+    const fig = document.createElement('figure');
+    fig.className = 'teach-inline-diagram';
+    fig.innerHTML = `<button class="teach-inline-diagram-btn" onclick="Teach.expandDiagram('${_esc(pic.diagram)}')" title="Tap to enlarge" aria-label="Enlarge diagram">
+        <img src="diagrams/${_subject}/${_esc(pic.diagram)}.svg" alt="${_esc(pic.caption || pic.diagram)}" onerror="this.closest('figure').style.display='none'">
+      </button>${pic.caption ? `<figcaption>${_esc(pic.caption)}</figcaption>` : ''}`;
+    if (typeof LessonExtras !== 'undefined' && (pic.labels || []).length) fig.appendChild(LessonExtras.labelChips(pic.labels));
+    return fig;
+  }
+
   function _renderTranscript() {
     const thread = document.getElementById('teachThread');
     if (!thread) return;
@@ -626,6 +659,12 @@ const Teach = (() => {
         if (TEACH_INLINE_DIAGRAMS && t.role === 'assistant' && t.diagram) {
           const fig = _inlineDiagramEl(t.diagram);
           if (fig) thread.appendChild(fig);
+        }
+        // PILOT_FIX: the picture sequence, a worked example or a widget under the message.
+        if (t.role === 'assistant' && Array.isArray(t.pictures)) t.pictures.forEach(pic => thread.appendChild(_pictureEl(pic)));
+        if (t.role === 'assistant' && t.card && typeof LessonExtras !== 'undefined') {
+          const card = LessonExtras.chatCard(t.card, _subject);
+          if (card) thread.appendChild(card);
         }
         // Choices only under the newest message: once she answers, they go.
         if (t.role === 'assistant' && Array.isArray(t.choices) && t === _state.transcript[_state.transcript.length - 1]) {
@@ -725,7 +764,20 @@ const Teach = (() => {
     _renderTranscript();
   }
 
-  function _beginLesson() { return _openPoint(0, true); }
+  async function _beginLesson() {
+    // PILOT_FIX: a lesson after one she finished opens with three recall questions.
+    if (_core.PILOT_FIX) {
+      const first = await _core._pilotFirst().catch(e => { _logError('recall questions', e); return null; });
+      if (first) {
+        if (first.recap) _pushEntry({ role: 'recap', rid: _rid(), lines: first.recap, done: false });
+        _pushEntry(_replyEntry(first.reply, first.decision));
+        _renderShell();
+        _renderTranscript();
+        return;
+      }
+    }
+    return _openPoint(0, true);
+  }
 
   function _retryOpening() {
     if (_openingReq) _openPoint(_openingReq.index, _openingReq.first);
@@ -759,6 +811,11 @@ const Teach = (() => {
     _state.complete = false;
     _state.farewell = false; // she's being taught again, so she needs the box back
     _pushEntry({ role: 'note', text: _shortHeading(_points[index].heading) });
+    if (_core.PILOT_FIX) {
+      const r = _core._pilotJump(index, reply);
+      _pushEntry({ role: 'assistant', text: r.text, pt: index, opening: true, ...r.extra });
+      return;
+    }
     const diagram = TEACH_INLINE_DIAGRAMS ? _core._inlineDiagram(index) : null;
     _pushEntry({ role: 'assistant', text: reply, pt: index, opening: true, ...(diagram ? { diagram } : {}) });
   }
@@ -843,6 +900,7 @@ const Teach = (() => {
       if (recap) _pushEntry({ role: 'recap', rid: _rid(), pt: decision.idx, lines: recap, done: false });
       _pushEntry(_replyEntry(reply, decision));
       toSlides = decision.kind === 'slides';   // RESPECT_EXIT: she chose the slides
+      if (_core.PILOT_FIX && _state.pilot && _state.pilot.finished && Store.markFinished) Store.markFinished(_subtopicId);
     } catch {
       thinkingEl?.remove();
       _appendBubble('assistant', "I can't answer that right now — try again in a moment.");

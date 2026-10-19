@@ -132,6 +132,28 @@ function create(env) {
   // change. create({ call, v3Fields: false }) keeps the old brief; a lesson
   // without these fields gets the old brief either way.
   const V3_FIELDS = env.v3Fields !== false;
+  // Pilot feedback v3.1 (brief docs/briefs/2026-10-19-pilot-feedback-v3-1.md,
+  // step 2), on by default with FLOW_FIX and FIRST_TIME. create({ call,
+  // pilotFix: false }) keeps every prompt, decision and state exactly as
+  // before (tools/check-flag-identical.js). The only tutor change allowed:
+  // (a) one idea and at most 60 words per tutor message, in code; (b) one
+  // question per message, never two joined; (c) her question first: answered
+  // in one or two sentences (the glossary definition where there is one),
+  // then one easy question; (d) "tell me" gives the rest of the key point one
+  // idea per message in the lesson's own words, each with a Next button, then
+  // its "worth writing down" card; the next key point always starts in a new
+  // message; (e) a key point is ticked only when every sentence of it was
+  // taught or told; (f) after two wrong or "don't know" answers in a row the
+  // tutor goes back a step, no new idea until she gets one right; (g) no
+  // answer in the question, on every attempt; (h) a term is used only once
+  // explained (this lesson, or an earlier one she has opened), otherwise it is
+  // explained first in its own message; (i) only the lesson's science: numbers
+  // from the lesson or the practice code, no "goes up by the same amount";
+  // (j) the lesson's one comparison, its picture sequence, worked examples
+  // with "Try another", its widget, her own-words line, two mixed questions,
+  // the end quiz and the opening recall questions.
+  const PILOT_FIX = FLOW_FIX && FIRST_TIME && env.pilotFix !== false;
+  const PracticeLib = env.practice || (typeof Practice !== 'undefined' ? Practice : null);
   const STUDENT_NAME = env.studentName || 'Mabel';   // used only to filter it out of replies
   const WHO     = FIX23 ? 'the student' : 'Mabel';   // how prompts refer to her
   const WHO_CAP = FIX23 ? 'The student' : 'Mabel';
@@ -398,6 +420,9 @@ function create(env) {
       // ('tired', 'quick' = the one quick question is out, 'after-quick'),
       // and how many check-ins she has had (their wording rotates).
       ...(RESPECT_EXIT ? { exit: { offer: null, checkins: 0 } } : {}),
+      // PILOT_FIX: the steps still to show, what her next reply answers, and
+      // per point which sentences have been taught or told.
+      ...(PILOT_FIX ? { pilot: _freshPilot() } : {}),
     };
   }
 
@@ -527,6 +552,7 @@ function create(env) {
         `Numbers and units: copy every number and unit exactly as the key point's content and key terms write them. Never recalculate, convert, round or rewrite a number or unit. Never give an example, a classification or a figure that the content does not give.`,
       ].join('\n') : '',
       FIRST_TIME ? _firstTimeRules() : '',
+      PILOT_FIX ? _pilotRules() : '',
     ].filter(Boolean).join('\n');
   }
 
@@ -540,7 +566,7 @@ function create(env) {
     const basics = _basics();
     return [
       `She is meeting this topic for the first time. She knows everyday life, not the subject's words. Never assume she knows a term.`,
-      `In each message bring in at most ONE new term or idea. The first time you use a term, explain it in everyday words, with an everyday comparison where one helps, before you use it in a question. Never use a term you have not explained in this conversation, unless she has used it herself. Units are terms too (volts, amps, ohms, joules, watts): say what a unit measures the first time you use it.`,
+      `In each message bring in at most ONE new term or idea. The first time you use a term, explain it in everyday words, ${PILOT_FIX ? `using the lesson's own comparison where one helps` : `with an everyday comparison where one helps`}, before you use it in a question. Never use a term you have not explained in this conversation, unless she has used it herself. Units are terms too (volts, amps, ohms, joules, watts): say what a unit measures the first time you use it.`,
       `Go from the concrete to the abstract: first what you would see, feel or measure; then the name for it; then the rule, equation or graph.`,
       `Never ask a question whose answer is written in your message or in your last message: she would only copy it back. Describing the same situation in other words ("the wrong way round", then "wired in backwards") is still copying. Ask her to use the idea — on an everyday case, a small change ("what would happen if…"), or a reason in her own words.`,
       basics.length
@@ -606,6 +632,7 @@ function create(env) {
 
   // A key point's diagram, if it has one and it has not yet been shown in the conversation.
   function _inlineDiagram(idx) {
+    if (PILOT_FIX) return null;   // PILOT_FIX: the picture sequence is shown as its sentences are taught
     if (!INLINE_DIAGRAMS || idx == null || !_points[idx] || !_points[idx].diagram) return null;
     const id = _points[idx].diagram;
     return (_state.transcript || []).some(t => t.diagram === id) ? null : id;
@@ -705,7 +732,7 @@ function create(env) {
       const dl = _diagramLine(_teachIndex(decision));
       if (dl) lines.push(dl);
       // Tone fix: after "huh?" the reference lessons simplify warmly; a new apply-it question made it worse.
-      if (_saysConfused(userText)) lines.push(`She is confused. Own it kindly ("Sorry, that was a lot"), then say the same idea again more simply, in one or two short sentences with an everyday picture. Then ask one easy question about what you have just said; this time it is fine if the answer is in your message. Do not move on to anything new.`);
+      if (_saysConfused(userText)) lines.push(`She is confused. Own it kindly ("Sorry, that was a lot"), then say the same idea again more simply, in one or two short sentences${PILOT_FIX ? '' : ' with an everyday picture'}. Then ask one easy question about what you have just said; this time it is fine if the answer is in your message. Do not move on to anything new.`);
     }
 
     if (decision.kind === 'retry') {
@@ -719,7 +746,7 @@ function create(env) {
       lines.push(_pointBrief(decision.point), _coveredLine(decision.idx, decision.facts),
         _partLine(decision.fact), _remainingLine(decision.idx, decision.facts, decision.fact));
     } else if (decision.kind === 'start') {
-      lines.push(`That is her answer to your opening question, which asked what she already knows about the everyday idea behind this lesson. It is not marked right or wrong. In ONE short sentence, respond to what she said: if something in it is useful, say what; if she does not know, say that is fine, you will start from the beginning. Then start teaching from where she is. If her answer shows she does not have one of the basics the first key point needs, teach that one basic idea, in everyday words with an everyday comparison, and ask one question that makes her use it. Otherwise introduce the first key point below in AT MOST TWO SENTENCES, starting from what she would see or measure, then ask one question about the part named below. Do not answer your own question.`);
+      lines.push(`That is her answer to your opening question, which asked what she already knows about the everyday idea behind this lesson. It is not marked right or wrong. In ONE short sentence, respond to what she said: if something in it is useful, say what; if she does not know, say that is fine, you will start from the beginning. Then start teaching from where she is. If her answer shows she does not have one of the basics the first key point needs, teach that one basic idea, in everyday words${PILOT_FIX ? '' : ' with an everyday comparison'}, and ask one question that makes her use it. Otherwise introduce the first key point below in AT MOST TWO SENTENCES, starting from what she would see or measure, then ask one question about the part named below. Do not answer your own question.`);
       lines.push(_pointBrief(decision.point), _partLine(_openingFact(decision.idx)),
         _remainingLine(decision.idx, _state.facts[decision.idx], _openingFact(decision.idx)));
     } else if (decision.kind === 'carryon') {
@@ -849,6 +876,8 @@ function create(env) {
   function _finishReply(text, maxWords = MAX_REPLY_WORDS) {
     if (!FIX23) return _stripStockPraise(text);
     let t = _stripStockOpener(_stripName(FIX25 ? (String(text || '').replace(STOCK_PRAISE_25, '') || text) : _stripStockPraise(text)));
+    // PILOT_FIX (a), (b): one question, and never more than 60 words, whatever the turn.
+    if (PILOT_FIX) { t = _pilotOneQuestion(t); maxWords = Math.min(maxWords, PILOT_WORDS); }
     if (_wordCount(_stripMarkdown(t)) > maxWords) t = _cutToWords(t, maxWords) || t;
     return t;
   }
@@ -953,6 +982,7 @@ function create(env) {
   }
 
   async function _callWithLengthGuard(sys, user, noYesNo = false, maxWords = null) {
+    if (PILOT_FIX && maxWords) maxWords = Math.min(maxWords, PILOT_WORDS);
     // FLOW_FIX: a reply that tells her a whole key point gets a higher word limit.
     const limits = FLOW_FIX && maxWords ? [
       { words: maxWords, tokens: Math.ceil(maxWords * 2.2) + 60, note: '' },
@@ -982,7 +1012,7 @@ function create(env) {
     // has just said. Each is asked for again once.
     const ft = FIRST_TIME ? _pendingFT : null;
     _pendingFT = null;
-    let termFault = null, termTried = false, termUnexplained = false, given = false, givenTried = false;
+    let termFault = null, termTried = false, termUnexplained = false, given = false, givenTried = false, science = null;
     const basicOf = new Map();
     const done = FIRST_TIME
       ? text => {
@@ -1000,10 +1030,11 @@ function create(env) {
       const termNote = !termFault ? ''
         : ft.forbid
           ? `(Your opening uses words the lesson is about to teach: ${termFault.join(', ')}. She does not know them yet. Ask your one question about the everyday idea again without any of them.)`
-          : termUnexplained ? `(Your reply uses ${termFault.join(', ')} without saying what it means. She has never met it. Say what it means in everyday words, with an everyday comparison if one helps, before you use it — or leave it out of this message.)`
+          : termUnexplained ? `(Your reply uses ${termFault.join(', ')} without saying what it means. She has never met it. Say what it means in everyday words${PILOT_FIX ? '' : ', with an everyday comparison if one helps,'} before you use it — or leave it out of this message.)`
           : `(Your reply brings in ${termFault.length} new terms at once: ${termFault.join(', ')}. She is meeting them for the first time. Keep only ONE new term in this message, explained in everyday words, and leave the others for later messages.)`;
       const givenNote = given ? `(The answer to your question is already in your message or your last one, so she would only copy it back. Keep the teaching, but ask a question that makes her use the idea: an everyday case, a small change, or a reason in her own words.)` : '';
-      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : '', many ? manyNote : '', naming ? namingNote : '', anchorNote, repeatNote, termNote, givenNote].filter(Boolean).join('\n');
+      const scienceNote = science ? `(Your reply says ${science}, which is not in the lesson. State only the relationships, numbers and rules the key point's content, exam box or worked examples give, in their words.)` : '';
+      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : '', many ? manyNote : '', naming ? namingNote : '', anchorNote, repeatNote, termNote, givenNote, ...(PILOT_FIX ? [scienceNote] : [])].filter(Boolean).join('\n');
       const raw = (await AI.call(sys, note ? `${user}\n\n${note}` : user, a.tokens)).trim();
       const split = TEACH_THEN_ASK ? _splitAnswer(raw) : { text: raw, answer: null };
       const { answer } = split;
@@ -1016,7 +1047,7 @@ function create(env) {
       yesNo = noYesNo && _asksYesNo(plain);
       eitherOr = FIX25 && noYesNo && _asksEitherOr(plain);
       noQuestion = FIX25 && noYesNo && !cut && _asksNothing(plain);
-      many = FIX25 && noYesNo && _asksMoreThanOne(plain);
+      many = FIX25 && noYesNo && (_asksMoreThanOne(plain) || (PILOT_FIX && JOINED_QUESTION.test(plain)));
       naming = FIX_T4 && noYesNo && _asksForName(plain);
       // TEACH_THEN_ASK: one more try when the question's answer has not been taught.
       unanchored = TEACH_THEN_ASK && noYesNo && !anchorTried && !_answerTaught(answer, plain);
@@ -1038,12 +1069,14 @@ function create(env) {
             if (un.length) { termFault = un; termTried = true; termUnexplained = true; }
           }
         }
-        if (ft.teach && !ft.confused && noYesNo && !givenTried && !cut && !termFault && !repeated) {
+        if (ft.teach && !ft.confused && noYesNo && (!givenTried || PILOT_FIX) && !cut && !termFault && !repeated) {
           given = await _answerGiven(plain);
           givenTried = true;
         }
       }
-      const badQ = yesNo || eitherOr || noQuestion || many || naming || unanchored || !!repeated || !!termFault || given;
+      // PILOT_FIX (i): a number or rule that is not the lesson's is asked for again.
+      science = PILOT_FIX && !cut ? _pilotScienceFault(plain) : null;
+      const badQ = yesNo || eitherOr || noQuestion || many || naming || unanchored || !!repeated || !!termFault || given || !!science;
       if (!cut && !long && !badQ) return done(reply);
       if (!cut && !badQ && !complete) complete = reply; // finished, just long — usable if nothing better
       if (cut || long) level = Math.min(level + 1, limits.length - 1);
@@ -1059,6 +1092,13 @@ function create(env) {
       const fine = !_looksTruncated(plain) && !_asksYesNo(plain) && !_asksEitherOr(plain)
         && !_asksNothing(plain) && !_asksMoreThanOne(plain);
       if (fine) return done(reply);
+    }
+    // PILOT_FIX (g), (i): out of attempts with the answer still in the message,
+    // the question is taken off (she taps Next instead); a sentence that still
+    // states something not in the lesson is dropped.
+    if (PILOT_FIX && !complete) {
+      if (given) _pilotNoQuestion = true;
+      if (science) last = _pilotDropUnsourced(last);
     }
     // Never show a sentence that stops dead: prefer a complete-but-long reply,
     // otherwise drop the unfinished tail of the last one.
@@ -1691,6 +1731,7 @@ function create(env) {
   }
 
   async function _getTutorReply(userText) {
+    if (PILOT_FIX) return _pilotReply(userText);
     if (RESPECT_EXIT && !_state.complete) { const r = await _respectTurn(userText); if (r) return r; }
     if (RESPECT_EXIT && _state.complete && _wantsExit(userText)) return { reply: _exitLine(), recap: null, decision: { kind: 'free' } };
     if (!_state.complete && _wantsPause(userText)) {
@@ -1760,6 +1801,10 @@ function create(env) {
 
   // The tutor's reply, tagged with the point it belongs to.
   function _replyEntry(text, d) {
+    if (PILOT_FIX && d.pilot) return { ..._replyEntryBase(text, d), ...d.pilot };
+    return _replyEntryBase(text, d);
+  }
+  function _replyEntryBase(text, d) {
     // RESPECT_EXIT: the reaction to the one quick question stays on its point; choices go with it.
     if (RESPECT_EXIT && d.quickReact) return { role: 'assistant', text, pt: d.idx, choices: d.choices };
     const e = { role: 'assistant', text };
@@ -1832,6 +1877,675 @@ function create(env) {
     ].filter(Boolean).join('\n\n');
   }
 
+  // ── Pilot fix (PILOT_FIX) ─────────────────────────────────────
+  // Brief docs/briefs/2026-10-19-pilot-feedback-v3-1.md, step 2. Steps that
+  // the lesson file fully decides (telling a sentence, a worked example, a
+  // quiz question, marking a number) are built here in code with no model
+  // call; the model writes only the teaching, the answer to her question,
+  // the reaction to her answer and her own-words feedback.
+  const PILOT_WORDS = 60;
+  const JOINED_QUESTION = /,?\s+(and|or)\s+(why|how( come)?|what|which|where|when|who)\b[^?.!]*\?/i;
+  const SAME_AMOUNT = /\b(by the same amount|the same amount each time|go(es)? up (by )?the same|goes up evenly)\b/i;
+  const ASKS = /^\W*(what|whats|what's|wat|wot|why|how|where|when|who|wdym|huh|eh)\b|\bwhat (does|do|is|are)\b.*\bmean|\b(don'?t|do not) (get|understand)|\bi'?m (confused|lost)\b|^\W*confused\b|makes no sense/i;
+  const NOT_A_QUESTION = /^\W*(is it|it'?s|its|it is|the|a|an|because|cos|so|i think)\b/i;
+
+  // Set by the page (or a tester): the subject glossary, which lessons she has
+  // opened, the recall questions from the lesson before, this lesson's id.
+  let _pctx = { glossary: [], opened: () => false, recall: null, lessonId: '', random: null };
+  let _pGloss = null, _pNums = null;
+  function pilotContext(ctx) { _pctx = { ..._pctx, ...ctx }; _pGloss = null; _pNums = null; }
+  let _pilotNoQuestion = false;
+
+  function _freshPilot() {
+    return { queue: [], pending: null, end: null, wrongRun: 0, stepbacks: 0, readyWrong: 0,
+             sent: _points.map(p => Array(p.sentences.length).fill(false)),
+             shown: [], known: [], quiz: { n: 0, right: 0, done: false }, finished: false, started: false, tries: 0 };
+  }
+  // The pilot record (a state saved before it existed, or for another version of the lesson, is rebuilt).
+  function _pilot() {
+    if (!_state.pilot || typeof _state.pilot !== 'object') _state.pilot = _freshPilot();
+    const P = _state.pilot;
+    if (!Array.isArray(P.sent) || P.sent.length !== _points.length) P.sent = _points.map(p => Array(p.sentences.length).fill(false));
+    _points.forEach((p, i) => { if (!Array.isArray(P.sent[i]) || P.sent[i].length !== p.sentences.length) P.sent[i] = Array(p.sentences.length).fill(false); });
+    for (const k of ['queue', 'shown', 'known']) if (!Array.isArray(P[k])) P[k] = [];
+    if (!P.quiz || typeof P.quiz !== 'object') P.quiz = { n: 0, right: 0, done: false };
+    return P;
+  }
+  function _rand() { return typeof _pctx.random === 'function' ? _pctx.random() : Math.random(); }
+
+  function _pilotRules() {
+    const c = _data && _data.comparison && !Array.isArray(_data.comparison) ? _data.comparison : null;
+    return [
+      `These rules come first. Every message holds ONE idea and at most ${PILOT_WORDS} words. Ask at most ONE question, and never join two ("which … and why?"). Never put two key points in one message.`,
+      c ? `The lesson's one everyday comparison is ${c.name}: ${(c.parts || []).map(p => `${p.thing} stands for ${p.standsFor}`).join('; ')}. It stops being true here: ${c.limit} Use only this comparison and only these parts of it. Never use any other comparison or "it's like…".`
+        : `Do not use everyday comparisons ("it's like…"): this lesson has none.`,
+      `Every relationship, number or rule you state must be one the key point's content, exam box or worked examples state, in their words. Never state your own version. "Doubles" means doubles: never say that a quantity goes up by the same amount.`,
+    ].join('\n');
+  }
+
+  // (a), (b) One question, at most 60 words.
+  function _pilotOneQuestion(text) {
+    let t = String(text || '').replace(new RegExp(JOINED_QUESTION.source, 'gi'), '?');
+    const sents = _sentences(t).map(s => s.trim()).filter(Boolean);
+    const qs = sents.map((s, k) => (/\?/.test(s) ? k : -1)).filter(k => k >= 0);
+    if (qs.length <= 1) return t.trim();
+    const keep = qs[qs.length - 1];
+    return sents.filter((s, k) => !/\?/.test(s) || k === keep).join(' ').trim();
+  }
+  function _pilotCap(text) {
+    let t = _pilotOneQuestion(text);
+    if (_wordCount(_stripMarkdown(t)) > PILOT_WORDS) t = _cutToWords(t, PILOT_WORDS) || t.split(/\s+/).slice(0, PILOT_WORDS).join(' ');
+    return t;
+  }
+
+  // (i) Numbers she may be told: the lesson's own, hers, and the practice question's.
+  function _pilotNumbers() {
+    if (!_pNums) {
+      const src = JSON.stringify(_data || {}) + ' ' + (_pctx.glossary || []).map(e => e.def).join(' ');
+      _pNums = new Set((src.replace(/(\d),(\d{3})\b/g, '$1$2').match(/\d+(\.\d+)?/g) || []).map(Number));
+    }
+    const P = _pilot();
+    const extra = [...(_state.transcript || []).filter(t => t.role === 'user').map(t => t.text), JSON.stringify(P.pending || {})].join(' ');
+    return new Set([..._pNums, ...(extra.replace(/(\d),(\d{3})\b/g, '$1$2').match(/\d+(\.\d+)?/g) || []).map(Number)]);
+  }
+  function _pilotScienceFault(plain) {
+    const m = String(plain || '').match(SAME_AMOUNT);
+    if (m) return `"${m[0]}"`;
+    const ok = _pilotNumbers();
+    const nums = (String(plain || '').replace(/(\d),(\d{3})\b/g, '$1$2').match(/\d+(\.\d+)?/g) || []).map(Number);
+    const bad = nums.find(n => n > 2 && !ok.has(n));
+    return bad !== undefined ? `the number ${bad}` : null;
+  }
+  function _pilotDropUnsourced(text) {
+    const keep = _sentences(text).map(s => s.trim()).filter(s => s && !_pilotScienceFault(_stripMarkdown(s)));
+    return keep.join(' ') || text;
+  }
+
+  // (e) Which sentences of point idx a tutor message taught: at least half of a
+  // sentence's content words are in it.
+  function _pilotMarkTaught(idx, text) {
+    if (idx == null || !_points[idx]) return;
+    const P = _pilot(), have = new Set(_stems(_stripMarkdown(text)));
+    _points[idx].sentences.forEach((s, j) => {
+      if (P.sent[idx][j]) return;
+      const need = [...new Set(_stems(s))];
+      if (need.length && need.filter(w => have.has(w)).length / need.length >= 0.5) P.sent[idx][j] = true;
+    });
+  }
+  const _flat = s => String(s || '').toLowerCase().replace(/<[^>]+>/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
+  function _sentenceOf(idx, phrase) {
+    const want = _flat(phrase);
+    return _points[idx].sentences.findIndex(s => _flat(s).includes(want));
+  }
+  // (j) The pictures whose sentence has now been taught or told, in order, not shown before.
+  function _pilotPicturesDue(idx) {
+    if (idx == null || !_points[idx]) return [];
+    const P = _pilot(), out = [];
+    for (const pic of _points[idx].pictures || []) {
+      if (P.shown.includes(pic.diagram)) continue;
+      const j = _sentenceOf(idx, pic.after);
+      if (j !== -1 && !P.sent[idx][j]) break;    // pictures come in order: a later one waits for this one
+      P.shown.push(pic.diagram);
+      out.push({ diagram: pic.diagram, caption: pic.caption || '', labels: pic.labels || [] });
+    }
+    return out;
+  }
+
+  // (h) The glossary terms (the subject's, and this lesson's key terms), each with a pattern.
+  function _pilotGlossary() {
+    if (_pGloss) return _pGloss;
+    const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const seen = new Set(), list = [];
+    const add = (term, def, lesson) => {
+      const base = String(term || '').replace(/\s*\(.*?\)\s*/g, ' ').trim();
+      const key = base.toLowerCase();
+      if (!base || base.length < 3 || seen.has(key) || !def) return;
+      seen.add(key);
+      const forms = [base];
+      const acr = String(term).match(/\(([^)]+)\)/);
+      if (acr && /^[A-Z]{2,}$/.test(acr[1].trim())) forms.push(acr[1].trim());
+      list.push({ term: base, def: String(def), lesson, key,
+                  re: new RegExp(`(^|[^A-Za-z])(${forms.map(f => esc(f).replace(/\s+/g, '[\\s-]+')).join('|')})(e?s)?(?![A-Za-z])`, 'i') });
+    };
+    _points.forEach(p => (p.keyTerms || []).forEach(t => add(t.term, t.def, _pctx.lessonId)));
+    (_pctx.glossary || []).forEach(e => add(e.term, e.def, e.lesson));
+    _pGloss = list;
+    return list;
+  }
+  function _pilotTermIn(text) {
+    const t = String(text || '');
+    return _pilotGlossary().filter(e => e.re.test(t)).sort((a, b) => b.term.length - a.term.length)[0] || null;
+  }
+  function _pilotUnknownTerms(text, basicTag) {
+    const P = _pilot(), plain = _stripMarkdown(text);
+    const hers = (_state.transcript || []).filter(t => t.role === 'user').map(t => t.text).join('\n');
+    const taught = _points.map((p, i) => p.sentences.filter((s, j) => P.sent[i][j]).join(' ')).join('\n');
+    const tag = String(basicTag || '').toLowerCase();
+    return _pilotGlossary().filter(e => e.re.test(plain) && !P.known.includes(e.key)
+      && !(e.lesson && e.lesson !== _pctx.lessonId && _pctx.opened(e.lesson))
+      && !e.re.test(hers) && !e.re.test(taught) && !(tag && tag.includes(e.key)));
+  }
+  function _pilotDefLine(e) {
+    const def = String(e.def).replace(/\s+/g, ' ').trim();
+    const first = (def.match(/^[^.!?]*[.!?]/) || [def])[0];
+    return _pilotCap(`First, a word you'll need: **${e.term}**. ${first.charAt(0).toUpperCase()}${first.slice(1)}`);
+  }
+
+  // After a model message for point idx: sentences taught, pictures due, and any
+  // unexplained term explained first in its own message (the model's message waits).
+  function _pilotAfterModel(text, idx, extra = {}) {
+    const P = _pilot();
+    let t = text;
+    if (_pilotNoQuestion) {
+      _pilotNoQuestion = false;
+      const kept = _sentences(t).map(s => s.trim()).filter(s => s && !/\?/.test(s));
+      if (kept.length) { t = kept.join(' '); P.pending = { t: 'continue', idx }; }
+    }
+    if (idx != null) _pilotMarkTaught(idx, t);
+    const pics = _pilotPicturesDue(idx);
+    if (pics.length) extra = { ...extra, pictures: pics };
+    const unknown = _pilotUnknownTerms(t, extra.basic || _lastBasicTag).slice(0, 2);
+    if (!unknown.length) return { text: t, extra };
+    unknown.forEach(e => P.known.push(e.key));
+    const held = { t: 'msg', text: t, entry: extra, pending: P.pending };
+    P.pending = null;
+    P.queue.unshift(...unknown.slice(1).map(e => ({ t: 'msg', text: _pilotDefLine(e), entry: {} })), held);
+    return { text: _pilotDefLine(unknown[0]), extra: {} };
+  }
+
+  // The reply this turn: Next when more steps wait and nothing else is asked.
+  function _pilotOut(text, extra = {}, kind = 'pilot', idx = null, recap = null) {
+    return { reply: _pilotCap(text), recap, decision: { kind, idx, pilot: _pilotChoices(extra) } };
+  }
+  function _pilotChoices(extra) {
+    const P = _pilot();
+    const entry = { ...extra };
+    if (!P.pending && P.queue.length && !entry.choices) { entry.choices = ['Next']; P.pending = { t: 'next' }; }
+    if (!entry.choices && P.pending && P.pending.t === 'continue') entry.choices = ['Next'];
+    return entry;
+  }
+
+  // Her question, the way she asked it (not a tentative answer such as "is it the volts?").
+  function _pilotAsks(text) {
+    const t = String(text || '').trim();
+    if (!t || _wantsTelling(t) || _wantsSkip(t) || NOT_A_QUESTION.test(t)) return false;
+    return ASKS.test(t) || _saysConfused(t) || _asksMeaning(t);
+  }
+
+  // ── Questions in code (readiness, mixed, recall, quiz) ──
+  function _order(q) {
+    // Options in a fixed, shuffled order (the lesson file tends to put the answer first).
+    let h = 0; for (const ch of String(q.question)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+    const idx = q.options.map((o, k) => k);
+    for (let k = idx.length - 1; k > 0; k--) { h = (h * 1103515245 + 12345) >>> 0; const r = h % (k + 1); [idx[k], idx[r]] = [idx[r], idx[k]]; }
+    return idx;
+  }
+  function _pickOption(text, opts) {
+    const t = String(text || '').trim().toLowerCase().replace(/^["'(]+|["'.!?)]+$/g, '');
+    let k = opts.findIndex(o => o.toLowerCase() === t);
+    if (k !== -1) return k;
+    const m = t.match(/^(?:option\s+)?([a-e]|[1-5])$/);
+    if (m) { const n = /\d/.test(m[1]) ? Number(m[1]) - 1 : m[1].charCodeAt(0) - 97; return n < opts.length ? n : -1; }
+    const ts = new Set(_stems(t));
+    const nums = (t.match(/\d+(\.\d+)?/g) || []);
+    const scores = opts.map(o => {
+      const os = [...new Set(_stems(o))];
+      const on = o.match(/\d+(\.\d+)?/g) || [];
+      if (on.length && nums.length && on[0] === nums[0]) return 1;
+      return os.length ? os.filter(w => ts.has(w)).length / os.length : 0;
+    });
+    const best = Math.max(...scores);
+    return best >= 0.5 && scores.filter(s => s === best).length === 1 ? scores.indexOf(best) : -1;
+  }
+  function _askMc(step, label) {
+    const P = _pilot(), q = step.q, order = _order(q);
+    const shown = order.map(k => q.options[k]);
+    P.pending = { t: 'mc', step, order };
+    return _pilotOut(`${label} ${q.question}`, { choices: shown, pt: step.idx ?? undefined });
+  }
+  function _markMc(userText) {
+    const P = _pilot(), { step, order } = P.pending;
+    const q = step.q, shown = order.map(k => q.options[k]);
+    const k = _pickOption(userText, shown);
+    const right = k !== -1 && order[k] === q.correct;
+    P.pending = null;
+    if (step.kind === 'ready' && !right) P.readyWrong++;
+    if (step.kind === 'quiz') { P.quiz.n++; if (right) P.quiz.right++; }
+    const explain = String(q.explain || '').trim();
+    const text = right ? `Yes, that's right. ${explain}` : `Not quite: it's "${q.options[q.correct]}". ${explain}`;
+    return _pilotOut(text, {}, 'pilot', step.idx ?? null);
+  }
+
+  // ── Practice numbers ("Try another", generator quiz questions) ──
+  function _askNumber(eq, mode, label) {
+    const P = _pilot();
+    if (!PracticeLib || !PracticeLib.has(eq)) return null;
+    const q = PracticeLib.make(eq, Math.floor(_rand() * 1e9) + 1);
+    P.pending = { t: 'num', q, mode };
+    return _pilotOut(`${label} ${q.question}`, {});
+  }
+  function _markNumber(userText) {
+    const P = _pilot(), { q, mode } = P.pending;
+    const r = PracticeLib.check(q, userText);
+    const ans = `${PracticeLib.fmt(q.answer.value)} ${q.answer.unit}`;
+    P.pending = null;
+    if (mode === 'quiz') {
+      P.quiz.n++;
+      if (r.ok) P.quiz.right++;
+      const work = (q.steps.find(s => /Put the numbers in/.test(s.text)) || q.steps[q.steps.length - 1]).text;
+      return _pilotOut(r.ok ? `Yes, that's right: ${ans}.` : `Not quite: it's ${ans}. ${work}`);
+    }
+    if (r.ok) {
+      P.pending = { t: 'after-try', eq: q.equation };
+      return _pilotOut(`Yes, that's right: ${ans}.`, { choices: ['Try another', 'Next'] });
+    }
+    P.pending = { t: 'steps', q, k: 1 };
+    return _pilotOut(`Not quite. Here is how it goes, one step at a time. ${q.steps[0].text}`, { choices: ['Next step'] });
+  }
+  function _nextWorkStep() {
+    const P = _pilot(), { q, k } = P.pending;
+    const s = q.steps[k];
+    if (k + 1 < q.steps.length) { P.pending = { t: 'steps', q, k: k + 1 }; return _pilotOut(s.text, { choices: ['Next step'] }); }
+    P.pending = { t: 'after-try', eq: q.equation };
+    return _pilotOut(`${s.text} Want to try another one?`, { choices: ['Try another', 'Next'] });
+  }
+
+  // ── The steps that end a key point ──
+  function _pilotTellChunks(idx) {
+    const P = _pilot(), s = _points[idx].sentences, out = [];
+    let cur = null;
+    s.forEach((x, j) => {
+      if (P.sent[idx][j]) { cur = null; return; }
+      if (cur && cur.js[cur.js.length - 1] === j - 1 && _wordCount(cur.text) < 15 && _wordCount(cur.text) + _wordCount(x) <= 30) { cur.js.push(j); cur.text += ' ' + x; return; }
+      cur = { t: 'tell', idx, js: [j], text: x };
+      out.push(cur);
+    });
+    // The lesson's own words, without the gaps its HTML tags left (" closed circuit .").
+    out.forEach(c => { c.text = c.text.replace(/\s+([.,;:!?)])/g, '$1').replace(/\(\s+/g, '(').replace(/\s{2,}/g, ' '); });
+    return out;
+  }
+  function _pilotEndSteps(idx, tell = true) {
+    const p = _points[idx], steps = tell ? _pilotTellChunks(idx) : [];
+    (p.workedExamples || []).forEach((x, j) => steps.push({ t: 'worked', idx, j }));
+    if (p.widget) steps.push({ t: 'widget', idx });
+    if ((p.writeBullets || []).length) steps.push({ t: 'recap', idx });
+    if (p.ownWords) steps.push({ t: 'own', idx });
+    (p.mixedQuestions || []).forEach(q => steps.push(q.generator ? { t: 'num', kind: 'mixed', idx, eq: q.generator } : { t: 'mc', kind: 'mixed', idx, q }));
+    steps.push({ t: 'advance' });
+    return steps;
+  }
+  // The decision that ends a point waits until its steps are done; only what
+  // she did this turn is kept now (her answer, the parts covered).
+  function _pilotHoldEnd(decision) {
+    const P = _pilot();
+    P.end = { kind: decision.kind, idx: decision.idx, nextIndex: decision.nextIndex, how: decision.how || null, skipped: !!decision.skipped };
+    _applyDecision({ ...decision, kind: 'fact' });
+  }
+  function _pilotQuizSteps() {
+    const quiz = Array.isArray(_data.endQuiz) ? _data.endQuiz : [];
+    const P = _pilot();
+    if (!quiz.length || P.quiz.done) return [];
+    P.quiz = { n: 0, right: 0, done: false };
+    return [...quiz.map((q, k) => (q.generator ? { t: 'num', kind: 'quiz', k, of: quiz.length, eq: q.generator } : { t: 'mc', kind: 'quiz', k, of: quiz.length, q })), { t: 'quiz-end' }];
+  }
+  // Ticks honestly, then moves on: readiness questions before a practical, then the next point in a new message.
+  function _pilotAdvance() {
+    const P = _pilot(), e = P.end;
+    P.end = null;
+    if (!e) return;
+    const done = P.sent[e.idx].every(Boolean);
+    _state.coverage[e.idx] = (!e.skipped && done) || _state.coverage[e.idx] === true;
+    if (e.how) _flow().how[e.idx] = e.how;
+    _state.retriedCurrent = false;
+    _resetPointPacing();
+    P.wrongRun = 0; P.stepbacks = 0;
+    if (e.kind === 'complete') {
+      _state.complete = true;
+      _state.resumeIndex = null;
+      _state.wrapOffered = true;
+      P.queue.unshift(..._pilotQuizSteps(), { t: 'close' });
+      return;
+    }
+    _state.currentPointIndex = e.nextIndex;
+    if (e.kind === 'resume') _state.resumeIndex = null;
+    const n = _points[e.nextIndex];
+    P.readyWrong = 0;
+    const ready = n.readiness && Array.isArray(n.readiness.questions)
+      ? [...n.readiness.questions.map((q, k) => ({ t: 'mc', kind: 'ready', idx: e.nextIndex, k, q })), { t: 'ready-recap', idx: e.nextIndex }] : [];
+    P.queue.unshift(...ready, { t: 'open', idx: e.nextIndex });
+  }
+
+  // Runs the next step and returns its message.
+  async function _pilotStep() {
+    const P = _pilot();
+    const s = P.queue.shift();
+    if (!s) return null;
+    const p = s.idx != null ? _points[s.idx] : null;
+    switch (s.t) {
+      case 'tell': {
+        s.js.forEach(j => { P.sent[s.idx][j] = true; });
+        const pics = _pilotPicturesDue(s.idx);
+        return _pilotOut(s.text, { pt: s.idx, ...(pics.length ? { pictures: pics } : {}) }, 'pilot', s.idx);
+      }
+      case 'msg': {
+        P.pending = s.pending || null;
+        return _pilotOut(s.text, s.entry || {}, 'pilot', s.entry && s.entry.pt != null ? s.entry.pt : null);
+      }
+      case 'worked': {
+        const x = p.workedExamples[s.j];
+        const eq = x.equation;
+        const can = PracticeLib && PracticeLib.has(eq);
+        if (can) P.pending = { t: 'after-try', eq };
+        return _pilotOut(`Here is a worked example. Tap "Show the next step" to go through it.`,
+          { pt: s.idx, card: { type: 'worked', question: x.question, steps: (x.steps || []).map(st => st.text) }, ...(can ? { choices: ['Try another', 'Next'] } : {}) }, 'pilot', s.idx);
+      }
+      case 'widget':
+        return _pilotOut(`${p.widget.intro} Tap Next when you are done.`, { pt: s.idx, card: { type: 'widget', id: p.widget.id, options: p.widget.options || {}, labels: p.widget.labels || [] } }, 'pilot', s.idx);
+      case 'recap':
+        return _pilotOut(`Copy those into your notes, then tap Next.`, { pt: s.idx }, 'pilot', s.idx, p.writeBullets.map(_stripHtml));
+      case 'own':
+        P.pending = { t: 'own', idx: s.idx };
+        return _pilotOut(p.ownWords.prompt, { pt: s.idx }, 'pilot', s.idx);
+      case 'mc': {
+        const label = s.kind === 'quiz' ? `Quiz, question ${s.k + 1} of ${s.of}:`
+          : s.kind === 'recall' ? `From the last lesson, question ${s.k + 1} of 3:`
+          : s.kind === 'ready' ? `Before the practical, question ${s.k + 1} of 2:` : 'Quick question:';
+        return _askMc(s, label);
+      }
+      case 'num': {
+        const label = s.kind === 'quiz' ? `Quiz, question ${s.k + 1} of ${s.of}:` : 'Quick question:';
+        return _askNumber(s.eq, s.kind === 'quiz' ? 'quiz' : 'practice', label) || _pilotStep();
+      }
+      case 'ready-recap':
+        if (!P.readyWrong) return _pilotStep();
+        return _pilotOut(p.readiness.recap, { pt: s.idx }, 'pilot', s.idx);
+      case 'advance':
+        _pilotAdvance();
+        return _pilotStep();
+      case 'open': {
+        if (FIRST_TIME) _pendingFT = { teach: true };
+        const reply = await _callWithLengthGuard(_buildSystemPrompt(s.idx), _pilotOpenPrompt(s.idx), true);
+        const r = _pilotAfterModel(reply, s.idx, { pt: s.idx, opening: true });
+        return _pilotOut(r.text, r.extra, 'pilot', s.idx);
+      }
+      case 'open-lesson': {
+        const reply = await _callWithLengthGuard(_buildSystemPrompt(0), _firstOpeningPrompt(), true);
+        return _pilotOut(reply, { pt: 0, opening: true }, 'pilot', 0);
+      }
+      case 'quiz-end':
+        P.quiz.done = true;
+        P.finished = true;
+        return _pilotOut(`That's the end of the quiz: you got ${P.quiz.right} out of ${P.quiz.n}.`);
+      case 'close': {
+        const reply = await _callWithLengthGuard(_buildSystemPrompt(null), _pilotClosePrompt(), false, 45);
+        P.finished = true;
+        return _pilotOut(reply, {}, 'pilot');
+      }
+    }
+    return _pilotStep();
+  }
+
+  function _pilotOpenPrompt(idx) {
+    return [
+      _recentHistoryBlock(true),
+      `Now start the key point below. This message is about this key point only. In AT MOST TWO SHORT SENTENCES, start from the first thing its content describes (what she would see or do); do not explain the whole point. Then ask one question about the part named below. Do not answer your own question.`,
+      _pointBrief(_points[idx]), _partLine(_openingFact(idx)), _remainingLine(idx, _state.facts[idx], _openingFact(idx)),
+      FIRST_TIME ? _termsLine() : '',
+    ].filter(Boolean).join('\n\n');
+  }
+  function _pilotContinuePrompt(idx) {
+    const t = _targetFactIndex(idx);
+    const fact = t === -1 ? null : _points[idx].facts[t];
+    return [
+      _recentHistoryBlock(true),
+      `Carry on with the key point below from where you are. Teach the next part of it, named below, in AT MOST TWO SHORT SENTENCES, then ask one question that makes her use it. Do not answer your own question.`,
+      _pointBrief(_points[idx]), _coveredLine(idx, _state.facts[idx]), _partLine(fact),
+      FIRST_TIME ? _termsLine() : '',
+    ].filter(Boolean).join('\n\n');
+  }
+  function _pilotClosePrompt() {
+    const P = _pilot();
+    return [
+      `The lesson has ended (${_howSummary()}).${P.quiz.n ? ` In the end quiz she got ${P.quiz.right} out of ${P.quiz.n}.` : ''}`,
+      `In one or two short sentences, say honestly how it went. Say she "answered questions on" a point; never that she "worked through", "covered", "learned" or "mastered" a point or the lesson. Close warmly. Do not ask a question.`,
+    ].join('\n\n');
+  }
+
+  // (c) Her question first: answered, nothing new, then one easy question.
+  async function _pilotAside(userText) {
+    const P = _pilot();
+    const idx = _state.complete ? null : _state.currentPointIndex;
+    const confused = _saysConfused(userText) || /(don'?t|do not) (get|understand)|confused|lost|makes no sense/i.test(userText);
+    const g = confused ? null : _pilotTermIn(userText);
+    const last = [...(_state.transcript || [])].reverse().find(t => t.role === 'assistant' && t.text !== userText);
+    if (FIRST_TIME) _pendingFT = { teach: true };
+    const user = [
+      _recentHistoryBlock(false),
+      `${WHO_CAP} just said: "${userText}"`,
+      confused
+        ? `She is confused by your last message${last ? ` ("${_stripMarkdown(last.text)}")` : ''}. Say that one idea again, more simply, in one or two short sentences in everyday words.`
+        : `She asked a question. Answer exactly what she asked, in one or two short sentences, in everyday words.${g ? ` Use this definition: ${g.term}: ${g.def}` : ''}`,
+      `Add nothing new: no other idea, term or fact. Then ask ONE easy question that checks she has it: she must use the answer, not copy it from your message. That question ends your message. At most 50 words.`,
+      idx != null ? _pointBrief(_points[idx]) : '',
+    ].filter(Boolean).join('\n\n');
+    const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), user, true, 50);
+    if (g) P.known.push(g.key);
+    if (_state.checkinAsked) _state.checkinAsked = false;
+    const back = P.pending && P.pending.t !== 'aside' && P.pending.t !== 'return' ? P.pending : (P.pending && P.pending.back) || null;
+    P.pending = { t: 'aside', back };
+    _pilotNoQuestion = false;
+    return _pilotOut(reply, idx != null ? { pt: idx } : {}, 'pilot', idx);
+  }
+  async function _pilotAsideAnswer(userText) {
+    const P = _pilot(), back = P.pending.back;
+    const last = _lastQuestion();
+    const user = [
+      `${WHO_CAP} just answered your check question${last ? ` ("${last.q}")` : ''}: "${userText}"`,
+      `In ONE short sentence, react: if she is right, say so and what was right; if not, kindly give her the answer. Do not ask a question and do not teach anything new.`,
+    ].join('\n\n');
+    const reply = await _callWithLengthGuard(_buildSystemPrompt(_state.complete ? null : _state.currentPointIndex), user, false, 30);
+    P.pending = { t: 'return', back };
+    return _pilotOut(reply, { choices: ['Next'] });
+  }
+  // Back to what she was doing before her question.
+  async function _pilotReturn() {
+    const P = _pilot(), back = P.pending.back;
+    P.pending = null;
+    if (back && back.t === 'mc') return _askMc(back.step, 'Back to the question:');
+    if (back && back.t === 'num') { P.pending = back; return _pilotOut(`Back to the question: ${back.q.question}`); }
+    if (back && back.t === 'own') { P.pending = back; return _pilotOut(_points[back.idx].ownWords.prompt); }
+    if (back && (back.t === 'steps' || back.t === 'after-try')) { P.pending = back; return back.t === 'steps' ? _nextWorkStep() : _pilotOut('Want to try another one?', { choices: ['Try another', 'Next'] }); }
+    if (P.queue.length) return _pilotStep();
+    if (_state.complete) return _pilotOut(`Anything else you want to ask about this lesson?`);
+    return _pilotContinue();
+  }
+  async function _pilotContinue() {
+    const P = _pilot();
+    P.pending = null;
+    const idx = _state.currentPointIndex;
+    if (FIRST_TIME) _pendingFT = { teach: true };
+    const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), _pilotContinuePrompt(idx), true);
+    const r = _pilotAfterModel(reply, idx, { pt: idx });
+    return _pilotOut(r.text, r.extra, 'pilot', idx);
+  }
+
+  // (f) Her own-words line, marked against the lesson's points.
+  async function _pilotOwn(userText) {
+    const P = _pilot(), idx = P.pending.idx;
+    P.pending = null;
+    const ow = _points[idx].ownWords;
+    const list = ow.points.map(_stripHtml);
+    if (IDK_REPLY.test(userText) || _wordCount(userText) < 2) return _pilotOut(`No problem. A good line would say: ${list.join('; ')}.`, { pt: idx }, 'pilot', idx);
+    try {
+      const user = [
+        `She wrote the idea of this key point in her own words, in one line: "${userText}"`,
+        `The points a good line includes: ${list.map(x => `"${x}"`).join(', ')}.`,
+        `In one or two short sentences, say plainly which of these points her line gets right, and which are missing or wrong, if any, using the points' own words. Do not ask a question. At most 45 words.`,
+      ].join('\n\n');
+      const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), user, false, 45);
+      return _pilotOut(reply, { pt: idx }, 'pilot', idx);
+    } catch (e) {
+      _logError('own words', e);
+      return _pilotOut(`Thanks. Check your line has these: ${list.join('; ')}.`, { pt: idx }, 'pilot', idx);
+    }
+  }
+
+  async function _pilotPending(userText) {
+    const P = _pilot(), pend = P.pending;
+    // "Tell me" after her own question goes back to the point and tells it.
+    if (_wantsTelling(userText) && ['aside', 'return', 'continue'].includes(pend.t) && !P.end) { P.pending = null; return null; }
+    // "Skip" while a point is being finished: straight on to the next point (the tick stays honest).
+    if (_wantsSkip(userText) && P.end) {
+      const k = P.queue.findIndex(s => s.t === 'advance');
+      if (k !== -1) { P.queue = P.queue.slice(k); P.pending = null; return _pilotStep(); }
+    }
+    if (pend.t !== 'own' && pend.t !== 'aside' && _pilotAsks(userText)) return _pilotAside(userText);
+    switch (pend.t) {
+      case 'next': P.pending = null; return (await _pilotStep()) || null;
+      case 'mc': return _markMc(userText);
+      case 'num': return _markNumber(userText);
+      case 'steps': return _nextWorkStep();
+      case 'after-try':
+        if (/\b(another|again|more|try)\b/i.test(userText) && !/^\W*(no|nah|next)\b/i.test(userText)) {
+          P.tries++;
+          return _askNumber(pend.eq, 'practice', 'Your turn:');
+        }
+        P.pending = null;
+        return (await _pilotStep()) || null;
+      case 'own': return _pilotOwn(userText);
+      case 'aside': return _pilotAsideAnswer(userText);
+      case 'return': return _pilotReturn();
+      case 'continue': return _pilotContinue();
+    }
+    P.pending = null;
+    return null;
+  }
+
+  // The first message: three recall questions on the lesson before, if she finished it.
+  async function _pilotFirst() {
+    if (!PILOT_FIX) return null;
+    const P = _pilot();
+    const rc = _pctx.recall;
+    if (P.started || !rc || !Array.isArray(rc.questions) || rc.questions.length < 3) return null;
+    P.started = true;
+    P.queue = [...rc.questions.slice(0, 3).map((q, k) => ({ t: 'mc', kind: 'recall', k, q })), { t: 'open-lesson' }];
+    return _pilotStep();
+  }
+
+  // A jump: whatever was waiting is dropped (a point she was finishing keeps an honest tick).
+  function _pilotJump(index, reply) {
+    const P = _pilot();
+    if (P.end) { const e = P.end; P.end = null; _state.coverage[e.idx] = (!e.skipped && P.sent[e.idx].every(Boolean)) || _state.coverage[e.idx] === true; if (e.how) _flow().how[e.idx] = e.how; }
+    P.queue = []; P.pending = null; P.wrongRun = 0; P.stepbacks = 0;
+    const r = _pilotAfterModel(reply, index, {});
+    if (P.queue.length && !P.pending) P.pending = { t: 'next' };
+    return { text: _pilotCap(r.text), extra: P.queue.length ? { ...r.extra, choices: ['Next'] } : r.extra };
+  }
+
+  async function _pilotReply(userText) {
+    const P = _pilot();
+    if (RESPECT_EXIT && !_state.complete) { const r = await _respectTurn(userText); if (r) { P.pending = null; return r; } }
+    if (RESPECT_EXIT && _state.complete && _wantsExit(userText)) return { reply: _exitLine(), recap: null, decision: { kind: 'free' } };
+    if (!_state.complete && _wantsPause(userText)) {
+      return { reply: `No problem. Your place is saved, so you can pick this up any time. See you soon!`, recap: null, decision: { kind: 'pause', idx: _state.currentPointIndex } };
+    }
+    if (P.pending) { const r = await _pilotPending(userText); if (r) return r; }
+    if (P.queue.length) { const r = await _pilotStep(); if (r) return r; }
+    // The opening question about what she already knows.
+    if (FIRST_TIME && !_state.complete && !_ft().probed) {
+      const idx = _state.currentPointIndex;
+      const decision = { kind: 'start', idx, point: _points[idx], probeAnswer: String(userText).slice(0, 200) };
+      _pendingFT = { teach: true };
+      const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), _buildUserPrompt(userText, decision), true);
+      _applyDecision(decision);
+      const r = _pilotAfterModel(reply, idx, {});
+      return _pilotOut(r.text, r.extra, 'start', idx);
+    }
+    // (c) Her question first.
+    if (!_state.complete && _pilotAsks(userText)) return _pilotAside(userText);
+    if (_state.complete) {
+      const reply = await _callWithLengthGuard(_buildSystemPrompt(null), _buildUserPrompt(userText, { kind: 'free' }), false);
+      return { reply, recap: null, decision: { kind: 'free' } };
+    }
+
+    _turnMark = !(_state.checkinAsked) && !_lastWasBasic() ? await _markAnswer(userText) : null;
+    const mark = _turnMark ? _turnMark.mark : null;
+    if (mark === 'correct' || mark === 'partly') { P.wrongRun = 0; P.stepbacks = 0; }
+    else if (mark === 'wrong' || mark === 'idk') P.wrongRun++;
+    const decision = _decide(userText);
+    _noteFlow(userText, decision);
+    _turnMark = null;
+    const idx = decision.idx;
+
+    if (RESPECT_EXIT && decision.kind === 'checkin') {
+      const ex = _exit();
+      const reply = TESTER_FIX4 && TOO_LONG_SAID.test(userText || '')
+        ? 'Sorry, that was a lot to read. Do you want me to just tell you the rest of this one, short and quick?'
+        : CHECKIN_LINES[ex.checkins % CHECKIN_LINES.length];
+      _applyDecision(decision);
+      ex.checkins++;
+      return { reply, recap: null, decision };
+    }
+    // Skip: no telling, no tick; the next point starts in its own message.
+    if (decision.skipped) {
+      _pilotHoldEnd(decision);
+      P.queue.unshift({ t: 'advance' });
+      return _pilotOut(`OK, we'll skip "${_shortHeading(_points[idx].heading)}". You can come back to it from the list any time.`, { pt: idx }, 'pilot', idx);
+    }
+    const ending = ['next', 'resume', 'complete'].includes(decision.kind);
+    // (d) Tell me: the rest of the point, one idea per message, in the lesson's words.
+    // (f) Stuck three times running after going back a step: told, so she is not left stuck.
+    const stuck = P.wrongRun >= 2 && (decision.kind === 'fact' || decision.kind === 'retry' || ending);
+    if (decision.tellAll || (stuck && P.stepbacks >= 2)) {
+      _pilotHoldEnd(decision.tellAll ? decision : { ...decision, ..._afterPoint(idx, true), how: 'part-told' });
+      P.queue.unshift(..._pilotEndSteps(idx));
+      const first = await _pilotStep();
+      const lead = decision.tellAll ? `Here's the rest of this one. ` : `Let me just tell you this bit. `;
+      return first ? { ...first, reply: _pilotCap(lead + first.reply) } : _pilotOut(lead.trim());
+    }
+    // (f) Stuck means easier: back a step, one small piece she has, an easy question.
+    if (stuck) {
+      P.stepbacks++;
+      _applyDecision({ kind: 'fact', idx, flowNote: decision.flowNote, pacing: decision.pacing && { ...decision.pacing, checkinAsked: false } });
+      if (FIRST_TIME) _pendingFT = { teach: true };
+      const user = [
+        _recentHistoryBlock(false),
+        `${WHO_CAP} just said: "${userText}"`,
+        `She has now had two answers in a row wrong, or did not know. Do not teach anything new. Go back a step: in ONE or TWO short sentences, kindly give the answer to your last question, then remind her of ONE small piece she already has from this key point (something already said above). Then ask one easy question about that piece that she can get right by using it, not by copying it. At most 50 words.`,
+        _pointBrief(_points[idx]), _coveredLine(idx, _state.facts[idx]),
+      ].join('\n\n');
+      const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), user, true, 50);
+      const r = _pilotAfterModel(reply, idx, { pt: idx });
+      return _pilotOut(r.text, r.extra, 'pilot', idx);
+    }
+    // The point is done: react to her answer only; the rest of the point, its card,
+    // her own words and two questions follow; the next point starts in a new message.
+    if (ending) {
+      _pilotHoldEnd(decision);
+      P.queue.unshift(..._pilotEndSteps(idx));
+      const last = _lastQuestion();
+      const user = [
+        _recentHistoryBlock(false),
+        `${WHO_CAP} just said: "${userText}"`,
+        mark === 'correct' ? `Her answer is right.` : mark === 'partly' ? `Her answer is partly right.` : mark ? `Her answer is not right.` : '',
+        `In ONE or TWO short sentences, react to her answer: if it is right, say so and name what was right; if not, kindly give the right answer to the question you asked${last ? ` ("${last.q}")` : ''}, copying any number and unit from the content. Do not teach anything else, do not start anything new, and do not ask any question.`,
+        _pointBrief(_points[idx]),
+      ].filter(Boolean).join('\n\n');
+      const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), user, false, 40);
+      _pilotMarkTaught(idx, reply);
+      return _pilotOut(reply, { pt: idx }, 'pilot', idx);
+    }
+    // A teaching turn on the same point.
+    const sys = _buildSystemPrompt(_teachIndex(decision));
+    const user = _buildUserPrompt(userText, decision);
+    _pendingFT = _teachIndex(decision) != null ? { teach: true, confused: false } : null;
+    const reply = await _callWithLengthGuard(sys, user, _teachIndex(decision) != null);
+    _applyDecision(decision);
+    const ti = _teachIndex(decision);
+    const r = _pilotAfterModel(reply, ti, ti != null ? { pt: ti } : {});
+    return { reply: _pilotCap(r.text), recap: null, decision: { ...decision, pilot: _pilotChoices(r.extra) } };
+  }
+
   // The lesson's key points with what teaching needs: each point's word set
   // and its parts (facts).
   function _buildPoints(data) {
@@ -1849,10 +2563,13 @@ function create(env) {
     facts: _buildFacts(kp),
     // TEACH_THEN_ASK: the content's sentences, each to be taught before the point is covered.
     sentences: _sentences(_stripHtml(kp.content || '')).map(s => s.trim()).filter(s => _wordCount(s) >= 3),
+    // PILOT_FIX: the v3.1 lesson fields.
+    ...(PILOT_FIX ? { pictures: kp.pictures || [], widget: kp.widget || null, ownWords: kp.ownWords || null,
+                      mixedQuestions: kp.mixedQuestions || [], readiness: kp.readiness || null } : {}),
   }));
   }
 
-  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine };
+  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
 }
 
 return { create, TUTOR_SONNET, TUTOR_MODEL, TUTOR_MODEL_SONNET, TUTOR_MODEL_HAIKU, tutorParams };

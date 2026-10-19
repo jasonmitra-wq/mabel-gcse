@@ -59,6 +59,18 @@ const Store = (() => {
     const p = getProgress();
     return !!((p.opened || {})[subtopicId] || (p.covered || {})[subtopicId]);
   }
+  // Brief v3.1 (1f): a lesson she finished (reached its end quiz's end, slides
+  // or AI lesson). The next lesson in the topic opens with three recall questions.
+  function markFinished(subtopicId) {
+    const p = getProgress();
+    p.finished = p.finished || {};
+    if (p.finished[subtopicId]) return;
+    p.finished[subtopicId] = true;
+    saveProgress(p);
+  }
+  function hasFinished(subtopicId) {
+    return !!(getProgress().finished || {})[subtopicId];
+  }
 
   function addScore(topicName, score, total) {
     const p = getProgress();
@@ -288,7 +300,7 @@ const Store = (() => {
 
   return {
     get, set, remove,
-    getProgress, saveProgress, markCovered, markOpened, hasOpened, addScore,
+    getProgress, saveProgress, markCovered, markOpened, hasOpened, markFinished, hasFinished, addScore,
     setLastPosition, getLearnerProfile, updateLearnerProfile, clearAll,
     getDeck, saveDeck, addCards, updateCardStatus, clearDeck,
     getChildProfile, getChildName, getInterests,

@@ -46,6 +46,9 @@
 const fs = require('fs');
 const path = require('path');
 const TeachCore = require('../js/teach-core.js');
+// Brief v3.1: the practice generators the tutor's "Try another" and quiz questions use.
+const Practice = require('../js/practice/practice.js');
+for (const f of fs.readdirSync(path.join(__dirname, '..', 'js', 'practice'))) if (f !== 'practice.js' && f.endsWith('.js')) require(path.join(__dirname, '..', 'js', 'practice', f));
 const { apiKey } = require('./lib-key.js');
 const Bored = require('./bored-student.js');
 
@@ -61,6 +64,7 @@ const [USD_IN, USD_OUT] = RATE_TABLE[MODEL];
 const DEFAULT_CAP_USD = 1;
 const TRANSCRIPT_CAP = 40;                    // as js/teach.js _pushEntry
 const MAX_TURNS_PER_POINT = 12;               // a point not covered by then never completes
+const MAX_TURNS_PER_POINT_PILOT = 45;         // PILOT_FIX: told sentences, worked examples, questions each take a turn
 const CYCLE = ['correct', 'wrong', 'idk', 'offtopic', 'give'];
 const LINES = {
   wrong: 'is it something to do with magnets and electricity',
@@ -212,19 +216,54 @@ let CORE_OPTS = {};
 // --exit-script: the bored student says "I'm tired" once and "bye, got to go" near the end (tools/bored-student.js exitScript).
 let EXIT_SCRIPT = false;
 
+// PILOT_FIX: what the student sees of a message: its text, and its buttons.
+function tutorSees(reply, entry) {
+  return entry && entry.choices ? `${reply}\n[Buttons you can tap: ${entry.choices.map(c => `"${c}"`).join(', ')}]` : reply;
+}
+// PILOT_FIX: the pictures and cards under a message, for the transcript.
+function cardInfo(entry, data) {
+  const out = {};
+  if (entry.pictures) out.pictures = entry.pictures.map(p => p.caption || p.diagram);
+  if (entry.card) out.card = entry.card.type === 'worked' ? `worked example: ${entry.card.question} Steps: ${entry.card.steps.join(' / ')}` : `widget: ${entry.card.id}`;
+  return out;
+}
+
 function diagramCaption(data, id) {
   const kp = (data.keyPoints || []).find(k => k.diagram === id);
   const def = (data.diagrams || []).find(d => d.id === id);
   return (kp && kp.diagramCaption) || (def && def.caption) || id;
 }
 
+// PILOT_FIX context, as the page sets it: the subject glossary; the lessons
+// before this one in its topic count as opened, and as finished (so a lesson
+// after the first opens with the recall questions); a seeded "random".
+function pilotContextFor(id, subject) {
+  const gPath = path.join(ROOT, 'data', 'glossary', `${subject}.json`);
+  const glossary = fs.existsSync(gPath) ? JSON.parse(fs.readFileSync(gPath, 'utf8')).terms || [] : [];
+  const syl = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', `${subject}-syllabus.json`), 'utf8'));
+  const topic = Object.values(syl.topics || {}).find(t => (t.subtopics || []).some(s => s.id === id));
+  const order = topic ? topic.subtopics.map(s => s.id) : [id];
+  const before = order.slice(0, order.indexOf(id));
+  let recall = null;
+  const prev = before[before.length - 1];
+  if (prev) {
+    const pf = findLesson(prev);
+    const mc = (pf.data.endQuiz || []).filter(q => Array.isArray(q.options));
+    if (mc.length >= 3) recall = { lesson: prev, lessonName: pf.data.title || prev, questions: mc.slice(0, 3) };
+  }
+  let a = 12345;
+  return { lessonId: id, glossary, opened: x => before.includes(x), recall, random: () => ((a = (a * 16807) % 2147483647) / 2147483647) };
+}
+
 async function simulate(id, call, persona = null) {
   const { subject, data } = findLesson(id);
-  const core = TeachCore.create({ call, ...CORE_OPTS });
+  const core = TeachCore.create({ call, practice: Practice, ...CORE_OPTS });
   const points = core._buildPoints(data);
   core.bind(data, points, null);
   const state = core._freshState();
   core.bind(data, points, state);
+  if (core.PILOT_FIX) core.pilotContext(pilotContextFor(id, subject));
+  const perPoint = core.PILOT_FIX ? MAX_TURNS_PER_POINT_PILOT : MAX_TURNS_PER_POINT;
   // The lesson's terms in the newest tutor message that no earlier tutor message used (bored student).
   const newTermsFor = h => {
     const tutor = h.filter(x => x.who === 'tutor').map(x => core._stripMarkdown(x.text || ''));
@@ -244,21 +283,30 @@ async function simulate(id, call, persona = null) {
   let exited = false;
   const hist = [];
 
-  const opening = await core._callWithLengthGuard(core._buildSystemPrompt(0), core._firstOpeningPrompt(), true);
-  state.transcript = [{ role: 'assistant', text: opening, pt: 0, opening: true }];
-  // FIRST_TIME: the opening only asks what she already knows; it teaches nothing.
-  turns.push({ n: 0, student: null, kind: core.FIRST_TIME ? 'opening (what she knows)' : 'opening', teachIndex: core.FIRST_TIME ? null : 0, reply: opening });
-  hist.push({ who: 'tutor', text: opening });
+  // PILOT_FIX: a lesson after a finished one opens with the recall questions.
+  const first = core.PILOT_FIX ? await core._pilotFirst() : null;
+  if (first) {
+    const entry = core._replyEntry(first.reply, first.decision);
+    state.transcript = [entry];
+    turns.push({ n: 0, student: null, kind: 'recall', teachIndex: null, reply: first.reply, ...cardInfo(entry, data) });
+    hist.push({ who: 'tutor', text: tutorSees(first.reply, entry) });
+  } else {
+    const opening = await core._callWithLengthGuard(core._buildSystemPrompt(0), core._firstOpeningPrompt(), true);
+    state.transcript = [{ role: 'assistant', text: opening, pt: 0, opening: true }];
+    // FIRST_TIME: the opening only asks what she already knows; it teaches nothing.
+    turns.push({ n: 0, student: null, kind: core.FIRST_TIME ? 'opening (what she knows)' : 'opening', teachIndex: core.FIRST_TIME ? null : 0, reply: opening });
+    hist.push({ who: 'tutor', text: opening });
+  }
 
   let cycleAt = 0, checkins = 0, onPoint = 0, lastPoint = 0, closing = 0;
-  const maxTurns = points.length * MAX_TURNS_PER_POINT + 4;
+  const maxTurns = points.length * perPoint + 4 + (core.PILOT_FIX ? 20 : 0);
   for (let n = 1; n <= maxTurns; n++) {
     if (state.currentPointIndex !== lastPoint) { lastPoint = state.currentPointIndex; onPoint = 0; cycleAt = 0; }
-    if (!state.complete && ++onPoint > MAX_TURNS_PER_POINT) break;   // stuck: the point never completes
+    if (!state.complete && ++onPoint > perPoint) break;   // stuck: the point never completes
 
     let type, text;
     if (student) {
-      if (state.complete && closing++ >= 3) break;   // a bored student has left by now
+      if (state.complete && !(state.pilot && (state.pilot.pending || state.pilot.queue.length)) && closing++ >= 3) break;   // a bored student has left by now
       const phase = state.complete ? 'closing' : state.checkinAsked ? 'checkin' : 'teach';
       const lastEntry = state.transcript[state.transcript.length - 1] || {};
       const fixed = script && !state.complete ? script.next({ n, nearEnd: state.currentPointIndex === points.length - 1 && onPoint >= 1, choices: lastEntry.choices }) : null;
@@ -287,18 +335,19 @@ async function simulate(id, call, persona = null) {
     if (recap) push({ role: 'recap', pt: decision.idx, lines: recap, done: false });
     const entry = core._replyEntry(reply, decision);
     push(entry);
-    hist.push({ who: 'student', text }, { who: 'tutor', text: reply });
+    hist.push({ who: 'student', text }, { who: 'tutor', text: tutorSees(reply, entry) });
     turns.push({ n, student: text, studentType: type, kind: decision.kind, teachIndex: core._teachIndex(decision),
                  point: decision.idx ?? decision.nextIndex ?? null, reply, recap: recap || null,
                  ...(entry.diagram ? { diagram: entry.diagram, diagramCaption: diagramCaption(data, entry.diagram) } : {}),
                  ...(entry.basic ? { basic: entry.basic } : {}),
-                 ...(entry.choices ? { choices: entry.choices } : {}) });
+                 ...(entry.choices ? { choices: entry.choices } : {}),
+                 ...cardInfo(entry, data) });
     if (state.farewell) break;
     // She said goodbye and got the goodbye: she has left (or opened the slides).
     if (decision.kind === 'pause' || decision.kind === 'slides') { exited = decision.kind; break; }
   }
 
-  return score({ id, subject, model: MODEL, turns, coverage: state.coverage, complete: state.complete, farewell: state.farewell, exited, coreOpts: CORE_OPTS, firstTime: core.FIRST_TIME, respectExit: core.RESPECT_EXIT, exitScript: !!script }, core, points);
+  return score({ id, subject, model: MODEL, turns, coverage: state.coverage, complete: state.complete, farewell: state.farewell, exited, coreOpts: CORE_OPTS, firstTime: core.FIRST_TIME, respectExit: core.RESPECT_EXIT, exitScript: !!script, pilot: core.PILOT_FIX, pilotFinished: !!(state.pilot && state.pilot.finished) }, core, points);
 }
 
 // ---------- bored-student judge ----------
@@ -310,6 +359,9 @@ function transcriptText(r) {
     lines.push(`T${t.n}: ${t.reply.replace(/\s*\n+\s*/g, ' ')}`);
     if (t.diagram) lines.push(`[A diagram is shown under T${t.n}: "${t.diagramCaption || t.diagram}"]`);
     if (t.choices) lines.push(`[Buttons shown under T${t.n}: ${t.choices.map(c => `"${c}"`).join(', ')}]`);
+    if (t.pictures) t.pictures.forEach(c => lines.push(`[A picture is shown under T${t.n}: "${c}"]`));
+    if (t.card) lines.push(`[A card is shown under T${t.n}: ${t.card}]`);
+    if (t.recap) lines.push(`[A "Worth writing down" card is shown above T${t.n}: ${t.recap.join(' / ')}]`);
   }
   if (r.exited === 'pause') lines.push('[She left the lesson here. Her place is saved.]');
   else if (r.exited === 'slides') lines.push('[She switched to the slides here. Her place in the chat is saved.]');
@@ -447,11 +499,30 @@ function writeBoredRun(r, mode) {
   writeJudgeMd(base, r);
   const j = r.judge;
   const summary = path.join(OUT_DIR, 'SUMMARY.md');
-  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | flow faults ${j && j.flow_faults ? j.flow_faults.length : '-'} (unexplained_term ${ftCount(j, 'unexplained_term')}, answer_in_question ${ftCount(j, 'answer_in_question')}${r.exitScript ? `, exit_not_respected ${ftCount(j, 'exit_not_respected')}, tiredness_pushed_on ${ftCount(j, 'tiredness_pushed_on')}, checkin_curt_or_repeated ${ftCount(j, 'checkin_curt_or_repeated')}` : ''}; tone ${j && j.tone_vs_reference ? j.tone_vs_reference.verdict : 'n/a'}) | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}${r.tutorCost !== undefined ? ` (tutor ${r.model} $${r.tutorCost.toFixed(4)})` : ''}\n`);
+  fs.appendFileSync(summary, `- ${date} | ${r.id} | ${mode}, persona bored | ${r.turns.length} | ${r.verdict.pass ? 'PASS' : 'FAIL'} | engagement ${j ? j.engagement : '?'} | would quit ${j && j.would_quit ? j.would_quit.turn : 'false'} | flow faults ${j && j.flow_faults ? j.flow_faults.length : '-'} (unexplained_term ${ftCount(j, 'unexplained_term')}, answer_in_question ${ftCount(j, 'answer_in_question')}${r.exitScript ? `, exit_not_respected ${ftCount(j, 'exit_not_respected')}, tiredness_pushed_on ${ftCount(j, 'tiredness_pushed_on')}, checkin_curt_or_repeated ${ftCount(j, 'checkin_curt_or_repeated')}` : ''}; tone ${j && j.tone_vs_reference ? j.tone_vs_reference.verdict : 'n/a'}) | ${r.verdict.reasons.join('; ') || 'none'} | $${(r.cost || 0).toFixed(4)}${r.tutorCost !== undefined ? ` (tutor ${r.model} $${r.tutorCost.toFixed(4)})` : ''}${r.pilot ? ` | A8 counts: ${pilotCountsLine(pilotCounts(r))}` : ''}\n`);
   return base;
 }
 
 function ftCount(j, type) { return j && j.flow_faults ? j.flow_faults.filter(f => f.type === type).length : '-'; }
+
+// Brief v3.1, task A8: the six counts, reported (not gating). The first two by
+// code over every tutor message; the other four from the judge's flow faults.
+function pilotCounts(r) {
+  const j = r.judge;
+  const words = t => String(t || '').replace(/\*\*?/g, '').trim().split(/\s+/).filter(Boolean).length;
+  const twoQ = t => (String(t).match(/\?/g) || []).length > 1 || /,?\s+(and|or)\s+(why|how|what|which|where|when|who)\b[^?.!]*\?/i.test(String(t));
+  return {
+    over60: r.turns.filter(t => words(t.reply) > 60).length,
+    twoQuestions: r.turns.filter(t => twoQ(t.reply)).length,
+    questionNotAnsweredFirst: ftCount(j, 'question_not_answered_first'),
+    twoKeyPoints: ftCount(j, 'two_key_points_in_one_message'),
+    answerInQuestion: ftCount(j, 'answer_in_question'),
+    termBeforeExplained: ftCount(j, 'unexplained_term'),
+  };
+}
+function pilotCountsLine(c) {
+  return `messages over 60 words ${c.over60}, two questions in one message ${c.twoQuestions}, her question not answered first ${c.questionNotAnsweredFirst}, two key points in one message ${c.twoKeyPoints}, answer in question ${c.answerInQuestion}, term used before explained ${c.termBeforeExplained}`;
+}
 
 // The judge's section of a bored run's .md, appended after the transcript.
 function writeJudgeMd(base, r) {
@@ -466,6 +537,7 @@ function writeJudgeMd(base, r) {
     const tv = j.tone_vs_reference;
     md.push('', `Tone vs reference: ${tv ? `**${tv.verdict}**` : 'n/a (no reference)'}`, '');
     if (tv) (tv.evidence || []).forEach(e => md.push(`- "${e.quote || ''}" vs reference "${e.reference_quote || ''}"${e.note ? ' — ' + e.note : ''}`));
+    if (r.pilot) md.push('', `A8 counts (brief v3.1): ${pilotCountsLine(pilotCounts(r))}`);
     md.push('', `Flow faults (${(j.flow_faults || []).length}):`, '');
     (j.flow_faults || []).forEach(f => md.push(`- ${f.turn} **${f.type}** — "${f.quote || ''}"${f.note ? ' — ' + f.note : ''}`));
     md.push('', 'Fixes:', '');
@@ -540,6 +612,7 @@ async function main() {
     r.tutorCalls = spend.tutorCalls - tutorCallsBefore;
     const base = writeRun(r, args.run ? 'run' : 'mock');
     const flagged = r.turns.filter(t => t.flags.length).length;
+    if (r.persona && r.pilot) console.log(`${id}: A8 counts: ${pilotCountsLine(pilotCounts(r))}`);
     if (r.persona) console.log(`${id}: persona bored · ${r.verdict.pass ? 'PASS' : 'FAIL'}${r.verdict.reasons.length ? ' (' + r.verdict.reasons.join('; ') + ')' : ''} · engagement ${r.judge ? r.judge.engagement : '?'} · would quit ${r.judge && r.judge.would_quit ? r.judge.would_quit.turn : 'false'}`);
     console.log(`${id}: ${r.turns.length} tutor turns, ${flagged} flagged; ${r.lessonFlags.join('; ') || 'no lesson flags'}. ` +
       `${path.relative(ROOT, base).replace(/\\/g, '/')}.md${args.run ? ` · $${r.cost.toFixed(4)} (tutor ${r.model} $${r.tutorCost.toFixed(4)}, ${r.tutorCalls} calls)` : ''}`);

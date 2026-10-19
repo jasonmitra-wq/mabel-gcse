@@ -39,6 +39,33 @@ const Lessons = (() => {
   // explanation". false, or a lesson without examBox, keeps the old slides.
   const SLIDES_V3 = true;
   const _isV3 = data => SLIDES_V3 && (data.keyPoints || []).some(kp => kp.examBox);
+  // Brief v3.1 (docs/briefs/2026-10-19-pilot-feedback-v3-1.md, step 1g): a
+  // lesson with the v3.1 fields also shows its picture sequence, worked
+  // examples with "Try another", its widget, readiness questions before a
+  // practical, her own-words check and two mixed questions after each key
+  // point, the end quiz, and three recall questions on the lesson before.
+  // false keeps the v3 slides.
+  const SLIDES_V31 = true;
+  const _isV31 = data => SLIDES_V31 && typeof LessonExtras !== 'undefined' && (data.keyPoints || []).some(kp => kp.ownWords || kp.pictures);
+  let _recall = null;
+
+  // The recall questions: three multiple-choice questions from the end quiz of
+  // the lesson before in this topic, if she finished it. Null otherwise.
+  async function _recallFor(subject, topicCode, subtopicId) {
+    if (!Store.hasFinished) return null;
+    try {
+      const syl = await (await fetch(`data/${subject}-syllabus.json`)).json();
+      const subs = ((syl.topics || {})[topicCode] || {}).subtopics || [];
+      const i = subs.findIndex(s => s.id === subtopicId);
+      const prev = i > 0 ? subs[i - 1] : null;
+      if (!prev || !Store.hasFinished(prev.id)) return null;
+      const L = await (await fetch(`lessons/${subject}/${prev.id}.json`)).json();
+      const mc = (L.endQuiz || []).filter(q => q && Array.isArray(q.options));
+      if (mc.length < 3) return null;
+      const pick = mc.slice().sort(() => Math.random() - 0.5).slice(0, 3);
+      return { lesson: prev.id, lessonName: L.title || prev.name || prev.id, questions: pick };
+    } catch { return null; }
+  }
 
   // ── Open a lesson ─────────────────────────────────────────
   async function open(subtopicId, subtopicName, topicCode, subject = 'biology') {
@@ -70,10 +97,11 @@ const Lessons = (() => {
       return;
     }
 
+    _recall = _isV31(data) ? await _recallFor(subject, topicCode, subtopicId) : null;
     const go = () => {
       if (typeof Store.markOpened === 'function') Store.markOpened(subtopicId);
       if (TEACH_FIRST && TEACH_ENABLED.includes(subtopicId) && AI.hasKey()) {
-        Teach.open(data, subtopicId, subtopicName, subject);
+        Teach.open(data, subtopicId, subtopicName, subject, { recall: _recall });
         return;
       }
       _openSlideView(data, subtopicId, subtopicName, subject);
@@ -155,13 +183,17 @@ const Lessons = (() => {
   function _buildSteps(data) {
     const steps = [];
     steps.push({ type: 'intro' });
-    const v3 = _isV3(data);
+    const v3 = _isV3(data), v31 = _isV31(data);
+    if (v31 && _recall && _recall.lesson !== data.id) steps.push({ type: 'recall' });
     (data.keyPoints || []).forEach((kp, i) => {
+      if (v31 && kp.readiness) steps.push({ type: 'ready', kp, i });
       steps.push({ type: v3 ? 'kp-v3' : 'kp-read', kp, i });
       if (data.checkpoints?.[i]) steps.push({ type: 'kp-check', kp, i, checkpoint: data.checkpoints[i] });
       // v3: the bullets to write down are on the key point's own slide.
       if (!v3 && (kp.writeBullets?.length || kp.keyTerms?.length)) steps.push({ type: 'kp-notes', kp, i });
+      if (v31 && (kp.ownWords || kp.mixedQuestions?.length)) steps.push({ type: 'stick', kp, i });
     });
+    if (v31 && data.endQuiz?.length) steps.push({ type: 'quiz' });
     (data.tables || []).forEach(t => steps.push({ type: 'table', table: t }));
     if (data.diagrams?.length) {
       const standalone = data.diagrams.filter(d =>
@@ -226,6 +258,10 @@ const Lessons = (() => {
       case 'kp-read':   body = _renderKpReadStep(step); break;
       case 'kp-v3':     body = _renderKpV3Step(step); break;
       case 'kp-check':  body = _renderKpCheckStep(step); break;
+      case 'recall':    body = `<div><h3>From the last lesson</h3><p style="color:var(--muted)">Three quick questions on ${LessonExtras.esc(_recall.lessonName)}.</p><div id="lxMount"></div></div>`; break;
+      case 'ready':     body = `<div><h3>Before the practical</h3><p style="color:var(--muted)">Two quick questions on the ideas it needs.</p><div id="lxMount"></div></div>`; break;
+      case 'stick':     body = `<div><h3>Make it stick</h3><p style="color:var(--muted)">${LessonExtras.esc(step.kp.heading.split(' — ')[0])}</p><div id="lxMount"></div></div>`; break;
+      case 'quiz':      body = `<div><h3>Quiz on the whole lesson</h3><div id="lxMount"></div><div id="lxScore" class="lx-fb"></div></div>`; break;
       case 'kp-notes':  body = _renderKpNotesStep(step); break;
       case 'table':     body = _renderTableStep(step); break;
       case 'diagram':   body = _renderDiagramStep(step); break;
@@ -255,6 +291,7 @@ const Lessons = (() => {
       </div>`;
 
     inner.innerHTML = header + body + nav;
+    if (_isV31(_current)) _mountV31(step);
 
     // Wrap first occurrence of each glossary term in this step
     if (typeof Glossary !== 'undefined') Glossary.markupContainer(inner);
@@ -269,8 +306,58 @@ const Lessons = (() => {
     document.getElementById('lessonPanel').scrollTop = 0;
   }
 
+  // v3.1: the interactive pieces of a slide, mounted after it is drawn.
+  function _mountV31(step) {
+    const X = LessonExtras, subject = _current.subject || 'biology';
+    const mount = document.getElementById('lxMount');
+    if (step.type === 'recall' && mount) _recall.questions.forEach((q, k) => { const el = X.questionEl(q, `From the last lesson, ${k + 1} of 3`); if (el) mount.appendChild(el); });
+    if (step.type === 'ready' && mount) {
+      const recap = document.createElement('div');
+      recap.className = 'lx-card'; recap.style.display = 'none';
+      recap.innerHTML = `<div class="lx-title">A quick recap first</div><p style="margin:0">${X.esc(step.kp.readiness.recap)}</p>`;
+      step.kp.readiness.questions.forEach((q, k) => { const el = X.questionEl(q, `Before the practical, ${k + 1} of 2`, right => { if (!right) recap.style.display = ''; }); if (el) mount.appendChild(el); });
+      mount.appendChild(recap);
+    }
+    if (step.type === 'stick' && mount) {
+      if (step.kp.ownWords) mount.appendChild(X.ownWordsEl(step.kp.ownWords));
+      (step.kp.mixedQuestions || []).forEach(q => { const el = X.questionEl(q, 'Quick question'); if (el) mount.appendChild(el); });
+    }
+    if (step.type === 'quiz' && mount) {
+      const qs = _current.endQuiz || [];
+      let done = 0, right = 0;
+      qs.forEach((q, k) => {
+        const el = X.questionEl(q, `Question ${k + 1} of ${qs.length}`, ok => {
+          done++; if (ok) right++;
+          if (done === qs.length) {
+            document.getElementById('lxScore').textContent = `You got ${right} out of ${qs.length}.`;
+            if (Store.markFinished) Store.markFinished(_subtopicId);
+          }
+        });
+        if (el) mount.appendChild(el);
+      });
+    }
+    if (step.type === 'kp-v3') {
+      const kp = step.kp;
+      const pics = document.querySelector('[data-lx-pics]');
+      if (pics) (kp.pictures || []).forEach(p => pics.appendChild(X.pictureEl(subject, p)));
+      const worked = document.querySelector('[data-lx-worked]');
+      if (worked) (kp.workedExamples || []).forEach(x => worked.appendChild(X.workedEl(x)));
+      const w = document.querySelector('[data-lx-widget]');
+      if (w && kp.widget && typeof WidgetView !== 'undefined') {
+        const p = document.createElement('p'); p.style.margin = '0.6rem 0 0'; p.textContent = kp.widget.intro;
+        w.appendChild(p);
+        const el = document.createElement('div'); WidgetView.mount(el, kp.widget.id, kp.widget.options); w.appendChild(el);
+        if ((kp.widget.labels || []).length) w.appendChild(X.labelChips(kp.widget.labels));
+      }
+    }
+  }
+
   function _stepLabel(step) {
     if (!step) return '';
+    if (step.type === 'recall') return 'From the last lesson';
+    if (step.type === 'ready')  return 'Before the practical';
+    if (step.type === 'stick')  return 'Make it stick';
+    if (step.type === 'quiz')   return 'Quiz';
     if (step.type === 'kp-read' || step.type === 'kp-v3') return step.kp.heading;
     if (step.type === 'kp-check')  return 'Quick check';
     if (step.type === 'kp-notes')  return 'Write it down';
@@ -631,7 +718,8 @@ const Lessons = (() => {
       </div>`).join('');
     const defHtml = (box.definitions || []).map(d => `<p class="v3-def">${d}</p>`).join('');
     const bullets = (kp.writeBullets || []).slice(0, 3);
-    const examples = (kp.workedExamples || []).map((x, j) => `
+    const v31 = _isV31(_current);
+    const examples = v31 ? `<div data-lx-worked></div>${kp.widget ? `<div data-lx-widget></div>` : ''}` : (kp.workedExamples || []).map((x, j) => `
       <div class="v3-worked" id="v3w_${i}_${j}" data-shown="0">
         <div class="v3-worked-title">Worked example</div>
         <p class="v3-worked-q">${x.question}</p>
@@ -645,7 +733,7 @@ const Lessons = (() => {
           <h3>${kp.heading}</h3>
           ${kp.examFlag ? `<span class="flag flag-exam">this gets asked</span>` : ''}
         </div>
-        ${kp.diagram ? _renderInlineDiagram(kp.diagram, _current, kp.diagramCaption, kp.diagramExamTip) : ''}
+        ${v31 && (kp.pictures || []).length ? `<div data-lx-pics></div>` : kp.diagram ? _renderInlineDiagram(kp.diagram, _current, kp.diagramCaption, kp.diagramExamTip) : ''}
         ${defHtml || eqHtml ? `<div class="v3-exambox"><div class="v3-exambox-title">${Icons.inline('exam', 18)} For the exam</div>${defHtml}${eqHtml}</div>` : ''}
         ${bullets.length ? `<div class="v3-bullets"><div class="v3-bullets-title">${Icons.inline('notes', 18)} Write these into your notes</div>
           <ul>${bullets.map(b => `<li>${b}</li>`).join('')}</ul></div>` : ''}

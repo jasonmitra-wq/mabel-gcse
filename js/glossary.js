@@ -287,6 +287,19 @@ const Glossary = (() => {
     const g = _subjects[subject];
     return g ? g.entries.get(_key(term)) || null : null;
   }
+  // Brief v3.1: a picture's label, tapped: its entry, or the term it ends ("current" → electric current).
+  function showTerm(text) {
+    const g = _active && _subjects[_active];
+    if (!g) return;
+    const k = _key(text);
+    const e = g.entries.get(k) || [...g.entries.entries()].find(([key]) => key.endsWith(' ' + k))?.[1];
+    if (e) _showV3(e);
+  }
+  // Brief v3.1: every entry of a loaded subject (the AI tutor checks words before use).
+  function terms(subject) {
+    const g = _subjects[subject];
+    return g ? [...g.entries.values()] : [];
+  }
   // The term as matched → its entry key ("amperes" → "ampere").
   function _v3KeyFor(text) {
     const g = _active && _subjects[_active];
@@ -443,6 +456,6 @@ const Glossary = (() => {
     _active = null;
   }
 
-  return { markupContainer, show, hide, lookup, load, entry, oneLine, showWordsPage, GLOSSARY_V3 };
+  return { markupContainer, show, showTerm, hide, lookup, load, entry, terms, oneLine, showWordsPage, GLOSSARY_V3 };
 
 })();

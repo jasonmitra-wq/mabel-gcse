@@ -42,7 +42,7 @@ const WidgetView = (() => {
         <button class="btn" data-a="remove">Take a cell away</button>
         ${opts.resistor ? `<button class="btn" data-a="res">Put the resistor in</button>` : ''}
       </div>
-      <label>Or slide the potential difference of a power supply: <span data-v></span></label>
+      <label>Or slide the potential difference: <span data-v></span></label>
       <input type="range" min="0" max="6" step="0.5" value="${volts}">
       <div class="wdg-read"></div>`;
     const svg = el.querySelector('svg'), range = el.querySelector('input'), read = el.querySelector('.wdg-read');
@@ -108,7 +108,7 @@ const WidgetView = (() => {
         <line x1="${box.x0}" y1="${s.oy}" x2="${box.x1}" y2="${s.oy}" stroke="rgba(245,240,232,0.6)" stroke-width="2"/>
         <line x1="${s.ox}" y1="${box.y1}" x2="${s.ox}" y2="${box.y0}" stroke="rgba(245,240,232,0.6)" stroke-width="2"/>
         <text x="${s.ox + 6}" y="${box.y0 + 12}" font-size="13" fill="rgba(245,240,232,0.75)">current (A)</text>
-        <text x="${box.x1}" y="${s.oy - 8}" text-anchor="end" font-size="13" fill="rgba(245,240,232,0.75)">potential difference (V)</text>
+        <text x="${box.x1}" y="${Math.min(s.oy + 18, 256)}" text-anchor="end" font-size="13" fill="rgba(245,240,232,0.75)">potential difference (V)</text>
         <text x="${s.ox - 5}" y="${s.oy + 15}" text-anchor="end" font-size="12" fill="rgba(245,240,232,0.75)">0</text>
         <polyline points="${pts}" fill="none" stroke="#4ecfaa" stroke-width="3"/>
         <line x1="${s.X(V)}" y1="${s.oy}" x2="${s.X(V)}" y2="${s.Y(r.current)}" stroke="#e8a040" stroke-dasharray="4 4"/>

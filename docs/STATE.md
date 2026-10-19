@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, task A8, p2-current-voltage: steps a–c done (BASE 8dde1a5); step d (lesson-auditor, tools/audit-runs/8dde1a5-1.md) was running when the usage limit was reached: read its findings file if present, otherwise run it again, then fix once, steps e–f. Then p2-components (step a script drafted, not applied), site tests, text tester (A8 counts), A9.
+Runbook position: Phase A, task A8, p2-components step a (BASE = the p2-current-voltage v3.1 commit). p2-current-voltage v3.1 steps a–f done.
 
 ## Runbook v3 switch (2026-10-19)
 
@@ -21,6 +21,7 @@ All eight are rewritten under runbook v3 (Phase A pilot P2, then Phase B).
 | Lesson | Steps a–f | Commit | API cost (USD) | Notes |
 |---|---|---|---|---|
 | p2-current-voltage | ✓ | (this commit, "p2-current-voltage: rewritten (v3)") | 0.12 (step c) | 7 key points, 1,234 words; new diagram p2-wire-length; audit 13cf62e-1: 16 fixed, F8 rejected (ESCALATIONS) |
+| p2-current-voltage (v3.1) | ✓ | (this commit, "p2-current-voltage: rewritten (v3.1)") | 0.1662 (step c) | brief v3.1: pictures, 3 worked examples per equation, circuit and I-V widgets, readiness, own words, mixed questions, end quiz of 7; audit 8dde1a5-1: 8 fixed, F1 F2 F7 F8 rejected (ESCALATIONS) |
 | p2-components | ✓ | (this commit, "p2-components: rewritten (v3)") | 0.08 (step c) | 4 key points, 730 words; new diagrams p2-circuit-symbols, p2-thermistor-circuit; first lesson with prerequisites (card checked in the browser); audit 923f2b9-1: 13 fixed, F7 and F14 rejected (ESCALATIONS); p2-current-voltage step b re-run after the glossary grew (switch, resistor explained) |
 
 Tools: tools/lesson-shape-v3.md, tools/check-lesson-v3.js (A1, A2); flags SLIDES_V3 (js/lessons.js), v3Fields (js/teach-core.js), GLOSSARY_V3 (js/glossary.js); data/glossary/<subject>.json from tools/build-glossary.js (A3, A4).

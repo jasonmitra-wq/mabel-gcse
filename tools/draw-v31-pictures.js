@@ -67,13 +67,14 @@ D['p2-cv-resistor'] = () => svg(480, 420, [
   text(20, 36, 'Adding a resistor and a voltmeter', { size: 22, weight: 600 }),
   pathD(`M${L} ${T} H${R} V${B} H${L} Z`),
   cell(240, T), text(240, T - 34, 'cell', { anchor: 'middle' }),
-  meter(L, 200, 'A'), text(L - 28, 206, 'ammeter', { anchor: 'end', size: 17 }),
+  switchV(L, 200), text(L - 16, 206, 'switch', { anchor: 'end' }),
   lamp(R, 200), text(R - 30, 206, 'lamp', { anchor: 'end' }),
   // the voltmeter across the lamp
   pathD(`M${R} 150 H${R + 50} V178 M${R + 50} 222 V250 H${R}`),
   meter(R + 50, 200, 'V'), text(R + 50, 272, 'voltmeter', { anchor: 'middle', size: 17 }),
-  resistor(240, B), text(240, B + 44, 'resistor', { anchor: 'middle' }),
-], 'A cell, an ammeter, a lamp and a resistor in one loop, with a voltmeter connected across the lamp');
+  resistor(170, B), text(170, B + 44, 'resistor', { anchor: 'middle' }),
+  meter(310, B, 'A'), text(310, B + 44, 'ammeter', { anchor: 'middle' }),
+], 'The same loop with a resistor added, and a voltmeter connected across the lamp');
 
 // ── Graphs: the beginner's versions (positive values, the origin labelled) ──
 function quadrant(title, curve, notes) {

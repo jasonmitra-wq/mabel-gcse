@@ -416,9 +416,10 @@
         {
           "diagram": "p2-cv-resistor",
           "after": "connected across the part you are testing",
-          "caption": "A resistor in the loop, and a voltmeter connected across the lamp.",
+          "caption": "The same loop with a resistor added, and a voltmeter connected across the lamp.",
           "labels": [
             "cell",
+            "switch",
             "ammeter",
             "lamp",
             "resistor",
@@ -426,13 +427,13 @@
           ]
         }
       ],
-      "diagramCaption": "A resistor in the loop, and a voltmeter connected across the lamp.",
+      "diagramCaption": "The same loop with a resistor added, and a voltmeter connected across the lamp.",
       "widget": {
         "id": "circuit",
         "options": {
           "resistor": true
         },
-        "intro": "Try it: add cells, or slide the potential difference, and watch the ammeter and the lamp. Then put the resistor in.",
+        "intro": "Try it: add cells, or slide the potential difference. Watch the ammeter and the lamp.",
         "labels": [
           "cell",
           "potential difference",
@@ -580,11 +581,11 @@
         }
       ],
       "ownWords": {
-        "prompt": "In one line: how does the length of a wire change its resistance, and how do you measure it?",
+        "prompt": "In one line: how does the length of a wire change its resistance?",
         "points": [
           "a longer wire has a bigger resistance",
-          "keep the temperature constant",
-          "measure V and I, then resistance = V ÷ I"
+          "the temperature is kept constant",
+          "resistance = potential difference ÷ current"
         ]
       },
       "mixedQuestions": [
@@ -642,7 +643,7 @@
           "def": "A component whose resistance stays constant at constant temperature. Its I-V graph is a straight line through the origin."
         }
       ],
-      "memTip": "Ohmic = Ordinary: a straight line, the same resistance all the way.",
+      "memTip": "Ohmic = Ordinary: a straight line through the origin, the same resistance all the way.",
       "pictures": [
         {
           "diagram": "p2-iv-resistor-beginner",
@@ -725,7 +726,7 @@
           "def": "A component that lets current flow in one direction only. It has a very high resistance in the reverse direction."
         }
       ],
-      "memTip": "Three shapes: straight line = resistor. Bending over = lamp (it gets hot). Flat one side, steep the other = diode (one way only).",
+      "memTip": "Three shapes: straight line through the origin = resistor. Bending over = lamp (it gets hot). Flat one side, steep the other = diode (one way only).",
       "pictures": [
         {
           "diagram": "p2-iv-lamp-beginner",
@@ -742,7 +743,7 @@
           "diagram": "p2-iv-lamp-diode",
           "after": "then rises steeply",
           "graph": "full",
-          "caption": "The full graphs, with the readings taken the other way round as negative values.",
+          "caption": "The full graphs. The left half shows the readings with the component turned round.",
           "labels": [
             "filament lamp",
             "diode",
@@ -797,7 +798,7 @@
             "An ohmic conductor",
             "A diode",
             "A filament lamp",
-            "A variable resistor"
+            "An ammeter"
           ],
           "correct": 0,
           "explain": "Its I-V graph is a straight line through the origin.",
@@ -870,7 +871,7 @@
             "from": 3
           }
         ],
-        "recap": "A quick recap. The ammeter goes in series, the voltmeter in parallel across the component. An I-V graph plots current against potential difference: a straight line through the origin means the resistance stays the same."
+        "recap": "A quick recap. The ammeter goes in series. The voltmeter goes in parallel across the component. An I-V graph plots current against potential difference. A straight line through the origin means the resistance stays the same."
       },
       "pictures": [
         {
@@ -1035,7 +1036,7 @@
           "find": "V",
           "steps": [
             {
-              "text": "Energy must be in joules: 1.2 kJ = 1.2 × 1000 = 1200 J.",
+              "text": "Energy must be in joules. Kilo means a thousand, so 1.2 kJ = 1.2 × 1000 = 1200 J.",
               "calc": "1.2*1000",
               "value": 1200
             },
@@ -1090,7 +1091,7 @@
             "The resistance doubles"
           ],
           "correct": 0,
-          "explain": "Energy is transferred from the charge to the component; the charge is not used up.",
+          "explain": "Energy is transferred from the charge to the component. The charge is not used up.",
           "from": 6
         },
         {
@@ -1479,7 +1480,7 @@
         "standsFor": "an open switch: nothing gets round"
       }
     ],
-    "limit": "Runners get tired and drop out, but charge is never used up: the same charge keeps going round, and only its energy is passed on."
+    "limit": "Runners get tired and drop out. Charge is never used up. The same charge keeps going round. Only its energy is passed on."
   },
   "endQuiz": [
     {
@@ -1499,7 +1500,7 @@
       "from": 1
     },
     {
-      "question": "At constant temperature, what happens to a wire’s resistance as its length increases?",
+      "question": "At constant temperature, what happens to a wire's resistance as its length increases?",
       "options": [
         "It increases",
         "It decreases",
@@ -1523,7 +1524,7 @@
       "from": 3
     },
     {
-      "question": "Why does a filament lamp’s I-V graph curve?",
+      "question": "Why does a filament lamp's I-V graph curve?",
       "options": [
         "Its resistance increases as it gets hotter",
         "It lets current flow one way only",

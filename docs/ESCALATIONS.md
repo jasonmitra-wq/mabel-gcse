@@ -303,3 +303,10 @@ What to try:
 - Jason: read both lessons as slides (no API key saved, or "Show me the slides instead"). Each key point is one slide: diagram, "For the exam" box, three bullets to write down, a worked example revealed with "Show the next step", and "Read the full explanation". Tap an underlined word for its meaning. Home → "Words I've learned".
 - Mabel: do one of them as an AI lesson.
 - Then type "Pilot: yes" or "Pilot: <what to change>", and "Mabel: <what she said>".
+
+## Brief v3.1 rebuild, p2-current-voltage audit rejections (tools/audit-runs/8dde1a5-1.md, 2026-10-19)
+
+- F1 (keyPoints[0], [1], [3] diagram and diagramCaption changed, "never change"): rejected. Brief v3.1 step 1a needs the picture sequence; lesson-shape-v3.md says a key point's diagram is its last picture, so the old views never show a picture ahead of the teaching (the old p2-simple-circuit showed a resistor in key point 0, pilot fault 1).
+- F2 (tables[0].rows[2][1] and keyPoints[4] diode wording; TRIAGE R4 had cut forward-threshold wording): rejected. The v3.1 fact check (step c fact1) found the old wording wrong (the forward current does not rise at once). The new wording describes only the shape, "near zero at first, then rising steeply", with no threshold value, and matches the drawn graph. For the planning chat: the two fact-check runs disagree on how much of the diode curve to describe.
+- F7 (lesson-level diagrams list no longer matches the key points): rejected for now. diagrams is a frozen field; the slides show a diagram from this list that no key point uses as its own extra slide at the end (p2-simple-circuit, p2-iv-resistor), after everything in them is taught. For the planning chat: whether v3.1 lessons should list their pictures here.
+- F8 (heater worked example: given {Q: 60, V: 12} although the question states I and t): rejected. In lesson-shape-v3.md, given holds the values the formula is solved with; step 1 works out Q = I t, which the checker verifies.

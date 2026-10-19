@@ -1,6 +1,22 @@
 # mabel-gcse — State
 
-Runbook position: Phase 2, task 2.6, P5 (new session). P4 finished 2026-10-18 (topic procedure, AI lessons on, teach-sim, testers; remaining tester faults in docs/ESCALATIONS.md; all four stay live).
+Runbook position: Phase A, task A1.
+
+## Runbook v3 switch (2026-10-19)
+
+Brief docs/briefs/2026-10-19-lesson-rewrite-v3.md. The old topic loops are
+stopped; no further topic is started under runbook v2 (kept as
+docs/archive/RUNBOOK-v2.md). Physics topics that finished the old loop:
+- P1 Energy and P2 Electricity: the first spec-check loop (P1 R1–R8, P2
+  R1–R5), independent audit, AI lessons on (task 2.5b), teach-sim passed.
+- P3 Particle model and P4 Atomic structure: the runbook v2 topic procedure
+  (R1–R3, audit, beginner read), AI lessons on (task 2.6), teach-sim passed;
+  T3/T4 tester faults left open in docs/ESCALATIONS.md.
+- Not started under the old loop: P5 Forces, P6 Waves, P7 Magnetism, P8 Space
+  physics (old position was task 2.6, P5).
+All eight are rewritten under runbook v3 (Phase A pilot P2, then Phase B).
+The brief names docs/briefs/2026-10-18-maths-redesign.md as superseded; that
+file is not in the repo (nothing to act on).
 
 The single record of what is finished. Updated by every commit that changes
 state. Anything not recorded here as verified is not finished.

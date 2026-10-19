@@ -75,7 +75,7 @@ Spec-check API calls, summed from tools/spec-check-results/SUMMARY.md (one line 
 | P6 Waves | 5 | 0.77 |
 | P7 Magnetism | 6 | 0.83 |
 | P4 AI lessons (2026-10-18, 2.5c and 2.5c2) | teach-sim 6 runs; text tester 8 runs; website tester 2 runs | 6.47 (teach-sim 1.64 + 0.75 re-runs; text 2.86 first pass + 2.23 re-run; website 0.74 + 0.64) |
-| Runbook v3 p2-current-voltage (2026-10-19) | spec-check step c 1; site test 1 attempt (stopped at the first call: API billing/credit error, no spend) | 0.12 |
+| Runbook v3 p2-current-voltage (2026-10-19) | spec-check step c 1; site test 1 attempt (ran to exchange 9, then stopped on an API billing/credit error before the judge; the tool reported no cost) | 0.12 + site test not reported (estimated under 0.20: about 9 tutor and student exchanges, no judge call) |
 | Teach-sim (check D) | 2 runs | 0.12 |
 | Teach-sim P1 (task 2.5c) | 10 lesson runs | 0.55 |
 | Teach-sim P2 (task 2.5c) | 8 lesson runs | 0.37 |

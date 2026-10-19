@@ -20,6 +20,11 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
+// Brief v3.1 (docs/briefs/2026-10-19-pilot-feedback-v3-1.md, step 1): the
+// practice generators (every file in js/practice/) and the widget models.
+const Practice = require('../js/practice/practice.js');
+for (const f of fs.readdirSync(path.join(ROOT, 'js', 'practice'))) if (f !== 'practice.js' && f.endsWith('.js')) require(path.join(ROOT, 'js', 'practice', f));
+const WidgetModels = require('../js/widgets/widget-models.js');
 const WORDS_TARGET = 1200, WORDS_MAX = 1350;
 const SENT_MAX = 25, SENT_MAX_BECAUSE = 30;
 const BULLETS_MAX = 3, BULLET_WORDS = 14;
@@ -162,7 +167,7 @@ const FIGURE = /([£$€]\s?\d)|\b(1[89]|20)\d\d\b/;
 const COMPARISON = /\b(is like|are like|like a|like an|a bit like|think of|imagine)\b/i;
 const SKIP_KEYS = new Set(['id', 'topic', 'diagram', 'url', 'searchQuery', 'icon', 'correct', 'examFlag', 'cardFlag',
   'referenceOnly', 'diagramExamTip', 'figuresSourced', 'specChecklist', 'sources', 'videos', 'videoLinks', 'formula',
-  'calc', 'given', 'find', 'equation', 'prerequisites']);
+  'calc', 'given', 'find', 'equation', 'prerequisites', 'after', 'graph', 'generator', 'labels', 'from']);
 // Labels, definitions and exam wording are not prose: no sentence-length rule.
 const SENT_SKIP = /(keyTerms|tables|examBox|writeBullets|revisionCardBullets|heading|title|options|diagramCaption|says)/;
 function* strings(node, p = '') {
@@ -311,7 +316,7 @@ function checkLesson(id, opts) {
   const basicsIdeas = (L.basics || []).map(b => norm(b.idea || ''));
   // Teaching text in reading order, with the <dfn> spans located.
   let full = '';
-  const dfnSpans = [], kpStart = [];
+  const dfnSpans = [], kpStart = [], kpText = [];
   kps.forEach(kp => {
     kpStart.push(full.length);
     let c = String(kp.content || '');
@@ -325,6 +330,7 @@ function checkLesson(id, opts) {
       last = m.index + m[0].length;
     }
     out += strip(c.slice(last));
+    kpText.push(out);
     full += out + '\n\n';
   });
   const explainedBy = new Map();   // term → key point index where it is first explained
@@ -389,10 +395,11 @@ function checkLesson(id, opts) {
     const bl = kp.writeBullets || [];
     if (bl.length > BULLETS_MAX) fail(`${w}.writeBullets`, `${bl.length} bullets (max ${BULLETS_MAX})`);
     bl.forEach((b, j) => { if (wordCount(b) > BULLET_WORDS) fail(`${w}.writeBullets[${j}]`, `${wordCount(b)} words (max ${BULLET_WORDS})`); });
-    if (COMPARISON.test(strip(kp.content)) && !(kp.analogies || []).length) {
-      fail(`${w}.content`, `has a comparison ("${strip(kp.content).match(COMPARISON)[0]}") but no analogies entry`);
-    }
-    (kp.analogies || []).forEach((a, j) => { if (!a || !a.text || !a.limit) fail(`${w}.analogies[${j}]`, 'needs text and limit'); });
+    // v3.1 (1b): comparisons are declared once at lesson level (checked below), not per key point.
+    (kp.analogies || []).forEach((a, j) => {
+      if (!a || !a.text || !a.limit) fail(`${w}.analogies[${j}]`, 'needs text and limit');
+      else fail(`${w}.analogies[${j}]`, `"${a.text}": declare the lesson's one comparison in the lesson-level "comparison" field instead (v3.1)`);
+    });
     if (!/<dfn>/i.test(kp.content || '') && !(kp.keyTerms || []).length) warn(w, 'no <dfn> term and no keyTerms');
     if (kp.diagram) {
       if (!fs.existsSync(path.join(ROOT, 'diagrams', subject, `${kp.diagram}.svg`))) fail(`${w}.diagram`, `diagrams/${subject}/${kp.diagram}.svg not found`);
@@ -438,8 +445,11 @@ function checkLesson(id, opts) {
     if (!showsNumber(x.steps[x.steps.length - 1].text, x.answer.value)) fail(where, `the last step does not show the answer ${x.answer.value}`);
   }
 
-  // 7. Diagrams render clean (all this lesson's diagrams).
-  const diags = [...new Set(kps.map(k => k.diagram).filter(Boolean))];
+  // 8. v3.1 additions (brief docs/briefs/2026-10-19-pilot-feedback-v3-1.md, step 1).
+  checkV31({ id, subject, L, kps, terms, prereq, basicsIdeas, full, dfnSpans, kpStart, kpText, eqs, examples, subs, fail, warn });
+
+  // 7. Diagrams render clean (all this lesson's diagrams, the picture sequences too).
+  const diags = [...new Set([...kps.map(k => k.diagram), ...kps.flatMap(k => (k.pictures || []).map(p => p && p.diagram))].filter(Boolean))];
   if (diags.length && !opts.noDiagrams) {
     const r = spawnSync(process.execPath, [path.join(__dirname, 'check-diagrams.js'), subject], { cwd: ROOT, encoding: 'utf8' });
     if (r.status === 2 || r.error) warn('diagrams', `render check did not run: ${(r.stderr || String(r.error)).trim().split('\n')[0]}`);
@@ -450,6 +460,218 @@ function checkLesson(id, opts) {
   }
 
   return { fails, warns, teachWords };
+}
+
+// ── v3.1 additions ──────────────────────────────────────────────
+const REVERSING = /\b(reverse|reversed|turn (it|the component|the diode|them) round|other way round|wrong way round|negative)\b/i;
+const CONVERTS = /(must be in|convert|× ?60|÷ ?1000|× ?1000|\bminutes?\b|\bmA\b|\bkJ\b|\bkΩ\b)/;
+const fold = k => (k.length > 3 && /[^s]s$/.test(k) ? k.slice(0, -1) : k);
+
+function checkV31(c) {
+  const { id, subject, L, kps, terms, prereq, full, dfnSpans, kpStart, kpText, eqs, examples, subs, fail, warn } = c;
+
+  // Where each term is first explained in the teaching text: -1 = before the
+  // lesson (a prerequisite, a basics idea), undefined = never.
+  const basicsNames = new Set();
+  (L.basics || []).forEach(b => String(b.idea || '').split(/\s+or\s+/i).forEach(x => {
+    const k = norm(x).replace(/^(a|an|the) /, '');
+    if (k) basicsNames.add(fold(k));
+  }));
+  const known = new Map();          // folded term key → display term
+  for (const [k, t] of terms) known.set(fold(k), t.term);
+  for (const [k, p] of prereq) known.set(fold(k), p.term);
+  for (const k of basicsNames) if (!known.has(k)) known.set(k, k);
+  for (const [a, b] of dfnSpans) { const k = fold(norm(full.slice(a, b))); if (k && !known.has(k)) known.set(k, full.slice(a, b)); }
+  function explainedAt(key) {
+    if (prereq.has(key) || [...prereq.keys()].some(k => fold(k) === key) || basicsNames.has(key)) return -1;
+    let best;
+    for (const [a, b] of dfnSpans) {
+      const k = fold(norm(full.slice(a, b)));
+      if (k === key && (best === undefined || a < best)) best = a;
+    }
+    return best;
+  }
+  // A label is a term: exactly, or the last word(s) of one ("current" → electric current).
+  function resolve(label) {
+    const k = fold(norm(label));
+    if (known.has(k)) return k;
+    const hit = [...known.keys()].find(t => t.endsWith(' ' + k));
+    return hit || null;
+  }
+  // Index in `full` of the end of the sentence of key point i that contains `phrase`.
+  function posAfter(i, phrase) {
+    const words = norm(phrase).split(' ').filter(Boolean);
+    if (!words.length) return null;
+    const re = new RegExp(words.map(esc).join('[^A-Za-z0-9]+'), 'i');
+    const m = re.exec(kpText[i]);
+    if (!m) return null;
+    const rest = kpText[i].slice(m.index + m[0].length);
+    const end = rest.search(/[.!?](\s|$)/);
+    return kpStart[i] + m.index + m[0].length + (end === -1 ? rest.length : end + 1);
+  }
+  const svgCache = {};
+  function svgTexts(diagram) {
+    if (!(diagram in svgCache)) {
+      const p = path.join(ROOT, 'diagrams', subject, `${diagram}.svg`);
+      svgCache[diagram] = fs.existsSync(p)
+        ? [...fs.readFileSync(p, 'utf8').matchAll(/<text[^>]*>([\s\S]*?)<\/text>/g)].map(m => m[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>'))
+        : null;
+    }
+    return svgCache[diagram];
+  }
+  // Every label, and every term in the picture's own text, explained by `pos`.
+  function picturesTaught(where, diagram, labels, pos) {
+    (labels || []).forEach(label => {
+      const k = resolve(label);
+      if (!k) { fail(where, `label "${label}" is not a glossary term, so it cannot be tapped (add it to the glossary through a <dfn> or keyTerm, or use the term's own name)`); return; }
+      const at = explainedAt(k);
+      if (at === undefined || at > pos) fail(where, `label "${label}" is shown before the lesson explains it`);
+    });
+    if (!diagram) return;
+    const texts = svgTexts(diagram);
+    if (!texts) return;
+    const flagged = new Set();
+    for (const s of texts) {
+      for (const [k, t] of terms) {
+        const re = termRegex(t.term);
+        if (!re || !re.test(s) || flagged.has(k)) continue;
+        const at = explainedAt(fold(k));
+        if (at !== undefined && at > pos) { flagged.add(k); fail(where, `the picture says "${t.term}" ("${s}") before the lesson explains it`); }
+      }
+    }
+  }
+  const revM = REVERSING.exec(full);
+  const revPos = revM ? revM.index : Infinity;
+
+  // a. Pictures build up.
+  kps.forEach((kp, i) => {
+    const w = `keyPoints[${i}]`;
+    const kpEnd = kpStart[i] + kpText[i].length;
+    (kp.pictures || []).forEach((p, j) => {
+      const pw = `${w}.pictures[${j}]`;
+      if (!p || !p.diagram || !p.after || !p.caption || !Array.isArray(p.labels)) { fail(pw, 'needs diagram, after, caption and labels'); return; }
+      if (!fs.existsSync(path.join(ROOT, 'diagrams', subject, `${p.diagram}.svg`))) fail(pw, `diagrams/${subject}/${p.diagram}.svg not found`);
+      const pos = posAfter(i, p.after);
+      if (pos === null) { fail(pw, `"after" phrase not found in the key point's content: "${p.after}"`); return; }
+      picturesTaught(pw, p.diagram, p.labels, pos);
+      if (p.graph === 'full' && pos < revPos) fail(pw, 'a full graph (negative values) before the lesson teaches reversing: show the beginner graph first');
+      if (p.graph && !['beginner', 'full'].includes(p.graph)) fail(pw, `graph must be "beginner" or "full", not "${p.graph}"`);
+    });
+    if (kp.pictures && kp.pictures.length && kp.diagram !== kp.pictures[kp.pictures.length - 1].diagram) fail(`${w}.diagram`, 'must be the key point\'s last picture (for the old views)');
+    if (kp.diagram && !(kp.pictures || []).length) picturesTaught(`${w}.diagram`, kp.diagram, [], kpEnd);
+  });
+
+  // b. One comparison per lesson.
+  const cmp = L.comparison;
+  if (Array.isArray(cmp)) fail('comparison', 'at most one comparison per lesson (an object, not a list)');
+  else if (cmp) {
+    if (!cmp.name || !Array.isArray(cmp.words) || !cmp.words.length || !Array.isArray(cmp.parts) || !cmp.parts.length || !cmp.limit) fail('comparison', 'needs name, words, parts and limit');
+    (cmp.parts || []).forEach((p, j) => { if (!p || !p.thing || !p.standsFor) fail(`comparison.parts[${j}]`, 'needs thing and standsFor'); });
+  }
+  const cmpWords = cmp && !Array.isArray(cmp) && Array.isArray(cmp.words) ? cmp.words.map(x => new RegExp(`\\b${esc(x)}`, 'i')) : [];
+  for (const [p, s] of strings(L)) {
+    if (/^comparison/.test(p)) continue;
+    for (const sent of sentences(s)) {
+      const m = sent.match(COMPARISON);
+      if (!m) continue;
+      if (!cmpWords.length) fail(p, `a comparison ("${m[0]}") with no lesson-level "comparison": declare the lesson's one comparison there`);
+      else if (!cmpWords.some(re => re.test(sent))) fail(p, `a second comparison ("${sent.slice(0, 60)}…"): use only the lesson's comparison, ${cmp.name}`);
+    }
+  }
+
+  // Questions: multiple choice, or a practice generator.
+  const lessonIds = new Set(subs.map(s => s.id));
+  function question(q, where, maxFrom) {
+    if (!q || typeof q !== 'object') { fail(where, 'not a question'); return null; }
+    if (q.generator) {
+      if (!Practice.has(q.generator)) fail(where, `no practice generator ${q.generator}`);
+      return 'number';
+    }
+    if (!q.question || !Array.isArray(q.options) || q.options.length < 2 || q.options.length > 5 || !Number.isInteger(q.correct) || q.correct < 0 || q.correct >= q.options.length) fail(where, 'needs question, 2 to 5 options and a valid correct index');
+    if (!q.explain) fail(where, 'needs explain (one short sentence)');
+    if (q.from !== undefined && !(Number.isInteger(q.from) ? q.from >= 0 && q.from <= maxFrom : lessonIds.has(q.from))) fail(where, `from ${JSON.stringify(q.from)} is not a key point up to ${maxFrom} or a lesson id`);
+    return 'mc';
+  }
+
+  // c. Readiness before a practical.
+  kps.forEach((kp, i) => {
+    const w = `keyPoints[${i}]`;
+    const practical = kp.practical === true || /practical/i.test(kp.heading || '');
+    if (!practical) { if (kp.readiness) warn(`${w}.readiness`, 'a readiness check on a key point that is not marked practical'); return; }
+    const r = kp.readiness;
+    if (!r || !Array.isArray(r.questions) || r.questions.length !== 2 || !r.recap) { fail(`${w}.readiness`, 'a practical starts with two readiness questions and a recap'); return; }
+    r.questions.forEach((q, j) => question(q, `${w}.readiness.questions[${j}]`, i));
+  });
+
+  // d. Worked examples (2 or 3 per equation, easy to harder) and practice generators.
+  for (const [eid, eq] of eqs) {
+    const list = examples.filter(e => e.x.equation === eid);
+    if (list.length < 2) fail('workedExamples', `equation ${eid} has ${list.length} worked example(s): needs 2 or 3, easy to harder`);
+    if (list.length > 3) fail('workedExamples', `equation ${eid} has ${list.length} worked examples (at most 3)`);
+    if (list.length >= 2) {
+      const lastX = list[list.length - 1].x;
+      const lhs = eq.formula.split('=')[0].trim();
+      const harder = lastX.find !== lhs || (lastX.steps || []).some(s => CONVERTS.test(strip(s.text)));
+      if (!harder) warn(list[list.length - 1].where, `the last worked example of ${eid} neither rearranges nor converts a unit (easy to harder)`);
+    }
+    if (!Practice.has(eid)) { fail('practice', `equation ${eid} has no practice generator in js/practice/`); continue; }
+    const bad = new Set();
+    const vars = formulaVars(eq.formula);
+    for (let seed = 1; seed <= 200; seed++) {
+      let q;
+      try { q = Practice.make(eid, seed); } catch (e) { bad.add(`throws: ${e.message}`); break; }
+      const given = q.given || {};
+      if (!vars.includes(q.find)) bad.add(`find "${q.find}" is not in ${eq.formula}`);
+      for (const v of vars) if (v !== q.find && !(v in given)) bad.add(`given lacks ${v}`);
+      for (const [k, v] of Object.entries(given)) if (!(isFinite(v) && v > 0)) bad.add(`given ${k} = ${v} is not a sensible value`);
+      const a = q.answer || {};
+      if (!(isFinite(a.value) && a.value > 0) || !a.unit) { bad.add(`answer ${JSON.stringify(a)} is not a sensible value`); continue; }
+      if (a.value < 1e-3 || a.value > 1e5) bad.add(`answer ${a.value} ${a.unit} is out of a sensible range`);
+      if (Practice.round3(a.value) !== a.value) bad.add(`answer ${a.value} has more than 3 significant figures`);
+      let v;
+      try { v = solve(eq.formula, given, q.find); } catch (e) { bad.add(e.message); continue; }
+      if (!close(v, a.value * (a.si || 1))) bad.add(`seed ${seed}: answer ${a.value} but ${eq.formula} gives ${q.find} = ${+Number(v).toPrecision(6)}`);
+      if (!q.question || wordCount(q.question) > 40) bad.add(`seed ${seed}: question missing or over 40 words`);
+      const steps = q.steps || [];
+      if (steps.length < 2 || !showsNumber(steps[steps.length - 1].text, a.value)) bad.add(`seed ${seed}: the last step does not show the answer`);
+      if (!Practice.check(q, `${a.value} ${a.unit}`).ok) bad.add(`seed ${seed}: the checker rejects the right answer`);
+      if (Practice.check(q, `${a.value * 2}`).ok) bad.add(`seed ${seed}: the checker accepts a wrong answer`);
+    }
+    [...bad].slice(0, 5).forEach(b => fail(`practice ${eid}`, b));
+  }
+
+  // e. Hands-on widgets.
+  const widgets = kps.map((kp, i) => ({ wd: kp.widget, i })).filter(x => x.wd);
+  if (widgets.length > 2) fail('widgets', `${widgets.length} widgets (one or two per lesson)`);
+  if (!widgets.length) warn('widgets', 'no widget: add one or two wherever she can see the idea change');
+  for (const { wd, i } of widgets) {
+    const w = `keyPoints[${i}].widget`;
+    if (!wd.id || !wd.intro) { fail(w, 'needs id and intro'); continue; }
+    const test = WidgetModels.tests[wd.id];
+    if (!test) { fail(w, `widget ${wd.id} has no model test in js/widgets/widget-models.js`); continue; }
+    const fails = test();
+    fails.slice(0, 5).forEach(f => fail(w, `model test: ${f}`));
+    picturesTaught(w, null, wd.labels || [], kpStart[i] + kpText[i].length);
+  }
+
+  // f. Making it stick.
+  kps.forEach((kp, i) => {
+    const w = `keyPoints[${i}]`;
+    const ow = kp.ownWords;
+    if (!ow || !ow.prompt || !Array.isArray(ow.points) || ow.points.length < 2 || ow.points.length > 4) fail(`${w}.ownWords`, 'needs prompt and 2 to 4 points');
+    const mq = kp.mixedQuestions;
+    if (!Array.isArray(mq) || mq.length !== 2) { fail(`${w}.mixedQuestions`, 'needs exactly two questions'); return; }
+    mq.forEach((q, j) => question(q, `${w}.mixedQuestions[${j}]`, i));
+    if (i > 0 && !mq.some(q => (Number.isInteger(q.from) && q.from < i) || (typeof q.from === 'string' && q.from !== id))) fail(`${w}.mixedQuestions`, 'at least one must mix in an earlier key point ("from")');
+  });
+  const quiz = L.endQuiz;
+  if (!Array.isArray(quiz) || quiz.length < 5 || quiz.length > 8) fail('endQuiz', `needs 5 to 8 questions${Array.isArray(quiz) ? ` (has ${quiz.length})` : ''}`);
+  else {
+    const kinds = quiz.map((q, j) => question(q, `endQuiz[${j}]`, kps.length - 1));
+    if (kinds.filter(k => k === 'mc').length < 3) fail('endQuiz', 'needs at least three multiple-choice questions (the next lesson opens with three of them)');
+    const covered = new Set(quiz.map(q => q.from).filter(Number.isInteger));
+    if (covered.size < Math.ceil(kps.length / 2)) warn('endQuiz', `covers ${covered.size} of ${kps.length} key points ("from")`);
+  }
 }
 
 // ── Main ────────────────────────────────────────────────────────

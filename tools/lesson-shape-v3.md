@@ -180,3 +180,144 @@ the to-do list: what was missing, wrong or above GCSE.
   "workedExamples": [ "…as in the Fields example above…" ]
 }
 ```
+
+## v3.1 additions (every subject)
+
+From docs/briefs/2026-10-19-pilot-feedback-v3-1.md, step 1. They apply to
+every lesson in every subject. The checker tests the parts marked
+**[check]**.
+
+### a. Pictures build up
+
+A picture shows only what has been taught by the place it appears. Where an
+idea needs more parts later, the key point (or a later one) has a sequence of
+pictures: for example cell, wires, lamp and switch first; ammeter and resistor
+in a later picture, once they are taught.
+
+```json
+"pictures": [
+  { "diagram": "p2-cv-loop", "after": "it opens a gap in the loop",
+    "caption": "A cell, a switch and a lamp in one loop",
+    "labels": ["cell", "switch", "lamp"] },
+  { "diagram": "p2-iv-resistor-beginner", "after": "plot a graph", "graph": "beginner",
+    "caption": "…", "labels": ["current", "potential difference", "origin"] }
+]
+```
+
+- `after` is a phrase copied from the key point's `content`: the picture is
+  shown after the sentence that contains it (in the AI lesson, with the
+  message that teaches or tells that sentence; on the slide, in order).
+- `labels` are the terms the picture names. Each is a glossary term (the
+  subject glossary, this lesson's `keyTerms` or `<dfn>` terms, a `basics` idea
+  or a `prerequisites` term). Under the picture they are shown as tappable
+  words that open the glossary.
+- **[check]** Every label is explained at or before the key point and sentence
+  where the picture is shown. The same holds for every word of the picture's
+  own SVG `<text>` that is a lesson or glossary term.
+- Graphs: a beginner's version first (`"graph": "beginner"`: positive values
+  only, the origin labelled and explained). The full version with negative
+  values (`"graph": "full"`) only at or after the sentence where the lesson
+  teaches reversing (turning a component round). **[check]**
+- `diagram` (one per key point) stays for the old views; on a key point with
+  `pictures` it is the last picture of that key point.
+
+### b. One comparison per lesson
+
+```json
+"comparison": {
+  "name": "a running track",
+  "words": ["track", "runner"],
+  "parts": [ { "thing": "the track", "standsFor": "the circuit" } ],
+  "limit": "where the comparison stops being true"
+}
+```
+
+At lesson level, at most one. Every comparison in the lesson ("is like",
+"think of", "imagine" …), in any field including `basics`, uses it (names one
+of its `words`), and the tutor uses only it. Key points' `analogies` stay empty
+when the lesson has a `comparison`. **[check: at most one]**
+
+### c. Readiness before a practical
+
+A key point that is a practical (`"practical": true`; any heading with
+"practical" counts) starts with two quick questions on the ideas it needs:
+
+```json
+"readiness": { "questions": [ {question}, {question} ], "recap": "a short recap of those ideas" }
+```
+
+If she gets either wrong, the recap comes first.
+
+### d. Worked examples and practice
+
+- Every equation has 2 or 3 worked examples, easy to harder: the later ones
+  add a unit conversion or rearranging, each in small steps.
+  **[check: at least 2, at most 3; the last one converts a unit or
+  rearranges (WARN if not)]**
+- Every equation has a practice generator in `js/practice/` (one folder,
+  shared by the browser and Node): code that makes a fresh question of the
+  same kind with sensible numbers and computes the answer and its steps. The
+  generator's id is the equation's `id` (`"Q=It"`). **[check: every examBox
+  equation has a generator; its answers recompute from the lesson's
+  `formula`; 200 random questions per generator all have sensible values]**
+- Slides and the AI lesson both have "Try another": a fresh question as often
+  as she likes, her answer checked in code with a tolerance; a wrong answer
+  shows the steps one at a time, then offers another.
+
+### e. Hands-on widgets
+
+One or two small interactive widgets per lesson, wherever the idea is
+something she can see change (Physics: a circuit, a graph with a draggable
+point; Chemistry: a reaction-rate or particle widget; Biology: an enzyme-rate
+or population graph; Geography: a data chart; Maths: a number line, a grid for
+double brackets, a sliding gradient).
+
+```json
+"widget": { "id": "circuit", "options": { "resistor": true }, "intro": "Add cells and watch the ammeter.",
+            "labels": ["cell", "ammeter", "resistor"] }
+```
+
+The widget's model is code in `js/widgets/widget-models.js` (shared by the
+browser and Node) whose numbers follow the lesson's equations and the
+specification; `js/widgets/widgets.js` draws it. It shows only ideas already
+taught: its `labels` follow the picture rule, at the end of its key point.
+**[check: at most two per lesson (WARN if none); each widget has a test in
+widget-models.js comparing its numbers with the equation, and the test
+passes]**
+
+### f. Making it stick
+
+```json
+"ownWords": { "prompt": "In one line, in your own words: what is electric current?",
+              "points": ["a flow of charge", "how much charge passes each second"] },
+"mixedQuestions": [ {question}, {question} ]
+```
+
+- After each key point she writes the idea in her own words in one line. The
+  tutor (on slides, a self-check list of `points`) says what is right and
+  what is missing.
+- Then two quick `mixedQuestions` that mix in earlier key points, not only
+  the last one. Each has `from`: the key point index it tests, or an earlier
+  lesson's id. From the second key point on, at least one comes from an
+  earlier key point.
+- Lesson level `endQuiz`: 5 to 8 questions across the whole lesson; any number
+  question comes from a practice generator. At least three are multiple
+  choice: when she opens the next lesson in the same topic after finishing
+  this one, that lesson starts with three of them.
+- **[check: every key point has `ownWords` (2 to 4 points) and two
+  `mixedQuestions`; every lesson has an `endQuiz` of 5 to 8]**
+
+A question (readiness, mixed, end quiz) is multiple choice or a generator:
+
+```json
+{ "question": "…", "options": ["…", "…", "…"], "correct": 0, "explain": "one short sentence", "from": 2 }
+{ "generator": "V=IR", "from": 1 }
+```
+
+### g. Slides
+
+Slides show all of the above too: the pictures in sequence, the worked
+examples revealed step by step with "Try another", the widgets, the own-words
+self-check, the mixed questions and the end quiz (the readiness questions
+before a practical, the recall questions at the start). Slides stay short:
+the full teaching text stays behind "Read the full explanation".

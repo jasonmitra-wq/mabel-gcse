@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, task A5, site tests (p2-current-voltage and p2-components rewritten; the phone-size site test of each is next).
+Runbook position: Phase A, task A6, PILOT GATE: waiting for "Pilot: yes" (docs/ESCALATIONS.md, "Pilot"). A1–A5 done.
 
 ## Runbook v3 switch (2026-10-19)
 
@@ -77,6 +77,7 @@ Spec-check API calls, summed from tools/spec-check-results/SUMMARY.md (one line 
 | P4 AI lessons (2026-10-18, 2.5c and 2.5c2) | teach-sim 6 runs; text tester 8 runs; website tester 2 runs | 6.47 (teach-sim 1.64 + 0.75 re-runs; text 2.86 first pass + 2.23 re-run; website 0.74 + 0.64) |
 | Runbook v3 p2-current-voltage (2026-10-19) | spec-check step c 1; site test 1 attempt (ran to exchange 9, then stopped on an API billing/credit error before the judge; the tool reported no cost) | 0.12 + site test not reported (estimated under 0.20: about 9 tutor and student exchanges, no judge call) |
 | Runbook v3 p2-components (2026-10-19) | spec-check step c 1 | 0.08 |
+| Runbook v3 pilot site tests (2026-10-19) | p2-current-voltage-2 1.0755; p2-components 0.0675 (stopped at the card); p2-components-2 0.5815 | 1.72 |
 | Teach-sim (check D) | 2 runs | 0.12 |
 | Teach-sim P1 (task 2.5c) | 10 lesson runs | 0.55 |
 | Teach-sim P2 (task 2.5c) | 8 lesson runs | 0.37 |

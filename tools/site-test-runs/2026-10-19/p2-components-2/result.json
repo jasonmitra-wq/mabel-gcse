@@ -1,0 +1,189 @@
+{
+  "id": "p2-components",
+  "mode": "lesson",
+  "date": "2026-10-19",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "The student's correct answer 'idk turn back on?' (heater switches back on when the room cools) was never acknowledged. The tutor jumped straight to LDRs.",
+        "step": "S8 / T8"
+      },
+      {
+        "what": "The student asked 'whats ldr' and the tutor never said what LDR means (light-dependent resistor). It just repeated the resistance fact.",
+        "step": "S9 / T9"
+      },
+      {
+        "what": "The correct answer 'low light intensity' was not confirmed. The tutor moved on to the test circuit without saying 'yes'.",
+        "step": "S11 / T11"
+      },
+      {
+        "what": "Physics error: the voltmeter in the diagram measures the potential difference across the thermistor, not 'the push from the cell'. The word 'cell' was also used without being explained, which caused the S13 question.",
+        "step": "T12"
+      },
+      {
+        "what": "Physics error: 'A cell is just a battery' is wrong at GCSE, where a battery is two or more cells. The tutor also answered its own question (resistance = V ÷ I) instead of letting the student try, then ended the lesson abruptly. The phrase 'both parts are non-linear' is unclear.",
+        "step": "S13 / T13"
+      },
+      {
+        "what": "The 'Drawing a circuit to test a sensor' point was marked covered (4/4) although the student was never asked to draw or explain the circuit. The resistance step was never attempted by the student.",
+        "step": "T13"
+      },
+      {
+        "what": "The two summaries contradict each other and the transcript. T13 says 'answered some on thermistors'; T14 says 'I told you about thermistors'. In fact the student correctly answered the thermistor question at S5 and the voltmeter question at S12.",
+        "step": "T13 / T14"
+      },
+      {
+        "what": "S4 was correct ('it lets light out') but the test labelled it 'wrong'. The tutor accepted it correctly, but the test label is mislabelled.",
+        "step": "S4"
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "The circuit-symbols diagram in the opening panel is a tiny thumbnail. All symbol labels are unreadable without zooming.",
+        "screenshot": "06-ai-lesson-opening-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The sidebar diagram thumbnail is so small that its labels are unreadable.",
+        "screenshot": "06-ai-lesson-opening-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "In the test-circuit diagram, the blue label 'water at a measured temperature' and the 'thermometer' and 'thermistor' labels are very small on the phone. They are hard to read without zooming.",
+        "screenshot": "13-diagram-11-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The page heading 'What are you revising?' and the '← Home' button are cut off under the sticky header.",
+        "screenshot": "02-subjects-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The 'Jump to' panel heading is scrolled off and cut under the top bar, so the list starts mid-panel.",
+        "screenshot": "11-diagram-8-laptop.png",
+        "stops_use": false
+      }
+    ],
+    "would_quit": false,
+    "fixes": [
+      {
+        "target": "AI tutor behaviour: answer evaluation",
+        "change": "Always explicitly confirm a correct student answer (e.g. S8 'turn back on', S11 'low light intensity') before introducing the next idea."
+      },
+      {
+        "target": "AI tutor behaviour: definition questions",
+        "change": "When the student asks 'whats X', give the full name and a one-line accurate meaning first: 'LDR = light-dependent resistor'; 'a cell is a single source of push; a battery is two or more cells'."
+      },
+      {
+        "target": "p2-components lesson content: test-circuit point (T12)",
+        "change": "Say the voltmeter measures the potential difference across the thermistor, not the push from the cell."
+      },
+      {
+        "target": "Coverage logic for 'Drawing a circuit to test a sensor'",
+        "change": "Do not mark the point covered or end the lesson until the student has attempted the R = V ÷ I step. Wait for their reply to 'what do we then work out?' instead of answering it."
+      },
+      {
+        "target": "Diagram rendering on phone (opening panel and test-circuit SVG)",
+        "change": "Show the opening diagram at full width rather than as a thumbnail. Set a minimum label font size of about 14px in the test-circuit diagram."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "what": "AI lesson opens by default (in TEACH_ENABLED)",
+      "ok": true,
+      "detail": "AI lesson opened"
+    }
+  ],
+  "transcript": [
+    "Lesson p2-components (Physics › Electricity › Components — symbols, thermistors and LDRs).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "[screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects",
+    "[screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics",
+    "[screenshot 04-lessons-p2-phone.png and 04-lessons-p2-laptop.png] lessons-P2",
+    "[screenshot 05-earlier-words-card-phone.png and 05-earlier-words-card-laptop.png] earlier-words-card",
+    "[check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened",
+    "T0: Welcome, glad you're here! Think about walking down your street in the evening: what do you notice happening to the street lights as it gets dark?",
+    "[screenshot 06-ai-lesson-opening-phone.png and 06-ai-lesson-opening-laptop.png] ai-lesson-opening",
+    "S1 (try): they turn on automatically i guess",
+    "T1: Yes, they switch on by themselves. To show how, engineers draw circuits with agreed simple shapes called circuit symbols. Look at the diagram: why might everyone agree on the same shapes?",
+    "[diagram shown in the conversation under T1: \"The standard circuit symbols. Learn every one.\"]",
+    "[screenshot 07-diagram-1-phone.png and 07-diagram-1-laptop.png] diagram-1",
+    "S2 (try): so everyone understands the same thing?",
+    "T2: Yes — agreed shapes mean anyone can read the same drawing and build the same circuit. A drawing made from those symbols, joined by straight lines for the wires, is called a circuit diagram. In one, a lamp is drawn as a circle with a cross in it. What shape would you draw for a lamp?",
+    "S3 (try): circle with a cross in it",
+    "T3: Yes — a circle with a cross in it is the lamp symbol. A light-emitting diode (LED) is a diode that gives out light; its symbol has two arrows coming out of it. Why do you think its symbol has arrows coming out?",
+    "[screenshot 08-exchange-3-phone.png and 08-exchange-3-laptop.png] exchange-3",
+    "S4 (wrong): cos it lets light out?",
+    "T4: Yes — arrows pointing out show the LED gives out light. Look at the diagram: a thermistor's resistance goes down as it gets hotter. So if a thermistor warms up, what happens to its resistance?",
+    "[diagram shown in the conversation under T4: \"A thermistor: hotter, lower resistance.\"]",
+    "[screenshot 09-diagram-4-phone.png and 09-diagram-4-laptop.png] diagram-4",
+    "S5 (try): it goes down",
+    "T5: Yes — resistance goes down as a thermistor warms up. That makes it a sensor: a part that detects a change around it, here, how hot it is. In a heating system, the room warms up and the thermistor senses it. What do you think the circuit should do to the heater then?",
+    "S6 (bored): whats a sensor",
+    "T6: A sensor is a part that notices a change around it, a bit like your skin noticing that a room has got hot. In a heating system, the room warms up and the thermistor senses it. What do you think the circuit should do to the heater once the room is warm enough?",
+    "[screenshot 10-exchange-6-phone.png and 10-exchange-6-laptop.png] exchange-6",
+    "S7 (bored): this is long",
+    "T7: Sorry, that was a lot. The circuit should switch the heater off once the room is warm enough. When the room cools down, what happens to the heater?",
+    "S8 (idk): idk turn back on?",
+    "T8: Look at the diagram: an LDR's resistance goes down as the light gets brighter. Street lights use this to notice when it gets dark. In the dark, what happens to an LDR's resistance?",
+    "[diagram shown in the conversation under T8: \"An LDR: brighter light, lower resistance.\"]",
+    "[screenshot 11-diagram-8-phone.png and 11-diagram-8-laptop.png] diagram-8",
+    "S9 (minimal): whats ldr",
+    "T9: In bright light its resistance is low, and in the dark it is high. When evening comes and it gets dark, what happens to its resistance?",
+    "[screenshot 12-exchange-9-phone.png and 12-exchange-9-laptop.png] exchange-9",
+    "S10 (minimal): goes up?",
+    "T10: Yes — resistance goes up in the dark. That brightness has a name: light intensity, which just means how bright the light is. A sunny window has a high light intensity. What would a dark cupboard have?",
+    "S11 (offtopic): low light intensity i guess",
+    "T11: Look at the diagram: it shows the thermistor in water, with an ammeter in series and a voltmeter in parallel. The ammeter measures the current, so what does the voltmeter measure?",
+    "[diagram shown in the conversation under T11: \"Testing a thermistor: ammeter in series, voltmeter in parallel, thermistor in water.\"]",
+    "[screenshot 13-diagram-11-phone.png and 13-diagram-11-laptop.png] diagram-11",
+    "S12 (try): it measures the voltage?",
+    "T12: Yes — the voltmeter does measure the voltage, which is the push from the cell. With the current from the ammeter, what do we then work out?",
+    "[screenshot 14-exchange-12-phone.png and 14-exchange-12-laptop.png] exchange-12",
+    "S13 (try): whats cell",
+    "T13: A cell is just a battery, the thing that gives the push in a circuit. To test a sensor, divide the potential difference by the current to get the resistance, then change the temperature or light and repeat. Plotting resistance against temperature or light gives a downward curve, so both parts are non-linear. That's the end of this lesson. You answered questions on circuit symbols and LDRs, answered some on thermistors, and I told you the rest, plus how to draw a test circuit. Well done today.",
+    "S14 (closing): ok thanks bye",
+    "T14: Thanks for sticking with it. Today you answered questions on circuit symbols and LDRs and I told you about thermistors and drawing a circuit to test a sensor. Your progress is saved, so you can come back to this lesson any time. Bye for now!",
+    "[the lesson shows \"Lesson finished.\"]",
+    "[screenshot 15-end-phone.png and 15-end-laptop.png] end"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-19/p2-components-2/01-home-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/02-subjects-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/02-subjects-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/03-topics-physics-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/03-topics-physics-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/04-lessons-p2-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/04-lessons-p2-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/05-earlier-words-card-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/05-earlier-words-card-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/06-ai-lesson-opening-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/06-ai-lesson-opening-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/07-diagram-1-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/07-diagram-1-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/08-exchange-3-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/08-exchange-3-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/09-diagram-4-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/09-diagram-4-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/10-exchange-6-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/10-exchange-6-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/11-diagram-8-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/11-diagram-8-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/12-exchange-9-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/12-exchange-9-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/13-diagram-11-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/13-diagram-11-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/14-exchange-12-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/14-exchange-12-laptop.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/15-end-phone.png",
+    "tools/site-test-runs/2026-10-19/p2-components-2/15-end-laptop.png"
+  ],
+  "cost": 0.581486,
+  "tutorModel": "claude-sonnet-5-5",
+  "tutorCost": 0.396782,
+  "apiCalls": 15,
+  "browserApiCalls": 102
+}

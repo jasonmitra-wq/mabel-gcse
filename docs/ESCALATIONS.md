@@ -284,3 +284,22 @@ Still there (tutor slips, not lesson text; the lesson text is right in each case
 - p2-components, audit 923f2b9-1 F7 REJECTED: "a steeper I-V line means a lower resistance" (kept by P2-TRIAGE R4 p2-components fact0) is no longer taught in P2. Reason: it is not a specification statement; the v3 lessons find resistance at a point with R = V ÷ I, the route the specification gives, and the brief asks for less load on a beginner. Decision for the planning chat if it should come back (it would sit in p2-current-voltage keyPoints[3]).
 - p2-components, audit 923f2b9-1 F14 REJECTED: six sentences of 21–23 words and some bracketed asides break tools/plain-english-rules.md (15 to 20 words). Reason: runbook v3 section 3 replaces that limit (25 words, 30 with "because" or "so"), and the auditor (frozen) still reads the old rules file. Every sentence passes tools/check-lesson-v3.js.
 - p2-components, audit 923f2b9-1 F5 (fixed, noted): the fuse symbol is kept in the circuit symbol chart, because the specification's symbol chart (an image, not in data/spec/physics.md) includes it [own knowledge]. What a fuse does is not taught, in line with P2-TRIAGE. Confirm or cut.
+- Pilot site tests (phone size, breakage only, 2026-10-19). Breakage fixed once (P2-FIX-LOG). Left for the planning chat, none of them lesson text, all tutor behaviour (the tutor is frozen) or existing layout:
+  - Tutor ignores "whats X" questions, or answers them only after "just tell me" (p2-current-voltage-2 S6 coulomb, S15 in parallel, S18 resistance; p2-components-2 S9 LDR). The lesson defines each term (keyTerms, <dfn>, glossary).
+  - Tutor science slips, not in the lessons: "the voltmeter measures the push from the cell" and "a cell is just a battery" (p2-components-2 T12, T13); "It sits in parallel" after an ammeter sentence (p2-current-voltage-2 T14); "Earlier you said…" for something the tutor said (T28).
+  - Correct answers not acknowledged or under-credited (p2-components-2 S8, S11; p2-current-voltage-2 S26 "the potential difference?").
+  - End of lesson: the goodbye summary is sent twice; the "answered"/"told" split can contradict the transcript; a point is ticked covered after "just tell me" (both runs).
+  - Layout already logged: sticky header covers page tops; the side-column diagram thumbnail is small (it enlarges on tap; the in-chat copy is full width); Key Terms panel clipped.
+
+## Pilot (runbook v3 task A6, 2026-10-19)
+
+Lessons:
+- Physics → Electricity → Current, potential difference and resistance (p2-current-voltage): 7 key points.
+- Physics → Electricity → Components — symbols, thermistors and LDRs (p2-components): 4 key points; it opens with the "Words from earlier lessons" card until the first lesson has been opened.
+
+Screenshot folders (phone and laptop): tools/site-test-runs/2026-10-19/p2-current-voltage-2 and tools/site-test-runs/2026-10-19/p2-components-2 (first runs: p2-current-voltage, stopped by the credit error; p2-components, stopped at the card).
+
+What to try:
+- Jason: read both lessons as slides (no API key saved, or "Show me the slides instead"). Each key point is one slide: diagram, "For the exam" box, three bullets to write down, a worked example revealed with "Show the next step", and "Read the full explanation". Tap an underlined word for its meaning. Home → "Words I've learned".
+- Mabel: do one of them as an AI lesson.
+- Then type "Pilot: yes" or "Pilot: <what to change>", and "Mabel: <what she said>".

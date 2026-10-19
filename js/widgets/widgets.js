@@ -140,7 +140,7 @@ const WidgetView = (() => {
     const kinds = (opts.sensors || ['thermistor', 'ldr']);
     let kind = kinds[0], x = 20;
     const spec = { thermistor: { label: 'Thermistor', what: 'Temperature', unit: '°C', min: 0, max: 100, step: 1, start: 20 },
-                   ldr: { label: 'LDR', what: 'Light intensity', unit: 'lux', min: 0, max: 1000, step: 10, start: 100 } };
+                   ldr: { label: 'LDR', what: 'Light intensity (0 is dark, 100 is bright)', unit: '', min: 0, max: 100, step: 1, start: 10, scale: 10 } };
     el.innerHTML = `<div class="wdg-row">${kinds.map(k => `<button class="btn" data-k="${k}">${spec[k].label}</button>`).join('')}</div>
       <label><span data-w></span>: <span data-v></span></label>
       <input type="range">
@@ -149,10 +149,10 @@ const WidgetView = (() => {
     function draw() {
       const sp = spec[kind];
       range.min = sp.min; range.max = sp.max; range.step = sp.step; range.value = x;
-      const r = M.sensor(kind, x);
+      const r = M.sensor(kind, x * (sp.scale || 1));
       el.querySelector('[data-w]').textContent = sp.what;
-      el.querySelector('[data-v]').textContent = `${x} ${sp.unit}`;
-      read.innerHTML = `<span>Potential difference: <b>${M.SENSOR_V} V</b></span><span>Resistance: <b>${fmtR(r.resistance)}</b></span><span>Current: <b>${(r.current * 1000).toFixed(1)} mA</b></span>`;
+      el.querySelector('[data-v]').textContent = `${x}${sp.unit ? ' ' + sp.unit : ''}`;
+      read.innerHTML = `<span>Potential difference: <b>${M.SENSOR_V} V</b></span><span>Resistance: <b>${fmtR(r.resistance)}</b></span><span>Current: <b>${Number(r.current.toPrecision(2))} A</b></span>`;
       el.querySelectorAll('[data-k]').forEach(b => b.classList.toggle('on', b.dataset.k === kind));
     }
     range.oninput = () => { x = Number(range.value); draw(); };

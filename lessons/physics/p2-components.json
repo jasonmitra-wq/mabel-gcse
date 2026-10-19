@@ -12,7 +12,7 @@
   "basics": [
     {
       "idea": "Electric current",
-      "text": "Current is how much electric charge flows past a point each second. Think of cars passing under a bridge: more cars each second is a bigger flow. It is measured in amperes (A), often called amps."
+      "text": "Current is how much electric charge flows past a point each second. Think of runners on a running track: more runners passing a point each second is a bigger flow. It is measured in amperes (A), often called amps."
     },
     {
       "idea": "Potential difference",
@@ -20,7 +20,7 @@
     },
     {
       "idea": "Resistance",
-      "text": "Resistance is how hard it is for current to get through something. It is like a narrow, crowded corridor that slows people down. More resistance means less current for the same push. It is measured in ohms (Ω)."
+      "text": "Resistance is how hard it is for current to get through something. It is like a narrow, muddy stretch of a running track that slows the runners down. More resistance means less current for the same push. It is measured in ohms (Ω)."
     },
     {
       "idea": "The two axes of a graph",
@@ -38,11 +38,11 @@
   "keyPoints": [
     {
       "heading": "Circuit symbols — the language of circuit diagrams",
-      "content": "People draw circuits so that anyone can build them. Instead of drawing a real lamp or meter, they use simple shapes that everyone agrees on.\n\nThese shapes are <dfn>circuit symbols</dfn>, and a drawing made from them is a <dfn>circuit diagram</dfn>. Wires are drawn as straight lines. A <dfn>cell</dfn> is a long thin line next to a short thick one; two or more cells joined together make a <dfn>battery</dfn>. A <dfn>resistor</dfn>, a component that limits the current, is a small rectangle. A lamp is a circle with a cross in it. A <dfn>switch</dfn> is drawn open, with a gap, or closed, with no gap. A meter is a circle with a letter: A for an ammeter, V for a voltmeter.\n\nA diode is a triangle pointing the way current can flow, with a bar across its tip. Some symbols are built from others. A resistor with an arrow through it is a variable resistor. A diode with two arrows coming out of it is a <dfn>light-emitting diode (LED)</dfn>, a diode that gives out light. The chart also shows a fuse: a rectangle with a line through it.\n\nTo read a circuit diagram, follow the wire from one side of the cell round to the other. Components on one single path are in series. Components on separate branches are in parallel.",
+      "content": "People draw circuits so that anyone can build them. Instead of drawing a real lamp or meter, they use simple shapes that everyone agrees on.\n\nThese shapes are <dfn>circuit symbols</dfn>, and a drawing made from them is a <dfn>circuit diagram</dfn>. Wires are drawn as straight lines. A <dfn>cell</dfn> is a long thin line next to a short thick one; two or more cells joined together make a <dfn>battery</dfn>. A <dfn>resistor</dfn>, a component that limits the current, is a small rectangle. A lamp is a circle with a cross in it. A <dfn>switch</dfn> is drawn open, with a gap, or closed, with no gap. A meter is a circle with a letter: A for an ammeter, V for a voltmeter.\n\nA diode is a triangle pointing the way current can flow, with a bar across its tip. Some symbols are built from others. A resistor with an arrow through it is a variable resistor. A diode with two arrows coming out of it is a <dfn>light-emitting diode (LED)</dfn>, a diode that gives out light. The chart also shows the symbol for a <dfn>fuse</dfn>: a rectangle with a line through it.\n\nTo read a circuit diagram, follow the wire from one side of the cell round to the other. Components on one single path are in series. Components on separate branches are in parallel.",
       "examFlag": true,
       "cardFlag": true,
-      "diagram": "p2-circuit-symbols",
-      "diagramCaption": "The standard circuit symbols. Learn every one.",
+      "diagram": "p2-symbols-more",
+      "diagramCaption": "More symbols: diode, LED, variable resistor and fuse.",
       "diagramExamTip": true,
       "analogies": [],
       "writeBullets": [
@@ -92,15 +92,76 @@
           "referenceOnly": true
         }
       ],
-      "memTip": "Cover the symbol chart, draw all fourteen symbols from memory, then check them."
+      "memTip": "Cover the two symbol charts, draw all twelve symbols from memory, then check them.",
+      "pictures": [
+        {
+          "diagram": "p2-symbols-basic",
+          "after": "A for an ammeter, V for a voltmeter",
+          "caption": "Circuit symbols: cell, battery, switches, lamp, resistor and the two meters.",
+          "labels": [
+            "cell",
+            "battery",
+            "switch",
+            "lamp",
+            "resistor",
+            "ammeter",
+            "voltmeter"
+          ]
+        },
+        {
+          "diagram": "p2-symbols-more",
+          "after": "a rectangle with a line through it",
+          "caption": "More symbols: diode, LED, variable resistor and fuse.",
+          "labels": [
+            "diode",
+            "light-emitting diode",
+            "variable resistor",
+            "fuse"
+          ]
+        }
+      ],
+      "ownWords": {
+        "prompt": "In one line: how do you read a circuit diagram?",
+        "points": [
+          "each component has a standard symbol",
+          "follow the wire from one side of the cell round to the other",
+          "one path is in series, separate branches are in parallel"
+        ]
+      },
+      "mixedQuestions": [
+        {
+          "question": "Which symbol is a long thin line next to a short thick one?",
+          "options": [
+            "A cell",
+            "A resistor",
+            "A lamp",
+            "A diode"
+          ],
+          "correct": 0,
+          "explain": "That is the cell symbol. Two or more cells joined together make a battery.",
+          "from": 0
+        },
+        {
+          "question": "In the lesson before, what did you find about a diode?",
+          "options": [
+            "It lets current flow in one direction only",
+            "Its resistance increases as it gets hotter",
+            "Its resistance stays the same",
+            "It measures the current"
+          ],
+          "correct": 0,
+          "explain": "In the reverse direction its resistance is very high.",
+          "from": "p2-current-voltage"
+        }
+      ]
     },
     {
       "heading": "Thermistors — resistance that changes with temperature",
       "content": "In an earlier lesson you saw that a filament lamp and a diode do not keep a fixed resistance. It changes as the current through them changes. The same is true of two components that react to the world around them. One is the <dfn>thermistor</dfn>, which reacts to <dfn>temperature</dfn>: how hot it is. The other is the <dfn>light-dependent resistor</dfn> (<dfn>LDR</dfn>), which reacts to light.\n\nFirst, the thermistor. Its resistance depends on its temperature. As a thermistor gets warmer, its resistance goes down. When it cools, its resistance goes back up. So for the same potential difference, a warm thermistor lets a bigger current through than a cold one.\n\nThat makes a thermistor a good temperature <dfn>sensor</dfn>: a part that detects a change around it. In a <dfn>thermostat</dfn>, the control that keeps a room or an oven at a set temperature, a thermistor senses how warm it is. When the room warms up, the thermistor's resistance falls, the current changes, and the circuit switches the heater off. When the room cools, the heater comes back on.\n\nIts symbol is a resistor with a diagonal line through it that ends in a short flat tail.",
       "examFlag": true,
       "cardFlag": true,
-      "diagram": "p2-thermistor-graph",
-      "diagramCaption": "A thermistor: hotter, lower resistance.",
+      "diagram": "p2-symbol-thermistor",
+      "diagramCaption": "The resistor symbol, and the thermistor symbol beside it.",
       "diagramExamTip": true,
       "analogies": [],
       "writeBullets": [
@@ -136,15 +197,70 @@
           "referenceOnly": true
         }
       ],
-      "memTip": "Thermistor: hot → low resistance. Cold → high resistance."
+      "memTip": "Thermistor: hot → low resistance. Cold → high resistance.",
+      "pictures": [
+        {
+          "diagram": "p2-thermistor-graph",
+          "after": "When it cools, its resistance goes back up",
+          "caption": "A thermistor: hotter means lower resistance.",
+          "labels": [
+            "thermistor",
+            "temperature",
+            "resistance"
+          ]
+        },
+        {
+          "diagram": "p2-symbol-thermistor",
+          "after": "ends in a short flat tail",
+          "caption": "The resistor symbol, and the thermistor symbol beside it.",
+          "labels": [
+            "resistor",
+            "thermistor"
+          ]
+        }
+      ],
+      "ownWords": {
+        "prompt": "In one line: what does a thermistor do, and what is it used for?",
+        "points": [
+          "as it gets hotter, its resistance decreases",
+          "it senses temperature",
+          "for example in a thermostat"
+        ]
+      },
+      "mixedQuestions": [
+        {
+          "question": "A room warms up. What happens to the resistance of the thermistor in the thermostat?",
+          "options": [
+            "It falls",
+            "It rises",
+            "It stays the same",
+            "It falls to zero"
+          ],
+          "correct": 0,
+          "explain": "A warmer thermistor has a lower resistance.",
+          "from": 1
+        },
+        {
+          "question": "Which symbol is a diode with two arrows coming out of it?",
+          "options": [
+            "An LED",
+            "A thermistor",
+            "A variable resistor",
+            "A fuse"
+          ],
+          "correct": 0,
+          "explain": "An LED is a diode that gives out light: the arrows show the light coming out.",
+          "from": 0
+        }
+      ]
     },
     {
       "heading": "LDRs — resistance that changes with light",
       "content": "Some street lights come on by themselves as it gets dark. They use a light-dependent resistor, or LDR.\n\nAn LDR's resistance depends on how bright the light falling on it is: its <dfn>light intensity</dfn>. As the light gets brighter, its resistance goes down. In the dark, its resistance is high.\n\nSo an LDR is a light sensor. In an automatic light, the LDR's resistance rises as evening comes. The circuit detects that change and switches the light on. In the morning, the resistance falls again and the light switches off.\n\nThe LDR and the thermistor behave in the same way, so they are easy to mix up. Remember what each one senses: an LDR responds to light, a thermistor to temperature. For both, more of that thing means less resistance.\n\nThe symbol for an LDR is a resistor in a circle, with two arrows pointing in to show light falling on it.",
       "examFlag": true,
       "cardFlag": true,
-      "diagram": "p2-ldr-graph",
-      "diagramCaption": "An LDR: brighter light, lower resistance.",
+      "diagram": "p2-symbol-ldr",
+      "diagramCaption": "The resistor symbol, and the LDR symbol beside it.",
       "diagramExamTip": true,
       "analogies": [],
       "writeBullets": [
@@ -170,11 +286,82 @@
           "def": "How bright the light is."
         }
       ],
-      "memTip": "LDR: Light Down Resistance. More light, less resistance."
+      "memTip": "LDR: Light Down Resistance. More light, less resistance.",
+      "pictures": [
+        {
+          "diagram": "p2-ldr-graph",
+          "after": "As the light gets brighter, its resistance goes down",
+          "caption": "An LDR: brighter light means lower resistance.",
+          "labels": [
+            "LDR",
+            "light intensity",
+            "resistance"
+          ]
+        },
+        {
+          "diagram": "p2-symbol-ldr",
+          "after": "show light falling on it",
+          "caption": "The resistor symbol, and the LDR symbol beside it.",
+          "labels": [
+            "resistor",
+            "LDR"
+          ]
+        }
+      ],
+      "widget": {
+        "id": "sensor",
+        "options": {
+          "sensors": [
+            "thermistor",
+            "ldr"
+          ]
+        },
+        "intro": "Try it: a thermistor or an LDR in a circuit with a 6 V battery. Slide the temperature or the light and watch the resistance and the current.",
+        "labels": [
+          "thermistor",
+          "LDR",
+          "resistance",
+          "current"
+        ]
+      },
+      "ownWords": {
+        "prompt": "In one line: what does an LDR do, and how is it different from a thermistor?",
+        "points": [
+          "brighter light means lower resistance",
+          "an LDR senses light",
+          "a thermistor senses temperature"
+        ]
+      },
+      "mixedQuestions": [
+        {
+          "question": "It gets dark outside. What happens to the resistance of an LDR?",
+          "options": [
+            "It rises",
+            "It falls",
+            "It stays the same",
+            "It falls to zero"
+          ],
+          "correct": 0,
+          "explain": "In the dark, an LDR's resistance is high.",
+          "from": 2
+        },
+        {
+          "question": "What does a thermistor sense?",
+          "options": [
+            "Temperature",
+            "Light",
+            "Current",
+            "Sound"
+          ],
+          "correct": 0,
+          "explain": "An LDR senses light. A thermistor senses temperature.",
+          "from": 1
+        }
+      ]
     },
     {
       "heading": "Drawing a circuit to test a sensor",
-      "content": "Exam questions often ask you to draw a circuit to find how a thermistor's or an LDR's resistance changes. You use the same idea as for any component: measure the current and the potential difference, then find the resistance.\n\nDraw the cell, a switch and an ammeter in one loop with the thermistor, all in series. Then draw a voltmeter in parallel across the thermistor, on its own short branch. Use the correct symbol for every part, with straight lines for the wires and no gaps where wires should join.\n\nPut the thermistor in water and measure the water's temperature with a thermometer. Record the current and the potential difference, then change the temperature and repeat. For an LDR, change the light intensity instead, for example by moving a lamp closer.\n\nAt each reading, divide the potential difference by the current to get the resistance. Plot resistance against temperature, or against light intensity. Both graphs are downward curves, not straight lines, so both components are non-linear.",
+      "content": "Exam questions often ask you to draw a circuit to find how a thermistor's or an LDR's resistance changes. You use the same idea as for any component: measure the current and the potential difference, then find the resistance.\n\nDraw the cell, a switch and an ammeter in one loop with the thermistor, all in series. Then draw a voltmeter in parallel across the thermistor, on its own short branch. Use the correct symbol for every part, with straight lines for the wires and no gaps where wires should join.\n\nPut the thermistor in water and measure the water's temperature with a thermometer. Record the current and the potential difference, then change the temperature and repeat. For an LDR, change the light intensity instead, for example by moving a lamp closer.\n\nAt each reading, divide the potential difference by the current to get the resistance. Plot resistance against temperature, or against light intensity. Both graphs are downward curves: a higher temperature or brighter light gives a lower resistance.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "p2-thermistor-circuit",
@@ -277,7 +464,77 @@
         }
       ],
       "keyTerms": [],
-      "memTip": "Series A, Parallel V: the Ammeter goes in Series, the Voltmeter in Parallel."
+      "memTip": "Series A, Parallel V: the Ammeter goes in Series, the Voltmeter in Parallel.",
+      "practical": true,
+      "readiness": {
+        "questions": [
+          {
+            "question": "Where does the voltmeter go when you test a component?",
+            "options": [
+              "In parallel across the component",
+              "In series with the component",
+              "Next to the cell, in series",
+              "It is not needed"
+            ],
+            "correct": 0,
+            "explain": "It measures the potential difference across the component.",
+            "from": "p2-current-voltage"
+          },
+          {
+            "question": "As a thermistor gets hotter, what happens to its resistance?",
+            "options": [
+              "It decreases",
+              "It increases",
+              "It stays the same",
+              "It falls to zero"
+            ],
+            "correct": 0,
+            "explain": "A hotter thermistor has a lower resistance.",
+            "from": 1
+          }
+        ],
+        "recap": "A quick recap. The ammeter goes in series with the component and the voltmeter in parallel across it. Resistance = potential difference ÷ current. A thermistor's resistance falls as it gets hotter."
+      },
+      "pictures": [
+        {
+          "diagram": "p2-thermistor-circuit",
+          "after": "measure the water's temperature with a thermometer",
+          "caption": "Testing a thermistor: ammeter in series, voltmeter in parallel across it.",
+          "labels": [
+            "cell",
+            "switch",
+            "ammeter",
+            "thermistor",
+            "voltmeter"
+          ]
+        }
+      ],
+      "ownWords": {
+        "prompt": "In one line: how do you find how a thermistor's resistance changes with temperature?",
+        "points": [
+          "ammeter in series, voltmeter in parallel across it",
+          "change the temperature and record V and I each time",
+          "resistance = potential difference ÷ current"
+        ]
+      },
+      "mixedQuestions": [
+        {
+          "generator": "V=IR",
+          "from": 3
+        },
+        {
+          "question": "Which symbol is a resistor with an arrow through it?",
+          "options": [
+            "A variable resistor",
+            "An LDR",
+            "A thermistor",
+            "A diode"
+          ],
+          "correct": 0,
+          "explain": "The arrow shows that its resistance can be changed.",
+          "from": 0
+        }
+      ]
     }
   ],
   "tables": [
@@ -408,7 +665,7 @@
     "LDR: brighter light means lower resistance. Used to switch lights on when it gets dark",
     "Lamps, diodes, thermistors and LDRs: resistance changes with the current",
     "Testing a sensor: ammeter in series, voltmeter in parallel, R = V ÷ I",
-    "Thermistor and LDR graphs are downward curves: non-linear"
+    "Thermistor and LDR graphs are downward curves: resistance falls as temperature or light rises"
   ],
   "videos": [
     {
@@ -564,6 +821,10 @@
     {
       "term": "Non-linear",
       "lesson": "p2-current-voltage"
+    },
+    {
+      "term": "Lamp",
+      "lesson": "p2-current-voltage"
     }
   ],
   "sources": [],
@@ -583,6 +844,94 @@
     {
       "id": "p2-thermistor-circuit",
       "title": "Testing a thermistor"
+    }
+  ],
+  "comparison": {
+    "name": "a running track",
+    "words": [
+      "track",
+      "runner"
+    ],
+    "parts": [
+      {
+        "thing": "the runners",
+        "standsFor": "the charge"
+      },
+      {
+        "thing": "how many runners pass a point each second",
+        "standsFor": "the current"
+      },
+      {
+        "thing": "a narrow, muddy stretch of the track that slows the runners down",
+        "standsFor": "a resistance"
+      }
+    ],
+    "limit": "Runners get tired and drop out. Charge is never used up. The same charge keeps going round. Only its energy is passed on."
+  },
+  "endQuiz": [
+    {
+      "question": "How is a battery drawn in a circuit diagram?",
+      "options": [
+        "As two or more cells joined together",
+        "As a circle with a cross in it",
+        "As a rectangle",
+        "As a triangle with a bar"
+      ],
+      "correct": 0,
+      "explain": "A battery is two or more cells joined together.",
+      "from": 0
+    },
+    {
+      "question": "Components on separate branches of a circuit are…",
+      "options": [
+        "in parallel",
+        "in series",
+        "non-linear",
+        "switched off"
+      ],
+      "correct": 0,
+      "explain": "Separate branches are in parallel. One single path is in series.",
+      "from": 0
+    },
+    {
+      "question": "What happens to the resistance of a thermistor as it gets hotter?",
+      "options": [
+        "It decreases",
+        "It increases",
+        "It stays the same",
+        "It falls to zero"
+      ],
+      "correct": 0,
+      "explain": "As a thermistor gets hotter, its resistance decreases.",
+      "from": 1
+    },
+    {
+      "question": "What happens to the resistance of an LDR as the light gets brighter?",
+      "options": [
+        "It decreases",
+        "It increases",
+        "It stays the same",
+        "It falls to zero"
+      ],
+      "correct": 0,
+      "explain": "As the light gets brighter, an LDR's resistance decreases.",
+      "from": 2
+    },
+    {
+      "question": "Which is a good use for a thermistor?",
+      "options": [
+        "In a thermostat",
+        "To switch on street lights at dusk",
+        "To let current flow one way only",
+        "To measure the current"
+      ],
+      "correct": 0,
+      "explain": "A thermistor senses temperature, so it suits a thermostat.",
+      "from": 1
+    },
+    {
+      "generator": "V=IR",
+      "from": 3
     }
   ]
 }

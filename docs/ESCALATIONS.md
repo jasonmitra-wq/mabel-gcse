@@ -310,3 +310,8 @@ What to try:
 - F2 (tables[0].rows[2][1] and keyPoints[4] diode wording; TRIAGE R4 had cut forward-threshold wording): rejected. The v3.1 fact check (step c fact1) found the old wording wrong (the forward current does not rise at once). The new wording describes only the shape, "near zero at first, then rising steeply", with no threshold value, and matches the drawn graph. For the planning chat: the two fact-check runs disagree on how much of the diode curve to describe.
 - F7 (lesson-level diagrams list no longer matches the key points): rejected for now. diagrams is a frozen field; the slides show a diagram from this list that no key point uses as its own extra slide at the end (p2-simple-circuit, p2-iv-resistor), after everything in them is taught. For the planning chat: whether v3.1 lessons should list their pictures here.
 - F8 (heater worked example: given {Q: 60, V: 12} although the question states I and t): rejected. In lesson-shape-v3.md, given holds the values the formula is solved with; step 1 works out Q = I t, which the checker verifies.
+
+## Brief v3.1 rebuild, p2-components audit rejection (tools/audit-runs/3ac569a-1.md, 2026-10-19)
+
+- F12 (keyPoints[0..2] diagram and diagramCaption changed; lesson-level diagrams list not updated): rejected, as F1 and F7 for p2-current-voltage. The v3.1 shape makes each key point's diagram its last picture; old views lose the earlier pictures of a sequence. For the planning chat: whether v3.1 lessons should list their pictures in "diagrams".
+- Note for the planning chat (F1): the symbols chart needs the fuse symbol (data/spec 4.2.1.1 lists it, or the old chart had it); the lesson now names only its symbol, with no function.

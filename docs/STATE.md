@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, task A8, p2-components step a (BASE = the p2-current-voltage v3.1 commit). p2-current-voltage v3.1 steps a–f done.
+Runbook position: Phase A, task A8: both lessons through steps a–f (v3.1). Next: tools/site-test.js once on each at phone size, then the text tester once on each (A8 counts).
 
 ## Runbook v3 switch (2026-10-19)
 
@@ -22,6 +22,7 @@ All eight are rewritten under runbook v3 (Phase A pilot P2, then Phase B).
 |---|---|---|---|---|
 | p2-current-voltage | ✓ | (this commit, "p2-current-voltage: rewritten (v3)") | 0.12 (step c) | 7 key points, 1,234 words; new diagram p2-wire-length; audit 13cf62e-1: 16 fixed, F8 rejected (ESCALATIONS) |
 | p2-current-voltage (v3.1) | ✓ | (this commit, "p2-current-voltage: rewritten (v3.1)") | 0.1662 (step c) | brief v3.1: pictures, 3 worked examples per equation, circuit and I-V widgets, readiness, own words, mixed questions, end quiz of 7; audit 8dde1a5-1: 8 fixed, F1 F2 F7 F8 rejected (ESCALATIONS) |
+| p2-components (v3.1) | ✓ | (this commit, "p2-components: rewritten (v3.1)") | 0.1197 (step c) | brief v3.1: symbol charts split, thermistor and LDR graph then symbol, sensor widget, readiness, own words, mixed questions, end quiz of 6; audit 3ac569a-1: 10 fixed, F4 no change, F12 rejected (ESCALATIONS) |
 | p2-components | ✓ | (this commit, "p2-components: rewritten (v3)") | 0.08 (step c) | 4 key points, 730 words; new diagrams p2-circuit-symbols, p2-thermistor-circuit; first lesson with prerequisites (card checked in the browser); audit 923f2b9-1: 13 fixed, F7 and F14 rejected (ESCALATIONS); p2-current-voltage step b re-run after the glossary grew (switch, resistor explained) |
 
 Tools: tools/lesson-shape-v3.md, tools/check-lesson-v3.js (A1, A2); flags SLIDES_V3 (js/lessons.js), v3Fields (js/teach-core.js), GLOSSARY_V3 (js/glossary.js); data/glossary/<subject>.json from tools/build-glossary.js (A3, A4).
@@ -206,3 +207,4 @@ Not started on the pipeline. Already in place:
 5. Physics diagrams.
 6. Each Physics topic through C, D and verification.
 | Brief v3.1 p2-current-voltage (2026-10-19) | spec-check step c 1 | 0.1662 |
+| Brief v3.1 p2-components (2026-10-19) | spec-check step c 1 | 0.1197 |

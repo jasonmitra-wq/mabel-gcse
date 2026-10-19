@@ -116,7 +116,8 @@
 
   // V = I R: potential difference = current × resistance
   Practice.register('V=IR', (r, { pick, fmt, clean }) => {
-    const kind = pick(r, ['V', 'I', 'R', 'V-mA']);
+    // The lessons teach V = I R in amperes; a milliamp question is kept for a lesson that teaches milliamps.
+    const kind = pick(r, ['V', 'I', 'R']);
     if (kind === 'V-mA') {
       const mA = pick(r, [2, 4, 5, 10, 20, 25, 40, 50]);
       const R = pick(r, [100, 150, 200, 300, 400, 500, 1000]);

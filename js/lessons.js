@@ -57,13 +57,17 @@ const Lessons = (() => {
       const syl = await (await fetch(`data/${subject}-syllabus.json`)).json();
       const subs = ((syl.topics || {})[topicCode] || {}).subtopics || [];
       const i = subs.findIndex(s => s.id === subtopicId);
-      const prev = i > 0 ? subs[i - 1] : null;
-      if (!prev || !Store.hasFinished(prev.id)) return null;
-      const L = await (await fetch(`lessons/${subject}/${prev.id}.json`)).json();
-      const mc = (L.endQuiz || []).filter(q => q && Array.isArray(q.options));
-      if (mc.length < 3) return null;
-      const pick = mc.slice().sort(() => Math.random() - 0.5).slice(0, 3);
-      return { lesson: prev.id, lessonName: L.title || prev.name || prev.id, questions: pick };
+      // The latest earlier lesson in the topic that she finished and that has an end quiz.
+      for (let k = i - 1; k >= 0; k--) {
+        const prev = subs[k];
+        if (!Store.hasFinished(prev.id)) continue;
+        const L = await (await fetch(`lessons/${subject}/${prev.id}.json`)).json();
+        const mc = (L.endQuiz || []).filter(q => q && Array.isArray(q.options));
+        if (mc.length < 3) continue;
+        const pick = mc.slice().sort(() => Math.random() - 0.5).slice(0, 3);
+        return { lesson: prev.id, lessonName: L.title || prev.name || prev.id, questions: pick };
+      }
+      return null;
     } catch { return null; }
   }
 

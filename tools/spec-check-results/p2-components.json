@@ -1,9 +1,9 @@
 {
   "lesson": "p2-components",
   "source_file": "lessons/physics/p2-components.json",
-  "lesson_md5": "019a858c1646e33ac73243216b494723",
+  "lesson_md5": "a68b014cc41bc9ca237ed3aca140fc0a",
   "model": "claude-opus-5-5",
-  "date": "2026-10-19T07:55:10.759Z",
+  "date": "2026-10-19T21:25:54.986Z",
   "specRefs_sent": [
     "4.2.1.1",
     "4.2.1.4"
@@ -13,18 +13,36 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 10446,
-    "output_tokens": 2148
+    "input_tokens": 13603,
+    "output_tokens": 3264
   },
-  "cost_usd": 0.084744,
+  "cost_usd": 0.119692,
   "status": "OK",
   "result": {
     "lesson": "p2-components",
     "missing_spec_content": [],
     "above_gcse": [],
-    "factual_errors": [],
+    "factual_errors": [
+      {
+        "field": "keyPoints[3].content",
+        "text": "Plot resistance against temperature, or against light intensity. Both graphs are downward curves, not straight lines, so both components are non-linear.",
+        "correction": "In this specification, 'linear' and 'non-linear' describe a component's current–potential difference relationship: 'use graphs to explore whether circuit elements are linear or non-linear'. A curved graph of resistance against temperature or light intensity does not show this. The shape of a resistance–temperature graph says nothing about whether current is proportional to potential difference at a fixed temperature. A thermistor or LDR is non-linear because 'it changes with the current through the component', not because its resistance–temperature or resistance–light graph is curved.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "revisionCardBullets[9]",
+        "text": "Thermistor and LDR graphs are downward curves: non-linear",
+        "correction": "Same error as in keyPoints[3].content. 'Non-linear' refers to the I–V characteristic. A curved resistance–temperature or resistance–light-intensity graph does not by itself show that a component is non-linear.",
+        "basis": "own knowledge"
+      }
+    ],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
-    "not_checked": []
+    "not_checked": [
+      "Diagrams and images could not be viewed, so the drawn symbols and graphs were not checked: p2-symbols-basic, p2-symbols-more, p2-symbol-thermistor, p2-symbol-ldr, p2-thermistor-graph, p2-ldr-graph and p2-thermistor-circuit. The 'diagrams' array also lists 'p2-circuit-symbols', which the pictures do not use.",
+      "Several spec points are marked in specChecklist as 'taughtIn': 'p2-current-voltage', so this lesson does not teach them. These are: ohmic conductor at constant temperature, filament lamp resistance rising with temperature, the diode's very high reverse resistance, the measuring circuit design, relating curve shape to function, and Required practical 4 (I–V characteristics). They could not be checked because that lesson was not provided.",
+      "The spec's own table of standard circuit symbols was not provided. It could not be checked whether every required symbol is covered (for example, the junction of conductors) or whether 'all fourteen symbols' in keyPoints[0].memTip matches the chart.",
+      "The 'sensor' widget's behaviour (6 V cell, resistance and current readouts) could not be checked."
+    ]
   }
 }

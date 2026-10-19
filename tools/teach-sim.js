@@ -245,11 +245,11 @@ function pilotContextFor(id, subject) {
   const order = topic ? topic.subtopics.map(s => s.id) : [id];
   const before = order.slice(0, order.indexOf(id));
   let recall = null;
-  const prev = before[before.length - 1];
-  if (prev) {
+  // As the page: the latest earlier lesson in the topic with an end quiz.
+  for (const prev of before.slice().reverse()) {
     const pf = findLesson(prev);
     const mc = (pf.data.endQuiz || []).filter(q => Array.isArray(q.options));
-    if (mc.length >= 3) recall = { lesson: prev, lessonName: pf.data.title || prev, questions: mc.slice(0, 3) };
+    if (mc.length >= 3) { recall = { lesson: prev, lessonName: pf.data.title || prev, questions: mc.slice(0, 3) }; break; }
   }
   let a = 12345;
   return { lessonId: id, glossary, opened: x => before.includes(x), recall, random: () => ((a = (a * 16807) % 2147483647) / 2147483647) };

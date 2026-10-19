@@ -4,11 +4,11 @@
   "topic": "P2",
   "examTip": "Questions using Q = It, E = QV and R = V/I come up almost every year. I-V characteristics are a favourite for 'describe and explain' questions, especially the filament lamp and diode. Examiners want the physics reason, not just the shape.",
   "introTips": [
-    "This covers electric current, potential difference and resistance. These are the three quantities used in every electricity question",
-    "You will practise rearranging Q = It, E = QV and R = V/I to find any unknown",
-    "By the end, you will be able to sketch and explain I-V graphs for three different components. You will also be able to describe the required practical"
+    "Current, potential difference and resistance: the three quantities in every circuit question",
+    "Equations: Q = I t, V = I R, E = Q V",
+    "You will sketch and explain I-V graphs and describe two required practicals"
   ],
-  "intro": "Every electrical device you have used works because charge flows around a circuit and transfers energy. That includes your phone, a kettle and Christmas lights. Current, potential difference and resistance let you predict exactly how any circuit will behave. Those three ideas come up on almost every electricity paper. Get them right, and a big chunk of this topic becomes simple.",
+  "intro": "Every electrical device you use runs on charge flowing round a circuit. Your phone, a kettle and a torch all depend on it. Current, potential difference and resistance let you predict how any circuit behaves. Get them right, and much of this topic becomes simple.",
   "basics": [
     {
       "idea": "Electric charge",
@@ -46,146 +46,505 @@
   "keyPoints": [
     {
       "heading": "Electric current — charge on the move",
-      "content": "Electric current is the rate of flow of <strong>electric charge</strong>. Charge is measured in <strong>coulombs (C)</strong> and current in <strong>amperes (A)</strong>. The equation linking them is <strong>Q = It</strong>. Here Q is charge flow (C), I is current (A) and t is time (s). So 1 ampere means 1 coulomb of charge passes a point every second.\n\nCharge only flows through a closed circuit that includes a source of potential difference, such as a cell. In a single closed loop, the current has the same value at every point.",
+      "content": "Every torch, phone and kettle runs on something moving through its wires. Switch on a torch and the bulb lights at once. Inside the metal wire, tiny particles that carry <dfn>electric charge</dfn> start to drift round together. You cannot see charge, but you can see what it does.\n\nA complete loop is a <dfn>closed circuit</dfn>. Charge only flows round a closed circuit if it includes something to push it, such as a cell or a battery. That push is called a <dfn>potential difference</dfn>, and the next key point explains it. Break the loop anywhere, with a switch or a cut wire, and the flow stops everywhere.\n\nA flow of charge is an <dfn>electric current</dfn>. Its size is the <dfn>rate</dfn> of flow: how much charge passes a point each second. Charge is counted in <dfn>coulombs</dfn> (C). Current is measured in <dfn>amperes</dfn> (A, or amps) with an <dfn>ammeter</dfn>. One ampere means one coulomb passing each second.\n\nIn a single loop, the current is the same at every point, because charge is not used up on the way round. So it does not matter where you put the ammeter.\n\nThe amount of charge that passes is the <dfn>charge flow</dfn>, Q. To find it, multiply the current by the time in seconds.",
+      "examFlag": true,
+      "cardFlag": true,
       "diagram": "p2-simple-circuit",
       "diagramCaption": "A simple circuit. Each symbol stands for one part.",
       "diagramExamTip": true,
-      "examFlag": true,
-      "cardFlag": true,
+      "analogies": [],
       "writeBullets": [
-        "Electric current — the rate of flow of charge (coulombs per second)",
-        "Ampere (A) — the unit of current. 1 ampere is 1 coulomb per second",
-        "Q = It — charge flow (C) = current (A) × time (s)",
-        "Closed circuit — charge only flows if the circuit includes a source of potential difference",
-        "Single closed loop — the current is the same at every point",
-        "Ammeter — measures current. Always connected in series"
+        "Current is the rate of flow of charge, measured in amperes (A)",
+        "Charge flows only round a closed circuit with a cell or battery",
+        "In one loop, the current is the same everywhere"
+      ],
+      "examBox": {
+        "definitions": [
+          "Electric current is a flow of electrical charge. Its size is the rate of flow of charge.",
+          "For charge to flow, a closed circuit must contain a source of potential difference.",
+          "In a single closed loop, the current is the same at every point."
+        ],
+        "equations": [
+          {
+            "id": "Q=It",
+            "words": "charge flow = current × time",
+            "symbols": "Q = I t",
+            "formula": "Q = I * t",
+            "units": [
+              {
+                "symbol": "Q",
+                "quantity": "charge flow",
+                "unit": "coulombs",
+                "unitSymbol": "C"
+              },
+              {
+                "symbol": "I",
+                "quantity": "current",
+                "unit": "amperes",
+                "unitSymbol": "A"
+              },
+              {
+                "symbol": "t",
+                "quantity": "time",
+                "unit": "seconds",
+                "unitSymbol": "s"
+              }
+            ]
+          }
+        ]
+      },
+      "workedExamples": [
+        {
+          "equation": "Q=It",
+          "question": "A current of 0.5 A flows through a lamp for 2 minutes. How much charge flows?",
+          "given": {
+            "I": 0.5,
+            "t": 120
+          },
+          "find": "Q",
+          "steps": [
+            {
+              "text": "Time must be in seconds: 2 minutes = 2 × 60 = 120 s.",
+              "calc": "2*60",
+              "value": 120
+            },
+            {
+              "text": "Write the equation: Q = I t."
+            },
+            {
+              "text": "Put the numbers in: Q = 0.5 × 120 = 60",
+              "calc": "0.5*120",
+              "value": 60
+            },
+            {
+              "text": "The charge flow is 60 C."
+            }
+          ],
+          "answer": {
+            "value": 60,
+            "unit": "C"
+          }
+        }
       ],
       "keyTerms": [
         {
-          "term": "Electric current",
-          "def": "Rate of flow of electric charge, measured in amperes (A)"
+          "term": "Electric charge",
+          "def": "What flows round a circuit. It is carried by tiny particles in the wire. Measured in coulombs (C).",
+          "referenceOnly": true
         },
         {
-          "term": "Coulomb",
-          "def": "The unit of electric charge (C); 1 coulomb = 1 ampere × 1 second"
+          "term": "Charge flow (Q)",
+          "def": "The amount of charge that passes a point, in coulombs (C)."
+        },
+        {
+          "term": "Electric current",
+          "def": "A flow of charge. Its size is the rate of flow: how much charge passes a point each second. Measured in amperes (A)."
+        },
+        {
+          "term": "Coulomb (C)",
+          "def": "The unit of charge.",
+          "referenceOnly": true
+        },
+        {
+          "term": "Ampere (A)",
+          "def": "The unit of current. 1 ampere is 1 coulomb of charge passing each second."
+        },
+        {
+          "term": "Closed circuit",
+          "def": "A complete loop. Charge flows round it only if it also includes a source of potential difference, such as a cell."
+        },
+        {
+          "term": "Ammeter",
+          "def": "A meter that measures current. It goes in the loop, in line with the component."
         }
       ],
-      "memTip": "Q = It: 'Quiet Is Time'. Charge = current × time.",
-      "tutor_note": "Charge only flows in a closed circuit with a source of potential difference. In a single loop, the current is the same everywhere."
+      "memTip": "Q = It: 'Quiet Is Time'. Charge = current × time."
     },
     {
-      "heading": "Potential difference — the energy push",
-      "content": "<strong>Potential difference (p.d.)</strong> is measured in volts. It tells you how much energy is transferred for each coulomb of charge that flows between two points. Work is done when charge flows in a circuit. The equation is <strong>E = QV</strong>. Here E is energy transferred (joules, J), Q is charge flow (coulombs, C) and V is potential difference (volts, V). A p.d. of 1 volt means 1 joule of energy is transferred for every 1 coulomb of charge that passes.",
+      "heading": "Potential difference and resistance — push and opposition",
+      "content": "Connect a lamp to one cell and it glows dimly. Use two cells and it glows brighter, because more current flows. Put a resistor in the loop as well and the lamp dims again, because less current flows. So the size of a current depends on two things.\n\nA <dfn>component</dfn> is any part of a circuit, such as a lamp or a resistor. The first thing is the push that drives charge through the component: the potential difference across it. It is measured in <dfn>volts</dfn> (V) with a <dfn>voltmeter</dfn>, which is connected across the part you are testing. People often call it <dfn>voltage</dfn>. Exam questions say potential difference, but either word gets the mark.\n\nThe second is how hard the component makes it for charge to get through: its <dfn>resistance</dfn>. Resistance is measured in <dfn>ohms</dfn> (Ω). For the same potential difference, the bigger the resistance, the smaller the current.\n\nThe three are linked by one equation: potential difference equals current times resistance. If you know any two of them, you can rearrange it to find the third.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
+      "analogies": [],
       "writeBullets": [
-        "Potential difference (p.d.) — energy transferred per unit charge. Measured in volts (V)",
-        "E = QV — energy transferred (J) = charge flow (C) × potential difference (V)",
-        "1 volt — 1 joule of energy per 1 coulomb of charge",
-        "Voltmeter — measures p.d. Always connected in parallel"
+        "Potential difference (voltage) is the push, measured in volts with a voltmeter",
+        "Resistance opposes the current; it is measured in ohms (Ω)",
+        "Same potential difference, bigger resistance: smaller current"
+      ],
+      "examBox": {
+        "definitions": [
+          "The current through a component depends on its resistance and on the potential difference across it.",
+          "For a fixed potential difference, a bigger resistance means a smaller current."
+        ],
+        "equations": [
+          {
+            "id": "V=IR",
+            "words": "potential difference = current × resistance",
+            "symbols": "V = I R",
+            "formula": "V = I * R",
+            "units": [
+              {
+                "symbol": "V",
+                "quantity": "potential difference",
+                "unit": "volts",
+                "unitSymbol": "V"
+              },
+              {
+                "symbol": "I",
+                "quantity": "current",
+                "unit": "amperes",
+                "unitSymbol": "A"
+              },
+              {
+                "symbol": "R",
+                "quantity": "resistance",
+                "unit": "ohms",
+                "unitSymbol": "Ω"
+              }
+            ]
+          }
+        ]
+      },
+      "workedExamples": [
+        {
+          "equation": "V=IR",
+          "question": "A potential difference of 6 V is put across a 12 Ω resistor. What is the current through it?",
+          "given": {
+            "V": 6,
+            "R": 12
+          },
+          "find": "I",
+          "steps": [
+            {
+              "text": "Write the equation: V = I R."
+            },
+            {
+              "text": "You want I, so divide both sides by R: I = V ÷ R."
+            },
+            {
+              "text": "Put the numbers in: I = 6 ÷ 12 = 0.5",
+              "calc": "6/12",
+              "value": 0.5
+            },
+            {
+              "text": "The current is 0.5 A."
+            }
+          ],
+          "answer": {
+            "value": 0.5,
+            "unit": "A"
+          }
+        }
       ],
       "keyTerms": [
         {
           "term": "Potential difference",
-          "def": "Energy transferred per coulomb of charge between two points; measured in volts (V)"
-        }
-      ],
-      "memTip": "E = QV: energy transferred = charge flow × potential difference. More charge or a bigger p.d. means more energy.",
-      "tutor_note": "Potential difference is about energy per coulomb. A bigger p.d. means each coulomb transfers more energy."
-    },
-    {
-      "heading": "Resistance — the opposition to current",
-      "content": "<strong>Resistance</strong> is the opposition to the flow of current. The greater the resistance, the less current flows for a given potential difference. The equation linking the three is <strong>V = IR</strong> (potential difference = current × resistance). It works for any component. Rearranged, R = V/I. Here R is resistance in <strong>ohms (Ω)</strong>, V is potential difference in volts, and I is current in amperes.\n\nFor example, say the p.d. across a resistor is 12 V and the current through it is 3 A. Then R = 12/3 = <strong>4 Ω</strong>. Or if V = 12 V and R = 4 Ω, then I = V/R = 12/4 = <strong>3 A</strong>.\n\nResistance increases with the length of the wire. A hotter wire, such as a filament, has more resistance. A thermistor's resistance decreases as it gets hotter.\n\n<strong>Required practical.</strong> In this required practical you investigate how the length of a wire affects its resistance, at constant temperature. Measure V and I, then work out R = V/I. You also measure the resistance of resistors combined in series and in parallel.",
-      "examFlag": true,
-      "cardFlag": true,
-      "diagram": null,
-      "writeBullets": [
-        "Resistance — opposition to current. Measured in ohms (Ω)",
-        "R = V/I — resistance = potential difference ÷ current. It rearranges to V = IR and I = V/R",
-        "Ohmic conductor — R is constant at constant temperature (current ∝ potential difference)",
-        "Length — longer wire → greater resistance",
-        "Temperature — a hotter filament has more resistance. A hotter thermistor has less",
-        "A required practical — measure R for different lengths of wire, and for resistors in series and in parallel"
-      ],
-      "keyTerms": [
-        {
-          "term": "Resistance",
-          "def": "Opposition to the flow of electric current; measured in ohms (Ω)"
+          "def": "The push that makes charge flow through a component. Measured in volts (V). Also called voltage."
         },
         {
-          "term": "Ohm (Ω)",
-          "def": "The unit of resistance; 1 ohm is 1 volt per ampere"
-        }
-      ],
-      "memTip": "R = V/I: use the triangle. Put V on top, and I and R on the bottom. Cover any one to get the formula.",
-      "tutor_note": "In calculations, always write the formula first. Then substitute values, then calculate. Showing your working gets method marks, even if your arithmetic slips."
-    },
-    {
-      "heading": "I-V characteristics — how components really behave",
-      "content": "An <strong>I-V characteristic</strong> graph shows how current changes with potential difference for a component. Current (I) goes on the y-axis and potential difference (V) on the x-axis.\n\nAn <strong>ohmic conductor</strong> (for example, a fixed resistor at constant temperature) gives a straight line through the origin. Doubling V doubles I, so resistance is constant. This graph is <strong>linear</strong>.\n\nA <strong>filament lamp</strong> gives a curve that flattens as V increases. As the current rises, the filament heats up and its resistance increases. So the graph curves away from the straight line.\n\nA <strong>diode</strong> only lets current flow in one direction (the <strong>forward direction</strong>). The diode has a very high resistance in the reverse direction. So only a very small current flows.\n\nThe filament lamp and diode graphs are <strong>non-linear</strong>. To find the resistance at any point, read off V and I. Then use R = V ÷ I.\n\nYou need to know the shape AND the reason for it. Examiners will ask you to explain, not just describe.",
-      "diagram": "p2-iv-graphs",
-      "diagramCaption": "I-V graphs for a resistor at constant temperature, a filament lamp and a diode.",
-      "diagramExamTip": true,
-      "examFlag": true,
-      "cardFlag": true,
-      "writeBullets": [
-        "I-V graph — current (y-axis) vs potential difference (x-axis) for a component",
-        "Ohmic conductor — straight line through the origin. Resistance is constant",
-        "Filament lamp — S-shaped curve. Resistance increases as temperature rises",
-        "Diode — conducts in one direction only. Very high resistance in the reverse direction, so a very small current",
-        "Linear — a straight-line graph (resistor at constant temperature). Non-linear — a curve (filament lamp, diode)",
-        "Resistance at a point on an I-V graph — read off V and I, then use R = V ÷ I"
-      ],
-      "keyTerms": [
-        {
-          "term": "I-V characteristic",
-          "def": "A graph of current against potential difference showing how a component behaves"
+          "term": "Volt (V)",
+          "def": "The unit of potential difference. 1 volt is 1 joule per coulomb.",
+          "referenceOnly": true
         },
         {
-          "term": "Ohmic conductor",
-          "def": "A component whose resistance stays constant at constant temperature — gives a straight-line I-V graph"
-        },
-        {
-          "term": "Diode",
-          "def": "A component that allows current in one direction only; very high resistance in reverse"
-        }
-      ],
-      "memTip": "Three shapes: straight line = resistor. Bendy S = lamp (it gets hot). One-sided hockey stick = diode (one direction only). Cover your notes and sketch all three graphs with labels from memory.",
-      "tutor_note": "A very common mistake is drawing the filament lamp curve the wrong way. It should curve AWAY from the straight line, not towards the I-axis. That is because resistance increases, so less current flows than a simple proportion would give. A diode does not block all current in the reverse direction. Its resistance is very high, so a very small current flows."
-    },
-    {
-      "heading": "Required practical — measuring I-V characteristics",
-      "content": "The required practical asks you to measure I-V characteristics. You test a filament lamp, a diode and a resistor at constant temperature.\n\nThe circuit uses:\n- a <strong>variable resistor (rheostat)</strong> to change the current\n- an <strong>ammeter in series</strong> with the component to measure I\n- a <strong>voltmeter in parallel</strong> with the component to measure V\n\nRecord pairs of I and V values as you adjust the variable resistor. Then plot the I-V graph. To get both positive and negative V on the graph, turn the component round. Or swap the battery connections.\n\n<strong>Safety</strong>: filament lamps get very hot, so do not touch the bulb. Keep currents within the given limits so components don't overheat. Always start with the variable resistor at maximum resistance (minimum current) before switching on.",
-      "diagram": "p2-iv-practical-circuit",
-      "diagramCaption": "The circuit for measuring an I-V graph: ammeter in series, voltmeter in parallel.",
-      "diagramExamTip": true,
-      "examFlag": true,
-      "cardFlag": false,
-      "writeBullets": [
-        "Ammeter — placed in series with the component to measure the current through it",
-        "Voltmeter — placed in parallel across the component to measure the p.d. across it",
-        "Variable resistor — used to change the current in the circuit and collect many data points",
-        "Reverse connections — swap the battery or component to get negative V values and complete the I-V curve",
-        "Safety — start at max resistance. The lamp gets very hot. Stay within current limits",
-        "Repeats — take repeat readings and average them to reduce random error"
-      ],
-      "keyTerms": [
-        {
-          "term": "Variable resistor (rheostat)",
-          "def": "A resistor whose resistance can be changed — used to vary the current in a circuit"
-        },
-        {
-          "term": "Ammeter",
-          "def": "Instrument measuring current; connected in series"
+          "term": "Voltage",
+          "def": "Another name for potential difference.",
+          "referenceOnly": true
         },
         {
           "term": "Voltmeter",
-          "def": "Instrument measuring p.d.; connected in parallel"
+          "def": "A meter that measures potential difference. It is connected across a component."
+        },
+        {
+          "term": "Resistance",
+          "def": "How much a component opposes the current through it. Measured in ohms (Ω)."
+        },
+        {
+          "term": "Ohm (Ω)",
+          "def": "The unit of resistance. 1 ohm is 1 volt per ampere."
+        },
+        {
+          "term": "Component",
+          "def": "Any part of a circuit, such as a lamp, a resistor or a diode."
         }
       ],
-      "memTip": "Series A, Parallel V: Ammeter in Series, Voltmeter in Parallel. Cover your notes. Describe the full circuit from memory, including the safety step.",
-      "tutor_note": "Examiners often ask why each meter goes where it does. The voltmeter is in parallel because it must measure the p.d. across the component. The ammeter is in series to measure the same current that flows through the component. Know the reason, not just the rule."
+      "memTip": "V = I R. To find I, divide V by R. To find R, divide V by I."
+    },
+    {
+      "heading": "Required practical — the resistance of a wire",
+      "content": "Heaters, leads and the coils inside motors all use wire, so engineers need to know how its length changes its resistance. You can measure it yourself.\n\nIn this required practical, a long wire is clipped along a metre ruler and connected to a cell. An ammeter goes in the loop, connected <dfn>in series</dfn>: one after another with the wire, so the same current flows through both. A voltmeter is connected across the wire, <dfn>in parallel</dfn> with it, to measure the potential difference. Then find the resistance: divide the potential difference by the current.\n\nMove one clip to change the length, and repeat. Keep the current small and switch off between readings, so the wire does not warm up. That keeps it at a <dfn>constant temperature</dfn>, which means its temperature stays the same. You find that a longer wire has a bigger resistance.\n\nThe same circuit measures two or more resistors joined together, in series or in parallel. Measure the potential difference and the current for each combination, then find its resistance the same way.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": "p2-wire-length",
+      "diagramCaption": "Measuring the resistance of a wire. Moving one clip changes the length being tested.",
+      "diagramExamTip": true,
+      "analogies": [],
+      "writeBullets": [
+        "Ammeter in series with the wire; voltmeter in parallel across it",
+        "Resistance = potential difference ÷ current",
+        "At constant temperature, a longer wire has a bigger resistance"
+      ],
+      "examBox": {
+        "definitions": [
+          "At constant temperature, the resistance of a wire increases as its length increases.",
+          "To find a resistance, measure the potential difference and the current, then use R = V ÷ I."
+        ],
+        "equations": []
+      },
+      "workedExamples": [
+        {
+          "equation": "V=IR",
+          "question": "A length of the wire has a potential difference of 1.5 V across it and a current of 0.3 A through it. What is its resistance?",
+          "given": {
+            "V": 1.5,
+            "I": 0.3
+          },
+          "find": "R",
+          "steps": [
+            {
+              "text": "Start from V = I R."
+            },
+            {
+              "text": "You want R, so divide both sides by I: R = V ÷ I."
+            },
+            {
+              "text": "Put the numbers in: R = 1.5 ÷ 0.3 = 5",
+              "calc": "1.5/0.3",
+              "value": 5
+            },
+            {
+              "text": "The resistance is 5 Ω."
+            }
+          ],
+          "answer": {
+            "value": 5,
+            "unit": "Ω"
+          }
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "In series",
+          "def": "Connected one after another in the same loop, so the same current flows through each."
+        },
+        {
+          "term": "In parallel",
+          "def": "Connected side by side, across the same two points."
+        },
+        {
+          "term": "Constant temperature",
+          "def": "The temperature stays the same throughout the measurements."
+        }
+      ],
+      "memTip": "L for Length, L for Larger: a longer wire has a larger resistance."
+    },
+    {
+      "heading": "Ohmic conductors — resistance that stays the same",
+      "content": "Some components behave in a simple, steady way. In others, the resistance changes as the current changes. To find out which is which, you measure the current through a component at several potential differences and plot a graph.\n\nThis graph is called an <dfn>I-V characteristic</dfn>. Current (I) goes up the side and potential difference (V) goes along the bottom. For a resistor kept at a constant temperature, the points lie on a straight line through the origin. Double the potential difference and the current doubles too. When two quantities change together like this, the current is <dfn>directly proportional</dfn> to the potential difference.\n\nA straight line means the resistance is not changing as the current changes. A component that behaves this way is an <dfn>ohmic conductor</dfn>. Its resistance stays the same whatever the current, as long as its temperature does not change.\n\nSo for an ohmic conductor you can use V = I R with one fixed value of R.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": "p2-iv-resistor",
+      "diagramCaption": "The I-V characteristic of a resistor at constant temperature.",
+      "diagramExamTip": true,
+      "analogies": [],
+      "writeBullets": [
+        "I-V characteristic: current (up the side) against potential difference (along)",
+        "Ohmic conductor: a straight line through the origin",
+        "Current directly proportional to potential difference; resistance stays constant"
+      ],
+      "examBox": {
+        "definitions": [
+          "For an ohmic conductor at constant temperature, the current is directly proportional to the potential difference.",
+          "So the resistance of an ohmic conductor stays constant as the current changes."
+        ],
+        "equations": []
+      },
+      "workedExamples": [],
+      "keyTerms": [
+        {
+          "term": "I-V characteristic",
+          "def": "A graph of current (up the side) against potential difference (along the bottom) for a component."
+        },
+        {
+          "term": "Directly proportional",
+          "def": "When one quantity doubles, the other doubles too. The graph is a straight line through the origin."
+        },
+        {
+          "term": "Ohmic conductor",
+          "def": "A component whose resistance stays constant at constant temperature. Its I-V graph is a straight line through the origin."
+        }
+      ],
+      "memTip": "Ohmic = Ordinary: a straight line, the same resistance all the way."
+    },
+    {
+      "heading": "Filament lamps and diodes — resistance that changes",
+      "content": "Not every component gives a straight line. Some give curves, and the shapes tell you what is happening inside them.\n\nAn old-style bulb is a <dfn>filament lamp</dfn>. It has a thin coil of metal wire, the filament, that glows white-hot. As the current rises, the filament gets hotter, and its resistance increases as its temperature increases. So each extra volt pushes through less extra current than the one before. The graph bends over and gets flatter.\n\nA <dfn>diode</dfn> lets current flow in one direction only. Connect it one way round and current flows. Turn it round and almost nothing flows, because the diode has a very high resistance in the reverse direction. The graph lies flat along the axis on one side and rises steeply on the other.\n\nFor both components, the resistance is different at different points on the graph. To find it at one point, read off V and I there, then divide V by I.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": "p2-iv-graphs",
+      "diagramCaption": "I-V graphs for a resistor at constant temperature, a filament lamp and a diode.",
+      "diagramExamTip": true,
+      "analogies": [],
+      "writeBullets": [
+        "Filament lamp: gets hotter, resistance increases, graph curves and flattens",
+        "Diode: current flows in one direction only",
+        "Diode: very high resistance in the reverse direction"
+      ],
+      "examBox": {
+        "definitions": [
+          "As a filament lamp gets hotter, its resistance increases.",
+          "A diode lets current flow in one direction only. In the reverse direction its resistance is very high.",
+          "At any point on an I-V graph, resistance = potential difference ÷ current."
+        ],
+        "equations": []
+      },
+      "workedExamples": [],
+      "keyTerms": [
+        {
+          "term": "Filament lamp",
+          "def": "A bulb with a thin metal wire (the filament) that glows when hot. Its resistance increases as it gets hotter."
+        },
+        {
+          "term": "Diode",
+          "def": "A component that lets current flow in one direction only. It has a very high resistance in the reverse direction."
+        }
+      ],
+      "memTip": "Three shapes: straight line = resistor. Bending over = lamp (it gets hot). Flat one side, steep the other = diode (one way only)."
+    },
+    {
+      "heading": "Required practical — measuring I-V characteristics",
+      "content": "Exam questions often ask you to describe how to get these graphs, so it is worth knowing the method step by step.\n\nThe circuit has a cell or battery and the component you are testing. An ammeter is in series with the component and a voltmeter is in parallel across it. A <dfn>variable resistor</dfn> (also called a rheostat), a resistor you can adjust with a slider, is in the loop too. Moving the slider changes the current, so you get a range of readings.\n\nStart with the variable resistor at its highest resistance, so the current is small. Record the current and the potential difference, then move the slider and record again. Take repeat readings and find the mean. To get the other half of the graph, turn the component round and repeat; these readings count as negative. The lamp gets very hot, so do not touch it.\n\nTest a resistor at constant temperature, a filament lamp and a diode, and plot current against potential difference for each. A straight-line graph means the component is <dfn>linear</dfn>; any other shape means it is <dfn>non-linear</dfn>. So a resistor at constant temperature is linear, and the filament lamp and the diode are non-linear. The shape shows how its resistance behaves, and so what the component is useful for. A diode, for example, can stop current flowing the wrong way.",
+      "examFlag": true,
+      "cardFlag": false,
+      "diagram": "p2-iv-practical-circuit",
+      "diagramCaption": "The circuit for measuring an I-V graph: ammeter in series, voltmeter in parallel.",
+      "diagramExamTip": true,
+      "analogies": [],
+      "writeBullets": [
+        "Ammeter in series, voltmeter in parallel, variable resistor to change the current",
+        "Turn the component round to get negative readings",
+        "Resistor: linear. Filament lamp and diode: non-linear"
+      ],
+      "examBox": {
+        "definitions": [
+          "To measure the resistance of a component: ammeter in series with it, voltmeter in parallel across it, a variable resistor to change the current.",
+          "A straight-line I-V graph is linear; any other shape is non-linear. The filament lamp and diode are non-linear."
+        ],
+        "equations": []
+      },
+      "workedExamples": [],
+      "keyTerms": [
+        {
+          "term": "Variable resistor (rheostat)",
+          "def": "A resistor whose resistance you can change, often with a slider. Used to change the current in a circuit."
+        },
+        {
+          "term": "Linear",
+          "def": "Gives a straight-line graph."
+        },
+        {
+          "term": "Non-linear",
+          "def": "Gives a graph that is not a straight line, such as the curve of a filament lamp or the graph of a diode."
+        }
+      ],
+      "memTip": "Series A, Parallel V: Ammeter in Series, Voltmeter in Parallel. Cover your notes. Describe the full circuit from memory, including the safety step."
+    },
+    {
+      "heading": "Energy transferred — what the charge carries",
+      "content": "A cell does more than push charge round a circuit. It gives energy to the charge, and the charge hands that energy over in the components: lighting a lamp, warming a heater, turning a motor.\n\nWhen charge flows through a component, <dfn>work is done</dfn>: energy is transferred from the charge to the component. Energy is measured in <dfn>joules</dfn> (J).\n\nThe potential difference across a component tells you how much energy each coulomb transfers there. A potential difference of 1 volt means 1 joule is transferred for each coulomb that passes. So 12 V means 12 joules for every coulomb.\n\nTo find the total <dfn>energy transferred</dfn>, multiply the charge flow by the potential difference. If you are given a current and a time instead of a charge, find the charge first with Q = I t.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "analogies": [],
+      "writeBullets": [
+        "When charge flows, work is done: energy is transferred",
+        "1 volt means 1 joule transferred per coulomb",
+        "Energy (J) = charge flow (C) × potential difference (V)"
+      ],
+      "examBox": {
+        "definitions": [
+          "When charge flows through a component, work is done and energy is transferred.",
+          "A potential difference of 1 volt transfers 1 joule of energy per coulomb of charge."
+        ],
+        "equations": [
+          {
+            "id": "E=QV",
+            "words": "energy transferred = charge flow × potential difference",
+            "symbols": "E = Q V",
+            "formula": "E = Q * V",
+            "units": [
+              {
+                "symbol": "E",
+                "quantity": "energy transferred",
+                "unit": "joules",
+                "unitSymbol": "J"
+              },
+              {
+                "symbol": "Q",
+                "quantity": "charge flow",
+                "unit": "coulombs",
+                "unitSymbol": "C"
+              },
+              {
+                "symbol": "V",
+                "quantity": "potential difference",
+                "unit": "volts",
+                "unitSymbol": "V"
+              }
+            ]
+          }
+        ]
+      },
+      "workedExamples": [
+        {
+          "equation": "E=QV",
+          "question": "A heater has a potential difference of 12 V across it. A current of 2 A flows through it for 30 s. How much energy is transferred?",
+          "given": {
+            "Q": 60,
+            "V": 12
+          },
+          "find": "E",
+          "steps": [
+            {
+              "text": "First find the charge: Q = I t = 2 × 30 = 60 C.",
+              "calc": "2*30",
+              "value": 60
+            },
+            {
+              "text": "Write the energy equation: E = Q V."
+            },
+            {
+              "text": "Put the numbers in: E = 60 × 12 = 720",
+              "calc": "60*12",
+              "value": 720
+            },
+            {
+              "text": "The energy transferred is 720 J."
+            }
+          ],
+          "answer": {
+            "value": 720,
+            "unit": "J"
+          }
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Work done",
+          "def": "Energy transferred. Work is done when charge flows through a component."
+        },
+        {
+          "term": "Joule (J)",
+          "def": "The unit of energy.",
+          "referenceOnly": true
+        },
+        {
+          "term": "Energy transferred",
+          "def": "The energy passed on as charge flows through a component, in joules (J)."
+        }
+      ],
+      "memTip": "E = QV: energy transferred = charge flow × potential difference. More charge or a bigger p.d. means more energy."
     }
   ],
   "tables": [
@@ -213,64 +572,76 @@
         ],
         [
           "Diode",
-          "Very small current in the reverse direction; current rises steeply in the forward direction",
-          "Only conducts in one direction; very high reverse resistance",
-          "LED lighting"
+          "Almost no current the reverse way; current rises steeply the other way",
+          "Lets current flow in one direction only; very high resistance in the reverse direction",
+          "Stopping current flowing the wrong way"
         ]
       ]
     }
   ],
   "checkpoints": {
     "0": {
-      "question": "A charge of 60 C passes through a component in 20 s. What is the current?",
+      "question": "A current of 3 A flows through a lamp for 10 s. How much charge flows?",
       "options": [
-        "1200 A",
-        "0.33 A",
-        "3 A",
-        "60 A"
-      ],
-      "correct": 2,
-      "correctFeedback": "Correct. I = Q/t = 60/20 = 3 A. You rearranged Q = It perfectly.",
-      "wrongFeedback": "Rearrange Q = It to I = Q/t. Divide the charge (60 C) by the time (20 s): 60 ÷ 20 = 3 A. Watch out for multiplying instead of dividing, or mixing up the letters."
-    },
-    "1": {
-      "question": "A charge flow of 5 C moves through a potential difference of 12 V. How much energy is transferred?",
-      "options": [
-        "60 J",
-        "2.4 J",
-        "17 J",
-        "0.42 J"
+        "30 C",
+        "0.3 C",
+        "13 C",
+        "3.3 C"
       ],
       "correct": 0,
-      "correctFeedback": "Correct. E = QV = 5 × 12 = 60 J.",
-      "wrongFeedback": "Use E = QV (energy transferred = charge flow × potential difference). E = 5 C × 12 V = 60 J."
+      "correctFeedback": "Correct. Q = I t = 3 × 10 = 30 C.",
+      "wrongFeedback": "Use Q = I t: multiply the current by the time. 3 × 10 = 30 C."
     },
-    "2": {
-      "question": "A lamp has a p.d. of 12 V across it and a current of 0.5 A through it. What is its resistance at this moment?",
+    "1": {
+      "question": "A resistor has a potential difference of 12 V across it and a current of 2 A through it. What is its resistance?",
       "options": [
-        "6 Ω",
-        "0.04 Ω",
         "24 Ω",
-        "6 V"
-      ],
-      "correct": 2,
-      "correctFeedback": "Correct. R = V/I = 12 ÷ 0.5 = 24 Ω. Well done for using R = V/I and dividing by a decimal.",
-      "wrongFeedback": "Use R = V/I. Substitute: R = 12 ÷ 0.5 = 24 Ω. Dividing by 0.5 is the same as multiplying by 2, so 12 × 2 = 24 Ω. If you chose 6 Ω, you probably divided by 2 instead of 0.5."
-    },
-    "3": {
-      "question": "Which of these best explains why the I-V graph for a filament lamp curves, rather than being straight?",
-      "options": [
-        "The lamp only conducts in one direction",
-        "As current increases, the filament heats up, which increases its resistance",
-        "The lamp's potential difference decreases as current increases",
-        "The ammeter reads incorrectly at high currents"
+        "6 Ω",
+        "10 Ω",
+        "14 Ω"
       ],
       "correct": 1,
-      "correctFeedback": "Exactly right. The filament heats up and its resistance rises. So the current is lower than a simple proportion would give. That causes the curve.",
-      "wrongFeedback": "The key physics here is temperature. As more current flows, the filament gets hotter. In a metal, a higher temperature means more resistance. So each extra volt gives less extra current than before. That makes the graph curve."
+      "correctFeedback": "Correct. R = V ÷ I = 12 ÷ 2 = 6 Ω.",
+      "wrongFeedback": "Rearrange V = I R to R = V ÷ I. Then 12 ÷ 2 = 6 Ω. If you chose 24 Ω, you multiplied instead of dividing."
+    },
+    "2": {
+      "question": "In the resistance of a wire practical, the temperature stays constant. What happens to the resistance when you test a longer piece of the wire?",
+      "options": [
+        "It increases",
+        "It decreases",
+        "It stays the same",
+        "It falls to zero"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct. At constant temperature, a longer wire has a bigger resistance.",
+      "wrongFeedback": "At constant temperature, the resistance of a wire increases as its length increases."
+    },
+    "3": {
+      "question": "What does the I-V characteristic of a resistor at constant temperature look like?",
+      "options": [
+        "A straight line through the origin",
+        "A curve that gets flatter",
+        "Flat on one side, steep on the other",
+        "A flat line along the bottom"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct. It is an ohmic conductor: current is directly proportional to potential difference, so the line is straight through the origin.",
+      "wrongFeedback": "A resistor at constant temperature is an ohmic conductor. Its resistance stays the same, so the graph is a straight line through the origin."
     },
     "4": {
-      "question": "In the I-V required practical, how should the ammeter and voltmeter be connected?",
+      "question": "Why does the I-V graph of a filament lamp curve instead of being straight?",
+      "options": [
+        "The lamp lets current flow in one direction only",
+        "As the current rises, the filament gets hotter and its resistance increases",
+        "The potential difference falls as the current rises",
+        "The ammeter reads wrongly at high currents"
+      ],
+      "correct": 1,
+      "correctFeedback": "Exactly right. The hotter filament has a bigger resistance, so each extra volt adds less current. The line bends over.",
+      "wrongFeedback": "Think about temperature. More current makes the filament hotter, and a hotter filament has more resistance. So the current rises less and less, and the graph curves."
+    },
+    "5": {
+      "question": "In the I-V practical, how are the ammeter and voltmeter connected?",
       "options": [
         "Ammeter in series with the component, voltmeter in parallel across it",
         "Both in series with the component",
@@ -278,13 +649,25 @@
         "Ammeter in parallel, voltmeter in series"
       ],
       "correct": 0,
-      "correctFeedback": "Correct. The ammeter is in series to measure the current through the component. The voltmeter is in parallel to measure the p.d. across it.",
-      "wrongFeedback": "The ammeter must be in series, so the same current flows through it and the component. The voltmeter must be in parallel, to measure the p.d. across the component."
+      "correctFeedback": "Correct. The ammeter is in series to measure the current through the component. The voltmeter is in parallel to measure the potential difference across it.",
+      "wrongFeedback": "The ammeter must be in series, so the same current flows through it and the component. The voltmeter must be in parallel, to measure the potential difference across the component."
+    },
+    "6": {
+      "question": "A charge of 5 C flows through a potential difference of 12 V. How much energy is transferred?",
+      "options": [
+        "60 J",
+        "2.4 J",
+        "17 J",
+        "0.42 J"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct. E = Q V = 5 × 12 = 60 J.",
+      "wrongFeedback": "Use E = Q V: multiply the charge flow by the potential difference. 5 × 12 = 60 J."
     }
   },
   "commonMistakes": [
     "Drawing the filament lamp I-V curve bending towards the I-axis instead of away from it. It curves away because resistance increases, so less current flows than expected.",
-    "Connecting the voltmeter in series instead of parallel. A voltmeter must be in parallel to measure the p.d. across a component without changing the current.",
+    "Connecting the voltmeter in series instead of parallel. A voltmeter must be in parallel, across the component, to measure the potential difference across it.",
     "Forgetting to check units in Q = It. Time must be in seconds, not minutes or hours, before substituting.",
     "Saying a diode 'blocks all current' in the reverse direction. It has a very high resistance, so a very small current flows."
   ],
@@ -304,7 +687,7 @@
     "Filament lamp — resistance increases with temperature. Curved I-V graph",
     "Diode — conducts in one direction only. Very high resistance in the reverse direction",
     "Ammeter goes in series. Voltmeter goes in parallel",
-    "Resistance increases with the length of the wire. A filament's resistance increases as it gets hotter; a thermistor's decreases"
+    "At constant temperature, a longer wire has a bigger resistance. A filament lamp's resistance increases as it gets hotter"
   ],
   "videos": [
     {
@@ -342,5 +725,181 @@
       "icon": "▶",
       "url": "https://www.youtube.com/results?search_query=IV+characteristics+GCSE+physics+Cognito"
     }
-  ]
+  ],
+  "specChecklist": [
+    {
+      "ref": "4.2.1.2#1",
+      "says": "charge needs a complete loop with a source of push",
+      "keyPoint": 0
+    },
+    {
+      "ref": "4.2.1.2#2",
+      "says": "current is how fast charge flows; Q = It with units",
+      "keyPoint": 0
+    },
+    {
+      "ref": "4.2.1.2#3",
+      "says": "one loop: the current is equal at every point",
+      "keyPoint": 0
+    },
+    {
+      "ref": "4.2.1.3#1",
+      "says": "current set by resistance and push; more resistance, less current",
+      "keyPoint": 1
+    },
+    {
+      "ref": "4.2.1.3#2",
+      "says": "either name, potential difference or voltage, earns credit",
+      "keyPoint": 1
+    },
+    {
+      "ref": "4.2.1.3#3",
+      "says": "V = IR, with symbols and units",
+      "keyPoint": 1
+    },
+    {
+      "ref": "4.2.1.3#4",
+      "says": "practical: how wire length changes resistance, temperature held steady",
+      "keyPoint": 2
+    },
+    {
+      "ref": "4.2.1.3#5",
+      "says": "practical: measure resistor combinations, series and parallel",
+      "keyPoint": 2
+    },
+    {
+      "ref": "4.2.1.4#1",
+      "says": "some resistances stay fixed, others change with current",
+      "keyPoint": 3
+    },
+    {
+      "ref": "4.2.1.4#2",
+      "says": "ohmic conductor: current proportional to push, resistance fixed",
+      "keyPoint": 3
+    },
+    {
+      "ref": "4.2.1.4#3",
+      "says": "lamps, diodes, thermistors, LDRs: resistance varies with current",
+      "taughtIn": "p2-components"
+    },
+    {
+      "ref": "4.2.1.4#4",
+      "says": "hotter filament gives higher resistance",
+      "keyPoint": 4
+    },
+    {
+      "ref": "4.2.1.4#5",
+      "says": "diode: one-way current, very high reverse resistance",
+      "keyPoint": 4
+    },
+    {
+      "ref": "4.2.1.4#6",
+      "says": "thermistor resistance falls as it warms",
+      "taughtIn": "p2-components"
+    },
+    {
+      "ref": "4.2.1.4#7",
+      "says": "thermistor uses, such as a thermostat",
+      "taughtIn": "p2-components"
+    },
+    {
+      "ref": "4.2.1.4#8",
+      "says": "LDR resistance falls in brighter light",
+      "taughtIn": "p2-components"
+    },
+    {
+      "ref": "4.2.1.4#9",
+      "says": "LDR uses, such as lights that come on at dusk",
+      "taughtIn": "p2-components"
+    },
+    {
+      "ref": "4.2.1.4#10",
+      "says": "circuit for finding a component's resistance with two meters",
+      "keyPoint": 5
+    },
+    {
+      "ref": "4.2.1.4#11",
+      "says": "draw circuits with the correct symbols",
+      "taughtIn": "p2-components"
+    },
+    {
+      "ref": "4.2.1.4#12",
+      "says": "graphs show linear or non-linear; link shape to use",
+      "keyPoint": 5
+    },
+    {
+      "ref": "4.2.1.4#13",
+      "says": "practical: I-V graphs for lamp, diode and fixed resistor",
+      "keyPoint": 5
+    },
+    {
+      "ref": "4.2.4.2#1",
+      "says": "appliances exist to transfer energy",
+      "taughtIn": "p2-power-energy"
+    },
+    {
+      "ref": "4.2.4.2#2",
+      "says": "energy depends on power and switched-on time",
+      "taughtIn": "p2-power-energy"
+    },
+    {
+      "ref": "4.2.4.2#3",
+      "says": "appliances pass energy to motors or heating",
+      "taughtIn": "p2-power-energy"
+    },
+    {
+      "ref": "4.2.4.2#4",
+      "says": "flowing charge means work is done",
+      "keyPoint": 6
+    },
+    {
+      "ref": "4.2.4.2#5",
+      "says": "E = Pt",
+      "taughtIn": "p2-power-energy"
+    },
+    {
+      "ref": "4.2.4.2#6",
+      "says": "E = QV, with symbols and units",
+      "keyPoint": 6
+    },
+    {
+      "ref": "4.2.4.2#7",
+      "says": "power linked to potential difference and current",
+      "taughtIn": "p2-power-energy"
+    },
+    {
+      "ref": "4.2.4.2#8",
+      "says": "power linked to energy and time",
+      "taughtIn": "p2-power-energy"
+    },
+    {
+      "ref": "4.2.4.2#9",
+      "says": "power ratings and stored energy changes in appliances",
+      "taughtIn": "p2-power-energy"
+    }
+  ],
+  "diagrams": [
+    {
+      "id": "p2-simple-circuit",
+      "title": "A simple circuit"
+    },
+    {
+      "id": "p2-wire-length",
+      "title": "Resistance of a wire"
+    },
+    {
+      "id": "p2-iv-resistor",
+      "title": "I-V graph of a resistor"
+    },
+    {
+      "id": "p2-iv-graphs",
+      "title": "Three I-V graphs"
+    },
+    {
+      "id": "p2-iv-practical-circuit",
+      "title": "Measuring an I-V graph"
+    }
+  ],
+  "prerequisites": [],
+  "sources": []
 }

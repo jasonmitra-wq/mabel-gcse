@@ -278,3 +278,6 @@ Still there (tutor slips, not lesson text; the lesson text is right in each case
 - The goodbye after the lesson's end is still long and its "answered"/"told" split follows the FLOW_FIX record, which can be wrong (website -2 T16, text half-life T21).
 - answer_in_question stays high (p4-radioactivity 9).
 - Website: the side-column diagram thumbnail is unreadably small; the diagram's 800/400/200 Bq does not match the tutor's own 80/40 example; Key Terms panel cut off at the bottom.
+## Runbook v3 (2026-10-19)
+
+- p2-current-voltage, audit 13cf62e-1 F8 REJECTED: the auditor says workedExamples[0].given in keyPoints[6] lists Q = 60, which the question does not give (it gives I, t and V). Reason: `given` holds the values the examBox formula E = Q V is solved with, so tools/check-lesson-v3.js can recompute the answer; Q = 60 C is derived in step 1, whose own calc (2 × 30) is checked. The question and steps a learner sees are correct. Decision for the planning chat only if the shape should carry derived values in a separate field.

@@ -183,8 +183,15 @@ function evalExpr(expr, vars = {}) {
   const f = new Function(...mathNames, ...names, `return (${expr});`);
   return f(...mathNames.map(n => Math[n]), ...names.map(n => vars[n]));
 }
+// Every name in the formula is a lesson variable, except a function call such
+// as sqrt( or anything written Math.x (so E is energy, never Math.E).
 function formulaVars(formula) {
-  return [...new Set((formula.match(/[A-Za-z_][A-Za-z0-9_]*/g) || []).filter(v => !MATH_NAMES.has(v)))];
+  const out = [];
+  for (const m of formula.matchAll(/(Math\.)?([A-Za-z_][A-Za-z0-9_]*)(\s*\()?/g)) {
+    if (m[1] || m[3] || m[2] === 'Math') continue;
+    out.push(m[2]);
+  }
+  return [...new Set(out)];
 }
 // Solve "LHS = RHS" for one unknown by Newton's method from several starts.
 function solve(formula, known, unknown) {

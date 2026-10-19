@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, task A5, p2-current-voltage step a (A3 app changes and A4 glossary done; browser check with the first v3 lesson).
+Runbook position: Phase A, task A5, p2-components step a (p2-current-voltage done; its phone-size site test still to run).
 
 ## Runbook v3 switch (2026-10-19)
 
@@ -15,6 +15,14 @@ docs/archive/RUNBOOK-v2.md). Physics topics that finished the old loop:
 - Not started under the old loop: P5 Forces, P6 Waves, P7 Magnetism, P8 Space
   physics (old position was task 2.6, P5).
 All eight are rewritten under runbook v3 (Phase A pilot P2, then Phase B).
+
+### v3 lessons done
+
+| Lesson | Steps a–f | Commit | API cost (USD) | Notes |
+|---|---|---|---|---|
+| p2-current-voltage | ✓ | (this commit, "p2-current-voltage: rewritten (v3)") | 0.12 (step c) | 7 key points, 1,234 words; new diagram p2-wire-length; audit 13cf62e-1: 16 fixed, F8 rejected (ESCALATIONS) |
+
+Tools: tools/lesson-shape-v3.md, tools/check-lesson-v3.js (A1, A2); flags SLIDES_V3 (js/lessons.js), v3Fields (js/teach-core.js), GLOSSARY_V3 (js/glossary.js); data/glossary/<subject>.json from tools/build-glossary.js (A3, A4).
 The brief names docs/briefs/2026-10-18-maths-redesign.md as superseded; that
 file is not in the repo (nothing to act on).
 
@@ -66,6 +74,7 @@ Spec-check API calls, summed from tools/spec-check-results/SUMMARY.md (one line 
 | P6 Waves | 5 | 0.77 |
 | P7 Magnetism | 6 | 0.83 |
 | P4 AI lessons (2026-10-18, 2.5c and 2.5c2) | teach-sim 6 runs; text tester 8 runs; website tester 2 runs | 6.47 (teach-sim 1.64 + 0.75 re-runs; text 2.86 first pass + 2.23 re-run; website 0.74 + 0.64) |
+| Runbook v3 p2-current-voltage (2026-10-19) | spec-check step c 1 | 0.12 |
 | Teach-sim (check D) | 2 runs | 0.12 |
 | Teach-sim P1 (task 2.5c) | 10 lesson runs | 0.55 |
 | Teach-sim P2 (task 2.5c) | 8 lesson runs | 0.37 |

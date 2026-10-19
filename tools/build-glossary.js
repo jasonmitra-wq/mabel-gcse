@@ -18,7 +18,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'data', 'glossary');
 
-const strip = t => String(t || '').replace(/<[^>]+>/g, ' ').replace(/&[a-z]+;/g, ' ').replace(/\s+/g, ' ').trim();
+const strip = t => String(t || '').replace(/<[^>]+>/g, ' ').replace(/&[a-z]+;/g, ' ').replace(/\s+/g, ' ').replace(/\s+([.,;:!?)])/g, '$1').trim();
 // One key per term: lower case, no brackets or punctuation, simple plural folded.
 function key(term) {
   let k = String(term).toLowerCase().replace(/\s*\(.*?\)\s*/g, ' ').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -44,11 +44,13 @@ function build(subject) {
         if (have && !(have.weak && !weak)) return;
         terms.set(k, { term: strip(term), def: strip(def), ...base, weak });
       };
+      // Key terms first (their definitions are written for the glossary), then <dfn> terms.
+      const lessonTerms = (L.keyPoints || []).flatMap(kp => kp.keyTerms || []).filter(t => t && t.term);
+      for (const t of lessonTerms) add(t.term, t.def, t.referenceOnly === true);
       for (const kp of L.keyPoints || []) {
-        for (const t of kp.keyTerms || []) if (t && t.term) add(t.term, t.def, t.referenceOnly === true);
         for (const m of String(kp.content || '').matchAll(/<dfn>(.*?)<\/dfn>/gis)) {
           const term = strip(m[1]);
-          const own = (kp.keyTerms || []).find(t => t && key(t.term) === key(term));
+          const own = lessonTerms.find(t => key(t.term) === key(term));
           const sent = sentences(kp.content).find(s => s.toLowerCase().includes(term.toLowerCase()));
           add(term, own ? own.def : sent, false);
         }

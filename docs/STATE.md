@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, task A1.
+Runbook position: Phase A, task A3 (A1 tools/lesson-shape-v3.md and A2 tools/check-lesson-v3.js done).
 
 ## Runbook v3 switch (2026-10-19)
 

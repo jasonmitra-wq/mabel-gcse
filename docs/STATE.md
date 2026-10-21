@@ -208,4 +208,4 @@ Not started on the pipeline. Already in place:
 6. Each Physics topic through C, D and verification.
 | Brief v3.1 p2-current-voltage (2026-10-19) | spec-check step c 1 | 0.1662 |
 | Brief v3.1 p2-components (2026-10-19) | spec-check step c 1 | 0.1197 |
-| Brief v3.1 A8 testers (2026-10-19 to 21) | site test 2; text tester 2 first runs (+1 stopped by a network error), 2 re-runs | 7.36 (site 0.8342 + 0.8716; text 0.6706 + 1.2900 first runs, 2.0205 re-runs; the stopped run reported no cost, estimated under 0.30) |
+| Brief v3.1 A8 testers (2026-10-19 to 21) | site test 2; text tester 2 first runs (+1 stopped by a network error), 2 re-runs | 5.69 (site 0.8342 + 0.8716; text 0.6706 + 1.2900 first runs, 2.0205 re-runs; the stopped run reported no cost, estimated under 0.30) |

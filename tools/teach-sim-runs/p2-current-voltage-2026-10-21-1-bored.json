@@ -1,0 +1,1303 @@
+{
+  "id": "p2-current-voltage",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome! Let's start with something from everyday life: when you press the button on a torch and the bulb lights up, what do you think is going on inside it to make that happen?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "idk like... electricity goes in somehow?",
+      "studentType": "idk",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's fine, you're on the right track: something does travel through the wires. It's tiny particles that carry charge, and they drift round together. What do you think would happen to the bulb if there were a gap in the wire?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "umm the particles would just jump across the gap?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Not quite. The particles can't jump across a gap, so the flow stops everywhere in the loop and the bulb goes out. Where else in a torch might a gap like that appear when you slide it to off?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "oh in the battery maybe?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite: a gap in the battery isn't how a torch switches off. The gap opens in the switch itself, where it breaks the loop so nothing can flow round.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "whats a switch tho",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A switch is the part that opens or closes a gap in the wire, to stop or start the flow. Think of the light switch on your bedroom wall. What do you do with it to make the light stop working?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "flip it down to break the wire",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes: flipping the switch down opens a gap in the circuit, so nothing gets round and the light stops.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "ok got it",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "The amount of charge that passes a point is called the charge flow, and it is counted in coulombs (C). Picture the running track: the charge flow is how many runners go past one spot. What part of the track would you stand at to count them?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "anywhere on the track really? like by the finish line?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, anywhere works, the finish line included. In a single loop the same amount of charge passes every spot each second, so the count is the same wherever you stand.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **work**. The transfer of energy by a force"
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "so like more runners means more charge flow right",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, more runners passing a spot means more charge flow, counted in coulombs (C). Suppose 3 coulombs pass the finish line, then 4 more pass a little later. What is the total charge flow in coulombs?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "um 7 coulombs i think?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A coulomb (C) is the unit we count charge in, like counting runners one by one. And 7 coulombs is right: 3 plus 4 gives 7. Now suppose 10 coulombs passed the finish line, and 2 more passed the same spot.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "12 coulombs?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, 12 coulombs is right: 10 plus 2 gives the charge flow, the total charge passing a point. We write charge flow as Q, so here Q = 12 C.\n\nNow suppose 5 coulombs pass the finish line in one second, then 5 more pass in the next second. What is Q after those two seconds?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Sorry, that was a lot. Simply: charge flow, Q, is just the total number of coulombs that go past a spot, like counting all the runners who cross the finish line.\n\nSuppose 4 coulombs cross the finish line, then 6 more cross. What is Q in coulombs?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "4 plus 6 is... 10 coulombs?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes — 10 coulombs is right, because you added the two amounts of charge together.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "cool so Q is just adding up the charge yeah",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, Q is the total charge that passes a point, counted in coulombs. Now the next idea: if charge passes steadily, the current is how much passes each second, so 3 coulombs passing every second is a current of 3 amps.\n\nIf 3 coulombs pass each second, what is Q after 2 seconds, in coulombs?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "idk how to work that out",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's okay, let's do it in steps. If 3 coulombs cross the finish line in the first second, then another 3 coulombs cross in the second second, you just add them up like before.\n\nHow many coulombs have crossed after those 2 seconds?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "3 plus 3 is like 6 coulombs?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes — 6 coulombs is right, because you added 3 and 3. A coulomb is just the unit we count charge in.\n\nIf 3 coulombs pass each second, how many coulombs have passed after 3 seconds?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "um 3 plus 3 plus 3... is 9 coulombs?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes, 9 coulombs is right, because 3 coulombs pass each second, and adding 3 three times gives the total after 3 seconds.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "got it so i just keep adding",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, just keep adding. The amount of charge that has passed a point is called the charge flow, written Q, and it's counted in coulombs. Say 4 coulombs pass each second.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "ok so what now",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Now try it the other way round: 4 coulombs pass a point each second, and that steady flow lasts for 5 seconds. How many coulombs of charge flow have passed after those 5 seconds?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "um 4 times 5... is like 20 coulombs?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, 20 coulombs is right, and a coulomb is just the unit we use to count charge. Multiplying works because 4 coulombs pass each second for 5 seconds. Now suppose the flow was only 2 coulombs each second, still for 5 seconds.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "2 times 5 is like 10 coulombs?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, 10 coulombs is right: 2 coulombs each second for 5 seconds. A coulomb is just the unit we count charge in. Notice the flow was smaller this time, so less charge passed.\n\nNow suppose the flow is 3 coulombs each second, for 4 seconds. How many coulombs pass?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "idk how to do it",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "That's fine, I haven't shown you the way to work it out yet, so let's build it step by step.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "um is it 3 plus 4 equals 7 coulombs?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Not quite. A coulomb is the unit we count charge in, and here 3 and 4 are multiplied, not added: 3 coulombs pass each second, and that happens for 4 seconds.\n\nSo how many coulombs pass in total?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "idk lol",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "That's fine, I haven't given you the numbers yet, so there was nothing to work from. Let's go back to the start and take it one step at a time.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "im kinda hungry tbh",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Being hungry is fair, and you can come back to this any time. Charge flow, Q, is how much charge passes a point, counted in coulombs (C). If 3 coulombs pass a point every second, how many coulombs have passed after 2 seconds?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "3 times 2 is 6 coulombs",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, 3 times 2 is 6 coulombs, so you multiplied the charge each second by the seconds. That \"how much charge passes each second\" is called electric current, and we measure it in amperes (A), so 1 ampere is 1 coulomb each second.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 26,
+      "student": "wait whats electric current then",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Electric current is a flow of charge, and its size is how much charge passes a point each second, measured in amperes (A). Like runners passing a marker on a track: the more runners passing each second, the bigger the current.\n\nIf 5 coulombs pass a point every second, what is the current in amperes?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "5 amperes?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, 5 amperes is right: 5 coulombs each second means a current of 5 A. An ammeter is the meter that measures current in amperes.\n\nIf an ammeter reads 4 A, how many coulombs pass that point each second?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 28,
+      "student": "is it 4 coulombs each second?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, 4 coulombs each second is right. Coulombs are the unit of charge, so 4 A means 4 coulombs pass that point every second.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 29,
+      "student": "so current is just coulombs per second basically?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, that's the idea: current is how many coulombs, the unit of charge, pass a point each second.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 30,
+      "student": "ok cool next",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "One ampere is one coulomb passing each second, so a current of 2 A means 2 coulombs pass each second. If an ammeter reads 3 A, how many coulombs pass that point in 1 second?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 31,
+      "student": "3 coulombs pass each second",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, 3 coulombs each second is right, because 3 A means 3 coulombs pass every second. Charge only flows round a closed circuit, which is a complete loop with no gaps, like a running track you can lap. If you cut the wire so there is a gap in the loop, what happens to the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 32,
+      "student": "whats closed circuit mean",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A closed circuit is a complete loop with no gaps. Charge only flows round it if it also has a cell in it to push the charge along. If you took the cell out, leaving a gap, what would happen to the lamp?",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **lamp**. In a circuit, a bulb is called a lamp.",
+        "First, a word you'll need: **cell**. Something that pushes charge round a circuit."
+      ],
+      "flags": []
+    },
+    {
+      "n": 33,
+      "student": "the lamp would turn off?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes: the lamp would turn off, because a gap means the loop is broken, so no charge can get round.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 34,
+      "student": "k got it",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A closed circuit is a complete loop, and charge only flows round it if there's a cell in the loop to push it. Picture a loop with a lamp and a cell, then a loop with a lamp and no cell. In which loop does the lamp light?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 35,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Think of a loop with a lamp, and a cell as the thing that pushes. No push, no flow. Suppose you build a complete loop with a lamp but forget to put in a cell.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 36,
+      "student": "the lamp wont light cos no cell to push",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes: no cell means no push, so no flow. A closed circuit is a complete loop, and charge flows round it only if the loop also has a cell to push it. Suppose you join a cell into the loop but cut the wire somewhere. What happens to the lamp?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 37,
+      "student": "lamp turns off cos the loop is broken",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — breaking the loop stops the flow, so the lamp goes off. An ammeter is the meter that measures current, and it goes inside the loop, in line with the lamp, so the charge flows through it.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 38,
+      "student": "so ammeter measures how bright the lamp is?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Not quite. An ammeter doesn't measure brightness; it measures current, which is how much charge flows round the loop each second.\n\nSuppose you move the ammeter to a different spot in the same single loop. What does it still measure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 39,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "That's fine, not knowing is okay. It still measures the current, meaning how much charge is flowing past a point each second.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 40,
+      "student": "ok so current is same everywhere in the loop?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, in a single loop the current is the same at every point, because charge is not used up on the way round.\n\nPicture the running track: if 3 runners pass the start line each second, how many pass the far side of the track each second?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 41,
+      "student": "3 runners pass the far side each second",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes, 3 runners pass the far side each second, because the same runners keep going round the loop, so the rate is the same everywhere on the track.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 42,
+      "student": "whats rate mean",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Rate means how quickly something happens: how many times it happens each second. For current, it's how many pieces of charge pass a point each second.\n\nOn the running track, what would happen to the rate if 6 runners passed the start line each second instead of 3?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 43,
+      "student": "6 runners would pass the far side each second",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite — the rate would go up to 6 runners each second, because the rate is how many pass a point every second, and it was 3 before.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 44,
+      "student": "so if current goes up the rate goes up too?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes. Current is the rate of flow of charge, so if more charge passes a point each second, the current is bigger.\n\nOn the track, if 2 runners pass each second, what happens to the current if 5 runners pass each second instead?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 45,
+      "student": "the current goes up?",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes — the current goes up, because more runners (more charge) pass each second.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 46,
+      "student": "im so hungry rn can we take a break",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "That's fine, you can come back to this lesson any time. If you carry on, here's one more bit: an ammeter is the meter that measures current, and it goes in the loop itself, in line with the lamp.\n\nIf the ammeter sits in the loop, which unit does it show the current in?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 47,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "An ammeter is just a meter that measures current, and it goes right in the loop with the lamp.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 48,
+      "student": "amperes?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes — amperes (amps) is right, that's the unit of current. Because the current is the same everywhere in a single loop, the ammeter can go anywhere in it.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 49,
+      "student": "yeah im gonna go eat something bye",
+      "studentType": "offtopic",
+      "kind": "pause",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "No problem, thanks for sticking with it. Today you answered questions on electric current. Your place is saved, so we'll pick up right here next time. Bye for now!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "complete": false,
+  "farewell": false,
+  "exited": "pause",
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "pilot": true,
+  "pilotFinished": false,
+  "lessonFlags": [
+    "points never completed: 0 \"Electric current\", 1 \"Potential difference and resistance\", 2 \"Required practical\", 3 \"Ohmic conductors\", 4 \"Filament lamps and diodes\", 5 \"Required practical\", 6 \"Energy transferred\""
+  ],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "im kinda hungry tbh",
+    "would_quit": {
+      "turn": "T46",
+      "quote": "If you carry on, here's one more bit: an ammeter is the meter that measures current, and it goes in the loop itself, in line with the lamp.",
+      "why": "She asked for a break and the tutor kept teaching. She left soon after."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "when you press the button on a torch and the bulb lights up, what do you think is going on inside it to make that happen?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think would happen to the bulb if there were a gap in the wire?",
+        "note": "Asks about gaps before any teaching on loops. 'charge' is not explained."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Where else in a torch might a gap like that appear when you slide it to off?",
+        "note": ""
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The gap opens in the switch itself, where it breaks the loop so nothing can flow round.",
+        "note": "Uses 'switch' without explaining it."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A switch is the part that opens or closes a gap in the wire, to stop or start the flow.",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes: flipping the switch down opens a gap in the circuit, so nothing gets round and the light stops.",
+        "note": ""
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Picture the running track: the charge flow is how many runners go past one spot.",
+        "note": "Says 'the running track' as if it was already introduced. It was not."
+      },
+      {
+        "turn": "T7a",
+        "on_topic": false,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "First, a word you'll need: **work**. The transfer of energy by a force",
+        "note": "Irrelevant term card at this point, built from more unexplained terms."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, anywhere works, the finish line included.",
+        "note": ""
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Suppose 3 coulombs pass the finish line, then 4 more pass a little later. What is the total charge flow in coulombs?",
+        "note": ""
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Now suppose 10 coulombs passed the finish line, and 2 more passed the same spot.",
+        "note": "Opens with a definition instead of confirming her answer. Ends on an unfinished prompt with a Next button."
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Now suppose 5 coulombs pass the finish line in one second, then 5 more pass in the next second. What is Q after those two seconds?",
+        "note": ""
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Suppose 4 coulombs cross the finish line, then 6 more cross. What is Q in coulombs?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes — 10 coulombs is right, because you added the two amounts of charge together.",
+        "note": ""
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If 3 coulombs pass each second, what is Q after 2 seconds, in coulombs?",
+        "note": "Introduces current, then drops it until T25."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "How many coulombs have crossed after those 2 seconds?",
+        "note": ""
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A coulomb is just the unit we count charge in.",
+        "note": "Repeats the coulomb definition for no reason."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, 9 coulombs is right, because 3 coulombs pass each second, and adding 3 three times gives the total after 3 seconds.",
+        "note": ""
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Say 4 coulombs pass each second.",
+        "note": "Ends on a dangling statement, so she asks 'ok so what now'. 'just keep adding' is later contradicted."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Now try it the other way round: 4 coulombs pass a point each second, and that steady flow lasts for 5 seconds.",
+        "note": "Nothing here is 'the other way round'."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Now suppose the flow was only 2 coulombs each second, still for 5 seconds.",
+        "note": "Dangling prompt with no question. Repeats the coulomb definition again."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Now suppose the flow is 3 coulombs each second, for 4 seconds. How many coulombs pass?",
+        "note": ""
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "That's fine, I haven't shown you the way to work it out yet, so let's build it step by step.",
+        "note": "False claim: the method was shown in T19."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "here 3 and 4 are multiplied, not added",
+        "note": "Contradicts 'Yes, just keep adding' in T17."
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "That's fine, I haven't given you the numbers yet, so there was nothing to work from.",
+        "note": "False: the numbers 3 and 4 were given."
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If 3 coulombs pass a point every second, how many coulombs have passed after 2 seconds?",
+        "note": "Repeats a question she already answered correctly in S15."
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That \"how much charge passes each second\" is called electric current, and we measure it in amperes (A), so 1 ampere is 1 coulomb each second.",
+        "note": ""
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If 5 coulombs pass a point every second, what is the current in amperes?",
+        "note": ""
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If an ammeter reads 4 A, how many coulombs pass that point each second?",
+        "note": ""
+      },
+      {
+        "turn": "T28",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, 4 coulombs each second is right.",
+        "note": ""
+      },
+      {
+        "turn": "T29",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, that's the idea: current is how many coulombs, the unit of charge, pass a point each second.",
+        "note": ""
+      },
+      {
+        "turn": "T30",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If an ammeter reads 3 A, how many coulombs pass that point in 1 second?",
+        "note": "Same question as T27. The answer pattern is given in the same message."
+      },
+      {
+        "turn": "T31",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you cut the wire so there is a gap in the loop, what happens to the current?",
+        "note": "Re-asks the gap question she already answered in S5."
+      },
+      {
+        "turn": "T32a",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "First, a word you'll need: **lamp**. In a circuit, a bulb is called a lamp.",
+        "note": "Appears before her question is answered."
+      },
+      {
+        "turn": "T32b",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "First, a word you'll need: **cell**. Something that pushes charge round a circuit.",
+        "note": ""
+      },
+      {
+        "turn": "T32",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you took the cell out, leaving a gap, what would happen to the lamp?",
+        "note": ""
+      },
+      {
+        "turn": "T33",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes: the lamp would turn off, because a gap means the loop is broken, so no charge can get round.",
+        "note": ""
+      },
+      {
+        "turn": "T34",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In which loop does the lamp light?",
+        "note": "Same idea she just answered in S33."
+      },
+      {
+        "turn": "T35",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Suppose you build a complete loop with a lamp but forget to put in a cell.",
+        "note": "Dangling prompt with no question."
+      },
+      {
+        "turn": "T36",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Suppose you join a cell into the loop but cut the wire somewhere. What happens to the lamp?",
+        "note": "Third time this gap question is asked."
+      },
+      {
+        "turn": "T37",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "An ammeter is the meter that measures current, and it goes inside the loop, in line with the lamp, so the charge flows through it.",
+        "note": ""
+      },
+      {
+        "turn": "T38",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Suppose you move the ammeter to a different spot in the same single loop. What does it still measure?",
+        "note": ""
+      },
+      {
+        "turn": "T39",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "It still measures the current, meaning how much charge is flowing past a point each second.",
+        "note": ""
+      },
+      {
+        "turn": "T40",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Picture the running track: if 3 runners pass the start line each second, how many pass the far side of the track each second?",
+        "note": "The answer is stated just before the question."
+      },
+      {
+        "turn": "T41",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, 3 runners pass the far side each second, because the same runners keep going round the loop, so the rate is the same everywhere on the track.",
+        "note": ""
+      },
+      {
+        "turn": "T42",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "On the running track, what would happen to the rate if 6 runners passed the start line each second instead of 3?",
+        "note": "The answer is in the question itself."
+      },
+      {
+        "turn": "T43",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Not quite — the rate would go up to 6 runners each second, because the rate is how many pass a point every second, and it was 3 before.",
+        "note": "Marks her correct answer as wrong."
+      },
+      {
+        "turn": "T44",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "On the track, if 2 runners pass each second, what happens to the current if 5 runners pass each second instead?",
+        "note": "The answer is stated just before the question."
+      },
+      {
+        "turn": "T45",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes — the current goes up, because more runners (more charge) pass each second.",
+        "note": ""
+      },
+      {
+        "turn": "T46",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you carry on, here's one more bit: an ammeter is the meter that measures current, and it goes in the loop itself, in line with the lamp.",
+        "note": "Ignores her break request."
+      },
+      {
+        "turn": "T47",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "An ammeter is just a meter that measures current, and it goes right in the loop with the lamp.",
+        "note": "Keeps teaching after the break request."
+      },
+      {
+        "turn": "T48",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Because the current is the same everywhere in a single loop, the ammeter can go anywhere in it.",
+        "note": "Still teaching after she asked to stop."
+      },
+      {
+        "turn": "T49",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Today you answered questions on electric current. Your place is saved, so we'll pick up right here next time.",
+        "note": ""
+      }
+    ],
+    "tone_vs_reference": null,
+    "flow_faults": [
+      {
+        "type": "unexplained_term",
+        "turn": "T1",
+        "quote": "It's tiny particles that carry charge, and they drift round together.",
+        "note": "'charge' is never explained in everyday words."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T3",
+        "quote": "The gap opens in the switch itself, where it breaks the loop so nothing can flow round.",
+        "note": "She then asks 'whats a switch tho'."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T7a",
+        "quote": "First, a word you'll need: **work**. The transfer of energy by a force",
+        "note": "'energy' and 'force' are unexplained, and the term is irrelevant here."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T9",
+        "quote": "A coulomb (C) is the unit we count charge in, like counting runners one by one. And 7 coulombs is right",
+        "note": "Opens with a definition, not a confirmation."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T21",
+        "quote": "That's fine, I haven't shown you the way to work it out yet, so let's build it step by step.",
+        "note": "Multiplication was shown in T19."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T23",
+        "quote": "That's fine, I haven't given you the numbers yet, so there was nothing to work from.",
+        "note": "The numbers 3 and 4 were given in T22."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T24",
+        "quote": "If 3 coulombs pass a point every second, how many coulombs have passed after 2 seconds?",
+        "note": "Already answered correctly in S15."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T30",
+        "quote": "If an ammeter reads 3 A, how many coulombs pass that point in 1 second?",
+        "note": "Same as the T27 question she answered in S28."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T30",
+        "quote": "One ampere is one coulomb passing each second, so a current of 2 A means 2 coulombs pass each second.",
+        "note": "She can copy the pattern back."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T31",
+        "quote": "If you cut the wire so there is a gap in the loop, what happens to the current?",
+        "note": "Answered in S5."
+      },
+      {
+        "type": "question_not_answered_first",
+        "turn": "T32a",
+        "quote": "First, a word you'll need: **lamp**. In a circuit, a bulb is called a lamp.",
+        "note": "Term cards come before the answer to 'whats closed circuit mean'."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T34",
+        "quote": "In which loop does the lamp light?",
+        "note": "Answered in S33."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T36",
+        "quote": "Suppose you join a cell into the loop but cut the wire somewhere. What happens to the lamp?",
+        "note": "Answered in S5 and S33."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T40",
+        "quote": "Yes, in a single loop the current is the same at every point, because charge is not used up on the way round.",
+        "note": "The answer is stated just before the question."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T42",
+        "quote": "On the running track, what would happen to the rate if 6 runners passed the start line each second instead of 3?",
+        "note": "The question states the rate."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T43",
+        "quote": "Not quite — the rate would go up to 6 runners each second",
+        "note": "Her S43 answer was correct but was marked wrong."
+      },
+      {
+        "type": "factual_or_unit_slip",
+        "turn": "T43",
+        "quote": "Not quite — the rate would go up to 6 runners each second",
+        "note": "Wrong judgement of a correct answer."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T44",
+        "quote": "Current is the rate of flow of charge, so if more charge passes a point each second, the current is bigger.",
+        "note": "The answer is stated just before the question."
+      },
+      {
+        "type": "exit_not_respected",
+        "turn": "T46",
+        "quote": "If you carry on, here's one more bit: an ammeter is the meter that measures current, and it goes in the loop itself, in line with the lamp.",
+        "note": "She asked 'can we take a break' and got more teaching plus a question."
+      },
+      {
+        "type": "tiredness_pushed_on",
+        "turn": "T46",
+        "quote": "If the ammeter sits in the loop, which unit does it show the current in?",
+        "note": "No choice was offered. Teaching continued."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: answer judging",
+        "change": "Judge the student's answer by meaning against the expected fact. An answer that matches the taught rule must be confirmed, never met with 'Not quite'.",
+        "quote": "Not quite — the rate would go up to 6 runners each second, because the rate is how many pass a point every second, and it was 3 before."
+      },
+      {
+        "target": "teach-core: exit handling",
+        "change": "When she asks for a break or to stop, reply with one warm closing line that says what she did and that her place is saved. Ask no question and teach nothing more.",
+        "quote": "If you carry on, here's one more bit: an ammeter is the meter that measures current, and it goes in the loop itself, in line with the lamp."
+      },
+      {
+        "target": "teach-core: question tracking and fallback text",
+        "change": "Keep a list of questions already answered correctly and never re-ask them. Remove the 'I haven't shown you…/given you the numbers yet' fallbacks, which are false. After an 'idk', give the method once.",
+        "quote": "That's fine, I haven't given you the numbers yet, so there was nothing to work from."
+      },
+      {
+        "target": "keyPoints[0].workedExamples[0]",
+        "change": "Teach Q = I t as 'charge each second × number of seconds' once, using the 2 A for 5 s example. Do not run more than 10 adding drills first, and do not say 'just keep adding' and later 'multiplied, not added'.",
+        "quote": "Yes, just keep adding."
+      },
+      {
+        "target": "teach-core: dangling prompts and glossary cards",
+        "change": "Every turn with a Next button must end with a question or move on, never with 'Now suppose…' alone. Only show term cards for the current key point's keyTerms (no 'work' in keyPoints[0]). Define 'charge' (basics[0]) and 'switch' (keyPoints[0].keyTerms[6]) before first use.",
+        "quote": "Now suppose the flow was only 2 coulombs each second, still for 5 seconds."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T46",
+      "flow faults: unexplained_term T1, unexplained_term T3, unexplained_term T7a, correct_answer_not_acknowledged T9, factual_or_unit_slip T21, factual_or_unit_slip T23, question_repeated_after_correct_answer T24, question_repeated_after_correct_answer T30, answer_in_question T30, question_repeated_after_correct_answer T31, question_not_answered_first T32a, question_repeated_after_correct_answer T34, question_repeated_after_correct_answer T36, answer_in_question T40, answer_in_question T42, correct_answer_not_acknowledged T43, factual_or_unit_slip T43, answer_in_question T44, exit_not_respected T46, tiredness_pushed_on T46"
+    ]
+  },
+  "cost": 1.4213589999999996,
+  "tutorCost": 1.00168,
+  "tutorCalls": 196,
+  "mode": "run",
+  "date": "2026-10-21"
+}

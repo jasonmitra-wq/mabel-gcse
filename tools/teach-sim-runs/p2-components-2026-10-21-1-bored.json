@@ -1,0 +1,880 @@
+{
+  "id": "p2-components",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "recall",
+      "teachIndex": null,
+      "reply": "From the last lesson, question 1 of 3: What is electric current?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "what's electric current?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Electric current is a flow of charge. Its size is how much charge passes a point each second, measured in amperes (A).\n\nPicture the runners on a track. If more runners pass a point each second, what has happened to the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "whats amperes (A)?",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Amperes, or amps (A), are the units we measure current in, so a bigger flow of runners past a point each second means a bigger number of amps.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "oh so like more runners = more amps?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, that's it: more runners passing a point each second means a bigger current, so more amps.\n\nNow picture fewer runners getting past that point each second. What has happened to the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "fewer runners = less amps",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes, fewer runners passing each second means a smaller current, which is measured in amps.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "ok im ready",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: What is electric current?",
+      "recap": null,
+      "choices": [
+        "The push that drives charge",
+        "How hard it is for charge to flow",
+        "The energy each coulomb carries",
+        "The rate of flow of charge"
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "the rate of flow of charge",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes, that's right. Current is how much charge passes a point each second.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "nice thanks",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "From the last lesson, question 2 of 3: At constant temperature, what happens to a wire's resistance as its length increases?",
+      "recap": null,
+      "choices": [
+        "It decreases",
+        "It falls to zero",
+        "It stays the same",
+        "It increases"
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "whats resistance?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Resistance is how much a component opposes the current through it. A long, thin, muddy stretch of a running track slows the runners down, so less gets through.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "so longer wire = less resistance?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Not quite. Longer wire means more resistance: a longer stretch of track gives the runners more to get through, so less current passes. Resistance means how much a component opposes the current.\n\nIf a wire gets shorter, what happens to its resistance?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "shorter wire = more resistance?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite — a shorter wire has less resistance, because the current has a shorter stretch of track to get through.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "wait so longer = more resistance yeah?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, longer wire means more resistance, because the current has more track to get through. Resistance is how much a component opposes the current, measured in ohms (Ω).\n\nImagine you swap a short wire for a much longer one in a circuit. What happens to the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "longer wire = more resistance = less current?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes — a longer wire does mean more resistance, and more resistance means less current for the same push.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "ok got it",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: At constant temperature, what happens to a wire's resistance as its length increases?",
+      "recap": null,
+      "choices": [
+        "It decreases",
+        "It falls to zero",
+        "It stays the same",
+        "It increases"
+      ],
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "it decreases",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite: it's \"It increases\". A longer wire has a bigger resistance.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "oh yeah my bad, it increases",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "From the last lesson, question 3 of 3: What does the I-V characteristic of an ohmic conductor look like?",
+      "recap": null,
+      "choices": [
+        "A curve that gets flatter",
+        "A flat line along the bottom",
+        "Flat on one side, steep on the other",
+        "A straight line through the origin"
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "whats the origin?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "The origin is the point on a graph where both quantities are zero. It's often the bottom-left corner, where the two axes meet.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "a straight line through the origin",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: What does the I-V characteristic of an ohmic conductor look like?",
+      "recap": null,
+      "choices": [
+        "A curve that gets flatter",
+        "A flat line along the bottom",
+        "Flat on one side, steep on the other",
+        "A straight line through the origin"
+      ],
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "a straight line through the origin",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes, that's right. Its current is directly proportional to the potential difference.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "whats potential difference?",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Potential difference is the push that makes charge flow through a component. A cell gives a circuit a push.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Cell**. Something that pushes charge round a circuit."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "ok so potential difference = the push?",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, potential difference is the push that makes charge flow through a component. Its everyday name is voltage. The more push a cell gives, the more charge it can get moving.\n\nIf a circuit has no cell, what will be missing from it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "im starving lol",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Fair enough, go grab a snack and come back any time! The answer was the push, because without a cell there's no potential difference to move the charge.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "k",
+      "studentType": "minimal",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Welcome, glad you're here! When you walk down a street in the evening, what do you notice happening to the street lights as it gets dark?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "they turn on or get brighter",
+      "studentType": "try",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, street lights coming on as it gets dark is just what I meant. To build a circuit like that, people draw it using simple agreed shapes instead of real parts. Each shape is called a circuit symbol.\n\nWhy do you think everyone agrees to use the same shapes?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "so everyone understands the diagram?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — everyone sharing the same shapes means anyone can read the diagram and build the circuit. A drawing made from these symbols, with straight lines for the wires, is called a circuit diagram. If a street light's circuit diagram showed a lamp, which symbol would you draw for it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "umm a circle with an x?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, a circle with a cross in it is the lamp symbol. Now say a diagram shows a switch drawn with a gap in it.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Switch**. A component that opens (a gap) or closes (no gap) a circuit."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "man im so tired rn",
+      "studentType": "offtopic",
+      "kind": "exit-offer",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "That's fair, it's a lot of new stuff. Do you want to stop here, do one more quick thing, or switch to the slides?",
+      "recap": null,
+      "choices": [
+        "Stop here",
+        "One more quick thing",
+        "Switch to the slides"
+      ],
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "idk maybe one more",
+      "studentType": "idk",
+      "kind": "carryon",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "In a circuit diagram, a wire is drawn as a straight line, and a gap anywhere in it means no current can flow. Why would a diagram that left a gap in the wire not work?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 28,
+      "student": "no gap = current can flow?",
+      "studentType": "try",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, no gap means current can flow, and that's the closed switch. A gap breaks the loop, so no current can get through and the circuit won't work. That was the quick one. Do you want to stop here, or keep going?",
+      "recap": null,
+      "choices": [
+        "Stop here",
+        "Keep going"
+      ],
+      "flags": [
+        "yes/no question",
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 29,
+      "student": "k",
+      "studentType": "minimal",
+      "kind": "pause",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "No problem, thanks for sticking with it. Today you answered questions on circuit symbols. Your place is saved, so we'll pick up right here next time. Bye for now!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "complete": false,
+  "farewell": false,
+  "exited": "pause",
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "pilot": true,
+  "pilotFinished": false,
+  "lessonFlags": [
+    "points never completed: 0 \"Circuit symbols\", 1 \"Thermistors\", 2 \"LDRs\", 3 \"Drawing a circuit to test a sensor\""
+  ],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "man im so tired rn",
+    "would_quit": {
+      "turn": "T25",
+      "quote": "Now say a diagram shows a switch drawn with a gap in it.",
+      "why": "After a long review she gets a half-finished setup with no question and a Next button, and she says she is tired straight after."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "From the last lesson, question 1 of 3: What is electric current?",
+        "note": "Review question, so nothing was taught before it."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Picture the runners on a track. If more runners pass a point each second, what has happened to the current?",
+        "note": "It never says the runners stand for charge. 'Charge' is used without explaining it."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Amperes, or amps (A), are the units we measure current in",
+        "note": ""
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Now picture fewer runners getting past that point each second. What has happened to the current?",
+        "note": "A trivial mirror of the question she just answered."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, fewer runners passing each second means a smaller current, which is measured in amps.",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "The energy each coulomb carries",
+        "note": "'Coulomb' is never explained."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, that's right. Current is how much charge passes a point each second.",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "At constant temperature, what happens to a wire's resistance as its length increases?",
+        "note": "Review question uses 'resistance' before explaining it."
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Resistance is how much a component opposes the current through it.",
+        "note": "'Component' is not explained."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a wire gets shorter, what happens to its resistance?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Not quite — a shorter wire has less resistance, because the current has a shorter stretch of track to get through.",
+        "note": ""
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Imagine you swap a short wire for a much longer one in a circuit. What happens to the current?",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes — a longer wire does mean more resistance, and more resistance means less current for the same push.",
+        "note": ""
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Back to the question: At constant temperature, what happens to a wire's resistance as its length increases?",
+        "note": "Re-asks what she already answered correctly in S11."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Not quite: it's \"It increases\". A longer wire has a bigger resistance.",
+        "note": ""
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "What does the I-V characteristic of an ohmic conductor look like?",
+        "note": "Ignores her correction. 'I-V characteristic' and 'ohmic conductor' are not explained."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The origin is the point on a graph where both quantities are zero.",
+        "note": ""
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Back to the question: What does the I-V characteristic of an ohmic conductor look like?",
+        "note": "She had just given the right answer, and it is ignored and asked again word for word."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Its current is directly proportional to the potential difference.",
+        "note": "Two terms ('directly proportional', 'potential difference') are not explained."
+      },
+      {
+        "turn": "T19a",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "First, a word you'll need: **Cell**. Something that pushes charge round a circuit.",
+        "note": "Puts a new term before answering her question."
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Potential difference is the push that makes charge flow through a component.",
+        "note": ""
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a circuit has no cell, what will be missing from it?",
+        "note": "The answer (the push) was just given."
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Fair enough, go grab a snack and come back any time!",
+        "note": "Sends her away, then carries on with a Next button."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Welcome, glad you're here!",
+        "note": "Greets her as if she just arrived, mid-session."
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why do you think everyone agrees to use the same shapes?",
+        "note": ""
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a street light's circuit diagram showed a lamp, which symbol would you draw for it?",
+        "note": "The lamp symbol was never taught."
+      },
+      {
+        "turn": "T25a",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "First, a word you'll need: **Switch**. A component that opens (a gap) or closes (no gap) a circuit.",
+        "note": "Comes before confirming her correct answer."
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Now say a diagram shows a switch drawn with a gap in it.",
+        "note": "Dangling setup with no question."
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want to stop here, do one more quick thing, or switch to the slides?",
+        "note": ""
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Why would a diagram that left a gap in the wire not work?",
+        "note": "The answer is in the same message."
+      },
+      {
+        "turn": "T28",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A gap breaks the loop, so no current can get through and the circuit won't work.",
+        "note": ""
+      },
+      {
+        "turn": "T29",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Your place is saved, so we'll pick up right here next time. Bye for now!",
+        "note": "Takes the ambiguous 'k' as stop; acceptable given she was tired."
+      }
+    ],
+    "tone_vs_reference": null,
+    "flow_faults": [
+      {
+        "type": "unexplained_term",
+        "turn": "T1",
+        "quote": "Electric current is a flow of charge.",
+        "note": "'Charge' is never explained in everyday words."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T1",
+        "quote": "Its size is how much charge passes a point each second, measured in amperes (A). Picture the runners on a track. If more runners pass a point each second, what has happened to the current?",
+        "note": ""
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T5",
+        "quote": "The energy each coulomb carries",
+        "note": ""
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T7",
+        "quote": "At constant temperature, what happens to a wire's resistance as its length increases?",
+        "note": "Used before it is explained; she has to ask."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T8",
+        "quote": "Resistance is how much a component opposes the current through it.",
+        "note": "'Component' is not explained."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T13",
+        "quote": "Back to the question: At constant temperature, what happens to a wire's resistance as its length increases?",
+        "note": "She answered this correctly in S11 ('longer = more resistance yeah?')."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T15",
+        "quote": "From the last lesson, question 3 of 3: What does the I-V characteristic of an ohmic conductor look like?",
+        "note": "Her 'it increases' gets no confirmation."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T15",
+        "quote": "What does the I-V characteristic of an ohmic conductor look like?",
+        "note": "'I-V characteristic' is not explained."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T15",
+        "quote": "What does the I-V characteristic of an ohmic conductor look like?",
+        "note": "'Ohmic conductor' is not explained."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T17",
+        "quote": "Back to the question: What does the I-V characteristic of an ohmic conductor look like?",
+        "note": "She answered 'a straight line through the origin', which is correct."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T17",
+        "quote": "Back to the question: What does the I-V characteristic of an ohmic conductor look like?",
+        "note": ""
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T18",
+        "quote": "Its current is directly proportional to the potential difference.",
+        "note": "'Potential difference' is not explained."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T18",
+        "quote": "Its current is directly proportional to the potential difference.",
+        "note": "'Directly proportional' is not explained."
+      },
+      {
+        "type": "question_not_answered_first",
+        "turn": "T19a",
+        "quote": "First, a word you'll need: **Cell**. Something that pushes charge round a circuit.",
+        "note": "A new term comes before answering 'whats potential difference?'."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T20",
+        "quote": "The more push a cell gives, the more charge it can get moving. If a circuit has no cell, what will be missing from it?",
+        "note": ""
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T25a",
+        "quote": "First, a word you'll need: **Switch**. A component that opens (a gap) or closes (no gap) a circuit.",
+        "note": "Her correct lamp answer is not confirmed first."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T27",
+        "quote": "a gap anywhere in it means no current can flow. Why would a diagram that left a gap in the wire not work?",
+        "note": ""
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: retrieval questions accept free-text answers",
+        "change": "When her free-text reply matches the correct option, confirm it and move on. Do not re-show the same question.",
+        "quote": "Back to the question: What does the I-V characteristic of an ohmic conductor look like?"
+      },
+      {
+        "target": "teach-core: vocab card insertion",
+        "change": "Never place a 'First, a word you'll need' card before answering her question or before confirming her answer. Put it after, or fold the term into the reply.",
+        "quote": "First, a word you'll need: **Cell**. Something that pushes charge round a circuit."
+      },
+      {
+        "target": "teach-core: off-topic replies and lesson start",
+        "change": "For off-topic replies like 'im starving', do not say 'go grab a snack'. Briefly acknowledge, then offer stop or continue. Drop 'Welcome, glad you're here!' when the session is already under way.",
+        "quote": "Fair enough, go grab a snack and come back any time!"
+      },
+      {
+        "target": "keyPoints[0].content / teach-core: question after setup",
+        "change": "Show or describe the lamp symbol before asking her to draw it. Never end a turn on a setup line like 'Now say a diagram shows a switch...'; finish it with the question about open and closed switches.",
+        "quote": "Now say a diagram shows a switch drawn with a gap in it."
+      },
+      {
+        "target": "retrieval questions from p2-current-voltage and basics[0].text",
+        "change": "Explain 'charge' in basics[0].text (tiny bits that move through the wire = the runners). Replace or define 'ohmic conductor', 'I-V characteristic' and 'coulomb' in the review question and its options.",
+        "quote": "What does the I-V characteristic of an ohmic conductor look like?"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T25",
+      "flow faults: unexplained_term T1, answer_in_question T1, unexplained_term T5, unexplained_term T7, unexplained_term T8, question_repeated_after_correct_answer T13, correct_answer_not_acknowledged T15, unexplained_term T15, unexplained_term T15, correct_answer_not_acknowledged T17, question_repeated_after_correct_answer T17, unexplained_term T18, unexplained_term T18, question_not_answered_first T19a, answer_in_question T20, correct_answer_not_acknowledged T25a, answer_in_question T27"
+    ]
+  },
+  "cost": 0.5991509999999993,
+  "tutorCost": 0.32755599999999974,
+  "tutorCalls": 74,
+  "mode": "run",
+  "date": "2026-10-21"
+}

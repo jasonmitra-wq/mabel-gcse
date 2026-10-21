@@ -322,3 +322,19 @@ Breakage-only fix round done (P2-FIX-LOG.md). Left, as frozen tutor behaviour or
 - Sign-offs the RESPECT_EXIT patterns miss ("cheers m8 see u", "nah im logging off soz", "ok cheers ill be back later") are taken as answers (p2-current-voltage-3 T13–T19).
 - Choosing "Switch to the slides" opens the slides with no chat reply; the site tester counts this as no reply (p2-components-3 S45).
 - The Silver-the-cat profile popup covers the slide buttons on a phone; the sticky header covers page tops; the side-column thumbnail is small.
+
+## Pilot v3.1 (runbook v3 task A9, 2026-10-21)
+
+What changed since the first pilot (brief docs/briefs/2026-10-19-pilot-feedback-v3-1.md):
+- Both lessons rebuilt with the v3.1 additions: pictures that build up (the circuit in three steps; beginner graphs with positive values and the origin labelled before the full graphs; the symbols chart split so each symbol comes when it is taught); one comparison per lesson (a running track); two quick readiness questions before each practical; 2 or 3 worked examples per equation with "Try another"; widgets (current and potential difference: a circuit with cells, a potential-difference slider, ammeter and lamp brightness, and an I-V graph with a point to drag; components: a thermistor and LDR circuit); after each key point a line in her own words and two mixed questions; an end quiz (7 and 6 questions); a lesson after a finished one opens with three recall questions.
+- The AI tutor has the PILOT_FIX change and nothing else: at most 60 words and one question per message; her question answered first; "tell me" gives the rest one idea at a time with Next, then the "Worth writing down" card; ticks only when every sentence was taught or told; back a step after two wrong answers; words explained, each in its own bubble, before use; the lesson's own numbers and rules only; the same pieces as the slides.
+- Text tester counts (A8, reported, not gating), before → after the one fix round:
+  - p2-current-voltage: over 60 words 0 → 0; two questions 0 → 0; her question not answered first 0 → 1; two key points 0 → 0; answer in question 5 → 4; term before explained 5 → 3.
+  - p2-components: 0 → 0; 0 → 0; 3 → 1; 0 → 0; 4 → 3; 10 → 8 (part of these are terms from p2-current-voltage, which the tester treats as opened and the judge does not see).
+- Still open for the planning chat (tutor, not fixed again: one fix round only): answers in questions and terms used early are fewer but not zero; the tutor sometimes misremembers what it has already shown ("I haven't given you the numbers yet") and once marked a right answer wrong (p2-current-voltage-2026-10-21-1-bored T21, T23, T43); sign-offs such as "cheers m8 see u" are missed; "tell me" can mean several Next taps on a long key point.
+- Site tests: tools/site-test-runs/2026-10-19/p2-current-voltage-3 and p2-components-3 (breakage fixed once).
+
+What to try:
+- Jason: Physics → Electricity → Current and potential difference, and Components, as slides (no API key, or "Show me the slides instead") and as an AI lesson. On the slides: the pictures in order, "Show the first step" and "Try another" under each worked example, the widgets (add a cell, slide the potential difference, drag the graph point, try the diode the wrong way round; the thermistor and LDR sliders), "Make it stick" after each key point, the quiz at the end. Finish the first lesson's quiz, then open Components: it starts with three questions on the first lesson.
+- Mabel: do one of them as an AI lesson.
+- Then type "Pilot: yes" or "Pilot: <what to change>", and "Mabel: <what she said>".

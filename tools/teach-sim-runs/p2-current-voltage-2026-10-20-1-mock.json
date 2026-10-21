@@ -1,0 +1,3751 @@
+{
+  "id": "p2-current-voltage",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "I think it's Charge flow (Q), The amount of charge that passes a point, in coulombs",
+      "studentType": "correct",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is Charge flow (Q).",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 2,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Next is Charge flow (Q). What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Right. Next is Charge flow (Q).",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 4,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Here's the rest of this one. Every torch, phone and kettle runs on something moving through its wires. Turn on a torch and the bulb lights at once.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "I think it's Charge flow (Q), The amount of charge that passes a point, in coulombs",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "In a circuit, a bulb is called a lamp. Inside the metal wire, tiny particles that carry electric charge start to drift round together.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Electric charge**. What flows round a circuit.",
+        "First, a word you'll need: **lamp**. In a circuit, a bulb is called a lamp."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "You cannot see charge, but you can see what it does. A complete loop is a closed circuit.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Volt**. The unit of potential difference.",
+        "First, a word you'll need: **Voltage**. Another name for potential difference.",
+        "First, a word you'll need: **Component**. Any part of a circuit, such as a lamp, a resistor or a diode.",
+        "First, a word you'll need: **Potential difference**. The push that makes charge flow through a component.",
+        "First, a word you'll need: **Closed circuit**. A complete loop."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Charge only flows round a closed circuit if it includes something to push it, such as a cell or a battery.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **cell**. Something that pushes charge round a circuit.",
+        "First, a word you'll need: **battery**. Two or more cells joined together."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "I think it's Charge flow (Q), The amount of charge that passes a point, in coulombs",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "That push is called a potential difference, and the next key point explains it.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Break the loop anywhere and the flow stops everywhere. A switch does this on purpose: it opens a gap in the loop.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Switch**. A part that opens or closes a gap in a circuit, to stop or start the current."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "A closed circuit: a cell, a switch and a lamp in one loop."
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A flow of charge is an electric current. Its size is the rate of flow: how much charge passes a point each second.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Joule**. The unit of energy.",
+        "First, a word you'll need: **rate**. How quickly something happens — here, how many joules transferred per second"
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "I think it's Charge flow (Q), The amount of charge that passes a point, in coulombs",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Charge is counted in coulombs (C). Current is measured in amperes (A, or amps) with an ammeter.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Ampere**. The unit of current.",
+        "First, a word you'll need: **Ammeter**. A meter that measures current."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "The same loop with an ammeter in it, measuring the current."
+      ],
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "One ampere means one coulomb passing each second. In a single loop, the current is the same at every point, because charge is not used up on the way round.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "So it does not matter where you put the ammeter.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "I think it's Charge flow (Q), The amount of charge that passes a point, in coulombs",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "The amount of charge that passes is the charge flow, Q. To find it, multiply the current by the time in seconds.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Worked example 1 of 3: A current of 2 A flows through a lamp for 5 s. How much charge flows? Tap the button under it to see each step.",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "card": "worked example: A current of 2 A flows through a lamp for 5 s. How much charge flows? Steps: Write the equation: Q = I t. / Put the numbers in: Q = 2 × 5 = 10 / The charge flow is 10 C.",
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Worked example 2 of 3: A current of 0.5 A flows through a lamp for 2 minutes. How much charge flows? Tap the button under it to see each step.",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "card": "worked example: A current of 0.5 A flows through a lamp for 2 minutes. How much charge flows? Steps: Time must be in seconds: 2 minutes = 2 × 60 = 120 s. / Write the equation: Q = I t. / Put the numbers in: Q = 0.5 × 120 = 60 / The charge flow is 60 C.",
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "I think it's Charge flow (Q), The amount of charge that passes a point, in coulombs",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Want to try another one?",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Worked example 3 of 3: A charge of 30 C flows past a point in 60 s. What is the current? Tap the button under it to see each step.",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "card": "worked example: A charge of 30 C flows past a point in 60 s. What is the current? Steps: Start from Q = I t. / You want I, so divide both sides by t: I = Q ÷ t. / Put the numbers in: I = 30 ÷ 60 = 0.5 / The current is 0.5 A.",
+      "flags": []
+    },
+    {
+      "n": 28,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Copy those into your notes, then tap Next.",
+      "recap": [
+        "Current is the rate of flow of charge, measured in amperes (A)",
+        "Charge flows only round a closed circuit with a cell or battery",
+        "In one loop, the current is the same everywhere"
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 29,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 30,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 31,
+      "student": "I think it's Charge flow (Q), The amount of charge that passes a point, in coulombs",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "In one line, in your own words: what is an electric current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 32,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 33,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: You open the switch in a single loop. What happens to the current?",
+      "recap": null,
+      "choices": [
+        "It gets smaller but keeps flowing",
+        "It flows the other way",
+        "It stops only next to the switch",
+        "It stops everywhere in the loop"
+      ],
+      "flags": []
+    },
+    {
+      "n": 34,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 35,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 36,
+      "student": "I think it's Charge flow (Q), The amount of charge that passes a point, in coulombs",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: You open the switch in a single loop. What happens to the current?",
+      "recap": null,
+      "choices": [
+        "It gets smaller but keeps flowing",
+        "It flows the other way",
+        "It stops only next to the switch",
+        "It stops everywhere in the loop"
+      ],
+      "flags": []
+    },
+    {
+      "n": 37,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Not quite: it's \"It stops everywhere in the loop\". Break the loop anywhere and the flow stops everywhere.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 38,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: A current of 5 A flows for 3 minutes. How much charge flows, in coulombs (C)?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 39,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 40,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 41,
+      "student": "I think it's Charge flow (Q), The amount of charge that passes a point, in coulombs",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: A current of 5 A flows for 3 minutes. How much charge flows, in coulombs (C)?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 42,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite. Here is how it goes, one step at a time. Time must be in seconds: 3 × 60 = 180 s.",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": []
+    },
+    {
+      "n": 43,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Write the equation: Q = I t.",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": []
+    },
+    {
+      "n": 44,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 45,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 46,
+      "student": "I think it's Charge flow (Q), The amount of charge that passes a point, in coulombs",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Put the numbers in: Q = 5 × 180 = 900",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": [
+        "cut off"
+      ]
+    },
+    {
+      "n": 47,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "The charge flow is 900 C. Want to try another one?",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 48,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right. Next is Potential difference. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 49,
+      "student": "I think it's Potential difference, The push that makes charge flow through a component. Measured",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is Voltmeter.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Voltmeter**. A meter that measures potential difference."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 50,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right. Next is Voltmeter. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 51,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Right. Next is Voltmeter.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 52,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 53,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Here's the rest of this one. Connect a lamp to one cell and it glows dimly. Use two cells and it glows brighter, because more current flows.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 54,
+      "student": "I think it's Potential difference, The push that makes charge flow through a component. Measured",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Put a resistor, a part that limits the current, in the loop as well.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Resistor**. A component that limits the current in a circuit."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 55,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "The lamp dims again, because less current flows. So the size of a current depends on two things.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 56,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "A component is any part of a circuit, such as a lamp or a resistor.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 57,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 58,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 59,
+      "student": "I think it's Potential difference, The push that makes charge flow through a component. Measured",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "The first thing is the push that drives charge through the component: the potential difference across it.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 60,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "It is measured in volts (V) with a voltmeter, which is connected across the part you are testing.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **volts**. The unit of potential difference."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "The same loop with a resistor added, and a voltmeter connected across the lamp."
+      ],
+      "flags": []
+    },
+    {
+      "n": 61,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "People often call it voltage. Exam questions say potential difference, but either word gets the mark.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 62,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 63,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 64,
+      "student": "I think it's Potential difference, The push that makes charge flow through a component. Measured",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "The second is how hard the component makes it for charge to get through: its resistance.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Ohm**. The unit of resistance.",
+        "First, a word you'll need: **Resistance**. How much a component opposes the current through it."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 65,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Resistance is measured in ohms (Ω). For the same potential difference, the bigger the resistance, the smaller the current.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 66,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "The three are linked by one equation: potential difference equals current times resistance. If you know any two of them, you can rearrange it to find the third.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 67,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 68,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 69,
+      "student": "I think it's Potential difference, The push that makes charge flow through a component. Measured",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Worked example 1 of 2: A current of 2 A flows through a 3 Ω resistor. What is the potential difference across it? Tap the button under it to see each step.",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "card": "worked example: A current of 2 A flows through a 3 Ω resistor. What is the potential difference across it? Steps: Write the equation: V = I R. / Put the numbers in: V = 2 × 3 = 6 / The potential difference is 6 V.",
+      "flags": []
+    },
+    {
+      "n": 70,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Worked example 2 of 2: A potential difference of 6 V is put across a 12 Ω resistor. What is the current through it? Tap the button under it to see each step.",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "card": "worked example: A potential difference of 6 V is put across a 12 Ω resistor. What is the current through it? Steps: Write the equation: V = I R. / You want I, so divide both sides by R: I = V ÷ R. / Put the numbers in: I = 6 ÷ 12 = 0.5 / The current is 0.5 A.",
+      "flags": []
+    },
+    {
+      "n": 71,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Try it: add cells, or slide the potential difference. Watch the ammeter and the lamp. Tap Next when you are done.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "card": "widget: circuit",
+      "flags": []
+    },
+    {
+      "n": 72,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 73,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 74,
+      "student": "I think it's Potential difference, The push that makes charge flow through a component. Measured",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Copy those into your notes, then tap Next.",
+      "recap": [
+        "Potential difference (voltage) is the push, measured in volts with a voltmeter",
+        "Resistance opposes the current; it is measured in ohms (Ω)",
+        "Same potential difference, bigger resistance: smaller current"
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 75,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "In one line: what do potential difference and resistance each do to the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 76,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "No problem. A good line would say: potential difference is the push that drives the current; a bigger resistance means a smaller current; V = I R links them.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 77,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 78,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 79,
+      "student": "I think it's Potential difference, The push that makes charge flow through a component. Measured",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: Where do you put an ammeter to measure the current in a single loop?",
+      "recap": null,
+      "choices": [
+        "Only next to the cell",
+        "Across the cell",
+        "Only next to the lamp",
+        "Anywhere in the loop"
+      ],
+      "flags": []
+    },
+    {
+      "n": 80,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Not quite: it's \"Anywhere in the loop\". In a single loop the current is the same at every point.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 81,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: A component has a potential difference of 0.8 V across it and a current of 0.2 A through it. What is its resistance, in ohms (Ω)?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 82,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 83,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 84,
+      "student": "I think it's Potential difference, The push that makes charge flow through a component. Measured",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: A component has a potential difference of 0.8 V across it and a current of 0.2 A through it. What is its resistance, in ohms (Ω)?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 85,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite. Here is how it goes, one step at a time. Start from V = I R.",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": []
+    },
+    {
+      "n": 86,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "You want R, so divide both sides by I: R = V ÷ I.",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": []
+    },
+    {
+      "n": 87,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 88,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 89,
+      "student": "I think it's Potential difference, The push that makes charge flow through a component. Measured",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Put the numbers in: R = 0.8 ÷ 0.2 = 4",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": [
+        "cut off"
+      ]
+    },
+    {
+      "n": 90,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "The resistance is 4 Ω. Want to try another one?",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 91,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Before the practical, question 1 of 2: What does an ammeter measure?",
+      "recap": null,
+      "choices": [
+        "The potential difference",
+        "The energy",
+        "The resistance",
+        "The current"
+      ],
+      "flags": []
+    },
+    {
+      "n": 92,
+      "student": "I think it's In series, Connected one after another in the same loop, so the",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Not quite: it's \"The current\". An ammeter measures the current through a component.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 93,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Before the practical, question 2 of 2: You know the potential difference across a component and the current through it. How do you find its resistance?",
+      "recap": null,
+      "choices": [
+        "Multiply them together",
+        "Divide the current by the potential difference",
+        "Add them together",
+        "Divide the potential difference by the current"
+      ],
+      "flags": []
+    },
+    {
+      "n": 94,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Not quite: it's \"Divide the potential difference by the current\". Resistance = potential difference ÷ current, from V = I R.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 95,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 96,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "A quick recap. An ammeter measures the current through a component. A voltmeter measures the potential difference across it. Resistance = potential difference ÷ current.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 97,
+      "student": "I think it's In series, Connected one after another in the same loop, so the",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Right. Next is In series. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 98,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 2,
+      "point": 2,
+      "reply": "Right. Next is In series.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 99,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Right. Next is In series. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 100,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Right. Let us carry on.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 101,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Here's the rest of this one. Heaters, leads and the coils inside motors all use wire, so engineers need to know how its length changes its resistance.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 102,
+      "student": "I think it's In series, Connected one after another in the same loop, so the",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "You can measure it yourself. In this required practical, a long wire is clipped along a metre ruler and connected to a cell.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 103,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "An ammeter goes in the loop, connected in series: one after another with the wire, so the same current flows through both.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 104,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "A voltmeter is connected across the wire, in parallel with it, to measure the potential difference.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **In parallel**. Connected side by side, across the same two points."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "Measuring the resistance of a length of wire."
+      ],
+      "flags": []
+    },
+    {
+      "n": 105,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 106,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 107,
+      "student": "I think it's In series, Connected one after another in the same loop, so the",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Then find the resistance: divide the potential difference by the current. Move one clip to change the length, and repeat.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 108,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Keep the current small and switch off between readings, so the wire does not warm up.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 109,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "That keeps it at a constant temperature, which means its temperature stays the same.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Kinetic energy**. The energy an object has due to its motion; Ek = ½mv², where m is mass (kg) and v is speed (m/s); measured in joules (J)",
+        "First, a word you'll need: **temperature**. How hot or cold something is, measured in °C.",
+        "First, a word you'll need: **Constant temperature**. The temperature stays the same throughout the measurements."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 110,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 111,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 112,
+      "student": "I think it's In series, Connected one after another in the same loop, so the",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "You find that a longer wire has a bigger resistance. The same circuit measures two or more resistors joined together, in series or in parallel.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 113,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Measure the potential difference and the current for each combination, then find its resistance the same way.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 114,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Worked example: A length of the wire has a potential difference of 1.5 V across it and a current of 0.3 A through it. What is its resistance? Tap the button under it to see each step.",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "card": "worked example: A length of the wire has a potential difference of 1.5 V across it and a current of 0.3 A through it. What is its resistance? Steps: Start from V = I R. / You want R, so divide both sides by I: R = V ÷ I. / Put the numbers in: R = 1.5 ÷ 0.3 = 5 / The resistance is 5 Ω.",
+      "flags": []
+    },
+    {
+      "n": 115,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 116,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 117,
+      "student": "I think it's In series, Connected one after another in the same loop, so the",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Want to try another one?",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 118,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Copy those into your notes, then tap Next.",
+      "recap": [
+        "Ammeter in series with the wire; voltmeter in parallel across it",
+        "Resistance = potential difference ÷ current",
+        "At constant temperature, a longer wire has a bigger resistance"
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 119,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "In one line: how does the length of a wire change its resistance?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 120,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 121,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: Which meter is connected across the wire, in parallel with it?",
+      "recap": null,
+      "choices": [
+        "The ammeter",
+        "Both meters",
+        "Neither meter",
+        "The voltmeter"
+      ],
+      "flags": []
+    },
+    {
+      "n": 122,
+      "student": "I think it's In series, Connected one after another in the same loop, so the",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Not quite: it's \"The voltmeter\". The voltmeter goes in parallel, to measure the potential difference across the wire.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 123,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: A current of 0.5 A flows through a 40 Ω resistor. What is the potential difference across it, in volts (V)?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 124,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite. Here is how it goes, one step at a time. Write the equation: V = I R.",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": []
+    },
+    {
+      "n": 125,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 126,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 127,
+      "student": "I think it's In series, Connected one after another in the same loop, so the",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Put the numbers in: V = 0.5 × 40 = 20",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": [
+        "cut off"
+      ]
+    },
+    {
+      "n": 128,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "The potential difference is 20 V. Want to try another one?",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 129,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Next is I-V characteristic. What word describes how the particles are arranged?",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **I-V characteristic**. A graph of current (up the side) against potential difference (along the bottom) for a component."
+      ],
+      "flags": []
+    },
+    {
+      "n": 130,
+      "student": "I think it's I-V characteristic, A graph of current (up the side) against potential difference",
+      "studentType": "correct",
+      "kind": "fact",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Next is Directly proportional.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Directly proportional**. When one quantity doubles, the other doubles too."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 131,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Next is Directly proportional. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 132,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "retry",
+      "teachIndex": 3,
+      "point": 3,
+      "reply": "Right. Next is Directly proportional.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 133,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 134,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Here's the rest of this one. Some components behave in a simple, steady way. In others, the resistance changes as the current changes.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 135,
+      "student": "I think it's I-V characteristic, A graph of current (up the side) against potential difference",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "To find out which is which, you measure the current through a component at several potential differences and plot a graph.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 136,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "This graph is called an I-V characteristic. Current (I) goes up the side and potential difference (V) goes along the bottom.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 137,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "For a resistor kept at a constant temperature, the points lie on a straight line through the origin.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "A resistor at constant temperature: a straight line through the origin."
+      ],
+      "flags": []
+    },
+    {
+      "n": 138,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 139,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 140,
+      "student": "I think it's I-V characteristic, A graph of current (up the side) against potential difference",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Double the potential difference and the current doubles too. When two quantities change together like this, the current is directly proportional to the potential difference.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 141,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "A straight line through the origin means the resistance is not changing as the current changes.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 142,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "A component that behaves this way is an ohmic conductor. Its resistance stays the same whatever the current, as long as its temperature does not change.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Ohmic conductor**. A component whose resistance stays constant at constant temperature."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 143,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 144,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 145,
+      "student": "I think it's I-V characteristic, A graph of current (up the side) against potential difference",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "So for an ohmic conductor you can use V = I R with one fixed value of R.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 146,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Copy those into your notes, then tap Next.",
+      "recap": [
+        "I-V characteristic: current (up the side) against potential difference (along)",
+        "Ohmic conductor: a straight line through the origin",
+        "Current directly proportional to potential difference; resistance stays constant"
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 147,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "In one line: what does a straight-line I-V graph through the origin tell you?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 148,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 149,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: For an ohmic conductor, you double the potential difference. What happens to the current?",
+      "recap": null,
+      "choices": [
+        "It halves",
+        "It stays the same",
+        "It goes up by 1 A",
+        "It doubles"
+      ],
+      "flags": []
+    },
+    {
+      "n": 150,
+      "student": "I think it's I-V characteristic, A graph of current (up the side) against potential difference",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Not quite: it's \"It doubles\". The current is directly proportional to the potential difference, so it doubles too.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 151,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: A wire is kept at a constant temperature. What happens to its resistance if you use a longer piece?",
+      "recap": null,
+      "choices": [
+        "It decreases",
+        "It falls to zero",
+        "It stays the same",
+        "It increases"
+      ],
+      "flags": []
+    },
+    {
+      "n": 152,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Not quite: it's \"It increases\". At constant temperature, a longer wire has a bigger resistance.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 153,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 3,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 154,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 155,
+      "student": "I think it's I-V characteristic, A graph of current (up the side) against potential difference",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Right. Next is Filament lamp.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Filament lamp**. A bulb with a thin metal wire (the filament) that glows when hot."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 156,
+      "student": "I think it's Filament lamp, A bulb with a thin metal wire (the filament) that",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Right. Next is Filament lamp. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 157,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 4,
+      "point": 4,
+      "reply": "Right. Next is Filament lamp.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 158,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Right. Next is Filament lamp. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 159,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Right. Let us carry on.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 160,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Here's the rest of this one. Not every component gives a straight line. Some give curves, and the shapes tell you what is happening inside them.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 161,
+      "student": "I think it's Filament lamp, A bulb with a thin metal wire (the filament) that",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "An old-style bulb is a filament lamp. It has a thin coil of metal wire, the filament, that glows white-hot.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 162,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "As the current rises, the filament gets hotter, and its resistance increases as its temperature increases.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 163,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "So each extra volt pushes through less extra current than the one before. The graph bends over and gets flatter.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "A filament lamp: the line gets flatter as the filament heats up."
+      ],
+      "flags": []
+    },
+    {
+      "n": 164,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 165,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 166,
+      "student": "I think it's Filament lamp, A bulb with a thin metal wire (the filament) that",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "A diode lets current flow in one direction only. Connect it one way round and current flows.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Diode**. A component that lets current flow in one direction only."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 167,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Turn it round and almost nothing flows, because the diode has a very high resistance in the reverse direction.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 168,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "The graph lies flat along the axis on the reverse side. On the forward side it stays near zero at first, then rises steeply.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "The full graphs. The left half shows the readings with the component turned round."
+      ],
+      "flags": []
+    },
+    {
+      "n": 169,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 170,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 171,
+      "student": "I think it's Filament lamp, A bulb with a thin metal wire (the filament) that",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "For both components, the resistance is different at different points on the graph. To find it at one point, read off V and I there, then divide V by I.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 172,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Try it: drag the point along each graph and read off the current. Then try the diode the wrong way round. Tap Next when you are done.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "card": "widget: iv-graph",
+      "flags": []
+    },
+    {
+      "n": 173,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Copy those into your notes, then tap Next.",
+      "recap": [
+        "Filament lamp: gets hotter, resistance increases, graph curves and flattens",
+        "Diode: current flows in one direction only",
+        "Diode: very high resistance in the reverse direction"
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 174,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 175,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 176,
+      "student": "I think it's Filament lamp, A bulb with a thin metal wire (the filament) that",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "In one line: how are a filament lamp and a diode different from a resistor?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 177,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 178,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: Which component lets current flow in one direction only?",
+      "recap": null,
+      "choices": [
+        "A resistor",
+        "An ammeter",
+        "A filament lamp",
+        "A diode"
+      ],
+      "flags": []
+    },
+    {
+      "n": 179,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 180,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 181,
+      "student": "I think it's Filament lamp, A bulb with a thin metal wire (the filament) that",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: Which component lets current flow in one direction only?",
+      "recap": null,
+      "choices": [
+        "A resistor",
+        "An ammeter",
+        "A filament lamp",
+        "A diode"
+      ],
+      "flags": []
+    },
+    {
+      "n": 182,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Not quite: it's \"A diode\". A diode has a very high resistance in the reverse direction.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 183,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: What is a component whose resistance stays the same at constant temperature called?",
+      "recap": null,
+      "choices": [
+        "A filament lamp",
+        "An ammeter",
+        "A diode",
+        "An ohmic conductor"
+      ],
+      "flags": []
+    },
+    {
+      "n": 184,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 185,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 186,
+      "student": "I think it's Filament lamp, A bulb with a thin metal wire (the filament) that",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: What is a component whose resistance stays the same at constant temperature called?",
+      "recap": null,
+      "choices": [
+        "A filament lamp",
+        "An ammeter",
+        "A diode",
+        "An ohmic conductor"
+      ],
+      "flags": []
+    },
+    {
+      "n": 187,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 4,
+      "reply": "Not quite: it's \"An ohmic conductor\". Its I-V graph is a straight line through the origin.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 188,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Before the practical, question 1 of 2: Which meter goes in parallel across the component you are testing?",
+      "recap": null,
+      "choices": [
+        "Both meters",
+        "Neither meter",
+        "The ammeter",
+        "The voltmeter"
+      ],
+      "flags": []
+    },
+    {
+      "n": 189,
+      "student": "I think it's Variable resistor (rheostat), A resistor whose resistance you can change, often with a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Not quite: it's \"The voltmeter\". The voltmeter measures the potential difference across the component.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 190,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Before the practical, question 2 of 2: What does a straight-line I-V graph through the origin show?",
+      "recap": null,
+      "choices": [
+        "The resistance increases",
+        "Current flows one way only",
+        "The component is getting hotter",
+        "The resistance stays the same"
+      ],
+      "flags": []
+    },
+    {
+      "n": 191,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Not quite: it's \"The resistance stays the same\". A straight line through the origin means a constant resistance: an ohmic conductor.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 192,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 193,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "A quick recap. The ammeter goes in series. The voltmeter goes in parallel across the component. An I-V graph plots current against potential difference. A straight line through the origin means the resistance stays the same.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 194,
+      "student": "I think it's Variable resistor (rheostat), A resistor whose resistance you can change, often with a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Right. Next is Variable resistor (rheostat). What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 195,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 5,
+      "point": 5,
+      "reply": "Right. Next is Variable resistor (rheostat).",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 196,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Right. Next is Variable resistor (rheostat). What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 197,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Right. Let us carry on.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 198,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Here's the rest of this one. Exam questions often ask you to describe how to get these graphs, so it is worth knowing the method step by step.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 199,
+      "student": "I think it's Variable resistor (rheostat), A resistor whose resistance you can change, often with a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "The circuit has a cell or battery and the component you are testing. An ammeter is in series with the component and a voltmeter is in parallel across it.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 200,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "A variable resistor (also called a rheostat), a resistor you can adjust with a slider, is in the loop too.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 201,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Moving the slider changes the current, so you get a range of readings. Start with the variable resistor at its highest resistance, so the current is small.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "The circuit for measuring an I-V graph."
+      ],
+      "flags": []
+    },
+    {
+      "n": 202,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 203,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 204,
+      "student": "I think it's Variable resistor (rheostat), A resistor whose resistance you can change, often with a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Record the current and the potential difference, then move the slider and record again. Take repeat readings and find the mean.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 205,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "To get the other half of the graph, turn the component round and repeat; these readings count as negative.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 206,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "The lamp gets very hot, so do not touch it. Test a resistor at constant temperature, a filament lamp and a diode, and plot current against potential difference for each.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 207,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 208,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 209,
+      "student": "I think it's Variable resistor (rheostat), A resistor whose resistance you can change, often with a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "A straight-line graph means the component is linear; any other shape means it is non-linear.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Linear**. Gives a straight-line graph.",
+        "First, a word you'll need: **Non-linear**. Gives a graph that is not a straight line, such as the curve of a filament lamp or the graph of a diode."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 210,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "So a resistor at constant temperature is linear, and the filament lamp and the diode are non-linear.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 211,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "The shape shows how its resistance behaves, and so what the component is useful for.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 212,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 213,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 214,
+      "student": "I think it's Variable resistor (rheostat), A resistor whose resistance you can change, often with a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "A diode, for example, can stop current flowing the wrong way.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 215,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Copy those into your notes, then tap Next.",
+      "recap": [
+        "Ammeter in series, voltmeter in parallel, variable resistor to change the current",
+        "Turn the component round to get negative readings",
+        "Resistor: linear. Filament lamp and diode: non-linear"
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 216,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "In one line: how do you take the readings for an I-V graph?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 217,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 218,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: In the I-V practical, what is the variable resistor for?",
+      "recap": null,
+      "choices": [
+        "To measure the potential difference",
+        "To keep the current the same",
+        "To measure the current",
+        "To change the current"
+      ],
+      "flags": []
+    },
+    {
+      "n": 219,
+      "student": "I think it's Variable resistor (rheostat), A resistor whose resistance you can change, often with a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Yes, that's right. Moving its slider changes the current, so you get a range of readings.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 220,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: Why do you keep the current small in the resistance-of-a-wire practical?",
+      "recap": null,
+      "choices": [
+        "So the wire gets longer",
+        "So the voltmeter is not needed",
+        "So the ammeter reads zero",
+        "So the wire does not warm up"
+      ],
+      "flags": []
+    },
+    {
+      "n": 221,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Not quite: it's \"So the wire does not warm up\". A small current keeps the wire at a constant temperature.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 222,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 5,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 223,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 224,
+      "student": "I think it's Variable resistor (rheostat), A resistor whose resistance you can change, often with a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Right. Next is Work done.",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Energy transferred**. The energy passed on as charge flows through a component, in joules (J).",
+        "First, a word you'll need: **work**. The transfer of energy by a force",
+        "First, a word you'll need: **work is done**. When charge flows through a component, work is done: energy is transferred from the charge to the component.",
+        "First, a word you'll need: **Work done**. Energy transferred."
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 225,
+      "student": "I think it's Work done, Energy transferred. Work is done when charge flows through a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Right. Next is Work done. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 226,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 6,
+      "point": 6,
+      "reply": "Right. Next is Work done.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 227,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Right. Next is Work done. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 228,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Right. Let us carry on.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 229,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Here's the rest of this one. A cell does more than push charge round a circuit.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 230,
+      "student": "I think it's Work done, Energy transferred. Work is done when charge flows through a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "It gives energy to the charge, and the charge hands that energy over in the components: lighting a lamp, warming a heater, turning a motor.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 231,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "When charge flows through a component, work is done: energy is transferred from the charge to the component.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 232,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Energy is measured in joules (J). The potential difference across a component tells you how much energy each coulomb transfers there.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 233,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 234,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 235,
+      "student": "I think it's Work done, Energy transferred. Work is done when charge flows through a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "A potential difference of 1 volt means 1 joule is transferred for each coulomb that passes.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 236,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "So 12 V means 12 joules for every coulomb. To find the total energy transferred, multiply the charge flow by the potential difference.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 237,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "If you are given a current and a time instead of a charge, find the charge first with Q = I t.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 238,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 239,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 240,
+      "student": "I think it's Work done, Energy transferred. Work is done when charge flows through a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Worked example 1 of 3: 3 C of charge flows through a potential difference of 6 V. How much energy is transferred? Tap the button under it to see each step.",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "card": "worked example: 3 C of charge flows through a potential difference of 6 V. How much energy is transferred? Steps: Write the equation: E = Q V. / Put the numbers in: E = 3 × 6 = 18 / The energy transferred is 18 J.",
+      "flags": []
+    },
+    {
+      "n": 241,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Worked example 2 of 3: A heater has a potential difference of 12 V across it. A current of 2 A flows through it for 30 s. How much energy is transferred? Tap the button under it to see each step.",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "card": "worked example: A heater has a potential difference of 12 V across it. A current of 2 A flows through it for 30 s. How much energy is transferred? Steps: First find the charge: Q = I t = 2 × 30 = 60 C. / Write the energy equation: E = Q V. / Put the numbers in: E = 60 × 12 = 720 / The energy transferred is 720 J.",
+      "flags": []
+    },
+    {
+      "n": 242,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Worked example 3 of 3: 1.2 kJ of energy is transferred when 100 C of charge flows through a lamp. What is the potential difference across the lamp? Tap the button under it to see each step.",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "card": "worked example: 1.2 kJ of energy is transferred when 100 C of charge flows through a lamp. What is the potential difference across the lamp? Steps: Energy must be in joules. Kilo means a thousand, so 1.2 kJ = 1.2 × 1000 = 1200 J. / Start from E = Q V. You want V, so divide both sides by Q: V = E ÷ Q. / Put the numbers in: V = 1200 ÷ 100 = 12 / The potential difference is 12 V.",
+      "flags": []
+    },
+    {
+      "n": 243,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 244,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 245,
+      "student": "I think it's Work done, Energy transferred. Work is done when charge flows through a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Want to try another one?",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 246,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Copy those into your notes, then tap Next.",
+      "recap": [
+        "When charge flows, work is done: energy is transferred",
+        "1 volt means 1 joule transferred per coulomb",
+        "Energy (J) = charge flow (C) × potential difference (V)"
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 247,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "In one line: what does a potential difference of 1 volt mean?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 248,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 249,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: When charge flows through a component, what happens?",
+      "recap": null,
+      "choices": [
+        "The charge is used up",
+        "The resistance doubles",
+        "The current falls to zero",
+        "Work is done: energy is transferred"
+      ],
+      "flags": []
+    },
+    {
+      "n": 250,
+      "student": "I think it's Work done, Energy transferred. Work is done when charge flows through a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Yes, that's right. Energy is transferred from the charge to the component. The charge is not used up.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 251,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: A current of 0.25 A flows for 1 minute. How much charge flows, in coulombs (C)?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 252,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite. Here is how it goes, one step at a time. Time must be in seconds: 1 × 60 = 60 s.",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": []
+    },
+    {
+      "n": 253,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 254,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 255,
+      "student": "I think it's Work done, Energy transferred. Work is done when charge flows through a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Write the equation: Q = I t.",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": []
+    },
+    {
+      "n": 256,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Put the numbers in: Q = 0.25 × 60 = 15",
+      "recap": null,
+      "choices": [
+        "Next step"
+      ],
+      "flags": [
+        "cut off"
+      ]
+    },
+    {
+      "n": 257,
+      "student": "idk",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "The charge flow is 15 C. Want to try another one?",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 258,
+      "student": "what's your favourite football team",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 6,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 259,
+      "student": "just give me the answer",
+      "studentType": "give",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Right. Let us carry on. What word describes how the particles are arranged?",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 260,
+      "student": "I think it's Work done, Energy transferred. Work is done when charge flows through a",
+      "studentType": "correct",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Want to try another one?",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 261,
+      "student": "is it something to do with magnets and electricity",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quiz, question 1 of 7: What is electric current?",
+      "recap": null,
+      "choices": [
+        "The push that drives charge",
+        "How hard it is for charge to flow",
+        "The energy each coulomb carries",
+        "The rate of flow of charge"
+      ],
+      "flags": []
+    },
+    {
+      "n": 262,
+      "student": "thanks",
+      "studentType": "thanks",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite: it's \"The rate of flow of charge\". Current is how much charge passes a point each second.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 263,
+      "student": "no thanks, bye",
+      "studentType": "bye",
+      "kind": "free",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Thanks for sticking with it. Today I told you about electric current, potential difference and resistance, required practical, ohmic conductors, filament lamps and diodes, required practical and energy transferred. Your progress is saved, so you can come back to this lesson any time. Bye for now!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "complete": true,
+  "farewell": true,
+  "exited": false,
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "pilot": true,
+  "pilotFinished": false,
+  "lessonFlags": [],
+  "cost": 0,
+  "tutorCost": 0,
+  "tutorCalls": 0,
+  "mode": "mock",
+  "date": "2026-10-20"
+}

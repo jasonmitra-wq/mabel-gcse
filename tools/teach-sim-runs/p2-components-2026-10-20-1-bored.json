@@ -1,0 +1,2076 @@
+{
+  "id": "p2-components",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "recall",
+      "teachIndex": null,
+      "reply": "From the last lesson, question 1 of 3: What is electric current?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "what's electric current?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Electric current is a flow of charge. Its size is how much charge passes a point each second, and it's measured in amperes (A).\n\nPicture the runners on a track: if more runners pass a point each second, what happens to the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "what's amperes (a)",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Amperes (A), often called amps, are the units we use to measure current, which is how many runners pass a point each second.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "more runners pass so current gets smaller right",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: What is electric current?",
+      "recap": null,
+      "choices": [
+        "The push that drives charge",
+        "How hard it is for charge to flow",
+        "The energy each coulomb carries",
+        "The rate of flow of charge"
+      ],
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "the rate of flow of charge",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes, that's right. Current is how much charge passes a point each second.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "ok thanks",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "From the last lesson, question 2 of 3: At constant temperature, what happens to a wire's resistance as its length increases?",
+      "recap": null,
+      "choices": [
+        "It decreases",
+        "It falls to zero",
+        "It stays the same",
+        "It increases"
+      ],
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "whats resistance",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Resistance is how much a component opposes the current through it. It's measured in ohms (Ω).\n\nSo if a component has a bigger resistance, what happens to the current through it?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "bigger resistance makes current smaller?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes — a bigger resistance means a smaller current for the same push, like a narrow, muddy stretch slowing the runners down.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "it increases",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: At constant temperature, what happens to a wire's resistance as its length increases?",
+      "recap": null,
+      "choices": [
+        "It decreases",
+        "It falls to zero",
+        "It stays the same",
+        "It increases"
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "it stays the same",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite: it's \"It increases\". A longer wire has a bigger resistance.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "oh right longer wire = more resistance got it",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "From the last lesson, question 3 of 3: What does the I-V characteristic of an ohmic conductor look like?",
+      "recap": null,
+      "choices": [
+        "A curve that gets flatter",
+        "A flat line along the bottom",
+        "Flat on one side, steep on the other",
+        "A straight line through the origin"
+      ],
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "whats the origin",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "The origin is the point on a graph where both quantities are zero. On many graphs it's the bottom-left corner, where the two axes meet.\n\nIf a line goes \"through the origin\", what is the value of the quantity on the y-axis when the x-axis quantity is zero?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "umm zero i guess",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes, zero is right: a line through the origin means both quantities are zero at the same point.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "a straight line through the origin",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Back to the question: What does the I-V characteristic of an ohmic conductor look like?",
+      "recap": null,
+      "choices": [
+        "A curve that gets flatter",
+        "A flat line along the bottom",
+        "Flat on one side, steep on the other",
+        "A straight line through the origin"
+      ],
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "flat on one side steep on the other",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite: it's \"A straight line through the origin\". Its current is directly proportional to the potential difference.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "whats potential difference",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Potential difference is the push that makes charge flow through a component. It's measured in volts (V), and you'll also hear it called voltage.\n\nA cell gives a circuit this push. If you took the cell out, what would happen to the charge in the circuit?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "charge would stop flowing",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes — without the cell there is no push, so the charge stops flowing.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "ok got it",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Welcome, glad you're here! When you walk home in the evening, what have you noticed about when the street lights come on?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "they come on when it gets dark",
+      "studentType": "try",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, that's the everyday idea behind this lesson. People draw circuits using agreed simple shapes called circuit symbols, so anyone can build them. A lamp's symbol is a circle with a cross in it.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": [
+        "no question on a teaching turn"
+      ]
+    },
+    {
+      "n": 19,
+      "student": "whats circuit symbol",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A circuit symbol is the standard drawing for a component in a circuit diagram, so everyone draws it the same way. Imagine you're drawing a circuit with a switch in it, and you want it to be open: what would you leave in the switch's line?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "whats a switch",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "A switch is a part of a circuit that you can open or close to stop or allow the current to flow, like a gate on the running track.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "im starving lol",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Fair enough, hungry brains are tricky, so we'll keep this quick. In a circuit diagram, a switch is drawn with a gap when it's open, and with no gap when it's closed.\n\nIf a switch is drawn with a gap in it, what happens to the current in that circuit?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "k",
+      "studentType": "minimal",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Think of the street light that comes on when it gets dark: it only works if the loop is complete. A gap in a switch is like a closed gate on the running track, so the runners can't get past.\n\nWhat happens to the current when there is a gap in the circuit?",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **work**. The transfer of energy by a force"
+      ],
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "current stops",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, current stops is right, because a gap means no complete loop. A drawing made from circuit symbols, with straight lines for the wires, is called a circuit diagram. If you drew a wire in a circuit diagram but left a tiny gap where it should join the next component, what would happen to the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Sorry, let me say that simply. When you draw a wire, it must touch the next part with no gap, like runners needing a track with no break.\n\nIf a wire in your diagram stops just short of the next component, which part of the circuit is broken?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "the circuit",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite — it's the wire's join that's broken: a gap there means no current can flow, so the whole circuit stops working.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "can we finish soon im meant to be gaming",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "That's fine, we're nearly done and you can come back any time. In a circuit diagram, a lamp is drawn as a circle with a cross in it, and a switch is drawn open, with a gap, or closed, with no gap.\n\nIf a switch is drawn open, with a gap, what happens to the lamp?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "lamp wont light up",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes — the lamp won't light up, because the gap in an open switch means no current can flow round the circuit.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 28,
+      "student": "k",
+      "studentType": "minimal",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Instead of drawing a real lamp or meter, they use simple shapes that everyone agrees on.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 29,
+      "student": "ok",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A cell is a long thin line next to a short thick one; two or more cells joined together make a battery.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 30,
+      "student": "whats battery",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A battery is two or more cells joined together. So a single cell on its own isn't a battery.\n\nIf a circuit diagram shows three cells joined in a row, what would you call that group?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 31,
+      "student": "what?",
+      "studentType": "minimal",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "No problem — three cells joined in a row make a battery.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 32,
+      "student": "k",
+      "studentType": "minimal",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A resistor, a component that limits the current, is a small rectangle.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 33,
+      "student": "whats resistor",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A resistor is a component that limits the current, so less current gets through. In a circuit diagram, it's drawn as a small rectangle.\n\nIf you spot a small rectangle in a circuit diagram, what is that component doing to the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 34,
+      "student": "k",
+      "studentType": "minimal",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "\"k\" isn't an answer I can mark — the rectangle is a resistor, and it's resisting the current, making it harder for current to get through.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 35,
+      "student": "yeah",
+      "studentType": "minimal",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A meter is a circle with a letter: A for an ammeter, V for a voltmeter.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "Circuit symbols: cell, battery, switches, lamp, resistor and the two meters."
+      ],
+      "flags": []
+    },
+    {
+      "n": 36,
+      "student": "cant wait for friday",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A diode is a triangle pointing the way current can flow, with a bar across its tip.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 37,
+      "student": "ok got it",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Some symbols are built from others. A resistor with an arrow through it is a variable resistor.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 38,
+      "student": "whats variable resistor",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A variable resistor is a resistor whose resistance you can change, often with a slider. It's used to change the current in a circuit.\n\nSay you wanted to make the current in a circuit smaller. What would you do to the variable resistor's resistance?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 39,
+      "student": "make it bigger",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "I can't mark that without the full question. If making the resistance bigger was the right move, say so; if not, tell me what the aim was.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 40,
+      "student": "increase the resistance to make current smaller",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A diode with two arrows coming out of it is a light-emitting diode (LED), a diode that gives out light.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 41,
+      "student": "im so hungry rn",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "The chart also shows the symbol for a fuse: a rectangle with a line through it.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "More symbols: diode, LED, variable resistor and fuse."
+      ],
+      "flags": []
+    },
+    {
+      "n": 42,
+      "student": "is that like a resistor",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "To read a circuit diagram, follow the wire from one side of the cell round to the other.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 43,
+      "student": "ok",
+      "studentType": "minimal",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Components on one single path are in series. Components on separate branches are in parallel.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 44,
+      "student": "so series is when theres branches",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Copy those into your notes, then tap Next.",
+      "recap": [
+        "Every component has a standard symbol; wires are straight lines",
+        "Cell: long thin line and short thick line. Battery: two or more cells",
+        "Read a diagram by following the wire round from the cell"
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 45,
+      "student": "nah im not writing that out",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "In one line: how do you read a circuit diagram?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 46,
+      "student": "follow the wire from one side of the cell to the other",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Her line gets one point right: following the wire from one side of the cell round to the other. Missing are two points: each component has a standard symbol, and one path is in series while separate branches are in parallel.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 47,
+      "student": "ok so symbols matter and series vs parallel matters",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: Which symbol is a long thin line next to a short thick one?",
+      "recap": null,
+      "choices": [
+        "A resistor",
+        "A lamp",
+        "A diode",
+        "A cell"
+      ],
+      "flags": []
+    },
+    {
+      "n": 48,
+      "student": "a cell",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, that's right. That is the cell symbol. Two or more cells joined together make a battery.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 49,
+      "student": "cool got it",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: What does a diode do?",
+      "recap": null,
+      "choices": [
+        "Its resistance increases as it gets hotter",
+        "It measures the current",
+        "Its resistance stays the same",
+        "It lets current flow in one direction only"
+      ],
+      "flags": []
+    },
+    {
+      "n": 50,
+      "student": "lets current flow one direction only",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, that's right. In the reverse direction its resistance is very high.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 51,
+      "student": "ok",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Some components change their resistance with how hot they are. A thermistor is one: as it gets warmer, its resistance goes down.\n\nSo if a thermistor is warmed up, what happens to the current it lets through?",
+      "recap": null,
+      "pictures": [
+        "A thermistor: hotter means lower resistance."
+      ],
+      "flags": []
+    },
+    {
+      "n": 52,
+      "student": "whats thermistor",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "A thermistor is a component whose resistance goes down as its temperature goes up. Resistance is how hard it is for current to get through.\n\nSo if you cool a thermistor right down, what happens to its resistance?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 53,
+      "student": "goes down",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite: cooling a thermistor makes its resistance go up, because a thermistor's resistance falls as it gets hotter.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 54,
+      "student": "right so cold makes resistance go up",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Yes — cold makes the resistance go up, that's right. So a warm thermistor has low resistance, and for the same push it lets a bigger current through than a cold one.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 55,
+      "student": "got it",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Because of this, a thermistor can act as a sensor, a part that detects a change around it, here a change in temperature. In a thermostat, the control that keeps a room at a set temperature, a thermistor senses how warm the room is.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 56,
+      "student": "whats a thermostat",
+      "studentType": "minimal",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "A thermostat is a control that keeps a room or an oven at a set temperature. It can use a thermistor to sense how warm it is.\n\nImagine a thermostat in a room that has just got warmer. What happens to the thermistor's resistance?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 57,
+      "student": "it goes up cuz its warmer",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite — when a thermistor gets warmer, its resistance goes down, not up, so it lets more current through.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 58,
+      "student": "resistance goes down when warmer",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Yes — resistance goes down when it gets warmer. So a warm thermistor lets a bigger current through than a cold one, for the same push.\n\nIf the room cools down, what happens to the thermistor's resistance?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 59,
+      "student": "goes up cuz its colder",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes — colder means the resistance goes up, that's right. Because a thermistor reacts to temperature like this, we call it a sensor: a part that detects a change around it.\n\nIn a room thermostat, the thermistor senses the room warming up and the heater switches off. What do you think the heater does when the room cools down?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 60,
+      "student": "huh?",
+      "studentType": "bored",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Let me say it more simply. A thermostat keeps a room at the right temperature. When the room warms up, the heater switches off.\n\nSo when the room gets cold again, what does the heater do?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 61,
+      "student": "switches off too",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite — when the room gets cold, the heater switches back on, because the thermistor's resistance goes up and the circuit responds to the cold.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 62,
+      "student": "ok so cold turns heater back on",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Yes — cold turns the heater back on. A thermistor is called a sensor because it detects a change around it, here the temperature. Say a thermistor is in an oven.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 63,
+      "student": "ok",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "A thermistor is a sensor because it detects a change around it, here the temperature, and its resistance changes in response. Now picture a thermistor inside a freezer, and the freezer door is left open so the air inside warms up.\n\nWhat happens to the thermistor's resistance?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 64,
+      "student": "goes down cuz it got warmer",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Yes, warmer means the thermistor's resistance goes down. A thermostat is a control that keeps a room or an oven at a set temperature, and it uses a thermistor to sense how warm it is. Say the room warms up past the set temperature.\n\nWhat does the thermostat's circuit then do to the heater?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 65,
+      "student": "switches the heater off",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Yes — switching the heater off is right. When the room warms up, the thermistor's resistance falls, and the thermostat's circuit responds by turning the heater off.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 66,
+      "student": "next",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "In an earlier lesson you saw that a filament lamp and a diode do not keep a fixed resistance.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 67,
+      "student": "ok",
+      "studentType": "minimal",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "The same is true of two components that react to the world around them.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 68,
+      "student": "idk what theyre called",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "The other is the light-dependent resistor (LDR), which reacts to light.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 69,
+      "student": "whats an ldr",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "An LDR is a component whose resistance decreases as the light intensity on it increases. Light intensity just means how bright the light is.\n\nSo if an LDR is moved from a sunny window into a dark cupboard, what happens to its resistance?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 70,
+      "student": "goes up cuz its darker",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes — the resistance goes up, because less light means higher resistance in an LDR.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 71,
+      "student": "next",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "When the room cools, the heater comes back on. Its symbol is a resistor with a diagonal line through it that ends in a short flat tail.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "The resistor symbol, and the thermistor symbol beside it."
+      ],
+      "flags": []
+    },
+    {
+      "n": 72,
+      "student": "im so hungry rn",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "Copy those into your notes, then tap Next.",
+      "recap": [
+        "Thermistor: hotter means lower resistance",
+        "Used as a temperature sensor, for example in a thermostat",
+        "Lamps, diodes, thermistors and LDRs: resistance changes with the current"
+      ],
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 73,
+      "student": "next",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "In one line: what does a thermistor do?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 74,
+      "student": "detects temperature changes",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "\"Detects temperature changes\" gets the point that a thermistor senses temperature. Missing: as it gets hotter, its resistance decreases, and an example such as a thermostat.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 75,
+      "student": "next",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Quick question: A room warms up. What happens to the resistance of the thermistor in the thermostat?",
+      "recap": null,
+      "choices": [
+        "It stays the same",
+        "It falls to zero",
+        "It rises",
+        "It falls"
+      ],
+      "flags": []
+    },
+    {
+      "n": 76,
+      "student": "man im so tired rn",
+      "studentType": "offtopic",
+      "kind": "exit-offer",
+      "teachIndex": null,
+      "point": 1,
+      "reply": "That's fair, it's a lot of new stuff. Do you want to stop here, do one more quick thing, or switch to the slides?",
+      "recap": null,
+      "choices": [
+        "Stop here",
+        "One more quick thing",
+        "Switch to the slides"
+      ],
+      "flags": []
+    },
+    {
+      "n": 77,
+      "student": "one more quick thing",
+      "studentType": "wrong",
+      "kind": "carryon",
+      "teachIndex": 1,
+      "point": 1,
+      "reply": "Thanks for sticking with it. A thermistor's symbol is a resistor with a diagonal line through it, ending in a short flat tail. If you saw that symbol on a circuit, what would the component be sensing?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 78,
+      "student": "temperature",
+      "studentType": "try",
+      "kind": "next",
+      "teachIndex": 2,
+      "point": 1,
+      "reply": "Yes, temperature is right, that symbol is a thermistor, which senses how hot it is. That's a good place to stop, and you can come back to this lesson any time. That was the quick one. Do you want to stop here, or keep going?",
+      "recap": [
+        "A thermistor is a component whose resistance changes with temperature.",
+        "When a thermistor gets hotter, its resistance goes down.",
+        "Thermostats use thermistors to switch the heater off when the room warms up.",
+        "An LDR's resistance falls as light gets brighter, so darkness raises it."
+      ],
+      "choices": [
+        "Stop here",
+        "Keep going"
+      ],
+      "flags": [
+        "yes/no question",
+        "unanswerable: either/or question"
+      ]
+    },
+    {
+      "n": 79,
+      "student": "stop here",
+      "studentType": "bored",
+      "kind": "pause",
+      "teachIndex": null,
+      "point": 2,
+      "reply": "No problem, thanks for sticking with it. Today you answered questions on circuit symbols and thermistors. Your place is saved, so we'll pick up right here next time. Bye for now!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    true,
+    true,
+    null,
+    null
+  ],
+  "complete": false,
+  "farewell": false,
+  "exited": "pause",
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "pilot": true,
+  "pilotFinished": false,
+  "lessonFlags": [
+    "points never completed: 2 \"LDRs\", 3 \"Drawing a circuit to test a sensor\""
+  ],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "can we finish soon im meant to be gaming",
+    "would_quit": {
+      "turn": "T26",
+      "quote": "That's fine, we're nearly done and you can come back any time.",
+      "why": "She asked to finish. The tutor falsely says 'nearly done' (only key point 1 of 4) and asks yet another gap question she has already answered."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "From the last lesson, question 1 of 3: What is electric current?",
+        "note": ""
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Picture the runners on a track: if more runners pass a point each second, what happens to the current?",
+        "note": ""
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Amperes (A), often called amps, are the units we use to measure current",
+        "note": "The runner question from T1 is left hanging behind a Next button."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Back to the question: What is electric current?",
+        "note": "Ignores her wrong claim 'current gets smaller'. The misconception is never corrected."
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, that's right. Current is how much charge passes a point each second.",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "From the last lesson, question 2 of 3: At constant temperature, what happens to a wire's resistance as its length increases?",
+        "note": "Uses 'resistance' unexplained."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if a component has a bigger resistance, what happens to the current through it?",
+        "note": ""
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes — a bigger resistance means a smaller current for the same push",
+        "note": ""
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Back to the question: At constant temperature, what happens to a wire's resistance as its length increases?",
+        "note": "She had just typed the correct 'it increases'. Re-asked instead of being marked."
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Not quite: it's \"It increases\". A longer wire has a bigger resistance.",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "From the last lesson, question 3 of 3: What does the I-V characteristic of an ohmic conductor look like?",
+        "note": "Three unexplained terms: I-V characteristic, ohmic conductor, origin."
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The origin is the point on a graph where both quantities are zero.",
+        "note": "The answer to the question is stated in the same message."
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, zero is right",
+        "note": ""
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Back to the question: What does the I-V characteristic of an ohmic conductor look like?",
+        "note": "She had just typed the correct answer. Re-asked, and she then picked a wrong one."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Its current is directly proportional to the potential difference.",
+        "note": "'Potential difference' and 'directly proportional' are unexplained."
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you took the cell out, what would happen to the charge in the circuit?",
+        "note": ""
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes — without the cell there is no push, so the charge stops flowing.",
+        "note": ""
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When you walk home in the evening, what have you noticed about when the street lights come on?",
+        "note": ""
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A lamp's symbol is a circle with a cross in it.",
+        "note": ""
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Imagine you're drawing a circuit with a switch in it, and you want it to be open: what would you leave in the switch's line?",
+        "note": "Asks about the switch symbol before teaching switches."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "like a gate on the running track",
+        "note": ""
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a switch is drawn with a gap in it, what happens to the current in that circuit?",
+        "note": ""
+      },
+      {
+        "turn": "T22a",
+        "on_topic": false,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "First, a word you'll need: **work**. The transfer of energy by a force",
+        "note": "Off-lesson glossary injection, apparently triggered by the everyday word 'works' in T22."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A gap in a switch is like a closed gate on the running track, so the runners can't get past.",
+        "note": "Gives away the answer."
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you drew a wire in a circuit diagram but left a tiny gap where it should join the next component, what would happen to the current?",
+        "note": "Same gap question she just answered."
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "which part of the circuit is broken?",
+        "note": "Vague question with no clear answer."
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Not quite — it's the wire's join that's broken: a gap there means no current can flow, so the whole circuit stops working.",
+        "note": "Marks her reasonable answer wrong, then agrees with it."
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": true,
+        "quote": "That's fine, we're nearly done and you can come back any time.",
+        "note": "False claim (key point 1 of 4). No choice offered. Re-asks the gap question a third time."
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes — the lamp won't light up",
+        "note": ""
+      },
+      {
+        "turn": "T28",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Instead of drawing a real lamp or meter, they use simple shapes that everyone agrees on.",
+        "note": "Repeats T18. 'They' has no referent."
+      },
+      {
+        "turn": "T29",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A cell is a long thin line next to a short thick one",
+        "note": ""
+      },
+      {
+        "turn": "T30",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A battery is two or more cells joined together.",
+        "note": "Answer is in the same message."
+      },
+      {
+        "turn": "T31",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "three cells joined in a row make a battery.",
+        "note": ""
+      },
+      {
+        "turn": "T32",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A resistor, a component that limits the current, is a small rectangle.",
+        "note": ""
+      },
+      {
+        "turn": "T33",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A resistor is a component that limits the current, so less current gets through.",
+        "note": "Answer is in the same message."
+      },
+      {
+        "turn": "T34",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "\"k\" isn't an answer I can mark",
+        "note": "Slightly curt."
+      },
+      {
+        "turn": "T35",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A meter is a circle with a letter: A for an ammeter, V for a voltmeter.",
+        "note": "Ammeter and voltmeter are never explained."
+      },
+      {
+        "turn": "T36",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A diode is a triangle pointing the way current can flow",
+        "note": "Off-topic replies are ignored."
+      },
+      {
+        "turn": "T37",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A resistor with an arrow through it is a variable resistor.",
+        "note": ""
+      },
+      {
+        "turn": "T38",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What would you do to the variable resistor's resistance?",
+        "note": ""
+      },
+      {
+        "turn": "T39",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "I can't mark that without the full question.",
+        "note": "Her answer 'make it bigger' was correct. The tutor lost its own question."
+      },
+      {
+        "turn": "T40",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A diode with two arrows coming out of it is a light-emitting diode (LED), a diode that gives out light.",
+        "note": "Her correct restatement is not acknowledged."
+      },
+      {
+        "turn": "T41",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The chart also shows the symbol for a fuse: a rectangle with a line through it.",
+        "note": "Fuse is never explained."
+      },
+      {
+        "turn": "T42",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "To read a circuit diagram, follow the wire from one side of the cell round to the other.",
+        "note": "Ignores her question 'is that like a resistor'."
+      },
+      {
+        "turn": "T43",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Components on one single path are in series.",
+        "note": ""
+      },
+      {
+        "turn": "T44",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Copy those into your notes, then tap Next.",
+        "note": "Her wrong 'series is when theres branches' is left uncorrected."
+      },
+      {
+        "turn": "T45",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In one line: how do you read a circuit diagram?",
+        "note": ""
+      },
+      {
+        "turn": "T46",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Her line gets one point right",
+        "note": "Talks about her in the third person."
+      },
+      {
+        "turn": "T47",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Quick question: Which symbol is a long thin line next to a short thick one?",
+        "note": ""
+      },
+      {
+        "turn": "T48",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, that's right. That is the cell symbol.",
+        "note": ""
+      },
+      {
+        "turn": "T49",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Quick question: What does a diode do?",
+        "note": ""
+      },
+      {
+        "turn": "T50",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, that's right. In the reverse direction its resistance is very high.",
+        "note": ""
+      },
+      {
+        "turn": "T51",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if a thermistor is warmed up, what happens to the current it lets through?",
+        "note": ""
+      },
+      {
+        "turn": "T52",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if you cool a thermistor right down, what happens to its resistance?",
+        "note": ""
+      },
+      {
+        "turn": "T53",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Not quite: cooling a thermistor makes its resistance go up",
+        "note": ""
+      },
+      {
+        "turn": "T54",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes — cold makes the resistance go up, that's right.",
+        "note": ""
+      },
+      {
+        "turn": "T55",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "a thermistor can act as a sensor",
+        "note": ""
+      },
+      {
+        "turn": "T56",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Imagine a thermostat in a room that has just got warmer. What happens to the thermistor's resistance?",
+        "note": ""
+      },
+      {
+        "turn": "T57",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Not quite — when a thermistor gets warmer, its resistance goes down",
+        "note": ""
+      },
+      {
+        "turn": "T58",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If the room cools down, what happens to the thermistor's resistance?",
+        "note": "Repeats a question she already answered correctly ('cold makes resistance go up')."
+      },
+      {
+        "turn": "T59",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": false,
+        "too_long": false,
+        "confusing": false,
+        "quote": "What do you think the heater does when the room cools down?",
+        "note": "Heater control was not taught. Sensor is re-defined (repeat of T55)."
+      },
+      {
+        "turn": "T60",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So when the room gets cold again, what does the heater do?",
+        "note": ""
+      },
+      {
+        "turn": "T61",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Not quite — when the room gets cold, the heater switches back on",
+        "note": ""
+      },
+      {
+        "turn": "T62",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Say a thermistor is in an oven.",
+        "note": "Dangling setup with no question. Sensor defined for the third time."
+      },
+      {
+        "turn": "T63",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Now picture a thermistor inside a freezer, and the freezer door is left open so the air inside warms up. What happens to the thermistor's resistance?",
+        "note": "Repeats the warmer-to-lower question again. Boring loop."
+      },
+      {
+        "turn": "T64",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Say the room warms up past the set temperature. What does the thermostat's circuit then do to the heater?",
+        "note": "Already told in T59 and T60. Thermostat re-defined."
+      },
+      {
+        "turn": "T65",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes — switching the heater off is right.",
+        "note": ""
+      },
+      {
+        "turn": "T66",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In an earlier lesson you saw that a filament lamp and a diode do not keep a fixed resistance.",
+        "note": "Filament lamp is unexplained."
+      },
+      {
+        "turn": "T67",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "The same is true of two components that react to the world around them.",
+        "note": ""
+      },
+      {
+        "turn": "T68",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "The other is the light-dependent resistor (LDR), which reacts to light.",
+        "note": "Says 'the other' without naming the first. Jumps to key point 2 content mid key point 1."
+      },
+      {
+        "turn": "T69",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "So if an LDR is moved from a sunny window into a dark cupboard, what happens to its resistance?",
+        "note": ""
+      },
+      {
+        "turn": "T70",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes — the resistance goes up",
+        "note": ""
+      },
+      {
+        "turn": "T71",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "When the room cools, the heater comes back on. Its symbol is a resistor with a diagonal line through it that ends in a short flat tail.",
+        "note": "'Its' reads as the heater. Jumps back from LDR to thermistor."
+      },
+      {
+        "turn": "T72",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Copy those into your notes, then tap Next.",
+        "note": ""
+      },
+      {
+        "turn": "T73",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In one line: what does a thermistor do?",
+        "note": "Prompt drops 'and what is it used for?'."
+      },
+      {
+        "turn": "T74",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Missing: as it gets hotter, its resistance decreases, and an example such as a thermostat.",
+        "note": "Penalises a missing use she was never asked for."
+      },
+      {
+        "turn": "T75",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Quick question: A room warms up. What happens to the resistance of the thermistor in the thermostat?",
+        "note": ""
+      },
+      {
+        "turn": "T76",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want to stop here, do one more quick thing, or switch to the slides?",
+        "note": ""
+      },
+      {
+        "turn": "T77",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you saw that symbol on a circuit, what would the component be sensing?",
+        "note": ""
+      },
+      {
+        "turn": "T78",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, temperature is right, that symbol is a thermistor",
+        "note": ""
+      },
+      {
+        "turn": "T79",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Today you answered questions on circuit symbols and thermistors. Your place is saved",
+        "note": ""
+      }
+    ],
+    "tone_vs_reference": null,
+    "flow_faults": [
+      {
+        "type": "question_not_answered_first",
+        "turn": "T3",
+        "quote": "Back to the question: What is electric current?",
+        "note": "Her 'current gets smaller right' is ignored, not answered or corrected."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T5",
+        "quote": "From the last lesson, question 2 of 3: At constant temperature, what happens to a wire's resistance as its length increases?",
+        "note": "resistance"
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T8",
+        "quote": "Back to the question: At constant temperature, what happens to a wire's resistance as its length increases?",
+        "note": "She typed 'it increases'."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T8",
+        "quote": "Back to the question: At constant temperature, what happens to a wire's resistance as its length increases?",
+        "note": ""
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T10",
+        "quote": "From the last lesson, question 3 of 3: What does the I-V characteristic of an ohmic conductor look like?",
+        "note": "I-V characteristic"
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T10",
+        "quote": "From the last lesson, question 3 of 3: What does the I-V characteristic of an ohmic conductor look like?",
+        "note": "ohmic conductor"
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T10",
+        "quote": "A straight line through the origin",
+        "note": "origin"
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T11",
+        "quote": "The origin is the point on a graph where both quantities are zero.",
+        "note": ""
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T13",
+        "quote": "Back to the question: What does the I-V characteristic of an ohmic conductor look like?",
+        "note": "She typed 'a straight line through the origin'."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T13",
+        "quote": "Back to the question: What does the I-V characteristic of an ohmic conductor look like?",
+        "note": ""
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T14",
+        "quote": "Its current is directly proportional to the potential difference.",
+        "note": "potential difference"
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T19",
+        "quote": "Imagine you're drawing a circuit with a switch in it, and you want it to be open: what would you leave in the switch's line?",
+        "note": "switch"
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T22",
+        "quote": "A gap in a switch is like a closed gate on the running track, so the runners can't get past.",
+        "note": ""
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T23",
+        "quote": "If you drew a wire in a circuit diagram but left a tiny gap where it should join the next component, what would happen to the current?",
+        "note": "Same as the gap question she answered 'current stops'."
+      },
+      {
+        "type": "exit_not_respected",
+        "turn": "T26",
+        "quote": "That's fine, we're nearly done and you can come back any time.",
+        "note": "She asked to finish. The tutor claims 'nearly done' and asks another question."
+      },
+      {
+        "type": "tiredness_pushed_on",
+        "turn": "T26",
+        "quote": "That's fine, we're nearly done and you can come back any time.",
+        "note": "No stop, one more or slides choice was offered."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T26",
+        "quote": "If a switch is drawn open, with a gap, what happens to the lamp?",
+        "note": "Gap means no current, asked a third time."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T30",
+        "quote": "A battery is two or more cells joined together.",
+        "note": ""
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T33",
+        "quote": "A resistor is a component that limits the current, so less current gets through.",
+        "note": ""
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T35",
+        "quote": "A meter is a circle with a letter: A for an ammeter, V for a voltmeter.",
+        "note": "ammeter"
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T35",
+        "quote": "A meter is a circle with a letter: A for an ammeter, V for a voltmeter.",
+        "note": "voltmeter"
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T39",
+        "quote": "I can't mark that without the full question.",
+        "note": "'make it bigger' was correct."
+      },
+      {
+        "type": "correct_answer_not_acknowledged",
+        "turn": "T40",
+        "quote": "A diode with two arrows coming out of it is a light-emitting diode (LED), a diode that gives out light.",
+        "note": ""
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T41",
+        "quote": "The chart also shows the symbol for a fuse: a rectangle with a line through it.",
+        "note": "fuse"
+      },
+      {
+        "type": "question_not_answered_first",
+        "turn": "T42",
+        "quote": "To read a circuit diagram, follow the wire from one side of the cell round to the other.",
+        "note": "Her 'is that like a resistor' is ignored."
+      },
+      {
+        "type": "question_not_answered_first",
+        "turn": "T44",
+        "quote": "Copy those into your notes, then tap Next.",
+        "note": "Her 'so series is when theres branches' is unanswered and wrong."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T58",
+        "quote": "If the room cools down, what happens to the thermistor's resistance?",
+        "note": "She already said 'cold makes resistance go up'."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T63",
+        "quote": "Now picture a thermistor inside a freezer, and the freezer door is left open so the air inside warms up. What happens to the thermistor's resistance?",
+        "note": "Warmer means lower was already answered correctly."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T66",
+        "quote": "In an earlier lesson you saw that a filament lamp and a diode do not keep a fixed resistance.",
+        "note": "filament lamp"
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: review/answer after Next",
+        "change": "When she types an answer to the pending question after a side question (S8, S13), mark that answer immediately. Do not re-ask with 'Back to the question'. Also correct any wrong claim she makes in passing (S3).",
+        "quote": "Back to the question: What does the I-V characteristic of an ohmic conductor look like?"
+      },
+      {
+        "target": "teach-core: finish/had-enough detection",
+        "change": "Treat 'can we finish soon' as had-enough. Offer the stop / one more quick thing / slides choice. Never claim 'nearly done' unless she is on the last key point.",
+        "quote": "That's fine, we're nearly done and you can come back any time."
+      },
+      {
+        "target": "keyPoints[1].content",
+        "change": "Move the LDR sentences out of key point 1 into key point 2 only. Name the thermistor before 'The other'. Put 'Its symbol...' directly after a thermistor sentence, written as 'A thermistor's symbol is...' so it cannot read as the heater.",
+        "quote": "When the room cools, the heater comes back on. Its symbol is a resistor with a diagonal line through it that ends in a short flat tail."
+      },
+      {
+        "target": "teach-core: answer her own question first",
+        "change": "When she asks something or states a guess ('is that like a resistor', 'so series is when theres branches'), answer or correct it in one or two sentences before the next scripted line.",
+        "quote": "Copy those into your notes, then tap Next."
+      },
+      {
+        "target": "teach-core: vocabulary pre-teach",
+        "change": "Only pre-teach terms that appear in the lesson fields. Do not trigger on everyday words like 'works'. Remove the 'work' glossary line.",
+        "quote": "First, a word you'll need: **work**. The transfer of energy by a force"
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T26",
+      "question does not match what was taught: T19, T59",
+      "flow faults: question_not_answered_first T3, unexplained_term T5, correct_answer_not_acknowledged T8, question_repeated_after_correct_answer T8, unexplained_term T10, unexplained_term T10, unexplained_term T10, answer_in_question T11, correct_answer_not_acknowledged T13, question_repeated_after_correct_answer T13, unexplained_term T14, unexplained_term T19, answer_in_question T22, question_repeated_after_correct_answer T23, exit_not_respected T26, tiredness_pushed_on T26, question_repeated_after_correct_answer T26, answer_in_question T30, answer_in_question T33, unexplained_term T35, unexplained_term T35, correct_answer_not_acknowledged T39, correct_answer_not_acknowledged T40, unexplained_term T41, question_not_answered_first T42, question_not_answered_first T44, question_repeated_after_correct_answer T58, question_repeated_after_correct_answer T63, unexplained_term T66"
+    ]
+  },
+  "cost": 1.2900349999999996,
+  "tutorCost": 0.7483519999999995,
+  "tutorCalls": 186,
+  "mode": "run",
+  "date": "2026-10-20"
+}

@@ -670,6 +670,7 @@ function create(env) {
     if (!q) return false;
     const before = plain.slice(0, plain.length - q.length).trim();
     const prev = [...(_state.transcript || [])].reverse().find(t => t.role === 'assistant');
+    if (PILOT_FIX && _copyable(q, `${before} ${prev ? _stripMarkdown(prev.text) : ''}`)) return true;
     const sys = `You check one message from a tutor to a student. Reply with one word only: YES or NO.`;
     const user = [
       prev ? `The tutor's previous message: "${_stripMarkdown(prev.text)}"` : '',
@@ -679,6 +680,16 @@ function create(env) {
     ].filter(Boolean).join('\n\n');
     try { return /\bYES\b/i.test(String(await AI.call(sys, user, 5) || '')); }
     catch (e) { _logError('answer check', e); return false; }
+  }
+
+  // PILOT_FIX (g): the question's own words are all in what was just said, and it
+  // asks for something named there ("What does an ammeter measure?" after "An
+  // ammeter is a meter that measures current").
+  function _copyable(q, said) {
+    const qs = [...new Set(_stems(q))].filter(w => !/^(happen|mean|call|need|think|use|make|show|tell)$/.test(w));
+    if (qs.length < 2) return false;
+    const have = new Set(_stems(said));
+    return qs.filter(w => have.has(w)).length / qs.length >= 0.8;
   }
 
   // Fix round (2026-10-18): one short call: which of these new terms does the
@@ -2047,10 +2058,21 @@ function create(env) {
     if (idx != null) _pilotMarkTaught(idx, t);
     const pics = _pilotPicturesDue(idx);
     if (pics.length) extra = { ...extra, pictures: pics };
-    const unknown = _pilotUnknownTerms(t, extra.basic || _lastBasicTag).slice(0, 2);
-    if (!unknown.length) return { text: t, extra };
-    unknown.forEach(e => P.known.push(e.key));
-    return { text: t, extra: { ...extra, before: unknown.map(_pilotDefLine) } };
+    const before = _pilotDefsFor(t, extra.basic || _lastBasicTag);
+    return before.length ? { text: t, extra: { ...extra, before } } : { text: t, extra };
+  }
+  // The word explanations a message needs first, in order: a word used inside a
+  // definition comes before that definition. At most three.
+  function _pilotDefsFor(text, basicTag) {
+    const P = _pilot(), out = [];
+    const add = (e, depth) => {
+      if (out.length >= 3 || P.known.includes(e.key)) return;
+      P.known.push(e.key);
+      if (depth < 2) _pilotUnknownTerms(e.def).forEach(x => add(x, depth + 1));
+      out.push(_pilotDefLine(e));
+    };
+    _pilotUnknownTerms(text, basicTag).slice(0, 2).forEach(e => add(e, 0));
+    return out;
   }
 
   // The reply this turn: Next when more steps wait and nothing else is asked.
@@ -2073,6 +2095,8 @@ function create(env) {
     if (NOT_A_QUESTION.test(t) && _wordCount(t) <= 5) return false;
     if (/\bwhat (do )?you want( me to do)?\b|\bwhat do i (do|say)\b/i.test(t)) return true;
     if (/\?\s*$/.test(t) && _wordCount(t) >= 5) return true;
+    // A question typed without its question mark: "is that like a resistor", "does it go in series".
+    if (/^\W*(is that|is this|are they|does it|does that|do they|can it|can i|so is|so does|why does|how does)\b/i.test(t) && _wordCount(t) >= 4) return true;
     return !NOT_A_QUESTION.test(t) && (ASKS.test(t) || _saysConfused(t) || _asksMeaning(t));
   }
 
@@ -2164,7 +2188,7 @@ function create(env) {
       if (cur && cur.js[cur.js.length - 1] === j - 1 && _wordCount(cur.text) < 15 && _wordCount(cur.text) + _wordCount(x) <= 30) { cur.js.push(j); cur.text += ' ' + x; return; }
       cur = { t: 'tell', idx, js: [j], text: x };
       // A sentence that leans on the one before ("To find it, …", "So …") brings it along.
-      if (j > 0 && /^(it|its|it's|this|that|these|those|they|so|to find it|to do this)\b/i.test(x)) cur.text = `${s[j - 1]} ${x}`;
+      if (j > 0 && P.sent[idx][j - 1] && /^(it|its|it's|this|that|these|those|they|so|to find it|to do this)\b/i.test(x)) cur.text = `${s[j - 1]} ${x}`;
       out.push(cur);
     });
     // The lesson's own words, without the gaps its HTML tags left (" closed circuit .").
@@ -2230,9 +2254,11 @@ function create(env) {
     const p = s.idx != null ? _points[s.idx] : null;
     switch (s.t) {
       case 'tell': {
+        // (h) A word this sentence only names ("measured … with an ammeter") is explained first.
+        const before = _pilotDefsFor(s.text);
         s.js.forEach(j => { P.sent[s.idx][j] = true; });
         const pics = _pilotPicturesDue(s.idx);
-        return _pilotOut(s.text, { pt: s.idx, ...(pics.length ? { pictures: pics } : {}) }, 'pilot', s.idx);
+        return _pilotOut(s.text, { pt: s.idx, ...(pics.length ? { pictures: pics } : {}), ...(before.length ? { before } : {}) }, 'pilot', s.idx);
       }
       case 'msg': {
         P.pending = s.pending || null;
@@ -2340,9 +2366,16 @@ function create(env) {
     if (g) P.known.push(g.key);
     if (_state.checkinAsked) _state.checkinAsked = false;
     const back = P.pending && P.pending.t !== 'aside' && P.pending.t !== 'return' ? P.pending : (P.pending && P.pending.back) || null;
-    P.pending = { t: 'aside', back };
+    const noQ = _pilotNoQuestion;
     _pilotNoQuestion = false;
-    return _pilotOut(reply, idx != null ? { pt: idx } : {}, 'pilot', idx);
+    let text = reply;
+    if (noQ) {
+      const kept = _sentences(text).map(x => x.trim()).filter(x => x && !/\?/.test(x));
+      if (kept.length) text = kept.join(' ');
+    }
+    P.pending = noQ ? { t: 'return', back } : { t: 'aside', back };
+    const before = _pilotDefsFor(text);
+    return _pilotOut(text, { ...(idx != null ? { pt: idx } : {}), ...(before.length ? { before } : {}), ...(noQ ? { choices: ['Next'] } : {}) }, 'pilot', idx);
   }
   async function _pilotAsideAnswer(userText) {
     const P = _pilot(), back = P.pending.back;

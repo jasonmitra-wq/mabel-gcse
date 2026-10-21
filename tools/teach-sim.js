@@ -128,7 +128,13 @@ const spend = { inTok: 0, outTok: 0, calls: 0, usd: 0, cap: DEFAULT_CAP_USD, tut
 async function apiCall(body, attempt = 0) {
   if (spend.usd >= spend.cap) throw new Error(`STOP: spend $${spend.usd.toFixed(4)} reached the $${spend.cap} cap`);
   const { tutor, ...sent } = body;   // tutor: a local marker for the cost split, not sent
-  const res = await fetch(`${API}/messages`, { method: 'POST', headers: headers(), body: JSON.stringify(sent) });
+  let res;
+  try { res = await fetch(`${API}/messages`, { method: 'POST', headers: headers(), body: JSON.stringify(sent) }); }
+  catch (e) {
+    // A dropped connection ("fetch failed") is tried again, like a 429.
+    if (attempt < 4) { await new Promise(r => setTimeout(r, 4000 * Math.pow(2, attempt))); return apiCall(body, attempt + 1); }
+    throw e;
+  }
   if ((res.status === 429 || res.status === 529) && attempt < 4) {
     await new Promise(r => setTimeout(r, 4000 * Math.pow(2, attempt)));
     return apiCall(body, attempt + 1);

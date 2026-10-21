@@ -1,0 +1,897 @@
+{
+  "id": "p2-current-voltage",
+  "subject": "physics",
+  "model": "claude-sonnet-5-5",
+  "turns": [
+    {
+      "n": 0,
+      "student": null,
+      "kind": "opening (what she knows)",
+      "teachIndex": null,
+      "reply": "Welcome, I'm glad you're here! When you press the button on a torch and the light comes on, what do you think is happening inside it to make that light work?",
+      "flags": []
+    },
+    {
+      "n": 1,
+      "student": "idk, the battery does something?",
+      "studentType": "idk",
+      "kind": "start",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "That's a fine start: the battery does push something. Inside the torch's wires, tiny charged particles drift round together, and the amount passing a point is the charge flow. What do you think happens to that flow if you press the switch off?",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **Switch**. A part that opens or closes a gap in a circuit, to stop or start the current."
+      ],
+      "flags": []
+    },
+    {
+      "n": 2,
+      "student": "it gets faster?",
+      "studentType": "wrong",
+      "kind": "retry",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Not quite. A switch makes a gap in the loop, so the flow stops everywhere. Picture runners on a track: a gap means no runners get round.\n\nIf you pressed the switch off, what would happen to the light in the torch?",
+      "recap": null,
+      "pictures": [
+        "A closed circuit: a cell, a switch and a lamp in one loop."
+      ],
+      "flags": []
+    },
+    {
+      "n": 3,
+      "student": "oh right, so it would get dimmer?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Not quite. It wouldn't get dimmer: the flow stops completely, so the light goes off. A gap in the loop means the flow stops everywhere.\n\nIf the switch is closed again, so the loop is complete, what happens to the light?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 4,
+      "student": "it comes back on?",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes, the light comes back on, because closing the switch completes the loop, so charge can flow round the circuit again.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 5,
+      "student": "ok got it. ready for next bit",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "The amount of charge that passes a point is called the charge flow, and it is counted in a unit called coulombs, a bit like counting runners passing a spot on the track.\n\nIf 10 coulombs of charge pass a point in the wire, and then another 5 coulombs pass, how many coulombs have passed altogether?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 6,
+      "student": "um... 15?",
+      "studentType": "bored",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes — 10 plus 5 makes 15 coulombs. A flow of charge is called electric current, and its size is how many coulombs pass a point each second, like runners passing a spot on the track.\n\nIf 3 coulombs pass a point in one second, what is the size of the flow in coulombs each second?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 7,
+      "student": "what's electric current?",
+      "studentType": "bored",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Electric current is a flow of charge. Its size is how much charge passes a point each second, and it's measured in amperes (A).\n\nIf 4 coulombs pass a point each second, what is the size of the current in amperes?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 8,
+      "student": "is it like 2 amperes?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite, it's 4 amperes: current is the charge passing a point each second, so 4 coulombs each second means 4 amperes.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 9,
+      "student": "got it. next?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "One ampere means one coulomb passing a point each second, so 1 A is 1 coulomb every second. Now try one yourself: if 6 coulombs pass a point each second, how many amperes is the current?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 10,
+      "student": "is it 6 amperes?",
+      "studentType": "try",
+      "kind": "fact",
+      "teachIndex": 0,
+      "point": 0,
+      "reply": "Yes, 6 amperes is right: 6 coulombs each second means a current of 6 A. For charge to flow at all, the wire must form a complete loop, with no gaps anywhere. We call that a closed circuit.\n\nIf you cut one wire in the loop, what happens to the flow of charge?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 11,
+      "student": "whats closed circuit?",
+      "studentType": "bored",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A closed circuit is a complete loop with no gaps. Charge flows round it only if it also includes something to push it, such as a cell.\n\nIf you cut one wire in the loop, what happens to the flow of charge?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 12,
+      "student": "it stops flowing?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes — cutting a wire leaves a gap in the loop, so nothing gets round and the flow of charge stops.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 13,
+      "student": "ok ready for next",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "A switch is a part that opens or closes a gap in the loop on purpose, so it can stop or start the current. Think of the track: open the switch and there's a gap, so nothing gets round.\n\nIf a torch is lit and you flick its switch to open the gap, what happens to the lamp?",
+      "recap": null,
+      "before": [
+        "First, a word you'll need: **lamp**. In a circuit, a bulb is called a lamp."
+      ],
+      "flags": []
+    },
+    {
+      "n": 14,
+      "student": "idk what happens",
+      "studentType": "idk",
+      "kind": "checkin",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 15,
+      "student": "yeah tell me",
+      "studentType": "checkin-no",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Here's the rest of this one. Every torch, phone and kettle runs on something moving through its wires. Turn on a torch and the bulb lights at once.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 16,
+      "student": "ok got it",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "In a circuit, a bulb is called a lamp.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 17,
+      "student": "ready for next",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "You cannot see charge, but you can see what it does.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 18,
+      "student": "ok im ready",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Charge only flows round a closed circuit if it includes something to push it, such as a cell or a battery. That push is called a potential difference, and the next key point explains it.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 19,
+      "student": "whats potential difference?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Potential difference is the push that makes charge flow round a circuit. A cell or battery supplies it.\n\nIf you took the cell out of a closed circuit, what would happen to the charge?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 20,
+      "student": "it stops flowing?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Yes, it stops flowing, because the cell is what pushes the charge round the circuit.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 21,
+      "student": "next?",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Current is measured in amperes (A, or amps) with an ammeter.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "pictures": [
+        "The same loop with an ammeter in it, measuring the current."
+      ],
+      "flags": []
+    },
+    {
+      "n": 22,
+      "student": "whats ammeter?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "An ammeter is a meter that measures current. It goes in the loop, in line with the component.\n\nWhat does an ammeter measure?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 23,
+      "student": "whats component?",
+      "studentType": "idk",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "A component is just one part of a circuit, like a bulb, a switch or a cell.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 24,
+      "student": "im so hungry tbh",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "In a single loop, the current is the same at every point, because charge is not used up on the way round.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 25,
+      "student": "ok next?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "In a single loop, the current is the same at every point, because charge is not used up on the way round. So it does not matter where you put the ammeter.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 26,
+      "student": "can i get pizza later",
+      "studentType": "offtopic",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "The amount of charge that passes is the charge flow, Q. To find it, multiply the current by the time in seconds.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 27,
+      "student": "k",
+      "studentType": "minimal",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Worked example 1 of 3: A current of 2 A flows through a lamp for 5 s. How much charge flows? Tap the button under it to see each step.",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "card": "worked example: A current of 2 A flows through a lamp for 5 s. How much charge flows? Steps: Write the equation: Q = I t. / Put the numbers in: Q = 2 × 5 = 10 / The charge flow is 10 C.",
+      "flags": []
+    },
+    {
+      "n": 28,
+      "student": "2 times 5 is 10?",
+      "studentType": "try",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "Yes, 2 × 5 = 10 is right, and the unit is coulombs, so the charge flow is 10 C.\n\nUsing the same idea: if a current of 3 A flows for 4 s, how much charge flows?",
+      "recap": null,
+      "flags": []
+    },
+    {
+      "n": 29,
+      "student": "is it 7?",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Not quite — 7 comes from adding, but charge is current multiplied by time, so 3 A × 4 s gives 12 C.",
+      "recap": null,
+      "choices": [
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 30,
+      "student": "oh right my bad lol",
+      "studentType": "wrong",
+      "kind": "pilot",
+      "teachIndex": null,
+      "point": null,
+      "reply": "Want to try another one?",
+      "recap": null,
+      "choices": [
+        "Try another",
+        "Next"
+      ],
+      "flags": []
+    },
+    {
+      "n": 31,
+      "student": "nah im tired can we skip it",
+      "studentType": "idk",
+      "kind": "exit-offer",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "That's fair, it's a lot of new stuff. Do you want to stop here, do one more quick thing, or switch to the slides?",
+      "recap": null,
+      "choices": [
+        "Stop here",
+        "One more quick thing",
+        "Switch to the slides"
+      ],
+      "flags": []
+    },
+    {
+      "n": 32,
+      "student": "stop here",
+      "studentType": "try",
+      "kind": "pause",
+      "teachIndex": null,
+      "point": 0,
+      "reply": "No problem, thanks for sticking with it. Today you answered questions on electric current. Your place is saved, so we'll pick up right here next time. Bye for now!",
+      "recap": null,
+      "flags": []
+    }
+  ],
+  "coverage": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "complete": false,
+  "farewell": false,
+  "exited": "pause",
+  "coreOpts": {},
+  "firstTime": true,
+  "respectExit": true,
+  "exitScript": false,
+  "pilot": true,
+  "pilotFinished": false,
+  "lessonFlags": [
+    "points never completed: 0 \"Electric current\", 1 \"Potential difference and resistance\", 2 \"Required practical\", 3 \"Ohmic conductors\", 4 \"Filament lamps and diodes\", 5 \"Required practical\", 6 \"Energy transferred\""
+  ],
+  "persona": "bored",
+  "judge": {
+    "engagement": 2,
+    "engagement_quote": "S24: im so hungry tbh",
+    "would_quit": {
+      "turn": "T30",
+      "quote": "Want to try another one?",
+      "why": "This came after a long run of one-sentence 'Next' drips, two off-topic replies and a wrong answer. She asked to skip, said she was tired and left."
+    },
+    "turns": [
+      {
+        "turn": "T0",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "When you press the button on a torch and the light comes on, what do you think is happening inside it to make that light work?",
+        "note": ""
+      },
+      {
+        "turn": "T1a",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "A part that opens or closes a gap in a circuit, to stop or start the current.",
+        "note": "The definition uses 'circuit' and 'current' before either has been explained."
+      },
+      {
+        "turn": "T1",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Inside the torch's wires, tiny charged particles drift round together, and the amount passing a point is the charge flow.",
+        "note": "'Charged' is used before charge is explained."
+      },
+      {
+        "turn": "T2",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A switch makes a gap in the loop, so the flow stops everywhere.",
+        "note": "The answer is given in the same message as the question."
+      },
+      {
+        "turn": "T3",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If the switch is closed again, so the loop is complete, what happens to the light?",
+        "note": ""
+      },
+      {
+        "turn": "T4",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, the light comes back on, because closing the switch completes the loop",
+        "note": ""
+      },
+      {
+        "turn": "T5",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If 10 coulombs of charge pass a point in the wire, and then another 5 coulombs pass, how many coulombs have passed altogether?",
+        "note": "This only tests addition, not physics."
+      },
+      {
+        "turn": "T6",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If 3 coulombs pass a point in one second, what is the size of the flow in coulombs each second?",
+        "note": "She can answer by copying the number back."
+      },
+      {
+        "turn": "T7",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Electric current is a flow of charge.",
+        "note": ""
+      },
+      {
+        "turn": "T8",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Not quite, it's 4 amperes",
+        "note": ""
+      },
+      {
+        "turn": "T9",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "if 6 coulombs pass a point each second, how many amperes is the current?",
+        "note": ""
+      },
+      {
+        "turn": "T10",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you cut one wire in the loop, what happens to the flow of charge?",
+        "note": ""
+      },
+      {
+        "turn": "T11",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A closed circuit is a complete loop with no gaps.",
+        "note": ""
+      },
+      {
+        "turn": "T12",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes — cutting a wire leaves a gap in the loop",
+        "note": ""
+      },
+      {
+        "turn": "T13a",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In a circuit, a bulb is called a lamp.",
+        "note": ""
+      },
+      {
+        "turn": "T13",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If a torch is lit and you flick its switch to open the gap, what happens to the lamp?",
+        "note": "This re-teaches the switch. She already answered the gap question correctly, and the answer is stated in the same message."
+      },
+      {
+        "turn": "T14",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "This bit is a tricky one, so no worries. Do you want me to just tell you the rest of this one?",
+        "note": ""
+      },
+      {
+        "turn": "T15",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "Here's the rest of this one. Every torch, phone and kettle runs on something moving through its wires.",
+        "note": "It says 'the rest' but restarts from the opening and never answers the lamp question."
+      },
+      {
+        "turn": "T16",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "In a circuit, a bulb is called a lamp.",
+        "note": "Word-for-word repeat of T13a."
+      },
+      {
+        "turn": "T17",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "You cannot see charge, but you can see what it does.",
+        "note": "A one-sentence drip with no new idea for her."
+      },
+      {
+        "turn": "T18",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "That push is called a potential difference, and the next key point explains it.",
+        "note": ""
+      },
+      {
+        "turn": "T19",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "If you took the cell out of a closed circuit, what would happen to the charge?",
+        "note": "She asked to be told, but the tutor quizzes again. The answer was stated in T18."
+      },
+      {
+        "turn": "T20",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Yes, it stops flowing, because the cell is what pushes the charge round the circuit.",
+        "note": ""
+      },
+      {
+        "turn": "T21",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Current is measured in amperes (A, or amps) with an ammeter.",
+        "note": "Uses 'ammeter' without explaining it."
+      },
+      {
+        "turn": "T22",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "An ammeter is a meter that measures current. It goes in the loop, in line with the component. What does an ammeter measure?",
+        "note": "She can copy the answer straight back. 'Component' is unexplained."
+      },
+      {
+        "turn": "T23",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "A component is just one part of a circuit, like a bulb, a switch or a cell.",
+        "note": ""
+      },
+      {
+        "turn": "T24",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "In a single loop, the current is the same at every point, because charge is not used up on the way round.",
+        "note": "Ignores 'im so hungry tbh' with no brief human acknowledgement."
+      },
+      {
+        "turn": "T25",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": true,
+        "quote": "In a single loop, the current is the same at every point, because charge is not used up on the way round. So it does not matter where you put the ammeter.",
+        "note": "Repeats T24 word for word."
+      },
+      {
+        "turn": "T26",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "To find it, multiply the current by the time in seconds.",
+        "note": ""
+      },
+      {
+        "turn": "T27",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Worked example 1 of 3: A current of 2 A flows through a lamp for 5 s. How much charge flows?",
+        "note": ""
+      },
+      {
+        "turn": "T28",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": true,
+        "too_long": false,
+        "confusing": false,
+        "quote": "if a current of 3 A flows for 4 s, how much charge flows?",
+        "note": ""
+      },
+      {
+        "turn": "T29",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Not quite — 7 comes from adding, but charge is current multiplied by time, so 3 A × 4 s gives 12 C.",
+        "note": ""
+      },
+      {
+        "turn": "T30",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Want to try another one?",
+        "note": ""
+      },
+      {
+        "turn": "T31",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Do you want to stop here, do one more quick thing, or switch to the slides?",
+        "note": ""
+      },
+      {
+        "turn": "T32",
+        "on_topic": true,
+        "question_matches_what_was_just_taught": null,
+        "too_long": false,
+        "confusing": false,
+        "quote": "Today you answered questions on electric current. Your place is saved, so we'll pick up right here next time.",
+        "note": ""
+      }
+    ],
+    "tone_vs_reference": null,
+    "flow_faults": [
+      {
+        "type": "unexplained_term",
+        "turn": "T1a",
+        "quote": "A part that opens or closes a gap in a circuit, to stop or start the current.",
+        "note": "'current' is used before it is explained (T6/T7)."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T1a",
+        "quote": "A part that opens or closes a gap in a circuit, to stop or start the current.",
+        "note": "'circuit' is used before it is explained (T10)."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T1",
+        "quote": "Inside the torch's wires, tiny charged particles drift round together",
+        "note": "Charge is never explained in everyday words before this."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T2",
+        "quote": "A switch makes a gap in the loop, so the flow stops everywhere.",
+        "note": "The answer to 'what would happen to the light' is given just before the question."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T6",
+        "quote": "If 3 coulombs pass a point in one second, what is the size of the flow in coulombs each second?",
+        "note": "She can copy back the 3."
+      },
+      {
+        "type": "question_repeated_after_correct_answer",
+        "turn": "T13",
+        "quote": "If a torch is lit and you flick its switch to open the gap, what happens to the lamp?",
+        "note": "Same idea she answered correctly at S12: 'it stops flowing?'"
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T13",
+        "quote": "Think of the track: open the switch and there's a gap, so nothing gets round.",
+        "note": ""
+      },
+      {
+        "type": "tell_me_skipped_content",
+        "turn": "T15",
+        "quote": "Here's the rest of this one. Every torch, phone and kettle runs on something moving through its wires.",
+        "note": "Recaps the opening instead of the rest. The pending lamp answer is never given, and the telling is broken up by more quiz questions (T19, T22)."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T19",
+        "quote": "If you took the cell out of a closed circuit, what would happen to the charge?",
+        "note": "T18 said: 'Charge only flows round a closed circuit if it includes something to push it, such as a cell'."
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T21",
+        "quote": "Current is measured in amperes (A, or amps) with an ammeter.",
+        "note": "'ammeter' is not explained; she had to ask."
+      },
+      {
+        "type": "answer_in_question",
+        "turn": "T22",
+        "quote": "An ammeter is a meter that measures current. It goes in the loop, in line with the component. What does an ammeter measure?",
+        "note": ""
+      },
+      {
+        "type": "unexplained_term",
+        "turn": "T22",
+        "quote": "It goes in the loop, in line with the component.",
+        "note": "'component' is not explained; she had to ask."
+      }
+    ],
+    "fixes": [
+      {
+        "target": "teach-core: tell-me after check-in",
+        "change": "After she accepts the check-in, first answer the pending question ('the lamp goes off'). Then give the untaught remainder of keyPoints[0].content in one or two short messages, without restarting from the opening. Do not ask new quiz questions until the next key point.",
+        "quote": "Here's the rest of this one. Every torch, phone and kettle runs on something moving through its wires."
+      },
+      {
+        "target": "teach-core: de-duplicate already-shown sentences",
+        "change": "Track sentences already shown, including key-term intros. Skip any repeat, such as the lamp definition (T13a/T16) and the same-current sentence (T24/T25). Merge one-sentence 'Next' drips into a single message.",
+        "quote": "In a single loop, the current is the same at every point, because charge is not used up on the way round. So it does not matter where you put the ammeter."
+      },
+      {
+        "target": "teach-core: question generation",
+        "change": "Reject any question whose answer appears in the same or the previous tutor message. Ask her to apply the idea instead, e.g. 'Where could you put the ammeter in this loop?'",
+        "quote": "An ammeter is a meter that measures current. It goes in the loop, in line with the component. What does an ammeter measure?"
+      },
+      {
+        "target": "keyPoints[0].keyTerms[6].def",
+        "change": "Reword to avoid untaught terms: 'A part that opens or closes a gap in the loop, to stop or start the flow.' Alternatively, delay the Switch term until after circuit and current are taught.",
+        "quote": "A part that opens or closes a gap in a circuit, to stop or start the current."
+      },
+      {
+        "target": "keyPoints[0].content",
+        "change": "Explain the ammeter inline where it first appears ('an ammeter, a meter that measures current'). Replace 'component' in keyPoints[0].keyTerms[7].def with 'part, like the lamp' until component is taught.",
+        "quote": "Current is measured in amperes (A, or amps) with an ammeter."
+      }
+    ]
+  },
+  "verdict": {
+    "pass": false,
+    "reasons": [
+      "would quit at T30",
+      "flow faults: unexplained_term T1a, unexplained_term T1a, unexplained_term T1, answer_in_question T2, answer_in_question T6, question_repeated_after_correct_answer T13, answer_in_question T13, tell_me_skipped_content T15, answer_in_question T19, unexplained_term T21, answer_in_question T22, unexplained_term T22"
+    ]
+  },
+  "cost": 0.670625,
+  "tutorCost": 0.34218799999999994,
+  "tutorCalls": 75,
+  "mode": "run",
+  "date": "2026-10-19"
+}

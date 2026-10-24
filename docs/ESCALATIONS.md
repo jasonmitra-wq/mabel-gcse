@@ -338,3 +338,7 @@ What to try:
 - Jason: Physics → Electricity → Current and potential difference, and Components, as slides (no API key, or "Show me the slides instead") and as an AI lesson. On the slides: the pictures in order, "Show the first step" and "Try another" under each worked example, the widgets (add a cell, slide the potential difference, drag the graph point, try the diode the wrong way round; the thermistor and LDR sliders), "Make it stick" after each key point, the quiz at the end. Finish the first lesson's quiz, then open Components: it starts with three questions on the first lesson.
 - Mabel: do one of them as an AI lesson.
 - Then type "Pilot: yes" or "Pilot: <what to change>", and "Mabel: <what she said>".
+
+## Evidence layer audit (2026-10-24, tools/audit-runs/33bbc51-1.md)
+
+- F11 rejected: "The points lie on a straight line through the origin" (p2-current-voltage keyPoints[2].content) stays. The exam's resistance-against-length question credits the straight line through the origin (tools/pilot/outcomes.md, wire practical), and the lesson says it about the measured points, as an exam answer expects. The auditor flagged it as low severity, from its own knowledge (clip contact resistance can give an intercept).

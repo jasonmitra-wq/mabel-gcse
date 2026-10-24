@@ -4,6 +4,7 @@
  *   node tools/site-test.js --lesson <id>            # dry run: cost estimate only
  *   node tools/site-test.js --lesson <id> --run      # real run
  *   node tools/site-test.js --maths <M1..M6> [--run]
+ *   node tools/site-test.js --pilot diagnostic [--run]   # the Electricity "Quick check before you start"
  *   --max-usd <n>   allow a run whose estimate is over $1; also a hard stop on actual spend
  *   --exit-script   lesson mode: she says "I'm tired" once (and taps the choice
  *                   buttons) and "bye, got to go" near the end (tools/bored-student.js exitScript)
@@ -81,6 +82,7 @@ function parseArgs(argv) {
     const v = argv[i];
     if (v === '--lesson') a.lesson = argv[++i];
     else if (v === '--maths') a.maths = argv[++i];
+    else if (v === '--pilot') a.pilot = argv[++i];
     else if (v === '--run') a.run = true;
     else if (v === '--exit-script') a.exitScript = true;
     else if (v === '--max-usd') a.maxUsd = Number(argv[++i]);
@@ -89,7 +91,8 @@ function parseArgs(argv) {
     else die(`Unknown option ${v}`);
   }
   if (a.rescore) return a;
-  if (!!a.lesson === !!a.maths) die('Give exactly one of --lesson <id> or --maths <topic code>.');
+  if ([a.lesson, a.maths, a.pilot].filter(Boolean).length !== 1) die('Give exactly one of --lesson <id>, --maths <topic code> or --pilot diagnostic.');
+  if (a.pilot && !require('../js/pilot/tests.js').TESTS[a.pilot]) die(`--pilot: no test ${a.pilot}`);
   if (a.maxUsd !== null && !(a.maxUsd > 0)) die('--max-usd needs a positive number');
   return a;
 }
@@ -174,6 +177,12 @@ function estimate(a) {
     const shots = Math.min(MAX_JUDGE_IMAGES / 2, 6 + Math.ceil(turns / 3));
     const judge = (shots * 1850 + turns * 2 * 120 + 6000) * 4 / 1e6 + 8000 * 20 / 1e6;
     return { what: `lesson ${a.lesson}`, turns, shots, usd: tutor + student + judge };
+  }
+  if (a.pilot) {
+    // Pilot test mode: scripted answers, no tutor and no student model; the judge only.
+    const n = require('../js/pilot/tests.js').TESTS[a.pilot].items.length;
+    const shots = Math.min(MAX_JUDGE_IMAGES / 2, 8 + Math.ceil(n / 3));
+    return { what: `pilot test ${a.pilot}`, turns: n, shots, usd: (shots * 1850 + n * 150 + 5000) * 4 / 1e6 + 8000 * 20 / 1e6 };
   }
   const steps = 5 * 3 + 5;
   const student = steps * (900 / 1e6 + 40 * 5 / 1e6);
@@ -308,6 +317,18 @@ async function lessonMode(page, run, id) {
     await shoot(page, run, 'earlier-words-card');
     await page.click('.prereq-card [onclick*="Lessons._carryOn"]');
   }
+  // Evidence layer: before a pilot lesson, the quick check is offered (or, once
+  // done, what it showed). Screen it, then go on to the lesson.
+  await sleep(600);
+  const gate = await page.evaluate(() => {
+    const b = [...document.querySelectorAll('#lessonInner .pl-card button')].find(x => /Not now|Start the lesson/.test(x.textContent));
+    return b ? b.textContent.trim() : '';
+  });
+  if (gate) {
+    await shoot(page, run, 'pilot-card');
+    run.say(`[pilot card] tapped "${gate}"`);
+    await page.evaluate(t => [...document.querySelectorAll('#lessonInner .pl-card button')].find(x => x.textContent.trim() === t).click(), gate);
+  }
   await page.waitForFunction(() => document.getElementById('teachThread') || document.querySelector('#lessonInner [onclick*="Lessons._nextStep"]'), { timeout: 15000 }).catch(() => {});
   const isTeach = await page.evaluate(() => !!document.getElementById('teachThread'));
   const wantTeach = teachEnabled().includes(id);
@@ -405,6 +426,82 @@ function num(a) {
   return f ? +f[1] / +f[2] : parseFloat(s);
 }
 function near(a, b, tol) { const x = num(a); return !Number.isNaN(x) && typeof b === 'number' && Math.abs(x - b) <= (tol ?? 0.005) + 1e-9; }
+
+// ---------- pilot test mode (evidence layer) ----------
+
+// Home → Revise a topic → Physics → Electricity → the first pilot lesson, where
+// the quick check is offered; then every question answered like a student
+// partly there: some right, some a typical wrong choice, one "I don't know",
+// a conversion wrong with the answer worked from it. The app's marking is
+// checked against js/pilot/tests.js, worked out here independently.
+async function pilotMode(page, run, testId) {
+  const T = require('../js/pilot/tests.js');
+  const t = T.TESTS[testId];
+  run.say(`Pilot test ${testId} (${t.name}).`);
+  await shoot(page, run, 'home');
+  await clickText(page, '[onclick*="showSubjectPicker"]', 'Revise a topic', 'Revise a topic');
+  await clickText(page, '.mode-card', 'Physics', 'subject card');
+  await clickText(page, '.topic-card', 'Electricity', 'topic card', '.tc-name');
+  await shoot(page, run, 'electricity-topic');
+  await clickText(page, '.subtopic-card', 'Current, potential difference', 'lesson card', '.st-name');
+  await sleep(800);
+  await shoot(page, run, 'quick-check-offer');
+  await clickText(page, '#lessonInner button', 'Start the quick check', 'Start the quick check');
+  const answers = {};
+  for (let k = 0; k < t.items.length; k++) {
+    const it = t.items[k];
+    await page.waitForSelector('[data-next]', { timeout: 10000 });
+    if (it.graph || k % 3 === 0) await shoot(page, run, `question-${k + 1}`);
+    if (k === 5) {
+      await page.click('[data-dk]');
+      answers[it.id] = it.nums ? {} : it.parts ? [] : null;
+      run.say(`Question ${k + 1}: I don't know`);
+      await sleep(400);
+      continue;
+    }
+    let how;
+    if (it.options) {
+      const wrong = it.options.findIndex((o, j) => j !== it.correct && o.mis);
+      const pick = k % 3 === 1 && wrong !== -1 ? wrong : (k % 4 === 3 ? (it.correct + 1) % it.options.length : it.correct);
+      await page.click(`[data-o="${pick}"]`);
+      answers[it.id] = pick;
+      how = pick === it.correct ? 'right' : `wrong (${it.options[pick].mis || 'no misconception'})`;
+    } else if (it.parts) {
+      answers[it.id] = it.parts.map(p => p.correct);
+      for (let j = 0; j < it.parts.length; j++) await page.click(`[data-p="${j}"] [data-po="${it.parts[j].correct}"]`);
+      how = 'right';
+    } else {
+      const resp = {}, vals = {};
+      it.nums.forEach((n, j) => {
+        let v = n.answer;
+        if (j === 0 && it.nums.length > 1 && it.nums[1].ecf) v = n.answer * 10;     // a wrong conversion…
+        else if (n.ecf) v = new Function(...Object.keys(vals), `return (${n.ecf});`)(...Object.values(vals));   // …carried forward
+        vals[n.key] = v;
+        resp[n.key] = String(+Number(v).toPrecision(6));
+      });
+      for (const [key, v] of Object.entries(resp)) await page.type(`[data-k="${key}"]`, v);
+      answers[it.id] = resp;
+      how = `typed ${JSON.stringify(resp)}`;
+    }
+    run.say(`Question ${k + 1} (${it.type}): ${how}`);
+    await page.click('[data-next]');
+    await sleep(400);
+  }
+  await sleep(800);
+  await shoot(page, run, 'result');
+  const want = T.score(testId, answers);
+  const saved = await page.evaluate(id => {
+    const key = Object.keys(localStorage).find(k => /pilot_record$/.test(k));
+    try { const r = JSON.parse(localStorage.getItem(key) || 'null'); return r && r.tests && r.tests[id] ? r.tests[id].score : null; } catch { return null; }
+  }, testId);
+  run.check('the app marks the test as js/pilot/tests.js does (worked out independently)',
+    !!saved && saved.all.marks === want.all.marks && JSON.stringify(saved.misconceptions) === JSON.stringify(want.misconceptions),
+    saved ? `app ${saved.all.marks}/${saved.all.max}, misconceptions ${saved.misconceptions.join(',') || 'none'}; independent ${want.all.marks}/${want.all.max}, ${want.misconceptions.join(',') || 'none'}` : 'no saved result found');
+  await clickText(page, 'button', 'My record', 'My record');
+  await shoot(page, run, 'my-record');
+  await clickText(page, 'button', 'Back to Electricity', 'back to Electricity').catch(() => {});
+  await shoot(page, run, 'electricity-after');
+}
 
 async function mathsMode(page, run, code) {
   const ms = syllabi().maths;
@@ -580,7 +677,7 @@ async function mathsMode(page, run, code) {
 async function judgeRun(run, kind, id) {
   const shots = run.shots.slice(0, MAX_JUDGE_IMAGES);
   const content = [{ type: 'text', text: [
-    `You review a test of a GCSE revision website, used by a bored 15-year-old on a phone and a laptop. ${kind === 'lesson' ? `They took the AI lesson "${id}".` : `They did the maths warm-up and the topic test for "${id}".`}`,
+    `You review a test of a GCSE revision website, used by a bored 15-year-old on a phone and a laptop. ${kind === 'lesson' ? `They took the AI lesson "${id}".` : kind === 'pilot' ? `They did the Electricity "Quick check before you start" (${id}), then looked at its result and the "My record" page. The answers are scripted; judge only whether the pages work and can be read.` : `They did the maths warm-up and the topic test for "${id}".`}`,
     'Transcript (lines in [check] are automatic checks by the test tool; "independent value" is recomputed from the question text, not the app\'s stored answer):',
     run.log.join('\n'),
     '',
@@ -654,7 +751,7 @@ async function main() {
   const exe = findBrowser();
   if (!exe) die('No Chrome or Edge found (set CHROME_PATH).');
 
-  const id = a.lesson || a.maths;
+  const id = a.lesson || a.maths || `pilot-${a.pilot}`;
   const date = new Date().toISOString().slice(0, 10);
   let dir = path.join(OUT_ROOT, date, id), k = 1;
   while (fs.existsSync(dir)) dir = path.join(OUT_ROOT, date, `${id}-${++k}`);
@@ -668,7 +765,7 @@ async function main() {
   try {
     const page = await newPage(browser, base, run);
     EXIT_SCRIPT = !!a.exitScript;
-    if (a.lesson) await lessonMode(page, run, a.lesson); else await mathsMode(page, run, a.maths);
+    if (a.lesson) await lessonMode(page, run, a.lesson); else if (a.pilot) await pilotMode(page, run, a.pilot); else await mathsMode(page, run, a.maths);
   } catch (e) {
     crash = String(e.message || e);
     run.say(`[test stopped: ${crash}]`);
@@ -676,7 +773,7 @@ async function main() {
   await browser.close();
   server.close();
 
-  let j = await judgeRun(run, a.lesson ? 'lesson' : 'maths', id).catch(e => ({ raw: String(e.message || e) }));
+  let j = await judgeRun(run, a.lesson ? 'lesson' : a.pilot ? 'pilot' : 'maths', id).catch(e => ({ raw: String(e.message || e) }));
   if (j.raw !== undefined) j = { broken: [{ what: 'judge reply was not JSON', step: '' }], looks_wrong: [], would_quit: false, fixes: [], raw: j.raw };
   // Every failed automatic check counts as broken, whether or not the judge named it.
   for (const c of run.checks.filter(c => !c.ok)) {
@@ -685,7 +782,7 @@ async function main() {
   if (crash) (j.broken = j.broken || []).push({ what: `test could not finish: ${crash}`, step: '' });
   const pass = sitePass(j);
 
-  const result = { id, mode: a.lesson ? 'lesson' : 'maths', date, pass, judge: j, checks: run.checks, transcript: run.log,
+  const result = { id, mode: a.lesson ? 'lesson' : a.pilot ? 'pilot' : 'maths', date, pass, judge: j, checks: run.checks, transcript: run.log,
                    screenshots: run.shots.map(s => path.relative(ROOT, s.file).replace(/\\/g, '/')), cost: spend.usd, tutorModel: TUTOR_MODEL, tutorCost: spend.tutorUsd, apiCalls: spend.calls, browserApiCalls: spend.browserCalls };
   fs.writeFileSync(path.join(dir, 'result.json'), JSON.stringify(result, null, 2));
   const md = [`# Site test: ${id} (${result.mode}, ${date})`, '', `**${pass ? 'PASS' : 'FAIL'}** · cost $${spend.usd.toFixed(4)} (${spend.calls} tool calls, ${spend.browserCalls} calls from the site; tutor ${TUTOR_MODEL} $${spend.tutorUsd.toFixed(4)})`, '',

@@ -1,0 +1,97 @@
+# Site test: pilot-diagnostic (pilot, 2026-10-24)
+
+**FAIL** · cost $0.1327 (1 tool calls, 0 calls from the site; tutor claude-sonnet-5-5 $0.0000)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "The step meant to show the Electricity topic page after the record shows the My record page again, on both phone and laptop. Either '← Electricity' did not navigate or the topic page was never reached. So we cannot see whether the Quick check now shows as done or whether the post-tests unlocked.",
+      "step": "electricity-after"
+    },
+    {
+      "what": "The record's score split does not match the test result. The record shows exam-style 4/5 and 'What really happens' 3/8, which is 7/13. The result check gave 11/17. Four marks are missing or uncounted with no explanation. Also, Q12 and Q13 (2 parts) were wrong, so 4/5 exam-style marks looks too high.",
+      "step": "my-record"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "The 'Back to Electricity' and 'My record' buttons are cut off at the bottom edge of the viewport. They are only half visible until you scroll.",
+      "screenshot": "10-result-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The action buttons are not visible at all on the first screen. She must scroll past a long list to find any way forward.",
+      "screenshot": "10-result-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The Tests table is squeezed into four narrow columns. 'Quick check before you start' wraps over 3 lines and the 'Exam-style marks' and '\"What really happens\"' headings break mid-phrase, so it is hard to scan.",
+      "screenshot": "11-my-record-phone.png",
+      "stops_use": false
+    },
+    {
+      "what": "The header buttons are unlabelled icons on phone. Nothing says which one is home, settings or topics.",
+      "screenshot": "01-home-phone.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": false,
+  "fixes": [
+    {
+      "target": "My record / '← Electricity' back link",
+      "change": "Route it to the Electricity topic list (not re-render My record) and capture that page so the Quick check status can be confirmed as done."
+    },
+    {
+      "target": "My record Tests table, marks columns",
+      "change": "Show the total as on the result (e.g. 11/17), then the exam-style and 'what really happens' parts, with parts that add up to the total. Recheck the exam-style tally against Q12/Q13."
+    },
+    {
+      "target": "Result page layout",
+      "change": "Put 'Back to Electricity' and 'My record' buttons above the lists as well as below, or make them sticky at the bottom on phone."
+    },
+    {
+      "target": "My record Tests table on phone",
+      "change": "Below 480px, stack each test as a card (Test / When / Marks rows) instead of a 4-column table."
+    },
+    {
+      "target": "Header icon buttons",
+      "change": "Add visible short labels or aria-label plus tooltip (Home, Topics, Settings) on phone."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Pilot test diagnostic (Quick check before you start).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-electricity-topic-phone.png and 02-electricity-topic-laptop.png] electricity-topic
+    [screenshot 03-quick-check-offer-phone.png and 03-quick-check-offer-laptop.png] quick-check-offer
+    [screenshot 04-question-1-phone.png and 04-question-1-laptop.png] question-1
+    Question 1 (recall): right
+    Question 2 (calculation): typed {"t":"180"}
+    Question 3 (recall): right
+    [screenshot 05-question-4-phone.png and 05-question-4-laptop.png] question-4
+    Question 4 (graph): typed {"I":"0.4"}
+    Question 5 (recall): wrong (M1)
+    Question 6: I don't know
+    [screenshot 06-question-7-phone.png and 06-question-7-laptop.png] question-7
+    Question 7 (explain): right
+    Question 8 (recall): wrong (M6)
+    Question 9 (recall): right
+    [screenshot 07-question-10-phone.png and 07-question-10-laptop.png] question-10
+    Question 10 (practical): right
+    Question 11 (explain): wrong (M12)
+    [screenshot 08-question-12-phone.png and 08-question-12-laptop.png] question-12
+    Question 12 (graph): wrong (M13)
+    [screenshot 09-question-13-phone.png and 09-question-13-laptop.png] question-13
+    Question 13 (calculation): typed {"t":"12000","Q":"18000"}
+    Question 14 (graph): right
+    Question 15 (practical): right
+    [screenshot 10-result-phone.png and 10-result-laptop.png] result
+    [check] OK: the app marks the test as js/pilot/tests.js does (worked out independently) — app 11/17, misconceptions M1,M6,M12,M13; independent 11/17, M1,M6,M12,M13
+    [screenshot 11-my-record-phone.png and 11-my-record-laptop.png] my-record
+    [screenshot 12-electricity-after-phone.png and 12-electricity-after-laptop.png] electricity-after

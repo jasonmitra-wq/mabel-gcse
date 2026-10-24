@@ -236,7 +236,12 @@ const Pilot = (() => {
     _active = false;
     const all = Record.all(), sum = Record.summary();
     const main = document.getElementById('main');
-    const tests = Object.entries(all.tests || {}).map(([id, r]) => `<tr><td>${esc((T.TESTS[id] || {}).name || id)}</td><td>${esc(new Date(r.done).toLocaleString('en-GB'))}</td><td>${r.score.exam.max ? `${r.score.exam.marks}/${r.score.exam.max} (${r.score.examPct}%)` : '—'}</td><td>${r.score.misRight}/${r.score.misCount}</td></tr>`).join('');
+    // One row per test: the total, then its parts (which add up to the total).
+    const tests = Object.entries(all.tests || {}).map(([id, r]) => {
+      const s = r.score, pre = s.per.filter(x => x.kind === 'prereq'), preM = pre.reduce((a, x) => a + x.marks, 0), preMax = pre.reduce((a, x) => a + x.max, 0);
+      const parts = [s.exam.max ? `exam-style ${s.exam.marks}/${s.exam.max} (${s.examPct}%)` : '', s.misCount ? `"what really happens" ${s.misRight}/${s.misCount}` : '', preMax ? `maths and basics ${preM}/${preMax}` : ''].filter(Boolean).join('; ');
+      return `<tr><td><strong>${esc((T.TESTS[id] || {}).name || id)}</strong><br><span class="pl-muted">${esc(new Date(r.done).toLocaleString('en-GB'))}</span></td><td><strong>${s.all.marks}/${s.all.max}</strong><br><span class="pl-muted">${esc(parts)}</span></td></tr>`;
+    }).join('');
     const lessons = Object.entries(sum).map(([id, L]) => {
       const rows = Object.entries(L.keyPoints).map(([k, v]) => `<tr><td>${Number(k) + 1}</td><td>${Math.round(v.seconds / 60 * 10) / 10} min</td><td>${v.dontKnow}</td><td>${v.tellMe}</td><td>${v.hints}</td><td>${v.answers ? `${v.right}/${v.answers}` : '—'}</td><td>${v.predicts ? `${v.predictsRight}/${v.predicts}` : '—'}</td></tr>`).join('');
       return `<p style="margin:0.8rem 0 0"><strong>${esc(id === T.LESSONS.cv ? 'Current and potential difference' : 'Components')}</strong> ${L.finished ? '✅ finished' : L.opened ? '◑ started' : '○ not started'}</p>
@@ -247,9 +252,10 @@ const Pilot = (() => {
       <div class="pl-card"><div class="pl-title">My record</div>
         <p style="margin:0">While you do the two Electricity lessons and their tests, the app keeps a record of how they go: how long each key point takes, when you say "don't know" or "tell me", hints, your answers and your test scores. It is kept in this browser only. Jason sees it only if you press "Export for Jason" and send him the file.</p>
         <div class="pl-row"><button class="btn pri" onclick="Record.exportFile()">Export for Jason</button></div></div>
-      <div class="pl-card"><div class="pl-title">Tests</div>${tests ? `<div style="overflow-x:auto"><table class="pl-table"><tr><th>Test</th><th>When</th><th>Exam-style marks</th><th>"What really happens"</th></tr>${tests}</table></div>` : '<p class="pl-muted" style="margin:0">None yet.</p>'}</div>
+      <div class="pl-card"><div class="pl-title">Tests</div>${tests ? `<div style="overflow-x:auto"><table class="pl-table"><tr><th>Test</th><th>Marks</th></tr>${tests}</table></div>` : '<p class="pl-muted" style="margin:0">None yet.</p>'}</div>
       <div class="pl-card"><div class="pl-title">Lessons</div>${lessons}</div>
-      <div class="pl-card"><div class="pl-title">Latest entries</div>${recent ? `<details><summary>Show the last 60</summary><div style="overflow-x:auto"><table class="pl-table">${recent}</table></div></details>` : '<p class="pl-muted" style="margin:0">Nothing yet.</p>'}</div></div>`;
+      <div class="pl-card"><div class="pl-title">Latest entries</div>${recent ? `<details><summary>Show the last 60</summary><div style="overflow-x:auto"><table class="pl-table">${recent}</table></div></details>` : '<p class="pl-muted" style="margin:0">Nothing yet.</p>'}</div>
+      <div class="pl-row"><button class="btn pri" onclick="Pilot.backToTopic()">Back to Electricity</button></div></div>`;
     window.scrollTo(0, 0);
   }
 

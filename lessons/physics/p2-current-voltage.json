@@ -269,7 +269,137 @@
           "generator": "Q=It",
           "from": 0
         }
-      ]
+      ],
+      "widget": {
+        "id": "circuit",
+        "options": {
+          "twoAmmeters": true,
+          "switch": true,
+          "predicts": [
+            {
+              "id": "cv-loop",
+              "from": {
+                "lesson": "p2-current-voltage",
+                "kp": 0
+              },
+              "question": "A lamp is joined to a cell by one wire only, from one end of the cell to the lamp. Does the lamp light?",
+              "options": [
+                {
+                  "text": "No: charge needs a complete loop, out of the cell and back again"
+                },
+                {
+                  "text": "Yes: the cell sends electricity along the wire to the lamp",
+                  "mis": "M1"
+                },
+                {
+                  "text": "Yes, but only dimly",
+                  "mis": "M1"
+                },
+                {
+                  "text": "Yes, if the wire is thick enough",
+                  "mis": "M1"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "open": true
+              },
+              "try": "The switch below is open: that leaves a gap, as if there were only one wire. Look at both ammeters, then close the switch.",
+              "explain": {
+                "prompt": "In one line: why does the lamp need a complete loop?",
+                "points": [
+                  "charge flows round the whole loop and back to the cell",
+                  "a gap anywhere stops the current everywhere"
+                ]
+              }
+            },
+            {
+              "id": "cv-same-current",
+              "from": {
+                "lesson": "p2-current-voltage",
+                "kp": 0
+              },
+              "question": "Ammeter 1 is before the lamp and ammeter 2 is after it. How do their readings compare?",
+              "options": [
+                {
+                  "text": "They are the same: the same current flows all the way round"
+                },
+                {
+                  "text": "Ammeter 2 reads less: the lamp uses up some of the current",
+                  "mis": "M2"
+                },
+                {
+                  "text": "Ammeter 2 reads less: it is further round the loop from the cell",
+                  "mis": "M4"
+                },
+                {
+                  "text": "Ammeter 2 reads backwards: currents leave both ends of the cell and meet",
+                  "mis": "M3"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "open": false,
+                "cells": 1
+              },
+              "try": "Read both ammeters. Add a cell and read them again.",
+              "explain": {
+                "prompt": "In one line: what did the two ammeters show, and why?",
+                "points": [
+                  "both read the same current",
+                  "charge is not used up in the lamp",
+                  "in one loop the current is the same everywhere"
+                ]
+              }
+            },
+            {
+              "id": "cv-ammeter",
+              "from": {
+                "lesson": "p2-current-voltage",
+                "kp": 0
+              },
+              "question": "You want to measure the current through the lamp. How do you connect the ammeter?",
+              "options": [
+                {
+                  "text": "In the loop, so the same current flows through the ammeter"
+                },
+                {
+                  "text": "Across the two ends of the lamp, from one side to the other",
+                  "mis": "M10"
+                },
+                {
+                  "text": "Near the lamp; it does not have to be joined into the loop",
+                  "mis": "M10"
+                },
+                {
+                  "text": "Right next to the cell, or it reads the wrong current",
+                  "mis": "M4"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "open": false
+              },
+              "try": "Look where both ammeters sit: in the loop. They read the same, wherever they are in it.",
+              "explain": {
+                "prompt": "In one line: where does an ammeter go?",
+                "points": [
+                  "in the loop, so the current flows through it",
+                  "its place in the loop does not matter"
+                ]
+              }
+            }
+          ]
+        },
+        "intro": "Try it: predict first, then use the circuit to check. Open the switch, add cells, and watch both ammeters.",
+        "labels": [
+          "cell",
+          "switch",
+          "lamp",
+          "ammeter",
+          "current"
+        ]
+      }
     },
     {
       "heading": "Potential difference and resistance — push and opposition",
@@ -431,13 +561,132 @@
       "widget": {
         "id": "circuit",
         "options": {
-          "resistor": true
+          "resistor": true,
+          "side": true,
+          "voltmeter": true,
+          "predicts": [
+            {
+              "id": "cv-add-cell",
+              "from": {
+                "lesson": "p2-current-voltage",
+                "kp": 1
+              },
+              "question": "You add a second cell. What happens to the ammeter reading and to the lamp?",
+              "options": [
+                {
+                  "text": "Both go up: more push, so more current and a brighter lamp"
+                },
+                {
+                  "text": "The lamp gets brighter but the ammeter stays the same: a cell always gives the same current",
+                  "mis": "M5"
+                },
+                {
+                  "text": "Nothing changes: the cells always give the same current",
+                  "mis": "M5"
+                },
+                {
+                  "text": "Only the part of the loop next to the new cell gets more current",
+                  "mis": "M4"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "cells": 1,
+                "resistor": false
+              },
+              "try": "Tap Add a cell and watch the ammeter and the lamp.",
+              "explain": {
+                "prompt": "In one line: why does a second cell change the current?",
+                "points": [
+                  "two cells give a bigger potential difference (push)",
+                  "a bigger push drives a bigger current"
+                ]
+              }
+            },
+            {
+              "id": "cv-voltmeter",
+              "from": {
+                "lesson": "p2-current-voltage",
+                "kp": 1
+              },
+              "question": "The voltmeter is connected across the lamp. What does it measure?",
+              "options": [
+                {
+                  "text": "The potential difference across the lamp: the push that drives charge through it"
+                },
+                {
+                  "text": "The current flowing through the lamp",
+                  "mis": "M8"
+                },
+                {
+                  "text": "How much voltage flows through the lamp each second",
+                  "mis": "M8"
+                },
+                {
+                  "text": "The potential difference of the cell; a voltmeter only measures cells",
+                  "mis": "M9"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "cells": 1,
+                "resistor": false
+              },
+              "try": "Add a cell and watch the voltmeter across the lamp. The ammeter measures something else: the current.",
+              "explain": {
+                "prompt": "In one line: what is the difference between the ammeter reading and the voltmeter reading?",
+                "points": [
+                  "the ammeter measures the current through the lamp",
+                  "the voltmeter measures the potential difference across the lamp"
+                ]
+              }
+            },
+            {
+              "id": "cv-resistor",
+              "from": {
+                "lesson": "p2-current-voltage",
+                "kp": 1
+              },
+              "question": "You put a resistor into the loop. What happens to the current and to the lamp?",
+              "options": [
+                {
+                  "text": "The current goes down and the lamp gets dimmer"
+                },
+                {
+                  "text": "The current stays the same: a cell always gives the same current",
+                  "mis": "M5"
+                },
+                {
+                  "text": "Only the current after the resistor goes down",
+                  "mis": "M4"
+                },
+                {
+                  "text": "The current goes up and the lamp gets brighter"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "cells": 2,
+                "resistor": false
+              },
+              "try": "Put the resistor in. Then move it to the other side of the lamp. Nothing changes: the current is the same all round the loop.",
+              "explain": {
+                "prompt": "In one line: what does more resistance do to the current?",
+                "points": [
+                  "more resistance means less current",
+                  "with less current, the lamp dims",
+                  "it does not matter which side of the lamp the resistor is"
+                ]
+              }
+            }
+          ]
         },
-        "intro": "Try it: add cells, or slide the potential difference. Watch the ammeter and the lamp.",
+        "intro": "Try it: predict first, then use the circuit to check. Add cells, put the resistor in and move it, and watch the ammeter, the voltmeter and the lamp.",
         "labels": [
           "cell",
           "potential difference",
           "ammeter",
+          "voltmeter",
           "lamp",
           "resistor"
         ]
@@ -471,7 +720,7 @@
     },
     {
       "heading": "Required practical — the resistance of a wire",
-      "content": "Heaters, leads and the coils inside motors all use wire, so engineers need to know how its length changes its resistance. You can measure it yourself.\n\nIn this required practical, a long wire is clipped along a metre ruler and connected to a cell. An ammeter goes in the loop, connected <dfn>in series</dfn>: one after another with the wire, so the same current flows through both. A voltmeter is connected across the wire, <dfn>in parallel</dfn> with it, to measure the potential difference. Then find the resistance: divide the potential difference by the current.\n\nMove one clip to change the length, and repeat. Keep the current small and switch off between readings, so the wire does not warm up. That keeps it at a <dfn>constant temperature</dfn>, which means its temperature stays the same. You find that a longer wire has a bigger resistance.\n\nThe same circuit measures two or more resistors joined together, in series or in parallel. Measure the potential difference and the current for each combination, then find its resistance the same way.",
+      "content": "Heaters, leads and the coils inside motors all use wire, so engineers need to know how its length changes its resistance. You can measure it yourself.\n\nIn this required practical, a long wire is clipped along a metre ruler and connected to a cell. An ammeter goes in the loop, connected <dfn>in series</dfn>: one after another with the wire, so the same current flows through both. A voltmeter is connected across the wire, <dfn>in parallel</dfn> with it, to measure the potential difference. Then find the resistance: divide the potential difference by the current.\n\nMove one clip to change the length, and repeat. Keep the current small and switch off between readings, so the wire does not warm up. That keeps it at a <dfn>constant temperature</dfn>, which means its temperature stays the same. A hot wire can also burn you, so keep the current small. One cell's low potential difference gives no risk of an electric shock. Repeat each reading and take the mean, then plot resistance against length. You find that a longer wire has a bigger resistance. The points lie on a straight line through the origin.\n\nThe same circuit measures two or more resistors joined together, in series or in parallel. Measure the potential difference and the current for each combination, then find its resistance the same way.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "p2-wire-length",
@@ -590,15 +839,15 @@
       },
       "mixedQuestions": [
         {
-          "question": "Which meter is connected across the wire, in parallel with it?",
+          "question": "In the resistance-of-a-wire practical, why does one cell give no risk of an electric shock?",
           "options": [
-            "The voltmeter",
-            "The ammeter",
-            "Both meters",
-            "Neither meter"
+            "Its potential difference is low",
+            "It gives no current",
+            "The wire is too long",
+            "The ammeter stops a shock"
           ],
           "correct": 0,
-          "explain": "The voltmeter goes in parallel, to measure the potential difference across the wire.",
+          "explain": "A low potential difference means no risk of an electric shock. The wire can still get hot, so keep the current small.",
           "from": 2
         },
         {
@@ -695,7 +944,7 @@
     },
     {
       "heading": "Filament lamps and diodes — resistance that changes",
-      "content": "Not every component gives a straight line. Some give curves, and the shapes tell you what is happening inside them.\n\nAn old-style bulb is a <dfn>filament lamp</dfn>. It has a thin coil of metal wire, the filament, that glows white-hot. As the current rises, the filament gets hotter, and its resistance increases as its temperature increases. So each extra volt pushes through less extra current than the one before. The graph bends over and gets flatter.\n\nA <dfn>diode</dfn> lets current flow in one direction only. Connect it one way round and current flows. Turn it round and almost nothing flows, because the diode has a very high resistance in the reverse direction. The graph lies flat along the axis on the reverse side. On the forward side it stays near zero at first, then rises steeply.\n\nFor both components, the resistance is different at different points on the graph. To find it at one point, read off V and I there, then divide V by I.",
+      "content": "Not every component gives a straight line. Some give curves, and the shapes tell you what is happening inside them.\n\nAn old-style bulb is a <dfn>filament lamp</dfn>. It has a thin coil of metal wire, the filament, that glows white-hot. As the current rises, the filament gets hotter, and its resistance increases as its temperature increases. So each extra volt pushes through less extra current than the one before. The graph bends over and gets flatter: its <dfn>gradient</dfn>, or steepness, decreases.\n\nA <dfn>diode</dfn> lets current flow in one direction only. Connect it one way round and current flows. Turn it round and almost nothing flows, because the diode has a very high resistance in the reverse direction. The graph lies flat along the axis on the reverse side. On the forward side it stays near zero at first, then rises steeply.\n\nFor both components, the resistance is different at different points on the graph. To find it at one point, read off V and I there, then divide V by I.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "p2-iv-lamp-diode",
@@ -724,6 +973,10 @@
         {
           "term": "Diode",
           "def": "A component that lets current flow in one direction only. It has a very high resistance in the reverse direction."
+        },
+        {
+          "term": "Gradient",
+          "def": "How steep a line on a graph is. A flatter line has a smaller gradient."
         }
       ],
       "memTip": "Three shapes: straight line through the origin = resistor. Bending over = lamp (it gets hot). Flat one side, steep the other = diode (one way only).",
@@ -760,9 +1013,159 @@
             "lamp",
             "diode"
           ],
-          "negative": true
+          "negative": true,
+          "predicts": [
+            {
+              "id": "cv-ohmic-R",
+              "from": {
+                "lesson": "p2-current-voltage",
+                "kp": 3
+              },
+              "question": "A 10 Ω resistor is kept at a constant temperature. You double the potential difference across it. What is its resistance now?",
+              "options": [
+                {
+                  "text": "Still 10 Ω: the current doubles too"
+                },
+                {
+                  "text": "20 Ω: R = V ÷ I, and V has doubled",
+                  "mis": "M12"
+                },
+                {
+                  "text": "5 Ω",
+                  "mis": "M12"
+                },
+                {
+                  "text": "You cannot tell: it depends on the current",
+                  "mis": "M12"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "comp": "resistor",
+                "V": 2
+              },
+              "try": "On the resistor graph, drag the point from 2 V to 4 V and watch the resistance (V ÷ I).",
+              "explain": {
+                "prompt": "In one line: why does the resistor keep the same resistance?",
+                "points": [
+                  "double the potential difference, double the current",
+                  "V ÷ I stays the same",
+                  "it is an ohmic conductor at constant temperature"
+                ]
+              }
+            },
+            {
+              "id": "cv-axes",
+              "from": {
+                "lesson": "p2-current-voltage",
+                "kp": 3
+              },
+              "question": "On an I-V characteristic, which quantity goes up the side?",
+              "options": [
+                {
+                  "text": "The current"
+                },
+                {
+                  "text": "The potential difference",
+                  "mis": "M14"
+                },
+                {
+                  "text": "The resistance"
+                },
+                {
+                  "text": "The time"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "comp": "resistor",
+                "V": 3
+              },
+              "try": "Look at the labels on the two axes of the graph.",
+              "explain": {
+                "prompt": "In one line: what does each axis of an I-V graph show?",
+                "points": [
+                  "current goes up the side",
+                  "potential difference goes along the bottom"
+                ]
+              }
+            },
+            {
+              "id": "cv-lamp-R",
+              "from": {
+                "lesson": "p2-current-voltage",
+                "kp": 4
+              },
+              "question": "On the filament lamp graph, at 6 V the current is 0.56 A. What is the lamp's resistance there?",
+              "options": [
+                {
+                  "text": "6 ÷ 0.56, about 11 Ω"
+                },
+                {
+                  "text": "The steepness of the curve at that point",
+                  "mis": "M13"
+                },
+                {
+                  "text": "0.56 ÷ 6, about 0.09 Ω",
+                  "mis": "M14"
+                },
+                {
+                  "text": "6 × 0.56, about 3.4 Ω"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "comp": "lamp",
+                "V": 6
+              },
+              "try": "On the lamp graph, the point is at 6 V. Read the current and the resistance. Then drag it to 2 V: the resistance is lower there.",
+              "explain": {
+                "prompt": "In one line: how do you find the resistance at one point on an I-V graph?",
+                "points": [
+                  "read the potential difference and the current at that point",
+                  "divide the potential difference by the current",
+                  "not the steepness of the line"
+                ]
+              }
+            },
+            {
+              "id": "cv-diode",
+              "from": {
+                "lesson": "p2-current-voltage",
+                "kp": 4
+              },
+              "question": "A diode is turned round, and the ammeter reads 0 A. Why?",
+              "options": [
+                {
+                  "text": "Its resistance is very high in the reverse direction, so almost no current flows"
+                },
+                {
+                  "text": "The ammeter is broken"
+                },
+                {
+                  "text": "There is a gap in the circuit"
+                },
+                {
+                  "text": "The cell and the diode push against each other"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "comp": "diode",
+                "V": -2
+              },
+              "try": "On the diode graph, the point is at a negative potential difference: the diode is turned round. Drag it to the right of zero.",
+              "explain": {
+                "prompt": "In one line: why does almost no current flow through a diode turned round?",
+                "points": [
+                  "current flows through a diode in one direction only",
+                  "its resistance is very high in the reverse direction"
+                ]
+              }
+            }
+          ]
         },
-        "intro": "Try it: drag the point along each graph and read off the current. Then try the diode the wrong way round.",
+        "intro": "Try it: predict first, then drag the point along each graph and read off the current and the resistance. Try the diode the wrong way round.",
         "labels": [
           "resistor",
           "filament lamp",
@@ -808,7 +1211,7 @@
     },
     {
       "heading": "Required practical — measuring I-V characteristics",
-      "content": "Exam questions often ask you to describe how to get these graphs, so it is worth knowing the method step by step.\n\nThe circuit has a cell or battery and the component you are testing. An ammeter is in series with the component and a voltmeter is in parallel across it. A <dfn>variable resistor</dfn> (also called a rheostat), a resistor you can adjust with a slider, is in the loop too. Moving the slider changes the current, so you get a range of readings.\n\nStart with the variable resistor at its highest resistance, so the current is small. Record the current and the potential difference, then move the slider and record again. Take repeat readings and find the mean. To get the other half of the graph, turn the component round and repeat; these readings count as negative. The lamp gets very hot, so do not touch it.\n\nTest a resistor at constant temperature, a filament lamp and a diode, and plot current against potential difference for each. A straight-line graph means the component is <dfn>linear</dfn>; any other shape means it is <dfn>non-linear</dfn>. So a resistor at constant temperature is linear, and the filament lamp and the diode are non-linear. The shape shows how its resistance behaves, and so what the component is useful for. A diode, for example, can stop current flowing the wrong way.",
+      "content": "Exam questions often ask you to describe how to get these graphs, so it is worth knowing the method step by step.\n\nThe circuit has a cell or battery and the component you are testing. An ammeter is in series with the component and a voltmeter is in parallel across it. A <dfn>variable resistor</dfn> (also called a rheostat), a resistor you can adjust with a slider, is in the loop too. Moving the slider changes the current, so you get a range of readings. Or change the number of cells, or use a supply whose potential difference you can set.\n\nStart with the variable resistor at its highest resistance, so the current is small. Record the current and the potential difference, then move the slider and record again. Take readings at even steps across the range. Take repeat readings and find the mean. To get the other half of the graph, turn the component round and repeat; these readings count as negative. The lamp gets very hot, so do not touch it.\n\nTest a resistor at constant temperature, a filament lamp and a diode, and plot current against potential difference for each. A straight-line graph means the component is <dfn>linear</dfn>; any other shape means it is <dfn>non-linear</dfn>. So a resistor at constant temperature is linear, and the filament lamp and the diode are non-linear. The shape shows how its resistance behaves, and so what the component is useful for. A diode, for example, can stop current flowing the wrong way.",
       "examFlag": true,
       "cardFlag": false,
       "diagram": "p2-iv-practical-circuit",
@@ -902,7 +1305,7 @@
             "To change the current",
             "To measure the current",
             "To measure the potential difference",
-            "To keep the current the same"
+            "To close the circuit, as a switch does"
           ],
           "correct": 0,
           "explain": "Moving its slider changes the current, so you get a range of readings.",
@@ -1098,7 +1501,63 @@
           "generator": "Q=It",
           "from": 0
         }
-      ]
+      ],
+      "widget": {
+        "id": "circuit",
+        "options": {
+          "resistor": true,
+          "energy": true,
+          "predicts": [
+            {
+              "id": "cv-flat-cell",
+              "from": {
+                "lesson": "p2-current-voltage",
+                "kp": 6
+              },
+              "question": "A torch cell goes flat after a few hours. What has it run out of?",
+              "options": [
+                {
+                  "text": "Its store of energy: the charge is still there, but the cell no longer gives it energy"
+                },
+                {
+                  "text": "Its charge: the charge has all been used up",
+                  "mis": "M6"
+                },
+                {
+                  "text": "Its current",
+                  "mis": "M6"
+                },
+                {
+                  "text": "Its electricity",
+                  "mis": "M7"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "cells": 2,
+                "resistor": true,
+                "seconds": 0
+              },
+              "try": "Tap Run for 10 s a few times. Compare the charge that left the cell with the charge that came back, and watch the energy go up.",
+              "explain": {
+                "prompt": "In one line: what does the cell give the charge, and what happens to it?",
+                "points": [
+                  "the same charge comes back to the cell: it is not used up",
+                  "the cell gives the charge energy",
+                  "the energy is transferred in the lamp (E = Q V)"
+                ]
+              }
+            }
+          ]
+        },
+        "intro": "Try it: predict first, then run the circuit and compare the charge with the energy.",
+        "labels": [
+          "cell",
+          "lamp",
+          "charge flow",
+          "energy transferred"
+        ]
+      }
     }
   ],
   "tables": [
@@ -1222,14 +1681,22 @@
   "commonMistakes": [
     "Drawing the filament lamp I-V curve bending towards the I-axis instead of away from it. It curves away because resistance increases, so less current flows than expected.",
     "Connecting the voltmeter in series instead of parallel. A voltmeter must be in parallel, across the component, to measure the potential difference across it.",
-    "Forgetting to check units in Q = It. Time must be in seconds, not minutes or hours, before substituting.",
-    "Saying a diode 'blocks all current' in the reverse direction. It has a very high resistance, so a very small current flows."
+    "Not converting units first. Minutes and hours go into seconds (× 60, × 3600). Milli means ÷ 1000: 50 mA = 0.05 A and 400 ms = 0.4 s. Kilo means × 1000: 1.2 kJ = 1200 J and 2.5 kV = 2500 V.",
+    "Saying a diode 'blocks all current' in the reverse direction. It has a very high resistance, so a very small current flows.",
+    "Misreading a graph's scale. Check what each small square is worth before you read off a value: 0.08 A is not 0.8 A.",
+    "Turning the equation the wrong way round. To find Q from E = Q V, divide: Q = E ÷ V. Multiplying E by V scores nothing."
   ],
   "examTips": [
     "Always show the formula, then the substitution, then the answer with units. Even one mark is at stake if you skip a step.",
     "For 'describe and explain' I-V questions, name the shape and then explain the physics. For example: 'The curve means resistance is increasing, because the filament temperature rises as current increases'.",
     "In the required practical, know why each meter goes where it does. Don't just say 'ammeter = series, voltmeter = parallel'. Give the reason. The ammeter measures the current through the component. The voltmeter measures the p.d. across it.",
-    "Current is only directly proportional to potential difference for an ohmic conductor at constant temperature. Don't assume this for lamps or diodes."
+    "Current is only directly proportional to potential difference for an ohmic conductor at constant temperature. Don't assume this for lamps or diodes.",
+    "Write one version of an equation only. If you write a right one and a wrong one, neither scores.",
+    "Round only at the end, and only to the significant figures the question asks for. Keep the zeros in front: 0.004167 A to 2 significant figures is 0.0042 A.",
+    "Measurement words: a zero error is a reading with nothing connected. Resolution is the smallest step a meter shows. Repeat readings that are close together are precise.",
+    "Take the mean of the repeat readings only. Do not include the value you set, such as the length.",
+    "For a filament lamp, doubling the potential difference does not double the current. Its resistance rises as it heats up.",
+    "Asked how to change the potential difference? Give a way: move the variable resistor's slider, change the number of cells, or set the supply to a different potential difference. \"Close the switch\" does not score."
   ],
   "revisionCardBullets": [
     "Current (I) — the rate of flow of charge. Unit: ampere (A)",
@@ -1500,16 +1967,16 @@
       "from": 1
     },
     {
-      "question": "At constant temperature, what happens to a wire's resistance as its length increases?",
+      "question": "Which equation links charge flow, current and time?",
       "options": [
-        "It increases",
-        "It decreases",
-        "It stays the same",
-        "It falls to zero"
+        "Q = I t",
+        "Q = I ÷ t",
+        "I = Q t",
+        "t = Q I"
       ],
       "correct": 0,
-      "explain": "A longer wire has a bigger resistance.",
-      "from": 2
+      "explain": "Charge flow = current × time. A correct rearrangement also scores, but write only one version.",
+      "from": 0
     },
     {
       "question": "What does the I-V characteristic of an ohmic conductor look like?",
@@ -1550,6 +2017,35 @@
     {
       "generator": "E=QV",
       "from": 6
+    },
+    {
+      "question": "At constant temperature, what happens to a wire's resistance as its length increases?",
+      "options": [
+        "It increases",
+        "It decreases",
+        "It stays the same",
+        "It falls to zero"
+      ],
+      "correct": 0,
+      "explain": "A longer wire has a bigger resistance.",
+      "from": 2
+    }
+  ],
+  "morePractice": [
+    {
+      "label": "Charge and current (Q = I t)",
+      "url": "https://isaacscience.org/questions/gcse_ch3_22_q1",
+      "source": "Isaac Physics"
+    },
+    {
+      "label": "Resistance (V = I R)",
+      "url": "https://isaacscience.org/questions/gcse_ch3_24_q1_r1",
+      "source": "Isaac Physics"
+    },
+    {
+      "label": "I-V characteristics",
+      "url": "https://isaacscience.org/questions/gcse_ch3_25_q1",
+      "source": "Isaac Physics"
     }
   ]
 }

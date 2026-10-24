@@ -153,7 +153,61 @@
           "explain": "In the reverse direction its resistance is very high.",
           "from": "p2-current-voltage"
         }
-      ]
+      ],
+      "widget": {
+        "id": "circuit",
+        "options": {
+          "switch": true,
+          "redraw": true,
+          "predicts": [
+            {
+              "id": "comp-same-circuit",
+              "from": {
+                "lesson": "p2-components",
+                "kp": 0
+              },
+              "question": "Two circuit diagrams show the same cell, switch, lamp and ammeter joined in one loop. In one, the lamp is drawn on the right; in the other, on the left. What can you say?",
+              "options": [
+                {
+                  "text": "They are the same circuit, so the lamp gets the same current"
+                },
+                {
+                  "text": "They are different circuits, because the parts are in different places",
+                  "mis": "M11"
+                },
+                {
+                  "text": "The lamp drawn nearer the cell gets more current",
+                  "mis": "M4"
+                },
+                {
+                  "text": "The lamp drawn on the right is brighter",
+                  "mis": "M11"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "layout": 0,
+                "open": false
+              },
+              "try": "Tap Draw it another way. The parts move on the page, but it is the same loop: the ammeter and the lamp do not change.",
+              "explain": {
+                "prompt": "In one line: when are two circuit diagrams the same circuit?",
+                "points": [
+                  "when the same parts are joined in the same loop",
+                  "where a part is drawn on the page does not matter"
+                ]
+              }
+            }
+          ]
+        },
+        "intro": "Try it: predict first, then redraw the circuit and compare.",
+        "labels": [
+          "cell",
+          "switch",
+          "lamp",
+          "ammeter"
+        ]
+      }
     },
     {
       "heading": "Thermistors — resistance that changes with temperature",
@@ -648,12 +702,15 @@
     "Drawing a resistor as a zigzag. The standard symbol is a small rectangle.",
     "Leaving gaps where wires should join in a circuit diagram. A gap means no current can flow.",
     "Mixing up the LDR and thermistor. An LDR responds to light. A thermistor responds to temperature. Both drop in resistance as their quantity increases.",
-    "Forgetting that an LED is a type of diode. So it only conducts in the forward direction. It will not light up if it is connected the wrong way round."
+    "Forgetting that an LED is a type of diode. So it only conducts in the forward direction. It will not light up if it is connected the wrong way round.",
+    "Drawing a line through the circle of an ammeter or voltmeter. Only the letter goes inside the circle."
   ],
   "examTips": [
     "When describing an LDR or thermistor, always say what happens to resistance as light intensity or temperature increases.",
     "When you draw a circuit diagram, use the standard symbols, straight lines for wires and no gaps where wires should join.",
-    "Ammeter in series, voltmeter in parallel: say why. The ammeter measures the current through the component; the voltmeter measures the potential difference across it."
+    "Ammeter in series, voltmeter in parallel: say why. The ammeter measures the current through the component; the voltmeter measures the potential difference across it.",
+    "Different thermistors have different graphs. To choose one for a job, pick the one whose resistance changes most over the temperatures you need.",
+    "An LED connected the wrong way round gives almost no current. Its resistance is very high in the reverse direction. \"The circuit is broken\" does not score."
   ],
   "revisionCardBullets": [
     "Circuit diagrams use standard symbols; wires are straight lines",
@@ -882,6 +939,18 @@
       "from": 0
     },
     {
+      "question": "Which symbol is a fuse?",
+      "options": [
+        "A rectangle with a line through it",
+        "A rectangle with an arrow through it",
+        "A rectangle in a circle with two arrows pointing in",
+        "A circle with a cross in it"
+      ],
+      "correct": 0,
+      "explain": "A fuse is a rectangle with a line through it. An arrow through a rectangle is a variable resistor.",
+      "from": 0
+    },
+    {
       "question": "Components on separate branches of a circuit are…",
       "options": [
         "in parallel",
@@ -932,6 +1001,18 @@
     {
       "generator": "V=IR",
       "from": 3
+    }
+  ],
+  "morePractice": [
+    {
+      "label": "Resistance (V = I R)",
+      "url": "https://isaacscience.org/questions/gcse_ch3_24_q1_r1",
+      "source": "Isaac Physics"
+    },
+    {
+      "label": "Components (diodes and LEDs)",
+      "url": "https://isaacscience.org/questions?stages=gcse&subjects=physics&fields=electricity&topics=components",
+      "source": "Isaac Physics"
     }
   ]
 }

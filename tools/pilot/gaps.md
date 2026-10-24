@@ -22,18 +22,18 @@ thermistor and LDR behaviour and uses; the sensor test circuit.
 |---|---|---|
 | G1 Unit conversions the exam uses but the lessons did not practise: mA, ms, hours, kV | examiner error 1 (8 parts) | "Try another" now also makes questions with mA, ms and hours (Q = I t) and kV (E = Q V); each first step converts and says what the prefix means. Watch out (common mistakes) listing every conversion. |
 | G2 Chained calculations | 6 parts, 5 to 6 marks | "Try another" for E = Q V now includes a current and a time (Q = I t first). The Q = I t then R = V ÷ I chain (Higher, 2 parts) is not added to the lesson; it is in the post-test only. |
-| G3 Significant figures and powers of ten | examiner error 4 | End quiz question (2 significant figures, wrong options match the errors) and an exam tip. |
+| G3 Significant figures and powers of ten | examiner error 4 | Exam tip with a worked example (0.004167 A to 2 significant figures). No key point teaches significant figures, so it is not quizzed (audit F6). |
 | G4 Writing an equation from memory; two versions score nothing | 6 recall parts; errors 5 and 6 | End quiz question on the Q = I t equation; exam tip "write one version only". |
-| G5 What turning up a resistance does to the current, the lamp's pd and the total resistance | 5% full marks (error 9) | Predict-first item on the key point 2 circuit (resistor in, then moved), with a voltmeter across the lamp in the widget. |
+| G5 What turning up a resistance does to the current, the lamp's pd and the total resistance | 5% full marks (error 9) | Predict-first item on the key point 2 circuit: put a resistor in (the current falls, the lamp dims), then move it. The lamp's potential difference falling is series sharing, taught in p2-series-parallel, so it is not asked here (audit F4); the widget's voltmeter still shows it. |
 | G6 Wire practical: repeats and mean, the resistance-length graph (straight through the origin), the hazard and its control, why one cell is safe | method questions (6 marks, levels); errors 15 and 16 | Two sentences in key point 3; the mixed question on the voltmeter replaced by one on why one cell is safe. |
 | G7 I-V practical: ways to vary the pd; a range at even steps | errors 17 and 18 | Two sentences in key point 6 (number of cells, a settable supply; every volt from 0 to 6 V); a "close the switch" wrong option on the mixed question; exam tip. |
-| G8 Measurement words: zero error, resolution, precision, mean of repeats only | errors 12, 23, 26, 27 | End quiz question on zero error (replacing one on the voltmeter, practised elsewhere); exam tips for the other words. |
+| G8 Measurement words: zero error, resolution, precision, mean of repeats only | errors 12, 23, 26, 27 | Exam tips (watch outs). Not quizzed: no key point teaches these words (audit F6). |
 | G9 "Gradient" (the exam asks how the gradient changes) | 23% right (error 11) | Key point 5 now names it: the graph gets flatter, its gradient (steepness) decreases. New key term and glossary entry. |
 | G10 Lamp at double the pd: power not four times | 2% full marks (error 20) | Exam tip: the current does not double because the lamp's resistance rises. |
-| G11 Inverse proportion shown by a constant product | error 24 | Exam tip. |
+| G11 Inverse proportion shown by a constant product | error 24 | Not added: no key point in these lessons has inversely proportional quantities (audit F6); the exam example is a series circuit. |
 | G12 Reversed LED or diode: no current because of very high reverse resistance, not "the circuit is broken" | error 19 (3 parts) | Predict-first item on the key point 5 I-V graph (diode turned round); exam tip in p2-components. |
 | G13 Fuse and thermistor symbols often not known; careless meter symbols | error 7 (7 parts) | p2-components end quiz question on the fuse symbol; common mistake on lines through meter circles. |
-| G14 Choosing a thermistor: biggest change over the range, not lowest resistance | error 21 | p2-components end quiz question and exam tip. |
+| G14 Choosing a thermistor: biggest change over the range, not lowest resistance | error 21 | p2-components exam tip: different thermistors have different graphs; pick the one whose resistance changes most over the range. The end-quiz item was removed (audit F13: the key point does not teach it). The post-test asks it with the numbers given. |
 | G15 Reading a graph scale (0.08 A, not 0.8 A) | error 13 | Common mistake. |
 | — Not added: thermistor in series (pd sharing), parallel resistors, static shocks, power | errors 22, 25; mixed parts | Taught in p2-series-parallel, p2-static and p2-power-energy; outside these lessons. |
 | — Not added: pencil for graphs, the jockey | errors 14; 2 parts | Exam technique, not physics; very rare. |
@@ -86,9 +86,13 @@ passes for both lessons. One gap found and fixed while adding text: "power"
 (taught in a later lesson) in key point 6 was reworded ("a supply whose
 potential difference you can set").
 
-## 5. Also
+## 5. Independent audit
+
+tools/audit-runs/33bbc51-1.md: 14 findings, 13 fixed once (logged in tools/spec-check-results/P2-FIX-LOG.md), F11 rejected (docs/ESCALATIONS.md).
+
+## 6. Also
 
 - "More practice" at the end of each lesson: Isaac Physics GCSE sets (links,
   not copies), on the last slide and at the end of the AI lesson.
-- Text added: p2-current-voltage 1,265 → 1,344 words of teaching text (limit
+- Text added: p2-current-voltage 1,265 → 1,340 words of teaching text (limit
   1,350); p2-components unchanged (735).

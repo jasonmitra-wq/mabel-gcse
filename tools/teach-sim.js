@@ -394,7 +394,7 @@ async function judge(r) {
   const { data } = findLesson(r.id);
   const own = transcriptText(r);
   const text = await apiCall(Bored.judgeBody({ lessonTitle: data.title || r.id, subject: r.subject,
-    lessonFields: Bored.lessonFieldLines(data), transcript: own, reference: referenceText(r.id, own) }));
+    lessonFields: Bored.lessonFieldLines(data), transcript: own, reference: referenceText(r.id, own), extra: Bored.prereqNote(r.id) }));
   let j;
   try { j = Bored.parseJudge(text); } catch (e) { return { judge: null, judgeRaw: text, verdict: { pass: false, reasons: ['judge reply was not JSON'] } }; }
   return { judge: j, verdict: Bored.verdict(j) };

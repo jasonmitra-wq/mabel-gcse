@@ -448,6 +448,9 @@ function checkLesson(id, opts) {
   // 8. v3.1 additions (brief docs/briefs/2026-10-19-pilot-feedback-v3-1.md, step 1).
   checkV31({ id, subject, L, kps, terms, prereq, basicsIdeas, full, dfnSpans, kpStart, kpText, eqs, examples, subs, fail, warn });
 
+  // 9. Prerequisite order (brief docs/briefs/2026-10-19-evidence-layer.md, step 2).
+  checkPrereqMap({ id, subject, L, kps, kpText, eqs, examples, subs, fail, warn });
+
   // 7. Diagrams render clean (all this lesson's diagrams, the picture sequences too).
   const diags = [...new Set([...kps.map(k => k.diagram), ...kps.flatMap(k => (k.pictures || []).map(p => p && p.diagram))].filter(Boolean))];
   if (diags.length && !opts.noDiagrams) {
@@ -671,6 +674,105 @@ function checkV31(c) {
     if (kinds.filter(k => k === 'mc').length < 3) fail('endQuiz', 'needs at least three multiple-choice questions (the next lesson opens with three of them)');
     const covered = new Set(quiz.map(q => q.from).filter(Number.isInteger));
     if (covered.size < Math.ceil(kps.length / 2)) warn('endQuiz', `covers ${covered.size} of ${kps.length} key points ("from")`);
+  }
+}
+
+// ── Prerequisite map (evidence layer, step 2) ──────────────────
+// data/prereq/<subject>-*.json: every idea a group of lessons uses, what it
+// depends on (maths skills too), and where it is taught. A lesson in a map may
+// only use an idea after its prerequisites, in order:
+//   - every term the lesson explains or borrows is an idea in the map;
+//   - an idea the map says is taught in key point k is introduced there;
+//   - an idea is not used in a key point before the one that teaches it, nor
+//     taken from a later lesson, unless the lesson's basics recap it;
+//   - each prerequisite of an idea comes first: an earlier key point (or
+//     earlier in the same one), an earlier lesson that this lesson lists in its
+//     prerequisites, re-explains or recaps in its basics, or outside these lessons;
+//   - a worked example that rearranges or converts a unit has that maths skill
+//     among its equation's prerequisites.
+function prereqMaps(subject) {
+  const dir = path.join(ROOT, 'data', 'prereq');
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir).filter(f => f.startsWith(`${subject}-`) && f.endsWith('.json')).map(f => ({ file: `data/prereq/${f}`, map: readJson(path.join(dir, f)) }));
+}
+function ideaRegex(term) {
+  const base = String(term).trim();
+  const caps = /^[A-Z]{2,}$/.test(base);
+  return new RegExp(`(^|[^A-Za-z])${esc(base).replace(/\s+/g, '[\\s-]+')}(s|es)?(?![A-Za-z])`, caps ? '' : 'i');
+}
+function checkPrereqMap(c) {
+  const { id, L, kps, kpText, eqs, examples, subs, fail } = c;
+  const order = subs.map(s => s.id);
+  for (const { file, map } of prereqMaps(c.subject)) {
+    if (!(map.lessons || []).includes(id)) continue;
+    const ideas = map.ideas || [];
+    const byId = new Map(ideas.map(x => [x.id, x]));
+    const where = `prereq ${file}`;
+    ideas.forEach(x => {
+      if (!x.id || !x.name || !Array.isArray(x.terms) || !Array.isArray(x.dependsOn) || !x.taught) fail(where, `idea ${x.id || '?'} needs id, name, terms, dependsOn and taught`);
+      (x.dependsOn || []).forEach(d => { if (!byId.has(d)) fail(where, `${x.id} depends on ${d}, which is not in the map`); });
+      if (x.taught !== 'outside these lessons' && !(x.taught && x.taught.lesson && Number.isInteger(x.taught.keyPoint))) fail(where, `${x.id}: taught must be { lesson, keyPoint } or "outside these lessons"`);
+    });
+    const res = ideas.map(x => ({ x, res: (x.terms || []).map(ideaRegex) }));
+    const termIdea = t => { const k = norm(t); return ideas.find(x => (x.terms || []).some(u => norm(u) === k || fold(norm(u)) === fold(k))); };
+    const basicsText = (L.basics || []).map(b => `${b.idea || ''}`).join(' | ');
+    const inBasics = x => (x.terms || []).some(t => ideaRegex(t).test(basicsText));
+    const listed = x => (L.prerequisites || []).some(p => (x.terms || []).some(t => norm(t) === norm(p.term) || norm(p.term).startsWith(norm(t) + ' ')));
+    const dfnIn = (x, k) => [...String(kps[k].content || '').matchAll(/<dfn>(.*?)<\/dfn>/gis)].some(m => (x.terms || []).some(t => ideaRegex(t).test(strip(m[1])))) ||
+      (kps[k].keyTerms || []).some(t => t && (x.terms || []).some(u => ideaRegex(u).test(t.term)));
+    const reExplained = x => kps.some((kp, k) => dfnIn(x, k));
+    const at = x => (x.taught && x.taught.lesson ? x.taught : null);
+    const before = (a, b) => order.indexOf(a) < order.indexOf(b);
+
+    // Every term the lesson explains or borrows is in the map.
+    const used = new Set();
+    kps.forEach(kp => {
+      for (const m of String(kp.content || '').matchAll(/<dfn>(.*?)<\/dfn>/gis)) used.add(strip(m[1]).trim());
+      (kp.keyTerms || []).forEach(t => t && t.term && used.add(String(t.term).replace(/\s*\(.*?\)\s*/g, ' ').trim()));
+    });
+    (L.prerequisites || []).forEach(p => p && p.term && used.add(String(p.term).replace(/\s*\(.*?\)\s*/g, ' ').trim()));
+    for (const t of used) if (t && !termIdea(t)) fail(where, `"${t}" (used by ${id}) is not in the prerequisite map`);
+
+    // Ideas taught in this lesson: introduced where the map says; prerequisites first.
+    for (const x of ideas) {
+      const t = at(x);
+      if (!t || t.lesson !== id) continue;
+      if (t.keyPoint >= kps.length) { fail(where, `${x.id}: key point ${t.keyPoint} out of range for ${id}`); continue; }
+      if ((x.terms || []).length && !dfnIn(x, t.keyPoint)) fail(`${where}: ${x.id}`, `the map says it is taught in ${id} key point ${t.keyPoint}, but no <dfn> or key term there names it`);
+      for (const d of x.dependsOn || []) {
+        const D = byId.get(d), dt = D && at(D);
+        if (!D || !dt) continue;   // outside these lessons
+        if (dt.lesson === id) {
+          if (dt.keyPoint > t.keyPoint) fail(`${where}: ${x.id}`, `needs ${d}, which ${id} teaches later (key point ${dt.keyPoint} after ${t.keyPoint})`);
+        } else if (!before(dt.lesson, id)) fail(`${where}: ${x.id}`, `needs ${d}, taught in ${dt.lesson}, which comes after ${id}`);
+        else if (!listed(D) && !reExplained(D) && !inBasics(D) && (D.terms || []).length) fail(`${where}: ${x.id}`, `needs ${d} from ${dt.lesson}: list it in prerequisites, re-explain it or recap it in basics`);
+      }
+    }
+    // No idea used before the key point that teaches it, or from a later lesson.
+    for (const { x, res: rs } of res) {
+      const t = at(x);
+      if (!t || !rs.length) continue;
+      for (let k = 0; k < kps.length; k++) {
+        if (!rs.some(re => re.test(kpText[k]))) continue;
+        if (t.lesson === id && k < t.keyPoint && !inBasics(x)) { fail(`keyPoints[${k}].content`, `uses "${x.name}" (${x.id}) before key point ${t.keyPoint}, which teaches it (prerequisite map)`); break; }
+        if (t.lesson !== id && !before(t.lesson, id) && !inBasics(x) && !dfnIn(x, k)) { fail(`keyPoints[${k}].content`, `uses "${x.name}" (${x.id}), taught later in ${t.lesson} (prerequisite map)`); break; }
+        if (t.lesson !== id && before(t.lesson, id) && !listed(x) && !reExplained(x) && !inBasics(x)) { fail(`keyPoints[${k}].content`, `uses "${x.name}" from ${t.lesson}: list it in prerequisites, re-explain it or recap it in basics (prerequisite map)`); break; }
+        break;
+      }
+    }
+    // Maths in the worked examples is among the equation's prerequisites.
+    for (const { x: ex, where: w } of examples) {
+      const idea = ideas.find(i => i.equation === ex.equation);
+      if (!idea) { fail(w, `equation ${ex.equation} has no idea in the prerequisite map`); continue; }
+      const eq = eqs.get(ex.equation);
+      const lhs = eq ? eq.formula.split('=')[0].trim() : null;
+      const text = (ex.steps || []).map(s => strip(s.text)).join(' ') + ' ' + strip(ex.question);
+      const needs = [];
+      if (lhs && ex.find !== lhs) needs.push('maths-rearrange');
+      if (/× ?60\b|\bminutes?\b|\bhours?\b/.test(text)) needs.push('maths-units-time');
+      if (/\b(kJ|kV|kΩ|mA|ms|kilo|milli)\b/.test(text)) needs.push('maths-prefix');
+      for (const n of needs) if (!idea.dependsOn.includes(n)) fail(w, `uses ${n}, which is not a prerequisite of ${idea.id} in ${file}`);
+    }
   }
 }
 

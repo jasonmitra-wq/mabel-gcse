@@ -218,4 +218,30 @@ function lessonFieldLines(data) {
   return out.join('\n');
 }
 
-module.exports = { FLOW_FAULT_TYPES, STUDENT_MODEL, JUDGE_MODEL, makeStudent, exitScript, clean, judgeBody, parseJudge, verdict, lessonFieldLines };
+// Evidence layer (brief docs/briefs/2026-10-19-evidence-layer.md, step 2): the
+// prerequisite map tells the judge which terms the student already has from an
+// earlier lesson she has opened, so it does not report them as unexplained_term.
+// Returns '' when no map lists the lesson.
+function prereqNote(lessonId, root = require('path').resolve(__dirname, '..')) {
+  const fs = require('fs'), path = require('path');
+  const dir = path.join(root, 'data', 'prereq');
+  if (!fs.existsSync(dir)) return '';
+  for (const f of fs.readdirSync(dir).filter(x => x.endsWith('.json'))) {
+    const map = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+    const lessons = map.lessons || [];
+    const i = lessons.indexOf(lessonId);
+    if (i === -1) continue;
+    const earlier = new Set(lessons.slice(0, i));
+    const from = {};
+    for (const x of map.ideas || []) {
+      if (!x.taught || !earlier.has(x.taught.lesson)) continue;
+      (from[x.taught.lesson] = from[x.taught.lesson] || []).push(...(x.terms || []));
+    }
+    const parts = Object.entries(from).filter(([, t]) => t.length).map(([l, t]) => `${l}: ${[...new Set(t)].join(', ')}`);
+    if (!parts.length) return '';
+    return `\nThe student has already done these earlier lessons (prerequisite map ${`data/prereq/${f}`}). She knows these terms from them, so the tutor may use them without explaining them again; do not report them as unexplained_term: ${parts.join('; ')}.`;
+  }
+  return '';
+}
+
+module.exports = { FLOW_FAULT_TYPES, STUDENT_MODEL, JUDGE_MODEL, makeStudent, exitScript, clean, judgeBody, parseJudge, verdict, lessonFieldLines, prereqNote };

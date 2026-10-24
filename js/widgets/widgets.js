@@ -34,46 +34,112 @@ const WidgetView = (() => {
   const fmtR = R => (!isFinite(R) ? 'very high' : R >= 1000 ? `${Math.round(R).toLocaleString('en-GB')} Ω` : `${Math.round(R * 10) / 10} Ω`);
 
   // ── Circuit ────────────────────────────────────────────────
+  // Options (each adds one control): resistor (the 10 Ω resistor can go in),
+  // variable (a variable resistor with a slider), side (the resistor can be
+  // moved to the other side of the lamp), twoAmmeters (one before and one
+  // after the lamp), switch (a switch to open), voltmeter (across the lamp),
+  // energy (run the circuit for a time: charge out, charge back, energy),
+  // redraw (the same loop drawn another way).
+  const WIRE = 'rgba(245,240,232,0.85)', AMB = '#e8a040', TXT = '#f5f0e8', BG = '#0f0e0c';
+  function _meter(x, y, letter, sub) {
+    return `<circle cx="${x}" cy="${y}" r="17" fill="${BG}" stroke="${AMB}" stroke-width="3"/><text x="${x}" y="${y + 6}" text-anchor="middle" font-size="17" font-weight="600" fill="${AMB}">${letter}${sub ? `<tspan font-size="11" dy="4">${sub}</tspan>` : ''}</text>`;
+  }
   function circuit(el, opts) {
-    let cells = 1, volts = M.CELL_V, supply = false, resistor = false;
-    el.innerHTML = `<svg viewBox="0 0 360 200" aria-label="A circuit with cells, a lamp and an ammeter"></svg>
+    let cells = 1, volts = M.CELL_V, supply = false;
+    let resistor = opts.variable ? 10 : false, side = 'after', open = false, layout = 0, seconds = 0;
+    const has = k => !!opts[k];
+    el.innerHTML = `<svg viewBox="0 0 360 210" aria-label="A circuit with cells, a lamp and an ammeter"></svg>
       <div class="wdg-row">
         <button class="btn" data-a="add">Add a cell</button>
         <button class="btn" data-a="remove">Take a cell away</button>
-        ${opts.resistor ? `<button class="btn" data-a="res">Put the resistor in</button>` : ''}
+        ${has('resistor') && !has('variable') ? `<button class="btn" data-a="res">Put the resistor in</button>` : ''}
+        ${has('side') ? `<button class="btn" data-a="side">Move the resistor</button>` : ''}
+        ${has('switch') ? `<button class="btn" data-a="sw">Open the switch</button>` : ''}
+        ${has('redraw') ? `<button class="btn" data-a="redraw">Draw it another way</button>` : ''}
+        ${has('energy') ? `<button class="btn" data-a="run">Run for 10 s</button><button class="btn" data-a="reset">Start again</button>` : ''}
       </div>
-      <label>Or slide the potential difference: <span data-v></span></label>
-      <input type="range" min="0" max="6" step="0.5" value="${volts}">
+      ${has('variable') ? `<label>Variable resistor: <span data-r></span></label><input type="range" data-in="r" min="0" max="30" step="2" value="10">` : ''}
+      ${has('energy') || has('redraw') ? '' : `<label>Or slide the potential difference: <span data-v></span></label><input type="range" data-in="v" min="0" max="6" step="0.5" value="${volts}">`}
       <div class="wdg-read"></div>`;
-    const svg = el.querySelector('svg'), range = el.querySelector('input'), read = el.querySelector('.wdg-read');
+    const svg = el.querySelector('svg'), range = el.querySelector('[data-in=v]'), rRange = el.querySelector('[data-in=r]'), read = el.querySelector('.wdg-read');
+    function state() { return { cells, volts, resistor, side, open, layout, seconds }; }
     function draw() {
-      const c = M.circuit({ volts, resistor });
+      const c = M.circuit({ volts, resistor, open });
+      const inLoop = resistor !== false;
+      // Two layouts of the same loop (redraw): cells top, lamp right; or cells bottom, lamp left.
+      const P = layout === 0
+        ? { cellY: 32, lamp: [300, 105], a1: [60, 105], a2: [235, 178], sw: [120, 178], resAfter: [178, 178], resBefore: [250, 32], lampLabel: [300, 157] }
+        : { cellY: 178, lamp: [60, 105], a1: [300, 105], a2: [125, 32], sw: [240, 32], resAfter: [182, 32], resBefore: [110, 178], lampLabel: [60, 157] };
       const glow = c.brightness;
+      const cy = P.cellY;
       const src = supply
-        ? `<rect x="150" y="18" width="60" height="28" rx="5" fill="#0f0e0c" stroke="#e8a040" stroke-width="3"/><text x="180" y="38" text-anchor="middle" font-size="14" fill="#e8a040">${volts} V</text>`
-        : Array.from({ length: cells }, (_, k) => { const x = 180 - (cells - 1) * 14 + k * 28; return `<rect x="${x - 9}" y="24" width="18" height="16" fill="#0f0e0c"/><line x1="${x - 7}" y1="14" x2="${x - 7}" y2="50" stroke="#e8a040" stroke-width="3"/><line x1="${x + 7}" y1="22" x2="${x + 7}" y2="42" stroke="#e8a040" stroke-width="7"/>`; }).join('');
-      svg.innerHTML = `<rect width="360" height="200" fill="#0f0e0c" rx="8"/>
-        <path d="M60 32 H300 V168 H60 Z" fill="none" stroke="rgba(245,240,232,0.85)" stroke-width="3"/>
-        ${src}
-        <circle cx="300" cy="100" r="34" fill="rgba(232,208,64,${(0.85 * glow).toFixed(2)})"/>
-        <circle cx="300" cy="100" r="19" fill="#0f0e0c" stroke="#e8a040" stroke-width="3"/>
-        <line x1="287" y1="87" x2="313" y2="113" stroke="#e8a040" stroke-width="3"/><line x1="287" y1="113" x2="313" y2="87" stroke="#e8a040" stroke-width="3"/>
-        <text x="300" y="150" text-anchor="middle" font-size="14" fill="#f5f0e8">lamp</text>
-        <circle cx="60" cy="100" r="19" fill="#0f0e0c" stroke="#e8a040" stroke-width="3"/><text x="60" y="106" text-anchor="middle" font-size="18" font-weight="600" fill="#e8a040">A</text>
-        <text x="60" y="140" text-anchor="middle" font-size="14" fill="#f5f0e8">${f2(c.current)} A</text>
-        ${resistor ? `<rect x="152" y="158" width="56" height="20" fill="#0f0e0c" stroke="#e8a040" stroke-width="3"/><text x="180" y="196" text-anchor="middle" font-size="13" fill="#f5f0e8">resistor</text>` : ''}`;
-      read.innerHTML = `<span>Potential difference: <b>${volts} V</b></span><span>Ammeter: <b>${f2(c.current)} A</b></span>`;
-      el.querySelector('[data-v]').textContent = `${volts} V`;
-      range.value = volts;
+        ? `<rect x="150" y="${cy - 14}" width="60" height="28" rx="5" fill="${BG}" stroke="${AMB}" stroke-width="3"/><text x="180" y="${cy + 6}" text-anchor="middle" font-size="14" fill="${AMB}">${volts} V</text>`
+        : Array.from({ length: cells }, (_, k) => { const x = 180 - (cells - 1) * 14 + k * 28; return `<rect x="${x - 9}" y="${cy - 8}" width="18" height="16" fill="${BG}"/><line x1="${x - 7}" y1="${cy - 18}" x2="${x - 7}" y2="${cy + 18}" stroke="${AMB}" stroke-width="3"/><line x1="${x + 7}" y1="${cy - 10}" x2="${x + 7}" y2="${cy + 10}" stroke="${AMB}" stroke-width="7"/>`; }).join('');
+      const [lx, ly] = P.lamp;
+      const lamp = `<circle cx="${lx}" cy="${ly}" r="32" fill="rgba(232,208,64,${(0.85 * glow).toFixed(2)})"/>
+        <circle cx="${lx}" cy="${ly}" r="18" fill="${BG}" stroke="${AMB}" stroke-width="3"/>
+        <line x1="${lx - 12}" y1="${ly - 12}" x2="${lx + 12}" y2="${ly + 12}" stroke="${AMB}" stroke-width="3"/><line x1="${lx - 12}" y1="${ly + 12}" x2="${lx + 12}" y2="${ly - 12}" stroke="${AMB}" stroke-width="3"/>
+        <text x="${lx < 180 ? lx + 38 : lx - 38}" y="${ly + 5}" text-anchor="${lx < 180 ? 'start' : 'end'}" font-size="13" fill="${TXT}">lamp</text>`;
+      const two = has('twoAmmeters');
+      const [ax, ay] = P.a1, [bx, by] = P.a2;
+      // Readings sit inside the loop, beside the meter, clear of the wires.
+      const meters = _meter(ax, ay, 'A', two ? '1' : '') + `<text x="${ax < 180 ? ax + 24 : ax - 24}" y="${ay + 5}" text-anchor="${ax < 180 ? 'start' : 'end'}" font-size="13" fill="${TXT}">${f2(c.current)} A</text>` +
+        (two ? _meter(bx, by, 'A', '2') + `<text x="${bx}" y="${by + (by > 100 ? -24 : 34)}" text-anchor="middle" font-size="13" fill="${TXT}">${f2(c.current)} A</text>` : '');
+      const [rx, ry] = side === 'after' ? P.resAfter : P.resBefore;
+      const res = inLoop ? `<rect x="${rx - 26}" y="${ry - 10}" width="52" height="20" fill="${BG}" stroke="${AMB}" stroke-width="3"/>${has('variable') ? `<line x1="${rx - 30}" y1="${ry + 16}" x2="${rx + 28}" y2="${ry - 16}" stroke="${AMB}" stroke-width="2.5"/><path d="M${rx + 28} ${ry - 16} l-9 1 l4 7 z" fill="${AMB}"/>` : ''}
+        <text x="${rx}" y="${ry + (ry > 100 ? 30 : -16)}" text-anchor="middle" font-size="12" fill="${TXT}">${has('variable') ? `${c.resistorOhms} Ω` : 'resistor'}</text>` : '';
+      const [sx, sy] = P.sw;
+      const sw = has('switch') ? `<rect x="${sx - 22}" y="${sy - 6}" width="44" height="12" fill="${BG}"/><circle cx="${sx - 18}" cy="${sy}" r="3" fill="${AMB}"/><circle cx="${sx + 18}" cy="${sy}" r="3" fill="${AMB}"/>
+        <line x1="${sx - 18}" y1="${sy}" x2="${sx + 16}" y2="${open ? sy - 16 : sy}" stroke="${AMB}" stroke-width="3"/><text x="${sx}" y="${sy + (sy > 100 ? 26 : -14)}" text-anchor="middle" font-size="12" fill="${TXT}">switch</text>` : '';
+      const vm = has('voltmeter') ? (layout === 0
+        ? `<path d="M300 71 H342 V88 M342 122 V139 H300" fill="none" stroke="${WIRE}" stroke-width="2.5"/>${_meter(342, 105, 'V')}`
+        : `<path d="M60 71 H22 V88 M22 122 V139 H60" fill="none" stroke="${WIRE}" stroke-width="2.5"/>${_meter(22, 105, 'V')}`) : '';
+      svg.innerHTML = `<rect width="360" height="210" fill="${BG}" rx="8"/>
+        <path d="M60 32 H300 V178 H60 Z" fill="none" stroke="${WIRE}" stroke-width="3"/>
+        ${src}${lamp}${meters}${res}${sw}${vm}`;
+      const e = has('energy') ? M.energyRun({ volts, resistor, seconds }) : null;
+      read.innerHTML = [
+        `<span>Potential difference of the ${supply ? 'supply' : cells > 1 ? 'cells' : 'cell'}: <b>${volts} V</b></span>`,
+        two ? `<span>Ammeter 1: <b>${f2(c.current)} A</b></span><span>Ammeter 2: <b>${f2(c.current)} A</b></span>` : `<span>Ammeter: <b>${f2(c.current)} A</b></span>`,
+        has('voltmeter') ? `<span>Voltmeter across the lamp: <b>${f2(c.lampVolts)} V</b></span>` : '',
+        has('variable') ? `<span>Total resistance: <b>${fmtR(c.resistance)}</b></span>` : '',
+        e ? `<span>Time: <b>${seconds} s</b></span><span>Charge that left the ${supply ? 'supply' : cells > 1 ? 'cells' : 'cell'}: <b>${f2(e.chargeOut)} C</b></span><span>Charge that came back to ${supply ? 'it' : cells > 1 ? 'them' : 'it'}: <b>${f2(e.chargeBack)} C</b></span><span>Energy transferred (E = Q V): <b>${f2(e.energy)} J</b></span>` : '',
+      ].join('');
+      const vEl = el.querySelector('[data-v]'); if (vEl) vEl.textContent = `${volts} V`;
+      if (range) range.value = volts;
+      const rEl = el.querySelector('[data-r]'); if (rEl) rEl.textContent = `${c.resistorOhms} Ω`;
+      if (rRange) rRange.value = c.resistorOhms;
       const rb = el.querySelector('[data-a=res]');
-      if (rb) { rb.textContent = resistor ? 'Take the resistor out' : 'Put the resistor in'; rb.classList.toggle('on', resistor); }
+      if (rb) { rb.textContent = inLoop ? 'Take the resistor out' : 'Put the resistor in'; rb.classList.toggle('on', inLoop); }
+      const sb = el.querySelector('[data-a=sw]'); if (sb) { sb.textContent = open ? 'Close the switch' : 'Open the switch'; sb.classList.toggle('on', open); }
+      const db = el.querySelector('[data-a=side]'); if (db) db.style.display = inLoop ? '' : 'none';
     }
-    el.querySelector('[data-a=add]').onclick = () => { if (supply) { supply = false; cells = Math.max(1, Math.round(volts / M.CELL_V)); } cells = Math.min(4, cells + 1); volts = cells * M.CELL_V; draw(); };
-    el.querySelector('[data-a=remove]').onclick = () => { if (supply) { supply = false; cells = Math.max(1, Math.round(volts / M.CELL_V)); } cells = Math.max(1, cells - 1); volts = cells * M.CELL_V; draw(); };
-    const rb = el.querySelector('[data-a=res]');
-    if (rb) rb.onclick = () => { resistor = !resistor; draw(); };
-    range.oninput = () => { supply = true; volts = Number(range.value); draw(); };
+    const cellsTo = n => { if (supply) { supply = false; cells = Math.max(1, Math.round(volts / M.CELL_V)); } cells = Math.min(4, Math.max(1, n)); volts = cells * M.CELL_V; seconds = 0; draw(); _log('cells', cells); };
+    el.querySelector('[data-a=add]').onclick = () => cellsTo((supply ? Math.round(volts / M.CELL_V) : cells) + 1);
+    el.querySelector('[data-a=remove]').onclick = () => cellsTo((supply ? Math.round(volts / M.CELL_V) : cells) - 1);
+    const on = (a, f) => { const b = el.querySelector(`[data-a=${a}]`); if (b) b.onclick = f; };
+    on('res', () => { resistor = resistor === false ? true : false; draw(); _log('resistor', resistor); });
+    on('side', () => { side = side === 'after' ? 'before' : 'after'; draw(); _log('side', side); });
+    on('sw', () => { open = !open; draw(); _log('switch', open ? 'open' : 'closed'); });
+    on('redraw', () => { layout = 1 - layout; draw(); _log('redraw', layout); });
+    on('run', () => { seconds += 10; draw(); _log('run', seconds); });
+    on('reset', () => { seconds = 0; draw(); });
+    if (range) range.oninput = () => { supply = true; volts = Number(range.value); seconds = 0; draw(); };
+    if (rRange) rRange.oninput = () => { resistor = Number(rRange.value); draw(); };
+    function _log(what, v) { if (typeof Record !== 'undefined' && Record.widget) Record.widget({ widget: 'circuit', what, value: v }); }
     draw();
+    return {
+      set(s) {
+        if (s.cells !== undefined) { supply = false; cells = s.cells; volts = cells * M.CELL_V; }
+        if (s.resistor !== undefined) resistor = s.resistor;
+        if (s.side) side = s.side;
+        if (s.open !== undefined) open = s.open;
+        if (s.layout !== undefined) layout = s.layout;
+        if (s.seconds !== undefined) seconds = s.seconds;
+        draw();
+      },
+      state,
+    };
   }
 
   // ── I-V graph ──────────────────────────────────────────────
@@ -131,8 +197,16 @@ const WidgetView = (() => {
     svg.addEventListener('pointermove', e => { if (dragging) toV(e); });
     svg.addEventListener('pointerup', () => { dragging = false; });
     range.oninput = () => { V = Number(range.value); draw(); };
-    el.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { comp = b.dataset.c; const s = rangeOf(); V = Math.min(s.max, Math.max(s.min, V)); draw(); });
+    el.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { comp = b.dataset.c; const s = rangeOf(); V = Math.min(s.max, Math.max(s.min, V)); draw(); if (typeof Record !== 'undefined' && Record.widget) Record.widget({ widget: 'iv-graph', what: 'component', value: comp }); });
     draw();
+    return {
+      set(s) {
+        if (s.comp && M.IV[s.comp] && comps.includes(s.comp)) comp = s.comp;
+        if (s.V !== undefined) { const r = rangeOf(); V = Math.min(r.max, Math.max(r.min, s.V)); }
+        draw();
+      },
+      state: () => ({ comp, V }),
+    };
   }
 
   // ── Sensor ─────────────────────────────────────────────────
@@ -161,12 +235,90 @@ const WidgetView = (() => {
     draw();
   }
 
+  // ── Predict first (evidence layer, step 3) ─────────────────
+  // options.predicts: [{ id, question, options: [{ text, mis }], correct,
+  //   setup: { … widget state … }, try: "what to do in the widget",
+  //   explain: { prompt, points: [...] }, from: { lesson, kp } }]
+  // She answers the prediction before the widget opens; then the widget is set
+  // up to show it; then she writes what she saw in one line and ticks the points
+  // it should include. Each answer is logged (Record.predict) with the
+  // misconception her option matches.
+  const pcss = `
+    .wdg-pred { margin:0 0 0.6rem; }
+    .wdg-pred .lx-opts, .wdg-pred-opts { display:flex; flex-direction:column; gap:0.4rem; margin-top:0.45rem; }
+    .wdg-pred-opts button { text-align:left; }
+    .wdg-pred-opts button.right { border-color:var(--teal); color:var(--teal); }
+    .wdg-pred-opts button.wrong { border-color:#e8705a; color:#e8705a; }
+    .wdg-pred-title { font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber); margin-bottom:0.3rem; }
+    .wdg-pred textarea { width:100%; box-sizing:border-box; font:inherit; padding:0.45rem 0.6rem; border-radius:8px; border:1px solid var(--border2); background:var(--bg); color:var(--text); margin-top:0.35rem; }
+    .wdg-pred .fb { margin-top:0.45rem; line-height:1.55; }
+    .wdg-pred ul { padding:0; margin:0.3rem 0 0; } .wdg-pred li { list-style:none; margin:0.25rem 0; }`;
+  const pesc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  function _order(q) {
+    let h = 0; for (const ch of String(q.question)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+    const idx = q.options.map((o, k) => k);
+    for (let k = idx.length - 1; k > 0; k--) { h = (h * 1103515245 + 12345) >>> 0; const r = h % (k + 1); [idx[k], idx[r]] = [idx[r], idx[k]]; }
+    return idx;
+  }
+  function withPredicts(el, id, options) {
+    if (!document.getElementById('wdgPredStyles')) { const s = document.createElement('style'); s.id = 'wdgPredStyles'; s.textContent = pcss; document.head.appendChild(s); }
+    const list = options.predicts;
+    const panel = document.createElement('div'); panel.className = 'wdg-pred';
+    const body = document.createElement('div'); body.style.display = 'none';
+    const after = document.createElement('div'); after.className = 'wdg-pred';   // her one line, under the widget
+    el.appendChild(panel); el.appendChild(body); el.appendChild(after);
+    const ctl = KINDS[id](body, options) || null;
+    let k = 0;
+    function ask() {
+      const p = list[k];
+      const order = _order(p);
+      panel.innerHTML = `<div class="wdg-pred-title">Predict first${list.length > 1 ? ` (${k + 1} of ${list.length})` : ''}</div><p style="margin:0">${pesc(p.question)}</p><div class="wdg-pred-opts"></div><div class="fb"></div>`;
+      after.innerHTML = '';
+      const opts = panel.querySelector('.wdg-pred-opts'), fb = panel.querySelector('.fb');
+      order.forEach(j => {
+        const b = document.createElement('button'); b.className = 'btn'; b.textContent = p.options[j].text;
+        b.onclick = () => {
+          opts.querySelectorAll('button').forEach(x => { x.disabled = true; });
+          const right = j === p.correct;
+          b.classList.add(right ? 'right' : 'wrong');
+          if (!right) opts.children[order.indexOf(p.correct)].classList.add('right');
+          if (typeof Record !== 'undefined' && Record.predict) Record.predict({ id: p.id, from: p.from || null, right, chose: p.options[j].text, mis: right ? null : (p.options[j].mis || null) });
+          fb.innerHTML = `${right ? 'Good prediction. Now check it.' : "Let's see what really happens."} ${pesc(p.try || 'Try it below and see.')}`;
+          body.style.display = '';
+          if (ctl && p.setup) ctl.set(p.setup);
+          explain(p);
+        };
+        opts.appendChild(b);
+      });
+    }
+    function explain(p) {
+      const box = document.createElement('div');
+      box.innerHTML = `<div class="wdg-pred-title" style="margin-top:0.7rem">Now explain it</div><p style="margin:0">${pesc((p.explain && p.explain.prompt) || 'In one line: what did you see, and why?')}</p><textarea rows="2" placeholder="One line…"></textarea><button class="btn pri" style="margin-top:0.35rem">Check my line</button><div class="fb"></div>`;
+      after.appendChild(box);
+      const btn = box.querySelector('button');
+      btn.onclick = () => {
+        btn.remove(); box.querySelector('textarea').readOnly = true;
+        const pts = (p.explain && p.explain.points) || [];
+        box.querySelector('.fb').innerHTML = `Does your line say these? Tick the ones it does.<ul>${pts.map(t => `<li><label style="display:flex;gap:0.5rem;align-items:flex-start"><input type="checkbox"><span>${pesc(t)}</span></label></li>`).join('')}</ul>`;
+        if (typeof Record !== 'undefined' && Record.explained) Record.explained({ id: p.id, from: p.from || null });
+        if (k + 1 < list.length) {
+          const nb = document.createElement('button'); nb.className = 'btn'; nb.textContent = 'Next prediction';
+          nb.onclick = () => { k++; ask(); };
+          box.appendChild(nb);
+        }
+      };
+    }
+    ask();
+    return ctl;
+  }
+
   const KINDS = { circuit, 'iv-graph': ivGraph, sensor };
   function mount(el, id, options) {
     _style();
     el.classList.add('wdg');
     if (!KINDS[id]) { el.textContent = ''; return false; }
-    KINDS[id](el, options || {});
+    if (options && Array.isArray(options.predicts) && options.predicts.length) withPredicts(el, id, options);
+    else KINDS[id](el, options || {});
     return true;
   }
   return { mount };

@@ -321,3 +321,40 @@ examples revealed step by step with "Try another", the widgets, the own-words
 self-check, the mixed questions and the end quiz (the readiness questions
 before a practical, the recall questions at the start). Slides stay short:
 the full teaching text stays behind "Read the full explanation".
+
+## Evidence layer additions (brief docs/briefs/2026-10-19-evidence-layer.md)
+
+For lessons listed in a prerequisite map (`data/prereq/<subject>-*.json`; so
+far the two Electricity pilot lessons).
+
+- **Prerequisite order.** The map lists every idea and term the lessons use,
+  what each depends on (maths skills too: rearranging, units, prefixes, reading
+  a graph) and where it is taught: `{ "lesson", "keyPoint" }` or "outside these
+  lessons". A lesson may only use an idea after its prerequisites, in order.
+  **[check: every term the lesson explains or borrows is in the map; an idea is
+  introduced where the map says; nothing is used before the key point that
+  teaches it or taken from a later lesson unless the basics recap it; each
+  prerequisite comes first; a worked example that rearranges or converts has
+  that maths skill among its equation's prerequisites]**
+- **Predict first.** Every misconception in tools/pilot/misconceptions.md
+  ("In scope") is met head-on: she predicts, sees it in a widget, and explains
+  it in one line. The items live in the key point's widget,
+  `widget.options.predicts`:
+
+```json
+{ "id": "cv-add-cell", "from": { "lesson": "p2-current-voltage", "kp": 1 },
+  "question": "You add a second cell. What happens to the ammeter reading and to the lamp?",
+  "options": [ { "text": "Both go up…" }, { "text": "…", "mis": "M5" } ], "correct": 0,
+  "setup": { "cells": 1 }, "try": "Tap Add a cell and watch…",
+  "explain": { "prompt": "In one line: …", "points": ["…", "…"] } }
+```
+
+  `mis` on a wrong option names the misconception it matches (never on the
+  right answer); `setup` puts the widget in the state that shows it.
+  **[check: every in-scope misconception is matched by a wrong option in one
+  of the group's lessons; each item has try and explain]**
+- **Widgets.** One or two different widgets per lesson; the same widget may
+  come back at a later key point for its predict-first items.
+  **[check: at most two distinct widget ids]**
+- **More practice.** Lesson level `morePractice`: links (not copies) shown at
+  the end of the lesson, `[{ "label", "url", "source" }]`. **[check]**

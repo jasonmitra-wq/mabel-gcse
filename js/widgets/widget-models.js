@@ -26,14 +26,25 @@
   // Circuit: a cell or cells (or a supply), a lamp, an ammeter, and a
   // resistor that can be put in the loop. One loop: the same current
   // everywhere, I from V = I R with R = lamp + resistor.
-  function circuit({ volts, resistor }) {
-    const Rr = resistor ? RESISTOR_OHMS : 0;
+  // resistor: true (the 10 Ω resistor), false, or a number of ohms (a
+  // variable resistor). open: the switch is open, so nothing flows.
+  // The pd across the lamp and across the resistor add up to the supply.
+  function circuit({ volts, resistor, open }) {
+    const Rr = typeof resistor === 'number' ? Math.max(0, resistor) : resistor ? RESISTOR_OHMS : 0;
     // 10I² + (5 + Rr)I − V = 0
     const b = 5 + Rr;
-    const I = volts > 0 ? (-b + Math.sqrt(b * b + 40 * volts)) / 20 : 0;
+    const I = volts > 0 && !open ? (-b + Math.sqrt(b * b + 40 * volts)) / 20 : 0;
     const R = lampR(I) + Rr;
     const lampPower = I * I * lampR(I);           // brightness follows the energy transferred each second
-    return { volts, current: I, resistance: R, lampResistance: lampR(I), brightness: Math.min(1, lampPower / 3.4) };
+    return { volts, current: I, resistance: R, lampResistance: lampR(I), brightness: Math.min(1, lampPower / 3.4),
+             lampVolts: I * lampR(I), resistorVolts: I * Rr, resistorOhms: Rr };
+  }
+  // Charge and energy over a time (E = Q V): the charge that leaves the cell
+  // comes back to it; the energy is transferred in the lamp (and resistor).
+  function energyRun({ volts, resistor, seconds }) {
+    const c = circuit({ volts, resistor });
+    const Q = c.current * seconds;
+    return { ...c, seconds, chargeOut: Q, chargeBack: Q, energy: Q * volts, lampEnergy: Q * c.lampVolts };
   }
 
   // I-V graph: current for a potential difference, for each component.
@@ -82,6 +93,25 @@
         if (!close(V, c.current * c.resistance)) f.push(`V = I R fails at ${V} V`);
       }
       if (circuit({ volts: 0, resistor: false }).current !== 0) f.push('current flows with no potential difference');
+      // Evidence layer: an open switch stops the current; the lamp and resistor pds add up to the supply;
+      // turning up a variable resistor lowers the current and the lamp pd and raises the total resistance;
+      // over a time, the charge back at the cell equals the charge that left it, and E = Q V.
+      if (circuit({ volts: 3, resistor: false, open: true }).current !== 0) f.push('current flows with the switch open');
+      let prev = null;
+      for (let Rv = 0; Rv <= 30; Rv += 2) {
+        const c = circuit({ volts: 4.5, resistor: Rv });
+        if (!close(c.lampVolts + c.resistorVolts, c.volts)) f.push(`lamp pd + resistor pd is not the supply at ${Rv} Ω`);
+        if (!close(c.volts, c.current * c.resistance)) f.push(`V = I R fails with a ${Rv} Ω variable resistor`);
+        if (prev && !(c.current < prev.current && c.lampVolts < prev.lampVolts && c.resistance > prev.resistance)) f.push(`turning up the variable resistor to ${Rv} Ω does not lower the current and lamp pd and raise the total resistance`);
+        prev = c;
+      }
+      for (const s of [10, 30, 60]) {
+        const e = energyRun({ volts: 3, resistor: true, seconds: s });
+        if (!close(e.chargeOut, e.current * s)) f.push(`Q = I t fails over ${s} s`);
+        if (!close(e.chargeBack, e.chargeOut)) f.push('charge is used up on the way round');
+        if (!close(e.energy, e.chargeOut * e.volts)) f.push(`E = Q V fails over ${s} s`);
+        if (!(e.lampEnergy <= e.energy)) f.push('the lamp gets more energy than the cell gives');
+      }
       return f;
     },
     'iv-graph'() {
@@ -125,5 +155,5 @@
     },
   };
 
-  return { CELL_V, RESISTOR_OHMS, SENSOR_V, circuit, iv, IV, sensor, thermistorR, ldrR, lampR, tests, ids: () => Object.keys(tests) };
+  return { CELL_V, RESISTOR_OHMS, SENSOR_V, circuit, energyRun, iv, IV, sensor, thermistorR, ldrR, lampR, tests, ids: () => Object.keys(tests) };
 });

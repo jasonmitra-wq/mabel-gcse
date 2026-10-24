@@ -654,6 +654,10 @@ function showSubtopics(topicCode, topicData) {
     list.appendChild(card);
   });
 
+  // Evidence layer (brief 2026-10-19-evidence-layer): the pilot's quick check,
+  // post-tests, delayed test and "My record", above the Electricity lessons.
+  if (typeof Pilot !== 'undefined') Pilot.topicCards(list, topicCode, _activeSubject);
+
   // ── Past paper links ───────────────────────────────────────
   // Only shown once at least one subtopic has been started.
   // "Coming soon" topics never reach this view, so no guard needed.

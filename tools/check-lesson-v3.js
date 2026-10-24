@@ -450,6 +450,7 @@ function checkLesson(id, opts) {
 
   // 9. Prerequisite order (brief docs/briefs/2026-10-19-evidence-layer.md, step 2).
   checkPrereqMap({ id, subject, L, kps, kpText, eqs, examples, subs, fail, warn });
+  checkEvidence({ id, subject, L, fail });
 
   // 7. Diagrams render clean (all this lesson's diagrams, the picture sequences too).
   const diags = [...new Set([...kps.map(k => k.diagram), ...kps.flatMap(k => (k.pictures || []).map(p => p && p.diagram))].filter(Boolean))];
@@ -645,7 +646,10 @@ function checkV31(c) {
 
   // e. Hands-on widgets.
   const widgets = kps.map((kp, i) => ({ wd: kp.widget, i })).filter(x => x.wd);
-  if (widgets.length > 2) fail('widgets', `${widgets.length} widgets (one or two per lesson)`);
+  // One or two widgets per lesson. Evidence layer: the same widget may come back
+  // at a later key point (for a "predict first" item there), so distinct widgets count.
+  const kinds = [...new Set(widgets.map(x => x.wd.id))];
+  if (kinds.length > 2) fail('widgets', `${kinds.length} different widgets (${kinds.join(', ')}): one or two per lesson`);
   if (!widgets.length) warn('widgets', 'no widget: add one or two wherever she can see the idea change');
   for (const { wd, i } of widgets) {
     const w = `keyPoints[${i}].widget`;
@@ -655,6 +659,16 @@ function checkV31(c) {
     const fails = test();
     fails.slice(0, 5).forEach(f => fail(w, `model test: ${f}`));
     picturesTaught(w, null, wd.labels || [], kpStart[i] + kpText[i].length);
+    // Evidence layer, step 3: "predict first" items in the widget.
+    ((wd.options && wd.options.predicts) || []).forEach((p, j) => {
+      const pw = `${w}.options.predicts[${j}]`;
+      if (!p || !p.id || !p.question || !Array.isArray(p.options) || p.options.length < 2 || p.options.length > 5 || !Number.isInteger(p.correct) || !p.options[p.correct]) { fail(pw, 'needs id, question, 2 to 5 options and a valid correct index'); return; }
+      if (p.options.some(o => !o || !o.text)) fail(pw, 'every option needs text');
+      if (p.options[p.correct].mis) fail(pw, 'the right answer cannot carry a misconception');
+      for (const o of p.options) if (o.mis && !MISCONCEPTIONS().has(o.mis)) fail(pw, `misconception ${o.mis} is not in tools/pilot/misconceptions.md`);
+      if (!p.explain || !p.explain.prompt || !Array.isArray(p.explain.points) || !p.explain.points.length) fail(pw, 'needs explain.prompt and explain.points (her one line, then the self-check)');
+      if (!p.try) fail(pw, 'needs try: what to do in the widget to see it');
+    });
   }
 
   // f. Making it stick.
@@ -674,6 +688,40 @@ function checkV31(c) {
     if (kinds.filter(k => k === 'mc').length < 3) fail('endQuiz', 'needs at least three multiple-choice questions (the next lesson opens with three of them)');
     const covered = new Set(quiz.map(q => q.from).filter(Number.isInteger));
     if (covered.size < Math.ceil(kps.length / 2)) warn('endQuiz', `covers ${covered.size} of ${kps.length} key points ("from")`);
+  }
+}
+
+// ── Misconceptions (evidence layer, step 1c) ───────────────────
+// The in-scope ids (M1, M2, …) from the first table of tools/pilot/misconceptions.md.
+let _mis = null;
+function MISCONCEPTIONS() {
+  if (_mis) return _mis;
+  const p = path.join(ROOT, 'tools', 'pilot', 'misconceptions.md');
+  _mis = new Set();
+  if (!fs.existsSync(p)) return _mis;
+  const text = fs.readFileSync(p, 'utf8');
+  const inScope = text.split(/^## /m).find(s => /^In scope/.test(s)) || '';
+  for (const m of inScope.matchAll(/^\| (M\d+) \|/gm)) _mis.add(m[1]);
+  return _mis;
+}
+// Every in-scope misconception is met head-on (predict, widget, explain) in at
+// least one lesson of the prerequisite map's group; each lesson in the group
+// ends with a "More practice" link.
+function checkEvidence(c) {
+  const { id, L, fail } = c;
+  for (const { map } of prereqMaps(c.subject)) {
+    const group = map.lessons || [];
+    if (!group.includes(id)) continue;
+    const mp = L.morePractice;
+    if (!Array.isArray(mp) || !mp.length || mp.some(x => !x || !x.label || !/^https:\/\//.test(x.url || ''))) fail('morePractice', 'needs at least one { label, url } link (https) for "More practice" at the end');
+    const met = new Set();
+    for (const lid of group) {
+      const f = findLesson(lid);
+      if (!f) continue;
+      for (const kp of readJson(f.file).keyPoints || []) for (const p of (kp.widget && kp.widget.options && kp.widget.options.predicts) || []) for (const o of p.options || []) if (o && o.mis) met.add(o.mis);
+    }
+    const missing = [...MISCONCEPTIONS()].filter(m => !met.has(m));
+    if (missing.length) fail('misconceptions', `not met head-on by a "predict first" item in ${group.join(' or ')}: ${missing.join(', ')}`);
   }
 }
 

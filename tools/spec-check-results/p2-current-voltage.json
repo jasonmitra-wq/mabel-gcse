@@ -1,9 +1,9 @@
 {
   "lesson": "p2-current-voltage",
   "source_file": "lessons/physics/p2-current-voltage.json",
-  "lesson_md5": "4ac13fd3ede8e5366e7edc8860681f82",
+  "lesson_md5": "d87de3182fce5002d3aa66e5c5b21fbd",
   "model": "claude-opus-5-5",
-  "date": "2026-10-19T17:34:59.184Z",
+  "date": "2026-10-24T10:07:43.710Z",
   "specRefs_sent": [
     "4.2.1.2",
     "4.2.1.3",
@@ -15,35 +15,93 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 22917,
-    "output_tokens": 3728
+    "input_tokens": 28866,
+    "output_tokens": 5038
   },
-  "cost_usd": 0.166228,
+  "cost_usd": 0.216224,
   "status": "OK",
   "result": {
     "lesson": "p2-current-voltage",
-    "missing_spec_content": [],
+    "missing_spec_content": [
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "The resistance of components such as lamps, diodes, thermistors and LDRs is not constant; it changes with the current through the component.",
+        "why": "The lesson covers lamps and diodes but not thermistors or LDRs. specChecklist entry 4.2.1.4#3 says this is 'taughtIn': 'p2-components', which cannot be checked from this lesson."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "The resistance of a thermistor decreases as the temperature increases.",
+        "why": "Not taught anywhere in the lesson. It is deferred to p2-components in specChecklist (4.2.1.4#6)."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "The applications of thermistors in circuits eg a thermostat is required.",
+        "why": "Not taught. It is deferred to p2-components in specChecklist (4.2.1.4#7)."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "The resistance of an LDR decreases as light intensity increases.",
+        "why": "Not taught. It is deferred to p2-components in specChecklist (4.2.1.4#8)."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "The application of LDRs in circuits eg switching lights on when it gets dark is required.",
+        "why": "Not taught. It is deferred to p2-components in specChecklist (4.2.1.4#9)."
+      },
+      {
+        "specRef": "4.2.1.4",
+        "spec_text": "draw an appropriate circuit diagram using correct circuit symbols.",
+        "why": "No circuit symbols are taught in the lesson text. Required practicals 3 and 4 also say 'Use circuit diagrams to set up and check appropriate circuits'. It is deferred to p2-components in specChecklist (4.2.1.4#11)."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "Everyday electrical appliances are designed to bring about energy transfers.",
+        "why": "Not taught as a statement. It is deferred to p2-power-energy in specChecklist (4.2.4.2#1)."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "The amount of energy an appliance transfers depends on how long the appliance is switched on for and the power of the appliance.",
+        "why": "Power is not taught. It is deferred to p2-power-energy in specChecklist (4.2.4.2#2)."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "Students should be able to describe how different domestic appliances transfer energy from batteries or ac mains to the kinetic energy of electric motors or the energy of heating devices.",
+        "why": "The lesson only mentions 'lighting a lamp, warming a heater, turning a motor' in keyPoints[6].content. It does not describe the transfer to the kinetic energy of motors or the energy of heating devices. It is deferred to p2-power-energy in specChecklist (4.2.4.2#3)."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "energy transferred = power × time\n\nE = P t",
+        "why": "This equation is not taught, although the spec says 'Students should be able to recall and apply both equations.' It is deferred to p2-power-energy in specChecklist (4.2.4.2#5)."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "Students should be able to explain how the power of a circuit device is related to:\n\n- the potential difference across it and the current through it\n- the energy transferred over a given time.",
+        "why": "Not taught. It is deferred to p2-power-energy in specChecklist (4.2.4.2#7, #8)."
+      },
+      {
+        "specRef": "4.2.4.2",
+        "spec_text": "Students should be able to describe, with examples, the relationship between the power ratings for domestic electrical appliances and the changes in stored energy when they are in use.",
+        "why": "Not taught. It is deferred to p2-power-energy in specChecklist (4.2.4.2#9)."
+      }
+    ],
     "above_gcse": [],
     "factual_errors": [
       {
-        "field": "keyPoints[3].content",
-        "text": "A straight line means the resistance is not changing as the current changes.",
-        "correction": "Only a straight line through the origin means the resistance (V ÷ I) is constant. A straight line that does not pass through the origin gives a different V ÷ I at each point. The sentence should say 'a straight line through the origin'. The spec ties constant resistance to current being directly proportional to potential difference: 'The current through an ohmic conductor (at a constant temperature) is directly proportional to the potential difference across the resistor. This means that the resistance remains constant as the current changes.'",
-        "basis": "spec"
-      },
-      {
-        "field": "keyPoints[4].content",
-        "text": "The graph lies flat along the axis on one side and rises steeply on the other.",
-        "correction": "In the forward direction, a diode's current also stays close to zero until the potential difference reaches a small threshold (about 0.6–0.7 V for a silicon diode). Only after that does the current rise steeply. The lesson implies the current rises steeply as soon as the potential difference is positive, which could lead a student to sketch the forward curve wrongly. The same simplification appears in tables[0].rows[2]: 'current rises steeply the other way'.",
+        "field": "keyPoints[2].content",
+        "text": "A hot wire can burn, so keep the current small. One cell's low potential difference gives no risk of an electric shock. That keeps it at a constant temperature, which means its temperature stays the same.",
+        "correction": "Because of the sentence order, 'That' now refers to the low potential difference removing the shock risk, so the text says the low p.d. is what keeps the wire at constant temperature. It is keeping the current small and switching off between readings that stops the wire heating and keeps it at constant temperature. The safety sentences should not sit between the method and its reason.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "Diagrams and images could not be seen: p2-cv-loop, p2-cv-ammeter, p2-cv-resistor, p2-wire-length, p2-iv-resistor-beginner, p2-iv-lamp-beginner, p2-iv-lamp-diode, p2-iv-practical-circuit, and p2-simple-circuit / p2-iv-resistor listed in 'diagrams'. Not checked: whether the circuit symbols are correct, whether the meters are placed correctly, or whether the I-V shapes are correct (including the diode threshold and the filament lamp curving towards the V-axis).",
-      "Interactive widgets ('circuit', 'iv-graph') and the question generators ('Q=It', 'V=IR', 'E=QV') could not be inspected.",
-      "Spec content that specChecklist hands to other lessons could not be checked, because those lessons were not supplied. For 4.2.1.4 this is: thermistor and LDR behaviour and applications ('The resistance of a thermistor decreases as the temperature increases', 'The resistance of an LDR decreases as light intensity increases', and their applications), the general statement 'The resistance of components such as lamps, diodes, thermistors and LDRs is not constant', and 'draw an appropriate circuit diagram using correct circuit symbols'. For 4.2.4.2 this is: E = P t, power related to potential difference and current and to energy over time, appliance energy transfers, and power ratings ('taughtIn': 'p2-components' / 'p2-power-energy'). This lesson does not teach any of it."
+      "Diagrams referenced by id (p2-cv-loop, p2-cv-ammeter, p2-cv-resistor, p2-wire-length, p2-iv-resistor-beginner, p2-iv-lamp-beginner, p2-iv-lamp-diode, p2-iv-practical-circuit, p2-simple-circuit, p2-iv-resistor). The images cannot be seen, so the graph shapes, circuit layouts and circuit symbols cannot be checked.",
+      "Interactive widgets ('circuit', 'iv-graph'): their simulated readings and behaviour cannot be checked, for example 'at 6 V the current is 0.56 A' on the lamp graph.",
+      "Question generators ('generator': 'Q=It', 'V=IR', 'E=QV'): the generated questions and answers cannot be seen.",
+      "Whether the content deferred to 'p2-components' and 'p2-power-energy' in specChecklist is actually taught in those lessons.",
+      "External morePractice links (isaacscience.org): content not checked.",
+      "Misconception codes (M1–M14) referenced in widget options: their definitions are not provided."
     ]
   }
 }

@@ -102,14 +102,18 @@ const Lessons = (() => {
     }
 
     _recall = _isV31(data) ? await _recallFor(subject, topicCode, subtopicId) : null;
-    const go = () => {
+    const open = () => {
       if (typeof Store.markOpened === 'function') Store.markOpened(subtopicId);
       if (TEACH_FIRST && TEACH_ENABLED.includes(subtopicId) && AI.hasKey()) {
+        if (typeof Record !== 'undefined') Record.lesson(subtopicId, 'ai');
         Teach.open(data, subtopicId, subtopicName, subject, { recall: _recall });
         return;
       }
+      if (typeof Record !== 'undefined') Record.lesson(subtopicId, 'slides');
       _openSlideView(data, subtopicId, subtopicName, subject);
     };
+    // Evidence layer: before a pilot lesson, the quick check (if not done), then what it showed.
+    const go = () => { if (typeof Pilot !== 'undefined' && Pilot.gate(subtopicId, open)) return; open(); };
 
     // Runbook v3 A4: the subject glossary, and a card for words this lesson
     // takes from earlier lessons she has not opened yet.
@@ -169,10 +173,8 @@ const Lessons = (() => {
     _steps   = _buildSteps(data);
     _stepIdx = 0;
     _renderStep();
-
-    // Natural break point 1: lesson start — offer a profile question
-    // after a short delay so the intro content is visible first.
-    setTimeout(() => Personality.tryAskQuestion(), 3500);
+    // Silver (evidence layer, step 6): no popup at the start of a lesson. The
+    // lesson's last step has a corner slot for it, at the natural break.
   }
 
   function close() {
@@ -294,8 +296,18 @@ const Lessons = (() => {
         </button>
       </div>`;
 
-    inner.innerHTML = header + body + nav;
+    // Silver's corner, at the natural break: the end of the lesson, under the buttons, never over them.
+    const silver = isLast ? `<div id="silverSlot" class="silver-slot"></div>` : '';
+    inner.innerHTML = header + body + nav + silver;
     if (_isV31(_current)) _mountV31(step);
+    // Evidence layer: her record (time per key point), and the end of a pilot lesson.
+    if (typeof Record !== 'undefined') Record.step(_subtopicId, Number.isInteger(step.i) ? step.i : null, step.type);
+    if (isLast && typeof Pilot !== 'undefined') {
+      const end = Pilot.endCard(_subtopicId, _current.morePractice);
+      const navEl = inner.querySelector('.step-nav');
+      if (end && navEl) navEl.parentNode.insertBefore(end, navEl);
+    }
+    if (isLast) setTimeout(() => Personality.cornerMoment && Personality.cornerMoment('silver', _usedJokeIds), 600);
 
     // Wrap first occurrence of each glossary term in this step
     if (typeof Glossary !== 'undefined') Glossary.markupContainer(inner);
@@ -335,6 +347,10 @@ const Lessons = (() => {
           if (done === qs.length) {
             document.getElementById('lxScore').textContent = `You got ${right} out of ${qs.length}.`;
             if (Store.markFinished) Store.markFinished(_subtopicId);
+            if (typeof Record !== 'undefined') Record.finished(_subtopicId, 'slides', { quizRight: right, quizOf: qs.length });
+            // A pilot lesson: more practice and the post-test, right under the quiz.
+            const end = typeof Pilot !== 'undefined' ? Pilot.endCard(_subtopicId, _current.morePractice) : null;
+            if (end) document.getElementById('lxScore').after(end);
           }
         });
         if (el) mount.appendChild(el);
@@ -698,14 +714,8 @@ const Lessons = (() => {
       </div>`;
     }
     html += `</div>`;
-    if (i === 1) {
-      const moment = Personality.renderMoment('silver', _usedJokeIds);
-      _usedJokeIds.push(moment.id);
-    }
-    if (i === 3) {
-      const moment = Personality.renderMoment('skating', _usedJokeIds);
-      _usedJokeIds.push(moment.id);
-    }
+    // Silver and skating jokes (evidence layer, step 6): no longer a popup over a
+    // key point; one comes at the end of the lesson, in its corner slot.
     return html;
   }
 
@@ -737,6 +747,7 @@ const Lessons = (() => {
           <h3>${kp.heading}</h3>
           ${kp.examFlag ? `<span class="flag flag-exam">this gets asked</span>` : ''}
         </div>
+        ${typeof Pilot !== 'undefined' ? Pilot.knownNote(_subtopicId, i) : ''}
         ${v31 && (kp.pictures || []).length ? `<div data-lx-pics></div>` : kp.diagram ? _renderInlineDiagram(kp.diagram, _current, kp.diagramCaption, kp.diagramExamTip) : ''}
         ${defHtml || eqHtml ? `<div class="v3-exambox"><div class="v3-exambox-title">${Icons.inline('exam', 18)} For the exam</div>${defHtml}${eqHtml}</div>` : ''}
         ${bullets.length ? `<div class="v3-bullets"><div class="v3-bullets-title">${Icons.inline('notes', 18)} Write these into your notes</div>
@@ -1080,10 +1091,9 @@ const Lessons = (() => {
     _cpScores[cpId] = isCorrect;
     _stepCpDone = true;
     _tryUnlockNext();
-
-    // Natural break point 2: after a quick check — offer a profile
-    // question if one hasn't been shown yet this session.
-    setTimeout(() => Personality.tryAskQuestion(), 2200);
+    if (typeof Record !== 'undefined') Record.answer({ where: 'checkpoint', kp: Number(String(cpId).replace(/\D/g, '')) || 0, right: isCorrect });
+    // Silver (evidence layer, step 6): no profile question straight after a
+    // question any more; it waits for the end of the lesson.
   }
 
   function _renderCheckpoint(cp, id) {
@@ -1104,6 +1114,7 @@ const Lessons = (() => {
   function _cpHint(cpId) {
     const level = (_cpHintLevels[cpId] || 0) + 1;
     _cpHintLevels[cpId] = level;
+    if (typeof Record !== 'undefined') Record.hint(_subtopicId, Number(String(cpId).replace(/\D/g, '')) || 0);
 
     const step = _steps.find(s => s.type === 'kp-check' && `cp_${s.i}` === cpId);
     const cpDef = step?.checkpoint;

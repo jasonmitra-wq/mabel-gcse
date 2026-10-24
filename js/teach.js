@@ -681,6 +681,11 @@ const Teach = (() => {
         }
       }
     });
+    // Evidence layer: at the end of a pilot lesson, more practice and the post-test.
+    if (_state.pilot && _state.pilot.finished && typeof Pilot !== 'undefined') {
+      const end = Pilot.endCard(_subtopicId, _data && _data.morePractice);
+      if (end) thread.appendChild(end);
+    }
     _updateDiagramSlot();
     _renderOpeningStatus();
     thread.lastElementChild?.scrollIntoView({ block: 'nearest' });
@@ -883,6 +888,8 @@ const Teach = (() => {
     _syncControls();
 
     _appendBubble('user', text, _state.complete ? undefined : { pt: _state.currentPointIndex });
+    // Evidence layer: her record (kept in her browser; js/pilot/record.js). No change to the tutor.
+    if (typeof Record !== 'undefined') Record.chat(_subtopicId, _state.complete ? null : _state.currentPointIndex, text);
     document.querySelector('#teachThread .teach-choices')?.remove();
     const thinkingEl = _showThinking();
     let toSlides = false;
@@ -907,6 +914,7 @@ const Teach = (() => {
       _pushEntry(entry);
       toSlides = decision.kind === 'slides';   // RESPECT_EXIT: she chose the slides
       if (_core.PILOT_FIX && _state.pilot && _state.pilot.finished && Store.markFinished) Store.markFinished(_subtopicId);
+      if (_core.PILOT_FIX && _state.pilot && _state.pilot.finished && typeof Record !== 'undefined') Record.finished(_subtopicId, 'ai', { quizRight: _state.pilot.quiz.right, quizOf: _state.pilot.quiz.n });
     } catch {
       thinkingEl?.remove();
       _appendBubble('assistant', "I can't answer that right now — try again in a moment.");

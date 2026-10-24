@@ -245,7 +245,7 @@ const Personality = (() => {
       id:      'q_silver_colour',
       type:    'silver',
       field:   'silver.colour',
-      get prompt() { return `😸 Quick question before we start — what colour is ${_petName()}? I keep imagining a grey tabby but I suspect I'm wrong.`; },
+      get prompt() { return `😸 Quick question now the lesson is done — what colour is ${_petName()}? I keep imagining a grey tabby but I suspect I'm wrong.`; },
       storeAs: (answer, p) => { p.silver.colour = answer; },
     },
     {
@@ -377,36 +377,23 @@ const Personality = (() => {
 
   // ── FLOATING TOAST ───────────────────────────────────────
 
+  // Evidence layer, step 6 (site tests 2026-10-19: the popup covered the
+  // "What matters" summary and the Next button). Silver never floats over a
+  // screen any more. She appears only in a screen's corner slot (#silverSlot,
+  // in the page flow, under its buttons): the end of a lesson is the one
+  // natural break that has one. No slot, or a test on screen: nothing shows.
   function _showToast(html, id = 'personalityToast') {
     const existing = document.getElementById(id);
     if (existing) existing.remove();
 
     const el = document.createElement('div');
     el.id = id;
-    el.style.cssText = [
-      'position:fixed',
-      'bottom:72px',
-      'left:50%',
-      'transform:translateX(-50%) translateY(16px)',
-      'z-index:500',
-      'max-width:min(500px,92vw)',
-      'width:100%',
-      'background:var(--s2)',
-      'border:1.5px solid var(--border2)',
-      'border-radius:16px',
-      'padding:1rem 1.1rem',
-      'box-shadow:0 8px 32px rgba(0,0,0,0.45)',
-      'opacity:0',
-      'transition:opacity 0.28s ease,transform 0.28s ease',
-    ].join(';');
+    const slot = document.getElementById('silverSlot');
+    if (!slot || (typeof Pilot !== 'undefined' && Pilot.active())) return el;   // not shown
+    el.className = 'silver-corner';
     el.innerHTML = html;
-    document.body.appendChild(el);
-
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      el.style.opacity = '1';
-      el.style.transform = 'translateX(-50%) translateY(0)';
-    }));
-
+    slot.appendChild(el);
+    requestAnimationFrame(() => requestAnimationFrame(() => { el.style.opacity = '1'; }));
     return el;
   }
 
@@ -414,8 +401,13 @@ const Personality = (() => {
     const el = document.getElementById(id);
     if (!el) return;
     el.style.opacity = '0';
-    el.style.transform = 'translateX(-50%) translateY(16px)';
     setTimeout(() => el.remove(), 300);
+  }
+
+  // At the end of a lesson: a profile question if one is due this session, else a joke.
+  function cornerMoment(type, usedIds = []) {
+    if (!document.getElementById('silverSlot')) return;
+    if (!tryAskQuestion()) renderMoment(type, usedIds);
   }
 
   // ── RENDER MOMENT ────────────────────────────────────────
@@ -478,6 +470,7 @@ const Personality = (() => {
   return {
     getJoke,
     renderMoment,
+    cornerMoment,
     tryAskQuestion,
     answerQuestion,
     skipQuestion,

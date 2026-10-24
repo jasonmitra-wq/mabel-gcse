@@ -79,6 +79,7 @@ const LessonExtras = (() => {
         if (!r.given) { fb.className = 'lx-fb no'; fb.textContent = 'Type a number.'; return; }
         input.disabled = true; box.querySelector('.lx-ans .btn').remove();
         const ans = `${Practice.fmt(q.answer.value)} ${q.answer.unit}`;
+        if (typeof Record !== 'undefined') Record.answer({ where: `try another ${eq}`, right: r.ok, text: input.value });
         if (r.ok) { fb.className = 'lx-fb ok'; fb.innerHTML = `Yes, that's right: ${esc(ans)}.`; another(); return; }
         fb.className = 'lx-fb no';
         fb.innerHTML = `Not quite. Here is how it goes:<ol></ol>`;
@@ -137,6 +138,7 @@ const LessonExtras = (() => {
         const work = (g.steps.find(s => /Put the numbers in/.test(s.text)) || g.steps[g.steps.length - 1]).text;
         fb.className = `lx-fb ${r.ok ? 'ok' : 'no'}`;
         fb.textContent = r.ok ? `Yes, that's right: ${Practice.fmt(g.answer.value)} ${g.answer.unit}.` : `Not quite: it's ${Practice.fmt(g.answer.value)} ${g.answer.unit}. ${work}`;
+        if (typeof Record !== 'undefined') Record.answer({ where: label, right: r.ok, text: input.value });
         if (onDone) onDone(r.ok);
       };
       b.onclick = check;
@@ -158,6 +160,7 @@ const LessonExtras = (() => {
         if (!right) opts.children[order.indexOf(q.correct)].classList.add('right');
         fb.className = `lx-fb ${right ? 'ok' : 'no'}`;
         fb.innerHTML = `${right ? "Yes, that's right." : `Not quite: it's "${q.options[q.correct]}".`} ${q.explain || ''}`;
+        if (typeof Record !== 'undefined') Record.answer({ where: label, right, text: String(q.options[k]).replace(/<[^>]+>/g, '') });
         if (onDone) onDone(right);
       };
       opts.appendChild(b);
@@ -172,6 +175,7 @@ const LessonExtras = (() => {
     card.querySelector('.btn').onclick = () => {
       card.querySelector('.btn').remove();
       card.querySelector('textarea').readOnly = true;
+      if (typeof Record !== 'undefined') Record.answer({ where: 'own words', text: card.querySelector('textarea').value });
       const fb = card.querySelector('.lx-fb');
       fb.innerHTML = `Does your line say these? Tick the ones it does.<ul class="lx-check" style="padding:0;margin:0.3rem 0 0">${ow.points.map(p =>
         `<li><label style="display:flex;gap:0.5rem;align-items:flex-start"><input type="checkbox"><span>${esc(p)}</span></label></li>`).join('')}</ul>`;

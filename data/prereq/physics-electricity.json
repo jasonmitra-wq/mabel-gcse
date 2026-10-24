@@ -1,80 +1,951 @@
 {
   "about": "Prerequisite map for the Electricity pilot lessons (brief docs/briefs/2026-10-19-evidence-layer.md, step 2). Every idea and term the two lessons use, what each depends on (including maths skills), and where each is taught: a lesson and key point, or \"outside these lessons\". Checked by tools/check-lesson-v3.js (a lesson may only use an idea after its prerequisites, in order) and given to the text tester's judge (tools/bored-student.js).",
-  "lessons": ["p2-current-voltage", "p2-components"],
+  "lessons": [
+    "p2-current-voltage",
+    "p2-components"
+  ],
   "ideas": [
-    { "id": "everyday-circuit", "name": "A circuit is a loop of wire that charge flows round", "terms": ["circuit"], "dependsOn": [], "taught": "outside these lessons", "note": "everyday idea, recapped in the lesson's basics" },
-    { "id": "everyday-energy", "name": "Energy makes things happen (move, heat up, light up)", "terms": ["energy"], "dependsOn": [], "taught": "outside these lessons", "note": "P1 Energy; recapped in basics" },
-    { "id": "everyday-temperature", "name": "Temperature: how hot something is", "terms": ["temperature"], "dependsOn": [], "taught": "outside these lessons", "note": "everyday word; p2-components gives a one-line meaning" },
-    { "id": "everyday-time-seconds", "name": "Time measured in seconds", "terms": ["seconds"], "dependsOn": [], "taught": "outside these lessons" },
-    { "id": "maths-substitute", "name": "Putting numbers in place of letters in an equation; two letters side by side are multiplied", "terms": [], "kind": "maths", "dependsOn": [], "taught": "outside these lessons", "note": "recapped in basics (Reading an equation)" },
-    { "id": "maths-rearrange", "name": "Rearranging a product equation: a = b × c, so b = a ÷ c", "terms": [], "kind": "maths", "dependsOn": ["maths-substitute"], "taught": "outside these lessons", "note": "shown step by step in the worked examples" },
-    { "id": "maths-units-time", "name": "Converting minutes and hours to seconds", "terms": [], "kind": "maths", "dependsOn": ["everyday-time-seconds"], "taught": "outside these lessons" },
-    { "id": "maths-prefix", "name": "Unit prefixes: kilo means × 1000, milli means ÷ 1000", "terms": [], "kind": "maths", "dependsOn": [], "taught": "outside these lessons", "note": "the worked examples say what each prefix means where it is used" },
-    { "id": "maths-graph-axes", "name": "The two axes of a graph, and a point as a pair of readings", "terms": ["axes", "axis"], "kind": "maths", "dependsOn": [], "taught": "outside these lessons", "note": "recapped in basics" },
-    { "id": "maths-origin", "name": "The origin: where both quantities are zero", "terms": ["origin"], "kind": "maths", "dependsOn": ["maths-graph-axes"], "taught": "outside these lessons", "note": "recapped in basics" },
-    { "id": "maths-read-graph", "name": "Reading a value off a graph line", "terms": [], "kind": "maths", "dependsOn": ["maths-graph-axes"], "taught": "outside these lessons" },
-    { "id": "maths-steepness", "name": "Steepness of a line (a steeper line rises faster)", "terms": ["steep", "steeply", "flatter"], "kind": "maths", "dependsOn": ["maths-graph-axes"], "taught": "outside these lessons" },
-    { "id": "maths-negative", "name": "Negative numbers on an axis", "terms": ["negative"], "kind": "maths", "dependsOn": ["maths-graph-axes"], "taught": "outside these lessons" },
-    { "id": "maths-mean", "name": "The mean of repeat readings", "terms": ["mean"], "kind": "maths", "dependsOn": [], "taught": "outside these lessons" },
-
-    { "id": "lamp", "name": "Lamp (a bulb in a circuit)", "terms": ["lamp"], "dependsOn": ["everyday-circuit"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-    { "id": "electric-charge", "name": "Electric charge, carried by tiny particles in the wire", "terms": ["electric charge"], "dependsOn": [], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-    { "id": "closed-circuit", "name": "A closed circuit: a complete loop", "terms": ["closed circuit"], "dependsOn": ["everyday-circuit"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-    { "id": "potential-difference", "name": "Potential difference: the push that drives charge (named here, explained in the next key point)", "terms": ["potential difference"], "dependsOn": ["electric-charge"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-    { "id": "switch", "name": "Switch: opens or closes a gap in the loop", "terms": ["switch"], "dependsOn": ["closed-circuit"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-    { "id": "rate", "name": "Rate: how much happens each second", "terms": ["rate"], "dependsOn": ["everyday-time-seconds"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-    { "id": "electric-current", "name": "Electric current: the rate of flow of charge", "terms": ["electric current", "current"], "dependsOn": ["electric-charge", "rate"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-    { "id": "coulomb", "name": "Coulomb (C), the unit of charge", "terms": ["coulomb"], "dependsOn": ["electric-charge"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-    { "id": "ampere", "name": "Ampere (A): one coulomb each second", "terms": ["ampere", "amps"], "dependsOn": ["electric-current", "coulomb"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-    { "id": "ammeter", "name": "Ammeter: measures current, connected in the loop", "terms": ["ammeter"], "dependsOn": ["electric-current", "ampere"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-    { "id": "current-same-in-loop", "name": "In one loop the current is the same at every point (charge is not used up)", "terms": [], "dependsOn": ["electric-current", "closed-circuit"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-    { "id": "charge-flow", "name": "Charge flow Q, in coulombs", "terms": ["charge flow"], "dependsOn": ["electric-charge", "coulomb"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-    { "id": "eq-Q=It", "name": "Q = I t", "terms": [], "equation": "Q=It", "dependsOn": ["charge-flow", "electric-current", "everyday-time-seconds", "maths-substitute", "maths-rearrange", "maths-units-time", "maths-prefix"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 0 } },
-
-    { "id": "resistor", "name": "Resistor: a part that limits the current", "terms": ["resistor"], "dependsOn": ["electric-current"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 1 } },
-    { "id": "component", "name": "Component: any part of a circuit", "terms": ["component"], "dependsOn": ["everyday-circuit"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 1 } },
-    { "id": "volt", "name": "Volt (V), the unit of potential difference", "terms": ["volt"], "dependsOn": ["potential-difference"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 1 } },
-    { "id": "voltmeter", "name": "Voltmeter: measures potential difference, connected across a component", "terms": ["voltmeter"], "dependsOn": ["potential-difference", "volt", "component"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 1 } },
-    { "id": "voltage", "name": "Voltage: another name for potential difference", "terms": ["voltage"], "dependsOn": ["potential-difference"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 1 } },
-    { "id": "resistance", "name": "Resistance: how hard a component makes it for charge to get through", "terms": ["resistance"], "dependsOn": ["electric-current", "component"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 1 } },
-    { "id": "ohm", "name": "Ohm (Ω), the unit of resistance", "terms": ["ohm"], "dependsOn": ["resistance"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 1 } },
-    { "id": "eq-V=IR", "name": "V = I R", "terms": [], "equation": "V=IR", "dependsOn": ["potential-difference", "electric-current", "resistance", "maths-substitute", "maths-rearrange", "maths-prefix"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 1 } },
-
-    { "id": "in-series", "name": "In series: one after another in the same loop", "terms": ["in series"], "dependsOn": ["closed-circuit"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 2 } },
-    { "id": "in-parallel", "name": "In parallel: side by side, across the same two points", "terms": ["in parallel"], "dependsOn": ["everyday-circuit"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 2 } },
-    { "id": "constant-temperature", "name": "Constant temperature: the temperature stays the same", "terms": ["constant temperature"], "dependsOn": ["everyday-temperature"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 2 } },
-    { "id": "practical-wire", "name": "Required practical: how the length of a wire changes its resistance", "terms": [], "dependsOn": ["ammeter", "voltmeter", "in-series", "in-parallel", "eq-V=IR", "constant-temperature", "maths-mean"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 2 } },
-
-    { "id": "iv-characteristic", "name": "I-V characteristic: current (up the side) against potential difference (along)", "terms": ["I-V characteristic"], "dependsOn": ["electric-current", "potential-difference", "maths-graph-axes"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 3 } },
-    { "id": "directly-proportional", "name": "Directly proportional: one doubles, the other doubles; a straight line through the origin", "terms": ["directly proportional"], "dependsOn": ["maths-graph-axes", "maths-origin"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 3 } },
-    { "id": "ohmic-conductor", "name": "Ohmic conductor: constant resistance at constant temperature", "terms": ["ohmic conductor"], "dependsOn": ["iv-characteristic", "directly-proportional", "resistance", "constant-temperature"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 3 } },
-
-    { "id": "filament-lamp", "name": "Filament lamp: resistance rises as it gets hotter", "terms": ["filament lamp"], "dependsOn": ["lamp", "resistance", "everyday-temperature", "maths-steepness"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 4 } },
-    { "id": "diode", "name": "Diode: current one way only, very high resistance in reverse", "terms": ["diode"], "dependsOn": ["electric-current", "resistance", "maths-negative"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 4 } },
-    { "id": "resistance-at-a-point", "name": "Resistance at a point on an I-V graph: read V and I there, then V ÷ I (not the steepness)", "terms": [], "dependsOn": ["eq-V=IR", "iv-characteristic", "maths-read-graph"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 4 } },
-
-    { "id": "variable-resistor", "name": "Variable resistor (rheostat): a resistor you can adjust", "terms": ["variable resistor", "rheostat"], "dependsOn": ["resistor", "resistance"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 5 } },
-    { "id": "linear", "name": "Linear: a straight-line graph", "terms": ["linear"], "dependsOn": ["iv-characteristic"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 5 } },
-    { "id": "non-linear", "name": "Non-linear: any other shape", "terms": ["non-linear"], "dependsOn": ["linear"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 5 } },
-    { "id": "practical-iv", "name": "Required practical: measuring I-V characteristics", "terms": [], "dependsOn": ["ammeter", "voltmeter", "in-series", "in-parallel", "variable-resistor", "iv-characteristic", "filament-lamp", "diode", "maths-mean", "maths-negative"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 5 } },
-
-    { "id": "work-done", "name": "Work done: energy transferred when charge flows", "terms": ["work done", "work is done"], "dependsOn": ["everyday-energy", "electric-charge"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 6 } },
-    { "id": "joule", "name": "Joule (J), the unit of energy", "terms": ["joule"], "dependsOn": ["everyday-energy"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 6 } },
-    { "id": "energy-transferred", "name": "Energy transferred, in joules; 1 V means 1 J per coulomb", "terms": ["energy transferred"], "dependsOn": ["everyday-energy", "joule", "volt", "coulomb"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 6 } },
-    { "id": "eq-E=QV", "name": "E = Q V", "terms": [], "equation": "E=QV", "dependsOn": ["energy-transferred", "charge-flow", "potential-difference", "eq-Q=It", "maths-substitute", "maths-rearrange", "maths-prefix", "maths-units-time"], "taught": { "lesson": "p2-current-voltage", "keyPoint": 6 } },
-
-    { "id": "circuit-symbol", "name": "Circuit symbols: the agreed drawing for each component", "terms": ["circuit symbol"], "dependsOn": ["component"], "taught": { "lesson": "p2-components", "keyPoint": 0 } },
-    { "id": "circuit-diagram", "name": "Circuit diagram: a drawing made from circuit symbols", "terms": ["circuit diagram"], "dependsOn": ["circuit-symbol", "in-series", "in-parallel"], "taught": { "lesson": "p2-components", "keyPoint": 0 } },
-    { "id": "cell", "name": "Cell, and its symbol", "terms": ["cell"], "dependsOn": ["potential-difference"], "taught": { "lesson": "p2-components", "keyPoint": 0 }, "note": "an everyday word recapped in p2-current-voltage's basics; its symbol is taught here" },
-    { "id": "battery", "name": "Battery: two or more cells joined together", "terms": ["battery"], "dependsOn": ["cell"], "taught": { "lesson": "p2-components", "keyPoint": 0 }, "note": "an everyday word recapped in p2-current-voltage's basics; its symbol is taught here" },
-    { "id": "led", "name": "Light-emitting diode (LED): a diode that gives out light", "terms": ["light-emitting diode", "LED"], "dependsOn": ["diode"], "taught": { "lesson": "p2-components", "keyPoint": 0 } },
-    { "id": "fuse", "name": "Fuse symbol", "terms": ["fuse"], "dependsOn": ["circuit-symbol"], "taught": { "lesson": "p2-components", "keyPoint": 0 } },
-
-    { "id": "thermistor", "name": "Thermistor: resistance falls as it gets warmer", "terms": ["thermistor"], "dependsOn": ["resistance", "everyday-temperature"], "taught": { "lesson": "p2-components", "keyPoint": 1 } },
-    { "id": "sensor", "name": "Sensor: a part that detects a change around it", "terms": ["sensor"], "dependsOn": ["component"], "taught": { "lesson": "p2-components", "keyPoint": 1 } },
-    { "id": "thermostat", "name": "Thermostat: keeps a room or oven at a set temperature", "terms": ["thermostat"], "dependsOn": ["thermistor", "sensor"], "taught": { "lesson": "p2-components", "keyPoint": 1 } },
-    { "id": "ldr", "name": "Light-dependent resistor (LDR): resistance falls in brighter light", "terms": ["light-dependent resistor", "LDR"], "dependsOn": ["resistance"], "taught": { "lesson": "p2-components", "keyPoint": 1 }, "note": "named in key point 1, explained in key point 2" },
-    { "id": "light-intensity", "name": "Light intensity: how bright the light is", "terms": ["light intensity"], "dependsOn": [], "taught": { "lesson": "p2-components", "keyPoint": 2 } },
-    { "id": "sensor-circuit", "name": "Drawing a circuit to test a sensor and finding its resistance", "terms": [], "dependsOn": ["circuit-diagram", "ammeter", "voltmeter", "in-series", "in-parallel", "thermistor", "ldr", "light-intensity", "eq-V=IR", "maths-read-graph"], "taught": { "lesson": "p2-components", "keyPoint": 3 } }
+    {
+      "id": "everyday-circuit",
+      "name": "A circuit is a loop of wire that charge flows round",
+      "terms": [
+        "circuit"
+      ],
+      "dependsOn": [],
+      "taught": "outside these lessons",
+      "note": "everyday idea, recapped in the lesson's basics"
+    },
+    {
+      "id": "everyday-energy",
+      "name": "Energy makes things happen (move, heat up, light up)",
+      "terms": [
+        "energy"
+      ],
+      "dependsOn": [],
+      "taught": "outside these lessons",
+      "note": "P1 Energy; recapped in basics"
+    },
+    {
+      "id": "everyday-temperature",
+      "name": "Temperature: how hot something is",
+      "terms": [
+        "temperature"
+      ],
+      "dependsOn": [],
+      "taught": "outside these lessons",
+      "note": "everyday word; p2-components gives a one-line meaning"
+    },
+    {
+      "id": "everyday-time-seconds",
+      "name": "Time measured in seconds",
+      "terms": [
+        "seconds"
+      ],
+      "dependsOn": [],
+      "taught": "outside these lessons"
+    },
+    {
+      "id": "maths-substitute",
+      "name": "Putting numbers in place of letters in an equation; two letters side by side are multiplied",
+      "terms": [],
+      "kind": "maths",
+      "dependsOn": [],
+      "taught": "outside these lessons",
+      "note": "recapped in basics (Reading an equation)"
+    },
+    {
+      "id": "maths-rearrange",
+      "name": "Rearranging a product equation: a = b × c, so b = a ÷ c",
+      "terms": [],
+      "kind": "maths",
+      "dependsOn": [
+        "maths-substitute"
+      ],
+      "taught": "outside these lessons",
+      "note": "shown step by step in the worked examples"
+    },
+    {
+      "id": "maths-units-time",
+      "name": "Converting minutes and hours to seconds",
+      "terms": [],
+      "kind": "maths",
+      "dependsOn": [
+        "everyday-time-seconds"
+      ],
+      "taught": "outside these lessons"
+    },
+    {
+      "id": "maths-prefix",
+      "name": "Unit prefixes: kilo means × 1000, milli means ÷ 1000",
+      "terms": [],
+      "kind": "maths",
+      "dependsOn": [],
+      "taught": "outside these lessons",
+      "note": "the worked examples say what each prefix means where it is used"
+    },
+    {
+      "id": "maths-graph-axes",
+      "name": "The two axes of a graph, and a point as a pair of readings",
+      "terms": [
+        "axes",
+        "axis"
+      ],
+      "kind": "maths",
+      "dependsOn": [],
+      "taught": "outside these lessons",
+      "note": "recapped in basics"
+    },
+    {
+      "id": "maths-origin",
+      "name": "The origin: where both quantities are zero",
+      "terms": [
+        "origin"
+      ],
+      "kind": "maths",
+      "dependsOn": [
+        "maths-graph-axes"
+      ],
+      "taught": "outside these lessons",
+      "note": "recapped in basics"
+    },
+    {
+      "id": "maths-read-graph",
+      "name": "Reading a value off a graph line",
+      "terms": [],
+      "kind": "maths",
+      "dependsOn": [
+        "maths-graph-axes"
+      ],
+      "taught": "outside these lessons"
+    },
+    {
+      "id": "maths-steepness",
+      "name": "Steepness of a line (a steeper line rises faster)",
+      "terms": [
+        "steep",
+        "steeply",
+        "flatter"
+      ],
+      "kind": "maths",
+      "dependsOn": [
+        "maths-graph-axes"
+      ],
+      "taught": "outside these lessons"
+    },
+    {
+      "id": "maths-negative",
+      "name": "Negative numbers on an axis",
+      "terms": [
+        "negative"
+      ],
+      "kind": "maths",
+      "dependsOn": [
+        "maths-graph-axes"
+      ],
+      "taught": "outside these lessons"
+    },
+    {
+      "id": "maths-mean",
+      "name": "The mean of repeat readings",
+      "terms": [
+        "mean"
+      ],
+      "kind": "maths",
+      "dependsOn": [],
+      "taught": "outside these lessons"
+    },
+    {
+      "id": "lamp",
+      "name": "Lamp (a bulb in a circuit)",
+      "terms": [
+        "lamp"
+      ],
+      "dependsOn": [
+        "everyday-circuit"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "electric-charge",
+      "name": "Electric charge, carried by tiny particles in the wire",
+      "terms": [
+        "electric charge"
+      ],
+      "dependsOn": [],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "closed-circuit",
+      "name": "A closed circuit: a complete loop",
+      "terms": [
+        "closed circuit"
+      ],
+      "dependsOn": [
+        "everyday-circuit"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "potential-difference",
+      "name": "Potential difference: the push that drives charge (named here, explained in the next key point)",
+      "terms": [
+        "potential difference"
+      ],
+      "dependsOn": [
+        "electric-charge"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "switch",
+      "name": "Switch: opens or closes a gap in the loop",
+      "terms": [
+        "switch"
+      ],
+      "dependsOn": [
+        "closed-circuit"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "rate",
+      "name": "Rate: how much happens each second",
+      "terms": [
+        "rate"
+      ],
+      "dependsOn": [
+        "everyday-time-seconds"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "electric-current",
+      "name": "Electric current: the rate of flow of charge",
+      "terms": [
+        "electric current",
+        "current"
+      ],
+      "dependsOn": [
+        "electric-charge",
+        "rate"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "coulomb",
+      "name": "Coulomb (C), the unit of charge",
+      "terms": [
+        "coulomb"
+      ],
+      "dependsOn": [
+        "electric-charge"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "ampere",
+      "name": "Ampere (A): one coulomb each second",
+      "terms": [
+        "ampere",
+        "amps"
+      ],
+      "dependsOn": [
+        "electric-current",
+        "coulomb"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "ammeter",
+      "name": "Ammeter: measures current, connected in the loop",
+      "terms": [
+        "ammeter"
+      ],
+      "dependsOn": [
+        "electric-current",
+        "ampere"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "current-same-in-loop",
+      "name": "In one loop the current is the same at every point (charge is not used up)",
+      "terms": [],
+      "dependsOn": [
+        "electric-current",
+        "closed-circuit"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "charge-flow",
+      "name": "Charge flow Q, in coulombs",
+      "terms": [
+        "charge flow"
+      ],
+      "dependsOn": [
+        "electric-charge",
+        "coulomb"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "eq-Q=It",
+      "name": "Q = I t",
+      "terms": [],
+      "equation": "Q=It",
+      "dependsOn": [
+        "charge-flow",
+        "electric-current",
+        "everyday-time-seconds",
+        "maths-substitute",
+        "maths-rearrange",
+        "maths-units-time",
+        "maths-prefix"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "resistor",
+      "name": "Resistor: a part that limits the current",
+      "terms": [
+        "resistor"
+      ],
+      "dependsOn": [
+        "electric-current"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 1
+      }
+    },
+    {
+      "id": "component",
+      "name": "Component: any part of a circuit",
+      "terms": [
+        "component"
+      ],
+      "dependsOn": [
+        "everyday-circuit"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 1
+      }
+    },
+    {
+      "id": "volt",
+      "name": "Volt (V), the unit of potential difference",
+      "terms": [
+        "volt"
+      ],
+      "dependsOn": [
+        "potential-difference"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 1
+      }
+    },
+    {
+      "id": "voltmeter",
+      "name": "Voltmeter: measures potential difference, connected across a component",
+      "terms": [
+        "voltmeter"
+      ],
+      "dependsOn": [
+        "potential-difference",
+        "volt",
+        "component"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 1
+      }
+    },
+    {
+      "id": "voltage",
+      "name": "Voltage: another name for potential difference",
+      "terms": [
+        "voltage"
+      ],
+      "dependsOn": [
+        "potential-difference"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 1
+      }
+    },
+    {
+      "id": "resistance",
+      "name": "Resistance: how hard a component makes it for charge to get through",
+      "terms": [
+        "resistance"
+      ],
+      "dependsOn": [
+        "electric-current",
+        "component"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 1
+      }
+    },
+    {
+      "id": "ohm",
+      "name": "Ohm (Ω), the unit of resistance",
+      "terms": [
+        "ohm"
+      ],
+      "dependsOn": [
+        "resistance"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 1
+      }
+    },
+    {
+      "id": "eq-V=IR",
+      "name": "V = I R",
+      "terms": [],
+      "equation": "V=IR",
+      "dependsOn": [
+        "potential-difference",
+        "electric-current",
+        "resistance",
+        "maths-substitute",
+        "maths-rearrange",
+        "maths-prefix"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 1
+      }
+    },
+    {
+      "id": "in-series",
+      "name": "In series: one after another in the same loop",
+      "terms": [
+        "in series"
+      ],
+      "dependsOn": [
+        "closed-circuit"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 2
+      }
+    },
+    {
+      "id": "in-parallel",
+      "name": "In parallel: side by side, across the same two points",
+      "terms": [
+        "in parallel"
+      ],
+      "dependsOn": [
+        "everyday-circuit"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 2
+      }
+    },
+    {
+      "id": "constant-temperature",
+      "name": "Constant temperature: the temperature stays the same",
+      "terms": [
+        "constant temperature"
+      ],
+      "dependsOn": [
+        "everyday-temperature"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 2
+      }
+    },
+    {
+      "id": "practical-wire",
+      "name": "Required practical: how the length of a wire changes its resistance",
+      "terms": [],
+      "dependsOn": [
+        "ammeter",
+        "voltmeter",
+        "in-series",
+        "in-parallel",
+        "eq-V=IR",
+        "constant-temperature",
+        "maths-mean"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 2
+      }
+    },
+    {
+      "id": "iv-characteristic",
+      "name": "I-V characteristic: current (up the side) against potential difference (along)",
+      "terms": [
+        "I-V characteristic"
+      ],
+      "dependsOn": [
+        "electric-current",
+        "potential-difference",
+        "maths-graph-axes"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 3
+      }
+    },
+    {
+      "id": "directly-proportional",
+      "name": "Directly proportional: one doubles, the other doubles; a straight line through the origin",
+      "terms": [
+        "directly proportional"
+      ],
+      "dependsOn": [
+        "maths-graph-axes",
+        "maths-origin"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 3
+      }
+    },
+    {
+      "id": "ohmic-conductor",
+      "name": "Ohmic conductor: constant resistance at constant temperature",
+      "terms": [
+        "ohmic conductor"
+      ],
+      "dependsOn": [
+        "iv-characteristic",
+        "directly-proportional",
+        "resistance",
+        "constant-temperature"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 3
+      }
+    },
+    {
+      "id": "gradient",
+      "name": "Gradient: the steepness of a line on a graph",
+      "terms": [
+        "gradient"
+      ],
+      "dependsOn": [
+        "maths-steepness"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 4
+      }
+    },
+    {
+      "id": "filament-lamp",
+      "name": "Filament lamp: resistance rises as it gets hotter",
+      "terms": [
+        "filament lamp"
+      ],
+      "dependsOn": [
+        "lamp",
+        "resistance",
+        "everyday-temperature",
+        "maths-steepness",
+        "gradient"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 4
+      }
+    },
+    {
+      "id": "diode",
+      "name": "Diode: current one way only, very high resistance in reverse",
+      "terms": [
+        "diode"
+      ],
+      "dependsOn": [
+        "electric-current",
+        "resistance",
+        "maths-negative"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 4
+      }
+    },
+    {
+      "id": "resistance-at-a-point",
+      "name": "Resistance at a point on an I-V graph: read V and I there, then V ÷ I (not the steepness)",
+      "terms": [],
+      "dependsOn": [
+        "eq-V=IR",
+        "iv-characteristic",
+        "maths-read-graph"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 4
+      }
+    },
+    {
+      "id": "variable-resistor",
+      "name": "Variable resistor (rheostat): a resistor you can adjust",
+      "terms": [
+        "variable resistor",
+        "rheostat"
+      ],
+      "dependsOn": [
+        "resistor",
+        "resistance"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 5
+      }
+    },
+    {
+      "id": "linear",
+      "name": "Linear: a straight-line graph",
+      "terms": [
+        "linear"
+      ],
+      "dependsOn": [
+        "iv-characteristic"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 5
+      }
+    },
+    {
+      "id": "non-linear",
+      "name": "Non-linear: any other shape",
+      "terms": [
+        "non-linear"
+      ],
+      "dependsOn": [
+        "linear"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 5
+      }
+    },
+    {
+      "id": "practical-iv",
+      "name": "Required practical: measuring I-V characteristics",
+      "terms": [],
+      "dependsOn": [
+        "ammeter",
+        "voltmeter",
+        "in-series",
+        "in-parallel",
+        "variable-resistor",
+        "iv-characteristic",
+        "filament-lamp",
+        "diode",
+        "maths-mean",
+        "maths-negative"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 5
+      }
+    },
+    {
+      "id": "work-done",
+      "name": "Work done: energy transferred when charge flows",
+      "terms": [
+        "work done",
+        "work is done"
+      ],
+      "dependsOn": [
+        "everyday-energy",
+        "electric-charge"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 6
+      }
+    },
+    {
+      "id": "joule",
+      "name": "Joule (J), the unit of energy",
+      "terms": [
+        "joule"
+      ],
+      "dependsOn": [
+        "everyday-energy"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 6
+      }
+    },
+    {
+      "id": "energy-transferred",
+      "name": "Energy transferred, in joules; 1 V means 1 J per coulomb",
+      "terms": [
+        "energy transferred"
+      ],
+      "dependsOn": [
+        "everyday-energy",
+        "joule",
+        "volt",
+        "coulomb"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 6
+      }
+    },
+    {
+      "id": "eq-E=QV",
+      "name": "E = Q V",
+      "terms": [],
+      "equation": "E=QV",
+      "dependsOn": [
+        "energy-transferred",
+        "charge-flow",
+        "potential-difference",
+        "eq-Q=It",
+        "maths-substitute",
+        "maths-rearrange",
+        "maths-prefix",
+        "maths-units-time"
+      ],
+      "taught": {
+        "lesson": "p2-current-voltage",
+        "keyPoint": 6
+      }
+    },
+    {
+      "id": "circuit-symbol",
+      "name": "Circuit symbols: the agreed drawing for each component",
+      "terms": [
+        "circuit symbol"
+      ],
+      "dependsOn": [
+        "component"
+      ],
+      "taught": {
+        "lesson": "p2-components",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "circuit-diagram",
+      "name": "Circuit diagram: a drawing made from circuit symbols",
+      "terms": [
+        "circuit diagram"
+      ],
+      "dependsOn": [
+        "circuit-symbol",
+        "in-series",
+        "in-parallel"
+      ],
+      "taught": {
+        "lesson": "p2-components",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "cell",
+      "name": "Cell, and its symbol",
+      "terms": [
+        "cell"
+      ],
+      "dependsOn": [
+        "potential-difference"
+      ],
+      "taught": {
+        "lesson": "p2-components",
+        "keyPoint": 0
+      },
+      "note": "an everyday word recapped in p2-current-voltage's basics; its symbol is taught here"
+    },
+    {
+      "id": "battery",
+      "name": "Battery: two or more cells joined together",
+      "terms": [
+        "battery"
+      ],
+      "dependsOn": [
+        "cell"
+      ],
+      "taught": {
+        "lesson": "p2-components",
+        "keyPoint": 0
+      },
+      "note": "an everyday word recapped in p2-current-voltage's basics; its symbol is taught here"
+    },
+    {
+      "id": "led",
+      "name": "Light-emitting diode (LED): a diode that gives out light",
+      "terms": [
+        "light-emitting diode",
+        "LED"
+      ],
+      "dependsOn": [
+        "diode"
+      ],
+      "taught": {
+        "lesson": "p2-components",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "fuse",
+      "name": "Fuse symbol",
+      "terms": [
+        "fuse"
+      ],
+      "dependsOn": [
+        "circuit-symbol"
+      ],
+      "taught": {
+        "lesson": "p2-components",
+        "keyPoint": 0
+      }
+    },
+    {
+      "id": "thermistor",
+      "name": "Thermistor: resistance falls as it gets warmer",
+      "terms": [
+        "thermistor"
+      ],
+      "dependsOn": [
+        "resistance",
+        "everyday-temperature"
+      ],
+      "taught": {
+        "lesson": "p2-components",
+        "keyPoint": 1
+      }
+    },
+    {
+      "id": "sensor",
+      "name": "Sensor: a part that detects a change around it",
+      "terms": [
+        "sensor"
+      ],
+      "dependsOn": [
+        "component"
+      ],
+      "taught": {
+        "lesson": "p2-components",
+        "keyPoint": 1
+      }
+    },
+    {
+      "id": "thermostat",
+      "name": "Thermostat: keeps a room or oven at a set temperature",
+      "terms": [
+        "thermostat"
+      ],
+      "dependsOn": [
+        "thermistor",
+        "sensor"
+      ],
+      "taught": {
+        "lesson": "p2-components",
+        "keyPoint": 1
+      }
+    },
+    {
+      "id": "ldr",
+      "name": "Light-dependent resistor (LDR): resistance falls in brighter light",
+      "terms": [
+        "light-dependent resistor",
+        "LDR"
+      ],
+      "dependsOn": [
+        "resistance"
+      ],
+      "taught": {
+        "lesson": "p2-components",
+        "keyPoint": 1
+      },
+      "note": "named in key point 1, explained in key point 2"
+    },
+    {
+      "id": "light-intensity",
+      "name": "Light intensity: how bright the light is",
+      "terms": [
+        "light intensity"
+      ],
+      "dependsOn": [],
+      "taught": {
+        "lesson": "p2-components",
+        "keyPoint": 2
+      }
+    },
+    {
+      "id": "sensor-circuit",
+      "name": "Drawing a circuit to test a sensor and finding its resistance",
+      "terms": [],
+      "dependsOn": [
+        "circuit-diagram",
+        "ammeter",
+        "voltmeter",
+        "in-series",
+        "in-parallel",
+        "thermistor",
+        "ldr",
+        "light-intensity",
+        "eq-V=IR",
+        "maths-read-graph"
+      ],
+      "taught": {
+        "lesson": "p2-components",
+        "keyPoint": 3
+      }
+    }
   ]
 }

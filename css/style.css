@@ -591,6 +591,16 @@ body::before {
 .btn.full        { width: 100%; text-align: center; }
 .btn:disabled    { opacity: 0.35; cursor: not-allowed; }
 
+/* ── SILVER'S CORNER (evidence layer, step 6) ──
+   In the page flow, under a screen's buttons, at the right: never over anything. */
+.silver-slot { display:flex; justify-content:flex-end; margin:0.9rem 0 1.5rem; }
+.silver-corner {
+  max-width:min(300px, 100%); background:var(--s2); border:1.5px solid var(--border2);
+  border-radius:14px; padding:0.8rem 0.9rem; font-size:0.9rem; line-height:1.5;
+  opacity:0; transition:opacity 0.28s ease;
+}
+.silver-corner input { max-width:100%; }
+
 /* ── TOAST ── */
 .toast {
   position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%) translateY(80px);

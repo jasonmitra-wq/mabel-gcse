@@ -152,13 +152,14 @@ A8 Run both lessons through the fixed sequence again (steps a–f). Then:
    question not answered first, two key points in one message, answer
    in question, term used before explained. Any of these above zero is
    fixed once in PILOT_FIX and the text tester re-run once.
-A9 PILOT GATE (again). Update docs/ESCALATIONS.md "Pilot" with what
-   changed and what to try (slides and AI lesson; Try another; the
-   widgets; the quiz). STOP with: 'Pilot v3.1 ready. Jason: try Physics
-   → Electricity → Current and potential difference, and Components,
-   as slides and as an AI lesson. Mabel: do one as an AI lesson. Then
-   type "Pilot: yes" or "Pilot: <what to change>", and "Mabel: <what
-   she said>".' Continue only after "Pilot: yes".
+A9 EVIDENCE PILOT GATE (brief docs/briefs/2026-10-19-evidence-layer.md,
+   step 9). STOP with "Pilot ready. Mabel: first do 'Quick check before
+   you start', then both Electricity lessons as AI lessons, then the
+   post-test; the delayed test unlocks in a week. Jason: try both lessons
+   as slides (not before Mabel's quick check, if on her device). Type
+   'Pilot: <what you think>' and 'Mabel: <what she said>'."
+   After the delayed test, run tools/pilot/analyse.js; the planning chat
+   decides whether to roll the approach out to all subjects.
 
 Phases B, C and D: each lesson includes the v3.1 additions (brief
 docs/briefs/2026-10-19-pilot-feedback-v3-1.md, step 1). Maths (Phase D)

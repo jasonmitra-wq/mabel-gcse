@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, task A9, PILOT GATE (v3.1): waiting for "Pilot: yes" (docs/ESCALATIONS.md, "Pilot v3.1"). A1–A8 done.
+Runbook position: Phase A, A9 (evidence pilot gate). Brief docs/briefs/2026-10-19-evidence-layer.md done (steps 0–10); waiting for Mabel's quick check, both lessons and the post-tests; the delayed test unlocks a week after both post-tests, then tools/pilot/analyse.js.
 
 ## Runbook v3 switch (2026-10-19)
 
@@ -23,6 +23,7 @@ All eight are rewritten under runbook v3 (Phase A pilot P2, then Phase B).
 | p2-current-voltage | ✓ | (this commit, "p2-current-voltage: rewritten (v3)") | 0.12 (step c) | 7 key points, 1,234 words; new diagram p2-wire-length; audit 13cf62e-1: 16 fixed, F8 rejected (ESCALATIONS) |
 | p2-current-voltage (v3.1) | ✓ | (this commit, "p2-current-voltage: rewritten (v3.1)") | 0.1662 (step c) | brief v3.1: pictures, 3 worked examples per equation, circuit and I-V widgets, readiness, own words, mixed questions, end quiz of 7; audit 8dde1a5-1: 8 fixed, F1 F2 F7 F8 rejected (ESCALATIONS) |
 | p2-components (v3.1) | ✓ | (this commit, "p2-components: rewritten (v3.1)") | 0.1197 (step c) | brief v3.1: symbol charts split, thermistor and LDR graph then symbol, sensor widget, readiness, own words, mixed questions, end quiz of 6; audit 3ac569a-1: 10 fixed, F4 no change, F12 rejected (ESCALATIONS) |
+| p2-current-voltage, p2-components (evidence layer) | ✓ b–f | (this commit chain: 44a2525 lessons) | 0.3435 (step c 0.2162 + 0.1273) | brief 2026-10-19 evidence layer: predict-first items for M1–M14 in the widgets, exam gaps G1–G15 (tools/pilot/gaps.md), More practice links; audit 33bbc51-1: 13 fixed, F11 rejected (ESCALATIONS) |
 | p2-components | ✓ | (this commit, "p2-components: rewritten (v3)") | 0.08 (step c) | 4 key points, 730 words; new diagrams p2-circuit-symbols, p2-thermistor-circuit; first lesson with prerequisites (card checked in the browser); audit 923f2b9-1: 13 fixed, F7 and F14 rejected (ESCALATIONS); p2-current-voltage step b re-run after the glossary grew (switch, resistor explained) |
 
 Tools: tools/lesson-shape-v3.md, tools/check-lesson-v3.js (A1, A2); flags SLIDES_V3 (js/lessons.js), v3Fields (js/teach-core.js), GLOSSARY_V3 (js/glossary.js); data/glossary/<subject>.json from tools/build-glossary.js (A3, A4).
@@ -80,6 +81,7 @@ Spec-check API calls, summed from tools/spec-check-results/SUMMARY.md (one line 
 | Runbook v3 p2-current-voltage (2026-10-19) | spec-check step c 1; site test 1 attempt (ran to exchange 9, then stopped on an API billing/credit error before the judge; the tool reported no cost) | 0.12 + site test not reported (estimated under 0.20: about 9 tutor and student exchanges, no judge call) |
 | Runbook v3 p2-components (2026-10-19) | spec-check step c 1 | 0.08 |
 | Runbook v3 pilot site tests (2026-10-19) | p2-current-voltage-2 1.0755; p2-components 0.0675 (stopped at the card); p2-components-2 0.5815 | 1.72 |
+| Evidence layer (2026-10-24, brief 2026-10-19 evidence layer) | spec-check step c 2; site tests 2 (pilot-diagnostic, p2-current-voltage) | 1.19 (spec-check 0.2162 + 0.1273; site tests 0.1327 + 0.7135) |
 | Teach-sim (check D) | 2 runs | 0.12 |
 | Teach-sim P1 (task 2.5c) | 10 lesson runs | 0.55 |
 | Teach-sim P2 (task 2.5c) | 8 lesson runs | 0.37 |

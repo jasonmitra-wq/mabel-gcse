@@ -595,14 +595,17 @@ function showTopics() {
       <div class="tc-right">${badgeHtml}</div>`;
 
     if (avail) {
-      card.onclick = () => showSubtopics(code, t);
+      card.onclick = () => showSubtopics(code, t, { arrived: true });
     }
     list.appendChild(card);
   });
 }
 
-function showSubtopics(topicCode, topicData) {
+function showSubtopics(topicCode, topicData, opts = {}) {
   App.setStage('Topics');
+  // Shorter quick check (brief 2026-10-26): opening Electricity offers the quick check on its own
+  // screen, once per visit, until it is done. "Not now" shows the lessons.
+  if (opts.arrived && typeof Pilot !== 'undefined' && Pilot.offer && Pilot.offer(topicCode, _activeSubject, () => showSubtopics(topicCode, topicData))) return;
   _progress = Store.getProgress();
 
   const main = document.getElementById('main');

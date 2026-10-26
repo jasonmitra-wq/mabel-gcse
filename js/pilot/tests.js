@@ -22,6 +22,15 @@
        graph?: { … }, recap?, known? }
    ecf: an expression in the earlier boxes' keys, the answer her own
    earlier values give (for example "54000 / E" uses her E).
+
+   Shorter quick check (brief docs/briefs/2026-10-26-shorter-quick-check.md),
+   on with SHORT_CHECK: 6 questions that teach. Each quick-check item also has
+     feedback: { right, why?: [lines], steps?: [lines], explains?: [terms] },
+     inLesson: { kp, text, match, explains? }   // match: words in that key point
+     similar?: true    // "Try a similar one": similar(id, seed), not scored
+   and each misconception item names the later-test question that asks the
+   same misconception in other words (later). Her first answer is the one
+   recorded and scored.
    ============================================================ */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
@@ -109,10 +118,133 @@
         { text: '0.125 Ω (0.50 ÷ 4.0)', mis: 'M14' },
       ], correct: 0 },
   ];
-  const mis = id => MIS.find(m => m.id === id);
+  const mis = id => MIS.find(m => m.id === id) || LATER.find(m => m.id === id);
 
-  // ── The quick check before you start (15 questions, about 10 minutes) ──
-  const DIAGNOSTIC = [
+  // Shorter quick check (brief 2026-10-26): false keeps the 15-question version.
+  const SHORT_CHECK = true;
+
+  // ── For the later tests: the two misconceptions the quick check now teaches,
+  // asked in other words and another situation (brief 2026-10-26, step 4) ──
+  const LATER = [
+    { id: 'm-loop-2', kind: 'mis', type: 'recall', idea: 'closed-circuit', lesson: CV, kp: 0, label: 'A lamp needs a complete loop',
+      question: 'A doorbell is joined to a cell by two wires. One of the wires breaks. What happens when you press the bell?',
+      options: [
+        { text: 'Nothing: charge must flow out of the cell, through the bell and back again' },
+        { text: 'It still rings: one wire is enough to carry the electricity to the bell', mis: 'M1' },
+        { text: 'It still rings, but more quietly, because only one wire is working', mis: 'M1' },
+        { text: 'It still rings: the cell sends the electricity out whatever the wiring', mis: 'M7' },
+      ], correct: 0 },
+    { id: 'm-used-up-2', kind: 'mis', type: 'explain', idea: 'current-same-in-loop', lesson: CV, kp: 0, label: 'The current is the same all round a loop',
+      question: 'A heater is joined to a power supply in one loop. How does the current flowing into the heater compare with the current flowing out of it?',
+      options: [
+        { text: 'They are the same' },
+        { text: 'Less flows out: the heater uses up some of the current', mis: 'M2' },
+        { text: 'Less flows out, because that wire is further round the loop from the supply', mis: 'M4' },
+        { text: 'Currents flow into the heater from both ends of the supply and meet there', mis: 'M3' },
+      ], correct: 0 },
+  ];
+
+  // ── The shorter quick check: 6 questions, about 5 minutes, that teach ──
+  const QUICK = [
+    { id: 'd-rearrange', kind: 'prereq', type: 'recall', idea: 'maths-rearrange', lesson: CV, kp: 0, label: 'Rearranging an equation',
+      question: 'If a = b × c, which of these is right?',
+      options: [{ text: 'c = a ÷ b' }, { text: 'c = a × b' }, { text: 'c = b ÷ a' }, { text: 'c = a − b' }], correct: 0,
+      recap: 'Rearranging: to get a letter on its own when a = b × c, divide both sides by the other letter. So c = a ÷ b, and b = a ÷ c. The lesson does this step by step in its worked examples.',
+      feedback: { right: 'Right: to get c on its own, you divide a by b.',
+        steps: ['Start with a = b × c.', 'To get c on its own, undo the "× b": divide both sides by b.', 'That leaves c = a ÷ b.'] },
+      inLesson: { kp: 0, text: 'In the lesson: a worked example turns an equation round like this to find a missing number.', match: 'What is the current?' },
+      similar: true },
+    { id: 'd-minutes', kind: 'prereq', type: 'calculation', idea: 'maths-units-time', lesson: CV, kp: 0, label: 'Minutes into seconds',
+      question: 'How many seconds are there in 3 minutes?',
+      nums: [{ key: 't', label: 'Seconds', unit: 's', answer: 180, tol: 0, marks: 1 }],
+      recap: 'Time in seconds: 1 minute is 60 s, so multiply minutes by 60. 1 hour is 60 × 60 = 3600 s. Electricity equations use time in seconds.',
+      feedback: { right: 'Right: 3 minutes is 3 × 60 = 180 seconds.',
+        steps: ['There are 60 seconds in 1 minute.', 'So multiply the minutes by 60: 3 × 60.', 'That gives 180 seconds.'] },
+      inLesson: { kp: 0, text: 'In the lesson: a worked example changes 2 minutes into seconds first: 2 × 60 = 120 s.', match: '2 minutes = 2 × 60 = 120 s' },
+      similar: true },
+    { id: 'd-milli', kind: 'prereq', type: 'recall', idea: 'maths-prefix', lesson: CV, kp: 0, label: 'Milli and kilo',
+      question: 'How many amperes is 250 milliamperes (250 mA)?',
+      options: [{ text: '0.25 A' }, { text: '2.5 A' }, { text: '25 A' }, { text: '250 000 A' }], correct: 0,
+      recap: 'Prefixes: milli means a thousandth, so divide by 1000 (250 mA = 0.25 A). Kilo means a thousand, so multiply by 1000 (3 kJ = 3000 J).',
+      feedback: { right: 'Right: milli means a thousandth, so 250 mA is 250 ÷ 1000 = 0.25 A.',
+        steps: ['Milli means a thousandth.', 'So divide by 1000: 250 ÷ 1000.', 'That gives 0.25 A (amperes, a unit you will meet in the lesson).'], explains: ['ampere'] },
+      inLesson: { kp: 6, text: 'In the lesson: a worked example starts with 1.2 kJ. Kilo means a thousand, so there you multiply by 1000.', match: '1.2 kJ' },
+      similar: true },
+    { id: 'd-read-graph', kind: 'prereq', type: 'graph', idea: 'maths-read-graph', lesson: CV, kp: 3, label: 'Reading a value off a graph', graph: G.line,
+      question: 'Use the graph. What is the current when the potential difference is 4 V?',
+      nums: [{ key: 'I', label: 'Current', unit: 'A', answer: 0.4, abs: 0.02, marks: 1 }],
+      recap: 'Reading a graph: go along the bottom axis to the value you know, straight up to the line, then across to the side axis and read the value there. Check what each square is worth first.',
+      feedback: { right: 'Right: up from 4 on the bottom axis to the line, then across to 0.4.',
+        steps: ['Find 4 on the bottom axis.', 'Go straight up until you reach the line.', 'Go across to the side axis and read the number there: 0.4.'] },
+      inLesson: { kp: 4, text: 'In the lesson: you will read numbers off graphs like this, and drag a point along them to watch the numbers change.', match: 'drag the point along each graph' },
+      similar: true },
+    { id: 'd-loop', kind: 'mis', type: 'recall', idea: 'closed-circuit', lesson: CV, kp: 0, label: 'A lamp needs a complete loop', later: 'm-loop-2',
+      question: 'You have a bulb, some wire and a battery (the kind that goes in a torch). How do you make the bulb light up?',
+      options: [
+        { text: 'Two wires, making a loop: out of the battery, through the bulb and back' },
+        { text: 'One wire from the battery to the bulb is enough', mis: 'M1' },
+        { text: 'One wire is enough, as long as it is a thick one', mis: 'M1' },
+        { text: 'Any way at all: the battery sends electricity out to the bulb', mis: 'M7' },
+      ], correct: 0, explains: ['battery'],
+      feedback: { right: 'Right: you need a complete loop, out of the battery, through the bulb and back.',
+        why: ['The answer: two wires, making a loop from the battery, through the bulb and back.', 'Electricity only flows if it can go all the way round and back to the battery.', 'With one wire there is a gap, so nothing flows and the bulb stays dark.'], explains: ['battery'] },
+      inLesson: { kp: 0, text: 'In the lesson: you will try this on a circuit on screen. Open the switch, which makes a gap, and watch the bulb go out.', match: 'Open the switch', explains: ['switch'] } },
+    { id: 'd-used-up', kind: 'mis', type: 'explain', idea: 'current-same-in-loop', lesson: CV, kp: 0, label: 'The current is the same all round a loop', later: 'm-used-up-2',
+      question: 'A bulb is joined to a battery (the kind in a torch) in one loop of wire. The bulb is lit. Compare the flow of electricity going into the bulb with the flow coming out of it.',
+      options: [
+        { text: 'They are the same' },
+        { text: 'Less comes out: the bulb uses up some of the flow', mis: 'M2' },
+        { text: 'The flow gets less the further it goes from the battery', mis: 'M4' },
+        { text: 'Electricity flows into the bulb from both ends of the battery and meets there', mis: 'M3' },
+      ], correct: 0, explains: ['battery'],
+      feedback: { right: 'Right: the bulb does not use up the flow. The same amount goes in and comes out.',
+        why: ['The answer: the same amount flows in and out.', 'The bulb does not use up the flow. It all carries on round the loop.', 'So the flow is the same all the way round the loop.'], explains: ['battery'] },
+      inLesson: { kp: 0, text: 'In the lesson: you will test this on a circuit on screen, with a measuring dial before the bulb and one after it.', match: 'watch both ammeters' } },
+  ];
+
+  // "Try a similar one": the same kind of question with new numbers, checked in code.
+  function similar(id, seed) {
+    let a = (Number(seed) >>> 0) || 1;
+    const r = () => { a = (a * 1103515245 + 12345) >>> 0; return a / 4294967296; };
+    const pick = list => list[Math.floor(r() * list.length)];
+    const fmt = v => String(+v.toFixed(4));
+    if (id === 'd-rearrange') {
+      const [x, y, z] = pick([['p', 'q', 'r'], ['x', 'y', 'z'], ['d', 's', 't'], ['m', 'n', 'k'], ['w', 'f', 'h']]);
+      const findY = r() < 0.5, want = findY ? y : z, other = findY ? z : y;
+      return { question: `If ${x} = ${y} × ${z}, which of these is right?`,
+        options: [`${want} = ${x} ÷ ${other}`, `${want} = ${x} × ${other}`, `${want} = ${other} ÷ ${x}`, `${want} = ${x} − ${other}`], correct: 0,
+        answerText: `${want} = ${x} ÷ ${other}`,
+        steps: [`Start with ${x} = ${y} × ${z}.`, `To get ${want} on its own, divide both sides by ${other}.`, `That leaves ${want} = ${x} ÷ ${other}.`] };
+    }
+    if (id === 'd-minutes') {
+      const m = pick([2, 4, 5, 6, 7, 8, 10, 12, 15, 20]);
+      return { question: `How many seconds are there in ${m} minutes?`, answer: m * 60, unit: 's', abs: 0, label: 'Seconds',
+        answerText: `${m * 60} seconds`,
+        steps: ['There are 60 seconds in 1 minute.', `So multiply the minutes by 60: ${m} × 60.`, `That gives ${m * 60} seconds.`] };
+    }
+    if (id === 'd-milli') {
+      const x = pick([20, 40, 50, 80, 100, 125, 200, 400, 500, 750]);
+      const opts = [x / 1000, x / 100, x / 10, x * 1000].map(v => `${fmt(v).replace(/(\d)(?=(\d{3})+$)/g, '$1 ')} A`);
+      return { question: `How many amperes is ${x} milliamperes (${x} mA)?`, options: opts, correct: 0,
+        answerText: `${fmt(x / 1000)} A`,
+        steps: ['Milli means a thousandth.', `So divide by 1000: ${x} ÷ 1000.`, `That gives ${fmt(x / 1000)} A.`] };
+    }
+    if (id === 'd-read-graph') {
+      const v = pick([1, 2, 3, 5, 6]);
+      return { question: `Use the graph. What is the current when the potential difference is ${v} V?`, graph: G.line, answer: +(v * 0.1).toFixed(2), unit: 'A', abs: 0.02, label: 'Current',
+        answerText: `${fmt(v * 0.1)} A`,
+        steps: [`Find ${v} on the bottom axis.`, 'Go straight up until you reach the line.', `Go across to the side axis and read the number there: ${fmt(v * 0.1)}.`] };
+    }
+    return null;
+  }
+  // Her answer to a similar question: right or not.
+  function markSimilar(q, response) {
+    if (q.options) return Number.isInteger(response) && response === q.correct;
+    return within(num(response), q.answer, 0, q.abs);
+  }
+
+  // ── The quick check before you start, before 2026-10-26 (15 questions, about 10 minutes; SHORT_CHECK false) ──
+  const DIAGNOSTIC_15 = [
     { id: 'd-rearrange', kind: 'prereq', type: 'recall', idea: 'maths-rearrange', lesson: CV, kp: 0, label: 'Rearranging an equation',
       question: 'If a = b × c, which of these is right?',
       options: [{ text: 'c = a ÷ b' }, { text: 'c = a × b' }, { text: 'c = b ÷ a' }, { text: 'c = a − b' }], correct: 0,
@@ -143,6 +275,9 @@
       question: 'In the I-V practical, how could you change the potential difference across the component you are testing?',
       options: [{ text: 'Change the resistance of the variable resistor' }, { text: 'Close the switch' }, { text: 'Reverse the connections to the supply' }, { text: 'Take the ammeter out' }], correct: 0 },
   ];
+  const DIAGNOSTIC = SHORT_CHECK ? QUICK : DIAGNOSTIC_15;
+  // The later tests ask the quick check's two misconceptions in other words (SHORT_CHECK).
+  const LOOP = SHORT_CHECK ? 'm-loop-2' : 'm-loop', SAME = SHORT_CHECK ? 'm-used-up-2' : 'm-same-current';
 
   // ── Post-test: Current and potential difference ──
   const POST_CV = [
@@ -193,7 +328,7 @@
         { label: '…so the temperature of the filament…', options: ['increases', 'decreases', 'stays the same'], correct: 0, marks: 1 },
         { label: '…so the resistance of the filament…', options: ['increases', 'decreases', 'stays the same'], correct: 0, marks: 1 },
       ] },
-    mis('m-loop'), mis('m-same-current'), mis('m-add-cell'), mis('m-flat'), mis('m-voltmeter'), mis('m-ohmic'), mis('m-graph-R'),
+    mis(LOOP), mis(SAME), mis('m-add-cell'), mis('m-flat'), mis('m-voltmeter'), mis('m-ohmic'), mis('m-graph-R'),
   ];
 
   // ── Post-test: Components ──
@@ -240,7 +375,7 @@
     { id: 'p2-open-switch', kind: 'exam', type: 'recall', idea: 'circuit-diagram', lesson: COMP, kp: 0, label: 'An open switch in a diagram',
       question: 'A circuit diagram shows a cell, a switch, a lamp and an ammeter in one loop. The switch is drawn open. What does the ammeter read?',
       options: [{ text: '0 A, because the loop is broken' }, { text: 'The same as with the switch closed' }, { text: 'Half the current' }, { text: 'It depends where the switch is drawn' }], correct: 0 },
-    mis('m-ammeter'), mis('m-same-current'),
+    mis('m-ammeter'), mis(SAME),
   ];
 
   // ── Delayed test, a week later: both lessons ──
@@ -290,11 +425,11 @@
         { label: 'The thermistor\'s resistance…', options: ['decreases', 'increases', 'stays the same'], correct: 0, marks: 1 },
         { label: 'So the current through it…', options: ['increases', 'decreases', 'stays the same'], correct: 0, marks: 1 },
       ] },
-    ...MIS,
+    ...MIS.map(m => (m.id === 'm-loop' ? mis(LOOP) : m.id === 'm-same-current' ? mis(SAME) : m)),
   ];
 
   const TESTS = {
-    diagnostic: { id: 'diagnostic', name: 'Quick check before you start', minutes: 10, items: DIAGNOSTIC },
+    diagnostic: { id: 'diagnostic', name: 'Quick check before you start', minutes: SHORT_CHECK ? 5 : 10, items: DIAGNOSTIC, teach: SHORT_CHECK },
     'post-cv': { id: 'post-cv', name: 'Post-test: Current and potential difference', lesson: CV, minutes: 15, items: POST_CV },
     'post-comp': { id: 'post-comp', name: 'Post-test: Components', lesson: COMP, minutes: 12, items: POST_COMP },
     delayed: { id: 'delayed', name: 'Delayed test (a week later)', minutes: 15, items: DELAYED },
@@ -381,5 +516,5 @@
     };
   }
 
-  return { LESSONS, TESTS, MIS, CRITERIA, GRAPHS: G, maxMarks, mark, score, plan, num };
+  return { LESSONS, TESTS, MIS, LATER, SHORT_CHECK, CRITERIA, GRAPHS: G, maxMarks, mark, score, plan, num, similar, markSimilar };
 });

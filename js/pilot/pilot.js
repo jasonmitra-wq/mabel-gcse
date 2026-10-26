@@ -64,7 +64,14 @@ const Pilot = (() => {
       box.appendChild(c);
     };
     const opens = delayedOpensAt();
-    card(done('diagnostic') ? '✅' : '○', 'Quick check before you start', done('diagnostic') ? 'Done: see what it showed' : 'About 10 minutes', () => (done('diagnostic') ? showResult('diagnostic') : run('diagnostic')));
+    const D = T.TESTS.diagnostic;
+    card(done('diagnostic') ? '✅' : '○', 'Quick check before you start', done('diagnostic') ? 'Done: see what it showed' : T.SHORT_CHECK ? `Start here: ${D.items.length} questions` : 'About 10 minutes', () => (done('diagnostic') ? showResult('diagnostic') : run('diagnostic')));
+    // Shorter quick check: until it is done, its card is first and marked "Start here".
+    if (T.SHORT_CHECK && !done('diagnostic')) {
+      const c = box.lastElementChild;
+      c.style.border = '2px solid var(--amber)';
+      c.querySelector('.st-chip').style.cssText = 'background:rgba(232,160,64,0.12);color:var(--amber);border:1px solid rgba(232,160,64,0.4)';
+    }
     for (const [lid, tid] of Object.entries(POST)) {
       const t = T.TESTS[tid];
       if (done(tid)) card('✅', t.name, 'Done', () => showResult(tid));
@@ -76,6 +83,29 @@ const Pilot = (() => {
     else card('○', T.TESTS.delayed.name, opens ? `Opens ${fmtDate(opens)}` : 'A week after both post-tests', null, true);
     card('📒', 'My record', 'What the app keeps', () => showRecord());
     listEl.prepend(box);
+  }
+
+  // The quick check's intro, in plain words.
+  const quickIntro = () => (T.SHORT_CHECK
+    ? `${T.TESTS.diagnostic.items.length} quick questions, about ${T.TESTS.diagnostic.minutes} minutes. It's fine not to know: you'll be shown the answer each time, and how it comes up in the lessons.`
+    : '15 short questions, about 10 minutes. It shows what you already know and what the lessons will work on, so they can skip what you have and recap what you need. It is not a test you can fail.');
+
+  // ── Opening Electricity: the quick check on its own screen, once per visit, until it is done ──
+  // Returns true when it put the screen up; "Not now" calls show() for the lesson list.
+  function offer(topicCode, subject, show) {
+    if (!T.SHORT_CHECK || subject !== 'physics' || topicCode !== 'P2' || done('diagnostic')) return false;
+    const main = document.getElementById('main');
+    if (!main) return false;
+    _style();
+    window._plShow = show;
+    main.innerHTML = `<div class="pl-wrap"><button class="back-btn" onclick="showTopics()">← All topics</button>
+      <div class="pl-card"><div class="pl-title">Before you start Electricity</div>
+        <h3 style="margin:0.2rem 0 0.4rem">Quick check before you start</h3>
+        <p style="margin:0">${esc(quickIntro())}</p>
+        <div class="pl-row"><button class="btn pri" onclick="Pilot.run('diagnostic')">Start the quick check</button>
+        <button class="btn" onclick="window._plShow&&window._plShow();window.scrollTo(0,0)">Not now: show the lessons</button></div></div></div>`;
+    window.scrollTo(0, 0);
+    return true;
   }
 
   // ── Before a pilot lesson: the quick check first; then what it showed ──
@@ -90,7 +120,7 @@ const Pilot = (() => {
       inner.innerHTML = `<div class="pl-wrap"><div style="padding-top:0.25rem"><button class="back-btn" onclick="Lessons.close()">← Topics</button></div>
         <div class="pl-card"><div class="pl-title">Before your first Electricity lesson</div>
           <h3 style="margin:0.2rem 0 0.4rem">Quick check before you start</h3>
-          <p style="margin:0">15 short questions, about 10 minutes. It shows what you already know and what the lessons will work on, so they can skip what you have and recap what you need. It is not a test you can fail.</p>
+          <p style="margin:0">${esc(quickIntro())}</p>
           <div class="pl-row"><button class="btn pri" onclick="Lessons.close();Pilot.run('diagnostic')">Start the quick check</button>
           <button class="btn" onclick="try{sessionStorage.setItem('pl_notnow','1')}catch(e){};window._plGo&&window._plGo()">Not now: go to the lesson</button></div></div></div>`;
       return true;
@@ -159,7 +189,9 @@ const Pilot = (() => {
     const main = document.getElementById('main');
     const n = t.items.length;
     let body = '';
-    if (it.options) body = `<div class="pl-opts">${it.options.map((o, j) => `<button class="btn" data-o="${j}">${esc(o.text)}</button>`).join('')}</div>`;
+    // Shorter quick check (brief 2026-10-26): the options in a fixed shuffled order, so the right one is not always first.
+    const order = T.SHORT_CHECK && it.options ? _order(it.question, it.options.length) : (it.options || []).map((o, j) => j);
+    if (it.options) body = `<div class="pl-opts">${order.map(j => `<button class="btn" data-o="${j}">${esc(it.options[j].text)}</button>`).join('')}</div>`;
     if (it.parts) body = it.parts.map((p, j) => `<p style="margin:0.7rem 0 0">${esc(p.label)}</p><div class="pl-opts" data-p="${j}">${p.options.map((o, m) => `<button class="btn" data-po="${m}">${esc(o)}</button>`).join('')}</div>`).join('');
     if (it.nums) body = it.nums.map(x => `<label class="pl-num"><span>${esc(x.label)} (${esc(x.unit)})</span><input inputmode="decimal" data-k="${esc(x.key)}" autocomplete="off"></label>`).join('');
     main.innerHTML = `<div class="pl-wrap">
@@ -175,9 +207,84 @@ const Pilot = (() => {
       if (it.parts) return resp.p;
       return Object.fromEntries([...main.querySelectorAll('[data-k]')].map(i => [i.dataset.k, i.value]));
     };
-    main.querySelector('[data-next]').onclick = () => { _run.answers[it.id] = collect(); _advance(); };
-    main.querySelector('[data-dk]').onclick = () => { _run.answers[it.id] = it.nums ? {} : it.parts ? [] : null; _run.dontKnow.push(it.id); _advance(); };
+    // The quick check teaches: her first answer is recorded, then she sees the feedback.
+    const after = (dk) => (t.teach && it.feedback ? _feedback(it, _run.answers[it.id], dk) : _advance());
+    main.querySelector('[data-next]').onclick = () => { _run.answers[it.id] = collect(); after(false); };
+    main.querySelector('[data-dk]').onclick = () => { _run.answers[it.id] = it.nums ? {} : it.parts ? [] : null; _run.dontKnow.push(it.id); after(true); };
     window.scrollTo(0, 0);
+  }
+  // A fixed shuffle of n options, from the question's words.
+  function _order(text, n) {
+    let h = 0; for (const ch of String(text)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+    const idx = [...Array(n).keys()];
+    for (let k = n - 1; k > 0; k--) { h = (h * 1103515245 + 12345) >>> 0; const r = h % (k + 1); [idx[k], idx[r]] = [idx[r], idx[k]]; }
+    return idx;
+  }
+  // The right answer of an item, in words.
+  function _answerText(it) {
+    if (it.options) return it.options[it.correct].text;
+    if (it.nums) return it.nums.map(n => `${n.answer} ${n.unit}`).join(', ');
+    return '';
+  }
+
+  // ── Feedback after each quick-check answer (brief 2026-10-26, step 2) ──
+  function _feedback(it, resp, dk) {
+    const t = T.TESTS[_run.testId], n = t.items.length, f = it.feedback;
+    const right = !dk && T.mark(it, resp).right;
+    const main = document.getElementById('main');
+    let html = '';
+    if (right) html = `<p style="margin:0;color:var(--green)"><strong>${esc(f.right)}</strong></p>`;
+    else if (f.steps) html = `<p style="margin:0"><strong>${dk ? 'That\'s fine.' : 'Not quite.'}</strong> The answer is ${esc(_answerText(it))}. Here is how it goes:</p><ol class="pl-list" data-steps></ol><div class="pl-row" data-steprow><button class="btn" data-step>Show the next step</button></div>`;
+    else html = `<p style="margin:0"><strong>${dk ? 'That\'s fine.' : 'Not quite.'}</strong></p><ul class="pl-list">${(f.why || []).slice(0, 3).map(l => `<li>${esc(l)}</li>`).join('')}</ul>`;
+    main.innerHTML = `<div class="pl-wrap">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem"><span class="pl-muted">${esc(t.name)}</span><span class="pl-muted">${_run.k + 1} of ${n}</span></div>
+      <div style="height:6px;background:rgba(255,255,255,0.1);border-radius:3px;margin:0.4rem 0 0.2rem"><div style="height:100%;width:${Math.round(100 * (_run.k + 1) / n)}%;background:var(--amber);border-radius:3px"></div></div>
+      <div class="pl-card"><p class="pl-muted" style="margin:0 0 0.5rem">${esc(it.question)}</p>${html}
+        <div data-similar></div>
+        <p style="margin:0.8rem 0 0" data-inlesson>${esc(it.inLesson.text)}</p></div>
+      <div class="pl-row" style="justify-content:flex-end"><button class="btn pri" data-next>${_run.k + 1 < n ? 'Next question' : 'See what it showed'}</button></div></div>`;
+    const box = main.querySelector('[data-similar]');
+    const offerSimilar = () => {
+      if (right || !it.similar) return;
+      box.innerHTML = `<div class="pl-row"><button class="btn" data-try>Try a similar one</button></div>`;
+      box.querySelector('[data-try]').onclick = () => _similar(it, box);
+    };
+    const ol = main.querySelector('[data-steps]');
+    if (ol) {
+      let k = 0;
+      const step = () => {
+        const li = document.createElement('li'); li.textContent = f.steps[k++]; ol.appendChild(li);
+        if (k >= f.steps.length) { main.querySelector('[data-steprow]').remove(); offerSimilar(); }
+      };
+      main.querySelector('[data-step]').onclick = step;
+      step();
+    } else offerSimilar();
+    main.querySelector('[data-next]').onclick = () => _advance();
+    window.scrollTo(0, 0);
+  }
+  // One optional similar question, new numbers, checked in code, not scored.
+  function _similar(it, box) {
+    const q = T.similar(it.id, Math.floor(Math.random() * 1e9) + 1);
+    if (!q) { box.innerHTML = ''; return; }
+    const order = q.options ? _order(q.question, q.options.length) : [];
+    box.innerHTML = `<div class="pl-card" style="margin:0.7rem 0 0"><div class="pl-title">A similar one</div><p style="margin:0">${esc(q.question)}</p>${q.graph ? _graphSvg(q.graph) : ''}
+      ${q.options ? `<div class="pl-opts">${order.map(j => `<button class="btn" data-so="${j}">${esc(q.options[j])}</button>`).join('')}</div>`
+        : `<label class="pl-num"><span>${esc(q.label)} (${esc(q.unit)})</span><input inputmode="decimal" autocomplete="off" data-sn></label><div class="pl-row"><button class="btn" data-check>Check</button></div>`}
+      <p style="margin:0.5rem 0 0" data-sfb></p></div>`;
+    const fb = box.querySelector('[data-sfb]');
+    const done = ok => {
+      box.querySelectorAll('button[data-so],button[data-check]').forEach(b => { b.disabled = true; });
+      const inp = box.querySelector('[data-sn]'); if (inp) inp.disabled = true;
+      fb.innerHTML = ok ? `<strong style="color:var(--green)">Right: ${esc(q.answerText)}.</strong>`
+        : `<strong>Not quite: it's ${esc(q.answerText)}.</strong> ${q.steps.map(esc).join(' ')}`;
+    };
+    box.querySelectorAll('[data-so]').forEach(b => b.onclick = () => done(T.markSimilar(q, Number(b.dataset.so))));
+    const c = box.querySelector('[data-check]');
+    if (c) c.onclick = () => {
+      const v = box.querySelector('[data-sn]').value;
+      if (T.num(v) === null) { fb.textContent = 'Type a number.'; return; }
+      done(T.markSimilar(q, v));
+    };
   }
   function _advance() {
     const t = T.TESTS[_run.testId];
@@ -206,7 +313,7 @@ const Pilot = (() => {
         ${right.length ? `<ul class="pl-list">${uniq(right.map(x => label(x.id))).map(l => `<li>${esc(l)}</li>`).join('')}</ul>` : '<p class="pl-muted" style="margin:0.2rem 0 0">Nothing yet, which is fine: the lessons start from the beginning.</p>'}
         <p style="margin:0.8rem 0 0"><strong>What we'll work on</strong></p>
         ${wrong.length ? `<ul class="pl-list">${uniq(wrong.map(x => label(x.id))).map(l => `<li>${esc(l)}</li>`).join('')}</ul>` : '<p class="pl-muted" style="margin:0.2rem 0 0">You got everything: the lessons will go quickly.</p>'}
-        <p class="pl-muted" style="margin:0.8rem 0 0">The lessons use this: they recap what you need and tell you where you can go quickly. The answers are not shown here, because the same kind of questions come back later to see what you have learned.</p></div>`;
+        <p class="pl-muted" style="margin:0.8rem 0 0">${T.SHORT_CHECK ? 'This is from your first answer to each question. You saw the answers as you went. The lessons use this: they recap what you need first.' : 'The lessons use this: they recap what you need and tell you where you can go quickly. The answers are not shown here, because the same kind of questions come back later to see what you have learned.'}</p></div>`;
     } else {
       html = `<div class="pl-card"><div class="pl-title">${esc(t.name)}</div>
         <p style="margin:0.2rem 0 0;font-size:1.1rem">You scored <strong>${s.exam.marks} out of ${s.exam.max}</strong> marks on the exam-style questions (${s.examPct}%).</p>
@@ -222,11 +329,12 @@ const Pilot = (() => {
     _active = false;
     // app.js keeps the open subject's syllabus in _syllabus; load physics if another subject is open.
     try {
-      if (typeof _activeSubject !== 'undefined' && _activeSubject === 'physics' && _syllabus && _syllabus.topics && _syllabus.topics.P2) { showSubtopics('P2', _syllabus.topics.P2); return; }
+      if (typeof _activeSubject !== 'undefined' && _activeSubject === 'physics' && _syllabus && _syllabus.topics && _syllabus.topics.P2) { showSubtopics('P2', _syllabus.topics.P2); window.scrollTo(0, 0); return; }
     } catch { /* fall through */ }
     fetch('data/physics-syllabus.json').then(r => r.json()).then(s => {
       try { _activeSubject = 'physics'; _syllabus = s; } catch { /* app.js not loaded */ }
       showSubtopics('P2', s.topics.P2);
+      window.scrollTo(0, 0);
     }).catch(() => showHome());
   }
 
@@ -277,5 +385,5 @@ const Pilot = (() => {
     return el;
   }
 
-  return { topicCards, gate, knownNote, run, showResult, showRecord, endCard, backToTopic, active: () => _active, LESSON_IDS };
+  return { topicCards, offer, gate, knownNote, run, showResult, showRecord, endCard, backToTopic, active: () => _active, LESSON_IDS };
 })();

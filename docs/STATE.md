@@ -212,3 +212,4 @@ Not started on the pipeline. Already in place:
 | Brief v3.1 p2-components (2026-10-19) | spec-check step c 1 | 0.1197 |
 | Brief v3.1 A8 testers (2026-10-19 to 21) | site test 2; text tester 2 first runs (+1 stopped by a network error), 2 re-runs | 5.69 (site 0.8342 + 0.8716; text 0.6706 + 1.2900 first runs, 2.0205 re-runs; the stopped run reported no cost, estimated under 0.30) |
 | Key-point loop fix (2026-10-26, brief 2026-10-24) | site test 1 (p2-current-voltage, --until-point-end) | 0.84 (0.8440) |
+| Shorter quick check (2026-10-26, brief 2026-10-26) | site test 1 (pilot-diagnostic) | 0.15 (0.1486) |

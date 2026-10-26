@@ -455,12 +455,46 @@ async function pilotMode(page, run, testId) {
   await clickText(page, '[onclick*="showSubjectPicker"]', 'Revise a topic', 'Revise a topic');
   await clickText(page, '.mode-card', 'Physics', 'subject card');
   await clickText(page, '.topic-card', 'Electricity', 'topic card', '.tc-name');
-  await shoot(page, run, 'electricity-topic');
-  await clickText(page, '.subtopic-card', 'Current, potential difference', 'lesson card', '.st-name');
-  await sleep(800);
-  await shoot(page, run, 'quick-check-offer');
-  await clickText(page, '#lessonInner button', 'Start the quick check', 'Start the quick check');
+  if (T.SHORT_CHECK) {
+    // Shorter quick check (brief 2026-10-26): opening Electricity shows the quick check on its own screen.
+    await sleep(600);
+    const own = await page.evaluate(() => ({ start: [...document.querySelectorAll('#main button')].some(b => /Start the quick check/.test(b.textContent)),
+      notNow: [...document.querySelectorAll('#main button')].some(b => /Not now: show the lessons/.test(b.textContent)),
+      lessons: document.querySelectorAll('#main .subtopic-card').length }));
+    run.check('opening Electricity shows the quick check on its own screen', own.start && own.notNow && own.lessons === 0,
+      `start button ${own.start}, "Not now" ${own.notNow}, lesson cards on screen ${own.lessons}`);
+    await shoot(page, run, 'quick-check-offer');
+    await clickText(page, '#main button', 'Start the quick check', 'Start the quick check');
+  } else {
+    await shoot(page, run, 'electricity-topic');
+    await clickText(page, '.subtopic-card', 'Current, potential difference', 'lesson card', '.st-name');
+    await sleep(800);
+    await shoot(page, run, 'quick-check-offer');
+    await clickText(page, '#lessonInner button', 'Start the quick check', 'Start the quick check');
+  }
   const answers = {};
+  let triedSimilar = false;
+  // The quick check teaches: after each answer, its feedback (steps shown one at a time, one "Try a similar one").
+  const feedback = async (k, it) => {
+    if (!t.teach) return;
+    await page.waitForSelector('[data-inlesson]', { timeout: 10000 });
+    for (let j = 0; j < 4 && await page.$('[data-step]'); j++) { await page.click('[data-step]'); await sleep(250); }
+    if (!triedSimilar && await page.$('[data-try]')) {
+      triedSimilar = true;
+      await page.click('[data-try]'); await sleep(400);
+      const q = await page.evaluate(() => ({ text: (document.querySelector('[data-similar] p') || {}).textContent || '', opts: [...document.querySelectorAll('[data-so]')].map(b => b.textContent), num: !!document.querySelector('[data-sn]') }));
+      run.say(`  Tried a similar one: "${q.text}"`);
+      if (q.opts.length) await page.click('[data-so="0"]');   // option 0 is the right one in the generator's own order
+      else { const v = T.similar(it.id, 1); await page.type('[data-sn]', String(v ? '999' : '0')); await page.click('[data-check]'); }
+      await sleep(300);
+      run.say(`  Its marking: ${await page.evaluate(() => (document.querySelector('[data-sfb]') || {}).textContent || '')}`);
+    }
+    const fb = await page.evaluate(() => (document.querySelector('.pl-card') || {}).innerText || '');
+    run.say(`  Feedback: ${fb.replace(/\s*\n+\s*/g, ' / ')}`);
+    await shoot(page, run, `feedback-${k + 1}`);
+    await page.click('[data-next]');
+    await sleep(400);
+  };
   for (let k = 0; k < t.items.length; k++) {
     const it = t.items[k];
     await page.waitForSelector('[data-next]', { timeout: 10000 });
@@ -470,6 +504,7 @@ async function pilotMode(page, run, testId) {
       answers[it.id] = it.nums ? {} : it.parts ? [] : null;
       run.say(`Question ${k + 1}: I don't know`);
       await sleep(400);
+      await feedback(k, it);
       continue;
     }
     let how;
@@ -499,6 +534,7 @@ async function pilotMode(page, run, testId) {
     run.say(`Question ${k + 1} (${it.type}): ${how}`);
     await page.click('[data-next]');
     await sleep(400);
+    await feedback(k, it);
   }
   await sleep(800);
   await shoot(page, run, 'result');
@@ -514,6 +550,14 @@ async function pilotMode(page, run, testId) {
   await shoot(page, run, 'my-record');
   await clickText(page, 'button', 'Back to Electricity', 'back to Electricity').catch(() => {});
   await shoot(page, run, 'electricity-after');
+  if (T.SHORT_CHECK) {
+    // Once done, opening Electricity goes straight to the lessons, with the card showing "Done: see what it showed".
+    await clickText(page, 'button', 'All topics', 'All topics').catch(() => {});
+    await clickText(page, '.topic-card', 'Electricity', 'topic card', '.tc-name');
+    const after = await page.evaluate(() => ({ lessons: document.querySelectorAll('#main .subtopic-card').length, done: /Done: see what it showed/.test(document.getElementById('main').innerText) }));
+    run.check('once done, Electricity opens straight to the lessons', after.lessons > 0 && after.done, `lesson cards ${after.lessons}, "Done: see what it showed" ${after.done}`);
+    await shoot(page, run, 'electricity-reopened');
+  }
 }
 
 async function mathsMode(page, run, code) {

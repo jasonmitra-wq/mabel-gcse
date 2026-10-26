@@ -4,11 +4,17 @@
  *
  *   node tools/pilot/check-tests.js
  *
- * - the quick check has 12 to 15 questions: the prerequisites (maths among
- *   them, all in the prerequisite map), one multiple-choice question per
- *   misconception group with every wrong option matching a misconception of
- *   tools/pilot/misconceptions.md and every in-scope misconception covered,
- *   and three exam-style questions of the outcome types;
+ * - the quick check (SHORT_CHECK, brief 2026-10-26) has 6 questions: the 4
+ *   maths prerequisites and 2 everyday misconception questions (one on "current
+ *   is used up", M2), every wrong option matching a misconception of
+ *   tools/pilot/misconceptions.md, no exam-style question; each has feedback
+ *   (1 to 3 lines, no stock praise), an "In the lesson" line whose key point
+ *   contains its match words, no lesson term unless explained (explains), and
+ *   each maths one a "Try a similar one" that marks right and wrong answers;
+ *   no quick-check question appears in a later test, and each misconception
+ *   question has a new later question asking the same misconceptions;
+ *   (SHORT_CHECK false: 12 to 15 questions, all in-scope misconceptions, three
+ *   exam-style questions, as before);
  * - each post-test and the delayed test has 8 to 10 exam-style questions of
  *   those types, plus the misconception questions again;
  * - no exam-style question reuses a lesson worked example's numbers;
@@ -79,13 +85,78 @@ for (const t of Object.values(T.TESTS)) {
 
 // The quick check.
 const D = T.TESTS.diagnostic.items;
-if (D.length < 12 || D.length > 15) fail('diagnostic', `${D.length} questions (12 to 15)`);
 const prereq = D.filter(i => i.kind === 'prereq');
+const misItems = D.filter(i => i.kind === 'mis');
+const covered = new Set();
+if (T.SHORT_CHECK) {
+  // Shorter quick check (brief docs/briefs/2026-10-26-shorter-quick-check.md): 6 questions that teach.
+  if (D.length !== 6) fail('diagnostic', `${D.length} questions (needs 6)`);
+  if (prereq.length !== 4) fail('diagnostic', `${prereq.length} prerequisite questions (needs 4)`);
+  for (const idea of ['maths-rearrange', 'maths-units-time', 'maths-prefix', 'maths-read-graph']) if (!prereq.some(i => i.idea === idea)) fail('diagnostic', `no prerequisite question on ${idea}`);
+  if (misItems.length !== 2) fail('diagnostic', `${misItems.length} misconception questions (needs 2)`);
+  if (D.some(i => i.kind === 'exam')) fail('diagnostic', 'has exam-style questions (needs none)');
+  if (!misItems.some(i => i.options && i.options.some(o => o.mis === 'M2'))) fail('diagnostic', 'no question on "current is used up in the lamp" (M2)');
+  // Plain words: no term the lessons teach unless it is explained in the same line (listed in explains).
+  const terms = new Set();
+  for (const L of Object.values(lessons)) for (const kp of L.keyPoints) {
+    (kp.keyTerms || []).forEach(x => terms.add(x.term.replace(/\s*\(.*?\)\s*/g, ' ').trim().toLowerCase()));
+    for (const m of String(kp.content || '').matchAll(/<dfn>(.*?)<\/dfn>/g)) terms.add(m[1].toLowerCase());
+  }
+  const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const termsIn = text => [...terms].filter(x => new RegExp(`(^|[^a-z])${esc(x)}(e?s)?([^a-z]|$)`, 'i').test(text));
+  const plain = (w, text, ok) => { const bad = termsIn(text).filter(x => !(ok || []).some(e => e === x || `${e}s` === x || `${x}s` === e)); if (bad.length) fail(w, `uses ${bad.join(', ')} without explaining it: "${text}"`); };
+  for (const i of D) {
+    const w = `diagnostic/${i.id}`;
+    const f = i.feedback || {};
+    if (!f.right) fail(w, 'no feedback for a right answer');
+    if (/^(great|good|well done|nice|brilliant|excellent|amazing|awesome)\b/i.test(f.right || '')) fail(w, 'stock praise in the right-answer feedback');
+    const lines = i.kind === 'prereq' ? f.steps : f.why;
+    if (!Array.isArray(lines) || !lines.length || lines.length > 3) fail(w, `wrong-answer feedback needs 1 to 3 lines (${i.kind === 'prereq' ? 'steps' : 'why'})`);
+    if (i.kind === 'prereq') {
+      if (!i.similar) fail(w, 'a maths question needs "Try a similar one"');
+      for (let seed = 1; seed <= 40; seed++) {
+        const q = T.similar(i.id, seed);
+        if (!q) { fail(w, 'similar() gives nothing'); break; }
+        const rightResp = q.options ? q.correct : String(q.answer);
+        if (!T.markSimilar(q, rightResp)) { fail(w, `similar seed ${seed}: the right answer is marked wrong`); break; }
+        const wrongResp = q.options ? (q.correct + 1) % q.options.length : String(q.answer * 3 + 7);
+        if (T.markSimilar(q, wrongResp)) { fail(w, `similar seed ${seed}: a wrong answer is marked right`); break; }
+        if (q.question === i.question) { fail(w, `similar seed ${seed}: the same question again`); break; }
+        if (!q.steps || !q.steps.length || q.steps.length > 3) { fail(w, `similar seed ${seed}: needs 1 to 3 steps`); break; }
+      }
+    }
+    // "In the lesson": a real key point, and words that are in it.
+    const il = i.inLesson;
+    if (!il || !/^In the lesson\b/.test(il.text || '')) { fail(w, 'needs an "In the lesson: ..." line'); }
+    else {
+      const kp = lessons[i.lesson] && lessons[i.lesson].keyPoints[il.kp];
+      if (!kp) fail(w, `"In the lesson" points to key point ${il.kp}, which does not exist`);
+      else if (!il.match || !JSON.stringify(kp).includes(il.match)) fail(w, `"In the lesson" key point ${il.kp + 1} does not contain "${il.match}"`);
+      plain(w, il.text, il.explains);
+    }
+    plain(w, f.right || '', f.explains);
+    (lines || []).forEach(l => plain(w, l, f.explains));
+    // Everyday words in the misconception questions she meets before any teaching.
+    if (i.kind === 'mis') { plain(w, i.question, i.explains); i.options.forEach(o => plain(w, o.text, i.explains)); }
+  }
+  // The later tests never reuse a quick-check question, and each misconception question has its new one.
+  const qText = new Map(D.map(i => [i.question.trim(), i.id]));
+  for (const id of ['post-cv', 'post-comp', 'delayed']) for (const it of T.TESTS[id].items) {
+    if (D.some(i => i.id === it.id)) fail(id, `reuses quick-check question ${it.id}`);
+    if (qText.has(it.question.trim())) fail(id, `${it.id} has the same words as quick-check question ${qText.get(it.question.trim())}`);
+  }
+  for (const i of misItems) {
+    const later = T.LATER.find(x => x.id === i.later);
+    if (!later) { fail(`diagnostic/${i.id}`, `its later question ${i.later} does not exist`); continue; }
+    const want = new Set(i.options.filter(o => o.mis).map(o => o.mis)), got = new Set(later.options.filter(o => o.mis).map(o => o.mis));
+    if (![...want].every(m => got.has(m))) fail(`diagnostic/${i.id}`, `${i.later} does not ask the same misconceptions (${[...want].join(', ')})`);
+    if (!T.TESTS.delayed.items.some(x => x.id === i.later)) fail('delayed', `does not ask ${i.later}`);
+    if (!T.TESTS['post-cv'].items.some(x => x.id === i.later) && !T.TESTS['post-comp'].items.some(x => x.id === i.later)) fail('post-tests', `neither asks ${i.later}`);
+  }
+}
 if (!prereq.length) fail('diagnostic', 'no prerequisite questions');
 if (!prereq.some(i => (ideas.get(i.idea) || {}).kind === 'maths')) fail('diagnostic', 'no maths prerequisite');
 prereq.forEach(i => { if (!i.recap) fail(`diagnostic/${i.id}`, 'a prerequisite needs a recap for the lesson to show if she misses it'); });
-const misItems = D.filter(i => i.kind === 'mis');
-const covered = new Set();
 misItems.forEach(i => {
   if (!i.options) { fail(`diagnostic/${i.id}`, 'a misconception question must be multiple choice'); return; }
   i.options.forEach((o, k) => {
@@ -95,10 +166,17 @@ misItems.forEach(i => {
     else covered.add(o.mis);
   });
 });
-const notCovered = [...inScope].filter(m => !covered.has(m));
-if (notCovered.length) fail('diagnostic', `no wrong option matches ${notCovered.join(', ')}`);
-const examD = D.filter(i => i.kind === 'exam');
-if (examD.length !== 3) fail('diagnostic', `${examD.length} exam-style questions (needs 3)`);
+if (!T.SHORT_CHECK) {
+  if (D.length < 12 || D.length > 15) fail('diagnostic', `${D.length} questions (12 to 15)`);
+  const notCovered = [...inScope].filter(m => !covered.has(m));
+  if (notCovered.length) fail('diagnostic', `no wrong option matches ${notCovered.join(', ')}`);
+  const examD = D.filter(i => i.kind === 'exam');
+  if (examD.length !== 3) fail('diagnostic', `${examD.length} exam-style questions (needs 3)`);
+}
+// Every in-scope misconception is still measured by the later tests.
+const laterCovered = new Set(['post-cv', 'post-comp', 'delayed'].flatMap(id => T.TESTS[id].items.filter(i => i.kind === 'mis').flatMap(i => i.options.filter(o => o.mis).map(o => o.mis))));
+const notLater = [...inScope].filter(m => !laterCovered.has(m));
+if (notLater.length) fail('later tests', `no wrong option matches ${notLater.join(', ')}`);
 
 // Post-tests and the delayed test.
 for (const id of ['post-cv', 'post-comp', 'delayed']) {
@@ -113,8 +191,8 @@ for (const id of ['post-cv', 'post-comp', 'delayed']) {
   }
 }
 const delayedMis = new Set(T.TESTS.delayed.items.filter(i => i.kind === 'mis').map(i => i.id));
-for (const i of misItems) if (!delayedMis.has(i.id)) fail('delayed', `misconception question ${i.id} from the quick check is not asked again`);
+if (!T.SHORT_CHECK) for (const i of misItems) if (!delayedMis.has(i.id)) fail('delayed', `misconception question ${i.id} from the quick check is not asked again`);
 
-console.log(`${fails.length ? 'FAIL' : 'ok  '}  pilot tests — ${Object.values(T.TESTS).map(t => `${t.id} ${t.items.length}`).join(', ')}; misconceptions covered ${covered.size}/${inScope.size}`);
+console.log(`${fails.length ? 'FAIL' : 'ok  '}  pilot tests — ${Object.values(T.TESTS).map(t => `${t.id} ${t.items.length}`).join(', ')}; misconceptions covered: quick check ${covered.size}, later tests ${laterCovered.size}/${inScope.size}`);
 fails.forEach(f => console.log(`  FAIL ${f}`));
 process.exit(fails.length ? 1 : 0);

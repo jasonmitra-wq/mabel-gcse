@@ -33,6 +33,15 @@ function newestExport() {
 const pct = (a, b) => (b ? Math.round(100 * a / b) : null);
 const yesNo = v => (v === null || v === undefined ? 'not yet' : v ? 'met' : 'not met');
 
+// The quick check's misconception questions: shown there (her first answer wrong), and right in the delayed test.
+function quickMis(tests) {
+  const at = (t, id) => (t ? t.score.per.find(x => x.id === id) : null);
+  return T.TESTS.diagnostic.items.filter(i => i.kind === 'mis' && i.later).map(i => {
+    const q = at(tests.diagnostic, i.id), l = at(tests.delayed, i.later);
+    return { label: i.label, shown: q ? !q.right : null, mis: q ? q.mis : [], laterRight: l ? l.right : null };
+  });
+}
+
 function analyse(rec) {
   const tests = {};
   for (const id of Object.keys(T.TESTS)) {
@@ -47,7 +56,10 @@ function analyse(rec) {
   const criteria = {
     post: post.every(v => v !== null && v !== undefined) ? post.every(v => v >= C.postPct) : null,
     delayed: tests.delayed ? tests.delayed.score.examPct >= C.delayedPct : null,
-    misconceptions: diagMis && delMis ? diagMis.every(m => !delMis.includes(m)) : null,
+    // Shorter quick check (brief 2026-10-26): the two misconceptions it asks, each measured in the
+    // delayed test by its own new question (item.later); one she showed is gone if that is right.
+    misconceptions: T.SHORT_CHECK ? (tests.diagnostic && tests.delayed ? quickMis(tests).every(m => !m.shown || m.laterRight) : null)
+      : diagMis && delMis ? diagMis.every(m => !delMis.includes(m)) : null,
     finished: T.LESSONS && finished(T.LESSONS.cv) && finished(T.LESSONS.comp) ? true : (tests.delayed ? false : null),
   };
   // Lessons: time per key point, "don't know", "tell me", hints, answers, predictions.
@@ -95,7 +107,10 @@ function render(a, src) {
   L.push(`| Post-test at least ${C.postPct}% (each lesson) | Current and pd: ${ex('post-cv')}; Components: ${ex('post-comp')} | ${yesNo(a.criteria.post)} |`);
   L.push(`| Delayed test at least ${C.delayedPct}% | ${ex('delayed')} | ${yesNo(a.criteria.delayed)} |`);
   const dm = t.diagnostic ? t.diagnostic.score.misconceptions : null, ym = t.delayed ? t.delayed.score.misconceptions : null;
-  L.push(`| Every misconception shown in the quick check gone in the delayed test | quick check: ${dm ? (dm.join(', ') || 'none') : 'not taken'}; delayed: ${ym ? (ym.join(', ') || 'none') : 'not taken'} | ${yesNo(a.criteria.misconceptions)} |`);
+  if (T.SHORT_CHECK) {
+    const qm = quickMis(t);
+    L.push(`| The quick check's two misconceptions, where she showed them, gone in the delayed test (its new questions) | ${qm.map(m => `${m.label}: quick check ${m.shown === null ? 'not taken' : m.shown ? `shown (${m.mis.join(', ')})` : 'not shown'}, delayed ${m.laterRight === null ? 'not taken' : m.laterRight ? 'right' : 'wrong'}`).join('; ')} | ${yesNo(a.criteria.misconceptions)} |`);
+  } else L.push(`| Every misconception shown in the quick check gone in the delayed test | quick check: ${dm ? (dm.join(', ') || 'none') : 'not taken'}; delayed: ${ym ? (ym.join(', ') || 'none') : 'not taken'} | ${yesNo(a.criteria.misconceptions)} |`);
   L.push(`| She finishes both lessons | Current and pd: ${a.lessons[T.LESSONS.cv].finished ? 'finished' : 'not finished'}; Components: ${a.lessons[T.LESSONS.comp].finished ? 'finished' : 'not finished'} | ${yesNo(a.criteria.finished)} |`, '');
   L.push('## Tests', '', '| Test | Taken | Exam-style marks | Misconception questions right | "I don\'t know" |', '|---|---|---|---|---|');
   for (const [id, x] of Object.entries(t)) L.push(`| ${T.TESTS[id].name} | ${x ? x.done.slice(0, 10) : '—'} | ${x ? `${x.score.exam.marks}/${x.score.exam.max} (${x.score.examPct}%)` : '—'} | ${x ? `${x.score.misRight}/${x.score.misCount}` : '—'} | ${x ? x.dontKnow : '—'} |`);

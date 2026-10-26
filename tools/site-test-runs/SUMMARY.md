@@ -68,3 +68,4 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-10-19 | p2-components | lesson | FAIL | 8 | 6 | S45 | tools/site-test-runs/2026-10-19/p2-components-3 | $0.8716
 - 2026-10-24 | pilot-diagnostic | pilot | FAIL | 2 | 4 | false | tools/site-test-runs/2026-10-24/pilot-diagnostic | $0.1327
 - 2026-10-24 | p2-current-voltage | lesson | FAIL | 7 | 4 | S31 | tools/site-test-runs/2026-10-24/p2-current-voltage | $0.7135
+- 2026-10-26 | p2-current-voltage | lesson | FAIL | 14 | 6 | S17 | tools/site-test-runs/2026-10-26/p2-current-voltage | $0.8440

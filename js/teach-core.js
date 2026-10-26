@@ -153,6 +153,22 @@ function create(env) {
   // with "Try another", its widget, her own-words line, two mixed questions,
   // the end quiz and the opening recall questions.
   const PILOT_FIX = FLOW_FIX && FIRST_TIME && env.pilotFix !== false;
+  // Key-point loop (brief docs/briefs/2026-10-24-keypoint-loop.md), on by
+  // default with PILOT_FIX. create({ call, kpLoopFix: false }) keeps every
+  // prompt, decision and state exactly as before (tools/check-flag-identical.js).
+  // With it on: (a) a key point ends in code, when its parts are covered,
+  // after KP_PRACTICE_MAX practice questions on it (right or wrong), or when
+  // she asks to move on; its end steps then run and the next point starts.
+  // (b) the tutor sets no practice question of its own: a model question with
+  // a number in it is taken off and the point's "Try another" generator asks
+  // instead, never the same question twice on one point. (c) a tentative
+  // answer ("um 1 times 4 so... 4 coulombs?") is an answer, not her own
+  // question: it is marked, and the mark is said first; an answer right in
+  // substance is marked right, with the exam wording after. (d) the goodbye
+  // is sent once: the box gives way to buttons. (e) the covered counter moves
+  // when a point ends, not after its end steps.
+  const KP_LOOP_FIX = PILOT_FIX && env.kpLoopFix !== false;
+  const KP_PRACTICE_MAX = 3;
   const PracticeLib = env.practice || (typeof Practice !== 'undefined' ? Practice : null);
   const STUDENT_NAME = env.studentName || 'Mabel';   // used only to filter it out of replies
   const WHO     = FIX23 ? 'the student' : 'Mabel';   // how prompts refer to her
@@ -729,8 +745,9 @@ function create(env) {
     lines.push(`${WHO_CAP} just said: "${userText}"`);
     if (TESTER_FIX4 && decision.kind !== 'checkin' && _asksMeaning(userText)) lines.push(`She is asking what a word or idea means. The FIRST sentence of your reply answers that, in everyday words, with an everyday comparison if one helps. Do not skip it. Only then go on, and if you ask again what you asked before, use other words.`);
     if (FLOW_FIX) {
-      if (decision.mark === 'correct') lines.push(`Her answer is right. The FIRST sentence of your reply says so and names what was right, before anything else.`);
+      if (decision.mark === 'correct') lines.push(`Her answer is right. The FIRST sentence of your reply says so and names what was right, before anything else.${KP_LOOP_FIX ? ` If she put it in her own everyday words, the next sentence gives the exam wording from the key point.` : ''}`);
       if (decision.mark === 'partly') lines.push(`Her answer is partly right. The FIRST sentence of your reply says which part is right, then say what is missing.`);
+      if (KP_LOOP_FIX && decision.mark === 'wrong') lines.push(`Her answer is not right. The FIRST sentence of your reply says so kindly ("Not quite"), before anything else.`);
       const qs = _state.flow && _state.flow.correctQs.length ? _state.flow.correctQs.slice(-8) : [];
       const as = _state.flow && _state.flow.correctAs ? _state.flow.correctAs.slice(-8) : [];
       if (qs.length && _teachIndex(decision) != null) lines.push(`Questions she has already answered correctly in this lesson, with her answers — never ask any of them again, in any words, and never ask a question whose answer is one she has already given: ${qs.map((q, k) => `"${q}" (she said: "${as[k - qs.length + as.length] || ''}")`).join(' | ')}`);
@@ -1557,7 +1574,7 @@ function create(env) {
       `The question: "${last.q}"`,
       `The student replied: "${userText}"`,
       _pointBrief(_points[_state.currentPointIndex]),
-      `CORRECT: it answers the question correctly in substance — spelling, slang, short or loosely worded answers are fine, and so is a right reason in her own words. PARTLY: only when part of what the question asked is wrong or missing. WRONG: an answer, but a wrong one. IDK: she says she does not know. OTHER: not an answer to the question (off topic, "ok", "huh?", a request, or a question of her own).`,
+      `CORRECT: it answers the question correctly in substance — spelling, slang, short or loosely worded answers are fine, and so is a right reason in her own words.${KP_LOOP_FIX ? ` A sensible answer that is right in substance is CORRECT even if it is not how the lesson or the exam would put it, ends in a question mark, or adds a true consequence the question did not ask for.` : ''} PARTLY: only when part of what the question asked is wrong or missing. WRONG: an answer, but a wrong one. IDK: she says she does not know. OTHER: not an answer to the question (off topic, "ok", "huh?", a request, or a question of her own).`,
     ].join('\n\n');
     try {
       const raw = String(await AI.call(sys, user, 10) || '').toUpperCase();
@@ -1715,6 +1732,8 @@ function create(env) {
     // The check-in is not asked here: the reaction gives her the answer, then she chooses.
     if (decision.kind === 'checkin') decision = { ...decision, kind: 'fact', fact: null, pacing: { ...decision.pacing, checkinAsked: false } };
     if (!['fact', 'retry', 'next', 'resume'].includes(decision.kind) || decision.tellAll || decision.skipped) { _turnMark = null; return null; }
+    // KP_LOOP_FIX (a): a point that ends here goes the normal way, through its end steps.
+    if (KP_LOOP_FIX && (decision.kind === 'next' || decision.kind === 'resume')) { _turnMark = null; return null; }
     _noteFlow(userText, decision);
     _turnMark = null;
     decision.quickReact = true;
@@ -1933,6 +1952,7 @@ function create(env) {
       c ? `The lesson's one everyday comparison is ${c.name}: ${(c.parts || []).map(p => `${p.thing} stands for ${p.standsFor}`).join('; ')}. It stops being true here: ${c.limit} Use only this comparison and only these parts of it. Never use any other comparison or "it's like…".`
         : `Do not use everyday comparisons ("it's like…"): this lesson has none.`,
       `Every relationship, number or rule you state must be one the key point's content, exam box or worked examples state, in their words. Never state your own version. "Doubles" means doubles: never say that a quantity goes up by the same amount.`,
+      ...(KP_LOOP_FIX ? [`Never set a calculation or any question with a number in it: the lesson's practice questions are asked separately. Ask only about ideas.`] : []),
     ].join('\n');
   }
 
@@ -2055,6 +2075,20 @@ function create(env) {
       const kept = _sentences(t).map(s => s.trim()).filter(s => s && !/\?/.test(s));
       if (kept.length) { t = kept.join(' '); P.pending = { t: 'continue', idx }; }
     }
+    // KP_LOOP_FIX (b): her practice comes from the lesson's generator, not the model.
+    const own = KP_LOOP_FIX && idx != null && idx === _state.currentPointIndex && !P.pending ? _kpOwnPractice(t) : null;
+    if (own !== null) {
+      // Practice only once the point is under way (not on its opening message).
+      const said = (_state.transcript || []).filter(x => x.role === 'assistant' && x.pt === idx).length;
+      const ask = said >= 2 && !extra.opening ? _kpPractice(idx, t) : null;
+      if (ask) {
+        _pilotMarkTaught(idx, own);
+        const pics = _pilotPicturesDue(idx);
+        const before = [..._pilotDefsFor(own, extra.basic || _lastBasicTag), ...(own ? [own] : [])];
+        return { text: ask, extra: { ...extra, ...(pics.length ? { pictures: pics } : {}), ...(before.length ? { before } : {}) } };
+      }
+      if (own) { t = own; P.pending = { t: 'continue', idx }; }
+    }
     if (idx != null) _pilotMarkTaught(idx, t);
     const pics = _pilotPicturesDue(idx);
     if (pics.length) extra = { ...extra, pictures: pics };
@@ -2091,6 +2125,7 @@ function create(env) {
   function _pilotAsks(text) {
     const t = String(text || '').trim();
     if (!t || _wantsTelling(t) || _wantsSkip(t)) return false;
+    if (KP_LOOP_FIX && _kpIsAnswer(t)) return false;
     // A short tentative answer ("is it the volts?", "the potential difference?") is an answer.
     if (NOT_A_QUESTION.test(t) && _wordCount(t) <= 5) return false;
     if (/\bwhat (do )?you want( me to do)?\b|\bwhat do i (do|say)\b/i.test(t)) return true;
@@ -2149,15 +2184,21 @@ function create(env) {
   function _askNumber(eq, mode, label) {
     const P = _pilot();
     if (!PracticeLib || !PracticeLib.has(eq)) return null;
-    const q = PracticeLib.make(eq, Math.floor(_rand() * 1e9) + 1);
+    const q = KP_LOOP_FIX ? _kpFresh(eq) : PracticeLib.make(eq, Math.floor(_rand() * 1e9) + 1);
     P.pending = { t: 'num', q, mode };
     return _pilotOut(`${label} ${q.question}`, {});
   }
   function _markNumber(userText) {
     const P = _pilot(), { q, mode } = P.pending;
-    const r = PracticeLib.check(q, userText);
+    // KP_LOOP_FIX (c): a reply with no number and no "don't know" is not an answer: asked once more, not marked.
+    if (KP_LOOP_FIX && !/\d/.test(userText) && !IDK_REPLY.test(userText) && !_wantsTelling(userText) && !P.pending.nudged) {
+      P.pending = { ...P.pending, nudged: true };
+      return _pilotOut(`No rush. When you're ready: ${q.question}`, {});
+    }
+    const r = PracticeLib.check(q, KP_LOOP_FIX ? _kpLast(userText) : userText);
     const ans = `${PracticeLib.fmt(q.answer.value)} ${q.answer.unit}`;
     P.pending = null;
+    if (KP_LOOP_FIX && mode === 'kp') return _kpMarked(r.ok, ans, q);
     if (mode === 'quiz') {
       P.quiz.n++;
       if (r.ok) P.quiz.right++;
@@ -2211,6 +2252,115 @@ function create(env) {
     const P = _pilot();
     P.end = { kind: decision.kind, idx: decision.idx, nextIndex: decision.nextIndex, how: decision.how || null, skipped: !!decision.skipped };
     _applyDecision({ ...decision, kind: 'fact' });
+    // KP_LOOP_FIX (e): ticked when it ends (its end steps tell whatever was not taught).
+    if (KP_LOOP_FIX && !decision.skipped) _state.coverage[decision.idx] = true;
+  }
+
+  // ── Key-point loop (KP_LOOP_FIX) ──
+  // The practice record of the point she is on: questions asked and answered.
+  function _kp() {
+    const P = _pilot(), idx = _state.currentPointIndex;
+    if (!P.kp || P.kp.idx !== idx) P.kp = { idx, practice: 0, asked: [] };
+    return P.kp;
+  }
+  // A generator question not asked before on this point.
+  function _kpFresh(eq) {
+    const K = _kp();
+    let q = null;
+    for (let k = 0; k < 12; k++) {
+      q = PracticeLib.make(eq, Math.floor(_rand() * 1e9) + 1 + k * 7919);
+      if (!K.asked.includes(q.question)) break;
+    }
+    K.asked.push(q.question);
+    return q;
+  }
+  // The point's practice: its "Try another" generators (worked examples, then mixed questions).
+  function _kpEquations(idx) {
+    const p = _points[idx];
+    const eqs = [...(p.workedExamples || []).map(x => x.equation), ...(p.mixedQuestions || []).filter(q => q.generator).map(q => q.generator)];
+    return [...new Set(eqs)].filter(eq => PracticeLib && PracticeLib.has(eq));
+  }
+  // (b) The model's own practice question: a question with a number in it, and
+  // any sentence that set it up (two numbers with units: "A current of 2 A
+  // flows for 5 s."). Returns the text without them, or null if there is none.
+  const KP_QUANTITY = /\d+(?:\.\d+)?\s?(?:[A-Za-zΩ]{1,2}|amps?|volts?|ohms?|seconds?|coulombs?|joules?|watts?)\b/g;
+  function _kpOwnPractice(text) {
+    const sents = _sentences(text).map(s => s.trim()).filter(Boolean);
+    const setup = s => (_stripMarkdown(s).match(KP_QUANTITY) || []).length >= 2;
+    const qk = sents.map((s, k) => (/\?/.test(s) ? k : -1)).filter(k => k >= 0).pop();
+    const numQ = qk !== undefined && /\d/.test(_stripMarkdown(sents[qk]));
+    const dangling = qk === undefined && sents.length && setup(sents[sents.length - 1]);
+    if (!numQ && !dangling) return null;
+    return sents.filter((s, k) => k !== qk && !setup(s)).join(' ').trim();
+  }
+  // The point's next practice question, or null (none, or its practice is used up).
+  function _kpPractice(idx, text) {
+    const K = _kp();
+    const eqs = _kpEquations(idx).filter(eq => _kpEquationSaid(idx, eq, text));
+    if (!eqs.length || K.practice >= KP_PRACTICE_MAX) return null;
+    const q = _kpFresh(eqs[K.practice % eqs.length]);
+    _pilot().pending = { t: 'num', q, mode: 'kp' };
+    return `Your turn: ${q.question}`;
+  }
+  // An equation is taught once a tutor message on the point has said it ("Q = I t", "Q = I × t").
+  const _eqFlat = x => String(x || '').toLowerCase().replace(/<[^>]+>/g, '').replace(/[\s×*·]+/g, '');
+  function _kpEquationSaid(idx, eq, text) {
+    const e = ((_points[idx].examBox || {}).equations || []).find(x => x.id === eq);
+    const sym = _eqFlat(e ? e.symbols : eq);
+    const said = (_state.transcript || []).filter(x => x.role === 'assistant' && x.pt === idx).map(x => x.text).concat(text || '');
+    return said.some(t => _eqFlat(_stripMarkdown(t)).includes(sym));
+  }
+  // Her answer is the last number she typed ("2 times 5 = like 10" is 10).
+  function _kpLast(text) {
+    const t = String(text || '').replace(/(\d),(\d{3})\b/g, '$1$2');
+    const all = [...t.matchAll(/-?(\d+(\.\d*)?|\.\d+)/g)];
+    return all.length ? t.slice(all[all.length - 1].index) : t;
+  }
+  // A practice answer, marked in code; the point ends after KP_PRACTICE_MAX of them.
+  function _kpMarked(ok, ans, q) {
+    const P = _pilot(), K = _kp(), idx = _state.currentPointIndex;
+    K.practice++;
+    const work = (q.steps.find(s => /Put the numbers in/.test(s.text)) || q.steps[q.steps.length - 1]).text;
+    const said = ok ? `Yes, that's right: ${ans}.` : `Not quite: it's ${ans}. ${work}`;
+    if (K.practice >= KP_PRACTICE_MAX) { _kpEnd(idx, false); return _pilotOut(said, { pt: idx }, 'pilot', idx); }
+    P.pending = { t: 'continue', idx };
+    return _pilotOut(said, { pt: idx, choices: ['Next'] }, 'pilot', idx);
+  }
+  // (a) The point ends now: its end steps are queued (skip: without telling the rest).
+  function _kpEnd(idx, skip) {
+    const P = _pilot(), point = _points[idx], cur = _state.facts[idx];
+    const facts = { answered: cur.answered.slice(), told: cur.told.slice() };
+    const rem = point.facts.map((f, j) => j).filter(j => !facts.answered[j] && !facts.told[j]);
+    if (!skip) rem.forEach(j => { facts.told[j] = true; });
+    const some = facts.answered.some(Boolean) || _kp().practice > 0;
+    const how = skip ? (some ? 'part' : 'skipped') : !rem.length && some ? 'worked' : some ? 'part-told' : 'told';
+    P.pending = null;
+    _pilotHoldEnd({ ..._afterPoint(idx, !skip), idx, verdict: !skip, facts, how,
+                    pacing: { turnsOnPoint: 0, checkinAsked: false, extensionLeft: null }, ...(skip ? { skipped: point } : {}) });
+    P.queue.unshift(..._pilotEndSteps(idx, !skip));
+  }
+  // She asks to move on: "is that it?", "what comes next", "can we move on", "skip".
+  const KP_MOVE_ON = /\b(move on|moving on|next (one|bit|point|part|topic|thing)|what'?s next|what comes next|is that it|are we done|go on to the next)\b/i;
+  function _kpMovesOn(t) { return (KP_MOVE_ON.test(t) || _wantsSkip(t)) && !NOT_SKIP.test(t); }
+  // (c) With a question of the tutor's waiting, a reply is an answer unless it
+  // asks something itself ("what's an ampere"); "um 2 times 3... is 6 coulombs?" is an answer.
+  const KP_ASKS = /\b(what|whats|what's|wat|wot|why|how|where|when|who|which|wdym|huh|mean|means)\b/i;
+  function _kpIsAnswer(t) {
+    const P = _pilot();
+    const last = [...(_state.transcript || [])].reverse().find(x => x.role === 'assistant');
+    const waiting = (P.pending && ['mc', 'num', 'own', 'aside'].includes(P.pending.t)) || (last && /\?/.test(last.text || ''));
+    if (!waiting) return false;
+    return /\d/.test(t) || !(KP_ASKS.test(t) || _saysConfused(t) || _asksMeaning(t));
+  }
+  // (c) The mark is said first, whatever the model wrote.
+  const SAYS_RIGHT = /^[^.!?]{0,60}\b(yes|yep|right|correct|exactly|spot on|that'?s it)\b/i;
+  const SAYS_WRONG = /^[^.!?]{0,60}\b(not quite|no|not right|not correct|nearly|close|partly|part of it)\b/i;
+  function _kpMarkFirst(text, mark) {
+    const t = String(text || '').trim(), plain = _stripMarkdown(t);
+    if (mark === 'correct' && !SAYS_RIGHT.test(plain)) return `Yes, that's right. ${t}`;
+    if (mark === 'partly' && !SAYS_RIGHT.test(plain) && !SAYS_WRONG.test(plain)) return `Partly right. ${t}`;
+    if (mark === 'wrong' && !SAYS_WRONG.test(plain)) return `Not quite. ${t}`;
+    return t;
   }
   function _pilotQuizSteps() {
     const quiz = Array.isArray(_data.endQuiz) ? _data.endQuiz : [];
@@ -2269,9 +2419,12 @@ function create(env) {
         const eq = x.equation;
         const can = PracticeLib && PracticeLib.has(eq);
         if (can) P.pending = { t: 'after-try', eq };
+        // KP_LOOP_FIX (c): an answer she types to the worked example is marked in code.
+        const mark = KP_LOOP_FIX && PracticeLib && x.answer && typeof x.answer.value === 'number';
+        if (mark) P.pending = { t: 'worked', eq: can ? eq : null, x };
         const n = (p.workedExamples || []).length;
         return _pilotOut(`Worked example${n > 1 ? ` ${s.j + 1} of ${n}` : ''}: ${_stripHtml(x.question)} Tap the button under it to see each step.`,
-          { pt: s.idx, card: { type: 'worked', question: x.question, steps: (x.steps || []).map(st => st.text) }, ...(can ? { choices: ['Try another', 'Next'] } : {}) }, 'pilot', s.idx);
+          { pt: s.idx, card: { type: 'worked', question: x.question, steps: (x.steps || []).map(st => st.text) }, ...(can ? { choices: ['Try another', 'Next'] } : mark ? { choices: ['Next'] } : {}) }, 'pilot', s.idx);
       }
       case 'widget':
         return _pilotOut(`${p.widget.intro} Tap Next when you are done.`, { pt: s.idx, card: { type: 'widget', id: p.widget.id, options: p.widget.options || {}, labels: p.widget.labels || [] } }, 'pilot', s.idx);
@@ -2366,12 +2519,14 @@ function create(env) {
     if (g) P.known.push(g.key);
     if (_state.checkinAsked) _state.checkinAsked = false;
     const back = P.pending && P.pending.t !== 'aside' && P.pending.t !== 'return' ? P.pending : (P.pending && P.pending.back) || null;
-    const noQ = _pilotNoQuestion;
+    // KP_LOOP_FIX (b): a check question with a number in it is the model's own practice: taken off.
+    const noQ = _pilotNoQuestion || (KP_LOOP_FIX && _kpOwnPractice(reply) !== null);
     _pilotNoQuestion = false;
     let text = reply;
     if (noQ) {
       const kept = _sentences(text).map(x => x.trim()).filter(x => x && !/\?/.test(x));
       if (kept.length) text = kept.join(' ');
+      if (KP_LOOP_FIX) { const o = _kpOwnPractice(reply); if (o) text = o; }
     }
     P.pending = noQ ? { t: 'return', back } : { t: 'aside', back };
     const before = _pilotDefsFor(text);
@@ -2454,6 +2609,18 @@ function create(env) {
         P.pending = null;
         return (await _pilotStep()) || null;
       case 'own': return _pilotOwn(userText);
+      case 'worked': {   // KP_LOOP_FIX only
+        if (/\d/.test(userText) && !/\b(another|again)\b/i.test(userText)) {
+          const x = pend.x, ans = `${PracticeLib.fmt(x.answer.value)} ${x.answer.unit}`;
+          const r = PracticeLib.check({ answer: { value: x.answer.value, unit: x.answer.unit }, tolerance: 0.01 }, _kpLast(userText));
+          const work = ((x.steps || []).find(st => /Put the numbers in/.test(st.text)) || {}).text || '';
+          P.pending = pend.eq ? { t: 'after-try', eq: pend.eq } : null;
+          return _pilotOut(r.ok ? `Yes, that's right: ${ans}.` : `Not quite: it's ${ans}. ${work}`.trim(), pend.eq ? { choices: ['Try another', 'Next'] } : {});
+        }
+        if (pend.eq) { P.pending = { t: 'after-try', eq: pend.eq }; return _pilotPending(userText); }
+        P.pending = null;
+        return (await _pilotStep()) || null;
+      }
       case 'aside': return _pilotAsideAnswer(userText);
       case 'return': return _pilotReturn();
       case 'continue': return _pilotContinue();
@@ -2485,10 +2652,20 @@ function create(env) {
 
   async function _pilotReply(userText) {
     const P = _pilot();
-    if (RESPECT_EXIT && !_state.complete) { const r = await _respectTurn(userText); if (r) { P.pending = null; return r; } }
-    if (RESPECT_EXIT && _state.complete && _wantsExit(userText)) return { reply: _exitLine(), recap: null, decision: { kind: 'free' } };
+    // KP_LOOP_FIX (d): a goodbye carries farewell, so the page swaps the box for buttons and it is sent once.
+    const bye = r => { if (KP_LOOP_FIX && r && r.decision && r.decision.kind === 'pause') r.decision.farewell = true; return r; };
+    if (RESPECT_EXIT && !_state.complete) { const r = await _respectTurn(userText); if (r) { P.pending = null; return bye(r); } }
+    if (RESPECT_EXIT && _state.complete && _wantsExit(userText)) return { reply: _exitLine(), recap: null, decision: { kind: 'free', ...(KP_LOOP_FIX ? { farewell: true } : {}) } };
     if (!_state.complete && _wantsPause(userText)) {
-      return { reply: `No problem. Your place is saved, so you can pick this up any time. See you soon!`, recap: null, decision: { kind: 'pause', idx: _state.currentPointIndex } };
+      return bye({ reply: `No problem. Your place is saved, so you can pick this up any time. See you soon!`, recap: null, decision: { kind: 'pause', idx: _state.currentPointIndex } });
+    }
+    // KP_LOOP_FIX (a): she asks to move on: the point ends and its end steps run.
+    if (KP_LOOP_FIX && !_state.complete && !P.end && !P.queue.length && _ft().probed && _kpMovesOn(userText)) {
+      const idx = _state.currentPointIndex, skip = _wantsSkip(userText);
+      _kpEnd(idx, skip);
+      if (skip) return _pilotOut(`OK, we'll skip the rest of "${_shortHeading(_points[idx].heading)}". You can come back to it from the list any time.`, { pt: idx }, 'pilot', idx);
+      const first = await _pilotStep();
+      return first ? { ...first, reply: _pilotCap(`OK, let's finish this one. ${first.reply}`) } : _pilotOut(`OK, let's finish this one.`);
     }
     if (P.pending) { const r = await _pilotPending(userText); if (r) return r; }
     if (P.queue.length) { const r = await _pilotStep(); if (r) return r; }
@@ -2556,7 +2733,7 @@ function create(env) {
         _pointBrief(_points[idx]), _coveredLine(idx, _state.facts[idx]),
       ].join('\n\n');
       const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), user, true, 50);
-      const r = _pilotAfterModel(reply, idx, { pt: idx });
+      const r = _pilotAfterModel(KP_LOOP_FIX ? _kpMarkFirst(reply, mark) : reply, idx, { pt: idx });
       return _pilotOut(r.text, r.extra, 'pilot', idx);
     }
     // The point is done: react to her answer only; the rest of the point, its card,
@@ -2572,7 +2749,8 @@ function create(env) {
         `In ONE or TWO short sentences, react to her answer: if it is right, say so and name what was right; if not, kindly give the right answer to the question you asked${last ? ` ("${last.q}")` : ''}, copying any number and unit from the content. Do not teach anything else, do not start anything new, and do not ask any question.`,
         _pointBrief(_points[idx]),
       ].filter(Boolean).join('\n\n');
-      const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), user, false, 40);
+      const said = await _callWithLengthGuard(_buildSystemPrompt(idx), user, false, 40);
+      const reply = KP_LOOP_FIX ? _kpMarkFirst(said, mark) : said;
       _pilotMarkTaught(idx, reply);
       return _pilotOut(reply, { pt: idx }, 'pilot', idx);
     }
@@ -2580,7 +2758,8 @@ function create(env) {
     const sys = _buildSystemPrompt(_teachIndex(decision));
     const user = _buildUserPrompt(userText, decision);
     _pendingFT = _teachIndex(decision) != null ? { teach: true, confused: false } : null;
-    const reply = await _callWithLengthGuard(sys, user, _teachIndex(decision) != null);
+    const said = await _callWithLengthGuard(sys, user, _teachIndex(decision) != null);
+    const reply = KP_LOOP_FIX ? _kpMarkFirst(said, mark) : said;
     _applyDecision(decision);
     const ti = _teachIndex(decision);
     const r = _pilotAfterModel(reply, ti, ti != null ? { pt: ti } : {});
@@ -2610,7 +2789,7 @@ function create(env) {
   }));
   }
 
-  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
+  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, KP_LOOP_FIX, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
 }
 
 return { create, TUTOR_SONNET, TUTOR_MODEL, TUTOR_MODEL_SONNET, TUTOR_MODEL_HAIKU, tutorParams };

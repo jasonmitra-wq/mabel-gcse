@@ -373,7 +373,7 @@ const Teach = (() => {
             <div class="askme-thread" id="teachThread"></div>
             ${_state.farewell ? `
             <div class="teach-finished">
-              <p style="font-size:0.85rem;color:var(--muted);margin:0 0 0.6rem">Lesson finished.</p>
+              <p style="font-size:0.85rem;color:var(--muted);margin:0 0 0.6rem">${_core.KP_LOOP_FIX && !_state.complete ? 'Your place is saved.' : 'Lesson finished.'}</p>
               <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
                 <button class="btn" onclick="Lessons.close()">← Topics</button>
                 <button class="btn" onclick="Teach.showSlides()">Show me the slides</button>
@@ -906,6 +906,8 @@ const Teach = (() => {
       // Only on a free turn — the completion message itself leaves the box open
       // so she can reply to it.
       if (decision.kind === 'free' && _state.complete && _state.wrapOffered && !reply.includes('?')) _state.farewell = true;
+      // KP_LOOP_FIX (d): a goodbye she was given swaps the box for buttons, so it is sent once.
+      if (_core.KP_LOOP_FIX && decision.farewell) _state.farewell = true;
       if (recap) _pushEntry({ role: 'recap', rid: _rid(), pt: decision.idx, lines: recap, done: false });
       // PILOT_FIX (h): a word explained first, each in its own message, before the reply.
       const entry = _replyEntry(reply, decision);

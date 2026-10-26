@@ -338,6 +338,7 @@ async function simulate(id, call, persona = null) {
     const { reply, recap, decision } = await core._getTutorReply(text);
     if (decision.kind === 'free' && !state.wrapOffered && core._looksLikeWrapUpQuestion(reply)) state.wrapOffered = true;
     if (decision.kind === 'free' && state.complete && state.wrapOffered && !reply.includes('?')) state.farewell = true;
+    if (core.KP_LOOP_FIX && decision.farewell) state.farewell = true;   // as js/teach.js
     if (recap) push({ role: 'recap', pt: decision.idx, lines: recap, done: false });
     const entry = core._replyEntry(reply, decision);
     const before = entry.before || [];

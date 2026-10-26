@@ -6,6 +6,8 @@
  *   node tools/site-test.js --maths <M1..M6> [--run]
  *   node tools/site-test.js --pilot diagnostic [--run]   # the Electricity "Quick check before you start"
  *   --max-usd <n>   allow a run whose estimate is over $1; also a hard stop on actual spend
+ *   --until-point-end   lesson mode: stop once the covered counter has moved and a
+ *                   predict-first widget has been shown (brief 2026-10-24 key-point loop)
  *   --exit-script   lesson mode: she says "I'm tired" once (and taps the choice
  *                   buttons) and "bye, got to go" near the end (tools/bored-student.js exitScript)
  *
@@ -73,6 +75,7 @@ const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/cs
 
 function die(msg, code = 1) { console.error(msg); process.exit(code); }
 let EXIT_SCRIPT = false;
+let UNTIL_POINT_END = false;   // --until-point-end
 
 // ---------- arguments ----------
 
@@ -85,6 +88,7 @@ function parseArgs(argv) {
     else if (v === '--pilot') a.pilot = argv[++i];
     else if (v === '--run') a.run = true;
     else if (v === '--exit-script') a.exitScript = true;
+    else if (v === '--until-point-end') a.untilPointEnd = true;
     else if (v === '--max-usd') a.maxUsd = Number(argv[++i]);
     else if (v === '--rescore') a.rescore = [];
     else if (a.rescore && !v.startsWith('--')) a.rescore.push(v);
@@ -357,7 +361,7 @@ async function lessonMode(page, run, id) {
 
   const points = L.data ? (L.data.keyPoints || []).length : 4;
   const cap = points * 12 + 4;
-  let closing = 0, diagramsSeen = 0;
+  let closing = 0, diagramsSeen = 0, lastCounter = '', predSeen = 0;
   for (let n = 1; n <= cap; n++) {
     const status = await page.evaluate(() => {
       const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || '';
@@ -395,6 +399,15 @@ async function lessonMode(page, run, id) {
     if (fig && fig.n > diagramsSeen) { diagramsSeen = fig.n; run.say(`[diagram shown in the conversation under T${n}: "${fig.cap}"]`); await shoot(page, run, `diagram-${n}`); }
     run.exchanges++;
     if (run.exchanges % 3 === 0) await shoot(page, run, `exchange-${n}`);
+    // The covered counter and the predict-first widget, logged when they first change or show.
+    const seen = await page.evaluate(() => {
+      const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || '';
+      const pred = document.querySelector('#teachThread .wdg-pred');
+      return { counter: hdr.trim(), pred: pred ? pred.innerText.trim().split('\n')[0] : '' };
+    });
+    if (seen.counter && seen.counter !== lastCounter) { if (lastCounter) run.say(`[counter now "${seen.counter}" after T${n}]`); lastCounter = seen.counter; }
+    if (seen.pred && !predSeen) { predSeen = n; run.say(`[predict-first widget shown under T${n}: "${seen.pred}"]`); await page.evaluate(() => document.querySelector('#teachThread .wdg-pred').scrollIntoView({ block: 'center' })); await shoot(page, run, `widget-${n}`); }
+    if (UNTIL_POINT_END && predSeen && !/^0\//.test(lastCounter)) { run.say(`[stopped: key point 1 ended (counter "${lastCounter}") and its predict-first widget showed, at T${predSeen}]`); break; }
     if (fixed === 'bye, got to go') { await shoot(page, run, `goodbye-${n}`); run.say('[the student leaves]'); break; }
   }
   await shoot(page, run, 'end');
@@ -765,6 +778,7 @@ async function main() {
   try {
     const page = await newPage(browser, base, run);
     EXIT_SCRIPT = !!a.exitScript;
+    UNTIL_POINT_END = !!a.untilPointEnd;
     if (a.lesson) await lessonMode(page, run, a.lesson); else if (a.pilot) await pilotMode(page, run, a.pilot); else await mathsMode(page, run, a.maths);
   } catch (e) {
     crash = String(e.message || e);

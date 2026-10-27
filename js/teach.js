@@ -35,7 +35,9 @@ const Teach = (() => {
   // opens it full screen. The side-column thumbnail stays. false: the
   // thumbnail only, and the tutor is not told a diagram is showing.
   const TEACH_INLINE_DIAGRAMS = true;
-  const _core = TeachCore.create({ call: (sys, user, tokens) => AI.call(sys, user, tokens, TeachCore.tutorParams()), inlineDiagrams: TEACH_INLINE_DIAGRAMS });
+  const _core = TeachCore.create({ call: (sys, user, tokens) => AI.call(sys, user, tokens, TeachCore.tutorParams()), inlineDiagrams: TEACH_INLINE_DIAGRAMS,
+    // KP_SHORT: the small model that sorts her messages when the code is not sure.
+    classify: (sys, user, tokens) => AI.call(sys, user, tokens, TeachCore.classifierParams()) });
   const { _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt } = _core;
 
   // ── Helpers ─────────────────────────────────────────────────
@@ -935,6 +937,15 @@ const Teach = (() => {
       // PILOT_FIX (h): a word explained first, each in its own message, before the reply.
       const entry = _replyEntry(reply, decision);
       (entry.before || []).forEach(text => _pushEntry({ role: 'assistant', text, ...(entry.pt != null ? { pt: entry.pt } : {}) }));
+      // KP_SHORT: she asked for this lesson's revision cards at the end: saved to her deck, once.
+      if (entry.saveCards) {
+        delete entry.saveCards;
+        if (!_state.cardsSaved && typeof Cards !== 'undefined' && Array.isArray(_data.revisionCardBullets)) {
+          const n = Cards.saveFromLesson(_data.revisionCardBullets, _data.title || _subtopicName, _subtopicId);
+          _state.cardsSaved = true;
+          if (typeof App !== 'undefined' && App.toast) App.toast(`${n} card${n !== 1 ? 's' : ''} saved to your deck`);
+        }
+      }
       delete entry.before;
       _pushEntry(entry);
       toSlides = decision.kind === 'slides';   // RESPECT_EXIT: she chose the slides
@@ -949,6 +960,8 @@ const Teach = (() => {
     _renderShell();
     _renderTranscript();
     if (toSlides) { showSlides(); return; }
+    // After the goodbye: the goodbye and its buttons in view (site test 2026-10-27: the chat was left scrolled up).
+    if (_state.farewell) document.querySelector('.teach-finished')?.scrollIntoView({ block: 'end' });
     document.getElementById('teachInput')?.focus();
   }
 

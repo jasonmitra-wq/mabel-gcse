@@ -27,6 +27,11 @@ function tutorParams(sonnet = TUTOR_SONNET) {
                 : { model: TUTOR_MODEL_HAIKU };
 }
 const TUTOR_MODEL = tutorParams().model;
+// KP_SHORT: the small model that sorts her messages when the code's rules are not sure.
+// Claude Haiku 5.5 (confirmed in GET /v1/models, 2026-10-27); thinking off (allowed at its default effort).
+const CLASSIFIER_MODEL = 'claude-haiku-5-5';
+function classifierParams() { return { model: CLASSIFIER_MODEL, thinking: { type: 'disabled' } }; }
+const CLASSIFIER_COST_IN = 0.1 / 1e6, CLASSIFIER_COST_OUT = 0.5 / 1e6;   // USD per token
 
 // env.call(system, user, maxTokens) → Promise<string>: one model call.
 function create(env) {
@@ -187,6 +192,23 @@ function create(env) {
   // (g) the widget's message says what is on screen: the prediction first,
   // then the working widget.
   const KP_ORDER = KP_LOOP_FIX && env.kpOrder !== false;
+  // Shorter key points and reading her messages (brief
+  // docs/briefs/2026-10-26-shorter-key-points.md), on by default with KP_ORDER.
+  // create({ call, kpShort: false }) keeps every prompt, decision and state
+  // exactly as before (tools/check-flag-identical.js). With it on, in the AI
+  // lesson only: (a) a key point runs its teaching (at most KP_TEACH_MAX of her
+  // answers, then the rest is told, in bigger pieces), 1 worked example with an
+  // optional "Show me another", 1 practice question with an optional "Try
+  // another", the predict-first widget only when one of its predictions is tied
+  // to a misconception, her own-words line and 1 mixed question; ticked at the
+  // end. (b) when the code's rules are not sure what her message is, one small
+  // call (env.classify, CLASSIFIER_MODEL) sorts it: an answer, her own question,
+  // a statement about the topic, off topic, "don't know" or "move on"; that
+  // decides the path. Each sorting is kept on her message in the transcript.
+  const KP_SHORT = KP_ORDER && env.kpShort !== false;
+  const KP_TEACH_MAX = 4;
+  const KP_TEACH_TURNS = 8;   // all her messages while a point is taught (side questions too); then the rest is told
+  const CLS = { call: env.classify ? (sys, user, tokens) => env.classify(sys, user, tokens) : null };
   const PracticeLib = env.practice || (typeof Practice !== 'undefined' ? Practice : null);
   const STUDENT_NAME = env.studentName || 'Mabel';   // used only to filter it out of replies
   const WHO     = FIX23 ? 'the student' : 'Mabel';   // how prompts refer to her
@@ -1572,7 +1594,10 @@ function create(env) {
   }
 
   // The question at the end of the tutor's last reply, if it asked one.
+  // KP_SHORT: the question her answer is marked against, when it is not the newest one asked.
+  let _qOverride = null;
   function _lastQuestion() {
+    if (KP_SHORT && _qOverride) return { said: _qOverride, q: _qOverride };
     // PILOT_FIX: a message with no question (a told sentence, a word explained) is passed over.
     const last = [...(_state.transcript || [])].reverse().find(t => t.role === 'assistant' && (!PILOT_FIX || /\?/.test(t.text || '')));
     if (!last) return null;
@@ -1780,7 +1805,7 @@ function create(env) {
   }
 
   async function _getTutorReply(userText) {
-    if (PILOT_FIX) return _pilotReply(userText);
+    if (PILOT_FIX) return KP_SHORT ? _pilotReplyCapped(userText) : _pilotReply(userText);
     if (RESPECT_EXIT && !_state.complete) { const r = await _respectTurn(userText); if (r) return r; }
     if (RESPECT_EXIT && _state.complete && _wantsExit(userText)) return { reply: _exitLine(), recap: null, decision: { kind: 'free' } };
     if (!_state.complete && _wantsPause(userText)) {
@@ -2107,7 +2132,10 @@ function create(env) {
       if (KP_ORDER && !ask) {
         const kept = _sentences(own).map(s => s.trim()).filter(Boolean);
         _kpDropSetup(kept);
-        t = kept.join(' ') || `Let's keep going.`;
+        // KP_SHORT: nothing left of the message: the next untaught piece of the point instead, not a filler line.
+        const next = KP_SHORT && !kept.length ? _pilotTellChunks(idx)[0] : null;
+        if (next) next.js.forEach(j => { P.sent[idx][j] = true; });
+        t = kept.join(' ') || (next ? next.text : `Let's keep going.`);
         P.pending = { t: 'continue', idx };
       }
       if (ask) {
@@ -2167,6 +2195,8 @@ function create(env) {
   function _pilotAsks(text) {
     const t = String(text || '').trim();
     if (!t || _wantsTelling(t) || _wantsSkip(t)) return false;
+    // KP_SHORT (b): the message was read as an answer.
+    if (KP_SHORT && _kpForceAnswer) return false;
     // KP_ORDER (c): "wait why 0.05 tho? i said 50", "how did u get 7200?" are questions, wherever the word is;
     // with nothing of the tutor's waiting, any question mark is her question.
     if (KP_ORDER && WHY_ASKED.test(t)) return true;
@@ -2329,7 +2359,9 @@ function create(env) {
     let cur = null;
     s.forEach((x, j) => {
       if (P.sent[idx][j]) { cur = null; return; }
-      if (cur && cur.js[cur.js.length - 1] === j - 1 && _wordCount(cur.text) < 15 && _wordCount(cur.text) + _wordCount(x) <= 30) { cur.js.push(j); cur.text += ' ' + x; return; }
+      // KP_SHORT (a): bigger pieces (up to 50 words) so the told part takes fewer turns.
+      const [under, most] = KP_SHORT ? [40, 50] : [15, 30];
+      if (cur && cur.js[cur.js.length - 1] === j - 1 && _wordCount(cur.text) < under && _wordCount(cur.text) + _wordCount(x) <= most) { cur.js.push(j); cur.text += ' ' + x; return; }
       cur = { t: 'tell', idx, js: [j], text: x };
       // A sentence that leans on the one before ("To find it, …", "So …") brings it along.
       if (j > 0 && P.sent[idx][j - 1] && /^(it|its|it's|this|that|these|those|they|so|to find it|to do this)\b/i.test(x)) cur.text = `${s[j - 1]} ${x}`;
@@ -2342,6 +2374,21 @@ function create(env) {
   function _pilotEndSteps(idx, tell = true) {
     // KP_ORDER (a): teaching she has not had is always told first; then worked
     // examples, practice, the widget, her own words, the mixed questions.
+    // KP_SHORT (a): one of each, the extras optional: 1 worked example ("Show me another"),
+    // 1 practice question ("Try another"), the widget only if a prediction is tied to a
+    // misconception, her own words, 1 mixed question. (No notes card here: the key terms panel has them.)
+    if (KP_SHORT) {
+      const p = _points[idx], steps = _pilotTellChunks(idx), we = p.workedExamples || [];
+      if (we.length) steps.push({ t: 'worked', idx, j: 0 });
+      if (_kpEquations(idx).length) steps.push({ t: 'practice', idx, n: 0 });
+      const preds = p.widget && p.widget.options && Array.isArray(p.widget.options.predicts) ? p.widget.options.predicts : [];
+      if (preds.some(pr => (pr.options || []).some(o => o.mis))) steps.push({ t: 'widget', idx });
+      if (p.ownWords) steps.push({ t: 'own', idx });
+      const mq = (p.mixedQuestions || [])[0];
+      if (mq) steps.push(mq.generator ? { t: 'num', kind: 'mixed', idx, eq: mq.generator } : { t: 'mc', kind: 'mixed', idx, q: mq });
+      steps.push({ t: 'advance' });
+      return steps;
+    }
     if (KP_ORDER) {
       const p = _points[idx], steps = _pilotTellChunks(idx);
       (p.workedExamples || []).forEach((x, j) => steps.push({ t: 'worked', idx, j }));
@@ -2520,6 +2567,66 @@ function create(env) {
     if (kind === 'method') return `Yes, that's the way to do it. ${work} So it's ${ans}.`;
     return `Not quite: it's ${ans}. ${work}`;
   }
+  // ── Reading her messages (KP_SHORT (b)) ──
+  // What a question of the tutor's is waiting for, if one is: its words, and its buttons.
+  function _kpWaitingQ() {
+    const P = _pilot(), pe = P.pending;
+    if (pe && pe.t === 'mc') return { q: pe.step.q.question, choices: pe.order.map(k => pe.step.q.options[k]) };
+    if (pe && pe.t === 'num') return { q: pe.q.question };
+    if (pe && pe.t === 'worked') return { q: _stripHtml(pe.x.question) };
+    if (pe && pe.t === 'own' && _points[pe.idx] && _points[pe.idx].ownWords) return { q: _points[pe.idx].ownWords.prompt };
+    if (pe && pe.t === 'widget') return { q: 'the prediction question in the circuit below the message (she answers it by tapping)', widget: true };
+    if (pe && ['next', 'continue', 'return', 'order-after', 'worked-more'].includes(pe.t)) return null;
+    const last = [...(_state.transcript || [])].reverse().find(x => x.role === 'assistant');
+    const qs = last ? _stripMarkdown(last.text || '').match(/[^.!?]*\?/g) : null;
+    return qs ? { q: qs[qs.length - 1].trim() } : null;
+  }
+  // The clear cases, in code, with no call: a button she tapped, a bare number, "idk", "next", "ok".
+  function _kpClear(text) {
+    const t = String(text || '').trim();
+    const last = [...(_state.transcript || [])].reverse().find(x => x.role === 'assistant');
+    if (last && Array.isArray(last.choices) && last.choices.some(c => c.toLowerCase() === t.toLowerCase())) return 'button';
+    if (/^\W*-?(\d+(\.\d+)?|\.\d+)\s*(?:[a-zA-ZΩ]{1,3})?\W*$/.test(t)) return 'answer';
+    if (/^\W*(idk|i (don'?t|dont|do not) know|dunno|no idea|no clue|not sure)\W*$/i.test(t)) return 'idk';
+    if (/^\W*(next|next step|skip|move on)\W*$/i.test(t) || GO_ON.test(t)) return 'next';
+    return null;
+  }
+  const CLS_WORDS = { ANSWER: 'answer', QUESTION: 'question', STATEMENT: 'statement', OFFTOPIC: 'offtopic', IDK: 'idk', MOVEON: 'moveon' };
+  function _kpClassifyPrompt(text, waiting, lastText) {
+    const sys = `You sort one message from a 15-year-old in a GCSE tutoring chat. Reply with one word only: ANSWER, QUESTION, STATEMENT, OFFTOPIC, IDK or MOVEON.`;
+    const user = [
+      `The lesson: "${_data.title}".`,
+      `The tutor's last message: "${_stripMarkdown(lastText || '')}"`,
+      waiting ? `The tutor is waiting for her answer to: "${waiting.q}"` : `The tutor is not waiting for an answer to a question.`,
+      `Her message: "${text}"`,
+      `ANSWER: she is trying to answer the tutor's question, even unsure, with "?", "like", "is it", or only her working or one step of it, checking it as she goes ("0.5 times 2 so like 1", "thats like 120 seconds right").`,
+      `QUESTION: she asks something of her own: what a word means, why, how, or whether two things are the same ("wait is that the same as voltage"), even with no question mark.`,
+      `STATEMENT: she says something about the lesson's topic that is not an answer to a waiting question.`,
+      `OFFTOPIC: not about the lesson's science: food, her phone, friends, or how she feels about the work ("ugh maths is hard", "this is boring", "lol").`,
+      `IDK: she says she does not know.`,
+      `MOVEON: she asks to go on, skip, or be told the rest.`,
+    ].join('\n');
+    return { sys, user };
+  }
+  // Her message: { kind, by: 'code' | 'model' }, or null if the call failed (the code's rules decide then).
+  async function _kpRead(text) {
+    const clear = _kpClear(text);
+    if (clear) return { kind: clear, by: 'code' };
+    const waiting = _kpWaitingQ();
+    const prev = [...(_state.transcript || [])].reverse().find(x => x.role === 'assistant');
+    const { sys, user } = _kpClassifyPrompt(text, waiting, prev ? prev.text : '');
+    try {
+      const raw = String(await (CLS.call || AI.call)(sys, user, 10) || '').toUpperCase();
+      const m = raw.match(/\b(ANSWER|QUESTION|STATEMENT|OFFTOPIC|IDK|MOVEON)\b/);
+      return m ? { kind: CLS_WORDS[m[1]], by: 'model' } : null;
+    } catch (e) { _logError('reading her message', e); return null; }
+  }
+  // Each sorting is kept on her message in the transcript (her newest entry).
+  function _kpNote(c) {
+    const me = [...(_state.transcript || [])].reverse().find(x => x.role === 'user');
+    if (me && c) { me.cls = c.kind; me.clsBy = c.by; }
+  }
+  let _kpForceAnswer = false;
   // KP_ORDER: a reply that only means "go on".
   const GO_ON = /^\W*(next|next step|ok|okay|k|kk|done|got it|cool|yes|yeah|yep|sure|fine|alright|right|go on|continue|carry on|mhm|nice|sick|wow|oh+|ah+|i see|makes sense|true|fair)\W*$/i;
   // KP_ORDER (b): one short friendly line, then the same question, word for word.
@@ -2567,7 +2674,9 @@ function create(env) {
       _state.complete = true;
       _state.resumeIndex = null;
       _state.wrapOffered = true;
-      P.queue.unshift(..._pilotQuizSteps(), { t: 'close' });
+      // KP_SHORT: with the per-point notes card gone, the lesson ends by offering to build her revision cards.
+      const cards = KP_SHORT && Array.isArray(_data.revisionCardBullets) && _data.revisionCardBullets.length ? [{ t: 'cards' }] : [];
+      P.queue.unshift(..._pilotQuizSteps(), ...cards, { t: 'close' });
       return;
     }
     _state.currentPointIndex = e.nextIndex;
@@ -2605,10 +2714,13 @@ function create(env) {
         if (can) P.pending = { t: 'after-try', eq };
         // KP_LOOP_FIX (c): an answer she types to the worked example is marked in code.
         const mark = KP_LOOP_FIX && PracticeLib && x.answer && typeof x.answer.value === 'number';
-        if (mark) P.pending = { t: 'worked', eq: can ? eq : null, x };
         const n = (p.workedExamples || []).length;
-        return _pilotOut(`Worked example${n > 1 ? ` ${s.j + 1} of ${n}` : ''}: ${_stripHtml(x.question)} Tap the button under it to see each step.`,
-          { pt: s.idx, card: { type: 'worked', question: x.question, steps: (x.steps || []).map(st => st.text) }, ...(can ? { choices: ['Try another', 'Next'] } : mark ? { choices: ['Next'] } : {}) }, 'pilot', s.idx);
+        // KP_SHORT (a): one worked example; the next ones only if she taps "Show me another".
+        const more = KP_SHORT && s.j + 1 < n ? s.j + 1 : null;
+        if (mark) P.pending = { t: 'worked', eq: can ? eq : null, x, ...(KP_SHORT ? { idx: s.idx, more } : {}) };
+        const label = KP_SHORT ? `Worked example` : `Worked example${n > 1 ? ` ${s.j + 1} of ${n}` : ''}`;
+        return _pilotOut(`${label}: ${_stripHtml(x.question)} Tap the button under it to see each step.`,
+          { pt: s.idx, card: { type: 'worked', question: x.question, steps: (x.steps || []).map(st => st.text) }, ...(can ? { choices: ['Try another', 'Next'] } : more != null ? { choices: ['Show me another', 'Next'] } : mark ? { choices: ['Next'] } : {}) }, 'pilot', s.idx);
       }
       case 'practice': {   // KP_ORDER only: "Try another", at most KP_PRACTICE_MAX
         const eqs = _kpEquations(s.idx), n = s.n || 0;
@@ -2652,6 +2764,9 @@ function create(env) {
         const reply = await _callWithLengthGuard(_buildSystemPrompt(0), _firstOpeningPrompt(), true);
         return _pilotOut(reply, { pt: 0, opening: true }, 'pilot', 0);
       }
+      case 'cards':   // KP_SHORT only
+        P.pending = { t: 'cards' };
+        return _pilotOut(`One last thing: shall we make revision cards from this lesson? They go in your card deck, so you can test yourself later.`, { choices: ['Make my revision cards', 'No thanks'] });
       case 'quiz-end':
         P.quiz.done = true;
         P.finished = true;
@@ -2838,21 +2953,27 @@ function create(env) {
         P.pending = null;
         return (await _pilotStep()) || null;
       case 'own': return _pilotOwn(userText);
+      case 'worked-more':   // KP_SHORT only: after her answer, "Show me another" is still on offer
+        P.pending = null;
+        if (/\banother\b/i.test(userText)) P.queue.unshift({ t: 'worked', idx: pend.idx, j: pend.more });
+        return (await _pilotStep()) || null;
       case 'worked': {   // KP_LOOP_FIX only
+        // KP_SHORT (a): "Show me another" brings the next worked example; she may ignore it.
+        if (KP_SHORT && pend.more != null && /\b(show me )?another\b/i.test(userText)) {
+          P.pending = null;
+          P.queue.unshift({ t: 'worked', idx: pend.idx, j: pend.more });
+          return (await _pilotStep()) || null;
+        }
+        // After her answer is marked, KP_SHORT keeps "Show me another" on offer.
+        const afterMark = () => (KP_SHORT && pend.more != null ? (P.pending = { t: 'worked-more', idx: pend.idx, more: pend.more }, { choices: ['Show me another', 'Next'] }) : (P.pending = null, {}));
         // KP_ORDER: her working judged too: a right step or the right method is not "Not quite".
         if (KP_ORDER && !/\b(another|again)\b/i.test(userText)) {
           const x = pend.x, ans = `${PracticeLib.fmt(x.answer.value)} ${x.answer.unit}`, steps = (x.steps || []).map(st => st.text);
           const ok = /\d/.test(userText) && PracticeLib.check({ answer: { value: x.answer.value, unit: x.answer.unit }, tolerance: 0.01 }, _kpLast(userText)).ok;
           const kind = ok ? 'right' : _kpJudge(userText, x.answer.value, steps, _stripHtml(x.question));
-          if (/\d/.test(userText) || kind === 'method') {
-            P.pending = null;
-            return _pilotOut(_kpJudged(kind, ans, steps.join(' ')), {});
-          }
+          if (/\d/.test(userText) || kind === 'method') return _pilotOut(_kpJudged(kind, ans, steps.join(' ')), afterMark());
           // "idk how to do that one": the worked example is shown, step by step, before going on.
-          if (IDK_REPLY.test(userText)) {
-            P.pending = null;
-            return _pilotOut(`That's fine. Here is how it goes. ${steps.join(' ')}`, {});
-          }
+          if (IDK_REPLY.test(userText)) return _pilotOut(`That's fine. Here is how it goes. ${steps.join(' ')}`, afterMark());
         }
         if (!KP_ORDER && /\d/.test(userText) && !/\b(another|again)\b/i.test(userText)) {
           const x = pend.x, ans = `${PracticeLib.fmt(x.answer.value)} ${x.answer.unit}`;
@@ -2869,12 +2990,21 @@ function create(env) {
         P.pending = null;
         return (await _pilotStep()) || null;
       }
+      case 'cards':   // KP_SHORT only: the page saves them (decision.pilot.saveCards)
+        P.pending = null;
+        if (/\b(make|yes|yeah|yep|sure|ok|okay|go on|please)\b/i.test(userText) && !/^\W*(no|nah|nope)\b/i.test(userText)) {
+          return _pilotOut(`Done: this lesson's revision cards are in your card deck. You'll find them under Cards on the home page.`, { saveCards: true });
+        }
+        return (await _pilotStep()) || null;
       case 'order-after':   // KP_ORDER only
         P.pending = null;
         if (/\b(another|again|more|try)\b/i.test(userText) && !/^\W*(no|nah|next)\b/i.test(userText)) P.queue.unshift({ t: 'practice', idx: pend.idx, n: pend.n });
         return (await _pilotStep()) || null;
       case 'aside': return _pilotAsideAnswer(userText);
-      case 'return': return _pilotReturn();
+      case 'return':
+        // KP_SHORT: she answers the tutor's own question before tapping Next: marked against that question.
+        if (KP_SHORT && _kpForceAnswer && pend.back && pend.back.t === 'q') { _qOverride = pend.back.q; P.pending = null; return null; }
+        return _pilotReturn();
       case 'continue': return _pilotContinue();
     }
     P.pending = null;
@@ -2902,6 +3032,26 @@ function create(env) {
     return { text: _pilotCap(r.text), extra: P.queue.length ? { ...r.extra, choices: ['Next'] } : r.extra };
   }
 
+  // KP_SHORT (a): a point's teaching takes at most KP_TEACH_TURNS of her messages, side
+  // questions included (the 4-answer cap counts only marked answers). After that the rest
+  // of the point is told and its steps run; a question still waiting is marked first.
+  async function _pilotReplyCapped(userText) {
+    const P = _pilot(), idx = _state.currentPointIndex;
+    const teaching = !_state.complete && !P.end && !P.queue.length && _ft().probed;
+    const r = await _pilotReply(userText);
+    if (!teaching || _state.complete || _pilot().end || _state.currentPointIndex !== idx || !r || !r.decision) return r;
+    if (['pause', 'free', 'exit-offer', 'slides', 'carryon', 'start'].includes(r.decision.kind) || r.decision.farewell) return r;
+    const K = _kp();
+    K.teach = (K.teach || 0) + 1;
+    if (K.teach < KP_TEACH_TURNS) return r;
+    _kpEnd(idx, false);
+    // Her next message goes on through the told part; if this reply asked her something, that answer is marked first.
+    _pilot().pending = { t: 'next' };
+    const pilot = { ...(r.decision.pilot || {}) };
+    if (!/\?/.test(r.reply || '') && !pilot.choices) pilot.choices = ['Next'];
+    return { ...r, decision: { ...r.decision, pilot } };
+  }
+
   async function _pilotReply(userText) {
     const P = _pilot();
     // KP_LOOP_FIX (d): a goodbye carries farewell, so the page swaps the box for buttons and it is sent once.
@@ -2912,6 +3062,27 @@ function create(env) {
       return bye({ reply: `No problem. Your place is saved, so you can pick this up any time. See you soon!`, recap: null, decision: { kind: 'pause', idx: _state.currentPointIndex } });
     }
     // KP_LOOP_FIX (a): she asks to move on: the point ends and its end steps run.
+    // KP_SHORT (b): what her message is decides its path: the clear cases in code, the rest by one small call.
+    _kpForceAnswer = false;
+    _qOverride = null;
+    if (KP_SHORT && !_state.complete && _ft().probed) {
+      const c = await _kpRead(userText);
+      _kpNote(c);
+      const waiting = _kpWaitingQ();
+      if (c && c.by === 'model') {
+        if (c.kind === 'question') return _pilotAside(userText);
+        if (c.kind === 'statement' && !waiting) return _pilotAside(userText, true);
+        if (c.kind === 'offtopic' && waiting) {
+          // Not an attempt: a friendly line and the same question; nothing marked, the answer not given.
+          if (waiting.widget) return _pilotOut(`Fair enough. Tap your answer under the question above, then try the circuit. Tap Next when you are done.`, { choices: ['Next'] });
+          return _pilotOut(_kpOffTopic(waiting.q), waiting.choices ? { choices: waiting.choices } : {});
+        }
+        if (c.kind === 'offtopic') userText = 'next';                       // nothing waiting: on to the next step
+        if (c.kind === 'idk' && !IDK_REPLY.test(userText)) userText = "I don't know";
+        if (c.kind === 'moveon' && !_kpMovesOn(userText) && !_wantsTelling(userText)) userText = 'move on';
+        if (c.kind === 'answer' || c.kind === 'statement') _kpForceAnswer = true;
+      } else if (c && c.kind === 'answer') _kpForceAnswer = true;
+    }
     // KP_ORDER (a): while a point's later steps run, "move on" / "skip" goes to its end, still telling any teaching left.
     if (KP_ORDER && !_state.complete && P.end && _kpMovesOn(userText)) {
       const k = P.queue.findIndex(s => s.t === 'advance');
@@ -2959,10 +3130,20 @@ function create(env) {
     }
     if (mark === 'correct' || mark === 'partly') { P.wrongRun = 0; P.stepbacks = 0; }
     else if (mark === 'wrong' || mark === 'idk') P.wrongRun++;
-    const decision = _decide(userText);
+    let decision = _decide(userText);
     _noteFlow(userText, decision);
     _turnMark = null;
     const idx = decision.idx;
+    // KP_SHORT (a): the teaching takes at most KP_TEACH_MAX of her answers; then her answer is
+    // reacted to and the rest of the point is told (no "just tell you the rest?" check-in).
+    if (KP_SHORT && ['fact', 'retry', 'checkin'].includes(decision.kind) && !decision.afterBasic
+        && (decision.pacing ? decision.pacing.turnsOnPoint : _state.turnsOnPoint) >= KP_TEACH_MAX) {
+      const point = _points[idx], f = decision.facts || _state.facts[idx];
+      const facts = { answered: f.answered.slice(), told: f.told.slice() };
+      const fin = _finishByTelling(idx, point, facts, point.facts.map((x, j) => j).filter(j => !facts.answered[j] && !facts.told[j]));
+      delete fin.tellAll;
+      decision = { ...decision, ...fin };
+    }
 
     if (RESPECT_EXIT && decision.kind === 'checkin') {
       const ex = _exit();
@@ -3058,8 +3239,8 @@ function create(env) {
   }));
   }
 
-  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, KP_LOOP_FIX, KP_ORDER, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
+  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, KP_LOOP_FIX, KP_ORDER, KP_SHORT, _kpClear, _kpClassifyPrompt, _kpWaitingQ, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
 }
 
-return { create, TUTOR_SONNET, TUTOR_MODEL, TUTOR_MODEL_SONNET, TUTOR_MODEL_HAIKU, tutorParams };
+return { create, TUTOR_SONNET, TUTOR_MODEL, TUTOR_MODEL_SONNET, TUTOR_MODEL_HAIKU, tutorParams, CLASSIFIER_MODEL, classifierParams, CLASSIFIER_COST_IN, CLASSIFIER_COST_OUT };
 });

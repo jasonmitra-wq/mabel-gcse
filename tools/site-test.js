@@ -58,7 +58,7 @@ const Recompute = require('./maths-recompute.js');
 const ROOT = path.resolve(__dirname, '..');
 const OUT_ROOT = path.join(__dirname, 'site-test-runs');
 const API = 'https://api.anthropic.com/v1';
-const RATES = { 'claude-haiku-4-5-20251001': [1 / 1e6, 5 / 1e6], 'claude-sonnet-5-5': [2 / 1e6, 10 / 1e6], 'claude-opus-5-5': [4 / 1e6, 20 / 1e6] };
+const RATES = { 'claude-haiku-5-5': [0.1 / 1e6, 0.5 / 1e6], 'claude-haiku-4-5-20251001': [1 / 1e6, 5 / 1e6], 'claude-sonnet-5-5': [2 / 1e6, 10 / 1e6], 'claude-opus-5-5': [4 / 1e6, 20 / 1e6] };
 // The site's tutor model, read from the shared code (js/teach-core.js TUTOR_SONNET);
 // the site itself sends it, this is for the estimate and the cost split.
 const TUTOR_MODEL = require('../js/teach-core.js').TUTOR_MODEL;
@@ -386,6 +386,12 @@ async function lessonMode(page, run, id) {
   // against the message's own words (two ammeters, a switch, cells).
   const afterTurn = async (n) => {
     if (!WHOLE_LESSON) return;
+    // KP_SHORT (b): how the site read her last message, from the lesson's saved state.
+    const read = await page.evaluate(k => {
+      try { const s = JSON.parse(localStorage.getItem(k) || 'null'); const u = s && [...(s.transcript || [])].reverse().find(x => x.role === 'user'); return u && u.cls ? `${u.cls} (${u.clsBy})` : ''; }
+      catch { return ''; }
+    }, `mabel_teach_${id}`);
+    if (read) run.say(`  [S${n} read as: ${read}]`);
     const seen = await page.evaluate(() => {
       const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || '';
       // The newest widget, named by the message it sits under: the page redraws the chat after

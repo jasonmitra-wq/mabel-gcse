@@ -8,6 +8,10 @@
  *   --max-usd <n>   allow a run whose estimate is over $1; also a hard stop on actual spend
  *   --until-point-end   lesson mode: stop once the covered counter has moved and a
  *                   predict-first widget has been shown (brief 2026-10-24 key-point loop)
+ *   --whole-lesson  lesson mode: the whole lesson (brief 2026-10-26 AI lesson order): up to
+ *                   --max-turns exchanges (default 260); on a message that asks nothing and
+ *                   offers Next, she taps Next 3 times in 4; each predict-first widget is
+ *                   tried (a prediction tapped) and checked against its message's words
  *   --exit-script   lesson mode: she says "I'm tired" once (and taps the choice
  *                   buttons) and "bye, got to go" near the end (tools/bored-student.js exitScript)
  *
@@ -76,6 +80,7 @@ const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/cs
 function die(msg, code = 1) { console.error(msg); process.exit(code); }
 let EXIT_SCRIPT = false;
 let UNTIL_POINT_END = false;   // --until-point-end
+let WHOLE_LESSON = null;        // --whole-lesson: { maxTurns }
 
 // ---------- arguments ----------
 
@@ -89,6 +94,8 @@ function parseArgs(argv) {
     else if (v === '--run') a.run = true;
     else if (v === '--exit-script') a.exitScript = true;
     else if (v === '--until-point-end') a.untilPointEnd = true;
+    else if (v === '--whole-lesson') a.wholeLesson = true;
+    else if (v === '--max-turns') a.maxTurns = Number(argv[++i]);
     else if (v === '--max-usd') a.maxUsd = Number(argv[++i]);
     else if (v === '--rescore') a.rescore = [];
     else if (a.rescore && !v.startsWith('--')) a.rescore.push(v);
@@ -174,10 +181,12 @@ function estimate(a) {
   if (a.lesson) {
     const { data } = findLesson(a.lesson);
     const points = data ? (data.keyPoints || []).length : 4;
-    const turns = points * 6 + 4;
+    const turns = a.wholeLesson ? (a.maxTurns || 260) : points * 6 + 4;
     const [tin, tout] = RATES[TUTOR_MODEL];
-    const tutor = turns * 1.5 * (2200 * tin + 220 * tout) + points * (2500 * tin + 300 * tout);
-    const student = turns * (1500 / 1e6 + 60 * 5 / 1e6);
+    // --whole-lesson: most steps are built in code (no tutor call) and about half are Next taps (no student call).
+    const tutorShare = a.wholeLesson ? 0.4 : 1, studentShare = a.wholeLesson ? 0.5 : 1;
+    const tutor = turns * tutorShare * 1.5 * (2200 * tin + 220 * tout) + points * (2500 * tin + 300 * tout);
+    const student = turns * studentShare * (1500 / 1e6 + 60 * 5 / 1e6);
     const shots = Math.min(MAX_JUDGE_IMAGES / 2, 6 + Math.ceil(turns / 3));
     const judge = (shots * 1850 + turns * 2 * 120 + 6000) * 4 / 1e6 + 8000 * 20 / 1e6;
     return { what: `lesson ${a.lesson}`, turns, shots, usd: tutor + student + judge };
@@ -311,6 +320,13 @@ async function lessonMode(page, run, id) {
   await clickText(page, '.mode-card', L.subjectLabel, 'subject card');
   await shoot(page, run, `topics-${L.subject}`);
   await clickText(page, '.topic-card', L.topicName, 'topic card', '.tc-name');
+  // Shorter quick check (2026-10-26): opening Electricity first offers the quick check on its own screen.
+  const offered = await page.evaluate(() => [...document.querySelectorAll('#main button')].some(b => /Not now: show the lessons/.test(b.textContent)));
+  if (offered) {
+    await shoot(page, run, 'quick-check-offer');
+    run.say('[the quick check is offered on its own screen] tapped "Not now: show the lessons"');
+    await clickText(page, '#main button', 'Not now: show the lessons', 'Not now: show the lessons');
+  }
   await shoot(page, run, `lessons-${L.code}`);
   await clickText(page, '.subtopic-card', L.name, 'lesson card', '.st-name');
   // Runbook v3 A4: a lesson whose prerequisites come from lessons she has not
@@ -360,8 +376,56 @@ async function lessonMode(page, run, id) {
   await shoot(page, run, 'ai-lesson-opening');
 
   const points = L.data ? (L.data.keyPoints || []).length : 4;
-  const cap = points * 12 + 4;
+  const cap = WHOLE_LESSON ? WHOLE_LESSON.maxTurns : points * 12 + 4;
+  let widgetsSeen = 0, rng = 7;
+  const widgetKeys = new Set();   // widgets already tried, by the message they sit under
+  const coin = () => { rng = (rng * 1103515245 + 12345) >>> 0; return rng / 4294967296; };
   let closing = 0, diagramsSeen = 0, lastCounter = '', predSeen = 0;
+  // After each tutor turn (--whole-lesson): the covered counter, and any new
+  // predict-first widget, tried: a prediction tapped, then what opens checked
+  // against the message's own words (two ammeters, a switch, cells).
+  const afterTurn = async (n) => {
+    if (!WHOLE_LESSON) return;
+    const seen = await page.evaluate(() => {
+      const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || '';
+      // The newest widget, named by the message it sits under: the page redraws the chat after
+      // every message, so a mark on the element would be lost and the same widget tried again.
+      const ws = [...document.querySelectorAll('#teachThread .wdg')], el = ws[ws.length - 1];
+      let b = el;   // the widget's own row in the thread
+      while (b && b.parentElement && b.parentElement.id !== 'teachThread') b = b.parentElement;
+      let p = b ? b.previousElementSibling : null;
+      while (p && !p.classList.contains('askme-a-bubble')) p = p.previousElementSibling;
+      return { counter: hdr.trim(), widgetKey: el && p ? p.innerText.trim().slice(0, 160) : '' };
+    });
+    if (seen.counter && seen.counter !== lastCounter) { if (lastCounter) run.say(`[counter now "${seen.counter}" after T${n}]`); lastCounter = seen.counter; }
+    if (seen.widgetKey && !widgetKeys.has(seen.widgetKey)) {
+      widgetKeys.add(seen.widgetKey);
+      widgetsSeen++;
+      const w = await page.evaluate(() => {
+        const ws = [...document.querySelectorAll('#teachThread .wdg')], el = ws[ws.length - 1];
+        const words = (() => { let b = el; while (b && b.parentElement && b.parentElement.id !== 'teachThread') b = b.parentElement; let p = b ? b.previousElementSibling : null; while (p && !p.classList.contains('askme-a-bubble')) p = p.previousElementSibling; return p ? p.innerText.trim() : ''; })();
+        const pred = el.querySelector('.wdg-pred-opts button');
+        const q = (el.querySelector('.wdg-pred p') || {}).textContent || '';
+        const hiddenBefore = !![...el.children].find(c => c.style && c.style.display === 'none');
+        if (pred) pred.click();
+        const svg = el.querySelector('svg');
+        const visible = !!(svg && svg.getBoundingClientRect().height > 0);
+        const ammeters = svg ? [...svg.querySelectorAll('text[font-size="17"]')].filter(x => /^A/.test(x.textContent)).length : 0;
+        const buttons = [...el.querySelectorAll('.wdg-row button')].map(b => b.textContent.trim());
+        return { words, q, hiddenBefore, visible, ammeters, buttons };
+      });
+      const said = w.words;
+      const wantTwo = /two ammeters/i.test(said), wantOne = /an ammeter/i.test(said);
+      const okMeters = !/circuit/i.test(said) || (wantTwo ? w.ammeters === 2 : wantOne ? w.ammeters === 1 : true);
+      const okControls = (!/add a cell/i.test(said) || w.buttons.includes('Add a cell')) && (!/the switch/i.test(said) || w.buttons.some(b => /(Open|Close) the switch/.test(b)))
+        && (!/put the resistor in/i.test(said) || w.buttons.includes('Put the resistor in')) && (!/run it for 10 seconds/i.test(said) || w.buttons.includes('Run for 10 s'));
+      const okOrder = !/Predict first/i.test(said) || (w.hiddenBefore && !!w.q);
+      run.say(`[widget under T${n}: prediction "${w.q.slice(0, 80)}" tapped; then shown: ${w.visible ? 'yes' : 'no'}, ammeters ${w.ammeters}, controls ${w.buttons.join(', ') || 'none'}]`);
+      run.check(`predict-first widget ${widgetsSeen} works and matches its words`, w.visible && okMeters && okControls && okOrder,
+        `opened after the prediction ${w.visible}; ammeters ${w.ammeters} (words: ${wantTwo ? 'two' : wantOne ? 'one' : '-'}); controls match ${okControls}; prediction first ${okOrder}`);
+      await shoot(page, run, `widget-${n}`);
+    }
+  };
   for (let n = 1; n <= cap; n++) {
     const status = await page.evaluate(() => {
       const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || '';
@@ -370,13 +434,35 @@ async function lessonMode(page, run, id) {
     });
     if (status.finished) { run.say('[the lesson shows "Lesson finished."]'); break; }
     if (spend.usd >= spend.cap) { run.say(`[stopped: spend cap $${spend.cap} reached]`); break; }
-    const phase = status.complete ? 'closing' : /tell you the rest|just tell you/i.test(t) ? 'checkin' : 'teach';
+    let phase = status.complete ? 'closing' : /tell you the rest|just tell you/i.test(t) ? 'checkin' : 'teach';
+    // The end quiz comes after the last point is ticked: she stays for it.
+    if (WHOLE_LESSON && phase === 'closing' && /question \d+ of \d+|Quick question|Your turn|Worked example|Predict first|In one line|\?\s*$/i.test(t)) phase = 'teach';
     if (phase === 'closing' && closing++ >= 3) { run.say('[the student leaves]'); break; }
     // --exit-script: "near the end" is her second reply once one key point is left.
     const left = await page.evaluate(() => { const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || ''; const m = hdr.match(/(\d+)\/(\d+)/); return m ? +m[2] - +m[1] : 9; });
     if (left <= 1) lastPointTurns++;
     const choices = script ? await page.evaluate(() => [...document.querySelectorAll('#teachThread .teach-choices button')].map(b => b.textContent.trim())) : [];
-    const fixed = script && phase !== 'closing' ? script.next({ n, nearEnd: left <= 1 && lastPointTurns >= 1, choices }) : null;
+    let fixed = script && phase !== 'closing' ? script.next({ n, nearEnd: left <= 1 && lastPointTurns >= 1, choices }) : null;
+    // --whole-lesson: a message that asks nothing and offers Next: she taps it, 3 times in 4.
+    let tapped = null;
+    if (WHOLE_LESSON && !fixed) {
+      const offered = await page.evaluate(() => [...document.querySelectorAll('#teachThread .teach-choices button')].map(b => b.textContent.trim()));
+      const nx = offered.find(c => /^Next( step)?$/.test(c));
+      if (nx && !/\?/.test(t) && coin() < 0.75) tapped = nx;
+    }
+    if (tapped) {
+      hist.push({ who: 'student', text: tapped });
+      run.say(`S${n} (tapped "${tapped}")`);
+      await page.evaluate(label => { [...document.querySelectorAll('#teachThread .teach-choices button')].find(b => b.textContent.trim() === label).click(); }, tapped);
+      try { await waitReady(t); } catch { run.say(`[no tutor reply within 120 s after S${n}]`); run.check('tutor replies', false, `no reply after S${n}`); break; }
+      t = await lastTutor();
+      hist.push({ who: 'tutor', text: t });
+      run.say(`T${n}: ${t}`);
+      run.exchanges++;
+      if (run.exchanges % 3 === 0) await shoot(page, run, `exchange-${n}`);
+      await afterTurn(n);
+      continue;
+    }
     const mood = fixed ? 'script' : student.mood(t, phase);
     const reply = fixed || Bored.clean(await apiCall(student.body(hist, mood, newTermsFor(hist))));
     hist.push({ who: 'student', text: reply });
@@ -407,6 +493,7 @@ async function lessonMode(page, run, id) {
     });
     if (seen.counter && seen.counter !== lastCounter) { if (lastCounter) run.say(`[counter now "${seen.counter}" after T${n}]`); lastCounter = seen.counter; }
     if (seen.pred && !predSeen) { predSeen = n; run.say(`[predict-first widget shown under T${n}: "${seen.pred}"]`); await page.evaluate(() => document.querySelector('#teachThread .wdg-pred').scrollIntoView({ block: 'center' })); await shoot(page, run, `widget-${n}`); }
+    await afterTurn(n);
     if (UNTIL_POINT_END && predSeen && !/^0\//.test(lastCounter)) { run.say(`[stopped: key point 1 ended (counter "${lastCounter}") and its predict-first widget showed, at T${predSeen}]`); break; }
     if (fixed === 'bye, got to go') { await shoot(page, run, `goodbye-${n}`); run.say('[the student leaves]'); break; }
   }
@@ -823,6 +910,7 @@ async function main() {
     const page = await newPage(browser, base, run);
     EXIT_SCRIPT = !!a.exitScript;
     UNTIL_POINT_END = !!a.untilPointEnd;
+    WHOLE_LESSON = a.wholeLesson ? { maxTurns: a.maxTurns || 260 } : null;
     if (a.lesson) await lessonMode(page, run, a.lesson); else if (a.pilot) await pilotMode(page, run, a.pilot); else await mathsMode(page, run, a.maths);
   } catch (e) {
     crash = String(e.message || e);

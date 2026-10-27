@@ -72,6 +72,14 @@ const Teach = (() => {
       #teachDiagramSlot:empty { display:none; }
       .teach-side > .teach-terms { min-height:9rem; display:flex; flex-direction:column; overflow:hidden; }
       .teach-side > .teach-terms .teach-terms-body { overflow-y:auto; min-height:0; }
+      /* Site test 2026-10-26: a long terms list was cut through a line of text.
+         It now fades out at the bottom edge, with room to scroll the last term clear. */
+      @media (min-width: 761px) {
+        .teach-terms-more { flex-shrink:0; margin-top:0.25rem; font-size:0.74rem; color:var(--amber); text-align:center; }
+        .teach-side > .teach-terms .teach-terms-body { padding-bottom:1.6rem;
+          -webkit-mask-image:linear-gradient(to bottom, #000 calc(100% - 2.2rem), transparent);
+          mask-image:linear-gradient(to bottom, #000 calc(100% - 2.2rem), transparent); }
+      }
 
       /* Diagram thumbnail in the side column, full size on tap */
       .teach-diagram-thumb { display:block; position:relative; width:100%; margin-top:0.7rem; padding:0;
@@ -109,9 +117,15 @@ const Teach = (() => {
         .teach-diagram.teach-panel { padding:0.5rem; }
         .teach-diagram .teach-panel-head { display:none; }
         .teach-diagram-thumb { margin-top:0; }
-        .teach-diagram-thumb img { height:64px; }
+        .teach-diagram-thumb img { height:120px; }   /* 64px was too small to read (site test 2026-10-26) */
+        .teach-diagram-thumb::after { content:"Tap to see it full size"; position:absolute; left:0; right:0; bottom:0;
+          padding:0.15rem 0.4rem; font-size:0.72rem; color:var(--text); background:rgba(15,14,12,0.82); text-align:center; }
         .teach-diagram .teach-diagram-cap { display:none; }
-        .teach-jump-btn { padding-top:0.3rem; padding-bottom:0.3rem; }
+        /* .teach-side in front: the general button rules come later in this sheet and won otherwise. */
+        .teach-side .teach-jump-btn { padding-top:0.22rem; padding-bottom:0.22rem; font-size:0.84rem; }
+        .teach-side .teach-jump-list { gap:0.22rem; margin-top:0.5rem; }
+        .teach-jump-btn span:last-child { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; }
+        .teach-side > .teach-terms { min-height:7rem; }
       }
       .teach-panel-head { display:flex; width:100%; justify-content:space-between; align-items:center;
         background:none; border:none; padding:0; color:var(--muted); font-family:inherit;
@@ -279,7 +293,7 @@ const Teach = (() => {
       const cls = 'teach-jump-btn' + (covered ? ' covered' : '') + (isCur ? ' current' : '');
       const mark = covered ? '✓' : (isCur ? '▸' : '');
       return `<button class="${cls}" onclick="Teach.jumpTo(${i})" title="${_esc(p.heading)}"${isCur ? ' aria-current="step"' : ''}>
-        <span class="teach-jump-mark">${mark}</span><span>${_esc(_shortHeading(p.heading))}</span>
+        <span class="teach-jump-mark">${mark}</span><span title="${_esc(_shortHeading(p.heading))}">${_esc(_shortHeading(p.heading))}</span>
       </button>`;
     }).join('');
     return `<nav class="teach-panel" aria-label="Jump to a key point">
@@ -305,7 +319,8 @@ const Teach = (() => {
       <button class="teach-panel-head" onclick="Teach.toggleTerms()" aria-expanded="${_termsOpen}">
         <span>Key terms${count ? ` (${count})` : ''}</span><span class="teach-terms-caret">▾</span>
       </button>
-      <div class="teach-terms-body">${body}</div>
+      <div class="teach-terms-body" onscroll="Teach._termsMore()">${body}</div>
+      <div class="teach-terms-more" hidden>More below: scroll ▾</div>
     </section>`;
   }
 
@@ -343,7 +358,7 @@ const Teach = (() => {
     const group = document.querySelector(`.teach-terms-group.is-new[data-pt="${_termsNew[0]}"]`);
     if (!group || !group.offsetParent) return; // collapsed on a narrow screen: the flash is waiting when she opens it
     _scrollWithin(document.querySelector('.teach-terms-body'), group);
-    _scrollWithin(document.getElementById('teachSide'), group);
+    // Not the whole column: scrolling it hid the "Jump to" list under the header (site test 2026-10-26).
   }
 
   function _renderShell() {
@@ -399,7 +414,15 @@ const Teach = (() => {
     _updateDiagramSlot();
     _positionTerms();
     _revealNewTerms();
+    _termsMore();
     _syncControls();
+  }
+
+  // Under a terms list that runs past its panel: "More below", until she has scrolled to the end.
+  function _termsMore() {
+    const body = document.querySelector('.teach-terms-body'), more = document.querySelector('.teach-terms-more');
+    if (!body || !more) return;
+    more.hidden = !(body.offsetParent && body.scrollHeight - body.scrollTop - body.clientHeight > 4);
   }
 
   // On wide screens the side column sticks just under the header, whatever
@@ -954,5 +977,5 @@ const Teach = (() => {
     document.getElementById('teachInput')?.focus();
   }
 
-  return { open, send, choose, showSlides, reopenInput, showResetConfirm, cancelReset, confirmReset, jumpTo, toggleTerms, expandDiagram, closeDiagram };
+  return { open, send, choose, showSlides, reopenInput, showResetConfirm, cancelReset, confirmReset, jumpTo, toggleTerms, expandDiagram, closeDiagram, _termsMore };
 })();

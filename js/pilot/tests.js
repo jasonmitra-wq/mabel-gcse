@@ -187,7 +187,7 @@
         { text: 'Any way at all: the battery sends electricity out to the bulb', mis: 'M7' },
       ], correct: 0, explains: ['battery'],
       feedback: { right: 'Right: you need a complete loop, out of the battery, through the bulb and back.',
-        why: ['The answer: two wires, making a loop from the battery, through the bulb and back.', 'Electricity only flows if it can go all the way round and back to the battery.', 'With one wire there is a gap, so nothing flows and the bulb stays dark.'], explains: ['battery'] },
+        why: ['The answer: two wires, making a loop from the battery, through the bulb and back.', 'Nothing flows unless there is a loop all the way round and back to the battery.', 'With one wire there is a gap, so nothing flows and the bulb stays dark.'], explains: ['battery'] },
       inLesson: { kp: 0, text: 'In the lesson: you will try this on a circuit on screen. Open the switch, which makes a gap, and watch the bulb go out.', match: 'Open the switch', explains: ['switch'] } },
     { id: 'd-used-up', kind: 'mis', type: 'explain', idea: 'current-same-in-loop', lesson: CV, kp: 0, label: 'The current is the same all round a loop', later: 'm-used-up-2',
       question: 'A bulb is joined to a battery (the kind in a torch) in one loop of wire. The bulb is lit. Compare the flow of electricity going into the bulb with the flow coming out of it.',

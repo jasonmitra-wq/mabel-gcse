@@ -97,6 +97,16 @@ async function run() {
         await page.goto(base + 'index.html', { waitUntil: 'networkidle0' });
         const tag = `${id} | TEACH_FIRST ${teachFirst} | key ${withKey ? 'yes' : 'no'}`;
         await page.evaluate((i, n, t, s) => Lessons.open(i, n, t, s), id, name, topic, subject);
+        // A pilot lesson first offers the quick check ("Before your first Electricity lesson"):
+        // tap "Not now: go to the lesson", as tools/site-test.js does, then check what opens.
+        await new Promise(r => setTimeout(r, 400));
+        const notNow = await page.evaluate(() => {
+          const b = [...document.querySelectorAll('#lessonInner .pl-card button')].find(x => /Not now/.test(x.textContent));
+          if (!b) return false;
+          b.click();
+          return true;
+        });
+        if (notNow) console.log(`      (${id}: the quick-check card was shown; tapped "Not now: go to the lesson")`);
         await page.waitForFunction(v => (new Function('return (' + v + ')()'))() !== 'other', { timeout: 10000 }, view.toString()).catch(() => {});
         const first = await page.evaluate(view);
         const want = withKey && teachFirst ? 'teach' : 'slides';

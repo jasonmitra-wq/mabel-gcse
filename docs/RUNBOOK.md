@@ -30,6 +30,13 @@ on. Never ask Jason anything except the STOP cases in section 2.
   once. Nothing is re-run except the free script checks.
 - Escalations do not stop work: write them to docs/ESCALATIONS.md and
   carry on. The planning chat decides them.
+- Every task's final checks, before each commit, include
+  `node tools/check-versions.js` (free). It fails if a script or
+  stylesheet that index.html loads with ?v= has changed since the last
+  commit but kept its number; a browser that already has the site would
+  keep running the old copy. Fix by raising that file's ?v= number in
+  index.html. (Added 2026-10-27, after 08a2083 and f2c9bbd changed five
+  scripts without new numbers.)
 
 ## 2. STOP cases (the only times to wait)
 

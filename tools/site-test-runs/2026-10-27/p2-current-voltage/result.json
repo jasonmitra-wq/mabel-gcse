@@ -1,0 +1,87 @@
+{
+  "id": "p2-current-voltage",
+  "mode": "lesson",
+  "date": "2026-10-27",
+  "pass": false,
+  "judge": {
+    "broken": [
+      {
+        "what": "On the Electricity lessons page no lesson cards are shown at all, so the lesson 'Current, potential difference and resistance' cannot be found or opened. The page only shows a 'Quick check before you start' gate, and the lesson list is hidden until she presses 'Not now: show the lessons' or finishes the quiz. The automated run stopped here, and the lesson was never reached or tested.",
+        "step": "lessons-P2 / [test stopped: could not find lesson card (\"Current, potential difference and resistance\")]"
+      },
+      {
+        "what": "test could not finish: could not find lesson card (\"Current, potential difference and resistance\")",
+        "step": ""
+      }
+    ],
+    "looks_wrong": [
+      {
+        "what": "The small label reads 'BEFORE YOU START ELECTRICITY' with no punctuation, so it reads like a run-on phrase. Below the single card the rest of the screen is empty, with no hint that lessons exist further on.",
+        "screenshot": "04-lessons-p2-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The top-bar pill says 'Topics' while she is on the Electricity lessons/quick-check screen, so it names the wrong page.",
+        "screenshot": "04-lessons-p2-laptop.png",
+        "stops_use": false
+      },
+      {
+        "what": "The Electricity topic icon (a plug) is a dark purple on a near-black card and is hard to see.",
+        "screenshot": "03-topics-physics-phone.png",
+        "stops_use": false
+      },
+      {
+        "what": "The four round icon buttons in the header have no text labels. On the phone there is also no page-name pill, so she has to guess what each icon does.",
+        "screenshot": "01-home-phone.png",
+        "stops_use": false
+      }
+    ],
+    "would_quit": false,
+    "fixes": [
+      {
+        "target": "Topic lessons page (quick-check gate)",
+        "change": "Render the lesson cards list underneath the quick-check card instead of hiding it, so lessons are visible and tappable without dismissing the gate."
+      },
+      {
+        "target": "Test runner step for lessons-P2",
+        "change": "If the 'Quick check before you start' card is present, click 'Not now: show the lessons' before searching for the lesson card, then continue the lesson test."
+      },
+      {
+        "target": "Quick-check card eyebrow text",
+        "change": "Change 'BEFORE YOU START ELECTRICITY' to 'BEFORE YOU START: ELECTRICITY' and add a line such as 'Lessons are below'."
+      },
+      {
+        "target": "Header nav pill on lessons page",
+        "change": "Show 'Lessons' (or the topic name 'Electricity') instead of 'Topics' when on a topic's lesson page."
+      },
+      {
+        "target": "Topic icons on Physics topics list",
+        "change": "Use a lighter or higher-contrast colour for the Electricity plug icon so it stands out on the dark card."
+      }
+    ]
+  },
+  "checks": [],
+  "transcript": [
+    "Lesson p2-current-voltage (Physics › Electricity › Current, potential difference and resistance).",
+    "[screenshot 01-home-phone.png and 01-home-laptop.png] home",
+    "[screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects",
+    "[screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics",
+    "[screenshot 04-lessons-p2-phone.png and 04-lessons-p2-laptop.png] lessons-P2",
+    "[test stopped: could not find lesson card (\"Current, potential difference and resistance\")]"
+  ],
+  "screenshots": [
+    "tools/site-test-runs/2026-10-27/p2-current-voltage/01-home-phone.png",
+    "tools/site-test-runs/2026-10-27/p2-current-voltage/01-home-laptop.png",
+    "tools/site-test-runs/2026-10-27/p2-current-voltage/02-subjects-phone.png",
+    "tools/site-test-runs/2026-10-27/p2-current-voltage/02-subjects-laptop.png",
+    "tools/site-test-runs/2026-10-27/p2-current-voltage/03-topics-physics-phone.png",
+    "tools/site-test-runs/2026-10-27/p2-current-voltage/03-topics-physics-laptop.png",
+    "tools/site-test-runs/2026-10-27/p2-current-voltage/04-lessons-p2-phone.png",
+    "tools/site-test-runs/2026-10-27/p2-current-voltage/04-lessons-p2-laptop.png"
+  ],
+  "cost": 0.059892,
+  "tutorModel": "claude-sonnet-5-5",
+  "tutorCost": 0,
+  "apiCalls": 1,
+  "browserApiCalls": 0
+}

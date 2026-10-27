@@ -159,6 +159,7 @@ function showHome(hasSaved) {
   const _dbBarCol = _dbPct >= 80 ? '#52C97A' : _dbPct >= 71 ? '#4ecfaa' : _dbPct >= 41 ? '#e8a040' : '#E05252';
 
   App.setStage('Home');
+  window.scrollTo(0, 0);   // a new screen opens at its top (site test 2026-10-26: the heading was under the top bar)
   document.getElementById('hdrTopic').style.display = 'none';
   document.getElementById('hdrScore').style.display = 'none';
 
@@ -424,6 +425,7 @@ function _modeCard(icon, title, sub, extraClass, fn, pct) {
 // ── SUBJECT PICKER ─────────────────────────────────────────────
 function showSubjectPicker() {
   App.setStage('Subjects');
+  window.scrollTo(0, 0);   // a new screen opens at its top (site test 2026-10-26: the heading was under the top bar)
 
   const subjects = [
     { id: 'biology',   label: 'Biology',     icon: '🧬', sub: 'Separate Science', available: true  },
@@ -507,6 +509,7 @@ function _comingSoonSubject(subjectName) {
 // ── TOPIC BROWSER ──────────────────────────────────────────────
 function showTopics() {
   App.setStage('Topics');
+  window.scrollTo(0, 0);   // a new screen opens at its top (site test 2026-10-26: the heading was under the top bar)
   _progress = Store.getProgress();
 
   const _subjectMeta = { biology:'🧬 Biology', chemistry:'⚗️ Chemistry', physics:'⚡ Physics', maths:'📐 Maths', geography:'🌍 Geography', english:'📚 English', history:'🏛️ History' };
@@ -603,6 +606,7 @@ function showTopics() {
 
 function showSubtopics(topicCode, topicData, opts = {}) {
   App.setStage('Topics');
+  window.scrollTo(0, 0);   // a new screen opens at its top (site test 2026-10-26: the heading was under the top bar)
   // Shorter quick check (brief 2026-10-26): opening Electricity offers the quick check on its own
   // screen, once per visit, until it is done. "Not now" shows the lessons.
   if (opts.arrived && typeof Pilot !== 'undefined' && Pilot.offer && Pilot.offer(topicCode, _activeSubject, () => showSubtopics(topicCode, topicData))) return;

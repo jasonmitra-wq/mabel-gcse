@@ -4,7 +4,8 @@
 
    On the Electricity topic page: "Quick check before you start", the two
    post-tests, the delayed test (it unlocks a week after both post-tests)
-   and "My record". Before the first pilot lesson, if she has not done the
+   and "My record". The quick check is offered on its own screen when she opens
+   Electricity (once per visit, until done; not again before the first lesson). Before 2026-10-27, before the first pilot lesson, if she had not done the
    quick check, it is offered first. After the quick check, each lesson opens
    with what it showed: what she already knows and the recaps she needs.
    At the end of each lesson: "More practice" links and the post-test.
@@ -115,7 +116,9 @@ const Pilot = (() => {
     _style();
     const inner = document.getElementById('lessonInner');
     if (!inner) return false;
-    if (!done('diagnostic') && !sessionStorage.getItem('pl_notnow')) {
+    // Shorter quick check: offered once, on opening Electricity (brief 2026-10-26 willing student, step 2);
+    // its card stays first in the topic list until done. Before it, a second offer came here.
+    if (!T.SHORT_CHECK && !done('diagnostic') && !sessionStorage.getItem('pl_notnow')) {
       window._plGo = go;
       inner.innerHTML = `<div class="pl-wrap"><div style="padding-top:0.25rem"><button class="back-btn" onclick="Lessons.close()">← Topics</button></div>
         <div class="pl-card"><div class="pl-title">Before your first Electricity lesson</div>

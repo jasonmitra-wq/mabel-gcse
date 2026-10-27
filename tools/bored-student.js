@@ -91,6 +91,69 @@ function makeStudent({ lessonTitle, subject }) {
   };
 }
 
+// The willing student (brief docs/briefs/2026-10-26-willing-student.md, step 1;
+// tools/site-test.js --persona willing): learning this for the first time, she
+// tries every question and gets about a third wrong in realistic ways (units not
+// converted, an equation the wrong way round, a misconception from
+// tools/pilot/misconceptions.md), asks 4 short questions of her own spread over
+// the lesson, takes no optional extras and never asks to stop. Same interface as
+// makeStudent. Her wrong-answer kinds and question turns are fixed in advance, from the lesson.
+const WILLING_WRONG = [
+  'Get it wrong by not converting a unit first: use minutes, milliamps or kilojoules as they are (e.g. 2 minutes used as 2, not 120 s).',
+  'Get it wrong by putting the equation the wrong way round: divide where you should multiply, or the two numbers the wrong way up.',
+  'Get it wrong by believing this, if it fits the question: {MIS}. Answer as if it were true.',
+];
+function makeWillingStudent({ lessonTitle, subject, misconceptions = [] }) {
+  const rnd = seeded(`willing/${subject}/${lessonTitle}`);
+  let n = 0, asked = 0, lastWrong = -1;
+  const ASK_AT = [5, 18, 32, 46];   // her own questions, spread over the lesson (her typed replies; Next taps are not counted)
+  const system =
+    `You are role-playing a 15-year-old student in England, learning ${subject} ("${lessonTitle}") for the first time ` +
+    `with an online AI tutor. You are willing and you try every question, but this is all new to you, and you are not sure of yourself. ` +
+    `You only know what the tutor has told you in this conversation, plus everyday knowledge. ` +
+    `You type like a teenager on a phone: lower case, little punctuation, usually 2 to 12 words, never more than 20. ` +
+    `If the tutor's message lists buttons, reply with exactly the text of one button. ` +
+    `Never ask to stop, skip or be told the rest. Never write anything but your reply. Never mention being an AI or role-playing. Never give yourself a name.`;
+  return {
+    system,
+    willing: true,
+    mood(tutorText, phase) {
+      n++;
+      if (phase === 'checkin') return 'checkin-no';
+      if (phase === 'closing') return 'closing';
+      if (asked < ASK_AT.length && n >= ASK_AT[asked]) { asked++; return 'ask'; }
+      return rnd() < 0.34 ? 'wrong' : 'try';
+    },
+    instruction(mood) {
+      if (mood === 'checkin-no') return 'The tutor asked if you want them to just tell you the rest. Say no, you want to try.';
+      if (mood === 'closing') return 'The lesson is over. Reply briefly and politely (e.g. "ok thanks").';
+      if (mood === 'ask') return 'Before answering, ask the tutor one short question of your own about what they just said, in your own words, the way a teenager would (e.g. "wait is that the same as …", "why does it …", "what does … mean"). Ask only the question.';
+      if (mood === 'wrong') {
+        lastWrong = (lastWrong + 1) % WILLING_WRONG.length;
+        const mis = misconceptions.length ? misconceptions[Math.floor(rnd() * misconceptions.length)] : 'current gets used up as it goes round';
+        return `Answer, but get it wrong in a realistic way. ${WILLING_WRONG[lastWrong].replace('{MIS}', mis)} If none of these fits this question, give a plausible wrong answer. Sound fairly sure.`;
+      }
+      return 'Try to answer properly, from what the tutor has said. If it needs a calculation, do it step by step in your head and give the answer with its unit.';
+    },
+    body(history, mood, newTerms, choices) {
+      const recent = history.slice(-40);
+      while (recent.length && recent[0].who !== 'tutor') recent.shift();
+      const messages = recent.map(h => ({ role: h.who === 'tutor' ? 'user' : 'assistant', content: h.text || '…' }));
+      const buttons = (choices || []).filter(c => !/^(Next|Next step|Try another|Show me another)$/.test(c));
+      const btn = buttons.length ? `\n\n[Buttons under this message: ${buttons.map(b => `"${b}"`).join(' / ')}]` : '';
+      messages[messages.length - 1] = { role: 'user', content: `${messages[messages.length - 1].content}${btn}\n\n[How to answer this time: ${this.instruction(mood)}]` };
+      return { model: STUDENT_MODEL, max_tokens: 80, system, messages };
+    },
+  };
+}
+
+// The misconceptions of tools/pilot/misconceptions.md (in scope), in their own words, for the willing student.
+function misconceptionLines(file) {
+  const text = require('fs').readFileSync(file, 'utf8');
+  const part = (text.split(/^## /m).find(s => /^In scope/.test(s)) || '');
+  return [...part.matchAll(/^\| M\d+ \| ([^|]+) \|/gm)].map(m => m[1].trim());
+}
+
 // Brief 2026-10-18 leaving and tired, step 2 (--exit-script): the student says
 // "I'm tired" once (from her fifth reply), picks "one more quick thing" and
 // then "keep going" when offered, and says "bye, got to go" near the end (her
@@ -244,4 +307,4 @@ function prereqNote(lessonId, root = require('path').resolve(__dirname, '..')) {
   return '';
 }
 
-module.exports = { FLOW_FAULT_TYPES, STUDENT_MODEL, JUDGE_MODEL, makeStudent, exitScript, clean, judgeBody, parseJudge, verdict, lessonFieldLines, prereqNote };
+module.exports = { FLOW_FAULT_TYPES, STUDENT_MODEL, JUDGE_MODEL, makeStudent, makeWillingStudent, misconceptionLines, exitScript, clean, judgeBody, parseJudge, verdict, lessonFieldLines, prereqNote };

@@ -8,6 +8,9 @@
  *   --max-usd <n>   allow a run whose estimate is over $1; also a hard stop on actual spend
  *   --until-point-end   lesson mode: stop once the covered counter has moved and a
  *                   predict-first widget has been shown (brief 2026-10-24 key-point loop)
+ *   --persona willing  lesson mode: the willing student of tools/bored-student.js (brief 2026-10-26
+ *                   willing student): tries every question, a third wrong, 4 questions of her own, no
+ *                   extras, never stops; taps Next where nothing is asked. Default: the bored student.
  *   --whole-lesson  lesson mode: the whole lesson (brief 2026-10-26 AI lesson order): up to
  *                   --max-turns exchanges (default 260); on a message that asks nothing and
  *                   offers Next, she taps Next 3 times in 4; each predict-first widget is
@@ -81,6 +84,7 @@ function die(msg, code = 1) { console.error(msg); process.exit(code); }
 let EXIT_SCRIPT = false;
 let UNTIL_POINT_END = false;   // --until-point-end
 let WHOLE_LESSON = null;        // --whole-lesson: { maxTurns }
+let WILLING = false;            // --persona willing (brief 2026-10-26 willing student); bored is the default
 
 // ---------- arguments ----------
 
@@ -95,6 +99,7 @@ function parseArgs(argv) {
     else if (v === '--exit-script') a.exitScript = true;
     else if (v === '--until-point-end') a.untilPointEnd = true;
     else if (v === '--whole-lesson') a.wholeLesson = true;
+    else if (v === '--persona') a.persona = argv[++i];
     else if (v === '--max-turns') a.maxTurns = Number(argv[++i]);
     else if (v === '--max-usd') a.maxUsd = Number(argv[++i]);
     else if (v === '--rescore') a.rescore = [];
@@ -303,7 +308,10 @@ async function newPage(browser, base, run) {
 
 async function lessonMode(page, run, id) {
   const L = findLesson(id);
-  const student = Bored.makeStudent({ lessonTitle: (L.data && L.data.title) || L.name, subject: L.subjectLabel });
+  const student = WILLING
+    ? Bored.makeWillingStudent({ lessonTitle: (L.data && L.data.title) || L.name, subject: L.subjectLabel, misconceptions: Bored.misconceptionLines(path.join(ROOT, 'tools', 'pilot', 'misconceptions.md')) })
+    : Bored.makeStudent({ lessonTitle: (L.data && L.data.title) || L.name, subject: L.subjectLabel });
+  let tutorMs = 0;   // time from her message to the tutor's reply on screen, summed
   const script = EXIT_SCRIPT ? Bored.exitScript() : null;
   let lastPointTurns = 0;
   const hist = [];
@@ -424,7 +432,7 @@ async function lessonMode(page, run, id) {
       const wantTwo = /two ammeters/i.test(said), wantOne = /an ammeter/i.test(said);
       const okMeters = !/circuit/i.test(said) || (wantTwo ? w.ammeters === 2 : wantOne ? w.ammeters === 1 : true);
       const okControls = (!/add a cell/i.test(said) || w.buttons.includes('Add a cell')) && (!/the switch/i.test(said) || w.buttons.some(b => /(Open|Close) the switch/.test(b)))
-        && (!/put the resistor in/i.test(said) || w.buttons.includes('Put the resistor in')) && (!/run it for 10 seconds/i.test(said) || w.buttons.includes('Run for 10 s'));
+        && (!/put the resistor in/i.test(said) || w.buttons.some(b => /^(Put the resistor in|Take the resistor out)$/.test(b))) && (!/run it for 10 seconds/i.test(said) || w.buttons.includes('Run for 10 s'));
       const okOrder = !/Predict first/i.test(said) || (w.hiddenBefore && !!w.q);
       run.say(`[widget under T${n}: prediction "${w.q.slice(0, 80)}" tapped; then shown: ${w.visible ? 'yes' : 'no'}, ammeters ${w.ammeters}, controls ${w.buttons.join(', ') || 'none'}]`);
       run.check(`predict-first widget ${widgetsSeen} works and matches its words`, w.visible && okMeters && okControls && okOrder,
@@ -443,6 +451,9 @@ async function lessonMode(page, run, id) {
     let phase = status.complete ? 'closing' : /tell you the rest|just tell you/i.test(t) ? 'checkin' : 'teach';
     // The end quiz comes after the last point is ticked: she stays for it.
     if (WHOLE_LESSON && phase === 'closing' && /question \d+ of \d+|Quick question|Your turn|Worked example|Predict first|In one line|\?\s*$/i.test(t)) phase = 'teach';
+    // The quiz's marking replies and the revision-cards offer have buttons: she goes on through them
+    // (willing-student run 2026-10-27 left at quiz question 4 of 8, before the revision cards).
+    if (WHOLE_LESSON && phase === 'closing' && await page.evaluate(() => [...document.querySelectorAll('#teachThread .teach-choices button')].some(b => /^(Next|Make my revision cards)$/.test(b.textContent.trim())))) phase = 'teach';
     if (phase === 'closing' && closing++ >= 3) { run.say('[the student leaves]'); break; }
     // --exit-script: "near the end" is her second reply once one key point is left.
     const left = await page.evaluate(() => { const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || ''; const m = hdr.match(/(\d+)\/(\d+)/); return m ? +m[2] - +m[1] : 9; });
@@ -454,13 +465,17 @@ async function lessonMode(page, run, id) {
     if (WHOLE_LESSON && !fixed) {
       const offered = await page.evaluate(() => [...document.querySelectorAll('#teachThread .teach-choices button')].map(b => b.textContent.trim()));
       const nx = offered.find(c => /^Next( step)?$/.test(c));
-      if (nx && !/\?/.test(t) && coin() < 0.75) tapped = nx;
+      // --persona willing: always taps Next where nothing is asked; says yes to the revision cards.
+      if (nx && !/\?/.test(t) && (WILLING || coin() < 0.75)) tapped = nx;
+      if (WILLING && offered.includes('Make my revision cards')) tapped = 'Make my revision cards';
     }
     if (tapped) {
       hist.push({ who: 'student', text: tapped });
       run.say(`S${n} (tapped "${tapped}")`);
       await page.evaluate(label => { [...document.querySelectorAll('#teachThread .teach-choices button')].find(b => b.textContent.trim() === label).click(); }, tapped);
+      const t0 = Date.now();
       try { await waitReady(t); } catch { run.say(`[no tutor reply within 120 s after S${n}]`); run.check('tutor replies', false, `no reply after S${n}`); break; }
+      tutorMs += Date.now() - t0;
       t = await lastTutor();
       hist.push({ who: 'tutor', text: t });
       run.say(`T${n}: ${t}`);
@@ -470,9 +485,11 @@ async function lessonMode(page, run, id) {
       continue;
     }
     const mood = fixed ? 'script' : student.mood(t, phase);
-    const reply = fixed || Bored.clean(await apiCall(student.body(hist, mood, newTermsFor(hist))));
+    // The willing student sees the answer buttons under the message (a multiple-choice question) and picks one.
+    const offeredNow = WILLING ? await page.evaluate(() => [...document.querySelectorAll('#teachThread .teach-choices button')].map(b => b.textContent.trim())) : [];
+    const reply = fixed || Bored.clean(await apiCall(WILLING ? student.body(hist, mood, null, offeredNow) : student.body(hist, mood, newTermsFor(hist))));
     hist.push({ who: 'student', text: reply });
-    const button = fixed && choices.find(c => c.toLowerCase() === reply);
+    const button = (fixed && choices.find(c => c.toLowerCase() === reply)) || (WILLING && offeredNow.find(c => c.toLowerCase() === String(reply).toLowerCase().replace(/^"|"$/g, '')));
     run.say(`S${n} (${mood}${button ? ', tapped the button' : ''}): ${reply}`);
     if (choices.length) await shoot(page, run, `choices-${n}`);
     if (button) {
@@ -482,7 +499,9 @@ async function lessonMode(page, run, id) {
       await page.type('#teachInput', reply, { delay: 5 });
       await page.click('#teachSendBtn');
     }
+    const t1 = Date.now();
     try { await waitReady(t); } catch { run.say(`[no tutor reply within 120 s after S${n}]`); run.check('tutor replies', false, `no reply after S${n}`); break; }
+    tutorMs += Date.now() - t1;
     t = await lastTutor();
     hist.push({ who: 'tutor', text: t });
     run.say(`T${n}: ${t}`);
@@ -504,6 +523,7 @@ async function lessonMode(page, run, id) {
     if (fixed === 'bye, got to go') { await shoot(page, run, `goodbye-${n}`); run.say('[the student leaves]'); break; }
   }
   await shoot(page, run, 'end');
+  run.say(`[tutor-side time: ${(tutorMs / 60000).toFixed(1)} minutes over ${run.exchanges} exchanges]`);
 }
 
 // ---------- maths mode ----------
@@ -827,7 +847,7 @@ async function mathsMode(page, run, code) {
 async function judgeRun(run, kind, id) {
   const shots = run.shots.slice(0, MAX_JUDGE_IMAGES);
   const content = [{ type: 'text', text: [
-    `You review a test of a GCSE revision website, used by a bored 15-year-old on a phone and a laptop. ${kind === 'lesson' ? `They took the AI lesson "${id}".` : kind === 'pilot' ? `They did the Electricity "Quick check before you start" (${id}), then looked at its result and the "My record" page. The answers are scripted; judge only whether the pages work and can be read.` : `They did the maths warm-up and the topic test for "${id}".`}`,
+    `You review a test of a GCSE revision website, used by a ${WILLING ? 'willing 15-year-old who is learning this for the first time and tries every question' : 'bored 15-year-old'} on a phone and a laptop. ${kind === 'lesson' ? `They took the AI lesson "${id}".` : kind === 'pilot' ? `They did the Electricity "Quick check before you start" (${id}), then looked at its result and the "My record" page. The answers are scripted; judge only whether the pages work and can be read.` : `They did the maths warm-up and the topic test for "${id}".`}`,
     'Transcript (lines in [check] are automatic checks by the test tool; "independent value" is recomputed from the question text, not the app\'s stored answer):',
     run.log.join('\n'),
     '',
@@ -916,6 +936,7 @@ async function main() {
     const page = await newPage(browser, base, run);
     EXIT_SCRIPT = !!a.exitScript;
     UNTIL_POINT_END = !!a.untilPointEnd;
+    WILLING = a.persona === 'willing';
     WHOLE_LESSON = a.wholeLesson ? { maxTurns: a.maxTurns || 260 } : null;
     if (a.lesson) await lessonMode(page, run, a.lesson); else if (a.pilot) await pilotMode(page, run, a.pilot); else await mathsMode(page, run, a.maths);
   } catch (e) {

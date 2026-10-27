@@ -1,0 +1,594 @@
+# Site test: p2-current-voltage (lesson, 2026-10-27)
+
+**FAIL** · cost $1.7573 (59 tool calls, 321 calls from the site; tutor claude-sonnet-5-5 $1.2707)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "The tutor asked 'How many coulombs pass each second now?' (1 A changed to 3 A). The student asked a side question. After 'Next' the question was dropped and never answered or returned to.",
+      "step": "T9–S11"
+    },
+    {
+      "what": "After the current section, the lesson restarted its opening material ('Every torch, phone and kettle…', particles drifting, closed circuit, switch). The order is wrong and it repeats what was already taught.",
+      "step": "T11–T14"
+    },
+    {
+      "what": "The student asked whether to convert 1 hour to seconds. The tutor replied 'Fair enough' and repeated the question without answering.",
+      "step": "T20"
+    },
+    {
+      "what": "The scripted line says 'The lamp dims again, because less current flows' straight after the student correctly said a smaller resistor gives a bigger current. This contradicts the step before.",
+      "step": "T33"
+    },
+    {
+      "what": "The student correctly said a curve that gets steeper means the resistance is changing. The tutor said 'Not quite', then confirmed the same thing.",
+      "step": "T75"
+    },
+    {
+      "what": "Unfinished, dangling line: 'Say a resistor at constant temperature has a fixed resistance.' No question or point follows.",
+      "step": "T73"
+    },
+    {
+      "what": "'On the forward side it stays near zero at first…' The diode is never named, so 'it' has no clear referent.",
+      "step": "T88"
+    },
+    {
+      "what": "The one-line marking asks for points the question did not ask for. 'What is current' was marked as missing 'flow of charge' and 'measured with an ammeter' even though the student gave the rate definition. 'How does length change resistance' was marked as missing 'R = V ÷ I'.",
+      "step": "T24, T63"
+    },
+    {
+      "what": "The predict-first widget controls do not match its words. Text says 'put the resistor in or run it for 10 seconds'; buttons are 'Take the resistor out', 'Add a cell', 'Take a cell away', 'Run for 10 s', 'Start again'.",
+      "step": "T126 widget 4"
+    },
+    {
+      "what": "After moving on, the first predict-first widget shows again as 'PREDICT FIRST (1 OF 3)' with no option selected. Her earlier answer appears lost.",
+      "step": "T24 / widget 1"
+    },
+    {
+      "what": "automatic check failed: predict-first widget 4 works and matches its words",
+      "step": "opened after the prediction true; ammeters 1 (words: one); controls match false; prediction first true"
+    }
+  ],
+  "looks_wrong": [
+    {
+      "what": "On the laptop, the Key terms panel cuts its last definition mid-sentence ('A flow of charge. Its size is the') with a fade and no visible way to read more.",
+      "screenshot": "18-exchange-27-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The Jump-to item 'Potential difference and resi...' is truncated.",
+      "screenshot": "18-exchange-27-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "The diagram-18 capture shows the worked example, not the ammeter diagram, which was placed under T15 instead. The diagram is out of place relative to the transcript.",
+      "screenshot": "12-diagram-18-laptop.png",
+      "stops_use": false
+    },
+    {
+      "what": "On the phone, the lesson title is truncated ('Current and potential difference ...').",
+      "screenshot": "06-ai-lesson-opening-phone.png",
+      "stops_use": false
+    }
+  ],
+  "would_quit": false,
+  "fixes": [
+    {
+      "target": "tutor turn handling: side question (S10, S20)",
+      "change": "After answering a side question, re-ask the pending question (e.g. the 3 A → coulombs question). If the student asks how to convert units, answer it ('1 hour = 3600 s') before repeating the question."
+    },
+    {
+      "target": "lesson script order for p2-current-voltage, section 'Electric current'",
+      "change": "Remove or move the opening cards (T11–T14 torch/particles/closed circuit) so they come before T1–T10, not after."
+    },
+    {
+      "target": "model judging of student 'ask' turns (T75)",
+      "change": "When the student's statement is correct, never start with 'Not quite'. Confirm, then add the nuance."
+    },
+    {
+      "target": "scripted cards T33, T73, T88",
+      "change": "Make T33 conditional on the bigger-resistor case or reword it to fit the swap discussed. Finish T73 with its point. Name the diode in T88 ('A diode's graph, on the forward side, …')."
+    },
+    {
+      "target": "predict-first widget 4 config and the one-line rubrics (T24, T63)",
+      "change": "Make widget 4's intro text match its controls ('take the resistor out', 'add a cell', 'run for 10 s'). Limit rubric points to what each question actually asks, so a correct rate definition of current is not marked as missing 'flow of charge'."
+    }
+  ]
+}
+```
+
+## Transcript
+
+    Lesson p2-current-voltage (Physics › Electricity › Current, potential difference and resistance).
+    [screenshot 01-home-phone.png and 01-home-laptop.png] home
+    [screenshot 02-subjects-phone.png and 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-phone.png and 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-quick-check-offer-phone.png and 04-quick-check-offer-laptop.png] quick-check-offer
+    [the quick check is offered on its own screen] tapped "Not now: show the lessons"
+    [screenshot 05-lessons-p2-phone.png and 05-lessons-p2-laptop.png] lessons-P2
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome, great to have you here! What happens when you press the button on a torch to make it light up?
+    [screenshot 06-ai-lesson-opening-phone.png and 06-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (try): um i think the battery makes like electricity go through the bulb and it lights up?
+    T1: Yes — the battery pushing something through the wire to light the bulb is the right idea. That "something" is tiny charged particles drifting round the loop of wire together, and you can't see them, only what they do. What do you think happens to the bulb if there is a gap in the loop of wire?
+    S2 (wrong): oh um i think the particles would like jump across the gap? so it still lights up?
+    T2: Not quite — the particles can't jump a gap. The loop has to be complete, like a running track with no break, or nothing gets round at all.
+      [S2 read as: answer (model)]
+    S3 (tapped "Next")
+    T3: Picture the charge as runners on a track. The amount of charge that passes a point is called the charge flow, and the longer the circuit is switched on, the more charge gets past. If a torch stays on for twice as long, what happens to the amount of charge that has passed through the bulb?
+    [screenshot 07-exchange-3-phone.png and 07-exchange-3-laptop.png] exchange-3
+      [S3 read as: button (code)]
+    S4 (try): oh so like if its on twice as long, twice as much charge goes through it yeah?
+    T4: Yes — twice as long means twice as much charge. The exam wording is: charge flow is how much charge passes a point.
+      [S4 read as: answer (model)]
+    S5 (tapped "Next")
+    T5: Charge flow is the total amount that passes. Electric current is different: it's how much charge passes a point each second, so it's the rate of flow, measured in amperes (amps). If more runners cross the finish line every second, what has happened to the current?
+      [S5 read as: button (code)]
+    S6 (try): oh so like if more runners cross each second then the current is higher yeah? like its faster flow
+    T6: Yes — more runners crossing each second means a higher current.
+    [screenshot 08-exchange-6-phone.png and 08-exchange-6-laptop.png] exchange-6
+      [S6 read as: answer (model)]
+    S7 (tapped "Next")
+    T7: Current is measured in amperes, or amps, and one ampere means 1 coulomb of charge passing a point each second. A coulomb is just the unit we count charge in.
+      [S7 read as: button (code)]
+    S8 (tapped "Next")
+    T8: So 1 ampere means 1 coulomb passes a point every second. That makes 2 amperes twice as much charge passing each second.
+      [S8 read as: button (code)]
+    S9 (tapped "Next")
+    T9: Here's a way to use it: the running track. The more runners crossing the finish line each second, the bigger the current. Imagine a lamp's current is 1 ampere, then it changes to 3 amperes. How many coulombs pass each second now?
+    [screenshot 09-exchange-9-phone.png and 09-exchange-9-laptop.png] exchange-9
+      [S9 read as: button (code)]
+    S10 (ask): wait so like one amp is one coulomb per second right?
+    T10: Yes, that's exactly right. One ampere means 1 coulomb of charge passing a point each second.
+      [S10 read as: question (model)]
+    S11 (tapped "Next")
+    T11: Every torch, phone and kettle runs on something moving through its wires. Turn on a torch and the bulb lights at once.
+      [S11 read as: button (code)]
+    S12 (tapped "Next")
+    T12: Inside the metal wire, tiny particles that carry electric charge start to drift round together. You cannot see charge, but you can see what it does.
+    [screenshot 10-exchange-12-phone.png and 10-exchange-12-laptop.png] exchange-12
+      [S12 read as: button (code)]
+    S13 (tapped "Next")
+    T13: Charge only flows round a closed circuit if it includes something to push it, such as a cell or a battery. That push is called a potential difference, and the next key point explains it. Break the loop anywhere and the flow stops everywhere.
+      [S13 read as: button (code)]
+    S14 (tapped "Next")
+    T14: A switch does this on purpose: it opens a gap in the loop.
+      [S14 read as: button (code)]
+    S15 (tapped "Next")
+    T15: In a single loop, the current is the same at every point, because charge is not used up on the way round. So it does not matter where you put the ammeter.
+    [screenshot 11-exchange-15-phone.png and 11-exchange-15-laptop.png] exchange-15
+      [S15 read as: button (code)]
+    S16 (tapped "Next")
+    T16: The amount of charge that passes is the charge flow, Q. To find it, multiply the current by the time in seconds.
+      [S16 read as: button (code)]
+    S17 (tapped "Next")
+    T17: Worked example: A current of 2 A flows through a lamp for 5 s. How much charge flows? Tap the button under it to see each step.
+      [S17 read as: button (code)]
+    S18 (try): so i do current times time right? so 2 times 5 is 10 so like 10 coulombs?
+    T18: Yes, that's right: 10 C.
+    [diagram shown in the conversation under T18: "The same loop with an ammeter in it, measuring the current."]
+    [screenshot 12-diagram-18-phone.png and 12-diagram-18-laptop.png] diagram-18
+    [screenshot 13-exchange-18-phone.png and 13-exchange-18-laptop.png] exchange-18
+      [S18 read as: answer (model)]
+    S19 (tapped "Next")
+    T19: Your turn: A current of 0.25 A flows for 1 hour. How much charge flows, in coulombs (C)?
+      [S19 read as: button (code)]
+    S20 (try): ok so i need to do current times time right? but wait one hour isnt in seconds is it so i need to like convert it first?
+    T20: Fair enough. Back to the question: A current of 0.25 A flows for 1 hour. How much charge flows, in coulombs (C)?
+      [S20 read as: answer (model)]
+    S21 (try): ok so one hour is 3600 seconds right? so 0.25 times 3600 is 900 coulombs?
+    T21: Yes, that's right: 900 C.
+    [screenshot 14-exchange-21-phone.png and 14-exchange-21-laptop.png] exchange-21
+      [S21 read as: answer (model)]
+    S22 (tapped "Next")
+    T22: Predict first: answer the question below (3 questions, one at a time). Then a working circuit with two ammeters opens: you can add a cell or open and close the switch to check your answer. Tap Next when you are done.
+      [S22 read as: button (code)]
+    [widget under T22: prediction "A lamp is joined to a cell by one wire only, from one end of the cell to the lam" tapped; then shown: yes, ammeters 2, controls Add a cell, Take a cell away, Close the switch]
+    [check] OK: predict-first widget 1 works and matches its words — opened after the prediction true; ammeters 2 (words: two); controls match true; prediction first true
+    [screenshot 15-widget-22-phone.png and 15-widget-22-laptop.png] widget-22
+    S23 (tapped "Next")
+    T23: In one line, in your own words: what is an electric current?
+      [S23 read as: button (code)]
+    S24 (try): electric current is like how much charge passes a point each second measured in amps
+    T24: Your line gets the rate right: how much charge passes a point each second, and the unit, amperes (amps). It's missing two things: that current is a flow of charge, and that you measure it with an ammeter.
+    [screenshot 16-exchange-24-phone.png and 16-exchange-24-laptop.png] exchange-24
+    [predict-first widget shown under T24: "PREDICT FIRST (1 OF 3)"]
+    [screenshot 17-widget-24-phone.png and 17-widget-24-laptop.png] widget-24
+      [S24 read as: answer (model)]
+    S25 (tapped "Next")
+    T25: Quick question: You open the switch in a single loop. What happens to the current?
+      [S25 read as: button (code)]
+    S26 (wrong, tapped the button): it stops only next to the switch
+    T26: Not quite: it's "It stops everywhere in the loop". Break the loop anywhere and the flow stops everywhere.
+      [S26 read as: button (code)]
+    S27 (tapped "Next")
+    T27: Connect a lamp to one cell and it glows dimly; add a second cell and it glows brighter, because more current flows. The cells give the charge a bigger push through the lamp, and that push is called potential difference. If you used three cells instead of two, what would you expect the lamp to do?
+    [screenshot 18-exchange-27-phone.png and 18-exchange-27-laptop.png] exchange-27
+      [S27 read as: button (code)]
+    [counter now "1/7 covered" after T27]
+    S28 (try): glow even brighter because three cells would push the charge harder than two
+    T28: Yes — more cells give a bigger push, so the lamp glows brighter. In exam wording, a bigger potential difference means more current. A voltmeter measures it, connected across the lamp. Why would a voltmeter go across the lamp, not in the loop?
+      [S28 read as: answer (model)]
+    S29 (try): because you need to measure the push across the lamp not the flow through it?
+    T29: Yes: a voltmeter measures the push across the part, so it goes across the lamp. Now add a resistor to the loop and the lamp dims, because it opposes the current. That opposition is resistance, measured in ohms (Ω).
+    [diagram shown in the conversation under T29: "The same loop with a resistor added, and a voltmeter connected across the lamp."]
+    [screenshot 19-diagram-29-phone.png and 19-diagram-29-laptop.png] diagram-29
+      [S29 read as: answer (model)]
+    S30 (tapped "Next")
+    T30: Resistance is how hard a component makes it for charge to get through. With the same push from the cells, a bigger resistance means a smaller current. Imagine swapping a small resistor in the loop for a much bigger one, with the cells unchanged. What would happen to the lamp's brightness?
+    [screenshot 20-exchange-30-phone.png and 20-exchange-30-laptop.png] exchange-30
+      [S30 read as: button (code)]
+    S31 (wrong): it would get brighter because theres more resistance to push against
+    T31: Not quite. Resistance doesn't push, it opposes, so a bigger resistance makes it harder for charge to get through and the lamp gets dimmer. Picture the running track with more obstacles on it: fewer runners get round each second. If you swapped a big resistor for a much smaller one, what would happen to the current?
+      [S31 read as: answer (model)]
+    S32 (try): the current would get bigger because theres less resistance to oppose it
+    T32: Yes, the current would get bigger. You named the reason: less resistance means less opposition, so more charge gets through each second.
+      [S32 read as: answer (model)]
+    S33 (tapped "Next")
+    T33: The lamp dims again, because less current flows. So the size of a current depends on two things.
+    [screenshot 21-exchange-33-phone.png and 21-exchange-33-laptop.png] exchange-33
+      [S33 read as: button (code)]
+    S34 (tapped "Next")
+    T34: People often call it voltage. Exam questions say potential difference, but either word gets the mark.
+      [S34 read as: button (code)]
+    S35 (tapped "Next")
+    T35: The three are linked by one equation: potential difference equals current times resistance. If you know any two of them, you can rearrange it to find the third.
+      [S35 read as: button (code)]
+    S36 (tapped "Next")
+    T36: Worked example: A current of 2 A flows through a 3 Ω resistor. What is the potential difference across it? Tap the button under it to see each step.
+    [screenshot 22-exchange-36-phone.png and 22-exchange-36-laptop.png] exchange-36
+      [S36 read as: button (code)]
+    S37 (wrong): so potential difference equals current times resistance so 2 times 3 is 6 volts
+    T37: Yes, that's right: 6 V.
+      [S37 read as: answer (model)]
+    S38 (tapped "Next")
+    T38: Your turn: A component has a potential difference of 100 V across it and a current of 1 A through it. What is its resistance, in ohms (Ω)?
+      [S38 read as: button (code)]
+    S39 (wrong): so i need to rearrange it right? so resistance equals potential difference divided by current so 100 divided by 1 is 100 ohms
+    T39: Yes, that's right: 100 Ω.
+    [screenshot 23-exchange-39-phone.png and 23-exchange-39-laptop.png] exchange-39
+      [S39 read as: answer (model)]
+    S40 (tapped "Next")
+    T40: Predict first: answer the question below (3 questions, one at a time). Then a working circuit with an ammeter and a voltmeter opens: you can add a cell, put the resistor in or move it to check your answer. Tap Next when you are done.
+      [S40 read as: button (code)]
+    [widget under T40: prediction "You add a second cell. What happens to the ammeter reading and to the lamp?" tapped; then shown: yes, ammeters 1, controls Add a cell, Take a cell away, Put the resistor in, Move the resistor]
+    [check] OK: predict-first widget 2 works and matches its words — opened after the prediction true; ammeters 1 (words: one); controls match true; prediction first true
+    [screenshot 24-widget-40-phone.png and 24-widget-40-laptop.png] widget-40
+    S41 (tapped "Next")
+    T41: In one line: what do potential difference and resistance each do to the current?
+      [S41 read as: button (code)]
+    S42 (wrong): potential difference pushes the current and resistance stops it both make it bigger
+    T42: Your line gets the first point right: potential difference is the push that drives the current. But "both make it bigger" is wrong, because a bigger resistance means a smaller current. You also haven't mentioned that V = I R links them.
+    [screenshot 25-exchange-42-phone.png and 25-exchange-42-laptop.png] exchange-42
+      [S42 read as: answer (model)]
+    S43 (tapped "Next")
+    T43: Quick question: Where do you put an ammeter to measure the current in a single loop?
+      [S43 read as: button (code)]
+    S44 (ask): wait so the ammeter measures the flow right and the current is the same everywhere in the loop?
+    T44: Yes, an ammeter measures the current, and it goes in the loop, in line with the component.
+      [S44 read as: question (model)]
+    S45 (tapped "Next")
+    T45: Back to the question: Where do you put an ammeter to measure the current in a single loop?
+    [screenshot 26-exchange-45-phone.png and 26-exchange-45-laptop.png] exchange-45
+      [S45 read as: button (code)]
+    S46 (wrong, tapped the button): Only next to the lamp
+    T46: Not quite: it's "Anywhere in the loop". In a single loop the current is the same at every point.
+      [S46 read as: button (code)]
+    S47 (tapped "Next")
+    T47: Before the practical, question 1 of 2: What does an ammeter measure?
+      [S47 read as: button (code)]
+    [counter now "2/7 covered" after T47]
+    S48 (try, tapped the button): The current
+    T48: Yes, that's right. An ammeter measures the current through a component.
+    [screenshot 27-exchange-48-phone.png and 27-exchange-48-laptop.png] exchange-48
+      [S48 read as: button (code)]
+    S49 (tapped "Next")
+    T49: Before the practical, question 2 of 2: You know the potential difference across a component and the current through it. How do you find its resistance?
+      [S49 read as: button (code)]
+    S50 (try, tapped the button): Divide the potential difference by the current
+    T50: Yes, that's right. Resistance = potential difference ÷ current, from V = I R.
+      [S50 read as: button (code)]
+    S51 (tapped "Next")
+    T51: In the practical, a long wire is clipped along a metre ruler, and the ammeter goes in the same loop as the wire, one after the other. What do you think this means for the current through the ammeter compared with the wire?
+    [screenshot 28-exchange-51-phone.png and 28-exchange-51-laptop.png] exchange-51
+      [S51 read as: button (code)]
+    S52 (try): the current is the same through both because theyre in the same loop
+    T52: Right, the current is the same because they're in the same loop; the exam wording is "in series", one after another. The voltmeter is different: it goes in parallel, side by side across the same two points as the wire. What does the voltmeter then measure for the wire?
+      [S52 read as: answer (model)]
+    S53 (try): the potential difference across the wire
+    T53: Yes — the voltmeter measures the potential difference across the wire. Next, keep the current small so the wire doesn't warm up, which keeps it at a "constant temperature", meaning its temperature stays the same. Why do you think we want the wire's temperature to stay the same during the readings?
+      [S53 read as: answer (model)]
+    S54 (try): so if the wire gets hot maybe the resistance changes and that would mess up our results
+    T54: Yes, a hot wire's resistance can change, and that would spoil the results. Keeping the temperature constant means any change in resistance comes from the length alone.
+    [screenshot 29-exchange-54-phone.png and 29-exchange-54-laptop.png] exchange-54
+      [S54 read as: answer (model)]
+    S55 (tapped "Next")
+    T55: Heaters, leads and the coils inside motors all use wire, so engineers need to know how its length changes its resistance.
+      [S55 read as: button (code)]
+    S56 (tapped "Next")
+    T56: Move one clip to change the length, and repeat.
+      [S56 read as: button (code)]
+    S57 (tapped "Next")
+    T57: One cell's low potential difference gives no risk of an electric shock. Repeat each reading and take the mean, then plot resistance against length. You find that a longer wire has a bigger resistance. The points lie on a straight line through the origin.
+    [screenshot 30-exchange-57-phone.png and 30-exchange-57-laptop.png] exchange-57
+      [S57 read as: button (code)]
+    S58 (tapped "Next")
+    T58: Worked example: A length of the wire has a potential difference of 1.5 V across it and a current of 0.3 A through it. What is its resistance? Tap the button under it to see each step.
+      [S58 read as: button (code)]
+    S59 (wrong): so like resistance equals current divided by potential difference so 0.3 divided by 1.5 is 0.2 ohms
+    T59: Not quite: it's 5 Ω. Start from V = I R. You want R, so divide both sides by I: R = V ÷ I. Put the numbers in: R = 1.5 ÷ 0.3 = 5 The resistance is 5 Ω.
+      [S59 read as: answer (model)]
+    S60 (tapped "Next")
+    T60: Your turn: A current of 0.2 A flows through a 40 Ω resistor. What is the potential difference across it, in volts (V)?
+    [screenshot 31-exchange-60-phone.png and 31-exchange-60-laptop.png] exchange-60
+      [S60 read as: button (code)]
+    S61 (try): so V = I R so V = 0.2 times 40 which is 8 V
+    T61: Yes, that's right: 8 V.
+      [S61 read as: answer (model)]
+    S62 (tapped "Next")
+    T62: In one line: how does the length of a wire change its resistance?
+      [S62 read as: button (code)]
+    S63 (try): longer wire has bigger resistance
+    T63: Your line gets "a longer wire has a bigger resistance" right. Missing are "the temperature is kept constant" and "resistance = potential difference ÷ current". Nothing in your line is wrong; it just needs those two points added.
+    [screenshot 32-exchange-63-phone.png and 32-exchange-63-laptop.png] exchange-63
+      [S63 read as: answer (model)]
+    S64 (tapped "Next")
+    T64: Quick question: In the resistance-of-a-wire practical, why does one cell give no risk of an electric shock?
+      [S64 read as: button (code)]
+    S65 (wrong, tapped the button): The ammeter stops a shock
+    T65: Not quite: it's "Its potential difference is low". A low potential difference means no risk of an electric shock. The wire can still get hot, so keep the current small.
+      [S65 read as: button (code)]
+    S66 (tapped "Next")
+    T66: To find out how a component behaves, you measure the current through it at several potential differences, then plot the readings on a graph. Current goes up the side and potential difference goes along the bottom. That graph is called an I-V characteristic.
+    [screenshot 33-exchange-66-phone.png and 33-exchange-66-laptop.png] exchange-66
+      [S66 read as: button (code)]
+    [counter now "3/7 covered" after T66]
+    S67 (tapped "Next")
+    T67: For a resistor at a constant temperature, the I-V graph is a straight line through the origin. That means if you double the potential difference, the current doubles too.
+      [S67 read as: button (code)]
+    S68 (tapped "Next")
+    T68: On an I-V characteristic, current goes up the side and potential difference goes along the bottom. If a resistor's graph passes through the origin as a straight line, what would you expect the current to be when the potential difference is zero?
+      [S68 read as: button (code)]
+    S69 (try): the current would be zero because the line goes through the origin
+    T69: Yes — zero current at zero potential difference, because the line goes through the origin. The exam wording is: current is directly proportional to potential difference, meaning when one doubles, so does the other. If a resistor's potential difference is made three times bigger, what would happen to the current?
+    [screenshot 34-exchange-69-phone.png and 34-exchange-69-laptop.png] exchange-69
+      [S69 read as: answer (model)]
+    S70 (try): the current would triple because its directly proportional so three times bigger potential difference means three times bigger current
+    T70: Yes — three times the potential difference gives three times the current, because they're directly proportional. A resistor like this is called an ohmic conductor: its resistance stays the same at constant temperature. If its resistance stays fixed, what will its I-V graph look like?
+      [S70 read as: answer (model)]
+    S71 (wrong): it will be a curved line that goes up more steeply as the potential difference gets bigger
+    T71: Not quite. A curve that gets steeper means the current rises faster than the potential difference, so the resistance would be changing. A steady resistance gives a straight line through the origin, with the same steepness all the way along.
+      [S71 read as: answer (model)]
+    S72 (tapped "Next")
+    T72: An ohmic conductor is a component whose resistance stays constant at constant temperature, so its I-V graph is a straight line through the origin.
+    [screenshot 35-exchange-72-phone.png and 35-exchange-72-laptop.png] exchange-72
+      [S72 read as: button (code)]
+    S73 (tapped "Next")
+    T73: Because an ohmic conductor's resistance stays fixed, you only need one value of R in V = I R, however the current changes. Say a resistor at constant temperature has a fixed resistance.
+      [S73 read as: button (code)]
+    S74 (tapped "Next")
+    T74: Think of a resistor at constant temperature: its I-V graph is a straight line through the origin, so it is an ohmic conductor. Its resistance stays the same whatever the current. Suppose someone plots a component's I-V graph and gets a curve instead of a straight line. What does that tell you about its resistance?
+      [S74 read as: button (code)]
+    S75 (ask): so like if the curve gets steeper that means the resistance is changing right
+    T75: Not quite — a curve getting steeper or flatter does show the resistance is changing, but it can't tell you yet whether it's going up or down.
+    [screenshot 36-exchange-75-phone.png and 36-exchange-75-laptop.png] exchange-75
+      [S75 read as: answer (model)]
+    S76 (tapped "Next")
+    T76: Some components behave in a simple, steady way.
+      [S76 read as: button (code)]
+    S77 (tapped "Next")
+    T77: In one line: what does a straight-line I-V graph through the origin tell you?
+      [S77 read as: button (code)]
+    S78 (try): it tells you the resistance stays the same so its an ohmic conductor
+    T78: Your line gets two points right: the resistance stays the same, and the component is an ohmic conductor. It's missing the first point: the current is directly proportional to the potential difference.
+    [screenshot 37-exchange-78-phone.png and 37-exchange-78-laptop.png] exchange-78
+      [S78 read as: answer (model)]
+    S79 (tapped "Next")
+    T79: Quick question: For an ohmic conductor, you double the potential difference. What happens to the current?
+      [S79 read as: button (code)]
+    S80 (wrong, tapped the button): It stays the same
+    T80: Not quite: it's "It doubles". The current is directly proportional to the potential difference, so it doubles too.
+      [S80 read as: button (code)]
+    S81 (tapped "Next")
+    T81: Not every component gives a straight line on an I-V graph. An old-style bulb, called a filament lamp, has a thin coil of metal wire inside that glows white-hot as current flows through it. As that wire gets hotter, what do you think happens to its resistance?
+    [screenshot 38-exchange-81-phone.png and 38-exchange-81-laptop.png] exchange-81
+      [S81 read as: button (code)]
+    [counter now "4/7 covered" after T81]
+    S82 (try): the resistance goes up because the wire gets hotter
+    T82: Yes — resistance goes up as the wire gets hotter. In exam wording: as a filament lamp gets hotter, its resistance increases. Now a diode is a component that lets current flow one way only; turned round, it has a very high resistance. So what would you expect the current to be when it is turned round?
+      [S82 read as: answer (model)]
+    S83 (wrong): the current would be really high because the resistance is really high
+    T83: Not quite. Think of a track with a huge pile of obstacles on it: hardly any runners make it round each second. So if a diode is turned round, what would you expect its graph line to look like on the reverse side?
+      [S83 read as: answer (model)]
+    S84 (try): the current would be nearly zero because the resistance is really high
+    T84: Nearly zero current is right. On the reverse side the graph line lies flat along the axis. Gradient means how steep a line is, and a flatter line has a smaller gradient. For the filament lamp, as the wire heats up, what happens to the steepness of its graph line?
+    [screenshot 39-exchange-84-phone.png and 39-exchange-84-laptop.png] exchange-84
+      [S84 read as: answer (model)]
+    S85 (try): the line gets less steep because the resistance increases so the current increases slower
+    T85: Yes: the line gets less steep, because resistance increases as the filament gets hotter. So each extra volt pushes through less extra current than the one before, and the graph bends over and flattens.
+      [S85 read as: answer (model)]
+    S86 (tapped "Next")
+    T86: Some give curves, and the shapes tell you what is happening inside them.
+      [S86 read as: button (code)]
+    S87 (tapped "Next")
+    T87: As the current rises, the filament gets hotter, and its resistance increases as its temperature increases. So each extra volt pushes through less extra current than the one before.
+    [screenshot 40-exchange-87-phone.png and 40-exchange-87-laptop.png] exchange-87
+      [S87 read as: button (code)]
+    S88 (tapped "Next")
+    T88: On the forward side it stays near zero at first, then rises steeply.
+      [S88 read as: button (code)]
+    S89 (tapped "Next")
+    T89: For both components, the resistance is different at different points on the graph. To find it at one point, read off V and I there, then divide V by I.
+      [S89 read as: button (code)]
+    S90 (tapped "Next")
+    T90: Predict first: answer the question below (4 questions, one at a time). Then a graph opens: you can drag the point along it to check your answer. Tap Next when you are done.
+    [screenshot 41-exchange-90-phone.png and 41-exchange-90-laptop.png] exchange-90
+      [S90 read as: button (code)]
+    [widget under T90: prediction "A 10 Ω resistor is kept at a constant temperature. You double the potential diff" tapped; then shown: yes, ammeters 0, controls Resistor, Filament lamp, Diode]
+    [check] OK: predict-first widget 3 works and matches its words — opened after the prediction true; ammeters 0 (words: -); controls match true; prediction first true
+    [screenshot 42-widget-90-phone.png and 42-widget-90-laptop.png] widget-90
+    S91 (tapped "Next")
+    T91: In one line: how are a filament lamp and a diode different from a resistor?
+      [S91 read as: button (code)]
+    S92 (try): their resistance changes but a resistor stays the same
+    T92: Your line gets one point partly right: a resistor stays the same, and a filament lamp's resistance changes as it gets hotter. Missing are that their I-V graphs are not straight lines, and that a diode lets current flow one way only.
+      [S92 read as: answer (model)]
+    S93 (tapped "Next")
+    T93: Quick question: Which component lets current flow in one direction only?
+    [screenshot 43-exchange-93-phone.png and 43-exchange-93-laptop.png] exchange-93
+      [S93 read as: button (code)]
+    S94 (wrong, tapped the button): A filament lamp
+    T94: Not quite: it's "A diode". A diode has a very high resistance in the reverse direction.
+      [S94 read as: button (code)]
+    S95 (tapped "Next")
+    T95: Before the practical, question 1 of 2: Which meter goes in parallel across the component you are testing?
+      [S95 read as: button (code)]
+    [counter now "5/7 covered" after T95]
+    S96 (try, tapped the button): The voltmeter
+    T96: Yes, that's right. The voltmeter measures the potential difference across the component.
+    [screenshot 44-exchange-96-phone.png and 44-exchange-96-laptop.png] exchange-96
+      [S96 read as: button (code)]
+    S97 (tapped "Next")
+    T97: Before the practical, question 2 of 2: What does a straight-line I-V graph through the origin show?
+      [S97 read as: button (code)]
+    S98 (try, tapped the button): The resistance stays the same
+    T98: Yes, that's right. A straight line through the origin means a constant resistance: an ohmic conductor.
+      [S98 read as: button (code)]
+    S99 (tapped "Next")
+    T99: In the practical, you add a variable resistor, a resistor with a slider you can move to change its resistance. As you move the slider, the current changes, giving you a range of readings. If you slide it to a higher resistance, what happens to the current?
+    [screenshot 45-exchange-99-phone.png and 45-exchange-99-laptop.png] exchange-99
+      [S99 read as: button (code)]
+    S100 (try): the current decreases because higher resistance means less current flows
+    T100: Right, higher resistance means less current flows, so the current decreases. In the exam, you'd say the variable resistor changes the current. Once you plot your readings, a component that gives a straight-line graph is called linear. For a resistor at a steady temperature, what shape of graph would you expect, and so is it linear?
+      [S100 read as: answer (model)]
+    S101 (try): a straight line through the origin so yes its linear
+    T101: Yes, a straight line through the origin is right, so the resistor at a steady temperature is linear. A straight-line graph is exactly what "linear" means.
+      [S101 read as: answer (model)]
+    S102 (tapped "Next")
+    T102: Exam questions often ask you to describe how to get these graphs, so it is worth knowing the method step by step. The circuit has a cell or battery and the component you are testing.
+    [screenshot 46-exchange-102-phone.png and 46-exchange-102-laptop.png] exchange-102
+      [S102 read as: button (code)]
+    S103 (tapped "Next")
+    T103: An ammeter is in series with the component and a voltmeter is in parallel across it. A variable resistor (also called a rheostat), a resistor you can adjust with a slider, is in the loop too.
+      [S103 read as: button (code)]
+    S104 (tapped "Next")
+    T104: Or change the number of cells, or use a supply whose potential difference you can set.
+      [S104 read as: button (code)]
+    S105 (tapped "Next")
+    T105: Record the current and the potential difference, then move the slider and record again. Take readings at even steps across the range. Take repeat readings and find the mean. To get the other half of the graph, turn the component round and repeat; these readings count as negative.
+    [screenshot 47-exchange-105-phone.png and 47-exchange-105-laptop.png] exchange-105
+      [S105 read as: button (code)]
+    S106 (tapped "Next")
+    T106: The lamp gets very hot, so do not touch it. Test a resistor at constant temperature, a filament lamp and a diode, and plot current against potential difference for each.
+      [S106 read as: button (code)]
+    S107 (tapped "Next")
+    T107: A straight-line graph means the component is linear; any other shape means it is non-linear. So a resistor at constant temperature is linear, and the filament lamp and the diode are non-linear.
+      [S107 read as: button (code)]
+    S108 (tapped "Next")
+    T108: A diode, for example, can stop current flowing the wrong way.
+    [screenshot 48-exchange-108-phone.png and 48-exchange-108-laptop.png] exchange-108
+      [S108 read as: button (code)]
+    S109 (tapped "Next")
+    T109: In one line: how do you take the readings for an I-V graph?
+      [S109 read as: button (code)]
+    S110 (try): move the slider and record current and potential difference each time
+    T110: Your line gets the idea of changing the current and recording both readings each time. Missing are the ammeter in series and voltmeter in parallel, using a variable resistor to change the current, and turning the component round to get the negative readings.
+      [S110 read as: answer (model)]
+    S111 (tapped "Next")
+    T111: Quick question: In the I-V practical, what is the variable resistor for?
+    [screenshot 49-exchange-111-phone.png and 49-exchange-111-laptop.png] exchange-111
+      [S111 read as: button (code)]
+    S112 (ask): so like does moving the slider make the current bigger or smaller or both
+    T112: Moving the slider changes the current, so you get a range of readings. What do you do with the current and potential difference readings each time you move the slider?
+      [S112 read as: question (model)]
+    S113 (try): you record them both each time you move it
+    T113: Yes — recording both readings each time you move the slider is exactly right.
+      [S113 read as: answer (model)]
+    S114 (tapped "Next")
+    T114: Back to the question: In the I-V practical, what is the variable resistor for?
+    [screenshot 50-exchange-114-phone.png and 50-exchange-114-laptop.png] exchange-114
+      [S114 read as: button (code)]
+    S115 (wrong, tapped the button): To measure the current
+    T115: Not quite: it's "To change the current". Moving its slider changes the current, so you get a range of readings.
+      [S115 read as: button (code)]
+    S116 (tapped "Next")
+    T116: A cell gives energy to the charge, and the charge hands it over in a component, like lighting a lamp. That handing over is called work done. When charge flows through a lamp, what does the lamp give out?
+      [S116 read as: button (code)]
+    [counter now "6/7 covered" after T116]
+    S117 (try): light and heat
+    T117: Yes, light and heat is right: the lamp gives out light and heat. The energy handed over is called energy transferred, and it's measured in joules, a unit for measuring energy. When charge flows through a heater, where does the energy come from?
+    [screenshot 51-exchange-117-phone.png and 51-exchange-117-laptop.png] exchange-117
+      [S117 read as: answer (model)]
+    S118 (try): from the cell or battery powering it
+    T118: Yes, the cell or battery is right: it gives the energy to the charge, and the charge hands it over to the heater.
+      [S118 read as: answer (model)]
+    S119 (tapped "Next")
+    T119: A cell does more than push charge round a circuit.
+      [S119 read as: button (code)]
+    S120 (tapped "Next")
+    T120: The potential difference across a component tells you how much energy each coulomb transfers there. A potential difference of 1 volt means 1 joule is transferred for each coulomb that passes. So 12 V means 12 joules for every coulomb.
+    [screenshot 52-exchange-120-phone.png and 52-exchange-120-laptop.png] exchange-120
+      [S120 read as: button (code)]
+    S121 (tapped "Next")
+    T121: To find the total energy transferred, multiply the charge flow by the potential difference. If you are given a current and a time instead of a charge, find the charge first with Q = I t.
+      [S121 read as: button (code)]
+    S122 (tapped "Next")
+    T122: Worked example: 3 C of charge flows through a potential difference of 6 V. How much energy is transferred? Tap the button under it to see each step.
+      [S122 read as: button (code)]
+    S123 (wrong): is it 3 times 6 so like 18 joules
+    T123: Yes, that's right: 18 J.
+    [screenshot 53-exchange-123-phone.png and 53-exchange-123-laptop.png] exchange-123
+      [S123 read as: answer (model)]
+    S124 (tapped "Next")
+    T124: Your turn: A spark transfers 8 J of energy across a potential difference of 2 kV. How much charge flows, in coulombs (C)?
+      [S124 read as: button (code)]
+    S125 (try): so energy equals charge times potential difference so charge equals energy divided by potential difference so 8 divided by 2000 equals 0.004 C
+    T125: Yes, that's right: 0.004 C.
+      [S125 read as: answer (model)]
+    S126 (tapped "Next")
+    T126: Predict first: answer the question below. Then a working circuit with an ammeter opens: you can put the resistor in or run it for 10 seconds to check your answer. Tap Next when you are done.
+    [screenshot 54-exchange-126-phone.png and 54-exchange-126-laptop.png] exchange-126
+      [S126 read as: button (code)]
+    [widget under T126: prediction "A torch cell goes flat after a few hours. What has it run out of?" tapped; then shown: yes, ammeters 1, controls Add a cell, Take a cell away, Take the resistor out, Run for 10 s, Start again]
+    [check] BROKEN: predict-first widget 4 works and matches its words — opened after the prediction true; ammeters 1 (words: one); controls match false; prediction first true
+    [screenshot 55-widget-126-phone.png and 55-widget-126-laptop.png] widget-126
+    S127 (tapped "Next")
+    T127: In one line: what does a potential difference of 1 volt mean?
+      [S127 read as: button (code)]
+    S128 (try): 1 joule of energy is transferred per coulomb of charge
+    T128: Your line gets both points: "1 joule of energy is transferred" and "for each coulomb of charge that passes". Nothing is missing or wrong, so your line matches the idea well.
+      [S128 read as: answer (model)]
+    S129 (tapped "Next")
+    T129: Quick question: When charge flows through a component, what happens?
+    [screenshot 56-exchange-129-phone.png and 56-exchange-129-laptop.png] exchange-129
+      [S129 read as: button (code)]
+    S130 (try, tapped the button): Work is done: energy is transferred
+    T130: Yes, that's right. Energy is transferred from the charge to the component. The charge is not used up.
+      [S130 read as: button (code)]
+    S131 (tapped "Next")
+    T131: Quiz, question 1 of 8: What is electric current?
+      [S131 read as: button (code)]
+    [counter now "7/7 covered" after T131]
+    S132 (wrong, tapped the button): The push that drives charge
+    T132: Not quite: it's "The rate of flow of charge". Current is how much charge passes a point each second.
+    [screenshot 57-exchange-132-phone.png and 57-exchange-132-laptop.png] exchange-132
+    S133 (tapped "Next")
+    T133: Quiz, question 2 of 8: A component has a potential difference of 3 V across it and a current of 0.25 A through it. What is its resistance, in ohms (Ω)?
+    S134 (wrong): is it 0.25 divided by 3 so like 0.083 ohms
+    T134: Not quite: it's 12 Ω. Start from V = I R. You want R, so divide both sides by I: R = V ÷ I. Put the numbers in: R = 3 ÷ 0.25 = 12 The resistance is 12 Ω.
+    S135 (tapped "Next")
+    T135: Quiz, question 3 of 8: Which equation links charge flow, current and time?
+    [screenshot 58-exchange-135-phone.png and 58-exchange-135-laptop.png] exchange-135
+    S136 (try, tapped the button): Q = I t
+    T136: Yes, that's right. Charge flow = current × time. A correct rearrangement also scores, but write only one version.
+    S137 (tapped "Next")
+    T137: Quiz, question 4 of 8: What does the I-V characteristic of an ohmic conductor look like?
+    S138 (try, tapped the button): A straight line through the origin
+    T138: Yes, that's right. Its current is directly proportional to the potential difference.
+    [screenshot 59-exchange-138-phone.png and 59-exchange-138-laptop.png] exchange-138
+    [the student leaves]
+    [screenshot 60-end-phone.png and 60-end-laptop.png] end
+    [tutor-side time: 9.8 minutes over 138 exchanges]

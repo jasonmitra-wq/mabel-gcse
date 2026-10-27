@@ -2185,7 +2185,9 @@ function create(env) {
     return entry;
   }
   // KP_ORDER (e): a set-up line left at the end once its question is gone ("Picture a torch that…").
-  const SETUP_LINE = /^\W*(now )?(picture|imagine|suppose|say you|think about|think of|what if|here'?s|look at)\b/i;
+  const SETUP_LINE = KP_SHORT
+    ? /^\W*(now )?(picture|imagine|suppose|say (you|a|an|the|we)|think about|think of|what if|here'?s|look at)\b/i   // "Say a resistor at constant temperature …" (willing-student run T73)
+    : /^\W*(now )?(picture|imagine|suppose|say you|think about|think of|what if|here'?s|look at)\b/i;
   function _kpDropSetup(sents) {
     while (sents.length && SETUP_LINE.test(sents[sents.length - 1])) sents.pop();
     return sents;
@@ -2294,6 +2296,9 @@ function create(env) {
     // KP_ORDER: "next" at a practice question goes on (practice is optional), unmarked.
     const next = /^\W*(next|skip|no thanks|nah)\W*$/i.test(userText);
     if (KP_ORDER && P.pending.mode === 'order' && next) { P.pending = null; return (await _pilotStep()) || null; }
+    // KP_SHORT: no number but a question of hers ("one hour isnt in seconds is it so i need to like convert it first?"):
+    // answered first, then the same question again (it was taken as off topic: willing-student run S20).
+    if (KP_SHORT && !/\d/.test(userText) && /\?/.test(userText) && !IDK_REPLY.test(userText)) return _pilotAside(userText);
     // A mixed or quiz question: "next" counts as "don't know", so she is shown the answer and goes on.
     return _markNumber(KP_ORDER && next ? "I don't know" : userText);
   }
@@ -2529,7 +2534,7 @@ function create(env) {
     const list = xs => (xs.length <= 1 ? xs.join('') : `${xs.slice(0, -1).join(', ')} or ${xs[xs.length - 1]}`);
     let noun, can;
     if (w.id === 'circuit') {
-      const acts = [o.energy || o.redraw ? null : 'add a cell', o.switch ? 'open and close the switch' : null, o.resistor && !o.variable ? 'put the resistor in' : null,
+      const acts = [o.energy || o.redraw ? null : 'add a cell', o.switch ? 'open and close the switch' : null, o.resistor && !o.variable ? (KP_SHORT ? 'put the resistor in or take it out' : 'put the resistor in') : null,
         o.side ? 'move it' : null, o.redraw ? 'draw it another way' : null, o.energy ? 'run it for 10 seconds' : null].filter(Boolean);
       noun = `a working circuit with ${o.twoAmmeters ? 'two ammeters' : 'an ammeter'}${o.voltmeter ? ' and a voltmeter' : ''}`;
       can = `you can ${list(acts)}`;
@@ -3040,6 +3045,8 @@ function create(env) {
     const teaching = !_state.complete && !P.end && !P.queue.length && _ft().probed;
     const r = await _pilotReply(userText);
     if (!teaching || _state.complete || _pilot().end || _state.currentPointIndex !== idx || !r || !r.decision) return r;
+    // Not in the middle of her side question: the tutor's question would be dropped (willing-student run T9–S11).
+    if (_pilot().pending && ['aside', 'return'].includes(_pilot().pending.t)) return r;
     if (['pause', 'free', 'exit-offer', 'slides', 'carryon', 'start'].includes(r.decision.kind) || r.decision.farewell) return r;
     const K = _kp();
     K.teach = (K.teach || 0) + 1;

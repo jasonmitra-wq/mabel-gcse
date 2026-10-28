@@ -216,3 +216,4 @@ Not started on the pipeline. Already in place:
 | AI lesson order (2026-10-27, brief 2026-10-26 (2)) | site tests: 2 attempts that reached no lesson (tester fault), run 1, re-run | 3.57 (0.0599 + 1.5847 + 1.9277; the stopped attempt reported no cost) |
 | Shorter key points (2026-10-27, brief 2026-10-26 (3)) | site test 1 (p2-current-voltage, whole lesson); classifier checks 3 runs (57 calls) | 0.44 (0.4405 + 0.0025) |
 | Willing-student run (2026-10-27, brief 2026-10-26 (4)) | site test 1 (p2-current-voltage, whole lesson, --persona willing) | 1.76 (1.7573) |
+| Telling and halfway (2026-10-28, brief 2026-10-27) | site test 1 (p2-current-voltage, whole lesson, --persona willing) | 2.32 (2.3218) |

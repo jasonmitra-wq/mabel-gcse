@@ -229,7 +229,11 @@ const Teach = (() => {
   }
 
   // ── Open ─────────────────────────────────────────────────────
+  // TELL_FIX (e): each widget's element, by its transcript entry, kept across chat redraws.
+  let _cardEls = new WeakMap();
+
   function open(data, subtopicId, subtopicName, subject, opts = {}) {
+    _cardEls     = new WeakMap();
     _data        = data;
     _subtopicId  = subtopicId;
     _subtopicName = subtopicName;
@@ -688,7 +692,11 @@ const Teach = (() => {
         // PILOT_FIX: the picture sequence, a worked example or a widget under the message.
         if (t.role === 'assistant' && Array.isArray(t.pictures)) t.pictures.forEach(pic => thread.appendChild(_pictureEl(pic)));
         if (t.role === 'assistant' && t.card && typeof LessonExtras !== 'undefined') {
-          const card = LessonExtras.chatCard(t.card, _subject);
+          // TELL_FIX (e): a widget is built once and moved, not rebuilt, when the chat redraws,
+          // so her predictions and its settings stay (it started again from prediction 1 before).
+          const keep = _core.TELL_FIX && t.card.type === 'widget';
+          let card = keep ? _cardEls.get(t) : null;
+          if (!card) { card = LessonExtras.chatCard(t.card, _subject); if (keep && card) _cardEls.set(t, card); }
           if (card) thread.appendChild(card);
         }
         // Choices only under the newest message: once she answers, they go.

@@ -396,10 +396,15 @@ async function lessonMode(page, run, id) {
     if (!WHOLE_LESSON) return;
     // KP_SHORT (b): how the site read her last message, from the lesson's saved state.
     const read = await page.evaluate(k => {
-      try { const s = JSON.parse(localStorage.getItem(k) || 'null'); const u = s && [...(s.transcript || [])].reverse().find(x => x.role === 'user'); return u && u.cls ? `${u.cls} (${u.clsBy})` : ''; }
-      catch { return ''; }
+      try {
+        const s = JSON.parse(localStorage.getItem(k) || 'null'); const tr = (s && s.transcript) || [];
+        const u = [...tr].reverse().find(x => x.role === 'user');
+        const a = tr[tr.length - 1];
+        return { cls: u && u.cls ? `${u.cls} (${u.clsBy})` : '', told: a && a.role === 'assistant' && a.told ? `${a.told}, ${String(a.text).split(/\s+/).filter(Boolean).length} words, key point ${a.pt + 1}` : '' };
+      } catch { return {}; }
     }, `mabel_teach_${id}`);
-    if (read) run.say(`  [S${n} read as: ${read}]`);
+    if (read.cls) run.say(`  [S${n} read as: ${read.cls}]`);
+    if (read.told) run.say(`  [T${n} told piece: ${read.told}]`);
     const seen = await page.evaluate(() => {
       const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || '';
       // The newest widget, named by the message it sits under: the page redraws the chat after
@@ -468,6 +473,7 @@ async function lessonMode(page, run, id) {
       // --persona willing: always taps Next where nothing is asked; says yes to the revision cards.
       if (nx && !/\?/.test(t) && (WILLING || coin() < 0.75)) tapped = nx;
       if (WILLING && offered.includes('Make my revision cards')) tapped = 'Make my revision cards';
+      if (WILLING && offered.includes('Keep going')) tapped = 'Keep going';   // the halfway stop (TELL_FIX)
     }
     if (tapped) {
       hist.push({ who: 'student', text: tapped });

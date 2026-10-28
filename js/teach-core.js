@@ -206,6 +206,18 @@ function create(env) {
   // a statement about the topic, off topic, "don't know" or "move on"; that
   // decides the path. Each sorting is kept on her message in the transcript.
   const KP_SHORT = KP_ORDER && env.kpShort !== false;
+  // Telling, marking and a halfway stop (brief docs/briefs/2026-10-27-telling-and-halfway.md),
+  // on by default with KP_SHORT. create({ call, tellFix: false }) keeps every prompt, decision
+  // and state exactly as before (tools/check-flag-identical.js). With it on: (a) the told part
+  // covers only the point's sentences not yet taught (the record, or the tutor's messages on the
+  // point so far); (b) each told piece is written by the model from those sentences and the
+  // conversation, at most 60 words, keeping their numbers, bold terms and key terms exactly
+  // (checked in code; on a failed check, the lesson's sentences); (c) the verdict on her answer
+  // is decided once (code or the marking call), opens the message, and the model is told it and
+  // may not contradict it; (d) own-words marking marks only what the prompt she saw asked for;
+  // (e) the widget keeps its state across chat redraws (js/teach.js); (f) after the key point
+  // nearest the middle of the lesson: "Good place for a break. Your place is saved." (once).
+  const TELL_FIX = KP_SHORT && env.tellFix !== false;
   const KP_TEACH_MAX = 4;
   const KP_TEACH_TURNS = 8;   // all her messages while a point is taught (side questions too); then the rest is told
   const CLS = { call: env.classify ? (sys, user, tokens) => env.classify(sys, user, tokens) : null };
@@ -784,10 +796,16 @@ function create(env) {
     if (history) lines.push(history);
     lines.push(`${WHO_CAP} just said: "${userText}"`);
     if (TESTER_FIX4 && decision.kind !== 'checkin' && _asksMeaning(userText)) lines.push(`She is asking what a word or idea means. The FIRST sentence of your reply answers that, in everyday words, with an everyday comparison if one helps. Do not skip it. Only then go on, and if you ask again what you asked before, use other words.`);
-    if (FLOW_FIX) {
+    if (FLOW_FIX && TELL_FIX && ['correct', 'partly', 'wrong', 'idk'].includes(decision.mark)) {
+      // TELL_FIX (c): the verdict is decided; the opening words are added for you.
+      const v = { correct: 'right', partly: 'partly right', wrong: 'not right', idk: 'that she does not know' }[decision.mark];
+      lines.push(`The verdict on her answer is decided: ${v}. The words that say so are put at the start of your reply for you, so do not open with a verdict of your own (no "Yes", "Right", "Not quite"), and never say anything that contradicts it. ${decision.mark === 'correct' ? `Name what was right in a few words${KP_LOOP_FIX ? `; if she put it in her own everyday words, give the exam wording from the key point` : ''}.` : decision.mark === 'partly' ? `Say which part is right, then what is missing.` : `Give the right idea kindly, with one reason.`}`);
+    } else if (FLOW_FIX) {
       if (decision.mark === 'correct') lines.push(`Her answer is right. The FIRST sentence of your reply says so and names what was right, before anything else.${KP_LOOP_FIX ? ` If she put it in her own everyday words, the next sentence gives the exam wording from the key point.` : ''}`);
       if (decision.mark === 'partly') lines.push(`Her answer is partly right. The FIRST sentence of your reply says which part is right, then say what is missing.`);
       if (KP_LOOP_FIX && decision.mark === 'wrong') lines.push(`Her answer is not right. The FIRST sentence of your reply says so kindly ("Not quite"), before anything else.`);
+    }
+    if (FLOW_FIX) {
       const qs = _state.flow && _state.flow.correctQs.length ? _state.flow.correctQs.slice(-8) : [];
       const as = _state.flow && _state.flow.correctAs ? _state.flow.correctAs.slice(-8) : [];
       if (qs.length && _teachIndex(decision) != null) lines.push(`Questions she has already answered correctly in this lesson, with her answers — never ask any of them again, in any words, and never ask a question whose answer is one she has already given: ${qs.map((q, k) => `"${q}" (she said: "${as[k - qs.length + as.length] || ''}")`).join(' | ')}`);
@@ -2010,6 +2028,8 @@ function create(env) {
   }
   function _pilotCap(text) {
     let t = _pilotOneQuestion(text);
+    // TELL_FIX: words meant for the tutor, not her ("Since she's asked to move on, here's the last bit: …"; T106, 2026-10-28).
+    if (TELL_FIX) t = t.replace(/(^|[.!?]\s+)(?:since|as|because|now that) she(?:'s| has| is| wants| asked| said)[^,:.!?]*[,:]\s*(\w)/gi, (m, a, c) => `${a}${c.toUpperCase()}`);
     if (_wordCount(_stripMarkdown(t)) > PILOT_WORDS) t = _cutToWords(t, PILOT_WORDS) || t.split(/\s+/).slice(0, PILOT_WORDS).join(' ');
     return t;
   }
@@ -2039,6 +2059,51 @@ function create(env) {
 
   // (e) Which sentences of point idx a tutor message taught: at least half of a
   // sentence's content words are in it.
+  // TELL_FIX (a): a sentence is taught if the record says so, or if the tutor's messages on this
+  // point so far already hold most of its content words (it may have been taught in other words).
+  function _tfCovered(idx, j) {
+    const P = _pilot();
+    if (P.sent[idx][j]) return true;
+    const said = (_state.transcript || []).filter(t => t.role === 'assistant' && t.pt === idx).map(t => _stripMarkdown(t.text || '')).join(' ');
+    const have = new Set(_stems(said)), need = [...new Set(_stems(_points[idx].sentences[j]))];
+    return need.length > 0 && need.filter(w => have.has(w)).length / need.length >= 0.6;
+  }
+  // TELL_FIX (b): what a told piece must keep exactly: its numbers, and the bold and key terms it names.
+  function _tfMustKeep(idx, text) {
+    const p = _points[idx], low = String(text).toLowerCase();
+    const bold = [...String(p.content || '').matchAll(/<(dfn|strong|b)>([\s\S]*?)<\/\1>/g)].map(m => _stripHtml(m[2]).trim()).filter(Boolean);
+    const terms = (p.keyTerms || []).map(k => String(k.term).replace(/\s*\(.*?\)\s*/g, ' ').trim());
+    const words = [...new Set([...bold, ...terms])].filter(w => w && low.includes(w.toLowerCase()));
+    return { words, nums: [...new Set(String(text).match(/\d+(?:\.\d+)?/g) || [])] };
+  }
+  // TELL_FIX (b): one told piece, written to read on its own; checked in code, else the lesson's sentences.
+  async function _tfTell(s) {
+    const idx = s.idx, src = s.text, keep = _tfMustKeep(idx, src);
+    const user = [
+      _recentHistoryBlock(true),
+      `Tell her the next part of the key point below, in plain words, so that it reads on its own after the conversation so far. Say exactly what these lesson sentences say, and nothing more: "${src}"`,
+      keep.words.length || keep.nums.length ? `Keep these exactly as they are written: ${[...keep.words.map(w => `"${w}"`), ...keep.nums].join(', ')}.` : '',
+      `One idea. At most 60 words. Do not ask a question. Do not repeat anything already said above.`,
+      _pointBrief(_points[idx]),
+    ].filter(Boolean).join('\n\n');
+    try {
+      const out = String(await AI.call(_buildSystemPrompt(idx), user, 200) || '').trim();
+      const plain = _stripMarkdown(out), low = plain.toLowerCase();
+      const numOk = n => new RegExp(`(^|[^\\d.])${n.replace('.', '\\.')}(?![\\d])`).test(plain);
+      if (out && _wordCount(plain) <= 60 && !/\?/.test(plain) && !_looksTruncated(plain)
+          && keep.words.every(w => low.includes(w.toLowerCase())) && keep.nums.every(numOk)) {
+        // A sentence of the piece that the tutor has already said on this point is left out (T89 in the 2026-10-28 run).
+        const said = new Set(_stems((_state.transcript || []).filter(t => t.role === 'assistant' && t.pt === idx).map(t => _stripMarkdown(t.text || '')).join(' ')));
+        const fresh = _sentences(out).map(x => x.trim()).filter(x => { const st = [...new Set(_stems(x))]; return !st.length || st.filter(w => said.has(w)).length / st.length < 0.7; });
+        const kept = fresh.join(' ').trim(), klow = _stripMarkdown(kept).toLowerCase();
+        if (kept && keep.words.every(w => klow.includes(w.toLowerCase())) && keep.nums.every(n => new RegExp(`(^|[^\\d.])${n.replace('.', '\\.')}(?![\\d])`).test(_stripMarkdown(kept)))) return { text: kept, by: 'model' };
+      }
+    } catch (e) { _logError('told piece', e); }
+    // The lesson's sentences, with the one before as a lead-in when this one leans on it ("So …", "It …").
+    const j0 = s.js[0], prev = j0 > 0 ? _points[idx].sentences[j0 - 1] : '';
+    const lead = prev && /^(it|its|it's|this|that|these|those|they|so|to find it|to do this)\b/i.test(src) && _wordCount(`${prev} ${src}`) <= 60;
+    return { text: lead ? `${prev} ${src}` : src, by: 'lesson' };
+  }
   function _pilotMarkTaught(idx, text) {
     if (idx == null || !_points[idx]) return;
     const P = _pilot(), have = new Set(_stems(_stripMarkdown(text)));
@@ -2103,7 +2168,9 @@ function create(env) {
     return _pilotGlossary().filter(e => e.re.test(plain) && !P.known.includes(e.key)
       && !(e.lesson && e.lesson !== _pctx.lessonId && _pctx.opened(e.lesson))
       && !e.re.test(hers) && !e.re.test(taught) && !(tag && tag.includes(e.key))
-      && !(KP_ORDER && e.re.test(said)));
+      && !(KP_ORDER && e.re.test(said))
+      // TELL_FIX: only this topic's words ("works" matched Energy's "work", "higher than normal" Waves' "normal").
+      && !(TELL_FIX && e.lesson && String(e.lesson).split('-')[0] !== String(_pctx.lessonId || '').split('-')[0]));
   }
   function _pilotDefLine(e) {
     const def = String(e.def).replace(/\s+/g, ' ').trim();
@@ -2362,6 +2429,8 @@ function create(env) {
   function _pilotTellChunks(idx) {
     const P = _pilot(), s = _points[idx].sentences, out = [];
     let cur = null;
+    // TELL_FIX (a): sentences the tutor has already taught in its own words count as taught.
+    if (TELL_FIX) s.forEach((x, j) => { if (!P.sent[idx][j] && _tfCovered(idx, j)) P.sent[idx][j] = true; });
     s.forEach((x, j) => {
       if (P.sent[idx][j]) { cur = null; return; }
       // KP_SHORT (a): bigger pieces (up to 50 words) so the told part takes fewer turns.
@@ -2369,7 +2438,8 @@ function create(env) {
       if (cur && cur.js[cur.js.length - 1] === j - 1 && _wordCount(cur.text) < under && _wordCount(cur.text) + _wordCount(x) <= most) { cur.js.push(j); cur.text += ' ' + x; return; }
       cur = { t: 'tell', idx, js: [j], text: x };
       // A sentence that leans on the one before ("To find it, …", "So …") brings it along.
-      if (j > 0 && P.sent[idx][j - 1] && /^(it|its|it's|this|that|these|those|they|so|to find it|to do this)\b/i.test(x)) cur.text = `${s[j - 1]} ${x}`;
+      // (TELL_FIX: not here, so a taught sentence is never told again; the written piece gives its own lead-in.)
+      if (!TELL_FIX && j > 0 && P.sent[idx][j - 1] && /^(it|its|it's|this|that|these|those|they|so|to find it|to do this)\b/i.test(x)) cur.text = `${s[j - 1]} ${x}`;
       out.push(cur);
     });
     // The lesson's own words, without the gaps its HTML tags left (" closed circuit .").
@@ -2644,8 +2714,24 @@ function create(env) {
   // (c) The mark is said first, whatever the model wrote.
   const SAYS_RIGHT = /^[^.!?]{0,60}\b(yes|yep|right|correct|exactly|spot on|that'?s it)\b/i;
   const SAYS_WRONG = /^[^.!?]{0,60}\b(not quite|no|not right|not correct|nearly|close|partly|part of it)\b/i;
+  // TELL_FIX (c): told to the model wherever the verdict is decided before it writes.
+  const VERDICT_NOTE = `The words that give this verdict are put at the start of your reply for you: do not open with a verdict of your own, and never say anything that contradicts it.`;
   function _kpMarkFirst(text, mark) {
     const t = String(text || '').trim(), plain = _stripMarkdown(t);
+    // TELL_FIX (c): the verdict, decided once, opens the message in code's words; the model's own opening
+    // verdict is taken off, and any sentence that contradicts the verdict is dropped.
+    const V = TELL_FIX ? { correct: `Yes, that's right.`, partly: `Partly right.`, wrong: `Not quite.`, idk: `That's fine.` }[mark] : null;
+    if (V) {
+      const OPEN = /^\W*(yes|yep|yeah|right|correct|exactly|spot on|that'?s (it|right|correct|fine)|good|great|nice|well done|not quite|not right|no|nope|nearly|close|partly( right)?|no worries|that'?s okay)\b[\s,.:;!—–-]*/i;
+      let sents = _sentences(t).map(x => x.trim()).filter(Boolean);
+      if (sents.length) {
+        sents[0] = sents[0].replace(OPEN, '').trim();
+        if (!sents[0] || !/[a-z0-9]/i.test(sents[0])) sents.shift(); else sents[0] = sents[0].charAt(0).toUpperCase() + sents[0].slice(1);
+      }
+      if (mark === 'correct') sents = sents.filter(x => !/\b(not quite|not right|that'?s wrong|incorrect|isn'?t right)\b/i.test(x));
+      if (mark === 'wrong' || mark === 'idk') sents = sents.filter(x => !/\b(that'?s right|exactly right|got it exactly|spot on|you'?re right|is correct)\b/i.test(x));
+      return `${V} ${sents.join(' ')}`.trim();
+    }
     // KP_ORDER: a right answer is never opened with "Not quite" ("Not quite, … so you've got it exactly right").
     const WRONG_OPEN = /^\W*(not quite|not right|no)\b[\s,.:;!—–-]*/i;
     if (KP_ORDER && mark === 'correct' && WRONG_OPEN.test(plain)) {
@@ -2669,7 +2755,8 @@ function create(env) {
     const P = _pilot(), e = P.end;
     P.end = null;
     if (!e) return;
-    const done = P.sent[e.idx].every(Boolean);
+    // TELL_FIX: a sentence the tutor taught in its own words counts as taught for the tick.
+    const done = TELL_FIX ? P.sent[e.idx].every((x, j) => x || _tfCovered(e.idx, j)) : P.sent[e.idx].every(Boolean);
     _state.coverage[e.idx] = (!e.skipped && done) || _state.coverage[e.idx] === true;
     if (e.how) _flow().how[e.idx] = e.how;
     _state.retriedCurrent = false;
@@ -2691,6 +2778,11 @@ function create(env) {
     const ready = n.readiness && Array.isArray(n.readiness.questions)
       ? [...n.readiness.questions.map((q, k) => ({ t: 'mc', kind: 'ready', idx: e.nextIndex, k, q })), { t: 'ready-recap', idx: e.nextIndex }] : [];
     P.queue.unshift(...ready, { t: 'open', idx: e.nextIndex });
+    // TELL_FIX (f): after the key point nearest the middle of the lesson, a break is offered, once.
+    if (TELL_FIX && !P.halfOffered && _points.length > 2 && e.idx === Math.floor((_points.length - 1) / 2)) {
+      P.halfOffered = true;
+      P.queue.unshift({ t: 'half' });
+    }
   }
 
   // Runs the next step and returns its message.
@@ -2701,6 +2793,19 @@ function create(env) {
     const p = s.idx != null ? _points[s.idx] : null;
     switch (s.t) {
       case 'tell': {
+        // TELL_FIX (a), (b): a sentence taught since this piece was queued is not told again; the piece is written to read on its own.
+        if (TELL_FIX) {
+          // A sentence taught since this piece was queued is recorded as taught, so the point can still be ticked
+          // (left unrecorded, key points 1, 3 and 6 were never ticked in the 2026-10-28 run).
+          s.js = s.js.filter(j => { if (_tfCovered(s.idx, j)) { P.sent[s.idx][j] = true; return false; } return true; });
+          if (!s.js.length) return _pilotStep();
+          s.text = s.js.map(j => _points[s.idx].sentences[j]).join(' ').replace(/\s+([.,;:!?)])/g, '$1').replace(/\(\s+/g, '(').replace(/\s{2,}/g, ' ');
+          const told = await _tfTell(s);
+          const beforeT = _pilotDefsFor(told.text);
+          s.js.forEach(j => { P.sent[s.idx][j] = true; });
+          const picsT = _pilotPicturesDue(s.idx);
+          return _pilotOut(told.text, { pt: s.idx, told: told.by, ...(picsT.length ? { pictures: picsT } : {}), ...(beforeT.length ? { before: beforeT } : {}) }, 'pilot', s.idx);
+        }
         // (h) A word this sentence only names ("measured … with an ammeter") is explained first.
         const before = _pilotDefsFor(s.text);
         s.js.forEach(j => { P.sent[s.idx][j] = true; });
@@ -2769,6 +2874,9 @@ function create(env) {
         const reply = await _callWithLengthGuard(_buildSystemPrompt(0), _firstOpeningPrompt(), true);
         return _pilotOut(reply, { pt: 0, opening: true }, 'pilot', 0);
       }
+      case 'half':   // TELL_FIX only
+        P.pending = { t: 'half' };
+        return _pilotOut(`Good place for a break. Your place is saved.`, { choices: ['Keep going', 'Stop here'] });
       case 'cards':   // KP_SHORT only
         P.pending = { t: 'cards' };
         return _pilotOut(`One last thing: shall we make revision cards from this lesson? They go in your card deck, so you can test yourself later.`, { choices: ['Make my revision cards', 'No thanks'] });
@@ -2861,6 +2969,7 @@ function create(env) {
     const user = [
       `${WHO_CAP} just answered your check question${last ? ` ("${last.q}")` : ''}: "${userText}"`,
       ...(m ? [m.mark === 'correct' ? `Her answer is right.` : m.mark === 'partly' ? `Her answer is partly right.` : `Her answer is not right.`] : []),
+      ...(TELL_FIX && m ? [VERDICT_NOTE] : []),
       `In ONE short sentence, react: if she is right, say so and what was right; if not, kindly give her the answer. Do not ask a question and do not teach anything new.`,
     ].join('\n\n');
     let reply = await _callWithLengthGuard(_buildSystemPrompt(_state.complete ? null : _state.currentPointIndex), user, false, 30);
@@ -2899,15 +3008,34 @@ function create(env) {
     return _pilotOut(r.text, r.extra, 'pilot', idx);
   }
 
+  // TELL_FIX (d): of a point's own-words points, the ones its prompt asks for (one small call, kept per point).
+  // "What do potential difference and resistance each do to the current?" does not ask for "V = I R links them".
+  async function _tfAskedPoints(idx, prompt, list) {
+    const P = _pilot();
+    if (!P.asked || typeof P.asked !== 'object') P.asked = {};
+    if (Array.isArray(P.asked[idx])) return P.asked[idx].map(k => list[k]).filter(Boolean);
+    let keep = list.map((x, k) => k);
+    try {
+      const sys = `You check a question against the points of a model answer. Reply with numbers only, separated by commas.`;
+      const user = `The question: "${_stripHtml(prompt)}"\nThe points:\n${list.map((x, k) => `${k + 1}. ${x}`).join('\n')}\n\nWhich of these points does the question ask for? A point is asked for only if answering the question needs it. Reply with their numbers.`;
+      const nums = (String(await (CLS.call || AI.call)(sys, user, 20) || '').match(/\d+/g) || []).map(Number).filter(n => n >= 1 && n <= list.length);
+      if (nums.length) keep = [...new Set(nums)].sort((a, b) => a - b).map(n => n - 1);
+    } catch (e) { _logError('own-words points', e); }
+    P.asked[idx] = keep;
+    return keep.map(k => list[k]);
+  }
   // (f) Her own-words line, marked against the lesson's points.
   async function _pilotOwn(userText) {
     const P = _pilot(), idx = P.pending.idx;
     P.pending = null;
     const ow = _points[idx].ownWords;
-    const list = ow.points.map(_stripHtml);
+    let list = ow.points.map(_stripHtml);
+    // TELL_FIX (d): only the points the prompt she saw asks for are marked (or shown when she does not know).
+    if (TELL_FIX) list = await _tfAskedPoints(idx, ow.prompt, list);
     if (IDK_REPLY.test(userText) || _wordCount(userText) < 2) return _pilotOut(`No problem. A good line would say: ${list.join('; ')}.`, { pt: idx }, 'pilot', idx);
     try {
       const user = [
+        ...(TELL_FIX ? [`The question she was asked: "${_stripHtml(ow.prompt)}"`] : []),
         `She wrote the idea of this key point in her own words, in one line: "${userText}"`,
         `The points a good line includes: ${list.map(x => `"${x}"`).join(', ')}.`,
         `In one or two short sentences, say plainly which of these points her line gets right, and which are missing or wrong, if any, using the points' own words.${KP_ORDER ? ` Speak to her as "you" ("Your line gets…"), never "her" or "she".` : ''} Do not ask a question. At most 45 words.`,
@@ -2995,6 +3123,12 @@ function create(env) {
         P.pending = null;
         return (await _pilotStep()) || null;
       }
+      case 'half':   // TELL_FIX only: "Stop here" ends cleanly; next time the lesson starts at the next key point
+        P.pending = null;
+        if (/\b(stop|break|later|done|bye)\b/i.test(userText) && !/\bkeep going\b/i.test(userText)) {
+          return { reply: `See you next time. Your place is saved: you'll start with the next key point.`, recap: null, decision: { kind: 'pause', idx: _state.currentPointIndex, farewell: true } };
+        }
+        return (await _pilotStep()) || null;
       case 'cards':   // KP_SHORT only: the page saves them (decision.pilot.saveCards)
         P.pending = null;
         if (/\b(make|yes|yeah|yep|sure|ok|okay|go on|please)\b/i.test(userText) && !/^\W*(no|nah|nope)\b/i.test(userText)) {
@@ -3063,6 +3197,8 @@ function create(env) {
     const P = _pilot();
     // KP_LOOP_FIX (d): a goodbye carries farewell, so the page swaps the box for buttons and it is sent once.
     const bye = r => { if (KP_LOOP_FIX && r && r.decision && r.decision.kind === 'pause') r.decision.farewell = true; return r; };
+    // TELL_FIX (f): her answer to the halfway stop comes before the general leaving check ("Stop here" is hers to give).
+    if (TELL_FIX && P.pending && P.pending.t === 'half') { const r = await _pilotPending(userText); if (r) return r; }
     if (RESPECT_EXIT && !_state.complete) { const r = await _respectTurn(userText); if (r) { P.pending = null; return bye(r); } }
     if (RESPECT_EXIT && _state.complete && _wantsExit(userText)) return { reply: _exitLine(), recap: null, decision: { kind: 'free', ...(KP_LOOP_FIX ? { farewell: true } : {}) } };
     if (!_state.complete && _wantsPause(userText)) {
@@ -3203,6 +3339,7 @@ function create(env) {
         _recentHistoryBlock(false),
         `${WHO_CAP} just said: "${userText}"`,
         mark === 'correct' ? `Her answer is right.` : mark === 'partly' ? `Her answer is partly right.` : mark ? `Her answer is not right.` : '',
+        TELL_FIX && mark ? VERDICT_NOTE : '',
         `In ONE or TWO short sentences, react to her answer: if it is right, say so and name what was right; if not, kindly give the right answer to the question you asked${last ? ` ("${last.q}")` : ''}, copying any number and unit from the content. Do not teach anything else, do not start anything new, and do not ask any question.`,
         _pointBrief(_points[idx]),
       ].filter(Boolean).join('\n\n');
@@ -3246,7 +3383,7 @@ function create(env) {
   }));
   }
 
-  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, KP_LOOP_FIX, KP_ORDER, KP_SHORT, _kpClear, _kpClassifyPrompt, _kpWaitingQ, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
+  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, KP_LOOP_FIX, KP_ORDER, KP_SHORT, TELL_FIX, _kpClear, _kpClassifyPrompt, _kpWaitingQ, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
 }
 
 return { create, TUTOR_SONNET, TUTOR_MODEL, TUTOR_MODEL_SONNET, TUTOR_MODEL_HAIKU, tutorParams, CLASSIFIER_MODEL, classifierParams, CLASSIFIER_COST_IN, CLASSIFIER_COST_OUT };

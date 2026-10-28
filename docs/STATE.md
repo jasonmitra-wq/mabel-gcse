@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, A9 (evidence pilot gate). Brief docs/briefs/2026-10-19-evidence-layer.md done (steps 0–10); waiting for Mabel's quick check, both lessons and the post-tests; the delayed test unlocks a week after both post-tests, then tools/pilot/analyse.js.
+Runbook position: Phase A, A9: evidence pilot gate. AI lesson ready for Mabel (known issues in ESCALATIONS 2026-10-28). Brief docs/briefs/2026-10-19-evidence-layer.md done (steps 0–10); waiting for Mabel's quick check, both lessons and the post-tests; the delayed test unlocks a week after both post-tests, then tools/pilot/analyse.js.
 
 ## Runbook v3 switch (2026-10-19)
 
@@ -219,3 +219,4 @@ Not started on the pipeline. Already in place:
 | Telling and halfway (2026-10-28, brief 2026-10-27) | site test 1 (p2-current-voltage, whole lesson, --persona willing) | 2.32 (2.3218) |
 | Last fixes (2026-10-28, brief 2026-10-27 (2)) | marking check 1 run (30 calls); classifier check-questions 1 run (10 calls); site test 1 (p2-current-voltage, whole lesson, --persona willing); a first site test stopped on a billing error, no cost reported | 2.26 (0.1149 + 0.0006 + 2.1489) |
 | Extra willing-student run (2026-10-28, asked for by Jason) | site test 1 (p2-current-voltage, whole lesson, --persona willing) | 2.38 (2.3796) |
+| Small fixes (2026-10-28, brief 2026-10-28-small-fixes) | marking check --run --batch, 40 calls to claude-sonnet-5-5 | 0.08 (0.0772) |

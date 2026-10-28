@@ -37,6 +37,13 @@ on. Never ask Jason anything except the STOP cases in section 2.
   keep running the old copy. Fix by raising that file's ?v= number in
   index.html. (Added 2026-10-27, after 08a2083 and f2c9bbd changed five
   scripts without new numbers.)
+- A task that changes js/teach-core.js also runs
+  `node tools/check-kp-run.js` (free, no API): the scripted key-point
+  run through both pilot lessons. It fails if an equation is used before
+  it is stated, a verdict is said twice, the answer to her question opens
+  with a verdict, an added "The answer:" line starts with a bare pronoun,
+  a widget is shown twice, or a key point is not ticked. (Added
+  2026-10-28, brief docs/briefs/2026-10-28-small-fixes.md.)
 
 ## 2. STOP cases (the only times to wait)
 

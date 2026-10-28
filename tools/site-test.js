@@ -388,7 +388,7 @@ async function lessonMode(page, run, id) {
   let widgetsSeen = 0, rng = 7;
   const widgetKeys = new Set();   // widgets already tried, by the message they sit under
   const coin = () => { rng = (rng * 1103515245 + 12345) >>> 0; return rng / 4294967296; };
-  let closing = 0, diagramsSeen = 0, lastCounter = '', predSeen = 0;
+  let closing = 0, diagramsSeen = 0, lastCounter = '', predSeen = 0, widgetsInChat = 0;
   // After each tutor turn (--whole-lesson): the covered counter, and any new
   // predict-first widget, tried: a prediction tapped, then what opens checked
   // against the message's own words (two ammeters, a switch, cells).
@@ -524,10 +524,22 @@ async function lessonMode(page, run, id) {
     const seen = await page.evaluate(() => {
       const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || '';
       const pred = document.querySelector('#teachThread .wdg-pred');
-      return { counter: hdr.trim(), pred: pred ? pred.innerText.trim().split('\n')[0] : '' };
+      // Every widget in the chat, named by the tutor message it sits under (2026-10-28 run: a widget made at T17
+      // was logged "shown under T19", the turn on which its prediction first had text; there was one widget).
+      const under = [...document.querySelectorAll('#teachThread .wdg')].map(el => {
+        let b = el; while (b && b.parentElement && b.parentElement.id !== 'teachThread') b = b.parentElement;
+        let p = b ? b.previousElementSibling : null; while (p && !p.classList.contains('askme-a-bubble')) p = p.previousElementSibling;
+        return p ? p.innerText.trim().slice(0, 60) : '?';
+      });
+      return { counter: hdr.trim(), pred: pred ? pred.innerText.trim().split('\n')[0] : '', under };
     });
     if (seen.counter && seen.counter !== lastCounter) { if (lastCounter) run.say(`[counter now "${seen.counter}" after T${n}]`); lastCounter = seen.counter; }
-    if (seen.pred && !predSeen) { predSeen = n; run.say(`[predict-first widget shown under T${n}: "${seen.pred}"]`); await page.evaluate(() => document.querySelector('#teachThread .wdg-pred').scrollIntoView({ block: 'center' })); await shoot(page, run, `widget-${n}`); }
+    if (seen.under.length > widgetsInChat) {
+      seen.under.slice(widgetsInChat).forEach(u => run.say(`[widget ${++widgetsInChat} in the chat, under the message "${u}"]`));
+      const dup = seen.under.filter((u, k) => seen.under.indexOf(u) !== k);
+      run.check('each widget appears once, under its own message', !dup.length, dup.length ? `two widgets under "${dup[0]}"` : `${seen.under.length} widget(s)`);
+    }
+    if (seen.pred && !predSeen) { predSeen = n; run.say(`[predict-first widget's prediction first has text after T${n}: "${seen.pred}"]`); await page.evaluate(() => document.querySelector('#teachThread .wdg-pred').scrollIntoView({ block: 'center' })); await shoot(page, run, `widget-${n}`); }
     await afterTurn(n);
     if (UNTIL_POINT_END && predSeen && !/^0\//.test(lastCounter)) { run.say(`[stopped: key point 1 ended (counter "${lastCounter}") and its predict-first widget showed, at T${predSeen}]`); break; }
     if (fixed === 'bye, got to go') { await shoot(page, run, `goodbye-${n}`); run.say('[the student leaves]'); break; }

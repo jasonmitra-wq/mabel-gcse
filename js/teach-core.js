@@ -1633,6 +1633,40 @@ function create(env) {
     return qs.length ? { said: last.text, q: qs[qs.length - 1].trim() } : null;
   }
 
+  // MARK_FIX (d): a sentence whose subject is a bare pronoun.
+  const MF_PRONOUN = /^\W*(it|its|they|their|them|this|that|these|those|he|she|which)\b/i;
+  // MARK_FIX (a): a worked example or practice question never uses an equation the tutor has not stated in this
+  // lesson (V = I R at T33, E = Q V at T120, 2026-10-28 run). The line that states it, or null once it is said.
+  function _mfEquationLine(eq) {
+    if (!MARK_FIX || !eq) return null;
+    const e = (_points || []).flatMap(p => (p.examBox || {}).equations || []).find(x => x.id === eq);
+    if (!e || !e.symbols) return null;
+    const sym = _eqFlat(e.symbols), words = _eqFlat(e.words);
+    const said = (_state.transcript || []).filter(x => x.role === 'assistant')
+      .some(x => { const f = _eqFlat(_stripMarkdown(x.text || '')); return f.includes(sym) || (words && f.includes(words)); });
+    return said ? null : `The equation is ${_stripHtml(e.symbols)}: ${_stripHtml(e.words)}.`;
+  }
+  // The entry for a message that uses equation eq, with the line that states it shown first if needed.
+  function _mfWithEquation(eq, extra) {
+    const line = _mfEquationLine(eq);
+    return line ? { ...extra, before: [line, ...(extra.before || [])] } : extra;
+  }
+  // MARK_FIX (c): a message answering her question opens with no verdict of its own ("Not quite "no matter what".",
+  // S74): she gave no answer to be marked there. A "Yes" or "No" that answers her question is kept.
+  const MF_VERDICT = /^\W*(not quite|not right|partly right|partly|that'?s (right|correct|it|wrong)|exactly|spot on|correct|incorrect|well done|good question|great question|nice)\b[\s,.:;!—–-]*/i;
+  function _mfNoVerdict(text) {
+    const sents = _sentences(String(text || '')).map(x => x.trim()).filter(Boolean);
+    if (!sents.length) return text;
+    const yn = (sents[0].match(/^\W*(yes|no|yeah|nope)\b[\s,.:;!—–-]*/i) || [''])[0];
+    let rest = sents[0].slice(yn.length);
+    if (!MF_VERDICT.test(rest)) return text;
+    rest = rest.replace(MF_VERDICT, '').trim();
+    // What is left of a verdict sentence that only quoted her ('"no matter what".') goes with it.
+    if (!rest || !/[a-z0-9]/i.test(rest) || /^["'“‘]/.test(rest)) sents.shift();
+    else sents[0] = rest.charAt(0).toUpperCase() + rest.slice(1);
+    const out = sents.join(' ');
+    return yn ? `${yn.replace(/[\s,.:;!—–-]+$/, '')}. ${out}`.trim() : out || text;
+  }
   // MARK_FIX (b): a "Not quite" (or "Partly right", "That's fine") with no question must hold the answer:
   // the lesson sentence (content, exam box or points to remember) that best answers the question she was
   // asked; if the message does not already say most of it, it is added.
@@ -1640,7 +1674,10 @@ function create(env) {
     const idx = _state.currentPointIndex, p = _points[idx], last = _lastQuestion();
     if (!p || !last) return text;
     const qs = new Set(_stems(last.q));
-    const cands = [...p.sentences, ..._mfRules(idx)].map(s => String(s).trim()).filter(Boolean);
+    let cands = [...p.sentences, ..._mfRules(idx)].map(s => String(s).trim()).filter(Boolean);
+    // MARK_FIX (d): a sentence that opens with a bare pronoun ("It gives energy to the charge", T114) comes with the
+    // sentence before it, which names what it is; with none to lean on, it is not used.
+    if (MARK_FIX) cands = cands.map((c, k) => !MF_PRONOUN.test(c) ? c : k > 0 && k < p.sentences.length && !MF_PRONOUN.test(cands[k - 1]) ? `${cands[k - 1]} ${c}` : null).filter(Boolean);
     let best = null, score = 0;
     for (const c of cands) { const st = new Set(_stems(c)); const n = [...qs].filter(w => st.has(w)).length; if (n > score) { score = n; best = c; } }
     if (!best || !score) return text;
@@ -2403,7 +2440,7 @@ function create(env) {
     if (!PracticeLib || !PracticeLib.has(eq)) return null;
     const q = KP_LOOP_FIX ? _kpFresh(eq) : PracticeLib.make(eq, Math.floor(_rand() * 1e9) + 1);
     P.pending = { t: 'num', q, mode };
-    return _pilotOut(`${label} ${q.question}`, {});
+    return _pilotOut(`${label} ${q.question}`, _mfWithEquation(eq, {}));
   }
   async function _markNumberOrNext(userText) {
     const P = _pilot();
@@ -2780,6 +2817,14 @@ function create(env) {
         sents[0] = sents[0].replace(OPEN, '').trim();
         if (!sents[0] || !/[a-z0-9]/i.test(sents[0])) sents.shift(); else sents[0] = sents[0].charAt(0).toUpperCase() + sents[0].slice(1);
       }
+      // MARK_FIX (b): the verdict once: what is left of the model's own ("Yes, that's right." leaves "That's right.",
+      // T54, T83) is taken off too, sentence by sentence, until the message says something else.
+      while (MARK_FIX && sents.length && MF_VERDICT.test(sents[0])) {
+        const rest = sents[0].replace(MF_VERDICT, '').trim();
+        if (!rest || !/[a-z0-9]/i.test(rest)) { sents.shift(); continue; }
+        sents[0] = rest.charAt(0).toUpperCase() + rest.slice(1);
+        break;
+      }
       if (mark === 'correct') sents = sents.filter(x => !/\b(not quite|not right|that'?s wrong|incorrect|isn'?t right)\b/i.test(x));
       if (mark === 'wrong' || mark === 'idk') sents = sents.filter(x => !/\b(that'?s right|exactly right|got it exactly|spot on|you'?re right|is correct)\b/i.test(x));
       const out = `${V} ${sents.join(' ')}`.trim();
@@ -2883,14 +2928,14 @@ function create(env) {
         if (mark) P.pending = { t: 'worked', eq: can ? eq : null, x, ...(KP_SHORT ? { idx: s.idx, more } : {}) };
         const label = KP_SHORT ? `Worked example` : `Worked example${n > 1 ? ` ${s.j + 1} of ${n}` : ''}`;
         return _pilotOut(`${label}: ${_stripHtml(x.question)} Tap the button under it to see each step.`,
-          { pt: s.idx, card: { type: 'worked', question: x.question, steps: (x.steps || []).map(st => st.text) }, ...(can ? { choices: ['Try another', 'Next'] } : more != null ? { choices: ['Show me another', 'Next'] } : mark ? { choices: ['Next'] } : {}) }, 'pilot', s.idx);
+          _mfWithEquation(eq, { pt: s.idx, card: { type: 'worked', question: x.question, steps: (x.steps || []).map(st => st.text) }, ...(can ? { choices: ['Try another', 'Next'] } : more != null ? { choices: ['Show me another', 'Next'] } : mark ? { choices: ['Next'] } : {}) }), 'pilot', s.idx);
       }
       case 'practice': {   // KP_ORDER only: "Try another", at most KP_PRACTICE_MAX
         const eqs = _kpEquations(s.idx), n = s.n || 0;
         if (!eqs.length || n >= KP_PRACTICE_MAX) return _pilotStep();
         const q = _kpFresh(eqs[n % eqs.length]);
         P.pending = { t: 'num', q, mode: 'order', idx: s.idx, n };
-        return _pilotOut(`${n ? 'Another one' : 'Your turn'}: ${q.question}`, { pt: s.idx }, 'pilot', s.idx);
+        return _pilotOut(`${n ? 'Another one' : 'Your turn'}: ${q.question}`, _mfWithEquation(eqs[n % eqs.length], { pt: s.idx }), 'pilot', s.idx);
       }
       case 'widget':
         // KP_ORDER (g): the words say what is on screen: a prediction first, then the working widget.
@@ -2990,7 +3035,9 @@ function create(env) {
       `Add nothing new: no other idea, term or fact. Then ask ONE easy question that checks she has it: she must use the answer, not copy it from your message. That question ends your message. At most 50 words.`,
       idx != null ? _pointBrief(_points[idx]) : '',
     ].filter(Boolean).join('\n\n');
-    const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), user, true, 50);
+    let reply = await _callWithLengthGuard(_buildSystemPrompt(idx), user, true, 50);
+    // MARK_FIX (c): her question gets an answer, not a verdict (a statement of hers may be judged).
+    if (MARK_FIX && !statement) reply = _mfNoVerdict(reply);
     if (g) P.known.push(g.key);
     if (_state.checkinAsked) _state.checkinAsked = false;
     let back = P.pending && P.pending.t !== 'aside' && P.pending.t !== 'return' ? P.pending : (P.pending && P.pending.back) || null;
@@ -3233,13 +3280,13 @@ function create(env) {
     const idx = _state.complete ? null : _state.currentPointIndex;
     const user = [
       `${WHO_CAP} just said: "${userText}"`,
-      `Her message asks a question. Answer just that question, in one or two short sentences, in everyday words, using only the key point below. Do not say whether her answer to your question is right; that comes next. Do not ask a question.`,
+      `Her message asks a question. Answer just that question, in one or two short sentences, in everyday words, using only the key point below. Do not say whether her answer to your question is right; that comes next. Do not open with a verdict such as "Not quite" or "That's right". Do not ask a question.`,
       idx != null ? _pointBrief(_points[idx]) : '',
     ].filter(Boolean).join('\n\n');
     try {
       const out = await _callWithLengthGuard(_buildSystemPrompt(idx), user, false, 40);
       const kept = _sentences(out).map(x => x.trim()).filter(x => x && !/\?/.test(x)).join(' ');
-      return kept || null;
+      return (kept && _mfNoVerdict(kept)) || null;
     } catch (e) { _logError('her question first', e); return null; }
   }
   function _mfAttach(r) {
@@ -3462,7 +3509,7 @@ function create(env) {
   }));
   }
 
-  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, KP_LOOP_FIX, KP_ORDER, KP_SHORT, TELL_FIX, MARK_FIX, _mfRulesBlock, _kpClear, _kpClassifyPrompt, _kpWaitingQ, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
+  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, KP_LOOP_FIX, KP_ORDER, KP_SHORT, TELL_FIX, MARK_FIX, _mfRulesBlock, _mfWithAnswer, _kpClear, _kpClassifyPrompt, _kpWaitingQ, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
 }
 
 return { create, TUTOR_SONNET, TUTOR_MODEL, TUTOR_MODEL_SONNET, TUTOR_MODEL_HAIKU, tutorParams, CLASSIFIER_MODEL, classifierParams, CLASSIFIER_COST_IN, CLASSIFIER_COST_OUT };

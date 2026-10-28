@@ -217,3 +217,4 @@ Not started on the pipeline. Already in place:
 | Shorter key points (2026-10-27, brief 2026-10-26 (3)) | site test 1 (p2-current-voltage, whole lesson); classifier checks 3 runs (57 calls) | 0.44 (0.4405 + 0.0025) |
 | Willing-student run (2026-10-27, brief 2026-10-26 (4)) | site test 1 (p2-current-voltage, whole lesson, --persona willing) | 1.76 (1.7573) |
 | Telling and halfway (2026-10-28, brief 2026-10-27) | site test 1 (p2-current-voltage, whole lesson, --persona willing) | 2.32 (2.3218) |
+| Last fixes (2026-10-28, brief 2026-10-27 (2)) | marking check 1 run (30 calls); classifier check-questions 1 run (10 calls); site test 1 (p2-current-voltage, whole lesson, --persona willing); a first site test stopped on a billing error, no cost reported | 2.26 (0.1149 + 0.0006 + 2.1489) |

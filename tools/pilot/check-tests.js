@@ -193,6 +193,14 @@ for (const id of ['post-cv', 'post-comp', 'delayed']) {
 const delayedMis = new Set(T.TESTS.delayed.items.filter(i => i.kind === 'mis').map(i => i.id));
 if (!T.SHORT_CHECK) for (const i of misItems) if (!delayedMis.has(i.id)) fail('delayed', `misconception question ${i.id} from the quick check is not asked again`);
 
+// js/pilot/misconceptions.js (the AI lesson's marking, MARK_FIX) holds the same in-scope list as misconceptions.md.
+{
+  const M = require(path.join(ROOT, 'js', 'pilot', 'misconceptions.js'));
+  const part = misText.split(/^## /m).find(s => /^In scope/.test(s)) || '';
+  const md = [...part.matchAll(/^\| (M\d+) \| ([^|]+) \|/gm)].map(m => ({ id: m[1], text: m[2].trim() }));
+  if (JSON.stringify(md) !== JSON.stringify(M)) fail('js/pilot/misconceptions.js', 'differs from the in-scope table of tools/pilot/misconceptions.md (regenerate it)');
+}
+
 console.log(`${fails.length ? 'FAIL' : 'ok  '}  pilot tests — ${Object.values(T.TESTS).map(t => `${t.id} ${t.items.length}`).join(', ')}; misconceptions covered: quick check ${covered.size}, later tests ${laterCovered.size}/${inScope.size}`);
 fails.forEach(f => console.log(`  FAIL ${f}`));
 process.exit(fails.length ? 1 : 0);

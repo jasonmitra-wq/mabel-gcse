@@ -400,11 +400,15 @@ async function lessonMode(page, run, id) {
         const s = JSON.parse(localStorage.getItem(k) || 'null'); const tr = (s && s.transcript) || [];
         const u = [...tr].reverse().find(x => x.role === 'user');
         const a = tr[tr.length - 1];
-        return { cls: u && u.cls ? `${u.cls} (${u.clsBy})` : '', told: a && a.role === 'assistant' && a.told ? `${a.told}, ${String(a.text).split(/\s+/).filter(Boolean).length} words, key point ${a.pt + 1}` : '' };
+        // Tutor messages shown before this turn's last one (a word explained, her question answered first).
+        const ui = tr.map(x => x.role).lastIndexOf('user');
+        const before = tr.slice(ui + 1, -1).filter(x => x.role === 'assistant').map(x => String(x.text));
+        return { cls: u && u.cls ? `${u.cls} (${u.clsBy})` : '', before, told: a && a.role === 'assistant' && a.told ? `${a.told}, ${String(a.text).split(/\s+/).filter(Boolean).length} words, key point ${a.pt + 1}` : '' };
       } catch { return {}; }
     }, `mabel_teach_${id}`);
     if (read.cls) run.say(`  [S${n} read as: ${read.cls}]`);
     if (read.told) run.say(`  [T${n} told piece: ${read.told}]`);
+    (read.before || []).forEach(b => run.say(`  [T${n} shown first: ${b}]`));
     const seen = await page.evaluate(() => {
       const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || '';
       // The newest widget, named by the message it sits under: the page redraws the chat after

@@ -66,8 +66,24 @@ const HELD_OUT = [
   { text: 'is that the same as the ammeter one', tutor: 'A voltmeter is connected in parallel, across the component.', pending: { t: 'next' }, choices: ['Next'], want: 'question' },
 ];
 
+// Held out, check questions (brief 2026-10-27 last fixes, step 2e): written 2026-10-28 with their expected
+// class before any run; never used to tune.   node tools/check-classifier.js --check-qs --run
+const CHECK_QS = [
+  { text: 'so like does the current go back to the cell then', tutor: 'Where does the charge go after it passes through the lamp?', want: 'both' },
+  { text: 'wait is that why the wire gets hot', tutor: 'Energy is transferred to the wire when charge flows through it.', pending: { t: 'next' }, choices: ['Next'], want: 'question' },
+  { text: 'is it 0.5 amps', tutor: 'Your turn: 30 C of charge flows in 60 s. What is the current?', pending: { t: 'num', q: { question: '30 C of charge flows in 60 s. What is the current?' } }, want: 'answer' },
+  { text: 'so it goes across the lamp but why not in the loop', tutor: 'Where does the voltmeter go to measure the push across the lamp?', want: 'both' },
+  { text: 'so if you add more cells the lamp gets brighter right', tutor: 'What happens to the lamp when you add a second cell?', want: 'both' },
+  { text: 'does a bigger resistance mean less current then', tutor: 'What does a resistor do to the current in the loop?', want: 'both' },
+  { text: 'the ammeter?', tutor: 'Which meter measures the current?', want: 'answer' },
+  { text: 'hang on is a rheostat the same as a variable resistor', tutor: 'A variable resistor, or rheostat, has a slider.', pending: { t: 'next' }, choices: ['Next'], want: 'question' },
+  { text: 'so like the thermistor is the one that changes with temperature yeah, does the LDR do light', tutor: 'Which component\'s resistance changes with temperature?', want: 'both' },
+  { text: 'wait does that mean the graph goes through zero', tutor: 'What shape is the I-V graph of a resistor at constant temperature?', want: 'both' },
+];
+
 const run = process.argv.includes('--run');
 const heldOut = process.argv.includes('--held-out');
+const checkQs = process.argv.includes('--check-qs');
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', 'physics', 'p2-current-voltage.json'), 'utf8'));
 let calls = 0, costIn = 0, costOut = 0;
 async function classify(sys, user, tokens) {
@@ -87,7 +103,7 @@ async function classify(sys, user, tokens) {
   const core = TeachCore.create({ call: async () => '' });
   const points = core._buildPoints(data);
   let fails = 0, asked = 0;
-  for (const c of (heldOut ? HELD_OUT : CASES)) {
+  for (const c of (checkQs ? CHECK_QS : heldOut ? HELD_OUT : CASES)) {
     const state = core._freshState();
     state.firstTime = { probed: true, known: '' };
     state.transcript = [{ role: 'assistant', text: c.tutor, pt: 0, ...(c.choices ? { choices: c.choices } : {}) }, { role: 'user', text: c.text, pt: 0 }];
@@ -102,7 +118,7 @@ async function classify(sys, user, tokens) {
       asked++;
       const { sys, user } = core._kpClassifyPrompt(c.text, core._kpWaitingQ(), c.tutor);
       const raw = String(await classify(sys, user, 10)).toUpperCase();
-      const m = raw.match(/\b(ANSWER|QUESTION|STATEMENT|OFFTOPIC|IDK|MOVEON)\b/);
+      const m = raw.match(/\b(ANSWER|QUESTION|BOTH|STATEMENT|OFFTOPIC|IDK|MOVEON)\b/);
       got = m ? m[1].toLowerCase().replace('moveon', 'moveon') : `(no class: "${raw}")`;
       by = 'model';
     }
@@ -111,6 +127,6 @@ async function classify(sys, user, tokens) {
     console.log(`${ok ? 'ok  ' : 'FAIL'} ${by.padEnd(7)} want ${c.want.padEnd(9)} got ${String(got).padEnd(14)} "${c.text}"`);
   }
   const usd = costIn * TeachCore.CLASSIFIER_COST_IN + costOut * TeachCore.CLASSIFIER_COST_OUT;
-  console.log(`${fails ? 'FAIL' : 'ok  '}  classifier${heldOut ? " (held out)" : ""} — ${(heldOut ? HELD_OUT : CASES).length} messages, ${(heldOut ? HELD_OUT : CASES).filter(c => c.clear).length} clear in code${run ? `, ${asked} asked of ${TeachCore.CLASSIFIER_MODEL} (${calls} calls, ${costIn} in / ${costOut} out tokens, $${usd.toFixed(5)})` : ' (add --run to ask the classifier about the rest)'}`);
+  console.log(`${fails ? 'FAIL' : 'ok  '}  classifier${checkQs ? " (check questions, held out)" : heldOut ? " (held out)" : ""} — ${(checkQs ? CHECK_QS : heldOut ? HELD_OUT : CASES).length} messages, ${(checkQs ? CHECK_QS : heldOut ? HELD_OUT : CASES).filter(c => c.clear).length} clear in code${run ? `, ${asked} asked of ${TeachCore.CLASSIFIER_MODEL} (${calls} calls, ${costIn} in / ${costOut} out tokens, $${usd.toFixed(5)})` : ' (add --run to ask the classifier about the rest)'}`);
   process.exit(fails ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(1); });

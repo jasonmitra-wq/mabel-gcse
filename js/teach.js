@@ -251,6 +251,8 @@ const Teach = (() => {
       lessonId: subtopicId,
       glossary: typeof Glossary !== 'undefined' && Glossary.terms ? Glossary.terms(_subject) : [],
       opened: id => Store.hasOpened(id),
+      // MARK_FIX: the pilot lessons' known misconceptions, for marking her answers and for the tutor never to state.
+      misconceptions: typeof PilotMisconceptions !== 'undefined' && typeof Pilot !== 'undefined' && Pilot.LESSON_IDS.includes(subtopicId) ? PilotMisconceptions.map(m => m.text) : [],
       recall: opts.recall || null,
     });
 

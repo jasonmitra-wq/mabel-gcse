@@ -218,6 +218,16 @@ function create(env) {
   // (e) the widget keeps its state across chat redraws (js/teach.js); (f) after the key point
   // nearest the middle of the lesson: "Good place for a break. Your place is saved." (once).
   const TELL_FIX = KP_SHORT && env.tellFix !== false;
+  // Last fixes before Mabel (brief docs/briefs/2026-10-27-last-fixes.md), on by default with
+  // TELL_FIX. create({ call, markFix: false }) keeps every prompt, decision and state exactly as
+  // before (tools/check-flag-identical.js). With it on: (a) marking her free-text answers is given
+  // the key point's sentences, its rules (exam box, points to remember) and the lesson's known
+  // misconceptions; an answer stating one, or the reverse of a rule, is WRONG; the tutor is told
+  // never to state one either; (b) a "Not quite" with neither the answer nor a question gets the
+  // lesson's sentence that answers the question (checked in code); (c) a message that is both her
+  // question and an answer to the tutor's ("so like does the energy turn into heat"): her question
+  // is answered first, in its own message, then it is marked as her answer.
+  const MARK_FIX = TELL_FIX && env.markFix !== false;
   const KP_TEACH_MAX = 4;
   const KP_TEACH_TURNS = 8;   // all her messages while a point is taught (side questions too); then the rest is told
   const CLS = { call: env.classify ? (sys, user, tokens) => env.classify(sys, user, tokens) : null };
@@ -1623,6 +1633,37 @@ function create(env) {
     return qs.length ? { said: last.text, q: qs[qs.length - 1].trim() } : null;
   }
 
+  // MARK_FIX (b): a "Not quite" (or "Partly right", "That's fine") with no question must hold the answer:
+  // the lesson sentence (content, exam box or points to remember) that best answers the question she was
+  // asked; if the message does not already say most of it, it is added.
+  function _mfWithAnswer(text) {
+    const idx = _state.currentPointIndex, p = _points[idx], last = _lastQuestion();
+    if (!p || !last) return text;
+    const qs = new Set(_stems(last.q));
+    const cands = [...p.sentences, ..._mfRules(idx)].map(s => String(s).trim()).filter(Boolean);
+    let best = null, score = 0;
+    for (const c of cands) { const st = new Set(_stems(c)); const n = [...qs].filter(w => st.has(w)).length; if (n > score) { score = n; best = c; } }
+    if (!best || !score) return text;
+    const have = new Set(_stems(_stripMarkdown(text))), need = [...new Set(_stems(best))];
+    if (need.length && need.filter(w => have.has(w)).length / need.length >= 0.5) return text;
+    return `${text} The answer: ${best.replace(/\s+([.,;:!?)])/g, '$1')}`;
+  }
+  // MARK_FIX (a): the rules of a key point (its exam box and points to remember) and the lesson's
+  // known misconceptions, given to the marking call and to the tutor.
+  function _mfRules(idx) {
+    const p = _points[idx];
+    if (!p) return [];
+    const eb = p.examBox || {};
+    return [...(eb.definitions || []), ...(eb.equations || []).map(e => `${e.words}${e.symbols ? ` (${e.symbols})` : ''}`), ...(p.writeBullets || [])]
+      .map(x => _stripHtml(String(x))).filter(Boolean);
+  }
+  function _mfRulesBlock(idx) {
+    const rules = _mfRules(idx), mis = (_pctx.misconceptions || []).filter(Boolean);
+    return [
+      rules.length ? `Rules of this key point (an answer stating the reverse of one is wrong):\n${rules.map(r => `- ${r}`).join('\n')}` : '',
+      mis.length ? `Known misconceptions (an answer stating one is wrong):\n${mis.map(r => `- ${r}`).join('\n')}` : '',
+    ].filter(Boolean).join('\n\n');
+  }
   // One short call: is her reply a correct answer to that question?
   async function _markAnswer(userText) {
     if (_state.complete || _state.checkinAsked) return null;
@@ -1635,7 +1676,9 @@ function create(env) {
       `The question: "${last.q}"`,
       `The student replied: "${userText}"`,
       _pointBrief(_points[_state.currentPointIndex]),
+      ...(MARK_FIX ? [_mfRulesBlock(_state.currentPointIndex)] : []),
       `CORRECT: it answers the question correctly in substance — spelling, slang, short or loosely worded answers are fine, and so is a right reason in her own words.${KP_LOOP_FIX ? ` A sensible answer that is right in substance is CORRECT even if it is not how the lesson or the exam would put it, ends in a question mark, or adds a true consequence the question did not ask for.` : ''} PARTLY: only when part of what the question asked is wrong or missing. WRONG: an answer, but a wrong one. IDK: she says she does not know. OTHER: not an answer to the question (off topic, "ok", "huh?", a request, or a question of her own).`,
+      ...(MARK_FIX ? [`Judge the physics of what she says, against the content, the rules and the misconceptions above. An answer that states a misconception, or the reverse of a rule (for example "more resistance, more current"), is WRONG, even if part of it is right; so is a right conclusion with a reason that states one. A right conclusion with a reason that is missing or only partly right is PARTLY. Do not mark an answer CORRECT because the question was unclear.`] : []),
     ].join('\n\n');
     try {
       const raw = String(await AI.call(sys, user, 10) || '').toUpperCase();
@@ -2014,6 +2057,8 @@ function create(env) {
         : `Do not use everyday comparisons ("it's like…"): this lesson has none.`,
       `Every relationship, number or rule you state must be one the key point's content, exam box or worked examples state, in their words. Never state your own version. "Doubles" means doubles: never say that a quantity goes up by the same amount.`,
       ...(KP_LOOP_FIX ? [`Never set a calculation or any question with a number in it: the lesson's practice questions are asked separately. Ask only about ideas.`] : []),
+      // MARK_FIX (a): the tutor never states a misconception or the reverse of a rule ("a very high resistance lets more current through", T85).
+      ...(MARK_FIX && (_pctx.misconceptions || []).length ? [`Never say anything that states one of these misconceptions, even in passing or to explain her answer: ${_pctx.misconceptions.join(' | ')}. Higher resistance always means a smaller current for the same potential difference.`] : []),
     ].join('\n');
   }
 
@@ -2188,6 +2233,8 @@ function create(env) {
       const kept = _sentences(t).map(s => s.trim()).filter(s => s && !/\?/.test(s));
       if (KP_ORDER) _kpDropSetup(kept);
       if (kept.length) { t = kept.join(' '); P.pending = { t: 'continue', idx }; }
+      // MARK_FIX (b): its question gone, a "Not quite" must still give the answer (T121, 2026-10-28).
+      if (MARK_FIX && /^(Not quite|Partly right|That's fine)\b/.test(t) && !/\?/.test(t)) t = _mfWithAnswer(t);
     }
     // KP_LOOP_FIX (b): her practice comes from the lesson's generator, not the model.
     // KP_ORDER (a): never while teaching: practice has its own step after the worked examples.
@@ -2666,9 +2713,11 @@ function create(env) {
     if (/^\W*(next|next step|skip|move on)\W*$/i.test(t) || GO_ON.test(t)) return 'next';
     return null;
   }
-  const CLS_WORDS = { ANSWER: 'answer', QUESTION: 'question', STATEMENT: 'statement', OFFTOPIC: 'offtopic', IDK: 'idk', MOVEON: 'moveon' };
+  const CLS_WORDS = { ANSWER: 'answer', QUESTION: 'question', BOTH: 'both', STATEMENT: 'statement', OFFTOPIC: 'offtopic', IDK: 'idk', MOVEON: 'moveon' };
   function _kpClassifyPrompt(text, waiting, lastText) {
-    const sys = `You sort one message from a 15-year-old in a GCSE tutoring chat. Reply with one word only: ANSWER, QUESTION, STATEMENT, OFFTOPIC, IDK or MOVEON.`;
+    const sys = MARK_FIX
+      ? `You sort one message from a 15-year-old in a GCSE tutoring chat. Reply with one word only: ANSWER, QUESTION, BOTH, STATEMENT, OFFTOPIC, IDK or MOVEON.`
+      : `You sort one message from a 15-year-old in a GCSE tutoring chat. Reply with one word only: ANSWER, QUESTION, STATEMENT, OFFTOPIC, IDK or MOVEON.`;
     const user = [
       `The lesson: "${_data.title}".`,
       `The tutor's last message: "${_stripMarkdown(lastText || '')}"`,
@@ -2676,6 +2725,7 @@ function create(env) {
       `Her message: "${text}"`,
       `ANSWER: she is trying to answer the tutor's question, even unsure, with "?", "like", "is it", or only her working or one step of it, checking it as she goes ("0.5 times 2 so like 1", "thats like 120 seconds right").`,
       `QUESTION: she asks something of her own: what a word means, why, how, or whether two things are the same ("wait is that the same as voltage"), even with no question mark.`,
+      ...(MARK_FIX ? [`BOTH: the tutor is waiting for an answer, and while answering she asks something of her own or checks an idea of her own, with or without "right" or a question mark ("so like does the energy turn into heat", "so if the curve gets steeper the resistance is changing right"). Only a bare unsure answer ("is it 6 coulombs?", "the resistor?") is ANSWER.`] : []),
       `STATEMENT: she says something about the lesson's topic that is not an answer to a waiting question.`,
       `OFFTOPIC: not about the lesson's science: food, her phone, friends, or how she feels about the work ("ugh maths is hard", "this is boring", "lol").`,
       `IDK: she says she does not know.`,
@@ -2692,7 +2742,7 @@ function create(env) {
     const { sys, user } = _kpClassifyPrompt(text, waiting, prev ? prev.text : '');
     try {
       const raw = String(await (CLS.call || AI.call)(sys, user, 10) || '').toUpperCase();
-      const m = raw.match(/\b(ANSWER|QUESTION|STATEMENT|OFFTOPIC|IDK|MOVEON)\b/);
+      const m = raw.match(MARK_FIX ? /\b(ANSWER|QUESTION|BOTH|STATEMENT|OFFTOPIC|IDK|MOVEON)\b/ : /\b(ANSWER|QUESTION|STATEMENT|OFFTOPIC|IDK|MOVEON)\b/);
       return m ? { kind: CLS_WORDS[m[1]], by: 'model' } : null;
     } catch (e) { _logError('reading her message', e); return null; }
   }
@@ -2709,6 +2759,8 @@ function create(env) {
   let _offTopicN = 0;
   function _kpOffTopic(question) {
     const q = String(question).trim().replace(/^(?:(?:back to (?:the|my) question|your turn|quick question)\s*:\s*)+/i, '');
+    // MARK_FIX (c): her question was just answered, so it was not off topic: no "Fair enough" (2026-10-28 run, S17, S112).
+    if (MARK_FIX && _mfBefore) return `Back to the question: ${q}`;
     return `${OFF_TOPIC_LINES[_offTopicN++ % OFF_TOPIC_LINES.length]} Back to the question: ${q}`;
   }
   // (c) The mark is said first, whatever the model wrote.
@@ -2730,7 +2782,8 @@ function create(env) {
       }
       if (mark === 'correct') sents = sents.filter(x => !/\b(not quite|not right|that'?s wrong|incorrect|isn'?t right)\b/i.test(x));
       if (mark === 'wrong' || mark === 'idk') sents = sents.filter(x => !/\b(that'?s right|exactly right|got it exactly|spot on|you'?re right|is correct)\b/i.test(x));
-      return `${V} ${sents.join(' ')}`.trim();
+      const out = `${V} ${sents.join(' ')}`.trim();
+      return MARK_FIX && mark !== 'correct' && !/\?/.test(out) ? _mfWithAnswer(out) : out;
     }
     // KP_ORDER: a right answer is never opened with "Not quite" ("Not quite, … so you've got it exactly right").
     const WRONG_OPEN = /^\W*(not quite|not right|no)\b[\s,.:;!—–-]*/i;
@@ -3174,10 +3227,34 @@ function create(env) {
   // KP_SHORT (a): a point's teaching takes at most KP_TEACH_TURNS of her messages, side
   // questions included (the 4-answer cap counts only marked answers). After that the rest
   // of the point is told and its steps run; a question still waiting is marked first.
+  // MARK_FIX (c): the answer to her question, shown before this turn's reply.
+  let _mfBefore = null;
+  async function _mfAnswerFirst(userText) {
+    const idx = _state.complete ? null : _state.currentPointIndex;
+    const user = [
+      `${WHO_CAP} just said: "${userText}"`,
+      `Her message asks a question. Answer just that question, in one or two short sentences, in everyday words, using only the key point below. Do not say whether her answer to your question is right; that comes next. Do not ask a question.`,
+      idx != null ? _pointBrief(_points[idx]) : '',
+    ].filter(Boolean).join('\n\n');
+    try {
+      const out = await _callWithLengthGuard(_buildSystemPrompt(idx), user, false, 40);
+      const kept = _sentences(out).map(x => x.trim()).filter(x => x && !/\?/.test(x)).join(' ');
+      return kept || null;
+    } catch (e) { _logError('her question first', e); return null; }
+  }
+  function _mfAttach(r) {
+    const b = _mfBefore;
+    _mfBefore = null;
+    if (!b || !r || !r.decision) return r;
+    const pilot = { ...(r.decision.pilot || {}) };
+    pilot.before = [b, ...(pilot.before || [])];
+    return { ...r, decision: { ...r.decision, pilot } };
+  }
   async function _pilotReplyCapped(userText) {
     const P = _pilot(), idx = _state.currentPointIndex;
     const teaching = !_state.complete && !P.end && !P.queue.length && _ft().probed;
-    const r = await _pilotReply(userText);
+    _mfBefore = null;
+    const r = _mfAttach(await _pilotReply(userText));
     if (!teaching || _state.complete || _pilot().end || _state.currentPointIndex !== idx || !r || !r.decision) return r;
     // Not in the middle of her side question: the tutor's question would be dropped (willing-student run T9–S11).
     if (_pilot().pending && ['aside', 'return'].includes(_pilot().pending.t)) return r;
@@ -3213,7 +3290,9 @@ function create(env) {
       _kpNote(c);
       const waiting = _kpWaitingQ();
       if (c && c.by === 'model') {
-        if (c.kind === 'question') return _pilotAside(userText);
+        if (c.kind === 'question' || (c.kind === 'both' && !waiting)) return _pilotAside(userText);
+        // MARK_FIX (c): her question is answered first, in its own message; then her message is marked as her answer.
+        if (c.kind === 'both') { _mfBefore = await _mfAnswerFirst(userText); _kpForceAnswer = true; }
         if (c.kind === 'statement' && !waiting) return _pilotAside(userText, true);
         if (c.kind === 'offtopic' && waiting) {
           // Not an attempt: a friendly line and the same question; nothing marked, the answer not given.
@@ -3383,7 +3462,7 @@ function create(env) {
   }));
   }
 
-  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, KP_LOOP_FIX, KP_ORDER, KP_SHORT, TELL_FIX, _kpClear, _kpClassifyPrompt, _kpWaitingQ, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
+  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, KP_LOOP_FIX, KP_ORDER, KP_SHORT, TELL_FIX, MARK_FIX, _mfRulesBlock, _kpClear, _kpClassifyPrompt, _kpWaitingQ, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
 }
 
 return { create, TUTOR_SONNET, TUTOR_MODEL, TUTOR_MODEL_SONNET, TUTOR_MODEL_HAIKU, tutorParams, CLASSIFIER_MODEL, classifierParams, CLASSIFIER_COST_IN, CLASSIFIER_COST_OUT };

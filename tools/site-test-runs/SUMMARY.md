@@ -77,3 +77,4 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-10-27 | p2-current-voltage | lesson | FAIL | 11 | 4 | false | tools/site-test-runs/2026-10-27/p2-current-voltage-6 | $1.7573
 - 2026-10-28 | p2-current-voltage | lesson | FAIL | 8 | 4 | false | tools/site-test-runs/2026-10-28/p2-current-voltage | $2.3218
 - 2026-10-28 | p2-current-voltage | lesson | FAIL | 7 | 6 | false | tools/site-test-runs/2026-10-28/p2-current-voltage-3 | $2.1489
+- 2026-10-28 | p2-current-voltage | lesson | FAIL | 8 | 4 | false | tools/site-test-runs/2026-10-28/p2-current-voltage-4 | $2.3796

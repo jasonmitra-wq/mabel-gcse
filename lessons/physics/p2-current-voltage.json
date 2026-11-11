@@ -291,7 +291,7 @@
                 {
                   "text": "Yes: the cell sends electricity along the wire to the lamp",
                   "mis": "M1",
-                  "short": "Yes, brightly"
+                  "short": "Yes, it lights"
                 },
                 {
                   "text": "Yes, but only dimly",
@@ -314,12 +314,14 @@
                 "points": [
                   "charge flows round the whole loop and back to the cell",
                   "a gap anywhere stops the current everywhere"
-                ]
+                ],
+                "promptShort": "In one line: what did closing the switch change?"
               },
               "needs": [
                 "sw"
               ],
-              "tryShort": "The switch below is open, so the loop has a gap. Look at the lamp and both ammeters, then close the switch."
+              "tryShort": "The switch below is open, so the loop has a gap. Look at the lamp and both ammeters, then close the switch.",
+              "afterTest": "With the switch open, the lamp was off and both ammeters read 0 A. When you closed the switch, it lit."
             },
             {
               "id": "cv-same-current",
@@ -336,12 +338,12 @@
                 {
                   "text": "Ammeter 2 reads less: the lamp uses up some of the current",
                   "mis": "M2",
-                  "short": "Ammeter 2 reads less as the lamp uses current"
+                  "short": "Ammeter 2 reads less because current is used up"
                 },
                 {
                   "text": "Ammeter 2 reads less: it is further round the loop from the cell",
                   "mis": "M4",
-                  "short": "Ammeter 2 reads less as it is further round"
+                  "short": "Ammeter 2 reads less because it is further round"
                 },
                 {
                   "text": "Ammeter 2 reads backwards: currents leave both ends of the cell and meet",
@@ -603,7 +605,7 @@
                 {
                   "text": "The lamp gets brighter but the ammeter stays the same: a cell always gives the same current",
                   "mis": "M5",
-                  "short": "The lamp gets brighter; the ammeter stays the same"
+                  "short": "The lamp gets brighter, the ammeter stays the same"
                 },
                 {
                   "text": "Nothing changes: the cells always give the same current",
@@ -676,10 +678,9 @@
                 ]
               },
               "needs": [
-                "add",
-                "remove"
+                "add"
               ],
-              "tryShort": "Add a cell or take one away, and watch the voltmeter and the ammeter."
+              "tryShort": "Tap Add a cell and watch the voltmeter and the ammeter."
             },
             {
               "id": "cv-resistor",
@@ -691,7 +692,7 @@
               "options": [
                 {
                   "text": "The current goes down and the lamp gets dimmer",
-                  "short": "The current goes down; the lamp dims"
+                  "short": "The current goes down and the lamp dims"
                 },
                 {
                   "text": "The current stays the same: a cell always gives the same current",
@@ -705,7 +706,7 @@
                 },
                 {
                   "text": "The current goes up and the lamp gets brighter",
-                  "short": "The current goes up; the lamp gets brighter"
+                  "short": "The current goes up and the lamp gets brighter"
                 }
               ],
               "correct": 0,
@@ -1607,7 +1608,8 @@
               },
               "needs": [
                 "run"
-              ]
+              ],
+              "tryShort": "Tap Run for 10 s a few times and watch the charge and the energy."
             }
           ],
           "controls": [

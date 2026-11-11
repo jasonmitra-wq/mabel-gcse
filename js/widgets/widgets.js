@@ -53,7 +53,8 @@ const WidgetView = (() => {
     // it is taught (cells to add, a slider or a voltmeter).
     const cover = !!opts.cover, ctl = Array.isArray(opts.controls) ? opts.controls : [];
     const may = k => !cover || ctl.includes(k);
-    const pdShown = !cover || ctl.includes('add') || ctl.includes('slider') || has('voltmeter');
+    // (with a voltmeter, only its reading: the cell's beside it puzzled the reviewer, 1.5 V and 0.56 V)
+    const pdShown = !cover || (!has('voltmeter') && (ctl.includes('add') || ctl.includes('slider')));
     el.innerHTML = `<svg viewBox="0 0 360 210" aria-label="A circuit with cells, a lamp and an ammeter"></svg>
       <div class="wdg-row">
         ${may('add') ? `<button class="btn" data-a="add">Add a cell</button>` : ''}
@@ -304,7 +305,7 @@ const WidgetView = (() => {
             b.classList.remove('on');
             b.classList.add(right ? 'right' : 'wrong');
             if (!right) opts.children[order.indexOf(p.correct)].classList.add('right');
-            fb.innerHTML = `${pesc(fb.textContent)} ${right ? 'Your prediction was right.' : `What happens: ${pesc(label(p.options[p.correct]))}.`}`;
+            fb.innerHTML = `${pesc(fb.textContent)} ${right ? 'Your prediction was right.' : `What happens: ${pesc(label(p.options[p.correct]))}.`}${p.afterTest ? ` ${pesc(p.afterTest)}` : ''}`;
             explain(p);
           };
           fb.textContent = `Now test your prediction. ${p.tryShort || p.try || 'Try it below and see.'}`;
@@ -327,7 +328,7 @@ const WidgetView = (() => {
     }
     function explain(p) {
       const box = document.createElement('div');
-      box.innerHTML = `<div class="wdg-pred-title" style="margin-top:0.7rem">Now explain it</div><p style="margin:0">${pesc((p.explain && p.explain.prompt) || 'In one line: what did you see, and why?')}</p><textarea rows="2" placeholder="One line…"></textarea><button class="btn pri" style="margin-top:0.35rem">Check my line</button><div class="fb"></div>`;
+      box.innerHTML = `<div class="wdg-pred-title" style="margin-top:0.7rem">Now explain it</div><p style="margin:0">${pesc((p.explain && (cover && p.explain.promptShort ? p.explain.promptShort : p.explain.prompt)) || 'In one line: what did you see, and why?')}</p><textarea rows="2" placeholder="One line…"></textarea><button class="btn pri" style="margin-top:0.35rem">Check my line</button><div class="fb"></div>`;
       after.appendChild(box);
       const btn = box.querySelector('button');
       btn.onclick = () => {

@@ -775,8 +775,12 @@ function create(env) {
     const prevSaid = prev ? (COVER_FIX ? _sentences(_stripMarkdown(prev.text)).filter(x => !/\?/.test(x)).join(' ') : _stripMarkdown(prev.text)) : '';
     if (PILOT_FIX && _copyable(q, `${before} ${prevSaid}`)) return true;
     const sys = `You check one message from a tutor to a student. Reply with one word only: YES or NO.`;
+    // COVER_FIX (f): the last three tutor messages, and a question that names its own answer (review round 1:
+    // "A voltmeter measures that push across a part, so which meter would you use…?").
+    const recentT = COVER_FIX ? (_state.transcript || []).filter(t => t.role === 'assistant').slice(-3).map(t => _stripMarkdown(t.text)).join(' | ') : '';
     const user = [
-      prev ? `The tutor's previous message: "${_stripMarkdown(prev.text)}"` : '',
+      COVER_FIX && recentT ? `The tutor's last three messages: "${recentT}"` : prev ? `The tutor's previous message: "${_stripMarkdown(prev.text)}"` : '',
+      COVER_FIX ? `Also YES if the question itself names or contains its answer, or the answer was said in any of those messages.` : '',
       `The tutor's new message, before its question: "${before}"`,
       `Its question: "${q}"`,
       `YES if the answer to the question is already stated, in the same or nearly the same words, in the new message before the question or in the previous message, so she could answer by copying it back. Also YES if the question only describes the same situation in other words ("the wrong way round" and "wired in backwards"; "in the dark" and "when evening comes"), so the stated answer still fits it. NO only if she has to apply the idea to a genuinely different case, work something out, or give a reason or example that was not stated.`,
@@ -1140,7 +1144,7 @@ function create(env) {
     const claimsOf = new Map();
     let lastClaims = [];
     const cfPick = text => { if (COVER_FIX) _cfClaims = claimsOf.has(text) ? claimsOf.get(text) : lastClaims; };
-    const cfDone = text => (COVER_FIX ? _cfClean(text) : text);
+    const cfDone = text => { if (!COVER_FIX) return text; const out = _cfClean(text); _cfNovel = false; return out; };
     const done = FIRST_TIME
       ? text => {
           if (TEACH_THEN_ASK && chunk) _markTaught(chunk);
@@ -2270,7 +2274,8 @@ function create(env) {
     const sents = _sentences(String(text || '')).map(x => x.trim()).filter(Boolean);
     const prior = _sentences(_cfSaid('assistant')).map(x => x.trim()).filter(Boolean);
     const later = _cfLaterTerms(_state.complete ? null : idx);
-    const drop = sents.map(s => !/\?/.test(s) && (_cfRepeats(s, prior) || _cfEchoes(s) || CF_REVISION.test(s) || later.some(e => e.re.test(_stripMarkdown(s)))));
+    const noNews = _cfNovel ? _cfNoNews(sents, prior) : sents.map(() => false);
+    const drop = sents.map((s, k) => !/\?/.test(s) && (_cfRepeats(s, prior) || noNews[k] || _cfEchoes(s) || CF_REVISION.test(s) || _cfComparisonAgain(s, idx) || later.some(e => e.re.test(_stripMarkdown(s)))));
     // A sentence that leans on the one before ("So …", "It …") keeps it, so the message still reads on its own.
     const firstKept = drop.indexOf(false);
     if (firstKept > 0 && !/\?/.test(sents[firstKept]) && CF_OPENER.test(_stripMarkdown(sents[firstKept]))) drop[firstKept - 1] = false;
@@ -2327,8 +2332,16 @@ function create(env) {
       `Never repeat or quote her words back to her, not even "I don't know".`,
       `Do not write an equation in symbols: each equation is shown to her separately, with what its symbols mean.`,
     ];
+    // Review round 1 (2026-11-11): the tutor's own science and muddled lines.
+    lines.push(`Current is how MUCH charge passes a point each second, never how fast charge moves. Charge is carried by tiny particles; never say charge IS the particles. In the comparison, the runners are the charge and the cell is what pushes them: the runners never push.`);
+    lines.push(`Never say "the second thing", "again" or "as before" about something you have not said. Never open a sentence with "So" to say again what you have just said.`);
+    const comp = _data && _data.comparison && !Array.isArray(_data.comparison) ? _data.comparison : null;
+    if (comp) lines.push(`Use the comparison (${comp.name}) at most once in a key point, only to introduce an idea, and never stretch it with parts the lesson does not give.`);
     if (teachIdx != null && _points[teachIdx]) {
       const P = _pilot();
+      // (c) The new terms of this key point not yet said, in lesson order: only the first may come in now.
+      const plan = _cfTermPlan(teachIdx);
+      if (plan.length) lines.push(`Terms of this key point she has not met yet, in lesson order: ${plan.join(', ')}. In this message you may bring in at most "${plan[0]}", explained inside the sentence that first uses it. Do not use the others yet.`);
       const later = _cfLaterTerms(teachIdx).map(e => e.term);
       if (later.length) lines.push(`These terms belong to later key points: never use them now: ${later.join(', ')}.`);
       const items = _points[teachIdx].sentences.map((s, j) => `[${_cfId(teachIdx, j)}${P.sent[teachIdx][j] ? ' already taught' : ''}] ${s}`);
@@ -2336,6 +2349,36 @@ function create(env) {
       lines.push(`End every reply with one last line on its own: "TAUGHT:" and the ids of the items above that this reply explains (for example "TAUGHT: ${_cfId(teachIdx, 0)}, ${_cfId(teachIdx, 1)}"), or "TAUGHT: none". That line is taken out before she sees it.`);
     }
     return lines.join('\n');
+  }
+  // A worked step ends with a full stop ("Q = 2.5 × 20 = 50" ran into "The charge flow is 50 C.").
+  const _cfDots = s => { const t = String(s || '').trim(); return /[.!?]$/.test(t) ? t : `${t}.`; };
+  // (c) This key point's key terms not yet said by anyone, in the order the content first uses them.
+  function _cfTermPlan(idx) {
+    const said = _cfSaid(), text = _stripHtml(_points[idx].content || '').toLowerCase();
+    return (_points[idx].keyTerms || []).map(t => String(t.term).replace(/\s*\(.*?\)\s*/g, ' ').trim()).filter(Boolean)
+      .filter(t => !_cfTermRe(t).test(said))
+      .map(t => ({ t, at: text.indexOf(t.toLowerCase()) })).sort((a, b) => (a.at === -1 ? 1e9 : a.at) - (b.at === -1 ? 1e9 : b.at)).map(x => x.t);
+  }
+  // (b) A teaching message's sentence that adds nothing new: every content word of it is already in what the tutor
+  // has said in this lesson (review round 1: "So a bigger current means more coulombs passing each second"). The
+  // sentence just before the question is kept (it sets the question up). Only on teaching turns (_cfNovel).
+  let _cfNovel = false;
+  function _cfNoNews(sents, prior) {
+    const have = new Set(_cfFactStems(prior.join(' ')));
+    const qk = sents.map((s, k) => (/\?/.test(s) ? k : -1)).filter(k => k >= 0).pop();
+    return sents.map((s, k) => {
+      if (/\?/.test(s) || (qk !== undefined && k === qk - 1) || CF_LEAD.test(_stripMarkdown(s))) return false;
+      const st = _cfFactStems(s);
+      return st.length >= 3 && st.every(w => have.has(w));
+    });
+  }
+  // (b) The comparison's words (track, runner) in a second message of the same key point.
+  function _cfComparisonAgain(sentence, idx) {
+    const c = _data && _data.comparison && !Array.isArray(_data.comparison) ? _data.comparison : null;
+    if (!c || !Array.isArray(c.words) || !c.words.length || idx == null) return false;
+    const re = new RegExp(`\\b(${c.words.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})s?\\b`, 'i');
+    if (!re.test(sentence)) return false;
+    return (_state.transcript || []).some(t => t.role === 'assistant' && t.pt === idx && re.test(_stripMarkdown(t.text || '')));
   }
   // (b) The told part: one item per piece (two short ones together), in lesson order, leaving out items already
   // taught and items that name a later point's term; an item with nothing to keep (no number, no term) that comes
@@ -2396,7 +2439,7 @@ function create(env) {
     const o = w.options || {};
     const text = [...(w.labels || []), ...(o.predicts || []).flatMap(p => [p.question, ...(p.options || []).map(x => x.short || x.text)]), ...(o.controlWords || [])].join(' . ');
     const said = _cfSaid();
-    return _pilotGlossary().filter(e => e.re.test(text) && !e.re.test(said)
+    return _pilotGlossary().filter(e => e.re.test(text) && !e.re.test(said) && !said.toLowerCase().includes(e.term.toLowerCase())
       && !(e.lesson && e.lesson !== _pctx.lessonId && _pctx.opened(e.lesson))
       && !(e.lesson && String(e.lesson).split('-')[0] !== String(_pctx.lessonId || '').split('-')[0]))
       .map(e => { const d = String(e.def).split(/(?<=[.!?])\s/)[0].trim(); return /^(A|An|The)\s/.test(d) ? `${/^[aeiou]/i.test(e.term) ? 'An' : 'A'} ${e.term.toLowerCase()} is ${d.charAt(0).toLowerCase()}${d.slice(1)}` : `${e.term}: ${d}`; });
@@ -2520,7 +2563,7 @@ function create(env) {
     return _points[idx].sentences.findIndex(s => _flat(s).includes(want));
   }
   // (j) The pictures whose sentence has now been taught or told, in order, not shown before.
-  function _pilotPicturesDue(idx) {
+  function _pilotPicturesDue(idx, text) {
     if (idx == null || !_points[idx]) return [];
     const P = _pilot(), out = [];
     for (const pic of _points[idx].pictures || []) {
@@ -2528,6 +2571,9 @@ function create(env) {
       const j = _sentenceOf(idx, pic.after);
       if (j !== -1 && !P.sent[idx][j]) break;    // pictures come in order: a later one waits for this one
       P.shown.push(pic.diagram);
+      // COVER_FIX (h): a picture comes only under a message about what it shows (one of its labels); its moment
+      // passed, it is not shown later under something else (review round 1: the ammeter loop under a Q = I t answer).
+      if (COVER_FIX && text != null && !(pic.labels || []).some(l => String(text).toLowerCase().includes(String(l).toLowerCase()))) continue;
       out.push({ diagram: pic.diagram, caption: pic.caption || '', labels: pic.labels || [] });
       break;   // one picture per message: the next one comes with a later message
     }
@@ -2617,7 +2663,7 @@ function create(env) {
       else if (own && !KP_ORDER) { t = own; P.pending = { t: 'continue', idx }; }
     }
     if (idx != null) { if (COVER_FIX) _cfApply(idx, t); else _pilotMarkTaught(idx, t); }
-    const pics = _pilotPicturesDue(idx);
+    const pics = _pilotPicturesDue(idx, COVER_FIX ? t : undefined);
     if (pics.length) extra = { ...extra, pictures: pics };
     // COVER_FIX (d): an equation the message uses is introduced first, with its symbols and units.
     const before = [...(COVER_FIX ? _cfEqBefore(t, idx) : []), ..._pilotDefsFor(t, extra.basic || _lastBasicTag)];
@@ -2670,6 +2716,9 @@ function create(env) {
   function _pilotAsks(text) {
     const t = String(text || '').trim();
     if (!t || _wantsTelling(t) || _wantsSkip(t)) return false;
+    // COVER_FIX: "why does it stop everywhere" is her question, even where the classifier read an answer
+    // (review round 1, T28: it was matched to a multiple-choice option and marked right).
+    if (COVER_FIX && WHY_ASKED.test(t)) return true;
     // KP_SHORT (b): the message was read as an answer.
     if (KP_SHORT && _kpForceAnswer) return false;
     // KP_ORDER (c): "wait why 0.05 tho? i said 50", "how did u get 7200?" are questions, wherever the word is;
@@ -2783,6 +2832,13 @@ function create(env) {
       // KP_ORDER (b): never marked, however many times; the answer is not given.
       return _pilotOut(KP_ORDER ? _kpOffTopic(q.question) : `No rush. When you're ready: ${q.question}`, {});
     }
+    // COVER_FIX (f): "don't know" is never "Not quite": first the first step and the same question (easier), then,
+    // if she still does not know, the working, step by step (review round 1, T19: "dont know" got "Not quite: it's 50 C").
+    const idk = COVER_FIX && IDK_REPLY.test(userText);
+    if (idk && !P.pending.hinted && q.steps.length > 1 && mode !== 'quiz') {
+      P.pending = { ...P.pending, hinted: true };
+      return _pilotOut(`That's fine. Here is the first step: ${_cfDots(q.steps[0].text)} Now put the numbers in. What do you get?`, {});
+    }
     const r = PracticeLib.check(q, KP_LOOP_FIX ? _kpLast(userText) : userText);
     const ans = `${PracticeLib.fmt(q.answer.value)} ${q.answer.unit}`;
     const asked = P.pending;
@@ -2791,7 +2847,8 @@ function create(env) {
     // KP_ORDER: her working is judged too ("2.4 divided by 0.4" is right; "120 seconds" is a right step).
     if (KP_ORDER) {
       const kind = r.ok ? 'right' : _kpJudge(userText, q.answer.value, q.steps.map(s => s.text), q.question, q.tolerance || 0.01);
-      const said = _kpJudged(kind, ans, q.steps.map(s => s.text).join(' '));
+      const said = idk ? `That's fine. Here is how it goes. ${q.steps.map(s => _cfDots(s.text)).join(' ')}`
+        : COVER_FIX ? _kpJudged(kind, ans, q.steps.map(s => _cfDots(s.text)).join(' ')) : _kpJudged(kind, ans, q.steps.map(s => s.text).join(' '));
       if (mode === 'quiz') { P.quiz.n++; if (kind === 'right') P.quiz.right++; return _pilotOut(said); }
       if (mode === 'order') {
         const { idx, n } = asked;
@@ -3232,14 +3289,14 @@ function create(env) {
             const e = _cfEquations(s.idx).find(x => x.id === s.eq);
             if (!e || _cfEqDone(e.id)) return _pilotStep();
             _cfEqMark(e.id);
-            const picsE = _pilotPicturesDue(s.idx);
+            const picsE = _pilotPicturesDue(s.idx, _cfEqIntro(e));
             return _pilotOut(_cfEqIntro(e), { pt: s.idx, told: 'equation', ...(picsE.length ? { pictures: picsE } : {}) }, 'pilot', s.idx);
           }
           s.text = s.js.map(j => _points[s.idx].sentences[j]).join(' ').replace(/\s+([.,;:!?)])/g, '$1').replace(/\(\s+/g, '(').replace(/\s{2,}/g, ' ');
           const told = await _cfTell(s);
           s.js.forEach(j => { P.sent[s.idx][j] = true; });
           const eqT = _cfEqBefore(told.text, s.idx);
-          const picsT = _pilotPicturesDue(s.idx);
+          const picsT = _pilotPicturesDue(s.idx, told.text);
           return _pilotOut(told.text, { pt: s.idx, told: told.by, ...(picsT.length ? { pictures: picsT } : {}), ...(eqT.length ? { before: eqT } : {}) }, 'pilot', s.idx);
         }
         // TELL_FIX (a), (b): a sentence taught since this piece was queued is not told again; the piece is written to read on its own.
@@ -3328,6 +3385,7 @@ function create(env) {
         return _pilotStep();
       case 'open': {
         if (FIRST_TIME) _pendingFT = { teach: true };
+        _cfNovel = COVER_FIX;
         const reply = await _callWithLengthGuard(_buildSystemPrompt(s.idx), _pilotOpenPrompt(s.idx), true);
         const r = _pilotAfterModel(reply, s.idx, { pt: s.idx, opening: true });
         return _pilotOut(r.text, r.extra, 'pilot', s.idx);
@@ -3468,6 +3526,7 @@ function create(env) {
     P.pending = null;
     const idx = _state.currentPointIndex;
     if (FIRST_TIME) _pendingFT = { teach: true };
+    _cfNovel = COVER_FIX;
     const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), _pilotContinuePrompt(idx), true);
     const r = _pilotAfterModel(reply, idx, { pt: idx });
     return _pilotOut(r.text, r.extra, 'pilot', idx);
@@ -3550,7 +3609,12 @@ function create(env) {
         }
         P.pending = null;
         return (await _pilotStep()) || null;
-      case 'own': return _pilotOwn(userText);
+      case 'own':
+        // COVER_FIX (f): "wdym" / "what?" at her own-words line: the task said again, plainly, not the answer.
+        if (COVER_FIX && (_saysConfused(userText) || /\b(wdym|what do (you|u) mean|what does that mean)\b/i.test(userText))) {
+          return _pilotOut(`I mean: write one short line, in your own words, that answers this. ${_stripHtml(_points[pend.idx].ownWords.prompt).replace(/^In one line[^:]*:\s*/i, '')}`, { pt: pend.idx }, 'pilot', pend.idx);
+        }
+        return _pilotOwn(userText);
       case 'worked-more':   // KP_SHORT only: after her answer, "Show me another" is still on offer
         P.pending = null;
         if (/\banother\b/i.test(userText)) P.queue.unshift({ t: 'worked', idx: pend.idx, j: pend.more });
@@ -3743,6 +3807,7 @@ function create(env) {
       const idx = _state.currentPointIndex;
       const decision = { kind: 'start', idx, point: _points[idx], probeAnswer: String(userText).slice(0, 200) };
       _pendingFT = { teach: true };
+      _cfNovel = COVER_FIX;
       const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), _buildUserPrompt(userText, decision), true);
       _applyDecision(decision);
       const r = _pilotAfterModel(reply, idx, {});
@@ -3864,6 +3929,7 @@ function create(env) {
     const sys = _buildSystemPrompt(_teachIndex(decision));
     const user = _buildUserPrompt(userText, decision);
     _pendingFT = _teachIndex(decision) != null ? { teach: true, confused: false } : null;
+    _cfNovel = COVER_FIX;
     const said = await _callWithLengthGuard(sys, user, _teachIndex(decision) != null);
     const reply = KP_LOOP_FIX ? _kpMarkFirst(said, mark) : said;
     _applyDecision(decision);

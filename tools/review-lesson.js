@@ -22,7 +22,7 @@ const ROOT = path.resolve(__dirname, '..');
 const API = 'https://api.anthropic.com/v1';
 const MODEL = 'claude-fable-5-2';
 const RATE = { in: 8 / 1e6, out: 40 / 1e6 };   // claude-fable-5-2, USD per token (fallback models are cheaper)
-const MAX_TOKENS = 16000;
+
 
 function die(m, c = 1) { console.error(m); process.exit(c); }
 function headers(extra = {}) { return { 'x-api-key': apiKey(), 'anthropic-version': '2023-06-01', 'content-type': 'application/json', ...extra }; }
@@ -108,40 +108,86 @@ async function main() {
   const lessonFile = ['physics', 'biology', 'chemistry', 'geography'].map(s => path.join(ROOT, 'lessons', s, `${result.id.replace(/-\d+$/, '')}.json`)).find(f => fs.existsSync(f));
   const lesson = lessonFile ? JSON.parse(fs.readFileSync(lessonFile, 'utf8')) : { keyPoints: [] };
   await strongestModel();
-  let shots, body, input, worst;
+  // --already <usd>: spent on this review before (a retry stays inside the same cap). --effort: low | medium | high.
+  // The output allowance (thinking included) is what the cap leaves after the counted input: the first review of
+  // 2026-11-11 used all of a fixed 16 000 on thinking at effort high and returned nothing.
+  const already = Number(opt('--already', 0)), effort = opt('--effort', 'medium'), minOut = 6000;
+  let shots, body, input, outTokens;
   for (;;) {
     shots = pickShots(result, dir, maxImages);
     body = buildBody(result, shots, lesson);
     input = await countTokens(body);
-    worst = input * RATE.in + MAX_TOKENS * RATE.out;
-    console.log(`${shots.length} screenshots; input ${input} tokens (counted); at most $${worst.toFixed(4)} with ${MAX_TOKENS} output tokens (cap $${cap}).`);
-    if (worst <= cap || maxImages <= 8) break;
-    maxImages = Math.floor(maxImages * 0.75);
+    outTokens = Math.min(64000, Math.floor((cap - already - input * RATE.in) / RATE.out));
+    console.log(`${shots.length} screenshots; input ${input} tokens (counted, $${(input * RATE.in).toFixed(4)}); output allowance ${outTokens} tokens; cap $${cap}${already ? ` less $${already} already spent` : ''}; effort ${effort}.`);
+    if (outTokens >= Math.max(minOut, 24000) || maxImages <= 2) break;
+    maxImages = Math.max(2, Math.floor(maxImages * 0.6));
   }
-  if (worst > cap) die(`Over the $${cap} cap even with ${shots.length} screenshots. Stopping.`);
+  if (outTokens < minOut) die(`The cap leaves only ${outTokens} output tokens. Stopping.`);
   if (!run) { console.log('DRY RUN: add --run to send it.'); return; }
-  const req = { model: MODEL, max_tokens: MAX_TOKENS, ...body,
-    output_config: { effort: 'high', format: { type: 'json_schema', schema: SCHEMA } },
+  const req = { model: MODEL, max_tokens: outTokens, stream: true, ...body,
+    output_config: { effort, format: { type: 'json_schema', schema: SCHEMA } },
     fallbacks: 'default' };
   const t0 = Date.now();
   const res = await fetch(`${API}/messages`, { method: 'POST', headers: headers({ 'anthropic-beta': 'server-side-fallback-2026-07-01' }), body: JSON.stringify(req) });
-  const text = await res.text();
-  if (!res.ok) { if (/credit|billing|balance/i.test(text)) die('API billing or credit error. Add credits, then type Continue.', 3); die(`HTTP ${res.status} ${text.slice(0, 500)}`); }
-  const j = JSON.parse(text);
+  if (!res.ok) { const text = await res.text(); if (/credit|billing|balance/i.test(text)) die('API billing or credit error. Add credits, then type Continue.', 3); die(`HTTP ${res.status} ${text.slice(0, 500)}`); }
+  // Streamed (a long review can outlast a plain request's timeout): the text deltas, the usage and the stop reason.
+  const j = { content: [{ type: 'text', text: '' }], usage: {}, stop_reason: null, model: MODEL };
+  let buf = '';
+  const dec = new TextDecoder();
+  for await (const chunk of res.body) {
+    buf += dec.decode(chunk, { stream: true });
+    let k;
+    while ((k = buf.indexOf('\n\n')) !== -1) {
+      const ev = buf.slice(0, k); buf = buf.slice(k + 2);
+      const data = ev.split('\n').filter(l => l.startsWith('data:')).map(l => l.slice(5).trim()).join('');
+      if (!data) continue;
+      let e; try { e = JSON.parse(data); } catch { continue; }
+      if (e.type === 'message_start') { j.model = e.message.model; Object.assign(j.usage, e.message.usage || {}); }
+      else if (e.type === 'content_block_delta' && e.delta && e.delta.type === 'text_delta') j.content[0].text += e.delta.text;
+      else if (e.type === 'message_delta') { if (e.delta) { j.stop_reason = e.delta.stop_reason; j.stop_details = e.delta.stop_details; } Object.assign(j.usage, e.usage || {}); }
+      else if (e.type === 'error') die(`Stream error: ${JSON.stringify(e.error)}`);
+    }
+  }
   // Cost: every model that ran this turn (a fallback is billed at its own rates; approximated here at the top rate).
   const iters = (j.usage && j.usage.iterations) || [j.usage];
   const cost = iters.reduce((t, u) => t + ((u.input_tokens || 0) + (u.cache_creation_input_tokens || 0)) * RATE.in + (u.cache_read_input_tokens || 0) * RATE.in * 0.1 + (u.output_tokens || 0) * RATE.out, 0);
   if (j.stop_reason === 'refusal') die(`The review was refused (${JSON.stringify(j.stop_details)}); cost about $${cost.toFixed(4)}.`);
   const out = (j.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
-  let review;
-  try { review = JSON.parse(out); } catch { review = { findings: [], counts: [], overall: out, unparsed: true }; }
-  const saved = { model: j.model, stop_reason: j.stop_reason, usage: j.usage, cost, seconds: Math.round((Date.now() - t0) / 1000), screenshots: shots.map(f => path.basename(f)), ...review };
-  fs.writeFileSync(path.join(dir, 'review.json'), JSON.stringify(saved, null, 2));
-  const md = [`# Review: ${result.id} (${result.date})`, '', `Reviewer ${j.model}, effort high, ${shots.length} screenshots, ${review.findings.length} findings, cost $${cost.toFixed(4)}.`, '',
-    '## Counts', '', ...review.counts.map(c => `- ${c.fault}: ${c.instances}`), '',
-    '## Findings', '', ...review.findings.map(f => `- **${f.turn}** [${f.fault}, ${f.severity}] "${f.quote}" — ${f.what}`), '',
-    '## Overall', '', review.overall, ''];
-  fs.writeFileSync(path.join(dir, 'review.md'), md.join('\n'));
-  console.log(`Review: ${review.findings.length} findings; ${review.counts.map(c => `${c.fault} ${c.instances}`).join(', ')}; ${path.relative(ROOT, dir).replace(/\\/g, '/')}/review.md; $${cost.toFixed(4)} (model ${j.model}, stop ${j.stop_reason}).`);
+  const review = parseReview(out);
+  const saved = { model: j.model, stop_reason: j.stop_reason, effort, usage: j.usage, cost, seconds: Math.round((Date.now() - t0) / 1000), screenshots: shots.map(f => path.basename(f)), raw: out, ...review };
+  fs.writeFileSync(path.join(dir, review.attempt ? `review-${review.attempt}.json` : 'review.json'), JSON.stringify(saved, null, 2));
+  writeMd(dir, result, saved);
 }
-main().catch(e => die(String(e.stack || e)));
+// The review, or as much of it as was written: a reply cut off at max_tokens keeps every complete finding.
+// The counts per fault are made in code from the findings (the model's own counts are not trusted to be complete).
+function parseReview(out) {
+  let r = null;
+  try { r = JSON.parse(out); } catch {}
+  if (!r) {
+    const k = out.lastIndexOf('"},{');
+    let findings = [];
+    if (k !== -1) { try { findings = JSON.parse(out.slice(out.indexOf('['), k + 2) + ']'); } catch {} }
+    r = { findings, overall: '(cut off at the output limit before the overall view; every complete finding is kept)', cutOff: true };
+  }
+  const counts = {};
+  (r.findings || []).forEach(f => { counts[f.fault] = (counts[f.fault] || 0) + 1; });
+  r.counts = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([fault, instances]) => ({ fault, instances }));
+  return r;
+}
+function writeMd(dir, result, s) {
+  const md = [`# Review: ${result.id} (${result.date})`, '', `Reviewer ${s.model}, effort ${s.effort || 'high'}, ${s.screenshots.length} screenshots, ${s.findings.length} findings${s.cutOff ? ' (output cut off at its limit; complete findings kept)' : ''}, cost $${s.cost.toFixed(4)}.`, '',
+    '## Counts (made in code from the findings)', '', ...s.counts.map(c => `- ${c.fault}: ${c.instances}`), '',
+    '## Findings', '', ...s.findings.map(f => `- **${f.turn}** [${f.fault}, ${f.severity}] "${f.quote}" — ${f.what}`), '',
+    '## Overall', '', s.overall, ''];
+  fs.writeFileSync(path.join(dir, 'review.md'), md.join('\n'));
+  console.log(`Review: ${s.findings.length} findings; ${s.counts.map(c => `${c.fault} ${c.instances}`).join(', ')}; ${path.relative(ROOT, dir).replace(/\\/g, '/')}/review.md; $${s.cost.toFixed(4)} (model ${s.model}, stop ${s.stop_reason}).`);
+}
+// --reparse <run folder>: rebuild review.md from a saved review.json (no API call).
+if (process.argv[2] === '--reparse') {
+  const dir = path.resolve(process.argv[3]);
+  const s = JSON.parse(fs.readFileSync(path.join(dir, 'review.json'), 'utf8'));
+  const r = parseReview(s.raw || s.overall || '');
+  Object.assign(s, r, { raw: s.raw || s.overall });
+  fs.writeFileSync(path.join(dir, 'review.json'), JSON.stringify(s, null, 2));
+  writeMd(dir, JSON.parse(fs.readFileSync(path.join(dir, 'result.json'), 'utf8')), s);
+} else main().catch(e => die(String(e.stack || e)));

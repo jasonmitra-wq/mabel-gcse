@@ -1,0 +1,663 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "input_tokens": 16282,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 7075,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "iterations": [
+      {
+        "input_tokens": 16282,
+        "output_tokens": 7075,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.413256,
+  "seconds": 86,
+  "screenshots": [
+    "06-ai-lesson-opening-laptop.png",
+    "12-worked-17-laptop.png"
+  ],
+  "findings": [
+    {
+      "fault": "P3",
+      "turn": "T1",
+      "quote": "A battery is what pushes charge round a circuit.",
+      "what": "She asked what is inside a battery; the tutor says what a battery does, not what is inside it, and moves on to its own question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "T1",
+      "quote": "A battery is what pushes charge round a circuit. Charge is the tiny particles in a wire that carry electricity",
+      "what": "Battery, charge and circuit are all new in one message; 'circuit' is not explained at all.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P16",
+      "turn": "T1",
+      "quote": "Charge is the tiny particles in a wire that carry electricity",
+      "what": "Charge is not the particles; the particles carry charge (the lesson says so). 'Carry electricity' is also vague and not the lesson's wording.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F6",
+      "turn": "T2",
+      "quote": "That's fine. Here's a hint:",
+      "what": "Stock 'That's fine' reply to her 'idk', the same pattern as the reported echo.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "T2",
+      "quote": "you can't see the charge itself, but you can see what it does",
+      "what": "Repeats T1's 'you can't see them' and the hint almost hands her the answer before asking again.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "T3",
+      "quote": "In a circuit, a bulb is called a lamp, and it lights because charge is flowing through it. A flow of charge is called an electric current, and its size is how much charge passes a point each second.",
+      "what": "Lamp, electric current and rate of flow all introduced in one message: more than one idea at once.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "T4",
+      "quote": "the current is how many runners pass one spot on the track each second. Now imagine twice as many runners passing that spot each second. What would happen to the size of the current?",
+      "what": "The message defines current as runners per second and then asks what twice as many runners does; the answer is in the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "T5",
+      "quote": "that rate of flow is what current measures",
+      "what": "Rate of flow as the size of current was already said in T3 and T4.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T6",
+      "quote": "which measures how much charge passes a point each second",
+      "what": "Third or fourth statement of 'how much charge passes a point each second'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "T7",
+      "quote": "The charge itself is counted in coulombs (C), and one ampere means one coulomb passing a point each second.",
+      "what": "Coulomb is introduced and at once used to define the ampere, in one message, straight after the ampere was new in T6.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "T7",
+      "quote": "So a bigger current means more coulombs passing each second.",
+      "what": "Sentence opens with 'So' and merely restates the previous point.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "T8",
+      "quote": "it goes in the loop itself, so the charge passes through it",
+      "what": "'The loop' is used before a loop or closed circuit has been explained (that comes in T11), and no picture is on screen.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "T9",
+      "quote": "a current of 3 A means 3 coulombs of charge pass a point every second",
+      "what": "The ampere–coulomb per second fact again, straight after T7.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "T9",
+      "quote": "Picture a runner-style count",
+      "what": "Muddled wording; 'a runner-style count' means nothing to a 15-year-old.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T10",
+      "quote": "Inside the metal wire are tiny particles that carry electric charge, the thing that flows round a circuit.",
+      "what": "After current, amperes, coulombs and the ammeter have been taught, the told part restarts from the beginning of the key point (T1 already covered this).",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "T10",
+      "quote": "like runners setting off round a track at the same moment",
+      "what": "The running track comparison again (T4, T5, T9, and it recurs through the lesson).",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T11",
+      "quote": "Like a running track, it brings charge back to where it started",
+      "what": "Running track repeated yet again.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "T12",
+      "quote": "that is a cell, the part that pushes charge round a circuit. Join two or more cells together and you have a battery.",
+      "what": "Two new terms (cell, battery) in one message; it also clashes with T1, which used 'battery' for a single thing that pushes charge.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P16",
+      "turn": "T12",
+      "quote": "Without a cell or a battery in the loop, the charge just sits still.",
+      "what": "The tutor's own science, not in the lesson; the charged particles in a metal do not sit still, they just have no overall drift.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T13",
+      "quote": "there is a gap in the track, so the charge stops everywhere",
+      "what": "Running track again.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T14",
+      "quote": "Wherever you put the ammeter, the meter that measures current, it reads the same.",
+      "what": "The ammeter is defined again (T8).",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T15",
+      "quote": "counted in coulombs (C)",
+      "what": "Coulombs as the unit of charge repeated from T7.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "T15",
+      "quote": "Current tells you how fast the runners pass each second",
+      "what": "'How fast' suggests the speed of the runners; current is how many pass each second. Sets up a speed misconception.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F11",
+      "turn": "12-worked-17-laptop.png",
+      "quote": "Show me another | Next",
+      "what": "After the last step the card offers two buttons plus the type box; the transcript shows Next available throughout the worked example.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "12-worked-17-laptop.png",
+      "quote": "0/7 covered",
+      "what": "After 17 exchanges covering all of key point 1's telling, the counter still says 0 of 7, which is discouraging. The step 2 line 'Q = 2 × 5 = 10' also has no unit.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F7",
+      "turn": "T19",
+      "quote": "Not quite: it's 50 C. Write the equation: Q = I t. Put the numbers in: Q = 2.5 × 20 = 50 The charge flow is 50 C.",
+      "what": "She said 'dont know'; she got the whole answer dumped with no easier step or second try, so she never practises the equation herself.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "T19",
+      "quote": "Not quite: it's 50 C.",
+      "what": "She did not give an answer, so 'Not quite' is wrong; 'dont know' was marked as a wrong answer.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "T19",
+      "quote": "Q = 2.5 × 20 = 50 The charge flow is 50 C.",
+      "what": "Steps run together with no punctuation or line breaks, and '= 50' has no unit.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F13",
+      "turn": "T19",
+      "quote": "[diagram shown in the conversation under T19: \"The same loop with an ammeter in it, measuring the current.\"]",
+      "what": "The ammeter loop picture reappears under a Q = I t calculation it has nothing to do with.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F12",
+      "turn": "T20",
+      "quote": "Predict first: answer the question below (3 questions, one at a time). Then a working circuit with two ammeters opens: you can close the switch to check your answer. Tap Next when you are done.",
+      "what": "Muddled instructions, several things in one message; the widget's only control is labelled 'Open the switch' while the text says the switch is open and to close it.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F12",
+      "turn": "T20",
+      "quote": "NOW EXPLAIN IT In one line: why does the lamp need a complete loop?",
+      "what": "The explain question gives away the reason for the prediction just asked (it needs a complete loop), and she had been told this in T11–T13 anyway.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "T20",
+      "quote": "What happens: No. lamp A1 0.21 A A2 0.21 A",
+      "what": "The prediction is about a lamp joined by one wire only, but the circuit shows a complete loop with current 0.21 A and a switch; the test does not match the question, and 'What happens: No.' sits beside non-zero readings.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P3",
+      "turn": "T22",
+      "quote": "An electric current is just charge moving round a circuit, like runners going round a track.",
+      "what": "She asked what the task meant ('wdym'); the tutor gives her the answer to the own-words question and sets a different question instead of explaining the task.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "T22",
+      "quote": "The more runners passing a point each second, the bigger the current. Picture a track where twice as many runners pass a point each second as before. What has happened to the current?",
+      "what": "Answer stated just before the question, and it is the same question as T4.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "T22",
+      "quote": "Picture a track where twice as many runners pass a point each second as before.",
+      "what": "Exact repeat of the T4 question she already answered correctly.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P16",
+      "turn": "T23",
+      "quote": "The same: charge is what moves (the runners), and current is how fast it moves",
+      "what": "She asked if current is the same as charge; the reply opens 'The same' and then says they differ. 'How fast it moves' again suggests speed.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "T23",
+      "quote": "If fewer runners pass a point each second on the track, what has happened to the current?",
+      "what": "Her twice-as-many question from T22 is dropped without comment and replaced by another.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "T23",
+      "quote": "how much charge passes a point each second. If fewer runners pass a point each second on the track, what has happened to the current?",
+      "what": "Answer is in the message again.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T24",
+      "quote": "Current is the rate of charge flow, so fewer runners passing each second means a smaller current.",
+      "what": "The same fact once more.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T25",
+      "quote": "In one line, in your own words: what is an electric current?",
+      "what": "Same question as T21, asked just after the tutor told her the answer in T22 ('charge moving round a circuit'); she repeats the tutor's words back, so it is not recall.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P3",
+      "turn": "T28",
+      "quote": "Yes, that's right. Break the loop anywhere and the flow stops everywhere.",
+      "what": "She asked 'why does it stop everywhere'; it was marked as a correct answer, praised, and the why was never answered.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P4",
+      "turn": "T29",
+      "quote": "[counter now \"1/7 covered\" after T29]",
+      "what": "Key point 1 ticked although she could not do the Q = I t question (T19) and her 'why' question was never answered.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "T29",
+      "quote": "so the cells must be doing something extra to the charge",
+      "what": "Vague, tutor's own wording; 'something extra to the charge' tells her nothing.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "T30",
+      "quote": "potential difference: the push that drives charge through a part of the circuit. It is measured in volts (V), and people often call it voltage.",
+      "what": "Three new terms in one message: potential difference, volts, voltage.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P16",
+      "turn": "T31",
+      "quote": "Think of the two cells making the runners on the track push harder.",
+      "what": "Muddled analogy: the cells push the charge, the runners do not push. Not the lesson's science.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "T31",
+      "quote": "a bigger push means more charge flowing through the lamp each second",
+      "what": "With T29's 'add a second cell and it glows brighter', the three cells answer has been given already.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F6",
+      "turn": "T32",
+      "quote": "Yes, that's right. Brighter is right:",
+      "what": "Her word echoed back, and 'right' said twice.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "T33",
+      "quote": "it is connected across the part you are testing, not in the loop",
+      "what": "'Across' is not explained in words; she must rely on the picture to know what it means.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P1",
+      "turn": "T33",
+      "quote": "The same loop with a resistor added, and a voltmeter connected across the lamp.",
+      "what": "The picture shows a resistor before resistor is introduced (T40).",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "T34",
+      "quote": "Volts (V) are the unit that measures potential difference, the push on the charge.",
+      "what": "Volts already given in T30; whole message is a repeat.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "T35",
+      "quote": "Another name for potential difference is voltage",
+      "what": "Voltage as another name was said in T30.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "T35",
+      "quote": "the exam may use either word, so both get the mark. Now picture a lamp in a loop with one cell, and you want to measure the potential difference across the lamp. Where does the voltmeter go?",
+      "what": "Two unrelated things in one message (naming, then a placement question). The lesson says exam questions say potential difference, not 'either word'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "T35",
+      "quote": "you want to measure the potential difference across the lamp. Where does the voltmeter go?",
+      "what": "The question contains its answer ('across the lamp'), and T33 had just said it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "T36",
+      "quote": "Voltage is just another word for potential difference, the push on the charge. You can say either one in an exam.",
+      "what": "Third time for voltage = potential difference.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "T36",
+      "quote": "A voltmeter measures that push across a part of the circuit, so which meter would you use to find the voltage across a lamp?",
+      "what": "The answer (voltmeter) is named in the same sentence as the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "T37",
+      "quote": "The voltmeter is the meter that measures the potential difference across a part of the circuit, such as a lamp.",
+      "what": "Voltmeter definition again (T33, T36).",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "T38",
+      "quote": "Back to my question: Where does the voltmeter go?",
+      "what": "T36 and T37 have both just said 'across a part of the circuit, such as a lamp'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "T39",
+      "quote": "resistance, how much a component opposes the current through it",
+      "what": "'Component' is used here but not explained until T41.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "T39",
+      "quote": "Now the second thing that decides the current:",
+      "what": "'The second thing' with no first thing ever named; potential difference is only called the first thing later in T42.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "T39",
+      "quote": "Yes, that's right. Now the second thing that decides the current: resistance",
+      "what": "A new idea tacked onto feedback, and resistance arrives one message before resistor (T40).",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "T40",
+      "quote": "The lamp dims again",
+      "what": "'Again' has no referent: the lamp has not dimmed before in what she was told.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T42",
+      "quote": "Potential difference is the first thing that decides the current: the push that drives charge through a component.",
+      "what": "Potential difference was taught in T30–T38; told again, out of order after resistance was begun.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "T42",
+      "quote": "Picture the runners on their track. A lamp with two cells glows brighter because the push across it is bigger.",
+      "what": "Two cells brighter repeated (T29, T31, T32), with a track mention that adds nothing.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P9",
+      "turn": "T43",
+      "quote": "like a narrow, bumpy stretch of the running track",
+      "what": "The comparison is stretched with new features (narrow, bumpy) not in the lesson; a tutor's own extension.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T43",
+      "quote": "An ohm is the unit that tells you how strongly a component opposes the current through it.",
+      "what": "Repeats T39's definition of resistance in the same words.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T44",
+      "quote": "a component with a bigger resistance makes it harder for charge to get through",
+      "what": "Same sentence as T43, and the bumpy track again.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "T45",
+      "quote": "The equation is V = I R: potential difference = current × resistance. V is the potential difference in volts (V)...",
+      "what": "The equation message and the rearranging message arrive together: about 80 words and two ideas in one go.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "T45",
+      "quote": "you can find the current by dividing the potential difference by the resistance",
+      "what": "Rearranging is told in words only, never shown as I = V ÷ R, yet the Your turn question needs it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "T48",
+      "quote": "Yes, that's right: 0.4 A.",
+      "what": "She gave the method, not the answer; the tutor did the arithmetic for her without asking her to finish.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T49",
+      "quote": "An ammeter is a meter that measures current.",
+      "what": "Third definition of the ammeter (T8, T14).",
+      "severity": "minor"
+    },
+    {
+      "fault": "F12",
+      "turn": "T49",
+      "quote": "you can add a cell, put the resistor in or take it out or move the resistor to check your answer",
+      "what": "Muddled wording and a long, 58-word instruction message with four controls at once.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "T49",
+      "quote": "You add a second cell. What happens to the ammeter reading and to the lamp?",
+      "what": "She has been told three or four times that a second cell means more current and a brighter lamp; not a prediction.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F12",
+      "turn": "T49",
+      "quote": "Only the current near the new cell goes up",
+      "what": "Odd distractor; the options mix 'the lamp' and 'the ammeter' with a bare 'Both go up'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "T49",
+      "quote": "Potential difference of the cell: 1.5 V Ammeter: 0.09 A Voltmeter across the lamp: 0.56 V",
+      "what": "The voltmeter reads 0.56 V with a 1.5 V cell, and nothing taught explains why they differ; sharing of potential difference is not in this lesson.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F6",
+      "turn": "T51",
+      "quote": "Resistance \"stops it\" is slightly off",
+      "what": "Her words quoted back, though the correction itself is fair.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "T52",
+      "quote": "Quick question: Where do you put an ammeter to measure the current in a single loop?",
+      "what": "Answered by tapping a button offered to her, so it tests nothing.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "T54",
+      "quote": "[counter now \"2/7 covered\" after T54]",
+      "what": "Key point 2 ticked after one calculation where the tutor finished the arithmetic and a one-tap question.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T54",
+      "quote": "Before the practical, question 1 of 2: What does an ammeter measure?",
+      "what": "She has been told what an ammeter measures four times, most recently in T49.",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "F1",
+      "instances": 22
+    },
+    {
+      "fault": "new",
+      "instances": 13
+    },
+    {
+      "fault": "F8",
+      "instances": 10
+    },
+    {
+      "fault": "F5",
+      "instances": 6
+    },
+    {
+      "fault": "P16",
+      "instances": 4
+    },
+    {
+      "fault": "F12",
+      "instances": 4
+    },
+    {
+      "fault": "P3",
+      "instances": 3
+    },
+    {
+      "fault": "F6",
+      "instances": 3
+    },
+    {
+      "fault": "F2",
+      "instances": 2
+    },
+    {
+      "fault": "F3",
+      "instances": 2
+    },
+    {
+      "fault": "P4",
+      "instances": 2
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "F11",
+      "instances": 1
+    },
+    {
+      "fault": "F7",
+      "instances": 1
+    },
+    {
+      "fault": "F13",
+      "instances": 1
+    },
+    {
+      "fault": "P1",
+      "instances": 1
+    },
+    {
+      "fault": "P9",
+      "instances": 1
+    }
+  ],
+  "overall": "(cut off at the output limit before the overall view; every complete finding is kept)",
+  "unparsed": true,
+  "effort": "low",
+  "cutOff": true,
+  "raw": "{\"findings\":[{\"fault\":\"P3\",\"turn\":\"T1\",\"quote\":\"A battery is what pushes charge round a circuit.\",\"what\":\"She asked what is inside a battery; the tutor says what a battery does, not what is inside it, and moves on to its own question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"T1\",\"quote\":\"A battery is what pushes charge round a circuit. Charge is the tiny particles in a wire that carry electricity\",\"what\":\"Battery, charge and circuit are all new in one message; 'circuit' is not explained at all.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P16\",\"turn\":\"T1\",\"quote\":\"Charge is the tiny particles in a wire that carry electricity\",\"what\":\"Charge is not the particles; the particles carry charge (the lesson says so). 'Carry electricity' is also vague and not the lesson's wording.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F6\",\"turn\":\"T2\",\"quote\":\"That's fine. Here's a hint:\",\"what\":\"Stock 'That's fine' reply to her 'idk', the same pattern as the reported echo.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"T2\",\"quote\":\"you can't see the charge itself, but you can see what it does\",\"what\":\"Repeats T1's 'you can't see them' and the hint almost hands her the answer before asking again.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"T3\",\"quote\":\"In a circuit, a bulb is called a lamp, and it lights because charge is flowing through it. A flow of charge is called an electric current, and its size is how much charge passes a point each second.\",\"what\":\"Lamp, electric current and rate of flow all introduced in one message: more than one idea at once.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"T4\",\"quote\":\"the current is how many runners pass one spot on the track each second. Now imagine twice as many runners passing that spot each second. What would happen to the size of the current?\",\"what\":\"The message defines current as runners per second and then asks what twice as many runners does; the answer is in the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"T5\",\"quote\":\"that rate of flow is what current measures\",\"what\":\"Rate of flow as the size of current was already said in T3 and T4.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T6\",\"quote\":\"which measures how much charge passes a point each second\",\"what\":\"Third or fourth statement of 'how much charge passes a point each second'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"T7\",\"quote\":\"The charge itself is counted in coulombs (C), and one ampere means one coulomb passing a point each second.\",\"what\":\"Coulomb is introduced and at once used to define the ampere, in one message, straight after the ampere was new in T6.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"T7\",\"quote\":\"So a bigger current means more coulombs passing each second.\",\"what\":\"Sentence opens with 'So' and merely restates the previous point.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"T8\",\"quote\":\"it goes in the loop itself, so the charge passes through it\",\"what\":\"'The loop' is used before a loop or closed circuit has been explained (that comes in T11), and no picture is on screen.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"T9\",\"quote\":\"a current of 3 A means 3 coulombs of charge pass a point every second\",\"what\":\"The ampere–coulomb per second fact again, straight after T7.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"T9\",\"quote\":\"Picture a runner-style count\",\"what\":\"Muddled wording; 'a runner-style count' means nothing to a 15-year-old.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T10\",\"quote\":\"Inside the metal wire are tiny particles that carry electric charge, the thing that flows round a circuit.\",\"what\":\"After current, amperes, coulombs and the ammeter have been taught, the told part restarts from the beginning of the key point (T1 already covered this).\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"T10\",\"quote\":\"like runners setting off round a track at the same moment\",\"what\":\"The running track comparison again (T4, T5, T9, and it recurs through the lesson).\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T11\",\"quote\":\"Like a running track, it brings charge back to where it started\",\"what\":\"Running track repeated yet again.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"T12\",\"quote\":\"that is a cell, the part that pushes charge round a circuit. Join two or more cells together and you have a battery.\",\"what\":\"Two new terms (cell, battery) in one message; it also clashes with T1, which used 'battery' for a single thing that pushes charge.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P16\",\"turn\":\"T12\",\"quote\":\"Without a cell or a battery in the loop, the charge just sits still.\",\"what\":\"The tutor's own science, not in the lesson; the charged particles in a metal do not sit still, they just have no overall drift.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T13\",\"quote\":\"there is a gap in the track, so the charge stops everywhere\",\"what\":\"Running track again.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T14\",\"quote\":\"Wherever you put the ammeter, the meter that measures current, it reads the same.\",\"what\":\"The ammeter is defined again (T8).\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T15\",\"quote\":\"counted in coulombs (C)\",\"what\":\"Coulombs as the unit of charge repeated from T7.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"T15\",\"quote\":\"Current tells you how fast the runners pass each second\",\"what\":\"'How fast' suggests the speed of the runners; current is how many pass each second. Sets up a speed misconception.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F11\",\"turn\":\"12-worked-17-laptop.png\",\"quote\":\"Show me another | Next\",\"what\":\"After the last step the card offers two buttons plus the type box; the transcript shows Next available throughout the worked example.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"12-worked-17-laptop.png\",\"quote\":\"0/7 covered\",\"what\":\"After 17 exchanges covering all of key point 1's telling, the counter still says 0 of 7, which is discouraging. The step 2 line 'Q = 2 × 5 = 10' also has no unit.\",\"severity\":\"minor\"},{\"fault\":\"F7\",\"turn\":\"T19\",\"quote\":\"Not quite: it's 50 C. Write the equation: Q = I t. Put the numbers in: Q = 2.5 × 20 = 50 The charge flow is 50 C.\",\"what\":\"She said 'dont know'; she got the whole answer dumped with no easier step or second try, so she never practises the equation herself.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"T19\",\"quote\":\"Not quite: it's 50 C.\",\"what\":\"She did not give an answer, so 'Not quite' is wrong; 'dont know' was marked as a wrong answer.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"T19\",\"quote\":\"Q = 2.5 × 20 = 50 The charge flow is 50 C.\",\"what\":\"Steps run together with no punctuation or line breaks, and '= 50' has no unit.\",\"severity\":\"minor\"},{\"fault\":\"F13\",\"turn\":\"T19\",\"quote\":\"[diagram shown in the conversation under T19: \\\"The same loop with an ammeter in it, measuring the current.\\\"]\",\"what\":\"The ammeter loop picture reappears under a Q = I t calculation it has nothing to do with.\",\"severity\":\"minor\"},{\"fault\":\"F12\",\"turn\":\"T20\",\"quote\":\"Predict first: answer the question below (3 questions, one at a time). Then a working circuit with two ammeters opens: you can close the switch to check your answer. Tap Next when you are done.\",\"what\":\"Muddled instructions, several things in one message; the widget's only control is labelled 'Open the switch' while the text says the switch is open and to close it.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F12\",\"turn\":\"T20\",\"quote\":\"NOW EXPLAIN IT In one line: why does the lamp need a complete loop?\",\"what\":\"The explain question gives away the reason for the prediction just asked (it needs a complete loop), and she had been told this in T11–T13 anyway.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"T20\",\"quote\":\"What happens: No. lamp A1 0.21 A A2 0.21 A\",\"what\":\"The prediction is about a lamp joined by one wire only, but the circuit shows a complete loop with current 0.21 A and a switch; the test does not match the question, and 'What happens: No.' sits beside non-zero readings.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P3\",\"turn\":\"T22\",\"quote\":\"An electric current is just charge moving round a circuit, like runners going round a track.\",\"what\":\"She asked what the task meant ('wdym'); the tutor gives her the answer to the own-words question and sets a different question instead of explaining the task.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"T22\",\"quote\":\"The more runners passing a point each second, the bigger the current. Picture a track where twice as many runners pass a point each second as before. What has happened to the current?\",\"what\":\"Answer stated just before the question, and it is the same question as T4.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"T22\",\"quote\":\"Picture a track where twice as many runners pass a point each second as before.\",\"what\":\"Exact repeat of the T4 question she already answered correctly.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P16\",\"turn\":\"T23\",\"quote\":\"The same: charge is what moves (the runners), and current is how fast it moves\",\"what\":\"She asked if current is the same as charge; the reply opens 'The same' and then says they differ. 'How fast it moves' again suggests speed.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"T23\",\"quote\":\"If fewer runners pass a point each second on the track, what has happened to the current?\",\"what\":\"Her twice-as-many question from T22 is dropped without comment and replaced by another.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"T23\",\"quote\":\"how much charge passes a point each second. If fewer runners pass a point each second on the track, what has happened to the current?\",\"what\":\"Answer is in the message again.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T24\",\"quote\":\"Current is the rate of charge flow, so fewer runners passing each second means a smaller current.\",\"what\":\"The same fact once more.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T25\",\"quote\":\"In one line, in your own words: what is an electric current?\",\"what\":\"Same question as T21, asked just after the tutor told her the answer in T22 ('charge moving round a circuit'); she repeats the tutor's words back, so it is not recall.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P3\",\"turn\":\"T28\",\"quote\":\"Yes, that's right. Break the loop anywhere and the flow stops everywhere.\",\"what\":\"She asked 'why does it stop everywhere'; it was marked as a correct answer, praised, and the why was never answered.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P4\",\"turn\":\"T29\",\"quote\":\"[counter now \\\"1/7 covered\\\" after T29]\",\"what\":\"Key point 1 ticked although she could not do the Q = I t question (T19) and her 'why' question was never answered.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"T29\",\"quote\":\"so the cells must be doing something extra to the charge\",\"what\":\"Vague, tutor's own wording; 'something extra to the charge' tells her nothing.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"T30\",\"quote\":\"potential difference: the push that drives charge through a part of the circuit. It is measured in volts (V), and people often call it voltage.\",\"what\":\"Three new terms in one message: potential difference, volts, voltage.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P16\",\"turn\":\"T31\",\"quote\":\"Think of the two cells making the runners on the track push harder.\",\"what\":\"Muddled analogy: the cells push the charge, the runners do not push. Not the lesson's science.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"T31\",\"quote\":\"a bigger push means more charge flowing through the lamp each second\",\"what\":\"With T29's 'add a second cell and it glows brighter', the three cells answer has been given already.\",\"severity\":\"minor\"},{\"fault\":\"F6\",\"turn\":\"T32\",\"quote\":\"Yes, that's right. Brighter is right:\",\"what\":\"Her word echoed back, and 'right' said twice.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"T33\",\"quote\":\"it is connected across the part you are testing, not in the loop\",\"what\":\"'Across' is not explained in words; she must rely on the picture to know what it means.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P1\",\"turn\":\"T33\",\"quote\":\"The same loop with a resistor added, and a voltmeter connected across the lamp.\",\"what\":\"The picture shows a resistor before resistor is introduced (T40).\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"T34\",\"quote\":\"Volts (V) are the unit that measures potential difference, the push on the charge.\",\"what\":\"Volts already given in T30; whole message is a repeat.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"T35\",\"quote\":\"Another name for potential difference is voltage\",\"what\":\"Voltage as another name was said in T30.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"T35\",\"quote\":\"the exam may use either word, so both get the mark. Now picture a lamp in a loop with one cell, and you want to measure the potential difference across the lamp. Where does the voltmeter go?\",\"what\":\"Two unrelated things in one message (naming, then a placement question). The lesson says exam questions say potential difference, not 'either word'.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"T35\",\"quote\":\"you want to measure the potential difference across the lamp. Where does the voltmeter go?\",\"what\":\"The question contains its answer ('across the lamp'), and T33 had just said it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"T36\",\"quote\":\"Voltage is just another word for potential difference, the push on the charge. You can say either one in an exam.\",\"what\":\"Third time for voltage = potential difference.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"T36\",\"quote\":\"A voltmeter measures that push across a part of the circuit, so which meter would you use to find the voltage across a lamp?\",\"what\":\"The answer (voltmeter) is named in the same sentence as the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"T37\",\"quote\":\"The voltmeter is the meter that measures the potential difference across a part of the circuit, such as a lamp.\",\"what\":\"Voltmeter definition again (T33, T36).\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"T38\",\"quote\":\"Back to my question: Where does the voltmeter go?\",\"what\":\"T36 and T37 have both just said 'across a part of the circuit, such as a lamp'.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"T39\",\"quote\":\"resistance, how much a component opposes the current through it\",\"what\":\"'Component' is used here but not explained until T41.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"T39\",\"quote\":\"Now the second thing that decides the current:\",\"what\":\"'The second thing' with no first thing ever named; potential difference is only called the first thing later in T42.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"T39\",\"quote\":\"Yes, that's right. Now the second thing that decides the current: resistance\",\"what\":\"A new idea tacked onto feedback, and resistance arrives one message before resistor (T40).\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"T40\",\"quote\":\"The lamp dims again\",\"what\":\"'Again' has no referent: the lamp has not dimmed before in what she was told.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T42\",\"quote\":\"Potential difference is the first thing that decides the current: the push that drives charge through a component.\",\"what\":\"Potential difference was taught in T30–T38; told again, out of order after resistance was begun.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"T42\",\"quote\":\"Picture the runners on their track. A lamp with two cells glows brighter because the push across it is bigger.\",\"what\":\"Two cells brighter repeated (T29, T31, T32), with a track mention that adds nothing.\",\"severity\":\"minor\"},{\"fault\":\"P9\",\"turn\":\"T43\",\"quote\":\"like a narrow, bumpy stretch of the running track\",\"what\":\"The comparison is stretched with new features (narrow, bumpy) not in the lesson; a tutor's own extension.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T43\",\"quote\":\"An ohm is the unit that tells you how strongly a component opposes the current through it.\",\"what\":\"Repeats T39's definition of resistance in the same words.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T44\",\"quote\":\"a component with a bigger resistance makes it harder for charge to get through\",\"what\":\"Same sentence as T43, and the bumpy track again.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"T45\",\"quote\":\"The equation is V = I R: potential difference = current × resistance. V is the potential difference in volts (V)...\",\"what\":\"The equation message and the rearranging message arrive together: about 80 words and two ideas in one go.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"T45\",\"quote\":\"you can find the current by dividing the potential difference by the resistance\",\"what\":\"Rearranging is told in words only, never shown as I = V ÷ R, yet the Your turn question needs it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"T48\",\"quote\":\"Yes, that's right: 0.4 A.\",\"what\":\"She gave the method, not the answer; the tutor did the arithmetic for her without asking her to finish.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T49\",\"quote\":\"An ammeter is a meter that measures current.\",\"what\":\"Third definition of the ammeter (T8, T14).\",\"severity\":\"minor\"},{\"fault\":\"F12\",\"turn\":\"T49\",\"quote\":\"you can add a cell, put the resistor in or take it out or move the resistor to check your answer\",\"what\":\"Muddled wording and a long, 58-word instruction message with four controls at once.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"T49\",\"quote\":\"You add a second cell. What happens to the ammeter reading and to the lamp?\",\"what\":\"She has been told three or four times that a second cell means more current and a brighter lamp; not a prediction.\",\"severity\":\"minor\"},{\"fault\":\"F12\",\"turn\":\"T49\",\"quote\":\"Only the current near the new cell goes up\",\"what\":\"Odd distractor; the options mix 'the lamp' and 'the ammeter' with a bare 'Both go up'.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"T49\",\"quote\":\"Potential difference of the cell: 1.5 V Ammeter: 0.09 A Voltmeter across the lamp: 0.56 V\",\"what\":\"The voltmeter reads 0.56 V with a 1.5 V cell, and nothing taught explains why they differ; sharing of potential difference is not in this lesson.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F6\",\"turn\":\"T51\",\"quote\":\"Resistance \\\"stops it\\\" is slightly off\",\"what\":\"Her words quoted back, though the correction itself is fair.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"T52\",\"quote\":\"Quick question: Where do you put an ammeter to measure the current in a single loop?\",\"what\":\"Answered by tapping a button offered to her, so it tests nothing.\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"T54\",\"quote\":\"[counter now \\\"2/7 covered\\\" after T54]\",\"what\":\"Key point 2 ticked after one calculation where the tutor finished the arithmetic and a one-tap question.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T54\",\"quote\":\"Before the practical, question 1 of 2: What does an ammeter measure?\",\"what\":\"She has been told what an ammeter measures four times, most recently in T49.\",\"severity\":\"minor\"},{\"fault\":\"M1\",\"turn\":\"T6\",\"quote\":\""
+}

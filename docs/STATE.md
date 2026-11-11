@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, A9: evidence pilot gate. AI lesson ready for Mabel (known issues in ESCALATIONS 2026-10-28). Brief docs/briefs/2026-10-19-evidence-layer.md done (steps 0–10); waiting for Mabel's quick check, both lessons and the post-tests; the delayed test unlocks a week after both post-tests, then tools/pilot/analyse.js.
+Runbook position: Phase A, A9: evidence pilot gate. AI lesson NOT ready (Jason's session 2026-11-11); slides ready. The AI lesson returns to "ready" only when a review (tools/review-lesson.js) finds no docs/FAULTS.md item AND Jason has tried key points 1 and 2 himself and says so (brief docs/briefs/2026-11-11-coverage-and-faults.md, step 6).
 
 ## Runbook v3 switch (2026-10-19)
 

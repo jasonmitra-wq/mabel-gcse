@@ -108,17 +108,22 @@ const LessonExtras = (() => {
     return box;
   }
 
-  function workedEl(x, withPractice = true) {
+  // opts (AI lesson, COVER_FIX): { revealed: steps already shown, onStep(k, last) } — "Show the first step",
+  // then "Next step"; the step count is kept by the caller so a redraw does not start it again.
+  function workedEl(x, withPractice = true, opts) {
     const card = _el(`<div class="lx-card"><div class="lx-title">Worked example</div><p style="margin:0">${x.question}</p><ol></ol></div>`);
     const ol = card.querySelector('ol');
     const steps = (x.steps || []).map(s => (typeof s === 'string' ? s : s.text));
     let k = 0;
     const btn = _el(`<button class="btn">Show the first step</button>`);
+    const show = () => { const li = document.createElement('li'); li.innerHTML = steps[k++]; ol.appendChild(li); };
     btn.onclick = () => {
-      const li = document.createElement('li'); li.innerHTML = steps[k++]; ol.appendChild(li);
-      if (k >= steps.length) btn.remove(); else btn.textContent = 'Show the next step';
+      show();
+      if (k >= steps.length) btn.remove(); else btn.textContent = opts ? 'Next step' : 'Show the next step';
+      if (opts && opts.onStep) opts.onStep(k, k >= steps.length);
     };
-    card.appendChild(btn);
+    if (opts && opts.revealed) { while (k < Math.min(opts.revealed, steps.length)) show(); if (k) btn.textContent = 'Next step'; }
+    if (k < steps.length) card.appendChild(btn);
     if (withPractice && x.equation) { const p = practiceEl(x.equation); if (p) card.appendChild(p); }
     return card;
   }
@@ -185,9 +190,9 @@ const LessonExtras = (() => {
 
   // Under a tutor message: a worked example (step by step; "Try another" is
   // the tutor's own button), or a widget.
-  function chatCard(card, subject) {
+  function chatCard(card, subject, opts) {
     _style();
-    if (card.type === 'worked') return workedEl({ question: esc(card.question), steps: card.steps.map(esc) }, false);
+    if (card.type === 'worked') return workedEl({ question: esc(card.question), steps: card.steps.map(esc) }, false, opts);
     if (card.type === 'widget' && typeof WidgetView !== 'undefined') {
       const el = document.createElement('div');
       el.style.alignSelf = 'stretch';

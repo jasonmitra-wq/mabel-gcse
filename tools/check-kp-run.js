@@ -27,7 +27,14 @@ global.Practice = Practice;
 require(path.join(ROOT, 'js', 'practice', 'physics.js'));
 const MIS = require(path.join(ROOT, 'js', 'pilot', 'misconceptions.js'));
 
-const LESSONS = process.argv.slice(2).length ? process.argv.slice(2) : ['p2-current-voltage', 'p2-components'];
+// --jason: the stub model writes the faults of Jason's session (2026-11-11, docs/FAULTS.md F1–F13) and obeys the
+// code's notes when asked again; the scripted run is made with COVER_FIX off and on, and tools/check-transcript.js
+// is run on both. Each of its checks must fail with COVER_FIX off and pass with it on.
+const ARGS = process.argv.slice(2);
+const JASON = ARGS.includes('--jason');
+const DUMP = (() => { const i = ARGS.indexOf('--dump'); return i === -1 ? null : ARGS[i + 1]; })();
+const LESSONS = ARGS.filter((a, i) => !a.startsWith('--') && ARGS[i - 1] !== '--dump').length ? ARGS.filter((a, i) => !a.startsWith('--') && ARGS[i - 1] !== '--dump') : ['p2-current-voltage', 'p2-components'];
+const Transcript = require(path.join(ROOT, 'tools', 'check-transcript.js'));
 const VERDICT = /^\W*(yes, that'?s right|partly right|not quite|that'?s fine)\b/i;
 const ANY_VERDICT = /\b(yes, that'?s right|that'?s right|not quite|partly right|exactly|spot on|correct)\b/i;
 const PRONOUN = /^\W*(it|its|they|their|them|this|that|these|those|he|she|which)\b/i;
@@ -35,10 +42,61 @@ const PRONOUN = /^\W*(it|its|they|their|them|this|that|these|those|he|she|which)
 function lessonOf(id) { return JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', 'physics', `${id}.json`), 'utf8')); }
 const flat = x => String(x || '').toLowerCase().replace(/<[^>]+>/g, '').replace(/\*\*/g, '').replace(/[\s×*·]+/g, '');
 
-async function runLesson(id) {
+// Jason's session (2026-11-11), written on purpose by the stub model: a dangling "So …" with an unexplained ammeter (F2,
+// F3), "1 ampere is 1 coulomb each second" and the running track again and again (F1), two new terms and a later key
+// point's term (F4, F5), the answer just before its question (F8), "revision" (F9), her "don't know" echoed and a new,
+// harder question after it (F6, F7). Asked again with the code's notes, it writes a clean message.
+let jasonN = 0;
+function jasonTeach(user, sys) {
+  const clean = [
+    'Picture the loop with the switch closed and the lamp lit.',
+    'Think of the loop drawn on paper, with the lamp on one side.',
+    'Imagine the same loop with a second lamp added.',
+  ];
+  const asked = (user.match(/does not know the answer to your question \("([^"]*)"\)/) || [])[1];
+  if (/\((Your message|Do not repeat|Do not mention|Your reply|The answer to your question|Your question repeats|Still too long)/.test(user)) {
+    // Asked again: a hint and the same question when she did not know; otherwise a clean message.
+    if (asked) return `Here is a hint: think about the loop and the charge in it. ${asked}\nTAUGHT: none`;
+    const q = ['What would you see on the lamp?', 'What would the lamp do then?', 'Which part of the loop lights up?', 'Where does the charge go next?'][jasonN % 4];
+    return `${clean[jasonN++ % clean.length]} ${q}\nTAUGHT: none`;
+  }
+  if (/She does not know the answer|just said: "(i )?(dont|don't) know/i.test(user)) return `I don't know is a fine thing to say. What is the unit of resistance?`;
+  const v = [
+    `So it does not matter where you put the ammeter. What do you think the current is after the lamp?`,
+    `1 ampere is 1 coulomb each second, like runners on a running track. What does the current measure?`,
+    `A resistor limits the current, and its resistance is measured in ohms. What happens to the lamp?`,
+    `The resistor makes the lamp dimmer, because less current flows. With a bigger resistor, what happens to the lamp?`,
+    `Good luck with your GCSE revision! 1 ampere is 1 coulomb each second. What would you see when a torch is switched on?`,
+  ];
+  return v[jasonN++ % v.length];
+}
+// The words a circuit widget shows (js/widgets/widgets.js: its buttons, readings, predictions and feedback), with and
+// without cover mode, so the transcript checks can read them (tools/check-widget-cover.js checks the real page).
+function widgetWords(card) {
+  const o = card.options || {}, cover = !!o.cover, ctl = o.controls || [];
+  const may = k => !cover || ctl.includes(k);
+  const words = [];
+  if (card.id === 'circuit') {
+    if (may('add')) words.push('Add a cell');
+    if (may('remove')) words.push('Take a cell away');
+    if (o.resistor && !o.variable && may('res')) words.push('Put the resistor in');
+    if (o.side && may('side')) words.push('Move the resistor');
+    if (o.switch && may('sw')) words.push('Open the switch');
+    if (!o.energy && !o.redraw && may('slider')) words.push('Or slide the potential difference');
+    if (!cover || ctl.includes('add') || ctl.includes('slider') || o.voltmeter) words.push('Potential difference of the cell');
+  }
+  (o.predicts || []).forEach(p => {
+    words.push(p.question, ...(p.options || []).map(x => (cover ? (x.short || String(x.text).split(':')[0]) : x.text)));
+    words.push(cover ? `Now test your prediction. ${p.tryShort || p.try || ''} Your prediction was right.` : `Good prediction. Now check it. ${p.try || ''}`);
+    words.push('Now explain it', (p.explain && p.explain.prompt) || '');
+  });
+  return words.filter(Boolean).join(' | ');
+}
+async function runLesson(id, opts = {}) {
   const fails = [];
   const fail = (n, what) => { fails.push(`S${n}: ${what}`); };
   let mark = 'CORRECT', cls = 'ANSWER', seed = 1;
+  jasonN = 0;
   // The stub tutor model: the faults of the 2026-10-28 run, written on purpose.
   const call = async (sys, user) => {
     if (/You mark one reply/.test(sys)) return mark;
@@ -47,9 +105,18 @@ async function runLesson(id) {
     if (/The words that give this verdict/.test(user)) return /Her answer is right/.test(user) ? `Yes, that's right. That's right. The charge is not used up.` : `Not quite. Not quite. The charge is not used up.`;
     if (/Tell her the next part/.test(user)) return '';   // the lesson's own sentences are used
     if (/revision notes/.test(sys)) return 'Current is a flow of charge.';
+    if (opts.jason) {
+      // A told piece: the lesson sentence copied as it is (what the model did on 2026-11-11, F2).
+      const told = user.match(/(?:Say exactly what these lesson sentences say, and nothing more|makes sense on its own): "([^"]*)"/);
+      if (told) return told[1];
+      if (/match one reply|check a question against/.test(sys)) return '1';
+      if (/You check one message/.test(sys)) return /Reply with the words asked about/.test(sys) ? 'NONE' : 'NO';
+      if (/in her own words, in one line/.test(user)) return 'Your line gets the main idea.';
+      return jasonTeach(user, sys);
+    }
     return `Charge flows round the loop when the switch is closed. What do you think happens to the current?`;
   };
-  const core = TeachCore.create({ call, classify: async () => cls, practice: Practice, rand: () => ((seed = (seed * 16807) % 2147483647) / 2147483647) });
+  const core = TeachCore.create({ call, classify: async () => cls, practice: Practice, rand: () => ((seed = (seed * 16807) % 2147483647) / 2147483647), ...(opts.coverOff ? { coverFix: false } : {}) });
   const data = lessonOf(id), points = core._buildPoints(data);
   core.bind(data, points, null);
   const state = core._freshState();
@@ -74,7 +141,8 @@ async function runLesson(id) {
     else {
       // A question of the tutor's waiting: an answer, a question of hers, or both, in turn.
       const r = k++ % 5;
-      if (r === 3) { text = 'wait why does that happen'; cls = 'QUESTION'; asking = true; }
+      if (opts.jason && r === 2) { text = 'dont know'; cls = 'IDK'; mark = 'IDK'; }
+      else if (r === 3) { text = 'wait why does that happen'; cls = 'QUESTION'; asking = true; }
       else if (r === 4) { text = 'so like does that mean it never changes no matter what'; cls = 'BOTH'; asking = true; }
       else { text = 'the charge keeps flowing round the loop'; cls = 'ANSWER'; mark = r === 1 ? 'WRONG' : 'CORRECT'; }
     }
@@ -102,14 +170,14 @@ async function runLesson(id) {
     // d. "The answer:" names its subject.
     msgs.forEach(m => { const a = m.match(/The answer:\s*(.*)$/); if (a) seen.answers.push(a[1].split(/\s+/).slice(0, 4).join(' ')); if (a && PRONOUN.test(a[1])) fail(n, `"The answer:" starts with a pronoun: "${a[0].slice(0, 80)}"`); });
     // e. each widget once.
-    if (entry.card && entry.card.type === 'widget') { const w = `key point ${entry.pt + 1}'s ${entry.card.id}`; widgets[w] = (widgets[w] || 0) + 1; if (widgets[w] > 1) fail(n, `${w} widget shown again`); }
+    if (entry.card && entry.card.type === 'widget') { entry.widgetText = widgetWords(entry.card); const w = `key point ${entry.pt + 1}'s ${entry.card.id}`; widgets[w] = (widgets[w] || 0) + 1; if (widgets[w] > 1) fail(n, `${w} widget shown again`); }
   }
   const P = core._pilot();
   const ticked = state.coverage.filter(Boolean).length;
   if (!(P && P.finished)) fails.push(`the lesson did not finish in ${n} messages`);
   if (ticked !== points.length) fails.push(`${ticked} of ${points.length} key points ticked`);
   const eqStated = T.filter(x => x.role === 'assistant' && /^The equation is /.test(x.text)).map(x => x.text);
-  return { fails, n, ticked, of: points.length, widgets: Object.keys(widgets).length, eqStated, seen };
+  return { fails, n, ticked, of: points.length, widgets: Object.keys(widgets).length, eqStated, seen, T, data };
 }
 
 // d, replayed: T114 of the 2026-10-28 run ("The answer: It gives energy to the charge, …").
@@ -127,8 +195,33 @@ function t114() {
   return { ok: !a || !PRONOUN.test(a), out };
 }
 
+async function jason() {
+  // Every check of tools/check-transcript.js, on the same scripted run with COVER_FIX off and on.
+  let bad = 0;
+  const res = {};
+  for (const off of [true, false]) {
+    const r = await runLesson('p2-current-voltage', { jason: true, coverOff: off });
+    if (DUMP) fs.writeFileSync(DUMP.replace(/(.json)?$/, off ? '-off.json' : '-on.json'), JSON.stringify(r.T, null, 1));
+    const found = Transcript.check(Transcript.readEntries(r.T), r.data);
+    res[off ? 'off' : 'on'] = { found, r };
+  }
+  const checks = Object.keys(Transcript.CHECKS).filter(c => c !== 'over-60');
+  for (const c of checks) {
+    const a = res.off.found.filter(f => f.check === c), b = res.on.found.filter(f => f.check === c);
+    // The proof the brief asks for: the check fails on Jason's pattern with COVER_FIX off. With it on, a stub that
+    // cannot rewrite a told piece leaves the lesson's own sentence (the fallback); those are counted, not failed.
+    const ok = a.length > 0;
+    const fallback = b.filter(f => { const m = Transcript.readEntries(res.on.r.T).find(x => x.n === f.n); return m && (m.told === 'lesson' || /Your line gets the main idea/.test(m.text)); }).length;
+    if (!ok || b.length > fallback) bad++;
+    console.log(`${ok && b.length === fallback ? 'ok  ' : 'FAIL'}  ${c} (${Transcript.CHECKS[c]}): COVER_FIX off ${a.length}${a[0] ? ` (${a[0].n}: ${a[0].what.slice(0, 110)})` : ''}; on ${b.length}${fallback ? ` (${fallback} in the stub's lesson-sentence fallbacks)` : ''}${b.length > fallback ? ` (${b.find(f => true).n}: ${b[0].what.slice(0, 110)})` : ''}`);
+  }
+  for (const k of ['off', 'on']) console.log(`      COVER_FIX ${k}: ${res[k].r.n} messages, ${res[k].r.ticked}/${res[k].r.of} ticked${res[k].r.fails.length ? `; kp-run checks: ${res[k].r.fails.slice(0, 3).join(' | ')}` : ''}`);
+  return bad;
+}
+
 (async () => {
   let bad = 0;
+  if (JASON) { process.exit(await jason() ? 1 : 0); }
   const d = t114();
   if (!d.ok) bad++;
   console.log(`${d.ok ? 'ok  ' : 'FAIL'}  T114 replayed: "${d.out}"`);

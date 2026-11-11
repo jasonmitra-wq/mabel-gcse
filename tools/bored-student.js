@@ -147,6 +147,51 @@ function makeWillingStudent({ lessonTitle, subject, misconceptions = [] }) {
   };
 }
 
+// The student who answers like Mabel (brief docs/briefs/2026-11-11-coverage-and-faults.md, step 4c;
+// tools/site-test.js --persona mabel): one- to three-word answers, misspellings ("electricty"), "dont know"
+// about a quarter of the time, now and then "what?" or a short question, never asks to stop, takes no extras.
+// Her moves are fixed in advance from the lesson (seeded), so a re-run sees the same kind of student.
+function makeMabelStudent({ lessonTitle, subject }) {
+  const rnd = seeded(`mabel/${subject}/${lessonTitle}`);
+  const system =
+    `You are role-playing a 15-year-old girl in England, learning ${subject} ("${lessonTitle}") for the first time ` +
+    `with an online AI tutor. She is not keen and types the least she can: usually one to three words, all lower case, ` +
+    `no full stops, often misspelt ("electricty", "curent", "baterry", "resistence", "becuase"). She only knows what the tutor ` +
+    `has told her in this conversation, plus everyday knowledge, and she is often unsure. ` +
+    `If the tutor's message lists buttons, reply with exactly the text of one button. ` +
+    `Never ask to stop, skip or be told the rest. Never write anything but her reply. Never mention being an AI or role-playing. Never give her a name.`;
+  return {
+    system,
+    willing: true,
+    mood(tutorText, phase) {
+      if (phase === 'checkin') return 'checkin-no';
+      if (phase === 'closing') return 'closing';
+      const r = rnd();
+      if (r < 0.25) return 'idk';
+      if (r < 0.33) return 'what';
+      if (r < 0.40) return 'ask';
+      return 'try';
+    },
+    instruction(mood) {
+      if (mood === 'checkin-no') return 'The tutor asked if you want them to just tell you the rest. Say no.';
+      if (mood === 'closing') return 'The lesson is over. Reply in one or two words (e.g. "ok thx").';
+      if (mood === 'idk') return 'Say you do not know, the way she would: "dont know", "idk", "no idea" or "not sure". Nothing else.';
+      if (mood === 'what') return 'She did not follow the last message. Reply only "what?" or "huh" or "wdym".';
+      if (mood === 'ask') return 'Ask one very short question of your own about a word or idea in the last message (e.g. "whats an ammeter", "why tho", "is that the same as volts"), at most five words.';
+      return 'Answer in one to three words from what the tutor has said. Misspell a longer word now and then. If it needs a number, give just the number and maybe its unit. She may be wrong.';
+    },
+    body(history, mood, newTerms, choices) {
+      const recent = history.slice(-40);
+      while (recent.length && recent[0].who !== 'tutor') recent.shift();
+      const messages = recent.map(h => ({ role: h.who === 'tutor' ? 'user' : 'assistant', content: h.text || '…' }));
+      const buttons = (choices || []).filter(c => !/^(Next|Next step|Try another|Show me another)$/.test(c));
+      const btn = buttons.length ? `\n\n[Buttons under this message: ${buttons.map(b => `"${b}"`).join(' / ')}]` : '';
+      messages[messages.length - 1] = { role: 'user', content: `${messages[messages.length - 1].content}${btn}\n\n[How to answer this time: ${this.instruction(mood)}]` };
+      return { model: STUDENT_MODEL, max_tokens: 30, system, messages };
+    },
+  };
+}
+
 // The misconceptions of tools/pilot/misconceptions.md (in scope), in their own words, for the willing student.
 function misconceptionLines(file) {
   const text = require('fs').readFileSync(file, 'utf8');
@@ -307,4 +352,4 @@ function prereqNote(lessonId, root = require('path').resolve(__dirname, '..')) {
   return '';
 }
 
-module.exports = { FLOW_FAULT_TYPES, STUDENT_MODEL, JUDGE_MODEL, makeStudent, makeWillingStudent, misconceptionLines, exitScript, clean, judgeBody, parseJudge, verdict, lessonFieldLines, prereqNote };
+module.exports = { FLOW_FAULT_TYPES, STUDENT_MODEL, JUDGE_MODEL, makeStudent, makeWillingStudent, makeMabelStudent, misconceptionLines, exitScript, clean, judgeBody, parseJudge, verdict, lessonFieldLines, prereqNote };

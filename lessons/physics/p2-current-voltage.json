@@ -285,19 +285,23 @@
               "question": "A lamp is joined to a cell by one wire only, from one end of the cell to the lamp. Does the lamp light?",
               "options": [
                 {
-                  "text": "No: charge needs a complete loop, out of the cell and back again"
+                  "text": "No: charge needs a complete loop, out of the cell and back again",
+                  "short": "No"
                 },
                 {
                   "text": "Yes: the cell sends electricity along the wire to the lamp",
-                  "mis": "M1"
+                  "mis": "M1",
+                  "short": "Yes, brightly"
                 },
                 {
                   "text": "Yes, but only dimly",
-                  "mis": "M1"
+                  "mis": "M1",
+                  "short": "Yes, but only dimly"
                 },
                 {
                   "text": "Yes, if the wire is thick enough",
-                  "mis": "M1"
+                  "mis": "M1",
+                  "short": "Only if the wire is thick"
                 }
               ],
               "correct": 0,
@@ -311,7 +315,11 @@
                   "charge flows round the whole loop and back to the cell",
                   "a gap anywhere stops the current everywhere"
                 ]
-              }
+              },
+              "needs": [
+                "sw"
+              ],
+              "tryShort": "The switch below is open, so the loop has a gap. Look at the lamp and both ammeters, then close the switch."
             },
             {
               "id": "cv-same-current",
@@ -322,19 +330,23 @@
               "question": "Ammeter 1 is before the lamp and ammeter 2 is after it. How do their readings compare?",
               "options": [
                 {
-                  "text": "They are the same: the same current flows all the way round"
+                  "text": "They are the same: the same current flows all the way round",
+                  "short": "Both read the same"
                 },
                 {
                   "text": "Ammeter 2 reads less: the lamp uses up some of the current",
-                  "mis": "M2"
+                  "mis": "M2",
+                  "short": "Ammeter 2 reads less as the lamp uses current"
                 },
                 {
                   "text": "Ammeter 2 reads less: it is further round the loop from the cell",
-                  "mis": "M4"
+                  "mis": "M4",
+                  "short": "Ammeter 2 reads less as it is further round"
                 },
                 {
                   "text": "Ammeter 2 reads backwards: currents leave both ends of the cell and meet",
-                  "mis": "M3"
+                  "mis": "M3",
+                  "short": "They read in opposite directions"
                 }
               ],
               "correct": 0,
@@ -350,7 +362,9 @@
                   "charge is not used up in the lamp",
                   "in one loop the current is the same everywhere"
                 ]
-              }
+              },
+              "needs": [],
+              "tryShort": "Read both ammeters."
             },
             {
               "id": "cv-ammeter",
@@ -361,19 +375,23 @@
               "question": "You want to measure the current through the lamp. How do you connect the ammeter?",
               "options": [
                 {
-                  "text": "In the loop, so the same current flows through the ammeter"
+                  "text": "In the loop, so the same current flows through the ammeter",
+                  "short": "In the loop"
                 },
                 {
                   "text": "Across the two ends of the lamp, from one side to the other",
-                  "mis": "M10"
+                  "mis": "M10",
+                  "short": "Across the ends of the lamp"
                 },
                 {
                   "text": "Near the lamp; it does not have to be joined into the loop",
-                  "mis": "M10"
+                  "mis": "M10",
+                  "short": "Near the lamp, not joined in"
                 },
                 {
                   "text": "Right next to the cell, or it reads the wrong current",
-                  "mis": "M4"
+                  "mis": "M4",
+                  "short": "Only next to the cell"
                 }
               ],
               "correct": 0,
@@ -387,8 +405,13 @@
                   "in the loop, so the current flows through it",
                   "its place in the loop does not matter"
                 ]
-              }
+              },
+              "needs": [],
+              "tryShort": "Look where both ammeters sit, and what they read."
             }
+          ],
+          "controls": [
+            "sw"
           ]
         },
         "intro": "Try it: predict first, then use the circuit to check. Open the switch, add cells, and watch both ammeters.",
@@ -574,19 +597,23 @@
               "question": "You add a second cell. What happens to the ammeter reading and to the lamp?",
               "options": [
                 {
-                  "text": "Both go up: more push, so more current and a brighter lamp"
+                  "text": "Both go up: more push, so more current and a brighter lamp",
+                  "short": "Both go up"
                 },
                 {
                   "text": "The lamp gets brighter but the ammeter stays the same: a cell always gives the same current",
-                  "mis": "M5"
+                  "mis": "M5",
+                  "short": "The lamp gets brighter; the ammeter stays the same"
                 },
                 {
                   "text": "Nothing changes: the cells always give the same current",
-                  "mis": "M5"
+                  "mis": "M5",
+                  "short": "Nothing changes"
                 },
                 {
                   "text": "Only the part of the loop next to the new cell gets more current",
-                  "mis": "M4"
+                  "mis": "M4",
+                  "short": "Only the current near the new cell goes up"
                 }
               ],
               "correct": 0,
@@ -601,7 +628,11 @@
                   "two cells give a bigger potential difference (push)",
                   "a bigger push drives a bigger current"
                 ]
-              }
+              },
+              "needs": [
+                "add"
+              ],
+              "tryShort": "Tap Add a cell and watch the ammeter and the lamp."
             },
             {
               "id": "cv-voltmeter",
@@ -612,19 +643,23 @@
               "question": "The voltmeter is connected across the lamp. What does it measure?",
               "options": [
                 {
-                  "text": "The potential difference across the lamp: the push that drives charge through it"
+                  "text": "The potential difference across the lamp: the push that drives charge through it",
+                  "short": "The potential difference across the lamp"
                 },
                 {
                   "text": "The current flowing through the lamp",
-                  "mis": "M8"
+                  "mis": "M8",
+                  "short": "The current through the lamp"
                 },
                 {
                   "text": "How much voltage flows through the lamp each second",
-                  "mis": "M8"
+                  "mis": "M8",
+                  "short": "How much voltage flows through the lamp each second"
                 },
                 {
                   "text": "The potential difference of the cell; a voltmeter only measures cells",
-                  "mis": "M9"
+                  "mis": "M9",
+                  "short": "The potential difference of the cell only"
                 }
               ],
               "correct": 0,
@@ -639,7 +674,12 @@
                   "the ammeter measures the current through the lamp",
                   "the voltmeter measures the potential difference across the lamp"
                 ]
-              }
+              },
+              "needs": [
+                "add",
+                "remove"
+              ],
+              "tryShort": "Add a cell or take one away, and watch the voltmeter and the ammeter."
             },
             {
               "id": "cv-resistor",
@@ -650,18 +690,22 @@
               "question": "You put a resistor into the loop. What happens to the current and to the lamp?",
               "options": [
                 {
-                  "text": "The current goes down and the lamp gets dimmer"
+                  "text": "The current goes down and the lamp gets dimmer",
+                  "short": "The current goes down; the lamp dims"
                 },
                 {
                   "text": "The current stays the same: a cell always gives the same current",
-                  "mis": "M5"
+                  "mis": "M5",
+                  "short": "The current stays the same"
                 },
                 {
                   "text": "Only the current after the resistor goes down",
-                  "mis": "M4"
+                  "mis": "M4",
+                  "short": "Only the current after the resistor goes down"
                 },
                 {
-                  "text": "The current goes up and the lamp gets brighter"
+                  "text": "The current goes up and the lamp gets brighter",
+                  "short": "The current goes up; the lamp gets brighter"
                 }
               ],
               "correct": 0,
@@ -677,8 +721,18 @@
                   "with less current, the lamp dims",
                   "it does not matter which side of the lamp the resistor is"
                 ]
-              }
+              },
+              "needs": [
+                "res"
+              ],
+              "tryShort": "Put the resistor in and watch the ammeter and the lamp. Then move it to the other side of the lamp."
             }
+          ],
+          "controls": [
+            "add",
+            "remove",
+            "res",
+            "side"
           ]
         },
         "intro": "Try it: predict first, then use the circuit to check. Add cells, put the resistor in and move it, and watch the ammeter, the voltmeter and the lamp.",
@@ -1517,19 +1571,23 @@
               "question": "A torch cell goes flat after a few hours. What has it run out of?",
               "options": [
                 {
-                  "text": "Its store of energy: the charge is still there, but the cell no longer gives it energy"
+                  "text": "Its store of energy: the charge is still there, but the cell no longer gives it energy",
+                  "short": "Its store of energy"
                 },
                 {
                   "text": "Its charge: the charge has all been used up",
-                  "mis": "M6"
+                  "mis": "M6",
+                  "short": "Its charge"
                 },
                 {
                   "text": "Its current",
-                  "mis": "M6"
+                  "mis": "M6",
+                  "short": "Its current"
                 },
                 {
                   "text": "Its electricity",
-                  "mis": "M7"
+                  "mis": "M7",
+                  "short": "Its electricity"
                 }
               ],
               "correct": 0,
@@ -1546,8 +1604,14 @@
                   "the cell gives the charge energy",
                   "the energy is transferred in the lamp (E = Q V)"
                 ]
-              }
+              },
+              "needs": [
+                "run"
+              ]
             }
+          ],
+          "controls": [
+            "run"
           ]
         },
         "intro": "Try it: predict first, then run the circuit and compare the charge with the energy.",

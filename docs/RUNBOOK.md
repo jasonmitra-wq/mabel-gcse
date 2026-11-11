@@ -45,6 +45,21 @@ on. Never ask Jason anything except the STOP cases in section 2.
   a widget is shown twice, or a key point is not ticked. (Added
   2026-10-28, brief docs/briefs/2026-10-28-small-fixes.md.)
 
+- docs/FAULTS.md lists every fault Jason (or Mabel) has reported, each
+  with its check. A fault Jason finds that is already in FAULTS.md is a
+  failure of the checks: fix the fault AND the check. A new kind of
+  fault is added to FAULTS.md in the same commit as its fix. FAULTS.md
+  only ever grows. (Added 2026-11-11, brief
+  docs/briefs/2026-11-11-coverage-and-faults.md.)
+- A task that changes the AI lesson also runs the free fault checks:
+  `node tools/check-kp-run.js --jason` (every transcript check fails on
+  Jason's 2026-11-11 pattern with COVER_FIX off),
+  `node tools/check-widget-cover.js` (widgets and worked-example card),
+  and `node tools/check-transcript.js` on every new site-test run (the
+  site tester runs it itself and puts it in result.md). A paid site test
+  of the AI lesson is followed by `node tools/review-lesson.js <run>`
+  (the reviewer reads the transcript and screenshots against FAULTS.md).
+
 ## 2. STOP cases (the only times to wait)
 
 - git status not empty at the start, or HEAD not where STATE says.

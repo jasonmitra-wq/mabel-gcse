@@ -228,6 +228,25 @@ function create(env) {
   // question and an answer to the tutor's ("so like does the energy turn into heat"): her question
   // is answered first, in its own message, then it is marked as her answer.
   const MARK_FIX = TELL_FIX && env.markFix !== false;
+  // Coverage and faults (brief docs/briefs/2026-11-11-coverage-and-faults.md; Jason's session 2026-11-11,
+  // faults F1–F13 in docs/FAULTS.md), on by default with MARK_FIX. create({ call, coverFix: false }) keeps
+  // every prompt, decision and state exactly as before (tools/check-flag-identical.js). With it on:
+  // (a) each key point's teaching items (its sentences) have ids ("1.3"); every tutor reply ends with a
+  // hidden "TAUGHT:" line naming the items it taught, taken off before she sees it; a claim counts only if
+  // the item's numbers, bold terms and key terms are in the reply (no word-overlap guessing);
+  // (b) nothing is told verbatim: an item not yet taught is explained by the model, in lesson order, one idea
+  // per message, at most 60 words, told what has already been said; a sentence restating a fact already said
+  // in the lesson is dropped; no message opens with a pronoun or So/This/That/It; (c) at most one new term
+  // per message, explained in the sentence that first uses it; no "First, a word you'll need" boxes; no term
+  // of a later key point; a widget's terms are explained before it; (d) an equation is introduced in one
+  // message naming each symbol, its quantity and unit, before anything uses it; (e) a worked example's
+  // question is shown once (the card), one button at a time; (f) "don't know" is never echoed and is followed
+  // by something easier; a question never follows a sentence that states its answer; (g) predict-first
+  // widgets: short options, explanation after the test, "Now explain it" after the control is used, the cell
+  // symbol, only the controls needed, no stock praise (js/widgets/widgets.js, options.cover); (h) the side
+  // column shows the picture of the current step or nothing (js/teach.js); (i) she is meeting the topic for
+  // the first time: no "revision".
+  const COVER_FIX = MARK_FIX && env.coverFix !== false;
   const KP_TEACH_MAX = 4;
   const KP_TEACH_TURNS = 8;   // all her messages while a point is taught (side questions too); then the rest is told
   const CLS = { call: env.classify ? (sys, user, tokens) => env.classify(sys, user, tokens) : null };
@@ -600,7 +619,9 @@ function create(env) {
   function _buildSystemPrompt(teachIdx) {
     const mistakes = _mistakesFor(teachIdx);
     return [
-      FIX23
+      COVER_FIX
+        ? `You are a warm, encouraging GCSE tutor teaching a 15-year-old student who is meeting this topic for the first time (she is learning it, not revising it), through natural back-and-forth conversation rather than slides. You do not know her name: never use a name or call her by one.`
+        : FIX23
         ? `You are a warm, encouraging GCSE tutor teaching a 15-year-old student who is studying for her GCSEs, through natural back-and-forth conversation rather than slides. You do not know her name: never use a name or call her by one.`
         : `You are a warm, encouraging GCSE tutor teaching Mabel, a 15-year-old studying for her GCSEs, through natural back-and-forth conversation rather than slides.`,
       `Lesson: "${_data.title}".`,
@@ -631,6 +652,7 @@ function create(env) {
       ].join('\n') : '',
       FIRST_TIME ? _firstTimeRules() : '',
       PILOT_FIX ? _pilotRules() : '',
+      COVER_FIX ? _cfRules(teachIdx) : '',
     ].filter(Boolean).join('\n');
   }
 
@@ -748,7 +770,10 @@ function create(env) {
     if (!q) return false;
     const before = plain.slice(0, plain.length - q.length).trim();
     const prev = [...(_state.transcript || [])].reverse().find(t => t.role === 'assistant');
-    if (PILOT_FIX && _copyable(q, `${before} ${prev ? _stripMarkdown(prev.text) : ''}`)) return true;
+    // COVER_FIX (f): the question asked again (easier, after "don't know") is not its own answer: the last
+    // message's question is left out of what she could copy.
+    const prevSaid = prev ? (COVER_FIX ? _sentences(_stripMarkdown(prev.text)).filter(x => !/\?/.test(x)).join(' ') : _stripMarkdown(prev.text)) : '';
+    if (PILOT_FIX && _copyable(q, `${before} ${prevSaid}`)) return true;
     const sys = `You check one message from a tutor to a student. Reply with one word only: YES or NO.`;
     const user = [
       prev ? `The tutor's previous message: "${_stripMarkdown(prev.text)}"` : '',
@@ -1109,14 +1134,21 @@ function create(env) {
     const ft = FIRST_TIME ? _pendingFT : null;
     _pendingFT = null;
     let termFault = null, termTried = false, termUnexplained = false, given = false, givenTried = false, science = null;
+    let cover = null, coverTries = 0;
     const basicOf = new Map();
+    // COVER_FIX (a): the hidden "TAUGHT:" line of each attempt, kept by its text.
+    const claimsOf = new Map();
+    let lastClaims = [];
+    const cfPick = text => { if (COVER_FIX) _cfClaims = claimsOf.has(text) ? claimsOf.get(text) : lastClaims; };
+    const cfDone = text => (COVER_FIX ? _cfClean(text) : text);
     const done = FIRST_TIME
       ? text => {
           if (TEACH_THEN_ASK && chunk) _markTaught(chunk);
           _lastBasicTag = basicOf.get(text) || null;
-          return FLOW_FIX && maxWords ? _finishReply(text, maxWords) : _finishReply(text);
+          cfPick(text);
+          return cfDone(FLOW_FIX && maxWords ? _finishReply(text, maxWords) : _finishReply(text));
         }
-      : text => { if (TEACH_THEN_ASK && chunk) _markTaught(chunk); return FLOW_FIX && maxWords ? _finishReply(text, maxWords) : _finishReply(text); };
+      : text => { if (TEACH_THEN_ASK && chunk) _markTaught(chunk); cfPick(text); return cfDone(FLOW_FIX && maxWords ? _finishReply(text, maxWords) : _finishReply(text)); };
     for (let i = 0; i < limits.length; i++) {
       const a = limits[level];
       const anchorNote = unanchored
@@ -1130,11 +1162,13 @@ function create(env) {
           : `(Your reply brings in ${termFault.length} new terms at once: ${termFault.join(', ')}. She is meeting them for the first time. Keep only ONE new term in this message, explained in everyday words, and leave the others for later messages.)`;
       const givenNote = given ? `(The answer to your question is already in your message or your last one, so she would only copy it back. Keep the teaching, but ask a question that makes her use the idea: an everyday case, a small change, or a reason in her own words.)` : '';
       const scienceNote = science ? `(Your reply says ${science}, which is not in the lesson. State only the relationships, numbers and rules the key point's content, exam box or worked examples give, in their words.)` : '';
-      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : '', many ? manyNote : '', naming ? namingNote : '', anchorNote, repeatNote, termNote, givenNote, ...(PILOT_FIX ? [scienceNote] : [])].filter(Boolean).join('\n');
+      const note = [a.note, yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : '', noQuestion ? noQuestionNote : '', many ? manyNote : '', naming ? namingNote : '', anchorNote, repeatNote, termNote, givenNote, ...(PILOT_FIX ? [scienceNote] : []), ...(COVER_FIX && cover ? [cover] : [])].filter(Boolean).join('\n');
       const raw = (await AI.call(sys, note ? `${user}\n\n${note}` : user, a.tokens)).trim();
       const split = TEACH_THEN_ASK ? _splitAnswer(raw) : { text: raw, answer: null };
       const { answer } = split;
       let reply = split.text;
+      // COVER_FIX (a): the hidden list of what this reply taught, taken off before she sees it.
+      if (COVER_FIX) { const c = _cfSplitTaught(reply); reply = c.text; lastClaims = c.ids; claimsOf.set(reply, c.ids); }
       if (FIRST_TIME) { const b = _splitBasic(reply); reply = b.text; if (b.basic) basicOf.set(reply, b.basic); }
       const plain = _stripMarkdown(reply);
       last = reply;
@@ -1166,13 +1200,20 @@ function create(env) {
           }
         }
         if (ft.teach && !ft.confused && noYesNo && (!givenTried || PILOT_FIX) && !cut && !termFault && !repeated) {
-          given = await _answerGiven(plain);
+          // COVER_FIX (f): a sentence just before the question that states its answer is caught in code first.
+          given = (COVER_FIX && _cfAnswerShown(plain)) || await _answerGiven(plain);
           givenTried = true;
         }
       }
       // PILOT_FIX (i): a number or rule that is not the lesson's is asked for again.
       science = PILOT_FIX && !cut ? _pilotScienceFault(plain) : null;
-      const badQ = yesNo || eitherOr || noQuestion || many || naming || unanchored || !!repeated || !!termFault || given || !!science;
+      // COVER_FIX (b), (c), (f), (i): an opener with no referent, a later key point's term, two new terms or one
+      // not explained in its sentence, her words echoed, "revision": asked for again (twice at most).
+      // COVER_FIX (f): the answer stated just before the question is caught whatever else the reply got wrong.
+      if (COVER_FIX && !cut && noYesNo && !given && _cfAnswerShown(plain)) given = true;
+      cover = COVER_FIX && !cut && coverTries < 2 ? _cfFault(reply) : null;
+      if (cover) coverTries++;
+      const badQ = yesNo || eitherOr || noQuestion || many || naming || unanchored || !!repeated || !!termFault || given || !!science || !!cover;
       if (!cut && !long && !badQ) return done(reply);
       if (!cut && !badQ && !complete) complete = reply; // finished, just long — usable if nothing better
       if (cut || long) level = Math.min(level + 1, limits.length - 1);
@@ -1183,6 +1224,7 @@ function create(env) {
       const qNote = [yesNo ? yesNoNote : '', eitherOr ? eitherOrNote : ''].filter(Boolean).join('\n');
       const raw = (await AI.call(sys, `${user}\n\n${qNote}`, limits[level].tokens)).trim();
       let reply = TEACH_THEN_ASK ? _splitAnswer(raw).text : raw;
+      if (COVER_FIX) { const c = _cfSplitTaught(reply); reply = c.text; lastClaims = c.ids; claimsOf.set(reply, c.ids); }
       if (FIRST_TIME) { const b = _splitBasic(reply); reply = b.text; if (b.basic) basicOf.set(reply, b.basic); }
       const plain = _stripMarkdown(reply);
       const fine = !_looksTruncated(plain) && !_asksYesNo(plain) && !_asksEitherOr(plain)
@@ -1641,6 +1683,8 @@ function create(env) {
     if (!MARK_FIX || !eq) return null;
     const e = (_points || []).flatMap(p => (p.examBox || {}).equations || []).find(x => x.id === eq);
     if (!e || !e.symbols) return null;
+    // COVER_FIX (d): stated once, in its own message, with each symbol's quantity and unit (F10).
+    if (COVER_FIX) { if (_cfEqDone(e.id)) return null; _cfEqMark(e.id); return _cfEqIntro(e); }
     const sym = _eqFlat(e.symbols), words = _eqFlat(e.words);
     const said = (_state.transcript || []).filter(x => x.role === 'assistant')
       .some(x => { const f = _eqFlat(_stripMarkdown(x.text || '')); return f.includes(sym) || (words && f.includes(words)); });
@@ -1678,12 +1722,16 @@ function create(env) {
     // MARK_FIX (d): a sentence that opens with a bare pronoun ("It gives energy to the charge", T114) comes with the
     // sentence before it, which names what it is; with none to lean on, it is not used.
     if (MARK_FIX) cands = cands.map((c, k) => !MF_PRONOUN.test(c) ? c : k > 0 && k < p.sentences.length && !MF_PRONOUN.test(cands[k - 1]) ? `${cands[k - 1]} ${c}` : null).filter(Boolean);
+    // COVER_FIX (c): never an answer that brings in a later key point's term.
+    if (COVER_FIX) { const later = _cfLaterTerms(idx); cands = cands.filter(c => !later.some(e => e.re.test(c))); }
     let best = null, score = 0;
     for (const c of cands) { const st = new Set(_stems(c)); const n = [...qs].filter(w => st.has(w)).length; if (n > score) { score = n; best = c; } }
     if (!best || !score) return text;
     const have = new Set(_stems(_stripMarkdown(text))), need = [...new Set(_stems(best))];
     if (need.length && need.filter(w => have.has(w)).length / need.length >= 0.5) return text;
-    return `${text} The answer: ${best.replace(/\s+([.,;:!?)])/g, '$1')}`;
+    // COVER_FIX (a): a lesson sentence given as the answer has been taught.
+    if (COVER_FIX) { const j = p.sentences.indexOf(best); if (j !== -1) _pilot().sent[idx][j] = true; }
+    return `${text} The answer:${best.replace(/\s+([.,;:!?)])/g, '$1')}`;
   }
   // MARK_FIX (a): the rules of a key point (its exam box and points to remember) and the lesson's
   // known misconceptions, given to the marking call and to the tutor.
@@ -2099,6 +2147,275 @@ function create(env) {
     ].join('\n');
   }
 
+  // ── Coverage and faults (COVER_FIX; brief docs/briefs/2026-11-11-coverage-and-faults.md) ──
+  // The ids the newest model reply claimed to teach ("TAUGHT: 1.3, 1.4"), set by _callWithLengthGuard.
+  let _cfClaims = [];
+  // F2: a message that opens with a word pointing back at something it does not contain.
+  const CF_OPENER = /^\W*(it|its|it's|they|they're|them|their|this|that|these|those|so|he|she|which|to (?:find|do|work out|get) (?:it|this|that|them))\b/i;
+  // The code's own lead-ins, which are not the message's subject.
+  const CF_LEAD = /^\W*(yes, that'?s right|that'?s right|partly right|not quite|that'?s fine|no problem|ok, moving on|ok, let'?s finish this one|here'?s the rest of this one|let me just tell you this bit|back to (?:the|my) question)\W*$/i;
+  const CF_REVISION = /\brevis(?:e|es|ed|ing|ion)\b(?!\s+cards?)/i;
+  const CF_IDK = /\b(i\s+)?(don'?t|dont|do not) know\b|\bidk\b|\bdunno\b|\bno idea\b/i;
+  const _cfId = (i, j) => `${i + 1}.${j + 1}`;
+  function _cfSplitTaught(raw) {
+    const t = String(raw || '');
+    const m = t.match(/(?:^|\n|\s)\(?\s*TAUGHT\s*:\s*([^\n]*)/i);
+    if (!m) return { text: t, ids: [] };
+    const ids = (m[1].match(/\d+\.\d+/g) || []);
+    return { text: (t.slice(0, m.index) + t.slice(m.index + m[0].length)).replace(/\s+$/, '').trim(), ids };
+  }
+  // What a claim must show: the item's numbers, and the bold and key terms it names.
+  function _cfHas(text, req) {
+    const low = String(text).toLowerCase();
+    return req.words.every(w => low.includes(w.toLowerCase().replace(/s$/, '')))
+      && req.nums.every(n => new RegExp(`(^|[^\\d.])${n.replace('.', '\\.')}(?![\\d])`).test(text));
+  }
+  // (a) The claims of the newest model reply, checked in code; a failed claim is ignored.
+  function _cfApply(idx, text) {
+    const P = _pilot(), plain = _stripMarkdown(text), cur = _state.currentPointIndex;
+    if (!P.cfLog) P.cfLog = [];
+    for (const id of _cfClaims) {
+      const [k, j] = id.split('.').map(n => Number(n) - 1);
+      if (!_points[k] || !_points[k].sentences[j] || k > Math.max(idx == null ? cur : idx, cur)) { P.cfLog.push({ id, ok: false, why: 'no such item' }); continue; }
+      const ok = _cfHas(plain, _tfMustKeep(k, _points[k].sentences[j]));
+      if (ok) P.sent[k][j] = true;
+      P.cfLog.push({ id, ok });
+    }
+    _cfClaims = [];
+  }
+  // (c) The terms of later key points (their key terms that no earlier point also has).
+  function _cfTermRe(term) {
+    const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const base = String(term || '').replace(/\s*\(.*?\)\s*/g, ' ').trim();
+    return new RegExp(`(^|[^A-Za-z])(${esc(base).replace(/\s+/g, '[\\s-]+')})(e?s)?(?![A-Za-z])`, 'i');
+  }
+  function _cfLaterTerms(idx) {
+    if (idx == null) return [];
+    const own = new Set(_points.slice(0, idx + 1).flatMap(p => (p.keyTerms || []).map(t => String(t.term).replace(/\s*\(.*?\)\s*/g, ' ').trim().toLowerCase())));
+    const out = [], seen = new Set();
+    _points.slice(idx + 1).forEach(p => (p.keyTerms || []).forEach(t => {
+      const base = String(t.term).replace(/\s*\(.*?\)\s*/g, ' ').trim(), key = base.toLowerCase();
+      if (own.has(key) || seen.has(key) || base.length < 4) return;
+      // A later term that is only a longer form of a word this point teaches ("voltage" is not "volt") stays allowed only if it is its own word.
+      seen.add(key);
+      out.push({ term: base, re: _cfTermRe(base) });
+    }));
+    return out;
+  }
+  function _cfItemLater(idx, j) { return _cfLaterTerms(idx).some(e => e.re.test(_points[idx].sentences[j])); }
+  // Everything said so far, by the tutor and by her.
+  function _cfSaid(role) { return (_state.transcript || []).filter(t => (role ? t.role === role : t.role === 'assistant' || t.role === 'user')).map(t => _stripMarkdown(t.text || '')).join('\n'); }
+  // (c) The glossary terms of this topic that a message uses and nobody has said yet.
+  function _cfNewTerms(plain) {
+    const said = _cfSaid();
+    const topic = String(_pctx.lessonId || '').split('-')[0];
+    return _pilotGlossary().filter(e => e.re.test(plain) && !e.re.test(said)
+      && !(e.lesson && e.lesson !== _pctx.lessonId && _pctx.opened(e.lesson))
+      && !(e.lesson && String(e.lesson).split('-')[0] !== topic))
+      // "electric current" inside "electric current" only once: the longest form wins.
+      .filter((e, k, all) => !all.some(o => o !== e && o.term.length > e.term.length && o.term.toLowerCase().includes(e.term.toLowerCase())));
+  }
+  // A sentence that uses term e also says what it is (some of its definition's own words).
+  function _cfDefinedIn(sentence, e) {
+    if (!e.re.test(sentence)) return false;
+    // The sentence names it as it explains it: "… is an ohmic conductor", "a voltmeter, which …", "people call it voltage".
+    const t = e.term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '[\\s-]+');
+    if (new RegExp(`\\b(?:is|are|called|call it|call this|known as)\\s+(?:a |an |the )?(?:directly )?${t}|${t}(?:e?s)?\\s*(?:,|\\(|:|—|–)`, 'i').test(sentence)) return true;
+    const own = new Set(_stems(e.term));
+    const def = [...new Set(_stems(String(e.def).split(/(?<=[.!?])\s/)[0]))].filter(w => !own.has(w));
+    if (!def.length) return true;
+    const have = new Set(_stems(sentence));
+    return def.filter(w => have.has(w)).length >= (def.length <= 3 ? 1 : 2);
+  }
+  // Her newest message.
+  function _cfHers() { const u = [...(_state.transcript || [])].reverse().find(t => t.role === 'user'); return u ? String(u.text || '') : ''; }
+  const _cfNorm = s => String(s || '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
+  function _cfEchoes(sentence) {
+    const hers = _cfHers(), h = _cfNorm(hers), s = _cfNorm(sentence);
+    if (CF_IDK.test(hers) && CF_IDK.test(sentence)) return true;
+    return h.split(' ').length >= 3 && h.length >= 12 && s.includes(h);
+  }
+  // (b) A sentence restating one already said in this lesson (most of its content words are in one earlier sentence).
+  // The content words of a sentence, without the words of a verdict ("that's right, …").
+  const CF_NOT_FACT = /^(that'|right|yes|correct|exactly|actually|really|answer)$/;
+  const _cfFactStems = x => [...new Set(_stems(_stripMarkdown(x)).filter(w => !/'$/.test(w) && !CF_NOT_FACT.test(w)))];
+  function _cfRepeats(sentence, before) {
+    const st = _cfFactStems(sentence);
+    if (st.length < 4 || /\?/.test(sentence)) return false;
+    const prior = before != null ? before : _sentences(_cfSaid('assistant')).map(x => x.trim()).filter(Boolean);
+    return prior.some(p => { const ps = new Set(_cfFactStems(p)); return st.filter(w => ps.has(w)).length / st.length >= 0.8; });
+  }
+  // The first sentence that is not one of the code's lead-ins.
+  function _cfFirst(text) { return _sentences(_stripMarkdown(text)).map(x => x.trim()).filter(Boolean).find(x => !CF_LEAD.test(x)) || ''; }
+  // (b), (c), (f), (i): what is wrong with a model message, as a note asking for it again; null if nothing.
+  function _cfFault(text, idx = _state.currentPointIndex) {
+    const plain = _stripMarkdown(text), notes = [];
+    const first = _cfFirst(plain), m = /\?/.test(first) ? null : first.match(CF_OPENER);
+    if (m) notes.push(`(Your message starts with "${m[1]}", but what it points back to is not in this message. Name the thing itself in the first sentence, so the message makes sense on its own.)`);
+    const later = _cfLaterTerms(_state.complete ? null : idx).filter(e => e.re.test(plain)).map(e => e.term);
+    if (later.length) notes.push(`(Your message uses ${later.map(t => `"${t}"`).join(', ')}, which a later key point teaches. Leave it out of this message.)`);
+    const news = _cfNewTerms(plain);
+    if (news.length > 1) notes.push(`(Your message brings in ${news.length} new terms at once: ${news.map(e => e.term).join(', ')}. Keep only ONE new term, explained inside the sentence that first uses it, and leave the others for later messages.)`);
+    else if (news.length === 1) {
+      const e = news[0], s = _sentences(plain).find(x => e.re.test(x)) || '';
+      if (!_cfDefinedIn(s, e)) notes.push(`(Your message uses "${e.term}" without saying what it is. She has never met it. Explain it inside the sentence that first uses it, for example "the ${e.term.toLowerCase()}, ${String(e.def).split(/(?<=[.!?])\s/)[0].replace(/^(A|An|The)\s/, m2 => m2.toLowerCase()).replace(/\.$/, '')}".)`);
+    }
+    if (_sentences(plain).some(_cfEchoes)) notes.push(`(Do not repeat or quote her words back to her.)`);
+    if (CF_REVISION.test(plain)) notes.push(`(Do not mention revision or revising: she is learning this for the first time.)`);
+    return notes.length ? notes.join('\n') : null;
+  }
+  // (b), (f), (i): sentences that restate a fact already said, echo her words, mention revision or use a later
+  // point's term are dropped (a question is kept); if nothing would be left, the message is kept as it was.
+  function _cfClean(text, idx = _state.currentPointIndex) {
+    const sents = _sentences(String(text || '')).map(x => x.trim()).filter(Boolean);
+    const prior = _sentences(_cfSaid('assistant')).map(x => x.trim()).filter(Boolean);
+    const later = _cfLaterTerms(_state.complete ? null : idx);
+    const drop = sents.map(s => !/\?/.test(s) && (_cfRepeats(s, prior) || _cfEchoes(s) || CF_REVISION.test(s) || later.some(e => e.re.test(_stripMarkdown(s)))));
+    // A sentence that leans on the one before ("So …", "It …") keeps it, so the message still reads on its own.
+    const firstKept = drop.indexOf(false);
+    if (firstKept > 0 && !/\?/.test(sents[firstKept]) && CF_OPENER.test(_stripMarkdown(sents[firstKept]))) drop[firstKept - 1] = false;
+    const keep = sents.filter((s, k) => !drop[k]);
+    // Nothing but a verdict or a lead-in left: the message is kept as it was (its point is not lost).
+    const real = keep.filter(s => !CF_LEAD.test(_stripMarkdown(s)) && !(MF_VERDICT.test(s) && !/[a-z]{3,}.*[a-z]{3,}/i.test(s.replace(MF_VERDICT, '').replace(/["“”'‘’][^"“”'‘’]*["“”'‘’]/g, ''))));
+    return real.length ? keep.join(' ') : text;
+  }
+  // (f) A question straight after a sentence that states its answer ("…the lamp dims again." then
+  // "With a bigger resistance, what happens to the lamp?").
+  const CF_RESULT = /\b(dim|dims|dimmer|bright|brighter|bigger|smaller|larger|more|less|fewer|increase[sd]?|decrease[sd]?|goes up|goes down|rises?|falls?|stops?|same|double[sd]?|halve[sd]?|zero)\b/i;
+  function _cfAnswerShown(plain, prevText) {
+    const sents = _sentences(String(plain || '')).map(x => x.trim()).filter(Boolean);
+    const qk = sents.map((s, k) => (/\?/.test(s) ? k : -1)).filter(k => k >= 0).pop();
+    if (qk === undefined) return false;
+    const q = sents[qk];
+    if (!/\b(what (happens|would happen|will happen)|how (does|would|will)|what (does|would|will) .* do|which way)\b/i.test(q)) return false;
+    const prev = prevText != null ? prevText : (() => { const a = [...(_state.transcript || [])].reverse().find(t => t.role === 'assistant'); return a ? _stripMarkdown(a.text || '') : ''; })();
+    const before = [...sents.slice(0, qk), ..._sentences(prev).map(x => x.trim()).slice(-2)];
+    const qs = new Set(_stems(q).filter(w => !/^(happen|would|will|think|does|what)$/.test(w)));
+    return before.some(b => !/\?/.test(b) && CF_RESULT.test(b) && _stems(b).filter(w => qs.has(w)).length >= 2);
+  }
+  // (d) The equations of the lesson up to point idx, and the one message that introduces each.
+  function _cfEquations(idx) { return _points.slice(0, (idx == null ? _points.length - 1 : idx) + 1).flatMap(p => (p.examBox || {}).equations || []).filter(e => e && e.symbols); }
+  function _cfEqIntro(e) {
+    const us = (e.units || []).map(u => `${u.symbol} is the ${u.quantity} in ${u.unit} (${u.unitSymbol})`);
+    const list = us.length <= 1 ? us.join('') : `${us.slice(0, -1).join(', ')} and ${us[us.length - 1]}`;
+    return `The equation is ${_stripHtml(e.symbols)}: ${_stripHtml(e.words)}. ${list ? `${list}.` : ''}`.trim();
+  }
+  const CF_OP = /\b(multiply|multiplied|times|divide|divided|equals|equation|rearrange)\b|[×÷=]/i;
+  function _cfUsesEq(text, e) {
+    const f = _eqFlat(_stripMarkdown(text));
+    if (f.includes(_eqFlat(e.symbols)) || (e.words && f.includes(_eqFlat(e.words)))) return true;
+    const low = String(text).toLowerCase();
+    const qs = (e.units || []).map(u => String(u.quantity).toLowerCase());
+    const n = qs.filter(q => low.includes(q)).length;
+    return qs.length >= 2 && n >= qs.length - 1 && CF_OP.test(low);
+  }
+  function _cfEqDone(id) { const P = _pilot(); return Array.isArray(P.eqDone) && P.eqDone.includes(id); }
+  function _cfEqMark(id) { const P = _pilot(); if (!Array.isArray(P.eqDone)) P.eqDone = []; if (!P.eqDone.includes(id)) P.eqDone.push(id); }
+  // The introductions a message needs first: each equation it uses that has not been introduced.
+  function _cfEqBefore(text, idx) {
+    const out = [];
+    for (const e of _cfEquations(idx)) if (!_cfEqDone(e.id) && _cfUsesEq(text, e)) { _cfEqMark(e.id); out.push(_cfEqIntro(e)); }
+    return out;
+  }
+  // The system prompt's rules for this brief, with the key point's items and what is already taught.
+  function _cfRules(teachIdx) {
+    const lines = [
+      `She is meeting this topic for the first time. Never mention revision, revising or "good luck" with exams.`,
+      `Never say again a fact already said in this lesson; build on it instead.`,
+      `Never start a message with It, Its, They, This, That, These, Those, So or "To find it": name the thing itself first, so every message makes sense on its own.`,
+      `Bring in at most ONE new term per message, and explain it inside the sentence that first uses it ("the ammeter, the meter that measures current"). Never use a term she has not met without explaining it there.`,
+      `Never repeat or quote her words back to her, not even "I don't know".`,
+      `Do not write an equation in symbols: each equation is shown to her separately, with what its symbols mean.`,
+    ];
+    if (teachIdx != null && _points[teachIdx]) {
+      const P = _pilot();
+      const later = _cfLaterTerms(teachIdx).map(e => e.term);
+      if (later.length) lines.push(`These terms belong to later key points: never use them now: ${later.join(', ')}.`);
+      const items = _points[teachIdx].sentences.map((s, j) => `[${_cfId(teachIdx, j)}${P.sent[teachIdx][j] ? ' already taught' : ''}] ${s}`);
+      lines.push(`The teaching items of this key point, in lesson order (do not teach again an item marked already taught):\n${items.join('\n')}`);
+      lines.push(`End every reply with one last line on its own: "TAUGHT:" and the ids of the items above that this reply explains (for example "TAUGHT: ${_cfId(teachIdx, 0)}, ${_cfId(teachIdx, 1)}"), or "TAUGHT: none". That line is taken out before she sees it.`);
+    }
+    return lines.join('\n');
+  }
+  // (b) The told part: one item per piece (two short ones together), in lesson order, leaving out items already
+  // taught and items that name a later point's term; an item with nothing to keep (no number, no term) that comes
+  // before something already taught is not told (the lesson has moved past it: F1, "Every torch, phone and kettle…").
+  function _cfTellChunks(idx) {
+    const P = _pilot(), s = _points[idx].sentences, out = [];
+    const lastTaught = s.reduce((m, x, j) => (P.sent[idx][j] ? j : m), -1);
+    let cur = null;
+    s.forEach((x, j) => {
+      if (P.sent[idx][j]) { cur = null; return; }
+      if (_cfItemLater(idx, j)) { P.sent[idx][j] = true; cur = null; return; }
+      const req = _tfMustKeep(idx, x);
+      if (j < lastTaught && !req.words.length && !req.nums.length) { P.sent[idx][j] = true; return; }
+      const eq = _cfEquations(idx).find(e => _cfUsesEq(x, e));
+      if (eq) { out.push({ t: 'tell', idx, js: [j], text: x, eq: eq.id }); cur = null; return; }
+      // A sentence that leans on the one before ("Its size is …") is told with it.
+      const leans = CF_OPENER.test(x);
+      if (cur && !cur.eq && cur.js[cur.js.length - 1] === j - 1 && ((leans && _wordCount(cur.text) + _wordCount(x) <= 60) || (_wordCount(cur.text) + _wordCount(x) <= 30 && _tfMustKeep(idx, `${cur.text} ${x}`).words.length <= 1))) { cur.js.push(j); cur.text += ' ' + x; return; }
+      cur = { t: 'tell', idx, js: [j], text: x };
+      out.push(cur);
+    });
+    out.forEach(c => { c.text = c.text.replace(/\s+([.,;:!?)])/g, '$1').replace(/\(\s+/g, '(').replace(/\s{2,}/g, ' '); });
+    return out;
+  }
+  // (b) One told piece, explained by the model in its own words, checked in code (twice at most); else the
+  // lesson's sentences with the sentence they lean on.
+  async function _cfTell(s) {
+    const idx = s.idx, src = s.text, keep = _tfMustKeep(idx, src), P = _pilot();
+    const taught = _points[idx].sentences.filter((x, j) => P.sent[idx][j]);
+    const news = _cfNewTerms(src);
+    let note = '';
+    for (let k = 0; k < 2; k++) {
+      const user = [
+        _recentHistoryBlock(true),
+        taught.length ? `Already taught on this key point (never say any of it again):\n${taught.map(x => `- ${x}`).join('\n')}` : '',
+        `Explain the next idea of the key point to her, in your own plain words, so that it follows on from the conversation above and makes sense on its own: "${src}"`,
+        keep.words.length || keep.nums.length ? `Keep these exactly as they are written: ${[...keep.words.map(w => `"${w}"`), ...keep.nums].join(', ')}.` : '',
+        news.length ? `She has not met ${news.map(e => `"${e.term}" (${e.def})`).join(', ')}: explain ${news.length > 1 ? 'each' : 'it'} inside the sentence that first uses it.` : '',
+        `One idea. At most 60 words. Do not ask a question. Do not start with It, This, That, So or They: name the thing itself.`,
+        _pointBrief(_points[idx]),
+        note,
+      ].filter(Boolean).join('\n\n');
+      try {
+        const raw = String(await AI.call(_buildSystemPrompt(idx), user, 200) || '').trim();
+        const out = _cfSplitTaught(raw).text, plain = _stripMarkdown(out);
+        const fault = _cfFault(out, idx);
+        const kept = _cfClean(out, idx);
+        if (out && kept && _wordCount(plain) <= 60 && !/\?/.test(plain) && !_looksTruncated(plain) && !fault && _cfHas(_stripMarkdown(kept), keep)) return { text: kept, by: 'model' };
+        note = fault || `(Keep every one of these exactly: ${[...keep.words, ...keep.nums].join(', ')}; at most 60 words; no question.)`;
+      } catch (e) { _logError('told piece', e); break; }
+    }
+    // The lesson's sentences; one that leans on the sentence before ("So …", "To find it, …") brings it along.
+    const j0 = s.js[0], prev = j0 > 0 ? _points[idx].sentences[j0 - 1] : '';
+    return { text: prev && CF_OPENER.test(src) ? `${prev} ${src}` : src, by: 'lesson' };
+  }
+  // (c) The widget's terms (its labels, buttons and predictions) that no message has explained yet, each in one sentence.
+  function _cfWidgetTerms(w) {
+    const o = w.options || {};
+    const text = [...(w.labels || []), ...(o.predicts || []).flatMap(p => [p.question, ...(p.options || []).map(x => x.short || x.text)]), ...(o.controlWords || [])].join(' . ');
+    const said = _cfSaid();
+    return _pilotGlossary().filter(e => e.re.test(text) && !e.re.test(said)
+      && !(e.lesson && e.lesson !== _pctx.lessonId && _pctx.opened(e.lesson))
+      && !(e.lesson && String(e.lesson).split('-')[0] !== String(_pctx.lessonId || '').split('-')[0]))
+      .map(e => { const d = String(e.def).split(/(?<=[.!?])\s/)[0].trim(); return /^(A|An|The)\s/.test(d) ? `${/^[aeiou]/i.test(e.term) ? 'An' : 'A'} ${e.term.toLowerCase()} is ${d.charAt(0).toLowerCase()}${d.slice(1)}` : `${e.term}: ${d}`; });
+  }
+  // (g) The controls a predict-first widget needs: those its predictions ask her to use.
+  const CF_CONTROL = [['sw', /\b(close|open) the switch\b/i], ['add', /\badd (a|another) cell\b/i], ['res', /\b(put|take) the resistor\b/i], ['side', /\bmove (it|the resistor)\b/i]];
+  function _cfNeeds(p) {
+    if (p.needs) return [].concat(p.needs);
+    const t = String(p.try || '');
+    const out = CF_CONTROL.filter(([, re]) => re.test(t)).map(([k]) => k);
+    if (!out.length && p.setup && p.setup.open) out.push('sw');
+    return out;
+  }
+  function _cfControls(w) {
+    const o = w.options || {};
+    if (Array.isArray(o.controls)) return o.controls;
+    return [...new Set((o.predicts || []).flatMap(_cfNeeds))];
+  }
+
   // (a), (b) One question, at most 60 words.
   function _pilotOneQuestion(text) {
     let t = String(text || '').replace(new RegExp(JOINED_QUESTION.source, 'gi'), '?');
@@ -2146,6 +2463,8 @@ function create(env) {
   function _tfCovered(idx, j) {
     const P = _pilot();
     if (P.sent[idx][j]) return true;
+    // COVER_FIX (a): only the record counts (her tutor's checked claims), no word-overlap guessing.
+    if (COVER_FIX) return false;
     const said = (_state.transcript || []).filter(t => t.role === 'assistant' && t.pt === idx).map(t => _stripMarkdown(t.text || '')).join(' ');
     const have = new Set(_stems(said)), need = [...new Set(_stems(_points[idx].sentences[j]))];
     return need.length > 0 && need.filter(w => have.has(w)).length / need.length >= 0.6;
@@ -2297,15 +2616,18 @@ function create(env) {
       }
       else if (own && !KP_ORDER) { t = own; P.pending = { t: 'continue', idx }; }
     }
-    if (idx != null) _pilotMarkTaught(idx, t);
+    if (idx != null) { if (COVER_FIX) _cfApply(idx, t); else _pilotMarkTaught(idx, t); }
     const pics = _pilotPicturesDue(idx);
     if (pics.length) extra = { ...extra, pictures: pics };
-    const before = _pilotDefsFor(t, extra.basic || _lastBasicTag);
+    // COVER_FIX (d): an equation the message uses is introduced first, with its symbols and units.
+    const before = [...(COVER_FIX ? _cfEqBefore(t, idx) : []), ..._pilotDefsFor(t, extra.basic || _lastBasicTag)];
     return before.length ? { text: t, extra: { ...extra, before } } : { text: t, extra };
   }
   // The word explanations a message needs first, in order: a word used inside a
   // definition comes before that definition. At most three.
   function _pilotDefsFor(text, basicTag) {
+    // COVER_FIX (c): no "First, a word you'll need" boxes: a new term is explained inside its own sentence.
+    if (COVER_FIX) return [];
     const P = _pilot(), out = [];
     const add = (e, depth) => {
       if (out.length >= 3 || P.known.includes(e.key)) return;
@@ -2511,6 +2833,7 @@ function create(env) {
 
   // ── The steps that end a key point ──
   function _pilotTellChunks(idx) {
+    if (COVER_FIX) return _cfTellChunks(idx);
     const P = _pilot(), s = _points[idx].sentences, out = [];
     let cur = null;
     // TELL_FIX (a): sentences the tutor has already taught in its own words count as taught.
@@ -2687,7 +3010,12 @@ function create(env) {
     const o = w.options || {}, n = Array.isArray(o.predicts) ? o.predicts.length : 0;
     const list = xs => (xs.length <= 1 ? xs.join('') : `${xs.slice(0, -1).join(', ')} or ${xs[xs.length - 1]}`);
     let noun, can;
-    if (w.id === 'circuit') {
+    if (w.id === 'circuit' && COVER_FIX && o.cover && Array.isArray(o.controls)) {
+      const say = { sw: o.predicts && o.predicts.some(pr => pr.setup && pr.setup.open) ? 'close the switch' : 'open and close the switch', add: 'add a cell', res: 'put the resistor in or take it out', side: 'move the resistor' };
+      const acts = o.controls.map(c => say[c]).filter(Boolean);
+      noun = `a working circuit with ${o.twoAmmeters ? 'two ammeters' : 'an ammeter'}${o.voltmeter ? ' and a voltmeter' : ''}`;
+      can = acts.length ? `you can ${list(acts)}` : 'you can read the meters';
+    } else if (w.id === 'circuit') {
       const acts = [o.energy || o.redraw ? null : 'add a cell', o.switch ? 'open and close the switch' : null, o.resistor && !o.variable ? (KP_SHORT ? 'put the resistor in or take it out' : 'put the resistor in') : null,
         o.side ? 'move it' : null, o.redraw ? 'draw it another way' : null, o.energy ? 'run it for 10 seconds' : null].filter(Boolean);
       noun = `a working circuit with ${o.twoAmmeters ? 'two ammeters' : 'an ammeter'}${o.voltmeter ? ' and a voltmeter' : ''}`;
@@ -2854,7 +3182,7 @@ function create(env) {
     P.end = null;
     if (!e) return;
     // TELL_FIX: a sentence the tutor taught in its own words counts as taught for the tick.
-    const done = TELL_FIX ? P.sent[e.idx].every((x, j) => x || _tfCovered(e.idx, j)) : P.sent[e.idx].every(Boolean);
+    const done = TELL_FIX && !COVER_FIX ? P.sent[e.idx].every((x, j) => x || _tfCovered(e.idx, j)) : P.sent[e.idx].every(Boolean);
     _state.coverage[e.idx] = (!e.skipped && done) || _state.coverage[e.idx] === true;
     if (e.how) _flow().how[e.idx] = e.how;
     _state.retriedCurrent = false;
@@ -2891,6 +3219,29 @@ function create(env) {
     const p = s.idx != null ? _points[s.idx] : null;
     switch (s.t) {
       case 'tell': {
+        // COVER_FIX (b), (d): an item that states an equation is the equation's introduction (once); any other
+        // item is explained by the model in its own words; nothing is told verbatim unless the checks fail twice.
+        if (COVER_FIX) {
+          s.js = s.js.filter(j => !P.sent[s.idx][j]);
+          // (b) an item already said in the lesson (in a "The answer:" line, an answer to her question) is not told again.
+          const prior = _sentences(_cfSaid('assistant')).map(x => x.replace(/^The answer:\s*/, '').trim()).filter(Boolean);
+          s.js = s.js.filter(j => { if (!s.eq && _cfRepeats(_points[s.idx].sentences[j], prior)) { P.sent[s.idx][j] = true; return false; } return true; });
+          if (!s.js.length) return _pilotStep();
+          if (s.eq) {
+            s.js.forEach(j => { P.sent[s.idx][j] = true; });
+            const e = _cfEquations(s.idx).find(x => x.id === s.eq);
+            if (!e || _cfEqDone(e.id)) return _pilotStep();
+            _cfEqMark(e.id);
+            const picsE = _pilotPicturesDue(s.idx);
+            return _pilotOut(_cfEqIntro(e), { pt: s.idx, told: 'equation', ...(picsE.length ? { pictures: picsE } : {}) }, 'pilot', s.idx);
+          }
+          s.text = s.js.map(j => _points[s.idx].sentences[j]).join(' ').replace(/\s+([.,;:!?)])/g, '$1').replace(/\(\s+/g, '(').replace(/\s{2,}/g, ' ');
+          const told = await _cfTell(s);
+          s.js.forEach(j => { P.sent[s.idx][j] = true; });
+          const eqT = _cfEqBefore(told.text, s.idx);
+          const picsT = _pilotPicturesDue(s.idx);
+          return _pilotOut(told.text, { pt: s.idx, told: told.by, ...(picsT.length ? { pictures: picsT } : {}), ...(eqT.length ? { before: eqT } : {}) }, 'pilot', s.idx);
+        }
         // TELL_FIX (a), (b): a sentence taught since this piece was queued is not told again; the piece is written to read on its own.
         if (TELL_FIX) {
           // A sentence taught since this piece was queued is recorded as taught, so the point can still be ticked
@@ -2927,6 +3278,11 @@ function create(env) {
         const more = KP_SHORT && s.j + 1 < n ? s.j + 1 : null;
         if (mark) P.pending = { t: 'worked', eq: can ? eq : null, x, ...(KP_SHORT ? { idx: s.idx, more } : {}) };
         const label = KP_SHORT ? `Worked example` : `Worked example${n > 1 ? ` ${s.j + 1} of ${n}` : ''}`;
+        // COVER_FIX (e): the question is on the card only; its buttons come one at a time, the choices after the last step.
+        if (COVER_FIX) {
+          return _pilotOut(`Here is a worked example. Tap "Show the first step" under it to see how it is done, one step at a time.`,
+            _mfWithEquation(eq, { pt: s.idx, card: { type: 'worked', question: x.question, steps: (x.steps || []).map(st => st.text), gate: true }, ...(can ? { choices: ['Try another', 'Next'] } : more != null ? { choices: ['Show me another', 'Next'] } : mark ? { choices: ['Next'] } : {}) }), 'pilot', s.idx);
+        }
         return _pilotOut(`${label}: ${_stripHtml(x.question)} Tap the button under it to see each step.`,
           _mfWithEquation(eq, { pt: s.idx, card: { type: 'worked', question: x.question, steps: (x.steps || []).map(st => st.text) }, ...(can ? { choices: ['Try another', 'Next'] } : more != null ? { choices: ['Show me another', 'Next'] } : mark ? { choices: ['Next'] } : {}) }), 'pilot', s.idx);
       }
@@ -2939,6 +3295,14 @@ function create(env) {
       }
       case 'widget':
         // KP_ORDER (g): the words say what is on screen: a prediction first, then the working widget.
+        // COVER_FIX (c), (g): its terms explained first, in the same message; only the controls it needs; cover mode.
+        if (COVER_FIX) {
+          P.pending = { t: 'widget', idx: s.idx };
+          const controls = _cfControls(p.widget);
+          const w = { ...p.widget, options: { ...(p.widget.options || {}), cover: true, controls } };
+          const terms = _cfWidgetTerms(w);
+          return _pilotOut([...terms.map(t => (/[.!?]$/.test(t) ? t : `${t}.`)), _kpWidgetLine(w)].join(' '), { choices: ['Next'], pt: s.idx, card: { type: 'widget', id: w.id, options: w.options, labels: w.labels || [] } }, 'pilot', s.idx);
+        }
         if (KP_ORDER) { P.pending = { t: 'widget', idx: s.idx }; return _pilotOut(_kpWidgetLine(p.widget), { choices: ['Next'], pt: s.idx, card: { type: 'widget', id: p.widget.id, options: p.widget.options || {}, labels: p.widget.labels || [] } }, 'pilot', s.idx); }
         return _pilotOut(`${p.widget.intro} Tap Next when you are done.`, { pt: s.idx, card: { type: 'widget', id: p.widget.id, options: p.widget.options || {}, labels: p.widget.labels || [] } }, 'pilot', s.idx);
       case 'recap':
@@ -3058,7 +3422,8 @@ function create(env) {
       if (KP_LOOP_FIX) { const o = _kpOwnPractice(reply); if (o) text = KP_ORDER ? (_kpDropSetup(_sentences(o).map(x => x.trim()).filter(Boolean)).join(' ') || text) : o; }
     }
     P.pending = noQ ? { t: 'return', back } : { t: 'aside', back };
-    const before = _pilotDefsFor(text);
+    if (COVER_FIX && idx != null) _cfApply(idx, text);
+    const before = [...(COVER_FIX ? _cfEqBefore(text, idx) : []), ..._pilotDefsFor(text)];
     return _pilotOut(text, { ...(idx != null ? { pt: idx } : {}), ...(before.length ? { before } : {}), ...(noQ ? { choices: ['Next'] } : {}) }, 'pilot', idx);
   }
   async function _pilotAsideAnswer(userText) {
@@ -3319,6 +3684,7 @@ function create(env) {
 
   async function _pilotReply(userText) {
     const P = _pilot();
+    if (COVER_FIX) _cfClaims = [];
     // KP_LOOP_FIX (d): a goodbye carries farewell, so the page swaps the box for buttons and it is sent once.
     const bye = r => { if (KP_LOOP_FIX && r && r.decision && r.decision.kind === 'pause') r.decision.farewell = true; return r; };
     // TELL_FIX (f): her answer to the halfway stop comes before the general leaving check ("Stop here" is hers to give).
@@ -3440,6 +3806,22 @@ function create(env) {
       const lead = decision.tellAll ? `Here's the rest of this one. ` : `Let me just tell you this bit. `;
       return first ? { ...first, reply: _pilotCap(lead + first.reply) } : _pilotOut(lead.trim());
     }
+    // COVER_FIX (f): "don't know" (the first time): a hint and the same idea asked more easily, never a new or
+    // harder question; her words are not echoed.
+    if (COVER_FIX && mark === 'idk' && !stuck && ['fact', 'retry', 'checkin'].includes(decision.kind) && !decision.tellAll) {
+      _applyDecision({ kind: 'fact', idx, flowNote: decision.flowNote, pacing: decision.pacing && { ...decision.pacing, checkinAsked: false } });
+      if (FIRST_TIME) _pendingFT = { teach: true };
+      const last = _lastQuestion();
+      const user = [
+        _recentHistoryBlock(false),
+        `She does not know the answer to your question${last ? ` ("${last.q}")` : ''}.`,
+        `Do not move on, and do not ask a new or harder question. Give ONE small hint: a smaller piece of the same idea, from what has already been said, without giving the answer away. Then ask the same question again in an easier form, or ask about just one small part of it, so she can work it out from the hint. Do not quote her words. At most 45 words.`,
+        _pointBrief(_points[idx]),
+      ].join('\n\n');
+      const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), user, true, 45);
+      const r = _pilotAfterModel(_kpMarkFirst(reply, 'idk'), idx, { pt: idx });
+      return _pilotOut(r.text, r.extra, 'pilot', idx);
+    }
     // (f) Stuck means easier: back a step, one small piece she has, an easy question.
     if (stuck) {
       P.stepbacks++;
@@ -3448,7 +3830,10 @@ function create(env) {
       const user = [
         _recentHistoryBlock(false),
         `${WHO_CAP} just said: "${userText}"`,
-        `She has now had two answers in a row wrong, or did not know. Do not teach anything new. Go back a step: in ONE or TWO short sentences, kindly give the answer to your last question, then remind her of ONE small piece she already has from this key point (something already said above). Then ask one easy question about that piece that she can get right by using it, not by copying it. At most 50 words.`,
+        COVER_FIX
+          // COVER_FIX (f): easier, on the same idea: never a new or harder question, never her words back.
+          ? (() => { const lq = _lastQuestion(); return `She has now had two answers in a row wrong, or does not know the answer to your question${lq ? ` ("${lq.q}")` : ''}. Do not teach anything new and do not move on. In ONE short sentence, kindly give the answer to that question. Then ask ONE easier question about a smaller piece of the same idea, one she can get right by thinking, not by copying your sentence. Do not quote her words. At most 50 words.`; })()
+          : `She has now had two answers in a row wrong, or did not know. Do not teach anything new. Go back a step: in ONE or TWO short sentences, kindly give the answer to your last question, then remind her of ONE small piece she already has from this key point (something already said above). Then ask one easy question about that piece that she can get right by using it, not by copying it. At most 50 words.`,
         _pointBrief(_points[idx]), _coveredLine(idx, _state.facts[idx]),
       ].join('\n\n');
       const reply = await _callWithLengthGuard(_buildSystemPrompt(idx), user, true, 50);
@@ -3471,6 +3856,7 @@ function create(env) {
       ].filter(Boolean).join('\n\n');
       const said = await _callWithLengthGuard(_buildSystemPrompt(idx), user, false, 40);
       const reply = KP_LOOP_FIX ? _kpMarkFirst(said, mark) : said;
+      if (COVER_FIX) { _cfApply(idx, reply); const eqb = _cfEqBefore(reply, idx); return _pilotOut(reply, { pt: idx, ...(eqb.length ? { before: eqb } : {}) }, 'pilot', idx); }
       _pilotMarkTaught(idx, reply);
       return _pilotOut(reply, { pt: idx }, 'pilot', idx);
     }
@@ -3509,7 +3895,7 @@ function create(env) {
   }));
   }
 
-  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, KP_LOOP_FIX, KP_ORDER, KP_SHORT, TELL_FIX, MARK_FIX, _mfRulesBlock, _mfWithAnswer, _kpClear, _kpClassifyPrompt, _kpWaitingQ, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
+  return { bind, _buildPoints, HISTORY_TURNS, RECAP_TURNS, CHECKIN_AFTER, EXTENSION_EXCHANGES, MAX_REPLY_WORDS, RETRY_MAX_WORDS, MAX_TOKENS_REPLY, MAX_TOKENS_RETRY, MAX_TOKENS_RECAP, STOPWORDS, _stripHtml, _shortHeading, _contentWords, _buildPointWordSet, _stem, _stems, _buildFacts, _answers, _isSubstantive, _stripMarkdown, _wordCount, _looksTruncated, YES_NO_OPENER, LEAD_IN, OFFER, TAG_QUESTION, _asksYesNo, _describeError, _logError, _pointBrief, _freshFacts, _factDone, _freshState, _resetPointPacing, _restoreFacts, _targetFactIndex, _pointStems, _genericStems, _termStems, _mistakesFor, _laterPointsLine, _buildSystemPrompt, _recentHistoryBlock, _buildUserPrompt, _trimToLastSentence, STOCK_PRAISE, _stripStockPraise, FIX23, STOCK_OPENER, _stripStockOpener, _stripName, _cutToWords, _finishReply, _callWithLengthGuard, _buildRecapSystemPrompt, _pointConversation, _parseRecap, _generateRecap, _wantsTold, _finishByTelling, _afterPoint, _decide, _applyDecision, _openingFact, _partLine, _coveredLine, _toldLine, _toldRestLine, _remainingLine, _teachIndex, _getTutorReply, _looksLikeWrapUpQuestion, _replyEntry, _firstOpeningPrompt, _jumpPrompt, TEACH_THEN_ASK, _splitAnswer, _answerTaught, _pickChunk, _untaughtSentences, _taughtFor, FLOW_FIX, _markAnswer, _wantsSkip, _wantsTelling, _howSummary, _flow, FIRST_TIME, INLINE_DIAGRAMS, _inlineDiagram, _lessonTerms, _newTermsIn, _basics, RESPECT_EXIT, _wantsExit, _saysTired, _exitChoice, _exitLine, PILOT_FIX, PILOT_WORDS, KP_LOOP_FIX, KP_ORDER, KP_SHORT, TELL_FIX, MARK_FIX, COVER_FIX, _cfFault, _cfClean, _cfNewTerms, _cfDefinedIn, _cfAnswerShown, _cfUsesEq, _cfEqIntro, _cfLaterTerms, _cfSplitTaught, _pilotGlossary, _mfRulesBlock, _mfWithAnswer, _kpClear, _kpClassifyPrompt, _kpWaitingQ, pilotContext, _pilot, _pilotFirst, _pilotJump, _pilotCap };
 }
 
 return { create, TUTOR_SONNET, TUTOR_MODEL, TUTOR_MODEL_SONNET, TUTOR_MODEL_HAIKU, tutorParams, CLASSIFIER_MODEL, classifierParams, CLASSIFIER_COST_IN, CLASSIFIER_COST_OUT };

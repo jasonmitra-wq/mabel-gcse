@@ -601,6 +601,15 @@ const Teach = (() => {
     const slot = document.getElementById('teachDiagramSlot');
     if (!slot) return;
     const point = !_state.complete ? _points[_state.currentPointIndex] : null;
+    // COVER_FIX (h): the picture of the current step, or nothing: once a widget or worked example is the newest
+    // thing shown, or the step has moved to another point, the old picture goes (F13).
+    if (_core.COVER_FIX) {
+      const idx = _state.currentPointIndex;
+      const lastVis = [..._state.transcript].reverse().find(t => t.role === 'assistant' && ((Array.isArray(t.pictures) && t.pictures.length) || t.card));
+      const pic = lastVis && !lastVis.card && lastVis.pt === idx ? lastVis.pictures[lastVis.pictures.length - 1] : null;
+      slot.innerHTML = point && pic ? _renderDiagram({ ...point, diagram: pic.diagram, diagramCaption: pic.caption }) : '';
+      return;
+    }
     if (_core.PILOT_FIX) {
       // Only a picture already shown for this point: never one ahead of the teaching.
       const idx = _state.currentPointIndex;
@@ -698,11 +707,16 @@ const Teach = (() => {
           // so her predictions and its settings stay (it started again from prediction 1 before).
           const keep = _core.TELL_FIX && t.card.type === 'widget';
           let card = keep ? _cardEls.get(t) : null;
-          if (!card) { card = LessonExtras.chatCard(t.card, _subject); if (keep && card) _cardEls.set(t, card); }
+          // COVER_FIX (e): a worked example shows one button at a time; its steps shown so far are kept on the entry,
+          // and the message's own buttons (Show me another, Next) come only after the last step.
+          const gate = _core.COVER_FIX && t.card.type === 'worked' && t.card.gate;
+          const opts = gate ? { revealed: t.cardStep || 0, onStep: (k, last) => { t.cardStep = k; if (last && !t.cardDone) { t.cardDone = true; _save(); _renderTranscript(); } else _save(); } } : undefined;
+          if (!card) { card = LessonExtras.chatCard(t.card, _subject, opts); if (keep && card) _cardEls.set(t, card); }
           if (card) thread.appendChild(card);
         }
         // Choices only under the newest message: once she answers, they go.
-        if (t.role === 'assistant' && Array.isArray(t.choices) && t === _state.transcript[_state.transcript.length - 1]) {
+        if (t.role === 'assistant' && Array.isArray(t.choices) && t === _state.transcript[_state.transcript.length - 1]
+            && !(_core.COVER_FIX && t.card && t.card.type === 'worked' && t.card.gate && !t.cardDone)) {
           const row = document.createElement('div');
           row.className = 'teach-choices';
           t.choices.forEach(c => {

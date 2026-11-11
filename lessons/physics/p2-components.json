@@ -169,19 +169,23 @@
               "question": "Two circuit diagrams show the same cell, switch, lamp and ammeter joined in one loop. In one, the lamp is drawn on the right; in the other, on the left. What can you say?",
               "options": [
                 {
-                  "text": "They are the same circuit, so the lamp gets the same current"
+                  "text": "They are the same circuit, so the lamp gets the same current",
+                  "short": "They are the same circuit"
                 },
                 {
                   "text": "They are different circuits, because the parts are in different places",
-                  "mis": "M11"
+                  "mis": "M11",
+                  "short": "They are different circuits"
                 },
                 {
                   "text": "The lamp drawn nearer the cell gets more current",
-                  "mis": "M4"
+                  "mis": "M4",
+                  "short": "The lamp nearer the cell gets more current"
                 },
                 {
                   "text": "The lamp drawn on the right is brighter",
-                  "mis": "M11"
+                  "mis": "M11",
+                  "short": "The lamp drawn on the right is brighter"
                 }
               ],
               "correct": 0,
@@ -196,8 +200,14 @@
                   "when the same parts are joined in the same loop",
                   "where a part is drawn on the page does not matter"
                 ]
-              }
+              },
+              "needs": [
+                "redraw"
+              ]
             }
+          ],
+          "controls": [
+            "redraw"
           ]
         },
         "intro": "Try it: predict first, then redraw the circuit and compare.",

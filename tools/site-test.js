@@ -85,6 +85,10 @@ let EXIT_SCRIPT = false;
 let UNTIL_POINT_END = false;   // --until-point-end
 let WHOLE_LESSON = null;        // --whole-lesson: { maxTurns }
 let WILLING = false;            // --persona willing (brief 2026-10-26 willing student); bored is the default
+let MABEL = false;              // --persona mabel (brief 2026-11-11): answers like Mabel; taps on as the willing student does
+let SIZES = null;               // --size laptop|phone: screens at that size only, and the run at that size
+let VP = null;                  // the viewport the run uses
+let UNTIL_POINT = 0;            // --until-point <n>: stop once n key points are ticked
 
 // ---------- arguments ----------
 
@@ -100,6 +104,9 @@ function parseArgs(argv) {
     else if (v === '--until-point-end') a.untilPointEnd = true;
     else if (v === '--whole-lesson') a.wholeLesson = true;
     else if (v === '--persona') a.persona = argv[++i];
+    else if (v === '--size') a.size = argv[++i];
+    else if (v === '--until-point') a.untilPoint = Number(argv[++i]);
+    else if (v === '--no-judge') a.noJudge = true;
     else if (v === '--max-turns') a.maxTurns = Number(argv[++i]);
     else if (v === '--max-usd') a.maxUsd = Number(argv[++i]);
     else if (v === '--rescore') a.rescore = [];
@@ -253,15 +260,15 @@ async function shoot(page, run, label) {
   if (unsafe) { run.say(`[screenshot skipped: ${unsafe}] ${label}`); return; }
   run.n++;
   const stem = `${String(run.n).padStart(2, '0')}-${label.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase().slice(0, 40)}`;
-  for (const [size, vp] of [['phone', PHONE], ['laptop', LAPTOP]]) {
+  for (const [size, vp] of (SIZES || [['phone', PHONE], ['laptop', LAPTOP]])) {
     await page.setViewport(vp);
     await sleep(350);
     const file = path.join(run.dir, `${stem}-${size}.png`);
     await page.screenshot({ path: file });
     run.shots.push({ file, label: `${stem}-${size}.png`, size });
   }
-  await page.setViewport(PHONE);
-  run.say(`[screenshot ${stem}-phone.png and ${stem}-laptop.png] ${label}`);
+  await page.setViewport(VP || PHONE);
+  run.say(SIZES ? `[screenshot ${stem}-${SIZES[0][0]}.png] ${label}` : `[screenshot ${stem}-phone.png and ${stem}-laptop.png] ${label}`);
 }
 
 // Clicks the first visible element matching selector whose text contains text;
@@ -283,7 +290,7 @@ async function clickText(page, selector, text, what, nameSel = null) {
 
 async function newPage(browser, base, run) {
   const page = await browser.newPage();
-  await page.setViewport(PHONE);
+  await page.setViewport(VP || PHONE);
   page.on('pageerror', e => run.say(`[page error] ${e.message}`));
   page.on('console', m => { if (m.type() === 'error') run.say(`[console error] ${m.text().slice(0, 200)}`); });
   page.on('response', async res => {
@@ -308,7 +315,8 @@ async function newPage(browser, base, run) {
 
 async function lessonMode(page, run, id) {
   const L = findLesson(id);
-  const student = WILLING
+  const student = MABEL ? Bored.makeMabelStudent({ lessonTitle: (L.data && L.data.title) || L.name, subject: L.subjectLabel })
+    : WILLING
     ? Bored.makeWillingStudent({ lessonTitle: (L.data && L.data.title) || L.name, subject: L.subjectLabel, misconceptions: Bored.misconceptionLines(path.join(ROOT, 'tools', 'pilot', 'misconceptions.md')) })
     : Bored.makeStudent({ lessonTitle: (L.data && L.data.title) || L.name, subject: L.subjectLabel });
   let tutorMs = 0;   // time from her message to the tutor's reply on screen, summed
@@ -388,7 +396,7 @@ async function lessonMode(page, run, id) {
   let widgetsSeen = 0, rng = 7;
   const widgetKeys = new Set();   // widgets already tried, by the message they sit under
   const coin = () => { rng = (rng * 1103515245 + 12345) >>> 0; return rng / 4294967296; };
-  let closing = 0, diagramsSeen = 0, lastCounter = '', predSeen = 0, widgetsInChat = 0;
+  let closing = 0, diagramsSeen = 0, lastCounter = '', predSeen = 0, widgetsInChat = 0, lastSide = '', stopNow = false;
   // After each tutor turn (--whole-lesson): the covered counter, and any new
   // predict-first widget, tried: a prediction tapped, then what opens checked
   // against the message's own words (two ammeters, a switch, cells).
@@ -421,6 +429,24 @@ async function lessonMode(page, run, id) {
       return { counter: hdr.trim(), widgetKey: el && p ? p.innerText.trim().slice(0, 160) : '' };
     });
     if (seen.counter && seen.counter !== lastCounter) { if (lastCounter) run.say(`[counter now "${seen.counter}" after T${n}]`); lastCounter = seen.counter; }
+    // COVER_FIX (h): the side-column picture against the newest picture, widget or worked example in the chat (F13).
+    const side = await page.evaluate(() => {
+      const capEl = document.querySelector('#teachDiagramSlot .teach-diagram-cap');
+      const img = document.querySelector('#teachDiagramSlot img');
+      const pic = capEl ? capEl.textContent : img ? (img.alt || img.getAttribute('src') || '') : '';
+      const kids = [...document.querySelectorAll('#teachThread > *')].filter(e => e.matches('.teach-inline-diagram, .wdg, .lx-card') || e.querySelector('.wdg, .lx-card'));
+      const last = kids[kids.length - 1];
+      const kind = !last ? 'none' : last.matches('.teach-inline-diagram') ? 'picture' : (last.matches('.wdg') || last.querySelector('.wdg')) ? 'widget' : 'worked or question card';
+      const lastCap = last && last.matches('.teach-inline-diagram') ? ((last.querySelector('figcaption') || {}).textContent || '') : '';
+      return { pic: pic.trim(), kind, lastCap: lastCap.trim() };
+    });
+    const sideNow = `${side.pic || 'none'}|${side.kind}|${side.lastCap}`;
+    if (sideNow !== lastSide) {
+      lastSide = sideNow;
+      run.say(`[side picture after T${n}: ${side.pic ? `"${side.pic}"` : 'none'}; newest in the chat: ${side.kind}${side.lastCap ? ` "${side.lastCap}"` : ''}]`);
+      if (side.pic && side.kind !== 'picture') run.check('side picture shows the current step (F13)', false, `"${side.pic}" beside a ${side.kind} after T${n}`);
+    }
+    if (UNTIL_POINT && seen.counter && +((seen.counter.match(/^(\d+)\//) || [])[1] || 0) >= UNTIL_POINT) { stopNow = true; run.say(`[stopped: ${UNTIL_POINT} key points ticked (counter "${seen.counter}") after T${n}]`); }
     if (seen.widgetKey && !widgetKeys.has(seen.widgetKey)) {
       widgetKeys.add(seen.widgetKey);
       widgetsSeen++;
@@ -431,11 +457,16 @@ async function lessonMode(page, run, id) {
         const q = (el.querySelector('.wdg-pred p') || {}).textContent || '';
         const hiddenBefore = !![...el.children].find(c => c.style && c.style.display === 'none');
         if (pred) pred.click();
+        // COVER_FIX (g): "Now explain it" before she has used any control; then each control tried once.
+        const explainBefore = /Now explain it/i.test(el.innerText);
+        [...el.querySelectorAll('.wdg-row button')].forEach(b => b.click());
+        const explainAfter = /Now explain it/i.test(el.innerText);
+        const shown = el.innerText.replace(/\s+/g, ' ').trim();
         const svg = el.querySelector('svg');
         const visible = !!(svg && svg.getBoundingClientRect().height > 0);
         const ammeters = svg ? [...svg.querySelectorAll('text[font-size="17"]')].filter(x => /^A/.test(x.textContent)).length : 0;
         const buttons = [...el.querySelectorAll('.wdg-row button')].map(b => b.textContent.trim());
-        return { words, q, hiddenBefore, visible, ammeters, buttons };
+        return { words, q, hiddenBefore, visible, ammeters, buttons, explainBefore, explainAfter, shown };
       });
       const said = w.words;
       const wantTwo = /two ammeters/i.test(said), wantOne = /an ammeter/i.test(said);
@@ -443,13 +474,15 @@ async function lessonMode(page, run, id) {
       const okControls = (!/add a cell/i.test(said) || w.buttons.includes('Add a cell')) && (!/the switch/i.test(said) || w.buttons.some(b => /(Open|Close) the switch/.test(b)))
         && (!/put the resistor in/i.test(said) || w.buttons.some(b => /^(Put the resistor in|Take the resistor out)$/.test(b))) && (!/run it for 10 seconds/i.test(said) || w.buttons.includes('Run for 10 s'));
       const okOrder = !/Predict first/i.test(said) || (w.hiddenBefore && !!w.q);
-      run.say(`[widget under T${n}: prediction "${w.q.slice(0, 80)}" tapped; then shown: ${w.visible ? 'yes' : 'no'}, ammeters ${w.ammeters}, controls ${w.buttons.join(', ') || 'none'}]`);
+      run.say(`[widget under T${n}: prediction "${w.q.slice(0, 80)}" tapped; then shown: ${w.visible ? 'yes' : 'no'}, ammeters ${w.ammeters}, controls ${w.buttons.join(', ') || 'none'}; "Now explain it" before a control was used: ${w.explainBefore ? 'yes' : 'no'}, after: ${w.explainAfter ? 'yes' : 'no'}]`);
+      run.say(`[widget text under T${n}: ${w.shown.slice(0, 900)}]`);
       run.check(`predict-first widget ${widgetsSeen} works and matches its words`, w.visible && okMeters && okControls && okOrder,
         `opened after the prediction ${w.visible}; ammeters ${w.ammeters} (words: ${wantTwo ? 'two' : wantOne ? 'one' : '-'}); controls match ${okControls}; prediction first ${okOrder}`);
       await shoot(page, run, `widget-${n}`);
     }
   };
   for (let n = 1; n <= cap; n++) {
+    if (stopNow) break;
     const status = await page.evaluate(() => {
       const hdr = [...document.querySelectorAll('#teachHeader span')].map(s => s.textContent).find(s => /covered/.test(s)) || '';
       const m = hdr.match(/(\d+)\/(\d+)/);
@@ -471,6 +504,32 @@ async function lessonMode(page, run, id) {
     let fixed = script && phase !== 'closing' ? script.next({ n, nearEnd: left <= 1 && lastPointTurns >= 1, choices }) : null;
     // --whole-lesson: a message that asks nothing and offers Next: she taps it, 3 times in 4.
     let tapped = null;
+    // COVER_FIX (e): a worked example shows one button at a time, and its Next only after the last step: she
+    // steps through it as a student would, and the buttons she saw are logged.
+    if (WHOLE_LESSON && !fixed) {
+      const steps = [];
+      for (let k = 0; k < 8; k++) {
+        const b = await page.evaluate(() => {
+          const cards = [...document.querySelectorAll('#teachThread .lx-card')];
+          const card = cards[cards.length - 1];
+          if (!card) return null;
+          const btns = [...card.querySelectorAll('button')].filter(x => /^(Show the first step|Next step|Show the next step)$/.test(x.textContent.trim()));
+          if (!btns.length) return null;
+          const all = [...card.querySelectorAll('button')].map(x => x.textContent.trim());
+          const chips = [...document.querySelectorAll('#teachThread .teach-choices button')].map(x => x.textContent.trim());
+          btns[0].click();
+          return `${all.join(' + ')}${chips.length ? ` (with ${chips.join(', ')} under the message)` : ''}`;
+        });
+        if (!b) break;
+        steps.push(b);
+        await sleep(250);
+      }
+      if (steps.length) {
+        const chips = await page.evaluate(() => [...document.querySelectorAll('#teachThread .teach-choices button')].map(x => x.textContent.trim()));
+        run.say(`[worked example under T${n - 1}: buttons seen ${steps.join(' → ')}; after the last step: ${chips.join(', ') || 'none'}]`);
+        await shoot(page, run, `worked-${n - 1}`);
+      }
+    }
     if (WHOLE_LESSON && !fixed) {
       const offered = await page.evaluate(() => [...document.querySelectorAll('#teachThread .teach-choices button')].map(b => b.textContent.trim()));
       const nx = offered.find(c => /^Next( step)?$/.test(c));
@@ -955,10 +1014,13 @@ async function main() {
   const browser = await puppeteer.launch({ executablePath: exe, headless: true });
   let crash = null;
   try {
+    if (a.size === 'laptop') { SIZES = [['laptop', LAPTOP]]; VP = LAPTOP; } else if (a.size === 'phone') { SIZES = [['phone', PHONE]]; VP = PHONE; }
     const page = await newPage(browser, base, run);
     EXIT_SCRIPT = !!a.exitScript;
     UNTIL_POINT_END = !!a.untilPointEnd;
-    WILLING = a.persona === 'willing';
+    WILLING = a.persona === 'willing' || a.persona === 'mabel';
+    MABEL = a.persona === 'mabel';
+    UNTIL_POINT = a.untilPoint || 0;
     WHOLE_LESSON = a.wholeLesson ? { maxTurns: a.maxTurns || 260 } : null;
     if (a.lesson) await lessonMode(page, run, a.lesson); else if (a.pilot) await pilotMode(page, run, a.pilot); else await mathsMode(page, run, a.maths);
   } catch (e) {
@@ -968,7 +1030,8 @@ async function main() {
   await browser.close();
   server.close();
 
-  let j = await judgeRun(run, a.lesson ? 'lesson' : a.pilot ? 'pilot' : 'maths', id).catch(e => ({ raw: String(e.message || e) }));
+  let j = a.noJudge ? { broken: [], looks_wrong: [], would_quit: false, fixes: [], skipped: 'no judge (--no-judge): tools/review-lesson.js reviews this run' }
+    : await judgeRun(run, a.lesson ? 'lesson' : a.pilot ? 'pilot' : 'maths', id).catch(e => ({ raw: String(e.message || e) }));
   if (j.raw !== undefined) j = { broken: [{ what: 'judge reply was not JSON', step: '' }], looks_wrong: [], would_quit: false, fixes: [], raw: j.raw };
   // Every failed automatic check counts as broken, whether or not the judge named it.
   for (const c of run.checks.filter(c => !c.ok)) {
@@ -976,12 +1039,16 @@ async function main() {
   }
   if (crash) (j.broken = j.broken || []).push({ what: `test could not finish: ${crash}`, step: '' });
   const pass = sitePass(j);
+  // The free transcript checks (tools/check-transcript.js, docs/FAULTS.md), on every lesson run.
+  let tchecks = null;
+  if (a.lesson) { try { const X = require('./check-transcript.js'); tchecks = X.check(X.readSiteTest(run.log), findLesson(a.lesson).data); } catch (e) { tchecks = [{ check: 'error', what: String(e) }]; } }
 
-  const result = { id, mode: a.lesson ? 'lesson' : a.pilot ? 'pilot' : 'maths', date, pass, judge: j, checks: run.checks, transcript: run.log,
+  const result = { id, mode: a.lesson ? 'lesson' : a.pilot ? 'pilot' : 'maths', date, pass, judge: j, checks: run.checks, transcript: run.log, transcriptChecks: tchecks, persona: a.persona || 'bored', size: a.size || 'both',
                    screenshots: run.shots.map(s => path.relative(ROOT, s.file).replace(/\\/g, '/')), cost: spend.usd, tutorModel: TUTOR_MODEL, tutorCost: spend.tutorUsd, apiCalls: spend.calls, browserApiCalls: spend.browserCalls };
   fs.writeFileSync(path.join(dir, 'result.json'), JSON.stringify(result, null, 2));
   const md = [`# Site test: ${id} (${result.mode}, ${date})`, '', `**${pass ? 'PASS' : 'FAIL'}** · cost $${spend.usd.toFixed(4)} (${spend.calls} tool calls, ${spend.browserCalls} calls from the site; tutor ${TUTOR_MODEL} $${spend.tutorUsd.toFixed(4)})`, '',
     '## Judge', '', '```json', JSON.stringify({ broken: j.broken, looks_wrong: j.looks_wrong, would_quit: j.would_quit, fixes: j.fixes }, null, 2), '```', '',
+    ...(tchecks ? ['## Transcript checks (tools/check-transcript.js)', '', ...(tchecks.length ? tchecks.map(f => `- ${f.n} [${f.check}, ${f.id}] ${f.what}`) : ['none']), ''] : []),
     '## Transcript', '', ...run.log.map(l => `    ${l}`), ''];
   fs.writeFileSync(path.join(dir, 'result.md'), md.join('\n'));
   const summary = path.join(OUT_ROOT, 'SUMMARY.md');

@@ -220,3 +220,4 @@ Not started on the pipeline. Already in place:
 | Last fixes (2026-10-28, brief 2026-10-27 (2)) | marking check 1 run (30 calls); classifier check-questions 1 run (10 calls); site test 1 (p2-current-voltage, whole lesson, --persona willing); a first site test stopped on a billing error, no cost reported | 2.26 (0.1149 + 0.0006 + 2.1489) |
 | Extra willing-student run (2026-10-28, asked for by Jason) | site test 1 (p2-current-voltage, whole lesson, --persona willing) | 2.38 (2.3796) |
 | Small fixes (2026-10-28, brief 2026-10-28-small-fixes) | marking check --run --batch, 40 calls to claude-sonnet-5-5 | 0.08 (0.0772) |
+| Coverage and faults (2026-11-11, brief 2026-11-11-coverage-and-faults) | GET /v1/models 2 (free); count_tokens (free); site test 2 (p2-current-voltage, --persona mabel, laptop, key points 1–2, no judge); review 3 (claude-fable-5-2: run 1 twice, cut off; run 2 once) | 4.33 (site 1.0675 + 0.8710; review 1.0924 + 0.4133 + 0.8819) |

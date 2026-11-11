@@ -1,0 +1,460 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 34984,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 15051,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 9577
+    },
+    "iterations": [
+      {
+        "input_tokens": 34984,
+        "output_tokens": 15051,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.881912,
+  "seconds": 141,
+  "screenshots": [
+    "01-home-laptop.png",
+    "03-topics-physics-laptop.png",
+    "05-lessons-p2-laptop.png",
+    "06-ai-lesson-opening-laptop.png",
+    "09-exchange-9-laptop.png",
+    "11-worked-13-laptop.png",
+    "12-diagram-15-laptop.png",
+    "13-exchange-15-laptop.png",
+    "15-widget-18-laptop.png",
+    "16-widget-20-laptop.png",
+    "18-exchange-24-laptop.png",
+    "20-exchange-30-laptop.png",
+    "23-exchange-39-laptop.png",
+    "24-worked-40-laptop.png",
+    "26-widget-43-laptop.png",
+    "27-exchange-45-laptop.png"
+  ],
+  "raw": "{\"findings\":[{\"fault\":\"F9\",\"turn\":\"01-home-laptop.png\",\"quote\":\"Revise a topic … Everything you need to do well in your exams.\",\"what\":\"The home screen she starts from talks about revising and exams, though she is meeting this topic for the first time.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"T0\",\"quote\":\"what do you think is happening inside it to make that happen?\",\"what\":\"The very first question asks for something she has not been told and cannot work out from everyday life. A wild guess is the only possible answer.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"T4\",\"quote\":\"Current is measured in amperes (A, or amps), and one ampere means one coulomb of charge passing each second, a coulomb being the unit we count charge in.\",\"what\":\"Two new units, ampere and coulomb, arrive in one sentence, and coulomb is used before the clause that explains it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F6\",\"turn\":\"T4\",\"quote\":\"Yes, that's right. Doubling is right\",\"what\":\"Her answer is echoed back and she is told it is right twice in a row.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"T5\",\"quote\":\"In a circuit, a bulb is called a lamp.\",\"what\":\"\\\"Circuit\\\" is used here before anything has said what a circuit is; the closed circuit is only explained in T6.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"T6\",\"quote\":\"If there is a gap anywhere in the loop, nothing flows. What would happen to the lamp if you cut the wire somewhere in a closed circuit?\",\"what\":\"The sentence before the question gives its answer.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"T7\",\"quote\":\"The answer:In a circuit, a bulb is called a lamp.\",\"what\":\"A stray line is stuck on the end as \\\"The answer\\\", and it is not the answer to the question about cutting the wire. It also repeats T5 word for word, with a missing space.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P16\",\"turn\":\"T7\",\"quote\":\"so no charge reaches the lamp\",\"what\":\"This is the tutor's own wording and suggests charge travels from the cell to the lamp and gets used there. The charge is already all round the loop; it just stops moving.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"T8\",\"quote\":\"That pusher is a cell, a small part that pushes charge round the loop.\",\"what\":\"The cell is defined in a circle (a pusher that pushes) and is never linked to the battery in the torch she knows. The lesson's \\\"a cell or a battery\\\" has been dropped.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"T9\",\"quote\":\"the gap stops the flow everywhere, and the lamp goes out\",\"what\":\"This is the same fact as T6 and T7 (a gap stops the flow, the lamp goes out), said a third time.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"T10\",\"quote\":\"An ammeter, the meter that measures current, goes in the loop, and it reads the same wherever you put it.\",\"what\":\"Two ideas in one message: current is the same all round the loop, and a new instrument, the ammeter, with where it goes.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T11\",\"quote\":\"Current tells you how much charge passes each second\",\"what\":\"The meaning of current has already been given in T3 and T4 and is restated here.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"T14\",\"quote\":\"A current of 0.4 A flows for 2 minutes. How much charge flows, in coulombs (C)?\",\"what\":\"Her first go on her own is harder than the worked example (2 A for 5 s). It needs a decimal and a minutes-to-seconds change that no example showed, and she replied \\\"wdym\\\".\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"12-diagram-15-laptop.png\",\"quote\":\"Measuring the current (ammeter circuit picture, with the T10 message above it)\",\"what\":\"While she is asking about minutes and seconds, the screenshot for T15 shows the ammeter picture and the T10 text rather than the reply. If that is what her screen shows, it is out of step with the chat.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"T17\",\"quote\":\"Yes, that's right: 48 C.\",\"what\":\"She asked tentatively (\\\"is it 48\\\") and got only a tick. A teacher would show 0.4 × 120 = 48 so she knows why it is right.\",\"severity\":\"minor\"},{\"fault\":\"F12\",\"turn\":\"T18\",\"quote\":\"A lamp is joined to a cell by one wire only, from one end of the cell to the lamp. Does the lamp light? … The switch below is open, so the loop has a gap.\",\"what\":\"The prediction is about a lamp with only one wire, but the circuit she tests is a full loop with an open switch. Nothing tells her these are the same idea.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F12\",\"turn\":\"T18\",\"quote\":\"What happens: No. With the switch open, the lamp was off and both ammeters read 0 A. When you closed the switch, it lit.\",\"what\":\"The wording is muddled: \\\"What happens: No.\\\" is followed by \\\"it lit\\\". She chose \\\"Yes, it lights\\\" and is never told plainly that the one-wire lamp does not light, or why.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"15-widget-18-laptop.png\",\"quote\":\"Yes, it lights / Only if the wire is thick / Yes, but only dimly / No (all greyed out)\",\"what\":\"After she answers, the options are dimmed so much that they are hard to read. Her choice and the right one are marked only by faint red and green outlines.\",\"severity\":\"minor\"},{\"fault\":\"P7\",\"turn\":\"T20\",\"quote\":\"No problem. A good line would say: a flow of charge.\",\"what\":\"After \\\"idk\\\" she is just handed the answer. There is no easier prompt and no chance to say it herself.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"T22\",\"quote\":\"Not quite: it's \\\"It stops everywhere in the loop\\\".\",\"what\":\"She said she did not know; \\\"Not quite\\\" treats that as a wrong answer.\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"T23\",\"quote\":\"counter now \\\"1/7 covered\\\"\",\"what\":\"Key point 1 is ticked straight after she answered \\\"idk\\\" to both the own-words line and the quick question. There is no evidence she has it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"T25\",\"quote\":\"So the size of a current depends on two things.\",\"what\":\"The message opens with \\\"So\\\", leaning on an earlier message, and the \\\"second thing\\\" is not named anywhere in it.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"T25\",\"quote\":\"through a component (any part of a circuit, such as a lamp or a resistor); that push is called the potential difference across it\",\"what\":\"Two new terms, component and potential difference, are packed into one sentence with a bracket in the middle. She had to ask \\\"whats potential difference\\\" straight away.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"T25\",\"quote\":\"Adding a second cell gave the lamp more push. What happened to the current?\",\"what\":\"T23 had already told her \\\"because more current flows\\\", so the question asks for what she was just given.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"T26\",\"quote\":\"Imagine you swapped one cell for two cells, giving the lamp a bigger push. What would happen to the lamp's brightness?\",\"what\":\"T23 had already said that two cells make the lamp glow brighter.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F6\",\"turn\":\"T27\",\"quote\":\"Yes, that's right. Brighter is right\",\"what\":\"Her word is echoed back and she is told it is right twice.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"T28\",\"quote\":\"Back to my question: What happened to the current?\",\"what\":\"T27 had just said \\\"a bigger push drives more current through the lamp\\\", so the answer sits directly above the question. The question also has no context (current when?), and she replied \\\"wdym\\\".\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"T29\",\"quote\":\"so more charge flows through it each second. If you used three cells instead of two, what would you expect to see from the lamp?\",\"what\":\"She asked what the question meant. The tutor gave away the answer, then asked the brightness question again in a slightly different form instead of making the original question clear.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F6\",\"turn\":\"T30\",\"quote\":\"Yes, that's right. Even brighter is right\",\"what\":\"Her words are echoed back and she is told it is right twice.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"T31\",\"quote\":\"Back to my question: What happened to the current?\",\"what\":\"The same question is asked a third time, straight after T30 said \\\"more cells push more current round the loop\\\".\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"T32\",\"quote\":\"Partly right. The current did increase, and that's the part I was after.\",\"what\":\"Her answer was exactly what was asked for, yet it is marked \\\"Partly right\\\". She will think she missed something.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"T32\",\"quote\":\"The answer:Use two cells and it glows brighter, because more current flows.\",\"what\":\"The stray \\\"The answer:\\\" line appears again with a missing space, repeating a sentence from T23 after she has already answered correctly.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"T32\",\"quote\":\"That push is called potential difference, measured in volts (V)\",\"what\":\"She was told this in T25 and T26, in almost the same words.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"T34\",\"quote\":\"Picture a lamp wired to three cells instead of one … What would you expect to happen to the lamp's brightness?\",\"what\":\"This is the fourth \\\"more cells, what happens to the brightness\\\" question. She has answered it twice and been told the answer several times.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"T34\",\"quote\":\"Exam questions say potential difference, but either that or voltage gets you the mark. Picture a lamp wired to three cells instead of one\",\"what\":\"An exam-wording note and an unrelated thought experiment share one message.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"T35\",\"quote\":\"Resistance is how hard a component makes it for charge to get through.\",\"what\":\"T25 promised \\\"two things\\\" and named the first. Ten turns later resistance arrives without being called the second thing, so the thread is lost.\",\"severity\":\"minor\"},{\"fault\":\"P16\",\"turn\":\"T37\",\"quote\":\"One ohm is the unit that tells you how strongly a component opposes the current\",\"what\":\"This is the tutor's own muddled wording. The ohm is the unit of resistance; \\\"one ohm is the unit that tells you\\\" is not a definition.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"T38\",\"quote\":\"a bigger resistance means a smaller current\",\"what\":\"This is the same fact as T36 (\\\"The current would get smaller, because a bigger resistance…\\\"), told again two messages later.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"T39\",\"quote\":\"The equation is V = I R: … The equation linking potential difference, current and resistance works like a set of three connected facts.\",\"what\":\"Two messages arrive together (about 87 words): the equation with its symbols, and a paragraph on rearranging. That is too much at once.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P16\",\"turn\":\"T39\",\"quote\":\"works like a set of three connected facts\",\"what\":\"This is the tutor's own vague phrase and it explains nothing. \\\"Rearrange\\\" is then used without showing how.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"T41\",\"quote\":\"A component has a potential difference of 22.5 V across it and a current of 0.75 A through it. What is its resistance, in ohms (Ω)?\",\"what\":\"The worked example only multiplied (V = 2 × 3). This question needs the equation rearranged to R = V ÷ I, with awkward decimals, and no rearranging has been shown. A real first-timer would be stuck here.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F1\",\"turn\":\"T43\",\"quote\":\"An ammeter is a meter that measures current.\",\"what\":\"She was told this in T10 and has since used ammeters in a widget.\",\"severity\":\"minor\"},{\"fault\":\"F12\",\"turn\":\"T43\",\"quote\":\"you can add a cell, put the resistor in or take it out or move the resistor to check your answer\",\"what\":\"The instruction is a muddled string of \\\"or\\\"s, and it is not clear which control checks which prediction.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"T43\",\"quote\":\"You add a second cell. What happens to the ammeter reading and to the lamp?\",\"what\":\"This \\\"prediction\\\" has been told and asked repeatedly from T23 to T34 (more cells, more current, brighter). There is nothing left to predict.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"T43\",\"quote\":\"What happens: Both go up.\",\"what\":\"The wording is muddled: a lamp does not \\\"go up\\\". It should say the ammeter reading rises and the lamp gets brighter.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"26-widget-43-laptop.png\",\"quote\":\"Now test your prediction. Tap Add a cell and watch the ammeter and the lamp. What happens: Both go up. (circuit drawn with one cell, 0.09 A)\",\"what\":\"The result \\\"Both go up\\\" sits on screen next to the instruction to test, while the circuit shows a single cell and 0.09 A. Either the answer is shown before she tests it or the text is out of step with the circuit.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"T47\",\"quote\":\"Not quite: it's \\\"Anywhere in the loop\\\".\",\"what\":\"\\\"Not quite\\\" is again the reply to \\\"idk\\\", as if she had given a wrong answer.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"T48\",\"quote\":\"Before the practical, question 1 of 2: What does an ammeter measure?\",\"what\":\"\\\"The practical\\\" has not been mentioned before. She does not know what practical this is or why she is being quizzed.\",\"severity\":\"minor\"},{\"fault\":\"M1\",\"turn\":\"T25–T34\",\"quote\":\"Back to my question: What happened to the current? … what would you expect to see from the lamp? … What would you expect to happen to the lamp's brightness?\",\"what\":\"For ten turns she is asked the same two questions (more cells: brighter? more current?) over and over, with the answers already given. She said \\\"wdym\\\" and would be bored or cross by now.\",\"severity\":\"would confuse or mislead her\"}],\"counts\":[{\"fault\":\"F1\",\"instances\":5},{\"fault\":\"F2\",\"instances\":2},{\"fault\":\"F3\",\"instances\":1},{\"fault\":\"F5\",\"instances\":2},{\"fault\":\"F6\",\"instances\":3},{\"fault\":\"F8\",\"instances\":8},{\"fault\":\"F9\",\"instances\":1},{\"fault\":\"F12\",\"instances\":4},{\"fault\":\"P4\",\"instances\":1},{\"fault\":\"P6\",\"instances\":3},{\"fault\":\"P7\",\"instances\":1},{\"fault\":\"P16\",\"instances\":3},{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"new\",\"instances\":14}],\"overall\":\"No, I would not let her use it as it is. The physics is mostly sound and the told pieces are short, but T25 to T34 go round in a loop asking the same question after the answer has been given, and a fully correct answer is marked \\\"Partly right\\\". Stray \\\"The answer:\\\" lines appear twice with the wrong text, and the first predict-first widget asks about one wire but tests an open switch, with the muddled \\\"What happens: No … it lit\\\". Both \\\"Your turn\\\" questions need a step the worked example never showed (minutes to seconds, then rearranging V = I R), and key points are ticked after a run of \\\"idk\\\" replies, so the counter says she has covered things she has not shown she understands.\"}",
+  "findings": [
+    {
+      "fault": "F9",
+      "turn": "01-home-laptop.png",
+      "quote": "Revise a topic … Everything you need to do well in your exams.",
+      "what": "The home screen she starts from talks about revising and exams, though she is meeting this topic for the first time.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "T0",
+      "quote": "what do you think is happening inside it to make that happen?",
+      "what": "The very first question asks for something she has not been told and cannot work out from everyday life. A wild guess is the only possible answer.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "T4",
+      "quote": "Current is measured in amperes (A, or amps), and one ampere means one coulomb of charge passing each second, a coulomb being the unit we count charge in.",
+      "what": "Two new units, ampere and coulomb, arrive in one sentence, and coulomb is used before the clause that explains it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F6",
+      "turn": "T4",
+      "quote": "Yes, that's right. Doubling is right",
+      "what": "Her answer is echoed back and she is told it is right twice in a row.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "T5",
+      "quote": "In a circuit, a bulb is called a lamp.",
+      "what": "\"Circuit\" is used here before anything has said what a circuit is; the closed circuit is only explained in T6.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "T6",
+      "quote": "If there is a gap anywhere in the loop, nothing flows. What would happen to the lamp if you cut the wire somewhere in a closed circuit?",
+      "what": "The sentence before the question gives its answer.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "T7",
+      "quote": "The answer:In a circuit, a bulb is called a lamp.",
+      "what": "A stray line is stuck on the end as \"The answer\", and it is not the answer to the question about cutting the wire. It also repeats T5 word for word, with a missing space.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P16",
+      "turn": "T7",
+      "quote": "so no charge reaches the lamp",
+      "what": "This is the tutor's own wording and suggests charge travels from the cell to the lamp and gets used there. The charge is already all round the loop; it just stops moving.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "T8",
+      "quote": "That pusher is a cell, a small part that pushes charge round the loop.",
+      "what": "The cell is defined in a circle (a pusher that pushes) and is never linked to the battery in the torch she knows. The lesson's \"a cell or a battery\" has been dropped.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "T9",
+      "quote": "the gap stops the flow everywhere, and the lamp goes out",
+      "what": "This is the same fact as T6 and T7 (a gap stops the flow, the lamp goes out), said a third time.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "T10",
+      "quote": "An ammeter, the meter that measures current, goes in the loop, and it reads the same wherever you put it.",
+      "what": "Two ideas in one message: current is the same all round the loop, and a new instrument, the ammeter, with where it goes.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T11",
+      "quote": "Current tells you how much charge passes each second",
+      "what": "The meaning of current has already been given in T3 and T4 and is restated here.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "T14",
+      "quote": "A current of 0.4 A flows for 2 minutes. How much charge flows, in coulombs (C)?",
+      "what": "Her first go on her own is harder than the worked example (2 A for 5 s). It needs a decimal and a minutes-to-seconds change that no example showed, and she replied \"wdym\".",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "12-diagram-15-laptop.png",
+      "quote": "Measuring the current (ammeter circuit picture, with the T10 message above it)",
+      "what": "While she is asking about minutes and seconds, the screenshot for T15 shows the ammeter picture and the T10 text rather than the reply. If that is what her screen shows, it is out of step with the chat.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "T17",
+      "quote": "Yes, that's right: 48 C.",
+      "what": "She asked tentatively (\"is it 48\") and got only a tick. A teacher would show 0.4 × 120 = 48 so she knows why it is right.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F12",
+      "turn": "T18",
+      "quote": "A lamp is joined to a cell by one wire only, from one end of the cell to the lamp. Does the lamp light? … The switch below is open, so the loop has a gap.",
+      "what": "The prediction is about a lamp with only one wire, but the circuit she tests is a full loop with an open switch. Nothing tells her these are the same idea.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F12",
+      "turn": "T18",
+      "quote": "What happens: No. With the switch open, the lamp was off and both ammeters read 0 A. When you closed the switch, it lit.",
+      "what": "The wording is muddled: \"What happens: No.\" is followed by \"it lit\". She chose \"Yes, it lights\" and is never told plainly that the one-wire lamp does not light, or why.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "15-widget-18-laptop.png",
+      "quote": "Yes, it lights / Only if the wire is thick / Yes, but only dimly / No (all greyed out)",
+      "what": "After she answers, the options are dimmed so much that they are hard to read. Her choice and the right one are marked only by faint red and green outlines.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P7",
+      "turn": "T20",
+      "quote": "No problem. A good line would say: a flow of charge.",
+      "what": "After \"idk\" she is just handed the answer. There is no easier prompt and no chance to say it herself.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "T22",
+      "quote": "Not quite: it's \"It stops everywhere in the loop\".",
+      "what": "She said she did not know; \"Not quite\" treats that as a wrong answer.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "T23",
+      "quote": "counter now \"1/7 covered\"",
+      "what": "Key point 1 is ticked straight after she answered \"idk\" to both the own-words line and the quick question. There is no evidence she has it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "T25",
+      "quote": "So the size of a current depends on two things.",
+      "what": "The message opens with \"So\", leaning on an earlier message, and the \"second thing\" is not named anywhere in it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "T25",
+      "quote": "through a component (any part of a circuit, such as a lamp or a resistor); that push is called the potential difference across it",
+      "what": "Two new terms, component and potential difference, are packed into one sentence with a bracket in the middle. She had to ask \"whats potential difference\" straight away.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "T25",
+      "quote": "Adding a second cell gave the lamp more push. What happened to the current?",
+      "what": "T23 had already told her \"because more current flows\", so the question asks for what she was just given.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "T26",
+      "quote": "Imagine you swapped one cell for two cells, giving the lamp a bigger push. What would happen to the lamp's brightness?",
+      "what": "T23 had already said that two cells make the lamp glow brighter.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F6",
+      "turn": "T27",
+      "quote": "Yes, that's right. Brighter is right",
+      "what": "Her word is echoed back and she is told it is right twice.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "T28",
+      "quote": "Back to my question: What happened to the current?",
+      "what": "T27 had just said \"a bigger push drives more current through the lamp\", so the answer sits directly above the question. The question also has no context (current when?), and she replied \"wdym\".",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "T29",
+      "quote": "so more charge flows through it each second. If you used three cells instead of two, what would you expect to see from the lamp?",
+      "what": "She asked what the question meant. The tutor gave away the answer, then asked the brightness question again in a slightly different form instead of making the original question clear.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F6",
+      "turn": "T30",
+      "quote": "Yes, that's right. Even brighter is right",
+      "what": "Her words are echoed back and she is told it is right twice.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "T31",
+      "quote": "Back to my question: What happened to the current?",
+      "what": "The same question is asked a third time, straight after T30 said \"more cells push more current round the loop\".",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "T32",
+      "quote": "Partly right. The current did increase, and that's the part I was after.",
+      "what": "Her answer was exactly what was asked for, yet it is marked \"Partly right\". She will think she missed something.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "T32",
+      "quote": "The answer:Use two cells and it glows brighter, because more current flows.",
+      "what": "The stray \"The answer:\" line appears again with a missing space, repeating a sentence from T23 after she has already answered correctly.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "T32",
+      "quote": "That push is called potential difference, measured in volts (V)",
+      "what": "She was told this in T25 and T26, in almost the same words.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "T34",
+      "quote": "Picture a lamp wired to three cells instead of one … What would you expect to happen to the lamp's brightness?",
+      "what": "This is the fourth \"more cells, what happens to the brightness\" question. She has answered it twice and been told the answer several times.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "T34",
+      "quote": "Exam questions say potential difference, but either that or voltage gets you the mark. Picture a lamp wired to three cells instead of one",
+      "what": "An exam-wording note and an unrelated thought experiment share one message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "T35",
+      "quote": "Resistance is how hard a component makes it for charge to get through.",
+      "what": "T25 promised \"two things\" and named the first. Ten turns later resistance arrives without being called the second thing, so the thread is lost.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P16",
+      "turn": "T37",
+      "quote": "One ohm is the unit that tells you how strongly a component opposes the current",
+      "what": "This is the tutor's own muddled wording. The ohm is the unit of resistance; \"one ohm is the unit that tells you\" is not a definition.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "T38",
+      "quote": "a bigger resistance means a smaller current",
+      "what": "This is the same fact as T36 (\"The current would get smaller, because a bigger resistance…\"), told again two messages later.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "T39",
+      "quote": "The equation is V = I R: … The equation linking potential difference, current and resistance works like a set of three connected facts.",
+      "what": "Two messages arrive together (about 87 words): the equation with its symbols, and a paragraph on rearranging. That is too much at once.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P16",
+      "turn": "T39",
+      "quote": "works like a set of three connected facts",
+      "what": "This is the tutor's own vague phrase and it explains nothing. \"Rearrange\" is then used without showing how.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "T41",
+      "quote": "A component has a potential difference of 22.5 V across it and a current of 0.75 A through it. What is its resistance, in ohms (Ω)?",
+      "what": "The worked example only multiplied (V = 2 × 3). This question needs the equation rearranged to R = V ÷ I, with awkward decimals, and no rearranging has been shown. A real first-timer would be stuck here.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F1",
+      "turn": "T43",
+      "quote": "An ammeter is a meter that measures current.",
+      "what": "She was told this in T10 and has since used ammeters in a widget.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F12",
+      "turn": "T43",
+      "quote": "you can add a cell, put the resistor in or take it out or move the resistor to check your answer",
+      "what": "The instruction is a muddled string of \"or\"s, and it is not clear which control checks which prediction.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "T43",
+      "quote": "You add a second cell. What happens to the ammeter reading and to the lamp?",
+      "what": "This \"prediction\" has been told and asked repeatedly from T23 to T34 (more cells, more current, brighter). There is nothing left to predict.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "T43",
+      "quote": "What happens: Both go up.",
+      "what": "The wording is muddled: a lamp does not \"go up\". It should say the ammeter reading rises and the lamp gets brighter.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "26-widget-43-laptop.png",
+      "quote": "Now test your prediction. Tap Add a cell and watch the ammeter and the lamp. What happens: Both go up. (circuit drawn with one cell, 0.09 A)",
+      "what": "The result \"Both go up\" sits on screen next to the instruction to test, while the circuit shows a single cell and 0.09 A. Either the answer is shown before she tests it or the text is out of step with the circuit.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "T47",
+      "quote": "Not quite: it's \"Anywhere in the loop\".",
+      "what": "\"Not quite\" is again the reply to \"idk\", as if she had given a wrong answer.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "T48",
+      "quote": "Before the practical, question 1 of 2: What does an ammeter measure?",
+      "what": "\"The practical\" has not been mentioned before. She does not know what practical this is or why she is being quizzed.",
+      "severity": "minor"
+    },
+    {
+      "fault": "M1",
+      "turn": "T25–T34",
+      "quote": "Back to my question: What happened to the current? … what would you expect to see from the lamp? … What would you expect to happen to the lamp's brightness?",
+      "what": "For ten turns she is asked the same two questions (more cells: brighter? more current?) over and over, with the answers already given. She said \"wdym\" and would be bored or cross by now.",
+      "severity": "would confuse or mislead her"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 14
+    },
+    {
+      "fault": "F8",
+      "instances": 8
+    },
+    {
+      "fault": "F1",
+      "instances": 5
+    },
+    {
+      "fault": "F12",
+      "instances": 4
+    },
+    {
+      "fault": "F6",
+      "instances": 3
+    },
+    {
+      "fault": "P16",
+      "instances": 3
+    },
+    {
+      "fault": "P6",
+      "instances": 3
+    },
+    {
+      "fault": "F5",
+      "instances": 2
+    },
+    {
+      "fault": "F2",
+      "instances": 2
+    },
+    {
+      "fault": "F9",
+      "instances": 1
+    },
+    {
+      "fault": "F3",
+      "instances": 1
+    },
+    {
+      "fault": "P7",
+      "instances": 1
+    },
+    {
+      "fault": "P4",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    }
+  ],
+  "overall": "No, I would not let her use it as it is. The physics is mostly sound and the told pieces are short, but T25 to T34 go round in a loop asking the same question after the answer has been given, and a fully correct answer is marked \"Partly right\". Stray \"The answer:\" lines appear twice with the wrong text, and the first predict-first widget asks about one wire but tests an open switch, with the muddled \"What happens: No … it lit\". Both \"Your turn\" questions need a step the worked example never showed (minutes to seconds, then rearranging V = I R), and key points are ticked after a run of \"idk\" replies, so the counter says she has covered things she has not shown she understands."
+}

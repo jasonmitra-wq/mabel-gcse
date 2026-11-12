@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, A9: evidence pilot gate. Scripted AI lesson (p2-current-voltage key points 1–2) waiting for Jason to read docs/review/p2-current-voltage-kp1-2.md; slides ready. No more key points until Jason has read it and said "Script: ok" or what to change (brief docs/briefs/2026-11-11-scripted-teaching.md, step 8).
+Runbook position: Phase A, A9: evidence pilot gate. Scripted AI lesson (p2-current-voltage key points 1–2): Jason said "Script: ok" (2026-11-12). Waiting for Mabel to try key points 1 and 2 as the AI lesson (Physics → Electricity → Current and potential difference, with a key saved) before key points 3–7 are written; Jason types "Mabel: <what she said>". Slides ready.
 
 ## Runbook v3 switch (2026-10-19)
 

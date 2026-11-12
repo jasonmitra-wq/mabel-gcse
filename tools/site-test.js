@@ -414,10 +414,13 @@ async function lessonMode(page, run, id) {
         // Tutor messages shown before this turn's last one (a word explained, her question answered first).
         const ui = tr.map(x => x.role).lastIndexOf('user');
         const before = tr.slice(ui + 1, -1).filter(x => x.role === 'assistant').map(x => String(x.text));
-        return { cls: u && u.cls ? `${u.cls} (${u.clsBy})` : '', before, told: a && a.role === 'assistant' && a.told ? `${a.told}, ${String(a.text).split(/\s+/).filter(Boolean).length} words, key point ${a.pt + 1}` : '' };
+        return { cls: u && u.cls ? `${u.cls} (${u.clsBy})` : '', before, told: a && a.role === 'assistant' && a.told ? `${a.told}, ${String(a.text).split(/\s+/).filter(Boolean).length} words, key point ${a.pt + 1}` : '',
+                 easier: !!(a && a.role === 'assistant' && a.easier) };
       } catch { return {}; }
     }, `mabel_teach_${id}`);
     if (read.cls) run.say(`  [S${n} read as: ${read.cls}]`);
+    // SCRIPTED: a "don't know" step the script writes as easier (a hint or a smaller question).
+    if (read.easier) run.say(`  [T${n} easier step]`);
     if (read.told) run.say(`  [T${n} told piece: ${read.told}]`);
     (read.before || []).forEach(b => run.say(`  [T${n} shown first: ${b}]`));
     const seen = await page.evaluate(() => {
@@ -546,7 +549,7 @@ async function lessonMode(page, run, id) {
       run.say(`S${n} (tapped "${tapped}")`);
       await page.evaluate(label => { [...document.querySelectorAll('#teachThread .teach-choices button')].find(b => b.textContent.trim() === label).click(); }, tapped);
       const t0 = Date.now();
-      try { await waitReady(t); } catch { run.say(`[no tutor reply within 120 s after S${n}]`); run.check('tutor replies', false, `no reply after S${n}`); break; }
+      try { await waitReady(t); } catch { if (!(await page.evaluate(() => !!document.getElementById('teachThread')))) { run.say(`[S${n} left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]`); break; } run.say(`[no tutor reply within 120 s after S${n}]`); run.check('tutor replies', false, `no reply after S${n}`); break; }
       tutorMs += Date.now() - t0;
       t = await lastTutor();
       hist.push({ who: 'tutor', text: t });
@@ -572,7 +575,7 @@ async function lessonMode(page, run, id) {
       await page.click('#teachSendBtn');
     }
     const t1 = Date.now();
-    try { await waitReady(t); } catch { run.say(`[no tutor reply within 120 s after S${n}]`); run.check('tutor replies', false, `no reply after S${n}`); break; }
+    try { await waitReady(t); } catch { if (!(await page.evaluate(() => !!document.getElementById('teachThread')))) { run.say(`[S${n} left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]`); break; } run.say(`[no tutor reply within 120 s after S${n}]`); run.check('tutor replies', false, `no reply after S${n}`); break; }
     tutorMs += Date.now() - t1;
     t = await lastTutor();
     hist.push({ who: 'tutor', text: t });

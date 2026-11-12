@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, A9: evidence pilot gate. Scripted AI lesson (p2-current-voltage key points 1–2): Jason said "Script: ok" (2026-11-12). Waiting for Mabel to try key points 1 and 2 as the AI lesson (Physics → Electricity → Current and potential difference, with a key saved) before key points 3–7 are written; Jason types "Mabel: <what she said>". Slides ready.
+Runbook position: Phase A, A9: evidence pilot gate. Scripted AI lesson p2-current-voltage now covers all 7 key points and the end quiz (2026-11-12, Jason: "Write them now"). Waiting for Jason to read docs/review/p2-current-voltage.md and say "Script: ok" or what to change; then Mabel tries the AI lesson ("Mabel: <what she said>"). Slides ready.
 
 ## Runbook v3 switch (2026-10-19)
 
@@ -223,3 +223,4 @@ Not started on the pipeline. Already in place:
 | Coverage and faults (2026-11-11, brief 2026-11-11-coverage-and-faults) | GET /v1/models 2 (free); count_tokens (free); site test 2 (p2-current-voltage, --persona mabel, laptop, key points 1–2, no judge); review 3 (claude-fable-5-2: run 1 twice, cut off; run 2 once) | 4.33 (site 1.0675 + 0.8710; review 1.0924 + 0.4133 + 0.8819) |
 
 | Scripted teaching (2026-11-11/12, brief 2026-11-11-scripted-teaching) | script review 2 (claude-fable-5-2, --script); site test 5 (--persona mabel, laptop, key points 1–2, no judge; one stopped by the tester, one stopped by Jason, three to the end); one live check of the her-question reply | 1.25 (review 0.5872 + 0.5438; site 0.0099 + 0.0292 + 0.0291 + 0.0301, plus the stopped run 2026-11-11/p2-current-voltage-5, no cost reported, about 0.02; live check under 0.01) |
+| Scripted lesson, key points 3–7 (2026-11-12) | script review 2 (claude-fable-5-2, whole lesson); site test 3 (--persona mabel, laptop, whole lesson, no judge) | 2.45 (review 1.1564 + 1.0169; site 0.0764 + 0.1029 + 0.0958) |

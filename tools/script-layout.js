@@ -2,7 +2,7 @@
 /* The scripted AI lesson laid out as she would read it (brief docs/briefs/2026-11-11-scripted-teaching.md, step 6).
  *
  *   node tools/script-layout.js [lessonId] [--out <file>]
- *     default out: docs/review/<lessonId>-kp1-2.md
+ *     default out: docs/review/<lessonId>.md (the first copy Jason read, key points 1-2, is docs/review/p2-current-voltage-kp1-2.md)
  *
  * The main path in order; each question followed by what she sees for right, each wrong answer and each
  * "don't know" level; worked examples step by step; widgets as she meets them. Plain text, no code. This is what
@@ -24,10 +24,11 @@ function layout(id) {
   const strip = h => String(h || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
   const dot = s => { const t = String(s || '').trim(); return /[.!?]$/.test(t) ? t : `${t}.`; };
   const out = [];
-  out.push(`# ${lesson.title}: key points ${script.keyPoints.map(k => k.kp + 1).join(' and ')}, the scripted AI lesson`, '');
+  out.push(`# ${lesson.title}: the scripted AI lesson (key points ${script.keyPoints.map(k => k.kp + 1).join(', ')})`, '');
   out.push(`This is every message she can see, in order, written once and stored (${id}.script.json). Each tutor message is one chat bubble. Under each question: what she sees for a right answer, for each likely wrong answer, and if she says she does not know (the easier step first, then a smaller question, then the answer and why).`, '');
   out.push(`At any point she can ask a question of her own. The AI answers it from the lesson in at most 60 words, then asks the same question again. Apart from that and marking what she types, nothing here is written by the AI.`, '');
   let n = 0;
+  const practiceState = { seed: 1, askedQs: [] };
   const engine = TS.create({ call: async () => '', practice: Practice, lesson, script, misconceptions: MIS });
   const st = { kp: 0, i: 0, seed: 1 };
   script.keyPoints.forEach(kp => {
@@ -64,7 +65,9 @@ function layout(id) {
       } else if (s.type === 'widget') {
         const card = engine.show({ ...st }).find(e => e.card).card, o = card.options;
         out.push(`${++n}. ${tag} Tutor: ${s.text}`);
-        out.push(`   Under it, the hands-on circuit. It shows ${o.hideMeters ? 'a cell, a switch and a lamp in one loop (no meters yet)' : `a cell, ${o.switch ? 'a switch, ' : ''}a lamp${o.resistor ? ', a resistor that can go in or out of the loop' : ''} and ${o.twoAmmeters ? 'two ammeters' : 'an ammeter'}${o.voltmeter ? ' and a voltmeter' : ''}`}; controls: ${(o.controls || []).map(c => ({ sw: 'Open/Close the switch', add: 'Add a cell', remove: 'Take a cell away', res: 'Put the resistor in / Take it out', side: 'Move the resistor', run: 'Run for 10 s' }[c])).join(', ') || 'none'}.`);
+        const ctlName = c => ({ sw: 'Open/Close the switch', add: 'Add a cell', remove: 'Take a cell away', res: 'Put the resistor in / Take it out', side: 'Move the resistor', run: 'Run for 10 s / Start again', drag: 'drag the point along the line (or its slider)' }[c]);
+        if (card.id === 'iv-graph') out.push(`   Under it, the hands-on I-V graph of ${(o.components || []).join(', ')}${o.negative ? ', with negative potential differences on the left of zero' : ''}: current up the side, potential difference along the bottom, a point to drag, and readings of the potential difference, the current and the resistance (V ÷ I). Control: ${(o.controls || []).map(ctlName).join(', ') || 'none'}.`);
+        else out.push(`   Under it, the hands-on circuit. It shows ${o.hideMeters ? 'a cell, a switch and a lamp in one loop (no meters yet)' : `a cell, ${o.switch ? 'a switch, ' : ''}a lamp${o.resistor ? ', a resistor that can go in or out of the loop' : ''} and ${o.twoAmmeters ? 'two ammeters' : 'an ammeter'}${o.voltmeter ? ' and a voltmeter across the lamp' : ''}`}${o.energy ? ', with readings of the time, the charge that left the cell, the charge that came back, and the energy passed to the lamp' : ''}; controls: ${(o.controls || []).map(ctlName).join(', ') || 'none'}.`);
         (o.predicts || []).forEach((p, k) => {
           out.push(`   Box, "Predict first${o.predicts.length > 1 ? ` (${k + 1} of ${o.predicts.length})` : ''}": ${p.question}`);
           out.push(`     Choices: ${(p.options || []).map(x => `"${x.short || x.text}"`).join(' / ')} (right: "${p.options[p.correct].short || p.options[p.correct].text}")`);
@@ -81,17 +84,20 @@ function layout(id) {
         x.steps.forEach((z, k) => out.push(`   ${k === 0 ? 'She taps "Show the first step"' : 'She taps "Next step"'}: ${dot(z.text)}`));
         out.push(`   After the last step: Next. (If she types an answer instead: "Yes, that's right: ${x.answer.value} ${x.answer.unit}." or "Not quite: it's ${x.answer.value} ${x.answer.unit}. The steps on the card show how.")`, '');
       } else if (s.type === 'practice') {
-        const q = engine.show({ ...st, seed: 1 }).find(e => /^Your turn/.test(e.text));
-        const pq = (() => { const t = { ...st, seed: 1 }; engine.show(t); return t.pend.q; })();
+        const pst = Object.assign(practiceState, { kp: st.kp, i: st.i }); const q = engine.show(pst).find(e => e.text.startsWith(s.label || 'Your turn'));
+        const pq = pst.pend.q;
         const ans = `${Practice.fmt(pq.answer.value)} ${pq.answer.unit}`, steps = pq.steps.map(z => dot(z.text)).join(' ');
         out.push(`${++n}. ${tag} Tutor: ${q.text}`);
         out.push(`   (A new question each time, the same kind as the worked example. She types a number.)`);
         out.push(`   - Right: Yes, that's right: ${ans}.`);
-        out.push(`   - Wrong: Not quite: it's ${ans}. ${steps}`);
+        out.push(`   - Wrong (first time): Not quite. Check your working and have one more go: ${pq.question}`);
+        out.push(`   - Wrong again: Not quite: it's ${ans}. ${steps}`);
         const eqDef = lesson.keyPoints.flatMap(k => ((k.examBox || {}).equations || [])).find(e => e.id === pq.equation);
         const given = Object.entries(pq.given || {}).map(([sym, v]) => { const u = eqDef && eqDef.units.find(x => x.symbol === sym); return `${sym} = ${Practice.fmt(v)} ${u ? u.unitSymbol : ''}`.trim(); });
         out.push(`   - Don't know: That's fine. Here is how to start: ${pq.steps.slice(0, Math.max(1, pq.steps.length - 2)).map(x => dot(x.text)).join(' ')} In this question, ${given.length > 1 ? `${given.slice(0, -1).join(', ')} and ${given[given.length - 1]}` : given[0]}. Now put the numbers in. What do you get?`);
         out.push(`   - Still doesn't know: Here is how it goes. ${steps}`, '');
+      } else if (s.type === 'score') {
+        out.push(`${++n}. ${tag} Tutor: ${s.text.replace('{right}', '<her number right>').replace('{n}', '<the number asked>')}`, '   Button: Next', '');
       } else if (s.type === 'own') {
         out.push(`${++n}. ${tag} Tutor: ${s.prompt}`);
         out.push(`   She types one line. The AI checks which of these points it makes: ${s.points.map(x => `"${x}"`).join(', ')}.`);
@@ -110,7 +116,7 @@ if (require.main === module) {
   const argv = process.argv.slice(2);
   const id = argv.find(a => !a.startsWith('--') && argv[argv.indexOf(a) - 1] !== '--out') || 'p2-current-voltage';
   const oi = argv.indexOf('--out');
-  const file = oi !== -1 ? argv[oi + 1] : path.join(ROOT, 'docs', 'review', `${id}-kp1-2.md`);
+  const file = oi !== -1 ? argv[oi + 1] : path.join(ROOT, 'docs', 'review', `${id}.md`);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, layout(id));
   console.log(`Wrote ${path.relative(ROOT, file)}`);

@@ -103,11 +103,16 @@
       if (s.type === 'practice') {
         const q = practiceQuestion(s, st);
         st.pend = { t: 'practice', q, hinted: false };
-        return [entry(st, `Your turn: ${q.question}`)];
+        return [entry(st, `${s.label || 'Your turn:'} ${q.question}`)];
       }
       if (s.type === 'own') {
         st.pend = { t: 'own' };
         return [entry(st, s.prompt)];
+      }
+      if (s.type === 'score') {   // the end of the quiz: her score, from the quiz questions she answered
+        const q = st.quiz || { n: 0, right: 0 };
+        st.pend = { t: 'next' };
+        return [entry(st, s.text.replace('{right}', q.right).replace('{n}', q.n), { choices: ['Next'] })];
       }
       throw new Error(`script step ${s.id}: unknown type ${s.type}`);
     }
@@ -123,6 +128,10 @@
         const q = P.make(s.eq, seed);
         if (s.find && q.find !== s.find) continue;
         if (s.plain && q.steps.length !== 3) continue;   // a conversion or a rearrangement adds a step
+        if (s.steps && q.steps.length !== s.steps) continue;   // e.g. 4: a current and a time first, then E = Q V
+        if (s.whole && Object.values(q.given || {}).some(v => !Number.isInteger(v))) continue;   // whole numbers for her first go
+        if ((st.askedQs || []).includes(q.question)) continue;   // never the same question twice in a lesson
+        st.askedQs = [...(st.askedQs || []), q.question].slice(-40);
         return q;
       }
       return P.make(s.eq, 1);
@@ -178,7 +187,7 @@
         `Her question: "${text}"`].filter(Boolean).join('\n\n');
       try {
         // "It's asking you to…" names nothing: the question is named (site test 2026-11-12, F2).
-        let a = String(await env.call(sys, user, 160) || '').trim().replace(/^(it'?s|it is|this is|that'?s)\s+asking\b/i, 'The question is asking');
+        let a = String(await env.call(sys, user, 160) || '').trim().replace(/^(it'?s|it is|this is|that'?s)\s+asking\b/i, 'The question is asking').replace(/^(it|this|that)\s+means\b/i, 'The question means');
         // At most 60 words, whole sentences; no question back.
         const sents = (a.match(/[^.!?]+[.!?]+/g) || [a]).map(x => x.trim()).filter(x => x && !/\?$/.test(x));
         let out = '';
@@ -258,8 +267,15 @@
       if (pend.t === 'end') {
         if (/slides/i.test(text)) return { kind: 'slides', entries: [], ticks };
         if (/home/i.test(text)) return { kind: 'home', entries: [], ticks };
+        // "ok thx", "bye": a fixed line and the buttons, no call (site test 2026-11-12: the closing line was sent
+        // again word for word). A question of hers is answered; the buttons follow with a different line each time.
+        const endLine = { role: 'assistant', text: `Tap ${S.end.buttons.map(b => `"${b}"`).join(' or ')} when you are ready.`, choices: S.end.buttons.slice(), scripted: 'end' };
+        if (GO_ON.test(text) || /\b(thanks|thank you|thx|ty|bye|cya|see you|cheers)\b/i.test(text) || words(text) <= 2) {
+          st.endN = (st.endN || 0) + 1;
+          return [{ ...endLine, text: st.endN % 2 ? `You're welcome. ${endLine.text}` : endLine.text }];
+        }
         const a = await answerHer(st, text);
-        return [entry(st, a), { role: 'assistant', text: S.end.text, choices: S.end.buttons.slice(), scripted: 'end' }];
+        return [entry(st, a), endLine];
       }
       // What kind of message it is: the clear cases in code, the rest by one short call.
       const tapped = pend.t === 'ask' && s && s.kind === 'tap' && !pend.sub ? shown(s).find(o => o.text.toLowerCase() === text.toLowerCase())
@@ -276,7 +292,7 @@
         const a = await answerHer(st, text);
         if (pend.t === 'ask') return [entry(st, a), sameAsk(st, pend.sub || s)];
         if (pend.t === 'practice') return [entry(st, a), entry(st, `${lead(st)} ${pend.q.question}`)];
-        if (pend.t === 'own') return [entry(st, a), entry(st, s.prompt)];
+        if (pend.t === 'own') return [entry(st, a), entry(st, `${lead(st)} ${s.prompt}`)];
         return [entry(st, a, { choices: ['Next'] })];
       }
       if (kind === 'offtopic') {
@@ -303,20 +319,24 @@
           const q = pend.q, ans = `${P.fmt(q.answer.value)} ${q.answer.unit}`, steps = q.steps.map(x => dot(x.text)).join(' ');
           if (kind === 'idk' || kind === 'moveon') {
             if (!pend.hinted && kind === 'idk') { pend.hinted = true; return [entry(st, `That's fine. Here is how to start: ${q.steps.slice(0, Math.max(1, q.steps.length - 2)).map(x => dot(x.text)).join(" ")} ${givenLine(q)} Now put the numbers in. What do you get?`)]; }
+            if (s.quiz) { st.quiz = st.quiz || { n: 0, right: 0 }; st.quiz.n++; }
             return advance(st, [entry(st, `${pend.hinted ? 'Here' : "That's fine. Here"} is how it goes. ${steps}`, FB)], ticks);
           }
           const n = lastNumber(text);
           if (n === null) return [entry(st, `Type your answer as a number. ${q.question}`)];
           const kind2 = judge(text, q.answer.value, q.tolerance || 0.02);
+          if (kind2 === 'wrong' && !pend.tried && !pend.hinted) { pend.tried = true; return [entry(st, `Not quite. Check your working and have one more go: ${q.question}`, FB)]; }
+          if (s.quiz) { st.quiz = st.quiz || { n: 0, right: 0 }; st.quiz.n++; if (kind2 !== 'wrong') st.quiz.right++; }
           return advance(st, [entry(st, kind2 === 'right' ? `Yes, that's right: ${ans}.` : kind2 === 'method' ? `Yes, that's the right working: it comes to ${ans}.` : `Not quite: it's ${ans}. ${steps}`, FB)], ticks);
         }
         case 'own': {
           if (kind === 'idk' || kind === 'moveon' || words(text) < 2) return advance(st, [entry(st, s.idk, FB)], ticks);
           const got = await ownPoints(s, text);
           const has = s.points.filter((p, k) => got.includes(k)), miss = s.points.filter((p, k) => !got.includes(k));
-          const say = !has.length ? `A good line would say: ${s.points.join('; and ')}.`
-            : !miss.length ? `Yes, your line has it: ${has.join('; and ')}.`
-            : `Your line gets this right: ${has.join('; and ')}. A full line also says: ${miss.join('; and ')}.`;
+          const list = xs => (xs.length <= 1 ? xs.join('') : `${xs.slice(0, -1).join(', ')}, and ${xs[xs.length - 1]}`);
+          const say = !has.length ? `A good line would say: ${list(s.points)}.`
+            : !miss.length ? `Yes, your line has it: ${list(has)}.`
+            : `Your line gets this right: ${list(has)}. A full line also says: ${list(miss)}.`;
           return advance(st, [entry(st, say, FB)], ticks);
         }
       }
@@ -348,12 +368,14 @@
         else branch = ((s.wrongValues || []).find(w => near(n, w.value, 0.02)) || { branch: 'other' }).branch;
       } else branch = await mark(st, s, text);
 
+      if (s.quiz && branch !== 'idk') { st.quiz = st.quiz || { n: 0, right: 0 }; st.quiz.n++; if (branch === 'right') st.quiz.right++; }
       if (branch === 'right') return advance(st, [entry(st, s.right, FB)], ticks);
       if (branch === 'idk') {
         const lv = (s.idk || [])[pend.level];
         pend.level++;
         if (lv && lv.hint) return [entry(st, lv.hint, s.kind === 'tap' ? { choices: shown(s).map(o => o.text), easier: true } : { easier: true })];
         if (lv && lv.ask) { pend.sub = lv.ask; return [entry(st, lv.ask.question, { choices: shown(lv.ask).map(o => o.text), easier: true })]; }
+        if (s.quiz) { st.quiz = st.quiz || { n: 0, right: 0 }; st.quiz.n++; }
         return advance(st, [entry(st, `That's fine. ${s.answerWhy}`, FB)], ticks);
       }
       if (branch === 'giveup') return advance(st, [entry(st, s.answerWhy, FB)], ticks);
@@ -363,5 +385,5 @@
     return { start, reply, calls, show, shown, points: kps.length };
   }
 
-  return { create, uses, SCRIPTED, SCRIPTED_LESSONS, order, IDK, VERSION: 2 };
+  return { create, uses, SCRIPTED, SCRIPTED_LESSONS, order, IDK, VERSION: 3 };
 });

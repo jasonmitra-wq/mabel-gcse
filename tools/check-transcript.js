@@ -98,11 +98,17 @@ function readSiteTest(lines) {
     }
     else if ((m = raw.match(/^S(\d+)(?: \(([^)]*)\))?: ([\s\S]*)$/))) msgs.push({ n: `S${m[1]}`, role: 'user', text: m[3], tapped: /tapped/.test(m[2] || ''), kp });
     else if ((m = raw.match(/^S(\d+) \(tapped "([^"]*)"\)/))) msgs.push({ n: `S${m[1]}`, role: 'user', text: m[2], tapped: true, kp });
-    else if ((m = raw.match(/^\[counter now "(\d+)\/\d+ covered" after T\d+/))) kp = Number(m[1]);
+    else if ((m = raw.match(/^\[counter now "(\d+)\/\d+ covered" after T(\d+)/))) {
+      kp = Number(m[1]);
+      // The tick comes when the next key point opens, so the message it is logged after is that key point's first.
+      const t = [...msgs].reverse().find(x => x.n === `T${m[2]}`);
+      if (t) t.kp = kp;
+    }
     else if ((m = raw.match(/^\[widget under T(\d+): ([\s\S]*)\]$/))) msgs.push({ n: `W${m[1]}`, role: 'widget', text: m[2], kp });
     else if ((m = raw.match(/^\[widget text under T(\d+): ([\s\S]*)\]$/))) msgs.push({ n: `W${m[1]}`, role: 'widget', text: m[2], kp, full: true });
     else if ((m = raw.match(/^\s+\[T(\d+) told piece: (\w+)/))) { const t = [...msgs].reverse().find(x => x.n === `T${m[1]}`); if (t) t.told = m[2]; }
     else if ((m = raw.match(/^\s+\[S(\d+) read as: (\w+)/))) { const t = [...msgs].reverse().find(x => x.n === `S${m[1]}`); if (t) t.cls = m[2]; }
+    else if ((m = raw.match(/^\s+\[T(\d+) easier step\]/))) { const t = [...msgs].reverse().find(x => x.n === `T${m[1]}`); if (t) t.easier = true; }
   }
   return msgs;
 }
@@ -168,7 +174,8 @@ function check(msgs, data) {
     }
     // echo: her last typed words, or "don't know", said back to her
     const prevUser = [...msgs.slice(0, i)].reverse().find(x => x.role === 'user');
-    if (prevUser && !prevUser.tapped) {
+    // (a reply confirming a right answer may say the answer in the words she used: that is not parroting her)
+    if (prevUser && !prevUser.tapped && !/^\W*yes\b/i.test(plain)) {
       const h = prevUser.text.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
       const echo = sents.find(s => { const n = s.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim(); return (IDK.test(prevUser.text) && IDK.test(s)) || (h.split(' ').length >= 3 && h.length >= 12 && n.includes(h)); });
       if (echo) add('echo', m.n, `she said "${prevUser.text}"; the tutor: "${echo}"`);

@@ -987,6 +987,14 @@ const Teach = (() => {
     (r.ticks || []).forEach(k => { _state.coverage[k] = true; });
     if (_state.script.kp < _points.length) _state.currentPointIndex = Math.min(_state.script.kp, _scr.points - 1);
     r.entries.forEach(e => _pushEntry(e));
+    // The whole lesson done (every key point ticked): finished, as the live lesson records it (the post-test unlocks).
+    if (_state.script.done && !_state.script.finished && _points.every((p, k) => _state.coverage[k] === true)) {
+      _state.script.finished = true;
+      _save();
+      if (Store.markFinished) Store.markFinished(_subtopicId);
+      const q = _state.script.quiz || { n: 0, right: 0 };
+      if (typeof Record !== 'undefined') Record.finished(_subtopicId, 'ai', { quizRight: q.right, quizOf: q.n });
+    }
     _renderShell();
     _renderTranscript();
     document.getElementById('teachInput')?.focus();

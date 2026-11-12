@@ -144,7 +144,7 @@
     }
     if (kind === 'E') {
       return {
-        question: `${fmt(Q)} C of charge flows through a potential difference of ${fmt(V)} V. How much energy is transferred, in joules (J)?`,
+        question: `${fmt(Q)} C of charge flows through a lamp with a potential difference of ${fmt(V)} V across it. How much energy is transferred, in joules (J)?`,
         given: { Q, V }, find: 'E', answer: { value: E, unit: 'J', si: 1 },
         steps: [
           { text: 'Write the equation: E = Q V.' },

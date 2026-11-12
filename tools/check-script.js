@@ -33,7 +33,7 @@ const misIds = new Set(MIS.map(m => m.id));
 // ── 1. Schema ──
 const fails = [];
 const bad = (id, what) => fails.push(`${id}: ${what}`);
-const TYPES = ['say', 'ask', 'equation', 'worked', 'practice', 'widget', 'own'];
+const TYPES = ['say', 'ask', 'equation', 'worked', 'practice', 'widget', 'own', 'score'];
 const ids = new Set();
 function checkAsk(id, q, sub = false) {
   if (!q.question) bad(id, 'no question');
@@ -92,7 +92,7 @@ script.keyPoints.forEach((kp, k) => {
         if (!p) return bad(s.id, `no prediction ${pid}`);
         const needs = ((s.overrides || {})[pid] || {}).needs || p.needs || [];
         needs.forEach(n => { if (!(s.controls || []).includes(n)) bad(s.id, `${pid} needs control "${n}", not in its controls`); });
-        (p.options || []).forEach(o => { const t = o.short || o.text; if (/:/.test(t) || words(t) > 9) bad(s.id, `${pid}: option "${t}" is not a short prediction`); });
+        (((s.overrides || {})[pid] || {}).options || p.options || []).forEach(o => { const t = o.short || o.text; if (/:/.test(t) || words(t) > 9) bad(s.id, `${pid}: option "${t}" is not a short prediction`); });
       });
     }
     if (s.type === 'own' && !(s.prompt && (s.points || []).length && s.idk)) bad(s.id, 'own words needs prompt, points and idk');

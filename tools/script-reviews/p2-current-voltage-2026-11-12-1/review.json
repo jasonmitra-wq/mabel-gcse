@@ -1,0 +1,464 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 33577,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 22194,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 15803
+    },
+    "iterations": [
+      {
+        "input_tokens": 33577,
+        "output_tokens": 22194,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 1.156376,
+  "seconds": 281,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"new\",\"turn\":\"1.2\",\"quote\":\"tiny particles that carry electric charge, the thing that moves through the wires when the torch is on\",\"what\":\"Charge is explained only as 'the thing that moves', which is circular. She is left with no idea what charge is beyond a name.\",\"severity\":\"minor\"},{\"fault\":\"P8\",\"turn\":\"1.8 don't know (first time)\",\"quote\":\"The bigger current is in the wire with more charge passing each second. Which wire has the bigger current?\",\"what\":\"The hint hands her the rule that decides the answer and then asks the same question, so nothing is left to think about.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.11 don't know (first time)\",\"quote\":\"Start with the charge: how many coulombs pass the point each second in this wire?\",\"what\":\"The hint asks a different question whose answer (3) is printed in the question itself. If she types 3 she is marked right for the amperes without having linked coulombs per second to amperes.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.11\",\"quote\":\"each coulomb a second makes one ampere\",\"what\":\"Awkward wording used in every branch. 'One coulomb each second is one ampere, so 3 coulombs each second is 3 amperes' would be clearer.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"1.13 (Predict first 2 of 2)\",\"quote\":\"You want to measure the current through the lamp. How do you connect the ammeter?\",\"what\":\"She has just been told 'The circuit has two ammeters in the same loop' and has used that circuit, so 'In the loop' is not a prediction. The answer was shown before the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"1.13 (Predict first 2 of 2)\",\"quote\":\"Now test your prediction. Look where the two ammeters sit in the circuit below.\",\"what\":\"This is not a test: nothing is tried, and seeing ammeters in the loop does not show why 'across the lamp' would be wrong. The self-check tick 'so it can measure the current' is circular as a reason.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.14\",\"quote\":\"In a single loop the current is the same at every point\",\"what\":\"'Single loop' is used here and in 1.20 and 2.19 without saying what else a circuit could be. She cannot tell why the word 'single' matters.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"1.16\",\"quote\":\"The equation is Q = I t\",\"what\":\"The message opens with 'The equation' without saying what it is for. The link to charge flow depending on current and time is in the previous bubble.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.18\",\"quote\":\"A current of 0.4 A flows for 50 s. How much charge flows, in coulombs (C)?\",\"what\":\"Her first go alone jumps from 2 × 5 in the worked example to a decimal times 50. A whole-number question first would be kinder.\",\"severity\":\"minor\"},{\"fault\":\"F12\",\"turn\":\"2.2\",\"quote\":\"Both go up\",\"what\":\"The question asks about the ammeter reading and the lamp, and a lamp does not 'go up'. Nothing so far has told her that brightness goes with the size of the current, so the wording should say 'the reading goes up and the lamp gets brighter'.\",\"severity\":\"minor\"},{\"fault\":\"F4\",\"turn\":\"2.3 to 2.7\",\"quote\":\"Any part of a circuit, such as a lamp, is called a component. ... Another name for potential difference is voltage.\",\"what\":\"Five tell-only messages in a row each bring a new word (component, potential difference, volt, voltmeter, voltage) with nothing for her to do. This is a vocabulary list in all but name.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P5\",\"turn\":\"2.6\",\"quote\":\"It is joined across a component, with one wire to each end of it. An ammeter goes into the loop; a voltmeter does not.\",\"what\":\"'Across' is described in words only: there is no picture until 2.12b and no circuit with a voltmeter to try, yet 2.8 questions her on it. The message also carries three ideas at once.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.9\",\"quote\":\"a resistor, a small part that the charge has to pass through when it is in the loop. In a circuit drawing, a resistor is a small rectangle.\",\"what\":\"The description fits a lamp or an ammeter equally and tells her nothing about what a resistor does, so her prediction in 2.10 is a guess from the name. The resistor is the only part whose symbol is described; the cell, lamp, switch and ammeter symbols never are.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.13\",\"quote\":\"Both the same: the cells give the same current\",\"what\":\"The question mentions no cells, only two components with 6 V across them. The option and its reply ('The cells do not always give the same current') bring in something that is not in the question.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.14\",\"quote\":\"Potential difference, current and resistance are linked by one equation: V = I R\",\"what\":\"The equation arrives from nowhere. It is not tied to what she has just found (more push gives more current, more resistance gives less), so it is a formula to memorise rather than understand.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.15\",\"quote\":\"To find a resistance, divide both sides of V = I R by I. So R = V ÷ I\",\"what\":\"The rearrangement is taught before she has used V = I R even once, and it is not needed until 2.17a, three steps later. It belongs just before the resistance worked example.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"2.17a\",\"quote\":\"You want R, so divide both sides by I: R = V ÷ I.\",\"what\":\"This repeats 2.15 almost word for word.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.17b\",\"quote\":\"a potential difference of 1 V across it and a current of 0.5 A through it\",\"what\":\"Her first resistance question alone needs dividing by 0.5, which many 15-year-olds get wrong. That hides whether she understood the physics.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"8.7\",\"quote\":\"A potential difference of 15 V is put across a 20 Ω resistor. What is the current through it, in amperes (A)?\",\"what\":\"The lesson only ever taught and practised V = I R and R = V ÷ I. Finding the current (I = V ÷ R) is never shown, yet the quiz asks for it with awkward numbers (15 ÷ 20) and says 'the same kind as the worked example' when no such example exists.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"3.2 don't know (first time)\",\"quote\":\"Start from V = I R. To get R on its own, what do you divide both sides by? (same buttons)\",\"what\":\"The hint's answer is 'I', but the buttons offered are 'Multiply them together' and the two 'Divide…' options. The hint and the buttons do not match.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"3.7\",\"quote\":\"Then move one clip to change the length of wire between the clips, and take both readings again.\",\"what\":\"The message opens with 'Then' after a calculation question has intervened, and 'both readings' is not named in the message.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.5\",\"quote\":\"side by side across the same two points: one wire at each end of the length you are testing\",\"what\":\"'Wire' here means the voltmeter's leads, in a practical about 'the wire'. She will not know which wire is meant.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.8 don't know (first time)\",\"quote\":\"Is a longer wire harder or easier for charge to get through? (same buttons)\",\"what\":\"The hint asks 'harder or easier', but the buttons are 'It gets smaller / It gets bigger / It stays the same'.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.9\",\"quote\":\"Keep the current small and switch off between readings, so the wire does not warm up.\",\"what\":\"She is never told why warming matters. That resistance changes with temperature is not said until 5.3, so this is a rule without a reason.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.15\",\"quote\":\"\\\"a longer wire has a bigger resistance\\\", \\\"as long as its temperature stays the same\\\"\",\"what\":\"Her line is marked as missing a point unless it mentions temperature. The question does not ask for that, and she has not been told temperature changes resistance. The 'all of them' reply ('…; and as long as its temperature stays the same') is also not a sentence.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.12\",\"quote\":\"The same circuit measures two or more resistors joined together, in series or in parallel. Measure the potential difference and the current for each\",\"what\":\"Resistors 'in parallel' has never been shown; 'in parallel' has only been used for a voltmeter. There is no picture, and 'for each' does not say each what, so she could not picture or do this.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F1\",\"turn\":\"3.13\",\"quote\":\"Start from V = I R. ... You want R, so divide both sides by I: R = V ÷ I.\",\"what\":\"The same rearrangement is walked through for the fourth time (2.15, 2.17a, 3.2, 3.13).\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"3.14\",\"quote\":\"A component has a potential difference of 1 V across it and a current of 0.5 A through it. What is its resistance, in ohms (Ω)?\",\"what\":\"As scripted this is word for word the question from 2.17b. It also says 'a component' rather than a length of wire, so it does not belong to the practical. If the question really is new each time this may not arise.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"3.3 to 3.12\",\"quote\":\"In this practical you measure it yourself.\",\"what\":\"She does not measure anything herself: the whole practical is told, with no circuit or wire to try. Steps 3.9 to 3.12 are four tell-only messages in a row.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.3\",\"quote\":\"Under it, the hands-on circuit. It shows a cell, a lamp and an ammeter; controls: none.\",\"what\":\"The message promises 'a graph of a resistor' with a point to drag, but the script describes a cell-lamp-ammeter circuit with no controls, and 'after she uses' is blank. If that is what she sees, she cannot do the test.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"4.6\",\"quote\":\"A component like this is called an ohmic conductor, as long as its temperature does not change.\",\"what\":\"Muddled sentence: the temperature condition belongs to the resistance staying the same, not to what the component is called. 'Conductor' is also never explained.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"5.2\",\"quote\":\"An old-style bulb is a filament lamp: inside it is a thin coil of metal wire, the filament\",\"what\":\"Two new terms in one message.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.3\",\"quote\":\"As the current through a filament lamp rises, the filament gets hotter. What do you think happens to its resistance?\",\"what\":\"Nothing she has been told lets her work out which way resistance goes with temperature. It is a guess presented as an ordinary question with 'Not quite' for a wrong guess.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F7\",\"turn\":\"5.3 don't know (first time)\",\"quote\":\"An ohmic conductor keeps the same resistance only while its temperature does not change. A filament gets very hot. Which way do you think its resistance goes?\",\"what\":\"The hint does not make the question easier. It tells her the resistance changes but gives her nothing to choose between up and down.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"5.6\",\"quote\":\"Under it, the hands-on circuit. It shows a cell, a lamp and an ammeter; controls: none.\",\"what\":\"As in 4.3, she is told to drag a point on the lamp graph but the widget described is a circuit with no controls.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F12\",\"turn\":\"5.6\",\"quote\":\"\\\"6 ÷ 0.56, about 11 Ω\\\" ... \\\"Now explain it: In one line: how do you find the resistance at one point on the graph?\\\"\",\"what\":\"The right option already contains the method (divide V by I) that she is then asked to explain. It is also a calculation, not a prediction.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"5.7\",\"quote\":\"then divide V by I, not the steepness of the line\",\"what\":\"The sentence does not parse ('divide V by I, not the steepness'). It should say 'do not use the steepness of the line'.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.8\",\"quote\":\"a diode: another component that can be joined into a loop, like a resistor or a lamp\",\"what\":\"This tells her nothing about what a diode is or looks like, so the prediction in 5.9 is a blind guess.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"5.9\",\"quote\":\"the point is at a negative potential difference: that is the diode turned round\",\"what\":\"A negative potential difference and the left half of the graph are used here but not explained until the 5.11 picture and 6.8. Up to now potential difference has only been 'the push'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"5.9\",\"quote\":\"Under it, the hands-on circuit. It shows a cell, a lamp and an ammeter; controls: none.\",\"what\":\"As in 4.3 and 5.6, she is told to drag a point on the diode graph but the widget described has no graph and no controls.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"5.12\",\"quote\":\"In one line: how are a filament lamp and a diode different from a resistor?\",\"what\":\"She is asked for one line but marked against three separate points. 6.13 does the same.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"6.3\",\"quote\":\"The circuit has a cell or battery\",\"what\":\"'Battery' is never explained. 1.3 does not say that a cell is what she calls a battery at home, or how the two differ.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"6.3 to 6.7\",\"quote\":\"Here is how you measure an I-V characteristic yourself, step by step.\",\"what\":\"Five tell-only messages in a row with nothing to do, in a practical she is told she does 'yourself'. She would be tapping Next without reading.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"6.11\",\"quote\":\"A graph of any other shape is called non-linear\",\"what\":\"'Any other shape' depends on 6.9, and a question has come in between.\",\"severity\":\"minor\"},{\"fault\":\"F7\",\"turn\":\"6.14 don't know (first time)\",\"quote\":\"A bigger current would make the wire warm. Why would that be a problem in a test of length? (same buttons)\",\"what\":\"The hint gives away the answer ('so the wire does not warm up') and then asks a harder question (why warming matters) that none of the buttons answers.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"7.2\",\"quote\":\"A torch cell goes flat after a few hours. What has it run out of?\",\"what\":\"The message just before (7.1) says 'The last part of this lesson is about energy', so 'Its store of energy' is given away.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P8\",\"turn\":\"7.2\",\"quote\":\"Now explain it: In one line: if the charge is not used up, why do you think the cell goes flat?\",\"what\":\"The prompt states the first tick ('the charge is not used up'), and the right option 'Its store of energy' already holds the second.\",\"severity\":\"minor\"},{\"fault\":\"F7\",\"turn\":\"7.7 don't know (again)\",\"quote\":\"1 V gives 1 J for each coulomb. What does 12 V give for each coulomb?\",\"what\":\"The 'smaller question' is the first hint reworded. It is not an easier step.\",\"severity\":\"minor\"},{\"fault\":\"P13\",\"turn\":\"7.12\",\"quote\":\"Here is a worked example with both steps.\",\"what\":\"The two-step calculation (Q = I t, then E = Q V) is shown once but she never gets a go at one herself.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"8.1\",\"quote\":\"The rate of flow of charge\",\"what\":\"The lesson never used the phrase 'rate of flow'; it always said 'how much charge passes a point each second'. She has to recognise an exam phrase she has not met.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"8.8\",\"quote\":\"60 C of charge flows through a potential difference of 6 V. How much energy is transferred, in joules (J)?\",\"what\":\"As scripted this is identical to the 7.10 practice question, so it tests memory of 360, not the method. If the question really is new each time this may not arise.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"4.10\",\"quote\":\"A wire is kept at a constant temperature. What happens to its resistance if you use a longer piece?\",\"what\":\"The same wire-length question is asked at 3.8, 3.15, 4.10 and 8.6, and 'what does a straight line through the origin show' at 4.9, 5.13, 6.2 and 8.3. Some returning is good, but four times each will feel like the lesson repeating itself.\",\"severity\":\"minor\"}],\"counts\":[{\"fault\":\"new\",\"instances\":25},{\"fault\":\"F1\",\"instances\":5},{\"fault\":\"F2\",\"instances\":3},{\"fault\":\"F3\",\"instances\":5},{\"fault\":\"F4\",\"instances\":1},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"F7\",\"instances\":3},{\"fault\":\"F8\",\"instances\":2},{\"fault\":\"F12\",\"instances\":3},{\"fault\":\"P5\",\"instances\":1},{\"fault\":\"P8\",\"instances\":2},{\"fault\":\"P13\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1}],\"overall\":\"Not quite as it is, though key points 1 and 2 are close: the physics is sound and the switch, two-ammeter, add-a-cell and resistor predictions are well built. Before she uses those two I would fix the second ammeter 'prediction' (already answered on screen), the empty description of a resistor, the run of five vocabulary messages with no picture of a voltmeter, and the misplaced rearrangement in 2.15. I would also teach I = V ÷ R, because the quiz asks for it. The later key points need more work: the graph steps (4.3, 5.6, 5.9) are scripted with a circuit that has no controls, both practicals are all telling, resistors 'in series or in parallel' is never explained, and several hints give the answer away or do not match the buttons.\"}",
+  "findings": [
+    {
+      "fault": "new",
+      "turn": "1.2",
+      "quote": "tiny particles that carry electric charge, the thing that moves through the wires when the torch is on",
+      "what": "Charge is explained only as 'the thing that moves', which is circular. She is left with no idea what charge is beyond a name.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P8",
+      "turn": "1.8 don't know (first time)",
+      "quote": "The bigger current is in the wire with more charge passing each second. Which wire has the bigger current?",
+      "what": "The hint hands her the rule that decides the answer and then asks the same question, so nothing is left to think about.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.11 don't know (first time)",
+      "quote": "Start with the charge: how many coulombs pass the point each second in this wire?",
+      "what": "The hint asks a different question whose answer (3) is printed in the question itself. If she types 3 she is marked right for the amperes without having linked coulombs per second to amperes.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.11",
+      "quote": "each coulomb a second makes one ampere",
+      "what": "Awkward wording used in every branch. 'One coulomb each second is one ampere, so 3 coulombs each second is 3 amperes' would be clearer.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.13 (Predict first 2 of 2)",
+      "quote": "You want to measure the current through the lamp. How do you connect the ammeter?",
+      "what": "She has just been told 'The circuit has two ammeters in the same loop' and has used that circuit, so 'In the loop' is not a prediction. The answer was shown before the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.13 (Predict first 2 of 2)",
+      "quote": "Now test your prediction. Look where the two ammeters sit in the circuit below.",
+      "what": "This is not a test: nothing is tried, and seeing ammeters in the loop does not show why 'across the lamp' would be wrong. The self-check tick 'so it can measure the current' is circular as a reason.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.14",
+      "quote": "In a single loop the current is the same at every point",
+      "what": "'Single loop' is used here and in 1.20 and 2.19 without saying what else a circuit could be. She cannot tell why the word 'single' matters.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "1.16",
+      "quote": "The equation is Q = I t",
+      "what": "The message opens with 'The equation' without saying what it is for. The link to charge flow depending on current and time is in the previous bubble.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.18",
+      "quote": "A current of 0.4 A flows for 50 s. How much charge flows, in coulombs (C)?",
+      "what": "Her first go alone jumps from 2 × 5 in the worked example to a decimal times 50. A whole-number question first would be kinder.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F12",
+      "turn": "2.2",
+      "quote": "Both go up",
+      "what": "The question asks about the ammeter reading and the lamp, and a lamp does not 'go up'. Nothing so far has told her that brightness goes with the size of the current, so the wording should say 'the reading goes up and the lamp gets brighter'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F4",
+      "turn": "2.3 to 2.7",
+      "quote": "Any part of a circuit, such as a lamp, is called a component. ... Another name for potential difference is voltage.",
+      "what": "Five tell-only messages in a row each bring a new word (component, potential difference, volt, voltmeter, voltage) with nothing for her to do. This is a vocabulary list in all but name.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P5",
+      "turn": "2.6",
+      "quote": "It is joined across a component, with one wire to each end of it. An ammeter goes into the loop; a voltmeter does not.",
+      "what": "'Across' is described in words only: there is no picture until 2.12b and no circuit with a voltmeter to try, yet 2.8 questions her on it. The message also carries three ideas at once.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.9",
+      "quote": "a resistor, a small part that the charge has to pass through when it is in the loop. In a circuit drawing, a resistor is a small rectangle.",
+      "what": "The description fits a lamp or an ammeter equally and tells her nothing about what a resistor does, so her prediction in 2.10 is a guess from the name. The resistor is the only part whose symbol is described; the cell, lamp, switch and ammeter symbols never are.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.13",
+      "quote": "Both the same: the cells give the same current",
+      "what": "The question mentions no cells, only two components with 6 V across them. The option and its reply ('The cells do not always give the same current') bring in something that is not in the question.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.14",
+      "quote": "Potential difference, current and resistance are linked by one equation: V = I R",
+      "what": "The equation arrives from nowhere. It is not tied to what she has just found (more push gives more current, more resistance gives less), so it is a formula to memorise rather than understand.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.15",
+      "quote": "To find a resistance, divide both sides of V = I R by I. So R = V ÷ I",
+      "what": "The rearrangement is taught before she has used V = I R even once, and it is not needed until 2.17a, three steps later. It belongs just before the resistance worked example.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.17a",
+      "quote": "You want R, so divide both sides by I: R = V ÷ I.",
+      "what": "This repeats 2.15 almost word for word.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.17b",
+      "quote": "a potential difference of 1 V across it and a current of 0.5 A through it",
+      "what": "Her first resistance question alone needs dividing by 0.5, which many 15-year-olds get wrong. That hides whether she understood the physics.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "8.7",
+      "quote": "A potential difference of 15 V is put across a 20 Ω resistor. What is the current through it, in amperes (A)?",
+      "what": "The lesson only ever taught and practised V = I R and R = V ÷ I. Finding the current (I = V ÷ R) is never shown, yet the quiz asks for it with awkward numbers (15 ÷ 20) and says 'the same kind as the worked example' when no such example exists.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "3.2 don't know (first time)",
+      "quote": "Start from V = I R. To get R on its own, what do you divide both sides by? (same buttons)",
+      "what": "The hint's answer is 'I', but the buttons offered are 'Multiply them together' and the two 'Divide…' options. The hint and the buttons do not match.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.7",
+      "quote": "Then move one clip to change the length of wire between the clips, and take both readings again.",
+      "what": "The message opens with 'Then' after a calculation question has intervened, and 'both readings' is not named in the message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5",
+      "quote": "side by side across the same two points: one wire at each end of the length you are testing",
+      "what": "'Wire' here means the voltmeter's leads, in a practical about 'the wire'. She will not know which wire is meant.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.8 don't know (first time)",
+      "quote": "Is a longer wire harder or easier for charge to get through? (same buttons)",
+      "what": "The hint asks 'harder or easier', but the buttons are 'It gets smaller / It gets bigger / It stays the same'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.9",
+      "quote": "Keep the current small and switch off between readings, so the wire does not warm up.",
+      "what": "She is never told why warming matters. That resistance changes with temperature is not said until 5.3, so this is a rule without a reason.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.15",
+      "quote": "\"a longer wire has a bigger resistance\", \"as long as its temperature stays the same\"",
+      "what": "Her line is marked as missing a point unless it mentions temperature. The question does not ask for that, and she has not been told temperature changes resistance. The 'all of them' reply ('…; and as long as its temperature stays the same') is also not a sentence.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.12",
+      "quote": "The same circuit measures two or more resistors joined together, in series or in parallel. Measure the potential difference and the current for each",
+      "what": "Resistors 'in parallel' has never been shown; 'in parallel' has only been used for a voltmeter. There is no picture, and 'for each' does not say each what, so she could not picture or do this.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.13",
+      "quote": "Start from V = I R. ... You want R, so divide both sides by I: R = V ÷ I.",
+      "what": "The same rearrangement is walked through for the fourth time (2.15, 2.17a, 3.2, 3.13).",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.14",
+      "quote": "A component has a potential difference of 1 V across it and a current of 0.5 A through it. What is its resistance, in ohms (Ω)?",
+      "what": "As scripted this is word for word the question from 2.17b. It also says 'a component' rather than a length of wire, so it does not belong to the practical. If the question really is new each time this may not arise.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "3.3 to 3.12",
+      "quote": "In this practical you measure it yourself.",
+      "what": "She does not measure anything herself: the whole practical is told, with no circuit or wire to try. Steps 3.9 to 3.12 are four tell-only messages in a row.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.3",
+      "quote": "Under it, the hands-on circuit. It shows a cell, a lamp and an ammeter; controls: none.",
+      "what": "The message promises 'a graph of a resistor' with a point to drag, but the script describes a cell-lamp-ammeter circuit with no controls, and 'after she uses' is blank. If that is what she sees, she cannot do the test.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "4.6",
+      "quote": "A component like this is called an ohmic conductor, as long as its temperature does not change.",
+      "what": "Muddled sentence: the temperature condition belongs to the resistance staying the same, not to what the component is called. 'Conductor' is also never explained.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "5.2",
+      "quote": "An old-style bulb is a filament lamp: inside it is a thin coil of metal wire, the filament",
+      "what": "Two new terms in one message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.3",
+      "quote": "As the current through a filament lamp rises, the filament gets hotter. What do you think happens to its resistance?",
+      "what": "Nothing she has been told lets her work out which way resistance goes with temperature. It is a guess presented as an ordinary question with 'Not quite' for a wrong guess.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F7",
+      "turn": "5.3 don't know (first time)",
+      "quote": "An ohmic conductor keeps the same resistance only while its temperature does not change. A filament gets very hot. Which way do you think its resistance goes?",
+      "what": "The hint does not make the question easier. It tells her the resistance changes but gives her nothing to choose between up and down.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "5.6",
+      "quote": "Under it, the hands-on circuit. It shows a cell, a lamp and an ammeter; controls: none.",
+      "what": "As in 4.3, she is told to drag a point on the lamp graph but the widget described is a circuit with no controls.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F12",
+      "turn": "5.6",
+      "quote": "\"6 ÷ 0.56, about 11 Ω\" ... \"Now explain it: In one line: how do you find the resistance at one point on the graph?\"",
+      "what": "The right option already contains the method (divide V by I) that she is then asked to explain. It is also a calculation, not a prediction.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "5.7",
+      "quote": "then divide V by I, not the steepness of the line",
+      "what": "The sentence does not parse ('divide V by I, not the steepness'). It should say 'do not use the steepness of the line'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.8",
+      "quote": "a diode: another component that can be joined into a loop, like a resistor or a lamp",
+      "what": "This tells her nothing about what a diode is or looks like, so the prediction in 5.9 is a blind guess.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "5.9",
+      "quote": "the point is at a negative potential difference: that is the diode turned round",
+      "what": "A negative potential difference and the left half of the graph are used here but not explained until the 5.11 picture and 6.8. Up to now potential difference has only been 'the push'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "5.9",
+      "quote": "Under it, the hands-on circuit. It shows a cell, a lamp and an ammeter; controls: none.",
+      "what": "As in 4.3 and 5.6, she is told to drag a point on the diode graph but the widget described has no graph and no controls.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "5.12",
+      "quote": "In one line: how are a filament lamp and a diode different from a resistor?",
+      "what": "She is asked for one line but marked against three separate points. 6.13 does the same.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "6.3",
+      "quote": "The circuit has a cell or battery",
+      "what": "'Battery' is never explained. 1.3 does not say that a cell is what she calls a battery at home, or how the two differ.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "6.3 to 6.7",
+      "quote": "Here is how you measure an I-V characteristic yourself, step by step.",
+      "what": "Five tell-only messages in a row with nothing to do, in a practical she is told she does 'yourself'. She would be tapping Next without reading.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "6.11",
+      "quote": "A graph of any other shape is called non-linear",
+      "what": "'Any other shape' depends on 6.9, and a question has come in between.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F7",
+      "turn": "6.14 don't know (first time)",
+      "quote": "A bigger current would make the wire warm. Why would that be a problem in a test of length? (same buttons)",
+      "what": "The hint gives away the answer ('so the wire does not warm up') and then asks a harder question (why warming matters) that none of the buttons answers.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "7.2",
+      "quote": "A torch cell goes flat after a few hours. What has it run out of?",
+      "what": "The message just before (7.1) says 'The last part of this lesson is about energy', so 'Its store of energy' is given away.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P8",
+      "turn": "7.2",
+      "quote": "Now explain it: In one line: if the charge is not used up, why do you think the cell goes flat?",
+      "what": "The prompt states the first tick ('the charge is not used up'), and the right option 'Its store of energy' already holds the second.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F7",
+      "turn": "7.7 don't know (again)",
+      "quote": "1 V gives 1 J for each coulomb. What does 12 V give for each coulomb?",
+      "what": "The 'smaller question' is the first hint reworded. It is not an easier step.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P13",
+      "turn": "7.12",
+      "quote": "Here is a worked example with both steps.",
+      "what": "The two-step calculation (Q = I t, then E = Q V) is shown once but she never gets a go at one herself.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "8.1",
+      "quote": "The rate of flow of charge",
+      "what": "The lesson never used the phrase 'rate of flow'; it always said 'how much charge passes a point each second'. She has to recognise an exam phrase she has not met.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "8.8",
+      "quote": "60 C of charge flows through a potential difference of 6 V. How much energy is transferred, in joules (J)?",
+      "what": "As scripted this is identical to the 7.10 practice question, so it tests memory of 360, not the method. If the question really is new each time this may not arise.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.10",
+      "quote": "A wire is kept at a constant temperature. What happens to its resistance if you use a longer piece?",
+      "what": "The same wire-length question is asked at 3.8, 3.15, 4.10 and 8.6, and 'what does a straight line through the origin show' at 4.9, 5.13, 6.2 and 8.3. Some returning is good, but four times each will feel like the lesson repeating itself.",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 23
+    },
+    {
+      "fault": "F3",
+      "instances": 5
+    },
+    {
+      "fault": "F1",
+      "instances": 5
+    },
+    {
+      "fault": "F12",
+      "instances": 3
+    },
+    {
+      "fault": "F2",
+      "instances": 3
+    },
+    {
+      "fault": "F7",
+      "instances": 3
+    },
+    {
+      "fault": "P8",
+      "instances": 2
+    },
+    {
+      "fault": "F8",
+      "instances": 2
+    },
+    {
+      "fault": "F4",
+      "instances": 1
+    },
+    {
+      "fault": "P5",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    },
+    {
+      "fault": "P13",
+      "instances": 1
+    }
+  ],
+  "overall": "Not quite as it is, though key points 1 and 2 are close: the physics is sound and the switch, two-ammeter, add-a-cell and resistor predictions are well built. Before she uses those two I would fix the second ammeter 'prediction' (already answered on screen), the empty description of a resistor, the run of five vocabulary messages with no picture of a voltmeter, and the misplaced rearrangement in 2.15. I would also teach I = V ÷ R, because the quiz asks for it. The later key points need more work: the graph steps (4.3, 5.6, 5.9) are scripted with a circuit that has no controls, both practicals are all telling, resistors 'in series or in parallel' is never explained, and several hints give the answer away or do not match the buttons."
+}

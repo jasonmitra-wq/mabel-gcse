@@ -1,0 +1,353 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 33216,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 18780,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 13868
+    },
+    "iterations": [
+      {
+        "input_tokens": 33216,
+        "output_tokens": 18780,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 1.016928,
+  "seconds": 176,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"F3\",\"turn\":\"1.2\",\"quote\":\"tiny particles that carry electric charge, which is what flows round a circuit\",\"what\":\"\\\"Circuit\\\" is used here, but she is not told what a circuit is until 1.3b (\\\"make a circuit\\\").\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.3\",\"quote\":\"A torch has a cell inside it, the part that pushes the charge round.\",\"what\":\"She calls this a battery. The script never tells her that a cell is what she would call a single battery, so the new word has nothing to hang on. \\\"Battery\\\" is not explained until 6.3.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"1.7\",\"quote\":\"A flow of charge is called an electric current. The size of a current is how much charge passes a point in the wire each second: the rate of flow of charge.\",\"what\":\"Two new terms in one message: \\\"electric current\\\" and \\\"rate of flow of charge\\\".\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"1.11 don't know (first time)\",\"quote\":\"One coulomb each second is one ampere.\",\"what\":\"The same fact is said in 1.10, again in this hint, and again in every reply to 1.11 (\\\"One coulomb each second is one ampere, so 3 coulombs each second is 3 amperes\\\"). She can read it three times in two steps.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.14\",\"quote\":\"An ammeter is joined into the loop itself, so the charge moves through it.\",\"what\":\"This comes after she has already used a circuit with two ammeters in the loop (1.13). How an ammeter is connected should be told before that circuit, and the single-ammeter picture is a step backwards.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.18\",\"quote\":\"Not quite: it's 20 C. Write the equation: Q = I t. Put the numbers in: Q = 2 × 10 = 20. The charge flow is 20 C.\",\"what\":\"A wrong answer gets the full answer straight away, with no second try and no word on what she might have done wrong (for example dividing). The same pattern is in 2.17, 2.17b, 3.14, 7.10 and 7.12b.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.19\",\"quote\":\"Yes, your line has it: a flow of charge; and how much charge passes a point each second.\",\"what\":\"The reply is a list stuck together with \\\"; and\\\", not a sentence. It reads oddly, and the same pattern recurs in 2.18, 4.9, 5.12, 6.13 and 7.13.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.2\",\"quote\":\"You add a second cell. What happens to the ammeter reading and to the lamp?\",\"what\":\"The script never tells her in a tutor message that a brighter lamp means a bigger current. The link only appears in options and tick-boxes, though the lesson file says \\\"it glows brighter, because more current flows\\\".\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.4\",\"quote\":\"The push that drives charge through a component is called the potential difference across it.\",\"what\":\"\\\"Across it\\\" is used with no explanation of what \\\"across\\\" a component means. That only comes with the voltmeter in 2.6.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.5b\",\"quote\":\"A single torch cell has 1.5 V across it. Two of these cells are joined one after the other. What potential difference do they give, in volts?\",\"what\":\"She has only been told that two cells give a \\\"bigger\\\" potential difference, never that the potential differences of cells add, so she cannot work out 3 V from what she has been told. Potential difference was defined as the push through a component, and here a cell suddenly \\\"has 1.5 V across it\\\" with no explanation.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"2.6b\",\"quote\":\"Add a cell and watch the voltmeter reading go up.\",\"what\":\"The message tells her what she will see before she tries it, so there is nothing left to find out.\",\"severity\":\"minor\"},{\"fault\":\"F7\",\"turn\":\"2.8 don't know (again)\",\"quote\":\"Which meter do you use to measure potential difference?\",\"what\":\"This \\\"smaller question\\\" is the same question as the first hint (\\\"Which meter do you use to measure that push?\\\"), so it is no easier.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.9\",\"quote\":\"a resistor, a part made to control the current in a circuit\",\"what\":\"\\\"Control the current\\\" is vague: it does not say what a resistor does. The lesson file's wording, \\\"a part that limits the current\\\", is clearer and only arrives in 2.11.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.13 don't know (again)\",\"quote\":\"Y. For the same potential difference, the bigger the resistance, the smaller the current, so X with its bigger resistance has the smaller current.\",\"what\":\"The question asks which has the bigger current, but the explanation ends on X having the smaller one. She has to turn it round herself; it should end \\\"so Y has the bigger current\\\".\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.17a\",\"quote\":\"Sometimes you need to find the resistance instead.\",\"what\":\"The lesson file says that knowing any two of the three lets you find the third, but finding the current from V and R is never shown or practised.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.1\",\"quote\":\"Before the practical, a quick check.\",\"what\":\"No practical has been mentioned yet, so \\\"the practical\\\" means nothing to her here. It is first introduced in 3.3.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"3.11\",\"quote\":\"Repeat each reading and take the mean. Then plot a graph of resistance against length. The points lie on a straight line through the origin, the point where both length and resistance are zero.\",\"what\":\"Three ideas in one message: repeats and the mean, plotting the graph, and the result with a new term (origin). \\\"Mean\\\" is not explained.\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"3.11\",\"quote\":\"The points lie on a straight line through the origin, the point where both length and resistance are zero.\",\"what\":\"The teaching of key point 3 stops here. The lesson file's last part (using the same circuit for two or more resistors joined in series or in parallel) is never taught, yet the key point finishes.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.14\",\"quote\":\"Your turn: A component has a potential difference of 60 V across it and a current of 3 A through it. What is its resistance, in ohms (Ω)?\",\"what\":\"\\\"Your turn\\\" follows no worked example in this key point and has nothing to do with the wire she has just been reading about. It comes straight after a message about a graph.\",\"severity\":\"minor\"},{\"fault\":\"F7\",\"turn\":\"3.16 don't know (first time)\",\"quote\":\"One cell gives only a small push. What is the name for that push? (same buttons)\",\"what\":\"The hint asks a different question (the name of the push) from the one on screen (why there is no shock risk). The buttons do not answer the hint's question, and the hint all but gives the answer.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"3.3\",\"quote\":\"This is a practical you will do in class; here is how it works.\",\"what\":\"The whole wire practical (3.3 to 3.11) is told message by message with nothing to try. Key point 6 (6.3 to 6.12) is the same. She has had hands-on circuits up to now and is likely to switch off.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.1\",\"quote\":\"Some components behave in a simple, steady way\",\"what\":\"\\\"A simple, steady way\\\" tells her nothing she can picture. It should say plainly that their resistance stays the same.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.4\",\"quote\":\"With its resistance going up, each extra volt pushes less extra current through the lamp than the volt before.\",\"what\":\"The question just before (5.3) had the filament cooling and its resistance going down. This message opens with the resistance going up and does not say we are back to turning the potential difference up.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"5.6\",\"quote\":\"On the filament lamp's graph, is the resistance the same at 2 V and at 6 V?\",\"what\":\"This is not a prediction. She has already been told in 5.2c and 5.4 that the resistance goes up as the current rises and that the graph gets flatter.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"5.7\",\"quote\":\"Do not use the steepness of the line.\",\"what\":\"She has just been taught the word \\\"gradient\\\" and nobody has suggested using it to find resistance. This warning comes with no reason and will puzzle her.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.9\",\"quote\":\"Turning a component round gives readings on the left of zero: a negative potential difference.\",\"what\":\"The idea of a negative potential difference is dropped into the instructions for a widget in one clause. It needs its own message before she is asked to use it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"5.9\",\"quote\":\"\\\"a diode lets current flow in one direction only\\\", \\\"its resistance is very high in the reverse direction\\\"\",\"what\":\"She is asked to explain why almost no current flows and to tick these points, but all she has been told about a diode is that it is used in chargers. \\\"Reverse direction\\\" and the one-way idea are not taught until 5.10.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"5.11\",\"quote\":\"On the forward side the current stays near zero at first, then rises steeply.\",\"what\":\"\\\"Forward side\\\" and \\\"reverse side\\\" are used without saying which way round each is. The picture also shows a left half for the filament lamp, which has never been discussed.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.12\",\"quote\":\"In one line: how are a filament lamp and a diode different from a resistor?\",\"what\":\"She is asked for one line, but the check wants three separate points. A first-time learner will rarely get all three in one line and will be told her line is incomplete.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"5.13\",\"quote\":\"Which component lets current flow in one direction only?\",\"what\":\"Every reply to the step just before (5.12) ends \\\"a diode lets current flow one way only\\\". The answer is on the screen directly above the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"6.5b\",\"quote\":\"Before the first reading, do you set the variable resistor to its highest or its lowest resistance?\",\"what\":\"She has not been told why the current should start small, so this is a coin-toss. The reply (\\\"so the current starts small\\\") and the hint (\\\"Do you want the current to start small or big?\\\") still give no reason.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"6.14 don't know (first time)\",\"quote\":\"In the wire practical you switched off between readings. What were you trying to keep the same?\",\"what\":\"She has not done the practical, only read about it. The hint's question (what to keep the same) also does not match the buttons, which answer \\\"why keep the current small\\\".\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"7.2\",\"quote\":\"with readings of the time, the charge that left the cell, the charge that came back, and the energy passed to the lamp\",\"what\":\"The circuit shows an energy reading before anything has been said about energy in a circuit or its unit. The joule arrives afterwards in 7.1, on its own and out of order.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"7.6\",\"quote\":\"The potential difference across a component tells you how much energy each coulomb transfers there.\",\"what\":\"Until now potential difference was \\\"the push\\\". This gives it a second meaning with no sentence linking the two, so she may think they are different things.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"7.9\",\"quote\":\"3 C of charge flows through a potential difference of 6 V.\",\"what\":\"Imprecise physics. Charge flows through a component that has a potential difference across it, not \\\"through a potential difference\\\". The lesson has been careful to say \\\"across\\\" until now.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"7.10\",\"quote\":\"40 C of charge flows through a potential difference of 3 V.\",\"what\":\"The same imprecise wording as 7.9, and it appears again in quiz question 8.8.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"7.14\",\"quote\":\"When charge flows through a component, what happens?\",\"what\":\"The question is too open (\\\"what happens?\\\"). The right option is simply the sentence from 7.4 repeated, so it tests recognition of wording, not understanding.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"8.1\",\"quote\":\"Not quite. Current is the rate of flow of charge: how much charge passes a point each second.\",\"what\":\"The reply to \\\"The push that drives charge\\\" does not tell her that what she chose is the potential difference. The quiz replies are the same whatever wrong answer she gives.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"8.7\",\"quote\":\"A current of 3 A flows through a 4 Ω resistor. What is the potential difference across it, in volts (V)?\",\"what\":\"As written, this is exactly the question she did in 2.17, and 8.8 is exactly 7.10. If the numbers really do change each time that is fine, but as scripted she would be repeating answers.\",\"severity\":\"minor\"}],\"counts\":[{\"fault\":\"F1\",\"instances\":1},{\"fault\":\"F3\",\"instances\":3},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"F7\",\"instances\":3},{\"fault\":\"F8\",\"instances\":3},{\"fault\":\"P4\",\"instances\":1},{\"fault\":\"P6\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"new\",\"instances\":25}],\"overall\":\"Key points 1 and 2 are close: the physics is sound, the predict-first circuits are well ordered, and the equations are stated with symbols and units before they are used. Before she uses them I would fix the cell/battery link in 1.3 and the 1.5 V question in 2.5b, which asks her to add potential differences she has never been told add. I would not let her use key points 3 to 7 as they stand. 5.4 contradicts the question before it, 5.6 and 5.13 ask for answers just given, 5.9 asks her to explain a diode before she is told what it does, key point 3 leaves out the resistor combinations, and \\\"charge flows through a potential difference\\\" is loose physics. The two practicals are also long runs of telling with nothing to do, and I would expect her to lose interest there.\"}",
+  "findings": [
+    {
+      "fault": "F3",
+      "turn": "1.2",
+      "quote": "tiny particles that carry electric charge, which is what flows round a circuit",
+      "what": "\"Circuit\" is used here, but she is not told what a circuit is until 1.3b (\"make a circuit\").",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.3",
+      "quote": "A torch has a cell inside it, the part that pushes the charge round.",
+      "what": "She calls this a battery. The script never tells her that a cell is what she would call a single battery, so the new word has nothing to hang on. \"Battery\" is not explained until 6.3.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.7",
+      "quote": "A flow of charge is called an electric current. The size of a current is how much charge passes a point in the wire each second: the rate of flow of charge.",
+      "what": "Two new terms in one message: \"electric current\" and \"rate of flow of charge\".",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.11 don't know (first time)",
+      "quote": "One coulomb each second is one ampere.",
+      "what": "The same fact is said in 1.10, again in this hint, and again in every reply to 1.11 (\"One coulomb each second is one ampere, so 3 coulombs each second is 3 amperes\"). She can read it three times in two steps.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.14",
+      "quote": "An ammeter is joined into the loop itself, so the charge moves through it.",
+      "what": "This comes after she has already used a circuit with two ammeters in the loop (1.13). How an ammeter is connected should be told before that circuit, and the single-ammeter picture is a step backwards.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.18",
+      "quote": "Not quite: it's 20 C. Write the equation: Q = I t. Put the numbers in: Q = 2 × 10 = 20. The charge flow is 20 C.",
+      "what": "A wrong answer gets the full answer straight away, with no second try and no word on what she might have done wrong (for example dividing). The same pattern is in 2.17, 2.17b, 3.14, 7.10 and 7.12b.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.19",
+      "quote": "Yes, your line has it: a flow of charge; and how much charge passes a point each second.",
+      "what": "The reply is a list stuck together with \"; and\", not a sentence. It reads oddly, and the same pattern recurs in 2.18, 4.9, 5.12, 6.13 and 7.13.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.2",
+      "quote": "You add a second cell. What happens to the ammeter reading and to the lamp?",
+      "what": "The script never tells her in a tutor message that a brighter lamp means a bigger current. The link only appears in options and tick-boxes, though the lesson file says \"it glows brighter, because more current flows\".",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.4",
+      "quote": "The push that drives charge through a component is called the potential difference across it.",
+      "what": "\"Across it\" is used with no explanation of what \"across\" a component means. That only comes with the voltmeter in 2.6.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.5b",
+      "quote": "A single torch cell has 1.5 V across it. Two of these cells are joined one after the other. What potential difference do they give, in volts?",
+      "what": "She has only been told that two cells give a \"bigger\" potential difference, never that the potential differences of cells add, so she cannot work out 3 V from what she has been told. Potential difference was defined as the push through a component, and here a cell suddenly \"has 1.5 V across it\" with no explanation.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.6b",
+      "quote": "Add a cell and watch the voltmeter reading go up.",
+      "what": "The message tells her what she will see before she tries it, so there is nothing left to find out.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F7",
+      "turn": "2.8 don't know (again)",
+      "quote": "Which meter do you use to measure potential difference?",
+      "what": "This \"smaller question\" is the same question as the first hint (\"Which meter do you use to measure that push?\"), so it is no easier.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.9",
+      "quote": "a resistor, a part made to control the current in a circuit",
+      "what": "\"Control the current\" is vague: it does not say what a resistor does. The lesson file's wording, \"a part that limits the current\", is clearer and only arrives in 2.11.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.13 don't know (again)",
+      "quote": "Y. For the same potential difference, the bigger the resistance, the smaller the current, so X with its bigger resistance has the smaller current.",
+      "what": "The question asks which has the bigger current, but the explanation ends on X having the smaller one. She has to turn it round herself; it should end \"so Y has the bigger current\".",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.17a",
+      "quote": "Sometimes you need to find the resistance instead.",
+      "what": "The lesson file says that knowing any two of the three lets you find the third, but finding the current from V and R is never shown or practised.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.1",
+      "quote": "Before the practical, a quick check.",
+      "what": "No practical has been mentioned yet, so \"the practical\" means nothing to her here. It is first introduced in 3.3.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.11",
+      "quote": "Repeat each reading and take the mean. Then plot a graph of resistance against length. The points lie on a straight line through the origin, the point where both length and resistance are zero.",
+      "what": "Three ideas in one message: repeats and the mean, plotting the graph, and the result with a new term (origin). \"Mean\" is not explained.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "3.11",
+      "quote": "The points lie on a straight line through the origin, the point where both length and resistance are zero.",
+      "what": "The teaching of key point 3 stops here. The lesson file's last part (using the same circuit for two or more resistors joined in series or in parallel) is never taught, yet the key point finishes.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.14",
+      "quote": "Your turn: A component has a potential difference of 60 V across it and a current of 3 A through it. What is its resistance, in ohms (Ω)?",
+      "what": "\"Your turn\" follows no worked example in this key point and has nothing to do with the wire she has just been reading about. It comes straight after a message about a graph.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F7",
+      "turn": "3.16 don't know (first time)",
+      "quote": "One cell gives only a small push. What is the name for that push? (same buttons)",
+      "what": "The hint asks a different question (the name of the push) from the one on screen (why there is no shock risk). The buttons do not answer the hint's question, and the hint all but gives the answer.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "3.3",
+      "quote": "This is a practical you will do in class; here is how it works.",
+      "what": "The whole wire practical (3.3 to 3.11) is told message by message with nothing to try. Key point 6 (6.3 to 6.12) is the same. She has had hands-on circuits up to now and is likely to switch off.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.1",
+      "quote": "Some components behave in a simple, steady way",
+      "what": "\"A simple, steady way\" tells her nothing she can picture. It should say plainly that their resistance stays the same.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.4",
+      "quote": "With its resistance going up, each extra volt pushes less extra current through the lamp than the volt before.",
+      "what": "The question just before (5.3) had the filament cooling and its resistance going down. This message opens with the resistance going up and does not say we are back to turning the potential difference up.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "5.6",
+      "quote": "On the filament lamp's graph, is the resistance the same at 2 V and at 6 V?",
+      "what": "This is not a prediction. She has already been told in 5.2c and 5.4 that the resistance goes up as the current rises and that the graph gets flatter.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "5.7",
+      "quote": "Do not use the steepness of the line.",
+      "what": "She has just been taught the word \"gradient\" and nobody has suggested using it to find resistance. This warning comes with no reason and will puzzle her.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.9",
+      "quote": "Turning a component round gives readings on the left of zero: a negative potential difference.",
+      "what": "The idea of a negative potential difference is dropped into the instructions for a widget in one clause. It needs its own message before she is asked to use it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "5.9",
+      "quote": "\"a diode lets current flow in one direction only\", \"its resistance is very high in the reverse direction\"",
+      "what": "She is asked to explain why almost no current flows and to tick these points, but all she has been told about a diode is that it is used in chargers. \"Reverse direction\" and the one-way idea are not taught until 5.10.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "5.11",
+      "quote": "On the forward side the current stays near zero at first, then rises steeply.",
+      "what": "\"Forward side\" and \"reverse side\" are used without saying which way round each is. The picture also shows a left half for the filament lamp, which has never been discussed.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.12",
+      "quote": "In one line: how are a filament lamp and a diode different from a resistor?",
+      "what": "She is asked for one line, but the check wants three separate points. A first-time learner will rarely get all three in one line and will be told her line is incomplete.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "5.13",
+      "quote": "Which component lets current flow in one direction only?",
+      "what": "Every reply to the step just before (5.12) ends \"a diode lets current flow one way only\". The answer is on the screen directly above the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "6.5b",
+      "quote": "Before the first reading, do you set the variable resistor to its highest or its lowest resistance?",
+      "what": "She has not been told why the current should start small, so this is a coin-toss. The reply (\"so the current starts small\") and the hint (\"Do you want the current to start small or big?\") still give no reason.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "6.14 don't know (first time)",
+      "quote": "In the wire practical you switched off between readings. What were you trying to keep the same?",
+      "what": "She has not done the practical, only read about it. The hint's question (what to keep the same) also does not match the buttons, which answer \"why keep the current small\".",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "7.2",
+      "quote": "with readings of the time, the charge that left the cell, the charge that came back, and the energy passed to the lamp",
+      "what": "The circuit shows an energy reading before anything has been said about energy in a circuit or its unit. The joule arrives afterwards in 7.1, on its own and out of order.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "7.6",
+      "quote": "The potential difference across a component tells you how much energy each coulomb transfers there.",
+      "what": "Until now potential difference was \"the push\". This gives it a second meaning with no sentence linking the two, so she may think they are different things.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "7.9",
+      "quote": "3 C of charge flows through a potential difference of 6 V.",
+      "what": "Imprecise physics. Charge flows through a component that has a potential difference across it, not \"through a potential difference\". The lesson has been careful to say \"across\" until now.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "7.10",
+      "quote": "40 C of charge flows through a potential difference of 3 V.",
+      "what": "The same imprecise wording as 7.9, and it appears again in quiz question 8.8.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "7.14",
+      "quote": "When charge flows through a component, what happens?",
+      "what": "The question is too open (\"what happens?\"). The right option is simply the sentence from 7.4 repeated, so it tests recognition of wording, not understanding.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "8.1",
+      "quote": "Not quite. Current is the rate of flow of charge: how much charge passes a point each second.",
+      "what": "The reply to \"The push that drives charge\" does not tell her that what she chose is the potential difference. The quiz replies are the same whatever wrong answer she gives.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "8.7",
+      "quote": "A current of 3 A flows through a 4 Ω resistor. What is the potential difference across it, in volts (V)?",
+      "what": "As written, this is exactly the question she did in 2.17, and 8.8 is exactly 7.10. If the numbers really do change each time that is fine, but as scripted she would be repeating answers.",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 26
+    },
+    {
+      "fault": "F3",
+      "instances": 3
+    },
+    {
+      "fault": "F8",
+      "instances": 3
+    },
+    {
+      "fault": "F7",
+      "instances": 2
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "F1",
+      "instances": 1
+    },
+    {
+      "fault": "P6",
+      "instances": 1
+    },
+    {
+      "fault": "P4",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    }
+  ],
+  "overall": "Key points 1 and 2 are close: the physics is sound, the predict-first circuits are well ordered, and the equations are stated with symbols and units before they are used. Before she uses them I would fix the cell/battery link in 1.3 and the 1.5 V question in 2.5b, which asks her to add potential differences she has never been told add. I would not let her use key points 3 to 7 as they stand. 5.4 contradicts the question before it, 5.6 and 5.13 ask for answers just given, 5.9 asks her to explain a diode before she is told what it does, key point 3 leaves out the resistor combinations, and \"charge flows through a potential difference\" is loose physics. The two practicals are also long runs of telling with nothing to do, and I would expect her to lose interest there."
+}

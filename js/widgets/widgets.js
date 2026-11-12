@@ -112,7 +112,7 @@ const WidgetView = (() => {
         cover && opts.hideMeters ? (c.current > 0 ? '<span>The lamp is <b>on</b></span>' : '<span>The lamp is <b>off</b></span>') : two ? `<span>Ammeter 1: <b>${f2(c.current)} A</b></span><span>Ammeter 2: <b>${f2(c.current)} A</b></span>` : `<span>Ammeter: <b>${f2(c.current)} A</b></span>`,
         has('voltmeter') ? `<span>Voltmeter across the lamp: <b>${f2(c.lampVolts)} V</b></span>` : '',
         has('variable') ? `<span>Total resistance: <b>${fmtR(c.resistance)}</b></span>` : '',
-        e ? `<span>Time: <b>${seconds} s</b></span><span>Charge that left the ${supply ? 'supply' : cells > 1 ? 'cells' : 'cell'}: <b>${f2(e.chargeOut)} C</b></span><span>Charge that came back to ${supply ? 'it' : cells > 1 ? 'them' : 'it'}: <b>${f2(e.chargeBack)} C</b></span><span>Energy transferred (E = Q V): <b>${f2(e.energy)} J</b></span>` : '',
+        e ? `<span>Time: <b>${seconds} s</b></span><span>Charge that left the ${supply ? 'supply' : cells > 1 ? 'cells' : 'cell'}: <b>${f2(e.chargeOut)} C</b></span><span>Charge that came back to ${supply ? 'it' : cells > 1 ? 'them' : 'it'}: <b>${f2(e.chargeBack)} C</b></span><span>${cover ? 'Energy passed to the lamp' : 'Energy transferred (E = Q V)'}: <b>${f2(e.energy)} J</b></span>` : '',
       ].join('');
       const vEl = el.querySelector('[data-v]'); if (vEl) vEl.textContent = `${volts} V`;
       if (range) range.value = volts;
@@ -206,8 +206,10 @@ const WidgetView = (() => {
     };
     svg.addEventListener('pointerdown', e => { dragging = true; svg.setPointerCapture(e.pointerId); toV(e); });
     svg.addEventListener('pointermove', e => { if (dragging) toV(e); });
-    svg.addEventListener('pointerup', () => { dragging = false; });
-    range.oninput = () => { V = Number(range.value); draw(); };
+    // Cover mode: a drag (or the slider) is the control a prediction may need (opts.onUse('drag')).
+    const usedDrag = () => { if (typeof opts.onUse === 'function') opts.onUse('drag'); };
+    svg.addEventListener('pointerup', () => { if (dragging) usedDrag(); dragging = false; });
+    range.oninput = () => { V = Number(range.value); draw(); usedDrag(); };
     el.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { comp = b.dataset.c; const s = rangeOf(); V = Math.min(s.max, Math.max(s.min, V)); draw(); if (typeof Record !== 'undefined' && Record.widget) Record.widget({ widget: 'iv-graph', what: 'component', value: comp }); });
     draw();
     return {

@@ -15,3 +15,7 @@ Mabel: bored until she has the interactive AI lesson
 Script: ok
 
 (Jason, after reading docs/review/p2-current-voltage-kp1-2.md at 5f3789a: the scripted AI lesson, p2-current-voltage key points 1 and 2.)
+
+Script: ok
+
+(Jason, after reading docs/review/p2-current-voltage.md at 6a70dc6: the whole scripted AI lesson, all 7 key points and the end quiz.)

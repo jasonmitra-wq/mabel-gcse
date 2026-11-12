@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, A9: evidence pilot gate. Scripted AI lesson p2-current-voltage (all 7 key points and the end quiz): Jason said "Script: ok" (2026-11-12, at 6a70dc6). Waiting for Mabel to do the AI lesson (Physics → Electricity → Current and potential difference, with a key saved; "Start this topic over" first if it was opened before); Jason types "Mabel: <what she said>". p2-components stays on the slides until this format has worked for her. Slides ready.
+Runbook position: Phase A, A9: evidence pilot gate. Scripted AI lesson p2-current-voltage: Jason "Script: ok" and "Mabel is happy" (2026-11-12). Next, when Jason says go: the same process for p2-components (script, free walk, script review, Jason reads, then Mabel). Slides ready.
 
 ## Runbook v3 switch (2026-10-19)
 

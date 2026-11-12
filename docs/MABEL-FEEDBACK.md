@@ -19,3 +19,7 @@ Script: ok
 Script: ok
 
 (Jason, after reading docs/review/p2-current-voltage.md at 6a70dc6: the whole scripted AI lesson, all 7 key points and the end quiz.)
+
+Mabel is happy
+
+(Jason, 2026-11-12, after Mabel did the scripted AI lesson p2-current-voltage.)

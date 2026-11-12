@@ -50,7 +50,14 @@ on. Never ask Jason anything except the STOP cases in section 2.
   checked with `node tools/check-script.js <id>` (free: schema, and every path
   walked through the engine with tools/check-transcript.js on each; zero findings
   required), then `node tools/review-lesson.js --script <id>` (paid), before any
-  site test. `node tools/script-layout.js <id>` writes the copy Jason reads.
+  site test. `node tools/script-layout.js <id>` writes the reading copy.
+  Jason does not read scripts (2026-11-12: "stop asking me to check your script.
+  audit yourself"). Claude reads the whole reading copy itself as the auditor
+  (every message and every branch: is each thing she must know taught before it
+  is asked, is each picture shown before she is asked about it, does each wrong
+  reply answer the option she chose, is each misconception tag the right one,
+  is any run of "Next" messages too long, is the physics right), fixes what it
+  finds, re-walks to zero, then the lesson goes straight to Mabel.
 - docs/FAULTS.md lists every fault Jason (or Mabel) has reported, each
   with its check. A fault Jason finds that is already in FAULTS.md is a
   failure of the checks: fix the fault AND the check. A new kind of

@@ -488,3 +488,11 @@ Jason's decision: the AI lesson's teaching is written once, checked and stored; 
 - Jason's copy: docs/review/p2-components.md.
 - Site tests (--persona mabel, laptop, whole lesson, no judge): 2026-11-12/p2-components ($0.0677) reached the end, 4/4 ticked, quiz 6 of 7, one transcript finding (her question at the LDR mixed question answered with "They both change…", F2); marked broken twice by the tester only (it judged the sensor, which has a slider and no circuit drawing, as a predict-first circuit; and it did not see that tapping Home left the lesson, because the hidden lesson thread stays in the page). Both fixed in tools/site-test.js; the her-question prompt now says to begin by naming what it is about, never "It/They/This/That" (teach-script.js?v=11). Re-run -2 ($0.0511): PASS, 4/4 ticked, 0 transcript findings, left by Home; 22 AI calls from the site, $0.0144 for the whole lesson.
 - STOP: waiting for Jason to read docs/review/p2-components.md and say "Script: ok" or what to change; then Mabel tries it.
+
+## Self-audit of the p2-components script (2026-11-12; Jason: "stop asking me to check your script. audit yourself")
+
+- Jason no longer reads scripts; Claude reads the whole reading copy as the auditor (RUNBOOK updated with what to check). No paid review for this audit.
+- Found and fixed in p2-components: (1) she was asked to recognise a cell symbol (1.4b) before any symbol had been shown; the two symbol charts now come first (1.3a, 1.5f) and the messages go through them one at a time. (2) Seven "Next" messages in a row (resistor to voltmeter); a series-or-parallel question (1.9b, a torch's one loop) now sits in the middle. (3) Misconception tags on the wrong idea: "stays the same" was logged as M12 (which is about R = V / I for an ohmic resistor) at 2.3, 2.8, 3.3 and 4.14, and "voltmeter in series" as M10 (about the ammeter) at 4.2; now plain branches, so her record holds no false misconceptions. (4) A stray "in series" at the end of the 1.5e reply.
+- Same check on p2-current-voltage: 5.3 logged "a filament's resistance stays the same" as M12; now a plain branch (wording unchanged). Other tags there checked and kept.
+- Free walk: p2-components 182 paths, 0 findings; p2-current-voltage 219 paths, 0. Reading copy regenerated (docs/review/p2-components.md).
+- Next: Mabel tries the p2-components AI lesson.

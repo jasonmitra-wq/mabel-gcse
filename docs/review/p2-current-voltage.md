@@ -453,7 +453,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    Buttons: "It increases" / "It stays the same" / "It decreases" (she can also type)
    - Right ("It decreases"): Yes. A cooler filament has a smaller resistance.
    - "It increases": Not quite: it decreases. A hotter filament has a bigger resistance, so a cooler one has a smaller resistance.
-   - "It stays the same" (wrong idea M12: Because R = V / I, the resistance of an ohmic resistor depends on the pd across it and the current through it (double the pd, double the resistance).): Not quite: it decreases. A filament lamp is not an ohmic conductor: as it cools, its resistance goes down.
+   - "It stays the same" (wrong idea same: ): Not quite: it decreases. A filament lamp is not an ohmic conductor: as it cools, its resistance goes down.
    - Don't know (first time): Hotter means a bigger resistance. What do you think cooler means? (same buttons)
    - Still doesn't know: That's fine. The filament's resistance decreases: a hotter filament has a bigger resistance, so a cooler one has a smaller resistance.
    - She asks to move on or skip: The filament's resistance decreases: a hotter filament has a bigger resistance, so a cooler one has a smaller resistance.

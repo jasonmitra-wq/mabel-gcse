@@ -1,7 +1,7 @@
 | Scripted lesson p2-components (2026-11-12) | script review 2 (claude-fable-5-2, whole lesson); site test 2 (--persona mabel, laptop, whole lesson, no judge) | 1.66 (review 0.7280 + 0.8110; site 0.0677 + 0.0511) |
 # mabel-gcse — State
 
-Runbook position: Phase A, A9: evidence pilot gate. Scripted AI lesson p2-current-voltage: Jason "Script: ok" and "Mabel is happy" (2026-11-12). Scripted AI lesson p2-components written (2026-11-12): free walk 0 findings, two script reviews fixed, site test PASS. **Waiting for Jason to read docs/review/p2-components.md and say "Script: ok"**, then Mabel tries it. Slides ready.
+Runbook position: Phase A, A9: evidence pilot gate. Scripted AI lesson p2-current-voltage: Jason "Script: ok" and "Mabel is happy" (2026-11-12). Scripted AI lesson p2-components written (2026-11-12): free walk 0 findings, two script reviews fixed, site test PASS. Jason does not read scripts any more (2026-11-12, "audit yourself"): self-audit done and fixed. **Next: Mabel tries the p2-components AI lesson.** Slides ready.
 
 ## Runbook v3 switch (2026-10-19)
 

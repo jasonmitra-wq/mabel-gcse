@@ -121,6 +121,12 @@
           "text": "A drawing of a circuit made from circuit symbols, with straight lines for the wires, is called a circuit diagram."
         },
         {
+          "id": "1.3a",
+          "type": "say",
+          "picture": "p2-symbols-basic",
+          "text": "Here is a chart of the first symbols. Keep it in view: the next messages go through them one at a time."
+        },
+        {
           "id": "1.4",
           "type": "say",
           "text": "A cell, the part that pushes charge round a circuit, is drawn as a long thin line next to a short thick one. A lamp is a circle with a cross in it."
@@ -184,6 +190,38 @@
           "text": "If the wire splits, the circuit has branches: separate paths for the current. Components on separate branches are in parallel."
         },
         {
+          "id": "1.9b",
+          "type": "ask",
+          "kind": "tap",
+          "question": "In a torch, a cell, a switch and a lamp make one loop with no branches. Are the switch and the lamp in series or in parallel?",
+          "options": [
+            {
+              "text": "In series",
+              "branch": "right"
+            },
+            {
+              "text": "In parallel",
+              "branch": "par"
+            },
+            {
+              "text": "Neither",
+              "branch": "neither"
+            }
+          ],
+          "right": "Yes: in series, so the same current flows through the switch and the lamp.",
+          "wrong": {
+            "other": "Not quite. The switch and the lamp are in series: there is one loop and no branches.",
+            "par": "Not quite: in series. Parallel means on separate branches; one after another in a single loop is series.",
+            "neither": "Not quite: in series. One after another in a single loop is what series means."
+          },
+          "idk": [
+            {
+              "hint": "There is only one loop, with no branches. Which word means one after another in a single loop?"
+            }
+          ],
+          "answerWhy": "The switch and the lamp are in series: there is one loop and no branches."
+        },
+        {
           "id": "1.5b",
           "type": "say",
           "text": "An ammeter, the meter that measures the current, is a circle with A in it. It goes in series, in the loop with the other parts."
@@ -192,12 +230,6 @@
           "id": "1.5c",
           "type": "say",
           "text": "A voltmeter, the meter that measures the potential difference across a component, is a circle with V in it. It goes in parallel: across the component, on its own short branch."
-        },
-        {
-          "id": "1.5d",
-          "type": "say",
-          "picture": "p2-symbols-basic",
-          "text": "Here are the symbols so far, all together."
         },
         {
           "id": "1.5e",
@@ -218,7 +250,7 @@
               "branch": "lamp"
             }
           ],
-          "right": "Yes: the ammeter, a circle with A in it, in series.",
+          "right": "Yes: the ammeter, a circle with A in it.",
           "wrong": {
             "other": "Not quite. The ammeter measures the current: a circle with A in it, for amperes.",
             "volt": "Not quite: the ammeter, a circle with A in it. The voltmeter measures the potential difference.",
@@ -230,6 +262,12 @@
             }
           ],
           "answerWhy": "The ammeter measures the current: a circle with A in it, for amperes."
+        },
+        {
+          "id": "1.5f",
+          "type": "say",
+          "picture": "p2-symbols-more",
+          "text": "Here is a second chart, with four more symbols to meet."
         },
         {
           "id": "1.6",
@@ -250,8 +288,7 @@
         {
           "id": "1.8",
           "type": "say",
-          "picture": "p2-symbols-more",
-          "text": "A fuse, a safety part that melts and breaks the circuit if the current gets too big, is drawn as a rectangle with a line through it. Here are these four symbols together."
+          "text": "A fuse, a safety part that melts and breaks the circuit if the current gets too big, is drawn as a rectangle with a line through it."
         },
         {
           "id": "1.8a",
@@ -395,13 +432,13 @@
             },
             {
               "text": "It stays the same",
-              "branch": "M12"
+              "branch": "same"
             }
           ],
           "right": "Yes: as a thermistor gets warmer, its resistance goes down.",
           "wrong": {
             "other": "In fact it goes down: as a thermistor gets warmer, its resistance falls. That is the opposite of a filament lamp.",
-            "M12": "In fact it goes down: a thermistor's resistance does not stay the same as its temperature changes."
+            "same": "In fact it goes down: a thermistor's resistance does not stay the same as its temperature changes."
           },
           "idk": [],
           "answerWhy": "As a thermistor gets warmer, its resistance goes down."
@@ -476,13 +513,13 @@
             },
             {
               "text": "It stays the same",
-              "branch": "M12"
+              "branch": "same"
             }
           ],
           "right": "Yes: a cooler thermistor has a higher resistance.",
           "wrong": {
             "other": "Not quite: it goes up. A warmer thermistor has a lower resistance, so a cooler one has a higher resistance.",
-            "M12": "Not quite: it goes up. A thermistor's resistance changes with its temperature."
+            "same": "Not quite: it goes up. A thermistor's resistance changes with its temperature."
           },
           "idk": [
             {
@@ -574,13 +611,13 @@
             },
             {
               "text": "It stays the same",
-              "branch": "M12"
+              "branch": "same"
             }
           ],
           "right": "Noted. Now test your guess.",
           "wrong": {
             "other": "Noted. Now test your guess.",
-            "M12": "Noted. Now test your guess."
+            "same": "Noted. Now test your guess."
           },
           "idk": [],
           "answerWhy": "Let's find out: test it in the next step."
@@ -720,7 +757,7 @@
             },
             {
               "text": "In series with the component",
-              "branch": "M10"
+              "branch": "series"
             },
             {
               "text": "It is not needed",
@@ -730,7 +767,7 @@
           "right": "Yes: in parallel across the component, to measure the potential difference across it.",
           "wrong": {
             "other": "Not quite: you need it, in parallel across the component, to measure the potential difference.",
-            "M10": "Not quite: in parallel across the component. It is the ammeter that goes in series."
+            "series": "Not quite: in parallel across the component. It is the ammeter that goes in series."
           },
           "idk": [
             {
@@ -937,13 +974,13 @@
             },
             {
               "text": "To make its resistance stay the same",
-              "branch": "M12"
+              "branch": "same"
             }
           ],
           "right": "Yes: the water lets you set the thermistor's temperature and measure the temperature with a thermometer.",
           "wrong": {
             "other": "Not quite: the water does not stop the current. It lets you set the thermistor's temperature and measure the temperature with a thermometer.",
-            "M12": "Not quite: the point is to change the temperature, so the resistance changes, and to measure the temperature with a thermometer."
+            "same": "Not quite: the point is to change the temperature, so the resistance changes, and to measure the temperature with a thermometer."
           },
           "idk": [
             {

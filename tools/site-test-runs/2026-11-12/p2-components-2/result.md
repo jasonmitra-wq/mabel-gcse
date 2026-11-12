@@ -1,0 +1,303 @@
+# Site test: p2-components (lesson, 2026-11-12)
+
+**PASS** · cost $0.0511 (40 tool calls, 22 calls from the site; tutor claude-sonnet-5-5 $0.0140)
+
+## Judge
+
+```json
+{
+  "broken": [],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": []
+}
+```
+
+## Transcript checks (tools/check-transcript.js)
+
+none
+
+## Transcript
+
+    Lesson p2-components (Physics › Electricity › Components — symbols, thermistors and LDRs).
+    [screenshot 01-home-laptop.png] home
+    [screenshot 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-quick-check-offer-laptop.png] quick-check-offer
+    [the quick check is offered on its own screen] tapped "Not now: show the lessons"
+    [screenshot 05-lessons-p2-laptop.png] lessons-P2
+    [screenshot 06-earlier-words-card-laptop.png] earlier-words-card
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! In this lesson you will learn how circuits are drawn, and meet two components whose resistance changes: one with how hot it is, and one with light.
+    [screenshot 07-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (tapped "Next")
+    T1: First, three quick questions from the last lesson, on current and resistance. What is electric current?
+    [side picture after T1: none; newest in the chat: none]
+    S2 (idk): idk
+    T2: Current is about how much charge flows past a point each second. Which button says how fast the charge flows?
+      [T2 easier step]
+    S3 (try, tapped the button): the rate of flow of charge
+    T3: Second: for the same potential difference, what does a bigger resistance do to the current?
+    [screenshot 08-exchange-3-laptop.png] exchange-3
+      [T3 shown first: Yes: current is the rate of flow of charge, measured in amperes.]
+    S4 (try, tapped the button): it makes the current smaller
+    T4: Third: why does a filament lamp's I-V graph curve?
+      [T4 shown first: Yes: a bigger resistance makes the current smaller, and a smaller resistance makes it bigger. You will need that later in this lesson.]
+    S5 (try): its resistence increases as it gets hotter
+    T5: Now, this lesson. People draw circuits so that anyone can build them. Instead of drawing a real lamp or meter, they use simple shapes that everyone agrees on, called circuit symbols.
+      [T5 shown first: Yes: as the filament gets hotter, its resistance increases, so each extra volt adds less current than the one before.]
+    S6 (tapped "Next")
+    T6: A drawing of a circuit made from circuit symbols, with straight lines for the wires, is called a circuit diagram.
+    [screenshot 09-exchange-6-laptop.png] exchange-6
+    S7 (tapped "Next")
+    T7: A cell, the part that pushes charge round a circuit, is drawn as a long thin line next to a short thick one. A lamp is a circle with a cross in it.
+    S8 (tapped "Next")
+    T8: Two or more cells joined together are called a battery, drawn as two or more cell symbols side by side.
+    S9 (tapped "Next")
+    T9: Which symbol is a long thin line next to a short thick one?
+    [screenshot 10-exchange-9-laptop.png] exchange-9
+    S10 (try, tapped the button): a cell
+    T10: A resistor, a part that makes it harder for current to flow, is drawn as a small rectangle.
+      [T10 shown first: Yes: a cell.]
+    S11 (tapped "Next")
+    T11: A switch, which opens or closes a gap in the circuit, is drawn open, with a gap, or closed, with no gap. When it is closed, current flows; when it is open, no current flows.
+    S12 (tapped "Next")
+    T12: To read a circuit diagram, follow the wire from one side of the cell round to the other. Components joined one after another in a single loop are in series, and the same current flows through each of them.
+    [screenshot 11-exchange-12-laptop.png] exchange-12
+    S13 (tapped "Next")
+    T13: If the wire splits, the circuit has branches: separate paths for the current. Components on separate branches are in parallel.
+    S14 (tapped "Next")
+    T14: An ammeter, the meter that measures the current, is a circle with A in it. It goes in series, in the loop with the other parts.
+    S15 (tapped "Next")
+    T15: A voltmeter, the meter that measures the potential difference across a component, is a circle with V in it. It goes in parallel: across the component, on its own short branch.
+    [screenshot 12-exchange-15-laptop.png] exchange-15
+    S16 (tapped "Next")
+    T16: Here are the symbols so far, all together.
+    [side picture after T16: "Circuit symbols: cell, battery, switches, lamp, resistor and the two meters."; newest in the chat: picture "Circuit symbols: cell, battery, switches, lamp, resistor and the two meters."]
+    S17 (tapped "Next")
+    T17: Which meter measures the current?
+    S18 (try, tapped the button): the ammeter, a circle with a in it
+    T18: A diode, a component that lets current flow in one direction only, is drawn as a triangle pointing the way the current can flow, with a bar across its tip.
+    [diagram shown in the conversation under T18: "Circuit symbols: cell, battery, switches, lamp, resistor and the two meters."]
+    [screenshot 13-diagram-18-laptop.png] diagram-18
+    [screenshot 14-exchange-18-laptop.png] exchange-18
+      [T18 shown first: Yes: the ammeter, a circle with A in it, in series.]
+    S19 (tapped "Next")
+    T19: A diode with two arrows coming out of it is a light-emitting diode (LED), a diode that gives out light.
+    S20 (tapped "Next")
+    T20: A variable resistor, a resistor whose resistance can be changed, is drawn as a resistor with an arrow through it.
+    S21 (tapped "Next")
+    T21: A fuse, a safety part that melts and breaks the circuit if the current gets too big, is drawn as a rectangle with a line through it. Here are these four symbols together.
+    [screenshot 15-exchange-21-laptop.png] exchange-21
+    [side picture after T21: "More symbols: diode, LED, variable resistor and fuse."; newest in the chat: picture "More symbols: diode, LED, variable resistor and fuse."]
+    S22 (tapped "Next")
+    T22: Which symbol is a resistor with an arrow through it?
+    S23 (idk): idk
+    T23: The arrow shows that its resistance can be changed. Which button names a component whose resistance you can change?
+    [diagram shown in the conversation under T23: "More symbols: diode, LED, variable resistor and fuse."]
+    [screenshot 16-diagram-23-laptop.png] diagram-23
+      [T23 easier step]
+    S24 (try, tapped the button): a variable resistor
+    T24: Predict first: answer the question in the box below. Then tap Draw it another way to test your answer. Tap Next when you are done.
+    [screenshot 17-exchange-24-laptop.png] exchange-24
+    [widget 1 in the chat, under the message "Predict first: answer the question in the box below. Then ta"]
+    [check] OK: each widget appears once, under its own message — 1 widget(s)
+    [predict-first widget's prediction first has text after T24: "PREDICT FIRST"]
+    [screenshot 18-widget-24-laptop.png] widget-24
+      [T24 shown first: Yes: a variable resistor. The arrow shows that its resistance can be changed.]
+    [side picture after T24: none; newest in the chat: widget]
+    [widget under T24: prediction "Two circuit diagrams show the same cell, switch, lamp and ammeter joined in one " tapped; then shown: yes, ammeters 1, controls Draw it another way; "Now explain it" before a control was used: no, after: yes]
+    [widget text under T24: PREDICT FIRST Two circuit diagrams show the same cell, switch, lamp and ammeter joined in one loop. In one, the lamp is drawn on the right; in the other, on the left. What can you say? They are different circuits The lamp drawn on the right is brighter The lamp drawn nearer the cell gets more current They are the same circuit Now test your prediction. Tap Draw it another way, and watch the ammeter and the lamp. They are the same circuit. The parts moved on the page, but the ammeter reading and the lamp did not change. lamp A 0.21 A switch Draw it another way Ammeter: 0.21 A NOW EXPLAIN IT In one line: why do you think the two drawings are the same circuit? Check my line cell switch lamp ammeter]
+    [check] OK: predict-first widget 1 works and matches its words — opened after the prediction true; ammeters 1 (words: -); controls match true; prediction first true
+    [screenshot 19-widget-24-laptop.png] widget-24
+    S25 (tapped "Next")
+    T25: In one line: how can you tell whether two components are in series or in parallel?
+    S26 (try): single loop or branches
+    T26: What does a diode do?
+      [T26 shown first: Yes, your line has it: in series they are one after another in a single loop, and in parallel they are on separate branches.]
+    S27 (try): lets curent flow one way
+    T27: In the last lesson, the filament lamp and the diode did not keep a fixed resistance. Two more components change their resistance because of the world around them: one reacts to temperature, how hot it is, and one reacts to light.
+    [screenshot 20-exchange-27-laptop.png] exchange-27
+    [counter now "1/4 covered" after T27; AI calls from the site so far: 6, $0.0011]
+      [T27 shown first: Yes: a diode lets current flow in one direction only. Its triangle points the way the current can flow.]
+    S28 (tapped "Next")
+    T28: The first is the thermistor, a component whose resistance depends on its temperature.
+    S29 (tapped "Next")
+    T29: Have a guess: as a thermistor gets warmer, what do you think happens to its resistance?
+    S30 (ask): does hotter mean lower
+    T30: The graph shows it: the hotter the thermistor, the lower its resistance. When it cools, its resistance goes back up.
+    [diagram shown in the conversation under T30: "A thermistor: hotter means lower resistance."]
+    [screenshot 21-diagram-30-laptop.png] diagram-30
+    [screenshot 22-exchange-30-laptop.png] exchange-30
+      [T30 shown first: Yes: as a thermistor gets warmer, its resistance goes down.]
+    [side picture after T30: "A thermistor: hotter means lower resistance."; newest in the chat: picture "A thermistor: hotter means lower resistance."]
+    S31 (tapped "Next")
+    T31: A thermistor has the same potential difference across it all the time. It warms up. What happens to the current through it?
+    S32 (try, tapped the button): it goes up
+    T32: A thermistor makes a good temperature sensor, a part that detects a change around it.
+      [T32 shown first: Yes. Its resistance falls, and a smaller resistance makes the current bigger.]
+    S33 (tapped "Next")
+    T33: In a thermostat, the control that keeps a room or an oven at a set temperature, a thermistor senses how warm it is.
+    [screenshot 23-exchange-33-laptop.png] exchange-33
+    S34 (tapped "Next")
+    T34: When the room warms, the thermistor's resistance falls and the current through it rises. The thermostat's circuit detects that bigger current and switches the heater off. When the room cools, the current falls and the heater comes back on.
+    S35 (tapped "Next")
+    T35: A thermistor cools down. What happens to its resistance?
+    S36 (try, tapped the button): it goes up
+    T36: The thermistor's symbol is a resistor with a diagonal line through it that ends in a short flat tail.
+    [screenshot 24-exchange-36-laptop.png] exchange-36
+      [T36 shown first: Yes: a cooler thermistor has a higher resistance.]
+    [side picture after T36: "The resistor symbol, and the thermistor symbol beside it."; newest in the chat: picture "The resistor symbol, and the thermistor symbol beside it."]
+    S37 (tapped "Next")
+    T37: In one line: what does a thermistor do, and what is it used for?
+    S38 (idk): idk
+    T38: Which symbol is a diode with two arrows coming out of it?
+      [T38 shown first: No problem. A good line would be: as a thermistor gets hotter, its resistance decreases, so it can sense temperature, for example in a thermostat.]
+    S39 (try, tapped the button): an led
+    T39: Some street lights come on by themselves as it gets dark. They use a light-dependent resistor, or LDR, a component whose resistance depends on the light falling on it.
+    [screenshot 25-exchange-39-laptop.png] exchange-39
+    [counter now "2/4 covered" after T39; AI calls from the site so far: 8, $0.0014]
+      [T39 shown first: Yes: an LED, a diode that gives out light. The arrows show the light coming out.]
+    [side picture after T39: none; newest in the chat: picture "The resistor symbol, and the thermistor symbol beside it."]
+    S40 (tapped "Next")
+    T40: Light intensity means how bright the light falling on something is.
+    S41 (tapped "Next")
+    T41: Have a guess: as the light on an LDR gets brighter, what do you think happens to its resistance?
+    S42 (idk): idk
+    T42: Tap LDR below, then slide the light from dark to bright and watch the resistance and the current. Then try the thermistor with the temperature. Tap Next when you are done.
+    [screenshot 26-exchange-42-laptop.png] exchange-42
+      [T42 shown first: That's fine. Let's find out: test it in the next step.]
+    [side picture after T42: none; newest in the chat: widget]
+    [widget under T42: prediction "" tapped; then shown: yes, ammeters 0, controls Thermistor, LDR; "Now explain it" before a control was used: no, after: no]
+    [widget text under T42: Thermistor LDR Light intensity (0 is dark, 100 is bright): 10 Potential difference: 6 V Resistance: 2,381 Ω Current: 0.0025 A thermistor LDR temperature light intensity]
+    [check] OK: predict-first widget 2 works and matches its words — opened after the prediction true; ammeters 0 (words: -); controls match true; prediction first true
+    [screenshot 27-widget-42-laptop.png] widget-42
+    S43 (tapped "Next")
+    T43: The graph shows what you saw: in the dark, an LDR's resistance is high, and it falls as the light intensity rises.
+    [side picture after T43: "An LDR: brighter light means lower resistance."; newest in the chat: picture "An LDR: brighter light means lower resistance."]
+    S44 (tapped "Next")
+    T44: Which component would you use to switch a fan on when a room gets too hot?
+    S45 (what): wdym
+    T45: Now, the question again: Which component would you use to switch a fan on when a room gets too hot?
+    [screenshot 28-exchange-45-laptop.png] exchange-45
+      [T45 shown first: The tutor's question is asking you to pick a part for a job. Imagine a room that heats up, and you want a fan to start running by itself once it gets hot.]
+    S46 (try, tapped the button): a thermistor
+    T46: In an automatic street light, as evening comes the LDR's resistance rises; the circuit detects that change and switches the light on. In the morning, the resistance falls and the light switches off.
+      [T46 shown first: Yes: a thermistor, because it senses temperature.]
+    S47 (tapped "Next")
+    T47: An LDR and a thermistor are easy to mix up. Remember what each one senses: an LDR responds to light, a thermistor to temperature.
+    S48 (tapped "Next")
+    T48: The symbol for an LDR is a resistor in a circle, with two arrows pointing in to show light falling on it.
+    [screenshot 29-exchange-48-laptop.png] exchange-48
+    [side picture after T48: "The resistor symbol, and the LDR symbol beside it."; newest in the chat: picture "The resistor symbol, and the LDR symbol beside it."]
+    S49 (tapped "Next")
+    T49: In one line: what does an LDR do, and how is it different from a thermistor?
+    S50 (try): senses light not temp
+    T50: In a circuit diagram, which symbol is a resistor in a circle with two arrows pointing in?
+      [T50 shown first: Your line gets this right: an LDR senses light, a thermistor senses temperature. A full line also says: brighter light means a lower resistance.]
+    S51 (try, tapped the button): an ldr
+    T51: You can measure how a thermistor's resistance changes with temperature in class. It works the same way as for any component: measure the current and the potential difference, then find the resistance.
+    [screenshot 30-exchange-51-laptop.png] exchange-51
+    [counter now "3/4 covered" after T51; AI calls from the site so far: 12, $0.0054]
+      [T51 shown first: Yes: an LDR. The arrows point in, to show light falling on it.]
+    [side picture after T51: none; newest in the chat: picture "The resistor symbol, and the LDR symbol beside it."]
+    S52 (tapped "Next")
+    T52: Before the practical, a quick check. Where does the voltmeter go when you test a component?
+    S53 (idk): idk
+    T53: The voltmeter measures the potential difference across one component. Does that need it in the loop, or on its own branch beside the component?
+      [T53 easier step]
+    S54 (ask): whats potential difference
+    T54: Have a go at the question: Before the practical, a quick check. Where does the voltmeter go when you test a component?
+    [screenshot 31-exchange-54-laptop.png] exchange-54
+      [T54 shown first: Potential difference is the thing a voltmeter measures across a component. The lesson uses it together with current to find resistance, dividing the potential difference by the current. A full explanation of what it actually is comes later in the course.]
+    S55 (idk): idk
+    T55: And why does the ammeter go in series with the thermistor?
+      [T55 shown first: That's fine. The voltmeter goes in parallel across the component, to measure the potential difference across it.]
+    S56 (try): so the same curent flows through both
+    T56: Here is the circuit: the cell, a switch and an ammeter in one loop with the thermistor, all in series, and a voltmeter in parallel across the thermistor, on its own short branch.
+      [T56 shown first: Yes: in series, the same current flows through the ammeter and the thermistor, so the ammeter reads the thermistor's current.]
+    [side picture after T56: "Testing a thermistor: ammeter in series, voltmeter in parallel across it."; newest in the chat: picture "Testing a thermistor: ammeter in series, voltmeter in parallel across it."]
+    S57 (tapped "Next")
+    T57: When you draw a circuit diagram yourself, use the correct symbol for every part, draw the wires as straight lines, and leave no gap where two wires should join: a gap means the circuit is broken there.
+    [screenshot 32-exchange-57-laptop.png] exchange-57
+    S58 (tapped "Next")
+    T58: A student draws the ammeter in this circuit as a circle with V in it. What is wrong?
+    S59 (try): circle with a in it
+    T59: Put the thermistor in a beaker of water and measure the water's temperature with a thermometer. Record the current and the potential difference. Then change the temperature, for example by adding hot water (carefully), and repeat.
+      [T59 shown first: Yes: a circle with V in it is a voltmeter. The ammeter is a circle with A in it.]
+    S60 (tapped "Next")
+    T60: How would you test an LDR instead?
+    [screenshot 33-exchange-60-laptop.png] exchange-60
+    S61 (idk, tapped the button): Change the light on it, for example by moving a lamp closer
+    T61: From the last lesson: V = I R, potential difference = current × resistance. V is the potential difference in volts (V), I is the current in amperes (A) and R is the resistance in ohms (Ω).
+      [T61 shown first: Yes: change the light intensity, for example by moving a lamp closer, and record the readings each time.]
+    S62 (tapped "Next")
+    T62: To find the resistance at each reading, divide the potential difference by the current: R = V ÷ I.
+    S63 (tapped "Next")
+    T63: Here is a worked example. Tap "Show the first step" under it to see how it is done, one step at a time. Use a calculator for the division.
+    [screenshot 34-exchange-63-laptop.png] exchange-63
+    [side picture after T63: none; newest in the chat: worked or question card]
+    [worked example under T63: buttons seen Show the first step → Next step → Next step → Next step; after the last step: Next]
+    [screenshot 35-worked-63-laptop.png] worked-63
+    S64 (tapped "Next")
+    T64: And here is the same thermistor after the water is heated. Tap "Show the first step" under it.
+    [worked example under T64: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 36-worked-64-laptop.png] worked-64
+    S65 (tapped "Next")
+    T65: Your turn. In the practical, the voltmeter reads 6 V and the ammeter reads 0.05 A. What is the thermistor's resistance, in ohms?
+    S66 (try): 120 ohms
+    T66: When you have all your readings, plot a graph: the temperature (or the light intensity) along the bottom, and the resistance up the side. For both sensors the graph is a downward curve.
+    [screenshot 37-exchange-66-laptop.png] exchange-66
+      [T66 shown first: Yes: 120 Ω. R = V ÷ I = 6 ÷ 0.05 = 120.]
+    S67 (tapped "Next")
+    T67: In one line: how do you find how a thermistor's resistance changes with temperature?
+    S68 (what): wdym
+    T68: Back to the question: In one line: how do you find how a thermistor's resistance changes with temperature?
+      [T68 shown first: The question is asking how you could test a thermistor to see how its resistance changes as it gets hotter or colder. Put simply, it wants the setup you would build and the steps you would follow to get your results, in a single line.]
+    S69 (idk): dont know
+    T69: Why do you put the thermistor in water for this test?
+    [screenshot 38-exchange-69-laptop.png] exchange-69
+      [T69 shown first: No problem. A good line would be: ammeter in series and voltmeter in parallel across it; change the temperature and work out V ÷ I each time.]
+    S70 (idk): idk
+    T70: The test is about how the resistance changes with temperature. What does the water let you control?
+      [T70 easier step]
+    S71 (try, tapped the button): so you can set and measure its temperature
+    T71: To finish, a short quiz on the whole lesson: 7 questions.
+      [T71 shown first: Yes: the water lets you set the thermistor's temperature and measure the temperature with a thermometer.]
+    S72 (tapped "Next")
+    T72: Quiz, question 1 of 7: How is a battery drawn in a circuit diagram?
+    [screenshot 39-exchange-72-laptop.png] exchange-72
+    S73 (idk): idk
+    T73: Quiz, question 2 of 7: Which symbol is a fuse?
+      [T73 shown first: That's fine. A battery is two or more cells side by side.]
+    S74 (idk): idk
+    T74: Quiz, question 3 of 7: Components on separate branches of a circuit are…
+      [T74 shown first: That's fine. A fuse is a rectangle with a line through it.]
+    S75 (idk): idk
+    T75: Quiz, question 4 of 7: What happens to the resistance of a thermistor as it cools down?
+    [screenshot 40-exchange-75-laptop.png] exchange-75
+      [T75 shown first: That's fine. Separate branches are in parallel.]
+    S76 (idk): dont know
+    T76: Quiz, question 5 of 7: What happens to the resistance of an LDR as the light gets brighter?
+      [T76 shown first: That's fine. As a thermistor cools, its resistance increases.]
+    S77 (try, tapped the button): it decreases
+    T77: Quiz, question 6 of 7: Which is a good use for a thermistor?
+      [T77 shown first: Yes. As the light gets brighter, an LDR's resistance decreases.]
+    S78 (try, tapped the button): in a thermostat
+    T78: Quiz, question 7 of 7: a thermistor has 12 V across it and a current of 0.004 A through it. What is its resistance, in ohms?
+    [screenshot 41-exchange-78-laptop.png] exchange-78
+      [T78 shown first: Yes. A thermistor senses temperature, so it suits a thermostat.]
+    S79 (try): 3000 ohms
+    T79: That's the end of the quiz: you got 3 out of 7.
+      [T79 shown first: Yes: 3000 Ω. R = V ÷ I = 12 ÷ 0.004 = 3000.]
+    [side picture after T79: none; newest in the chat: none]
+    S80 (tapped "Next")
+    T80: You have finished this lesson: circuit symbols, thermistors, LDRs, and how to test them.
+    [counter now "4/4 covered" after T80; AI calls from the site so far: 22, $0.0144]
+    S81 (closing): ok thx
+    T81: You're welcome. Tap "Go to the slides" or "Home" when you are ready.
+    [screenshot 42-exchange-81-laptop.png] exchange-81
+    S82 (closing, tapped the button): go to the slides
+    [S82 left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]
+    [screenshot 43-end-laptop.png] end
+    [tutor-side time: 0.7 minutes over 81 exchanges]

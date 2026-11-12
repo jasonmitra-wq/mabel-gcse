@@ -1,0 +1,1175 @@
+{
+  "lesson": "p2-components",
+  "version": 1,
+  "about": "The scripted AI lesson for p2-components (2026-11-12): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with three written recall questions on p2-current-voltage (the live recall questions are not used in scripted mode).",
+  "keyPoints": [
+    {
+      "kp": 0,
+      "heading": "Circuit symbols — the language of circuit diagrams",
+      "steps": [
+        {
+          "id": "1.1",
+          "type": "say",
+          "text": "Welcome! In this lesson you will learn how circuits are drawn, and meet two components whose resistance changes: one with how hot it is, and one with light."
+        },
+        {
+          "id": "1.1a",
+          "type": "ask",
+          "kind": "tap",
+          "question": "First, three quick questions from the last lesson, on current and resistance. What is electric current?",
+          "options": [
+            {
+              "text": "The rate of flow of charge",
+              "branch": "right"
+            },
+            {
+              "text": "The push that drives charge",
+              "branch": "push"
+            },
+            {
+              "text": "How hard it is for charge to flow",
+              "branch": "hard"
+            }
+          ],
+          "right": "Yes: current is the rate of flow of charge, measured in amperes.",
+          "wrong": {
+            "other": "Not quite. Current is the rate of flow of charge, measured in amperes.",
+            "push": "Not quite: current is the rate of flow of charge. The push that drives the charge is the potential difference.",
+            "hard": "Not quite: current is the rate of flow of charge. How hard it is for charge to flow is the resistance."
+          },
+          "idk": [
+            {
+              "hint": "Current is about how much charge flows past a point each second. Which button says how fast the charge flows?"
+            }
+          ],
+          "answerWhy": "Current is the rate of flow of charge, measured in amperes."
+        },
+        {
+          "id": "1.1b",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Second: for the same potential difference, what does a bigger resistance do to the current?",
+          "options": [
+            {
+              "text": "It makes the current smaller",
+              "branch": "right"
+            },
+            {
+              "text": "It makes the current bigger",
+              "branch": "bigger"
+            },
+            {
+              "text": "It does not change the current",
+              "branch": "same"
+            }
+          ],
+          "right": "Yes: a bigger resistance makes the current smaller, and a smaller resistance makes it bigger. You will need that later in this lesson.",
+          "wrong": {
+            "other": "Not quite. A bigger resistance makes the current smaller, and a smaller resistance makes it bigger.",
+            "bigger": "Not quite: a bigger resistance makes the current smaller, and a smaller resistance makes it bigger. Resistance is how hard it is for charge to flow.",
+            "same": "Not quite: the current is not fixed. Resistance is how hard it is for charge to flow, so a bigger resistance makes the current smaller."
+          },
+          "idk": [
+            {
+              "hint": "Resistance is how hard it is for charge to flow. If it is harder to flow, does more charge flow each second, or less?"
+            }
+          ],
+          "answerWhy": "A bigger resistance makes the current smaller, and a smaller resistance makes it bigger."
+        },
+        {
+          "id": "1.1c",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Third: why does a filament lamp's I-V graph curve?",
+          "options": [
+            {
+              "text": "Its resistance increases as it gets hotter",
+              "branch": "right"
+            },
+            {
+              "text": "It lets current flow one way only",
+              "branch": "diode"
+            },
+            {
+              "text": "Its resistance falls as it gets hotter",
+              "branch": "falls"
+            }
+          ],
+          "right": "Yes: as the filament gets hotter, its resistance increases, so each extra volt adds less current than the one before.",
+          "wrong": {
+            "other": "Not quite. As a filament lamp gets hotter, its resistance increases, so the graph curves.",
+            "diode": "Not quite: as the filament gets hotter, its resistance increases. Letting current flow one way only is what a diode does.",
+            "falls": "Not quite: it is the other way round. As the filament gets hotter, its resistance increases, so each extra volt adds less current than the one before."
+          },
+          "idk": [
+            {
+              "hint": "A filament glows because it gets very hot. Does a hotter filament let the current through more easily, or less easily?"
+            }
+          ],
+          "answerWhy": "As a filament lamp gets hotter, its resistance increases, so the graph curves."
+        },
+        {
+          "id": "1.2",
+          "type": "say",
+          "newTerm": "Circuit symbol",
+          "text": "Now, this lesson. People draw circuits so that anyone can build them. Instead of drawing a real lamp or meter, they use simple shapes that everyone agrees on, called circuit symbols."
+        },
+        {
+          "id": "1.3",
+          "type": "say",
+          "newTerm": "Circuit diagram",
+          "text": "A drawing of a circuit made from circuit symbols, with straight lines for the wires, is called a circuit diagram."
+        },
+        {
+          "id": "1.4",
+          "type": "say",
+          "text": "A cell, the part that pushes charge round a circuit, is drawn as a long thin line next to a short thick one. A lamp is a circle with a cross in it."
+        },
+        {
+          "id": "1.4a",
+          "type": "say",
+          "text": "Two or more cells joined together are called a battery, drawn as two or more cell symbols side by side."
+        },
+        {
+          "id": "1.4b",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Which symbol is a long thin line next to a short thick one?",
+          "options": [
+            {
+              "text": "A cell",
+              "branch": "right"
+            },
+            {
+              "text": "A lamp",
+              "branch": "lamp"
+            },
+            {
+              "text": "A battery",
+              "branch": "battery"
+            }
+          ],
+          "right": "Yes: a cell.",
+          "wrong": {
+            "other": "Not quite. The answer is a cell: a long thin line next to a short thick one.",
+            "lamp": "Not quite: that is a cell. A lamp is a circle with a cross in it.",
+            "battery": "Not quite: that is one cell. A battery is two or more of them side by side."
+          },
+          "idk": [
+            {
+              "hint": "There is just one long line and one short line. A battery has two or more pairs. So which button names a single part?"
+            }
+          ],
+          "answerWhy": "The answer is a cell: a long thin line next to a short thick one."
+        },
+        {
+          "id": "1.5",
+          "type": "say",
+          "newTerm": "Resistor",
+          "text": "A resistor, a part that makes it harder for current to flow, is drawn as a small rectangle."
+        },
+        {
+          "id": "1.5a",
+          "type": "say",
+          "text": "A switch, which opens or closes a gap in the circuit, is drawn open, with a gap, or closed, with no gap. When it is closed, current flows; when it is open, no current flows."
+        },
+        {
+          "id": "1.9",
+          "type": "say",
+          "text": "To read a circuit diagram, follow the wire from one side of the cell round to the other. Components joined one after another in a single loop are in series, and the same current flows through each of them."
+        },
+        {
+          "id": "1.9a",
+          "type": "say",
+          "text": "If the wire splits, the circuit has branches: separate paths for the current. Components on separate branches are in parallel."
+        },
+        {
+          "id": "1.5b",
+          "type": "say",
+          "text": "An ammeter, the meter that measures the current, is a circle with A in it. It goes in series, in the loop with the other parts."
+        },
+        {
+          "id": "1.5c",
+          "type": "say",
+          "text": "A voltmeter, the meter that measures the potential difference across a component, is a circle with V in it. It goes in parallel: across the component, on its own short branch."
+        },
+        {
+          "id": "1.5d",
+          "type": "say",
+          "picture": "p2-symbols-basic",
+          "text": "Here are the symbols so far, all together."
+        },
+        {
+          "id": "1.5e",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Which meter measures the current?",
+          "options": [
+            {
+              "text": "The ammeter, a circle with A in it",
+              "branch": "right"
+            },
+            {
+              "text": "The voltmeter, a circle with V in it",
+              "branch": "volt"
+            },
+            {
+              "text": "The lamp, a circle with a cross in it",
+              "branch": "lamp"
+            }
+          ],
+          "right": "Yes: the ammeter, a circle with A in it, in series.",
+          "wrong": {
+            "other": "Not quite. The ammeter measures the current: a circle with A in it, for amperes.",
+            "volt": "Not quite: the ammeter, a circle with A in it. The voltmeter measures the potential difference.",
+            "lamp": "Not quite: the ammeter, a circle with A in it. A lamp gives out light; it does not measure anything."
+          },
+          "idk": [
+            {
+              "hint": "Current is measured in amperes. Which meter has the letter for amperes?"
+            }
+          ],
+          "answerWhy": "The ammeter measures the current: a circle with A in it, for amperes."
+        },
+        {
+          "id": "1.6",
+          "type": "say",
+          "text": "A diode, a component that lets current flow in one direction only, is drawn as a triangle pointing the way the current can flow, with a bar across its tip."
+        },
+        {
+          "id": "1.7",
+          "type": "say",
+          "newTerm": "Light-emitting diode",
+          "text": "A diode with two arrows coming out of it is a light-emitting diode (LED), a diode that gives out light."
+        },
+        {
+          "id": "1.7a",
+          "type": "say",
+          "text": "A variable resistor, a resistor whose resistance can be changed, is drawn as a resistor with an arrow through it."
+        },
+        {
+          "id": "1.8",
+          "type": "say",
+          "picture": "p2-symbols-more",
+          "text": "A fuse, a safety part that melts and breaks the circuit if the current gets too big, is drawn as a rectangle with a line through it. Here are these four symbols together."
+        },
+        {
+          "id": "1.8a",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Which symbol is a resistor with an arrow through it?",
+          "options": [
+            {
+              "text": "A variable resistor",
+              "branch": "right"
+            },
+            {
+              "text": "A diode",
+              "branch": "diode"
+            },
+            {
+              "text": "A fuse",
+              "branch": "fuse"
+            }
+          ],
+          "right": "Yes: a variable resistor. The arrow shows that its resistance can be changed.",
+          "wrong": {
+            "other": "Not quite. The answer is a variable resistor: the arrow shows that its resistance can be changed.",
+            "diode": "Not quite: a variable resistor. A diode is a triangle with a bar across its tip.",
+            "fuse": "Not quite: a variable resistor. A fuse is a rectangle with a line through it, not an arrow."
+          },
+          "idk": [
+            {
+              "hint": "The arrow shows that its resistance can be changed. Which button names a component whose resistance you can change?"
+            }
+          ],
+          "answerWhy": "The answer is a variable resistor: the arrow shows that its resistance can be changed."
+        },
+        {
+          "id": "1.10",
+          "type": "widget",
+          "kpWidget": 0,
+          "predicts": [
+            "comp-same-circuit"
+          ],
+          "controls": [
+            "redraw"
+          ],
+          "options": {},
+          "labels": [
+            "cell",
+            "switch",
+            "lamp",
+            "ammeter"
+          ],
+          "overrides": {
+            "comp-same-circuit": {
+              "question": "Two circuit diagrams show the same cell, switch, lamp and ammeter joined in one loop. In one, the lamp is drawn on the right; in the other, on the left. What can you say?",
+              "tryShort": "Tap Draw it another way, and watch the ammeter and the lamp.",
+              "reveal": "They are the same circuit.",
+              "afterTest": "The parts moved on the page, but the ammeter reading and the lamp did not change.",
+              "explain": {
+                "promptShort": "In one line: why do you think the two drawings are the same circuit?",
+                "points": [
+                  "the same parts are joined in the same loop",
+                  "where a part is drawn on the page does not matter"
+                ]
+              }
+            }
+          },
+          "text": "Predict first: answer the question in the box below. Then tap Draw it another way to test your answer. Tap Next when you are done."
+        },
+        {
+          "id": "1.13",
+          "type": "own",
+          "prompt": "In one line: how can you tell whether two components are in series or in parallel?",
+          "points": [
+            "in series they are one after another in a single loop",
+            "in parallel they are on separate branches"
+          ],
+          "idk": "No problem. A good line would be: in series they are one after another in a single loop; in parallel they are on separate branches."
+        },
+        {
+          "id": "1.14",
+          "type": "ask",
+          "kind": "tap",
+          "question": "What does a diode do?",
+          "options": [
+            {
+              "text": "It lets current flow in one direction only",
+              "branch": "right"
+            },
+            {
+              "text": "It gives out light",
+              "branch": "led"
+            },
+            {
+              "text": "It measures the current",
+              "branch": "meter"
+            }
+          ],
+          "right": "Yes: a diode lets current flow in one direction only. Its triangle points the way the current can flow.",
+          "wrong": {
+            "other": "Not quite. A diode lets current flow in one direction only: its triangle points the way the current can flow.",
+            "led": "Not quite: a diode lets current flow in one direction only. A diode that also gives out light is an LED.",
+            "meter": "Not quite: a diode lets current flow in one direction only. The ammeter measures the current."
+          },
+          "idk": [
+            {
+              "hint": "The triangle in the diode's symbol points one way, with a bar across its tip. What does that show about the current?"
+            }
+          ],
+          "answerWhy": "A diode lets current flow in one direction only: its triangle points the way the current can flow.",
+          "mixed": true
+        }
+      ]
+    },
+    {
+      "kp": 1,
+      "heading": "Thermistors — resistance that changes with temperature",
+      "steps": [
+        {
+          "id": "2.1",
+          "type": "say",
+          "text": "In the last lesson, the filament lamp and the diode did not keep a fixed resistance. Two more components change their resistance because of the world around them: one reacts to temperature, how hot it is, and one reacts to light."
+        },
+        {
+          "id": "2.2",
+          "type": "say",
+          "newTerm": "Thermistor",
+          "text": "The first is the thermistor, a component whose resistance depends on its temperature."
+        },
+        {
+          "id": "2.3",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Have a guess: as a thermistor gets warmer, what do you think happens to its resistance?",
+          "options": [
+            {
+              "text": "It goes down",
+              "branch": "right"
+            },
+            {
+              "text": "It goes up",
+              "branch": "other"
+            },
+            {
+              "text": "It stays the same",
+              "branch": "M12"
+            }
+          ],
+          "right": "Yes: as a thermistor gets warmer, its resistance goes down.",
+          "wrong": {
+            "other": "In fact it goes down: as a thermistor gets warmer, its resistance falls. That is the opposite of a filament lamp.",
+            "M12": "In fact it goes down: a thermistor's resistance does not stay the same as its temperature changes."
+          },
+          "idk": [],
+          "answerWhy": "As a thermistor gets warmer, its resistance goes down."
+        },
+        {
+          "id": "2.4",
+          "type": "say",
+          "picture": "p2-thermistor-graph",
+          "text": "The graph shows it: the hotter the thermistor, the lower its resistance. When it cools, its resistance goes back up."
+        },
+        {
+          "id": "2.5",
+          "type": "ask",
+          "kind": "tap",
+          "question": "A thermistor has the same potential difference across it all the time. It warms up. What happens to the current through it?",
+          "options": [
+            {
+              "text": "It goes up",
+              "branch": "right"
+            },
+            {
+              "text": "It goes down",
+              "branch": "other"
+            },
+            {
+              "text": "It stays the same",
+              "branch": "M5"
+            }
+          ],
+          "right": "Yes. Its resistance falls, and a smaller resistance makes the current bigger.",
+          "wrong": {
+            "other": "Not quite: it goes up. A warmer thermistor has a lower resistance, and for the same potential difference a lower resistance lets a bigger current through.",
+            "M5": "Not quite: it goes up. The current is not fixed: a warmer thermistor has a lower resistance, so a bigger current flows."
+          },
+          "idk": [
+            {
+              "hint": "A warming thermistor's resistance goes down. Think back to the start of the lesson: what does a smaller resistance do to the current?"
+            }
+          ],
+          "answerWhy": "The current goes up: a warmer thermistor has a lower resistance, so for the same potential difference a bigger current flows."
+        },
+        {
+          "id": "2.6",
+          "type": "say",
+          "newTerm": "Sensor",
+          "text": "A thermistor makes a good temperature sensor, a part that detects a change around it."
+        },
+        {
+          "id": "2.7",
+          "type": "say",
+          "newTerm": "Thermostat",
+          "text": "In a thermostat, the control that keeps a room or an oven at a set temperature, a thermistor senses how warm it is."
+        },
+        {
+          "id": "2.9",
+          "type": "say",
+          "text": "When the room warms, the thermistor's resistance falls and the current through it rises. The thermostat's circuit detects that bigger current and switches the heater off. When the room cools, the current falls and the heater comes back on."
+        },
+        {
+          "id": "2.8",
+          "type": "ask",
+          "kind": "tap",
+          "question": "A thermistor cools down. What happens to its resistance?",
+          "options": [
+            {
+              "text": "It goes up",
+              "branch": "right"
+            },
+            {
+              "text": "It goes down",
+              "branch": "other"
+            },
+            {
+              "text": "It stays the same",
+              "branch": "M12"
+            }
+          ],
+          "right": "Yes: a cooler thermistor has a higher resistance.",
+          "wrong": {
+            "other": "Not quite: it goes up. A warmer thermistor has a lower resistance, so a cooler one has a higher resistance.",
+            "M12": "Not quite: it goes up. A thermistor's resistance changes with its temperature."
+          },
+          "idk": [
+            {
+              "hint": "Warming makes a thermistor's resistance go down. Cooling is the opposite. So what does cooling do?"
+            }
+          ],
+          "answerWhy": "A cooler thermistor has a higher resistance: cooling is the opposite of warming."
+        },
+        {
+          "id": "2.10",
+          "type": "say",
+          "picture": "p2-symbol-thermistor",
+          "text": "The thermistor's symbol is a resistor with a diagonal line through it that ends in a short flat tail."
+        },
+        {
+          "id": "2.11",
+          "type": "own",
+          "prompt": "In one line: what does a thermistor do, and what is it used for?",
+          "points": [
+            "as it gets hotter, its resistance decreases",
+            "it senses temperature, for example in a thermostat"
+          ],
+          "idk": "No problem. A good line would be: as a thermistor gets hotter, its resistance decreases, so it can sense temperature, for example in a thermostat."
+        },
+        {
+          "id": "2.12",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Which symbol is a diode with two arrows coming out of it?",
+          "options": [
+            {
+              "text": "An LED",
+              "branch": "right"
+            },
+            {
+              "text": "A thermistor",
+              "branch": "therm"
+            },
+            {
+              "text": "A variable resistor",
+              "branch": "var"
+            }
+          ],
+          "right": "Yes: an LED, a diode that gives out light. The arrows show the light coming out.",
+          "wrong": {
+            "other": "Not quite. The answer is an LED: a diode that gives out light, shown by the two arrows coming out.",
+            "therm": "Not quite: an LED, a diode that gives out light. A thermistor is a resistor with a line through it that ends in a tail.",
+            "var": "Not quite: an LED, a diode that gives out light. A variable resistor is a rectangle with one arrow through it."
+          },
+          "idk": [
+            {
+              "hint": "The two arrows show light coming out. Which button names a component that gives out light?"
+            }
+          ],
+          "answerWhy": "The answer is an LED: a diode that gives out light, shown by the two arrows coming out.",
+          "mixed": true
+        }
+      ]
+    },
+    {
+      "kp": 2,
+      "heading": "LDRs — resistance that changes with light",
+      "steps": [
+        {
+          "id": "3.1",
+          "type": "say",
+          "newTerm": "LDR",
+          "text": "Some street lights come on by themselves as it gets dark. They use a light-dependent resistor, or LDR, a component whose resistance depends on the light falling on it."
+        },
+        {
+          "id": "3.2",
+          "type": "say",
+          "newTerm": "Light intensity",
+          "text": "Light intensity means how bright the light falling on something is."
+        },
+        {
+          "id": "3.3",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Have a guess: as the light on an LDR gets brighter, what do you think happens to its resistance?",
+          "options": [
+            {
+              "text": "It goes down",
+              "branch": "right"
+            },
+            {
+              "text": "It goes up",
+              "branch": "other"
+            },
+            {
+              "text": "It stays the same",
+              "branch": "M12"
+            }
+          ],
+          "right": "Noted. Now test your guess.",
+          "wrong": {
+            "other": "Noted. Now test your guess.",
+            "M12": "Noted. Now test your guess."
+          },
+          "idk": [],
+          "answerWhy": "Let's find out: test it in the next step."
+        },
+        {
+          "id": "3.5",
+          "type": "widget",
+          "kpWidget": 2,
+          "predicts": [],
+          "controls": [],
+          "options": {},
+          "labels": [
+            "thermistor",
+            "LDR",
+            "temperature",
+            "light intensity"
+          ],
+          "text": "Tap LDR below, then slide the light from dark to bright and watch the resistance and the current. Then try the thermistor with the temperature. Tap Next when you are done."
+        },
+        {
+          "id": "3.4",
+          "type": "say",
+          "picture": "p2-ldr-graph",
+          "text": "The graph shows what you saw: in the dark, an LDR's resistance is high, and it falls as the light intensity rises."
+        },
+        {
+          "id": "3.6",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Which component would you use to switch a fan on when a room gets too hot?",
+          "options": [
+            {
+              "text": "A thermistor",
+              "branch": "right"
+            },
+            {
+              "text": "An LDR",
+              "branch": "ldr"
+            },
+            {
+              "text": "A diode",
+              "branch": "diode"
+            }
+          ],
+          "right": "Yes: a thermistor, because it senses temperature.",
+          "wrong": {
+            "other": "Not quite. A thermistor: it senses temperature, while an LDR senses light.",
+            "ldr": "Not quite: a thermistor. It senses temperature; an LDR senses light.",
+            "diode": "Not quite: a thermistor, because it senses temperature. A diode only lets current flow one way; it does not sense anything."
+          },
+          "idk": [
+            {
+              "hint": "The fan should react to how hot the room is. Which button names the component that senses temperature?"
+            }
+          ],
+          "answerWhy": "A thermistor: it senses temperature, while an LDR senses light."
+        },
+        {
+          "id": "3.7",
+          "type": "say",
+          "text": "In an automatic street light, as evening comes the LDR's resistance rises; the circuit detects that change and switches the light on. In the morning, the resistance falls and the light switches off."
+        },
+        {
+          "id": "3.8",
+          "type": "say",
+          "text": "An LDR and a thermistor are easy to mix up. Remember what each one senses: an LDR responds to light, a thermistor to temperature."
+        },
+        {
+          "id": "3.9",
+          "type": "say",
+          "picture": "p2-symbol-ldr",
+          "text": "The symbol for an LDR is a resistor in a circle, with two arrows pointing in to show light falling on it."
+        },
+        {
+          "id": "3.10",
+          "type": "own",
+          "prompt": "In one line: what does an LDR do, and how is it different from a thermistor?",
+          "points": [
+            "brighter light means a lower resistance",
+            "an LDR senses light, a thermistor senses temperature"
+          ],
+          "idk": "No problem. A good line would be: brighter light means a lower resistance; an LDR senses light, and a thermistor senses temperature."
+        },
+        {
+          "id": "3.11",
+          "type": "ask",
+          "kind": "tap",
+          "question": "In a circuit diagram, which symbol is a resistor in a circle with two arrows pointing in?",
+          "options": [
+            {
+              "text": "An LDR",
+              "branch": "right"
+            },
+            {
+              "text": "An LED",
+              "branch": "led"
+            },
+            {
+              "text": "A thermistor",
+              "branch": "therm"
+            }
+          ],
+          "right": "Yes: an LDR. The arrows point in, to show light falling on it.",
+          "wrong": {
+            "other": "Not quite. The answer is an LDR: the arrows pointing in show light falling on it.",
+            "led": "Not quite: an LDR. Its arrows point in, for light falling on it; an LED's arrows point out.",
+            "therm": "Not quite: an LDR. A thermistor has a line through it that ends in a tail, and no arrows."
+          },
+          "idk": [
+            {
+              "hint": "The arrows point in, showing light falling on the part. Which button names a component that reacts to light?"
+            }
+          ],
+          "answerWhy": "The answer is an LDR: the arrows pointing in show light falling on it.",
+          "mixed": true
+        }
+      ]
+    },
+    {
+      "kp": 3,
+      "heading": "Drawing a circuit to test a sensor",
+      "steps": [
+        {
+          "id": "4.1",
+          "type": "say",
+          "text": "You can measure how a thermistor's resistance changes with temperature in class. It works the same way as for any component: measure the current and the potential difference, then find the resistance."
+        },
+        {
+          "id": "4.2",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Before the practical, a quick check. Where does the voltmeter go when you test a component?",
+          "options": [
+            {
+              "text": "In parallel across the component",
+              "branch": "right"
+            },
+            {
+              "text": "In series with the component",
+              "branch": "M10"
+            },
+            {
+              "text": "It is not needed",
+              "branch": "other"
+            }
+          ],
+          "right": "Yes: in parallel across the component, to measure the potential difference across it.",
+          "wrong": {
+            "other": "Not quite: you need it, in parallel across the component, to measure the potential difference.",
+            "M10": "Not quite: in parallel across the component. It is the ammeter that goes in series."
+          },
+          "idk": [
+            {
+              "hint": "The voltmeter measures the potential difference across one component. Does that need it in the loop, or on its own branch beside the component?"
+            }
+          ],
+          "answerWhy": "The voltmeter goes in parallel across the component, to measure the potential difference across it."
+        },
+        {
+          "id": "4.3",
+          "type": "ask",
+          "kind": "tap",
+          "question": "And why does the ammeter go in series with the thermistor?",
+          "options": [
+            {
+              "text": "So the same current flows through both",
+              "branch": "right"
+            },
+            {
+              "text": "To measure the potential difference",
+              "branch": "pd"
+            },
+            {
+              "text": "To keep the thermistor cool",
+              "branch": "cool"
+            }
+          ],
+          "right": "Yes: in series, the same current flows through the ammeter and the thermistor, so the ammeter reads the thermistor's current.",
+          "wrong": {
+            "other": "Not quite. The ammeter is in series so the same current flows through it and the thermistor.",
+            "pd": "Not quite: the voltmeter measures the potential difference. The ammeter is in series so the same current flows through it and the thermistor.",
+            "cool": "Not quite: the ammeter does not change the temperature. It is in series so the same current flows through it and the thermistor."
+          },
+          "idk": [
+            {
+              "hint": "In series, the parts are one after another in a single loop. What is the same for every part of that loop?"
+            }
+          ],
+          "answerWhy": "The ammeter is in series so the same current flows through it and the thermistor."
+        },
+        {
+          "id": "4.4",
+          "type": "say",
+          "picture": "p2-thermistor-circuit",
+          "text": "Here is the circuit: the cell, a switch and an ammeter in one loop with the thermistor, all in series, and a voltmeter in parallel across the thermistor, on its own short branch."
+        },
+        {
+          "id": "4.4a",
+          "type": "say",
+          "text": "When you draw a circuit diagram yourself, use the correct symbol for every part, draw the wires as straight lines, and leave no gap where two wires should join: a gap means the circuit is broken there."
+        },
+        {
+          "id": "4.5",
+          "type": "ask",
+          "kind": "tap",
+          "question": "A student draws the ammeter in this circuit as a circle with V in it. What is wrong?",
+          "options": [
+            {
+              "text": "It should be a circle with A in it",
+              "branch": "right"
+            },
+            {
+              "text": "It should be a rectangle",
+              "branch": "rect"
+            },
+            {
+              "text": "Nothing is wrong",
+              "branch": "none"
+            }
+          ],
+          "right": "Yes: a circle with V in it is a voltmeter. The ammeter is a circle with A in it.",
+          "wrong": {
+            "other": "Not quite. The ammeter is a circle with A in it; a circle with V in it is a voltmeter.",
+            "rect": "Not quite: a rectangle is a resistor. The ammeter is a circle with A in it; a circle with V in it is a voltmeter.",
+            "none": "Not quite: a circle with V in it is a voltmeter, so the diagram shows the wrong meter. The ammeter is a circle with A in it."
+          },
+          "idk": [
+            {
+              "hint": "Every part needs its correct symbol. Which letter goes in the ammeter's circle?"
+            }
+          ],
+          "answerWhy": "The ammeter is a circle with A in it; a circle with V in it is a voltmeter."
+        },
+        {
+          "id": "4.6",
+          "type": "say",
+          "text": "Put the thermistor in a beaker of water and measure the water's temperature with a thermometer. Record the current and the potential difference. Then change the temperature, for example by adding hot water (carefully), and repeat."
+        },
+        {
+          "id": "4.7",
+          "type": "ask",
+          "kind": "tap",
+          "question": "How would you test an LDR instead?",
+          "options": [
+            {
+              "text": "Change the light on it, for example by moving a lamp closer",
+              "branch": "right"
+            },
+            {
+              "text": "Change the temperature of the water",
+              "branch": "water"
+            },
+            {
+              "text": "Change the cell for a bigger one",
+              "branch": "cell"
+            }
+          ],
+          "right": "Yes: change the light intensity, for example by moving a lamp closer, and record the readings each time.",
+          "wrong": {
+            "other": "Not quite. Change the light on the LDR, for example by moving a lamp closer, and record the readings each time.",
+            "water": "Not quite: an LDR reacts to light, not temperature, so change the light on it, for example by moving a lamp closer.",
+            "cell": "Not quite: an LDR reacts to light, so change the light on it, for example by moving a lamp closer. A bigger cell would change the potential difference instead."
+          },
+          "idk": [
+            {
+              "hint": "An LDR reacts to light. What would you change around it?"
+            }
+          ],
+          "answerWhy": "Change the light on the LDR, for example by moving a lamp closer, and record the readings each time."
+        },
+        {
+          "id": "4.8",
+          "type": "say",
+          "text": "From the last lesson: V = I R, potential difference = current × resistance. V is the potential difference in volts (V), I is the current in amperes (A) and R is the resistance in ohms (Ω)."
+        },
+        {
+          "id": "4.8a",
+          "type": "say",
+          "text": "To find the resistance at each reading, divide the potential difference by the current: R = V ÷ I."
+        },
+        {
+          "id": "4.9",
+          "type": "worked",
+          "example": 0,
+          "text": "Here is a worked example. Tap \"Show the first step\" under it to see how it is done, one step at a time. Use a calculator for the division."
+        },
+        {
+          "id": "4.10",
+          "type": "worked",
+          "example": 1,
+          "text": "And here is the same thermistor after the water is heated. Tap \"Show the first step\" under it."
+        },
+        {
+          "id": "4.11",
+          "type": "ask",
+          "kind": "number",
+          "question": "Your turn. In the practical, the voltmeter reads 6 V and the ammeter reads 0.05 A. What is the thermistor's resistance, in ohms?",
+          "answer": {
+            "value": 120,
+            "unit": "Ω",
+            "tolerance": 0.01
+          },
+          "wrongValues": [
+            {
+              "value": 0.3,
+              "branch": "multiplied"
+            },
+            {
+              "value": 0.00833,
+              "branch": "upside-down"
+            }
+          ],
+          "right": "Yes: 120 Ω. R = V ÷ I = 6 ÷ 0.05 = 120.",
+          "wrong": {
+            "multiplied": "Not quite: it's 120 Ω. You multiplied; resistance needs dividing: R = V ÷ I = 6 ÷ 0.05 = 120.",
+            "upside-down": "Not quite: it's 120 Ω. You divided the current by the potential difference; it is the other way up: R = V ÷ I = 6 ÷ 0.05 = 120.",
+            "other": "Not quite: it's 120 Ω. R = V ÷ I = 6 ÷ 0.05 = 120."
+          },
+          "idk": [
+            {
+              "hint": "Use R = V ÷ I: the potential difference divided by the current. Type 6 ÷ 0.05 into a calculator."
+            }
+          ],
+          "answerWhy": "The resistance is 120 Ω: R = V ÷ I = 6 ÷ 0.05 = 120."
+        },
+        {
+          "id": "4.12",
+          "type": "say",
+          "text": "When you have all your readings, plot a graph: the temperature (or the light intensity) along the bottom, and the resistance up the side. For both sensors the graph is a downward curve."
+        },
+        {
+          "id": "4.13",
+          "type": "own",
+          "prompt": "In one line: how do you find how a thermistor's resistance changes with temperature?",
+          "points": [
+            "ammeter in series, voltmeter in parallel across it",
+            "change the temperature and work out V ÷ I each time"
+          ],
+          "idk": "No problem. A good line would be: ammeter in series and voltmeter in parallel across it; change the temperature and work out V ÷ I each time."
+        },
+        {
+          "id": "4.14",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Why do you put the thermistor in water for this test?",
+          "options": [
+            {
+              "text": "So you can set and measure its temperature",
+              "branch": "right"
+            },
+            {
+              "text": "To stop the current",
+              "branch": "other"
+            },
+            {
+              "text": "To make its resistance stay the same",
+              "branch": "M12"
+            }
+          ],
+          "right": "Yes: the water lets you set the thermistor's temperature and measure the temperature with a thermometer.",
+          "wrong": {
+            "other": "Not quite: the water does not stop the current. It lets you set the thermistor's temperature and measure the temperature with a thermometer.",
+            "M12": "Not quite: the point is to change the temperature, so the resistance changes, and to measure the temperature with a thermometer."
+          },
+          "idk": [
+            {
+              "hint": "The test is about how the resistance changes with temperature. What does the water let you control?"
+            }
+          ],
+          "answerWhy": "The water lets you set the thermistor's temperature and measure the temperature with a thermometer.",
+          "mixed": true
+        },
+        {
+          "id": "5.0",
+          "type": "say",
+          "text": "To finish, a short quiz on the whole lesson: 7 questions."
+        },
+        {
+          "id": "5.1",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Quiz, question 1 of 7: How is a battery drawn in a circuit diagram?",
+          "options": [
+            {
+              "text": "As two or more cells side by side",
+              "branch": "right"
+            },
+            {
+              "text": "As a circle with a cross in it",
+              "branch": "w1"
+            },
+            {
+              "text": "As a rectangle",
+              "branch": "w2"
+            }
+          ],
+          "right": "Yes. A battery is two or more cells side by side.",
+          "wrong": {
+            "other": "Not quite. A battery is two or more cells side by side.",
+            "w1": "Not quite. A battery is two or more cells side by side. A circle with a cross in it is a lamp.",
+            "w2": "Not quite. A battery is two or more cells side by side. A rectangle is a resistor."
+          },
+          "idk": [],
+          "answerWhy": "A battery is two or more cells side by side.",
+          "quiz": true
+        },
+        {
+          "id": "5.2",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Quiz, question 2 of 7: Which symbol is a fuse?",
+          "options": [
+            {
+              "text": "A rectangle with a line through it",
+              "branch": "right"
+            },
+            {
+              "text": "A rectangle with an arrow through it",
+              "branch": "w1"
+            },
+            {
+              "text": "A circle with a cross in it",
+              "branch": "w2"
+            }
+          ],
+          "right": "Yes. A fuse is a rectangle with a line through it.",
+          "wrong": {
+            "other": "Not quite. A fuse is a rectangle with a line through it.",
+            "w1": "Not quite. A fuse is a rectangle with a line through it. A rectangle with an arrow through it is a variable resistor.",
+            "w2": "Not quite. A fuse is a rectangle with a line through it. A circle with a cross in it is a lamp."
+          },
+          "idk": [],
+          "answerWhy": "A fuse is a rectangle with a line through it.",
+          "quiz": true
+        },
+        {
+          "id": "5.3",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Quiz, question 3 of 7: Components on separate branches of a circuit are…",
+          "options": [
+            {
+              "text": "in parallel",
+              "branch": "right"
+            },
+            {
+              "text": "in series",
+              "branch": "w1"
+            },
+            {
+              "text": "switched off",
+              "branch": "w2"
+            }
+          ],
+          "right": "Yes. Separate branches are in parallel.",
+          "wrong": {
+            "other": "Not quite. Separate branches are in parallel.",
+            "w1": "Not quite. Separate branches are in parallel. In series means one after another in a single loop.",
+            "w2": "Not quite. Separate branches are in parallel. Being on a branch does not switch a component off."
+          },
+          "idk": [],
+          "answerWhy": "Separate branches are in parallel.",
+          "quiz": true
+        },
+        {
+          "id": "5.4",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Quiz, question 4 of 7: What happens to the resistance of a thermistor as it cools down?",
+          "options": [
+            {
+              "text": "It increases",
+              "branch": "right"
+            },
+            {
+              "text": "It decreases",
+              "branch": "w1"
+            },
+            {
+              "text": "It stays the same",
+              "branch": "w2"
+            }
+          ],
+          "right": "Yes. As a thermistor cools, its resistance increases.",
+          "wrong": {
+            "other": "Not quite. As a thermistor cools, its resistance increases.",
+            "w1": "Not quite. As a thermistor cools, its resistance increases. It decreases when the thermistor gets hotter; cooling does the opposite.",
+            "w2": "Not quite. As a thermistor cools, its resistance increases. A thermistor's resistance changes with its temperature."
+          },
+          "idk": [],
+          "answerWhy": "As a thermistor cools, its resistance increases.",
+          "quiz": true
+        },
+        {
+          "id": "5.5",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Quiz, question 5 of 7: What happens to the resistance of an LDR as the light gets brighter?",
+          "options": [
+            {
+              "text": "It decreases",
+              "branch": "right"
+            },
+            {
+              "text": "It increases",
+              "branch": "w1"
+            },
+            {
+              "text": "It stays the same",
+              "branch": "w2"
+            }
+          ],
+          "right": "Yes. As the light gets brighter, an LDR's resistance decreases.",
+          "wrong": {
+            "other": "Not quite. As the light gets brighter, an LDR's resistance decreases.",
+            "w1": "Not quite. As the light gets brighter, an LDR's resistance decreases. It increases in the dark, not in bright light.",
+            "w2": "Not quite. As the light gets brighter, an LDR's resistance decreases. An LDR's resistance changes with the light on it."
+          },
+          "idk": [],
+          "answerWhy": "As the light gets brighter, an LDR's resistance decreases.",
+          "quiz": true
+        },
+        {
+          "id": "5.6",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Quiz, question 6 of 7: Which is a good use for a thermistor?",
+          "options": [
+            {
+              "text": "In a thermostat",
+              "branch": "right"
+            },
+            {
+              "text": "To switch on street lights at dusk",
+              "branch": "w1"
+            },
+            {
+              "text": "To measure the current",
+              "branch": "w2"
+            }
+          ],
+          "right": "Yes. A thermistor senses temperature, so it suits a thermostat.",
+          "wrong": {
+            "other": "Not quite. A thermistor senses temperature, so it suits a thermostat.",
+            "w1": "Not quite. A thermistor senses temperature, so it suits a thermostat. Street lights use an LDR, which senses light.",
+            "w2": "Not quite. A thermistor senses temperature, so it suits a thermostat. The current is measured with an ammeter."
+          },
+          "idk": [],
+          "answerWhy": "A thermistor senses temperature, so it suits a thermostat.",
+          "quiz": true
+        },
+        {
+          "id": "5.7",
+          "type": "ask",
+          "kind": "number",
+          "quiz": true,
+          "question": "Quiz, question 7 of 7: a thermistor has 12 V across it and a current of 0.004 A through it. What is its resistance, in ohms?",
+          "answer": {
+            "value": 3000,
+            "unit": "Ω",
+            "tolerance": 0.01
+          },
+          "wrongValues": [
+            {
+              "value": 0.048,
+              "branch": "multiplied"
+            }
+          ],
+          "right": "Yes: 3000 Ω. R = V ÷ I = 12 ÷ 0.004 = 3000.",
+          "wrong": {
+            "multiplied": "Not quite: it's 3000 Ω. You multiplied; resistance needs dividing: R = V ÷ I = 12 ÷ 0.004 = 3000.",
+            "other": "Not quite: it's 3000 Ω. R = V ÷ I = 12 ÷ 0.004 = 3000."
+          },
+          "idk": [],
+          "answerWhy": "The resistance is 3000 Ω: R = V ÷ I = 12 ÷ 0.004 = 3000."
+        },
+        {
+          "id": "5.9",
+          "type": "score",
+          "text": "That's the end of the quiz: you got {right} out of {n}."
+        }
+      ]
+    }
+  ],
+  "end": {
+    "text": "You have finished this lesson: circuit symbols, thermistors, LDRs, and how to test them.",
+    "buttons": [
+      "Go to the slides",
+      "Home"
+    ]
+  }
+}

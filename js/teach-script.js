@@ -20,7 +20,7 @@
   else root.TeachScript = factory();
 })(typeof self !== 'undefined' ? self : this, function () {
   const SCRIPTED = true;
-  const SCRIPTED_LESSONS = ['p2-current-voltage'];
+  const SCRIPTED_LESSONS = ['p2-current-voltage', 'p2-components'];
   const MAX_WORDS = 60;
   const FB = { feedback: true };   // a reply to her answer (the checks let a correction say the rule again)
 
@@ -174,7 +174,7 @@
       calls.question++;
       const upTo = Math.min(st.kp, kps.length - 1);
       const content = L.keyPoints.slice(0, upTo + 1).map((k, i) => `Key point ${i + 1}: ${strip(k.content)}`).join('\n\n');
-      const sys = `You are a kind physics tutor. A 15-year-old who is meeting this topic for the first time asked a question in the middle of a lesson. Answer exactly what she asked, in plain everyday words, in one to three short sentences (at most ${MAX_WORDS} words), using ONLY the lesson content you are given. If the content does not answer it, say that it comes later in the course. Do not ask a question. Do not quote her words back. Do not mention revision or exams.`;
+      const sys = `You are a kind physics tutor. A 15-year-old who is meeting this topic for the first time asked a question in the middle of a lesson. Answer exactly what she asked, in plain everyday words, in one to three short sentences (at most ${MAX_WORDS} words), using ONLY the lesson content you are given. If the content does not answer it, say that it comes later in the course. Do not ask a question. Do not quote her words back. Do not mention revision or exams. Begin by naming what you are talking about (for example "An LDR and a thermistor both…"), never with "It", "They", "This" or "That".`;
       // A question of the script's waiting for her answer: never answered for her here (site test 2026-11-12: "wdym" got
       // "the current is the same everywhere", the answer, and then the same question again).
       const s = step(st), pend = st.pend || {};

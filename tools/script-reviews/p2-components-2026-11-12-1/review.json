@@ -1,0 +1,523 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 19122,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 14376,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 7781
+    },
+    "iterations": [
+      {
+        "input_tokens": 19122,
+        "output_tokens": 14376,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.728016,
+  "seconds": 131,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, three quick questions from the last lesson. What is electric current?\",\"what\":\"The lesson opens with three recall questions on another lesson before teaching anything. A girl meeting this for the first time has nothing in this lesson to answer them from.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.1a wrong answer\",\"quote\":\"The push is the potential difference, and how hard it is for charge to flow is the resistance.\",\"what\":\"Potential difference and resistance are used here without ever being explained in this lesson.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.1b\",\"quote\":\"what does the I-V graph of an ohmic conductor look like?\",\"what\":\"\\\"I-V graph\\\", \\\"ohmic conductor\\\" and \\\"origin\\\" are all used with no explanation and no picture. She could not answer this from what she has been told.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"L3\",\"turn\":\"1.1c\",\"quote\":\"Third: why does a filament lamp's I-V graph curve?\",\"what\":\"This assumes she already knows the filament lamp's graph. Nothing in this lesson has shown or described it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.1c wrong answer (\\\"Its resistance falls as it gets hotter\\\")\",\"quote\":\"Letting current flow one way only is what a diode does.\",\"what\":\"The reply does not fit the answer she chose. She said the resistance falls, not that current flows one way, and the reply does not say why \\\"falls\\\" is the wrong way round.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.1c right answer\",\"quote\":\"Remember that one: later in this lesson you will meet a component that does the opposite.\",\"what\":\"This gives away the \\\"have a guess\\\" question at 2.3 before it is asked. She already knows the thermistor's resistance must fall.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P16\",\"turn\":\"1.1\",\"quote\":\"two components whose resistance changes with heat and with light\",\"what\":\"It should say temperature, not heat. The rest of the lesson says temperature.\",\"severity\":\"minor\"},{\"fault\":\"P1\",\"turn\":\"1.4\",\"quote\":\"labelled cell, battery, switch, lamp, resistor, ammeter, voltmeter\",\"what\":\"Only the cell and lamp have been taught, but the picture already shows and labels the battery, switch, resistor, ammeter and voltmeter. The picture is not built up step by step.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"1.5a\",\"quote\":\"A switch, which opens or closes a gap in the circuit, is drawn open, with a gap, or closed, with no gap. A meter is a circle with a letter in it: A for an ammeter, V for a voltmeter.\",\"what\":\"Switch, ammeter and voltmeter are three new terms in one message, and two different ideas.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.5a\",\"quote\":\"A for an ammeter, V for a voltmeter\",\"what\":\"The lesson never says what an ammeter or a voltmeter measures. Both are then used in the widget at 1.10 and in the practical in key point 4.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.6\",\"quote\":\"A diode is a triangle pointing the way current can flow, with a bar across its tip.\",\"what\":\"The symbol is given without first saying what a diode is or does.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"1.7\",\"quote\":\"A resistor with an arrow through it is a variable resistor. A diode with two arrows coming out of it is a light-emitting diode (LED), a diode that gives out light.\",\"what\":\"Two new components in one message. What a variable resistor does is not said here at all.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P12\",\"turn\":\"1.7\",\"quote\":\"labelled diode, light-emitting diode, variable resistor, fuse\",\"what\":\"The picture labels a fuse before the fuse has been mentioned.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"1.8\",\"quote\":\"The chart also shows the symbol for a fuse\",\"what\":\"\\\"The chart\\\" is not in this message and the picture was never called a chart. She has to guess that it means the picture under the previous message.\",\"severity\":\"minor\"},{\"fault\":\"F4\",\"turn\":\"1.8\",\"quote\":\"What a fuse does comes in a later lesson.\",\"what\":\"A term is introduced with its meaning held back for a later lesson, and the quiz then tests its symbol at 5.2.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"1.9\",\"quote\":\"Components on one single path are in series; components on separate branches are in parallel.\",\"what\":\"Series and parallel are both introduced in one message, along with how to read a diagram. \\\"Branches\\\" is not explained and there is no picture of either arrangement.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"M1\",\"turn\":\"1.2 to 1.9\",\"quote\":\"Button: Next\",\"what\":\"Nine telling messages in a row with nothing for her to do but tap Next. It is a list of shapes to memorise and she would switch off.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.10\",\"quote\":\"Then tap Draw it another way to test your answer. ... controls: none.\",\"what\":\"She is told to tap \\\"Draw it another way\\\", but the circuit is listed with no controls. If the button is not there she cannot do the task.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P8\",\"turn\":\"1.10 predict box\",\"quote\":\"Two circuit diagrams show the same cell, switch, lamp and ammeter joined in one loop.\",\"what\":\"The question already says the same parts are joined in one loop. That is the answer, and it is also the first tick-box point she is asked to explain afterwards.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.10\",\"quote\":\"watch the ammeter and the lamp\",\"what\":\"She is asked to watch an ammeter reading when the lesson has only told her its symbol, not what it measures.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"1.10\",\"quote\":\"Your prediction was right.\",\"what\":\"Stock praise in the predict-first widget, with nothing about why.\",\"severity\":\"minor\"},{\"fault\":\"F11\",\"turn\":\"1.10\",\"quote\":\"Button under the message: Next\",\"what\":\"Next sits under the message from the start, so she can skip the whole predict-and-test activity without doing any of it.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"1.11 right answer\",\"quote\":\"Two or more cells joined together make a battery.\",\"what\":\"This repeats 1.4a and is not what the question was about.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.12 wrong answer (\\\"A diode\\\")\",\"quote\":\"a fuse is a rectangle with a line through it\",\"what\":\"She chose a diode but the reply corrects the fuse. It should say a diode is the triangle with a bar.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.13\",\"quote\":\"In one line: how do you read a circuit diagram?\",\"what\":\"The question is too vague. She cannot tell that the marker wants both \\\"follow the wire round from the cell\\\" and the series/parallel definitions in one line.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.14\",\"quote\":\"From the last lesson: what does a diode do?\",\"what\":\"This lesson has only given the diode's symbol. On the main path she has not been told what a diode does, and the right-answer reply adds \\\"reverse direction\\\" unexplained.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F7\",\"turn\":\"1.14 don't know (first time)\",\"quote\":\"Think of the diode's graph: one side lay flat along the axis. What does that mean for the current one way round?\",\"what\":\"The hint is harder than the question. It asks her to interpret a graph that this lesson has never shown.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"2.3\",\"quote\":\"Have a guess: as a thermistor gets warmer, what do you think happens to its resistance?\",\"what\":\"This is not a real guess. At 1.1c she was told a later component \\\"does the opposite\\\" of the filament lamp, so the answer has already been given.\",\"severity\":\"minor\"},{\"fault\":\"F10\",\"turn\":\"2.5\",\"quote\":\"A thermistor has the same potential difference across it all the time. It warms up. What happens to the current through it?\",\"what\":\"This needs the link between potential difference, current and resistance. The lesson does not state it until V = I R at 4.8, so she cannot work it out from what she has been told.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"2.8\",\"quote\":\"A room warms up. What happens to the resistance of the thermistor in the thermostat?\",\"what\":\"The same fact, warmer thermistor means lower resistance, was asked at 2.3, told at 2.4 and used at 2.5. Here it is asked again in a thin disguise.\",\"severity\":\"minor\"},{\"fault\":\"P16\",\"turn\":\"2.9\",\"quote\":\"the thermistor's resistance falls, the current changes, and the circuit switches the heater off\",\"what\":\"\\\"The current changes\\\" is vague when she has just learned that it goes up. How a changing current switches a heater off is left as a jump she cannot follow.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.2\",\"quote\":\"How bright the light falling on something is is called the light intensity.\",\"what\":\"The \\\"is is\\\" makes this hard to read. Better: \\\"Light intensity means how bright the light falling on something is.\\\"\",\"severity\":\"minor\"},{\"fault\":\"P8\",\"turn\":\"3.3\",\"quote\":\"An LDR behaves like a thermistor, but with light instead of heat. As the light on an LDR gets brighter, what do you think happens to its resistance?\",\"what\":\"The first sentence gives the answer. She only has to copy what the thermistor does.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P16\",\"turn\":\"3.3 wrong answer (\\\"It goes up\\\")\",\"quote\":\"as more heat means less resistance for a thermistor\",\"what\":\"\\\"More heat\\\" should be \\\"a higher temperature\\\". Heat and temperature are not the same thing, and the lesson elsewhere says temperature.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.5\",\"quote\":\"the circuit below can hold a thermistor or an LDR. Slide the temperature or the light, and watch the resistance and the current. ... It shows a cell, a lamp and an ammeter; controls: none.\",\"what\":\"The message promises a thermistor or LDR with temperature and light sliders. The circuit listed has a cell, lamp and ammeter and no controls, so she cannot do what she is told.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"3.5\",\"quote\":\"Try it: ... Tap Next when you are done.\",\"what\":\"The hands-on step has no prediction and no question, so she has nothing to find out. It also comes only after both graphs have told her the result.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.6 wrong answer (\\\"A diode\\\")\",\"quote\":\"Not quite: a thermistor. It senses temperature; an LDR senses light.\",\"what\":\"She chose a diode, but the reply talks about the LDR and says nothing about why a diode will not do.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"3.7\",\"quote\":\"An LDR is a light sensor. In an automatic street light, the LDR's resistance rises as evening comes\",\"what\":\"The street light was the opening of 3.1 and the resistance rule was at 3.3 and 3.4. This is the same material told again.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"3.8\",\"quote\":\"The LDR and the thermistor behave in the same way ... For both, more of that thing means less resistance.\",\"what\":\"\\\"Behaves like a thermistor\\\" was already said in 3.3 and in its replies. \\\"More of that thing\\\" is also loose wording.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.11 wrong answer (\\\"A thermistor\\\")\",\"quote\":\"Its arrows point in, for light falling on it; an LED's arrows point out.\",\"what\":\"She chose a thermistor, but the reply compares the LDR with an LED. It should say the thermistor has a line through it and no circle.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"4.2\",\"quote\":\"Where does the voltmeter go when you test a component?\",\"what\":\"This lesson has only given the voltmeter's symbol. It has not said what a voltmeter measures or how it is connected, so she can only guess.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"4.2 don't know (first time)\",\"quote\":\"Is that in the loop, or across it?\",\"what\":\"\\\"Across it\\\" reads as across the loop, and neither phrase matches the buttons, which say \\\"in series\\\" and \\\"in parallel\\\".\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"4.3\",\"quote\":\"As a thermistor gets hotter, what happens to its resistance?\",\"what\":\"This is the third time the same question has been asked (2.3, 2.8, 4.3).\",\"severity\":\"minor\"},{\"fault\":\"P5\",\"turn\":\"4.4\",\"quote\":\"Draw the cell, a switch and an ammeter in one loop with the thermistor, all in series. Then draw a voltmeter in parallel across the thermistor, on its own short branch.\",\"what\":\"The whole test circuit appears at once in one picture rather than being built up. She is told to \\\"draw\\\" when she has nothing to draw on.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.5\",\"quote\":\"Which of these is a mistake in a circuit diagram?\",\"what\":\"The drawing rules (correct symbols, straight wires, no gaps) have not been taught. They appear only in the reply.\",\"severity\":\"minor\"},{\"fault\":\"P8\",\"turn\":\"4.5 don't know (first time)\",\"quote\":\"A gap in a circuit diagram means the circuit is open. Where would that be a mistake?\",\"what\":\"The hint names the answer (a gap) and then asks a \\\"where\\\" question that does not match the buttons. \\\"The circuit is open\\\" has not been explained either.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.6\",\"quote\":\"then change the temperature and repeat\",\"what\":\"It does not say how to change the temperature, for example by adding hot water or heating the water.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"4.8\",\"quote\":\"Use V = I R from the last lesson: V is the potential difference in volts (V), I is the current in amperes (A) and R is the resistance in ohms (Ω). At each reading, divide the potential difference by the current to get the resistance: R = V ÷ I.\",\"what\":\"One message carries the equation, three symbols with units and the rearrangement. This is the first time the ohm is mentioned. It should be split into two messages.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"4.9 steps\",\"quote\":\"Start from V = I R. ... You want R, so divide both sides by I: R = V ÷ I.\",\"what\":\"The message just before (4.8) already said this. It then comes again at 4.10 and in every branch of 4.11.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.9\",\"quote\":\"Put the numbers in: R = 6 ÷ 0.002 = 3000.\",\"what\":\"Dividing by 0.002 is a hard step for a 15-year-old. The example gives the result with no mention of using a calculator and no working.\",\"severity\":\"minor\"},{\"fault\":\"P7\",\"turn\":\"4.11 wrong (first time)\",\"quote\":\"Not quite. Check your working and have one more go\",\"what\":\"After a wrong answer she gets the same question again with no hint, not even a reminder that R = V ÷ I.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.11\",\"quote\":\"A component has a potential difference of 30 V across it and a current of 1 A through it.\",\"what\":\"Dividing by 1 does not test whether she can use R = V ÷ I. The worked examples used decimals, but her only practice is trivial.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.12\",\"quote\":\"Plot resistance against temperature, or against light intensity.\",\"what\":\"It does not say which quantity goes on which axis, and the next sentence repeats the two graphs she saw at 2.4 and 3.4.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.14 wrong answer (\\\"To make its resistance stay the same\\\")\",\"quote\":\"the point is to change the temperature, so the resistance changes, and to measure it with a thermometer\",\"what\":\"\\\"Measure it with a thermometer\\\" reads as measuring the resistance with a thermometer. It should say \\\"measure the temperature\\\".\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"5.4\",\"quote\":\"What happens to the resistance of a thermistor as it gets hotter?\",\"what\":\"This is the fourth time the identical question has been asked (2.3, 2.8, 4.3, 5.4).\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.6 wrong answer (\\\"To switch on street lights at dusk\\\")\",\"quote\":\"Not quite. A thermistor senses temperature, so it suits a thermostat.\",\"what\":\"The reply should say that street lights use an LDR. This is the very mix-up the lesson warned about.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.7\",\"quote\":\"A current of 3 A flows through a 4 Ω resistor. What is the potential difference across it, in volts (V)?\",\"what\":\"The script calls this \\\"the same kind as the worked example\\\", but it asks for V. Every example and the one practice question found R, so she has never practised this calculation in the lesson.\",\"severity\":\"minor\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":2},{\"fault\":\"F3\",\"instances\":6},{\"fault\":\"F8\",\"instances\":2},{\"fault\":\"P16\",\"instances\":3},{\"fault\":\"P1\",\"instances\":1},{\"fault\":\"F5\",\"instances\":3},{\"fault\":\"P12\",\"instances\":1},{\"fault\":\"F2\",\"instances\":1},{\"fault\":\"F4\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"P8\",\"instances\":3},{\"fault\":\"F12\",\"instances\":1},{\"fault\":\"F11\",\"instances\":1},{\"fault\":\"F1\",\"instances\":7},{\"fault\":\"F7\",\"instances\":1},{\"fault\":\"F10\",\"instances\":1},{\"fault\":\"P5\",\"instances\":1},{\"fault\":\"P6\",\"instances\":1},{\"fault\":\"P7\",\"instances\":1},{\"fault\":\"new\",\"instances\":20}],\"overall\":\"No, I would not let her use this lesson as it is. It opens with three questions on a lesson she has not had, and it leans on that lesson throughout: ammeter, voltmeter, diode, potential difference and the link between resistance and current are all used or tested before this lesson explains them. Both hands-on steps tell her to use controls the script lists as absent (\\\"Draw it another way\\\" at 1.10, the temperature and light sliders at 3.5), and several questions carry their own answer (1.10, 3.3, the 2.3 \\\"guess\\\"). The thermistor and LDR physics is correct and the worked examples are sound, so it is fixable, but it needs the opening recall, the meters, the widgets and the mismatched wrong-answer replies put right first, and the long run of Next-only symbol messages broken up.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, three quick questions from the last lesson. What is electric current?",
+      "what": "The lesson opens with three recall questions on another lesson before teaching anything. A girl meeting this for the first time has nothing in this lesson to answer them from.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1a wrong answer",
+      "quote": "The push is the potential difference, and how hard it is for charge to flow is the resistance.",
+      "what": "Potential difference and resistance are used here without ever being explained in this lesson.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1b",
+      "quote": "what does the I-V graph of an ohmic conductor look like?",
+      "what": "\"I-V graph\", \"ohmic conductor\" and \"origin\" are all used with no explanation and no picture. She could not answer this from what she has been told.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.1c",
+      "quote": "Third: why does a filament lamp's I-V graph curve?",
+      "what": "This assumes she already knows the filament lamp's graph. Nothing in this lesson has shown or described it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1c wrong answer (\"Its resistance falls as it gets hotter\")",
+      "quote": "Letting current flow one way only is what a diode does.",
+      "what": "The reply does not fit the answer she chose. She said the resistance falls, not that current flows one way, and the reply does not say why \"falls\" is the wrong way round.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.1c right answer",
+      "quote": "Remember that one: later in this lesson you will meet a component that does the opposite.",
+      "what": "This gives away the \"have a guess\" question at 2.3 before it is asked. She already knows the thermistor's resistance must fall.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P16",
+      "turn": "1.1",
+      "quote": "two components whose resistance changes with heat and with light",
+      "what": "It should say temperature, not heat. The rest of the lesson says temperature.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P1",
+      "turn": "1.4",
+      "quote": "labelled cell, battery, switch, lamp, resistor, ammeter, voltmeter",
+      "what": "Only the cell and lamp have been taught, but the picture already shows and labels the battery, switch, resistor, ammeter and voltmeter. The picture is not built up step by step.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.5a",
+      "quote": "A switch, which opens or closes a gap in the circuit, is drawn open, with a gap, or closed, with no gap. A meter is a circle with a letter in it: A for an ammeter, V for a voltmeter.",
+      "what": "Switch, ammeter and voltmeter are three new terms in one message, and two different ideas.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.5a",
+      "quote": "A for an ammeter, V for a voltmeter",
+      "what": "The lesson never says what an ammeter or a voltmeter measures. Both are then used in the widget at 1.10 and in the practical in key point 4.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.6",
+      "quote": "A diode is a triangle pointing the way current can flow, with a bar across its tip.",
+      "what": "The symbol is given without first saying what a diode is or does.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.7",
+      "quote": "A resistor with an arrow through it is a variable resistor. A diode with two arrows coming out of it is a light-emitting diode (LED), a diode that gives out light.",
+      "what": "Two new components in one message. What a variable resistor does is not said here at all.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P12",
+      "turn": "1.7",
+      "quote": "labelled diode, light-emitting diode, variable resistor, fuse",
+      "what": "The picture labels a fuse before the fuse has been mentioned.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "1.8",
+      "quote": "The chart also shows the symbol for a fuse",
+      "what": "\"The chart\" is not in this message and the picture was never called a chart. She has to guess that it means the picture under the previous message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F4",
+      "turn": "1.8",
+      "quote": "What a fuse does comes in a later lesson.",
+      "what": "A term is introduced with its meaning held back for a later lesson, and the quiz then tests its symbol at 5.2.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.9",
+      "quote": "Components on one single path are in series; components on separate branches are in parallel.",
+      "what": "Series and parallel are both introduced in one message, along with how to read a diagram. \"Branches\" is not explained and there is no picture of either arrangement.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "M1",
+      "turn": "1.2 to 1.9",
+      "quote": "Button: Next",
+      "what": "Nine telling messages in a row with nothing for her to do but tap Next. It is a list of shapes to memorise and she would switch off.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10",
+      "quote": "Then tap Draw it another way to test your answer. ... controls: none.",
+      "what": "She is told to tap \"Draw it another way\", but the circuit is listed with no controls. If the button is not there she cannot do the task.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P8",
+      "turn": "1.10 predict box",
+      "quote": "Two circuit diagrams show the same cell, switch, lamp and ammeter joined in one loop.",
+      "what": "The question already says the same parts are joined in one loop. That is the answer, and it is also the first tick-box point she is asked to explain afterwards.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.10",
+      "quote": "watch the ammeter and the lamp",
+      "what": "She is asked to watch an ammeter reading when the lesson has only told her its symbol, not what it measures.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.10",
+      "quote": "Your prediction was right.",
+      "what": "Stock praise in the predict-first widget, with nothing about why.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F11",
+      "turn": "1.10",
+      "quote": "Button under the message: Next",
+      "what": "Next sits under the message from the start, so she can skip the whole predict-and-test activity without doing any of it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.11 right answer",
+      "quote": "Two or more cells joined together make a battery.",
+      "what": "This repeats 1.4a and is not what the question was about.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.12 wrong answer (\"A diode\")",
+      "quote": "a fuse is a rectangle with a line through it",
+      "what": "She chose a diode but the reply corrects the fuse. It should say a diode is the triangle with a bar.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.13",
+      "quote": "In one line: how do you read a circuit diagram?",
+      "what": "The question is too vague. She cannot tell that the marker wants both \"follow the wire round from the cell\" and the series/parallel definitions in one line.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.14",
+      "quote": "From the last lesson: what does a diode do?",
+      "what": "This lesson has only given the diode's symbol. On the main path she has not been told what a diode does, and the right-answer reply adds \"reverse direction\" unexplained.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F7",
+      "turn": "1.14 don't know (first time)",
+      "quote": "Think of the diode's graph: one side lay flat along the axis. What does that mean for the current one way round?",
+      "what": "The hint is harder than the question. It asks her to interpret a graph that this lesson has never shown.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.3",
+      "quote": "Have a guess: as a thermistor gets warmer, what do you think happens to its resistance?",
+      "what": "This is not a real guess. At 1.1c she was told a later component \"does the opposite\" of the filament lamp, so the answer has already been given.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F10",
+      "turn": "2.5",
+      "quote": "A thermistor has the same potential difference across it all the time. It warms up. What happens to the current through it?",
+      "what": "This needs the link between potential difference, current and resistance. The lesson does not state it until V = I R at 4.8, so she cannot work it out from what she has been told.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.8",
+      "quote": "A room warms up. What happens to the resistance of the thermistor in the thermostat?",
+      "what": "The same fact, warmer thermistor means lower resistance, was asked at 2.3, told at 2.4 and used at 2.5. Here it is asked again in a thin disguise.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P16",
+      "turn": "2.9",
+      "quote": "the thermistor's resistance falls, the current changes, and the circuit switches the heater off",
+      "what": "\"The current changes\" is vague when she has just learned that it goes up. How a changing current switches a heater off is left as a jump she cannot follow.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.2",
+      "quote": "How bright the light falling on something is is called the light intensity.",
+      "what": "The \"is is\" makes this hard to read. Better: \"Light intensity means how bright the light falling on something is.\"",
+      "severity": "minor"
+    },
+    {
+      "fault": "P8",
+      "turn": "3.3",
+      "quote": "An LDR behaves like a thermistor, but with light instead of heat. As the light on an LDR gets brighter, what do you think happens to its resistance?",
+      "what": "The first sentence gives the answer. She only has to copy what the thermistor does.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P16",
+      "turn": "3.3 wrong answer (\"It goes up\")",
+      "quote": "as more heat means less resistance for a thermistor",
+      "what": "\"More heat\" should be \"a higher temperature\". Heat and temperature are not the same thing, and the lesson elsewhere says temperature.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5",
+      "quote": "the circuit below can hold a thermistor or an LDR. Slide the temperature or the light, and watch the resistance and the current. ... It shows a cell, a lamp and an ammeter; controls: none.",
+      "what": "The message promises a thermistor or LDR with temperature and light sliders. The circuit listed has a cell, lamp and ammeter and no controls, so she cannot do what she is told.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5",
+      "quote": "Try it: ... Tap Next when you are done.",
+      "what": "The hands-on step has no prediction and no question, so she has nothing to find out. It also comes only after both graphs have told her the result.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6 wrong answer (\"A diode\")",
+      "quote": "Not quite: a thermistor. It senses temperature; an LDR senses light.",
+      "what": "She chose a diode, but the reply talks about the LDR and says nothing about why a diode will not do.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.7",
+      "quote": "An LDR is a light sensor. In an automatic street light, the LDR's resistance rises as evening comes",
+      "what": "The street light was the opening of 3.1 and the resistance rule was at 3.3 and 3.4. This is the same material told again.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.8",
+      "quote": "The LDR and the thermistor behave in the same way ... For both, more of that thing means less resistance.",
+      "what": "\"Behaves like a thermistor\" was already said in 3.3 and in its replies. \"More of that thing\" is also loose wording.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.11 wrong answer (\"A thermistor\")",
+      "quote": "Its arrows point in, for light falling on it; an LED's arrows point out.",
+      "what": "She chose a thermistor, but the reply compares the LDR with an LED. It should say the thermistor has a line through it and no circle.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.2",
+      "quote": "Where does the voltmeter go when you test a component?",
+      "what": "This lesson has only given the voltmeter's symbol. It has not said what a voltmeter measures or how it is connected, so she can only guess.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "4.2 don't know (first time)",
+      "quote": "Is that in the loop, or across it?",
+      "what": "\"Across it\" reads as across the loop, and neither phrase matches the buttons, which say \"in series\" and \"in parallel\".",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.3",
+      "quote": "As a thermistor gets hotter, what happens to its resistance?",
+      "what": "This is the third time the same question has been asked (2.3, 2.8, 4.3).",
+      "severity": "minor"
+    },
+    {
+      "fault": "P5",
+      "turn": "4.4",
+      "quote": "Draw the cell, a switch and an ammeter in one loop with the thermistor, all in series. Then draw a voltmeter in parallel across the thermistor, on its own short branch.",
+      "what": "The whole test circuit appears at once in one picture rather than being built up. She is told to \"draw\" when she has nothing to draw on.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.5",
+      "quote": "Which of these is a mistake in a circuit diagram?",
+      "what": "The drawing rules (correct symbols, straight wires, no gaps) have not been taught. They appear only in the reply.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P8",
+      "turn": "4.5 don't know (first time)",
+      "quote": "A gap in a circuit diagram means the circuit is open. Where would that be a mistake?",
+      "what": "The hint names the answer (a gap) and then asks a \"where\" question that does not match the buttons. \"The circuit is open\" has not been explained either.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.6",
+      "quote": "then change the temperature and repeat",
+      "what": "It does not say how to change the temperature, for example by adding hot water or heating the water.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "4.8",
+      "quote": "Use V = I R from the last lesson: V is the potential difference in volts (V), I is the current in amperes (A) and R is the resistance in ohms (Ω). At each reading, divide the potential difference by the current to get the resistance: R = V ÷ I.",
+      "what": "One message carries the equation, three symbols with units and the rearrangement. This is the first time the ohm is mentioned. It should be split into two messages.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.9 steps",
+      "quote": "Start from V = I R. ... You want R, so divide both sides by I: R = V ÷ I.",
+      "what": "The message just before (4.8) already said this. It then comes again at 4.10 and in every branch of 4.11.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.9",
+      "quote": "Put the numbers in: R = 6 ÷ 0.002 = 3000.",
+      "what": "Dividing by 0.002 is a hard step for a 15-year-old. The example gives the result with no mention of using a calculator and no working.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P7",
+      "turn": "4.11 wrong (first time)",
+      "quote": "Not quite. Check your working and have one more go",
+      "what": "After a wrong answer she gets the same question again with no hint, not even a reminder that R = V ÷ I.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.11",
+      "quote": "A component has a potential difference of 30 V across it and a current of 1 A through it.",
+      "what": "Dividing by 1 does not test whether she can use R = V ÷ I. The worked examples used decimals, but her only practice is trivial.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.12",
+      "quote": "Plot resistance against temperature, or against light intensity.",
+      "what": "It does not say which quantity goes on which axis, and the next sentence repeats the two graphs she saw at 2.4 and 3.4.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.14 wrong answer (\"To make its resistance stay the same\")",
+      "quote": "the point is to change the temperature, so the resistance changes, and to measure it with a thermometer",
+      "what": "\"Measure it with a thermometer\" reads as measuring the resistance with a thermometer. It should say \"measure the temperature\".",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "5.4",
+      "quote": "What happens to the resistance of a thermistor as it gets hotter?",
+      "what": "This is the fourth time the identical question has been asked (2.3, 2.8, 4.3, 5.4).",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.6 wrong answer (\"To switch on street lights at dusk\")",
+      "quote": "Not quite. A thermistor senses temperature, so it suits a thermostat.",
+      "what": "The reply should say that street lights use an LDR. This is the very mix-up the lesson warned about.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.7",
+      "quote": "A current of 3 A flows through a 4 Ω resistor. What is the potential difference across it, in volts (V)?",
+      "what": "The script calls this \"the same kind as the worked example\", but it asks for V. Every example and the one practice question found R, so she has never practised this calculation in the lesson.",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 19
+    },
+    {
+      "fault": "F1",
+      "instances": 7
+    },
+    {
+      "fault": "F3",
+      "instances": 6
+    },
+    {
+      "fault": "P16",
+      "instances": 3
+    },
+    {
+      "fault": "F5",
+      "instances": 3
+    },
+    {
+      "fault": "P8",
+      "instances": 3
+    },
+    {
+      "fault": "L3",
+      "instances": 2
+    },
+    {
+      "fault": "F8",
+      "instances": 2
+    },
+    {
+      "fault": "P1",
+      "instances": 1
+    },
+    {
+      "fault": "P12",
+      "instances": 1
+    },
+    {
+      "fault": "F2",
+      "instances": 1
+    },
+    {
+      "fault": "F4",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    },
+    {
+      "fault": "F12",
+      "instances": 1
+    },
+    {
+      "fault": "F11",
+      "instances": 1
+    },
+    {
+      "fault": "F7",
+      "instances": 1
+    },
+    {
+      "fault": "F10",
+      "instances": 1
+    },
+    {
+      "fault": "P5",
+      "instances": 1
+    },
+    {
+      "fault": "P6",
+      "instances": 1
+    },
+    {
+      "fault": "P7",
+      "instances": 1
+    }
+  ],
+  "overall": "No, I would not let her use this lesson as it is. It opens with three questions on a lesson she has not had, and it leans on that lesson throughout: ammeter, voltmeter, diode, potential difference and the link between resistance and current are all used or tested before this lesson explains them. Both hands-on steps tell her to use controls the script lists as absent (\"Draw it another way\" at 1.10, the temperature and light sliders at 3.5), and several questions carry their own answer (1.10, 3.3, the 2.3 \"guess\"). The thermistor and LDR physics is correct and the worked examples are sound, so it is fixable, but it needs the opening recall, the meters, the widgets and the mismatched wrong-answer replies put right first, and the long run of Next-only symbol messages broken up."
+}

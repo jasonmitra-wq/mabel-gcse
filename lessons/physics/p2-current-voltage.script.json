@@ -1,0 +1,798 @@
+{
+  "lesson": "p2-current-voltage",
+  "version": 1,
+  "about": "The scripted AI lesson (brief docs/briefs/2026-11-11-scripted-teaching.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. Key points 1 and 2 only.",
+  "keyPoints": [
+    {
+      "kp": 0,
+      "heading": "Electric current — charge on the move",
+      "steps": [
+        {
+          "id": "1.1",
+          "type": "say",
+          "text": "Welcome! Today you will find out what is going on inside the wires when you turn something on. Press the button on a torch and its bulb lights at once. In science, a bulb like this is called a lamp."
+        },
+        {
+          "id": "1.2",
+          "type": "say",
+          "newTerm": "Electric charge",
+          "text": "Inside the metal wires are tiny particles that carry electric charge, the thing that moves through the wires when the torch is on. You cannot see the charge, but you can see what it does: it makes the lamp light."
+        },
+        {
+          "id": "1.3",
+          "type": "say",
+          "text": "A torch has a cell inside it, the part that pushes the charge round."
+        },
+        {
+          "id": "1.3b",
+          "type": "say",
+          "text": "The cell, the wires and the lamp, all joined up, make a circuit."
+        },
+        {
+          "id": "1.4",
+          "type": "widget",
+          "kpWidget": 0,
+          "predicts": [
+            "cv-loop"
+          ],
+          "controls": [
+            "sw"
+          ],
+          "options": {
+            "hideMeters": true,
+            "twoAmmeters": false
+          },
+          "overrides": {
+            "cv-loop": {
+              "question": "The switch in this circuit is open, so there is a gap in the loop. Does the lamp light?",
+              "options": [
+                {
+                  "text": "No",
+                  "short": "No"
+                },
+                {
+                  "text": "Yes, brightly",
+                  "short": "Yes, brightly",
+                  "mis": "M1"
+                },
+                {
+                  "text": "Yes, but only dimly",
+                  "short": "Yes, but only dimly",
+                  "mis": "M1"
+                }
+              ],
+              "correct": 0,
+              "needs": [
+                "sw"
+              ],
+              "tryShort": "Look at the lamp while the switch is open. Then close the switch.",
+              "afterTest": "While the switch was open, the lamp stayed off. When you closed it, the lamp lit.",
+              "explain": {
+                "promptShort": "In one line: why do you think closing the switch made the lamp light?",
+                "points": [
+                  "closing the switch made a complete loop",
+                  "charge can only move round a complete loop"
+                ]
+              },
+              "reveal": "No: with a gap in the loop, the lamp does not light."
+            }
+          },
+          "newTerm": "Switch",
+          "text": "The circuit below has a switch, a part that can open a gap in the loop of wire. Predict first: answer the question in the box. Then try the switch to test your answer. Tap Next when you are done.",
+          "labels": [
+            "cell",
+            "switch",
+            "lamp"
+          ]
+        },
+        {
+          "id": "1.5",
+          "type": "say",
+          "newTerm": "Closed circuit",
+          "picture": "p2-cv-loop",
+          "text": "A complete loop, out of the cell, through the lamp and back to the cell, is called a closed circuit."
+        },
+        {
+          "id": "1.6",
+          "type": "ask",
+          "kind": "tap",
+          "question": "In a torch, the wire to the lamp comes loose at one end. What happens to the movement of charge?",
+          "options": [
+            {
+              "text": "It stops everywhere in the loop",
+              "branch": "right"
+            },
+            {
+              "text": "It stops only near the loose end",
+              "branch": "M4"
+            },
+            {
+              "text": "It keeps going, but more slowly",
+              "branch": "other"
+            }
+          ],
+          "right": "Yes. A gap anywhere breaks the loop, and the charge stops moving everywhere at once, not just near the gap.",
+          "wrong": {
+            "M4": "Not quite: it stops everywhere in the loop. A gap anywhere breaks the whole loop, so the charge stops moving all the way round, not just next to the gap.",
+            "other": "Not quite: it stops everywhere in the loop. With a gap there is no complete loop, so the charge cannot move round at all."
+          },
+          "idk": [
+            {
+              "hint": "Think about the switch in the circuit above: when it left a gap in the loop, what happened to the movement of charge round the loop?"
+            },
+            {
+              "ask": {
+                "kind": "tap",
+                "question": "With a gap in the loop, can the movement of charge carry on all the way round the loop?",
+                "options": [
+                  {
+                    "text": "No",
+                    "branch": "right"
+                  },
+                  {
+                    "text": "Yes",
+                    "branch": "other"
+                  }
+                ],
+                "right": "Right.",
+                "wrong": {
+                  "other": "Not quite."
+                }
+              }
+            }
+          ],
+          "answerWhy": "The movement of charge stops everywhere in the loop. A loose wire leaves a gap, so there is no complete loop and the charge cannot move round at all."
+        },
+        {
+          "id": "1.7",
+          "type": "say",
+          "newTerm": "Electric current",
+          "text": "A flow of charge is called an electric current. The size of a current is how much charge passes a point in the wire each second."
+        },
+        {
+          "id": "1.8",
+          "type": "ask",
+          "kind": "tap",
+          "question": "In one second, 2 units of charge pass a point in wire A, and 5 units pass a point in wire B. Which wire has the bigger current?",
+          "options": [
+            {
+              "text": "Wire B",
+              "branch": "right"
+            },
+            {
+              "text": "Wire A",
+              "branch": "other"
+            },
+            {
+              "text": "They are the same",
+              "branch": "other"
+            }
+          ],
+          "right": "Yes. More charge passes each second in wire B, so wire B has the bigger current.",
+          "wrong": {
+            "other": "Not quite: wire B. Current is how much charge passes each second, and 5 units a second is more than 2."
+          },
+          "idk": [
+            {
+              "hint": "The bigger current is in the wire with more charge passing each second. Which wire has the bigger current?"
+            },
+            {
+              "ask": {
+                "kind": "tap",
+                "question": "Which wire has more charge passing each second?",
+                "options": [
+                  {
+                    "text": "Wire B",
+                    "branch": "right"
+                  },
+                  {
+                    "text": "Wire A",
+                    "branch": "other"
+                  }
+                ],
+                "right": "Right.",
+                "wrong": {
+                  "other": "Not quite."
+                }
+              }
+            }
+          ],
+          "answerWhy": "Wire B has the bigger current. Current is how much charge passes a point each second: 5 units a second in wire B is more than 2 in wire A."
+        },
+        {
+          "id": "1.9",
+          "type": "say",
+          "newTerm": "Coulomb",
+          "text": "Charge is counted in a unit called the coulomb, written C."
+        },
+        {
+          "id": "1.10",
+          "type": "say",
+          "newTerm": "Ampere",
+          "text": "Current is measured in a unit called the ampere, written A, or amp for short. One ampere means one coulomb of charge passing a point each second."
+        },
+        {
+          "id": "1.11",
+          "type": "ask",
+          "kind": "number",
+          "question": "A wire carries 3 coulombs of charge past a point every second. What is the current, in amperes?",
+          "answer": {
+            "value": 3,
+            "unit": "A",
+            "tolerance": 0.01
+          },
+          "wrongValues": [
+            {
+              "value": 0.333,
+              "branch": "upside-down"
+            },
+            {
+              "value": 1,
+              "branch": "other"
+            }
+          ],
+          "right": "Yes: 3 A. 3 coulombs each second is 3 amperes.",
+          "wrong": {
+            "upside-down": "Not quite: it's 3 A. It looks as if you divided 1 by 3. Here 3 coulombs pass each second, and each coulomb a second makes one ampere.",
+            "other": "Not quite: it's 3 A. 3 coulombs pass each second, and each coulomb a second makes one ampere."
+          },
+          "idk": [
+            {
+              "hint": "Start with the charge: how many coulombs pass the point each second in this wire?"
+            },
+            {
+              "ask": {
+                "kind": "tap",
+                "question": "One ampere is one coulomb each second. How many amperes is 3 coulombs each second?",
+                "options": [
+                  {
+                    "text": "3 A",
+                    "branch": "right"
+                  },
+                  {
+                    "text": "1 A",
+                    "branch": "other"
+                  }
+                ],
+                "right": "Right.",
+                "wrong": {
+                  "other": "Not quite."
+                }
+              }
+            }
+          ],
+          "answerWhy": "The current is 3 A: 3 coulombs pass each second, and each coulomb a second makes one ampere."
+        },
+        {
+          "id": "1.12",
+          "type": "say",
+          "newTerm": "Ammeter",
+          "text": "Current is measured with an ammeter, a meter that shows the current in amperes."
+        },
+        {
+          "id": "1.13",
+          "type": "widget",
+          "kpWidget": 0,
+          "predicts": [
+            "cv-ammeter",
+            "cv-same-current"
+          ],
+          "controls": [
+            "sw"
+          ],
+          "options": {
+            "twoAmmeters": true
+          },
+          "overrides": {
+            "cv-ammeter": {
+              "tryShort": "Look where the two ammeters sit in the circuit below.",
+              "reveal": "The answer: in the loop.",
+              "afterTest": "Both ammeters are joined into the loop itself.",
+              "explain": {
+                "promptShort": "In one line: why do you think an ammeter has to be joined into the loop?",
+                "points": [
+                  "the charge has to move through the ammeter",
+                  "so it can measure the current"
+                ]
+              }
+            },
+            "cv-same-current": {
+              "question": "The circuit has two ammeters in the same loop, one on each side of the lamp. How do their readings compare?",
+              "options": [
+                {
+                  "text": "Both read the same",
+                  "short": "Both read the same"
+                },
+                {
+                  "text": "One reads less, because the lamp uses some current up",
+                  "short": "One reads less, as the lamp uses some up",
+                  "mis": "M2"
+                },
+                {
+                  "text": "The one nearer the cell reads more",
+                  "short": "The one nearer the cell reads more",
+                  "mis": "M4"
+                }
+              ],
+              "correct": 0,
+              "needs": [
+                "sw"
+              ],
+              "tryShort": "Read both ammeters. Then open the switch and read them again.",
+              "reveal": "Both read the same.",
+              "afterTest": "With the switch closed, both ammeters showed the same reading. With it open, both showed 0 A.",
+              "explain": {
+                "promptShort": "In one line: why do you think both ammeters read the same?",
+                "points": [
+                  "charge is not used up in the lamp",
+                  "the same current goes all the way round"
+                ]
+              }
+            }
+          },
+          "text": "Predict first: two questions in the box below, one at a time. Then a circuit opens so you can check each answer. Tap Next when you are done.",
+          "labels": [
+            "cell",
+            "switch",
+            "lamp",
+            "ammeter",
+            "current"
+          ]
+        },
+        {
+          "id": "1.14",
+          "type": "say",
+          "text": "In a single loop the current is the same at every point, because charge is not used up on the way round.",
+          "picture": "p2-cv-ammeter"
+        },
+        {
+          "id": "1.15",
+          "type": "say",
+          "newTerm": "Charge flow",
+          "text": "The total amount of charge that passes a point is called the charge flow. Its symbol is Q, and it is measured in coulombs. It depends on two things: the current, and how long the current lasts."
+        },
+        {
+          "id": "1.16",
+          "type": "equation",
+          "eq": "Q=It",
+          "text": "The equation is Q = I t: charge flow = current × time. Q is the charge flow in coulombs (C), I is the current in amperes (A) and t is the time in seconds (s). Writing I t means I multiplied by t."
+        },
+        {
+          "id": "1.17",
+          "type": "worked",
+          "example": 0,
+          "text": "Here is a worked example. Tap \"Show the first step\" under it to see how it is done, one step at a time."
+        },
+        {
+          "id": "1.18",
+          "type": "practice",
+          "eq": "Q=It",
+          "find": "Q",
+          "plain": true
+        },
+        {
+          "id": "1.19",
+          "type": "own",
+          "prompt": "In one line, in your own words: what is an electric current?",
+          "points": [
+            "a flow of charge",
+            "how much charge passes a point each second"
+          ],
+          "idk": "No problem. A good line would be: a current is a flow of charge, and its size is how much charge passes a point each second."
+        },
+        {
+          "id": "1.20",
+          "type": "ask",
+          "kind": "tap",
+          "mixed": true,
+          "question": "A torch is switched on. Where in its single loop is the current biggest?",
+          "options": [
+            {
+              "text": "It is the same everywhere in the loop",
+              "branch": "right"
+            },
+            {
+              "text": "Next to the cell",
+              "branch": "M4"
+            },
+            {
+              "text": "Just before the lamp",
+              "branch": "M2"
+            }
+          ],
+          "right": "Yes. In a single loop the current is the same at every point: no part of the loop has more.",
+          "wrong": {
+            "M4": "Not quite: it is the same everywhere. Being nearer the cell makes no difference in a single loop.",
+            "M2": "Not quite: it is the same everywhere. The lamp does not use current up, so there is no more before it than after it.",
+            "other": "Not quite: it is the same everywhere in a single loop."
+          },
+          "idk": [
+            {
+              "hint": "Think back to the two ammeters in the loop. Where in the loop is the current biggest?"
+            },
+            {
+              "ask": {
+                "kind": "tap",
+                "question": "Did the two ammeters, on each side of the lamp, show the same reading?",
+                "options": [
+                  {
+                    "text": "Yes",
+                    "branch": "right"
+                  },
+                  {
+                    "text": "No",
+                    "branch": "other"
+                  }
+                ],
+                "right": "Right.",
+                "wrong": {
+                  "other": "Not quite."
+                }
+              }
+            }
+          ],
+          "answerWhy": "The current is the same everywhere in the loop. Charge is not used up on the way round, so no point has more current than another."
+        }
+      ]
+    },
+    {
+      "kp": 1,
+      "heading": "Potential difference and resistance — push and opposition",
+      "steps": [
+        {
+          "id": "2.1",
+          "type": "say",
+          "text": "Next: what decides how big a current is. Connect a lamp to one cell and it glows dimly."
+        },
+        {
+          "id": "2.2",
+          "type": "widget",
+          "kpWidget": 1,
+          "predicts": [
+            "cv-add-cell"
+          ],
+          "controls": [
+            "add",
+            "remove"
+          ],
+          "options": {
+            "resistor": false,
+            "voltmeter": false,
+            "side": false,
+            "hidePd": true
+          },
+          "overrides": {
+            "cv-add-cell": {
+              "tryShort": "Tap Add a cell and watch the ammeter and the lamp.",
+              "afterTest": "With two cells, the ammeter reading went up and the lamp got brighter.",
+              "explain": {
+                "promptShort": "In one line: why do you think a second cell changed the current?",
+                "points": [
+                  "two cells push the charge harder",
+                  "a harder push drives a bigger current"
+                ]
+              },
+              "reveal": "Both go up: the ammeter reading rises and the lamp gets brighter."
+            }
+          },
+          "text": "Predict first: answer the question in the box below. Then add a cell to test your answer. Tap Next when you are done.",
+          "labels": [
+            "cell",
+            "lamp",
+            "ammeter"
+          ]
+        },
+        {
+          "id": "2.3",
+          "type": "say",
+          "newTerm": "Component",
+          "text": "Any part of a circuit, such as a lamp, is called a component."
+        },
+        {
+          "id": "2.4",
+          "type": "say",
+          "newTerm": "Potential difference",
+          "text": "The push that drives charge through a component is called the potential difference across it. Two cells give a bigger potential difference than one, and a bigger push drives a bigger current."
+        },
+        {
+          "id": "2.5",
+          "type": "say",
+          "newTerm": "Volt",
+          "text": "Potential difference is measured in a unit called the volt, written V."
+        },
+        {
+          "id": "2.6",
+          "type": "say",
+          "newTerm": "Voltmeter",
+          "text": "A voltmeter is the meter that measures potential difference. It is joined across a component, with one wire to each end of it. An ammeter goes into the loop; a voltmeter does not."
+        },
+        {
+          "id": "2.7",
+          "type": "say",
+          "newTerm": "Voltage",
+          "text": "Another name for potential difference is voltage."
+        },
+        {
+          "id": "2.8",
+          "type": "ask",
+          "kind": "tap",
+          "question": "You want to find out how hard the charge is being pushed through a lamp. Which meter do you use?",
+          "options": [
+            {
+              "text": "A voltmeter",
+              "branch": "right"
+            },
+            {
+              "text": "An ammeter",
+              "branch": "M8"
+            },
+            {
+              "text": "Either: they measure the same thing",
+              "branch": "M8"
+            }
+          ],
+          "right": "Yes. How hard the charge is pushed is the potential difference, and that is what a voltmeter measures.",
+          "wrong": {
+            "M8": "Not quite: a voltmeter. The push is the potential difference, which a voltmeter measures. An ammeter measures something different: the current, how much charge passes each second.",
+            "other": "Not quite: a voltmeter. The push is the potential difference, which a voltmeter measures."
+          },
+          "idk": [
+            {
+              "hint": "How hard the charge is pushed is the potential difference. Which meter do you use to measure that push?"
+            },
+            {
+              "ask": {
+                "kind": "tap",
+                "question": "Which meter do you use to measure potential difference?",
+                "options": [
+                  {
+                    "text": "A voltmeter",
+                    "branch": "right"
+                  },
+                  {
+                    "text": "An ammeter",
+                    "branch": "other"
+                  }
+                ],
+                "right": "Right.",
+                "wrong": {
+                  "other": "Not quite."
+                }
+              }
+            }
+          ],
+          "answerWhy": "A voltmeter. How hard the charge is pushed is the potential difference, and a voltmeter measures potential difference."
+        },
+        {
+          "id": "2.9",
+          "type": "say",
+          "newTerm": "Resistor",
+          "text": "Next, a new component: a resistor, a small part that the charge has to pass through when it is in the loop. In a circuit drawing, a resistor is a small rectangle."
+        },
+        {
+          "id": "2.10",
+          "type": "widget",
+          "kpWidget": 1,
+          "predicts": [
+            "cv-resistor"
+          ],
+          "controls": [
+            "res"
+          ],
+          "options": {
+            "resistor": true,
+            "voltmeter": false,
+            "side": false
+          },
+          "overrides": {
+            "cv-resistor": {
+              "tryShort": "Put the resistor into the loop and watch the ammeter and the lamp.",
+              "afterTest": "With the resistor in, the ammeter reading went down and the lamp got dimmer.",
+              "explain": {
+                "promptShort": "In one line: why do you think the lamp got dimmer?",
+                "points": [
+                  "the resistor let less current through",
+                  "less current makes the lamp dimmer"
+                ]
+              },
+              "reveal": "The current goes down and the lamp gets dimmer."
+            }
+          },
+          "text": "Predict first: answer the question in the box below. Then put the resistor into the loop to test your answer. Tap Next when you are done.",
+          "labels": [
+            "cell",
+            "lamp",
+            "ammeter",
+            "resistor"
+          ]
+        },
+        {
+          "id": "2.11",
+          "type": "say",
+          "newTerm": "Resistance",
+          "text": "A resistor limits the current: it makes it harder for charge to get through. How hard a component makes it for charge to get through is called its resistance."
+        },
+        {
+          "id": "2.12",
+          "type": "say",
+          "newTerm": "Ohm",
+          "text": "Resistance is measured in a unit called the ohm, written Ω."
+        },
+        {
+          "id": "2.12b",
+          "type": "say",
+          "picture": "p2-cv-resistor",
+          "text": "The picture below puts it all together: a loop with a resistor in it, an ammeter in the loop, and a voltmeter joined across the lamp."
+        },
+        {
+          "id": "2.13",
+          "type": "ask",
+          "kind": "tap",
+          "question": "Components X and Y each have 6 V across them. X has a bigger resistance than Y. Which one has the bigger current?",
+          "options": [
+            {
+              "text": "Y",
+              "branch": "right"
+            },
+            {
+              "text": "X",
+              "branch": "other"
+            },
+            {
+              "text": "Both the same: the cells give the same current",
+              "branch": "M5"
+            }
+          ],
+          "right": "Yes: Y. For the same potential difference, the bigger the resistance, the smaller the current.",
+          "wrong": {
+            "other": "Not quite: Y. Resistance makes it harder for charge to get through, so for the same push, the bigger resistance gets the smaller current.",
+            "M5": "Not quite: Y. The cells do not always give the same current: for the same potential difference, the bigger resistance gets the smaller current."
+          },
+          "idk": [
+            {
+              "hint": "The bigger current goes through the component that lets charge through more easily. Which one has the bigger current?"
+            },
+            {
+              "ask": {
+                "kind": "tap",
+                "question": "Which one lets charge through more easily: X, with the bigger resistance, or Y?",
+                "options": [
+                  {
+                    "text": "Y",
+                    "branch": "right"
+                  },
+                  {
+                    "text": "X",
+                    "branch": "other"
+                  }
+                ],
+                "right": "Right.",
+                "wrong": {
+                  "other": "Not quite."
+                }
+              }
+            }
+          ],
+          "answerWhy": "Y. For the same potential difference, the bigger the resistance, the smaller the current, so X with its bigger resistance has the smaller current."
+        },
+        {
+          "id": "2.14",
+          "type": "equation",
+          "eq": "V=IR",
+          "text": "Potential difference, current and resistance are linked by one equation: V = I R, potential difference = current × resistance. V is the potential difference in volts (V), I is the current in amperes (A) and R is the resistance in ohms (Ω). In the equation, the letter V means the potential difference, not the unit."
+        },
+        {
+          "id": "2.15",
+          "type": "say",
+          "text": "To find a resistance, divide both sides of V = I R by I. So R = V ÷ I: resistance equals potential difference divided by current."
+        },
+        {
+          "id": "2.16",
+          "type": "worked",
+          "example": 0,
+          "text": "Here is a worked example. Tap \"Show the first step\" under it to see how it is done, one step at a time."
+        },
+        {
+          "id": "2.17",
+          "type": "practice",
+          "eq": "V=IR",
+          "find": "V",
+          "plain": true
+        },
+        {
+          "id": "2.17a",
+          "type": "worked",
+          "question": "A lamp has a potential difference of 6 V across it and a current of 2 A through it. What is its resistance?",
+          "steps": [
+            "Start from V = I R.",
+            "You want R, so divide both sides by I: R = V ÷ I.",
+            "Put the numbers in: R = 6 ÷ 2 = 3",
+            "The resistance is 3 Ω."
+          ],
+          "answer": {
+            "value": 3,
+            "unit": "Ω"
+          },
+          "text": "Here is a worked example of finding a resistance. Tap \"Show the first step\" under it to see how it is done, one step at a time."
+        },
+        {
+          "id": "2.17b",
+          "type": "practice",
+          "eq": "V=IR",
+          "find": "R",
+          "plain": false
+        },
+        {
+          "id": "2.18",
+          "type": "own",
+          "prompt": "In one line: what do potential difference and resistance each do to the current?",
+          "points": [
+            "a bigger potential difference (push) gives a bigger current",
+            "a bigger resistance gives a smaller current"
+          ],
+          "idk": "No problem. A good line would be: a bigger potential difference pushes a bigger current, and a bigger resistance makes the current smaller."
+        },
+        {
+          "id": "2.19",
+          "type": "ask",
+          "kind": "tap",
+          "mixed": true,
+          "question": "Where do you put an ammeter to measure the current in a single loop?",
+          "options": [
+            {
+              "text": "Anywhere in the loop",
+              "branch": "right"
+            },
+            {
+              "text": "Only next to the cell",
+              "branch": "M4"
+            },
+            {
+              "text": "Across the cell, like a voltmeter",
+              "branch": "M10"
+            }
+          ],
+          "right": "Yes. In a single loop the current is the same at every point, so the ammeter can go anywhere in the loop.",
+          "wrong": {
+            "M4": "Not quite: anywhere in the loop. The current is the same at every point in a single loop, so the place does not matter.",
+            "M10": "Not quite: anywhere in the loop. An ammeter is joined into the loop itself; it is the voltmeter that goes across a component.",
+            "other": "Not quite: anywhere in the loop. The current is the same at every point of a single loop."
+          },
+          "idk": [
+            {
+              "hint": "Think about whether the current in a single loop is different in different places. Where can you put the ammeter to measure the current?"
+            },
+            {
+              "ask": {
+                "kind": "tap",
+                "question": "Does the current in a single loop change from one point to another?",
+                "options": [
+                  {
+                    "text": "No",
+                    "branch": "right"
+                  },
+                  {
+                    "text": "Yes",
+                    "branch": "other"
+                  }
+                ],
+                "right": "Right.",
+                "wrong": {
+                  "other": "Not quite."
+                }
+              }
+            }
+          ],
+          "answerWhy": "Anywhere in the loop. The current is the same at every point in a single loop, so it does not matter where the ammeter goes, as long as it is in the loop."
+        }
+      ]
+    }
+  ],
+  "end": {
+    "text": "That's as far as this version goes. The rest is on the slides for now.",
+    "buttons": [
+      "Go to the slides",
+      "Home"
+    ]
+  }
+}

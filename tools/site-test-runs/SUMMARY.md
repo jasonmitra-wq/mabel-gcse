@@ -80,3 +80,7 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-10-28 | p2-current-voltage | lesson | FAIL | 8 | 4 | false | tools/site-test-runs/2026-10-28/p2-current-voltage-4 | $2.3796
 - 2026-11-11 | p2-current-voltage | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-11/p2-current-voltage | $1.0675
 - 2026-11-11 | p2-current-voltage | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-11/p2-current-voltage-2 | $0.8710
+- 2026-11-11 | p2-current-voltage | lesson | FAIL | 1 | 0 | false | tools/site-test-runs/2026-11-11/p2-current-voltage-3 | $0.0099
+- 2026-11-11 | p2-current-voltage | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-11/p2-current-voltage-4 | $0.0292
+- 2026-11-12 | p2-current-voltage | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-12/p2-current-voltage | $0.0291
+- 2026-11-12 | p2-current-voltage | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-12/p2-current-voltage-2 | $0.0301

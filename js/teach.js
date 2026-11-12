@@ -213,6 +213,7 @@ const Teach = (() => {
       taught: _state.taught,   // TEACH_THEN_ASK (js/teach-core.js); absent when off
       flow: _state.flow,       // FLOW_FIX (js/teach-core.js); absent when off
       pilot: _state.pilot,     // PILOT_FIX (js/teach-core.js); absent when off
+      script: _state.script,   // SCRIPTED (js/teach-script.js); absent in a live-written lesson
     });
   }
 
@@ -232,6 +233,25 @@ const Teach = (() => {
   // TELL_FIX (e): each widget's element, by its transcript entry, kept across chat redraws.
   let _cardEls = new WeakMap();
 
+  // SCRIPTED (brief docs/briefs/2026-11-11-scripted-teaching.md): a lesson with a written script is played by
+  // js/teach-script.js; the AI only marks her typed answers, answers her own questions and sorts her messages.
+  let _scr = null, _scrLoad = null;
+  function _loadScript(subtopicId, subject) {
+    _scr = null;
+    if (typeof TeachScript === 'undefined' || !TeachScript.uses(subtopicId)) return (_scrLoad = null);
+    _scrLoad = fetch(`lessons/${subject}/${subtopicId}.script.json?v=${TeachScript.VERSION || 1}`).then(r => (r.ok ? r.json() : null)).then(script => {
+      if (!script || _subtopicId !== subtopicId) return;
+      _scr = TeachScript.create({
+        call: (sys, user, tokens) => AI.call(sys, user, tokens, TeachCore.tutorParams()),
+        classify: (sys, user, tokens) => AI.call(sys, user, tokens, TeachCore.classifierParams()),
+        practice: typeof Practice !== 'undefined' ? Practice : null,
+        lesson: _data, script,
+        misconceptions: typeof PilotMisconceptions !== 'undefined' ? PilotMisconceptions : [],
+      });
+    }).catch(e => { _logError('lesson script', e); _scr = null; });
+    return _scrLoad;
+  }
+
   function open(data, subtopicId, subtopicName, subject, opts = {}) {
     _cardEls     = new WeakMap();
     _data        = data;
@@ -245,6 +265,7 @@ const Teach = (() => {
 
     _points = _buildPoints(data);
     _core.bind(_data, _points, _state);
+    _loadScript(subtopicId, _subject);
     // PILOT_FIX: the glossary (words before use), the lessons she has opened,
     // and the recall questions from the lesson before (brief v3.1).
     if (_core.PILOT_FIX) _core.pilotContext({
@@ -277,6 +298,7 @@ const Teach = (() => {
         ...(Array.isArray(saved.taught) ? { taught: saved.taught } : {}),
         ...(saved.flow && typeof saved.flow === 'object' ? { flow: saved.flow } : {}),
         ...(saved.pilot && typeof saved.pilot === 'object' ? { pilot: saved.pilot } : {}),
+        ...(saved.script && typeof saved.script === 'object' ? { script: saved.script } : {}),
       };
       _core.bind(_data, _points, _state);
       _seedTermsShown();
@@ -819,6 +841,16 @@ const Teach = (() => {
   }
 
   async function _beginLesson() {
+    // SCRIPTED: the script's first step.
+    if (_scrLoad) await _scrLoad;
+    if (_scr) {
+      _state.script = {};
+      const r = _scr.start(_state.script);
+      r.entries.forEach(e => _pushEntry(e));
+      _renderShell();
+      _renderTranscript();
+      return;
+    }
     // PILOT_FIX: a lesson after one she finished opens with three recall questions.
     if (_core.PILOT_FIX) {
       const first = await _core._pilotFirst().catch(e => { _logError('recall questions', e); return null; });
@@ -878,6 +910,20 @@ const Teach = (() => {
 
   function jumpTo(i) {
     if (!_state || !_points[i] || _busy || _openingInFlight()) return;
+    // SCRIPTED: a key point the script covers starts from its first step; the others are on the slides for now.
+    if (_scr && _state.script) {
+      if (i < _scr.points) {
+        _state.script = { ..._state.script, kp: i, i: 0, pend: null, done: false };
+        _state.currentPointIndex = i;
+        _pushEntry({ role: 'note', text: _shortHeading(_points[i].heading) });
+        _scr.show(_state.script).forEach(e => _pushEntry(e));
+      } else {
+        _pushEntry({ role: 'assistant', text: `In this version, the AI lesson covers key points 1 to ${_scr.points}. "${_shortHeading(_points[i].heading)}" is on the slides for now.` });
+      }
+      _renderShell();
+      _renderTranscript();
+      return;
+    }
     // Already at the very start of that point — nothing to restart.
     const last = _state.transcript[_state.transcript.length - 1];
     if (i === _state.currentPointIndex && !_state.complete && last && last.opening && last.pt === i) return;
@@ -925,6 +971,27 @@ const Teach = (() => {
   }
 
   // ── Sending a message ────────────────────────────────────────
+  async function _sendScripted(text) {
+    _appendBubble('user', text, { pt: Math.min(_state.script.kp, _points.length - 1) });
+    if (typeof Record !== 'undefined') Record.chat(_subtopicId, _state.currentPointIndex, text);
+    document.querySelector('#teachThread .teach-choices')?.remove();
+    const thinkingEl = _showThinking();
+    let r = null;
+    try { r = await _scr.reply(_state.script, text); }
+    catch (e) { _logError('scripted lesson', e); }
+    thinkingEl?.remove();
+    _busy = false;
+    if (!r) { _appendBubble('assistant', "I can't answer that right now — try again in a moment."); _renderShell(); _renderTranscript(); return; }
+    if (r.kind === 'slides') { _save(); showSlides(); return; }
+    if (r.kind === 'home') { _save(); if (typeof showHome === 'function') showHome(); return; }
+    (r.ticks || []).forEach(k => { _state.coverage[k] = true; });
+    if (_state.script.kp < _points.length) _state.currentPointIndex = Math.min(_state.script.kp, _scr.points - 1);
+    r.entries.forEach(e => _pushEntry(e));
+    _renderShell();
+    _renderTranscript();
+    document.getElementById('teachInput')?.focus();
+  }
+
   async function send() {
     if (_busy || _openingInFlight()) return;
     const input = document.getElementById('teachInput');
@@ -935,6 +1002,8 @@ const Teach = (() => {
     input.value = '';
     _busy = true;
     _syncControls();
+    if (_scrLoad) await _scrLoad;
+    if (_scr && _state.script) return _sendScripted(text);
 
     _appendBubble('user', text, _state.complete ? undefined : { pt: _state.currentPointIndex });
     // Evidence layer: her record (kept in her browser; js/pilot/record.js). No change to the tutor.

@@ -28,7 +28,9 @@ const CHECKS = {
 const OPENER = /^\W*(it|its|it's|they|they're|them|their|this|that|these|those|so|he|she|which|to (?:find|do|work out|get) (?:it|this|that|them))\b/i;
 const LEAD = /^\W*(yes, that'?s right|that'?s right|partly right|not quite|that'?s fine|no problem|ok, moving on|ok, let'?s finish this one|here'?s the rest of this one|let me just tell you this bit|back to (?:the|my) question|fair enough|noted|ha, i get that|no worries)\W*$/i;
 // Messages made in code from the lesson file (questions, their marking, buttons' words): not the tutor's teaching.
-const CODE_MSG = /^\W*(quick question|quiz, question|before the practical|from the last lesson|back to (?:the|my) question|your turn|another one|worked example|here is a worked example|predict first|try it|tap your answer|tap one of the answers|good place for a break|one last thing|done: this lesson|that's the end of the quiz|see you next time|copy those into your notes|the equation is)\b/i;
+const CODE_MSG = /^\W*(quick question|quiz, question|before the practical|from the last lesson|back to (?:the|my) question|your turn|another one|worked example|here is a worked example|predict first|try it|tap your answer|tap one of the answers|good place for a break|one last thing|done: this lesson|that's the end of the quiz|see you next time|copy those into your notes|the equation is|that's as far as this version goes|now, the question again|have a go at the question|no worries\. back to the question|tap or type your answer first|type your answer as a number)\b/i;
+// Feedback on her answer: it may say the rule again (that is the correction), so it is not a repeated fact.
+const FEEDBACK = /^\W*(yes|not quite|right|that'?s fine|no problem|partly right|now back to the question)\b/i;
 const MC_FEEDBACK = /^\W*(yes, that'?s right[.:]|not quite: it'?s|yes, that step is right|yes, that'?s the way)/i;
 const STOCK = /\b(good prediction|great prediction|great question|good question|great job|good job|well done|nice one|brilliant|excellent|awesome|perfect|fantastic|amazing)\b/i;
 const REVISION = /\brevis(?:e|es|ed|ing|ion)\b(?!\s+cards?)/i;
@@ -96,7 +98,7 @@ function readSiteTest(lines) {
     }
     else if ((m = raw.match(/^S(\d+)(?: \(([^)]*)\))?: ([\s\S]*)$/))) msgs.push({ n: `S${m[1]}`, role: 'user', text: m[3], tapped: /tapped/.test(m[2] || ''), kp });
     else if ((m = raw.match(/^S(\d+) \(tapped "([^"]*)"\)/))) msgs.push({ n: `S${m[1]}`, role: 'user', text: m[2], tapped: true, kp });
-    else if ((m = raw.match(/^\[counter now "(\d+)\/\d+ covered" after T\d+\]/))) kp = Number(m[1]);
+    else if ((m = raw.match(/^\[counter now "(\d+)\/\d+ covered" after T\d+/))) kp = Number(m[1]);
     else if ((m = raw.match(/^\[widget under T(\d+): ([\s\S]*)\]$/))) msgs.push({ n: `W${m[1]}`, role: 'widget', text: m[2], kp });
     else if ((m = raw.match(/^\[widget text under T(\d+): ([\s\S]*)\]$/))) msgs.push({ n: `W${m[1]}`, role: 'widget', text: m[2], kp, full: true });
     else if ((m = raw.match(/^\s+\[T(\d+) told piece: (\w+)/))) { const t = [...msgs].reverse().find(x => x.n === `T${m[1]}`); if (t) t.told = m[2]; }
@@ -108,7 +110,7 @@ function readEntries(list) {
   let n = 0, kp = 0;
   return list.filter(e => e.role === 'assistant' || e.role === 'user').flatMap(e => {
     if (e.pt != null) kp = Math.max(kp, e.pt);   // a message with no key point (the quiz, an answer shown first) is on the latest one
-    const out = [{ n: `${e.role === 'user' ? 'S' : 'T'}${++n}`, role: e.role, text: e.text || '', kp, told: e.told,
+    const out = [{ n: `${e.role === 'user' ? 'S' : 'T'}${++n}`, role: e.role, text: e.text || '', kp, told: e.told, feedback: !!e.feedback, easier: !!e.easier,
                    cls: e.cls, tapped: e.tapped || (e.role === 'user' && /^(Next|Keep going|Make my revision cards|Show me another|Try another)$/.test(e.text || '')) }];
     if (e.role === 'assistant' && e.card && e.card.type === 'widget') out.push({ n: `W${n}`, role: 'widget', text: e.widgetText || '', kp, full: !!e.widgetText, card: e.card });
     if (e.role === 'assistant' && e.card && e.card.type === 'worked') out[0].worked = e.card;
@@ -131,6 +133,8 @@ function check(msgs, data) {
   msgs.forEach((m, i) => {
     if (m.role === 'user') { if (!m.tapped) said.push(m.text); asked = /^(question|both)$/.test(m.cls || '') || (!m.cls && /\?\s*$/.test(m.text)); return; }
     if (m.role === 'widget') {
+      // A summary line ("[widget under T4: …]") is passed over when the tester also logged what the widget showed.
+      if (!m.full && msgs.some(x => x.role === 'widget' && x.full && x.n === m.n)) return;
       // widget-term: a term on the widget (its labels, controls and predictions) not yet explained; a later point's term.
       const kp = data && data.keyPoints[m.kp] ? data.keyPoints[m.kp] : null;
       const w = kp && kp.widget;
@@ -198,14 +202,19 @@ function check(msgs, data) {
           && before.some(b => !/\?/.test(b) && RESULT.test(b) && _stems(b).filter(w => qs.has(w)).length >= 2)) add('answer-before-question', m.n, q);
     }
     // idk-harder: after her "don't know" to a question, a new question on something else
-    if (qi !== undefined && prevUser && IDK.test(prevUser.text) && lastQ && !code) {
+    // (only the first tutor message after her "don't know": what comes after that is the next step)
+    const firstAfter = prevUser && msgs.slice(msgs.indexOf(prevUser) + 1, i).every(x => x.role !== 'assistant');
+    if (qi !== undefined && prevUser && firstAfter && !m.easier && IDK.test(prevUser.text) && lastQ && !code) {
       const q = sents[qi], a = new Set(_stems(lastQ)), b = _stems(q);
-      const share = b.length ? b.filter(w => a.has(w)).length / b.length : 1;
-      if (share < 0.3) add('idk-harder', m.n, `after "${prevUser.text}" to "${lastQ}", a new question: "${q}"`);
+      // the same idea: most of the shorter question's words are in the other (a longer hint is not a new question)
+      const bs = [...new Set(b)], shared = bs.filter(w => a.has(w)).length, share = Math.min(a.size, bs.length) ? shared / Math.min(a.size, bs.length) : 1;
+      if (share < 0.5) add('idk-harder', m.n, `after "${prevUser.text}" to "${lastQ}", a new question: "${q}"`);
     }
     if (qi !== undefined) lastQ = sents[qi];
     // repeat-fact (teaching sentences only; an answer to her own question may say a fact again)
-    if (!code && !asked) {
+    // the first message after her reply to a question is feedback (a correction or a hint may say the rule again)
+    const replyTo = prevUser && firstAfter && (() => { const t = [...msgs.slice(0, msgs.indexOf(prevUser))].reverse().find(x => x.role === 'assistant'); return !!(t && /\?/.test(t.text)); })();
+    if (!code && !asked && !replyTo && !m.feedback && !FEEDBACK.test(plain)) {
       sents.forEach(s => {
         if (/\?/.test(s) || LEAD.test(s) || /^the answer:/i.test(s)) return;
         const st = factStems(s);

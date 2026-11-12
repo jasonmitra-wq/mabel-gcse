@@ -1,0 +1,215 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 16229,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 10350,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 7528
+    },
+    "iterations": [
+      {
+        "input_tokens": 16229,
+        "output_tokens": 10350,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.5438320000000001,
+  "seconds": 97,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"F5\",\"turn\":\"1.3\",\"quote\":\"A torch has a cell inside it, the part that pushes the charge round. The cell, the wires and the lamp, all joined up, make a circuit.\",\"what\":\"Two new terms, \\\"cell\\\" and \\\"circuit\\\", are introduced in one message.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"1.4\",\"quote\":\"Closing it joined up the loop, and the lamp lit.\\\" Then \\\"Now explain it: In one line: why did the lamp light only when the switch was closed?\",\"what\":\"The reveal gives the explanation (closing joined up the loop) just before she is asked to give it. She only has to copy the line above to tick \\\"closing the switch made a complete loop\\\".\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"1.4\",\"quote\":\"What happens: No.\",\"what\":\"This is the line she sees after a wrong prediction, and it does not read as a sentence. It should say plainly that the lamp does not light.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"1.20\",\"quote\":\"You open the switch in a single loop. What happens to the current?\",\"what\":\"This is almost the same question as 1.6, with almost the same three options, on a fact already shown in 1.4. A closing check should ask something she has not already answered in this form.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.6 don't know (again)\",\"quote\":\"Wrong or don't know: Not quite. Then: The movement of charge stops everywhere in the loop.\",\"what\":\"\\\"Not quite\\\" does not fit a girl who has just said she does not know; she gave no answer to be nearly right. The same reply is used on the smaller question at 1.8, 1.11, 1.20, 2.8, 2.13 and 2.19.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.11 don't know (first time)\",\"quote\":\"Start with the charge: how many coulombs pass the point each second in this wire? That number of coulombs a second is the current in amperes.\",\"what\":\"The hint asks a new question and then gives the whole method, while the box still wants the answer in amperes. The \\\"smaller question\\\" on the next don't know is the same question again, so it is not a smaller step.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.12\",\"quote\":\"Current is measured with an ammeter, a meter that measures current.\",\"what\":\"The sentence says the same thing twice and tells her nothing about what an ammeter looks like or shows (a reading in amperes).\",\"severity\":\"minor\"},{\"fault\":\"F12\",\"turn\":\"1.13\",\"quote\":\"controls: Add a cell\",\"what\":\"The key point 1 circuit has an \\\"Add a cell\\\" control, which the checklist names as a control from a later key point. She sees the readings rise with a second cell and nothing explains why until key point 2.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"1.13 (1 of 2)\",\"quote\":\"With one cell or two, both ammeters showed the same reading.\\\" Then \\\"Now explain it: In one line: what did the two ammeters show?\",\"what\":\"The reveal states the answer and the next line asks her to write it. It is also a description, not an explanation: the reason (charge is not used up) is not asked for.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.13 (2 of 2)\",\"quote\":\"You want to measure the current through the lamp. How do you connect the ammeter?\",\"what\":\"The answer has already been given: the 1.12 picture is captioned \\\"The same loop with an ammeter in it\\\" and question 1 says \\\"two ammeters in the same loop\\\". It is not a prediction.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"1.13 (2 of 2)\",\"quote\":\"Both ammeters are joined into the loop itself, so the charge moves through them.\\\" Then \\\"Now explain it: In one line: where are the ammeters joined in?\",\"what\":\"Both tick points (\\\"in the loop\\\", \\\"so the charge moves through them\\\") are word for word in the reveal just above. There is also no control to use: the explain step comes \\\"straight away\\\" after she only looks.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"1.13 (2 of 2)\",\"quote\":\"What happens: In the loop.\",\"what\":\"The reply does not fit the question. Nothing \\\"happens\\\"; she was asked how to connect the ammeter.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.2\",\"quote\":\"You add a second cell. What happens to the ammeter reading and to the lamp?\",\"what\":\"She already tapped \\\"Add a cell\\\" in 1.13 and read the ammeters with two cells, so she has seen the answer. This is no longer a prediction.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"2.2\",\"quote\":\"With two cells, the ammeter reading went up and the lamp got brighter.\\\" Then \\\"Now explain it: In one line: what did the second cell change?\",\"what\":\"The reveal gives both tick points (\\\"a bigger current\\\", \\\"a brighter lamp\\\") just before she is asked for them.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.6\",\"quote\":\"not into the loop like an ammeter\",\"what\":\"This can be read as saying an ammeter is not joined into the loop. It should say \\\"not into the loop, as an ammeter is\\\".\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.9\",\"quote\":\"a resistor, a small part you can add to the loop\",\"what\":\"This tells her nothing about what a resistor is, so the prediction in 2.10 is a guess from the name alone.\",\"severity\":\"minor\"},{\"fault\":\"F12\",\"turn\":\"2.10\",\"quote\":\"With the resistor in, the ammeter reading went down and the lamp got dimmer.\\\" Then \\\"Now explain it: In one line: what did the resistor do to the current?\",\"what\":\"The reveal states both tick points (\\\"the current went down\\\", \\\"so the lamp got dimmer\\\") just before the line asks for them. It again asks for a description, not a reason.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.11\",\"quote\":\"The same loop with a resistor added, and a voltmeter connected across the lamp.\",\"what\":\"The picture of a voltmeter across the lamp comes five steps after 2.6, where \\\"joined across\\\" was taught in words only. It is attached to a message about resistance, and it shows a switch that the circuit she has just used did not have.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.14\",\"quote\":\"V is the potential difference in volts (V)\",\"what\":\"The letter V is used for both the quantity and the unit with no word to say so. A first-time learner will confuse the two.\",\"severity\":\"minor\"},{\"fault\":\"P13\",\"turn\":\"2.17b\",\"quote\":\"A component has a potential difference of 1 V across it and a current of 0.5 A through it. What is its resistance, in ohms (Ω)?\",\"what\":\"There is no worked example of R = V ÷ I; the only worked example multiplies, though the script calls this \\\"the same kind as the worked example\\\". Her first try at rearranging also means dividing by 0.5, which many 15-year-olds get wrong. Finding a current is never shown at all.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"The end\",\"quote\":\"That's as far as this version goes. The rest is on the slides for now.\",\"what\":\"The lesson stops with developer wording, no summary of what she has learned and no closing questions, and sends her to slides.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"F12\",\"instances\":8},{\"fault\":\"F8\",\"instances\":2},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"F1\",\"instances\":1},{\"fault\":\"P13\",\"instances\":1},{\"fault\":\"new\",\"instances\":8}],\"overall\":\"The physics is sound and the order is sensible, so I would let her use it, but not quite as it is. The main weakness is the predict-first boxes: in every one the reveal states the answer and the next line asks her to write it, so she copies rather than explains. \\\"Add a cell\\\" in key point 1 also spoils the key point 2 prediction, and the ammeter-connection question is answered by the picture before it. I would fix those, add a worked example for R = V ÷ I with easier numbers, show the voltmeter picture at 2.6, and give the lesson a proper ending.\"}",
+  "findings": [
+    {
+      "fault": "F5",
+      "turn": "1.3",
+      "quote": "A torch has a cell inside it, the part that pushes the charge round. The cell, the wires and the lamp, all joined up, make a circuit.",
+      "what": "Two new terms, \"cell\" and \"circuit\", are introduced in one message.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.4",
+      "quote": "Closing it joined up the loop, and the lamp lit.\" Then \"Now explain it: In one line: why did the lamp light only when the switch was closed?",
+      "what": "The reveal gives the explanation (closing joined up the loop) just before she is asked to give it. She only has to copy the line above to tick \"closing the switch made a complete loop\".",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.4",
+      "quote": "What happens: No.",
+      "what": "This is the line she sees after a wrong prediction, and it does not read as a sentence. It should say plainly that the lamp does not light.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.20",
+      "quote": "You open the switch in a single loop. What happens to the current?",
+      "what": "This is almost the same question as 1.6, with almost the same three options, on a fact already shown in 1.4. A closing check should ask something she has not already answered in this form.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.6 don't know (again)",
+      "quote": "Wrong or don't know: Not quite. Then: The movement of charge stops everywhere in the loop.",
+      "what": "\"Not quite\" does not fit a girl who has just said she does not know; she gave no answer to be nearly right. The same reply is used on the smaller question at 1.8, 1.11, 1.20, 2.8, 2.13 and 2.19.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.11 don't know (first time)",
+      "quote": "Start with the charge: how many coulombs pass the point each second in this wire? That number of coulombs a second is the current in amperes.",
+      "what": "The hint asks a new question and then gives the whole method, while the box still wants the answer in amperes. The \"smaller question\" on the next don't know is the same question again, so it is not a smaller step.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.12",
+      "quote": "Current is measured with an ammeter, a meter that measures current.",
+      "what": "The sentence says the same thing twice and tells her nothing about what an ammeter looks like or shows (a reading in amperes).",
+      "severity": "minor"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.13",
+      "quote": "controls: Add a cell",
+      "what": "The key point 1 circuit has an \"Add a cell\" control, which the checklist names as a control from a later key point. She sees the readings rise with a second cell and nothing explains why until key point 2.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.13 (1 of 2)",
+      "quote": "With one cell or two, both ammeters showed the same reading.\" Then \"Now explain it: In one line: what did the two ammeters show?",
+      "what": "The reveal states the answer and the next line asks her to write it. It is also a description, not an explanation: the reason (charge is not used up) is not asked for.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.13 (2 of 2)",
+      "quote": "You want to measure the current through the lamp. How do you connect the ammeter?",
+      "what": "The answer has already been given: the 1.12 picture is captioned \"The same loop with an ammeter in it\" and question 1 says \"two ammeters in the same loop\". It is not a prediction.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.13 (2 of 2)",
+      "quote": "Both ammeters are joined into the loop itself, so the charge moves through them.\" Then \"Now explain it: In one line: where are the ammeters joined in?",
+      "what": "Both tick points (\"in the loop\", \"so the charge moves through them\") are word for word in the reveal just above. There is also no control to use: the explain step comes \"straight away\" after she only looks.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.13 (2 of 2)",
+      "quote": "What happens: In the loop.",
+      "what": "The reply does not fit the question. Nothing \"happens\"; she was asked how to connect the ammeter.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.2",
+      "quote": "You add a second cell. What happens to the ammeter reading and to the lamp?",
+      "what": "She already tapped \"Add a cell\" in 1.13 and read the ammeters with two cells, so she has seen the answer. This is no longer a prediction.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "2.2",
+      "quote": "With two cells, the ammeter reading went up and the lamp got brighter.\" Then \"Now explain it: In one line: what did the second cell change?",
+      "what": "The reveal gives both tick points (\"a bigger current\", \"a brighter lamp\") just before she is asked for them.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.6",
+      "quote": "not into the loop like an ammeter",
+      "what": "This can be read as saying an ammeter is not joined into the loop. It should say \"not into the loop, as an ammeter is\".",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.9",
+      "quote": "a resistor, a small part you can add to the loop",
+      "what": "This tells her nothing about what a resistor is, so the prediction in 2.10 is a guess from the name alone.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F12",
+      "turn": "2.10",
+      "quote": "With the resistor in, the ammeter reading went down and the lamp got dimmer.\" Then \"Now explain it: In one line: what did the resistor do to the current?",
+      "what": "The reveal states both tick points (\"the current went down\", \"so the lamp got dimmer\") just before the line asks for them. It again asks for a description, not a reason.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.11",
+      "quote": "The same loop with a resistor added, and a voltmeter connected across the lamp.",
+      "what": "The picture of a voltmeter across the lamp comes five steps after 2.6, where \"joined across\" was taught in words only. It is attached to a message about resistance, and it shows a switch that the circuit she has just used did not have.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.14",
+      "quote": "V is the potential difference in volts (V)",
+      "what": "The letter V is used for both the quantity and the unit with no word to say so. A first-time learner will confuse the two.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P13",
+      "turn": "2.17b",
+      "quote": "A component has a potential difference of 1 V across it and a current of 0.5 A through it. What is its resistance, in ohms (Ω)?",
+      "what": "There is no worked example of R = V ÷ I; the only worked example multiplies, though the script calls this \"the same kind as the worked example\". Her first try at rearranging also means dividing by 0.5, which many 15-year-olds get wrong. Finding a current is never shown at all.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "The end",
+      "quote": "That's as far as this version goes. The rest is on the slides for now.",
+      "what": "The lesson stops with developer wording, no summary of what she has learned and no closing questions, and sends her to slides.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "F12",
+      "instances": 8
+    },
+    {
+      "fault": "new",
+      "instances": 8
+    },
+    {
+      "fault": "F8",
+      "instances": 2
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "F1",
+      "instances": 1
+    },
+    {
+      "fault": "P13",
+      "instances": 1
+    }
+  ],
+  "overall": "The physics is sound and the order is sensible, so I would let her use it, but not quite as it is. The main weakness is the predict-first boxes: in every one the reveal states the answer and the next line asks her to write it, so she copies rather than explains. \"Add a cell\" in key point 1 also spoils the key point 2 prediction, and the ammeter-connection question is answered by the picture before it. I would fix those, add a worked example for R = V ÷ I with easier numbers, show the voltmeter picture at 2.6, and give the lesson a proper ending."
+}

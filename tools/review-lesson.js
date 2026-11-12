@@ -63,6 +63,20 @@ function pickShots(result, dir, max) {
 function buildBody(result, shots, lesson) {
   const faults = fs.readFileSync(path.join(ROOT, 'docs', 'FAULTS.md'), 'utf8');
   const kps = (lesson.keyPoints || []).map((k, i) => `Key point ${i + 1}: ${k.heading}\n${String(k.content || '').replace(/<[^>]+>/g, '')}`).join('\n\n');
+  if (result.layout) {
+    // --script: the whole written script, every branch laid out, before anyone uses it.
+    const system = [
+      `You are an experienced physics teacher in England. You are checking the script of an AI tutor lesson before a 15-year-old girl uses it. She is meeting this topic for the first time: she is not revising, and she knows only everyday life and what the lesson has told her so far.`,
+      `Every message she can see is written in the script; under each question you have what she sees for a right answer, for each wrong answer, and at each "don't know" level. Read it as she would meet it, along the main path and down every branch. Report EVERY instance of EVERY fault in the checklist (docs/FAULTS.md, given in full), each with its step id (for example "1.6" or "1.6 don't know (again)") and the exact quoted words, and also anything else you as her teacher would object to: wrong, muddled or imprecise physics; a step that would lose her; a question she could not answer from what she had been told; a question whose answer was given just before it; a reply that does not fit the answer it follows; wording a 15-year-old would not follow. One finding per instance.`,
+      `This is not a pass/fail on a short list. Be specific and fair: report only what is in the script, and quote it.`,
+    ].join('\n\n');
+    return { system, messages: [{ role: 'user', content: [
+      { type: 'text', text: `THE CHECKLIST (docs/FAULTS.md):\n\n${faults}` },
+      { type: 'text', text: `THE LESSON FILE'S KEY POINTS (what the lesson teaches; the script covers key points 1 and 2):\n\n${kps}` },
+      { type: 'text', text: `THE SCRIPT, LAID OUT AS SHE WOULD READ IT:\n\n${result.layout}` },
+      { type: 'text', text: `Now give your review: every finding (one per instance, with its FAULTS.md id or "new", and its step id as the turn), and your overall view.` },
+    ] }] };
+  }
   const system = [
     `You are an experienced physics teacher in England. You are checking an AI tutor lesson before a 15-year-old girl uses it. She is meeting this topic for the first time: she is not revising, and she knows only everyday life and what the lesson has told her so far.`,
     `Read the whole transcript and every screenshot, as she would meet them, in order. Report EVERY instance of EVERY fault in the checklist (docs/FAULTS.md, given in full), each with its turn number and the exact quoted words, and also anything else you as her teacher would object to: wrong or muddled physics, a step that would lose her, a question she could not answer from what she had been told, something on screen that is unreadable, misleading or out of step with the chat. Do not stop at the first instance of a fault, and do not summarise instances together: one finding per instance.`,
@@ -98,13 +112,23 @@ async function countTokens(body) {
 async function main() {
   const argv = process.argv.slice(2);
   const opt = (k, d) => { const i = argv.indexOf(k); return i === -1 ? d : argv[i + 1]; };
-  const dir = path.resolve(argv.find(a => !a.startsWith('--') && argv[argv.indexOf(a) - 1] !== '--max-usd' && argv[argv.indexOf(a) - 1] !== '--images') || '');
+  // --script <lessonId>: review the whole written script (every branch laid out by tools/script-layout.js), before any
+  // site test (brief docs/briefs/2026-11-11-scripted-teaching.md, step 5b). Saved in tools/script-reviews/<id>-<date>-<n>/.
+  const scriptId = opt('--script', null);
+  let dir = path.resolve(argv.find(a => !a.startsWith('--') && !['--max-usd', '--images', '--script', '--already', '--effort'].includes(argv[argv.indexOf(a) - 1])) || '');
   const run = argv.includes('--run');
   const cap = Number(opt('--max-usd', 1.5));
   let maxImages = Number(opt('--images', 36));
-  if (!fs.existsSync(path.join(dir, 'result.json'))) die('Usage: node tools/review-lesson.js <site-test run folder> [--run] [--max-usd 1.5] [--images 36]');
+  if (scriptId) {
+    const date = new Date().toISOString().slice(0, 10);
+    let k = 1; do { dir = path.join(ROOT, 'tools', 'script-reviews', `${scriptId}-${date}-${k++}`); } while (fs.existsSync(path.join(dir, 'review.json')));
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'result.json'), JSON.stringify({ id: scriptId, date, kind: 'script', screenshots: [], transcript: [] }, null, 2));
+  }
+  if (!fs.existsSync(path.join(dir, 'result.json'))) die('Usage: node tools/review-lesson.js <site-test run folder> | --script <lessonId>  [--run] [--max-usd 1.5] [--images 36]');
   if (!apiKey()) die('SPEC_CHECK_API_KEY is not set.');
   const result = JSON.parse(fs.readFileSync(path.join(dir, 'result.json'), 'utf8'));
+  if (scriptId) result.layout = require('./script-layout.js').layout(scriptId);
   const lessonFile = ['physics', 'biology', 'chemistry', 'geography'].map(s => path.join(ROOT, 'lessons', s, `${result.id.replace(/-\d+$/, '')}.json`)).find(f => fs.existsSync(f));
   const lesson = lessonFile ? JSON.parse(fs.readFileSync(lessonFile, 'utf8')) : { keyPoints: [] };
   await strongestModel();

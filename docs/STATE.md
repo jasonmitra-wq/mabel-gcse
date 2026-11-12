@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase A, A9: evidence pilot gate. AI lesson NOT ready (Jason's session 2026-11-11); slides ready. The AI lesson returns to "ready" only when a review (tools/review-lesson.js) finds no docs/FAULTS.md item AND Jason has tried key points 1 and 2 himself and says so (brief docs/briefs/2026-11-11-coverage-and-faults.md, step 6).
+Runbook position: Phase A, A9: evidence pilot gate. Scripted AI lesson (p2-current-voltage key points 1–2) waiting for Jason to read docs/review/p2-current-voltage-kp1-2.md; slides ready. No more key points until Jason has read it and said "Script: ok" or what to change (brief docs/briefs/2026-11-11-scripted-teaching.md, step 8).
 
 ## Runbook v3 switch (2026-10-19)
 
@@ -221,3 +221,5 @@ Not started on the pipeline. Already in place:
 | Extra willing-student run (2026-10-28, asked for by Jason) | site test 1 (p2-current-voltage, whole lesson, --persona willing) | 2.38 (2.3796) |
 | Small fixes (2026-10-28, brief 2026-10-28-small-fixes) | marking check --run --batch, 40 calls to claude-sonnet-5-5 | 0.08 (0.0772) |
 | Coverage and faults (2026-11-11, brief 2026-11-11-coverage-and-faults) | GET /v1/models 2 (free); count_tokens (free); site test 2 (p2-current-voltage, --persona mabel, laptop, key points 1–2, no judge); review 3 (claude-fable-5-2: run 1 twice, cut off; run 2 once) | 4.33 (site 1.0675 + 0.8710; review 1.0924 + 0.4133 + 0.8819) |
+
+| Scripted teaching (2026-11-11/12, brief 2026-11-11-scripted-teaching) | script review 2 (claude-fable-5-2, --script); site test 5 (--persona mabel, laptop, key points 1–2, no judge; one stopped by the tester, one stopped by Jason, three to the end); one live check of the her-question reply | 1.25 (review 0.5872 + 0.5438; site 0.0099 + 0.0292 + 0.0291 + 0.0301, plus the stopped run 2026-11-11/p2-current-voltage-5, no cost reported, about 0.02; live check under 0.01) |

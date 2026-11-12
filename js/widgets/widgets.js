@@ -54,7 +54,8 @@ const WidgetView = (() => {
     const cover = !!opts.cover, ctl = Array.isArray(opts.controls) ? opts.controls : [];
     const may = k => !cover || ctl.includes(k);
     // (with a voltmeter, only its reading: the cell's beside it puzzled the reviewer, 1.5 V and 0.56 V)
-    const pdShown = !cover || (!has('voltmeter') && (ctl.includes('add') || ctl.includes('slider')));
+    // (opts.hidePd: not before potential difference is taught; the scripted lesson's first cell prediction)
+    const pdShown = !cover || (!has('voltmeter') && !has('hidePd') && (ctl.includes('add') || ctl.includes('slider')));
     el.innerHTML = `<svg viewBox="0 0 360 210" aria-label="A circuit with cells, a lamp and an ammeter"></svg>
       <div class="wdg-row">
         ${may('add') ? `<button class="btn" data-a="add">Add a cell</button>` : ''}
@@ -90,7 +91,8 @@ const WidgetView = (() => {
       const two = has('twoAmmeters');
       const [ax, ay] = P.a1, [bx, by] = P.a2;
       // Readings sit inside the loop, beside the meter, clear of the wires.
-      const meters = _meter(ax, ay, 'A', two ? '1' : '') + `<text x="${ax < 180 ? ax + 24 : ax - 24}" y="${ay + 5}" text-anchor="${ax < 180 ? 'start' : 'end'}" font-size="13" fill="${TXT}">${f2(c.current)} A</text>` +
+      // Cover mode, opts.hideMeters: no ammeter at all (a prediction made before the ammeter is taught); the wire runs on.
+      const meters = cover && opts.hideMeters ? '' : _meter(ax, ay, 'A', two ? '1' : '') + `<text x="${ax < 180 ? ax + 24 : ax - 24}" y="${ay + 5}" text-anchor="${ax < 180 ? 'start' : 'end'}" font-size="13" fill="${TXT}">${f2(c.current)} A</text>` +
         (two ? _meter(bx, by, 'A', '2') + `<text x="${bx}" y="${by + (by > 100 ? -24 : 34)}" text-anchor="middle" font-size="13" fill="${TXT}">${f2(c.current)} A</text>` : '');
       const [rx, ry] = side === 'after' ? P.resAfter : P.resBefore;
       const res = inLoop ? `<rect x="${rx - 26}" y="${ry - 10}" width="52" height="20" fill="${BG}" stroke="${AMB}" stroke-width="3"/>${has('variable') ? `<line x1="${rx - 30}" y1="${ry + 16}" x2="${rx + 28}" y2="${ry - 16}" stroke="${AMB}" stroke-width="2.5"/><path d="M${rx + 28} ${ry - 16} l-9 1 l4 7 z" fill="${AMB}"/>` : ''}
@@ -107,7 +109,7 @@ const WidgetView = (() => {
       const e = has('energy') ? M.energyRun({ volts, resistor, seconds }) : null;
       read.innerHTML = [
         pdShown ? `<span>Potential difference of the ${supply ? 'supply' : cells > 1 ? 'cells' : 'cell'}: <b>${volts} V</b></span>` : '',
-        two ? `<span>Ammeter 1: <b>${f2(c.current)} A</b></span><span>Ammeter 2: <b>${f2(c.current)} A</b></span>` : `<span>Ammeter: <b>${f2(c.current)} A</b></span>`,
+        cover && opts.hideMeters ? (c.current > 0 ? '<span>The lamp is <b>on</b></span>' : '<span>The lamp is <b>off</b></span>') : two ? `<span>Ammeter 1: <b>${f2(c.current)} A</b></span><span>Ammeter 2: <b>${f2(c.current)} A</b></span>` : `<span>Ammeter: <b>${f2(c.current)} A</b></span>`,
         has('voltmeter') ? `<span>Voltmeter across the lamp: <b>${f2(c.lampVolts)} V</b></span>` : '',
         has('variable') ? `<span>Total resistance: <b>${fmtR(c.resistance)}</b></span>` : '',
         e ? `<span>Time: <b>${seconds} s</b></span><span>Charge that left the ${supply ? 'supply' : cells > 1 ? 'cells' : 'cell'}: <b>${f2(e.chargeOut)} C</b></span><span>Charge that came back to ${supply ? 'it' : cells > 1 ? 'them' : 'it'}: <b>${f2(e.chargeBack)} C</b></span><span>Energy transferred (E = Q V): <b>${f2(e.energy)} J</b></span>` : '',
@@ -305,7 +307,7 @@ const WidgetView = (() => {
             b.classList.remove('on');
             b.classList.add(right ? 'right' : 'wrong');
             if (!right) opts.children[order.indexOf(p.correct)].classList.add('right');
-            fb.innerHTML = `${pesc(fb.textContent)} ${right ? 'Your prediction was right.' : `What happens: ${pesc(label(p.options[p.correct]))}.`}${p.afterTest ? ` ${pesc(p.afterTest)}` : ''}`;
+            fb.innerHTML = `${pesc(fb.textContent)} ${right ? 'Your prediction was right.' : p.reveal ? pesc(p.reveal) : `What happens: ${pesc(label(p.options[p.correct]))}.`}${p.afterTest ? ` ${pesc(p.afterTest)}` : ''}`;
             explain(p);
           };
           fb.textContent = `Now test your prediction. ${p.tryShort || p.try || 'Try it below and see.'}`;

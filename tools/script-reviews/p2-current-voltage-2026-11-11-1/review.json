@@ -1,0 +1,303 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 16219,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11436,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 7722
+    },
+    "iterations": [
+      {
+        "input_tokens": 16219,
+        "output_tokens": 11436,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.587192,
+  "seconds": 146,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"new\",\"turn\":\"1.4\",\"quote\":\"A lamp is joined to a cell by one wire only, from one end of the cell to the lamp. Does the lamp light?\",\"what\":\"The prediction is about a lamp joined by one wire only, but the circuit she then tests is a full loop with a switch. The test does not show the thing she was asked to predict.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.4\",\"quote\":\"\\\"Your prediction was right.\\\" or \\\"What happens: No.\\\" and \\\"With the gap, the lamp stayed off. When you closed the switch, the loop was complete and the lamp lit.\\\"\",\"what\":\"She is told the answer is \\\"No, it does not light\\\" and in the same breath that the lamp lit when she closed the switch. The reply does not fit the question she answered.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.4\",\"quote\":\"a gap anywhere stops the current everywhere\",\"what\":\"The tick-list uses \\\"current\\\" three steps before 1.7 says what a current is.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.1\",\"quote\":\"In a circuit, a bulb is called a lamp.\",\"what\":\"\\\"Circuit\\\" is used here and in 1.4 before anything says what a circuit is; only \\\"closed circuit\\\" is defined, in 1.5.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.3\",\"quote\":\"People often call a cell a battery.\",\"what\":\"This is loose: a battery is properly two or more cells joined together. The lesson's own key point treats them as two things (\\\"a cell or a battery\\\").\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"1.6\",\"quote\":\"What happens to the movement of charge?\",\"what\":\"The answer was on the tick-list two steps earlier (\\\"a gap anywhere stops the current everywhere\\\"), and 1.5 has just said \\\"Charge moves round only when the circuit is closed\\\".\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"1.6 don't know (again)\",\"quote\":\"With a gap, the charge cannot move all the way round the loop. Then: The movement of charge stops everywhere in the loop. A loose wire leaves a gap, so there is no complete loop and the charge cannot move round at all.\",\"what\":\"The same fact is said twice in two bubbles one after the other. The same doubling happens on the don't-know branches of 1.8, 1.11, 1.20, 2.8, 2.13 and 2.19.\",\"severity\":\"minor\"},{\"fault\":\"F7\",\"turn\":\"1.8 don't know (again)\",\"quote\":\"Wire A has 2 units of charge passing each second; wire B has 5. Which wire has the bigger current?\",\"what\":\"The \\\"smaller question\\\" is the original question reworded with one button taken away. It is not an easier step.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.10\",\"quote\":\"Current is counted in a unit called the ampere\",\"what\":\"Current is measured, not counted. The next sentence and 1.12 both say \\\"measured\\\", so the wording is inconsistent.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"1.11\",\"quote\":\"One ampere is one coulomb each second, so 3 coulombs each second is 3 amperes.\",\"what\":\"\\\"One ampere is one coulomb each second\\\" is in 1.10, then again in the first don't-know, the smaller question, its reply and the final answer. On the don't-know path she reads it up to five times.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F7\",\"turn\":\"1.11 don't know (again)\",\"quote\":\"If 1 coulomb each second is 1 ampere, what current in amperes is 3 coulombs each second?\",\"what\":\"This is the same as the first don't-know hint, reworded. It is not a smaller step.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.11 she types 0.333\",\"quote\":\"Not quite: it's 3 A. One ampere is one coulomb each second, so 3 coulombs each second is 3 amperes.\",\"what\":\"She divided 1 by 3, and the reply is the same generic one as for any wrong answer. It does not tell her what she did wrong.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.11 right\",\"quote\":\"Each coulomb passing every second adds one ampere.\",\"what\":\"Muddled wording that a 15-year-old would not follow. Plainer: \\\"3 coulombs each second is 3 amperes\\\".\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.13 (1 of 2)\",\"quote\":\"Ammeter 1 is before the lamp and ammeter 2 is after it.\",\"what\":\"\\\"Before\\\" and \\\"after\\\" assume a direction of flow that has never been taught, and invite the very idea that current is used up on the way round. The option \\\"They read in opposite directions\\\" would also mean nothing to her.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.13 (1 of 2)\",\"quote\":\"In one line: what did the two ammeters show, and why?\",\"what\":\"She cannot answer \\\"why\\\" from what she has been told. That charge is not used up is first stated in 1.14, after this.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"1.13\",\"quote\":\"controls: none\",\"what\":\"The \\\"hands-on\\\" circuit has nothing to do: she only reads two meters and is given the result \\\"straight away\\\". It is a picture, not a test of her prediction.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.13 (2 of 2)\",\"quote\":\"The circuit has two ammeters in its loop, so you can check each answer.\",\"what\":\"The message says the ammeters are \\\"in its loop\\\" and she has just read them there. She is then asked how to connect an ammeter, with the right answer \\\"In the loop\\\".\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"1.14\",\"quote\":\"An ammeter goes in the loop, so the charge moves through it. In a single loop the current is the same at every point, because charge is not used up on the way round. So it does not matter where in the loop you put the ammeter.\",\"what\":\"All of this was said in the 1.13 box just before (\\\"Both ammeters sit in the loop, so the charge moves through them\\\", and the tick-list lines). She reads the same facts again straight away.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"1.14\",\"quote\":\"An ammeter goes in the loop, so the charge moves through it. In a single loop the current is the same at every point, because charge is not used up on the way round. So it does not matter where in the loop you put the ammeter.\",\"what\":\"Three ideas in one message: where the ammeter goes, current the same everywhere, and charge not used up.\",\"severity\":\"minor\"},{\"fault\":\"F6\",\"turn\":\"1.18 don't know / still doesn't know\",\"quote\":\"That's fine. Here is the first step: … That's fine. Here is how it goes.\",\"what\":\"The same stock opener twice running on the don't-know path. The first hint also does not say which number is I and which is t.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"2.6\",\"quote\":\"one lead on each side of it, not in the loop\",\"what\":\"\\\"Lead\\\" is not explained. She has no picture of a voltmeter until 2.9 and never gets to use one in a circuit.\",\"severity\":\"minor\"},{\"fault\":\"L3\",\"turn\":\"2.7\",\"quote\":\"Exam questions say potential difference, but either word gets the mark.\",\"what\":\"Talk of exams and marks to a girl meeting the idea for the first time reads as revision notes.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.9 / 2.10\",\"quote\":\"A resistor is a component put in a circuit to limit the current.\",\"what\":\"The next step asks her to predict what a resistor does to the current, straight after she has been told it limits the current. The prediction is given away.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P5\",\"turn\":\"2.9\",\"quote\":\"The same loop with a resistor added, and a voltmeter connected across the lamp.\",\"what\":\"Two new parts, the resistor and the voltmeter, appear in the picture at once. It is also not clear which loop \\\"the same loop\\\" is, since the last circuit she used had no switch.\",\"severity\":\"minor\"},{\"fault\":\"P16\",\"turn\":\"2.11\",\"quote\":\"A resistor has a big resistance.\",\"what\":\"This is not in the lesson and is not true in general: the worked example five steps later uses a 3 Ω resistor. It also suggests that lamps and other components have no resistance.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P13\",\"turn\":\"2.15\",\"quote\":\"To find I, divide V by R: I = V ÷ R. To find R, divide V by I: R = V ÷ I.\",\"what\":\"Two rearrangements are stated in one message with no reason given. Neither is ever shown in a worked example or practised; the example and the practice both only multiply.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F6\",\"turn\":\"2.17 don't know / still doesn't know\",\"quote\":\"That's fine. Here is the first step: … That's fine. Here is how it goes.\",\"what\":\"The same stock opener twice running again.\",\"severity\":\"minor\"},{\"fault\":\"P8\",\"turn\":\"2.19 don't know (again)\",\"quote\":\"In a single loop the current is the same at every point. Where in the loop can you put the ammeter to measure the current?\",\"what\":\"The question hands her the reason and then asks for the answer that follows directly from it.\",\"severity\":\"minor\"},{\"fault\":\"P15\",\"turn\":\"The end\",\"quote\":\"That's as far as this version goes. The rest is on the slides for now.\",\"what\":\"The lesson stops dead with no round-up or closing questions on potential difference and resistance. \\\"This version\\\" is developer talk, and she is sent to slides, which is where Mabel said she gets bored (M1).\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"new\",\"instances\":8},{\"fault\":\"F1\",\"instances\":3},{\"fault\":\"F3\",\"instances\":3},{\"fault\":\"F6\",\"instances\":2},{\"fault\":\"F7\",\"instances\":2},{\"fault\":\"F8\",\"instances\":3},{\"fault\":\"F12\",\"instances\":1},{\"fault\":\"P5\",\"instances\":1},{\"fault\":\"P6\",\"instances\":1},{\"fault\":\"P8\",\"instances\":1},{\"fault\":\"P13\",\"instances\":1},{\"fault\":\"P15\",\"instances\":1},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"L3\",\"instances\":1}],\"overall\":\"Not quite as it is. The order is sound and most questions are fair, but the first hands-on box (1.4) asks her to predict one thing and tests another, and \\\"A resistor has a big resistance\\\" (2.11) is wrong and contradicted by the 3 Ω example. Three predictions or questions are given away just before they are asked (1.6, 1.13 second box, 2.10), and several \\\"smaller questions\\\" after \\\"don't know\\\" are the same question again. I would fix those, practise the rearranged V = I R, and give it a proper ending before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "new",
+      "turn": "1.4",
+      "quote": "A lamp is joined to a cell by one wire only, from one end of the cell to the lamp. Does the lamp light?",
+      "what": "The prediction is about a lamp joined by one wire only, but the circuit she then tests is a full loop with a switch. The test does not show the thing she was asked to predict.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.4",
+      "quote": "\"Your prediction was right.\" or \"What happens: No.\" and \"With the gap, the lamp stayed off. When you closed the switch, the loop was complete and the lamp lit.\"",
+      "what": "She is told the answer is \"No, it does not light\" and in the same breath that the lamp lit when she closed the switch. The reply does not fit the question she answered.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.4",
+      "quote": "a gap anywhere stops the current everywhere",
+      "what": "The tick-list uses \"current\" three steps before 1.7 says what a current is.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1",
+      "quote": "In a circuit, a bulb is called a lamp.",
+      "what": "\"Circuit\" is used here and in 1.4 before anything says what a circuit is; only \"closed circuit\" is defined, in 1.5.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.3",
+      "quote": "People often call a cell a battery.",
+      "what": "This is loose: a battery is properly two or more cells joined together. The lesson's own key point treats them as two things (\"a cell or a battery\").",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.6",
+      "quote": "What happens to the movement of charge?",
+      "what": "The answer was on the tick-list two steps earlier (\"a gap anywhere stops the current everywhere\"), and 1.5 has just said \"Charge moves round only when the circuit is closed\".",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.6 don't know (again)",
+      "quote": "With a gap, the charge cannot move all the way round the loop. Then: The movement of charge stops everywhere in the loop. A loose wire leaves a gap, so there is no complete loop and the charge cannot move round at all.",
+      "what": "The same fact is said twice in two bubbles one after the other. The same doubling happens on the don't-know branches of 1.8, 1.11, 1.20, 2.8, 2.13 and 2.19.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F7",
+      "turn": "1.8 don't know (again)",
+      "quote": "Wire A has 2 units of charge passing each second; wire B has 5. Which wire has the bigger current?",
+      "what": "The \"smaller question\" is the original question reworded with one button taken away. It is not an easier step.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10",
+      "quote": "Current is counted in a unit called the ampere",
+      "what": "Current is measured, not counted. The next sentence and 1.12 both say \"measured\", so the wording is inconsistent.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.11",
+      "quote": "One ampere is one coulomb each second, so 3 coulombs each second is 3 amperes.",
+      "what": "\"One ampere is one coulomb each second\" is in 1.10, then again in the first don't-know, the smaller question, its reply and the final answer. On the don't-know path she reads it up to five times.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F7",
+      "turn": "1.11 don't know (again)",
+      "quote": "If 1 coulomb each second is 1 ampere, what current in amperes is 3 coulombs each second?",
+      "what": "This is the same as the first don't-know hint, reworded. It is not a smaller step.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.11 she types 0.333",
+      "quote": "Not quite: it's 3 A. One ampere is one coulomb each second, so 3 coulombs each second is 3 amperes.",
+      "what": "She divided 1 by 3, and the reply is the same generic one as for any wrong answer. It does not tell her what she did wrong.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.11 right",
+      "quote": "Each coulomb passing every second adds one ampere.",
+      "what": "Muddled wording that a 15-year-old would not follow. Plainer: \"3 coulombs each second is 3 amperes\".",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.13 (1 of 2)",
+      "quote": "Ammeter 1 is before the lamp and ammeter 2 is after it.",
+      "what": "\"Before\" and \"after\" assume a direction of flow that has never been taught, and invite the very idea that current is used up on the way round. The option \"They read in opposite directions\" would also mean nothing to her.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.13 (1 of 2)",
+      "quote": "In one line: what did the two ammeters show, and why?",
+      "what": "She cannot answer \"why\" from what she has been told. That charge is not used up is first stated in 1.14, after this.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.13",
+      "quote": "controls: none",
+      "what": "The \"hands-on\" circuit has nothing to do: she only reads two meters and is given the result \"straight away\". It is a picture, not a test of her prediction.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.13 (2 of 2)",
+      "quote": "The circuit has two ammeters in its loop, so you can check each answer.",
+      "what": "The message says the ammeters are \"in its loop\" and she has just read them there. She is then asked how to connect an ammeter, with the right answer \"In the loop\".",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.14",
+      "quote": "An ammeter goes in the loop, so the charge moves through it. In a single loop the current is the same at every point, because charge is not used up on the way round. So it does not matter where in the loop you put the ammeter.",
+      "what": "All of this was said in the 1.13 box just before (\"Both ammeters sit in the loop, so the charge moves through them\", and the tick-list lines). She reads the same facts again straight away.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "1.14",
+      "quote": "An ammeter goes in the loop, so the charge moves through it. In a single loop the current is the same at every point, because charge is not used up on the way round. So it does not matter where in the loop you put the ammeter.",
+      "what": "Three ideas in one message: where the ammeter goes, current the same everywhere, and charge not used up.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F6",
+      "turn": "1.18 don't know / still doesn't know",
+      "quote": "That's fine. Here is the first step: … That's fine. Here is how it goes.",
+      "what": "The same stock opener twice running on the don't-know path. The first hint also does not say which number is I and which is t.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.6",
+      "quote": "one lead on each side of it, not in the loop",
+      "what": "\"Lead\" is not explained. She has no picture of a voltmeter until 2.9 and never gets to use one in a circuit.",
+      "severity": "minor"
+    },
+    {
+      "fault": "L3",
+      "turn": "2.7",
+      "quote": "Exam questions say potential difference, but either word gets the mark.",
+      "what": "Talk of exams and marks to a girl meeting the idea for the first time reads as revision notes.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.9 / 2.10",
+      "quote": "A resistor is a component put in a circuit to limit the current.",
+      "what": "The next step asks her to predict what a resistor does to the current, straight after she has been told it limits the current. The prediction is given away.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P5",
+      "turn": "2.9",
+      "quote": "The same loop with a resistor added, and a voltmeter connected across the lamp.",
+      "what": "Two new parts, the resistor and the voltmeter, appear in the picture at once. It is also not clear which loop \"the same loop\" is, since the last circuit she used had no switch.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P16",
+      "turn": "2.11",
+      "quote": "A resistor has a big resistance.",
+      "what": "This is not in the lesson and is not true in general: the worked example five steps later uses a 3 Ω resistor. It also suggests that lamps and other components have no resistance.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P13",
+      "turn": "2.15",
+      "quote": "To find I, divide V by R: I = V ÷ R. To find R, divide V by I: R = V ÷ I.",
+      "what": "Two rearrangements are stated in one message with no reason given. Neither is ever shown in a worked example or practised; the example and the practice both only multiply.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F6",
+      "turn": "2.17 don't know / still doesn't know",
+      "quote": "That's fine. Here is the first step: … That's fine. Here is how it goes.",
+      "what": "The same stock opener twice running again.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P8",
+      "turn": "2.19 don't know (again)",
+      "quote": "In a single loop the current is the same at every point. Where in the loop can you put the ammeter to measure the current?",
+      "what": "The question hands her the reason and then asks for the answer that follows directly from it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P15",
+      "turn": "The end",
+      "quote": "That's as far as this version goes. The rest is on the slides for now.",
+      "what": "The lesson stops dead with no round-up or closing questions on potential difference and resistance. \"This version\" is developer talk, and she is sent to slides, which is where Mabel said she gets bored (M1).",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 8
+    },
+    {
+      "fault": "F3",
+      "instances": 3
+    },
+    {
+      "fault": "F8",
+      "instances": 3
+    },
+    {
+      "fault": "F1",
+      "instances": 3
+    },
+    {
+      "fault": "F7",
+      "instances": 2
+    },
+    {
+      "fault": "F6",
+      "instances": 2
+    },
+    {
+      "fault": "F12",
+      "instances": 1
+    },
+    {
+      "fault": "P6",
+      "instances": 1
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "P5",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    },
+    {
+      "fault": "P13",
+      "instances": 1
+    },
+    {
+      "fault": "P8",
+      "instances": 1
+    },
+    {
+      "fault": "P15",
+      "instances": 1
+    }
+  ],
+  "overall": "Not quite as it is. The order is sound and most questions are fair, but the first hands-on box (1.4) asks her to predict one thing and tests another, and \"A resistor has a big resistance\" (2.11) is wrong and contradicted by the 3 Ω example. Three predictions or questions are given away just before they are asked (1.6, 1.13 second box, 2.10), and several \"smaller questions\" after \"don't know\" are the same question again. I would fix those, practise the rearranged V = I R, and give it a proper ending before she uses it."
+}

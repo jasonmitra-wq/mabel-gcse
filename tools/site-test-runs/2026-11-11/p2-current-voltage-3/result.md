@@ -1,0 +1,120 @@
+# Site test: p2-current-voltage (lesson, 2026-11-11)
+
+**FAIL** · cost $0.0099 (7 tool calls, 7 calls from the site; tutor claude-sonnet-5-5 $0.0041)
+
+## Judge
+
+```json
+{
+  "broken": [
+    {
+      "what": "automatic check failed: tutor replies",
+      "step": "no reply after S22"
+    }
+  ],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": []
+}
+```
+
+## Transcript checks (tools/check-transcript.js)
+
+- W4 [widget-term, F12] the widget shows "Ammeter" before any message explained it
+
+## Transcript
+
+    Lesson p2-current-voltage (Physics › Electricity › Current, potential difference and resistance).
+    [screenshot 01-home-laptop.png] home
+    [screenshot 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-quick-check-offer-laptop.png] quick-check-offer
+    [the quick check is offered on its own screen] tapped "Not now: show the lessons"
+    [screenshot 05-lessons-p2-laptop.png] lessons-P2
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! Today you will find out what is going on inside the wires when you turn something on. Press the button on a torch and its bulb lights at once. In science, a bulb like this is called a lamp.
+    [screenshot 06-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (tapped "Next")
+    T1: Inside the metal wires are tiny particles that carry electric charge, the thing that moves through the wires when the torch is on. You cannot see the charge, but you can see what it does: it makes the lamp light.
+    [side picture after T1: none; newest in the chat: none]
+    S2 (tapped "Next")
+    T2: A torch has a cell inside it, the part that pushes the charge round.
+    S3 (tapped "Next")
+    T3: The cell, the wires and the lamp, all joined up, make a circuit.
+    [screenshot 07-exchange-3-laptop.png] exchange-3
+    S4 (tapped "Next")
+    T4: The circuit below has a switch, a part that can open a gap in the loop of wire. Predict first: answer the question in the box. Then try the switch to test your answer. Tap Next when you are done.
+    [side picture after T4: none; newest in the chat: widget]
+    [widget under T4: prediction "The switch in this circuit is open, so there is a gap in the loop. Does the lamp" tapped; then shown: yes, ammeters 0, controls Open the switch; "Now explain it" before a control was used: no, after: yes]
+    [widget text under T4: PREDICT FIRST The switch in this circuit is open, so there is a gap in the loop. Does the lamp light? Yes, brightly No Yes, but only dimly Now test your prediction. Look at the lamp while the switch is open. Then close the switch. No: with a gap in the loop, the lamp does not light. While the switch was open, the lamp stayed off. When you closed it, the lamp lit. lamp switch Open the switch The lamp is on NOW EXPLAIN IT In one line: why do you think closing the switch made the lamp light? Check my line cell switch lamp]
+    [check] OK: predict-first widget 1 works and matches its words — opened after the prediction true; ammeters 0 (words: -); controls match true; prediction first true
+    [screenshot 08-widget-4-laptop.png] widget-4
+    S5 (tapped "Next")
+    T5: A complete loop, out of the cell, through the lamp and back to the cell, is called a closed circuit.
+    [side picture after T5: "A closed circuit: a cell, a switch and a lamp in one loop."; newest in the chat: picture "A closed circuit: a cell, a switch and a lamp in one loop."]
+    S6 (tapped "Next")
+    T6: In a torch, the wire to the lamp comes loose at one end. What happens to the movement of charge?
+    [screenshot 09-exchange-6-laptop.png] exchange-6
+    S7 (ask): it stops everywhere right
+    T7: A flow of charge is called an electric current. The size of a current is how much charge passes a point in the wire each second.
+    [diagram shown in the conversation under T7: "A closed circuit: a cell, a switch and a lamp in one loop."]
+    [screenshot 10-diagram-7-laptop.png] diagram-7
+    [widget 1 in the chat, under the message "The circuit below has a switch, a part that can open a gap i"]
+    [check] OK: each widget appears once, under its own message — 1 widget(s)
+    [predict-first widget's prediction first has text after T7: "PREDICT FIRST"]
+    [screenshot 11-widget-7-laptop.png] widget-7
+      [T7 shown first: Yes. A gap anywhere breaks the loop, and the charge stops moving everywhere at once, not just near the gap.]
+    S8 (tapped "Next")
+    T8: In one second, 2 units of charge pass a point in wire A, and 5 units pass a point in wire B. Which wire has the bigger current?
+    S9 (idk): idk
+    T9: The bigger current is in the wire with more charge passing each second. Which wire has the bigger current?
+    [screenshot 12-exchange-9-laptop.png] exchange-9
+    S10 (try, tapped the button): wire b
+    T10: Charge is counted in a unit called the coulomb, written C.
+      [T10 shown first: Yes. More charge passes each second in wire B, so wire B has the bigger current.]
+    S11 (tapped "Next")
+    T11: Current is measured in a unit called the ampere, written A, or amp for short. One ampere means one coulomb of charge passing a point each second.
+    S12 (tapped "Next")
+    T12: A wire carries 3 coulombs of charge past a point every second. What is the current, in amperes?
+    [screenshot 13-exchange-12-laptop.png] exchange-12
+    S13 (try): 3 amps
+    T13: Current is measured with an ammeter, a meter that shows the current in amperes.
+      [T13 shown first: Yes: 3 A. 3 coulombs each second is 3 amperes.]
+    S14 (tapped "Next")
+    T14: Predict first: two questions in the box below, one at a time. Then a circuit opens so you can check each answer. Tap Next when you are done.
+    [side picture after T14: none; newest in the chat: widget]
+    [widget under T14: prediction "The circuit has two ammeters in the same loop, one on each side of the lamp. How" tapped; then shown: yes, ammeters 2, controls Close the switch; "Now explain it" before a control was used: no, after: yes]
+    [widget text under T14: PREDICT FIRST (1 OF 2) The circuit has two ammeters in the same loop, one on each side of the lamp. How do their readings compare? One reads less, as the lamp uses some up Both read the same The one nearer the cell reads more Now test your prediction. Read both ammeters. Then open the switch and read them again. Both read the same. With the switch closed, both ammeters showed the same reading. With it open, both showed 0 A. lamp A1 0.00 A A2 0.00 A switch Close the switch Ammeter 1: 0.00 A Ammeter 2: 0.00 A NOW EXPLAIN IT In one line: why do you think both ammeters read the same? Check my line cell switch lamp ammeter current]
+    [check] OK: predict-first widget 2 works and matches its words — opened after the prediction true; ammeters 2 (words: -); controls match true; prediction first true
+    [screenshot 14-widget-14-laptop.png] widget-14
+    S15 (tapped "Next")
+    T15: In a single loop the current is the same at every point, because charge is not used up on the way round.
+    [screenshot 15-exchange-15-laptop.png] exchange-15
+    [side picture after T15: "The same loop with an ammeter in it, measuring the current."; newest in the chat: picture "The same loop with an ammeter in it, measuring the current."]
+    S16 (tapped "Next")
+    T16: The total amount of charge that passes a point is called the charge flow. Its symbol is Q, and it is measured in coulombs. It depends on two things: the current, and how long the current lasts.
+    S17 (tapped "Next")
+    T17: The equation is Q = I t: charge flow = current × time. Q is the charge flow in coulombs (C), I is the current in amperes (A) and t is the time in seconds (s). Writing I t means I multiplied by t.
+    S18 (tapped "Next")
+    T18: Here is a worked example. Tap "Show the first step" under it to see how it is done, one step at a time.
+    [screenshot 16-exchange-18-laptop.png] exchange-18
+    [side picture after T18: none; newest in the chat: worked or question card]
+    [worked example under T18: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 17-worked-18-laptop.png] worked-18
+    S19 (tapped "Next")
+    T19: Your turn: A current of 0.4 A flows for 50 s. How much charge flows, in coulombs (C)?
+    S20 (idk): dont know
+    T20: That's fine. Here is how to start: Write the equation: Q = I t. In this question, I = 0.4 A and t = 50 s. Now put the numbers in. What do you get?
+    [diagram shown in the conversation under T20: "The same loop with an ammeter in it, measuring the current."]
+    [screenshot 18-diagram-20-laptop.png] diagram-20
+    [widget 2 in the chat, under the message "Predict first: two questions in the box below, one at a time"]
+    [check] OK: each widget appears once, under its own message — 2 widget(s)
+    S21 (what): wdym
+    T21: Back to the question: A current of 0.4 A flows for 50 s. How much charge flows, in coulombs (C)?
+    [screenshot 19-exchange-21-laptop.png] exchange-21
+      [T21 shown first: I meant: write down the rule for charge flow, which is Q = I × t. Then swap in the numbers from the question, so Q = 0. 4 × 50. Work that out and you have the charge, in coulombs.]
+    S22 (ask): whats the equation again
+    [no tutor reply within 120 s after S22]
+    [check] BROKEN: tutor replies — no reply after S22
+    [screenshot 20-end-laptop.png] end
+    [tutor-side time: 0.1 minutes over 21 exchanges]

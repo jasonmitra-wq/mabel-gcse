@@ -200,8 +200,10 @@ function estimate(a) {
     const tutor = turns * tutorShare * 1.5 * (2200 * tin + 220 * tout) + points * (2500 * tin + 300 * tout);
     const student = turns * studentShare * (1500 / 1e6 + 60 * 5 / 1e6);
     const shots = Math.min(MAX_JUDGE_IMAGES / 2, 6 + Math.ceil(turns / 3));
-    const judge = (shots * 1850 + turns * 2 * 120 + 6000) * 4 / 1e6 + 8000 * 20 / 1e6;
-    return { what: `lesson ${a.lesson}`, turns, shots, usd: tutor + student + judge };
+    const judge = a.noJudge ? 0 : (shots * 1850 + turns * 2 * 120 + 6000) * 4 / 1e6 + 8000 * 20 / 1e6;
+    // SCRIPTED (js/teach-script.js): the tutor model only marks, sorts and answers her questions: short calls.
+    const scripted = require('../js/teach-script.js').uses(a.lesson);
+    return { what: `lesson ${a.lesson}${scripted ? ' (scripted)' : ''}${a.noJudge ? ', no judge' : ''}`, turns, shots, usd: (scripted ? tutor * 0.15 : tutor) + student + judge };
   }
   if (a.pilot) {
     // Pilot test mode: scripted answers, no tutor and no student model; the judge only.
@@ -302,6 +304,7 @@ async function newPage(browser, base, run) {
         const before = spend.usd;
         addUsage(j.model, j.usage);
         if (j.model === TUTOR_MODEL) spend.tutorUsd += spend.usd - before;
+        spend.siteUsd = (spend.siteUsd || 0) + spend.usd - before;   // every call the site made (tutor and classifier)
       }
     } catch {}
   });
@@ -428,7 +431,7 @@ async function lessonMode(page, run, id) {
       while (p && !p.classList.contains('askme-a-bubble')) p = p.previousElementSibling;
       return { counter: hdr.trim(), widgetKey: el && p ? p.innerText.trim().slice(0, 160) : '' };
     });
-    if (seen.counter && seen.counter !== lastCounter) { if (lastCounter) run.say(`[counter now "${seen.counter}" after T${n}]`); lastCounter = seen.counter; }
+    if (seen.counter && seen.counter !== lastCounter) { if (lastCounter) run.say(`[counter now "${seen.counter}" after T${n}; AI calls from the site so far: ${spend.browserCalls}, $${(spend.siteUsd || 0).toFixed(4)}]`); lastCounter = seen.counter; }
     // COVER_FIX (h): the side-column picture against the newest picture, widget or worked example in the chat (F13).
     const side = await page.evaluate(() => {
       const capEl = document.querySelector('#teachDiagramSlot .teach-diagram-cap');
@@ -592,7 +595,7 @@ async function lessonMode(page, run, id) {
       });
       return { counter: hdr.trim(), pred: pred ? pred.innerText.trim().split('\n')[0] : '', under };
     });
-    if (seen.counter && seen.counter !== lastCounter) { if (lastCounter) run.say(`[counter now "${seen.counter}" after T${n}]`); lastCounter = seen.counter; }
+    if (seen.counter && seen.counter !== lastCounter) { if (lastCounter) run.say(`[counter now "${seen.counter}" after T${n}; AI calls from the site so far: ${spend.browserCalls}, $${(spend.siteUsd || 0).toFixed(4)}]`); lastCounter = seen.counter; }
     if (seen.under.length > widgetsInChat) {
       seen.under.slice(widgetsInChat).forEach(u => run.say(`[widget ${++widgetsInChat} in the chat, under the message "${u}"]`));
       const dup = seen.under.filter((u, k) => seen.under.indexOf(u) !== k);

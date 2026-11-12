@@ -45,6 +45,12 @@ on. Never ask Jason anything except the STOP cases in section 2.
   a widget is shown twice, or a key point is not ticked. (Added
   2026-10-28, brief docs/briefs/2026-10-28-small-fixes.md.)
 
+- Read docs/RETROSPECTIVE-ai-tutor.md before any work on the AI lesson.
+- A scripted AI lesson (lessons/<subject>/<id>.script.json, js/teach-script.js) is
+  checked with `node tools/check-script.js <id>` (free: schema, and every path
+  walked through the engine with tools/check-transcript.js on each; zero findings
+  required), then `node tools/review-lesson.js --script <id>` (paid), before any
+  site test. `node tools/script-layout.js <id>` writes the copy Jason reads.
 - docs/FAULTS.md lists every fault Jason (or Mabel) has reported, each
   with its check. A fault Jason finds that is already in FAULTS.md is a
   failure of the checks: fix the fault AND the check. A new kind of

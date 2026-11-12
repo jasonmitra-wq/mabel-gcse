@@ -275,5 +275,5 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## The end
 
-44. Tutor: That's as far as this version goes. The rest is on the slides for now.
+44. Tutor: You have done the first two parts of this lesson: what a current is, and what decides its size. The rest is on the slides for now.
    Buttons: "Go to the slides" / "Home"

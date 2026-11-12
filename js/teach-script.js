@@ -363,5 +363,5 @@
     return { start, reply, calls, show, shown, points: kps.length };
   }
 
-  return { create, uses, SCRIPTED, SCRIPTED_LESSONS, order, IDK, VERSION: 1 };
+  return { create, uses, SCRIPTED, SCRIPTED_LESSONS, order, IDK, VERSION: 2 };
 });

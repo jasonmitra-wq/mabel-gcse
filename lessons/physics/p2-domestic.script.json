@@ -1,0 +1,681 @@
+{
+ "lesson": "p2-domestic",
+ "version": 1,
+ "about": "The scripted AI lesson for p2-domestic (2026-11-15, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with three recall questions, two on p2-components and one on potential difference.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "ac vs dc",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about the electricity in your home: how the electricity from a wall socket differs from a battery's, what the three wires in a cable do, and why one of them is so dangerous to touch."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, three quick questions from the last lesson. What happens to the resistance of a thermistor as it gets hotter?",
+     "options": [
+      {
+       "text": "It goes down",
+       "branch": "right"
+      },
+      {
+       "text": "It goes up",
+       "branch": "up"
+      },
+      {
+       "text": "It stays the same",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: a thermistor's resistance goes down as it gets hotter.",
+     "wrong": {
+      "other": "Not quite. A thermistor's resistance goes down as it gets hotter.",
+      "up": "Not quite: a thermistor's resistance goes down as it gets hotter. A filament lamp is the one whose resistance goes up when it heats.",
+      "same": "Not quite: a thermistor is made so that its resistance changes with temperature. It goes down as the thermistor gets hotter."
+     },
+     "idk": [
+      {
+       "hint": "A thermistor lets charge through more easily when it is warm. Which button says that?"
+      }
+     ],
+     "answerWhy": "A thermistor's resistance goes down as it gets hotter."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: when the light on an LDR gets brighter, which is true about its resistance?",
+     "options": [
+      {
+       "text": "It goes down",
+       "branch": "right"
+      },
+      {
+       "text": "It goes up",
+       "branch": "up"
+      },
+      {
+       "text": "It stays the same",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: an LDR's resistance goes down as the light gets brighter.",
+     "wrong": {
+      "other": "Not quite. An LDR's resistance goes down as the light gets brighter.",
+      "up": "Not quite: an LDR's resistance goes down in brighter light, so more current flows.",
+      "same": "Not quite: an LDR is made so that its resistance changes with light. It goes down as the light gets brighter."
+     },
+     "idk": [
+      {
+       "hint": "An LDR lets charge through more easily in bright light. Which button says that?"
+      }
+     ],
+     "answerWhy": "An LDR's resistance goes down as the light gets brighter."
+    },
+    {
+     "id": "1.1c",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Third, one you will need today: what is potential difference?",
+     "options": [
+      {
+       "text": "The push that drives charge round a circuit",
+       "branch": "right"
+      },
+      {
+       "text": "How much charge flows each second",
+       "branch": "current"
+      },
+      {
+       "text": "How hard it is for charge to flow",
+       "branch": "hard"
+      }
+     ],
+     "right": "Yes: potential difference is the push that drives charge round a circuit, measured in volts (V).",
+     "wrong": {
+      "other": "Not quite. Potential difference is the push that drives charge round a circuit, measured in volts (V).",
+      "current": "Not quite: how much charge flows each second is the current. Potential difference is the push that drives charge round a circuit, measured in volts (V).",
+      "hard": "Not quite: how hard it is for charge to flow is the resistance. Potential difference is the push that drives charge round a circuit, measured in volts (V)."
+     },
+     "idk": [
+      {
+       "hint": "A cell gives the charge a push. Which button is about a push?"
+      }
+     ],
+     "answerWhy": "Potential difference is the push that drives charge round a circuit, measured in volts (V)."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now, this lesson. A cell or battery always pushes the same way round a circuit: one end of the cell is always the positive end, and the other is always the negative end."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "A potential difference whose direction never changes is called a direct potential difference. Cells, batteries and solar cells give a direct potential difference. It drives a current that flows one way only, a direct current, so people call it dc."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "Look at the top graph: potential difference against time, for a cell. The line stays on the same side of zero the whole time, because the push never changes direction.",
+     "picture": "p2-ac-dc"
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "The mains supply, from the sockets in your home, is different. Its push keeps reversing direction, many times every second. A potential difference that keeps reversing like that is called an alternating potential difference. The current it drives keeps reversing too, an alternating current, so people call it ac."
+    },
+    {
+     "id": "1.6",
+     "type": "say",
+     "text": "Look at the bottom graph. The line goes above zero, then below zero, then above again. Below zero means the push is the other way round. One trip up, down and back to the start is called one cycle."
+    },
+    {
+     "id": "1.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which of these gives a direct potential difference?",
+     "options": [
+      {
+       "text": "A torch battery",
+       "branch": "right"
+      },
+      {
+       "text": "A socket in your home",
+       "branch": "mains"
+      },
+      {
+       "text": "Both of them",
+       "branch": "both"
+      }
+     ],
+     "right": "Yes: a battery's push never changes direction, so it is direct. The mains from a socket is alternating.",
+     "wrong": {
+      "other": "Not quite. A torch battery gives a direct potential difference; the mains is alternating.",
+      "mains": "Not quite: the sockets in your home give an alternating potential difference, which keeps reversing. A torch battery gives a direct one: its push never changes direction.",
+      "both": "Not quite: only the torch battery. Its push never changes direction. The mains from a socket keeps reversing, so it is alternating."
+     },
+     "idk": [
+      {
+       "hint": "Direct means the push never changes direction. Which of these keeps pushing the same way round the circuit?"
+      }
+     ],
+     "answerWhy": "A battery's push never changes direction, so it is direct. The mains keeps reversing, so it is alternating."
+    },
+    {
+     "id": "1.9",
+     "type": "say",
+     "text": "How many complete cycles an alternating potential difference goes through each second is called its frequency."
+    },
+    {
+     "id": "1.9b",
+     "type": "say",
+     "text": "Frequency is measured in hertz (Hz). One hertz is one cycle each second, so 50 Hz means 50 complete cycles every second."
+    },
+    {
+     "id": "1.10",
+     "type": "say",
+     "text": "In the UK, the mains supply is ac with a frequency of 50 Hz."
+    },
+    {
+     "id": "1.10b",
+     "type": "say",
+     "text": "The UK mains has a potential difference of about 230 V. A torch cell gives about 1.5 V, so the mains push is over a hundred times bigger."
+    },
+    {
+     "id": "1.11",
+     "type": "ask",
+     "kind": "number",
+     "question": "In some countries the mains completes 120 cycles in 2 seconds. What is its frequency, in hertz?",
+     "answer": {
+      "value": 60,
+      "unit": "Hz",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 120,
+       "branch": "cycles"
+      },
+      {
+       "value": 240,
+       "branch": "times"
+      },
+      {
+       "value": 50,
+       "branch": "uk"
+      }
+     ],
+     "right": "Yes: 60 Hz. 120 cycles in 2 seconds is 60 cycles each second.",
+     "wrong": {
+      "other": "Not quite: 60 Hz. 120 cycles in 2 seconds is 120 ÷ 2 = 60 cycles each second.",
+      "cycles": "Not quite: 60 Hz. 120 cycles took 2 seconds, so in one second there are 120 ÷ 2 = 60 cycles: 60 Hz.",
+      "times": "Not quite: 60 Hz. Divide the cycles by the seconds: 120 ÷ 2 = 60 cycles each second.",
+      "uk": "Not quite: 60 Hz. 50 Hz is the UK mains. Here 120 cycles take 2 seconds: 120 ÷ 2 = 60 cycles each second."
+     },
+     "idk": [
+      {
+       "hint": "Frequency is the number of cycles in one second. If 120 cycles take 2 seconds, how many happen in 1 second?"
+      }
+     ],
+     "answerWhy": "120 cycles in 2 seconds is 120 ÷ 2 = 60 cycles each second: 60 Hz."
+    },
+    {
+     "id": "1.11b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Back to dc. Which is the best way to say what a direct potential difference is?",
+     "options": [
+      {
+       "text": "One whose direction never changes",
+       "branch": "right"
+      },
+      {
+       "text": "One that is always 230 V",
+       "branch": "mains"
+      },
+      {
+       "text": "One that pushes charge round faster",
+       "branch": "faster"
+      }
+     ],
+     "right": "Yes: a direct potential difference is one whose direction never changes. When you explain dc, describe the push like that.",
+     "wrong": {
+      "other": "Not quite. A direct potential difference is one whose direction never changes.",
+      "mains": "Not quite: about 230 V is the mains, which is alternating. A direct potential difference is one whose direction never changes.",
+      "faster": "Not quite: direct is not about how hard or fast. A direct potential difference is one whose direction never changes."
+     },
+     "idk": [
+      {
+       "hint": "Direct and alternating are about which way the push points. Which button is about direction?"
+      }
+     ],
+     "answerWhy": "A direct potential difference is one whose direction never changes."
+    },
+    {
+     "id": "1.12",
+     "type": "own",
+     "prompt": "In one line: what is the difference between a direct and an alternating potential difference?",
+     "points": [
+      "a direct potential difference never changes direction",
+      "an alternating potential difference keeps reversing direction"
+     ],
+     "idk": "No problem. A good line would be: a direct potential difference never changes direction, but an alternating one keeps reversing direction."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Three-core cable",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "Most appliances, like a kettle or a toaster, are joined to the mains by a cable with three wires inside it, each wrapped in plastic. A cable like that is called three-core cable."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "Look at the picture of a plug. The plastic around each wire, called insulation, has its own colour, so that anyone can tell the wires apart: brown, blue, and green-and-yellow stripes.",
+     "picture": "p2-plug"
+    },
+    {
+     "id": "2.2b",
+     "type": "say",
+     "text": "One more idea before the wires. Electricians call the ground earth, and it counts as 0 V: the zero that every other potential is measured from. Anything joined to the ground, a person standing on it included, is at about 0 V."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "The brown wire is called the live wire: the wire that carries the alternating potential difference from the supply. Between the live wire and earth there is about 230 V."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "The blue wire is called the neutral wire: the wire that completes the circuit, so that charge can flow back to the supply. The neutral wire is at, or close to, 0 V."
+    },
+    {
+     "id": "2.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which colour is the insulation on the live wire?",
+     "options": [
+      {
+       "text": "Brown",
+       "branch": "right"
+      },
+      {
+       "text": "Blue",
+       "branch": "blue"
+      },
+      {
+       "text": "Green and yellow stripes",
+       "branch": "earth"
+      }
+     ],
+     "right": "Yes: brown. The neutral wire is the blue one.",
+     "wrong": {
+      "other": "Not quite. The live wire is brown.",
+      "blue": "Not quite: blue is the neutral wire. The live wire is brown.",
+      "earth": "Not quite: green and yellow stripes is the third wire, which you meet next. The live wire is brown."
+     },
+     "idk": [
+      {
+       "hint": "The live wire carries the big push from the supply. It is not the blue one. Is it brown, or green and yellow?"
+      }
+     ],
+     "answerWhy": "The live wire is brown; the neutral wire is blue."
+    },
+    {
+     "id": "2.6",
+     "type": "say",
+     "text": "The green-and-yellow striped wire is called the earth wire: a safety wire that joins the metal case of an appliance to the ground. The earth wire is at 0 V."
+    },
+    {
+     "id": "2.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Predict: a kettle is working normally. Which of the three wires carries no current?",
+     "options": [
+      {
+       "text": "The earth wire",
+       "branch": "right"
+      },
+      {
+       "text": "The neutral wire",
+       "branch": "neutral"
+      },
+      {
+       "text": "The live wire",
+       "branch": "live"
+      }
+     ],
+     "right": "Yes: the earth wire. Normally the current goes round through the live and neutral wires, reversing back and forth with the ac. The earth wire only carries a current if something goes wrong, such as the live wire touching the metal case.",
+     "wrong": {
+      "other": "Not quite. The earth wire carries no current unless there is a fault.",
+      "neutral": "Not quite: the neutral wire completes the circuit, so the current flows back along it. The earth wire carries no current unless there is a fault.",
+      "live": "Not quite: the live wire brings the current from the supply. The earth wire carries no current unless there is a fault."
+     },
+     "idk": [
+      {
+       "hint": "The live and neutral wires make the loop that the current goes round. Which wire is not part of that loop?"
+      }
+     ],
+     "answerWhy": "Normally the current goes along the live wire and back along the neutral wire. The earth wire only carries a current if there is a fault."
+    },
+    {
+     "id": "2.8",
+     "type": "own",
+     "prompt": "In one line: what does each of the three wires do?",
+     "points": [
+      "the live wire carries the alternating potential difference from the supply",
+      "the neutral wire completes the circuit",
+      "the earth wire is a safety wire"
+     ],
+     "idk": "No problem. A good line would be: the live wire carries the alternating potential difference from the supply, the neutral wire completes the circuit, and the earth wire is a safety wire."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Earthing",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Now, why the earth wire matters. Suppose a loose live wire inside a metal kettle touches the kettle's metal case. Without an earth wire, the case is now at about 230 V, and anyone who touches it could get an electric shock."
+    },
+    {
+     "id": "3.3",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Predict: now the kettle's metal case is joined to the earth wire, and the same fault happens. Which is true?",
+     "options": [
+      {
+       "text": "Charge flows down the earth wire, not through you",
+       "branch": "right"
+      },
+      {
+       "text": "The earth wire stops any current flowing",
+       "branch": "stops"
+      },
+      {
+       "text": "The case stays at about 230 V",
+       "branch": "stays"
+      }
+     ],
+     "right": "Yes: the earth wire gives the charge an easy path to the ground, so the case does not stay at 230 V.",
+     "wrong": {
+      "other": "Not quite. Charge flows down the earth wire to the ground, not through you.",
+      "stops": "Not quite: the earth wire does not stop the current. It gives the charge an easy path to the ground, so the charge goes that way and not through you.",
+      "stays": "Not quite: the earth wire joins the case to the ground, at 0 V. Charge flows down the earth wire, so the case does not stay at about 230 V."
+     },
+     "idk": [
+      {
+       "hint": "The earth wire joins the metal case to the ground. Which button sends the charge that way?"
+      }
+     ],
+     "answerWhy": "The earth wire gives the charge an easy path to the ground, so the case does not stay at 230 V."
+    },
+    {
+     "id": "3.3b",
+     "type": "say",
+     "text": "Joining a metal case to the ground through the earth wire is called earthing. Earthing is why a metal kettle or toaster has a three-core cable."
+    },
+    {
+     "id": "3.4",
+     "type": "say",
+     "text": "Your body is joined to the ground through your feet, so you are at about 0 V too. If you touched a live wire, there would be about 230 V between your hand and your feet. That potential difference drives a current through your body: an electric shock."
+    },
+    {
+     "id": "3.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Predict: the switch for a ceiling lamp is in the live wire. The lamp is switched off. An electrician touches the live wire between the switch and the supply. Is that safe?",
+     "options": [
+      {
+       "text": "No: the live wire is still at about 230 V",
+       "branch": "right"
+      },
+      {
+       "text": "Yes: the switch is off, so the wire is at 0 V",
+       "branch": "switch"
+      },
+      {
+       "text": "Yes: no current flows when the lamp is off",
+       "branch": "current"
+      }
+     ],
+     "right": "Yes: not safe. The live wire is still joined to the supply, at about 230 V, and the electrician is at 0 V, so a current would flow through the electrician.",
+     "wrong": {
+      "other": "Not quite. It is not safe: the live wire is still at about 230 V, even with the switch off.",
+      "switch": "Not quite: not safe. The switch only makes a gap further along. The bit of live wire between the switch and the supply is still joined to the supply, at about 230 V, and the electrician is at 0 V.",
+      "current": "Not quite: not safe. No current flows through the lamp, but the live wire is still at about 230 V. Touching it joins it to the ground through the electrician, so a current flows through the electrician."
+     },
+     "idk": [
+      {
+       "hint": "Turning the switch off makes a gap, but the bit of live wire between the switch and the supply is still joined to the supply. Which button fits?"
+      }
+     ],
+     "answerWhy": "The live wire is still joined to the supply at about 230 V, and the electrician is at 0 V, so a current would flow through the electrician."
+    },
+    {
+     "id": "3.6",
+     "type": "say",
+     "text": "Any connection between the live wire and earth is dangerous. A person, a wet surface or a metal tool could make that connection, and a current would flow through it to the ground."
+    },
+    {
+     "id": "3.6b",
+     "type": "say",
+     "text": "Because of this danger, there are safety rules: keep electrical appliances away from water, do not plug too many things into one socket, and check cables for damage before you use them."
+    },
+    {
+     "id": "3.7",
+     "type": "own",
+     "prompt": "In one line: why is touching a live wire dangerous, even with the switch off?",
+     "points": [
+      "the live wire is still at about 230 V",
+      "you are at 0 V, so there is a big potential difference across you",
+      "a current flows through you"
+     ],
+     "idk": "No problem. A good line would be: the live wire is still at about 230 V and you are at 0 V, so the big potential difference drives a current through you."
+    },
+    {
+     "id": "3.8",
+     "type": "say",
+     "text": "Now for a short quiz on the whole lesson: six questions. Take your time."
+    },
+    {
+     "id": "3.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: What is the frequency of the UK mains supply?",
+     "options": [
+      {
+       "text": "50 Hz",
+       "branch": "right"
+      },
+      {
+       "text": "230 Hz",
+       "branch": "w1"
+      },
+      {
+       "text": "1.5 Hz",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. 50 Hz: 50 cycles every second.",
+     "wrong": {
+      "other": "Not quite. The UK mains frequency is 50 Hz.",
+      "w1": "Not quite. 230 is the potential difference, in volts. The frequency is 50 Hz.",
+      "w2": "Not quite. The UK mains frequency is 50 Hz: 50 cycles every second."
+     },
+     "idk": [],
+     "answerWhy": "The UK mains frequency is 50 Hz.",
+     "quiz": true
+    },
+    {
+     "id": "3.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 6: What is the potential difference of the UK mains supply?",
+     "options": [
+      {
+       "text": "About 230 V",
+       "branch": "right"
+      },
+      {
+       "text": "About 50 V",
+       "branch": "w1"
+      },
+      {
+       "text": "About 1.5 V",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. About 230 V.",
+     "wrong": {
+      "other": "Not quite. The UK mains is about 230 V.",
+      "w1": "Not quite. 50 is the frequency, in hertz. The potential difference is about 230 V.",
+      "w2": "Not quite. 1.5 V is a torch cell. The mains is about 230 V."
+     },
+     "idk": [],
+     "answerWhy": "The UK mains is about 230 V.",
+     "quiz": true
+    },
+    {
+     "id": "3.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: What colour is the insulation on the neutral wire?",
+     "options": [
+      {
+       "text": "Blue",
+       "branch": "right"
+      },
+      {
+       "text": "Brown",
+       "branch": "w1"
+      },
+      {
+       "text": "Green and yellow stripes",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. The neutral wire is blue.",
+     "wrong": {
+      "other": "Not quite. The neutral wire is blue.",
+      "w1": "Not quite. Brown is the live wire. The neutral wire is blue.",
+      "w2": "Not quite. Green and yellow is the earth wire. The neutral wire is blue."
+     },
+     "idk": [],
+     "answerWhy": "The neutral wire is blue.",
+     "quiz": true
+    },
+    {
+     "id": "3.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: What is a direct potential difference?",
+     "options": [
+      {
+       "text": "One whose direction never changes",
+       "branch": "right"
+      },
+      {
+       "text": "One that keeps changing direction",
+       "branch": "w1"
+      },
+      {
+       "text": "One that is always 230 V",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. Its direction never changes.",
+     "wrong": {
+      "other": "Not quite. A direct potential difference is one whose direction never changes.",
+      "w1": "Not quite. Changing direction is alternating. A direct potential difference never changes direction.",
+      "w2": "Not quite. 230 V is the mains, which is alternating. A direct potential difference never changes direction."
+     },
+     "idk": [],
+     "answerWhy": "A direct potential difference is one whose direction never changes.",
+     "quiz": true
+    },
+    {
+     "id": "3.13",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: Which wire is the safety wire, joined to the metal case of an appliance?",
+     "options": [
+      {
+       "text": "The earth wire",
+       "branch": "right"
+      },
+      {
+       "text": "The neutral wire",
+       "branch": "w1"
+      },
+      {
+       "text": "The live wire",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. The earth wire joins the case to the ground.",
+     "wrong": {
+      "other": "Not quite. The earth wire is the safety wire joined to the case.",
+      "w1": "Not quite. The neutral wire completes the circuit. The earth wire is the safety wire joined to the case.",
+      "w2": "Not quite. The live wire carries the supply. The earth wire is the safety wire joined to the case."
+     },
+     "idk": [],
+     "answerWhy": "The earth wire is the safety wire joined to the case.",
+     "quiz": true
+    },
+    {
+     "id": "3.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: Why does touching a live wire give you an electric shock?",
+     "options": [
+      {
+       "text": "There is a big potential difference between the wire and you, so a current flows through you",
+       "branch": "right"
+      },
+      {
+       "text": "The live wire is very hot",
+       "branch": "w1"
+      },
+      {
+       "text": "The current comes up from the earth wire",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. The wire is at about 230 V and you are at 0 V, so a current flows through you.",
+     "wrong": {
+      "other": "Not quite. The big potential difference between the wire and you drives a current through you.",
+      "w1": "Not quite. The danger is the big potential difference between the wire, at about 230 V, and you, at 0 V: a current flows through you.",
+      "w2": "Not quite. The live wire is at about 230 V and you are at 0 V, so a current flows from the wire through you to the ground."
+     },
+     "idk": [],
+     "answerWhy": "The wire is at about 230 V and you are at 0 V, so a current flows through you.",
+     "quiz": true
+    },
+    {
+     "id": "3.15",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "You have finished this lesson on mains electricity. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

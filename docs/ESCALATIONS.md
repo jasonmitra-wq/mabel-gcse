@@ -496,3 +496,22 @@ Jason's decision: the AI lesson's teaching is written once, checked and stored; 
 - Same check on p2-current-voltage: 5.3 logged "a filament's resistance stays the same" as M12; now a plain branch (wording unchanged). Other tags there checked and kept.
 - Free walk: p2-components 182 paths, 0 findings; p2-current-voltage 219 paths, 0. Reading copy regenerated (docs/review/p2-components.md).
 - Next: Mabel tries the p2-components AI lesson.
+
+## Phase B, P2 rest: script-review findings not acted on (2026-11-15)
+
+Brief docs/briefs/2026-11-15-script-four-topics.md, B4. Each is a finding of
+tools/review-lesson.js --script that would need a change to shared teach-mode
+code (a STOP case of the brief) or that is by design:
+- F11 (p2-series-parallel 1.12, 5.3): the Next button sits under a widget
+  message from the start, so she could skip the hands-on circuit. Engine
+  behaviour (js/teach-script.js shows Next under every widget step), the same in
+  both pilot scripts. Changing it is a shared teach-mode change.
+- The own-words replies join the points with "; and" (reviewer: reads like a
+  machine). The joining is in js/teach-script.js (own: list()) and in the
+  reading copy (tools/script-layout.js). Shared code.
+- L3 (p2-series-parallel 1.1a): "quizzes a first-time learner before teaching".
+  The three opening questions recall the lesson before (p2-current-voltage), as
+  in both pilot scripts; the scripted mode skips the live recall questions.
+- P14 / M1 (p2-domestic): nothing hands-on. No existing widget fits ac/dc or
+  mains wiring; a new widget is shared code. p2-series-parallel uses the
+  existing circuit widget twice.

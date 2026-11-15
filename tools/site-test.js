@@ -550,7 +550,7 @@ async function lessonMode(page, run, id) {
       run.say(`S${n} (tapped "${tapped}")`);
       await page.evaluate(label => { [...document.querySelectorAll('#teachThread .teach-choices button')].find(b => b.textContent.trim() === label).click(); }, tapped);
       const t0 = Date.now();
-      try { await waitReady(t); } catch { if (!(await page.evaluate(() => { const t = document.getElementById('teachThread'); return !!(t && t.offsetParent); }))) { run.say(`[S${n} left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]`); break; } run.say(`[no tutor reply within 120 s after S${n}]`); run.check('tutor replies', false, `no reply after S${n}`); break; }
+      try { await waitReady(t); } catch { if (!(await page.evaluate(() => { const t = document.getElementById('teachThread'); const home = [...document.querySelectorAll('h1,h2,h3,div')].some(e => /^Revise a topic$/.test(e.textContent.trim()) && e.getBoundingClientRect().height > 0 && e.getBoundingClientRect().top < innerHeight); return !!(t && t.offsetParent) && !home; }))) { run.say(`[S${n} left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]`); break; } run.say(`[no tutor reply within 120 s after S${n}]`); run.check('tutor replies', false, `no reply after S${n}`); break; }
       tutorMs += Date.now() - t0;
       t = await lastTutor();
       hist.push({ who: 'tutor', text: t });
@@ -576,7 +576,7 @@ async function lessonMode(page, run, id) {
       await page.click('#teachSendBtn');
     }
     const t1 = Date.now();
-    try { await waitReady(t); } catch { if (!(await page.evaluate(() => { const t = document.getElementById('teachThread'); return !!(t && t.offsetParent); }))) { run.say(`[S${n} left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]`); break; } run.say(`[no tutor reply within 120 s after S${n}]`); run.check('tutor replies', false, `no reply after S${n}`); break; }
+    try { await waitReady(t); } catch { if (!(await page.evaluate(() => { const t = document.getElementById('teachThread'); const home = [...document.querySelectorAll('h1,h2,h3,div')].some(e => /^Revise a topic$/.test(e.textContent.trim()) && e.getBoundingClientRect().height > 0 && e.getBoundingClientRect().top < innerHeight); return !!(t && t.offsetParent) && !home; }))) { run.say(`[S${n} left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]`); break; } run.say(`[no tutor reply within 120 s after S${n}]`); run.check('tutor replies', false, `no reply after S${n}`); break; }
     tutorMs += Date.now() - t1;
     t = await lastTutor();
     hist.push({ who: 'tutor', text: t });

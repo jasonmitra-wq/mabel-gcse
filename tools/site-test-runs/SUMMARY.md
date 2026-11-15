@@ -89,3 +89,4 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-11-12 | p2-current-voltage | lesson | FAIL | 1 | 0 | false | tools/site-test-runs/2026-11-12/p2-current-voltage-5 | $0.0958
 - 2026-11-12 | p2-components | lesson | FAIL | 2 | 0 | false | tools/site-test-runs/2026-11-12/p2-components | $0.0677
 - 2026-11-12 | p2-components | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-12/p2-components-2 | $0.0511
+- 2026-11-15 | p2-series-parallel | lesson | FAIL | 1 | 0 | false | tools/site-test-runs/2026-11-15/p2-series-parallel | $0.0704

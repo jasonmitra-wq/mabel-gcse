@@ -1,0 +1,387 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 19370,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11520,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 6596
+    },
+    "iterations": [
+      {
+        "input_tokens": 19370,
+        "output_tokens": 11520,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.6157600000000001,
+  "seconds": 107,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"new\",\"turn\":\"Key point 1 heading (and 2 to 5)\",\"quote\":\"Key point 1: undefined\",\"what\":\"All five key point headings read \\\"undefined\\\" where the title should be, and both picture labels are blank (\\\"labelled .\\\"). If she sees these, they look broken.\",\"severity\":\"minor\"},{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, three quick questions from the last lesson. What is electric current?\",\"what\":\"The lesson opens by testing her on current, potential difference and V = I R before telling her anything. A first-time learner can only guess, and nothing has been explained yet.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F10\",\"turn\":\"1.1c\",\"quote\":\"Which equation gives the potential difference across it?\",\"what\":\"She is asked to pick V = I R before the lesson has stated it or said what V, I and R stand for and their units. The equation only appears in the reply.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.1c\",\"quote\":\"a resistor has a current of 2 A through it and a resistance of 3 Ω\",\"what\":\"\\\"Resistor\\\" and the symbol Ω are used with no explanation. Ohms are not named until 1.10.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.1b wrong answer (The amount of charge that flows)\",\"quote\":\"The amount of charge is the charge flow.\",\"what\":\"Muddled sentence. \\\"Charge flow\\\" is not a term she has been given, and the sentence tells her nothing.\",\"severity\":\"minor\"},{\"fault\":\"P1\",\"turn\":\"1.3\",\"quote\":\"A series circuit: one loop. The same 2 A everywhere; the 12 V is shared, 8 V and 4 V.\",\"what\":\"The picture and its caption show the current rule and the sharing of potential difference before either is taught (1.4 and 1.6). The whole picture arrives at once rather than being built up.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.4\",\"quote\":\"In the picture, it is 2 A before the first resistor, between them, and after the second one.\",\"what\":\"1.2 told her to picture two lamps, but the picture now has two resistors. A resistor has not been explained in this lesson.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.5\",\"quote\":\"the current is the same at every point in a series circuit\",\"what\":\"The message just before the question (1.4) states the answer. \\\"0.3 A, the same\\\" needs no thought.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.5 don't know (first time)\",\"quote\":\"Can any of it go somewhere else?\",\"what\":\"The hint asks a yes/no question, but the buttons are still the three current options, so she cannot answer what was asked.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.7 wrong answers\",\"quote\":\"Not quite: 3 V.\",\"what\":\"Every wrong answer here, and throughout the lesson, is met with the right answer straight away. She never gets a hint and a second try.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.9\",\"quote\":\"Two equal resistances share the supply equally.\",\"what\":\"1.8 ends with exactly the answer that 1.9 asks for. The harder idea in 1.8, that the bigger resistance gets the bigger share, is not tested here at all. 1.8 also packs two ideas into one message.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F10\",\"turn\":\"1.10\",\"quote\":\"R total = R1 + R2, with every resistance in ohms (Ω)\",\"what\":\"R1 and R2 are not said to be the resistances of the first and second resistor. The symbols are left for her to work out.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.12\",\"quote\":\"What about the current from the cell now?\",\"what\":\"Vaguely worded question. She has also not yet been told that a bigger total resistance means a smaller current for the same push, so she has to guess the link. The reply adds \\\"Both lamps are dimmer\\\" without explaining it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.13\",\"quote\":\"In one line: what are the three rules for a series circuit?\",\"what\":\"Three separate rules in one line is a lot to ask of a first-time learner. The reply strings them together with a clumsy \\\"; and … ; and\\\".\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"2.1\",\"quote\":\"each on its own branch, with both branches joined to the same two points of the cell. A circuit like that is called a parallel circuit.\",\"what\":\"\\\"Branch\\\" and \\\"parallel circuit\\\" both arrive in one message, and \\\"branch\\\" is never explained. \\\"The same two points of the cell\\\" is imprecise: it means the two ends (terminals) of the cell.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P12\",\"turn\":\"2.2\",\"quote\":\"Each branch has the full supply potential difference; the current splits, then joins again.\",\"what\":\"The picture caption gives the potential difference rule and the current rule before 2.3 and 2.5 teach them. It also hands her the answer to 2.4.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"2.4\",\"quote\":\"the potential difference across each branch is the same as the supply potential difference. Nothing is shared out.\",\"what\":\"The answer \\\"6 V each\\\" is given by the message immediately before (2.3), and already by the caption in 2.2.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"2.5\",\"quote\":\"The current, though, splits at the point where the branches start\",\"what\":\"The message opens with a \\\"though\\\" that only makes sense if she still has the earlier message in mind.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.7\",\"quote\":\"V = I R tells you more: a branch with a smaller resistance carries a bigger current\",\"what\":\"She is expected to rearrange V = I R in her head to see this. \\\"Tells you more\\\" is vague, and the idea is never checked with a question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.8\",\"quote\":\"With the same push across it, the new branch carries its own current\",\"what\":\"\\\"It\\\" is ambiguous, and it is not said that the first branch's current is unchanged. That unchanged current is the reason the total rises.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.10\",\"quote\":\"So two resistors in parallel have a total resistance less than the smaller of the two.\",\"what\":\"2.9 states the answer and 2.10 asks for it at once. She only has to spot \\\"less than 4 Ω\\\".\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.10 don't know (first time)\",\"quote\":\"Does the total resistance go up or down?\",\"what\":\"The hint asks \\\"up or down\\\", but the buttons are the three original statements, so the reply does not fit the choices she has.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"3.4\",\"quote\":\"First, every appliance gets the full supply potential difference it was made for. Second, each one can be switched on and off by itself. Third, a fault in one appliance does not stop the others working.\",\"what\":\"Three separate ideas in one message, with no check on any of them one at a time.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.6\",\"quote\":\"The AI checks which of these points it makes: \\\"each appliance gets the full supply potential difference\\\", \\\"each can be switched on and off on its own\\\".\",\"what\":\"3.4 taught three reasons, but only two are accepted. If she correctly writes that a fault in one appliance does not stop the others, she is told her line is incomplete.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"4.1\",\"quote\":\"One resistance that has the same effect as the whole set is called the equivalent resistance.\",\"what\":\"This is a second name for what the lesson has called \\\"total resistance\\\" all along. The new term is never used again, so it only adds confusion.\",\"severity\":\"minor\"},{\"fault\":\"F10\",\"turn\":\"4.2\",\"quote\":\"Step 2: find the current with I = V ÷ R, using the supply potential difference.\",\"what\":\"I = V ÷ R appears here for the first time. It is not stated as an equation with its symbols, and she is not shown that it comes from V = I R.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"4.2\",\"quote\":\"Step 1: add the series resistances to get the total. Step 2: find the current with I = V ÷ R, using the supply potential difference. Step 3: use V = I R for each resistor. Step 4: check the shares add up to the supply.\",\"what\":\"Four steps in one message before she has seen any of them done. It is too much at once.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.3\",\"quote\":\"What is the current?\",\"what\":\"The worked example asks only for the current, but steps 3 and 4 go on to find the potential differences. The question should ask for both.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.6 any other wrong answer\",\"quote\":\"Not quite: 2.5 V. 3.5 V is the share of the 7 Ω resistor.\",\"what\":\"This reply is written for the answer 3.5 but is shown for any other wrong number. If she typed 3 or 30, being told about 3.5 V makes no sense.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P8\",\"turn\":\"4.7\",\"quote\":\"Yes: 2.5 V + 3.5 V = 6 V\",\"what\":\"The right button contains the whole working and the other option is plainly silly. She is also handed the 3.5 V rather than working it out, so the check asks nothing of her.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"4.8\",\"quote\":\"There is a quicker way for one kind of question. If you know the supply potential difference and the share across one part, the share across the other part is the supply minus that share.\",\"what\":\"This is presented as new, but it is exactly what she was taught and did in 1.6 and 1.7 (9 − 6 = 3 V). 4.9 then repeats 1.7 with different numbers.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"L3\",\"turn\":\"5.1\",\"quote\":\"You met the two meters in the last lesson.\",\"what\":\"Assumes she already knows ammeters and voltmeters. For a first-time learner this reads as revision.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"5.3\",\"quote\":\"A voltmeter, the meter that measures potential difference, goes in parallel, across the component\",\"what\":\"5.2 gives the answer word for word, and 5.3 asks for it straight away.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"5.3 wrong answer (In the loop, in series with the lamp)\",\"quote\":\"In series it would not measure the lamp's potential difference, and the lamp would hardly light.\",\"what\":\"She has not been told a voltmeter has a very high resistance, so \\\"the lamp would hardly light\\\" is an unexplained claim she cannot follow.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"5.4\",\"quote\":\"Put a variable resistor in series with it: turning the variable resistor changes the current\",\"what\":\"\\\"Variable resistor\\\" is used without saying what it is: a resistor whose resistance you can change.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"5.5 don't know (first time)\",\"quote\":\"does the total go up or down? And then the current?\",\"what\":\"Two questions in one hint, and neither matches the three buttons she is given.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"5.10 wrong answer (The total resistance rises and the total current falls)\",\"quote\":\"Adding in series does that.\",\"what\":\"\\\"That\\\" has nothing in the message to point to. She has to remember what her own button said.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.12 wrong answer (So the current is the same in every appliance)\",\"quote\":\"Not quite. Each socket gets the full supply potential difference and can be switched on its own.\",\"what\":\"The reply does not say why her choice is wrong, namely that \\\"same current everywhere\\\" is the series rule and appliances take different currents.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.1 to 5.3\",\"quote\":\"An ammeter, the meter that measures current, goes in series, in the loop\",\"what\":\"Where the meters go is taught in words only. There is no circuit picture showing an ammeter in the loop and a voltmeter across a component, and key points 3 to 5 have no pictures at all.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P14\",\"turn\":\"whole lesson (1.1 to 5.14)\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on anywhere. She never gets a circuit where she can add a lamp in series or a branch in parallel and watch the current or brightness change.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"whole lesson (1.1 to 5.14)\",\"quote\":\"Now for a short quiz on the whole lesson: seven questions.\",\"what\":\"The lesson is 58 steps of reading, tapping Next and multiple choice, with only two pictures and no interactive part, and it ends in seven more questions of the same kind. She is likely to get bored and start clicking through.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"new\",\"instances\":18},{\"fault\":\"F8\",\"instances\":5},{\"fault\":\"F10\",\"instances\":3},{\"fault\":\"L3\",\"instances\":2},{\"fault\":\"F3\",\"instances\":2},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"F2\",\"instances\":2},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"P1\",\"instances\":1},{\"fault\":\"P12\",\"instances\":1},{\"fault\":\"P8\",\"instances\":1},{\"fault\":\"F1\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1}],\"overall\":\"No, not as it is. The physics is essentially sound and the wrong-answer replies mostly tackle the right misconceptions, but it opens by quizzing a first-time learner on current, potential difference and V = I R before teaching anything, and it leans on \\\"the last lesson\\\" again for the meters. Too many questions are answered by the message or picture caption just before them, several hints and replies do not fit the buttons or the answer given (4.6 and 3.6 especially), and terms such as branch, resistor and variable resistor are never explained. With no hands-on circuit and only two pictures in 58 steps, I would want these fixed before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "new",
+      "turn": "Key point 1 heading (and 2 to 5)",
+      "quote": "Key point 1: undefined",
+      "what": "All five key point headings read \"undefined\" where the title should be, and both picture labels are blank (\"labelled .\"). If she sees these, they look broken.",
+      "severity": "minor"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, three quick questions from the last lesson. What is electric current?",
+      "what": "The lesson opens by testing her on current, potential difference and V = I R before telling her anything. A first-time learner can only guess, and nothing has been explained yet.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F10",
+      "turn": "1.1c",
+      "quote": "Which equation gives the potential difference across it?",
+      "what": "She is asked to pick V = I R before the lesson has stated it or said what V, I and R stand for and their units. The equation only appears in the reply.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1c",
+      "quote": "a resistor has a current of 2 A through it and a resistance of 3 Ω",
+      "what": "\"Resistor\" and the symbol Ω are used with no explanation. Ohms are not named until 1.10.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1b wrong answer (The amount of charge that flows)",
+      "quote": "The amount of charge is the charge flow.",
+      "what": "Muddled sentence. \"Charge flow\" is not a term she has been given, and the sentence tells her nothing.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P1",
+      "turn": "1.3",
+      "quote": "A series circuit: one loop. The same 2 A everywhere; the 12 V is shared, 8 V and 4 V.",
+      "what": "The picture and its caption show the current rule and the sharing of potential difference before either is taught (1.4 and 1.6). The whole picture arrives at once rather than being built up.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.4",
+      "quote": "In the picture, it is 2 A before the first resistor, between them, and after the second one.",
+      "what": "1.2 told her to picture two lamps, but the picture now has two resistors. A resistor has not been explained in this lesson.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.5",
+      "quote": "the current is the same at every point in a series circuit",
+      "what": "The message just before the question (1.4) states the answer. \"0.3 A, the same\" needs no thought.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.5 don't know (first time)",
+      "quote": "Can any of it go somewhere else?",
+      "what": "The hint asks a yes/no question, but the buttons are still the three current options, so she cannot answer what was asked.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.7 wrong answers",
+      "quote": "Not quite: 3 V.",
+      "what": "Every wrong answer here, and throughout the lesson, is met with the right answer straight away. She never gets a hint and a second try.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.9",
+      "quote": "Two equal resistances share the supply equally.",
+      "what": "1.8 ends with exactly the answer that 1.9 asks for. The harder idea in 1.8, that the bigger resistance gets the bigger share, is not tested here at all. 1.8 also packs two ideas into one message.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F10",
+      "turn": "1.10",
+      "quote": "R total = R1 + R2, with every resistance in ohms (Ω)",
+      "what": "R1 and R2 are not said to be the resistances of the first and second resistor. The symbols are left for her to work out.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.12",
+      "quote": "What about the current from the cell now?",
+      "what": "Vaguely worded question. She has also not yet been told that a bigger total resistance means a smaller current for the same push, so she has to guess the link. The reply adds \"Both lamps are dimmer\" without explaining it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.13",
+      "quote": "In one line: what are the three rules for a series circuit?",
+      "what": "Three separate rules in one line is a lot to ask of a first-time learner. The reply strings them together with a clumsy \"; and … ; and\".",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "2.1",
+      "quote": "each on its own branch, with both branches joined to the same two points of the cell. A circuit like that is called a parallel circuit.",
+      "what": "\"Branch\" and \"parallel circuit\" both arrive in one message, and \"branch\" is never explained. \"The same two points of the cell\" is imprecise: it means the two ends (terminals) of the cell.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P12",
+      "turn": "2.2",
+      "quote": "Each branch has the full supply potential difference; the current splits, then joins again.",
+      "what": "The picture caption gives the potential difference rule and the current rule before 2.3 and 2.5 teach them. It also hands her the answer to 2.4.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.4",
+      "quote": "the potential difference across each branch is the same as the supply potential difference. Nothing is shared out.",
+      "what": "The answer \"6 V each\" is given by the message immediately before (2.3), and already by the caption in 2.2.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.5",
+      "quote": "The current, though, splits at the point where the branches start",
+      "what": "The message opens with a \"though\" that only makes sense if she still has the earlier message in mind.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.7",
+      "quote": "V = I R tells you more: a branch with a smaller resistance carries a bigger current",
+      "what": "She is expected to rearrange V = I R in her head to see this. \"Tells you more\" is vague, and the idea is never checked with a question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8",
+      "quote": "With the same push across it, the new branch carries its own current",
+      "what": "\"It\" is ambiguous, and it is not said that the first branch's current is unchanged. That unchanged current is the reason the total rises.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.10",
+      "quote": "So two resistors in parallel have a total resistance less than the smaller of the two.",
+      "what": "2.9 states the answer and 2.10 asks for it at once. She only has to spot \"less than 4 Ω\".",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.10 don't know (first time)",
+      "quote": "Does the total resistance go up or down?",
+      "what": "The hint asks \"up or down\", but the buttons are the three original statements, so the reply does not fit the choices she has.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.4",
+      "quote": "First, every appliance gets the full supply potential difference it was made for. Second, each one can be switched on and off by itself. Third, a fault in one appliance does not stop the others working.",
+      "what": "Three separate ideas in one message, with no check on any of them one at a time.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6",
+      "quote": "The AI checks which of these points it makes: \"each appliance gets the full supply potential difference\", \"each can be switched on and off on its own\".",
+      "what": "3.4 taught three reasons, but only two are accepted. If she correctly writes that a fault in one appliance does not stop the others, she is told her line is incomplete.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "4.1",
+      "quote": "One resistance that has the same effect as the whole set is called the equivalent resistance.",
+      "what": "This is a second name for what the lesson has called \"total resistance\" all along. The new term is never used again, so it only adds confusion.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F10",
+      "turn": "4.2",
+      "quote": "Step 2: find the current with I = V ÷ R, using the supply potential difference.",
+      "what": "I = V ÷ R appears here for the first time. It is not stated as an equation with its symbols, and she is not shown that it comes from V = I R.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "4.2",
+      "quote": "Step 1: add the series resistances to get the total. Step 2: find the current with I = V ÷ R, using the supply potential difference. Step 3: use V = I R for each resistor. Step 4: check the shares add up to the supply.",
+      "what": "Four steps in one message before she has seen any of them done. It is too much at once.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.3",
+      "quote": "What is the current?",
+      "what": "The worked example asks only for the current, but steps 3 and 4 go on to find the potential differences. The question should ask for both.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.6 any other wrong answer",
+      "quote": "Not quite: 2.5 V. 3.5 V is the share of the 7 Ω resistor.",
+      "what": "This reply is written for the answer 3.5 but is shown for any other wrong number. If she typed 3 or 30, being told about 3.5 V makes no sense.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P8",
+      "turn": "4.7",
+      "quote": "Yes: 2.5 V + 3.5 V = 6 V",
+      "what": "The right button contains the whole working and the other option is plainly silly. She is also handed the 3.5 V rather than working it out, so the check asks nothing of her.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.8",
+      "quote": "There is a quicker way for one kind of question. If you know the supply potential difference and the share across one part, the share across the other part is the supply minus that share.",
+      "what": "This is presented as new, but it is exactly what she was taught and did in 1.6 and 1.7 (9 − 6 = 3 V). 4.9 then repeats 1.7 with different numbers.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "L3",
+      "turn": "5.1",
+      "quote": "You met the two meters in the last lesson.",
+      "what": "Assumes she already knows ammeters and voltmeters. For a first-time learner this reads as revision.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "5.3",
+      "quote": "A voltmeter, the meter that measures potential difference, goes in parallel, across the component",
+      "what": "5.2 gives the answer word for word, and 5.3 asks for it straight away.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "5.3 wrong answer (In the loop, in series with the lamp)",
+      "quote": "In series it would not measure the lamp's potential difference, and the lamp would hardly light.",
+      "what": "She has not been told a voltmeter has a very high resistance, so \"the lamp would hardly light\" is an unexplained claim she cannot follow.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "5.4",
+      "quote": "Put a variable resistor in series with it: turning the variable resistor changes the current",
+      "what": "\"Variable resistor\" is used without saying what it is: a resistor whose resistance you can change.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "5.5 don't know (first time)",
+      "quote": "does the total go up or down? And then the current?",
+      "what": "Two questions in one hint, and neither matches the three buttons she is given.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "5.10 wrong answer (The total resistance rises and the total current falls)",
+      "quote": "Adding in series does that.",
+      "what": "\"That\" has nothing in the message to point to. She has to remember what her own button said.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.12 wrong answer (So the current is the same in every appliance)",
+      "quote": "Not quite. Each socket gets the full supply potential difference and can be switched on its own.",
+      "what": "The reply does not say why her choice is wrong, namely that \"same current everywhere\" is the series rule and appliances take different currents.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.1 to 5.3",
+      "quote": "An ammeter, the meter that measures current, goes in series, in the loop",
+      "what": "Where the meters go is taught in words only. There is no circuit picture showing an ammeter in the loop and a voltmeter across a component, and key points 3 to 5 have no pictures at all.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson (1.1 to 5.14)",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on anywhere. She never gets a circuit where she can add a lamp in series or a branch in parallel and watch the current or brightness change.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "whole lesson (1.1 to 5.14)",
+      "quote": "Now for a short quiz on the whole lesson: seven questions.",
+      "what": "The lesson is 58 steps of reading, tapping Next and multiple choice, with only two pictures and no interactive part, and it ends in seven more questions of the same kind. She is likely to get bored and start clicking through.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 18
+    },
+    {
+      "fault": "F8",
+      "instances": 5
+    },
+    {
+      "fault": "F10",
+      "instances": 3
+    },
+    {
+      "fault": "L3",
+      "instances": 2
+    },
+    {
+      "fault": "F3",
+      "instances": 2
+    },
+    {
+      "fault": "F2",
+      "instances": 2
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "P1",
+      "instances": 1
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "P12",
+      "instances": 1
+    },
+    {
+      "fault": "P8",
+      "instances": 1
+    },
+    {
+      "fault": "F1",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    }
+  ],
+  "overall": "No, not as it is. The physics is essentially sound and the wrong-answer replies mostly tackle the right misconceptions, but it opens by quizzing a first-time learner on current, potential difference and V = I R before teaching anything, and it leans on \"the last lesson\" again for the meters. Too many questions are answered by the message or picture caption just before them, several hints and replies do not fit the buttons or the answer given (4.6 and 3.6 especially), and terms such as branch, resistor and variable resistor are never explained. With no hands-on circuit and only two pictures in 58 steps, I would want these fixed before she uses it."
+}

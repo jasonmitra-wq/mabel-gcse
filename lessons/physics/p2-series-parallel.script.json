@@ -1,0 +1,1122 @@
+{
+ "lesson": "p2-series-parallel",
+ "version": 1,
+ "about": "The scripted AI lesson for p2-series-parallel (2026-11-15, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with three recall questions on p2-current-voltage.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "Series circuits — one loop, shared everything",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! In this lesson you will learn the two ways of joining the parts of a circuit, and what each way does to the current, the potential difference and the resistance."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, three quick questions from the last lesson. What is electric current?",
+     "options": [
+      {
+       "text": "The rate of flow of charge",
+       "branch": "right"
+      },
+      {
+       "text": "The push that drives charge",
+       "branch": "push"
+      },
+      {
+       "text": "How hard it is for charge to flow",
+       "branch": "hard"
+      }
+     ],
+     "right": "Yes: current is the rate of flow of charge, measured in amperes (A).",
+     "wrong": {
+      "other": "Not quite. Current is the rate of flow of charge, measured in amperes (A).",
+      "push": "Not quite: current is the rate of flow of charge. The push that drives the charge is the potential difference.",
+      "hard": "Not quite: current is the rate of flow of charge. How hard it is for charge to flow is the resistance."
+     },
+     "idk": [
+      {
+       "hint": "Current is about how much charge passes a point each second. Which button says how fast the charge flows?"
+      }
+     ],
+     "answerWhy": "Current is the rate of flow of charge, measured in amperes (A)."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: what is potential difference?",
+     "options": [
+      {
+       "text": "The push that drives charge round a circuit",
+       "branch": "right"
+      },
+      {
+       "text": "How much charge flows each second",
+       "branch": "charge"
+      },
+      {
+       "text": "How hard it is for charge to flow",
+       "branch": "hard"
+      }
+     ],
+     "right": "Yes: potential difference is the push that drives charge round a circuit, measured in volts (V).",
+     "wrong": {
+      "other": "Not quite. Potential difference is the push that drives charge round a circuit, measured in volts (V).",
+      "charge": "Not quite: how much charge flows each second is the current. Potential difference is the push that drives charge round a circuit, measured in volts (V).",
+      "hard": "Not quite: how hard it is for charge to flow is the resistance. Potential difference is the push that drives charge round a circuit, measured in volts (V)."
+     },
+     "idk": [
+      {
+       "hint": "A cell gives the charge a push. Which button is about a push?"
+      }
+     ],
+     "answerWhy": "Potential difference is the push that drives charge round a circuit, measured in volts (V)."
+    },
+    {
+     "id": "1.1c",
+     "type": "ask",
+     "kind": "number",
+     "question": "Third: V = I R links the potential difference V, in volts, the current I, in amperes, and the resistance R, in ohms (Ω). A resistor has 2 A through it and a resistance of 3 Ω. What is the potential difference across it, in volts?",
+     "answer": {
+      "value": 6,
+      "unit": "V",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 0.67,
+       "branch": "divide"
+      },
+      {
+       "value": 5,
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 6 V. V = I R = 2 × 3 = 6 V. You will use V = I R a lot today.",
+     "wrong": {
+      "other": "Not quite: 6 V. V = I R = 2 × 3 = 6 V.",
+      "divide": "Not quite: 6 V. In V = I R the current and resistance are multiplied, not divided: V = 2 × 3 = 6 V.",
+      "add": "Not quite: 6 V. In V = I R the current and resistance are multiplied, not added: V = 2 × 3 = 6 V."
+     },
+     "idk": [
+      {
+       "hint": "In V = I R, the letters side by side are multiplied. Multiply the current, 2, by the resistance, 3."
+      }
+     ],
+     "answerWhy": "V = I R = 2 × 3 = 6 V."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now, this lesson. Picture a cell and two resistors joined one after another in a single loop, with no places where the wire splits. A circuit like that is called a series circuit."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "Look at the picture: a series circuit. Charge has only one path. Every bit of charge that leaves the supply, the cell or battery, goes through the first resistor, then through the second, then back to the supply.",
+     "picture": "p2-series-circuit"
+    },
+    {
+     "id": "1.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Predict: two lamps are joined in series with a cell. The current through the first lamp is 0.3 A. What is the current through the second lamp?",
+     "options": [
+      {
+       "text": "0.3 A, the same",
+       "branch": "right"
+      },
+      {
+       "text": "Less than 0.3 A, because the first lamp used some up",
+       "branch": "used"
+      },
+      {
+       "text": "More than 0.3 A",
+       "branch": "more"
+      }
+     ],
+     "right": "Yes: 0.3 A. There is only one path, so all the charge that goes through the first lamp goes through the second.",
+     "wrong": {
+      "other": "Not quite: 0.3 A, the same. There is only one path, so all the charge that goes through the first lamp goes through the second.",
+      "used": "Not quite: 0.3 A, the same. The lamps do not use up charge: all of it comes back to the cell. There is one path, so the same 0.3 A flows through both lamps.",
+      "more": "Not quite: 0.3 A, the same. There is only one path, so all the charge that goes through the first lamp goes through the second."
+     },
+     "idk": [
+      {
+       "hint": "All the charge goes round one single path, through both lamps, and none of it is used up. Which button fits that?"
+      }
+     ],
+     "answerWhy": "There is only one path, so all the charge goes through both lamps: 0.3 A through each."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "Rule one, then: in a series circuit, the current is the same at every point. In the picture, with a 12 V supply, the current is 2 A before the first resistor, between the two, and after the second."
+    },
+    {
+     "id": "1.6",
+     "type": "say",
+     "text": "Rule two is about potential difference. The supply gives a total push, and in a series circuit that total is shared between the components, the parts of the circuit. In the picture, the supply gives 12 V: one resistor has 8 V across it and the other has 4 V."
+    },
+    {
+     "id": "1.7",
+     "type": "ask",
+     "kind": "number",
+     "question": "A 9 V battery is joined in series with two lamps. The potential difference across one lamp is 6 V. What is the potential difference across the other lamp, in volts?",
+     "answer": {
+      "value": 3,
+      "unit": "V",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 9,
+       "branch": "all"
+      },
+      {
+       "value": 15,
+       "branch": "added"
+      }
+     ],
+     "right": "Yes: 3 V. The shares add up to the supply: 6 V + 3 V = 9 V.",
+     "wrong": {
+      "other": "Not quite: 3 V. The shares add up to the 9 V supply, so 9 − 6 = 3 V.",
+      "all": "Not quite: 3 V. In series the 9 V is shared, so the two must add up to 9 V: 9 − 6 = 3 V.",
+      "added": "Not quite: 3 V. The two shares add up to the supply, so take the 6 V away from 9 V: 9 − 6 = 3 V."
+     },
+     "idk": [
+      {
+       "hint": "The potential differences across the two lamps must add up to the 9 V of the battery. What do you add to 6 to make 9?"
+      }
+     ],
+     "answerWhy": "The shares add up to the supply: 9 − 6 = 3 V."
+    },
+    {
+     "id": "1.8",
+     "type": "say",
+     "text": "Now, which part gets the bigger share. The current is the same through both, and V = I R, so the part with the bigger resistance has the bigger potential difference across it."
+    },
+    {
+     "id": "1.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A 6 V cell is joined in series with two resistors of 10 Ω each. What is the potential difference across each one?",
+     "options": [
+      {
+       "text": "3 V each",
+       "branch": "right"
+      },
+      {
+       "text": "6 V each",
+       "branch": "full"
+      },
+      {
+       "text": "2 V and 4 V",
+       "branch": "unequal"
+      }
+     ],
+     "right": "Yes: 3 V each. Neither resistance is bigger, so the 6 V is shared equally.",
+     "wrong": {
+      "other": "Not quite. The two resistances are equal, so the 6 V is shared equally: 3 V each.",
+      "full": "Not quite: 3 V each. In series the 6 V is shared, not given to each one. Neither resistance is bigger, so the shares are equal: 3 V each.",
+      "unequal": "Not quite: 3 V each. The two resistances are the same, so neither gets the bigger share: the 6 V is shared equally."
+     },
+     "idk": [
+      {
+       "hint": "Neither resistor is bigger, so neither gets the bigger share. Which button shares the 6 V that way?"
+      }
+     ],
+     "answerWhy": "In series the supply is shared, and equal resistances get equal shares: 3 V each."
+    },
+    {
+     "id": "1.9b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Now a 6 V cell is in series with a 10 Ω and a 20 Ω resistor. Which resistor has the bigger share of the potential difference?",
+     "options": [
+      {
+       "text": "The 20 Ω resistor",
+       "branch": "right"
+      },
+      {
+       "text": "The 10 Ω resistor",
+       "branch": "smaller"
+      },
+      {
+       "text": "They share it equally",
+       "branch": "equal"
+      }
+     ],
+     "right": "Yes: the 20 Ω resistor. Same current, bigger resistance, so by V = I R a bigger potential difference: 4 V, against 2 V for the 10 Ω one.",
+     "wrong": {
+      "other": "Not quite. The 20 Ω resistor has the bigger share: 4 V, against 2 V.",
+      "smaller": "Not quite: the 20 Ω resistor. The same current goes through both, so by V = I R the bigger resistance has the bigger potential difference across it.",
+      "equal": "Not quite: equal shares need equal resistances. Here the 20 Ω resistor has the bigger resistance, so it has the bigger share."
+     },
+     "idk": [
+      {
+       "hint": "The current is the same through both. By V = I R, which one has the bigger potential difference: the bigger resistance or the smaller?"
+      }
+     ],
+     "answerWhy": "Same current through both, so by V = I R the 20 Ω resistor has the bigger share: 4 V, against 2 V."
+    },
+    {
+     "id": "1.10",
+     "type": "say",
+     "text": "Rule three is about resistance. In series, the charge passes through each resistor in turn, so each one adds to how hard it is to get round. The total resistance is the sum: R total = R1 + R2, where R1 and R2 are the two resistances, all in ohms (Ω)."
+    },
+    {
+     "id": "1.11",
+     "type": "ask",
+     "kind": "number",
+     "question": "A 4 Ω resistor and a 6 Ω resistor are joined in series. What is their total resistance, in ohms?",
+     "answer": {
+      "value": 10,
+      "unit": "Ω",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 24,
+       "branch": "times"
+      },
+      {
+       "value": 2.4,
+       "branch": "parallel"
+      }
+     ],
+     "right": "Yes: 10 Ω. In series, R total = 4 + 6 = 10 Ω.",
+     "wrong": {
+      "other": "Not quite: 10 Ω. In series, R total = R1 + R2 = 4 + 6 = 10 Ω.",
+      "times": "Not quite: 10 Ω. In series you add the resistances, you do not multiply them: 4 + 6 = 10 Ω.",
+      "parallel": "Not quite: 10 Ω. In series the total is just the sum: 4 + 6 = 10 Ω."
+     },
+     "idk": [
+      {
+       "hint": "In series, the total resistance is the sum: add the two resistances."
+      }
+     ],
+     "answerWhy": "In series, R total = R1 + R2 = 4 + 6 = 10 Ω."
+    },
+    {
+     "id": "1.12",
+     "type": "widget",
+     "kpWidget": 0,
+     "predicts": [
+      "sp-add-series"
+     ],
+     "controls": [
+      "res"
+     ],
+     "options": {
+      "hideMeters": true
+     },
+     "text": "The circuit below has a cell and a lamp, and a resistor you can put into the loop. Predict first: answer the question in the box. Then put the resistor in to test your answer. Tap Next when you are done.",
+     "labels": [
+      "cell",
+      "lamp",
+      "resistor"
+     ]
+    },
+    {
+     "id": "1.13",
+     "type": "say",
+     "text": "A cell does not give a fixed current. The current depends on everything in the loop: the more resistance there is in series, the smaller the current."
+    },
+    {
+     "id": "1.14",
+     "type": "own",
+     "prompt": "In one line: what are the three series rules, for the current, the potential difference and the resistance?",
+     "points": [
+      "the current is the same everywhere",
+      "the supply potential difference is shared between the components",
+      "the total resistance is the sum of the resistances"
+     ],
+     "idk": "No problem. A good line would be: the current is the same everywhere, the supply potential difference is shared, and the total resistance is the sum of the resistances."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Parallel circuits — branches give choice",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "Now the other way of joining components. Picture a cell with two lamps, each on its own branch: a separate path for the charge. A circuit like that is called a parallel circuit."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "Look at the picture: a parallel circuit. The charge splits where the branches start: some goes through branch 1 and some through branch 2. Then it joins up again and goes back to the supply.",
+     "picture": "p2-parallel-circuit"
+    },
+    {
+     "id": "2.3",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Predict: two lamps are in parallel with a 6 V battery, each lamp on its own branch. What is the potential difference across each lamp?",
+     "options": [
+      {
+       "text": "6 V each",
+       "branch": "right"
+      },
+      {
+       "text": "3 V each",
+       "branch": "shared"
+      },
+      {
+       "text": "12 V each",
+       "branch": "double"
+      }
+     ],
+     "right": "Yes: 6 V each. Each branch is joined straight across the battery, from one end to the other, so each lamp has the full 6 V.",
+     "wrong": {
+      "other": "Not quite: 6 V each. Each branch is joined straight across the battery, so each lamp has the full 6 V.",
+      "shared": "Not quite: 6 V each. Sharing is the series rule. Here each branch is joined straight across the battery, from one end to the other, so each lamp gets the full 6 V.",
+      "double": "Not quite: 6 V each. Each lamp is joined straight across the 6 V battery, so each gets 6 V, no more."
+     },
+     "idk": [
+      {
+       "hint": "Each lamp is joined straight across the 6 V battery, on its own branch. Does each lamp get part of the 6 V, or all of it?"
+      }
+     ],
+     "answerWhy": "Each branch is joined straight across the battery, so each lamp has the full 6 V."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "Rule one for parallel, then: the potential difference across each branch is the same as the supply potential difference. Nothing is shared out between the branches."
+    },
+    {
+     "id": "2.5",
+     "type": "say",
+     "text": "Rule two is about the current, and it works differently. The current splits where the branches start and joins again where they meet. The total current from the supply is the sum of the currents in the branches."
+    },
+    {
+     "id": "2.6",
+     "type": "ask",
+     "kind": "number",
+     "question": "In a parallel circuit, one branch has a current of 0.2 A and the other has 0.3 A. What is the total current from the supply, in amperes?",
+     "answer": {
+      "value": 0.5,
+      "unit": "A",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 0.3,
+       "branch": "same"
+      },
+      {
+       "value": 0.1,
+       "branch": "minus"
+      }
+     ],
+     "right": "Yes: 0.5 A. The branch currents add up: 0.2 + 0.3 = 0.5 A.",
+     "wrong": {
+      "other": "Not quite: 0.5 A. The branch currents add up to the total: 0.2 + 0.3 = 0.5 A.",
+      "same": "Not quite: 0.5 A. The rule that the current is the same everywhere is for series. In parallel the branch currents add: 0.2 + 0.3 = 0.5 A.",
+      "minus": "Not quite: 0.5 A. The branch currents add up to the total: 0.2 + 0.3 = 0.5 A."
+     },
+     "idk": [
+      {
+       "hint": "All the charge from the supply goes through one branch or the other. Add the two branch currents."
+      }
+     ],
+     "answerWhy": "The total current is the sum of the branch currents: 0.2 + 0.3 = 0.5 A."
+    },
+    {
+     "id": "2.7",
+     "type": "say",
+     "text": "Every branch has the full push across it. Turning V = I R round gives I = V ÷ R: current = potential difference ÷ resistance, with I in amperes, V in volts and R in ohms. You can use it to compare two branches."
+    },
+    {
+     "id": "2.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Branch A has a 5 Ω resistor and branch B has a 10 Ω resistor, both across the same 6 V supply. Which branch carries the bigger current?",
+     "options": [
+      {
+       "text": "Branch A, with 5 Ω",
+       "branch": "right"
+      },
+      {
+       "text": "Branch B, with 10 Ω",
+       "branch": "bigR"
+      },
+      {
+       "text": "Both carry the same current",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: branch A. With the same push, the smaller resistance lets the bigger current through: 6 ÷ 5 = 1.2 A, against 6 ÷ 10 = 0.6 A.",
+     "wrong": {
+      "other": "Not quite: branch A. The smaller resistance lets the bigger current through: 1.2 A, against 0.6 A.",
+      "bigR": "Not quite: branch A. A bigger resistance lets less current through for the same push: 6 ÷ 10 = 0.6 A in B, against 6 ÷ 5 = 1.2 A in A.",
+      "same": "Not quite: branch A. Both have the same push, but A has less resistance, so more current: 6 ÷ 5 = 1.2 A, against 6 ÷ 10 = 0.6 A in B."
+     },
+     "idk": [
+      {
+       "hint": "Both branches have the same 6 V push. Which resistance makes it easier for the charge to flow? Which button is that branch?"
+      }
+     ],
+     "answerWhy": "With the same push, the smaller resistance carries the bigger current: branch A, 1.2 A against 0.6 A."
+    },
+    {
+     "id": "2.9",
+     "type": "say",
+     "text": "Now a surprise. Picture a cell with one lamp joined across it. Then you add a second lamp on a new branch beside the first."
+    },
+    {
+     "id": "2.9a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Predict: which is true about the total current from the cell, now there are two branches?",
+     "options": [
+      {
+       "text": "It is bigger",
+       "branch": "right"
+      },
+      {
+       "text": "It stays the same: the cell gives a fixed current",
+       "branch": "fixed"
+      },
+      {
+       "text": "It is smaller: the lamps share it",
+       "branch": "shared"
+      }
+     ],
+     "right": "Yes: bigger. The first lamp still has the full push, so its current does not change, and the new branch adds a current of its own.",
+     "wrong": {
+      "other": "Not quite. The total current is bigger: the first lamp keeps its current, and the new branch adds its own.",
+      "fixed": "Not quite: it is bigger. The first lamp still has the full push, so its current does not change, and the new branch adds a current of its own.",
+      "shared": "Not quite: it is bigger. Each lamp has the full push across it, so the first lamp keeps its current and the new one adds its own."
+     },
+     "idk": [
+      {
+       "hint": "The first lamp still has the full push of the cell across it, so its current stays. The second lamp has a current too. Which button fits?"
+      }
+     ],
+     "answerWhy": "The first lamp keeps its current and the new branch adds its own, so the total current is bigger."
+    },
+    {
+     "id": "2.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Adding the branch kept the push of the cell the same but made the total current bigger. Which is true about the total resistance of the circuit?",
+     "options": [
+      {
+       "text": "It is smaller than before",
+       "branch": "right"
+      },
+      {
+       "text": "It is bigger: resistances always add",
+       "branch": "add"
+      },
+      {
+       "text": "It stays the same",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: smaller. The same push driving a bigger current means less resistance overall.",
+     "wrong": {
+      "other": "Not quite. The same push now drives a bigger current, so the total resistance is smaller.",
+      "add": "Not quite: adding resistances is the series rule. Here the same push drives a bigger current, so the total resistance must be smaller.",
+      "same": "Not quite: the same push now drives a bigger current, so the total resistance must be smaller."
+     },
+     "idk": [
+      {
+       "hint": "In series, a bigger resistance gave a smaller current for the same push. Here the current got bigger. Which button fits?"
+      }
+     ],
+     "answerWhy": "The same push driving a bigger current means the total resistance is smaller."
+    },
+    {
+     "id": "2.11",
+     "type": "say",
+     "text": "Rule three for parallel: the total resistance of two resistors in parallel is less than the resistance of the smaller one. Two branches together let more current through than even the smaller resistor alone. You do not need to work out the value."
+    },
+    {
+     "id": "2.12",
+     "type": "own",
+     "prompt": "In one line: why does adding a resistor in parallel make the total resistance smaller?",
+     "points": [
+      "it gives the charge another path",
+      "so the total current is bigger for the same potential difference"
+     ],
+     "idk": "No problem. A good line would be: the new branch gives the charge another path, so more current flows for the same potential difference, and the total resistance is smaller."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Real-world circuits — why the wiring matters",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Here is why this matters. Some old strings of decorative lights had all their bulbs in series. When one bulb broke, the single loop had a gap, so no current flowed and every bulb went out."
+    },
+    {
+     "id": "3.2",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Some decorative lights have every bulb on its own branch, in parallel. One bulb breaks. Which is true about the other bulbs?",
+     "options": [
+      {
+       "text": "They stay lit",
+       "branch": "right"
+      },
+      {
+       "text": "They all go out",
+       "branch": "series"
+      },
+      {
+       "text": "They get dimmer",
+       "branch": "dimmer"
+      }
+     ],
+     "right": "Yes: they stay lit. Each bulb is on its own branch, so the other branches still have a complete path.",
+     "wrong": {
+      "other": "Not quite. They stay lit: each bulb is on its own branch, so the other branches still have a complete path.",
+      "series": "Not quite: they stay lit. All going out is the series case, with one loop. In parallel, each bulb has its own branch, so the other branches still have a complete path.",
+      "dimmer": "Not quite: they stay lit as before. Each bulb has its own branch with the full supply potential difference across it, so a broken branch does not change the others."
+     },
+     "idk": [
+      {
+       "hint": "In parallel, each bulb has its own path back to the supply. If one path has a gap, can charge still flow round the others?"
+      }
+     ],
+     "answerWhy": "Each bulb is on its own branch, so a gap in one branch leaves the other paths complete: they stay lit."
+    },
+    {
+     "id": "3.3",
+     "type": "say",
+     "text": "The lights and sockets in a home are wired in parallel too, each on its own branch across the supply. That has three good results."
+    },
+    {
+     "id": "3.4",
+     "type": "say",
+     "text": "First: every appliance gets the full supply potential difference it was made for."
+    },
+    {
+     "id": "3.5",
+     "type": "say",
+     "text": "Second: each appliance can be switched on and off by itself, because turning one off only breaks its own branch."
+    },
+    {
+     "id": "3.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "The third one: your toaster develops a fault and stops working. Which is true about the kettle on another socket?",
+     "options": [
+      {
+       "text": "It keeps working",
+       "branch": "right"
+      },
+      {
+       "text": "It keeps working, but more weakly",
+       "branch": "weaker"
+      },
+      {
+       "text": "It stops working too",
+       "branch": "series"
+      }
+     ],
+     "right": "Yes: it keeps working. A fault in one appliance does not stop the others, because each is on its own branch.",
+     "wrong": {
+      "other": "Not quite. The kettle keeps working: each appliance is on its own branch.",
+      "weaker": "Not quite: it keeps working as before. The kettle still has the full supply potential difference across its own branch.",
+      "series": "Not quite: it keeps working. The kettle is on its own branch, with its own complete path and the full supply potential difference. A fault in the toaster's branch does not change that."
+     },
+     "idk": [
+      {
+       "hint": "The kettle has its own branch, with its own path back to the supply. Which button fits?"
+      }
+     ],
+     "answerWhy": "A fault in one appliance does not stop the others, because each is on its own branch."
+    },
+    {
+     "id": "3.7",
+     "type": "own",
+     "prompt": "Why are homes wired in parallel? Write one line with as many reasons as you can.",
+     "points": [
+      "each appliance gets the full supply potential difference",
+      "each can be switched on and off on its own",
+      "a fault in one does not stop the others"
+     ],
+     "idk": "No problem. A good line would be: each appliance gets the full supply potential difference, each can be switched on and off on its own, and a fault in one does not stop the others."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Calculating values in series circuits",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "Now some calculations, for series circuits only. The total resistance of a series circuit is also called the equivalent resistance: the resistance of one single resistor that would do the same job as the whole set."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "To find the current in a series circuit, use I = V ÷ R, the equation from the parallel part, with the supply potential difference and the equivalent resistance."
+    },
+    {
+     "id": "4.3",
+     "type": "worked",
+     "text": "Here is an example with four steps. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A 4 Ω and a 2 Ω resistor are in series with a 12 V supply. What is the potential difference across the 4 Ω resistor?",
+     "steps": [
+      "Step 1: equivalent resistance = 4 + 2 = 6 Ω.",
+      "Step 2: current I = V ÷ R = 12 ÷ 6 = 2 A, the same through both resistors.",
+      "Step 3: for the 4 Ω resistor, V = I R = 2 × 4 = 8 V.",
+      "Step 4: check: the 2 Ω resistor has 2 × 2 = 4 V, and 8 + 4 = 12 V, the supply."
+     ],
+     "answer": {
+      "value": 8,
+      "unit": "V"
+     }
+    },
+    {
+     "id": "4.4",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn, one step at a time. A 5 Ω and a 7 Ω resistor are in series with a 6 V supply. Step 1: what is the equivalent resistance, in ohms?",
+     "answer": {
+      "value": 12,
+      "unit": "Ω",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 35,
+       "branch": "times"
+      }
+     ],
+     "right": "Yes: 12 Ω. In series, 5 + 7 = 12 Ω.",
+     "wrong": {
+      "other": "Not quite: 12 Ω. In series, the equivalent resistance is 5 + 7 = 12 Ω.",
+      "times": "Not quite: 12 Ω. In series, add the resistances: 5 + 7 = 12 Ω."
+     },
+     "idk": [
+      {
+       "hint": "Step 1 is the series rule for resistance: add the two resistances."
+      }
+     ],
+     "answerWhy": "In series, the equivalent resistance is 5 + 7 = 12 Ω."
+    },
+    {
+     "id": "4.5",
+     "type": "ask",
+     "kind": "number",
+     "question": "Step 2: the supply is 6 V and the equivalent resistance is 12 Ω. What is the current, in amperes?",
+     "answer": {
+      "value": 0.5,
+      "unit": "A",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 2,
+       "branch": "upside"
+      },
+      {
+       "value": 72,
+       "branch": "times"
+      }
+     ],
+     "right": "Yes: 0.5 A. I = V ÷ R = 6 ÷ 12 = 0.5 A.",
+     "wrong": {
+      "other": "Not quite: 0.5 A. I = V ÷ R = 6 ÷ 12 = 0.5 A.",
+      "upside": "Not quite: 0.5 A. Divide the potential difference by the resistance, not the other way up: I = 6 ÷ 12 = 0.5 A.",
+      "times": "Not quite: 0.5 A. For the current, divide: I = V ÷ R = 6 ÷ 12 = 0.5 A."
+     },
+     "idk": [
+      {
+       "hint": "Use I = V ÷ R: the supply potential difference divided by the equivalent resistance. Type 6 ÷ 12 into a calculator."
+      }
+     ],
+     "answerWhy": "I = V ÷ R = 6 ÷ 12 = 0.5 A."
+    },
+    {
+     "id": "4.6",
+     "type": "ask",
+     "kind": "number",
+     "question": "Step 3: the current is 0.5 A. What is the potential difference across the 5 Ω resistor, in volts?",
+     "answer": {
+      "value": 2.5,
+      "unit": "V",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 6,
+       "branch": "supply"
+      },
+      {
+       "value": 10,
+       "branch": "divide"
+      }
+     ],
+     "right": "Yes: 2.5 V. V = I R = 0.5 × 5 = 2.5 V.",
+     "wrong": {
+      "other": "Not quite: 2.5 V. For the 5 Ω resistor, V = I R = 0.5 × 5 = 2.5 V.",
+      "supply": "Not quite: 2.5 V. The 6 V is shared, so one resistor has only part of it. V = I R = 0.5 × 5 = 2.5 V.",
+      "divide": "Not quite: 2.5 V. Multiply the current by the resistance: V = 0.5 × 5 = 2.5 V."
+     },
+     "idk": [
+      {
+       "hint": "Use V = I R for the 5 Ω resistor: its current, 0.5 A, times its resistance, 5 Ω."
+      }
+     ],
+     "answerWhy": "V = I R = 0.5 × 5 = 2.5 V."
+    },
+    {
+     "id": "4.7",
+     "type": "ask",
+     "kind": "number",
+     "question": "Step 4, the check: what is the potential difference across the 7 Ω resistor, in volts?",
+     "answer": {
+      "value": 3.5,
+      "unit": "V",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 2.5,
+       "branch": "first"
+      }
+     ],
+     "right": "Yes: 3.5 V. V = I R = 0.5 × 7 = 3.5 V. And 2.5 + 3.5 = 6 V, the supply, so the answers check out.",
+     "wrong": {
+      "other": "Not quite: 3.5 V. V = I R = 0.5 × 7 = 3.5 V. And 2.5 + 3.5 = 6 V, the supply.",
+      "first": "Not quite: 3.5 V. 2.5 V was the 5 Ω resistor. For the 7 Ω one, V = I R = 0.5 × 7 = 3.5 V."
+     },
+     "idk": [
+      {
+       "hint": "Same current, 0.5 A, through the 7 Ω resistor. Use V = I R."
+      }
+     ],
+     "answerWhy": "V = I R = 0.5 × 7 = 3.5 V, and 2.5 + 3.5 = 6 V, the supply."
+    },
+    {
+     "id": "4.8",
+     "type": "own",
+     "prompt": "In one line: how do you find the current in a series circuit from the supply and the resistances?",
+     "points": [
+      "add the resistances to get the equivalent resistance",
+      "divide the supply potential difference by it"
+     ],
+     "idk": "No problem. A good line would be: add the resistances to get the equivalent resistance, then divide the supply potential difference by it."
+    }
+   ]
+  },
+  {
+   "kp": 4,
+   "heading": "Measuring circuits — ammeters and voltmeters",
+   "steps": [
+    {
+     "id": "5.1",
+     "type": "say",
+     "text": "Last part: measuring. An ammeter is the meter that measures current. An ammeter goes in series, in the loop, so that all the current you want to measure flows through the meter."
+    },
+    {
+     "id": "5.2",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A voltmeter is the meter that measures potential difference: the difference in push between two points. To measure it for a lamp, where does the voltmeter go?",
+     "options": [
+      {
+       "text": "Joined to both ends of the lamp, in parallel",
+       "branch": "right"
+      },
+      {
+       "text": "In the loop, in series with the lamp",
+       "branch": "series"
+      },
+      {
+       "text": "Next to the cell only",
+       "branch": "cell"
+      }
+     ],
+     "right": "Yes: across the lamp, in parallel, joined to the lamp's two ends.",
+     "wrong": {
+      "other": "Not quite. A voltmeter goes across the lamp, in parallel, joined to its two ends.",
+      "series": "Not quite: it is joined to both ends of the lamp, in parallel. A voltmeter compares two points, so it is joined to the lamp's two ends.",
+      "cell": "Not quite: it is joined to both ends of the lamp, in parallel. A voltmeter measures the potential difference between the two points it is joined to."
+     },
+     "idk": [
+      {
+       "hint": "A potential difference is a push across something, from one end to the other. Which button joins the meter to both ends of the lamp?"
+      }
+     ],
+     "answerWhy": "A voltmeter goes across the lamp, in parallel, joined to its two ends."
+    },
+    {
+     "id": "5.3",
+     "type": "widget",
+     "kpWidget": 4,
+     "predicts": [
+      "sp-measure"
+     ],
+     "controls": [
+      "res"
+     ],
+     "options": {},
+     "text": "The circuit below has an ammeter in the loop and a voltmeter across the lamp. Make your prediction in the box, then put the resistor in to check it. Tap Next when you are done.",
+     "labels": [
+      "cell",
+      "lamp",
+      "resistor",
+      "ammeter",
+      "voltmeter"
+     ]
+    },
+    {
+     "id": "5.4",
+     "type": "say",
+     "text": "Here is why both readings fell. The resistor adds resistance, so the current is smaller. The resistor also takes a share of the potential difference, so the lamp's share is smaller."
+    },
+    {
+     "id": "5.5",
+     "type": "say",
+     "text": "To test a component, you measure its current and potential difference at several settings. For that, people put a variable resistor in the loop: a resistor whose resistance you can change, by turning a knob or sliding a contact."
+    },
+    {
+     "id": "5.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A lamp is in series with a variable resistor. You turn the variable resistor to a bigger resistance. Which is true?",
+     "options": [
+      {
+       "text": "The current falls and the lamp gets dimmer",
+       "branch": "right"
+      },
+      {
+       "text": "The current rises and the lamp gets brighter",
+       "branch": "rises"
+      },
+      {
+       "text": "Nothing changes: the cell gives a fixed current",
+       "branch": "fixed"
+      }
+     ],
+     "right": "Yes: the total resistance is bigger, so the current falls and the lamp gets dimmer.",
+     "wrong": {
+      "other": "Not quite. The total resistance is bigger, so the current falls and the lamp gets dimmer.",
+      "rises": "Not quite: a bigger resistance in series makes the total resistance bigger, so the current falls and the lamp gets dimmer.",
+      "fixed": "Not quite: a cell does not give a fixed current. The total resistance is bigger, so the current falls and the lamp gets dimmer."
+     },
+     "idk": [
+      {
+       "hint": "In series, resistances add, so the total goes up. Which button fits a bigger total resistance?"
+      }
+     ],
+     "answerWhy": "The total resistance is bigger, so the current falls and the lamp gets dimmer."
+    },
+    {
+     "id": "5.7",
+     "type": "say",
+     "text": "Now for a short quiz on the whole lesson: seven questions. Take your time."
+    },
+    {
+     "id": "5.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 7: In a series circuit, how does the current compare at different points?",
+     "options": [
+      {
+       "text": "The same at every point",
+       "branch": "right"
+      },
+      {
+       "text": "Biggest near the cell",
+       "branch": "w1"
+      },
+      {
+       "text": "Smaller after each component",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. In series the current is the same at every point.",
+     "wrong": {
+      "other": "Not quite. In series the current is the same at every point.",
+      "w1": "Not quite. In series the current is the same at every point: there is only one path.",
+      "w2": "Not quite. In series the current is the same at every point; components do not use it up."
+     },
+     "idk": [],
+     "answerWhy": "In series the current is the same at every point.",
+     "quiz": true
+    },
+    {
+     "id": "5.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 7: In a parallel circuit, how does the potential difference across each branch compare with the supply?",
+     "options": [
+      {
+       "text": "The same as the supply",
+       "branch": "right"
+      },
+      {
+       "text": "The supply shared between the branches",
+       "branch": "w1"
+      },
+      {
+       "text": "Bigger than the supply",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. Each branch has the same potential difference as the supply.",
+     "wrong": {
+      "other": "Not quite. In parallel each branch has the same potential difference as the supply.",
+      "w1": "Not quite. Sharing is the series rule. In parallel each branch has the same potential difference as the supply.",
+      "w2": "Not quite. In parallel each branch has the same potential difference as the supply."
+     },
+     "idk": [],
+     "answerWhy": "In parallel each branch has the same potential difference as the supply.",
+     "quiz": true
+    },
+    {
+     "id": "5.10",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 3 of 7: Resistors of 3 Ω, 5 Ω and 2 Ω are in series. What is the total resistance, in ohms?",
+     "answer": {
+      "value": 10,
+      "unit": "Ω",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: 3 + 5 + 2 = 10 Ω.",
+     "wrong": {
+      "other": "Not quite: 10 Ω. In series, add them all: 3 + 5 + 2 = 10 Ω."
+     },
+     "idk": [],
+     "answerWhy": "In series, add them all: 3 + 5 + 2 = 10 Ω.",
+     "quiz": true
+    },
+    {
+     "id": "5.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 7: A 4 Ω resistor and a 12 Ω resistor are joined in parallel. Which is true about their total resistance?",
+     "options": [
+      {
+       "text": "It is less than 4 Ω",
+       "branch": "right"
+      },
+      {
+       "text": "It is 16 Ω",
+       "branch": "add"
+      },
+      {
+       "text": "It is between 4 Ω and 12 Ω",
+       "branch": "average"
+      }
+     ],
+     "right": "Yes. In parallel the total resistance is less than the smaller resistor.",
+     "wrong": {
+      "other": "Not quite. In parallel the total resistance is less than the smaller resistor: less than 4 Ω.",
+      "add": "Not quite. Adding is the series rule. In parallel there is an extra path, so more current flows and the total resistance is less than 4 Ω.",
+      "average": "Not quite. The total is not an average: the extra path lets more current flow, so the total is less than the smaller one, 4 Ω."
+     },
+     "idk": [],
+     "answerWhy": "In parallel the total resistance is less than the smaller resistor: less than 4 Ω.",
+     "quiz": true
+    },
+    {
+     "id": "5.12",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 5 of 7: A 2 Ω and a 4 Ω resistor are in series with a 3 V cell. What is the current, in amperes?",
+     "answer": {
+      "value": 0.5,
+      "unit": "A",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: equivalent resistance 6 Ω, then I = 3 ÷ 6 = 0.5 A.",
+     "wrong": {
+      "other": "Not quite: 0.5 A. Equivalent resistance 2 + 4 = 6 Ω; I = V ÷ R = 3 ÷ 6 = 0.5 A."
+     },
+     "idk": [],
+     "answerWhy": "Equivalent resistance 2 + 4 = 6 Ω; I = V ÷ R = 3 ÷ 6 = 0.5 A.",
+     "quiz": true
+    },
+    {
+     "id": "5.13",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 7: Why are the sockets in a home wired in parallel?",
+     "options": [
+      {
+       "text": "Each gets the full supply potential difference and can be switched on its own",
+       "branch": "right"
+      },
+      {
+       "text": "So the current is the same in every appliance",
+       "branch": "w1"
+      },
+      {
+       "text": "So each gets an equal share of the supply potential difference",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. Each gets the full supply potential difference and can be switched on its own.",
+     "wrong": {
+      "other": "Not quite. Each gets the full supply potential difference and can be switched on its own.",
+      "w1": "Not quite. The same current everywhere is the series rule, and appliances take different currents. Each socket gets the full supply potential difference and can be switched on its own.",
+      "w2": "Not quite. Sharing is the series rule. In parallel each socket gets the full supply potential difference, and each can be switched on its own."
+     },
+     "idk": [],
+     "answerWhy": "Each gets the full supply potential difference and can be switched on its own.",
+     "quiz": true
+    },
+    {
+     "id": "5.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 7 of 7: How is an ammeter joined to measure the current through a lamp?",
+     "options": [
+      {
+       "text": "In series with the lamp",
+       "branch": "right"
+      },
+      {
+       "text": "In parallel across the lamp",
+       "branch": "w1"
+      }
+     ],
+     "right": "Yes. An ammeter goes in series, so the current flows through it.",
+     "wrong": {
+      "other": "Not quite. An ammeter goes in series with the lamp.",
+      "w1": "Not quite. An ammeter goes in series, in the loop, so the current flows through it. A voltmeter goes in parallel."
+     },
+     "idk": [],
+     "answerWhy": "An ammeter goes in series, so the current flows through it.",
+     "quiz": true
+    },
+    {
+     "id": "5.15",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "You have finished this lesson: series and parallel circuits, and how to work out the current and potential differences in a series circuit.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

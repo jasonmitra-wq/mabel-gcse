@@ -60,7 +60,77 @@
         }
       ],
       "memTip": "Series = Same current. 'S for Same, S for Series.' Potential difference is shared, and resistances add.",
-      "tutor_note": "Examiners love giving you the supply potential difference and the p.d. across one component. Then they ask for the p.d. across the other. Remember: the p.d.s must add up to the supply."
+      "tutor_note": "Examiners love giving you the supply potential difference and the p.d. across one component. Then they ask for the p.d. across the other. Remember: the p.d.s must add up to the supply.",
+      "pictures": [
+        {
+          "diagram": "p2-series-circuit",
+          "caption": "A series circuit: a 12 V supply and two resistors in one loop, with the current and the potential differences marked.",
+          "labels": [
+            "supply",
+            "resistor"
+          ]
+        }
+      ],
+      "widget": {
+        "id": "circuit",
+        "options": {
+          "resistor": true,
+          "predicts": [
+            {
+              "id": "sp-add-series",
+              "from": {
+                "lesson": "p2-series-parallel",
+                "kp": 0
+              },
+              "question": "You put a resistor into this loop, in series with the lamp. Which is true?",
+              "options": [
+                {
+                  "text": "The lamp gets dimmer",
+                  "short": "The lamp gets dimmer"
+                },
+                {
+                  "text": "The lamp stays the same: the cell gives the same current",
+                  "short": "The lamp stays the same",
+                  "mis": "M18"
+                },
+                {
+                  "text": "The lamp gets brighter",
+                  "short": "The lamp gets brighter"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "cells": 2,
+                "resistor": false
+              },
+              "try": "Put the resistor in and watch the lamp. Then take it out again.",
+              "tryShort": "Put the resistor in and watch the lamp. Then take it out again.",
+              "reveal": "The lamp gets dimmer.",
+              "afterTest": "With the resistor in, the lamp was dimmer than without it.",
+              "explain": {
+                "prompt": "In one line: why does the lamp get dimmer?",
+                "promptShort": "In one line: why do you think the lamp got dimmer?",
+                "points": [
+                  "the total resistance is bigger",
+                  "so the current is smaller"
+                ]
+              },
+              "needs": [
+                "res"
+              ]
+            }
+          ],
+          "controls": [
+            "res"
+          ]
+        },
+        "intro": "Try it: predict first, then put the resistor in and watch the lamp.",
+        "labels": [
+          "cell",
+          "lamp",
+          "resistor"
+        ]
+      }
     },
     {
       "heading": "Parallel circuits — branches give choice",
@@ -88,7 +158,18 @@
         }
       ],
       "memTip": "Parallel = same potential difference. Current splits like traffic at a junction. Total resistance is less than the smallest resistor.",
-      "tutor_note": "A common mistake is thinking parallel resistance is an average. Adding a branch gives charge another route. So the total resistance goes down."
+      "tutor_note": "A common mistake is thinking parallel resistance is an average. Adding a branch gives charge another route. So the total resistance goes down.",
+      "pictures": [
+        {
+          "diagram": "p2-parallel-circuit",
+          "caption": "A parallel circuit: a supply and two branches.",
+          "labels": [
+            "supply",
+            "branch 1",
+            "branch 2"
+          ]
+        }
+      ]
     },
     {
       "heading": "Real-world circuits — why the wiring matters",
@@ -157,7 +238,71 @@
           "def": "Measures p.d.; connected in parallel"
         }
       ],
-      "memTip": "A for Ammeter = A for Along (in series, along the wire). V for Voltmeter = V shape (in parallel, spanning across)."
+      "memTip": "A for Ammeter = A for Along (in series, along the wire). V for Voltmeter = V shape (in parallel, spanning across).",
+      "widget": {
+        "id": "circuit",
+        "options": {
+          "resistor": true,
+          "voltmeter": true,
+          "predicts": [
+            {
+              "id": "sp-measure",
+              "from": {
+                "lesson": "p2-series-parallel",
+                "kp": 4
+              },
+              "question": "The ammeter is in the loop and the voltmeter is across the lamp. You put the resistor in, in series. Which is true?",
+              "options": [
+                {
+                  "text": "Both readings go down",
+                  "short": "Both readings go down"
+                },
+                {
+                  "text": "The ammeter goes down, the voltmeter stays the same",
+                  "short": "Only the ammeter goes down",
+                  "mis": "M17"
+                },
+                {
+                  "text": "Both readings stay the same",
+                  "short": "Both readings stay the same",
+                  "mis": "M18"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "cells": 2,
+                "resistor": false
+              },
+              "try": "Put the resistor in and read both meters. Then take it out again.",
+              "tryShort": "Put the resistor in and read both meters. Then take it out again.",
+              "reveal": "Both readings go down.",
+              "afterTest": "With the resistor in, both readings were smaller.",
+              "explain": {
+                "prompt": "In one line: why did the voltmeter reading go down?",
+                "promptShort": "In one line: why do you think the voltmeter reading went down?",
+                "points": [
+                  "the resistor takes a share of the potential difference",
+                  "so the lamp gets less"
+                ]
+              },
+              "needs": [
+                "res"
+              ]
+            }
+          ],
+          "controls": [
+            "res"
+          ]
+        },
+        "intro": "Try it: predict first, then put the resistor in and read the meters.",
+        "labels": [
+          "cell",
+          "lamp",
+          "resistor",
+          "ammeter",
+          "voltmeter"
+        ]
+      }
     }
   ],
   "tables": [

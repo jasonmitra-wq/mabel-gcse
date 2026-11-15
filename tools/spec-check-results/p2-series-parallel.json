@@ -1,38 +1,33 @@
 {
   "lesson": "p2-series-parallel",
   "source_file": "lessons/physics/p2-series-parallel.json",
-  "lesson_md5": "840272161d1ac4ddac9c52aea2b184ac",
+  "lesson_md5": "91ba34e1ae78b5a54b0005bff5d7e159",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:23:37.596Z",
+  "date": "2026-11-15T13:39:00.671Z",
   "specRefs_sent": [
     "4.2.2"
   ],
+  "blocking_only": true,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7773,
-    "output_tokens": 2821
+    "input_tokens": 8310,
+    "output_tokens": 1878
   },
-  "cost_usd": 0.087512,
+  "cost_usd": 0.0708,
   "status": "OK",
   "result": {
     "lesson": "p2-series-parallel",
-    "missing_spec_content": [
-      {
-        "specRef": "4.2.2",
-        "spec_text": "use circuit diagrams to construct and check series and parallel circuits that include a variety of common circuit components",
-        "why": "The lesson has no circuit diagrams: every keyPoints[n].diagram is null. It only names an ammeter, a voltmeter and a variable resistor, and lists meter-placement mistakes in keyPoints[4].content. It never shows how to construct or check a series or parallel circuit from a diagram with a range of common components, or how to read circuit symbols. Yet introTips[2] promises: \"By the end, you will be able to set up and read circuit diagrams.\""
-      }
-    ],
+    "missing_spec_content": [],
     "above_gcse": [],
     "factual_errors": [],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "All keyPoints[n].diagram fields are null, so there were no diagrams or images to check.",
-      "keyPoints[2].content: \"Household mains wiring is always parallel... connected directly to the 230 V supply\". This content is not in the supplied section 4.2.2 (it belongs to the domestic electricity content). It was checked only against own knowledge, where it is consistent, and not against specification text.",
-      "Mark-scheme claims could not be checked against any supplied mark scheme. These are keyPoints[2].tutor_note: \"you need TWO separate points... One alone is unlikely to earn full marks\", keyPoints[0].tutor_note: \"Examiners love giving you the supply potential difference and the p.d. across one component\", and examTip: \"One favourite keeps coming back: why household circuits are wired in parallel.\"",
-      "tables[0].rows[5]: \"Simple torch circuits, some sensors\" as real-world uses of series circuits. These examples are not in the specification text and were not checked against it."
+      "keyPoints[0].diagram \"p2-series-circuit\": I cannot see this diagram, so I could not check that it matches its caption \"Series: the same current everywhere, and the supply p.d. is shared.\"",
+      "keyPoints[1].diagram \"p2-parallel-circuit\": I cannot see this diagram, so I could not check that it matches its caption \"Parallel: each branch gets the full supply p.d., and the current splits.\"",
+      "Spec \"use circuit diagrams to construct and check series and parallel circuits that include a variety of common circuit components\": the lesson text covers only meter placement (keyPoints[4].content \"Common circuit diagram mistakes\"). Whether this skill is fully covered depends on the diagrams, which I cannot see. This includes the range of component symbols shown, which introTips[2] promises: \"you will be able to set up and read circuit diagrams\"."
     ]
   }
 }

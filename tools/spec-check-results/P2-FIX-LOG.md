@@ -840,3 +840,10 @@ Step c fact check, p2-current-voltage (spec-check --blocking-only, $0.2162): fac
 Step c fact check, p2-components (spec-check --blocking-only, $0.1273): factual_errors 0; missing_spec_content 4, all REJECT: ohmic conductor, filament lamp, linear and non-linear graphs, and required practical 4 are taught in p2-current-voltage (specChecklist taughtIn), as in earlier runs.
 
 Step d independent read: tools/audit-runs/33bbc51-1.md (14 findings). Fixed once: F1 (diode predict: "almost no current"), F2 (p2-components LED exam tip: "almost no current", split), F3 (wire mixed question asks why one cell gives no shock risk; the burn hazard stays in the explain; distractors no longer near-duplicates), F4 (resistor predict asks about the current and the lamp only: the lamp's potential difference falling is series sharing, taught in p2-series-parallel), F5 (end quiz tests the wire practical again, replacing the significant-figures item), F6 (zero-error end-quiz item back to the voltmeter item; significant figures and measurement words stay as exam tips, "power of ten" reworded with an example; inverse-proportion tip removed), F7 ("The resistance" option untagged), F8 (M3 option reworded), F9 (move the variable resistor's slider), F10 ("Take readings at even steps across the range."), F12 (sentences split; "A hot wire can also burn you, so keep the current small."), F13 (thermistor-choice end-quiz item removed; the tip now says different thermistors have different graphs), F14 (p2-components More practice: the I-V link removed). Rejected: F11, in docs/ESCALATIONS.md.
+
+## Phase B, B2 fact check (2026-11-15, brief 2026-11-15-script-four-topics)
+
+`node tools/spec-check.js --run --blocking-only` on each lesson (logs in
+tools/spec-check-results/P2-B2/): p2-series-parallel 0.0708, p2-domestic
+0.0582, p2-power-energy 0.0585, p2-static 0.0666 USD (total 0.2541). Every
+lesson: missing_spec_content 0, above_gcse 0, factual_errors 0. Nothing to fix.

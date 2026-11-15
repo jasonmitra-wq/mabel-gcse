@@ -1,49 +1,32 @@
 {
   "lesson": "p2-power-energy",
   "source_file": "lessons/physics/p2-power-energy.json",
-  "lesson_md5": "ba0f121bdceb78b0be87aeaf62bd0411",
+  "lesson_md5": "96b1d14bb35b1076c517ff689c05ae09",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:25:03.707Z",
+  "date": "2026-11-15T13:39:00.922Z",
   "specRefs_sent": [
     "4.2.4.1",
     "4.2.4.2"
   ],
+  "blocking_only": true,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 6260,
-    "output_tokens": 3087
+    "input_tokens": 6842,
+    "output_tokens": 1557
   },
-  "cost_usd": 0.08678,
+  "cost_usd": 0.058508,
   "status": "OK",
   "result": {
     "lesson": "p2-power-energy",
-    "missing_spec_content": [
-      {
-        "specRef": "4.2.4.2",
-        "spec_text": "Students should be able to describe, with examples, the relationship between the power ratings for domestic electrical appliances and the changes in stored energy when they are in use.",
-        "why": "The lesson links a power rating to a change in a named energy store for only one appliance: the kettle in keyPoints[0].content (\"A higher power kettle transfers more energy to the water each second. So the water's thermal energy store fills faster.\"). The phone charger and 60 W bulb appear only as arithmetic examples, with no store named. The spec asks for examples, in the plural, of power rating linked to changes in stored energy, so this is only partly covered."
-      }
-    ],
+    "missing_spec_content": [],
     "above_gcse": [],
     "factual_errors": [],
-    "wrong_terms": [
-      {
-        "field": "intro",
-        "text": "Every time you boil a kettle, stream a video or charge your phone, electrical energy is transferred.",
-        "spec_term": "energy transferred by electrical work (the spec says \"The amount of energy transferred by electrical work can be calculated using the equation\"; it does not treat 'electrical energy' as a form or store of energy)"
-      }
-    ],
-    "checkpoint_mismatch": [
-      {
-        "checkpoint": "2",
-        "key_point": "keyPoints[2] \"Linking all the electrical equations\" — \"E = QV (energy transferred = charge flow × potential difference). This is the energy transferred by electrical work\"",
-        "why": "This key point introduces E = QV, which the spec requires students to \"recall and apply\". The checkpoint only uses V = IR, P = IV and E = Pt, so no checkpoint in the lesson tests E = QV. The checkpoint is also a word-for-word copy of the key point's worked example (\"a resistor has R = 50 Ω and V = 10 V. Find the energy transferred in 2 minutes\"), so it tests recall of that example rather than the ability to choose and combine equations."
-      }
-    ],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
     "not_checked": [
-      "All keyPoints have \"diagram\": null, so there were no diagrams or images to check.",
-      "V = IR and Q = It (keyPoints[2].content, tables[0]) are not in the provided specification sections (4.2.4.1, 4.2.4.2). They were checked against own knowledge only and are correct, but the specification wording and units for them could not be confirmed from the text supplied."
+      "The lesson uses 'V = IR' and 'Q = It' (keyPoints[2].content: \"<strong>V = IR</strong> (potential difference = current × resistance)\" and \"<strong>Q = It</strong> (charge flow = current × time; Q in coulombs, C)\"). Neither equation is in the supplied sections 4.2.4.1 and 4.2.4.2, so I checked them against my own knowledge only. Both are correct and are standard GCSE content from other parts of the specification."
     ]
   }
 }

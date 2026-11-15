@@ -82,3 +82,11 @@ Rebuild: download each URL below to `data/exam/src/<File>` and check the md5.
 
 No exams were sat in June 2020 or June 2021; the November 2020 and
 November 2021 series stand in for them.
+
+## P2 rest (2026-11-15)
+
+Brief docs/briefs/2026-11-15-script-four-topics.md, step B1: no new downloads.
+From the same files, local and gitignored: data/exam/p2-rest-ms-extract.txt
+(every mark-scheme part tagged 4.2.2 to 4.2.5, 213 parts) and
+data/exam/p2-rest-outcomes.md (question types and mark-scheme points by
+section, examiner-named errors E29 to E44).

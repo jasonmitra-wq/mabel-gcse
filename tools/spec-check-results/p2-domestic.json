@@ -1,60 +1,30 @@
 {
   "lesson": "p2-domestic",
   "source_file": "lessons/physics/p2-domestic.json",
-  "lesson_md5": "e4576aa0b0135254b100416b2e904758",
+  "lesson_md5": "b88e70e78469faa4364a8be4b7fc4778",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:24:39.455Z",
+  "date": "2026-11-15T13:39:00.738Z",
   "specRefs_sent": [
     "4.2.3.1",
     "4.2.3.2"
   ],
+  "blocking_only": true,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 5273,
-    "output_tokens": 2619
+    "input_tokens": 5785,
+    "output_tokens": 1754
   },
-  "cost_usd": 0.073472,
+  "cost_usd": 0.05822,
   "status": "OK",
   "result": {
     "lesson": "p2-domestic",
     "missing_spec_content": [],
-    "above_gcse": [
-      {
-        "field": "keyPoints[0].content",
-        "text": "The frequency is 50 Hz. So the current reverses direction 100 times every second.",
-        "why": "The spec only requires the student to know that the supply 'has a frequency of 50 Hz'. Counting direction reversals (100 per second) is extra. Checkpoint 0 builds on it, and its distractor 'The potential difference changes 50 times per second' sits right next to it, so a student could mix up cycles with reversals."
-      }
-    ],
-    "factual_errors": [
-      {
-        "field": "checkpoints.2.correctFeedback",
-        "text": "The live wire is still at a high potential difference.",
-        "correction": "A potential difference is always between two points, so a single wire is not 'at' a potential difference. The spec wording is: 'The potential difference between the live wire and earth (0 V) is about 230 V.' The feedback should say the live wire is at a high potential, about 230 V relative to earth.",
-        "basis": "spec"
-      }
-    ],
-    "wrong_terms": [
-      {
-        "field": "keyPoints[1].heading",
-        "text": "The three-pin plug",
-        "spec_term": "three-core cable (spec: 'Most electrical appliances are connected to the mains using three- core cable'). The spec's colour coding and wire roles describe the cable, not a plug."
-      },
-      {
-        "field": "tables[0].title",
-        "text": "The three wires in a UK plug",
-        "spec_term": "three-core cable"
-      },
-      {
-        "field": "checkpoints.1.question",
-        "text": "What is the colour and potential difference of the live wire in a UK three-pin plug?",
-        "spec_term": "three-core cable"
-      }
-    ],
+    "above_gcse": [],
+    "factual_errors": [],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
-    "not_checked": [
-      "The lesson has no diagrams (every 'diagram' field is null), so there were no images to check.",
-      "I assumed checkpoint keys \"0\", \"1\" and \"2\" belong to keyPoints[0], [1] and [2]. The JSON does not state this link explicitly."
-    ]
+    "not_checked": []
   }
 }

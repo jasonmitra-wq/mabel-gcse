@@ -1,0 +1,9 @@
+RUN
+Mode: --blocking-only (missing_spec_content, above_gcse, factual_errors)
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+p2-domestic | 4.2.3.1, 4.2.3.2 | 16276 | 4069 | 0.3363
+TOTAL 1 lesson(s) | 16276 chars | 4069 est. input tokens | 16000 output tokens assumed | $0.3363
+Rates: $4 per M input, $20 per M output; output assumed at the 16000-token ceiling per lesson.
+Model claude-opus-5-5 confirmed in /v1/models.
+p2-domestic: OK | in 5785 out 1754 | $0.0582 | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 0
+Actual total cost: $0.0582

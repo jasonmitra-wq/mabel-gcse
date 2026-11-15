@@ -148,3 +148,7 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-10-19 | p2-components | OK | missing_spec_content 0, above_gcse 0, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 4 | 13603/3264 | $0.1197
 - 2026-10-24 | p2-current-voltage | OK | missing_spec_content 12, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 6 | 28866/5038 | $0.2162
 - 2026-10-24 | p2-components | OK | missing_spec_content 4, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 6 | 14935/3379 | $0.1273
+- 2026-11-15 | p2-power-energy | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 1 | 6842/1557 | $0.0585
+- 2026-11-15 | p2-domestic | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 5785/1754 | $0.0582
+- 2026-11-15 | p2-series-parallel | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 3 | 8310/1878 | $0.0708
+- 2026-11-15 | p2-static | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 1 | 6974/1933 | $0.0666

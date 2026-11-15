@@ -59,3 +59,36 @@ sites). For these components the evidence is the examiner reports
 (tools/pilot/outcomes.md, errors 21 and 22). A blog post of an interview study on
 "resistance is current over voltage" (science-education-research.com) could not be
 opened here and is not used.
+
+## Phase B, P2 rest (series and parallel, mains, power and energy, static)
+
+Brief docs/briefs/2026-11-15-script-four-topics.md, step B1. Sources opened on
+2026-11-15; the wording is ours. These ids are outside the pilot: they are not
+in the "In scope" table above, so the pilot's quick check, tests and
+js/pilot/misconceptions.js are unchanged. In the scripts they are the reasons
+behind the named wrong options (a tap option's branch says which, in the
+script's own words). Examiner errors E29 to E44 are in
+data/exam/p2-rest-outcomes.md (local).
+
+| Id | Misconception (our words) | Lesson | Source (opened) |
+|---|---|---|---|
+| M15 | Two resistors in parallel have a bigger total resistance than either one alone (resistances always add). | p2-series-parallel | IOPSpark, "Many students predict incorrectly that two resistors in parallel will have a larger resistance than each resistor alone": https://spark.iop.org/many-students-predict-incorrectly-two-resistors-parallel-will-have-larger-resistance-each-resistor ; examiner report 1H-NOV20 8.4 (E30) |
+| M16 | The potential difference across each branch of a parallel circuit is a share of the supply, not the whole supply pd. | p2-series-parallel | IOPSpark, "Many students do not recognise that the potential difference across each resistor in a simple parallel circuit is the potential difference across the battery": https://spark.iop.org/many-students-do-not-recognise-potential-difference-across-each-resistor-simple-parallel-circuit |
+| M17 | In series, the supply pd is shared equally whatever the resistances (or not shared at all); the bigger resistor does not get the bigger share. | p2-series-parallel | IOPSpark, "Many students cannot correctly predict the potential difference across each resistor in a series circuit…": https://spark.iop.org/many-students-cannot-correctly-predict-potential-difference-across-each-resistor-series-circuit ; examiner report 1F-JUN24 2.5, 2.6 (E29) |
+| M18 | Adding a resistor in series leaves the current the same (the cell gives a fixed current); current is not set by the supply pd and the whole circuit's resistance together. | p2-series-parallel | IOPSpark, "Few students use the Voltage-Resistance-Current (VRI) model of a series circuit": https://spark.iop.org/few-students-use-voltage-resistance-current-vri-model-series-circuit (with M5 above) |
+| M19 | Two resistors are only "in parallel" when drawn side by side as a ladder; the same circuit drawn another way is not recognised. | p2-series-parallel | IOPSpark, "Many students cannot identify reliably from a diagram whether or not two resistors in a circuit are in parallel when they are drawn in an unfamiliar format": https://spark.iop.org/many-students-cannot-identify-reliably-diagram-whether-or-not-two-resistors-circuit-are-parallel ; examiner report 1F-JUN22 6.1 (35% saw parallel) |
+| M20 | Static charging happens because positive charges (protons) move, or an object becomes positive by gaining protons. | p2-static | The Physics Classroom, "Triboelectric Charging, Help 2" (names gaining protons as a common misconception): https://www.physicsclassroom.com/minds-on/static-electricity/mission-se3-triboelectric-charging/help/qg2help ; mark schemes 1F/1H-JUN18 10.1/01.1 ("mention of positive charge moving negates both marks"); examiner report 1H-JUN24 4.1 (E39) |
+| M21 | Electric (static) forces are magnetic: charged objects have poles, or a magnet attracts a charged rod. | p2-static | IOPSpark, "Some students conflate magnetic and electrostatic effects": https://spark.iop.org/some-students-conflate-magnetic-and-electrostatic-effects ; examiner report 1F-JUN22 3.3 ("discussed magnetic poles") |
+| M22 | Touching a charged object gives you the opposite charge (so you are attracted), rather than the same charge. | p2-static | examiner report 1H-JUN24 4.1 and 1F-JUN24 1.1 (38% knew a person touching a negative dome becomes negative) (E39) |
+
+## Not found (P2 rest)
+
+No published misconception research on mains wiring (live, neutral, earth),
+ac and dc, or electrical power turned up in the sources reached (IOPSpark's
+Electricity and Magnetism entries, 31, list none). For these the evidence is
+the examiner reports (data/exam/p2-rest-outcomes.md, errors E31 to E38):
+"direct" taken to mean the current or charge flows one way (the specification
+asks about the potential difference); 240 V; live and neutral colours mixed;
+the danger of a live wire with the switch open put in terms of current, not
+potential; power taken as proportional to pd for a lamp; E = P t with time
+or power not converted.

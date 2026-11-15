@@ -1,0 +1,9 @@
+RUN
+Mode: --blocking-only (missing_spec_content, above_gcse, factual_errors)
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+p2-series-parallel | 4.2.2 | 23901 | 5976 | 0.3439
+TOTAL 1 lesson(s) | 23901 chars | 5976 est. input tokens | 16000 output tokens assumed | $0.3439
+Rates: $4 per M input, $20 per M output; output assumed at the 16000-token ceiling per lesson.
+Model claude-opus-5-5 confirmed in /v1/models.
+p2-series-parallel: OK | in 8310 out 1878 | $0.0708 | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 3
+Actual total cost: $0.0708

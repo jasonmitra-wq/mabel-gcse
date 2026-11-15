@@ -1,0 +1,450 @@
+{
+  "about": "Prerequisite map for P2 rest (brief docs/briefs/2026-11-15-script-four-topics.md, B1): every idea the four scripted lessons p2-series-parallel, p2-domestic, p2-power-energy and p2-static use, what each depends on (maths included), and where it is taught. Ideas from the pilot lessons point to physics-electricity.json. Used when scripting: each script teaches or recalls an idea before it asks about it.",
+  "lessons": [
+    "p2-series-parallel",
+    "p2-domestic",
+    "p2-power-energy",
+    "p2-static"
+  ],
+  "ideas": [
+    {
+      "id": "electric-current",
+      "name": "Current: the rate of flow of charge, in amperes",
+      "terms": [
+        "current",
+        "ampere"
+      ],
+      "dependsOn": [],
+      "taught": "p2-current-voltage key point 1"
+    },
+    {
+      "id": "potential-difference",
+      "name": "Potential difference: the push that drives charge, in volts",
+      "terms": [
+        "potential difference",
+        "volt"
+      ],
+      "dependsOn": [],
+      "taught": "p2-current-voltage key point 3"
+    },
+    {
+      "id": "resistance",
+      "name": "Resistance: how hard it is for charge to flow, in ohms",
+      "terms": [
+        "resistance",
+        "ohm"
+      ],
+      "dependsOn": [
+        "electric-current",
+        "potential-difference"
+      ],
+      "taught": "p2-current-voltage key point 4"
+    },
+    {
+      "id": "eq-V=IR",
+      "name": "V = I R",
+      "terms": [],
+      "dependsOn": [
+        "resistance"
+      ],
+      "taught": "p2-current-voltage key point 4"
+    },
+    {
+      "id": "eq-Q=It",
+      "name": "Q = I t",
+      "terms": [
+        "charge flow",
+        "coulomb"
+      ],
+      "dependsOn": [
+        "electric-current"
+      ],
+      "taught": "p2-current-voltage key point 2"
+    },
+    {
+      "id": "eq-E=QV",
+      "name": "E = Q V",
+      "terms": [
+        "energy transferred",
+        "joule"
+      ],
+      "dependsOn": [
+        "potential-difference",
+        "eq-Q=It"
+      ],
+      "taught": "p2-current-voltage key point 7"
+    },
+    {
+      "id": "ammeter-voltmeter",
+      "name": "Ammeter in the loop, voltmeter across a component",
+      "terms": [
+        "ammeter",
+        "voltmeter"
+      ],
+      "dependsOn": [
+        "electric-current",
+        "potential-difference"
+      ],
+      "taught": "p2-current-voltage key points 2 and 3"
+    },
+    {
+      "id": "circuit-symbols",
+      "name": "Circuit symbols and diagrams (cell, lamp, resistor, switch, fuse, variable resistor)",
+      "terms": [
+        "circuit symbol",
+        "circuit diagram"
+      ],
+      "dependsOn": [],
+      "taught": "p2-components key point 1"
+    },
+    {
+      "id": "maths-add-subtract",
+      "name": "Adding and taking away decimals",
+      "terms": [],
+      "dependsOn": [],
+      "taught": "outside these lessons"
+    },
+    {
+      "id": "maths-square",
+      "name": "Squaring a number (3² = 9)",
+      "terms": [],
+      "dependsOn": [],
+      "taught": "outside these lessons",
+      "note": "recapped in p2-power-energy basics"
+    },
+    {
+      "id": "maths-units-time",
+      "name": "Minutes and hours into seconds",
+      "terms": [],
+      "dependsOn": [],
+      "taught": "outside these lessons"
+    },
+    {
+      "id": "maths-prefix",
+      "name": "kilo- (×1000), milli- (÷1000)",
+      "terms": [],
+      "dependsOn": [],
+      "taught": "outside these lessons"
+    },
+    {
+      "id": "series-circuit",
+      "name": "Series: one loop, no branches",
+      "terms": [
+        "series circuit"
+      ],
+      "dependsOn": [
+        "circuit-symbols"
+      ],
+      "taught": "p2-series-parallel key point 1"
+    },
+    {
+      "id": "series-same-current",
+      "name": "Series: the same current through each component",
+      "terms": [],
+      "dependsOn": [
+        "series-circuit",
+        "electric-current"
+      ],
+      "taught": "p2-series-parallel key point 1"
+    },
+    {
+      "id": "series-pd-shared",
+      "name": "Series: the supply pd is shared; the bigger resistance gets the bigger share",
+      "terms": [],
+      "dependsOn": [
+        "series-circuit",
+        "potential-difference",
+        "eq-V=IR"
+      ],
+      "taught": "p2-series-parallel key point 1"
+    },
+    {
+      "id": "series-R-total",
+      "name": "Series: R total = R1 + R2; adding a resistor raises the total and lowers the current",
+      "terms": [
+        "total resistance"
+      ],
+      "dependsOn": [
+        "series-circuit",
+        "resistance",
+        "maths-add-subtract"
+      ],
+      "taught": "p2-series-parallel key point 1"
+    },
+    {
+      "id": "parallel-circuit",
+      "name": "Parallel: separate branches between the same two points",
+      "terms": [
+        "parallel circuit"
+      ],
+      "dependsOn": [
+        "circuit-symbols"
+      ],
+      "taught": "p2-series-parallel key point 2"
+    },
+    {
+      "id": "parallel-same-pd",
+      "name": "Parallel: the same pd across each branch",
+      "terms": [],
+      "dependsOn": [
+        "parallel-circuit",
+        "potential-difference"
+      ],
+      "taught": "p2-series-parallel key point 2"
+    },
+    {
+      "id": "parallel-current-sum",
+      "name": "Parallel: total current = sum of the branch currents",
+      "terms": [],
+      "dependsOn": [
+        "parallel-circuit",
+        "electric-current",
+        "maths-add-subtract"
+      ],
+      "taught": "p2-series-parallel key point 2"
+    },
+    {
+      "id": "parallel-R-less",
+      "name": "Parallel: total resistance less than the smallest branch; more paths, more current for the same pd",
+      "terms": [],
+      "dependsOn": [
+        "parallel-circuit",
+        "parallel-current-sum",
+        "resistance"
+      ],
+      "taught": "p2-series-parallel key point 2"
+    },
+    {
+      "id": "household-parallel",
+      "name": "Lights and sockets at home are in parallel: full pd each, separate switching, one fault does not stop the rest",
+      "terms": [],
+      "dependsOn": [
+        "parallel-same-pd"
+      ],
+      "taught": "p2-series-parallel key point 3"
+    },
+    {
+      "id": "equivalent-resistance",
+      "name": "Equivalent resistance and the four-step series calculation",
+      "terms": [
+        "equivalent resistance"
+      ],
+      "dependsOn": [
+        "series-R-total",
+        "eq-V=IR"
+      ],
+      "taught": "p2-series-parallel key point 4"
+    },
+    {
+      "id": "testing-circuit",
+      "name": "A dc series circuit for testing: variable resistor, ammeter in series, voltmeter across",
+      "terms": [
+        "variable resistor"
+      ],
+      "dependsOn": [
+        "ammeter-voltmeter",
+        "series-circuit"
+      ],
+      "taught": "p2-series-parallel key point 5"
+    },
+    {
+      "id": "dc",
+      "name": "Direct pd: its direction never changes (cells, batteries)",
+      "terms": [
+        "direct potential difference"
+      ],
+      "dependsOn": [
+        "potential-difference"
+      ],
+      "taught": "p2-domestic key point 1"
+    },
+    {
+      "id": "ac",
+      "name": "Alternating pd: its direction keeps reversing; frequency in hertz",
+      "terms": [
+        "alternating potential difference",
+        "frequency",
+        "hertz"
+      ],
+      "dependsOn": [
+        "dc"
+      ],
+      "taught": "p2-domestic key point 1"
+    },
+    {
+      "id": "mains-values",
+      "name": "UK mains: ac, 50 Hz, about 230 V",
+      "terms": [
+        "mains electricity"
+      ],
+      "dependsOn": [
+        "ac"
+      ],
+      "taught": "p2-domestic key point 1"
+    },
+    {
+      "id": "three-core",
+      "name": "Three-core cable: live brown, neutral blue, earth green and yellow; what each does",
+      "terms": [
+        "live wire",
+        "neutral wire",
+        "earth wire",
+        "three-core cable"
+      ],
+      "dependsOn": [
+        "mains-values"
+      ],
+      "taught": "p2-domestic key point 2"
+    },
+    {
+      "id": "live-danger",
+      "name": "A live wire is dangerous with the switch open; a person at 0 V touching it has a large pd across them",
+      "terms": [
+        "earthing"
+      ],
+      "dependsOn": [
+        "three-core",
+        "potential-difference"
+      ],
+      "taught": "p2-domestic key point 3"
+    },
+    {
+      "id": "power",
+      "name": "Power: energy transferred per second, in watts",
+      "terms": [
+        "power",
+        "watt",
+        "kilowatt"
+      ],
+      "dependsOn": [
+        "eq-E=QV"
+      ],
+      "taught": "p2-power-energy key point 1"
+    },
+    {
+      "id": "eq-P=VI",
+      "name": "P = V I",
+      "terms": [],
+      "dependsOn": [
+        "power",
+        "electric-current",
+        "potential-difference"
+      ],
+      "taught": "p2-power-energy key point 1"
+    },
+    {
+      "id": "eq-P=I2R",
+      "name": "P = I² R",
+      "terms": [],
+      "dependsOn": [
+        "eq-P=VI",
+        "eq-V=IR",
+        "maths-square"
+      ],
+      "taught": "p2-power-energy key point 1"
+    },
+    {
+      "id": "eq-E=Pt",
+      "name": "E = P t; appliances move energy to kinetic or thermal stores",
+      "terms": [],
+      "dependsOn": [
+        "power",
+        "maths-units-time",
+        "maths-prefix"
+      ],
+      "taught": "p2-power-energy key point 2"
+    },
+    {
+      "id": "power-rating",
+      "name": "Power rating and how fast an appliance changes energy stores",
+      "terms": [
+        "power rating"
+      ],
+      "dependsOn": [
+        "eq-E=Pt"
+      ],
+      "taught": "p2-power-energy key point 2"
+    },
+    {
+      "id": "linking-equations",
+      "name": "Choosing and combining V = IR, P = VI, E = Pt, Q = It, E = QV",
+      "terms": [],
+      "dependsOn": [
+        "eq-E=Pt",
+        "eq-E=QV",
+        "eq-Q=It"
+      ],
+      "taught": "p2-power-energy key point 3"
+    },
+    {
+      "id": "atoms-electrons",
+      "name": "Atoms: nucleus with protons; electrons outside, negative, can be rubbed off",
+      "terms": [
+        "electron",
+        "proton"
+      ],
+      "dependsOn": [],
+      "taught": "outside these lessons",
+      "note": "P4 atomic structure; recapped in p2-static basics"
+    },
+    {
+      "id": "insulator-conductor",
+      "name": "Insulators keep charge in place; conductors let it move",
+      "terms": [
+        "insulator",
+        "conductor"
+      ],
+      "dependsOn": [],
+      "taught": "outside these lessons",
+      "note": "recapped in p2-static basics"
+    },
+    {
+      "id": "charging-rubbing",
+      "name": "Rubbing insulators moves electrons: gainer negative, loser equal positive",
+      "terms": [
+        "charging by rubbing"
+      ],
+      "dependsOn": [
+        "atoms-electrons",
+        "insulator-conductor"
+      ],
+      "taught": "p2-static key point 1"
+    },
+    {
+      "id": "like-unlike",
+      "name": "Same charge repels, different attract; a non-contact force, stronger closer",
+      "terms": [
+        "attraction",
+        "repulsion",
+        "non-contact force"
+      ],
+      "dependsOn": [
+        "charging-rubbing"
+      ],
+      "taught": "p2-static key point 2"
+    },
+    {
+      "id": "electric-field",
+      "name": "Electric field: region round a charged object where another charged object feels a force; weaker further away; field lines of an isolated sphere",
+      "terms": [
+        "electric field",
+        "field lines"
+      ],
+      "dependsOn": [
+        "like-unlike"
+      ],
+      "taught": "p2-static key point 3"
+    },
+    {
+      "id": "sparking",
+      "name": "Sparking: a strong field makes the air conduct and electrons jump",
+      "terms": [
+        "spark"
+      ],
+      "dependsOn": [
+        "electric-field"
+      ],
+      "taught": "p2-static key point 4"
+    }
+  ]
+}

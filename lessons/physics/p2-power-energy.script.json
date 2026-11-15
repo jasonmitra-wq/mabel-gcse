@@ -16,7 +16,7 @@
      "id": "1.1a",
      "type": "ask",
      "kind": "tap",
-     "question": "First, three quick questions from the last lesson. What is the potential difference of the UK mains supply?",
+     "question": "First, three quick questions from earlier lessons. What is the potential difference of the UK mains supply?",
      "options": [
       {
        "text": "About 230 V",
@@ -71,7 +71,7 @@
      },
      "idk": [
       {
-       "hint": "Current is about how much charge passes a point each second. Which button is about how fast the charge moves?"
+       "hint": "Current is about how much charge passes a point each second. Which button is about how much charge passes each second?"
       }
      ],
      "answerWhy": "Current is the rate of flow of charge, measured in amperes (A)."
@@ -221,7 +221,7 @@
     {
      "id": "1.9",
      "type": "say",
-     "text": "Here is the reason. Potential difference is the energy each coulomb of charge is given, and current is the number of coulombs that flow each second. More of either means more energy each second: more power."
+     "text": "Why two cells gave the lamp more energy each second: potential difference is the energy each coulomb of charge is given (a coulomb is a unit of charge), and current is the number of coulombs that flow each second. More of either means more energy each second: more power."
     },
     {
      "id": "1.11",
@@ -285,7 +285,7 @@
      "id": "1.15",
      "type": "ask",
      "kind": "number",
-     "question": "A 1150 W hairdryer runs on the 230 V mains. What current does it take, in amperes?",
+     "question": "A 1150 W heater runs on the 230 V mains. What current does it take, in amperes?",
      "answer": {
       "value": 5,
       "unit": "A",
@@ -418,7 +418,7 @@
        "branch": "kinetic"
       }
      ],
-     "right": "Yes: the heater warms the air, a thermal store, and the motor turns the fan, a kinetic store.",
+     "right": "Yes: the energy goes to the thermal store of the warm air and the kinetic store of the turning fan.",
      "wrong": {
       "other": "Not quite. A hairdryer transfers energy to a thermal store and a kinetic store.",
       "thermal": "Not quite: the heater fills a thermal store, and the motor turning the fan fills a kinetic store, so both.",
@@ -426,10 +426,10 @@
      },
      "idk": [
       {
-       "hint": "A hairdryer has a heater and a motor. What does each one do?"
+       "hint": "A heater makes things hotter, and a motor makes things move. Which button has a store for each?"
       }
      ],
-     "answerWhy": "The heater warms the air, a thermal store, and the motor turns the fan, a kinetic store."
+     "answerWhy": "The energy goes to the thermal store of the warm air and the kinetic store of the turning fan."
     },
     {
      "id": "2.3",
@@ -485,7 +485,7 @@
      "wrong": {
       "other": "Not quite: 216 000 J. 1 hour is 3600 s, and E = P t = 60 × 3600 = 216 000 J.",
       "nohour": "Not quite: 216 000 J. The time must be in seconds: 1 hour is 3600 s. E = P t = 60 × 3600 = 216 000 J.",
-      "minutes": "Not quite: 216 000 J. 3600 is 60 × 60, with the hour as 60 minutes. Change the hour to seconds first, 3600 s: E = P t = 60 × 3600 = 216 000 J."
+      "minutes": "Not quite: 216 000 J. You multiplied 60 W by 60 minutes. The time must be in seconds: 1 hour is 3600 s, so E = P t = 60 × 3600 = 216 000 J."
      },
      "idk": [
       {
@@ -555,7 +555,7 @@
     {
      "id": "3.2",
      "type": "say",
-     "text": "You also met E = Q V: energy transferred = charge flow × potential difference, with E in joules, Q in coulombs and V in volts. When charge flows through a potential difference, energy is transferred; physicists call that work being done."
+     "text": "Another equation for energy uses charge: E = Q V, energy transferred = charge flow × potential difference, with E in joules, Q in coulombs and V in volts. Each coulomb pushed through a component gives it energy."
     },
     {
      "id": "3.3",
@@ -672,15 +672,14 @@
      "type": "own",
      "prompt": "In one line: how would you find the energy a heater transfers, if you know its current, its potential difference and the time?",
      "points": [
-      "multiply the potential difference, the current and the time",
-      "the time must be in seconds"
+      "multiply the potential difference, the current and the time"
      ],
      "idk": "No problem. A good line would be: multiply the potential difference, the current and the time in seconds, E = V I t (or find P = V I first, then E = P t)."
     },
     {
      "id": "3.9",
      "type": "say",
-     "text": "Now for a short quiz on the whole lesson: six questions. Take your time."
+     "text": "Now for a short quiz: six questions on the calculations. Take your time."
     },
     {
      "id": "3.10",

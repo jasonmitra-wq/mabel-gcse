@@ -43,7 +43,16 @@ function serve() {
 }
 const PAGE = `<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="css/style.css"></head><body><div id="box"></div>
 <script src="js/widgets/widget-models.js"></script><script src="js/widgets/widgets.js"></script><script src="js/lesson-extras.js"></script></body></html>`;
-const LATER = { 0: /potential difference|resistor|voltmeter|resistance/i };
+// Key point 1's widget must show no term of a later key point. For p2-current-voltage the terms are the ones its
+// later key points teach (F12); for any other lesson, the keyTerms of its later key points (Phase B, 2026-11-15: the fixed
+// list flagged "resistor" in p2-series-parallel and "potential difference" in p2-power-energy, both taught earlier).
+const LATER_BY = { 'p2-current-voltage': { 0: /potential difference|resistor|voltmeter|resistance/i } };
+const esc = t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function laterOf(id, data) {
+  if (LATER_BY[id]) return LATER_BY[id];
+  const terms = data.keyPoints.slice(1).flatMap(kp => (kp.keyTerms || []).map(t => String(t.term).replace(/\s*\(.*?\)\s*/g, ' ').trim())).filter(t => t.length >= 3);
+  return terms.length ? { 0: new RegExp(`\\b(${terms.map(esc).join('|')})`, 'i') } : {};
+}
 
 async function main() {
   const exe = findBrowser();
@@ -56,6 +65,7 @@ async function main() {
   const TeachCore = require(path.join(ROOT, 'js', 'teach-core.js'));
   for (const id of LESSONS) {
     const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', 'physics', `${id}.json`), 'utf8'));
+    const LATER = laterOf(id, data);
     for (const [k, kp] of data.keyPoints.entries()) {
       const w = kp.widget;
       if (!w || w.id !== 'circuit' || !(w.options && w.options.predicts)) continue;

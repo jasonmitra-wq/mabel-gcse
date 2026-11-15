@@ -1,0 +1,338 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 13729,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 10225,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 5908
+    },
+    "iterations": [
+      {
+        "input_tokens": 13729,
+        "output_tokens": 10225,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.5188320000000001,
+  "seconds": 93,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"new\",\"turn\":\"1.1\",\"quote\":\"why a balloon rubbed on your hair clings to a wall\",\"what\":\"The opening promises to explain why a charged balloon clings to a wall, but the lesson never comes back to it. It could not: a neutral wall attracting a charged balloon is never taught.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from earlier lessons. What is electric current?\",\"what\":\"The lesson opens by testing her on earlier lessons, as if she were revising. A first-time learner can only guess, and the answer is not needed for static electricity.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.1a wrong answer (push)\",\"quote\":\"The push that drives the charge is the potential difference.\",\"what\":\"\\\"Potential difference\\\" is used without ever being explained in this lesson.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.1a wrong answer (hard)\",\"quote\":\"How hard it is for charge to flow is the resistance.\",\"what\":\"\\\"Resistance\\\" is used without being explained, and it has nothing to do with this lesson.\",\"severity\":\"minor\"},{\"fault\":\"L3\",\"turn\":\"1.1b\",\"quote\":\"Second, from the last lesson: what is the unit of power?\",\"what\":\"A recall question on power has nothing to do with static electricity and assumes a lesson she may not have had. It delays the start and could put her off before the topic begins.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.1b wrong answer (volt)\",\"quote\":\"the volt is the unit of potential difference\",\"what\":\"\\\"Potential difference\\\" is used again with no explanation.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.1b don't know (first time)\",\"quote\":\"A 60 W lamp: which button is the W?\",\"what\":\"The hint just points at the button with a W on it. She can get it right by matching letters and learn nothing about power.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"L1\",\"turn\":\"1.2\",\"quote\":\"Everything is made of atoms. Each atom has a tiny centre, the nucleus, which holds protons with a positive charge. Around the nucleus are electrons, with a negative charge.\",\"what\":\"Atom, nucleus, proton, electron, positive charge and negative charge all arrive in one message. \\\"Charge\\\" itself is never explained.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P6\",\"turn\":\"1.9\",\"quote\":\"A material like that is called an insulator. On an insulator, the charge stays where it was rubbed on.\",\"what\":\"One message carries three ideas: which materials charge by rubbing, the new word insulator, and that the charge stays put. \\\"Where it was rubbed on\\\" also does not fit the material that lost electrons.\",\"severity\":\"minor\"},{\"fault\":\"P16\",\"turn\":\"1.10\",\"quote\":\"A polythene rod is rubbed with a cloth and becomes positively charged.\",\"what\":\"This is the wrong way round. The lesson file, and every GCSE textbook, says polythene gains electrons and becomes negative; it is acetate that becomes positive. She would learn a wrong fact.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F1\",\"turn\":\"1.10 right answer\",\"quote\":\"Only electrons move, never protons, so a positive object is one that has lost electrons.\",\"what\":\"\\\"Only electrons move\\\" was said in 1.4 and comes again in 1.10's don't-know reply, the 1.11 marking, 2.7, 4.3 and 4.9. That is too many times in nearly the same words.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.11\",\"quote\":\"A full line also says: <the points it misses>.\",\"what\":\"The question asks only how rubbing makes the balloon negative. A correct answer (\\\"electrons are rubbed onto it\\\") is told it is incomplete for not adding \\\"only electrons move, not protons\\\", which the question did not ask for.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P4\",\"turn\":\"1.11\",\"quote\":\"In one line: how does rubbing make a balloon negatively charged?\",\"what\":\"Key point 1 closes without teaching conductors: that a metal door handle lets charge flow through it and discharges you, while a polythene rod stays charged. The word \\\"conductor\\\" never appears, yet later steps rely on charge moving through metal.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.2\",\"quote\":\"two polythene rods are both rubbed with the same cloth, so both are negatively charged\",\"what\":\"A few steps earlier (1.10) a polythene rod rubbed with a cloth became positive. Now the same rubbing makes it negative, with \\\"so\\\" as if that followed. She cannot tell which is true.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"2.2 don't know (first time)\",\"quote\":\"Do you think the same type pushes or pulls? (same buttons)\",\"what\":\"The hint asks \\\"pushes or pulls\\\" but the buttons say Together / They do not move / Apart. It is also no easier than the original question, just the same guess reworded.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"2.3\",\"quote\":\"Two objects with the same type of charge repel: they push each other apart. A push like that between charged objects is called repulsion.\",\"what\":\"Two new words, \\\"repel\\\" and \\\"repulsion\\\", in one message.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"2.4\",\"quote\":\"attract: they pull together. A pull like that between charged objects is called attraction.\",\"what\":\"Two new words, \\\"attract\\\" and \\\"attraction\\\", in one message.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.4\",\"quote\":\"Two objects with different types of charge, one positive and one negative, attract: they pull together.\",\"what\":\"Attraction is only told. She never predicts it, sees the polythene-and-acetate demonstration, or answers a question on it; every question in key point 2 and the quiz is about repulsion. Clothes clinging from the dryer is also left out.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"2.5\",\"quote\":\"your hairs can each get the same negative charge, and they stand apart. Why?\",\"what\":\"The stem says the hairs have the same charge, and the rule \\\"same type repel\\\" was given two messages earlier. The right button is just that rule repeated, so there is nothing to work out.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P16\",\"turn\":\"2.5\",\"quote\":\"your hairs can each get the same negative charge\",\"what\":\"The lesson file says only that the strands get the same charge. The script adds that it is negative, when hair usually loses electrons and goes positive. The sign should be left out.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"2.6\",\"quote\":\"attraction and repulsion between charged objects are non-contact forces. The closer the two objects are, the stronger the force between them.\",\"what\":\"Two separate ideas in one message, the new term \\\"non-contact force\\\" and how force changes with distance, and no question on either until the quiz.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.7\",\"quote\":\"A girl touches a negatively charged metal dome. Charge moves through metal and through her body, so some spreads onto her\",\"what\":\"A new idea, that charge can flow through metal and a person, is slipped into a question stem. Conductors were never taught, 1.9 told her charge stays where it is, and \\\"metal dome\\\" is not explained. The stem then nearly gives the answer.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"2.7 don't know (first time)\",\"quote\":\"Electrons spread from the dome onto her. What charge do electrons carry? (same buttons)\",\"what\":\"The hint asks what charge electrons carry, but the buttons are three long statements about the girl. The question and the buttons do not match.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"3.3\",\"quote\":\"Which is the best way to say what an electric field is?\",\"what\":\"The definition was given word for word in 3.1, and the right button is that sentence, by far the longest option. It tests only whether she can spot the sentence she just read.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.3 don't know (first time)\",\"quote\":\"Which button mentions that force?\",\"what\":\"The hint tells her to pick the button with the word \\\"force\\\" in it. That is matching words, not thinking.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.4\",\"quote\":\"Each arrow shows the way a small positive charge would be pushed if you put it there.\",\"what\":\"\\\"Each arrow\\\" appears before she has been told that field lines carry arrows, and before she has seen any picture of them.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P5\",\"turn\":\"3.5\",\"quote\":\"the field lines are straight and meet its surface at right angles, spreading out like the spokes of a wheel\",\"what\":\"The field pattern is described only in words (straight, right angles, spokes, outwards) with no picture. The picture does not come until 3.7, after the question, so she must imagine a diagram she has never seen.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P8\",\"turn\":\"3.6\",\"quote\":\"Predict: a small positive charge near a negative sphere is pulled towards it. Which way do the field lines around a negative sphere point?\",\"what\":\"The question tells her the charge is pulled towards the sphere and then asks which way the lines point. The answer is in the question, so it is not a prediction.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P4\",\"turn\":\"3.8\",\"quote\":\"In one line: what is an electric field, and how does it change as you move away from the charged object?\",\"what\":\"Key point 3 closes without teaching that a stronger field is shown by field lines drawn closer together, which the lesson file includes.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"4.3\",\"quote\":\"Which particles jump across the gap in a spark?\",\"what\":\"4.1 said \\\"electrons jump across the gap\\\" and 4.2 said \\\"electrons jump between you and the handle\\\". The answer was given twice just before the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"4.5\",\"quote\":\"A spark is more likely: the field is stronger closer to the object\",\"what\":\"The right option carries the explanation and is much longer than the other two. She can pick it by its look, and has no reasoning left to do.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"4.9\",\"quote\":\"Neutrons\",\"what\":\"\\\"Neutrons\\\" is a quiz option but the lesson has never mentioned them. The reply to that choice does not say what a neutron is either.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.14 right answer\",\"quote\":\"Yes. Non-contact: the electric field does it.\",\"what\":\"She has just chosen \\\"No\\\", and the reply begins \\\"Yes.\\\" It reads as if the answer to \\\"do they need to touch?\\\" is yes.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P14\",\"turn\":\"whole lesson\",\"quote\":\"Hang two charged rods near each other on threads, and they swing one way or the other.\",\"what\":\"There is nothing hands-on anywhere: no rods to move, no charges to place, no field to explore. The only picture is at 3.7. It is 45 steps of reading and tapping, and she is likely to get bored.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":2},{\"fault\":\"F3\",\"instances\":4},{\"fault\":\"L1\",\"instances\":1},{\"fault\":\"F5\",\"instances\":2},{\"fault\":\"P16\",\"instances\":2},{\"fault\":\"F1\",\"instances\":1},{\"fault\":\"F8\",\"instances\":3},{\"fault\":\"P8\",\"instances\":1},{\"fault\":\"F12\",\"instances\":1},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"P4\",\"instances\":2},{\"fault\":\"P5\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":11}],\"overall\":\"No, I would not let her use this lesson as it is. The polythene rod is said to become positive in 1.10 and negative in 2.2, and the first is simply wrong; charge moving through metal and a person is slipped into a question (2.7) without conductors ever being taught. The lesson opens with two revision questions she cannot answer and that have nothing to do with static, and several questions (2.5, 3.3, 3.6, 4.3, 4.5) give their own answer away. The order of ideas is sound and the don't-know steps mostly do get easier, but it needs the polythene fact fixed, conductors taught, pictures for field lines before 3.7, the \\\"Yes\\\" reply at 4.14 corrected, and something for her to do besides tapping.\"}",
+  "findings": [
+    {
+      "fault": "new",
+      "turn": "1.1",
+      "quote": "why a balloon rubbed on your hair clings to a wall",
+      "what": "The opening promises to explain why a charged balloon clings to a wall, but the lesson never comes back to it. It could not: a neutral wall attracting a charged balloon is never taught.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from earlier lessons. What is electric current?",
+      "what": "The lesson opens by testing her on earlier lessons, as if she were revising. A first-time learner can only guess, and the answer is not needed for static electricity.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1a wrong answer (push)",
+      "quote": "The push that drives the charge is the potential difference.",
+      "what": "\"Potential difference\" is used without ever being explained in this lesson.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1a wrong answer (hard)",
+      "quote": "How hard it is for charge to flow is the resistance.",
+      "what": "\"Resistance\" is used without being explained, and it has nothing to do with this lesson.",
+      "severity": "minor"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.1b",
+      "quote": "Second, from the last lesson: what is the unit of power?",
+      "what": "A recall question on power has nothing to do with static electricity and assumes a lesson she may not have had. It delays the start and could put her off before the topic begins.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1b wrong answer (volt)",
+      "quote": "the volt is the unit of potential difference",
+      "what": "\"Potential difference\" is used again with no explanation.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1b don't know (first time)",
+      "quote": "A 60 W lamp: which button is the W?",
+      "what": "The hint just points at the button with a W on it. She can get it right by matching letters and learn nothing about power.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "L1",
+      "turn": "1.2",
+      "quote": "Everything is made of atoms. Each atom has a tiny centre, the nucleus, which holds protons with a positive charge. Around the nucleus are electrons, with a negative charge.",
+      "what": "Atom, nucleus, proton, electron, positive charge and negative charge all arrive in one message. \"Charge\" itself is never explained.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P6",
+      "turn": "1.9",
+      "quote": "A material like that is called an insulator. On an insulator, the charge stays where it was rubbed on.",
+      "what": "One message carries three ideas: which materials charge by rubbing, the new word insulator, and that the charge stays put. \"Where it was rubbed on\" also does not fit the material that lost electrons.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P16",
+      "turn": "1.10",
+      "quote": "A polythene rod is rubbed with a cloth and becomes positively charged.",
+      "what": "This is the wrong way round. The lesson file, and every GCSE textbook, says polythene gains electrons and becomes negative; it is acetate that becomes positive. She would learn a wrong fact.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.10 right answer",
+      "quote": "Only electrons move, never protons, so a positive object is one that has lost electrons.",
+      "what": "\"Only electrons move\" was said in 1.4 and comes again in 1.10's don't-know reply, the 1.11 marking, 2.7, 4.3 and 4.9. That is too many times in nearly the same words.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.11",
+      "quote": "A full line also says: <the points it misses>.",
+      "what": "The question asks only how rubbing makes the balloon negative. A correct answer (\"electrons are rubbed onto it\") is told it is incomplete for not adding \"only electrons move, not protons\", which the question did not ask for.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P4",
+      "turn": "1.11",
+      "quote": "In one line: how does rubbing make a balloon negatively charged?",
+      "what": "Key point 1 closes without teaching conductors: that a metal door handle lets charge flow through it and discharges you, while a polythene rod stays charged. The word \"conductor\" never appears, yet later steps rely on charge moving through metal.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.2",
+      "quote": "two polythene rods are both rubbed with the same cloth, so both are negatively charged",
+      "what": "A few steps earlier (1.10) a polythene rod rubbed with a cloth became positive. Now the same rubbing makes it negative, with \"so\" as if that followed. She cannot tell which is true.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "2.2 don't know (first time)",
+      "quote": "Do you think the same type pushes or pulls? (same buttons)",
+      "what": "The hint asks \"pushes or pulls\" but the buttons say Together / They do not move / Apart. It is also no easier than the original question, just the same guess reworded.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "2.3",
+      "quote": "Two objects with the same type of charge repel: they push each other apart. A push like that between charged objects is called repulsion.",
+      "what": "Two new words, \"repel\" and \"repulsion\", in one message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "2.4",
+      "quote": "attract: they pull together. A pull like that between charged objects is called attraction.",
+      "what": "Two new words, \"attract\" and \"attraction\", in one message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.4",
+      "quote": "Two objects with different types of charge, one positive and one negative, attract: they pull together.",
+      "what": "Attraction is only told. She never predicts it, sees the polythene-and-acetate demonstration, or answers a question on it; every question in key point 2 and the quiz is about repulsion. Clothes clinging from the dryer is also left out.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.5",
+      "quote": "your hairs can each get the same negative charge, and they stand apart. Why?",
+      "what": "The stem says the hairs have the same charge, and the rule \"same type repel\" was given two messages earlier. The right button is just that rule repeated, so there is nothing to work out.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P16",
+      "turn": "2.5",
+      "quote": "your hairs can each get the same negative charge",
+      "what": "The lesson file says only that the strands get the same charge. The script adds that it is negative, when hair usually loses electrons and goes positive. The sign should be left out.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "2.6",
+      "quote": "attraction and repulsion between charged objects are non-contact forces. The closer the two objects are, the stronger the force between them.",
+      "what": "Two separate ideas in one message, the new term \"non-contact force\" and how force changes with distance, and no question on either until the quiz.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.7",
+      "quote": "A girl touches a negatively charged metal dome. Charge moves through metal and through her body, so some spreads onto her",
+      "what": "A new idea, that charge can flow through metal and a person, is slipped into a question stem. Conductors were never taught, 1.9 told her charge stays where it is, and \"metal dome\" is not explained. The stem then nearly gives the answer.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "2.7 don't know (first time)",
+      "quote": "Electrons spread from the dome onto her. What charge do electrons carry? (same buttons)",
+      "what": "The hint asks what charge electrons carry, but the buttons are three long statements about the girl. The question and the buttons do not match.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.3",
+      "quote": "Which is the best way to say what an electric field is?",
+      "what": "The definition was given word for word in 3.1, and the right button is that sentence, by far the longest option. It tests only whether she can spot the sentence she just read.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3 don't know (first time)",
+      "quote": "Which button mentions that force?",
+      "what": "The hint tells her to pick the button with the word \"force\" in it. That is matching words, not thinking.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.4",
+      "quote": "Each arrow shows the way a small positive charge would be pushed if you put it there.",
+      "what": "\"Each arrow\" appears before she has been told that field lines carry arrows, and before she has seen any picture of them.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P5",
+      "turn": "3.5",
+      "quote": "the field lines are straight and meet its surface at right angles, spreading out like the spokes of a wheel",
+      "what": "The field pattern is described only in words (straight, right angles, spokes, outwards) with no picture. The picture does not come until 3.7, after the question, so she must imagine a diagram she has never seen.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P8",
+      "turn": "3.6",
+      "quote": "Predict: a small positive charge near a negative sphere is pulled towards it. Which way do the field lines around a negative sphere point?",
+      "what": "The question tells her the charge is pulled towards the sphere and then asks which way the lines point. The answer is in the question, so it is not a prediction.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P4",
+      "turn": "3.8",
+      "quote": "In one line: what is an electric field, and how does it change as you move away from the charged object?",
+      "what": "Key point 3 closes without teaching that a stronger field is shown by field lines drawn closer together, which the lesson file includes.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.3",
+      "quote": "Which particles jump across the gap in a spark?",
+      "what": "4.1 said \"electrons jump across the gap\" and 4.2 said \"electrons jump between you and the handle\". The answer was given twice just before the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "4.5",
+      "quote": "A spark is more likely: the field is stronger closer to the object",
+      "what": "The right option carries the explanation and is much longer than the other two. She can pick it by its look, and has no reasoning left to do.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.9",
+      "quote": "Neutrons",
+      "what": "\"Neutrons\" is a quiz option but the lesson has never mentioned them. The reply to that choice does not say what a neutron is either.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.14 right answer",
+      "quote": "Yes. Non-contact: the electric field does it.",
+      "what": "She has just chosen \"No\", and the reply begins \"Yes.\" It reads as if the answer to \"do they need to touch?\" is yes.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson",
+      "quote": "Hang two charged rods near each other on threads, and they swing one way or the other.",
+      "what": "There is nothing hands-on anywhere: no rods to move, no charges to place, no field to explore. The only picture is at 3.7. It is 45 steps of reading and tapping, and she is likely to get bored.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 11
+    },
+    {
+      "fault": "F3",
+      "instances": 4
+    },
+    {
+      "fault": "F8",
+      "instances": 3
+    },
+    {
+      "fault": "L3",
+      "instances": 2
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "P16",
+      "instances": 2
+    },
+    {
+      "fault": "P4",
+      "instances": 2
+    },
+    {
+      "fault": "F5",
+      "instances": 2
+    },
+    {
+      "fault": "L1",
+      "instances": 1
+    },
+    {
+      "fault": "F1",
+      "instances": 1
+    },
+    {
+      "fault": "P5",
+      "instances": 1
+    },
+    {
+      "fault": "P8",
+      "instances": 1
+    },
+    {
+      "fault": "F12",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "No, I would not let her use this lesson as it is. The polythene rod is said to become positive in 1.10 and negative in 2.2, and the first is simply wrong; charge moving through metal and a person is slipped into a question (2.7) without conductors ever being taught. The lesson opens with two revision questions she cannot answer and that have nothing to do with static, and several questions (2.5, 3.3, 3.6, 4.3, 4.5) give their own answer away. The order of ideas is sound and the don't-know steps mostly do get easier, but it needs the polythene fact fixed, conductors taught, pictures for field lines before 3.7, the \"Yes\" reply at 4.14 corrected, and something for her to do besides tapping."
+}

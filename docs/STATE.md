@@ -1,16 +1,16 @@
 # mabel-gcse — State
 
-Runbook position: Phase B, topic P2 rest (brief docs/briefs/2026-11-15-script-four-topics.md). Phase A, A9 pilot: p2-current-voltage and p2-components are scripted AI lessons, waiting for Mabel's delayed test.
+Runbook position: Phase B, topic P1 (brief docs/briefs/2026-11-15-script-four-topics.md). P2 rest done 2026-11-15: p2-series-parallel, p2-domestic, p2-power-energy, p2-static scripted. Phase A, A9 pilot: p2-current-voltage and p2-components are scripted AI lessons, waiting for Mabel's delayed test.
 
-Month spend (November 2026): 7.24 USD of the 100 cap (coverage and faults 4.33, scripted teaching 1.25, p2-components 1.66). Phase B stops at 95.
+Month spend (November 2026): 12.32 USD of the 100 cap (coverage and faults 4.33, scripted teaching 1.25, p2-components 1.66, Phase B P2 rest 5.08), plus two reviews cut off by network errors with no cost reported (at most about 1.40 together). Phase B stops at 95.
 
 ### Phase B — scripted AI lessons (brief 2026-11-15)
 
-Scripted lessons: p2-current-voltage, p2-components.
+Scripted lessons: p2-current-voltage, p2-components, p2-series-parallel, p2-domestic, p2-power-energy, p2-static.
 
 | Topic | Lessons scripted | Review findings (before → after) | Site tests | Cost (USD) | Commit |
 |---|---|---|---|---|---|
-| P2 rest | – | – | – | – | – |
+| P2 rest | p2-series-parallel, p2-domestic, p2-power-energy, p2-static (walk 0 each; self-audited) | review 1 → review 2: 41 → 33, 30 → 24, 38 → 21, 34 → 24 (second reviews allowed: F-faults over twice in each first review); p2-static review 1 found a physics error (polythene rubbed with a cloth made positive), fixed | site tests (laptop, persona mabel, no judge): all four PASS; p2-series-parallel first run FAIL on a tester fault (Home not seen as leaving), tester fixed, re-run PASS | 5.08 (+ two cut-off reviews, cost not reported) | this commit |
 | P1 | – | – | – | – | – |
 | P3 | – | – | – | – | – |
 | G5 | – | – | – | – | – |
@@ -238,3 +238,4 @@ Not started on the pipeline. Already in place:
 | Scripted teaching (2026-11-11/12, brief 2026-11-11-scripted-teaching) | script review 2 (claude-fable-5-2, --script); site test 5 (--persona mabel, laptop, key points 1–2, no judge; one stopped by the tester, one stopped by Jason, three to the end); one live check of the her-question reply | 1.25 (review 0.5872 + 0.5438; site 0.0099 + 0.0292 + 0.0291 + 0.0301, plus the stopped run 2026-11-11/p2-current-voltage-5, no cost reported, about 0.02; live check under 0.01) |
 | Scripted lesson, key points 3–7 (2026-11-12) | script review 2 (claude-fable-5-2, whole lesson); site test 3 (--persona mabel, laptop, whole lesson, no judge) | 2.45 (review 1.1564 + 1.0169; site 0.0764 + 0.1029 + 0.0958) |
 | Scripted lesson p2-components (2026-11-12) | script review 2 (claude-fable-5-2, whole lesson); site test 2 (--persona mabel, laptop, whole lesson, no judge) | 1.66 (review 0.7280 + 0.8110; site 0.0677 + 0.0511) |
+| Phase B P2 rest (2026-11-15, brief 2026-11-15-script-four-topics) | spec-check 4 (--blocking-only, 0 findings); script review 8 (claude-fable-5-2, --script) + 2 stopped by network (TLS) errors, no cost reported; site test 5 (--persona mabel, laptop, whole lesson, no judge) | 5.08 (spec-check 0.2541; review 0.6158 + 0.7260 + 0.5254 + 0.5162 + 0.6727 + 0.5132 + 0.5188 + 0.4717; site 0.0704 + 0.0728 + 0.0342 + 0.0468 + 0.0441) |

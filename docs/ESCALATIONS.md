@@ -515,3 +515,8 @@ code (a STOP case of the brief) or that is by design:
 - P14 / M1 (p2-domestic): nothing hands-on. No existing widget fits ac/dc or
   mains wiring; a new widget is shared code. p2-series-parallel uses the
   existing circuit widget twice.
+- p2-power-energy site test 2026-11-15 (PASS): check-transcript found F3/F4 at T12-first,
+  in the AI's live answer to her own question ("1 watt means 1 joule of energy
+  transferred every second"): "energy transferred" is key point 2's term, used in key
+  point 1. The answer comes from js/teach-script.js answerHer (shared code; its prompt
+  does not list later key points' terms). Not changed: a shared teach-mode change.

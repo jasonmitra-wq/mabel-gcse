@@ -91,3 +91,6 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-11-12 | p2-components | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-12/p2-components-2 | $0.0511
 - 2026-11-15 | p2-series-parallel | lesson | FAIL | 1 | 0 | false | tools/site-test-runs/2026-11-15/p2-series-parallel | $0.0704
 - 2026-11-15 | p2-domestic | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-15/p2-domestic | $0.0342
+- 2026-11-15 | p2-power-energy | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-15/p2-power-energy | $0.0468
+- 2026-11-15 | p2-static | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-15/p2-static | $0.0441
+- 2026-11-15 | p2-series-parallel | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-15/p2-series-parallel-2 | $0.0728

@@ -9,7 +9,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 1. [1.1] Tutor: Welcome! This lesson is about electrical power: how fast appliances transfer energy, two equations for working it out, and how much energy an appliance transfers in a given time.
    Button: Next
 
-2. [1.1a] Tutor asks: First, three quick questions from the last lesson. What is the potential difference of the UK mains supply?
+2. [1.1a] Tutor asks: First, three quick questions from earlier lessons. What is the potential difference of the UK mains supply?
    Buttons: "About 50 V" / "About 230 V" / "About 1.5 V" (she can also type)
    - Right ("About 230 V"): Yes: about 230 V. You will meet 230 V a lot today.
    - "About 50 V" (wrong idea freq: ): Not quite: about 230 V. 50 is the frequency of the mains, in hertz.
@@ -23,7 +23,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("The rate of flow of charge"): Yes: current is the rate of flow of charge, measured in amperes (A).
    - "The push that drives charge" (wrong idea push: ): Not quite: current is the rate of flow of charge. The push that drives the charge is the potential difference.
    - "How hard it is for charge to flow" (wrong idea hard: ): Not quite: current is the rate of flow of charge. How hard it is for charge to flow is the resistance.
-   - Don't know (first time): Current is about how much charge passes a point each second. Which button is about how fast the charge moves? (same buttons)
+   - Don't know (first time): Current is about how much charge passes a point each second. Which button is about how much charge passes each second? (same buttons)
    - Still doesn't know: That's fine. Current is the rate of flow of charge, measured in amperes (A).
    - She asks to move on or skip: Current is the rate of flow of charge, measured in amperes (A).
 
@@ -80,7 +80,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
      Then "Now explain it: In one line: why do you think the lamp got more energy each second?" She writes one line and taps Check my line; then "Does your line say these? Tick the ones it does." with: "two cells give a bigger potential difference", "a bigger current flows", "so more energy each second".
    Button under the message: Next
 
-13. [1.9] Tutor: Here is the reason. Potential difference is the energy each coulomb of charge is given, and current is the number of coulombs that flow each second. More of either means more energy each second: more power.
+13. [1.9] Tutor: Why two cells gave the lamp more energy each second: potential difference is the energy each coulomb of charge is given (a coulomb is a unit of charge), and current is the number of coulombs that flow each second. More of either means more energy each second: more power.
    Button: Next
 
 14. [1.11] Tutor: The equation for power is P = V I: power = potential difference × current. P is the power in watts (W), V is the potential difference in volts (V) and I is the current in amperes (A).
@@ -106,7 +106,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 17. [1.14] Tutor: To find the current, divide both sides of P = V I by V. That leaves I = P ÷ V: the power divided by the potential difference. Check it with the kettle: 2300 ÷ 230 = 10 A.
    Button: Next
 
-18. [1.15] Tutor asks: A 1150 W hairdryer runs on the 230 V mains. What current does it take, in amperes?
+18. [1.15] Tutor asks: A 1150 W heater runs on the 230 V mains. What current does it take, in amperes?
    She types a number.
    - Right (5 A): Yes: 5 A. I = P ÷ V = 1150 ÷ 230 = 5 A.
    - She types 0.2 (wrong idea upside): Not quite: 5 A. I = P ÷ V: the power divided by the potential difference, 1150 ÷ 230 = 5 A. Dividing 230 by 1150 is the wrong way up.
@@ -156,12 +156,12 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 26. [2.2] Tutor asks: A hairdryer has a heater and a fan driven by a motor. Which stores does it transfer energy to?
    Buttons: "Only a thermal store" / "Only a kinetic store" / "A thermal store and a kinetic store" (she can also type)
-   - Right ("A thermal store and a kinetic store"): Yes: the heater warms the air, a thermal store, and the motor turns the fan, a kinetic store.
+   - Right ("A thermal store and a kinetic store"): Yes: the energy goes to the thermal store of the warm air and the kinetic store of the turning fan.
    - "Only a thermal store" (wrong idea thermal: ): Not quite: the heater fills a thermal store, and the motor turning the fan fills a kinetic store, so both.
    - "Only a kinetic store" (wrong idea kinetic: ): Not quite: the motor fills a kinetic store, and the heater fills a thermal store too, so both.
-   - Don't know (first time): A hairdryer has a heater and a motor. What does each one do? (same buttons)
-   - Still doesn't know: That's fine. The heater warms the air, a thermal store, and the motor turns the fan, a kinetic store.
-   - She asks to move on or skip: The heater warms the air, a thermal store, and the motor turns the fan, a kinetic store.
+   - Don't know (first time): A heater makes things hotter, and a motor makes things move. Which button has a store for each? (same buttons)
+   - Still doesn't know: That's fine. The energy goes to the thermal store of the warm air and the kinetic store of the turning fan.
+   - She asks to move on or skip: The energy goes to the thermal store of the warm air and the kinetic store of the turning fan.
 
 27. [2.3] Tutor: How much energy an appliance transfers depends on two things: its power, and how long it is switched on. The total amount is called the energy transferred.
    Button: Next
@@ -183,7 +183,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    She types a number.
    - Right (216000 J): Yes: 216 000 J. E = P t = 60 × 3600 = 216 000 J.
    - She types 60 (wrong idea nohour): Not quite: 216 000 J. The time must be in seconds: 1 hour is 3600 s. E = P t = 60 × 3600 = 216 000 J.
-   - She types 3600 (wrong idea minutes): Not quite: 216 000 J. 3600 is 60 × 60, with the hour as 60 minutes. Change the hour to seconds first, 3600 s: E = P t = 60 × 3600 = 216 000 J.
+   - She types 3600 (wrong idea minutes): Not quite: 216 000 J. You multiplied 60 W by 60 minutes. The time must be in seconds: 1 hour is 3600 s, so E = P t = 60 × 3600 = 216 000 J.
    - Any other wrong answer: Not quite: 216 000 J. 1 hour is 3600 s, and E = P t = 60 × 3600 = 216 000 J.
    - Don't know (first time): First, the time in seconds: 1 hour is 3600 s. Then E = P t: multiply 60 by 3600.
    - Still doesn't know: That's fine. 1 hour is 3600 s, so E = P t = 60 × 3600 = 216 000 J.
@@ -213,7 +213,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 35. [3.1] Tutor: Last part: putting the equations together. Charge flow is the amount of charge that passes a point. Its equation is Q = I t: charge flow = current × time, with Q in coulombs (C), I in amperes (A) and t in seconds (s).
    Button: Next
 
-36. [3.2] Tutor: You also met E = Q V: energy transferred = charge flow × potential difference, with E in joules, Q in coulombs and V in volts. When charge flows through a potential difference, energy is transferred; physicists call that work being done.
+36. [3.2] Tutor: Another equation for energy uses charge: E = Q V, energy transferred = charge flow × potential difference, with E in joules, Q in coulombs and V in volts. Each coulomb pushed through a component gives it energy.
    Button: Next
 
 37. [3.3] Tutor asks: How much energy is transferred, in joules, when 20 C of charge flows through a lamp with 12 V across it?
@@ -256,13 +256,13 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She asks to move on or skip: E = P t = 920 × 10 = 9200 J.
 
 42. [3.8] Tutor: In one line: how would you find the energy a heater transfers, if you know its current, its potential difference and the time?
-   She types one line. The AI checks which of these points it makes: "multiply the potential difference, the current and the time", "the time must be in seconds".
-   - All of them: Yes, your line has it: multiply the potential difference, the current and the time; and the time must be in seconds.
+   She types one line. The AI checks which of these points it makes: "multiply the potential difference, the current and the time".
+   - All of them: Yes, your line has it: multiply the potential difference, the current and the time.
    - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: multiply the potential difference, the current and the time; and the time must be in seconds.
+   - None: A good line would say: multiply the potential difference, the current and the time.
    - Don't know: No problem. A good line would be: multiply the potential difference, the current and the time in seconds, E = V I t (or find P = V I first, then E = P t).
 
-43. [3.9] Tutor: Now for a short quiz on the whole lesson: six questions. Take your time.
+43. [3.9] Tutor: Now for a short quiz: six questions on the calculations. Take your time.
    Button: Next
 
 44. [3.10] Tutor asks: Quiz, question 1 of 6: A current of 3 A flows through a 10 Ω resistor. What is the power, in watts?

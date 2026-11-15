@@ -9,26 +9,16 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 1. [1.1] Tutor: Welcome! This lesson is about the electricity in your home: how the electricity from a wall socket differs from a battery's, what the three wires in a cable do, and why one of them is so dangerous to touch.
    Button: Next
 
-2. [1.1a] Tutor asks: First, three quick questions from the last lesson. What happens to the resistance of a thermistor as it gets hotter?
-   Buttons: "It stays the same" / "It goes down" / "It goes up" (she can also type)
-   - Right ("It goes down"): Yes: a thermistor's resistance goes down as it gets hotter.
-   - "It goes up" (wrong idea up: ): Not quite: a thermistor's resistance goes down as it gets hotter. A filament lamp is the one whose resistance goes up when it heats.
-   - "It stays the same" (wrong idea same: ): Not quite: a thermistor is made so that its resistance changes with temperature. It goes down as the thermistor gets hotter.
-   - Don't know (first time): A thermistor lets charge through more easily when it is warm. Which button says that? (same buttons)
-   - Still doesn't know: That's fine. A thermistor's resistance goes down as it gets hotter.
-   - She asks to move on or skip: A thermistor's resistance goes down as it gets hotter.
+2. [1.1a] Tutor asks: First, two quick questions you will need today. The lights and sockets in a home are wired in parallel. What potential difference does each appliance get?
+   Buttons: "A share of the supply potential difference" / "The full supply potential difference" (she can also type)
+   - Right ("The full supply potential difference"): Yes: each appliance is on its own branch across the supply, so each gets the full supply potential difference.
+   - "A share of the supply potential difference" (wrong idea shared: ): Not quite: sharing is the series rule. In parallel each appliance has its own branch across the supply, so each gets the full supply potential difference.
+   - Don't know (first time): In parallel, each branch is joined straight across the supply. Is the push shared, or all of it? (same buttons)
+   - Still doesn't know: That's fine. In parallel, each appliance is on its own branch across the supply, so each gets the full supply potential difference.
+   - She asks to move on or skip: In parallel, each appliance is on its own branch across the supply, so each gets the full supply potential difference.
 
-3. [1.1b] Tutor asks: Second: when the light on an LDR gets brighter, which is true about its resistance?
-   Buttons: "It goes up" / "It stays the same" / "It goes down" (she can also type)
-   - Right ("It goes down"): Yes: an LDR's resistance goes down as the light gets brighter.
-   - "It goes up" (wrong idea up: ): Not quite: an LDR's resistance goes down in brighter light, so more current flows.
-   - "It stays the same" (wrong idea same: ): Not quite: an LDR is made so that its resistance changes with light. It goes down as the light gets brighter.
-   - Don't know (first time): An LDR lets charge through more easily in bright light. Which button says that? (same buttons)
-   - Still doesn't know: That's fine. An LDR's resistance goes down as the light gets brighter.
-   - She asks to move on or skip: An LDR's resistance goes down as the light gets brighter.
-
-4. [1.1c] Tutor asks: Third, one you will need today: what is potential difference?
-   Buttons: "How hard it is for charge to flow" / "The push that drives charge round a circuit" / "How much charge flows each second" (she can also type)
+3. [1.1c] Tutor asks: Second: what is potential difference?
+   Buttons: "How much charge flows each second" / "How hard it is for charge to flow" / "The push that drives charge round a circuit" (she can also type)
    - Right ("The push that drives charge round a circuit"): Yes: potential difference is the push that drives charge round a circuit, measured in volts (V).
    - "How much charge flows each second" (wrong idea current: ): Not quite: how much charge flows each second is the current. Potential difference is the push that drives charge round a circuit, measured in volts (V).
    - "How hard it is for charge to flow" (wrong idea hard: ): Not quite: how hard it is for charge to flow is the resistance. Potential difference is the push that drives charge round a circuit, measured in volts (V).
@@ -36,17 +26,20 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. Potential difference is the push that drives charge round a circuit, measured in volts (V).
    - She asks to move on or skip: Potential difference is the push that drives charge round a circuit, measured in volts (V).
 
-5. [1.2] Tutor: Now, this lesson. A cell or battery always pushes the same way round a circuit: one end of the cell is always the positive end, and the other is always the negative end.
+4. [1.3] Tutor: Now, this lesson. A cell or battery always pushes the same way round a circuit: one end is always positive and the other always negative. A potential difference whose direction never changes like this is called a direct potential difference.
    Button: Next
 
-6. [1.3] Tutor: A potential difference whose direction never changes is called a direct potential difference. Cells, batteries and solar cells give a direct potential difference. It drives a current that flows one way only, a direct current, so people call it dc.
+5. [1.3b] Tutor: A direct potential difference drives a current that flows one way only, called direct current, or dc for short. Cells, batteries and solar cells give dc, and torches, phones and laptops run on it.
    Button: Next
 
-7. [1.4] Tutor: Look at the top graph: potential difference against time, for a cell. The line stays on the same side of zero the whole time, because the push never changes direction.
+6. [1.4] Tutor: Look at the top graph, for a cell, and leave the bottom one for now. Time runs along the bottom, and the height of the line shows the potential difference. The line stays on the same side of zero the whole time: the push never changes direction.
    (Under it, a picture: "Two graphs of potential difference against time, one for a cell and one for the mains.", labelled time, potential difference.)
    Button: Next
 
-8. [1.5] Tutor: The mains supply, from the sockets in your home, is different. Its push keeps reversing direction, many times every second. A potential difference that keeps reversing like that is called an alternating potential difference. The current it drives keeps reversing too, an alternating current, so people call it ac.
+7. [1.5] Tutor: The mains supply, from the sockets in your home, is different. Its push keeps reversing direction, many times every second. A potential difference that keeps reversing like that is called an alternating potential difference.
+   Button: Next
+
+8. [1.5b] Tutor: An alternating potential difference drives a current that keeps reversing too, called alternating current, or ac for short.
    Button: Next
 
 9. [1.6] Tutor: Look at the bottom graph. The line goes above zero, then below zero, then above again. Below zero means the push is the other way round. One trip up, down and back to the start is called one cycle.
@@ -70,7 +63,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 13. [1.10] Tutor: In the UK, the mains supply is ac with a frequency of 50 Hz.
    Button: Next
 
-14. [1.10b] Tutor: The UK mains has a potential difference of about 230 V. A torch cell gives about 1.5 V, so the mains push is over a hundred times bigger.
+14. [1.10b] Tutor: The UK mains has a potential difference of about 230 V. The mains push swings back and forth, and 230 V is the usual way of giving its size. A torch cell gives about 1.5 V, so the mains push is far bigger.
    Button: Next
 
 15. [1.11] Tutor asks: In some countries the mains completes 120 cycles in 2 seconds. What is its frequency, in hertz?
@@ -86,7 +79,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 16. [1.11b] Tutor asks: Back to dc. Which is the best way to say what a direct potential difference is?
    Buttons: "One that pushes charge round faster" / "One whose direction never changes" / "One that is always 230 V" (she can also type)
-   - Right ("One whose direction never changes"): Yes: a direct potential difference is one whose direction never changes. When you explain dc, describe the push like that.
+   - Right ("One whose direction never changes"): Yes: a direct potential difference is one whose direction never changes.
    - "One that is always 230 V" (wrong idea mains: ): Not quite: about 230 V is the mains, which is alternating. A direct potential difference is one whose direction never changes.
    - "One that pushes charge round faster" (wrong idea faster: ): Not quite: direct is not about how hard or fast. A direct potential difference is one whose direction never changes.
    - Don't know (first time): Direct and alternating are about which way the push points. Which button is about direction? (same buttons)
@@ -109,32 +102,32 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    (Under it, a picture: "Three-core cable in a plug: brown, blue, and green-and-yellow wires.", labelled brown, blue, green and yellow.)
    Button: Next
 
-20. [2.2b] Tutor: One more idea before the wires. Electricians call the ground earth, and it counts as 0 V: the zero that every other potential is measured from. Anything joined to the ground, a person standing on it included, is at about 0 V.
+20. [2.2b] Tutor: One more idea before the wires. Electricians call the ground earth, and use it as the zero for measuring. When a wire is said to be at 230 V, that means there are 230 V between that wire and earth. Earth itself is at 0 V.
    Button: Next
 
 21. [2.3] Tutor: The brown wire is called the live wire: the wire that carries the alternating potential difference from the supply. Between the live wire and earth there is about 230 V.
    Button: Next
 
-22. [2.4] Tutor: The blue wire is called the neutral wire: the wire that completes the circuit, so that charge can flow back to the supply. The neutral wire is at, or close to, 0 V.
-   Button: Next
-
-23. [2.5] Tutor asks: Which colour is the insulation on the live wire?
+22. [2.5] Tutor asks: Which colour is the insulation on the live wire?
    Buttons: "Blue" / "Brown" / "Green and yellow stripes" (she can also type)
-   - Right ("Brown"): Yes: brown. The neutral wire is the blue one.
-   - "Blue" (wrong idea blue: ): Not quite: blue is the neutral wire. The live wire is brown.
-   - "Green and yellow stripes" (wrong idea earth: ): Not quite: green and yellow stripes is the third wire, which you meet next. The live wire is brown.
-   - Don't know (first time): The live wire carries the big push from the supply. It is not the blue one. Is it brown, or green and yellow? (same buttons)
-   - Still doesn't know: That's fine. The live wire is brown; the neutral wire is blue.
-   - She asks to move on or skip: The live wire is brown; the neutral wire is blue.
+   - Right ("Brown"): Yes: brown, the colour of the live wire.
+   - "Blue" (wrong idea blue: ): Not quite: blue is another wire, which you meet next. The live wire is brown.
+   - "Green and yellow stripes" (wrong idea earth: ): Not quite: green and yellow stripes is another wire, which you meet soon. The live wire is brown.
+   - Don't know (first time): The message just before said which colour the live wire is. Brown, blue, or green and yellow? (same buttons)
+   - Still doesn't know: That's fine. The live wire is brown.
+   - She asks to move on or skip: The live wire is brown.
+
+23. [2.4] Tutor: The blue wire is called the neutral wire: the wire that completes the circuit, so that charge can flow back to the supply. The neutral wire is at, or close to, 0 V.
+   Button: Next
 
 24. [2.6] Tutor: The green-and-yellow striped wire is called the earth wire: a safety wire that joins the metal case of an appliance to the ground. The earth wire is at 0 V.
    Button: Next
 
 25. [2.7] Tutor asks: Predict: a kettle is working normally. Which of the three wires carries no current?
    Buttons: "The neutral wire" / "The earth wire" / "The live wire" (she can also type)
-   - Right ("The earth wire"): Yes: the earth wire. Normally the current goes round through the live and neutral wires, reversing back and forth with the ac. The earth wire only carries a current if something goes wrong, such as the live wire touching the metal case.
-   - "The neutral wire" (wrong idea neutral: ): Not quite: the neutral wire completes the circuit, so the current flows back along it. The earth wire carries no current unless there is a fault.
-   - "The live wire" (wrong idea live: ): Not quite: the live wire brings the current from the supply. The earth wire carries no current unless there is a fault.
+   - Right ("The earth wire"): Yes: the earth wire. Normally the current goes round through the live and neutral wires, reversing back and forth with the ac. The earth wire only carries a current if something goes wrong with the appliance.
+   - "The neutral wire" (wrong idea neutral: ): Not quite: the neutral wire is part of the loop the current goes round, with the live wire. The earth wire carries no current unless something goes wrong.
+   - "The live wire" (wrong idea live: ): Not quite: the live wire is part of the loop the current goes round, with the neutral wire. The earth wire carries no current unless something goes wrong.
    - Don't know (first time): The live and neutral wires make the loop that the current goes round. Which wire is not part of that loop? (same buttons)
    - Still doesn't know: That's fine. Normally the current goes along the live wire and back along the neutral wire. The earth wire only carries a current if there is a fault.
    - She asks to move on or skip: Normally the current goes along the live wire and back along the neutral wire. The earth wire only carries a current if there is a fault.
@@ -148,11 +141,11 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## Key point 3: Earthing
 
-27. [3.1] Tutor: Now, why the earth wire matters. Suppose a loose live wire inside a metal kettle touches the kettle's metal case. Without an earth wire, the case is now at about 230 V, and anyone who touches it could get an electric shock.
+27. [3.1] Tutor: Now, why the earth wire matters. Suppose a loose live wire inside a metal kettle touches the kettle's metal case. Without an earth wire, the case is now at about 230 V, and anyone who touches it could get an electric shock: a current through their body.
    Button: Next
 
-28. [3.3] Tutor asks: Predict: now the kettle's metal case is joined to the earth wire, and the same fault happens. Which is true?
-   Buttons: "The earth wire stops any current flowing" / "Charge flows down the earth wire, not through you" / "The case stays at about 230 V" (she can also type)
+28. [3.3] Tutor asks: Predict: now the kettle's metal case is joined to the earth wire, and the same loose wire touches it. Which is true?
+   Buttons: "The case stays at about 230 V" / "Charge flows down the earth wire, not through you" / "The earth wire stops any current flowing" (she can also type)
    - Right ("Charge flows down the earth wire, not through you"): Yes: the earth wire gives the charge an easy path to the ground, so the case does not stay at 230 V.
    - "The earth wire stops any current flowing" (wrong idea stops: ): Not quite: the earth wire does not stop the current. It gives the charge an easy path to the ground, so the charge goes that way and not through you.
    - "The case stays at about 230 V" (wrong idea stays: ): Not quite: the earth wire joins the case to the ground, at 0 V. Charge flows down the earth wire, so the case does not stay at about 230 V.
@@ -166,32 +159,35 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 30. [3.4] Tutor: Your body is joined to the ground through your feet, so you are at about 0 V too. If you touched a live wire, there would be about 230 V between your hand and your feet. That potential difference drives a current through your body: an electric shock.
    Button: Next
 
-31. [3.5] Tutor asks: Predict: the switch for a ceiling lamp is in the live wire. The lamp is switched off. An electrician touches the live wire between the switch and the supply. Is that safe?
-   Buttons: "Yes: the switch is off, so the wire is at 0 V" / "Yes: no current flows when the lamp is off" / "No: the live wire is still at about 230 V" (she can also type)
-   - Right ("No: the live wire is still at about 230 V"): Yes: not safe. The live wire is still joined to the supply, at about 230 V, and the electrician is at 0 V, so a current would flow through the electrician.
+31. [3.4b] Tutor: In a lamp circuit, the switch is in the live wire. Turning the switch off makes a gap in the live wire, between the supply and the lamp.
+   Button: Next
+
+32. [3.5] Tutor asks: Predict: the lamp is switched off. An electrician touches the live wire on the supply's side of the gap. Is that safe?
+   Buttons: "Yes: the switch is off, so the wire is at 0 V" / "Yes: no current flows when the lamp is off" / "No, it is not safe" (she can also type)
+   - Right ("No, it is not safe"): Yes: not safe. The live wire is still joined to the supply, at about 230 V, and the electrician is at 0 V, so a current would flow through the electrician.
    - "Yes: the switch is off, so the wire is at 0 V" (wrong idea switch: ): Not quite: not safe. The switch only makes a gap further along. The bit of live wire between the switch and the supply is still joined to the supply, at about 230 V, and the electrician is at 0 V.
    - "Yes: no current flows when the lamp is off" (wrong idea current: ): Not quite: not safe. No current flows through the lamp, but the live wire is still at about 230 V. Touching it joins it to the ground through the electrician, so a current flows through the electrician.
    - Don't know (first time): Turning the switch off makes a gap, but the bit of live wire between the switch and the supply is still joined to the supply. Which button fits? (same buttons)
    - Still doesn't know: That's fine. The live wire is still joined to the supply at about 230 V, and the electrician is at 0 V, so a current would flow through the electrician.
    - She asks to move on or skip: The live wire is still joined to the supply at about 230 V, and the electrician is at 0 V, so a current would flow through the electrician.
 
-32. [3.6] Tutor: Any connection between the live wire and earth is dangerous. A person, a wet surface or a metal tool could make that connection, and a current would flow through it to the ground.
+33. [3.6] Tutor: Any connection between the live wire and earth is dangerous. A person, a wet surface or a metal tool could make that connection, and a current would flow through it to the ground.
    Button: Next
 
-33. [3.6b] Tutor: Because of this danger, there are safety rules: keep electrical appliances away from water, do not plug too many things into one socket, and check cables for damage before you use them.
+34. [3.6b] Tutor: Water can make a connection between a live wire and earth, so keep electrical appliances away from water. A damaged cable can leave a live wire where you could touch it, so check cables before you use them.
    Button: Next
 
-34. [3.7] Tutor: In one line: why is touching a live wire dangerous, even with the switch off?
+35. [3.7] Tutor: In one line: why is touching a live wire dangerous, even with the switch off?
    She types one line. The AI checks which of these points it makes: "the live wire is still at about 230 V", "you are at 0 V, so there is a big potential difference across you", "a current flows through you".
    - All of them: Yes, your line has it: the live wire is still at about 230 V; and you are at 0 V, so there is a big potential difference across you; and a current flows through you.
    - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
    - None: A good line would say: the live wire is still at about 230 V; and you are at 0 V, so there is a big potential difference across you; and a current flows through you.
    - Don't know: No problem. A good line would be: the live wire is still at about 230 V and you are at 0 V, so the big potential difference drives a current through you.
 
-35. [3.8] Tutor: Now for a short quiz on the whole lesson: six questions. Take your time.
+36. [3.8] Tutor: Now for a short quiz on the whole lesson: six questions. Take your time.
    Button: Next
 
-36. [3.9] Tutor asks: Quiz, question 1 of 6: What is the frequency of the UK mains supply?
+37. [3.9] Tutor asks: Quiz, question 1 of 6: What is the frequency of the UK mains supply?
    Buttons: "1.5 Hz" / "50 Hz" / "230 Hz" (she can also type)
    - Right ("50 Hz"): Yes. 50 Hz: 50 cycles every second.
    - "230 Hz" (wrong idea w1: ): Not quite. 230 is the potential difference, in volts. The frequency is 50 Hz.
@@ -199,7 +195,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. The UK mains frequency is 50 Hz.
    - She asks to move on or skip: The UK mains frequency is 50 Hz.
 
-37. [3.10] Tutor asks: Quiz, question 2 of 6: What is the potential difference of the UK mains supply?
+38. [3.10] Tutor asks: Quiz, question 2 of 6: What is the potential difference of the UK mains supply?
    Buttons: "About 50 V" / "About 1.5 V" / "About 230 V" (she can also type)
    - Right ("About 230 V"): Yes. About 230 V.
    - "About 50 V" (wrong idea w1: ): Not quite. 50 is the frequency, in hertz. The potential difference is about 230 V.
@@ -207,7 +203,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. The UK mains is about 230 V.
    - She asks to move on or skip: The UK mains is about 230 V.
 
-38. [3.11] Tutor asks: Quiz, question 3 of 6: What colour is the insulation on the neutral wire?
+39. [3.11] Tutor asks: Quiz, question 3 of 6: What colour is the insulation on the neutral wire?
    Buttons: "Green and yellow stripes" / "Blue" / "Brown" (she can also type)
    - Right ("Blue"): Yes. The neutral wire is blue.
    - "Brown" (wrong idea w1: ): Not quite. Brown is the live wire. The neutral wire is blue.
@@ -215,15 +211,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. The neutral wire is blue.
    - She asks to move on or skip: The neutral wire is blue.
 
-39. [3.12] Tutor asks: Quiz, question 4 of 6: What is a direct potential difference?
-   Buttons: "One that is always 230 V" / "One whose direction never changes" / "One that keeps changing direction" (she can also type)
-   - Right ("One whose direction never changes"): Yes. Its direction never changes.
-   - "One that keeps changing direction" (wrong idea w1: ): Not quite. Changing direction is alternating. A direct potential difference never changes direction.
-   - "One that is always 230 V" (wrong idea w2: ): Not quite. 230 V is the mains, which is alternating. A direct potential difference never changes direction.
-   - Still doesn't know: That's fine. A direct potential difference is one whose direction never changes.
-   - She asks to move on or skip: A direct potential difference is one whose direction never changes.
+40. [3.12] Tutor asks: Quiz, question 4 of 6: What is an alternating potential difference?
+   Buttons: "One that never changes direction" / "One that keeps reversing direction" / "One that comes from a battery" (she can also type)
+   - Right ("One that keeps reversing direction"): Yes. It keeps reversing direction, like the mains.
+   - "One that never changes direction" (wrong idea w1: ): Not quite. Never changing direction is direct. An alternating potential difference keeps reversing direction.
+   - "One that comes from a battery" (wrong idea w2: ): Not quite. A battery gives a direct potential difference. An alternating one keeps reversing direction, like the mains.
+   - Still doesn't know: That's fine. An alternating potential difference keeps reversing direction.
+   - She asks to move on or skip: An alternating potential difference keeps reversing direction.
 
-40. [3.13] Tutor asks: Quiz, question 5 of 6: Which wire is the safety wire, joined to the metal case of an appliance?
+41. [3.13] Tutor asks: Quiz, question 5 of 6: Which wire is the safety wire, joined to the metal case of an appliance?
    Buttons: "The neutral wire" / "The earth wire" / "The live wire" (she can also type)
    - Right ("The earth wire"): Yes. The earth wire joins the case to the ground.
    - "The neutral wire" (wrong idea w1: ): Not quite. The neutral wire completes the circuit. The earth wire is the safety wire joined to the case.
@@ -231,7 +227,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. The earth wire is the safety wire joined to the case.
    - She asks to move on or skip: The earth wire is the safety wire joined to the case.
 
-41. [3.14] Tutor asks: Quiz, question 6 of 6: Why does touching a live wire give you an electric shock?
+42. [3.14] Tutor asks: Quiz, question 6 of 6: Why does touching a live wire give you an electric shock?
    Buttons: "The live wire is very hot" / "The current comes up from the earth wire" / "There is a big potential difference between the wire and you, so a current flows through you" (she can also type)
    - Right ("There is a big potential difference between the wire and you, so a current flows through you"): Yes. The wire is at about 230 V and you are at 0 V, so a current flows through you.
    - "The live wire is very hot" (wrong idea w1: ): Not quite. The danger is the big potential difference between the wire, at about 230 V, and you, at 0 V: a current flows through you.
@@ -239,10 +235,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. The wire is at about 230 V and you are at 0 V, so a current flows through you.
    - She asks to move on or skip: The wire is at about 230 V and you are at 0 V, so a current flows through you.
 
-42. [3.15] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
+43. [3.15] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
    Button: Next
 
 ## The end
 
-43. Tutor: You have finished this lesson on mains electricity. Tap a button to go on.
+44. Tutor: You have finished this lesson on mains electricity. Tap a button to go on.
    Buttons: "Go to the slides" / "Home"

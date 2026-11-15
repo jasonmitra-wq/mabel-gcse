@@ -1,0 +1,260 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 13530,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 10198,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 6783
+    },
+    "iterations": [
+      {
+        "input_tokens": 13530,
+        "output_tokens": 10198,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.5161600000000001,
+  "seconds": 99,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, three quick questions from the last lesson. What happens to the resistance of a thermistor as it gets hotter?\",\"what\":\"The lesson opens by testing thermistors and resistance, which this lesson never explains and never uses again. A girl meeting the topic for the first time is quizzed on unrelated material before anything is taught.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.1b\",\"quote\":\"Second: when the light on an LDR gets brighter, which is true about its resistance?\",\"what\":\"LDR is never spelled out as light-dependent resistor or explained anywhere in the script, and it has nothing to do with mains electricity.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"1.3\",\"quote\":\"A potential difference whose direction never changes is called a direct potential difference. Cells, batteries and solar cells give a direct potential difference. It drives a current that flows one way only, a direct current, so people call it dc.\",\"what\":\"Three new names (direct potential difference, direct current, dc) arrive in one message. It is also unclear what 'it' in 'people call it dc' refers to, and she is not told that dc is just the initials of direct current.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P1\",\"turn\":\"1.4\",\"quote\":\"Look at the top graph: potential difference against time, for a cell.\",\"what\":\"The picture already shows the mains graph underneath, before alternating potential difference has been mentioned. She sees a curve crossing zero with nothing yet said about it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.4\",\"quote\":\"The line stays on the same side of zero the whole time, because the push never changes direction.\",\"what\":\"She is not told how to read the graph: that time runs along the bottom, that height shows the size of the push, or where zero is. A first-time learner needs that before 'same side of zero' means anything.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"1.5\",\"quote\":\"A potential difference that keeps reversing like that is called an alternating potential difference. The current it drives keeps reversing too, an alternating current, so people call it ac.\",\"what\":\"Again three new names in one message (alternating potential difference, alternating current, ac), on top of 'mains supply' in the same bubble.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.10b\",\"quote\":\"The UK mains has a potential difference of about 230 V.\",\"what\":\"She has just been shown a mains graph where the line rises, falls through zero and reverses, and is now told the mains is 'about 230 V' with nothing to connect the two. A sharp pupil will ask how it can be 230 V if it keeps changing.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.11b\",\"quote\":\"When you explain dc, describe the push like that.\",\"what\":\"This is exam-technique advice aimed at someone revising, not at someone who met the idea a few minutes ago.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"1.12\",\"quote\":\"In one line: what is the difference between a direct and an alternating potential difference?\",\"what\":\"Half the answer was handed over in the step immediately before, in every branch of 1.11b: 'A direct potential difference is one whose direction never changes.'\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"1.12\",\"quote\":\"Cells, batteries and solar cells give a direct potential difference.\",\"what\":\"Key point 1 also says what dc is used in (phones, laptops, torches). The script only mentions a torch battery in passing, so the key point is finished without that part being told.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"2.2b\",\"quote\":\"it counts as 0 V: the zero that every other potential is measured from. Anything joined to the ground, a person standing on it included, is at about 0 V.\",\"what\":\"'Potential' on its own, and the idea of one thing being 'at' a number of volts, are used without explanation. So far she has only met potential difference as a push round a circuit, and the rest of the lesson (case at 230 V, you at 0 V) depends on this idea.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P16\",\"turn\":\"2.7 wrong answer (The live wire)\",\"quote\":\"the live wire brings the current from the supply\",\"what\":\"This describes a one-way current out along the live wire, and the 'neutral' reply says it 'flows back along' the neutral. That contradicts the right-answer reply, which says the current is 'reversing back and forth with the ac'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.8 all of them\",\"quote\":\"Yes, your line has it: the live wire carries the alternating potential difference from the supply; and the neutral wire completes the circuit; and the earth wire is a safety wire.\",\"what\":\"The '; and ... ; and ...' stitching reads like a machine-made list, not a sentence a teacher would say. The same wording appears in the 'None' reply.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.1\",\"quote\":\"anyone who touches it could get an electric shock\",\"what\":\"Electric shock is used here and the whole of question 3.3 depends on it, but what a shock is (a current driven through the body by the 230 V) is not explained until 3.4.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"3.3\",\"quote\":\"Predict: now the kettle's metal case is joined to the earth wire, and the same fault happens. Which is true?\",\"what\":\"This is not a real prediction. The reply at 2.7 already told her: 'The earth wire only carries a current if something goes wrong, such as the live wire touching the metal case.'\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"3.4\",\"quote\":\"Your body is joined to the ground through your feet, so you are at about 0 V too.\",\"what\":\"This repeats 2.2b ('a person standing on it included, is at about 0 V'). It is then said again in 3.5, 3.7 and 3.14.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.5\",\"quote\":\"the switch for a ceiling lamp is in the live wire. The lamp is switched off. An electrician touches the live wire between the switch and the supply.\",\"what\":\"She has to hold a wiring layout in her head with no picture: a switch 'in' the live wire, and a point 'between the switch and the supply'. A 15-year-old who has never seen house wiring will not follow this without a diagram.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"3.5\",\"quote\":\"\\\"No: the live wire is still at about 230 V\\\"\",\"what\":\"The message just before (3.4) said touching a live wire puts 230 V across you. The right button is also the only 'No' and carries the reason itself, so she can pick it without thinking about the switch.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"3.6b\",\"quote\":\"Because of this danger, there are safety rules\",\"what\":\"'This danger' points back to the previous bubble; the message does not make sense on its own.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.6b\",\"quote\":\"keep electrical appliances away from water, do not plug too many things into one socket, and check cables for damage before you use them\",\"what\":\"Three rules are listed in one bubble with no reasons. Overloading a socket has nothing to do with 'this danger' (a connection from live to earth), so the link is wrong for that rule, and she is never told plainly that water conducts.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.7 all of them\",\"quote\":\"Yes, your line has it: the live wire is still at about 230 V; and you are at 0 V, so there is a big potential difference across you; and a current flows through you.\",\"what\":\"The same clumsy '; and ... ; and ...' stitched reply appears again; it does not read as natural praise of her own sentence.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"3.12\",\"quote\":\"Quiz, question 4 of 6: What is a direct potential difference?\",\"what\":\"This is the same question as 1.11b, with the same two options ('One that is always 230 V', 'One whose direction never changes'). 'Direction never changes' has by now been said in 1.3, 1.7, 1.11b, 1.12 and here.\",\"severity\":\"minor\"},{\"fault\":\"M1\",\"turn\":\"1.2 to 1.6\",\"quote\":\"Button: Next\",\"what\":\"There are five telling messages in a row before she is asked anything, then four more (1.9 to 1.10b), then five again at the start of key point 2. She only presses Next, and this is where she would drift off.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P14\",\"turn\":\"whole lesson\",\"quote\":\"Buttons: \\\"Go to the slides\\\" / \\\"Home\\\"\",\"what\":\"The lesson ends with nothing hands-on having happened: no graph to change, no plug to wire, no fault to try with and without the earth wire. Everything is Next, three buttons or one typed line.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":1},{\"fault\":\"F3\",\"instances\":3},{\"fault\":\"F5\",\"instances\":2},{\"fault\":\"P1\",\"instances\":1},{\"fault\":\"F8\",\"instances\":3},{\"fault\":\"P4\",\"instances\":1},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"F1\",\"instances\":2},{\"fault\":\"F2\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":7}],\"overall\":\"Not as it stands, though it is close: the physics is mostly sound and the order of ideas is sensible. Before she uses it I would fix the unexplained jump to things being 'at' 0 V or 230 V (2.2b), give the switch question at 3.5 a picture, and split the bubbles that introduce three names at once (1.3, 1.5). I would also drop or replace the thermistor and LDR starter questions, make the 'Predict' questions at 3.3 and 3.5 real predictions, and give reasons for the safety rules. It also needs something for her to do other than press Next, or she will be bored well before the quiz.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, three quick questions from the last lesson. What happens to the resistance of a thermistor as it gets hotter?",
+      "what": "The lesson opens by testing thermistors and resistance, which this lesson never explains and never uses again. A girl meeting the topic for the first time is quizzed on unrelated material before anything is taught.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1b",
+      "quote": "Second: when the light on an LDR gets brighter, which is true about its resistance?",
+      "what": "LDR is never spelled out as light-dependent resistor or explained anywhere in the script, and it has nothing to do with mains electricity.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.3",
+      "quote": "A potential difference whose direction never changes is called a direct potential difference. Cells, batteries and solar cells give a direct potential difference. It drives a current that flows one way only, a direct current, so people call it dc.",
+      "what": "Three new names (direct potential difference, direct current, dc) arrive in one message. It is also unclear what 'it' in 'people call it dc' refers to, and she is not told that dc is just the initials of direct current.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P1",
+      "turn": "1.4",
+      "quote": "Look at the top graph: potential difference against time, for a cell.",
+      "what": "The picture already shows the mains graph underneath, before alternating potential difference has been mentioned. She sees a curve crossing zero with nothing yet said about it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.4",
+      "quote": "The line stays on the same side of zero the whole time, because the push never changes direction.",
+      "what": "She is not told how to read the graph: that time runs along the bottom, that height shows the size of the push, or where zero is. A first-time learner needs that before 'same side of zero' means anything.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.5",
+      "quote": "A potential difference that keeps reversing like that is called an alternating potential difference. The current it drives keeps reversing too, an alternating current, so people call it ac.",
+      "what": "Again three new names in one message (alternating potential difference, alternating current, ac), on top of 'mains supply' in the same bubble.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10b",
+      "quote": "The UK mains has a potential difference of about 230 V.",
+      "what": "She has just been shown a mains graph where the line rises, falls through zero and reverses, and is now told the mains is 'about 230 V' with nothing to connect the two. A sharp pupil will ask how it can be 230 V if it keeps changing.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.11b",
+      "quote": "When you explain dc, describe the push like that.",
+      "what": "This is exam-technique advice aimed at someone revising, not at someone who met the idea a few minutes ago.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.12",
+      "quote": "In one line: what is the difference between a direct and an alternating potential difference?",
+      "what": "Half the answer was handed over in the step immediately before, in every branch of 1.11b: 'A direct potential difference is one whose direction never changes.'",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "1.12",
+      "quote": "Cells, batteries and solar cells give a direct potential difference.",
+      "what": "Key point 1 also says what dc is used in (phones, laptops, torches). The script only mentions a torch battery in passing, so the key point is finished without that part being told.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.2b",
+      "quote": "it counts as 0 V: the zero that every other potential is measured from. Anything joined to the ground, a person standing on it included, is at about 0 V.",
+      "what": "'Potential' on its own, and the idea of one thing being 'at' a number of volts, are used without explanation. So far she has only met potential difference as a push round a circuit, and the rest of the lesson (case at 230 V, you at 0 V) depends on this idea.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P16",
+      "turn": "2.7 wrong answer (The live wire)",
+      "quote": "the live wire brings the current from the supply",
+      "what": "This describes a one-way current out along the live wire, and the 'neutral' reply says it 'flows back along' the neutral. That contradicts the right-answer reply, which says the current is 'reversing back and forth with the ac'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8 all of them",
+      "quote": "Yes, your line has it: the live wire carries the alternating potential difference from the supply; and the neutral wire completes the circuit; and the earth wire is a safety wire.",
+      "what": "The '; and ... ; and ...' stitching reads like a machine-made list, not a sentence a teacher would say. The same wording appears in the 'None' reply.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.1",
+      "quote": "anyone who touches it could get an electric shock",
+      "what": "Electric shock is used here and the whole of question 3.3 depends on it, but what a shock is (a current driven through the body by the 230 V) is not explained until 3.4.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.3",
+      "quote": "Predict: now the kettle's metal case is joined to the earth wire, and the same fault happens. Which is true?",
+      "what": "This is not a real prediction. The reply at 2.7 already told her: 'The earth wire only carries a current if something goes wrong, such as the live wire touching the metal case.'",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.4",
+      "quote": "Your body is joined to the ground through your feet, so you are at about 0 V too.",
+      "what": "This repeats 2.2b ('a person standing on it included, is at about 0 V'). It is then said again in 3.5, 3.7 and 3.14.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5",
+      "quote": "the switch for a ceiling lamp is in the live wire. The lamp is switched off. An electrician touches the live wire between the switch and the supply.",
+      "what": "She has to hold a wiring layout in her head with no picture: a switch 'in' the live wire, and a point 'between the switch and the supply'. A 15-year-old who has never seen house wiring will not follow this without a diagram.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.5",
+      "quote": "\"No: the live wire is still at about 230 V\"",
+      "what": "The message just before (3.4) said touching a live wire puts 230 V across you. The right button is also the only 'No' and carries the reason itself, so she can pick it without thinking about the switch.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.6b",
+      "quote": "Because of this danger, there are safety rules",
+      "what": "'This danger' points back to the previous bubble; the message does not make sense on its own.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6b",
+      "quote": "keep electrical appliances away from water, do not plug too many things into one socket, and check cables for damage before you use them",
+      "what": "Three rules are listed in one bubble with no reasons. Overloading a socket has nothing to do with 'this danger' (a connection from live to earth), so the link is wrong for that rule, and she is never told plainly that water conducts.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.7 all of them",
+      "quote": "Yes, your line has it: the live wire is still at about 230 V; and you are at 0 V, so there is a big potential difference across you; and a current flows through you.",
+      "what": "The same clumsy '; and ... ; and ...' stitched reply appears again; it does not read as natural praise of her own sentence.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.12",
+      "quote": "Quiz, question 4 of 6: What is a direct potential difference?",
+      "what": "This is the same question as 1.11b, with the same two options ('One that is always 230 V', 'One whose direction never changes'). 'Direction never changes' has by now been said in 1.3, 1.7, 1.11b, 1.12 and here.",
+      "severity": "minor"
+    },
+    {
+      "fault": "M1",
+      "turn": "1.2 to 1.6",
+      "quote": "Button: Next",
+      "what": "There are five telling messages in a row before she is asked anything, then four more (1.9 to 1.10b), then five again at the start of key point 2. She only presses Next, and this is where she would drift off.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson",
+      "quote": "Buttons: \"Go to the slides\" / \"Home\"",
+      "what": "The lesson ends with nothing hands-on having happened: no graph to change, no plug to wire, no fault to try with and without the earth wire. Everything is Next, three buttons or one typed line.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 7
+    },
+    {
+      "fault": "F3",
+      "instances": 3
+    },
+    {
+      "fault": "F8",
+      "instances": 3
+    },
+    {
+      "fault": "F5",
+      "instances": 2
+    },
+    {
+      "fault": "F1",
+      "instances": 2
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "P1",
+      "instances": 1
+    },
+    {
+      "fault": "P4",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    },
+    {
+      "fault": "F2",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it stands, though it is close: the physics is mostly sound and the order of ideas is sensible. Before she uses it I would fix the unexplained jump to things being 'at' 0 V or 230 V (2.2b), give the switch question at 3.5 a picture, and split the bubbles that introduce three names at once (1.3, 1.5). I would also drop or replace the thermistor and LDR starter questions, make the 'Predict' questions at 3.3 and 3.5 real predictions, and give reasons for the safety rules. It also needs something for her to do other than press Next, or she will be bored well before the quiz."
+}

@@ -1,0 +1,742 @@
+{
+ "lesson": "p2-static",
+ "version": 1,
+ "about": "The scripted AI lesson for p2-static (2026-11-15, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions, on current and on power.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "Charging by rubbing",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about static electricity: why a balloon rubbed on your hair clings to a wall, why you sometimes get a tiny shock from a door handle, and what is happening inside the materials."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from earlier lessons. What is electric current?",
+     "options": [
+      {
+       "text": "The rate of flow of charge",
+       "branch": "right"
+      },
+      {
+       "text": "The push that drives charge",
+       "branch": "push"
+      },
+      {
+       "text": "How hard it is for charge to flow",
+       "branch": "hard"
+      }
+     ],
+     "right": "Yes: current is the rate of flow of charge. Today is about charge that stays put, or jumps.",
+     "wrong": {
+      "other": "Not quite. Current is the rate of flow of charge.",
+      "push": "Not quite: current is the rate of flow of charge. The push that drives the charge is the potential difference.",
+      "hard": "Not quite: current is the rate of flow of charge. How hard it is for charge to flow is the resistance."
+     },
+     "idk": [
+      {
+       "hint": "Current is about how much charge passes a point each second. Which button says how fast the charge flows?"
+      }
+     ],
+     "answerWhy": "Current is the rate of flow of charge."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second, from the last lesson: what is the unit of power?",
+     "options": [
+      {
+       "text": "The watt (W)",
+       "branch": "right"
+      },
+      {
+       "text": "The joule (J)",
+       "branch": "joule"
+      },
+      {
+       "text": "The volt (V)",
+       "branch": "volt"
+      }
+     ],
+     "right": "Yes: power is measured in watts (W).",
+     "wrong": {
+      "other": "Not quite. Power is measured in watts (W).",
+      "joule": "Not quite: the joule is the unit of energy. Power, the energy transferred each second, is measured in watts (W).",
+      "volt": "Not quite: the volt is the unit of potential difference. Power is measured in watts (W)."
+     },
+     "idk": [
+      {
+       "hint": "A 60 W lamp: which button is the W?"
+      }
+     ],
+     "answerWhy": "Power is measured in watts (W)."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now, this lesson. Everything is made of atoms. Each atom has a tiny centre, the nucleus, which holds protons with a positive charge. Around the nucleus are electrons, with a negative charge."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "An atom has the same number of protons and electrons, so the positive and negative charges cancel out. That is why most objects have no overall charge."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "Rub a balloon on a wool jumper and some electrons are rubbed off one material and onto the other. The protons stay where they are, deep inside the atoms. Only electrons move."
+    },
+    {
+     "id": "1.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Predict: when the balloon is rubbed on the wool, electrons move from the wool onto the balloon. What charge does the balloon end up with?",
+     "options": [
+      {
+       "text": "Negative",
+       "branch": "right"
+      },
+      {
+       "text": "Positive",
+       "branch": "pos"
+      },
+      {
+       "text": "No charge",
+       "branch": "none"
+      }
+     ],
+     "right": "Yes: negative. The balloon has gained electrons, so it has more negative charge than positive.",
+     "wrong": {
+      "other": "Not quite. The balloon has gained electrons, so it is negative.",
+      "pos": "Not quite: negative. Electrons carry negative charge, and the balloon has gained some, so it has more negative charge than positive.",
+      "none": "Not quite: negative. The balloon has gained electrons, which carry negative charge, so its charges no longer cancel."
+     },
+     "idk": [
+      {
+       "hint": "Electrons carry negative charge. The balloon has gained some. Which button fits?"
+      }
+     ],
+     "answerWhy": "The balloon has gained electrons, which are negative, so it is negatively charged."
+    },
+    {
+     "id": "1.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "And the wool has lost some electrons. What charge is the wool left with?",
+     "options": [
+      {
+       "text": "Positive",
+       "branch": "right"
+      },
+      {
+       "text": "Negative",
+       "branch": "neg"
+      },
+      {
+       "text": "No charge",
+       "branch": "none"
+      }
+     ],
+     "right": "Yes: positive. The wool lost some electrons, so its protons now outnumber its electrons.",
+     "wrong": {
+      "other": "Not quite. The wool lost electrons, so it is positive.",
+      "neg": "Not quite: positive. The wool lost some negative electrons, so its positive protons now outnumber them.",
+      "none": "Not quite: positive. The wool lost some electrons, so its charges no longer cancel: the protons outnumber the electrons."
+     },
+     "idk": [
+      {
+       "hint": "The wool still has all its protons, but fewer electrons. Is there more positive or more negative charge?"
+      }
+     ],
+     "answerWhy": "The wool lost electrons, so its protons outnumber its electrons: it is positive."
+    },
+    {
+     "id": "1.7",
+     "type": "say",
+     "text": "The material that gains electrons becomes negatively charged. The material that loses them is left with an equal positive charge: exactly as much positive charge as the other has negative."
+    },
+    {
+     "id": "1.8",
+     "type": "say",
+     "text": "Moving electrons from one material to another by rubbing them together is called charging by rubbing."
+    },
+    {
+     "id": "1.9",
+     "type": "say",
+     "text": "Charging by rubbing works with materials that do not let charge move through them, like plastic, rubber, wool and polythene. A material like that is called an insulator. On an insulator, the charge stays where it was rubbed on."
+    },
+    {
+     "id": "1.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A polythene rod is rubbed with a cloth and becomes positively charged. Which is true?",
+     "options": [
+      {
+       "text": "The rod lost electrons to the cloth",
+       "branch": "right"
+      },
+      {
+       "text": "The rod gained protons from the cloth",
+       "branch": "protons"
+      },
+      {
+       "text": "The rubbing made new positive charge",
+       "branch": "made"
+      }
+     ],
+     "right": "Yes: it lost electrons. Only electrons move, never protons, so a positive object is one that has lost electrons.",
+     "wrong": {
+      "other": "Not quite. The rod lost electrons to the cloth.",
+      "protons": "Not quite: protons stay inside the atoms and cannot be rubbed off. The rod became positive because it lost electrons to the cloth.",
+      "made": "Not quite: rubbing does not make charge, it only moves electrons. The rod became positive because it lost electrons to the cloth."
+     },
+     "idk": [
+      {
+       "hint": "Only electrons can be rubbed off. To end up positive, did the rod gain them or lose them?"
+      }
+     ],
+     "answerWhy": "Only electrons move, so the rod became positive by losing electrons to the cloth."
+    },
+    {
+     "id": "1.11",
+     "type": "own",
+     "prompt": "In one line: how does rubbing make a balloon negatively charged?",
+     "points": [
+      "electrons are rubbed onto the balloon",
+      "only electrons move, not protons"
+     ],
+     "idk": "No problem. A good line would be: electrons are rubbed onto the balloon from the other material; only electrons move, not protons."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Same and different types of charge",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "Charged objects push or pull on each other. Hang two charged rods near each other on threads, and they swing one way or the other."
+    },
+    {
+     "id": "2.2",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Predict: two polythene rods are both rubbed with the same cloth, so both are negatively charged, and hung near each other: which way do they swing?",
+     "options": [
+      {
+       "text": "Apart",
+       "branch": "right"
+      },
+      {
+       "text": "Together",
+       "branch": "together"
+      },
+      {
+       "text": "They do not move",
+       "branch": "none"
+      }
+     ],
+     "right": "Yes: apart. Two objects with the same type of charge push each other away.",
+     "wrong": {
+      "other": "Not quite. They swing apart: the same type of charge pushes apart.",
+      "together": "Not quite: they swing apart. Both rods have the same type of charge, negative, and the same type of charge pushes apart.",
+      "none": "Not quite: they swing apart. Charged objects push or pull each other, and two with the same type of charge push apart."
+     },
+     "idk": [
+      {
+       "hint": "Both rods have the same type of charge. Do you think the same type pushes or pulls?"
+      }
+     ],
+     "answerWhy": "Both rods are negative, and the same type of charge pushes apart, so they swing apart."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "Two objects with the same type of charge repel: they push each other apart. A push like that between charged objects is called repulsion."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "Two objects with different types of charge, one positive and one negative, attract: they pull together. A pull like that between charged objects is called attraction."
+    },
+    {
+     "id": "2.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "After you pull off a jumper, your hairs can each get the same negative charge, and they stand apart. Why?",
+     "options": [
+      {
+       "text": "Charges of the same type repel",
+       "branch": "right"
+      },
+      {
+       "text": "Opposite charges attract",
+       "branch": "opposite"
+      },
+      {
+       "text": "The hairs have become magnetic",
+       "branch": "magnet"
+      }
+     ],
+     "right": "Yes: every hair has the same negative charge, so each pushes the others away.",
+     "wrong": {
+      "other": "Not quite. The hairs all have the same charge, and the same type of charge repels.",
+      "opposite": "Not quite: the hairs all have the same charge, negative, so the rule that fits is that the same type of charge repels. Each hair pushes the others away.",
+      "magnet": "Not quite: this is not magnetism. The hairs are charged, all negative, and the same type of charge repels."
+     },
+     "idk": [
+      {
+       "hint": "Every hair has the same charge, negative. Which rule is about the same type of charge?"
+      }
+     ],
+     "answerWhy": "Every hair has the same negative charge, and the same type of charge repels, so they stand apart."
+    },
+    {
+     "id": "2.6",
+     "type": "say",
+     "text": "The objects do not need to touch: attraction and repulsion between charged objects are non-contact forces. The closer the two objects are, the stronger the force between them."
+    },
+    {
+     "id": "2.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A girl touches a negatively charged metal dome. Charge moves through metal and through her body, so some spreads onto her, and her hair stands on end. Which is true?",
+     "options": [
+      {
+       "text": "She becomes negative, like the dome, and her hairs repel",
+       "branch": "right"
+      },
+      {
+       "text": "She becomes positive, the opposite of the dome",
+       "branch": "opposite"
+      },
+      {
+       "text": "Protons move from the dome onto her",
+       "branch": "protons"
+      }
+     ],
+     "right": "Yes: electrons spread from the dome onto her, so she becomes negative like the dome, and her negative hairs repel.",
+     "wrong": {
+      "other": "Not quite. Electrons spread onto her, so she becomes negative like the dome, and her hairs repel.",
+      "opposite": "Not quite: electrons from the dome spread onto her, so she becomes negative, the same as the dome. Her hairs, all negative, repel.",
+      "protons": "Not quite: protons never move. Electrons spread from the dome onto her, so she becomes negative and her hairs repel."
+     },
+     "idk": [
+      {
+       "hint": "Electrons spread from the dome onto her. What charge do electrons carry?"
+      }
+     ],
+     "answerWhy": "Electrons spread from the dome onto her, so she becomes negative like the dome, and her negative hairs repel."
+    },
+    {
+     "id": "2.8",
+     "type": "own",
+     "prompt": "In one line: when do two charged objects attract, and when do they repel?",
+     "points": [
+      "the same type of charge repels",
+      "different types of charge attract"
+     ],
+     "idk": "No problem. A good line would be: two objects with the same type of charge repel, and two with different types attract."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Electric fields",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Here is how a charged object can push or pull something it is not touching. A charged object has an electric field around it: the region where another charged object feels a force."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "The field is strongest close to the charged object. The further away you go, the weaker the field, and the weaker the force on another charged object."
+    },
+    {
+     "id": "3.3",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which is the best way to say what an electric field is?",
+     "options": [
+      {
+       "text": "The region around a charged object where another charged object feels a force",
+       "branch": "right"
+      },
+      {
+       "text": "The charge stored on an object",
+       "branch": "charge"
+      },
+      {
+       "text": "The space around a magnet",
+       "branch": "magnet"
+      }
+     ],
+     "right": "Yes: an electric field is the region around a charged object where another charged object feels a force.",
+     "wrong": {
+      "other": "Not quite. An electric field is the region around a charged object where another charged object feels a force.",
+      "charge": "Not quite: the field is not the charge itself. It is the region around a charged object where another charged object feels a force.",
+      "magnet": "Not quite: that is a magnetic field, a different thing. An electric field is the region around a charged object where another charged object feels a force."
+     },
+     "idk": [
+      {
+       "hint": "An electric field is about a force on another charged object. Which button mentions that force?"
+      }
+     ],
+     "answerWhy": "An electric field is the region around a charged object where another charged object feels a force."
+    },
+    {
+     "id": "3.4",
+     "type": "say",
+     "text": "Field lines are drawn to show an electric field. Each arrow shows the way a small positive charge would be pushed if you put it there."
+    },
+    {
+     "id": "3.5",
+     "type": "say",
+     "text": "Around a single charged sphere, the field lines are straight and meet its surface at right angles, spreading out like the spokes of a wheel. Around a positive sphere they point outwards, because a small positive charge would be pushed away."
+    },
+    {
+     "id": "3.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Predict: a small positive charge near a negative sphere is pulled towards it. Which way do the field lines around a negative sphere point?",
+     "options": [
+      {
+       "text": "Inwards, towards the sphere",
+       "branch": "right"
+      },
+      {
+       "text": "Outwards, away from the sphere",
+       "branch": "out"
+      },
+      {
+       "text": "Round in circles",
+       "branch": "circles"
+      }
+     ],
+     "right": "Yes: inwards. A negative sphere pulls a small positive charge in, so the arrows point towards the sphere.",
+     "wrong": {
+      "other": "Not quite. The field lines around a negative sphere point inwards.",
+      "out": "Not quite: inwards. The arrows show the push on a small positive charge, and a negative sphere pulls it in, so the lines point inwards.",
+      "circles": "Not quite: the lines are straight, like spokes, and for a negative sphere they point inwards, the way a small positive charge is pulled."
+     },
+     "idk": [
+      {
+       "hint": "The arrows show which way a small positive charge would move. It is pulled towards the negative sphere. Which button fits?"
+      }
+     ],
+     "answerWhy": "A negative sphere pulls a small positive charge in, so its field lines point inwards."
+    },
+    {
+     "id": "3.7",
+     "type": "say",
+     "text": "Look at the picture: the two patterns side by side. Straight lines at right angles to each surface, pointing out from the positive sphere and in towards the negative one.",
+     "picture": "p2-field-lines"
+    },
+    {
+     "id": "3.8",
+     "type": "own",
+     "prompt": "In one line: what is an electric field, and how does it change as you move away from the charged object?",
+     "points": [
+      "the region where another charged object feels a force",
+      "it gets weaker further away"
+     ],
+     "idk": "No problem. A good line would be: the region around a charged object where another charged object feels a force, and it gets weaker further away."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Sparking",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "Near a very highly charged object, the electric field is very strong. If it is strong enough, the air nearby starts to let charge through, and electrons jump across the gap to or from a nearby object. A jump like that is called a spark."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "You may have felt one. Walking across a carpet rubs electrons onto you, so you become charged. When your hand gets close to a metal door handle, electrons jump between you and the handle: a tiny spark, and a small shock."
+    },
+    {
+     "id": "4.3",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which particles jump across the gap in a spark?",
+     "options": [
+      {
+       "text": "Electrons",
+       "branch": "right"
+      },
+      {
+       "text": "Protons",
+       "branch": "protons"
+      },
+      {
+       "text": "Atoms of air",
+       "branch": "air"
+      }
+     ],
+     "right": "Yes: electrons. Only electrons move, here as in charging by rubbing.",
+     "wrong": {
+      "other": "Not quite. Electrons jump across the gap.",
+      "protons": "Not quite: protons stay inside the atoms. In a spark, electrons jump across the gap.",
+      "air": "Not quite: the air lets charge through, but what jumps across is electrons."
+     },
+     "idk": [
+      {
+       "hint": "Only one kind of particle moves in static electricity. Which one?"
+      }
+     ],
+     "answerWhy": "In a spark, electrons jump across the gap."
+    },
+    {
+     "id": "4.4",
+     "type": "say",
+     "text": "Lightning is the same thing on a huge scale: so much charge builds up in a storm cloud that a giant spark jumps between the cloud and the ground."
+    },
+    {
+     "id": "4.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A highly charged object is moved closer to a metal pole. Which is true?",
+     "options": [
+      {
+       "text": "A spark is more likely: the field is stronger closer to the object",
+       "branch": "right"
+      },
+      {
+       "text": "A spark is less likely",
+       "branch": "less"
+      },
+      {
+       "text": "The distance makes no difference",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: closer means a stronger field, so a spark is more likely.",
+     "wrong": {
+      "other": "Not quite. The field is stronger closer to the object, so a spark is more likely.",
+      "less": "Not quite: the field is stronger closer to a charged object, so a spark is more likely.",
+      "same": "Not quite: the field is stronger closer to a charged object, so a spark is more likely when it is closer."
+     },
+     "idk": [
+      {
+       "hint": "The electric field is strongest close to a charged object. Does a stronger field make a spark more or less likely?"
+      }
+     ],
+     "answerWhy": "The field is stronger closer to a charged object, so a spark is more likely."
+    },
+    {
+     "id": "4.6",
+     "type": "say",
+     "text": "Sparks can be dangerous. Even a small spark near petrol vapour or another flammable gas can start a fire or an explosion."
+    },
+    {
+     "id": "4.7",
+     "type": "own",
+     "prompt": "In one line: what causes a spark?",
+     "points": [
+      "a very strong electric field near a charged object",
+      "electrons jump through the air"
+     ],
+     "idk": "No problem. A good line would be: near a highly charged object the electric field is very strong, so electrons jump through the air."
+    },
+    {
+     "id": "4.8",
+     "type": "say",
+     "text": "Now for a short quiz on the whole lesson: six questions. Take your time."
+    },
+    {
+     "id": "4.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: Which particles move when two insulators are rubbed together?",
+     "options": [
+      {
+       "text": "Electrons",
+       "branch": "right"
+      },
+      {
+       "text": "Protons",
+       "branch": "w1"
+      },
+      {
+       "text": "Neutrons",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. Only electrons move.",
+     "wrong": {
+      "other": "Not quite. Only electrons move.",
+      "w1": "Not quite. Protons stay inside the atoms. Only electrons move.",
+      "w2": "Not quite. Only electrons move."
+     },
+     "idk": [],
+     "answerWhy": "Only electrons move.",
+     "quiz": true
+    },
+    {
+     "id": "4.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 6: A cloth loses electrons to a rod. What charge is the cloth left with?",
+     "options": [
+      {
+       "text": "Positive",
+       "branch": "right"
+      },
+      {
+       "text": "Negative",
+       "branch": "w1"
+      },
+      {
+       "text": "No charge",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. Losing electrons leaves it positive.",
+     "wrong": {
+      "other": "Not quite. The cloth is positive.",
+      "w1": "Not quite. Losing negative electrons leaves the cloth positive.",
+      "w2": "Not quite. The cloth lost electrons, so it is positive."
+     },
+     "idk": [],
+     "answerWhy": "Losing electrons leaves the cloth positive.",
+     "quiz": true
+    },
+    {
+     "id": "4.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: Two positively charged balloons are held close together. Which is true?",
+     "options": [
+      {
+       "text": "They repel",
+       "branch": "right"
+      },
+      {
+       "text": "They attract",
+       "branch": "w1"
+      },
+      {
+       "text": "Nothing happens",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. The same type of charge repels.",
+     "wrong": {
+      "other": "Not quite. They repel.",
+      "w1": "Not quite. The same type of charge repels.",
+      "w2": "Not quite. Charged objects exert forces on each other: the same type repels."
+     },
+     "idk": [],
+     "answerWhy": "The same type of charge repels.",
+     "quiz": true
+    },
+    {
+     "id": "4.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: Which way do the field lines around a positively charged sphere point?",
+     "options": [
+      {
+       "text": "Outwards",
+       "branch": "right"
+      },
+      {
+       "text": "Inwards",
+       "branch": "w1"
+      },
+      {
+       "text": "Round in circles",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. Outwards, the way a small positive charge would be pushed.",
+     "wrong": {
+      "other": "Not quite. They point outwards.",
+      "w1": "Not quite. Inwards is for a negative sphere. Around a positive one they point outwards.",
+      "w2": "Not quite. The field lines are straight, pointing outwards from a positive sphere."
+     },
+     "idk": [],
+     "answerWhy": "Around a positive sphere, the field lines point outwards.",
+     "quiz": true
+    },
+    {
+     "id": "4.13",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: Further away from a charged object, which is true about its electric field?",
+     "options": [
+      {
+       "text": "It is weaker",
+       "branch": "right"
+      },
+      {
+       "text": "It is stronger",
+       "branch": "w1"
+      },
+      {
+       "text": "It is the same everywhere",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. The field gets weaker further away.",
+     "wrong": {
+      "other": "Not quite. It is weaker further away.",
+      "w1": "Not quite. The field is strongest close to the object and weaker further away.",
+      "w2": "Not quite. The field gets weaker further away."
+     },
+     "idk": [],
+     "answerWhy": "The field gets weaker further from the charged object.",
+     "quiz": true
+    },
+    {
+     "id": "4.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: Do two charged objects need to touch to push or pull on each other?",
+     "options": [
+      {
+       "text": "No: it is a non-contact force",
+       "branch": "right"
+      },
+      {
+       "text": "Yes: they must touch",
+       "branch": "w1"
+      }
+     ],
+     "right": "Yes. Non-contact: the electric field does it.",
+     "wrong": {
+      "other": "Not quite. It is a non-contact force.",
+      "w1": "Not quite. Attraction and repulsion between charges are non-contact forces."
+     },
+     "idk": [],
+     "answerWhy": "Attraction and repulsion between charges are non-contact forces.",
+     "quiz": true
+    },
+    {
+     "id": "4.15",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

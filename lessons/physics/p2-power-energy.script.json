@@ -1,0 +1,824 @@
+{
+ "lesson": "p2-power-energy",
+ "version": 1,
+ "about": "The scripted AI lesson for p2-power-energy (2026-11-15, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with three recall questions: the mains potential difference, current, and V = I R.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "Electrical power",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about electrical power: how fast appliances transfer energy, two equations for working it out, and how much energy an appliance transfers in a given time."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, three quick questions from the last lesson. What is the potential difference of the UK mains supply?",
+     "options": [
+      {
+       "text": "About 230 V",
+       "branch": "right"
+      },
+      {
+       "text": "About 50 V",
+       "branch": "freq"
+      },
+      {
+       "text": "About 1.5 V",
+       "branch": "cell"
+      }
+     ],
+     "right": "Yes: about 230 V. You will meet 230 V a lot today.",
+     "wrong": {
+      "other": "Not quite. The UK mains is about 230 V.",
+      "freq": "Not quite: about 230 V. 50 is the frequency of the mains, in hertz.",
+      "cell": "Not quite: about 230 V. 1.5 V is a single torch cell."
+     },
+     "idk": [
+      {
+       "hint": "The mains push is over a hundred times bigger than a 1.5 V torch cell. Which button fits?"
+      }
+     ],
+     "answerWhy": "The UK mains is about 230 V."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: what is electric current?",
+     "options": [
+      {
+       "text": "The rate of flow of charge",
+       "branch": "right"
+      },
+      {
+       "text": "The push that drives charge",
+       "branch": "push"
+      },
+      {
+       "text": "How hard it is for charge to flow",
+       "branch": "hard"
+      }
+     ],
+     "right": "Yes: current is the rate of flow of charge, measured in amperes (A).",
+     "wrong": {
+      "other": "Not quite. Current is the rate of flow of charge, measured in amperes (A).",
+      "push": "Not quite: current is the rate of flow of charge. The push that drives the charge is the potential difference.",
+      "hard": "Not quite: current is the rate of flow of charge. How hard it is for charge to flow is the resistance."
+     },
+     "idk": [
+      {
+       "hint": "Current is about how much charge passes a point each second. Which button is about how fast the charge moves?"
+      }
+     ],
+     "answerWhy": "Current is the rate of flow of charge, measured in amperes (A)."
+    },
+    {
+     "id": "1.1c",
+     "type": "ask",
+     "kind": "number",
+     "question": "Third, from the lesson on resistance: V = I R, potential difference = current × resistance. A current of 2 A flows through a 5 Ω resistor. What is the potential difference across it, in volts?",
+     "answer": {
+      "value": 10,
+      "unit": "V",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 2.5,
+       "branch": "divide"
+      },
+      {
+       "value": 7,
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 10 V. V = I R = 2 × 5 = 10 V.",
+     "wrong": {
+      "other": "Not quite: 10 V. V = I R = 2 × 5 = 10 V.",
+      "divide": "Not quite: 10 V. In V = I R the current and resistance are multiplied: 2 × 5 = 10 V.",
+      "add": "Not quite: 10 V. In V = I R the current and resistance are multiplied, not added: 2 × 5 = 10 V."
+     },
+     "idk": [
+      {
+       "hint": "Multiply the current, 2, by the resistance, 5."
+      }
+     ],
+     "answerWhy": "V = I R = 2 × 5 = 10 V."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now, this lesson. A kettle and a phone charger both run from the mains, but the kettle moves energy much faster: it heats a whole kettle of water in a few minutes."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "How fast an appliance transfers energy is called its power: the amount of energy it transfers each second. A more powerful kettle heats the same water faster."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "Energy is measured in joules (J)."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "Power is measured in watts (W). An appliance with a power of 1 watt transfers 1 joule of energy every second."
+    },
+    {
+     "id": "1.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A heater has a power of 500 W. How much energy does it transfer in one second?",
+     "options": [
+      {
+       "text": "500 J",
+       "branch": "right"
+      },
+      {
+       "text": "1 J",
+       "branch": "one"
+      },
+      {
+       "text": "500 × 60 = 30 000 J",
+       "branch": "minute"
+      }
+     ],
+     "right": "Yes: 500 J. A watt is a joule each second, so 500 W is 500 J every second.",
+     "wrong": {
+      "other": "Not quite. 500 W means 500 J every second.",
+      "one": "Not quite: 500 J. 1 J each second would be a power of just 1 W. 500 W means 500 J every second.",
+      "minute": "Not quite: 500 J. 30 000 J is what it transfers in a minute. A watt is a joule each second, so in one second it is 500 J."
+     },
+     "idk": [
+      {
+       "hint": "One watt means one joule every second. So how many joules every second is 500 watts?"
+      }
+     ],
+     "answerWhy": "A watt is a joule each second, so 500 W is 500 J every second."
+    },
+    {
+     "id": "1.7",
+     "type": "say",
+     "text": "Big appliances have big powers, so their power is often given in kilowatts (kW): 1 kW = 1000 W. A 1.5 kW hairdryer has a power of 1500 W."
+    },
+    {
+     "id": "1.8",
+     "type": "ask",
+     "kind": "number",
+     "question": "A heater has a power of 3 kW. What is its power in watts?",
+     "answer": {
+      "value": 3000,
+      "unit": "W",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 3,
+       "branch": "noconv"
+      },
+      {
+       "value": 0.003,
+       "branch": "divided"
+      }
+     ],
+     "right": "Yes: 3000 W. 3 kW = 3 × 1000 = 3000 W.",
+     "wrong": {
+      "other": "Not quite: 3000 W. 3 kW = 3 × 1000 = 3000 W.",
+      "noconv": "Not quite: 3000 W. Kilo means 1000, so 3 kW = 3 × 1000 = 3000 W.",
+      "divided": "Not quite: 3000 W. To go from kilowatts to watts, multiply by 1000: 3 × 1000 = 3000 W."
+     },
+     "idk": [
+      {
+       "hint": "1 kW is 1000 W. So 3 kW is 3 lots of 1000 W."
+      }
+     ],
+     "answerWhy": "3 kW = 3 × 1000 = 3000 W."
+    },
+    {
+     "id": "1.10",
+     "type": "widget",
+     "kpWidget": 0,
+     "predicts": [
+      "pe-two-cells"
+     ],
+     "controls": [
+      "run",
+      "add"
+     ],
+     "options": {},
+     "labels": [
+      "cell",
+      "lamp",
+      "energy"
+     ],
+     "text": "The circuit below has a cell and a lamp, and a display of the energy passed to the lamp. Predict first: answer the question in the box. Then run it for 10 seconds with one cell and with two. Tap Next when you are done."
+    },
+    {
+     "id": "1.9",
+     "type": "say",
+     "text": "Here is the reason. Potential difference is the energy each coulomb of charge is given, and current is the number of coulombs that flow each second. More of either means more energy each second: more power."
+    },
+    {
+     "id": "1.11",
+     "type": "say",
+     "text": "The equation for power is P = V I: power = potential difference × current. P is the power in watts (W), V is the potential difference in volts (V) and I is the current in amperes (A)."
+    },
+    {
+     "id": "1.12",
+     "type": "worked",
+     "text": "Here is an example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A kettle on the 230 V mains takes a current of 10 A. What is its power?",
+     "steps": [
+      "Write the equation: P = V I.",
+      "Put in the numbers: P = 230 × 10.",
+      "P = 2300 W, which is 2.3 kW."
+     ],
+     "answer": {
+      "value": 2300,
+      "unit": "W"
+     }
+    },
+    {
+     "id": "1.13",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A phone charger supplies 5 V, and a current of 2 A flows. What is its power, in watts?",
+     "answer": {
+      "value": 10,
+      "unit": "W",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 2.5,
+       "branch": "divide"
+      },
+      {
+       "value": 7,
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 10 W. P = V I = 5 × 2 = 10 W.",
+     "wrong": {
+      "other": "Not quite: 10 W. P = V I = 5 × 2 = 10 W.",
+      "divide": "Not quite: 10 W. Power is potential difference times current: P = V I = 5 × 2 = 10 W.",
+      "add": "Not quite: 10 W. Multiply, do not add: P = V I = 5 × 2 = 10 W."
+     },
+     "idk": [
+      {
+       "hint": "Use P = V I: multiply the potential difference, 5, by the current, 2."
+      }
+     ],
+     "answerWhy": "P = V I = 5 × 2 = 10 W."
+    },
+    {
+     "id": "1.14",
+     "type": "say",
+     "text": "To find the current, divide both sides of P = V I by V. That leaves I = P ÷ V: the power divided by the potential difference. Check it with the kettle: 2300 ÷ 230 = 10 A."
+    },
+    {
+     "id": "1.15",
+     "type": "ask",
+     "kind": "number",
+     "question": "A 1150 W hairdryer runs on the 230 V mains. What current does it take, in amperes?",
+     "answer": {
+      "value": 5,
+      "unit": "A",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 0.2,
+       "branch": "upside"
+      },
+      {
+       "value": 264500,
+       "branch": "times"
+      }
+     ],
+     "right": "Yes: 5 A. I = P ÷ V = 1150 ÷ 230 = 5 A.",
+     "wrong": {
+      "other": "Not quite: 5 A. I = P ÷ V = 1150 ÷ 230 = 5 A.",
+      "upside": "Not quite: 5 A. I = P ÷ V: the power divided by the potential difference, 1150 ÷ 230 = 5 A. Dividing 230 by 1150 is the wrong way up.",
+      "times": "Not quite: 5 A. To find the current, divide: I = P ÷ V = 1150 ÷ 230 = 5 A."
+     },
+     "idk": [
+      {
+       "hint": "Use I = P ÷ V. Type 1150 ÷ 230 into a calculator."
+      }
+     ],
+     "answerWhy": "I = P ÷ V = 1150 ÷ 230 = 5 A."
+    },
+    {
+     "id": "1.16",
+     "type": "say",
+     "text": "A second equation for power uses resistance: P = I² R, power = current² × resistance. P is the power in watts (W), I is the current in amperes (A) and R is the resistance in ohms (Ω). I² means I × I."
+    },
+    {
+     "id": "1.17",
+     "type": "say",
+     "text": "P = I² R comes from the first equation. In P = V I, swap the V for I R, because V = I R. That gives P = I R × I. And I × I is I², so P = I² R."
+    },
+    {
+     "id": "1.18",
+     "type": "worked",
+     "text": "Here is a worked example with P = I² R. Its steps open one at a time under it.",
+     "question": "A current of 3 A flows through a 20 Ω resistor. What is the power?",
+     "steps": [
+      "Write the equation: P = I² R.",
+      "Square the current first: I² = 3 × 3 = 9.",
+      "P = 9 × 20 = 180 W."
+     ],
+     "answer": {
+      "value": 180,
+      "unit": "W"
+     }
+    },
+    {
+     "id": "1.19",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A current of 2 A flows through a 5 Ω resistor. What is the power, in watts?",
+     "answer": {
+      "value": 20,
+      "unit": "W",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 10,
+       "branch": "nosquare"
+      },
+      {
+       "value": 100,
+       "branch": "squaredall"
+      }
+     ],
+     "right": "Yes: 20 W. P = I² R = 2² × 5 = 4 × 5 = 20 W.",
+     "wrong": {
+      "other": "Not quite: 20 W. P = I² R = 2² × 5 = 4 × 5 = 20 W.",
+      "nosquare": "Not quite: 20 W. Square the current first: 2² = 4, then 4 × 5 = 20 W. 10 W is 2 × 5, with the current not squared.",
+      "squaredall": "Not quite: 20 W. Square only the current: 2² = 4, then 4 × 5 = 20 W."
+     },
+     "idk": [
+      {
+       "hint": "Square the current first: 2 × 2 = 4. Then multiply by the resistance, 5."
+      }
+     ],
+     "answerWhy": "P = I² R = 2² × 5 = 4 × 5 = 20 W."
+    },
+    {
+     "id": "1.20",
+     "type": "own",
+     "prompt": "In one line: what is power, and what are its two equations?",
+     "points": [
+      "the energy an appliance transfers each second",
+      "P = V I",
+      "P = I² R"
+     ],
+     "idk": "No problem. A good line would be: power is the energy an appliance transfers each second; P = V I and P = I² R."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Electrical energy",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "Appliances are made to transfer energy, from a battery or the mains, into a store of energy. A kettle or heater transfers energy to a thermal store: the water or the room gets hotter."
+    },
+    {
+     "id": "2.1b",
+     "type": "say",
+     "text": "A fan or a drill has an electric motor, which transfers energy to a kinetic store: the energy of something moving."
+    },
+    {
+     "id": "2.2",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A hairdryer has a heater and a fan driven by a motor. Which stores does it transfer energy to?",
+     "options": [
+      {
+       "text": "A thermal store and a kinetic store",
+       "branch": "right"
+      },
+      {
+       "text": "Only a thermal store",
+       "branch": "thermal"
+      },
+      {
+       "text": "Only a kinetic store",
+       "branch": "kinetic"
+      }
+     ],
+     "right": "Yes: the heater warms the air, a thermal store, and the motor turns the fan, a kinetic store.",
+     "wrong": {
+      "other": "Not quite. A hairdryer transfers energy to a thermal store and a kinetic store.",
+      "thermal": "Not quite: the heater fills a thermal store, and the motor turning the fan fills a kinetic store, so both.",
+      "kinetic": "Not quite: the motor fills a kinetic store, and the heater fills a thermal store too, so both."
+     },
+     "idk": [
+      {
+       "hint": "A hairdryer has a heater and a motor. What does each one do?"
+      }
+     ],
+     "answerWhy": "The heater warms the air, a thermal store, and the motor turns the fan, a kinetic store."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "How much energy an appliance transfers depends on two things: its power, and how long it is switched on. The total amount is called the energy transferred."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "The equation is E = P t: energy transferred = power × time. E is the energy transferred in joules (J), P is the power in watts (W) and t is the time in seconds (s)."
+    },
+    {
+     "id": "2.5",
+     "type": "say",
+     "text": "Watch the units. Time must be in seconds: 1 minute is 60 s and 1 hour is 60 × 60 = 3600 s. Power must be in watts: 0.5 kW is 500 W."
+    },
+    {
+     "id": "2.6",
+     "type": "worked",
+     "text": "The next example needs both conversions, kilowatts to watts and minutes to seconds. Open the card below as before.",
+     "question": "A 2 kW kettle is on for 3 minutes. How much energy does it transfer?",
+     "steps": [
+      "Power in watts: 2 kW = 2000 W.",
+      "Time in seconds: 3 × 60 = 180 s.",
+      "E = P t = 2000 × 180 = 360 000 J."
+     ],
+     "answer": {
+      "value": 360000,
+      "unit": "J"
+     }
+    },
+    {
+     "id": "2.7",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A 60 W lamp is on for 1 hour. How much energy does it transfer, in joules?",
+     "answer": {
+      "value": 216000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 60,
+       "branch": "nohour"
+      },
+      {
+       "value": 3600,
+       "branch": "minutes"
+      }
+     ],
+     "right": "Yes: 216 000 J. E = P t = 60 × 3600 = 216 000 J.",
+     "wrong": {
+      "other": "Not quite: 216 000 J. 1 hour is 3600 s, and E = P t = 60 × 3600 = 216 000 J.",
+      "nohour": "Not quite: 216 000 J. The time must be in seconds: 1 hour is 3600 s. E = P t = 60 × 3600 = 216 000 J.",
+      "minutes": "Not quite: 216 000 J. 3600 is 60 × 60, with the hour as 60 minutes. Change the hour to seconds first, 3600 s: E = P t = 60 × 3600 = 216 000 J."
+     },
+     "idk": [
+      {
+       "hint": "First, the time in seconds: 1 hour is 3600 s. Then E = P t: multiply 60 by 3600."
+      }
+     ],
+     "answerWhy": "1 hour is 3600 s, so E = P t = 60 × 3600 = 216 000 J."
+    },
+    {
+     "id": "2.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A 3 kW kettle and a 1.5 kW kettle each heat water for 1 minute: which is true?",
+     "options": [
+      {
+       "text": "The 3 kW kettle transfers twice as much energy",
+       "branch": "right"
+      },
+      {
+       "text": "They transfer the same energy: the time is the same",
+       "branch": "time"
+      },
+      {
+       "text": "The 1.5 kW kettle transfers more energy",
+       "branch": "less"
+      }
+     ],
+     "right": "Yes: twice the power, so twice the energy in the same time. Its water's thermal store fills twice as fast.",
+     "wrong": {
+      "other": "Not quite. The 3 kW kettle transfers twice as much energy in the same time.",
+      "time": "Not quite: the energy depends on the power too. The 3 kW kettle transfers 3000 J each second, the other 1500 J, so in the same minute it transfers twice as much.",
+      "less": "Not quite: more power means more energy each second. In the same minute the 3 kW kettle transfers twice as much."
+     },
+     "idk": [
+      {
+       "hint": "E = P t. The time is the same, but one power is twice the other. Which button fits?"
+      }
+     ],
+     "answerWhy": "E = P t: with the same time, twice the power transfers twice the energy."
+    },
+    {
+     "id": "2.8b",
+     "type": "say",
+     "text": "Because P = V I, you can also write E = P t as E = V I t: energy transferred = potential difference × current × time."
+    },
+    {
+     "id": "2.9",
+     "type": "own",
+     "prompt": "In one line: what two things does the energy an appliance transfers depend on?",
+     "points": [
+      "its power",
+      "how long it is switched on"
+     ],
+     "idk": "No problem. A good line would be: the energy transferred depends on the appliance's power and how long it is switched on."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Linking all the electrical equations",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Last part: putting the equations together. Charge flow is the amount of charge that passes a point. Its equation is Q = I t: charge flow = current × time, with Q in coulombs (C), I in amperes (A) and t in seconds (s)."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "You also met E = Q V: energy transferred = charge flow × potential difference, with E in joules, Q in coulombs and V in volts. When charge flows through a potential difference, energy is transferred; physicists call that work being done."
+    },
+    {
+     "id": "3.3",
+     "type": "ask",
+     "kind": "number",
+     "question": "How much energy is transferred, in joules, when 20 C of charge flows through a lamp with 12 V across it?",
+     "answer": {
+      "value": 240,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 1.67,
+       "branch": "divide"
+      },
+      {
+       "value": 32,
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 240 J. E = Q V = 20 × 12 = 240 J.",
+     "wrong": {
+      "other": "Not quite: 240 J. E = Q V = 20 × 12 = 240 J.",
+      "divide": "Not quite: 240 J. Multiply: E = Q V = 20 × 12 = 240 J.",
+      "add": "Not quite: 240 J. Multiply, do not add: E = Q V = 20 × 12 = 240 J."
+     },
+     "idk": [
+      {
+       "hint": "Use E = Q V: multiply the charge, 20, by the potential difference, 12."
+      }
+     ],
+     "answerWhy": "E = Q V = 20 × 12 = 240 J."
+    },
+    {
+     "id": "3.4",
+     "type": "say",
+     "text": "Harder questions need two equations in a row. Write down what you know, find an equation that links it to the next thing you need, and use that answer in the next equation."
+    },
+    {
+     "id": "3.5",
+     "type": "worked",
+     "text": "Here is a worked example of that. Its steps open one at a time.",
+     "question": "A resistor has 12 V across it and 0.5 A through it, for 1 minute. How much energy is transferred?",
+     "steps": [
+      "Power first: P = V I = 12 × 0.5 = 6 W.",
+      "Time in seconds: 1 minute = 60 s.",
+      "Energy: E = P t = 6 × 60 = 360 J.",
+      "Check another way: Q = I t = 0.5 × 60 = 30 C, and E = Q V = 30 × 12 = 360 J."
+     ],
+     "answer": {
+      "value": 360,
+      "unit": "J"
+     }
+    },
+    {
+     "id": "3.6",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn, in two steps. A heater takes 4 A from the 230 V mains. Step 1: what is its power, in watts?",
+     "answer": {
+      "value": 920,
+      "unit": "W",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 57.5,
+       "branch": "divide"
+      }
+     ],
+     "right": "Yes: 920 W. P = V I = 230 × 4 = 920 W.",
+     "wrong": {
+      "other": "Not quite: 920 W. P = V I = 230 × 4 = 920 W.",
+      "divide": "Not quite: 920 W. Multiply: P = V I = 230 × 4 = 920 W."
+     },
+     "idk": [
+      {
+       "hint": "Use P = V I: multiply 230 by 4."
+      }
+     ],
+     "answerWhy": "P = V I = 230 × 4 = 920 W."
+    },
+    {
+     "id": "3.7",
+     "type": "ask",
+     "kind": "number",
+     "question": "Step 2: the heater is on for 10 s. How much energy does it transfer, in joules?",
+     "answer": {
+      "value": 9200,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 92,
+       "branch": "divide"
+      }
+     ],
+     "right": "Yes: 9200 J. E = P t = 920 × 10 = 9200 J.",
+     "wrong": {
+      "other": "Not quite: 9200 J. E = P t = 920 × 10 = 9200 J.",
+      "divide": "Not quite: 9200 J. Multiply the power by the time: E = P t = 920 × 10 = 9200 J."
+     },
+     "idk": [
+      {
+       "hint": "Use E = P t with the power from step 1, 920 W, and the time, 10 s."
+      }
+     ],
+     "answerWhy": "E = P t = 920 × 10 = 9200 J."
+    },
+    {
+     "id": "3.8",
+     "type": "own",
+     "prompt": "In one line: how would you find the energy a heater transfers, if you know its current, its potential difference and the time?",
+     "points": [
+      "multiply the potential difference, the current and the time",
+      "the time must be in seconds"
+     ],
+     "idk": "No problem. A good line would be: multiply the potential difference, the current and the time in seconds, E = V I t (or find P = V I first, then E = P t)."
+    },
+    {
+     "id": "3.9",
+     "type": "say",
+     "text": "Now for a short quiz on the whole lesson: six questions. Take your time."
+    },
+    {
+     "id": "3.10",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 1 of 6: A current of 3 A flows through a 10 Ω resistor. What is the power, in watts?",
+     "answer": {
+      "value": 90,
+      "unit": "W",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: P = I² R = 3² × 10 = 9 × 10 = 90 W.",
+     "wrong": {
+      "other": "Not quite: 90 W. P = I² R = 3² × 10 = 9 × 10 = 90 W."
+     },
+     "idk": [],
+     "answerWhy": "P = I² R = 3² × 10 = 9 × 10 = 90 W.",
+     "quiz": true
+    },
+    {
+     "id": "3.11",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 2 of 6: A lamp has 12 V across it and 3 A through it. What is its power, in watts?",
+     "answer": {
+      "value": 36,
+      "unit": "W",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: P = V I = 12 × 3 = 36 W.",
+     "wrong": {
+      "other": "Not quite: 36 W. P = V I = 12 × 3 = 36 W."
+     },
+     "idk": [],
+     "answerWhy": "P = V I = 12 × 3 = 36 W.",
+     "quiz": true
+    },
+    {
+     "id": "3.12",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 3 of 6: A cooker has a power of 2.5 kW. What is that in watts?",
+     "answer": {
+      "value": 2500,
+      "unit": "W",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: 2.5 × 1000 = 2500 W.",
+     "wrong": {
+      "other": "Not quite: 2500 W. 2.5 kW = 2.5 × 1000 = 2500 W."
+     },
+     "idk": [],
+     "answerWhy": "2.5 kW = 2.5 × 1000 = 2500 W.",
+     "quiz": true
+    },
+    {
+     "id": "3.13",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 4 of 6: A 100 W fan runs for 30 s. How much energy does it transfer, in joules?",
+     "answer": {
+      "value": 3000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: E = P t = 100 × 30 = 3000 J.",
+     "wrong": {
+      "other": "Not quite: 3000 J. E = P t = 100 × 30 = 3000 J."
+     },
+     "idk": [],
+     "answerWhy": "E = P t = 100 × 30 = 3000 J.",
+     "quiz": true
+    },
+    {
+     "id": "3.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: P = V I. Which gives the current?",
+     "options": [
+      {
+       "text": "I = P ÷ V",
+       "branch": "right"
+      },
+      {
+       "text": "I = V ÷ P",
+       "branch": "w1"
+      },
+      {
+       "text": "I = P × V",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes. I = P ÷ V.",
+     "wrong": {
+      "other": "Not quite. From P = V I, I = P ÷ V.",
+      "w1": "Not quite. I = V ÷ P is upside down. From P = V I, I = P ÷ V.",
+      "w2": "Not quite. To find I, divide the power by the potential difference: I = P ÷ V."
+     },
+     "idk": [],
+     "answerWhy": "From P = V I, the current is I = P ÷ V.",
+     "quiz": true
+    },
+    {
+     "id": "3.15",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 6 of 6: A 2000 W heater is on for 2 minutes. How much energy does it transfer, in joules?",
+     "answer": {
+      "value": 240000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: 2 minutes is 120 s, and E = P t = 2000 × 120 = 240 000 J.",
+     "wrong": {
+      "other": "Not quite: 240 000 J. 2 minutes is 120 s, and E = P t = 2000 × 120 = 240 000 J."
+     },
+     "idk": [],
+     "answerWhy": "2 minutes is 120 s, and E = P t = 2000 × 120 = 240 000 J.",
+     "quiz": true
+    },
+    {
+     "id": "3.16",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

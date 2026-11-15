@@ -1,0 +1,362 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 15502,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 13716,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 8983
+    },
+    "iterations": [
+      {
+        "input_tokens": 15502,
+        "output_tokens": 13716,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.672656,
+  "seconds": 127,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"new\",\"turn\":\"1.1b\",\"quote\":\"Second: which wire in a mains cable carries the alternating potential difference from the supply?\",\"what\":\"This recall question has nothing to do with today's lesson; the live wire is never used again. It is one more hurdle before anything new starts.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.1a still doesn't know\",\"quote\":\"That's fine. The UK mains is about 230 V.\",\"what\":\"Every 'still doesn't know' reply in the lesson opens with the same stock 'That's fine.', about twenty times. She will notice it is canned.\",\"severity\":\"minor\"},{\"fault\":\"F10\",\"turn\":\"1.4\",\"quote\":\"Energy is measured in joules (J), the unit you met with E = Q V in the lesson on current.\",\"what\":\"E = Q V is dropped in here with no symbols named; it is not set out until 3.2. To say what a joule is, she is sent to an equation she may not remember.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.6\",\"quote\":\"A heater has a power of 500 W. How much energy does it transfer in one second?\",\"what\":\"The message just before said 'a 60 W lamp transfers 60 joules every second'. The question is the same sentence with the number changed.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"1.6\",\"quote\":\"Yes: 500 J. A watt is a joule each second, so 500 W is 500 J every second.\",\"what\":\"The fact that one watt is one joule each second was told in 1.5 and comes back in every branch of 1.6. She reads it two or three times in a row.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.6 wrong answer '1 J'\",\"quote\":\"Not quite: 500 J. A watt is a joule each second, so 500 W means 500 J every second.\",\"what\":\"This is the same reply as for a right answer. It does not say why 1 J is wrong: that 1 J each second is 1 W, not 500 W.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"1.8\",\"quote\":\"A heater has a power of 3 kW. What is its power in watts?\",\"what\":\"The message before gave '1 kW = 1000 W. A 2 kW kettle has a power of 2000 W', so the answer is modelled immediately before the question.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"1.9\",\"quote\":\"What sets the power? A bigger potential difference gives each bit of charge a bigger push, so more energy. A bigger current sends more charge through each second. Both give more energy each second.\",\"what\":\"Four ideas are packed into one bubble: a question, a claim about potential difference, a claim about current, and a conclusion. A first-timer needs these one at a time.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P16\",\"turn\":\"1.9\",\"quote\":\"A bigger potential difference gives each bit of charge a bigger push, so more energy.\",\"what\":\"This is loose physics. Potential difference is the energy transferred per unit of charge; 'a bigger push, so more energy' leaves out the link, and 'each bit of charge' is vague.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.10\",\"quote\":\"Now explain it: In one line: why do you think the lamp got more energy each second?\",\"what\":\"Step 1.9 has just told her that a bigger potential difference and a bigger current both give more energy each second. That is both the prediction and the explanation, so there is nothing left to predict or work out (also F12).\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"1.10\",\"quote\":\"a resistor that can go in or out of the loop and an ammeter, with readings of the time, the charge that left the cell, the charge that came back\",\"what\":\"The circuit has parts and readings from another lesson that play no part in this one: the resistor switch and the charge out and back. She will wonder what they are for, and there is no power reading at all.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.10\",\"quote\":\"Does your line say these? Tick the ones it does.\\\" with: \\\"a bigger potential difference\\\", \\\"drives a bigger current\\\"\",\"what\":\"Nothing in this lesson has said that adding a cell gives a bigger potential difference, or that a bigger potential difference drives a bigger current. Step 1.9 treated the two as separate causes, so she could not write this line from what she was told.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"1.10\",\"quote\":\"Your prediction was right.\",\"what\":\"This is stock praise on the predict box, of the same kind as 'Good prediction'.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"1.10 (after a wrong prediction)\",\"quote\":\"More with two cells.\",\"what\":\"A bare fragment is shown when her prediction was wrong. It does not say it is the result, or that her prediction did not match.\",\"severity\":\"minor\"},{\"fault\":\"F12\",\"turn\":\"1.10\",\"quote\":\"Button under the message: Next\",\"what\":\"Next is on offer the whole time, so she can skip the circuit before predicting or running it (also F11).\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.10\",\"quote\":\"The circuit below has a cell and a lamp, and counts the energy the lamp gets.\",\"what\":\"The wording is muddled: a circuit does not 'count' energy and the lamp does not 'get' it. It should say the display shows the energy transferred to the lamp.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"1.11\",\"quote\":\"The equation is P = V I: power = potential difference × current.\",\"what\":\"'The equation' has no referent. This follows the widget and nothing has said an equation was coming or what it is for; it should open 'The equation for power is…'.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.13\",\"quote\":\"A phone charger has a potential difference of 5 V and a current of 2 A.\",\"what\":\"A charger does not 'have' a potential difference and a current. It should say it supplies 5 V and a current of 2 A flows.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.14\",\"quote\":\"To find the current, turn the equation round: I = P ÷ V, the power divided by the potential difference.\",\"what\":\"'Turn the equation round' is not an explanation. She is handed the rearranged form with no step showing how it comes from P = V I (divide both sides by V).\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.17\",\"quote\":\"Put V = I R into P = V I and you get P = I R × I, which is I² R.\",\"what\":\"The substitution is done in one breath of algebra. Many 15-year-olds will not see that the V has been replaced by I R, or why I × I becomes I².\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"1.18\",\"quote\":\"Here is one with P = I² R. Its steps open one at a time under it.\",\"what\":\"'One' has no referent in the message; it means a worked example.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.20\",\"quote\":\"In one line: what is power, and what are its two equations?\",\"what\":\"This asks for three things in 'one line'. The stock reply is also clumsy to read: 'the energy an appliance transfers each second; and P = V I; and P = I² R'. The same clumsy pattern returns at 2.9 and 3.8.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"2.1\",\"quote\":\"transfers energy from the mains to a thermal store: the water or the room gets hotter. A fan or a drill has an electric motor, which transfers energy to a kinetic store\",\"what\":\"Two new terms, 'thermal store' and 'kinetic store', arrive in one message. 'Store' itself is never explained (also F3).\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"2.1\",\"quote\":\"Appliances are made to transfer energy. A kettle or heater transfers energy from the mains to a thermal store: the water or the room gets hotter. A fan or a drill has an electric motor, which transfers energy to a kinetic store: something moves.\",\"what\":\"This bubble holds three ideas: what appliances are for, heating devices, and motors. It should be split.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.2\",\"quote\":\"A battery-powered electric toothbrush is switched on. Where does the motor transfer most of the energy?\",\"what\":\"The message before said a motor 'transfers energy to a kinetic store: something moves'. The answer was given one bubble earlier.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.3\",\"quote\":\"How much energy an appliance moves from one store to another depends on two things\",\"what\":\"'Moves from one store to another' is imprecise. Step 2.1 said the energy comes 'from the mains', which was never called a store, and elsewhere the lesson says 'transfers', not 'moves'.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"2.5\",\"quote\":\"Power must be in watts: 2 kW is 2000 W.\",\"what\":\"The same conversion with the same numbers was given in 1.7 ('A 2 kW kettle has a power of 2000 W'). It then comes a third time as the first step of the 2.6 card.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.7 she types 3600\",\"quote\":\"Not quite: 216 000 J. Multiply the power by the time: E = P t = 60 × 3600 = 216 000 J.\",\"what\":\"The reply does not fit the mistake. The likeliest route to 3600 is 60 W × 60 minutes: she did multiply power by time, but left the time in minutes. She should be told to convert the hour to seconds.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P4\",\"turn\":\"2.9\",\"quote\":\"In one line: what two things does the energy an appliance transfers depend on?\",\"what\":\"Key point 2 closes here without E = I V t ever being stated, though it is in the lesson's key point. Kilojoules are never mentioned either.\",\"severity\":\"minor\"},{\"fault\":\"L3\",\"turn\":\"3.1\",\"quote\":\"You met charge flow, the amount of charge that passes a point, in the lesson on current: Q = I t, with Q in coulombs (C), I in amperes (A) and t in seconds (s).\",\"what\":\"This is written as a reminder for someone revising. Q = I t is not given in words (charge flow = current × time), and it leans on an earlier lesson rather than teaching.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.2\",\"quote\":\"When charge flows through a potential difference, work is done on it, and energy is transferred.\",\"what\":\"'Work is done' is used with no explanation of what work means in physics. 'On it' is also unclear: the charge or the potential difference?\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"3.5\",\"quote\":\"The next example needs two equations, one after the other.\",\"what\":\"This repeats 3.4 almost word for word ('Harder questions need two equations in a row').\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.5\",\"quote\":\"Energy: E = P t = 2 × 120 = 240 J.\",\"what\":\"The worked example has the same answer, 240 J, as the question she has just done in 3.3. She may think the two are linked or that 240 J is special; the numbers should differ.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.8\",\"quote\":\"A full line also says: find the power with P = V I\",\"what\":\"Step 3.5 showed her a second valid route (Q = I t, then E = Q V). If she writes that, or 'multiply current, potential difference and time', she is told her line is missing something when it is correct.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"3.9\",\"quote\":\"Now for a short quiz on the whole lesson: six questions.\",\"what\":\"The quiz is not on the whole lesson. It has nothing on P = I² R, E = Q V, converting minutes or hours, or a two-step calculation.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"3.10\",\"quote\":\"Yes. Power is in watts: joules each second.\",\"what\":\"'Joules each second' is repeated again in every branch of this question, after 1.5 and 1.6.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.15\",\"quote\":\"Yes. A motor makes the blades move: a kinetic store.\",\"what\":\"This is muddled. Moving blades are not 'a kinetic store'; the energy is transferred to the kinetic store of the blades.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"2.1 to 3.8\",\"quote\":\"Button: Next\",\"what\":\"After the one circuit in 1.10 there is nothing hands-on in key points 2 or 3. It is told messages with Next and a run of near-identical 'multiply two numbers' questions, and I think she would get bored (also M1).\",\"severity\":\"minor\"}],\"counts\":[{\"fault\":\"F8\",\"instances\":4},{\"fault\":\"F1\",\"instances\":4},{\"fault\":\"F12\",\"instances\":3},{\"fault\":\"F2\",\"instances\":3},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"F10\",\"instances\":1},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"F3\",\"instances\":1},{\"fault\":\"P4\",\"instances\":1},{\"fault\":\"L3\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":15}],\"overall\":\"Not quite as it is. The calculations are correct and the worked examples are clear, but I would fix three things before she uses it: the circuit in 1.10 carries a resistor switch and charge readings left over from another lesson and its explanation is given away by 1.9; the reply to 3600 in 2.7 misdiagnoses the commonest mistake; and the marking in 3.8 rejects a correct method the lesson itself showed. Several questions simply repeat the sentence before them with the number changed, so she is copying rather than thinking, and terms such as 'store' and 'work is done' are used unexplained. Key points 2 and 3 also need something to do other than tap Next and multiply two numbers.\"}",
+  "findings": [
+    {
+      "fault": "new",
+      "turn": "1.1b",
+      "quote": "Second: which wire in a mains cable carries the alternating potential difference from the supply?",
+      "what": "This recall question has nothing to do with today's lesson; the live wire is never used again. It is one more hurdle before anything new starts.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1a still doesn't know",
+      "quote": "That's fine. The UK mains is about 230 V.",
+      "what": "Every 'still doesn't know' reply in the lesson opens with the same stock 'That's fine.', about twenty times. She will notice it is canned.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F10",
+      "turn": "1.4",
+      "quote": "Energy is measured in joules (J), the unit you met with E = Q V in the lesson on current.",
+      "what": "E = Q V is dropped in here with no symbols named; it is not set out until 3.2. To say what a joule is, she is sent to an equation she may not remember.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.6",
+      "quote": "A heater has a power of 500 W. How much energy does it transfer in one second?",
+      "what": "The message just before said 'a 60 W lamp transfers 60 joules every second'. The question is the same sentence with the number changed.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.6",
+      "quote": "Yes: 500 J. A watt is a joule each second, so 500 W is 500 J every second.",
+      "what": "The fact that one watt is one joule each second was told in 1.5 and comes back in every branch of 1.6. She reads it two or three times in a row.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.6 wrong answer '1 J'",
+      "quote": "Not quite: 500 J. A watt is a joule each second, so 500 W means 500 J every second.",
+      "what": "This is the same reply as for a right answer. It does not say why 1 J is wrong: that 1 J each second is 1 W, not 500 W.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.8",
+      "quote": "A heater has a power of 3 kW. What is its power in watts?",
+      "what": "The message before gave '1 kW = 1000 W. A 2 kW kettle has a power of 2000 W', so the answer is modelled immediately before the question.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "1.9",
+      "quote": "What sets the power? A bigger potential difference gives each bit of charge a bigger push, so more energy. A bigger current sends more charge through each second. Both give more energy each second.",
+      "what": "Four ideas are packed into one bubble: a question, a claim about potential difference, a claim about current, and a conclusion. A first-timer needs these one at a time.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P16",
+      "turn": "1.9",
+      "quote": "A bigger potential difference gives each bit of charge a bigger push, so more energy.",
+      "what": "This is loose physics. Potential difference is the energy transferred per unit of charge; 'a bigger push, so more energy' leaves out the link, and 'each bit of charge' is vague.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.10",
+      "quote": "Now explain it: In one line: why do you think the lamp got more energy each second?",
+      "what": "Step 1.9 has just told her that a bigger potential difference and a bigger current both give more energy each second. That is both the prediction and the explanation, so there is nothing left to predict or work out (also F12).",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.10",
+      "quote": "a resistor that can go in or out of the loop and an ammeter, with readings of the time, the charge that left the cell, the charge that came back",
+      "what": "The circuit has parts and readings from another lesson that play no part in this one: the resistor switch and the charge out and back. She will wonder what they are for, and there is no power reading at all.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10",
+      "quote": "Does your line say these? Tick the ones it does.\" with: \"a bigger potential difference\", \"drives a bigger current\"",
+      "what": "Nothing in this lesson has said that adding a cell gives a bigger potential difference, or that a bigger potential difference drives a bigger current. Step 1.9 treated the two as separate causes, so she could not write this line from what she was told.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.10",
+      "quote": "Your prediction was right.",
+      "what": "This is stock praise on the predict box, of the same kind as 'Good prediction'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "1.10 (after a wrong prediction)",
+      "quote": "More with two cells.",
+      "what": "A bare fragment is shown when her prediction was wrong. It does not say it is the result, or that her prediction did not match.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.10",
+      "quote": "Button under the message: Next",
+      "what": "Next is on offer the whole time, so she can skip the circuit before predicting or running it (also F11).",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10",
+      "quote": "The circuit below has a cell and a lamp, and counts the energy the lamp gets.",
+      "what": "The wording is muddled: a circuit does not 'count' energy and the lamp does not 'get' it. It should say the display shows the energy transferred to the lamp.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "1.11",
+      "quote": "The equation is P = V I: power = potential difference × current.",
+      "what": "'The equation' has no referent. This follows the widget and nothing has said an equation was coming or what it is for; it should open 'The equation for power is…'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.13",
+      "quote": "A phone charger has a potential difference of 5 V and a current of 2 A.",
+      "what": "A charger does not 'have' a potential difference and a current. It should say it supplies 5 V and a current of 2 A flows.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.14",
+      "quote": "To find the current, turn the equation round: I = P ÷ V, the power divided by the potential difference.",
+      "what": "'Turn the equation round' is not an explanation. She is handed the rearranged form with no step showing how it comes from P = V I (divide both sides by V).",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.17",
+      "quote": "Put V = I R into P = V I and you get P = I R × I, which is I² R.",
+      "what": "The substitution is done in one breath of algebra. Many 15-year-olds will not see that the V has been replaced by I R, or why I × I becomes I².",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "1.18",
+      "quote": "Here is one with P = I² R. Its steps open one at a time under it.",
+      "what": "'One' has no referent in the message; it means a worked example.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.20",
+      "quote": "In one line: what is power, and what are its two equations?",
+      "what": "This asks for three things in 'one line'. The stock reply is also clumsy to read: 'the energy an appliance transfers each second; and P = V I; and P = I² R'. The same clumsy pattern returns at 2.9 and 3.8.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "2.1",
+      "quote": "transfers energy from the mains to a thermal store: the water or the room gets hotter. A fan or a drill has an electric motor, which transfers energy to a kinetic store",
+      "what": "Two new terms, 'thermal store' and 'kinetic store', arrive in one message. 'Store' itself is never explained (also F3).",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "2.1",
+      "quote": "Appliances are made to transfer energy. A kettle or heater transfers energy from the mains to a thermal store: the water or the room gets hotter. A fan or a drill has an electric motor, which transfers energy to a kinetic store: something moves.",
+      "what": "This bubble holds three ideas: what appliances are for, heating devices, and motors. It should be split.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.2",
+      "quote": "A battery-powered electric toothbrush is switched on. Where does the motor transfer most of the energy?",
+      "what": "The message before said a motor 'transfers energy to a kinetic store: something moves'. The answer was given one bubble earlier.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.3",
+      "quote": "How much energy an appliance moves from one store to another depends on two things",
+      "what": "'Moves from one store to another' is imprecise. Step 2.1 said the energy comes 'from the mains', which was never called a store, and elsewhere the lesson says 'transfers', not 'moves'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.5",
+      "quote": "Power must be in watts: 2 kW is 2000 W.",
+      "what": "The same conversion with the same numbers was given in 1.7 ('A 2 kW kettle has a power of 2000 W'). It then comes a third time as the first step of the 2.6 card.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.7 she types 3600",
+      "quote": "Not quite: 216 000 J. Multiply the power by the time: E = P t = 60 × 3600 = 216 000 J.",
+      "what": "The reply does not fit the mistake. The likeliest route to 3600 is 60 W × 60 minutes: she did multiply power by time, but left the time in minutes. She should be told to convert the hour to seconds.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P4",
+      "turn": "2.9",
+      "quote": "In one line: what two things does the energy an appliance transfers depend on?",
+      "what": "Key point 2 closes here without E = I V t ever being stated, though it is in the lesson's key point. Kilojoules are never mentioned either.",
+      "severity": "minor"
+    },
+    {
+      "fault": "L3",
+      "turn": "3.1",
+      "quote": "You met charge flow, the amount of charge that passes a point, in the lesson on current: Q = I t, with Q in coulombs (C), I in amperes (A) and t in seconds (s).",
+      "what": "This is written as a reminder for someone revising. Q = I t is not given in words (charge flow = current × time), and it leans on an earlier lesson rather than teaching.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.2",
+      "quote": "When charge flows through a potential difference, work is done on it, and energy is transferred.",
+      "what": "'Work is done' is used with no explanation of what work means in physics. 'On it' is also unclear: the charge or the potential difference?",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.5",
+      "quote": "The next example needs two equations, one after the other.",
+      "what": "This repeats 3.4 almost word for word ('Harder questions need two equations in a row').",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5",
+      "quote": "Energy: E = P t = 2 × 120 = 240 J.",
+      "what": "The worked example has the same answer, 240 J, as the question she has just done in 3.3. She may think the two are linked or that 240 J is special; the numbers should differ.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.8",
+      "quote": "A full line also says: find the power with P = V I",
+      "what": "Step 3.5 showed her a second valid route (Q = I t, then E = Q V). If she writes that, or 'multiply current, potential difference and time', she is told her line is missing something when it is correct.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "3.9",
+      "quote": "Now for a short quiz on the whole lesson: six questions.",
+      "what": "The quiz is not on the whole lesson. It has nothing on P = I² R, E = Q V, converting minutes or hours, or a two-step calculation.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.10",
+      "quote": "Yes. Power is in watts: joules each second.",
+      "what": "'Joules each second' is repeated again in every branch of this question, after 1.5 and 1.6.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.15",
+      "quote": "Yes. A motor makes the blades move: a kinetic store.",
+      "what": "This is muddled. Moving blades are not 'a kinetic store'; the energy is transferred to the kinetic store of the blades.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "2.1 to 3.8",
+      "quote": "Button: Next",
+      "what": "After the one circuit in 1.10 there is nothing hands-on in key points 2 or 3. It is told messages with Next and a run of near-identical 'multiply two numbers' questions, and I think she would get bored (also M1).",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 15
+    },
+    {
+      "fault": "F8",
+      "instances": 4
+    },
+    {
+      "fault": "F1",
+      "instances": 4
+    },
+    {
+      "fault": "F12",
+      "instances": 3
+    },
+    {
+      "fault": "F2",
+      "instances": 3
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "F10",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "P4",
+      "instances": 1
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "F3",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "Not quite as it is. The calculations are correct and the worked examples are clear, but I would fix three things before she uses it: the circuit in 1.10 carries a resistor switch and charge readings left over from another lesson and its explanation is given away by 1.9; the reply to 3600 in 2.7 misdiagnoses the commonest mistake; and the marking in 3.8 rejects a correct method the lesson itself showed. Several questions simply repeat the sentence before them with the number changed, so she is copying rather than thinking, and terms such as 'store' and 'work is done' are used unexplained. Key points 2 and 3 also need something to do other than tap Next and multiply two numbers."
+}

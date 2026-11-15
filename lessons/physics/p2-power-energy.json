@@ -70,10 +70,77 @@
         {
           "term": "Kilowatt (kW)",
           "def": "1000 watts; used for higher-power appliances like kettles and heaters."
+        },
+        {
+          "term": "Joule (J)",
+          "def": "The SI unit of energy; 1 J = 1 W × 1 s."
         }
       ],
       "memTip": "PIV: Power = I × V. Think of it as 'PIV-ot', the central equation everything else turns around.",
-      "tutor_note": "People often use P = IV and forget P = I²R. Use P = I²R when the potential difference is not given. Both are the same equation in different forms. There is no new physics, just algebra."
+      "tutor_note": "People often use P = IV and forget P = I²R. Use P = I²R when the potential difference is not given. Both are the same equation in different forms. There is no new physics, just algebra.",
+      "widget": {
+        "id": "circuit",
+        "options": {
+          "resistor": false,
+          "energy": true,
+          "predicts": [
+            {
+              "id": "pe-two-cells",
+              "from": {
+                "lesson": "p2-power-energy",
+                "kp": 0
+              },
+              "question": "You run the lamp for 10 s with one cell, then add a second cell and run it for 10 s again. Which is true about the energy the lamp gets in 10 s?",
+              "options": [
+                {
+                  "text": "More with two cells",
+                  "short": "More with two cells"
+                },
+                {
+                  "text": "The same: it is the same lamp",
+                  "short": "The same"
+                },
+                {
+                  "text": "Less with two cells",
+                  "short": "Less with two cells"
+                }
+              ],
+              "correct": 0,
+              "setup": {
+                "cells": 1,
+                "resistor": false,
+                "seconds": 0
+              },
+              "try": "Tap Run for 10 s and note the energy. Then add a cell, tap Run for 10 s again and compare.",
+              "tryShort": "Tap Run for 10 s and note the energy. Then add a cell and run it again.",
+              "reveal": "More with two cells.",
+              "afterTest": "With two cells, the lamp got more energy in the same 10 s, and it was brighter.",
+              "explain": {
+                "prompt": "In one line: why did the lamp get more energy each second with two cells?",
+                "promptShort": "In one line: why do you think the lamp got more energy each second?",
+                "points": [
+                  "two cells give a bigger potential difference",
+                  "a bigger current flows",
+                  "so more energy each second"
+                ]
+              },
+              "needs": [
+                "run"
+              ]
+            }
+          ],
+          "controls": [
+            "run",
+            "add"
+          ]
+        },
+        "intro": "Try it: predict first, then run the circuit with one cell and with two.",
+        "labels": [
+          "cell",
+          "lamp",
+          "energy"
+        ]
+      }
     },
     {
       "heading": "Electrical energy",
@@ -91,10 +158,6 @@
         {
           "term": "Energy transferred",
           "def": "The total energy moved from one store to another; E = Pt, in joules."
-        },
-        {
-          "term": "Joule (J)",
-          "def": "The SI unit of energy; 1 J = 1 W × 1 s."
         }
       ],
       "memTip": "Joules = watts × seconds. Always convert time to seconds first.",

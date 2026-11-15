@@ -847,3 +847,10 @@ Step d independent read: tools/audit-runs/33bbc51-1.md (14 findings). Fixed once
 tools/spec-check-results/P2-B2/): p2-series-parallel 0.0708, p2-domestic
 0.0582, p2-power-energy 0.0585, p2-static 0.0666 USD (total 0.2541). Every
 lesson: missing_spec_content 0, above_gcse 0, factual_errors 0. Nothing to fix.
+
+## Phase B, P2 rest: p2-power-energy lesson file (2026-11-15)
+
+The key term "Joule (J)" moved from key point 2 to key point 1, where the
+scripted lesson first needs it (power is joules per second; the joule was
+taught in p2-current-voltage). Key point 1 gains a predict-first circuit widget
+(the existing energy-run circuit: one cell, then two).

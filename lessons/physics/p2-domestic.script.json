@@ -1,7 +1,7 @@
 {
  "lesson": "p2-domestic",
  "version": 1,
- "about": "The scripted AI lesson for p2-domestic (2026-11-15, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with three recall questions, two on p2-components and one on potential difference.",
+ "about": "The scripted AI lesson for p2-domestic (2026-11-15, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions, on parallel wiring at home and on potential difference.",
  "keyPoints": [
   {
    "kp": 0,
@@ -16,71 +16,34 @@
      "id": "1.1a",
      "type": "ask",
      "kind": "tap",
-     "question": "First, three quick questions from the last lesson. What happens to the resistance of a thermistor as it gets hotter?",
+     "question": "First, two quick questions you will need today. The lights and sockets in a home are wired in parallel. What potential difference does each appliance get?",
      "options": [
       {
-       "text": "It goes down",
+       "text": "The full supply potential difference",
        "branch": "right"
       },
       {
-       "text": "It goes up",
-       "branch": "up"
-      },
-      {
-       "text": "It stays the same",
-       "branch": "same"
+       "text": "A share of the supply potential difference",
+       "branch": "shared"
       }
      ],
-     "right": "Yes: a thermistor's resistance goes down as it gets hotter.",
+     "right": "Yes: each appliance is on its own branch across the supply, so each gets the full supply potential difference.",
      "wrong": {
-      "other": "Not quite. A thermistor's resistance goes down as it gets hotter.",
-      "up": "Not quite: a thermistor's resistance goes down as it gets hotter. A filament lamp is the one whose resistance goes up when it heats.",
-      "same": "Not quite: a thermistor is made so that its resistance changes with temperature. It goes down as the thermistor gets hotter."
+      "other": "Not quite. In parallel, each appliance gets the full supply potential difference.",
+      "shared": "Not quite: sharing is the series rule. In parallel each appliance has its own branch across the supply, so each gets the full supply potential difference."
      },
      "idk": [
       {
-       "hint": "A thermistor lets charge through more easily when it is warm. Which button says that?"
+       "hint": "In parallel, each branch is joined straight across the supply. Is the push shared, or all of it?"
       }
      ],
-     "answerWhy": "A thermistor's resistance goes down as it gets hotter."
-    },
-    {
-     "id": "1.1b",
-     "type": "ask",
-     "kind": "tap",
-     "question": "Second: when the light on an LDR gets brighter, which is true about its resistance?",
-     "options": [
-      {
-       "text": "It goes down",
-       "branch": "right"
-      },
-      {
-       "text": "It goes up",
-       "branch": "up"
-      },
-      {
-       "text": "It stays the same",
-       "branch": "same"
-      }
-     ],
-     "right": "Yes: an LDR's resistance goes down as the light gets brighter.",
-     "wrong": {
-      "other": "Not quite. An LDR's resistance goes down as the light gets brighter.",
-      "up": "Not quite: an LDR's resistance goes down in brighter light, so more current flows.",
-      "same": "Not quite: an LDR is made so that its resistance changes with light. It goes down as the light gets brighter."
-     },
-     "idk": [
-      {
-       "hint": "An LDR lets charge through more easily in bright light. Which button says that?"
-      }
-     ],
-     "answerWhy": "An LDR's resistance goes down as the light gets brighter."
+     "answerWhy": "In parallel, each appliance is on its own branch across the supply, so each gets the full supply potential difference."
     },
     {
      "id": "1.1c",
      "type": "ask",
      "kind": "tap",
-     "question": "Third, one you will need today: what is potential difference?",
+     "question": "Second: what is potential difference?",
      "options": [
       {
        "text": "The push that drives charge round a circuit",
@@ -109,25 +72,30 @@
      "answerWhy": "Potential difference is the push that drives charge round a circuit, measured in volts (V)."
     },
     {
-     "id": "1.2",
-     "type": "say",
-     "text": "Now, this lesson. A cell or battery always pushes the same way round a circuit: one end of the cell is always the positive end, and the other is always the negative end."
-    },
-    {
      "id": "1.3",
      "type": "say",
-     "text": "A potential difference whose direction never changes is called a direct potential difference. Cells, batteries and solar cells give a direct potential difference. It drives a current that flows one way only, a direct current, so people call it dc."
+     "text": "Now, this lesson. A cell or battery always pushes the same way round a circuit: one end is always positive and the other always negative. A potential difference whose direction never changes like this is called a direct potential difference."
+    },
+    {
+     "id": "1.3b",
+     "type": "say",
+     "text": "A direct potential difference drives a current that flows one way only, called direct current, or dc for short. Cells, batteries and solar cells give dc, and torches, phones and laptops run on it."
     },
     {
      "id": "1.4",
      "type": "say",
-     "text": "Look at the top graph: potential difference against time, for a cell. The line stays on the same side of zero the whole time, because the push never changes direction.",
+     "text": "Look at the top graph, for a cell, and leave the bottom one for now. Time runs along the bottom, and the height of the line shows the potential difference. The line stays on the same side of zero the whole time: the push never changes direction.",
      "picture": "p2-ac-dc"
     },
     {
      "id": "1.5",
      "type": "say",
-     "text": "The mains supply, from the sockets in your home, is different. Its push keeps reversing direction, many times every second. A potential difference that keeps reversing like that is called an alternating potential difference. The current it drives keeps reversing too, an alternating current, so people call it ac."
+     "text": "The mains supply, from the sockets in your home, is different. Its push keeps reversing direction, many times every second. A potential difference that keeps reversing like that is called an alternating potential difference."
+    },
+    {
+     "id": "1.5b",
+     "type": "say",
+     "text": "An alternating potential difference drives a current that keeps reversing too, called alternating current, or ac for short."
     },
     {
      "id": "1.6",
@@ -184,7 +152,7 @@
     {
      "id": "1.10b",
      "type": "say",
-     "text": "The UK mains has a potential difference of about 230 V. A torch cell gives about 1.5 V, so the mains push is over a hundred times bigger."
+     "text": "The UK mains has a potential difference of about 230 V. The mains push swings back and forth, and 230 V is the usual way of giving its size. A torch cell gives about 1.5 V, so the mains push is far bigger."
     },
     {
      "id": "1.11",
@@ -243,7 +211,7 @@
        "branch": "faster"
       }
      ],
-     "right": "Yes: a direct potential difference is one whose direction never changes. When you explain dc, describe the push like that.",
+     "right": "Yes: a direct potential difference is one whose direction never changes.",
      "wrong": {
       "other": "Not quite. A direct potential difference is one whose direction never changes.",
       "mains": "Not quite: about 230 V is the mains, which is alternating. A direct potential difference is one whose direction never changes.",
@@ -286,17 +254,12 @@
     {
      "id": "2.2b",
      "type": "say",
-     "text": "One more idea before the wires. Electricians call the ground earth, and it counts as 0 V: the zero that every other potential is measured from. Anything joined to the ground, a person standing on it included, is at about 0 V."
+     "text": "One more idea before the wires. Electricians call the ground earth, and use it as the zero for measuring. When a wire is said to be at 230 V, that means there are 230 V between that wire and earth. Earth itself is at 0 V."
     },
     {
      "id": "2.3",
      "type": "say",
      "text": "The brown wire is called the live wire: the wire that carries the alternating potential difference from the supply. Between the live wire and earth there is about 230 V."
-    },
-    {
-     "id": "2.4",
-     "type": "say",
-     "text": "The blue wire is called the neutral wire: the wire that completes the circuit, so that charge can flow back to the supply. The neutral wire is at, or close to, 0 V."
     },
     {
      "id": "2.5",
@@ -317,18 +280,23 @@
        "branch": "earth"
       }
      ],
-     "right": "Yes: brown. The neutral wire is the blue one.",
+     "right": "Yes: brown, the colour of the live wire.",
      "wrong": {
       "other": "Not quite. The live wire is brown.",
-      "blue": "Not quite: blue is the neutral wire. The live wire is brown.",
-      "earth": "Not quite: green and yellow stripes is the third wire, which you meet next. The live wire is brown."
+      "blue": "Not quite: blue is another wire, which you meet next. The live wire is brown.",
+      "earth": "Not quite: green and yellow stripes is another wire, which you meet soon. The live wire is brown."
      },
      "idk": [
       {
-       "hint": "The live wire carries the big push from the supply. It is not the blue one. Is it brown, or green and yellow?"
+       "hint": "The message just before said which colour the live wire is. Brown, blue, or green and yellow?"
       }
      ],
-     "answerWhy": "The live wire is brown; the neutral wire is blue."
+     "answerWhy": "The live wire is brown."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "The blue wire is called the neutral wire: the wire that completes the circuit, so that charge can flow back to the supply. The neutral wire is at, or close to, 0 V."
     },
     {
      "id": "2.6",
@@ -354,11 +322,11 @@
        "branch": "live"
       }
      ],
-     "right": "Yes: the earth wire. Normally the current goes round through the live and neutral wires, reversing back and forth with the ac. The earth wire only carries a current if something goes wrong, such as the live wire touching the metal case.",
+     "right": "Yes: the earth wire. Normally the current goes round through the live and neutral wires, reversing back and forth with the ac. The earth wire only carries a current if something goes wrong with the appliance.",
      "wrong": {
-      "other": "Not quite. The earth wire carries no current unless there is a fault.",
-      "neutral": "Not quite: the neutral wire completes the circuit, so the current flows back along it. The earth wire carries no current unless there is a fault.",
-      "live": "Not quite: the live wire brings the current from the supply. The earth wire carries no current unless there is a fault."
+      "other": "Not quite. The earth wire carries no current unless something goes wrong.",
+      "neutral": "Not quite: the neutral wire is part of the loop the current goes round, with the live wire. The earth wire carries no current unless something goes wrong.",
+      "live": "Not quite: the live wire is part of the loop the current goes round, with the neutral wire. The earth wire carries no current unless something goes wrong."
      },
      "idk": [
       {
@@ -387,13 +355,13 @@
     {
      "id": "3.1",
      "type": "say",
-     "text": "Now, why the earth wire matters. Suppose a loose live wire inside a metal kettle touches the kettle's metal case. Without an earth wire, the case is now at about 230 V, and anyone who touches it could get an electric shock."
+     "text": "Now, why the earth wire matters. Suppose a loose live wire inside a metal kettle touches the kettle's metal case. Without an earth wire, the case is now at about 230 V, and anyone who touches it could get an electric shock: a current through their body."
     },
     {
      "id": "3.3",
      "type": "ask",
      "kind": "tap",
-     "question": "Predict: now the kettle's metal case is joined to the earth wire, and the same fault happens. Which is true?",
+     "question": "Predict: now the kettle's metal case is joined to the earth wire, and the same loose wire touches it. Which is true?",
      "options": [
       {
        "text": "Charge flows down the earth wire, not through you",
@@ -432,13 +400,18 @@
      "text": "Your body is joined to the ground through your feet, so you are at about 0 V too. If you touched a live wire, there would be about 230 V between your hand and your feet. That potential difference drives a current through your body: an electric shock."
     },
     {
+     "id": "3.4b",
+     "type": "say",
+     "text": "In a lamp circuit, the switch is in the live wire. Turning the switch off makes a gap in the live wire, between the supply and the lamp."
+    },
+    {
      "id": "3.5",
      "type": "ask",
      "kind": "tap",
-     "question": "Predict: the switch for a ceiling lamp is in the live wire. The lamp is switched off. An electrician touches the live wire between the switch and the supply. Is that safe?",
+     "question": "Predict: the lamp is switched off. An electrician touches the live wire on the supply's side of the gap. Is that safe?",
      "options": [
       {
-       "text": "No: the live wire is still at about 230 V",
+       "text": "No, it is not safe",
        "branch": "right"
       },
       {
@@ -471,7 +444,7 @@
     {
      "id": "3.6b",
      "type": "say",
-     "text": "Because of this danger, there are safety rules: keep electrical appliances away from water, do not plug too many things into one socket, and check cables for damage before you use them."
+     "text": "Water can make a connection between a live wire and earth, so keep electrical appliances away from water. A damaged cable can leave a live wire where you could touch it, so check cables before you use them."
     },
     {
      "id": "3.7",
@@ -580,29 +553,29 @@
      "id": "3.12",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 4 of 6: What is a direct potential difference?",
+     "question": "Quiz, question 4 of 6: What is an alternating potential difference?",
      "options": [
       {
-       "text": "One whose direction never changes",
+       "text": "One that keeps reversing direction",
        "branch": "right"
       },
       {
-       "text": "One that keeps changing direction",
+       "text": "One that never changes direction",
        "branch": "w1"
       },
       {
-       "text": "One that is always 230 V",
+       "text": "One that comes from a battery",
        "branch": "w2"
       }
      ],
-     "right": "Yes. Its direction never changes.",
+     "right": "Yes. It keeps reversing direction, like the mains.",
      "wrong": {
-      "other": "Not quite. A direct potential difference is one whose direction never changes.",
-      "w1": "Not quite. Changing direction is alternating. A direct potential difference never changes direction.",
-      "w2": "Not quite. 230 V is the mains, which is alternating. A direct potential difference never changes direction."
+      "other": "Not quite. An alternating potential difference keeps reversing direction.",
+      "w1": "Not quite. Never changing direction is direct. An alternating potential difference keeps reversing direction.",
+      "w2": "Not quite. A battery gives a direct potential difference. An alternating one keeps reversing direction, like the mains."
      },
      "idk": [],
-     "answerWhy": "A direct potential difference is one whose direction never changes.",
+     "answerWhy": "An alternating potential difference keeps reversing direction.",
      "quiz": true
     },
     {

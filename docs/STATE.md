@@ -1,7 +1,19 @@
-| Scripted lesson p2-components (2026-11-12) | script review 2 (claude-fable-5-2, whole lesson); site test 2 (--persona mabel, laptop, whole lesson, no judge) | 1.66 (review 0.7280 + 0.8110; site 0.0677 + 0.0511) |
 # mabel-gcse — State
 
-Runbook position: Phase A, A9: evidence pilot gate. Scripted AI lesson p2-current-voltage: Jason "Script: ok" and "Mabel is happy" (2026-11-12). Scripted AI lesson p2-components written (2026-11-12): free walk 0 findings, two script reviews fixed, site test PASS. Jason does not read scripts any more (2026-11-12, "audit yourself"): self-audit done and fixed. **Next: Mabel tries the p2-components AI lesson.** Slides ready.
+Runbook position: Phase B, topic P2 rest (brief docs/briefs/2026-11-15-script-four-topics.md). Phase A, A9 pilot: p2-current-voltage and p2-components are scripted AI lessons, waiting for Mabel's delayed test.
+
+Month spend (November 2026): 7.24 USD of the 100 cap (coverage and faults 4.33, scripted teaching 1.25, p2-components 1.66). Phase B stops at 95.
+
+### Phase B — scripted AI lessons (brief 2026-11-15)
+
+Scripted lessons: p2-current-voltage, p2-components.
+
+| Topic | Lessons scripted | Review findings (before → after) | Site tests | Cost (USD) | Commit |
+|---|---|---|---|---|---|
+| P2 rest | – | – | – | – | – |
+| P1 | – | – | – | – | – |
+| P3 | – | – | – | – | – |
+| G5 | – | – | – | – | – |
 
 ## Runbook v3 switch (2026-10-19)
 
@@ -225,3 +237,4 @@ Not started on the pipeline. Already in place:
 
 | Scripted teaching (2026-11-11/12, brief 2026-11-11-scripted-teaching) | script review 2 (claude-fable-5-2, --script); site test 5 (--persona mabel, laptop, key points 1–2, no judge; one stopped by the tester, one stopped by Jason, three to the end); one live check of the her-question reply | 1.25 (review 0.5872 + 0.5438; site 0.0099 + 0.0292 + 0.0291 + 0.0301, plus the stopped run 2026-11-11/p2-current-voltage-5, no cost reported, about 0.02; live check under 0.01) |
 | Scripted lesson, key points 3–7 (2026-11-12) | script review 2 (claude-fable-5-2, whole lesson); site test 3 (--persona mabel, laptop, whole lesson, no judge) | 2.45 (review 1.1564 + 1.0169; site 0.0764 + 0.1029 + 0.0958) |
+| Scripted lesson p2-components (2026-11-12) | script review 2 (claude-fable-5-2, whole lesson); site test 2 (--persona mabel, laptop, whole lesson, no judge) | 1.66 (review 0.7280 + 0.8110; site 0.0677 + 0.0511) |

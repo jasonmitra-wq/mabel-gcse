@@ -47,30 +47,34 @@
     {
      "id": "1.1b",
      "type": "ask",
-     "kind": "number",
-     "question": "Second: energy transferred = power × time, E = P t, with E in joules (J), P in watts (W) and t in seconds (s). A 2 kW (2000 W) heater is on for 10 s. How much energy does it transfer, in joules?",
-     "answer": {
-      "value": 20000,
-      "unit": "J",
-      "tolerance": 0.01
-     },
-     "wrongValues": [
+     "kind": "tap",
+     "question": "Second: a hot cup of tea cools down in a room. Where does its energy go?",
+     "options": [
       {
-       "value": 20,
-       "branch": "nokw"
+       "text": "Into the thermal store of the surroundings",
+       "branch": "right"
+      },
+      {
+       "text": "It is destroyed as the tea cools",
+       "branch": "destroyed"
+      },
+      {
+       "text": "Into the tea's chemical store",
+       "branch": "chem"
       }
      ],
-     "right": "Yes: 20 000 J. 2 kW = 2000 W, and E = P × t = 2000 × 10 = 20 000 J.",
+     "right": "Yes: it spreads into the surroundings, warming the room a tiny bit.",
      "wrong": {
-      "other": "Not quite: 20 000 J. 2 kW = 2000 W, and E = P × t = 2000 × 10 = 20 000 J.",
-      "nokw": "Not quite: 20 000 J. Change kilowatts to watts first: 2 kW = 2000 W. Then 2000 × 10 = 20 000 J."
+      "other": "Not quite: into the thermal store of the surroundings.",
+      "destroyed": "Not quite: energy is never destroyed. It spreads into the thermal store of the surroundings, warming the room a tiny bit.",
+      "chem": "Not quite: cooling is not a chemical change. The energy spreads into the thermal store of the surroundings."
      },
      "idk": [
       {
-       "hint": "2 kW is 2000 W. Multiply that by the 10 s."
+       "hint": "Energy cannot be destroyed, and the room gets a tiny bit warmer. Which button fits?"
       }
      ],
-     "answerWhy": "2 kW = 2000 W, so E = P × t = 2000 × 10 = 20 000 J."
+     "answerWhy": "The energy spreads into the thermal store of the surroundings, warming the room a tiny bit."
     },
     {
      "id": "1.2",
@@ -137,7 +141,7 @@
     {
      "id": "1.8",
      "type": "say",
-     "text": "The equation is ΔE = m c Δθ: change in thermal energy = mass × specific heat capacity × temperature change. ΔE is in joules (J), m is the mass in kilograms (kg), c is the specific heat capacity in J/kg °C and Δθ is the temperature change in °C."
+     "text": "The equation is ΔE = m c Δθ: change in the energy of the thermal store = mass × specific heat capacity × temperature change. ΔE is in joules (J), m is the mass in kilograms (kg), c is the specific heat capacity in J/kg °C and Δθ is the temperature change in °C."
     },
     {
      "id": "1.9",
@@ -270,18 +274,28 @@
     {
      "id": "2.5",
      "type": "say",
-     "text": "Cooling works the same way, but energy is given out. When something cools, use the size of the temperature change. A 1.5 kg aluminium block (c = 900 J/kg °C) cooling from 80 °C to 20 °C has Δθ = 60 °C, so it gives out 1.5 × 900 × 60 = 81 000 J."
+     "text": "Cooling works the same way, but energy is given out instead of taken in."
+    },
+    {
+     "id": "2.5a",
+     "type": "say",
+     "text": "When something cools, final minus start comes out negative. Use the size of the change, without the minus sign: from 80 °C to 20 °C, Δθ = 60 °C."
+    },
+    {
+     "id": "2.5b",
+     "type": "say",
+     "text": "A 1.5 kg aluminium block (c = 900 J/kg °C) cooling from 80 °C to 20 °C gives out 1.5 × 900 × 60 = 81 000 J."
     },
     {
      "id": "2.6",
      "type": "worked",
-     "text": "To find c, put the numbers in first, then divide. Its steps open one at a time.",
+     "text": "Here is a worked example of finding c: put the numbers in first, then divide. Its steps open one at a time.",
      "question": "4 kg of a metal takes in 36 000 J and warms by 20 °C. What is its specific heat capacity?",
      "steps": [
       "Put the numbers into ΔE = m c Δθ: 36 000 = 4 × c × 20.",
       "4 × 20 = 80, so 36 000 = 80 × c.",
       "Divide both sides by 80: c = 36 000 ÷ 80 = 450 J/kg °C.",
-      "On a calculator, put the bottom in brackets: 36 000 ÷ (4 × 20)."
+      "On a calculator in one go: 36 000 ÷ (4 × 20), with brackets round 4 × 20."
      ],
      "answer": {
       "value": 450,
@@ -311,7 +325,7 @@
      "right": "Yes: 300 J/kg °C. 15 000 = 5 × c × 10, so c = 15 000 ÷ (5 × 10) = 15 000 ÷ 50 = 300 J/kg °C.",
      "wrong": {
       "other": "Not quite: 300 J/kg °C. c = 15 000 ÷ (5 × 10) = 15 000 ÷ 50 = 300 J/kg °C.",
-      "brackets": "Not quite: 300 J/kg °C. Put the bottom in brackets: 15 000 ÷ (5 × 10) = 15 000 ÷ 50 = 300. Without brackets the calculator multiplies by 10 instead.",
+      "brackets": "Not quite: 300 J/kg °C. Type 15 000 ÷ (5 × 10), with brackets. Without them the calculator does 15 000 ÷ 5 and then multiplies by 10, giving 30 000.",
       "times": "Not quite: 300 J/kg °C. To find c, divide: c = 15 000 ÷ (5 × 10) = 300 J/kg °C."
      },
      "idk": [
@@ -324,7 +338,7 @@
     {
      "id": "2.7b",
      "type": "say",
-     "text": "Δθ is found the same way: put the numbers in, then divide the energy by the mass times c. Δθ = ΔE ÷ (m × c)."
+     "text": "Rearranged, the equation gives c = ΔE ÷ (m × Δθ). Δθ is found the same way: Δθ = ΔE ÷ (m × c)."
     },
     {
      "id": "2.8",
@@ -357,11 +371,11 @@
     {
      "id": "2.9",
      "type": "own",
-     "prompt": "In one line: how do you work out Δθ from a starting temperature and a final temperature?",
+     "prompt": "In one line: how would you find c if you know ΔE, m and Δθ?",
      "points": [
-      "take the starting temperature away from the final temperature"
+      "divide the energy by the mass times the temperature change"
      ],
-     "idk": "No problem. A good line would be: Δθ is the final temperature minus the starting temperature, never just one of them."
+     "idk": "No problem. A good line would be: divide the energy by the mass times the temperature change, c = ΔE ÷ (m × Δθ)."
     }
    ]
   },
@@ -443,7 +457,7 @@
      },
      "idk": [
       {
-       "hint": "Just after switching off, the heater is still very hot. Which button is about the heater?"
+       "hint": "Just after switching off, the heater is still much hotter than the block. Which way does energy pass between a hotter object and a cooler one?"
       }
      ],
      "answerWhy": "The hot heater keeps passing energy into the block for a while, so you record the highest temperature."
@@ -451,7 +465,7 @@
     {
      "id": "3.5",
      "type": "say",
-     "text": "The main problem is that some energy escapes from the block to the surroundings. Less energy goes into the block than the joulemeter shows, so its temperature rises less."
+     "text": "The main problem is that some energy escapes from the block to the surroundings, and some stays in the heater. Less energy stays in the block than the joulemeter shows, so its temperature rises less."
     },
     {
      "id": "3.6",
@@ -472,18 +486,18 @@
        "branch": "none"
       }
      ],
-     "right": "Yes: c = ΔE ÷ (m × Δθ). A smaller Δθ on the bottom gives a bigger answer, so c comes out too high.",
+     "right": "Yes: in c = ΔE ÷ (m × Δθ) you divide by Δθ. Dividing by a smaller number gives a bigger answer, so c comes out too high.",
      "wrong": {
-      "other": "Not quite: higher than the true value. A smaller Δθ on the bottom of c = ΔE ÷ (m × Δθ) gives a bigger answer.",
-      "lower": "Not quite: Δθ is on the bottom of c = ΔE ÷ (m × Δθ). A smaller number on the bottom gives a bigger answer, so c comes out too high.",
-      "none": "Not quite: Δθ is smaller than it should be, and it is on the bottom of c = ΔE ÷ (m × Δθ). That makes c come out too high."
+      "other": "Not quite: higher than the true value. You divide by Δθ, and dividing by a smaller number gives a bigger answer.",
+      "lower": "Not quite: you divide by Δθ in c = ΔE ÷ (m × Δθ). Dividing by a smaller number gives a bigger answer, so c comes out too high.",
+      "none": "Not quite: Δθ is smaller than it should be, and you divide by it. That makes c come out too high."
      },
      "idk": [
       {
-       "hint": "Δθ is on the bottom of c = ΔE ÷ (m × Δθ), and dividing by a smaller number gives a bigger answer. So does c come out higher or lower?"
+       "hint": "In c = ΔE ÷ (m × Δθ) you divide by Δθ. Dividing by a smaller number gives a bigger answer. So does c come out higher or lower?"
       }
      ],
-     "answerWhy": "Δθ is on the bottom of c = ΔE ÷ (m × Δθ), so a smaller Δθ makes c come out too high."
+     "answerWhy": "You divide by Δθ, so a smaller Δθ makes c come out too high."
     },
     {
      "id": "3.7",
@@ -498,7 +512,7 @@
     {
      "id": "3.8",
      "type": "say",
-     "text": "If you are asked for a hazard, name the hot heater, block or water, which could burn you. The low-voltage supply itself is not a hazard."
+     "text": "If you are asked for a hazard, name the hot heater, block or water, which could burn you. The heater runs from a low-voltage supply, which is not itself a hazard."
     },
     {
      "id": "3.9",
@@ -568,6 +582,11 @@
      "id": "4.3",
      "type": "say",
      "text": "Temperature is linked to how fast the particles move on average: the higher the temperature, the more kinetic energy, the energy of movement, each particle has on average."
+    },
+    {
+     "id": "4.3b",
+     "type": "say",
+     "text": "A thermal store is really the energy of moving particles: an object gets hotter when its particles move faster."
     },
     {
      "id": "4.4",

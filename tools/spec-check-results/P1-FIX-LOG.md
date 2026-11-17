@@ -65,3 +65,23 @@ Not changed: "nothing hands-on" (no Energy widget exists; adding one is shared
 widget code); the end message and the own-words reply template ("…; and …"),
 which are shared teach-mode code (runbook: ask Jason first); "every wrong number
 gets the answer at once" (engine behaviour).
+
+## B4 script reviews, round 2 (2026-11-17)
+
+Allowed by the runbook: every round-1 review found an F-numbered fault more
+than twice. $3.99 in all. Findings: energy-stores 43, kinetic-potential 26,
+conservation 38, efficiency 30, power 23, heating 20, national-grid 35 (215,
+down from 242). Fixed, all seven walk 0 after. Physics fixes: the warming slide
+takes its energy from the child's gravitational potential store (not kinetic);
+a spring stretched to three times its length (past the limit of
+proportionality) replaced by a 20 cm to 30 cm stretch; a 90%-efficient lamp
+replaced by a motor; tides called predictable, not reliable on demand; cooling
+uses the size of Δθ, explained; "thermal store" linked to particles' energy.
+Teaching fixes: worked examples for every rearrangement (E = P × t, t = E ÷ P,
+total input from efficiency, c from ΔE = m c Δθ); one new term per message
+(atom/nucleus, charge, current, resistance, fossil/nuclear fuel); quiz replies
+for each wrong option, and "Nearly" for a decimal given as a percentage;
+questions that copied the message before them replaced with new cases.
+Not changed, as in round 1: nothing hands-on (no Energy widget), the shared
+own-words reply template, the end message, and "every wrong number gets the
+answer at once" (shared teach-mode code: ask Jason before changing).

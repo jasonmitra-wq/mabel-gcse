@@ -225,7 +225,7 @@
      "wrong": {
       "other": "Not quite: 200 W. P = E ÷ t = 12 000 ÷ 60 = 200 W.",
       "times": "Not quite: 200 W. Divide the energy by the time, do not multiply: 12 000 ÷ 60 = 200 W.",
-      "upside": "Not quite: 200 W. Put the energy on top: P = 12 000 ÷ 60 = 200 W."
+      "upside": "Not quite: 200 W. Divide the energy by the time: P = 12 000 ÷ 60 = 200 W."
      },
      "idk": [
       {
@@ -242,22 +242,42 @@
     {
      "id": "2.4",
      "type": "say",
-     "text": "The power output of a power station is given in megawatts (MW): 1 MW = 1 000 000 W, a million watts. Change kilowatts and megawatts into watts before you calculate."
+     "text": "The power output of a power station is given in megawatts (MW): 1 MW = 1 000 000 W, a million watts."
+    },
+    {
+     "id": "2.4b",
+     "type": "say",
+     "text": "Before you calculate, change kilowatts and megawatts into watts, and minutes into seconds: 1 minute is 60 s."
     },
     {
      "id": "2.5",
      "type": "say",
-     "text": "To find the energy, multiply both sides of P = E ÷ t by t: that gives E = P × t."
+     "text": "To find the energy or the time, put the numbers into P = E ÷ t first, then rearrange."
+    },
+    {
+     "id": "2.5a",
+     "type": "worked",
+     "text": "Here is a worked example of finding the energy. Its steps open one at a time.",
+     "question": "A 50 W lamp is on for 20 s. How much energy does it transfer?",
+     "steps": [
+      "Put the numbers into P = E ÷ t: 50 = E ÷ 20.",
+      "Multiply both sides by 20: E = 50 × 20.",
+      "E = 1000 J."
+     ],
+     "answer": {
+      "value": 1000,
+      "unit": "J"
+     }
     },
     {
      "id": "2.5b",
      "type": "worked",
-     "text": "To find the time instead, put the numbers in first, then rearrange. Its steps open one at a time.",
+     "text": "And here is a worked example of finding the time. Its steps open one at a time.",
      "question": "How long does a 2000 W heater take to transfer 36 000 J?",
      "steps": [
       "Put the numbers into P = E ÷ t: 2000 = 36 000 ÷ t.",
-      "Rearrange: t = E ÷ P = 36 000 ÷ 2000.",
-      "t = 18 s."
+      "Multiply both sides by t: 2000 × t = 36 000.",
+      "Divide both sides by 2000: t = 36 000 ÷ 2000 = 18 s."
      ],
      "answer": {
       "value": 18,
@@ -321,7 +341,7 @@
      "wrong": {
       "other": "Not quite: 60 s. t = E ÷ P = 30 000 ÷ 500 = 60 s.",
       "times": "Not quite: 60 s. To find the time, divide the energy by the power: 30 000 ÷ 500 = 60 s.",
-      "upside": "Not quite: 60 s. Put the energy on top: t = 30 000 ÷ 500 = 60 s."
+      "upside": "Not quite: 60 s. Divide the energy by the power: t = 30 000 ÷ 500 = 60 s."
      },
      "idk": [
       {
@@ -334,39 +354,39 @@
      "id": "2.8",
      "type": "ask",
      "kind": "number",
-     "question": "A 1.5 kW kettle is on for 2 minutes. How much energy does it transfer, in joules?",
+     "question": "A 2.5 kW kettle is on for 2 minutes. How much energy does it transfer, in joules?",
      "answer": {
-      "value": 180000,
+      "value": 300000,
       "unit": "J",
       "tolerance": 0.01
      },
      "wrongValues": [
       {
-       "value": 3,
+       "value": 5,
        "branch": "none"
       },
       {
-       "value": 180,
+       "value": 300,
        "branch": "nokw"
       },
       {
-       "value": 3000,
+       "value": 5000,
        "branch": "nomin"
       }
      ],
-     "right": "Yes: 180 000 J. 1.5 kW = 1500 W and 2 minutes = 120 s, so E = 1500 × 120 = 180 000 J.",
+     "right": "Yes: 300 000 J. 2.5 kW = 2500 W and 2 minutes = 120 s, so E = 2500 × 120 = 300 000 J.",
      "wrong": {
-      "other": "Not quite: 180 000 J. 1500 W × 120 s = 180 000 J.",
-      "none": "Not quite: 180 000 J. Both need changing: 1.5 kW = 1500 W, and 2 minutes = 120 s. Then E = 1500 × 120 = 180 000 J.",
-      "nokw": "Not quite: 180 000 J. The time is right in seconds, but the power must be in watts: 1.5 kW = 1500 W. E = 1500 × 120 = 180 000 J.",
-      "nomin": "Not quite: 180 000 J. The power is right in watts, but the time must be in seconds: 2 minutes = 120 s. E = 1500 × 120 = 180 000 J."
+      "other": "Not quite: 300 000 J. 2500 W × 120 s = 300 000 J.",
+      "none": "Not quite: 300 000 J. Both need changing: 2.5 kW = 2500 W, and 2 minutes = 120 s. Then E = 2500 × 120 = 300 000 J.",
+      "nokw": "Not quite: 300 000 J. The time is right in seconds, but the power must be in watts: 2.5 kW = 2500 W. E = 2500 × 120 = 300 000 J.",
+      "nomin": "Not quite: 300 000 J. The power is right in watts, but the time must be in seconds: 2 minutes = 120 s. E = 2500 × 120 = 300 000 J."
      },
      "idk": [
       {
-       "hint": "Change both: 1.5 kW is 1500 W, and 2 minutes is 120 s. Then multiply them."
+       "hint": "Change both: 2.5 kW is 2500 W, and 2 minutes is 120 s. Then multiply them."
       }
      ],
-     "answerWhy": "1.5 kW = 1500 W and 2 minutes = 120 s, so E = P × t = 1500 × 120 = 180 000 J."
+     "answerWhy": "2.5 kW = 2500 W and 2 minutes = 120 s, so E = P × t = 2500 × 120 = 300 000 J."
     },
     {
      "id": "2.9",
@@ -388,12 +408,12 @@
     {
      "id": "3.1",
      "type": "say",
-     "text": "Some real powers: a hairdryer is about 2000 W, a kettle 1500 to 3000 W, and an electric car's motor 100 to 300 kW."
+     "text": "Some real powers: a hairdryer is about 2000 W, a kettle 2000 to 3000 W, and an electric car's motor 100 to 300 kW."
     },
     {
      "id": "3.2",
      "type": "say",
-     "text": "A large power station gives out about 1 to 2 gigawatts (GW). A gigawatt is 1 000 000 000 W, a thousand million watts."
+     "text": "A large power station gives out about 1 to 2 gigawatts (GW). A gigawatt is 1000 MW, or 1 000 000 000 W."
     },
     {
      "id": "3.3",
@@ -417,7 +437,7 @@
      "right": "Yes: 0.5 MW is 500 000 W, the car motor is 300 000 W and the kettle 3000 W.",
      "wrong": {
       "other": "Not quite: the wind turbine. 0.5 MW is 500 000 W, more than 300 000 W or 3000 W.",
-      "car": "Not quite: 300 kW is 300 000 W, but 0.5 MW is 500 000 W, so the turbine is faster.",
+      "car": "Not quite: 300 kW is 300 000 W, but 0.5 MW is 500 000 W, so the turbine transfers energy faster.",
       "kettle": "Not quite: 3000 is the biggest number, but the units differ. In watts: kettle 3000 W, car motor 300 000 W, turbine 500 000 W."
      },
      "idk": [
@@ -497,9 +517,9 @@
        "branch": "add"
       }
      ],
-     "right": "Yes: 200 J. W = F s = 50 × 4 = 200 J.",
+     "right": "Yes: 200 J. W = F × s = 50 × 4 = 200 J.",
      "wrong": {
-      "other": "Not quite: 200 J. W = F s = 50 × 4 = 200 J.",
+      "other": "Not quite: 200 J. W = F × s = 50 × 4 = 200 J.",
       "divide": "Not quite: 200 J. Multiply the force by the distance: 50 × 4 = 200 J.",
       "add": "Not quite: 200 J. Multiply, do not add: 50 × 4 = 200 J."
      },
@@ -508,12 +528,12 @@
        "hint": "Use W = F s: multiply the force, 50, by the distance, 4."
       }
      ],
-     "answerWhy": "W = F s = 50 × 4 = 200 J."
+     "answerWhy": "W = F × s = 50 × 4 = 200 J."
     },
     {
      "id": "4.6",
      "type": "say",
-     "text": "Work done moves energy between stores. Lifting a box raises it, so energy goes into its gravitational potential store."
+     "text": "You met this at the start: lifting a box gives it energy in its gravitational potential store. That energy comes from the work done by the lifting force."
     },
     {
      "id": "4.6b",
@@ -521,9 +541,41 @@
      "text": "Pushing a box along a rough floor against friction makes the box and the floor warmer, so energy goes into their thermal stores."
     },
     {
+     "id": "4.6c",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A box is pushed along a rough floor at a steady speed. Where does the work done go?",
+     "options": [
+      {
+       "text": "Into the thermal stores of the box and the floor",
+       "branch": "right"
+      },
+      {
+       "text": "Into the box's gravitational potential store",
+       "branch": "gpe"
+      },
+      {
+       "text": "Into the box's chemical store",
+       "branch": "chem"
+      }
+     ],
+     "right": "Yes: pushing against friction warms the box and the floor, so the work done goes into their thermal stores.",
+     "wrong": {
+      "other": "Not quite: into the thermal stores of the box and the floor, because friction warms them.",
+      "gpe": "Not quite: the box stays at the same height, so its gravitational potential store does not change. Friction warms the box and floor.",
+      "chem": "Not quite: nothing burns or reacts. Friction warms the box and the floor, so the energy goes into their thermal stores."
+     },
+     "idk": [
+      {
+       "hint": "The box is not raised or speeded up, but rubbing on the floor warms things. Which store is about warmth?"
+      }
+     ],
+     "answerWhy": "Pushing against friction warms the box and the floor, so the work done goes into their thermal stores."
+    },
+    {
      "id": "4.7",
      "type": "say",
-     "text": "Power is also the rate of doing work: P = W ÷ t. P is the power in watts (W), W is the work done in joules (J) and t is the time in seconds (s)."
+     "text": "Power is also the rate of doing work: P = W ÷ t. P is the power, in watts; W is the work done, in joules; t is the time, in seconds."
     },
     {
      "id": "4.8",
@@ -541,17 +593,17 @@
        "branch": "times"
       }
      ],
-     "right": "Yes: 2000 W. P = W ÷ t = 60 000 ÷ 30 = 2000 W.",
+     "right": "Yes: 2000 W. Power = work done ÷ time = 60 000 J ÷ 30 s = 2000 W.",
      "wrong": {
-      "other": "Not quite: 2000 W. P = W ÷ t = 60 000 ÷ 30 = 2000 W.",
-      "times": "Not quite: 2000 W. Divide the work by the time: 60 000 ÷ 30 = 2000 W."
+      "other": "Not quite: 2000 W. Power = work done ÷ time = 60 000 J ÷ 30 s = 2000 W.",
+      "times": "Not quite: 2000 W. Divide the work done by the time: 60 000 J ÷ 30 s = 2000 W."
      },
      "idk": [
       {
        "hint": "Use P = W ÷ t: divide 60 000 by 30."
       }
      ],
-     "answerWhy": "P = W ÷ t = 60 000 ÷ 30 = 2000 W."
+     "answerWhy": "Power = work done ÷ time = 60 000 J ÷ 30 s = 2000 W."
     },
     {
      "id": "4.9",
@@ -597,7 +649,7 @@
       "tolerance": 0.01
      },
      "wrongValues": [],
-     "right": "Yes: 3 × 1000 = 3000 W.",
+     "right": "Yes: 3 kW = 3 × 1000 W = 3000 W.",
      "wrong": {
       "other": "Not quite: 3000 W. 1 kW = 1000 W, so 3 kW = 3000 W."
      },
@@ -664,41 +716,41 @@
       "tolerance": 0.01
      },
      "wrongValues": [],
-     "right": "Yes: W = F s = 20 × 5 = 100 J.",
+     "right": "Yes: W = F × s = 20 × 5 = 100 J.",
      "wrong": {
-      "other": "Not quite: 100 J. W = F s = 20 × 5 = 100 J."
+      "other": "Not quite: 100 J. W = F × s = 20 × 5 = 100 J."
      },
      "idk": [],
-     "answerWhy": "W = F s = 20 × 5 = 100 J.",
+     "answerWhy": "W = F × s = 20 × 5 = 100 J.",
      "quiz": true
     },
     {
      "id": "4.16",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 6 of 6: a 3 kW kettle heats some water in 2 minutes. How long would a 1.5 kW kettle take to transfer the same energy?",
+     "question": "Quiz, question 6 of 6: a 2 kW heater warms a room in 30 minutes. How long would a 1 kW heater take to transfer the same energy?",
      "options": [
       {
-       "text": "4 minutes",
+       "text": "60 minutes",
        "branch": "right"
       },
       {
-       "text": "1 minute",
+       "text": "15 minutes",
        "branch": "w1"
       },
       {
-       "text": "2 minutes",
+       "text": "30 minutes",
        "branch": "w2"
       }
      ],
      "right": "Yes: half the power, so twice the time for the same energy.",
      "wrong": {
-      "other": "Not quite: 4 minutes. Half the power transfers the same energy in twice the time.",
-      "w1": "Not quite: 4 minutes. Less power means slower, so it takes longer, not shorter: half the power, twice the time.",
-      "w2": "Not quite: 4 minutes. The power does matter: half the power transfers the same energy in twice the time."
+      "other": "Not quite: 60 minutes. Half the power transfers the same energy in twice the time.",
+      "w1": "Not quite: 60 minutes. Less power means slower, so it takes longer, not shorter: half the power, twice the time.",
+      "w2": "Not quite: 60 minutes. The power does matter: half the power transfers the same energy in twice the time."
      },
      "idk": [],
-     "answerWhy": "Half the power transfers the same energy in twice the time: 4 minutes.",
+     "answerWhy": "Half the power transfers the same energy in twice the time: 60 minutes.",
      "quiz": true
     },
     {

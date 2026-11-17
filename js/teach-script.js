@@ -20,7 +20,7 @@
   else root.TeachScript = factory();
 })(typeof self !== 'undefined' ? self : this, function () {
   const SCRIPTED = true;
-  const SCRIPTED_LESSONS = ['p2-current-voltage', 'p2-components', 'p2-series-parallel', 'p2-domestic', 'p2-power-energy', 'p2-static'];
+  const SCRIPTED_LESSONS = ['p2-current-voltage', 'p2-components', 'p2-series-parallel', 'p2-domestic', 'p2-power-energy', 'p2-static', 'p1-energy-stores', 'p1-kinetic-potential', 'p1-conservation', 'p1-efficiency', 'p1-power', 'p1-heating', 'p1-national-grid'];
   const MAX_WORDS = 60;
   const FB = { feedback: true };   // a reply to her answer (the checks let a correction say the rule again)
 

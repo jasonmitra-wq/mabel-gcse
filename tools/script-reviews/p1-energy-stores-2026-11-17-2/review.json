@@ -1,0 +1,393 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 20324,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 14383,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 9294
+    },
+    "iterations": [
+      {
+        "input_tokens": 20324,
+        "output_tokens": 14383,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.737912,
+  "seconds": 132,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"M1\",\"turn\":\"1.1-1.5\",\"quote\":\"Welcome! This lesson is about energy: the ways it can be held in things, how it moves from one place to another\",\"what\":\"She taps Next through five told messages (welcome, what energy is, joules, stores, kinetic) before she is asked anything. That is a slow start for a first-time learner.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.3\",\"quote\":\"Energy is measured in joules, written J.\",\"what\":\"The joule is introduced here and then not used again until key point 5. It is extra load at the start, and she will have forgotten it by the Sankey diagram.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"1.13\",\"quote\":\"Everything is made of tiny particles called atoms. The centre of each atom is called its nucleus.\",\"what\":\"Two new terms, atom and nucleus, are introduced in one message.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"1.13b\",\"quote\":\"the energy held in the nuclei of atoms\",\"what\":\"She has only just met 'nucleus'. 'Nuclei' is used without saying it is the plural.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"1.13b\",\"quote\":\"A nuclear power station releases it from uranium, a nuclear fuel, by splitting its nuclei rather than by burning. The Sun releases it in its core.\",\"what\":\"The nuclear store, uranium, nuclear fuel, splitting nuclei and the Sun's core all arrive in one message. That is too many new things at once.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"1.14\",\"quote\":\"it becomes charged: it carries static electricity, and it can stick to a wall. The electrostatic store is the energy between charged objects\",\"what\":\"Three new terms (charged, static electricity, electrostatic store) come in one message, and 'charged' is never really explained.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.14\",\"quote\":\"the energy between charged objects, like the balloon and the wall\",\"what\":\"The wall has not been rubbed and is not a charged object in the sense just described. The example does not match the definition it illustrates.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"1.15c\",\"quote\":\"Two magnets are held a little apart, then let go, and they snap together. Which store did their energy come from?\",\"what\":\"Step 1.15 had just said the magnetic store is 'energy between magnets, like two magnets held a little apart'. The question reuses the same example, so the answer was given just before it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.13-1.15b\",\"quote\":\"All together, there are eight stores: kinetic, gravitational potential, elastic potential, thermal, chemical, nuclear, electrostatic and magnetic.\",\"what\":\"The key point asks her to name all eight stores with an example of each, but the nuclear, electrostatic and thermal stores are never tested. The last three stores are told in a run of five messages with one easy question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.18\",\"quote\":\"Where has the energy from its kinetic store gone?\",\"what\":\"This asks about energy moving from one store to another before the lesson has said it can; that idea first appears at 2.1. She can only guess from the buttons.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.18 wrong answer (Nowhere: it has run out)\",\"quote\":\"Not quite: energy does not vanish.\",\"what\":\"She is corrected with the conservation rule, which is not taught until key point 3. To her it is an unexplained assertion.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"1.18 don't know (first time)\",\"quote\":\"Which store is for raised things?\",\"what\":\"This is the same hint she got at 1.16 two steps earlier, and it comes again at 2.9. It repeats rather than helping her think about the ball slowing down.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.19\",\"quote\":\"In one line: which store fills up when something moves faster, when it is lifted higher, and when it is stretched?\",\"what\":\"Three questions are packed into 'one line'. It also covers only three of the eight stores, so the key point is closed without her recalling the other five.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.19 all of them\",\"quote\":\"Yes, your line has it: kinetic when it moves faster; and gravitational potential when it is lifted higher; and elastic potential when it is stretched.\",\"what\":\"The reply reads like a machine-joined list ('; and … ; and'). It is not a sentence a teacher would say.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"2.1b\",\"quote\":\"They come one at a time.\",\"what\":\"This is the same sentence as at 1.4. It is filler and tells her nothing.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"2.5\",\"quote\":\"waves such as light and infrared\",\"what\":\"'Infrared' is used with no explanation, and it is then relied on in the replies at 2.6 and 5.12. A first-time learner does not know what it is.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.5\",\"quote\":\"by radiation, which means waves such as light and infrared, like the warmth you feel from the Sun\",\"what\":\"She has just been told that heating is energy passing from a hotter object to a cooler one, and the Sun warming her fits that exactly. The script does not say how radiation differs from heating, so the two pathways blur.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"2.5\",\"quote\":\"Light warms whatever absorbs it.\",\"what\":\"'Absorbs' is not everyday wording for her. The sentence is tacked on without saying why it matters here.\",\"severity\":\"minor\"},{\"fault\":\"P16\",\"turn\":\"2.5b\",\"quote\":\"Sound also carries energy, as vibrations of the air, but it is not counted as radiation.\",\"what\":\"She is told there are four pathways and that sound is not radiation, but never which pathway sound belongs to. Sound is then used at 3.2 and 4.6. The lesson file simply lists sound alongside radiation, so this is the script's own science and it leaves a hole.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"L3\",\"turn\":\"2.7\",\"quote\":\"In the exam, describe a transfer in one sentence\",\"what\":\"She is meeting the topic for the first time and no exam has been mentioned. This reads like revision advice.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.9 wrong answer (chemical)\",\"quote\":\"Falling empties the store for raised things.\",\"what\":\"The reply says 'chemical energy' and 'the store for raised things' instead of the store names she is being trained to use.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.9b\",\"quote\":\"Energy is transferred mechanically, by rubbing, from the child's kinetic store to the thermal store of the slide\",\"what\":\"A child going down a slide is losing height and usually speeding up, so the energy that warms the slide comes from the gravitational potential store. Saying it comes from the kinetic store is imprecise physics, straight after the apple question taught her to think about height.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.9b right answer\",\"quote\":\"Yes: the pathway, the store it leaves and the store it goes into.\",\"what\":\"This is a fragment, not a sentence. It does not say what was right about her answer.\",\"severity\":\"minor\"},{\"fault\":\"F7\",\"turn\":\"2.9b don't know (first time)\",\"quote\":\"The slide gets warmer, so which store fills up? And rubbing is a force: which pathway uses a force?\",\"what\":\"After 'don't know' she gets two questions at once, and neither matches the three long sentence buttons she must still choose from. That is not an easier step.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.10\",\"quote\":\"In one line: what are the four pathways energy can be transferred by?\",\"what\":\"The key point says to practise the sentence 'energy is transferred [pathway] from the [store] store to the [store] store'. She only ever picks it from buttons and never writes one herself.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.10 all of them\",\"quote\":\"Yes, your line has it: mechanically (by a force); and electrically (by a current); and by heating; and by radiation.\",\"what\":\"The same stilted '; and … ; and' list wording as at 1.19.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.3b-3.3c\",\"quote\":\"A system that no energy can get into or out of is called a closed system.\",\"what\":\"'System' and 'closed system' are told and never asked about or used again. She will not keep them.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.4\",\"quote\":\"It went to other stores, mostly the thermal store of the surroundings\",\"what\":\"'Surroundings' is used for the first time inside an answer button and is never explained. The reply then calls it 'the room'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.4\",\"quote\":\"It has turned into electric charge\",\"what\":\"'Electric charge' has not been taught; she has only met 'charged' for a balloon. The correction ('charge is not energy') cannot mean much to her.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.4\",\"quote\":\"What has happened to the energy that was in its chemical store?\",\"what\":\"She has not been told that light and heating from a bulb end up warming the surroundings; that is taught in key point 4. She can only get this by ruling out the other buttons.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F7\",\"turn\":\"3.4 don't know (first time)\",\"quote\":\"The bulb gave out light and got warm. Where does that end up?\",\"what\":\"The hint asks the very thing she has not been taught, so it is no easier than the question. 'That' is vague, and the 'bulb' has not been mentioned before.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.5-3.6\",\"quote\":\"Which store of the water rises?\",\"what\":\"Stores have 'filled' and 'emptied' until now; here they 'rise' and 'fall', and in the quiz they 'increase' and 'decrease'. The picture language should be kept the same, or the change explained.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.6 wrong answer (kinetic)\",\"quote\":\"Not quite: the main change is that the water gets hotter, so its thermal store rises.\",\"what\":\"The reply does not say why kinetic is wrong. Boiling water visibly moves, so her answer is reasonable and deserves a proper response.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.8 all of them\",\"quote\":\"Yes, your line has it: energy cannot be created or destroyed; and it can only be transferred from store to store.\",\"what\":\"The same stilted '; and' wording as at 1.19.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.7\",\"quote\":\"Yes, by putting the drink in the fridge\",\"what\":\"This is a silly distractor that no one would choose for heating a drink. With only one 'No' button, the right answer stands out without thought.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.8 all of them\",\"quote\":\"Yes, your line has it: it spreads out into the surroundings; and so it is no longer useful.\",\"what\":\"The same stilted '; and' wording as at 1.19.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.3b\",\"quote\":\"In the lamp's Sankey diagram, which arrow is wider?\",\"what\":\"The question just before was about 'a different lamp' (60 J and 12 J), so 'the lamp' is ambiguous; the reply uses 85 J and 15 J from the first lamp. 'Both' is also not a sensible answer to 'which is wider'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F10\",\"turn\":\"5.4\",\"quote\":\"Efficiency = useful output energy ÷ total input energy.\",\"what\":\"'Output' and 'input' are new words here; until now it has been 'goes in' and 'useful'. The equation is given without saying what each quantity means or that both are in joules.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.13 wrong answers\",\"quote\":\"Not quite. Energy cannot be created or destroyed: that is the law of conservation of energy.\",\"what\":\"Both wrong buttons get the same reply. Neither is told what is wrong with 'a power station creates energy' or 'energy is used up when a battery goes flat'.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.16\",\"quote\":\"The ball's kinetic store decreases; the thermal stores of the floor and air increase\",\"what\":\"At 2.7 she was told an exam answer must name the pathway, the store the energy leaves and the store it enters. This 'answer that scores' names no pathway, so the two instructions contradict each other.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"5.16 wrong answers\",\"quote\":\"Not quite. Name each store and say how it changes: the ball's kinetic store decreases, and the thermal stores of the floor and air increase.\",\"what\":\"The 'used up' misconception gets the same reply as 'Kinetic and thermal'. She is not told that energy is never used up.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole lesson\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on anywhere: no widget, nothing to sort, drag or try. The lesson is tell, tap Next, pick a button.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P5\",\"turn\":\"key points 1-3\",\"quote\":\"The picture shows a torch.\",\"what\":\"The first picture does not appear until 4.5. Eight stores and four pathways are taught in words alone, with no picture built up as each store or pathway is added.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"F1\",\"instances\":2},{\"fault\":\"F3\",\"instances\":4},{\"fault\":\"F5\",\"instances\":3},{\"fault\":\"F7\",\"instances\":2},{\"fault\":\"F8\",\"instances\":1},{\"fault\":\"F10\",\"instances\":1},{\"fault\":\"L3\",\"instances\":1},{\"fault\":\"P5\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"new\",\"instances\":25}],\"overall\":\"Not as it stands, though it is close. Most of the physics is sound and the questions use good misconception distractors, but I would fix three things before she uses it: sound is left without a pathway and radiation is not separated from heating (2.5, 2.5b); the slide question credits the kinetic store when the energy comes from height (2.9b); and several questions (1.18, 3.4) need ideas the lesson has not yet taught. The nuclear and electrostatic messages pile up new terms, three of the eight stores are never checked, and the final quiz question contradicts the exam sentence taught at 2.7. With no hands-on activity and no pictures until key point 4, I would also expect her to lose interest in the long runs of Next.\"}",
+  "findings": [
+    {
+      "fault": "M1",
+      "turn": "1.1-1.5",
+      "quote": "Welcome! This lesson is about energy: the ways it can be held in things, how it moves from one place to another",
+      "what": "She taps Next through five told messages (welcome, what energy is, joules, stores, kinetic) before she is asked anything. That is a slow start for a first-time learner.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.3",
+      "quote": "Energy is measured in joules, written J.",
+      "what": "The joule is introduced here and then not used again until key point 5. It is extra load at the start, and she will have forgotten it by the Sankey diagram.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.13",
+      "quote": "Everything is made of tiny particles called atoms. The centre of each atom is called its nucleus.",
+      "what": "Two new terms, atom and nucleus, are introduced in one message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.13b",
+      "quote": "the energy held in the nuclei of atoms",
+      "what": "She has only just met 'nucleus'. 'Nuclei' is used without saying it is the plural.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.13b",
+      "quote": "A nuclear power station releases it from uranium, a nuclear fuel, by splitting its nuclei rather than by burning. The Sun releases it in its core.",
+      "what": "The nuclear store, uranium, nuclear fuel, splitting nuclei and the Sun's core all arrive in one message. That is too many new things at once.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.14",
+      "quote": "it becomes charged: it carries static electricity, and it can stick to a wall. The electrostatic store is the energy between charged objects",
+      "what": "Three new terms (charged, static electricity, electrostatic store) come in one message, and 'charged' is never really explained.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.14",
+      "quote": "the energy between charged objects, like the balloon and the wall",
+      "what": "The wall has not been rubbed and is not a charged object in the sense just described. The example does not match the definition it illustrates.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.15c",
+      "quote": "Two magnets are held a little apart, then let go, and they snap together. Which store did their energy come from?",
+      "what": "Step 1.15 had just said the magnetic store is 'energy between magnets, like two magnets held a little apart'. The question reuses the same example, so the answer was given just before it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.13-1.15b",
+      "quote": "All together, there are eight stores: kinetic, gravitational potential, elastic potential, thermal, chemical, nuclear, electrostatic and magnetic.",
+      "what": "The key point asks her to name all eight stores with an example of each, but the nuclear, electrostatic and thermal stores are never tested. The last three stores are told in a run of five messages with one easy question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.18",
+      "quote": "Where has the energy from its kinetic store gone?",
+      "what": "This asks about energy moving from one store to another before the lesson has said it can; that idea first appears at 2.1. She can only guess from the buttons.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.18 wrong answer (Nowhere: it has run out)",
+      "quote": "Not quite: energy does not vanish.",
+      "what": "She is corrected with the conservation rule, which is not taught until key point 3. To her it is an unexplained assertion.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.18 don't know (first time)",
+      "quote": "Which store is for raised things?",
+      "what": "This is the same hint she got at 1.16 two steps earlier, and it comes again at 2.9. It repeats rather than helping her think about the ball slowing down.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.19",
+      "quote": "In one line: which store fills up when something moves faster, when it is lifted higher, and when it is stretched?",
+      "what": "Three questions are packed into 'one line'. It also covers only three of the eight stores, so the key point is closed without her recalling the other five.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.19 all of them",
+      "quote": "Yes, your line has it: kinetic when it moves faster; and gravitational potential when it is lifted higher; and elastic potential when it is stretched.",
+      "what": "The reply reads like a machine-joined list ('; and … ; and'). It is not a sentence a teacher would say.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.1b",
+      "quote": "They come one at a time.",
+      "what": "This is the same sentence as at 1.4. It is filler and tells her nothing.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.5",
+      "quote": "waves such as light and infrared",
+      "what": "'Infrared' is used with no explanation, and it is then relied on in the replies at 2.6 and 5.12. A first-time learner does not know what it is.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.5",
+      "quote": "by radiation, which means waves such as light and infrared, like the warmth you feel from the Sun",
+      "what": "She has just been told that heating is energy passing from a hotter object to a cooler one, and the Sun warming her fits that exactly. The script does not say how radiation differs from heating, so the two pathways blur.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "2.5",
+      "quote": "Light warms whatever absorbs it.",
+      "what": "'Absorbs' is not everyday wording for her. The sentence is tacked on without saying why it matters here.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P16",
+      "turn": "2.5b",
+      "quote": "Sound also carries energy, as vibrations of the air, but it is not counted as radiation.",
+      "what": "She is told there are four pathways and that sound is not radiation, but never which pathway sound belongs to. Sound is then used at 3.2 and 4.6. The lesson file simply lists sound alongside radiation, so this is the script's own science and it leaves a hole.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "L3",
+      "turn": "2.7",
+      "quote": "In the exam, describe a transfer in one sentence",
+      "what": "She is meeting the topic for the first time and no exam has been mentioned. This reads like revision advice.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.9 wrong answer (chemical)",
+      "quote": "Falling empties the store for raised things.",
+      "what": "The reply says 'chemical energy' and 'the store for raised things' instead of the store names she is being trained to use.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.9b",
+      "quote": "Energy is transferred mechanically, by rubbing, from the child's kinetic store to the thermal store of the slide",
+      "what": "A child going down a slide is losing height and usually speeding up, so the energy that warms the slide comes from the gravitational potential store. Saying it comes from the kinetic store is imprecise physics, straight after the apple question taught her to think about height.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.9b right answer",
+      "quote": "Yes: the pathway, the store it leaves and the store it goes into.",
+      "what": "This is a fragment, not a sentence. It does not say what was right about her answer.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F7",
+      "turn": "2.9b don't know (first time)",
+      "quote": "The slide gets warmer, so which store fills up? And rubbing is a force: which pathway uses a force?",
+      "what": "After 'don't know' she gets two questions at once, and neither matches the three long sentence buttons she must still choose from. That is not an easier step.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.10",
+      "quote": "In one line: what are the four pathways energy can be transferred by?",
+      "what": "The key point says to practise the sentence 'energy is transferred [pathway] from the [store] store to the [store] store'. She only ever picks it from buttons and never writes one herself.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.10 all of them",
+      "quote": "Yes, your line has it: mechanically (by a force); and electrically (by a current); and by heating; and by radiation.",
+      "what": "The same stilted '; and … ; and' list wording as at 1.19.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3b-3.3c",
+      "quote": "A system that no energy can get into or out of is called a closed system.",
+      "what": "'System' and 'closed system' are told and never asked about or used again. She will not keep them.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.4",
+      "quote": "It went to other stores, mostly the thermal store of the surroundings",
+      "what": "'Surroundings' is used for the first time inside an answer button and is never explained. The reply then calls it 'the room'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.4",
+      "quote": "It has turned into electric charge",
+      "what": "'Electric charge' has not been taught; she has only met 'charged' for a balloon. The correction ('charge is not energy') cannot mean much to her.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.4",
+      "quote": "What has happened to the energy that was in its chemical store?",
+      "what": "She has not been told that light and heating from a bulb end up warming the surroundings; that is taught in key point 4. She can only get this by ruling out the other buttons.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F7",
+      "turn": "3.4 don't know (first time)",
+      "quote": "The bulb gave out light and got warm. Where does that end up?",
+      "what": "The hint asks the very thing she has not been taught, so it is no easier than the question. 'That' is vague, and the 'bulb' has not been mentioned before.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5-3.6",
+      "quote": "Which store of the water rises?",
+      "what": "Stores have 'filled' and 'emptied' until now; here they 'rise' and 'fall', and in the quiz they 'increase' and 'decrease'. The picture language should be kept the same, or the change explained.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6 wrong answer (kinetic)",
+      "quote": "Not quite: the main change is that the water gets hotter, so its thermal store rises.",
+      "what": "The reply does not say why kinetic is wrong. Boiling water visibly moves, so her answer is reasonable and deserves a proper response.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.8 all of them",
+      "quote": "Yes, your line has it: energy cannot be created or destroyed; and it can only be transferred from store to store.",
+      "what": "The same stilted '; and' wording as at 1.19.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.7",
+      "quote": "Yes, by putting the drink in the fridge",
+      "what": "This is a silly distractor that no one would choose for heating a drink. With only one 'No' button, the right answer stands out without thought.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.8 all of them",
+      "quote": "Yes, your line has it: it spreads out into the surroundings; and so it is no longer useful.",
+      "what": "The same stilted '; and' wording as at 1.19.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.3b",
+      "quote": "In the lamp's Sankey diagram, which arrow is wider?",
+      "what": "The question just before was about 'a different lamp' (60 J and 12 J), so 'the lamp' is ambiguous; the reply uses 85 J and 15 J from the first lamp. 'Both' is also not a sensible answer to 'which is wider'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F10",
+      "turn": "5.4",
+      "quote": "Efficiency = useful output energy ÷ total input energy.",
+      "what": "'Output' and 'input' are new words here; until now it has been 'goes in' and 'useful'. The equation is given without saying what each quantity means or that both are in joules.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.13 wrong answers",
+      "quote": "Not quite. Energy cannot be created or destroyed: that is the law of conservation of energy.",
+      "what": "Both wrong buttons get the same reply. Neither is told what is wrong with 'a power station creates energy' or 'energy is used up when a battery goes flat'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.16",
+      "quote": "The ball's kinetic store decreases; the thermal stores of the floor and air increase",
+      "what": "At 2.7 she was told an exam answer must name the pathway, the store the energy leaves and the store it enters. This 'answer that scores' names no pathway, so the two instructions contradict each other.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "5.16 wrong answers",
+      "quote": "Not quite. Name each store and say how it changes: the ball's kinetic store decreases, and the thermal stores of the floor and air increase.",
+      "what": "The 'used up' misconception gets the same reply as 'Kinetic and thermal'. She is not told that energy is never used up.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on anywhere: no widget, nothing to sort, drag or try. The lesson is tell, tap Next, pick a button.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P5",
+      "turn": "key points 1-3",
+      "quote": "The picture shows a torch.",
+      "what": "The first picture does not appear until 4.5. Eight stores and four pathways are taught in words alone, with no picture built up as each store or pathway is added.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 25
+    },
+    {
+      "fault": "F3",
+      "instances": 4
+    },
+    {
+      "fault": "F5",
+      "instances": 3
+    },
+    {
+      "fault": "F1",
+      "instances": 2
+    },
+    {
+      "fault": "F7",
+      "instances": 2
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    },
+    {
+      "fault": "F8",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "F10",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    },
+    {
+      "fault": "P5",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it stands, though it is close. Most of the physics is sound and the questions use good misconception distractors, but I would fix three things before she uses it: sound is left without a pathway and radiation is not separated from heating (2.5, 2.5b); the slide question credits the kinetic store when the energy comes from height (2.9b); and several questions (1.18, 3.4) need ideas the lesson has not yet taught. The nuclear and electrostatic messages pile up new terms, three of the eight stores are never checked, and the final quiz question contradicts the exam sentence taught at 2.7. With no hands-on activity and no pictures until key point 4, I would also expect her to lose interest in the long runs of Next."
+}

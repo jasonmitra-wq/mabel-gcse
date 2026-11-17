@@ -63,7 +63,7 @@
        "branch": "back"
       }
      ],
-     "right": "Yes: it is wasted, spread out, or dissipated, into the thermal store of the surroundings.",
+     "right": "Yes: it is wasted, spread out into the surroundings, warming them a tiny bit.",
      "wrong": {
       "other": "Not quite: it spreads into the surroundings and is wasted.",
       "destroyed": "Not quite: energy is never destroyed. It spreads into the surroundings, warming them a tiny bit, and is wasted.",
@@ -80,6 +80,11 @@
      "id": "1.2",
      "type": "say",
      "text": "Now this lesson. Electricity is made in power stations, often far from where people live. A network of cables carries it across the country to homes, schools and businesses."
+    },
+    {
+     "id": "1.2b",
+     "type": "say",
+     "text": "An electric current is a flow of charge round a circuit. It is measured in amperes (A)."
     },
     {
      "id": "1.3",
@@ -99,17 +104,27 @@
     {
      "id": "1.5",
      "type": "say",
-     "text": "Power stations make electricity at about 25 000 V. Transformers raise that to as much as 400 000 V for the long cables. Near towns, more transformers lower it to 230 V for homes."
+     "text": "Power stations make electricity at about 25 000 V. Transformers raise that to as much as 400 000 V for the long cables."
+    },
+    {
+     "id": "1.5b",
+     "type": "say",
+     "text": "Near towns, more transformers lower the potential difference to 230 V for homes."
     },
     {
      "id": "1.6",
      "type": "say",
-     "text": "The cables use such a high potential difference for a reason. Power = current × potential difference: P = I V, with P the power in watts (W), I the current in amperes (A) and V the potential difference in volts (V)."
+     "text": "Why such a high potential difference? It starts with power = current × potential difference, P = I V, with P the power in watts (W), I the current in amperes (A) and V the potential difference in volts (V)."
     },
     {
      "id": "1.6b",
      "type": "say",
-     "text": "A power station sends out a fixed power. For example, 1 000 000 W at 25 000 V needs a current of 40 A, but at 400 000 V it needs only 2.5 A. For the same power, a bigger V means a smaller I."
+     "text": "Compare sending the same power, 1 000 000 W, in two ways. At 25 000 V the current is I = P ÷ V = 1 000 000 ÷ 25 000 = 40 A. At 400 000 V it is 1 000 000 ÷ 400 000 = 2.5 A."
+    },
+    {
+     "id": "1.6d",
+     "type": "say",
+     "text": "A bigger push usually means more current. Here the power being sent is fixed, so a bigger potential difference needs a smaller current to carry it."
     },
     {
      "id": "1.6c",
@@ -142,12 +157,17 @@
     {
      "id": "1.7",
      "type": "say",
-     "text": "A current heats the cables it flows through, and that energy is wasted. A smaller current wastes much less energy heating the cables, so less energy is wasted overall."
+     "text": "A current heats the cables it flows through, and that energy is wasted. The smaller the current, the less the cables are heated."
     },
     {
      "id": "1.7b",
      "type": "say",
-     "text": "For Higher: the energy wasted each second in a cable is I² R. R is the resistance of the cable, how hard it is for the current to flow, in ohms (Ω). Halve the current and the waste falls to a quarter."
+     "text": "Resistance is how hard it is for a current to flow through something, measured in ohms (Ω)."
+    },
+    {
+     "id": "1.7c",
+     "type": "say",
+     "text": "The power wasted heating a cable is P = I² R, in watts (W), where I is the current in amperes (A) and R is the resistance of the cable in ohms (Ω). Because the current is squared, a smaller current makes a big difference."
     },
     {
      "id": "1.9",
@@ -176,7 +196,7 @@
      },
      "idk": [
       {
-       "hint": "The waste is I² R. If I is halved, what happens to I²?"
+       "hint": "With 4 A, I² = 4 × 4 = 16. With 2 A, I² = 2 × 2 = 4. What fraction of 16 is 4?"
       }
      ],
      "answerWhy": "The waste is I² R, so halving the current makes the waste a quarter."
@@ -205,13 +225,18 @@
     {
      "id": "2.2",
      "type": "say",
-     "text": "Near homes, the potential difference must be lowered to a safer 230 V. A transformer that lowers it is called a step-down transformer."
+     "text": "A transformer that lowers the potential difference, like those near homes, is called a step-down transformer."
     },
     {
      "id": "2.3",
      "type": "say",
      "picture": "p1-national-grid",
-     "text": "The picture shows the chain from power station to homes, with each transformer in its place. The long cables are called transmission cables. kV means kilovolts: 1 kV = 1000 V, so 400 kV is 400 000 V."
+     "text": "The picture shows the chain from power station to homes, with each transformer in its place. The long cables are called transmission cables."
+    },
+    {
+     "id": "2.3b",
+     "type": "say",
+     "text": "On the picture, kV means kilovolts: 1 kV = 1000 V, so 400 kV is 400 000 V."
     },
     {
      "id": "2.4",
@@ -274,7 +299,12 @@
     {
      "id": "3.2b",
      "type": "say",
-     "text": "Coal, oil and natural gas are non-renewable. They are called fossil fuels, because they formed from living things over millions of years. Nuclear fuel, mined from rocks, is non-renewable too."
+     "text": "Coal, oil and natural gas are non-renewable. They are called fossil fuels, because they formed from living things over millions of years."
+    },
+    {
+     "id": "3.2c",
+     "type": "say",
+     "text": "Nuclear fuel, such as uranium mined from rocks, is non-renewable too: there is only a fixed amount of it."
     },
     {
      "id": "3.3",
@@ -284,7 +314,12 @@
     {
      "id": "3.3b",
      "type": "say",
-     "text": "Also renewable: hydro-electricity, from water stored behind a dam in a river valley; geothermal energy, from hot rocks underground; and bio-fuel, made from plants that can be grown again."
+     "text": "Also renewable: hydro-electricity, made from water stored behind a dam in a river valley."
+    },
+    {
+     "id": "3.3e",
+     "type": "say",
+     "text": "And geothermal energy, from hot rocks underground, and bio-fuel, made from plants that can be grown again."
     },
     {
      "id": "3.3c",
@@ -319,11 +354,11 @@
      "wrong": {
       "other": "Not quite: one that is replenished as it is used. That is the word the mark scheme wants.",
       "again": "Not quite: a resource is not used twice. A renewable one is replenished, topped up, as it is used, like crops for bio-fuel regrowing.",
-      "never": "Close, but not quite: the key idea is that it is replenished, topped up as it is used. Bio-fuel is only renewable if the plants are regrown."
+      "never": "Close, but not quite: what makes a resource renewable is that it is replenished, topped up as it is used. Bio-fuel only counts if the plants are grown again; without that, it would run out."
      },
      "idk": [
       {
-       "hint": "The exam wants one particular word that means \"topped up\". Which button uses it?"
+       "hint": "Renewable resources get topped up as they are used. Which button says that?"
       }
      ],
      "answerWhy": "A renewable resource is replenished, topped up, as it is used."
@@ -373,7 +408,12 @@
     {
      "id": "3.7",
      "type": "say",
-     "text": "A reliable resource can supply energy whenever it is needed. Nuclear power stations are very reliable and give out no carbon dioxide while running. But they make radioactive waste, which stays dangerous for thousands of years, and they are slow to start up."
+     "text": "A reliable resource can supply energy whenever it is needed."
+    },
+    {
+     "id": "3.7b",
+     "type": "say",
+     "text": "Nuclear power stations are reliable: they run day and night whatever the weather, and give out no carbon dioxide. But they are slow to start up or turn up, and they make radioactive waste, which stays dangerous for thousands of years."
     },
     {
      "id": "3.8",
@@ -383,7 +423,12 @@
     {
      "id": "3.9",
      "type": "say",
-     "text": "Some renewables are reliable. Hydro-electricity lets water through the dam when it is needed. The tides come in and out on a regular cycle. Geothermal works all the time, though only in a few places."
+     "text": "Hydro-electricity is reliable: water is let through the dam whenever it is needed. Tides are predictable: they come in and out on a regular cycle. Geothermal works all the time, though only in a few places."
+    },
+    {
+     "id": "3.9b",
+     "type": "say",
+     "text": "Power stations that burn gas or coal can also be turned up quickly when more electricity is needed."
     },
     {
      "id": "3.10",
@@ -457,7 +502,12 @@
     {
      "id": "3.12a",
      "type": "say",
-     "text": "The reasons: worry about carbon dioxide and global warming, government targets to cut the carbon dioxide given out, renewables getting cheaper, and fossil fuels running out."
+     "text": "Two reasons are worry about carbon dioxide and global warming, and government targets to cut the carbon dioxide given out."
+    },
+    {
+     "id": "3.12c",
+     "type": "say",
+     "text": "Two more: renewables have got cheaper, and fossil fuels will run out."
     },
     {
      "id": "3.12b",
@@ -494,15 +544,15 @@
        "hint": "To cut carbon dioxide, something has to be stopped, not just added. Which button stops something?"
       }
      ],
-     "answerWhy": "Say what to stop and what to do instead: electric cars instead of petrol cars, charged from renewables."
+     "answerWhy": "Replacing petrol cars with electric cars charged from renewables cuts the carbon dioxide from transport."
     },
     {
      "id": "3.14",
      "type": "own",
      "prompt": "In one line: give one advantage and one disadvantage of wind power.",
      "points": [
-      "it gives out no carbon dioxide",
-      "it is intermittent: not always available"
+      "an advantage: no carbon dioxide, or renewable",
+      "a disadvantage: intermittent, not always available"
      ],
      "idk": "No problem. A good line would be: wind power gives out no carbon dioxide, but it is intermittent: it stops when the wind drops."
     },

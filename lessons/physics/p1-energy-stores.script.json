@@ -151,22 +151,37 @@
     {
      "id": "1.13",
      "type": "say",
-     "text": "The last three. Everything is made of tiny particles called atoms. The centre of each atom is called its nucleus."
+     "text": "The last three. Everything is made of tiny particles called atoms."
+    },
+    {
+     "id": "1.13a",
+     "type": "say",
+     "text": "The centre of each atom is called its nucleus. More than one nucleus are called nuclei."
     },
     {
      "id": "1.13b",
      "type": "say",
-     "text": "The nuclear store is the energy held in the nuclei of atoms. A nuclear power station releases it from uranium, a nuclear fuel, by splitting its nuclei rather than by burning. The Sun releases it in its core."
+     "text": "The nuclear store is the energy held in the nuclei of atoms."
+    },
+    {
+     "id": "1.13c",
+     "type": "say",
+     "text": "Nuclear power stations release it from uranium fuel by splitting nuclei apart. The Sun releases it in its core."
     },
     {
      "id": "1.14",
      "type": "say",
-     "text": "Rub a balloon on your hair and it becomes charged: it carries static electricity, and it can stick to a wall. The electrostatic store is the energy between charged objects, like the balloon and the wall, or a thundercloud and the ground."
+     "text": "Rub a balloon on your hair and it becomes charged, which means it carries static electricity. A charged balloon can stick to a wall."
+    },
+    {
+     "id": "1.14b",
+     "type": "say",
+     "text": "The electrostatic store is the energy between charged objects, like a charged balloon and your hair, or a thundercloud and the ground."
     },
     {
      "id": "1.15",
      "type": "say",
-     "text": "And the magnetic store: energy between magnets, like two magnets held a little apart."
+     "text": "And the magnetic store: energy between magnets, or between a magnet and a piece of iron."
     },
     {
      "id": "1.15b",
@@ -238,6 +253,11 @@
      "answerWhy": "Anything raised up has energy in its gravitational potential store."
     },
     {
+     "id": "1.17a",
+     "type": "say",
+     "text": "Energy can move from one store to another. Watch what happens to a ball thrown straight up: it slows down as it rises."
+    },
+    {
      "id": "1.18",
      "type": "ask",
      "kind": "tap",
@@ -259,12 +279,12 @@
      "right": "Yes. As the ball rose, its kinetic store emptied into its gravitational potential store. That is why it can fall back and speed up again.",
      "wrong": {
       "other": "Not quite: into its gravitational potential store, because the ball is now higher up.",
-      "gone": "Not quite: energy does not vanish. As the ball rose and slowed, the energy moved from its kinetic store into its gravitational potential store. That is why it can fall and speed up again.",
+      "gone": "Not quite: energy does not vanish; it moves to another store. As the ball rose and slowed, the energy moved from its kinetic store into its gravitational potential store.",
       "elastic": "Not quite: nothing is stretched. The ball is higher up, so the energy went into its gravitational potential store."
      },
      "idk": [
       {
-       "hint": "At the top, the ball is not moving but it is high up. Which store is for raised things?"
+       "hint": "As the ball rises, it slows down but gets higher. Which store grows as something gets higher?"
       }
      ],
      "answerWhy": "The ball is higher up, so its kinetic store emptied into its gravitational potential store."
@@ -294,7 +314,7 @@
     {
      "id": "2.1b",
      "type": "say",
-     "text": "There are four ways to transfer energy, called pathways. They come one at a time."
+     "text": "There are four ways to transfer energy, called pathways."
     },
     {
      "id": "2.2",
@@ -346,12 +366,7 @@
     {
      "id": "2.5",
      "type": "say",
-     "text": "The fourth: by radiation, which means waves such as light and infrared, like the warmth you feel from the Sun. Light warms whatever absorbs it."
-    },
-    {
-     "id": "2.5b",
-     "type": "say",
-     "text": "Sound also carries energy, as vibrations of the air, but it is not counted as radiation."
+     "text": "The fourth: by radiation, which means waves such as light and infrared. Infrared is the invisible warmth you feel from a fire or the Sun. Things that take in light or infrared get warmer."
     },
     {
      "id": "2.6",
@@ -388,7 +403,7 @@
     {
      "id": "2.7",
      "type": "say",
-     "text": "In the exam, describe a transfer in one sentence: name the pathway, the store the energy leaves and the store it goes into."
+     "text": "To describe a transfer in one sentence, name the pathway, the store the energy leaves and the store it goes into."
     },
     {
      "id": "2.8",
@@ -417,7 +432,7 @@
      "right": "Yes: gravitational potential. The apple starts high up and ends up lower and moving.",
      "wrong": {
       "other": "Not quite: gravitational potential. The apple starts high up, and falling empties that store into its kinetic store.",
-      "chemical": "Not quite: gravitational potential. The apple does hold chemical energy as food, but falling does not use it. Falling empties the store for raised things.",
+      "chemical": "Not quite: gravitational potential. The apple does have a chemical store, as food, but falling does not use it. Falling empties the gravitational potential store.",
       "thermal": "Not quite: gravitational potential. The apple is not getting cooler as it falls; it is getting lower."
      },
      "idk": [
@@ -434,7 +449,7 @@
      "question": "A child slides down a slide, and the slide gets warm. Which sentence describes the warming best?",
      "options": [
       {
-       "text": "Energy is transferred mechanically, by rubbing, from the child's kinetic store to the thermal store of the slide",
+       "text": "Energy is transferred mechanically, by rubbing, from the child's gravitational potential store to the thermal store of the slide",
        "branch": "right"
       },
       {
@@ -446,18 +461,18 @@
        "branch": "elec"
       }
      ],
-     "right": "Yes: the pathway, the store it leaves and the store it goes into. Rubbing is a force, so the pathway is mechanical.",
+     "right": "Yes: it names the pathway, the store the energy leaves and the store it goes into. The child loses height, and rubbing transfers some of that energy to the slide.",
      "wrong": {
-      "other": "Not quite. The rubbing force transfers energy mechanically from the child's kinetic store to the thermal store of the slide.",
-      "reverse": "Not quite: the other way round. The slide warms up, so energy goes into its thermal store, from the moving child's kinetic store, by the rubbing force.",
-      "elec": "Not quite: there is no current in a slide. The rubbing force transfers energy mechanically from the child's kinetic store to the thermal store of the slide."
+      "other": "Not quite. The rubbing force transfers energy mechanically from the child's gravitational potential store to the thermal store of the slide.",
+      "reverse": "Not quite: the other way round. The slide warms up, so energy goes into its thermal store, from the child's gravitational potential store, by the rubbing force.",
+      "elec": "Not quite: there is no current in a slide. The rubbing force transfers energy mechanically from the child's gravitational potential store to the thermal store of the slide."
      },
      "idk": [
       {
-       "hint": "The slide gets warmer, so which store fills up? And rubbing is a force: which pathway uses a force?"
+       "hint": "The child loses height, and the slide warms up. Which sentence has energy leaving the store for height and going into the slide's thermal store?"
       }
      ],
-     "answerWhy": "The rubbing force transfers energy mechanically from the child's kinetic store to the thermal store of the slide."
+     "answerWhy": "The rubbing force transfers energy mechanically from the child's gravitational potential store to the thermal store of the slide."
     },
     {
      "id": "2.10",
@@ -509,7 +524,7 @@
      "question": "A torch battery goes flat. What has happened to the energy that was in its chemical store?",
      "options": [
       {
-       "text": "It went to other stores, mostly the thermal store of the surroundings",
+       "text": "It went to other stores, mostly the thermal store of the room around it",
        "branch": "right"
       },
       {
@@ -517,7 +532,7 @@
        "branch": "usedup"
       },
       {
-       "text": "It has turned into electric charge",
+       "text": "It is still inside the battery",
        "branch": "charge"
       }
      ],
@@ -525,11 +540,11 @@
      "wrong": {
       "other": "Not quite. The energy went to other stores, mostly the thermal store of the surroundings.",
       "usedup": "Not quite: energy is never destroyed. The battery's chemical store has emptied, and the energy went by light and heating into the thermal store of the room. The battery runs down; the energy does not.",
-      "charge": "Not quite: charge is not energy, and energy does not turn into charge. The current carried energy to the bulb, which sent it out by light and heating. In the end it warms the room."
+      "charge": "Not quite: the battery is flat, so its chemical store has emptied. The current carried the energy to the bulb, which sent it out by light and heating, and in the end it warms the room."
      },
      "idk": [
       {
-       "hint": "Energy cannot be destroyed, so it must be somewhere. The bulb gave out light and got warm. Where does that end up?"
+       "hint": "Energy cannot be destroyed, so it has gone somewhere. The torch gave out light and got warm. Which button says where?"
       }
      ],
      "answerWhy": "Energy cannot be destroyed: it went by light and heating into the thermal store of the surroundings."
@@ -561,7 +576,7 @@
      "right": "Yes: the water gets hotter, so its thermal store rises.",
      "wrong": {
       "other": "Not quite: the water gets hotter, so its thermal store rises.",
-      "kinetic": "Not quite: the main change is that the water gets hotter, so its thermal store rises.",
+      "kinetic": "Not quite: the water does swirl as it boils, but that is small. The big change is that it gets much hotter, so its thermal store rises.",
       "chemical": "Not quite: boiling water is not a fuel or a food. It gets hotter, so its thermal store rises."
      },
      "idk": [
@@ -692,7 +707,7 @@
        "branch": "room"
       },
       {
-       "text": "Yes, by putting the drink in the fridge",
+       "text": "Yes, if you wait long enough",
        "branch": "fridge"
       }
      ],
@@ -700,7 +715,7 @@
      "wrong": {
       "other": "Not quite: no. The energy is spread so thinly through the room that it cannot warm the drink again.",
       "room": "Not quite: the energy is still in the room, but spread so thinly that the room is only a tiny bit warmer. A slightly warm room cannot heat a drink back up.",
-      "fridge": "Not quite: a fridge takes energy away from a drink, so it would only cool it more. The energy that left is spread too thinly through the room to use."
+      "fridge": "Not quite: waiting will not help. The drink ends up at room temperature, and the energy that left it stays spread thinly through the room."
      },
      "idk": [
       {
@@ -773,7 +788,7 @@
      "id": "5.3b",
      "type": "ask",
      "kind": "tap",
-     "question": "In the lamp's Sankey diagram, which arrow is wider?",
+     "question": "In the first lamp's Sankey diagram, with 100 J going in, which arrow is wider?",
      "options": [
       {
        "text": "The wasted arrow, because more energy is wasted",
@@ -784,7 +799,7 @@
        "branch": "useful"
       },
       {
-       "text": "Both, because they come from the same input",
+       "text": "They are the same width",
        "branch": "same"
       }
      ],
@@ -804,7 +819,7 @@
     {
      "id": "5.4",
      "type": "say",
-     "text": "Efficiency is the fraction of the energy put in that does a useful job. Efficiency = useful output energy ÷ total input energy."
+     "text": "Efficiency is the fraction of the energy put in that does a useful job. Efficiency = useful output energy ÷ total input energy: the useful energy out divided by all the energy put in, both in joules."
     },
     {
      "id": "5.5",
@@ -985,7 +1000,9 @@
      ],
      "right": "Yes: that is the law of conservation of energy.",
      "wrong": {
-      "other": "Not quite. Energy cannot be created or destroyed: that is the law of conservation of energy."
+      "other": "Not quite. Energy cannot be created or destroyed: that is the law of conservation of energy.",
+      "w1": "Not quite: a power station does not create energy; it transfers it from a fuel or another store. Energy cannot be created or destroyed.",
+      "w2": "Not quite: the battery runs down, but its energy is not used up. It moves to other stores, mostly the thermal store of the surroundings."
      },
      "idk": [],
      "answerWhy": "Energy cannot be created or destroyed: the law of conservation of energy.",
@@ -1050,7 +1067,7 @@
      "question": "Quiz, question 6 of 6: a ball rolls along the floor and stops. An exam asks you to describe the energy changes. Which answer scores?",
      "options": [
       {
-       "text": "The ball's kinetic store decreases; the thermal stores of the floor and air increase",
+       "text": "Energy is transferred mechanically, by friction, from the ball's kinetic store to the thermal stores of the floor and air",
        "branch": "right"
       },
       {
@@ -1062,12 +1079,13 @@
        "branch": "w2"
       }
      ],
-     "right": "Yes: name each store and say how it changes.",
+     "right": "Yes: the pathway, the store the energy leaves and the store it goes into.",
      "wrong": {
-      "other": "Not quite. Name each store and say how it changes: the ball's kinetic store decreases, and the thermal stores of the floor and air increase."
+      "other": "Not quite. Name the pathway and both stores: energy is transferred mechanically, by friction, from the ball's kinetic store to the thermal stores of the floor and air.",
+      "w2": "Not quite: energy is never used up. Energy is transferred mechanically, by friction, from the ball's kinetic store to the thermal stores of the floor and air."
      },
      "idk": [],
-     "answerWhy": "Name each store and say how it changes: the ball's kinetic store decreases, and the thermal stores of the floor and air increase.",
+     "answerWhy": "Energy is transferred mechanically, by friction, from the ball's kinetic store to the thermal stores of the floor and air.",
      "quiz": true
     },
     {

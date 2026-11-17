@@ -48,7 +48,7 @@
      "id": "1.1b",
      "type": "ask",
      "kind": "tap",
-     "question": "Second: a car brakes and slows down. Which store of the brakes rises?",
+     "question": "Second: a car brakes and slows down. Which store of the brakes gets more energy?",
      "options": [
       {
        "text": "Their thermal store",
@@ -66,7 +66,7 @@
      "right": "Yes: rubbing makes the brakes hot, so their thermal store rises.",
      "wrong": {
       "other": "Not quite: their thermal store, because the brakes get hot.",
-      "kinetic": "Not quite: the brakes get hot, so their thermal store rises. It is the car's kinetic store that falls.",
+      "kinetic": "Not quite: the brakes get hot, so their thermal store gets more energy. It is the car's kinetic store that loses energy.",
       "elastic": "Not quite: nothing is stretched or squashed. The brakes get hot, so their thermal store rises."
      },
      "idk": [
@@ -84,7 +84,7 @@
     {
      "id": "1.3",
      "type": "say",
-     "text": "Think of a ball bouncing. As it falls, energy moves from its gravitational potential store to its kinetic store."
+     "text": "Think of a ball bouncing. As it falls, energy moves from its gravitational potential store, the energy of being raised up, to its kinetic store, the energy of moving."
     },
     {
      "id": "1.3b",
@@ -126,12 +126,17 @@
     {
      "id": "1.5",
      "type": "say",
-     "text": "The energy transferred by heating and by sound ends up in the thermal store of the surroundings. Energy spread out like that is said to be dissipated. Add the dissipated energy to what the ball still has, and the total never changes."
+     "text": "The energy transferred by heating and by sound ends up in the thermal stores of the ball, the floor and the air around them. Energy spread out like that is said to be dissipated."
+    },
+    {
+     "id": "1.5b",
+     "type": "say",
+     "text": "Add the dissipated energy to what the ball still has, and the total is the same as at the start."
     },
     {
      "id": "1.6",
      "type": "say",
-     "text": "A system that no energy can get into or out of is called a closed system."
+     "text": "A system is the object, or group of objects, you are looking at. A system that no energy can get into or out of is called a closed system, and its total energy always stays the same."
     },
     {
      "id": "1.7",
@@ -195,10 +200,10 @@
      "id": "2.3",
      "type": "ask",
      "kind": "tap",
-     "question": "A car engine burns fuel to make the car move. Which energy is useful?",
+     "question": "A car engine burns fuel. Which of these is useful energy?",
      "options": [
       {
-       "text": "The energy that goes into the car's kinetic store",
+       "text": "The energy that makes the car move",
        "branch": "right"
       },
       {
@@ -206,7 +211,7 @@
        "branch": "exhaust"
       },
       {
-       "text": "The engine noise",
+       "text": "The energy carried away by the engine's noise",
        "branch": "noise"
       }
      ],
@@ -218,7 +223,7 @@
      },
      "idk": [
       {
-       "hint": "What is the engine for? Which button is the energy that does that job?"
+       "hint": "A car engine is there to make the car go. Which button is about that?"
       }
      ],
      "answerWhy": "The engine's job is to make the car move, so the useful energy is the energy in the car's kinetic store."
@@ -260,10 +265,20 @@
      },
      "idk": [
       {
-       "hint": "Oil lets surfaces slide more easily. Does that mean more or less friction, and more or less heating?"
+       "hint": "Oil makes surfaces slide more easily, so there is less friction. Which button says what that does to the heating?"
       }
      ],
      "answerWhy": "The oil reduces friction, so less energy is wasted heating the chain."
+    },
+    {
+     "id": "2.7",
+     "type": "own",
+     "prompt": "In one line: what is useful energy, and what is wasted energy?",
+     "points": [
+      "useful energy does the job you want",
+      "wasted energy goes somewhere you did not want"
+     ],
+     "idk": "No problem. A good line would be: useful energy does the job you want, and wasted energy goes somewhere you did not want, usually warming the surroundings."
     }
    ]
   },
@@ -274,17 +289,22 @@
     {
      "id": "3.1",
      "type": "say",
-     "text": "The spreading out of energy into the surroundings is called dissipation. Everything is made of tiny particles, and dissipated energy is shared among a huge number of them, so the surroundings warm by only a tiny amount. That makes it very hard to collect and use again."
+     "text": "Dissipation, the spreading out of energy into the surroundings, happens all the time."
+    },
+    {
+     "id": "3.1a",
+     "type": "say",
+     "text": "Everything is made of tiny particles. Dissipated energy is shared among a huge number of them, so the surroundings warm by only a tiny amount, and the energy is very hard to collect and use again."
     },
     {
      "id": "3.2",
      "type": "say",
-     "text": "Dissipation happens wherever there is friction. Brakes get hot as a car slows down, and a sliding box warms the floor a little."
+     "text": "Dissipation happens wherever there is friction. A bike tyre skidding on a road gets hot, and a sliding box warms the floor a little."
     },
     {
      "id": "3.3",
      "type": "say",
-     "text": "Dissipation happens in wires too. A flow of electricity through a wire is called a current. A current heats the wire it flows through, so some energy is dissipated. Long cables carrying electricity across the country waste energy this way."
+     "text": "Dissipation happens in wires too. A flow of electric charge through a wire is called a current. A current heats the wire it flows through, so some energy is dissipated."
     },
     {
      "id": "3.4",
@@ -298,7 +318,7 @@
      "question": "Which of these wastes energy because of friction?",
      "options": [
       {
-       "text": "A skateboard's wheels getting warm as it rolls",
+       "text": "A door hinge getting warm as it squeaks",
        "branch": "right"
       },
       {
@@ -310,18 +330,18 @@
        "branch": "sound"
       }
      ],
-     "right": "Yes: the wheels rub on their axles, and friction transfers energy to their thermal store.",
+     "right": "Yes: the parts of the hinge rub against each other as the door swings, and friction transfers energy to their thermal store.",
      "wrong": {
-      "other": "Not quite: the skateboard wheels. They rub on their axles, and friction warms them.",
-      "wire": "Not quite: the charger warms because a current flows through it, not because of friction. The skateboard wheels rub on their axles.",
-      "sound": "Not quite: the curtain absorbs sound; nothing rubs. The skateboard wheels rub on their axles, and friction warms them."
+      "other": "Not quite: the door hinge. Its parts rub together, and friction warms them.",
+      "wire": "Not quite: the charger warms because a current flows through it, not because of friction. The parts of the door hinge rub together.",
+      "sound": "Not quite: the curtain absorbs sound; nothing rubs. The parts of the door hinge rub together, and friction warms them."
      },
      "idk": [
       {
-       "hint": "Friction happens when two surfaces rub. In which button is something rubbing?"
+       "hint": "Friction happens when two surfaces rub. In which button are two parts rubbing together?"
       }
      ],
-     "answerWhy": "The skateboard wheels rub on their axles, and friction transfers energy to their thermal store."
+     "answerWhy": "The parts of the hinge rub against each other, and friction transfers energy to their thermal store."
     },
     {
      "id": "3.6",
@@ -329,7 +349,7 @@
      "prompt": "In one line: give one way energy gets dissipated, and say where it ends up.",
      "points": [
       "friction, a current in a wire, or sound being absorbed",
-      "it ends up in the thermal store of the surroundings"
+      "it ends up in a thermal store: of the surroundings, or of the wall"
      ],
      "idk": "No problem. A good line would be: friction dissipates energy, and it ends up in the thermal store of the surroundings."
     }
@@ -342,7 +362,7 @@
     {
      "id": "4.1",
      "type": "say",
-     "text": "Engineers work hard to cut wasted energy. In a building, the main problem is warmth escaping on cold days."
+     "text": "Back to wasting less energy, this time in buildings. The main problem is warmth escaping on cold days."
     },
     {
      "id": "4.2",
@@ -352,7 +372,7 @@
     {
      "id": "4.3",
      "type": "say",
-     "text": "How easily energy is conducted through a material is called the thermal conductivity of the material. The higher the thermal conductivity, the faster energy passes through. Metals have a high thermal conductivity; plastic, wood, air and foam have a low one."
+     "text": "How easily energy is conducted through a material is called the thermal conductivity of the material. The higher the thermal conductivity, the faster energy passes through. Metals have a high thermal conductivity; air and foam have a low one."
     },
     {
      "id": "4.4",
@@ -381,7 +401,7 @@
      },
      "idk": [
       {
-       "hint": "A handle should stay cool. Should energy pass through it quickly or slowly?"
+       "hint": "A handle should stay cool, so energy should pass through it slowly. Does that need a high or a low thermal conductivity?"
       }
      ],
      "answerWhy": "Plastic has a lower thermal conductivity than metal, so energy passes through it slowly and the handle stays cooler."
@@ -399,12 +419,12 @@
     {
      "id": "4.6b",
      "type": "say",
-     "text": "Double glazing is two panes of glass with a gap between them, which slows energy escaping through the windows."
+     "text": "Double glazing is two panes of glass with a gap of air between them. Air has a low thermal conductivity, so the gap slows energy escaping through the window."
     },
     {
      "id": "4.6c",
      "type": "say",
-     "text": "Many brick walls are two walls with a gap between them, called a cavity. Cavity wall insulation fills that gap with foam."
+     "text": "Many brick walls are two walls with a gap between them, called a cavity. Cavity wall insulation fills the gap with foam, which traps the air in tiny pockets so it cannot move about, slowing energy escaping even more."
     },
     {
      "id": "4.7",
@@ -535,7 +555,7 @@
     {
      "id": "4.14",
      "type": "say",
-     "text": "Air resistance is the push of the air on anything moving through it. A moving car wastes energy from its kinetic store pushing the air out of the way."
+     "text": "One more way to waste less energy, this time for moving things. Air resistance is the push of the air on anything moving through it. A moving car wastes energy from its kinetic store pushing the air out of the way."
     },
     {
      "id": "4.14b",
@@ -611,7 +631,9 @@
      ],
      "right": "Yes: that is the law of conservation of energy.",
      "wrong": {
-      "other": "Not quite. Energy cannot be created or destroyed: that is the law of conservation of energy."
+      "other": "Not quite. Energy cannot be created or destroyed: that is the law of conservation of energy.",
+      "w1": "Not quite: energy is not used up when things stop. It is dissipated into the surroundings; the total stays the same.",
+      "w2": "Not quite: no machine makes new energy. Machines only transfer energy from one store to another."
      },
      "idk": [],
      "answerWhy": "Energy cannot be created or destroyed: the law of conservation of energy.",
@@ -638,7 +660,9 @@
      ],
      "right": "Yes: oil reduces friction between moving parts.",
      "wrong": {
-      "other": "Not quite: friction. Oil between moving parts reduces friction."
+      "other": "Not quite: friction. Oil between moving parts reduces friction.",
+      "w1": "Not quite: friction. Air resistance is reduced by streamlining, not oil.",
+      "w2": "Not quite: friction. Thermal conductivity belongs to a material; oil cannot change it. Oil reduces friction between moving parts."
      },
      "idk": [],
      "answerWhy": "Lubrication reduces friction between moving parts.",
@@ -665,7 +689,9 @@
      ],
      "right": "Yes: the higher the thermal conductivity, the faster energy passes through.",
      "wrong": {
-      "other": "Not quite: a high thermal conductivity means energy passes through quickly."
+      "other": "Not quite: a high thermal conductivity means energy passes through quickly.",
+      "w1": "Not quite: a good insulator has a low thermal conductivity. A high one means energy passes through quickly.",
+      "w2": "Not quite: nothing stops energy completely. A high thermal conductivity means energy passes through quickly."
      },
      "idk": [],
      "answerWhy": "The higher the thermal conductivity, the faster energy passes through.",
@@ -746,7 +772,9 @@
      ],
      "right": "Yes: a streamlined shape lets the air flow round it smoothly.",
      "wrong": {
-      "other": "Not quite: streamlining, shaping the car so air flows round it smoothly."
+      "other": "Not quite: streamlining, shaping the car so air flows round it smoothly.",
+      "w1": "Not quite: lubrication reduces friction between moving parts. Streamlining, a smooth shape, reduces air resistance.",
+      "w2": "Not quite: double glazing slows energy escaping through windows. Streamlining, a smooth shape, reduces air resistance."
      },
      "idk": [],
      "answerWhy": "Streamlining reduces air resistance.",

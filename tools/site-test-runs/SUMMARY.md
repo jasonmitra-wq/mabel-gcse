@@ -94,3 +94,10 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-11-15 | p2-power-energy | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-15/p2-power-energy | $0.0468
 - 2026-11-15 | p2-static | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-15/p2-static | $0.0441
 - 2026-11-15 | p2-series-parallel | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-15/p2-series-parallel-2 | $0.0728
+- 2026-11-17 | p1-energy-stores | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-17/p1-energy-stores | $0.0651
+- 2026-11-17 | p1-kinetic-potential | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-17/p1-kinetic-potential | $0.0486
+- 2026-11-17 | p1-conservation | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-17/p1-conservation | $0.0354
+- 2026-11-17 | p1-efficiency | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-17/p1-efficiency | $0.0535
+- 2026-11-17 | p1-power | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-17/p1-power | $0.0413
+- 2026-11-17 | p1-heating | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-17/p1-heating | $0.0430
+- 2026-11-17 | p1-national-grid | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-17/p1-national-grid | $0.0320

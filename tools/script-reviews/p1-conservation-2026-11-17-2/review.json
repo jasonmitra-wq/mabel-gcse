@@ -1,0 +1,354 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 15382,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11797,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 6977
+    },
+    "iterations": [
+      {
+        "input_tokens": 15382,
+        "output_tokens": 11797,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.594936,
+  "seconds": 109,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from earlier lessons. Which store does a hot cup of tea have a lot of energy in?\",\"what\":\"The lesson opens by testing energy stores (kinetic, thermal, elastic potential) that it has never explained. A first-time learner has not been told what a store is, so she can only guess.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.3\",\"quote\":\"energy moves from its gravitational potential store to its kinetic store\",\"what\":\"The gravitational potential store and the kinetic store are used without ever saying what they are (energy because it is raised up; energy because it is moving). The whole ball story rests on them.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.1b\",\"quote\":\"Which store of the brakes rises?\",\"what\":\"Muddled wording: a store does not rise, the energy in it does. The same slip is in the reply 'It is the car's kinetic store that falls'.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"1.5\",\"quote\":\"Energy spread out like that is said to be dissipated. Add the dissipated energy to what the ball still has, and the total never changes.\",\"what\":\"Three ideas in one bubble: where the energy ends up, the new word 'dissipated', and the total staying constant. The key idea of the law (the total is unchanged) is tucked on the end with no question on it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.6\",\"quote\":\"A system that no energy can get into or out of is called a closed system.\",\"what\":\"A bare definition with no reason given for it, and 'system' itself is not explained. The script never says that the total energy of a closed system stays the same; 1.2 says the law 'holds for everything, every time', so she cannot see why 'closed' matters.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.7\",\"quote\":\"In the thermal stores of the ball, floor and air\",\"what\":\"1.5 said the energy ends up 'in the thermal store of the surroundings', and now the ball itself is included. The ball is not its own surroundings, and the change is not explained.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.8\",\"quote\":\"Yes, your line has it: on each bounce some energy is dissipated to the surroundings (heating, sound); and no energy is destroyed.\",\"what\":\"The praise reads as a pasted mark scheme ('(heating, sound); and'), not a sentence a tutor would say. The prompt is also two questions in 'one line'.\",\"severity\":\"minor\"},{\"fault\":\"P8\",\"turn\":\"2.3\",\"quote\":\"A car engine burns fuel to make the car move. Which energy is useful?\",\"what\":\"The question stem states the engine's job ('to make the car move'), so the kinetic-store option is given away in the question. Also 'The engine noise' is offered as 'an energy'.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.3 don't know (first time)\",\"quote\":\"What is the engine for? Which button is the energy that does that job?\",\"what\":\"Two questions at once, and the second points her at a button rather than at the physics.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.6 don't know (first time)\",\"quote\":\"Does that mean more or less friction, and more or less heating?\",\"what\":\"Two more-or-less questions at once, shown with the same three buttons, none of which is 'more' or 'less'. The hint does not match what she can press.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P15\",\"turn\":\"2.6\",\"quote\":\"The oil reduces friction, so less energy is wasted heating the chain, and less is wasted as squeaks too.\",\"what\":\"Key point 2 ends here with no own-words line, although key points 1, 3 and 4 each have one. The end quiz has no question on useful and wasted energy or on dissipation either.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"3.1\",\"quote\":\"The spreading out of energy into the surroundings is called dissipation.\",\"what\":\"Dissipation was already defined in 1.5 ('Energy spread out like that is said to be dissipated') and used in 1.8 and 2.2. It is introduced here again as if new.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"3.1\",\"quote\":\"Everything is made of tiny particles, and dissipated energy is shared among a huge number of them, so the surroundings warm by only a tiny amount. That makes it very hard to collect and use again.\",\"what\":\"Several ideas in one bubble: the definition, the particle picture (new here), the tiny warming, and why the energy cannot be reused. There is no question on any of it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"3.2\",\"quote\":\"Brakes get hot as a car slows down\",\"what\":\"The brakes example was already used and explained in 1.1b; it is said again here.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.3\",\"quote\":\"A flow of electricity through a wire is called a current.\",\"what\":\"Imprecise: a current is a flow of charge, and 'flow of electricity' is the loose phrase we try to stop pupils using. The bubble also carries three things (the current definition, heating of wires, national cables).\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.5\",\"quote\":\"Yes: the wheels rub on their axles, and friction transfers energy to their thermal store.\",\"what\":\"The option says the wheels get warm 'as it rolls'. Nothing in the lesson has said that wheels rub on axles, and rolling is not rubbing to a 15-year-old, so the explanation appears from nowhere.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.5 don't know (first time)\",\"quote\":\"Friction happens when two surfaces rub. In which button is something rubbing?\",\"what\":\"None of the three buttons mentions rubbing; the right one says 'rolls'. The hint cannot lead her to the answer unless she already knows about axles.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"3.6\",\"quote\":\"Yes, your line has it: friction, a current in a wire, or sound being absorbed; and it ends up in the thermal store of the surroundings.\",\"what\":\"She was asked for one way and gave one, but the reply lists all three as if she had said them. It is not a sentence, and 'it' has nothing to refer to.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.6\",\"quote\":\"it ends up in the thermal store of the surroundings\",\"what\":\"3.4 told her sound energy 'ends up in the thermal store of the wall'. If she writes that, the marking point about 'the surroundings' may tell her she missed something she was actually taught.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"4.1\",\"quote\":\"Engineers work hard to cut wasted energy.\",\"what\":\"The same statement was made in 1.1 and in 2.4 ('Engineers try to waste less energy').\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"4.4\",\"quote\":\"A pan handle is made of plastic, not metal. Why?\",\"what\":\"The message just before said 'Metals have a high thermal conductivity; plastic, wood, air and foam have a low one', which is the right button almost word for word.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.4 don't know (first time)\",\"quote\":\"A handle should stay cool. Should energy pass through it quickly or slowly?\",\"what\":\"The hint asks a quickly-or-slowly question but the buttons are about higher or lower thermal conductivity. She still has to make the link that the hint was meant to supply.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.6b\",\"quote\":\"Double glazing is two panes of glass with a gap between them, which slows energy escaping through the windows.\",\"what\":\"It does not say what is in the gap or why a gap helps (the air in it has a low thermal conductivity). She is told that it works, not why.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.6c\",\"quote\":\"Cavity wall insulation fills that gap with foam.\",\"what\":\"She has just been told a gap between panes slows energy escaping; now a gap in a wall is filled in, with no reason and no statement of what it achieves. She would fairly ask why the gap is good in a window but needs filling in a wall.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"M1\",\"turn\":\"4.5 to 4.7\",\"quote\":\"Homes use thermal insulation in several places.\",\"what\":\"Five telling bubbles in a row (4.5, 4.6, 4.6b, 4.6c, 4.7) with nothing for her to do except press Next. The loft, glazing and cavity examples are never asked about.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"4.8\",\"quote\":\"Three houses are the same except for their walls. Which one cools down fastest on a cold night?\",\"what\":\"4.7, the message just before, said 'Thicker walls, and walls made of a material with a lower thermal conductivity, both make a building cool down more slowly'. The question only asks her to reverse that sentence.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P10\",\"turn\":\"4.9\",\"quote\":\"You can compare insulating materials in a lab. Put the same amount of hot water in identical cans, wrap each can in a different material\",\"what\":\"The practical starts cold. There is no question first about what she would expect or how to make the comparison fair, and no picture of the set-up.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.14\",\"quote\":\"Air resistance is the push of the air on anything moving through it.\",\"what\":\"The lesson jumps straight from the insulation test to air resistance with no link back to 'ways of reducing wasted energy'. She would not know why the subject has changed.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"4.14c\",\"quote\":\"Engineers give it a smooth, rounded front. Why does that waste less energy?\",\"what\":\"4.14b, just before, said streamlining 'reduces air resistance, so less energy is wasted', which is the right button.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.15\",\"quote\":\"Yes, your line has it: lubrication, to reduce friction; and thermal insulation; and streamlining.\",\"what\":\"Pasted mark-scheme wording ('; and ... ; and'), not something a tutor would say to a pupil.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.17\",\"quote\":\"Not quite. Energy cannot be created or destroyed: that is the law of conservation of energy.\",\"what\":\"The same reply is given for both wrong answers and addresses neither. 'It is used up when things stop' is the commonest misconception and deserves 'it is not used up, it is dissipated to the surroundings'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.18\",\"quote\":\"Not quite: friction. Oil between moving parts reduces friction.\",\"what\":\"The same reply for 'Air resistance' and 'Thermal conductivity'. It does not say what does reduce air resistance (streamlining), or that conductivity is a property of the material.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.19\",\"quote\":\"Not quite: a high thermal conductivity means energy passes through quickly.\",\"what\":\"For '…is a good insulator' the reply does not say that a good insulator has a low thermal conductivity, so the mix-up she made is not corrected.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.22\",\"quote\":\"Not quite: streamlining, shaping the car so air flows round it smoothly.\",\"what\":\"The same reply for 'Lubrication' and 'Double glazing'. It does not say what those two do (reduce friction; slow energy escaping through windows).\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.4\",\"quote\":\"Not quite: gravity stays the same.\",\"what\":\"'Not quite' is used for answers that are flatly wrong (also 'Nowhere: the ball has stopped' in 1.7 and 'Machines make new energy' in 4.17). It tells her she was nearly right when she was not.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.1a still doesn't know\",\"quote\":\"That's fine.\",\"what\":\"The same stock phrase opens every second 'don't know' reply in the lesson, around twenty times. It reads as automatic, not as a tutor.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole script\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on and no picture anywhere: no ball to drop, no energy bars for the stores, no insulated cans to compare. The whole lesson is a bubble, then Next, then three buttons.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"whole script\",\"quote\":\"Now for a short quiz: six questions across the lesson. Take your time.\",\"what\":\"Over fifty steps of reading and three-option buttons, followed by six more of the same. With no interactive part she is likely to be clicking through long before the practical.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":1},{\"fault\":\"F3\",\"instances\":1},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"P8\",\"instances\":1},{\"fault\":\"F8\",\"instances\":3},{\"fault\":\"F1\",\"instances\":3},{\"fault\":\"P10\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"P15\",\"instances\":1},{\"fault\":\"M1\",\"instances\":2},{\"fault\":\"new\",\"instances\":22}],\"overall\":\"No, not as it is. The physics is mostly sound and the tone is kind, but it opens by testing energy stores it never explains and leans on them throughout, so a true first-time learner is guessing from step 2. Several questions are answered by the bubble just before them (4.4, 4.8, 4.14c), some hints and replies do not fit (the skateboard 'rubbing', the more-or-less hints, the pasted mark-scheme replies), and the double-glazing and cavity-wall steps would leave her puzzled about gaps. It is also a long run of Next and three buttons with no picture or hands-on part, so I would want the stores explained, those questions reworked and something to do or see before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from earlier lessons. Which store does a hot cup of tea have a lot of energy in?",
+      "what": "The lesson opens by testing energy stores (kinetic, thermal, elastic potential) that it has never explained. A first-time learner has not been told what a store is, so she can only guess.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.3",
+      "quote": "energy moves from its gravitational potential store to its kinetic store",
+      "what": "The gravitational potential store and the kinetic store are used without ever saying what they are (energy because it is raised up; energy because it is moving). The whole ball story rests on them.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1b",
+      "quote": "Which store of the brakes rises?",
+      "what": "Muddled wording: a store does not rise, the energy in it does. The same slip is in the reply 'It is the car's kinetic store that falls'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "1.5",
+      "quote": "Energy spread out like that is said to be dissipated. Add the dissipated energy to what the ball still has, and the total never changes.",
+      "what": "Three ideas in one bubble: where the energy ends up, the new word 'dissipated', and the total staying constant. The key idea of the law (the total is unchanged) is tucked on the end with no question on it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.6",
+      "quote": "A system that no energy can get into or out of is called a closed system.",
+      "what": "A bare definition with no reason given for it, and 'system' itself is not explained. The script never says that the total energy of a closed system stays the same; 1.2 says the law 'holds for everything, every time', so she cannot see why 'closed' matters.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.7",
+      "quote": "In the thermal stores of the ball, floor and air",
+      "what": "1.5 said the energy ends up 'in the thermal store of the surroundings', and now the ball itself is included. The ball is not its own surroundings, and the change is not explained.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.8",
+      "quote": "Yes, your line has it: on each bounce some energy is dissipated to the surroundings (heating, sound); and no energy is destroyed.",
+      "what": "The praise reads as a pasted mark scheme ('(heating, sound); and'), not a sentence a tutor would say. The prompt is also two questions in 'one line'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P8",
+      "turn": "2.3",
+      "quote": "A car engine burns fuel to make the car move. Which energy is useful?",
+      "what": "The question stem states the engine's job ('to make the car move'), so the kinetic-store option is given away in the question. Also 'The engine noise' is offered as 'an energy'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.3 don't know (first time)",
+      "quote": "What is the engine for? Which button is the energy that does that job?",
+      "what": "Two questions at once, and the second points her at a button rather than at the physics.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.6 don't know (first time)",
+      "quote": "Does that mean more or less friction, and more or less heating?",
+      "what": "Two more-or-less questions at once, shown with the same three buttons, none of which is 'more' or 'less'. The hint does not match what she can press.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P15",
+      "turn": "2.6",
+      "quote": "The oil reduces friction, so less energy is wasted heating the chain, and less is wasted as squeaks too.",
+      "what": "Key point 2 ends here with no own-words line, although key points 1, 3 and 4 each have one. The end quiz has no question on useful and wasted energy or on dissipation either.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.1",
+      "quote": "The spreading out of energy into the surroundings is called dissipation.",
+      "what": "Dissipation was already defined in 1.5 ('Energy spread out like that is said to be dissipated') and used in 1.8 and 2.2. It is introduced here again as if new.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.1",
+      "quote": "Everything is made of tiny particles, and dissipated energy is shared among a huge number of them, so the surroundings warm by only a tiny amount. That makes it very hard to collect and use again.",
+      "what": "Several ideas in one bubble: the definition, the particle picture (new here), the tiny warming, and why the energy cannot be reused. There is no question on any of it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.2",
+      "quote": "Brakes get hot as a car slows down",
+      "what": "The brakes example was already used and explained in 1.1b; it is said again here.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3",
+      "quote": "A flow of electricity through a wire is called a current.",
+      "what": "Imprecise: a current is a flow of charge, and 'flow of electricity' is the loose phrase we try to stop pupils using. The bubble also carries three things (the current definition, heating of wires, national cables).",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5",
+      "quote": "Yes: the wheels rub on their axles, and friction transfers energy to their thermal store.",
+      "what": "The option says the wheels get warm 'as it rolls'. Nothing in the lesson has said that wheels rub on axles, and rolling is not rubbing to a 15-year-old, so the explanation appears from nowhere.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5 don't know (first time)",
+      "quote": "Friction happens when two surfaces rub. In which button is something rubbing?",
+      "what": "None of the three buttons mentions rubbing; the right one says 'rolls'. The hint cannot lead her to the answer unless she already knows about axles.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6",
+      "quote": "Yes, your line has it: friction, a current in a wire, or sound being absorbed; and it ends up in the thermal store of the surroundings.",
+      "what": "She was asked for one way and gave one, but the reply lists all three as if she had said them. It is not a sentence, and 'it' has nothing to refer to.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6",
+      "quote": "it ends up in the thermal store of the surroundings",
+      "what": "3.4 told her sound energy 'ends up in the thermal store of the wall'. If she writes that, the marking point about 'the surroundings' may tell her she missed something she was actually taught.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.1",
+      "quote": "Engineers work hard to cut wasted energy.",
+      "what": "The same statement was made in 1.1 and in 2.4 ('Engineers try to waste less energy').",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.4",
+      "quote": "A pan handle is made of plastic, not metal. Why?",
+      "what": "The message just before said 'Metals have a high thermal conductivity; plastic, wood, air and foam have a low one', which is the right button almost word for word.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.4 don't know (first time)",
+      "quote": "A handle should stay cool. Should energy pass through it quickly or slowly?",
+      "what": "The hint asks a quickly-or-slowly question but the buttons are about higher or lower thermal conductivity. She still has to make the link that the hint was meant to supply.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.6b",
+      "quote": "Double glazing is two panes of glass with a gap between them, which slows energy escaping through the windows.",
+      "what": "It does not say what is in the gap or why a gap helps (the air in it has a low thermal conductivity). She is told that it works, not why.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.6c",
+      "quote": "Cavity wall insulation fills that gap with foam.",
+      "what": "She has just been told a gap between panes slows energy escaping; now a gap in a wall is filled in, with no reason and no statement of what it achieves. She would fairly ask why the gap is good in a window but needs filling in a wall.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "M1",
+      "turn": "4.5 to 4.7",
+      "quote": "Homes use thermal insulation in several places.",
+      "what": "Five telling bubbles in a row (4.5, 4.6, 4.6b, 4.6c, 4.7) with nothing for her to do except press Next. The loft, glazing and cavity examples are never asked about.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.8",
+      "quote": "Three houses are the same except for their walls. Which one cools down fastest on a cold night?",
+      "what": "4.7, the message just before, said 'Thicker walls, and walls made of a material with a lower thermal conductivity, both make a building cool down more slowly'. The question only asks her to reverse that sentence.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P10",
+      "turn": "4.9",
+      "quote": "You can compare insulating materials in a lab. Put the same amount of hot water in identical cans, wrap each can in a different material",
+      "what": "The practical starts cold. There is no question first about what she would expect or how to make the comparison fair, and no picture of the set-up.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.14",
+      "quote": "Air resistance is the push of the air on anything moving through it.",
+      "what": "The lesson jumps straight from the insulation test to air resistance with no link back to 'ways of reducing wasted energy'. She would not know why the subject has changed.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.14c",
+      "quote": "Engineers give it a smooth, rounded front. Why does that waste less energy?",
+      "what": "4.14b, just before, said streamlining 'reduces air resistance, so less energy is wasted', which is the right button.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.15",
+      "quote": "Yes, your line has it: lubrication, to reduce friction; and thermal insulation; and streamlining.",
+      "what": "Pasted mark-scheme wording ('; and ... ; and'), not something a tutor would say to a pupil.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.17",
+      "quote": "Not quite. Energy cannot be created or destroyed: that is the law of conservation of energy.",
+      "what": "The same reply is given for both wrong answers and addresses neither. 'It is used up when things stop' is the commonest misconception and deserves 'it is not used up, it is dissipated to the surroundings'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.18",
+      "quote": "Not quite: friction. Oil between moving parts reduces friction.",
+      "what": "The same reply for 'Air resistance' and 'Thermal conductivity'. It does not say what does reduce air resistance (streamlining), or that conductivity is a property of the material.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.19",
+      "quote": "Not quite: a high thermal conductivity means energy passes through quickly.",
+      "what": "For '…is a good insulator' the reply does not say that a good insulator has a low thermal conductivity, so the mix-up she made is not corrected.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.22",
+      "quote": "Not quite: streamlining, shaping the car so air flows round it smoothly.",
+      "what": "The same reply for 'Lubrication' and 'Double glazing'. It does not say what those two do (reduce friction; slow energy escaping through windows).",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.4",
+      "quote": "Not quite: gravity stays the same.",
+      "what": "'Not quite' is used for answers that are flatly wrong (also 'Nowhere: the ball has stopped' in 1.7 and 'Machines make new energy' in 4.17). It tells her she was nearly right when she was not.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1a still doesn't know",
+      "quote": "That's fine.",
+      "what": "The same stock phrase opens every second 'don't know' reply in the lesson, around twenty times. It reads as automatic, not as a tutor.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole script",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on and no picture anywhere: no ball to drop, no energy bars for the stores, no insulated cans to compare. The whole lesson is a bubble, then Next, then three buttons.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "whole script",
+      "quote": "Now for a short quiz: six questions across the lesson. Take your time.",
+      "what": "Over fifty steps of reading and three-option buttons, followed by six more of the same. With no interactive part she is likely to be clicking through long before the practical.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 22
+    },
+    {
+      "fault": "F1",
+      "instances": 3
+    },
+    {
+      "fault": "F8",
+      "instances": 3
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "M1",
+      "instances": 2
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "F3",
+      "instances": 1
+    },
+    {
+      "fault": "P8",
+      "instances": 1
+    },
+    {
+      "fault": "P15",
+      "instances": 1
+    },
+    {
+      "fault": "P10",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "No, not as it is. The physics is mostly sound and the tone is kind, but it opens by testing energy stores it never explains and leans on them throughout, so a true first-time learner is guessing from step 2. Several questions are answered by the bubble just before them (4.4, 4.8, 4.14c), some hints and replies do not fit (the skateboard 'rubbing', the more-or-less hints, the pasted mark-scheme replies), and the double-glazing and cavity-wall steps would leave her puzzled about gaps. It is also a long run of Next and three buttons with no picture or hands-on part, so I would want the stores explained, those questions reworked and something to do or see before she uses it."
+}

@@ -1,0 +1,749 @@
+{
+ "lesson": "p3-changes-of-state",
+ "version": 1,
+ "about": "The scripted AI lesson for p3-changes-of-state (2026-11-17, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p3-particle-model and p1-heating.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "Temperature during changes of state — the heating curve",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about the temperature of something while it melts or boils, and how much energy it takes to change its state."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from earlier lessons. Ice is melting. Which is true of its temperature while it melts?",
+     "options": [
+      {
+       "text": "It stays the same",
+       "branch": "right"
+      },
+      {
+       "text": "It rises steadily",
+       "branch": "rises"
+      },
+      {
+       "text": "It falls",
+       "branch": "falls"
+      }
+     ],
+     "right": "Yes: it stays at 0 °C until all the ice has melted.",
+     "wrong": {
+      "other": "Not quite: it stays the same until all the ice has melted.",
+      "rises": "Not quite: while ice melts, its temperature stays at 0 °C. The energy pulls the particles apart instead of speeding them up.",
+      "falls": "Not quite: energy is going in, and the temperature stays at 0 °C until all the ice has melted."
+     },
+     "idk": [
+      {
+       "hint": "Think of a drink with ice in it: it stays at about 0 °C while the ice is still melting."
+      }
+     ],
+     "answerWhy": "While ice melts, its temperature stays at 0 °C: the energy raises the particles' potential energy, not their kinetic energy."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: what is the specific heat capacity of a substance?",
+     "options": [
+      {
+       "text": "The energy needed to raise the temperature of 1 kg of it by 1 °C",
+       "branch": "right"
+      },
+      {
+       "text": "The energy needed to melt 1 kg of it",
+       "branch": "melt"
+      },
+      {
+       "text": "The temperature at which it boils",
+       "branch": "boil"
+      }
+     ],
+     "right": "Yes: the energy to warm 1 kg of it by 1 °C.",
+     "wrong": {
+      "other": "Not quite: it is the energy needed to raise the temperature of 1 kg by 1 °C.",
+      "melt": "Not quite: that is a different quantity, coming up in this lesson. Specific heat capacity is the energy to warm 1 kg by 1 °C.",
+      "boil": "Not quite: that is the boiling point. Specific heat capacity is the energy to warm 1 kg by 1 °C."
+     },
+     "idk": [
+      {
+       "hint": "The lesson on heating water used ΔE = m c Δθ. What does c tell you?"
+      }
+     ],
+     "answerWhy": "Specific heat capacity is the energy needed to raise the temperature of 1 kg of a substance by 1 °C."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. Put a thermometer in ice from a freezer and heat it steadily. A graph of its temperature against time is called a heating curve."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "At first the line climbs as the ice warms up. At 0 °C it goes flat while the ice melts, and stays flat until all the ice has melted."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "Next the water warms up, so the line climbs again. At 100 °C it goes flat while the water boils. Once all the water has boiled, the steam warms up."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "Energy goes in all the time, even on the flat parts. On a flat part the energy pulls the particles apart, raising their potential energy, so the temperature does not change."
+    },
+    {
+     "id": "1.6",
+     "type": "say",
+     "text": "The energy that changes the state, without changing the temperature, is called latent heat. Latent means hidden: the thermometer does not show it."
+    },
+    {
+     "id": "1.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "On a heating curve for water, what is going on during the flat part at 100 °C?",
+     "options": [
+      {
+       "text": "The water is boiling",
+       "branch": "right"
+      },
+      {
+       "text": "The water is warming up",
+       "branch": "warm"
+      },
+      {
+       "text": "The water has stopped taking in energy",
+       "branch": "stopped"
+      }
+     ],
+     "right": "Yes: the water is boiling, so the temperature stays at 100 °C.",
+     "wrong": {
+      "other": "Not quite: the water is boiling.",
+      "warm": "Not quite: warming up makes the line climb. A flat part at 100 °C means the water is boiling.",
+      "stopped": "Not quite: energy is still going in. On the flat part it pulls the particles apart as the water boils."
+     },
+     "idk": [
+      {
+       "hint": "What happens to water at 100 °C?"
+      }
+     ],
+     "answerWhy": "A flat part is a change of state: at 100 °C the water is boiling."
+    },
+    {
+     "id": "1.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "On the sloping parts of a heating curve, which energy of the particles is rising?",
+     "options": [
+      {
+       "text": "Kinetic energy",
+       "branch": "right"
+      },
+      {
+       "text": "Potential energy",
+       "branch": "pot"
+      },
+      {
+       "text": "Neither",
+       "branch": "none"
+      }
+     ],
+     "right": "Yes: the particles move faster, so their kinetic energy rises and the temperature goes up.",
+     "wrong": {
+      "other": "Not quite: kinetic energy.",
+      "pot": "Not quite: potential energy rises on the flat parts. On the sloping parts the temperature rises, so the particles' kinetic energy rises.",
+      "none": "Not quite: the temperature is rising, so the particles are moving faster: their kinetic energy rises."
+     },
+     "idk": [
+      {
+       "hint": "On a sloping part the temperature goes up. Which energy is linked to temperature?"
+      }
+     ],
+     "answerWhy": "On a sloping part the temperature rises, so the particles' kinetic energy rises."
+    },
+    {
+     "id": "1.9",
+     "type": "say",
+     "text": "Cooling gives the opposite graph, called a cooling curve. The line falls, then goes flat while the substance condenses or freezes, because it gives out latent heat as its particles pull back together."
+    },
+    {
+     "id": "1.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Liquid wax cools in a test tube. Its temperature falls, stays at 55 °C for 5 minutes, then falls again. What is going on at 55 °C?",
+     "options": [
+      {
+       "text": "The wax is freezing (turning solid)",
+       "branch": "right"
+      },
+      {
+       "text": "The wax is boiling",
+       "branch": "boil"
+      },
+      {
+       "text": "The thermometer has stopped working",
+       "branch": "broken"
+      }
+     ],
+     "right": "Yes: the wax is freezing, giving out latent heat, so its temperature stays at 55 °C.",
+     "wrong": {
+      "other": "Not quite: the wax is freezing.",
+      "boil": "Not quite: boiling needs energy in, and the wax is cooling. A flat part while cooling means the liquid wax is freezing.",
+      "broken": "Not quite: a flat part on a cooling curve is expected. The wax is freezing, giving out latent heat."
+     },
+     "idk": [
+      {
+       "hint": "The wax is cooling down. Which change of state happens to a liquid as it cools?"
+      }
+     ],
+     "answerWhy": "A flat part on a cooling curve is a change of state: the liquid wax is freezing, giving out latent heat."
+    },
+    {
+     "id": "1.11",
+     "type": "own",
+     "prompt": "In one line: why is part of a heating curve flat?",
+     "points": [
+      "the substance is changing state",
+      "the energy raises the particles' potential energy, not their kinetic energy, so the temperature stays the same"
+     ],
+     "idk": "No problem. A good line would be: on a flat part the substance is changing state; the energy raises the particles' potential energy, so the temperature stays the same."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Specific latent heat — the equation E = mL",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "Different substances need different amounts of energy to change state. The energy needed to change the state of 1 kg of a substance, with no change in temperature, is its specific latent heat."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "Melting and freezing use the specific latent heat of fusion: here fusion means melting. For water it is 334 000 J/kg."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "Boiling and condensing use the specific latent heat of vaporisation: the energy per kilogram to boil or condense a substance. For water it is 2 260 000 J/kg, almost seven times as much."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "Vaporisation needs more because boiling must pull the particles completely apart, far from each other. Melting only loosens them: they stay close together."
+    },
+    {
+     "id": "2.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Why does boiling away 1 kg of water take far more energy than melting 1 kg of ice?",
+     "options": [
+      {
+       "text": "Boiling pulls the particles completely apart",
+       "branch": "right"
+      },
+      {
+       "text": "Boiling happens at a higher temperature",
+       "branch": "hotter"
+      },
+      {
+       "text": "Water has more particles than ice",
+       "branch": "more"
+      }
+     ],
+     "right": "Yes: in a gas the particles end up far apart, which needs far more energy than loosening them.",
+     "wrong": {
+      "other": "Not quite: boiling pulls the particles completely apart.",
+      "hotter": "Not quite: the temperature is not the reason. Boiling pulls the particles completely apart, which needs far more energy than loosening them.",
+      "more": "Not quite: 1 kg of ice and 1 kg of water have the same particles. Boiling pulls them completely apart, which needs more energy."
+     },
+     "idk": [
+      {
+       "hint": "Think about where the particles end up: close together in a liquid, or far apart in a gas?"
+      }
+     ],
+     "answerWhy": "Boiling pulls the particles completely apart, which needs far more energy than melting, where they stay close."
+    },
+    {
+     "id": "2.6",
+     "type": "say",
+     "text": "The equation is E = mL: energy = mass × specific latent heat. E is the energy in joules (J), m is the mass that changes state in kilograms (kg), and L is the specific latent heat in joules per kilogram (J/kg)."
+    },
+    {
+     "id": "2.7",
+     "type": "say",
+     "text": "Do not mix up the two \"specific\" quantities. Latent heat is for a change of state at a steady temperature; heat capacity is for a change of temperature within one state."
+    },
+    {
+     "id": "2.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A kettle keeps 1 kg of water boiling at 100 °C until it has all gone. Which value tells you the energy needed?",
+     "options": [
+      {
+       "text": "The specific latent heat of vaporisation",
+       "branch": "right"
+      },
+      {
+       "text": "The specific heat capacity",
+       "branch": "shc"
+      },
+      {
+       "text": "The specific latent heat of fusion",
+       "branch": "fusion"
+      }
+     ],
+     "right": "Yes: the water changes from liquid to gas, so it is the specific latent heat of vaporisation.",
+     "wrong": {
+      "other": "Not quite: the specific latent heat of vaporisation.",
+      "shc": "Not quite: the temperature stays at 100 °C, so this is not specific heat capacity. Liquid to gas uses the specific latent heat of vaporisation.",
+      "fusion": "Not quite: fusion is melting. Liquid to gas uses the specific latent heat of vaporisation."
+     },
+     "idk": [
+      {
+       "hint": "Is the state changing or the temperature? And is it melting or boiling?"
+      }
+     ],
+     "answerWhy": "The state changes from liquid to gas with no temperature change, so it is the specific latent heat of vaporisation."
+    },
+    {
+     "id": "2.9",
+     "type": "own",
+     "prompt": "In one line: what is the specific latent heat of fusion?",
+     "points": [
+      "the energy needed to melt 1 kg of a substance",
+      "with no change in temperature"
+     ],
+     "idk": "No problem. A good line would be: the energy needed to melt 1 kg of a substance, with no change in its temperature."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Calculations using E = mL",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "How much energy is needed to melt 2 kg of ice at 0 °C? L for melting ice is 334 000 J/kg.",
+     "steps": [
+      "Write the equation: E = mL.",
+      "Put in the numbers: E = 2 × 334 000.",
+      "E = 668 000 J."
+     ],
+     "answer": {
+      "value": 668000,
+      "unit": "J"
+     }
+    },
+    {
+     "id": "3.2",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. How much energy is needed to boil away 0.5 kg of water at 100 °C? L for boiling water is 2 260 000 J/kg. Give the energy in joules.",
+     "answer": {
+      "value": 1130000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 4520000,
+       "branch": "divide"
+      }
+     ],
+     "right": "Yes: 1 130 000 J. E = mL = 0.5 × 2 260 000 = 1 130 000 J.",
+     "wrong": {
+      "other": "Not quite: 1 130 000 J. E = mL = 0.5 × 2 260 000 = 1 130 000 J.",
+      "divide": "Not quite: 1 130 000 J. Multiply the mass by L, do not divide: 0.5 × 2 260 000 = 1 130 000 J."
+     },
+     "idk": [
+      {
+       "hint": "Use E = mL: multiply the mass, 0.5, by L, 2 260 000."
+      }
+     ],
+     "answerWhy": "E = mL = 0.5 × 2 260 000 = 1 130 000 J."
+    },
+    {
+     "id": "3.3",
+     "type": "say",
+     "text": "Masses are often given in grams: change them into kilograms first, by dividing by 1000. For example, 500 g is 0.5 kg."
+    },
+    {
+     "id": "3.4",
+     "type": "worked",
+     "text": "Here is a worked example of finding L. Its steps open one at a time.",
+     "question": "500 g of a solid takes in 150 000 J as it melts at a steady temperature. What is its specific latent heat?",
+     "steps": [
+      "Change the mass into kilograms: 500 g = 0.5 kg.",
+      "Put the numbers into E = mL: 150 000 = 0.5 × L.",
+      "Divide both sides by 0.5: L = 150 000 ÷ 0.5 = 300 000 J/kg."
+     ],
+     "answer": {
+      "value": 300000,
+      "unit": "J/kg"
+     }
+    },
+    {
+     "id": "3.5",
+     "type": "ask",
+     "kind": "number",
+     "question": "200 g of ice melts. L for melting ice is 334 000 J/kg. How much energy did it take in, in joules?",
+     "answer": {
+      "value": 66800,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 66800000,
+       "branch": "grams"
+      },
+      {
+       "value": 1670,
+       "branch": "divide"
+      }
+     ],
+     "right": "Yes: 66 800 J. 200 g = 0.2 kg, and E = 0.2 × 334 000 = 66 800 J.",
+     "wrong": {
+      "other": "Not quite: 66 800 J. 200 g = 0.2 kg, so E = 0.2 × 334 000 = 66 800 J.",
+      "grams": "Not quite: 66 800 J. Change grams into kilograms first: 200 g = 0.2 kg. Then E = 0.2 × 334 000 = 66 800 J.",
+      "divide": "Not quite: 66 800 J. Change 200 g into 0.2 kg, then multiply: E = 0.2 × 334 000 = 66 800 J."
+     },
+     "idk": [
+      {
+       "hint": "First change 200 g into kilograms by dividing by 1000. Then multiply by 334 000."
+      }
+     ],
+     "answerWhy": "200 g = 0.2 kg, so E = mL = 0.2 × 334 000 = 66 800 J."
+    },
+    {
+     "id": "3.6",
+     "type": "say",
+     "text": "Sometimes you are given a mass before and a mass after. The m in E = mL is only the mass that changed state: the difference between the two."
+    },
+    {
+     "id": "3.7",
+     "type": "ask",
+     "kind": "number",
+     "question": "A beaker of water has a mass of 0.250 kg. After boiling for a while it has a mass of 0.240 kg. A joulemeter shows 23 000 J were supplied. What is L, in J/kg?",
+     "answer": {
+      "value": 2300000,
+      "unit": "J/kg",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 92000,
+       "branch": "whole"
+      },
+      {
+       "value": 95833,
+       "branch": "after"
+      }
+     ],
+     "right": "Yes: 2 300 000 J/kg. The mass boiled away is 0.250 − 0.240 = 0.010 kg, so L = 23 000 ÷ 0.010 = 2 300 000 J/kg.",
+     "wrong": {
+      "other": "Not quite: 2 300 000 J/kg. The mass that boiled is 0.010 kg, so L = 23 000 ÷ 0.010 = 2 300 000 J/kg.",
+      "whole": "Not quite: only the water that boiled away changed state: 0.250 − 0.240 = 0.010 kg. L = 23 000 ÷ 0.010 = 2 300 000 J/kg.",
+      "after": "Not quite: use the mass that boiled away, 0.250 − 0.240 = 0.010 kg. L = 23 000 ÷ 0.010 = 2 300 000 J/kg."
+     },
+     "idk": [
+      {
+       "hint": "First find the mass that boiled away: 0.250 − 0.240. Then L = E ÷ m."
+      }
+     ],
+     "answerWhy": "The mass boiled away is 0.010 kg, so L = E ÷ m = 23 000 ÷ 0.010 = 2 300 000 J/kg."
+    },
+    {
+     "id": "3.8",
+     "type": "say",
+     "text": "To measure L for melting ice, put crushed ice in a funnel with an electric heater in it. A joulemeter measures the energy supplied. The melted water drips into a beaker, and its mass is found on a balance."
+    },
+    {
+     "id": "3.9",
+     "type": "say",
+     "text": "The warm room melts some ice too. To allow for that, set up a second funnel of ice with no heater on, and take its melted mass away from the first."
+    },
+    {
+     "id": "3.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "In this practical, some energy from the heater warms the air instead of the ice. Is the value of L the student calculates too high or too low?",
+     "options": [
+      {
+       "text": "Too high",
+       "branch": "right"
+      },
+      {
+       "text": "Too low",
+       "branch": "low"
+      },
+      {
+       "text": "Neither: it makes no difference",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: the joulemeter counts all the energy, but less ice melts, so E ÷ m comes out too big.",
+     "wrong": {
+      "other": "Not quite: too high.",
+      "low": "Not quite: the joulemeter still counts all the energy, but less ice melts. A big E over a small m gives an L that is too high.",
+      "same": "Not quite: the energy lost still shows on the joulemeter, but melts no ice. So E ÷ m comes out too high."
+     },
+     "idk": [
+      {
+       "hint": "The joulemeter counts all the energy, but does all of it melt ice? Is m then bigger or smaller than it should be?"
+      }
+     ],
+     "answerWhy": "All the energy is counted but less ice melts, so E ÷ m comes out too high."
+    },
+    {
+     "id": "3.11",
+     "type": "own",
+     "prompt": "In one line: in E = mL, what is m, and what unit must it be in?",
+     "points": [
+      "the mass that changes state",
+      "in kilograms"
+     ],
+     "idk": "No problem. A good line would be: m is the mass that changes state, in kilograms."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Applications of latent heat",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "Sweat is mostly water. As it evaporates from your skin it takes in latent heat, over 2000 kJ for every kilogram. That energy comes from your body, so you cool down."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "Sweating cools you best in hot, dry air. In humid air sweat evaporates slowly, so you cool down less."
+    },
+    {
+     "id": "4.3",
+     "type": "say",
+     "text": "Steam at 100 °C burns far worse than water at 100 °C. When steam touches skin it condenses, giving out its latent heat to the skin."
+    },
+    {
+     "id": "4.4",
+     "type": "say",
+     "text": "After condensing, the hot water cools on the skin and gives out more energy. Water at 100 °C gives out only that second part."
+    },
+    {
+     "id": "4.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Why does steam at 100 °C scald worse than water at 100 °C?",
+     "options": [
+      {
+       "text": "As it condenses on the skin, it gives out latent heat as well",
+       "branch": "right"
+      },
+      {
+       "text": "Steam is always hotter than 100 °C",
+       "branch": "hotter"
+      },
+      {
+       "text": "Steam particles are bigger",
+       "branch": "bigger"
+      }
+     ],
+     "right": "Yes: the steam gives out latent heat as it condenses, then more energy as the water cools.",
+     "wrong": {
+      "other": "Not quite: as it condenses on the skin it gives out latent heat as well.",
+      "hotter": "Not quite: here both are at 100 °C. The steam also gives out latent heat as it condenses on the skin.",
+      "bigger": "Not quite: particles are the same size in every state. Steam gives out latent heat as it condenses on the skin."
+     },
+     "idk": [
+      {
+       "hint": "Steam turns into water on the skin. What does a gas give out when it condenses?"
+      }
+     ],
+     "answerWhy": "Steam gives out latent heat as it condenses on the skin, on top of the energy the hot water gives out as it cools."
+    },
+    {
+     "id": "4.6",
+     "type": "own",
+     "prompt": "In one line: how does sweating cool you down?",
+     "points": [
+      "the sweat evaporates",
+      "it takes energy (latent heat) from your body"
+     ],
+     "idk": "No problem. A good line would be: sweat evaporates, taking latent heat from your skin, so your body cools."
+    },
+    {
+     "id": "4.7",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "4.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: a flat part on a heating curve shows…?",
+     "options": [
+      {
+       "text": "A change of state",
+       "branch": "right"
+      },
+      {
+       "text": "The substance warming up",
+       "branch": "w1"
+      },
+      {
+       "text": "No energy going in",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: a change of state, at a steady temperature.",
+     "wrong": {
+      "other": "Not quite: a change of state.",
+      "w1": "Not quite: warming up makes the line climb. A flat part is a change of state.",
+      "w2": "Not quite: energy is still going in. A flat part is a change of state."
+     },
+     "idk": [],
+     "answerWhy": "A flat part on a heating curve is a change of state at a steady temperature.",
+     "quiz": true
+    },
+    {
+     "id": "4.9",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 2 of 6: how much energy melts 3 kg of ice? L = 334 000 J/kg. Give it in joules.",
+     "answer": {
+      "value": 1002000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: E = mL = 3 × 334 000 = 1 002 000 J.",
+     "wrong": {
+      "other": "Not quite: 1 002 000 J. E = mL = 3 × 334 000 = 1 002 000 J."
+     },
+     "idk": [],
+     "answerWhy": "E = mL = 3 × 334 000 = 1 002 000 J.",
+     "quiz": true
+    },
+    {
+     "id": "4.10",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 3 of 6: how much energy boils away 100 g of water? L = 2 260 000 J/kg. Give it in joules.",
+     "answer": {
+      "value": 226000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: 100 g = 0.1 kg, so E = 0.1 × 2 260 000 = 226 000 J.",
+     "wrong": {
+      "other": "Not quite: 226 000 J. 100 g = 0.1 kg, so E = 0.1 × 2 260 000 = 226 000 J."
+     },
+     "idk": [],
+     "answerWhy": "100 g = 0.1 kg, so E = mL = 0.1 × 2 260 000 = 226 000 J.",
+     "quiz": true
+    },
+    {
+     "id": "4.11",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 4 of 6: a substance takes in 90 000 J to melt 0.3 kg. What is its L, in J/kg?",
+     "answer": {
+      "value": 300000,
+      "unit": "J/kg",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: L = E ÷ m = 90 000 ÷ 0.3 = 300 000 J/kg.",
+     "wrong": {
+      "other": "Not quite: 300 000 J/kg. L = E ÷ m = 90 000 ÷ 0.3 = 300 000 J/kg."
+     },
+     "idk": [],
+     "answerWhy": "L = E ÷ m = 90 000 ÷ 0.3 = 300 000 J/kg.",
+     "quiz": true
+    },
+    {
+     "id": "4.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: which is the specific latent heat of fusion?",
+     "options": [
+      {
+       "text": "The energy to melt 1 kg with no change in temperature",
+       "branch": "right"
+      },
+      {
+       "text": "The energy to boil 1 kg with no change in temperature",
+       "branch": "w1"
+      },
+      {
+       "text": "The energy to warm 1 kg by 1 °C",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: fusion means melting.",
+     "wrong": {
+      "other": "Not quite: the energy to melt 1 kg with no change in temperature.",
+      "w1": "Not quite: boiling uses the specific latent heat of vaporisation. Fusion means melting.",
+      "w2": "Not quite: that is specific heat capacity. Fusion means melting: the energy to melt 1 kg."
+     },
+     "idk": [],
+     "answerWhy": "The specific latent heat of fusion is the energy to melt 1 kg with no change in temperature.",
+     "quiz": true
+    },
+    {
+     "id": "4.13",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: which of these gives out latent heat?",
+     "options": [
+      {
+       "text": "Steam condensing",
+       "branch": "right"
+      },
+      {
+       "text": "Ice melting",
+       "branch": "w1"
+      },
+      {
+       "text": "Water boiling",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: condensing gives out latent heat as the particles pull back together.",
+     "wrong": {
+      "other": "Not quite: steam condensing.",
+      "w1": "Not quite: melting takes latent heat in. Condensing gives it out.",
+      "w2": "Not quite: boiling takes latent heat in. Condensing gives it out."
+     },
+     "idk": [],
+     "answerWhy": "Condensing and freezing give out latent heat; melting and boiling take it in.",
+     "quiz": true
+    },
+    {
+     "id": "4.14",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

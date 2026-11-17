@@ -47,12 +47,38 @@
         "A change of state changes how particles are arranged and their energy. Particles are NOT destroyed"
       ],
       "keyTerms": [
-        {"term": "Lattice", "def": "A regular, repeating arrangement of particles in a solid"},
-        {"term": "Incompressible", "def": "Virtually cannot be compressed — volume hardly changes under pressure"},
-        {"term": "Intermolecular forces", "def": "Attractive forces between particles that hold them together"}
+        {
+          "term": "Lattice",
+          "def": "A regular, repeating arrangement of particles in a solid"
+        },
+        {
+          "term": "Incompressible",
+          "def": "Virtually cannot be compressed — volume hardly changes under pressure"
+        },
+        {
+          "term": "Intermolecular forces",
+          "def": "Attractive forces between particles that hold them together"
+        }
       ],
       "memTip": "SLiG: Solid = Lattice, Liquid = loose, Gas = gone (far apart). Each letter steps up in freedom.",
-      "tutor_note": "People often say particles in a solid don't move. They DO vibrate. They just can't change position. Get this one right."
+      "tutor_note": "People often say particles in a solid don't move. They DO vibrate. They just can't change position. Get this one right.",
+      "pictures": [
+        {
+          "diagram": "p3-states-particles",
+          "caption": "Same particles, different arrangement and movement.",
+          "labels": [
+            "Solid",
+            "Regular pattern",
+            "Vibrate in place",
+            "Liquid",
+            "Touching, no pattern",
+            "Slide past each other",
+            "Gas",
+            "Far apart",
+            "Fast, any direction"
+          ]
+        }
+      ]
     },
     {
       "heading": "Internal energy and the particle model",
@@ -68,9 +94,18 @@
         "Particle model — all particles are always moving. Higher temperature = greater average kinetic energy"
       ],
       "keyTerms": [
-        {"term": "Internal energy", "def": "The total kinetic and potential energy stored by all particles in a system"},
-        {"term": "Kinetic energy", "def": "Energy due to motion — particles moving faster have more kinetic energy"},
-        {"term": "Potential energy", "def": "Energy stored due to the forces of attraction between particles"}
+        {
+          "term": "Internal energy",
+          "def": "The total kinetic and potential energy stored by all particles in a system"
+        },
+        {
+          "term": "Kinetic energy",
+          "def": "Energy due to motion — particles moving faster have more kinetic energy"
+        },
+        {
+          "term": "Potential energy",
+          "def": "Energy stored due to the forces of attraction between particles"
+        }
       ],
       "memTip": "Two effects of heating. MOVE faster (kinetic energy ↑) or MOVE apart (potential energy ↑, forces between particles overcome). Temperature only rises for the first one.",
       "tutor_note": "The key exam point: temperature stays constant during a change of state. Draw a heating curve. Mark the flat sections clearly."
@@ -94,12 +129,36 @@
         "Mass is conserved in every change of state"
       ],
       "keyTerms": [
-        {"term": "Melting point", "def": "The temperature at which a substance changes from solid to liquid (same as freezing point)"},
-        {"term": "Boiling point", "def": "The specific temperature at which a liquid boils throughout its volume"},
-        {"term": "Sublimation", "def": "A change of state directly from solid to gas without passing through liquid"}
+        {
+          "term": "Melting point",
+          "def": "The temperature at which a substance changes from solid to liquid (same as freezing point)"
+        },
+        {
+          "term": "Boiling point",
+          "def": "The specific temperature at which a liquid boils throughout its volume"
+        },
+        {
+          "term": "Sublimation",
+          "def": "A change of state directly from solid to gas without passing through liquid"
+        }
       ],
       "memTip": "MFECBS — Melt, Freeze, Evaporate, Condense, Boil, Sublimate. Or think of a heating curve: slope, flat, slope, flat.",
-      "tutor_note": "Evaporation versus boiling is a common exam question. Make sure you can explain the difference clearly."
+      "tutor_note": "Evaporation versus boiling is a common exam question. Make sure you can explain the difference clearly.",
+      "pictures": [
+        {
+          "diagram": "p3-state-changes",
+          "caption": "The six changes of state, and which way energy flows.",
+          "labels": [
+            "Melting",
+            "Freezing",
+            "Boiling or evaporating",
+            "Condensing",
+            "Sublimation",
+            "Energy in",
+            "Energy out"
+          ]
+        }
+      ]
     },
     {
       "heading": "Limitations of the particle model",
@@ -116,8 +175,14 @@
         "Scientific models are powerful tools, even when they have limits"
       ],
       "keyTerms": [
-        {"term": "Model", "def": "A simplified representation of reality used to explain and predict observations"},
-        {"term": "Diffusion", "def": "The spreading out of particles from high to low concentration due to random motion"}
+        {
+          "term": "Model",
+          "def": "A simplified representation of reality used to explain and predict observations"
+        },
+        {
+          "term": "Diffusion",
+          "def": "The spreading out of particles from high to low concentration due to random motion"
+        }
       ],
       "memTip": "All models are wrong, but some are useful. The particle model is very useful at GCSE, even though it is simplified.",
       "tutor_note": "Practise explaining what the particle model gets right and where it is limited."
@@ -127,15 +192,55 @@
     {
       "title": "Comparing the three states of matter",
       "examFlag": true,
-      "headers": ["Property", "Solid", "Liquid", "Gas"],
+      "headers": [
+        "Property",
+        "Solid",
+        "Liquid",
+        "Gas"
+      ],
       "rows": [
-        ["Particle arrangement", "Regular lattice", "Close, irregular", "Far apart, random"],
-        ["Particle movement", "Vibrate about fixed positions", "Move past each other", "Move rapidly in all directions"],
-        ["Forces between particles", "Strong", "Weaker", "Negligible (essentially none)"],
-        ["Shape", "Fixed", "Takes shape of container", "Fills entire container"],
-        ["Volume", "Fixed", "Fixed", "No fixed volume"],
-        ["Compressibility", "Virtually incompressible", "Virtually incompressible", "Highly compressible"],
-        ["Density", "High", "High (usually a little less than solid)", "Very low"]
+        [
+          "Particle arrangement",
+          "Regular lattice",
+          "Close, irregular",
+          "Far apart, random"
+        ],
+        [
+          "Particle movement",
+          "Vibrate about fixed positions",
+          "Move past each other",
+          "Move rapidly in all directions"
+        ],
+        [
+          "Forces between particles",
+          "Strong",
+          "Weaker",
+          "Negligible (essentially none)"
+        ],
+        [
+          "Shape",
+          "Fixed",
+          "Takes shape of container",
+          "Fills entire container"
+        ],
+        [
+          "Volume",
+          "Fixed",
+          "Fixed",
+          "No fixed volume"
+        ],
+        [
+          "Compressibility",
+          "Virtually incompressible",
+          "Virtually incompressible",
+          "Highly compressible"
+        ],
+        [
+          "Density",
+          "High",
+          "High (usually a little less than solid)",
+          "Very low"
+        ]
       ]
     }
   ],

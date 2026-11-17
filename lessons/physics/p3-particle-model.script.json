@@ -1,0 +1,838 @@
+{
+ "lesson": "p3-particle-model",
+ "version": 1,
+ "about": "The scripted AI lesson for p3-particle-model (2026-11-17, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p1-energy-stores.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "The three states of matter",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about solids, liquids and gases: what they are made of, and why each one behaves as it does."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from earlier lessons. A ball rolls across the floor. Which of its energy stores is filled by its movement?",
+     "options": [
+      {
+       "text": "Kinetic",
+       "branch": "right"
+      },
+      {
+       "text": "Chemical",
+       "branch": "chem"
+      },
+      {
+       "text": "Elastic potential",
+       "branch": "elastic"
+      }
+     ],
+     "right": "Yes: a moving object has energy in its kinetic store.",
+     "wrong": {
+      "other": "Not quite: kinetic, the store for moving things.",
+      "chem": "Not quite: the chemical store is in fuels and food. A moving ball has energy in its kinetic store.",
+      "elastic": "Not quite: nothing is stretched or squashed. A moving ball has energy in its kinetic store."
+     },
+     "idk": [
+      {
+       "hint": "Which store is about movement?"
+      }
+     ],
+     "answerWhy": "A moving object has energy in its kinetic store."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: a hot cup of tea cools down on the table. Which store of the tea empties?",
+     "options": [
+      {
+       "text": "Thermal",
+       "branch": "right"
+      },
+      {
+       "text": "Kinetic",
+       "branch": "kinetic"
+      },
+      {
+       "text": "Chemical",
+       "branch": "chem"
+      }
+     ],
+     "right": "Yes: as the tea cools, its thermal store empties into the surroundings.",
+     "wrong": {
+      "other": "Not quite: thermal, the store for how hot something is.",
+      "kinetic": "Not quite: the tea is not moving across the table. Its thermal store empties as it cools.",
+      "chem": "Not quite: nothing burns. The tea's thermal store empties as it cools."
+     },
+     "idk": [
+      {
+       "hint": "The tea gets colder. Which store is about how hot something is?"
+      }
+     ],
+     "answerWhy": "The tea's thermal store empties as it cools, warming the surroundings."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. Everything around you is made of tiny particles: atoms and molecules. They are far too small to see, and they never stop moving."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "Matter comes in three states: solid, liquid and gas. Ice, water and steam are one substance in its three states. The particles stay the same; only their arrangement and movement change."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "In a solid, the particles are packed close together in a regular pattern. Strong forces of attraction hold each one in its place."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "Held in place, they cannot swap places, but they are not still: each particle vibrates, jiggling to and fro about a fixed position."
+    },
+    {
+     "id": "1.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Ice is a solid. Which describes the particles in an ice cube?",
+     "options": [
+      {
+       "text": "Close together in a regular pattern, vibrating in place",
+       "branch": "right"
+      },
+      {
+       "text": "Close together and completely still",
+       "branch": "still"
+      },
+      {
+       "text": "Far apart and moving fast",
+       "branch": "gas"
+      }
+     ],
+     "right": "Yes: close together in a regular pattern, each one vibrating about a fixed position.",
+     "wrong": {
+      "other": "Not quite: in a solid the particles are close together in a regular pattern, vibrating in place.",
+      "still": "Nearly: they are close together, but never still. Each one vibrates about a fixed position.",
+      "gas": "Not quite: far apart and fast is a gas. In ice the particles are close together in a regular pattern, vibrating in place."
+     },
+     "idk": [
+      {
+       "hint": "A solid keeps its shape. Are its particles close or far apart, and can they move at all?"
+      }
+     ],
+     "answerWhy": "In a solid the particles are close together in a regular pattern, and each vibrates about a fixed position."
+    },
+    {
+     "id": "1.7",
+     "type": "say",
+     "text": "Because its particles are held in place, a solid keeps its shape and its volume. A solid is also incompressible: you cannot squash it into a smaller space, because its particles are already touching."
+    },
+    {
+     "id": "1.8",
+     "type": "say",
+     "text": "In a liquid, the particles touch each other too, but they are jumbled, with no pattern. The forces between them are weaker, so they can slide past each other."
+    },
+    {
+     "id": "1.9",
+     "type": "say",
+     "text": "A liquid flows and takes the shape of its container, but its volume stays fixed. You cannot squash a liquid much either."
+    },
+    {
+     "id": "1.10",
+     "type": "say",
+     "text": "In a gas, the particles are far apart and move fast in random directions. The forces between them are almost zero."
+    },
+    {
+     "id": "1.11",
+     "type": "say",
+     "text": "A gas has no fixed shape or volume: it spreads out to fill any container. Most of a gas is empty space, so you can squash it into a smaller volume."
+    },
+    {
+     "id": "1.12",
+     "type": "say",
+     "text": "The gaps between gas particles hold nothing at all, not even air."
+    },
+    {
+     "id": "1.13",
+     "type": "say",
+     "picture": "p3-states-particles",
+     "text": "The picture shows the three states side by side. Notice that each particle is drawn the same size in all three."
+    },
+    {
+     "id": "1.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A syringe is sealed at the end. You can push the plunger in when it holds air, but not when it holds water. Why?",
+     "options": [
+      {
+       "text": "Air particles are far apart, with empty space between them",
+       "branch": "right"
+      },
+      {
+       "text": "Air particles are smaller and softer than water particles",
+       "branch": "soft"
+      },
+      {
+       "text": "Water particles are too heavy to move",
+       "branch": "heavy"
+      }
+     ],
+     "right": "Yes: the air particles have empty space between them to close up. Water particles are already touching.",
+     "wrong": {
+      "other": "Not quite: air particles are far apart, with empty space between them; water particles are touching.",
+      "soft": "Not quite: particles do not change size or get softer. Air particles are far apart, so there is space to close up.",
+      "heavy": "Not quite: weight is not the reason. Water particles are already touching, while air particles have empty space between them."
+     },
+     "idk": [
+      {
+       "hint": "Think about the gaps between the particles in a gas and in a liquid."
+      }
+     ],
+     "answerWhy": "Gas particles are far apart, with empty space to close up; liquid particles are already touching."
+    },
+    {
+     "id": "1.15",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which state has particles that are close together but can slide past each other?",
+     "options": [
+      {
+       "text": "Liquid",
+       "branch": "right"
+      },
+      {
+       "text": "Solid",
+       "branch": "solid"
+      },
+      {
+       "text": "Gas",
+       "branch": "gas"
+      }
+     ],
+     "right": "Yes: a liquid. Its particles touch but can move past each other, so it flows.",
+     "wrong": {
+      "other": "Not quite: a liquid.",
+      "solid": "Not quite: in a solid the particles only vibrate in place; they cannot slide past each other. That is a liquid.",
+      "gas": "Not quite: gas particles are far apart. Close together but sliding past each other is a liquid."
+     },
+     "idk": [
+      {
+       "hint": "Which state flows but keeps its volume?"
+      }
+     ],
+     "answerWhy": "In a liquid the particles are close together but can slide past each other."
+    },
+    {
+     "id": "1.16",
+     "type": "own",
+     "prompt": "In one line: how are the particles arranged in a solid, and how do they move?",
+     "points": [
+      "close together in a regular pattern",
+      "vibrate about fixed positions"
+     ],
+     "idk": "No problem. A good line would be: in a solid the particles are close together in a regular pattern, and they vibrate about fixed positions."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Internal energy and the particle model",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "The particles in a substance have energy in two ways. Because they move, they have kinetic energy: the energy of movement."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "Because of the forces of attraction between them, they also have potential energy: energy stored by those forces. Pulling particles further apart raises their potential energy."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "The internal energy of a substance is the total kinetic and potential energy of all its particles."
+    },
+    {
+     "id": "2.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A cup of water and a bath of water are both at 20 °C. Which has more internal energy?",
+     "options": [
+      {
+       "text": "The bath: it has far more particles",
+       "branch": "right"
+      },
+      {
+       "text": "Neither: they are at the same temperature",
+       "branch": "same"
+      },
+      {
+       "text": "The cup: its particles are closer together",
+       "branch": "cup"
+      }
+     ],
+     "right": "Yes: internal energy adds up the energy of all the particles, so far more particles means far more internal energy.",
+     "wrong": {
+      "other": "Not quite: the bath, because it has far more particles.",
+      "same": "Not quite: the same temperature does not mean the same total. The bath has far more particles, so far more internal energy.",
+      "cup": "Not quite: the particles are just as close in both. The bath has far more particles, so far more internal energy."
+     },
+     "idk": [
+      {
+       "hint": "Internal energy adds up the energy of every particle. Which has more particles?"
+      }
+     ],
+     "answerWhy": "Internal energy is the total for all the particles, and the bath has far more particles."
+    },
+    {
+     "id": "2.5",
+     "type": "say",
+     "text": "Heating a substance raises its internal energy, in one of two ways."
+    },
+    {
+     "id": "2.6",
+     "type": "say",
+     "text": "First way: the particles move faster, so their kinetic energy rises. A thermometer shows this as a rise in temperature: the hotter something is, the faster its particles move on average."
+    },
+    {
+     "id": "2.7",
+     "type": "say",
+     "text": "Second way: the substance changes state, for example ice melts. The energy pulls the particles apart against the forces between them, so their potential energy rises while the temperature stays the same."
+    },
+    {
+     "id": "2.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Ice is melting in a pan at 0 °C, and its temperature is not rising. What is the energy from the hob doing?",
+     "options": [
+      {
+       "text": "Raising the particles' potential energy",
+       "branch": "right"
+      },
+      {
+       "text": "Making the particles move faster",
+       "branch": "faster"
+      },
+      {
+       "text": "Nothing: it is lost",
+       "branch": "lost"
+      }
+     ],
+     "right": "Yes: during melting the energy pulls the particles apart, so their potential energy rises. Their kinetic energy, and the temperature, stay the same.",
+     "wrong": {
+      "other": "Not quite: it raises the particles' potential energy, pulling them apart.",
+      "faster": "Not quite: if the particles moved faster, the temperature would rise. The energy raises their potential energy, pulling them apart.",
+      "lost": "Not quite: energy is never lost. It raises the particles' potential energy, pulling them apart, so the internal energy rises."
+     },
+     "idk": [
+      {
+       "hint": "The temperature is steady, so the particles are not speeding up. Which kind of energy is left?"
+      }
+     ],
+     "answerWhy": "The temperature is steady, so the kinetic energy is not changing; the energy raises the particles' potential energy."
+    },
+    {
+     "id": "2.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Water is boiling at 100 °C. Which is right for its particles while it boils?",
+     "options": [
+      {
+       "text": "Potential energy rises; kinetic energy stays the same",
+       "branch": "right"
+      },
+      {
+       "text": "Kinetic energy rises; potential energy stays the same",
+       "branch": "swap"
+      },
+      {
+       "text": "Both rise",
+       "branch": "both"
+      }
+     ],
+     "right": "Yes: the temperature is steady, so the kinetic energy stays the same, while pulling the particles apart raises their potential energy.",
+     "wrong": {
+      "other": "Not quite: potential energy rises and kinetic energy stays the same.",
+      "swap": "Not quite: that is the wrong way round. The temperature is steady, so the kinetic energy stays the same; the potential energy rises as the particles are pulled apart.",
+      "both": "Not quite: the temperature stays at 100 °C, so the kinetic energy does not rise. Only the potential energy rises."
+     },
+     "idk": [
+      {
+       "hint": "Is the temperature changing while it boils? That tells you about the kinetic energy."
+      }
+     ],
+     "answerWhy": "The temperature is steady, so the kinetic energy stays the same; the potential energy rises as the particles are pulled apart."
+    },
+    {
+     "id": "2.10",
+     "type": "own",
+     "prompt": "In one line: what is internal energy?",
+     "points": [
+      "the total kinetic and potential energy",
+      "of all the particles"
+     ],
+     "idk": "No problem. A good line would be: internal energy is the total kinetic and potential energy of all the particles in a substance."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Changes of state",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Changing from one state to another is called a change of state. Melting is solid to liquid, and freezing is liquid back to solid."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "The temperature at which a solid turns to liquid is its melting point. A liquid freezes at that same temperature: for water, both happen at 0 °C."
+    },
+    {
+     "id": "3.3",
+     "type": "say",
+     "text": "Boiling turns a liquid into a gas all through the liquid, with bubbles of gas forming inside it. Boiling happens at one temperature, the boiling point: 100 °C for water."
+    },
+    {
+     "id": "3.4",
+     "type": "say",
+     "text": "Evaporation also turns a liquid into a gas, but only at its surface, and at any temperature. The fastest particles escape from the surface, which is why wet washing dries on a cold day."
+    },
+    {
+     "id": "3.5",
+     "type": "say",
+     "text": "Condensing is a gas turning back into a liquid, like steam misting a cold window. Sublimation is a solid turning straight into a gas, like dry ice (solid carbon dioxide)."
+    },
+    {
+     "id": "3.6",
+     "type": "say",
+     "picture": "p3-state-changes",
+     "text": "The picture shows all six changes. Going right needs energy in; going left gives energy out."
+    },
+    {
+     "id": "3.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which change happens only at the surface of a liquid, at any temperature?",
+     "options": [
+      {
+       "text": "Evaporation",
+       "branch": "right"
+      },
+      {
+       "text": "Boiling",
+       "branch": "boil"
+      },
+      {
+       "text": "Condensing",
+       "branch": "cond"
+      }
+     ],
+     "right": "Yes: evaporation, at the surface, at any temperature.",
+     "wrong": {
+      "other": "Not quite: evaporation.",
+      "boil": "Not quite: boiling happens all through the liquid, at the boiling point. Surface only, at any temperature, is evaporation.",
+      "cond": "Not quite: condensing is gas turning into liquid. Surface only, at any temperature, is evaporation."
+     },
+     "idk": [
+      {
+       "hint": "Think of wet washing drying on a cold day. What is that called?"
+      }
+     ],
+     "answerWhy": "Evaporation happens at the surface of a liquid at any temperature; boiling happens all through it at the boiling point."
+    },
+    {
+     "id": "3.8",
+     "type": "say",
+     "text": "While a pure substance melts, freezes, boils or condenses, its temperature stays the same, just as with the melting ice."
+    },
+    {
+     "id": "3.9",
+     "type": "say",
+     "text": "In every change of state the mass stays the same. The particles are only rearranged: none are made or destroyed."
+    },
+    {
+     "id": "3.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "100 g of ice melts completely in a sealed bag. What is the mass of the water?",
+     "options": [
+      {
+       "text": "100 g",
+       "branch": "right"
+      },
+      {
+       "text": "Less than 100 g",
+       "branch": "less"
+      },
+      {
+       "text": "More than 100 g",
+       "branch": "more"
+      }
+     ],
+     "right": "Yes: 100 g. The same particles are there, just rearranged.",
+     "wrong": {
+      "other": "Not quite: 100 g.",
+      "less": "Not quite: nothing escapes from the sealed bag and no particles are destroyed, so the water is still 100 g.",
+      "more": "Not quite: no particles are added, so the water is still 100 g."
+     },
+     "idk": [
+      {
+       "hint": "Are any particles made or destroyed when ice melts?"
+      }
+     ],
+     "answerWhy": "Mass stays the same in a change of state, so the water is 100 g."
+    },
+    {
+     "id": "3.11",
+     "type": "say",
+     "text": "Changes of state are physical changes: reverse one and the substance gets back its original properties. Melted chocolate sets again as chocolate. Burning is a chemical change: ash cannot be turned back into wood."
+    },
+    {
+     "id": "3.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which of these is a physical change?",
+     "options": [
+      {
+       "text": "Water freezing into ice",
+       "branch": "right"
+      },
+      {
+       "text": "Wood burning to ash",
+       "branch": "burn"
+      },
+      {
+       "text": "Iron rusting",
+       "branch": "rust"
+      }
+     ],
+     "right": "Yes: melt the ice again and you have water back.",
+     "wrong": {
+      "other": "Not quite: water freezing into ice.",
+      "burn": "Not quite: burning makes new substances, so it is a chemical change. Water freezing is physical: melt the ice and you have water back.",
+      "rust": "Not quite: rust is a new substance, so rusting is a chemical change. Water freezing is physical."
+     },
+     "idk": [
+      {
+       "hint": "Which one can you undo, to get the same substance back?"
+      }
+     ],
+     "answerWhy": "Freezing is a change of state, so it is physical: melting the ice gives water back."
+    },
+    {
+     "id": "3.13",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Ethanol melts at −114 °C and boils at 78 °C. What state is it in at 20 °C?",
+     "options": [
+      {
+       "text": "Liquid",
+       "branch": "right"
+      },
+      {
+       "text": "Solid",
+       "branch": "solid"
+      },
+      {
+       "text": "Gas",
+       "branch": "gas"
+      }
+     ],
+     "right": "Yes: 20 °C is above its melting point but below its boiling point, so it is a liquid.",
+     "wrong": {
+      "other": "Not quite: a liquid.",
+      "solid": "Not quite: 20 °C is far above its melting point of −114 °C, so it has melted. It is below its boiling point, so it is a liquid.",
+      "gas": "Not quite: 20 °C is below its boiling point of 78 °C, so it has not boiled. It is a liquid."
+     },
+     "idk": [
+      {
+       "hint": "Is 20 °C above or below each of the two temperatures?"
+      }
+     ],
+     "answerWhy": "20 °C is above the melting point and below the boiling point, so ethanol is a liquid."
+    },
+    {
+     "id": "3.14",
+     "type": "own",
+     "prompt": "In one line: what is the difference between evaporation and boiling?",
+     "points": [
+      "evaporation happens only at the surface, at any temperature",
+      "boiling happens all through the liquid, at the boiling point"
+     ],
+     "idk": "No problem. A good line would be: evaporation happens only at the surface, at any temperature; boiling happens all through the liquid, at the boiling point."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Limitations of the particle model",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "Everything in this lesson so far is a model: a simple picture of what we cannot see, used to explain and predict. This one is called the particle model."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "The particle model explains a lot: why a gas is easy to squash, why a solid keeps its shape, and why a gas presses on the walls of its container."
+    },
+    {
+     "id": "4.3",
+     "type": "say",
+     "text": "Diffusion is explained too: particles moving at random spread out from where there are many to where there are few. A smell spreads across a room in this way."
+    },
+    {
+     "id": "4.4",
+     "type": "say",
+     "text": "But a model is not the real thing. The particle model draws every particle as a solid ball, and all the particles of a substance as identical."
+    },
+    {
+     "id": "4.5",
+     "type": "say",
+     "text": "Real particles are atoms and molecules of different sizes and shapes. Diagrams are not to scale either: in a real gas, the gaps between particles are far bigger than any drawing shows."
+    },
+    {
+     "id": "4.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which of these is a limitation of the particle model?",
+     "options": [
+      {
+       "text": "It shows particles as identical solid spheres",
+       "branch": "right"
+      },
+      {
+       "text": "It cannot explain why a gas can be squashed",
+       "branch": "squash"
+      },
+      {
+       "text": "It cannot explain how a smell spreads",
+       "branch": "smell"
+      }
+     ],
+     "right": "Yes: real particles are not identical solid balls.",
+     "wrong": {
+      "other": "Not quite: it shows particles as identical solid spheres.",
+      "squash": "Not quite: the model does explain that: gas particles have empty space between them. Its limitation is drawing particles as identical solid spheres.",
+      "smell": "Not quite: the model explains that as diffusion. Its limitation is drawing particles as identical solid spheres."
+     },
+     "idk": [
+      {
+       "hint": "A limitation is something the model gets wrong about real particles. Which option is about how particles are drawn?"
+      }
+     ],
+     "answerWhy": "The particle model shows particles as identical solid spheres, which real atoms and molecules are not."
+    },
+    {
+     "id": "4.7",
+     "type": "own",
+     "prompt": "In one line: name one thing the particle model explains, and one way real particles differ from it.",
+     "points": [
+      "something it explains (squashing a gas, gas pressure, diffusion, a solid keeping its shape)",
+      "real particles are not identical solid spheres, or the drawings are not to scale"
+     ],
+     "idk": "No problem. A good line would be: the particle model explains why a gas can be squashed, but real particles are not identical solid spheres."
+    },
+    {
+     "id": "4.8",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "4.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: which state has particles far apart, moving fast in random directions?",
+     "options": [
+      {
+       "text": "Gas",
+       "branch": "right"
+      },
+      {
+       "text": "Liquid",
+       "branch": "w1"
+      },
+      {
+       "text": "Solid",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: a gas.",
+     "wrong": {
+      "other": "Not quite: a gas. Its particles are far apart and move fast in random directions.",
+      "w1": "Not quite: liquid particles are close together. Far apart and fast is a gas.",
+      "w2": "Not quite: solid particles are close together and vibrate in place. Far apart and fast is a gas."
+     },
+     "idk": [],
+     "answerWhy": "In a gas the particles are far apart and move fast in random directions.",
+     "quiz": true
+    },
+    {
+     "id": "4.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 6: what is internal energy?",
+     "options": [
+      {
+       "text": "The total kinetic and potential energy of all the particles",
+       "branch": "right"
+      },
+      {
+       "text": "The temperature of a substance",
+       "branch": "w1"
+      },
+      {
+       "text": "The kinetic energy of one particle",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: the total kinetic and potential energy of all the particles.",
+     "wrong": {
+      "other": "Not quite: it is the total kinetic and potential energy of all the particles.",
+      "w1": "Not quite: temperature is linked to the particles' kinetic energy. Internal energy is the total kinetic and potential energy of all the particles.",
+      "w2": "Not quite: it adds up all the particles, and their potential energy too."
+     },
+     "idk": [],
+     "answerWhy": "Internal energy is the total kinetic and potential energy of all the particles.",
+     "quiz": true
+    },
+    {
+     "id": "4.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: while ice melts at 0 °C, which is true of its temperature?",
+     "options": [
+      {
+       "text": "It stays at 0 °C",
+       "branch": "right"
+      },
+      {
+       "text": "It rises steadily",
+       "branch": "w1"
+      },
+      {
+       "text": "It falls",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: it stays at 0 °C until all the ice has melted.",
+     "wrong": {
+      "other": "Not quite: it stays at 0 °C while the ice melts.",
+      "w1": "Not quite: the energy raises the particles' potential energy, not their kinetic energy, so the temperature stays at 0 °C.",
+      "w2": "Not quite: energy is going in, and the temperature stays at 0 °C while it melts."
+     },
+     "idk": [],
+     "answerWhy": "While a substance changes state its temperature stays the same.",
+     "quiz": true
+    },
+    {
+     "id": "4.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: a 50 g block of wax melts. What is the mass of the liquid wax?",
+     "options": [
+      {
+       "text": "50 g",
+       "branch": "right"
+      },
+      {
+       "text": "Less than 50 g",
+       "branch": "w1"
+      },
+      {
+       "text": "More than 50 g",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: 50 g. Mass stays the same in a change of state.",
+     "wrong": {
+      "other": "Not quite: 50 g. Mass stays the same in a change of state."
+     },
+     "idk": [],
+     "answerWhy": "Mass stays the same in a change of state, so the liquid wax is 50 g.",
+     "quiz": true
+    },
+    {
+     "id": "4.13",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: which change turns a solid straight into a gas?",
+     "options": [
+      {
+       "text": "Sublimation",
+       "branch": "right"
+      },
+      {
+       "text": "Melting",
+       "branch": "w1"
+      },
+      {
+       "text": "Condensing",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: sublimation.",
+     "wrong": {
+      "other": "Not quite: sublimation.",
+      "w1": "Not quite: melting turns a solid into a liquid. Solid straight to gas is sublimation.",
+      "w2": "Not quite: condensing is gas to liquid. Solid straight to gas is sublimation."
+     },
+     "idk": [],
+     "answerWhy": "Sublimation turns a solid straight into a gas, as dry ice does.",
+     "quiz": true
+    },
+    {
+     "id": "4.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: mercury melts at −39 °C and boils at 357 °C. What state is it in at 400 °C?",
+     "options": [
+      {
+       "text": "Gas",
+       "branch": "right"
+      },
+      {
+       "text": "Liquid",
+       "branch": "w1"
+      },
+      {
+       "text": "Solid",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: 400 °C is above its boiling point, so it is a gas.",
+     "wrong": {
+      "other": "Not quite: a gas. 400 °C is above its boiling point of 357 °C.",
+      "w1": "Not quite: 400 °C is above its boiling point of 357 °C, so it has boiled: it is a gas.",
+      "w2": "Not quite: 400 °C is far above both temperatures, so it is a gas."
+     },
+     "idk": [],
+     "answerWhy": "400 °C is above mercury's boiling point of 357 °C, so it is a gas.",
+     "quiz": true
+    },
+    {
+     "id": "4.15",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

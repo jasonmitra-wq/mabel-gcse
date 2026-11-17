@@ -90,3 +90,11 @@ From the same files, local and gitignored: data/exam/p2-rest-ms-extract.txt
 (every mark-scheme part tagged 4.2.2 to 4.2.5, 213 parts) and
 data/exam/p2-rest-outcomes.md (question types and mark-scheme points by
 section, examiner-named errors E29 to E44).
+
+## P1 Energy (2026-11-17)
+
+Brief docs/briefs/2026-11-15-script-four-topics.md, step B1: no new downloads.
+From the same files, local and gitignored: data/exam/p1-ms-extract.txt (every
+mark-scheme part tagged 4.1, 175 parts) and data/exam/p1-outcomes.md
+(question types and mark-scheme points by section, examiner-named errors E45
+to E66).

@@ -1,0 +1,7 @@
+RUN
+Mode: --blocking-only (missing_spec_content, above_gcse, factual_errors)
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+p1-efficiency | 4.1.2.2 | 18034 | 4509 | 0.3380
+TOTAL 1 lesson(s) | 18034 chars | 4509 est. input tokens | 16000 output tokens assumed | $0.3380
+Rates: $4 per M input, $20 per M output; output assumed at the 16000-token ceiling per lesson.
+GET /v1/models failed: HTTP 401 {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"},"request_id":"req_011Ch8cDRpFmHY7Am4J5XLKW"}

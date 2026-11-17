@@ -1,0 +1,924 @@
+{
+ "lesson": "p1-energy-stores",
+ "version": 1,
+ "about": "The scripted AI lesson for p1-energy-stores (2026-11-17, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. The first lesson of P1, so there are no recall questions from earlier lessons.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "The eight energy stores",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about energy: the ways it can be held in things, how it moves from one place to another, and why some of it always ends up where nobody wanted it."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Energy is what is needed to make things happen: to make things move, heat up, light up or make a sound. You cannot see energy itself, but you can see what it does."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "Energy is measured in joules, written J. One joule is a small amount: lifting an apple from the floor onto a table takes about 1 J."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "Energy can be held in an object in different ways, called energy stores. There are eight of them, and the exam wants their exact names. They come one at a time."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "First, the kinetic store: the energy of anything moving. A car on the road, a kicked ball and a running person all have energy in their kinetic store."
+    },
+    {
+     "id": "1.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A football is lying still on the grass. Does it have energy in its kinetic store?",
+     "options": [
+      {
+       "text": "No: it is not moving",
+       "branch": "right"
+      },
+      {
+       "text": "Yes: it is heavy",
+       "branch": "heavy"
+      },
+      {
+       "text": "Yes: someone could kick it",
+       "branch": "could"
+      }
+     ],
+     "right": "Yes, that's right: no. The kinetic store is for moving things, and a ball lying still has none, however heavy it is.",
+     "wrong": {
+      "other": "Not quite: no. Only moving things have energy in their kinetic store.",
+      "heavy": "Not quite: no. Being heavy does not matter. The kinetic store is only for moving things, and the ball is lying still.",
+      "could": "Not quite: no. It might move later, but right now it is still, so its kinetic store is empty."
+     },
+     "idk": [
+      {
+       "hint": "Kinetic is the store for moving things. Is the ball moving?"
+      }
+     ],
+     "answerWhy": "Only moving things have energy in their kinetic store, so a ball lying still has none."
+    },
+    {
+     "id": "1.7",
+     "type": "say",
+     "text": "Second, the gravitational potential store: the energy of anything raised up. A book on a high shelf, or a roller coaster at the top of a hill, has energy in its gravitational potential store."
+    },
+    {
+     "id": "1.8",
+     "type": "say",
+     "text": "Third, the elastic potential store: the energy of anything stretched or squashed. A stretched spring, a drawn bow and a squashed rubber ball all have energy in it."
+    },
+    {
+     "id": "1.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "An archer pulls back a bowstring and holds it still. Which store holds energy because of the bent bow?",
+     "options": [
+      {
+       "text": "Elastic potential",
+       "branch": "right"
+      },
+      {
+       "text": "Kinetic",
+       "branch": "kinetic"
+      },
+      {
+       "text": "Gravitational potential",
+       "branch": "gravity"
+      }
+     ],
+     "right": "Yes: elastic potential. The bow is bent and the string stretched, and stretched or squashed things have energy in their elastic potential store.",
+     "wrong": {
+      "other": "Not quite: elastic potential, because the bow is bent and the string stretched.",
+      "kinetic": "Not quite: elastic potential. Nothing is moving while the archer holds still, so there is no kinetic store yet. The bow is bent, and bent or stretched things fill the elastic potential store.",
+      "gravity": "Not quite: elastic potential. The bow has not been lifted higher; it has been bent, and bent or stretched things fill the elastic potential store."
+     },
+     "idk": [
+      {
+       "hint": "The bow is bent and the string is stretched. Which store is for stretched or squashed things?"
+      }
+     ],
+     "answerWhy": "The bow is bent and the string stretched, so the energy is in the elastic potential store."
+    },
+    {
+     "id": "1.10",
+     "type": "say",
+     "text": "Fourth, the thermal store, which depends on how hot something is. Every object has some energy in its thermal store. A hot cup of tea has more than the same tea once it has gone cold."
+    },
+    {
+     "id": "1.11",
+     "type": "say",
+     "text": "Fifth, the chemical store: energy held in food, in fuels such as petrol and wood, and in batteries. Burning a fuel or digesting food releases it."
+    },
+    {
+     "id": "1.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which of these has a lot of energy in its chemical store?",
+     "options": [
+      {
+       "text": "A full tank of petrol",
+       "branch": "right"
+      },
+      {
+       "text": "A spinning wheel",
+       "branch": "kinetic"
+      },
+      {
+       "text": "A hot radiator",
+       "branch": "thermal"
+      }
+     ],
+     "right": "Yes: petrol is a fuel, and fuels hold energy in their chemical store.",
+     "wrong": {
+      "other": "Not quite: the full tank of petrol. Fuels hold energy in their chemical store.",
+      "kinetic": "Not quite: the full tank of petrol. A spinning wheel is moving, so its energy is in its kinetic store.",
+      "thermal": "Not quite: the full tank of petrol. A hot radiator's energy is in its thermal store, because it is hot."
+     },
+     "idk": [
+      {
+       "hint": "Food, fuels and batteries fill the chemical store. Which button is a fuel?"
+      }
+     ],
+     "answerWhy": "Petrol is a fuel, and fuels hold energy in their chemical store."
+    },
+    {
+     "id": "1.13",
+     "type": "say",
+     "text": "The last three. The nuclear store: energy held in the centre of each atom, called its nucleus. Uranium fuel in a power station and the core of the Sun both use it."
+    },
+    {
+     "id": "1.14",
+     "type": "say",
+     "text": "The electrostatic store: energy between electric charges, like the static on a rubbed balloon, or between a thundercloud and the ground."
+    },
+    {
+     "id": "1.15",
+     "type": "say",
+     "text": "And the magnetic store: energy between magnets, like two magnets held apart. That makes eight: kinetic, gravitational potential, elastic potential, thermal, chemical, nuclear, electrostatic and magnetic."
+    },
+    {
+     "id": "1.16",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A skier waits, not moving, at the top of a tall slope. Which store holds energy because of the skier's height?",
+     "options": [
+      {
+       "text": "Gravitational potential",
+       "branch": "right"
+      },
+      {
+       "text": "Kinetic",
+       "branch": "kinetic"
+      },
+      {
+       "text": "Elastic potential",
+       "branch": "elastic"
+      }
+     ],
+     "right": "Yes: gravitational potential. Anything raised up has energy in its gravitational potential store.",
+     "wrong": {
+      "other": "Not quite: gravitational potential, the store for things that are raised up.",
+      "kinetic": "Not quite: gravitational potential. The skier is not moving yet, so the kinetic store is empty. Being high up fills the gravitational potential store.",
+      "elastic": "Not quite: gravitational potential. Nothing is stretched or squashed. Being high up fills the gravitational potential store."
+     },
+     "idk": [
+      {
+       "hint": "The skier is high up and not moving. Which store is for raised things?"
+      }
+     ],
+     "answerWhy": "Anything raised up has energy in its gravitational potential store."
+    },
+    {
+     "id": "1.17",
+     "type": "say",
+     "text": "One more word for this part. A system is the object, or group of objects, you are looking at: a skier and the Earth, or a kettle and its water. When a system changes, energy moves from one store to another."
+    },
+    {
+     "id": "1.18",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A ball is thrown straight up. At the very top it stops for a moment. Where has the energy from its kinetic store gone?",
+     "options": [
+      {
+       "text": "Into its gravitational potential store",
+       "branch": "right"
+      },
+      {
+       "text": "Nowhere: it has run out",
+       "branch": "gone"
+      },
+      {
+       "text": "Into its elastic potential store",
+       "branch": "elastic"
+      }
+     ],
+     "right": "Yes. As the ball rose, its kinetic store emptied into its gravitational potential store. That is why it can fall back and speed up again.",
+     "wrong": {
+      "other": "Not quite: into its gravitational potential store, because the ball is now higher up.",
+      "gone": "Not quite: energy does not vanish. As the ball rose and slowed, the energy moved from its kinetic store into its gravitational potential store. That is why it can fall and speed up again.",
+      "elastic": "Not quite: nothing is stretched. The ball is higher up, so the energy went into its gravitational potential store."
+     },
+     "idk": [
+      {
+       "hint": "At the top, the ball is not moving but it is high up. Which store is for raised things?"
+      }
+     ],
+     "answerWhy": "The ball is higher up, so its kinetic store emptied into its gravitational potential store."
+    },
+    {
+     "id": "1.19",
+     "type": "own",
+     "prompt": "In one line: which store does a moving thing have, which does a raised thing have, and which does a stretched thing have?",
+     "points": [
+      "kinetic for a moving thing",
+      "gravitational potential for a raised thing",
+      "elastic potential for a stretched thing"
+     ],
+     "idk": "No problem. A good line would be: a moving thing has a kinetic store, a raised thing a gravitational potential store, and a stretched thing an elastic potential store."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "The four ways energy is transferred",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "Next: how energy gets from one store to another. Moving energy is called transferring it, and there are four ways, called pathways. Here they are one at a time."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "The first pathway: mechanically, by a force. When you kick a ball, the push of your foot transfers energy into the ball's kinetic store."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "The second: electrically, by an electric current. A current is a flow of electric charge round a circuit, and it carries energy from a battery to a lamp."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "The third: by heating, which means energy passing from a hotter object to a cooler one, like from a hot drink into your cold hands."
+    },
+    {
+     "id": "2.5",
+     "type": "say",
+     "text": "The fourth: by radiation, which means waves such as light and infrared, the warmth you feel from the Sun. Sound waves carry energy too."
+    },
+    {
+     "id": "2.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A battery makes a torch bulb light up. Which pathway carries energy from the battery to the bulb?",
+     "options": [
+      {
+       "text": "Electrically",
+       "branch": "right"
+      },
+      {
+       "text": "Mechanically",
+       "branch": "mech"
+      },
+      {
+       "text": "By radiation",
+       "branch": "rad"
+      }
+     ],
+     "right": "Yes: electrically. A current flows through the wires from the battery to the bulb.",
+     "wrong": {
+      "other": "Not quite: electrically, by a current flowing through the wires.",
+      "mech": "Not quite: electrically. No force pushes anything along. A current flows through the wires from the battery to the bulb.",
+      "rad": "Not quite: electrically. Light leaves the bulb by radiation, but from the battery to the bulb the energy goes by a current in the wires."
+     },
+     "idk": [
+      {
+       "hint": "Between a battery and a bulb there are wires. What flows in wires?"
+      }
+     ],
+     "answerWhy": "A current flows through the wires from the battery to the bulb, so the energy goes electrically."
+    },
+    {
+     "id": "2.7",
+     "type": "say",
+     "text": "In the exam, describe a transfer in one sentence: name the pathway, the store the energy leaves and the store it goes into."
+    },
+    {
+     "id": "2.8",
+     "type": "say",
+     "text": "For a car braking, the sentence is: energy is transferred mechanically, by the force of the brakes rubbing on the wheels, from the kinetic store of the car to the thermal store of the brakes. The brakes get hot."
+    },
+    {
+     "id": "2.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "An apple falls from a tree. Fill the gap: energy is transferred mechanically, by the pull of gravity, from the apple's ___ store to its kinetic store.",
+     "options": [
+      {
+       "text": "gravitational potential",
+       "branch": "right"
+      },
+      {
+       "text": "chemical",
+       "branch": "chemical"
+      },
+      {
+       "text": "thermal",
+       "branch": "thermal"
+      }
+     ],
+     "right": "Yes: gravitational potential. The apple starts high up and ends up lower and moving.",
+     "wrong": {
+      "other": "Not quite: gravitational potential. The apple starts high up, and falling empties that store into its kinetic store.",
+      "chemical": "Not quite: gravitational potential. The apple does hold chemical energy as food, but falling does not use it. Falling empties the store for raised things.",
+      "thermal": "Not quite: gravitational potential. The apple is not getting cooler as it falls; it is getting lower."
+     },
+     "idk": [
+      {
+       "hint": "The apple starts high up. Which store is for raised things?"
+      }
+     ],
+     "answerWhy": "The apple starts high up, so energy leaves its gravitational potential store."
+    },
+    {
+     "id": "2.10",
+     "type": "own",
+     "prompt": "In one line: what are the four pathways energy can be transferred by?",
+     "points": [
+      "mechanically (by a force)",
+      "electrically (by a current)",
+      "by heating",
+      "by radiation"
+     ],
+     "idk": "No problem. A good line would be: energy is transferred mechanically by a force, electrically by a current, by heating, or by radiation."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Conservation of energy — the rule that never breaks",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Now the most important rule about energy. Energy cannot be created or destroyed. It can only be moved from store to store, or spread out. This rule is called the law of conservation of energy."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "Picture a book pushed off a table. As it falls, energy moves from its gravitational potential store to its kinetic store. When it hits the floor, the bang carries some away as sound, and in the end the floor and the air get a tiny bit warmer."
+    },
+    {
+     "id": "3.3",
+     "type": "say",
+     "text": "Add up the energy at the end and you get the same total as at the start. A system that no energy can get into or out of is called a closed system: its total energy never changes."
+    },
+    {
+     "id": "3.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A torch battery goes flat. What has happened to the energy that was in its chemical store?",
+     "options": [
+      {
+       "text": "It went to other stores, mostly the thermal store of the surroundings",
+       "branch": "right"
+      },
+      {
+       "text": "It has been used up and is gone",
+       "branch": "usedup"
+      },
+      {
+       "text": "It has turned into electric charge",
+       "branch": "charge"
+      }
+     ],
+     "right": "Yes. The energy went by light and heating into the thermal store of the room. The battery runs down, but the energy still exists.",
+     "wrong": {
+      "other": "Not quite. The energy went to other stores, mostly the thermal store of the surroundings.",
+      "usedup": "Not quite: energy is never destroyed. The battery's chemical store has emptied, and the energy went by light and heating into the thermal store of the room. The battery runs down; the energy does not.",
+      "charge": "Not quite. The current carried the energy to the bulb, and the bulb sent it out by light and heating. It ends up in the thermal store of the surroundings."
+     },
+     "idk": [
+      {
+       "hint": "Energy cannot be destroyed, so it must be somewhere. The bulb gave out light and got warm. Where does that end up?"
+      }
+     ],
+     "answerWhy": "Energy cannot be destroyed: it went by light and heating into the thermal store of the surroundings."
+    },
+    {
+     "id": "3.5",
+     "type": "say",
+     "text": "Another example: a ball hits a wall and stops. Its kinetic store falls to zero, and the thermal stores of the ball and the wall rise: both get very slightly warmer."
+    },
+    {
+     "id": "3.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Water is boiled in an electric kettle. Which store of the water rises?",
+     "options": [
+      {
+       "text": "Its thermal store",
+       "branch": "right"
+      },
+      {
+       "text": "Its kinetic store",
+       "branch": "kinetic"
+      },
+      {
+       "text": "Its chemical store",
+       "branch": "chemical"
+      }
+     ],
+     "right": "Yes: the water gets hotter, so its thermal store rises.",
+     "wrong": {
+      "other": "Not quite: the water gets hotter, so its thermal store rises.",
+      "kinetic": "Not quite: the kettle stays still on the counter. The water gets hotter, so its thermal store rises.",
+      "chemical": "Not quite: boiling water is not a fuel or a food. It gets hotter, so its thermal store rises."
+     },
+     "idk": [
+      {
+       "hint": "The water gets hotter. Which store depends on how hot something is?"
+      }
+     ],
+     "answerWhy": "The water gets hotter, so its thermal store rises."
+    },
+    {
+     "id": "3.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A moving trolley rolls to a stop on a carpet. Which describes it best?",
+     "options": [
+      {
+       "text": "Its kinetic store emptied into the thermal stores of the trolley, carpet and air",
+       "branch": "right"
+      },
+      {
+       "text": "It ran out of force",
+       "branch": "force"
+      },
+      {
+       "text": "Its energy was destroyed",
+       "branch": "destroyed"
+      }
+     ],
+     "right": "Yes. Rubbing on the carpet transferred the energy from the trolley's kinetic store to thermal stores.",
+     "wrong": {
+      "other": "Not quite. Its kinetic store emptied into the thermal stores of the trolley, carpet and air.",
+      "force": "Not quite: a moving thing does not carry force. It has energy in its kinetic store, and rubbing on the carpet transferred that to the thermal stores of the trolley, carpet and air.",
+      "destroyed": "Not quite: energy is never destroyed. Rubbing on the carpet moved it from the trolley's kinetic store to the thermal stores of the trolley, carpet and air."
+     },
+     "idk": [
+      {
+       "hint": "Energy cannot be destroyed. When things rub, they get a little warmer. Which button says that?"
+      }
+     ],
+     "answerWhy": "Rubbing on the carpet moved the energy from the kinetic store to the thermal stores of the trolley, carpet and air."
+    },
+    {
+     "id": "3.8",
+     "type": "own",
+     "prompt": "In one line: what does the law of conservation of energy say?",
+     "points": [
+      "energy cannot be created or destroyed",
+      "it can only be transferred from store to store"
+     ],
+     "idk": "No problem. A good line would be: energy cannot be created or destroyed; it can only be transferred from one store to another."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Dissipation — where useful energy goes to die",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "In every real machine, some energy goes where you do not want it. A car engine is meant to make the car move, but it also gets hot and makes a noise."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "The energy that does the job you want is called useful energy. For a car engine, it is the energy that goes into the car's kinetic store."
+    },
+    {
+     "id": "4.3",
+     "type": "say",
+     "text": "The rest is called wasted energy. For the car, wasted energy is what heats up the engine and makes the noise."
+    },
+    {
+     "id": "4.4",
+     "type": "say",
+     "text": "Wasted energy nearly always ends up in the thermal store of the surroundings, warming the air a tiny bit. It spreads out so thinly that nobody can use it again. Scientists say it is dissipated: spread out and no longer useful."
+    },
+    {
+     "id": "4.5",
+     "type": "say",
+     "picture": "p1-torch-energy",
+     "text": "The picture shows a torch. Energy leaves the battery's chemical store electrically. The bulb sends out useful energy by radiation, as light, and wasted energy by heating."
+    },
+    {
+     "id": "4.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A lamp is meant to give light, but its glass gets hot. What is the energy that warms the glass and the air around it?",
+     "options": [
+      {
+       "text": "Wasted energy, dissipated to the surroundings",
+       "branch": "right"
+      },
+      {
+       "text": "Useful energy",
+       "branch": "useful"
+      },
+      {
+       "text": "Destroyed energy",
+       "branch": "destroyed"
+      }
+     ],
+     "right": "Yes. The lamp's job is light, so the energy that warms the glass and air is wasted, and it is dissipated to the surroundings.",
+     "wrong": {
+      "other": "Not quite. The lamp's job is light, so warming the glass is wasted energy, dissipated to the surroundings.",
+      "useful": "Not quite. A lamp's job is to give light, so the energy that only warms the glass is wasted energy, dissipated to the surroundings.",
+      "destroyed": "Not quite: energy is never destroyed. The energy that warms the glass is wasted energy, dissipated to the thermal store of the surroundings."
+     },
+     "idk": [
+      {
+       "hint": "The lamp's job is to give light. Is warming the glass part of that job?"
+      }
+     ],
+     "answerWhy": "A lamp's job is light, so the energy that warms the glass is wasted, dissipated to the surroundings."
+    },
+    {
+     "id": "4.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Why is dissipated energy so hard to use again?",
+     "options": [
+      {
+       "text": "It is spread out thinly and only warms things a tiny bit",
+       "branch": "right"
+      },
+      {
+       "text": "It has been destroyed",
+       "branch": "destroyed"
+      },
+      {
+       "text": "It is locked inside a battery",
+       "branch": "battery"
+      }
+     ],
+     "right": "Yes: it is spread thinly through the surroundings, so it is stored in a less useful way.",
+     "wrong": {
+      "other": "Not quite. It is spread out thinly and only warms things a tiny bit, so it is hard to use.",
+      "destroyed": "Not quite: the energy still exists, because energy is never destroyed. It is spread so thinly through the surroundings that it is no use.",
+      "battery": "Not quite: dissipated energy is not in a battery. It is spread thinly through the thermal store of the surroundings, so it is no use."
+     },
+     "idk": [
+      {
+       "hint": "Dissipated means spread out. Is energy that is spread very thinly easy to use?"
+      }
+     ],
+     "answerWhy": "Dissipated energy is spread thinly through the surroundings, so it is stored in a less useful way."
+    },
+    {
+     "id": "4.8",
+     "type": "own",
+     "prompt": "In one line: where does wasted energy usually end up, and why is it no use?",
+     "points": [
+      "in the thermal store of the surroundings",
+      "it is spread out (dissipated)"
+     ],
+     "idk": "No problem. A good line would be: wasted energy usually ends up in the thermal store of the surroundings, spread out so thinly that it cannot be used."
+    }
+   ]
+  },
+  {
+   "kp": 4,
+   "heading": "Sankey diagrams and efficiency",
+   "steps": [
+    {
+     "id": "5.1",
+     "type": "say",
+     "text": "Last part: a way to draw where energy goes. A Sankey diagram is an arrow diagram in which the width of each arrow shows how much energy it carries."
+    },
+    {
+     "id": "5.2",
+     "type": "say",
+     "picture": "p1-sankey-lamp",
+     "text": "Here is one for a lamp. 100 J goes in on the left. 15 J carries on to the right as light: the useful energy. 85 J bends down: wasted, by heating the surroundings. 15 J + 85 J = 100 J."
+    },
+    {
+     "id": "5.3",
+     "type": "ask",
+     "kind": "number",
+     "question": "A different lamp takes in 60 J and gives out 12 J of light. How many joules are wasted?",
+     "answer": {
+      "value": 48,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 72,
+       "branch": "add"
+      },
+      {
+       "value": 5,
+       "branch": "divide"
+      }
+     ],
+     "right": "Yes: 48 J. Wasted = total in − useful out = 60 − 12 = 48 J.",
+     "wrong": {
+      "other": "Not quite: 48 J. Wasted = total in − useful out = 60 − 12 = 48 J.",
+      "add": "Not quite: 48 J. The energy out cannot be more than the energy in. Take the useful part away: 60 − 12 = 48 J.",
+      "divide": "Not quite: 48 J. To find the wasted energy, subtract: 60 − 12 = 48 J."
+     },
+     "idk": [
+      {
+       "hint": "All 60 J has to go somewhere: 12 J as light, and the rest wasted. Work out 60 − 12."
+      }
+     ],
+     "answerWhy": "Wasted = total in − useful out = 60 − 12 = 48 J."
+    },
+    {
+     "id": "5.4",
+     "type": "say",
+     "text": "How much of the energy put in does a useful job is called the efficiency. Efficiency = useful output energy ÷ total input energy."
+    },
+    {
+     "id": "5.5",
+     "type": "say",
+     "text": "For the lamp with 100 J in: 15 ÷ 100 = 0.15. Multiply by 100 to make a percentage: 15%. Efficiency has no unit, because it is joules divided by joules."
+    },
+    {
+     "id": "5.6",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A motor is supplied with 400 J. It transfers 300 J usefully to a kinetic store. What is its efficiency, as a percentage?",
+     "steps": [
+      "Write the equation: efficiency = useful output energy ÷ total input energy.",
+      "Put in the numbers: efficiency = 300 ÷ 400 = 0.75.",
+      "As a percentage: 0.75 × 100 = 75%."
+     ],
+     "answer": {
+      "value": 75,
+      "unit": "%"
+     }
+    },
+    {
+     "id": "5.7",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A kettle takes in 2000 J, and 1800 J goes into the water's thermal store. What is its efficiency, as a percentage?",
+     "answer": {
+      "value": 90,
+      "unit": "%",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 0.9,
+       "branch": "decimal"
+      },
+      {
+       "value": 111,
+       "branch": "upside"
+      }
+     ],
+     "right": "Yes: 90%. 1800 ÷ 2000 = 0.9, and 0.9 × 100 = 90%.",
+     "wrong": {
+      "other": "Not quite: 90%. Efficiency = 1800 ÷ 2000 = 0.9, which is 90%.",
+      "decimal": "Nearly: 0.9 is the efficiency as a decimal. As a percentage, multiply by 100: 90%.",
+      "upside": "Not quite: 90%. Divide the useful energy by the total: 1800 ÷ 2000 = 0.9, which is 90%. An efficiency over 100% is always a sign of dividing the wrong way round."
+     },
+     "idk": [
+      {
+       "hint": "Divide the useful energy, 1800, by the total, 2000. Then multiply by 100."
+      }
+     ],
+     "answerWhy": "Efficiency = 1800 ÷ 2000 = 0.9, and 0.9 × 100 = 90%."
+    },
+    {
+     "id": "5.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Someone works out that a machine has an efficiency of 120%. What does that tell you?",
+     "options": [
+      {
+       "text": "They made a mistake: no machine gets out more useful energy than goes in",
+       "branch": "right"
+      },
+      {
+       "text": "The machine is very good",
+       "branch": "good"
+      },
+      {
+       "text": "The machine makes extra energy",
+       "branch": "makes"
+      }
+     ],
+     "right": "Yes. Energy cannot be created, so an efficiency is never more than 100% (or 1). Over 100% usually means dividing the wrong way round.",
+     "wrong": {
+      "other": "Not quite. An efficiency over 100% is always a mistake, because energy cannot be created.",
+      "good": "Not quite: over 100% is impossible. The useful energy out can never be more than the energy in, so it is a mistake, usually dividing the wrong way round.",
+      "makes": "Not quite: energy cannot be created, so no machine makes extra. Over 100% is a mistake, usually dividing the wrong way round."
+     },
+     "idk": [
+      {
+       "hint": "Can a machine give out more energy than is put in?"
+      }
+     ],
+     "answerWhy": "Energy cannot be created, so an efficiency is never more than 100% (or 1)."
+    },
+    {
+     "id": "5.9",
+     "type": "own",
+     "prompt": "In one line: how do you work out efficiency?",
+     "points": [
+      "useful output energy divided by total input energy"
+     ],
+     "idk": "No problem. A good line would be: efficiency = useful output energy ÷ total input energy, times 100 for a percentage."
+    },
+    {
+     "id": "5.10",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "5.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: which store holds energy in a stretched rubber band?",
+     "options": [
+      {
+       "text": "Elastic potential",
+       "branch": "right"
+      },
+      {
+       "text": "Kinetic",
+       "branch": "w1"
+      },
+      {
+       "text": "Chemical",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: stretched things have energy in their elastic potential store.",
+     "wrong": {
+      "other": "Not quite: elastic potential, the store for stretched or squashed things."
+     },
+     "idk": [],
+     "answerWhy": "Stretched things have energy in their elastic potential store.",
+     "quiz": true
+    },
+    {
+     "id": "5.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 6: which pathway carries energy from the Sun to the Earth?",
+     "options": [
+      {
+       "text": "By radiation",
+       "branch": "right"
+      },
+      {
+       "text": "Electrically",
+       "branch": "w1"
+      },
+      {
+       "text": "Mechanically",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: by radiation, as light and infrared waves.",
+     "wrong": {
+      "other": "Not quite: by radiation, as light and infrared waves."
+     },
+     "idk": [],
+     "answerWhy": "Energy reaches the Earth from the Sun by radiation, as light and infrared.",
+     "quiz": true
+    },
+    {
+     "id": "5.13",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: which statement is true?",
+     "options": [
+      {
+       "text": "Energy cannot be created or destroyed",
+       "branch": "right"
+      },
+      {
+       "text": "A power station creates energy",
+       "branch": "w1"
+      },
+      {
+       "text": "Energy is used up when a battery goes flat",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: that is the law of conservation of energy.",
+     "wrong": {
+      "other": "Not quite. Energy cannot be created or destroyed: that is the law of conservation of energy."
+     },
+     "idk": [],
+     "answerWhy": "Energy cannot be created or destroyed: the law of conservation of energy.",
+     "quiz": true
+    },
+    {
+     "id": "5.14",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 4 of 6: a device takes in 200 J and gives out 50 J usefully. What is its efficiency, as a percentage?",
+     "answer": {
+      "value": 25,
+      "unit": "%",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: 50 ÷ 200 = 0.25, which is 25%.",
+     "wrong": {
+      "other": "Not quite: 25%. 50 ÷ 200 = 0.25, and 0.25 × 100 = 25%."
+     },
+     "idk": [],
+     "answerWhy": "50 ÷ 200 = 0.25, and 0.25 × 100 = 25%.",
+     "quiz": true
+    },
+    {
+     "id": "5.15",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: where does most wasted energy end up?",
+     "options": [
+      {
+       "text": "The thermal store of the surroundings",
+       "branch": "right"
+      },
+      {
+       "text": "The chemical store of the device",
+       "branch": "w1"
+      },
+      {
+       "text": "Nowhere: it is destroyed",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: it is dissipated to the thermal store of the surroundings.",
+     "wrong": {
+      "other": "Not quite: it is dissipated to the thermal store of the surroundings."
+     },
+     "idk": [],
+     "answerWhy": "Wasted energy is dissipated to the thermal store of the surroundings.",
+     "quiz": true
+    },
+    {
+     "id": "5.16",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: a ball rolls to a stop. Which is the best answer in an exam?",
+     "options": [
+      {
+       "text": "Its kinetic store decreases and the thermal store of the surroundings increases",
+       "branch": "right"
+      },
+      {
+       "text": "Kinetic and thermal",
+       "branch": "w1"
+      },
+      {
+       "text": "Its energy is used up",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: name each store and say how it changes. That is what the marks are for.",
+     "wrong": {
+      "other": "Not quite. Name each store and say how it changes: the kinetic store decreases and the thermal store of the surroundings increases."
+     },
+     "idk": [],
+     "answerWhy": "Name each store and say how it changes: the kinetic store decreases, the thermal store of the surroundings increases.",
+     "quiz": true
+    },
+    {
+     "id": "5.17",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

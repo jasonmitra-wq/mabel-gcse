@@ -163,7 +163,22 @@
           "def": "Energy transferred to a store that is not useful for the intended purpose of the device — most commonly dissipated to the thermal store of the surroundings"
         }
       ],
-      "memTip": "Dissipation = energy spreading out and becoming less useful. Examiners may ask 'why is this energy less useful?'. Answer: it is transferred to the thermal store of the surroundings and cannot easily be recovered."
+      "memTip": "Dissipation = energy spreading out and becoming less useful. Examiners may ask 'why is this energy less useful?'. Answer: it is transferred to the thermal store of the surroundings and cannot easily be recovered.",
+      "pictures": [
+        {
+          "diagram": "p1-torch-energy",
+          "caption": "A torch: energy goes from the battery's chemical store to the thermal store of the surroundings.",
+          "labels": [
+            "chemical energy store",
+            "electrically",
+            "by radiation",
+            "useful",
+            "by heating",
+            "wasted",
+            "thermal energy store"
+          ]
+        }
+      ]
     },
     {
       "heading": "Sankey diagrams and efficiency",
@@ -190,7 +205,18 @@
           "def": "The ratio of useful output energy (or power) to total input energy (or power); efficiency = useful output ÷ total input; always between 0 and 1 (or 0% and 100%)"
         }
       ],
-      "memTip": "Efficiency = useful OUT ÷ total IN. It is never more than 1. Wasted energy = input − useful output."
+      "memTip": "Efficiency = useful OUT ÷ total IN. It is never more than 1. Wasted energy = input − useful output.",
+      "pictures": [
+        {
+          "diagram": "p1-sankey-lamp",
+          "caption": "A lamp: 100 J in, 15 J out usefully by light, 85 J wasted by heating.",
+          "labels": [
+            "100 J in",
+            "15 J useful",
+            "85 J wasted"
+          ]
+        }
+      ]
     }
   ],
   "tables": [

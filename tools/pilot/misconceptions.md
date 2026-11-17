@@ -92,3 +92,29 @@ asks about the potential difference); 240 V; live and neutral colours mixed;
 the danger of a live wire with the switch open put in terms of current, not
 potential; power taken as proportional to pd for a lamp; E = P t with time
 or power not converted.
+
+## Phase B, P1 Energy (stores, Ek/Ep/Ee, conservation, efficiency, power, heating, resources)
+
+Brief docs/briefs/2026-11-15-script-four-topics.md, step B1. Sources opened on
+2026-11-17 (IOPSpark pages read in the browser pane; the site refuses plain
+fetches); the wording is ours. Outside the pilot, as for M15–M22. Examiner
+errors E45 to E66 are in data/exam/p1-outcomes.md (local).
+
+| Id | Misconception (our words) | Lesson | Source (opened) |
+|---|---|---|---|
+| M23 | Energy gets used up or lost (a flat battery has "no energy left"); it is the fuel or store that runs down, while the total energy stays the same. | p1-energy-stores, p1-conservation | IOPSpark, "The Law of Conservation of Energy" (14-16): https://spark.iop.org/collections/law-conservation-energy ; IOPSpark, "Energy: common knowledge, hard concept": https://spark.iop.org/energy-common-knowledge-hard-concept ; examiner reports 1F-JUN22 9.4, 1H-JUN22 1.4 ("saving energy", "waste no energy") (E56) |
+| M24 | Energy disappears when an object stops for a moment (a ball at the top of its throw has no energy); the gravitational potential store is not seen. | p1-energy-stores, p1-kinetic-potential | IOPSpark, "Students may think that energy disappears when an object is thrown upwards": https://spark.iop.org/students-may-think-energy-disappears-when-object-thrown-upwards ; examiner report 1H-JUN23 7.2 |
+| M25 | A moving object "has force"; force and energy are the same thing, so it stops when its force runs out. | p1-energy-stores, p1-kinetic-potential | IOPSpark, "Is force the same as energy?": https://spark.iop.org/force-same-energy |
+| M26 | Energy belongs to living things (needed for life and activity), not to a raised book or a hot cup. | p1-energy-stores | IOPSpark, "Many students associate 'energy' with humans and other living things": https://spark.iop.org/many-students-associate-energy-humans-and-other-living-things |
+| M27 | Heat is a substance (or "cold" is) that flows in and out of objects; heat and temperature are the same thing. | p1-heating | IOPSpark, "Many students think of heat as an intangible substance that can flow into and out of objects": https://spark.iop.org/many-students-think-heat-intangible-substance-can-flow-and-out-objects ; IOPSpark digest of Kautz et al. (2005): https://spark.iop.org/kautz-et-al-2005-parts-1-and-2 |
+| M28 | Temperature measures how much energy an object holds (a bath and a cup of its water at the same temperature hold the same energy); specific heat capacity confused with heat capacity, conductivity or insulation. | p1-heating | IOPSpark digest of Harrison et al. (1999): https://spark.iop.org/harrison-et-al-1999 ; IOPSpark, "Some students see the more obvious 'heat' of very hot objects…": https://spark.iop.org/some-students-see-more-obvious-heat-very-hot-objects-different-objects-lower-temperatures ; examiner report 1H-JUN25 5.3 (E52) |
+| M29 | Power and energy are the same thing (a more powerful kettle "has more energy"), rather than power being energy transferred each second. | p1-power | IOPSpark, "Energy: common knowledge, hard concept" (power as the rate of transfer of energy, a hard term): https://spark.iop.org/energy-common-knowledge-hard-concept ; examiner reports 1F-JUN23 4.4, 1F-JUN24 10.3 (E47) |
+| M30 | Renewable means "can be used again" or "never runs out"; energy resources are conserved like energy. Resources are used up; renewable ones are replenished as they are used. | p1-national-grid | IOPSpark, "Resources, stores, pathways": https://spark.iop.org/resources-stores-pathways ; examiner reports 1F-JUN25 8.1, 1H-JUN25 1.1 (E61) |
+
+## Not found (P1)
+
+No published misconception research on efficiency calculations turned up in
+the sources reached; the evidence is the examiner reports (E55 to E57:
+multiplying by 100 when a decimal is asked, "saves energy", lubrication
+answered as "rotates faster"). A diagnostic worksheet on calculating energy
+(stem.org.uk, BEST) was found but is a download, so not opened or used.

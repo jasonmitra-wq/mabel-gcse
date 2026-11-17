@@ -1,32 +1,59 @@
 {
   "lesson": "p3-changes-of-state",
   "source_file": "lessons/physics/p3-changes-of-state.json",
-  "lesson_md5": "d64e8e088cc84a1e46c423e27a0c0058",
+  "lesson_md5": "405b2aa8e4c08f929eb71b240651ef76",
   "model": "claude-opus-5-5",
-  "date": "2026-10-18T09:19:20.766Z",
+  "date": "2026-11-17T15:58:01.614Z",
   "specRefs_sent": [
     "4.3.1.2",
     "4.3.2.3"
   ],
   "blocking_only": true,
-  "decided_file": "tools/spec-check-results/P3-TRIAGE.md",
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 12884,
-    "output_tokens": 1851
+    "input_tokens": 8375,
+    "output_tokens": 2244
   },
-  "cost_usd": 0.088556,
+  "cost_usd": 0.07838,
   "status": "OK",
   "result": {
     "lesson": "p3-changes-of-state",
-    "missing_spec_content": [],
+    "missing_spec_content": [
+      {
+        "specRef": "4.3.1.2",
+        "spec_text": "Students should be able to describe how, when substances change state (melt, freeze, boil, evaporate, condense or sublimate), mass is conserved.",
+        "why": "The lesson never says that mass is conserved during a change of state."
+      },
+      {
+        "specRef": "4.3.1.2",
+        "spec_text": "melt, freeze, boil, evaporate, condense or sublimate",
+        "why": "Sublimation is never mentioned. The lesson covers only melting, freezing, boiling, evaporation and condensing."
+      },
+      {
+        "specRef": "4.3.1.2",
+        "spec_text": "Changes of state are physical changes which differ from chemical changes because the material recovers its original properties if the change is reversed.",
+        "why": "The lesson does not describe changes of state as physical changes. It does not compare them with chemical changes or say that the material recovers its original properties when the change is reversed."
+      },
+      {
+        "specRef": "4.3.2.3",
+        "spec_text": "AT 5 Perform an experiment to measure the latent heat of fusion of water.",
+        "why": "The lesson does not describe the required practical activity for measuring the specific latent heat of fusion of water (for example, using an electrical heater, a joulemeter and the mass of ice melted)."
+      }
+    ],
     "above_gcse": [],
     "factual_errors": [
       {
-        "field": "keyPoints[1].memTip",
-        "text": "Fusion = melting (think of fusing solid particles into a liquid). Vaporisation = boiling (vapour = gas).",
-        "correction": "In melting, the particles are not joined or fused together. They gain energy and partly overcome the forces between them, so they become freer to move past each other. 'Fusion' here comes from the old meaning of 'fuse', which is 'to melt'. The spec defines it as 'Specific latent heat of fusion – change of state from solid to liquid'. The memory aid suggests particles are joined, which contradicts the lesson's own explanation that the energy 'overcomes the forces of attraction between the particles' (keyPoints[0].content).",
+        "field": "keyPoints[3].content",
+        "text": "Sweating and cooling: sweat is mainly water. Its specific latent heat of vaporisation is very high: 2260 kJ/kg. Sweat evaporates from your skin.",
+        "correction": "2260 kJ/kg is the specific latent heat of vaporisation of water at its boiling point (100°C). Sweat evaporates at about skin temperature (around 35°C), where the value is higher, about 2400 kJ/kg. Stating 2260 kJ/kg for evaporation from skin is slightly inaccurate, although the conclusion that the value is very high is correct.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "This is why sweating cools you so well, even in very hot weather.",
+        "correction": "Sweating cools by evaporation. How well it works depends on humidity as well as temperature. In hot, humid weather evaporation is slow and sweating cools much less effectively. As written, the statement is overgeneralised.",
         "basis": "own knowledge"
       }
     ],

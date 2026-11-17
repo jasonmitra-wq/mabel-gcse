@@ -98,3 +98,11 @@ From the same files, local and gitignored: data/exam/p1-ms-extract.txt (every
 mark-scheme part tagged 4.1, 175 parts) and data/exam/p1-outcomes.md
 (question types and mark-scheme points by section, examiner-named errors E45
 to E66).
+
+## P3 Particle model (2026-11-17)
+
+Brief docs/briefs/2026-11-15-script-four-topics.md, step B1: no new downloads.
+From the same files, local and gitignored: data/exam/p3-ms-extract.txt (every
+mark-scheme part tagged 4.3, 141 parts) and data/exam/p3-outcomes.md
+(question types and mark-scheme points by section, examiner-named errors E67
+to E81).

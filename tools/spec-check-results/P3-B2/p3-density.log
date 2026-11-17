@@ -1,0 +1,9 @@
+RUN
+Mode: --blocking-only (missing_spec_content, above_gcse, factual_errors)
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+p3-density | 4.3.1.1 | 20304 | 5076 | 0.3403
+TOTAL 1 lesson(s) | 20304 chars | 5076 est. input tokens | 16000 output tokens assumed | $0.3403
+Rates: $4 per M input, $20 per M output; output assumed at the 16000-token ceiling per lesson.
+Model claude-opus-5-5 confirmed in /v1/models.
+p3-density: OK | in 7646 out 2443 | $0.0794 | missing_spec_content 2, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 0
+Actual total cost: $0.0794

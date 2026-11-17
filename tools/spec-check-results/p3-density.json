@@ -1,25 +1,36 @@
 {
   "lesson": "p3-density",
   "source_file": "lessons/physics/p3-density.json",
-  "lesson_md5": "c81972e191c035a7d2f87be44956bedc",
+  "lesson_md5": "1e8b88ed12073d0dbf897ec505e8cb09",
   "model": "claude-opus-5-5",
-  "date": "2026-10-18T09:17:00.480Z",
+  "date": "2026-11-17T15:57:37.647Z",
   "specRefs_sent": [
     "4.3.1.1"
   ],
   "blocking_only": true,
-  "decided_file": "tools/spec-check-results/P3-TRIAGE.md",
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 11903,
-    "output_tokens": 1892
+    "input_tokens": 7646,
+    "output_tokens": 2443
   },
-  "cost_usd": 0.085452,
+  "cost_usd": 0.079444,
   "status": "OK",
   "result": {
     "lesson": "p3-density",
-    "missing_spec_content": [],
+    "missing_spec_content": [
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "Students should be able to recognise/draw simple diagrams to model the difference between solids, liquids and gases.",
+        "why": "The lesson has no particle diagrams: every keyPoint has \"diagram\": null. It also never describes what a simple particle diagram of a solid, liquid and gas looks like, so the student is not shown how to recognise or draw one. keyPoints[3].content describes spacing only in words (\"the particles are very far apart\", \"still close together, but not in a regular pattern\")."
+      },
+      {
+        "specRef": "4.3.1.1",
+        "spec_text": "The particle model can be used to explain - the different states of matter",
+        "why": "keyPoints[3].content uses the particle model only to explain differences in density. It never states the arrangement of particles in a solid. It says liquid particles are \"not in a regular pattern\" but never says solid particles are in a regular, fixed arrangement. So the particle-model description of the three states is incomplete."
+      }
+    ],
     "above_gcse": [],
     "factual_errors": [],
     "wrong_terms": [],

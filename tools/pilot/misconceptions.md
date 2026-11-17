@@ -118,3 +118,29 @@ the sources reached; the evidence is the examiner reports (E55 to E57:
 multiplying by 100 when a decimal is asked, "saves energy", lubrication
 answered as "rotates faster"). A diagnostic worksheet on calculating energy
 (stem.org.uk, BEST) was found but is a download, so not opened or used.
+
+## Phase B, P3 Particle model (states, density, changes of state, gas pressure)
+
+Brief docs/briefs/2026-11-15-script-four-topics.md, step B1. Sources opened on
+2026-11-17 (IOPSpark misconception pages, Properties of Matter domain, read in
+the browser pane); the wording is ours. Outside the pilot, as for M15–M30.
+Examiner errors E67 to E81 are in data/exam/p3-outcomes.md (local).
+
+| Id | Misconception (our words) | Lesson | Source (opened) |
+|---|---|---|---|
+| M31 | Particles have the properties of the material: they get hot, expand, melt, are hard or coloured; heating a solid makes its particles bigger. | p3-particle-model, p3-pressure | IOPSpark, "Some students think that particles possess the same properties as the materials they compose": https://spark.iop.org/some-students-think-particles-possess-same-properties-materials-they-compose ; IOPSpark, "Many students attribute macroscopic properties (like hot, cold, expansion) to particles…": https://spark.iop.org/many-students-attribute-macroscopic-properties-hot-cold-expansion-particles-when-using-particulate |
+| M32 | The particles in a solid do not move at all (they are packed tight in the diagram), rather than vibrating about fixed positions. | p3-particle-model | IOPSpark, "Many students think that atoms do not move in a solid": https://spark.iop.org/many-students-think-atoms-do-not-move-solid |
+| M33 | There is air (or more of the substance) in the gaps between particles, rather than nothing. | p3-particle-model, p3-pressure | IOPSpark, "Some students think that there is air between air molecules": https://spark.iop.org/some-students-think-there-air-between-air-molecules |
+| M34 | Mass is lost when a substance evaporates or melts; a gas weighs nothing or less than the same substance as a solid. Mass is conserved in a change of state. | p3-particle-model, p3-changes-of-state | IOPSpark, "Some students think that during evaporation mass is lost": https://spark.iop.org/some-students-think-during-evaporation-mass-lost ; "Some students think that gases do not have mass": https://spark.iop.org/some-students-think-gases-do-not-have-mass ; "…for the same mass of a substance, the liquid will weigh less than the solid": https://spark.iop.org/some-students-think-same-mass-substance-liquid-will-weigh-less-solid |
+| M35 | Heavy objects sink and light ones float, whatever their size: density (mass per volume) not separated from mass. | p3-density | IOPSpark, "Some students think that heavy objects sink and light object float regardless of shape and size": https://spark.iop.org/some-students-think-heavy-objects-sink-and-light-object-float-regardless-shape-and-size |
+| M36 | A change of state is not tied to a fixed temperature: the temperature keeps rising while ice melts or water boils; the energy supplied during melting raises the particles' kinetic energy. | p3-changes-of-state, p3-particle-model | IOPSpark, "Some students do not regard a change of state as being related to a specific temperature": https://spark.iop.org/some-students-do-not-regard-change-state-being-related-specific-temperature ; examiner reports 1H-JUN25 8.2, 1F-JUN25 4.8 (E74) |
+| M37 | A heated gas has higher pressure because its particles expand (get bigger), not because they move faster and hit the walls harder and more often. | p3-pressure | IOPSpark, "Some students think that when air is heated the particles expand and cause high pressure": https://spark.iop.org/some-students-think-when-air-heated-particles-expand-and-cause-high-pressure ; examiner reports 1H-NOV20 10.3, 1H-JUN23 9.3 (E78) |
+| M38 | A still gas exerts no pressure; pressure only comes from moving or squeezed air, or from particles hitting each other rather than the walls. | p3-pressure | IOPSpark, "Many students think that static gas does not apply pressure": https://spark.iop.org/many-students-think-static-gas-does-not-apply-pressure ; examiner reports 1H-NOV20 10.3, 1H-JUN25 8.3 (E78) |
+
+## Not found (P3)
+
+No published misconception research on the density required practical or on
+p V = constant turned up in the sources reached; the evidence is the examiner
+reports (E67 to E72, E79, E80: "weigh it on a scale", the mean of two
+cylinder readings for a volume, p ÷ V = constant, kinetic energy said to rise
+when a gas is compressed at constant temperature).

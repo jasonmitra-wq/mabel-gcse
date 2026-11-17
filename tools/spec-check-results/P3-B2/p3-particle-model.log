@@ -1,0 +1,9 @@
+RUN
+Mode: --blocking-only (missing_spec_content, above_gcse, factual_errors)
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+p3-particle-model | 4.3.1.1, 4.3.1.2, 4.3.2.1 | 25559 | 6390 | 0.3456
+TOTAL 1 lesson(s) | 25559 chars | 6390 est. input tokens | 16000 output tokens assumed | $0.3456
+Rates: $4 per M input, $20 per M output; output assumed at the 16000-token ceiling per lesson.
+Model claude-opus-5-5 confirmed in /v1/models.
+p3-particle-model: OK | in 8487 out 2616 | $0.0863 | missing_spec_content 5, above_gcse 0, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 2
+Actual total cost: $0.0863

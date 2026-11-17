@@ -159,3 +159,7 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-11-17 | p1-power | OK | missing_spec_content 0, above_gcse 0, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 6764/1805 | $0.0632
 - 2026-11-17 | p1-heating | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 8465/1277 | $0.0594
 - 2026-11-17 | p1-national-grid | OK | missing_spec_content 2, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 2 | 8006/2907 | $0.0902
+- 2026-11-17 | p3-particle-model | OK | missing_spec_content 5, above_gcse 0, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 2 | 8487/2616 | $0.0863
+- 2026-11-17 | p3-density | OK | missing_spec_content 2, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 7646/2443 | $0.0794
+- 2026-11-17 | p3-changes-of-state | OK | missing_spec_content 4, above_gcse 0, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 8375/2244 | $0.0784
+- 2026-11-17 | p3-pressure | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 2 | 6887/1679 | $0.0611

@@ -166,3 +166,32 @@ Every finding F1–F15 fixed once, except F5 part (c) (REJECT, in docs/ESCALATIO
 - p3-density | basics | brief 2026-10-18 first-time learner step 3 | added: Mass, Volume, Changing units, Particles, Floating and sinking, Reading an equation
 - p3-particle-model | basics | brief 2026-10-18 first-time learner step 3 | added: Particles, Solids, liquids and gases, Energy, Temperature, Squashing
 - p3-pressure | basics | brief 2026-10-18 first-time learner step 3 | added: A gas, Force, Area, Temperature, Volume, Energy
+
+
+# Phase B (brief docs/briefs/2026-11-15-script-four-topics.md)
+
+## B2 fact check, 2026-11-17
+
+The shell's key was stale (HTTP 401); the run used the key saved for this
+Windows user. $0.3052 for four lessons (logs in P3-B2/). Findings and what was
+done:
+
+- p3-particle-model: "temperature stays constant during any change of state"
+  (evaporation is not at a fixed temperature): now "while a pure substance
+  melts, freezes, boils or condenses". Limitation "the spheres are drawn with
+  no forces between them" contradicted the lesson's own forces of attraction:
+  now "the diagrams are not to scale" (content, key term, revision bullet).
+  The five "missing" density items (equation, units, mass conserved, density
+  of the states, required practical 5) are taught in p3-density, which shares
+  4.3.1.1: no change. Two diagrams not viewed by the checker: no change.
+- p3-density: key point 4 now says solid particles are packed tightly in a
+  regular pattern. Particle diagrams are taught in p3-particle-model key
+  point 1: no change.
+- p3-changes-of-state: sweat's latent heat "2260 kJ/kg" (the value at 100 °C)
+  now "over 2000 kJ/kg"; "even in very hot weather" now "in hot, dry
+  weather". Measuring the specific latent heat of fusion of ice (apparatus
+  technique AT 5) added to key point 3. Mass conserved, sublimation and
+  physical changes are taught in p3-particle-model key point 3, which shares
+  4.3.1.2: no change (the script recalls mass conserved).
+- p3-pressure: 0 errors; two items not checked (pressure = force ÷ area,
+  internal energy definition), both correct: no change.

@@ -1,19 +1,21 @@
 {
   "lesson": "p1-conservation",
   "source_file": "lessons/physics/p1-conservation.json",
-  "lesson_md5": "1666a9851067792eeb1c58142f00bff0",
+  "lesson_md5": "58d6dbd9387d3025f5658511c272ecd8",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:47:03.221Z",
+  "date": "2026-11-17T14:36:05.658Z",
   "specRefs_sent": [
     "4.1.2.1"
   ],
+  "blocking_only": true,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7390,
-    "output_tokens": 3108
+    "input_tokens": 7858,
+    "output_tokens": 2592
   },
-  "cost_usd": 0.09172,
+  "cost_usd": 0.083272,
   "status": "OK",
   "result": {
     "lesson": "p1-conservation",
@@ -21,22 +23,26 @@
       {
         "specRef": "4.1.2.1 Required practical activity 2",
         "spec_text": "investigate the effectiveness of different materials as thermal insulators and the factors that may affect the thermal insulation properties of a material.",
-        "why": "keyPoints[3].content covers comparing materials only, with material as the independent variable. It never treats a factor such as thickness or number of layers as something to investigate. It lists 'the thickness of material' only as a control variable. So the second half of the practical is not taught."
-      },
-      {
-        "specRef": "4.1.2.1 Key opportunities for skills development",
-        "spec_text": "Investigate thermal conductivity using rods of different materials.",
-        "why": "The lesson gives no investigation or example comparing thermal conductivity using rods of different materials."
+        "why": "The lesson's practical only covers comparing different materials. It also lists thickness as a control variable: \"The time and the thickness of material are also control variables\" (keyPoints[3].content). It never teaches investigating the factors that affect a material's insulating properties, such as thickness or number of layers, as independent variables. That half of the required practical is missing."
       }
     ],
     "above_gcse": [],
-    "factual_errors": [],
+    "factual_errors": [
+      {
+        "field": "revisionCardBullets[3]",
+        "text": "Wasted energy: energy transferred to a store we don't want, usually thermal or sound",
+        "correction": "Sound is not an energy store. Energy is transferred by sound waves and ends up dissipated in the thermal store of the surroundings. The lesson itself says this in keyPoints[0].content: \"Some is transferred by sound waves. It all ends up in the thermal store of the surroundings.\" The bullet should say wasted energy is dissipated, so it is stored in less useful ways, usually in the thermal store of the surroundings.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "basics[5].text",
+        "text": "Conduction is how heat passes through a solid, from hot to cold.",
+        "correction": "Conduction also happens in liquids and gases, though much less well than in most solids. The lesson's own explanation that trapped air in loft insulation \"reduces conduction and convection\" (keyPoints[3].content) depends on conduction happening in a gas. A better wording is that conduction is energy transfer through a material from hotter to colder regions, and it happens best in solids.",
+        "basis": "own knowledge"
+      }
+    ],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
-    "not_checked": [
-      "All diagram fields are null, so there were no diagrams or images to check.",
-      "Statements about Sankey diagrams (keyPoints[1].tutor_note: 'The width of each arrow shows the amount of energy.'; examTips[2]: 'Sankey diagrams are drawn to scale... The output arrows must add up to the input arrow.') belong to specification content that was not supplied. They could not be checked against the spec text, although they agree with own knowledge.",
-      "Statements on electrical resistance and transmission cables (keyPoints[2].content: 'This is why transmission cables waste energy') and the list of energy transfer pathways (commonMistakes[1]: 'Transfers are how it moves (heating, working, radiation)') relate to specification sections not supplied. Their wording could not be checked against the spec."
-    ]
+    "not_checked": []
   }
 }

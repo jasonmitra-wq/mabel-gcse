@@ -1,43 +1,29 @@
 {
   "lesson": "p1-kinetic-potential",
   "source_file": "lessons/physics/p1-kinetic-potential.json",
-  "lesson_md5": "c3be006911b1d9ee896eb2574b5d037d",
+  "lesson_md5": "0ca8d418c0f44bbe2031129f6492f6c3",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:46:38.029Z",
+  "date": "2026-11-17T14:35:50.021Z",
   "specRefs_sent": [
-    "4.1.1.2",
-    "4.1.1.3"
+    "4.1.1.2"
   ],
+  "blocking_only": true,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7753,
-    "output_tokens": 2588
+    "input_tokens": 6736,
+    "output_tokens": 1589
   },
-  "cost_usd": 0.082772,
+  "cost_usd": 0.058724,
   "status": "OK",
   "result": {
     "lesson": "p1-kinetic-potential",
-    "missing_spec_content": [
-      {
-        "specRef": "4.1.1.3",
-        "spec_text": "Required practical activity 1: investigation to determine the specific heat capacity of one or more materials. The investigation will involve linking the decrease of one energy store (or work done) to the increase in temperature and subsequent increase in thermal energy stored.",
-        "why": "The lesson teaches the equation ΔE = mcΔθ and the definition of specific heat capacity. It never describes the required practical: the method, what is measured, or how the decrease in one energy store (or work done) is linked to the rise in temperature and thermal energy."
-      },
-      {
-        "specRef": "4.1.1.2",
-        "spec_text": "AT 1 Investigate the transfer of energy from a gravitational potential energy store to a kinetic energy store.",
-        "why": "The lesson covers the theory of GPE becoming KE (mgh = ½mv²). It does not describe how to investigate this transfer experimentally, for example measuring the height and the resulting speed. The spec lists this as a skills opportunity, not core content, so the gap is minor."
-      }
-    ],
+    "missing_spec_content": [],
     "above_gcse": [],
     "factual_errors": [],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
-    "not_checked": [
-      "examTip: \"Energy store equations appear on every exam paper.\" The supplied specification sections do not say which papers assess this content, so this claim cannot be checked from them. It may overstate things if topic 4.1 is assessed on Paper 1 only.",
-      "introTips[1]: \"The skill examiners test most is rearranging these equations and picking the right one.\" This is a claim about examiner priorities that cannot be checked against the specification text.",
-      "diagrams is an empty array and every keyPoints[].diagram is null, so there was no visual content to check."
-    ]
+    "not_checked": []
   }
 }

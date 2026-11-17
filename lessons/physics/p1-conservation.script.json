@@ -10,7 +10,7 @@
     {
      "id": "1.1",
      "type": "say",
-     "text": "Welcome! This lesson follows energy as it moves between stores and spreads out, and looks at the ways engineers stop it being wasted."
+     "text": "Welcome! This lesson follows energy as it moves between stores and spreads out, and looks at the ways engineers reduce the energy that is wasted."
     },
     {
      "id": "1.1a",
@@ -47,35 +47,34 @@
     {
      "id": "1.1b",
      "type": "ask",
-     "kind": "number",
-     "question": "Second: Ek = ½ m v². A 2 kg ball moves at 4 m/s. What is the energy in its kinetic store, in joules?",
-     "answer": {
-      "value": 16,
-      "unit": "J",
-      "tolerance": 0.01
-     },
-     "wrongValues": [
+     "kind": "tap",
+     "question": "Second: a car brakes and slows down. Which store of the brakes rises?",
+     "options": [
       {
-       "value": 4,
-       "branch": "nosquare"
+       "text": "Their thermal store",
+       "branch": "right"
       },
       {
-       "value": 32,
-       "branch": "nohalf"
+       "text": "Their kinetic store",
+       "branch": "kinetic"
+      },
+      {
+       "text": "Their elastic potential store",
+       "branch": "elastic"
       }
      ],
-     "right": "Yes: 16 J. Ek = ½ × 2 × 4² = ½ × 2 × 16 = 16 J.",
+     "right": "Yes: rubbing makes the brakes hot, so their thermal store rises.",
      "wrong": {
-      "other": "Not quite: 16 J. Ek = ½ × 2 × 4² = ½ × 2 × 16 = 16 J.",
-      "nosquare": "Not quite: 16 J. Square the speed first: 4² = 16. Then ½ × 2 × 16 = 16 J.",
-      "nohalf": "Nearly: 2 × 16 = 32, but the equation has a half in it. ½ × 32 = 16 J."
+      "other": "Not quite: their thermal store, because the brakes get hot.",
+      "kinetic": "Not quite: the brakes get hot, so their thermal store rises. It is the car's kinetic store that falls.",
+      "elastic": "Not quite: nothing is stretched or squashed. The brakes get hot, so their thermal store rises."
      },
      "idk": [
       {
-       "hint": "Square the speed: 4 × 4 = 16. Then multiply by the mass, 2, and halve it."
+       "hint": "Brakes get hot when they rub. Which store depends on how hot something is?"
       }
      ],
-     "answerWhy": "Ek = ½ m v² = ½ × 2 × 16 = 16 J."
+     "answerWhy": "Rubbing makes the brakes hot, so their thermal store rises."
     },
     {
      "id": "1.2",
@@ -85,7 +84,12 @@
     {
      "id": "1.3",
      "type": "say",
-     "text": "Watch a ball bounce. As it falls, energy moves from its gravitational potential store to its kinetic store. As it squashes against the floor, energy is briefly in its elastic potential store. As it rises, energy goes back into the gravitational potential store."
+     "text": "Think of a ball bouncing. As it falls, energy moves from its gravitational potential store to its kinetic store."
+    },
+    {
+     "id": "1.3b",
+     "type": "say",
+     "text": "As the ball squashes against the floor, energy is briefly in its elastic potential store. As it springs back up, energy goes back through the kinetic store into the gravitational potential store."
     },
     {
      "id": "1.4",
@@ -94,7 +98,7 @@
      "question": "Each bounce is a little lower than the one before. Why?",
      "options": [
       {
-       "text": "On each bounce, some energy warms the ball and floor or leaves as sound",
+       "text": "Some energy goes to warming and sound",
        "branch": "right"
       },
       {
@@ -106,7 +110,7 @@
        "branch": "gravity"
       }
      ],
-     "right": "Yes. On each bounce some energy warms the ball and floor, and some leaves as sound, so less is left for the next bounce.",
+     "right": "Yes. Each bounce makes a sound and warms the ball and floor very slightly, so less energy is left to lift the ball next time.",
      "wrong": {
       "other": "Not quite. On each bounce, some energy warms the ball and floor or leaves as sound, so less is left for the next one.",
       "destroyed": "Not quite: energy is never destroyed. On each bounce, some of it warms the ball and floor or leaves as sound, so less is left to lift the ball.",
@@ -114,7 +118,7 @@
      },
      "idk": [
       {
-       "hint": "You hear each bounce, and the ball and floor get very slightly warmer. What does that do to the energy left in the ball?"
+       "hint": "You hear each bounce, and the ball and floor get very slightly warmer. Which button is about that?"
       }
      ],
      "answerWhy": "On each bounce some energy warms the ball and floor or leaves as sound, so less is left to lift the ball."
@@ -122,44 +126,44 @@
     {
      "id": "1.5",
      "type": "say",
-     "text": "The warming and the sound spread into the thermal store of the surroundings. Energy spread out like that is said to be dissipated. Add the dissipated energy to what the ball still has, and the total never changes."
+     "text": "The energy transferred by heating and by sound ends up in the thermal store of the surroundings. Energy spread out like that is said to be dissipated. Add the dissipated energy to what the ball still has, and the total never changes."
     },
     {
      "id": "1.6",
      "type": "say",
-     "text": "A system that no energy can get into or out of is called a closed system. In a closed system, the total energy always stays the same."
+     "text": "A system that no energy can get into or out of is called a closed system."
     },
     {
      "id": "1.7",
      "type": "ask",
      "kind": "tap",
-     "question": "A ball bounces until it stops. Take the ball, the floor and the air around them as a closed system. What has happened to the total energy of the system?",
+     "question": "A ball bounces until it stops. Take the ball, the floor and the air around them as a closed system. Where is the energy the ball started with now?",
      "options": [
       {
-       "text": "It is the same as at the start",
+       "text": "In the thermal stores of the ball, floor and air",
        "branch": "right"
       },
       {
-       "text": "It has fallen to zero",
+       "text": "Nowhere: the ball has stopped",
        "branch": "zero"
       },
       {
-       "text": "It has gone up",
-       "branch": "up"
+       "text": "Still in the ball's gravitational potential store",
+       "branch": "gpe"
       }
      ],
-     "right": "Yes: it is the same. The energy has moved from the ball's stores into the thermal stores of the floor and the air.",
+     "right": "Yes. The total is the same as at the start; it is now spread through the thermal stores of the ball, the floor and the air.",
      "wrong": {
-      "other": "Not quite: it is the same as at the start. In a closed system the total energy never changes.",
-      "zero": "Not quite: energy is never destroyed. The ball has stopped, but its energy is now in the thermal stores of the floor and the air, so the total is the same.",
-      "up": "Not quite: energy cannot be created. The energy has only moved between stores, so the total is the same."
+      "other": "Not quite. The energy is now in the thermal stores of the ball, the floor and the air; the total has not changed.",
+      "zero": "Not quite: energy is never destroyed. The ball has stopped, but its energy is now in the thermal stores of the ball, floor and air.",
+      "gpe": "Not quite: the ball is lying on the floor, so it is no longer raised up. Its energy is now in the thermal stores of the ball, floor and air."
      },
      "idk": [
       {
-       "hint": "Energy cannot be created or destroyed, and none can get in or out. So can the total change?"
+       "hint": "The ball, the floor and the air all got very slightly warmer. Which button says where the energy is?"
       }
      ],
-     "answerWhy": "In a closed system the total energy never changes; it has only moved into thermal stores."
+     "answerWhy": "The energy is now in the thermal stores of the ball, floor and air, and the total is the same as at the start."
     },
     {
      "id": "1.8",
@@ -185,7 +189,7 @@
     {
      "id": "2.2",
      "type": "say",
-     "text": "The rest is called wasted energy. A lamp also warms the air around it, and that energy is wasted. Wasted energy is not lost: it is dissipated into the thermal store of the surroundings, where it is no use."
+     "text": "Any energy that goes somewhere you did not want is called wasted energy. A lamp also warms the air around it, and that energy is wasted. Wasted energy is not lost: it is dissipated into the thermal store of the surroundings, where it is no use."
     },
     {
      "id": "2.3",
@@ -206,7 +210,7 @@
        "branch": "noise"
       }
      ],
-     "right": "Yes: the engine's job is to make the car move, so the energy in its kinetic store is the useful energy.",
+     "right": "Yes: the engine's job is to make the car move, so the energy in the car's kinetic store is useful. The energy that heats the engine and exhaust, and the noise, is wasted.",
      "wrong": {
       "other": "Not quite. The engine's job is to make the car move, so the useful energy is the energy in its kinetic store.",
       "exhaust": "Not quite: nobody wants a hot exhaust. That energy is wasted. The useful energy goes into the car's kinetic store.",
@@ -222,54 +226,44 @@
     {
      "id": "2.4",
      "type": "say",
-     "text": "Friction is a force that tries to stop surfaces sliding over each other. Rub your hands together and they get warm: that warming comes from friction."
+     "text": "Engineers try to waste less energy. One way is to cut friction: a force that tries to stop surfaces sliding over each other. Rub your hands together and they get warm; that warming comes from friction."
     },
     {
      "id": "2.5",
      "type": "say",
-     "text": "In a machine, friction between moving parts wastes energy by heating them. Oil between the parts lets them slide more easily. Using oil like this is called lubrication: it reduces friction, so less energy is wasted."
+     "text": "In a machine, friction between moving parts wastes energy by heating them. Putting oil between the parts lets them slide more easily. Using oil like this is called lubrication."
     },
     {
      "id": "2.6",
      "type": "ask",
      "kind": "tap",
-     "question": "A bicycle chain is oiled. Which is the best explanation of why that helps?",
+     "question": "A bicycle chain is squeaky and gets warm as you ride. After it is oiled, what changes?",
      "options": [
       {
-       "text": "Less friction, so less energy is wasted heating the chain",
+       "text": "Less energy is wasted heating the chain, because friction is smaller",
        "branch": "right"
       },
       {
-       "text": "The chain turns faster",
-       "branch": "faster"
+       "text": "The chain gets hotter, because oil burns",
+       "branch": "hotter"
       },
       {
-       "text": "The chain no longer wastes any energy",
-       "branch": "none"
+       "text": "Nothing: oil only stops the squeak",
+       "branch": "nothing"
       }
      ],
-     "right": "Yes: the oil reduces friction, so less energy is wasted heating the chain. Saying why is what gets the marks.",
+     "right": "Yes: the oil reduces friction, so less energy is wasted heating the chain, and less is wasted as squeaks too.",
      "wrong": {
       "other": "Not quite. The oil reduces friction, so less energy is wasted heating the chain.",
-      "faster": "Not quite: an exam would not give a mark for \"turns faster\". Say why it helps: the oil reduces friction, so less energy is wasted heating the chain.",
-      "none": "Not quite: some energy is still wasted. The oil reduces friction, so less energy is wasted heating the chain."
+      "hotter": "Not quite: the oil does not burn. It lets the parts slide more easily, so friction is smaller and less energy is wasted heating the chain.",
+      "nothing": "Not quite: the squeak goes, but there is more to it. The oil reduces friction, so less energy is wasted heating the chain."
      },
      "idk": [
       {
-       "hint": "Oil makes surfaces slide more easily. Which force does it reduce, and what does that do to the heating?"
+       "hint": "Oil lets surfaces slide more easily. Does that mean more or less friction, and more or less heating?"
       }
      ],
      "answerWhy": "The oil reduces friction, so less energy is wasted heating the chain."
-    },
-    {
-     "id": "2.7",
-     "type": "own",
-     "prompt": "In one line: what does lubrication do, and why does that help?",
-     "points": [
-      "it reduces friction",
-      "so less energy is wasted by heating"
-     ],
-     "idk": "No problem. A good line would be: lubrication reduces friction, so less energy is wasted by heating the moving parts."
     }
    ]
   },
@@ -280,7 +274,7 @@
     {
      "id": "3.1",
      "type": "say",
-     "text": "Energy spreading out into the surroundings is called dissipation. Dissipated energy is shared thinly across countless tiny particles, warming them by a tiny amount, and nobody can gather it back up."
+     "text": "The spreading out of energy into the surroundings is called dissipation. Everything is made of tiny particles, and dissipated energy is shared among a huge number of them, so the surroundings warm by only a tiny amount. That makes it very hard to collect and use again."
     },
     {
      "id": "3.2",
@@ -290,7 +284,7 @@
     {
      "id": "3.3",
      "type": "say",
-     "text": "Dissipation happens in wires too. When an electric current, a flow of charge, passes through a wire, it heats the wire, so some energy is dissipated. Long cables carrying electricity across the country waste energy this way."
+     "text": "Dissipation happens in wires too. A flow of electricity through a wire is called a current. A current heats the wire it flows through, so some energy is dissipated. Long cables carrying electricity across the country waste energy this way."
     },
     {
      "id": "3.4",
@@ -301,41 +295,41 @@
      "id": "3.5",
      "type": "ask",
      "kind": "tap",
-     "question": "Which of these dissipates energy by friction?",
+     "question": "Which of these wastes energy because of friction?",
      "options": [
       {
-       "text": "A sliding box slowing down on the floor",
+       "text": "A skateboard's wheels getting warm as it rolls",
        "branch": "right"
       },
       {
-       "text": "A phone charging cable getting warm",
+       "text": "A laptop charger getting warm",
        "branch": "wire"
       },
       {
-       "text": "A wall absorbing sound",
+       "text": "A curtain soaking up the sound of a TV",
        "branch": "sound"
       }
      ],
-     "right": "Yes: the box and the floor rub, and friction transfers the box's kinetic energy to thermal stores.",
+     "right": "Yes: the wheels rub on their axles, and friction transfers energy to their thermal store.",
      "wrong": {
-      "other": "Not quite: the sliding box. The box and floor rub, and friction transfers its energy to thermal stores.",
-      "wire": "Not quite: the cable warms because a current flows through it, not because of friction. The sliding box is the one rubbing on the floor.",
-      "sound": "Not quite: the wall dissipates energy by absorbing sound, not by friction. The sliding box is the one rubbing on the floor."
+      "other": "Not quite: the skateboard wheels. They rub on their axles, and friction warms them.",
+      "wire": "Not quite: the charger warms because a current flows through it, not because of friction. The skateboard wheels rub on their axles.",
+      "sound": "Not quite: the curtain absorbs sound; nothing rubs. The skateboard wheels rub on their axles, and friction warms them."
      },
      "idk": [
       {
-       "hint": "Friction happens when two surfaces rub. Which button has two surfaces rubbing?"
+       "hint": "Friction happens when two surfaces rub. In which button is something rubbing?"
       }
      ],
-     "answerWhy": "The box rubs on the floor, and friction transfers its kinetic energy to thermal stores."
+     "answerWhy": "The skateboard wheels rub on their axles, and friction transfers energy to their thermal store."
     },
     {
      "id": "3.6",
      "type": "own",
      "prompt": "In one line: give one way energy gets dissipated, and say where it ends up.",
      "points": [
-      "a way: friction, a current heating a wire, or sound being absorbed",
-      "in the thermal store of the surroundings"
+      "friction, a current in a wire, or sound being absorbed",
+      "it ends up in the thermal store of the surroundings"
      ],
      "idk": "No problem. A good line would be: friction dissipates energy, and it ends up in the thermal store of the surroundings."
     }
@@ -353,12 +347,12 @@
     {
      "id": "4.2",
      "type": "say",
-     "text": "Energy passes through a solid by conduction, from the hot side to the cold side. A metal spoon in hot tea gets a warm handle by conduction."
+     "text": "Energy passes through a material from its hotter part to its colder part. This is called conduction. A metal spoon in hot tea gets a warm handle by conduction."
     },
     {
      "id": "4.3",
      "type": "say",
-     "text": "How easily energy is conducted through a material is called the thermal conductivity of the material. The higher the thermal conductivity, the faster energy passes through. Metals have a high thermal conductivity; air and foam have a low one."
+     "text": "How easily energy is conducted through a material is called the thermal conductivity of the material. The higher the thermal conductivity, the faster energy passes through. Metals have a high thermal conductivity; plastic, wood, air and foam have a low one."
     },
     {
      "id": "4.4",
@@ -367,7 +361,7 @@
      "question": "A pan handle is made of plastic, not metal. Why?",
      "options": [
       {
-       "text": "Plastic has a lower thermal conductivity, so the handle stays cooler",
+       "text": "Plastic has a lower thermal conductivity",
        "branch": "right"
       },
       {
@@ -400,7 +394,17 @@
     {
      "id": "4.6",
      "type": "say",
-     "text": "Examples in a home: fibre glass in the loft traps air; double glazing has an air gap between two panes of glass; cavity wall insulation fills the gap inside brick walls with foam."
+     "text": "Homes use thermal insulation in several places. Fibre glass laid in the loft traps air, which slows energy escaping through the roof."
+    },
+    {
+     "id": "4.6b",
+     "type": "say",
+     "text": "Double glazing is two panes of glass with a gap between them, which slows energy escaping through the windows."
+    },
+    {
+     "id": "4.6c",
+     "type": "say",
+     "text": "Many brick walls are two walls with a gap between them, called a cavity. Cavity wall insulation fills that gap with foam."
     },
     {
      "id": "4.7",
@@ -411,7 +415,7 @@
      "id": "4.8",
      "type": "ask",
      "kind": "tap",
-     "question": "Two houses are the same except for their walls. Which one cools down fastest on a cold night?",
+     "question": "Three houses are the same except for their walls. Which one cools down fastest on a cold night?",
      "options": [
       {
        "text": "Thin walls of a material with a high thermal conductivity",
@@ -442,7 +446,7 @@
     {
      "id": "4.9",
      "type": "say",
-     "text": "You can compare insulating materials in a lab. Wrap the same amount of hot water in each material, and measure how far its temperature falls in, say, ten minutes."
+     "text": "You can compare insulating materials in a lab. Put the same amount of hot water in identical cans, wrap each can in a different material, and measure how far the temperature falls in, say, ten minutes."
     },
     {
      "id": "4.10",
@@ -458,6 +462,38 @@
      "id": "4.12",
      "type": "say",
      "text": "Everything else must stay the same: the volume of water, its starting temperature, the time, and the thickness of each material. These are called the control variables."
+    },
+    {
+     "id": "4.12b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "In this test, what is the dependent variable?",
+     "options": [
+      {
+       "text": "The fall in temperature",
+       "branch": "right"
+      },
+      {
+       "text": "The material",
+       "branch": "indep"
+      },
+      {
+       "text": "The volume of water",
+       "branch": "control"
+      }
+     ],
+     "right": "Yes: it is what you measure.",
+     "wrong": {
+      "other": "Not quite: the fall in temperature, which is what you measure.",
+      "indep": "Not quite: the material is what you change on purpose, the independent variable. What you measure, the fall in temperature, is the dependent variable.",
+      "control": "Not quite: the volume of water is kept the same, so it is a control variable. What you measure, the fall in temperature, is the dependent variable."
+     },
+     "idk": [
+      {
+       "hint": "The dependent variable is the thing you measure. What do you measure with the thermometer?"
+      }
+     ],
+     "answerWhy": "The dependent variable is what you measure: the fall in temperature."
     },
     {
      "id": "4.13",
@@ -492,16 +528,58 @@
      "answerWhy": "The best insulator lets the least energy out, so its water temperature falls the least."
     },
     {
+     "id": "4.13b",
+     "type": "say",
+     "text": "The same kind of test can look at other factors. Keep the material the same and change its thickness, or the number of layers. Then the thickness, or the number of layers, is the independent variable."
+    },
+    {
      "id": "4.14",
      "type": "say",
-     "text": "One more way to cut waste: streamlining, which means shaping something so air flows smoothly round it, like a sports car or a cyclist's helmet. It reduces air resistance, the push of the air on anything moving through it."
+     "text": "Air resistance is the push of the air on anything moving through it. A moving car wastes energy from its kinetic store pushing the air out of the way."
+    },
+    {
+     "id": "4.14b",
+     "type": "say",
+     "text": "Shaping something so air flows smoothly round it is called streamlining, like a sports car or a cyclist's helmet. It reduces air resistance, so less energy is wasted."
+    },
+    {
+     "id": "4.14c",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A delivery van has a flat, square front. Engineers give it a smooth, rounded front. Why does that waste less energy?",
+     "options": [
+      {
+       "text": "Less air resistance, so less energy wasted pushing the air",
+       "branch": "right"
+      },
+      {
+       "text": "Less friction between the tyres and road",
+       "branch": "friction"
+      },
+      {
+       "text": "The engine makes more energy",
+       "branch": "more"
+      }
+     ],
+     "right": "Yes: the rounded shape is streamlined, so the air pushes back less and less energy is wasted.",
+     "wrong": {
+      "other": "Not quite. The rounded front is streamlined, so there is less air resistance and less energy is wasted.",
+      "friction": "Not quite: the shape of the front does not change the tyres. It reduces air resistance, so less energy is wasted pushing the air.",
+      "more": "Not quite: no engine makes energy. The streamlined shape reduces air resistance, so less energy is wasted pushing the air."
+     },
+     "idk": [
+      {
+       "hint": "The front of the van pushes through the air. What does a smooth, rounded shape reduce?"
+      }
+     ],
+     "answerWhy": "The rounded front is streamlined, so air resistance is smaller and less energy is wasted."
     },
     {
      "id": "4.15",
      "type": "own",
      "prompt": "In one line: name the three ways in this lesson to reduce wasted energy.",
      "points": [
-      "lubrication (less friction)",
+      "lubrication, to reduce friction",
       "thermal insulation",
       "streamlining"
      ],
@@ -510,33 +588,33 @@
     {
      "id": "4.16",
      "type": "say",
-     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+     "text": "Now for a short quiz: six questions across the lesson. Take your time."
     },
     {
      "id": "4.17",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 1 of 6: where does wasted energy usually end up?",
+     "question": "Quiz, question 1 of 6: which is true about energy?",
      "options": [
       {
-       "text": "In the thermal store of the surroundings",
+       "text": "It cannot be created or destroyed",
        "branch": "right"
       },
       {
-       "text": "In the chemical store of the device",
+       "text": "It is used up when things stop",
        "branch": "w1"
       },
       {
-       "text": "Nowhere: it is destroyed",
+       "text": "Machines make new energy",
        "branch": "w2"
       }
      ],
-     "right": "Yes: it is dissipated to the thermal store of the surroundings.",
+     "right": "Yes: that is the law of conservation of energy.",
      "wrong": {
-      "other": "Not quite: it is dissipated to the thermal store of the surroundings."
+      "other": "Not quite. Energy cannot be created or destroyed: that is the law of conservation of energy."
      },
      "idk": [],
-     "answerWhy": "Wasted energy is dissipated to the thermal store of the surroundings.",
+     "answerWhy": "Energy cannot be created or destroyed: the law of conservation of energy.",
      "quiz": true
     },
     {
@@ -624,27 +702,27 @@
      "id": "4.21",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 5 of 6: which is true about wasted energy?",
+     "question": "Quiz, question 5 of 6: in the insulation test, which is a control variable?",
      "options": [
       {
-       "text": "It still exists, spread out in the surroundings",
+       "text": "The volume of hot water",
        "branch": "right"
       },
       {
-       "text": "It has been destroyed",
+       "text": "The material",
        "branch": "w1"
       },
       {
-       "text": "It is easy to collect and use again",
+       "text": "The fall in temperature",
        "branch": "w2"
       }
      ],
-     "right": "Yes: it is dissipated, spread so thinly that it is no use, but it still exists.",
+     "right": "Yes: it is kept the same so the test is fair.",
      "wrong": {
-      "other": "Not quite: wasted energy still exists, spread thinly in the surroundings, where it is no use."
+      "other": "Not quite: the volume of hot water is kept the same, so it is a control variable. The material is changed, and the fall in temperature is measured."
      },
      "idk": [],
-     "answerWhy": "Wasted energy still exists, dissipated thinly in the surroundings.",
+     "answerWhy": "The volume of hot water is kept the same, so it is a control variable.",
      "quiz": true
     },
     {

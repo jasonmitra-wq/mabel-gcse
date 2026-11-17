@@ -1,19 +1,21 @@
 {
   "lesson": "p1-efficiency",
   "source_file": "lessons/physics/p1-efficiency.json",
-  "lesson_md5": "e7592da1bf351251e9e0717c9ffb9bc6",
+  "lesson_md5": "90cffec896e028a89cb1b111663c5df1",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:47:31.476Z",
+  "date": "2026-11-17T14:36:28.881Z",
   "specRefs_sent": [
     "4.1.2.2"
   ],
+  "blocking_only": true,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 6181,
-    "output_tokens": 2370
+    "input_tokens": 6673,
+    "output_tokens": 2413
   },
-  "cost_usd": 0.072124,
+  "cost_usd": 0.074952,
   "status": "OK",
   "result": {
     "lesson": "p1-efficiency",
@@ -21,22 +23,17 @@
     "above_gcse": [],
     "factual_errors": [
       {
-        "field": "revisionCardBullets[2]",
-        "text": "Maximum efficiency = 1.0 (100%). Most real devices are less than this",
-        "correction": "All real devices have an efficiency less than 1 (100%), because every real energy transfer dissipates some energy to the surroundings. 'Most' suggests some real devices reach 100%. It also contradicts the lesson's own statement in keyPoints[1].keyTerms[1].def: 'always positive in a real device'.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "Most devices waste some energy, usually as thermal energy (heat) or sound.",
-        "correction": "All real devices waste some energy. It is usually dissipated by heating the surroundings. Saying 'most' implies some devices waste none. This is inconsistent with the lesson's statement that wasted energy is 'always positive in a real device'.",
+        "field": "keyPoints[0].writeBullets[1]",
+        "text": "Useful output energy transfer — energy transferred to the store we want",
+        "correction": "Some useful outputs are energy transferred along a pathway rather than into a store. For a lamp, for example, the useful output is energy transferred by light (radiation). That light is not itself a store, and the energy ends up in the thermal store of the surroundings. A safer definition is 'the energy transferred in the way we want (the intended energy transfer)'. The same imprecision appears in keyPoints[0].keyTerms[1].def: 'Energy transferred to the intended output store'.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "The specification refers to skills codes 'MS 3b, c', 'MS 1a, c, 3b, c' and '(HT only) WS 1.4'. The text of these skills statements was not supplied, so I could not check the lesson against their detailed requirements beyond the notes given ('recall and apply both equations'; 'calculate or use efficiency values as a decimal or as a percentage')."
+      "Only specification section 4.1.2.2 was supplied. Statements that draw on other specification sections could be checked only against my own knowledge of the science, not against the specification text. These include 'It is dissipated to the thermal store of the surroundings' (keyPoints[0].content) and 'That would break the conservation of energy' (commonMistakes[1]).",
+      "The lesson has no diagrams ('diagram': null in every key point), so nothing visual needed checking."
     ]
   }
 }

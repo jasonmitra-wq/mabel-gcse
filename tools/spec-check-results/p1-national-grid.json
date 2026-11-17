@@ -1,20 +1,22 @@
 {
   "lesson": "p1-national-grid",
   "source_file": "lessons/physics/p1-national-grid.json",
-  "lesson_md5": "92e3b5869af7c89a29dc42f1e73073a4",
+  "lesson_md5": "5834d7de0fb0e200ddc92d2576d7d65c",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:48:49.721Z",
+  "date": "2026-11-17T14:37:21.354Z",
   "specRefs_sent": [
     "4.1.3",
     "4.2.4.3"
   ],
+  "blocking_only": true,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7208,
-    "output_tokens": 3384
+    "input_tokens": 8006,
+    "output_tokens": 2907
   },
-  "cost_usd": 0.096512,
+  "cost_usd": 0.090164,
   "status": "OK",
   "result": {
     "lesson": "p1-national-grid",
@@ -22,25 +24,28 @@
       {
         "specRef": "4.1.3",
         "spec_text": "explain patterns and trends in the use of energy resources.",
-        "why": "The lesson only states the trends (keyPoints[2].content: \"Trends: coal use is falling. The use of renewable resources is rising.\"). It does not explain why they are happening, for example concern about CO₂ and climate change, government targets and policy, falling costs of renewables, or the closure of coal power stations. The specification requires students to explain the trends, not just state them."
+        "why": "The lesson only states the trends and does not explain them. It says in keyPoints[2].content: \"<strong>Trends</strong>: coal use is falling. The use of renewable resources is rising.\" It gives no reasons for these patterns, such as concern about CO₂ and climate change, government targets, falling costs of renewables, or fossil fuels running out."
       },
       {
         "specRef": "4.1.3",
         "spec_text": "compare ways that different energy resources are used, the uses to include transport, electricity generation and heating",
-        "why": "The lesson lists the three uses and gives brief examples (keyPoints[2].content: \"For example, petrol and diesel fuel cars. Gas heats many homes.\"). Almost all the rest of the lesson, including the table, treats resources only as sources for electricity generation. There is no comparison of how different resources serve transport and heating, for example bio-fuel as a transport fuel, coal or wood for heating, or the Sun for solar water heating."
+        "why": "The lesson lists the three uses but only gives single examples: \"For example, petrol and diesel fuel cars. Gas heats many homes.\" (keyPoints[2].content). It does not compare how different resources are used across transport, electricity generation and heating. For example, it does not say that bio-fuel can be used for transport, or that homes can be heated by electricity as well as by gas."
       }
     ],
     "above_gcse": [],
     "factual_errors": [
       {
-        "field": "tables[0].rows[7][2]",
-        "text": "Low–moderate",
-        "correction": "Burning bio-fuel releases CO₂ at the point of use, in amounts similar to fossil fuels. Its CO₂ is only 'low' on a net basis, if regrowing crops absorb the CO₂ released. The table should make clear that the figure refers to net emissions. Otherwise it contradicts the lesson's own statement that carbon neutrality \"is debated\" and suggests that burning bio-fuel releases little CO₂.",
+        "field": "basics[5].text",
+        "text": "A fuel is something burned to release energy, like coal, oil or gas.",
+        "correction": "Not all fuels are burned. Nuclear fuel, which the lesson lists as a resource (\"<strong>nuclear fuel</strong>: no CO₂ while generating\", keyPoints[2].content), releases energy by nuclear fission, not by burning. The definition should say that a fuel is a store of energy that can be released, for example by burning or by nuclear fission.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
-    "not_checked": []
+    "not_checked": [
+      "Diagram \"p1-national-grid\" in keyPoints[0] (caption: \"From power station to homes: the potential difference goes up for the cables, then down for homes.\"). The image itself could not be seen.",
+      "Picture \"p1-national-grid\" in keyPoints[1].pictures[0], with labels \"power station\", \"step-up transformer\", \"transmission cables\", \"step-down transformer\", \"homes\". The image and the placement of the labels could not be seen."
+    ]
   }
 }

@@ -1,0 +1,434 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 13010,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11209,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 5628
+    },
+    "iterations": [
+      {
+        "input_tokens": 13010,
+        "output_tokens": 11209,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.55244,
+  "seconds": 103,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from earlier lessons. What is power?\",\"what\":\"The first question assumes she remembers power from another lesson. Nothing in this lesson has told her what power is, so a first-time learner can only guess.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P8\",\"turn\":\"1.1a don't know (first time)\",\"quote\":\"Power is about how fast. Which button has \\\"each second\\\" in it?\",\"what\":\"The hint turns the question into matching words on a button. She can get it right without understanding anything about power.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"L3\",\"turn\":\"1.1b\",\"quote\":\"when an electric current, a flow of charge, passes through a long wire, the wire warms up. What happens to that energy?\",\"what\":\"She has not been told anything that lets her answer this. \\\"That energy\\\" refers to energy the message never mentioned, and \\\"charge\\\" is not explained.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.1b\",\"quote\":\"It is wasted, dissipated to the surroundings\",\"what\":\"\\\"Dissipated\\\" appears in the answer button, and \\\"thermal store of the surroundings\\\" in every reply, with neither term explained anywhere in the lesson.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"1.4\",\"quote\":\"A transformer is a device that changes the potential difference. The network of cables and transformers linking power stations to homes is called the National Grid.\",\"what\":\"Two new terms, transformer and National Grid, are introduced in one message, one step after potential difference and volts.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"1.6\",\"quote\":\"Why so high?\",\"what\":\"The message opens by referring to something not in it. She has to remember that \\\"so high\\\" means the 400 000 V from the previous bubble.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"1.6\",\"quote\":\"Power = current × potential difference, P = I V. P is the power in watts (W), I is the current in amperes (A) and V is the potential difference in volts (V). For the same power, a bigger V needs a smaller I in the cables.\",\"what\":\"One bubble holds a new equation, three symbols with units (amperes is new) and the key inference of the whole key point. That is too many ideas at once.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.6\",\"quote\":\"For the same power, a bigger V needs a smaller I in the cables.\",\"what\":\"Step 1.3 told her potential difference is \\\"the push that drives a current\\\" and a bigger number is a bigger push, so she will expect a bigger current. This line says the opposite with no numbers and no explanation of why the power is fixed, and it is the hardest step in the lesson.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P13\",\"turn\":\"1.6\",\"quote\":\"Power = current × potential difference, P = I V.\",\"what\":\"The equation is stated and never used. There is no worked example with numbers, and no practice, to show that raising V lowers I for the same power.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.7\",\"quote\":\"so the grid is more efficient\",\"what\":\"\\\"Efficient\\\" is used without being explained.\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"1.7\",\"quote\":\"A smaller current wastes far less energy heating the cables\",\"what\":\"The key point says the loss depends on the current squared, so doubling the potential difference cuts losses four times. The script never teaches this, so \\\"far less\\\" is unsupported and the key point is finished without all of it being taught.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.9\",\"quote\":\"An exam asks why the National Grid uses a very high potential difference. Which answer scores the marks?\",\"what\":\"Steps 1.6 and 1.7 have just stated the answer almost word for word. The right button is also the only detailed one, so she can pick it without thinking.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F9\",\"turn\":\"1.9\",\"quote\":\"An exam asks why the National Grid uses a very high potential difference. Which answer scores the marks?\",\"what\":\"Framing the question as exam technique and marks treats her as revising. She met the idea two bubbles ago.\",\"severity\":\"minor\"},{\"fault\":\"P8\",\"turn\":\"1.9 don't know (first time)\",\"quote\":\"The best answer links three things: potential difference, current and heating. Which button links them?\",\"what\":\"Only one button mentions current and heating, so the hint is word-spotting rather than an easier step in the physics.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.10\",\"quote\":\"In one line: why does the National Grid use a high potential difference in its cables?\",\"what\":\"Every reply to 1.9 has just given this exact sentence. She only has to copy what is on the screen above.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.10 (None)\",\"quote\":\"A good line would say: the current is smaller; and less energy is wasted heating the cables.\",\"what\":\"If her line misses everything, the reply does not say so or respond to what she wrote. The semicolon list reads like a mark scheme, not a teacher talking.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"1.10\",\"quote\":\"a high potential difference means a smaller current, so less energy is wasted heating the cables\",\"what\":\"The same sentence appears in 1.7, in every reply to 1.9, again here and again in the quiz. In key point 1 she reads it up to four times in a row.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"2.1\",\"quote\":\"The transformers at a power station raise the potential difference.\",\"what\":\"Step 1.5 already told her that transformers raise the potential difference at the power station. Only the name step-up is new.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"2.3\",\"quote\":\"the power station at about 25 kV (25 000 V), a step-up transformer to as much as 400 kV, the transmission cables, a step-down transformer, and homes at 230 V\",\"what\":\"The three potential differences were all given in 1.5, and 230 V again in 2.2. This is the third telling of the same chain.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"2.3\",\"quote\":\"a step-up transformer to as much as 400 kV, the transmission cables\",\"what\":\"kV is never said to mean a thousand volts, and 400 kV is not converted. \\\"Transmission cables\\\" is a new name for what were \\\"the long cables\\\", with no explanation.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P5\",\"turn\":\"2.3\",\"quote\":\"The picture shows the whole chain\",\"what\":\"The only picture in the lesson arrives all at once with five labels. It is not built up as each part is taught, and key point 1 has no picture at all.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.4\",\"quote\":\"Which kind of transformer is between the transmission cables and your home?\",\"what\":\"Step 2.2 has just said the transformer near homes is a step-down transformer, and the labelled picture in 2.3 shows it in that position.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"2.5\",\"quote\":\"In one line: where are the step-up and step-down transformers in the National Grid?\",\"what\":\"The picture and the replies to 2.4 have just given both positions. She is copying, not recalling.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.1b\",\"quote\":\"with some bio-fuel and electric cars\",\"what\":\"Bio-fuel is used here but not explained until 3.3 (\\\"made from plants\\\").\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"3.1b\",\"quote\":\"Transport runs mostly on petrol and diesel, made from oil, with some bio-fuel and electric cars. Most homes are heated by burning natural gas, some by electricity. Electricity can be made from almost any resource.\",\"what\":\"One bubble covers three separate uses and their resources. It should be one idea per message.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"3.2\",\"quote\":\"An energy resource that will run out one day is called non-renewable. Coal, oil and natural gas, the fossil fuels, are non-renewable. So is nuclear fuel.\",\"what\":\"Three new terms in one message: non-renewable, fossil fuels and nuclear fuel. Nuclear fuel is not explained at all.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"L1\",\"turn\":\"3.3\",\"quote\":\"Examples: the Sun, wind, rivers (hydro-electricity), the tides, water waves, hot rocks underground (geothermal) and bio-fuel, made from plants.\",\"what\":\"Renewable, replenished, hydro-electricity, geothermal and bio-fuel all arrive in one bubble as a list of seven resources. That is far too many new words at once for a first meeting.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"3.4\",\"quote\":\"Which is the best definition of a renewable resource for the exam?\",\"what\":\"The message immediately before gave the definition with the word \\\"replenished\\\", so the question only asks her to spot the same word.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.4 (\\\"One that never runs out\\\")\",\"quote\":\"Not quite: \\\"never runs out\\\" does not score. A renewable resource is replenished, topped up, as it is used.\",\"what\":\"Step 3.2 defined non-renewable as \\\"will run out one day\\\", so \\\"never runs out\\\" is the sensible opposite. The lesson itself uses that idea in 3.5 (\\\"the wind keeps blowing\\\"). She is told it is wrong with no reason why.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F9\",\"turn\":\"3.4\",\"quote\":\"Yes: the word the mark scheme wants is replenished: topped up as it is used.\",\"what\":\"Talk of what the mark scheme wants is revision coaching, not teaching a new idea to someone meeting it for the first time.\",\"severity\":\"minor\"},{\"fault\":\"F7\",\"turn\":\"3.5 don't know (first time)\",\"quote\":\"Which of these is dug out of the ground, so there is only a fixed amount?\",\"what\":\"She has never been told that nuclear fuel is mined, so the hint needs a new fact she does not have. It is not an easier step.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.6\",\"quote\":\"Coal releases the most for each joule.\",\"what\":\"The joule has not been introduced in this lesson, and \\\"for each joule\\\" of what is not said.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"3.6\",\"quote\":\"Burning fossil fuels releases carbon dioxide, a gas that traps heat in the atmosphere and adds to global warming. Coal releases the most for each joule. Burning coal and oil also releases sulfur dioxide, which causes acid rain.\",\"what\":\"Two gases, two environmental effects and a comparison of fuels are packed into one message, with several new terms.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.7\",\"quote\":\"are very reliable. But they make radioactive waste\",\"what\":\"\\\"Reliable\\\" is used before the lesson says what it means for an energy resource, and \\\"radioactive waste\\\" is not explained.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"3.9\",\"quote\":\"Others are reliable.\",\"what\":\"The message opens with \\\"Others\\\", which only makes sense if she still has the previous bubble about renewables in mind.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.9\",\"quote\":\"Hydro-electricity can be switched on when needed.\",\"what\":\"She has only been told hydro-electricity is \\\"rivers\\\". With no mention of water stored behind a dam, she cannot see why it can be switched on when needed.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"3.10\",\"quote\":\"Which resource could best meet a sudden rise in demand on a still, dark winter evening?\",\"what\":\"The message just before said hydro-electricity can be switched on when needed, and the right-answer reply repeats those words. \\\"Demand\\\" is also not explained.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.11 (\\\"The passengers breathing\\\")\",\"quote\":\"Not quite: breathing is not counted.\",\"what\":\"This does not explain anything. She would reasonably ask why it is not counted, and the option itself is a throwaway.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"3.12\",\"quote\":\"The reasons: worry about carbon dioxide and global warming, government targets to cut emissions, renewables getting cheaper, and fossil fuels running out.\",\"what\":\"A trend and four reasons are given in one bubble, and \\\"emissions\\\" is not explained.\",\"severity\":\"minor\"},{\"fault\":\"P8\",\"turn\":\"3.13\",\"quote\":\"Use electric cars instead of petrol cars, charged from renewables\",\"what\":\"The right button is simply the wrong button \\\"Use electric cars\\\" with more words added. The don't-know hint (\\\"Which button has both?\\\") points straight at it, so it tests length-spotting.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.14\",\"quote\":\"Yes, your line has it: no carbon dioxide (or renewable); and intermittent (not always available).\",\"what\":\"The feedback reads like a marker's notes with brackets, not a sentence to a pupil. The lesson also never said that wind gives out no carbon dioxide, so she has not been taught the advantage it wants.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.17 (\\\"So the cables are safer to touch\\\")\",\"quote\":\"Not quite: a high potential difference means a small current, so less energy is wasted heating the cables.\",\"what\":\"The reply ignores her idea. It should say that a high potential difference is more dangerous, not safer, or she may keep the misconception.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.18 (\\\"Coal\\\")\",\"quote\":\"Not quite: bio-fuel. It comes from plants, which can be grown again.\",\"what\":\"The reply is terse and says nothing about why coal or nuclear fuel is not renewable.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.20 (\\\"Oxygen\\\")\",\"quote\":\"Not quite: carbon dioxide. Sulfur dioxide causes acid rain.\",\"what\":\"The reply was written for the sulfur dioxide answer and does not fit a pupil who chose oxygen.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole lesson\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on anywhere in the lesson. For example, there is no slider to raise the potential difference and watch the current and the cable heating fall, which is exactly what key point 1 needs.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"1.2 to 1.7\",\"quote\":\"Now this lesson. Electricity is made in power stations, often far from where people live.\",\"what\":\"Six telling messages in a row with only a Next button, and no picture until 2.3. Almost every question after that can be answered by copying the bubble above, so she is likely to switch off.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":2},{\"fault\":\"P8\",\"instances\":3},{\"fault\":\"F3\",\"instances\":7},{\"fault\":\"F5\",\"instances\":2},{\"fault\":\"F2\",\"instances\":2},{\"fault\":\"P6\",\"instances\":4},{\"fault\":\"P13\",\"instances\":1},{\"fault\":\"P4\",\"instances\":1},{\"fault\":\"F8\",\"instances\":6},{\"fault\":\"F9\",\"instances\":2},{\"fault\":\"F1\",\"instances\":3},{\"fault\":\"P5\",\"instances\":1},{\"fault\":\"L1\",\"instances\":1},{\"fault\":\"F7\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"new\",\"instances\":8}],\"overall\":\"No, I would not let her use this as it is. The central idea of key point 1, that a higher potential difference means a smaller current for the same power, is asserted in one crowded bubble with no numbers or worked example, straight after she was told potential difference is a 'bigger push', and the current-squared reason in the key point is never taught. Most questions can be answered by copying the message just above, or the hint points at the right button, so right answers would not show she understood. It also opens with recall questions she cannot answer, piles up new terms in key point 3, marks 'never runs out' wrong without a reason, and has nothing hands-on.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from earlier lessons. What is power?",
+      "what": "The first question assumes she remembers power from another lesson. Nothing in this lesson has told her what power is, so a first-time learner can only guess.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P8",
+      "turn": "1.1a don't know (first time)",
+      "quote": "Power is about how fast. Which button has \"each second\" in it?",
+      "what": "The hint turns the question into matching words on a button. She can get it right without understanding anything about power.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.1b",
+      "quote": "when an electric current, a flow of charge, passes through a long wire, the wire warms up. What happens to that energy?",
+      "what": "She has not been told anything that lets her answer this. \"That energy\" refers to energy the message never mentioned, and \"charge\" is not explained.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1b",
+      "quote": "It is wasted, dissipated to the surroundings",
+      "what": "\"Dissipated\" appears in the answer button, and \"thermal store of the surroundings\" in every reply, with neither term explained anywhere in the lesson.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.4",
+      "quote": "A transformer is a device that changes the potential difference. The network of cables and transformers linking power stations to homes is called the National Grid.",
+      "what": "Two new terms, transformer and National Grid, are introduced in one message, one step after potential difference and volts.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "1.6",
+      "quote": "Why so high?",
+      "what": "The message opens by referring to something not in it. She has to remember that \"so high\" means the 400 000 V from the previous bubble.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "1.6",
+      "quote": "Power = current × potential difference, P = I V. P is the power in watts (W), I is the current in amperes (A) and V is the potential difference in volts (V). For the same power, a bigger V needs a smaller I in the cables.",
+      "what": "One bubble holds a new equation, three symbols with units (amperes is new) and the key inference of the whole key point. That is too many ideas at once.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.6",
+      "quote": "For the same power, a bigger V needs a smaller I in the cables.",
+      "what": "Step 1.3 told her potential difference is \"the push that drives a current\" and a bigger number is a bigger push, so she will expect a bigger current. This line says the opposite with no numbers and no explanation of why the power is fixed, and it is the hardest step in the lesson.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P13",
+      "turn": "1.6",
+      "quote": "Power = current × potential difference, P = I V.",
+      "what": "The equation is stated and never used. There is no worked example with numbers, and no practice, to show that raising V lowers I for the same power.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.7",
+      "quote": "so the grid is more efficient",
+      "what": "\"Efficient\" is used without being explained.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "1.7",
+      "quote": "A smaller current wastes far less energy heating the cables",
+      "what": "The key point says the loss depends on the current squared, so doubling the potential difference cuts losses four times. The script never teaches this, so \"far less\" is unsupported and the key point is finished without all of it being taught.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.9",
+      "quote": "An exam asks why the National Grid uses a very high potential difference. Which answer scores the marks?",
+      "what": "Steps 1.6 and 1.7 have just stated the answer almost word for word. The right button is also the only detailed one, so she can pick it without thinking.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F9",
+      "turn": "1.9",
+      "quote": "An exam asks why the National Grid uses a very high potential difference. Which answer scores the marks?",
+      "what": "Framing the question as exam technique and marks treats her as revising. She met the idea two bubbles ago.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P8",
+      "turn": "1.9 don't know (first time)",
+      "quote": "The best answer links three things: potential difference, current and heating. Which button links them?",
+      "what": "Only one button mentions current and heating, so the hint is word-spotting rather than an easier step in the physics.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.10",
+      "quote": "In one line: why does the National Grid use a high potential difference in its cables?",
+      "what": "Every reply to 1.9 has just given this exact sentence. She only has to copy what is on the screen above.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10 (None)",
+      "quote": "A good line would say: the current is smaller; and less energy is wasted heating the cables.",
+      "what": "If her line misses everything, the reply does not say so or respond to what she wrote. The semicolon list reads like a mark scheme, not a teacher talking.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.10",
+      "quote": "a high potential difference means a smaller current, so less energy is wasted heating the cables",
+      "what": "The same sentence appears in 1.7, in every reply to 1.9, again here and again in the quiz. In key point 1 she reads it up to four times in a row.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.1",
+      "quote": "The transformers at a power station raise the potential difference.",
+      "what": "Step 1.5 already told her that transformers raise the potential difference at the power station. Only the name step-up is new.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.3",
+      "quote": "the power station at about 25 kV (25 000 V), a step-up transformer to as much as 400 kV, the transmission cables, a step-down transformer, and homes at 230 V",
+      "what": "The three potential differences were all given in 1.5, and 230 V again in 2.2. This is the third telling of the same chain.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.3",
+      "quote": "a step-up transformer to as much as 400 kV, the transmission cables",
+      "what": "kV is never said to mean a thousand volts, and 400 kV is not converted. \"Transmission cables\" is a new name for what were \"the long cables\", with no explanation.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P5",
+      "turn": "2.3",
+      "quote": "The picture shows the whole chain",
+      "what": "The only picture in the lesson arrives all at once with five labels. It is not built up as each part is taught, and key point 1 has no picture at all.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.4",
+      "quote": "Which kind of transformer is between the transmission cables and your home?",
+      "what": "Step 2.2 has just said the transformer near homes is a step-down transformer, and the labelled picture in 2.3 shows it in that position.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.5",
+      "quote": "In one line: where are the step-up and step-down transformers in the National Grid?",
+      "what": "The picture and the replies to 2.4 have just given both positions. She is copying, not recalling.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.1b",
+      "quote": "with some bio-fuel and electric cars",
+      "what": "Bio-fuel is used here but not explained until 3.3 (\"made from plants\").",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.1b",
+      "quote": "Transport runs mostly on petrol and diesel, made from oil, with some bio-fuel and electric cars. Most homes are heated by burning natural gas, some by electricity. Electricity can be made from almost any resource.",
+      "what": "One bubble covers three separate uses and their resources. It should be one idea per message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "3.2",
+      "quote": "An energy resource that will run out one day is called non-renewable. Coal, oil and natural gas, the fossil fuels, are non-renewable. So is nuclear fuel.",
+      "what": "Three new terms in one message: non-renewable, fossil fuels and nuclear fuel. Nuclear fuel is not explained at all.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "L1",
+      "turn": "3.3",
+      "quote": "Examples: the Sun, wind, rivers (hydro-electricity), the tides, water waves, hot rocks underground (geothermal) and bio-fuel, made from plants.",
+      "what": "Renewable, replenished, hydro-electricity, geothermal and bio-fuel all arrive in one bubble as a list of seven resources. That is far too many new words at once for a first meeting.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.4",
+      "quote": "Which is the best definition of a renewable resource for the exam?",
+      "what": "The message immediately before gave the definition with the word \"replenished\", so the question only asks her to spot the same word.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.4 (\"One that never runs out\")",
+      "quote": "Not quite: \"never runs out\" does not score. A renewable resource is replenished, topped up, as it is used.",
+      "what": "Step 3.2 defined non-renewable as \"will run out one day\", so \"never runs out\" is the sensible opposite. The lesson itself uses that idea in 3.5 (\"the wind keeps blowing\"). She is told it is wrong with no reason why.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F9",
+      "turn": "3.4",
+      "quote": "Yes: the word the mark scheme wants is replenished: topped up as it is used.",
+      "what": "Talk of what the mark scheme wants is revision coaching, not teaching a new idea to someone meeting it for the first time.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F7",
+      "turn": "3.5 don't know (first time)",
+      "quote": "Which of these is dug out of the ground, so there is only a fixed amount?",
+      "what": "She has never been told that nuclear fuel is mined, so the hint needs a new fact she does not have. It is not an easier step.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.6",
+      "quote": "Coal releases the most for each joule.",
+      "what": "The joule has not been introduced in this lesson, and \"for each joule\" of what is not said.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.6",
+      "quote": "Burning fossil fuels releases carbon dioxide, a gas that traps heat in the atmosphere and adds to global warming. Coal releases the most for each joule. Burning coal and oil also releases sulfur dioxide, which causes acid rain.",
+      "what": "Two gases, two environmental effects and a comparison of fuels are packed into one message, with several new terms.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.7",
+      "quote": "are very reliable. But they make radioactive waste",
+      "what": "\"Reliable\" is used before the lesson says what it means for an energy resource, and \"radioactive waste\" is not explained.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.9",
+      "quote": "Others are reliable.",
+      "what": "The message opens with \"Others\", which only makes sense if she still has the previous bubble about renewables in mind.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.9",
+      "quote": "Hydro-electricity can be switched on when needed.",
+      "what": "She has only been told hydro-electricity is \"rivers\". With no mention of water stored behind a dam, she cannot see why it can be switched on when needed.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.10",
+      "quote": "Which resource could best meet a sudden rise in demand on a still, dark winter evening?",
+      "what": "The message just before said hydro-electricity can be switched on when needed, and the right-answer reply repeats those words. \"Demand\" is also not explained.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.11 (\"The passengers breathing\")",
+      "quote": "Not quite: breathing is not counted.",
+      "what": "This does not explain anything. She would reasonably ask why it is not counted, and the option itself is a throwaway.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.12",
+      "quote": "The reasons: worry about carbon dioxide and global warming, government targets to cut emissions, renewables getting cheaper, and fossil fuels running out.",
+      "what": "A trend and four reasons are given in one bubble, and \"emissions\" is not explained.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P8",
+      "turn": "3.13",
+      "quote": "Use electric cars instead of petrol cars, charged from renewables",
+      "what": "The right button is simply the wrong button \"Use electric cars\" with more words added. The don't-know hint (\"Which button has both?\") points straight at it, so it tests length-spotting.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.14",
+      "quote": "Yes, your line has it: no carbon dioxide (or renewable); and intermittent (not always available).",
+      "what": "The feedback reads like a marker's notes with brackets, not a sentence to a pupil. The lesson also never said that wind gives out no carbon dioxide, so she has not been taught the advantage it wants.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.17 (\"So the cables are safer to touch\")",
+      "quote": "Not quite: a high potential difference means a small current, so less energy is wasted heating the cables.",
+      "what": "The reply ignores her idea. It should say that a high potential difference is more dangerous, not safer, or she may keep the misconception.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.18 (\"Coal\")",
+      "quote": "Not quite: bio-fuel. It comes from plants, which can be grown again.",
+      "what": "The reply is terse and says nothing about why coal or nuclear fuel is not renewable.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.20 (\"Oxygen\")",
+      "quote": "Not quite: carbon dioxide. Sulfur dioxide causes acid rain.",
+      "what": "The reply was written for the sulfur dioxide answer and does not fit a pupil who chose oxygen.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on anywhere in the lesson. For example, there is no slider to raise the potential difference and watch the current and the cable heating fall, which is exactly what key point 1 needs.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "1.2 to 1.7",
+      "quote": "Now this lesson. Electricity is made in power stations, often far from where people live.",
+      "what": "Six telling messages in a row with only a Next button, and no picture until 2.3. Almost every question after that can be answered by copying the bubble above, so she is likely to switch off.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 8
+    },
+    {
+      "fault": "F3",
+      "instances": 7
+    },
+    {
+      "fault": "F8",
+      "instances": 6
+    },
+    {
+      "fault": "P6",
+      "instances": 4
+    },
+    {
+      "fault": "P8",
+      "instances": 3
+    },
+    {
+      "fault": "F1",
+      "instances": 3
+    },
+    {
+      "fault": "L3",
+      "instances": 2
+    },
+    {
+      "fault": "F5",
+      "instances": 2
+    },
+    {
+      "fault": "F2",
+      "instances": 2
+    },
+    {
+      "fault": "F9",
+      "instances": 2
+    },
+    {
+      "fault": "P13",
+      "instances": 1
+    },
+    {
+      "fault": "P4",
+      "instances": 1
+    },
+    {
+      "fault": "P5",
+      "instances": 1
+    },
+    {
+      "fault": "L1",
+      "instances": 1
+    },
+    {
+      "fault": "F7",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    }
+  ],
+  "overall": "No, I would not let her use this as it is. The central idea of key point 1, that a higher potential difference means a smaller current for the same power, is asserted in one crowded bubble with no numbers or worked example, straight after she was told potential difference is a 'bigger push', and the current-squared reason in the key point is never taught. Most questions can be answered by copying the message just above, or the hint points at the right button, so right answers would not show she understood. It also opens with recall questions she cannot answer, piles up new terms in key point 3, marks 'never runs out' wrong without a reason, and has nothing hands-on."
+}

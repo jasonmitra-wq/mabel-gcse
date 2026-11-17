@@ -47,35 +47,34 @@
     {
      "id": "1.1b",
      "type": "ask",
-     "kind": "number",
-     "question": "Second: a motor is supplied with 400 J and transfers 100 J usefully. What is its efficiency, as a percentage?",
-     "answer": {
-      "value": 25,
-      "unit": "%",
-      "tolerance": 0.01
-     },
-     "wrongValues": [
+     "kind": "tap",
+     "question": "Second: you lift a box onto a high shelf. Which store of the box fills up?",
+     "options": [
       {
-       "value": 0.25,
-       "branch": "decimal"
+       "text": "Gravitational potential",
+       "branch": "right"
       },
       {
-       "value": 400,
-       "branch": "upside"
+       "text": "Kinetic",
+       "branch": "kinetic"
+      },
+      {
+       "text": "Elastic potential",
+       "branch": "elastic"
       }
      ],
-     "right": "Yes: 25%. 100 ÷ 400 = 0.25, which is 25%.",
+     "right": "Yes: raising the box fills its gravitational potential store.",
      "wrong": {
-      "other": "Not quite: 25%. Efficiency = 100 ÷ 400 = 0.25, which is 25%.",
-      "decimal": "Nearly: 0.25 is the decimal. As a percentage, multiply by 100: 25%.",
-      "upside": "Not quite: 25%. Put the useful energy on top: 100 ÷ 400 = 0.25, which is 25%."
+      "other": "Not quite: gravitational potential, the store for raised things.",
+      "kinetic": "Not quite: once it is on the shelf the box is still. Raising it fills its gravitational potential store.",
+      "elastic": "Not quite: nothing is stretched. Raising the box fills its gravitational potential store."
      },
      "idk": [
       {
-       "hint": "Divide the useful energy, 100, by the total, 400. Then multiply by 100."
+       "hint": "The box ends up higher. Which store is for raised things?"
       }
      ],
-     "answerWhy": "Efficiency = 100 ÷ 400 = 0.25, which is 25%."
+     "answerWhy": "Raising the box fills its gravitational potential store."
     },
     {
      "id": "1.2",
@@ -85,7 +84,7 @@
     {
      "id": "1.3",
      "type": "say",
-     "text": "A rate is how much happens each second. Speed is a rate: the metres you travel each second."
+     "text": "A rate is how much happens in a given time, such as each second. Speed is a rate: the metres you travel each second."
     },
     {
      "id": "1.4",
@@ -116,18 +115,18 @@
        "branch": "one"
       }
      ],
-     "right": "Yes: 60 W. A watt is a joule each second, so 60 J every second is 60 W.",
+     "right": "Yes: 60 W.",
      "wrong": {
-      "other": "Not quite: 60 W. A watt is a joule each second.",
-      "unit": "Nearly: the number is right, but power is in watts. 60 J every second is 60 W.",
-      "one": "Not quite: 60 W. 1 W would be 1 J each second. 60 J each second is 60 W."
+      "other": "Not quite: 60 W.",
+      "unit": "Nearly: the number is right, but power is in watts, so 60 W.",
+      "one": "Not quite: 60 W. 1 W would be just 1 J in each second."
      },
      "idk": [
       {
-       "hint": "One watt is one joule every second. So how many watts is 60 joules every second?"
+       "hint": "Count the joules transferred in one second. That number is the power in watts."
       }
      ],
-     "answerWhy": "A watt is a joule each second, so 60 J every second is 60 W."
+     "answerWhy": "60 J in each second is a power of 60 W."
     },
     {
      "id": "1.7",
@@ -137,16 +136,16 @@
     {
      "id": "1.8",
      "type": "say",
-     "text": "A more powerful machine does not always transfer more energy in total: it transfers energy faster. A crane that lifts a car in 5 s and one that takes 20 s transfer the same energy, but the faster crane has four times the power."
+     "text": "A more powerful machine does not always transfer more energy in total: it transfers energy faster. Lifting a car to the same height takes the same energy whether a crane takes 20 s or 5 s. The faster crane takes a quarter of the time, so it has four times the power."
     },
     {
      "id": "1.9",
      "type": "ask",
      "kind": "tap",
-     "question": "Two motors lift the same load to the same height. Motor X takes 10 s and motor Y takes 20 s. Which is true?",
+     "question": "Two motors lift the same load to the same height. Motor X takes 10 s and motor Y takes 30 s. Which is true?",
      "options": [
       {
-       "text": "X has twice the power of Y",
+       "text": "X has three times the power of Y",
        "branch": "right"
       },
       {
@@ -158,18 +157,18 @@
        "branch": "longer"
       }
      ],
-     "right": "Yes: they transfer the same energy, but X does it in half the time, so X has twice the power.",
+     "right": "Yes: they transfer the same energy, but X does it in a third of the time, so X has three times the power.",
      "wrong": {
-      "other": "Not quite. X has twice the power: the same energy in half the time.",
-      "energy": "Not quite: same load, same height, so the same energy. X transfers it in half the time, so X has twice the power.",
-      "longer": "Not quite: taking longer means a lower power. X transfers the same energy in half the time, so X has twice the power."
+      "other": "Not quite. X has three times the power: the same energy in a third of the time.",
+      "energy": "Not quite: lifting the same load to the same height takes the same energy. X transfers it in a third of the time, so X has three times the power.",
+      "longer": "Not quite: taking longer means a lower power. X transfers the same energy in a third of the time, so X has three times the power."
      },
      "idk": [
       {
-       "hint": "Both lift the same load the same height, so the energy is the same. Which one transfers it faster?"
+       "hint": "Both transfer the same energy. Which motor transfers it faster, and how many times faster?"
       }
      ],
-     "answerWhy": "The energy is the same, but X transfers it in half the time, so X has twice the power."
+     "answerWhy": "The energy is the same, but X transfers it in a third of the time, so X has three times the power."
     },
     {
      "id": "1.10",
@@ -191,10 +190,10 @@
      "id": "2.1",
      "type": "worked",
      "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
-     "question": "A light bulb transfers 1800 J in 3 minutes. What is its power?",
+     "question": "A light bulb transfers 100 J in 10 s. What is its power?",
      "steps": [
-      "Time in seconds: 3 × 60 = 180 s.",
-      "Write the equation and put in the numbers: P = E ÷ t = 1800 ÷ 180.",
+      "Write the equation: P = E ÷ t.",
+      "Put in the numbers: P = 100 ÷ 10.",
       "P = 10 W."
      ],
      "answer": {
@@ -243,18 +242,33 @@
     {
      "id": "2.4",
      "type": "say",
-     "text": "Power stations are measured in megawatts (MW): 1 MW = 1 000 000 W, a million watts. Change kilowatts and megawatts into watts before you calculate."
+     "text": "The power output of a power station is given in megawatts (MW): 1 MW = 1 000 000 W, a million watts. Change kilowatts and megawatts into watts before you calculate."
     },
     {
      "id": "2.5",
      "type": "say",
-     "text": "To find the energy, rearrange to E = P × t. To find the time, t = E ÷ P. If you are unsure, put the numbers into P = E ÷ t first, then rearrange."
+     "text": "To find the energy, multiply both sides of P = E ÷ t by t: that gives E = P × t."
+    },
+    {
+     "id": "2.5b",
+     "type": "worked",
+     "text": "To find the time instead, put the numbers in first, then rearrange. Its steps open one at a time.",
+     "question": "How long does a 2000 W heater take to transfer 36 000 J?",
+     "steps": [
+      "Put the numbers into P = E ÷ t: 2000 = 36 000 ÷ t.",
+      "Rearrange: t = E ÷ P = 36 000 ÷ 2000.",
+      "t = 18 s."
+     ],
+     "answer": {
+      "value": 18,
+      "unit": "s"
+     }
     },
     {
      "id": "2.6",
      "type": "ask",
      "kind": "number",
-     "question": "A 2 kW heater is on for 30 s. How much energy does it transfer, in joules?",
+     "question": "A 3 kW oven is on for 20 s. How much energy does it transfer, in joules?",
      "answer": {
       "value": 60000,
       "unit": "J",
@@ -266,22 +280,22 @@
        "branch": "nokw"
       },
       {
-       "value": 15,
+       "value": 150,
        "branch": "divide"
       }
      ],
-     "right": "Yes: 60 000 J. 2 kW = 2000 W, and E = P × t = 2000 × 30 = 60 000 J.",
+     "right": "Yes: 60 000 J. 3 kW = 3000 W, and E = P × t = 3000 × 20 = 60 000 J.",
      "wrong": {
-      "other": "Not quite: 60 000 J. 2 kW = 2000 W, so E = P × t = 2000 × 30 = 60 000 J.",
-      "nokw": "Not quite: 60 000 J. Change kilowatts to watts first: 2 kW = 2000 W. Then E = 2000 × 30 = 60 000 J.",
-      "divide": "Not quite: 60 000 J. To find the energy, multiply: E = P × t = 2000 × 30 = 60 000 J."
+      "other": "Not quite: 60 000 J. 3 kW = 3000 W, so E = P × t = 3000 × 20 = 60 000 J.",
+      "nokw": "Not quite: 60 000 J. Change kilowatts to watts first: 3 kW = 3000 W. Then E = 3000 × 20 = 60 000 J.",
+      "divide": "Not quite: 60 000 J. To find the energy, multiply: E = P × t = 3000 × 20 = 60 000 J."
      },
      "idk": [
       {
-       "hint": "First, 2 kW in watts is 2000 W. Then multiply by the time, 30 s."
+       "hint": "First, 3 kW in watts is 3000 W. Then multiply by the time, 20 s."
       }
      ],
-     "answerWhy": "2 kW = 2000 W, so E = P × t = 2000 × 30 = 60 000 J."
+     "answerWhy": "3 kW = 3000 W, so E = P × t = 3000 × 20 = 60 000 J."
     },
     {
      "id": "2.7",
@@ -374,7 +388,7 @@
     {
      "id": "3.1",
      "type": "say",
-     "text": "Some real powers: a hairdryer is about 2000 W, a kettle 2000 to 3000 W, and an electric car's motor 100 to 300 kW."
+     "text": "Some real powers: a hairdryer is about 2000 W, a kettle 1500 to 3000 W, and an electric car's motor 100 to 300 kW."
     },
     {
      "id": "3.2",
@@ -385,33 +399,33 @@
      "id": "3.3",
      "type": "ask",
      "kind": "tap",
-     "question": "Which of these transfers energy fastest?",
+     "question": "Which of these transfers energy fastest: a 0.5 MW wind turbine, a 3000 W kettle or a 300 kW car motor?",
      "options": [
       {
-       "text": "A 2 GW power station",
+       "text": "The 0.5 MW wind turbine",
        "branch": "right"
       },
       {
-       "text": "A 3 kW kettle",
-       "branch": "kettle"
+       "text": "The 300 kW car motor",
+       "branch": "car"
       },
       {
-       "text": "A 300 kW car motor",
-       "branch": "car"
+       "text": "The 3000 W kettle",
+       "branch": "kettle"
       }
      ],
-     "right": "Yes: 2 GW is 2 000 000 000 W, far more than the others.",
+     "right": "Yes: 0.5 MW is 500 000 W, the car motor is 300 000 W and the kettle 3000 W.",
      "wrong": {
-      "other": "Not quite: the 2 GW power station. A gigawatt is a thousand million watts.",
-      "kettle": "Not quite: 3 kW is only 3000 W. The power station, 2 GW, is 2 000 000 000 W.",
-      "car": "Not quite: 300 kW is 300 000 W. The power station, 2 GW, is 2 000 000 000 W."
+      "other": "Not quite: the wind turbine. 0.5 MW is 500 000 W, more than 300 000 W or 3000 W.",
+      "car": "Not quite: 300 kW is 300 000 W, but 0.5 MW is 500 000 W, so the turbine is faster.",
+      "kettle": "Not quite: 3000 is the biggest number, but the units differ. In watts: kettle 3000 W, car motor 300 000 W, turbine 500 000 W."
      },
      "idk": [
       {
-       "hint": "Giga is bigger than mega, and mega is bigger than kilo. Which button has giga?"
+       "hint": "Change each into watts: 1 MW = 1 000 000 W and 1 kW = 1000 W. Then compare."
       }
      ],
-     "answerWhy": "2 GW is 2 000 000 000 W, far more than 3 kW or 300 kW."
+     "answerWhy": "In watts: the turbine is 500 000 W, the car motor 300 000 W and the kettle 3000 W, so the turbine is fastest."
     },
     {
      "id": "3.4",
@@ -436,7 +450,12 @@
     {
      "id": "4.2",
      "type": "say",
-     "text": "The equation is W = F s: work done = force × distance. W is the work done in joules (J), F is the force in newtons (N) and s is the distance moved along the line of the force in metres (m)."
+     "text": "The equation is W = F × s: work done = force × distance. W is the work done in joules (J), F is the force in newtons (N) and s is the distance moved in the direction of the force, in metres (m)."
+    },
+    {
+     "id": "4.2b",
+     "type": "say",
+     "text": "Careful: in this equation W stands for work done and s for distance, not watts and seconds."
     },
     {
      "id": "4.3",
@@ -449,9 +468,9 @@
      "text": "Here is a worked example. Its steps open one at a time.",
      "question": "A force of 3000 N pushes a car 20 m. How much work is done?",
      "steps": [
-      "Write the equation: W = F s.",
+      "Write the equation: W = F × s.",
       "Put in the numbers: W = 3000 × 20.",
-      "W = 60 000 J, which is 60 kJ."
+      "W = 60 000 J."
      ],
      "answer": {
       "value": 60000,
@@ -494,7 +513,12 @@
     {
      "id": "4.6",
      "type": "say",
-     "text": "Work done moves energy between stores. Lifting a box fills its gravitational potential store. Pushing a box against friction warms the box and the floor, so the energy goes to thermal stores."
+     "text": "Work done moves energy between stores. Lifting a box raises it, so energy goes into its gravitational potential store."
+    },
+    {
+     "id": "4.6b",
+     "type": "say",
+     "text": "Pushing a box along a rough floor against friction makes the box and the floor warmer, so energy goes into their thermal stores."
     },
     {
      "id": "4.7",
@@ -532,12 +556,11 @@
     {
      "id": "4.9",
      "type": "own",
-     "prompt": "In one line: what is work done, and how is it linked to power?",
+     "prompt": "In one line: what is work done?",
      "points": [
-      "the energy transferred when a force moves something (W = F s)",
-      "power is work done divided by time"
+      "the energy transferred when a force moves something"
      ],
-     "idk": "No problem. A good line would be: work done is the energy transferred when a force moves something, W = F s, and power is the work done each second, P = W ÷ t."
+     "idk": "No problem. A good line would be: work done is the energy transferred when a force moves something."
     },
     {
      "id": "4.10",
@@ -622,7 +645,9 @@
      ],
      "right": "Yes: watts. 1 W is 1 J each second.",
      "wrong": {
-      "other": "Not quite: watts. 1 W is 1 J each second."
+      "other": "Not quite: watts. 1 W is 1 J each second.",
+      "w1": "Not quite: joules measure energy. Power, the energy each second, is measured in watts.",
+      "w2": "Not quite: newtons measure force. Power is measured in watts."
      },
      "idk": [],
      "answerWhy": "Power is measured in watts: 1 W is 1 J each second.",
@@ -668,7 +693,9 @@
      ],
      "right": "Yes: half the power, so twice the time for the same energy.",
      "wrong": {
-      "other": "Not quite: 4 minutes. Half the power transfers the same energy in twice the time."
+      "other": "Not quite: 4 minutes. Half the power transfers the same energy in twice the time.",
+      "w1": "Not quite: 4 minutes. Less power means slower, so it takes longer, not shorter: half the power, twice the time.",
+      "w2": "Not quite: 4 minutes. The power does matter: half the power transfers the same energy in twice the time."
      },
      "idk": [],
      "answerWhy": "Half the power transfers the same energy in twice the time: 4 minutes.",

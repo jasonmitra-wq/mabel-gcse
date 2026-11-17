@@ -4,4 +4,6 @@ lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
 p1-kinetic-potential | 4.1.1.2 | 17431 | 4358 | 0.3374
 TOTAL 1 lesson(s) | 17431 chars | 4358 est. input tokens | 16000 output tokens assumed | $0.3374
 Rates: $4 per M input, $20 per M output; output assumed at the 16000-token ceiling per lesson.
-GET /v1/models failed: HTTP 401 {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"},"request_id":"req_011Ch8cDL3yaofRKawRyfToP"}
+Model claude-opus-5-5 confirmed in /v1/models.
+p1-kinetic-potential: OK | in 6736 out 1589 | $0.0587 | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 0
+Actual total cost: $0.0587

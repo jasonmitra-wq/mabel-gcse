@@ -1,0 +1,379 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 18075,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 14276,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 8906
+    },
+    "iterations": [
+      {
+        "input_tokens": 18075,
+        "output_tokens": 14276,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.71564,
+  "seconds": 135,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"new\",\"turn\":\"1.6 right\",\"quote\":\"Yes: it has none.\",\"what\":\"She has just pressed 'No: it is not moving' and the reply opens with 'Yes'. The yes/no clash would make her wonder whether she was right; the message also says 'has none' twice.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.9\",\"quote\":\"An archer pulls back a bowstring and holds it still. Which store holds energy because of the bent bow?\",\"what\":\"The message just before (1.8) listed 'a drawn bow' as an example of the elastic potential store, so the answer was handed to her one bubble earlier.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.9 right\",\"quote\":\"The bow is bent and the string stretched, and stretched or squashed things have energy in their elastic potential store.\",\"what\":\"1.8 said 'stretched or squashed', but the replies bring in 'bent' as if it had been taught. The energy is really in the bent bow, not a stretched string.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"1.12\",\"quote\":\"Which of these has a lot of energy in its chemical store?\",\"what\":\"1.11 has just said 'fuels such as petrol' hold chemical energy, and the right button is 'A full tank of petrol'. She only has to match the word.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"1.13\",\"quote\":\"The nuclear store: energy held in the centre of each atom, called its nucleus. Uranium fuel in a power station and the core of the Sun both use it.\",\"what\":\"Nuclear store, atom, nucleus and uranium all arrive in one message, with nothing said about what an atom or uranium is.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.13\",\"quote\":\"Uranium fuel in a power station and the core of the Sun both use it.\",\"what\":\"Two messages ago she learnt that fuels hold energy in the chemical store; now a 'fuel' is the example of the nuclear store, with no comment. 'Both use it' is also vague.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.14\",\"quote\":\"energy between electric charges, like the static on a rubbed balloon\",\"what\":\"'Electric charges' is used with no explanation; she has not been told what charge is.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"1.15\",\"quote\":\"And the magnetic store: energy between magnets, like two magnets held apart. That makes eight: kinetic, gravitational potential, elastic potential, thermal, chemical, nuclear, electrostatic and magnetic.\",\"what\":\"A new store and the recap of all eight are in one bubble. The recap deserves its own message.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.16\",\"quote\":\"A skier waits, not moving, at the top of a tall slope. Which store holds energy because of the skier's height?\",\"what\":\"After three new stores (nuclear, electrostatic, magnetic) the question goes back to gravitational potential. Those three are never asked about anywhere in the lesson or the quiz, although the key point says she must name all eight with an example.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F4\",\"turn\":\"1.17\",\"quote\":\"One more word for this part. A system is the object, or group of objects, you are looking at: a skier and the Earth, or a kettle and its water.\",\"what\":\"A 'word you'll need' message for a term that the next question does not use and that only returns at 3.3. 'A skier and the Earth' is not explained (why the Earth?), and the message also adds a second idea, that energy moves between stores.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.19\",\"quote\":\"which store does a moving thing have, which does a raised thing have, and which does a stretched thing have?\",\"what\":\"Imprecise: every object has all the stores, and the point is which one holds more energy ('a moving thing has a kinetic store' in the don't-know reply repeats this). It also recalls only three of the eight stores.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"2.1\",\"quote\":\"Moving energy is called transferring it, and there are four ways, called pathways.\",\"what\":\"Two new terms, 'transferring' and 'pathways', in one sentence.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"2.3\",\"quote\":\"A current is a flow of electric charge round a circuit, and it carries energy from a battery to a lamp.\",\"what\":\"Electrically, current, electric charge and circuit all in one message. 'Charge' and 'circuit' are never explained, so 'a flow of electric charge' explains one unknown word with another.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.5\",\"quote\":\"Sound waves carry energy too.\",\"what\":\"Tacked onto the radiation message, this reads as if sound is part of the radiation pathway (light and infrared). She is not told which pathway sound belongs to, and 'infrared' is only glossed in passing.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"2.4\",\"quote\":\"The third: by heating, which means energy passing from a hotter object to a cooler one\",\"what\":\"Four pathways are told in four messages with no question between them, and the heating pathway is never tested by any question in the lesson or quiz. The difference between 'by heating' and 'by radiation' (the Sun's warmth) is left unclear.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"2.6\",\"quote\":\"A battery makes a torch bulb light up. Which pathway carries energy from the battery to the bulb?\",\"what\":\"2.3 already said a current 'carries energy from a battery to a lamp' as the example of the electrical pathway. This is the same example asked back.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P16\",\"turn\":\"2.6 wrong (Mechanically)\",\"quote\":\"No force pushes anything along.\",\"what\":\"Wrong physics: the charges in the wire are pushed along by a force. Better to say that nothing is being pushed or pulled by hand or by a moving part; the energy is carried by the current.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"2.6 don't know (first time)\",\"quote\":\"Between a battery and a bulb there are wires. What flows in wires?\",\"what\":\"The hint asks 'what flows?' (answer: a current), but the buttons are still the three pathways, so the hint question and the choices do not match.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.9\",\"quote\":\"Fill the gap: energy is transferred mechanically, by the pull of gravity, from the apple's ___ store to its kinetic store.\",\"what\":\"The key point says to practise the full sentence (pathway, from store, to store), but she only ever fills one gap with the pathway given. She never chooses a pathway and both stores herself.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"3.3\",\"quote\":\"Add up the energy at the end and you get the same total as at the start.\",\"what\":\"The end and start of what? The message relies on the falling book from the previous bubble without naming it.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.4\",\"quote\":\"It went to other stores, mostly the thermal store of the surroundings\",\"what\":\"She has never been told that light ends up warming the room, so she cannot reason to this; she can only pick it because it is the long, technical-sounding option and the other two are plainly wrong. The reply ('by light and heating into the thermal store of the room') states the missing step without explaining it.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"3.4 wrong (electric charge)\",\"quote\":\"Not quite. The current carried the energy to the bulb, and the bulb sent it out by light and heating.\",\"what\":\"The reply does not deal with her idea. It never says that charge is not energy and that energy does not turn into charge.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.6 wrong (Its kinetic store)\",\"quote\":\"Not quite: the kettle stays still on the counter.\",\"what\":\"She was asked about the water, not the kettle, and boiling water visibly churns, so this does not answer her thinking. Say instead that the main change is the water getting hotter.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.7\",\"quote\":\"Its kinetic store emptied into the thermal stores of the trolley, carpet and air\",\"what\":\"The right option is by far the longest and the only one in the lesson's language, so she can pick it without thinking. The same pattern occurs at 3.4, 5.8 and 5.16.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"4.7\",\"quote\":\"It has been destroyed\",\"what\":\"'Destroyed' or 'gone' is the wrong option at 3.4, 3.7, 4.6, 4.7 and 5.15, and 'energy is never destroyed' is said in the replies each time and again at 5.8 and 5.13. The same fact is repeated over and over.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"4.3\",\"quote\":\"The rest is called wasted energy.\",\"what\":\"'The rest' of what? The message depends on the previous bubble; read on its own it has no referent.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"4.6\",\"quote\":\"A lamp is meant to give light, but its glass gets hot. What is the energy that warms the glass and the air around it?\",\"what\":\"4.5 has just said the torch bulb sends out 'wasted energy by heating', and 4.4 said wasted energy is dissipated to the surroundings. This is the same case asked straight back.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"4.7\",\"quote\":\"Why is dissipated energy so hard to use again?\",\"what\":\"4.4 said 'It spreads out so thinly that nobody can use it again', and the right button repeats those words. The answer was given before the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"4.8\",\"quote\":\"In one line: where does wasted energy usually end up, and why is it no use?\",\"what\":\"This is a third pass in a row over the same two facts (4.4 told them, 4.6 and 4.7 asked them), and 5.15 asks the first again. 'Thermal store of the surroundings' appears in almost every message of this key point.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.4\",\"quote\":\"How much of the energy put in does a useful job is called the efficiency.\",\"what\":\"A tangled sentence a 15-year-old would have to read twice. 'How much' also suggests an amount of energy rather than a fraction; say 'Efficiency is the fraction of the energy put in that does a useful job.'\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"5.5\",\"quote\":\"15 ÷ 100 = 0.15. Multiply by 100 to make a percentage: 15%. Efficiency has no unit, because it is joules divided by joules.\",\"what\":\"Three ideas in one bubble: the decimal, the percentage and why there is no unit.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"5.7 wrong (111)\",\"quote\":\"An efficiency over 100% is always a sign of dividing the wrong way round.\",\"what\":\"On this branch she is told the answer to the very next question (5.8, the 120% machine). 'Always' also overstates it; 5.8 itself says 'usually'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"5.14\",\"quote\":\"Any other wrong answer: Not quite: 25%. 50 ÷ 200 = 0.25, and 0.25 × 100 = 25%.\",\"what\":\"Unlike 5.7, there is no reply for 0.25, so a girl who gives the correct decimal is told flatly 'Not quite' instead of 'Nearly'.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.16\",\"quote\":\"a ball rolls to a stop. Which is the best answer in an exam?\",\"what\":\"The best answer to what? No question about the ball is actually stated (for example 'Describe the energy changes'). It also switches to 'decreases/increases' and 'the surroundings' where 3.7 used 'emptied' and 'trolley, carpet and air'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P14\",\"turn\":\"whole script\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on anywhere: no simulation, no drag-and-sort of stores, nothing to try. It is 60 bubbles of text with only two pictures (4.5 and 5.2).\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"1.1-1.5\",\"quote\":\"Welcome! This lesson is about energy: the ways it can be held in things, how it moves from one place to another, and why some of it always ends up where nobody wanted it.\",\"what\":\"She presses Next five times before she is asked anything, and again at 2.1-2.5 and 4.1-4.5. With no picture in key points 1 to 3, she is likely to drift.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"L3\",\"turn\":\"1.4\",\"quote\":\"There are eight of them, and the exam wants their exact names.\",\"what\":\"The fourth message of a first lesson is already about the exam (again at 2.7 and 5.16: 'That is what the marks are for'). For a first-time learner the reason to learn the names should be the physics.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.3\",\"quote\":\"Energy is measured in joules, written J.\",\"what\":\"The joule is introduced here and then not used at all until 5.2, some forty messages later, where '100 J' appears with no reminder.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.3\",\"quote\":\"A system that no energy can get into or out of is called a closed system: its total energy never changes.\",\"what\":\"'Closed system' is defined in passing in the same bubble as another idea, and is never used or asked about again.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.2\",\"quote\":\"100 J goes in on the left. 15 J carries on to the right as light: the useful energy. 85 J bends down: wasted, by heating the surroundings.\",\"what\":\"The message never points out that the wasted arrow is the wider one, and no question asks her to read anything from arrow widths; 5.3 is plain subtraction. The Sankey diagram itself is not tested.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"The end\",\"quote\":\"The lesson is finished. Tap a button to go on.\",\"what\":\"A flat ending: no summary of what she now knows and no word about her quiz result or what to look at again.\",\"severity\":\"minor\"}],\"counts\":[{\"fault\":\"new\",\"instances\":18},{\"fault\":\"F8\",\"instances\":6},{\"fault\":\"F5\",\"instances\":3},{\"fault\":\"F1\",\"instances\":2},{\"fault\":\"F2\",\"instances\":2},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"F3\",\"instances\":1},{\"fault\":\"F4\",\"instances\":1},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"L3\",\"instances\":1}],\"overall\":\"Not as it stands. The structure is sound and most of the physics follows the specification wording, but too many questions simply ask back the example given a bubble or two earlier (bow, petrol, battery to lamp, spread thinly), so she can get them right without thinking. Three of the eight stores and the heating pathway are never tested, and there are points that would mislead her: 'No force pushes anything along', uranium 'fuel' straight after fuels were called chemical, sound tacked onto radiation, and the battery question that needs light ending up as heat, which she has not been told. I would also want the long runs of Next broken up with something to do, and the 'destroyed' distractor and 'thermal store of the surroundings' repetition cut back, before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "new",
+      "turn": "1.6 right",
+      "quote": "Yes: it has none.",
+      "what": "She has just pressed 'No: it is not moving' and the reply opens with 'Yes'. The yes/no clash would make her wonder whether she was right; the message also says 'has none' twice.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.9",
+      "quote": "An archer pulls back a bowstring and holds it still. Which store holds energy because of the bent bow?",
+      "what": "The message just before (1.8) listed 'a drawn bow' as an example of the elastic potential store, so the answer was handed to her one bubble earlier.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.9 right",
+      "quote": "The bow is bent and the string stretched, and stretched or squashed things have energy in their elastic potential store.",
+      "what": "1.8 said 'stretched or squashed', but the replies bring in 'bent' as if it had been taught. The energy is really in the bent bow, not a stretched string.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.12",
+      "quote": "Which of these has a lot of energy in its chemical store?",
+      "what": "1.11 has just said 'fuels such as petrol' hold chemical energy, and the right button is 'A full tank of petrol'. She only has to match the word.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.13",
+      "quote": "The nuclear store: energy held in the centre of each atom, called its nucleus. Uranium fuel in a power station and the core of the Sun both use it.",
+      "what": "Nuclear store, atom, nucleus and uranium all arrive in one message, with nothing said about what an atom or uranium is.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.13",
+      "quote": "Uranium fuel in a power station and the core of the Sun both use it.",
+      "what": "Two messages ago she learnt that fuels hold energy in the chemical store; now a 'fuel' is the example of the nuclear store, with no comment. 'Both use it' is also vague.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.14",
+      "quote": "energy between electric charges, like the static on a rubbed balloon",
+      "what": "'Electric charges' is used with no explanation; she has not been told what charge is.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "1.15",
+      "quote": "And the magnetic store: energy between magnets, like two magnets held apart. That makes eight: kinetic, gravitational potential, elastic potential, thermal, chemical, nuclear, electrostatic and magnetic.",
+      "what": "A new store and the recap of all eight are in one bubble. The recap deserves its own message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.16",
+      "quote": "A skier waits, not moving, at the top of a tall slope. Which store holds energy because of the skier's height?",
+      "what": "After three new stores (nuclear, electrostatic, magnetic) the question goes back to gravitational potential. Those three are never asked about anywhere in the lesson or the quiz, although the key point says she must name all eight with an example.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F4",
+      "turn": "1.17",
+      "quote": "One more word for this part. A system is the object, or group of objects, you are looking at: a skier and the Earth, or a kettle and its water.",
+      "what": "A 'word you'll need' message for a term that the next question does not use and that only returns at 3.3. 'A skier and the Earth' is not explained (why the Earth?), and the message also adds a second idea, that energy moves between stores.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.19",
+      "quote": "which store does a moving thing have, which does a raised thing have, and which does a stretched thing have?",
+      "what": "Imprecise: every object has all the stores, and the point is which one holds more energy ('a moving thing has a kinetic store' in the don't-know reply repeats this). It also recalls only three of the eight stores.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "2.1",
+      "quote": "Moving energy is called transferring it, and there are four ways, called pathways.",
+      "what": "Two new terms, 'transferring' and 'pathways', in one sentence.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "2.3",
+      "quote": "A current is a flow of electric charge round a circuit, and it carries energy from a battery to a lamp.",
+      "what": "Electrically, current, electric charge and circuit all in one message. 'Charge' and 'circuit' are never explained, so 'a flow of electric charge' explains one unknown word with another.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.5",
+      "quote": "Sound waves carry energy too.",
+      "what": "Tacked onto the radiation message, this reads as if sound is part of the radiation pathway (light and infrared). She is not told which pathway sound belongs to, and 'infrared' is only glossed in passing.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "2.4",
+      "quote": "The third: by heating, which means energy passing from a hotter object to a cooler one",
+      "what": "Four pathways are told in four messages with no question between them, and the heating pathway is never tested by any question in the lesson or quiz. The difference between 'by heating' and 'by radiation' (the Sun's warmth) is left unclear.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.6",
+      "quote": "A battery makes a torch bulb light up. Which pathway carries energy from the battery to the bulb?",
+      "what": "2.3 already said a current 'carries energy from a battery to a lamp' as the example of the electrical pathway. This is the same example asked back.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P16",
+      "turn": "2.6 wrong (Mechanically)",
+      "quote": "No force pushes anything along.",
+      "what": "Wrong physics: the charges in the wire are pushed along by a force. Better to say that nothing is being pushed or pulled by hand or by a moving part; the energy is carried by the current.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "2.6 don't know (first time)",
+      "quote": "Between a battery and a bulb there are wires. What flows in wires?",
+      "what": "The hint asks 'what flows?' (answer: a current), but the buttons are still the three pathways, so the hint question and the choices do not match.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.9",
+      "quote": "Fill the gap: energy is transferred mechanically, by the pull of gravity, from the apple's ___ store to its kinetic store.",
+      "what": "The key point says to practise the full sentence (pathway, from store, to store), but she only ever fills one gap with the pathway given. She never chooses a pathway and both stores herself.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.3",
+      "quote": "Add up the energy at the end and you get the same total as at the start.",
+      "what": "The end and start of what? The message relies on the falling book from the previous bubble without naming it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.4",
+      "quote": "It went to other stores, mostly the thermal store of the surroundings",
+      "what": "She has never been told that light ends up warming the room, so she cannot reason to this; she can only pick it because it is the long, technical-sounding option and the other two are plainly wrong. The reply ('by light and heating into the thermal store of the room') states the missing step without explaining it.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "3.4 wrong (electric charge)",
+      "quote": "Not quite. The current carried the energy to the bulb, and the bulb sent it out by light and heating.",
+      "what": "The reply does not deal with her idea. It never says that charge is not energy and that energy does not turn into charge.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6 wrong (Its kinetic store)",
+      "quote": "Not quite: the kettle stays still on the counter.",
+      "what": "She was asked about the water, not the kettle, and boiling water visibly churns, so this does not answer her thinking. Say instead that the main change is the water getting hotter.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.7",
+      "quote": "Its kinetic store emptied into the thermal stores of the trolley, carpet and air",
+      "what": "The right option is by far the longest and the only one in the lesson's language, so she can pick it without thinking. The same pattern occurs at 3.4, 5.8 and 5.16.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.7",
+      "quote": "It has been destroyed",
+      "what": "'Destroyed' or 'gone' is the wrong option at 3.4, 3.7, 4.6, 4.7 and 5.15, and 'energy is never destroyed' is said in the replies each time and again at 5.8 and 5.13. The same fact is repeated over and over.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "4.3",
+      "quote": "The rest is called wasted energy.",
+      "what": "'The rest' of what? The message depends on the previous bubble; read on its own it has no referent.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.6",
+      "quote": "A lamp is meant to give light, but its glass gets hot. What is the energy that warms the glass and the air around it?",
+      "what": "4.5 has just said the torch bulb sends out 'wasted energy by heating', and 4.4 said wasted energy is dissipated to the surroundings. This is the same case asked straight back.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.7",
+      "quote": "Why is dissipated energy so hard to use again?",
+      "what": "4.4 said 'It spreads out so thinly that nobody can use it again', and the right button repeats those words. The answer was given before the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.8",
+      "quote": "In one line: where does wasted energy usually end up, and why is it no use?",
+      "what": "This is a third pass in a row over the same two facts (4.4 told them, 4.6 and 4.7 asked them), and 5.15 asks the first again. 'Thermal store of the surroundings' appears in almost every message of this key point.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.4",
+      "quote": "How much of the energy put in does a useful job is called the efficiency.",
+      "what": "A tangled sentence a 15-year-old would have to read twice. 'How much' also suggests an amount of energy rather than a fraction; say 'Efficiency is the fraction of the energy put in that does a useful job.'",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "5.5",
+      "quote": "15 ÷ 100 = 0.15. Multiply by 100 to make a percentage: 15%. Efficiency has no unit, because it is joules divided by joules.",
+      "what": "Three ideas in one bubble: the decimal, the percentage and why there is no unit.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "5.7 wrong (111)",
+      "quote": "An efficiency over 100% is always a sign of dividing the wrong way round.",
+      "what": "On this branch she is told the answer to the very next question (5.8, the 120% machine). 'Always' also overstates it; 5.8 itself says 'usually'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "5.14",
+      "quote": "Any other wrong answer: Not quite: 25%. 50 ÷ 200 = 0.25, and 0.25 × 100 = 25%.",
+      "what": "Unlike 5.7, there is no reply for 0.25, so a girl who gives the correct decimal is told flatly 'Not quite' instead of 'Nearly'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.16",
+      "quote": "a ball rolls to a stop. Which is the best answer in an exam?",
+      "what": "The best answer to what? No question about the ball is actually stated (for example 'Describe the energy changes'). It also switches to 'decreases/increases' and 'the surroundings' where 3.7 used 'emptied' and 'trolley, carpet and air'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole script",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on anywhere: no simulation, no drag-and-sort of stores, nothing to try. It is 60 bubbles of text with only two pictures (4.5 and 5.2).",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "1.1-1.5",
+      "quote": "Welcome! This lesson is about energy: the ways it can be held in things, how it moves from one place to another, and why some of it always ends up where nobody wanted it.",
+      "what": "She presses Next five times before she is asked anything, and again at 2.1-2.5 and 4.1-4.5. With no picture in key points 1 to 3, she is likely to drift.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.4",
+      "quote": "There are eight of them, and the exam wants their exact names.",
+      "what": "The fourth message of a first lesson is already about the exam (again at 2.7 and 5.16: 'That is what the marks are for'). For a first-time learner the reason to learn the names should be the physics.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.3",
+      "quote": "Energy is measured in joules, written J.",
+      "what": "The joule is introduced here and then not used at all until 5.2, some forty messages later, where '100 J' appears with no reminder.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3",
+      "quote": "A system that no energy can get into or out of is called a closed system: its total energy never changes.",
+      "what": "'Closed system' is defined in passing in the same bubble as another idea, and is never used or asked about again.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.2",
+      "quote": "100 J goes in on the left. 15 J carries on to the right as light: the useful energy. 85 J bends down: wasted, by heating the surroundings.",
+      "what": "The message never points out that the wasted arrow is the wider one, and no question asks her to read anything from arrow widths; 5.3 is plain subtraction. The Sankey diagram itself is not tested.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "The end",
+      "quote": "The lesson is finished. Tap a button to go on.",
+      "what": "A flat ending: no summary of what she now knows and no word about her quiz result or what to look at again.",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 20
+    },
+    {
+      "fault": "F8",
+      "instances": 6
+    },
+    {
+      "fault": "F5",
+      "instances": 3
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "F2",
+      "instances": 2
+    },
+    {
+      "fault": "F1",
+      "instances": 2
+    },
+    {
+      "fault": "F3",
+      "instances": 1
+    },
+    {
+      "fault": "F4",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it stands. The structure is sound and most of the physics follows the specification wording, but too many questions simply ask back the example given a bubble or two earlier (bow, petrol, battery to lamp, spread thinly), so she can get them right without thinking. Three of the eight stores and the heating pathway are never tested, and there are points that would mislead her: 'No force pushes anything along', uranium 'fuel' straight after fuels were called chemical, sound tacked onto radiation, and the battery question that needs light ending up as heat, which she has not been told. I would also want the long runs of Next broken up with something to do, and the 'destroyed' distractor and 'thermal store of the surroundings' repetition cut back, before she uses it."
+}

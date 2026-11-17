@@ -31,7 +31,7 @@
        "branch": "battery"
       }
      ],
-     "right": "Yes: it is dissipated into the thermal store of the surroundings.",
+     "right": "Yes: it is dissipated, which means spread out, into the thermal store of the surroundings, warming them a tiny bit.",
      "wrong": {
       "other": "Not quite: in the thermal store of the surroundings.",
       "destroyed": "Not quite: energy is never destroyed. The energy a machine wastes is dissipated into the thermal store of the surroundings.",
@@ -94,7 +94,12 @@
     {
      "id": "1.5",
      "type": "say",
-     "text": "Efficiency is the proportion of the energy supplied that is transferred usefully. The equation is: efficiency = useful output energy transfer ÷ total input energy transfer. For the lamp, 20 ÷ 100 = 0.2."
+     "text": "Efficiency is the share, or fraction, of the energy supplied that is transferred usefully."
+    },
+    {
+     "id": "1.5b",
+     "type": "say",
+     "text": "The equation is: efficiency = useful output energy transfer ÷ total input energy transfer. For the lamp, 20 ÷ 100 = 0.2."
     },
     {
      "id": "1.6",
@@ -166,14 +171,18 @@
      "answerWhy": "Energy cannot be created, so efficiency is never more than 1 (100%): 1.2 is impossible."
     },
     {
+     "id": "1.8b",
+     "type": "say",
+     "text": "An electric heater is close to 100% efficient, because heating is the job it is for. Many other devices also waste energy as sound."
+    },
+    {
      "id": "1.9",
      "type": "own",
-     "prompt": "In one line: what is efficiency, and what is the highest it could ever be?",
+     "prompt": "In one line: what is efficiency?",
      "points": [
-      "useful output energy divided by total input energy",
-      "at most 1 (100%)"
+      "useful output energy divided by total input energy"
      ],
-     "idk": "No problem. A good line would be: efficiency is the useful output energy divided by the total input energy, and it can never be more than 1, or 100%."
+     "idk": "No problem. A good line would be: efficiency is the useful output energy divided by the total input energy."
     }
    ]
   },
@@ -185,7 +194,7 @@
      "id": "2.1",
      "type": "worked",
      "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
-     "question": "A motor is supplied with 500 J. It transfers 375 J usefully to a kinetic store. What is its efficiency, as a percentage?",
+     "question": "A motor is supplied with 500 J. It transfers 375 J usefully, making it turn. What is its efficiency, as a percentage?",
      "steps": [
       "Write the equation: efficiency = useful output energy transfer ÷ total input energy transfer.",
       "Put in the numbers: efficiency = 375 ÷ 500 = 0.75.",
@@ -232,13 +241,18 @@
     {
      "id": "2.3",
      "type": "say",
-     "text": "Efficiency works with power too. Power is the energy transferred each second, in watts (W). Divide the useful power output by the total power input, just as with energy."
+     "text": "Power is the energy transferred each second, measured in watts (W)."
+    },
+    {
+     "id": "2.3b",
+     "type": "say",
+     "text": "Efficiency can also be worked out from power: efficiency = useful power output ÷ total power input. It gives the same answer, because both powers are for the same second."
     },
     {
      "id": "2.4",
      "type": "ask",
      "kind": "number",
-     "question": "A lamp is supplied with 10 W, and 9 W of that comes out as light. What is its efficiency, as a percentage?",
+     "question": "A modern lamp is supplied with 10 W, and 9 W of that comes out as light. What is its efficiency, as a percentage?",
      "answer": {
       "value": 90,
       "unit": "%",
@@ -270,7 +284,23 @@
     {
      "id": "2.5",
      "type": "say",
-     "text": "Sometimes you know the efficiency and need an energy. Put the numbers into the equation first, then rearrange. For example, 0.4 = useful ÷ 200 gives useful = 0.4 × 200 = 80 J."
+     "text": "Sometimes you know the efficiency and need an energy. Put the numbers into the equation first, then rearrange."
+    },
+    {
+     "id": "2.5b",
+     "type": "worked",
+     "text": "Here is a worked example. Its steps open one at a time.",
+     "question": "A motor has an efficiency of 0.4 and is supplied with 200 J. How much energy does it transfer usefully?",
+     "steps": [
+      "Write the equation: efficiency = useful output ÷ total input.",
+      "Put in the numbers: 0.4 = useful ÷ 200.",
+      "Multiply both sides by 200: useful = 0.4 × 200.",
+      "Useful output = 80 J."
+     ],
+     "answer": {
+      "value": 80,
+      "unit": "J"
+     }
     },
     {
      "id": "2.6",
@@ -306,10 +336,15 @@
      "text": "To use a percentage in the equation, change it back to a decimal first by dividing by 100. 80% is 0.8."
     },
     {
+     "id": "2.7b",
+     "type": "say",
+     "text": "To find the total input, the unknown is on the bottom: for example 0.5 = 100 ÷ total. Multiply both sides by the total, then divide both sides by 0.5: total = 100 ÷ 0.5 = 200 J."
+    },
+    {
      "id": "2.8",
      "type": "ask",
      "kind": "number",
-     "question": "A heater is 80% efficient and transfers 400 J usefully. What is the total input energy, in joules?",
+     "question": "A motor is 80% efficient and transfers 400 J usefully. What is the total input energy, in joules?",
      "answer": {
       "value": 500,
       "unit": "J",
@@ -333,7 +368,7 @@
      },
      "idk": [
       {
-       "hint": "Change 80% to 0.8. Then put the numbers in: 0.8 = 400 ÷ total. Swap the total and the 0.8."
+       "hint": "Change 80% to 0.8. Put the numbers in: 0.8 = 400 ÷ total. Then total = 400 ÷ 0.8."
       }
      ],
      "answerWhy": "0.8 = 400 ÷ total, so total = 400 ÷ 0.8 = 500 J."
@@ -401,36 +436,41 @@
      "answerWhy": "A is 150 ÷ 200 = 0.75 and B is 300 ÷ 500 = 0.6, so motor A is more efficient."
     },
     {
+     "id": "3.4b",
+     "type": "say",
+     "text": "A petrol car engine gets very hot when it runs: most of the energy from its fuel heats the engine and the exhaust. An electric motor stays much cooler."
+    },
+    {
      "id": "3.5",
      "type": "ask",
      "kind": "tap",
-     "question": "Why is a petrol car engine much less efficient than an electric motor?",
+     "question": "Which is likely to be more efficient, a petrol engine or an electric motor?",
      "options": [
       {
-       "text": "Most of the energy from the fuel is wasted heating the engine and exhaust",
+       "text": "The electric motor: less of its energy is wasted heating",
        "branch": "right"
       },
       {
-       "text": "Petrol has no energy in it",
-       "branch": "noenergy"
+       "text": "The petrol engine: it is more powerful",
+       "branch": "power"
       },
       {
-       "text": "A petrol engine destroys some energy",
-       "branch": "destroys"
+       "text": "They are the same: both make things move",
+       "branch": "same"
       }
      ],
-     "right": "Yes: a petrol engine gets very hot, and most of the fuel's energy goes to heating the engine, the exhaust and the air.",
+     "right": "Yes: the petrol engine wastes most of its fuel's energy heating the engine and exhaust, so the electric motor transfers a bigger share usefully.",
      "wrong": {
-      "other": "Not quite. Most of the energy from the fuel is wasted heating the engine and exhaust.",
-      "noenergy": "Not quite: petrol has lots of energy in its chemical store. Most of it is wasted heating the engine and exhaust.",
-      "destroys": "Not quite: no machine destroys energy. Most of the fuel's energy is wasted heating the engine and exhaust."
+      "other": "Not quite: the electric motor. The petrol engine wastes much more of its energy by heating.",
+      "power": "Not quite: being powerful is not the same as being efficient. The petrol engine wastes most of its energy heating itself, so the electric motor is more efficient.",
+      "same": "Not quite: both make things move, but the petrol engine wastes much more of its energy by heating, so the electric motor is more efficient."
      },
      "idk": [
       {
-       "hint": "A petrol engine gets very hot when it runs. What does that tell you about where its energy goes?"
+       "hint": "The petrol engine gets very hot. Does that mean more or less of its energy is wasted?"
       }
      ],
-     "answerWhy": "Most of the fuel's energy is wasted heating the engine, the exhaust and the air."
+     "answerWhy": "The petrol engine wastes most of its energy heating itself, so the electric motor is more efficient."
     },
     {
      "id": "3.6",
@@ -438,9 +478,9 @@
      "prompt": "In one line: how do you decide which of two devices is more efficient?",
      "points": [
       "work out the efficiency of each",
-      "the higher efficiency wastes less"
+      "the higher efficiency wastes a smaller share of its input"
      ],
-     "idk": "No problem. A good line would be: work out the efficiency of each device; the one with the higher efficiency wastes less energy."
+     "idk": "No problem. A good line would be: work out the efficiency of each device; the one with the higher efficiency wastes a smaller share of the energy it is given."
     }
    ]
   },
@@ -451,57 +491,62 @@
     {
      "id": "4.1",
      "type": "say",
-     "text": "Lubrication means putting oil between moving parts. It reduces friction, so less energy is wasted by heating, and the machine becomes more efficient."
+     "text": "Lubrication, putting oil between moving parts, reduces friction, so less energy is wasted by heating, and the machine becomes more efficient."
     },
     {
      "id": "4.2",
      "type": "say",
-     "text": "Insulating hot parts, like a boiler, means less energy escapes to the surroundings. Swapping in better parts, like LEDs for incandescent bulbs, helps too."
+     "text": "Insulating hot parts, by wrapping them in a material that slows energy escaping, also helps: a jacket round a boiler means less energy is wasted."
+    },
+    {
+     "id": "4.2b",
+     "type": "say",
+     "text": "Swapping in better parts helps too, like LEDs instead of incandescent bulbs."
     },
     {
      "id": "4.3",
      "type": "say",
-     "text": "A more efficient device needs less energy put in for the same useful output. Less input means less fuel burned in power stations, and lower electricity bills."
+     "text": "Why does efficiency matter? With less waste, less energy has to be supplied for the same job. That means less fuel burned in power stations."
     },
     {
      "id": "4.4",
      "type": "ask",
      "kind": "tap",
-     "question": "An exam asks why a family should buy an efficient fridge. Which answer would score the marks?",
+     "question": "A family swaps an old fridge for a more efficient one that keeps food just as cold. Why does the new one cost less to run?",
      "options": [
       {
-       "text": "It wastes less energy, so it needs less input, so bills are lower",
+       "text": "It wastes less energy, so less electricity has to be supplied",
        "branch": "right"
+      },
+      {
+       "text": "It makes some of its own energy",
+       "branch": "makes"
       },
       {
        "text": "It saves energy",
        "branch": "saves"
-      },
-      {
-       "text": "It wastes no energy at all",
-       "branch": "none"
       }
      ],
-     "right": "Yes: say what is wasted, what that means for the input, and what that means for the bill. Each link earns a mark.",
+     "right": "Yes: less is wasted, so less has to be supplied for the same cooling, and the family pays for less electricity.",
      "wrong": {
-      "other": "Not quite. The answer that scores is: it wastes less energy, so it needs less input, so bills are lower.",
-      "saves": "Not quite: \"saves energy\" scores nothing on its own. Say: it wastes less energy, so it needs less input energy, so the electricity bills are lower.",
-      "none": "Not quite: every real device wastes some energy, so \"wastes no energy\" is marked wrong. It wastes less, so it needs less input, so bills are lower."
+      "other": "Not quite. It wastes less energy, so less electricity has to be supplied for the same job.",
+      "makes": "Not quite: no fridge makes energy. It wastes less, so less electricity has to be supplied for the same cooling.",
+      "saves": "Not quite: \"saves energy\" is too vague, because energy is never used up. Say how: it wastes less, so less electricity has to be supplied for the same cooling."
      },
      "idk": [
       {
-       "hint": "The best answer links three things: waste, input and bills. Which button links all three?"
+       "hint": "The new fridge does the same job. If it wastes less, does it need more or less electricity supplied?"
       }
      ],
-     "answerWhy": "An efficient fridge wastes less energy, so it needs less input energy, so the electricity bills are lower."
+     "answerWhy": "An efficient fridge wastes less energy, so less electricity has to be supplied for the same cooling."
     },
     {
      "id": "4.5",
      "type": "own",
      "prompt": "In one line: give one way to make a machine more efficient, and say why it works.",
      "points": [
-      "a way: lubrication, insulation or better parts",
-      "less energy is wasted"
+      "lubrication, insulation or better parts",
+      "so less energy is wasted"
      ],
      "idk": "No problem. A good line would be: lubricate the moving parts, which reduces friction, so less energy is wasted by heating."
     },
@@ -560,7 +605,7 @@
      "id": "4.9",
      "type": "ask",
      "kind": "number",
-     "question": "Quiz, question 3 of 6: a heater has a total power input of 50 W and a useful power output of 20 W. What is its efficiency, as a percentage?",
+     "question": "Quiz, question 3 of 6: a motor has a total power input of 50 W and a useful power output of 20 W. What is its efficiency, as a percentage?",
      "answer": {
       "value": 40,
       "unit": "%",
@@ -642,7 +687,9 @@
      ],
      "right": "Yes: dividing the wrong way round gives an answer over 1. Put the useful output on top.",
      "wrong": {
-      "other": "Not quite: efficiency over 1 is impossible, so they divided the wrong way round. Put the useful output on top."
+      "other": "Not quite: efficiency over 1 is impossible, so they divided the wrong way round. Put the useful output on top.",
+      "w1": "Not quite: forgetting to multiply by 100 leaves a decimal below 1, so it cannot give 1.6. An answer over 1 means the division was the wrong way round.",
+      "w2": "Not quite: no machine can be over 1, because energy cannot be created. They divided the wrong way round; useful output goes on top."
      },
      "idk": [],
      "answerWhy": "An answer over 1 means the division was the wrong way round: useful output goes on top.",

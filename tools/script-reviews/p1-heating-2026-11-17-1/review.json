@@ -1,0 +1,298 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 16152,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 9734,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 6068
+    },
+    "iterations": [
+      {
+        "input_tokens": 16152,
+        "output_tokens": 9734,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.518576,
+  "seconds": 92,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from earlier lessons.\",\"what\":\"The lesson opens by testing earlier lessons she has not had. A first-time learner starts with two questions she cannot answer from everyday life.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.1a\",\"quote\":\"Which store of the water rises?\",\"what\":\"'Store', 'kinetic store', 'thermal store' and 'chemical store' are all used before anything has said what an energy store is.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.1a (wrong answer: kinetic store)\",\"quote\":\"Not quite: the water stays in the kettle. It gets hotter, so its thermal store rises.\",\"what\":\"This does not explain why the kinetic store is wrong; she has never been told the kinetic store is about a moving object. The reason is muddled, since water in a kettle does move about.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F10\",\"turn\":\"1.1b\",\"quote\":\"E = P × t = 2000 × 10 = 20 000 J\",\"what\":\"E = P × t is used without ever being stated with what E, P and t mean and their units. Power has not been taught in this lesson at all.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.1b\",\"quote\":\"a 2 kW heater is on for 10 s. How much energy does it transfer, in joules?\",\"what\":\"Kilowatt, watt and joule are all used with no explanation. She could not answer this from what the lesson has told her.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.6\",\"quote\":\"Which one gets hotter?\",\"what\":\"Imprecise: which ends up hotter depends on where each started. The question means 'which has the bigger temperature rise?' and should say so.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"1.7\",\"quote\":\"The Greek letter Δ, delta, means \\\"change in\\\". Δθ, said \\\"delta theta\\\", is the change in temperature\",\"what\":\"Two new symbols arrive in one message, and it never says that θ on its own stands for temperature.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.9 / 2.2 / 2.4 / 2.7 / 2.8 (wrong answers)\",\"quote\":\"Not quite: 42 000 J.\",\"what\":\"Every wrong number is met with the answer straight away, e.g. at 2.2. She never gets a hint and a second go, so a slip teaches her nothing she has to do herself.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.5\",\"quote\":\"A 1.5 kg aluminium block cooling from 80 °C to 20 °C gives out 1.5 × 900 × 60 = 81 000 J.\",\"what\":\"The 60 is not explained. She was told Δθ is final minus start, which gives 20 − 80 = −60, and nothing says to use the size of the change when something cools. The 900 for aluminium is also not restated.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"2.6\",\"quote\":\"15 000 ÷ (5 × 10), not 15 000 ÷ 5 × 10\",\"what\":\"The exact calculation that answers question 2.7 is given in the message before it. These numbers also appear from nowhere, before the problem they belong to.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.6\",\"quote\":\"To find c, Δθ or m, put the numbers in first, then divide.\",\"what\":\"This is the only teaching of rearranging and it is too thin. There is no worked example, no rearranged equation, and 'the bottom of the division' refers to a fraction she has never been shown.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"2.8\",\"quote\":\"2 kg of water is given 84 000 J. c = 4200 J/kg °C. How much does its temperature rise, in °C?\",\"what\":\"She is asked to find Δθ without ever seeing how. Δθ = ΔE ÷ (m × c) appears only in the replies after the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.9\",\"quote\":\"In one line: what is the most common mistake with Δθ, and how do you avoid it?\",\"what\":\"The main path never tells her what the common mistake is. It is only mentioned in wrong-answer replies she may never have seen, so she has to guess what the tutor has in mind.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.9 (all points / none)\",\"quote\":\"Yes, your line has it: using a temperature instead of the change in temperature; and take the start from the final temperature first.\",\"what\":\"The reply is checklist fragments stitched together and does not read as a sentence.\",\"severity\":\"minor\"},{\"fault\":\"P10\",\"turn\":\"3.1\",\"quote\":\"Next, a required practical: one you could be asked about in the exam.\",\"what\":\"The practical starts cold. There are no readiness questions, such as what you would need to measure to find c.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.2\",\"quote\":\"A heater goes into one hole in a metal block, and a thermometer into another.\",\"what\":\"The apparatus is described in words only, with no diagram. She has never seen this equipment and would struggle to picture a block with two holes, a heater and a joulemeter.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F10\",\"turn\":\"3.3\",\"quote\":\"Then c = ΔE ÷ (m × Δθ).\",\"what\":\"On the main path this rearranged equation has never been stated. It appeared only in the 'still doesn't know' replies of 2.7.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.4\",\"quote\":\"the thermometer takes time to warm up to the temperature of the block, so an early reading is too low\",\"what\":\"This is not the main reason. After the heater is switched off, energy is still spreading from the heater through the block, so the block's own temperature keeps rising and you record the highest value. The lesson's key point says 'before the temperature has settled'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.4\",\"quote\":\"At the end, why should you wait a little before reading the thermometer?\",\"what\":\"She was never told to wait. Step 3.3 said to read the new temperature 'after a set time', so the question contradicts the method she was just given and she can only guess.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.4 don't know (first time)\",\"quote\":\"What is it trying to catch up with?\",\"what\":\"The hint asks a new question ('catch up with what?') but shows the same three 'So the…' buttons, which do not answer it.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.6 don't know (first time)\",\"quote\":\"Dividing by a smaller number gives a bigger or smaller answer?\",\"what\":\"The easier question wants 'bigger' or 'smaller', but she is shown the same buttons ('It comes out lower than the true value' and so on). The reply does not fit the choices on offer.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"3.7\",\"quote\":\"To reduce the problem, wrap the block in insulation.\",\"what\":\"'The problem' is not named in this message. It leans on a message two steps back, with a question in between.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.7\",\"quote\":\"For water, use an insulated cup with a lid, and stir so the water is the same temperature all through.\",\"what\":\"The water version of the practical has not been described, so the cup, lid and stirring appear with no set-up. It is also a second idea in the same message.\",\"severity\":\"minor\"},{\"fault\":\"L3\",\"turn\":\"3.8\",\"quote\":\"\\\"Electric shock\\\" on its own does not score.\",\"what\":\"This is mark-scheme advice for someone revising. A girl meeting the topic for the first time does not yet know what 'score' refers to.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"4.2\",\"quote\":\"The total energy of all the particles in a system\",\"what\":\"'System' is used without being explained.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"4.3\",\"quote\":\"the more kinetic energy each particle has on average\",\"what\":\"'Kinetic energy' has never been explained as the energy of movement, yet the own-words question at 4.7 and the quiz at 4.14 both depend on it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"4.4\",\"quote\":\"The lake: it has vastly more particles\",\"what\":\"The right option contains the explanation, and the other options contain reasons too. She can pick it by reading the button rather than thinking about total versus average.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"4.5\",\"quote\":\"Central heating uses water because each kilogram carries a lot of energy to the radiators. And places by the sea have milder weather, because the sea warms up and cools down slowly.\",\"what\":\"Two separate uses are given in one message, central heating and coastal climate. Neither is checked before the next question moves on to car engines.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.6 don't know (first time)\",\"quote\":\"Is that good for soaking up energy from an engine?\",\"what\":\"The hint is a yes/no question but shows the same three buttons, none of which is yes or no.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole lesson\",\"quote\":\"Tap \\\"Show the first step\\\" under it to see each step in turn.\",\"what\":\"Nothing in the lesson is hands-on. There is no heater to switch on, no material to choose and no temperature to watch rise; the worked-example card is the only thing she taps besides Next and answer buttons. The run of calculations in key point 2 is likely to bore her.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":2},{\"fault\":\"F3\",\"instances\":4},{\"fault\":\"F10\",\"instances\":2},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"F8\",\"instances\":1},{\"fault\":\"F2\",\"instances\":1},{\"fault\":\"P10\",\"instances\":1},{\"fault\":\"F12\",\"instances\":1},{\"fault\":\"P6\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":15}],\"overall\":\"No, not as it is. The core of key point 1 (steps 1.2 to 1.10) is clear and the numbers are right throughout, but the lesson opens with two questions on energy stores and E = P × t that a first-time learner cannot answer. Rearranging the equation is hardly taught before she is asked to do it, the cooling example uses 60 °C without explaining why it is not −60, and the 'why wait' question in the practical gives a doubtful reason and contradicts the method just given. I would also want a diagram of the practical, something hands-on, and hints that fit the buttons shown before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from earlier lessons.",
+      "what": "The lesson opens by testing earlier lessons she has not had. A first-time learner starts with two questions she cannot answer from everyday life.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1a",
+      "quote": "Which store of the water rises?",
+      "what": "'Store', 'kinetic store', 'thermal store' and 'chemical store' are all used before anything has said what an energy store is.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1a (wrong answer: kinetic store)",
+      "quote": "Not quite: the water stays in the kettle. It gets hotter, so its thermal store rises.",
+      "what": "This does not explain why the kinetic store is wrong; she has never been told the kinetic store is about a moving object. The reason is muddled, since water in a kettle does move about.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F10",
+      "turn": "1.1b",
+      "quote": "E = P × t = 2000 × 10 = 20 000 J",
+      "what": "E = P × t is used without ever being stated with what E, P and t mean and their units. Power has not been taught in this lesson at all.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1b",
+      "quote": "a 2 kW heater is on for 10 s. How much energy does it transfer, in joules?",
+      "what": "Kilowatt, watt and joule are all used with no explanation. She could not answer this from what the lesson has told her.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.6",
+      "quote": "Which one gets hotter?",
+      "what": "Imprecise: which ends up hotter depends on where each started. The question means 'which has the bigger temperature rise?' and should say so.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.7",
+      "quote": "The Greek letter Δ, delta, means \"change in\". Δθ, said \"delta theta\", is the change in temperature",
+      "what": "Two new symbols arrive in one message, and it never says that θ on its own stands for temperature.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.9 / 2.2 / 2.4 / 2.7 / 2.8 (wrong answers)",
+      "quote": "Not quite: 42 000 J.",
+      "what": "Every wrong number is met with the answer straight away, e.g. at 2.2. She never gets a hint and a second go, so a slip teaches her nothing she has to do herself.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.5",
+      "quote": "A 1.5 kg aluminium block cooling from 80 °C to 20 °C gives out 1.5 × 900 × 60 = 81 000 J.",
+      "what": "The 60 is not explained. She was told Δθ is final minus start, which gives 20 − 80 = −60, and nothing says to use the size of the change when something cools. The 900 for aluminium is also not restated.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.6",
+      "quote": "15 000 ÷ (5 × 10), not 15 000 ÷ 5 × 10",
+      "what": "The exact calculation that answers question 2.7 is given in the message before it. These numbers also appear from nowhere, before the problem they belong to.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.6",
+      "quote": "To find c, Δθ or m, put the numbers in first, then divide.",
+      "what": "This is the only teaching of rearranging and it is too thin. There is no worked example, no rearranged equation, and 'the bottom of the division' refers to a fraction she has never been shown.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8",
+      "quote": "2 kg of water is given 84 000 J. c = 4200 J/kg °C. How much does its temperature rise, in °C?",
+      "what": "She is asked to find Δθ without ever seeing how. Δθ = ΔE ÷ (m × c) appears only in the replies after the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.9",
+      "quote": "In one line: what is the most common mistake with Δθ, and how do you avoid it?",
+      "what": "The main path never tells her what the common mistake is. It is only mentioned in wrong-answer replies she may never have seen, so she has to guess what the tutor has in mind.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.9 (all points / none)",
+      "quote": "Yes, your line has it: using a temperature instead of the change in temperature; and take the start from the final temperature first.",
+      "what": "The reply is checklist fragments stitched together and does not read as a sentence.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P10",
+      "turn": "3.1",
+      "quote": "Next, a required practical: one you could be asked about in the exam.",
+      "what": "The practical starts cold. There are no readiness questions, such as what you would need to measure to find c.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.2",
+      "quote": "A heater goes into one hole in a metal block, and a thermometer into another.",
+      "what": "The apparatus is described in words only, with no diagram. She has never seen this equipment and would struggle to picture a block with two holes, a heater and a joulemeter.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F10",
+      "turn": "3.3",
+      "quote": "Then c = ΔE ÷ (m × Δθ).",
+      "what": "On the main path this rearranged equation has never been stated. It appeared only in the 'still doesn't know' replies of 2.7.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.4",
+      "quote": "the thermometer takes time to warm up to the temperature of the block, so an early reading is too low",
+      "what": "This is not the main reason. After the heater is switched off, energy is still spreading from the heater through the block, so the block's own temperature keeps rising and you record the highest value. The lesson's key point says 'before the temperature has settled'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.4",
+      "quote": "At the end, why should you wait a little before reading the thermometer?",
+      "what": "She was never told to wait. Step 3.3 said to read the new temperature 'after a set time', so the question contradicts the method she was just given and she can only guess.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.4 don't know (first time)",
+      "quote": "What is it trying to catch up with?",
+      "what": "The hint asks a new question ('catch up with what?') but shows the same three 'So the…' buttons, which do not answer it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6 don't know (first time)",
+      "quote": "Dividing by a smaller number gives a bigger or smaller answer?",
+      "what": "The easier question wants 'bigger' or 'smaller', but she is shown the same buttons ('It comes out lower than the true value' and so on). The reply does not fit the choices on offer.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.7",
+      "quote": "To reduce the problem, wrap the block in insulation.",
+      "what": "'The problem' is not named in this message. It leans on a message two steps back, with a question in between.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.7",
+      "quote": "For water, use an insulated cup with a lid, and stir so the water is the same temperature all through.",
+      "what": "The water version of the practical has not been described, so the cup, lid and stirring appear with no set-up. It is also a second idea in the same message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "L3",
+      "turn": "3.8",
+      "quote": "\"Electric shock\" on its own does not score.",
+      "what": "This is mark-scheme advice for someone revising. A girl meeting the topic for the first time does not yet know what 'score' refers to.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.2",
+      "quote": "The total energy of all the particles in a system",
+      "what": "'System' is used without being explained.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.3",
+      "quote": "the more kinetic energy each particle has on average",
+      "what": "'Kinetic energy' has never been explained as the energy of movement, yet the own-words question at 4.7 and the quiz at 4.14 both depend on it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "4.4",
+      "quote": "The lake: it has vastly more particles",
+      "what": "The right option contains the explanation, and the other options contain reasons too. She can pick it by reading the button rather than thinking about total versus average.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "4.5",
+      "quote": "Central heating uses water because each kilogram carries a lot of energy to the radiators. And places by the sea have milder weather, because the sea warms up and cools down slowly.",
+      "what": "Two separate uses are given in one message, central heating and coastal climate. Neither is checked before the next question moves on to car engines.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.6 don't know (first time)",
+      "quote": "Is that good for soaking up energy from an engine?",
+      "what": "The hint is a yes/no question but shows the same three buttons, none of which is yes or no.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson",
+      "quote": "Tap \"Show the first step\" under it to see each step in turn.",
+      "what": "Nothing in the lesson is hands-on. There is no heater to switch on, no material to choose and no temperature to watch rise; the worked-example card is the only thing she taps besides Next and answer buttons. The run of calculations in key point 2 is likely to bore her.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 15
+    },
+    {
+      "fault": "F3",
+      "instances": 4
+    },
+    {
+      "fault": "L3",
+      "instances": 2
+    },
+    {
+      "fault": "F10",
+      "instances": 2
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "F8",
+      "instances": 1
+    },
+    {
+      "fault": "P10",
+      "instances": 1
+    },
+    {
+      "fault": "F2",
+      "instances": 1
+    },
+    {
+      "fault": "F12",
+      "instances": 1
+    },
+    {
+      "fault": "P6",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "No, not as it is. The core of key point 1 (steps 1.2 to 1.10) is clear and the numbers are right throughout, but the lesson opens with two questions on energy stores and E = P × t that a first-time learner cannot answer. Rearranging the equation is hardly taught before she is asked to do it, the cooling example uses 60 °C without explaining why it is not −60, and the 'why wait' question in the practical gives a doubtful reason and contradicts the method just given. I would also want a diagram of the practical, something hands-on, and hints that fit the buttons shown before she uses it."
+}

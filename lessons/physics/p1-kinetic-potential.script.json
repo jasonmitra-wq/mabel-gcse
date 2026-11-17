@@ -10,7 +10,7 @@
     {
      "id": "1.1",
      "type": "say",
-     "text": "Welcome! This lesson is about working out how much energy is in three stores: the kinetic store, the gravitational potential store and the elastic potential store."
+     "text": "Welcome! The last lesson met energy stores: the ways energy is held in things. This lesson works out how much energy is in three of them: the kinetic, gravitational potential and elastic potential stores."
     },
     {
      "id": "1.1a",
@@ -35,11 +35,11 @@
      "wrong": {
       "other": "Not quite: kinetic. Moving things have energy in their kinetic store.",
       "thermal": "Not quite: kinetic. The thermal store depends on how hot something is, not how it moves.",
-      "gravity": "Not quite: kinetic. The gravitational potential store is for things raised up."
+      "gravity": "Not quite: kinetic. Moving things have energy in their kinetic store."
      },
      "idk": [
       {
-       "hint": "The store for moving things starts with a K. Which button is it?"
+       "hint": "Kinetic means to do with movement. Which button is it?"
       }
      ],
      "answerWhy": "Moving things have energy in their kinetic store."
@@ -79,7 +79,7 @@
     {
      "id": "1.1c",
      "type": "say",
-     "text": "And energy is measured in joules, written J."
+     "text": "Energy is measured in joules, written J."
     },
     {
      "id": "1.2",
@@ -105,14 +105,15 @@
      "id": "1.6",
      "type": "worked",
      "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
-     "question": "A 2 kg ball moves at 3 m/s. What is the energy in its kinetic store?",
+     "question": "A 4 kg ball moves at 3 m/s. What is the energy in its kinetic store?",
      "steps": [
       "Write the equation: Ek = ½ m v².",
       "Square the speed first: v² = 3 × 3 = 9.",
-      "Ek = ½ × 2 × 9 = 9 J."
+      "Put in the numbers: Ek = ½ × 4 × 9.",
+      "Ek = 2 × 9 = 18 J."
      ],
      "answer": {
-      "value": 9,
+      "value": 18,
       "unit": "J"
      }
     },
@@ -120,34 +121,34 @@
      "id": "1.7",
      "type": "ask",
      "kind": "number",
-     "question": "Your turn. A 4 kg dog runs at 5 m/s. What is the energy in its kinetic store, in joules?",
+     "question": "Your turn. A 6 kg dog runs at 5 m/s. What is the energy in its kinetic store, in joules?",
      "answer": {
-      "value": 50,
+      "value": 75,
       "unit": "J",
       "tolerance": 0.01
      },
      "wrongValues": [
       {
-       "value": 10,
+       "value": 15,
        "branch": "nosquare"
       },
       {
-       "value": 100,
+       "value": 150,
        "branch": "nohalf"
       }
      ],
-     "right": "Yes: 50 J. Ek = ½ m v² = ½ × 4 × 5² = ½ × 4 × 25 = 50 J.",
+     "right": "Yes: 75 J. Ek = ½ m v² = ½ × 6 × 5² = ½ × 6 × 25 = 75 J.",
      "wrong": {
-      "other": "Not quite: 50 J. Ek = ½ × 4 × 5² = ½ × 4 × 25 = 50 J.",
-      "nosquare": "Not quite: 50 J. The speed must be squared first: 5² = 25. Then ½ × 4 × 25 = 50 J.",
-      "nohalf": "Nearly: 4 × 25 = 100, but the equation has a half in it. ½ × 100 = 50 J."
+      "other": "Not quite: 75 J. Ek = ½ × 6 × 5² = ½ × 6 × 25 = 75 J.",
+      "nosquare": "Not quite: 75 J. The speed must be squared first: 5² = 25. Then ½ × 6 × 25 = 75 J.",
+      "nohalf": "Nearly: 6 × 25 = 150, but the equation has a half in it. ½ × 150 = 75 J."
      },
      "idk": [
       {
-       "hint": "Square the speed: 5 × 5 = 25. Then multiply by the mass, 4, and halve it."
+       "hint": "Square the speed: 5 × 5 = 25. Then multiply by the mass, 6, and halve it."
       }
      ],
-     "answerWhy": "Ek = ½ m v² = ½ × 4 × 25 = 50 J."
+     "answerWhy": "Ek = ½ m v² = ½ × 6 × 25 = 75 J."
     },
     {
      "id": "1.8",
@@ -210,7 +211,12 @@
     {
      "id": "2.2",
      "type": "say",
-     "text": "How strongly gravity pulls is called the gravitational field strength, g. On Earth it is about 9.8 newtons per kilogram (N/kg); a newton is the unit of force. Always use the value the question gives."
+     "text": "A force is a push or a pull, measured in newtons (N). Gravity is a force: the pull of the Earth on everything near it."
+    },
+    {
+     "id": "2.2b",
+     "type": "say",
+     "text": "How strongly gravity pulls on each kilogram is called the gravitational field strength, g. On Earth it is about 9.8 newtons per kilogram (N/kg): gravity pulls each kilogram with a force of 9.8 N. Always use the value the question gives."
     },
     {
      "id": "2.3",
@@ -268,13 +274,13 @@
     {
      "id": "2.6",
      "type": "say",
-     "text": "Heights are often given in centimetres, but h must be in metres: divide by 100, so 50 cm is 0.5 m. Masses in grams must be in kilograms: divide by 1000, so 200 g is 0.2 kg."
+     "text": "Heights are often given in centimetres, but h must be in metres: divide by 100, so 50 cm is 0.5 m."
     },
     {
      "id": "2.7",
      "type": "ask",
      "kind": "number",
-     "question": "A 0.5 kg book falls off a shelf 80 cm high. g = 9.8 N/kg. How much energy leaves its gravitational potential store, in joules?",
+     "question": "A 0.5 kg book is lifted onto a shelf 80 cm high. g = 9.8 N/kg. How much energy goes into its gravitational potential store, in joules?",
      "answer": {
       "value": 3.92,
       "unit": "J",
@@ -297,6 +303,39 @@
       }
      ],
      "answerWhy": "80 cm is 0.8 m, so Ep = m g h = 0.5 × 9.8 × 0.8 = 3.92 J."
+    },
+    {
+     "id": "2.7b",
+     "type": "say",
+     "text": "Masses given in grams must be in kilograms: divide by 1000, so 200 g is 0.2 kg."
+    },
+    {
+     "id": "2.7c",
+     "type": "ask",
+     "kind": "number",
+     "question": "A 400 g ball is lifted 2 m. g = 9.8 N/kg. How much energy goes into its gravitational potential store, in joules?",
+     "answer": {
+      "value": 7.84,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 7840,
+       "branch": "grams"
+      }
+     ],
+     "right": "Yes: 7.84 J. 400 g is 0.4 kg, and Ep = 0.4 × 9.8 × 2 = 7.84 J.",
+     "wrong": {
+      "other": "Not quite: 7.84 J. 400 g is 0.4 kg, and Ep = m g h = 0.4 × 9.8 × 2 = 7.84 J.",
+      "grams": "Not quite: 7.84 J. The mass must be in kilograms: 400 g is 0.4 kg. Then Ep = 0.4 × 9.8 × 2 = 7.84 J."
+     },
+     "idk": [
+      {
+       "hint": "First change 400 g into kilograms by dividing by 1000. Then multiply by 9.8 and by 2."
+      }
+     ],
+     "answerWhy": "400 g is 0.4 kg, so Ep = m g h = 0.4 × 9.8 × 2 = 7.84 J."
     },
     {
      "id": "2.8",
@@ -332,6 +371,11 @@
      "answerWhy": "196 = 2 × 9.8 × h = 19.6 × h, so h = 196 ÷ 19.6 = 10 m."
     },
     {
+     "id": "2.9b",
+     "type": "say",
+     "text": "Nothing in Ep = m g h is squared. Double the height and the energy doubles; double the mass and it doubles too. Speed is different, because it is squared."
+    },
+    {
      "id": "2.10",
      "type": "own",
      "prompt": "In one line: what is the equation for gravitational potential energy, and what unit must the height be in?",
@@ -350,23 +394,38 @@
     {
      "id": "3.1",
      "type": "say",
-     "text": "Now put the two stores together. When something falls, energy moves from its gravitational potential store to its kinetic store. Air resistance is the push of the air on anything moving through it. With no air resistance, all of that energy moves across."
+     "text": "Now put the two stores together. When something falls, energy moves from its gravitational potential store to its kinetic store."
+    },
+    {
+     "id": "3.1b",
+     "type": "say",
+     "text": "Air resistance is the push of the air on anything moving through it."
+    },
+    {
+     "id": "3.1c",
+     "type": "say",
+     "text": "Energy cannot be created or destroyed, so none goes missing as something falls. With no air resistance, all the energy that leaves the gravitational potential store goes into the kinetic store."
     },
     {
      "id": "3.2",
      "type": "say",
-     "text": "The energy gained by the kinetic store at the bottom then equals the energy lost from the gravitational potential store. That lets you find how fast a falling object is going when it lands."
+     "text": "For a falling object with no air resistance, the energy gained by the kinetic store equals the energy lost from the gravitational potential store. Halfway down, half of it has moved across."
+    },
+    {
+     "id": "3.2b",
+     "type": "say",
+     "text": "To undo squaring, take the square root, written √, with the √ key on a calculator. √9 = 3, because 3 × 3 = 9."
     },
     {
      "id": "3.3",
      "type": "worked",
-     "text": "Here is a worked example of that. Its steps open one at a time.",
-     "question": "A 2 kg ball is dropped from 5 m. g = 9.8 N/kg. Ignore air resistance. How fast is it going just before it lands?",
+     "text": "Here is a worked example of finding the landing speed. Its steps open one at a time.",
+     "question": "A 4 kg ball is dropped from 5 m. g = 9.8 N/kg. Ignore air resistance. How fast is it going just before it lands?",
      "steps": [
-      "Energy lost from the gravitational potential store: Ep = m g h = 2 × 9.8 × 5 = 98 J.",
-      "All of it goes into the kinetic store, so Ek = 98 J.",
-      "Ek = ½ m v²: 98 = ½ × 2 × v², so v² = 98.",
-      "v = √98 = 9.9 m/s."
+      "Energy lost from the gravitational potential store: Ep = m g h = 4 × 9.8 × 5 = 196 J.",
+      "All of it goes into the kinetic store: 196 = ½ × 4 × v².",
+      "½ × 4 = 2, so 196 = 2 × v², and v² = 196 ÷ 2 = 98.",
+      "v = √98 = 9.9 m/s, using the √ key."
      ],
      "answer": {
       "value": 9.9,
@@ -429,7 +488,7 @@
      },
      "idk": [
       {
-       "hint": "Put the numbers in: 196 = ½ × 1 × v². Double 196 to get v², then take the square root."
+       "hint": "Put the numbers in: 196 = ½ × 1 × v², which is ½ × v². Double 196 to undo the half, then use the √ key."
       }
      ],
      "answerWhy": "196 = ½ × 1 × v², so v² = 392 and v = √392 = 19.8 m/s."
@@ -441,11 +500,11 @@
      "question": "A real falling stone does push through air. How does air resistance change its speed when it lands?",
      "options": [
       {
-       "text": "It lands a bit slower: some energy goes to thermal stores",
+       "text": "It lands a bit slower",
        "branch": "right"
       },
       {
-       "text": "No change: all the energy still reaches the kinetic store",
+       "text": "It lands at the same speed",
        "branch": "same"
       },
       {
@@ -461,7 +520,7 @@
      },
      "idk": [
       {
-       "hint": "Pushing through air warms things up a little. Does that leave more or less energy for the kinetic store?"
+       "hint": "Pushing through air warms the stone and the air a little. Does that leave more or less energy for the kinetic store, so a faster or slower landing?"
       }
      ],
      "answerWhy": "Some energy goes to the thermal stores of the stone and the air, so less reaches the kinetic store and it lands slower."
@@ -521,7 +580,7 @@
     {
      "id": "4.3",
      "type": "say",
-     "text": "Some springs are much harder to stretch than others. How stiff a spring is, is given by its spring constant, k, in newtons per metre (N/m). A bigger k means a stiffer spring."
+     "text": "Some springs are much harder to stretch than others. How stiff a spring is, is given by its spring constant, k, in newtons per metre (N/m): the force needed for each metre of stretch. A bigger k means a stiffer spring."
     },
     {
      "id": "4.4",
@@ -531,7 +590,7 @@
     {
      "id": "4.5",
      "type": "say",
-     "text": "The equation only works while the spring would spring back to its original shape. Stretched too far, past a point called its limit of proportionality, it no longer follows the equation."
+     "text": "The equation only works up to a point called the limit of proportionality. Up to that point, the extension goes up in step with the pulling force: double the force, double the extension. Stretched past it, the spring no longer follows the equation."
     },
     {
      "id": "4.6",
@@ -585,34 +644,39 @@
      "id": "4.8",
      "type": "ask",
      "kind": "number",
-     "question": "A spring with k = 50 N/m is stretched from 20 cm long to 40 cm long. How much energy is stored in it, in joules?",
+     "question": "A spring with k = 50 N/m is stretched from 20 cm long to 60 cm long. How much energy is stored in it, in joules?",
      "answer": {
-      "value": 1,
+      "value": 4,
       "unit": "J",
       "tolerance": 0.01
      },
      "wrongValues": [
       {
-       "value": 4,
+       "value": 9,
        "branch": "length"
       },
       {
-       "value": 10000,
+       "value": 40000,
        "branch": "cm"
       }
      ],
-     "right": "Yes: 1 J. The extension is 40 − 20 = 20 cm = 0.2 m, and Ee = ½ × 50 × 0.2² = ½ × 50 × 0.04 = 1 J.",
+     "right": "Yes: 4 J. The extension is 60 − 20 = 40 cm = 0.4 m, and Ee = ½ × 50 × 0.4² = ½ × 50 × 0.16 = 4 J.",
      "wrong": {
-      "other": "Not quite: 1 J. The extension is 20 cm = 0.2 m, and Ee = ½ × 50 × 0.04 = 1 J.",
-      "length": "Not quite: 1 J. 0.4 m is the stretched length. The extension is 40 − 20 = 20 cm = 0.2 m, so Ee = ½ × 50 × 0.04 = 1 J.",
-      "cm": "Not quite: 1 J. The extension must be in metres: 20 cm = 0.2 m. Then Ee = ½ × 50 × 0.04 = 1 J."
+      "other": "Not quite: 4 J. The extension is 40 cm = 0.4 m, and Ee = ½ × 50 × 0.16 = 4 J.",
+      "length": "Not quite: 4 J. 0.6 m is the stretched length. The extension is 60 − 20 = 40 cm = 0.4 m, so Ee = ½ × 50 × 0.16 = 4 J.",
+      "cm": "Not quite: 4 J. The extension must be in metres: 40 cm = 0.4 m. Then Ee = ½ × 50 × 0.16 = 4 J."
      },
      "idk": [
       {
-       "hint": "First the extension: 40 − 20 = 20 cm, which is 0.2 m. Then square it and use Ee = ½ k e²."
+       "hint": "First the extension: 60 − 20 = 40 cm, which is 0.4 m. Then square it and use Ee = ½ k e²."
       }
      ],
-     "answerWhy": "The extension is 20 cm = 0.2 m, so Ee = ½ × 50 × 0.2² = ½ × 50 × 0.04 = 1 J."
+     "answerWhy": "The extension is 40 cm = 0.4 m, so Ee = ½ × 50 × 0.4² = ½ × 50 × 0.16 = 4 J."
+    },
+    {
+     "id": "4.8b",
+     "type": "say",
+     "text": "As with speed, the extension is squared: double the extension and the stored energy becomes four times as big. Squashing a spring stores energy in the same way as stretching it."
     },
     {
      "id": "4.9",
@@ -688,7 +752,9 @@
      ],
      "right": "Yes: v, the speed, is squared.",
      "wrong": {
-      "other": "Not quite: v, the speed, is squared."
+      "other": "Not quite: v, the speed, is squared.",
+      "w1": "Not quite: the speed. The little 2 sits on v, and v is the speed; the mass, m, is not squared.",
+      "w2": "Not quite: the speed. Ek is the energy you work out; the little 2 sits on v, the speed."
      },
      "idk": [],
      "answerWhy": "In Ek = ½ m v², v is the speed, and it is squared.",

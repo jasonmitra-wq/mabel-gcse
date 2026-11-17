@@ -1,55 +1,31 @@
 {
   "lesson": "p1-heating",
   "source_file": "lessons/physics/p1-heating.json",
-  "lesson_md5": "6e6cef862b6cdc7b0882e21576c87f59",
+  "lesson_md5": "85749c032969e453ec8b3b13c735e2f9",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:48:18.170Z",
+  "date": "2026-11-17T14:37:08.756Z",
   "specRefs_sent": [
     "4.1.1.3",
     "4.3.2.1",
     "4.3.2.2"
   ],
+  "blocking_only": true,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7925,
-    "output_tokens": 3492
+    "input_tokens": 8465,
+    "output_tokens": 1277
   },
-  "cost_usd": 0.10154,
+  "cost_usd": 0.0594,
   "status": "OK",
   "result": {
     "lesson": "p1-heating",
     "missing_spec_content": [],
-    "above_gcse": [
-      {
-        "field": "keyPoints[3].content",
-        "text": "This matters. Temperature measures the average KE per particle. Internal energy (the thermal store) depends on temperature AND the number of particles AND the spacing between them.",
-        "why": "The specification sections given (4.1.1.3, 4.3.2.1, 4.3.2.2) do not link temperature to average particle kinetic energy. They also do not say internal energy depends on particle spacing. The spec defines internal energy only as 'the total kinetic energy and potential energy of all the particles (atoms and molecules) that make up a system'. The extra dependence on spacing is not explained, and it could confuse the student."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "Temperature is a measure of the average kinetic energy of the particles.",
-        "why": "This is not required by the sections given. It also clashes with the lesson's own keyTerms definition: 'It is related to the average kinetic energy of the particles'. Strictly, temperature is related to the average kinetic energy of the particles' random motion; it is not a direct measure of it. That nuance goes beyond these sections, so the two different wordings may confuse the student."
-      }
-    ],
+    "above_gcse": [],
     "factual_errors": [],
-    "wrong_terms": [
-      {
-        "field": "keyPoints[2].content",
-        "text": "Calculate c = E / (mΔθ).",
-        "spec_term": "change in thermal energy, ∆E (c = ∆E / (m∆θ))"
-      },
-      {
-        "field": "revisionCardBullets[4]",
-        "text": "Measure the energy supplied, then calculate c = E/(mΔθ)",
-        "spec_term": "change in thermal energy, ∆E"
-      }
-    ],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
-    "not_checked": [
-      "Claims about exam frequency could not be checked against the specification text: keyPoints[2].tutor_note 'This practical almost always comes up in the exam', intro 'one of the most important (and most examined) equations in physics' and examTips[2] 'Uses of high specific heat capacity are common 2–3 mark questions'.",
-      "The specification lists 'AT skills covered by this practical activity: AT 1 and 5' and MS 1a, 3b, c, d. The definitions of these skills were not supplied (the spec refers to page 89), so full coverage of those skills could not be checked.",
-      "Table values for aluminium, iron/steel, copper, concrete and air are not in the specification. They were checked only against typical textbook values from own knowledge (approximately correct)."
-    ]
+    "not_checked": []
   }
 }

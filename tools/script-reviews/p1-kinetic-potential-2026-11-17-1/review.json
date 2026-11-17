@@ -1,0 +1,288 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 15611,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11338,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 7718
+    },
+    "iterations": [
+      {
+        "input_tokens": 15611,
+        "output_tokens": 11338,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.578408,
+  "seconds": 109,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L1\",\"turn\":\"1.1\",\"quote\":\"three stores: the kinetic store, the gravitational potential store and the elastic potential store\",\"what\":\"The opening names three stores in one sentence and never says what an energy 'store' is.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from the last lesson.\",\"what\":\"The lesson starts by testing her on something it has not told her. A first-time learner has to guess, and 'store' and 'thermal' are never explained here.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.1a don't know (first time)\",\"quote\":\"The store for moving things starts with a K. Which button is it?\",\"what\":\"This is a spelling clue, not physics. She can pick the right button without thinking about movement at all.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"1.1a wrong answer \\\"Gravitational potential\\\" → 1.1b\",\"quote\":\"The gravitational potential store is for things raised up.\",\"what\":\"On this branch she is told the answer to the very next question (which store holds energy because of height) just before it is asked.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"1.1c\",\"quote\":\"And energy is measured in joules, written J.\",\"what\":\"The bubble opens with 'And', hanging on the previous message. It reads as an afterthought, not as a fact she needs for the equations.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.6\",\"quote\":\"Ek = ½ × 2 × 9 = 9 J.\",\"what\":\"Poor choice of numbers: the ½ and the 2 kg cancel, so the answer equals v² and the mass and the half seem to do nothing. The last step also substitutes and calculates in one jump.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.7 any wrong answer (same pattern in 2.5, 2.7, 2.9, 3.4, 3.5, 4.7, 4.8)\",\"quote\":\"Not quite: 50 J. Ek = ½ × 4 × 5² = ½ × 4 × 25 = 50 J.\",\"what\":\"Every wrong answer is met with the full answer straight away. She never gets a hint and a second try, so she never actually does a calculation correctly herself after a mistake.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"2.2\",\"quote\":\"gravitational field strength, g. On Earth it is about 9.8 newtons per kilogram (N/kg); a newton is the unit of force.\",\"what\":\"Three new things in one bubble: gravitational field strength, the newton, and force (which is not explained at all).\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.2\",\"quote\":\"On Earth it is about 9.8 newtons per kilogram (N/kg)\",\"what\":\"She is never told what 9.8 N/kg means, namely that gravity pulls with 9.8 newtons on each kilogram. It is just a number to multiply by.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"2.6\",\"quote\":\"Heights are often given in centimetres, but h must be in metres: divide by 100, so 50 cm is 0.5 m. Masses in grams must be in kilograms: divide by 1000, so 200 g is 0.2 kg.\",\"what\":\"Two separate conversions in one message. The grams one is never practised anywhere in the lesson.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.7\",\"quote\":\"A 0.5 kg book falls off a shelf 80 cm high. g = 9.8 N/kg. How much energy leaves its gravitational potential store, in joules?\",\"what\":\"So far she has only been told that lifting fills the store. Energy leaving it when something falls is not taught until key point 3, so the question rests on an idea she has not met.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P4\",\"turn\":\"2.10\",\"quote\":\"In one line: what is the equation for gravitational potential energy, and what unit must the height be in?\",\"what\":\"Key point 2 is closed without ever teaching that the energy goes up in step with height and mass (double the height, double the energy) or the contrast with the squared speed.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"3.1\",\"quote\":\"Air resistance is the push of the air on anything moving through it. With no air resistance, all of that energy moves across.\",\"what\":\"The bubble joins the two stores, defines air resistance and states the no-air-resistance condition all at once. The definition is dropped into the middle of another idea.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"3.2\",\"quote\":\"The energy gained by the kinetic store at the bottom then equals the energy lost from the gravitational potential store.\",\"what\":\"'then' and 'at the bottom' depend on the previous bubble. Read alone, it does not say the bottom of what or after what.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"3.3\",\"quote\":\"Here is a worked example of that.\",\"what\":\"'that' refers to something in the previous message, not in this one.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.3\",\"quote\":\"v = √98 = 9.9 m/s.\",\"what\":\"The square root and its sign are used with no explanation, and nothing tells her she needs a calculator. Squaring was explained carefully in 1.5; undoing it is not explained at all.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"3.3\",\"quote\":\"Ek = ½ m v²: 98 = ½ × 2 × v², so v² = 98.\",\"what\":\"With a 2 kg ball the half and the mass cancel, so the example never shows the 'double the energy' step. Her own question (3.5, mass 1 kg) then needs that step, so the example does not prepare her for it.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"3.5 don't know (first time)\",\"quote\":\"Double 196 to get v², then take the square root.\",\"what\":\"She is told to double but not why (to undo the half). √392 cannot be done without a calculator, which is never mentioned.\",\"severity\":\"minor\"},{\"fault\":\"P8\",\"turn\":\"3.6\",\"quote\":\"It lands a bit slower: some energy goes to thermal stores\",\"what\":\"The right button carries its own explanation and is the only detailed option. She can pick it without thinking, and the reply has nothing left to teach.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.6 wrong answer \\\"It lands faster\\\"\",\"quote\":\"Not quite: energy cannot be created, so it cannot land faster.\",\"what\":\"The lesson never states that energy cannot be created or destroyed, yet this reply uses it as if she already knew it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.6 don't know (first time)\",\"quote\":\"Does that leave more or less energy for the kinetic store? (same buttons)\",\"what\":\"The hint asks 'more or less?' but the buttons are still about landing faster or slower, so the question and the choices do not match.\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"3.7\",\"quote\":\"In one line: for something falling with no air resistance, how are its gravitational potential store and its kinetic store linked?\",\"what\":\"Key point 3 is closed without stating the conservation law itself. Nor does it say that halfway down half the energy has moved, or that mass cancels to give v = √(2gh).\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.3\",\"quote\":\"its spring constant, k, in newtons per metre (N/m)\",\"what\":\"What 'newtons per metre' means (the force needed for each metre of stretch) is never said, so the unit is just a label to her.\",\"severity\":\"minor\"},{\"fault\":\"P16\",\"turn\":\"4.5\",\"quote\":\"The equation only works while the spring would spring back to its original shape. Stretched too far, past a point called its limit of proportionality, it no longer follows the equation.\",\"what\":\"This mixes up the elastic limit (springing back) with the limit of proportionality (extension no longer in step with force). They are different points, and 'proportionality' is not explained.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"4.8\",\"quote\":\"Yes: 1 J. The extension is 40 − 20 = 20 cm = 0.2 m\",\"what\":\"The answer is 1 J, the same as the question just before (4.7), so a guess or a carried-over answer is marked right.\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"4.9\",\"quote\":\"In one line: what is e in Ee = ½ k e², and what unit must it be in?\",\"what\":\"Key point 4 is closed without teaching that doubling the extension quadruples the energy, or that squashing a spring and stretching a rubber band also store energy.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.13 wrong answers\",\"quote\":\"Not quite: v, the speed, is squared.\",\"what\":\"'The mass' and 'The energy' get the same reply. Neither points to where the little 2 sits in the equation, so the reply does not address her mistake.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole lesson (1.1 to 4.17)\",\"quote\":\"She types a number.\",\"what\":\"There is nothing hands-on and no picture anywhere: no spring to stretch, no ball to drop, no slider for speed. It is 48 steps of reading and typing numbers, and she is likely to get bored (M1).\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L1\",\"instances\":1},{\"fault\":\"L3\",\"instances\":1},{\"fault\":\"F8\",\"instances\":1},{\"fault\":\"F2\",\"instances\":3},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"P4\",\"instances\":3},{\"fault\":\"F3\",\"instances\":2},{\"fault\":\"P8\",\"instances\":1},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":11}],\"overall\":\"Not as it is. The arithmetic is all correct and the steps are mostly small and clear, but I would fix three things before she uses it: the limit of proportionality is explained wrongly in 4.5, the square root is used without explanation in 3.3, and the worked examples in 1.6 and 3.3 use a 2 kg mass that hides the half. The lesson also opens as if she already knows energy stores, never states that energy cannot be created or destroyed, and skips the 'doubling' ideas the key points promise for height and extension. Finally, it is a long run of typed calculations with no picture or anything to try, and every wrong answer simply hands her the answer, so I would add something hands-on and a second attempt.\"}",
+  "findings": [
+    {
+      "fault": "L1",
+      "turn": "1.1",
+      "quote": "three stores: the kinetic store, the gravitational potential store and the elastic potential store",
+      "what": "The opening names three stores in one sentence and never says what an energy 'store' is.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from the last lesson.",
+      "what": "The lesson starts by testing her on something it has not told her. A first-time learner has to guess, and 'store' and 'thermal' are never explained here.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1a don't know (first time)",
+      "quote": "The store for moving things starts with a K. Which button is it?",
+      "what": "This is a spelling clue, not physics. She can pick the right button without thinking about movement at all.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.1a wrong answer \"Gravitational potential\" → 1.1b",
+      "quote": "The gravitational potential store is for things raised up.",
+      "what": "On this branch she is told the answer to the very next question (which store holds energy because of height) just before it is asked.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "1.1c",
+      "quote": "And energy is measured in joules, written J.",
+      "what": "The bubble opens with 'And', hanging on the previous message. It reads as an afterthought, not as a fact she needs for the equations.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.6",
+      "quote": "Ek = ½ × 2 × 9 = 9 J.",
+      "what": "Poor choice of numbers: the ½ and the 2 kg cancel, so the answer equals v² and the mass and the half seem to do nothing. The last step also substitutes and calculates in one jump.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.7 any wrong answer (same pattern in 2.5, 2.7, 2.9, 3.4, 3.5, 4.7, 4.8)",
+      "quote": "Not quite: 50 J. Ek = ½ × 4 × 5² = ½ × 4 × 25 = 50 J.",
+      "what": "Every wrong answer is met with the full answer straight away. She never gets a hint and a second try, so she never actually does a calculation correctly herself after a mistake.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "2.2",
+      "quote": "gravitational field strength, g. On Earth it is about 9.8 newtons per kilogram (N/kg); a newton is the unit of force.",
+      "what": "Three new things in one bubble: gravitational field strength, the newton, and force (which is not explained at all).",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.2",
+      "quote": "On Earth it is about 9.8 newtons per kilogram (N/kg)",
+      "what": "She is never told what 9.8 N/kg means, namely that gravity pulls with 9.8 newtons on each kilogram. It is just a number to multiply by.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "2.6",
+      "quote": "Heights are often given in centimetres, but h must be in metres: divide by 100, so 50 cm is 0.5 m. Masses in grams must be in kilograms: divide by 1000, so 200 g is 0.2 kg.",
+      "what": "Two separate conversions in one message. The grams one is never practised anywhere in the lesson.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.7",
+      "quote": "A 0.5 kg book falls off a shelf 80 cm high. g = 9.8 N/kg. How much energy leaves its gravitational potential store, in joules?",
+      "what": "So far she has only been told that lifting fills the store. Energy leaving it when something falls is not taught until key point 3, so the question rests on an idea she has not met.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P4",
+      "turn": "2.10",
+      "quote": "In one line: what is the equation for gravitational potential energy, and what unit must the height be in?",
+      "what": "Key point 2 is closed without ever teaching that the energy goes up in step with height and mass (double the height, double the energy) or the contrast with the squared speed.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.1",
+      "quote": "Air resistance is the push of the air on anything moving through it. With no air resistance, all of that energy moves across.",
+      "what": "The bubble joins the two stores, defines air resistance and states the no-air-resistance condition all at once. The definition is dropped into the middle of another idea.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.2",
+      "quote": "The energy gained by the kinetic store at the bottom then equals the energy lost from the gravitational potential store.",
+      "what": "'then' and 'at the bottom' depend on the previous bubble. Read alone, it does not say the bottom of what or after what.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.3",
+      "quote": "Here is a worked example of that.",
+      "what": "'that' refers to something in the previous message, not in this one.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.3",
+      "quote": "v = √98 = 9.9 m/s.",
+      "what": "The square root and its sign are used with no explanation, and nothing tells her she needs a calculator. Squaring was explained carefully in 1.5; undoing it is not explained at all.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3",
+      "quote": "Ek = ½ m v²: 98 = ½ × 2 × v², so v² = 98.",
+      "what": "With a 2 kg ball the half and the mass cancel, so the example never shows the 'double the energy' step. Her own question (3.5, mass 1 kg) then needs that step, so the example does not prepare her for it.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5 don't know (first time)",
+      "quote": "Double 196 to get v², then take the square root.",
+      "what": "She is told to double but not why (to undo the half). √392 cannot be done without a calculator, which is never mentioned.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P8",
+      "turn": "3.6",
+      "quote": "It lands a bit slower: some energy goes to thermal stores",
+      "what": "The right button carries its own explanation and is the only detailed option. She can pick it without thinking, and the reply has nothing left to teach.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.6 wrong answer \"It lands faster\"",
+      "quote": "Not quite: energy cannot be created, so it cannot land faster.",
+      "what": "The lesson never states that energy cannot be created or destroyed, yet this reply uses it as if she already knew it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6 don't know (first time)",
+      "quote": "Does that leave more or less energy for the kinetic store? (same buttons)",
+      "what": "The hint asks 'more or less?' but the buttons are still about landing faster or slower, so the question and the choices do not match.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "3.7",
+      "quote": "In one line: for something falling with no air resistance, how are its gravitational potential store and its kinetic store linked?",
+      "what": "Key point 3 is closed without stating the conservation law itself. Nor does it say that halfway down half the energy has moved, or that mass cancels to give v = √(2gh).",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.3",
+      "quote": "its spring constant, k, in newtons per metre (N/m)",
+      "what": "What 'newtons per metre' means (the force needed for each metre of stretch) is never said, so the unit is just a label to her.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P16",
+      "turn": "4.5",
+      "quote": "The equation only works while the spring would spring back to its original shape. Stretched too far, past a point called its limit of proportionality, it no longer follows the equation.",
+      "what": "This mixes up the elastic limit (springing back) with the limit of proportionality (extension no longer in step with force). They are different points, and 'proportionality' is not explained.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "4.8",
+      "quote": "Yes: 1 J. The extension is 40 − 20 = 20 cm = 0.2 m",
+      "what": "The answer is 1 J, the same as the question just before (4.7), so a guess or a carried-over answer is marked right.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "4.9",
+      "quote": "In one line: what is e in Ee = ½ k e², and what unit must it be in?",
+      "what": "Key point 4 is closed without teaching that doubling the extension quadruples the energy, or that squashing a spring and stretching a rubber band also store energy.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.13 wrong answers",
+      "quote": "Not quite: v, the speed, is squared.",
+      "what": "'The mass' and 'The energy' get the same reply. Neither points to where the little 2 sits in the equation, so the reply does not address her mistake.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson (1.1 to 4.17)",
+      "quote": "She types a number.",
+      "what": "There is nothing hands-on and no picture anywhere: no spring to stretch, no ball to drop, no slider for speed. It is 48 steps of reading and typing numbers, and she is likely to get bored (M1).",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 11
+    },
+    {
+      "fault": "F2",
+      "instances": 3
+    },
+    {
+      "fault": "P4",
+      "instances": 3
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "F3",
+      "instances": 2
+    },
+    {
+      "fault": "L1",
+      "instances": 1
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "F8",
+      "instances": 1
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "P8",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it is. The arithmetic is all correct and the steps are mostly small and clear, but I would fix three things before she uses it: the limit of proportionality is explained wrongly in 4.5, the square root is used without explanation in 3.3, and the worked examples in 1.6 and 3.3 use a 2 kg mass that hides the half. The lesson also opens as if she already knows energy stores, never states that energy cannot be created or destroyed, and skips the 'doubling' ideas the key points promise for height and extension. Finally, it is a long run of typed calculations with no picture or anything to try, and every wrong answer simply hands her the answer, so I would add something hands-on and a second attempt."
+}

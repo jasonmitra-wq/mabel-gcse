@@ -1,21 +1,23 @@
 {
   "lesson": "p1-energy-stores",
   "source_file": "lessons/physics/p1-energy-stores.json",
-  "lesson_md5": "26c7820469aec4a651970a5f4295801e",
+  "lesson_md5": "ec647ffa2af7d26443594f27b3e71695",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T19:45:48.997Z",
+  "date": "2026-11-17T14:35:13.285Z",
   "specRefs_sent": [
     "4.1.1.1",
     "4.1.2.1",
     "4.1.2.2"
   ],
+  "blocking_only": true,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 9478,
-    "output_tokens": 5450
+    "input_tokens": 10561,
+    "output_tokens": 4260
   },
-  "cost_usd": 0.146912,
+  "cost_usd": 0.127444,
   "status": "OK",
   "result": {
     "lesson": "p1-energy-stores",
@@ -23,17 +25,17 @@
       {
         "specRef": "4.1.2.1",
         "spec_text": "Students should be able to explain ways of reducing unwanted energy transfers, for example through lubrication and the use of thermal insulation.",
-        "why": "The lesson says energy is wasted but never explains how to reduce unwanted transfers. Lubrication and thermal insulation are not mentioned anywhere."
+        "why": "The lesson covers wasted and dissipated energy but never explains how to reduce unwanted energy transfers. Lubrication and thermal insulation are not mentioned anywhere."
       },
       {
         "specRef": "4.1.2.1",
         "spec_text": "The higher the thermal conductivity of a material the higher the rate of energy transfer by conduction across the material.",
-        "why": "Thermal conductivity is not mentioned. Conduction appears only as a word in brackets, with no link to rate of energy transfer."
+        "why": "The lesson does not mention thermal conductivity or how it affects the rate of energy transfer by conduction."
       },
       {
         "specRef": "4.1.2.1",
         "spec_text": "Students should be able to describe how the rate of cooling of a building is affected by the thickness and thermal conductivity of its walls.",
-        "why": "The lesson does not cover how wall thickness and thermal conductivity affect how fast a building cools."
+        "why": "The lesson does not discuss the rate of cooling of buildings, wall thickness or wall thermal conductivity."
       },
       {
         "specRef": "4.1.2.1",
@@ -43,41 +45,46 @@
       {
         "specRef": "4.1.2.2",
         "spec_text": "(HT only) Students should be able to describe ways to increase the efficiency of an intended energy transfer.",
-        "why": "The lesson defines and calculates efficiency but gives no ways to increase it."
+        "why": "The lesson teaches how to calculate efficiency but not how to increase it."
       },
       {
         "specRef": "4.1.1.1",
         "spec_text": "Throughout this section on Energy students should be able to calculate the changes in energy involved when a system is changed by: heating, work done by forces, work done when a current flows",
-        "why": "No energy-change calculation is taught for heating, work done by forces or work done when a current flows. The only numerical work is the lamp Sankey example and the efficiency checkpoint. The Ek, Ep and Ee equations appear only inside keyTerms definitions and are never applied."
+        "why": "Only the Ek, Ep and Ee equations appear, and only in keyTerms definitions. The lesson does not teach how to calculate energy changes caused by heating, by work done by forces, or by work done when a current flows."
       }
     ],
     "above_gcse": [],
     "factual_errors": [
       {
-        "field": "keyPoints[4].content",
-        "text": "A perfect device would have efficiency = 1.0 (or 100%). In reality it is always less, because some energy is always dissipated.",
-        "correction": "This is true for most devices. But where the intended output is heating the surroundings, as in an electric heater, the 'dissipated' thermal energy is the useful output, so efficiency can be effectively 100%. The lesson should say 'for most devices' or 'almost always'. The same absolute claim appears in revisionCardBullets[7] ('Efficiency is always less than 1.0 (100%). Some energy is always dissipated') and in keyPoints[4].memTip ('It is always less than 1').",
+        "field": "keyPoints[1].content",
+        "text": "<strong>By heating</strong>: energy flows from a hotter object to a cooler one (conduction, convection). Radiation is a separate pathway.",
+        "correction": "Energy transfer by heating from a hotter object to a cooler one can also happen by infrared radiation, not only by conduction and convection. Restricting heating to conduction and convection is misleading. The lesson's own lamp caption, '85 J wasted by heating', includes infrared emission.",
         "basis": "own knowledge"
-      }
-    ],
-    "wrong_terms": [
-      {
-        "field": "examTips[0]",
-        "text": "The pathway is mechanically, electrically, by heating or by radiation. This wording earns marks.",
-        "spec_term": "The specification names the ways a system is changed as 'heating', 'work done by forces' and 'work done when a current flows' (4.1.1.1). 'Mechanically' and 'electrically' are not specification terms. 'By radiation' is not among the ways listed in these sections. The claim that this exact wording earns marks is not supported by the specification text."
       },
       {
-        "field": "keyPoints[1].memTip",
-        "text": "MEHR: Mechanical, Electrical, Heating, Radiation. These are the four transfer pathways examiners expect.",
-        "spec_term": "'work done by forces', 'work done when a current flows', 'heating' (4.1.1.1). The specification sections list three ways, not four named pathways."
+        "field": "keyPoints[1].keyTerms[2].def",
+        "text": "Energy transferred from a hotter object to a cooler one by conduction or convection; always flows from higher to lower temperature. Radiation is a separate pathway.",
+        "correction": "Heating can also occur by infrared radiation from a hotter object to a cooler one. It is not limited to conduction or convection.",
+        "basis": "own knowledge"
       },
       {
-        "field": "checkpoints.1.options[1]",
-        "text": "Mechanically. The friction force between the brakes and wheels does work to slow the car",
-        "spec_term": "'work done by forces' (4.1.1.1)"
+        "field": "keyPoints[3].keyTerms[0].def",
+        "text": "most real energy transfers dissipate some energy",
+        "correction": "The specification states that energy is dissipated in all system changes, not just most of them.",
+        "basis": "spec"
+      },
+      {
+        "field": "revisionCardBullets[3]",
+        "text": "It happens in most real devices",
+        "correction": "Dissipation happens in all system changes, according to the specification text: 'in all system changes energy is dissipated'.",
+        "basis": "spec"
       }
     ],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
-    "not_checked": []
+    "not_checked": [
+      "Diagram 'p1-torch-energy' (keyPoints[1].diagram and keyPoints[3].pictures[0]): the image cannot be seen, so its arrows and labels were not checked.",
+      "Diagram 'p1-sankey-lamp' (keyPoints[4].diagram and keyPoints[4].pictures[0]): the image cannot be seen, so it was not checked whether the arrow widths are drawn to scale (100 J split into 15 J and 85 J)."
+    ]
   }
 }

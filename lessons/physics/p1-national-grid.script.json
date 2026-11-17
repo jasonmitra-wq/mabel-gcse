@@ -48,10 +48,10 @@
      "id": "1.1b",
      "type": "ask",
      "kind": "tap",
-     "question": "Second: when an electric current, a flow of charge, passes through a long wire, the wire warms up. What happens to that energy?",
+     "question": "Second: a current flowing through a long wire warms the wire up. What happens to the energy that warms it?",
      "options": [
       {
-       "text": "It is wasted, dissipated to the surroundings",
+       "text": "It spreads into the surroundings and is wasted",
        "branch": "right"
       },
       {
@@ -63,18 +63,18 @@
        "branch": "back"
       }
      ],
-     "right": "Yes: warming the wire wastes energy, and it is dissipated to the thermal store of the surroundings.",
+     "right": "Yes: it is wasted, spread out, or dissipated, into the thermal store of the surroundings.",
      "wrong": {
-      "other": "Not quite: it is wasted, dissipated to the surroundings.",
-      "destroyed": "Not quite: energy is never destroyed. It is wasted, dissipated to the thermal store of the surroundings.",
-      "back": "Not quite: it does not go back. It is wasted, dissipated to the thermal store of the surroundings."
+      "other": "Not quite: it spreads into the surroundings and is wasted.",
+      "destroyed": "Not quite: energy is never destroyed. It spreads into the surroundings, warming them a tiny bit, and is wasted.",
+      "back": "Not quite: it does not go back. It spreads into the surroundings, warming them a tiny bit, and is wasted."
      },
      "idk": [
       {
-       "hint": "Energy cannot be destroyed. The wire warms the air around it. Where does that energy end up?"
+       "hint": "Energy cannot be destroyed. The warm wire warms the air around it. Where does that energy end up?"
       }
      ],
-     "answerWhy": "The energy that warms the wire is wasted, dissipated to the thermal store of the surroundings."
+     "answerWhy": "The energy that warms the wire spreads into the surroundings and is wasted."
     },
     {
      "id": "1.2",
@@ -89,7 +89,12 @@
     {
      "id": "1.4",
      "type": "say",
-     "text": "A transformer is a device that changes the potential difference. The network of cables and transformers linking power stations to homes is called the National Grid."
+     "text": "A transformer is a device that changes the potential difference."
+    },
+    {
+     "id": "1.4b",
+     "type": "say",
+     "text": "The network of cables and transformers linking power stations to homes is called the National Grid."
     },
     {
      "id": "1.5",
@@ -99,44 +104,82 @@
     {
      "id": "1.6",
      "type": "say",
-     "text": "Why so high? Power = current × potential difference, P = I V. P is the power in watts (W), I is the current in amperes (A) and V is the potential difference in volts (V). For the same power, a bigger V needs a smaller I in the cables."
+     "text": "The cables use such a high potential difference for a reason. Power = current × potential difference: P = I V, with P the power in watts (W), I the current in amperes (A) and V the potential difference in volts (V)."
+    },
+    {
+     "id": "1.6b",
+     "type": "say",
+     "text": "A power station sends out a fixed power. For example, 1 000 000 W at 25 000 V needs a current of 40 A, but at 400 000 V it needs only 2.5 A. For the same power, a bigger V means a smaller I."
+    },
+    {
+     "id": "1.6c",
+     "type": "ask",
+     "kind": "number",
+     "question": "A power station sends 2 000 000 W through cables at 400 000 V. What current flows, in amperes? (I = P ÷ V)",
+     "answer": {
+      "value": 5,
+      "unit": "A",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 0.2,
+       "branch": "upside"
+      }
+     ],
+     "right": "Yes: 5 A. I = P ÷ V = 2 000 000 ÷ 400 000 = 5 A.",
+     "wrong": {
+      "other": "Not quite: 5 A. I = P ÷ V = 2 000 000 ÷ 400 000 = 5 A.",
+      "upside": "Not quite: 5 A. Put the power on top: I = 2 000 000 ÷ 400 000 = 5 A."
+     },
+     "idk": [
+      {
+       "hint": "Divide the power, 2 000 000, by the potential difference, 400 000."
+      }
+     ],
+     "answerWhy": "I = P ÷ V = 2 000 000 ÷ 400 000 = 5 A."
     },
     {
      "id": "1.7",
      "type": "say",
-     "text": "A current heats the cables it flows through, and that energy is wasted. A smaller current wastes far less energy heating the cables, so the grid is more efficient."
+     "text": "A current heats the cables it flows through, and that energy is wasted. A smaller current wastes much less energy heating the cables, so less energy is wasted overall."
+    },
+    {
+     "id": "1.7b",
+     "type": "say",
+     "text": "For Higher: the energy wasted each second in a cable is I² R. R is the resistance of the cable, how hard it is for the current to flow, in ohms (Ω). Halve the current and the waste falls to a quarter."
     },
     {
      "id": "1.9",
      "type": "ask",
      "kind": "tap",
-     "question": "An exam asks why the National Grid uses a very high potential difference. Which answer scores the marks?",
+     "question": "Engineers raise a cable's potential difference, so the current falls from 4 A to 2 A for the same power. What happens to the energy wasted heating the cable?",
      "options": [
       {
-       "text": "So the current is small, and less energy is wasted heating the cables",
+       "text": "It falls to a quarter",
        "branch": "right"
       },
       {
-       "text": "To save energy",
-       "branch": "save"
+       "text": "It halves",
+       "branch": "half"
       },
       {
-       "text": "So the electricity travels faster",
-       "branch": "faster"
+       "text": "It doubles",
+       "branch": "double"
       }
      ],
-     "right": "Yes: high potential difference, so a small current, so less energy wasted heating the cables. Each link earns a mark.",
+     "right": "Yes: the waste depends on the current squared. Half the current gives (½)² = ¼ of the waste.",
      "wrong": {
-      "other": "Not quite. The answer that scores: a high potential difference means a small current, so less energy is wasted heating the cables.",
-      "save": "Not quite: \"to save energy\" scores nothing on its own. Explain how: a high potential difference means a small current, so less energy is wasted heating the cables.",
-      "faster": "Not quite: speed is not the reason. A high potential difference means a small current, so less energy is wasted heating the cables."
+      "other": "Not quite: it falls to a quarter, because the waste depends on the current squared.",
+      "half": "Nearly: the current halves, but the waste depends on the current squared, I² R. Half the current gives ¼ of the waste.",
+      "double": "Not quite: a smaller current wastes less, not more. The waste depends on I², so half the current gives ¼ of the waste."
      },
      "idk": [
       {
-       "hint": "The best answer links three things: potential difference, current and heating. Which button links them?"
+       "hint": "The waste is I² R. If I is halved, what happens to I²?"
       }
      ],
-     "answerWhy": "A high potential difference means a small current, so less energy is wasted heating the cables."
+     "answerWhy": "The waste is I² R, so halving the current makes the waste a quarter."
     },
     {
      "id": "1.10",
@@ -157,7 +200,7 @@
     {
      "id": "2.1",
      "type": "say",
-     "text": "The transformers at a power station raise the potential difference. A transformer that raises it is called a step-up transformer."
+     "text": "The transformer that raises the potential difference at a power station is called a step-up transformer."
     },
     {
      "id": "2.2",
@@ -168,13 +211,13 @@
      "id": "2.3",
      "type": "say",
      "picture": "p1-national-grid",
-     "text": "The picture shows the whole chain: the power station at about 25 kV (25 000 V), a step-up transformer to as much as 400 kV, the transmission cables, a step-down transformer, and homes at 230 V."
+     "text": "The picture shows the chain from power station to homes, with each transformer in its place. The long cables are called transmission cables. kV means kilovolts: 1 kV = 1000 V, so 400 kV is 400 000 V."
     },
     {
      "id": "2.4",
      "type": "ask",
      "kind": "tap",
-     "question": "Which kind of transformer is between the transmission cables and your home?",
+     "question": "A cable arrives at a town at 132 000 V, but the homes need 230 V. What kind of transformer must be at the edge of town?",
      "options": [
       {
        "text": "A step-down transformer",
@@ -185,22 +228,22 @@
        "branch": "up"
       },
       {
-       "text": "There is no transformer there",
+       "text": "No transformer is needed",
        "branch": "none"
       }
      ],
-     "right": "Yes: a step-down transformer lowers the potential difference from the cables to 230 V for homes.",
+     "right": "Yes: the potential difference has to come down from 132 000 V to 230 V, so it is a step-down transformer.",
      "wrong": {
-      "other": "Not quite: a step-down transformer, which lowers the potential difference to 230 V.",
-      "up": "Not quite: the step-up transformer is at the power station. Before homes, a step-down transformer lowers the potential difference to 230 V.",
-      "none": "Not quite: the cables are at up to 400 000 V, far too high for homes. A step-down transformer lowers it to 230 V."
+      "other": "Not quite: a step-down transformer, to lower the potential difference to 230 V.",
+      "up": "Not quite: a step-up transformer would raise it further. The potential difference has to come down to 230 V, so it is a step-down transformer.",
+      "none": "Not quite: 132 000 V is far too high for homes. A step-down transformer lowers it to 230 V."
      },
      "idk": [
       {
-       "hint": "The cables are at a very high potential difference, and homes need 230 V. Does it need to go up or down?"
+       "hint": "132 000 V has to become 230 V. Is that going up or down?"
       }
      ],
-     "answerWhy": "A step-down transformer lowers the potential difference from the cables to 230 V for homes."
+     "answerWhy": "The potential difference has to come down to 230 V, so it is a step-down transformer."
     },
     {
      "id": "2.5",
@@ -226,18 +269,38 @@
     {
      "id": "3.2",
      "type": "say",
-     "text": "An energy resource that will run out one day is called non-renewable. Coal, oil and natural gas, the fossil fuels, are non-renewable. So is nuclear fuel."
+     "text": "An energy resource that will run out one day is called non-renewable."
+    },
+    {
+     "id": "3.2b",
+     "type": "say",
+     "text": "Coal, oil and natural gas are non-renewable. They are called fossil fuels, because they formed from living things over millions of years. Nuclear fuel, mined from rocks, is non-renewable too."
     },
     {
      "id": "3.3",
      "type": "say",
-     "text": "An energy resource that is replenished, or topped up, as it is used is called renewable. Examples: the Sun, wind, rivers (hydro-electricity), the tides, water waves, hot rocks underground (geothermal) and bio-fuel, made from plants."
+     "text": "An energy resource that is replenished, or topped up, as it is used is called renewable. Renewable resources include the Sun, the wind, the tides and water waves."
+    },
+    {
+     "id": "3.3b",
+     "type": "say",
+     "text": "Also renewable: hydro-electricity, from water stored behind a dam in a river valley; geothermal energy, from hot rocks underground; and bio-fuel, made from plants that can be grown again."
+    },
+    {
+     "id": "3.3c",
+     "type": "say",
+     "text": "Different resources suit different uses. Transport runs mostly on petrol and diesel, made from oil, with some bio-fuel and electric cars."
+    },
+    {
+     "id": "3.3d",
+     "type": "say",
+     "text": "Most homes are heated by burning natural gas, some by electricity. And electricity can be made from almost any of the resources."
     },
     {
      "id": "3.4",
      "type": "ask",
      "kind": "tap",
-     "question": "Which is the best definition of a renewable resource for the exam?",
+     "question": "Which description of a renewable resource is the most accurate?",
      "options": [
       {
        "text": "One that is replenished as it is used",
@@ -252,11 +315,11 @@
        "branch": "never"
       }
      ],
-     "right": "Yes: the word the mark scheme wants is replenished: topped up as it is used.",
+     "right": "Yes: replenished means topped up as it is used.",
      "wrong": {
       "other": "Not quite: one that is replenished as it is used. That is the word the mark scheme wants.",
-      "again": "Not quite: \"can be used again\" does not score. A renewable resource is replenished, topped up, as it is used.",
-      "never": "Not quite: \"never runs out\" does not score. A renewable resource is replenished, topped up, as it is used."
+      "again": "Not quite: a resource is not used twice. A renewable one is replenished, topped up, as it is used, like crops for bio-fuel regrowing.",
+      "never": "Close, but not quite: the key idea is that it is replenished, topped up as it is used. Bio-fuel is only renewable if the plants are regrown."
      },
      "idk": [
       {
@@ -300,54 +363,59 @@
     {
      "id": "3.6",
      "type": "say",
-     "text": "Burning fossil fuels releases carbon dioxide, a gas that traps heat in the atmosphere and adds to global warming. Coal releases the most for each joule. Burning coal and oil also releases sulfur dioxide, which causes acid rain."
+     "text": "Burning fossil fuels releases carbon dioxide, a gas that traps heat in the atmosphere and adds to global warming. Coal releases the most carbon dioxide for the same amount of energy."
+    },
+    {
+     "id": "3.6b",
+     "type": "say",
+     "text": "Burning coal and oil also releases sulfur dioxide, a gas that causes acid rain."
     },
     {
      "id": "3.7",
      "type": "say",
-     "text": "Nuclear power stations give out no carbon dioxide while running and are very reliable. But they make radioactive waste, and they are slow to start up."
+     "text": "A reliable resource can supply energy whenever it is needed. Nuclear power stations are very reliable and give out no carbon dioxide while running. But they make radioactive waste, which stays dangerous for thousands of years, and they are slow to start up."
     },
     {
      "id": "3.8",
      "type": "say",
-     "text": "Some renewables are intermittent, which means not always available. Solar cells make nothing at night, and wind turbines stop when the wind drops."
+     "text": "Wind turbines and solar cells give out no carbon dioxide while running, but they are intermittent, which means not always available. Solar cells make nothing at night, and wind turbines stop when the wind drops."
     },
     {
      "id": "3.9",
      "type": "say",
-     "text": "Others are reliable. Hydro-electricity can be switched on when needed. The tides come in and out on a regular cycle. Geothermal works all the time, though only in a few places."
+     "text": "Some renewables are reliable. Hydro-electricity lets water through the dam when it is needed. The tides come in and out on a regular cycle. Geothermal works all the time, though only in a few places."
     },
     {
      "id": "3.10",
      "type": "ask",
      "kind": "tap",
-     "question": "Which resource could best meet a sudden rise in demand on a still, dark winter evening?",
+     "question": "On a still, dark winter evening, people suddenly want more electricity. Which pair of resources could not help?",
      "options": [
       {
-       "text": "Hydro-electricity",
+       "text": "Wind and solar",
        "branch": "right"
       },
       {
-       "text": "Solar cells",
-       "branch": "solar"
+       "text": "Hydro-electricity and gas",
+       "branch": "hydro"
       },
       {
-       "text": "Wind turbines",
-       "branch": "wind"
+       "text": "Gas and coal",
+       "branch": "gas"
       }
      ],
-     "right": "Yes: hydro-electricity can be switched on when needed, whatever the weather.",
+     "right": "Yes: with no wind and no daylight, wind turbines and solar cells make almost nothing.",
      "wrong": {
-      "other": "Not quite: hydro-electricity, which can be switched on when needed.",
-      "solar": "Not quite: it is dark, so solar cells make nothing. Hydro-electricity can be switched on when needed.",
-      "wind": "Not quite: it is still, so wind turbines make little. Hydro-electricity can be switched on when needed."
+      "other": "Not quite: wind and solar. With no wind and no daylight, they make almost nothing.",
+      "hydro": "Not quite: hydro-electricity and gas can both be turned up when needed. With no wind and no daylight, it is wind and solar that cannot help.",
+      "gas": "Not quite: gas and coal power stations can be turned up when needed. With no wind and no daylight, it is wind and solar that cannot help."
      },
      "idk": [
       {
-       "hint": "There is no sunlight and no wind. Which resource needs neither?"
+       "hint": "There is no wind and no daylight. Which resources need wind or daylight?"
       }
      ],
-     "answerWhy": "Hydro-electricity can be switched on when needed, whatever the weather."
+     "answerWhy": "With no wind and no daylight, wind turbines and solar cells make almost nothing."
     },
     {
      "id": "3.11",
@@ -360,7 +428,7 @@
        "branch": "right"
       },
       {
-       "text": "The passengers breathing",
+       "text": "Its battery gives it off",
        "branch": "breath"
       },
       {
@@ -371,7 +439,7 @@
      "right": "Yes: if the electricity that charges it comes from burning fossil fuels, carbon dioxide is released at the power station.",
      "wrong": {
       "other": "Not quite: from the power station that made the electricity to charge it.",
-      "breath": "Not quite: breathing is not counted. The carbon dioxide comes from the power station, if it burns fossil fuels to make the electricity that charges the car.",
+      "breath": "Not quite: the battery stores energy, not carbon dioxide. The carbon dioxide comes from the power station, if it burns fossil fuels to make the electricity that charges the car.",
       "tyres": "Not quite: tyres do not release carbon dioxide. It comes from the power station, if it burns fossil fuels to make the electricity that charges the car."
      },
      "idk": [
@@ -384,36 +452,46 @@
     {
      "id": "3.12",
      "type": "say",
-     "text": "In the UK, coal use is falling fast and renewables are rising. Science can show the harm a resource does, but whether to change can also depend on cost, politics and what people want."
+     "text": "In the UK, coal use is falling fast and the use of renewables is rising."
+    },
+    {
+     "id": "3.12a",
+     "type": "say",
+     "text": "The reasons: worry about carbon dioxide and global warming, government targets to cut the carbon dioxide given out, renewables getting cheaper, and fossil fuels running out."
+    },
+    {
+     "id": "3.12b",
+     "type": "say",
+     "text": "Science can show the harm a resource does, but whether a country changes can also depend on cost, politics and what people want."
     },
     {
      "id": "3.13",
      "type": "ask",
      "kind": "tap",
-     "question": "An exam asks how a country could cut the carbon dioxide from its transport. Which answer scores?",
+     "question": "How could a country cut the carbon dioxide from its transport?",
      "options": [
       {
-       "text": "Use electric cars instead of petrol cars, charged from renewables",
+       "text": "Replace petrol cars with electric cars charged from renewables",
        "branch": "right"
       },
       {
-       "text": "Use electric cars",
+       "text": "Drive electric cars as well as petrol cars",
        "branch": "vague"
       },
       {
-       "text": "Make more power stations",
+       "text": "Build more motorways",
        "branch": "more"
       }
      ],
-     "right": "Yes: say what to stop and what to do instead. That is what earns the marks.",
+     "right": "Yes: something is stopped (petrol cars) and something replaces it (electric cars on renewable electricity).",
      "wrong": {
       "other": "Not quite. Say what to stop and what to do instead: electric cars instead of petrol cars, charged from renewables.",
-      "vague": "Nearly: say what they replace. \"Use electric cars instead of petrol cars, charged from renewables\" earns the marks.",
-      "more": "Not quite: more power stations could mean more carbon dioxide. Swap petrol cars for electric cars charged from renewables."
+      "vague": "Not quite: adding electric cars while the petrol cars keep running does not cut much. Replace the petrol cars with electric cars charged from renewables.",
+      "more": "Not quite: more motorways means more traffic and more carbon dioxide. Replace petrol cars with electric cars charged from renewables."
      },
      "idk": [
       {
-       "hint": "The marks need two parts: what to stop doing, and what to do instead. Which button has both?"
+       "hint": "To cut carbon dioxide, something has to be stopped, not just added. Which button stops something?"
       }
      ],
      "answerWhy": "Say what to stop and what to do instead: electric cars instead of petrol cars, charged from renewables."
@@ -423,8 +501,8 @@
      "type": "own",
      "prompt": "In one line: give one advantage and one disadvantage of wind power.",
      "points": [
-      "no carbon dioxide (or renewable)",
-      "intermittent (not always available)"
+      "it gives out no carbon dioxide",
+      "it is intermittent: not always available"
      ],
      "idk": "No problem. A good line would be: wind power gives out no carbon dioxide, but it is intermittent: it stops when the wind drops."
     },
@@ -481,7 +559,8 @@
      ],
      "right": "Yes: a small current wastes less energy heating the cables.",
      "wrong": {
-      "other": "Not quite: a high potential difference means a small current, so less energy is wasted heating the cables."
+      "other": "Not quite: a high potential difference means a small current, so less energy is wasted heating the cables.",
+      "w1": "Not quite: a high potential difference is more dangerous, not safer. It is used so the current is small and less energy is wasted heating the cables."
      },
      "idk": [],
      "answerWhy": "A high potential difference means a small current, so less energy is wasted heating the cables.",
@@ -508,7 +587,9 @@
      ],
      "right": "Yes: bio-fuel comes from plants, which can be grown again.",
      "wrong": {
-      "other": "Not quite: bio-fuel. It comes from plants, which can be grown again."
+      "other": "Not quite: bio-fuel. It comes from plants, which can be grown again.",
+      "w1": "Not quite: coal formed over millions of years, so it will run out. Bio-fuel comes from plants that can be grown again.",
+      "w2": "Not quite: nuclear fuel is mined, so there is a fixed amount. Bio-fuel comes from plants that can be grown again."
      },
      "idk": [],
      "answerWhy": "Bio-fuel is renewable: it comes from plants, which can be grown again.",
@@ -562,7 +643,9 @@
      ],
      "right": "Yes: carbon dioxide traps heat in the atmosphere.",
      "wrong": {
-      "other": "Not quite: carbon dioxide. Sulfur dioxide causes acid rain."
+      "other": "Not quite: carbon dioxide. Sulfur dioxide causes acid rain.",
+      "w1": "Not quite: burning uses up oxygen. The gas it releases that adds to global warming is carbon dioxide.",
+      "w2": "Not quite: sulfur dioxide causes acid rain. Carbon dioxide adds to global warming."
      },
      "idk": [],
      "answerWhy": "Carbon dioxide adds to global warming; sulfur dioxide causes acid rain.",

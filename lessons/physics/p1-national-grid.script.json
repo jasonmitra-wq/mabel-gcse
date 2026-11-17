@@ -1,0 +1,613 @@
+{
+ "lesson": "p1-national-grid",
+ "version": 1,
+ "about": "The scripted AI lesson for p1-national-grid (2026-11-17, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p1-power and p1-conservation. Potential difference is taught again in one line, because P1 comes before P2.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "How the National Grid works",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about where our electricity comes from: the network that carries it to every home, and the energy resources that power stations use."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from earlier lessons. What is power?",
+     "options": [
+      {
+       "text": "The energy transferred each second",
+       "branch": "right"
+      },
+      {
+       "text": "The total energy transferred",
+       "branch": "total"
+      },
+      {
+       "text": "The force on an object",
+       "branch": "force"
+      }
+     ],
+     "right": "Yes: power is the energy transferred each second, in watts.",
+     "wrong": {
+      "other": "Not quite: power is the energy transferred each second.",
+      "total": "Not quite: power is how fast energy is transferred, the energy each second, not the total.",
+      "force": "Not quite: force is a push or a pull. Power is the energy transferred each second."
+     },
+     "idk": [
+      {
+       "hint": "Power is about how fast. Which button has \"each second\" in it?"
+      }
+     ],
+     "answerWhy": "Power is the energy transferred each second, in watts."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: when an electric current, a flow of charge, passes through a long wire, the wire warms up. What happens to that energy?",
+     "options": [
+      {
+       "text": "It is wasted, dissipated to the surroundings",
+       "branch": "right"
+      },
+      {
+       "text": "It is destroyed",
+       "branch": "destroyed"
+      },
+      {
+       "text": "It goes back to the power station",
+       "branch": "back"
+      }
+     ],
+     "right": "Yes: warming the wire wastes energy, and it is dissipated to the thermal store of the surroundings.",
+     "wrong": {
+      "other": "Not quite: it is wasted, dissipated to the surroundings.",
+      "destroyed": "Not quite: energy is never destroyed. It is wasted, dissipated to the thermal store of the surroundings.",
+      "back": "Not quite: it does not go back. It is wasted, dissipated to the thermal store of the surroundings."
+     },
+     "idk": [
+      {
+       "hint": "Energy cannot be destroyed. The wire warms the air around it. Where does that energy end up?"
+      }
+     ],
+     "answerWhy": "The energy that warms the wire is wasted, dissipated to the thermal store of the surroundings."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. Electricity is made in power stations, often far from where people live. A network of cables carries it across the country to homes, schools and businesses."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "Potential difference is the push that drives a current round a circuit. It is measured in volts (V): a bigger number means a bigger push."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "A transformer is a device that changes the potential difference. The network of cables and transformers linking power stations to homes is called the National Grid."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "Power stations make electricity at about 25 000 V. Transformers raise that to as much as 400 000 V for the long cables. Near towns, more transformers lower it to 230 V for homes."
+    },
+    {
+     "id": "1.6",
+     "type": "say",
+     "text": "Why so high? Power = current × potential difference, P = I V. P is the power in watts (W), I is the current in amperes (A) and V is the potential difference in volts (V). For the same power, a bigger V needs a smaller I in the cables."
+    },
+    {
+     "id": "1.7",
+     "type": "say",
+     "text": "A current heats the cables it flows through, and that energy is wasted. A smaller current wastes far less energy heating the cables, so the grid is more efficient."
+    },
+    {
+     "id": "1.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "An exam asks why the National Grid uses a very high potential difference. Which answer scores the marks?",
+     "options": [
+      {
+       "text": "So the current is small, and less energy is wasted heating the cables",
+       "branch": "right"
+      },
+      {
+       "text": "To save energy",
+       "branch": "save"
+      },
+      {
+       "text": "So the electricity travels faster",
+       "branch": "faster"
+      }
+     ],
+     "right": "Yes: high potential difference, so a small current, so less energy wasted heating the cables. Each link earns a mark.",
+     "wrong": {
+      "other": "Not quite. The answer that scores: a high potential difference means a small current, so less energy is wasted heating the cables.",
+      "save": "Not quite: \"to save energy\" scores nothing on its own. Explain how: a high potential difference means a small current, so less energy is wasted heating the cables.",
+      "faster": "Not quite: speed is not the reason. A high potential difference means a small current, so less energy is wasted heating the cables."
+     },
+     "idk": [
+      {
+       "hint": "The best answer links three things: potential difference, current and heating. Which button links them?"
+      }
+     ],
+     "answerWhy": "A high potential difference means a small current, so less energy is wasted heating the cables."
+    },
+    {
+     "id": "1.10",
+     "type": "own",
+     "prompt": "In one line: why does the National Grid use a high potential difference in its cables?",
+     "points": [
+      "the current is smaller",
+      "less energy is wasted heating the cables"
+     ],
+     "idk": "No problem. A good line would be: a high potential difference means a smaller current, so less energy is wasted heating the cables."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Step-up and step-down transformers",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "The transformers at a power station raise the potential difference. A transformer that raises it is called a step-up transformer."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "Near homes, the potential difference must be lowered to a safer 230 V. A transformer that lowers it is called a step-down transformer."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "picture": "p1-national-grid",
+     "text": "The picture shows the whole chain: the power station at about 25 kV (25 000 V), a step-up transformer to as much as 400 kV, the transmission cables, a step-down transformer, and homes at 230 V."
+    },
+    {
+     "id": "2.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which kind of transformer is between the transmission cables and your home?",
+     "options": [
+      {
+       "text": "A step-down transformer",
+       "branch": "right"
+      },
+      {
+       "text": "A step-up transformer",
+       "branch": "up"
+      },
+      {
+       "text": "There is no transformer there",
+       "branch": "none"
+      }
+     ],
+     "right": "Yes: a step-down transformer lowers the potential difference from the cables to 230 V for homes.",
+     "wrong": {
+      "other": "Not quite: a step-down transformer, which lowers the potential difference to 230 V.",
+      "up": "Not quite: the step-up transformer is at the power station. Before homes, a step-down transformer lowers the potential difference to 230 V.",
+      "none": "Not quite: the cables are at up to 400 000 V, far too high for homes. A step-down transformer lowers it to 230 V."
+     },
+     "idk": [
+      {
+       "hint": "The cables are at a very high potential difference, and homes need 230 V. Does it need to go up or down?"
+      }
+     ],
+     "answerWhy": "A step-down transformer lowers the potential difference from the cables to 230 V for homes."
+    },
+    {
+     "id": "2.5",
+     "type": "own",
+     "prompt": "In one line: where are the step-up and step-down transformers in the National Grid?",
+     "points": [
+      "step-up between the power station and the cables",
+      "step-down between the cables and homes"
+     ],
+     "idk": "No problem. A good line would be: a step-up transformer between the power station and the cables, and a step-down transformer between the cables and homes."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Energy resources and the environment",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Last part: the energy resources we use. We need energy for three main things: transport, making electricity, and heating our homes."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "An energy resource that will run out one day is called non-renewable. Coal, oil and natural gas, the fossil fuels, are non-renewable. So is nuclear fuel."
+    },
+    {
+     "id": "3.3",
+     "type": "say",
+     "text": "An energy resource that is replenished, or topped up, as it is used is called renewable. Examples: the Sun, wind, rivers (hydro-electricity), the tides, water waves, hot rocks underground (geothermal) and bio-fuel, made from plants."
+    },
+    {
+     "id": "3.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which is the best definition of a renewable resource for the exam?",
+     "options": [
+      {
+       "text": "One that is replenished as it is used",
+       "branch": "right"
+      },
+      {
+       "text": "One that can be used again",
+       "branch": "again"
+      },
+      {
+       "text": "One that never runs out",
+       "branch": "never"
+      }
+     ],
+     "right": "Yes: the word the mark scheme wants is replenished: topped up as it is used.",
+     "wrong": {
+      "other": "Not quite: one that is replenished as it is used. That is the word the mark scheme wants.",
+      "again": "Not quite: \"can be used again\" does not score. A renewable resource is replenished, topped up, as it is used.",
+      "never": "Not quite: \"never runs out\" does not score. A renewable resource is replenished, topped up, as it is used."
+     },
+     "idk": [
+      {
+       "hint": "The exam wants one particular word that means \"topped up\". Which button uses it?"
+      }
+     ],
+     "answerWhy": "A renewable resource is replenished, topped up, as it is used."
+    },
+    {
+     "id": "3.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which of these is non-renewable?",
+     "options": [
+      {
+       "text": "Nuclear fuel",
+       "branch": "right"
+      },
+      {
+       "text": "Bio-fuel",
+       "branch": "bio"
+      },
+      {
+       "text": "Wind",
+       "branch": "wind"
+      }
+     ],
+     "right": "Yes: nuclear fuel is mined from the ground, and it will run out one day.",
+     "wrong": {
+      "other": "Not quite: nuclear fuel. It is mined, and it will run out one day.",
+      "bio": "Not quite: bio-fuel is made from plants, which can be grown again, so it is renewable. Nuclear fuel is the one that will run out.",
+      "wind": "Not quite: the wind keeps blowing, so it is renewable. Nuclear fuel is the one that will run out."
+     },
+     "idk": [
+      {
+       "hint": "Which of these is dug out of the ground, so there is only a fixed amount?"
+      }
+     ],
+     "answerWhy": "Nuclear fuel is mined, so there is a fixed amount: it is non-renewable."
+    },
+    {
+     "id": "3.6",
+     "type": "say",
+     "text": "Burning fossil fuels releases carbon dioxide, a gas that traps heat in the atmosphere and adds to global warming. Coal releases the most for each joule. Burning coal and oil also releases sulfur dioxide, which causes acid rain."
+    },
+    {
+     "id": "3.7",
+     "type": "say",
+     "text": "Nuclear power stations give out no carbon dioxide while running and are very reliable. But they make radioactive waste, and they are slow to start up."
+    },
+    {
+     "id": "3.8",
+     "type": "say",
+     "text": "Some renewables are intermittent, which means not always available. Solar cells make nothing at night, and wind turbines stop when the wind drops."
+    },
+    {
+     "id": "3.9",
+     "type": "say",
+     "text": "Others are reliable. Hydro-electricity can be switched on when needed. The tides come in and out on a regular cycle. Geothermal works all the time, though only in a few places."
+    },
+    {
+     "id": "3.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which resource could best meet a sudden rise in demand on a still, dark winter evening?",
+     "options": [
+      {
+       "text": "Hydro-electricity",
+       "branch": "right"
+      },
+      {
+       "text": "Solar cells",
+       "branch": "solar"
+      },
+      {
+       "text": "Wind turbines",
+       "branch": "wind"
+      }
+     ],
+     "right": "Yes: hydro-electricity can be switched on when needed, whatever the weather.",
+     "wrong": {
+      "other": "Not quite: hydro-electricity, which can be switched on when needed.",
+      "solar": "Not quite: it is dark, so solar cells make nothing. Hydro-electricity can be switched on when needed.",
+      "wind": "Not quite: it is still, so wind turbines make little. Hydro-electricity can be switched on when needed."
+     },
+     "idk": [
+      {
+       "hint": "There is no sunlight and no wind. Which resource needs neither?"
+      }
+     ],
+     "answerWhy": "Hydro-electricity can be switched on when needed, whatever the weather."
+    },
+    {
+     "id": "3.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "An electric car gives out no exhaust gases. Where can its carbon dioxide come from?",
+     "options": [
+      {
+       "text": "The power station that made the electricity to charge it",
+       "branch": "right"
+      },
+      {
+       "text": "The passengers breathing",
+       "branch": "breath"
+      },
+      {
+       "text": "Its tyres wearing down",
+       "branch": "tyres"
+      }
+     ],
+     "right": "Yes: if the electricity that charges it comes from burning fossil fuels, carbon dioxide is released at the power station.",
+     "wrong": {
+      "other": "Not quite: from the power station that made the electricity to charge it.",
+      "breath": "Not quite: breathing is not counted. The carbon dioxide comes from the power station, if it burns fossil fuels to make the electricity that charges the car.",
+      "tyres": "Not quite: tyres do not release carbon dioxide. It comes from the power station, if it burns fossil fuels to make the electricity that charges the car."
+     },
+     "idk": [
+      {
+       "hint": "The car's battery has to be charged. Where does that electricity come from?"
+      }
+     ],
+     "answerWhy": "The carbon dioxide comes from the power station that makes the electricity to charge it, if it burns fossil fuels."
+    },
+    {
+     "id": "3.12",
+     "type": "say",
+     "text": "In the UK, coal use is falling fast and renewables are rising. Science can show the harm a resource does, but whether to change can also depend on cost, politics and what people want."
+    },
+    {
+     "id": "3.13",
+     "type": "ask",
+     "kind": "tap",
+     "question": "An exam asks how a country could cut the carbon dioxide from its transport. Which answer scores?",
+     "options": [
+      {
+       "text": "Use electric cars instead of petrol cars, charged from renewables",
+       "branch": "right"
+      },
+      {
+       "text": "Use electric cars",
+       "branch": "vague"
+      },
+      {
+       "text": "Make more power stations",
+       "branch": "more"
+      }
+     ],
+     "right": "Yes: say what to stop and what to do instead. That is what earns the marks.",
+     "wrong": {
+      "other": "Not quite. Say what to stop and what to do instead: electric cars instead of petrol cars, charged from renewables.",
+      "vague": "Nearly: say what they replace. \"Use electric cars instead of petrol cars, charged from renewables\" earns the marks.",
+      "more": "Not quite: more power stations could mean more carbon dioxide. Swap petrol cars for electric cars charged from renewables."
+     },
+     "idk": [
+      {
+       "hint": "The marks need two parts: what to stop doing, and what to do instead. Which button has both?"
+      }
+     ],
+     "answerWhy": "Say what to stop and what to do instead: electric cars instead of petrol cars, charged from renewables."
+    },
+    {
+     "id": "3.14",
+     "type": "own",
+     "prompt": "In one line: give one advantage and one disadvantage of wind power.",
+     "points": [
+      "no carbon dioxide (or renewable)",
+      "intermittent (not always available)"
+     ],
+     "idk": "No problem. A good line would be: wind power gives out no carbon dioxide, but it is intermittent: it stops when the wind drops."
+    },
+    {
+     "id": "3.15",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "3.16",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: what does a step-up transformer do?",
+     "options": [
+      {
+       "text": "Raises the potential difference",
+       "branch": "right"
+      },
+      {
+       "text": "Lowers the potential difference",
+       "branch": "w1"
+      },
+      {
+       "text": "Makes electricity",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: it raises the potential difference.",
+     "wrong": {
+      "other": "Not quite: a step-up transformer raises the potential difference."
+     },
+     "idk": [],
+     "answerWhy": "A step-up transformer raises the potential difference.",
+     "quiz": true
+    },
+    {
+     "id": "3.17",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 6: why do the grid's cables use a very high potential difference?",
+     "options": [
+      {
+       "text": "So the current is small and less energy is wasted heating the cables",
+       "branch": "right"
+      },
+      {
+       "text": "So the cables are safer to touch",
+       "branch": "w1"
+      },
+      {
+       "text": "So more energy is made",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: a small current wastes less energy heating the cables.",
+     "wrong": {
+      "other": "Not quite: a high potential difference means a small current, so less energy is wasted heating the cables."
+     },
+     "idk": [],
+     "answerWhy": "A high potential difference means a small current, so less energy is wasted heating the cables.",
+     "quiz": true
+    },
+    {
+     "id": "3.18",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: which of these is renewable?",
+     "options": [
+      {
+       "text": "Bio-fuel",
+       "branch": "right"
+      },
+      {
+       "text": "Coal",
+       "branch": "w1"
+      },
+      {
+       "text": "Nuclear fuel",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: bio-fuel comes from plants, which can be grown again.",
+     "wrong": {
+      "other": "Not quite: bio-fuel. It comes from plants, which can be grown again."
+     },
+     "idk": [],
+     "answerWhy": "Bio-fuel is renewable: it comes from plants, which can be grown again.",
+     "quiz": true
+    },
+    {
+     "id": "3.19",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: what does intermittent mean?",
+     "options": [
+      {
+       "text": "Not always available",
+       "branch": "right"
+      },
+      {
+       "text": "Runs out one day",
+       "branch": "w1"
+      },
+      {
+       "text": "Gives out carbon dioxide",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: like solar cells at night or wind turbines on a still day.",
+     "wrong": {
+      "other": "Not quite: intermittent means not always available, like solar cells at night."
+     },
+     "idk": [],
+     "answerWhy": "Intermittent means not always available.",
+     "quiz": true
+    },
+    {
+     "id": "3.20",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: which gas from burning fossil fuels adds to global warming?",
+     "options": [
+      {
+       "text": "Carbon dioxide",
+       "branch": "right"
+      },
+      {
+       "text": "Oxygen",
+       "branch": "w1"
+      },
+      {
+       "text": "Sulfur dioxide",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: carbon dioxide traps heat in the atmosphere.",
+     "wrong": {
+      "other": "Not quite: carbon dioxide. Sulfur dioxide causes acid rain."
+     },
+     "idk": [],
+     "answerWhy": "Carbon dioxide adds to global warming; sulfur dioxide causes acid rain.",
+     "quiz": true
+    },
+    {
+     "id": "3.21",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: what is the potential difference of the mains supply in UK homes?",
+     "options": [
+      {
+       "text": "230 V",
+       "branch": "right"
+      },
+      {
+       "text": "400 000 V",
+       "branch": "w1"
+      },
+      {
+       "text": "25 000 V",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: 230 V.",
+     "wrong": {
+      "other": "Not quite: 230 V. 400 000 V is in the long cables, and 25 000 V is at the power station."
+     },
+     "idk": [],
+     "answerWhy": "Homes get 230 V.",
+     "quiz": true
+    },
+    {
+     "id": "3.22",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

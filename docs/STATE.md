@@ -1,6 +1,6 @@
 # mabel-gcse — State
 
-Runbook position: Phase B, topic P1 (brief docs/briefs/2026-11-15-script-four-topics.md). P2 rest done 2026-11-15: p2-series-parallel, p2-domestic, p2-power-energy, p2-static scripted. Phase A, A9 pilot: p2-current-voltage and p2-components are scripted AI lessons, waiting for Mabel's delayed test.
+Runbook position: Phase B, topic P1 (brief docs/briefs/2026-11-15-script-four-topics.md), stopped at B4: all seven P1 scripts written, walked to zero and self-audited (2026-11-17); the paid steps (B2 fact check, B4 script reviews, B5 site tests) are blocked because the API key is rejected (HTTP 401, invalid x-api-key). Next: Jason renews SPEC_CHECK_API_KEY, then B2, B4 reviews, B5, B6 for P1. The P1 lessons are not yet in SCRIPTED_LESSONS. P2 rest done 2026-11-15: p2-series-parallel, p2-domestic, p2-power-energy, p2-static scripted. Phase A, A9 pilot: p2-current-voltage and p2-components are scripted AI lessons, waiting for Mabel's delayed test.
 
 Month spend (November 2026): 12.32 USD of the 100 cap (coverage and faults 4.33, scripted teaching 1.25, p2-components 1.66, Phase B P2 rest 5.08), plus two reviews cut off by network errors with no cost reported (at most about 1.40 together). Phase B stops at 95.
 
@@ -11,7 +11,7 @@ Scripted lessons: p2-current-voltage, p2-components, p2-series-parallel, p2-dome
 | Topic | Lessons scripted | Review findings (before → after) | Site tests | Cost (USD) | Commit |
 |---|---|---|---|---|---|
 | P2 rest | p2-series-parallel, p2-domestic, p2-power-energy, p2-static (walk 0 each; self-audited) | review 1 → review 2: 41 → 33, 30 → 24, 38 → 21, 34 → 24 (second reviews allowed: F-faults over twice in each first review); p2-static review 1 found a physics error (polythene rubbed with a cloth made positive), fixed | site tests (laptop, persona mabel, no judge): all four PASS; p2-series-parallel first run FAIL on a tester fault (Home not seen as leaving), tester fixed, re-run PASS | 5.08 (+ two cut-off reviews, cost not reported) | this commit |
-| P1 | – | – | – | – | – |
+| P1 | p1-energy-stores, p1-kinetic-potential, p1-conservation, p1-efficiency, p1-power, p1-heating, p1-national-grid: scripts written, walk 0 each, self-audited; not yet in SCRIPTED_LESSONS | paid reviews not run (key rejected) | not run (key rejected) | 0 | this commit |
 | P3 | – | – | – | – | – |
 | G5 | – | – | – | – | – |
 

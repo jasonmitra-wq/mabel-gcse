@@ -1,0 +1,692 @@
+{
+ "lesson": "p1-power",
+ "version": 1,
+ "about": "The scripted AI lesson for p1-power (2026-11-17, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p1-energy-stores and p1-efficiency.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "What power means",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about power: how fast energy is transferred, how to work it out, and the units it is measured in."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from earlier lessons. What unit is energy measured in?",
+     "options": [
+      {
+       "text": "Joules (J)",
+       "branch": "right"
+      },
+      {
+       "text": "Newtons (N)",
+       "branch": "newton"
+      },
+      {
+       "text": "Metres (m)",
+       "branch": "metre"
+      }
+     ],
+     "right": "Yes: energy is measured in joules (J).",
+     "wrong": {
+      "other": "Not quite: joules (J).",
+      "newton": "Not quite: joules (J). Newtons are the unit of force.",
+      "metre": "Not quite: joules (J). Metres measure distance."
+     },
+     "idk": [
+      {
+       "hint": "The unit of energy is named after the scientist James Joule. Which button is it?"
+      }
+     ],
+     "answerWhy": "Energy is measured in joules (J)."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "number",
+     "question": "Second: a motor is supplied with 400 J and transfers 100 J usefully. What is its efficiency, as a percentage?",
+     "answer": {
+      "value": 25,
+      "unit": "%",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 0.25,
+       "branch": "decimal"
+      },
+      {
+       "value": 400,
+       "branch": "upside"
+      }
+     ],
+     "right": "Yes: 25%. 100 ÷ 400 = 0.25, which is 25%.",
+     "wrong": {
+      "other": "Not quite: 25%. Efficiency = 100 ÷ 400 = 0.25, which is 25%.",
+      "decimal": "Nearly: 0.25 is the decimal. As a percentage, multiply by 100: 25%.",
+      "upside": "Not quite: 25%. Put the useful energy on top: 100 ÷ 400 = 0.25, which is 25%."
+     },
+     "idk": [
+      {
+       "hint": "Divide the useful energy, 100, by the total, 400. Then multiply by 100."
+      }
+     ],
+     "answerWhy": "Efficiency = 100 ÷ 400 = 0.25, which is 25%."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. Two kettles each heat the same water by the same amount. One takes 2 minutes and the other takes 4. Both transfer the same energy to the water, but the first does it twice as fast."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "A rate is how much happens each second. Speed is a rate: the metres you travel each second."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "The rate at which energy is transferred is called power: the energy transferred each second. The faster kettle has twice the power."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "Power is measured in watts (W). 1 watt is 1 joule transferred every second."
+    },
+    {
+     "id": "1.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A lamp transfers 60 J every second. What is its power?",
+     "options": [
+      {
+       "text": "60 W",
+       "branch": "right"
+      },
+      {
+       "text": "60 J",
+       "branch": "unit"
+      },
+      {
+       "text": "1 W",
+       "branch": "one"
+      }
+     ],
+     "right": "Yes: 60 W. A watt is a joule each second, so 60 J every second is 60 W.",
+     "wrong": {
+      "other": "Not quite: 60 W. A watt is a joule each second.",
+      "unit": "Nearly: the number is right, but power is in watts. 60 J every second is 60 W.",
+      "one": "Not quite: 60 W. 1 W would be 1 J each second. 60 J each second is 60 W."
+     },
+     "idk": [
+      {
+       "hint": "One watt is one joule every second. So how many watts is 60 joules every second?"
+      }
+     ],
+     "answerWhy": "A watt is a joule each second, so 60 J every second is 60 W."
+    },
+    {
+     "id": "1.7",
+     "type": "say",
+     "text": "The equation is P = E ÷ t: power = energy transferred ÷ time. P is the power in watts (W), E is the energy transferred in joules (J) and t is the time in seconds (s)."
+    },
+    {
+     "id": "1.8",
+     "type": "say",
+     "text": "A more powerful machine does not always transfer more energy in total: it transfers energy faster. A crane that lifts a car in 5 s and one that takes 20 s transfer the same energy, but the faster crane has four times the power."
+    },
+    {
+     "id": "1.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Two motors lift the same load to the same height. Motor X takes 10 s and motor Y takes 20 s. Which is true?",
+     "options": [
+      {
+       "text": "X has twice the power of Y",
+       "branch": "right"
+      },
+      {
+       "text": "X transfers more energy than Y",
+       "branch": "energy"
+      },
+      {
+       "text": "Y has more power, because it works for longer",
+       "branch": "longer"
+      }
+     ],
+     "right": "Yes: they transfer the same energy, but X does it in half the time, so X has twice the power.",
+     "wrong": {
+      "other": "Not quite. X has twice the power: the same energy in half the time.",
+      "energy": "Not quite: same load, same height, so the same energy. X transfers it in half the time, so X has twice the power.",
+      "longer": "Not quite: taking longer means a lower power. X transfers the same energy in half the time, so X has twice the power."
+     },
+     "idk": [
+      {
+       "hint": "Both lift the same load the same height, so the energy is the same. Which one transfers it faster?"
+      }
+     ],
+     "answerWhy": "The energy is the same, but X transfers it in half the time, so X has twice the power."
+    },
+    {
+     "id": "1.10",
+     "type": "own",
+     "prompt": "In one line: what is power, and what unit is it measured in?",
+     "points": [
+      "the energy transferred each second (the rate of energy transfer)",
+      "watts"
+     ],
+     "idk": "No problem. A good line would be: power is the energy transferred each second, measured in watts."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Calculating power",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A light bulb transfers 1800 J in 3 minutes. What is its power?",
+     "steps": [
+      "Time in seconds: 3 × 60 = 180 s.",
+      "Write the equation and put in the numbers: P = E ÷ t = 1800 ÷ 180.",
+      "P = 10 W."
+     ],
+     "answer": {
+      "value": 10,
+      "unit": "W"
+     }
+    },
+    {
+     "id": "2.2",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A runner transfers 12 000 J in 60 s. What is the runner's power, in watts?",
+     "answer": {
+      "value": 200,
+      "unit": "W",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 720000,
+       "branch": "times"
+      },
+      {
+       "value": 0.005,
+       "branch": "upside"
+      }
+     ],
+     "right": "Yes: 200 W. P = E ÷ t = 12 000 ÷ 60 = 200 W.",
+     "wrong": {
+      "other": "Not quite: 200 W. P = E ÷ t = 12 000 ÷ 60 = 200 W.",
+      "times": "Not quite: 200 W. Divide the energy by the time, do not multiply: 12 000 ÷ 60 = 200 W.",
+      "upside": "Not quite: 200 W. Put the energy on top: P = 12 000 ÷ 60 = 200 W."
+     },
+     "idk": [
+      {
+       "hint": "Use P = E ÷ t: divide the energy, 12 000, by the time, 60."
+      }
+     ],
+     "answerWhy": "P = E ÷ t = 12 000 ÷ 60 = 200 W."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "Big powers are often given in kilowatts (kW): 1 kW = 1000 W. A 2 kW heater has a power of 2000 W."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "Power stations are measured in megawatts (MW): 1 MW = 1 000 000 W, a million watts. Change kilowatts and megawatts into watts before you calculate."
+    },
+    {
+     "id": "2.5",
+     "type": "say",
+     "text": "To find the energy, rearrange to E = P × t. To find the time, t = E ÷ P. If you are unsure, put the numbers into P = E ÷ t first, then rearrange."
+    },
+    {
+     "id": "2.6",
+     "type": "ask",
+     "kind": "number",
+     "question": "A 2 kW heater is on for 30 s. How much energy does it transfer, in joules?",
+     "answer": {
+      "value": 60000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 60,
+       "branch": "nokw"
+      },
+      {
+       "value": 15,
+       "branch": "divide"
+      }
+     ],
+     "right": "Yes: 60 000 J. 2 kW = 2000 W, and E = P × t = 2000 × 30 = 60 000 J.",
+     "wrong": {
+      "other": "Not quite: 60 000 J. 2 kW = 2000 W, so E = P × t = 2000 × 30 = 60 000 J.",
+      "nokw": "Not quite: 60 000 J. Change kilowatts to watts first: 2 kW = 2000 W. Then E = 2000 × 30 = 60 000 J.",
+      "divide": "Not quite: 60 000 J. To find the energy, multiply: E = P × t = 2000 × 30 = 60 000 J."
+     },
+     "idk": [
+      {
+       "hint": "First, 2 kW in watts is 2000 W. Then multiply by the time, 30 s."
+      }
+     ],
+     "answerWhy": "2 kW = 2000 W, so E = P × t = 2000 × 30 = 60 000 J."
+    },
+    {
+     "id": "2.7",
+     "type": "ask",
+     "kind": "number",
+     "question": "How long does a 500 W microwave take to transfer 30 000 J, in seconds?",
+     "answer": {
+      "value": 60,
+      "unit": "s",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 15000000,
+       "branch": "times"
+      },
+      {
+       "value": 0.0167,
+       "branch": "upside"
+      }
+     ],
+     "right": "Yes: 60 s. t = E ÷ P = 30 000 ÷ 500 = 60 s.",
+     "wrong": {
+      "other": "Not quite: 60 s. t = E ÷ P = 30 000 ÷ 500 = 60 s.",
+      "times": "Not quite: 60 s. To find the time, divide the energy by the power: 30 000 ÷ 500 = 60 s.",
+      "upside": "Not quite: 60 s. Put the energy on top: t = 30 000 ÷ 500 = 60 s."
+     },
+     "idk": [
+      {
+       "hint": "Use t = E ÷ P: divide 30 000 by 500."
+      }
+     ],
+     "answerWhy": "t = E ÷ P = 30 000 ÷ 500 = 60 s."
+    },
+    {
+     "id": "2.8",
+     "type": "ask",
+     "kind": "number",
+     "question": "A 1.5 kW kettle is on for 2 minutes. How much energy does it transfer, in joules?",
+     "answer": {
+      "value": 180000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 3,
+       "branch": "none"
+      },
+      {
+       "value": 180,
+       "branch": "nokw"
+      },
+      {
+       "value": 3000,
+       "branch": "nomin"
+      }
+     ],
+     "right": "Yes: 180 000 J. 1.5 kW = 1500 W and 2 minutes = 120 s, so E = 1500 × 120 = 180 000 J.",
+     "wrong": {
+      "other": "Not quite: 180 000 J. 1500 W × 120 s = 180 000 J.",
+      "none": "Not quite: 180 000 J. Both need changing: 1.5 kW = 1500 W, and 2 minutes = 120 s. Then E = 1500 × 120 = 180 000 J.",
+      "nokw": "Not quite: 180 000 J. The time is right in seconds, but the power must be in watts: 1.5 kW = 1500 W. E = 1500 × 120 = 180 000 J.",
+      "nomin": "Not quite: 180 000 J. The power is right in watts, but the time must be in seconds: 2 minutes = 120 s. E = 1500 × 120 = 180 000 J."
+     },
+     "idk": [
+      {
+       "hint": "Change both: 1.5 kW is 1500 W, and 2 minutes is 120 s. Then multiply them."
+      }
+     ],
+     "answerWhy": "1.5 kW = 1500 W and 2 minutes = 120 s, so E = P × t = 1500 × 120 = 180 000 J."
+    },
+    {
+     "id": "2.9",
+     "type": "own",
+     "prompt": "In one line: what units must the power, energy and time be in before you use P = E ÷ t?",
+     "points": [
+      "power in watts",
+      "energy in joules",
+      "time in seconds"
+     ],
+     "idk": "No problem. A good line would be: power in watts, energy in joules and time in seconds."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Power in everyday contexts",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Some real powers: a hairdryer is about 2000 W, a kettle 2000 to 3000 W, and an electric car's motor 100 to 300 kW."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "A large power station gives out about 1 to 2 gigawatts (GW). A gigawatt is 1 000 000 000 W, a thousand million watts."
+    },
+    {
+     "id": "3.3",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which of these transfers energy fastest?",
+     "options": [
+      {
+       "text": "A 2 GW power station",
+       "branch": "right"
+      },
+      {
+       "text": "A 3 kW kettle",
+       "branch": "kettle"
+      },
+      {
+       "text": "A 300 kW car motor",
+       "branch": "car"
+      }
+     ],
+     "right": "Yes: 2 GW is 2 000 000 000 W, far more than the others.",
+     "wrong": {
+      "other": "Not quite: the 2 GW power station. A gigawatt is a thousand million watts.",
+      "kettle": "Not quite: 3 kW is only 3000 W. The power station, 2 GW, is 2 000 000 000 W.",
+      "car": "Not quite: 300 kW is 300 000 W. The power station, 2 GW, is 2 000 000 000 W."
+     },
+     "idk": [
+      {
+       "hint": "Giga is bigger than mega, and mega is bigger than kilo. Which button has giga?"
+      }
+     ],
+     "answerWhy": "2 GW is 2 000 000 000 W, far more than 3 kW or 300 kW."
+    },
+    {
+     "id": "3.4",
+     "type": "own",
+     "prompt": "In one line: what does it mean that a kettle has a higher power than a phone charger?",
+     "points": [
+      "the kettle transfers more energy each second"
+     ],
+     "idk": "No problem. A good line would be: the kettle transfers more energy each second than the charger."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Work done",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "When a force moves an object, it transfers energy. The energy transferred when a force moves something is called the work done."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "The equation is W = F s: work done = force × distance. W is the work done in joules (J), F is the force in newtons (N) and s is the distance moved along the line of the force in metres (m)."
+    },
+    {
+     "id": "4.3",
+     "type": "say",
+     "text": "One joule of work is done when a force of 1 newton moves something 1 metre. A newton-metre (N m) is therefore the same as a joule: 20 N m is 20 J."
+    },
+    {
+     "id": "4.4",
+     "type": "worked",
+     "text": "Here is a worked example. Its steps open one at a time.",
+     "question": "A force of 3000 N pushes a car 20 m. How much work is done?",
+     "steps": [
+      "Write the equation: W = F s.",
+      "Put in the numbers: W = 3000 × 20.",
+      "W = 60 000 J, which is 60 kJ."
+     ],
+     "answer": {
+      "value": 60000,
+      "unit": "J"
+     }
+    },
+    {
+     "id": "4.5",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A force of 50 N pushes a box 4 m along the floor. How much work is done, in joules?",
+     "answer": {
+      "value": 200,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 12.5,
+       "branch": "divide"
+      },
+      {
+       "value": 54,
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 200 J. W = F s = 50 × 4 = 200 J.",
+     "wrong": {
+      "other": "Not quite: 200 J. W = F s = 50 × 4 = 200 J.",
+      "divide": "Not quite: 200 J. Multiply the force by the distance: 50 × 4 = 200 J.",
+      "add": "Not quite: 200 J. Multiply, do not add: 50 × 4 = 200 J."
+     },
+     "idk": [
+      {
+       "hint": "Use W = F s: multiply the force, 50, by the distance, 4."
+      }
+     ],
+     "answerWhy": "W = F s = 50 × 4 = 200 J."
+    },
+    {
+     "id": "4.6",
+     "type": "say",
+     "text": "Work done moves energy between stores. Lifting a box fills its gravitational potential store. Pushing a box against friction warms the box and the floor, so the energy goes to thermal stores."
+    },
+    {
+     "id": "4.7",
+     "type": "say",
+     "text": "Power is also the rate of doing work: P = W ÷ t. P is the power in watts (W), W is the work done in joules (J) and t is the time in seconds (s)."
+    },
+    {
+     "id": "4.8",
+     "type": "ask",
+     "kind": "number",
+     "question": "A crane does 60 000 J of work lifting a load in 30 s. What is its power, in watts?",
+     "answer": {
+      "value": 2000,
+      "unit": "W",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 1800000,
+       "branch": "times"
+      }
+     ],
+     "right": "Yes: 2000 W. P = W ÷ t = 60 000 ÷ 30 = 2000 W.",
+     "wrong": {
+      "other": "Not quite: 2000 W. P = W ÷ t = 60 000 ÷ 30 = 2000 W.",
+      "times": "Not quite: 2000 W. Divide the work by the time: 60 000 ÷ 30 = 2000 W."
+     },
+     "idk": [
+      {
+       "hint": "Use P = W ÷ t: divide 60 000 by 30."
+      }
+     ],
+     "answerWhy": "P = W ÷ t = 60 000 ÷ 30 = 2000 W."
+    },
+    {
+     "id": "4.9",
+     "type": "own",
+     "prompt": "In one line: what is work done, and how is it linked to power?",
+     "points": [
+      "the energy transferred when a force moves something (W = F s)",
+      "power is work done divided by time"
+     ],
+     "idk": "No problem. A good line would be: work done is the energy transferred when a force moves something, W = F s, and power is the work done each second, P = W ÷ t."
+    },
+    {
+     "id": "4.10",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "4.11",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 1 of 6: a motor transfers 500 J in 10 s. What is its power, in watts?",
+     "answer": {
+      "value": 50,
+      "unit": "W",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: P = E ÷ t = 500 ÷ 10 = 50 W.",
+     "wrong": {
+      "other": "Not quite: 50 W. P = E ÷ t = 500 ÷ 10 = 50 W."
+     },
+     "idk": [],
+     "answerWhy": "P = E ÷ t = 500 ÷ 10 = 50 W.",
+     "quiz": true
+    },
+    {
+     "id": "4.12",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 2 of 6: a heater has a power of 3 kW. What is that in watts?",
+     "answer": {
+      "value": 3000,
+      "unit": "W",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: 3 × 1000 = 3000 W.",
+     "wrong": {
+      "other": "Not quite: 3000 W. 1 kW = 1000 W, so 3 kW = 3000 W."
+     },
+     "idk": [],
+     "answerWhy": "1 kW = 1000 W, so 3 kW = 3000 W.",
+     "quiz": true
+    },
+    {
+     "id": "4.13",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 3 of 6: a 100 W lamp is on for 1 minute. How much energy does it transfer, in joules?",
+     "answer": {
+      "value": 6000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: 1 minute is 60 s, and E = P × t = 100 × 60 = 6000 J.",
+     "wrong": {
+      "other": "Not quite: 6000 J. 1 minute is 60 s, and E = P × t = 100 × 60 = 6000 J."
+     },
+     "idk": [],
+     "answerWhy": "1 minute is 60 s, so E = P × t = 100 × 60 = 6000 J.",
+     "quiz": true
+    },
+    {
+     "id": "4.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: what unit is power measured in?",
+     "options": [
+      {
+       "text": "Watts",
+       "branch": "right"
+      },
+      {
+       "text": "Joules",
+       "branch": "w1"
+      },
+      {
+       "text": "Newtons",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: watts. 1 W is 1 J each second.",
+     "wrong": {
+      "other": "Not quite: watts. 1 W is 1 J each second."
+     },
+     "idk": [],
+     "answerWhy": "Power is measured in watts: 1 W is 1 J each second.",
+     "quiz": true
+    },
+    {
+     "id": "4.15",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 5 of 6: a force of 20 N moves a box 5 m. How much work is done, in joules?",
+     "answer": {
+      "value": 100,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: W = F s = 20 × 5 = 100 J.",
+     "wrong": {
+      "other": "Not quite: 100 J. W = F s = 20 × 5 = 100 J."
+     },
+     "idk": [],
+     "answerWhy": "W = F s = 20 × 5 = 100 J.",
+     "quiz": true
+    },
+    {
+     "id": "4.16",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: a 3 kW kettle heats some water in 2 minutes. How long would a 1.5 kW kettle take to transfer the same energy?",
+     "options": [
+      {
+       "text": "4 minutes",
+       "branch": "right"
+      },
+      {
+       "text": "1 minute",
+       "branch": "w1"
+      },
+      {
+       "text": "2 minutes",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: half the power, so twice the time for the same energy.",
+     "wrong": {
+      "other": "Not quite: 4 minutes. Half the power transfers the same energy in twice the time."
+     },
+     "idk": [],
+     "answerWhy": "Half the power transfers the same energy in twice the time: 4 minutes.",
+     "quiz": true
+    },
+    {
+     "id": "4.17",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

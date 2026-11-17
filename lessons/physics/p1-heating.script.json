@@ -1,0 +1,752 @@
+{
+ "lesson": "p1-heating",
+ "version": 1,
+ "about": "The scripted AI lesson for p1-heating (2026-11-17, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p1-energy-stores and p1-power.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "Specific heat capacity",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about heating: why some things need far more energy to warm up than others, and how to work out the energy needed."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from earlier lessons. A kettle heats some water. Which store of the water rises?",
+     "options": [
+      {
+       "text": "Its thermal store",
+       "branch": "right"
+      },
+      {
+       "text": "Its kinetic store",
+       "branch": "kinetic"
+      },
+      {
+       "text": "Its chemical store",
+       "branch": "chemical"
+      }
+     ],
+     "right": "Yes: the water gets hotter, so its thermal store rises.",
+     "wrong": {
+      "other": "Not quite: its thermal store, because the water gets hotter.",
+      "kinetic": "Not quite: the water stays in the kettle. It gets hotter, so its thermal store rises.",
+      "chemical": "Not quite: water is not a fuel. It gets hotter, so its thermal store rises."
+     },
+     "idk": [
+      {
+       "hint": "The water gets hotter. Which store depends on how hot something is?"
+      }
+     ],
+     "answerWhy": "The water gets hotter, so its thermal store rises."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "number",
+     "question": "Second: a 2 kW heater is on for 10 s. How much energy does it transfer, in joules?",
+     "answer": {
+      "value": 20000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 20,
+       "branch": "nokw"
+      }
+     ],
+     "right": "Yes: 20 000 J. 2 kW = 2000 W, and E = P × t = 2000 × 10 = 20 000 J.",
+     "wrong": {
+      "other": "Not quite: 20 000 J. 2 kW = 2000 W, and E = P × t = 2000 × 10 = 20 000 J.",
+      "nokw": "Not quite: 20 000 J. Change kilowatts to watts first: 2 kW = 2000 W. Then 2000 × 10 = 20 000 J."
+     },
+     "idk": [
+      {
+       "hint": "2 kW is 2000 W. Multiply that by the 10 s."
+      }
+     ],
+     "answerWhy": "2 kW = 2000 W, so E = P × t = 2000 × 10 = 20 000 J."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. Heat 1 kg of water and 1 kg of cooking oil in two pans on the same hob: the oil gets hot about twice as fast. Different materials need different amounts of energy to warm up by the same amount."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "Temperature tells you how hot or cold something is, in degrees Celsius (°C). When something is heated, its rise in temperature depends on its mass in kilograms (kg), what it is made of, and how much energy goes in."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "The energy needed to raise the temperature of 1 kg of a material by 1 °C is called its specific heat capacity, c. Its unit is joules per kilogram per degree Celsius (J/kg °C)."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "Water has a high specific heat capacity: 4200 J/kg °C. It takes 4200 J to warm 1 kg of water by 1 °C. Most metals need far less: copper needs only about 390 J."
+    },
+    {
+     "id": "1.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "1 kg of water and 1 kg of copper are each given 4200 J. Which one gets hotter?",
+     "options": [
+      {
+       "text": "The copper",
+       "branch": "right"
+      },
+      {
+       "text": "The water",
+       "branch": "water"
+      },
+      {
+       "text": "They both warm by 1 °C",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: copper needs only about 390 J for each degree, so 4200 J warms it by about 11 °C. The water warms by only 1 °C.",
+     "wrong": {
+      "other": "Not quite: the copper. It needs far less energy for each degree, so the same energy warms it much more.",
+      "water": "Not quite: water needs 4200 J for each degree, so it warms by only 1 °C. Copper needs about 390 J for each degree, so it warms by about 11 °C.",
+      "same": "Not quite: only the water warms by 1 °C. Copper needs about 390 J for each degree, so 4200 J warms it by about 11 °C."
+     },
+     "idk": [
+      {
+       "hint": "Copper needs much less energy for each degree than water does. So with the same energy, which warms more?"
+      }
+     ],
+     "answerWhy": "Copper needs far less energy for each degree, so the same 4200 J warms it about 11 °C, and the water only 1 °C."
+    },
+    {
+     "id": "1.7",
+     "type": "say",
+     "text": "The Greek letter Δ, delta, means \"change in\". Δθ, said \"delta theta\", is the change in temperature: the final temperature minus the starting temperature."
+    },
+    {
+     "id": "1.8",
+     "type": "say",
+     "text": "The equation is ΔE = m c Δθ: change in thermal energy = mass × specific heat capacity × temperature change. ΔE is in joules (J), m is the mass in kilograms (kg), c is the specific heat capacity in J/kg °C and Δθ is the temperature change in °C."
+    },
+    {
+     "id": "1.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Water is heated from 20 °C to 70 °C. What is Δθ?",
+     "options": [
+      {
+       "text": "50 °C",
+       "branch": "right"
+      },
+      {
+       "text": "70 °C",
+       "branch": "final"
+      },
+      {
+       "text": "90 °C",
+       "branch": "added"
+      }
+     ],
+     "right": "Yes: 50 °C. Δθ = 70 − 20 = 50 °C.",
+     "wrong": {
+      "other": "Not quite: 50 °C. Δθ = final − start = 70 − 20 = 50 °C.",
+      "final": "Not quite: 70 °C is the final temperature. Δθ is the change: 70 − 20 = 50 °C.",
+      "added": "Not quite: take the start away, do not add it. Δθ = 70 − 20 = 50 °C."
+     },
+     "idk": [
+      {
+       "hint": "Δθ is the change: take the starting temperature away from the final one."
+      }
+     ],
+     "answerWhy": "Δθ = final − start = 70 − 20 = 50 °C."
+    },
+    {
+     "id": "1.10",
+     "type": "own",
+     "prompt": "In one line: what is specific heat capacity?",
+     "points": [
+      "the energy needed to raise the temperature of 1 kg of a material by 1 °C"
+     ],
+     "idk": "No problem. A good line would be: specific heat capacity is the energy needed to raise the temperature of 1 kg of a material by 1 °C."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Using ΔE = mcΔθ",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "How much energy is needed to heat 2 kg of water from 20 °C to 100 °C? (c = 4200 J/kg °C)",
+     "steps": [
+      "Temperature change first: Δθ = 100 − 20 = 80 °C.",
+      "Write the equation: ΔE = m c Δθ.",
+      "ΔE = 2 × 4200 × 80 = 672 000 J."
+     ],
+     "answer": {
+      "value": 672000,
+      "unit": "J"
+     }
+    },
+    {
+     "id": "2.2",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. How much energy is needed to heat 0.5 kg of water from 10 °C to 30 °C, in joules? (c = 4200 J/kg °C)",
+     "answer": {
+      "value": 42000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 63000,
+       "branch": "final"
+      },
+      {
+       "value": 21000,
+       "branch": "start"
+      }
+     ],
+     "right": "Yes: 42 000 J. Δθ = 30 − 10 = 20 °C, and ΔE = 0.5 × 4200 × 20 = 42 000 J.",
+     "wrong": {
+      "other": "Not quite: 42 000 J. Δθ = 30 − 10 = 20 °C, and ΔE = 0.5 × 4200 × 20 = 42 000 J.",
+      "final": "Not quite: 42 000 J. 30 °C is the final temperature. Use the change: Δθ = 30 − 10 = 20 °C, so ΔE = 0.5 × 4200 × 20 = 42 000 J.",
+      "start": "Not quite: 42 000 J. 10 °C is the starting temperature. Use the change: Δθ = 30 − 10 = 20 °C, so ΔE = 0.5 × 4200 × 20 = 42 000 J."
+     },
+     "idk": [
+      {
+       "hint": "First the change: 30 − 10 = 20 °C. Then multiply 0.5 × 4200 × 20."
+      }
+     ],
+     "answerWhy": "Δθ = 30 − 10 = 20 °C, so ΔE = m c Δθ = 0.5 × 4200 × 20 = 42 000 J."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "Masses given in grams must be changed to kilograms first: divide by 1000. 250 g is 0.25 kg."
+    },
+    {
+     "id": "2.4",
+     "type": "ask",
+     "kind": "number",
+     "question": "A 200 g block of aluminium is warmed by 10 °C. c = 900 J/kg °C. How much energy does it take in, in joules?",
+     "answer": {
+      "value": 1800,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 1800000,
+       "branch": "grams"
+      }
+     ],
+     "right": "Yes: 1800 J. 200 g = 0.2 kg, and ΔE = 0.2 × 900 × 10 = 1800 J.",
+     "wrong": {
+      "other": "Not quite: 1800 J. 200 g = 0.2 kg, and ΔE = 0.2 × 900 × 10 = 1800 J.",
+      "grams": "Not quite: 1800 J. The mass must be in kilograms: 200 g = 0.2 kg. Then ΔE = 0.2 × 900 × 10 = 1800 J."
+     },
+     "idk": [
+      {
+       "hint": "Change 200 g to kilograms by dividing by 1000. Then multiply by 900 and by 10."
+      }
+     ],
+     "answerWhy": "200 g = 0.2 kg, so ΔE = m c Δθ = 0.2 × 900 × 10 = 1800 J."
+    },
+    {
+     "id": "2.5",
+     "type": "say",
+     "text": "Cooling works the same way, but energy is given out. A 1.5 kg aluminium block cooling from 80 °C to 20 °C gives out 1.5 × 900 × 60 = 81 000 J."
+    },
+    {
+     "id": "2.6",
+     "type": "say",
+     "text": "To find c, Δθ or m, put the numbers in first, then divide. On a calculator, put the bottom of the division in brackets: 15 000 ÷ (5 × 10), not 15 000 ÷ 5 × 10."
+    },
+    {
+     "id": "2.7",
+     "type": "ask",
+     "kind": "number",
+     "question": "5 kg of a material takes in 15 000 J, and its temperature rises by 10 °C. What is its specific heat capacity, in J/kg °C?",
+     "answer": {
+      "value": 300,
+      "unit": "J/kg °C",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 30000,
+       "branch": "brackets"
+      },
+      {
+       "value": 750000,
+       "branch": "times"
+      }
+     ],
+     "right": "Yes: 300 J/kg °C. 15 000 = 5 × c × 10, so c = 15 000 ÷ (5 × 10) = 15 000 ÷ 50 = 300 J/kg °C.",
+     "wrong": {
+      "other": "Not quite: 300 J/kg °C. c = 15 000 ÷ (5 × 10) = 15 000 ÷ 50 = 300 J/kg °C.",
+      "brackets": "Not quite: 300 J/kg °C. Put the bottom in brackets: 15 000 ÷ (5 × 10) = 15 000 ÷ 50 = 300. Without brackets the calculator multiplies by 10 instead.",
+      "times": "Not quite: 300 J/kg °C. To find c, divide: c = 15 000 ÷ (5 × 10) = 300 J/kg °C."
+     },
+     "idk": [
+      {
+       "hint": "Work out 5 × 10 first, which is 50. Then divide 15 000 by 50."
+      }
+     ],
+     "answerWhy": "c = ΔE ÷ (m × Δθ) = 15 000 ÷ (5 × 10) = 300 J/kg °C."
+    },
+    {
+     "id": "2.8",
+     "type": "ask",
+     "kind": "number",
+     "question": "2 kg of water is given 84 000 J. c = 4200 J/kg °C. How much does its temperature rise, in °C?",
+     "answer": {
+      "value": 10,
+      "unit": "°C",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 20,
+       "branch": "nomass"
+      }
+     ],
+     "right": "Yes: 10 °C. Δθ = 84 000 ÷ (2 × 4200) = 84 000 ÷ 8400 = 10 °C.",
+     "wrong": {
+      "other": "Not quite: 10 °C. Δθ = 84 000 ÷ (2 × 4200) = 84 000 ÷ 8400 = 10 °C.",
+      "nomass": "Not quite: 10 °C. Divide by the mass as well: Δθ = 84 000 ÷ (2 × 4200) = 84 000 ÷ 8400 = 10 °C."
+     },
+     "idk": [
+      {
+       "hint": "Work out 2 × 4200 first. Then divide 84 000 by it."
+      }
+     ],
+     "answerWhy": "Δθ = ΔE ÷ (m × c) = 84 000 ÷ (2 × 4200) = 10 °C."
+    },
+    {
+     "id": "2.9",
+     "type": "own",
+     "prompt": "In one line: what is the most common mistake with Δθ, and how do you avoid it?",
+     "points": [
+      "using a temperature instead of the change in temperature",
+      "take the start from the final temperature first"
+     ],
+     "idk": "No problem. A good line would be: people use the final temperature instead of the change; always work out final minus start first."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Required practical — measuring specific heat capacity",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Next, a required practical: one you could be asked about in the exam. The aim is to measure the specific heat capacity of a material, such as a metal block or some water."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "A heater goes into one hole in a metal block, and a thermometer into another. The heater is wired to a joulemeter, a meter that measures the energy supplied in joules."
+    },
+    {
+     "id": "3.3",
+     "type": "say",
+     "text": "Measure the mass of the block and its starting temperature. Switch on the heater, and after a set time read the energy on the joulemeter and the new temperature. Then c = ΔE ÷ (m × Δθ)."
+    },
+    {
+     "id": "3.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "At the end, why should you wait a little before reading the thermometer?",
+     "options": [
+      {
+       "text": "So the thermometer reaches the block's temperature",
+       "branch": "right"
+      },
+      {
+       "text": "So the block cools to room temperature",
+       "branch": "room"
+      },
+      {
+       "text": "So the joulemeter can reset",
+       "branch": "meter"
+      }
+     ],
+     "right": "Yes: the thermometer takes time to warm up to the temperature of the block, so an early reading is too low.",
+     "wrong": {
+      "other": "Not quite. You wait so the thermometer reaches the temperature of the block.",
+      "room": "Not quite: you want the block's temperature, not room temperature. You wait so the thermometer has time to reach the temperature of the block.",
+      "meter": "Not quite: the joulemeter keeps its reading. You wait so the thermometer has time to reach the temperature of the block."
+     },
+     "idk": [
+      {
+       "hint": "A thermometer does not change its reading instantly. What is it trying to catch up with?"
+      }
+     ],
+     "answerWhy": "The thermometer needs time to reach the temperature of the block, so an early reading is too low."
+    },
+    {
+     "id": "3.5",
+     "type": "say",
+     "text": "The main problem is that some energy escapes from the block to the surroundings. Less energy goes into the block than the joulemeter shows, so its temperature rises less."
+    },
+    {
+     "id": "3.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Energy escaping to the surroundings makes the temperature rise smaller. What does that do to the specific heat capacity you work out?",
+     "options": [
+      {
+       "text": "It comes out higher than the true value",
+       "branch": "right"
+      },
+      {
+       "text": "It comes out lower than the true value",
+       "branch": "lower"
+      },
+      {
+       "text": "It makes no difference",
+       "branch": "none"
+      }
+     ],
+     "right": "Yes: c = ΔE ÷ (m × Δθ). A smaller Δθ on the bottom gives a bigger answer, so c comes out too high.",
+     "wrong": {
+      "other": "Not quite: higher than the true value. A smaller Δθ on the bottom of c = ΔE ÷ (m × Δθ) gives a bigger answer.",
+      "lower": "Not quite: Δθ is on the bottom of c = ΔE ÷ (m × Δθ). A smaller number on the bottom gives a bigger answer, so c comes out too high.",
+      "none": "Not quite: Δθ is smaller than it should be, and it is on the bottom of c = ΔE ÷ (m × Δθ). That makes c come out too high."
+     },
+     "idk": [
+      {
+       "hint": "Δθ is on the bottom of c = ΔE ÷ (m × Δθ). Dividing by a smaller number gives a bigger or smaller answer?"
+      }
+     ],
+     "answerWhy": "Δθ is on the bottom of c = ΔE ÷ (m × Δθ), so a smaller Δθ makes c come out too high."
+    },
+    {
+     "id": "3.7",
+     "type": "say",
+     "text": "To reduce the problem, wrap the block in insulation. For water, use an insulated cup with a lid, and stir so the water is the same temperature all through."
+    },
+    {
+     "id": "3.8",
+     "type": "say",
+     "text": "If you are asked for a hazard, name the hot heater, block or water, which could burn you. \"Electric shock\" on its own does not score."
+    },
+    {
+     "id": "3.9",
+     "type": "say",
+     "text": "To compare your result with the true value, work out the percentage difference: (your value − true value) ÷ true value × 100."
+    },
+    {
+     "id": "3.10",
+     "type": "ask",
+     "kind": "number",
+     "question": "Suppose your result for water is 4410 J/kg °C, and the true value is 4200 J/kg °C. What is the percentage difference?",
+     "answer": {
+      "value": 5,
+      "unit": "%",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 4.76,
+       "branch": "base"
+      },
+      {
+       "value": 105,
+       "branch": "ratio"
+      }
+     ],
+     "right": "Yes: 5%. (4410 − 4200) ÷ 4200 × 100 = 210 ÷ 4200 × 100 = 5%.",
+     "wrong": {
+      "other": "Not quite: 5%. (4410 − 4200) ÷ 4200 × 100 = 210 ÷ 4200 × 100 = 5%.",
+      "base": "Not quite: 5%. Divide by the true value, 4200, not by 4410: 210 ÷ 4200 × 100 = 5%.",
+      "ratio": "Not quite: 5%. Take the difference first: 4410 − 4200 = 210. Then 210 ÷ 4200 × 100 = 5%."
+     },
+     "idk": [
+      {
+       "hint": "First the difference: 4410 − 4200. Then divide by the true value, 4200, and multiply by 100."
+      }
+     ],
+     "answerWhy": "(4410 − 4200) ÷ 4200 × 100 = 210 ÷ 4200 × 100 = 5%."
+    },
+    {
+     "id": "3.11",
+     "type": "own",
+     "prompt": "In one line: why does the measured specific heat capacity usually come out too high, and how can you reduce that?",
+     "points": [
+      "energy escapes to the surroundings",
+      "insulate the block (or use a lid)"
+     ],
+     "idk": "No problem. A good line would be: some energy escapes to the surroundings, so the temperature rises less; insulating the block reduces that."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Thermal stores and temperature",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "Last part: what heating does inside a material. Everything is made of tiny particles that are always moving. Heating something gives its particles more energy."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "The total energy of all the particles in a system, from their movement and from the forces between them, is called its internal energy. Heating something raises its internal energy."
+    },
+    {
+     "id": "4.3",
+     "type": "say",
+     "text": "Temperature is linked to how fast the particles move on average: the higher the temperature, the more kinetic energy each particle has on average."
+    },
+    {
+     "id": "4.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A big cold lake and a tiny hot spark. Which has more internal energy?",
+     "options": [
+      {
+       "text": "The lake: it has vastly more particles",
+       "branch": "right"
+      },
+      {
+       "text": "The spark: it is hotter",
+       "branch": "hotter"
+      },
+      {
+       "text": "They have the same",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes. Each particle in the spark has more energy on average, but the lake has so many more particles that its total is far bigger.",
+     "wrong": {
+      "other": "Not quite: the lake. Internal energy is a total, and the lake has vastly more particles.",
+      "hotter": "Not quite: the spark has a higher temperature, so each of its particles has more energy on average. But internal energy is the total for all the particles, and the lake has vastly more.",
+      "same": "Not quite: internal energy is the total for all the particles, and the lake has vastly more of them, so the lake has more."
+     },
+     "idk": [
+      {
+       "hint": "Internal energy is the total for all the particles. Which has far more particles?"
+      }
+     ],
+     "answerWhy": "Internal energy is a total, and the lake has vastly more particles than the spark."
+    },
+    {
+     "id": "4.5",
+     "type": "say",
+     "text": "Water's high specific heat capacity makes it useful. Central heating uses water because each kilogram carries a lot of energy to the radiators. And places by the sea have milder weather, because the sea warms up and cools down slowly."
+    },
+    {
+     "id": "4.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A car engine is cooled by water pumped around it. Why is water a good choice?",
+     "options": [
+      {
+       "text": "It can take in a lot of energy without getting very hot",
+       "branch": "right"
+      },
+      {
+       "text": "It heats up very quickly",
+       "branch": "quick"
+      },
+      {
+       "text": "It stops energy moving",
+       "branch": "stops"
+      }
+     ],
+     "right": "Yes: water's high specific heat capacity means it can take in a lot of energy from the engine while its own temperature rises only a little.",
+     "wrong": {
+      "other": "Not quite. Water can take in a lot of energy without getting very hot, because of its high specific heat capacity.",
+      "quick": "Not quite: the other way round. Water warms up slowly, because it needs a lot of energy for each degree. That lets it take in a lot of energy from the engine.",
+      "stops": "Not quite: water carries energy away from the engine. Its high specific heat capacity means it takes in a lot without getting very hot."
+     },
+     "idk": [
+      {
+       "hint": "Water needs a lot of energy for each degree it warms. Is that good for soaking up energy from an engine?"
+      }
+     ],
+     "answerWhy": "Water has a high specific heat capacity, so it takes in a lot of energy while warming only a little."
+    },
+    {
+     "id": "4.7",
+     "type": "own",
+     "prompt": "In one line: what is the difference between temperature and internal energy?",
+     "points": [
+      "temperature is linked to the average kinetic energy of the particles",
+      "internal energy is the total energy of all the particles"
+     ],
+     "idk": "No problem. A good line would be: temperature is linked to the average kinetic energy of the particles, but internal energy is the total energy of all of them."
+    },
+    {
+     "id": "4.8",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "4.9",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 1 of 6: water is heated from 15 °C to 40 °C. What is Δθ, in °C?",
+     "answer": {
+      "value": 25,
+      "unit": "°C",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: 40 − 15 = 25 °C.",
+     "wrong": {
+      "other": "Not quite: 25 °C. Δθ = final − start = 40 − 15 = 25 °C."
+     },
+     "idk": [],
+     "answerWhy": "Δθ = 40 − 15 = 25 °C.",
+     "quiz": true
+    },
+    {
+     "id": "4.10",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 2 of 6: how much energy warms 1 kg of water by 5 °C, in joules? (c = 4200 J/kg °C)",
+     "answer": {
+      "value": 21000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: ΔE = 1 × 4200 × 5 = 21 000 J.",
+     "wrong": {
+      "other": "Not quite: 21 000 J. ΔE = m c Δθ = 1 × 4200 × 5 = 21 000 J."
+     },
+     "idk": [],
+     "answerWhy": "ΔE = m c Δθ = 1 × 4200 × 5 = 21 000 J.",
+     "quiz": true
+    },
+    {
+     "id": "4.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: what is specific heat capacity?",
+     "options": [
+      {
+       "text": "The energy needed to raise 1 kg of a material by 1 °C",
+       "branch": "right"
+      },
+      {
+       "text": "The temperature at which a material boils",
+       "branch": "w1"
+      },
+      {
+       "text": "How fast energy passes through a material",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: the energy needed to raise 1 kg by 1 °C.",
+     "wrong": {
+      "other": "Not quite: it is the energy needed to raise the temperature of 1 kg of a material by 1 °C."
+     },
+     "idk": [],
+     "answerWhy": "Specific heat capacity is the energy needed to raise the temperature of 1 kg by 1 °C.",
+     "quiz": true
+    },
+    {
+     "id": "4.12",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 4 of 6: 2 kg of oil (c = 2000 J/kg °C) takes in 40 000 J. How much does its temperature rise, in °C?",
+     "answer": {
+      "value": 10,
+      "unit": "°C",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: Δθ = 40 000 ÷ (2 × 2000) = 10 °C.",
+     "wrong": {
+      "other": "Not quite: 10 °C. Δθ = 40 000 ÷ (2 × 2000) = 40 000 ÷ 4000 = 10 °C."
+     },
+     "idk": [],
+     "answerWhy": "Δθ = ΔE ÷ (m × c) = 40 000 ÷ 4000 = 10 °C.",
+     "quiz": true
+    },
+    {
+     "id": "4.13",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: in the practical, why is the block wrapped in insulation?",
+     "options": [
+      {
+       "text": "To reduce the energy escaping to the surroundings",
+       "branch": "right"
+      },
+      {
+       "text": "To make the heater more powerful",
+       "branch": "w1"
+      },
+      {
+       "text": "To keep the mass of the block the same",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: less energy escapes, so the result is closer to the true value.",
+     "wrong": {
+      "other": "Not quite: insulation reduces the energy escaping to the surroundings, so the result is closer to the true value."
+     },
+     "idk": [],
+     "answerWhy": "Insulation reduces the energy escaping to the surroundings.",
+     "quiz": true
+    },
+    {
+     "id": "4.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: temperature is linked to…",
+     "options": [
+      {
+       "text": "…the average kinetic energy of the particles",
+       "branch": "right"
+      },
+      {
+       "text": "…the total number of particles",
+       "branch": "w1"
+      },
+      {
+       "text": "…the mass of the object",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: the higher the temperature, the more kinetic energy each particle has on average.",
+     "wrong": {
+      "other": "Not quite: temperature is linked to the average kinetic energy of the particles."
+     },
+     "idk": [],
+     "answerWhy": "Temperature is linked to the average kinetic energy of the particles.",
+     "quiz": true
+    },
+    {
+     "id": "4.15",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

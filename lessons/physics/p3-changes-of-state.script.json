@@ -39,10 +39,10 @@
      },
      "idk": [
       {
-       "hint": "Think of a drink with ice in it: it stays at about 0 °C while the ice is still melting."
+       "hint": "In the last lesson, melting ice stayed at one temperature until all of it had melted. Which button says that?"
       }
      ],
-     "answerWhy": "While ice melts, its temperature stays at 0 °C: the energy raises the particles' potential energy, not their kinetic energy."
+     "answerWhy": "While ice melts, its temperature stays at 0 °C until all the ice has melted."
     },
     {
      "id": "1.1b",
@@ -71,7 +71,7 @@
      },
      "idk": [
       {
-       "hint": "The lesson on heating water used ΔE = m c Δθ. What does c tell you?"
+       "hint": "In the lesson on heating water, specific heat capacity was about warming 1 kg by 1 °C. Which button says that?"
       }
      ],
      "answerWhy": "Specific heat capacity is the energy needed to raise the temperature of 1 kg of a substance by 1 °C."
@@ -92,9 +92,14 @@
      "text": "Next the water warms up, so the line climbs again. At 100 °C it goes flat while the water boils. Once all the water has boiled, the steam warms up."
     },
     {
+     "id": "1.4b",
+     "type": "say",
+     "text": "Remember from the last lesson: temperature goes with the particles' kinetic energy, their energy of movement. Faster particles mean a higher temperature."
+    },
+    {
      "id": "1.5",
      "type": "say",
-     "text": "Energy goes in all the time, even on the flat parts. On a flat part the energy pulls the particles apart, raising their potential energy, so the temperature does not change."
+     "text": "Energy goes in all the time, even on the flat parts. On a flat part the energy overcomes forces between the particles, raising their potential energy, the energy stored by those forces. Their kinetic energy does not change, so neither does the temperature."
     },
     {
      "id": "1.6",
@@ -168,7 +173,7 @@
     {
      "id": "1.9",
      "type": "say",
-     "text": "Cooling gives the opposite graph, called a cooling curve. The line falls, then goes flat while the substance condenses or freezes, because it gives out latent heat as its particles pull back together."
+     "text": "Cooling gives the opposite graph, called a cooling curve. The line falls, then goes flat during each change of state, because the substance gives out latent heat as its particles pull back together."
     },
     {
      "id": "1.10",
@@ -185,15 +190,15 @@
        "branch": "boil"
       },
       {
-       "text": "The thermometer has stopped working",
-       "branch": "broken"
+       "text": "The wax is melting",
+       "branch": "melt"
       }
      ],
      "right": "Yes: the wax is freezing, giving out latent heat, so its temperature stays at 55 °C.",
      "wrong": {
       "other": "Not quite: the wax is freezing.",
       "boil": "Not quite: boiling needs energy in, and the wax is cooling. A flat part while cooling means the liquid wax is freezing.",
-      "broken": "Not quite: a flat part on a cooling curve is expected. The wax is freezing, giving out latent heat."
+      "melt": "Not quite: melting needs energy in, and the wax is cooling. A flat part while a liquid cools means it is freezing."
      },
      "idk": [
       {
@@ -226,7 +231,7 @@
     {
      "id": "2.2",
      "type": "say",
-     "text": "Melting and freezing use the specific latent heat of fusion: here fusion means melting. For water it is 334 000 J/kg."
+     "text": "Melting and freezing use the specific latent heat of fusion: here fusion means melting. For water it is 334 000 J/kg: joules for every kilogram."
     },
     {
      "id": "2.3",
@@ -234,15 +239,10 @@
      "text": "Boiling and condensing use the specific latent heat of vaporisation: the energy per kilogram to boil or condense a substance. For water it is 2 260 000 J/kg, almost seven times as much."
     },
     {
-     "id": "2.4",
-     "type": "say",
-     "text": "Vaporisation needs more because boiling must pull the particles completely apart, far from each other. Melting only loosens them: they stay close together."
-    },
-    {
      "id": "2.5",
      "type": "ask",
      "kind": "tap",
-     "question": "Why does boiling away 1 kg of water take far more energy than melting 1 kg of ice?",
+     "question": "Predict: why does boiling away 1 kg of water take far more energy than melting 1 kg of ice?",
      "options": [
       {
        "text": "Boiling pulls the particles completely apart",
@@ -261,7 +261,7 @@
      "wrong": {
       "other": "Not quite: boiling pulls the particles completely apart.",
       "hotter": "Not quite: the temperature is not the reason. Boiling pulls the particles completely apart, which needs far more energy than loosening them.",
-      "more": "Not quite: 1 kg of ice and 1 kg of water have the same particles. Boiling pulls them completely apart, which needs more energy."
+      "more": "Not quite: 1 kg of ice and 1 kg of water have the same number of particles. Boiling pulls them completely apart, which needs more energy."
      },
      "idk": [
       {
@@ -269,6 +269,11 @@
       }
      ],
      "answerWhy": "Boiling pulls the particles completely apart, which needs far more energy than melting, where they stay close."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "Vaporisation needs more because boiling must pull the particles completely apart, far from each other. Melting only loosens them: they stay close together."
     },
     {
      "id": "2.6",
@@ -374,7 +379,7 @@
     {
      "id": "3.3",
      "type": "say",
-     "text": "Masses are often given in grams: change them into kilograms first, by dividing by 1000. For example, 500 g is 0.5 kg."
+     "text": "Masses are often given in grams: change them into kilograms first, by dividing by 1000. For example, 250 g is 0.25 kg."
     },
     {
      "id": "3.4",
@@ -433,7 +438,7 @@
      "id": "3.7",
      "type": "ask",
      "kind": "number",
-     "question": "A beaker of water has a mass of 0.250 kg. After boiling for a while it has a mass of 0.240 kg. A joulemeter shows 23 000 J were supplied. What is L, in J/kg?",
+     "question": "A beaker of water has a mass of 0.250 kg. After boiling for a while it has a mass of 0.240 kg. A joulemeter, which measures the energy supplied, shows 23 000 J. What is L, in J/kg?",
      "answer": {
       "value": 2300000,
       "unit": "J/kg",
@@ -449,7 +454,7 @@
        "branch": "after"
       }
      ],
-     "right": "Yes: 2 300 000 J/kg. The mass boiled away is 0.250 − 0.240 = 0.010 kg, so L = 23 000 ÷ 0.010 = 2 300 000 J/kg.",
+     "right": "Yes: 2 300 000 J/kg. The mass boiled away is 0.010 kg, so L = 23 000 ÷ 0.010. Real experiments are never exact, so it is close to, not equal to, 2 260 000 J/kg.",
      "wrong": {
       "other": "Not quite: 2 300 000 J/kg. The mass that boiled is 0.010 kg, so L = 23 000 ÷ 0.010 = 2 300 000 J/kg.",
       "whole": "Not quite: only the water that boiled away changed state: 0.250 − 0.240 = 0.010 kg. L = 23 000 ÷ 0.010 = 2 300 000 J/kg.",
@@ -465,7 +470,7 @@
     {
      "id": "3.8",
      "type": "say",
-     "text": "To measure L for melting ice, put crushed ice in a funnel with an electric heater in it. A joulemeter measures the energy supplied. The melted water drips into a beaker, and its mass is found on a balance."
+     "text": "To measure L for melting ice, put crushed ice in a funnel with an electric heater in it, connected to a joulemeter. The melted water drips into a beaker, and its mass is found on a balance."
     },
     {
      "id": "3.9",
@@ -473,10 +478,15 @@
      "text": "The warm room melts some ice too. To allow for that, set up a second funnel of ice with no heater on, and take its melted mass away from the first."
     },
     {
+     "id": "3.9b",
+     "type": "say",
+     "text": "From the measurements, L = E ÷ m: the energy supplied divided by the mass of ice melted."
+    },
+    {
      "id": "3.10",
      "type": "ask",
      "kind": "tap",
-     "question": "In this practical, some energy from the heater warms the air instead of the ice. Is the value of L the student calculates too high or too low?",
+     "question": "In this practical, some energy from the heater warms the air instead of the ice. Is the value of L you calculate too high or too low?",
      "options": [
       {
        "text": "Too high",
@@ -523,7 +533,7 @@
     {
      "id": "4.1",
      "type": "say",
-     "text": "Sweat is mostly water. As it evaporates from your skin it takes in latent heat, over 2000 kJ for every kilogram. That energy comes from your body, so you cool down."
+     "text": "Sweat is mostly water. As it evaporates from your skin it takes in latent heat, over 2 000 000 J for every kilogram: evaporation takes in latent heat too, even far below 100 °C. That energy comes from your body, so you cool down."
     },
     {
      "id": "4.2",
@@ -531,20 +541,10 @@
      "text": "Sweating cools you best in hot, dry air. In humid air sweat evaporates slowly, so you cool down less."
     },
     {
-     "id": "4.3",
-     "type": "say",
-     "text": "Steam at 100 °C burns far worse than water at 100 °C. When steam touches skin it condenses, giving out its latent heat to the skin."
-    },
-    {
-     "id": "4.4",
-     "type": "say",
-     "text": "After condensing, the hot water cools on the skin and gives out more energy. Water at 100 °C gives out only that second part."
-    },
-    {
      "id": "4.5",
      "type": "ask",
      "kind": "tap",
-     "question": "Why does steam at 100 °C scald worse than water at 100 °C?",
+     "question": "Steam at 100 °C burns skin far worse than water at 100 °C. Predict why.",
      "options": [
       {
        "text": "As it condenses on the skin, it gives out latent heat as well",
@@ -571,6 +571,16 @@
       }
      ],
      "answerWhy": "Steam gives out latent heat as it condenses on the skin, on top of the energy the hot water gives out as it cools."
+    },
+    {
+     "id": "4.3",
+     "type": "say",
+     "text": "When steam touches skin it condenses, giving out its latent heat of vaporisation to the skin: 2 260 000 J for every kilogram."
+    },
+    {
+     "id": "4.4",
+     "type": "say",
+     "text": "Once the steam has condensed, the hot water on the skin cools and gives out more energy. Water at 100 °C gives out only this cooling energy."
     },
     {
      "id": "4.6",

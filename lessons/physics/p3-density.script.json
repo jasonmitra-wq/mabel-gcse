@@ -10,7 +10,7 @@
     {
      "id": "1.1",
      "type": "say",
-     "text": "Welcome! This lesson is about why some things float and others sink, and how to find out what something is made of, using one idea and one equation."
+     "text": "Welcome! This lesson is about why some things float and others sink, and how one number can tell you what a material is."
     },
     {
      "id": "1.1a",
@@ -31,7 +31,7 @@
        "branch": "liquid"
       }
      ],
-     "right": "Yes: in a gas the particles are far apart, and most of it is empty space.",
+     "right": "Yes: in a gas the particles are far apart.",
      "wrong": {
       "other": "Not quite: a gas.",
       "solid": "Not quite: solid particles are packed close together in a regular pattern. Far apart is a gas.",
@@ -39,7 +39,7 @@
      },
      "idk": [
       {
-       "hint": "Which state can you squash into a smaller space?"
+       "hint": "In a solid and in a liquid, the particles touch each other. Which state is left?"
       }
      ],
      "answerWhy": "In a gas the particles are far apart, with empty space between them."
@@ -71,7 +71,7 @@
      },
      "idk": [
       {
-       "hint": "When ice melts, are any particles made or destroyed?"
+       "hint": "No particles are made or destroyed when ice melts. So which mass must the water have?"
       }
      ],
      "answerWhy": "Mass stays the same in a change of state, so the water is 200 g."
@@ -79,7 +79,12 @@
     {
      "id": "1.2",
      "type": "say",
-     "text": "Now this lesson. Mass is how much matter something has, in kilograms (kg) or grams (g). Volume is how much space it takes up, in cubic metres (m³) or cubic centimetres (cm³)."
+     "text": "Now this lesson. Mass is how much matter something has. It is measured in kilograms (kg) or grams (g): 1 kg = 1000 g."
+    },
+    {
+     "id": "1.2b",
+     "type": "say",
+     "text": "Volume is how much space something takes up. It is measured in cubic metres (m³) or cubic centimetres (cm³): a cube 1 cm along each side has a volume of 1 cm³."
     },
     {
      "id": "1.3",
@@ -87,14 +92,19 @@
      "text": "A bag of flour and a bag of popcorn can be the same size, yet the flour is far heavier. The flour packs more mass into the same volume."
     },
     {
+     "id": "1.3b",
+     "type": "say",
+     "text": "The mass in each cubic metre, or in each cubic centimetre, of a material is called the density of the material."
+    },
+    {
      "id": "1.4",
      "type": "say",
-     "text": "The mass in each cubic metre, or in each cubic centimetre, of a material is called the density of the material. The equation is ρ = m ÷ V: density = mass ÷ volume."
+     "text": "The symbol for density is ρ, the Greek letter rho. The equation is ρ = m ÷ V: density = mass ÷ volume."
     },
     {
      "id": "1.5",
      "type": "say",
-     "text": "ρ is the Greek letter rho. ρ is the density in kilograms per cubic metre (kg/m³), m is the mass in kilograms (kg), and V is the volume in cubic metres (m³)."
+     "text": "In the equation, ρ is the density in kilograms per cubic metre (kg/m³), m is the mass in kilograms (kg), and V is the volume in cubic metres (m³)."
     },
     {
      "id": "1.6",
@@ -108,22 +118,22 @@
      "question": "Block A has a mass of 10 g and a volume of 10 cm³. Block B has a mass of 10 g and a volume of 5 cm³. Which is denser?",
      "options": [
       {
-       "text": "Block B: the same mass in half the volume",
+       "text": "Block B",
        "branch": "right"
       },
       {
-       "text": "Block A: it is bigger",
+       "text": "Block A",
        "branch": "bigger"
       },
       {
-       "text": "Neither: they have the same mass",
+       "text": "They are equally dense",
        "branch": "same"
       }
      ],
      "right": "Yes: B packs the same mass into half the space. Its density is 10 ÷ 5 = 2 g/cm³; A's is 10 ÷ 10 = 1 g/cm³.",
      "wrong": {
-      "other": "Not quite: block B, the same mass in half the volume.",
-      "bigger": "Not quite: bigger means the mass is more spread out. B packs the same mass into half the space, so B is denser.",
+      "other": "Not quite: block B.",
+      "bigger": "Not quite: A is bigger, so its mass is more spread out. B packs the same mass into half the space, so B is denser.",
       "same": "Not quite: density is mass for each cm³, not mass alone. B fits its 10 g into half the volume, so B is denser."
      },
      "idk": [
@@ -134,43 +144,48 @@
      "answerWhy": "A: 10 ÷ 10 = 1 g/cm³. B: 10 ÷ 5 = 2 g/cm³. B is denser."
     },
     {
+     "id": "1.7b",
+     "type": "say",
+     "text": "A material is dense when its particles are heavy, or packed tightly, or both."
+    },
+    {
      "id": "1.8",
      "type": "say",
-     "text": "Whether something floats depends on its density, not on how heavy it is. An object floats on water if it is less dense than water, and sinks if it is denser."
+     "text": "Whether something floats depends on density, not on how heavy it is. An object floats in a liquid or gas that is denser than the object, and sinks in one that is less dense."
     },
     {
      "id": "1.9",
      "type": "say",
-     "text": "A huge log floats because wood is less dense than water, while a small nail sinks because iron is denser: about 7900 kg/m³."
+     "text": "A huge log floats on water because wood is less dense than water, while a small nail sinks because iron is denser: about 7900 kg/m³."
     },
     {
      "id": "1.10",
      "type": "ask",
      "kind": "tap",
-     "question": "Ice has a density of 920 kg/m³. Will an ice cube float on water?",
+     "question": "Ice has a density of 920 kg/m³. Water's is 1000 kg/m³. Will an ice cube float or sink in water?",
      "options": [
       {
-       "text": "Yes: it is less dense than water",
+       "text": "It floats",
        "branch": "right"
       },
       {
-       "text": "No: a solid is denser than a liquid",
-       "branch": "solid"
+       "text": "It sinks",
+       "branch": "sinks"
       },
       {
-       "text": "No: it is too heavy",
-       "branch": "heavy"
+       "text": "It floats only if it is small",
+       "branch": "small"
       }
      ],
      "right": "Yes: 920 kg/m³ is less than water's 1000 kg/m³, so ice floats.",
      "wrong": {
       "other": "Not quite: it floats, because 920 kg/m³ is less than 1000 kg/m³.",
-      "solid": "Not quite: compare the numbers: 920 kg/m³ is less than water's 1000 kg/m³, so ice floats.",
-      "heavy": "Not quite: weight does not decide it; density does. 920 kg/m³ is less than water's 1000 kg/m³, so it floats."
+      "sinks": "Not quite: most solids are denser than their liquid, but water is an exception. 920 kg/m³ is less than 1000 kg/m³, so ice floats.",
+      "small": "Not quite: size does not decide it; density does. 920 kg/m³ is less than 1000 kg/m³, so any ice cube floats."
      },
      "idk": [
       {
-       "hint": "Water's density is 1000 kg/m³. Is 920 more or less than that?"
+       "hint": "An object less dense than water floats. Is 920 less than 1000?"
       }
      ],
      "answerWhy": "920 kg/m³ is less than water's 1000 kg/m³, so ice floats."
@@ -239,9 +254,41 @@
      "answerWhy": "ρ = m ÷ V = 300 ÷ 120 = 2.5 g/cm³."
     },
     {
+     "id": "2.2b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Some densities: aluminium 2.7 g/cm³, iron 7.9 g/cm³, gold 19.3 g/cm³. A shiny block has a mass of 79 g and a volume of 10 cm³. Which metal is it?",
+     "options": [
+      {
+       "text": "Iron",
+       "branch": "right"
+      },
+      {
+       "text": "Gold",
+       "branch": "gold"
+      },
+      {
+       "text": "Aluminium",
+       "branch": "alu"
+      }
+     ],
+     "right": "Yes: 79 ÷ 10 = 7.9 g/cm³, which matches iron. Density tells you what a material is.",
+     "wrong": {
+      "other": "Not quite: iron. 79 ÷ 10 = 7.9 g/cm³.",
+      "gold": "Not quite: gold would be 19.3 g/cm³. This block is 79 ÷ 10 = 7.9 g/cm³: iron.",
+      "alu": "Not quite: aluminium would be 2.7 g/cm³. This block is 79 ÷ 10 = 7.9 g/cm³: iron."
+     },
+     "idk": [
+      {
+       "hint": "Work out its density first: 79 ÷ 10. Then find that number in the list."
+      }
+     ],
+     "answerWhy": "The block's density is 79 ÷ 10 = 7.9 g/cm³, which matches iron."
+    },
+    {
      "id": "2.3",
      "type": "say",
-     "text": "To find a mass or a volume, put the numbers into ρ = m ÷ V first, then rearrange. Rearranging first is where most wrong answers come from."
+     "text": "To find a mass or a volume, put the numbers into ρ = m ÷ V first, then rearrange. Rearranged, m = ρ × V and V = m ÷ ρ. Use a calculator for the sums."
     },
     {
      "id": "2.4",
@@ -281,8 +328,8 @@
      "right": "Yes: 1800 kg. 900 = m ÷ 2, so m = 900 × 2 = 1800 kg.",
      "wrong": {
       "other": "Not quite: 1800 kg. 900 = m ÷ 2, so m = 900 × 2 = 1800 kg.",
-      "divide": "Not quite: 1800 kg. Put the numbers in first: 900 = m ÷ 2. Multiply both sides by 2: m = 1800 kg.",
-      "upside": "Not quite: 1800 kg. Put the numbers in first: 900 = m ÷ 2. Multiply both sides by 2: m = 1800 kg."
+      "divide": "Not quite: you divided 900 by 2. Mass = density × volume: 900 × 2 = 1800 kg.",
+      "upside": "Not quite: you divided 2 by 900. Mass = density × volume: 900 × 2 = 1800 kg."
      },
      "idk": [
       {
@@ -292,79 +339,94 @@
      "answerWhy": "900 = m ÷ 2, so m = 900 × 2 = 1800 kg."
     },
     {
+     "id": "2.5b",
+     "type": "worked",
+     "text": "Here is a worked example of finding a volume. Its steps open one at a time.",
+     "question": "A 600 g piece of wood has a density of 0.5 g/cm³. What is its volume?",
+     "steps": [
+      "Put the numbers into ρ = m ÷ V: 0.5 = 600 ÷ V.",
+      "Multiply both sides by V: 0.5 × V = 600.",
+      "Divide both sides by 0.5: V = 600 ÷ 0.5 = 1200 cm³."
+     ],
+     "answer": {
+      "value": 1200,
+      "unit": "cm³"
+     }
+    },
+    {
      "id": "2.6",
      "type": "ask",
      "kind": "number",
-     "question": "Seawater has a density of 1030 kg/m³. What volume of seawater has a mass of 515 000 kg, in m³?",
+     "question": "A 2000 kg block of concrete has a density of 2500 kg/m³. What is its volume, in m³?",
      "answer": {
-      "value": 500,
+      "value": 0.8,
       "unit": "m³",
       "tolerance": 0.01
      },
      "wrongValues": [
       {
-       "value": 530450000,
+       "value": 5000000,
        "branch": "times"
       },
       {
-       "value": 0.002,
+       "value": 1.25,
        "branch": "upside"
       }
      ],
-     "right": "Yes: 500 m³. 1030 = 515 000 ÷ V, so V = 515 000 ÷ 1030 = 500 m³.",
+     "right": "Yes: 0.8 m³. 2500 = 2000 ÷ V, so V = 2000 ÷ 2500 = 0.8 m³.",
      "wrong": {
-      "other": "Not quite: 500 m³. 1030 = 515 000 ÷ V, so V = 515 000 ÷ 1030 = 500 m³.",
-      "times": "Not quite: 500 m³. Put the numbers in first: 1030 = 515 000 ÷ V. Rearranged, V = 515 000 ÷ 1030 = 500 m³.",
-      "upside": "Not quite: 500 m³. The mass goes on top: V = 515 000 ÷ 1030 = 500 m³."
+      "other": "Not quite: 0.8 m³. 2500 = 2000 ÷ V, so V = 2000 ÷ 2500 = 0.8 m³.",
+      "times": "Not quite: you multiplied. Volume = mass ÷ density: 2000 ÷ 2500 = 0.8 m³.",
+      "upside": "Not quite: you divided the density by the mass. Volume = mass ÷ density: 2000 ÷ 2500 = 0.8 m³."
      },
      "idk": [
       {
-       "hint": "Put the numbers in: 1030 = 515 000 ÷ V. Multiply both sides by V, then divide both sides by 1030."
+       "hint": "Put the numbers in: 2500 = 2000 ÷ V. Multiply both sides by V, then divide both sides by 2500."
       }
      ],
-     "answerWhy": "1030 = 515 000 ÷ V, so V = 515 000 ÷ 1030 = 500 m³."
+     "answerWhy": "2500 = 2000 ÷ V, so V = 2000 ÷ 2500 = 0.8 m³."
     },
     {
      "id": "2.7",
      "type": "say",
-     "text": "Watch the units. Grams with cm³ gives g/cm³; kilograms with m³ gives kg/m³. To change a density in g/cm³ into kg/m³, multiply by 1000."
+     "text": "Watch the units. 1 kg is 1000 g, and 1 m³ is 1 000 000 cm³, so 1 g/cm³ is the same as 1000 kg/m³. Multiply by 1000 to go from g/cm³ to kg/m³; divide by 1000 to go back."
     },
     {
      "id": "2.8",
      "type": "ask",
      "kind": "tap",
-     "question": "Aluminium has a density of 2.7 g/cm³. What is that in kg/m³?",
+     "question": "Iron has a density of 7900 kg/m³. What is that in g/cm³?",
      "options": [
       {
-       "text": "2700 kg/m³",
+       "text": "7.9 g/cm³",
        "branch": "right"
       },
       {
-       "text": "0.0027 kg/m³",
-       "branch": "divide"
+       "text": "7 900 000 g/cm³",
+       "branch": "times"
       },
       {
-       "text": "2.7 kg/m³",
+       "text": "7900 g/cm³",
        "branch": "same"
       }
      ],
-     "right": "Yes: 2.7 × 1000 = 2700 kg/m³.",
+     "right": "Yes: 7900 ÷ 1000 = 7.9 g/cm³.",
      "wrong": {
-      "other": "Not quite: 2700 kg/m³. Multiply by 1000.",
-      "divide": "Not quite: going from g/cm³ to kg/m³, multiply by 1000: 2.7 × 1000 = 2700 kg/m³.",
-      "same": "Not quite: the number changes with the units. Multiply by 1000: 2700 kg/m³."
+      "other": "Not quite: 7.9 g/cm³. Divide by 1000.",
+      "times": "Not quite: going from kg/m³ to g/cm³, divide by 1000: 7900 ÷ 1000 = 7.9 g/cm³.",
+      "same": "Not quite: the number changes with the units. Divide by 1000: 7.9 g/cm³."
      },
      "idk": [
       {
-       "hint": "To go from g/cm³ to kg/m³, multiply by 1000."
+       "hint": "What is 7900 ÷ 1000?"
       }
      ],
-     "answerWhy": "2.7 g/cm³ × 1000 = 2700 kg/m³."
+     "answerWhy": "7900 kg/m³ ÷ 1000 = 7.9 g/cm³."
     },
     {
      "id": "2.9",
      "type": "say",
-     "text": "When a substance changes state its mass stays the same, but its volume can change, so its density changes. Most solids take up a little more space when they melt, so the liquid is a little less dense."
+     "text": "A substance's density changes when it melts, because its volume changes. Most solids take up a little more space as a liquid, so the liquid is a little less dense."
     },
     {
      "id": "2.10",
@@ -394,7 +456,7 @@
      },
      "idk": [
       {
-       "hint": "The mass is still 2.7 kg. Divide it by the liquid's volume, 0.00108."
+       "hint": "The mass is still 2.7 kg. On a calculator, divide it by the liquid's volume, 0.00108."
       }
      ],
      "answerWhy": "The mass stays 2.7 kg, so ρ = 2.7 ÷ 0.00108 = 2500 kg/m³."
@@ -415,19 +477,56 @@
    "heading": "Measuring density in the lab (required practical)",
    "steps": [
     {
+     "id": "3.0",
+     "type": "ask",
+     "kind": "tap",
+     "question": "To find the density of a stone, which two things do you need to measure?",
+     "options": [
+      {
+       "text": "Its mass and its volume",
+       "branch": "right"
+      },
+      {
+       "text": "Its mass and its length",
+       "branch": "length"
+      },
+      {
+       "text": "Its weight and its temperature",
+       "branch": "temp"
+      }
+     ],
+     "right": "Yes: then density = mass ÷ volume.",
+     "wrong": {
+      "other": "Not quite: its mass and its volume.",
+      "length": "Not quite: a length alone is not a volume. You need its mass and its volume.",
+      "temp": "Not quite: temperature is not in the equation. You need its mass and its volume."
+     },
+     "idk": [
+      {
+       "hint": "Look at the equation ρ = m ÷ V. Which two quantities are on the right?"
+      }
+     ],
+     "answerWhy": "ρ = m ÷ V, so you need the mass and the volume."
+    },
+    {
      "id": "3.1",
      "type": "say",
-     "text": "Measuring density is a required practical: the exam can ask you to describe how to do it. You need two measurements: the mass and the volume."
+     "text": "Measuring density is a required practical: the exam can ask you to describe how to do it."
     },
     {
      "id": "3.2",
      "type": "say",
-     "text": "Find the mass on a balance, in grams. First check it reads zero with nothing on it. If it reads 0.02 g when empty, take 0.02 g off every reading."
+     "text": "A balance is the lab's weighing scales: it measures mass, in grams. First check it reads zero with nothing on it. If it reads 0.02 g when empty, take 0.02 g off every reading."
     },
     {
      "id": "3.3",
      "type": "say",
      "text": "For a regular solid, such as a cube or a cuboid, measure its length, width and height with a ruler. Its volume = length × width × height."
+    },
+    {
+     "id": "3.3b",
+     "type": "say",
+     "text": "For a cylinder, measure its radius and height: V = π × r² × h. For a small object, a micrometer or Vernier callipers measure lengths more precisely than a ruler."
     },
     {
      "id": "3.4",
@@ -468,15 +567,20 @@
      "text": "An irregular object, such as a stone, has no simple sides to measure. Instead, lower it into water and measure how much water it pushes aside: that is the displacement method."
     },
     {
+     "id": "3.5b",
+     "type": "say",
+     "text": "A measuring cylinder is a tall glass or plastic tube with a volume scale up its side, in cm³."
+    },
+    {
      "id": "3.6",
      "type": "say",
-     "text": "One way: half fill a measuring cylinder with water and read the level. Lower the stone in on a thin thread and read the new level. The stone's volume is the new reading minus the first."
+     "text": "To find a stone's volume with one, half fill the measuring cylinder with water and read the level. Lower the stone in on a thin thread, so it is fully under the water, and read the new level."
     },
     {
      "id": "3.7",
      "type": "ask",
      "kind": "number",
-     "question": "A measuring cylinder reads 40 cm³ before a stone goes in and 52 cm³ after. What is the stone's volume, in cm³?",
+     "question": "The level reads 40 cm³ before the stone goes in and 52 cm³ after. What is the stone's volume, in cm³?",
      "answer": {
       "value": 12,
       "unit": "cm³",
@@ -492,15 +596,15 @@
        "branch": "add"
       }
      ],
-     "right": "Yes: 12 cm³. 52 − 40 = 12 cm³.",
+     "right": "Yes: 12 cm³. The rise in level is the stone's volume: 52 − 40 = 12 cm³.",
      "wrong": {
-      "other": "Not quite: 12 cm³. Subtract: 52 − 40 = 12 cm³.",
+      "other": "Not quite: 12 cm³. The rise in level is the stone's volume: 52 − 40 = 12 cm³.",
       "mean": "Not quite: 12 cm³. Do not average the readings; subtract them: 52 − 40 = 12 cm³.",
       "add": "Not quite: 12 cm³. The stone only adds the rise in level: 52 − 40 = 12 cm³."
      },
      "idk": [
       {
-       "hint": "How much did the level rise? Take the first reading from the second."
+       "hint": "The stone pushed the water up. By how much did the level rise?"
       }
      ],
      "answerWhy": "The rise in level is the stone's volume: 52 − 40 = 12 cm³."
@@ -542,7 +646,7 @@
      },
      "idk": [
       {
-       "hint": "Imagine reading the level from above it, then from below it. Do you get the same number?"
+       "hint": "Looking from above, the level seems to be in a different place. Which option is about getting the reading right?"
       }
      ],
      "answerWhy": "Looking from above or below makes the reading too high or too low, so read it with your eye level."
@@ -550,39 +654,39 @@
     {
      "id": "3.11",
      "type": "say",
-     "text": "Small slips like an eye not quite level are called random errors: they push readings a little too high one time and a little too low the next."
+     "text": "Even with care, repeat readings scatter a little: too high one time, too low the next, for example from judging where the water level is. These are called random errors."
     },
     {
      "id": "3.12",
      "type": "ask",
      "kind": "tap",
-     "question": "Why do scientists repeat each measurement and take a mean?",
+     "question": "Why is the mean (average) of three repeat readings better than one reading?",
      "options": [
       {
-       "text": "A mean reduces the effect of random errors",
+       "text": "The highs and lows partly cancel out",
        "branch": "right"
       },
       {
-       "text": "In case they measured it wrong the first time",
+       "text": "In case the first one was measured wrong",
        "branch": "wrong"
       },
       {
-       "text": "To stop odd results happening",
+       "text": "It stops odd results happening",
        "branch": "stop"
       }
      ],
-     "right": "Yes: the highs and lows partly cancel out in a mean, and an odd result stands out so you can leave it out.",
+     "right": "Yes: in a mean the highs and lows partly cancel, so it reduces the effect of random errors. An odd result also stands out, so you can leave it out.",
      "wrong": {
-      "other": "Not quite: a mean reduces the effect of random errors.",
-      "wrong": "Not quite: that answer scores nothing in the exam. Say that a mean reduces the effect of random errors.",
-      "stop": "Not quite: repeats cannot stop odd results, but they help you spot them. A mean reduces the effect of random errors."
+      "other": "Not quite: the highs and lows partly cancel out.",
+      "wrong": "Close: a repeat can catch a slip. The main reason is that highs and lows partly cancel in a mean, which reduces the effect of random errors.",
+      "stop": "Not quite: repeats cannot stop odd results, but they help you spot them. The highs and lows partly cancel in a mean."
      },
      "idk": [
       {
-       "hint": "Random errors push some readings up and some down. What happens to them in an average?"
+       "hint": "Some readings are a bit too high and some a bit too low. What happens to them when you average?"
       }
      ],
-     "answerWhy": "Random errors push readings up and down, so they partly cancel in a mean: it reduces their effect."
+     "answerWhy": "In a mean the highs and lows partly cancel, so it reduces the effect of random errors."
     },
     {
      "id": "3.13",
@@ -603,7 +707,7 @@
     {
      "id": "4.1",
      "type": "say",
-     "text": "Now back to particles. Gases are far less dense than solids and liquids, because their particles are far apart, with empty space between them."
+     "text": "Now back to particles. A gas is far less dense than a solid or a liquid: most of a gas is empty space, so each cubic metre holds very little mass."
     },
     {
      "id": "4.2",
@@ -613,53 +717,48 @@
     {
      "id": "4.3",
      "type": "say",
-     "text": "In a solid and in a liquid the particles are close together, so their densities are similar. A solid is usually a little denser than its own liquid, because its particles are packed tightly in a regular pattern."
-    },
-    {
-     "id": "4.4",
-     "type": "say",
-     "text": "Water is an odd one out: ice is a little less dense than liquid water, which is why ice floats."
+     "text": "In a solid and in a liquid the particles are close together, so their densities are similar. A solid's particles are packed tightly in a regular pattern, so it is usually a little denser than its liquid."
     },
     {
      "id": "4.5",
      "type": "ask",
      "kind": "tap",
-     "question": "Why is steam far less dense than liquid water?",
+     "question": "A gas is squashed into a smaller volume. Which is true of its density?",
      "options": [
       {
-       "text": "Its particles are much further apart",
+       "text": "It rises: the same mass in less volume",
        "branch": "right"
       },
       {
-       "text": "Its particles are smaller",
-       "branch": "smaller"
+       "text": "It falls",
+       "branch": "falls"
       },
       {
-       "text": "Steam has no mass",
-       "branch": "nomass"
+       "text": "It stays the same: it is the same gas",
+       "branch": "same"
       }
      ],
-     "right": "Yes: the same particles, much further apart, so far less mass in each cubic metre.",
+     "right": "Yes: the mass stays the same but the volume shrinks, so ρ = m ÷ V gets bigger.",
      "wrong": {
-      "other": "Not quite: its particles are much further apart.",
-      "smaller": "Not quite: the particles are the same size in every state. In steam they are much further apart.",
-      "nomass": "Not quite: steam has mass, the same as the water it came from. Its particles are much further apart, so its density is low."
+      "other": "Not quite: it rises, because the same mass is in less volume.",
+      "falls": "Not quite: the mass stays the same and the volume shrinks, so m ÷ V gets bigger: the density rises.",
+      "same": "Not quite: same gas, but the particles are now closer together. Same mass in less volume means a higher density."
      },
      "idk": [
       {
-       "hint": "Think of the gaps between the particles in a gas."
+       "hint": "In ρ = m ÷ V, the mass stays the same. What happens to m ÷ V when V gets smaller?"
       }
      ],
-     "answerWhy": "Steam particles are much further apart, so there is far less mass in each cubic metre."
+     "answerWhy": "The mass stays the same and the volume shrinks, so the density rises."
     },
     {
      "id": "4.6",
      "type": "own",
-     "prompt": "In one line: why is a gas much less dense than a solid?",
+     "prompt": "In one line: why are a solid and its liquid similar in density?",
      "points": [
-      "its particles are far apart (lots of empty space between them)"
+      "in both the particles are close together (touching)"
      ],
-     "idk": "No problem. A good line would be: a gas is much less dense because its particles are far apart, with empty space between them."
+     "idk": "No problem. A good line would be: in a solid and in its liquid the particles are close together, so the same space holds about the same mass."
     },
     {
      "id": "4.7",
@@ -784,29 +883,29 @@
      "id": "4.13",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 6 of 6: why is a gas less dense than a liquid?",
+     "question": "Quiz, question 6 of 6: which of these is the least dense?",
      "options": [
       {
-       "text": "Its particles are far apart",
+       "text": "Steam",
        "branch": "right"
       },
       {
-       "text": "Its particles are lighter",
+       "text": "Water",
        "branch": "w1"
       },
       {
-       "text": "Its particles are smaller",
+       "text": "Ice",
        "branch": "w2"
       }
      ],
-     "right": "Yes: the particles are far apart, so there is little mass in each cubic metre.",
+     "right": "Yes: steam, a gas, with its particles far apart.",
      "wrong": {
-      "other": "Not quite: its particles are far apart.",
-      "w1": "Not quite: they are the same particles in every state. In a gas they are far apart.",
-      "w2": "Not quite: the particles are the same size in every state. In a gas they are far apart."
+      "other": "Not quite: steam.",
+      "w1": "Not quite: in water the particles touch. Steam is a gas, with its particles far apart, so it is far less dense.",
+      "w2": "Not quite: ice is a little less dense than water, but steam, a gas, is far less dense than both."
      },
      "idk": [],
-     "answerWhy": "Gas particles are far apart, with empty space between them.",
+     "answerWhy": "Steam is a gas, so its particles are far apart and its density is far lower.",
      "quiz": true
     },
     {

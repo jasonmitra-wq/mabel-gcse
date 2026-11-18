@@ -1,0 +1,354 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 15767,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11965,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 7178
+    },
+    "iterations": [
+      {
+        "input_tokens": 15767,
+        "output_tokens": 11965,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.604736,
+  "seconds": 112,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from earlier lessons. A ball rolls across the floor. Which of its energy stores is filled by its movement?\",\"what\":\"The lesson opens by testing earlier work she may never have done. 'Energy stores', 'kinetic', 'elastic potential' and 'chemical' are not explained here, and the don't-know hint ('Which store is about movement?') only helps if she already knows the word kinetic.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.1b\",\"quote\":\"Which store of the tea empties?\",\"what\":\"'Thermal' store and the idea of a store 'emptying' are used with no explanation. The rest of the lesson never uses energy stores again, so the two questions lead nowhere.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.1b (wrong answer: Kinetic)\",\"quote\":\"Not quite: the tea is not moving across the table. Its thermal store empties as it cools.\",\"what\":\"She is told kinetic is wrong for hot tea, then 2.6 teaches that hotter means the particles have more kinetic energy. The lesson never says that the thermal store is the internal energy of the particles, so this reply sets up a contradiction.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F5\",\"turn\":\"1.2\",\"quote\":\"Everything around you is made of tiny particles: atoms and molecules.\",\"what\":\"'Atoms' and 'molecules' are both dropped into one message and neither is explained.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"1.5\",\"quote\":\"Held in place, they cannot swap places, but they are not still\",\"what\":\"The message opens with 'they' and the particles are not named until later in the sentence. It leans on the previous bubble.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"1.6\",\"quote\":\"Which describes the particles in an ice cube?\",\"what\":\"The right option is word for word what 1.4 and 1.5 have just told her ('packed close together in a regular pattern', 'each particle vibrates'). She only has to match the words, not think.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.6 don't know (first time)\",\"quote\":\"A solid keeps its shape. Are its particles close or far apart, and can they move at all?\",\"what\":\"The hint leans on 'a solid keeps its shape', which is not taught until 1.7. It also asks two questions at once while showing the original three buttons.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"1.7\",\"quote\":\"a solid keeps its shape and its volume. A solid is also incompressible\",\"what\":\"'Volume' is used without saying what it means, and 'incompressible' is introduced in the same message along with fixed shape. That is too much for one bubble.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.12\",\"quote\":\"The gaps between gas particles hold nothing at all, not even air.\",\"what\":\"Good intention, but air is the gas she will be picturing (and the next question is about air), so 'not even air' between the particles of air will puzzle her. Say that the particles are the air and between them there is nothing.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.14 (wrong answer: smaller and softer)\",\"quote\":\"Not quite: particles do not change size or get softer.\",\"what\":\"The reply does not fit her answer. She said air particles are smaller and softer than water particles, not that particles change size, and the lesson has never said anything about how big different particles are.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.16\",\"quote\":\"Yes, your line has it: close together in a regular pattern; and vibrate about fixed positions.\",\"what\":\"The feedback is the marking points pasted together, not a sentence. The same clumsy '…; and …' pattern recurs at 2.10 and 3.14.\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"1.16\",\"quote\":\"In one line: how are the particles arranged in a solid, and how do they move?\",\"what\":\"Key point 1 ends here, but the word 'lattice' for the regular pattern, which the key point includes, is never taught.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"2.2\",\"quote\":\"Because of the forces of attraction between them, they also have potential energy\",\"what\":\"'Them' and 'they' refer to the particles in the previous bubble; the message does not stand on its own until its last sentence.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.4\",\"quote\":\"A cup of water and a bath of water are both at 20 °C. Which has more internal energy?\",\"what\":\"The question turns on temperature, but she is not told what temperature says about the particles until 2.6. The reply 'the same temperature does not mean the same total' cannot mean much to her yet.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P16\",\"turn\":\"2.7\",\"quote\":\"The energy pulls the particles apart against the forces between them, so their potential energy rises\",\"what\":\"She was told at 1.8 that liquid particles still touch, so 'pulls the particles apart' for melting contradicts the lesson's own picture (and ice actually shrinks on melting). The key point says the forces are overcome or weakened; use that.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"2.7\",\"quote\":\"the substance changes state, for example ice melts\",\"what\":\"'Changes state' is used here, but 'change of state' is not introduced and defined until 3.1.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.8\",\"quote\":\"Ice is melting in a pan at 0 °C, and its temperature is not rising. What is the energy from the hob doing?\",\"what\":\"2.7, the message immediately before, used the same melting-ice example and said 'their potential energy rises while the temperature stays the same'. The answer has just been handed to her.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"2.9\",\"quote\":\"Potential energy rises; kinetic energy stays the same\",\"what\":\"The right-answer reply to 2.8 has just said 'their potential energy rises. Their kinetic energy, and the temperature, stay the same'. 2.9 asks for that same sentence with boiling in place of melting.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P4\",\"turn\":\"2.10\",\"quote\":\"In one line: what is internal energy?\",\"what\":\"Key point 2 closes here, but the key point's three explanations are not taught in it: gas pressure from particles hitting the walls, diffusion, and expansion on heating. Diffusion turns up only at 4.3, and expansion on heating never appears.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"3.5\",\"quote\":\"Condensing is a gas turning back into a liquid, like steam misting a cold window. Sublimation is a solid turning straight into a gas, like dry ice (solid carbon dioxide).\",\"what\":\"Two new changes of state, plus 'dry ice' and 'carbon dioxide', in one message. Each should have its own bubble.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.6\",\"quote\":\"Going right needs energy in; going left gives energy out.\",\"what\":\"That freezing and condensing give energy out is a new idea, met only in this caption-style line. It is never explained in terms of particles losing potential energy, which the key point says.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"3.7\",\"quote\":\"Which change happens only at the surface of a liquid, at any temperature?\",\"what\":\"The question repeats the wording of 3.4 ('only at its surface, and at any temperature'), so it is a word-match rather than a test of understanding.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"3.8\",\"quote\":\"its temperature stays the same, just as with the melting ice\",\"what\":\"Constant temperature during a change of state has already been said at 2.7, in the 2.8 replies and at 2.9. This is the fourth telling.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.8\",\"quote\":\"While a pure substance melts, freezes, boils or condenses\",\"what\":\"'Pure substance' is used with no explanation of what pure means or why it matters.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"3.9\",\"quote\":\"The particles are only rearranged: none are made or destroyed.\",\"what\":\"This repeats 1.3 ('The particles stay the same; only their arrangement and movement change').\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"3.10\",\"quote\":\"100 g of ice melts completely in a sealed bag. What is the mass of the water?\",\"what\":\"3.9, the message just before, said 'In every change of state the mass stays the same'. The answer is given immediately before the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"3.11\",\"quote\":\"Changes of state are physical changes: reverse one and the substance gets back its original properties. Melted chocolate sets again as chocolate. Burning is a chemical change\",\"what\":\"'Physical change' and 'chemical change' are both introduced in one message, with two examples.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"3.12\",\"quote\":\"Which of these is a physical change?\",\"what\":\"3.11 has just said changes of state are physical and that burning wood to ash is chemical. That gives the right option and rules out one distractor before she is asked.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.13\",\"quote\":\"Ethanol melts at −114 °C and boils at 78 °C. What state is it in at 20 °C?\",\"what\":\"She has never been shown how to work out a state from a melting point and a boiling point (below, between, above), and 'ethanol' is not explained. A first-time learner needs one worked case, such as water, before this.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.2\",\"quote\":\"why a gas presses on the walls of its container\",\"what\":\"The lesson claims the model explains gas pressure but has never said how (particles hitting the walls). She is then allowed to offer 'gas pressure' at 4.7 as something the model explains.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"4.6\",\"quote\":\"Which of these is a limitation of the particle model?\",\"what\":\"4.4 has just said the model 'draws every particle as a solid ball, and all the particles of a substance as identical'. The two distractors (squashing a gas, a smell spreading) were listed at 4.2 and 4.3 as things it does explain.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"4.6\",\"quote\":\"A limitation is something the model gets wrong about real particles.\",\"what\":\"'Limitation' is used in the question but only explained in the don't-know hint. The question also switches from 'solid ball' to 'solid spheres'.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.7\",\"quote\":\"Yes, your line has it: something it explains (squashing a gas, gas pressure, diffusion, a solid keeping its shape); and real particles are not identical solid spheres, or the drawings are not to scale.\",\"what\":\"She is shown the marking rubric instead of feedback on what she wrote. The 'None' reply ('A good line would say: something it explains (…)') is not a model answer at all.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"4.12 (wrong answers)\",\"quote\":\"Not quite: 50 g. Mass stays the same in a change of state.\",\"what\":\"'More than 50 g' and 'Less than 50 g' get the identical reply. Neither says why, for example that no particles are added or lost.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.1a to 4.14 (every 'Still doesn't know')\",\"quote\":\"That's fine.\",\"what\":\"Every second don't-know reply in the lesson, about twenty of them, opens with the same stock 'That's fine.' She will notice it and it will sound mechanical.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole lesson\",\"quote\":\"A syringe is sealed at the end. You can push the plunger in when it holds air, but not when it holds water.\",\"what\":\"There is nothing hands-on anywhere: no particle simulation, no heating curve to explore, and the syringe is only described. This topic is ideal for a simple interactive.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"1.7 to 1.13, 3.1 to 3.6, 4.1 to 4.5\",\"quote\":\"Button: Next\",\"what\":\"There are long runs of telling with nothing to do but press Next: seven messages in a row in key point 1, six in key point 3 and five in key point 4. She is likely to switch off.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"The end\",\"quote\":\"The lesson is finished. Tap a button to go on.\",\"what\":\"The lesson stops dead after the quiz score, with no closing summary of the main ideas and no word on what she got wrong.\",\"severity\":\"minor\"}],\"counts\":[{\"fault\":\"F8\",\"instances\":7},{\"fault\":\"F5\",\"instances\":4},{\"fault\":\"F3\",\"instances\":4},{\"fault\":\"F2\",\"instances\":2},{\"fault\":\"F1\",\"instances\":2},{\"fault\":\"L3\",\"instances\":1},{\"fault\":\"P4\",\"instances\":2},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"new\",\"instances\":13}],\"overall\":\"Not as it stands. The physics is mostly sound and the wrong-answer replies are generally helpful, but too many questions are asked straight after the message that gives the answer (2.8, 2.9, 3.10, 3.12, 4.6), so she can score well without understanding. The opening quizzes her on energy stores she has not been taught and then tells her hot tea is not about kinetic energy, which the lesson later contradicts; 'pulls the particles apart' for melting clashes with the lesson's own picture of a liquid. Gas pressure and expansion on heating are never actually taught, 4.7 shows her the marking rubric as feedback, and there are long runs of Next with nothing hands-on. I would want these fixed before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from earlier lessons. A ball rolls across the floor. Which of its energy stores is filled by its movement?",
+      "what": "The lesson opens by testing earlier work she may never have done. 'Energy stores', 'kinetic', 'elastic potential' and 'chemical' are not explained here, and the don't-know hint ('Which store is about movement?') only helps if she already knows the word kinetic.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1b",
+      "quote": "Which store of the tea empties?",
+      "what": "'Thermal' store and the idea of a store 'emptying' are used with no explanation. The rest of the lesson never uses energy stores again, so the two questions lead nowhere.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1b (wrong answer: Kinetic)",
+      "quote": "Not quite: the tea is not moving across the table. Its thermal store empties as it cools.",
+      "what": "She is told kinetic is wrong for hot tea, then 2.6 teaches that hotter means the particles have more kinetic energy. The lesson never says that the thermal store is the internal energy of the particles, so this reply sets up a contradiction.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.2",
+      "quote": "Everything around you is made of tiny particles: atoms and molecules.",
+      "what": "'Atoms' and 'molecules' are both dropped into one message and neither is explained.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "1.5",
+      "quote": "Held in place, they cannot swap places, but they are not still",
+      "what": "The message opens with 'they' and the particles are not named until later in the sentence. It leans on the previous bubble.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.6",
+      "quote": "Which describes the particles in an ice cube?",
+      "what": "The right option is word for word what 1.4 and 1.5 have just told her ('packed close together in a regular pattern', 'each particle vibrates'). She only has to match the words, not think.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.6 don't know (first time)",
+      "quote": "A solid keeps its shape. Are its particles close or far apart, and can they move at all?",
+      "what": "The hint leans on 'a solid keeps its shape', which is not taught until 1.7. It also asks two questions at once while showing the original three buttons.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.7",
+      "quote": "a solid keeps its shape and its volume. A solid is also incompressible",
+      "what": "'Volume' is used without saying what it means, and 'incompressible' is introduced in the same message along with fixed shape. That is too much for one bubble.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.12",
+      "quote": "The gaps between gas particles hold nothing at all, not even air.",
+      "what": "Good intention, but air is the gas she will be picturing (and the next question is about air), so 'not even air' between the particles of air will puzzle her. Say that the particles are the air and between them there is nothing.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.14 (wrong answer: smaller and softer)",
+      "quote": "Not quite: particles do not change size or get softer.",
+      "what": "The reply does not fit her answer. She said air particles are smaller and softer than water particles, not that particles change size, and the lesson has never said anything about how big different particles are.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.16",
+      "quote": "Yes, your line has it: close together in a regular pattern; and vibrate about fixed positions.",
+      "what": "The feedback is the marking points pasted together, not a sentence. The same clumsy '…; and …' pattern recurs at 2.10 and 3.14.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "1.16",
+      "quote": "In one line: how are the particles arranged in a solid, and how do they move?",
+      "what": "Key point 1 ends here, but the word 'lattice' for the regular pattern, which the key point includes, is never taught.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.2",
+      "quote": "Because of the forces of attraction between them, they also have potential energy",
+      "what": "'Them' and 'they' refer to the particles in the previous bubble; the message does not stand on its own until its last sentence.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.4",
+      "quote": "A cup of water and a bath of water are both at 20 °C. Which has more internal energy?",
+      "what": "The question turns on temperature, but she is not told what temperature says about the particles until 2.6. The reply 'the same temperature does not mean the same total' cannot mean much to her yet.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P16",
+      "turn": "2.7",
+      "quote": "The energy pulls the particles apart against the forces between them, so their potential energy rises",
+      "what": "She was told at 1.8 that liquid particles still touch, so 'pulls the particles apart' for melting contradicts the lesson's own picture (and ice actually shrinks on melting). The key point says the forces are overcome or weakened; use that.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.7",
+      "quote": "the substance changes state, for example ice melts",
+      "what": "'Changes state' is used here, but 'change of state' is not introduced and defined until 3.1.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.8",
+      "quote": "Ice is melting in a pan at 0 °C, and its temperature is not rising. What is the energy from the hob doing?",
+      "what": "2.7, the message immediately before, used the same melting-ice example and said 'their potential energy rises while the temperature stays the same'. The answer has just been handed to her.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.9",
+      "quote": "Potential energy rises; kinetic energy stays the same",
+      "what": "The right-answer reply to 2.8 has just said 'their potential energy rises. Their kinetic energy, and the temperature, stay the same'. 2.9 asks for that same sentence with boiling in place of melting.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P4",
+      "turn": "2.10",
+      "quote": "In one line: what is internal energy?",
+      "what": "Key point 2 closes here, but the key point's three explanations are not taught in it: gas pressure from particles hitting the walls, diffusion, and expansion on heating. Diffusion turns up only at 4.3, and expansion on heating never appears.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "3.5",
+      "quote": "Condensing is a gas turning back into a liquid, like steam misting a cold window. Sublimation is a solid turning straight into a gas, like dry ice (solid carbon dioxide).",
+      "what": "Two new changes of state, plus 'dry ice' and 'carbon dioxide', in one message. Each should have its own bubble.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6",
+      "quote": "Going right needs energy in; going left gives energy out.",
+      "what": "That freezing and condensing give energy out is a new idea, met only in this caption-style line. It is never explained in terms of particles losing potential energy, which the key point says.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.7",
+      "quote": "Which change happens only at the surface of a liquid, at any temperature?",
+      "what": "The question repeats the wording of 3.4 ('only at its surface, and at any temperature'), so it is a word-match rather than a test of understanding.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.8",
+      "quote": "its temperature stays the same, just as with the melting ice",
+      "what": "Constant temperature during a change of state has already been said at 2.7, in the 2.8 replies and at 2.9. This is the fourth telling.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.8",
+      "quote": "While a pure substance melts, freezes, boils or condenses",
+      "what": "'Pure substance' is used with no explanation of what pure means or why it matters.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.9",
+      "quote": "The particles are only rearranged: none are made or destroyed.",
+      "what": "This repeats 1.3 ('The particles stay the same; only their arrangement and movement change').",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.10",
+      "quote": "100 g of ice melts completely in a sealed bag. What is the mass of the water?",
+      "what": "3.9, the message just before, said 'In every change of state the mass stays the same'. The answer is given immediately before the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "3.11",
+      "quote": "Changes of state are physical changes: reverse one and the substance gets back its original properties. Melted chocolate sets again as chocolate. Burning is a chemical change",
+      "what": "'Physical change' and 'chemical change' are both introduced in one message, with two examples.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.12",
+      "quote": "Which of these is a physical change?",
+      "what": "3.11 has just said changes of state are physical and that burning wood to ash is chemical. That gives the right option and rules out one distractor before she is asked.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.13",
+      "quote": "Ethanol melts at −114 °C and boils at 78 °C. What state is it in at 20 °C?",
+      "what": "She has never been shown how to work out a state from a melting point and a boiling point (below, between, above), and 'ethanol' is not explained. A first-time learner needs one worked case, such as water, before this.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.2",
+      "quote": "why a gas presses on the walls of its container",
+      "what": "The lesson claims the model explains gas pressure but has never said how (particles hitting the walls). She is then allowed to offer 'gas pressure' at 4.7 as something the model explains.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.6",
+      "quote": "Which of these is a limitation of the particle model?",
+      "what": "4.4 has just said the model 'draws every particle as a solid ball, and all the particles of a substance as identical'. The two distractors (squashing a gas, a smell spreading) were listed at 4.2 and 4.3 as things it does explain.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.6",
+      "quote": "A limitation is something the model gets wrong about real particles.",
+      "what": "'Limitation' is used in the question but only explained in the don't-know hint. The question also switches from 'solid ball' to 'solid spheres'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.7",
+      "quote": "Yes, your line has it: something it explains (squashing a gas, gas pressure, diffusion, a solid keeping its shape); and real particles are not identical solid spheres, or the drawings are not to scale.",
+      "what": "She is shown the marking rubric instead of feedback on what she wrote. The 'None' reply ('A good line would say: something it explains (…)') is not a model answer at all.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "4.12 (wrong answers)",
+      "quote": "Not quite: 50 g. Mass stays the same in a change of state.",
+      "what": "'More than 50 g' and 'Less than 50 g' get the identical reply. Neither says why, for example that no particles are added or lost.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1a to 4.14 (every 'Still doesn't know')",
+      "quote": "That's fine.",
+      "what": "Every second don't-know reply in the lesson, about twenty of them, opens with the same stock 'That's fine.' She will notice it and it will sound mechanical.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson",
+      "quote": "A syringe is sealed at the end. You can push the plunger in when it holds air, but not when it holds water.",
+      "what": "There is nothing hands-on anywhere: no particle simulation, no heating curve to explore, and the syringe is only described. This topic is ideal for a simple interactive.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "1.7 to 1.13, 3.1 to 3.6, 4.1 to 4.5",
+      "quote": "Button: Next",
+      "what": "There are long runs of telling with nothing to do but press Next: seven messages in a row in key point 1, six in key point 3 and five in key point 4. She is likely to switch off.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "The end",
+      "quote": "The lesson is finished. Tap a button to go on.",
+      "what": "The lesson stops dead after the quiz score, with no closing summary of the main ideas and no word on what she got wrong.",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 13
+    },
+    {
+      "fault": "F8",
+      "instances": 7
+    },
+    {
+      "fault": "F3",
+      "instances": 4
+    },
+    {
+      "fault": "F5",
+      "instances": 4
+    },
+    {
+      "fault": "F2",
+      "instances": 2
+    },
+    {
+      "fault": "P4",
+      "instances": 2
+    },
+    {
+      "fault": "F1",
+      "instances": 2
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it stands. The physics is mostly sound and the wrong-answer replies are generally helpful, but too many questions are asked straight after the message that gives the answer (2.8, 2.9, 3.10, 3.12, 4.6), so she can score well without understanding. The opening quizzes her on energy stores she has not been taught and then tells her hot tea is not about kinetic energy, which the lesson later contradicts; 'pulls the particles apart' for melting clashes with the lesson's own picture of a liquid. Gas pressure and expansion on heating are never actually taught, 4.7 shows her the marking rubric as feedback, and there are long runs of Next with nothing hands-on. I would want these fixed before she uses it."
+}

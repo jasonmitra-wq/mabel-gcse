@@ -1,0 +1,415 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 14091,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 12602,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 7719
+    },
+    "iterations": [
+      {
+        "input_tokens": 14091,
+        "output_tokens": 12602,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.616808,
+  "seconds": 159,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from earlier lessons. How do the particles in a gas move?\",\"what\":\"The lesson opens by testing earlier lessons she may not have had, and 'particles' is never explained. A first-time learner starts with a question she cannot answer from what she has been told.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.1a don't know (first time)\",\"quote\":\"A gas spreads out to fill any container. Are its particles held in place?\",\"what\":\"The hint is a yes/no question, but the buttons are still the three descriptions of movement. She cannot answer the question she has just been asked.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.1b don't know (first time)\",\"quote\":\"Temperature is linked to the kinetic energy of the particles. What does more kinetic energy mean?\",\"what\":\"'Kinetic energy' is used without ever being explained.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F7\",\"turn\":\"1.1b don't know (first time)\",\"quote\":\"What does more kinetic energy mean?\",\"what\":\"After 'don't know' she gets a harder, more abstract question than the original, with a new idea in it, not an easier step.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F1\",\"turn\":\"1.2\",\"quote\":\"The particles of a gas move at a range of speeds, some fast and some slow, in random directions.\",\"what\":\"This repeats the fact just told in 1.1a. It also sits awkwardly with 'move fast in random directions', since she is now told some are slow.\",\"severity\":\"minor\"},{\"fault\":\"P16\",\"turn\":\"1.2\",\"quote\":\"The particles of a gas\",\"what\":\"The lesson file says 'molecules' throughout, and so will her exam board. The script says 'particles' everywhere and never tells her that molecules are the particles of a gas.\",\"severity\":\"minor\"},{\"fault\":\"M1\",\"turn\":\"1.2 to 1.6\",\"quote\":\"Button: Next\",\"what\":\"Five told messages in a row with only Next to tap, and no picture or anything to do. She will tap through without reading.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"1.5\",\"quote\":\"Pressure is measured in pascals (Pa): 1 Pa is a force of 1 newton on each square metre.\",\"what\":\"One message brings in the definition of pressure, an equation, the pascal and the newton. The newton is not explained at all.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P13\",\"turn\":\"1.5\",\"quote\":\"pressure = force ÷ area\",\"what\":\"The equation is stated and never used: no worked example, no practice, and no quiz question on it.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"1.6\",\"quote\":\"The push of all these collisions on each square metre of the walls is called the gas pressure.\",\"what\":\"'These collisions' points back to earlier bubbles. The message does not stand on its own.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"1.7\",\"quote\":\"What causes the pressure of a gas in a sealed box?\",\"what\":\"The message immediately before said the push of the collisions on the walls is called the gas pressure. She only has to copy it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.9\",\"quote\":\"Air particles inside collide with the rubber, pushing outwards everywhere\",\"what\":\"The right option is much the longest and the only one using the lesson's words, so she can pick it without thinking. The outside air and the rubber's inward pull are left out of the explanation, so 'why it stays round' is only half answered.\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"1.10\",\"quote\":\"In one line: what causes gas pressure?\",\"what\":\"Key point 1 ends without ever saying that more collisions each second, or harder collisions, mean a higher pressure. That is part of the key point, and key point 2 relies on it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"2.1\",\"quote\":\"Keep a gas in a sealed, rigid container, so its volume cannot change\",\"what\":\"'Rigid' and 'volume' are not explained. Many 15-year-olds would not know 'rigid'.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"2.2\",\"quote\":\"the hotter the gas, the faster its particles move on average\",\"what\":\"This is the same fact as the reply in 1.1b, told again almost word for word.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"2.2\",\"quote\":\"The temperature of a gas goes up with the average kinetic energy of its particles\",\"what\":\"'Kinetic energy' is used on the main path and has still not been explained as the energy of movement.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"2.3 don't know (first time)\",\"quote\":\"Hotter means faster particles.\",\"what\":\"The same fact is said a third time.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"2.4\",\"quote\":\"Heating makes the particles move faster.\",\"what\":\"The same fact is said a fourth time (1.1b, 2.2, the 2.3 hint, and here).\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.6\",\"quote\":\"Faster particles hit the tyre walls more often each second, and harder\",\"what\":\"Step 2.4, two messages earlier, said almost exactly this ('They hit the walls more often each second, and each collision pushes harder'). The question only tests whether she can recognise it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F9\",\"turn\":\"2.6\",\"quote\":\"would score full marks\",\"what\":\"This is exam-revision language for a girl meeting the idea for the first time. Ask her why, not what scores marks.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.6\",\"quote\":\"why a hot tyre has a higher pressure\",\"what\":\"A tyre appears from nowhere, with nothing said about why it is hot. A tyre is also not the rigid, fixed-volume container this key point has just set up.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.6 don't know (first time)\",\"quote\":\"Which option is about the walls?\",\"what\":\"The hint lets her find the answer by spotting the word 'walls' in one option. It does not help her think about the physics.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.7\",\"quote\":\"What must they add to score the mark?\",\"what\":\"The phrase 'the walls more often each second' was in 2.4 and in every reply to 2.6 just before. The answer has been handed to her.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F9\",\"turn\":\"2.7\",\"quote\":\"Yes: examiners want collisions with the walls, and per second (or more often).\",\"what\":\"This is a mark-scheme coaching question in a first-time lesson. It treats her as revising for the exam.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.8 (all of them)\",\"quote\":\"and they hit the walls more often each second; and and harder (with more force).\",\"what\":\"The stitched-together reply reads 'and and harder'. It is broken English she will see on screen.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.8 (none)\",\"quote\":\"A good line would say: the particles move faster; and they hit the walls more often each second; and and harder (with more force).\",\"what\":\"The same 'and and harder' error appears in the reply when her line makes none of the points.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.2 don't know (first time)\",\"quote\":\"Will they hit the walls more often or less often?\",\"what\":\"The hint asks 'more often or less often' but the buttons are still halves / doubles / stays the same. The buttons do not answer the hint's question.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.2\",\"quote\":\"A sealed syringe of air is squashed to half its volume\",\"what\":\"The lesson says 'squashed' throughout and never gives her 'compressed', which is the word the lesson file and exam questions use.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.4\",\"quote\":\"For a fixed mass of gas at constant temperature, pressure × volume stays the same: p × V = constant.\",\"what\":\"'Fixed mass of gas' is not explained (it means the same amount of gas, none let in or out). 'Constant' used as a noun will also be new to her.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"3.5\",\"quote\":\"Two quantities linked like this are called inversely proportional\",\"what\":\"'Like this' refers to the previous bubble. Read on its own, the message does not say what the link is.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.6\",\"quote\":\"A gas has a pressure of 200 kPa and a volume of 3 m³.\",\"what\":\"kPa appears here for the first time and is never explained anywhere as kilopascal, 1000 Pa.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.7\",\"quote\":\"You can keep pressures in kPa and volumes in cm³, as long as the before and after values use the same units.\",\"what\":\"This comes after the worked example that already used kPa, when 3.4 had just said p is in pascals. She meets the puzzle before the explanation; it should come before the example.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.9\",\"quote\":\"What is its new volume, in cm³?\",\"what\":\"This is the first time she must find a volume rather than a pressure, and with six-figure numbers. No example of this kind has been shown.\",\"severity\":\"minor\"},{\"fault\":\"L3\",\"turn\":\"4.1\",\"quote\":\"In an earlier lesson you met work done\",\"what\":\"This assumes an earlier lesson she may not have had. The one-line reminder is thin for an idea the whole key point rests on.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"4.2\",\"quote\":\"Push a piston into a gas, as in a bicycle pump\",\"what\":\"'Piston' is not explained.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"4.3\",\"quote\":\"The energy goes into the internal energy of the gas: the total kinetic and potential energy of its particles.\",\"what\":\"Three new terms arrive in one message (internal energy, kinetic energy, potential energy). Kinetic and potential energy are never explained.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F2\",\"turn\":\"4.3\",\"quote\":\"The energy goes into the internal energy of the gas\",\"what\":\"'The energy' means the energy transferred by the push in the previous bubble. That is not said in this message.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.3\",\"quote\":\"With more internal energy, the gas warms up.\",\"what\":\"The lesson's link is missed out: more internal energy means the particles move faster on average, so the temperature rises. The right-answer reply at 4.5 ('so its particles move faster') then relies on a step she was never told.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"4.5\",\"quote\":\"Why does the air in a bicycle pump get warmer as you push the handle in again and again?\",\"what\":\"The message just before (4.4) said the pump gets warm because 'each push does work on the air inside'. The answer was given immediately before the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.5 (rub together)\",\"quote\":\"Not quite: your push transfers energy to the air. That work done raises its internal energy, so its temperature rises.\",\"what\":\"The reply does not say what is wrong with 'the particles rub together and make heat'. Her wrong idea is left standing.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.5 don't know (first time)\",\"quote\":\"What does a force transfer when it moves something?\",\"what\":\"The answer to the hint is 'energy', but none of the buttons says that. The hint and the buttons do not match.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.8 (wrong answers)\",\"quote\":\"Not quite: particles colliding with the walls.\",\"what\":\"The wrong-answer replies in the quiz only restate the answer. They do not say why collisions between particles, or bigger particles, are wrong.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.10\",\"quote\":\"a gas at 200 kPa and 4 m³ is squashed to 2 m³ at constant temperature\",\"what\":\"This starts at the same 200 kPa as the worked example, halves the volume again and gives the same answer of 400 kPa. She could get it from memory.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.13 (wrong answers)\",\"quote\":\"Not quite: work is done on the air, raising its internal energy.\",\"what\":\"The same reply is used for both wrong answers and does not address either idea. 'Cold air escapes from the pump' is also not a mistake a pupil would really make.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole lesson\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on anywhere: no particles-in-a-box to heat or squash, no syringe to try. This topic is ideal for one, and the predict questions at 2.3 and 3.2 have nothing for her to test her prediction on.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":2},{\"fault\":\"F1\",\"instances\":4},{\"fault\":\"F2\",\"instances\":3},{\"fault\":\"F3\",\"instances\":7},{\"fault\":\"F5\",\"instances\":2},{\"fault\":\"F7\",\"instances\":1},{\"fault\":\"F8\",\"instances\":4},{\"fault\":\"F9\",\"instances\":2},{\"fault\":\"P4\",\"instances\":1},{\"fault\":\"P13\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"new\",\"instances\":15}],\"overall\":\"Not as it is. The physics is mostly sound and the order of ideas is sensible, but four questions (1.7, 2.6, 2.7, 4.5) ask for something told in the message just before, so she can get through by copying. Kinetic energy, internal energy, potential energy, kPa, fixed mass and piston are used without explanation, the 'faster when hotter' fact is said four times, and two replies at 2.8 show 'and and harder'. Key point 1 never says that more or harder collisions mean higher pressure, key point 4 skips the 'particles move faster' link, and there is nothing hands-on in the whole lesson. I would fix those before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from earlier lessons. How do the particles in a gas move?",
+      "what": "The lesson opens by testing earlier lessons she may not have had, and 'particles' is never explained. A first-time learner starts with a question she cannot answer from what she has been told.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1a don't know (first time)",
+      "quote": "A gas spreads out to fill any container. Are its particles held in place?",
+      "what": "The hint is a yes/no question, but the buttons are still the three descriptions of movement. She cannot answer the question she has just been asked.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1b don't know (first time)",
+      "quote": "Temperature is linked to the kinetic energy of the particles. What does more kinetic energy mean?",
+      "what": "'Kinetic energy' is used without ever being explained.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F7",
+      "turn": "1.1b don't know (first time)",
+      "quote": "What does more kinetic energy mean?",
+      "what": "After 'don't know' she gets a harder, more abstract question than the original, with a new idea in it, not an easier step.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.2",
+      "quote": "The particles of a gas move at a range of speeds, some fast and some slow, in random directions.",
+      "what": "This repeats the fact just told in 1.1a. It also sits awkwardly with 'move fast in random directions', since she is now told some are slow.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P16",
+      "turn": "1.2",
+      "quote": "The particles of a gas",
+      "what": "The lesson file says 'molecules' throughout, and so will her exam board. The script says 'particles' everywhere and never tells her that molecules are the particles of a gas.",
+      "severity": "minor"
+    },
+    {
+      "fault": "M1",
+      "turn": "1.2 to 1.6",
+      "quote": "Button: Next",
+      "what": "Five told messages in a row with only Next to tap, and no picture or anything to do. She will tap through without reading.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.5",
+      "quote": "Pressure is measured in pascals (Pa): 1 Pa is a force of 1 newton on each square metre.",
+      "what": "One message brings in the definition of pressure, an equation, the pascal and the newton. The newton is not explained at all.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P13",
+      "turn": "1.5",
+      "quote": "pressure = force ÷ area",
+      "what": "The equation is stated and never used: no worked example, no practice, and no quiz question on it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "1.6",
+      "quote": "The push of all these collisions on each square metre of the walls is called the gas pressure.",
+      "what": "'These collisions' points back to earlier bubbles. The message does not stand on its own.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.7",
+      "quote": "What causes the pressure of a gas in a sealed box?",
+      "what": "The message immediately before said the push of the collisions on the walls is called the gas pressure. She only has to copy it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.9",
+      "quote": "Air particles inside collide with the rubber, pushing outwards everywhere",
+      "what": "The right option is much the longest and the only one using the lesson's words, so she can pick it without thinking. The outside air and the rubber's inward pull are left out of the explanation, so 'why it stays round' is only half answered.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "1.10",
+      "quote": "In one line: what causes gas pressure?",
+      "what": "Key point 1 ends without ever saying that more collisions each second, or harder collisions, mean a higher pressure. That is part of the key point, and key point 2 relies on it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.1",
+      "quote": "Keep a gas in a sealed, rigid container, so its volume cannot change",
+      "what": "'Rigid' and 'volume' are not explained. Many 15-year-olds would not know 'rigid'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.2",
+      "quote": "the hotter the gas, the faster its particles move on average",
+      "what": "This is the same fact as the reply in 1.1b, told again almost word for word.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.2",
+      "quote": "The temperature of a gas goes up with the average kinetic energy of its particles",
+      "what": "'Kinetic energy' is used on the main path and has still not been explained as the energy of movement.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.3 don't know (first time)",
+      "quote": "Hotter means faster particles.",
+      "what": "The same fact is said a third time.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.4",
+      "quote": "Heating makes the particles move faster.",
+      "what": "The same fact is said a fourth time (1.1b, 2.2, the 2.3 hint, and here).",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.6",
+      "quote": "Faster particles hit the tyre walls more often each second, and harder",
+      "what": "Step 2.4, two messages earlier, said almost exactly this ('They hit the walls more often each second, and each collision pushes harder'). The question only tests whether she can recognise it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F9",
+      "turn": "2.6",
+      "quote": "would score full marks",
+      "what": "This is exam-revision language for a girl meeting the idea for the first time. Ask her why, not what scores marks.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.6",
+      "quote": "why a hot tyre has a higher pressure",
+      "what": "A tyre appears from nowhere, with nothing said about why it is hot. A tyre is also not the rigid, fixed-volume container this key point has just set up.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.6 don't know (first time)",
+      "quote": "Which option is about the walls?",
+      "what": "The hint lets her find the answer by spotting the word 'walls' in one option. It does not help her think about the physics.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.7",
+      "quote": "What must they add to score the mark?",
+      "what": "The phrase 'the walls more often each second' was in 2.4 and in every reply to 2.6 just before. The answer has been handed to her.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F9",
+      "turn": "2.7",
+      "quote": "Yes: examiners want collisions with the walls, and per second (or more often).",
+      "what": "This is a mark-scheme coaching question in a first-time lesson. It treats her as revising for the exam.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8 (all of them)",
+      "quote": "and they hit the walls more often each second; and and harder (with more force).",
+      "what": "The stitched-together reply reads 'and and harder'. It is broken English she will see on screen.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8 (none)",
+      "quote": "A good line would say: the particles move faster; and they hit the walls more often each second; and and harder (with more force).",
+      "what": "The same 'and and harder' error appears in the reply when her line makes none of the points.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.2 don't know (first time)",
+      "quote": "Will they hit the walls more often or less often?",
+      "what": "The hint asks 'more often or less often' but the buttons are still halves / doubles / stays the same. The buttons do not answer the hint's question.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.2",
+      "quote": "A sealed syringe of air is squashed to half its volume",
+      "what": "The lesson says 'squashed' throughout and never gives her 'compressed', which is the word the lesson file and exam questions use.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.4",
+      "quote": "For a fixed mass of gas at constant temperature, pressure × volume stays the same: p × V = constant.",
+      "what": "'Fixed mass of gas' is not explained (it means the same amount of gas, none let in or out). 'Constant' used as a noun will also be new to her.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.5",
+      "quote": "Two quantities linked like this are called inversely proportional",
+      "what": "'Like this' refers to the previous bubble. Read on its own, the message does not say what the link is.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.6",
+      "quote": "A gas has a pressure of 200 kPa and a volume of 3 m³.",
+      "what": "kPa appears here for the first time and is never explained anywhere as kilopascal, 1000 Pa.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.7",
+      "quote": "You can keep pressures in kPa and volumes in cm³, as long as the before and after values use the same units.",
+      "what": "This comes after the worked example that already used kPa, when 3.4 had just said p is in pascals. She meets the puzzle before the explanation; it should come before the example.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.9",
+      "quote": "What is its new volume, in cm³?",
+      "what": "This is the first time she must find a volume rather than a pressure, and with six-figure numbers. No example of this kind has been shown.",
+      "severity": "minor"
+    },
+    {
+      "fault": "L3",
+      "turn": "4.1",
+      "quote": "In an earlier lesson you met work done",
+      "what": "This assumes an earlier lesson she may not have had. The one-line reminder is thin for an idea the whole key point rests on.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.2",
+      "quote": "Push a piston into a gas, as in a bicycle pump",
+      "what": "'Piston' is not explained.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "4.3",
+      "quote": "The energy goes into the internal energy of the gas: the total kinetic and potential energy of its particles.",
+      "what": "Three new terms arrive in one message (internal energy, kinetic energy, potential energy). Kinetic and potential energy are never explained.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F2",
+      "turn": "4.3",
+      "quote": "The energy goes into the internal energy of the gas",
+      "what": "'The energy' means the energy transferred by the push in the previous bubble. That is not said in this message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.3",
+      "quote": "With more internal energy, the gas warms up.",
+      "what": "The lesson's link is missed out: more internal energy means the particles move faster on average, so the temperature rises. The right-answer reply at 4.5 ('so its particles move faster') then relies on a step she was never told.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.5",
+      "quote": "Why does the air in a bicycle pump get warmer as you push the handle in again and again?",
+      "what": "The message just before (4.4) said the pump gets warm because 'each push does work on the air inside'. The answer was given immediately before the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.5 (rub together)",
+      "quote": "Not quite: your push transfers energy to the air. That work done raises its internal energy, so its temperature rises.",
+      "what": "The reply does not say what is wrong with 'the particles rub together and make heat'. Her wrong idea is left standing.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.5 don't know (first time)",
+      "quote": "What does a force transfer when it moves something?",
+      "what": "The answer to the hint is 'energy', but none of the buttons says that. The hint and the buttons do not match.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.8 (wrong answers)",
+      "quote": "Not quite: particles colliding with the walls.",
+      "what": "The wrong-answer replies in the quiz only restate the answer. They do not say why collisions between particles, or bigger particles, are wrong.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.10",
+      "quote": "a gas at 200 kPa and 4 m³ is squashed to 2 m³ at constant temperature",
+      "what": "This starts at the same 200 kPa as the worked example, halves the volume again and gives the same answer of 400 kPa. She could get it from memory.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.13 (wrong answers)",
+      "quote": "Not quite: work is done on the air, raising its internal energy.",
+      "what": "The same reply is used for both wrong answers and does not address either idea. 'Cold air escapes from the pump' is also not a mistake a pupil would really make.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on anywhere: no particles-in-a-box to heat or squash, no syringe to try. This topic is ideal for one, and the predict questions at 2.3 and 3.2 have nothing for her to test her prediction on.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 16
+    },
+    {
+      "fault": "F3",
+      "instances": 6
+    },
+    {
+      "fault": "F1",
+      "instances": 4
+    },
+    {
+      "fault": "F8",
+      "instances": 4
+    },
+    {
+      "fault": "F2",
+      "instances": 3
+    },
+    {
+      "fault": "L3",
+      "instances": 2
+    },
+    {
+      "fault": "F5",
+      "instances": 2
+    },
+    {
+      "fault": "F9",
+      "instances": 2
+    },
+    {
+      "fault": "F7",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    },
+    {
+      "fault": "P13",
+      "instances": 1
+    },
+    {
+      "fault": "P4",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it is. The physics is mostly sound and the order of ideas is sensible, but four questions (1.7, 2.6, 2.7, 4.5) ask for something told in the message just before, so she can get through by copying. Kinetic energy, internal energy, potential energy, kPa, fixed mass and piston are used without explanation, the 'faster when hotter' fact is said four times, and two replies at 2.8 show 'and and harder'. Key point 1 never says that more or harder collisions mean higher pressure, key point 4 skips the 'particles move faster' link, and there is nothing hands-on in the whole lesson. I would fix those before she uses it."
+}

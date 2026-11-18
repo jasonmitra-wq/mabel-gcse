@@ -1,7 +1,7 @@
 {
  "lesson": "p3-pressure",
  "version": 1,
- "about": "The scripted AI lesson for p3-pressure (2026-11-17, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p3-particle-model.",
+ "about": "The scripted AI lesson for p3-pressure (2026-11-17, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p3-particle-model and p1-energy-stores.",
  "keyPoints": [
   {
    "kp": 0,
@@ -16,7 +16,7 @@
      "id": "1.1a",
      "type": "ask",
      "kind": "tap",
-     "question": "First, two quick questions from earlier lessons. How do the particles in a gas move?",
+     "question": "First, two quick questions from earlier lessons. Everything is made of tiny particles. How do the particles in a gas move?",
      "options": [
       {
        "text": "Fast, in random directions",
@@ -39,7 +39,7 @@
      },
      "idk": [
       {
-       "hint": "A gas spreads out to fill any container. Are its particles held in place?"
+       "hint": "In a solid the particles vibrate in place; in a liquid they slide past each other. Which button is left for a gas?"
       }
      ],
      "answerWhy": "Gas particles are far apart and move fast in random directions."
@@ -48,90 +48,133 @@
      "id": "1.1b",
      "type": "ask",
      "kind": "tap",
-     "question": "Second: a gas gets hotter. Which is true of its particles?",
+     "question": "Second: which energy store is filled by movement?",
      "options": [
       {
-       "text": "They move faster on average",
+       "text": "Kinetic",
        "branch": "right"
       },
       {
-       "text": "They move slower on average",
-       "branch": "slower"
+       "text": "Thermal",
+       "branch": "thermal"
       },
       {
-       "text": "They get bigger",
-       "branch": "bigger"
+       "text": "Chemical",
+       "branch": "chem"
       }
      ],
-     "right": "Yes: the hotter a gas, the faster its particles move on average.",
+     "right": "Yes: kinetic, the store for moving things.",
      "wrong": {
-      "other": "Not quite: they move faster on average.",
-      "slower": "Not quite: that is the wrong way round. A hotter gas has faster particles on average.",
-      "bigger": "Not quite: particles do not change size. In a hotter gas they move faster on average."
+      "other": "Not quite: kinetic.",
+      "thermal": "Not quite: the thermal store is about how hot something is. Movement fills the kinetic store.",
+      "chem": "Not quite: the chemical store is in fuels and food. Movement fills the kinetic store."
      },
      "idk": [
       {
-       "hint": "Temperature is linked to the kinetic energy of the particles. What does more kinetic energy mean?"
+       "hint": "The kinetic store is the one for moving things. Which button is that?"
       }
      ],
-     "answerWhy": "A hotter gas has particles with more kinetic energy, so they move faster on average."
+     "answerWhy": "Movement fills the kinetic store."
     },
     {
      "id": "1.2",
      "type": "say",
-     "text": "Now this lesson. The particles of a gas move at a range of speeds, some fast and some slow, in random directions. They keep hitting each other and the walls of their container."
+     "text": "Now this lesson. The particles of a gas are usually molecules. They do not all move at the same speed: at any moment some are fast and some are slow."
+    },
+    {
+     "id": "1.2b",
+     "type": "say",
+     "text": "A moving particle has kinetic energy: the energy of movement. The faster it moves, the more kinetic energy it has."
     },
     {
      "id": "1.3",
      "type": "say",
-     "text": "When a particle hits a wall it bounces off. Each hit like this is called a collision, and it pushes on the wall with a tiny force."
+     "text": "Gas particles keep hitting each other and the walls of their container. When a particle hits a wall it bounces off. Each hit like this is called a collision, and it pushes on the wall with a tiny force."
     },
     {
      "id": "1.4",
      "type": "say",
-     "text": "Billions of collisions every second add up to a steady push on every part of the wall. The push acts at right angles to the wall."
+     "text": "A force is a push or a pull, measured in newtons (N). Billions of collisions every second add up to a steady push on every part of the wall, at right angles to the wall."
     },
     {
      "id": "1.5",
      "type": "say",
-     "text": "Pressure is the force on each square metre of a surface: pressure = force ÷ area. Pressure is measured in pascals (Pa): 1 Pa is a force of 1 newton on each square metre."
+     "text": "Pressure is the force on each square metre of a surface: pressure = force ÷ area. With the force in newtons and the area in square metres (m²), the pressure is in pascals (Pa)."
+    },
+    {
+     "id": "1.5b",
+     "type": "say",
+     "text": "A pressure of 1 Pa means 1 newton spread over 1 m². Pressures are often given in kilopascals (kPa): 1 kPa = 1000 Pa."
+    },
+    {
+     "id": "1.5c",
+     "type": "ask",
+     "kind": "number",
+     "question": "A force of 600 N pushes evenly on an area of 2 m². What is the pressure, in Pa?",
+     "answer": {
+      "value": 300,
+      "unit": "Pa",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 1200,
+       "branch": "times"
+      },
+      {
+       "value": 0.00333,
+       "branch": "upside"
+      }
+     ],
+     "right": "Yes: 300 Pa. Pressure = force ÷ area = 600 ÷ 2 = 300 Pa.",
+     "wrong": {
+      "other": "Not quite: 300 Pa. Pressure = force ÷ area = 600 ÷ 2 = 300 Pa.",
+      "times": "Not quite: you multiplied. Pressure = force ÷ area = 600 ÷ 2 = 300 Pa.",
+      "upside": "Not quite: you divided the area by the force. Pressure = force ÷ area = 600 ÷ 2 = 300 Pa."
+     },
+     "idk": [
+      {
+       "hint": "Divide the force, 600, by the area, 2."
+      }
+     ],
+     "answerWhy": "Pressure = force ÷ area = 600 ÷ 2 = 300 Pa."
     },
     {
      "id": "1.6",
      "type": "say",
-     "text": "The push of all these collisions on each square metre of the walls is called the gas pressure."
+     "text": "The push of gas particles colliding with each square metre of their container's walls is called the gas pressure. More collisions each second, or harder collisions, mean a higher pressure."
     },
     {
      "id": "1.7",
      "type": "ask",
      "kind": "tap",
-     "question": "What causes the pressure of a gas in a sealed box?",
+     "question": "More air is pumped into a sealed box, and the temperature stays the same. Which is true of the pressure in the box?",
      "options": [
       {
-       "text": "Particles colliding with the walls of the box",
+       "text": "It rises",
        "branch": "right"
       },
       {
-       "text": "Particles colliding with each other",
-       "branch": "each"
+       "text": "It falls",
+       "branch": "falls"
       },
       {
-       "text": "The particles getting bigger",
-       "branch": "bigger"
+       "text": "It stays the same",
+       "branch": "same"
       }
      ],
-     "right": "Yes: each collision with a wall pushes on it, and together they make the pressure.",
+     "right": "Yes: more particles in the same space means more collisions with the walls each second, so the pressure rises.",
      "wrong": {
-      "other": "Not quite: particles colliding with the walls of the box.",
-      "each": "Not quite: particles do hit each other, but only hits on the walls push on the box. Collisions with the walls cause the pressure.",
-      "bigger": "Not quite: particles never change size. Their collisions with the walls cause the pressure."
+      "other": "Not quite: it rises.",
+      "falls": "Not quite: there are now more particles to hit the walls, so there are more collisions each second: the pressure rises.",
+      "same": "Not quite: more particles in the same box hit the walls more often each second, so the pressure rises."
      },
      "idk": [
       {
-       "hint": "The pressure is a push on the box. What touches the box?"
+       "hint": "With more particles in the box, are there more or fewer collisions with the walls each second?"
       }
      ],
-     "answerWhy": "Gas pressure is caused by the particles colliding with the walls of the container."
+     "answerWhy": "More particles means more collisions with the walls each second, so the pressure rises."
     },
     {
      "id": "1.8",
@@ -145,7 +188,7 @@
      "question": "A balloon is blown up and tied. Why does it stay round?",
      "options": [
       {
-       "text": "Air particles inside collide with the rubber, pushing outwards everywhere",
+       "text": "Collisions from inside push out on all the rubber",
        "branch": "right"
       },
       {
@@ -153,19 +196,19 @@
        "branch": "rubber"
       },
       {
-       "text": "Air fills the gaps between the rubber particles",
+       "text": "Air fills the gaps in the rubber",
        "branch": "gaps"
       }
      ],
-     "right": "Yes: collisions push outwards on every part of the rubber, at right angles to it, so the balloon stays round.",
+     "right": "Yes: collisions push outwards on every part of the rubber, at right angles to it. The stretched rubber pulls inwards, and the two balance.",
      "wrong": {
-      "other": "Not quite: air particles inside collide with the rubber, pushing outwards everywhere.",
-      "rubber": "Not quite: the stretched rubber pulls inwards. It stays round because air particles collide with it from inside, pushing outwards everywhere.",
+      "other": "Not quite: collisions from inside push out on all the rubber.",
+      "rubber": "Not quite: the stretched rubber pulls inwards. It stays round because air particles inside collide with every part of it, pushing outwards.",
       "gaps": "Not quite: the air is inside the balloon. Its particles collide with the rubber, pushing outwards everywhere."
      },
      "idk": [
       {
-       "hint": "What is the air inside doing to the rubber, all over its inside surface?"
+       "hint": "The air inside is a gas. What do its particles keep doing to the walls of their container?"
       }
      ],
      "answerWhy": "Air particles inside collide with every part of the rubber, pushing outwards at right angles to it."
@@ -175,10 +218,9 @@
      "type": "own",
      "prompt": "In one line: what causes gas pressure?",
      "points": [
-      "particles colliding with the walls of the container",
-      "each collision pushes on the wall with a force"
+      "particles colliding with the walls of the container"
      ],
-     "idk": "No problem. A good line would be: gas particles collide with the walls of their container, and each collision pushes on the wall with a force."
+     "idk": "No problem. A good line would be: gas pressure is caused by the particles colliding with the walls of their container."
     }
    ]
   },
@@ -189,12 +231,12 @@
     {
      "id": "2.1",
      "type": "say",
-     "text": "Keep a gas in a sealed, rigid container, so its volume cannot change: the gas is at constant volume."
+     "text": "Keep a gas in a sealed, rigid container, one that cannot bend or stretch. Then its volume, the space it takes up, cannot change: the gas is at constant volume."
     },
     {
      "id": "2.2",
      "type": "say",
-     "text": "The temperature of a gas goes up with the average kinetic energy of its particles: the hotter the gas, the faster its particles move on average."
+     "text": "The temperature of a gas goes with the average kinetic energy of its particles: the hotter the gas, the faster its particles move on average."
     },
     {
      "id": "2.3",
@@ -223,7 +265,7 @@
      },
      "idk": [
       {
-       "hint": "Hotter means faster particles. Would faster particles push on the walls more or less?"
+       "hint": "Hotter particles move faster. Do faster particles push on the walls more, or less?"
       }
      ],
      "answerWhy": "Heating a gas at constant volume makes its pressure rise."
@@ -231,76 +273,39 @@
     {
      "id": "2.4",
      "type": "say",
-     "text": "Heating makes the particles move faster. They hit the walls more often each second, and each collision pushes harder, so the pressure rises."
-    },
-    {
-     "id": "2.5",
-     "type": "say",
-     "text": "Cooling does the opposite: slower particles hit the walls less often and less hard, so the pressure falls."
+     "text": "Heated particles move faster. They hit the walls more often each second, and each collision pushes harder, so the pressure rises."
     },
     {
      "id": "2.6",
      "type": "ask",
      "kind": "tap",
-     "question": "Which explanation of why a hot tyre has a higher pressure would score full marks?",
+     "question": "A sealed can of gas is put in a freezer. Why does the pressure inside fall?",
      "options": [
       {
-       "text": "Faster particles hit the tyre walls more often each second, and harder",
+       "text": "Slower particles hit the walls less often and less hard",
        "branch": "right"
       },
       {
-       "text": "The particles collide with each other more",
-       "branch": "each"
+       "text": "The particles stick to the cold walls",
+       "branch": "stick"
       },
       {
-       "text": "The particles get bigger and push on the tyre",
-       "branch": "bigger"
+       "text": "The particles shrink in the cold",
+       "branch": "shrink"
       }
      ],
-     "right": "Yes: faster particles, more collisions with the walls each second, a bigger force in each one, so a bigger force on each square metre.",
+     "right": "Yes: cooling slows the particles, so they hit the walls less often each second and less hard.",
      "wrong": {
-      "other": "Not quite: faster particles hit the tyre walls more often each second, and harder.",
-      "each": "Not quite: only collisions with the walls push on the tyre. Faster particles hit the walls more often each second, and harder.",
-      "bigger": "Not quite: particles never get bigger. They move faster, so they hit the walls more often each second, and harder."
+      "other": "Not quite: slower particles hit the walls less often and less hard.",
+      "stick": "Not quite: the particles keep moving and bouncing. They are slower, so they hit the walls less often and less hard.",
+      "shrink": "Not quite: particles never change size. They move more slowly, so they hit the walls less often and less hard."
      },
      "idk": [
       {
-       "hint": "Pressure comes from collisions with the walls. Which option is about the walls?"
+       "hint": "Cooling is the opposite of heating. What happens to the speed of the particles?"
       }
      ],
-     "answerWhy": "Faster particles hit the walls more often each second and harder, so the force on each square metre is bigger."
-    },
-    {
-     "id": "2.7",
-     "type": "ask",
-     "kind": "tap",
-     "question": "A student writes: \"there are more collisions\". What must they add to score the mark?",
-     "options": [
-      {
-       "text": "\"...with the walls, each second\"",
-       "branch": "right"
-      },
-      {
-       "text": "\"...between the particles\"",
-       "branch": "between"
-      },
-      {
-       "text": "\"...because the particles vibrate more\"",
-       "branch": "vibrate"
-      }
-     ],
-     "right": "Yes: examiners want collisions with the walls, and per second (or more often).",
-     "wrong": {
-      "other": "Not quite: \"with the walls, each second\".",
-      "between": "Not quite: collisions between particles do not cause pressure. Add \"with the walls, each second\".",
-      "vibrate": "Not quite: gas particles move about freely; they do not vibrate in place. Add \"with the walls, each second\"."
-     },
-     "idk": [
-      {
-       "hint": "The mark needs where the collisions happen and how often. Which option says both?"
-      }
-     ],
-     "answerWhy": "The answer needs \"more collisions with the walls each second\"."
+     "answerWhy": "Cooling slows the particles, so they hit the walls less often each second and less hard: the pressure falls."
     },
     {
      "id": "2.8",
@@ -309,7 +314,7 @@
      "points": [
       "the particles move faster",
       "they hit the walls more often each second",
-      "and harder (with more force)"
+      "they hit harder (with more force)"
      ],
      "idk": "No problem. A good line would be: the particles move faster, so they hit the walls more often each second and harder, so the pressure rises."
     }
@@ -322,13 +327,13 @@
     {
      "id": "3.1",
      "type": "say",
-     "text": "Now keep the temperature fixed and change the volume instead, like pushing in the plunger of a sealed syringe."
+     "text": "Now keep the temperature fixed, and the amount of gas fixed too: none let in or out. Change the volume instead, like pushing in the plunger of a sealed syringe. Squashing a gas is called compressing it."
     },
     {
      "id": "3.2",
      "type": "ask",
      "kind": "tap",
-     "question": "A sealed syringe of air is squashed to half its volume, at the same temperature. Predict: which is true of the pressure?",
+     "question": "A sealed syringe of air is compressed to half its volume, at the same temperature. Predict: which is true of the pressure?",
      "options": [
       {
        "text": "It doubles",
@@ -351,10 +356,10 @@
      },
      "idk": [
       {
-       "hint": "The same particles now have half the space. Will they hit the walls more often or less often?"
+       "hint": "Same particles, same speed, half the space. Think about how often each one reaches a wall."
       }
      ],
-     "answerWhy": "Squashing a gas into half the volume at the same temperature doubles its pressure."
+     "answerWhy": "Compressing a gas into half the volume at the same temperature doubles its pressure."
     },
     {
      "id": "3.3",
@@ -364,18 +369,23 @@
     {
      "id": "3.4",
      "type": "say",
-     "text": "For a fixed mass of gas at constant temperature, pressure × volume stays the same: p × V = constant. p is the pressure in pascals (Pa) and V is the volume in cubic metres (m³)."
+     "text": "For a fixed mass of gas at constant temperature, pressure × volume always comes to the same number: p × V = constant. p is the pressure in pascals (Pa) and V is the volume in cubic metres (m³)."
     },
     {
      "id": "3.5",
      "type": "say",
-     "text": "Two quantities linked like this are called inversely proportional: when one doubles, the other halves."
+     "text": "Pressure and volume are inversely proportional: when one doubles, the other halves."
+    },
+    {
+     "id": "3.7",
+     "type": "say",
+     "text": "You can also use kPa for the pressures and cm³ for the volumes, as long as the before and after values use the same units."
     },
     {
      "id": "3.6",
      "type": "worked",
      "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
-     "question": "A gas has a pressure of 200 kPa and a volume of 3 m³. It is squashed to 1.5 m³ at the same temperature. What is its new pressure?",
+     "question": "A gas has a pressure of 200 kPa and a volume of 3 m³. It is compressed to 1.5 m³ at the same temperature. What is its new pressure?",
      "steps": [
       "Find p × V at the start: 200 × 3 = 600.",
       "p × V stays the same, so afterwards p × 1.5 = 600.",
@@ -387,15 +397,10 @@
      }
     },
     {
-     "id": "3.7",
-     "type": "say",
-     "text": "You can keep pressures in kPa and volumes in cm³, as long as the before and after values use the same units."
-    },
-    {
      "id": "3.8",
      "type": "ask",
      "kind": "number",
-     "question": "Your turn. A gas at 100 kPa has a volume of 6 m³. It is squashed to 2 m³ at the same temperature. What is its new pressure, in kPa?",
+     "question": "Your turn. A gas at 100 kPa has a volume of 6 m³. It is compressed to 2 m³ at the same temperature. What is its new pressure, in kPa?",
      "answer": {
       "value": 300,
       "unit": "kPa",
@@ -425,10 +430,25 @@
      "answerWhy": "100 × 6 = 600, so p = 600 ÷ 2 = 300 kPa."
     },
     {
+     "id": "3.8b",
+     "type": "worked",
+     "text": "Here is a worked example of finding a volume. Its steps open one at a time.",
+     "question": "A gas at 100 kPa has a volume of 12 cm³. At the same temperature it is compressed until its pressure is 300 kPa. What is its new volume?",
+     "steps": [
+      "Find p × V at the start: 100 × 12 = 1200.",
+      "p × V stays the same, so afterwards 300 × V = 1200.",
+      "Divide both sides by 300: V = 1200 ÷ 300 = 4 cm³."
+     ],
+     "answer": {
+      "value": 4,
+      "unit": "cm³"
+     }
+    },
+    {
      "id": "3.9",
      "type": "ask",
      "kind": "number",
-     "question": "Air in a syringe is at 100 000 Pa with a volume of 30 cm³. At the same temperature it is pushed in until its pressure is 150 000 Pa. What is its new volume, in cm³?",
+     "question": "Air in a syringe is at 100 kPa with a volume of 30 cm³. At the same temperature it is pushed in until its pressure is 150 kPa. What is its new volume, in cm³?",
      "answer": {
       "value": 20,
       "unit": "cm³",
@@ -440,17 +460,17 @@
        "branch": "wrongway"
       }
      ],
-     "right": "Yes: 20 cm³. 100 000 × 30 = 3 000 000, so V = 3 000 000 ÷ 150 000 = 20 cm³.",
+     "right": "Yes: 20 cm³. 100 × 30 = 3000, so V = 3000 ÷ 150 = 20 cm³.",
      "wrong": {
-      "other": "Not quite: 20 cm³. 100 000 × 30 = 3 000 000, so V = 3 000 000 ÷ 150 000 = 20 cm³.",
-      "wrongway": "Not quite: 20 cm³. Higher pressure means a smaller volume: 100 000 × 30 = 3 000 000, so V = 3 000 000 ÷ 150 000 = 20 cm³."
+      "other": "Not quite: 20 cm³. 100 × 30 = 3000, so V = 3000 ÷ 150 = 20 cm³.",
+      "wrongway": "Not quite: 20 cm³. Higher pressure means a smaller volume: 100 × 30 = 3000, so V = 3000 ÷ 150 = 20 cm³."
      },
      "idk": [
       {
-       "hint": "Find p × V at the start: 100 000 × 30. Then divide by the new pressure, 150 000."
+       "hint": "Find p × V at the start: 100 × 30. Then divide by the new pressure, 150."
       }
      ],
-     "answerWhy": "100 000 × 30 = 3 000 000, so V = 3 000 000 ÷ 150 000 = 20 cm³."
+     "answerWhy": "100 × 30 = 3000, so V = 3000 ÷ 150 = 20 cm³."
     },
     {
      "id": "3.10",
@@ -471,10 +491,10 @@
        "branch": "bigger"
       }
      ],
-     "right": "Yes: the particles are further apart, so they hit the walls less often, and the pressure falls. Their speed stays the same.",
+     "right": "Yes: with more space, the particles hit the walls less often, and the pressure falls. Their speed stays the same.",
      "wrong": {
       "other": "Not quite: its particles hit the walls less often.",
-      "slower": "Not quite: the temperature is fixed, so their speed stays the same. They are further apart, so they hit the walls less often.",
+      "slower": "Not quite: the temperature is fixed, so their speed stays the same. With more space, they hit the walls less often.",
       "bigger": "Not quite: particles never change size. They spread further apart, so they hit the walls less often."
      },
      "idk": [
@@ -487,7 +507,7 @@
     {
      "id": "3.11",
      "type": "own",
-     "prompt": "In one line: why does squashing a gas at constant temperature raise its pressure?",
+     "prompt": "In one line: why does compressing a gas at constant temperature raise its pressure?",
      "points": [
       "the particles have less space (closer together)",
       "they hit the walls more often each second"
@@ -503,35 +523,30 @@
     {
      "id": "4.1",
      "type": "say",
-     "text": "In an earlier lesson you met work done: when a force moves something, it transfers energy, and that energy is the work done."
+     "text": "Work done is the energy transferred when a force moves something. When you lift a bag, your force moves it and transfers energy to it: you do work on the bag."
     },
     {
      "id": "4.2",
      "type": "say",
-     "text": "Push a piston into a gas, as in a bicycle pump, and your force moves the gas: you are doing work on the gas."
+     "text": "A piston is a disc that slides along inside a tube, like the plunger of a bicycle pump. Push a piston into a gas and your force moves the gas: you are doing work on the gas."
     },
     {
      "id": "4.3",
      "type": "say",
-     "text": "The energy goes into the internal energy of the gas: the total kinetic and potential energy of its particles. With more internal energy, the gas warms up."
-    },
-    {
-     "id": "4.4",
-     "type": "say",
-     "text": "A bicycle pump gets warm when you pump up a tyre quickly for this reason: each push does work on the air inside."
+     "text": "The energy from your push goes into the internal energy of the gas: the total kinetic and potential energy of all its particles. Potential energy is the energy stored by the forces between particles."
     },
     {
      "id": "4.5",
      "type": "ask",
      "kind": "tap",
-     "question": "Why does the air in a bicycle pump get warmer as you push the handle in again and again?",
+     "question": "Predict: you pump up a tyre quickly, pushing the pump's handle in again and again. Why does the air in the pump get warmer?",
      "options": [
       {
-       "text": "Work done on the air raises its internal energy",
+       "text": "Each push does work on the air, raising its internal energy",
        "branch": "right"
       },
       {
-       "text": "The air particles rub together and make heat",
+       "text": "The air particles rub together",
        "branch": "rub"
       },
       {
@@ -539,18 +554,23 @@
        "branch": "bigger"
       }
      ],
-     "right": "Yes: each push transfers energy to the air, so its particles move faster and its temperature rises.",
+     "right": "Yes: each push transfers energy to the air.",
      "wrong": {
-      "other": "Not quite: work done on the air raises its internal energy.",
-      "rub": "Not quite: your push transfers energy to the air. That work done raises its internal energy, so its temperature rises.",
-      "bigger": "Not quite: particles never change size. Work done on the air raises its internal energy, so the particles move faster."
+      "other": "Not quite: each push does work on the air, raising its internal energy.",
+      "rub": "Not quite: gas particles do not rub like hands. Your push transfers energy to the air: work done on it raises its internal energy.",
+      "bigger": "Not quite: particles never change size. Your push does work on the air, raising its internal energy."
      },
      "idk": [
       {
-       "hint": "Your force moves the gas. What does a force transfer when it moves something?"
+       "hint": "Your push moves the air in the pump. What does a force do when it moves something?"
       }
      ],
-     "answerWhy": "Work done on the air transfers energy to it, raising its internal energy and so its temperature."
+     "answerWhy": "Each push does work on the air, transferring energy to it and raising its internal energy."
+    },
+    {
+     "id": "4.4",
+     "type": "say",
+     "text": "In a gas, more internal energy means the particles move faster on average. Faster particles mean a higher temperature, so the pump gets warm."
     },
     {
      "id": "4.6",
@@ -588,7 +608,9 @@
      ],
      "right": "Yes: particles colliding with the walls.",
      "wrong": {
-      "other": "Not quite: particles colliding with the walls."
+      "other": "Not quite: particles colliding with the walls.",
+      "w1": "Not quite: only collisions with the walls push on the container. Gas pressure comes from particles colliding with the walls.",
+      "w2": "Not quite: particles never change size. Gas pressure comes from particles colliding with the walls."
      },
      "idk": [],
      "answerWhy": "Gas pressure is caused by particles colliding with the walls of the container.",
@@ -625,45 +647,45 @@
      "id": "4.10",
      "type": "ask",
      "kind": "number",
-     "question": "Quiz, question 3 of 6: a gas at 200 kPa and 4 m³ is squashed to 2 m³ at constant temperature. What is its new pressure, in kPa?",
+     "question": "Quiz, question 3 of 6: a gas at 300 kPa and 2 m³ expands to 6 m³ at constant temperature. What is its new pressure, in kPa?",
      "answer": {
-      "value": 400,
+      "value": 100,
       "unit": "kPa",
       "tolerance": 0.01
      },
      "wrongValues": [],
-     "right": "Yes: 200 × 4 = 800, so p = 800 ÷ 2 = 400 kPa.",
+     "right": "Yes: 300 × 2 = 600, so p = 600 ÷ 6 = 100 kPa.",
      "wrong": {
-      "other": "Not quite: 400 kPa. 200 × 4 = 800, so p = 800 ÷ 2 = 400 kPa."
+      "other": "Not quite: 100 kPa. 300 × 2 = 600, so p = 600 ÷ 6 = 100 kPa."
      },
      "idk": [],
-     "answerWhy": "200 × 4 = 800, so p = 800 ÷ 2 = 400 kPa.",
+     "answerWhy": "300 × 2 = 600, so p = 600 ÷ 6 = 100 kPa.",
      "quiz": true
     },
     {
      "id": "4.11",
      "type": "ask",
      "kind": "number",
-     "question": "Quiz, question 4 of 6: a gas at 50 kPa and 10 cm³ expands to 25 cm³ at the same temperature. What is its new pressure, in kPa?",
+     "question": "Quiz, question 4 of 6: a gas at 80 kPa and 20 cm³ is compressed to 5 cm³ at the same temperature. What is its new pressure, in kPa?",
      "answer": {
-      "value": 20,
+      "value": 320,
       "unit": "kPa",
       "tolerance": 0.01
      },
      "wrongValues": [],
-     "right": "Yes: 50 × 10 = 500, so p = 500 ÷ 25 = 20 kPa.",
+     "right": "Yes: 80 × 20 = 1600, so p = 1600 ÷ 5 = 320 kPa.",
      "wrong": {
-      "other": "Not quite: 20 kPa. 50 × 10 = 500, so p = 500 ÷ 25 = 20 kPa."
+      "other": "Not quite: 320 kPa. 80 × 20 = 1600, so p = 1600 ÷ 5 = 320 kPa."
      },
      "idk": [],
-     "answerWhy": "50 × 10 = 500, so p = 500 ÷ 25 = 20 kPa.",
+     "answerWhy": "80 × 20 = 1600, so p = 1600 ÷ 5 = 320 kPa.",
      "quiz": true
     },
     {
      "id": "4.12",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 5 of 6: a gas is squashed at constant temperature. Which is true of its particles' average speed?",
+     "question": "Quiz, question 5 of 6: a gas is compressed at constant temperature. Which is true of its particles' average speed?",
      "options": [
       {
        "text": "It stays the same",
@@ -701,13 +723,15 @@
        "branch": "w1"
       },
       {
-       "text": "Cold air escapes from the pump",
+       "text": "The air particles slow down",
        "branch": "w2"
       }
      ],
      "right": "Yes: work done on the air raises its internal energy and its temperature.",
      "wrong": {
-      "other": "Not quite: work is done on the air, raising its internal energy."
+      "other": "Not quite: work is done on the air, raising its internal energy.",
+      "w1": "Not quite: particles never change size. Work done on the air raises its internal energy, so its temperature rises.",
+      "w2": "Not quite: warmer air has faster particles, not slower. Work done on the air raises its internal energy."
      },
      "idk": [],
      "answerWhy": "Work done on the air raises its internal energy, so its temperature rises.",

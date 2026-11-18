@@ -1,0 +1,252 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 15776,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 9687,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 6551
+    },
+    "iterations": [
+      {
+        "input_tokens": 15776,
+        "output_tokens": 9687,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.513688,
+  "seconds": 91,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from earlier lessons. Ice is melting. Which is true of its temperature while it melts?\",\"what\":\"The lesson opens by treating her as revising. This question is the main idea of key point 1, asked before anything has been taught, so a first-time learner can only guess.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"1.1a don't know (first time)\",\"quote\":\"Think of a drink with ice in it: it stays at about 0 °C while the ice is still melting.\",\"what\":\"The hint states the answer (the temperature stays the same) and then shows the same buttons again.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.1a don't know (again) / skip\",\"quote\":\"the energy raises the particles' potential energy, not their kinetic energy\",\"what\":\"Potential energy and kinetic energy of particles are used here before anything has said what either means. This is the third message of the lesson.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F5\",\"turn\":\"1.1a don't know (again) / skip\",\"quote\":\"the energy raises the particles' potential energy, not their kinetic energy\",\"what\":\"Two new terms (potential energy, kinetic energy) arrive in one message, and she has just said twice that she does not know.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"L3\",\"turn\":\"1.1b\",\"quote\":\"Second: what is the specific heat capacity of a substance?\",\"what\":\"She has not been told what specific heat capacity is in this lesson, so she cannot answer; it assumes an earlier lesson. One wrong option is also the definition of the quantity this lesson is about to teach.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F10\",\"turn\":\"1.1b don't know (first time)\",\"quote\":\"The lesson on heating water used ΔE = m c Δθ. What does c tell you?\",\"what\":\"An equation is used with none of its symbols or units explained. After 'don't know' she gets a harder question about a symbol, not an easier step.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.5\",\"quote\":\"On a flat part the energy pulls the particles apart, raising their potential energy, so the temperature does not change.\",\"what\":\"'Potential energy' is used without explanation. The 'so' does not follow either: she has not been told that temperature goes with the particles' kinetic energy, so the reason the temperature stays the same is missing.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.5\",\"quote\":\"On a flat part the energy pulls the particles apart\",\"what\":\"This is said of every flat part, including melting, but 2.4 later says 'Melting only loosens them: they stay close together'. The two descriptions of melting do not match.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.8\",\"quote\":\"On the sloping parts of a heating curve, which energy of the particles is rising?\",\"what\":\"On the main path kinetic energy has never been mentioned, nor that temperature is linked to how fast particles move. She cannot answer from what she has been told; the teaching only comes in the feedback.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F7\",\"turn\":\"1.8 don't know (first time)\",\"quote\":\"On a sloping part the temperature goes up. Which energy is linked to temperature?\",\"what\":\"The hint asks for the very fact she was never given (that temperature goes with kinetic energy), so it is no easier than the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.10\",\"quote\":\"The line falls, then goes flat while the substance condenses or freezes\",\"what\":\"The message just before the wax question says a flat part on a cooling curve is condensing or freezing, and only 'freezing' is among the options. The third option, 'The thermometer has stopped working', is not a serious distractor.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"2.2\",\"quote\":\"For water it is 334 000 J/kg.\",\"what\":\"The unit J/kg is used here and in 2.3, but is not explained as joules per kilogram until 2.6.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.5\",\"quote\":\"Why does boiling away 1 kg of water take far more energy than melting 1 kg of ice?\",\"what\":\"The message immediately before (2.4) said 'boiling must pull the particles completely apart', and the right button repeats those words. She only has to copy.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.5 wrong answer (more particles)\",\"quote\":\"1 kg of ice and 1 kg of water have the same particles.\",\"what\":\"Imprecise: the point is that they have the same number of particles. 'The same particles' does not answer her idea that water has more of them.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.9\",\"quote\":\"Yes, your line has it: the energy needed to melt 1 kg of a substance; and with no change in temperature.\",\"what\":\"The stitched-together reply reads awkwardly ('; and with…'). The same pattern is used at 1.11, 3.11 and 4.6.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"3.4\",\"quote\":\"Change the mass into kilograms: 500 g = 0.5 kg.\",\"what\":\"The message just before (3.3) already said 'For example, 500 g is 0.5 kg', so the first step of the worked example repeats it with the same numbers.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.7\",\"quote\":\"A joulemeter shows 23 000 J were supplied.\",\"what\":\"'Joulemeter' is used in a question before 3.8 says what it does ('A joulemeter measures the energy supplied').\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.7\",\"quote\":\"Yes: 2 300 000 J/kg.\",\"what\":\"The answer differs from the 2 260 000 J/kg she was given for water in 2.3 and 3.2, with no word that an experiment gives a slightly different value. She may think she has gone wrong.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.10\",\"quote\":\"Is the value of L the student calculates too high or too low?\",\"what\":\"'The student' has not been mentioned before. L = E ÷ m has also never been stated on the main path (only inside a worked step and hints), so reasoning about 'E ÷ m' is a big jump for a first-timer.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"4.1\",\"quote\":\"over 2000 kJ for every kilogram\",\"what\":\"The whole lesson has used joules; kJ appears here for the first time with no explanation.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.1\",\"quote\":\"As it evaporates from your skin it takes in latent heat\",\"what\":\"She has only been told that latent heat goes in while water boils at 100 °C. Nothing explains that water can evaporate, taking in latent heat, at skin temperature, so she may well ask how sweat can 'boil'.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F2\",\"turn\":\"4.4\",\"quote\":\"After condensing, the hot water cools on the skin and gives out more energy. Water at 100 °C gives out only that second part.\",\"what\":\"The message depends on the one before: what condensed (the steam) is not in it, and 'that second part' is vague.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"4.5\",\"quote\":\"Why does steam at 100 °C scald worse than water at 100 °C?\",\"what\":\"The two messages just before (4.3, 4.4) gave exactly this answer: 'it condenses, giving out its latent heat to the skin'. The right button repeats it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P14\",\"turn\":\"1.2–1.4 and whole lesson\",\"quote\":\"A graph of its temperature against time is called a heating curve.\",\"what\":\"The heating curve is described only in words. Nothing in the script shows the graph, builds it up, or lets her try anything, so a lesson about reading a graph has no graph to look at or use.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":2},{\"fault\":\"F8\",\"instances\":4},{\"fault\":\"F3\",\"instances\":5},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"F10\",\"instances\":1},{\"fault\":\"F7\",\"instances\":1},{\"fault\":\"F1\",\"instances\":1},{\"fault\":\"F2\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":7}],\"overall\":\"No, not as it is. The opening treats her as revising: it asks her the lesson's own main idea and a definition from another lesson before teaching anything, and its fallbacks bring in potential energy, kinetic energy and ΔE = m c Δθ unexplained. The link between temperature and the particles' kinetic energy is never taught before 1.8 asks for it, so the explanation of why the curve goes flat does not hold together for a first-time learner. Several questions (2.5, 4.5, 1.10) only ask her to repeat the message just before them. The calculations in key point 3 and the quiz are sound and correct, so once the opening, the kinetic and potential energy teaching, the give-away questions and the evaporation step are fixed, I would let her use it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from earlier lessons. Ice is melting. Which is true of its temperature while it melts?",
+      "what": "The lesson opens by treating her as revising. This question is the main idea of key point 1, asked before anything has been taught, so a first-time learner can only guess.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.1a don't know (first time)",
+      "quote": "Think of a drink with ice in it: it stays at about 0 °C while the ice is still melting.",
+      "what": "The hint states the answer (the temperature stays the same) and then shows the same buttons again.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1a don't know (again) / skip",
+      "quote": "the energy raises the particles' potential energy, not their kinetic energy",
+      "what": "Potential energy and kinetic energy of particles are used here before anything has said what either means. This is the third message of the lesson.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.1a don't know (again) / skip",
+      "quote": "the energy raises the particles' potential energy, not their kinetic energy",
+      "what": "Two new terms (potential energy, kinetic energy) arrive in one message, and she has just said twice that she does not know.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.1b",
+      "quote": "Second: what is the specific heat capacity of a substance?",
+      "what": "She has not been told what specific heat capacity is in this lesson, so she cannot answer; it assumes an earlier lesson. One wrong option is also the definition of the quantity this lesson is about to teach.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F10",
+      "turn": "1.1b don't know (first time)",
+      "quote": "The lesson on heating water used ΔE = m c Δθ. What does c tell you?",
+      "what": "An equation is used with none of its symbols or units explained. After 'don't know' she gets a harder question about a symbol, not an easier step.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.5",
+      "quote": "On a flat part the energy pulls the particles apart, raising their potential energy, so the temperature does not change.",
+      "what": "'Potential energy' is used without explanation. The 'so' does not follow either: she has not been told that temperature goes with the particles' kinetic energy, so the reason the temperature stays the same is missing.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.5",
+      "quote": "On a flat part the energy pulls the particles apart",
+      "what": "This is said of every flat part, including melting, but 2.4 later says 'Melting only loosens them: they stay close together'. The two descriptions of melting do not match.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.8",
+      "quote": "On the sloping parts of a heating curve, which energy of the particles is rising?",
+      "what": "On the main path kinetic energy has never been mentioned, nor that temperature is linked to how fast particles move. She cannot answer from what she has been told; the teaching only comes in the feedback.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F7",
+      "turn": "1.8 don't know (first time)",
+      "quote": "On a sloping part the temperature goes up. Which energy is linked to temperature?",
+      "what": "The hint asks for the very fact she was never given (that temperature goes with kinetic energy), so it is no easier than the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.10",
+      "quote": "The line falls, then goes flat while the substance condenses or freezes",
+      "what": "The message just before the wax question says a flat part on a cooling curve is condensing or freezing, and only 'freezing' is among the options. The third option, 'The thermometer has stopped working', is not a serious distractor.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.2",
+      "quote": "For water it is 334 000 J/kg.",
+      "what": "The unit J/kg is used here and in 2.3, but is not explained as joules per kilogram until 2.6.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.5",
+      "quote": "Why does boiling away 1 kg of water take far more energy than melting 1 kg of ice?",
+      "what": "The message immediately before (2.4) said 'boiling must pull the particles completely apart', and the right button repeats those words. She only has to copy.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.5 wrong answer (more particles)",
+      "quote": "1 kg of ice and 1 kg of water have the same particles.",
+      "what": "Imprecise: the point is that they have the same number of particles. 'The same particles' does not answer her idea that water has more of them.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.9",
+      "quote": "Yes, your line has it: the energy needed to melt 1 kg of a substance; and with no change in temperature.",
+      "what": "The stitched-together reply reads awkwardly ('; and with…'). The same pattern is used at 1.11, 3.11 and 4.6.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.4",
+      "quote": "Change the mass into kilograms: 500 g = 0.5 kg.",
+      "what": "The message just before (3.3) already said 'For example, 500 g is 0.5 kg', so the first step of the worked example repeats it with the same numbers.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.7",
+      "quote": "A joulemeter shows 23 000 J were supplied.",
+      "what": "'Joulemeter' is used in a question before 3.8 says what it does ('A joulemeter measures the energy supplied').",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.7",
+      "quote": "Yes: 2 300 000 J/kg.",
+      "what": "The answer differs from the 2 260 000 J/kg she was given for water in 2.3 and 3.2, with no word that an experiment gives a slightly different value. She may think she has gone wrong.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.10",
+      "quote": "Is the value of L the student calculates too high or too low?",
+      "what": "'The student' has not been mentioned before. L = E ÷ m has also never been stated on the main path (only inside a worked step and hints), so reasoning about 'E ÷ m' is a big jump for a first-timer.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.1",
+      "quote": "over 2000 kJ for every kilogram",
+      "what": "The whole lesson has used joules; kJ appears here for the first time with no explanation.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.1",
+      "quote": "As it evaporates from your skin it takes in latent heat",
+      "what": "She has only been told that latent heat goes in while water boils at 100 °C. Nothing explains that water can evaporate, taking in latent heat, at skin temperature, so she may well ask how sweat can 'boil'.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F2",
+      "turn": "4.4",
+      "quote": "After condensing, the hot water cools on the skin and gives out more energy. Water at 100 °C gives out only that second part.",
+      "what": "The message depends on the one before: what condensed (the steam) is not in it, and 'that second part' is vague.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.5",
+      "quote": "Why does steam at 100 °C scald worse than water at 100 °C?",
+      "what": "The two messages just before (4.3, 4.4) gave exactly this answer: 'it condenses, giving out its latent heat to the skin'. The right button repeats it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P14",
+      "turn": "1.2–1.4 and whole lesson",
+      "quote": "A graph of its temperature against time is called a heating curve.",
+      "what": "The heating curve is described only in words. Nothing in the script shows the graph, builds it up, or lets her try anything, so a lesson about reading a graph has no graph to look at or use.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 7
+    },
+    {
+      "fault": "F3",
+      "instances": 5
+    },
+    {
+      "fault": "F8",
+      "instances": 4
+    },
+    {
+      "fault": "L3",
+      "instances": 2
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "F10",
+      "instances": 1
+    },
+    {
+      "fault": "F7",
+      "instances": 1
+    },
+    {
+      "fault": "F1",
+      "instances": 1
+    },
+    {
+      "fault": "F2",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "No, not as it is. The opening treats her as revising: it asks her the lesson's own main idea and a definition from another lesson before teaching anything, and its fallbacks bring in potential energy, kinetic energy and ΔE = m c Δθ unexplained. The link between temperature and the particles' kinetic energy is never taught before 1.8 asks for it, so the explanation of why the curve goes flat does not hold together for a first-time learner. Several questions (2.5, 4.5, 1.10) only ask her to repeat the message just before them. The calculations in key point 3 and the quiz are sound and correct, so once the opening, the kinetic and potential energy teaching, the give-away questions and the evaporation step are fixed, I would let her use it."
+}

@@ -66,7 +66,7 @@
      "right": "Yes: as the tea cools, energy leaves its thermal store and warms the surroundings.",
      "wrong": {
       "other": "Not quite: thermal, the store for how hot something is.",
-      "kinetic": "Not quite: the cup of tea is not moving across the table. Energy leaves its thermal store as it cools.",
+      "kinetic": "Not quite: the cup is not moving across the table. Energy leaves its thermal store as it cools; this lesson shows what that means for its particles.",
       "chem": "Not quite: nothing burns. Energy leaves the tea's thermal store as it cools."
      },
      "idk": [
@@ -118,7 +118,7 @@
      "right": "Yes: each particle is held in its place in the lattice, so the whole solid keeps its shape.",
      "wrong": {
       "other": "Not quite: strong forces hold each particle in its place.",
-      "still": "Not quite: the particles are never still: they vibrate. They stay in shape because strong forces hold each one in its place.",
+      "still": "Not quite: the particles are never still: they vibrate. The ice cube keeps its shape because strong forces hold each particle in its place.",
       "gas": "Not quite: solid particles are close together. Strong forces hold each one in its place, so the shape stays."
      },
      "idk": [
@@ -163,7 +163,7 @@
        "branch": "solid"
       },
       {
-       "text": "Gas",
+       "text": "Both solids and liquids",
        "branch": "gas"
       }
      ],
@@ -171,7 +171,7 @@
      "wrong": {
       "other": "Not quite: a liquid.",
       "solid": "Not quite: in a solid the particles only vibrate in place; they cannot slide past each other. That is a liquid.",
-      "gas": "Not quite: gas particles are far apart. Touching but sliding past each other is a liquid."
+      "gas": "Not quite: in a solid the particles only vibrate in place. Touching but sliding past each other is a liquid only."
      },
      "idk": [
       {
@@ -193,7 +193,7 @@
     {
      "id": "1.12",
      "type": "say",
-     "text": "Air is a gas, made of particles. Between those particles there is nothing at all: just empty space."
+     "text": "Air is a gas, made of particles. The gaps between them contain nothing at all, not even more air."
     },
     {
      "id": "1.13",
@@ -257,27 +257,12 @@
     {
      "id": "2.2",
      "type": "say",
-     "text": "Particles also attract each other. Because of these forces of attraction, particles have potential energy: energy stored by the forces between them."
+     "text": "Particles also attract each other. Because of these forces of attraction, particles have potential energy: energy stored by the forces between them. Pulling particles further apart against these forces raises their potential energy."
     },
     {
      "id": "2.3",
      "type": "say",
      "text": "The internal energy of a substance is the total kinetic and potential energy of all its particles."
-    },
-    {
-     "id": "2.5",
-     "type": "say",
-     "text": "Heating a substance raises its internal energy, in one of two ways."
-    },
-    {
-     "id": "2.6",
-     "type": "say",
-     "text": "First way: the particles move faster, so their kinetic energy rises. A thermometer shows this as a rise in temperature: the hotter something is, the faster its particles move on average."
-    },
-    {
-     "id": "2.6b",
-     "type": "say",
-     "text": "Faster particles also push each other a little further apart, which is why most things expand, getting slightly bigger, when they are heated."
     },
     {
      "id": "2.4",
@@ -301,7 +286,7 @@
      "right": "Yes: the particles in both move at the same average speed, but the bath has far more of them, so far more internal energy.",
      "wrong": {
       "other": "Not quite: the bath, because it has far more particles.",
-      "same": "Not quite: the same temperature means the same average speed for each particle, not the same total. The bath has far more particles, so far more internal energy.",
+      "same": "Not quite: at the same temperature the particles move at the same average speed, but that is not the total. The bath has far more particles, so far more internal energy.",
       "cup": "Not quite: the particles are just as close in both. The bath has far more particles, so far more internal energy."
      },
      "idk": [
@@ -312,41 +297,56 @@
      "answerWhy": "Internal energy is the total for all the particles, and the bath has far more particles."
     },
     {
+     "id": "2.5",
+     "type": "say",
+     "text": "Heating a substance raises its internal energy, in one of two ways."
+    },
+    {
+     "id": "2.6",
+     "type": "say",
+     "text": "First way: the particles move faster, so their kinetic energy rises. A thermometer shows this as a rise in temperature: the hotter something is, the faster its particles move on average."
+    },
+    {
+     "id": "2.6b",
+     "type": "say",
+     "text": "Faster particles also push each other a little further apart, which is why most things expand, getting slightly bigger, when they are heated."
+    },
+    {
      "id": "2.7",
      "type": "say",
-     "text": "Second way: the substance melts or boils. The energy overcomes some of the forces holding the particles in place, so their potential energy rises while the temperature stays the same."
+     "text": "The second way heating raises internal energy: the substance melts or boils. The energy pulls the particles further apart against the forces between them, so their potential energy rises while the temperature stays the same."
     },
     {
      "id": "2.8",
      "type": "ask",
      "kind": "tap",
-     "question": "Water is boiling in a pan at 100 °C, and its temperature is not rising. What is the energy from the hob doing?",
+     "question": "You have 1 kg of ice at 0 °C and 1 kg of water at 0 °C. Which has more internal energy?",
      "options": [
       {
-       "text": "Raising the particles' potential energy",
+       "text": "The water",
        "branch": "right"
       },
       {
-       "text": "Making the particles move faster",
-       "branch": "faster"
+       "text": "The ice",
+       "branch": "ice"
       },
       {
-       "text": "Nothing: it is lost",
-       "branch": "lost"
+       "text": "Neither: they are at the same temperature",
+       "branch": "same"
       }
      ],
-     "right": "Yes: the energy overcomes the forces between the particles, so their potential energy rises. Their kinetic energy, and the temperature, stay the same.",
+     "right": "Yes: melting the ice took in energy that raised its particles' potential energy, so the water has more internal energy, at the same temperature.",
      "wrong": {
-      "other": "Not quite: it raises the particles' potential energy.",
-      "faster": "Not quite: if the particles moved faster, the temperature would rise. The energy overcomes the forces between them, raising their potential energy.",
-      "lost": "Not quite: energy is never lost. It overcomes the forces between the particles, raising their potential energy, so the internal energy rises."
+      "other": "Not quite: the water.",
+      "ice": "Not quite: to turn the ice into water you must supply energy, which raises the particles' potential energy. So the water has more.",
+      "same": "Not quite: their kinetic energy is the same, but melting raised the particles' potential energy. So the water has more internal energy."
      },
      "idk": [
       {
-       "hint": "The temperature is steady, so the particles are not speeding up. Which kind of energy is left?"
+       "hint": "To turn the ice into the water, do you have to put energy in or take it out?"
       }
      ],
-     "answerWhy": "The temperature is steady, so the kinetic energy is not changing; the energy raises the particles' potential energy."
+     "answerWhy": "Melting the ice needs energy, which raises the particles' potential energy, so the water has more internal energy."
     },
     {
      "id": "2.9",
@@ -398,7 +398,12 @@
     {
      "id": "3.1",
      "type": "say",
-     "text": "Changing from one state to another is called a change of state. Melting is solid to liquid, and freezing is liquid back to solid."
+     "text": "Changing from one state to another is called a change of state."
+    },
+    {
+     "id": "3.1b",
+     "type": "say",
+     "text": "Melting is a solid turning into a liquid. Freezing is the reverse: a liquid turning back into a solid."
     },
     {
      "id": "3.2",
@@ -408,7 +413,12 @@
     {
      "id": "3.3",
      "type": "say",
-     "text": "Boiling turns a liquid into a gas all through the liquid, with bubbles of gas forming inside it. Boiling happens at one temperature, the boiling point: 100 °C for water."
+     "text": "Boiling turns a liquid into a gas all through the liquid, with bubbles of gas forming inside it."
+    },
+    {
+     "id": "3.3b",
+     "type": "say",
+     "text": "Boiling happens at one temperature, the boiling point: 100 °C for water. While a pure substance melts, boils, freezes or condenses, its temperature stays the same."
     },
     {
      "id": "3.4",
@@ -428,7 +438,7 @@
     {
      "id": "3.5c",
      "type": "say",
-     "text": "Freezing and condensing are the reverse of melting and boiling: the forces pull the particles back together, the particles lose potential energy, and energy comes out."
+     "text": "In freezing and condensing, the forces between the particles pull them closer or lock them in place. The particles lose potential energy, and energy goes out to the surroundings."
     },
     {
      "id": "3.6",
@@ -487,7 +497,7 @@
        "branch": "more"
       }
      ],
-     "right": "Yes: 100 g.",
+     "right": "Yes: 100 g. Nothing enters or leaves the bag.",
      "wrong": {
       "other": "Not quite: 100 g.",
       "less": "Not quite: nothing escapes from the sealed bag, so the water is still 100 g.",
@@ -550,7 +560,7 @@
     {
      "id": "3.12b",
      "type": "say",
-     "text": "To find what state a substance is in, compare the temperature with its melting and boiling points. Water melts at 0 °C and boils at 100 °C, so at 20 °C, between the two, it is a liquid."
+     "text": "To find what state a substance is in, compare the temperature with its melting and boiling points. Ice melts at 0 °C and water boils at 100 °C, so at 20 °C, between the two, water is a liquid."
     },
     {
      "id": "3.13",
@@ -608,7 +618,7 @@
     {
      "id": "4.2",
      "type": "say",
-     "text": "The particle model explains a lot: why a gas is easy to squash, why a solid keeps its shape, and why a gas presses on its container: its particles keep hitting the walls."
+     "text": "The particle model explains a lot: why a gas is easy to squash, why a solid keeps its shape, and why a gas pushes on the walls of its container: its particles keep hitting them."
     },
     {
      "id": "4.3",
@@ -724,7 +734,7 @@
      "wrong": {
       "other": "Not quite: it is the total kinetic and potential energy of all the particles.",
       "w1": "Not quite: temperature is linked to the particles' kinetic energy. Internal energy is the total kinetic and potential energy of all the particles.",
-      "w2": "Not quite: it adds up all the particles, and their potential energy too."
+      "w2": "Not quite: internal energy adds up the energy of all the particles, potential energy included."
      },
      "idk": [],
      "answerWhy": "Internal energy is the total kinetic and potential energy of all the particles.",
@@ -734,10 +744,10 @@
      "id": "4.11",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 3 of 6: while ice melts at 0 °C, which is true of its temperature?",
+     "question": "Quiz, question 3 of 6: a tray of ice is melting. Which is true of its temperature while it melts?",
      "options": [
       {
-       "text": "It stays at 0 °C",
+       "text": "It stays the same until all the ice has melted",
        "branch": "right"
       },
       {

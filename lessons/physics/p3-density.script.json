@@ -109,7 +109,7 @@
     {
      "id": "1.6",
      "type": "say",
-     "text": "Grams and cubic centimetres also work together: then the density comes out in g/cm³. Water has a density of 1000 kg/m³, which is 1 g/cm³."
+     "text": "Grams and cubic centimetres also work together: then the density comes out in g/cm³. Water has a density of 1000 kg/m³. In grams and cm³ that is 1 g/cm³: the reason comes later in the lesson."
     },
     {
      "id": "1.7",
@@ -151,7 +151,7 @@
     {
      "id": "1.8",
      "type": "say",
-     "text": "Whether something floats depends on density, not on how heavy it is. An object floats in a liquid or gas that is denser than the object, and sinks in one that is less dense."
+     "text": "Whether something floats depends on density, not on how heavy it is. An object floats on a liquid if it is less dense than the liquid, and sinks if it is denser."
     },
     {
      "id": "1.9",
@@ -180,7 +180,7 @@
      "right": "Yes: 920 kg/m³ is less than water's 1000 kg/m³, so ice floats.",
      "wrong": {
       "other": "Not quite: it floats, because 920 kg/m³ is less than 1000 kg/m³.",
-      "sinks": "Not quite: most solids are denser than their liquid, but water is an exception. 920 kg/m³ is less than 1000 kg/m³, so ice floats.",
+      "sinks": "Not quite: being hard or solid does not decide it; density does. 920 kg/m³ is less than water's 1000 kg/m³, so ice floats.",
       "small": "Not quite: size does not decide it; density does. 920 kg/m³ is less than 1000 kg/m³, so any ice cube floats."
      },
      "idk": [
@@ -389,39 +389,39 @@
     {
      "id": "2.7",
      "type": "say",
-     "text": "Watch the units. 1 kg is 1000 g, and 1 m³ is 1 000 000 cm³, so 1 g/cm³ is the same as 1000 kg/m³. Multiply by 1000 to go from g/cm³ to kg/m³; divide by 1000 to go back."
+     "text": "Here is the reason for the 1000. A cubic metre holds 1 000 000 cm³. At 1 g in each cm³ that is 1 000 000 g, which is 1000 kg. Multiply by 1000 to go from g/cm³ to kg/m³; divide by 1000 to go back."
     },
     {
      "id": "2.8",
      "type": "ask",
      "kind": "tap",
-     "question": "Iron has a density of 7900 kg/m³. What is that in g/cm³?",
+     "question": "Copper has a density of 8960 kg/m³. What is that in g/cm³?",
      "options": [
       {
-       "text": "7.9 g/cm³",
+       "text": "8.96 g/cm³",
        "branch": "right"
       },
       {
-       "text": "7 900 000 g/cm³",
+       "text": "8 960 000 g/cm³",
        "branch": "times"
       },
       {
-       "text": "7900 g/cm³",
+       "text": "8960 g/cm³",
        "branch": "same"
       }
      ],
-     "right": "Yes: 7900 ÷ 1000 = 7.9 g/cm³.",
+     "right": "Yes: 8960 ÷ 1000 = 8.96 g/cm³.",
      "wrong": {
-      "other": "Not quite: 7.9 g/cm³. Divide by 1000.",
-      "times": "Not quite: going from kg/m³ to g/cm³, divide by 1000: 7900 ÷ 1000 = 7.9 g/cm³.",
-      "same": "Not quite: the number changes with the units. Divide by 1000: 7.9 g/cm³."
+      "other": "Not quite: 8.96 g/cm³. Divide by 1000.",
+      "times": "Not quite: going from kg/m³ to g/cm³, divide by 1000: 8960 ÷ 1000 = 8.96 g/cm³.",
+      "same": "Not quite: the number changes with the units. Divide by 1000: 8.96 g/cm³."
      },
      "idk": [
       {
-       "hint": "What is 7900 ÷ 1000?"
+       "hint": "Going from kg/m³ to g/cm³, divide by 1000. What is 8960 ÷ 1000?"
       }
      ],
-     "answerWhy": "7900 kg/m³ ÷ 1000 = 7.9 g/cm³."
+     "answerWhy": "8960 kg/m³ ÷ 1000 = 8.96 g/cm³."
     },
     {
      "id": "2.9",
@@ -430,36 +430,18 @@
     },
     {
      "id": "2.10",
-     "type": "ask",
-     "kind": "number",
-     "question": "A 2.7 kg block of solid has a volume of 0.001 m³. It melts, and the liquid has a volume of 0.00108 m³. What is the liquid's density, in kg/m³?",
+     "type": "worked",
+     "text": "Here is a worked example of a density change when something melts. Its steps open one at a time.",
+     "question": "A 2.7 kg block of solid has a volume of 0.001 m³. It melts, and the liquid has a volume of 0.00108 m³. What is the liquid's density?",
+     "steps": [
+      "The mass does not change when it melts: still 2.7 kg.",
+      "Put the numbers into ρ = m ÷ V: ρ = 2.7 ÷ 0.00108.",
+      "ρ = 2500 kg/m³, less than the solid's 2700 kg/m³."
+     ],
      "answer": {
       "value": 2500,
-      "unit": "kg/m³",
-      "tolerance": 0.01
-     },
-     "wrongValues": [
-      {
-       "value": 2700,
-       "branch": "solid"
-      },
-      {
-       "value": 0.002916,
-       "branch": "times"
-      }
-     ],
-     "right": "Yes: 2500 kg/m³. The mass is still 2.7 kg, so ρ = 2.7 ÷ 0.00108 = 2500 kg/m³.",
-     "wrong": {
-      "other": "Not quite: 2500 kg/m³. The mass is still 2.7 kg, so ρ = 2.7 ÷ 0.00108 = 2500 kg/m³.",
-      "solid": "Not quite: 2700 kg/m³ is the solid. Use the liquid's volume: 2.7 ÷ 0.00108 = 2500 kg/m³.",
-      "times": "Not quite: divide the mass by the volume: 2.7 ÷ 0.00108 = 2500 kg/m³."
-     },
-     "idk": [
-      {
-       "hint": "The mass is still 2.7 kg. On a calculator, divide it by the liquid's volume, 0.00108."
-      }
-     ],
-     "answerWhy": "The mass stays 2.7 kg, so ρ = 2.7 ÷ 0.00108 = 2500 kg/m³."
+      "unit": "kg/m³"
+     }
     },
     {
      "id": "2.11",
@@ -491,7 +473,7 @@
        "branch": "length"
       },
       {
-       "text": "Its weight and its temperature",
+       "text": "Its temperature and its colour",
        "branch": "temp"
       }
      ],
@@ -499,7 +481,7 @@
      "wrong": {
       "other": "Not quite: its mass and its volume.",
       "length": "Not quite: a length alone is not a volume. You need its mass and its volume.",
-      "temp": "Not quite: temperature is not in the equation. You need its mass and its volume."
+      "temp": "Not quite: neither is in the equation. You need its mass and its volume."
      },
      "idk": [
       {
@@ -516,7 +498,12 @@
     {
      "id": "3.2",
      "type": "say",
-     "text": "A balance is the lab's weighing scales: it measures mass, in grams. First check it reads zero with nothing on it. If it reads 0.02 g when empty, take 0.02 g off every reading."
+     "text": "A balance is the lab's weighing scales: it measures mass, in grams."
+    },
+    {
+     "id": "3.2b",
+     "type": "say",
+     "text": "First check the balance reads zero with nothing on it. If it reads 0.02 g when empty, take 0.02 g off every reading."
     },
     {
      "id": "3.3",
@@ -526,7 +513,12 @@
     {
      "id": "3.3b",
      "type": "say",
-     "text": "For a cylinder, measure its radius and height: V = π × r² × h. For a small object, a micrometer or Vernier callipers measure lengths more precisely than a ruler."
+     "text": "For a cylinder, measure across it (the diameter) and halve that to get the radius, r. Measure its height, h. Then V = π × r² × h, where π is about 3.14."
+    },
+    {
+     "id": "3.3c",
+     "type": "say",
+     "text": "For a small object, Vernier callipers measure lengths more precisely than a ruler."
     },
     {
      "id": "3.4",
@@ -574,7 +566,7 @@
     {
      "id": "3.6",
      "type": "say",
-     "text": "To find a stone's volume with one, half fill the measuring cylinder with water and read the level. Lower the stone in on a thin thread, so it is fully under the water, and read the new level."
+     "text": "To find a stone's volume with a measuring cylinder, half fill it with water and read the level. Lower the stone in on a thin thread, so it is fully under the water, and read the new level."
     },
     {
      "id": "3.7",
@@ -617,7 +609,7 @@
     {
      "id": "3.9",
      "type": "say",
-     "text": "For a liquid: find the mass of an empty measuring cylinder, pour in some liquid and read its volume, then find the mass again. The liquid's mass is the second mass minus the first."
+     "text": "For a liquid: find the mass of an empty measuring cylinder, pour in some liquid and read its volume, then find the mass again. The liquid's mass is the second mass minus the first. Then density = that mass ÷ the volume."
     },
     {
      "id": "3.10",
@@ -630,19 +622,19 @@
        "branch": "right"
       },
       {
-       "text": "So the water does not spill",
+       "text": "So the water level stays still",
        "branch": "spill"
       },
       {
-       "text": "So the stone sinks faster",
+       "text": "So you can see the numbers on the scale",
        "branch": "sink"
       }
      ],
      "right": "Yes: looking from above or below makes the level seem higher or lower than it is.",
      "wrong": {
       "other": "Not quite: so the reading is not too high or too low.",
-      "spill": "Not quite: your eye cannot stop a spill. Looking from above or below makes the level seem higher or lower than it is.",
-      "sink": "Not quite: where you look does not change the stone. Looking from above or below misreads the level."
+      "spill": "Not quite: where you look does not move the water. Looking from above or below makes the level seem higher or lower than it is.",
+      "sink": "Not quite: you can see the numbers from any angle. Looking from above or below makes the level seem higher or lower than it is."
      },
      "idk": [
       {
@@ -671,15 +663,15 @@
        "branch": "wrong"
       },
       {
-       "text": "It stops odd results happening",
+       "text": "It stops mistakes happening",
        "branch": "stop"
       }
      ],
-     "right": "Yes: in a mean the highs and lows partly cancel, so it reduces the effect of random errors. An odd result also stands out, so you can leave it out.",
+     "right": "Yes: in a mean the highs and lows partly cancel, so it reduces the effect of random errors.",
      "wrong": {
       "other": "Not quite: the highs and lows partly cancel out.",
       "wrong": "Close: a repeat can catch a slip. The main reason is that highs and lows partly cancel in a mean, which reduces the effect of random errors.",
-      "stop": "Not quite: repeats cannot stop odd results, but they help you spot them. The highs and lows partly cancel in a mean."
+      "stop": "Not quite: repeats cannot stop mistakes. But the highs and lows partly cancel in a mean, which reduces the effect of random errors."
      },
      "idk": [
       {
@@ -717,7 +709,7 @@
     {
      "id": "4.3",
      "type": "say",
-     "text": "In a solid and in a liquid the particles are close together, so their densities are similar. A solid's particles are packed tightly in a regular pattern, so it is usually a little denser than its liquid."
+     "text": "In a solid and in a liquid the particles are close together, so a solid and its liquid have similar densities."
     },
     {
      "id": "4.5",
@@ -726,7 +718,7 @@
      "question": "A gas is squashed into a smaller volume. Which is true of its density?",
      "options": [
       {
-       "text": "It rises: the same mass in less volume",
+       "text": "It rises",
        "branch": "right"
       },
       {
@@ -734,7 +726,7 @@
        "branch": "falls"
       },
       {
-       "text": "It stays the same: it is the same gas",
+       "text": "It stays the same",
        "branch": "same"
       }
      ],

@@ -21,7 +21,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 3. [1.1b] Tutor asks: Second: a hot cup of tea cools down on the table. Which energy store of the tea empties as it cools?
    Buttons: "Kinetic" / "Chemical" / "Thermal" (she can also type)
    - Right ("Thermal"): Yes: as the tea cools, energy leaves its thermal store and warms the surroundings.
-   - "Kinetic" (wrong idea kinetic: ): Not quite: the cup of tea is not moving across the table. Energy leaves its thermal store as it cools.
+   - "Kinetic" (wrong idea kinetic: ): Not quite: the cup is not moving across the table. Energy leaves its thermal store as it cools; this lesson shows what that means for its particles.
    - "Chemical" (wrong idea chem: ): Not quite: nothing burns. Energy leaves the tea's thermal store as it cools.
    - Don't know (first time): The thermal store is the one for how hot something is. Which button is that? (same buttons)
    - Still doesn't know: That's fine. Energy leaves the tea's thermal store as it cools, warming the surroundings.
@@ -42,7 +42,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 8. [1.6] Tutor asks: Why does an ice cube keep its shape?
    Buttons: "Its particles are completely still" / "Strong forces hold each particle in its place" / "Its particles are far apart" (she can also type)
    - Right ("Strong forces hold each particle in its place"): Yes: each particle is held in its place in the lattice, so the whole solid keeps its shape.
-   - "Its particles are completely still" (wrong idea still: ): Not quite: the particles are never still: they vibrate. They stay in shape because strong forces hold each one in its place.
+   - "Its particles are completely still" (wrong idea still: ): Not quite: the particles are never still: they vibrate. The ice cube keeps its shape because strong forces hold each particle in its place.
    - "Its particles are far apart" (wrong idea gas: ): Not quite: solid particles are close together. Strong forces hold each one in its place, so the shape stays.
    - Don't know (first time): Can a particle in a solid move to a new place? What stops it? (same buttons)
    - Still doesn't know: That's fine. Strong forces of attraction hold each particle in its place, so a solid keeps its shape.
@@ -61,10 +61,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    Button: Next
 
 13. [1.9b] Tutor asks: Which state has particles that touch but can slide past each other?
-   Buttons: "Gas" / "Liquid" / "Solid" (she can also type)
+   Buttons: "Both solids and liquids" / "Liquid" / "Solid" (she can also type)
    - Right ("Liquid"): Yes: a liquid. Its particles touch but can move past each other, so it flows.
    - "Solid" (wrong idea solid: ): Not quite: in a solid the particles only vibrate in place; they cannot slide past each other. That is a liquid.
-   - "Gas" (wrong idea gas: ): Not quite: gas particles are far apart. Touching but sliding past each other is a liquid.
+   - "Both solids and liquids" (wrong idea gas: ): Not quite: in a solid the particles only vibrate in place. Touching but sliding past each other is a liquid only.
    - Don't know (first time): Which state flows but keeps its volume? (same buttons)
    - Still doesn't know: That's fine. In a liquid the particles touch but can slide past each other.
    - She asks to move on or skip: In a liquid the particles touch but can slide past each other.
@@ -75,7 +75,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 15. [1.11] Tutor: A gas has no fixed shape or volume: it spreads out to fill any container. Most of a gas is empty space, so you can squash it into a smaller volume.
    Button: Next
 
-16. [1.12] Tutor: Air is a gas, made of particles. Between those particles there is nothing at all: just empty space.
+16. [1.12] Tutor: Air is a gas, made of particles. The gaps between them contain nothing at all, not even more air.
    Button: Next
 
 17. [1.13] Tutor: The picture shows the three states side by side. Notice that each particle is drawn the same size in all three.
@@ -103,41 +103,41 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 20. [2.1] Tutor: The particles in a substance have energy in two ways. Because they move, they have kinetic energy: the energy of movement.
    Button: Next
 
-21. [2.2] Tutor: Particles also attract each other. Because of these forces of attraction, particles have potential energy: energy stored by the forces between them.
+21. [2.2] Tutor: Particles also attract each other. Because of these forces of attraction, particles have potential energy: energy stored by the forces between them. Pulling particles further apart against these forces raises their potential energy.
    Button: Next
 
 22. [2.3] Tutor: The internal energy of a substance is the total kinetic and potential energy of all its particles.
    Button: Next
 
-23. [2.5] Tutor: Heating a substance raises its internal energy, in one of two ways.
-   Button: Next
-
-24. [2.6] Tutor: First way: the particles move faster, so their kinetic energy rises. A thermometer shows this as a rise in temperature: the hotter something is, the faster its particles move on average.
-   Button: Next
-
-25. [2.6b] Tutor: Faster particles also push each other a little further apart, which is why most things expand, getting slightly bigger, when they are heated.
-   Button: Next
-
-26. [2.4] Tutor asks: A cup of water and a bath of water are both at 20 °C. Which has more internal energy?
+23. [2.4] Tutor asks: A cup of water and a bath of water are both at 20 °C. Which has more internal energy?
    Buttons: "Neither: they are at the same temperature" / "The cup: its particles are closer together" / "The bath: it has far more particles" (she can also type)
    - Right ("The bath: it has far more particles"): Yes: the particles in both move at the same average speed, but the bath has far more of them, so far more internal energy.
-   - "Neither: they are at the same temperature" (wrong idea same: ): Not quite: the same temperature means the same average speed for each particle, not the same total. The bath has far more particles, so far more internal energy.
+   - "Neither: they are at the same temperature" (wrong idea same: ): Not quite: at the same temperature the particles move at the same average speed, but that is not the total. The bath has far more particles, so far more internal energy.
    - "The cup: its particles are closer together" (wrong idea cup: ): Not quite: the particles are just as close in both. The bath has far more particles, so far more internal energy.
    - Don't know (first time): Internal energy adds up the energy of every particle. Which has more particles? (same buttons)
    - Still doesn't know: That's fine. Internal energy is the total for all the particles, and the bath has far more particles.
    - She asks to move on or skip: Internal energy is the total for all the particles, and the bath has far more particles.
 
-27. [2.7] Tutor: Second way: the substance melts or boils. The energy overcomes some of the forces holding the particles in place, so their potential energy rises while the temperature stays the same.
+24. [2.5] Tutor: Heating a substance raises its internal energy, in one of two ways.
    Button: Next
 
-28. [2.8] Tutor asks: Water is boiling in a pan at 100 °C, and its temperature is not rising. What is the energy from the hob doing?
-   Buttons: "Making the particles move faster" / "Raising the particles' potential energy" / "Nothing: it is lost" (she can also type)
-   - Right ("Raising the particles' potential energy"): Yes: the energy overcomes the forces between the particles, so their potential energy rises. Their kinetic energy, and the temperature, stay the same.
-   - "Making the particles move faster" (wrong idea faster: ): Not quite: if the particles moved faster, the temperature would rise. The energy overcomes the forces between them, raising their potential energy.
-   - "Nothing: it is lost" (wrong idea lost: ): Not quite: energy is never lost. It overcomes the forces between the particles, raising their potential energy, so the internal energy rises.
-   - Don't know (first time): The temperature is steady, so the particles are not speeding up. Which kind of energy is left? (same buttons)
-   - Still doesn't know: That's fine. The temperature is steady, so the kinetic energy is not changing; the energy raises the particles' potential energy.
-   - She asks to move on or skip: The temperature is steady, so the kinetic energy is not changing; the energy raises the particles' potential energy.
+25. [2.6] Tutor: First way: the particles move faster, so their kinetic energy rises. A thermometer shows this as a rise in temperature: the hotter something is, the faster its particles move on average.
+   Button: Next
+
+26. [2.6b] Tutor: Faster particles also push each other a little further apart, which is why most things expand, getting slightly bigger, when they are heated.
+   Button: Next
+
+27. [2.7] Tutor: The second way heating raises internal energy: the substance melts or boils. The energy pulls the particles further apart against the forces between them, so their potential energy rises while the temperature stays the same.
+   Button: Next
+
+28. [2.8] Tutor asks: You have 1 kg of ice at 0 °C and 1 kg of water at 0 °C. Which has more internal energy?
+   Buttons: "The ice" / "The water" / "Neither: they are at the same temperature" (she can also type)
+   - Right ("The water"): Yes: melting the ice took in energy that raised its particles' potential energy, so the water has more internal energy, at the same temperature.
+   - "The ice" (wrong idea ice: ): Not quite: to turn the ice into water you must supply energy, which raises the particles' potential energy. So the water has more.
+   - "Neither: they are at the same temperature" (wrong idea same: ): Not quite: their kinetic energy is the same, but melting raised the particles' potential energy. So the water has more internal energy.
+   - Don't know (first time): To turn the ice into the water, do you have to put energy in or take it out? (same buttons)
+   - Still doesn't know: That's fine. Melting the ice needs energy, which raises the particles' potential energy, so the water has more internal energy.
+   - She asks to move on or skip: Melting the ice needs energy, which raises the particles' potential energy, so the water has more internal energy.
 
 29. [2.9] Tutor asks: Water in a pan is heated from 20 °C to 60 °C. Which energy of its particles rises?
    Buttons: "Potential energy only" / "Neither" / "Kinetic energy" (she can also type)
@@ -157,32 +157,38 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## Key point 3: Changes of state
 
-31. [3.1] Tutor: Changing from one state to another is called a change of state. Melting is solid to liquid, and freezing is liquid back to solid.
+31. [3.1] Tutor: Changing from one state to another is called a change of state.
    Button: Next
 
-32. [3.2] Tutor: The temperature at which a solid turns to liquid is its melting point. A liquid freezes at that same temperature: for water, both happen at 0 °C.
+32. [3.1b] Tutor: Melting is a solid turning into a liquid. Freezing is the reverse: a liquid turning back into a solid.
    Button: Next
 
-33. [3.3] Tutor: Boiling turns a liquid into a gas all through the liquid, with bubbles of gas forming inside it. Boiling happens at one temperature, the boiling point: 100 °C for water.
+33. [3.2] Tutor: The temperature at which a solid turns to liquid is its melting point. A liquid freezes at that same temperature: for water, both happen at 0 °C.
    Button: Next
 
-34. [3.4] Tutor: Evaporation also turns a liquid into a gas, but only at its surface, and at any temperature. The fastest particles escape from the surface, which is why wet washing dries.
+34. [3.3] Tutor: Boiling turns a liquid into a gas all through the liquid, with bubbles of gas forming inside it.
    Button: Next
 
-35. [3.5] Tutor: Condensing is a gas turning back into a liquid, like steam misting a cold window.
+35. [3.3b] Tutor: Boiling happens at one temperature, the boiling point: 100 °C for water. While a pure substance melts, boils, freezes or condenses, its temperature stays the same.
    Button: Next
 
-36. [3.5b] Tutor: Sublimation is a solid turning straight into a gas. Dry ice, which is solid carbon dioxide, does this at room temperature.
+36. [3.4] Tutor: Evaporation also turns a liquid into a gas, but only at its surface, and at any temperature. The fastest particles escape from the surface, which is why wet washing dries.
    Button: Next
 
-37. [3.5c] Tutor: Freezing and condensing are the reverse of melting and boiling: the forces pull the particles back together, the particles lose potential energy, and energy comes out.
+37. [3.5] Tutor: Condensing is a gas turning back into a liquid, like steam misting a cold window.
    Button: Next
 
-38. [3.6] Tutor: The picture shows all six changes. Going right needs energy in; going left gives energy out.
+38. [3.5b] Tutor: Sublimation is a solid turning straight into a gas. Dry ice, which is solid carbon dioxide, does this at room temperature.
+   Button: Next
+
+39. [3.5c] Tutor: In freezing and condensing, the forces between the particles pull them closer or lock them in place. The particles lose potential energy, and energy goes out to the surroundings.
+   Button: Next
+
+40. [3.6] Tutor: The picture shows all six changes. Going right needs energy in; going left gives energy out.
    (Under it, a picture: "The six changes of state, and which way energy flows.", labelled Melting, Freezing, Boiling or evaporating, Condensing, Sublimation, Energy in, Energy out.)
    Button: Next
 
-39. [3.7] Tutor asks: A puddle dries up on a cold day, without ever getting near 100 °C. Which change of state is this?
+41. [3.7] Tutor asks: A puddle dries up on a cold day, without ever getting near 100 °C. Which change of state is this?
    Buttons: "Boiling" / "Condensing" / "Evaporation" (she can also type)
    - Right ("Evaporation"): Yes: evaporation. Water escapes from the puddle's surface even when it is cold.
    - "Boiling" (wrong idea boil: ): Not quite: boiling needs the water to reach 100 °C, all through it. Liquid escaping from the surface at a low temperature is evaporation.
@@ -191,25 +197,25 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. Evaporation happens at the surface of a liquid at any temperature; boiling happens all through it at the boiling point.
    - She asks to move on or skip: Evaporation happens at the surface of a liquid at any temperature; boiling happens all through it at the boiling point.
 
-40. [3.10] Tutor asks: 100 g of ice melts completely in a sealed bag. Predict: what is the mass of the water?
+42. [3.10] Tutor asks: 100 g of ice melts completely in a sealed bag. Predict: what is the mass of the water?
    Buttons: "Less than 100 g" / "100 g" / "More than 100 g" (she can also type)
-   - Right ("100 g"): Yes: 100 g.
+   - Right ("100 g"): Yes: 100 g. Nothing enters or leaves the bag.
    - "Less than 100 g" (wrong idea less: ): Not quite: nothing escapes from the sealed bag, so the water is still 100 g.
    - "More than 100 g" (wrong idea more: ): Not quite: nothing is added to the bag, so the water is still 100 g.
    - Don't know (first time): Is anything added to the sealed bag, or taken out? (same buttons)
    - Still doesn't know: That's fine. Nothing enters or leaves the sealed bag, so the water is still 100 g.
    - She asks to move on or skip: Nothing enters or leaves the sealed bag, so the water is still 100 g.
 
-41. [3.9] Tutor: In every change of state the mass stays the same, because the number of particles does not change.
+43. [3.9] Tutor: In every change of state the mass stays the same, because the number of particles does not change.
    Button: Next
 
-42. [3.11] Tutor: Changes of state are physical changes: reverse one and the substance gets back its original properties, as melted chocolate sets again as chocolate.
+44. [3.11] Tutor: Changes of state are physical changes: reverse one and the substance gets back its original properties, as melted chocolate sets again as chocolate.
    Button: Next
 
-43. [3.11b] Tutor: A chemical change makes new substances, so it cannot be undone that way: ash cannot be turned back into wood.
+45. [3.11b] Tutor: A chemical change makes new substances, so it cannot be undone that way: ash cannot be turned back into wood.
    Button: Next
 
-44. [3.12] Tutor asks: Which of these is a physical change?
+46. [3.12] Tutor asks: Which of these is a physical change?
    Buttons: "A cake baking" / "Iron rusting" / "Butter melting in a pan" (she can also type)
    - Right ("Butter melting in a pan"): Yes: cool the melted butter and it sets as butter again.
    - "A cake baking" (wrong idea bake: ): Not quite: baking makes new substances, so it is a chemical change. Butter melting is physical: cool it and it sets again.
@@ -218,10 +224,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. Melting is a change of state, so it is physical: cooled butter sets as butter again.
    - She asks to move on or skip: Melting is a change of state, so it is physical: cooled butter sets as butter again.
 
-45. [3.12b] Tutor: To find what state a substance is in, compare the temperature with its melting and boiling points. Water melts at 0 °C and boils at 100 °C, so at 20 °C, between the two, it is a liquid.
+47. [3.12b] Tutor: To find what state a substance is in, compare the temperature with its melting and boiling points. Ice melts at 0 °C and water boils at 100 °C, so at 20 °C, between the two, water is a liquid.
    Button: Next
 
-46. [3.13] Tutor asks: Ethanol, the alcohol in hand gel, melts at −114 °C and boils at 78 °C. What state is it in at 20 °C?
+48. [3.13] Tutor asks: Ethanol, the alcohol in hand gel, melts at −114 °C and boils at 78 °C. What state is it in at 20 °C?
    Buttons: "Gas" / "Liquid" / "Solid" (she can also type)
    - Right ("Liquid"): Yes: 20 °C is above its melting point but below its boiling point, so it is a liquid.
    - "Solid" (wrong idea solid: ): Not quite: 20 °C is far above its melting point of −114 °C, so it has melted. It is below its boiling point, so it is a liquid.
@@ -230,7 +236,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. 20 °C is above the melting point and below the boiling point, so ethanol is a liquid.
    - She asks to move on or skip: 20 °C is above the melting point and below the boiling point, so ethanol is a liquid.
 
-47. [3.14] Tutor: In one line: what is the difference between evaporation and boiling?
+49. [3.14] Tutor: In one line: what is the difference between evaporation and boiling?
    She types one line. The AI checks which of these points it makes: "evaporation happens only at the surface, at any temperature", "boiling happens all through the liquid, at the boiling point".
    - All of them: Yes, your line has it: evaporation happens only at the surface, at any temperature; and boiling happens all through the liquid, at the boiling point.
    - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
@@ -239,22 +245,22 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## Key point 4: Limitations of the particle model
 
-48. [4.1] Tutor: Everything in this lesson so far is a model: a simple picture of what we cannot see, used to explain and predict. This one is called the particle model.
+50. [4.1] Tutor: Everything in this lesson so far is a model: a simple picture of what we cannot see, used to explain and predict. This one is called the particle model.
    Button: Next
 
-49. [4.2] Tutor: The particle model explains a lot: why a gas is easy to squash, why a solid keeps its shape, and why a gas presses on its container: its particles keep hitting the walls.
+51. [4.2] Tutor: The particle model explains a lot: why a gas is easy to squash, why a solid keeps its shape, and why a gas pushes on the walls of its container: its particles keep hitting them.
    Button: Next
 
-50. [4.3] Tutor: Diffusion is explained too: particles moving at random spread out from where there are many to where there are few. A smell spreads across a room in this way.
+52. [4.3] Tutor: Diffusion is explained too: particles moving at random spread out from where there are many to where there are few. A smell spreads across a room in this way.
    Button: Next
 
-51. [4.4] Tutor: But a model is not the real thing. The particle model draws every particle as a solid ball, and all the particles of a substance as identical.
+53. [4.4] Tutor: But a model is not the real thing. The particle model draws every particle as a solid ball, and all the particles of a substance as identical.
    Button: Next
 
-52. [4.5] Tutor: Real particles come in different sizes and shapes, and they are not hard little balls.
+54. [4.5] Tutor: Real particles come in different sizes and shapes, and they are not hard little balls.
    Button: Next
 
-53. [4.6] Tutor asks: A textbook draws the particles of a gas about two particle-widths apart. What is wrong with the drawing?
+55. [4.6] Tutor asks: A textbook draws the particles of a gas about two particle-widths apart. What is wrong with the drawing?
    Buttons: "Gas particles should be touching" / "Real gas particles are much further apart than that" / "Gas particles should be in a regular pattern" (she can also type)
    - Right ("Real gas particles are much further apart than that"): Yes: drawings are not to scale. In a real gas the gaps are far bigger than any page can show.
    - "Gas particles should be touching" (wrong idea touch: ): Not quite: touching particles are a solid or a liquid. Real gas particles are much further apart than any drawing shows.
@@ -263,17 +269,17 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. Particle drawings are not to scale: real gas particles are much further apart than they can be drawn.
    - She asks to move on or skip: Particle drawings are not to scale: real gas particles are much further apart than they can be drawn.
 
-54. [4.7] Tutor: In one line: name one thing the particle model explains, and one way real particles differ from its pictures.
+56. [4.7] Tutor: In one line: name one thing the particle model explains, and one way real particles differ from its pictures.
    She types one line. The AI checks which of these points it makes: "something it explains (squashing a gas, gas pressure, diffusion, a solid keeping its shape)", "real particles are not identical solid balls, or the pictures are not to scale".
    - All of them: Yes, your line has it: something it explains (squashing a gas, gas pressure, diffusion, a solid keeping its shape); and real particles are not identical solid balls, or the pictures are not to scale.
    - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
    - None: A good line would say: something it explains (squashing a gas, gas pressure, diffusion, a solid keeping its shape); and real particles are not identical solid balls, or the pictures are not to scale.
    - Don't know: No problem. A good line would be: the particle model explains why a gas can be squashed, but real particles are not identical solid balls.
 
-55. [4.8] Tutor: Now for a short quiz: six questions on the whole lesson. Take your time.
+57. [4.8] Tutor: Now for a short quiz: six questions on the whole lesson. Take your time.
    Button: Next
 
-56. [4.9] Tutor asks: Quiz, question 1 of 6: which state has particles far apart, moving fast in random directions?
+58. [4.9] Tutor asks: Quiz, question 1 of 6: which state has particles far apart, moving fast in random directions?
    Buttons: "Liquid" / "Gas" / "Solid" (she can also type)
    - Right ("Gas"): Yes: a gas.
    - "Liquid" (wrong idea w1: ): Not quite: liquid particles touch each other. Far apart and fast is a gas.
@@ -281,23 +287,23 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. In a gas the particles are far apart and move fast in random directions.
    - She asks to move on or skip: In a gas the particles are far apart and move fast in random directions.
 
-57. [4.10] Tutor asks: Quiz, question 2 of 6: what is internal energy?
+59. [4.10] Tutor asks: Quiz, question 2 of 6: what is internal energy?
    Buttons: "The temperature of a substance" / "The total kinetic and potential energy of all the particles" / "The kinetic energy of one particle" (she can also type)
    - Right ("The total kinetic and potential energy of all the particles"): Yes: the total kinetic and potential energy of all the particles.
    - "The temperature of a substance" (wrong idea w1: ): Not quite: temperature is linked to the particles' kinetic energy. Internal energy is the total kinetic and potential energy of all the particles.
-   - "The kinetic energy of one particle" (wrong idea w2: ): Not quite: it adds up all the particles, and their potential energy too.
+   - "The kinetic energy of one particle" (wrong idea w2: ): Not quite: internal energy adds up the energy of all the particles, potential energy included.
    - Still doesn't know: That's fine. Internal energy is the total kinetic and potential energy of all the particles.
    - She asks to move on or skip: Internal energy is the total kinetic and potential energy of all the particles.
 
-58. [4.11] Tutor asks: Quiz, question 3 of 6: while ice melts at 0 °C, which is true of its temperature?
-   Buttons: "It rises steadily" / "It falls" / "It stays at 0 °C" (she can also type)
-   - Right ("It stays at 0 °C"): Yes: it stays at 0 °C until all the ice has melted.
+60. [4.11] Tutor asks: Quiz, question 3 of 6: a tray of ice is melting. Which is true of its temperature while it melts?
+   Buttons: "It falls" / "It stays the same until all the ice has melted" / "It rises steadily" (she can also type)
+   - Right ("It stays the same until all the ice has melted"): Yes: it stays at 0 °C until all the ice has melted.
    - "It rises steadily" (wrong idea w1: ): Not quite: the energy raises the particles' potential energy, not their kinetic energy, so the temperature stays at 0 °C.
    - "It falls" (wrong idea w2: ): Not quite: energy is going in, and the temperature stays at 0 °C while it melts.
    - Still doesn't know: That's fine. While a substance changes state its temperature stays the same.
    - She asks to move on or skip: While a substance changes state its temperature stays the same.
 
-59. [4.12] Tutor asks: Quiz, question 4 of 6: a 50 g block of wax melts. What is the mass of the liquid wax?
+61. [4.12] Tutor asks: Quiz, question 4 of 6: a 50 g block of wax melts. What is the mass of the liquid wax?
    Buttons: "More than 50 g" / "50 g" / "Less than 50 g" (she can also type)
    - Right ("50 g"): Yes: 50 g. Mass stays the same in a change of state.
    - "Less than 50 g" (wrong idea w1: ): Not quite: 50 g. No particles are lost when wax melts, so the mass stays the same.
@@ -305,7 +311,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. Mass stays the same in a change of state, so the liquid wax is 50 g.
    - She asks to move on or skip: Mass stays the same in a change of state, so the liquid wax is 50 g.
 
-60. [4.13] Tutor asks: Quiz, question 5 of 6: which change turns a solid straight into a gas?
+62. [4.13] Tutor asks: Quiz, question 5 of 6: which change turns a solid straight into a gas?
    Buttons: "Melting" / "Condensing" / "Sublimation" (she can also type)
    - Right ("Sublimation"): Yes: sublimation.
    - "Melting" (wrong idea w1: ): Not quite: melting turns a solid into a liquid. Solid straight to gas is sublimation.
@@ -313,7 +319,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. Sublimation turns a solid straight into a gas, as dry ice does.
    - She asks to move on or skip: Sublimation turns a solid straight into a gas, as dry ice does.
 
-61. [4.14] Tutor asks: Quiz, question 6 of 6: mercury melts at −39 °C and boils at 357 °C. What state is it in at 400 °C?
+63. [4.14] Tutor asks: Quiz, question 6 of 6: mercury melts at −39 °C and boils at 357 °C. What state is it in at 400 °C?
    Buttons: "Liquid" / "Solid" / "Gas" (she can also type)
    - Right ("Gas"): Yes: 400 °C is above its boiling point, so it is a gas.
    - "Liquid" (wrong idea w1: ): Not quite: 400 °C is above its boiling point of 357 °C, so it has boiled: it is a gas.
@@ -321,10 +327,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: That's fine. 400 °C is above mercury's boiling point of 357 °C, so it is a gas.
    - She asks to move on or skip: 400 °C is above mercury's boiling point of 357 °C, so it is a gas.
 
-62. [4.15] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
+64. [4.15] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
    Button: Next
 
 ## The end
 
-63. Tutor: The lesson is finished. Tap a button to go on.
+65. Tutor: The lesson is finished. Tap a button to go on.
    Buttons: "Go to the slides" / "Home"

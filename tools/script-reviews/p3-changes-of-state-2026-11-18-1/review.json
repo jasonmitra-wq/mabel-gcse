@@ -1,0 +1,326 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 15956,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 12170,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 8041
+    },
+    "iterations": [
+      {
+        "input_tokens": 15956,
+        "output_tokens": 12170,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.6144480000000001,
+  "seconds": 111,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from earlier lessons. Ice is melting. Which is true of its temperature while it melts?\",\"what\":\"The lesson opens by treating her as revising. This is the very fact the lesson is about to teach, asked before anything has been taught, so a first-time learner can only guess.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.1a \\\"It rises steadily\\\"\",\"quote\":\"The energy pulls the particles apart instead of speeding them up.\",\"what\":\"The reply explains with particles and energy before either has been mentioned; that explanation is not taught until 1.4b and 1.5.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.1a don't know (first time)\",\"quote\":\"In the last lesson, melting ice stayed at one temperature until all of it had melted. Which button says that?\",\"what\":\"The answer is stated and then she is asked to pick the button that says it. It also leans on a 'last lesson' she has not had.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"L3\",\"turn\":\"1.1b\",\"quote\":\"Second: what is the specific heat capacity of a substance?\",\"what\":\"She has never been told what specific heat capacity is in this lesson, so she cannot answer. A technical term is used cold as the second thing she reads.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"1.1b don't know (first time)\",\"quote\":\"In the lesson on heating water, specific heat capacity was about warming 1 kg by 1 °C. Which button says that?\",\"what\":\"The answer is given and then asked for; she only has to match the words to a button.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.1\",\"quote\":\"how much energy it takes to change its state\",\"what\":\"'State' and 'change of state' are used throughout (1.6, 1.7, 1.9, 2.1) but the lesson never says that the states are solid, liquid and gas.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"1.3\",\"quote\":\"At 0 °C it goes flat while the ice melts, and stays flat until all the ice has melted.\",\"what\":\"This is the same fact already given in every branch of 1.1a ('stays at 0 °C until all the ice has melted'). The lesson's main surprise was spent in the warm-up.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"1.2 to 1.6\",\"quote\":\"Button: Next\",\"what\":\"Five told messages in a row (1.2, 1.3, 1.4, 1.4b, 1.5, 1.6) with only Next to press. The heating curve is described in words with no graph to look at or try in the script, and there is nothing hands-on anywhere in the lesson.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"L3\",\"turn\":\"1.4b\",\"quote\":\"Remember from the last lesson: temperature goes with the particles' kinetic energy\",\"what\":\"She is told to remember something she is meeting here for the first time. It should simply be taught.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"1.5\",\"quote\":\"On a flat part the energy overcomes forces between the particles, raising their potential energy, the energy stored by those forces. Their kinetic energy does not change, so neither does the temperature.\",\"what\":\"Four ideas in one message: energy still goes in, forces between particles (not mentioned before), the new term potential energy, and kinetic energy unchanged. This is the hardest step of the lesson and needs splitting.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.11 all of them\",\"quote\":\"Yes, your line has it: the substance is changing state; and the energy raises the particles' potential energy, not their kinetic energy, so the temperature stays the same.\",\"what\":\"The marking points are stitched together with '; and', which reads as a machine list rather than a sentence.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.2\",\"quote\":\"Melting and freezing use the specific latent heat of fusion\",\"what\":\"'Use' is loose: a change of state does not use a quantity. Say it is the energy needed to melt 1 kg, or given out when 1 kg freezes.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"2.3\",\"quote\":\"Boiling and condensing use the specific latent heat of vaporisation\",\"what\":\"'Condensing' appears here for the first time with no explanation (gas turning back to liquid), and 'vaporisation' is not explained the way 'fusion' was in 2.2.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F12\",\"turn\":\"2.5\",\"quote\":\"Boiling pulls the particles completely apart\",\"what\":\"The right option of the predict question is the explanation itself, so there is nothing left for her to explain. Every branch then says it again.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.5 right\",\"quote\":\"which needs far more energy than loosening them\",\"what\":\"'Loosening them' refers to melting, but melting is not mentioned in the reply, so the comparison hangs.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"2.4\",\"quote\":\"Vaporisation needs more because boiling must pull the particles completely apart, far from each other. Melting only loosens them: they stay close together.\",\"what\":\"This repeats what every reply to 2.5 has just told her, in nearly the same words.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.8 don't know (first time)\",\"quote\":\"Is the state changing or the temperature? And is it melting or boiling?\",\"what\":\"Two questions at once, neither of which the three buttons answer. The second is already answered by the word 'boiling' in the question.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.9 all of them\",\"quote\":\"Yes, your line has it: the energy needed to melt 1 kg of a substance; and with no change in temperature.\",\"what\":\"Clumsy stitched wording ('; and with') that is not a proper sentence.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.2 any other wrong answer\",\"quote\":\"Not quite: 1 130 000 J. E = mL = 0.5 × 2 260 000 = 1 130 000 J.\",\"what\":\"On her first calculation, one wrong answer gets the full answer straight away, with no hint and no second try. She gets no practice at putting it right.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.5 any other wrong answer\",\"quote\":\"Not quite: 66 800 J. 200 g = 0.2 kg, so E = 0.2 × 334 000 = 66 800 J.\",\"what\":\"Again the answer is handed over after one wrong attempt, with no chance to try again.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.7 any other wrong answer\",\"quote\":\"Not quite: 2 300 000 J/kg. The mass that boiled is 0.010 kg, so L = 23 000 ÷ 0.010 = 2 300 000 J/kg.\",\"what\":\"This is the hardest question (subtract the masses, then rearrange), and one slip gets the whole solution with no second attempt.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F10\",\"turn\":\"3.7 don't know (first time)\",\"quote\":\"Then L = E ÷ m.\",\"what\":\"The rearranged equation is used here before it has been stated. It is only written out later in 3.9b; in 3.4 she only saw 'divide both sides by 0.5'.\",\"severity\":\"minor\"},{\"fault\":\"P10\",\"turn\":\"3.8\",\"quote\":\"To measure L for melting ice, put crushed ice in a funnel with an electric heater in it, connected to a joulemeter.\",\"what\":\"The practical starts cold. There is no question first to check she knows what must be measured (energy and mass) and why.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.9b\",\"quote\":\"L = E ÷ m: the energy supplied divided by the mass of ice melted\",\"what\":\"Imprecise straight after 3.9: m should be the mass melted by the heater, that is, after taking away the mass melted by the room.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.10 don't know (first time)\",\"quote\":\"Is m then bigger or smaller than it should be?\",\"what\":\"The hint asks about m but the buttons are 'Too low' / 'Too high' for L. She will reason 'm is smaller' and tap 'Too low', which is marked wrong.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"3.11 all of them\",\"quote\":\"Yes, your line has it: the mass that changes state; and in kilograms.\",\"what\":\"Stitched wording that is not a sentence.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"4.1\",\"quote\":\"it takes in latent heat, over 2 000 000 J for every kilogram: evaporation takes in latent heat too, even far below 100 °C\",\"what\":\"Muddled sentence: it says sweat takes in latent heat and then that evaporation takes it in 'too', as if it were a different thing. Too many ideas are packed around one colon.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"4.1\",\"quote\":\"As it evaporates from your skin\",\"what\":\"Evaporation is new here and is never set against boiling. So far she has been told the change of state happens at 100 °C on a flat part, so evaporation at skin temperature needs its own plain sentence.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"4.2\",\"quote\":\"In humid air sweat evaporates slowly\",\"what\":\"'Humid' is not explained (air that already holds a lot of water vapour).\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"4.3\",\"quote\":\"When steam touches skin it condenses, giving out its latent heat of vaporisation to the skin\",\"what\":\"This repeats what every reply to 4.5 has just said; only the figure is new.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"4.4\",\"quote\":\"Once the steam has condensed, the hot water on the skin cools and gives out more energy.\",\"what\":\"Already said in the 4.5 replies ('then more energy as the water cools').\",\"severity\":\"minor\"},{\"fault\":\"P16\",\"turn\":\"4.4\",\"quote\":\"Water at 100 °C gives out only this cooling energy.\",\"what\":\"'Cooling energy' is an invented term. Say 'only the energy it gives out as it cools'.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.6 all of them\",\"quote\":\"Yes, your line has it: the sweat evaporates; and it takes energy (latent heat) from your body.\",\"what\":\"Stitched wording again.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.10 any other wrong answer\",\"quote\":\"Not quite: 226 000 J. 100 g = 0.1 kg, so E = 0.1 × 2 260 000 = 226 000 J.\",\"what\":\"The likeliest slip here (not changing grams to kilograms) has no reply of its own, unlike 3.5.\",\"severity\":\"minor\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":3},{\"fault\":\"F3\",\"instances\":5},{\"fault\":\"F8\",\"instances\":2},{\"fault\":\"F1\",\"instances\":4},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"F12\",\"instances\":1},{\"fault\":\"F10\",\"instances\":1},{\"fault\":\"P10\",\"instances\":1},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"new\",\"instances\":13}],\"overall\":\"Not as it is. The physics and the arithmetic are sound, but the opening treats her as revising: it asks the lesson's own headline fact and the meaning of specific heat capacity before anything has been taught, and its don't-know hints give the answer and ask for the button. The key explanation in 1.5 and the sweat message in 4.1 pack too much into one bubble, both predict questions are followed by messages repeating their feedback, and the 3.10 hint would steer her to the wrong button. I would fix the opening, 1.5, 4.1 and the 3.10 hint, let her retry the calculations, and give her a heating curve to look at before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from earlier lessons. Ice is melting. Which is true of its temperature while it melts?",
+      "what": "The lesson opens by treating her as revising. This is the very fact the lesson is about to teach, asked before anything has been taught, so a first-time learner can only guess.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1a \"It rises steadily\"",
+      "quote": "The energy pulls the particles apart instead of speeding them up.",
+      "what": "The reply explains with particles and energy before either has been mentioned; that explanation is not taught until 1.4b and 1.5.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.1a don't know (first time)",
+      "quote": "In the last lesson, melting ice stayed at one temperature until all of it had melted. Which button says that?",
+      "what": "The answer is stated and then she is asked to pick the button that says it. It also leans on a 'last lesson' she has not had.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.1b",
+      "quote": "Second: what is the specific heat capacity of a substance?",
+      "what": "She has never been told what specific heat capacity is in this lesson, so she cannot answer. A technical term is used cold as the second thing she reads.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.1b don't know (first time)",
+      "quote": "In the lesson on heating water, specific heat capacity was about warming 1 kg by 1 °C. Which button says that?",
+      "what": "The answer is given and then asked for; she only has to match the words to a button.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1",
+      "quote": "how much energy it takes to change its state",
+      "what": "'State' and 'change of state' are used throughout (1.6, 1.7, 1.9, 2.1) but the lesson never says that the states are solid, liquid and gas.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.3",
+      "quote": "At 0 °C it goes flat while the ice melts, and stays flat until all the ice has melted.",
+      "what": "This is the same fact already given in every branch of 1.1a ('stays at 0 °C until all the ice has melted'). The lesson's main surprise was spent in the warm-up.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "1.2 to 1.6",
+      "quote": "Button: Next",
+      "what": "Five told messages in a row (1.2, 1.3, 1.4, 1.4b, 1.5, 1.6) with only Next to press. The heating curve is described in words with no graph to look at or try in the script, and there is nothing hands-on anywhere in the lesson.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.4b",
+      "quote": "Remember from the last lesson: temperature goes with the particles' kinetic energy",
+      "what": "She is told to remember something she is meeting here for the first time. It should simply be taught.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "1.5",
+      "quote": "On a flat part the energy overcomes forces between the particles, raising their potential energy, the energy stored by those forces. Their kinetic energy does not change, so neither does the temperature.",
+      "what": "Four ideas in one message: energy still goes in, forces between particles (not mentioned before), the new term potential energy, and kinetic energy unchanged. This is the hardest step of the lesson and needs splitting.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.11 all of them",
+      "quote": "Yes, your line has it: the substance is changing state; and the energy raises the particles' potential energy, not their kinetic energy, so the temperature stays the same.",
+      "what": "The marking points are stitched together with '; and', which reads as a machine list rather than a sentence.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.2",
+      "quote": "Melting and freezing use the specific latent heat of fusion",
+      "what": "'Use' is loose: a change of state does not use a quantity. Say it is the energy needed to melt 1 kg, or given out when 1 kg freezes.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.3",
+      "quote": "Boiling and condensing use the specific latent heat of vaporisation",
+      "what": "'Condensing' appears here for the first time with no explanation (gas turning back to liquid), and 'vaporisation' is not explained the way 'fusion' was in 2.2.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F12",
+      "turn": "2.5",
+      "quote": "Boiling pulls the particles completely apart",
+      "what": "The right option of the predict question is the explanation itself, so there is nothing left for her to explain. Every branch then says it again.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.5 right",
+      "quote": "which needs far more energy than loosening them",
+      "what": "'Loosening them' refers to melting, but melting is not mentioned in the reply, so the comparison hangs.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.4",
+      "quote": "Vaporisation needs more because boiling must pull the particles completely apart, far from each other. Melting only loosens them: they stay close together.",
+      "what": "This repeats what every reply to 2.5 has just told her, in nearly the same words.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8 don't know (first time)",
+      "quote": "Is the state changing or the temperature? And is it melting or boiling?",
+      "what": "Two questions at once, neither of which the three buttons answer. The second is already answered by the word 'boiling' in the question.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.9 all of them",
+      "quote": "Yes, your line has it: the energy needed to melt 1 kg of a substance; and with no change in temperature.",
+      "what": "Clumsy stitched wording ('; and with') that is not a proper sentence.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.2 any other wrong answer",
+      "quote": "Not quite: 1 130 000 J. E = mL = 0.5 × 2 260 000 = 1 130 000 J.",
+      "what": "On her first calculation, one wrong answer gets the full answer straight away, with no hint and no second try. She gets no practice at putting it right.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5 any other wrong answer",
+      "quote": "Not quite: 66 800 J. 200 g = 0.2 kg, so E = 0.2 × 334 000 = 66 800 J.",
+      "what": "Again the answer is handed over after one wrong attempt, with no chance to try again.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.7 any other wrong answer",
+      "quote": "Not quite: 2 300 000 J/kg. The mass that boiled is 0.010 kg, so L = 23 000 ÷ 0.010 = 2 300 000 J/kg.",
+      "what": "This is the hardest question (subtract the masses, then rearrange), and one slip gets the whole solution with no second attempt.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F10",
+      "turn": "3.7 don't know (first time)",
+      "quote": "Then L = E ÷ m.",
+      "what": "The rearranged equation is used here before it has been stated. It is only written out later in 3.9b; in 3.4 she only saw 'divide both sides by 0.5'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P10",
+      "turn": "3.8",
+      "quote": "To measure L for melting ice, put crushed ice in a funnel with an electric heater in it, connected to a joulemeter.",
+      "what": "The practical starts cold. There is no question first to check she knows what must be measured (energy and mass) and why.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.9b",
+      "quote": "L = E ÷ m: the energy supplied divided by the mass of ice melted",
+      "what": "Imprecise straight after 3.9: m should be the mass melted by the heater, that is, after taking away the mass melted by the room.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.10 don't know (first time)",
+      "quote": "Is m then bigger or smaller than it should be?",
+      "what": "The hint asks about m but the buttons are 'Too low' / 'Too high' for L. She will reason 'm is smaller' and tap 'Too low', which is marked wrong.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "3.11 all of them",
+      "quote": "Yes, your line has it: the mass that changes state; and in kilograms.",
+      "what": "Stitched wording that is not a sentence.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "4.1",
+      "quote": "it takes in latent heat, over 2 000 000 J for every kilogram: evaporation takes in latent heat too, even far below 100 °C",
+      "what": "Muddled sentence: it says sweat takes in latent heat and then that evaporation takes it in 'too', as if it were a different thing. Too many ideas are packed around one colon.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.1",
+      "quote": "As it evaporates from your skin",
+      "what": "Evaporation is new here and is never set against boiling. So far she has been told the change of state happens at 100 °C on a flat part, so evaporation at skin temperature needs its own plain sentence.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.2",
+      "quote": "In humid air sweat evaporates slowly",
+      "what": "'Humid' is not explained (air that already holds a lot of water vapour).",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.3",
+      "quote": "When steam touches skin it condenses, giving out its latent heat of vaporisation to the skin",
+      "what": "This repeats what every reply to 4.5 has just said; only the figure is new.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.4",
+      "quote": "Once the steam has condensed, the hot water on the skin cools and gives out more energy.",
+      "what": "Already said in the 4.5 replies ('then more energy as the water cools').",
+      "severity": "minor"
+    },
+    {
+      "fault": "P16",
+      "turn": "4.4",
+      "quote": "Water at 100 °C gives out only this cooling energy.",
+      "what": "'Cooling energy' is an invented term. Say 'only the energy it gives out as it cools'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.6 all of them",
+      "quote": "Yes, your line has it: the sweat evaporates; and it takes energy (latent heat) from your body.",
+      "what": "Stitched wording again.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.10 any other wrong answer",
+      "quote": "Not quite: 226 000 J. 100 g = 0.1 kg, so E = 0.1 × 2 260 000 = 226 000 J.",
+      "what": "The likeliest slip here (not changing grams to kilograms) has no reply of its own, unlike 3.5.",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 13
+    },
+    {
+      "fault": "F3",
+      "instances": 5
+    },
+    {
+      "fault": "F1",
+      "instances": 4
+    },
+    {
+      "fault": "L3",
+      "instances": 3
+    },
+    {
+      "fault": "F8",
+      "instances": 2
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    },
+    {
+      "fault": "F12",
+      "instances": 1
+    },
+    {
+      "fault": "F10",
+      "instances": 1
+    },
+    {
+      "fault": "P10",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it is. The physics and the arithmetic are sound, but the opening treats her as revising: it asks the lesson's own headline fact and the meaning of specific heat capacity before anything has been taught, and its don't-know hints give the answer and ask for the button. The key explanation in 1.5 and the sweat message in 4.1 pack too much into one bubble, both predict questions are followed by messages repeating their feedback, and the 3.10 hint would steer her to the wrong button. I would fix the opening, 1.5, 4.1 and the 3.10 hint, let her retry the calculations, and give her a heating curve to look at before she uses it."
+}

@@ -1,0 +1,312 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 14530,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 10122,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 5943
+    },
+    "iterations": [
+      {
+        "input_tokens": 14530,
+        "output_tokens": 10122,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.52112,
+  "seconds": 95,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from earlier lessons.\",\"what\":\"The lesson opens by testing her on earlier work (states of matter, energy stores) that she may not have met. A first-time learner is being quizzed before she has been taught anything.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.1b\",\"quote\":\"Second: which energy store is filled by movement?\",\"what\":\"\\\"Energy store\\\", and a store being \\\"filled\\\", are used with no explanation. She cannot answer this from everyday life or from anything the lesson has said.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.1b don't know (first time)\",\"quote\":\"The kinetic store is the one for moving things. Which button is that?\",\"what\":\"The hint states the answer and then asks her to press it. It is not an easier question, just the answer.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.1b wrong answer (Thermal)\",\"quote\":\"Not quite: the thermal store is about how hot something is. Movement fills the kinetic store.\",\"what\":\"This separates \\\"hot\\\" from \\\"movement\\\", yet 2.2 then says temperature is the kinetic energy of the particles. A girl who chose Thermal is told something the lesson later seems to contradict.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"1.2\",\"quote\":\"The particles of a gas are usually molecules.\",\"what\":\"\\\"Molecules\\\" is dropped in without saying what a molecule is, and the script then says \\\"particles\\\" throughout although the key points say molecules. The message also carries a second idea (different speeds).\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"1.3\",\"quote\":\"it pushes on the wall with a tiny force\",\"what\":\"\\\"Force\\\" is used here and only explained in the next message (1.4). The message also introduces \\\"collision\\\" at the same time.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"1.4\",\"quote\":\"A force is a push or a pull, measured in newtons (N). Billions of collisions every second add up to a steady push on every part of the wall, at right angles to the wall.\",\"what\":\"Two separate ideas in one bubble: the definition and unit of force, and collisions adding up to a steady push at right angles. \\\"At right angles to the wall\\\" is given with no explanation or picture.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"1.5\",\"quote\":\"Pressure is the force on each square metre of a surface: pressure = force ÷ area. With the force in newtons and the area in square metres (m²), the pressure is in pascals (Pa).\",\"what\":\"Pressure, the equation, area in m² and the pascal all arrive in one message. That is several new terms at once for a first-time learner.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P13\",\"turn\":\"1.5c\",\"quote\":\"A force of 600 N pushes evenly on an area of 2 m². What is the pressure, in Pa?\",\"what\":\"She is asked to calculate with pressure = force ÷ area without having seen a worked example. Key point 3 gives worked examples first; this equation gets none.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.7\",\"quote\":\"More air is pumped into a sealed box\",\"what\":\"A box that is sealed cannot have air pumped into it. The wording contradicts itself; better to say the box is sealed after more air is pumped in.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.7 don't know (first time)\",\"quote\":\"With more particles in the box, are there more or fewer collisions with the walls each second? (same buttons)\",\"what\":\"The hint asks \\\"more or fewer\\\", but the buttons still read \\\"It falls / It rises / It stays the same\\\". None of them answers the question she has just been asked.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.9 right answer\",\"quote\":\"The stretched rubber pulls inwards, and the two balance.\",\"what\":\"This adds a new idea about balanced forces inside the praise, and it leaves out the outside air, which also pushes inwards. It is imprecise physics that she has not been prepared for.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.10 don't know\",\"quote\":\"No problem. A good line would be: gas pressure is caused by the particles colliding with the walls of their container.\",\"what\":\"The script's own rule is an easier step first on \\\"don't know\\\". Here, and in the other \\\"in one line\\\" steps, she is simply handed the answer.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"2.1\",\"quote\":\"Keep a gas in a sealed, rigid container, one that cannot bend or stretch. Then its volume, the space it takes up, cannot change: the gas is at constant volume.\",\"what\":\"\\\"Rigid\\\", \\\"volume\\\" and \\\"constant volume\\\" are all new in one message. Each is explained, but that is three terms in one bubble.\",\"severity\":\"minor\"},{\"fault\":\"P16\",\"turn\":\"2.2\",\"quote\":\"The temperature of a gas goes with the average kinetic energy of its particles\",\"what\":\"\\\"Goes with\\\" is the tutor's own vague wording for the lesson's \\\"is related to\\\". It does not say that higher temperature means higher average kinetic energy, and \\\"average\\\" is not unpacked.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.3 don't know (first time)\",\"quote\":\"Hotter particles move faster. Do faster particles push on the walls more, or less? (same buttons)\",\"what\":\"The hint asks \\\"more, or less\\\", but the buttons are about the pressure falling, rising or staying the same. \\\"Hotter particles\\\" is also loose: it is the gas that is hotter, not single particles.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"2.3 wrong answer (It falls)\",\"quote\":\"Not quite: it rises. Next, why.\",\"what\":\"The reply does nothing with her idea that the pressure falls. It only states the right answer.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.6\",\"quote\":\"A sealed can of gas is put in a freezer. Why does the pressure inside fall?\",\"what\":\"Cooling is never taught in a message of its own (the key point's \\\"Cool the gas, and the opposite happens\\\" is missing). The question tells her the pressure falls, and the right option is 2.4 turned round, so it tests little.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.6 don't know (first time)\",\"quote\":\"Cooling is the opposite of heating. What happens to the speed of the particles? (same buttons)\",\"what\":\"The hint asks about speed, but none of the three buttons is a statement about speed alone. The smaller question cannot be answered with the buttons offered.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.8\",\"quote\":\"In one line: why does heating a sealed gas raise its pressure?\",\"what\":\"\\\"A sealed gas\\\" is loose; it should be a gas in a sealed rigid container, at constant volume, which is the condition this key point is about.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.8 all of them\",\"quote\":\"Yes, your line has it: the particles move faster; and they hit the walls more often each second; and they hit harder (with more force).\",\"what\":\"The stitched \\\"; and … ; and\\\" reads like a machine, not a teacher. The same pattern recurs in the replies at 3.11 and 4.6.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"3.1\",\"quote\":\"Now keep the temperature fixed, and the amount of gas fixed too: none let in or out. Change the volume instead, like pushing in the plunger of a sealed syringe. Squashing a gas is called compressing it.\",\"what\":\"One bubble holds fixed temperature, fixed amount of gas, changing the volume, the syringe and the new word \\\"compressing\\\". That is too many ideas at once.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.2 wrong answer (It halves)\",\"quote\":\"Not quite: it doubles. Next, why.\",\"what\":\"The same bare reply is used for \\\"It halves\\\" and \\\"It stays the same\\\". Neither says anything about why her idea was wrong.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.4\",\"quote\":\"For a fixed mass of gas at constant temperature\",\"what\":\"3.1 said \\\"the amount of gas fixed\\\"; now it is \\\"a fixed mass of gas\\\" with no link between the two phrases. \\\"Constant\\\" is also used as a noun (\\\"= constant\\\") without comment.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"3.7\",\"quote\":\"as long as the before and after values use the same units\",\"what\":\"This comes before any calculation, so she has not yet met any \\\"before and after values\\\". It belongs after the first worked example (3.6), where it would make sense.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.10\",\"quote\":\"A gas expands into a bigger volume at constant temperature. Which is true?\",\"what\":\"\\\"Expands\\\" has not been explained; only \\\"compressing\\\" was defined. It is a small gap because \\\"into a bigger volume\\\" helps.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.2\",\"quote\":\"Push a piston into a gas and your force moves the gas: you are doing work on the gas.\",\"what\":\"The force moves the piston and squashes the gas; \\\"moves the gas\\\" is imprecise. The bubble also both defines a piston and makes the work point.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"4.3\",\"quote\":\"the internal energy of the gas: the total kinetic and potential energy of all its particles. Potential energy is the energy stored by the forces between particles.\",\"what\":\"Internal energy and potential energy are both new in one message. \\\"Energy stored by the forces between particles\\\" is abstract and would lose a first-time learner.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"4.5\",\"quote\":\"Each push does work on the air, raising its internal energy\",\"what\":\"4.2 and 4.3 have just said that pushing does work on the gas and the energy goes into its internal energy. The right button repeats the two previous messages.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.5\",\"quote\":\"Predict: you pump up a tyre quickly, pushing the pump's handle in again and again. Why does the air in the pump get warmer?\",\"what\":\"It says \\\"Predict\\\" but then tells her the outcome and asks why. The link from internal energy to temperature is only taught afterwards in 4.4, so she cannot yet explain why the air is warmer.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"4.13\",\"quote\":\"why does pumping a tyre quickly warm the air in the pump?\",\"what\":\"This is the third time the same pump question is asked (4.5, 4.6 and here) with the same answer. One of them should be a fresh context.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole script\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on anywhere: no particle box to heat or squash, and no picture is mentioned. It is 48 steps of reading and tapping Next, and I think she would get bored (M1).\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":1},{\"fault\":\"F3\",\"instances\":5},{\"fault\":\"F8\",\"instances\":2},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"F5\",\"instances\":3},{\"fault\":\"P13\",\"instances\":1},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"F2\",\"instances\":1},{\"fault\":\"F1\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":14}],\"overall\":\"Not quite as it is, though it is close. The physics is essentially sound and the sums all check, but the \\\"don't know\\\" hints at 1.7, 2.3 and 2.6 ask a question the buttons cannot answer, and several messages pile up new terms (1.5, 2.1, 3.1, 4.3). The opening leans on \\\"earlier lessons\\\" and an unexplained \\\"energy store\\\", cooling is questioned without being taught, and 4.5 asks why the air warms before 4.4 links internal energy to temperature. I would fix those, add a worked example for pressure = force ÷ area and something hands-on such as a particle box, and then let her use it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from earlier lessons.",
+      "what": "The lesson opens by testing her on earlier work (states of matter, energy stores) that she may not have met. A first-time learner is being quizzed before she has been taught anything.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1b",
+      "quote": "Second: which energy store is filled by movement?",
+      "what": "\"Energy store\", and a store being \"filled\", are used with no explanation. She cannot answer this from everyday life or from anything the lesson has said.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.1b don't know (first time)",
+      "quote": "The kinetic store is the one for moving things. Which button is that?",
+      "what": "The hint states the answer and then asks her to press it. It is not an easier question, just the answer.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1b wrong answer (Thermal)",
+      "quote": "Not quite: the thermal store is about how hot something is. Movement fills the kinetic store.",
+      "what": "This separates \"hot\" from \"movement\", yet 2.2 then says temperature is the kinetic energy of the particles. A girl who chose Thermal is told something the lesson later seems to contradict.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.2",
+      "quote": "The particles of a gas are usually molecules.",
+      "what": "\"Molecules\" is dropped in without saying what a molecule is, and the script then says \"particles\" throughout although the key points say molecules. The message also carries a second idea (different speeds).",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.3",
+      "quote": "it pushes on the wall with a tiny force",
+      "what": "\"Force\" is used here and only explained in the next message (1.4). The message also introduces \"collision\" at the same time.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "1.4",
+      "quote": "A force is a push or a pull, measured in newtons (N). Billions of collisions every second add up to a steady push on every part of the wall, at right angles to the wall.",
+      "what": "Two separate ideas in one bubble: the definition and unit of force, and collisions adding up to a steady push at right angles. \"At right angles to the wall\" is given with no explanation or picture.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.5",
+      "quote": "Pressure is the force on each square metre of a surface: pressure = force ÷ area. With the force in newtons and the area in square metres (m²), the pressure is in pascals (Pa).",
+      "what": "Pressure, the equation, area in m² and the pascal all arrive in one message. That is several new terms at once for a first-time learner.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P13",
+      "turn": "1.5c",
+      "quote": "A force of 600 N pushes evenly on an area of 2 m². What is the pressure, in Pa?",
+      "what": "She is asked to calculate with pressure = force ÷ area without having seen a worked example. Key point 3 gives worked examples first; this equation gets none.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.7",
+      "quote": "More air is pumped into a sealed box",
+      "what": "A box that is sealed cannot have air pumped into it. The wording contradicts itself; better to say the box is sealed after more air is pumped in.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.7 don't know (first time)",
+      "quote": "With more particles in the box, are there more or fewer collisions with the walls each second? (same buttons)",
+      "what": "The hint asks \"more or fewer\", but the buttons still read \"It falls / It rises / It stays the same\". None of them answers the question she has just been asked.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.9 right answer",
+      "quote": "The stretched rubber pulls inwards, and the two balance.",
+      "what": "This adds a new idea about balanced forces inside the praise, and it leaves out the outside air, which also pushes inwards. It is imprecise physics that she has not been prepared for.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10 don't know",
+      "quote": "No problem. A good line would be: gas pressure is caused by the particles colliding with the walls of their container.",
+      "what": "The script's own rule is an easier step first on \"don't know\". Here, and in the other \"in one line\" steps, she is simply handed the answer.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "2.1",
+      "quote": "Keep a gas in a sealed, rigid container, one that cannot bend or stretch. Then its volume, the space it takes up, cannot change: the gas is at constant volume.",
+      "what": "\"Rigid\", \"volume\" and \"constant volume\" are all new in one message. Each is explained, but that is three terms in one bubble.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P16",
+      "turn": "2.2",
+      "quote": "The temperature of a gas goes with the average kinetic energy of its particles",
+      "what": "\"Goes with\" is the tutor's own vague wording for the lesson's \"is related to\". It does not say that higher temperature means higher average kinetic energy, and \"average\" is not unpacked.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.3 don't know (first time)",
+      "quote": "Hotter particles move faster. Do faster particles push on the walls more, or less? (same buttons)",
+      "what": "The hint asks \"more, or less\", but the buttons are about the pressure falling, rising or staying the same. \"Hotter particles\" is also loose: it is the gas that is hotter, not single particles.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "2.3 wrong answer (It falls)",
+      "quote": "Not quite: it rises. Next, why.",
+      "what": "The reply does nothing with her idea that the pressure falls. It only states the right answer.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.6",
+      "quote": "A sealed can of gas is put in a freezer. Why does the pressure inside fall?",
+      "what": "Cooling is never taught in a message of its own (the key point's \"Cool the gas, and the opposite happens\" is missing). The question tells her the pressure falls, and the right option is 2.4 turned round, so it tests little.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.6 don't know (first time)",
+      "quote": "Cooling is the opposite of heating. What happens to the speed of the particles? (same buttons)",
+      "what": "The hint asks about speed, but none of the three buttons is a statement about speed alone. The smaller question cannot be answered with the buttons offered.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8",
+      "quote": "In one line: why does heating a sealed gas raise its pressure?",
+      "what": "\"A sealed gas\" is loose; it should be a gas in a sealed rigid container, at constant volume, which is the condition this key point is about.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8 all of them",
+      "quote": "Yes, your line has it: the particles move faster; and they hit the walls more often each second; and they hit harder (with more force).",
+      "what": "The stitched \"; and … ; and\" reads like a machine, not a teacher. The same pattern recurs in the replies at 3.11 and 4.6.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.1",
+      "quote": "Now keep the temperature fixed, and the amount of gas fixed too: none let in or out. Change the volume instead, like pushing in the plunger of a sealed syringe. Squashing a gas is called compressing it.",
+      "what": "One bubble holds fixed temperature, fixed amount of gas, changing the volume, the syringe and the new word \"compressing\". That is too many ideas at once.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.2 wrong answer (It halves)",
+      "quote": "Not quite: it doubles. Next, why.",
+      "what": "The same bare reply is used for \"It halves\" and \"It stays the same\". Neither says anything about why her idea was wrong.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.4",
+      "quote": "For a fixed mass of gas at constant temperature",
+      "what": "3.1 said \"the amount of gas fixed\"; now it is \"a fixed mass of gas\" with no link between the two phrases. \"Constant\" is also used as a noun (\"= constant\") without comment.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.7",
+      "quote": "as long as the before and after values use the same units",
+      "what": "This comes before any calculation, so she has not yet met any \"before and after values\". It belongs after the first worked example (3.6), where it would make sense.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.10",
+      "quote": "A gas expands into a bigger volume at constant temperature. Which is true?",
+      "what": "\"Expands\" has not been explained; only \"compressing\" was defined. It is a small gap because \"into a bigger volume\" helps.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.2",
+      "quote": "Push a piston into a gas and your force moves the gas: you are doing work on the gas.",
+      "what": "The force moves the piston and squashes the gas; \"moves the gas\" is imprecise. The bubble also both defines a piston and makes the work point.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "4.3",
+      "quote": "the internal energy of the gas: the total kinetic and potential energy of all its particles. Potential energy is the energy stored by the forces between particles.",
+      "what": "Internal energy and potential energy are both new in one message. \"Energy stored by the forces between particles\" is abstract and would lose a first-time learner.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.5",
+      "quote": "Each push does work on the air, raising its internal energy",
+      "what": "4.2 and 4.3 have just said that pushing does work on the gas and the energy goes into its internal energy. The right button repeats the two previous messages.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.5",
+      "quote": "Predict: you pump up a tyre quickly, pushing the pump's handle in again and again. Why does the air in the pump get warmer?",
+      "what": "It says \"Predict\" but then tells her the outcome and asks why. The link from internal energy to temperature is only taught afterwards in 4.4, so she cannot yet explain why the air is warmer.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.13",
+      "quote": "why does pumping a tyre quickly warm the air in the pump?",
+      "what": "This is the third time the same pump question is asked (4.5, 4.6 and here) with the same answer. One of them should be a fresh context.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole script",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on anywhere: no particle box to heat or squash, and no picture is mentioned. It is 48 steps of reading and tapping Next, and I think she would get bored (M1).",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 14
+    },
+    {
+      "fault": "F3",
+      "instances": 5
+    },
+    {
+      "fault": "F5",
+      "instances": 3
+    },
+    {
+      "fault": "F8",
+      "instances": 2
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "P13",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    },
+    {
+      "fault": "F2",
+      "instances": 1
+    },
+    {
+      "fault": "F1",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "Not quite as it is, though it is close. The physics is essentially sound and the sums all check, but the \"don't know\" hints at 1.7, 2.3 and 2.6 ask a question the buttons cannot answer, and several messages pile up new terms (1.5, 2.1, 3.1, 4.3). The opening leans on \"earlier lessons\" and an unexplained \"energy store\", cooling is questioned without being taught, and 4.5 asks why the air warms before 4.4 links internal energy to temperature. I would fix those, add a worked example for pressure = force ÷ area and something hands-on such as a particle box, and then let her use it."
+}

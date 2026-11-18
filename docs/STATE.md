@@ -1,18 +1,18 @@
 # mabel-gcse — State
 
-Runbook position: Phase B, topic P3 (brief docs/briefs/2026-11-15-script-four-topics.md). P1 done 2026-11-17: p1-energy-stores, p1-kinetic-potential, p1-conservation, p1-efficiency, p1-power, p1-heating, p1-national-grid scripted. P2 rest done 2026-11-15: p2-series-parallel, p2-domestic, p2-power-energy, p2-static scripted. Phase A, A9 pilot: p2-current-voltage and p2-components are scripted AI lessons, waiting for Mabel's delayed test.
+Runbook position: Phase B, topic G5 (brief docs/briefs/2026-11-15-script-four-topics.md; G5 starts with the extra steps G-a to G-d). P3 done 2026-11-18: p3-particle-model, p3-density, p3-changes-of-state, p3-pressure scripted. P1 done 2026-11-17: p1-energy-stores, p1-kinetic-potential, p1-conservation, p1-efficiency, p1-power, p1-heating, p1-national-grid scripted. P2 rest done 2026-11-15: p2-series-parallel, p2-domestic, p2-power-energy, p2-static scripted. Phase A, A9 pilot: p2-current-voltage and p2-components are scripted AI lessons, waiting for Mabel's delayed test.
 
-Month spend (November 2026): 21.26 USD of the 100 cap (coverage and faults 4.33, scripted teaching 1.25, p2-components 1.66, Phase B P2 rest 5.08, Phase B P1 8.94), plus two reviews cut off by network errors with no cost reported (at most about 1.40 together). Phase B stops at 95.
+Month spend (November 2026): 26.35 USD of the 100 cap (coverage and faults 4.33, scripted teaching 1.25, p2-components 1.66, Phase B P2 rest 5.08, Phase B P1 8.94, Phase B P3 5.09), plus four reviews cut off by network errors with no cost reported (at most about 2.70 together). Phase B stops at 95.
 
 ### Phase B — scripted AI lessons (brief 2026-11-15)
 
-Scripted lessons: p2-current-voltage, p2-components, p2-series-parallel, p2-domestic, p2-power-energy, p2-static, p1-energy-stores, p1-kinetic-potential, p1-conservation, p1-efficiency, p1-power, p1-heating, p1-national-grid.
+Scripted lessons: p2-current-voltage, p2-components, p2-series-parallel, p2-domestic, p2-power-energy, p2-static, p1-energy-stores, p1-kinetic-potential, p1-conservation, p1-efficiency, p1-power, p1-heating, p1-national-grid, p3-particle-model, p3-density, p3-changes-of-state, p3-pressure.
 
 | Topic | Lessons scripted | Review findings (before → after) | Site tests | Cost (USD) | Commit |
 |---|---|---|---|---|---|
 | P2 rest | p2-series-parallel, p2-domestic, p2-power-energy, p2-static (walk 0 each; self-audited) | review 1 → review 2: 41 → 33, 30 → 24, 38 → 21, 34 → 24 (second reviews allowed: F-faults over twice in each first review); p2-static review 1 found a physics error (polythene rubbed with a cloth made positive), fixed | site tests (laptop, persona mabel, no judge): all four PASS; p2-series-parallel first run FAIL on a tester fault (Home not seen as leaving), tester fixed, re-run PASS | 5.08 (+ two cut-off reviews, cost not reported) | this commit |
 | P1 | p1-energy-stores, p1-kinetic-potential, p1-conservation, p1-efficiency, p1-power, p1-heating, p1-national-grid (walk 0 each; self-audited) | review 1 → review 2: 41 → 43, 28 → 26, 45 → 38, 24 → 30, 28 → 23, 30 → 20, 46 → 35 (242 → 215; second reviews allowed: an F-fault over twice in each first review); fact check: 18 findings, fixed in the lesson files; first attempt blocked by an expired API key, renewed by Jason | all seven PASS (laptop, persona mabel, no judge, whole lesson); 4 transcript findings, all the live AI starting its answer to her question with "That question…" (shared answer prompt, not changed) | 8.94 (fact check 0.56, reviews 4.07 + 3.99, site tests 0.32) | this commit |
-| P3 | – | – | – | – | – |
+| P3 | p3-particle-model, p3-density, p3-changes-of-state, p3-pressure (walk 0 each; self-audited); p3-particle-model lesson gets pictures for its two diagrams | review 1 → review 2: 38 → 36, 35 → 22, 24 → 34, 45 → 32 (second reviews allowed: an F-fault over twice in each first review; changes-of-state review 2 re-checked a script grown by the round-1 fixes); fact check: 4 errors and 1 gap fixed in the lesson files (P3-FIX-LOG); the shell key was stale, the Windows user key worked | all four PASS (laptop, persona mabel, no judge, whole lesson); 1 transcript finding, the live AI starting its answer to her question with "That question…" (shared answer prompt, not changed) | 5.09 (fact check 0.31, reviews 2.27 + 2.32, site tests 0.20; + two cut-off reviews, cost not reported) | this commit |
 | G5 | – | – | – | – | – |
 
 ## Runbook v3 switch (2026-10-19)

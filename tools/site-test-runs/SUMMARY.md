@@ -101,3 +101,7 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-11-17 | p1-power | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-17/p1-power | $0.0413
 - 2026-11-17 | p1-heating | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-17/p1-heating | $0.0430
 - 2026-11-17 | p1-national-grid | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-17/p1-national-grid | $0.0320
+- 2026-11-18 | p3-particle-model | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-18/p3-particle-model | $0.0332
+- 2026-11-18 | p3-density | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-18/p3-density | $0.0396
+- 2026-11-18 | p3-changes-of-state | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-18/p3-changes-of-state | $0.0767
+- 2026-11-18 | p3-pressure | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-18/p3-pressure | $0.0491

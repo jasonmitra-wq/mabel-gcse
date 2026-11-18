@@ -1,0 +1,224 @@
+# Site test: p3-pressure (lesson, 2026-11-18)
+
+**PASS** · cost $0.0491 (34 tool calls, 28 calls from the site; tutor claude-sonnet-5-5 $0.0181)
+
+## Judge
+
+```json
+{
+  "broken": [],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": []
+}
+```
+
+## Transcript checks (tools/check-transcript.js)
+
+- T13-first [dangling-opener, F2] That question is asking how much pressure you get when a known push is spread over a known amount of surface.
+
+## Transcript
+
+    Lesson p3-pressure (Physics › Particle model of matter › Pressure in gases).
+    [screenshot 01-home-laptop.png] home
+    [screenshot 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p3-laptop.png] lessons-P3
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! This lesson is about the pressure a gas makes: what causes it, and how heating or squashing a gas changes it.
+    [screenshot 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (tapped "Next")
+    T1: First, two quick questions from earlier lessons. Everything is made of tiny particles. How do the particles in a gas move?
+    [side picture after T1: none; newest in the chat: none]
+    S2 (try): fast, random directions
+    T2: Second: which energy store is filled by movement?
+      [T2 shown first: Yes: gas particles are far apart and move fast in random directions.]
+    S3 (idk): idk
+    T3: A car has more energy in this store the faster it goes. Which store is that?
+    [screenshot 06-exchange-3-laptop.png] exchange-3
+      [T3 easier step]
+    S4 (try, tapped the button): kinetic
+    T4: Now this lesson. Gas particles do not all move at the same speed: at any moment some are fast and some are slow.
+      [T4 shown first: Yes: kinetic, the store for moving things.]
+    S5 (tapped "Next")
+    T5: A moving particle has kinetic energy: the energy of movement. The faster it moves, the more kinetic energy it has.
+    S6 (tapped "Next")
+    T6: A force is a push or a pull, measured in newtons (N).
+    [screenshot 07-exchange-6-laptop.png] exchange-6
+    S7 (tapped "Next")
+    T7: Gas particles keep hitting each other and the walls of their container. When a particle hits a wall it bounces off. Each hit like this is called a collision, and it pushes on the wall with a tiny force.
+    S8 (tapped "Next")
+    T8: Billions of collisions every second add up to a steady push on every part of the wall, at right angles to the wall.
+    S9 (tapped "Next")
+    T9: Pressure is the force on each square metre of a surface: pressure = force ÷ area.
+    [screenshot 08-exchange-9-laptop.png] exchange-9
+    S10 (tapped "Next")
+    T10: With the force in newtons and the area in square metres (m²), the pressure comes out in pascals (Pa). Pressures are often given in kilopascals (kPa): 1 kPa = 1000 Pa.
+    S11 (tapped "Next")
+    T11: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [side picture after T11: none; newest in the chat: worked or question card]
+    [worked example under T11: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 09-worked-11-laptop.png] worked-11
+    S12 (tapped "Next")
+    T12: A force of 600 N pushes evenly on an area of 2 m². What is the pressure, in Pa?
+    [screenshot 10-exchange-12-laptop.png] exchange-12
+    S13 (what): wdym
+    T13: Now, the question again: A force of 600 N pushes evenly on an area of 2 m². What is the pressure, in Pa?
+      [T13 shown first: That question is asking how much pressure you get when a known push is spread over a known amount of surface. The push is 600 N, it lands evenly on a surface of 2 m², and you use pressure = force ÷ area to find the pressure in pascals (Pa).]
+    S14 (try): 600 divided 2
+    T14: The push of gas particles colliding with each square metre of their container's walls is called the gas pressure. More collisions each second, or harder collisions, mean a higher pressure.
+      [T14 shown first: Yes: 300 Pa. Pressure = force ÷ area = 600 ÷ 2 = 300 Pa.]
+    S15 (tapped "Next")
+    T15: More air is pumped into a box through a valve, then the valve is closed. The temperature stays the same. Which is true of the pressure in the box?
+    [screenshot 11-exchange-15-laptop.png] exchange-15
+    S16 (try, tapped the button): it rises
+    T16: Still air in a closed room presses on the walls too. Even when the air as a whole is not moving, its particles never stop.
+      [T16 shown first: Yes: more particles in the same space means more collisions with the walls each second, so the pressure rises.]
+    S17 (tapped "Next")
+    T17: A balloon is blown up and tied. Why does it stay round?
+    S18 (ask): what does collisions mean again
+    T18: Have a go at the question: A balloon is blown up and tied. Why does it stay round?
+    [screenshot 12-exchange-18-laptop.png] exchange-18
+      [T18 shown first: Collisions are moments when two things crash into each other. In gas, it means the tiny moving molecules bumping into something, like the walls of their container, and each bump gives the wall a very small push.]
+    S19 (try): collisions push out
+    T19: In one line: what causes gas pressure?
+      [T19 shown first: Yes: collisions push outwards on every part of the rubber, at right angles to it, so it stays round.]
+    S20 (idk): idk
+    T20: Keep a gas in a sealed, rigid container, one that cannot bend or stretch. Then its volume, the space it takes up, cannot change: the gas is at constant volume.
+    [counter now "1/4 covered" after T20; AI calls from the site so far: 9, $0.0044]
+      [T20 shown first: No problem. A good line would be: gas pressure is caused by the particles colliding with the walls of their container.]
+    S21 (tapped "Next")
+    T21: The temperature of a gas is related to the average kinetic energy of its particles: the higher the temperature, the faster the particles move on average.
+    [screenshot 13-exchange-21-laptop.png] exchange-21
+    S22 (tapped "Next")
+    T22: A sealed metal can of gas is heated. Predict: which is true of the pressure inside?
+    S23 (what): wdym
+    T23: Back to the question: A sealed metal can of gas is heated. Predict: which is true of the pressure inside?
+      [T23 shown first: The question is asking you to guess what happens to the pushing force of the gas on the can's walls when you warm the can up. Picture the gas molecules zooming around inside a closed can that can't change size, then ask yourself whether that push on the walls gets bigger, smaller, or stays the same.]
+    S24 (try, tapped the button): it rises
+    T24: Heated particles move faster. They hit the walls more often each second, and each collision pushes harder, so the pressure rises.
+    [screenshot 14-exchange-24-laptop.png] exchange-24
+      [T24 shown first: Yes: the pressure rises. Next, why.]
+    S25 (tapped "Next")
+    T25: Cooling does the opposite: the particles slow down, so the pressure falls.
+    S26 (tapped "Next")
+    T26: A sealed can of gas is put in a freezer. Why does the pressure inside fall?
+    S27 (idk): idk
+    T27: Cooling slows the particles down. Which option describes slower particles?
+    [screenshot 15-exchange-27-laptop.png] exchange-27
+      [T27 easier step]
+    [side picture after T27: none; newest in the chat: none]
+    S28 (idk): idk
+    T28: In one line: why does heating a gas in a sealed, rigid container raise its pressure?
+      [T28 shown first: That's fine. Cooling slows the particles, so they hit the walls less often each second and less hard: the pressure falls.]
+    S29 (idk): dont know
+    T29: Now keep the temperature fixed and change the volume instead, like pushing in the plunger of a sealed syringe.
+    [counter now "2/4 covered" after T29; AI calls from the site so far: 11, $0.0068]
+      [T29 shown first: No problem. A good line would be: the particles move faster, so they hit the walls more often each second and harder, so the pressure rises.]
+    S30 (tapped "Next")
+    T30: Squashing a gas into a smaller volume is called compressing it. Letting it spread into a bigger volume is letting it expand.
+    [screenshot 16-exchange-30-laptop.png] exchange-30
+    S31 (tapped "Next")
+    T31: A sealed syringe of air is compressed to half its volume, at the same temperature. Predict: which is true of the pressure?
+    S32 (try, tapped the button): it doubles
+    T32: In half the space, the same particles hit each part of the wall twice as often each second. Their speed has not changed, because the temperature has not.
+      [T32 shown first: Yes: it doubles. Next, why.]
+    S33 (tapped "Next")
+    T33: For a fixed mass of gas (the same amount, none let in or out) at constant temperature, pressure × volume always comes to the same fixed number: p × V = constant. p is the pressure in pascals (Pa) and V is the volume in cubic metres (m³).
+    [screenshot 17-exchange-33-laptop.png] exchange-33
+    S34 (tapped "Next")
+    T34: Pressure and volume are inversely proportional: when one doubles, the other halves.
+    S35 (tapped "Next")
+    T35: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [side picture after T35: none; newest in the chat: worked or question card]
+    [worked example under T35: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 18-worked-35-laptop.png] worked-35
+    S36 (tapped "Next")
+    T36: You can also use kPa for the pressures and cm³ for the volumes, as long as the before and after values use the same units.
+    [screenshot 19-exchange-36-laptop.png] exchange-36
+    S37 (tapped "Next")
+    T37: Your turn. A gas at 100 kPa has a volume of 6 m³. It is compressed to 2 m³ at the same temperature. What is its new pressure, in kPa?
+    S38 (idk): idk
+    T38: First find p × V at the start: 100 × 6. Then divide it by the new volume, 2.
+      [T38 easier step]
+    S39 (try): 300 kpa
+    T39: Here is a worked example of finding a volume. Its steps open one at a time.
+    [screenshot 20-exchange-39-laptop.png] exchange-39
+      [T39 shown first: Yes: 300 kPa. 100 × 6 = 600, so p × 2 = 600 and p = 300 kPa.]
+    [worked example under T39: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 21-worked-39-laptop.png] worked-39
+    S40 (tapped "Next")
+    T40: Air in a syringe is at 100 kPa with a volume of 30 cm³. At the same temperature it is pushed in until its pressure is 150 kPa. What is its new volume, in cm³?
+    S41 (try): 20 cm cubed
+    T41: A gas expands into a bigger volume at constant temperature. Which is true?
+      [T41 shown first: Yes: 20 cm³. 100 × 30 = 3000, so V = 3000 ÷ 150 = 20 cm³.]
+    S42 (idk): idk
+    T42: The temperature is fixed, so the speed is too. With more space, how often does each particle reach a wall?
+    [screenshot 22-exchange-42-laptop.png] exchange-42
+      [T42 easier step]
+    S43 (try): less often
+    T43: In one line: why does compressing a gas at constant temperature raise its pressure?
+      [T43 shown first: Yes: with more space, the particles hit the walls less often, and the pressure falls. Their speed stays the same.]
+    S44 (idk): particles hit walls more
+    T44: Work done is the energy transferred when a force moves something. When you lift a bag, your force moves it and transfers energy to it: you do work on the bag.
+    [counter now "3/4 covered" after T44; AI calls from the site so far: 16, $0.0076]
+      [T44 shown first: Your line gets this right: they hit the walls more often each second. A full line also says: the particles have less space (closer together).]
+    S45 (tapped "Next")
+    T45: A piston is a disc that slides along inside a tube, like the plunger of a bicycle pump. Push a piston into a gas and your force moves the piston, squashing the gas: you are doing work on the gas.
+    [screenshot 23-exchange-45-laptop.png] exchange-45
+    S46 (tapped "Next")
+    T46: The energy from your push goes into the internal energy of the gas: the total kinetic and potential energy of all its particles.
+    S47 (tapped "Next")
+    T47: In a gas nearly all of that is kinetic energy, so more internal energy means faster particles and a higher temperature.
+    S48 (tapped "Next")
+    T48: A diesel engine squashes air very quickly with a piston. Predict: which is true of the air's temperature?
+    [screenshot 24-exchange-48-laptop.png] exchange-48
+    S49 (try, tapped the button): it rises
+    T49: In one line: why does a bicycle pump get warm?
+      [T49 shown first: Yes: the piston does work on the air, raising its internal energy, so the air gets hot: hot enough to light the fuel.]
+    S50 (try): work heats it
+    T50: Now for a short quiz: six questions on the whole lesson. Take your time.
+      [T50 shown first: Your line gets this right: work is done on the air (the gas). A full line also says: its internal energy rises, so its temperature rises.]
+    S51 (tapped "Next")
+    T51: Quiz, question 1 of 6: what causes gas pressure?
+    [screenshot 25-exchange-51-laptop.png] exchange-51
+    S52 (what): huh
+    T52: Now, the question again: Quiz, question 1 of 6: what causes gas pressure?
+      [T52 shown first: The quiz question is asking you to explain where the push of a gas on its container comes from. Gas is made of tiny particles flying about, and the question wants you to say what those particles are doing that creates the pressure you can measure.]
+    S53 (try): particles coliding with walls
+    T53: Quiz, question 2 of 6: a sealed jar of gas is cooled. Which is true of its pressure?
+      [T53 shown first: Yes: particles colliding with the walls.]
+    S54 (what): huh
+    T54: Have a go at the question: Quiz, question 2 of 6: a sealed jar of gas is cooled. Which is true of its pressure?
+    [screenshot 26-exchange-54-laptop.png] exchange-54
+      [T54 shown first: The question is asking about a closed jar of gas that gets colder, and what happens to the push the gas makes on the inside walls of the jar. You're being asked whether that push gets bigger, smaller, or stays the same.]
+    S55 (try, tapped the button): it falls
+    T55: Quiz, question 3 of 6: a gas at 300 kPa and 2 m³ expands to 6 m³ at constant temperature. What is its new pressure, in kPa?
+      [T55 shown first: Yes: slower particles hit the walls less often and less hard.]
+    [side picture after T55: none; newest in the chat: none]
+    S56 (try): 100 kpa
+    T56: Quiz, question 4 of 6: a gas at 80 kPa and 20 cm³ is compressed to 5 cm³ at the same temperature. What is its new pressure, in kPa?
+      [T56 shown first: Yes: 300 × 2 = 600, so p = 600 ÷ 6 = 100 kPa.]
+    S57 (idk): idk
+    T57: Quiz, question 5 of 6: a gas is compressed at constant temperature. Which is true of its particles' average speed?
+    [screenshot 27-exchange-57-laptop.png] exchange-57
+      [T57 shown first: That's fine. 80 × 20 = 1600, so p = 1600 ÷ 5 = 320 kPa.]
+    S58 (idk): idk
+    T58: Quiz, question 6 of 6: why does pumping a tyre quickly warm the air in the pump?
+      [T58 shown first: That's fine. At constant temperature the average speed of the particles stays the same.]
+    S59 (ask): whats work mean again
+    T59: Back to the question: Quiz, question 6 of 6: why does pumping a tyre quickly warm the air in the pump?
+      [T59 shown first: In physics, work means transferring energy by using a force. Pushing something with a force moves energy into it, like pushing a piston into a gas, which gives that gas more energy.]
+    S60 (ask): does work make heat
+    T60: That's the end of the quiz: you got 4 out of 6.
+    [screenshot 28-exchange-60-laptop.png] exchange-60
+      [T60 shown first: Yes: work done on the air raises its internal energy and its temperature.]
+    S61 (tapped "Next")
+    T61: The lesson is finished. Tap a button to go on.
+    [counter now "4/4 covered" after T61; AI calls from the site so far: 28, $0.0185]
+    S62 (closing): ok thx
+    T62: You're welcome. Tap "Go to the slides" or "Home" when you are ready.
+    S63 (closing, tapped the button): go to the slides
+    [S63 left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]
+    [screenshot 29-end-laptop.png] end
+    [tutor-side time: 0.8 minutes over 62 exchanges]

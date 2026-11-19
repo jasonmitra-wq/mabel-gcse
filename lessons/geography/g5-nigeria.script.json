@@ -16,80 +16,80 @@
      "id": "1.1a",
      "type": "ask",
      "kind": "tap",
-     "question": "First, two quick questions from the last lesson. A country whose economy has started to grow fast as it builds up industry is called…?",
+     "question": "First, two quick questions from the last lesson, on development. What do we call a country whose economy has started to grow fast as it builds up industry?",
      "options": [
       {
-       "text": "An NEE",
+       "text": "A newly emerging economy (NEE)",
        "branch": "right"
       },
       {
-       "text": "An LIC",
+       "text": "A low income country (LIC)",
        "branch": "lic"
       },
       {
-       "text": "An HIC",
+       "text": "A high income country (HIC)",
        "branch": "hic"
       }
      ],
      "right": "Yes: an NEE, a newly emerging economy.",
      "wrong": {
-      "other": "Not quite: an NEE, a newly emerging economy.",
+      "other": "Not quite: a newly emerging economy, an NEE.",
       "lic": "Not quite: an LIC is one of the poorest countries. Fast growth through industry makes an NEE.",
       "hic": "Not quite: an HIC is already rich. Fast growth through industry makes an NEE."
      },
      "idk": [
       {
-       "hint": "The E stands for \"economy\" and the N for \"newly\". Which button is it?"
+       "hint": "Look for the one with \"emerging\" in it: that word means starting to grow."
       }
      ],
-     "answerWhy": "A country growing fast as it builds up industry is an NEE, a newly emerging economy."
+     "answerWhy": "A country growing fast as it builds up industry is a newly emerging economy, an NEE."
     },
     {
      "id": "1.1b",
      "type": "ask",
      "kind": "tap",
-     "question": "Second: which measure is an average income for each person in a country?",
+     "question": "Second: GNI per head measures…?",
      "options": [
       {
-       "text": "GNI per head",
+       "text": "The mean income per person",
        "branch": "right"
       },
       {
-       "text": "Life expectancy",
+       "text": "How long people live",
        "branch": "life"
       },
       {
-       "text": "Infant mortality rate",
+       "text": "How many babies die",
        "branch": "imr"
       }
      ],
-     "right": "Yes: GNI per head.",
+     "right": "Yes: a country's yearly income shared out equally between its people.",
      "wrong": {
-      "other": "Not quite: GNI per head.",
-      "life": "Not quite: life expectancy is how long people live. GNI per head is the average income.",
-      "imr": "Not quite: that counts babies dying. GNI per head is the average income."
+      "other": "Not quite: the mean income per person.",
+      "life": "Not quite: that is life expectancy. GNI per head is the mean income per person.",
+      "imr": "Not quite: that is infant mortality. GNI per head is the mean income per person."
      },
      "idk": [
       {
-       "hint": "Which one is about money?"
+       "hint": "GNI stands for gross national income. Which option is about income?"
       }
      ],
-     "answerWhy": "GNI per head is the country's income shared out equally between its people."
+     "answerWhy": "GNI per head is a country's yearly income shared out equally between its people."
     },
     {
      "id": "1.2",
      "type": "say",
-     "text": "Now this lesson. Nigeria is in West Africa, on the coast of the Gulf of Guinea. With about 238 million people, it has more people than any other African country."
+     "text": "Now this lesson. Nigeria is in West Africa, on the coast of the Gulf of Guinea, the sea along Africa's west coast. With about 238 million people, it has more people than any other African country."
     },
     {
      "id": "1.3",
      "type": "say",
-     "text": "Nigeria is an NEE. Its economy is worth about $291 billion a year, but its GNI per head is only $1,360, so many Nigerians are still poor."
+     "text": "Nigeria is an NEE. Its economy is worth about $291 billion a year, but its GNI per head is only $1,360 a year, compared with $54,550 in the UK. So many Nigerians are still poor."
     },
     {
      "id": "1.4",
      "type": "say",
-     "text": "Within West Africa, Nigeria has the biggest economy. That is its regional importance: how much it matters within its own part of the world."
+     "text": "How much a country matters within its own part of the world is its regional importance. Within West Africa, Nigeria has the biggest economy."
     },
     {
      "id": "1.5",
@@ -99,7 +99,7 @@
     {
      "id": "1.6",
      "type": "say",
-     "text": "Globally, across the whole world, Nigeria matters as a big oil exporter, and its films and music are watched and heard far beyond Africa."
+     "text": "Globally, across the whole world, Nigeria matters as a big oil exporter, selling oil to other countries, and its films and music are watched and heard far beyond Africa."
     },
     {
      "id": "1.7",
@@ -112,23 +112,23 @@
        "branch": "right"
       },
       {
-       "text": "It sells oil all around the world",
+       "text": "Its oil is sold all over the world",
        "branch": "global"
       },
       {
-       "text": "Lagos is its biggest city",
-       "branch": "city"
+       "text": "It has a long coastline",
+       "branch": "coast"
       }
      ],
      "right": "Yes: regional means within its part of the world, West Africa.",
      "wrong": {
       "other": "Not quite: it has the biggest economy in West Africa.",
       "global": "Selling oil worldwide is global importance. Regional means within West Africa: it has the biggest economy there.",
-      "city": "True, but that is about inside Nigeria. Regional means within West Africa: it has the biggest economy there."
+      "coast": "Not quite: a coastline is a fact about its location, not its importance. Regionally, it has the biggest economy in West Africa."
      },
      "idk": [
       {
-       "hint": "Regional means within its world region. Which option mentions West Africa?"
+       "hint": "Regional means within its own part of the world. Nigeria's part of the world is West Africa."
       }
      ],
      "answerWhy": "Regionally, within West Africa, Nigeria has the biggest economy."
@@ -136,27 +136,64 @@
     {
      "id": "1.8",
      "type": "say",
-     "text": "The wider context of the country matters too. Britain ruled Nigeria until independence; since then there have been military governments as well as elected ones."
+     "text": "The wider context of the country matters too. Britain ruled Nigeria until independence. Since then Nigeria has had military governments as well as elected ones."
     },
     {
      "id": "1.9",
      "type": "say",
-     "text": "Socially and culturally, Nigeria has hundreds of ethnic groups: the Hausa-Fulani in the mostly Muslim north, the Yoruba and Igbo in the mostly Christian south."
+     "text": "Nigeria has hundreds of ethnic groups: peoples with their own languages and customs. The largest are the Hausa-Fulani in the north and the Yoruba and Igbo in the south."
+    },
+    {
+     "id": "1.9b",
+     "type": "say",
+     "text": "Most people in the north are Muslim; most people in the south are Christian."
     },
     {
      "id": "1.10",
      "type": "say",
-     "text": "Environmentally, the north is dry grassland. The south has rainforest and the Niger Delta: the large wetland where the River Niger reaches the sea, and where most of Nigeria's oil comes from."
+     "text": "The north is dry grassland. The south has rainforest and the Niger Delta: the large wetland where the River Niger reaches the sea, and where most of Nigeria's oil comes from."
+    },
+    {
+     "id": "1.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which of these is part of Nigeria's political context?",
+     "options": [
+      {
+       "text": "It has had military governments as well as elected ones",
+       "branch": "right"
+      },
+      {
+       "text": "Its north is dry grassland",
+       "branch": "env"
+      },
+      {
+       "text": "It has hundreds of ethnic groups",
+       "branch": "cult"
+      }
+     ],
+     "right": "Yes: who governs, and how, is the political context.",
+     "wrong": {
+      "other": "Not quite: it has had military governments as well as elected ones.",
+      "env": "Not quite: that is its environmental context. Political is about government: military and elected governments.",
+      "cult": "Not quite: that is its social and cultural context. Political is about government: military and elected governments."
+     },
+     "idk": [
+      {
+       "hint": "Political means to do with government. Which option is about who runs the country?"
+      }
+     ],
+     "answerWhy": "Nigeria's political context includes military governments as well as elected ones."
     },
     {
      "id": "1.12",
      "type": "own",
      "prompt": "In one line: give one reason Nigeria is important regionally and one reason it is important globally.",
      "points": [
-      "regionally: the biggest economy in West Africa (or biggest member of ECOWAS)",
-      "globally: a big oil exporter (or films and music known worldwide)"
+      "it has the biggest economy in West Africa",
+      "it exports oil around the world"
      ],
-     "idk": "No problem. A good line would be: regionally it has West Africa's biggest economy; globally it is a big oil exporter."
+     "idk": "No problem. A good line would be: Nigeria is regionally important with West Africa's biggest economy, and globally important as a big oil exporter."
     }
    ]
   },
@@ -183,7 +220,7 @@
      "id": "2.4",
      "type": "ask",
      "kind": "tap",
-     "question": "Which sector is a bank in Lagos part of?",
+     "question": "Which sector does a taxi driver work in?",
      "options": [
       {
        "text": "Tertiary",
@@ -198,23 +235,28 @@
        "branch": "secondary"
       }
      ],
-     "right": "Yes: a bank provides a service, so it is tertiary.",
+     "right": "Yes: driving people around is a service, so it is tertiary.",
      "wrong": {
-      "other": "Not quite: tertiary, because a bank provides a service.",
-      "primary": "Not quite: primary takes raw materials from the land or sea. A bank provides a service: tertiary.",
-      "secondary": "Not quite: secondary makes things in factories. A bank provides a service: tertiary."
+      "other": "Not quite: tertiary, because a taxi provides a service.",
+      "primary": "Not quite: primary takes raw materials from the land or sea. A taxi provides a service: tertiary.",
+      "secondary": "Not quite: secondary makes things in factories. A taxi provides a service: tertiary."
      },
      "idk": [
       {
-       "hint": "Does a bank take raw materials, make things, or provide a service?"
+       "hint": "Does a taxi driver take raw materials, make things, or provide a service?"
       }
      ],
-     "answerWhy": "A bank provides a service, so it is in the tertiary sector."
+     "answerWhy": "A taxi driver provides a service, so works in the tertiary sector."
     },
     {
      "id": "2.5",
      "type": "say",
-     "text": "Oil, from the Niger Delta, is the big earner. In 2025 fuel made up about 86% of the goods Nigeria sold abroad. But oil gives few jobs, because machines do most of the work."
+     "text": "Nigeria's economy used to depend on farming. Then oil was found in the Niger Delta, and oil became the big earner."
+    },
+    {
+     "id": "2.5b",
+     "type": "say",
+     "text": "In 2025 fuel made up about 86% of the goods Nigeria sold to other countries. But oil gives few jobs, because machines do most of the work."
     },
     {
      "id": "2.6",
@@ -224,17 +266,22 @@
     {
      "id": "2.7",
      "type": "say",
-     "text": "The balance between sectors is shifting. In 2025 services were about 58% of the economy, industry about 16% and farming about 23%, though farming still gave about a third of all jobs."
+     "text": "The balance between sectors is shifting. In 2025 services made up about 58% of Nigeria's economy, industry (oil and factories) about 16% and farming about 23%."
+    },
+    {
+     "id": "2.7b",
+     "type": "say",
+     "text": "Farming still gave about a third of all jobs."
     },
     {
      "id": "2.8",
      "type": "say",
-     "text": "Factories in and around Lagos, Nigeria's biggest city, make food, drinks, cement and soap. Nollywood, Nigeria's film industry, is a growing service."
+     "text": "Lagos is Nigeria's biggest city. Factories in and around it make food, drinks, cement and soap. Nollywood, Nigeria's film industry, based mainly in Lagos, is a growing service."
     },
     {
      "id": "2.9",
      "type": "say",
-     "text": "Manufacturing can stimulate development. A new factory pays regular wages; workers spend them in local shops, which then need more staff; the government collects more tax for schools and roads."
+     "text": "Manufacturing can stimulate development, meaning help people's lives get better. A new factory pays regular wages; workers spend them in local shops, which then need more staff; the government collects more tax for schools and roads."
     },
     {
      "id": "2.10",
@@ -245,33 +292,33 @@
      "id": "2.11",
      "type": "ask",
      "kind": "tap",
-     "question": "A new cement factory opens near Lagos. Which shows the multiplier effect?",
+     "question": "A new cement factory opens near Lagos and pays its workers. What is the next link in the multiplier chain?",
      "options": [
       {
-       "text": "Its workers spend wages in local shops, which take on more staff",
+       "text": "The workers spend their wages in local shops",
        "branch": "right"
       },
       {
-       "text": "The factory makes cement",
-       "branch": "cement"
+       "text": "The factory closes",
+       "branch": "close"
       },
       {
-       "text": "Cement is sold abroad",
-       "branch": "export"
+       "text": "The workers move abroad",
+       "branch": "abroad"
       }
      ],
-     "right": "Yes: one factory's wages create more jobs in other businesses.",
+     "right": "Yes: their spending means shops need more staff, so jobs multiply.",
      "wrong": {
-      "other": "Not quite: workers spend wages in local shops, which take on more staff.",
-      "cement": "Not quite: making cement is just its product. The multiplier is the chain: wages are spent in shops, which take on more staff.",
-      "export": "Not quite: selling abroad is trade. The multiplier is the chain: wages are spent locally, so shops take on more staff."
+      "other": "Not quite: the workers spend their wages in local shops.",
+      "close": "Not quite: the chain is about growth. The workers spend their wages in local shops, which then need more staff.",
+      "abroad": "Not quite: the chain stays local. The workers spend their wages in local shops, which then need more staff."
      },
      "idk": [
       {
-       "hint": "The multiplier is about one job leading to others. Which option has a chain?"
+       "hint": "What do people usually do with the wages they earn?"
       }
      ],
-     "answerWhy": "Wages spent in local shops create more jobs there: the multiplier effect."
+     "answerWhy": "Workers spend their wages in local shops, which then take on more staff: the multiplier effect."
     },
     {
      "id": "2.12",
@@ -279,10 +326,9 @@
      "prompt": "In one line: how can a new factory help a country develop?",
      "points": [
       "it gives jobs and wages",
-      "wages are spent locally, creating more jobs (the multiplier effect)",
-      "the government collects more tax for services"
+      "the wages and taxes create more jobs and services"
      ],
-     "idk": "No problem. A good line would be: a factory gives jobs, the wages are spent locally to create more jobs, and taxes pay for schools and roads."
+     "idk": "No problem. A good line would be: Nigeria's new factories give jobs, and the wages and taxes they bring create more jobs and services: the multiplier effect."
     }
    ]
   },
@@ -308,15 +354,52 @@
     {
      "id": "3.4",
      "type": "say",
-     "text": "Advantages: TNCs give jobs and train workers in new skills; they pay taxes that fund schools and clinics; they build roads and bring new technology."
+     "text": "TNCs give jobs and train workers in new skills. They pay taxes, and oil companies also pay the government for the oil they take. That money can fund schools and clinics."
+    },
+    {
+     "id": "3.4b",
+     "type": "say",
+     "text": "TNCs also build roads. Bringing new technology and know-how into a country is called technology transfer."
     },
     {
      "id": "3.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which of these is an advantage of TNCs for Nigeria?",
+     "options": [
+      {
+       "text": "They pay taxes that can fund schools and clinics",
+       "branch": "right"
+      },
+      {
+       "text": "They send profits abroad",
+       "branch": "profit"
+      },
+      {
+       "text": "Their pipelines can leak",
+       "branch": "leak"
+      }
+     ],
+     "right": "Yes: tax money can pay for public services.",
+     "wrong": {
+      "other": "Not quite: they pay taxes that can fund schools and clinics.",
+      "profit": "Not quite: sending profits abroad takes money away from Nigeria. Taxes for schools and clinics are an advantage.",
+      "leak": "Not quite: leaks are a disadvantage. Taxes for schools and clinics are an advantage."
+     },
+     "idk": [
+      {
+       "hint": "Which option brings money that the Nigerian government can spend?"
+      }
+     ],
+     "answerWhy": "TNCs pay taxes, which can fund schools and clinics: an advantage."
+    },
+    {
+     "id": "3.6",
      "type": "say",
      "text": "When a foreign company sends its profits back to its home country instead of spending them where they were earned, that is profit repatriation. Less of the money then helps Nigerians."
     },
     {
-     "id": "3.6",
+     "id": "3.6b",
      "type": "say",
      "text": "Oil spills from pipelines, some from leaks and some from theft, have polluted creeks, farmland and fishing grounds in the Niger Delta."
     },
@@ -332,38 +415,6 @@
      "text": "The picture weighs up what oil brings Nigeria and what it costs."
     },
     {
-     "id": "3.9",
-     "type": "ask",
-     "kind": "tap",
-     "question": "Which is a disadvantage of TNCs such as Shell for Nigeria?",
-     "options": [
-      {
-       "text": "Much of the profit goes back to the company's home country",
-       "branch": "right"
-      },
-      {
-       "text": "They pay taxes to the Nigerian government",
-       "branch": "tax"
-      },
-      {
-       "text": "They train Nigerian workers",
-       "branch": "train"
-      }
-     ],
-     "right": "Yes: profit repatriation means less money stays in Nigeria.",
-     "wrong": {
-      "other": "Not quite: much of the profit goes back to the home country.",
-      "tax": "Not quite: taxes are an advantage. The disadvantage is that much profit goes back to the home country.",
-      "train": "Not quite: training is an advantage. The disadvantage is that much profit goes back to the home country."
-     },
-     "idk": [
-      {
-       "hint": "Two options help Nigeria. Which one takes money away?"
-      }
-     ],
-     "answerWhy": "Much of the profit goes back to the TNC's home country, so less money helps Nigerians."
-    },
-    {
      "id": "3.10",
      "type": "ask",
      "kind": "tap",
@@ -374,23 +425,23 @@
        "branch": "right"
       },
       {
-       "text": "Say it twice for emphasis",
-       "branch": "twice"
+       "text": "Add another fact: Shell is a UK company",
+       "branch": "fact"
       },
       {
-       "text": "Add that Shell is a big company",
-       "branch": "big"
+       "text": "Add an opinion: Shell is good for Nigeria",
+       "branch": "opinion"
       }
      ],
-     "right": "Yes: examiners want the process explained, not just stated.",
+     "right": "Yes: examiners want the link to development explained, not just stated.",
      "wrong": {
       "other": "Not quite: explain how, for example taxes pay for schools and clinics.",
-      "twice": "Not quite: repeating adds nothing. Explain how: taxes from Shell pay for schools and clinics.",
-      "big": "Not quite: that adds no understanding. Explain how: taxes pay for schools and clinics."
+      "fact": "Not quite: a new fact does not explain the effect. Explain how: taxes from Shell pay for schools and clinics.",
+      "opinion": "Not quite: an opinion is not an explanation. Explain how: taxes from Shell pay for schools and clinics."
      },
      "idk": [
       {
-       "hint": "Examiners want to know how the jobs and money help development. Which option explains a link?"
+       "hint": "Examiners want to know how the jobs and money help people. Which option shows a link?"
       }
      ],
      "answerWhy": "A good answer explains how: taxes from Shell pay for schools and clinics, which helps development."
@@ -400,10 +451,10 @@
      "type": "own",
      "prompt": "In one line: give one advantage and one disadvantage of TNCs for Nigeria.",
      "points": [
-      "an advantage (jobs, skills, taxes, roads, technology)",
-      "a disadvantage (profits leave the country, few jobs from oil, oil spills, gas flaring)"
+      "an advantage, such as jobs or taxes",
+      "a disadvantage, such as profits leaving the country or pollution"
      ],
-     "idk": "No problem. A good line would be: TNCs give jobs and pay taxes, but much of the profit leaves Nigeria and oil spills pollute the Niger Delta."
+     "idk": "No problem. A good line would be: TNCs in Nigeria give jobs and pay taxes, but much of the profit leaves the country and oil spills pollute the Niger Delta."
     }
    ]
   },
@@ -414,7 +465,7 @@
     {
      "id": "4.1",
      "type": "say",
-     "text": "Nigeria sells mostly oil and gas abroad, and buys machines, vehicles and food. It used to trade mostly with Europe and the USA; now China and India are big partners too."
+     "text": "Nigeria sells mostly oil and gas to other countries, and buys machines, vehicles and food. It used to trade mostly with Europe and the USA; now China and India are big partners too."
     },
     {
      "id": "4.2",
@@ -424,17 +475,27 @@
     {
      "id": "4.3",
      "type": "say",
-     "text": "Political links have changed too. Nigeria is a Commonwealth member, but was suspended under military rule and welcomed back when elected government returned. It is a leading member of the African Union and ECOWAS."
+     "text": "Political links have changed too. Nigeria is in the Commonwealth, a group of countries, most once ruled by Britain, that work together. It was suspended under military rule and welcomed back when elected government returned."
+    },
+    {
+     "id": "4.3b",
+     "type": "say",
+     "text": "Nigeria is also a leading member of the African Union, which brings together the countries of Africa, and of ECOWAS."
     },
     {
      "id": "4.4",
      "type": "say",
-     "text": "Nigeria also receives aid: help on easy terms, as gifts or very cheap loans. Aid given by one government directly to another is called bilateral aid, such as the UK's help for girls' schooling."
+     "text": "Nigeria also receives aid: help from other countries or charities, as gifts or as loans that are cheap to pay back."
+    },
+    {
+     "id": "4.4b",
+     "type": "say",
+     "text": "Aid given by one government directly to another is called bilateral aid, such as the UK's help for girls' schooling in Nigeria."
     },
     {
      "id": "4.5",
      "type": "say",
-     "text": "Aid given through international organisations, such as the World Bank or the United Nations, is called multilateral aid."
+     "text": "Aid given through international organisations, such as the World Bank (which lends for development) or the United Nations, is called multilateral aid."
     },
     {
      "id": "4.6",
@@ -445,7 +506,7 @@
      "id": "4.7",
      "type": "ask",
      "kind": "tap",
-     "question": "The UK government pays for girls' schooling in Nigeria. What type of aid is this?",
+     "question": "The government of Japan pays for a new water supply in a Nigerian town. What type of aid is this?",
      "options": [
       {
        "text": "Bilateral aid",
@@ -456,19 +517,19 @@
        "branch": "multi"
       },
       {
-       "text": "Microfinance",
-       "branch": "micro"
+       "text": "NGO aid",
+       "branch": "ngo"
       }
      ],
      "right": "Yes: one government directly to another is bilateral.",
      "wrong": {
       "other": "Not quite: bilateral aid, from one government directly to another.",
       "multi": "Not quite: multilateral goes through an international organisation. This is one government to another: bilateral.",
-      "micro": "Not quite: microfinance is a small loan to start a business. This is bilateral aid."
+      "ngo": "Not quite: NGOs are charities. This is one government to another: bilateral."
      },
      "idk": [
       {
-       "hint": "Bi means two. How many governments are involved here?"
+       "hint": "Bilateral means two sides: one government giving straight to another."
       }
      ],
      "answerWhy": "One government helping another directly is bilateral aid."
@@ -483,10 +544,10 @@
      "type": "own",
      "prompt": "In one line: give one good impact of aid in Nigeria and one problem with it.",
      "points": [
-      "a good impact (schools, clinics, clean water, mosquito nets, saving lives)",
-      "a problem (wasted or stolen through corruption, may not reach the poorest)"
+      "a good impact, such as schools, clinics or mosquito nets",
+      "a problem, such as corruption or not reaching the poorest"
      ],
-     "idk": "No problem. A good line would be: aid pays for schools and mosquito nets, but some is lost to corruption."
+     "idk": "No problem. A good line would be: aid in Nigeria pays for schools and mosquito nets, but some is lost to corruption."
     }
    ]
   },
@@ -497,12 +558,12 @@
     {
      "id": "5.1",
      "type": "say",
-     "text": "Economic development has costs for the environment. Oil spills kill fish and crops in the Niger Delta; factories and traffic pollute the air of Lagos; forests are cut down for farms and buildings."
+     "text": "Development harms the environment beyond the oil spills too: factories and traffic pollute the air of Lagos, and forests are cut down for farms and buildings."
     },
     {
      "id": "5.2",
      "type": "say",
-     "text": "In the Ogoni area of the delta, local people protested against oil pollution. Ken Saro-Wiwa, a writer who led those peaceful protests, was executed by the military government of the time."
+     "text": "In the Ogoni area of the Niger Delta, local people protested against oil pollution. Ken Saro-Wiwa, a writer who led those peaceful protests, was executed by the military government of the time."
     },
     {
      "id": "5.3",
@@ -512,39 +573,39 @@
     {
      "id": "5.4",
      "type": "say",
-     "text": "Life expectancy in Nigeria rose from 47 years in 2000 to 55 in 2024, and infant mortality fell from 95 to 70 babies in every 1,000."
+     "text": "Life expectancy, how long a baby born now can expect to live, rose from 47 years in 2000 to 55 in 2024. Infant mortality, babies dying before their first birthday, fell from 95 to 70 in every 1,000 born alive."
     },
     {
      "id": "5.5",
      "type": "ask",
      "kind": "tap",
-     "question": "Which piece of evidence shows quality of life in Nigeria improving?",
+     "question": "What does longer lives suggest about health care, food and clean water in Nigeria?",
      "options": [
       {
-       "text": "Life expectancy rose from 47 to 55 years",
+       "text": "They have improved for many people",
        "branch": "right"
       },
       {
-       "text": "Oil spills polluted the Niger Delta",
-       "branch": "spill"
+       "text": "They have got worse",
+       "branch": "worse"
       },
       {
-       "text": "Fuel is 86% of goods exports",
-       "branch": "fuel"
+       "text": "Nothing at all",
+       "branch": "nothing"
       }
      ],
-     "right": "Yes: people living longer is clear evidence of a better quality of life.",
+     "right": "Yes: people living longer is a sign of better health care, food and water.",
      "wrong": {
-      "other": "Not quite: life expectancy rose from 47 to 55 years.",
-      "spill": "Not quite: that is an environmental cost. Life expectancy rising from 47 to 55 shows improvement.",
-      "fuel": "Not quite: that is about trade. Life expectancy rising from 47 to 55 shows improvement."
+      "other": "Not quite: they have improved for many people.",
+      "worse": "Not quite: if they had got worse, people would live shorter lives. They have improved for many.",
+      "nothing": "Longer lives are a strong clue: people live longer when health care, food and water improve."
      },
      "idk": [
       {
-       "hint": "Quality of life is about health and living standards. Which option is about how long people live?"
+       "hint": "Do people live longer or shorter lives when health care gets better?"
       }
      ],
-     "answerWhy": "Life expectancy rising from 47 to 55 years shows quality of life improving."
+     "answerWhy": "Living longer suggests health care, food and clean water have improved for many people."
     },
     {
      "id": "5.6",
@@ -557,14 +618,20 @@
      "text": "Boko Haram, an armed extremist group in the north-east, has attacked towns and forced many people from their homes."
     },
     {
+     "id": "5.7b",
+     "type": "say",
+     "picture": "g5-nigeria-context",
+     "text": "The picture shows Nigeria's two halves: the drier, poorer north, and the south with the oil, the ports and the big cities."
+    },
+    {
      "id": "5.8",
      "type": "own",
      "prompt": "In one line: how has economic development affected Nigeria? Give one gain and one cost.",
      "points": [
-      "a gain (longer lives, fewer infant deaths, more jobs in services)",
-      "a cost (oil pollution, air pollution, deforestation, or uneven gains between north and south)"
+      "a gain, such as longer lives",
+      "a cost, such as pollution or uneven gains between north and south"
      ],
-     "idk": "No problem. A good line would be: people live longer, but oil spills have polluted the Niger Delta."
+     "idk": "No problem. A good line would be: development has helped Nigerians live longer, but the gains are uneven, with the north gaining less than the south."
     },
     {
      "id": "5.9",
@@ -665,21 +732,23 @@
      "question": "Quiz, question 4 of 6: what is profit repatriation?",
      "options": [
       {
-       "text": "A foreign company sending profits back to its home country",
+       "text": "Sending profits back to the company's home country",
        "branch": "right"
       },
       {
-       "text": "A company paying more tax",
+       "text": "Paying more tax in Nigeria",
        "branch": "w1"
       },
       {
-       "text": "Workers getting a pay rise",
+       "text": "Giving workers a pay rise",
        "branch": "w2"
       }
      ],
-     "right": "Yes.",
+     "right": "Yes: the profit leaves the country where it was earned.",
      "wrong": {
-      "other": "Not quite: a foreign company sending profits back to its home country."
+      "other": "Not quite: sending profits back to the company's home country.",
+      "w1": "Not quite: paying tax keeps money in Nigeria. Repatriation sends profits back to the home country.",
+      "w2": "Not quite: a pay rise stays in Nigeria. Repatriation sends profits back to the home country."
      },
      "idk": [],
      "answerWhy": "Profit repatriation is a foreign company sending its profits back home.",
@@ -700,7 +769,7 @@
        "branch": "w1"
       },
       {
-       "text": "Debt relief",
+       "text": "NGO aid",
        "branch": "w2"
       }
      ],
@@ -708,7 +777,7 @@
      "wrong": {
       "other": "Not quite: multilateral aid.",
       "w1": "Not quite: bilateral is one government to another. Through the World Bank is multilateral.",
-      "w2": "Not quite: debt relief cancels debt. Aid through the World Bank is multilateral."
+      "w2": "Not quite: NGOs are charities. Through the World Bank is multilateral."
      },
      "idk": [],
      "answerWhy": "Aid through an international organisation is multilateral.",
@@ -718,14 +787,14 @@
      "id": "5.15",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 6 of 6: which is an environmental cost of oil in Nigeria?",
+     "question": "Quiz, question 6 of 6: which is an environmental cost of development in Nigeria?",
      "options": [
       {
-       "text": "Spills that kill fish and crops",
+       "text": "Air pollution in Lagos",
        "branch": "right"
       },
       {
-       "text": "More jobs in Lagos",
+       "text": "More jobs in services",
        "branch": "w1"
       },
       {
@@ -733,14 +802,14 @@
        "branch": "w2"
       }
      ],
-     "right": "Yes: oil spills.",
+     "right": "Yes: air pollution.",
      "wrong": {
-      "other": "Not quite: spills that kill fish and crops.",
-      "w1": "Not quite: jobs are a benefit. Spills are an environmental cost.",
-      "w2": "Not quite: tax is a benefit. Spills are an environmental cost."
+      "other": "Not quite: air pollution in Lagos.",
+      "w1": "Not quite: jobs are a benefit. Air pollution is an environmental cost.",
+      "w2": "Not quite: tax is a benefit. Air pollution is an environmental cost."
      },
      "idk": [],
-     "answerWhy": "Oil spills kill fish and crops in the Niger Delta.",
+     "answerWhy": "Air pollution in Lagos, like oil spills, is an environmental cost.",
      "quiz": true
     },
     {

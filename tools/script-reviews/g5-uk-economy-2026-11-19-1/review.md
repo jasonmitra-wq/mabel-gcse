@@ -1,0 +1,64 @@
+# Review: g5-uk-economy (2026-11-19)
+
+Reviewer claude-fable-5-2, effort medium, 0 screenshots, 41 findings, cost $0.5715.
+
+## Counts (made in code from the findings)
+
+- new: 18
+- F3: 8
+- F8: 6
+- P6: 3
+- L3: 1
+- F5: 1
+- M1: 1
+- F2: 1
+- P4: 1
+- P14: 1
+
+## Findings
+
+- **1.1a** [L3, would confuse or mislead her] "First, two quick questions from the last lesson." — She is meeting this for the first time and has had no 'last lesson'. The opening treats her as recalling earlier work.
+- **1.1a** [F3, would confuse or mislead her] "Which sector makes things in factories?" — 'Sector', 'Primary', 'Secondary' and 'Tertiary' are used in the question and on the buttons before anything has said what they mean. She can only guess.
+- **1.1b don't know (first time)** [new, a teacher would correct it] "Does a nurse take raw materials, make things, or provide a service?" — The hint asks one question but the buttons still say Primary / Secondary / Tertiary. She must still match 'provide a service' to 'Tertiary', which is the part she did not know.
+- **1.2** [F5, minor] "These old heavy industries are called traditional industries." — Two new terms, 'heavy industries' and 'traditional industries', arrive in one sentence. 'Heavy' is never explained, and 'steelworks' and 'textile mills' come in the same message.
+- **1.3** [F3, a teacher would correct it] "The decline of manufacturing and heavy industry, and the loss of its jobs, is called deindustrialisation." — 'Manufacturing' has only appeared in the right-answer reply to 1.1a, so a girl who got that wrong has never seen it. The message also never says that these industries did decline before naming the decline, and 'iron ore' is not explained.
+- **1.5** [new, a teacher would correct it] "Later governments stopped protecting loss-making industries such as coal" — 'Later' than what? 'Policies', 'protecting' and 'loss-making' are not explained. A 15-year-old would not know that this means governments stopped paying to keep them open.
+- **1.6** [F8, a teacher would correct it] "Goods could be made more cheaply abroad, where wages were lower" — The right option is almost word for word what 1.4 said two messages earlier ('Factories abroad, paying lower wages, could make goods more cheaply'). The other two options are plainly silly, so nothing is tested.
+- **1.6** [new, would confuse or mislead her] "Yes: that is globalisation, one of the three causes." — She has never been told there are 'three causes' or what they are causes of. The lesson file's opening line (the economy changed from making things to services, and three causes explain why) is missing from the script.
+- **1.8** [new, would confuse or mislead her] "give the three causes of economic change in the UK" — She was never given a list of three causes. The script presents deindustrialisation as the decline itself, and globalisation and government policy as reasons for it, so calling deindustrialisation a 'cause' alongside them is muddled.
+- **1.8** [new, minor] "Yes: your line makes every point. You have this: deindustrialisation (decline of traditional industries). You have this: globalisation. You have this: government policies." — The feedback reads like a marking checklist, not a teacher speaking. The same stilted 'You have this / Still needed' pattern recurs at 2.10, 3.8, 4.7, 5.9 and 6.7.
+- **2.2** [F3, would confuse or mislead her] "The UK's GNI per head was $54,550." — 'GNI per head' is used with no explanation at all. She cannot know what the number means or whether it is large.
+- **2.2** [P6, a teacher would correct it] "services made up about 73% of the UK's economy, manufacturing about 8%, and farming, forestry and fishing under 1%. The UK's GNI per head was $54,550." — Four figures and two separate ideas (shares of the economy, and income per person) are packed into one message.
+- **2.1 to 2.7** [M1, a teacher would correct it] "Button: Next" — There are seven told messages in a row with nothing for her to do but press Next. She would stop reading well before the first question.
+- **2.6** [F2, minor] "Firms there can share ideas with the university and hire its graduates." — The message opens with 'there' and 'the university', whose meaning is in the previous bubble, not this one. 'Graduates' is not explained either.
+- **2.7** [F3, a teacher would correct it] "A group of offices and light industry on the edge of a town" — 'Light industry' is used without explanation, and only 'heavy' industry has been mentioned before.
+- **2.8** [new, a teacher would correct it] "A map shows a site next to a university, beside a motorway junction, with open green land." — No map is shown, so she is asked to picture one from a sentence. A real map or sketch is needed here.
+- **2.8** [F8, a teacher would correct it] "Firms can share research ideas and hire graduates" — The answer was given at 2.6 ('share ideas with the university and hire its graduates'). The other options are not believable, so she only has to recognise the sentence.
+- **2.8** [P4, a teacher would correct it] "with open green land" — The question mentions open green land, but the script never teaches that science and business parks want space and pleasant surroundings, which is in the key point. Nothing ever asks about it or explains it, yet the key point is ticked.
+- **2.8 wrong answer (Universities pay companies to move in)** [new, minor] "Not quite: they come for research ideas and graduates nearby." — The reply does not say why her answer is wrong (universities do not pay firms to come). 'They' is left unclear.
+- **2.10** [F8, a teacher would correct it] "what is a science park, and why is it usually next to a university?" — Every reply to 2.8, two questions earlier, has just told her 'share research ideas and hire graduates'. The same fact is then said again in quiz question 3 and in the summary (F1).
+- **3.6** [F3, would confuse or mislead her] "It burns less fossil fuel, so it gives off less carbon dioxide" — 'Fossil fuel' and 'carbon dioxide' have not been taught in this lesson, and nothing has said why solar and wind power mean less pollution. She can only get it by ruling out two absurd options.
+- **3.6 don't know (first time)** [new, would confuse or mislead her] "Explain how, not just that. What does a factory usually burn for power?" — 'Explain how, not just that' is muddled and sounds like a telling-off when she has only said she does not know. The follow-up asks for knowledge she has not been given, and factories mostly use mains electricity rather than burning fuel themselves.
+- **3.8** [new, would confuse or mislead her] "You have this: a way (renewable energy, less waste, recycling, a wildlife reserve). You have this: how it helps (less carbon dioxide or pollution, less landfill, more wildlife)." — The feedback shows her the marker's list, not what she wrote. It includes 'recycling' and 'landfill', which the lesson never mentioned.
+- **4.5** [F8, a teacher would correct it] "The local school closes because there are too few pupils" — The message immediately before said 'Shops, schools and bus services close because too few people use them' in the Outer Hebrides.
+- **4.5 wrong answers** [new, a teacher would correct it] "Not quite: new estates are built where people move in, as in South Cambridgeshire." — Unlike the other questions, the wrong-answer replies never say what the right answer is. She is left without the Outer Hebrides point.
+- **4.7** [F3, minor] "give one change in an area of rural growth and one in an area of rural decline" — The lesson said 'population growth' and 'rural depopulation'. 'Rural' has never been explained on its own, and 'rural growth' and 'rural decline' are new labels.
+- **5.2** [new, a teacher would correct it] "Busy motorways and main roads are widened." — The script never says the key idea that better infrastructure can help the economy, so this and the HS2 fact arrive as bare facts with no reason. Roads and rail are also two ideas in one message.
+- **5.3** [F3, minor] "Liverpool2, a deep-water container terminal at the Port of Liverpool" — 'Deep-water container terminal' is not explained. The message also holds two unrelated facts (the port and Heathrow's runway).
+- **5.3b** [new, a teacher would correct it] "Why could a new deep-water terminal at Liverpool help the economy of north-west England?" — Nothing has taught how a port helps the economy. She can only answer because the other options ('It makes the sea warmer', 'It stops people flying abroad') are jokes, so the question tests nothing.
+- **5.7** [P6, would confuse or mislead her] "Better transport between northern cities is another strategy." — 'Another strategy' for what? The script has not yet said that devolution and enterprise zones are ways to close the north–south divide. This sentence also tacks a second idea onto the enterprise zone definition.
+- **5.8** [F8, a teacher would correct it] "Giving lower taxes to businesses that set up in poorer northern areas" — The message just before defined an enterprise zone as giving businesses lower taxes to set up there. The other two options would obviously widen the gap.
+- **5.9** [new, would confuse or mislead her] "Still needed: better transport between northern cities, or enterprise zones." — The marking needs devolution plus one of the others. A correct answer of 'enterprise zones and better transport' would be told devolution is 'still needed', though the question only asks for any two strategies.
+- **6.2** [P6, minor] "Culture: British music, films, television, football and the English language are known around the world. Transport: airports such as Heathrow and ports such as Felixstowe connect it to every continent." — Two different kinds of link (culture and transport) are in one message. 6.1 does the same with the introduction and trade.
+- **6.6** [F8, minor] "Which is an electronic communication link between the UK and the rest of the world?" — 6.3 said 'Electronic communication: undersea internet cables' in those exact words three messages earlier. This is pure recognition.
+- **6.7** [new, would confuse or mislead her] "Still needed: the EU is still a major partner, or the UK makes its own deals and keeps the Commonwealth." — The question asks what changed, but the second marking point is something that did not change. 'The UK makes its own deals' was never taught, and the reply shows her the marker's 'or' list.
+- **6.10** [new, minor] "Yes." — A bare 'Yes.' with nothing to reinforce the definition (the same at 6.13).
+- **6.14** [F3, minor] "ECOWAS" — ECOWAS has never been mentioned in the lesson, and the reply only says it 'is in West Africa'. The question also contains the Commonwealth's definition word for word from 6.5.
+- **6.8 to 6.14** [new, minor] "Now for a short quiz: six questions on the whole lesson." — The quiz has no question on key point 5 (infrastructure, the north–south divide), so it is not 'the whole lesson'.
+- **The end, 61** [new, a teacher would correct it] "Summary, point 1 of 6: Deindustrialisation, globalisation and government policies." — This is a bare list of three words that does not say what they are (causes of the UK's economic change). Point 5 ('Devolution to city mayors and enterprise zones with lower taxes.') has the same problem, and all six points are just the model answers pasted in again.
+- **The end, 62** [new, a teacher would correct it] "Summary, point 2 of 6: A science park is a group of research and high-tech firms, next to a university so they can share ideas and hire graduates." — Key point 2 is about the post-industrial economy and the quaternary sector, but the summary (and the own-words task at 2.10) covers only science parks. The main idea is never recalled.
+- **whole lesson** [P14, a teacher would correct it] "Button: Next" — There is nothing hands-on and no picture, map, graph or data to work with anywhere. A topic with places, percentages and a 'map' question is taught entirely through text bubbles.
+
+## Overall
+
+No, not as it is (and note that this is a geography lesson, not physics, so I have judged it as a careful teacher rather than a subject specialist). It opens with questions 'from the last lesson' using sector words she has never met, and key point 1 asks for 'three causes' she was never given, with deindustrialisation muddled between being the change and being a cause of it. Most multiple-choice questions repeat a sentence from one or two messages earlier next to joke options, so they test nothing, and several own-words marking lists show her terms that were never taught or would mark a correct answer down. Unexplained terms such as GNI per head, light industry, fossil fuel and carbon dioxide, long runs of Next-only messages and no pictures or map mean she would be bored and unsure of the main ideas.

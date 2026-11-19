@@ -1,7 +1,7 @@
 {
  "lesson": "g5-development",
  "version": 1,
- "about": "The scripted AI lesson for g5-development (2026-11-19, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two questions on averages, which the exam's data questions use.",
+ "about": "The scripted AI lesson for g5-development (2026-11-19, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two maths questions (the mean, and an amount per person) that the lesson builds on.",
  "keyPoints": [
   {
    "kp": 0,
@@ -48,33 +48,33 @@
      "id": "1.1b",
      "type": "ask",
      "kind": "tap",
-     "question": "Second: what is the range of £2, £4, £6 and £8?",
+     "question": "Second: a country earns £100 million in a year and has 10 million people. How much is that per person?",
      "options": [
       {
-       "text": "£6",
+       "text": "£10",
        "branch": "right"
       },
       {
-       "text": "£5",
-       "branch": "mean"
+       "text": "£1,000 million",
+       "branch": "times"
       },
       {
-       "text": "£8",
-       "branch": "max"
+       "text": "£90 million",
+       "branch": "minus"
       }
      ],
-     "right": "Yes: the highest minus the lowest, £8 − £2 = £6.",
+     "right": "Yes: £100 million ÷ 10 million = £10 per person.",
      "wrong": {
-      "other": "Not quite: £6, the highest minus the lowest.",
-      "mean": "Not quite: £5 is the mean. The range is the highest minus the lowest: £8 − £2 = £6.",
-      "max": "Not quite: £8 is the highest. The range is the highest minus the lowest: £8 − £2 = £6."
+      "other": "Not quite: £10. Share the total by the number of people: £100 million ÷ 10 million.",
+      "times": "Not quite: per person means share it out, so divide: £100 million ÷ 10 million = £10.",
+      "minus": "Not quite: per person means share it out, so divide: £100 million ÷ 10 million = £10."
      },
      "idk": [
       {
-       "hint": "Take the smallest amount away from the biggest."
+       "hint": "Per person means shared out equally. Divide the total by the number of people."
       }
      ],
-     "answerWhy": "The range is the highest minus the lowest: £8 − £2 = £6."
+     "answerWhy": "£100 million shared between 10 million people is £10 each."
     },
     {
      "id": "1.2",
@@ -84,13 +84,13 @@
     {
      "id": "1.3",
      "type": "say",
-     "text": "The main money measure is GNI per head: all the income a country earns in a year, shared out equally between its people. It is a mean income for each person."
+     "text": "Measures about money are called economic measures. The main one is GNI per head (gross national income per head): all the income a country earns in a year, divided by its number of people. It is the mean income for each person."
     },
     {
      "id": "1.4",
      "type": "ask",
      "kind": "tap",
-     "question": "In 2025, GNI per head was about $54,550 in the UK and $1,360 in Nigeria. Roughly how many times richer, per person, was the UK?",
+     "question": "In 2025, GNI per head was about $54,550 in the UK and $1,360 in Nigeria. Roughly how many times more, per person, did the UK earn?",
      "options": [
       {
        "text": "About 40 times",
@@ -121,44 +121,44 @@
     {
      "id": "1.5",
      "type": "say",
-     "text": "Social measures are about people's lives. Life expectancy is how long a baby born now can expect to live: about 84 years in Japan and 55 in Nigeria."
+     "text": "Measures about people's lives are called social measures. Life expectancy is how long a baby born now can expect to live: about 84 years in Japan and 55 in Nigeria."
     },
     {
      "id": "1.6",
      "type": "say",
-     "text": "The infant mortality rate is how many babies, in every 1,000 born alive, die before their first birthday, each year. In Japan it is about 2; in Nigeria about 70."
+     "text": "The infant mortality rate is the number of babies who die before their first birthday, for every 1,000 born alive, in a year. In Japan it is about 2; in Nigeria about 70."
     },
     {
      "id": "1.7",
      "type": "ask",
      "kind": "tap",
-     "question": "An exam asks: \"What is meant by infant mortality rate?\" Which answer scores both marks?",
+     "question": "Country A loses 30 babies per 1,000 before age one; Country B loses 5. Which country is probably more developed?",
      "options": [
       {
-       "text": "The number of babies per 1,000 born alive who die before age 1, each year",
+       "text": "Country B",
        "branch": "right"
       },
       {
-       "text": "The number of babies who die",
-       "branch": "total"
+       "text": "Country A",
+       "branch": "a"
       },
       {
-       "text": "How long babies live",
-       "branch": "life"
+       "text": "You cannot tell at all",
+       "branch": "cannot"
       }
      ],
-     "right": "Yes: it needs the \"per 1,000\" and the \"before their first birthday\", each year.",
+     "right": "Yes: a lower infant mortality rate usually means better health care, food and clean water.",
      "wrong": {
-      "other": "Not quite: babies per 1,000 born alive who die before age 1, each year.",
-      "total": "Nearly: a rate is not a total. It is per 1,000 babies born alive, each year, dying before their first birthday.",
-      "life": "Not quite: that sounds like life expectancy. Infant mortality is babies per 1,000 born alive who die before age 1, each year."
+      "other": "Not quite: Country B.",
+      "a": "Not quite: more babies dying is a sign of poorer health care. Country B, with 5 per 1,000, is probably more developed.",
+      "cannot": "One measure is not the whole picture, but it is a strong clue: Country B, with fewer babies dying, is probably more developed."
      },
      "idk": [
       {
-       "hint": "A rate is always \"per\" something. Which option says per 1,000?"
+       "hint": "Fewer babies dying is a sign of good health care. Which country has fewer?"
       }
      ],
-     "answerWhy": "Infant mortality rate: the number of babies, per 1,000 born alive, who die before their first birthday, each year."
+     "answerWhy": "Country B: fewer babies dying usually means better health care, so it is probably more developed."
     },
     {
      "id": "1.8",
@@ -168,49 +168,54 @@
     {
      "id": "1.9",
      "type": "say",
-     "text": "The HDI, or Human Development Index, combines three things into one score between 0 and 1: income, life expectancy and education."
+     "text": "The HDI, or Human Development Index, combines three things into one score between 0 and 1: income, life expectancy and education. Nearer 1 means more developed."
     },
     {
      "id": "1.10",
      "type": "say",
-     "text": "Every measure has a limitation: a reason it can mislead. GNI per head is a mean, so a few very rich people can hide many poor ones."
+     "text": "Every measure has a limitation: a reason it can give a misleading picture."
     },
     {
      "id": "1.11",
      "type": "ask",
      "kind": "tap",
-     "question": "Which is a limitation of GNI per head?",
+     "question": "GNI per head is a mean. In a country where a few people are very rich and most are poor, why can it mislead?",
      "options": [
       {
-       "text": "It is an average, so it hides how unequally money is shared",
+       "text": "The rich few push the mean up, so most people earn far less",
        "branch": "right"
       },
       {
-       "text": "It does not show life expectancy",
-       "branch": "notshow"
+       "text": "It counts the people twice",
+       "branch": "twice"
       },
       {
-       "text": "It is measured in dollars",
-       "branch": "dollars"
+       "text": "It leaves out farmers' income",
+       "branch": "farmers"
       }
      ],
-     "right": "Yes: that is why it can mislead. A limitation says why a measure gives a false picture.",
+     "right": "Yes: a mean hides how unequally money is shared. That is a limitation.",
      "wrong": {
-      "other": "Not quite: it is an average, so it hides how unequally money is shared.",
-      "notshow": "True, but examiners want why it can mislead, not what it leaves out. It is an average, so it hides how unequally money is shared.",
-      "dollars": "Not quite: dollars let countries be compared fairly. The problem is that it is an average, so it hides inequality."
+      "other": "Not quite: the rich few push the mean up, so most people earn far less than it.",
+      "twice": "Not quite: people are counted once. The problem is that the rich few push the mean up, hiding how poor most people are.",
+      "farmers": "Not quite: all income is counted. The problem is that the rich few push the mean up, hiding how poor most people are."
      },
      "idk": [
       {
-       "hint": "Think of the mean of £1, £1, £1 and £97. Does £25 describe most people?"
+       "hint": "The mean of £1, £1, £1 and £97 is £25. Does £25 describe what most people have?"
       }
      ],
-     "answerWhy": "GNI per head is an average, so it hides how unequally money is shared: a limitation."
+     "answerWhy": "A mean can be pushed up by a rich few, so GNI per head hides how unequally money is shared."
     },
     {
      "id": "1.12",
+     "type": "say",
+     "text": "Other limitations: how many babies are born depends on religion and culture, not only on development, and figures from poorer countries can be out of date or guessed. One measure on its own never gives the whole picture."
+    },
+    {
+     "id": "1.13",
      "type": "own",
-     "prompt": "In one line: what is the HDI made from?",
+     "prompt": "In one line: what does the HDI combine?",
      "points": [
       "income",
       "life expectancy",
@@ -242,18 +247,18 @@
     {
      "id": "2.4",
      "type": "say",
-     "text": "In between are middle income countries. Kenya is one: lower-middle income, still a poorer country."
+     "text": "In between are middle income countries, split into upper-middle and lower-middle income. Kenya is lower-middle income: still a poorer country."
     },
     {
      "id": "2.5",
      "type": "say",
-     "text": "A country whose economy has started to grow fast as it builds up industry is called an NEE: a newly emerging economy. China, India, Brazil and Nigeria are NEEs."
+     "text": "A country whose economy has started to grow fast as it builds up industry is called an NEE: a newly emerging economy, such as China, India, Brazil or Nigeria. This label is not one of the World Bank groups."
     },
     {
      "id": "2.6",
      "type": "ask",
      "kind": "tap",
-     "question": "Niger has a GNI per head of about $750. Which group is it in?",
+     "question": "A country has a GNI per head of about $650, and most people work on small farms. Which group is it in?",
      "options": [
       {
        "text": "LIC",
@@ -268,30 +273,31 @@
        "branch": "nee"
       }
      ],
-     "right": "Yes: one of the poorest countries, an LIC.",
+     "right": "Yes: with such a low income per person, it is an LIC.",
      "wrong": {
       "other": "Not quite: an LIC, a low income country.",
-      "hic": "Not quite: $750 a year is very low. Niger is an LIC.",
-      "nee": "Not quite: Niger's economy is not growing fast through industry. It is an LIC."
+      "hic": "Not quite: $650 a year is very low. It is an LIC.",
+      "nee": "Not quite: nothing says its economy is growing fast through industry. With $650 a year it is an LIC."
      },
      "idk": [
       {
-       "hint": "Is $750 a year high or low for a whole year's income?"
+       "hint": "LICs have the lowest GNI per head of all. Is $650 a year low?"
       }
      ],
-     "answerWhy": "With about $750 per person, Niger is one of the poorest countries: an LIC."
+     "answerWhy": "With about $650 per person a year, it is one of the poorest countries: an LIC."
     },
     {
      "id": "2.7",
      "type": "say",
-     "text": "An older way of splitting the world is the Brandt Line: a line on a world map dividing a richer \"North\" from a poorer \"South\". It fits today badly, because fast-growing countries such as China sit in the \"South\"."
+     "picture": "g5-brandt-line",
+     "text": "An older way of splitting the world is the Brandt Line, drawn on a world map to divide a richer \"North\" from a poorer \"South\". It is out of date: fast-growing countries such as China lie in its \"South\"."
     },
     {
      "id": "2.8",
      "type": "own",
      "prompt": "In one line: what is an NEE?",
      "points": [
-      "a country whose economy has started to grow fast as it builds up industry"
+      "a country whose economy is growing fast as it builds up industry"
      ],
      "idk": "No problem. A good line would be: an NEE is a newly emerging economy, growing fast as it builds up industry."
     }
@@ -319,7 +325,12 @@
     {
      "id": "3.4",
      "type": "say",
-     "text": "Stage 1: both rates are high, so the population stays small. Stage 2: the death rate falls fast, as clean water, food and health care improve, but births stay high. The population grows fast."
+     "text": "Stage 1: both rates are high. Births and deaths roughly cancel out, so the population stays about the same."
+    },
+    {
+     "id": "3.4b",
+     "type": "say",
+     "text": "Stage 2: the death rate falls fast, as clean water, food and health care improve, but the birth rate stays high."
     },
     {
      "id": "3.5",
@@ -340,9 +351,9 @@
        "branch": "same"
       }
      ],
-     "right": "Yes: many more people are born than die, so it grows fast. Many LICs are in stage 2.",
+     "right": "Yes: far more people are born than die, so it grows fast.",
      "wrong": {
-      "other": "Not quite: it grows fast, because many more are born than die.",
+      "other": "Not quite: it grows fast, because far more are born than die.",
       "shrink": "Not quite: births are still high and deaths are low, so far more people are born than die. It grows fast.",
       "same": "Not quite: births are now much higher than deaths, so the population grows fast."
      },
@@ -354,43 +365,53 @@
      "answerWhy": "Births stay high while deaths fall, so far more people are born than die: the population grows fast."
     },
     {
+     "id": "3.5b",
+     "type": "say",
+     "text": "Many LICs are in stage 2 today."
+    },
+    {
      "id": "3.6",
      "type": "say",
-     "text": "Stage 3: the birth rate falls too, as fewer babies die, more girls go to school and more women go out to work. Many NEEs are here."
+     "text": "Stage 3: the birth rate falls too, as fewer babies die and more girls stay at school. Population growth slows. Many NEEs are here."
     },
     {
      "id": "3.7",
      "type": "say",
-     "text": "Stage 4: both rates are low, so the population is steady. Most HICs, such as the UK, are here. Stage 5: births fall below deaths and the population slowly shrinks, as in Japan."
+     "text": "Stage 4: both rates are low, so the population stays steady. Most HICs, such as the UK, are here."
+    },
+    {
+     "id": "3.7b",
+     "type": "say",
+     "text": "Stage 5: births fall below deaths, so the population slowly shrinks, as in Japan."
     },
     {
      "id": "3.8",
      "type": "ask",
      "kind": "tap",
-     "question": "Why might moving into stage 3 help a country's economy?",
+     "question": "Why can moving into stage 3 help a country's economy?",
      "options": [
       {
        "text": "With fewer children to look after, more women can go out to work",
        "branch": "right"
       },
       {
-       "text": "More babies are born",
-       "branch": "more"
+       "text": "Families need more children to help on farms",
+       "branch": "farm"
       },
       {
-       "text": "The death rate rises",
-       "branch": "death"
+       "text": "Fewer people need jobs",
+       "branch": "fewer"
       }
      ],
      "right": "Yes: more people working means more money earned and more tax collected.",
      "wrong": {
       "other": "Not quite: with fewer children to look after, more women can work.",
-      "more": "Not quite: in stage 3 the birth rate falls. With fewer children to look after, more women can work.",
-      "death": "Not quite: the death rate stays low. The change is fewer births, so more women can work."
+      "farm": "Not quite: in stage 3 families have fewer children. With fewer to look after, more women can work.",
+      "fewer": "Not quite: people still need jobs. With fewer children to look after, more women can go out to work."
      },
      "idk": [
       {
-       "hint": "In stage 3 the birth rate falls. How does that change family life?"
+       "hint": "In stage 3 families have fewer children. Who is then freer to go out to work?"
       }
      ],
      "answerWhy": "With fewer children to look after, more women can go out to work, which helps the economy."
@@ -417,9 +438,34 @@
      "text": "Development is uneven: some countries are far ahead of others. The difference between the richest and poorest countries is called the development gap."
     },
     {
+     "id": "4.1b",
+     "type": "say",
+     "text": "The causes of the gap come in three groups: physical, economic and historical."
+    },
+    {
      "id": "4.2",
      "type": "say",
-     "text": "The causes of the gap come in three groups. Physical causes come from nature: being landlocked, with no coastline, makes trade costly; drought, poor soils, natural hazards and diseases such as malaria hold people back."
+     "text": "Physical causes come from nature. A landlocked country, with no coastline, pays more to send goods abroad."
+    },
+    {
+     "id": "4.2b",
+     "type": "say",
+     "text": "Drought and poor soils ruin crops. Natural hazards, such as floods and earthquakes, wreck homes and roads. Diseases such as malaria stop people working."
+    },
+    {
+     "id": "4.4",
+     "type": "say",
+     "text": "Economic causes come from trade and money. Many poorer countries rely on selling raw materials, such as coffee or copper. Raw materials sold like this are called primary products."
+    },
+    {
+     "id": "4.4b",
+     "type": "say",
+     "text": "Primary products earn little and their prices swing up and down, while goods made in factories cost a lot to buy. Paying back debts also leaves less money for schools and hospitals."
+    },
+    {
+     "id": "4.5",
+     "type": "say",
+     "text": "Historical causes come from the past. Colonialism is when one country rules another for its own benefit: European countries ruled much of Africa and Asia, took raw materials and drew borders that split peoples."
     },
     {
      "id": "4.3",
@@ -428,7 +474,7 @@
      "question": "Which of these is a physical cause of uneven development?",
      "options": [
       {
-       "text": "Frequent droughts that ruin crops",
+       "text": "Cyclones that wreck farms and roads",
        "branch": "right"
       },
       {
@@ -436,32 +482,22 @@
        "branch": "debt"
       },
       {
-       "text": "Borders drawn by former rulers",
+       "text": "Borders drawn by colonial rulers",
        "branch": "borders"
       }
      ],
-     "right": "Yes: drought comes from nature, so it is physical.",
+     "right": "Yes: a cyclone is a natural hazard, so it is physical.",
      "wrong": {
-      "other": "Not quite: frequent droughts. Physical means it comes from nature.",
-      "debt": "Not quite: debt is about money, an economic cause. Physical means from nature, like drought.",
-      "borders": "Not quite: borders drawn by rulers come from history. Physical means from nature, like drought."
+      "other": "Not quite: cyclones. Physical means it comes from nature.",
+      "debt": "Not quite: debt is about money, an economic cause. Physical means from nature, like a cyclone.",
+      "borders": "Not quite: colonial borders come from history. Physical means from nature, like a cyclone."
      },
      "idk": [
       {
-       "hint": "Physical means it comes from nature. Which option is the weather?"
+       "hint": "Physical means it comes from nature. Which option is a kind of weather?"
       }
      ],
-     "answerWhy": "Drought comes from nature, so it is a physical cause."
-    },
-    {
-     "id": "4.4",
-     "type": "say",
-     "text": "Economic causes come from trade and money. Raw materials, such as coffee or copper, are called primary products: they earn little and their prices swing up and down, while poorer countries must buy costly manufactured goods."
-    },
-    {
-     "id": "4.5",
-     "type": "say",
-     "text": "Historical causes come from the past. Colonialism is when one country rules another for its own benefit: European countries ruled much of Africa and Asia, took raw materials and drew borders that split peoples."
+     "answerWhy": "A cyclone comes from nature, so it is a physical cause."
     },
     {
      "id": "4.6",
@@ -471,39 +507,44 @@
     {
      "id": "4.7",
      "type": "say",
-     "text": "Uneven development also causes international migration: people moving to live in another country, often from poorer countries to richer ones for work, higher pay and safety. Many send money home."
+     "text": "Uneven development also causes international migration: people moving to live in another country."
     },
     {
      "id": "4.8",
      "type": "ask",
      "kind": "tap",
-     "question": "Why does uneven development cause international migration?",
+     "question": "Why do many people migrate from poorer countries to richer ones?",
      "options": [
       {
-       "text": "People move to richer countries for jobs and higher pay",
+       "text": "For jobs and higher pay",
        "branch": "right"
       },
       {
-       "text": "Richer countries have warmer weather",
-       "branch": "weather"
+       "text": "Because richer countries have more farmland",
+       "branch": "farm"
       },
       {
-       "text": "Poorer countries have no people",
-       "branch": "nopeople"
+       "text": "Because poorer countries have better hospitals",
+       "branch": "hosp"
       }
      ],
-     "right": "Yes: the gap in jobs and pay pulls people to richer countries.",
+     "right": "Yes: the gap in jobs and pay pulls people to richer countries, along with safety and better services.",
      "wrong": {
-      "other": "Not quite: people move to richer countries for jobs and higher pay.",
-      "weather": "Not quite: the weather is not the reason. People move for jobs and higher pay.",
-      "nopeople": "Not quite: poorer countries have many people. They move to richer countries for jobs and higher pay."
+      "other": "Not quite: for jobs and higher pay.",
+      "farm": "Not quite: most migrants do not move to farm. They move for jobs and higher pay.",
+      "hosp": "Not quite: richer countries usually have better hospitals. People move for jobs and higher pay."
      },
      "idk": [
       {
-       "hint": "If wages in one country are many times higher, what might some people do?"
+       "hint": "If wages in one country are many times higher, why might some people move there?"
       }
      ],
      "answerWhy": "People move from poorer to richer countries for jobs, higher pay and safety."
+    },
+    {
+     "id": "4.8b",
+     "type": "say",
+     "text": "Many migrants send part of their pay home to their families."
     },
     {
      "id": "4.9",
@@ -514,7 +555,7 @@
       "economic",
       "historical"
      ],
-     "idk": "No problem. A good line would be: the causes are physical, economic and historical."
+     "idk": "No problem. A good line would be: the causes of uneven development are physical, economic and historical."
     }
    ]
   },
@@ -525,49 +566,59 @@
     {
      "id": "5.1",
      "type": "say",
-     "text": "Several strategies try to close the gap. Investment means companies or other countries putting money into businesses, roads and factories; industrial development then creates jobs and taxes."
+     "text": "Several strategies try to close the gap. Investment means companies or other countries putting money into businesses, roads and factories."
+    },
+    {
+     "id": "5.1b",
+     "type": "say",
+     "text": "Industrial development means building up factories and industry. It brings jobs and wages, and the government can tax them."
     },
     {
      "id": "5.2",
      "type": "say",
-     "text": "Aid is help from one country or charity to another: money, goods or skills, given or lent on very easy terms. It can save lives, but it can be wasted."
+     "text": "Aid is help from one country or charity to another: money, goods or skills, given free or lent cheaply. Emergency aid helps after a disaster; long-term aid pays for schools or wells."
+    },
+    {
+     "id": "5.2b",
+     "type": "say",
+     "text": "Aid can save lives, but it can be wasted, or a country can come to depend on it."
     },
     {
      "id": "5.3",
      "type": "say",
-     "text": "Debt relief cancels some of the money a poor country owes, so money paid out as interest can go on health and schools instead. Most of the 39 countries that qualified for one scheme have been helped."
+     "text": "Debt relief cancels some of the money a poor country owes. The extra it would have paid back on its loans, called interest, can then go on health and schools instead."
     },
     {
      "id": "5.4",
      "type": "ask",
      "kind": "tap",
-     "question": "A student writes: \"Debt relief is a loan to help a poor country.\" What is wrong?",
+     "question": "A country's debts to other governments are cancelled. Which strategy is this?",
      "options": [
       {
-       "text": "Debt relief cancels money owed; it is not a new loan",
+       "text": "Debt relief",
        "branch": "right"
       },
       {
-       "text": "Nothing: debt relief is a loan",
+       "text": "A new loan",
        "branch": "loan"
       },
       {
-       "text": "Debt relief is only for rich countries",
-       "branch": "rich"
+       "text": "Microfinance",
+       "branch": "micro"
       }
      ],
-     "right": "Yes: debt relief cancels debt. Mixing it up with loans is a common exam mistake.",
+     "right": "Yes: cancelling debt is debt relief. It is not a loan: it takes debt away.",
      "wrong": {
-      "other": "Not quite: debt relief cancels money owed; it is not a new loan.",
-      "loan": "Not quite: a loan adds debt. Debt relief takes debt away.",
-      "rich": "Not quite: it is for poor countries. And it cancels money owed; it is not a loan."
+      "other": "Not quite: debt relief.",
+      "loan": "Not quite: a loan adds debt. Cancelling debt is debt relief.",
+      "micro": "Not quite: microfinance is a small loan to a person. Cancelling a country's debt is debt relief."
      },
      "idk": [
       {
-       "hint": "Does debt relief add to what the country owes, or take some away?"
+       "hint": "Does this add to what the country owes, or take some away?"
       }
      ],
-     "answerWhy": "Debt relief cancels money a poor country owes; it is not a loan."
+     "answerWhy": "Cancelling money a country owes is debt relief; it is not a loan."
     },
     {
      "id": "5.5",
@@ -585,6 +636,38 @@
      "text": "Fairtrade pays farmers a fair minimum price for their crop, plus extra money for their community."
     },
     {
+     "id": "5.6c",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A village gets a pump its own people can build and repair. Which strategy is this?",
+     "options": [
+      {
+       "text": "Intermediate technology",
+       "branch": "right"
+      },
+      {
+       "text": "Fairtrade",
+       "branch": "fair"
+      },
+      {
+       "text": "Microfinance",
+       "branch": "micro"
+      }
+     ],
+     "right": "Yes: simple kit the village can mend itself is intermediate technology.",
+     "wrong": {
+      "other": "Not quite: intermediate technology.",
+      "fair": "Not quite: Fairtrade is about prices for farmers' crops. A pump the village can mend is intermediate technology.",
+      "micro": "Not quite: microfinance is a small loan. A pump the village can mend is intermediate technology."
+     },
+     "idk": [
+      {
+       "hint": "Which strategy is about simple equipment that local people can fix?"
+      }
+     ],
+     "answerWhy": "A pump local people can build and repair is intermediate technology."
+    },
+    {
      "id": "5.7",
      "type": "say",
      "text": "Tourism brings money and jobs. In Kenya, international tourists grew from about 1.2 million in 2015 to about 2 million in 2019, for safaris and beaches."
@@ -592,7 +675,7 @@
     {
      "id": "5.8",
      "type": "say",
-     "text": "In 2019 Kenya's tourism earned $1.76 billion, about 15% of what Kenya earns from selling abroad. That money pays wages, taxes and new roads."
+     "text": "In 2019 tourism earned Kenya $1.76 billion, about 15% of what Kenya earns from selling goods and services to other countries. That money pays wages, and taxes on it help pay for new roads."
     },
     {
      "id": "5.9",
@@ -605,23 +688,23 @@
        "branch": "right"
       },
       {
-       "text": "It brings no jobs at all",
-       "branch": "nojobs"
+       "text": "It gives jobs to local people",
+       "branch": "jobs"
       },
       {
-       "text": "It only helps rich countries",
-       "branch": "rich"
+       "text": "It earns money from abroad",
+       "branch": "earns"
       }
      ],
-     "right": "Yes: money leaking abroad means less stays in Kenya. Tourists also stay away after terrorism or a pandemic.",
+     "right": "Yes: money that goes abroad does not help Kenya. Visitor numbers also fall after terrorism or a pandemic.",
      "wrong": {
       "other": "Not quite: some of the money goes to foreign hotel companies.",
-      "nojobs": "Not quite: tourism does bring jobs. Its weakness is that some money goes to foreign companies.",
-      "rich": "Not quite: it helps poorer countries like Kenya, but some money leaks to foreign companies."
+      "jobs": "Not quite: jobs are a strength. A weakness is that some money goes to foreign hotel companies.",
+      "earns": "Not quite: that is a strength. A weakness is that some money goes to foreign hotel companies."
      },
      "idk": [
       {
-       "hint": "Who owns many big hotels? Where does their profit go?"
+       "hint": "Many big hotels in Kenya belong to companies from richer countries. Where might their profit go?"
       }
      ],
      "answerWhy": "Some of the money goes to foreign hotel companies, and visitor numbers fall after terrorism or a pandemic."
@@ -653,36 +736,41 @@
      "text": "Extreme poverty means living on less than $3 a day. The share of the world's people in extreme poverty fell from about 43% in 1990 to about 10% in 2024."
     },
     {
+     "id": "6.2b",
+     "type": "say",
+     "text": "But progress is uneven: many of the poorest countries, especially in Africa, are falling further behind."
+    },
+    {
      "id": "6.3",
      "type": "ask",
      "kind": "tap",
-     "question": "Which piece of evidence shows the gap is NOT closing everywhere?",
+     "question": "Which is the best overall judgement?",
      "options": [
       {
-       "text": "Many of the poorest African countries are falling further behind",
+       "text": "The gap is closing for some countries but widening for others",
        "branch": "right"
       },
       {
-       "text": "Extreme poverty fell from about 43% to 10%",
-       "branch": "falling"
+       "text": "The gap has closed everywhere",
+       "branch": "all"
       },
       {
-       "text": "China and India have grown fast",
-       "branch": "china"
+       "text": "Nothing has changed since 1990",
+       "branch": "none"
       }
      ],
-     "right": "Yes: progress is uneven, so for many of the poorest countries the gap is widening.",
+     "right": "Yes: that judgement uses evidence from both sides.",
      "wrong": {
-      "other": "Not quite: many of the poorest African countries are falling further behind.",
-      "falling": "Not quite: that shows progress. The evidence against is that many of the poorest African countries are falling behind.",
-      "china": "Not quite: that shows the gap closing for some. Many of the poorest African countries are falling behind."
+      "other": "Not quite: closing for some, widening for others.",
+      "all": "Not quite: many of the poorest countries are falling behind, so it has not closed everywhere.",
+      "none": "Not quite: extreme poverty fell from about 43% to 10%, so a lot has changed for some countries."
      },
      "idk": [
       {
-       "hint": "Two options show progress. Which one shows some countries falling behind?"
+       "hint": "There is evidence of progress and evidence of countries falling behind. Which option uses both?"
       }
      ],
-     "answerWhy": "Many of the poorest countries, especially in Africa, are falling further behind, so the gap is not closing everywhere."
+     "answerWhy": "The gap is closing for fast-growing countries but widening for many of the poorest."
     },
     {
      "id": "6.4",
@@ -694,10 +782,10 @@
      "type": "own",
      "prompt": "In one line: is the development gap closing? Give one point each way.",
      "points": [
-      "closing for some (fast-growing NEEs; less extreme poverty)",
-      "not for many of the poorest countries"
+      "it is closing for fast-growing countries",
+      "many of the poorest countries are falling behind"
      ],
-     "idk": "No problem. A good line would be: it is closing for fast-growing countries such as China, but many of the poorest African countries are falling behind."
+     "idk": "No problem. A good line would be: the development gap is closing for fast-growing countries such as China, but many of the poorest African countries are falling behind."
     },
     {
      "id": "6.6",
@@ -856,7 +944,7 @@
      "question": "Quiz, question 6 of 6: why can GNI per head mislead?",
      "options": [
       {
-       "text": "It is an average that hides inequality",
+       "text": "It is a mean, which hides inequality",
        "branch": "right"
       },
       {
@@ -868,14 +956,14 @@
        "branch": "w2"
       }
      ],
-     "right": "Yes: an average hides how unequally money is shared.",
+     "right": "Yes: a mean hides how unequally money is shared.",
      "wrong": {
-      "other": "Not quite: it is an average that hides inequality.",
-      "w1": "Not quite: it is measured for nearly every country. It misleads because it is an average that hides inequality.",
-      "w2": "Not quite: it is all about money. It misleads because it is an average that hides inequality."
+      "other": "Not quite: it is a mean, which hides inequality.",
+      "w1": "Not quite: it is measured for nearly every country. It misleads because it is a mean that hides inequality.",
+      "w2": "Not quite: it is all about money. It misleads because it is a mean that hides inequality."
      },
      "idk": [],
-     "answerWhy": "GNI per head is an average, so it hides inequality.",
+     "answerWhy": "GNI per head is a mean, so it hides inequality.",
      "quiz": true
     },
     {

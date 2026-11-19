@@ -1,7 +1,7 @@
 {
  "lesson": "g5-uk-economy",
  "version": 1,
- "about": "The scripted AI lesson for g5-uk-economy (2026-11-19, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from g5-nigeria.",
+ "about": "The scripted AI lesson for g5-uk-economy (2026-11-19, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions on the sectors, from g5-nigeria.",
  "keyPoints": [
   {
    "kp": 0,
@@ -16,7 +16,7 @@
      "id": "1.1a",
      "type": "ask",
      "kind": "tap",
-     "question": "First, two quick questions from the last lesson. Which sector makes things in factories?",
+     "question": "First, two quick questions from the last lesson. An economy has sectors: primary takes raw materials, secondary makes things, tertiary provides services. Which sector is a car factory in?",
      "options": [
       {
        "text": "Secondary",
@@ -34,15 +34,15 @@
      "right": "Yes: secondary, or manufacturing.",
      "wrong": {
       "other": "Not quite: secondary.",
-      "primary": "Not quite: primary takes raw materials from the land or sea. Making things is secondary.",
-      "tertiary": "Not quite: tertiary provides services. Making things is secondary."
+      "primary": "Not quite: primary takes raw materials from the land or sea. A factory makes things: secondary.",
+      "tertiary": "Not quite: tertiary provides services. A factory makes things: secondary."
      },
      "idk": [
       {
-       "hint": "Primary takes raw materials, tertiary provides services. Which is left?"
+       "hint": "Does a car factory take raw materials, make things, or provide a service?"
       }
      ],
-     "answerWhy": "Making things in factories is the secondary sector."
+     "answerWhy": "A car factory makes things, so it is in the secondary sector."
     },
     {
      "id": "1.1b",
@@ -71,7 +71,7 @@
      },
      "idk": [
       {
-       "hint": "Does a nurse take raw materials, make things, or provide a service?"
+       "hint": "Tertiary is the sector that provides services. Is caring for patients a service?"
       }
      ],
      "answerWhy": "A nurse provides a service, so works in the tertiary sector."
@@ -79,54 +79,59 @@
     {
      "id": "1.2",
      "type": "say",
-     "text": "Now this lesson. In the past, many people in Britain worked in coal mines, steelworks, shipyards and textile mills. These old heavy industries are called traditional industries."
+     "text": "Now this lesson. In the past, many people in Britain worked in coal mines, steelworks, shipyards and textile mills: heavy, dirty work. These old industries are called traditional industries."
     },
     {
      "id": "1.3",
      "type": "say",
-     "text": "The decline of manufacturing and heavy industry, and the loss of its jobs, is called deindustrialisation. Coal and iron ore ran out or became costly to dig, and machines replaced many workers."
+     "text": "The decline of these industries and of factory work, and the loss of their jobs, is called deindustrialisation. Coal and iron ore ran out or became costly to dig, and machines replaced many workers."
     },
     {
      "id": "1.4",
      "type": "say",
-     "text": "The way countries have become more connected through trade, travel and communication is called globalisation. Factories abroad, paying lower wages, could make goods more cheaply, so many UK factories closed."
+     "text": "The way countries have become more connected through trade, travel and communication is called globalisation."
+    },
+    {
+     "id": "1.4b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Predict: with globalisation, goods made abroad could easily be shipped to the UK. What would that do to many UK factories?",
+     "options": [
+      {
+       "text": "Many closed, because goods were made more cheaply abroad",
+       "branch": "right"
+      },
+      {
+       "text": "They all grew bigger",
+       "branch": "grew"
+      },
+      {
+       "text": "Nothing changed",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: factories abroad paid lower wages, so they could make goods more cheaply, and many UK factories closed.",
+     "wrong": {
+      "other": "Not quite: many closed, because goods were made more cheaply abroad.",
+      "grew": "Not quite: they faced cheaper goods from abroad, so many closed.",
+      "same": "Not quite: cheaper goods from abroad meant many UK factories closed."
+     },
+     "idk": [
+      {
+       "hint": "If the same goods could be made more cheaply abroad, who would buyers choose?"
+      }
+     ],
+     "answerWhy": "Goods were made more cheaply where wages were lower, so many UK factories closed."
     },
     {
      "id": "1.5",
      "type": "say",
-     "text": "Government policies mattered too. Later governments stopped protecting loss-making industries such as coal, and encouraged service industries such as banking instead."
+     "text": "The government's choices, its policies, mattered too. Governments stopped paying to keep loss-making industries, such as coal mines, open, and encouraged service industries such as banking instead."
     },
     {
-     "id": "1.6",
-     "type": "ask",
-     "kind": "tap",
-     "question": "An exam asks for one reason traditional industries declined in the UK. Which answer is best?",
-     "options": [
-      {
-       "text": "Goods could be made more cheaply abroad, where wages were lower",
-       "branch": "right"
-      },
-      {
-       "text": "People stopped wanting to work",
-       "branch": "lazy"
-      },
-      {
-       "text": "The UK ran out of space for factories",
-       "branch": "space"
-      }
-     ],
-     "right": "Yes: that is globalisation, one of the three causes.",
-     "wrong": {
-      "other": "Not quite: goods could be made more cheaply abroad, where wages were lower.",
-      "lazy": "Not quite: the jobs went, not the willingness to work. Goods were made more cheaply abroad.",
-      "space": "Not quite: space was not the problem. Goods were made more cheaply abroad, where wages were lower."
-     },
-     "idk": [
-      {
-       "hint": "Think of globalisation. Where could factories make things more cheaply?"
-      }
-     ],
-     "answerWhy": "Goods could be made more cheaply in countries with lower wages, so UK factories closed: globalisation."
+     "id": "1.5b",
+     "type": "say",
+     "text": "Three causes, then, changed the UK's economy: deindustrialisation, globalisation and government policies."
     },
     {
      "id": "1.7",
@@ -138,11 +143,11 @@
      "type": "own",
      "prompt": "In one line: give the three causes of economic change in the UK.",
      "points": [
-      "deindustrialisation (decline of traditional industries)",
+      "deindustrialisation",
       "globalisation",
       "government policies"
      ],
-     "idk": "No problem. A good line would be: deindustrialisation, globalisation and government policies."
+     "idk": "No problem. A good line would be: the UK's economy changed because of deindustrialisation, globalisation and government policies."
     }
    ]
   },
@@ -158,7 +163,12 @@
     {
      "id": "2.2",
      "type": "say",
-     "text": "In 2025 services made up about 73% of the UK's economy, manufacturing about 8%, and farming, forestry and fishing under 1%. The UK's GNI per head was $54,550."
+     "text": "In 2025 services made up about 73% of the UK's economy, manufacturing about 8%, and farming, forestry and fishing under 1%."
+    },
+    {
+     "id": "2.2b",
+     "type": "say",
+     "text": "The UK's GNI per head, its mean income per person, was $54,550 a year in 2025."
     },
     {
      "id": "2.3",
@@ -171,6 +181,38 @@
      "text": "Work based on knowledge and research is called the quaternary sector: a fourth sector, after primary, secondary and tertiary."
     },
     {
+     "id": "2.4b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which job is in the quaternary sector?",
+     "options": [
+      {
+       "text": "A scientist researching new medicines",
+       "branch": "right"
+      },
+      {
+       "text": "A worker in a car factory",
+       "branch": "factory"
+      },
+      {
+       "text": "A farmer",
+       "branch": "farmer"
+      }
+     ],
+     "right": "Yes: research is knowledge work, the quaternary sector.",
+     "wrong": {
+      "other": "Not quite: a scientist researching new medicines.",
+      "factory": "Not quite: a car factory makes things, the secondary sector. Research is quaternary.",
+      "farmer": "Not quite: farming is primary. Research is quaternary."
+     },
+     "idk": [
+      {
+       "hint": "The quaternary sector is about knowledge and research. Which job is research?"
+      }
+     ],
+     "answerWhy": "Researching new medicines is knowledge work, in the quaternary sector."
+    },
+    {
      "id": "2.5",
      "type": "say",
      "text": "A group of research and high-tech companies built together, usually next to a university, is called a science park."
@@ -178,86 +220,59 @@
     {
      "id": "2.6",
      "type": "say",
-     "text": "Firms there can share ideas with the university and hire its graduates. Cambridge Science Park, beside the University of Cambridge and close to main roads, is home to many technology and medical research companies."
+     "text": "Firms in a science park can share ideas with the university and hire its graduates, students who have finished their degrees. They also want main roads nearby, space to grow and green surroundings."
+    },
+    {
+     "id": "2.6b",
+     "type": "say",
+     "text": "Cambridge Science Park, beside the University of Cambridge and close to main roads, is home to many technology and medical research companies."
     },
     {
      "id": "2.7",
      "type": "say",
-     "text": "A group of offices and light industry on the edge of a town, near main roads, is called a business park."
+     "text": "A group of offices and small, clean workshops on the edge of a town, near main roads, is called a business park."
     },
     {
      "id": "2.8",
      "type": "ask",
      "kind": "tap",
-     "question": "A map shows a site next to a university, beside a motorway junction, with open green land. Why is the university a reason it suits a science park?",
+     "question": "Which site would suit a new science park best?",
      "options": [
       {
-       "text": "Firms can share research ideas and hire graduates",
+       "text": "Next to a university, beside a motorway junction",
        "branch": "right"
       },
       {
-       "text": "Students can shop there at weekends",
-       "branch": "shop"
+       "text": "In a remote valley far from any road",
+       "branch": "remote"
       },
       {
-       "text": "Universities pay companies to move in",
-       "branch": "pay"
+       "text": "In a crowded old town centre with no space",
+       "branch": "nospace"
       }
      ],
-     "right": "Yes: research ideas and skilled graduates are what science park firms need.",
+     "right": "Yes: the university gives ideas and graduates, and the motorway makes it easy to reach.",
      "wrong": {
-      "other": "Not quite: firms can share research ideas and hire graduates.",
-      "shop": "Not quite: shopping is not why firms choose it. They want research ideas and graduates.",
-      "pay": "Not quite: they come for research ideas and graduates nearby."
+      "other": "Not quite: next to a university, beside a motorway junction.",
+      "remote": "Not quite: staff and visitors need to reach it. A site by a university and a motorway is best.",
+      "nospace": "Not quite: science parks need space to grow. A site by a university and a motorway is best."
      },
      "idk": [
       {
-       "hint": "What does a university have that a high-tech company needs?"
+       "hint": "Science parks want a university, good roads and space. Which site has them?"
       }
      ],
-     "answerWhy": "Being next to a university lets firms share research ideas and hire graduates."
-    },
-    {
-     "id": "2.9",
-     "type": "ask",
-     "kind": "tap",
-     "question": "And why does the motorway junction help?",
-     "options": [
-      {
-       "text": "Workers, visitors and deliveries can reach it easily",
-       "branch": "right"
-      },
-      {
-       "text": "The noise helps people work",
-       "branch": "noise"
-      },
-      {
-       "text": "Motorways are cheap to build on",
-       "branch": "cheap"
-      }
-     ],
-     "right": "Yes: good road access makes it easy to reach.",
-     "wrong": {
-      "other": "Not quite: workers, visitors and deliveries can reach it easily.",
-      "noise": "Not quite: noise is a drawback. The junction helps because the site is easy to reach.",
-      "cheap": "Not quite: nothing is built on the motorway. The junction makes the site easy to reach."
-     },
-     "idk": [
-      {
-       "hint": "How do people and goods get to the site?"
-      }
-     ],
-     "answerWhy": "A nearby motorway junction means workers, visitors and deliveries can reach the site easily."
+     "answerWhy": "A site next to a university and a motorway junction gives ideas, graduates and easy access."
     },
     {
      "id": "2.10",
      "type": "own",
-     "prompt": "In one line: what is a science park, and why is it usually next to a university?",
+     "prompt": "In one line: what is the UK's post-industrial economy based on?",
      "points": [
-      "a group of research and high-tech companies",
-      "near a university to share research ideas and hire graduates"
+      "services",
+      "knowledge and research work (the quaternary sector)"
      ],
-     "idk": "No problem. A good line would be: a science park is a group of research and high-tech firms, next to a university so they can share ideas and hire graduates."
+     "idk": "No problem. A good line would be: the UK's post-industrial economy is mostly services, with growing knowledge and research work in places such as science parks."
     }
    ]
   },
@@ -278,7 +293,12 @@
     {
      "id": "3.3",
      "type": "say",
-     "text": "Energy from sources that do not run out, such as the Sun and the wind, is called renewable energy."
+     "text": "Burning coal, oil or gas, called fossil fuels, for power gives off carbon dioxide, a gas that warms the climate."
+    },
+    {
+     "id": "3.3b",
+     "type": "say",
+     "text": "Energy from sources that do not run out, such as the Sun and the wind, is called renewable energy. It gives off no carbon dioxide while it is made."
     },
     {
      "id": "3.4",
@@ -294,30 +314,30 @@
      "id": "3.6",
      "type": "ask",
      "kind": "tap",
-     "question": "How does using solar and wind power make the Burnaston factory more sustainable?",
+     "question": "Why does running on solar and wind power make the Burnaston factory more sustainable?",
      "options": [
       {
        "text": "It burns less fossil fuel, so it gives off less carbon dioxide",
        "branch": "right"
       },
       {
-       "text": "It makes the cars faster",
-       "branch": "faster"
+       "text": "It lets the factory make more cars",
+       "branch": "more"
       },
       {
-       "text": "It means the factory needs no workers",
-       "branch": "workers"
+       "text": "It makes the electricity free",
+       "branch": "free"
       }
      ],
-     "right": "Yes: renewable energy cuts the pollution from burning fuel.",
+     "right": "Yes: less fossil fuel burned means less carbon dioxide.",
      "wrong": {
       "other": "Not quite: it burns less fossil fuel, so it gives off less carbon dioxide.",
-      "faster": "Not quite: the cars are not faster. Using solar and wind means less fossil fuel burned, so less carbon dioxide.",
-      "workers": "Not quite: workers are still needed. Solar and wind mean less fossil fuel burned, so less carbon dioxide."
+      "more": "Not quite: the number of cars is not the point. Solar and wind mean less fossil fuel burned, so less carbon dioxide.",
+      "free": "Not quite: solar panels and wind turbines cost money. The gain is less fossil fuel burned, so less carbon dioxide."
      },
      "idk": [
       {
-       "hint": "Explain how, not just that. What does a factory usually burn for power?"
+       "hint": "Solar and wind replace burning fuel. Does that mean more or less carbon dioxide?"
       }
      ],
      "answerWhy": "Solar and wind power replace burning fossil fuels, so the factory gives off less carbon dioxide."
@@ -332,10 +352,10 @@
      "type": "own",
      "prompt": "In one line: give one way modern industry can be more environmentally sustainable, and say how it helps.",
      "points": [
-      "a way (renewable energy, less waste, recycling, a wildlife reserve)",
-      "how it helps (less carbon dioxide or pollution, less landfill, more wildlife)"
+      "a way, such as renewable energy, less waste or a wildlife reserve",
+      "how it helps, such as less carbon dioxide or more wildlife"
      ],
-     "idk": "No problem. A good line would be: a factory can use solar and wind power, which means less carbon dioxide from burning fuel."
+     "idk": "No problem. A good line would be: a factory such as Toyota at Burnaston can use solar and wind power, which means less carbon dioxide from burning fuel."
     }
    ]
   },
@@ -346,7 +366,12 @@
     {
      "id": "4.1",
      "type": "say",
-     "text": "The countryside is changing in two different ways. In an area of population growth, such as South Cambridgeshire, near Cambridge, people move in because jobs and good transport are close."
+     "text": "Rural means in the countryside. The rural landscape is changing in two different ways."
+    },
+    {
+     "id": "4.1b",
+     "type": "say",
+     "text": "In an area of population growth, such as South Cambridgeshire, near Cambridge, people move in because jobs and good transport are close."
     },
     {
      "id": "4.2",
@@ -367,33 +392,33 @@
      "id": "4.5",
      "type": "ask",
      "kind": "tap",
-     "question": "Which change is typical of the Outer Hebrides rather than South Cambridgeshire?",
+     "question": "A village has a growing number of empty homes, and its bus service has just been cut. Which kind of area is it more likely to be?",
      "options": [
       {
-       "text": "The local school closes because there are too few pupils",
+       "text": "An area of population decline, like the Outer Hebrides",
        "branch": "right"
       },
       {
-       "text": "New housing estates are built",
-       "branch": "estates"
+       "text": "An area of population growth, like South Cambridgeshire",
+       "branch": "growth"
       },
       {
-       "text": "Traffic gets much busier",
-       "branch": "traffic"
+       "text": "A busy city centre",
+       "branch": "city"
       }
      ],
-     "right": "Yes: with fewer young families, services close.",
+     "right": "Yes: empty homes and fewer services are signs of people leaving.",
      "wrong": {
-      "other": "Not quite: the local school closes because there are too few pupils.",
-      "estates": "Not quite: new estates are built where people move in, as in South Cambridgeshire.",
-      "traffic": "Not quite: busier traffic comes with growth, as in South Cambridgeshire."
+      "other": "Not quite: an area of population decline, like the Outer Hebrides.",
+      "growth": "Not quite: in growing areas homes fill up and services gain users. Empty homes and a cut bus point to decline, like the Outer Hebrides.",
+      "city": "Not quite: the question is about a village, a rural area. Empty homes and a cut bus point to decline, like the Outer Hebrides."
      },
      "idk": [
       {
-       "hint": "The Outer Hebrides is losing young people. What happens to a school with fewer children?"
+       "hint": "Are empty homes and fewer buses signs of people arriving or leaving?"
       }
      ],
-     "answerWhy": "With fewer young families in the Outer Hebrides, schools and other services close."
+     "answerWhy": "Empty homes and cut services are signs of rural depopulation, as in the Outer Hebrides."
     },
     {
      "id": "4.6",
@@ -403,12 +428,12 @@
     {
      "id": "4.7",
      "type": "own",
-     "prompt": "In one line: give one change in an area of rural growth and one in an area of rural decline.",
+     "prompt": "In one line: give one change where the rural population is growing and one where it is falling.",
      "points": [
-      "growth (new estates, higher house prices, busier traffic, more customers for shops)",
-      "decline (older population, shops, schools or buses closing, fewer workers)"
+      "where it is growing, such as rising house prices or new estates",
+      "where it is falling, such as schools, shops or buses closing"
      ],
-     "idk": "No problem. A good line would be: in South Cambridgeshire house prices rise, while in the Outer Hebrides schools close as young people leave."
+     "idk": "No problem. A good line would be: in growing South Cambridgeshire house prices rise, while in the shrinking Outer Hebrides schools close as young people leave."
     }
    ]
   },
@@ -422,6 +447,11 @@
      "text": "The basic networks a country needs to work, such as roads, railways, ports and airports, are called infrastructure."
     },
     {
+     "id": "5.1b",
+     "type": "say",
+     "text": "Better infrastructure can help the economy: firms can move goods and people more easily, and building new projects creates jobs."
+    },
+    {
      "id": "5.2",
      "type": "say",
      "text": "Busy motorways and main roads are widened. HS2, a high-speed railway, is being built from London to Birmingham; its planned northern sections were cancelled."
@@ -429,36 +459,41 @@
     {
      "id": "5.3",
      "type": "say",
-     "text": "Liverpool2, a deep-water container terminal at the Port of Liverpool, lets the biggest cargo ships dock. Heathrow airport has plans for a third runway, which are hotly debated."
+     "text": "Liverpool2 is a new deep-water dock at the Port of Liverpool for the biggest container ships, which carry goods in large metal boxes."
+    },
+    {
+     "id": "5.3a",
+     "type": "say",
+     "text": "Heathrow airport has plans for a third runway, which are hotly debated."
     },
     {
      "id": "5.3b",
      "type": "ask",
      "kind": "tap",
-     "question": "Why could a new deep-water terminal at Liverpool help the economy of north-west England?",
+     "question": "Why could Liverpool2 help the economy of north-west England?",
      "options": [
       {
        "text": "Bigger ships can bring and take goods, so firms nearby can trade more cheaply",
        "branch": "right"
       },
       {
-       "text": "It makes the sea warmer",
-       "branch": "warm"
+       "text": "It will mainly be used by holiday cruises",
+       "branch": "cruise"
       },
       {
-       "text": "It stops people flying abroad",
-       "branch": "fly"
+       "text": "It moves jobs from Liverpool to London",
+       "branch": "london"
       }
      ],
      "right": "Yes: cheaper, easier trade attracts firms and jobs to the area.",
      "wrong": {
-      "other": "Not quite: bigger ships can come, so firms nearby can trade more cheaply.",
-      "warm": "Not quite: the sea is unchanged. Bigger ships mean cheaper trade, which brings firms and jobs.",
-      "fly": "Not quite: it is about cargo ships, not flights. Cheaper trade brings firms and jobs."
+      "other": "Not quite: bigger ships mean cheaper trade for firms nearby.",
+      "cruise": "Not quite: it is built for container ships carrying goods. Cheaper trade attracts firms and jobs.",
+      "london": "Not quite: it brings trade to Liverpool. Cheaper trade attracts firms and jobs to the north-west."
      },
      "idk": [
       {
-       "hint": "Ports move goods. What does letting bigger ships in do for businesses nearby?"
+       "hint": "Container ships carry goods. What does letting the biggest ones in do for firms nearby?"
       }
      ],
      "answerWhy": "Bigger ships make trade cheaper for firms nearby, attracting businesses and jobs."
@@ -476,54 +511,59 @@
     {
      "id": "5.6",
      "type": "say",
-     "text": "Handing powers and money from the national government to a region or city, such as an elected mayor in Greater Manchester, is called devolution."
+     "text": "Handing powers and money from the national government to a region or city, such as an elected mayor in Greater Manchester, is called devolution. It is one strategy to close the divide."
     },
     {
      "id": "5.7",
      "type": "say",
-     "text": "An area where the government gives businesses lower taxes and simpler rules, to encourage them to set up there, is called an enterprise zone. Better transport between northern cities is another strategy."
+     "text": "An area where the government gives businesses lower taxes and simpler rules, to encourage them to set up there, is called an enterprise zone."
+    },
+    {
+     "id": "5.7b",
+     "type": "say",
+     "text": "Better transport between northern cities is another strategy to close the divide."
     },
     {
      "id": "5.8",
      "type": "ask",
      "kind": "tap",
-     "question": "Which of these is a strategy to reduce the north–south divide?",
+     "question": "The government wants a car parts firm to open in a poor northern town. Which strategy would help most?",
      "options": [
       {
-       "text": "Giving lower taxes to businesses that set up in poorer northern areas",
+       "text": "Making the town an enterprise zone",
        "branch": "right"
       },
       {
-       "text": "Building all new offices in London",
+       "text": "Building new offices in London",
        "branch": "london"
       },
       {
-       "text": "Closing northern railway lines",
-       "branch": "close"
+       "text": "Raising business taxes in the north",
+       "branch": "tax"
       }
      ],
-     "right": "Yes: an enterprise zone tries to bring jobs to poorer areas.",
+     "right": "Yes: lower taxes there make the town more attractive to the firm.",
      "wrong": {
-      "other": "Not quite: giving lower taxes to businesses that set up in poorer northern areas.",
-      "london": "Not quite: that would widen the gap. Enterprise zones in poorer areas try to close it.",
-      "close": "Not quite: that would widen the gap. Better northern transport tries to close it."
+      "other": "Not quite: making the town an enterprise zone.",
+      "london": "Not quite: that would pull jobs south. An enterprise zone makes the northern town more attractive.",
+      "tax": "Not quite: higher taxes would put the firm off. An enterprise zone lowers them."
      },
      "idk": [
       {
-       "hint": "A strategy should help the poorer areas catch up. Which option brings jobs north?"
+       "hint": "Which option makes it cheaper for a business to set up in the north?"
       }
      ],
-     "answerWhy": "Enterprise zones give lower taxes to firms in poorer areas, a strategy to reduce the divide."
+     "answerWhy": "An enterprise zone, with lower taxes, makes the northern town more attractive to the firm."
     },
     {
      "id": "5.9",
      "type": "own",
      "prompt": "In one line: name two strategies to reduce the north–south divide.",
      "points": [
-      "devolution (powers and money to city mayors)",
-      "better transport between northern cities, or enterprise zones"
+      "one strategy, such as devolution, enterprise zones or better transport",
+      "a second, different strategy"
      ],
-     "idk": "No problem. A good line would be: devolution to city mayors and enterprise zones with lower taxes."
+     "idk": "No problem. A good line would be: two strategies to reduce the north–south divide are devolution to city mayors and enterprise zones with lower taxes."
     }
    ]
   },
@@ -534,12 +574,22 @@
     {
      "id": "6.1",
      "type": "say",
-     "text": "The UK is linked to the rest of the world in many ways. Trade: it buys and sells goods and services worldwide, and London is one of the world's biggest financial centres."
+     "text": "The UK is linked to the rest of the world in many ways."
+    },
+    {
+     "id": "6.1b",
+     "type": "say",
+     "text": "Trade: it buys and sells goods and services worldwide, and London is one of the world's biggest financial centres."
     },
     {
      "id": "6.2",
      "type": "say",
-     "text": "Culture: British music, films, television, football and the English language are known around the world. Transport: airports such as Heathrow and ports such as Felixstowe connect it to every continent."
+     "text": "Culture: British music, films, television, football and the English language are known around the world."
+    },
+    {
+     "id": "6.2b",
+     "type": "say",
+     "text": "Transport: airports such as Heathrow and ports such as Felixstowe connect the UK to every continent."
     },
     {
      "id": "6.3",
@@ -560,43 +610,42 @@
      "id": "6.6",
      "type": "ask",
      "kind": "tap",
-     "question": "Which is an electronic communication link between the UK and the rest of the world?",
+     "question": "Which of these is a political link between the UK and other countries?",
      "options": [
       {
-       "text": "Undersea internet cables",
+       "text": "Membership of the Commonwealth",
        "branch": "right"
       },
       {
-       "text": "The Commonwealth",
-       "branch": "cw"
+       "text": "Undersea internet cables",
+       "branch": "cable"
       },
       {
        "text": "Heathrow airport",
        "branch": "air"
       }
      ],
-     "right": "Yes: undersea cables carry internet traffic.",
+     "right": "Yes: the Commonwealth is a group of countries working together, a political and economic link.",
      "wrong": {
-      "other": "Not quite: undersea internet cables.",
-      "cw": "Not quite: the Commonwealth is a political and economic link. Undersea cables are electronic.",
-      "air": "Not quite: Heathrow is a transport link. Undersea cables are electronic."
+      "other": "Not quite: membership of the Commonwealth.",
+      "cable": "Not quite: cables are an electronic communication link. The Commonwealth is a political link.",
+      "air": "Not quite: Heathrow is a transport link. The Commonwealth is a political link."
      },
      "idk": [
       {
-       "hint": "Electronic means carried as signals, like the internet. Which option carries signals?"
+       "hint": "Political links are about countries working together through groups. Which option is a group of countries?"
       }
      ],
-     "answerWhy": "Undersea internet cables are the UK's electronic communication links."
+     "answerWhy": "Membership of the Commonwealth is a political link."
     },
     {
      "id": "6.7",
      "type": "own",
-     "prompt": "In one line: how has leaving the EU changed the UK's links with the world?",
+     "prompt": "In one line: how has leaving the EU changed the UK's trade with the EU?",
      "points": [
-      "trade with the EU now has more checks and paperwork",
-      "the EU is still a major partner, or the UK makes its own deals and keeps the Commonwealth"
+      "trade with the EU now has more checks and paperwork"
      ],
-     "idk": "No problem. A good line would be: trade with the EU now has more checks and paperwork, though the EU is still a major trading partner."
+     "idk": "No problem. A good line would be: since leaving the EU, UK trade with the EU has more checks and paperwork, though the EU is still a major partner."
     },
     {
      "id": "6.8",
@@ -651,7 +700,7 @@
        "branch": "w2"
       }
      ],
-     "right": "Yes.",
+     "right": "Yes: most people work in services.",
      "wrong": {
       "other": "Not quite: one where most people work in services.",
       "w1": "Not quite: some factories remain. Most people work in services.",
@@ -665,29 +714,29 @@
      "id": "6.11",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 3 of 6: where are science parks usually built?",
+     "question": "Quiz, question 3 of 6: what is the north–south divide?",
      "options": [
       {
-       "text": "Next to universities",
+       "text": "The gap in wealth and health between the south-east and much of the rest of the UK",
        "branch": "right"
       },
       {
-       "text": "In the middle of farmland far from roads",
+       "text": "A wall between England and Scotland",
        "branch": "w1"
       },
       {
-       "text": "On old coal tips",
+       "text": "The difference in weather",
        "branch": "w2"
       }
      ],
-     "right": "Yes: next to universities.",
+     "right": "Yes: on average the south-east is richer and people live longer.",
      "wrong": {
-      "other": "Not quite: next to universities.",
-      "w1": "Not quite: they need good roads. They are usually next to universities.",
-      "w2": "Not quite: they are usually next to universities."
+      "other": "Not quite: the gap in wealth and health between the south-east and much of the rest of the UK.",
+      "w1": "Not quite: it is a gap in wealth and health, not a wall.",
+      "w2": "Not quite: it is about wealth and health, not weather."
      },
      "idk": [],
-     "answerWhy": "Science parks are usually next to universities.",
+     "answerWhy": "The north–south divide is the gap in wealth and health between the south-east and much of the UK.",
      "quiz": true
     },
     {
@@ -738,7 +787,7 @@
        "branch": "w2"
       }
      ],
-     "right": "Yes.",
+     "right": "Yes: people, especially the young, leaving the countryside.",
      "wrong": {
       "other": "Not quite: people leaving the countryside for towns and cities.",
       "w1": "Not quite: that is rural growth. Depopulation is people leaving.",
@@ -752,7 +801,7 @@
      "id": "6.14",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 6 of 6: which group of countries, most once ruled by Britain, is the UK a member of?",
+     "question": "Quiz, question 6 of 6: which group is the UK still a member of?",
      "options": [
       {
        "text": "The Commonwealth",
@@ -763,18 +812,18 @@
        "branch": "w1"
       },
       {
-       "text": "ECOWAS",
+       "text": "Neither",
        "branch": "w2"
       }
      ],
      "right": "Yes: the Commonwealth.",
      "wrong": {
       "other": "Not quite: the Commonwealth.",
-      "w1": "Not quite: the UK left the EU. It is a member of the Commonwealth.",
-      "w2": "Not quite: ECOWAS is in West Africa. The UK is in the Commonwealth."
+      "w1": "Not quite: the UK left the EU. It is still in the Commonwealth.",
+      "w2": "Not quite: the UK is still in the Commonwealth."
      },
      "idk": [],
-     "answerWhy": "The UK is a member of the Commonwealth.",
+     "answerWhy": "The UK left the EU but is still in the Commonwealth.",
      "quiz": true
     },
     {

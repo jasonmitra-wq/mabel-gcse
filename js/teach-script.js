@@ -20,7 +20,7 @@
   else root.TeachScript = factory();
 })(typeof self !== 'undefined' ? self : this, function () {
   const SCRIPTED = true;
-  const SCRIPTED_LESSONS = ['p2-current-voltage', 'p2-components', 'p2-series-parallel', 'p2-domestic', 'p2-power-energy', 'p2-static', 'p1-energy-stores', 'p1-kinetic-potential', 'p1-conservation', 'p1-efficiency', 'p1-power', 'p1-heating', 'p1-national-grid', 'p3-particle-model', 'p3-density', 'p3-changes-of-state', 'p3-pressure'];
+  const SCRIPTED_LESSONS = ['p2-current-voltage', 'p2-components', 'p2-series-parallel', 'p2-domestic', 'p2-power-energy', 'p2-static', 'p1-energy-stores', 'p1-kinetic-potential', 'p1-conservation', 'p1-efficiency', 'p1-power', 'p1-heating', 'p1-national-grid', 'p3-particle-model', 'p3-density', 'p3-changes-of-state', 'p3-pressure', 'g5-development', 'g5-nigeria', 'g5-uk-economy'];
   const MAX_WORDS = 60;
   const FB = { feedback: true };   // a reply to her answer (the checks let a correction say the rule again)
   // Flag SCRIPT_POLISH (brief docs/briefs/2026-11-18-shared-script-fixes.md), on by default; in Node, env SCRIPT_POLISH=0
@@ -52,7 +52,7 @@
   function plainAnswer(a) {
     return String(a || '')
       .replace(/^\s*(?:(?:that'?s|that is|what) an? )?(?:good|great|nice|fair|interesting|brilliant|excellent) (?:question|thing to ask|one)\b[^.!]*[.!]\s*/i, '')
-      .replace(/^\s*(?:that|this|the|your) question (?:is asking(?: you)?|asks(?: you)?|means|is about|wants(?: you)?(?: to)?):?\s*(?:about\s+)?/i, 'In other words: ')
+      .replace(/^\s*(?:that|this|the|your)(?:\s+\w+){0,2} question (?:is asking(?: you)?|asks(?: you)?|means|is about|wants(?: you)?(?: to)?):?\s*(?:about\s+)?/i, 'In other words: ')
       .trim();
   }
 

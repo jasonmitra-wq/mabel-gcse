@@ -106,3 +106,7 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-11-18 | p3-changes-of-state | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-18/p3-changes-of-state | $0.0767
 - 2026-11-18 | p3-pressure | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-18/p3-pressure | $0.0491
 - 2026-11-19 | p1-energy-stores | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-19/p1-energy-stores | $0.0643
+- 2026-11-19 | g5-development | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-19/g5-development | $0.0559
+- 2026-11-19 | g5-nigeria | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-19/g5-nigeria | $0.0466
+- 2026-11-19 | g5-uk-economy | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-19/g5-uk-economy | $0.0361
+- 2026-11-19 | g5-nigeria | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-19/g5-nigeria-2 | $0.0428

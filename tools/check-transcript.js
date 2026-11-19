@@ -29,7 +29,7 @@ const CHECKS = {
 const OPENER = /^\W*(it|its|it's|they|they're|them|their|this|that|these|those|so|he|she|which|to (?:find|do|work out|get) (?:it|this|that|them))\b/i;
 const LEAD = /^\W*(yes, that'?s right|that'?s right|partly right|not quite|that'?s fine|no problem|ok, moving on|ok, let'?s finish this one|here'?s the rest of this one|let me just tell you this bit|back to (?:the|my) question|fair enough|noted|ha, i get that|no worries)\W*$/i;
 // Messages made in code from the lesson file (questions, their marking, buttons' words): not the tutor's teaching.
-const CODE_MSG = /^\W*(summary, point \d+ of \d+|quick question|quiz, question|before the practical|from the last lesson|back to (?:the|my) question|your turn|another one|worked example|here is a worked example|predict first|try it|tap your answer|tap one of the answers|good place for a break|one last thing|done: this lesson|that's the end of the quiz|see you next time|copy those into your notes|the equation is|that's as far as this version goes|now, the question again|have a go at the question|no worries\. back to the question|tap or type your answer first|type your answer as a number)\b/i;
+const CODE_MSG = /^\W*(summary, point \d+ of \d+|quick question|quiz, question|before the practical|from the last lesson|back to (?:the|my) question|your turn|another one|worked example|here is a worked example|predict first|try it|tap your answer|tap one of the answers|good place for a break|one last thing|done: this lesson|that's the end of the quiz|see you next time|copy those into your notes|the equation is|that's as far as this version goes|now, the question again|have a go at the question|no worries\. back to the question|no worries\. in one line|tap or type your answer first|type your answer as a number)\b/i;
 // Feedback on her answer: it may say the rule again (that is the correction), so it is not a repeated fact.
 const FEEDBACK = /^\W*(yes|not quite|right|that'?s fine|no problem|partly right|now back to the question)\b/i;
 const MC_FEEDBACK = /^\W*(yes, that'?s right[.:]|not quite: it'?s|yes, that step is right|yes, that'?s the way)/i;
@@ -249,7 +249,7 @@ function check(msgs, data) {
       if (multi) add('own-multi-point', m.n, multi);
     }
     // question-comment (F17): the answer to her own question opens with a comment on the question.
-    if (asked && /^\W*(?:(?:that|this|the|your) question\b|(?:good|great|nice|fair|interesting|brilliant|excellent) (?:question|thing to ask|one)\b|(?:that'?s|that is|what) an? \w+ question\b)/i.test(plain))
+    if (asked && /^\W*(?:(?:that|this|the|your)(?:\s+\w+){0,2} question\b|(?:good|great|nice|fair|interesting|brilliant|excellent) (?:question|thing to ask|one)\b|(?:that'?s|that is|what) an? \w+ question\b)/i.test(plain))
       add('question-comment', m.n, sents[0] || plain.slice(0, 80));
     if (/^\W*summary, point \d+ of \d+:/i.test(plain)) summaryAt = m.n;
     if (/^\W*(?:the lesson is finished|you have finished this lesson)\b/i.test(plain) && endAt === null) endAt = m.n;

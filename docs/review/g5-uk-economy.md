@@ -30,7 +30,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 4. [1.2] Tutor: Now this lesson. In the past, many people in Britain worked in coal mines, steelworks, shipyards and textile mills: heavy, dirty work. These old industries are called traditional industries.
    Button: Next
 
-5. [1.3] Tutor: The decline of these industries and of factory work, and the loss of their jobs, is called deindustrialisation. Coal and iron ore ran out or became costly to dig, and machines replaced many workers.
+5. [1.3] Tutor: The decline of these industries and of factory work, and the loss of their jobs, is called deindustrialisation. Coal and iron ore, the rock iron is made from, ran out or became costly to dig, and machines replaced many workers.
    Button: Next
 
 6. [1.4] Tutor: The way countries have become more connected through trade, travel and communication is called globalisation.
@@ -45,7 +45,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Goods were made more cheaply where wages were lower, so many UK factories closed.
    - She asks to move on or skip: Goods were made more cheaply where wages were lower, so many UK factories closed.
 
-8. [1.5] Tutor: The government's choices, its policies, mattered too. Governments stopped paying to keep loss-making industries, such as coal mines, open, and encouraged service industries such as banking instead.
+8. [1.5] Tutor: The government's choices, its policies, mattered too. Governments stopped paying to keep open industries that cost more to run than they earned, such as coal mines, and encouraged service industries such as banking instead.
    Button: Next
 
 9. [1.5b] Tutor: Three causes, then, changed the UK's economy: deindustrialisation, globalisation and government policies.
@@ -72,7 +72,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 14. [2.2b] Tutor: The UK's GNI per head, its mean income per person, was $54,550 a year in 2025.
    Button: Next
 
-15. [2.3] Tutor: The growing parts are information technology, finance (banking and insurance, especially in London), other services such as retail and health, and research.
+15. [2.3] Tutor: The growing parts are information technology, finance (banking and insurance, especially in London), other services such as retail (shops) and health, and research.
    Button: Next
 
 16. [2.4] Tutor: Work based on knowledge and research is called the quaternary sector: a fourth sector, after primary, secondary and tertiary.
@@ -126,7 +126,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 26. [3.3] Tutor: Burning coal, oil or gas, called fossil fuels, for power gives off carbon dioxide, a gas that warms the climate.
    Button: Next
 
-27. [3.3b] Tutor: Energy from sources that do not run out, such as the Sun and the wind, is called renewable energy. It gives off no carbon dioxide while it is made.
+27. [3.3b] Tutor: Energy from sources that do not run out, such as the Sun and the wind, is called renewable energy. Making electricity from the Sun or wind gives off no carbon dioxide.
    Button: Next
 
 28. [3.4] Tutor: Toyota's car factory at Burnaston, near Derby, is one example of more sustainable industry. It aims to run on solar and wind power and to cut its waste.
@@ -180,7 +180,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Empty homes and cut services are signs of rural depopulation, as in the Outer Hebrides.
    - She asks to move on or skip: Empty homes and cut services are signs of rural depopulation, as in the Outer Hebrides.
 
-39. [4.6] Tutor: Tourism and wind farms bring some new jobs to the Outer Hebrides, but not enough to stop young people leaving.
+39. [4.6] Tutor: Tourism and wind farms bring some new jobs to the Outer Hebrides.
    Button: Next
 
 40. [4.7] Tutor: In one line: give one change where the rural population is growing and one where it is falling.
@@ -201,10 +201,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 43. [5.2] Tutor: Busy motorways and main roads are widened. HS2, a high-speed railway, is being built from London to Birmingham; its planned northern sections were cancelled.
    Button: Next
 
-44. [5.3] Tutor: Liverpool2 is a new deep-water dock at the Port of Liverpool for the biggest container ships, which carry goods in large metal boxes.
+44. [5.3] Tutor: Liverpool2 is a new deep-water dock at the Port of Liverpool for the biggest container ships, which carry goods in large metal boxes. Bigger ships carry more goods each trip, which makes trade cheaper.
    Button: Next
 
-45. [5.3a] Tutor: Heathrow airport has plans for a third runway, which are hotly debated.
+45. [5.3a] Tutor: Heathrow airport has plans for a third runway. Supporters say it would bring more flights and trade; opponents worry about noise, pollution and cost.
    Button: Next
 
 46. [5.3b] Tutor asks: Why could Liverpool2 help the economy of north-west England?
@@ -252,7 +252,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 54. [6.1] Tutor: The UK is linked to the rest of the world in many ways.
    Button: Next
 
-55. [6.1b] Tutor: Trade: it buys and sells goods and services worldwide, and London is one of the world's biggest financial centres.
+55. [6.1b] Tutor: Trade: the UK buys and sells goods and services worldwide, and London is one of the world's biggest centres for banking and finance.
    Button: Next
 
 56. [6.2] Tutor: Culture: British music, films, television, football and the English language are known around the world.
@@ -267,7 +267,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 59. [6.4] Tutor: The European Union, or EU, is a group of European countries that trade freely with each other. The UK left it, so trade with the EU now has more checks and paperwork, though the EU is still a major partner.
    Button: Next
 
-60. [6.5] Tutor: The Commonwealth is a group of countries, most of them once ruled by Britain, that work together on trade and development. The UK is a member.
+60. [6.5] Tutor: The Commonwealth is a group of countries, most of them once ruled by Britain, that work together on trade, development and shared values. The UK is a member: a political link, countries working together through a group.
    Button: Next
 
 61. [6.6] Tutor asks: Which of these is a political link between the UK and other countries?
@@ -291,7 +291,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 64. [6.9] Tutor asks: Quiz, question 1 of 6: which of these is a traditional industry?
    Buttons: "Software design" / "Coal mining" / "Banking" (she can also type)
    - Right ("Coal mining"): Yes: coal mining.
-   - "Software design" (wrong idea w1: ): Not quite: software is new, quaternary work. Coal mining is traditional.
+   - "Software design" (wrong idea w1: ): Not quite: software design is new knowledge work. Coal mining is traditional.
    - "Banking" (wrong idea w2: ): Not quite: banking is a service. Coal mining is traditional.
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Coal mining is one of the UK's traditional industries.
    - She asks to move on or skip: Coal mining is one of the UK's traditional industries.
@@ -305,10 +305,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She asks to move on or skip: A post-industrial economy is one where most people work in services.
 
 66. [6.11] Tutor asks: Quiz, question 3 of 6: what is the north–south divide?
-   Buttons: "A wall between England and Scotland" / "The difference in weather" / "The gap in wealth and health between the south-east and much of the rest of the UK" (she can also type)
+   Buttons: "The border between England and Scotland" / "The difference between towns and the countryside" / "The gap in wealth and health between the south-east and much of the rest of the UK" (she can also type)
    - Right ("The gap in wealth and health between the south-east and much of the rest of the UK"): Yes: on average the south-east is richer and people live longer.
-   - "A wall between England and Scotland" (wrong idea w1: ): Not quite: it is a gap in wealth and health, not a wall.
-   - "The difference in weather" (wrong idea w2: ): Not quite: it is about wealth and health, not weather.
+   - "The border between England and Scotland" (wrong idea w1: ): Not quite: it is a gap in wealth and health, not a border.
+   - "The difference between towns and the countryside" (wrong idea w2: ): Not quite: it is a gap between the south-east and much of the rest of the UK, not between town and country.
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The north–south divide is the gap in wealth and health between the south-east and much of the UK.
    - She asks to move on or skip: The north–south divide is the gap in wealth and health between the south-east and much of the UK.
 

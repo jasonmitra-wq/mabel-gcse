@@ -27,7 +27,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") GNI per head is a country's yearly income shared out equally between its people.
    - She asks to move on or skip: GNI per head is a country's yearly income shared out equally between its people.
 
-4. [1.2] Tutor: Now this lesson. Nigeria is in West Africa, on the coast of the Gulf of Guinea, the sea along Africa's west coast. With about 238 million people, it has more people than any other African country.
+4. [1.2] Tutor: Now this lesson. Nigeria is in West Africa, on the coast of the Gulf of Guinea, the part of the Atlantic Ocean south of West Africa. With about 238 million people, it has more people than any other African country.
    Button: Next
 
 5. [1.3] Tutor: Nigeria is an NEE. Its economy is worth about $291 billion a year, but its GNI per head is only $1,360 a year, compared with $54,550 in the UK. So many Nigerians are still poor.
@@ -102,13 +102,13 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 20. [2.5] Tutor: Nigeria's economy used to depend on farming. Then oil was found in the Niger Delta, and oil became the big earner.
    Button: Next
 
-21. [2.5b] Tutor: In 2025 fuel made up about 86% of the goods Nigeria sold to other countries. But oil gives few jobs, because machines do most of the work.
+21. [2.5b] Tutor: In 2025 fuel, meaning oil and gas, made up about 86% of the goods Nigeria sold to other countries. But oil gives few jobs, because machines do most of the work.
    Button: Next
 
 22. [2.6] Tutor: When the world oil price falls, Nigeria's income falls with it, so depending on oil is risky.
    Button: Next
 
-23. [2.7] Tutor: The balance between sectors is shifting. In 2025 services made up about 58% of Nigeria's economy, industry (oil and factories) about 16% and farming about 23%.
+23. [2.7] Tutor: The balance between sectors is shifting. In 2025 services made up about 58% of Nigeria's economy. Industry, which in these figures includes oil as well as factories and building, made up about 16%, and farming about 23%.
    Button: Next
 
 24. [2.7b] Tutor: Farming still gave about a third of all jobs.
@@ -253,7 +253,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 56. [5.4] Tutor: Life expectancy, how long a baby born now can expect to live, rose from 47 years in 2000 to 55 in 2024. Infant mortality, babies dying before their first birthday, fell from 95 to 70 in every 1,000 born alive.
    Button: Next
 
-57. [5.5] Tutor asks: What does longer lives suggest about health care, food and clean water in Nigeria?
+57. [5.5] Tutor asks: What do longer lives suggest about health care, food and clean water in Nigeria?
    Buttons: "They have got worse" / "They have improved for many people" / "Nothing at all" (she can also type)
    - Right ("They have improved for many people"): Yes: people living longer is a sign of better health care, food and water.
    - "They have got worse" (wrong idea worse: ): Not quite: if they had got worse, people would live shorter lives. They have improved for many.
@@ -262,7 +262,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Living longer suggests health care, food and clean water have improved for many people.
    - She asks to move on or skip: Living longer suggests health care, food and clean water have improved for many people.
 
-58. [5.6] Tutor: But the gains are uneven. The south, with the oil and Lagos, is richer. The north has more poverty and fewer children in school.
+58. [5.6] Tutor: But the gains are uneven. The south, with the oil and Lagos, is richer. The north is drier and mainly farming, with more poverty and fewer girls finishing school.
    Button: Next
 
 59. [5.7] Tutor: Boko Haram, an armed extremist group in the north-east, has attacked towns and forced many people from their homes.
@@ -284,7 +284,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 63. [5.10] Tutor asks: Quiz, question 1 of 6: what kind of country is Nigeria?
    Buttons: "An HIC" / "An NEE" / "An LIC" (she can also type)
-   - Right ("An NEE"): Yes: an NEE.
+   - Right ("An NEE"): Yes: an NEE, a newly emerging economy growing as industry builds up.
    - "An HIC" (wrong idea w1: ): Not quite: Nigeria is not rich enough to be an HIC. It is an NEE.
    - "An LIC" (wrong idea w2: ): Not quite: its economy is growing as industry builds up, so it is an NEE.
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Nigeria is an NEE, a newly emerging economy.
@@ -292,7 +292,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 64. [5.11] Tutor asks: Quiz, question 2 of 6: where does most of Nigeria's oil come from?
    Buttons: "Lagos" / "The Niger Delta" / "The dry north" (she can also type)
-   - Right ("The Niger Delta"): Yes: the Niger Delta.
+   - Right ("The Niger Delta"): Yes: the Niger Delta, the wetland where the River Niger reaches the sea.
    - "The dry north" (wrong idea w1: ): Not quite: the north is dry grassland. The oil is in the Niger Delta.
    - "Lagos" (wrong idea w2: ): Not quite: Lagos is the biggest city. The oil is in the Niger Delta.
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Most of Nigeria's oil comes from the Niger Delta.
@@ -324,7 +324,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 68. [5.15] Tutor asks: Quiz, question 6 of 6: which is an environmental cost of development in Nigeria?
    Buttons: "More jobs in services" / "Air pollution in Lagos" / "Higher tax income" (she can also type)
-   - Right ("Air pollution in Lagos"): Yes: air pollution.
+   - Right ("Air pollution in Lagos"): Yes: air pollution, from factories and traffic.
    - "More jobs in services" (wrong idea w1: ): Not quite: jobs are a benefit. Air pollution is an environmental cost.
    - "Higher tax income" (wrong idea w2: ): Not quite: tax is a benefit. Air pollution is an environmental cost.
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Air pollution in Lagos, like oil spills, is an environmental cost.

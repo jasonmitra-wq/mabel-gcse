@@ -198,7 +198,7 @@
      "wrong": {
       "other": "Not quite: the rich few push the mean up, so most people earn far less than it.",
       "twice": "Not quite: people are counted once. The problem is that the rich few push the mean up, hiding how poor most people are.",
-      "farmers": "Not quite: all income is counted. The problem is that the rich few push the mean up, hiding how poor most people are."
+      "farmers": "Partly: food that farmers grow to eat is often missed, which is a real limitation. But the bigger problem here is that the rich few push the mean up, hiding how poor most people are."
      },
      "idk": [
       {
@@ -258,7 +258,7 @@
      "id": "2.6",
      "type": "ask",
      "kind": "tap",
-     "question": "A country has a GNI per head of about $650, and most people work on small farms. Which group is it in?",
+     "question": "Most people in one country work on small farms, and it earns about $650 per person a year, half of Nigeria's figure: which group is it in?",
      "options": [
       {
        "text": "LIC",
@@ -281,7 +281,7 @@
      },
      "idk": [
       {
-       "hint": "LICs have the lowest GNI per head of all. Is $650 a year low?"
+       "hint": "The UK's GNI per head is $54,550 and Nigeria's $1,360. LICs have the lowest of all. Where does $650 fit?"
       }
      ],
      "answerWhy": "With about $650 per person a year, it is one of the poorest countries: an LIC."
@@ -290,7 +290,7 @@
      "id": "2.7",
      "type": "say",
      "picture": "g5-brandt-line",
-     "text": "An older way of splitting the world is the Brandt Line, drawn on a world map to divide a richer \"North\" from a poorer \"South\". It is out of date: fast-growing countries such as China lie in its \"South\"."
+     "text": "An older way of splitting the world is the Brandt Line, drawn on a world map to divide a richer \"North\" from a poorer \"South\". The line bends south to put rich Australia and New Zealand in the \"North\". It is out of date: fast-growing countries such as China lie in its \"South\"."
     },
     {
      "id": "2.8",
@@ -354,7 +354,7 @@
      "right": "Yes: far more people are born than die, so it grows fast.",
      "wrong": {
       "other": "Not quite: it grows fast, because far more are born than die.",
-      "shrink": "Not quite: births are still high and deaths are low, so far more people are born than die. It grows fast.",
+      "shrink": "Not quite: births are still high while deaths are falling, so far more people are born than die. It grows fast.",
       "same": "Not quite: births are now much higher than deaths, so the population grows fast."
      },
      "idk": [
@@ -474,7 +474,7 @@
      "question": "Which of these is a physical cause of uneven development?",
      "options": [
       {
-       "text": "Cyclones that wreck farms and roads",
+       "text": "Floods that wreck farms and roads",
        "branch": "right"
       },
       {
@@ -486,18 +486,18 @@
        "branch": "borders"
       }
      ],
-     "right": "Yes: a cyclone is a natural hazard, so it is physical.",
+     "right": "Yes: a flood is a natural hazard, so it is physical.",
      "wrong": {
-      "other": "Not quite: cyclones. Physical means it comes from nature.",
-      "debt": "Not quite: debt is about money, an economic cause. Physical means from nature, like a cyclone.",
-      "borders": "Not quite: colonial borders come from history. Physical means from nature, like a cyclone."
+      "other": "Not quite: floods. Physical means it comes from nature.",
+      "debt": "Not quite: debt is about money, an economic cause. Physical means from nature, like a flood.",
+      "borders": "Not quite: colonial borders come from history. Physical means from nature, like a flood."
      },
      "idk": [
       {
-       "hint": "Physical means it comes from nature. Which option is a kind of weather?"
+       "hint": "Physical means it comes from nature. Which option is about water and weather?"
       }
      ],
-     "answerWhy": "A cyclone comes from nature, so it is a physical cause."
+     "answerWhy": "A flood comes from nature, so it is a physical cause."
     },
     {
      "id": "4.6",
@@ -586,7 +586,7 @@
     {
      "id": "5.3",
      "type": "say",
-     "text": "Debt relief cancels some of the money a poor country owes. The extra it would have paid back on its loans, called interest, can then go on health and schools instead."
+     "text": "Debt relief cancels some of the money a poor country owes. Money that would have gone on repayments can then go on health and schools instead."
     },
     {
      "id": "5.4",
@@ -603,7 +603,7 @@
        "branch": "loan"
       },
       {
-       "text": "Microfinance",
+       "text": "Aid",
        "branch": "micro"
       }
      ],
@@ -611,7 +611,7 @@
      "wrong": {
       "other": "Not quite: debt relief.",
       "loan": "Not quite: a loan adds debt. Cancelling debt is debt relief.",
-      "micro": "Not quite: microfinance is a small loan to a person. Cancelling a country's debt is debt relief."
+      "micro": "Not quite: aid is help given or lent. Cancelling money a country already owes is debt relief."
      },
      "idk": [
       {
@@ -728,7 +728,7 @@
     {
      "id": "6.1",
      "type": "say",
-     "text": "The picture is mixed. Some NEEs, especially China and India, have grown fast, and hundreds of millions of their people now have higher incomes."
+     "text": "Is the development gap closing? The picture is mixed. Some NEEs, especially China and India, have grown fast, and hundreds of millions of their people now have higher incomes."
     },
     {
      "id": "6.2",
@@ -744,7 +744,7 @@
      "id": "6.3",
      "type": "ask",
      "kind": "tap",
-     "question": "Which is the best overall judgement?",
+     "question": "So, is the development gap closing? Which is the best overall judgement?",
      "options": [
       {
        "text": "The gap is closing for some countries but widening for others",
@@ -775,7 +775,7 @@
     {
      "id": "6.4",
      "type": "say",
-     "text": "The United Nations has set Sustainable Development Goals: targets for every country to end poverty and hunger and improve health and schooling."
+     "text": "To speed up progress, the United Nations, which almost every country belongs to, has set Sustainable Development Goals: targets to end poverty and hunger and improve health and schooling everywhere."
     },
     {
      "id": "6.5",

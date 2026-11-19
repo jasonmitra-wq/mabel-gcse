@@ -1,0 +1,372 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 17314,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11953,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 7130
+    },
+    "iterations": [
+      {
+        "input_tokens": 17314,
+        "output_tokens": 11953,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.6166320000000001,
+  "seconds": 115,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from the last lesson.\",\"what\":\"She is meeting this for the first time and may never have had that 'last lesson'. The definitions are given in the message, so call it a starter rather than a recall test.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.1a don't know (first time)\",\"quote\":\"Does a car factory take raw materials, make things, or provide a service?\",\"what\":\"The hint asks her to choose between three descriptions, but the buttons still read Primary / Secondary / Tertiary, so the buttons do not fit the hint.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"1.1b don't know (first time)\",\"quote\":\"Tertiary is the sector that provides services. Is caring for patients a service?\",\"what\":\"The hint names the answer and then asks a yes/no question, while the buttons still offer Primary / Secondary / Tertiary. The reply does not fit the buttons and gives the answer away.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.3\",\"quote\":\"Coal and iron ore ran out or became costly to dig\",\"what\":\"'Iron ore' is used without saying it is the rock that iron and steel are made from.\",\"severity\":\"minor\"},{\"fault\":\"F12\",\"turn\":\"1.4b\",\"quote\":\"Many closed, because goods were made more cheaply abroad\",\"what\":\"The right button holds the explanation, cheaper goods abroad, which she has not been told. The 'predict' is answered by spotting the only option with a reason, and the other two are obviously wrong.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.4b don't know (first time)\",\"quote\":\"If the same goods could be made more cheaply abroad, who would buyers choose?\",\"what\":\"The hint asks 'who would buyers choose?' but the buttons are still about what happened to factories, so none of them answers the question asked.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.4b wrong answer (They all grew bigger)\",\"quote\":\"Not quite: they faced cheaper goods from abroad, so many closed.\",\"what\":\"A girl who answers wrongly is never told why goods were cheaper abroad (lower wages). Only the right-answer reply explains it.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"1.5\",\"quote\":\"Governments stopped paying to keep loss-making industries, such as coal mines, open\",\"what\":\"'Loss-making' is not explained (costing more to run than they earn), and the sentence is hard to follow with 'open' left to the end.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.8\",\"quote\":\"In one line: give the three causes of economic change in the UK.\",\"what\":\"Key point 1 never says what the change is (from making things to providing services). That is only said in 2.1, so she is asked for causes of a change she has not had described.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.8\",\"quote\":\"Three causes, then, changed the UK's economy: deindustrialisation, globalisation and government policies.\",\"what\":\"The list she is asked for is handed over in 1.5b, two messages earlier. The own-words task is only copying back three names, not showing she understands them.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.8 all of them\",\"quote\":\"Yes: your line makes every point. You have this: deindustrialisation. You have this: globalisation. You have this: government policies.\",\"what\":\"The feedback reads like a machine checklist, not a teacher. The same pattern recurs on every own-words step.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.2\",\"quote\":\"In 2025 services made up about 73% of the UK's economy\",\"what\":\"2.1 defines post-industrial by where most people work, but this figure is a share of the economy (output), not of workers. The script slides between the two without saying so.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"2.2b\",\"quote\":\"The UK's GNI per head, its mean income per person, was $54,550 a year in 2025.\",\"what\":\"'GNI' is never spelled out and nothing says why the figure is in dollars. The number has no comparison to give it meaning and is never used again.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"2.3\",\"quote\":\"other services such as retail and health, and research\",\"what\":\"'Retail' (and 'insurance' and 'information technology') come in one list with no explanation. A 15-year-old may not know that retail means shops.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.4b\",\"quote\":\"Which job is in the quaternary sector?\",\"what\":\"The message just before says quaternary is 'knowledge and research' and the right button contains the word 'researching', so it is word-matching rather than thinking.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.7\",\"quote\":\"A group of offices and small, clean workshops on the edge of a town, near main roads, is called a business park.\",\"what\":\"The business park is defined and then dropped. It is never linked to the new economy, never compared with a science park and never asked about.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.8\",\"quote\":\"Next to a university, beside a motorway junction\",\"what\":\"2.6 and 2.6b have just said science parks sit beside a university and main roads. The other two options ('remote valley far from any road', 'crowded old town centre with no space') are plainly wrong, so no thinking is needed.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.10\",\"quote\":\"In one line: what is the UK's post-industrial economy based on?\",\"what\":\"The question does not signal that two points are wanted. A sensible answer of 'services' is marked only 'Partly there', which will feel unfair.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"3.3\",\"quote\":\"Burning coal, oil or gas, called fossil fuels, for power gives off carbon dioxide, a gas that warms the climate.\",\"what\":\"Two new terms (fossil fuels, carbon dioxide) and the idea of climate warming are all packed into one sentence.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.3b\",\"quote\":\"It gives off no carbon dioxide while it is made.\",\"what\":\"This is loose science. Energy is not 'made', and 'it' gives off nothing: the point is that generating electricity from sun or wind releases no carbon dioxide.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.6 don't know (first time)\",\"quote\":\"Solar and wind replace burning fuel. Does that mean more or less carbon dioxide?\",\"what\":\"The hint asks 'more or less?' but the buttons are still the three original sentences, so the reply does not fit the buttons.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.8 feedback (some / none)\",\"quote\":\"Here is what a good line says. A way, such as renewable energy, less waste or a wildlife reserve. How it helps, such as less carbon dioxide or more wildlife.\",\"what\":\"She is shown the marking criteria, not a good line. 'You have this: a way, such as…' does not tell her what she got right, and 'Still needed: how it helps, such as…' is not a sentence a pupil can learn from.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"4.5\",\"quote\":\"An area of population decline, like the Outer Hebrides\",\"what\":\"The script taught the term 'rural depopulation', but the buttons use 'population decline', which the script has not used before, without linking the two.\",\"severity\":\"minor\"},{\"fault\":\"P16\",\"turn\":\"4.6\",\"quote\":\"but not enough to stop young people leaving\",\"what\":\"This is the tutor's own addition. The lesson only says tourism and renewable energy bring some new jobs.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.7 feedback (some / none)\",\"quote\":\"Here is what a good line says. Where it is growing, such as rising house prices or new estates. Where it is falling, such as schools, shops or buses closing.\",\"what\":\"Again the marking notes are shown as if they were a model answer. The fragments do not read as a line she could write.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"5.3a\",\"quote\":\"Heathrow airport has plans for a third runway, which are hotly debated.\",\"what\":\"She is told it is hotly debated but not why (noise, pollution and cost against more flights and trade), so the fact means nothing to her.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"5.3b\",\"quote\":\"Bigger ships can bring and take goods, so firms nearby can trade more cheaply\",\"what\":\"Nothing has told her that bigger ships make trade cheaper. She can only get this by ruling out the two silly options, and the reply 'cheaper, easier trade' still does not say why it is cheaper.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F7\",\"turn\":\"5.3b don't know (first time)\",\"quote\":\"Container ships carry goods. What does letting the biggest ones in do for firms nearby?\",\"what\":\"After 'don't know' she gets the same question reworded as an open question, not an easier step.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"5.8\",\"quote\":\"Making the town an enterprise zone\",\"what\":\"5.7 has just defined an enterprise zone as a place that encourages businesses to set up there. The other options ('Raising business taxes in the north', 'Building new offices in London') are plainly wrong.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"5.9 feedback (all / some / none)\",\"quote\":\"You have this: a second, different strategy.\",\"what\":\"The feedback does not name the strategies she gave or missed. 'Here is what a good line says. One strategy, such as… A second, different strategy.' is the mark scheme, not a good line.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F2\",\"turn\":\"6.1b\",\"quote\":\"Trade: it buys and sells goods and services worldwide\",\"what\":\"'It' is the UK, which is not named in this message. 'Financial centres' is also unexplained.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"6.6\",\"quote\":\"Which of these is a political link between the UK and other countries?\",\"what\":\"'Political link' has not been used or explained. The Commonwealth was described in 6.5 as working on 'trade and development', which sounds economic, so she can only answer by elimination.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"6.9 wrong answer (Software design)\",\"quote\":\"Not quite: software is new, quaternary work.\",\"what\":\"The lesson never said software is quaternary. It defined quaternary as knowledge and research work and listed information technology separately.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"6.11\",\"quote\":\"A wall between England and Scotland\",\"what\":\"The wrong options (a wall, the weather) are jokes, so the question tests nothing.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"6.12\",\"quote\":\"Toyota at Burnaston using solar and wind power\",\"what\":\"The right option states its own reason and the others are a coal mine and a motorway, so she cannot get it wrong.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"6.14\",\"quote\":\"\\\"Neither\\\" / \\\"The Commonwealth\\\" / \\\"The European Union\\\"\",\"what\":\"'Neither' is shown first, before the two groups it refers to, which reads oddly.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.1a to 6.14 (all multiple-choice questions)\",\"quote\":\"\\\"They all grew bigger\\\" / \\\"Nothing changed\\\" / \\\"Many closed, because goods were made more cheaply abroad\\\"\",\"what\":\"In all sixteen multiple-choice questions the right answer is never the first button, and it is usually the longest and the only one with a reason. She will learn to pick by shape, not by thinking.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P14\",\"turn\":\"whole script\",\"quote\":\"Some, in places such as South Yorkshire and South Wales, still have high unemployment.\",\"what\":\"There is nothing to look at or do: no map, graph or picture anywhere. South Yorkshire, Burnaston, South Cambridgeshire, the Outer Hebrides, Felixstowe and Liverpool are all named without ever being shown.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"6.1 to 6.5\",\"quote\":\"Culture: British music, films, television, football and the English language are known around the world.\",\"what\":\"There are seven 'Next' messages in a row here (and long runs in key points 2 and 5) of facts to read with nothing to do. She is likely to click through without reading.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"Summary, points 1 to 6\",\"quote\":\"Summary, point 4 of 6: In growing South Cambridgeshire house prices rise, while in the shrinking Outer Hebrides schools close as young people leave.\",\"what\":\"Each summary line is word for word the 'good line' she saw if she said don't know. The summary also covers only one example per key point; point 6 is only the EU, not the UK's links.\",\"severity\":\"minor\"}],\"counts\":[{\"fault\":\"new\",\"instances\":22},{\"fault\":\"F8\",\"instances\":5},{\"fault\":\"F3\",\"instances\":5},{\"fault\":\"F12\",\"instances\":1},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"F7\",\"instances\":1},{\"fault\":\"F2\",\"instances\":1},{\"fault\":\"F1\",\"instances\":1},{\"fault\":\"L3\",\"instances\":1},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1}],\"overall\":\"Not as it stands (this is a geography script, and I have reviewed all six key points as she would meet them). The content is mostly accurate and the terms are usually defined before use, but the multiple-choice questions can nearly all be answered by picking the longest, only sensible option, and several 'don't know' hints ask a question the buttons do not answer. The own-words feedback in key points 3, 4 and 5 shows her the marking notes instead of a model line, and 6.6 asks about a 'political link' that was never explained. With no map or picture and long runs of 'Next', I would want those fixed before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from the last lesson.",
+      "what": "She is meeting this for the first time and may never have had that 'last lesson'. The definitions are given in the message, so call it a starter rather than a recall test.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1a don't know (first time)",
+      "quote": "Does a car factory take raw materials, make things, or provide a service?",
+      "what": "The hint asks her to choose between three descriptions, but the buttons still read Primary / Secondary / Tertiary, so the buttons do not fit the hint.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.1b don't know (first time)",
+      "quote": "Tertiary is the sector that provides services. Is caring for patients a service?",
+      "what": "The hint names the answer and then asks a yes/no question, while the buttons still offer Primary / Secondary / Tertiary. The reply does not fit the buttons and gives the answer away.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.3",
+      "quote": "Coal and iron ore ran out or became costly to dig",
+      "what": "'Iron ore' is used without saying it is the rock that iron and steel are made from.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F12",
+      "turn": "1.4b",
+      "quote": "Many closed, because goods were made more cheaply abroad",
+      "what": "The right button holds the explanation, cheaper goods abroad, which she has not been told. The 'predict' is answered by spotting the only option with a reason, and the other two are obviously wrong.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.4b don't know (first time)",
+      "quote": "If the same goods could be made more cheaply abroad, who would buyers choose?",
+      "what": "The hint asks 'who would buyers choose?' but the buttons are still about what happened to factories, so none of them answers the question asked.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.4b wrong answer (They all grew bigger)",
+      "quote": "Not quite: they faced cheaper goods from abroad, so many closed.",
+      "what": "A girl who answers wrongly is never told why goods were cheaper abroad (lower wages). Only the right-answer reply explains it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.5",
+      "quote": "Governments stopped paying to keep loss-making industries, such as coal mines, open",
+      "what": "'Loss-making' is not explained (costing more to run than they earn), and the sentence is hard to follow with 'open' left to the end.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.8",
+      "quote": "In one line: give the three causes of economic change in the UK.",
+      "what": "Key point 1 never says what the change is (from making things to providing services). That is only said in 2.1, so she is asked for causes of a change she has not had described.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.8",
+      "quote": "Three causes, then, changed the UK's economy: deindustrialisation, globalisation and government policies.",
+      "what": "The list she is asked for is handed over in 1.5b, two messages earlier. The own-words task is only copying back three names, not showing she understands them.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.8 all of them",
+      "quote": "Yes: your line makes every point. You have this: deindustrialisation. You have this: globalisation. You have this: government policies.",
+      "what": "The feedback reads like a machine checklist, not a teacher. The same pattern recurs on every own-words step.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.2",
+      "quote": "In 2025 services made up about 73% of the UK's economy",
+      "what": "2.1 defines post-industrial by where most people work, but this figure is a share of the economy (output), not of workers. The script slides between the two without saying so.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.2b",
+      "quote": "The UK's GNI per head, its mean income per person, was $54,550 a year in 2025.",
+      "what": "'GNI' is never spelled out and nothing says why the figure is in dollars. The number has no comparison to give it meaning and is never used again.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.3",
+      "quote": "other services such as retail and health, and research",
+      "what": "'Retail' (and 'insurance' and 'information technology') come in one list with no explanation. A 15-year-old may not know that retail means shops.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.4b",
+      "quote": "Which job is in the quaternary sector?",
+      "what": "The message just before says quaternary is 'knowledge and research' and the right button contains the word 'researching', so it is word-matching rather than thinking.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.7",
+      "quote": "A group of offices and small, clean workshops on the edge of a town, near main roads, is called a business park.",
+      "what": "The business park is defined and then dropped. It is never linked to the new economy, never compared with a science park and never asked about.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.8",
+      "quote": "Next to a university, beside a motorway junction",
+      "what": "2.6 and 2.6b have just said science parks sit beside a university and main roads. The other two options ('remote valley far from any road', 'crowded old town centre with no space') are plainly wrong, so no thinking is needed.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.10",
+      "quote": "In one line: what is the UK's post-industrial economy based on?",
+      "what": "The question does not signal that two points are wanted. A sensible answer of 'services' is marked only 'Partly there', which will feel unfair.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "3.3",
+      "quote": "Burning coal, oil or gas, called fossil fuels, for power gives off carbon dioxide, a gas that warms the climate.",
+      "what": "Two new terms (fossil fuels, carbon dioxide) and the idea of climate warming are all packed into one sentence.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3b",
+      "quote": "It gives off no carbon dioxide while it is made.",
+      "what": "This is loose science. Energy is not 'made', and 'it' gives off nothing: the point is that generating electricity from sun or wind releases no carbon dioxide.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6 don't know (first time)",
+      "quote": "Solar and wind replace burning fuel. Does that mean more or less carbon dioxide?",
+      "what": "The hint asks 'more or less?' but the buttons are still the three original sentences, so the reply does not fit the buttons.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.8 feedback (some / none)",
+      "quote": "Here is what a good line says. A way, such as renewable energy, less waste or a wildlife reserve. How it helps, such as less carbon dioxide or more wildlife.",
+      "what": "She is shown the marking criteria, not a good line. 'You have this: a way, such as…' does not tell her what she got right, and 'Still needed: how it helps, such as…' is not a sentence a pupil can learn from.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "4.5",
+      "quote": "An area of population decline, like the Outer Hebrides",
+      "what": "The script taught the term 'rural depopulation', but the buttons use 'population decline', which the script has not used before, without linking the two.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P16",
+      "turn": "4.6",
+      "quote": "but not enough to stop young people leaving",
+      "what": "This is the tutor's own addition. The lesson only says tourism and renewable energy bring some new jobs.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.7 feedback (some / none)",
+      "quote": "Here is what a good line says. Where it is growing, such as rising house prices or new estates. Where it is falling, such as schools, shops or buses closing.",
+      "what": "Again the marking notes are shown as if they were a model answer. The fragments do not read as a line she could write.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "5.3a",
+      "quote": "Heathrow airport has plans for a third runway, which are hotly debated.",
+      "what": "She is told it is hotly debated but not why (noise, pollution and cost against more flights and trade), so the fact means nothing to her.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "5.3b",
+      "quote": "Bigger ships can bring and take goods, so firms nearby can trade more cheaply",
+      "what": "Nothing has told her that bigger ships make trade cheaper. She can only get this by ruling out the two silly options, and the reply 'cheaper, easier trade' still does not say why it is cheaper.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F7",
+      "turn": "5.3b don't know (first time)",
+      "quote": "Container ships carry goods. What does letting the biggest ones in do for firms nearby?",
+      "what": "After 'don't know' she gets the same question reworded as an open question, not an easier step.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "5.8",
+      "quote": "Making the town an enterprise zone",
+      "what": "5.7 has just defined an enterprise zone as a place that encourages businesses to set up there. The other options ('Raising business taxes in the north', 'Building new offices in London') are plainly wrong.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "5.9 feedback (all / some / none)",
+      "quote": "You have this: a second, different strategy.",
+      "what": "The feedback does not name the strategies she gave or missed. 'Here is what a good line says. One strategy, such as… A second, different strategy.' is the mark scheme, not a good line.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F2",
+      "turn": "6.1b",
+      "quote": "Trade: it buys and sells goods and services worldwide",
+      "what": "'It' is the UK, which is not named in this message. 'Financial centres' is also unexplained.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "6.6",
+      "quote": "Which of these is a political link between the UK and other countries?",
+      "what": "'Political link' has not been used or explained. The Commonwealth was described in 6.5 as working on 'trade and development', which sounds economic, so she can only answer by elimination.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "6.9 wrong answer (Software design)",
+      "quote": "Not quite: software is new, quaternary work.",
+      "what": "The lesson never said software is quaternary. It defined quaternary as knowledge and research work and listed information technology separately.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "6.11",
+      "quote": "A wall between England and Scotland",
+      "what": "The wrong options (a wall, the weather) are jokes, so the question tests nothing.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "6.12",
+      "quote": "Toyota at Burnaston using solar and wind power",
+      "what": "The right option states its own reason and the others are a coal mine and a motorway, so she cannot get it wrong.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "6.14",
+      "quote": "\"Neither\" / \"The Commonwealth\" / \"The European Union\"",
+      "what": "'Neither' is shown first, before the two groups it refers to, which reads oddly.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1a to 6.14 (all multiple-choice questions)",
+      "quote": "\"They all grew bigger\" / \"Nothing changed\" / \"Many closed, because goods were made more cheaply abroad\"",
+      "what": "In all sixteen multiple-choice questions the right answer is never the first button, and it is usually the longest and the only one with a reason. She will learn to pick by shape, not by thinking.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole script",
+      "quote": "Some, in places such as South Yorkshire and South Wales, still have high unemployment.",
+      "what": "There is nothing to look at or do: no map, graph or picture anywhere. South Yorkshire, Burnaston, South Cambridgeshire, the Outer Hebrides, Felixstowe and Liverpool are all named without ever being shown.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "6.1 to 6.5",
+      "quote": "Culture: British music, films, television, football and the English language are known around the world.",
+      "what": "There are seven 'Next' messages in a row here (and long runs in key points 2 and 5) of facts to read with nothing to do. She is likely to click through without reading.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "Summary, points 1 to 6",
+      "quote": "Summary, point 4 of 6: In growing South Cambridgeshire house prices rise, while in the shrinking Outer Hebrides schools close as young people leave.",
+      "what": "Each summary line is word for word the 'good line' she saw if she said don't know. The summary also covers only one example per key point; point 6 is only the EU, not the UK's links.",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 21
+    },
+    {
+      "fault": "F8",
+      "instances": 5
+    },
+    {
+      "fault": "F3",
+      "instances": 5
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "F12",
+      "instances": 1
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    },
+    {
+      "fault": "F7",
+      "instances": 1
+    },
+    {
+      "fault": "F2",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    },
+    {
+      "fault": "F1",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it stands (this is a geography script, and I have reviewed all six key points as she would meet them). The content is mostly accurate and the terms are usually defined before use, but the multiple-choice questions can nearly all be answered by picking the longest, only sensible option, and several 'don't know' hints ask a question the buttons do not answer. The own-words feedback in key points 3, 4 and 5 shows her the marking notes instead of a model line, and 6.6 asks about a 'political link' that was never explained. With no map or picture and long runs of 'Next', I would want those fixed before she uses it."
+}

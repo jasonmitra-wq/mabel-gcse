@@ -70,7 +70,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    Buttons: "It counts the people twice" / "The rich few push the mean up, so most people earn far less" / "It leaves out farmers' income" (she can also type)
    - Right ("The rich few push the mean up, so most people earn far less"): Yes: a mean hides how unequally money is shared. That is a limitation.
    - "It counts the people twice" (wrong idea twice: ): Not quite: people are counted once. The problem is that the rich few push the mean up, hiding how poor most people are.
-   - "It leaves out farmers' income" (wrong idea farmers: ): Not quite: all income is counted. The problem is that the rich few push the mean up, hiding how poor most people are.
+   - "It leaves out farmers' income" (wrong idea farmers: ): Partly: food that farmers grow to eat is often missed, which is a real limitation. But the bigger problem here is that the rich few push the mean up, hiding how poor most people are.
    - Don't know (first time): The mean of £1, £1, £1 and £97 is £25. Does £25 describe what most people have? (same buttons)
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A mean can be pushed up by a rich few, so GNI per head hides how unequally money is shared.
    - She asks to move on or skip: A mean can be pushed up by a rich few, so GNI per head hides how unequally money is shared.
@@ -102,16 +102,16 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 20. [2.5] Tutor: A country whose economy has started to grow fast as it builds up industry is called an NEE: a newly emerging economy, such as China, India, Brazil or Nigeria. This label is not one of the World Bank groups.
    Button: Next
 
-21. [2.6] Tutor asks: A country has a GNI per head of about $650, and most people work on small farms. Which group is it in?
-   Buttons: "HIC" / "LIC" / "NEE" (she can also type)
+21. [2.6] Tutor asks: Most people in one country work on small farms, and it earns about $650 per person a year, half of Nigeria's figure: which group is it in?
+   Buttons: "NEE" / "LIC" / "HIC" (she can also type)
    - Right ("LIC"): Yes: with such a low income per person, it is an LIC.
    - "HIC" (wrong idea hic: ): Not quite: $650 a year is very low. It is an LIC.
    - "NEE" (wrong idea nee: ): Not quite: nothing says its economy is growing fast through industry. With $650 a year it is an LIC.
-   - Don't know (first time): LICs have the lowest GNI per head of all. Is $650 a year low? (same buttons)
+   - Don't know (first time): The UK's GNI per head is $54,550 and Nigeria's $1,360. LICs have the lowest of all. Where does $650 fit? (same buttons)
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") With about $650 per person a year, it is one of the poorest countries: an LIC.
    - She asks to move on or skip: With about $650 per person a year, it is one of the poorest countries: an LIC.
 
-22. [2.7] Tutor: An older way of splitting the world is the Brandt Line, drawn on a world map to divide a richer "North" from a poorer "South". It is out of date: fast-growing countries such as China lie in its "South".
+22. [2.7] Tutor: An older way of splitting the world is the Brandt Line, drawn on a world map to divide a richer "North" from a poorer "South". The line bends south to put rich Australia and New Zealand in the "North". It is out of date: fast-growing countries such as China lie in its "South".
    (Under it, a picture: "The Brandt Line: a rough split between a richer North and a poorer South.", labelled NORTH — richer, SOUTH — poorer, Japan, Australia, NZ.)
    Button: Next
 
@@ -141,7 +141,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 29. [3.5] Tutor asks: Predict: in stage 2, what happens to the size of the population?
    Buttons: "It stays the same" / "It grows fast" / "It shrinks" (she can also type)
    - Right ("It grows fast"): Yes: far more people are born than die, so it grows fast.
-   - "It shrinks" (wrong idea shrink: ): Not quite: births are still high and deaths are low, so far more people are born than die. It grows fast.
+   - "It shrinks" (wrong idea shrink: ): Not quite: births are still high while deaths are falling, so far more people are born than die. It grows fast.
    - "It stays the same" (wrong idea same: ): Not quite: births are now much higher than deaths, so the population grows fast.
    - Don't know (first time): Are more people being born, or dying? (same buttons)
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Births stay high while deaths fall, so far more people are born than die: the population grows fast.
@@ -199,13 +199,13 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    Button: Next
 
 43. [4.3] Tutor asks: Which of these is a physical cause of uneven development?
-   Buttons: "Large debts to other countries" / "Borders drawn by colonial rulers" / "Cyclones that wreck farms and roads" (she can also type)
-   - Right ("Cyclones that wreck farms and roads"): Yes: a cyclone is a natural hazard, so it is physical.
-   - "Large debts to other countries" (wrong idea debt: ): Not quite: debt is about money, an economic cause. Physical means from nature, like a cyclone.
-   - "Borders drawn by colonial rulers" (wrong idea borders: ): Not quite: colonial borders come from history. Physical means from nature, like a cyclone.
-   - Don't know (first time): Physical means it comes from nature. Which option is a kind of weather? (same buttons)
-   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A cyclone comes from nature, so it is a physical cause.
-   - She asks to move on or skip: A cyclone comes from nature, so it is a physical cause.
+   Buttons: "Large debts to other countries" / "Borders drawn by colonial rulers" / "Floods that wreck farms and roads" (she can also type)
+   - Right ("Floods that wreck farms and roads"): Yes: a flood is a natural hazard, so it is physical.
+   - "Large debts to other countries" (wrong idea debt: ): Not quite: debt is about money, an economic cause. Physical means from nature, like a flood.
+   - "Borders drawn by colonial rulers" (wrong idea borders: ): Not quite: colonial borders come from history. Physical means from nature, like a flood.
+   - Don't know (first time): Physical means it comes from nature. Which option is about water and weather? (same buttons)
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A flood comes from nature, so it is a physical cause.
+   - She asks to move on or skip: A flood comes from nature, so it is a physical cause.
 
 44. [4.6] Tutor: Uneven development has consequences. There are big differences, called disparities, in wealth and in health between countries.
    Button: Next
@@ -246,14 +246,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 52. [5.2b] Tutor: Aid can save lives, but it can be wasted, or a country can come to depend on it.
    Button: Next
 
-53. [5.3] Tutor: Debt relief cancels some of the money a poor country owes. The extra it would have paid back on its loans, called interest, can then go on health and schools instead.
+53. [5.3] Tutor: Debt relief cancels some of the money a poor country owes. Money that would have gone on repayments can then go on health and schools instead.
    Button: Next
 
 54. [5.4] Tutor asks: A country's debts to other governments are cancelled. Which strategy is this?
-   Buttons: "A new loan" / "Debt relief" / "Microfinance" (she can also type)
+   Buttons: "A new loan" / "Debt relief" / "Aid" (she can also type)
    - Right ("Debt relief"): Yes: cancelling debt is debt relief. It is not a loan: it takes debt away.
    - "A new loan" (wrong idea loan: ): Not quite: a loan adds debt. Cancelling debt is debt relief.
-   - "Microfinance" (wrong idea micro: ): Not quite: microfinance is a small loan to a person. Cancelling a country's debt is debt relief.
+   - "Aid" (wrong idea micro: ): Not quite: aid is help given or lent. Cancelling money a country already owes is debt relief.
    - Don't know (first time): Does this add to what the country owes, or take some away? (same buttons)
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Cancelling money a country owes is debt relief; it is not a loan.
    - She asks to move on or skip: Cancelling money a country owes is debt relief; it is not a loan.
@@ -300,7 +300,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## Key point 6: Is the development gap closing?
 
-63. [6.1] Tutor: The picture is mixed. Some NEEs, especially China and India, have grown fast, and hundreds of millions of their people now have higher incomes.
+63. [6.1] Tutor: Is the development gap closing? The picture is mixed. Some NEEs, especially China and India, have grown fast, and hundreds of millions of their people now have higher incomes.
    Button: Next
 
 64. [6.2] Tutor: Extreme poverty means living on less than $3 a day. The share of the world's people in extreme poverty fell from about 43% in 1990 to about 10% in 2024.
@@ -309,7 +309,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 65. [6.2b] Tutor: But progress is uneven: many of the poorest countries, especially in Africa, are falling further behind.
    Button: Next
 
-66. [6.3] Tutor asks: Which is the best overall judgement?
+66. [6.3] Tutor asks: So, is the development gap closing? Which is the best overall judgement?
    Buttons: "The gap has closed everywhere" / "Nothing has changed since 1990" / "The gap is closing for some countries but widening for others" (she can also type)
    - Right ("The gap is closing for some countries but widening for others"): Yes: that judgement uses evidence from both sides.
    - "The gap has closed everywhere" (wrong idea all: ): Not quite: many of the poorest countries are falling behind, so it has not closed everywhere.
@@ -318,7 +318,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The gap is closing for fast-growing countries but widening for many of the poorest.
    - She asks to move on or skip: The gap is closing for fast-growing countries but widening for many of the poorest.
 
-67. [6.4] Tutor: The United Nations has set Sustainable Development Goals: targets for every country to end poverty and hunger and improve health and schooling.
+67. [6.4] Tutor: To speed up progress, the United Nations, which almost every country belongs to, has set Sustainable Development Goals: targets to end poverty and hunger and improve health and schooling everywhere.
    Button: Next
 
 68. [6.5] Tutor: In one line: is the development gap closing? Give one point each way.

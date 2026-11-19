@@ -15,7 +15,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "About 50 V" (wrong idea freq: ): Not quite: about 230 V. 50 is the frequency of the mains, in hertz.
    - "About 1.5 V" (wrong idea cell: ): Not quite: about 230 V. 1.5 V is a single torch cell.
    - Don't know (first time): The mains push is over a hundred times bigger than a 1.5 V torch cell. Which button fits? (same buttons)
-   - Still doesn't know: That's fine. The UK mains is about 230 V.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The UK mains is about 230 V.
    - She asks to move on or skip: The UK mains is about 230 V.
 
 3. [1.1b] Tutor asks: Second: what is electric current?
@@ -24,7 +24,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The push that drives charge" (wrong idea push: ): Not quite: current is the rate of flow of charge. The push that drives the charge is the potential difference.
    - "How hard it is for charge to flow" (wrong idea hard: ): Not quite: current is the rate of flow of charge. How hard it is for charge to flow is the resistance.
    - Don't know (first time): Current is about how much charge passes a point each second. Which button is about how much charge passes each second? (same buttons)
-   - Still doesn't know: That's fine. Current is the rate of flow of charge, measured in amperes (A).
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Current is the rate of flow of charge, measured in amperes (A).
    - She asks to move on or skip: Current is the rate of flow of charge, measured in amperes (A).
 
 4. [1.1c] Tutor asks: Third, from the lesson on resistance: V = I R, potential difference = current × resistance. A current of 2 A flows through a 5 Ω resistor. What is the potential difference across it, in volts?
@@ -34,7 +34,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 7 (wrong idea add): Not quite: 10 V. In V = I R the current and resistance are multiplied, not added: 2 × 5 = 10 V.
    - Any other wrong answer: Not quite: 10 V. V = I R = 2 × 5 = 10 V.
    - Don't know (first time): Multiply the current, 2, by the resistance, 5.
-   - Still doesn't know: That's fine. V = I R = 2 × 5 = 10 V.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") V = I R = 2 × 5 = 10 V.
    - She asks to move on or skip: V = I R = 2 × 5 = 10 V.
 
 5. [1.2] Tutor: Now, this lesson. A kettle and a phone charger both run from the mains, but the kettle moves energy much faster: it heats a whole kettle of water in a few minutes.
@@ -55,7 +55,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "1 J" (wrong idea one: ): Not quite: 500 J. 1 J each second would be a power of just 1 W. 500 W means 500 J every second.
    - "500 × 60 = 30 000 J" (wrong idea minute: ): Not quite: 500 J. 30 000 J is what it transfers in a minute. A watt is a joule each second, so in one second it is 500 J.
    - Don't know (first time): One watt means one joule every second. So how many joules every second is 500 watts? (same buttons)
-   - Still doesn't know: That's fine. A watt is a joule each second, so 500 W is 500 J every second.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A watt is a joule each second, so 500 W is 500 J every second.
    - She asks to move on or skip: A watt is a joule each second, so 500 W is 500 J every second.
 
 10. [1.7] Tutor: Big appliances have big powers, so their power is often given in kilowatts (kW): 1 kW = 1000 W. A 1.5 kW hairdryer has a power of 1500 W.
@@ -68,7 +68,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 0.003 (wrong idea divided): Not quite: 3000 W. To go from kilowatts to watts, multiply by 1000: 3 × 1000 = 3000 W.
    - Any other wrong answer: Not quite: 3000 W. 3 kW = 3 × 1000 = 3000 W.
    - Don't know (first time): 1 kW is 1000 W. So 3 kW is 3 lots of 1000 W.
-   - Still doesn't know: That's fine. 3 kW = 3 × 1000 = 3000 W.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 3 kW = 3 × 1000 = 3000 W.
    - She asks to move on or skip: 3 kW = 3 × 1000 = 3000 W.
 
 12. [1.10] Tutor: The circuit below has a cell and a lamp, and a display of the energy passed to the lamp. Predict first: answer the question in the box. Then run it for 10 seconds with one cell and with two. Tap Next when you are done.
@@ -100,7 +100,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 7 (wrong idea add): Not quite: 10 W. Multiply, do not add: P = V I = 5 × 2 = 10 W.
    - Any other wrong answer: Not quite: 10 W. P = V I = 5 × 2 = 10 W.
    - Don't know (first time): Use P = V I: multiply the potential difference, 5, by the current, 2.
-   - Still doesn't know: That's fine. P = V I = 5 × 2 = 10 W.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") P = V I = 5 × 2 = 10 W.
    - She asks to move on or skip: P = V I = 5 × 2 = 10 W.
 
 17. [1.14] Tutor: To find the current, divide both sides of P = V I by V. That leaves I = P ÷ V: the power divided by the potential difference. Check it with the kettle: 2300 ÷ 230 = 10 A.
@@ -113,7 +113,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 264500 (wrong idea times): Not quite: 5 A. To find the current, divide: I = P ÷ V = 1150 ÷ 230 = 5 A.
    - Any other wrong answer: Not quite: 5 A. I = P ÷ V = 1150 ÷ 230 = 5 A.
    - Don't know (first time): Use I = P ÷ V. Type 1150 ÷ 230 into a calculator.
-   - Still doesn't know: That's fine. I = P ÷ V = 1150 ÷ 230 = 5 A.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") I = P ÷ V = 1150 ÷ 230 = 5 A.
    - She asks to move on or skip: I = P ÷ V = 1150 ÷ 230 = 5 A.
 
 19. [1.16] Tutor: A second equation for power uses resistance: P = I² R, power = current² × resistance. P is the power in watts (W), I is the current in amperes (A) and R is the resistance in ohms (Ω). I² means I × I.
@@ -136,15 +136,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 100 (wrong idea squaredall): Not quite: 20 W. Square only the current: 2² = 4, then 4 × 5 = 20 W.
    - Any other wrong answer: Not quite: 20 W. P = I² R = 2² × 5 = 4 × 5 = 20 W.
    - Don't know (first time): Square the current first: 2 × 2 = 4. Then multiply by the resistance, 5.
-   - Still doesn't know: That's fine. P = I² R = 2² × 5 = 4 × 5 = 20 W.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") P = I² R = 2² × 5 = 4 × 5 = 20 W.
    - She asks to move on or skip: P = I² R = 2² × 5 = 4 × 5 = 20 W.
 
 23. [1.20] Tutor: In one line: what is power, and what are its two equations?
    She types one line. The AI checks which of these points it makes: "the energy an appliance transfers each second", "P = V I", "P = I² R".
-   - All of them: Yes, your line has it: the energy an appliance transfers each second; and P = V I; and P = I² R.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: the energy an appliance transfers each second; and P = V I; and P = I² R.
-   - Don't know: No problem. A good line would be: power is the energy an appliance transfers each second; P = V I and P = I² R.
+   - All of them: Yes: your line makes every point. You have this: the energy an appliance transfers each second. You have this: P = V I. You have this: P = I² R.
+   - Some (for example the first only): Partly there. You have this: the energy an appliance transfers each second. Still needed: P = V I. Still needed: P = I² R.
+   - None: Here is what a good line says. The energy an appliance transfers each second. P = V I. P = I² R.
+   - Don't know: A good line would be: power is the energy an appliance transfers each second; P = V I and P = I² R. (with the turn-taking opener)
 
 ## Key point 2: Electrical energy
 
@@ -160,7 +160,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Only a thermal store" (wrong idea thermal: ): Not quite: the heater fills a thermal store, and the motor turning the fan fills a kinetic store, so both.
    - "Only a kinetic store" (wrong idea kinetic: ): Not quite: the motor fills a kinetic store, and the heater fills a thermal store too, so both.
    - Don't know (first time): A heater makes things hotter, and a motor makes things move. Which button has a store for each? (same buttons)
-   - Still doesn't know: That's fine. The energy goes to the thermal store of the warm air and the kinetic store of the turning fan.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The energy goes to the thermal store of the warm air and the kinetic store of the turning fan.
    - She asks to move on or skip: The energy goes to the thermal store of the warm air and the kinetic store of the turning fan.
 
 27. [2.3] Tutor: How much energy an appliance transfers depends on two things: its power, and how long it is switched on. The total amount is called the energy transferred.
@@ -186,7 +186,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 3600 (wrong idea minutes): Not quite: 216 000 J. You multiplied 60 W by 60 minutes. The time must be in seconds: 1 hour is 3600 s, so E = P t = 60 × 3600 = 216 000 J.
    - Any other wrong answer: Not quite: 216 000 J. 1 hour is 3600 s, and E = P t = 60 × 3600 = 216 000 J.
    - Don't know (first time): First, the time in seconds: 1 hour is 3600 s. Then E = P t: multiply 60 by 3600.
-   - Still doesn't know: That's fine. 1 hour is 3600 s, so E = P t = 60 × 3600 = 216 000 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 1 hour is 3600 s, so E = P t = 60 × 3600 = 216 000 J.
    - She asks to move on or skip: 1 hour is 3600 s, so E = P t = 60 × 3600 = 216 000 J.
 
 32. [2.8] Tutor asks: A 3 kW kettle and a 1.5 kW kettle each heat water for 1 minute: which is true?
@@ -195,7 +195,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "They transfer the same energy: the time is the same" (wrong idea time: ): Not quite: the energy depends on the power too. The 3 kW kettle transfers 3000 J each second, the other 1500 J, so in the same minute it transfers twice as much.
    - "The 1.5 kW kettle transfers more energy" (wrong idea less: ): Not quite: more power means more energy each second. In the same minute the 3 kW kettle transfers twice as much.
    - Don't know (first time): E = P t. The time is the same, but one power is twice the other. Which button fits? (same buttons)
-   - Still doesn't know: That's fine. E = P t: with the same time, twice the power transfers twice the energy.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") E = P t: with the same time, twice the power transfers twice the energy.
    - She asks to move on or skip: E = P t: with the same time, twice the power transfers twice the energy.
 
 33. [2.8b] Tutor: Because P = V I, you can also write E = P t as E = V I t: energy transferred = potential difference × current × time.
@@ -203,10 +203,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 34. [2.9] Tutor: In one line: what two things does the energy an appliance transfers depend on?
    She types one line. The AI checks which of these points it makes: "its power", "how long it is switched on".
-   - All of them: Yes, your line has it: its power; and how long it is switched on.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: its power; and how long it is switched on.
-   - Don't know: No problem. A good line would be: the energy transferred depends on the appliance's power and how long it is switched on.
+   - All of them: Yes: your line makes every point. You have this: its power. You have this: how long it is switched on.
+   - Some (for example the first only): Partly there. You have this: its power. Still needed: how long it is switched on.
+   - None: Here is what a good line says. Its power. How long it is switched on.
+   - Don't know: A good line would be: the energy transferred depends on the appliance's power and how long it is switched on. (with the turn-taking opener)
 
 ## Key point 3: Linking all the electrical equations
 
@@ -223,7 +223,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 32 (wrong idea add): Not quite: 240 J. Multiply, do not add: E = Q V = 20 × 12 = 240 J.
    - Any other wrong answer: Not quite: 240 J. E = Q V = 20 × 12 = 240 J.
    - Don't know (first time): Use E = Q V: multiply the charge, 20, by the potential difference, 12.
-   - Still doesn't know: That's fine. E = Q V = 20 × 12 = 240 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") E = Q V = 20 × 12 = 240 J.
    - She asks to move on or skip: E = Q V = 20 × 12 = 240 J.
 
 38. [3.4] Tutor: Harder questions need two equations in a row. Write down what you know, find an equation that links it to the next thing you need, and use that answer in the next equation.
@@ -243,7 +243,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 57.5 (wrong idea divide): Not quite: 920 W. Multiply: P = V I = 230 × 4 = 920 W.
    - Any other wrong answer: Not quite: 920 W. P = V I = 230 × 4 = 920 W.
    - Don't know (first time): Use P = V I: multiply 230 by 4.
-   - Still doesn't know: That's fine. P = V I = 230 × 4 = 920 W.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") P = V I = 230 × 4 = 920 W.
    - She asks to move on or skip: P = V I = 230 × 4 = 920 W.
 
 41. [3.7] Tutor asks: Step 2: the heater is on for 10 s. How much energy does it transfer, in joules?
@@ -252,15 +252,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 92 (wrong idea divide): Not quite: 9200 J. Multiply the power by the time: E = P t = 920 × 10 = 9200 J.
    - Any other wrong answer: Not quite: 9200 J. E = P t = 920 × 10 = 9200 J.
    - Don't know (first time): Use E = P t with the power from step 1, 920 W, and the time, 10 s.
-   - Still doesn't know: That's fine. E = P t = 920 × 10 = 9200 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") E = P t = 920 × 10 = 9200 J.
    - She asks to move on or skip: E = P t = 920 × 10 = 9200 J.
 
 42. [3.8] Tutor: In one line: how would you find the energy a heater transfers, if you know its current, its potential difference and the time?
    She types one line. The AI checks which of these points it makes: "multiply the potential difference, the current and the time".
-   - All of them: Yes, your line has it: multiply the potential difference, the current and the time.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: multiply the potential difference, the current and the time.
-   - Don't know: No problem. A good line would be: multiply the potential difference, the current and the time in seconds, E = V I t (or find P = V I first, then E = P t).
+   - All of them: Yes: your line makes the point. You have this: multiply the potential difference, the current and the time.
+   - None: Here is what a good line says. Multiply the potential difference, the current and the time.
+   - Don't know: A good line would be: multiply the potential difference, the current and the time in seconds, E = V I t (or find P = V I first, then E = P t). (with the turn-taking opener)
 
 43. [3.9] Tutor: Now for a short quiz: six questions on the calculations. Take your time.
    Button: Next
@@ -269,28 +268,28 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    She types a number.
    - Right (90 W): Yes: P = I² R = 3² × 10 = 9 × 10 = 90 W.
    - Any other wrong answer: Not quite: 90 W. P = I² R = 3² × 10 = 9 × 10 = 90 W.
-   - Still doesn't know: That's fine. P = I² R = 3² × 10 = 9 × 10 = 90 W.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") P = I² R = 3² × 10 = 9 × 10 = 90 W.
    - She asks to move on or skip: P = I² R = 3² × 10 = 9 × 10 = 90 W.
 
 45. [3.11] Tutor asks: Quiz, question 2 of 6: A lamp has 12 V across it and 3 A through it. What is its power, in watts?
    She types a number.
    - Right (36 W): Yes: P = V I = 12 × 3 = 36 W.
    - Any other wrong answer: Not quite: 36 W. P = V I = 12 × 3 = 36 W.
-   - Still doesn't know: That's fine. P = V I = 12 × 3 = 36 W.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") P = V I = 12 × 3 = 36 W.
    - She asks to move on or skip: P = V I = 12 × 3 = 36 W.
 
 46. [3.12] Tutor asks: Quiz, question 3 of 6: A cooker has a power of 2.5 kW. What is that in watts?
    She types a number.
    - Right (2500 W): Yes: 2.5 × 1000 = 2500 W.
    - Any other wrong answer: Not quite: 2500 W. 2.5 kW = 2.5 × 1000 = 2500 W.
-   - Still doesn't know: That's fine. 2.5 kW = 2.5 × 1000 = 2500 W.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 2.5 kW = 2.5 × 1000 = 2500 W.
    - She asks to move on or skip: 2.5 kW = 2.5 × 1000 = 2500 W.
 
 47. [3.13] Tutor asks: Quiz, question 4 of 6: A 100 W fan runs for 30 s. How much energy does it transfer, in joules?
    She types a number.
    - Right (3000 J): Yes: E = P t = 100 × 30 = 3000 J.
    - Any other wrong answer: Not quite: 3000 J. E = P t = 100 × 30 = 3000 J.
-   - Still doesn't know: That's fine. E = P t = 100 × 30 = 3000 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") E = P t = 100 × 30 = 3000 J.
    - She asks to move on or skip: E = P t = 100 × 30 = 3000 J.
 
 48. [3.14] Tutor asks: Quiz, question 5 of 6: P = V I. Which gives the current?
@@ -298,14 +297,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("I = P ÷ V"): Yes. I = P ÷ V.
    - "I = V ÷ P" (wrong idea w1: ): Not quite. I = V ÷ P is upside down. From P = V I, I = P ÷ V.
    - "I = P × V" (wrong idea w2: ): Not quite. To find I, divide the power by the potential difference: I = P ÷ V.
-   - Still doesn't know: That's fine. From P = V I, the current is I = P ÷ V.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") From P = V I, the current is I = P ÷ V.
    - She asks to move on or skip: From P = V I, the current is I = P ÷ V.
 
 49. [3.15] Tutor asks: Quiz, question 6 of 6: A 2000 W heater is on for 2 minutes. How much energy does it transfer, in joules?
    She types a number.
    - Right (240000 J): Yes: 2 minutes is 120 s, and E = P t = 2000 × 120 = 240 000 J.
    - Any other wrong answer: Not quite: 240 000 J. 2 minutes is 120 s, and E = P t = 2000 × 120 = 240 000 J.
-   - Still doesn't know: That's fine. 2 minutes is 120 s, and E = P t = 2000 × 120 = 240 000 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 2 minutes is 120 s, and E = P t = 2000 × 120 = 240 000 J.
    - She asks to move on or skip: 2 minutes is 120 s, and E = P t = 2000 × 120 = 240 000 J.
 
 50. [3.16] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
@@ -313,5 +312,9 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## The end
 
-51. Tutor: The lesson is finished. Tap a button to go on.
+51. Tutor: Summary, point 1 of 3: Power is the energy an appliance transfers each second; P = V I and P = I² R.
+52. Tutor: Summary, point 2 of 3: The energy transferred depends on the appliance's power and how long it is switched on.
+53. Tutor: Summary, point 3 of 3: Multiply the potential difference, the current and the time in seconds, E = V I t (or find P = V I first, then E = P t).
+
+54. Tutor: The lesson is finished. Tap a button to go on.
    Buttons: "Go to the slides" / "Home"

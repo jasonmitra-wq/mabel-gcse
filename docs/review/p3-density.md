@@ -15,7 +15,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Solid" (wrong idea solid: ): Not quite: solid particles are packed close together in a regular pattern. Far apart is a gas.
    - "Liquid" (wrong idea liquid: ): Not quite: liquid particles touch each other. Far apart is a gas.
    - Don't know (first time): In a solid and in a liquid, the particles touch each other. Which state is left? (same buttons)
-   - Still doesn't know: That's fine. In a gas the particles are far apart, with empty space between them.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") In a gas the particles are far apart, with empty space between them.
    - She asks to move on or skip: In a gas the particles are far apart, with empty space between them.
 
 3. [1.1b] Tutor asks: Second: 200 g of ice melts. What is the mass of the water?
@@ -24,7 +24,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Less than 200 g" (wrong idea less: ): Not quite: no particles are lost when ice melts, so the water is still 200 g.
    - "More than 200 g" (wrong idea more: ): Not quite: no particles are added when ice melts, so the water is still 200 g.
    - Don't know (first time): No particles are made or destroyed when ice melts. So which mass must the water have? (same buttons)
-   - Still doesn't know: That's fine. Mass stays the same in a change of state, so the water is 200 g.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Mass stays the same in a change of state, so the water is 200 g.
    - She asks to move on or skip: Mass stays the same in a change of state, so the water is 200 g.
 
 4. [1.2] Tutor: Now this lesson. Mass is how much matter something has. It is measured in kilograms (kg) or grams (g): 1 kg = 1000 g.
@@ -54,7 +54,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Block A" (wrong idea bigger: ): Not quite: A is bigger, so its mass is more spread out. B packs the same mass into half the space, so B is denser.
    - "They are equally dense" (wrong idea same: ): Not quite: density is mass for each cm³, not mass alone. B fits its 10 g into half the volume, so B is denser.
    - Don't know (first time): Density is mass ÷ volume. Work out 10 ÷ 10 and 10 ÷ 5. (same buttons)
-   - Still doesn't know: That's fine. A: 10 ÷ 10 = 1 g/cm³. B: 10 ÷ 5 = 2 g/cm³. B is denser.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A: 10 ÷ 10 = 1 g/cm³. B: 10 ÷ 5 = 2 g/cm³. B is denser.
    - She asks to move on or skip: A: 10 ÷ 10 = 1 g/cm³. B: 10 ÷ 5 = 2 g/cm³. B is denser.
 
 12. [1.7b] Tutor: A material is dense when its particles are heavy, or packed tightly, or both.
@@ -72,15 +72,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It sinks" (wrong idea sinks: ): Not quite: being hard or solid does not decide it; density does. 920 kg/m³ is less than water's 1000 kg/m³, so ice floats.
    - "It floats only if it is small" (wrong idea small: ): Not quite: size does not decide it; density does. 920 kg/m³ is less than 1000 kg/m³, so any ice cube floats.
    - Don't know (first time): An object less dense than water floats. Is 920 less than 1000? (same buttons)
-   - Still doesn't know: That's fine. 920 kg/m³ is less than water's 1000 kg/m³, so ice floats.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 920 kg/m³ is less than water's 1000 kg/m³, so ice floats.
    - She asks to move on or skip: 920 kg/m³ is less than water's 1000 kg/m³, so ice floats.
 
 16. [1.11] Tutor: In one line: what does density mean?
    She types one line. The AI checks which of these points it makes: "the mass in each unit of volume (mass ÷ volume)".
-   - All of them: Yes, your line has it: the mass in each unit of volume (mass ÷ volume).
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: the mass in each unit of volume (mass ÷ volume).
-   - Don't know: No problem. A good line would be: density is how much mass there is in each cubic metre (or cm³): mass ÷ volume.
+   - All of them: Yes: your line makes the point. You have this: the mass in each unit of volume (mass ÷ volume).
+   - None: Here is what a good line says. The mass in each unit of volume (mass ÷ volume).
+   - Don't know: A good line would be: density is how much mass there is in each cubic metre (or cm³): mass ÷ volume. (with the turn-taking opener)
 
 ## Key point 2: Calculating density — worked examples
 
@@ -98,7 +97,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 0.4 (wrong idea upside): Not quite: 2.5 g/cm³. Mass goes on top: 300 ÷ 120, not 120 ÷ 300.
    - Any other wrong answer: Not quite: 2.5 g/cm³. ρ = m ÷ V = 300 ÷ 120 = 2.5 g/cm³.
    - Don't know (first time): Use ρ = m ÷ V: divide the mass, 300, by the volume, 120.
-   - Still doesn't know: That's fine. ρ = m ÷ V = 300 ÷ 120 = 2.5 g/cm³.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") ρ = m ÷ V = 300 ÷ 120 = 2.5 g/cm³.
    - She asks to move on or skip: ρ = m ÷ V = 300 ÷ 120 = 2.5 g/cm³.
 
 19. [2.2b] Tutor asks: Some densities: aluminium 2.7 g/cm³, iron 7.9 g/cm³, gold 19.3 g/cm³. A shiny block has a mass of 79 g and a volume of 10 cm³. Which metal is it?
@@ -107,7 +106,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Gold" (wrong idea gold: ): Not quite: gold would be 19.3 g/cm³. This block is 79 ÷ 10 = 7.9 g/cm³: iron.
    - "Aluminium" (wrong idea alu: ): Not quite: aluminium would be 2.7 g/cm³. This block is 79 ÷ 10 = 7.9 g/cm³: iron.
    - Don't know (first time): Work out its density first: 79 ÷ 10. Then find that number in the list. (same buttons)
-   - Still doesn't know: That's fine. The block's density is 79 ÷ 10 = 7.9 g/cm³, which matches iron.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The block's density is 79 ÷ 10 = 7.9 g/cm³, which matches iron.
    - She asks to move on or skip: The block's density is 79 ÷ 10 = 7.9 g/cm³, which matches iron.
 
 20. [2.3] Tutor: To find a mass or a volume, put the numbers into ρ = m ÷ V first, then rearrange. Rearranged, m = ρ × V and V = m ÷ ρ. Use a calculator for the sums.
@@ -127,7 +126,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 0.00222 (wrong idea upside): Not quite: you divided 2 by 900. Mass = density × volume: 900 × 2 = 1800 kg.
    - Any other wrong answer: Not quite: 1800 kg. 900 = m ÷ 2, so m = 900 × 2 = 1800 kg.
    - Don't know (first time): Put the numbers in: 900 = m ÷ 2. Then multiply both sides by 2.
-   - Still doesn't know: That's fine. 900 = m ÷ 2, so m = 900 × 2 = 1800 kg.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 900 = m ÷ 2, so m = 900 × 2 = 1800 kg.
    - She asks to move on or skip: 900 = m ÷ 2, so m = 900 × 2 = 1800 kg.
 
 23. [2.5b] Tutor: Here is a worked example of finding a volume. Its steps open one at a time.
@@ -144,7 +143,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 1.25 (wrong idea upside): Not quite: you divided the density by the mass. Volume = mass ÷ density: 2000 ÷ 2500 = 0.8 m³.
    - Any other wrong answer: Not quite: 0.8 m³. 2500 = 2000 ÷ V, so V = 2000 ÷ 2500 = 0.8 m³.
    - Don't know (first time): Put the numbers in: 2500 = 2000 ÷ V. Multiply both sides by V, then divide both sides by 2500.
-   - Still doesn't know: That's fine. 2500 = 2000 ÷ V, so V = 2000 ÷ 2500 = 0.8 m³.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 2500 = 2000 ÷ V, so V = 2000 ÷ 2500 = 0.8 m³.
    - She asks to move on or skip: 2500 = 2000 ÷ V, so V = 2000 ÷ 2500 = 0.8 m³.
 
 25. [2.7] Tutor: Here is the reason for the 1000. A cubic metre holds 1 000 000 cm³. At 1 g in each cm³ that is 1 000 000 g, which is 1000 kg. Multiply by 1000 to go from g/cm³ to kg/m³; divide by 1000 to go back.
@@ -156,7 +155,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "8 960 000 g/cm³" (wrong idea times: ): Not quite: going from kg/m³ to g/cm³, divide by 1000: 8960 ÷ 1000 = 8.96 g/cm³.
    - "8960 g/cm³" (wrong idea same: ): Not quite: the number changes with the units. Divide by 1000: 8.96 g/cm³.
    - Don't know (first time): Going from kg/m³ to g/cm³, divide by 1000. What is 8960 ÷ 1000? (same buttons)
-   - Still doesn't know: That's fine. 8960 kg/m³ ÷ 1000 = 8.96 g/cm³.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 8960 kg/m³ ÷ 1000 = 8.96 g/cm³.
    - She asks to move on or skip: 8960 kg/m³ ÷ 1000 = 8.96 g/cm³.
 
 27. [2.9] Tutor: A substance's density changes when it melts, because its volume changes. Most solids take up a little more space as a liquid, so the liquid is a little less dense.
@@ -171,10 +170,9 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 29. [2.11] Tutor: In one line: how do you find a volume from a density and a mass?
    She types one line. The AI checks which of these points it makes: "divide the mass by the density (V = m ÷ ρ), or put the numbers into ρ = m ÷ V and rearrange".
-   - All of them: Yes, your line has it: divide the mass by the density (V = m ÷ ρ), or put the numbers into ρ = m ÷ V and rearrange.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: divide the mass by the density (V = m ÷ ρ), or put the numbers into ρ = m ÷ V and rearrange.
-   - Don't know: No problem. A good line would be: put the numbers into ρ = m ÷ V, then rearrange to V = m ÷ ρ: mass divided by density.
+   - All of them: Yes: your line makes the point. You have this: divide the mass by the density (V = m ÷ ρ), or put the numbers into ρ = m ÷ V and rearrange.
+   - None: Here is what a good line says. Divide the mass by the density (V = m ÷ ρ), or put the numbers into ρ = m ÷ V and rearrange.
+   - Don't know: A good line would be: put the numbers into ρ = m ÷ V, then rearrange to V = m ÷ ρ: mass divided by density. (with the turn-taking opener)
 
 ## Key point 3: Measuring density in the lab (required practical)
 
@@ -184,7 +182,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Its mass and its length" (wrong idea length: ): Not quite: a length alone is not a volume. You need its mass and its volume.
    - "Its temperature and its colour" (wrong idea temp: ): Not quite: neither is in the equation. You need its mass and its volume.
    - Don't know (first time): Look at the equation ρ = m ÷ V. Which two quantities are on the right? (same buttons)
-   - Still doesn't know: That's fine. ρ = m ÷ V, so you need the mass and the volume.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") ρ = m ÷ V, so you need the mass and the volume.
    - She asks to move on or skip: ρ = m ÷ V, so you need the mass and the volume.
 
 31. [3.1] Tutor: Measuring density is a required practical: the exam can ask you to describe how to do it.
@@ -212,7 +210,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 0.37 (wrong idea upside): Not quite: 2.7 g/cm³. Mass goes on top: 81 ÷ 30 = 2.7 g/cm³.
    - Any other wrong answer: Not quite: 2.7 g/cm³. Volume = 2 × 3 × 5 = 30 cm³, and ρ = 81 ÷ 30 = 2.7 g/cm³.
    - Don't know (first time): First the volume: multiply 2 × 3 × 5. Then divide the mass, 81, by it.
-   - Still doesn't know: That's fine. Volume = 2 × 3 × 5 = 30 cm³, so ρ = 81 ÷ 30 = 2.7 g/cm³.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Volume = 2 × 3 × 5 = 30 cm³, so ρ = 81 ÷ 30 = 2.7 g/cm³.
    - She asks to move on or skip: Volume = 2 × 3 × 5 = 30 cm³, so ρ = 81 ÷ 30 = 2.7 g/cm³.
 
 38. [3.5] Tutor: An irregular object, such as a stone, has no simple sides to measure. Instead, lower it into water and measure how much water it pushes aside: that is the displacement method.
@@ -231,7 +229,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 92 (wrong idea add): Not quite: 12 cm³. The stone only adds the rise in level: 52 − 40 = 12 cm³.
    - Any other wrong answer: Not quite: 12 cm³. The rise in level is the stone's volume: 52 − 40 = 12 cm³.
    - Don't know (first time): The stone pushed the water up. By how much did the level rise?
-   - Still doesn't know: That's fine. The rise in level is the stone's volume: 52 − 40 = 12 cm³.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The rise in level is the stone's volume: 52 − 40 = 12 cm³.
    - She asks to move on or skip: The rise in level is the stone's volume: 52 − 40 = 12 cm³.
 
 42. [3.8] Tutor: Another way uses a eureka can: a can with a spout, filled with water up to the spout. Lower the object in, and the water it pushes out runs into a measuring cylinder. The volume of that water equals the volume of the object.
@@ -246,7 +244,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "So the water level stays still" (wrong idea spill: ): Not quite: where you look does not move the water. Looking from above or below makes the level seem higher or lower than it is.
    - "So you can see the numbers on the scale" (wrong idea sink: ): Not quite: you can see the numbers from any angle. Looking from above or below makes the level seem higher or lower than it is.
    - Don't know (first time): Looking from above, the level seems to be in a different place. Which option is about getting the reading right? (same buttons)
-   - Still doesn't know: That's fine. Looking from above or below makes the reading too high or too low, so read it with your eye level.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Looking from above or below makes the reading too high or too low, so read it with your eye level.
    - She asks to move on or skip: Looking from above or below makes the reading too high or too low, so read it with your eye level.
 
 45. [3.11] Tutor: Even with care, repeat readings scatter a little: too high one time, too low the next, for example from judging where the water level is. These are called random errors.
@@ -258,15 +256,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "In case the first one was measured wrong" (wrong idea wrong: ): Close: a repeat can catch a slip. The main reason is that highs and lows partly cancel in a mean, which reduces the effect of random errors.
    - "It stops mistakes happening" (wrong idea stop: ): Not quite: repeats cannot stop mistakes. But the highs and lows partly cancel in a mean, which reduces the effect of random errors.
    - Don't know (first time): Some readings are a bit too high and some a bit too low. What happens to them when you average? (same buttons)
-   - Still doesn't know: That's fine. In a mean the highs and lows partly cancel, so it reduces the effect of random errors.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") In a mean the highs and lows partly cancel, so it reduces the effect of random errors.
    - She asks to move on or skip: In a mean the highs and lows partly cancel, so it reduces the effect of random errors.
 
 47. [3.13] Tutor: In one line: how do you find the volume of a stone?
    She types one line. The AI checks which of these points it makes: "put it into water in a measuring cylinder (or a eureka can)", "the rise in the level (or the water pushed out) is its volume".
-   - All of them: Yes, your line has it: put it into water in a measuring cylinder (or a eureka can); and the rise in the level (or the water pushed out) is its volume.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: put it into water in a measuring cylinder (or a eureka can); and the rise in the level (or the water pushed out) is its volume.
-   - Don't know: No problem. A good line would be: lower the stone into water in a measuring cylinder; the rise in the water level is its volume.
+   - All of them: Yes: your line makes every point. You have this: put it into water in a measuring cylinder (or a eureka can). You have this: the rise in the level (or the water pushed out) is its volume.
+   - Some (for example the first only): Partly there. You have this: put it into water in a measuring cylinder (or a eureka can). Still needed: the rise in the level (or the water pushed out) is its volume.
+   - None: Here is what a good line says. Put it into water in a measuring cylinder (or a eureka can). The rise in the level (or the water pushed out) is its volume.
+   - Don't know: A good line would be: lower the stone into water in a measuring cylinder; the rise in the water level is its volume. (with the turn-taking opener)
 
 ## Key point 4: Density and states of matter
 
@@ -285,15 +283,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It falls" (wrong idea falls: ): Not quite: the mass stays the same and the volume shrinks, so m ÷ V gets bigger: the density rises.
    - "It stays the same" (wrong idea same: ): Not quite: same gas, but the particles are now closer together. Same mass in less volume means a higher density.
    - Don't know (first time): In ρ = m ÷ V, the mass stays the same. What happens to m ÷ V when V gets smaller? (same buttons)
-   - Still doesn't know: That's fine. The mass stays the same and the volume shrinks, so the density rises.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The mass stays the same and the volume shrinks, so the density rises.
    - She asks to move on or skip: The mass stays the same and the volume shrinks, so the density rises.
 
 52. [4.6] Tutor: In one line: why are a solid and its liquid similar in density?
    She types one line. The AI checks which of these points it makes: "in both the particles are close together (touching)".
-   - All of them: Yes, your line has it: in both the particles are close together (touching).
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: in both the particles are close together (touching).
-   - Don't know: No problem. A good line would be: in a solid and in its liquid the particles are close together, so the same space holds about the same mass.
+   - All of them: Yes: your line makes the point. You have this: in both the particles are close together (touching).
+   - None: Here is what a good line says. In both the particles are close together (touching).
+   - Don't know: A good line would be: in a solid and in its liquid the particles are close together, so the same space holds about the same mass. (with the turn-taking opener)
 
 53. [4.7] Tutor: Now for a short quiz: six questions on the whole lesson. Take your time.
    Button: Next
@@ -302,14 +299,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    She types a number.
    - Right (2 g/cm³): Yes: ρ = m ÷ V = 40 ÷ 20 = 2 g/cm³.
    - Any other wrong answer: Not quite: 2 g/cm³. ρ = m ÷ V = 40 ÷ 20 = 2 g/cm³.
-   - Still doesn't know: That's fine. ρ = m ÷ V = 40 ÷ 20 = 2 g/cm³.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") ρ = m ÷ V = 40 ÷ 20 = 2 g/cm³.
    - She asks to move on or skip: ρ = m ÷ V = 40 ÷ 20 = 2 g/cm³.
 
 55. [4.9] Tutor asks: Quiz, question 2 of 6: a liquid has a density of 0.8 g/cm³. What is the mass of 50 cm³ of it, in g?
    She types a number.
    - Right (40 g): Yes: 0.8 = m ÷ 50, so m = 0.8 × 50 = 40 g.
    - Any other wrong answer: Not quite: 40 g. 0.8 = m ÷ 50, so m = 0.8 × 50 = 40 g.
-   - Still doesn't know: That's fine. 0.8 = m ÷ 50, so m = 0.8 × 50 = 40 g.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 0.8 = m ÷ 50, so m = 0.8 × 50 = 40 g.
    - She asks to move on or skip: 0.8 = m ÷ 50, so m = 0.8 × 50 = 40 g.
 
 56. [4.10] Tutor asks: Quiz, question 3 of 6: which instrument measures the mass of a stone?
@@ -317,14 +314,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("A balance"): Yes: a balance.
    - "A ruler" (wrong idea w1: ): Not quite: a ruler measures lengths. Mass is measured on a balance.
    - "A measuring cylinder" (wrong idea w2: ): Not quite: a measuring cylinder measures volume. Mass is measured on a balance.
-   - Still doesn't know: That's fine. Mass is measured on a balance.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Mass is measured on a balance.
    - She asks to move on or skip: Mass is measured on a balance.
 
 57. [4.11] Tutor asks: Quiz, question 4 of 6: the water in a measuring cylinder reads 30 cm³, and 38 cm³ with a bolt in it. What is the bolt's volume, in cm³?
    She types a number.
    - Right (8 cm³): Yes: 38 − 30 = 8 cm³.
    - Any other wrong answer: Not quite: 8 cm³. Subtract: 38 − 30 = 8 cm³.
-   - Still doesn't know: That's fine. The rise in level is the bolt's volume: 38 − 30 = 8 cm³.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The rise in level is the bolt's volume: 38 − 30 = 8 cm³.
    - She asks to move on or skip: The rise in level is the bolt's volume: 38 − 30 = 8 cm³.
 
 58. [4.12] Tutor asks: Quiz, question 5 of 6: an object has a density of 1200 kg/m³. Will it float or sink in water?
@@ -332,7 +329,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Sink"): Yes: 1200 kg/m³ is more than water's 1000 kg/m³, so it sinks.
    - "Float" (wrong idea w1: ): Not quite: it sinks, because 1200 kg/m³ is more than 1000 kg/m³.
    - "It depends on its mass" (wrong idea w2: ): Not quite: density decides it, not mass. 1200 kg/m³ is more than water's 1000 kg/m³, so it sinks.
-   - Still doesn't know: That's fine. The object is denser than water (1000 kg/m³), so it sinks.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The object is denser than water (1000 kg/m³), so it sinks.
    - She asks to move on or skip: The object is denser than water (1000 kg/m³), so it sinks.
 
 59. [4.13] Tutor asks: Quiz, question 6 of 6: which of these is the least dense?
@@ -340,7 +337,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Steam"): Yes: steam, a gas, with its particles far apart.
    - "Water" (wrong idea w1: ): Not quite: in water the particles touch. Steam is a gas, with its particles far apart, so it is far less dense.
    - "Ice" (wrong idea w2: ): Not quite: ice is a little less dense than water, but steam, a gas, is far less dense than both.
-   - Still doesn't know: That's fine. Steam is a gas, so its particles are far apart and its density is far lower.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Steam is a gas, so its particles are far apart and its density is far lower.
    - She asks to move on or skip: Steam is a gas, so its particles are far apart and its density is far lower.
 
 60. [4.14] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
@@ -348,5 +345,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## The end
 
-61. Tutor: The lesson is finished. Tap a button to go on.
+61. Tutor: Summary, point 1 of 4: Density is how much mass there is in each cubic metre (or cm³): mass ÷ volume.
+62. Tutor: Summary, point 2 of 4: Put the numbers into ρ = m ÷ V, then rearrange to V = m ÷ ρ: mass divided by density.
+63. Tutor: Summary, point 3 of 4: Lower the stone into water in a measuring cylinder; the rise in the water level is its volume.
+64. Tutor: Summary, point 4 of 4: In a solid and in its liquid the particles are close together, so the same space holds about the same mass.
+
+65. Tutor: The lesson is finished. Tap a button to go on.
    Buttons: "Go to the slides" / "Home"

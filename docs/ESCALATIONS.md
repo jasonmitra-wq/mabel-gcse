@@ -520,3 +520,15 @@ code (a STOP case of the brief) or that is by design:
   transferred every second"): "energy transferred" is key point 2's term, used in key
   point 1. The answer comes from js/teach-script.js answerHer (shared code; its prompt
   does not list later key points' terms). Not changed: a shared teach-mode change.
+
+## Shared script fixes (brief docs/briefs/2026-11-18-shared-script-fixes.md, 2026-11-19)
+
+Done, behind flag SCRIPT_POLISH in js/teach-script.js (on; Node env SCRIPT_POLISH=0 turns it off). Closes the
+repeated reviewer items above: the fixed "That's fine." after "don't know" (F14), own-words replies joining points
+with "; and" (F15), no closing summary (F16), and the live answer opening "That question is asking…" (F17). With the
+flag off, every walk path of all 17 scripted lessons is byte-identical to before (dumps compared). New checks in
+tools/check-transcript.js, proven by tools/check-polish.js (each fails with the flag off, none with it on).
+- Open: js/teach-core.js, the live-written tutor for lessons not yet scripted, has the same patterns (6 "That's
+  fine.", its own own-words reply, its own answer prompt). None of the 17 scripted lessons uses it, so it is
+  unchanged; when a lesson there is shown to Mabel, the same four faults can appear. Planning chat to decide.
+- Open: no widget built; tools/pilot/widget-candidates.md lists one per scripted lesson for the planning chat.

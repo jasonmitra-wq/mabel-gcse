@@ -15,7 +15,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Thermal" (wrong idea thermal: ): Not quite: kinetic. The thermal store depends on how hot something is, not how it moves.
    - "Gravitational potential" (wrong idea gravity: ): Not quite: kinetic. The gravitational potential store is for things raised up; moving things have energy in their kinetic store.
    - Don't know (first time): A moving car has more of this store than the same car parked. Which button is it? (same buttons)
-   - Still doesn't know: That's fine. Moving things have energy in their kinetic store.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Moving things have energy in their kinetic store.
    - She asks to move on or skip: Moving things have energy in their kinetic store.
 
 3. [1.1b] Tutor asks: Second: a book sits on a high shelf. Which store holds energy because of its height?
@@ -24,7 +24,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Kinetic" (wrong idea kinetic: ): Not quite: gravitational potential. The book is not moving, so its kinetic store is empty. Being high up fills the gravitational potential store.
    - "Elastic potential" (wrong idea elastic: ): Not quite: gravitational potential. Nothing is stretched or squashed; the book is high up.
    - Don't know (first time): The book is high up and not moving. Which store is for raised things? (same buttons)
-   - Still doesn't know: That's fine. Raised things have energy in their gravitational potential store.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Raised things have energy in their gravitational potential store.
    - She asks to move on or skip: Raised things have energy in their gravitational potential store.
 
 4. [1.1c] Tutor: Energy is measured in joules, written J.
@@ -57,7 +57,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 150 (wrong idea nohalf): Nearly: 6 × 25 = 150, but the equation has a half in it. ½ × 150 = 75 J.
    - Any other wrong answer: Not quite: 75 J. Ek = ½ × 6 × 5² = ½ × 6 × 25 = 75 J.
    - Don't know (first time): Square the speed: 5 × 5 = 25. Then multiply by the mass, 6, and halve it.
-   - Still doesn't know: That's fine. Ek = ½ m v² = ½ × 6 × 25 = 75 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Ek = ½ m v² = ½ × 6 × 25 = 75 J.
    - She asks to move on or skip: Ek = ½ m v² = ½ × 6 × 25 = 75 J.
 
 11. [1.8] Tutor: Because the speed is squared, doubling the speed makes the kinetic energy four times as big, since 2² = 4. That is why a crash at motorway speed does so much more damage than one in town.
@@ -69,15 +69,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It becomes 3 times as big" (wrong idea three: ): Not quite: 9 times. The speed is squared in Ek = ½ m v², so three times the speed gives 3² = 9 times the energy.
    - "It becomes 6 times as big" (wrong idea six: ): Not quite: 9 times. Squaring means multiplying by itself: 3² = 3 × 3 = 9, not 3 × 2.
    - Don't know (first time): The speed is squared, and 3² = 9. So how many times as big does the kinetic energy get? (same buttons)
-   - Still doesn't know: That's fine. The speed is squared, and 3² = 9, so the kinetic energy becomes 9 times as big.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The speed is squared, and 3² = 9, so the kinetic energy becomes 9 times as big.
    - She asks to move on or skip: The speed is squared, and 3² = 9, so the kinetic energy becomes 9 times as big.
 
 13. [1.10] Tutor: In one line: what is the equation for kinetic energy, and which quantity in it is squared?
    She types one line. The AI checks which of these points it makes: "Ek = ½ m v²", "the speed is squared".
-   - All of them: Yes, your line has it: Ek = ½ m v²; and the speed is squared.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: Ek = ½ m v²; and the speed is squared.
-   - Don't know: No problem. A good line would be: Ek = ½ m v², and the speed is squared.
+   - All of them: Yes: your line makes every point. You have this: Ek = ½ m v². You have this: the speed is squared.
+   - Some (for example the first only): Partly there. You have this: Ek = ½ m v². Still needed: the speed is squared.
+   - None: Here is what a good line says. Ek = ½ m v². The speed is squared.
+   - Don't know: A good line would be: Ek = ½ m v², and the speed is squared. (with the turn-taking opener)
 
 ## Key point 2: Gravitational potential energy — the energy of height
 
@@ -110,7 +110,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 79.8 (wrong idea add): Not quite: 5880 J. Multiply the three numbers, do not add them: 60 × 9.8 × 10 = 5880 J.
    - Any other wrong answer: Not quite: 5880 J. Ep = m g h = 60 × 9.8 × 10 = 5880 J.
    - Don't know (first time): Multiply the mass, 60, by g, 9.8, and by the height, 10.
-   - Still doesn't know: That's fine. Ep = m g h = 60 × 9.8 × 10 = 5880 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Ep = m g h = 60 × 9.8 × 10 = 5880 J.
    - She asks to move on or skip: Ep = m g h = 60 × 9.8 × 10 = 5880 J.
 
 21. [2.6] Tutor: Heights are often given in centimetres, but h must be in metres: divide by 100, so 50 cm is 0.5 m.
@@ -122,7 +122,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 392 (wrong idea cm): Not quite: 3.92 J. The height must be in metres: 80 cm is 0.8 m. Then Ep = 0.5 × 9.8 × 0.8 = 3.92 J.
    - Any other wrong answer: Not quite: 3.92 J. 80 cm is 0.8 m, and Ep = m g h = 0.5 × 9.8 × 0.8 = 3.92 J.
    - Don't know (first time): First change 80 cm into metres by dividing by 100. Then multiply 0.5 × 9.8 × that height.
-   - Still doesn't know: That's fine. 80 cm is 0.8 m, so Ep = m g h = 0.5 × 9.8 × 0.8 = 3.92 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 80 cm is 0.8 m, so Ep = m g h = 0.5 × 9.8 × 0.8 = 3.92 J.
    - She asks to move on or skip: 80 cm is 0.8 m, so Ep = m g h = 0.5 × 9.8 × 0.8 = 3.92 J.
 
 23. [2.7b] Tutor: A mass given in grams must be changed into kilograms before it goes into the equation: divide by 1000, so 200 g is 0.2 kg.
@@ -134,7 +134,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 7840 (wrong idea grams): Not quite: 7.84 J. The mass must be in kilograms: 400 g is 0.4 kg. Then Ep = 0.4 × 9.8 × 2 = 7.84 J.
    - Any other wrong answer: Not quite: 7.84 J. 400 g is 0.4 kg, and Ep = m g h = 0.4 × 9.8 × 2 = 7.84 J.
    - Don't know (first time): First change 400 g into kilograms by dividing by 1000. Then multiply by 9.8 and by 2.
-   - Still doesn't know: That's fine. 400 g is 0.4 kg, so Ep = m g h = 0.4 × 9.8 × 2 = 7.84 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 400 g is 0.4 kg, so Ep = m g h = 0.4 × 9.8 × 2 = 7.84 J.
    - She asks to move on or skip: 400 g is 0.4 kg, so Ep = m g h = 0.4 × 9.8 × 2 = 7.84 J.
 
 25. [2.8] Tutor: Sometimes you know the energy and need the height. Put the numbers in first, then divide. For example, 98 = 5 × 9.8 × h gives 98 = 49 × h, so h = 98 ÷ 49 = 2 m.
@@ -146,7 +146,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 3841.6 (wrong idea times): Not quite: 10 m. To find h, divide, do not multiply: 2 × 9.8 = 19.6, and h = 196 ÷ 19.6 = 10 m.
    - Any other wrong answer: Not quite: 10 m. 196 = 2 × 9.8 × h = 19.6 × h, so h = 196 ÷ 19.6 = 10 m.
    - Don't know (first time): Put the numbers in: 196 = 2 × 9.8 × h. Work out 2 × 9.8, then divide 196 by it.
-   - Still doesn't know: That's fine. 196 = 2 × 9.8 × h = 19.6 × h, so h = 196 ÷ 19.6 = 10 m.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 196 = 2 × 9.8 × h = 19.6 × h, so h = 196 ÷ 19.6 = 10 m.
    - She asks to move on or skip: 196 = 2 × 9.8 × h = 19.6 × h, so h = 196 ÷ 19.6 = 10 m.
 
 27. [2.9b] Tutor: Nothing in Ep = m g h is squared. Double the height and the energy doubles; double the mass and it doubles too. Kinetic energy is different, because the speed in its equation is squared.
@@ -154,10 +154,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 28. [2.10] Tutor: In one line: what is the equation for gravitational potential energy, and what unit must the height be in?
    She types one line. The AI checks which of these points it makes: "Ep = m g h", "height in metres".
-   - All of them: Yes, your line has it: Ep = m g h; and height in metres.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: Ep = m g h; and height in metres.
-   - Don't know: No problem. A good line would be: Ep = m g h, with the height in metres.
+   - All of them: Yes: your line makes every point. You have this: Ep = m g h. You have this: height in metres.
+   - Some (for example the first only): Partly there. You have this: Ep = m g h. Still needed: height in metres.
+   - None: Here is what a good line says. Ep = m g h. Height in metres.
+   - Don't know: A good line would be: Ep = m g h, with the height in metres. (with the turn-taking opener)
 
 ## Key point 3: Conservation of energy — GPE becomes KE
 
@@ -190,7 +190,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 10 (wrong idea nog): Not quite: 98 J. Remember g: Ep = 1 × 9.8 × 10 = 98 J.
    - Any other wrong answer: Not quite: 98 J. Ep = m g h = 1 × 9.8 × 10 = 98 J.
    - Don't know (first time): Use Ep = m g h: multiply 1 × 9.8 × 10.
-   - Still doesn't know: That's fine. Ep = m g h = 1 × 9.8 × 10 = 98 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Ep = m g h = 1 × 9.8 × 10 = 98 J.
    - She asks to move on or skip: Ep = m g h = 1 × 9.8 × 10 = 98 J.
 
 36. [3.5] Tutor asks: Step 2: all 98 J goes into the stone's kinetic store. Use Ek = ½ m v² to find its speed just before it lands, in metres per second.
@@ -200,7 +200,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 9.9 (wrong idea nohalf): Not quite: 14 m/s. Keep the half: 98 = ½ × 1 × v², so v² = 196 and v = √196 = 14 m/s.
    - Any other wrong answer: Not quite: 14 m/s. 98 = ½ × 1 × v², so v² = 196 and v = √196 = 14 m/s.
    - Don't know (first time): Put the numbers in: 98 = ½ × 1 × v², which is ½ × v². Double 98 to undo the half, then use the √ key.
-   - Still doesn't know: That's fine. 98 = ½ × 1 × v², so v² = 196 and v = √196 = 14 m/s.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 98 = ½ × 1 × v², so v² = 196 and v = √196 = 14 m/s.
    - She asks to move on or skip: 98 = ½ × 1 × v², so v² = 196 and v = √196 = 14 m/s.
 
 37. [3.5b] Tutor: A thermal store is the energy an object has because of how hot it is.
@@ -212,15 +212,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It lands at the same speed" (wrong idea same: ): Not quite: pushing through air warms the stone and the air a little, so some energy goes to thermal stores. Less reaches the kinetic store, and it lands slower.
    - "It lands faster" (wrong idea faster: ): Not quite: energy cannot be created, so it cannot land faster. Some energy goes to thermal stores, so it lands slower.
    - Don't know (first time): Pushing through air warms the stone and the air a little. Does that leave more or less energy for the kinetic store, so a faster or slower landing? (same buttons)
-   - Still doesn't know: That's fine. Some energy goes to the thermal stores of the stone and the air, so less reaches the kinetic store and it lands slower.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Some energy goes to the thermal stores of the stone and the air, so less reaches the kinetic store and it lands slower.
    - She asks to move on or skip: Some energy goes to the thermal stores of the stone and the air, so less reaches the kinetic store and it lands slower.
 
 39. [3.7] Tutor: In one line: for something falling with no air resistance, how are its gravitational potential store and its kinetic store linked?
    She types one line. The AI checks which of these points it makes: "the energy lost from the gravitational potential store equals the energy gained by the kinetic store".
-   - All of them: Yes, your line has it: the energy lost from the gravitational potential store equals the energy gained by the kinetic store.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: the energy lost from the gravitational potential store equals the energy gained by the kinetic store.
-   - Don't know: No problem. A good line would be: the energy lost from the gravitational potential store equals the energy gained by the kinetic store.
+   - All of them: Yes: your line makes the point. You have this: the energy lost from the gravitational potential store equals the energy gained by the kinetic store.
+   - None: Here is what a good line says. The energy lost from the gravitational potential store equals the energy gained by the kinetic store.
+   - Don't know: A good line would be: the energy lost from the gravitational potential store equals the energy gained by the kinetic store. (with the turn-taking opener)
 
 ## Key point 4: Elastic potential energy — energy stored in a stretched spring
 
@@ -233,7 +232,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "14 cm" (wrong idea length: ): Not quite: 14 cm is its new length. The extension is how much longer it got: 14 − 10 = 4 cm.
    - "24 cm" (wrong idea added: ): Not quite: take the lengths away, do not add them. Extension = 14 − 10 = 4 cm.
    - Don't know (first time): How much longer did it get? Take the original length from the stretched length. (same buttons)
-   - Still doesn't know: That's fine. Extension = stretched length − original length = 14 − 10 = 4 cm.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Extension = stretched length − original length = 14 − 10 = 4 cm.
    - She asks to move on or skip: Extension = stretched length − original length = 14 − 10 = 4 cm.
 
 42. [4.3] Tutor: Some springs are much harder to stretch than others. How stiff a spring is, is given by its spring constant, k, in newtons per metre (N/m): the force needed for each metre of stretch. A bigger k means a stiffer spring.
@@ -259,7 +258,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 2 (wrong idea nohalf): Nearly: 200 × 0.01 = 2, but the equation has a half in it. ½ × 2 = 1 J.
    - Any other wrong answer: Not quite: 1 J. Ee = ½ × 200 × 0.1² = ½ × 200 × 0.01 = 1 J.
    - Don't know (first time): Square the extension: 0.1 × 0.1 = 0.01. Then multiply by 200 and halve it.
-   - Still doesn't know: That's fine. Ee = ½ k e² = ½ × 200 × 0.01 = 1 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Ee = ½ k e² = ½ × 200 × 0.01 = 1 J.
    - She asks to move on or skip: Ee = ½ k e² = ½ × 200 × 0.01 = 1 J.
 
 47. [4.8] Tutor asks: A spring with k = 400 N/m is stretched from 20 cm long to 30 cm long. How much energy is stored in it, in joules?
@@ -269,7 +268,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 20000 (wrong idea cm): Not quite: 2 J. The extension must be in metres: 10 cm = 0.1 m. Then Ee = ½ × 400 × 0.01 = 2 J.
    - Any other wrong answer: Not quite: 2 J. The extension is 10 cm = 0.1 m, and Ee = ½ × 400 × 0.01 = 2 J.
    - Don't know (first time): First the extension: 30 − 20 = 10 cm, which is 0.1 m. Then square it and use Ee = ½ k e².
-   - Still doesn't know: That's fine. The extension is 10 cm = 0.1 m, so Ee = ½ × 400 × 0.1² = ½ × 400 × 0.01 = 2 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The extension is 10 cm = 0.1 m, so Ee = ½ × 400 × 0.1² = ½ × 400 × 0.01 = 2 J.
    - She asks to move on or skip: The extension is 10 cm = 0.1 m, so Ee = ½ × 400 × 0.1² = ½ × 400 × 0.01 = 2 J.
 
 48. [4.8b] Tutor: As with speed, the extension is squared: double the extension and the stored energy becomes four times as big.
@@ -280,10 +279,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 50. [4.9] Tutor: In one line: what is e in Ee = ½ k e², and what unit must it be in?
    She types one line. The AI checks which of these points it makes: "the extension: stretched length minus original length", "in metres".
-   - All of them: Yes, your line has it: the extension: stretched length minus original length; and in metres.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: the extension: stretched length minus original length; and in metres.
-   - Don't know: No problem. A good line would be: e is the extension, the stretched length minus the original length, in metres.
+   - All of them: Yes: your line makes every point. You have this: the extension: stretched length minus original length. You have this: in metres.
+   - Some (for example the first only): Partly there. You have this: the extension: stretched length minus original length. Still needed: in metres.
+   - None: Here is what a good line says. The extension: stretched length minus original length. In metres.
+   - Don't know: A good line would be: e is the extension, the stretched length minus the original length, in metres. (with the turn-taking opener)
 
 51. [4.10] Tutor: Now for a short quiz: six questions on the whole lesson. Take your time.
    Button: Next
@@ -292,14 +291,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    She types a number.
    - Right (20 J): Yes: Ek = ½ × 10 × 2² = ½ × 10 × 4 = 20 J.
    - Any other wrong answer: Not quite: 20 J. Ek = ½ × 10 × 2² = ½ × 10 × 4 = 20 J.
-   - Still doesn't know: That's fine. Ek = ½ m v² = ½ × 10 × 4 = 20 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Ek = ½ m v² = ½ × 10 × 4 = 20 J.
    - She asks to move on or skip: Ek = ½ m v² = ½ × 10 × 4 = 20 J.
 
 53. [4.12] Tutor asks: Quiz, question 2 of 6: a 3 kg box is lifted 4 m. g = 9.8 N/kg. How much energy goes into its gravitational potential store, in joules?
    She types a number.
    - Right (117.6 J): Yes: Ep = m g h = 3 × 9.8 × 4 = 117.6 J.
    - Any other wrong answer: Not quite: 117.6 J. Ep = m g h = 3 × 9.8 × 4 = 117.6 J.
-   - Still doesn't know: That's fine. Ep = m g h = 3 × 9.8 × 4 = 117.6 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Ep = m g h = 3 × 9.8 × 4 = 117.6 J.
    - She asks to move on or skip: Ep = m g h = 3 × 9.8 × 4 = 117.6 J.
 
 54. [4.13] Tutor asks: Quiz, question 3 of 6: which quantity is squared in Ek = ½ m v²?
@@ -307,14 +306,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("The speed"): Yes: v, the speed, is squared.
    - "The mass" (wrong idea w1: ): Not quite: the speed. The little 2 sits on v, and v is the speed; the mass, m, is not squared.
    - "The energy" (wrong idea w2: ): Not quite: the speed. Ek is the energy you work out; the little 2 sits on v, the speed.
-   - Still doesn't know: That's fine. In Ek = ½ m v², v is the speed, and it is squared.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") In Ek = ½ m v², v is the speed, and it is squared.
    - She asks to move on or skip: In Ek = ½ m v², v is the speed, and it is squared.
 
 55. [4.14] Tutor asks: Quiz, question 4 of 6: a spring with k = 100 N/m has an extension of 0.2 m. How much energy is stored in it, in joules?
    She types a number.
    - Right (2 J): Yes: Ee = ½ × 100 × 0.2² = ½ × 100 × 0.04 = 2 J.
    - Any other wrong answer: Not quite: 2 J. Ee = ½ × 100 × 0.04 = 2 J.
-   - Still doesn't know: That's fine. Ee = ½ k e² = ½ × 100 × 0.04 = 2 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Ee = ½ k e² = ½ × 100 × 0.04 = 2 J.
    - She asks to move on or skip: Ee = ½ k e² = ½ × 100 × 0.04 = 2 J.
 
 56. [4.15] Tutor asks: Quiz, question 5 of 6: a spring 12 cm long is stretched to 15 cm. What is its extension?
@@ -322,14 +321,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("3 cm"): Yes: 15 − 12 = 3 cm.
    - "15 cm" (wrong idea w1: ): Not quite: 15 cm is its new length. The extension is how much longer it got: 15 − 12 = 3 cm.
    - "27 cm" (wrong idea w2: ): Not quite: take the lengths away, do not add them. Extension = 15 − 12 = 3 cm.
-   - Still doesn't know: That's fine. Extension = 15 − 12 = 3 cm.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Extension = 15 − 12 = 3 cm.
    - She asks to move on or skip: Extension = 15 − 12 = 3 cm.
 
 57. [4.16] Tutor asks: Quiz, question 6 of 6: a ball falls with no air resistance and loses 50 J from its gravitational potential store. How much energy has its kinetic store gained, in joules?
    She types a number.
    - Right (50 J): Yes: all 50 J goes into the kinetic store.
    - Any other wrong answer: Not quite: 50 J. With no air resistance, all the energy lost from the gravitational potential store goes into the kinetic store.
-   - Still doesn't know: That's fine. With no air resistance, the energy lost from the gravitational potential store, 50 J, all goes into the kinetic store.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") With no air resistance, the energy lost from the gravitational potential store, 50 J, all goes into the kinetic store.
    - She asks to move on or skip: With no air resistance, the energy lost from the gravitational potential store, 50 J, all goes into the kinetic store.
 
 58. [4.17] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
@@ -337,5 +336,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## The end
 
-59. Tutor: The lesson is finished. Tap a button to go on.
+59. Tutor: Summary, point 1 of 4: Ek = ½ m v², and the speed is squared.
+60. Tutor: Summary, point 2 of 4: Ep = m g h, with the height in metres.
+61. Tutor: Summary, point 3 of 4: The energy lost from the gravitational potential store equals the energy gained by the kinetic store.
+62. Tutor: Summary, point 4 of 4: E is the extension, the stretched length minus the original length, in metres.
+
+63. Tutor: The lesson is finished. Tap a button to go on.
    Buttons: "Go to the slides" / "Home"

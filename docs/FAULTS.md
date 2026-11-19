@@ -33,6 +33,18 @@ fault is added here in the same commit as its fix.
 | F12 | Predict-first widget: the right option holds the explanation asked for next; "Now explain it" before she has used the control; supply drawn as a "2 V" box, not the cell symbol; controls and terms from later key points (a potential-difference slider, "Add a cell" in key point 1); stock praise; muddled wording | "No: charge needs a complete loop, out of the cell and back again", then "Now explain it: why does the lamp need a complete loop?"; "Good prediction"; "as if there were only one wire" | `stock-praise`, `widget-term`; `check-widget-cover`: options, explain-gate, cell-symbol, controls, praise, later-term |
 | F13 | The side-column picture stays on an old step | "Measuring the current" picture still shown while she is on the widget's circuit | site tester check "side picture shows the current step (F13)" after every turn; reviewer (screenshots) |
 
+## Script reviews of P2, P1 and P3, 2026-11-15 to 2026-11-18 (brief docs/briefs/2026-11-18-shared-script-fixes.md)
+
+Raised again and again by tools/review-lesson.js --script; they came from js/teach-script.js and its answer prompt, not
+the scripts. Fixed behind flag SCRIPT_POLISH; tools/check-polish.js proves each check fails with the flag off.
+
+| Id | Fault | Real example | Checked by |
+|---|---|---|---|
+| F14 | The same opener on every reply to "don't know" | "That's fine." on about twenty replies in one lesson (p3-particle-model review, 2026-11-17) | `idk-opener` (same opener within 5 replies to "don't know") |
+| F15 | Own-words feedback joins several points in one sentence | "Yes, your line has it: the particles move faster; and they hit the walls more often each second; and and harder" (p3-pressure review, 2026-11-18) | `own-multi-point` |
+| F16 | The lesson stops dead after the quiz, with no summary of what it taught | "The lesson is finished. Tap a button to go on." straight after the score (p3-particle-model review, 2026-11-17) | `no-summary` |
+| F17 | The answer to her own question opens with a comment on the question | "That question is asking how much pressure you get when a known push is spread over a known amount of surface." (p3-pressure site test, 2026-11-18) | `question-comment` |
+
 ## Jason's pilot of v3.1, 2026-10-19 (p2-current-voltage, AI lesson)
 
 From docs/briefs/2026-10-19-pilot-feedback-v3-1.md. The brief gives the

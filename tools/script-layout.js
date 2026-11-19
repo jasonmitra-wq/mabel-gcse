@@ -57,10 +57,10 @@ function layout(id) {
             out.push(`   - Don't know (${k === 0 ? 'first time' : 'again'}): a smaller question: ${lv.ask.question} Buttons: ${engine.shown(lv.ask).map(o => `"${o.text}"`).join(' / ')}`);
             out.push(`       - Right: ${lv.ask.right} Then: ${s.answerWhy}`);
             out.push(`       - Wrong: ${lv.ask.wrong.other} Then: ${s.answerWhy}
-       - Don't know: That's fine. Then: ${s.answerWhy}`);
+       - Don't know: ${TS.SCRIPT_POLISH ? '' : "That's fine. "}Then: ${s.answerWhy}`);
           }
         });
-        out.push(`   - Still doesn't know: That's fine. ${s.answerWhy}`);
+        out.push(`   - Still doesn't know: ${TS.SCRIPT_POLISH ? '(an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") ' : "That's fine. "}${s.answerWhy}`);
         out.push(`   - She asks to move on or skip: ${s.answerWhy}`, '');
       } else if (s.type === 'widget') {
         const card = engine.show({ ...st }).find(e => e.card).card, o = card.options;
@@ -95,21 +95,29 @@ function layout(id) {
         out.push(`   - Wrong again: Not quite: it's ${ans}. ${steps}`);
         const eqDef = lesson.keyPoints.flatMap(k => ((k.examBox || {}).equations || [])).find(e => e.id === pq.equation);
         const given = Object.entries(pq.given || {}).map(([sym, v]) => { const u = eqDef && eqDef.units.find(x => x.symbol === sym); return `${sym} = ${Practice.fmt(v)} ${u ? u.unitSymbol : ''}`.trim(); });
-        out.push(`   - Don't know: That's fine. Here is how to start: ${pq.steps.slice(0, Math.max(1, pq.steps.length - 2)).map(x => dot(x.text)).join(' ')} In this question, ${given.length > 1 ? `${given.slice(0, -1).join(', ')} and ${given[given.length - 1]}` : given[0]}. Now put the numbers in. What do you get?`);
+        out.push(`   - Don't know: ${TS.SCRIPT_POLISH ? '' : "That's fine. "}Here is how to start: ${pq.steps.slice(0, Math.max(1, pq.steps.length - 2)).map(x => dot(x.text)).join(' ')} In this question, ${given.length > 1 ? `${given.slice(0, -1).join(', ')} and ${given[given.length - 1]}` : given[0]}. Now put the numbers in. What do you get?`);
         out.push(`   - Still doesn't know: Here is how it goes. ${steps}`, '');
       } else if (s.type === 'score') {
         out.push(`${++n}. ${tag} Tutor: ${s.text.replace('{right}', '<her number right>').replace('{n}', '<the number asked>')}`, '   Button: Next', '');
       } else if (s.type === 'own') {
         out.push(`${++n}. ${tag} Tutor: ${s.prompt}`);
         out.push(`   She types one line. The AI checks which of these points it makes: ${s.points.map(x => `"${x}"`).join(', ')}.`);
-        out.push(`   - All of them: Yes, your line has it: ${s.points.join('; and ')}.`);
-        out.push(`   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.`);
-        out.push(`   - None: A good line would say: ${s.points.join('; and ')}.`);
-        out.push(`   - Don't know: ${s.idk}`, '');
+        if (TS.SCRIPT_POLISH) {
+          out.push(`   - All of them: ${TS.ownFeedback(s.points, s.points.map((p, k) => k))}`);
+          if (s.points.length > 1) out.push(`   - Some (for example the first only): ${TS.ownFeedback(s.points, [0])}`);
+          out.push(`   - None: ${TS.ownFeedback(s.points, [])}`);
+        } else {
+          out.push(`   - All of them: Yes, your line has it: ${s.points.join('; and ')}.`);
+          out.push(`   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.`);
+          out.push(`   - None: A good line would say: ${s.points.join('; and ')}.`);
+        }
+        out.push(`   - Don't know: ${TS.SCRIPT_POLISH ? String(s.idk).replace(/^\s*No problem\.\s*/i, '') + ' (with the turn-taking opener)' : s.idk}`, '');
       }
     });
   });
-  out.push(`## The end`, '', `${++n}. Tutor: ${script.end.text}`, `   Buttons: ${script.end.buttons.map(b => `"${b}"`).join(' / ')}`, '');
+  out.push(`## The end`, '');
+  if (TS.SCRIPT_POLISH) TS.summaryLines(script).forEach(x => out.push(`${++n}. Tutor: ${x}`));
+  out.push('', `${++n}. Tutor: ${script.end.text}`, `   Buttons: ${script.end.buttons.map(b => `"${b}"`).join(' / ')}`, '');
   return out.join('\n');
 }
 

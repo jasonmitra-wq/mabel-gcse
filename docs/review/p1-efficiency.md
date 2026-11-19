@@ -15,7 +15,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It is destroyed" (wrong idea destroyed: ): Not quite: energy is never destroyed. It is spread out (dissipated) into the thermal store of the surroundings, warming the air a tiny bit.
    - "Back in the battery" (wrong idea battery: ): Not quite: it does not go back. It is spread out (dissipated) into the thermal store of the surroundings, warming the air a tiny bit.
    - Don't know (first time): The energy a machine wastes warms the air around it a tiny bit. Which button fits? (same buttons)
-   - Still doesn't know: That's fine. The energy a machine wastes is spread out (dissipated) into the thermal store of the surroundings, warming the air a tiny bit.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The energy a machine wastes is spread out (dissipated) into the thermal store of the surroundings, warming the air a tiny bit.
    - She asks to move on or skip: The energy a machine wastes is spread out (dissipated) into the thermal store of the surroundings, warming the air a tiny bit.
 
 3. [1.1b] Tutor asks: Second: which of these is true about energy?
@@ -24,7 +24,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "A good machine can make extra energy" (wrong idea make: ): Not quite: no machine can make energy. Energy cannot be created or destroyed, only moved from store to store.
    - "It is used up when a machine stops" (wrong idea used: ): Not quite: energy is never used up. It cannot be created or destroyed, only moved from store to store.
    - Don't know (first time): The law of conservation of energy says energy never appears or disappears. Which button says that? (same buttons)
-   - Still doesn't know: That's fine. Energy cannot be created or destroyed, only moved from store to store.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Energy cannot be created or destroyed, only moved from store to store.
    - She asks to move on or skip: Energy cannot be created or destroyed, only moved from store to store.
 
 4. [1.2] Tutor: Now this lesson. A lamp is supplied with 100 J (joules, the unit of energy) and gives out 20 J as light. The other 80 J warms the lamp and the air around it, and is wasted.
@@ -54,7 +54,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It wastes 75% of the energy supplied" (wrong idea waste: ): Not quite: the other way round. Efficiency is the useful part, so 75% is transferred usefully and 25% is wasted.
    - "It gives out 0.75 J" (wrong idea joule: ): Not quite: efficiency has no unit. 0.75 is 75%, so 75% of the energy supplied is transferred usefully.
    - Don't know (first time): Multiply 0.75 by 100 to make it a percentage. Is efficiency the useful part or the wasted part? (same buttons)
-   - Still doesn't know: That's fine. 0.75 is 75%, so 75% of the energy supplied is transferred usefully.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 0.75 is 75%, so 75% of the energy supplied is transferred usefully.
    - She asks to move on or skip: 0.75 is 75%, so 75% of the energy supplied is transferred usefully.
 
 12. [1.8] Tutor asks: Which of these efficiencies is impossible?
@@ -63,7 +63,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "0.95" (wrong idea high: ): Not quite: 0.95 is very good, but possible. 1.2 is impossible: it would mean more useful energy out than energy in.
    - "0.05" (wrong idea low: ): Not quite: 0.05 is very poor, but possible. 1.2 is impossible: it would mean more useful energy out than energy in.
    - Don't know (first time): Can a machine give out more useful energy than it is given? Which number would mean that? (same buttons)
-   - Still doesn't know: That's fine. Energy cannot be created, so efficiency is never more than 1 (100%): 1.2 is impossible.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Energy cannot be created, so efficiency is never more than 1 (100%): 1.2 is impossible.
    - She asks to move on or skip: Energy cannot be created, so efficiency is never more than 1 (100%): 1.2 is impossible.
 
 13. [1.8b] Tutor: An electric heater is close to 100% efficient. In most devices the energy that is not useful ends up heating things; in a heater, heating is the useful job, so almost nothing is lost to waste.
@@ -71,10 +71,9 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 14. [1.9] Tutor: In one line: what is efficiency?
    She types one line. The AI checks which of these points it makes: "the fraction of the energy supplied that is transferred usefully (useful output ÷ total input)".
-   - All of them: Yes, your line has it: the fraction of the energy supplied that is transferred usefully (useful output ÷ total input).
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: the fraction of the energy supplied that is transferred usefully (useful output ÷ total input).
-   - Don't know: No problem. A good line would be: efficiency is the useful output energy divided by the total input energy.
+   - All of them: Yes: your line makes the point. You have this: the fraction of the energy supplied that is transferred usefully (useful output ÷ total input).
+   - None: Here is what a good line says. The fraction of the energy supplied that is transferred usefully (useful output ÷ total input).
+   - Don't know: A good line would be: efficiency is the useful output energy divided by the total input energy. (with the turn-taking opener)
 
 ## Key point 2: Calculating efficiency
 
@@ -92,7 +91,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 2000 (wrong idea upside): Not quite: 5%. Put the useful energy on top: 4 ÷ 80 = 0.05, which is 5%. Over 100% always means it was divided the wrong way round.
    - Any other wrong answer: Not quite: 5%. Efficiency = 4 ÷ 80 = 0.05, which is 5%.
    - Don't know (first time): Divide the useful energy, 4, by the total, 80. Then multiply by 100.
-   - Still doesn't know: That's fine. Efficiency = 4 ÷ 80 = 0.05, and 0.05 × 100 = 5%.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Efficiency = 4 ÷ 80 = 0.05, and 0.05 × 100 = 5%.
    - She asks to move on or skip: Efficiency = 4 ÷ 80 = 0.05, and 0.05 × 100 = 5%.
 
 17. [2.3] Tutor: Power is the energy transferred each second.
@@ -111,7 +110,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 111 (wrong idea upside): Not quite: 90%. Put the useful power on top: 9 ÷ 10 = 0.9, which is 90%.
    - Any other wrong answer: Not quite: 90%. Efficiency = 9 ÷ 10 = 0.9, which is 90%.
    - Don't know (first time): Divide the useful power, 9, by the total power, 10. Then multiply by 100.
-   - Still doesn't know: That's fine. Efficiency = 9 ÷ 10 = 0.9, and 0.9 × 100 = 90%.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Efficiency = 9 ÷ 10 = 0.9, and 0.9 × 100 = 90%.
    - She asks to move on or skip: Efficiency = 9 ÷ 10 = 0.9, and 0.9 × 100 = 90%.
 
 21. [2.5] Tutor: Sometimes you know the efficiency and need an energy. Put the numbers into the equation first, then rearrange.
@@ -131,7 +130,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 833 (wrong idea divide): Not quite: 300 J. The useful energy cannot be more than the 500 J supplied. Multiply: useful = 0.6 × 500 = 300 J.
    - Any other wrong answer: Not quite: 300 J. 0.6 = useful ÷ 500, so useful = 0.6 × 500 = 300 J.
    - Don't know (first time): Put the numbers in: 0.6 = useful ÷ 500. Multiply both sides by 500.
-   - Still doesn't know: That's fine. 0.6 = useful ÷ 500, so useful = 0.6 × 500 = 300 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 0.6 = useful ÷ 500, so useful = 0.6 × 500 = 300 J.
    - She asks to move on or skip: 0.6 = useful ÷ 500, so useful = 0.6 × 500 = 300 J.
 
 24. [2.7] Tutor: To use a percentage in the equation, change it back to a decimal first by dividing by 100. 80% is 0.8.
@@ -152,15 +151,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 5 (wrong idea percent): Not quite: 500 J. Change 80% to 0.8 first. Then total = 400 ÷ 0.8 = 500 J.
    - Any other wrong answer: Not quite: 500 J. 0.8 = 400 ÷ total, so total = 400 ÷ 0.8 = 500 J.
    - Don't know (first time): Change 80% to 0.8. Put the numbers in: 0.8 = 400 ÷ total. Then total = 400 ÷ 0.8.
-   - Still doesn't know: That's fine. 0.8 = 400 ÷ total, so total = 400 ÷ 0.8 = 500 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 0.8 = 400 ÷ total, so total = 400 ÷ 0.8 = 500 J.
    - She asks to move on or skip: 0.8 = 400 ÷ total, so total = 400 ÷ 0.8 = 500 J.
 
 27. [2.9] Tutor: In one line: how do you find the useful output energy if you know the efficiency and the total input energy?
    She types one line. The AI checks which of these points it makes: "multiply the efficiency (as a decimal) by the total input energy".
-   - All of them: Yes, your line has it: multiply the efficiency (as a decimal) by the total input energy.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: multiply the efficiency (as a decimal) by the total input energy.
-   - Don't know: No problem. A good line would be: multiply the efficiency, as a decimal, by the total input energy.
+   - All of them: Yes: your line makes the point. You have this: multiply the efficiency (as a decimal) by the total input energy.
+   - None: Here is what a good line says. Multiply the efficiency (as a decimal) by the total input energy.
+   - Don't know: A good line would be: multiply the efficiency, as a decimal, by the total input energy. (with the turn-taking opener)
 
 ## Key point 3: Comparing efficiencies of different devices
 
@@ -179,7 +177,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Motor B: it gives out more useful power" (wrong idea bigger: ): Not quite: B gives out more, but it also takes in much more. A is 150 ÷ 200 = 0.75, and B is 300 ÷ 500 = 0.6, so A is more efficient.
    - "They are the same: both waste some energy" (wrong idea same: ): Not quite: work each one out. A is 150 ÷ 200 = 0.75, and B is 300 ÷ 500 = 0.6, so A is more efficient.
    - Don't know (first time): Work out each efficiency: 150 ÷ 200, then 300 ÷ 500. Which is bigger? (same buttons)
-   - Still doesn't know: That's fine. A is 150 ÷ 200 = 0.75 and B is 300 ÷ 500 = 0.6, so motor A is more efficient.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A is 150 ÷ 200 = 0.75 and B is 300 ÷ 500 = 0.6, so motor A is more efficient.
    - She asks to move on or skip: A is 150 ÷ 200 = 0.75 and B is 300 ÷ 500 = 0.6, so motor A is more efficient.
 
 32. [3.5] Tutor asks: Which is likely to be more efficient, a petrol engine or an electric motor?
@@ -188,15 +186,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The petrol engine: it is more powerful" (wrong idea power: ): Not quite: being powerful is not the same as being efficient. The petrol engine wastes most of its energy heating itself, so the electric motor is more efficient.
    - "They are the same: both make things move" (wrong idea same: ): Not quite: both make things move, but the petrol engine wastes much more of its energy by heating, so the electric motor is more efficient.
    - Don't know (first time): A petrol engine gets very hot when it runs, and an electric motor stays fairly cool. Which one is wasting more energy by heating? (same buttons)
-   - Still doesn't know: That's fine. The petrol engine wastes most of its energy heating itself, so the electric motor is more efficient.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The petrol engine wastes most of its energy heating itself, so the electric motor is more efficient.
    - She asks to move on or skip: The petrol engine wastes most of its energy heating itself, so the electric motor is more efficient.
 
 33. [3.6] Tutor: In one line: how do you decide which of two devices is more efficient?
    She types one line. The AI checks which of these points it makes: "work out each efficiency and pick the higher one".
-   - All of them: Yes, your line has it: work out each efficiency and pick the higher one.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: work out each efficiency and pick the higher one.
-   - Don't know: No problem. A good line would be: work out the efficiency of each device, and the higher one is more efficient.
+   - All of them: Yes: your line makes the point. You have this: work out each efficiency and pick the higher one.
+   - None: Here is what a good line says. Work out each efficiency and pick the higher one.
+   - Don't know: A good line would be: work out the efficiency of each device, and the higher one is more efficient. (with the turn-taking opener)
 
 ## Key point 4: Improving efficiency
 
@@ -218,15 +215,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It makes some of its own energy" (wrong idea makes: ): Not quite: no fridge makes energy. It wastes less, so less electricity has to be supplied for the same cooling.
    - "It saves energy" (wrong idea saves: ): Close, but too vague for physics: energy is never used up, only wasted. Say how: it wastes less energy, so less electricity has to be supplied for the same cooling.
    - Don't know (first time): The new fridge does the same job. If it wastes less, does it need more or less electricity supplied? (same buttons)
-   - Still doesn't know: That's fine. An efficient fridge wastes less energy, so less electricity has to be supplied for the same cooling.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") An efficient fridge wastes less energy, so less electricity has to be supplied for the same cooling.
    - She asks to move on or skip: An efficient fridge wastes less energy, so less electricity has to be supplied for the same cooling.
 
 39. [4.5] Tutor: In one line: give one way to make a machine more efficient, and say why it works.
    She types one line. The AI checks which of these points it makes: "lubrication, insulation or better parts", "so less energy is wasted".
-   - All of them: Yes, your line has it: lubrication, insulation or better parts; and so less energy is wasted.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: lubrication, insulation or better parts; and so less energy is wasted.
-   - Don't know: No problem. A good line would be: lubricate the moving parts, which reduces friction, so less energy is wasted by heating.
+   - All of them: Yes: your line makes every point. You have this: lubrication, insulation or better parts. You have this: so less energy is wasted.
+   - Some (for example the first only): Partly there. You have this: lubrication, insulation or better parts. Still needed: so less energy is wasted.
+   - None: Here is what a good line says. Lubrication, insulation or better parts. So less energy is wasted.
+   - Don't know: A good line would be: lubricate the moving parts, which reduces friction, so less energy is wasted by heating. (with the turn-taking opener)
 
 40. [4.6] Tutor: Now for a short quiz: six questions on the whole lesson. Take your time.
    Button: Next
@@ -236,7 +233,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right (80 %): Yes: 240 ÷ 300 = 0.8, which is 80%.
    - She types 0.8 (wrong idea decimal): Nearly: 0.8 is the decimal. As a percentage, multiply by 100: 80%.
    - Any other wrong answer: Not quite: 80%. 240 ÷ 300 = 0.8, and 0.8 × 100 = 80%.
-   - Still doesn't know: That's fine. 240 ÷ 300 = 0.8, which is 80%.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 240 ÷ 300 = 0.8, which is 80%.
    - She asks to move on or skip: 240 ÷ 300 = 0.8, which is 80%.
 
 42. [4.8] Tutor asks: Quiz, question 2 of 6: what unit does efficiency have?
@@ -244,7 +241,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("None"): Yes: none. It is joules divided by joules (or watts by watts).
    - "Joules" (wrong idea w1: ): Not quite: none. Efficiency is joules divided by joules (or watts by watts), so the units cancel.
    - "Watts" (wrong idea w2: ): Not quite: none. Efficiency is joules divided by joules (or watts by watts), so the units cancel.
-   - Still doesn't know: That's fine. Efficiency has no unit: it is joules divided by joules.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Efficiency has no unit: it is joules divided by joules.
    - She asks to move on or skip: Efficiency has no unit: it is joules divided by joules.
 
 43. [4.9] Tutor asks: Quiz, question 3 of 6: a motor has a total power input of 50 W and a useful power output of 20 W. What is its efficiency, as a percentage?
@@ -252,14 +249,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right (40 %): Yes: 20 ÷ 50 = 0.4, which is 40%.
    - She types 0.4 (wrong idea decimal): Nearly: 0.4 is the decimal. As a percentage, multiply by 100: 40%.
    - Any other wrong answer: Not quite: 40%. 20 ÷ 50 = 0.4, and 0.4 × 100 = 40%.
-   - Still doesn't know: That's fine. 20 ÷ 50 = 0.4, which is 40%.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 20 ÷ 50 = 0.4, which is 40%.
    - She asks to move on or skip: 20 ÷ 50 = 0.4, which is 40%.
 
 44. [4.10] Tutor asks: Quiz, question 4 of 6: a motor has an efficiency of 0.25 and is supplied with 800 J. How much energy does it transfer usefully, in joules?
    She types a number.
    - Right (200 J): Yes: useful = 0.25 × 800 = 200 J.
    - Any other wrong answer: Not quite: 200 J. 0.25 = useful ÷ 800, so useful = 0.25 × 800 = 200 J.
-   - Still doesn't know: That's fine. Useful = 0.25 × 800 = 200 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Useful = 0.25 × 800 = 200 J.
    - She asks to move on or skip: Useful = 0.25 × 800 = 200 J.
 
 45. [4.11] Tutor asks: Quiz, question 5 of 6: which kind of bulb is more efficient at making light?
@@ -267,7 +264,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("An LED"): Yes: an LED gives out more light from the same energy.
    - "An incandescent bulb" (wrong idea w1: ): Not quite: an LED. Incandescent bulbs waste most of their energy heating the room.
    - "They are the same" (wrong idea w2: ): Not quite: an LED. Incandescent bulbs waste most of their energy heating the room.
-   - Still doesn't know: That's fine. An LED gives out more light from the same energy, so it is more efficient.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") An LED gives out more light from the same energy, so it is more efficient.
    - She asks to move on or skip: An LED gives out more light from the same energy, so it is more efficient.
 
 46. [4.12] Tutor asks: Quiz, question 6 of 6: someone gets an efficiency of 1.6. What did they most likely do?
@@ -275,7 +272,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Divided the total input by the useful output"): Yes: dividing the wrong way round gives an answer over 1. Put the useful output on top.
    - "Forgot to multiply by 100" (wrong idea w1: ): Not quite: forgetting to multiply by 100 leaves a decimal below 1, so it cannot give 1.6. An answer over 1 means the division was the wrong way round.
    - "Nothing: the machine is just very good" (wrong idea w2: ): Not quite: no machine can be over 1, because energy cannot be created. They divided the wrong way round; useful output goes on top.
-   - Still doesn't know: That's fine. An answer over 1 means the division was the wrong way round: useful output goes on top.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") An answer over 1 means the division was the wrong way round: useful output goes on top.
    - She asks to move on or skip: An answer over 1 means the division was the wrong way round: useful output goes on top.
 
 47. [4.13] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
@@ -283,5 +280,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## The end
 
-48. Tutor: The lesson is finished. Tap a button to go on.
+48. Tutor: Summary, point 1 of 4: Efficiency is the useful output energy divided by the total input energy.
+49. Tutor: Summary, point 2 of 4: Multiply the efficiency, as a decimal, by the total input energy.
+50. Tutor: Summary, point 3 of 4: Work out the efficiency of each device, and the higher one is more efficient.
+51. Tutor: Summary, point 4 of 4: Lubricate the moving parts, which reduces friction, so less energy is wasted by heating.
+
+52. Tutor: The lesson is finished. Tap a button to go on.
    Buttons: "Go to the slides" / "Home"

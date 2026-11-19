@@ -23,6 +23,38 @@
   const SCRIPTED_LESSONS = ['p2-current-voltage', 'p2-components', 'p2-series-parallel', 'p2-domestic', 'p2-power-energy', 'p2-static', 'p1-energy-stores', 'p1-kinetic-potential', 'p1-conservation', 'p1-efficiency', 'p1-power', 'p1-heating', 'p1-national-grid', 'p3-particle-model', 'p3-density', 'p3-changes-of-state', 'p3-pressure'];
   const MAX_WORDS = 60;
   const FB = { feedback: true };   // a reply to her answer (the checks let a correction say the rule again)
+  // Flag SCRIPT_POLISH (brief docs/briefs/2026-11-18-shared-script-fixes.md), on by default; in Node, env SCRIPT_POLISH=0
+  // turns it off and every reply is exactly as before. With it on: (a) no fixed "That's fine." after her "don't know":
+  // the help leads, and where an opener is used they take turns (none, then the next of OPENERS), so one comes back only
+  // after six; (b) own-words feedback has one point per sentence; (c) the lesson ends with a summary, one line per key
+  // point, taken from the script (each key point's model line); (d) the answer to her own question opens with the answer.
+  const SCRIPT_POLISH = !(typeof process !== 'undefined' && process.env && process.env.SCRIPT_POLISH === '0');
+  const OPENERS = ['No problem.', 'OK.', 'Fair enough.'];
+  const idkOpener = n => (n % 2 === 0 ? '' : OPENERS[((n - 1) / 2) % OPENERS.length]);
+  const join = (...xs) => xs.filter(Boolean).join(' ');
+  const cap = s => String(s || '').replace(/^\s*([a-z])/, (m, c) => c.toUpperCase());
+  // (b) Own-words feedback, one point per sentence: what her line has, and what it still needs.
+  function ownFeedback(points, got) {
+    const has = points.filter((p, k) => got.includes(k));
+    const head = !has.length ? 'Here is what a good line says.' : has.length === points.length ? (points.length > 1 ? 'Yes: your line makes every point.' : 'Yes: your line makes the point.') : 'Partly there.';
+    return [head, ...points.map((p, k) => (!has.length ? dot(cap(p)) : got.includes(k) ? `You have this: ${dot(p)}` : `Still needed: ${dot(p)}`))].join(' ');
+  }
+  // (c) The closing summary: for each key point, the model line of its own-words step (or its heading).
+  function summaryLines(script) {
+    const n = script.keyPoints.length;
+    return script.keyPoints.map((kp, k) => {
+      const own = kp.steps.find(x => x.type === 'own');
+      const m = own && String(own.idk || '').match(/would be:\s*(.+)$/i);
+      return `Summary, point ${k + 1} of ${n}: ${dot(cap(m ? m[1] : kp.heading))}`;
+    });
+  }
+  // (d) The answer to her question with any comment on the question taken off the front.
+  function plainAnswer(a) {
+    return String(a || '')
+      .replace(/^\s*(?:(?:that'?s|that is|what) an? )?(?:good|great|nice|fair|interesting|brilliant|excellent) (?:question|thing to ask|one)\b[^.!]*[.!]\s*/i, '')
+      .replace(/^\s*(?:that|this|the|your) question (?:is asking(?: you)?|asks(?: you)?|means|is about|wants(?: you)?(?: to)?):?\s*(?:about\s+)?/i, 'In other words: ')
+      .trim();
+  }
 
   const IDK = /^\W*(idk|i\s*(don'?t|dont|do not)\s*know|dunno|no idea|no clue|not sure|dk|don'?t know|dont know|i have no idea)\b/i;
   const GO_ON = /^\W*(next|next step|ok|okay|k|kk|done|got it|cool|yes|yeah|yep|sure|fine|alright|right|go on|continue|carry on|mhm|nice|i see|makes sense)\W*$/i;
@@ -119,7 +151,8 @@
     function showEnd(st) {
       st.pend = { t: 'end' };
       st.done = true;
-      return [{ role: 'assistant', text: S.end.text, choices: S.end.buttons.slice(), scripted: 'end' }];
+      const sum = SCRIPT_POLISH ? summaryLines(S).map(text => ({ role: 'assistant', text, scripted: 'end', summary: true })) : [];
+      return [...sum, { role: 'assistant', text: S.end.text, choices: S.end.buttons.slice(), scripted: 'end' }];
     }
     // A practice question of the kind the script asks for (the same kind as the worked example: plain numbers, no unit to convert).
     function practiceQuestion(s, st) {
@@ -187,12 +220,14 @@
         `Her question: "${text}"`].filter(Boolean).join('\n\n');
       try {
         // "It's asking you to…" names nothing: the question is named (site test 2026-11-12, F2).
-        let a = String(await env.call(sys, user, 160) || '').trim().replace(/^(it'?s|it is|this is|that'?s)\s+asking\b/i, 'The question is asking').replace(/^(it|this|that)\s+means\b/i, 'The question means');
+        let a = String(await env.call(SCRIPT_POLISH ? `${sys} Open with the answer itself: never with a comment on her question, such as "Good question", "That question is asking" or "The question means".` : sys, user, 160) || '').trim();
+        a = a.replace(/^(it'?s|it is|this is|that'?s)\s+asking\b/i, 'The question is asking').replace(/^(it|this|that)\s+means\b/i, 'The question means');
+        if (SCRIPT_POLISH) a = plainAnswer(a);
         // At most 60 words, whole sentences; no question back.
         const sents = (a.match(/[^.!?]+[.!?]+/g) || [a]).map(x => x.trim()).filter(x => x && !/\?$/.test(x));
         let out = '';
         for (const x of sents) { if (words(`${out} ${x}`) > MAX_WORDS) break; out = `${out} ${x}`.trim(); }
-        return out || 'Good thing to ask. That comes later in the course.';
+        return out || (SCRIPT_POLISH ? 'The lesson has not covered that yet: it comes later in the course.' : 'Good thing to ask. That comes later in the course.');
       } catch { return `I can't answer that right now. Let's carry on.`; }
     }
     // (a) marking: which of the script's branches her typed answer is. The reply text is the script's.
@@ -318,8 +353,9 @@
         case 'practice': {
           const q = pend.q, ans = `${P.fmt(q.answer.value)} ${q.answer.unit}`, steps = q.steps.map(x => dot(x.text)).join(' ');
           if (kind === 'idk' || kind === 'moveon') {
-            if (!pend.hinted && kind === 'idk') { pend.hinted = true; return [entry(st, `That's fine. Here is how to start: ${q.steps.slice(0, Math.max(1, q.steps.length - 2)).map(x => dot(x.text)).join(" ")} ${givenLine(q)} Now put the numbers in. What do you get?`)]; }
+            if (!pend.hinted && kind === 'idk') { pend.hinted = true; return [entry(st, `${SCRIPT_POLISH ? '' : "That's fine. "}Here is how to start: ${q.steps.slice(0, Math.max(1, q.steps.length - 2)).map(x => dot(x.text)).join(" ")} ${givenLine(q)} Now put the numbers in. What do you get?`)]; }
             if (s.quiz) { st.quiz = st.quiz || { n: 0, right: 0 }; st.quiz.n++; }
+            if (SCRIPT_POLISH) return advance(st, [entry(st, join(idkOpener(st.idkN = (st.idkN || 0) + 1), `Here is how it goes. ${steps}`), FB)], ticks);
             return advance(st, [entry(st, `${pend.hinted ? 'Here' : "That's fine. Here"} is how it goes. ${steps}`, FB)], ticks);
           }
           const n = lastNumber(text);
@@ -330,11 +366,11 @@
           return advance(st, [entry(st, kind2 === 'right' ? `Yes, that's right: ${ans}.` : kind2 === 'method' ? `Yes, that's the right working: it comes to ${ans}.` : `Not quite: it's ${ans}. ${steps}`, FB)], ticks);
         }
         case 'own': {
-          if (kind === 'idk' || kind === 'moveon' || words(text) < 2) return advance(st, [entry(st, s.idk, FB)], ticks);
+          if (kind === 'idk' || kind === 'moveon' || words(text) < 2) return advance(st, [entry(st, SCRIPT_POLISH ? join(idkOpener(st.idkN = (st.idkN || 0) + 1), String(s.idk).replace(/^\s*No problem\.\s*/i, '')) : s.idk, FB)], ticks);
           const got = await ownPoints(s, text);
           const has = s.points.filter((p, k) => got.includes(k)), miss = s.points.filter((p, k) => !got.includes(k));
           const list = xs => (xs.length <= 1 ? xs.join('') : `${xs.slice(0, -1).join(', ')}, and ${xs[xs.length - 1]}`);
-          const say = !has.length ? `A good line would say: ${list(s.points)}.`
+          const say = SCRIPT_POLISH ? ownFeedback(s.points, got) : !has.length ? `A good line would say: ${list(s.points)}.`
             : !miss.length ? `Yes, your line has it: ${list(has)}.`
             : `Your line gets this right: ${list(has)}. A full line also says: ${list(miss)}.`;
           return advance(st, [entry(st, say, FB)], ticks);
@@ -349,9 +385,9 @@
         const sub = pend.sub;
         pend.sub = null;
         const opt = kind === 'idk' ? null : await matchOption(sub, text);
-        const r = kind === 'idk' ? "That's fine." : opt && opt.branch === 'right' ? sub.right : (sub.wrong.other || sub.right);
+        const r = kind === 'idk' ? (SCRIPT_POLISH ? idkOpener(st.idkN = (st.idkN || 0) + 1) : "That's fine.") : opt && opt.branch === 'right' ? sub.right : (sub.wrong.other || sub.right);
         // Then the answer with why, and on (asking the first question again would ask what she has just been told).
-        return advance(st, [entry(st, `${r} ${s.answerWhy}`, FB)], ticks);
+        return advance(st, [entry(st, SCRIPT_POLISH ? join(r, s.answerWhy) : `${r} ${s.answerWhy}`, FB)], ticks);
       }
       let branch;
       if (kind === 'moveon') branch = 'giveup';
@@ -376,7 +412,7 @@
         if (lv && lv.hint) return [entry(st, lv.hint, s.kind === 'tap' ? { choices: shown(s).map(o => o.text), easier: true } : { easier: true })];
         if (lv && lv.ask) { pend.sub = lv.ask; return [entry(st, lv.ask.question, { choices: shown(lv.ask).map(o => o.text), easier: true })]; }
         if (s.quiz) { st.quiz = st.quiz || { n: 0, right: 0 }; st.quiz.n++; }
-        return advance(st, [entry(st, `That's fine. ${s.answerWhy}`, FB)], ticks);
+        return advance(st, [entry(st, SCRIPT_POLISH ? join(idkOpener(st.idkN = (st.idkN || 0) + 1), s.answerWhy) : `That's fine. ${s.answerWhy}`, FB)], ticks);
       }
       if (branch === 'giveup') return advance(st, [entry(st, s.answerWhy, FB)], ticks);
       return advance(st, [entry(st, (s.wrong || {})[branch] || s.wrong.other, FB)], ticks);
@@ -385,5 +421,5 @@
     return { start, reply, calls, show, shown, points: kps.length };
   }
 
-  return { create, uses, SCRIPTED, SCRIPTED_LESSONS, order, IDK, VERSION: 4 };
+  return { create, uses, SCRIPTED, SCRIPTED_LESSONS, SCRIPT_POLISH, order, IDK, ownFeedback, summaryLines, plainAnswer, idkOpener, VERSION: 5 };
 });

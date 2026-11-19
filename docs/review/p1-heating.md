@@ -15,7 +15,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Its kinetic store" (wrong idea kinetic: ): Not quite: the kinetic store is for moving things. The water's main change is getting hotter, so its thermal store rises.
    - "Its chemical store" (wrong idea chemical: ): Not quite: water is not a fuel. It gets hotter, so its thermal store rises.
    - Don't know (first time): The water gets hotter. Which store depends on how hot something is? (same buttons)
-   - Still doesn't know: That's fine. The water gets hotter, so its thermal store rises.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The water gets hotter, so its thermal store rises.
    - She asks to move on or skip: The water gets hotter, so its thermal store rises.
 
 3. [1.1b] Tutor asks: Second: a hot cup of tea cools down in a room. Where does its energy go?
@@ -24,7 +24,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It is destroyed as the tea cools" (wrong idea destroyed: ): Not quite: energy is never destroyed. It spreads into the thermal store of the surroundings, warming the room a tiny bit.
    - "Into the tea's chemical store" (wrong idea chem: ): Not quite: cooling is not a chemical change. The energy spreads into the thermal store of the surroundings.
    - Don't know (first time): Energy cannot be destroyed, and the room gets a tiny bit warmer. Which button fits? (same buttons)
-   - Still doesn't know: That's fine. The energy spreads into the thermal store of the surroundings, warming the room a tiny bit.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The energy spreads into the thermal store of the surroundings, warming the room a tiny bit.
    - She asks to move on or skip: The energy spreads into the thermal store of the surroundings, warming the room a tiny bit.
 
 4. [1.2] Tutor: Now this lesson. Heat 1 kg of water and 1 kg of cooking oil in two pans on the same hob: the oil gets hot about twice as fast. Different materials need different amounts of energy to warm up by the same amount.
@@ -45,7 +45,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The water" (wrong idea water: ): Not quite: water needs 4200 J for each degree, so it warms by only 1 °C. Copper needs about 390 J for each degree, so it warms by about 11 °C.
    - "They both warm by 1 °C" (wrong idea same: ): Not quite: only the water warms by 1 °C. Copper needs about 390 J for each degree, so 4200 J warms it by about 11 °C.
    - Don't know (first time): Copper needs much less energy for each degree than water does. So with the same energy, which warms more? (same buttons)
-   - Still doesn't know: That's fine. Copper needs far less energy for each degree, so the same 4200 J warms it about 11 °C, and the water only 1 °C.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Copper needs far less energy for each degree, so the same 4200 J warms it about 11 °C, and the water only 1 °C.
    - She asks to move on or skip: Copper needs far less energy for each degree, so the same 4200 J warms it about 11 °C, and the water only 1 °C.
 
 9. [1.7] Tutor: The symbol θ, the Greek letter theta, stands for temperature.
@@ -63,15 +63,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "70 °C" (wrong idea final: ): Not quite: 70 °C is the final temperature. Δθ is the change: 70 − 20 = 50 °C.
    - "90 °C" (wrong idea added: ): Not quite: take the start away, do not add it. Δθ = 70 − 20 = 50 °C.
    - Don't know (first time): Δθ is the change: take the starting temperature away from the final one. (same buttons)
-   - Still doesn't know: That's fine. Δθ = final − start = 70 − 20 = 50 °C.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Δθ = final − start = 70 − 20 = 50 °C.
    - She asks to move on or skip: Δθ = final − start = 70 − 20 = 50 °C.
 
 13. [1.10] Tutor: In one line: what is specific heat capacity?
    She types one line. The AI checks which of these points it makes: "the energy needed to raise the temperature of 1 kg of a material by 1 °C".
-   - All of them: Yes, your line has it: the energy needed to raise the temperature of 1 kg of a material by 1 °C.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: the energy needed to raise the temperature of 1 kg of a material by 1 °C.
-   - Don't know: No problem. A good line would be: specific heat capacity is the energy needed to raise the temperature of 1 kg of a material by 1 °C.
+   - All of them: Yes: your line makes the point. You have this: the energy needed to raise the temperature of 1 kg of a material by 1 °C.
+   - None: Here is what a good line says. The energy needed to raise the temperature of 1 kg of a material by 1 °C.
+   - Don't know: A good line would be: specific heat capacity is the energy needed to raise the temperature of 1 kg of a material by 1 °C. (with the turn-taking opener)
 
 ## Key point 2: Using ΔE = mcΔθ
 
@@ -89,7 +88,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 21000 (wrong idea start): Not quite: 42 000 J. 10 °C is the starting temperature. Use the change: Δθ = 30 − 10 = 20 °C, so ΔE = 0.5 × 4200 × 20 = 42 000 J.
    - Any other wrong answer: Not quite: 42 000 J. Δθ = 30 − 10 = 20 °C, and ΔE = 0.5 × 4200 × 20 = 42 000 J.
    - Don't know (first time): First the change: 30 − 10 = 20 °C. Then multiply 0.5 × 4200 × 20.
-   - Still doesn't know: That's fine. Δθ = 30 − 10 = 20 °C, so ΔE = m c Δθ = 0.5 × 4200 × 20 = 42 000 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Δθ = 30 − 10 = 20 °C, so ΔE = m c Δθ = 0.5 × 4200 × 20 = 42 000 J.
    - She asks to move on or skip: Δθ = 30 − 10 = 20 °C, so ΔE = m c Δθ = 0.5 × 4200 × 20 = 42 000 J.
 
 16. [2.3] Tutor: Masses given in grams must be changed to kilograms first: divide by 1000. 250 g is 0.25 kg.
@@ -101,7 +100,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 1800000 (wrong idea grams): Not quite: 1800 J. The mass must be in kilograms: 200 g = 0.2 kg. Then ΔE = 0.2 × 900 × 10 = 1800 J.
    - Any other wrong answer: Not quite: 1800 J. 200 g = 0.2 kg, and ΔE = 0.2 × 900 × 10 = 1800 J.
    - Don't know (first time): Change 200 g to kilograms by dividing by 1000. Then multiply by 900 and by 10.
-   - Still doesn't know: That's fine. 200 g = 0.2 kg, so ΔE = m c Δθ = 0.2 × 900 × 10 = 1800 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 200 g = 0.2 kg, so ΔE = m c Δθ = 0.2 × 900 × 10 = 1800 J.
    - She asks to move on or skip: 200 g = 0.2 kg, so ΔE = m c Δθ = 0.2 × 900 × 10 = 1800 J.
 
 18. [2.5] Tutor: Cooling works the same way, but energy is given out instead of taken in.
@@ -128,7 +127,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 750000 (wrong idea times): Not quite: 300 J/kg °C. To find c, divide: c = 15 000 ÷ (5 × 10) = 300 J/kg °C.
    - Any other wrong answer: Not quite: 300 J/kg °C. c = 15 000 ÷ (5 × 10) = 15 000 ÷ 50 = 300 J/kg °C.
    - Don't know (first time): Work out 5 × 10 first, which is 50. Then divide 15 000 by 50.
-   - Still doesn't know: That's fine. c = ΔE ÷ (m × Δθ) = 15 000 ÷ (5 × 10) = 300 J/kg °C.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") c = ΔE ÷ (m × Δθ) = 15 000 ÷ (5 × 10) = 300 J/kg °C.
    - She asks to move on or skip: c = ΔE ÷ (m × Δθ) = 15 000 ÷ (5 × 10) = 300 J/kg °C.
 
 23. [2.7b] Tutor: Rearranged, the equation gives c = ΔE ÷ (m × Δθ). Δθ is found the same way: Δθ = ΔE ÷ (m × c).
@@ -140,15 +139,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 20 (wrong idea nomass): Not quite: 10 °C. Divide by the mass as well: Δθ = 84 000 ÷ (2 × 4200) = 84 000 ÷ 8400 = 10 °C.
    - Any other wrong answer: Not quite: 10 °C. Δθ = 84 000 ÷ (2 × 4200) = 84 000 ÷ 8400 = 10 °C.
    - Don't know (first time): Work out 2 × 4200 first. Then divide 84 000 by it.
-   - Still doesn't know: That's fine. Δθ = ΔE ÷ (m × c) = 84 000 ÷ (2 × 4200) = 10 °C.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Δθ = ΔE ÷ (m × c) = 84 000 ÷ (2 × 4200) = 10 °C.
    - She asks to move on or skip: Δθ = ΔE ÷ (m × c) = 84 000 ÷ (2 × 4200) = 10 °C.
 
 25. [2.9] Tutor: In one line: how would you find c if you know ΔE, m and Δθ?
    She types one line. The AI checks which of these points it makes: "divide the energy by the mass times the temperature change".
-   - All of them: Yes, your line has it: divide the energy by the mass times the temperature change.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: divide the energy by the mass times the temperature change.
-   - Don't know: No problem. A good line would be: divide the energy by the mass times the temperature change, c = ΔE ÷ (m × Δθ).
+   - All of them: Yes: your line makes the point. You have this: divide the energy by the mass times the temperature change.
+   - None: Here is what a good line says. Divide the energy by the mass times the temperature change.
+   - Don't know: A good line would be: divide the energy by the mass times the temperature change, c = ΔE ÷ (m × Δθ). (with the turn-taking opener)
 
 ## Key point 3: Required practical — measuring specific heat capacity
 
@@ -161,7 +159,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Only the final temperature" (wrong idea final: ): Not quite: c = ΔE ÷ (m × Δθ) needs three things: the energy supplied, the mass, and the change in temperature, not just the final temperature.
    - "The time and the colour of the block" (wrong idea colour: ): Not quite: colour does not appear in c = ΔE ÷ (m × Δθ). You need the energy supplied, the mass and the temperature change.
    - Don't know (first time): Look at the equation c = ΔE ÷ (m × Δθ). Which button lists everything on its right-hand side? (same buttons)
-   - Still doesn't know: That's fine. c = ΔE ÷ (m × Δθ), so you must measure the energy supplied, the mass and the temperature change.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") c = ΔE ÷ (m × Δθ), so you must measure the energy supplied, the mass and the temperature change.
    - She asks to move on or skip: c = ΔE ÷ (m × Δθ), so you must measure the energy supplied, the mass and the temperature change.
 
 28. [3.2] Tutor: A heater goes into one hole in a metal block, and a thermometer into another. The heater is wired to a joulemeter, a meter that measures the energy supplied in joules.
@@ -176,7 +174,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The room is heating the block" (wrong idea room: ): Not quite: the block is hotter than the room, so energy goes from the block to the room. The rise comes from the hot heater still passing energy into the block.
    - "The joulemeter is still adding energy" (wrong idea meter: ): Not quite: a joulemeter only measures energy; it supplies none. The rise comes from the hot heater still passing energy into the block.
    - Don't know (first time): Just after switching off, the heater is still much hotter than the block. Which way does energy pass between a hotter object and a cooler one? (same buttons)
-   - Still doesn't know: That's fine. The hot heater keeps passing energy into the block for a while, so you record the highest temperature.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The hot heater keeps passing energy into the block for a while, so you record the highest temperature.
    - She asks to move on or skip: The hot heater keeps passing energy into the block for a while, so you record the highest temperature.
 
 31. [3.5] Tutor: The main problem is that some energy escapes from the block to the surroundings, and some stays in the heater. Less energy stays in the block than the joulemeter shows, so its temperature rises less.
@@ -188,7 +186,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It comes out lower than the true value" (wrong idea lower: ): Not quite: you divide by Δθ in c = ΔE ÷ (m × Δθ). Dividing by a smaller number gives a bigger answer, so c comes out too high.
    - "It makes no difference" (wrong idea none: ): Not quite: Δθ is smaller than it should be, and you divide by it. That makes c come out too high.
    - Don't know (first time): In c = ΔE ÷ (m × Δθ) you divide by Δθ. Dividing by a smaller number gives a bigger answer. So does c come out higher or lower? (same buttons)
-   - Still doesn't know: That's fine. You divide by Δθ, so a smaller Δθ makes c come out too high.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") You divide by Δθ, so a smaller Δθ makes c come out too high.
    - She asks to move on or skip: You divide by Δθ, so a smaller Δθ makes c come out too high.
 
 33. [3.7] Tutor: To reduce the energy escaping, wrap the block in insulation.
@@ -210,15 +208,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 105 (wrong idea ratio): Not quite: 5%. Take the difference first: 4410 − 4200 = 210. Then 210 ÷ 4200 × 100 = 5%.
    - Any other wrong answer: Not quite: 5%. (4410 − 4200) ÷ 4200 × 100 = 210 ÷ 4200 × 100 = 5%.
    - Don't know (first time): First the difference: 4410 − 4200. Then divide by the true value, 4200, and multiply by 100.
-   - Still doesn't know: That's fine. (4410 − 4200) ÷ 4200 × 100 = 210 ÷ 4200 × 100 = 5%.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") (4410 − 4200) ÷ 4200 × 100 = 210 ÷ 4200 × 100 = 5%.
    - She asks to move on or skip: (4410 − 4200) ÷ 4200 × 100 = 210 ÷ 4200 × 100 = 5%.
 
 38. [3.11] Tutor: In one line: why does the measured specific heat capacity usually come out too high, and how can you reduce that?
    She types one line. The AI checks which of these points it makes: "energy escapes to the surroundings", "insulate the block (or use a lid)".
-   - All of them: Yes, your line has it: energy escapes to the surroundings; and insulate the block (or use a lid).
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: energy escapes to the surroundings; and insulate the block (or use a lid).
-   - Don't know: No problem. A good line would be: some energy escapes to the surroundings, so the temperature rises less; insulating the block reduces that.
+   - All of them: Yes: your line makes every point. You have this: energy escapes to the surroundings. You have this: insulate the block (or use a lid).
+   - Some (for example the first only): Partly there. You have this: energy escapes to the surroundings. Still needed: insulate the block (or use a lid).
+   - None: Here is what a good line says. Energy escapes to the surroundings. Insulate the block (or use a lid).
+   - Don't know: A good line would be: some energy escapes to the surroundings, so the temperature rises less; insulating the block reduces that. (with the turn-taking opener)
 
 ## Key point 4: Thermal stores and temperature
 
@@ -240,7 +238,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The spark" (wrong idea hotter: ): Not quite: the spark has a higher temperature, so each of its particles has more energy on average. But internal energy is the total for all the particles, and the lake has vastly more.
    - "They have the same" (wrong idea same: ): Not quite: internal energy is the total for all the particles, and the lake has vastly more of them, so the lake has more.
    - Don't know (first time): Internal energy is the total for all the particles. Which has far more particles? (same buttons)
-   - Still doesn't know: That's fine. Internal energy is a total, and the lake has vastly more particles than the spark.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Internal energy is a total, and the lake has vastly more particles than the spark.
    - She asks to move on or skip: Internal energy is a total, and the lake has vastly more particles than the spark.
 
 44. [4.5] Tutor: Water's high specific heat capacity makes it useful. Central heating uses water because each kilogram carries a lot of energy to the radiators.
@@ -255,15 +253,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It heats up very quickly" (wrong idea quick: ): Not quite: the other way round. Water warms up slowly, because it needs a lot of energy for each degree. That lets it take in a lot of energy from the engine.
    - "It stops energy moving" (wrong idea stops: ): Not quite: water carries energy away from the engine. Its high specific heat capacity means it takes in a lot without getting very hot.
    - Don't know (first time): Water needs a lot of energy for each degree it warms. Which button describes what that lets it do? (same buttons)
-   - Still doesn't know: That's fine. Water has a high specific heat capacity, so it takes in a lot of energy while warming only a little.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Water has a high specific heat capacity, so it takes in a lot of energy while warming only a little.
    - She asks to move on or skip: Water has a high specific heat capacity, so it takes in a lot of energy while warming only a little.
 
 47. [4.7] Tutor: In one line: what is the difference between temperature and internal energy?
    She types one line. The AI checks which of these points it makes: "temperature is linked to the average kinetic energy of the particles", "internal energy is the total energy of all the particles".
-   - All of them: Yes, your line has it: temperature is linked to the average kinetic energy of the particles; and internal energy is the total energy of all the particles.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: temperature is linked to the average kinetic energy of the particles; and internal energy is the total energy of all the particles.
-   - Don't know: No problem. A good line would be: temperature is linked to the average kinetic energy of the particles, but internal energy is the total energy of all of them.
+   - All of them: Yes: your line makes every point. You have this: temperature is linked to the average kinetic energy of the particles. You have this: internal energy is the total energy of all the particles.
+   - Some (for example the first only): Partly there. You have this: temperature is linked to the average kinetic energy of the particles. Still needed: internal energy is the total energy of all the particles.
+   - None: Here is what a good line says. Temperature is linked to the average kinetic energy of the particles. Internal energy is the total energy of all the particles.
+   - Don't know: A good line would be: temperature is linked to the average kinetic energy of the particles, but internal energy is the total energy of all of them. (with the turn-taking opener)
 
 48. [4.8] Tutor: Now for a short quiz: six questions on the whole lesson. Take your time.
    Button: Next
@@ -272,14 +270,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    She types a number.
    - Right (25 °C): Yes: 40 − 15 = 25 °C.
    - Any other wrong answer: Not quite: 25 °C. Δθ = final − start = 40 − 15 = 25 °C.
-   - Still doesn't know: That's fine. Δθ = 40 − 15 = 25 °C.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Δθ = 40 − 15 = 25 °C.
    - She asks to move on or skip: Δθ = 40 − 15 = 25 °C.
 
 50. [4.10] Tutor asks: Quiz, question 2 of 6: how much energy warms 1 kg of water by 5 °C, in joules? (c = 4200 J/kg °C)
    She types a number.
    - Right (21000 J): Yes: ΔE = 1 × 4200 × 5 = 21 000 J.
    - Any other wrong answer: Not quite: 21 000 J. ΔE = m c Δθ = 1 × 4200 × 5 = 21 000 J.
-   - Still doesn't know: That's fine. ΔE = m c Δθ = 1 × 4200 × 5 = 21 000 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") ΔE = m c Δθ = 1 × 4200 × 5 = 21 000 J.
    - She asks to move on or skip: ΔE = m c Δθ = 1 × 4200 × 5 = 21 000 J.
 
 51. [4.11] Tutor asks: Quiz, question 3 of 6: what is specific heat capacity?
@@ -287,14 +285,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("The energy needed to raise 1 kg of a material by 1 °C"): Yes: the energy needed to raise 1 kg by 1 °C.
    - "The temperature at which a material boils" (wrong idea w1: ): Not quite: it is the energy needed to raise the temperature of 1 kg of a material by 1 °C.
    - "How fast energy passes through a material" (wrong idea w2: ): Not quite: it is the energy needed to raise the temperature of 1 kg of a material by 1 °C.
-   - Still doesn't know: That's fine. Specific heat capacity is the energy needed to raise the temperature of 1 kg by 1 °C.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Specific heat capacity is the energy needed to raise the temperature of 1 kg by 1 °C.
    - She asks to move on or skip: Specific heat capacity is the energy needed to raise the temperature of 1 kg by 1 °C.
 
 52. [4.12] Tutor asks: Quiz, question 4 of 6: 2 kg of oil (c = 2000 J/kg °C) takes in 40 000 J. How much does its temperature rise, in °C?
    She types a number.
    - Right (10 °C): Yes: Δθ = 40 000 ÷ (2 × 2000) = 10 °C.
    - Any other wrong answer: Not quite: 10 °C. Δθ = 40 000 ÷ (2 × 2000) = 40 000 ÷ 4000 = 10 °C.
-   - Still doesn't know: That's fine. Δθ = ΔE ÷ (m × c) = 40 000 ÷ 4000 = 10 °C.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Δθ = ΔE ÷ (m × c) = 40 000 ÷ 4000 = 10 °C.
    - She asks to move on or skip: Δθ = ΔE ÷ (m × c) = 40 000 ÷ 4000 = 10 °C.
 
 53. [4.13] Tutor asks: Quiz, question 5 of 6: in the practical, why is the block wrapped in insulation?
@@ -302,7 +300,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("To reduce the energy escaping to the surroundings"): Yes: less energy escapes, so the result is closer to the true value.
    - "To make the heater more powerful" (wrong idea w1: ): Not quite: insulation reduces the energy escaping to the surroundings, so the result is closer to the true value.
    - "To keep the mass of the block the same" (wrong idea w2: ): Not quite: insulation reduces the energy escaping to the surroundings, so the result is closer to the true value.
-   - Still doesn't know: That's fine. Insulation reduces the energy escaping to the surroundings.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Insulation reduces the energy escaping to the surroundings.
    - She asks to move on or skip: Insulation reduces the energy escaping to the surroundings.
 
 54. [4.14] Tutor asks: Quiz, question 6 of 6: temperature is linked to…
@@ -310,7 +308,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("…the average kinetic energy of the particles"): Yes: the higher the temperature, the more kinetic energy each particle has on average.
    - "…the total number of particles" (wrong idea w1: ): Not quite: temperature is linked to the average kinetic energy of the particles.
    - "…the mass of the object" (wrong idea w2: ): Not quite: temperature is linked to the average kinetic energy of the particles.
-   - Still doesn't know: That's fine. Temperature is linked to the average kinetic energy of the particles.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Temperature is linked to the average kinetic energy of the particles.
    - She asks to move on or skip: Temperature is linked to the average kinetic energy of the particles.
 
 55. [4.15] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
@@ -318,5 +316,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## The end
 
-56. Tutor: The lesson is finished. Tap a button to go on.
+56. Tutor: Summary, point 1 of 4: Specific heat capacity is the energy needed to raise the temperature of 1 kg of a material by 1 °C.
+57. Tutor: Summary, point 2 of 4: Divide the energy by the mass times the temperature change, c = ΔE ÷ (m × Δθ).
+58. Tutor: Summary, point 3 of 4: Some energy escapes to the surroundings, so the temperature rises less; insulating the block reduces that.
+59. Tutor: Summary, point 4 of 4: Temperature is linked to the average kinetic energy of the particles, but internal energy is the total energy of all of them.
+
+60. Tutor: The lesson is finished. Tap a button to go on.
    Buttons: "Go to the slides" / "Home"

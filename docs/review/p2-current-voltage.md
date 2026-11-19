@@ -43,8 +43,8 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Don't know (again): a smaller question: With a gap in the loop, can the movement of charge carry on all the way round the loop? Buttons: "Yes" / "No"
        - Right: Right. Then: The movement of charge stops everywhere in the loop. A loose wire leaves a gap, so there is no complete loop and the charge cannot move round at all.
        - Wrong: Not quite. Then: The movement of charge stops everywhere in the loop. A loose wire leaves a gap, so there is no complete loop and the charge cannot move round at all.
-       - Don't know: That's fine. Then: The movement of charge stops everywhere in the loop. A loose wire leaves a gap, so there is no complete loop and the charge cannot move round at all.
-   - Still doesn't know: That's fine. The movement of charge stops everywhere in the loop. A loose wire leaves a gap, so there is no complete loop and the charge cannot move round at all.
+       - Don't know: Then: The movement of charge stops everywhere in the loop. A loose wire leaves a gap, so there is no complete loop and the charge cannot move round at all.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The movement of charge stops everywhere in the loop. A loose wire leaves a gap, so there is no complete loop and the charge cannot move round at all.
    - She asks to move on or skip: The movement of charge stops everywhere in the loop. A loose wire leaves a gap, so there is no complete loop and the charge cannot move round at all.
 
 9. [1.7] Tutor: A flow of charge is called an electric current. The size of a current is how much charge passes a point in the wire each second.
@@ -56,7 +56,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Wire A": Not quite: wire B. Current is how much charge passes each second, and 5 units a second is more than 2.
    - "They are the same": Not quite: wire B. Current is how much charge passes each second, and 5 units a second is more than 2.
    - Don't know (first time): Current is about how much charge passes each second. Look at the two wires again: in which one does more charge pass each second? (same buttons)
-   - Still doesn't know: That's fine. Wire B has the bigger current. Current is how much charge passes a point each second: 5 units a second in wire B is more than 2 in wire A.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Wire B has the bigger current. Current is how much charge passes a point each second: 5 units a second in wire B is more than 2 in wire A.
    - She asks to move on or skip: Wire B has the bigger current. Current is how much charge passes a point each second: 5 units a second in wire B is more than 2 in wire A.
 
 11. [1.9] Tutor: Charge is counted in a unit called the coulomb, written C.
@@ -72,7 +72,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 1: Not quite: it's 3 A. One coulomb each second is one ampere, so 3 coulombs each second is 3 amperes.
    - Any other wrong answer: Not quite: it's 3 A. One coulomb each second is one ampere, so 3 coulombs each second is 3 amperes.
    - Don't know (first time): Here, 3 coulombs pass each second. How many amperes is that?
-   - Still doesn't know: That's fine. The current is 3 A. One coulomb each second is one ampere, so 3 coulombs each second is 3 amperes.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The current is 3 A. One coulomb each second is one ampere, so 3 coulombs each second is 3 amperes.
    - She asks to move on or skip: The current is 3 A. One coulomb each second is one ampere, so 3 coulombs each second is 3 amperes.
 
 14. [1.12] Tutor: Current is measured with an ammeter, a meter that shows the current in amperes.
@@ -112,15 +112,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right: Yes, that's right: 20 C.
    - Wrong (first time): Not quite. Check your working and have one more go: A current of 2 A flows for 10 s. How much charge flows, in coulombs (C)?
    - Wrong again: Not quite: it's 20 C. Write the equation: Q = I t. Put the numbers in: Q = 2 × 10 = 20. The charge flow is 20 C.
-   - Don't know: That's fine. Here is how to start: Write the equation: Q = I t. In this question, I = 2 A and t = 10 s. Now put the numbers in. What do you get?
+   - Don't know: Here is how to start: Write the equation: Q = I t. In this question, I = 2 A and t = 10 s. Now put the numbers in. What do you get?
    - Still doesn't know: Here is how it goes. Write the equation: Q = I t. Put the numbers in: Q = 2 × 10 = 20. The charge flow is 20 C.
 
 22. [1.19] Tutor: In one line, in your own words: what is an electric current?
    She types one line. The AI checks which of these points it makes: "a flow of charge", "how much charge passes a point each second".
-   - All of them: Yes, your line has it: a flow of charge; and how much charge passes a point each second.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: a flow of charge; and how much charge passes a point each second.
-   - Don't know: No problem. A good line would be: a current is a flow of charge, and its size is how much charge passes a point each second.
+   - All of them: Yes: your line makes every point. You have this: a flow of charge. You have this: how much charge passes a point each second.
+   - Some (for example the first only): Partly there. You have this: a flow of charge. Still needed: how much charge passes a point each second.
+   - None: Here is what a good line says. A flow of charge. How much charge passes a point each second.
+   - Don't know: A good line would be: a current is a flow of charge, and its size is how much charge passes a point each second. (with the turn-taking opener)
 
 23. [1.20] Tutor asks: A torch is switched on. Where in its single loop is the current biggest?
    Buttons: "Just before the lamp" / "It is the same everywhere in the loop" / "Next to the cell" (she can also type)
@@ -131,8 +131,8 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Don't know (again): a smaller question: Did the two ammeters, on each side of the lamp, show the same reading? Buttons: "No" / "Yes"
        - Right: Right. Then: The current is the same everywhere in the loop. Charge is not used up on the way round, so no point has more current than another.
        - Wrong: Not quite. Then: The current is the same everywhere in the loop. Charge is not used up on the way round, so no point has more current than another.
-       - Don't know: That's fine. Then: The current is the same everywhere in the loop. Charge is not used up on the way round, so no point has more current than another.
-   - Still doesn't know: That's fine. The current is the same everywhere in the loop. Charge is not used up on the way round, so no point has more current than another.
+       - Don't know: Then: The current is the same everywhere in the loop. Charge is not used up on the way round, so no point has more current than another.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The current is the same everywhere in the loop. Charge is not used up on the way round, so no point has more current than another.
    - She asks to move on or skip: The current is the same everywhere in the loop. Charge is not used up on the way round, so no point has more current than another.
 
 ## Key point 2: Potential difference and resistance — push and opposition
@@ -164,7 +164,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 1.5 (wrong idea M5): Not quite: 3 V. Two cells give a bigger potential difference than one: 1.5 V + 1.5 V = 3 V.
    - Any other wrong answer: Not quite: 3 V. Two cells give twice the push of one: 1.5 V + 1.5 V = 3 V.
    - Don't know (first time): Each cell gives 1.5 V of push. What do two lots of 1.5 V add up to?
-   - Still doesn't know: That's fine. Two cells give 3 V: 1.5 V + 1.5 V.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Two cells give 3 V: 1.5 V + 1.5 V.
    - She asks to move on or skip: Two cells give 3 V: 1.5 V + 1.5 V.
 
 30. [2.6] Tutor: A voltmeter is the meter that measures potential difference. A voltmeter is joined across a component, with one of its wires at each end of the component, not into the loop.
@@ -183,7 +183,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "An ammeter" (wrong idea M8: Potential difference is a result of the current, not its cause; "voltage flows" through the circuit; charge, current and pd not told apart.): Not quite: a voltmeter. The push is the potential difference, which a voltmeter measures. An ammeter measures something different: the current, how much charge passes each second.
    - "Either: they measure the same thing" (wrong idea M8: Potential difference is a result of the current, not its cause; "voltage flows" through the circuit; charge, current and pd not told apart.): Not quite: a voltmeter. The push is the potential difference, which a voltmeter measures. An ammeter measures something different: the current, how much charge passes each second.
    - Don't know (first time): How hard the charge is pushed is the potential difference. Which meter do you use to measure that push? (same buttons)
-   - Still doesn't know: That's fine. A voltmeter. How hard the charge is pushed is the potential difference, and a voltmeter measures potential difference.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A voltmeter. How hard the charge is pushed is the potential difference, and a voltmeter measures potential difference.
    - She asks to move on or skip: A voltmeter. How hard the charge is pushed is the potential difference, and a voltmeter measures potential difference.
 
 34. [2.9] Tutor: Next, a new component: a resistor, a small part that charge has to pass through, which changes how much current flows.
@@ -217,8 +217,8 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Don't know (again): a smaller question: Which one lets charge through more easily: X, with the bigger resistance, or Y? Buttons: "X" / "Y"
        - Right: Right. Then: Y has the bigger current. For the same potential difference, the bigger the resistance, the smaller the current, so Y, with the smaller resistance, has the bigger current.
        - Wrong: Not quite. Then: Y has the bigger current. For the same potential difference, the bigger the resistance, the smaller the current, so Y, with the smaller resistance, has the bigger current.
-       - Don't know: That's fine. Then: Y has the bigger current. For the same potential difference, the bigger the resistance, the smaller the current, so Y, with the smaller resistance, has the bigger current.
-   - Still doesn't know: That's fine. Y has the bigger current. For the same potential difference, the bigger the resistance, the smaller the current, so Y, with the smaller resistance, has the bigger current.
+       - Don't know: Then: Y has the bigger current. For the same potential difference, the bigger the resistance, the smaller the current, so Y, with the smaller resistance, has the bigger current.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Y has the bigger current. For the same potential difference, the bigger the resistance, the smaller the current, so Y, with the smaller resistance, has the bigger current.
    - She asks to move on or skip: Y has the bigger current. For the same potential difference, the bigger the resistance, the smaller the current, so Y, with the smaller resistance, has the bigger current.
 
 40. [2.13b] Tutor: The current depends on two things: a bigger potential difference gives a bigger current, and a bigger resistance gives a smaller current.
@@ -239,7 +239,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right: Yes, that's right: 12 V.
    - Wrong (first time): Not quite. Check your working and have one more go: A current of 3 A flows through a 4 Ω resistor. What is the potential difference across it, in volts (V)?
    - Wrong again: Not quite: it's 12 V. Write the equation: V = I R. Put the numbers in: V = 3 × 4 = 12. The potential difference is 12 V.
-   - Don't know: That's fine. Here is how to start: Write the equation: V = I R. In this question, I = 3 A and R = 4 Ω. Now put the numbers in. What do you get?
+   - Don't know: Here is how to start: Write the equation: V = I R. In this question, I = 3 A and R = 4 Ω. Now put the numbers in. What do you get?
    - Still doesn't know: Here is how it goes. Write the equation: V = I R. Put the numbers in: V = 3 × 4 = 12. The potential difference is 12 V.
 
 44. [2.17a] Tutor: Sometimes you need to find the resistance instead. Here is a worked example of that. Tap "Show the first step" under it to see how it is done, one step at a time.
@@ -255,7 +255,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right: Yes, that's right: 6 Ω.
    - Wrong (first time): Not quite. Check your working and have one more go: A component has a potential difference of 18 V across it and a current of 3 A through it. What is its resistance, in ohms (Ω)?
    - Wrong again: Not quite: it's 6 Ω. Start from V = I R. You want R, so divide both sides by I: R = V ÷ I. Put the numbers in: R = 18 ÷ 3 = 6. The resistance is 6 Ω.
-   - Don't know: That's fine. Here is how to start: Start from V = I R. You want R, so divide both sides by I: R = V ÷ I. In this question, V = 18 V and I = 3 A. Now put the numbers in. What do you get?
+   - Don't know: Here is how to start: Start from V = I R. You want R, so divide both sides by I: R = V ÷ I. In this question, V = 18 V and I = 3 A. Now put the numbers in. What do you get?
    - Still doesn't know: Here is how it goes. Start from V = I R. You want R, so divide both sides by I: R = V ÷ I. Put the numbers in: R = 18 ÷ 3 = 6. The resistance is 6 Ω.
 
 46. [2.17c] Tutor: In the same way, to find a current, divide both sides of V = I R by R: I = V ÷ R, current = potential difference ÷ resistance.
@@ -266,15 +266,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right: Yes, that's right: 2 A.
    - Wrong (first time): Not quite. Check your working and have one more go: A potential difference of 24 V is put across a 12 Ω resistor. What is the current through it, in amperes (A)?
    - Wrong again: Not quite: it's 2 A. Write the equation: V = I R. You want I, so divide both sides by R: I = V ÷ R. Put the numbers in: I = 24 ÷ 12 = 2. The current is 2 A.
-   - Don't know: That's fine. Here is how to start: Write the equation: V = I R. You want I, so divide both sides by R: I = V ÷ R. In this question, V = 24 V and R = 12 Ω. Now put the numbers in. What do you get?
+   - Don't know: Here is how to start: Write the equation: V = I R. You want I, so divide both sides by R: I = V ÷ R. In this question, V = 24 V and R = 12 Ω. Now put the numbers in. What do you get?
    - Still doesn't know: Here is how it goes. Write the equation: V = I R. You want I, so divide both sides by R: I = V ÷ R. Put the numbers in: I = 24 ÷ 12 = 2. The current is 2 A.
 
 48. [2.18] Tutor: In one line: what do potential difference and resistance each do to the current?
    She types one line. The AI checks which of these points it makes: "a bigger potential difference (push) gives a bigger current", "a bigger resistance gives a smaller current".
-   - All of them: Yes, your line has it: a bigger potential difference (push) gives a bigger current; and a bigger resistance gives a smaller current.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: a bigger potential difference (push) gives a bigger current; and a bigger resistance gives a smaller current.
-   - Don't know: No problem. A good line would be: a bigger potential difference pushes a bigger current, and a bigger resistance makes the current smaller.
+   - All of them: Yes: your line makes every point. You have this: a bigger potential difference (push) gives a bigger current. You have this: a bigger resistance gives a smaller current.
+   - Some (for example the first only): Partly there. You have this: a bigger potential difference (push) gives a bigger current. Still needed: a bigger resistance gives a smaller current.
+   - None: Here is what a good line says. A bigger potential difference (push) gives a bigger current. A bigger resistance gives a smaller current.
+   - Don't know: A good line would be: a bigger potential difference pushes a bigger current, and a bigger resistance makes the current smaller. (with the turn-taking opener)
 
 49. [2.19] Tutor asks: Where do you put an ammeter to measure the current in a single loop?
    Buttons: "Only next to the cell" / "Across the cell, like a voltmeter" / "Anywhere in the loop" (she can also type)
@@ -285,8 +285,8 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Don't know (again): a smaller question: Does the current in a single loop change from one point to another? Buttons: "Yes" / "No"
        - Right: Right. Then: Anywhere in the loop. The current is the same at every point in a single loop, so it does not matter where the ammeter goes, as long as it is in the loop.
        - Wrong: Not quite. Then: Anywhere in the loop. The current is the same at every point in a single loop, so it does not matter where the ammeter goes, as long as it is in the loop.
-       - Don't know: That's fine. Then: Anywhere in the loop. The current is the same at every point in a single loop, so it does not matter where the ammeter goes, as long as it is in the loop.
-   - Still doesn't know: That's fine. Anywhere in the loop. The current is the same at every point in a single loop, so it does not matter where the ammeter goes, as long as it is in the loop.
+       - Don't know: Then: Anywhere in the loop. The current is the same at every point in a single loop, so it does not matter where the ammeter goes, as long as it is in the loop.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Anywhere in the loop. The current is the same at every point in a single loop, so it does not matter where the ammeter goes, as long as it is in the loop.
    - She asks to move on or skip: Anywhere in the loop. The current is the same at every point in a single loop, so it does not matter where the ammeter goes, as long as it is in the loop.
 
 ## Key point 3: Required practical — the resistance of a wire
@@ -300,7 +300,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The potential difference" (wrong idea M8: Potential difference is a result of the current, not its cause; "voltage flows" through the circuit; charge, current and pd not told apart.): Not quite: an ammeter measures the current. A voltmeter measures the potential difference.
    - "The resistance": Not quite: an ammeter measures the current through a component.
    - Don't know (first time): An ammeter's name gives a clue: an ammeter shows a reading in amperes. Which quantity is measured in amperes? (same buttons)
-   - Still doesn't know: That's fine. An ammeter measures the current, in amperes.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") An ammeter measures the current, in amperes.
    - She asks to move on or skip: An ammeter measures the current, in amperes.
 
 52. [3.2] Tutor asks: How do you work out a resistance from the potential difference V and the current I?
@@ -309,7 +309,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Multiply them together": Not quite: divide the potential difference by the current. R = V ÷ I comes from V = I R.
    - "Divide the current by the potential difference" (wrong idea upside-down: ): Not quite: it is the other way up. Divide the potential difference by the current: R = V ÷ I.
    - Don't know (first time): Remember V = I R. Which of the three ways gets R on its own? (same buttons)
-   - Still doesn't know: That's fine. Divide the potential difference by the current: R = V ÷ I, from V = I R.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Divide the potential difference by the current: R = V ÷ I, from V = I R.
    - She asks to move on or skip: Divide the potential difference by the current: R = V ÷ I, from V = I R.
 
 53. [3.4] Tutor: A long wire is clipped along a metre ruler and joined to a cell. The ammeter is joined in series with the wire: one after another in the same loop, so the same current flows through both.
@@ -329,8 +329,8 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Don't know (again): a smaller question: How many halves are there in 3? Buttons: "1.5" / "6"
        - Right: Right. Then: The resistance is 6 Ω: R = V ÷ I = 3 ÷ 0.5 = 6.
        - Wrong: Not quite. Then: The resistance is 6 Ω: R = V ÷ I = 3 ÷ 0.5 = 6.
-       - Don't know: That's fine. Then: The resistance is 6 Ω: R = V ÷ I = 3 ÷ 0.5 = 6.
-   - Still doesn't know: That's fine. The resistance is 6 Ω: R = V ÷ I = 3 ÷ 0.5 = 6.
+       - Don't know: Then: The resistance is 6 Ω: R = V ÷ I = 3 ÷ 0.5 = 6.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The resistance is 6 Ω: R = V ÷ I = 3 ÷ 0.5 = 6.
    - She asks to move on or skip: The resistance is 6 Ω: R = V ÷ I = 3 ÷ 0.5 = 6.
 
 56. [3.7] Tutor: Next, move one clip to change the length of wire between the clips, and read the ammeter and the voltmeter again. Do this for several different lengths.
@@ -342,7 +342,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It gets smaller": Not quite: it gets bigger. A longer wire has a bigger resistance.
    - "It stays the same": Not quite: it gets bigger. A longer wire has a bigger resistance.
    - Don't know (first time): Think of the charge squeezing through the wire. With more wire to get through, does the resistance get bigger, get smaller or stay the same? (same buttons)
-   - Still doesn't know: That's fine. The resistance gets bigger: a longer wire has a bigger resistance.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The resistance gets bigger: a longer wire has a bigger resistance.
    - She asks to move on or skip: The resistance gets bigger: a longer wire has a bigger resistance.
 
 58. [3.9] Tutor: Keep the current small and switch off between readings, so the wire does not warm up. As a wire warms, its resistance changes, which would spoil the test. That is why the wire is kept at a constant temperature: its temperature stays the same.
@@ -362,10 +362,9 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 63. [3.15] Tutor: In one line: how does the length of a wire change its resistance?
    She types one line. The AI checks which of these points it makes: "a longer wire has a bigger resistance".
-   - All of them: Yes, your line has it: a longer wire has a bigger resistance.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: a longer wire has a bigger resistance.
-   - Don't know: No problem. A good line would be: a longer wire has a bigger resistance.
+   - All of them: Yes: your line makes the point. You have this: a longer wire has a bigger resistance.
+   - None: Here is what a good line says. A longer wire has a bigger resistance.
+   - Don't know: A good line would be: a longer wire has a bigger resistance. (with the turn-taking opener)
 
 64. [3.16] Tutor asks: In the resistance-of-a-wire practical, why does one cell give no risk of an electric shock?
    Buttons: "It gives no current" / "The wire is too long" / "Its potential difference is low" (she can also type)
@@ -373,7 +372,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It gives no current": Not quite: its potential difference is low, and a low potential difference gives no risk of an electric shock.
    - "The wire is too long": Not quite: its potential difference is low, and a low potential difference gives no risk of an electric shock.
    - Don't know (first time): One cell gives only a small push. Which answer is about the push? (same buttons)
-   - Still doesn't know: That's fine. One cell's potential difference is low, and a low potential difference gives no risk of an electric shock.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") One cell's potential difference is low, and a low potential difference gives no risk of an electric shock.
    - She asks to move on or skip: One cell's potential difference is low, and a low potential difference gives no risk of an electric shock.
 
 ## Key point 4: Ohmic conductors — resistance that stays the same
@@ -412,8 +411,8 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Don't know (again): a smaller question: What is 0.2 A doubled? Buttons: "0.2 A" / "0.4 A"
        - Right: Right. Then: The current is 0.4 A: the potential difference doubled, so the current doubled too, from 0.2 A to 0.4 A.
        - Wrong: Not quite. Then: The current is 0.4 A: the potential difference doubled, so the current doubled too, from 0.2 A to 0.4 A.
-       - Don't know: That's fine. Then: The current is 0.4 A: the potential difference doubled, so the current doubled too, from 0.2 A to 0.4 A.
-   - Still doesn't know: That's fine. The current is 0.4 A: the potential difference doubled, so the current doubled too, from 0.2 A to 0.4 A.
+       - Don't know: Then: The current is 0.4 A: the potential difference doubled, so the current doubled too, from 0.2 A to 0.4 A.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The current is 0.4 A: the potential difference doubled, so the current doubled too, from 0.2 A to 0.4 A.
    - She asks to move on or skip: The current is 0.4 A: the potential difference doubled, so the current doubled too, from 0.2 A to 0.4 A.
 
 72. [4.8] Tutor: For an ohmic conductor you can use V = I R with one fixed value of R, whatever the current.
@@ -421,10 +420,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 73. [4.9] Tutor: In one line: what does a straight-line I-V graph through the origin tell you?
    She types one line. The AI checks which of these points it makes: "the current is directly proportional to the potential difference", "the resistance stays the same".
-   - All of them: Yes, your line has it: the current is directly proportional to the potential difference; and the resistance stays the same.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: the current is directly proportional to the potential difference; and the resistance stays the same.
-   - Don't know: No problem. A good line would be: the current is directly proportional to the potential difference, so the resistance stays the same.
+   - All of them: Yes: your line makes every point. You have this: the current is directly proportional to the potential difference. You have this: the resistance stays the same.
+   - Some (for example the first only): Partly there. You have this: the current is directly proportional to the potential difference. Still needed: the resistance stays the same.
+   - None: Here is what a good line says. The current is directly proportional to the potential difference. The resistance stays the same.
+   - Don't know: A good line would be: the current is directly proportional to the potential difference, so the resistance stays the same. (with the turn-taking opener)
 
 74. [4.10] Tutor asks: What is the unit of resistance?
    Buttons: "The volt" / "The ohm" / "The ampere" (she can also type)
@@ -432,7 +431,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The volt": Not quite: resistance is measured in ohms (Ω). Volts are for potential difference and amperes for current.
    - "The ampere": Not quite: resistance is measured in ohms (Ω). Volts are for potential difference and amperes for current.
    - Don't know (first time): The unit of resistance has the symbol Ω. What is the unit called? (same buttons)
-   - Still doesn't know: That's fine. Resistance is measured in ohms (Ω).
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Resistance is measured in ohms (Ω).
    - She asks to move on or skip: Resistance is measured in ohms (Ω).
 
 ## Key point 5: Filament lamps and diodes — resistance that changes
@@ -455,7 +454,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It increases": Not quite: it decreases. A hotter filament has a bigger resistance, so a cooler one has a smaller resistance.
    - "It stays the same" (wrong idea same: ): Not quite: it decreases. A filament lamp is not an ohmic conductor: as it cools, its resistance goes down.
    - Don't know (first time): Hotter means a bigger resistance. What do you think cooler means? (same buttons)
-   - Still doesn't know: That's fine. The filament's resistance decreases: a hotter filament has a bigger resistance, so a cooler one has a smaller resistance.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The filament's resistance decreases: a hotter filament has a bigger resistance, so a cooler one has a smaller resistance.
    - She asks to move on or skip: The filament's resistance decreases: a hotter filament has a bigger resistance, so a cooler one has a smaller resistance.
 
 80. [5.4] Tutor: Back to turning the potential difference up: as the filament heats and its resistance goes up, each extra volt pushes less extra current through the lamp than the volt before. The graph bends over and gets flatter.
@@ -496,10 +495,9 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 89. [5.12] Tutor: In one line: how are a filament lamp and a diode different from a resistor?
    She types one line. The AI checks which of these points it makes: "their I-V graphs are not straight lines".
-   - All of them: Yes, your line has it: their I-V graphs are not straight lines.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: their I-V graphs are not straight lines.
-   - Don't know: No problem. A good line would be: their I-V graphs are not straight lines.
+   - All of them: Yes: your line makes the point. You have this: their I-V graphs are not straight lines.
+   - None: Here is what a good line says. Their I-V graphs are not straight lines.
+   - Don't know: A good line would be: their I-V graphs are not straight lines. (with the turn-taking opener)
 
 90. [5.13] Tutor asks: Which component lets current flow in one direction only?
    Buttons: "A filament lamp" / "A resistor" / "A diode" (she can also type)
@@ -507,7 +505,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "A filament lamp": Not quite: a diode. Its resistance is very high in the reverse direction, so current flows one way only.
    - "A resistor": Not quite: a diode. Its resistance is very high in the reverse direction, so current flows one way only.
    - Don't know (first time): Think of the graph that lay flat along the axis on one side. Which component was that? (same buttons)
-   - Still doesn't know: That's fine. A diode lets current flow in one direction only: its resistance is very high in the reverse direction.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A diode lets current flow in one direction only: its resistance is very high in the reverse direction.
    - She asks to move on or skip: A diode lets current flow in one direction only: its resistance is very high in the reverse direction.
 
 ## Key point 6: Required practical — measuring I-V characteristics
@@ -518,7 +516,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The ammeter" (wrong idea M10: Not sure how to connect an ammeter to measure the current at a point (it must go in the loop, in series).): Not quite: the voltmeter. The ammeter goes in series, in the loop, so the current flows through it.
    - "Both meters": Not quite: only the voltmeter. The ammeter goes in series, in the loop.
    - Don't know (first time): The meter that goes in parallel measures the potential difference across the component. Which meter is that? (same buttons)
-   - Still doesn't know: That's fine. The voltmeter goes in parallel across the component; the ammeter goes in series.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The voltmeter goes in parallel across the component; the ammeter goes in series.
    - She asks to move on or skip: The voltmeter goes in parallel across the component; the ammeter goes in series.
 
 92. [6.2] Tutor asks: What does a straight-line I-V graph through the origin show?
@@ -527,7 +525,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The resistance increases": Not quite: the resistance stays the same. A straight line through the origin means an ohmic conductor.
    - "Current flows one way only": Not quite: the resistance stays the same. A straight line through the origin means an ohmic conductor.
    - Don't know (first time): Think of the resistor at constant temperature. Did its resistance change along its straight-line graph? (same buttons)
-   - Still doesn't know: That's fine. The resistance stays the same: a straight line through the origin means an ohmic conductor.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The resistance stays the same: a straight line through the origin means an ohmic conductor.
    - She asks to move on or skip: The resistance stays the same: a straight line through the origin means an ohmic conductor.
 
 93. [6.3] Tutor: Here is how you measure an I-V characteristic in class, step by step. The circuit has a cell or a battery (two or more cells joined together) and the component you are testing. The ammeter is in series with the component, and the voltmeter is in parallel across it.
@@ -545,7 +543,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Its highest"): Yes: its highest resistance, so the current starts small.
    - "Its lowest": Not quite: its highest resistance, so the current starts small.
    - Don't know (first time): A bigger resistance gives a smaller current. Which setting gives the smallest current? (same buttons)
-   - Still doesn't know: That's fine. Set it to its highest resistance, so the current starts small.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Set it to its highest resistance, so the current starts small.
    - She asks to move on or skip: Set it to its highest resistance, so the current starts small.
 
 97. [6.6] Tutor: Record the current and the potential difference, then move the slider and record both again.
@@ -566,7 +564,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "A filament lamp": Not quite: the resistor at constant temperature. Its graph is a straight line; the filament lamp and the diode give curves.
    - "A diode": Not quite: the resistor at constant temperature. Its graph is a straight line; the filament lamp and the diode give curves.
    - Don't know (first time): Linear means a straight-line graph. Which of the three gave a straight line? (same buttons)
-   - Still doesn't know: That's fine. A resistor at constant temperature: its I-V graph is a straight line.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A resistor at constant temperature: its I-V graph is a straight line.
    - She asks to move on or skip: A resistor at constant temperature: its I-V graph is a straight line.
 
 102. [6.11] Tutor: A component whose graph is not a straight line is called non-linear, so the filament lamp and the diode are non-linear.
@@ -577,10 +575,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 104. [6.13] Tutor: In one line: how do you take the readings for an I-V graph?
    She types one line. The AI checks which of these points it makes: "ammeter in series, voltmeter in parallel", "change the current with a variable resistor", "turn the component round for the negative readings".
-   - All of them: Yes, your line has it: ammeter in series, voltmeter in parallel; and change the current with a variable resistor; and turn the component round for the negative readings.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: ammeter in series, voltmeter in parallel; and change the current with a variable resistor; and turn the component round for the negative readings.
-   - Don't know: No problem. A good line would be: ammeter in series and voltmeter in parallel; change the current with a variable resistor; turn the component round for the negative readings.
+   - All of them: Yes: your line makes every point. You have this: ammeter in series, voltmeter in parallel. You have this: change the current with a variable resistor. You have this: turn the component round for the negative readings.
+   - Some (for example the first only): Partly there. You have this: ammeter in series, voltmeter in parallel. Still needed: change the current with a variable resistor. Still needed: turn the component round for the negative readings.
+   - None: Here is what a good line says. Ammeter in series, voltmeter in parallel. Change the current with a variable resistor. Turn the component round for the negative readings.
+   - Don't know: A good line would be: ammeter in series and voltmeter in parallel; change the current with a variable resistor; turn the component round for the negative readings. (with the turn-taking opener)
 
 105. [6.14] Tutor asks: Why do you keep the current small in the resistance-of-a-wire practical?
    Buttons: "So the wire gets longer" / "So the wire does not warm up" / "So the ammeter reads zero" (she can also type)
@@ -588,7 +586,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "So the ammeter reads zero": Not quite: so the wire does not warm up. A small current keeps it at a constant temperature.
    - "So the wire gets longer": Not quite: so the wire does not warm up. A small current keeps it at a constant temperature.
    - Don't know (first time): Which of the answers is about the wire's temperature? (same buttons)
-   - Still doesn't know: That's fine. You keep the current small so the wire does not warm up: a small current keeps it at a constant temperature.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") You keep the current small so the wire does not warm up: a small current keeps it at a constant temperature.
    - She asks to move on or skip: You keep the current small so the wire does not warm up: a small current keeps it at a constant temperature.
 
 ## Key point 7: Energy transferred — what the charge carries
@@ -623,7 +621,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 1: Not quite: 12 J. A potential difference of 12 V means 12 joules for every coulomb that passes.
    - Any other wrong answer: Not quite: 12 J. A potential difference of 12 V means 12 joules for every coulomb that passes.
    - Don't know (first time): 1 volt means 1 joule for each coulomb. How many joules is that for each coulomb at 12 volts?
-   - Still doesn't know: That's fine. Each coulomb transfers 12 J: a potential difference of 12 V means 12 joules for every coulomb.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Each coulomb transfers 12 J: a potential difference of 12 V means 12 joules for every coulomb.
    - She asks to move on or skip: Each coulomb transfers 12 J: a potential difference of 12 V means 12 joules for every coulomb.
 
 113. [7.8] Tutor: To find the total energy transferred, use E = Q V: energy transferred = charge flow × potential difference. E is the energy transferred in joules (J), Q is the charge flow in coulombs (C) and V is the potential difference in volts (V).
@@ -641,7 +639,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right: Yes, that's right: 1200 J.
    - Wrong (first time): Not quite. Check your working and have one more go: 100 C of charge flows through a lamp with a potential difference of 12 V across it. How much energy is transferred, in joules (J)?
    - Wrong again: Not quite: it's 1200 J. Write the equation: E = Q V. Put the numbers in: E = 100 × 12 = 1200. The energy transferred is 1200 J.
-   - Don't know: That's fine. Here is how to start: Write the equation: E = Q V. In this question, Q = 100 C and V = 12 V. Now put the numbers in. What do you get?
+   - Don't know: Here is how to start: Write the equation: E = Q V. In this question, Q = 100 C and V = 12 V. Now put the numbers in. What do you get?
    - Still doesn't know: Here is how it goes. Write the equation: E = Q V. Put the numbers in: E = 100 × 12 = 1200. The energy transferred is 1200 J.
 
 116. [7.11] Tutor: If you are given a current and a time instead of a charge, find the charge first with Q = I t. Then use E = Q V.
@@ -660,15 +658,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right: Yes, that's right: 2400 J.
    - Wrong (first time): Not quite. Check your working and have one more go: A current of 2 A flows through a heater for 100 s. The potential difference across it is 12 V. How much energy is transferred, in joules (J)?
    - Wrong again: Not quite: it's 2400 J. First find the charge: Q = I t = 2 × 100 = 200 C. Write the energy equation: E = Q V. Put the numbers in: E = 200 × 12 = 2400. The energy transferred is 2400 J.
-   - Don't know: That's fine. Here is how to start: First find the charge: Q = I t = 2 × 100 = 200 C. Write the energy equation: E = Q V. In this question, Q = 200 C and V = 12 V. Now put the numbers in. What do you get?
+   - Don't know: Here is how to start: First find the charge: Q = I t = 2 × 100 = 200 C. Write the energy equation: E = Q V. In this question, Q = 200 C and V = 12 V. Now put the numbers in. What do you get?
    - Still doesn't know: Here is how it goes. First find the charge: Q = I t = 2 × 100 = 200 C. Write the energy equation: E = Q V. Put the numbers in: E = 200 × 12 = 2400. The energy transferred is 2400 J.
 
 119. [7.13] Tutor: In one line: what does a potential difference of 1 volt mean?
    She types one line. The AI checks which of these points it makes: "1 joule of energy is transferred", "for each coulomb of charge that passes".
-   - All of them: Yes, your line has it: 1 joule of energy is transferred; and for each coulomb of charge that passes.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: 1 joule of energy is transferred; and for each coulomb of charge that passes.
-   - Don't know: No problem. A good line would be: 1 volt means 1 joule of energy is transferred for each coulomb of charge that passes.
+   - All of them: Yes: your line makes every point. You have this: 1 joule of energy is transferred. You have this: for each coulomb of charge that passes.
+   - Some (for example the first only): Partly there. You have this: 1 joule of energy is transferred. Still needed: for each coulomb of charge that passes.
+   - None: Here is what a good line says. 1 joule of energy is transferred. For each coulomb of charge that passes.
+   - Don't know: A good line would be: 1 volt means 1 joule of energy is transferred for each coulomb of charge that passes. (with the turn-taking opener)
 
 120. [7.14] Tutor asks: When charge flows through a lamp, what happens to the charge and to its energy?
    Buttons: "The charge is used up in the lamp" / "The charge carries on round; its energy goes to the lamp" / "Nothing happens to either of them" (she can also type)
@@ -676,7 +674,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The charge is used up in the lamp" (wrong idea M6: A battery stores charge or current (or "electricity"), not energy, and that is what runs out.): Not quite: the charge is not used up. It carries on round the circuit; its energy is what goes to the lamp.
    - "Nothing happens to either of them": Not quite: the charge carries on round, and its energy is transferred to the lamp.
    - Don't know (first time): Think of the circuit you ran for 10 seconds: did the charge come back to the cell? What kept going up? (same buttons)
-   - Still doesn't know: That's fine. The charge carries on round the circuit, and its energy is transferred to the lamp.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The charge carries on round the circuit, and its energy is transferred to the lamp.
    - She asks to move on or skip: The charge carries on round the circuit, and its energy is transferred to the lamp.
 
 121. [8.0] Tutor: To finish, a short quiz on the whole lesson: 8 questions.
@@ -687,7 +685,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("How much charge passes a point each second"): Yes. Current is how much charge passes a point each second.
    - "The push that drives charge" (wrong idea M8: Potential difference is a result of the current, not its cause; "voltage flows" through the circuit; charge, current and pd not told apart.): Not quite: the push that drives charge is the potential difference. Current is how much charge passes a point each second.
    - "How hard it is for charge to flow" (wrong idea resistance: ): Not quite: how hard it is for charge to flow is the resistance. Current is how much charge passes a point each second.
-   - Still doesn't know: That's fine. Current is how much charge passes a point each second.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Current is how much charge passes a point each second.
    - She asks to move on or skip: Current is how much charge passes a point each second.
 
 123. [8.2] Tutor asks: Quiz, question 2 of 8: Which equation links charge flow, current and time?
@@ -695,7 +693,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Q = I t"): Yes. Q = I t: charge flow = current × time.
    - "Q = I ÷ t": Not quite. Q = I t: charge flow = current × time.
    - "I = Q t": Not quite. Q = I t: charge flow = current × time.
-   - Still doesn't know: That's fine. Q = I t: charge flow = current × time.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Q = I t: charge flow = current × time.
    - She asks to move on or skip: Q = I t: charge flow = current × time.
 
 124. [8.3] Tutor asks: Quiz, question 3 of 8: What does the I-V characteristic of an ohmic conductor look like?
@@ -703,7 +701,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("A straight line through the origin"): Yes. A straight line through the origin: its current is directly proportional to the potential difference.
    - "A curve that gets flatter": Not quite. A straight line through the origin: its current is directly proportional to the potential difference.
    - "Flat on one side, steep on the other": Not quite. A straight line through the origin: its current is directly proportional to the potential difference.
-   - Still doesn't know: That's fine. A straight line through the origin: its current is directly proportional to the potential difference.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A straight line through the origin: its current is directly proportional to the potential difference.
    - She asks to move on or skip: A straight line through the origin: its current is directly proportional to the potential difference.
 
 125. [8.4] Tutor asks: Quiz, question 4 of 8: Why does a filament lamp's I-V graph curve?
@@ -711,7 +709,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Its resistance increases as it gets hotter"): Yes. A filament lamp's resistance increases as it gets hotter, so the line gets flatter.
    - "It lets current flow one way only": Not quite. A filament lamp's resistance increases as it gets hotter, so the line gets flatter.
    - "Its resistance falls as it gets hotter": Not quite. A filament lamp's resistance increases as it gets hotter, so the line gets flatter.
-   - Still doesn't know: That's fine. A filament lamp's resistance increases as it gets hotter, so the line gets flatter.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A filament lamp's resistance increases as it gets hotter, so the line gets flatter.
    - She asks to move on or skip: A filament lamp's resistance increases as it gets hotter, so the line gets flatter.
 
 126. [8.5] Tutor asks: Quiz, question 5 of 8: In the I-V practical, how is the voltmeter connected?
@@ -719,7 +717,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("In parallel across the component"): Yes. In parallel across the component, to measure the potential difference across it.
    - "In series with the component" (wrong idea M10: Not sure how to connect an ammeter to measure the current at a point (it must go in the loop, in series).): Not quite. In parallel across the component, to measure the potential difference across it.
    - "Across the cell only" (wrong idea M9: Cannot say what a voltmeter measures, especially across a lamp or resistor rather than across the cell.): Not quite. In parallel across the component, to measure the potential difference across it.
-   - Still doesn't know: That's fine. In parallel across the component, to measure the potential difference across it.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") In parallel across the component, to measure the potential difference across it.
    - She asks to move on or skip: In parallel across the component, to measure the potential difference across it.
 
 127. [8.6] Tutor asks: Quiz, question 6 of 8: At constant temperature, what happens to a wire's resistance as its length increases?
@@ -727,7 +725,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("It increases"): Yes. A wire's resistance increases: a longer wire has a bigger resistance.
    - "It decreases": Not quite. A wire's resistance increases: a longer wire has a bigger resistance.
    - "It stays the same": Not quite. A wire's resistance increases: a longer wire has a bigger resistance.
-   - Still doesn't know: That's fine. A wire's resistance increases: a longer wire has a bigger resistance.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A wire's resistance increases: a longer wire has a bigger resistance.
    - She asks to move on or skip: A wire's resistance increases: a longer wire has a bigger resistance.
 
 128. [8.7] Tutor: Quiz, question 7 of 8: A current of 1 A flows through a 8 Ω resistor. What is the potential difference across it, in volts (V)?
@@ -735,7 +733,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right: Yes, that's right: 8 V.
    - Wrong (first time): Not quite. Check your working and have one more go: A current of 1 A flows through a 8 Ω resistor. What is the potential difference across it, in volts (V)?
    - Wrong again: Not quite: it's 8 V. Write the equation: V = I R. Put the numbers in: V = 1 × 8 = 8. The potential difference is 8 V.
-   - Don't know: That's fine. Here is how to start: Write the equation: V = I R. In this question, I = 1 A and R = 8 Ω. Now put the numbers in. What do you get?
+   - Don't know: Here is how to start: Write the equation: V = I R. In this question, I = 1 A and R = 8 Ω. Now put the numbers in. What do you get?
    - Still doesn't know: Here is how it goes. Write the equation: V = I R. Put the numbers in: V = 1 × 8 = 8. The potential difference is 8 V.
 
 129. [8.8] Tutor: Quiz, question 8 of 8: 50 C of charge flows through a lamp with a potential difference of 9 V across it. How much energy is transferred, in joules (J)?
@@ -743,7 +741,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right: Yes, that's right: 450 J.
    - Wrong (first time): Not quite. Check your working and have one more go: 50 C of charge flows through a lamp with a potential difference of 9 V across it. How much energy is transferred, in joules (J)?
    - Wrong again: Not quite: it's 450 J. Write the equation: E = Q V. Put the numbers in: E = 50 × 9 = 450. The energy transferred is 450 J.
-   - Don't know: That's fine. Here is how to start: Write the equation: E = Q V. In this question, Q = 50 C and V = 9 V. Now put the numbers in. What do you get?
+   - Don't know: Here is how to start: Write the equation: E = Q V. In this question, Q = 50 C and V = 9 V. Now put the numbers in. What do you get?
    - Still doesn't know: Here is how it goes. Write the equation: E = Q V. Put the numbers in: E = 50 × 9 = 450. The energy transferred is 450 J.
 
 130. [8.9] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
@@ -751,5 +749,13 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## The end
 
-131. Tutor: You have finished this lesson: current, potential difference, resistance, how different components behave, and the energy that charge carries.
+131. Tutor: Summary, point 1 of 7: A current is a flow of charge, and its size is how much charge passes a point each second.
+132. Tutor: Summary, point 2 of 7: A bigger potential difference pushes a bigger current, and a bigger resistance makes the current smaller.
+133. Tutor: Summary, point 3 of 7: A longer wire has a bigger resistance.
+134. Tutor: Summary, point 4 of 7: The current is directly proportional to the potential difference, so the resistance stays the same.
+135. Tutor: Summary, point 5 of 7: Their I-V graphs are not straight lines.
+136. Tutor: Summary, point 6 of 7: Ammeter in series and voltmeter in parallel; change the current with a variable resistor; turn the component round for the negative readings.
+137. Tutor: Summary, point 7 of 7: 1 volt means 1 joule of energy is transferred for each coulomb of charge that passes.
+
+138. Tutor: You have finished this lesson: current, potential difference, resistance, how different components behave, and the energy that charge carries.
    Buttons: "Go to the slides" / "Home"

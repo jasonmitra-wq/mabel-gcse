@@ -2,7 +2,9 @@
 
 Runbook position: Phase B, topic G5 (brief docs/briefs/2026-11-15-script-four-topics.md; G5 starts with the extra steps G-a to G-d). P3 done 2026-11-18: p3-particle-model, p3-density, p3-changes-of-state, p3-pressure scripted. P1 done 2026-11-17: p1-energy-stores, p1-kinetic-potential, p1-conservation, p1-efficiency, p1-power, p1-heating, p1-national-grid scripted. P2 rest done 2026-11-15: p2-series-parallel, p2-domestic, p2-power-energy, p2-static scripted. Phase A, A9 pilot: p2-current-voltage and p2-components are scripted AI lessons, waiting for Mabel's delayed test.
 
-Month spend (November 2026): 26.35 USD of the 100 cap (coverage and faults 4.33, scripted teaching 1.25, p2-components 1.66, Phase B P2 rest 5.08, Phase B P1 8.94, Phase B P3 5.09), plus four reviews cut off by network errors with no cost reported (at most about 2.70 together). Phase B stops at 95.
+Month spend (November 2026): 26.41 USD of the 100 cap (coverage and faults 4.33, scripted teaching 1.25, p2-components 1.66, Phase B P2 rest 5.08, Phase B P1 8.94, Phase B P3 5.09, shared script fixes 0.06), plus four reviews cut off by network errors with no cost reported (at most about 2.70 together). Phase B stops at 95.
+
+Shared script fixes done 2026-11-19 (brief docs/briefs/2026-11-18-shared-script-fixes.md): flag SCRIPT_POLISH in js/teach-script.js (v18): no fixed "That's fine." after "don't know", own-words feedback one point per sentence, a closing summary from each key point's model line, the answer to her question with no comment on the question. Flag off: all 17 lessons' walk paths byte-identical to before. Checks F14 idk-opener, F15 own-multi-point, F16 no-summary, F17 question-comment (tools/check-transcript.js), proven by tools/check-polish.js (off 360/100/51/17, on 0). Site test p1-energy-stores PASS, all checks 0 (/usr/bin/bash.06). Widget candidates: tools/pilot/widget-candidates.md (none built). js/teach-core.js (unscripted lessons) unchanged: ESCALATIONS.
 
 ### Phase B — scripted AI lessons (brief 2026-11-15)
 

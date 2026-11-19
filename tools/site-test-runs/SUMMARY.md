@@ -105,3 +105,4 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-11-18 | p3-density | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-18/p3-density | $0.0396
 - 2026-11-18 | p3-changes-of-state | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-18/p3-changes-of-state | $0.0767
 - 2026-11-18 | p3-pressure | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-18/p3-pressure | $0.0491
+- 2026-11-19 | p1-energy-stores | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-19/p1-energy-stores | $0.0643

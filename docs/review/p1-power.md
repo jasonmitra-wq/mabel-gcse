@@ -15,7 +15,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Newtons (N)" (wrong idea newton: ): Not quite: joules (J). Newtons are the unit of force.
    - "Metres (m)" (wrong idea metre: ): Not quite: joules (J). Metres measure distance.
    - Don't know (first time): The unit of energy is named after the scientist James Joule. Which button is it? (same buttons)
-   - Still doesn't know: That's fine. Energy is measured in joules (J).
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Energy is measured in joules (J).
    - She asks to move on or skip: Energy is measured in joules (J).
 
 3. [1.1b] Tutor asks: Second: you lift a box onto a high shelf. Which store of the box fills up?
@@ -24,7 +24,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Kinetic" (wrong idea kinetic: ): Not quite: once it is on the shelf the box is still. Raising it fills its gravitational potential store.
    - "Elastic potential" (wrong idea elastic: ): Not quite: nothing is stretched. Raising the box fills its gravitational potential store.
    - Don't know (first time): The box ends up higher. Which store is for raised things? (same buttons)
-   - Still doesn't know: That's fine. Raising the box fills its gravitational potential store.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Raising the box fills its gravitational potential store.
    - She asks to move on or skip: Raising the box fills its gravitational potential store.
 
 4. [1.2] Tutor: Now this lesson. Two kettles each heat the same water by the same amount. One takes 2 minutes and the other takes 4. Both transfer the same energy to the water, but the first does it twice as fast.
@@ -45,7 +45,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "60 J" (wrong idea unit: ): Nearly: the number is right, but power is in watts, so 60 W.
    - "1 W" (wrong idea one: ): Not quite: 60 W. 1 W would be just 1 J in each second.
    - Don't know (first time): Count the joules transferred in one second. That number is the power in watts. (same buttons)
-   - Still doesn't know: That's fine. 60 J in each second is a power of 60 W.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 60 J in each second is a power of 60 W.
    - She asks to move on or skip: 60 J in each second is a power of 60 W.
 
 9. [1.7] Tutor: The equation is P = E ÷ t: power = energy transferred ÷ time. P is the power in watts (W), E is the energy transferred in joules (J) and t is the time in seconds (s).
@@ -60,15 +60,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "X transfers more energy than Y" (wrong idea energy: ): Not quite: lifting the same load to the same height takes the same energy. X transfers it in a third of the time, so X has three times the power.
    - "Y has more power, because it works for longer" (wrong idea longer: ): Not quite: taking longer means a lower power. X transfers the same energy in a third of the time, so X has three times the power.
    - Don't know (first time): Both transfer the same energy. Which motor transfers it faster, and how many times faster? (same buttons)
-   - Still doesn't know: That's fine. The energy is the same, but X transfers it in a third of the time, so X has three times the power.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The energy is the same, but X transfers it in a third of the time, so X has three times the power.
    - She asks to move on or skip: The energy is the same, but X transfers it in a third of the time, so X has three times the power.
 
 12. [1.10] Tutor: In one line: what is power, and what unit is it measured in?
    She types one line. The AI checks which of these points it makes: "the energy transferred each second (the rate of energy transfer)", "watts".
-   - All of them: Yes, your line has it: the energy transferred each second (the rate of energy transfer); and watts.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: the energy transferred each second (the rate of energy transfer); and watts.
-   - Don't know: No problem. A good line would be: power is the energy transferred each second, measured in watts.
+   - All of them: Yes: your line makes every point. You have this: the energy transferred each second (the rate of energy transfer). You have this: watts.
+   - Some (for example the first only): Partly there. You have this: the energy transferred each second (the rate of energy transfer). Still needed: watts.
+   - None: Here is what a good line says. The energy transferred each second (the rate of energy transfer). Watts.
+   - Don't know: A good line would be: power is the energy transferred each second, measured in watts. (with the turn-taking opener)
 
 ## Key point 2: Calculating power
 
@@ -86,7 +86,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 0.005 (wrong idea upside): Not quite: 200 W. Divide the energy by the time: P = 12 000 ÷ 60 = 200 W.
    - Any other wrong answer: Not quite: 200 W. P = E ÷ t = 12 000 ÷ 60 = 200 W.
    - Don't know (first time): Use P = E ÷ t: divide the energy, 12 000, by the time, 60.
-   - Still doesn't know: That's fine. P = E ÷ t = 12 000 ÷ 60 = 200 W.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") P = E ÷ t = 12 000 ÷ 60 = 200 W.
    - She asks to move on or skip: P = E ÷ t = 12 000 ÷ 60 = 200 W.
 
 15. [2.3] Tutor: Big powers are often given in kilowatts (kW): 1 kW = 1000 W. A 2 kW heater has a power of 2000 W.
@@ -122,7 +122,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 150 (wrong idea divide): Not quite: 60 000 J. To find the energy, multiply: E = P × t = 3000 × 20 = 60 000 J.
    - Any other wrong answer: Not quite: 60 000 J. 3 kW = 3000 W, so E = P × t = 3000 × 20 = 60 000 J.
    - Don't know (first time): First, 3 kW in watts is 3000 W. Then multiply by the time, 20 s.
-   - Still doesn't know: That's fine. 3 kW = 3000 W, so E = P × t = 3000 × 20 = 60 000 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 3 kW = 3000 W, so E = P × t = 3000 × 20 = 60 000 J.
    - She asks to move on or skip: 3 kW = 3000 W, so E = P × t = 3000 × 20 = 60 000 J.
 
 22. [2.7] Tutor asks: How long does a 500 W microwave take to transfer 30 000 J, in seconds?
@@ -132,7 +132,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 0.0167 (wrong idea upside): Not quite: 60 s. Divide the energy by the power: t = 30 000 ÷ 500 = 60 s.
    - Any other wrong answer: Not quite: 60 s. t = E ÷ P = 30 000 ÷ 500 = 60 s.
    - Don't know (first time): Use t = E ÷ P: divide 30 000 by 500.
-   - Still doesn't know: That's fine. t = E ÷ P = 30 000 ÷ 500 = 60 s.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") t = E ÷ P = 30 000 ÷ 500 = 60 s.
    - She asks to move on or skip: t = E ÷ P = 30 000 ÷ 500 = 60 s.
 
 23. [2.8] Tutor asks: A 2.5 kW kettle is on for 2 minutes. How much energy does it transfer, in joules?
@@ -143,15 +143,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 5000 (wrong idea nomin): Not quite: 300 000 J. The power is right in watts, but the time must be in seconds: 2 minutes = 120 s. E = 2500 × 120 = 300 000 J.
    - Any other wrong answer: Not quite: 300 000 J. 2500 W × 120 s = 300 000 J.
    - Don't know (first time): Change both: 2.5 kW is 2500 W, and 2 minutes is 120 s. Then multiply them.
-   - Still doesn't know: That's fine. 2.5 kW = 2500 W and 2 minutes = 120 s, so E = P × t = 2500 × 120 = 300 000 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 2.5 kW = 2500 W and 2 minutes = 120 s, so E = P × t = 2500 × 120 = 300 000 J.
    - She asks to move on or skip: 2.5 kW = 2500 W and 2 minutes = 120 s, so E = P × t = 2500 × 120 = 300 000 J.
 
 24. [2.9] Tutor: In one line: what units must the power, energy and time be in before you use P = E ÷ t?
    She types one line. The AI checks which of these points it makes: "power in watts", "energy in joules", "time in seconds".
-   - All of them: Yes, your line has it: power in watts; and energy in joules; and time in seconds.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: power in watts; and energy in joules; and time in seconds.
-   - Don't know: No problem. A good line would be: power in watts, energy in joules and time in seconds.
+   - All of them: Yes: your line makes every point. You have this: power in watts. You have this: energy in joules. You have this: time in seconds.
+   - Some (for example the first only): Partly there. You have this: power in watts. Still needed: energy in joules. Still needed: time in seconds.
+   - None: Here is what a good line says. Power in watts. Energy in joules. Time in seconds.
+   - Don't know: A good line would be: power in watts, energy in joules and time in seconds. (with the turn-taking opener)
 
 ## Key point 3: Power in everyday contexts
 
@@ -167,15 +167,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The 300 kW car motor" (wrong idea car: ): Not quite: 300 kW is 300 000 W, but 0.5 MW is 500 000 W, so the turbine transfers energy faster.
    - "The 3000 W kettle" (wrong idea kettle: ): Not quite: 3000 is the biggest number, but the units differ. In watts: kettle 3000 W, car motor 300 000 W, turbine 500 000 W.
    - Don't know (first time): Change each into watts: 1 MW = 1 000 000 W and 1 kW = 1000 W. Then compare. (same buttons)
-   - Still doesn't know: That's fine. In watts: the turbine is 500 000 W, the car motor 300 000 W and the kettle 3000 W, so the turbine is fastest.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") In watts: the turbine is 500 000 W, the car motor 300 000 W and the kettle 3000 W, so the turbine is fastest.
    - She asks to move on or skip: In watts: the turbine is 500 000 W, the car motor 300 000 W and the kettle 3000 W, so the turbine is fastest.
 
 28. [3.4] Tutor: In one line: what does it mean that a kettle has a higher power than a phone charger?
    She types one line. The AI checks which of these points it makes: "the kettle transfers more energy each second".
-   - All of them: Yes, your line has it: the kettle transfers more energy each second.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: the kettle transfers more energy each second.
-   - Don't know: No problem. A good line would be: the kettle transfers more energy each second than the charger.
+   - All of them: Yes: your line makes the point. You have this: the kettle transfers more energy each second.
+   - None: Here is what a good line says. The kettle transfers more energy each second.
+   - Don't know: A good line would be: the kettle transfers more energy each second than the charger. (with the turn-taking opener)
 
 ## Key point 4: Work done
 
@@ -205,7 +204,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 54 (wrong idea add): Not quite: 200 J. Multiply, do not add: 50 × 4 = 200 J.
    - Any other wrong answer: Not quite: 200 J. W = F × s = 50 × 4 = 200 J.
    - Don't know (first time): Use W = F s: multiply the force, 50, by the distance, 4.
-   - Still doesn't know: That's fine. W = F × s = 50 × 4 = 200 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") W = F × s = 50 × 4 = 200 J.
    - She asks to move on or skip: W = F × s = 50 × 4 = 200 J.
 
 35. [4.6] Tutor: You met this at the start: lifting a box gives it energy in its gravitational potential store. That energy comes from the work done by the lifting force.
@@ -220,7 +219,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Into the box's gravitational potential store" (wrong idea gpe: ): Not quite: the box stays at the same height, so its gravitational potential store does not change. Friction warms the box and floor.
    - "Into the box's chemical store" (wrong idea chem: ): Not quite: nothing burns or reacts. Friction warms the box and the floor, so the energy goes into their thermal stores.
    - Don't know (first time): The box is not raised or speeded up, but rubbing on the floor warms things. Which store is about warmth? (same buttons)
-   - Still doesn't know: That's fine. Pushing against friction warms the box and the floor, so the work done goes into their thermal stores.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Pushing against friction warms the box and the floor, so the work done goes into their thermal stores.
    - She asks to move on or skip: Pushing against friction warms the box and the floor, so the work done goes into their thermal stores.
 
 38. [4.7] Tutor: Power is also the rate of doing work: P = W ÷ t. P is the power, in watts; W is the work done, in joules; t is the time, in seconds.
@@ -232,15 +231,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 1800000 (wrong idea times): Not quite: 2000 W. Divide the work done by the time: 60 000 J ÷ 30 s = 2000 W.
    - Any other wrong answer: Not quite: 2000 W. Power = work done ÷ time = 60 000 J ÷ 30 s = 2000 W.
    - Don't know (first time): Use P = W ÷ t: divide 60 000 by 30.
-   - Still doesn't know: That's fine. Power = work done ÷ time = 60 000 J ÷ 30 s = 2000 W.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Power = work done ÷ time = 60 000 J ÷ 30 s = 2000 W.
    - She asks to move on or skip: Power = work done ÷ time = 60 000 J ÷ 30 s = 2000 W.
 
 40. [4.9] Tutor: In one line: what is work done?
    She types one line. The AI checks which of these points it makes: "the energy transferred when a force moves something".
-   - All of them: Yes, your line has it: the energy transferred when a force moves something.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: the energy transferred when a force moves something.
-   - Don't know: No problem. A good line would be: work done is the energy transferred when a force moves something.
+   - All of them: Yes: your line makes the point. You have this: the energy transferred when a force moves something.
+   - None: Here is what a good line says. The energy transferred when a force moves something.
+   - Don't know: A good line would be: work done is the energy transferred when a force moves something. (with the turn-taking opener)
 
 41. [4.10] Tutor: Now for a short quiz: six questions on the whole lesson. Take your time.
    Button: Next
@@ -249,21 +247,21 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    She types a number.
    - Right (50 W): Yes: P = E ÷ t = 500 ÷ 10 = 50 W.
    - Any other wrong answer: Not quite: 50 W. P = E ÷ t = 500 ÷ 10 = 50 W.
-   - Still doesn't know: That's fine. P = E ÷ t = 500 ÷ 10 = 50 W.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") P = E ÷ t = 500 ÷ 10 = 50 W.
    - She asks to move on or skip: P = E ÷ t = 500 ÷ 10 = 50 W.
 
 43. [4.12] Tutor asks: Quiz, question 2 of 6: a heater has a power of 3 kW. What is that in watts?
    She types a number.
    - Right (3000 W): Yes: 3 kW = 3 × 1000 W = 3000 W.
    - Any other wrong answer: Not quite: 3000 W. 1 kW = 1000 W, so 3 kW = 3000 W.
-   - Still doesn't know: That's fine. 1 kW = 1000 W, so 3 kW = 3000 W.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 1 kW = 1000 W, so 3 kW = 3000 W.
    - She asks to move on or skip: 1 kW = 1000 W, so 3 kW = 3000 W.
 
 44. [4.13] Tutor asks: Quiz, question 3 of 6: a 100 W lamp is on for 1 minute. How much energy does it transfer, in joules?
    She types a number.
    - Right (6000 J): Yes: 1 minute is 60 s, and E = P × t = 100 × 60 = 6000 J.
    - Any other wrong answer: Not quite: 6000 J. 1 minute is 60 s, and E = P × t = 100 × 60 = 6000 J.
-   - Still doesn't know: That's fine. 1 minute is 60 s, so E = P × t = 100 × 60 = 6000 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 1 minute is 60 s, so E = P × t = 100 × 60 = 6000 J.
    - She asks to move on or skip: 1 minute is 60 s, so E = P × t = 100 × 60 = 6000 J.
 
 45. [4.14] Tutor asks: Quiz, question 4 of 6: what unit is power measured in?
@@ -271,14 +269,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Watts"): Yes: watts. 1 W is 1 J each second.
    - "Joules" (wrong idea w1: ): Not quite: joules measure energy. Power, the energy each second, is measured in watts.
    - "Newtons" (wrong idea w2: ): Not quite: newtons measure force. Power is measured in watts.
-   - Still doesn't know: That's fine. Power is measured in watts: 1 W is 1 J each second.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Power is measured in watts: 1 W is 1 J each second.
    - She asks to move on or skip: Power is measured in watts: 1 W is 1 J each second.
 
 46. [4.15] Tutor asks: Quiz, question 5 of 6: a force of 20 N moves a box 5 m. How much work is done, in joules?
    She types a number.
    - Right (100 J): Yes: W = F × s = 20 × 5 = 100 J.
    - Any other wrong answer: Not quite: 100 J. W = F × s = 20 × 5 = 100 J.
-   - Still doesn't know: That's fine. W = F × s = 20 × 5 = 100 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") W = F × s = 20 × 5 = 100 J.
    - She asks to move on or skip: W = F × s = 20 × 5 = 100 J.
 
 47. [4.16] Tutor asks: Quiz, question 6 of 6: a 2 kW heater warms a room in 30 minutes. How long would a 1 kW heater take to transfer the same energy?
@@ -286,7 +284,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("60 minutes"): Yes: half the power, so twice the time for the same energy.
    - "15 minutes" (wrong idea w1: ): Not quite: 60 minutes. Less power means slower, so it takes longer, not shorter: half the power, twice the time.
    - "30 minutes" (wrong idea w2: ): Not quite: 60 minutes. The power does matter: half the power transfers the same energy in twice the time.
-   - Still doesn't know: That's fine. Half the power transfers the same energy in twice the time: 60 minutes.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Half the power transfers the same energy in twice the time: 60 minutes.
    - She asks to move on or skip: Half the power transfers the same energy in twice the time: 60 minutes.
 
 48. [4.17] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
@@ -294,5 +292,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## The end
 
-49. Tutor: The lesson is finished. Tap a button to go on.
+49. Tutor: Summary, point 1 of 4: Power is the energy transferred each second, measured in watts.
+50. Tutor: Summary, point 2 of 4: Power in watts, energy in joules and time in seconds.
+51. Tutor: Summary, point 3 of 4: The kettle transfers more energy each second than the charger.
+52. Tutor: Summary, point 4 of 4: Work done is the energy transferred when a force moves something.
+
+53. Tutor: The lesson is finished. Tap a button to go on.
    Buttons: "Go to the slides" / "Home"

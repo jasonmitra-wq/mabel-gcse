@@ -24,11 +24,12 @@ const CHECKS = {
   'repeat-fact': 'F1', 'dangling-opener': 'F2', 'term-before-explained': 'F3', 'word-box': 'F4', 'later-term': 'F4',
   'two-new-terms': 'F5', 'echo': 'F6', 'idk-harder': 'F7', 'answer-before-question': 'F8', 'revision': 'F9',
   'equation-before-symbols': 'F10', 'worked-twice': 'F11', 'stock-praise': 'F12', 'widget-term': 'F12', 'over-60': 'P6',
+  'idk-opener': 'F14', 'own-multi-point': 'F15', 'no-summary': 'F16', 'question-comment': 'F17',
 };
 const OPENER = /^\W*(it|its|it's|they|they're|them|their|this|that|these|those|so|he|she|which|to (?:find|do|work out|get) (?:it|this|that|them))\b/i;
 const LEAD = /^\W*(yes, that'?s right|that'?s right|partly right|not quite|that'?s fine|no problem|ok, moving on|ok, let'?s finish this one|here'?s the rest of this one|let me just tell you this bit|back to (?:the|my) question|fair enough|noted|ha, i get that|no worries)\W*$/i;
 // Messages made in code from the lesson file (questions, their marking, buttons' words): not the tutor's teaching.
-const CODE_MSG = /^\W*(quick question|quiz, question|before the practical|from the last lesson|back to (?:the|my) question|your turn|another one|worked example|here is a worked example|predict first|try it|tap your answer|tap one of the answers|good place for a break|one last thing|done: this lesson|that's the end of the quiz|see you next time|copy those into your notes|the equation is|that's as far as this version goes|now, the question again|have a go at the question|no worries\. back to the question|tap or type your answer first|type your answer as a number)\b/i;
+const CODE_MSG = /^\W*(summary, point \d+ of \d+|quick question|quiz, question|before the practical|from the last lesson|back to (?:the|my) question|your turn|another one|worked example|here is a worked example|predict first|try it|tap your answer|tap one of the answers|good place for a break|one last thing|done: this lesson|that's the end of the quiz|see you next time|copy those into your notes|the equation is|that's as far as this version goes|now, the question again|have a go at the question|no worries\. back to the question|tap or type your answer first|type your answer as a number)\b/i;
 // Feedback on her answer: it may say the rule again (that is the correction), so it is not a repeated fact.
 const FEEDBACK = /^\W*(yes|not quite|right|that'?s fine|no problem|partly right|now back to the question)\b/i;
 const MC_FEEDBACK = /^\W*(yes, that'?s right[.:]|not quite: it'?s|yes, that step is right|yes, that'?s the way)/i;
@@ -134,6 +135,8 @@ function check(msgs, data) {
   const said = [];         // everything said so far (both), for new terms
   const defined = new Set();
   let lastQ = null;
+  const idkOps = [];          // the openers of her "don't know" replies, in order (F14)
+  let summaryAt = null, endAt = null;   // F16
   const eqDone = new Set();
   let asked = false;   // the last thing she typed was a question of her own
   msgs.forEach((m, i) => {
@@ -231,8 +234,29 @@ function check(msgs, data) {
       });
       sents.forEach(s => priorSents.push({ n: m.n, s }));
     }
+    // idk-opener (F14): a reply to her "don't know" opens with the same short line as one of the 5 before it.
+    // An opener is a first sentence of at most three words ("That's fine.", "No problem.").
+    if (prevUser && firstAfter && IDK.test(prevUser.text)) {
+      const op = (sents[0] && /[.!]$/.test(sents[0]) && _wordCount(sents[0]) <= 3) ? sents[0].toLowerCase() : '';
+      if (op && idkOps.slice(-5).includes(op)) add('idk-opener', m.n, `"${sents[0]}" opens a reply to "don't know" again within 5`);
+      idkOps.push(op);
+    }
+    // own-words-feedback (F15): the reply to her own-words line puts more than one point in one sentence.
+    const prevT2 = prevUser ? [...msgs.slice(0, msgs.indexOf(prevUser))].reverse().find(x => x.role === 'assistant') : null;
+    if (prevUser && firstAfter && !IDK.test(prevUser.text) && prevT2 && /^\W*in one line\b/i.test(_stripMarkdown(prevT2.text))
+        && !/^\W*(?:(?:no problem|ok|fair enough)\.\s*)?a good line would be:/i.test(plain)) {   // the script's model line, one sentence, is not feedback built from points
+      const multi = sents.find(s => /;\s*and\b/i.test(s) || (/:/.test(s) && /,\s*and\b/i.test(s.split(':').slice(1).join(':'))));
+      if (multi) add('own-multi-point', m.n, multi);
+    }
+    // question-comment (F17): the answer to her own question opens with a comment on the question.
+    if (asked && /^\W*(?:(?:that|this|the|your) question\b|(?:good|great|nice|fair|interesting|brilliant|excellent) (?:question|thing to ask|one)\b|(?:that'?s|that is|what) an? \w+ question\b)/i.test(plain))
+      add('question-comment', m.n, sents[0] || plain.slice(0, 80));
+    if (/^\W*summary, point \d+ of \d+:/i.test(plain)) summaryAt = m.n;
+    if (/^\W*(?:the lesson is finished|you have finished this lesson)\b/i.test(plain) && endAt === null) endAt = m.n;
     said.push(plain);
   });
+  // no-summary (F16): a scripted lesson reaches its end with no closing summary of its key points.
+  if (endAt !== null && summaryAt === null) add('no-summary', endAt, 'the lesson ended with no summary of its key points');
   return found;
 }
 

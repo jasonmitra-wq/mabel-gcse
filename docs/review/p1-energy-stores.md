@@ -27,7 +27,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Yes: it is heavy" (wrong idea heavy: ): Not quite: being heavy does not matter. The kinetic store is only for moving things, and the ball is lying still, so its kinetic store is empty.
    - "Yes: someone could kick it" (wrong idea could: ): Not quite: it might move later, but right now it is still, so its kinetic store is empty.
    - Don't know (first time): Kinetic is the store for moving things. Is the ball moving? (same buttons)
-   - Still doesn't know: That's fine. Only moving things have energy in their kinetic store, so a ball lying still has none.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Only moving things have energy in their kinetic store, so a ball lying still has none.
    - She asks to move on or skip: Only moving things have energy in their kinetic store, so a ball lying still has none.
 
 7. [1.7] Tutor: Second, the gravitational potential store: the energy of anything raised up. A book on a high shelf, or a roller coaster at the top of a hill, has energy in its gravitational potential store.
@@ -42,7 +42,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Kinetic" (wrong idea kinetic: ): Not quite: elastic potential. Nothing is moving while the person stands still, so the kinetic store is empty. The trampoline is stretched, and that fills its elastic potential store.
    - "Gravitational potential" (wrong idea gravity: ): Not quite: elastic potential. The trampoline has not been lifted higher; it has been stretched downwards, and that fills its elastic potential store.
    - Don't know (first time): The trampoline surface is stretched. Which store is for stretched or squashed things? (same buttons)
-   - Still doesn't know: That's fine. The trampoline is stretched, so the energy is in its elastic potential store.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The trampoline is stretched, so the energy is in its elastic potential store.
    - She asks to move on or skip: The trampoline is stretched, so the energy is in its elastic potential store.
 
 10. [1.10] Tutor: Fourth, the thermal store, which depends on how hot something is. Every object has some energy in its thermal store. A hot cup of tea has more than the same tea once it has gone cold.
@@ -57,7 +57,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "A spinning wheel" (wrong idea kinetic: ): Not quite: the full tank of petrol. A spinning wheel is moving, so its energy is in its kinetic store.
    - "A hot radiator" (wrong idea thermal: ): Not quite: the full tank of petrol. A hot radiator's energy is in its thermal store, because it is hot.
    - Don't know (first time): Food, fuels and batteries fill the chemical store. Which button is a fuel? (same buttons)
-   - Still doesn't know: That's fine. Petrol is a fuel, and fuels hold energy in their chemical store.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Petrol is a fuel, and fuels hold energy in their chemical store.
    - She asks to move on or skip: Petrol is a fuel, and fuels hold energy in their chemical store.
 
 13. [1.13] Tutor: The last three. Everything is made of tiny particles called atoms.
@@ -90,7 +90,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Electrostatic" (wrong idea static: ): Not quite: magnetic. Electrostatic is for charged things like a rubbed balloon; these are magnets.
    - "Elastic potential" (wrong idea elastic: ): Not quite: magnetic. Nothing is stretched or squashed; the energy was held between the magnets.
    - Don't know (first time): Both objects are magnets. Which store is named after magnets? (same buttons)
-   - Still doesn't know: That's fine. The energy was held between the magnets, in their magnetic store.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The energy was held between the magnets, in their magnetic store.
    - She asks to move on or skip: The energy was held between the magnets, in their magnetic store.
 
 22. [1.16] Tutor asks: A skier waits, not moving, at the top of a tall slope. Which store holds energy because of the skier's height?
@@ -99,7 +99,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Kinetic" (wrong idea kinetic: ): Not quite: gravitational potential. The skier is not moving yet, so the kinetic store is empty. Being high up fills the gravitational potential store.
    - "Elastic potential" (wrong idea elastic: ): Not quite: gravitational potential. Nothing is stretched or squashed. Being high up fills the gravitational potential store.
    - Don't know (first time): The skier is high up and not moving. Which store is for raised things? (same buttons)
-   - Still doesn't know: That's fine. Anything raised up has energy in its gravitational potential store.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Anything raised up has energy in its gravitational potential store.
    - She asks to move on or skip: Anything raised up has energy in its gravitational potential store.
 
 23. [1.17a] Tutor: Energy can move from one store to another. Watch what happens to a ball thrown straight up: it slows down as it rises.
@@ -111,15 +111,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Nowhere: it has run out" (wrong idea gone: ): Not quite: energy does not vanish; it moves to another store. As the ball rose and slowed, the energy moved from its kinetic store into its gravitational potential store.
    - "Into its elastic potential store" (wrong idea elastic: ): Not quite: nothing is stretched. The ball is higher up, so the energy went into its gravitational potential store.
    - Don't know (first time): As the ball rises, it slows down but gets higher. Which store grows as something gets higher? (same buttons)
-   - Still doesn't know: That's fine. The ball is higher up, so its kinetic store emptied into its gravitational potential store.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The ball is higher up, so its kinetic store emptied into its gravitational potential store.
    - She asks to move on or skip: The ball is higher up, so its kinetic store emptied into its gravitational potential store.
 
 25. [1.19] Tutor: In one line: which store fills up when something moves faster, when it is lifted higher, and when it is stretched?
    She types one line. The AI checks which of these points it makes: "kinetic when it moves faster", "gravitational potential when it is lifted higher", "elastic potential when it is stretched".
-   - All of them: Yes, your line has it: kinetic when it moves faster; and gravitational potential when it is lifted higher; and elastic potential when it is stretched.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: kinetic when it moves faster; and gravitational potential when it is lifted higher; and elastic potential when it is stretched.
-   - Don't know: No problem. A good line would be: moving faster fills the kinetic store, lifting higher fills the gravitational potential store, and stretching fills the elastic potential store.
+   - All of them: Yes: your line makes every point. You have this: kinetic when it moves faster. You have this: gravitational potential when it is lifted higher. You have this: elastic potential when it is stretched.
+   - Some (for example the first only): Partly there. You have this: kinetic when it moves faster. Still needed: gravitational potential when it is lifted higher. Still needed: elastic potential when it is stretched.
+   - None: Here is what a good line says. Kinetic when it moves faster. Gravitational potential when it is lifted higher. Elastic potential when it is stretched.
+   - Don't know: A good line would be: moving faster fills the kinetic store, lifting higher fills the gravitational potential store, and stretching fills the elastic potential store. (with the turn-taking opener)
 
 ## Key point 2: The four ways energy is transferred
 
@@ -144,7 +144,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "From the can to your hand: the cold flows in" (wrong idea cold: ): Not quite: cold is not something that flows. Energy passes from the hotter thing to the cooler one: from your hand to the can. Your hand feels colder because it is losing energy.
    - "Nowhere: no energy moves" (wrong idea none: ): Not quite: your hand gets colder, so it is losing energy. It goes from your hand to the cooler can, by heating.
    - Don't know (first time): Heating always moves energy from the hotter object to the cooler one. Which is hotter, your hand or the can? (same buttons)
-   - Still doesn't know: That's fine. Your hand is hotter, so energy passes from your hand to the can by heating.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Your hand is hotter, so energy passes from your hand to the can by heating.
    - She asks to move on or skip: Your hand is hotter, so energy passes from your hand to the can by heating.
 
 32. [2.5] Tutor: The fourth: by radiation, which means waves such as light and infrared. Infrared is the invisible warmth you feel from a fire or the Sun. Things that take in light or infrared get warmer.
@@ -156,7 +156,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Mechanically" (wrong idea mech: ): Not quite: electrically. Nothing is being pushed or pulled by a hand or a moving part; the energy travels by a current in the cable.
    - "By radiation" (wrong idea rad: ): Not quite: electrically. Radiation is light and infrared waves; through a cable, the energy goes by a current.
    - Don't know (first time): A cable carries a current. Which pathway uses a current? (same buttons)
-   - Still doesn't know: That's fine. A current in the cable carries the energy to the phone, so the energy goes electrically.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A current in the cable carries the energy to the phone, so the energy goes electrically.
    - She asks to move on or skip: A current in the cable carries the energy to the phone, so the energy goes electrically.
 
 34. [2.7] Tutor: To describe a transfer in one sentence, name the pathway, the store the energy leaves and the store it goes into.
@@ -171,7 +171,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "chemical" (wrong idea chemical: ): Not quite: gravitational potential. The apple does have a chemical store, as food, but falling does not use it. Falling empties the gravitational potential store.
    - "thermal" (wrong idea thermal: ): Not quite: gravitational potential. The apple is not getting cooler as it falls; it is getting lower.
    - Don't know (first time): The apple starts high up. Which store is for raised things? (same buttons)
-   - Still doesn't know: That's fine. The apple starts high up, so energy leaves its gravitational potential store.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The apple starts high up, so energy leaves its gravitational potential store.
    - She asks to move on or skip: The apple starts high up, so energy leaves its gravitational potential store.
 
 37. [2.9b] Tutor asks: A child slides down a slide, and the slide gets warm. Which sentence describes the warming best?
@@ -180,15 +180,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Energy is transferred by heating from the thermal store of the slide to the child's kinetic store" (wrong idea reverse: ): Not quite: the other way round. The slide warms up, so energy goes into its thermal store, from the child's gravitational potential store, by the rubbing force.
    - "Energy is transferred electrically from the child's chemical store to the thermal store of the slide" (wrong idea elec: ): Not quite: there is no current in a slide. The rubbing force transfers energy mechanically from the child's gravitational potential store to the thermal store of the slide.
    - Don't know (first time): The child loses height, and the slide warms up. Which sentence has energy leaving the store for height and going into the slide's thermal store? (same buttons)
-   - Still doesn't know: That's fine. The rubbing force transfers energy mechanically from the child's gravitational potential store to the thermal store of the slide.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The rubbing force transfers energy mechanically from the child's gravitational potential store to the thermal store of the slide.
    - She asks to move on or skip: The rubbing force transfers energy mechanically from the child's gravitational potential store to the thermal store of the slide.
 
 38. [2.10] Tutor: In one line: what are the four pathways energy can be transferred by?
    She types one line. The AI checks which of these points it makes: "mechanically (by a force)", "electrically (by a current)", "by heating", "by radiation".
-   - All of them: Yes, your line has it: mechanically (by a force); and electrically (by a current); and by heating; and by radiation.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: mechanically (by a force); and electrically (by a current); and by heating; and by radiation.
-   - Don't know: No problem. A good line would be: energy is transferred mechanically by a force, electrically by a current, by heating, or by radiation.
+   - All of them: Yes: your line makes every point. You have this: mechanically (by a force). You have this: electrically (by a current). You have this: by heating. You have this: by radiation.
+   - Some (for example the first only): Partly there. You have this: mechanically (by a force). Still needed: electrically (by a current). Still needed: by heating. Still needed: by radiation.
+   - None: Here is what a good line says. Mechanically (by a force). Electrically (by a current). By heating. By radiation.
+   - Don't know: A good line would be: energy is transferred mechanically by a force, electrically by a current, by heating, or by radiation. (with the turn-taking opener)
 
 ## Key point 3: Conservation of energy — the rule that never breaks
 
@@ -213,7 +213,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It has been used up and is gone" (wrong idea usedup: ): Not quite: energy is never destroyed. The battery's chemical store has emptied, and the energy went by light and heating into the thermal store of the room. The battery runs down; the energy does not.
    - "It is still inside the battery" (wrong idea charge: ): Not quite: the battery is flat, so its chemical store has emptied. The current carried the energy to the bulb, which sent it out by light and heating, and in the end it warms the room.
    - Don't know (first time): Energy cannot be destroyed, so it has gone somewhere. The torch gave out light and got warm. Which button says where? (same buttons)
-   - Still doesn't know: That's fine. Energy cannot be destroyed: it went by light and heating into the thermal store of the surroundings.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Energy cannot be destroyed: it went by light and heating into the thermal store of the surroundings.
    - She asks to move on or skip: Energy cannot be destroyed: it went by light and heating into the thermal store of the surroundings.
 
 45. [3.5] Tutor: Another example: a ball hits a wall and stops. Its kinetic store falls to zero, and the thermal stores of the ball and the wall rise: both get very slightly warmer.
@@ -225,7 +225,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Its kinetic store" (wrong idea kinetic: ): Not quite: the water does swirl as it boils, but that is small. The big change is that it gets much hotter, so its thermal store rises.
    - "Its chemical store" (wrong idea chemical: ): Not quite: boiling water is not a fuel or a food. It gets hotter, so its thermal store rises.
    - Don't know (first time): The water gets hotter. Which store depends on how hot something is? (same buttons)
-   - Still doesn't know: That's fine. The water gets hotter, so its thermal store rises.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The water gets hotter, so its thermal store rises.
    - She asks to move on or skip: The water gets hotter, so its thermal store rises.
 
 47. [3.7] Tutor asks: A moving trolley rolls to a stop on a carpet. Which describes it best?
@@ -234,15 +234,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "It ran out of force as it rolled over the carpet" (wrong idea force: ): Not quite: a moving thing does not carry force. It has energy in its kinetic store, and rubbing on the carpet transferred that to the thermal stores of the trolley, carpet and air.
    - "The carpet destroyed its energy as it slowed it down" (wrong idea destroyed: ): Not quite: energy is never destroyed. Rubbing on the carpet moved it from the trolley's kinetic store to the thermal stores of the trolley, carpet and air.
    - Don't know (first time): Energy cannot be destroyed. When things rub, they get a little warmer. Which button says that? (same buttons)
-   - Still doesn't know: That's fine. Rubbing on the carpet moved the energy from the kinetic store to the thermal stores of the trolley, carpet and air.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Rubbing on the carpet moved the energy from the kinetic store to the thermal stores of the trolley, carpet and air.
    - She asks to move on or skip: Rubbing on the carpet moved the energy from the kinetic store to the thermal stores of the trolley, carpet and air.
 
 48. [3.8] Tutor: In one line: what does the law of conservation of energy say?
    She types one line. The AI checks which of these points it makes: "energy cannot be created or destroyed", "it can only be transferred from store to store".
-   - All of them: Yes, your line has it: energy cannot be created or destroyed; and it can only be transferred from store to store.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: energy cannot be created or destroyed; and it can only be transferred from store to store.
-   - Don't know: No problem. A good line would be: energy cannot be created or destroyed; it can only be transferred from one store to another.
+   - All of them: Yes: your line makes every point. You have this: energy cannot be created or destroyed. You have this: it can only be transferred from store to store.
+   - Some (for example the first only): Partly there. You have this: energy cannot be created or destroyed. Still needed: it can only be transferred from store to store.
+   - None: Here is what a good line says. Energy cannot be created or destroyed. It can only be transferred from store to store.
+   - Don't know: A good line would be: energy cannot be created or destroyed; it can only be transferred from one store to another. (with the turn-taking opener)
 
 ## Key point 4: Dissipation — where useful energy goes to die
 
@@ -268,7 +268,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Useful energy" (wrong idea useful: ): Not quite. A TV's job is light and sound, so the energy that only warms its back is wasted energy, dissipated to the surroundings.
    - "Destroyed energy" (wrong idea destroyed: ): Not quite: the energy still exists. The energy that warms the TV is wasted energy, dissipated to the thermal store of the surroundings.
    - Don't know (first time): A TV's job is to give light and sound. Is warming its back part of that job? (same buttons)
-   - Still doesn't know: That's fine. A TV's job is light and sound, so the energy that warms its back is wasted, dissipated to the surroundings.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") A TV's job is light and sound, so the energy that warms its back is wasted, dissipated to the surroundings.
    - She asks to move on or skip: A TV's job is light and sound, so the energy that warms its back is wasted, dissipated to the surroundings.
 
 55. [4.7] Tutor asks: A hot drink cools down in a room. Can the energy that left it be used to heat the drink back up?
@@ -277,15 +277,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Yes: it is all still in the room, so the room will heat the drink again" (wrong idea room: ): Not quite: the energy is still in the room, but spread so thinly that the room is only a tiny bit warmer. A slightly warm room cannot heat a drink back up.
    - "Yes, if you wait long enough" (wrong idea fridge: ): Not quite: waiting will not help. The drink ends up at room temperature, and the energy that left it stays spread thinly through the room.
    - Don't know (first time): The room only gets a tiny bit warmer. Can a room that is only a tiny bit warmer heat up a drink? (same buttons)
-   - Still doesn't know: That's fine. The energy is spread so thinly through the room that it cannot heat the drink again: it is dissipated.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The energy is spread so thinly through the room that it cannot heat the drink again: it is dissipated.
    - She asks to move on or skip: The energy is spread so thinly through the room that it cannot heat the drink again: it is dissipated.
 
 56. [4.8] Tutor: In one line: what does it mean when energy is dissipated?
    She types one line. The AI checks which of these points it makes: "it spreads out into the surroundings", "so it is no longer useful".
-   - All of them: Yes, your line has it: it spreads out into the surroundings; and so it is no longer useful.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: it spreads out into the surroundings; and so it is no longer useful.
-   - Don't know: No problem. A good line would be: dissipated energy has spread out into the surroundings, so it is no longer useful.
+   - All of them: Yes: your line makes every point. You have this: it spreads out into the surroundings. You have this: so it is no longer useful.
+   - Some (for example the first only): Partly there. You have this: it spreads out into the surroundings. Still needed: so it is no longer useful.
+   - None: Here is what a good line says. It spreads out into the surroundings. So it is no longer useful.
+   - Don't know: A good line would be: dissipated energy has spread out into the surroundings, so it is no longer useful. (with the turn-taking opener)
 
 ## Key point 5: Sankey diagrams and efficiency
 
@@ -303,7 +303,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 5 (wrong idea divide): Not quite: 48 J. To find the wasted energy, subtract: 60 − 12 = 48 J.
    - Any other wrong answer: Not quite: 48 J. Wasted = total in − useful out = 60 − 12 = 48 J.
    - Don't know (first time): All 60 J has to go somewhere: 12 J as light, and the rest wasted. Work out 60 − 12.
-   - Still doesn't know: That's fine. Wasted = total in − useful out = 60 − 12 = 48 J.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Wasted = total in − useful out = 60 − 12 = 48 J.
    - She asks to move on or skip: Wasted = total in − useful out = 60 − 12 = 48 J.
 
 60. [5.3b] Tutor asks: In the first lamp's Sankey diagram, with 100 J going in, which arrow is wider?
@@ -312,7 +312,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The useful arrow, because it is the important one" (wrong idea useful: ): Not quite: the width shows the amount of energy, not how important it is. 85 J is wasted and 15 J is useful, so the wasted arrow is wider.
    - "They are the same width" (wrong idea same: ): Not quite: each arrow's width shows its own amount. 85 J is more than 15 J, so the wasted arrow is wider.
    - Don't know (first time): The width of an arrow shows how much energy it carries. Which carries more, 85 J or 15 J? (same buttons)
-   - Still doesn't know: That's fine. The width shows the amount of energy, and 85 J wasted is more than 15 J useful, so the wasted arrow is wider.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The width shows the amount of energy, and 85 J wasted is more than 15 J useful, so the wasted arrow is wider.
    - She asks to move on or skip: The width shows the amount of energy, and 85 J wasted is more than 15 J useful, so the wasted arrow is wider.
 
 61. [5.4] Tutor: Efficiency is the fraction of the energy put in that does a useful job. Efficiency = useful output energy ÷ total input energy: the useful energy out divided by all the energy put in, both in joules.
@@ -338,7 +338,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - She types 111 (wrong idea upside): Not quite: 90%. Divide the useful energy by the total: 1800 ÷ 2000 = 0.9, which is 90%.
    - Any other wrong answer: Not quite: 90%. Efficiency = 1800 ÷ 2000 = 0.9, which is 90%.
    - Don't know (first time): Divide the useful energy, 1800, by the total, 2000. Then multiply by 100.
-   - Still doesn't know: That's fine. Efficiency = 1800 ÷ 2000 = 0.9, and 0.9 × 100 = 90%.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Efficiency = 1800 ÷ 2000 = 0.9, and 0.9 × 100 = 90%.
    - She asks to move on or skip: Efficiency = 1800 ÷ 2000 = 0.9, and 0.9 × 100 = 90%.
 
 66. [5.8] Tutor asks: Someone works out that a machine has an efficiency of 120%. What does that tell you?
@@ -347,15 +347,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The machine is very good" (wrong idea good: ): Not quite: over 100% is impossible. The useful energy out can never be more than the energy in, so it is a mistake, usually dividing the wrong way round.
    - "The machine makes extra energy" (wrong idea makes: ): Not quite: energy cannot be created, so no machine makes extra. Over 100% is a mistake, usually dividing the wrong way round.
    - Don't know (first time): Can a machine give out more energy than is put in? (same buttons)
-   - Still doesn't know: That's fine. Energy cannot be created, so an efficiency is never more than 100% (or 1).
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Energy cannot be created, so an efficiency is never more than 100% (or 1).
    - She asks to move on or skip: Energy cannot be created, so an efficiency is never more than 100% (or 1).
 
 67. [5.9] Tutor: In one line: how do you work out efficiency?
    She types one line. The AI checks which of these points it makes: "useful output energy divided by total input energy".
-   - All of them: Yes, your line has it: useful output energy divided by total input energy.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: useful output energy divided by total input energy.
-   - Don't know: No problem. A good line would be: efficiency = useful output energy ÷ total input energy, times 100 for a percentage.
+   - All of them: Yes: your line makes the point. You have this: useful output energy divided by total input energy.
+   - None: Here is what a good line says. Useful output energy divided by total input energy.
+   - Don't know: A good line would be: efficiency = useful output energy ÷ total input energy, times 100 for a percentage. (with the turn-taking opener)
 
 68. [5.10] Tutor: Now for a short quiz: six questions on the whole lesson. Take your time.
    Button: Next
@@ -365,7 +364,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Elastic potential"): Yes: stretched things have energy in their elastic potential store.
    - "Kinetic" (wrong idea w1: ): Not quite: elastic potential, the store for stretched or squashed things.
    - "Chemical" (wrong idea w2: ): Not quite: elastic potential, the store for stretched or squashed things.
-   - Still doesn't know: That's fine. Stretched things have energy in their elastic potential store.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Stretched things have energy in their elastic potential store.
    - She asks to move on or skip: Stretched things have energy in their elastic potential store.
 
 70. [5.12] Tutor asks: Quiz, question 2 of 6: which pathway carries energy from the Sun to the Earth?
@@ -373,7 +372,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("By radiation"): Yes: by radiation, as light and infrared waves.
    - "Electrically" (wrong idea w1: ): Not quite: by radiation, as light and infrared waves.
    - "Mechanically" (wrong idea w2: ): Not quite: by radiation, as light and infrared waves.
-   - Still doesn't know: That's fine. Energy reaches the Earth from the Sun by radiation, as light and infrared.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Energy reaches the Earth from the Sun by radiation, as light and infrared.
    - She asks to move on or skip: Energy reaches the Earth from the Sun by radiation, as light and infrared.
 
 71. [5.13] Tutor asks: Quiz, question 3 of 6: which statement is true?
@@ -381,7 +380,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Energy cannot be created or destroyed"): Yes: that is the law of conservation of energy.
    - "A power station creates energy" (wrong idea w1: ): Not quite: a power station does not create energy; it transfers it from a fuel or another store. Energy cannot be created or destroyed.
    - "Energy is used up when a battery goes flat" (wrong idea w2: ): Not quite: the battery runs down, but its energy is not used up. It moves to other stores, mostly the thermal store of the surroundings.
-   - Still doesn't know: That's fine. Energy cannot be created or destroyed: the law of conservation of energy.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Energy cannot be created or destroyed: the law of conservation of energy.
    - She asks to move on or skip: Energy cannot be created or destroyed: the law of conservation of energy.
 
 72. [5.14] Tutor asks: Quiz, question 4 of 6: a device takes in 200 J and gives out 50 J usefully. What is its efficiency, as a percentage?
@@ -389,7 +388,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right (25 %): Yes: 50 ÷ 200 = 0.25, which is 25%.
    - She types 0.25 (wrong idea decimal): Nearly: 0.25 is the efficiency as a decimal. As a percentage, multiply by 100: 25%.
    - Any other wrong answer: Not quite: 25%. 50 ÷ 200 = 0.25, and 0.25 × 100 = 25%.
-   - Still doesn't know: That's fine. 50 ÷ 200 = 0.25, and 0.25 × 100 = 25%.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") 50 ÷ 200 = 0.25, and 0.25 × 100 = 25%.
    - She asks to move on or skip: 50 ÷ 200 = 0.25, and 0.25 × 100 = 25%.
 
 73. [5.15] Tutor asks: Quiz, question 5 of 6: where does most wasted energy end up?
@@ -397,7 +396,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("The thermal store of the surroundings"): Yes: it is dissipated to the thermal store of the surroundings.
    - "The chemical store of the device" (wrong idea w1: ): Not quite: it is dissipated to the thermal store of the surroundings.
    - "The kinetic store of the device" (wrong idea w2: ): Not quite: it is dissipated to the thermal store of the surroundings.
-   - Still doesn't know: That's fine. Wasted energy is dissipated to the thermal store of the surroundings.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Wasted energy is dissipated to the thermal store of the surroundings.
    - She asks to move on or skip: Wasted energy is dissipated to the thermal store of the surroundings.
 
 74. [5.16] Tutor asks: Quiz, question 6 of 6: a ball rolls along the floor and stops. An exam asks you to describe the energy changes. Which answer scores?
@@ -405,7 +404,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Energy is transferred mechanically, by friction, from the ball's kinetic store to the thermal stores of the floor and air"): Yes: the pathway, the store the energy leaves and the store it goes into.
    - "Kinetic and thermal" (wrong idea w1: ): Not quite. Name the pathway and both stores: energy is transferred mechanically, by friction, from the ball's kinetic store to the thermal stores of the floor and air.
    - "The ball's energy is used up by the floor" (wrong idea w2: ): Not quite: energy is never used up. Energy is transferred mechanically, by friction, from the ball's kinetic store to the thermal stores of the floor and air.
-   - Still doesn't know: That's fine. Energy is transferred mechanically, by friction, from the ball's kinetic store to the thermal stores of the floor and air.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Energy is transferred mechanically, by friction, from the ball's kinetic store to the thermal stores of the floor and air.
    - She asks to move on or skip: Energy is transferred mechanically, by friction, from the ball's kinetic store to the thermal stores of the floor and air.
 
 75. [5.17] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
@@ -413,5 +412,11 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## The end
 
-76. Tutor: The lesson is finished. Tap a button to go on.
+76. Tutor: Summary, point 1 of 5: Moving faster fills the kinetic store, lifting higher fills the gravitational potential store, and stretching fills the elastic potential store.
+77. Tutor: Summary, point 2 of 5: Energy is transferred mechanically by a force, electrically by a current, by heating, or by radiation.
+78. Tutor: Summary, point 3 of 5: Energy cannot be created or destroyed; it can only be transferred from one store to another.
+79. Tutor: Summary, point 4 of 5: Dissipated energy has spread out into the surroundings, so it is no longer useful.
+80. Tutor: Summary, point 5 of 5: Efficiency = useful output energy ÷ total input energy, times 100 for a percentage.
+
+81. Tutor: The lesson is finished. Tap a button to go on.
    Buttons: "Go to the slides" / "Home"

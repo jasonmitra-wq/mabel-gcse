@@ -15,7 +15,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The amount of charge stored in a battery" (wrong idea stored: ): Not quite: current is the rate of flow of charge, how much charge passes a point each second.
    - "The heat given off by a wire" (wrong idea heat: ): Not quite: current is the rate of flow of charge, how much charge passes a point each second.
    - Don't know (first time): Current is about how much charge passes a point each second. Which button says that? (same buttons)
-   - Still doesn't know: That's fine. Current is the rate of flow of charge: how much charge passes a point each second.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Current is the rate of flow of charge: how much charge passes a point each second.
    - She asks to move on or skip: Current is the rate of flow of charge: how much charge passes a point each second.
 
 3. [1.2] Tutor: Now, this lesson. Everything is made of atoms. Each atom has a tiny centre, called the nucleus, which holds particles called protons.
@@ -36,7 +36,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Positive" (wrong idea pos: ): Not quite: negative. Electrons carry negative charge, and the balloon has gained some, so it has more negative charge than positive.
    - "No charge" (wrong idea none: ): Not quite: negative. The balloon has gained electrons, which carry negative charge, so its charges no longer cancel.
    - Don't know (first time): Electrons carry negative charge. The balloon has gained some. Which button fits? (same buttons)
-   - Still doesn't know: That's fine. The balloon has gained electrons, which are negative, so it is negatively charged.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The balloon has gained electrons, which are negative, so it is negatively charged.
    - She asks to move on or skip: The balloon has gained electrons, which are negative, so it is negatively charged.
 
 8. [1.6] Tutor asks: And the wool has lost some electrons. What charge is the wool left with?
@@ -45,7 +45,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Negative" (wrong idea neg: ): Not quite: positive. The wool lost some negative electrons, so its positive protons now outnumber them.
    - "No charge" (wrong idea none: ): Not quite: positive. The wool lost some electrons, so its charges no longer cancel: the protons outnumber the electrons.
    - Don't know (first time): The wool still has all its protons, but fewer electrons. Is there more positive or more negative charge? (same buttons)
-   - Still doesn't know: That's fine. The wool lost electrons, so its protons outnumber its electrons: it is positive.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The wool lost electrons, so its protons outnumber its electrons: it is positive.
    - She asks to move on or skip: The wool lost electrons, so its protons outnumber its electrons: it is positive.
 
 9. [1.7] Tutor: The material that gains electrons becomes negatively charged. The material that loses them is left with an equal positive charge: exactly as much positive charge as the other has negative.
@@ -66,15 +66,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "The rod gained protons from the cloth" (wrong idea protons: ): Not quite: protons stay inside the atoms and cannot be rubbed off. The rod became positive because it lost electrons to the cloth.
    - "The rubbing made new positive charge" (wrong idea made: ): Not quite: rubbing does not make charge, it only moves electrons. The rod became positive because it lost electrons to the cloth.
    - Don't know (first time): Only electrons can be rubbed off. To end up positive, did the rod gain them or lose them? (same buttons)
-   - Still doesn't know: That's fine. Only electrons move, so the rod became positive by losing electrons to the cloth.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Only electrons move, so the rod became positive by losing electrons to the cloth.
    - She asks to move on or skip: Only electrons move, so the rod became positive by losing electrons to the cloth.
 
 14. [1.11] Tutor: In one line: how does rubbing make a balloon negatively charged?
    She types one line. The AI checks which of these points it makes: "electrons are rubbed onto the balloon from the other material".
-   - All of them: Yes, your line has it: electrons are rubbed onto the balloon from the other material.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: electrons are rubbed onto the balloon from the other material.
-   - Don't know: No problem. A good line would be: electrons are rubbed onto the balloon from the other material; only electrons move, not protons.
+   - All of them: Yes: your line makes the point. You have this: electrons are rubbed onto the balloon from the other material.
+   - None: Here is what a good line says. Electrons are rubbed onto the balloon from the other material.
+   - Don't know: A good line would be: electrons are rubbed onto the balloon from the other material; only electrons move, not protons. (with the turn-taking opener)
 
 ## Key point 2: Same and different types of charge
 
@@ -87,7 +86,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Together" (wrong idea together: ): Not quite: they swing apart. Both rods have the same type of charge, negative, and the same type of charge pushes apart.
    - "They do not move" (wrong idea none: ): Not quite: they swing apart. Charged objects push or pull each other, and two with the same type of charge push apart.
    - Don't know (first time): Both rods have the same type of charge. Do you think they push each other away, or pull together? Which button fits? (same buttons)
-   - Still doesn't know: That's fine. Both rods are negative, and the same type of charge pushes apart, so they swing apart.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Both rods are negative, and the same type of charge pushes apart, so they swing apart.
    - She asks to move on or skip: Both rods are negative, and the same type of charge pushes apart, so they swing apart.
 
 17. [2.3] Tutor: Two objects with the same type of charge repel: they push each other apart. A push like that between charged objects is called repulsion.
@@ -99,7 +98,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Apart" (wrong idea apart: ): Not quite: they swing together. Their charges are different types, and different types pull together.
    - "They do not move" (wrong idea none: ): Not quite: they swing together. Charged objects push or pull each other, and different types of charge pull together.
    - Don't know (first time): One rod is negative and the other positive. Same type pushes apart; what do you think different types do? (same buttons)
-   - Still doesn't know: That's fine. One rod is negative and one is positive, and different types of charge pull together.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") One rod is negative and one is positive, and different types of charge pull together.
    - She asks to move on or skip: One rod is negative and one is positive, and different types of charge pull together.
 
 19. [2.4] Tutor: Two objects with different types of charge, one positive and one negative, attract: they pull together. A pull like that between charged objects is called attraction.
@@ -111,7 +110,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Some are positive and some negative" (wrong idea opposite: ): Not quite: positive and negative hairs would pull together. The hairs push apart, so they all have the same type of charge.
    - "The hairs have become magnetic" (wrong idea magnet: ): Not quite: this is not magnetism. The hairs are charged, and because they push apart, they all have the same type of charge.
    - Don't know (first time): Same type of charge pushes apart; different types pull together. The hairs push apart. Which button fits? (same buttons)
-   - Still doesn't know: That's fine. The hairs push apart, and only the same type of charge does that.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The hairs push apart, and only the same type of charge does that.
    - She asks to move on or skip: The hairs push apart, and only the same type of charge does that.
 
 21. [2.6] Tutor: The objects do not need to touch: attraction and repulsion between charged objects are non-contact forces. A force is a push or a pull.
@@ -126,15 +125,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "She becomes positive, the opposite of the dome" (wrong idea opposite: ): Not quite: electrons from the dome spread onto her, so she becomes negative, the same as the dome. Her hairs, all negative, repel.
    - "Protons move from the dome onto her" (wrong idea protons: ): Not quite: protons stay inside the atoms. Electrons spread from the dome onto her, so she becomes negative and her hairs repel.
    - Don't know (first time): Electrons are negative, and they spread from the dome onto her. Which button says she becomes negative? (same buttons)
-   - Still doesn't know: That's fine. Electrons spread from the dome onto her, so she becomes negative like the dome, and her negative hairs repel.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Electrons spread from the dome onto her, so she becomes negative like the dome, and her negative hairs repel.
    - She asks to move on or skip: Electrons spread from the dome onto her, so she becomes negative like the dome, and her negative hairs repel.
 
 24. [2.8] Tutor: In one line: when do two charged objects attract, and when do they repel?
    She types one line. The AI checks which of these points it makes: "the same type of charge repels", "different types of charge attract".
-   - All of them: Yes, your line has it: the same type of charge repels; and different types of charge attract.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: the same type of charge repels; and different types of charge attract.
-   - Don't know: No problem. A good line would be: two objects with the same type of charge repel, and two with different types attract.
+   - All of them: Yes: your line makes every point. You have this: the same type of charge repels. You have this: different types of charge attract.
+   - Some (for example the first only): Partly there. You have this: the same type of charge repels. Still needed: different types of charge attract.
+   - None: Here is what a good line says. The same type of charge repels. Different types of charge attract.
+   - Don't know: A good line would be: two objects with the same type of charge repel, and two with different types attract. (with the turn-taking opener)
 
 ## Key point 3: Electric fields
 
@@ -157,7 +156,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "Away from the sphere" (wrong idea away: ): Not quite: the arrows show the push on a small positive charge, and around the negative sphere they point inwards. So the force is towards the sphere.
    - "Round the sphere in a circle" (wrong idea circle: ): Not quite: the force acts along a field line. Around the negative sphere the lines point inwards, so the force is towards the sphere.
    - Don't know (first time): The arrows show which way a small positive charge is pushed. Around the negative sphere, which way do they point? (same buttons)
-   - Still doesn't know: That's fine. The arrows around the negative sphere point inwards, so the force on a small positive charge is towards the sphere.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The arrows around the negative sphere point inwards, so the force on a small positive charge is towards the sphere.
    - She asks to move on or skip: The arrows around the negative sphere point inwards, so the force on a small positive charge is towards the sphere.
 
 30. [3.7] Tutor: Where the field lines are closer together, the field is stronger. Near each sphere the lines bunch up, so the field is strongest there, and they spread out further away, where it is weaker.
@@ -165,10 +164,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 31. [3.8] Tutor: In one line: what is an electric field, and how does it change as you move away from the charged object?
    She types one line. The AI checks which of these points it makes: "the region where another charged object feels a force", "it gets weaker further away".
-   - All of them: Yes, your line has it: the region where another charged object feels a force; and it gets weaker further away.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: the region where another charged object feels a force; and it gets weaker further away.
-   - Don't know: No problem. A good line would be: the region around a charged object where another charged object feels a force, and it gets weaker further away.
+   - All of them: Yes: your line makes every point. You have this: the region where another charged object feels a force. You have this: it gets weaker further away.
+   - Some (for example the first only): Partly there. You have this: the region where another charged object feels a force. Still needed: it gets weaker further away.
+   - None: Here is what a good line says. The region where another charged object feels a force. It gets weaker further away.
+   - Don't know: A good line would be: the region around a charged object where another charged object feels a force, and it gets weaker further away. (with the turn-taking opener)
 
 ## Key point 4: Sparking
 
@@ -187,7 +186,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - "A spark is less likely" (wrong idea less: ): Not quite: the field is stronger closer to a charged object, so a spark is more likely.
    - "It makes no difference" (wrong idea same: ): Not quite: the field is stronger closer to a charged object, so a spark is more likely when it is closer.
    - Don't know (first time): The electric field is strongest close to a charged object. Does a stronger field make a spark more or less likely? (same buttons)
-   - Still doesn't know: That's fine. The field is stronger closer to a charged object, so a spark is more likely.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The field is stronger closer to a charged object, so a spark is more likely.
    - She asks to move on or skip: The field is stronger closer to a charged object, so a spark is more likely.
 
 36. [4.6] Tutor: Sparks can be dangerous. Even a small spark near petrol vapour or another flammable gas can start a fire or an explosion.
@@ -195,10 +194,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 37. [4.7] Tutor: In one line: what causes a spark?
    She types one line. The AI checks which of these points it makes: "a very strong electric field near a charged object", "electrons jump through the air".
-   - All of them: Yes, your line has it: a very strong electric field near a charged object; and electrons jump through the air.
-   - Some: Your line gets this right: <the points it makes>. A full line also says: <the points it misses>.
-   - None: A good line would say: a very strong electric field near a charged object; and electrons jump through the air.
-   - Don't know: No problem. A good line would be: near a highly charged object the electric field is very strong, so electrons jump through the air.
+   - All of them: Yes: your line makes every point. You have this: a very strong electric field near a charged object. You have this: electrons jump through the air.
+   - Some (for example the first only): Partly there. You have this: a very strong electric field near a charged object. Still needed: electrons jump through the air.
+   - None: Here is what a good line says. A very strong electric field near a charged object. Electrons jump through the air.
+   - Don't know: A good line would be: near a highly charged object the electric field is very strong, so electrons jump through the air. (with the turn-taking opener)
 
 38. [4.8] Tutor: Now for a short quiz on the whole lesson: seven questions. Take your time.
    Button: Next
@@ -208,7 +207,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Electrons"): Yes. Only electrons move.
    - "Protons" (wrong idea w1: ): Not quite. Protons stay inside the atoms. Only electrons move.
    - "Whole atoms" (wrong idea w2: ): Not quite. The atoms stay where they are. Only electrons move.
-   - Still doesn't know: That's fine. Only electrons move.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Only electrons move.
    - She asks to move on or skip: Only electrons move.
 
 40. [4.10] Tutor asks: Quiz, question 2 of 7: A cloth loses electrons to a rod. What charge is the cloth left with?
@@ -216,7 +215,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Positive"): Yes. Losing electrons leaves it positive.
    - "Negative" (wrong idea w1: ): Not quite. Losing negative electrons leaves the cloth positive.
    - "No charge" (wrong idea w2: ): Not quite. The cloth lost electrons, so it is positive.
-   - Still doesn't know: That's fine. Losing electrons leaves the cloth positive.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Losing electrons leaves the cloth positive.
    - She asks to move on or skip: Losing electrons leaves the cloth positive.
 
 41. [4.11] Tutor asks: Quiz, question 3 of 7: Two positively charged balloons are held close together. Which is true?
@@ -224,7 +223,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("They repel"): Yes. The same type of charge repels.
    - "They attract" (wrong idea w1: ): Not quite. The same type of charge repels.
    - "Nothing happens" (wrong idea w2: ): Not quite. Charged objects exert forces on each other: the same type repels.
-   - Still doesn't know: That's fine. The same type of charge repels.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The same type of charge repels.
    - She asks to move on or skip: The same type of charge repels.
 
 42. [4.12] Tutor asks: Quiz, question 4 of 7: Which way do the field lines around a positively charged sphere point?
@@ -232,7 +231,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("Outwards"): Yes. Outwards, the way a small positive charge would be pushed.
    - "Inwards" (wrong idea w1: ): Not quite. Inwards is for a negative sphere. Around a positive one they point outwards.
    - "Round in circles" (wrong idea w2: ): Not quite. The field lines are straight, pointing outwards from a positive sphere.
-   - Still doesn't know: That's fine. Around a positive sphere, the field lines point outwards.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Around a positive sphere, the field lines point outwards.
    - She asks to move on or skip: Around a positive sphere, the field lines point outwards.
 
 43. [4.13] Tutor asks: Quiz, question 5 of 7: Further away from a charged object, which is true about its electric field?
@@ -240,7 +239,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("It is weaker"): Yes. The field gets weaker further away.
    - "It is stronger" (wrong idea w1: ): Not quite. The field is strongest close to the object and weaker further away.
    - "It is the same everywhere" (wrong idea w2: ): Not quite. The field gets weaker further away.
-   - Still doesn't know: That's fine. The field gets weaker further from the charged object.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The field gets weaker further from the charged object.
    - She asks to move on or skip: The field gets weaker further from the charged object.
 
 44. [4.13b] Tutor asks: Quiz, question 6 of 7: What is an electric field?
@@ -248,14 +247,14 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Right ("The region around a charged object where another charged object feels a force"): Yes. The region where another charged object feels a force.
    - "The charge stored on a charged object" (wrong idea w1: ): Not quite. The field is not the charge itself. It is the region around a charged object where another charged object feels a force.
    - "The region around a magnet where iron feels a force" (wrong idea w2: ): Not quite. A region round a magnet is a magnetic field. An electric field is the region around a charged object where another charged object feels a force.
-   - Still doesn't know: That's fine. An electric field is the region around a charged object where another charged object feels a force.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") An electric field is the region around a charged object where another charged object feels a force.
    - She asks to move on or skip: An electric field is the region around a charged object where another charged object feels a force.
 
 45. [4.14] Tutor asks: Quiz, question 7 of 7: Do two charged objects need to touch to push or pull on each other?
    Buttons: "Yes: they must touch" / "No: it is a non-contact force" (she can also type)
    - Right ("No: it is a non-contact force"): Right: they do not need to touch. It is a non-contact force: each object is in the other's electric field, so it feels a force.
    - "Yes: they must touch" (wrong idea w1: ): Not quite. Attraction and repulsion between charges are non-contact forces. A force is a push or a pull.
-   - Still doesn't know: That's fine. Attraction and repulsion between charges are non-contact forces. A force is a push or a pull.
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Attraction and repulsion between charges are non-contact forces. A force is a push or a pull.
    - She asks to move on or skip: Attraction and repulsion between charges are non-contact forces. A force is a push or a pull.
 
 46. [4.15] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
@@ -263,5 +262,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## The end
 
-47. Tutor: The lesson is finished. Tap a button to go on.
+47. Tutor: Summary, point 1 of 4: Electrons are rubbed onto the balloon from the other material; only electrons move, not protons.
+48. Tutor: Summary, point 2 of 4: Two objects with the same type of charge repel, and two with different types attract.
+49. Tutor: Summary, point 3 of 4: The region around a charged object where another charged object feels a force, and it gets weaker further away.
+50. Tutor: Summary, point 4 of 4: Near a highly charged object the electric field is very strong, so electrons jump through the air.
+
+51. Tutor: The lesson is finished. Tap a button to go on.
    Buttons: "Go to the slides" / "Home"

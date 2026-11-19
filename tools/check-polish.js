@@ -16,6 +16,7 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const ROOT = path.resolve(__dirname, '..');
+const subjectOf = id => (fs.readdirSync(path.join(ROOT, 'lessons')).find(s => fs.existsSync(path.join(ROOT, 'lessons', s, id + '.json'))) || 'physics');
 const CHECKS = ['idk-opener', 'own-multi-point', 'no-summary', 'question-comment'];
 
 if (process.env.POLISH_CHILD) {
@@ -26,8 +27,8 @@ if (process.env.POLISH_CHILD) {
   const MIS = require(path.join(ROOT, 'js', 'pilot', 'misconceptions.js'));
   const X = require('./check-transcript.js');
   const id = process.env.POLISH_CHILD;
-  const lesson = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', 'physics', `${id}.json`), 'utf8'));
-  const script = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', 'physics', `${id}.script.json`), 'utf8'));
+  const lesson = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', subjectOf(id), `${id}.json`), 'utf8'));
+  const script = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', subjectOf(id), `${id}.script.json`), 'utf8'));
   const stub = (sys, user) => {
     if (/check a student's one-line answer/.test(sys)) return Array.from({ length: (user.match(/^\d+\./gm) || []).length }, (_, k) => k + 1).join(',');
     if (/sort one message/.test(sys)) return /what does that mean/.test(user) ? 'QUESTION' : 'ANSWER';

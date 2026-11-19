@@ -17,6 +17,7 @@
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
+const subjectOf = id => (fs.readdirSync(path.join(ROOT, 'lessons')).find(s => fs.existsSync(path.join(ROOT, 'lessons', s, id + '.json'))) || 'physics');
 const TS = require(path.join(ROOT, 'js', 'teach-script.js'));
 const Practice = require(path.join(ROOT, 'js', 'practice', 'practice.js'));
 global.Practice = Practice;
@@ -25,8 +26,8 @@ const MIS = require(path.join(ROOT, 'js', 'pilot', 'misconceptions.js'));
 const X = require('./check-transcript.js');
 
 const ID = process.argv[2] || 'p2-current-voltage';
-const lesson = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', 'physics', `${ID}.json`), 'utf8'));
-const script = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', 'physics', `${ID}.script.json`), 'utf8'));
+const lesson = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', subjectOf(ID), `${ID}.json`), 'utf8'));
+const script = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', subjectOf(ID), `${ID}.script.json`), 'utf8'));
 const words = t => String(t || '').trim().split(/\s+/).filter(Boolean).length;
 const misIds = new Set(MIS.map(m => m.id));
 

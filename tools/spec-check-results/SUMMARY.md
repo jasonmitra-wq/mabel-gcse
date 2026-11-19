@@ -163,3 +163,6 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-11-17 | p3-density | OK | missing_spec_content 2, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 7646/2443 | $0.0794
 - 2026-11-17 | p3-changes-of-state | OK | missing_spec_content 4, above_gcse 0, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 8375/2244 | $0.0784
 - 2026-11-17 | p3-pressure | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 2 | 6887/1679 | $0.0611
+- 2026-11-19 | g5-development | OK | missing_spec_content 1, above_gcse 1, factual_errors 5, wrong_terms 0, checkpoint_mismatch 0, not_checked 3 | 9939/3667 | $0.1131
+- 2026-11-19 | g5-nigeria | OK | missing_spec_content 1, above_gcse 0, factual_errors 3, wrong_terms 0, checkpoint_mismatch 0, not_checked 3 | 8901/2961 | $0.0948
+- 2026-11-19 | g5-uk-economy | OK | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 4 | 8389/2800 | $0.0896

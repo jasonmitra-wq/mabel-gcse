@@ -2,14 +2,37 @@
   "id": "g5-uk-economy",
   "title": "The Changing Economic World: The UK Economy",
   "topic": "G5",
-  "figuresSourced": false,
-  "examTip": "The UK is a post-industrial HIC — services dominate (80% of GDP). Always link the north-south divide to deindustrialisation, and evaluate government responses with evidence of their limitations.",
-  "introTips": [
-    "Know the four sectors: primary, secondary, tertiary, quaternary — and the UK's shift towards tertiary/quaternary.",
-    "The north-south divide is real and measurable — always quote specific figures (GDP, house prices, life expectancy).",
-    "Evaluating Northern Powerhouse: HS2's Birmingham-Manchester leg was cancelled in 2023 — use this."
+  "figuresSourced": true,
+  "sources": [
+    {
+      "figure": "UK GNI per head: $54,550",
+      "year": "2025",
+      "source": "World Bank, NY.GNP.PCAP.CD",
+      "url": "https://api.worldbank.org/v2/country/GBR/indicator/NY.GNP.PCAP.CD?format=json&mrnev=1",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "UK economy by sector: services about 73% of GDP, manufacturing about 8%, farming, forestry and fishing under 1%",
+      "year": "2025",
+      "source": "World Bank, NV.SRV.TOTL.ZS, NV.IND.MANF.ZS, NV.AGR.TOTL.ZS",
+      "url": "https://api.worldbank.org/v2/country/GBR/indicator/NV.SRV.TOTL.ZS?format=json&mrnev=1",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Toyota's Burnaston car plant: aims to use renewable energy such as solar and wind power and to reduce waste; on-site wildlife reserve made with the Derbyshire Wildlife Trust",
+      "year": "current on 2026-11-19",
+      "source": "Toyota Motor Manufacturing (UK), Sustainable Plant and Biodiversity pages",
+      "url": "https://www.toyotauk.com/environment/sustainable-plant",
+      "opened": "2026-11-19"
+    }
   ],
-  "intro": "The UK's economy has gone through one of the biggest transformations of any country in the 20th century — from 'workshop of the world' to a service-dominated, globalised economy where financial services and creative industries matter more than steel and coal. But this transformation has left deep regional scars, and whether government efforts to 'level up' the places left behind have worked is one of the most debated questions in British geography.",
+  "examTip": "The UK is a post-industrial HIC: most people work in services. Use named UK examples (Cambridge Science Park, Toyota at Burnaston, HS2, the Outer Hebrides) and judge how much each change matters.",
+  "introTips": [
+    "Know the three causes of economic change: deindustrialisation, globalisation and government policies.",
+    "Learn one example of each: a science park, a sustainable factory, a growing and a declining rural area, a transport project.",
+    "The north–south divide: know the gap and two strategies to close it."
+  ],
+  "intro": "In the past, many people in Britain worked in coal mines, steelworks and shipyards. Today most work in offices, shops, hospitals and labs. This lesson explains why the UK's economy changed and what the new economy looks like. It also covers its effects on the environment, the countryside and different regions, and the UK's links with the rest of the world.",
   "basics": [
     {
       "idea": "Economy",
@@ -42,200 +65,264 @@
   ],
   "keyPoints": [
     {
-      "heading": "The UK as a post-industrial HIC",
-      "content": "The UK has a <strong>GNI per capita</strong> of approximately $47,000 (early 2020s figure) and is a member of the <strong>G7</strong> (the world's seven largest advanced economies). Its economic structure has fundamentally shifted. In the early 2020s, the <strong>primary sector</strong> (agriculture, mining) now contributes less than 2% of GDP; the <strong>secondary sector</strong> (manufacturing) around 10%; the <strong>tertiary sector</strong> (services — retail, healthcare, education, finance) around 80%; and the <strong>quaternary sector</strong> (research and development, IT, media, finance) is the fastest growing. Key sectors include: <strong>financial services</strong> (about 9% of UK economic output in 2023, half of it generated in London), <strong>creative industries</strong> (music, gaming, film, design), <strong>professional services</strong> (law, accountancy), and <strong>tourism</strong> (around 41 million overseas visits in 2019, before COVID-19). This makes the UK a <strong>post-industrial economy</strong>.",
+      "heading": "Causes of economic change in the UK",
+      "content": "The UK's economy has changed from making things to providing services. Three causes explain why.\n\n<strong>Deindustrialisation</strong> is the decline of traditional industries such as coal mining, steel, shipbuilding and textiles. Coal and iron ore ran out or became costly to dig, and machines replaced many workers.\n\n<strong>Globalisation</strong> is the way countries have become more connected through trade, travel and communication. Factories in countries with lower wages could make goods more cheaply, so many UK factories closed.\n\n<strong>Government policies</strong> also mattered. Later, governments stopped protecting loss-making industries such as coal, and encouraged service industries such as banking instead.\n\nWhole towns built around a mine or a steelworks lost their main employer, and some, in places such as South Yorkshire and South Wales, still have high unemployment.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Deindustrialisation: decline of coal, steel, shipbuilding, textiles; resources ran out, machines replaced workers",
+        "Globalisation: goods made more cheaply abroad, so UK factories closed",
+        "Government policies: stopped protecting loss-making industries; encouraged services",
+        "Legacy: former mining and steel towns lost their main employer"
+      ],
+      "keyTerms": [
+        {
+          "term": "Deindustrialisation",
+          "def": "The decline of manufacturing and heavy industry in a country, and the loss of the jobs that went with it."
+        },
+        {
+          "term": "Globalisation",
+          "def": "The way countries have become more connected through trade, travel, investment and communication."
+        },
+        {
+          "term": "Traditional industries",
+          "def": "The old heavy industries the UK grew rich on, such as coal mining, steel making, shipbuilding and textiles."
+        }
+      ],
+      "memTip": "Decline, global, government: three causes of change.",
+      "tutor_note": "Students often do not know what \"traditional industries\" are: name them."
+    },
+    {
+      "heading": "Towards a post-industrial economy",
+      "content": "The UK is now a <strong>post-industrial economy</strong>: most people work in services, not factories. In 2025 services made up about 73% of the UK's economy, manufacturing about 8% and farming, forestry and fishing under 1%. The UK's GNI per head was $54,550.\n\nThe growing parts are <strong>information technology</strong> (software, the internet), <strong>finance</strong> (banking and insurance, especially in London), other <strong>services</strong> such as retail and health, and <strong>research</strong>. Remember the sectors: primary takes raw materials, secondary makes things, tertiary provides services. Work based on knowledge and research is a fourth sector, the <strong>quaternary sector</strong>.\n\nMuch of this work happens in <strong>science parks</strong> and <strong>business parks</strong>. A science park is a group of research and high-tech companies, usually next to a university, so they can share ideas and hire graduates. A business park is a group of offices and light industry on the edge of a town. Both are usually near main roads or motorways, with space and pleasant surroundings. <strong>Cambridge Science Park</strong>, beside the University of Cambridge and close to main roads, is home to many technology and medical research companies.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "g5-uk-sector-shift",
-      "diagramCaption": "The shift from making things to providing services, 1900 to today.",
+      "diagramCaption": "The shift from making things to providing services.",
       "diagramExamTip": true,
       "writeBullets": [
-        "GNI per capita ~$47,000 — G7 member; highly developed economy",
-        "Primary sector <2% of GDP — farming and mining are marginal",
-        "Secondary sector ~10% — manufacturing much reduced since deindustrialisation",
-        "Tertiary sector ~80% — services dominate; retail, healthcare, finance, education",
-        "Quaternary sector — research, IT, media, finance; fastest growing",
-        "Financial services — ~9% of UK output (2023), half of it in London; major global hub",
-        "Tourism — ~41m overseas visits in 2019 (pre-COVID); major contributor to economy"
+        "Post-industrial: most work is in services; services about 73% of the economy, manufacturing about 8% (2025)",
+        "Growth: IT, finance, services, research",
+        "Quaternary sector: knowledge and research work",
+        "Science park: research and high-tech firms next to a university",
+        "Business park: offices and light industry on a town's edge",
+        "Located near universities, main roads, with space; example: Cambridge Science Park"
       ],
       "keyTerms": [
-        {"term": "Post-industrial", "def": "An economy where most people work in services rather than in factories, mining or farming. The UK became post-industrial over the second half of the twentieth century."},
-        {"term": "Tertiary sector", "def": "The part of the economy that provides services rather than making things — shops, schools, hospitals, banks, transport. It employs the large majority of UK workers."},
-        {"term": "Quaternary sector", "def": "The part of the economy built on knowledge and information — research and development, software, media, design. It is small but growing fastest, and clusters around universities and big cities."},
-        {"term": "GNI per capita", "def": "Gross National Income per capita — the total income a country earns in a year divided by the number of people living there. 'Per capita' means 'per person', so it is an average income figure used to compare countries of different sizes."},
-        {"term": "G7", "def": "A group of seven large advanced economies — the UK, US, Canada, France, Germany, Italy and Japan — whose leaders meet to coordinate economic policy."}
+        {
+          "term": "Post-industrial economy",
+          "def": "An economy where most people work in services rather than in factories, mining or farming."
+        },
+        {
+          "term": "Quaternary sector",
+          "def": "Jobs based on knowledge, research and information, such as scientific research and software design."
+        },
+        {
+          "term": "Science park",
+          "def": "A group of research and high-tech companies built together, usually next to a university."
+        },
+        {
+          "term": "Business park",
+          "def": "A group of offices and light industry built together, usually on the edge of a town near a main road."
+        }
       ],
-      "memTip": "PSTQ — Primary, Secondary, Tertiary, Quaternary. In the UK: tiny, small, huge, growing.",
-      "tutor_note": "Students often forget the quaternary sector — it's the knowledge economy and it's what's growing fastest in the UK."
+      "memTip": "Science parks hug universities; business parks hug ring roads.",
+      "tutor_note": "On a map, give evidence and say why it helps: a university nearby for ideas and graduates, a main road for access."
     },
     {
-      "heading": "Deindustrialisation and its legacy",
-      "content": "Traditional UK industries declined rapidly from the 1970s to 1990s. <strong>Coal mining</strong> was devastated — the miners' strike of 1984–85 ended in defeat, and pit closures followed; former coalfield communities like those in South Yorkshire and South Wales still struggle economically. <strong>Steel</strong>: Sheffield employed 100,000 steelworkers in 1971; fewer than 10,000 remain today (recent estimate). <strong>Shipbuilding</strong> on the Clyde (Glasgow) and Tyne (Newcastle) has almost entirely gone. <strong>Textiles</strong>: Lancashire and Yorkshire's mill towns have been economically transformed — or left behind. Causes of deindustrialisation included <strong>globalisation</strong> (cheaper manufacturing in Asia), <strong>mechanisation</strong> (automation reduced the need for workers), and <strong>political choices</strong> (Thatcher's market-oriented policies did not protect declining industries). The legacy is <strong>regional deprivation</strong> in former industrial areas — sometimes called <strong>'rust belt' towns</strong>. Meanwhile, a new economy grew: science parks, knowledge economy, media — largely concentrated in the south of England.",
+      "heading": "Industry and the environment",
+      "content": "Industry can harm the <strong>physical environment</strong>. Old mines and steelworks left scarred land, waste heaps and polluted rivers. Factories still use energy, make waste and give off pollution, and new buildings cover green fields.\n\nModern industrial development can be more <strong>environmentally sustainable</strong>, meaning it does less harm to the environment now and in the future. Toyota's car factory at <strong>Burnaston</strong>, near Derby, is one example. It aims to run on renewable energy, such as solar and wind power, and to cut its waste. Part of the site has been made into a wildlife reserve with the Derbyshire Wildlife Trust.\n\nBut no factory is completely green: building it and bringing in materials and workers still uses energy and creates pollution.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Coal — miners' strike 1984–85; pit closures devastated Yorkshire, Welsh valleys",
-        "Steel — Sheffield: 100,000 steelworkers (1971) vs <10,000 today",
-        "Shipbuilding — Clyde and Tyne yards almost entirely closed",
-        "Textiles — Lancashire and Yorkshire mill towns transformed or abandoned",
-        "Causes — globalisation (cheaper labour in Asia), mechanisation, Thatcher's policies",
-        "Legacy — regional deprivation in former industrial 'rust belt' towns",
-        "New economy — science parks, Cambridge/Oxford clusters, media — grew mainly in south"
+        "Harm: scarred land, waste heaps, polluted rivers, energy use, building on green fields",
+        "Sustainable: does less harm now and in the future",
+        "Toyota at Burnaston: renewable energy (solar, wind), less waste, on-site wildlife reserve",
+        "Limits: building it and transporting materials and workers still pollutes"
       ],
       "keyTerms": [
-        {"term": "Deindustrialisation", "def": "The decline of manufacturing and heavy industry in a country, and the loss of the jobs that went with it. In the UK it happened fastest from the 1970s to the 1990s."},
-        {"term": "Globalisation", "def": "The growing connection of economies worldwide through trade, investment and communication. It let companies move production to countries where labour was cheaper, which is one reason UK factories closed."},
-        {"term": "Mechanisation", "def": "Replacing human work with machines. It is the other main cause of lost industrial jobs — output can keep rising while the number of workers falls."},
-        {"term": "Coalfields", "def": "Areas where coal mining was the main employer, such as South Yorkshire, County Durham and South Wales. When the pits closed, whole towns lost their reason for existing, and many have never fully recovered."},
-        {"term": "Rust belt", "def": "A nickname for a region where heavy industry has closed down, leaving derelict factories and high unemployment. Originally American, it is often applied to parts of northern England."}
+        {
+          "term": "Environmentally sustainable",
+          "def": "Meeting people's needs today while doing as little harm as possible to the environment, so it stays healthy for the future."
+        },
+        {
+          "term": "Renewable energy",
+          "def": "Energy from sources that do not run out, such as the Sun and the wind."
+        }
       ],
-      "memTip": "Coal, Steel, Ships, Textiles — the 'Big Four' that deindustrialisation destroyed in the UK.",
-      "tutor_note": "Sheffield's steel statistics (100,000 to <10,000) are a powerful specific fact — use it."
+      "memTip": "Sustainable = less harm, now and later.",
+      "tutor_note": "Explain how each step helps the environment, and say what still harms it."
     },
     {
-      "heading": "The north-south divide",
-      "content": "The <strong>north-south divide</strong> is a persistent economic and social divide between southern England (especially London and the South East) and the north, Midlands, Wales and Northern Ireland. GDP per head in London is more than twice that of north-east England, and in south-east England about one and a half times (2022 figures). <strong>House prices</strong>: average London property ~£500,000 vs Burnley ~£100,000 (early 2020s). <strong>Life expectancy</strong> for men: Kensington (London) 83 years vs Blackpool 74 years — a 9-year gap (late 2010s figures). <strong>Employment rates</strong> and <strong>graduate retention</strong> are both significantly higher in the south. Government responses: the <strong>Northern Powerhouse</strong> (George Osborne, 2014) aimed to boost northern cities through devolution (such as the Greater Manchester Mayor) and faster rail links. As originally planned, HS2 would continue north to Manchester and Leeds, and a new east–west line would connect northern cities (known as HS3, later Northern Powerhouse Rail). Most of that rail plan did not happen: the HS2 leg to Leeds was dropped in 2021 and the Birmingham-to-Manchester leg was <strong>cancelled in 2023</strong> due to escalating costs, leaving HS2 as London to Birmingham only, and Northern Powerhouse Rail was scaled back. <strong>Levelling Up</strong> was the 2019–2024 government's named programme for reducing regional inequality: its 2022 White Paper promised investment in deprived areas, and the government department named after it was renamed in 2024. Many geographers argue the north-south divide is <strong>widening</strong> despite policy.",
+      "heading": "Change in the countryside",
+      "content": "The <strong>rural landscape</strong> is changing in two different ways.\n\nIn an area of <strong>population growth</strong>, such as <strong>South Cambridgeshire</strong>, near Cambridge, people move in because jobs in Cambridge and its science parks are close and transport is good. New housing estates are built, and house prices rise so some local young people cannot afford to buy. Traffic gets busier, but village shops and schools gain customers and pupils.\n\nIn an area of <strong>population decline</strong>, such as the <strong>Outer Hebrides</strong>, islands off north-west Scotland, young people leave to find work and study. The population that stays is older. Shops, schools and bus services close because too few people use them, and there are fewer workers. Tourism and renewable energy, such as wind power, bring some new jobs.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Growth (South Cambridgeshire): people move in near Cambridge's jobs; new estates; higher house prices; more traffic; village services gain",
+        "Decline (Outer Hebrides): young people leave; older population; shops, schools, buses close; fewer workers",
+        "New chances for declining areas: tourism, renewable energy"
+      ],
+      "keyTerms": [
+        {
+          "term": "Rural depopulation",
+          "def": "People, especially the young, leaving the countryside for towns and cities, so the population falls and grows older."
+        }
+      ],
+      "memTip": "Near the jobs, villages grow; far from them, they shrink.",
+      "tutor_note": "Name one area of growth and one of decline, with a social and an economic change for each."
+    },
+    {
+      "heading": "Transport and the north–south divide",
+      "content": "Better <strong>infrastructure</strong>, the transport and networks a country needs, can help the economy. <strong>Roads</strong>: busy motorways and main roads are widened. <strong>Rail</strong>: HS2, a high-speed line, is being built from London to Birmingham; its planned northern sections were cancelled. <strong>Ports</strong>: new deep-water container terminals, such as Liverpool2 at the Port of Liverpool, let the biggest ships dock. <strong>Airports</strong>: Heathrow has plans for a third runway, which are hotly debated.\n\nThe UK also has a <strong>north–south divide</strong>: on average, people in London and the South East earn more and live longer than people in much of the north, Wales and Northern Ireland. Much of the post-industrial growth came to the south.\n\nStrategies to close the gap include giving more power and money to elected city mayors, such as in Greater Manchester (called <strong>devolution</strong>), better transport between northern cities, and <strong>enterprise zones</strong> that offer businesses lower taxes to set up in poorer areas. The gap is still wide.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "g5-uk-north-south",
-      "diagramCaption": "How the north compares with the south — a broad pattern, not a hard line.",
+      "diagramCaption": "How the north compares with the south: a broad pattern, not a hard line.",
       "diagramExamTip": true,
       "writeBullets": [
-        "GDP per head — London >2×, SE England ~1.5× that of NE England (2022)",
-        "House prices — London average ~£500,000 vs Burnley ~£100,000",
-        "Life expectancy — Kensington men: 83 years vs Blackpool: 74 years (9-year gap)",
-        "Northern Powerhouse — George Osborne 2014; planned HS2 north and HS3 (later cancelled or cut back), devolution to Manchester Mayor",
-        "Levelling Up — 2019–24 government's programme; 2022 White Paper promised investment in deprived areas",
-        "HS2 Birmingham-Manchester cancelled 2023 — major blow to Northern Powerhouse",
-        "Critics argue north-south divide is widening despite government policy"
+        "Roads: busy motorways and main roads widened",
+        "Rail: HS2 London to Birmingham; northern sections cancelled",
+        "Ports: Liverpool2 deep-water container terminal",
+        "Airports: plans for a third runway at Heathrow",
+        "North–south divide: on average the south earns more and lives longer",
+        "Strategies: devolution to city mayors, better northern transport, enterprise zones; gap still wide"
       ],
       "keyTerms": [
-        {"term": "North-south divide", "def": "The long-standing gap between the generally wealthier south-east of England and the generally poorer north, measured in income, house prices, health and life expectancy. It is a broad pattern, not a hard line — there is deprivation in the south and prosperity in the north."},
-        {"term": "Devolution", "def": "Handing powers from central government to regional or local government, such as to the Scottish Parliament, the Welsh Senedd, or elected city mayors like Greater Manchester's."},
-        {"term": "Northern Powerhouse", "def": "A government plan announced in 2014 to close the north-south gap by improving transport between northern cities and attracting investment to them.", "referenceOnly": true},
-        {"term": "Levelling Up", "def": "A government programme launched in 2021 aimed at reducing regional inequality through funding for towns outside London and the south-east.", "referenceOnly": true},
-        {"term": "HS2", "def": "A high-speed railway begun to link London with the Midlands and the north. The northern sections were later cancelled, so the line now runs London to Birmingham only.", "referenceOnly": true}
+        {
+          "term": "Infrastructure",
+          "def": "The basic networks a country needs to work, such as roads, railways, ports, airports and power lines."
+        },
+        {
+          "term": "North-south divide",
+          "def": "The gap in wealth, health and jobs between the generally richer south-east of England and much of the rest of the UK."
+        },
+        {
+          "term": "Devolution",
+          "def": "Handing powers and money from the national government to regional or city governments, such as an elected mayor."
+        },
+        {
+          "term": "Enterprise zone",
+          "def": "An area where the government gives businesses lower taxes and simpler rules to encourage them to set up there."
+        }
       ],
-      "memTip": "North lags, south leads — in GDP, house prices, life expectancy. Same country, different worlds.",
-      "tutor_note": "HS2's cancellation in 2023 is important and current — it's excellent evaluation material for north-south divide questions."
+      "memTip": "Better links, more power to the regions, tax breaks: three ways to close the gap.",
+      "tutor_note": "Judge each strategy: say what it does and how much it has helped."
     },
     {
-      "heading": "The UK in globalisation and rural challenges",
-      "content": "The UK is a major global trading nation, exporting over £700 billion of goods and services per year (early 2020s figure). <strong>London</strong> is one of the world's top financial centres, ranked second only to New York (2025 ranking). The UK attracts significant <strong>FDI</strong> (Foreign Direct Investment): the Nissan factory in Sunderland and Toyota in Burnaston are important examples of manufacturing FDI. The UK left the EU <strong>Single Market</strong> in 2020 (Brexit), introducing new trade barriers with the UK's largest trading partner. The UK is now negotiating new trade deals globally. <strong>Science and technology</strong>: Cambridge Science Park (90+ companies, recent figure), Silicon Fen (tech cluster around Cambridge), and Manchester's digital economy are growing. <strong>Rural UK</strong> faces its own challenges: depopulation as young people leave for cities; withdrawal of services (post offices, GP surgeries, bus routes); the <strong>second home problem</strong> inflates house prices in areas like Cornwall, the Lake District and Yorkshire Dales, pricing out local residents. Rural opportunities include tourism, farm diversification, and renewable energy (wind farms).",
+      "heading": "The UK's place in the wider world",
+      "content": "The UK is linked to the rest of the world in many ways.\n\n<strong>Trade</strong>: it buys and sells goods and services worldwide, and London is one of the world's biggest financial centres. <strong>Culture</strong>: British music, films, television, football and the English language are known around the world. <strong>Transport</strong>: airports such as Heathrow and ports such as Liverpool and Felixstowe connect it to every continent. <strong>Electronic communication</strong>: undersea internet cables link the UK to Europe and North America.\n\n<strong>Economic and political links</strong>: the UK left the <strong>European Union</strong> (EU), a group of European countries that trade freely with each other; trade with the EU now has more checks and paperwork, though the EU is still a major trading partner. The UK is also a member of the <strong>Commonwealth</strong>, a group of countries, most once ruled by Britain, that work together on trade and development.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "UK exports £700bn+/year — major global trading nation",
-        "London — world's second financial centre after New York (2025 ranking)",
-        "FDI — Nissan (Sunderland), Toyota (Burnaston) — significant manufacturing investment",
-        "Brexit 2020 — left EU Single Market; new trade barriers with largest trading partner",
-        "Cambridge Science Park / Silicon Fen — knowledge economy hub; 90+ companies",
-        "Rural challenges — depopulation, service withdrawal, second home prices (Cornwall, Lakes)",
-        "Rural opportunities — tourism, farm diversification, wind farms"
+        "Trade: worldwide; London a major financial centre",
+        "Culture: music, film, TV, football, the English language",
+        "Transport: Heathrow, ports such as Liverpool and Felixstowe",
+        "Electronic communication: undersea internet cables",
+        "EU: the UK left; more checks on trade, but still a major partner",
+        "Commonwealth: countries, mostly once ruled by Britain, working together"
       ],
       "keyTerms": [
-        {"term": "FDI", "def": "Foreign Direct Investment — money that companies based abroad put into building or buying operations in the UK, such as Nissan's Sunderland plant. It brings jobs, but decisions about those jobs are taken overseas."},
-        {"term": "Brexit", "def": "The UK's departure from the European Union, voted for in 2016 and completed in 2020. It changed the rules for trading with, and working in, the UK's largest export market."},
-        {"term": "Rural depopulation", "def": "Young people leaving countryside areas for cities in search of work and housing, leaving behind an older population and struggling local services."},
-        {"term": "Second home problem", "def": "When outsiders buy houses in scenic rural areas as holiday homes, pushing prices beyond what local people earning local wages can pay, and emptying villages out of season."},
-        {"term": "Globalisation", "def": "The growing connection of economies worldwide through trade, investment and communication. It let companies move production to countries where labour was cheaper, which is one reason UK factories closed.", "referenceOnly": true}
+        {
+          "term": "European Union",
+          "def": "A group of European countries that trade freely with each other and share some laws. The UK left it."
+        },
+        {
+          "term": "Commonwealth",
+          "def": "A group of countries, most of them once ruled by Britain, that work together on trade, development and shared values."
+        }
       ],
-      "memTip": "Global in, local out — UK attracts global investment but some rural areas lose people and services.",
-      "tutor_note": "Rural challenges are often underweighted by students — make sure to know at least two challenges and two opportunities."
+      "memTip": "Trade, culture, transport, cables: four kinds of link; EU and Commonwealth: two clubs.",
+      "tutor_note": "For a 6-mark answer, explain how a change in a link (leaving the EU) affects the UK's place in the world."
     }
   ],
   "tables": [
     {
-      "title": "North-South divide: comparing key indicators",
+      "title": "Two rural areas compared",
       "examFlag": true,
       "headers": [
-        "Indicator",
-        "Northern England",
-        "London and the South East"
+        "Change",
+        "Area of growth: South Cambridgeshire",
+        "Area of decline: Outer Hebrides"
       ],
       "rows": [
         [
-          "GDP per capita",
-          "Lowest in the North East — less than half of London's (2022)",
-          "London highest in the UK, South East second (2022)"
+          "Population",
+          "People move in for jobs nearby",
+          "Young people move away; older population"
         ],
         [
-          "Average house price",
-          "~£150,000 (e.g., Burnley ~£100,000) — early 2020s, illustrative",
-          "~£500,000+ (London average) — early 2020s, illustrative"
+          "Housing",
+          "New estates; prices rise",
+          "Empty houses; some bought as holiday homes"
         ],
         [
-          "Male life expectancy",
-          "~74 years (e.g., Blackpool) — late 2010s, illustrative",
-          "~83 years (e.g., Kensington, London) — late 2010s, illustrative"
+          "Services",
+          "Shops and schools gain customers and pupils",
+          "Shops, schools and buses close"
         ],
         [
-          "Unemployment rate",
-          "Historically higher than national average",
-          "Generally below national average"
-        ],
-        [
-          "Graduate retention",
-          "Many graduates leave for southern cities",
-          "Strong graduate retention in London, Cambridge"
+          "Economy",
+          "Jobs in Cambridge and its science parks",
+          "Fewer workers; tourism and wind power bring some jobs"
         ]
       ]
     }
   ],
   "checkpoints": {
     "1": {
-      "question": "What happened to Sheffield's steel industry between 1971 and today, and why?",
+      "question": "Why are science parks usually built next to universities?",
       "options": [
-        "Employment fell from 100,000 to fewer than 10,000 steelworkers — due to globalisation (cheaper Asian steel), mechanisation and political choices",
-        "Employment grew from 10,000 to 100,000 — Sheffield attracted new steel investment from China",
-        "The steel industry was nationalised in 1971 and all workers were employed by the government",
-        "Sheffield switched from steel to electronics manufacturing, retaining all its workforce"
+        "So companies can share research ideas and hire graduates",
+        "Because land next to universities is always cheapest",
+        "So students can work in the factories at weekends",
+        "Because universities must own all science parks"
       ],
       "correct": 0,
-      "correctFeedback": "Exactly right. Sheffield's steel industry collapsed — from 100,000 workers in 1971 to fewer than 10,000 today — because of globalisation (cheaper steel from Asia), mechanisation (fewer workers needed) and political factors.",
-      "wrongFeedback": "Not quite. Sheffield's steel industry collapsed dramatically — from 100,000 workers (1971) to fewer than 10,000 today — as a result of globalisation, mechanisation and deindustrialisation."
+      "correctFeedback": "Right. Being near a university gives companies research ideas and skilled graduates to hire.",
+      "wrongFeedback": "Not quite. Science parks are near universities so companies can share research and hire graduates."
     },
-    "2": {
-      "question": "Which specific evidence best illustrates the north-south divide in life expectancy?",
+    "3": {
+      "question": "Which is a change in a rural area of population decline, such as the Outer Hebrides?",
       "options": [
-        "Men in Kensington (London) live to 83 years on average, compared to 74 years in Blackpool — a 9-year gap",
-        "Women in Birmingham live longer than women in Manchester due to better NHS funding",
-        "Life expectancy in Scotland is 10 years lower than in Wales due to higher alcohol consumption",
-        "The average UK life expectancy has increased to 82 years, closing the gap between north and south"
+        "Shops, schools and bus services close as young people leave",
+        "New housing estates are built for people moving in",
+        "Traffic gets much busier",
+        "House prices rise because many people want to move in"
       ],
       "correct": 0,
-      "correctFeedback": "Perfect. Kensington (83 years) vs Blackpool (74 years) — a 9-year gap in male life expectancy within the same country is striking evidence of the north-south divide in health outcomes.",
-      "wrongFeedback": "That's not the right comparison. The clearest example is Kensington men (83 years) vs Blackpool men (74 years) — a 9-year gap showing how geography within the UK shapes how long you live."
+      "correctFeedback": "Right. With fewer, older people, services close because too few use them.",
+      "wrongFeedback": "Not quite. New estates, busier traffic and rising prices happen in areas of growth. In decline, services close as young people leave."
     }
   },
   "commonMistakes": [
-    "Forgetting the quaternary sector — it's the knowledge and research economy (IT, finance, media, R&D) and it's what's growing fastest in the UK; students often only list three sectors.",
-    "Stating HS2 is still being built between Birmingham and Manchester — the northern leg was cancelled in October 2023; only London to Birmingham remains planned.",
-    "Describing the north-south divide as only about income — it's also about house prices, life expectancy, employment rates and access to services; always use multiple measures.",
-    "Saying Brexit had no impact on trade — it introduced new trade barriers (customs checks, regulatory differences) with the EU, the UK's largest trading partner.",
-    "Confusing FDI (foreign direct investment — e.g., Nissan factory) with aid — FDI is profit-motivated business investment, not charity or government assistance."
+    "Not knowing what traditional industries are: coal, steel, shipbuilding and textiles.",
+    "Naming map features for a science park site without saying why each one helps.",
+    "Saying a factory is sustainable without explaining how each step reduces harm.",
+    "Answering rural change in terms of poor countries' problems. Keep to the UK: services closing, house prices, an older population.",
+    "Using a vague \"jobs and money\" answer for transport. Name the project and explain who it helps and how.",
+    "Forgetting the Commonwealth when asked about the UK's political links."
   ],
   "examTips": [
-    "For the north-south divide, always quote at least two different types of evidence — income AND life expectancy, or house prices AND unemployment — to show you understand it is multi-dimensional.",
-    "When evaluating Northern Powerhouse or Levelling Up, mention that the Manchester leg of HS2 was cancelled in 2023 — this shows your knowledge is current and you can evaluate policy effectiveness.",
-    "Rural questions often ask for challenges AND opportunities — depopulation and second homes (challenges) vs tourism, renewable energy and farm diversification (opportunities). Give both.",
-    "Sector shift questions: remember the UK is not de-industrialised — manufacturing still exists (~10% of GDP). The UK has diversified, not abandoned industry entirely."
+    "For a science park map question, give a piece of map evidence and why it makes a good site (university nearby, main road, space).",
+    "For sustainability, use Toyota at Burnaston: renewable energy, less waste, wildlife reserve, and say what still harms the environment.",
+    "For rural change, use one area of growth (South Cambridgeshire) and one of decline (Outer Hebrides).",
+    "For transport, name projects (HS2, Liverpool2, Heathrow third runway) and judge their effect on the economy and the north–south divide."
   ],
   "revisionCardBullets": [
-    "UK GNI per capita ~$47,000 — G7 member; post-industrial HIC",
-    "Economic sectors: primary (<2%), secondary (~10%), tertiary (~80%), quaternary (growing)",
-    "Financial services — ~9% of UK output (2023), half in London; global financial hub",
-    "Deindustrialisation — coal, steel, shipbuilding, textiles collapsed from 1970s",
-    "Sheffield steel: 100,000 workers (1971) → <10,000 today",
-    "North-south divide: London GDP per head >2× NE (2022); London house £500k vs Burnley £100k",
-    "Life expectancy: Kensington men 83 yrs vs Blackpool 74 yrs — 9-year gap",
-    "Northern Powerhouse (2014) — HS2, devolution; Manchester HS2 leg cancelled 2023",
-    "Levelling Up (2019–24 government) — 2022 White Paper promised investment in deprived areas",
-    "FDI — Nissan Sunderland, Toyota Burnaston; UK major destination for investment",
-    "Brexit 2020 — left EU Single Market; new trade barriers",
-    "Rural challenges: depopulation, service withdrawal, second home prices (Cornwall, Lakes)"
+    "Causes of change: deindustrialisation, globalisation, government policies",
+    "Post-industrial: services about 73% of the economy, manufacturing about 8% (2025)",
+    "Growth: IT, finance, services, research (quaternary)",
+    "Science parks next to universities (Cambridge Science Park); business parks on town edges",
+    "Toyota Burnaston: renewable energy, less waste, wildlife reserve",
+    "Rural growth: South Cambridgeshire; rural decline: Outer Hebrides",
+    "Transport: HS2 (London to Birmingham), Liverpool2, Heathrow third runway plans, motorways",
+    "North–south divide: south earns more and lives longer on average; strategies: devolution, transport, enterprise zones",
+    "UK links: trade, culture, transport, undersea cables; left the EU; Commonwealth member"
   ],
   "videos": [
     {

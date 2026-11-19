@@ -1,0 +1,26 @@
+{
+  "about": "Prerequisite map for G5 The changing economic world (brief docs/briefs/2026-11-15-script-four-topics.md, B1, 2026-11-19): every idea the three scripted lessons use, what each depends on (maths included), and where it is taught. Lessons run in syllabus order: g5-development, g5-nigeria, g5-uk-economy. Used when scripting: each script teaches or recalls an idea before it asks about it.",
+  "lessons": ["g5-development", "g5-nigeria", "g5-uk-economy"],
+  "ideas": [
+    {"id": "maths-average", "name": "Mean, median, range, interquartile range, percentage", "terms": ["mean", "median", "range", "interquartile range", "percentage"], "dependsOn": [], "taught": "KS3 maths; recalled in g5-development key point 1 (E88: range given for the interquartile range)"},
+    {"id": "per-head", "name": "Per person (per head): a total shared equally", "terms": ["per head"], "dependsOn": ["maths-average"], "taught": "g5-development basics and key point 1"},
+    {"id": "rate", "name": "A rate: per 1,000 people (or births) each year", "terms": ["rate"], "dependsOn": ["per-head"], "taught": "g5-development key point 1"},
+    {"id": "development", "name": "Development: quality of life getting better", "terms": ["development", "quality of life"], "dependsOn": [], "taught": "g5-development key point 1"},
+    {"id": "measures", "name": "Economic and social measures (GNI per head, life expectancy, infant mortality, birth and death rates, people per doctor, literacy, safe water, HDI) and their limitations", "terms": ["GNI per head", "life expectancy", "infant mortality rate", "HDI", "limitation"], "dependsOn": ["per-head", "rate", "development"], "taught": "g5-development key point 1"},
+    {"id": "classification", "name": "HICs, LICs, NEEs; World Bank income groups; the Brandt Line", "terms": ["HIC", "LIC", "NEE", "Brandt Line"], "dependsOn": ["measures"], "taught": "g5-development key point 2"},
+    {"id": "dtm", "name": "Demographic Transition Model: five stages, linked to development", "terms": ["Demographic Transition Model", "birth rate", "death rate"], "dependsOn": ["rate", "classification"], "taught": "g5-development key point 3"},
+    {"id": "uneven", "name": "Causes of uneven development (physical, economic, historical) and consequences (disparities, international migration)", "terms": ["development gap", "primary products", "colonialism", "international migration"], "dependsOn": ["classification"], "taught": "g5-development key point 4"},
+    {"id": "strategies", "name": "Strategies: investment, industrial development, tourism (Kenya), aid, intermediate technology, Fairtrade, debt relief, microfinance", "terms": ["aid", "debt relief", "microfinance", "Fairtrade", "intermediate technology"], "dependsOn": ["uneven"], "taught": "g5-development key point 5"},
+    {"id": "sectors", "name": "Primary, secondary, tertiary and quaternary sectors", "terms": ["primary sector", "secondary sector", "tertiary sector", "quaternary sector"], "dependsOn": [], "taught": "g5-nigeria key point 2; g5-uk-economy key point 2"},
+    {"id": "multiplier", "name": "Multiplier effect: one new business leads to more jobs and tax", "terms": ["multiplier effect"], "dependsOn": ["sectors"], "taught": "g5-nigeria key point 2"},
+    {"id": "tnc", "name": "TNCs: advantages and disadvantages for a host country", "terms": ["TNC", "profit repatriation"], "dependsOn": ["multiplier"], "taught": "g5-nigeria key point 3"},
+    {"id": "aid-types", "name": "Types of aid: bilateral, multilateral, NGOs; impacts", "terms": ["bilateral aid", "multilateral aid", "NGO"], "dependsOn": ["strategies"], "taught": "g5-nigeria key point 4"},
+    {"id": "nigeria", "name": "Nigeria: location, importance, context, economy, trade, aid, environment, quality of life", "terms": ["ECOWAS", "Niger Delta"], "dependsOn": ["classification", "tnc", "aid-types", "measures"], "taught": "g5-nigeria"},
+    {"id": "uk-change", "name": "Causes of UK economic change: deindustrialisation, globalisation, government policies", "terms": ["deindustrialisation", "globalisation", "traditional industries"], "dependsOn": ["sectors"], "taught": "g5-uk-economy key point 1"},
+    {"id": "post-industrial", "name": "Post-industrial economy; science and business parks", "terms": ["post-industrial economy", "science park", "business park"], "dependsOn": ["uk-change"], "taught": "g5-uk-economy key point 2"},
+    {"id": "sustainable-industry", "name": "Industry and the environment; Toyota at Burnaston", "terms": ["environmentally sustainable", "renewable energy"], "dependsOn": [], "taught": "g5-uk-economy key point 3"},
+    {"id": "rural", "name": "Rural change: growth (South Cambridgeshire) and decline (Outer Hebrides)", "terms": ["rural depopulation"], "dependsOn": [], "taught": "g5-uk-economy key point 4"},
+    {"id": "infrastructure", "name": "Road, rail, port and airport developments; the north–south divide and strategies", "terms": ["infrastructure", "north-south divide", "devolution", "enterprise zone"], "dependsOn": ["uk-change"], "taught": "g5-uk-economy key point 5"},
+    {"id": "uk-world", "name": "The UK's links: trade, culture, transport, electronic communication; EU and Commonwealth", "terms": ["European Union", "Commonwealth"], "dependsOn": [], "taught": "g5-uk-economy key point 6"}
+  ]
+}

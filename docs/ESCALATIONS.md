@@ -532,3 +532,15 @@ tools/check-transcript.js, proven by tools/check-polish.js (each fails with the 
   fine.", its own own-words reply, its own answer prompt). None of the 17 scripted lessons uses it, so it is
   unchanged; when a lesson there is shown to Mabel, the same four faults can appear. Planning chat to decide.
 - Open: no widget built; tools/pilot/widget-candidates.md lists one per scripted lesson for the planning chat.
+
+## G5 (Phase B, 2026-11-19)
+
+- check-lesson-v3.js fails all three G5 lessons on the old lesson shape (no examBox, pictures, widgets,
+  specChecklist, <dfn> marks), as it fails every P1, P2 and P3 lesson scripted in Phase B. G-c asked for the gaps
+  to go "through steps b–f"; the content gaps, figures, fact check (c), independent audit (d), glossary (e) and
+  commit (f) were done; a full v3 shape rewrite was not. Planning chat to decide whether Phase B lessons need it.
+- js/teach-script.js answerHer's prompt calls the tutor "a kind physics tutor" for every subject, now including
+  the three G5 geography lessons. It answers from the geography lesson's content, so answers stay on topic, but
+  the wording is wrong. Changing it is a shared teach-mode change: not done (runbook STOP rule).
+- tools/check-script.js, tools/script-layout.js and tools/check-polish.js read lessons from any subject folder
+  (they read lessons/physics only); a tool change, not teach-mode code.

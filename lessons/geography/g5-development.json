@@ -2,13 +2,65 @@
   "id": "g5-development",
   "title": "The Changing Economic World: Development",
   "topic": "G5",
-  "examTip": "Development is not just about money — always combine economic AND social indicators in your answers. The HDI is better than GNI per capita alone because it measures three dimensions of development.",
-  "introTips": [
-    "Know at least two economic indicators (GNI per capita, GDP) and two social indicators (life expectancy, infant mortality rate).",
-    "Remember that HDI combines income, life expectancy and education — it's a composite measure.",
-    "For 'why does the development gap exist?' — always give physical AND human causes."
+  "figuresSourced": true,
+  "sources": [
+    {
+      "figure": "GNI per head (Atlas method): USA $88,810, UK $54,550, Kenya $2,200, Nigeria $1,360, Niger $750",
+      "year": "2025",
+      "source": "World Bank, World Development Indicators, NY.GNP.PCAP.CD",
+      "url": "https://api.worldbank.org/v2/country/USA;GBR;KEN;NGA;NER/indicator/NY.GNP.PCAP.CD?format=json&mrnev=1",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Life expectancy at birth: Japan 84 years, Nigeria 55 years",
+      "year": "2024",
+      "source": "World Bank, SP.DYN.LE00.IN",
+      "url": "https://api.worldbank.org/v2/country/JPN;NGA/indicator/SP.DYN.LE00.IN?format=json&mrnev=1",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Infant mortality per 1,000 live births: Nigeria 70, UK 4, Japan 2",
+      "year": "2024",
+      "source": "World Bank, SP.DYN.IMRT.IN",
+      "url": "https://api.worldbank.org/v2/country/NGA;GBR;JPN/indicator/SP.DYN.IMRT.IN?format=json&mrnev=1",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Share of the world's people in extreme poverty (under $3.00 a day): 43% in 1990, 10% in 2024",
+      "year": "1990, 2024",
+      "source": "World Bank, SI.POV.DDAY (2021 PPP), World",
+      "url": "https://api.worldbank.org/v2/country/WLD/indicator/SI.POV.DDAY?format=json&per_page=60",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Debt relief: of the 39 eligible countries, most (36 on the IMF factsheet opened) have received full relief under the HIPC scheme",
+      "year": "factsheet current on 2026-11-19",
+      "source": "IMF factsheet, Debt Relief Under the Heavily Indebted Poor Countries Initiative",
+      "url": "https://www.imf.org/en/About/Factsheets/Sheets/2023/Debt-relief-under-the-heavily-indebted-poor-countries-initiative-HIPC",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Grameen Bank: 97% of borrowers are women; loan recovery rate 95.66%",
+      "year": "August 2026",
+      "source": "Grameen Bank, Introduction",
+      "url": "https://grameenbank.org.bd/about/introduction",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Kenya: 2.05 million international tourist arrivals; tourism earned $1.76 billion, 15% of Kenya's exports; Kenya is a lower-middle-income country",
+      "year": "2019",
+      "source": "World Bank, ST.INT.ARVL, ST.INT.RCPT.CD, ST.INT.RCPT.XP.ZS; country income level",
+      "url": "https://api.worldbank.org/v2/country/KEN/indicator/ST.INT.ARVL?format=json&date=2000:2025",
+      "opened": "2026-11-19"
+    }
   ],
-  "intro": "Why do people in some countries live into their 80s while in others the average is 55? Why does a child born in Niger have a 1 in 10 chance of dying before their first birthday, while in Japan it's 1 in 500? Development geography tries to answer these questions — and understanding the causes of inequality and how we try to close the gap is at the heart of this topic.",
+  "examTip": "Development is not just about money. Use economic AND social measures together, and say why each one can mislead.",
+  "introTips": [
+    "Know at least two economic measures (GNI per head) and two social measures (life expectancy, infant mortality rate).",
+    "The HDI combines income, life expectancy and education into one score.",
+    "Causes of uneven development come in three groups: physical, economic and historical."
+  ],
+  "intro": "In Japan, about 2 babies in every 1,000 die before their first birthday. In Nigeria it is about 70 in every 1,000. Why are some countries so much richer and healthier than others? This lesson shows how geographers measure development, why the gap between countries exists, what it leads to, and how people try to close it.",
   "basics": [
     {
       "idea": "Quality of life",
@@ -38,179 +90,272 @@
   "keyPoints": [
     {
       "heading": "What is development and how do we measure it?",
-      "content": "<strong>Development</strong> means improvement in people's quality of life — both economic and social. <strong>Economic indicators</strong> measure wealth: <strong>GNI per capita</strong> (Gross National Income per person — the total income of a country divided by its population) is the most commonly used. The USA has a GNI per capita of ~$70,000; the UK ~$47,000; Nigeria ~$2,100; Niger ~$590. <strong>Social indicators</strong> measure wellbeing: <strong>life expectancy</strong> (Japan: 84 years; Sierra Leone: 55 years); <strong>infant mortality rate</strong> (IMR — deaths per 1,000 live births: Chad 103, UK 4); <strong>literacy rate</strong>; access to clean water; doctors per 1,000 people. The <strong>HDI</strong> (Human Development Index) is a <strong>composite measure</strong> combining income + life expectancy + education — it's better than a single indicator but still ignores inequality, women's rights and environmental sustainability. The <strong>Happy Planet Index</strong> adds wellbeing and ecological footprint.",
+      "content": "<strong>Development</strong> means people's quality of life getting better: richer, healthier and better educated. To compare countries, geographers use measures.\n\n<strong>Economic measures</strong> are about money. The main one is <strong>GNI per head</strong> (gross national income per head): all the income a country earns in a year, divided by its number of people. In 2025 it was about $88,810 in the USA, $54,550 in the UK, $1,360 in Nigeria and $750 in Niger.\n\n<strong>Social measures</strong> are about people's lives. <strong>Life expectancy</strong> is how long a baby born now can expect to live: about 84 years in Japan and 55 in Nigeria. The <strong>infant mortality rate</strong> is how many babies in every 1,000 born alive die before their first birthday. Others are birth and death rates, people per doctor, the literacy rate (the share of adults who can read and write) and access to safe water.\n\nBirth, death and infant mortality <strong>rates</strong> are always \"per 1,000\" each year: per 1,000 people, or per 1,000 babies born alive. The literacy rate is different: it is a percentage.\n\nThe <strong>HDI</strong> (Human Development Index) combines three things into one score between 0 and 1: income, life expectancy and education.\n\nEvery measure has <strong>limitations</strong>: reasons it can mislead. GNI per head is an average, so it hides how unequally money is shared. Birth rates are affected by religion and culture, not only by development. Data from poorer countries can be out of date or guessed. One measure on its own never gives the whole picture.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Development — improvement in quality of life; economic and social dimensions",
-        "GNI per capita — most used economic indicator; USA $70k, UK $47k, Nigeria $2.1k, Niger $590",
-        "Life expectancy — Japan 84, Sierra Leone 55; measures healthcare and living standards",
-        "Infant mortality rate (IMR) — deaths per 1,000 live births; Chad 103, UK 4",
-        "HDI — UN composite: income + life expectancy + education; better than single indicators",
-        "Happy Planet Index — adds wellbeing and environmental sustainability to HDI"
+        "Development: quality of life getting better, in money and in people's lives",
+        "Economic measure: GNI per head, a country's yearly income divided by its population",
+        "Social measures: life expectancy, infant mortality rate, birth and death rates, people per doctor, literacy, safe water",
+        "Birth, death and infant mortality rates: per 1,000 each year; literacy rate: a percentage",
+        "HDI: one score from income, life expectancy and education",
+        "Limitation = why a measure can mislead: an average hides inequality; birth rates depend on culture too"
       ],
       "keyTerms": [
-        {"term": "GNI per capita", "def": "Gross National Income per capita — the total income a country earns in a year, divided by the number of people living there. 'Per capita' simply means 'per person', so it is an average income figure that lets you compare a large country with a small one fairly."},
-        {"term": "Life expectancy", "def": "The average number of years someone born in a country can expect to live. It reflects the quality of healthcare, diet, clean water and safety."},
-        {"term": "Infant mortality rate", "def": "The number of babies, out of every 1,000 born alive, who die before their first birthday. It is one of the clearest signs of how good a country's healthcare and nutrition are."},
-        {"term": "HDI", "def": "Human Development Index — a single score between 0 and 1 that combines income, life expectancy and years of schooling. A score close to 1 means people are wealthy, long-lived and well educated."},
-        {"term": "Composite measure", "def": "A measure built by combining several different indicators into one number, instead of relying on just one. HDI is a composite measure; GNI per capita is not."}
+        {
+          "term": "GNI per head",
+          "def": "Gross national income per head: all the income a country earns in a year, divided by the number of people living there. It is an average income for each person."
+        },
+        {
+          "term": "Life expectancy",
+          "def": "The average number of years a baby born now in a country can expect to live."
+        },
+        {
+          "term": "Infant mortality rate",
+          "def": "The number of babies, out of every 1,000 born alive, who die before their first birthday, in a year."
+        },
+        {
+          "term": "HDI",
+          "def": "Human Development Index: one score between 0 and 1 that combines income, life expectancy and education. Close to 1 means rich, long-lived and well educated."
+        },
+        {
+          "term": "Limitation",
+          "def": "A reason a measure can give a misleading picture, such as an average hiding big differences between rich and poor people."
+        }
       ],
-      "memTip": "GNI counts the cash; HDI adds health and learning. One number vs three dimensions.",
-      "tutor_note": "Explain WHY composite measures are better — they capture more of what development means. Single indicators can be misleading."
+      "memTip": "GNI counts the cash; HDI adds health and learning.",
+      "tutor_note": "A limitation answer must say why the measure can mislead, not just what it leaves out."
     },
     {
-      "heading": "Development categories and the Brandt Line",
-      "content": "The <strong>World Bank</strong> classifies countries by income: <strong>HICs</strong> (High Income Countries — e.g., UK, USA, Japan), <strong>UMICs</strong> (Upper Middle Income — e.g., Brazil, China), <strong>LMICs</strong> (Lower Middle Income — e.g., Nigeria, India) and <strong>LICs</strong> (Low Income Countries — e.g., Niger, Malawi). <strong>NEEs</strong> (Newly Emerging Economies) are countries with rapid economic growth, large populations and growing global influence, such as China, India, Brazil, South Africa, Nigeria and Mexico. The <strong>Brandt Line</strong> (proposed 1980) drew a broad north-south divide across the globe, with 'North' being HICs and 'South' being LICs. However, this is now <strong>outdated</strong>: many NEEs in the 'south' (e.g., China, Brazil) are now among the world's largest economies, and Australia and New Zealand (in the geographic south) were always in the 'rich north' category.",
+      "heading": "Ways of classifying countries",
+      "content": "Countries can be grouped by their level of development.\n\nThe <strong>World Bank</strong> is an international organisation that lends money for development. It groups countries by GNI per head. <strong>HICs</strong> (high income countries) include the UK and Japan. <strong>LICs</strong> (low income countries) include Niger and Malawi. In between are middle income countries, split into upper-middle and lower-middle. Kenya is lower-middle income: still a poorer country, with a GNI per head of $2,200 in 2025.\n\n<strong>NEEs</strong> (newly emerging economies) are countries whose economies have started to grow fast as they build up industry, such as China, India, Brazil and Nigeria.\n\nAn older way of dividing the world is the <strong>Brandt Line</strong>, drawn on a map to separate a richer \"North\" from a poorer \"South\". It fits today's world badly: some countries in the \"South\", such as China, now have some of the world's largest economies.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "g5-brandt-line",
-      "diagramCaption": "The Brandt Line of 1980 — a rough split between richer North and poorer South.",
+      "diagramCaption": "The Brandt Line: a rough split between a richer North and a poorer South.",
       "diagramExamTip": true,
       "writeBullets": [
-        "World Bank categories — HICs, UMICs, LMICs, LICs (based on GNI per capita)",
-        "NEEs — Newly Emerging Economies: China, India, Brazil, Nigeria, South Africa, Mexico",
-        "NEEs — rapid economic growth, large populations, growing global influence",
-        "Brandt Line (1980) — broad north-south divide; 'North' = rich, 'South' = poor",
-        "Brandt Line is now outdated — China and Brazil (in south) are major economic powers"
+        "World Bank groups by GNI per head: HICs, upper-middle and lower-middle income countries, LICs; Kenya is lower-middle income",
+        "NEEs: economies growing fast as industry builds up (China, India, Brazil, Nigeria)",
+        "Brandt Line: richer North, poorer South; out of date because of fast-growing NEEs"
       ],
       "keyTerms": [
-        {"term": "HIC", "def": "High Income Country — a wealthy country with a high GNI per capita, such as the UK, Japan or the United States."},
-        {"term": "LIC", "def": "Low Income Country — one of the world's poorest countries, with a low GNI per capita, such as Niger or Malawi."},
-        {"term": "NEE", "def": "Newly Emerging Economy — a country whose economy is growing quickly as it industrialises, lifting it out of the low income group. Nigeria, India and Brazil are examples."},
-        {"term": "Brandt Line", "def": "A line drawn across a world map in 1980 to separate the richer 'North' from the poorer 'South'. It dips below the equator so that Australia and New Zealand sit in the 'North'. It was always a rough guide, and it fits the world less well now than it did then."},
-        {"term": "World Bank", "def": "An international organisation that lends money to countries for development projects, and which publishes the income data used to sort countries into low, middle and high income groups."}
+        {
+          "term": "HIC",
+          "def": "High income country: a wealthy country with a high GNI per head, such as the UK or Japan."
+        },
+        {
+          "term": "LIC",
+          "def": "Low income country: one of the world's poorest countries, with a low GNI per head, such as Niger."
+        },
+        {
+          "term": "NEE",
+          "def": "Newly emerging economy: a country whose economy has started to grow fast as it builds up industry, such as Nigeria, India or Brazil."
+        },
+        {
+          "term": "Brandt Line",
+          "def": "A line drawn on a world map to split a richer North from a poorer South. It is a rough guide that fits today's world badly."
+        },
+        {
+          "term": "World Bank",
+          "def": "An international organisation that lends money to countries for development, and groups countries by their income."
+        }
       ],
-      "memTip": "HIC, UMIC, LMIC, LIC — from high to low income; NEEs are the fast movers in between.",
-      "tutor_note": "Students often forget to critique the Brandt Line — stating it's outdated earns evaluation marks."
+      "memTip": "HIC at the top, LIC at the bottom; NEEs are the fast movers in between.",
+      "tutor_note": "Saying why the Brandt Line is out of date earns evaluation marks."
     },
     {
-      "heading": "Why does the development gap exist?",
-      "content": "The <strong>development gap</strong> between rich and poor countries has multiple causes. <strong>Historical</strong>: <strong>colonialism</strong> — European powers extracted raw materials, established unfair trade relationships, drew arbitrary borders cutting across ethnic groups, and undermined local industries (e.g., British destroyed Indian cotton weaving to sell Lancashire textiles). <strong>Trade disadvantage</strong>: LICs export cheap <strong>primary products</strong> (coffee, copper, cocoa) and import expensive manufactured goods — and commodity prices are volatile and have declined relative to manufactured goods over time. <strong>Debt cycle</strong>: many LICs borrowed heavily from the IMF and World Bank in the 1970s–80s at high interest rates; debt repayments consume money that could fund schools and hospitals. <strong>Physical factors</strong>: landlocked countries face higher trade costs; poor soils and unreliable rainfall limit agriculture; natural disasters damage infrastructure. <strong>Political factors</strong>: corruption diverts public money; conflict destroys infrastructure and deters investment.",
+      "heading": "Population and development: the Demographic Transition Model",
+      "content": "As a country develops, its births and deaths change in a pattern. The <strong>Demographic Transition Model</strong> (DTM) shows this pattern in five stages. It compares the <strong>birth rate</strong> (births for every 1,000 people each year) with the <strong>death rate</strong> (deaths for every 1,000 people each year).\n\n<strong>Stage 1</strong>: both rates are high, so the population stays small. Few places are like this today.\n<strong>Stage 2</strong>: the death rate falls fast as clean water, food and health care improve, but the birth rate stays high. The population grows fast. Many LICs are here.\n<strong>Stage 3</strong>: the birth rate falls too, as fewer babies die, more girls go to school and more women go out to work. Growth slows. Many NEEs are here.\n<strong>Stage 4</strong>: both rates are low and the population is steady. Most HICs, such as the UK, are here.\n<strong>Stage 5</strong>: the birth rate falls below the death rate and the population shrinks slowly, as in Japan.\n\nSo a country's stage in the DTM gives a clue to its level of development. Moving into stage 3 can help the economy: with fewer children to look after, more women can work.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "DTM: birth and death rates change in five stages as a country develops",
+        "Stage 2: death rate falls, birth rate high, fast growth: many LICs",
+        "Stage 3: birth rate falls too (fewer babies die, girls' schooling, women working): many NEEs",
+        "Stage 4: both low, steady population: most HICs",
+        "Stage 5: births below deaths, population shrinks (Japan)",
+        "Stage 3 can boost the economy: more women able to work"
+      ],
+      "keyTerms": [
+        {
+          "term": "Demographic Transition Model",
+          "def": "A model with five stages showing how a country's birth and death rates, and so its population, change as it develops."
+        },
+        {
+          "term": "Birth rate",
+          "def": "The number of babies born for every 1,000 people in a year."
+        },
+        {
+          "term": "Death rate",
+          "def": "The number of people who die for every 1,000 people in a year."
+        }
+      ],
+      "memTip": "Deaths drop first, births follow: that is the transition.",
+      "tutor_note": "Link each stage to a level of development with one example."
+    },
+    {
+      "heading": "Uneven development: causes and consequences",
+      "content": "Development is <strong>uneven</strong>: some countries are much further ahead than others. The difference between the richest and poorest countries is called the <strong>development gap</strong>. Its causes come in three groups.\n\n<strong>Physical causes</strong> come from nature. A <strong>landlocked</strong> country, with no coastline, pays more to trade. Poor soils, drought and natural hazards such as floods or earthquakes damage farming and buildings. Diseases such as malaria keep people from working.\n\n<strong>Economic causes</strong> come from trade and money. Many poorer countries sell raw materials such as coffee or copper, called <strong>primary products</strong>, which earn little and whose prices change a lot. They buy costly manufactured goods. Paying back debts leaves less money for schools and hospitals.\n\n<strong>Historical causes</strong> come from the past. Under <strong>colonialism</strong>, European countries ruled much of Africa and Asia, taking raw materials and drawing borders that split peoples.\n\nUneven development has consequences. There are big <strong>disparities</strong> (differences) in wealth and in health. It also causes <strong>international migration</strong>: people move from poorer countries to richer ones for work, higher pay and safety. Many send money home to their families.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "g5-development-gap-causes",
-      "diagramCaption": "Four causes of the development gap, each feeding the others.",
+      "diagramCaption": "Causes of the development gap, each feeding the others.",
       "diagramExamTip": true,
       "writeBullets": [
-        "Colonialism — extraction of resources, unfair trade, arbitrary borders, undermined local industries",
-        "Trade disadvantage — LICs export cheap primary products, import expensive manufactured goods",
-        "Debt cycle — IMF/World Bank loans in 1970s–80s; high interest; repayments drain government budgets",
-        "Physical factors — landlocked, poor soils, unreliable rainfall, natural disaster vulnerability",
-        "Political factors — corruption diverts money; conflict destroys infrastructure and deters investment",
-        "Terms of trade — prices of primary commodities fall over time relative to manufactured goods"
+        "Physical causes: landlocked, poor soils, drought, natural hazards, disease",
+        "Economic causes: selling cheap primary products, buying costly goods, debt",
+        "Historical causes: colonialism took raw materials and drew borders that split peoples",
+        "Consequences: disparities in wealth and health",
+        "Consequence: international migration from poorer to richer countries for work and pay; money sent home"
       ],
       "keyTerms": [
-        {"term": "Development gap", "def": "The difference in wealth and quality of life between the richest countries and the poorest ones."},
-        {"term": "Colonialism", "def": "When one country takes control of another and runs it for its own benefit. European powers colonised much of Africa, Asia and the Caribbean, taking raw materials out and shutting down local industries that competed with their own."},
-        {"term": "Primary products", "def": "Raw materials sold before anything has been made from them — crops, timber, oil, metal ores. They earn far less than manufactured goods, and their prices swing sharply from year to year."},
-        {"term": "Debt cycle", "def": "When a country borrows money, then has to spend so much on interest repayments that it cannot afford schools, hospitals or roads — so it stays poor and has to borrow again."},
-        {"term": "Terms of trade", "def": "The relationship between what a country earns for its exports and what it pays for its imports. A country selling cheap raw materials and buying expensive manufactured goods has poor terms of trade."}
+        {
+          "term": "Development gap",
+          "def": "The difference in wealth and quality of life between the richest and the poorest countries."
+        },
+        {
+          "term": "Primary products",
+          "def": "Raw materials sold before anything is made from them, such as crops, oil or metal ores. They earn far less than manufactured goods."
+        },
+        {
+          "term": "Colonialism",
+          "def": "When one country rules another and runs it for its own benefit, as European countries did in much of Africa and Asia."
+        },
+        {
+          "term": "International migration",
+          "def": "People moving from one country to live in another, often from poorer countries to richer ones for work and higher pay."
+        }
       ],
-      "memTip": "CTDPP — Colonialism, Trade, Debt, Physical, Political. Five causes, five letters.",
-      "tutor_note": "For 9-mark answers, use this as your structure — one paragraph per cause group, with evidence."
+      "memTip": "Physical, economic, historical: nature, money, the past.",
+      "tutor_note": "For a physical cause, name something natural: landlocked, drought, hazards, disease."
     },
     {
       "heading": "Strategies to reduce the development gap",
-      "content": "There are multiple strategies used to try to close the development gap. <strong>Aid</strong>: bilateral (government to government), multilateral (through UN or World Bank), or voluntary (NGOs like Oxfam). Short-term emergency aid vs long-term development aid. Criticisms: dependency, inappropriate projects, corruption. <strong>Trade</strong>: the <strong>Fairtrade</strong> scheme guarantees farmers an above-market price plus a Fairtrade Premium for community projects (schools, clean water). Criticisms: does money reach farmers? Benefits limited to certified producers. <strong>Debt relief</strong>: the HIPC initiative (Heavily Indebted Poor Countries — IMF/World Bank) cancelled debts for 36 qualifying countries; Uganda used freed money to abolish school fees. <strong>Intermediate technology</strong>: Practical Action designs technology matching local skills and resources (e.g., solar-powered water pumps, improved cookstoves). <strong>Microfinance</strong>: Grameen Bank (Bangladesh) provides small loans to very poor people — mainly women — to start businesses; 97% repayment rate. <strong>Tourism</strong>: brings income and jobs but profits often 'leak' to TNCs.",
+      "content": "Several strategies try to close the gap.\n\n<strong>Investment</strong>: companies or other countries put money into businesses, roads and factories. <strong>Industrial development</strong> creates jobs and taxes.\n\n<strong>Aid</strong> is help from one country or charity to another: money, goods or skills, given or lent on very easy terms. Emergency aid helps after a disaster; long-term aid pays for schools or wells. It can be wasted or make a country depend on it.\n\n<strong>Intermediate technology</strong> is simple equipment local people can make, use and mend, such as a hand water pump.\n\n<strong>Fairtrade</strong> pays farmers a fair minimum price, plus extra money for their community.\n\n<strong>Debt relief</strong> cancels some of a poor country's debt, so money paid out as interest can go on health and schools instead. Under one international scheme, most of the 39 poor countries that qualified have had much of their debt cancelled.\n\n<strong>Microfinance</strong> means very small loans to people too poor to use an ordinary bank, to start a business. Grameen Bank in Bangladesh lends mostly to women.\n\n<strong>Tourism</strong> brings money and jobs. In <strong>Kenya</strong>, a poorer country that is growing fast, tourism has grown: about 1.2 million international tourists came in 2015 and about 2 million in 2019, for safaris and beaches. In 2019 tourism earned $1.76 billion, about 15% of what Kenya earns from selling abroad. That money pays wages, taxes and new roads. But much of it can go to foreign hotel companies, and visitor numbers fall after terrorism or a pandemic.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Aid — bilateral, multilateral, voluntary/NGO; emergency vs development; criticised for dependency",
-        "Fairtrade — guaranteed above-market price + Premium for community; questions about reach",
-        "HIPC debt relief — 36 countries' debts cancelled; Uganda abolished school fees with freed money",
-        "Intermediate technology — Practical Action; appropriate tools matching local skills (e.g., solar pumps)",
-        "Microfinance — Grameen Bank Bangladesh; small loans mainly to women; 97% repayment",
-        "Tourism — brings income and jobs but profits may leak to multinational hotel chains"
+        "Investment and industrial development: jobs and taxes",
+        "Aid: emergency or long-term; can be wasted or create dependence",
+        "Intermediate technology: simple kit locals can make and mend",
+        "Fairtrade: fair minimum price plus money for the community",
+        "Debt relief: cancelled debt frees money for health and schools; most of the 39 countries that qualified have been helped",
+        "Microfinance: tiny loans to start businesses; Grameen Bank lends mostly to women",
+        "Tourism in Kenya: visitors grew from about 1.2 million (2015) to 2 million (2019); $1.76 billion, 15% of exports; jobs and taxes, but money can leak abroad"
       ],
       "keyTerms": [
-        {"term": "Aid", "def": "Money, goods or expertise given by one country or organisation to another. Short-term emergency aid follows disasters; long-term development aid pays for things like schools and water supplies."},
-        {"term": "Fairtrade", "def": "A scheme that guarantees farmers a minimum price for their crop, plus an extra payment for their community, so that the growers rather than the buyers keep more of the money."},
-        {"term": "HIPC", "def": "Heavily Indebted Poor Countries — an international scheme that cancels part of the debt of the world's poorest countries, so the money can be spent at home instead of on repayments."},
-        {"term": "Intermediate technology", "def": "Simple, affordable equipment that local people can build, use and repair themselves, such as a hand-powered water pump, rather than expensive machinery that needs foreign engineers to keep it running."},
-        {"term": "Microfinance", "def": "Very small loans given to people too poor to use an ordinary bank, usually so they can start a small business."},
-        {"term": "Grameen Bank", "def": "A bank founded in Bangladesh that pioneered microfinance, lending small sums mainly to women so they could set up businesses of their own."}
+        {
+          "term": "Aid",
+          "def": "Help from one country or organisation to another: money, goods or skills, given or lent on very easy terms, either after a disaster or for long-term projects."
+        },
+        {
+          "term": "Fairtrade",
+          "def": "A scheme that pays farmers a fair minimum price for their crop, plus extra money for their community."
+        },
+        {
+          "term": "Debt relief",
+          "def": "Cancelling part or all of the money a poor country owes, so it can spend that money on its own people."
+        },
+        {
+          "term": "Intermediate technology",
+          "def": "Simple, cheap equipment that local people can make, use and repair themselves."
+        },
+        {
+          "term": "Microfinance",
+          "def": "Very small loans to people too poor to use an ordinary bank, usually to start a small business."
+        }
       ],
-      "memTip": "ATDIM-T — Aid, Trade (Fairtrade), Debt relief, Intermediate tech, Microfinance, Tourism.",
-      "tutor_note": "Always evaluate each strategy — giving both advantages and limitations earns higher marks."
+      "memTip": "Aid gives, debt relief forgives, microfinance lends.",
+      "tutor_note": "Debt relief is not a loan: it cancels what is owed. Microfinance is a loan."
     },
     {
       "heading": "Is the development gap closing?",
-      "content": "The picture is mixed. For <strong>NEEs</strong> — especially China, India, and Brazil — the gap with HICs is <strong>narrowing dramatically</strong>. China alone has lifted an estimated 800 million people out of extreme poverty since 1980, the fastest reduction in history. India's economic growth has similarly transformed living standards for hundreds of millions. However, for many <strong>sub-Saharan African LICs</strong>, the gap may be <strong>widening</strong>. The <strong>SDGs</strong> (Sustainable Development Goals — UN, agreed 2015, 17 goals to achieve by 2030) aim to end poverty, hunger, inequality and environmental degradation globally. Progress has been made: the share of the world's population living in extreme poverty (under $2.15/day) fell from 36% in 1990 to 8.6% in 2022. However, COVID-19 reversed some gains, and progress is concentrated in Asia — sub-Saharan Africa lags behind on most SDG targets.",
+      "content": "The picture is mixed. Some NEEs, especially China and India, have grown fast, and hundreds of millions of their people now have higher incomes. Across the world, the share of people in <strong>extreme poverty</strong> (living on less than $3 a day) fell from about 43% in 1990 to about 10% in 2024.\n\nBut progress is uneven. Many of the poorest countries, especially in Africa south of the Sahara, are falling further behind. The United Nations has set <strong>Sustainable Development Goals</strong>, targets for every country to end poverty and hunger and improve health and schooling.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "NEEs closing the gap — China lifted 800m out of poverty since 1980; India rapid growth",
-        "Sub-Saharan Africa LICs — gap may be widening despite global progress",
-        "Extreme poverty fell from 36% (1990) to 8.6% (2022) — global progress clear",
-        "SDGs — 17 UN goals agreed 2015, target 2030; cover poverty, education, health, environment",
-        "COVID-19 set back progress in many LICs — gains reversed in 2020–21",
-        "Progress uneven — concentrated in Asia; Africa lags on most SDG indicators"
+        "Some NEEs (China, India) closing the gap fast",
+        "Extreme poverty (under $3 a day): about 43% of people in 1990, about 10% in 2024",
+        "Many of the poorest African countries falling further behind",
+        "Sustainable Development Goals: UN targets on poverty, hunger, health, schooling"
       ],
       "keyTerms": [
-        {"term": "Sustainable Development Goals (SDGs)", "def": "A set of 17 global targets agreed by countries at the United Nations in 2015, covering poverty, hunger, health, education and climate, to be met by 2030."},
-        {"term": "Extreme poverty", "def": "Living below the international poverty line — an income too low to cover basic food, shelter and healthcare. The share of the world's population living in extreme poverty has fallen sharply since 1990."},
-        {"term": "NEE", "def": "Newly Emerging Economy — a country whose economy is growing quickly as it industrialises, lifting it out of the low income group. Nigeria, India and Brazil are examples.", "referenceOnly": true}
+        {
+          "term": "Extreme poverty",
+          "def": "Living on less than the international poverty line, now $3 a day: too little for basic food, shelter and health care."
+        },
+        {
+          "term": "Sustainable Development Goals",
+          "def": "Targets agreed at the United Nations for every country, covering poverty, hunger, health, education and the environment."
+        },
+        {
+          "term": "NEE",
+          "def": "Newly emerging economy: a country whose economy has started to grow fast as it builds up industry, such as Nigeria, India or Brazil.",
+          "referenceOnly": true
+        }
       ],
-      "memTip": "China soared, Africa stalled — the gap is closing for NEEs, widening for many LICs.",
-      "tutor_note": "The SDGs give a framework for evaluation questions — use them to assess progress or lack of it."
+      "memTip": "Closing for the fast growers, widening for many of the poorest.",
+      "tutor_note": "A judgement needs evidence for both sides."
     }
   ],
   "checkpoints": {
     "0": {
-      "question": "Why is the HDI considered a better measure of development than GNI per capita alone?",
+      "question": "Why is the HDI a better measure of development than GNI per head on its own?",
       "options": [
-        "Because it combines income, life expectancy and education into one composite measure, capturing more of what development means",
-        "Because it only uses economic data which is more reliable than social data",
-        "Because it was designed by the World Bank, which has access to better data than the UN",
-        "Because it measures development in a single country over time rather than comparing countries"
+        "It combines income, life expectancy and education, so it shows more about people's lives",
+        "It only uses money data, which is more reliable",
+        "It measures one country over time instead of comparing countries",
+        "It counts how many people live in a country"
       ],
       "correct": 0,
-      "correctFeedback": "Exactly right. HDI is a composite measure — it brings together GNI per capita, life expectancy and education. This means a country can't have a high HDI just by being wealthy; people also need long lives and access to education.",
-      "wrongFeedback": "Not quite. HDI is better because it's a composite measure combining income, health (life expectancy) and education. GNI per capita only tells you about money — not whether people live long, healthy, educated lives."
+      "correctFeedback": "Right. The HDI brings together income, health and education, so a country cannot score high just by being rich.",
+      "wrongFeedback": "Not quite. The HDI combines income, life expectancy and education. GNI per head only shows money, not whether people live long, healthy, educated lives."
     },
-    "2": {
-      "question": "Which of the following is a human cause of the development gap?",
+    "3": {
+      "question": "Which of these is a physical cause of uneven development?",
       "options": [
-        "The debt cycle — LICs borrowed from the IMF at high interest in the 1970s and debt repayments drain government budgets",
-        "Landlocked location — being far from the coast increases trade costs and limits economic development",
-        "Poor soils — low soil fertility limits agricultural productivity and food security",
-        "Unreliable rainfall — drought and flood damage crops and limits farming income"
+        "Being landlocked, with no coastline, so trade costs more",
+        "Paying back large debts",
+        "Selling cheap raw materials and buying costly goods",
+        "Borders drawn by colonial rulers"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! The debt cycle is a human (economic/political) cause. LICs borrowed heavily in the 1970s and the interest payments drain money that could fund schools and hospitals.",
-      "wrongFeedback": "That's a physical cause. The debt cycle is a human cause — LICs borrowed from the IMF and World Bank in the 1970s at high interest, and debt repayments consume money that could fund development."
+      "correctFeedback": "Right. Being landlocked comes from geography, so it is a physical cause.",
+      "wrongFeedback": "Not quite. Debts and trade are economic causes; colonial borders are historical. Being landlocked is physical: it comes from where the country is."
     }
   },
   "commonMistakes": [
-    "Using GDP rather than GNI per capita — examiners mostly use GNI per capita; GDP is total output within a country's borders, GNI includes income from abroad. Use the right term.",
-    "Saying HDI is 'better than GNI' without explaining why — always say it's a composite of THREE dimensions: income, health (life expectancy) and education.",
-    "Describing the Brandt Line as still accurate — always note that it's outdated; NEEs like China and Brazil (in the geographic south) are now major economic powers.",
-    "Forgetting to evaluate strategies — all development strategies have criticisms (aid creates dependency, Fairtrade benefits are limited, tourism profits leak). Always include evaluation.",
-    "Confusing infant mortality rate and life expectancy — IMR measures deaths in the first year of life (per 1,000 births); life expectancy is the average age people live to."
+    "Giving a limitation of a measure as what it does not show. Say why it can mislead: GNI per head is an average, so it hides how unequally money is shared.",
+    "Saying a rate without \"per 1,000 per year\". The infant mortality rate is babies dying before their first birthday for every 1,000 born alive, each year.",
+    "Confusing debt relief with a loan. Debt relief cancels money owed; microfinance is a small loan.",
+    "Mixing up aid with microfinance, tourism or TNCs. Aid is help from governments or charities: gifts, or loans on very easy terms. It is not a business earning a profit.",
+    "Not knowing what a physical cause is. It comes from nature: being landlocked, drought, hazards, disease.",
+    "Confusing infant mortality rate with life expectancy."
   ],
   "examTips": [
-    "A 9-mark development gap answer needs: historical causes + physical causes + human causes, each with evidence, then an evaluative conclusion on which is most significant.",
-    "For questions on strategies, use the ATDIM-T structure (Aid, Trade/Fairtrade, Debt relief, Intermediate tech, Microfinance, Tourism) and evaluate each briefly.",
-    "When quoting development indicator data, always state the country and the figure together — 'Niger has a GNI per capita of ~$590, compared to $47,000 in the UK' is much stronger than 'some countries are poor'.",
-    "The SDGs (2015, 17 goals, target 2030) are a good framework for answering questions about international cooperation and whether progress is being made."
+    "For a limitation question, give one reason the measure can mislead and explain it.",
+    "For causes, use the three groups: physical, economic and historical, each with an example.",
+    "When judging tourism, use a named country: Kenya earned $1.76 billion from tourism in 2019, but some money leaks to foreign companies.",
+    "For a judgement question (\"Do you agree?\"), give evidence for both sides from a named example, then say which side is stronger and why."
   ],
   "revisionCardBullets": [
-    "Development = improvement in quality of life; economic + social dimensions",
-    "GNI per capita — most used economic indicator; UK $47k, Niger $590",
-    "HDI — composite measure: income + life expectancy + education (UN measure)",
-    "World Bank categories: HIC, UMIC, LMIC, LIC",
-    "NEEs — Newly Emerging Economies: China, India, Brazil, Nigeria; rapid growth",
-    "Brandt Line (1980) — north-south divide; now outdated as NEEs have developed",
-    "Development gap causes: colonialism, unfair trade, debt cycle, physical factors, conflict",
-    "Fairtrade — above-market price + Premium; helps farmers but benefits limited",
-    "HIPC debt relief — 36 countries' debts cancelled; Uganda abolished school fees",
-    "Grameen Bank microfinance — small loans mainly to women; 97% repayment rate",
-    "Extreme poverty: 36% (1990) → 8.6% (2022); but progress mainly in Asia",
-    "SDGs — 17 UN goals, agreed 2015, target 2030; cover poverty, health, environment"
+    "Development = quality of life getting better",
+    "GNI per head: yearly income ÷ population; UK $54,550, Nigeria $1,360 (2025)",
+    "Social measures: life expectancy, infant mortality, birth and death rates, doctors, literacy, safe water",
+    "HDI: income + life expectancy + education",
+    "Limitation: why a measure can mislead (averages hide inequality)",
+    "DTM: stage 2 many LICs, stage 3 many NEEs, stage 4 most HICs",
+    "Causes of the gap: physical, economic, historical",
+    "Consequences: disparities in wealth and health; international migration",
+    "Strategies: investment, industry, tourism, aid, intermediate technology, Fairtrade, debt relief, microfinance",
+    "Debt relief cancels debt; microfinance lends small sums",
+    "Kenya tourism: about 1.2 million visitors (2015) to 2 million (2019); $1.76 billion, 15% of exports (2019)",
+    "Extreme poverty: about 43% (1990) to 10% (2024), but the poorest countries lag"
   ],
   "videos": [
     {

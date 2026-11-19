@@ -2,14 +2,72 @@
   "id": "g5-nigeria",
   "title": "The Changing Economic World: Nigeria",
   "topic": "G5",
-  "figuresSourced": false,
-  "examTip": "Nigeria is an NEE, not an LIC — always use this classification. For TNC questions, you need both advantages (jobs, tax revenue) AND disadvantages (oil spills, profit repatriation) with specific evidence.",
-  "introTips": [
-    "Nigeria is an NEE — West Africa's largest economy; don't call it an LIC.",
-    "Shell's oil operations are the go-to TNC example — know both benefits and the environmental damage.",
-    "The north-south divide within Nigeria is an important inequality point for 6-mark answers."
+  "figuresSourced": true,
+  "sources": [
+    {
+      "figure": "Nigeria's population: about 238 million",
+      "year": "2025",
+      "source": "World Bank, SP.POP.TOTL",
+      "url": "https://api.worldbank.org/v2/country/NGA/indicator/SP.POP.TOTL?format=json&mrnev=1",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Size of Nigeria's economy (GDP): about $291 billion",
+      "year": "2025",
+      "source": "World Bank, NY.GDP.MKTP.CD",
+      "url": "https://api.worldbank.org/v2/country/NGA/indicator/NY.GDP.MKTP.CD?format=json&mrnev=1",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Nigeria's GNI per head: $1,360",
+      "year": "2025",
+      "source": "World Bank, NY.GNP.PCAP.CD",
+      "url": "https://api.worldbank.org/v2/country/NGA/indicator/NY.GNP.PCAP.CD?format=json&mrnev=1",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Fuel (oil and gas) as a share of Nigeria's goods exports: about 86%",
+      "year": "2025",
+      "source": "World Bank, TX.VAL.FUEL.ZS.UN",
+      "url": "https://api.worldbank.org/v2/country/NGA/indicator/TX.VAL.FUEL.ZS.UN?format=json&mrnev=1",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Nigeria's life expectancy: 47 years in 2000, 55 years in 2024",
+      "year": "2000, 2024",
+      "source": "World Bank, SP.DYN.LE00.IN",
+      "url": "https://api.worldbank.org/v2/country/NGA/indicator/SP.DYN.LE00.IN?format=json&date=2000:2024",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Nigeria's infant mortality: 95 per 1,000 live births in 2000, 70 in 2024",
+      "year": "2000, 2024",
+      "source": "World Bank, SP.DYN.IMRT.IN",
+      "url": "https://api.worldbank.org/v2/country/NGA/indicator/SP.DYN.IMRT.IN?format=json&date=2000:2024",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Shell completed the sale of its onshore Nigerian company (SPDC) to Renaissance Africa Energy Company on 13 March 2025; it still produces deep-water oil from the Bonga field and distributes gas",
+      "year": "2025",
+      "source": "Shell Nigeria home page",
+      "url": "https://www.shell.com.ng/",
+      "opened": "2026-11-19"
+    },
+    {
+      "figure": "Nigeria's economy by sector: services about 58% of GDP, industry about 16%, farming, forestry and fishing about 23%; farming about 34% of jobs",
+      "year": "2025",
+      "source": "World Bank, NV.SRV.TOTL.ZS, NV.IND.TOTL.ZS, NV.AGR.TOTL.ZS, SL.AGR.EMPL.ZS (modelled ILO estimate)",
+      "url": "https://api.worldbank.org/v2/country/NGA/indicator/NV.SRV.TOTL.ZS?format=json&mrnev=1",
+      "opened": "2026-11-19"
+    }
   ],
-  "intro": "Nigeria is a country of extraordinary contrasts: Africa's most populous nation, one of its largest economies, home to vast oil reserves and the world's second-largest film industry by output (2009 ranking) — yet also a place where millions live on under $2 a day, where oil spills have poisoned farmland for generations, and where the gap between north and south, rich and poor, is vast. Nigeria's story shows both what rapid development can achieve and what it can cost.",
+  "examTip": "Nigeria is an NEE. For TNC questions, give advantages (jobs, taxes, skills) AND disadvantages (pollution, profits leaving the country), and explain how each one affects development.",
+  "introTips": [
+    "Nigeria is an NEE, not an LIC.",
+    "Shell in the Niger Delta is the main TNC example: know both the benefits and the damage.",
+    "Use place detail: Lagos, the Niger Delta, the poorer north."
+  ],
+  "intro": "Nigeria is Africa's most populous country, with about 238 million people. Most of the money it earns from selling abroad comes from oil, yet many of its people are still poor. This lesson is a case study of one NEE. It covers where Nigeria is and why it matters, and how its economy is changing. It also covers what big foreign companies bring, and how development changes people's lives and the environment.",
   "basics": [
     {
       "idea": "Where Nigeria is",
@@ -43,134 +101,178 @@
   "keyPoints": [
     {
       "heading": "Nigeria in context",
-      "content": "<strong>Nigeria</strong> is located in West Africa and is the continent's most populous country with over 220 million people (2023 estimate). Nigeria has one of Africa's <strong>largest economies</strong>, worth roughly $360–400 billion (2024 estimate), having been the continent's largest for most of the 2010s before currency devaluation cut its measured size. Nigeria is classified as an <strong>NEE</strong> (Newly Emerging Economy) — transitioning from a primarily agriculture-based economy towards industry and services. Nigeria has abundant <strong>natural resources</strong>: oil (Niger Delta — among the world's largest proven reserves, 2020s estimates), natural gas, coal, tin, iron ore, cocoa and palm oil. Its <strong>colonial history</strong> is significant: under British rule from 1861 to 1960, the British exploited groundnuts, palm oil and tin, and drew borders that cut across 250+ ethnic groups including the <strong>Hausa-Fulani</strong>, <strong>Yoruba</strong> and <strong>Igbo</strong>. These divisions have caused ongoing political tensions.",
+      "content": "<strong>Nigeria</strong> is in West Africa, on the coast of the Gulf of Guinea. It has about 238 million people, more than any other African country, and an economy worth about $291 billion a year. It is an <strong>NEE</strong>: a newly emerging economy, growing as it builds up industry and services.\n\n<strong>Regionally</strong>, in West Africa, Nigeria is the biggest economy and the biggest member of <strong>ECOWAS</strong>, a group of West African countries that work to make trade between them easier. <strong>Globally</strong>, it is a major oil exporter, and its films and music are watched and heard around the world.\n\nIts wider context matters too. <strong>Politically</strong>, Britain ruled Nigeria until independence, and since then there have been military governments as well as elected ones. <strong>Socially and culturally</strong>, Nigeria has hundreds of ethnic groups; the largest are the Hausa-Fulani in the north and the Yoruba and Igbo in the south. Most people in the north are Muslim and most in the south are Christian. <strong>Environmentally</strong>, it has dry grassland in the north and rainforest, mangroves and the oil-rich <strong>Niger Delta</strong> in the south.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "g5-nigeria-context",
       "diagramCaption": "Nigeria's location, its main city and oil region, and the north–south contrast.",
       "diagramExamTip": true,
       "writeBullets": [
-        "Location — West Africa; largest population in Africa (220m+, 2023 est.)",
-        "One of Africa's largest economies — ~$360–400bn (2024 est.); the largest for most of the 2010s",
-        "NEE — Newly Emerging Economy; transitioning from agriculture to industry and services",
-        "Natural resources — oil (among the world's largest reserves), gas, coal, cocoa, palm oil",
-        "British colonial rule 1861–1960 — exploited resources, drew arbitrary borders",
-        "250+ ethnic groups — Hausa-Fulani, Yoruba, Igbo — divisions persist"
+        "West Africa; Africa's most populous country, about 238 million people",
+        "NEE: economy growing as industry and services build up",
+        "Regional importance: biggest economy in West Africa, biggest member of ECOWAS",
+        "Global importance: major oil exporter; films and music known worldwide",
+        "Context: British rule until independence; hundreds of ethnic groups; Muslim north, Christian south",
+        "Environment: dry north, rainforest and oil-rich Niger Delta in the south"
       ],
       "keyTerms": [
-        {"term": "NEE", "def": "Newly Emerging Economy — a country whose economy is growing quickly as it industrialises, moving it out of the low income group. Nigeria, India and Brazil are examples."},
-        {"term": "Colonialism", "def": "When one country takes control of another and runs it for its own benefit. Britain ruled Nigeria from 1861 to 1960, taking out raw materials such as palm oil, groundnuts and tin, and drawing borders that cut across more than 250 ethnic groups."},
-        {"term": "Natural resources", "def": "Materials found in a country that can be used or sold — Nigeria's include crude oil, natural gas, tin and farmland. Having them does not automatically make a country rich; what matters is who controls them and where the money goes."},
-        {"term": "Niger Delta", "def": "The huge wetland region in southern Nigeria where the River Niger meets the sea. Almost all of Nigeria's oil is produced here, and it is also where the worst pollution and the deepest local anger about oil are found."}
+        {
+          "term": "NEE",
+          "def": "Newly emerging economy: a country whose economy has started to grow fast as it builds up industry, such as Nigeria, India or Brazil."
+        },
+        {
+          "term": "ECOWAS",
+          "def": "The Economic Community of West African States: a group of West African countries working to make trade between them easier. Nigeria is its largest member."
+        },
+        {
+          "term": "Niger Delta",
+          "def": "The large wetland area in southern Nigeria where the River Niger reaches the sea. Most of Nigeria's oil comes from here."
+        },
+        {
+          "term": "Regional importance",
+          "def": "How important a country is within its own part of the world: for Nigeria, within West Africa."
+        }
       ],
-      "memTip": "Nigeria = Africa's most populous + most populous = pressure. Lots of people, lots of resources, lots of inequality.",
-      "tutor_note": "The colonial legacy is important context for understanding Nigeria's development challenges — ethnic tensions and unfair trade patterns both trace back to this period."
+      "memTip": "Regional = West Africa; global = the whole world.",
+      "tutor_note": "\"Regionally important\" means within its world region, West Africa, not within Nigeria."
     },
     {
       "heading": "Nigeria's changing economy",
-      "content": "In the 1960s, Nigeria's economy was primarily <strong>agricultural</strong> (cocoa, groundnuts). <strong>Oil was discovered in 1956</strong> and by the 1970s had become dominant. Through the 2010s, oil made up over 90% of Nigeria's export earnings and roughly 70% of government revenue, though the revenue share swings with the oil price. However, oil employs only a small share of the workforce — often quoted as around 3%, though estimates vary — because it is <strong>capital-intensive</strong> (machines, not people, do the work), and volatile oil prices have caused economic <strong>boom and bust cycles</strong>. <strong>Manufacturing</strong> is growing in Lagos: Unilever, Nestlé and Cadbury all have factories there. The <strong>services sector</strong> is expanding rapidly — banking is growing, and <strong>Nollywood</strong> (Nigeria's film industry) was ranked the world's second-largest film industry by output after Bollywood (2009 ranking), and is estimated to be worth billions of dollars. A growing <strong>middle class</strong> — one projection puts it at 23 million households by 2030 — is driving consumer demand. <strong>Lagos</strong> is one of Sub-Saharan Africa's main financial hubs and a megacity.",
+      "content": "An economy has sectors. The <strong>primary sector</strong> takes raw materials from the land or sea: farming, fishing, oil. The <strong>secondary sector</strong> makes things in factories: <strong>manufacturing</strong>. The <strong>tertiary sector</strong> provides services such as shops, banks, health care and films.\n\nNigeria's economy used to depend on farming. Then oil was found in the Niger Delta. Today fuel (oil and gas) makes up about 86% of the goods Nigeria sells abroad. But oil gives jobs to few people, because machines do most of the work, and when the world oil price falls, Nigeria's income falls with it.\n\nIn 2025 services made up about 58% of Nigeria's economy, industry about 16% and farming about 23%. Farming still gave about a third of all jobs. So the balance is shifting towards manufacturing and services. Factories in and around <strong>Lagos</strong>, Nigeria's biggest city, make food, drinks, cement and soap. Services such as banking, mobile phones and <strong>Nollywood</strong>, Nigeria's film industry, are growing fast.\n\n<strong>Manufacturing can stimulate development</strong>: factory jobs pay regular wages; workers spend their wages in local shops, which then need more staff; the government collects more tax to spend on schools and roads. One new factory can lead to many more jobs in this way. This is called the <strong>multiplier effect</strong>.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "Oil dominates — 90%+ of exports, ~70% of government revenue (2010s)",
-        "Oil employs only a small share of workers (often quoted ~3%) — capital-intensive, not labour-intensive",
-        "Volatile oil prices cause boom-bust economic cycles",
-        "Manufacturing growing — Lagos: Unilever, Nestlé, Cadbury factories",
-        "Nollywood — ranked world's 2nd largest film industry by output (2009); estimated multi-billion dollar industry",
-        "Growing middle class — one projection: 23m households by 2030",
-        "Lagos — megacity and one of Sub-Saharan Africa's main financial hubs"
+        "Sectors: primary (raw materials), secondary (manufacturing), tertiary (services)",
+        "Fuel is about 86% of Nigeria's goods exports, but oil gives few jobs",
+        "Balance (2025): services about 58% of the economy, industry 16%, farming 23%; farming still about a third of jobs",
+        "Falling oil prices cut Nigeria's income: a reason to diversify",
+        "Growth of manufacturing (Lagos: food, drinks, cement, soap) and services (banking, phones, Nollywood)",
+        "Manufacturing stimulates development: wages, spending, more jobs, more tax: the multiplier effect"
       ],
       "keyTerms": [
-        {"term": "Oil dependency", "def": "Relying on one export for most of a country's earnings. Oil makes up the large majority of Nigeria's export income, so when the world oil price falls, government income collapses with it."},
-        {"term": "Capital-intensive", "def": "An industry that needs huge amounts of money and machinery but relatively few workers. Oil is capital-intensive, which is why it earns Nigeria so much while employing only a small share of the workforce."},
-        {"term": "Lagos", "def": "Nigeria's largest city and its commercial centre, on the southern coast. It is one of the fastest-growing cities in the world and generates a large share of the country's non-oil economy."},
-        {"term": "Nollywood", "def": "Nigeria's film industry, based mainly in Lagos. It produces more films per year than almost anywhere else in the world and is an example of Nigeria's economy growing beyond oil."},
-        {"term": "Middle class", "def": "The growing group of Nigerians with steady incomes, some savings and spending power beyond basic needs. A rising middle class is one sign of an economy moving out of the low income group."}
+        {
+          "term": "Primary sector",
+          "def": "Jobs that take raw materials from the land or sea, such as farming, fishing, mining and oil."
+        },
+        {
+          "term": "Secondary sector",
+          "def": "Jobs that make things, such as factory work. Also called manufacturing."
+        },
+        {
+          "term": "Tertiary sector",
+          "def": "Jobs that provide a service, such as shops, banks, health care, teaching and films."
+        },
+        {
+          "term": "Multiplier effect",
+          "def": "When one new business leads to more jobs and spending elsewhere, as workers spend their wages and the government collects more tax."
+        },
+        {
+          "term": "Nollywood",
+          "def": "Nigeria's film industry, based mainly in Lagos: an example of the economy growing beyond oil."
+        }
       ],
-      "memTip": "Oil earns the money but creates few jobs — Nigeria needs to diversify beyond oil.",
-      "tutor_note": "The contrast between oil's share of export revenue (over 90% in the 2010s) and employment (often quoted as about 3%) is a powerful statistic to use in exam answers about uneven development."
+      "memTip": "Oil earns the money but makes few jobs; factories and services spread jobs further.",
+      "tutor_note": "Explain the chain from a factory to development step by step: wages, spending, more jobs, taxes."
     },
     {
-      "heading": "TNCs: Shell and others",
-      "content": "<strong>TNCs</strong> (Transnational Corporations) play a major role in Nigeria's economy. <strong>Shell</strong> has operated oil extraction in the <strong>Niger Delta</strong> since 1958. <strong>Benefits</strong> of TNCs: government receives significant tax revenue and royalties; about 2,500 Nigerians employed directly by Shell, plus more than 10,000 contractors and many more jobs indirectly; infrastructure (roads, hospitals) was built near Shell facilities; technology transfer to local workers. <strong>Disadvantages</strong>: most profits are repatriated to the Netherlands and UK (Shell's home countries); relatively few local jobs given the industry's scale; environmental damage is severe. Estimates vary by source, but one commonly quoted range is 9–13 million barrels of oil spilled in the Niger Delta over the 50 years to the mid-2000s. The <strong>Bodo Creek spills (2008–9)</strong> reportedly contaminated around 69km² of creeks and farmland. How much oil was spilled is disputed: independent investigators' estimates, such as around 500,000 barrels, are far higher than Shell's own figures. Other TNCs include <strong>Unilever</strong> (consumer goods — soaps, food) and <strong>Diageo</strong> (Guinness Nigeria). Their presence brings technology transfer but raises questions about whether benefits reach ordinary Nigerians or primarily benefit shareholders abroad.",
+      "heading": "TNCs in Nigeria: Shell and Unilever",
+      "content": "A <strong>TNC</strong> (transnational corporation) is a company that works in many countries. Its headquarters are usually in a rich country.\n\n<strong>Shell</strong>, an oil company based in the UK, took oil from the Niger Delta on land for decades. In 2025 it sold that business to a Nigerian-owned company, but it still produces oil from deep water off the coast. <strong>Unilever</strong> makes soap, food and drinks in factories in Nigeria.\n\n<strong>Advantages for Nigeria</strong>: TNCs give jobs and train local workers in new skills; they pay taxes to the government; they build roads and other facilities; they bring new technology. Unilever buys from Nigerian suppliers, which creates more local jobs.\n\n<strong>Disadvantages</strong>: much of the profit goes back to the TNC's home country instead of staying in Nigeria. Oil gives few jobs for the money it makes. Oil spills from pipelines, some from leaks and some from theft, have polluted creeks, farmland and fishing grounds in the Niger Delta, and burning off spare gas pollutes the air. Local people have protested that they get the pollution but little of the money.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": "g5-nigeria-oil-balance",
       "diagramCaption": "What oil extraction brings Nigeria, and what it costs.",
       "diagramExamTip": true,
       "writeBullets": [
-        "Shell in Niger Delta since 1958 — major oil extractor; ~2,500 direct employees + 10,000+ contractors",
-        "Government benefits — tax revenue and royalties from oil",
-        "Infrastructure built near Shell facilities — roads, hospitals",
-        "Profits repatriated to the UK — most economic benefit leaves Nigeria",
-        "9–13m barrels estimated spilled over 50 years to the mid-2000s (varies by source) — severe pollution",
-        "Bodo Creek spills 2008–9 — spill volume disputed between Shell and independent investigators",
-        "Other TNCs — Unilever (soaps/food), Diageo (Guinness Nigeria)"
+        "TNC: a company working in many countries, headquarters usually in a rich country",
+        "Shell: decades of oil from the Niger Delta (sold its onshore business in 2025, still offshore); Unilever: soap and food factories",
+        "Advantages: jobs, skills, taxes, roads, technology, work for local suppliers",
+        "Disadvantages: profits leave Nigeria; few jobs from oil; spills and gas flaring pollute land, water and air",
+        "Local protests: pollution stays, money goes"
       ],
       "keyTerms": [
-        {"term": "TNC", "def": "Transnational Corporation — a company that operates in more than one country, usually with its headquarters in a wealthy country and its operations in others. Shell, Unilever and Coca-Cola all operate in Nigeria."},
-        {"term": "Shell", "def": "An oil company headquartered in the UK that has operated in Nigeria since the 1950s. It is the TNC most associated with both the money and the damage that oil has brought to the Niger Delta."},
-        {"term": "Profit repatriation", "def": "When a foreign company sends its profits back to its home country instead of reinvesting them where they were earned. It is the main reason a country can host a hugely profitable industry and stay poor."},
-        {"term": "Bodo Creek", "def": "A fishing community in the Niger Delta hit by two large oil spills in 2008 and 2009. Estimates of how much oil was spilled vary widely between Shell and independent investigators; Shell agreed a compensation settlement with the community in 2015."},
-        {"term": "Niger Delta", "def": "The huge wetland region in southern Nigeria where the River Niger meets the sea. Almost all of Nigeria's oil is produced here, and it is also where the worst pollution and the deepest local anger about oil are found.", "referenceOnly": true}
+        {
+          "term": "TNC",
+          "def": "Transnational corporation: a company that works in more than one country, usually with its headquarters in a rich country."
+        },
+        {
+          "term": "Profit repatriation",
+          "def": "When a foreign company sends its profits back to its home country instead of spending them where they were earned."
+        },
+        {
+          "term": "Gas flaring",
+          "def": "Burning off the gas that comes up with oil instead of using it. It wastes fuel and pollutes the air."
+        }
       ],
-      "memTip": "Shell drills deep — profits go far away, pollution stays in Nigeria.",
-      "tutor_note": "The Bodo Creek spills are a specific, named example that lifts exam answers — but the spill volume is disputed between Shell and independent investigators, so present any figure as an estimate."
+      "memTip": "Shell drills: jobs and taxes in, profits and pollution out.",
+      "tutor_note": "Explain how each advantage helps development, not just that it does: taxes pay for schools and clinics."
     },
     {
-      "heading": "Aid, trade and investment",
-      "content": "Nigeria receives various forms of international economic engagement. The UK (through FCDO, formerly DFID) has provided bilateral <strong>aid</strong> to Nigeria, though the amount has reduced in recent years; recent focus has been on governance and girls' education. <strong>Chinese investment</strong> is growing rapidly: China has committed a reported $23 billion (2010s figure; totals vary by source) to Nigerian infrastructure including roads, railways, and the Abuja light rail — in exchange for oil access. This raises concerns about Nigeria accumulating <strong>debt to China</strong>. The <strong>IMF</strong> has attached structural adjustment conditions to its support — including reducing government subsidies and privatising state companies — which have been controversial. <strong>Fairtrade cocoa</strong> schemes (e.g., Divine Chocolate) attempt to return more money to farmers. Nigeria is a member of <strong>ECOWAS</strong> (Economic Community of West African States), a regional trade bloc aimed at reducing trade barriers and increasing economic integration across 15 West African nations (2024 membership).",
+      "heading": "Trade and aid",
+      "content": "Nigeria's links with the rest of the world are changing.\n\n<strong>Trade</strong>: it sells mostly oil and gas, and buys machines, vehicles and food. It used to trade mostly with Europe and the USA; now <strong>China</strong> and <strong>India</strong> are big partners too. China has also lent money and built roads and railways, though some worry this leaves Nigeria in debt. Within West Africa, ECOWAS makes trade between member countries easier.\n\n<strong>Political relationships</strong> have changed too. Nigeria is a member of the Commonwealth, but was suspended from it while under military rule and welcomed back once elected government returned. It is a leading member of the African Union and of ECOWAS, and has sent peacekeeping troops to other West African countries.\n\n<strong>Aid</strong> is help from other countries or charities: gifts, or loans on very easy terms. It comes in different types. <strong>Bilateral aid</strong> goes from one government to another, such as the UK's help for girls' schooling and health. <strong>Multilateral aid</strong> comes through international organisations, such as the World Bank or the United Nations. Charities, called <strong>NGOs</strong> (non-governmental organisations), run smaller projects, such as mosquito nets against malaria.\n\nAid can save lives and pay for schools, clinics and clean water. But it can be wasted or stolen through corruption, and it may not reach the poorest people.",
       "examFlag": false,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "UK aid (FCDO) — focused on governance and girls' education; reducing in recent years",
-        "Chinese investment — a reported $23bn committed (2010s); roads, railways, Abuja light rail in exchange for oil",
-        "Risk of debt dependency on China — 'debt trap' concern",
-        "IMF structural adjustment — conditions: reduce subsidies, privatise state companies; controversial",
-        "Fairtrade cocoa — Divine Chocolate returns more money to farmers",
-        "ECOWAS — West African trade bloc, 15 nations (2024); reduces barriers, increases integration"
+        "Exports mostly oil and gas; imports machines, vehicles, food",
+        "Trade shifting from Europe and the USA towards China and India",
+        "China: loans, roads and railways; worries about debt",
+        "ECOWAS: easier trade within West Africa",
+        "Political links: Commonwealth member (suspended under military rule, then back); leading in the African Union and ECOWAS; peacekeeping",
+        "Aid types: bilateral (government to government), multilateral (World Bank, UN), NGOs (charities)",
+        "Aid impacts: schools, clinics, mosquito nets; but corruption and waste"
       ],
       "keyTerms": [
-        {"term": "Aid", "def": "Money, goods or expertise given by one country or organisation to another. Short-term emergency aid follows disasters; long-term development aid pays for things like schools, clinics and water supplies."},
-        {"term": "Chinese investment", "def": "Large-scale spending by Chinese companies and the Chinese state on Nigerian roads, railways and power stations, usually in exchange for access to oil and other resources. It builds infrastructure fast, but often uses Chinese workers and leaves Nigeria in debt."},
-        {"term": "IMF", "def": "International Monetary Fund — an international organisation that lends money to countries in financial trouble, usually attaching conditions about how they run their economy."},
-        {"term": "ECOWAS", "def": "Economic Community of West African States — a group of fifteen West African countries that trade with each other on favourable terms and allow free movement between member states. Nigeria is its largest member."},
-        {"term": "Fairtrade", "def": "A scheme that guarantees farmers a minimum price for their crop plus an extra payment for their community, so growers rather than buyers keep more of the money."}
+        {
+          "term": "Bilateral aid",
+          "def": "Aid given by one country's government directly to another's."
+        },
+        {
+          "term": "Multilateral aid",
+          "def": "Aid given through international organisations such as the World Bank or the United Nations."
+        },
+        {
+          "term": "NGO",
+          "def": "Non-governmental organisation: a charity, such as Oxfam, that runs aid projects."
+        }
       ],
-      "memTip": "China builds, UK funds schools, IMF sets conditions — three different types of international engagement.",
-      "tutor_note": "Chinese investment is a nuanced topic — it brings infrastructure but may create debt dependency. Good for evaluation marks."
+      "memTip": "Bi = two governments; multi = many, through an international body.",
+      "tutor_note": "Aid is help on easy terms (gifts or very cheap loans); do not confuse it with TNCs, tourism or commercial investment."
     },
     {
-      "heading": "Inequality and environmental issues",
-      "content": "Nigeria's development is extremely <strong>uneven</strong>. The <strong>north</strong> (Hausa-Fulani Muslim majority) has lower literacy rates, more subsistence farming, and has been severely affected by the <strong>Boko Haram</strong> insurgency since 2009, which by some estimates has killed over 100,000 people (death-toll estimates vary widely) and has displaced more than 2 million (2020s estimate). The <strong>south</strong> (more development, oil wealth, Christian majority) has better infrastructure and higher incomes. <strong>Gender inequality</strong> persists: female literacy is around 55% versus 71% for males (2018 estimate). The contrast between Lagos and rural north-east Nigeria is one of the starkest development divides within any single country. <strong>Niger Delta oil spills</strong> have caused catastrophic environmental damage to the <strong>Ogoniland</strong> region. The Ogoni people, led by activist <strong>Ken Saro-Wiwa</strong>, protested Shell's pollution — Saro-Wiwa was executed by the Abacha military government in 1995, causing international outrage. A <strong>UNEP report (2011)</strong> estimated that cleaning up Ogoniland would take 30 years and cost $1 billion.",
+      "heading": "Environmental impacts and quality of life",
+      "content": "Economic development has costs for the <strong>environment</strong>. Oil spills poison creeks and kill fish and crops in the Niger Delta. In the Ogoni area of the delta, local people led by the writer <strong>Ken Saro-Wiwa</strong> protested against the pollution; he was executed by the military government of the time. Factories and traffic pollute the air of Lagos, and forests are cut down for farming and building.\n\nDevelopment has also changed <strong>quality of life</strong>. Life expectancy rose from 47 years in 2000 to 55 in 2024, and infant mortality fell from 95 to 70 babies in every 1,000. More people have mobile phones and work in services.\n\nBut the gains are <strong>uneven</strong>. The south, with the oil and Lagos, is richer. The north has more poverty, fewer children in school and has suffered attacks by the armed group <strong>Boko Haram</strong>. Nigeria's GNI per head is still only $1,360, so many people remain poor.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
       "writeBullets": [
-        "North-south divide — north: lower literacy, subsistence farming, Boko Haram insurgency",
-        "Boko Haram — 100,000+ killed by some estimates, 2m+ displaced since 2009 in north-east Nigeria",
-        "Gender inequality — female literacy ~55% vs male 71% (2018)",
-        "Ogoniland — oil pollution devastated farmland and fishing; UNEP 2011: 30-year cleanup needed",
-        "Ken Saro-Wiwa — Ogoni activist protested Shell pollution; executed 1995; international outcry",
-        "Natural gas flaring — wastes energy, emits CO₂, causes health problems for nearby communities",
-        "UNEP Ogoniland report (2011) — estimated $1bn and 30 years to clean up"
+        "Environment: oil spills in the Niger Delta, gas flaring, air pollution in Lagos, deforestation",
+        "Ogoni protests led by Ken Saro-Wiwa, executed by the military government",
+        "Quality of life: life expectancy 47 (2000) to 55 (2024); infant mortality 95 to 70 per 1,000",
+        "Uneven: richer south, poorer north (fewer in school, Boko Haram attacks)",
+        "GNI per head still $1,360 (2025)"
       ],
       "keyTerms": [
-        {"term": "Gas flaring", "def": "Burning off the natural gas that comes up alongside crude oil, instead of capturing and using it. It wastes a valuable fuel, pollutes the air for people living nearby and adds to climate change."},
-        {"term": "Ogoniland", "def": "An area of the Niger Delta, home to the Ogoni people, where decades of oil extraction left farmland and drinking water heavily contaminated. A United Nations study found the clean-up would take decades."},
-        {"term": "Ken Saro-Wiwa", "def": "A Nigerian writer and campaigner who led a non-violent movement demanding that the Ogoni people share in oil wealth and that the pollution stop. He was executed by Nigeria's military government in 1995, which brought international attention to the Niger Delta."},
-        {"term": "Boko Haram", "def": "An armed extremist group active in north-eastern Nigeria since 2009. Its violence has displaced millions of people and has made the north, already the poorer half of the country, poorer still."},
-        {"term": "Gender inequality", "def": "The gap between what men and women can expect in education, work and income. In Nigeria it is much wider in the north than the south, where far fewer girls complete secondary school."}
+        {
+          "term": "Ken Saro-Wiwa",
+          "def": "A Nigerian writer who led peaceful protests by the Ogoni people against oil pollution. He was executed by Nigeria's military government."
+        },
+        {
+          "term": "Boko Haram",
+          "def": "An armed extremist group in north-east Nigeria whose attacks have forced many people from their homes."
+        },
+        {
+          "term": "Quality of life",
+          "def": "How good people's lives are: their health, income, schooling, housing and safety."
+        }
       ],
-      "memTip": "North struggles, south develops — and even in the oil-rich south, Ogoniland shows the environmental cost.",
-      "tutor_note": "Ken Saro-Wiwa is a powerful human story linking environmental damage, corporate accountability and human rights — use it in 6-mark evaluation questions."
+      "memTip": "Better lives on average, but the south gains most and the delta pays the price.",
+      "tutor_note": "Use the life expectancy and infant mortality changes as evidence, and balance them with the costs."
     }
   ],
   "tables": [
     {
-      "title": "Advantages and disadvantages of Shell's operations in Nigeria",
+      "title": "Advantages and disadvantages of Shell's decades of oil operations in Nigeria",
       "examFlag": true,
       "headers": [
         "Aspect",
@@ -179,85 +281,85 @@
       ],
       "rows": [
         [
-          "Employment",
-          "~2,500 direct employees plus 10,000+ contractors; local engineers and workers trained",
-          "Only a small share of the workforce (often quoted as ~3%) employed in oil — capital-intensive; few jobs relative to investment"
+          "Jobs",
+          "Jobs and training for Nigerian workers",
+          "Few jobs for the money oil makes: machines do most of the work"
         ],
         [
           "Government income",
-          "Tax revenue and royalties fund public services",
-          "Oil revenue volatile — boom-bust cycles destabilise government budgets"
+          "Taxes pay for public services",
+          "Income rises and falls with the world oil price"
         ],
         [
-          "Infrastructure",
-          "Roads, hospitals built near Shell facilities",
-          "Infrastructure mainly benefits oil operations, not wider communities"
+          "Facilities",
+          "Roads and other facilities built",
+          "Mainly built to serve the oil industry"
         ],
         [
           "Environment",
-          "Modern spill containment technology available",
-          "9–13m barrels estimated spilled over the 50 years to the mid-2000s (estimates vary by source); Bodo Creek 2008–9: spill volume disputed between Shell and independent investigators"
+          "Newer equipment can reduce leaks",
+          "Spills and gas flaring pollute water, farmland and air"
         ],
         [
-          "Economic benefit",
-          "Technology transfer to local workers",
-          "Most profits repatriated to the UK — economic benefit leaves Nigeria"
+          "Money",
+          "New technology and skills come in",
+          "Much of the profit goes back to the home country"
         ]
       ]
     }
   ],
   "checkpoints": {
     "2": {
-      "question": "What was the environmental impact of the Bodo Creek oil spill in 2008–9?",
+      "question": "Which of these is a disadvantage of TNCs such as Shell for Nigeria?",
       "options": [
-        "Creeks and farmland were contaminated, and how much oil was spilled is disputed between Shell and independent investigators",
-        "The spill was contained within days and left no lasting damage",
-        "The spill caused an explosion at the refinery, destroying 30km of pipeline",
-        "The oil entered Lagos harbour, closing the port for six months"
+        "Much of the profit goes back to the company's home country",
+        "They pay taxes to the Nigerian government",
+        "They train Nigerian workers in new skills",
+        "They build roads"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! The Bodo Creek spills contaminated creeks and farmland in the Niger Delta. Independent estimates of the volume, such as around 500,000 barrels, are far higher than Shell's own figures. It's one of the most important specific examples of TNC environmental damage to know.",
-      "wrongFeedback": "Not quite. The Bodo Creek spills (2008–9) contaminated creeks, farmland and fishing grounds in the Niger Delta. How much oil was spilled is disputed between Shell and independent investigators."
+      "correctFeedback": "Right. When profits leave Nigeria, less of the money from oil helps Nigerians.",
+      "wrongFeedback": "Not quite. Taxes, training and roads are advantages. Profits going back to the home country is a disadvantage."
     },
     "4": {
-      "question": "What did the UNEP Ogoniland report (2011) conclude about oil pollution in Nigeria?",
+      "question": "How has Nigeria's quality of life changed as its economy has developed?",
       "options": [
-        "That cleaning up Ogoniland would take approximately 30 years and cost $1 billion",
-        "That Shell had already begun a successful cleanup and the land would recover within 5 years",
-        "That the Nigerian government was solely responsible for the pollution, not Shell",
-        "That the pollution was exaggerated and most farmland was still productive"
+        "Life expectancy has risen and infant mortality has fallen, but the north has gained less than the south",
+        "Everyone in Nigeria is now rich",
+        "Life expectancy has fallen everywhere",
+        "Nothing has changed"
       ],
       "correct": 0,
-      "correctFeedback": "Exactly right. The UNEP 2011 report on Ogoniland was damning — it estimated a 30-year cleanup costing $1 billion, highlighting just how severe the long-term damage from oil extraction has been.",
-      "wrongFeedback": "That's not what UNEP found. The 2011 Ogoniland report concluded that cleanup would take approximately 30 years and cost around $1 billion — a devastating assessment of decades of oil pollution."
+      "correctFeedback": "Right. Life expectancy rose from 47 to 55 years between 2000 and 2024, but the gains are uneven.",
+      "wrongFeedback": "Not quite. Life expectancy has risen and infant mortality has fallen, but the poorer north has gained less than the south."
     }
   },
   "commonMistakes": [
-    "Calling Nigeria an LIC — it is an NEE (Newly Emerging Economy) with one of Africa's largest economies. Poverty is due to inequality and poor distribution of wealth, not a lack of development overall.",
-    "Saying oil 'employs most Nigerians' — oil provided around 90% of export revenue in the 2010s but employs only a small share of workers (often quoted as about 3%) because it is capital-intensive (machines-led).",
-    "Forgetting to evaluate TNCs — always give both sides: jobs and infrastructure (benefits) AND profit repatriation and environmental damage (costs).",
-    "Not naming the Ogoni people or Ken Saro-Wiwa — these specific details push answers from Level 2 to Level 3 in extended writing.",
-    "Confusing Nigeria with Niger — Nigeria is the large NEE; Niger is a neighbouring LIC with very low development indicators. They are different countries."
+    "Calling Nigeria an LIC. It is an NEE.",
+    "Saying oil employs most Nigerians. Oil earns most of the export money but gives few jobs, because machines do most of the work.",
+    "Saying TNCs bring jobs and money without explaining how that helps development (wages are spent locally; taxes pay for schools and clinics).",
+    "Writing generic answers. Use Nigeria's places: Lagos, the Niger Delta, the poorer north.",
+    "Confusing aid with TNCs, tourism or ordinary business investment. Aid is help from governments or charities: gifts, or loans on very easy terms.",
+    "Confusing Nigeria with Niger, its poorer neighbour."
   ],
   "examTips": [
-    "For TNC questions, use the table structure: employment, income, infrastructure, environment, economic leakage — this ensures you cover advantages AND disadvantages systematically.",
-    "Name the Bodo Creek spills (2008–9), noting the spill volume is disputed, and quote UNEP's 2011 estimate (30 years, $1bn cleanup) — specific evidence signals a top-band answer.",
-    "For inequality questions, use the north-south divide within Nigeria — Boko Haram in the north vs oil wealth in the south — and link to colonial history (arbitrary borders).",
-    "The Ken Saro-Wiwa case links environmental damage to human rights — powerful material for 'assess the impact of TNCs' 9-mark questions."
+    "For TNC questions, give an advantage and a disadvantage and explain how each affects development, using Shell or Unilever.",
+    "\"Regionally important\" means important within West Africa.",
+    "For development and the environment, link a gain (better jobs and health) to a cost (pollution in the Niger Delta), with place detail.",
+    "Use evidence: life expectancy rose from 47 to 55 years between 2000 and 2024."
   ],
   "revisionCardBullets": [
-    "Nigeria — West Africa; 220m+ people (2023 est.); one of Africa's largest economies (~$360–400bn, 2024 est.)",
-    "NEE — Newly Emerging Economy; transitioning from agriculture to industry/services",
-    "Oil dominates — 90%+ exports, ~70% government revenue (2010s); discovered 1956",
-    "Oil = only a small share of jobs (often quoted ~3%) — capital-intensive; creates boom-bust economic cycles",
-    "Nollywood — ranked world's 2nd largest film industry by output (2009)",
-    "Shell in Niger Delta since 1958 — ~2,500 employees + 10,000+ contractors, tax revenue, infrastructure",
-    "Shell: 9–13m barrels spilled over 50 years to mid-2000s (estimates vary); Bodo Creek 2008–9 — volume disputed",
-    "Chinese investment — a reported $23bn (2010s); roads, railways, Abuja light rail for oil access",
-    "North-south divide — Boko Haram (100,000+ killed, by some estimates) in north; oil wealth in south",
-    "Gender inequality — female literacy ~55% vs male 71% (2018)",
-    "Ogoniland — devastating oil pollution; Ken Saro-Wiwa executed 1995",
-    "UNEP 2011 — Ogoniland cleanup: 30 years, $1 billion estimated cost"
+    "Nigeria: West Africa; about 238 million people; an NEE",
+    "Regional importance: biggest West African economy, ECOWAS; global: oil exporter, films and music",
+    "Context: British rule until independence; hundreds of ethnic groups; Muslim north, Christian south",
+    "Fuel about 86% of goods exports, but oil gives few jobs",
+    "Growing manufacturing (Lagos) and services (banking, phones, Nollywood)",
+    "Multiplier effect: factory jobs lead to more jobs and taxes",
+    "Shell: jobs, taxes, roads; but profits leave and spills pollute the Niger Delta",
+    "Trade shifting towards China and India; ECOWAS in West Africa",
+    "Aid: bilateral, multilateral, NGOs; helps but can be wasted",
+    "Life expectancy 47 to 55 years (2000–2024); infant mortality 95 to 70 per 1,000",
+    "Uneven: richer south, poorer north"
   ],
   "videos": [
     {

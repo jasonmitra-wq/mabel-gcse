@@ -1,0 +1,77 @@
+{
+  "lesson": "g5-development",
+  "source_file": "lessons/geography/g5-development.json",
+  "lesson_md5": "c20f78d7029ce114e5cdbcd38d362746",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-19T12:31:36.024Z",
+  "specRefs_sent": [
+    "3.2.2.1",
+    "3.2.2.2"
+  ],
+  "blocking_only": true,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 9939,
+    "output_tokens": 3667
+  },
+  "cost_usd": 0.113096,
+  "status": "OK",
+  "result": {
+    "lesson": "g5-development",
+    "missing_spec_content": [
+      {
+        "specRef": "3.2.2.2",
+        "spec_text": "An example of how the growth of tourism in an LIC or NEE helps to reduce the development gap.",
+        "why": "The lesson's example places Kenya in a different category: \"In Kenya, a lower-middle-income country, about 2 million tourists came in 2019\" (keyPoints[4].content). It never says Kenya is an LIC or an NEE, so a student cannot tell that the example meets the spec requirement. The lesson also gives figures for a single year only (2019). It does not show the growth of tourism over time, which is what the spec asks for."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "examTips[3]",
+        "text": "Learn the difference: the range is highest minus lowest; the interquartile range is the upper quartile minus the lower quartile.",
+        "why": "Neither 3.2.2.1 nor 3.2.2.2 requires this statistical content, and the lesson teaches nothing that links to it. It could confuse a student revising development."
+      }
+    ],
+    "factual_errors": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "A <strong>rate</strong> is always \"per\" something: births, deaths or infant deaths for every 1,000 people (or 1,000 births) each year.",
+        "correction": "Not every development rate is per 1,000 per year. The literacy rate, which the lesson itself lists and defines as \"the share of adults who can read and write\", is a percentage. Birth, death and infant mortality rates are per 1,000 per year; other rates are not.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[0].writeBullets[3]",
+        "text": "A rate is per 1,000 people (or births) per year",
+        "correction": "This holds only for birth, death and infant mortality rates. The literacy rate is a percentage of adults.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[4].content",
+        "text": "Under one international scheme, 36 countries have had debts cancelled.",
+        "correction": "Somalia reached the HIPC completion point in December 2023. That makes 37 of the 39 eligible countries receiving full HIPC relief, not 36. In addition, HIPC relief reduces debt; it does not necessarily cancel all of it.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[4].writeBullets[4]",
+        "text": "Debt relief: cancelled debt frees money for health and schools; 36 countries helped",
+        "correction": "37 of the 39 eligible countries had received full HIPC relief after Somalia reached completion point in December 2023.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "commonMistakes[3]",
+        "text": "Aid is money, goods or skills given, not lent or earned.",
+        "correction": "Aid can include loans. Official development assistance covers concessional (low-interest) loans as well as grants, so aid is not only gifts.",
+        "basis": "own knowledge"
+      }
+    ],
+    "wrong_terms": [],
+    "checkpoint_mismatch": [],
+    "not_checked": [
+      "Diagram 'g5-brandt-line' (keyPoints[1].diagram) could not be viewed.",
+      "Diagram 'g5-development-gap-causes' (keyPoints[3].diagram) could not be viewed.",
+      "Sourced figures dated 2025–2026 could not be verified against the live World Bank, IMF or Grameen Bank sources: GNI per head 2025 (USA $88,810, UK $54,550, Nigeria $1,360, Niger $750), the Grameen Bank figures for August 2026, and extreme poverty of 10% in 2024 at $3.00/day."
+    ]
+  }
+}

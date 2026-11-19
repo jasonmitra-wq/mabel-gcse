@@ -144,3 +144,23 @@ p V = constant turned up in the sources reached; the evidence is the examiner
 reports (E67 to E72, E79, E80: "weigh it on a scale", the mean of two
 cylinder readings for a volume, p ÷ V = constant, kinetic energy said to rise
 when a gas is compressed at constant temperature).
+
+## Phase B, G5 The changing economic world (development, Nigeria, the UK economy)
+
+Brief docs/briefs/2026-11-15-script-four-topics.md, step B1. Sources opened on 2026-11-19 (Gapminder pages read in
+the browser pane); the wording is ours. Outside the pilot, as for M15–M38. Examiner errors E82 to E95 are in
+data/exam/g5-outcomes.md (local).
+
+| Id | Misconception (our words) | Lesson | Source (opened) |
+|---|---|---|---|
+| M39 | The world is split into two groups, rich and poor, with a gap between; in fact most countries are in the middle, and a single line such as the Brandt Line misleads. | g5-development | Gapminder, "The Gap Instinct" (Factfulness rule 1): https://www.gapminder.org/factfulness/gap/ |
+| M40 | Poorer countries are not getting better; in fact health and incomes have improved fast in many of them, which people systematically underestimate (worse than chance). | g5-development, g5-nigeria | Gapminder, "Ignorance" (the Ignorance Project and the "Chimpanzee Test"): https://www.gapminder.org/ignorance/ |
+| M41 | Debt relief is a loan; it cancels money owed. | g5-development | examiner report 8035/2 June 2023, 02.9 (E82) |
+| M42 | Aid is the same as microfinance, tourism or a TNC's investment. | g5-development, g5-nigeria | examiner report 8035/2 June 2022, 02.10 (E83) |
+| M43 | A rate (birth, death, infant mortality) is a total number of people, not a number per 1,000 each year. | g5-development | examiner report 8035/2 June 2022, 02.8 (E84) |
+
+## Not found (G5)
+
+No published research on misconceptions about Nigeria, TNCs or the UK economy turned up in the sources reached; the
+evidence is the examiner reports (E85, E90, E92 to E95: generic TNC answers, "traditional industries" not understood,
+"regional" not understood, the "jobs and money" catch-all, figures ignored or copied).

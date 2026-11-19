@@ -11,6 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
+const subjectOf = id => (fs.readdirSync(path.join(ROOT, 'lessons')).find(s => fs.existsSync(path.join(ROOT, 'lessons', s, id + '.json'))) || 'physics');
 const TS = require(path.join(ROOT, 'js', 'teach-script.js'));
 const Practice = require(path.join(ROOT, 'js', 'practice', 'practice.js'));
 global.Practice = Practice;
@@ -18,8 +19,8 @@ require(path.join(ROOT, 'js', 'practice', 'physics.js'));
 const MIS = require(path.join(ROOT, 'js', 'pilot', 'misconceptions.js'));
 
 function layout(id) {
-  const lesson = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', 'physics', `${id}.json`), 'utf8'));
-  const script = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', 'physics', `${id}.script.json`), 'utf8'));
+  const lesson = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', subjectOf(id), `${id}.json`), 'utf8'));
+  const script = JSON.parse(fs.readFileSync(path.join(ROOT, 'lessons', subjectOf(id), `${id}.script.json`), 'utf8'));
   const misText = m => (MIS.find(x => x.id === m) || {}).text || '';
   const strip = h => String(h || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
   const dot = s => { const t = String(s || '').trim(); return /[.!?]$/.test(t) ? t : `${t}.`; };

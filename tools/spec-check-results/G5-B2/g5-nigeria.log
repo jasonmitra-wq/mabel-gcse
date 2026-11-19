@@ -1,0 +1,9 @@
+RUN
+Mode: --blocking-only (missing_spec_content, above_gcse, factual_errors)
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+g5-nigeria | 3.2.2.3 | 24428 | 6107 | 0.3444
+TOTAL 1 lesson(s) | 24428 chars | 6107 est. input tokens | 16000 output tokens assumed | $0.3444
+Rates: $4 per M input, $20 per M output; output assumed at the 16000-token ceiling per lesson.
+Model claude-opus-5-5 confirmed in /v1/models.
+g5-nigeria: OK | in 8901 out 2961 | $0.0948 | missing_spec_content 1, above_gcse 0, factual_errors 3, wrong_terms 0, checkpoint_mismatch 0, not_checked 3
+Actual total cost: $0.0948

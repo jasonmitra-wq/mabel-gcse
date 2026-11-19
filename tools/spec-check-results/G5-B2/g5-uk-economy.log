@@ -1,0 +1,9 @@
+RUN
+Mode: --blocking-only (missing_spec_content, above_gcse, factual_errors)
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+g5-uk-economy | 3.2.2.4 | 24644 | 6161 | 0.3446
+TOTAL 1 lesson(s) | 24644 chars | 6161 est. input tokens | 16000 output tokens assumed | $0.3446
+Rates: $4 per M input, $20 per M output; output assumed at the 16000-token ceiling per lesson.
+Model claude-opus-5-5 confirmed in /v1/models.
+g5-uk-economy: OK | in 8389 out 2800 | $0.0896 | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 4
+Actual total cost: $0.0896

@@ -106,3 +106,34 @@ From the same files, local and gitignored: data/exam/p3-ms-extract.txt (every
 mark-scheme part tagged 4.3, 141 parts) and data/exam/p3-outcomes.md
 (question types and mark-scheme points by section, examiner-named errors E67
 to E81).
+
+## Geography Paper 2 (8035/2) for G5 (2026-11-19)
+
+Brief docs/briefs/2026-11-15-script-four-topics.md, step G-b. 24 files from the exam board, taken from the Geography 8035 "Assessment resources" page (its full listing of 171 resources, all pages read). Every file matched the SHA-1 the board lists in its URL. Standard-print papers, mark schemes, examiner reports and inserts only (modified papers not downloaded). June 2018 and June 2019 are not listed by the board; the specimen has "answers and commentary" in place of an examiner report. Section B (The changing economic world) is question 02. Text extracted page by page with Python 3.14.3 and pypdf. Notes made from them, local: data/exam/g5-qp-extract.txt (68 Section B question stems) and data/exam/g5-outcomes.md (question types, examiner errors E82 to E95).
+
+| File | Source URL | md5 |
+|---|---|---|
+| AQA-80352-QP-SPEC.pdf | https://www.aqa.org.uk/files/resources.geography.AQA-80352-SQP-CR_PDF/0a7b326862df8def18c834f57c53ba56f4ce6836.pdf | 94eb24f7b1134acb6f043f0655cbf579 |
+| AQA-80352-MS-SPEC.pdf | https://www.aqa.org.uk/files/resources.geography.AQA-80352-SMS_PDF/b69ff5092e9f744ee088b2363ec9c20731f694d8.pdf | 80337e1238abeb7886c962cab83446bd |
+| AQA-80352-EX-SPEC.pdf | https://www.aqa.org.uk/files/resources.geography.AQA-80352-EX_PDF/aeeaac19395e86d0d6a4b0d3e61cc751b3fb8e93.pdf | 537b5f8b125cd509ce510ab0ff88b59d |
+| AQA-80352-QP-NOV20.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2020.november.AQA-80352-QP-NOV20-CR_PDF/21b499a71b11c0c3b4ca29ebe94802a5f76f4f85.pdf | 41739db80407efec2f0461338fe0009c |
+| AQA-80352-MS-NOV20.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2020.november.AQA-80352-W-MS-NOV20_PDF/7b21ed3e27564f3d756400ed6d925b40c682777f.pdf | cb4ba9d7274c7d812d93fc0fd67050d3 |
+| AQA-80352-WRE-NOV20.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2020.november.AQA-80352-WRE-NOV20_PDF/aa7ac84eb749d9e032908d586ea7ce9cf20848d4.pdf | ba93b52a2ec76108869549d026488c62 |
+| AQA-80352-INS-NOV20.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2020.november.AQA-80352-INS-NOV20_PDF/94f26ebdb8219666df4280cf2b80ba9de0787840.pdf | b99f3730e5b92bdcf368a7d230fd48bd |
+| AQA-80352-QP-NOV21.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2021.november.AQA-80352-QP-NOV21_PDF/abd2541a0ca6fc66613fda7e628b19499d3a9dee.pdf | c2b0209001bc7dfcb85b614c16f3b19d |
+| AQA-80352-MS-NOV21.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2021.november.AQA-80352-MS-NOV21_PDF/2e9c2868043e69c9d886759dc195733c7fec3c29.pdf | cf073d216c9bd24f19a7a7067c8dfc89 |
+| AQA-80352-WRE-NOV21.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2021.november.AQA-80352-WRE-NOV21_PDF/63f1334bf241eabead2433ab12538734518be0d0.pdf | a86ae21241fb7942c15871c70cf77024 |
+| AQA-80352-QP-JUN22.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2022.june.AQA-80352-QP-JUN22-CR_PDF/be1ae4f92a915f5f837d981e5535436993762dae.pdf | 95b925fd01206f0034af8badbc5bb9de |
+| AQA-80352-MS-JUN22.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2022.june.AQA-80352-MS-JUN22_PDF/726a8ff502cce3a780c81eb12beb7cabe7cd1d53.pdf | aa1cc05f43f54d0acdf66ed61adae35e |
+| AQA-80352-WRE-JUN22.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2022.june.AQA-80352-WRE-JUN22_PDF/b3c3203c8af35ab5880cb684e6d9b088e2d8c65d.pdf | 7778af410bd9b5af8746909b5af6eb04 |
+| AQA-80352-QP-JUN23.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2023.june.AQA-80352-QP-JUN23-CR_PDF/7b0977ca1828ae0a86062625c1c11f67f4e68b05.pdf | 552f3f6e50d499e9d07505654eaf1e68 |
+| AQA-80352-MS-JUN23.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2023.june.AQA-80352-MS-JUN23_PDF/428ec04327607a5f9260596f1bf9680fa420c2d9.pdf | a51c39be7d9222695e2b1ad5be16a8c9 |
+| AQA-80352-WRE-JUN23.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2023.june.AQA-80352-WRE-JUN23_PDF/7c2244dfb1b95852079771f43c74986cc1a2c30c.pdf | 061f9d607960510d3946070f1e32675b |
+| AQA-80352-QP-JUN24.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2024.June.AQA-80352-QP-JUN24_PDF/93509870bf48384f2d7c7c0ca30f608bbdaed104.pdf | 5dac98606e04aecab9e8c6d20edf1af8 |
+| AQA-80352-MS-JUN24.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2024.June.AQA-80352-MS-JUN24_PDF/f8bf485083337e6fdd0d60406ea3be78a7c66135.pdf | 4a4d092f484770dfdc7a34f3f3b1aaf4 |
+| AQA-80352-WRE-JUN24.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2024.June.AQA-80352-WRE-JUN24_PDF/76bd72dd3fb051acaa784ff48db982c3cefe2fed.pdf | 922dcc2ccd3eccbbf057acf1c265579f |
+| AQA-80352-INS-JUN24.pdf | https://www.aqa.org.uk/files/sample-papers-and-mark-schemes.2024.June.AQA-80352-INS-JUN24_PDF/7e0dc6e0a135e079ae27699e85e3f741befa8d54.pdf | 1fe4a3127fc9072441b3359a98487530 |
+| AQA-80352-QP-JUN25.pdf | https://www.aqa.org.uk/files/cRIpdimsSKiybuSFvPQplI/a646d4c837770725d50c2fb54a7b88bf125e36e5.pdf | cb0597ea551344f2bc25cb6ef3d3aa62 |
+| AQA-80352-MS-JUN25.pdf | https://www.aqa.org.uk/files/fHDU1dLPgDwvQhfFoKtIlI/c5ace14d598d7f88ed975f95504980895841183d.pdf | 71f2efc91b13de32f7ea1e61d125aaf5 |
+| AQA-80352-WRE-JUN25.pdf | https://www.aqa.org.uk/files/cRIpdimsSKiybuSFvPQy1K/2a5ee649d5dbb8c594239fd1207be06e398cda1f.pdf | 5d97a565793c1ae81caea0130885d7fc |
+| AQA-80352-INS-JUN25.pdf | https://www.aqa.org.uk/files/171b3204-1f39-4f05-ad82-ae9afeba6788/713016d18fede87551fc4c596a4991cf0906bb55.pdf | 3ea0f3307decfe38460b757d17e747ed |

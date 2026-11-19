@@ -1,0 +1,896 @@
+{
+ "lesson": "g5-development",
+ "version": 1,
+ "about": "The scripted AI lesson for g5-development (2026-11-19, Phase B, brief docs/briefs/2026-11-15-script-four-topics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two questions on averages, which the exam's data questions use.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "What is development and how do we measure it?",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about why some countries are much richer and healthier than others, how we measure the difference, and what people do to close it."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick maths questions you will need. Four friends have £2, £4, £6 and £8. What is the mean amount?",
+     "options": [
+      {
+       "text": "£5",
+       "branch": "right"
+      },
+      {
+       "text": "£20",
+       "branch": "total"
+      },
+      {
+       "text": "£6",
+       "branch": "mid"
+      }
+     ],
+     "right": "Yes: add them up (£20) and share by 4: £5 each.",
+     "wrong": {
+      "other": "Not quite: £5. Add them up to £20, then divide by 4.",
+      "total": "Nearly: £20 is the total. The mean shares it out: £20 ÷ 4 = £5.",
+      "mid": "Not quite: the mean is the total shared out equally: £20 ÷ 4 = £5."
+     },
+     "idk": [
+      {
+       "hint": "Add the four amounts, then divide by how many friends there are."
+      }
+     ],
+     "answerWhy": "The mean is the total shared out equally: £20 ÷ 4 = £5."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: what is the range of £2, £4, £6 and £8?",
+     "options": [
+      {
+       "text": "£6",
+       "branch": "right"
+      },
+      {
+       "text": "£5",
+       "branch": "mean"
+      },
+      {
+       "text": "£8",
+       "branch": "max"
+      }
+     ],
+     "right": "Yes: the highest minus the lowest, £8 − £2 = £6.",
+     "wrong": {
+      "other": "Not quite: £6, the highest minus the lowest.",
+      "mean": "Not quite: £5 is the mean. The range is the highest minus the lowest: £8 − £2 = £6.",
+      "max": "Not quite: £8 is the highest. The range is the highest minus the lowest: £8 − £2 = £6."
+     },
+     "idk": [
+      {
+       "hint": "Take the smallest amount away from the biggest."
+      }
+     ],
+     "answerWhy": "The range is the highest minus the lowest: £8 − £2 = £6."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. Development means people's quality of life getting better: richer, healthier and better educated. To compare countries, geographers use measures."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "The main money measure is GNI per head: all the income a country earns in a year, shared out equally between its people. It is a mean income for each person."
+    },
+    {
+     "id": "1.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "In 2025, GNI per head was about $54,550 in the UK and $1,360 in Nigeria. Roughly how many times richer, per person, was the UK?",
+     "options": [
+      {
+       "text": "About 40 times",
+       "branch": "right"
+      },
+      {
+       "text": "About 4 times",
+       "branch": "four"
+      },
+      {
+       "text": "About 400 times",
+       "branch": "four100"
+      }
+     ],
+     "right": "Yes: 54,550 ÷ 1,360 is about 40. That gap is what this lesson is about.",
+     "wrong": {
+      "other": "Not quite: about 40 times. 54,550 ÷ 1,360 is about 40.",
+      "four": "Not quite: 4 × 1,360 is only about 5,440. 54,550 ÷ 1,360 is about 40.",
+      "four100": "Not quite: 400 × 1,360 would be over half a million. 54,550 ÷ 1,360 is about 40."
+     },
+     "idk": [
+      {
+       "hint": "Divide 54,550 by 1,360. Is the answer nearer 4, 40 or 400?"
+      }
+     ],
+     "answerWhy": "54,550 ÷ 1,360 is about 40, so the UK earned about 40 times more per person."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "Social measures are about people's lives. Life expectancy is how long a baby born now can expect to live: about 84 years in Japan and 55 in Nigeria."
+    },
+    {
+     "id": "1.6",
+     "type": "say",
+     "text": "The infant mortality rate is how many babies, in every 1,000 born alive, die before their first birthday, each year. In Japan it is about 2; in Nigeria about 70."
+    },
+    {
+     "id": "1.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "An exam asks: \"What is meant by infant mortality rate?\" Which answer scores both marks?",
+     "options": [
+      {
+       "text": "The number of babies per 1,000 born alive who die before age 1, each year",
+       "branch": "right"
+      },
+      {
+       "text": "The number of babies who die",
+       "branch": "total"
+      },
+      {
+       "text": "How long babies live",
+       "branch": "life"
+      }
+     ],
+     "right": "Yes: it needs the \"per 1,000\" and the \"before their first birthday\", each year.",
+     "wrong": {
+      "other": "Not quite: babies per 1,000 born alive who die before age 1, each year.",
+      "total": "Nearly: a rate is not a total. It is per 1,000 babies born alive, each year, dying before their first birthday.",
+      "life": "Not quite: that sounds like life expectancy. Infant mortality is babies per 1,000 born alive who die before age 1, each year."
+     },
+     "idk": [
+      {
+       "hint": "A rate is always \"per\" something. Which option says per 1,000?"
+      }
+     ],
+     "answerWhy": "Infant mortality rate: the number of babies, per 1,000 born alive, who die before their first birthday, each year."
+    },
+    {
+     "id": "1.8",
+     "type": "say",
+     "text": "Other social measures are people per doctor, the share of adults who can read and write, and access to safe water."
+    },
+    {
+     "id": "1.9",
+     "type": "say",
+     "text": "The HDI, or Human Development Index, combines three things into one score between 0 and 1: income, life expectancy and education."
+    },
+    {
+     "id": "1.10",
+     "type": "say",
+     "text": "Every measure has a limitation: a reason it can mislead. GNI per head is a mean, so a few very rich people can hide many poor ones."
+    },
+    {
+     "id": "1.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which is a limitation of GNI per head?",
+     "options": [
+      {
+       "text": "It is an average, so it hides how unequally money is shared",
+       "branch": "right"
+      },
+      {
+       "text": "It does not show life expectancy",
+       "branch": "notshow"
+      },
+      {
+       "text": "It is measured in dollars",
+       "branch": "dollars"
+      }
+     ],
+     "right": "Yes: that is why it can mislead. A limitation says why a measure gives a false picture.",
+     "wrong": {
+      "other": "Not quite: it is an average, so it hides how unequally money is shared.",
+      "notshow": "True, but examiners want why it can mislead, not what it leaves out. It is an average, so it hides how unequally money is shared.",
+      "dollars": "Not quite: dollars let countries be compared fairly. The problem is that it is an average, so it hides inequality."
+     },
+     "idk": [
+      {
+       "hint": "Think of the mean of £1, £1, £1 and £97. Does £25 describe most people?"
+      }
+     ],
+     "answerWhy": "GNI per head is an average, so it hides how unequally money is shared: a limitation."
+    },
+    {
+     "id": "1.12",
+     "type": "own",
+     "prompt": "In one line: what is the HDI made from?",
+     "points": [
+      "income",
+      "life expectancy",
+      "education"
+     ],
+     "idk": "No problem. A good line would be: the HDI combines income, life expectancy and education into one score."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Ways of classifying countries",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "The World Bank, an international organisation that lends money for development, sorts countries into groups by GNI per head."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "A rich country, such as the UK or Japan, is called an HIC: a high income country."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "One of the poorest countries, such as Niger or Malawi, is called an LIC: a low income country."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "In between are middle income countries. Kenya is one: lower-middle income, still a poorer country."
+    },
+    {
+     "id": "2.5",
+     "type": "say",
+     "text": "A country whose economy has started to grow fast as it builds up industry is called an NEE: a newly emerging economy. China, India, Brazil and Nigeria are NEEs."
+    },
+    {
+     "id": "2.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Niger has a GNI per head of about $750. Which group is it in?",
+     "options": [
+      {
+       "text": "LIC",
+       "branch": "right"
+      },
+      {
+       "text": "HIC",
+       "branch": "hic"
+      },
+      {
+       "text": "NEE",
+       "branch": "nee"
+      }
+     ],
+     "right": "Yes: one of the poorest countries, an LIC.",
+     "wrong": {
+      "other": "Not quite: an LIC, a low income country.",
+      "hic": "Not quite: $750 a year is very low. Niger is an LIC.",
+      "nee": "Not quite: Niger's economy is not growing fast through industry. It is an LIC."
+     },
+     "idk": [
+      {
+       "hint": "Is $750 a year high or low for a whole year's income?"
+      }
+     ],
+     "answerWhy": "With about $750 per person, Niger is one of the poorest countries: an LIC."
+    },
+    {
+     "id": "2.7",
+     "type": "say",
+     "text": "An older way of splitting the world is the Brandt Line: a line on a world map dividing a richer \"North\" from a poorer \"South\". It fits today badly, because fast-growing countries such as China sit in the \"South\"."
+    },
+    {
+     "id": "2.8",
+     "type": "own",
+     "prompt": "In one line: what is an NEE?",
+     "points": [
+      "a country whose economy has started to grow fast as it builds up industry"
+     ],
+     "idk": "No problem. A good line would be: an NEE is a newly emerging economy, growing fast as it builds up industry."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Population and development: the Demographic Transition Model",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "As a country develops, its births and deaths change in a pattern. The birth rate is the number of babies born for every 1,000 people each year."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "The death rate is the number of people who die for every 1,000 people each year."
+    },
+    {
+     "id": "3.3",
+     "type": "say",
+     "text": "The Demographic Transition Model, or DTM, shows how the two rates change over five stages as a country develops."
+    },
+    {
+     "id": "3.4",
+     "type": "say",
+     "text": "Stage 1: both rates are high, so the population stays small. Stage 2: the death rate falls fast, as clean water, food and health care improve, but births stay high. The population grows fast."
+    },
+    {
+     "id": "3.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Predict: in stage 2, what happens to the size of the population?",
+     "options": [
+      {
+       "text": "It grows fast",
+       "branch": "right"
+      },
+      {
+       "text": "It shrinks",
+       "branch": "shrink"
+      },
+      {
+       "text": "It stays the same",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: many more people are born than die, so it grows fast. Many LICs are in stage 2.",
+     "wrong": {
+      "other": "Not quite: it grows fast, because many more are born than die.",
+      "shrink": "Not quite: births are still high and deaths are low, so far more people are born than die. It grows fast.",
+      "same": "Not quite: births are now much higher than deaths, so the population grows fast."
+     },
+     "idk": [
+      {
+       "hint": "Are more people being born, or dying?"
+      }
+     ],
+     "answerWhy": "Births stay high while deaths fall, so far more people are born than die: the population grows fast."
+    },
+    {
+     "id": "3.6",
+     "type": "say",
+     "text": "Stage 3: the birth rate falls too, as fewer babies die, more girls go to school and more women go out to work. Many NEEs are here."
+    },
+    {
+     "id": "3.7",
+     "type": "say",
+     "text": "Stage 4: both rates are low, so the population is steady. Most HICs, such as the UK, are here. Stage 5: births fall below deaths and the population slowly shrinks, as in Japan."
+    },
+    {
+     "id": "3.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Why might moving into stage 3 help a country's economy?",
+     "options": [
+      {
+       "text": "With fewer children to look after, more women can go out to work",
+       "branch": "right"
+      },
+      {
+       "text": "More babies are born",
+       "branch": "more"
+      },
+      {
+       "text": "The death rate rises",
+       "branch": "death"
+      }
+     ],
+     "right": "Yes: more people working means more money earned and more tax collected.",
+     "wrong": {
+      "other": "Not quite: with fewer children to look after, more women can work.",
+      "more": "Not quite: in stage 3 the birth rate falls. With fewer children to look after, more women can work.",
+      "death": "Not quite: the death rate stays low. The change is fewer births, so more women can work."
+     },
+     "idk": [
+      {
+       "hint": "In stage 3 the birth rate falls. How does that change family life?"
+      }
+     ],
+     "answerWhy": "With fewer children to look after, more women can go out to work, which helps the economy."
+    },
+    {
+     "id": "3.9",
+     "type": "own",
+     "prompt": "In one line: which DTM stage are many LICs in, and why does their population grow fast?",
+     "points": [
+      "stage 2",
+      "the death rate has fallen but the birth rate is still high"
+     ],
+     "idk": "No problem. A good line would be: many LICs are in stage 2, where the death rate has fallen but the birth rate is still high."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Uneven development: causes and consequences",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "Development is uneven: some countries are far ahead of others. The difference between the richest and poorest countries is called the development gap."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "The causes of the gap come in three groups. Physical causes come from nature: being landlocked, with no coastline, makes trade costly; drought, poor soils, natural hazards and diseases such as malaria hold people back."
+    },
+    {
+     "id": "4.3",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which of these is a physical cause of uneven development?",
+     "options": [
+      {
+       "text": "Frequent droughts that ruin crops",
+       "branch": "right"
+      },
+      {
+       "text": "Large debts to other countries",
+       "branch": "debt"
+      },
+      {
+       "text": "Borders drawn by former rulers",
+       "branch": "borders"
+      }
+     ],
+     "right": "Yes: drought comes from nature, so it is physical.",
+     "wrong": {
+      "other": "Not quite: frequent droughts. Physical means it comes from nature.",
+      "debt": "Not quite: debt is about money, an economic cause. Physical means from nature, like drought.",
+      "borders": "Not quite: borders drawn by rulers come from history. Physical means from nature, like drought."
+     },
+     "idk": [
+      {
+       "hint": "Physical means it comes from nature. Which option is the weather?"
+      }
+     ],
+     "answerWhy": "Drought comes from nature, so it is a physical cause."
+    },
+    {
+     "id": "4.4",
+     "type": "say",
+     "text": "Economic causes come from trade and money. Raw materials, such as coffee or copper, are called primary products: they earn little and their prices swing up and down, while poorer countries must buy costly manufactured goods."
+    },
+    {
+     "id": "4.5",
+     "type": "say",
+     "text": "Historical causes come from the past. Colonialism is when one country rules another for its own benefit: European countries ruled much of Africa and Asia, took raw materials and drew borders that split peoples."
+    },
+    {
+     "id": "4.6",
+     "type": "say",
+     "text": "Uneven development has consequences. There are big differences, called disparities, in wealth and in health between countries."
+    },
+    {
+     "id": "4.7",
+     "type": "say",
+     "text": "Uneven development also causes international migration: people moving to live in another country, often from poorer countries to richer ones for work, higher pay and safety. Many send money home."
+    },
+    {
+     "id": "4.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Why does uneven development cause international migration?",
+     "options": [
+      {
+       "text": "People move to richer countries for jobs and higher pay",
+       "branch": "right"
+      },
+      {
+       "text": "Richer countries have warmer weather",
+       "branch": "weather"
+      },
+      {
+       "text": "Poorer countries have no people",
+       "branch": "nopeople"
+      }
+     ],
+     "right": "Yes: the gap in jobs and pay pulls people to richer countries.",
+     "wrong": {
+      "other": "Not quite: people move to richer countries for jobs and higher pay.",
+      "weather": "Not quite: the weather is not the reason. People move for jobs and higher pay.",
+      "nopeople": "Not quite: poorer countries have many people. They move to richer countries for jobs and higher pay."
+     },
+     "idk": [
+      {
+       "hint": "If wages in one country are many times higher, what might some people do?"
+      }
+     ],
+     "answerWhy": "People move from poorer to richer countries for jobs, higher pay and safety."
+    },
+    {
+     "id": "4.9",
+     "type": "own",
+     "prompt": "In one line: name the three groups of causes of uneven development.",
+     "points": [
+      "physical",
+      "economic",
+      "historical"
+     ],
+     "idk": "No problem. A good line would be: the causes are physical, economic and historical."
+    }
+   ]
+  },
+  {
+   "kp": 4,
+   "heading": "Strategies to reduce the development gap",
+   "steps": [
+    {
+     "id": "5.1",
+     "type": "say",
+     "text": "Several strategies try to close the gap. Investment means companies or other countries putting money into businesses, roads and factories; industrial development then creates jobs and taxes."
+    },
+    {
+     "id": "5.2",
+     "type": "say",
+     "text": "Aid is help from one country or charity to another: money, goods or skills, given or lent on very easy terms. It can save lives, but it can be wasted."
+    },
+    {
+     "id": "5.3",
+     "type": "say",
+     "text": "Debt relief cancels some of the money a poor country owes, so money paid out as interest can go on health and schools instead. Most of the 39 countries that qualified for one scheme have been helped."
+    },
+    {
+     "id": "5.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A student writes: \"Debt relief is a loan to help a poor country.\" What is wrong?",
+     "options": [
+      {
+       "text": "Debt relief cancels money owed; it is not a new loan",
+       "branch": "right"
+      },
+      {
+       "text": "Nothing: debt relief is a loan",
+       "branch": "loan"
+      },
+      {
+       "text": "Debt relief is only for rich countries",
+       "branch": "rich"
+      }
+     ],
+     "right": "Yes: debt relief cancels debt. Mixing it up with loans is a common exam mistake.",
+     "wrong": {
+      "other": "Not quite: debt relief cancels money owed; it is not a new loan.",
+      "loan": "Not quite: a loan adds debt. Debt relief takes debt away.",
+      "rich": "Not quite: it is for poor countries. And it cancels money owed; it is not a loan."
+     },
+     "idk": [
+      {
+       "hint": "Does debt relief add to what the country owes, or take some away?"
+      }
+     ],
+     "answerWhy": "Debt relief cancels money a poor country owes; it is not a loan."
+    },
+    {
+     "id": "5.5",
+     "type": "say",
+     "text": "Microfinance means very small loans to people too poor to use an ordinary bank, to start a small business. Grameen Bank in Bangladesh lends mostly to women."
+    },
+    {
+     "id": "5.6",
+     "type": "say",
+     "text": "Intermediate technology is simple equipment local people can make, use and mend, such as a hand water pump."
+    },
+    {
+     "id": "5.6b",
+     "type": "say",
+     "text": "Fairtrade pays farmers a fair minimum price for their crop, plus extra money for their community."
+    },
+    {
+     "id": "5.7",
+     "type": "say",
+     "text": "Tourism brings money and jobs. In Kenya, international tourists grew from about 1.2 million in 2015 to about 2 million in 2019, for safaris and beaches."
+    },
+    {
+     "id": "5.8",
+     "type": "say",
+     "text": "In 2019 Kenya's tourism earned $1.76 billion, about 15% of what Kenya earns from selling abroad. That money pays wages, taxes and new roads."
+    },
+    {
+     "id": "5.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which is a weakness of tourism as a way to close the gap?",
+     "options": [
+      {
+       "text": "Some of the money goes to foreign hotel companies",
+       "branch": "right"
+      },
+      {
+       "text": "It brings no jobs at all",
+       "branch": "nojobs"
+      },
+      {
+       "text": "It only helps rich countries",
+       "branch": "rich"
+      }
+     ],
+     "right": "Yes: money leaking abroad means less stays in Kenya. Tourists also stay away after terrorism or a pandemic.",
+     "wrong": {
+      "other": "Not quite: some of the money goes to foreign hotel companies.",
+      "nojobs": "Not quite: tourism does bring jobs. Its weakness is that some money goes to foreign companies.",
+      "rich": "Not quite: it helps poorer countries like Kenya, but some money leaks to foreign companies."
+     },
+     "idk": [
+      {
+       "hint": "Who owns many big hotels? Where does their profit go?"
+      }
+     ],
+     "answerWhy": "Some of the money goes to foreign hotel companies, and visitor numbers fall after terrorism or a pandemic."
+    },
+    {
+     "id": "5.10",
+     "type": "own",
+     "prompt": "In one line: what is the difference between debt relief and microfinance?",
+     "points": [
+      "debt relief cancels money a country owes",
+      "microfinance is a small loan to a person"
+     ],
+     "idk": "No problem. A good line would be: debt relief cancels money a country owes, while microfinance is a small loan to a person."
+    }
+   ]
+  },
+  {
+   "kp": 5,
+   "heading": "Is the development gap closing?",
+   "steps": [
+    {
+     "id": "6.1",
+     "type": "say",
+     "text": "The picture is mixed. Some NEEs, especially China and India, have grown fast, and hundreds of millions of their people now have higher incomes."
+    },
+    {
+     "id": "6.2",
+     "type": "say",
+     "text": "Extreme poverty means living on less than $3 a day. The share of the world's people in extreme poverty fell from about 43% in 1990 to about 10% in 2024."
+    },
+    {
+     "id": "6.3",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which piece of evidence shows the gap is NOT closing everywhere?",
+     "options": [
+      {
+       "text": "Many of the poorest African countries are falling further behind",
+       "branch": "right"
+      },
+      {
+       "text": "Extreme poverty fell from about 43% to 10%",
+       "branch": "falling"
+      },
+      {
+       "text": "China and India have grown fast",
+       "branch": "china"
+      }
+     ],
+     "right": "Yes: progress is uneven, so for many of the poorest countries the gap is widening.",
+     "wrong": {
+      "other": "Not quite: many of the poorest African countries are falling further behind.",
+      "falling": "Not quite: that shows progress. The evidence against is that many of the poorest African countries are falling behind.",
+      "china": "Not quite: that shows the gap closing for some. Many of the poorest African countries are falling behind."
+     },
+     "idk": [
+      {
+       "hint": "Two options show progress. Which one shows some countries falling behind?"
+      }
+     ],
+     "answerWhy": "Many of the poorest countries, especially in Africa, are falling further behind, so the gap is not closing everywhere."
+    },
+    {
+     "id": "6.4",
+     "type": "say",
+     "text": "The United Nations has set Sustainable Development Goals: targets for every country to end poverty and hunger and improve health and schooling."
+    },
+    {
+     "id": "6.5",
+     "type": "own",
+     "prompt": "In one line: is the development gap closing? Give one point each way.",
+     "points": [
+      "closing for some (fast-growing NEEs; less extreme poverty)",
+      "not for many of the poorest countries"
+     ],
+     "idk": "No problem. A good line would be: it is closing for fast-growing countries such as China, but many of the poorest African countries are falling behind."
+    },
+    {
+     "id": "6.6",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "6.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: what does the HDI combine?",
+     "options": [
+      {
+       "text": "Income, life expectancy and education",
+       "branch": "right"
+      },
+      {
+       "text": "Income only",
+       "branch": "w1"
+      },
+      {
+       "text": "Population and area",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: income, life expectancy and education.",
+     "wrong": {
+      "other": "Not quite: income, life expectancy and education.",
+      "w1": "Not quite: income alone is GNI per head. The HDI adds life expectancy and education.",
+      "w2": "Not quite: the HDI combines income, life expectancy and education."
+     },
+     "idk": [],
+     "answerWhy": "The HDI combines income, life expectancy and education.",
+     "quiz": true
+    },
+    {
+     "id": "6.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 6: the birth rate is the number of babies born…?",
+     "options": [
+      {
+       "text": "For every 1,000 people each year",
+       "branch": "right"
+      },
+      {
+       "text": "In a whole country",
+       "branch": "w1"
+      },
+      {
+       "text": "To each woman",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: per 1,000 people each year.",
+     "wrong": {
+      "other": "Not quite: for every 1,000 people each year.",
+      "w1": "Not quite: a rate is not a total. It is per 1,000 people each year.",
+      "w2": "Not quite: the birth rate is per 1,000 people each year."
+     },
+     "idk": [],
+     "answerWhy": "The birth rate is births for every 1,000 people each year.",
+     "quiz": true
+    },
+    {
+     "id": "6.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: which DTM stage are most HICs, such as the UK, in?",
+     "options": [
+      {
+       "text": "Stage 4",
+       "branch": "right"
+      },
+      {
+       "text": "Stage 2",
+       "branch": "w1"
+      },
+      {
+       "text": "Stage 1",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: stage 4, with low birth and death rates.",
+     "wrong": {
+      "other": "Not quite: stage 4.",
+      "w1": "Not quite: stage 2 has a high birth rate; many LICs are there. Most HICs are in stage 4.",
+      "w2": "Not quite: stage 1 has high birth and death rates. Most HICs are in stage 4."
+     },
+     "idk": [],
+     "answerWhy": "Most HICs are in stage 4: low birth and death rates.",
+     "quiz": true
+    },
+    {
+     "id": "6.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: which is a historical cause of uneven development?",
+     "options": [
+      {
+       "text": "Colonialism",
+       "branch": "right"
+      },
+      {
+       "text": "Drought",
+       "branch": "w1"
+      },
+      {
+       "text": "Selling cheap raw materials",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: colonialism comes from the past.",
+     "wrong": {
+      "other": "Not quite: colonialism.",
+      "w1": "Not quite: drought is physical. Colonialism is historical.",
+      "w2": "Not quite: that is economic. Colonialism is historical."
+     },
+     "idk": [],
+     "answerWhy": "Colonialism is a historical cause.",
+     "quiz": true
+    },
+    {
+     "id": "6.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: which strategy gives very small loans to start a business?",
+     "options": [
+      {
+       "text": "Microfinance",
+       "branch": "right"
+      },
+      {
+       "text": "Debt relief",
+       "branch": "w1"
+      },
+      {
+       "text": "Fairtrade",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: microfinance.",
+     "wrong": {
+      "other": "Not quite: microfinance.",
+      "w1": "Not quite: debt relief cancels money owed. Microfinance gives small loans.",
+      "w2": "Not quite: Fairtrade pays farmers a fair price. Microfinance gives small loans."
+     },
+     "idk": [],
+     "answerWhy": "Microfinance gives very small loans to start a business.",
+     "quiz": true
+    },
+    {
+     "id": "6.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: why can GNI per head mislead?",
+     "options": [
+      {
+       "text": "It is an average that hides inequality",
+       "branch": "right"
+      },
+      {
+       "text": "It counts too few countries",
+       "branch": "w1"
+      },
+      {
+       "text": "It ignores money",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: an average hides how unequally money is shared.",
+     "wrong": {
+      "other": "Not quite: it is an average that hides inequality.",
+      "w1": "Not quite: it is measured for nearly every country. It misleads because it is an average that hides inequality.",
+      "w2": "Not quite: it is all about money. It misleads because it is an average that hides inequality."
+     },
+     "idk": [],
+     "answerWhy": "GNI per head is an average, so it hides inequality.",
+     "quiz": true
+    },
+    {
+     "id": "6.13",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

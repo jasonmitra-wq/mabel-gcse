@@ -1,0 +1,237 @@
+# Site test: p1-kinetic-potential (lesson, 2026-11-25)
+
+**PASS** · cost $0.0510 (33 tool calls, 31 calls from the site; tutor claude-sonnet-5-5 $0.0151)
+
+## Judge
+
+```json
+{
+  "broken": [],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": []
+}
+```
+
+## Transcript checks (tools/check-transcript.js)
+
+none
+
+## Transcript
+
+    Lesson p1-kinetic-potential (Physics › Energy › Kinetic and potential energy — the equations).
+    [screenshot 01-home-laptop.png] home
+    [screenshot 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p1-laptop.png] lessons-P1
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! Energy can be held in an object in different ways, called energy stores. This lesson works out how much energy is in three of them: the kinetic, gravitational potential and elastic potential stores.
+    [screenshot 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (tapped "Next")
+    T1: First, two quick questions from the last lesson. Which store holds the energy of a moving object?
+    [side picture after T1: none; newest in the chat: none]
+    S2 (try, tapped the button): kinetic
+    T2: Second: a book sits on a high shelf. Which store holds energy because of its height?
+      [T2 shown first: Yes: moving things have energy in their kinetic store.]
+    S3 (what): wdym
+    T3: Now, the question again: Second: a book sits on a high shelf. Which store holds energy because of its height?
+    [screenshot 06-exchange-3-laptop.png] exchange-3
+      [T3 shown first: In other words: a book resting up high on a shelf. Energy can be stored in different ways, so it wants you to name the kind of energy store the book has just because it is raised up off the ground.]
+    S4 (idk): idk
+    T4: The book is high up and not moving. Which store is for raised things?
+      [T4 easier step]
+    S5 (try): gravitational potental
+    T5: Energy is measured in joules, written J.
+      [T5 shown first: Yes: raised things have energy in their gravitational potential store.]
+    S6 (tapped "Next")
+    T6: Now this lesson. To work out the energy in a kinetic store, you need the object's mass: how much stuff it is made of, measured in kilograms (kg).
+    [screenshot 07-exchange-6-laptop.png] exchange-6
+    S7 (tapped "Next")
+    T7: You also need its speed: how far it travels each second, measured in metres per second (m/s).
+    S8 (tapped "Next")
+    T8: The equation is Ek = ½ m v²: kinetic energy = ½ × mass × speed². Ek is the kinetic energy in joules (J), m is the mass in kilograms (kg) and v is the speed in metres per second (m/s).
+    S9 (tapped "Next")
+    T9: v² means v × v, which is called v squared. So 3² = 3 × 3 = 9. Square the speed first, then multiply by the mass, then halve it.
+    [screenshot 08-exchange-9-laptop.png] exchange-9
+    S10 (tapped "Next")
+    T10: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [side picture after T10: none; newest in the chat: worked or question card]
+    [worked example under T10: buttons seen Show the first step → Next step → Next step → Next step; after the last step: Next]
+    [screenshot 09-worked-10-laptop.png] worked-10
+    S11 (tapped "Next")
+    T11: Your turn. A 6 kg dog runs at 5 m/s. What is the energy in its kinetic store, in joules?
+    S12 (try): ½ × 6 × 25
+    T12: Because the speed is squared, doubling the speed makes the kinetic energy four times as big, since 2² = 4. That is why a crash at motorway speed does so much more damage than one in town.
+    [screenshot 10-exchange-12-laptop.png] exchange-12
+      [T12 shown first: Not quite: 75 J. Ek = ½ × 6 × 5² = ½ × 6 × 25 = 75 J.]
+    S13 (tapped "Next")
+    T13: A car speeds up from 10 m/s to 30 m/s, three times as fast. What happens to the energy in its kinetic store?
+    S14 (try, tapped the button): it becomes 9 times as big
+    T14: In one line: what is the equation for kinetic energy, and which quantity in it is squared?
+      [T14 shown first: Yes: 3² = 9, so three times the speed gives nine times the kinetic energy.]
+    S15 (idk): ek equals half m v squared, v is squared
+    T15: Next, the gravitational potential store. Lifting something higher fills it. How much energy goes in depends on the mass, the height and how strongly gravity pulls.
+    [screenshot 11-exchange-15-laptop.png] exchange-15
+    [counter now "1/4 covered" after T15; AI calls from the site so far: 7, $0.0026]
+      [T15 shown first: Yes: your line makes every point. You have this: Ek = ½ m v². You have this: the speed is squared.]
+    S16 (tapped "Next")
+    T16: A force is a push or a pull, measured in newtons (N).
+    S17 (tapped "Next")
+    T17: Gravity is a force: the pull of the Earth on everything near it.
+    S18 (tapped "Next")
+    T18: How strongly gravity pulls on each kilogram is called the gravitational field strength, g. On Earth it is about 9.8 newtons per kilogram (N/kg): gravity pulls each kilogram with a force of 9.8 N.
+    [screenshot 12-exchange-18-laptop.png] exchange-18
+    S19 (tapped "Next")
+    T19: The equation is Ep = m g h: gravitational potential energy = mass × gravitational field strength × height. Ep is in joules (J), m is the mass in kilograms (kg), g is the gravitational field strength in newtons per kilogram (N/kg) and h is the height it is raised through, in metres (m).
+    S20 (tapped "Next")
+    T20: Here is a worked example. Its steps open one at a time under it.
+    [worked example under T20: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 13-worked-20-laptop.png] worked-20
+    S21 (tapped "Next")
+    T21: Your turn. A 60 kg climber goes up 10 m. g = 9.8 N/kg. How much energy goes into the climber's gravitational potential store, in joules?
+    [screenshot 14-exchange-21-laptop.png] exchange-21
+    S22 (try): 60 times 9.8 times 10
+    T22: Heights are often given in centimetres, but h must be in metres: divide by 100, so 50 cm is 0.5 m.
+      [T22 shown first: Not quite: 5880 J. Ep = m g h = 60 × 9.8 × 10 = 5880 J.]
+    S23 (tapped "Next")
+    T23: A 0.5 kg book is lifted onto a shelf 80 cm high. g = 9.8 N/kg. How much energy goes into its gravitational potential store, in joules?
+    S24 (try): 0.5 times 9.8 times 0.8
+    T24: A mass given in grams must be changed into kilograms before it goes into the equation: divide by 1000, so 200 g is 0.2 kg.
+    [screenshot 15-exchange-24-laptop.png] exchange-24
+      [T24 shown first: Not quite: 3.92 J. 80 cm is 0.8 m, and Ep = m g h = 0.5 × 9.8 × 0.8 = 3.92 J.]
+    S25 (tapped "Next")
+    T25: A 400 g ball is lifted 2 m. g = 9.8 N/kg. How much energy goes into its gravitational potential store, in joules?
+    S26 (try): 0.4 times 9.8 times 2
+    T26: Sometimes you know the energy and need the height. Put the numbers in first, then divide. For example, 98 = 5 × 9.8 × h gives 98 = 49 × h, so h = 98 ÷ 49 = 2 m.
+      [T26 shown first: Not quite: 7.84 J. 400 g is 0.4 kg, and Ep = m g h = 0.4 × 9.8 × 2 = 7.84 J.]
+    S27 (tapped "Next")
+    T27: A 2 kg box gains 196 J in its gravitational potential store. g = 9.8 N/kg. How high was it lifted, in metres?
+    [screenshot 16-exchange-27-laptop.png] exchange-27
+    S28 (what): wdym
+    T28: Have a go at the question: A 2 kg box gains 196 J in its gravitational potential store. g = 9.8 N/kg. How high was it lifted, in metres?
+      [T28 shown first: The question gives you a box with a mass of 2 kg and says lifting it stored 196 J of gravitational potential energy. It asks how far upwards the box was raised, in metres, so you use the GPE equation and work backwards to find the height.]
+    S29 (try): 196 equals 2 times 9.8 times h
+    T29: Nothing in Ep = m g h is squared. Double the height and the energy doubles; double the mass and it doubles too. Kinetic energy is different, because the speed in its equation is squared.
+      [T29 shown first: Not quite: 10 m. 196 = 2 × 9.8 × h = 19.6 × h, so h = 196 ÷ 19.6 = 10 m.]
+    S30 (tapped "Next")
+    T30: In one line: what is the equation for gravitational potential energy, and what unit must the height be in?
+    [screenshot 17-exchange-30-laptop.png] exchange-30
+    S31 (try): ep equals m g h, metres
+    T31: Now put the two stores together. When something falls, energy moves from its gravitational potential store to its kinetic store.
+    [counter now "2/4 covered" after T31; AI calls from the site so far: 15, $0.0054]
+      [T31 shown first: Yes: your line makes every point. You have this: Ep = m g h. You have this: height in metres.]
+    S32 (tapped "Next")
+    T32: Air resistance is the push of the air on anything moving through it, against its motion. It slows a falling object down.
+    S33 (tapped "Next")
+    T33: Energy cannot be created or destroyed, so none goes missing as something falls. With no air resistance, all the energy that leaves the gravitational potential store goes into the kinetic store.
+    [screenshot 18-exchange-33-laptop.png] exchange-33
+    S34 (tapped "Next")
+    T34: Halfway down, half of the energy that was in the gravitational potential store at the top has moved to the kinetic store.
+    S35 (tapped "Next")
+    T35: To get a speed from v², you need to undo the squaring. That is called taking the square root, written √, using the √ key on a calculator. √9 = 3, because 3 × 3 = 9.
+    S36 (tapped "Next")
+    T36: Here is a worked example of finding the landing speed. Its steps open one at a time.
+    [screenshot 19-exchange-36-laptop.png] exchange-36
+    [worked example under T36: buttons seen Show the first step → Next step → Next step → Next step; after the last step: Next]
+    [screenshot 20-worked-36-laptop.png] worked-36
+    S37 (tapped "Next")
+    T37: Your turn, in two steps. A 1 kg stone falls 10 m. g = 9.8 N/kg. Ignore air resistance. Step 1: how much energy leaves its gravitational potential store, in joules?
+    S38 (try): 1 times 9.8 times 10
+    T38: Step 2: all 98 J goes into the stone's kinetic store. Use Ek = ½ m v² to find its speed just before it lands, in metres per second.
+      [T38 shown first: Not quite: 98 J. Remember g: Ep = 1 × 9.8 × 10 = 98 J.]
+    S39 (try): 98 equals half times 1 times v squared
+    T39: A thermal store is the energy an object has because of how hot it is.
+    [screenshot 21-exchange-39-laptop.png] exchange-39
+      [T39 shown first: Not quite: 14 m/s. 98 = ½ × 1 × v², so v² = 196 and v = √196 = 14 m/s.]
+    S40 (tapped "Next")
+    T40: A real falling stone does push through air. How does air resistance change its speed when it lands?
+    S41 (try, tapped the button): it lands a bit slower
+    T41: In one line: for something falling with no air resistance, how are its gravitational potential store and its kinetic store linked?
+      [T41 shown first: Yes. Some energy is transferred to the thermal stores of the stone and the air, so less reaches the kinetic store.]
+    S42 (try): energy moves from one to the other
+    T42: Last store: elastic potential. Stretching a spring stores energy in it. How far it has stretched is called its extension: the stretched length minus the original length.
+    [screenshot 22-exchange-42-laptop.png] exchange-42
+    [counter now "3/4 covered" after T42; AI calls from the site so far: 19, $0.0061]
+      [T42 shown first: Here is what a good line says. The energy lost from the gravitational potential store equals the energy gained by the kinetic store.]
+    S43 (tapped "Next")
+    T43: A spring is 10 cm long. It is pulled until it is 14 cm long. What is its extension?
+    S44 (idk): dont know
+    T44: How much longer did it get? Take the original length from the stretched length.
+      [T44 easier step]
+    S45 (idk, tapped the button): 4 cm
+    T45: Some springs are much harder to stretch than others. How stiff a spring is, is given by its spring constant, k, in newtons per metre (N/m): the force needed for each metre of stretch. A bigger k means a stiffer spring.
+    [screenshot 23-exchange-45-laptop.png] exchange-45
+      [T45 shown first: Yes: 4 cm. Extension = stretched length − original length = 14 − 10 = 4 cm.]
+    S46 (tapped "Next")
+    T46: The equation is Ee = ½ k e²: elastic potential energy = ½ × spring constant × extension². Ee is in joules (J), k is the spring constant in newtons per metre (N/m) and e is the extension in metres (m).
+    S47 (tapped "Next")
+    T47: The equation only works up to a point called the limit of proportionality. Up to that point, the extension goes up in step with the pulling force: double the force, double the extension. Stretched past it, the spring no longer follows the equation.
+    S48 (tapped "Next")
+    T48: Here is a worked example. Its steps open one at a time.
+    [screenshot 24-exchange-48-laptop.png] exchange-48
+    [worked example under T48: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 25-worked-48-laptop.png] worked-48
+    S49 (tapped "Next")
+    T49: Your turn. A spring with k = 200 N/m has an extension of 0.1 m. How much energy is stored in it, in joules?
+    S50 (ask): what does extension mean
+    T50: Back to the question: Your turn. A spring with k = 200 N/m has an extension of 0.1 m. How much energy is stored in it, in joules?
+      [T50 shown first: Extension means how far a spring has stretched beyond its natural length, the length it has when nothing is pulling on it. It is not the spring's total length, only the extra bit. In the question, 0. 1 m is that extra stretch, so it goes straight into the equation as e.]
+    S51 (what): wdym
+    T51: Now, the question again: Your turn. A spring with k = 200 N/m has an extension of 0.1 m. How much energy is stored in it, in joules?
+    [screenshot 26-exchange-51-laptop.png] exchange-51
+      [T51 shown first: In other words: how much energy is stored in a spring that has been stretched by a small amount. You have the spring's stiffness (200 N/m) and how far it stretched (0. 1 m), and you put those into the elastic energy equation, Ee = ½ke², to get the answer in joules.]
+    S52 (try): half times 200 times 0.1 squared
+    T52: A spring with k = 400 N/m is stretched from 20 cm long to 30 cm long. How much energy is stored in it, in joules?
+      [T52 shown first: Not quite: 1 J. Ee = ½ × 200 × 0.1² = ½ × 200 × 0.01 = 1 J.]
+    S53 (try): extension is 10 cm so 0.1 m, half times 400 times 0.1 squared is 2
+    T53: As with speed, the extension is squared: double the extension and the stored energy becomes four times as big.
+      [T53 shown first: Yes: 2 J. The extension is 30 − 20 = 10 cm = 0.1 m, and Ee = ½ × 400 × 0.1² = ½ × 400 × 0.01 = 2 J.]
+    S54 (tapped "Next")
+    T54: Squashing a spring stores energy in the same way. For a squashed spring, the extension is how much shorter it has become.
+    [screenshot 27-exchange-54-laptop.png] exchange-54
+    S55 (tapped "Next")
+    T55: In one line: what is e in Ee = ½ k e², and what unit must it be in?
+    S56 (idk): not sure
+    T56: Now for a short quiz: six questions on the whole lesson. Take your time.
+      [T56 shown first: No problem. A good line would be: e is the extension, the stretched length minus the original length, in metres.]
+    S57 (tapped "Next")
+    T57: Quiz, question 1 of 6: a 10 kg trolley moves at 2 m/s. What is the energy in its kinetic store, in joules?
+    [screenshot 28-exchange-57-laptop.png] exchange-57
+    S58 (try): half times 10 times 2 squared is 20
+    T58: Quiz, question 2 of 6: a 3 kg box is lifted 4 m. g = 9.8 N/kg. How much energy goes into its gravitational potential store, in joules?
+      [T58 shown first: Yes: Ek = ½ × 10 × 2² = ½ × 10 × 4 = 20 J.]
+    S59 (try): 3 times 9.8 times 4 is 117.6
+    T59: Quiz, question 3 of 6: which quantity is squared in Ek = ½ m v²?
+      [T59 shown first: Yes: Ep = m g h = 3 × 9.8 × 4 = 117.6 J.]
+    S60 (try, tapped the button): the speed
+    T60: Quiz, question 4 of 6: a spring with k = 100 N/m has an extension of 0.2 m. How much energy is stored in it, in joules?
+    [screenshot 29-exchange-60-laptop.png] exchange-60
+      [T60 shown first: Yes: v, the speed, is squared.]
+    S61 (try): half times 100 times 0.2 squared is 2
+    T61: Quiz, question 5 of 6: a spring 12 cm long is stretched to 15 cm. What is its extension?
+      [T61 shown first: Yes: Ee = ½ × 100 × 0.2² = ½ × 100 × 0.04 = 2 J.]
+    S62 (what): what
+    T62: Have a go at the question: Quiz, question 5 of 6: a spring 12 cm long is stretched to 15 cm. What is its extension?
+      [T62 shown first: The extension of a spring is how much longer it has become compared with its natural length, which is its length when nothing is pulling on it. The question gives the spring's length before and after it was stretched, and asks how far it has stretched beyond where it started.]
+    S63 (try, tapped the button): 3 cm
+    T63: Quiz, question 6 of 6: a ball falls with no air resistance and loses 50 J from its gravitational potential store. How much energy has its kinetic store gained, in joules?
+    [screenshot 30-exchange-63-laptop.png] exchange-63
+      [T63 shown first: Yes: 15 − 12 = 3 cm.]
+    [side picture after T63: none; newest in the chat: none]
+    S64 (try): 50 joules
+    T64: That's the end of the quiz: you got 6 out of 6.
+      [T64 shown first: Yes: all 50 J goes into the kinetic store.]
+    S65 (tapped "Next")
+    T65: The lesson is finished. Tap a button to go on.
+      [T65 shown first: Summary, point 1 of 4: Ek = ½ m v², and the speed is squared.]
+      [T65 shown first: Summary, point 2 of 4: Ep = m g h, with the height in metres.]
+      [T65 shown first: Summary, point 3 of 4: The energy lost from the gravitational potential store equals the energy gained by the kinetic store.]
+      [T65 shown first: Summary, point 4 of 4: E is the extension, the stretched length minus the original length, in metres.]
+    [counter now "4/4 covered" after T65; AI calls from the site so far: 31, $0.0158]
+    S66 (closing): ok thx
+    T66: You're welcome. Tap "Go to the slides" or "Home" when you are ready.
+    [screenshot 31-exchange-66-laptop.png] exchange-66
+    S67 (closing, tapped the button): Home
+    [S67 left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]
+    [screenshot 32-end-laptop.png] end
+    [tutor-side time: 0.7 minutes over 66 exchanges]

@@ -1,0 +1,211 @@
+# Site test: p1-national-grid (lesson, 2026-11-25)
+
+**PASS** · cost $0.0317 (24 tool calls, 17 calls from the site; tutor claude-sonnet-5-5 $0.0099)
+
+## Judge
+
+```json
+{
+  "broken": [],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": []
+}
+```
+
+## Transcript checks (tools/check-transcript.js)
+
+none
+
+## Transcript
+
+    Lesson p1-national-grid (Physics › Energy › Energy resources and the National Grid).
+    [screenshot 01-home-laptop.png] home
+    [screenshot 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p1-laptop.png] lessons-P1
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! This lesson is about where our electricity comes from: the network that carries it to every home, and the energy resources that power stations use.
+    [screenshot 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (tapped "Next")
+    T1: First, two quick questions from earlier lessons. What is power?
+    [side picture after T1: none; newest in the chat: none]
+    S2 (try): energy transfered each second
+    T2: Second: a current flowing through a long wire warms the wire up. What happens to the energy that warms it?
+      [T2 shown first: Yes: power is the energy transferred each second, in watts.]
+    S3 (try): spreads into surroundings
+    T3: Now this lesson. Electricity is made in power stations, often far from where people live. A network of cables carries it across the country to homes, schools and businesses.
+    [screenshot 06-exchange-3-laptop.png] exchange-3
+      [T3 shown first: Yes: it is wasted, spread out into the surroundings, warming them a tiny bit.]
+    S4 (tapped "Next")
+    T4: An electric current is a flow of charge round a circuit. It is measured in amperes (A).
+    S5 (tapped "Next")
+    T5: Potential difference is the push that drives a current round a circuit. It is measured in volts (V): a bigger number means a bigger push.
+    S6 (tapped "Next")
+    T6: A transformer is a device that changes the potential difference.
+    [screenshot 07-exchange-6-laptop.png] exchange-6
+    S7 (tapped "Next")
+    T7: The network of cables and transformers linking power stations to homes is called the National Grid.
+    S8 (tapped "Next")
+    T8: Power stations make electricity at about 25 000 V. Transformers raise that to as much as 400 000 V for the long cables.
+    S9 (tapped "Next")
+    T9: Near towns, more transformers lower the potential difference to 230 V for homes.
+    [screenshot 08-exchange-9-laptop.png] exchange-9
+    S10 (tapped "Next")
+    T10: Why such a high potential difference? It starts with power = current × potential difference, P = I V, with P the power in watts (W), I the current in amperes (A) and V the potential difference in volts (V).
+    S11 (idk): dont know
+    T11: Compare sending the same power, 1 000 000 W, in two ways. At 25 000 V the current is I = P ÷ V = 1 000 000 ÷ 25 000 = 40 A. At 400 000 V it is 1 000 000 ÷ 400 000 = 2.5 A.
+    S12 (tapped "Next")
+    T12: A bigger push usually means more current. Here the power being sent is fixed, so a bigger potential difference needs a smaller current to carry it.
+    [screenshot 09-exchange-12-laptop.png] exchange-12
+    S13 (tapped "Next")
+    T13: A power station sends 2 000 000 W through cables at 400 000 V. What current flows, in amperes? (I = P ÷ V)
+    S14 (try): 5 amps
+    T14: A current heats the cables it flows through, and that energy is wasted. The smaller the current, the less the cables are heated.
+      [T14 shown first: Yes: 5 A. I = P ÷ V = 2 000 000 ÷ 400 000 = 5 A.]
+    S15 (tapped "Next")
+    T15: Resistance is how hard it is for a current to flow through something, measured in ohms (Ω).
+    [screenshot 10-exchange-15-laptop.png] exchange-15
+    S16 (tapped "Next")
+    T16: The power wasted heating a cable is P = I² R, in watts (W), where I is the current in amperes (A) and R is the resistance of the cable in ohms (Ω). Because the current is squared, a smaller current makes a big difference.
+    S17 (tapped "Next")
+    T17: Engineers raise a cable's potential difference, so the current falls from 4 A to 2 A for the same power. What happens to the energy wasted heating the cable?
+    S18 (try, tapped the button): it falls to a quarter
+    T18: In one line: why does the National Grid use a high potential difference in its cables?
+    [screenshot 11-exchange-18-laptop.png] exchange-18
+      [T18 shown first: Yes: the waste depends on the current squared. Half the current gives (½)² = ¼ of the waste.]
+    S19 (try): smaller curent wastes less energy
+    T19: The transformer that raises the potential difference at a power station is called a step-up transformer.
+    [counter now "1/3 covered" after T19; AI calls from the site so far: 7, $0.0011]
+      [T19 shown first: Yes: your line makes every point. You have this: the current is smaller. You have this: less energy is wasted heating the cables.]
+    S20 (tapped "Next")
+    T20: A transformer that lowers the potential difference, like those near homes, is called a step-down transformer.
+    S21 (tapped "Next")
+    T21: The picture shows the chain from power station to homes, with each transformer in its place. The long cables are called transmission cables.
+    [screenshot 12-exchange-21-laptop.png] exchange-21
+    [side picture after T21: "The National Grid: power station, step-up transformer, transmission cables, step-down transformer, homes."; newest in the chat: picture "The National Grid: power station, step-up transformer, transmission cables, step-down transformer, homes."]
+    S22 (tapped "Next")
+    T22: On the picture, kV means kilovolts: 1 kV = 1000 V, so 400 kV is 400 000 V.
+    S23 (tapped "Next")
+    T23: A cable arrives at a town at 132 000 V, but the homes need 230 V. What kind of transformer must be at the edge of town?
+    S24 (idk): not sure
+    T24: 132 000 V has to become 230 V. Is that going up or down?
+    [diagram shown in the conversation under T24: "The National Grid: power station, step-up transformer, transmission cables, step-down transformer, homes."]
+    [screenshot 13-diagram-24-laptop.png] diagram-24
+    [screenshot 14-exchange-24-laptop.png] exchange-24
+      [T24 easier step]
+    S25 (try, tapped the button): a step-down transformer
+    T25: In one line: where are the step-up and step-down transformers in the National Grid?
+      [T25 shown first: Yes: the potential difference has to come down from 132 000 V to 230 V, so it is a step-down transformer.]
+    S26 (try): step up at power station step down near homes
+    T26: Last part: the energy resources we use. We need energy for three main things: transport, making electricity, and heating our homes.
+    [counter now "2/3 covered" after T26; AI calls from the site so far: 9, $0.0015]
+      [T26 shown first: Yes: your line makes every point. You have this: step-up between the power station and the cables. You have this: step-down between the cables and homes.]
+    [side picture after T26: none; newest in the chat: picture "The National Grid: power station, step-up transformer, transmission cables, step-down transformer, homes."]
+    S27 (tapped "Next")
+    T27: An energy resource that will run out one day is called non-renewable.
+    [screenshot 15-exchange-27-laptop.png] exchange-27
+    S28 (tapped "Next")
+    T28: Coal, oil and natural gas are non-renewable. They are called fossil fuels, because they formed from living things over millions of years.
+    S29 (tapped "Next")
+    T29: Nuclear fuel, such as uranium mined from rocks, is non-renewable too: there is only a fixed amount of it.
+    S30 (tapped "Next")
+    T30: An energy resource that is replenished, or topped up, as it is used is called renewable. Renewable resources include the Sun, the wind, the tides and water waves.
+    [screenshot 16-exchange-30-laptop.png] exchange-30
+    S31 (tapped "Next")
+    T31: Also renewable: hydro-electricity, made from water stored behind a dam in a river valley.
+    S32 (tapped "Next")
+    T32: And geothermal energy, from hot rocks underground, and bio-fuel, made from plants that can be grown again.
+    S33 (tapped "Next")
+    T33: Different resources suit different uses. Transport runs mostly on petrol and diesel, made from oil, with some bio-fuel and electric cars.
+    [screenshot 17-exchange-33-laptop.png] exchange-33
+    S34 (tapped "Next")
+    T34: Most homes are heated by burning natural gas, some by electricity. And electricity can be made from almost any of the resources.
+    S35 (tapped "Next")
+    T35: Which description of a renewable resource is the most accurate?
+    S36 (try, tapped the button): one that is replenished as it is used
+    T36: Which of these is non-renewable?
+    [screenshot 18-exchange-36-laptop.png] exchange-36
+      [T36 shown first: Yes: replenished means topped up as it is used.]
+    S37 (try, tapped the button): nuclear fuel
+    T37: Burning fossil fuels releases carbon dioxide, a gas that traps heat in the atmosphere and adds to global warming. Coal releases the most carbon dioxide for the same amount of energy.
+      [T37 shown first: Yes: nuclear fuel is mined from the ground, and it will run out one day.]
+    S38 (tapped "Next")
+    T38: Burning coal and oil also releases sulfur dioxide, a gas that causes acid rain.
+    S39 (tapped "Next")
+    T39: A reliable resource can supply energy whenever it is needed.
+    [screenshot 19-exchange-39-laptop.png] exchange-39
+    [side picture after T39: none; newest in the chat: none]
+    S40 (tapped "Next")
+    T40: Nuclear power stations are reliable: they run day and night whatever the weather, and give out no carbon dioxide. But they are slow to start up or turn up, and they make radioactive waste, which stays dangerous for thousands of years.
+    S41 (tapped "Next")
+    T41: Wind turbines and solar cells give out no carbon dioxide while running, but they are intermittent, which means not always available. Solar cells make nothing at night, and wind turbines stop when the wind drops.
+    S42 (tapped "Next")
+    T42: Hydro-electricity is reliable: water is let through the dam whenever it is needed. Tides are predictable: they come in and out on a regular cycle. Geothermal works all the time, though only in a few places.
+    [screenshot 20-exchange-42-laptop.png] exchange-42
+    S43 (tapped "Next")
+    T43: Power stations that burn gas or coal can also be turned up quickly when more electricity is needed.
+    S44 (tapped "Next")
+    T44: On a still, dark winter evening, people suddenly want more electricity. Which pair of resources could not help?
+    S45 (try, tapped the button): wind and solar
+    T45: An electric car gives out no exhaust gases. Where can its carbon dioxide come from?
+    [screenshot 21-exchange-45-laptop.png] exchange-45
+      [T45 shown first: Yes: with no wind and no daylight, wind turbines and solar cells make almost nothing.]
+    S46 (try, tapped the button): the power station that made the electricity to charge it
+    T46: In the UK, coal use is falling fast and the use of renewables is rising.
+      [T46 shown first: Yes: if the electricity that charges it comes from burning fossil fuels, carbon dioxide is released at the power station.]
+    S47 (tapped "Next")
+    T47: Two reasons are worry about carbon dioxide and global warming, and government targets to cut the carbon dioxide given out.
+    S48 (tapped "Next")
+    T48: Two more: renewables have got cheaper, and fossil fuels will run out.
+    [screenshot 22-exchange-48-laptop.png] exchange-48
+    S49 (tapped "Next")
+    T49: Science can show the harm a resource does, but whether a country changes can also depend on cost, politics and what people want.
+    S50 (tapped "Next")
+    T50: How could a country cut the carbon dioxide from its transport?
+    S51 (try, tapped the button): replace petrol cars with electric cars charged from renewables
+    T51: In one line: give one advantage and one disadvantage of wind power.
+    [screenshot 23-exchange-51-laptop.png] exchange-51
+      [T51 shown first: Yes: something is stopped (petrol cars) and something replaces it (electric cars on renewable electricity).]
+    S52 (try): no carbon dioxide but intermitent
+    T52: Now for a short quiz: six questions on the whole lesson. Take your time.
+      [T52 shown first: Yes: your line makes every point. You have this: an advantage: no carbon dioxide, or renewable. You have this: a disadvantage: intermittent, not always available.]
+    S53 (tapped "Next")
+    T53: Quiz, question 1 of 6: what does a step-up transformer do?
+    S54 (try, tapped the button): raises the potential difference
+    T54: Quiz, question 2 of 6: why do the grid's cables use a very high potential difference?
+    [screenshot 24-exchange-54-laptop.png] exchange-54
+      [T54 shown first: Yes: it raises the potential difference.]
+    S55 (try): so the curent is small and less energy is wasted heating the cables
+    T55: Quiz, question 3 of 6: which of these is renewable?
+      [T55 shown first: Yes: a small current wastes less energy heating the cables.]
+    S56 (what): wdym
+    T56: Now, the question again: Quiz, question 3 of 6: which of these is renewable?
+      [T56 shown first: The quiz is asking you to pick the resource that can be replaced as fast as it is used up, so it won't run out. You'll be given a few options, and your job is to choose the one that fits that description.]
+    S57 (try, tapped the button): bio-fuel
+    T57: Quiz, question 4 of 6: what does intermittent mean?
+    [screenshot 25-exchange-57-laptop.png] exchange-57
+      [T57 shown first: Yes: bio-fuel comes from plants, which can be grown again.]
+    S58 (ask, tapped the button): not always available
+    T58: Quiz, question 5 of 6: which gas from burning fossil fuels adds to global warming?
+      [T58 shown first: Yes: like solar cells at night or wind turbines on a still day.]
+    S59 (what): wdym
+    T59: Have a go at the question: Quiz, question 5 of 6: which gas from burning fossil fuels adds to global warming?
+      [T59 shown first: In other words: to name one particular gas that gets released when coal, oil or gas are burned. This gas traps heat in the air around Earth, which makes the planet warmer.]
+    S60 (try, tapped the button): carbon dioxide
+    T60: Quiz, question 6 of 6: what is the potential difference of the mains supply in UK homes?
+    [screenshot 26-exchange-60-laptop.png] exchange-60
+      [T60 shown first: Yes: carbon dioxide traps heat in the atmosphere.]
+    S61 (try, tapped the button): 230 v
+    T61: That's the end of the quiz: you got 6 out of 6.
+      [T61 shown first: Yes: 230 V.]
+    S62 (tapped "Next")
+    T62: The lesson is finished. Tap a button to go on.
+      [T62 shown first: Summary, point 1 of 3: A high potential difference means a smaller current, so less energy is wasted heating the cables.]
+      [T62 shown first: Summary, point 2 of 3: A step-up transformer between the power station and the cables, and a step-down transformer between the cables and homes.]
+      [T62 shown first: Summary, point 3 of 3: Wind power gives out no carbon dioxide, but it is intermittent: it stops when the wind drops.]
+    [counter now "3/3 covered" after T62; AI calls from the site so far: 17, $0.0102]
+    S63 (closing, tapped the button): home
+    [S63 left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]
+    [screenshot 27-end-laptop.png] end
+    [tutor-side time: 0.4 minutes over 62 exchanges]

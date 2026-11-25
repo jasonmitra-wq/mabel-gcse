@@ -60,13 +60,15 @@ function pickShots(result, dir, max) {
   return [...key.slice(0, max), ...even].sort();
 }
 
-function buildBody(result, shots, lesson) {
+function buildBody(result, shots, lesson, subject) {
+  // The reviewer's persona names the lesson's subject, from its folder (lessons/<subject>/).
+  const teacher = `an experienced ${subject ? `${subject} ` : ''}teacher`;
   const faults = fs.readFileSync(path.join(ROOT, 'docs', 'FAULTS.md'), 'utf8');
   const kps = (lesson.keyPoints || []).map((k, i) => `Key point ${i + 1}: ${k.heading}\n${String(k.content || '').replace(/<[^>]+>/g, '')}`).join('\n\n');
   if (result.layout) {
     // --script: the whole written script, every branch laid out, before anyone uses it.
     const system = [
-      `You are an experienced physics teacher in England. You are checking the script of an AI tutor lesson before a 15-year-old girl uses it. She is meeting this topic for the first time: she is not revising, and she knows only everyday life and what the lesson has told her so far.`,
+      `You are ${teacher} in England. You are checking the script of an AI tutor lesson before a 15-year-old girl uses it. She is meeting this topic for the first time: she is not revising, and she knows only everyday life and what the lesson has told her so far.`,
       `Every message she can see is written in the script; under each question you have what she sees for a right answer, for each wrong answer, and at each "don't know" level. Read it as she would meet it, along the main path and down every branch. Report EVERY instance of EVERY fault in the checklist (docs/FAULTS.md, given in full), each with its step id (for example "1.6" or "1.6 don't know (again)") and the exact quoted words, and also anything else you as her teacher would object to: wrong, muddled or imprecise physics; a step that would lose her; a question she could not answer from what she had been told; a question whose answer was given just before it; a reply that does not fit the answer it follows; wording a 15-year-old would not follow. One finding per instance.`,
       `This is not a pass/fail on a short list. Be specific and fair: report only what is in the script, and quote it.`,
     ].join('\n\n');
@@ -78,7 +80,7 @@ function buildBody(result, shots, lesson) {
     ] }] };
   }
   const system = [
-    `You are an experienced physics teacher in England. You are checking an AI tutor lesson before a 15-year-old girl uses it. She is meeting this topic for the first time: she is not revising, and she knows only everyday life and what the lesson has told her so far.`,
+    `You are ${teacher} in England. You are checking an AI tutor lesson before a 15-year-old girl uses it. She is meeting this topic for the first time: she is not revising, and she knows only everyday life and what the lesson has told her so far.`,
     `Read the whole transcript and every screenshot, as she would meet them, in order. Report EVERY instance of EVERY fault in the checklist (docs/FAULTS.md, given in full), each with its turn number and the exact quoted words, and also anything else you as her teacher would object to: wrong or muddled physics, a step that would lose her, a question she could not answer from what she had been told, something on screen that is unreadable, misleading or out of step with the chat. Do not stop at the first instance of a fault, and do not summarise instances together: one finding per instance.`,
     `This is not a pass/fail on a short list. Be specific and fair: report only what is actually in the transcript or the screenshots, and quote it. Lines in square brackets are the tester's notes, not what she saw; use them to know what happened (which buttons she tapped, which widget appeared and what it showed, which picture was in the side column). "S" lines are her messages; "T" lines are the tutor's; "shown first" lines appeared just before the T line of the same number.`,
   ].join('\n\n');
@@ -139,7 +141,7 @@ async function main() {
   let shots, body, input, outTokens;
   for (;;) {
     shots = pickShots(result, dir, maxImages);
-    body = buildBody(result, shots, lesson);
+    body = buildBody(result, shots, lesson, lessonFile ? path.basename(path.dirname(lessonFile)) : null);
     input = await countTokens(body);
     outTokens = Math.min(64000, Math.floor((cap - already - input * RATE.in) / RATE.out));
     console.log(`${shots.length} screenshots; input ${input} tokens (counted, $${(input * RATE.in).toFixed(4)}); output allowance ${outTokens} tokens; cap $${cap}${already ? ` less $${already} already spent` : ''}; effort ${effort}.`);

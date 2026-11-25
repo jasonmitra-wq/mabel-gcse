@@ -541,6 +541,16 @@ tools/check-transcript.js, proven by tools/check-polish.js (each fails with the 
   commit (f) were done; a full v3 shape rewrite was not. Planning chat to decide whether Phase B lessons need it.
 - js/teach-script.js answerHer's prompt calls the tutor "a kind physics tutor" for every subject, now including
   the three G5 geography lessons. It answers from the geography lesson's content, so answers stay on topic, but
-  the wording is wrong. Changing it is a shared teach-mode change: not done (runbook STOP rule).
+  the wording is wrong. Changing it is a shared teach-mode change: not done (runbook STOP rule). Fixed 2026-11-25 with Jason's approval ("You are a kind teacher.", teach-script v21).
 - tools/check-script.js, tools/script-layout.js and tools/check-polish.js read lessons from any subject folder
   (they read lessons/physics only); a tool change, not teach-mode code.
+
+## G5 verification gaps (2026-11-25)
+
+- Open, blocks S2 (and so S5) for G5: tools/audit-lessons.js ERROR "checkpoint keys not 0..keyPoints−1" on all three G5 lessons
+  (g5-development keys [0, 3] want [0..5]; g5-nigeria [2, 4] want [0..4]; g5-uk-economy [1, 3] want [0..5]). Not changed, per
+  the brief. It fires on 149 of the 197 files scanned, of which 20 are *.script.json files the scanner reads as lessons, so 129 of
+  177 lessons. Planning chat to decide: is the rule wrong (a checkpoint after every key point) or the lessons (fewer checkpoints by design)?
+- Open (tool): the scanner reads lessons/<subject>/*.script.json as switched-off lessons (empty content, keys []), inflating its counts.
+- Open: check-transcript F3/F4 fire on live answers to her questions (p2-power-energy "charge flow", "energy transferred";
+  p3-pressure "work out" read as the term "work"). The answers are correct and on subject; the check does not separate live answers.

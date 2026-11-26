@@ -235,9 +235,12 @@ const Maths = (() => {
   }
 
   // Formula box. Several rules joined with " | " go one per line: formulas
-  // first (big, never broken mid-formula; the box scrolls sideways instead),
-  // then any sentence parts at body size. Formula lines shrink on narrow
-  // screens (min with 4.5vw; 1.35rem on laptops). One rule renders as before.
+  // first (big), then any sentence parts at body size. Formula lines shrink
+  // on narrow screens (min with 4.5vw; 1.35rem on laptops). A symbolic
+  // formula never wraps (the box scrolls sideways instead). A worded rule
+  // (2+ words of 3+ letters, not sin/cos/tan) wraps, but only at a space next
+  // to a word, so symbol runs like "(n − 2) × 180°" stay whole.
+  // One rule renders as before.
   function _formulaBoxHtml(formula) {
     const boxStyle = `background:var(--s2);padding:0.75rem 1rem;border-radius:10px;margin-bottom:0.85rem`;
     if (!formula.includes(' | ')) {
@@ -249,9 +252,18 @@ const Maths = (() => {
     const isSentence = p => p.includes(': ') || (p.length > 40 && !p.includes('='));
     const formulas  = parts.filter(p => !isSentence(p));
     const sentences = parts.filter(isSentence);
+    const isWord = t => /^\(?[A-Za-z][A-Za-z'’-]{2,}\)?[,.]?$/.test(t) && !/^(sin|cos|tan)$/i.test(t);
+    const formulaLine = p => {
+      const toks = p.split(/\s+/);
+      if (toks.filter(isWord).length < 2) return { wrap: false, html: p };
+      // Space between two tokens may break only if one of them is a word.
+      const html = toks.map((t, i) => i === 0 ? t
+        : ((isWord(toks[i - 1]) || isWord(t)) ? ' ' : '&nbsp;') + t).join('');
+      return { wrap: true, html };
+    };
     return `<div class="maths-formula-box" style="${boxStyle};overflow-x:auto">
-      ${formulas.map(p => `<div style="text-align:center;font-size:min(1.35rem, 4.5vw);font-weight:700;
-        letter-spacing:0.02em;white-space:nowrap;line-height:1.5">${p}</div>`).join('')}
+      ${formulas.map(formulaLine).map(f => `<div style="text-align:center;font-size:min(1.35rem, 4.5vw);font-weight:700;
+        letter-spacing:0.02em;white-space:${f.wrap ? 'normal' : 'nowrap'};line-height:1.3;margin:0.4rem 0">${f.html}</div>`).join('')}
       ${sentences.map((p, i) => `<div style="text-align:left;font-size:0.95rem;font-weight:400;
         line-height:1.55;margin-top:${i === 0 && formulas.length ? '0.55rem' : '0.3rem'}">${p}</div>`).join('')}
     </div>`;

@@ -234,6 +234,29 @@ const Maths = (() => {
     _renderLessonSlide(0);
   }
 
+  // Formula box. Several rules joined with " | " go one per line: formulas
+  // first (big, never broken mid-formula; the box scrolls sideways instead),
+  // then any sentence parts at body size. Formula lines shrink on narrow
+  // screens (min with 4.5vw; 1.35rem on laptops). One rule renders as before.
+  function _formulaBoxHtml(formula) {
+    const boxStyle = `background:var(--s2);padding:0.75rem 1rem;border-radius:10px;margin-bottom:0.85rem`;
+    if (!formula.includes(' | ')) {
+      return `<div style="text-align:center;font-size:1.35rem;font-weight:700;
+          ${boxStyle};
+          letter-spacing:0.02em">${formula}</div>`;
+    }
+    const parts = formula.split(' | ').map(p => p.trim()).filter(Boolean);
+    const isSentence = p => p.includes(': ') || (p.length > 40 && !p.includes('='));
+    const formulas  = parts.filter(p => !isSentence(p));
+    const sentences = parts.filter(isSentence);
+    return `<div class="maths-formula-box" style="${boxStyle};overflow-x:auto">
+      ${formulas.map(p => `<div style="text-align:center;font-size:min(1.35rem, 4.5vw);font-weight:700;
+        letter-spacing:0.02em;white-space:nowrap;line-height:1.5">${p}</div>`).join('')}
+      ${sentences.map((p, i) => `<div style="text-align:left;font-size:0.95rem;font-weight:400;
+        line-height:1.55;margin-top:${i === 0 && formulas.length ? '0.55rem' : '0.3rem'}">${p}</div>`).join('')}
+    </div>`;
+  }
+
   function _renderLessonSlide(idx) {
     const slides = _lessonData?.slides || [];
     const slide  = slides[idx];
@@ -267,9 +290,7 @@ const Maths = (() => {
     } else if (slide.type === 'formula') {
       slideHtml = `
         <h3 style="font-size:1.05rem;font-weight:700;margin:0 0 0.75rem">${slide.heading || ''}</h3>
-        ${slide.formula ? `<div style="text-align:center;font-size:1.35rem;font-weight:700;
-          background:var(--s2);padding:0.75rem 1rem;border-radius:10px;margin-bottom:0.85rem;
-          letter-spacing:0.02em">${slide.formula}</div>` : ''}
+        ${slide.formula ? _formulaBoxHtml(slide.formula) : ''}
         ${slide.formulaExplained ? `<p style="font-size:0.88rem;line-height:1.65;color:var(--text);margin:0 0 0.55rem">${slide.formulaExplained}</p>` : ''}
         ${slide.whenToUse ? `<div style="font-size:0.83rem;color:var(--muted);border-left:3px solid var(--blue);
           padding:0.35rem 0.65rem;margin-top:0.45rem">Use this when: ${slide.whenToUse}</div>` : ''}`;

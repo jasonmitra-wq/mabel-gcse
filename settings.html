@@ -428,6 +428,11 @@
 
 <script src="js/storage.js?v=2"></script>
 <script>
+/* Brief 2026-11-26 Part A: the header uses the name set in Settings (textContent: a parent types it). */
+function _setHeaderName() { try { var h = document.querySelector('.hdr-title'); if (h) h.textContent = Store.getChildName() + "'s GCSE Tutor"; } catch (e) { /* the HTML text stays */ } }
+_setHeaderName();
+</script>
+<script>
 /* ─────────────────────────────────────────────────────────
    SETTINGS PAGE LOGIC
    All reads/writes go through Store (storage.js).
@@ -567,6 +572,7 @@ function _saveProfile() {
 
   // 1. Save child profile
   Store.set('child_profile', { name, interests });
+  _setHeaderName();
 
   // 2. Optionally wipe personality data
   if (document.getElementById('cbClearPersonality').checked) {

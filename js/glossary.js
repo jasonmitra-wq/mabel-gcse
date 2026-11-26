@@ -376,7 +376,8 @@ const Glossary = (() => {
       ? `<span class="glossary-exam-badge exam">✓ Exam definition — you need to know this</span>`
       : `<span class="glossary-exam-badge info">ℹ Good to know — not a named definition</span>`;
 
-    const syllabusLink = entry.syllabusTopic
+    // Brief 2026-11-26 Part C: no link to a lesson that isn't ready (flag SHADE_UNREADY in js/app.js).
+    const syllabusLink = entry.syllabusTopic && _ready(entry.syllabusTopic, 'biology')
       ? `<button class="btn" style="margin-top:0.5rem;width:100%;justify-content:flex-start;gap:0.5rem;font-size:0.85rem"
            onclick="Glossary.hide();Lessons.open('${entry.syllabusTopic}','${entry.syllabusName}','B2')">
            📖 Open: ${entry.syllabusName} →
@@ -400,6 +401,9 @@ const Glossary = (() => {
 
   function lookup(key) { return _terms[key.toLowerCase()] || null; }
 
+  // Part C: the rule lives in js/app.js (Ready); without app.js (Node tools) every lesson is ready.
+  function _ready(id, subject) { return typeof Ready === 'undefined' || Ready.lesson(id, subject); }
+
   // v3 sheet: the plain definition and the lesson it comes from.
   function _openLessonJs(e) {
     const q = s => String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
@@ -407,13 +411,14 @@ const Glossary = (() => {
   }
   function _showV3(e) {
     const here = typeof Lessons !== 'undefined' && Lessons.currentId && Lessons.currentId() === e.lesson;
+    const link = _ready(e.lesson, e.subject);   // Part C: no "Go to that lesson" for a lesson that isn't ready
     document.getElementById('glossaryTerm').textContent = e.term;
     document.getElementById('glossaryBody').innerHTML = `
       <p style="font-size:0.95rem;line-height:1.7;margin:0.75rem 0 0.5rem">${_html(e.def)}</p>
       ${here ? `<p class="glossary-from">From this lesson.</p>`
         : `<p class="glossary-from">From the lesson: ${_html(e.lessonName)}</p>
-           <button class="btn" style="margin-top:0.5rem;width:100%;justify-content:flex-start;gap:0.5rem;font-size:0.85rem"
-             onclick="Glossary.hide();${_html(_openLessonJs(e))}">📖 Go to that lesson →</button>`}`;
+           ${!link ? '' : `<button class="btn" style="margin-top:0.5rem;width:100%;justify-content:flex-start;gap:0.5rem;font-size:0.85rem"
+             onclick="Glossary.hide();${_html(_openLessonJs(e))}">📖 Go to that lesson →</button>`}`}`;
     document.getElementById('glossarySheet').classList.add('open');
     document.getElementById('glossaryBackdrop').classList.add('open');
   }

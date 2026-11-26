@@ -75,6 +75,20 @@ const Lessons = (() => {
   async function open(subtopicId, subtopicName, topicCode, subject = 'biology') {
     const panel = document.getElementById('lessonPanel');
     const inner = document.getElementById('lessonInner');
+    // Brief 2026-11-26 Part C (flag SHADE_UNREADY in js/app.js): a lesson that isn't ready shows a
+    // short "Coming soon" card instead, whatever route it was opened from.
+    if (!_ready(subtopicId, subject)) {
+      inner.innerHTML = `
+        <div style="padding-top:0.75rem"><button class="back-btn" onclick="Lessons.close()">← Topics</button></div>
+        <div style="text-align:center;padding:3rem 1rem">
+          <div style="font-size:2.5rem;margin-bottom:1rem">🚧</div>
+          <h3 style="margin:0 0 0.5rem">Coming soon</h3>
+          <p style="color:var(--muted)">This lesson is still being written.</p>
+        </div>`;
+      panel.style.cssText = 'position:fixed;top:56px;left:0;right:0;bottom:0;width:auto;max-width:none;z-index:100;background:var(--bg);overflow-y:auto;overflow-x:hidden;transform:translateX(0)';
+      panel.classList.add('open');
+      return;
+    }
 
     inner.innerHTML = `
       <div style="text-align:center;padding:4rem 1rem">
@@ -125,6 +139,9 @@ const Lessons = (() => {
     go();
   }
 
+  // Part C: the rule lives in js/app.js (Ready); without app.js (Node tools) every lesson is ready.
+  function _ready(id, subject) { return typeof Ready === 'undefined' || Ready.lesson(id, subject); }
+
   let _openingId = '';
   let _prereqGo = null;
   // The card: each term with a one-line meaning, a button per earlier lesson,
@@ -148,7 +165,7 @@ const Lessons = (() => {
         <p style="color:var(--muted);margin:0 0 0.75rem">This lesson uses words from an earlier lesson. Go there first, or carry on: their meanings are below.</p>
         <div class="prereq-actions">
           <button class="btn pri" onclick="Lessons._carryOn()">Carry on</button>
-          ${lessons.map(l => `<button class="btn" onclick="Lessons.open('${q(l.id)}','${q(l.name)}','${q(l.topic)}','${q(subject)}')">Go to ${esc(l.name)}</button>`).join('')}
+          ${lessons.filter(l => _ready(l.id, subject)).map(l => `<button class="btn" onclick="Lessons.open('${q(l.id)}','${q(l.name)}','${q(l.topic)}','${q(subject)}')">Go to ${esc(l.name)}</button>`).join('')}
         </div>
         <ul class="prereq-terms">${items.join('')}</ul>
       </div>`;

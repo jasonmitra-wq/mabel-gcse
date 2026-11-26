@@ -186,7 +186,7 @@ function showHome(hasSaved) {
 
   // ── Continue card ───────────────────────────────────────────
   let continueHtml = '';
-  if (last?.subtopicId && last?.subtopicName) {
+  if (last?.subtopicId && last?.subtopicName && Ready.lesson(last.subtopicId, last.subject || 'biology')) {
     const subj = last.subject ? (last.subject.charAt(0).toUpperCase() + last.subject.slice(1)) : 'Biology';
     const code = last.topicCode ? ` · ${last.topicCode}` : '';
     const safeName = last.subtopicName.replace(/'/g, "\\'");
@@ -247,7 +247,7 @@ function showHome(hasSaved) {
         </div>
         <div style="font-size:17px;font-weight:700;margin-bottom:0.3rem">Revise a topic</div>
         <div style="font-size:14px;color:var(--muted);line-height:1.5">Pick a subject & topic. Read, learn, write it down.</div>
-        <div style="font-size:13px;color:var(--muted);margin-top:auto;padding-top:0.85rem">Biology · Chemistry · Physics · Geography · Sociology &nbsp;→</div>
+        <div id="homeSubjectLine" style="font-size:13px;color:var(--muted);margin-top:auto;padding-top:0.85rem">${SHADE_UNREADY ? (Ready.loaded ? _homeSubjectLine() : '') : 'Biology · Chemistry · Physics · Geography · Sociology &nbsp;→'}</div>
       </div>
       <div class="home-main-tile" onclick="showTestPrep()">
         <div style="font-size:1.6rem;margin-bottom:0.5rem">🎯</div>
@@ -303,6 +303,8 @@ function showHome(hasSaved) {
     <div id="upcomingSection"></div>`;
 
   _renderUpcomingTests();
+  // Part C: the open subjects need the syllabuses; fill the line once they are read.
+  if (SHADE_UNREADY && !Ready.loaded) Ready.load().then(() => { const el = document.getElementById('homeSubjectLine'); if (el) el.innerHTML = _homeSubjectLine(); });
 }
 
 function _renderUpcomingTests() {
@@ -422,8 +424,50 @@ function _modeCard(icon, title, sub, extraClass, fn, pct) {
   return card;
 }
 
+// ── WHAT IS READY (brief docs/briefs/2026-11-26-name-and-shading.md, Part C) ──
+// Flag SHADE_UNREADY, on: a lesson is ready when it is in TeachScript.SCRIPTED_LESSONS; a topic when
+// all its subtopics are; a subject when at least one of its topics is. Maths is its own track and
+// stays open. What isn't ready is greyed out and does not open (subject picker, topics, subtopics,
+// Lessons.open, the Resume card, the glossary, "Words from earlier lessons", the test planner).
+// The `available` field in data/*-syllabus.json is not changed. Off: every screen as before.
+const SHADE_UNREADY = true;
+const Ready = {
+  on: SHADE_UNREADY,
+  loaded: false,
+  _topics: {},                       // subject → its syllabus topics, read once
+  lesson(id, subject) {
+    if (!SHADE_UNREADY || subject === 'maths') return true;
+    return typeof TeachScript !== 'undefined' && TeachScript.SCRIPTED_LESSONS.includes(id);
+  },
+  topic(t, subject) {
+    if (!SHADE_UNREADY || subject === 'maths') return true;
+    const subs = (t && t.subtopics) || [];
+    return subs.length > 0 && subs.every(st => Ready.lesson(st.id, subject));
+  },
+  subject(id) {
+    if (!SHADE_UNREADY || id === 'maths') return true;
+    return Object.values(Ready._topics[id] || {}).some(t => t.available !== false && Ready.topic(t, id));
+  },
+  _loading: null,
+  load() {
+    if (Ready.loaded) return Promise.resolve();
+    return Ready._loading || (Ready._loading = Promise.all(READY_SUBJECTS.map(id =>
+      fetch(`data/${id}-syllabus.json`).then(r => (r.ok ? r.json() : { topics: {} })).catch(() => ({ topics: {} }))
+        .then(j => { Ready._topics[id] = (j && j.topics) || {}; })
+    )).then(() => { Ready.loaded = true; }));
+  },
+};
+const READY_SUBJECTS = ['biology', 'chemistry', 'physics', 'geography', 'sociology'];
+const HOME_SUBJECTS  = [['biology', 'Biology'], ['chemistry', 'Chemistry'], ['physics', 'Physics'], ['geography', 'Geography'], ['sociology', 'Sociology']];
+// The subject line on the home page's "Revise a topic" card: the open subjects only.
+function _homeSubjectLine() {
+  const all = HOME_SUBJECTS.filter(([id]) => !SHADE_UNREADY || Ready.subject(id)).map(([, l]) => l);
+  return `${all.join(' · ')} &nbsp;→`;
+}
+
 // ── SUBJECT PICKER ─────────────────────────────────────────────
 function showSubjectPicker() {
+  if (SHADE_UNREADY && !Ready.loaded) { Ready.load().then(showSubjectPicker); return; }
   App.setStage('Subjects');
   window.scrollTo(0, 0);   // a new screen opens at its top (site test 2026-10-26: the heading was under the top bar)
 
@@ -434,7 +478,7 @@ function showSubjectPicker() {
     { id: 'maths',     label: 'Maths',       icon: '📐', sub: 'GCSE Maths',                    available: true  },
     { id: 'geography', label: 'Geography',   icon: '🌍', sub: 'GCSE Geography',                       available: true  },
     { id: 'english',   label: 'English Lit', icon: '📚', sub: 'Coming soon',                          available: false },
-  ];
+  ].map(s => (SHADE_UNREADY && !Ready.subject(s.id) ? { ...s, available: false } : s));
 
   let html = `
     <div class="topic-header">
@@ -500,8 +544,11 @@ function _comingSoonSubject(subjectName) {
       </div>
       <div style="background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:1.5rem;text-align:center">
         <div style="font-size:2.5rem;margin-bottom:0.75rem">🚧</div>
-        <p style="font-size:0.9rem;line-height:1.65;margin-bottom:1.25rem">${subjectName} is on its way — Biology first, then we'll add it.</p>
-        <button class="btn pri full" onclick="_selectSubject('biology')">→ Go to Biology</button>
+        ${SHADE_UNREADY
+          ? `<p style="font-size:0.9rem;line-height:1.65;margin-bottom:1.25rem">${subjectName} is on its way. Its lessons are still being written.</p>
+        <button class="btn pri full" onclick="showSubjectPicker()">← Choose another subject</button>`
+          : `<p style="font-size:0.9rem;line-height:1.65;margin-bottom:1.25rem">${subjectName} is on its way — Biology first, then we'll add it.</p>
+        <button class="btn pri full" onclick="_selectSubject('biology')">→ Go to Biology</button>`}
       </div>
     </div>`;
 }
@@ -532,7 +579,7 @@ function showTopics() {
   // Compute coverage for every available topic so we can pick
   // the single most logical "next" topic to highlight.
   const _availTopics = Object.entries(topics)
-    .filter(([, t]) => t.available !== false)
+    .filter(([, t]) => t.available !== false && Ready.topic(t, _activeSubject))
     .map(([code, t]) => {
       const subs   = t.subtopics || [];
       const done   = subs.filter(st => _progress.covered[st.id]).length;
@@ -572,7 +619,7 @@ function showTopics() {
     const subtopics  = t.subtopics || [];
     const total      = subtopics.length;
     const done       = subtopics.filter(st => _progress.covered[st.id]).length;
-    const avail      = t.available !== false;
+    const avail      = t.available !== false && Ready.topic(t, _activeSubject);
     const mastery    = avail ? Store.getTopicMastery(subtopics.map(st => st.id), _deck) : null;
     const complete   = subtopics.filter(st => {
       const m = Store.getSubtopicMastery(st.id, _deck);
@@ -626,7 +673,7 @@ function showSubtopics(topicCode, topicData, opts = {}) {
 
   subtopics.forEach(st => {
     const started  = !!_progress.covered[st.id];
-    const avail    = st.available !== false;
+    const avail    = st.available !== false && Ready.lesson(st.id, _activeSubject);
     const mastery  = avail ? Store.getSubtopicMastery(st.id, _deck) : null;
     const complete = mastery !== null && mastery >= 80;
 
@@ -1058,6 +1105,7 @@ function showCardDeck() {
 // adolescent learners — use agency-and-preparation framing instead.
 // "X days left" → "X days to prepare", "running out of time" → remove.
 function showTestPrep() {
+  if (SHADE_UNREADY && !Ready.loaded) { Ready.load().then(showTestPrep); return; }
   App.setStage('Test prep');
   const canUpload = AI.hasKey();
   document.getElementById('main').innerHTML = `
@@ -1089,10 +1137,8 @@ function showTestPrep() {
         <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem">
           <select id="testSubject" onchange="_populateTopicDropdown(this.value)"
             style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none;width:100%;cursor:pointer">
-            <option value="biology">Biology</option>
-            <option value="chemistry">Chemistry</option>
-            <option value="physics">Physics</option>
-            <option value="maths">Maths</option>
+            ${[['biology', 'Biology'], ['chemistry', 'Chemistry'], ['physics', 'Physics'], ['maths', 'Maths']]
+              .filter(([id]) => Ready.subject(id)).map(([id, l]) => `<option value="${id}">${l}</option>`).join('')}
           </select>
           <select id="testTopic"
             style="background:var(--s2);border:1.5px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;padding:0.6rem 0.85rem;border-radius:8px;outline:none;width:100%;cursor:pointer">
@@ -1106,7 +1152,7 @@ function showTestPrep() {
     </div>`;
 
   if (canUpload) _setupUploadZone();
-  _populateTopicDropdown('biology');
+  _populateTopicDropdown(SHADE_UNREADY ? (document.getElementById('testSubject').value || 'physics') : 'biology');
 }
 
 // ── SCHEDULE UPLOAD ────────────────────────────────────────────
@@ -1283,7 +1329,7 @@ async function _populateTopicDropdown(subject) {
   try {
     const res = await fetch(`data/${subject}-syllabus.json`);
     _testPlanSyllabus = await res.json();
-    const topics = Object.values(_testPlanSyllabus.topics || {});
+    const topics = Object.values(_testPlanSyllabus.topics || {}).filter(t => Ready.topic(t, subject));   // Part C: ready topics only
     sel.innerHTML = topics
       .map(t => `<option value="${t.code}">${t.name}</option>`)
       .join('');
@@ -1322,6 +1368,7 @@ async function _buildTestPlan(prefill) {
     if (match) subtopics = match.subtopics || [];
   }
 
+  subtopics = subtopics.filter(st => Ready.lesson(st.id, subject.toLowerCase()));   // Part C: plan ready subtopics only
   const plan = _generateStaticPlan(subject, topicName, daysUntil, subtopics);
   _renderTestPlan(plan, topicName, daysUntil);
 }

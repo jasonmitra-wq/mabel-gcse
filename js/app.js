@@ -458,7 +458,7 @@ const Ready = {
   },
 };
 const READY_SUBJECTS = ['biology', 'chemistry', 'physics', 'geography', 'sociology'];
-const HOME_SUBJECTS  = [['biology', 'Biology'], ['chemistry', 'Chemistry'], ['physics', 'Physics'], ['geography', 'Geography'], ['sociology', 'Sociology']];
+const HOME_SUBJECTS  = [['biology', 'Biology'], ['chemistry', 'Chemistry'], ['physics', 'Physics'], ['maths', 'Maths'], ['geography', 'Geography'], ['sociology', 'Sociology']];
 // The subject line on the home page's "Revise a topic" card: the open subjects only.
 function _homeSubjectLine() {
   const all = HOME_SUBJECTS.filter(([id]) => !SHADE_UNREADY || Ready.subject(id)).map(([, l]) => l);

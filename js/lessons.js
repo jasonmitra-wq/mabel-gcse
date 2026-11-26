@@ -47,6 +47,11 @@ const Lessons = (() => {
   // false keeps the v3 slides.
   const SLIDES_V31 = true;
   const _isV31 = data => SLIDES_V31 && typeof LessonExtras !== 'undefined' && (data.keyPoints || []).some(kp => kp.ownWords || kp.pictures);
+  // Brief 2026-11-26: the slide checkpoint shows its options in a fixed
+  // shuffled order seeded by the question (lesson-extras.js's method, high bits), so
+  // the right answer is not always first. Each button keeps its stored index in
+  // its id, data-idx and data-correct. false shows the stored order.
+  const CP_SHUFFLE = true;
   let _recall = null;
 
   // The recall questions: three multiple-choice questions from the end quiz of
@@ -1114,11 +1119,20 @@ const Lessons = (() => {
   }
 
   function _renderCheckpoint(cp, id) {
-    const opts = cp.options.map((opt, i) => {
+    const btns = cp.options.map((opt, i) => {
       const isCorrect = i === cp.correct;
       return `<button class="cp-btn" id="${id}_opt_${i}" data-correct="${isCorrect}" data-cpid="${id}" data-idx="${i}"
         onclick="Lessons.checkpointClick(this,'${id}',${isCorrect})">${opt}</button>`;
-    }).join('');
+    });
+    const order = cp.options.map((o, k) => k);
+    if (CP_SHUFFLE) {
+      let h = 0; for (const ch of String(cp.question)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+      // As lesson-extras.js, but r comes from the high bits (h >>> 16): the low
+      // bits of this generator repeat, so h % 4 put the stored first option last
+      // in 270 of 513 checkpoints (tools/check-cp-order.js).
+      for (let k = order.length - 1; k > 0; k--) { h = (h * 1103515245 + 12345) >>> 0; const r = (h >>> 16) % (k + 1); [order[k], order[r]] = [order[r], order[k]]; }
+    }
+    const opts = order.map(k => btns[k]).join('');
     return `<div class="checkpoint" id="${id}">
       <div class="checkpoint-q"><span>CHECK</span>${cp.question}</div>
       <div class="cp-opts">${opts}</div>

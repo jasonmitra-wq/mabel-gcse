@@ -421,5 +421,5 @@
     return { start, reply, calls, show, shown, points: kps.length };
   }
 
-  return { create, uses, SCRIPTED, SCRIPTED_LESSONS, SCRIPT_POLISH, order, IDK, ownFeedback, summaryLines, plainAnswer, idkOpener, VERSION: 5 };
+  return { create, uses, SCRIPTED, SCRIPTED_LESSONS, SCRIPT_POLISH, order, IDK, ownFeedback, summaryLines, plainAnswer, idkOpener, VERSION: 6 };
 });

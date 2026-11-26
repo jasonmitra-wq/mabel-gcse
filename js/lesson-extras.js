@@ -14,6 +14,11 @@
    chatCard    — a worked example or a widget under a tutor message
    ============================================================ */
 const LessonExtras = (() => {
+  // Brief 2026-11-26 (G5 script claim, and the lesson-extras shuffle): the fixed
+  // shuffle takes r from the generator's high bits (h >>> 16), as CP_SHUFFLE in
+  // js/lessons.js; its low bits repeat, so the right answer was shown first 17
+  // of 47 times (tools/check-cp-order.js). false keeps h % (k + 1).
+  const LX_SHUFFLE_FIX = true;
   const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const css = `
     .lx-labels { display:flex; flex-wrap:wrap; gap:0.35rem; margin:0.45rem 0.2rem 0; }
@@ -155,7 +160,7 @@ const LessonExtras = (() => {
     // A fixed shuffle, so the answer is not always first.
     let h = 0; for (const ch of String(q.question)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
     const order = q.options.map((o, k) => k);
-    for (let k = order.length - 1; k > 0; k--) { h = (h * 1103515245 + 12345) >>> 0; const r = h % (k + 1); [order[k], order[r]] = [order[r], order[k]]; }
+    for (let k = order.length - 1; k > 0; k--) { h = (h * 1103515245 + 12345) >>> 0; const r = (LX_SHUFFLE_FIX ? h >>> 16 : h) % (k + 1); [order[k], order[r]] = [order[r], order[k]]; }
     order.forEach(k => {
       const b = _el(`<button class="btn">${q.options[k]}</button>`);
       b.onclick = () => {

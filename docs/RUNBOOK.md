@@ -289,13 +289,52 @@ G-d Figures: every real-world figure in the three G5 lessons gets a
     every figure is sourced. Sources listed in
     tools/pilot/g5-figures.md.
 
+PHASE C — scripted AI lessons, Physics P4–P8, one topic per session
+(installed 2026-11-27, brief docs/briefs/2026-11-27-phase-c-physics.md;
+Jason 2026-11-27: finish Physics and Geography first, Physics first;
+every key point has a checkpoint). It replaces the older "Phase C —
+Biology, Geography, Chemistry" below, kept for the record.
+Topic order: P4 Atomic structure, P5 Forces, P6 Waves, P7 Magnetism,
+P8 Space physics. Lessons within a topic in syllabus order.
+Steps B1–B6 run exactly as in PHASE B, with these changes:
+C0 Before B1: missing checkpoints. Write a checkpoint for every key
+   point that lacks one (rules as in brief
+   docs/briefs/2026-11-27-g5-checkpoints-and-next.md: tests its key
+   point using only what it has taught, plausible wrong options, all
+   four options about the same length, correct: 0, plain English).
+   Count on 2026-11-27 (planning chat 12; recounted 12):
+   p5-forces-motion kp 0, p5-gravity 2, p5-momentum 1,
+   p5-stopping-distance 2, p6-em-spectrum 2, p6-light 2, p6-sound 2,
+   p6-wave-properties 2, p7-induction 2, p7-magnets 1,
+   p7-motor-effect 2, p7-transformers 2. P4 and P8 need none. The
+   lesson-auditor checks each one. The spec-check's
+   checkpoint_mismatch must come back clean on every new checkpoint
+   (one fix round; anything still disputed goes to ESCALATIONS).
+B4 reviews: at most two paid reviews per script, as before. The report
+   lists the second review's findings by F-number with what was done
+   about each (fixed, or disputed with the reason), not just a count.
+B6 status words: the topic's row in STATE says "scripted (Phase C)",
+   never "done". Fill S1–S6 and T1–T3 with met (and the commit) or
+   open (and the reason). The planning chat verifies each topic from a
+   fresh pull before the next one starts.
+End of topic: "Topic scripted. Planning chat verifies, then type
+Continue in a new session." After P8: "Physics scripted. Planning chat
+decides what's next."
+Spend: stop a topic at $12 and report. Stop the phase when STATE's
+month spend reaches $95 of the $100 cap ("Monthly cap: type Continue
+after the 1st, or raise the cap").
+STOP and ask Jason only for the same things as PHASE B: a blocked
+download; a fact dispute after one fix round; deleting a file; a
+change to shared teach-mode code beyond adding lessons to
+SCRIPTED_LESSONS.
+
 Phase B — Physics (superseded 2026-11-15 by PHASE B above)
 B1 The lessons live with the AI tutor first: the rest of P2, then P1,
    then P3. Then P4, P5, P6, P7, P8. Section 3 for each lesson.
 B2 When all Physics topics are done: STOP with "Physics finished. One
    real session needed (Jason or Mabel)."
 
-Phase C — Biology, Geography, Chemistry
+Phase C (old) — Biology, Geography, Chemistry (superseded 2026-11-27 by PHASE C above)
 C1 b3-defences and the G5 lessons: keep their style; add examBox,
    workedExample where there is an equation, specChecklist, <dfn>
    marks; then steps b–f.
